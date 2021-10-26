@@ -44,7 +44,8 @@ namespace __jni_impl::android::text::style
 		__thiz = QAndroidJniObject(
 			"android.text.style.MaskFilterSpan",
 			"(Landroid/graphics/MaskFilter;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

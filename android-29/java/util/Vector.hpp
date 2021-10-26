@@ -95,20 +95,23 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.Vector",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Vector::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Vector",
-			"()V");
+			"()V"
+		);
 	}
 	void Vector::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Vector",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Vector::__constructor(jint arg0, jint arg1)
 	{
@@ -116,7 +119,8 @@ namespace __jni_impl::java::util
 			"java.util.Vector",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

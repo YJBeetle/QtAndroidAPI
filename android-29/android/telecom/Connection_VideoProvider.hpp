@@ -46,6 +46,7 @@ namespace __jni_impl::android::telecom
 		
 		// Methods
 		void onSetCamera(jstring arg0);
+		void onSetCamera(const QString &arg0);
 		void onSetPreviewSurface(__jni_impl::android::view::Surface arg0);
 		void onSetDisplaySurface(__jni_impl::android::view::Surface arg0);
 		void onSetDeviceOrientation(jint arg0);
@@ -163,7 +164,8 @@ namespace __jni_impl::android::telecom
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.Connection$VideoProvider",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -173,6 +175,14 @@ namespace __jni_impl::android::telecom
 			"onSetCamera",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void Connection_VideoProvider::onSetCamera(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"onSetCamera",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Connection_VideoProvider::onSetPreviewSurface(__jni_impl::android::view::Surface arg0)

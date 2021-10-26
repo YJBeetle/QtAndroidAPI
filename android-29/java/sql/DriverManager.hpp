@@ -42,21 +42,26 @@ namespace __jni_impl::java::sql
 		
 		// Methods
 		static void println(jstring arg0);
+		static void println(const QString &arg0);
+		static QAndroidJniObject getLogWriter();
 		static void registerDriver(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		static void registerDriver(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject getDrivers();
 		static void deregisterDriver(__jni_impl::__JniBaseClass arg0);
 		static void setLogWriter(__jni_impl::java::io::PrintWriter arg0);
 		static QAndroidJniObject getDriver(jstring arg0);
+		static QAndroidJniObject getDriver(const QString &arg0);
 		static QAndroidJniObject drivers();
 		static void setLoginTimeout(jint arg0);
 		static jint getLoginTimeout();
 		static void setLogStream(__jni_impl::java::io::PrintStream arg0);
 		static QAndroidJniObject getLogStream();
-		static QAndroidJniObject getLogWriter();
 		static QAndroidJniObject getConnection(jstring arg0);
+		static QAndroidJniObject getConnection(const QString &arg0);
 		static QAndroidJniObject getConnection(jstring arg0, __jni_impl::java::util::Properties arg1);
+		static QAndroidJniObject getConnection(const QString &arg0, __jni_impl::java::util::Properties arg1);
 		static QAndroidJniObject getConnection(jstring arg0, jstring arg1, jstring arg2);
+		static QAndroidJniObject getConnection(const QString &arg0, const QString &arg1, const QString &arg2);
 	};
 } // namespace __jni_impl::java::sql
 
@@ -87,6 +92,23 @@ namespace __jni_impl::java::sql
 			"println",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void DriverManager::println(const QString &arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"java.sql.DriverManager",
+			"println",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject DriverManager::getLogWriter()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.sql.DriverManager",
+			"getLogWriter",
+			"()Ljava/io/PrintWriter;"
 		);
 	}
 	void DriverManager::registerDriver(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
@@ -143,6 +165,15 @@ namespace __jni_impl::java::sql
 			arg0
 		);
 	}
+	QAndroidJniObject DriverManager::getDriver(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.sql.DriverManager",
+			"getDriver",
+			"(Ljava/lang/String;)Ljava/sql/Driver;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject DriverManager::drivers()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -185,14 +216,6 @@ namespace __jni_impl::java::sql
 			"()Ljava/io/PrintStream;"
 		);
 	}
-	QAndroidJniObject DriverManager::getLogWriter()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.sql.DriverManager",
-			"getLogWriter",
-			"()Ljava/io/PrintWriter;"
-		);
-	}
 	QAndroidJniObject DriverManager::getConnection(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -200,6 +223,15 @@ namespace __jni_impl::java::sql
 			"getConnection",
 			"(Ljava/lang/String;)Ljava/sql/Connection;",
 			arg0
+		);
+	}
+	QAndroidJniObject DriverManager::getConnection(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.sql.DriverManager",
+			"getConnection",
+			"(Ljava/lang/String;)Ljava/sql/Connection;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject DriverManager::getConnection(jstring arg0, __jni_impl::java::util::Properties arg1)
@@ -212,6 +244,16 @@ namespace __jni_impl::java::sql
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject DriverManager::getConnection(const QString &arg0, __jni_impl::java::util::Properties arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.sql.DriverManager",
+			"getConnection",
+			"(Ljava/lang/String;Ljava/util/Properties;)Ljava/sql/Connection;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject DriverManager::getConnection(jstring arg0, jstring arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -221,6 +263,17 @@ namespace __jni_impl::java::sql
 			arg0,
 			arg1,
 			arg2
+		);
+	}
+	QAndroidJniObject DriverManager::getConnection(const QString &arg0, const QString &arg1, const QString &arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.sql.DriverManager",
+			"getConnection",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/sql/Connection;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::sql

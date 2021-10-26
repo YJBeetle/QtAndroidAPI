@@ -229,16 +229,20 @@ namespace __jni_impl::android::opengl
 		static void glDebugMessageControlKHR(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::java::nio::IntBuffer arg4, jboolean arg5);
 		static void glDebugMessageControlKHR(jint arg0, jint arg1, jint arg2, jint arg3, jintArray arg4, jint arg5, jboolean arg6);
 		static void glDebugMessageInsertKHR(jint arg0, jint arg1, jint arg2, jint arg3, jstring arg4);
+		static void glDebugMessageInsertKHR(jint arg0, jint arg1, jint arg2, jint arg3, const QString &arg4);
 		static void glDebugMessageCallbackKHR(__jni_impl::__JniBaseClass arg0);
 		static jarray glGetDebugMessageLogKHR(jint arg0, __jni_impl::java::nio::IntBuffer arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::IntBuffer arg4);
 		static jarray glGetDebugMessageLogKHR(jint arg0, jintArray arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8);
 		static jint glGetDebugMessageLogKHR(jint arg0, __jni_impl::java::nio::IntBuffer arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::IntBuffer arg4, __jni_impl::java::nio::IntBuffer arg5, __jni_impl::java::nio::ByteBuffer arg6);
 		static jint glGetDebugMessageLogKHR(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5, jintArray arg6, jint arg7, jintArray arg8, jint arg9, jintArray arg10, jint arg11, jbyteArray arg12, jint arg13);
 		static void glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, jstring arg3);
+		static void glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, const QString &arg3);
 		static void glPopDebugGroupKHR();
 		static void glObjectLabelKHR(jint arg0, jint arg1, jint arg2, jstring arg3);
+		static void glObjectLabelKHR(jint arg0, jint arg1, jint arg2, const QString &arg3);
 		static jstring glGetObjectLabelKHR(jint arg0, jint arg1);
 		static void glObjectPtrLabelKHR(jlong arg0, jstring arg1);
+		static void glObjectPtrLabelKHR(jlong arg0, const QString &arg1);
 		static jstring glGetObjectPtrLabelKHR(jlong arg0);
 		static QAndroidJniObject glGetDebugMessageCallbackKHR();
 		static void glMinSampleShadingOES(jfloat arg0);
@@ -1742,6 +1746,19 @@ namespace __jni_impl::android::opengl
 			arg4
 		);
 	}
+	void GLES31Ext::glDebugMessageInsertKHR(jint arg0, jint arg1, jint arg2, jint arg3, const QString &arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glDebugMessageInsertKHR",
+			"(IIIILjava/lang/String;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			QAndroidJniObject::fromString(arg4).object<jstring>()
+		);
+	}
 	void GLES31Ext::glDebugMessageCallbackKHR(__jni_impl::__JniBaseClass arg0)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -1830,6 +1847,18 @@ namespace __jni_impl::android::opengl
 			arg3
 		);
 	}
+	void GLES31Ext::glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, const QString &arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glPushDebugGroupKHR",
+			"(IIILjava/lang/String;)V",
+			arg0,
+			arg1,
+			arg2,
+			QAndroidJniObject::fromString(arg3).object<jstring>()
+		);
+	}
 	void GLES31Ext::glPopDebugGroupKHR()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -1850,6 +1879,18 @@ namespace __jni_impl::android::opengl
 			arg3
 		);
 	}
+	void GLES31Ext::glObjectLabelKHR(jint arg0, jint arg1, jint arg2, const QString &arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glObjectLabelKHR",
+			"(IIILjava/lang/String;)V",
+			arg0,
+			arg1,
+			arg2,
+			QAndroidJniObject::fromString(arg3).object<jstring>()
+		);
+	}
 	jstring GLES31Ext::glGetObjectLabelKHR(jint arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -1868,6 +1909,16 @@ namespace __jni_impl::android::opengl
 			"(JLjava/lang/String;)V",
 			arg0,
 			arg1
+		);
+	}
+	void GLES31Ext::glObjectPtrLabelKHR(jlong arg0, const QString &arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glObjectPtrLabelKHR",
+			"(JLjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jstring GLES31Ext::glGetObjectPtrLabelKHR(jlong arg0)

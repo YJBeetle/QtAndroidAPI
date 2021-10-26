@@ -17,7 +17,9 @@ namespace __jni_impl::java::lang
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, jstring arg1);
+		void __constructor(const QString &arg0, const QString &arg1);
 		
 		// Methods
 	};
@@ -34,7 +36,16 @@ namespace __jni_impl::java::lang
 		__thiz = QAndroidJniObject(
 			"java.lang.RuntimePermission",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void RuntimePermission::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.RuntimePermission",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void RuntimePermission::__constructor(jstring arg0, jstring arg1)
 	{
@@ -42,7 +53,17 @@ namespace __jni_impl::java::lang
 			"java.lang.RuntimePermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void RuntimePermission::__constructor(const QString &arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.RuntimePermission",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods

@@ -38,7 +38,8 @@ namespace __jni_impl::android::util
 		__thiz = QAndroidJniObject(
 			"android.util.MutableFloat",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

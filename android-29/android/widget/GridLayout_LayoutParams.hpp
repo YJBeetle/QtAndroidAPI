@@ -83,21 +83,24 @@ namespace __jni_impl::android::widget
 			"android.widget.GridLayout$LayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void GridLayout_LayoutParams::__constructor(__jni_impl::android::widget::GridLayout_LayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.GridLayout$LayoutParams",
 			"(Landroid/widget/GridLayout$LayoutParams;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void GridLayout_LayoutParams::__constructor(__jni_impl::android::view::ViewGroup_MarginLayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.GridLayout$LayoutParams",
 			"(Landroid/view/ViewGroup$MarginLayoutParams;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void GridLayout_LayoutParams::__constructor(__jni_impl::android::widget::GridLayout_Spec arg0, __jni_impl::android::widget::GridLayout_Spec arg1)
 	{
@@ -105,20 +108,23 @@ namespace __jni_impl::android::widget
 			"android.widget.GridLayout$LayoutParams",
 			"(Landroid/widget/GridLayout$Spec;Landroid/widget/GridLayout$Spec;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void GridLayout_LayoutParams::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.GridLayout$LayoutParams",
-			"()V");
+			"()V"
+		);
 	}
 	void GridLayout_LayoutParams::__constructor(__jni_impl::android::view::ViewGroup_LayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.GridLayout$LayoutParams",
 			"(Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

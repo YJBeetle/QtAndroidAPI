@@ -73,6 +73,7 @@ namespace __jni_impl::java::lang::invoke
 		jboolean hasWrappers();
 		QAndroidJniObject generic();
 		static QAndroidJniObject fromMethodDescriptorString(jstring arg0, __jni_impl::java::lang::ClassLoader arg1);
+		static QAndroidJniObject fromMethodDescriptorString(const QString &arg0, __jni_impl::java::lang::ClassLoader arg1);
 	};
 } // namespace __jni_impl::java::lang::invoke
 
@@ -386,6 +387,16 @@ namespace __jni_impl::java::lang::invoke
 			"fromMethodDescriptorString",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/invoke/MethodType;",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject MethodType::fromMethodDescriptorString(const QString &arg0, __jni_impl::java::lang::ClassLoader arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.lang.invoke.MethodType",
+			"fromMethodDescriptorString",
+			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljava/lang/invoke/MethodType;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

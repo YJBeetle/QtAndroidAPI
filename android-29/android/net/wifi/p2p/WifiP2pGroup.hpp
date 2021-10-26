@@ -29,14 +29,14 @@ namespace __jni_impl::android::net::wifi::p2p
 		// Methods
 		jstring toString();
 		QAndroidJniObject getOwner();
-		jint getFrequency();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jstring getInterface();
 		jboolean isGroupOwner();
 		jstring getNetworkName();
 		QAndroidJniObject getClientList();
 		jstring getPassphrase();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getInterface();
+		jint getFrequency();
 	};
 } // namespace __jni_impl::android::net::wifi::p2p
 
@@ -60,14 +60,16 @@ namespace __jni_impl::android::net::wifi::p2p
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.p2p.WifiP2pGroup",
-			"()V");
+			"()V"
+		);
 	}
 	void WifiP2pGroup::__constructor(__jni_impl::android::net::wifi::p2p::WifiP2pGroup arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.p2p.WifiP2pGroup",
 			"(Landroid/net/wifi/p2p/WifiP2pGroup;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -84,36 +86,6 @@ namespace __jni_impl::android::net::wifi::p2p
 			"getOwner",
 			"()Landroid/net/wifi/p2p/WifiP2pDevice;"
 		);
-	}
-	jint WifiP2pGroup::getFrequency()
-	{
-		return __thiz.callMethod<jint>(
-			"getFrequency",
-			"()I"
-		);
-	}
-	jint WifiP2pGroup::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void WifiP2pGroup::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jstring WifiP2pGroup::getInterface()
-	{
-		return __thiz.callObjectMethod(
-			"getInterface",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	jboolean WifiP2pGroup::isGroupOwner()
 	{
@@ -142,6 +114,36 @@ namespace __jni_impl::android::net::wifi::p2p
 			"getPassphrase",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jint WifiP2pGroup::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void WifiP2pGroup::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jstring WifiP2pGroup::getInterface()
+	{
+		return __thiz.callObjectMethod(
+			"getInterface",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint WifiP2pGroup::getFrequency()
+	{
+		return __thiz.callMethod<jint>(
+			"getFrequency",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::net::wifi::p2p
 

@@ -51,7 +51,8 @@ namespace __jni_impl::android::icu::util
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.RangeValueIterator$Element",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -127,14 +127,16 @@ namespace __jni_impl::android::content::pm
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.InstrumentationInfo",
-			"()V");
+			"()V"
+		);
 	}
 	void InstrumentationInfo::__constructor(__jni_impl::android::content::pm::InstrumentationInfo arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.InstrumentationInfo",
 			"(Landroid/content/pm/InstrumentationInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

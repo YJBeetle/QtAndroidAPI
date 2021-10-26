@@ -31,7 +31,8 @@ namespace __jni_impl::java::security::acl
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.acl.AclNotFoundException",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

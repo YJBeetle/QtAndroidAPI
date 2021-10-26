@@ -40,11 +40,11 @@ namespace __jni_impl::android::view
 		QAndroidJniObject getHolder();
 		QAndroidJniObject getSurfaceControl();
 		void setSecure(jboolean arg0);
+		void setZOrderOnTop(jboolean arg0);
+		void setZOrderMediaOverlay(jboolean arg0);
 		jboolean gatherTransparentRegion(__jni_impl::android::graphics::Region arg0);
 		void setVisibility(jint arg0);
 		void draw(__jni_impl::android::graphics::Canvas arg0);
-		void setZOrderMediaOverlay(jboolean arg0);
-		void setZOrderOnTop(jboolean arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -66,7 +66,8 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void SurfaceView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -75,7 +76,8 @@ namespace __jni_impl::android::view
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void SurfaceView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -83,14 +85,16 @@ namespace __jni_impl::android::view
 			"android.view.SurfaceView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void SurfaceView::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.SurfaceView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -112,6 +116,22 @@ namespace __jni_impl::android::view
 	{
 		__thiz.callMethod<void>(
 			"setSecure",
+			"(Z)V",
+			arg0
+		);
+	}
+	void SurfaceView::setZOrderOnTop(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setZOrderOnTop",
+			"(Z)V",
+			arg0
+		);
+	}
+	void SurfaceView::setZOrderMediaOverlay(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setZOrderMediaOverlay",
 			"(Z)V",
 			arg0
 		);
@@ -138,22 +158,6 @@ namespace __jni_impl::android::view
 			"draw",
 			"(Landroid/graphics/Canvas;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	void SurfaceView::setZOrderMediaOverlay(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setZOrderMediaOverlay",
-			"(Z)V",
-			arg0
-		);
-	}
-	void SurfaceView::setZOrderOnTop(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setZOrderOnTop",
-			"(Z)V",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::view

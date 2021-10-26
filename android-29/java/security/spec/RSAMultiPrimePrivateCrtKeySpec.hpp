@@ -53,7 +53,8 @@ namespace __jni_impl::java::security::spec
 			arg5.__jniObject().object(),
 			arg6.__jniObject().object(),
 			arg7.__jniObject().object(),
-			arg8);
+			arg8
+		);
 	}
 	void RSAMultiPrimePrivateCrtKeySpec::__constructor(__jni_impl::java::math::BigInteger arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2, __jni_impl::java::math::BigInteger arg3, __jni_impl::java::math::BigInteger arg4, __jni_impl::java::math::BigInteger arg5, __jni_impl::java::math::BigInteger arg6, __jni_impl::java::math::BigInteger arg7, jarray arg8, __jni_impl::__JniBaseClass arg9)
 	{
@@ -69,7 +70,8 @@ namespace __jni_impl::java::security::spec
 			arg6.__jniObject().object(),
 			arg7.__jniObject().object(),
 			arg8,
-			arg9.__jniObject().object());
+			arg9.__jniObject().object()
+		);
 	}
 	
 	// Methods

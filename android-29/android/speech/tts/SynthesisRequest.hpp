@@ -19,6 +19,7 @@ namespace __jni_impl::android::speech::tts
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void __constructor(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		
 		// Methods
 		jstring getLanguage();
@@ -47,7 +48,17 @@ namespace __jni_impl::android::speech::tts
 			"android.speech.tts.SynthesisRequest",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void SynthesisRequest::__constructor(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.speech.tts.SynthesisRequest",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

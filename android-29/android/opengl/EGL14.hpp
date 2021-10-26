@@ -998,7 +998,8 @@ namespace __jni_impl::android::opengl
 	{
 		__thiz = QAndroidJniObject(
 			"android.opengl.EGL14",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

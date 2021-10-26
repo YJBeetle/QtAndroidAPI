@@ -61,20 +61,23 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.IdentityHashMap",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void IdentityHashMap::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.IdentityHashMap",
-			"()V");
+			"()V"
+		);
 	}
 	void IdentityHashMap::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.IdentityHashMap",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

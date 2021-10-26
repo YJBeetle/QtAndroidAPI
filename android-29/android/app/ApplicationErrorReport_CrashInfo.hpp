@@ -32,6 +32,7 @@ namespace __jni_impl::android::app
 		// Methods
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void dump(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -95,20 +96,23 @@ namespace __jni_impl::android::app
 		__thiz = QAndroidJniObject(
 			"android.app.ApplicationErrorReport$CrashInfo",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ApplicationErrorReport_CrashInfo::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ApplicationErrorReport$CrashInfo",
 			"(Ljava/lang/Throwable;)V",
-			arg0);
+			arg0
+		);
 	}
 	void ApplicationErrorReport_CrashInfo::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ApplicationErrorReport$CrashInfo",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -128,6 +132,15 @@ namespace __jni_impl::android::app
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	void ApplicationErrorReport_CrashInfo::dump(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::app

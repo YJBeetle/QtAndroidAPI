@@ -32,7 +32,8 @@ namespace __jni_impl::android::telephony
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.CellLocation",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

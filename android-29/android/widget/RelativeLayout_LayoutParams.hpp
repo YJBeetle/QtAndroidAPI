@@ -37,12 +37,13 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		jstring debug(jstring arg0);
+		jstring debug(const QString &arg0);
 		jintArray getRules();
-		void addRule(jint arg0, jint arg1);
+		void resolveLayoutDirection(jint arg0);
 		void addRule(jint arg0);
+		void addRule(jint arg0, jint arg1);
 		void removeRule(jint arg0);
 		jint getRule(jint arg0);
-		void resolveLayoutDirection(jint arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -66,21 +67,24 @@ namespace __jni_impl::android::widget
 		__thiz = QAndroidJniObject(
 			"android.widget.RelativeLayout$LayoutParams",
 			"(Landroid/widget/RelativeLayout$LayoutParams;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void RelativeLayout_LayoutParams::__constructor(__jni_impl::android::view::ViewGroup_MarginLayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RelativeLayout$LayoutParams",
 			"(Landroid/view/ViewGroup$MarginLayoutParams;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void RelativeLayout_LayoutParams::__constructor(__jni_impl::android::view::ViewGroup_LayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RelativeLayout$LayoutParams",
 			"(Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void RelativeLayout_LayoutParams::__constructor(jint arg0, jint arg1)
 	{
@@ -88,7 +92,8 @@ namespace __jni_impl::android::widget
 			"android.widget.RelativeLayout$LayoutParams",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void RelativeLayout_LayoutParams::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -96,7 +101,8 @@ namespace __jni_impl::android::widget
 			"android.widget.RelativeLayout$LayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -108,6 +114,14 @@ namespace __jni_impl::android::widget
 			arg0
 		).object<jstring>();
 	}
+	jstring RelativeLayout_LayoutParams::debug(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"debug",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	jintArray RelativeLayout_LayoutParams::getRules()
 	{
 		return __thiz.callObjectMethod(
@@ -115,13 +129,12 @@ namespace __jni_impl::android::widget
 			"()[I"
 		).object<jintArray>();
 	}
-	void RelativeLayout_LayoutParams::addRule(jint arg0, jint arg1)
+	void RelativeLayout_LayoutParams::resolveLayoutDirection(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"addRule",
-			"(II)V",
-			arg0,
-			arg1
+			"resolveLayoutDirection",
+			"(I)V",
+			arg0
 		);
 	}
 	void RelativeLayout_LayoutParams::addRule(jint arg0)
@@ -130,6 +143,15 @@ namespace __jni_impl::android::widget
 			"addRule",
 			"(I)V",
 			arg0
+		);
+	}
+	void RelativeLayout_LayoutParams::addRule(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"addRule",
+			"(II)V",
+			arg0,
+			arg1
 		);
 	}
 	void RelativeLayout_LayoutParams::removeRule(jint arg0)
@@ -145,14 +167,6 @@ namespace __jni_impl::android::widget
 		return __thiz.callMethod<jint>(
 			"getRule",
 			"(I)I",
-			arg0
-		);
-	}
-	void RelativeLayout_LayoutParams::resolveLayoutDirection(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"resolveLayoutDirection",
-			"(I)V",
 			arg0
 		);
 	}

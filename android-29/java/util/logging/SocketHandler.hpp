@@ -26,6 +26,7 @@ namespace __jni_impl::java::util::logging
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0, jint arg1);
+		void __constructor(const QString &arg0, jint arg1);
 		
 		// Methods
 		void close();
@@ -45,7 +46,8 @@ namespace __jni_impl::java::util::logging
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.logging.SocketHandler",
-			"()V");
+			"()V"
+		);
 	}
 	void SocketHandler::__constructor(jstring arg0, jint arg1)
 	{
@@ -53,7 +55,17 @@ namespace __jni_impl::java::util::logging
 			"java.util.logging.SocketHandler",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void SocketHandler::__constructor(const QString &arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.logging.SocketHandler",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods

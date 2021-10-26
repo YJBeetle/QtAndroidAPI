@@ -31,9 +31,9 @@ namespace __jni_impl::android::graphics::pdf
 		// Methods
 		void close();
 		void writeTo(__jni_impl::java::io::OutputStream arg0);
-		QAndroidJniObject getPages();
 		QAndroidJniObject startPage(__jni_impl::android::graphics::pdf::PdfDocument_PageInfo arg0);
 		void finishPage(__jni_impl::android::graphics::pdf::PdfDocument_Page arg0);
+		QAndroidJniObject getPages();
 	};
 } // namespace __jni_impl::android::graphics::pdf
 
@@ -50,7 +50,8 @@ namespace __jni_impl::android::graphics::pdf
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.pdf.PdfDocument",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -69,13 +70,6 @@ namespace __jni_impl::android::graphics::pdf
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject PdfDocument::getPages()
-	{
-		return __thiz.callObjectMethod(
-			"getPages",
-			"()Ljava/util/List;"
-		);
-	}
 	QAndroidJniObject PdfDocument::startPage(__jni_impl::android::graphics::pdf::PdfDocument_PageInfo arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -90,6 +84,13 @@ namespace __jni_impl::android::graphics::pdf
 			"finishPage",
 			"(Landroid/graphics/pdf/PdfDocument$Page;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject PdfDocument::getPages()
+	{
+		return __thiz.callObjectMethod(
+			"getPages",
+			"()Ljava/util/List;"
 		);
 	}
 } // namespace __jni_impl::android::graphics::pdf

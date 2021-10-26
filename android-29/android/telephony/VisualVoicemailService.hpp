@@ -8,10 +8,6 @@
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
 namespace __jni_impl::android::telephony
 {
 	class VisualVoicemailService_VisualVoicemailTask;
@@ -23,6 +19,10 @@ namespace __jni_impl::android::telecom
 namespace __jni_impl::android::telephony
 {
 	class VisualVoicemailSms;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
 }
 
 namespace __jni_impl::android::telephony
@@ -37,18 +37,18 @@ namespace __jni_impl::android::telephony
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		void onCellServiceConnected(__jni_impl::android::telephony::VisualVoicemailService_VisualVoicemailTask arg0, __jni_impl::android::telecom::PhoneAccountHandle arg1);
 		void onSmsReceived(__jni_impl::android::telephony::VisualVoicemailService_VisualVoicemailTask arg0, __jni_impl::android::telephony::VisualVoicemailSms arg1);
 		void onSimRemoved(__jni_impl::android::telephony::VisualVoicemailService_VisualVoicemailTask arg0, __jni_impl::android::telecom::PhoneAccountHandle arg1);
 		void onStopped(__jni_impl::android::telephony::VisualVoicemailService_VisualVoicemailTask arg0);
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 	};
 } // namespace __jni_impl::android::telephony
 
-#include "../content/Intent.hpp"
 #include "VisualVoicemailService_VisualVoicemailTask.hpp"
 #include "../telecom/PhoneAccountHandle.hpp"
 #include "VisualVoicemailSms.hpp"
+#include "../content/Intent.hpp"
 
 namespace __jni_impl::android::telephony
 {
@@ -67,18 +67,11 @@ namespace __jni_impl::android::telephony
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.VisualVoicemailService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	QAndroidJniObject VisualVoicemailService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
-		);
-	}
 	void VisualVoicemailService::onCellServiceConnected(__jni_impl::android::telephony::VisualVoicemailService_VisualVoicemailTask arg0, __jni_impl::android::telecom::PhoneAccountHandle arg1)
 	{
 		__thiz.callMethod<void>(
@@ -111,6 +104,14 @@ namespace __jni_impl::android::telephony
 		__thiz.callMethod<void>(
 			"onStopped",
 			"(Landroid/telephony/VisualVoicemailService$VisualVoicemailTask;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject VisualVoicemailService::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
 			arg0.__jniObject().object()
 		);
 	}

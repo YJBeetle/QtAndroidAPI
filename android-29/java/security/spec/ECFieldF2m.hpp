@@ -45,7 +45,8 @@ namespace __jni_impl::java::security::spec
 			"java.security.spec.ECFieldF2m",
 			"(I[I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void ECFieldF2m::__constructor(jint arg0, __jni_impl::java::math::BigInteger arg1)
 	{
@@ -53,14 +54,16 @@ namespace __jni_impl::java::security::spec
 			"java.security.spec.ECFieldF2m",
 			"(ILjava/math/BigInteger;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ECFieldF2m::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.ECFieldF2m",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

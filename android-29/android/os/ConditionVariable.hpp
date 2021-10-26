@@ -35,14 +35,16 @@ namespace __jni_impl::android::os
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.ConditionVariable",
-			"()V");
+			"()V"
+		);
 	}
 	void ConditionVariable::__constructor(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.ConditionVariable",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

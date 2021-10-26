@@ -51,21 +51,24 @@ namespace __jni_impl::android::hardware::fingerprint
 		__thiz = QAndroidJniObject(
 			"android.hardware.fingerprint.FingerprintManager$CryptoObject",
 			"(Ljavax/crypto/Mac;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void FingerprintManager_CryptoObject::__constructor(__jni_impl::javax::crypto::Cipher arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.fingerprint.FingerprintManager$CryptoObject",
 			"(Ljavax/crypto/Cipher;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void FingerprintManager_CryptoObject::__constructor(__jni_impl::java::security::Signature arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.fingerprint.FingerprintManager$CryptoObject",
 			"(Ljava/security/Signature;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

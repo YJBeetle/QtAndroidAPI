@@ -300,7 +300,8 @@ namespace __jni_impl::android::content::pm
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.PackageInfo",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -30,7 +30,8 @@ namespace __jni_impl::android::graphics
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Xfermode",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

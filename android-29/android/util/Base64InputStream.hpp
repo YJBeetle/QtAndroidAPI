@@ -47,7 +47,8 @@ namespace __jni_impl::android::util
 			"android.util.Base64InputStream",
 			"(Ljava/io/InputStream;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

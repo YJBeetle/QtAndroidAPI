@@ -98,14 +98,16 @@ namespace __jni_impl::android::view
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.MotionEvent$PointerCoords",
-			"()V");
+			"()V"
+		);
 	}
 	void MotionEvent_PointerCoords::__constructor(__jni_impl::android::view::MotionEvent_PointerCoords arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.MotionEvent$PointerCoords",
 			"(Landroid/view/MotionEvent$PointerCoords;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

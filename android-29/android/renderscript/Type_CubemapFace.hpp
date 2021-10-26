@@ -29,6 +29,7 @@ namespace __jni_impl::android::renderscript
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::renderscript
 
@@ -133,6 +134,15 @@ namespace __jni_impl::android::renderscript
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/renderscript/Type$CubemapFace;",
 			arg0
+		);
+	}
+	QAndroidJniObject Type_CubemapFace::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.renderscript.Type$CubemapFace",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/renderscript/Type$CubemapFace;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::renderscript

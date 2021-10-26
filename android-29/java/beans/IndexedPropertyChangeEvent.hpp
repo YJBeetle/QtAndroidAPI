@@ -21,6 +21,7 @@ namespace __jni_impl::java::beans
 		
 		// Constructors
 		void __constructor(jobject arg0, jstring arg1, jobject arg2, jobject arg3, jint arg4);
+		void __constructor(jobject arg0, const QString &arg1, jobject arg2, jobject arg3, jint arg4);
 		
 		// Methods
 		jint getIndex();
@@ -43,7 +44,20 @@ namespace __jni_impl::java::beans
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
+	}
+	void IndexedPropertyChangeEvent::__constructor(jobject arg0, const QString &arg1, jobject arg2, jobject arg3, jint arg4)
+	{
+		__thiz = QAndroidJniObject(
+			"java.beans.IndexedPropertyChangeEvent",
+			"(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;I)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3,
+			arg4
+		);
 	}
 	
 	// Methods

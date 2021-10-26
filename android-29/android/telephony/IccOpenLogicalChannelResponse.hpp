@@ -29,10 +29,10 @@ namespace __jni_impl::android::telephony
 		// Methods
 		jstring toString();
 		jint getChannel();
+		jint getStatus();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jbyteArray getSelectResponse();
-		jint getStatus();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -108,6 +108,13 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
+	jint IccOpenLogicalChannelResponse::getStatus()
+	{
+		return __thiz.callMethod<jint>(
+			"getStatus",
+			"()I"
+		);
+	}
 	jint IccOpenLogicalChannelResponse::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -130,13 +137,6 @@ namespace __jni_impl::android::telephony
 			"getSelectResponse",
 			"()[B"
 		).object<jbyteArray>();
-	}
-	jint IccOpenLogicalChannelResponse::getStatus()
-	{
-		return __thiz.callMethod<jint>(
-			"getStatus",
-			"()I"
-		);
 	}
 } // namespace __jni_impl::android::telephony
 

@@ -62,7 +62,8 @@ namespace __jni_impl::android::media
 		__thiz = QAndroidJniObject(
 			"android.media.MediaCodecList",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

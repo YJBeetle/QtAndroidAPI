@@ -34,7 +34,8 @@ namespace __jni_impl::android::service::carrier
 			"android.service.carrier.CarrierMessagingService$SendSmsResult",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

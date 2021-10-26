@@ -30,11 +30,11 @@ namespace __jni_impl::android::print
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
+		jlong getDataSize();
+		jint getContentType();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getPageCount();
-		jlong getDataSize();
-		jint getContentType();
 	};
 } // namespace __jni_impl::android::print
 
@@ -118,6 +118,20 @@ namespace __jni_impl::android::print
 			"()I"
 		);
 	}
+	jlong PrintDocumentInfo::getDataSize()
+	{
+		return __thiz.callMethod<jlong>(
+			"getDataSize",
+			"()J"
+		);
+	}
+	jint PrintDocumentInfo::getContentType()
+	{
+		return __thiz.callMethod<jint>(
+			"getContentType",
+			"()I"
+		);
+	}
 	jint PrintDocumentInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -138,20 +152,6 @@ namespace __jni_impl::android::print
 	{
 		return __thiz.callMethod<jint>(
 			"getPageCount",
-			"()I"
-		);
-	}
-	jlong PrintDocumentInfo::getDataSize()
-	{
-		return __thiz.callMethod<jlong>(
-			"getDataSize",
-			"()J"
-		);
-	}
-	jint PrintDocumentInfo::getContentType()
-	{
-		return __thiz.callMethod<jint>(
-			"getContentType",
 			"()I"
 		);
 	}

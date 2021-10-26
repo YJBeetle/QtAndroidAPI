@@ -19,20 +19,28 @@ namespace __jni_impl::android::net::sip
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1);
+		void __constructor(const QString &arg0, const QString &arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(__jni_impl::android::net::sip::SipProfile arg0);
 		
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject setProtocol(jstring arg0);
+		QAndroidJniObject setProtocol(const QString &arg0);
 		QAndroidJniObject setPassword(jstring arg0);
+		QAndroidJniObject setPassword(const QString &arg0);
 		QAndroidJniObject setPort(jint arg0);
-		QAndroidJniObject setProfileName(jstring arg0);
 		QAndroidJniObject setAuthUserName(jstring arg0);
+		QAndroidJniObject setAuthUserName(const QString &arg0);
 		QAndroidJniObject setOutboundProxy(jstring arg0);
+		QAndroidJniObject setOutboundProxy(const QString &arg0);
 		QAndroidJniObject setDisplayName(jstring arg0);
+		QAndroidJniObject setDisplayName(const QString &arg0);
 		QAndroidJniObject setSendKeepAlive(jboolean arg0);
 		QAndroidJniObject setAutoRegistration(jboolean arg0);
+		QAndroidJniObject setProfileName(jstring arg0);
+		QAndroidJniObject setProfileName(const QString &arg0);
 	};
 } // namespace __jni_impl::android::net::sip
 
@@ -49,21 +57,41 @@ namespace __jni_impl::android::net::sip
 			"android.net.sip.SipProfile$Builder",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void SipProfile_Builder::__constructor(const QString &arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.net.sip.SipProfile$Builder",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void SipProfile_Builder::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.sip.SipProfile$Builder",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void SipProfile_Builder::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.net.sip.SipProfile$Builder",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void SipProfile_Builder::__constructor(__jni_impl::android::net::sip::SipProfile arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.sip.SipProfile$Builder",
 			"(Landroid/net/sip/SipProfile;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -82,6 +110,14 @@ namespace __jni_impl::android::net::sip
 			arg0
 		);
 	}
+	QAndroidJniObject SipProfile_Builder::setProtocol(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setProtocol",
+			"(Ljava/lang/String;)Landroid/net/sip/SipProfile$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject SipProfile_Builder::setPassword(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -90,19 +126,19 @@ namespace __jni_impl::android::net::sip
 			arg0
 		);
 	}
+	QAndroidJniObject SipProfile_Builder::setPassword(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setPassword",
+			"(Ljava/lang/String;)Landroid/net/sip/SipProfile$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject SipProfile_Builder::setPort(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setPort",
 			"(I)Landroid/net/sip/SipProfile$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject SipProfile_Builder::setProfileName(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setProfileName",
-			"(Ljava/lang/String;)Landroid/net/sip/SipProfile$Builder;",
 			arg0
 		);
 	}
@@ -114,6 +150,14 @@ namespace __jni_impl::android::net::sip
 			arg0
 		);
 	}
+	QAndroidJniObject SipProfile_Builder::setAuthUserName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setAuthUserName",
+			"(Ljava/lang/String;)Landroid/net/sip/SipProfile$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject SipProfile_Builder::setOutboundProxy(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -122,12 +166,28 @@ namespace __jni_impl::android::net::sip
 			arg0
 		);
 	}
+	QAndroidJniObject SipProfile_Builder::setOutboundProxy(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setOutboundProxy",
+			"(Ljava/lang/String;)Landroid/net/sip/SipProfile$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject SipProfile_Builder::setDisplayName(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setDisplayName",
 			"(Ljava/lang/String;)Landroid/net/sip/SipProfile$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject SipProfile_Builder::setDisplayName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setDisplayName",
+			"(Ljava/lang/String;)Landroid/net/sip/SipProfile$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject SipProfile_Builder::setSendKeepAlive(jboolean arg0)
@@ -144,6 +204,22 @@ namespace __jni_impl::android::net::sip
 			"setAutoRegistration",
 			"(Z)Landroid/net/sip/SipProfile$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject SipProfile_Builder::setProfileName(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setProfileName",
+			"(Ljava/lang/String;)Landroid/net/sip/SipProfile$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject SipProfile_Builder::setProfileName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setProfileName",
+			"(Ljava/lang/String;)Landroid/net/sip/SipProfile$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::net::sip

@@ -53,14 +53,16 @@ namespace __jni_impl::android::media::audiofx
 			arg4,
 			arg5,
 			arg6,
-			arg7);
+			arg7
+		);
 	}
 	void DynamicsProcessing_Limiter::__constructor(__jni_impl::android::media::audiofx::DynamicsProcessing_Limiter arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.DynamicsProcessing$Limiter",
 			"(Landroid/media/audiofx/DynamicsProcessing$Limiter;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

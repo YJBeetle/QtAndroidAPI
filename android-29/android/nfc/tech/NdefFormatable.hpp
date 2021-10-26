@@ -30,8 +30,8 @@ namespace __jni_impl::android::nfc::tech
 		void connect();
 		void close();
 		QAndroidJniObject getTag();
-		jboolean isConnected();
 		void formatReadOnly(__jni_impl::android::nfc::NdefMessage arg0);
+		jboolean isConnected();
 	};
 } // namespace __jni_impl::android::nfc::tech
 
@@ -89,19 +89,19 @@ namespace __jni_impl::android::nfc::tech
 			"()Landroid/nfc/Tag;"
 		);
 	}
-	jboolean NdefFormatable::isConnected()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isConnected",
-			"()Z"
-		);
-	}
 	void NdefFormatable::formatReadOnly(__jni_impl::android::nfc::NdefMessage arg0)
 	{
 		__thiz.callMethod<void>(
 			"formatReadOnly",
 			"(Landroid/nfc/NdefMessage;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	jboolean NdefFormatable::isConnected()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isConnected",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::nfc::tech

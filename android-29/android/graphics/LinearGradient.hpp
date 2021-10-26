@@ -46,7 +46,8 @@ namespace __jni_impl::android::graphics
 			arg3,
 			arg4,
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void LinearGradient::__constructor(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4, jint arg5, __jni_impl::android::graphics::Shader_TileMode arg6)
 	{
@@ -59,7 +60,8 @@ namespace __jni_impl::android::graphics
 			arg3,
 			arg4,
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void LinearGradient::__constructor(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jlongArray arg4, jfloatArray arg5, __jni_impl::android::graphics::Shader_TileMode arg6)
 	{
@@ -72,7 +74,8 @@ namespace __jni_impl::android::graphics
 			arg3,
 			arg4,
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	void LinearGradient::__constructor(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jintArray arg4, jfloatArray arg5, __jni_impl::android::graphics::Shader_TileMode arg6)
 	{
@@ -85,7 +88,8 @@ namespace __jni_impl::android::graphics
 			arg3,
 			arg4,
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	
 	// Methods

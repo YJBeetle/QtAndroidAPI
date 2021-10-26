@@ -31,13 +31,17 @@ namespace __jni_impl::javax::security::auth::x500
 		// Constructors
 		void __constructor(__jni_impl::java::io::InputStream arg0);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		void __constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(jbyteArray arg0);
 		
 		// Methods
 		jstring getName();
 		jstring getName(jstring arg0);
+		jstring getName(const QString &arg0);
 		jstring getName(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		jstring getName(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
@@ -83,14 +87,24 @@ namespace __jni_impl::javax::security::auth::x500
 		__thiz = QAndroidJniObject(
 			"javax.security.auth.x500.X500Principal",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void X500Principal::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.auth.x500.X500Principal",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void X500Principal::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.security.auth.x500.X500Principal",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void X500Principal::__constructor(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -98,14 +112,25 @@ namespace __jni_impl::javax::security::auth::x500
 			"javax.security.auth.x500.X500Principal",
 			"(Ljava/lang/String;Ljava/util/Map;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void X500Principal::__constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.security.auth.x500.X500Principal",
+			"(Ljava/lang/String;Ljava/util/Map;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	void X500Principal::__constructor(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.auth.x500.X500Principal",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -124,12 +149,29 @@ namespace __jni_impl::javax::security::auth::x500
 			arg0
 		).object<jstring>();
 	}
+	jstring X500Principal::getName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	jstring X500Principal::getName(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getName",
 			"(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;",
 			arg0,
+			arg1.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring X500Principal::getName(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jstring>();
 	}

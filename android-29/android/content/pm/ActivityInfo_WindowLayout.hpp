@@ -86,7 +86,8 @@ namespace __jni_impl::android::content::pm
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	
 	// Methods

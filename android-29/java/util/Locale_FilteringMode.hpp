@@ -25,6 +25,7 @@ namespace __jni_impl::java::util
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::java::util
 
@@ -97,6 +98,15 @@ namespace __jni_impl::java::util
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/util/Locale$FilteringMode;",
 			arg0
+		);
+	}
+	QAndroidJniObject Locale_FilteringMode::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.Locale$FilteringMode",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/util/Locale$FilteringMode;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::util

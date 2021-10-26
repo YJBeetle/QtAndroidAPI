@@ -29,9 +29,9 @@ namespace __jni_impl::android::graphics
 		
 		// Methods
 		jfloat getLength();
+		jboolean getMatrix(jfloat arg0, __jni_impl::android::graphics::Matrix arg1, jint arg2);
 		jboolean isClosed();
 		void setPath(__jni_impl::android::graphics::Path arg0, jboolean arg1);
-		jboolean getMatrix(jfloat arg0, __jni_impl::android::graphics::Matrix arg1, jint arg2);
 		jboolean getPosTan(jfloat arg0, jfloatArray arg1, jfloatArray arg2);
 		jboolean getSegment(jfloat arg0, jfloat arg1, __jni_impl::android::graphics::Path arg2, jboolean arg3);
 		jboolean nextContour();
@@ -64,7 +64,8 @@ namespace __jni_impl::android::graphics
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.PathMeasure",
-			"()V");
+			"()V"
+		);
 	}
 	void PathMeasure::__constructor(__jni_impl::android::graphics::Path arg0, jboolean arg1)
 	{
@@ -72,7 +73,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.PathMeasure",
 			"(Landroid/graphics/Path;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -81,6 +83,16 @@ namespace __jni_impl::android::graphics
 		return __thiz.callMethod<jfloat>(
 			"getLength",
 			"()F"
+		);
+	}
+	jboolean PathMeasure::getMatrix(jfloat arg0, __jni_impl::android::graphics::Matrix arg1, jint arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getMatrix",
+			"(FLandroid/graphics/Matrix;I)Z",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2
 		);
 	}
 	jboolean PathMeasure::isClosed()
@@ -97,16 +109,6 @@ namespace __jni_impl::android::graphics
 			"(Landroid/graphics/Path;Z)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean PathMeasure::getMatrix(jfloat arg0, __jni_impl::android::graphics::Matrix arg1, jint arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getMatrix",
-			"(FLandroid/graphics/Matrix;I)Z",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2
 		);
 	}
 	jboolean PathMeasure::getPosTan(jfloat arg0, jfloatArray arg1, jfloatArray arg2)

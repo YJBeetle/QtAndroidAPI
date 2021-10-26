@@ -10,17 +10,25 @@ namespace __jni_impl::android::graphics
 {
 	class ColorFilter;
 }
-namespace __jni_impl::android::graphics::drawable
-{
-	class DrawableContainer_DrawableContainerState;
-}
 namespace __jni_impl::android::graphics
 {
-	class Rect;
+	class Canvas;
 }
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
+}
+namespace __jni_impl::android::content::res
+{
+	class ColorStateList;
+}
+namespace __jni_impl::android::graphics
+{
+	class BlendMode;
+}
+namespace __jni_impl::android::graphics
+{
+	class Rect;
 }
 namespace __jni_impl::android::content::res
 {
@@ -38,17 +46,9 @@ namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable_ConstantState;
 }
-namespace __jni_impl::android::graphics
+namespace __jni_impl::android::graphics::drawable
 {
-	class Canvas;
-}
-namespace __jni_impl::android::content::res
-{
-	class ColorStateList;
-}
-namespace __jni_impl::android::graphics
-{
-	class BlendMode;
+	class DrawableContainer_DrawableContainerState;
 }
 
 namespace __jni_impl::android::graphics::drawable
@@ -64,9 +64,16 @@ namespace __jni_impl::android::graphics::drawable
 		// Methods
 		void setDither(jboolean arg0);
 		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
-		void setEnterFadeDuration(jint arg0);
-		void setExitFadeDuration(jint arg0);
-		jboolean selectDrawable(jint arg0);
+		void setAlpha(jint arg0);
+		jint getAlpha();
+		void draw(__jni_impl::android::graphics::Canvas arg0);
+		void invalidateDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
+		void scheduleDrawable(__jni_impl::android::graphics::drawable::Drawable arg0, __jni_impl::__JniBaseClass arg1, jlong arg2);
+		void unscheduleDrawable(__jni_impl::android::graphics::drawable::Drawable arg0, __jni_impl::__JniBaseClass arg1);
+		jint getMinimumHeight();
+		jint getMinimumWidth();
+		void setTintList(__jni_impl::android::content::res::ColorStateList arg0);
+		void setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0);
 		jint getChangingConfigurations();
 		jboolean setVisible(jboolean arg0, jboolean arg1);
 		jboolean onLayoutDirectionChanged(jint arg0);
@@ -88,30 +95,23 @@ namespace __jni_impl::android::graphics::drawable
 		void getOutline(__jni_impl::android::graphics::Outline arg0);
 		QAndroidJniObject mutate();
 		QAndroidJniObject getConstantState();
-		jint getAlpha();
-		void draw(__jni_impl::android::graphics::Canvas arg0);
-		void invalidateDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
-		void scheduleDrawable(__jni_impl::android::graphics::drawable::Drawable arg0, __jni_impl::__JniBaseClass arg1, jlong arg2);
-		void unscheduleDrawable(__jni_impl::android::graphics::drawable::Drawable arg0, __jni_impl::__JniBaseClass arg1);
-		jint getMinimumHeight();
-		jint getMinimumWidth();
-		void setTintList(__jni_impl::android::content::res::ColorStateList arg0);
-		void setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0);
-		void setAlpha(jint arg0);
+		void setEnterFadeDuration(jint arg0);
+		void setExitFadeDuration(jint arg0);
+		jboolean selectDrawable(jint arg0);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
 #include "../ColorFilter.hpp"
-#include "DrawableContainer_DrawableContainerState.hpp"
-#include "../Rect.hpp"
+#include "../Canvas.hpp"
 #include "Drawable.hpp"
+#include "../../content/res/ColorStateList.hpp"
+#include "../BlendMode.hpp"
+#include "../Rect.hpp"
 #include "../../content/res/Resources_Theme.hpp"
 #include "../Insets.hpp"
 #include "../Outline.hpp"
 #include "Drawable_ConstantState.hpp"
-#include "../Canvas.hpp"
-#include "../../content/res/ColorStateList.hpp"
-#include "../BlendMode.hpp"
+#include "DrawableContainer_DrawableContainerState.hpp"
 
 namespace __jni_impl::android::graphics::drawable
 {
@@ -122,7 +122,8 @@ namespace __jni_impl::android::graphics::drawable
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.DrawableContainer",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -142,28 +143,84 @@ namespace __jni_impl::android::graphics::drawable
 			arg0.__jniObject().object()
 		);
 	}
-	void DrawableContainer::setEnterFadeDuration(jint arg0)
+	void DrawableContainer::setAlpha(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setEnterFadeDuration",
+			"setAlpha",
 			"(I)V",
 			arg0
 		);
 	}
-	void DrawableContainer::setExitFadeDuration(jint arg0)
+	jint DrawableContainer::getAlpha()
 	{
-		__thiz.callMethod<void>(
-			"setExitFadeDuration",
-			"(I)V",
-			arg0
+		return __thiz.callMethod<jint>(
+			"getAlpha",
+			"()I"
 		);
 	}
-	jboolean DrawableContainer::selectDrawable(jint arg0)
+	void DrawableContainer::draw(__jni_impl::android::graphics::Canvas arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"selectDrawable",
-			"(I)Z",
-			arg0
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void DrawableContainer::invalidateDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		__thiz.callMethod<void>(
+			"invalidateDrawable",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void DrawableContainer::scheduleDrawable(__jni_impl::android::graphics::drawable::Drawable arg0, __jni_impl::__JniBaseClass arg1, jlong arg2)
+	{
+		__thiz.callMethod<void>(
+			"scheduleDrawable",
+			"(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
+	void DrawableContainer::unscheduleDrawable(__jni_impl::android::graphics::drawable::Drawable arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"unscheduleDrawable",
+			"(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	jint DrawableContainer::getMinimumHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getMinimumHeight",
+			"()I"
+		);
+	}
+	jint DrawableContainer::getMinimumWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getMinimumWidth",
+			"()I"
+		);
+	}
+	void DrawableContainer::setTintList(__jni_impl::android::content::res::ColorStateList arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTintList",
+			"(Landroid/content/res/ColorStateList;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void DrawableContainer::setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTintBlendMode",
+			"(Landroid/graphics/BlendMode;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	jint DrawableContainer::getChangingConfigurations()
@@ -327,83 +384,27 @@ namespace __jni_impl::android::graphics::drawable
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
-	jint DrawableContainer::getAlpha()
-	{
-		return __thiz.callMethod<jint>(
-			"getAlpha",
-			"()I"
-		);
-	}
-	void DrawableContainer::draw(__jni_impl::android::graphics::Canvas arg0)
+	void DrawableContainer::setEnterFadeDuration(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void DrawableContainer::invalidateDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		__thiz.callMethod<void>(
-			"invalidateDrawable",
-			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void DrawableContainer::scheduleDrawable(__jni_impl::android::graphics::drawable::Drawable arg0, __jni_impl::__JniBaseClass arg1, jlong arg2)
-	{
-		__thiz.callMethod<void>(
-			"scheduleDrawable",
-			"(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	void DrawableContainer::unscheduleDrawable(__jni_impl::android::graphics::drawable::Drawable arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"unscheduleDrawable",
-			"(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	jint DrawableContainer::getMinimumHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getMinimumHeight",
-			"()I"
-		);
-	}
-	jint DrawableContainer::getMinimumWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getMinimumWidth",
-			"()I"
-		);
-	}
-	void DrawableContainer::setTintList(__jni_impl::android::content::res::ColorStateList arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTintList",
-			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void DrawableContainer::setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTintBlendMode",
-			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void DrawableContainer::setAlpha(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAlpha",
+			"setEnterFadeDuration",
 			"(I)V",
+			arg0
+		);
+	}
+	void DrawableContainer::setExitFadeDuration(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setExitFadeDuration",
+			"(I)V",
+			arg0
+		);
+	}
+	jboolean DrawableContainer::selectDrawable(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"selectDrawable",
+			"(I)Z",
 			arg0
 		);
 	}

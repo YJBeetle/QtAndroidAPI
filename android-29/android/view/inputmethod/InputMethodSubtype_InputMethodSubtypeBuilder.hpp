@@ -23,6 +23,7 @@ namespace __jni_impl::android::view::inputmethod
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject setLanguageTag(jstring arg0);
+		QAndroidJniObject setLanguageTag(const QString &arg0);
 		QAndroidJniObject setIsAuxiliary(jboolean arg0);
 		QAndroidJniObject setOverridesImplicitlyEnabledSubtype(jboolean arg0);
 		QAndroidJniObject setIsAsciiCapable(jboolean arg0);
@@ -30,8 +31,11 @@ namespace __jni_impl::android::view::inputmethod
 		QAndroidJniObject setSubtypeNameResId(jint arg0);
 		QAndroidJniObject setSubtypeId(jint arg0);
 		QAndroidJniObject setSubtypeLocale(jstring arg0);
+		QAndroidJniObject setSubtypeLocale(const QString &arg0);
 		QAndroidJniObject setSubtypeMode(jstring arg0);
+		QAndroidJniObject setSubtypeMode(const QString &arg0);
 		QAndroidJniObject setSubtypeExtraValue(jstring arg0);
+		QAndroidJniObject setSubtypeExtraValue(const QString &arg0);
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
@@ -46,7 +50,8 @@ namespace __jni_impl::android::view::inputmethod
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.inputmethod.InputMethodSubtype$InputMethodSubtypeBuilder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -63,6 +68,14 @@ namespace __jni_impl::android::view::inputmethod
 			"setLanguageTag",
 			"(Ljava/lang/String;)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
 			arg0
+		);
+	}
+	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setLanguageTag(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setLanguageTag",
+			"(Ljava/lang/String;)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setIsAuxiliary(jboolean arg0)
@@ -121,6 +134,14 @@ namespace __jni_impl::android::view::inputmethod
 			arg0
 		);
 	}
+	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeLocale(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setSubtypeLocale",
+			"(Ljava/lang/String;)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeMode(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -129,12 +150,28 @@ namespace __jni_impl::android::view::inputmethod
 			arg0
 		);
 	}
+	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeMode(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setSubtypeMode",
+			"(Ljava/lang/String;)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeExtraValue(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setSubtypeExtraValue",
 			"(Ljava/lang/String;)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
 			arg0
+		);
+	}
+	QAndroidJniObject InputMethodSubtype_InputMethodSubtypeBuilder::setSubtypeExtraValue(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setSubtypeExtraValue",
+			"(Ljava/lang/String;)Landroid/view/inputmethod/InputMethodSubtype$InputMethodSubtypeBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::view::inputmethod

@@ -54,7 +54,8 @@ namespace __jni_impl::android::view
 		__thiz = QAndroidJniObject(
 			"android.view.View$BaseSavedState",
 			"(Landroid/os/Parcelable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void View_BaseSavedState::__constructor(__jni_impl::android::os::Parcel arg0, __jni_impl::java::lang::ClassLoader arg1)
 	{
@@ -62,14 +63,16 @@ namespace __jni_impl::android::view
 			"android.view.View$BaseSavedState",
 			"(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void View_BaseSavedState::__constructor(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.View$BaseSavedState",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

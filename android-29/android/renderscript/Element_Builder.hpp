@@ -26,7 +26,9 @@ namespace __jni_impl::android::renderscript
 		
 		// Methods
 		QAndroidJniObject add(__jni_impl::android::renderscript::Element arg0, jstring arg1);
+		QAndroidJniObject add(__jni_impl::android::renderscript::Element arg0, const QString &arg1);
 		QAndroidJniObject add(__jni_impl::android::renderscript::Element arg0, jstring arg1, jint arg2);
+		QAndroidJniObject add(__jni_impl::android::renderscript::Element arg0, const QString &arg1, jint arg2);
 		QAndroidJniObject create();
 	};
 } // namespace __jni_impl::android::renderscript
@@ -44,7 +46,8 @@ namespace __jni_impl::android::renderscript
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Element$Builder",
 			"(Landroid/renderscript/RenderScript;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -57,6 +60,15 @@ namespace __jni_impl::android::renderscript
 			arg1
 		);
 	}
+	QAndroidJniObject Element_Builder::add(__jni_impl::android::renderscript::Element arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"add",
+			"(Landroid/renderscript/Element;Ljava/lang/String;)Landroid/renderscript/Element$Builder;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject Element_Builder::add(__jni_impl::android::renderscript::Element arg0, jstring arg1, jint arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -64,6 +76,16 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/Element;Ljava/lang/String;I)Landroid/renderscript/Element$Builder;",
 			arg0.__jniObject().object(),
 			arg1,
+			arg2
+		);
+	}
+	QAndroidJniObject Element_Builder::add(__jni_impl::android::renderscript::Element arg0, const QString &arg1, jint arg2)
+	{
+		return __thiz.callObjectMethod(
+			"add",
+			"(Landroid/renderscript/Element;Ljava/lang/String;I)Landroid/renderscript/Element$Builder;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}

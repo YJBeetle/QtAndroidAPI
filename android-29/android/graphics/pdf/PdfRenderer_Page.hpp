@@ -37,9 +37,9 @@ namespace __jni_impl::android::graphics::pdf
 		// Methods
 		void close();
 		jint getIndex();
-		void render(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Matrix arg2, jint arg3);
 		jint getWidth();
 		jint getHeight();
+		void render(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Matrix arg2, jint arg3);
 	};
 } // namespace __jni_impl::android::graphics::pdf
 
@@ -89,17 +89,6 @@ namespace __jni_impl::android::graphics::pdf
 			"()I"
 		);
 	}
-	void PdfRenderer_Page::render(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Matrix arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"render",
-			"(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Matrix;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
 	jint PdfRenderer_Page::getWidth()
 	{
 		return __thiz.callMethod<jint>(
@@ -112,6 +101,17 @@ namespace __jni_impl::android::graphics::pdf
 		return __thiz.callMethod<jint>(
 			"getHeight",
 			"()I"
+		);
+	}
+	void PdfRenderer_Page::render(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Matrix arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"render",
+			"(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Matrix;I)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3
 		);
 	}
 } // namespace __jni_impl::android::graphics::pdf

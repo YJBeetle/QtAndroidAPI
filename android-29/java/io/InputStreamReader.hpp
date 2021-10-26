@@ -30,6 +30,7 @@ namespace __jni_impl::java::io
 		void __constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::nio::charset::CharsetDecoder arg1);
 		void __constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::nio::charset::Charset arg1);
 		void __constructor(__jni_impl::java::io::InputStream arg0, jstring arg1);
+		void __constructor(__jni_impl::java::io::InputStream arg0, const QString &arg1);
 		void __constructor(__jni_impl::java::io::InputStream arg0);
 		
 		// Methods
@@ -56,7 +57,8 @@ namespace __jni_impl::java::io
 			"java.io.InputStreamReader",
 			"(Ljava/io/InputStream;Ljava/nio/charset/CharsetDecoder;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void InputStreamReader::__constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::nio::charset::Charset arg1)
 	{
@@ -64,7 +66,8 @@ namespace __jni_impl::java::io
 			"java.io.InputStreamReader",
 			"(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void InputStreamReader::__constructor(__jni_impl::java::io::InputStream arg0, jstring arg1)
 	{
@@ -72,14 +75,25 @@ namespace __jni_impl::java::io
 			"java.io.InputStreamReader",
 			"(Ljava/io/InputStream;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void InputStreamReader::__constructor(__jni_impl::java::io::InputStream arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.InputStreamReader",
+			"(Ljava/io/InputStream;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void InputStreamReader::__constructor(__jni_impl::java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.InputStreamReader",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

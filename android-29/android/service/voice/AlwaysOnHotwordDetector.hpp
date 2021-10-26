@@ -29,12 +29,12 @@ namespace __jni_impl::android::service::voice
 		void __constructor();
 		
 		// Methods
+		QAndroidJniObject createReEnrollIntent();
 		jint getSupportedRecognitionModes();
 		jboolean startRecognition(jint arg0);
 		jboolean stopRecognition();
 		QAndroidJniObject createEnrollIntent();
 		QAndroidJniObject createUnEnrollIntent();
-		QAndroidJniObject createReEnrollIntent();
 	};
 } // namespace __jni_impl::android::service::voice
 
@@ -109,6 +109,13 @@ namespace __jni_impl::android::service::voice
 	}
 	
 	// Methods
+	QAndroidJniObject AlwaysOnHotwordDetector::createReEnrollIntent()
+	{
+		return __thiz.callObjectMethod(
+			"createReEnrollIntent",
+			"()Landroid/content/Intent;"
+		);
+	}
 	jint AlwaysOnHotwordDetector::getSupportedRecognitionModes()
 	{
 		return __thiz.callMethod<jint>(
@@ -142,13 +149,6 @@ namespace __jni_impl::android::service::voice
 	{
 		return __thiz.callObjectMethod(
 			"createUnEnrollIntent",
-			"()Landroid/content/Intent;"
-		);
-	}
-	QAndroidJniObject AlwaysOnHotwordDetector::createReEnrollIntent()
-	{
-		return __thiz.callObjectMethod(
-			"createReEnrollIntent",
 			"()Landroid/content/Intent;"
 		);
 	}

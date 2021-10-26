@@ -46,36 +46,41 @@ namespace __jni_impl::java::security::cert
 		jboolean match(__jni_impl::java::security::cert::Certificate arg0);
 		jint getBasicConstraints();
 		QAndroidJniObject getPolicy();
-		void setSubject(jstring arg0);
-		void setSubject(jbyteArray arg0);
-		void setSubject(__jni_impl::javax::security::auth::x500::X500Principal arg0);
-		void setSerialNumber(__jni_impl::java::math::BigInteger arg0);
-		QAndroidJniObject getSerialNumber();
+		QAndroidJniObject getCertificate();
+		void setCertificate(__jni_impl::java::security::cert::X509Certificate arg0);
+		void setPolicy(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getSubject();
+		jbooleanArray getKeyUsage();
+		QAndroidJniObject getExtendedKeyUsage();
+		QAndroidJniObject getSubjectAlternativeNames();
 		void setPathToNames(__jni_impl::__JniBaseClass arg0);
 		void setNameConstraints(jbyteArray arg0);
 		jbyteArray getNameConstraints();
 		jstring getIssuerAsString();
 		jstring getSubjectAsString();
+		void setIssuer(jstring arg0);
+		void setIssuer(const QString &arg0);
 		void setIssuer(jbyteArray arg0);
 		void setIssuer(__jni_impl::javax::security::auth::x500::X500Principal arg0);
-		void setIssuer(jstring arg0);
 		void setSubjectKeyIdentifier(jbyteArray arg0);
 		void setAuthorityKeyIdentifier(jbyteArray arg0);
 		void setCertificateValid(__jni_impl::java::util::Date arg0);
 		void setPrivateKeyValid(__jni_impl::java::util::Date arg0);
 		void setSubjectPublicKeyAlgID(jstring arg0);
-		void setSubjectPublicKey(jbyteArray arg0);
+		void setSubjectPublicKeyAlgID(const QString &arg0);
 		void setSubjectPublicKey(__jni_impl::__JniBaseClass arg0);
+		void setSubjectPublicKey(jbyteArray arg0);
 		void setKeyUsage(jbooleanArray arg0);
 		void setExtendedKeyUsage(__jni_impl::__JniBaseClass arg0);
 		void setMatchAllSubjectAltNames(jboolean arg0);
 		void setSubjectAlternativeNames(__jni_impl::__JniBaseClass arg0);
-		void addSubjectAlternativeName(jint arg0, jstring arg1);
 		void addSubjectAlternativeName(jint arg0, jbyteArray arg1);
+		void addSubjectAlternativeName(jint arg0, jstring arg1);
+		void addSubjectAlternativeName(jint arg0, const QString &arg1);
 		void setBasicConstraints(jint arg0);
 		void addPathToName(jint arg0, jbyteArray arg1);
 		void addPathToName(jint arg0, jstring arg1);
+		void addPathToName(jint arg0, const QString &arg1);
 		QAndroidJniObject getIssuer();
 		jbyteArray getIssuerAsBytes();
 		jbyteArray getSubjectAsBytes();
@@ -87,12 +92,12 @@ namespace __jni_impl::java::security::cert
 		QAndroidJniObject getSubjectPublicKey();
 		jboolean getMatchAllSubjectAltNames();
 		QAndroidJniObject getPathToNames();
-		QAndroidJniObject getCertificate();
-		void setCertificate(__jni_impl::java::security::cert::X509Certificate arg0);
-		void setPolicy(__jni_impl::__JniBaseClass arg0);
-		jbooleanArray getKeyUsage();
-		QAndroidJniObject getExtendedKeyUsage();
-		QAndroidJniObject getSubjectAlternativeNames();
+		QAndroidJniObject getSerialNumber();
+		void setSubject(jstring arg0);
+		void setSubject(const QString &arg0);
+		void setSubject(__jni_impl::javax::security::auth::x500::X500Principal arg0);
+		void setSubject(jbyteArray arg0);
+		void setSerialNumber(__jni_impl::java::math::BigInteger arg0);
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -112,7 +117,8 @@ namespace __jni_impl::java::security::cert
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.X509CertSelector",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -152,43 +158,27 @@ namespace __jni_impl::java::security::cert
 			"()Ljava/util/Set;"
 		);
 	}
-	void X509CertSelector::setSubject(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSubject",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void X509CertSelector::setSubject(jbyteArray arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSubject",
-			"([B)V",
-			arg0
-		);
-	}
-	void X509CertSelector::setSubject(__jni_impl::javax::security::auth::x500::X500Principal arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSubject",
-			"(Ljavax/security/auth/x500/X500Principal;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void X509CertSelector::setSerialNumber(__jni_impl::java::math::BigInteger arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSerialNumber",
-			"(Ljava/math/BigInteger;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject X509CertSelector::getSerialNumber()
+	QAndroidJniObject X509CertSelector::getCertificate()
 	{
 		return __thiz.callObjectMethod(
-			"getSerialNumber",
-			"()Ljava/math/BigInteger;"
+			"getCertificate",
+			"()Ljava/security/cert/X509Certificate;"
+		);
+	}
+	void X509CertSelector::setCertificate(__jni_impl::java::security::cert::X509Certificate arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCertificate",
+			"(Ljava/security/cert/X509Certificate;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void X509CertSelector::setPolicy(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPolicy",
+			"(Ljava/util/Set;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject X509CertSelector::getSubject()
@@ -196,6 +186,27 @@ namespace __jni_impl::java::security::cert
 		return __thiz.callObjectMethod(
 			"getSubject",
 			"()Ljavax/security/auth/x500/X500Principal;"
+		);
+	}
+	jbooleanArray X509CertSelector::getKeyUsage()
+	{
+		return __thiz.callObjectMethod(
+			"getKeyUsage",
+			"()[Z"
+		).object<jbooleanArray>();
+	}
+	QAndroidJniObject X509CertSelector::getExtendedKeyUsage()
+	{
+		return __thiz.callObjectMethod(
+			"getExtendedKeyUsage",
+			"()Ljava/util/Set;"
+		);
+	}
+	QAndroidJniObject X509CertSelector::getSubjectAlternativeNames()
+	{
+		return __thiz.callObjectMethod(
+			"getSubjectAlternativeNames",
+			"()Ljava/util/Collection;"
 		);
 	}
 	void X509CertSelector::setPathToNames(__jni_impl::__JniBaseClass arg0)
@@ -235,6 +246,22 @@ namespace __jni_impl::java::security::cert
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	void X509CertSelector::setIssuer(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setIssuer",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void X509CertSelector::setIssuer(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setIssuer",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void X509CertSelector::setIssuer(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
@@ -249,14 +276,6 @@ namespace __jni_impl::java::security::cert
 			"setIssuer",
 			"(Ljavax/security/auth/x500/X500Principal;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	void X509CertSelector::setIssuer(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setIssuer",
-			"(Ljava/lang/String;)V",
-			arg0
 		);
 	}
 	void X509CertSelector::setSubjectKeyIdentifier(jbyteArray arg0)
@@ -299,12 +318,12 @@ namespace __jni_impl::java::security::cert
 			arg0
 		);
 	}
-	void X509CertSelector::setSubjectPublicKey(jbyteArray arg0)
+	void X509CertSelector::setSubjectPublicKeyAlgID(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"setSubjectPublicKey",
-			"([B)V",
-			arg0
+			"setSubjectPublicKeyAlgID",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void X509CertSelector::setSubjectPublicKey(__jni_impl::__JniBaseClass arg0)
@@ -313,6 +332,14 @@ namespace __jni_impl::java::security::cert
 			"setSubjectPublicKey",
 			"(Ljava/security/PublicKey;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void X509CertSelector::setSubjectPublicKey(jbyteArray arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSubjectPublicKey",
+			"([B)V",
+			arg0
 		);
 	}
 	void X509CertSelector::setKeyUsage(jbooleanArray arg0)
@@ -347,6 +374,15 @@ namespace __jni_impl::java::security::cert
 			arg0.__jniObject().object()
 		);
 	}
+	void X509CertSelector::addSubjectAlternativeName(jint arg0, jbyteArray arg1)
+	{
+		__thiz.callMethod<void>(
+			"addSubjectAlternativeName",
+			"(I[B)V",
+			arg0,
+			arg1
+		);
+	}
 	void X509CertSelector::addSubjectAlternativeName(jint arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -356,13 +392,13 @@ namespace __jni_impl::java::security::cert
 			arg1
 		);
 	}
-	void X509CertSelector::addSubjectAlternativeName(jint arg0, jbyteArray arg1)
+	void X509CertSelector::addSubjectAlternativeName(jint arg0, const QString &arg1)
 	{
 		__thiz.callMethod<void>(
 			"addSubjectAlternativeName",
-			"(I[B)V",
+			"(ILjava/lang/String;)V",
 			arg0,
-			arg1
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void X509CertSelector::setBasicConstraints(jint arg0)
@@ -389,6 +425,15 @@ namespace __jni_impl::java::security::cert
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
+		);
+	}
+	void X509CertSelector::addPathToName(jint arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"addPathToName",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject X509CertSelector::getIssuer()
@@ -468,48 +513,51 @@ namespace __jni_impl::java::security::cert
 			"()Ljava/util/Collection;"
 		);
 	}
-	QAndroidJniObject X509CertSelector::getCertificate()
+	QAndroidJniObject X509CertSelector::getSerialNumber()
 	{
 		return __thiz.callObjectMethod(
-			"getCertificate",
-			"()Ljava/security/cert/X509Certificate;"
+			"getSerialNumber",
+			"()Ljava/math/BigInteger;"
 		);
 	}
-	void X509CertSelector::setCertificate(__jni_impl::java::security::cert::X509Certificate arg0)
+	void X509CertSelector::setSubject(jstring arg0)
 	{
 		__thiz.callMethod<void>(
-			"setCertificate",
-			"(Ljava/security/cert/X509Certificate;)V",
+			"setSubject",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void X509CertSelector::setSubject(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSubject",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void X509CertSelector::setSubject(__jni_impl::javax::security::auth::x500::X500Principal arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSubject",
+			"(Ljavax/security/auth/x500/X500Principal;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	void X509CertSelector::setPolicy(__jni_impl::__JniBaseClass arg0)
+	void X509CertSelector::setSubject(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
-			"setPolicy",
-			"(Ljava/util/Set;)V",
+			"setSubject",
+			"([B)V",
+			arg0
+		);
+	}
+	void X509CertSelector::setSerialNumber(__jni_impl::java::math::BigInteger arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSerialNumber",
+			"(Ljava/math/BigInteger;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	jbooleanArray X509CertSelector::getKeyUsage()
-	{
-		return __thiz.callObjectMethod(
-			"getKeyUsage",
-			"()[Z"
-		).object<jbooleanArray>();
-	}
-	QAndroidJniObject X509CertSelector::getExtendedKeyUsage()
-	{
-		return __thiz.callObjectMethod(
-			"getExtendedKeyUsage",
-			"()Ljava/util/Set;"
-		);
-	}
-	QAndroidJniObject X509CertSelector::getSubjectAlternativeNames()
-	{
-		return __thiz.callObjectMethod(
-			"getSubjectAlternativeNames",
-			"()Ljava/util/Collection;"
 		);
 	}
 } // namespace __jni_impl::java::security::cert

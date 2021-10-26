@@ -42,14 +42,16 @@ namespace __jni_impl::android::net
 		__thiz = QAndroidJniObject(
 			"android.net.SSLSessionCache",
 			"(Ljava/io/File;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SSLSessionCache::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.SSLSessionCache",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

@@ -5,10 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::nio
-{
-	class ByteBuffer;
-}
 namespace __jni_impl::java::security
 {
 	class SecureRandom;
@@ -16,6 +12,10 @@ namespace __jni_impl::java::security
 namespace __jni_impl::java::security
 {
 	class AlgorithmParameters;
+}
+namespace __jni_impl::java::nio
+{
+	class ByteBuffer;
 }
 
 namespace __jni_impl::javax::crypto
@@ -32,9 +32,9 @@ namespace __jni_impl::javax::crypto
 	};
 } // namespace __jni_impl::javax::crypto
 
-#include "../../java/nio/ByteBuffer.hpp"
 #include "../../java/security/SecureRandom.hpp"
 #include "../../java/security/AlgorithmParameters.hpp"
+#include "../../java/nio/ByteBuffer.hpp"
 
 namespace __jni_impl::javax::crypto
 {
@@ -45,7 +45,8 @@ namespace __jni_impl::javax::crypto
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.CipherSpi",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

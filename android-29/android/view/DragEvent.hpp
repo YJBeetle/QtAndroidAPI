@@ -38,14 +38,14 @@ namespace __jni_impl::android::view
 		// Methods
 		jstring toString();
 		jboolean getResult();
+		jfloat getX();
+		jfloat getY();
 		QAndroidJniObject getClipDescription();
 		jobject getLocalState();
+		jint getAction();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getClipData();
-		jint getAction();
-		jfloat getX();
-		jfloat getY();
 	};
 } // namespace __jni_impl::android::view
 
@@ -130,6 +130,20 @@ namespace __jni_impl::android::view
 			"()Z"
 		);
 	}
+	jfloat DragEvent::getX()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getX",
+			"()F"
+		);
+	}
+	jfloat DragEvent::getY()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getY",
+			"()F"
+		);
+	}
 	QAndroidJniObject DragEvent::getClipDescription()
 	{
 		return __thiz.callObjectMethod(
@@ -143,6 +157,13 @@ namespace __jni_impl::android::view
 			"getLocalState",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
+	}
+	jint DragEvent::getAction()
+	{
+		return __thiz.callMethod<jint>(
+			"getAction",
+			"()I"
+		);
 	}
 	jint DragEvent::describeContents()
 	{
@@ -165,27 +186,6 @@ namespace __jni_impl::android::view
 		return __thiz.callObjectMethod(
 			"getClipData",
 			"()Landroid/content/ClipData;"
-		);
-	}
-	jint DragEvent::getAction()
-	{
-		return __thiz.callMethod<jint>(
-			"getAction",
-			"()I"
-		);
-	}
-	jfloat DragEvent::getX()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getX",
-			"()F"
-		);
-	}
-	jfloat DragEvent::getY()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getY",
-			"()F"
 		);
 	}
 } // namespace __jni_impl::android::view

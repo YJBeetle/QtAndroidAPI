@@ -26,16 +26,19 @@ namespace __jni_impl::android::util
 		
 		// Methods
 		QAndroidJniObject name(jstring arg0);
+		QAndroidJniObject name(const QString &arg0);
 		QAndroidJniObject value(jboolean arg0);
 		QAndroidJniObject value(jdouble arg0);
 		QAndroidJniObject value(jlong arg0);
 		QAndroidJniObject value(jstring arg0);
+		QAndroidJniObject value(const QString &arg0);
 		QAndroidJniObject value(__jni_impl::java::lang::Number arg0);
 		void flush();
 		void close();
 		void setLenient(jboolean arg0);
 		jboolean isLenient();
 		void setIndent(jstring arg0);
+		void setIndent(const QString &arg0);
 		QAndroidJniObject beginArray();
 		QAndroidJniObject endArray();
 		QAndroidJniObject beginObject();
@@ -57,7 +60,8 @@ namespace __jni_impl::android::util
 		__thiz = QAndroidJniObject(
 			"android.util.JsonWriter",
 			"(Ljava/io/Writer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -67,6 +71,14 @@ namespace __jni_impl::android::util
 			"name",
 			"(Ljava/lang/String;)Landroid/util/JsonWriter;",
 			arg0
+		);
+	}
+	QAndroidJniObject JsonWriter::name(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"name",
+			"(Ljava/lang/String;)Landroid/util/JsonWriter;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject JsonWriter::value(jboolean arg0)
@@ -99,6 +111,14 @@ namespace __jni_impl::android::util
 			"value",
 			"(Ljava/lang/String;)Landroid/util/JsonWriter;",
 			arg0
+		);
+	}
+	QAndroidJniObject JsonWriter::value(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"value",
+			"(Ljava/lang/String;)Landroid/util/JsonWriter;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject JsonWriter::value(__jni_impl::java::lang::Number arg0)
@@ -144,6 +164,14 @@ namespace __jni_impl::android::util
 			"setIndent",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void JsonWriter::setIndent(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setIndent",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject JsonWriter::beginArray()

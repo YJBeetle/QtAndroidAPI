@@ -112,14 +112,16 @@ namespace __jni_impl::java::io
 		__thiz = QAndroidJniObject(
 			"java.io.StreamTokenizer",
 			"(Ljava/io/Reader;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void StreamTokenizer::__constructor(__jni_impl::java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.StreamTokenizer",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

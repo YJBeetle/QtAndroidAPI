@@ -35,14 +35,15 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		void setText(jstring arg0, __jni_impl::android::widget::TextView_BufferType arg1);
+		void setText(const QString &arg0, __jni_impl::android::widget::TextView_BufferType arg1);
 		QAndroidJniObject getText();
-		void setSelection(jint arg0);
-		void setSelection(jint arg0, jint arg1);
+		jstring getAccessibilityClassName();
 		jboolean getFreezesText();
 		void setEllipsize(__jni_impl::android::text::TextUtils_TruncateAt arg0);
-		jstring getAccessibilityClassName();
 		void selectAll();
 		void extendSelection(jint arg0);
+		void setSelection(jint arg0);
+		void setSelection(jint arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -63,7 +64,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void EditText::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -72,7 +74,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void EditText::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -80,14 +83,16 @@ namespace __jni_impl::android::widget
 			"android.widget.EditText",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void EditText::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.EditText",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -100,11 +105,57 @@ namespace __jni_impl::android::widget
 			arg1.__jniObject().object()
 		);
 	}
+	void EditText::setText(const QString &arg0, __jni_impl::android::widget::TextView_BufferType arg1)
+	{
+		__thiz.callMethod<void>(
+			"setText",
+			"(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject EditText::getText()
 	{
 		return __thiz.callObjectMethod(
 			"getText",
 			"()Landroid/text/Editable;"
+		);
+	}
+	jstring EditText::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jboolean EditText::getFreezesText()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getFreezesText",
+			"()Z"
+		);
+	}
+	void EditText::setEllipsize(__jni_impl::android::text::TextUtils_TruncateAt arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEllipsize",
+			"(Landroid/text/TextUtils$TruncateAt;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void EditText::selectAll()
+	{
+		__thiz.callMethod<void>(
+			"selectAll",
+			"()V"
+		);
+	}
+	void EditText::extendSelection(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"extendSelection",
+			"(I)V",
+			arg0
 		);
 	}
 	void EditText::setSelection(jint arg0)
@@ -122,43 +173,6 @@ namespace __jni_impl::android::widget
 			"(II)V",
 			arg0,
 			arg1
-		);
-	}
-	jboolean EditText::getFreezesText()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getFreezesText",
-			"()Z"
-		);
-	}
-	void EditText::setEllipsize(__jni_impl::android::text::TextUtils_TruncateAt arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEllipsize",
-			"(Landroid/text/TextUtils$TruncateAt;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jstring EditText::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	void EditText::selectAll()
-	{
-		__thiz.callMethod<void>(
-			"selectAll",
-			"()V"
-		);
-	}
-	void EditText::extendSelection(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"extendSelection",
-			"(I)V",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::widget

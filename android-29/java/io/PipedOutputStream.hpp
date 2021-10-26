@@ -43,13 +43,15 @@ namespace __jni_impl::java::io
 		__thiz = QAndroidJniObject(
 			"java.io.PipedOutputStream",
 			"(Ljava/io/PipedInputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PipedOutputStream::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PipedOutputStream",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -170,7 +170,8 @@ namespace __jni_impl::android::app::usage
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.usage.NetworkStats$Bucket",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

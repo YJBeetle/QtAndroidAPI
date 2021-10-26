@@ -81,13 +81,21 @@ namespace __jni_impl::android::hardware
 		
 		// Methods
 		void remove(jstring arg0);
+		void remove(const QString &arg0);
 		jstring get(jstring arg0);
+		jstring get(const QString &arg0);
 		jint getInt(jstring arg0);
-		void set(jstring arg0, jstring arg1);
+		jint getInt(const QString &arg0);
 		void set(jstring arg0, jint arg1);
+		void set(const QString &arg0, jint arg1);
+		void set(jstring arg0, jstring arg1);
+		void set(const QString &arg0, const QString &arg1);
 		jstring flatten();
-		void setZoom(jint arg0);
+		void setRotation(jint arg0);
+		jboolean isZoomSupported();
+		jint getMaxZoom();
 		void unflatten(jstring arg0);
+		void unflatten(const QString &arg0);
 		void setPreviewSize(jint arg0, jint arg1);
 		QAndroidJniObject getPreviewSize();
 		QAndroidJniObject getSupportedPreviewSizes();
@@ -120,24 +128,31 @@ namespace __jni_impl::android::hardware
 		void setGpsAltitude(jdouble arg0);
 		void setGpsTimestamp(jlong arg0);
 		void setGpsProcessingMethod(jstring arg0);
+		void setGpsProcessingMethod(const QString &arg0);
 		void removeGpsData();
 		jstring getWhiteBalance();
 		void setWhiteBalance(jstring arg0);
+		void setWhiteBalance(const QString &arg0);
 		QAndroidJniObject getSupportedWhiteBalance();
 		jstring getColorEffect();
 		void setColorEffect(jstring arg0);
+		void setColorEffect(const QString &arg0);
 		QAndroidJniObject getSupportedColorEffects();
 		jstring getAntibanding();
 		void setAntibanding(jstring arg0);
+		void setAntibanding(const QString &arg0);
 		QAndroidJniObject getSupportedAntibanding();
 		jstring getSceneMode();
 		void setSceneMode(jstring arg0);
+		void setSceneMode(const QString &arg0);
 		QAndroidJniObject getSupportedSceneModes();
 		jstring getFlashMode();
 		void setFlashMode(jstring arg0);
+		void setFlashMode(const QString &arg0);
 		QAndroidJniObject getSupportedFlashModes();
 		jstring getFocusMode();
 		void setFocusMode(jstring arg0);
+		void setFocusMode(const QString &arg0);
 		QAndroidJniObject getSupportedFocusModes();
 		jfloat getFocalLength();
 		jfloat getHorizontalViewAngle();
@@ -169,9 +184,7 @@ namespace __jni_impl::android::hardware
 		void setVideoStabilization(jboolean arg0);
 		jboolean getVideoStabilization();
 		jboolean isVideoStabilizationSupported();
-		void setRotation(jint arg0);
-		jboolean isZoomSupported();
-		jint getMaxZoom();
+		void setZoom(jint arg0);
 	};
 } // namespace __jni_impl::android::hardware
 
@@ -634,12 +647,28 @@ namespace __jni_impl::android::hardware
 			arg0
 		);
 	}
+	void Camera_Parameters::remove(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"remove",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring Camera_Parameters::get(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"get",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring Camera_Parameters::get(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"get",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jint Camera_Parameters::getInt(jstring arg0)
@@ -650,13 +679,12 @@ namespace __jni_impl::android::hardware
 			arg0
 		);
 	}
-	void Camera_Parameters::set(jstring arg0, jstring arg1)
+	jint Camera_Parameters::getInt(const QString &arg0)
 	{
-		__thiz.callMethod<void>(
-			"set",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+		return __thiz.callMethod<jint>(
+			"getInt",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Camera_Parameters::set(jstring arg0, jint arg1)
@@ -668,6 +696,33 @@ namespace __jni_impl::android::hardware
 			arg1
 		);
 	}
+	void Camera_Parameters::set(const QString &arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"set",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	void Camera_Parameters::set(jstring arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"set",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1
+		);
+	}
+	void Camera_Parameters::set(const QString &arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"set",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	jstring Camera_Parameters::flatten()
 	{
 		return __thiz.callObjectMethod(
@@ -675,12 +730,26 @@ namespace __jni_impl::android::hardware
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	void Camera_Parameters::setZoom(jint arg0)
+	void Camera_Parameters::setRotation(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setZoom",
+			"setRotation",
 			"(I)V",
 			arg0
+		);
+	}
+	jboolean Camera_Parameters::isZoomSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isZoomSupported",
+			"()Z"
+		);
+	}
+	jint Camera_Parameters::getMaxZoom()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxZoom",
+			"()I"
 		);
 	}
 	void Camera_Parameters::unflatten(jstring arg0)
@@ -689,6 +758,14 @@ namespace __jni_impl::android::hardware
 			"unflatten",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void Camera_Parameters::unflatten(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"unflatten",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Camera_Parameters::setPreviewSize(jint arg0, jint arg1)
@@ -934,6 +1011,14 @@ namespace __jni_impl::android::hardware
 			arg0
 		);
 	}
+	void Camera_Parameters::setGpsProcessingMethod(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGpsProcessingMethod",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void Camera_Parameters::removeGpsData()
 	{
 		__thiz.callMethod<void>(
@@ -954,6 +1039,14 @@ namespace __jni_impl::android::hardware
 			"setWhiteBalance",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void Camera_Parameters::setWhiteBalance(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setWhiteBalance",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Camera_Parameters::getSupportedWhiteBalance()
@@ -978,6 +1071,14 @@ namespace __jni_impl::android::hardware
 			arg0
 		);
 	}
+	void Camera_Parameters::setColorEffect(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setColorEffect",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject Camera_Parameters::getSupportedColorEffects()
 	{
 		return __thiz.callObjectMethod(
@@ -998,6 +1099,14 @@ namespace __jni_impl::android::hardware
 			"setAntibanding",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void Camera_Parameters::setAntibanding(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAntibanding",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Camera_Parameters::getSupportedAntibanding()
@@ -1022,6 +1131,14 @@ namespace __jni_impl::android::hardware
 			arg0
 		);
 	}
+	void Camera_Parameters::setSceneMode(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSceneMode",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject Camera_Parameters::getSupportedSceneModes()
 	{
 		return __thiz.callObjectMethod(
@@ -1044,6 +1161,14 @@ namespace __jni_impl::android::hardware
 			arg0
 		);
 	}
+	void Camera_Parameters::setFlashMode(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFlashMode",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject Camera_Parameters::getSupportedFlashModes()
 	{
 		return __thiz.callObjectMethod(
@@ -1064,6 +1189,14 @@ namespace __jni_impl::android::hardware
 			"setFocusMode",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void Camera_Parameters::setFocusMode(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFocusMode",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Camera_Parameters::getSupportedFocusModes()
@@ -1291,26 +1424,12 @@ namespace __jni_impl::android::hardware
 			"()Z"
 		);
 	}
-	void Camera_Parameters::setRotation(jint arg0)
+	void Camera_Parameters::setZoom(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setRotation",
+			"setZoom",
 			"(I)V",
 			arg0
-		);
-	}
-	jboolean Camera_Parameters::isZoomSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isZoomSupported",
-			"()Z"
-		);
-	}
-	jint Camera_Parameters::getMaxZoom()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxZoom",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::hardware

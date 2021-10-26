@@ -18,13 +18,13 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		jint getSource();
+		jboolean isFromSource(jint arg0);
 		jfloat getResolution();
 		jint getAxis();
 		jfloat getMin();
 		jfloat getRange();
 		jfloat getFlat();
 		jfloat getFuzz();
-		jboolean isFromSource(jint arg0);
 		jfloat getMax();
 	};
 } // namespace __jni_impl::android::view
@@ -48,6 +48,14 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jint>(
 			"getSource",
 			"()I"
+		);
+	}
+	jboolean InputDevice_MotionRange::isFromSource(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFromSource",
+			"(I)Z",
+			arg0
 		);
 	}
 	jfloat InputDevice_MotionRange::getResolution()
@@ -90,14 +98,6 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jfloat>(
 			"getFuzz",
 			"()F"
-		);
-	}
-	jboolean InputDevice_MotionRange::isFromSource(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFromSource",
-			"(I)Z",
-			arg0
 		);
 	}
 	jfloat InputDevice_MotionRange::getMax()

@@ -27,17 +27,20 @@ namespace __jni_impl::android::app
 		
 		// Constructors
 		void __constructor(jstring arg0, jlong arg1, jstring arg2);
+		void __constructor(const QString &arg0, jlong arg1, const QString &arg2);
 		void __constructor(jstring arg0, jlong arg1, __jni_impl::android::app::Person arg2);
+		void __constructor(const QString &arg0, jlong arg1, __jni_impl::android::app::Person arg2);
 		
 		// Methods
 		jstring getText();
+		jlong getTimestamp();
 		jstring getSender();
 		QAndroidJniObject getSenderPerson();
 		jstring getDataMimeType();
 		QAndroidJniObject getDataUri();
 		QAndroidJniObject getExtras();
 		QAndroidJniObject setData(jstring arg0, __jni_impl::android::net::Uri arg1);
-		jlong getTimestamp();
+		QAndroidJniObject setData(const QString &arg0, __jni_impl::android::net::Uri arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -57,7 +60,18 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/CharSequence;JLjava/lang/CharSequence;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void Notification_MessagingStyle_Message::__constructor(const QString &arg0, jlong arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.Notification$MessagingStyle$Message",
+			"(Ljava/lang/CharSequence;JLjava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	void Notification_MessagingStyle_Message::__constructor(jstring arg0, jlong arg1, __jni_impl::android::app::Person arg2)
 	{
@@ -66,7 +80,18 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/CharSequence;JLandroid/app/Person;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void Notification_MessagingStyle_Message::__constructor(const QString &arg0, jlong arg1, __jni_impl::android::app::Person arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.Notification$MessagingStyle$Message",
+			"(Ljava/lang/CharSequence;JLandroid/app/Person;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -76,6 +101,13 @@ namespace __jni_impl::android::app
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
+	}
+	jlong Notification_MessagingStyle_Message::getTimestamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimestamp",
+			"()J"
+		);
 	}
 	jstring Notification_MessagingStyle_Message::getSender()
 	{
@@ -121,11 +153,13 @@ namespace __jni_impl::android::app
 			arg1.__jniObject().object()
 		);
 	}
-	jlong Notification_MessagingStyle_Message::getTimestamp()
+	QAndroidJniObject Notification_MessagingStyle_Message::setData(const QString &arg0, __jni_impl::android::net::Uri arg1)
 	{
-		return __thiz.callMethod<jlong>(
-			"getTimestamp",
-			"()J"
+		return __thiz.callObjectMethod(
+			"setData",
+			"(Ljava/lang/String;Landroid/net/Uri;)Landroid/app/Notification$MessagingStyle$Message;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::app

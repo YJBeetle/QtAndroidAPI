@@ -53,7 +53,8 @@ namespace __jni_impl::java::util::zip
 		__thiz = QAndroidJniObject(
 			"java.util.zip.DeflaterOutputStream",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DeflaterOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0, jboolean arg1)
 	{
@@ -61,7 +62,8 @@ namespace __jni_impl::java::util::zip
 			"java.util.zip.DeflaterOutputStream",
 			"(Ljava/io/OutputStream;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void DeflaterOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0, __jni_impl::java::util::zip::Deflater arg1)
 	{
@@ -69,7 +71,8 @@ namespace __jni_impl::java::util::zip
 			"java.util.zip.DeflaterOutputStream",
 			"(Ljava/io/OutputStream;Ljava/util/zip/Deflater;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DeflaterOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0, __jni_impl::java::util::zip::Deflater arg1, jint arg2, jboolean arg3)
 	{
@@ -79,7 +82,8 @@ namespace __jni_impl::java::util::zip
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void DeflaterOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0, __jni_impl::java::util::zip::Deflater arg1, jint arg2)
 	{
@@ -88,7 +92,8 @@ namespace __jni_impl::java::util::zip
 			"(Ljava/io/OutputStream;Ljava/util/zip/Deflater;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void DeflaterOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0, __jni_impl::java::util::zip::Deflater arg1, jboolean arg2)
 	{
@@ -97,7 +102,8 @@ namespace __jni_impl::java::util::zip
 			"(Ljava/io/OutputStream;Ljava/util/zip/Deflater;Z)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods

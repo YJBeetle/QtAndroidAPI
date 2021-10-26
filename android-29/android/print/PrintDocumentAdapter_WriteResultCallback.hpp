@@ -19,6 +19,7 @@ namespace __jni_impl::android::print
 		// Methods
 		void onWriteFinished(jarray arg0);
 		void onWriteFailed(jstring arg0);
+		void onWriteFailed(const QString &arg0);
 		void onWriteCancelled();
 	};
 } // namespace __jni_impl::android::print
@@ -51,6 +52,14 @@ namespace __jni_impl::android::print
 			"onWriteFailed",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
+		);
+	}
+	void PrintDocumentAdapter_WriteResultCallback::onWriteFailed(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"onWriteFailed",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void PrintDocumentAdapter_WriteResultCallback::onWriteCancelled()

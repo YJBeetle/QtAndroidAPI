@@ -112,7 +112,8 @@ namespace __jni_impl::java::util::concurrent
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.CompletableFuture",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -70,7 +70,8 @@ namespace __jni_impl::android::bluetooth::le
 	{
 		__thiz = QAndroidJniObject(
 			"android.bluetooth.le.ScanCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

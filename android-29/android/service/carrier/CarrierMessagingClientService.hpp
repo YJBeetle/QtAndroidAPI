@@ -39,7 +39,8 @@ namespace __jni_impl::android::service::carrier
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.carrier.CarrierMessagingClientService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

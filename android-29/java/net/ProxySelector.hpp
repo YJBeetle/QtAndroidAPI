@@ -55,7 +55,8 @@ namespace __jni_impl::java::net
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.ProxySelector",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

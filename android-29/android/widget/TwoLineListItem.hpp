@@ -31,9 +31,9 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
+		jstring getAccessibilityClassName();
 		QAndroidJniObject getText1();
 		QAndroidJniObject getText2();
-		jstring getAccessibilityClassName();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -53,7 +53,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void TwoLineListItem::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -62,7 +63,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void TwoLineListItem::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -70,17 +72,26 @@ namespace __jni_impl::android::widget
 			"android.widget.TwoLineListItem",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void TwoLineListItem::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TwoLineListItem",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
+	jstring TwoLineListItem::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
 	QAndroidJniObject TwoLineListItem::getText1()
 	{
 		return __thiz.callObjectMethod(
@@ -94,13 +105,6 @@ namespace __jni_impl::android::widget
 			"getText2",
 			"()Landroid/widget/TextView;"
 		);
-	}
-	jstring TwoLineListItem::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::widget
 

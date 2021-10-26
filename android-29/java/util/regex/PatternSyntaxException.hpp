@@ -18,12 +18,13 @@ namespace __jni_impl::java::util::regex
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1, jint arg2);
+		void __constructor(const QString &arg0, const QString &arg1, jint arg2);
 		
 		// Methods
 		jstring getMessage();
 		jint getIndex();
-		jstring getPattern();
 		jstring getDescription();
+		jstring getPattern();
 	};
 } // namespace __jni_impl::java::util::regex
 
@@ -40,7 +41,18 @@ namespace __jni_impl::java::util::regex
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void PatternSyntaxException::__constructor(const QString &arg0, const QString &arg1, jint arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.regex.PatternSyntaxException",
+			"(Ljava/lang/String;Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
 	}
 	
 	// Methods
@@ -58,17 +70,17 @@ namespace __jni_impl::java::util::regex
 			"()I"
 		);
 	}
-	jstring PatternSyntaxException::getPattern()
-	{
-		return __thiz.callObjectMethod(
-			"getPattern",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jstring PatternSyntaxException::getDescription()
 	{
 		return __thiz.callObjectMethod(
 			"getDescription",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring PatternSyntaxException::getPattern()
+	{
+		return __thiz.callObjectMethod(
+			"getPattern",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

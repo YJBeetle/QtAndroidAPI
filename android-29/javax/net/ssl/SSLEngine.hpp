@@ -36,10 +36,9 @@ namespace __jni_impl::javax::net::ssl
 		QAndroidJniObject wrap(jarray arg0, __jni_impl::java::nio::ByteBuffer arg1);
 		QAndroidJniObject wrap(__jni_impl::java::nio::ByteBuffer arg0, __jni_impl::java::nio::ByteBuffer arg1);
 		QAndroidJniObject wrap(jarray arg0, jint arg1, jint arg2, __jni_impl::java::nio::ByteBuffer arg3);
+		QAndroidJniObject unwrap(__jni_impl::java::nio::ByteBuffer arg0, jarray arg1);
 		QAndroidJniObject unwrap(__jni_impl::java::nio::ByteBuffer arg0, jarray arg1, jint arg2, jint arg3);
 		QAndroidJniObject unwrap(__jni_impl::java::nio::ByteBuffer arg0, __jni_impl::java::nio::ByteBuffer arg1);
-		QAndroidJniObject unwrap(__jni_impl::java::nio::ByteBuffer arg0, jarray arg1);
-		QAndroidJniObject getSession();
 		jarray getEnabledCipherSuites();
 		jarray getEnabledProtocols();
 		jboolean getNeedClientAuth();
@@ -70,6 +69,7 @@ namespace __jni_impl::javax::net::ssl
 		jstring getHandshakeApplicationProtocol();
 		void setHandshakeApplicationProtocolSelector(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getHandshakeApplicationProtocolSelector();
+		QAndroidJniObject getSession();
 	};
 } // namespace __jni_impl::javax::net::ssl
 
@@ -120,6 +120,15 @@ namespace __jni_impl::javax::net::ssl
 			arg3.__jniObject().object()
 		);
 	}
+	QAndroidJniObject SSLEngine::unwrap(__jni_impl::java::nio::ByteBuffer arg0, jarray arg1)
+	{
+		return __thiz.callObjectMethod(
+			"unwrap",
+			"(Ljava/nio/ByteBuffer;[Ljava/nio/ByteBuffer;)Ljavax/net/ssl/SSLEngineResult;",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
 	QAndroidJniObject SSLEngine::unwrap(__jni_impl::java::nio::ByteBuffer arg0, jarray arg1, jint arg2, jint arg3)
 	{
 		return __thiz.callObjectMethod(
@@ -138,22 +147,6 @@ namespace __jni_impl::javax::net::ssl
 			"(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;)Ljavax/net/ssl/SSLEngineResult;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject SSLEngine::unwrap(__jni_impl::java::nio::ByteBuffer arg0, jarray arg1)
-	{
-		return __thiz.callObjectMethod(
-			"unwrap",
-			"(Ljava/nio/ByteBuffer;[Ljava/nio/ByteBuffer;)Ljavax/net/ssl/SSLEngineResult;",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject SSLEngine::getSession()
-	{
-		return __thiz.callObjectMethod(
-			"getSession",
-			"()Ljavax/net/ssl/SSLSession;"
 		);
 	}
 	jarray SSLEngine::getEnabledCipherSuites()
@@ -372,6 +365,13 @@ namespace __jni_impl::javax::net::ssl
 		return __thiz.callObjectMethod(
 			"getHandshakeApplicationProtocolSelector",
 			"()Ljava/util/function/BiFunction;"
+		);
+	}
+	QAndroidJniObject SSLEngine::getSession()
+	{
+		return __thiz.callObjectMethod(
+			"getSession",
+			"()Ljavax/net/ssl/SSLSession;"
 		);
 	}
 } // namespace __jni_impl::javax::net::ssl

@@ -19,6 +19,7 @@ namespace __jni_impl::android::security
 		// Methods
 		static QAndroidJniObject getInstance();
 		jboolean isCleartextTrafficPermitted(jstring arg0);
+		jboolean isCleartextTrafficPermitted(const QString &arg0);
 		jboolean isCleartextTrafficPermitted();
 	};
 } // namespace __jni_impl::android::security
@@ -51,6 +52,14 @@ namespace __jni_impl::android::security
 			"isCleartextTrafficPermitted",
 			"(Ljava/lang/String;)Z",
 			arg0
+		);
+	}
+	jboolean NetworkSecurityPolicy::isCleartextTrafficPermitted(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isCleartextTrafficPermitted",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean NetworkSecurityPolicy::isCleartextTrafficPermitted()

@@ -40,7 +40,8 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.TracingConfig$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

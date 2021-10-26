@@ -47,7 +47,8 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$Style",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

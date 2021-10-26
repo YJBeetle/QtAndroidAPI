@@ -33,11 +33,6 @@ namespace __jni_impl::android::content
 		QAndroidJniObject getContext();
 		jint getId();
 		void reset();
-		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
-		void onContentChanged();
-		jboolean isStarted();
-		void registerListener(jint arg0, __jni_impl::__JniBaseClass arg1);
-		void unregisterListener(__jni_impl::__JniBaseClass arg0);
 		void stopLoading();
 		void deliverResult(jobject arg0);
 		void deliverCancellation();
@@ -53,6 +48,12 @@ namespace __jni_impl::android::content
 		void commitContentChanged();
 		void rollbackContentChanged();
 		jstring dataToString(jobject arg0);
+		jboolean isStarted();
+		void registerListener(jint arg0, __jni_impl::__JniBaseClass arg1);
+		void unregisterListener(__jni_impl::__JniBaseClass arg0);
+		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
+		void dump(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
+		void onContentChanged();
 	};
 } // namespace __jni_impl::android::content
 
@@ -70,7 +71,8 @@ namespace __jni_impl::android::content
 		__thiz = QAndroidJniObject(
 			"android.content.Loader",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -100,48 +102,6 @@ namespace __jni_impl::android::content
 		__thiz.callMethod<void>(
 			"reset",
 			"()V"
-		);
-	}
-	void Loader::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	void Loader::onContentChanged()
-	{
-		__thiz.callMethod<void>(
-			"onContentChanged",
-			"()V"
-		);
-	}
-	jboolean Loader::isStarted()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isStarted",
-			"()Z"
-		);
-	}
-	void Loader::registerListener(jint arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"registerListener",
-			"(ILandroid/content/Loader$OnLoadCompleteListener;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void Loader::unregisterListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterListener",
-			"(Landroid/content/Loader$OnLoadCompleteListener;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	void Loader::stopLoading()
@@ -252,6 +212,59 @@ namespace __jni_impl::android::content
 			"(Ljava/lang/Object;)Ljava/lang/String;",
 			arg0
 		).object<jstring>();
+	}
+	jboolean Loader::isStarted()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isStarted",
+			"()Z"
+		);
+	}
+	void Loader::registerListener(jint arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"registerListener",
+			"(ILandroid/content/Loader$OnLoadCompleteListener;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void Loader::unregisterListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterListener",
+			"(Landroid/content/Loader$OnLoadCompleteListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Loader::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3
+		);
+	}
+	void Loader::dump(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3
+		);
+	}
+	void Loader::onContentChanged()
+	{
+		__thiz.callMethod<void>(
+			"onContentChanged",
+			"()V"
+		);
 	}
 } // namespace __jni_impl::android::content
 

@@ -30,14 +30,14 @@ namespace __jni_impl::java::nio::channels
 		void close();
 		QAndroidJniObject keys();
 		static QAndroidJniObject open();
-		jint select(__jni_impl::__JniBaseClass arg0, jlong arg1);
-		jint select(__jni_impl::__JniBaseClass arg0);
-		jint select();
-		jint select(jlong arg0);
 		QAndroidJniObject selectedKeys();
-		jint selectNow(__jni_impl::__JniBaseClass arg0);
 		jint selectNow();
+		jint selectNow(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject wakeup();
+		jint select();
+		jint select(__jni_impl::__JniBaseClass arg0);
+		jint select(__jni_impl::__JniBaseClass arg0, jlong arg1);
+		jint select(jlong arg0);
 	};
 } // namespace __jni_impl::java::nio::channels
 
@@ -93,43 +93,18 @@ namespace __jni_impl::java::nio::channels
 			"()Ljava/nio/channels/Selector;"
 		);
 	}
-	jint Selector::select(__jni_impl::__JniBaseClass arg0, jlong arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"select",
-			"(Ljava/util/function/Consumer;J)I",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jint Selector::select(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"select",
-			"(Ljava/util/function/Consumer;)I",
-			arg0.__jniObject().object()
-		);
-	}
-	jint Selector::select()
-	{
-		return __thiz.callMethod<jint>(
-			"select",
-			"()I"
-		);
-	}
-	jint Selector::select(jlong arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"select",
-			"(J)I",
-			arg0
-		);
-	}
 	QAndroidJniObject Selector::selectedKeys()
 	{
 		return __thiz.callObjectMethod(
 			"selectedKeys",
 			"()Ljava/util/Set;"
+		);
+	}
+	jint Selector::selectNow()
+	{
+		return __thiz.callMethod<jint>(
+			"selectNow",
+			"()I"
 		);
 	}
 	jint Selector::selectNow(__jni_impl::__JniBaseClass arg0)
@@ -140,18 +115,43 @@ namespace __jni_impl::java::nio::channels
 			arg0.__jniObject().object()
 		);
 	}
-	jint Selector::selectNow()
-	{
-		return __thiz.callMethod<jint>(
-			"selectNow",
-			"()I"
-		);
-	}
 	QAndroidJniObject Selector::wakeup()
 	{
 		return __thiz.callObjectMethod(
 			"wakeup",
 			"()Ljava/nio/channels/Selector;"
+		);
+	}
+	jint Selector::select()
+	{
+		return __thiz.callMethod<jint>(
+			"select",
+			"()I"
+		);
+	}
+	jint Selector::select(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"select",
+			"(Ljava/util/function/Consumer;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	jint Selector::select(__jni_impl::__JniBaseClass arg0, jlong arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"select",
+			"(Ljava/util/function/Consumer;J)I",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jint Selector::select(jlong arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"select",
+			"(J)I",
+			arg0
 		);
 	}
 } // namespace __jni_impl::java::nio::channels

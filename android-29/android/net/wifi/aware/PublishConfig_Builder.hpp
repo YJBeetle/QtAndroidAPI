@@ -23,6 +23,7 @@ namespace __jni_impl::android::net::wifi::aware
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject setServiceName(jstring arg0);
+		QAndroidJniObject setServiceName(const QString &arg0);
 		QAndroidJniObject setServiceSpecificInfo(jbyteArray arg0);
 		QAndroidJniObject setMatchFilter(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject setPublishType(jint arg0);
@@ -43,7 +44,8 @@ namespace __jni_impl::android::net::wifi::aware
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.aware.PublishConfig$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -60,6 +62,14 @@ namespace __jni_impl::android::net::wifi::aware
 			"setServiceName",
 			"(Ljava/lang/String;)Landroid/net/wifi/aware/PublishConfig$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject PublishConfig_Builder::setServiceName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setServiceName",
+			"(Ljava/lang/String;)Landroid/net/wifi/aware/PublishConfig$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject PublishConfig_Builder::setServiceSpecificInfo(jbyteArray arg0)

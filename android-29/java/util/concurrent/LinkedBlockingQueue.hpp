@@ -82,21 +82,24 @@ namespace __jni_impl::java::util::concurrent
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.LinkedBlockingQueue",
-			"()V");
+			"()V"
+		);
 	}
 	void LinkedBlockingQueue::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.LinkedBlockingQueue",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void LinkedBlockingQueue::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.LinkedBlockingQueue",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

@@ -67,7 +67,9 @@ namespace __jni_impl::java::text
 		static QAndroidJniObject getInstance();
 		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
 		QAndroidJniObject parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		QAndroidJniObject parse(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
 		QAndroidJniObject parse(jstring arg0);
+		QAndroidJniObject parse(const QString &arg0);
 		static jarray getAvailableLocales();
 		static QAndroidJniObject getIntegerInstance();
 		static QAndroidJniObject getIntegerInstance(__jni_impl::java::util::Locale arg0);
@@ -88,6 +90,7 @@ namespace __jni_impl::java::text
 		void setRoundingMode(__jni_impl::java::math::RoundingMode arg0);
 		QAndroidJniObject getRoundingMode();
 		jobject parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		jobject parseObject(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
 		static QAndroidJniObject getCurrencyInstance(__jni_impl::java::util::Locale arg0);
 		static QAndroidJniObject getCurrencyInstance();
 		static QAndroidJniObject getNumberInstance();
@@ -230,12 +233,29 @@ namespace __jni_impl::java::text
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject NumberFormat::parse(const QString &arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callObjectMethod(
+			"parse",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject NumberFormat::parse(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;)Ljava/lang/Number;",
 			arg0
+		);
+	}
+	QAndroidJniObject NumberFormat::parse(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"parse",
+			"(Ljava/lang/String;)Ljava/lang/Number;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jarray NumberFormat::getAvailableLocales()
@@ -389,6 +409,15 @@ namespace __jni_impl::java::text
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
 			arg0,
+			arg1.__jniObject().object()
+		).object<jobject>();
+	}
+	jobject NumberFormat::parseObject(const QString &arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callObjectMethod(
+			"parseObject",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jobject>();
 	}

@@ -22,7 +22,9 @@ namespace __jni_impl::android::util
 		// Constructors
 		void __constructor(__jni_impl::java::lang::Exception arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
+		void __constructor(const QString &arg0, jthrowable arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor();
 		
 		// Methods
@@ -41,7 +43,8 @@ namespace __jni_impl::android::util
 		__thiz = QAndroidJniObject(
 			"android.util.AndroidRuntimeException",
 			"(Ljava/lang/Exception;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AndroidRuntimeException::__constructor(jstring arg0, jthrowable arg1)
 	{
@@ -49,20 +52,40 @@ namespace __jni_impl::android::util
 			"android.util.AndroidRuntimeException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void AndroidRuntimeException::__constructor(const QString &arg0, jthrowable arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.util.AndroidRuntimeException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void AndroidRuntimeException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.AndroidRuntimeException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void AndroidRuntimeException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.util.AndroidRuntimeException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void AndroidRuntimeException::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.AndroidRuntimeException",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

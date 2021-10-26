@@ -33,7 +33,8 @@ namespace __jni_impl::android::animation
 			"android.animation.TypeConverter",
 			"(Ljava/lang/Class;Ljava/lang/Class;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

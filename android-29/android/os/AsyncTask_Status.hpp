@@ -23,6 +23,7 @@ namespace __jni_impl::android::os
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::os
 
@@ -79,6 +80,15 @@ namespace __jni_impl::android::os
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/os/AsyncTask$Status;",
 			arg0
+		);
+	}
+	QAndroidJniObject AsyncTask_Status::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.AsyncTask$Status",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/os/AsyncTask$Status;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::os

@@ -55,14 +55,16 @@ namespace __jni_impl::android::os
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.WorkSource",
-			"()V");
+			"()V"
+		);
 	}
 	void WorkSource::__constructor(__jni_impl::android::os::WorkSource arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.WorkSource",
 			"(Landroid/os/WorkSource;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

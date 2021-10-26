@@ -15,9 +15,11 @@ namespace __jni_impl::android::util
 		
 		// Constructors
 		void __constructor(jint arg0, jstring arg1);
+		void __constructor(jint arg0, const QString &arg1);
 		
 		// Methods
 		void println(jstring arg0);
+		void println(const QString &arg0);
 	};
 } // namespace __jni_impl::android::util
 
@@ -33,7 +35,17 @@ namespace __jni_impl::android::util
 			"android.util.LogPrinter",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void LogPrinter::__constructor(jint arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.util.LogPrinter",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -43,6 +55,14 @@ namespace __jni_impl::android::util
 			"println",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void LogPrinter::println(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"println",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::util

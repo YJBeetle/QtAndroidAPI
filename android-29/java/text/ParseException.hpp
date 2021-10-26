@@ -16,6 +16,7 @@ namespace __jni_impl::java::text
 		
 		// Constructors
 		void __constructor(jstring arg0, jint arg1);
+		void __constructor(const QString &arg0, jint arg1);
 		
 		// Methods
 		jint getErrorOffset();
@@ -34,7 +35,17 @@ namespace __jni_impl::java::text
 			"java.text.ParseException",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void ParseException::__constructor(const QString &arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.text.ParseException",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods

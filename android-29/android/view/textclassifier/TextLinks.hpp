@@ -35,10 +35,10 @@ namespace __jni_impl::android::view::textclassifier
 		// Methods
 		jstring toString();
 		jint apply(__jni_impl::__JniBaseClass arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
+		QAndroidJniObject getLinks();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getExtras();
-		QAndroidJniObject getLinks();
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -132,6 +132,13 @@ namespace __jni_impl::android::view::textclassifier
 			arg2.__jniObject().object()
 		);
 	}
+	QAndroidJniObject TextLinks::getLinks()
+	{
+		return __thiz.callObjectMethod(
+			"getLinks",
+			"()Ljava/util/Collection;"
+		);
+	}
 	jint TextLinks::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -153,13 +160,6 @@ namespace __jni_impl::android::view::textclassifier
 		return __thiz.callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
-		);
-	}
-	QAndroidJniObject TextLinks::getLinks()
-	{
-		return __thiz.callObjectMethod(
-			"getLinks",
-			"()Ljava/util/Collection;"
 		);
 	}
 } // namespace __jni_impl::android::view::textclassifier

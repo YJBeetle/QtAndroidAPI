@@ -32,6 +32,7 @@ namespace __jni_impl::java::lang
 		jint compareTo(jobject arg0);
 		jint compareTo(__jni_impl::java::lang::Enum arg0);
 		static QAndroidJniObject valueOf(jclass arg0, jstring arg1);
+		static QAndroidJniObject valueOf(jclass arg0, const QString &arg1);
 		QAndroidJniObject describeConstable();
 		jclass getDeclaringClass();
 		jint ordinal();
@@ -107,6 +108,16 @@ namespace __jni_impl::java::lang
 			"(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;",
 			arg0,
 			arg1
+		);
+	}
+	QAndroidJniObject Enum::valueOf(jclass arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.lang.Enum",
+			"valueOf",
+			"(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject Enum::describeConstable()

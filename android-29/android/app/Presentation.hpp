@@ -32,8 +32,8 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		QAndroidJniObject getResources();
-		void show();
 		QAndroidJniObject getDisplay();
+		void show();
 		void onDisplayRemoved();
 		void onDisplayChanged();
 	};
@@ -54,7 +54,8 @@ namespace __jni_impl::android::app
 			"android.app.Presentation",
 			"(Landroid/content/Context;Landroid/view/Display;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Presentation::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::view::Display arg1, jint arg2)
 	{
@@ -63,7 +64,8 @@ namespace __jni_impl::android::app
 			"(Landroid/content/Context;Landroid/view/Display;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods
@@ -74,18 +76,18 @@ namespace __jni_impl::android::app
 			"()Landroid/content/res/Resources;"
 		);
 	}
-	void Presentation::show()
-	{
-		__thiz.callMethod<void>(
-			"show",
-			"()V"
-		);
-	}
 	QAndroidJniObject Presentation::getDisplay()
 	{
 		return __thiz.callObjectMethod(
 			"getDisplay",
 			"()Landroid/view/Display;"
+		);
+	}
+	void Presentation::show()
+	{
+		__thiz.callMethod<void>(
+			"show",
+			"()V"
 		);
 	}
 	void Presentation::onDisplayRemoved()

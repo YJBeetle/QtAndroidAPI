@@ -41,7 +41,8 @@ namespace __jni_impl::android::telecom
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.CallScreeningService$CallResponse$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

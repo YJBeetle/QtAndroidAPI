@@ -28,12 +28,12 @@ namespace __jni_impl::android::text::style
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
+		jfloat getScaleX();
+		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
+		jint getSpanTypeId();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
 		void updateMeasureState(__jni_impl::android::text::TextPaint arg0);
-		jfloat getScaleX();
-		jint getSpanTypeId();
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -50,17 +50,41 @@ namespace __jni_impl::android::text::style
 		__thiz = QAndroidJniObject(
 			"android.text.style.ScaleXSpan",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	void ScaleXSpan::__constructor(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.ScaleXSpan",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
+	jfloat ScaleXSpan::getScaleX()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getScaleX",
+			"()F"
+		);
+	}
+	void ScaleXSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
+	{
+		__thiz.callMethod<void>(
+			"updateDrawState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint ScaleXSpan::getSpanTypeId()
+	{
+		return __thiz.callMethod<jint>(
+			"getSpanTypeId",
+			"()I"
+		);
+	}
 	jint ScaleXSpan::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -77,34 +101,12 @@ namespace __jni_impl::android::text::style
 			arg1
 		);
 	}
-	void ScaleXSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
-	{
-		__thiz.callMethod<void>(
-			"updateDrawState",
-			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void ScaleXSpan::updateMeasureState(__jni_impl::android::text::TextPaint arg0)
 	{
 		__thiz.callMethod<void>(
 			"updateMeasureState",
 			"(Landroid/text/TextPaint;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	jfloat ScaleXSpan::getScaleX()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getScaleX",
-			"()F"
-		);
-	}
-	jint ScaleXSpan::getSpanTypeId()
-	{
-		return __thiz.callMethod<jint>(
-			"getSpanTypeId",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::text::style

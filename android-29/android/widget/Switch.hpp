@@ -15,11 +15,15 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::android::graphics
 {
-	class Typeface;
+	class Canvas;
 }
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
+}
+namespace __jni_impl::android::graphics
+{
+	class Typeface;
 }
 namespace __jni_impl::android::content::res
 {
@@ -37,10 +41,6 @@ namespace __jni_impl::android::view
 {
 	class MotionEvent;
 }
-namespace __jni_impl::android::graphics
-{
-	class Canvas;
-}
 
 namespace __jni_impl::android::widget
 {
@@ -56,6 +56,15 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
+		jstring getAccessibilityClassName();
+		void jumpDrawablesToCurrentState();
+		void draw(__jni_impl::android::graphics::Canvas arg0);
+		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
+		void onMeasure(jint arg0, jint arg1);
+		void toggle();
+		void setChecked(jboolean arg0);
+		jint getCompoundPaddingLeft();
+		jint getCompoundPaddingRight();
 		void setSwitchTextAppearance(__jni_impl::android::content::Context arg0, jint arg1);
 		void setSwitchTypeface(__jni_impl::android::graphics::Typeface arg0, jint arg1);
 		void setSwitchTypeface(__jni_impl::android::graphics::Typeface arg0);
@@ -87,31 +96,24 @@ namespace __jni_impl::android::widget
 		jboolean getSplitTrack();
 		jstring getTextOn();
 		void setTextOn(jstring arg0);
+		void setTextOn(const QString &arg0);
 		jstring getTextOff();
 		void setTextOff(jstring arg0);
+		void setTextOff(const QString &arg0);
 		void setShowText(jboolean arg0);
 		jboolean getShowText();
 		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		jint getCompoundPaddingLeft();
-		jint getCompoundPaddingRight();
-		void toggle();
-		jstring getAccessibilityClassName();
-		void jumpDrawablesToCurrentState();
-		void draw(__jni_impl::android::graphics::Canvas arg0);
-		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
-		void onMeasure(jint arg0, jint arg1);
-		void setChecked(jboolean arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "../graphics/Typeface.hpp"
+#include "../graphics/Canvas.hpp"
 #include "../graphics/drawable/Drawable.hpp"
+#include "../graphics/Typeface.hpp"
 #include "../content/res/ColorStateList.hpp"
 #include "../graphics/PorterDuff_Mode.hpp"
 #include "../graphics/BlendMode.hpp"
 #include "../view/MotionEvent.hpp"
-#include "../graphics/Canvas.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -126,7 +128,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void Switch::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -135,7 +138,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void Switch::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -143,17 +147,88 @@ namespace __jni_impl::android::widget
 			"android.widget.Switch",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Switch::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Switch",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
+	jstring Switch::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	void Switch::jumpDrawablesToCurrentState()
+	{
+		__thiz.callMethod<void>(
+			"jumpDrawablesToCurrentState",
+			"()V"
+		);
+	}
+	void Switch::draw(__jni_impl::android::graphics::Canvas arg0)
+	{
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Switch::drawableHotspotChanged(jfloat arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"drawableHotspotChanged",
+			"(FF)V",
+			arg0,
+			arg1
+		);
+	}
+	void Switch::onMeasure(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"onMeasure",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void Switch::toggle()
+	{
+		__thiz.callMethod<void>(
+			"toggle",
+			"()V"
+		);
+	}
+	void Switch::setChecked(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setChecked",
+			"(Z)V",
+			arg0
+		);
+	}
+	jint Switch::getCompoundPaddingLeft()
+	{
+		return __thiz.callMethod<jint>(
+			"getCompoundPaddingLeft",
+			"()I"
+		);
+	}
+	jint Switch::getCompoundPaddingRight()
+	{
+		return __thiz.callMethod<jint>(
+			"getCompoundPaddingRight",
+			"()I"
+		);
+	}
 	void Switch::setSwitchTextAppearance(__jni_impl::android::content::Context arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -391,6 +466,14 @@ namespace __jni_impl::android::widget
 			arg0
 		);
 	}
+	void Switch::setTextOn(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTextOn",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring Switch::getTextOff()
 	{
 		return __thiz.callObjectMethod(
@@ -404,6 +487,14 @@ namespace __jni_impl::android::widget
 			"setTextOff",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
+		);
+	}
+	void Switch::setTextOff(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTextOff",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Switch::setShowText(jboolean arg0)
@@ -427,75 +518,6 @@ namespace __jni_impl::android::widget
 			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
 			arg0.__jniObject().object()
-		);
-	}
-	jint Switch::getCompoundPaddingLeft()
-	{
-		return __thiz.callMethod<jint>(
-			"getCompoundPaddingLeft",
-			"()I"
-		);
-	}
-	jint Switch::getCompoundPaddingRight()
-	{
-		return __thiz.callMethod<jint>(
-			"getCompoundPaddingRight",
-			"()I"
-		);
-	}
-	void Switch::toggle()
-	{
-		__thiz.callMethod<void>(
-			"toggle",
-			"()V"
-		);
-	}
-	jstring Switch::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	void Switch::jumpDrawablesToCurrentState()
-	{
-		__thiz.callMethod<void>(
-			"jumpDrawablesToCurrentState",
-			"()V"
-		);
-	}
-	void Switch::draw(__jni_impl::android::graphics::Canvas arg0)
-	{
-		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Switch::drawableHotspotChanged(jfloat arg0, jfloat arg1)
-	{
-		__thiz.callMethod<void>(
-			"drawableHotspotChanged",
-			"(FF)V",
-			arg0,
-			arg1
-		);
-	}
-	void Switch::onMeasure(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"onMeasure",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void Switch::setChecked(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setChecked",
-			"(Z)V",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::widget

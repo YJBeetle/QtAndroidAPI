@@ -10,10 +10,6 @@ namespace __jni_impl::java::util
 {
 	class UUID;
 }
-namespace __jni_impl::android::content::pm
-{
-	class PackageManager;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
@@ -21,6 +17,10 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::content
 {
 	class Context;
+}
+namespace __jni_impl::android::content::pm
+{
+	class PackageManager;
 }
 
 namespace __jni_impl::android::content::pm
@@ -107,21 +107,22 @@ namespace __jni_impl::android::content::pm
 		
 		// Methods
 		jstring toString();
-		jstring loadDescription(__jni_impl::android::content::pm::PackageManager arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		static jstring getCategoryTitle(__jni_impl::android::content::Context arg0, jint arg1);
 		jboolean isVirtualPreload();
 		jboolean isProfileableByShell();
 		jboolean isResourceOverlay();
+		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void dump(__jni_impl::__JniBaseClass arg0, const QString &arg1);
+		jstring loadDescription(__jni_impl::android::content::pm::PackageManager arg0);
 	};
 } // namespace __jni_impl::android::content::pm
 
 #include "../../../java/util/UUID.hpp"
-#include "PackageManager.hpp"
 #include "../../os/Parcel.hpp"
 #include "../Context.hpp"
+#include "PackageManager.hpp"
 
 namespace __jni_impl::android::content::pm
 {
@@ -618,14 +619,16 @@ namespace __jni_impl::android::content::pm
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.ApplicationInfo",
-			"()V");
+			"()V"
+		);
 	}
 	void ApplicationInfo::__constructor(__jni_impl::android::content::pm::ApplicationInfo arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.ApplicationInfo",
 			"(Landroid/content/pm/ApplicationInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -634,14 +637,6 @@ namespace __jni_impl::android::content::pm
 		return __thiz.callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring ApplicationInfo::loadDescription(__jni_impl::android::content::pm::PackageManager arg0)
-	{
-		return __thiz.callObjectMethod(
-			"loadDescription",
-			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
 		).object<jstring>();
 	}
 	jint ApplicationInfo::describeContents()
@@ -656,15 +651,6 @@ namespace __jni_impl::android::content::pm
 		__thiz.callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void ApplicationInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
 		);
@@ -699,6 +685,32 @@ namespace __jni_impl::android::content::pm
 			"isResourceOverlay",
 			"()Z"
 		);
+	}
+	void ApplicationInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void ApplicationInfo::dump(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	jstring ApplicationInfo::loadDescription(__jni_impl::android::content::pm::PackageManager arg0)
+	{
+		return __thiz.callObjectMethod(
+			"loadDescription",
+			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::content::pm
 

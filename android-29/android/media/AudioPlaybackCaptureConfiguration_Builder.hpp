@@ -46,7 +46,8 @@ namespace __jni_impl::android::media
 		__thiz = QAndroidJniObject(
 			"android.media.AudioPlaybackCaptureConfiguration$Builder",
 			"(Landroid/media/projection/MediaProjection;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

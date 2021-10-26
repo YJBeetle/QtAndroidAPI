@@ -19,7 +19,9 @@ namespace __jni_impl::android::net
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::android::net::LocalSocketAddress_Namespace arg1);
+		void __constructor(const QString &arg0, __jni_impl::android::net::LocalSocketAddress_Namespace arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jstring getName();
@@ -40,14 +42,33 @@ namespace __jni_impl::android::net
 			"android.net.LocalSocketAddress",
 			"(Ljava/lang/String;Landroid/net/LocalSocketAddress$Namespace;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void LocalSocketAddress::__constructor(const QString &arg0, __jni_impl::android::net::LocalSocketAddress_Namespace arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.net.LocalSocketAddress",
+			"(Ljava/lang/String;Landroid/net/LocalSocketAddress$Namespace;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	void LocalSocketAddress::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.LocalSocketAddress",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void LocalSocketAddress::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.net.LocalSocketAddress",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

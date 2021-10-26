@@ -31,16 +31,18 @@ namespace __jni_impl::android::view::accessibility
 		jint getItemCount();
 		QAndroidJniObject getSource();
 		QAndroidJniObject getText();
-		void setClassName(jstring arg0);
-		void setPassword(jboolean arg0);
+		void setSource(__jni_impl::android::view::View arg0, jint arg1);
+		void setSource(__jni_impl::android::view::View arg0);
 		jstring getContentDescription();
 		void setContentDescription(jstring arg0);
+		void setContentDescription(const QString &arg0);
 		void setEnabled(jboolean arg0);
 		void setScrollX(jint arg0);
 		void setScrollY(jint arg0);
 		jint getScrollX();
 		jint getScrollY();
 		jint getWindowId();
+		void setPassword(jboolean arg0);
 		jboolean isChecked();
 		void setChecked(jboolean arg0);
 		jboolean isPassword();
@@ -69,13 +71,14 @@ namespace __jni_impl::android::view::accessibility
 		void setRemovedCount(jint arg0);
 		jstring getBeforeText();
 		void setBeforeText(jstring arg0);
+		void setBeforeText(const QString &arg0);
 		QAndroidJniObject getParcelableData();
 		void setParcelableData(__jni_impl::__JniBaseClass arg0);
-		void setSource(__jni_impl::android::view::View arg0, jint arg1);
-		void setSource(__jni_impl::android::view::View arg0);
 		static QAndroidJniObject obtain();
 		static QAndroidJniObject obtain(__jni_impl::android::view::accessibility::AccessibilityRecord arg0);
 		void recycle();
+		void setClassName(jstring arg0);
+		void setClassName(const QString &arg0);
 	};
 } // namespace __jni_impl::android::view::accessibility
 
@@ -137,20 +140,21 @@ namespace __jni_impl::android::view::accessibility
 			"()Ljava/util/List;"
 		);
 	}
-	void AccessibilityRecord::setClassName(jstring arg0)
+	void AccessibilityRecord::setSource(__jni_impl::android::view::View arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
-			"setClassName",
-			"(Ljava/lang/CharSequence;)V",
-			arg0
+			"setSource",
+			"(Landroid/view/View;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
-	void AccessibilityRecord::setPassword(jboolean arg0)
+	void AccessibilityRecord::setSource(__jni_impl::android::view::View arg0)
 	{
 		__thiz.callMethod<void>(
-			"setPassword",
-			"(Z)V",
-			arg0
+			"setSource",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	jstring AccessibilityRecord::getContentDescription()
@@ -166,6 +170,14 @@ namespace __jni_impl::android::view::accessibility
 			"setContentDescription",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
+		);
+	}
+	void AccessibilityRecord::setContentDescription(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setContentDescription",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void AccessibilityRecord::setEnabled(jboolean arg0)
@@ -211,6 +223,14 @@ namespace __jni_impl::android::view::accessibility
 		return __thiz.callMethod<jint>(
 			"getWindowId",
 			"()I"
+		);
+	}
+	void AccessibilityRecord::setPassword(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPassword",
+			"(Z)V",
+			arg0
 		);
 	}
 	jboolean AccessibilityRecord::isChecked()
@@ -423,6 +443,14 @@ namespace __jni_impl::android::view::accessibility
 			arg0
 		);
 	}
+	void AccessibilityRecord::setBeforeText(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setBeforeText",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject AccessibilityRecord::getParcelableData()
 	{
 		return __thiz.callObjectMethod(
@@ -435,23 +463,6 @@ namespace __jni_impl::android::view::accessibility
 		__thiz.callMethod<void>(
 			"setParcelableData",
 			"(Landroid/os/Parcelable;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void AccessibilityRecord::setSource(__jni_impl::android::view::View arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setSource",
-			"(Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void AccessibilityRecord::setSource(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSource",
-			"(Landroid/view/View;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -477,6 +488,22 @@ namespace __jni_impl::android::view::accessibility
 		__thiz.callMethod<void>(
 			"recycle",
 			"()V"
+		);
+	}
+	void AccessibilityRecord::setClassName(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setClassName",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void AccessibilityRecord::setClassName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setClassName",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::view::accessibility

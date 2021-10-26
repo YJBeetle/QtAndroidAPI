@@ -39,7 +39,8 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.WebBackForwardList",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

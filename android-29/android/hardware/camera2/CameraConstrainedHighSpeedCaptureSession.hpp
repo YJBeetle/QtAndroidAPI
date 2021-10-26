@@ -37,7 +37,8 @@ namespace __jni_impl::android::hardware::camera2
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.CameraConstrainedHighSpeedCaptureSession",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

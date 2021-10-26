@@ -13,6 +13,14 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
+namespace __jni_impl::android::content
+{
+	class Intent;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
+}
 namespace __jni_impl::android::content::pm
 {
 	class ServiceInfo;
@@ -20,14 +28,6 @@ namespace __jni_impl::android::content::pm
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
-namespace __jni_impl::android::content
-{
-	class Intent;
 }
 
 namespace __jni_impl::android::media::tv
@@ -59,28 +59,28 @@ namespace __jni_impl::android::media::tv
 		jstring getId();
 		jint getType();
 		jboolean isHidden(__jni_impl::android::content::Context arg0);
-		QAndroidJniObject getServiceInfo();
-		jstring loadLabel(__jni_impl::android::content::Context arg0);
-		QAndroidJniObject loadIcon(__jni_impl::android::content::Context arg0);
-		jboolean canRecord();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getExtras();
 		jstring getParentId();
 		QAndroidJniObject createSetupIntent();
 		QAndroidJniObject createSettingsIntent();
 		jint getTunerCount();
 		jboolean isPassthroughInput();
 		jstring loadCustomLabel(__jni_impl::android::content::Context arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jboolean canRecord();
+		QAndroidJniObject getExtras();
+		QAndroidJniObject getServiceInfo();
+		jstring loadLabel(__jni_impl::android::content::Context arg0);
+		QAndroidJniObject loadIcon(__jni_impl::android::content::Context arg0);
 	};
 } // namespace __jni_impl::android::media::tv
 
 #include "../../os/Parcel.hpp"
 #include "../../content/Context.hpp"
+#include "../../content/Intent.hpp"
+#include "../../os/Bundle.hpp"
 #include "../../content/pm/ServiceInfo.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
-#include "../../os/Bundle.hpp"
-#include "../../content/Intent.hpp"
 
 namespace __jni_impl::android::media::tv
 {
@@ -225,59 +225,6 @@ namespace __jni_impl::android::media::tv
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject TvInputInfo::getServiceInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getServiceInfo",
-			"()Landroid/content/pm/ServiceInfo;"
-		);
-	}
-	jstring TvInputInfo::loadLabel(__jni_impl::android::content::Context arg0)
-	{
-		return __thiz.callObjectMethod(
-			"loadLabel",
-			"(Landroid/content/Context;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
-		).object<jstring>();
-	}
-	QAndroidJniObject TvInputInfo::loadIcon(__jni_impl::android::content::Context arg0)
-	{
-		return __thiz.callObjectMethod(
-			"loadIcon",
-			"(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean TvInputInfo::canRecord()
-	{
-		return __thiz.callMethod<jboolean>(
-			"canRecord",
-			"()Z"
-		);
-	}
-	jint TvInputInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void TvInputInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject TvInputInfo::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
-		);
-	}
 	jstring TvInputInfo::getParentId()
 	{
 		return __thiz.callObjectMethod(
@@ -320,6 +267,59 @@ namespace __jni_impl::android::media::tv
 			"(Landroid/content/Context;)Ljava/lang/CharSequence;",
 			arg0.__jniObject().object()
 		).object<jstring>();
+	}
+	jint TvInputInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void TvInputInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jboolean TvInputInfo::canRecord()
+	{
+		return __thiz.callMethod<jboolean>(
+			"canRecord",
+			"()Z"
+		);
+	}
+	QAndroidJniObject TvInputInfo::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	QAndroidJniObject TvInputInfo::getServiceInfo()
+	{
+		return __thiz.callObjectMethod(
+			"getServiceInfo",
+			"()Landroid/content/pm/ServiceInfo;"
+		);
+	}
+	jstring TvInputInfo::loadLabel(__jni_impl::android::content::Context arg0)
+	{
+		return __thiz.callObjectMethod(
+			"loadLabel",
+			"(Landroid/content/Context;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	QAndroidJniObject TvInputInfo::loadIcon(__jni_impl::android::content::Context arg0)
+	{
+		return __thiz.callObjectMethod(
+			"loadIcon",
+			"(Landroid/content/Context;)Landroid/graphics/drawable/Drawable;",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::media::tv
 

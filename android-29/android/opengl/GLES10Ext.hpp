@@ -37,7 +37,8 @@ namespace __jni_impl::android::opengl
 	{
 		__thiz = QAndroidJniObject(
 			"android.opengl.GLES10Ext",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

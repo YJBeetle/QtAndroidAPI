@@ -31,7 +31,9 @@ namespace __jni_impl::android::icu::text
 		
 		// Methods
 		QAndroidJniObject apply(__jni_impl::java::util::Locale arg0, jstring arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::icu::text::Edits arg3);
+		QAndroidJniObject apply(__jni_impl::java::util::Locale arg0, const QString &arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::icu::text::Edits arg3);
 		jstring apply(__jni_impl::java::util::Locale arg0, jstring arg1);
+		jstring apply(__jni_impl::java::util::Locale arg0, const QString &arg1);
 		QAndroidJniObject omitUnchangedText();
 	};
 } // namespace __jni_impl::android::icu::text
@@ -64,6 +66,17 @@ namespace __jni_impl::android::icu::text
 			arg3.__jniObject().object()
 		);
 	}
+	QAndroidJniObject CaseMap_Upper::apply(__jni_impl::java::util::Locale arg0, const QString &arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::icu::text::Edits arg3)
+	{
+		return __thiz.callObjectMethod(
+			"apply",
+			"(Ljava/util/Locale;Ljava/lang/CharSequence;Ljava/lang/Appendable;Landroid/icu/text/Edits;)Ljava/lang/Appendable;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object()
+		);
+	}
 	jstring CaseMap_Upper::apply(__jni_impl::java::util::Locale arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -71,6 +84,15 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/util/Locale;Ljava/lang/CharSequence;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
 			arg1
+		).object<jstring>();
+	}
+	jstring CaseMap_Upper::apply(__jni_impl::java::util::Locale arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"apply",
+			"(Ljava/util/Locale;Ljava/lang/CharSequence;)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject CaseMap_Upper::omitUnchangedText()

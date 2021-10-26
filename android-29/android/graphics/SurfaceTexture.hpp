@@ -49,7 +49,8 @@ namespace __jni_impl::android::graphics
 		__thiz = QAndroidJniObject(
 			"android.graphics.SurfaceTexture",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void SurfaceTexture::__constructor(jint arg0, jboolean arg1)
 	{
@@ -57,14 +58,16 @@ namespace __jni_impl::android::graphics
 			"android.graphics.SurfaceTexture",
 			"(IZ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void SurfaceTexture::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.SurfaceTexture",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

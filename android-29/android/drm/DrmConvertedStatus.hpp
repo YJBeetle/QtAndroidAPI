@@ -79,7 +79,8 @@ namespace __jni_impl::android::drm
 			"(I[BI)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods

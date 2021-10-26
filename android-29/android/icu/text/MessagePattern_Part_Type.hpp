@@ -34,6 +34,7 @@ namespace __jni_impl::android::icu::text
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 		jboolean hasNumericValue();
 	};
 } // namespace __jni_impl::android::icu::text
@@ -179,6 +180,15 @@ namespace __jni_impl::android::icu::text
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern$Part$Type;",
 			arg0
+		);
+	}
+	QAndroidJniObject MessagePattern_Part_Type::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.MessagePattern$Part$Type",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern$Part$Type;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean MessagePattern_Part_Type::hasNumericValue()

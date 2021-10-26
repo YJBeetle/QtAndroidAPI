@@ -33,7 +33,8 @@ namespace __jni_impl::java::text
 		__thiz = QAndroidJniObject(
 			"java.text.Annotation",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

@@ -46,7 +46,8 @@ namespace __jni_impl::java::security::spec
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	void EllipticCurve::__constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2)
 	{
@@ -55,7 +56,8 @@ namespace __jni_impl::java::security::spec
 			"(Ljava/security/spec/ECField;Ljava/math/BigInteger;Ljava/math/BigInteger;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods

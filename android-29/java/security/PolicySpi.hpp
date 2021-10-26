@@ -50,7 +50,8 @@ namespace __jni_impl::java::security
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.PolicySpi",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

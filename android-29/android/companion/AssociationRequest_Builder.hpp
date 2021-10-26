@@ -38,7 +38,8 @@ namespace __jni_impl::android::companion
 	{
 		__thiz = QAndroidJniObject(
 			"android.companion.AssociationRequest$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

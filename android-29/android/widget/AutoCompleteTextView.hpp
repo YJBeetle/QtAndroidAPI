@@ -20,6 +20,10 @@ namespace __jni_impl::android::widget
 {
 	class Filter;
 }
+namespace __jni_impl::android::graphics
+{
+	class Rect;
+}
 namespace __jni_impl::android::view
 {
 	class KeyEvent;
@@ -31,10 +35,6 @@ namespace __jni_impl::android::view::inputmethod
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
-}
-namespace __jni_impl::android::graphics
-{
-	class Rect;
 }
 
 namespace __jni_impl::android::widget
@@ -55,24 +55,25 @@ namespace __jni_impl::android::widget
 		QAndroidJniObject getAdapter();
 		void setThreshold(jint arg0);
 		void setText(jstring arg0, jboolean arg1);
-		void onFilterComplete(jint arg0);
+		void setText(const QString &arg0, jboolean arg1);
+		void setOnClickListener(__jni_impl::__JniBaseClass arg0);
+		jboolean onKeyPreIme(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		void onCommitCompletion(__jni_impl::android::view::inputmethod::CompletionInfo arg0);
+		void setValidator(__jni_impl::__JniBaseClass arg0);
+		jint getThreshold();
 		void setOnDismissListener(__jni_impl::__JniBaseClass arg0);
 		void setOnItemClickListener(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getOnItemClickListener();
 		void setOnItemSelectedListener(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getOnItemSelectedListener();
 		void setAdapter(__jni_impl::__JniBaseClass arg0);
-		void setValidator(__jni_impl::__JniBaseClass arg0);
-		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		void onWindowFocusChanged(jboolean arg0);
-		void onCommitCompletion(__jni_impl::android::view::inputmethod::CompletionInfo arg0);
 		jstring getCompletionHint();
 		jint getDropDownWidth();
 		void setDropDownWidth(jint arg0);
 		jint getDropDownHeight();
 		void setDropDownHeight(jint arg0);
 		void setCompletionHint(jstring arg0);
+		void setCompletionHint(const QString &arg0);
 		jint getDropDownAnchor();
 		void setDropDownAnchor(jint arg0);
 		QAndroidJniObject getDropDownBackground();
@@ -98,19 +99,20 @@ namespace __jni_impl::android::widget
 		void showDropDown();
 		QAndroidJniObject getValidator();
 		void performValidation();
-		void setOnClickListener(__jni_impl::__JniBaseClass arg0);
-		jboolean onKeyPreIme(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jint getThreshold();
+		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		void onWindowFocusChanged(jboolean arg0);
+		void onFilterComplete(jint arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
 #include "../content/res/Resources_Theme.hpp"
 #include "Filter.hpp"
+#include "../graphics/Rect.hpp"
 #include "../view/KeyEvent.hpp"
 #include "../view/inputmethod/CompletionInfo.hpp"
 #include "../graphics/drawable/Drawable.hpp"
-#include "../graphics/Rect.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -126,7 +128,8 @@ namespace __jni_impl::android::widget
 			arg1.__jniObject().object(),
 			arg2,
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void AutoCompleteTextView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 	{
@@ -136,7 +139,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void AutoCompleteTextView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -145,7 +149,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void AutoCompleteTextView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -153,14 +158,16 @@ namespace __jni_impl::android::widget
 			"android.widget.AutoCompleteTextView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AutoCompleteTextView::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AutoCompleteTextView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -188,12 +195,53 @@ namespace __jni_impl::android::widget
 			arg1
 		);
 	}
-	void AutoCompleteTextView::onFilterComplete(jint arg0)
+	void AutoCompleteTextView::setText(const QString &arg0, jboolean arg1)
 	{
 		__thiz.callMethod<void>(
-			"onFilterComplete",
-			"(I)V",
-			arg0
+			"setText",
+			"(Ljava/lang/CharSequence;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	void AutoCompleteTextView::setOnClickListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnClickListener",
+			"(Landroid/view/View$OnClickListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean AutoCompleteTextView::onKeyPreIme(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyPreIme",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void AutoCompleteTextView::onCommitCompletion(__jni_impl::android::view::inputmethod::CompletionInfo arg0)
+	{
+		__thiz.callMethod<void>(
+			"onCommitCompletion",
+			"(Landroid/view/inputmethod/CompletionInfo;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AutoCompleteTextView::setValidator(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setValidator",
+			"(Landroid/widget/AutoCompleteTextView$Validator;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint AutoCompleteTextView::getThreshold()
+	{
+		return __thiz.callMethod<jint>(
+			"getThreshold",
+			"()I"
 		);
 	}
 	void AutoCompleteTextView::setOnDismissListener(__jni_impl::__JniBaseClass arg0)
@@ -242,48 +290,6 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	void AutoCompleteTextView::setValidator(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setValidator",
-			"(Landroid/widget/AutoCompleteTextView$Validator;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean AutoCompleteTextView::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyDown",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean AutoCompleteTextView::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyUp",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void AutoCompleteTextView::onWindowFocusChanged(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"onWindowFocusChanged",
-			"(Z)V",
-			arg0
-		);
-	}
-	void AutoCompleteTextView::onCommitCompletion(__jni_impl::android::view::inputmethod::CompletionInfo arg0)
-	{
-		__thiz.callMethod<void>(
-			"onCommitCompletion",
-			"(Landroid/view/inputmethod/CompletionInfo;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	jstring AutoCompleteTextView::getCompletionHint()
 	{
 		return __thiz.callObjectMethod(
@@ -327,6 +333,14 @@ namespace __jni_impl::android::widget
 			"setCompletionHint",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
+		);
+	}
+	void AutoCompleteTextView::setCompletionHint(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCompletionHint",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint AutoCompleteTextView::getDropDownAnchor()
@@ -511,28 +525,38 @@ namespace __jni_impl::android::widget
 			"()V"
 		);
 	}
-	void AutoCompleteTextView::setOnClickListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnClickListener",
-			"(Landroid/view/View$OnClickListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean AutoCompleteTextView::onKeyPreIme(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	jboolean AutoCompleteTextView::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
 	{
 		return __thiz.callMethod<jboolean>(
-			"onKeyPreIme",
+			"onKeyDown",
 			"(ILandroid/view/KeyEvent;)Z",
 			arg0,
 			arg1.__jniObject().object()
 		);
 	}
-	jint AutoCompleteTextView::getThreshold()
+	jboolean AutoCompleteTextView::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
 	{
-		return __thiz.callMethod<jint>(
-			"getThreshold",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"onKeyUp",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void AutoCompleteTextView::onWindowFocusChanged(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"onWindowFocusChanged",
+			"(Z)V",
+			arg0
+		);
+	}
+	void AutoCompleteTextView::onFilterComplete(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"onFilterComplete",
+			"(I)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::widget

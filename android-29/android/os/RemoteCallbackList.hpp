@@ -20,13 +20,13 @@ namespace __jni_impl::android::os
 		jboolean _register(__jni_impl::__JniBaseClass arg0, jobject arg1);
 		jboolean _register(__jni_impl::__JniBaseClass arg0);
 		jboolean unregister(__jni_impl::__JniBaseClass arg0);
-		void kill();
 		void onCallbackDied(__jni_impl::__JniBaseClass arg0);
 		void onCallbackDied(__jni_impl::__JniBaseClass arg0, jobject arg1);
 		jint beginBroadcast();
 		QAndroidJniObject getBroadcastItem(jint arg0);
 		jobject getBroadcastCookie(jint arg0);
 		void finishBroadcast();
+		void kill();
 		jint getRegisteredCallbackCount();
 		QAndroidJniObject getRegisteredCallbackItem(jint arg0);
 		jobject getRegisteredCallbackCookie(jint arg0);
@@ -43,7 +43,8 @@ namespace __jni_impl::android::os
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.RemoteCallbackList",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -70,13 +71,6 @@ namespace __jni_impl::android::os
 			"unregister",
 			"(Landroid/os/IInterface;)Z",
 			arg0.__jniObject().object()
-		);
-	}
-	void RemoteCallbackList::kill()
-	{
-		__thiz.callMethod<void>(
-			"kill",
-			"()V"
 		);
 	}
 	void RemoteCallbackList::onCallbackDied(__jni_impl::__JniBaseClass arg0)
@@ -123,6 +117,13 @@ namespace __jni_impl::android::os
 	{
 		__thiz.callMethod<void>(
 			"finishBroadcast",
+			"()V"
+		);
+	}
+	void RemoteCallbackList::kill()
+	{
+		__thiz.callMethod<void>(
+			"kill",
 			"()V"
 		);
 	}

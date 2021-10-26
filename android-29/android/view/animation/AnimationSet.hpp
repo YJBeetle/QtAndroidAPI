@@ -34,7 +34,7 @@ namespace __jni_impl::android::view::animation
 		void initialize(jint arg0, jint arg1, jint arg2, jint arg3);
 		void reset();
 		jlong getDuration();
-		jboolean getTransformation(jlong arg0, __jni_impl::android::view::animation::Transformation arg1);
+		void setDuration(jlong arg0);
 		void setStartOffset(jlong arg0);
 		void restrictDuration(jlong arg0);
 		void scaleCurrentDuration(jfloat arg0);
@@ -45,10 +45,10 @@ namespace __jni_impl::android::view::animation
 		jboolean willChangeTransformationMatrix();
 		jboolean willChangeBounds();
 		jlong computeDurationHint();
-		QAndroidJniObject getAnimations();
-		void addAnimation(__jni_impl::android::view::animation::Animation arg0);
-		void setDuration(jlong arg0);
 		jlong getStartTime();
+		void addAnimation(__jni_impl::android::view::animation::Animation arg0);
+		QAndroidJniObject getAnimations();
+		jboolean getTransformation(jlong arg0, __jni_impl::android::view::animation::Transformation arg1);
 	};
 } // namespace __jni_impl::android::view::animation
 
@@ -67,14 +67,16 @@ namespace __jni_impl::android::view::animation
 			"android.view.animation.AnimationSet",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AnimationSet::__constructor(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.AnimationSet",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -103,13 +105,12 @@ namespace __jni_impl::android::view::animation
 			"()J"
 		);
 	}
-	jboolean AnimationSet::getTransformation(jlong arg0, __jni_impl::android::view::animation::Transformation arg1)
+	void AnimationSet::setDuration(jlong arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"getTransformation",
-			"(JLandroid/view/animation/Transformation;)Z",
-			arg0,
-			arg1.__jniObject().object()
+		__thiz.callMethod<void>(
+			"setDuration",
+			"(J)V",
+			arg0
 		);
 	}
 	void AnimationSet::setStartOffset(jlong arg0)
@@ -189,11 +190,11 @@ namespace __jni_impl::android::view::animation
 			"()J"
 		);
 	}
-	QAndroidJniObject AnimationSet::getAnimations()
+	jlong AnimationSet::getStartTime()
 	{
-		return __thiz.callObjectMethod(
-			"getAnimations",
-			"()Ljava/util/List;"
+		return __thiz.callMethod<jlong>(
+			"getStartTime",
+			"()J"
 		);
 	}
 	void AnimationSet::addAnimation(__jni_impl::android::view::animation::Animation arg0)
@@ -204,19 +205,20 @@ namespace __jni_impl::android::view::animation
 			arg0.__jniObject().object()
 		);
 	}
-	void AnimationSet::setDuration(jlong arg0)
+	QAndroidJniObject AnimationSet::getAnimations()
 	{
-		__thiz.callMethod<void>(
-			"setDuration",
-			"(J)V",
-			arg0
+		return __thiz.callObjectMethod(
+			"getAnimations",
+			"()Ljava/util/List;"
 		);
 	}
-	jlong AnimationSet::getStartTime()
+	jboolean AnimationSet::getTransformation(jlong arg0, __jni_impl::android::view::animation::Transformation arg1)
 	{
-		return __thiz.callMethod<jlong>(
-			"getStartTime",
-			"()J"
+		return __thiz.callMethod<jboolean>(
+			"getTransformation",
+			"(JLandroid/view/animation/Transformation;)Z",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::view::animation

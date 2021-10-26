@@ -13,14 +13,6 @@ namespace __jni_impl::android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::android::content
-{
-	class ClipData;
-}
-namespace __jni_impl::android::os
-{
-	class PersistableBundle;
-}
 namespace __jni_impl::android::net
 {
 	class Network;
@@ -28,6 +20,14 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::app::job
 {
 	class JobWorkItem;
+}
+namespace __jni_impl::android::content
+{
+	class ClipData;
+}
+namespace __jni_impl::android::os
+{
+	class PersistableBundle;
 }
 
 namespace __jni_impl::android::app::job
@@ -44,26 +44,26 @@ namespace __jni_impl::android::app::job
 		// Methods
 		QAndroidJniObject getTransientExtras();
 		jint getClipGrantFlags();
+		jarray getTriggeredContentUris();
+		jarray getTriggeredContentAuthorities();
+		QAndroidJniObject getNetwork();
+		QAndroidJniObject dequeueWork();
+		jint getJobId();
+		jboolean isOverrideDeadlineExpired();
+		void completeWork(__jni_impl::android::app::job::JobWorkItem arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getClipData();
 		QAndroidJniObject getExtras();
-		QAndroidJniObject getNetwork();
-		jarray getTriggeredContentUris();
-		jarray getTriggeredContentAuthorities();
-		QAndroidJniObject dequeueWork();
-		void completeWork(__jni_impl::android::app::job::JobWorkItem arg0);
-		jint getJobId();
-		jboolean isOverrideDeadlineExpired();
 	};
 } // namespace __jni_impl::android::app::job
 
 #include "../../os/Parcel.hpp"
 #include "../../os/Bundle.hpp"
-#include "../../content/ClipData.hpp"
-#include "../../os/PersistableBundle.hpp"
 #include "../../net/Network.hpp"
 #include "JobWorkItem.hpp"
+#include "../../content/ClipData.hpp"
+#include "../../os/PersistableBundle.hpp"
 
 namespace __jni_impl::android::app::job
 {
@@ -100,6 +100,56 @@ namespace __jni_impl::android::app::job
 			"()I"
 		);
 	}
+	jarray JobParameters::getTriggeredContentUris()
+	{
+		return __thiz.callObjectMethod(
+			"getTriggeredContentUris",
+			"()[Landroid/net/Uri;"
+		).object<jarray>();
+	}
+	jarray JobParameters::getTriggeredContentAuthorities()
+	{
+		return __thiz.callObjectMethod(
+			"getTriggeredContentAuthorities",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	QAndroidJniObject JobParameters::getNetwork()
+	{
+		return __thiz.callObjectMethod(
+			"getNetwork",
+			"()Landroid/net/Network;"
+		);
+	}
+	QAndroidJniObject JobParameters::dequeueWork()
+	{
+		return __thiz.callObjectMethod(
+			"dequeueWork",
+			"()Landroid/app/job/JobWorkItem;"
+		);
+	}
+	jint JobParameters::getJobId()
+	{
+		return __thiz.callMethod<jint>(
+			"getJobId",
+			"()I"
+		);
+	}
+	jboolean JobParameters::isOverrideDeadlineExpired()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isOverrideDeadlineExpired",
+			"()Z"
+		);
+	}
+	void JobParameters::completeWork(__jni_impl::android::app::job::JobWorkItem arg0)
+	{
+		__thiz.callMethod<void>(
+			"completeWork",
+			"(Landroid/app/job/JobWorkItem;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	jint JobParameters::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -128,56 +178,6 @@ namespace __jni_impl::android::app::job
 		return __thiz.callObjectMethod(
 			"getExtras",
 			"()Landroid/os/PersistableBundle;"
-		);
-	}
-	QAndroidJniObject JobParameters::getNetwork()
-	{
-		return __thiz.callObjectMethod(
-			"getNetwork",
-			"()Landroid/net/Network;"
-		);
-	}
-	jarray JobParameters::getTriggeredContentUris()
-	{
-		return __thiz.callObjectMethod(
-			"getTriggeredContentUris",
-			"()[Landroid/net/Uri;"
-		).object<jarray>();
-	}
-	jarray JobParameters::getTriggeredContentAuthorities()
-	{
-		return __thiz.callObjectMethod(
-			"getTriggeredContentAuthorities",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	QAndroidJniObject JobParameters::dequeueWork()
-	{
-		return __thiz.callObjectMethod(
-			"dequeueWork",
-			"()Landroid/app/job/JobWorkItem;"
-		);
-	}
-	void JobParameters::completeWork(__jni_impl::android::app::job::JobWorkItem arg0)
-	{
-		__thiz.callMethod<void>(
-			"completeWork",
-			"(Landroid/app/job/JobWorkItem;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jint JobParameters::getJobId()
-	{
-		return __thiz.callMethod<jint>(
-			"getJobId",
-			"()I"
-		);
-	}
-	jboolean JobParameters::isOverrideDeadlineExpired()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isOverrideDeadlineExpired",
-			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::app::job

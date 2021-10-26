@@ -32,12 +32,15 @@ namespace __jni_impl::android::telephony::gsm
 		void __constructor();
 		
 		// Methods
-		jbyteArray getUserData();
 		static QAndroidJniObject createFromPdu(jbyteArray arg0);
 		static jint getTPLayerLengthForPDU(jstring arg0);
+		static jint getTPLayerLengthForPDU(const QString &arg0);
 		static jintArray calculateLength(jstring arg0, jboolean arg1);
+		static jintArray calculateLength(const QString &arg0, jboolean arg1);
 		static QAndroidJniObject getSubmitPdu(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, jboolean arg4);
+		static QAndroidJniObject getSubmitPdu(const QString &arg0, const QString &arg1, jshort arg2, jbyteArray arg3, jboolean arg4);
 		static QAndroidJniObject getSubmitPdu(jstring arg0, jstring arg1, jstring arg2, jboolean arg3);
+		static QAndroidJniObject getSubmitPdu(const QString &arg0, const QString &arg1, const QString &arg2, jboolean arg3);
 		jstring getServiceCenterAddress();
 		jstring getOriginatingAddress();
 		jstring getDisplayOriginatingAddress();
@@ -61,6 +64,7 @@ namespace __jni_impl::android::telephony::gsm
 		jint getStatus();
 		jboolean isStatusReportMessage();
 		jboolean isReplyPathPresent();
+		jbyteArray getUserData();
 	};
 } // namespace __jni_impl::android::telephony::gsm
 
@@ -125,17 +129,11 @@ namespace __jni_impl::android::telephony::gsm
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.gsm.SmsMessage",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	jbyteArray SmsMessage::getUserData()
-	{
-		return __thiz.callObjectMethod(
-			"getUserData",
-			"()[B"
-		).object<jbyteArray>();
-	}
 	QAndroidJniObject SmsMessage::createFromPdu(jbyteArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -154,6 +152,15 @@ namespace __jni_impl::android::telephony::gsm
 			arg0
 		);
 	}
+	jint SmsMessage::getTPLayerLengthForPDU(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.telephony.gsm.SmsMessage",
+			"getTPLayerLengthForPDU",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jintArray SmsMessage::calculateLength(jstring arg0, jboolean arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -161,6 +168,16 @@ namespace __jni_impl::android::telephony::gsm
 			"calculateLength",
 			"(Ljava/lang/String;Z)[I",
 			arg0,
+			arg1
+		).object<jintArray>();
+	}
+	jintArray SmsMessage::calculateLength(const QString &arg0, jboolean arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telephony.gsm.SmsMessage",
+			"calculateLength",
+			"(Ljava/lang/String;Z)[I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		).object<jintArray>();
 	}
@@ -177,6 +194,19 @@ namespace __jni_impl::android::telephony::gsm
 			arg4
 		);
 	}
+	QAndroidJniObject SmsMessage::getSubmitPdu(const QString &arg0, const QString &arg1, jshort arg2, jbyteArray arg3, jboolean arg4)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telephony.gsm.SmsMessage",
+			"getSubmitPdu",
+			"(Ljava/lang/String;Ljava/lang/String;S[BZ)Landroid/telephony/gsm/SmsMessage$SubmitPdu;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3,
+			arg4
+		);
+	}
 	QAndroidJniObject SmsMessage::getSubmitPdu(jstring arg0, jstring arg1, jstring arg2, jboolean arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -186,6 +216,18 @@ namespace __jni_impl::android::telephony::gsm
 			arg0,
 			arg1,
 			arg2,
+			arg3
+		);
+	}
+	QAndroidJniObject SmsMessage::getSubmitPdu(const QString &arg0, const QString &arg1, const QString &arg2, jboolean arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telephony.gsm.SmsMessage",
+			"getSubmitPdu",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Landroid/telephony/gsm/SmsMessage$SubmitPdu;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3
 		);
 	}
@@ -349,6 +391,13 @@ namespace __jni_impl::android::telephony::gsm
 			"isReplyPathPresent",
 			"()Z"
 		);
+	}
+	jbyteArray SmsMessage::getUserData()
+	{
+		return __thiz.callObjectMethod(
+			"getUserData",
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::telephony::gsm
 

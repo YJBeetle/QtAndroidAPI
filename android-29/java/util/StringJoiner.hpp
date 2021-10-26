@@ -15,14 +15,18 @@ namespace __jni_impl::java::util
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, jstring arg1, jstring arg2);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2);
 		
 		// Methods
 		QAndroidJniObject add(jstring arg0);
+		QAndroidJniObject add(const QString &arg0);
 		jint length();
 		jstring toString();
 		QAndroidJniObject merge(__jni_impl::java::util::StringJoiner arg0);
 		QAndroidJniObject setEmptyValue(jstring arg0);
+		QAndroidJniObject setEmptyValue(const QString &arg0);
 	};
 } // namespace __jni_impl::java::util
 
@@ -37,7 +41,16 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.StringJoiner",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
+	}
+	void StringJoiner::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.StringJoiner",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void StringJoiner::__constructor(jstring arg0, jstring arg1, jstring arg2)
 	{
@@ -46,7 +59,18 @@ namespace __jni_impl::java::util
 			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void StringJoiner::__constructor(const QString &arg0, const QString &arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.StringJoiner",
+			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -56,6 +80,14 @@ namespace __jni_impl::java::util
 			"add",
 			"(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;",
 			arg0
+		);
+	}
+	QAndroidJniObject StringJoiner::add(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"add",
+			"(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint StringJoiner::length()
@@ -86,6 +118,14 @@ namespace __jni_impl::java::util
 			"setEmptyValue",
 			"(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;",
 			arg0
+		);
+	}
+	QAndroidJniObject StringJoiner::setEmptyValue(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setEmptyValue",
+			"(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::util

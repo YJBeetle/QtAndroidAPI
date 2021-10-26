@@ -26,7 +26,6 @@ namespace __jni_impl::android::location
 		jlong getElapsedRealtimeNanos();
 		jdouble getElapsedRealtimeUncertaintyNanos();
 		jboolean hasElapsedRealtimeUncertaintyNanos();
-		jlong getTimeNanos();
 		jboolean hasLeapSecond();
 		jint getLeapSecond();
 		jboolean hasTimeUncertaintyNanos();
@@ -45,6 +44,7 @@ namespace __jni_impl::android::location
 		jint getHardwareClockDiscontinuityCount();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jlong getTimeNanos();
 	};
 } // namespace __jni_impl::android::location
 
@@ -97,13 +97,6 @@ namespace __jni_impl::android::location
 		return __thiz.callMethod<jboolean>(
 			"hasElapsedRealtimeUncertaintyNanos",
 			"()Z"
-		);
-	}
-	jlong GnssClock::getTimeNanos()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimeNanos",
-			"()J"
 		);
 	}
 	jboolean GnssClock::hasLeapSecond()
@@ -232,6 +225,13 @@ namespace __jni_impl::android::location
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	jlong GnssClock::getTimeNanos()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimeNanos",
+			"()J"
 		);
 	}
 } // namespace __jni_impl::android::location

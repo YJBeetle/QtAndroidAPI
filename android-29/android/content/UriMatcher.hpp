@@ -24,6 +24,7 @@ namespace __jni_impl::android::content
 		// Methods
 		jint match(__jni_impl::android::net::Uri arg0);
 		void addURI(jstring arg0, jstring arg1, jint arg2);
+		void addURI(const QString &arg0, const QString &arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::content
 
@@ -46,7 +47,8 @@ namespace __jni_impl::android::content
 		__thiz = QAndroidJniObject(
 			"android.content.UriMatcher",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -65,6 +67,16 @@ namespace __jni_impl::android::content
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
 			arg0,
 			arg1,
+			arg2
+		);
+	}
+	void UriMatcher::addURI(const QString &arg0, const QString &arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"addURI",
+			"(Ljava/lang/String;Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}

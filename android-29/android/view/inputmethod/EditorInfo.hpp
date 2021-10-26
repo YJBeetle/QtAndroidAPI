@@ -64,10 +64,11 @@ namespace __jni_impl::android::view::inputmethod
 		void __constructor();
 		
 		// Methods
-		void makeCompatible(jint arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void makeCompatible(jint arg0);
 		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void dump(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
@@ -323,18 +324,11 @@ namespace __jni_impl::android::view::inputmethod
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.inputmethod.EditorInfo",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	void EditorInfo::makeCompatible(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"makeCompatible",
-			"(I)V",
-			arg0
-		);
-	}
 	jint EditorInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -351,6 +345,14 @@ namespace __jni_impl::android::view::inputmethod
 			arg1
 		);
 	}
+	void EditorInfo::makeCompatible(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"makeCompatible",
+			"(I)V",
+			arg0
+		);
+	}
 	void EditorInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -358,6 +360,15 @@ namespace __jni_impl::android::view::inputmethod
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	void EditorInfo::dump(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::view::inputmethod

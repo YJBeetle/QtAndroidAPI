@@ -38,7 +38,8 @@ namespace __jni_impl::android::media
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaMetadataRetriever$BitmapParams",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

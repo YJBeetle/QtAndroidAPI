@@ -79,7 +79,8 @@ namespace __jni_impl::android::gesture
 		__thiz = QAndroidJniObject(
 			"android.gesture.GestureStroke",
 			"(Ljava/util/ArrayList;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

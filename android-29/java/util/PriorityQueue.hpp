@@ -65,34 +65,39 @@ namespace __jni_impl::java::util
 			"java.util.PriorityQueue",
 			"(ILjava/util/Comparator;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void PriorityQueue::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.PriorityQueue",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PriorityQueue::__constructor(__jni_impl::java::util::PriorityQueue arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.PriorityQueue",
 			"(Ljava/util/PriorityQueue;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PriorityQueue::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.PriorityQueue",
-			"()V");
+			"()V"
+		);
 	}
 	void PriorityQueue::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.PriorityQueue",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

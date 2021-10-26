@@ -32,6 +32,7 @@ namespace __jni_impl::javax::crypto
 		// Constructors
 		void __constructor(__jni_impl::java::security::AlgorithmParameters arg0, jbyteArray arg1);
 		void __constructor(jstring arg0, jbyteArray arg1);
+		void __constructor(const QString &arg0, jbyteArray arg1);
 		void __constructor(jbyteArray arg0);
 		
 		// Methods
@@ -39,6 +40,7 @@ namespace __jni_impl::javax::crypto
 		QAndroidJniObject getKeySpec(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getKeySpec(__jni_impl::javax::crypto::Cipher arg0);
 		QAndroidJniObject getKeySpec(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		QAndroidJniObject getKeySpec(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 		QAndroidJniObject getKeySpec(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::Provider arg1);
 		jstring getAlgName();
 		QAndroidJniObject getAlgParameters();
@@ -62,7 +64,8 @@ namespace __jni_impl::javax::crypto
 			"javax.crypto.EncryptedPrivateKeyInfo",
 			"(Ljava/security/AlgorithmParameters;[B)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void EncryptedPrivateKeyInfo::__constructor(jstring arg0, jbyteArray arg1)
 	{
@@ -70,14 +73,25 @@ namespace __jni_impl::javax::crypto
 			"javax.crypto.EncryptedPrivateKeyInfo",
 			"(Ljava/lang/String;[B)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void EncryptedPrivateKeyInfo::__constructor(const QString &arg0, jbyteArray arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.crypto.EncryptedPrivateKeyInfo",
+			"(Ljava/lang/String;[B)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void EncryptedPrivateKeyInfo::__constructor(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.EncryptedPrivateKeyInfo",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -111,6 +125,15 @@ namespace __jni_impl::javax::crypto
 			"(Ljava/security/Key;Ljava/lang/String;)Ljava/security/spec/PKCS8EncodedKeySpec;",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	QAndroidJniObject EncryptedPrivateKeyInfo::getKeySpec(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getKeySpec",
+			"(Ljava/security/Key;Ljava/lang/String;)Ljava/security/spec/PKCS8EncodedKeySpec;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject EncryptedPrivateKeyInfo::getKeySpec(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::Provider arg1)

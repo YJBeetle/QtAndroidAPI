@@ -22,8 +22,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 		void set(jobject arg0, jint arg1);
 		jboolean compareAndSet(jobject arg0, jobject arg1, jint arg2, jint arg3);
 		jboolean weakCompareAndSet(jobject arg0, jobject arg1, jint arg2, jint arg3);
-		jint getStamp();
 		jboolean attemptStamp(jobject arg0, jint arg1);
+		jint getStamp();
 	};
 } // namespace __jni_impl::java::util::concurrent::atomic
 
@@ -39,7 +39,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"java.util.concurrent.atomic.AtomicStampedReference",
 			"(Ljava/lang/Object;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -89,13 +90,6 @@ namespace __jni_impl::java::util::concurrent::atomic
 			arg3
 		);
 	}
-	jint AtomicStampedReference::getStamp()
-	{
-		return __thiz.callMethod<jint>(
-			"getStamp",
-			"()I"
-		);
-	}
 	jboolean AtomicStampedReference::attemptStamp(jobject arg0, jint arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -103,6 +97,13 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(Ljava/lang/Object;I)Z",
 			arg0,
 			arg1
+		);
+	}
+	jint AtomicStampedReference::getStamp()
+	{
+		return __thiz.callMethod<jint>(
+			"getStamp",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::java::util::concurrent::atomic

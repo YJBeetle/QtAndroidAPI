@@ -145,7 +145,8 @@ namespace __jni_impl::java::lang::reflect
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.reflect.Modifier",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

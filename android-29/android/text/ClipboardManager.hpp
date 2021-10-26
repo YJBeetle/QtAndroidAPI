@@ -18,6 +18,7 @@ namespace __jni_impl::android::text
 		
 		// Methods
 		void setText(jstring arg0);
+		void setText(const QString &arg0);
 		jstring getText();
 		jboolean hasText();
 	};
@@ -33,7 +34,8 @@ namespace __jni_impl::android::text
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.ClipboardManager",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -43,6 +45,14 @@ namespace __jni_impl::android::text
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
+		);
+	}
+	void ClipboardManager::setText(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setText",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring ClipboardManager::getText()

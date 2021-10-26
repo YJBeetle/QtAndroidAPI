@@ -63,8 +63,11 @@ namespace __jni_impl::javax::crypto
 		jbyteArray update(jbyteArray arg0);
 		jint update(__jni_impl::java::nio::ByteBuffer arg0, __jni_impl::java::nio::ByteBuffer arg1);
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::java::security::Provider arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1);
 		static QAndroidJniObject getInstance(jstring arg0);
+		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, const QString &arg1);
 		void init(jint arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::AlgorithmParameters arg2);
 		void init(jint arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 		void init(jint arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::SecureRandom arg2);
@@ -76,6 +79,7 @@ namespace __jni_impl::javax::crypto
 		jbyteArray wrap(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getParameters();
 		QAndroidJniObject unwrap(jbyteArray arg0, jstring arg1, jint arg2);
+		QAndroidJniObject unwrap(jbyteArray arg0, const QString &arg1, jint arg2);
 		QAndroidJniObject getProvider();
 		jbyteArray doFinal(jbyteArray arg0);
 		jint doFinal(jbyteArray arg0, jint arg1);
@@ -93,7 +97,9 @@ namespace __jni_impl::javax::crypto
 		jint getOutputSize(jint arg0);
 		jbyteArray getIV();
 		static jint getMaxAllowedKeyLength(jstring arg0);
+		static jint getMaxAllowedKeyLength(const QString &arg0);
 		static QAndroidJniObject getMaxAllowedParameterSpec(jstring arg0);
+		static QAndroidJniObject getMaxAllowedParameterSpec(const QString &arg0);
 	};
 } // namespace __jni_impl::javax::crypto
 
@@ -235,6 +241,16 @@ namespace __jni_impl::javax::crypto
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject Cipher::getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.crypto.Cipher",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/Cipher;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject Cipher::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -242,6 +258,15 @@ namespace __jni_impl::javax::crypto
 			"getInstance",
 			"(Ljava/lang/String;)Ljavax/crypto/Cipher;",
 			arg0
+		);
+	}
+	QAndroidJniObject Cipher::getInstance(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.crypto.Cipher",
+			"getInstance",
+			"(Ljava/lang/String;)Ljavax/crypto/Cipher;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Cipher::getInstance(jstring arg0, jstring arg1)
@@ -252,6 +277,16 @@ namespace __jni_impl::javax::crypto
 			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/Cipher;",
 			arg0,
 			arg1
+		);
+	}
+	QAndroidJniObject Cipher::getInstance(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.crypto.Cipher",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/Cipher;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void Cipher::init(jint arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::AlgorithmParameters arg2)
@@ -356,6 +391,16 @@ namespace __jni_impl::javax::crypto
 			"([BLjava/lang/String;I)Ljava/security/Key;",
 			arg0,
 			arg1,
+			arg2
+		);
+	}
+	QAndroidJniObject Cipher::unwrap(jbyteArray arg0, const QString &arg1, jint arg2)
+	{
+		return __thiz.callObjectMethod(
+			"unwrap",
+			"([BLjava/lang/String;I)Ljava/security/Key;",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -503,6 +548,15 @@ namespace __jni_impl::javax::crypto
 			arg0
 		);
 	}
+	jint Cipher::getMaxAllowedKeyLength(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"javax.crypto.Cipher",
+			"getMaxAllowedKeyLength",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject Cipher::getMaxAllowedParameterSpec(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -510,6 +564,15 @@ namespace __jni_impl::javax::crypto
 			"getMaxAllowedParameterSpec",
 			"(Ljava/lang/String;)Ljava/security/spec/AlgorithmParameterSpec;",
 			arg0
+		);
+	}
+	QAndroidJniObject Cipher::getMaxAllowedParameterSpec(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.crypto.Cipher",
+			"getMaxAllowedParameterSpec",
+			"(Ljava/lang/String;)Ljava/security/spec/AlgorithmParameterSpec;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::javax::crypto

@@ -12,11 +12,7 @@ namespace __jni_impl::android::graphics
 }
 namespace __jni_impl::android::graphics
 {
-	class Bitmap;
-}
-namespace __jni_impl::android::graphics
-{
-	class Picture;
+	class NinePatch;
 }
 namespace __jni_impl::android::graphics
 {
@@ -24,11 +20,19 @@ namespace __jni_impl::android::graphics
 }
 namespace __jni_impl::android::graphics
 {
+	class Paint;
+}
+namespace __jni_impl::android::graphics
+{
 	class Rect;
 }
 namespace __jni_impl::android::graphics
 {
-	class Paint;
+	class Bitmap;
+}
+namespace __jni_impl::android::graphics
+{
+	class Picture;
 }
 namespace __jni_impl::android::graphics
 {
@@ -54,10 +58,6 @@ namespace __jni_impl::android::graphics
 {
 	class Canvas_VertexMode;
 }
-namespace __jni_impl::android::graphics
-{
-	class NinePatch;
-}
 
 namespace __jni_impl::android::graphics
 {
@@ -71,81 +71,86 @@ namespace __jni_impl::android::graphics
 		
 		// Methods
 		jboolean isOpaque();
+		jboolean isHardwareAccelerated();
+		void drawPatch(__jni_impl::android::graphics::NinePatch arg0, __jni_impl::android::graphics::RectF arg1, __jni_impl::android::graphics::Paint arg2);
+		void drawPatch(__jni_impl::android::graphics::NinePatch arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Paint arg2);
+		void setDensity(jint arg0);
+		jint getWidth();
+		jint getHeight();
 		void setBitmap(__jni_impl::android::graphics::Bitmap arg0);
 		void enableZ();
 		void disableZ();
 		jint getMaximumBitmapWidth();
 		jint getMaximumBitmapHeight();
-		void drawPicture(__jni_impl::android::graphics::Picture arg0, __jni_impl::android::graphics::RectF arg1);
-		void drawPicture(__jni_impl::android::graphics::Picture arg0, __jni_impl::android::graphics::Rect arg1);
 		void drawPicture(__jni_impl::android::graphics::Picture arg0);
+		void drawPicture(__jni_impl::android::graphics::Picture arg0, __jni_impl::android::graphics::Rect arg1);
+		void drawPicture(__jni_impl::android::graphics::Picture arg0, __jni_impl::android::graphics::RectF arg1);
 		void drawArc(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jboolean arg6, __jni_impl::android::graphics::Paint arg7);
 		void drawArc(__jni_impl::android::graphics::RectF arg0, jfloat arg1, jfloat arg2, jboolean arg3, __jni_impl::android::graphics::Paint arg4);
 		void drawARGB(jint arg0, jint arg1, jint arg2, jint arg3);
-		void drawBitmap(jintArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, jint arg5, jint arg6, jboolean arg7, __jni_impl::android::graphics::Paint arg8);
-		void drawBitmap(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jboolean arg7, __jni_impl::android::graphics::Paint arg8);
-		void drawBitmap(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Matrix arg1, __jni_impl::android::graphics::Paint arg2);
-		void drawBitmap(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::RectF arg2, __jni_impl::android::graphics::Paint arg3);
 		void drawBitmap(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Rect arg2, __jni_impl::android::graphics::Paint arg3);
+		void drawBitmap(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::RectF arg2, __jni_impl::android::graphics::Paint arg3);
+		void drawBitmap(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Matrix arg1, __jni_impl::android::graphics::Paint arg2);
+		void drawBitmap(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jboolean arg7, __jni_impl::android::graphics::Paint arg8);
+		void drawBitmap(jintArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, jint arg5, jint arg6, jboolean arg7, __jni_impl::android::graphics::Paint arg8);
 		void drawBitmap(__jni_impl::android::graphics::Bitmap arg0, jfloat arg1, jfloat arg2, __jni_impl::android::graphics::Paint arg3);
 		void drawBitmapMesh(__jni_impl::android::graphics::Bitmap arg0, jint arg1, jint arg2, jfloatArray arg3, jint arg4, jintArray arg5, jint arg6, __jni_impl::android::graphics::Paint arg7);
 		void drawCircle(jfloat arg0, jfloat arg1, jfloat arg2, __jni_impl::android::graphics::Paint arg3);
-		void drawColor(jint arg0);
 		void drawColor(jint arg0, __jni_impl::android::graphics::PorterDuff_Mode arg1);
 		void drawColor(jlong arg0, __jni_impl::android::graphics::BlendMode arg1);
 		void drawColor(jint arg0, __jni_impl::android::graphics::BlendMode arg1);
+		void drawColor(jint arg0);
 		void drawLine(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::Paint arg4);
 		void drawLines(jfloatArray arg0, __jni_impl::android::graphics::Paint arg1);
 		void drawLines(jfloatArray arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Paint arg3);
-		void drawOval(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::Paint arg4);
 		void drawOval(__jni_impl::android::graphics::RectF arg0, __jni_impl::android::graphics::Paint arg1);
+		void drawOval(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::Paint arg4);
 		void drawPaint(__jni_impl::android::graphics::Paint arg0);
 		void drawPath(__jni_impl::android::graphics::Path arg0, __jni_impl::android::graphics::Paint arg1);
 		void drawPoint(jfloat arg0, jfloat arg1, __jni_impl::android::graphics::Paint arg2);
-		void drawPoints(jfloatArray arg0, __jni_impl::android::graphics::Paint arg1);
 		void drawPoints(jfloatArray arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Paint arg3);
-		void drawPosText(jcharArray arg0, jint arg1, jint arg2, jfloatArray arg3, __jni_impl::android::graphics::Paint arg4);
+		void drawPoints(jfloatArray arg0, __jni_impl::android::graphics::Paint arg1);
 		void drawPosText(jstring arg0, jfloatArray arg1, __jni_impl::android::graphics::Paint arg2);
-		void drawRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::Paint arg4);
+		void drawPosText(const QString &arg0, jfloatArray arg1, __jni_impl::android::graphics::Paint arg2);
+		void drawPosText(jcharArray arg0, jint arg1, jint arg2, jfloatArray arg3, __jni_impl::android::graphics::Paint arg4);
 		void drawRect(__jni_impl::android::graphics::RectF arg0, __jni_impl::android::graphics::Paint arg1);
 		void drawRect(__jni_impl::android::graphics::Rect arg0, __jni_impl::android::graphics::Paint arg1);
+		void drawRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::Paint arg4);
 		void drawRGB(jint arg0, jint arg1, jint arg2);
 		void drawRoundRect(__jni_impl::android::graphics::RectF arg0, jfloat arg1, jfloat arg2, __jni_impl::android::graphics::Paint arg3);
 		void drawRoundRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, __jni_impl::android::graphics::Paint arg6);
-		void drawDoubleRoundRect(__jni_impl::android::graphics::RectF arg0, jfloatArray arg1, __jni_impl::android::graphics::RectF arg2, jfloatArray arg3, __jni_impl::android::graphics::Paint arg4);
 		void drawDoubleRoundRect(__jni_impl::android::graphics::RectF arg0, jfloat arg1, jfloat arg2, __jni_impl::android::graphics::RectF arg3, jfloat arg4, jfloat arg5, __jni_impl::android::graphics::Paint arg6);
+		void drawDoubleRoundRect(__jni_impl::android::graphics::RectF arg0, jfloatArray arg1, __jni_impl::android::graphics::RectF arg2, jfloatArray arg3, __jni_impl::android::graphics::Paint arg4);
 		void drawText(jstring arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, __jni_impl::android::graphics::Paint arg5);
-		void drawText(jcharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, __jni_impl::android::graphics::Paint arg5);
+		void drawText(const QString &arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, __jni_impl::android::graphics::Paint arg5);
 		void drawText(jstring arg0, jfloat arg1, jfloat arg2, __jni_impl::android::graphics::Paint arg3);
-		void drawTextOnPath(jstring arg0, __jni_impl::android::graphics::Path arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::Paint arg4);
+		void drawText(const QString &arg0, jfloat arg1, jfloat arg2, __jni_impl::android::graphics::Paint arg3);
+		void drawText(jcharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, __jni_impl::android::graphics::Paint arg5);
 		void drawTextOnPath(jcharArray arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Path arg3, jfloat arg4, jfloat arg5, __jni_impl::android::graphics::Paint arg6);
+		void drawTextOnPath(jstring arg0, __jni_impl::android::graphics::Path arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::Paint arg4);
+		void drawTextOnPath(const QString &arg0, __jni_impl::android::graphics::Path arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::Paint arg4);
 		void drawTextRun(__jni_impl::android::graphics::text::MeasuredText arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, __jni_impl::android::graphics::Paint arg8);
 		void drawTextRun(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, __jni_impl::android::graphics::Paint arg8);
+		void drawTextRun(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, __jni_impl::android::graphics::Paint arg8);
 		void drawTextRun(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, __jni_impl::android::graphics::Paint arg8);
 		void drawVertices(__jni_impl::android::graphics::Canvas_VertexMode arg0, jint arg1, jfloatArray arg2, jint arg3, jfloatArray arg4, jint arg5, jintArray arg6, jint arg7, jshortArray arg8, jint arg9, jint arg10, __jni_impl::android::graphics::Paint arg11);
 		void drawRenderNode(__jni_impl::android::graphics::RenderNode arg0);
-		jboolean isHardwareAccelerated();
-		void drawPatch(__jni_impl::android::graphics::NinePatch arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Paint arg2);
-		void drawPatch(__jni_impl::android::graphics::NinePatch arg0, __jni_impl::android::graphics::RectF arg1, __jni_impl::android::graphics::Paint arg2);
-		void setDensity(jint arg0);
-		jint getWidth();
-		jint getHeight();
 	};
 } // namespace __jni_impl::android::graphics
 
 #include "RenderNode.hpp"
+#include "NinePatch.hpp"
+#include "RectF.hpp"
+#include "Paint.hpp"
+#include "Rect.hpp"
 #include "Bitmap.hpp"
 #include "Picture.hpp"
-#include "RectF.hpp"
-#include "Rect.hpp"
-#include "Paint.hpp"
 #include "Matrix.hpp"
 #include "PorterDuff_Mode.hpp"
 #include "BlendMode.hpp"
 #include "Path.hpp"
 #include "text/MeasuredText.hpp"
 #include "Canvas_VertexMode.hpp"
-#include "NinePatch.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -165,6 +170,55 @@ namespace __jni_impl::android::graphics
 		return __thiz.callMethod<jboolean>(
 			"isOpaque",
 			"()Z"
+		);
+	}
+	jboolean RecordingCanvas::isHardwareAccelerated()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isHardwareAccelerated",
+			"()Z"
+		);
+	}
+	void RecordingCanvas::drawPatch(__jni_impl::android::graphics::NinePatch arg0, __jni_impl::android::graphics::RectF arg1, __jni_impl::android::graphics::Paint arg2)
+	{
+		__thiz.callMethod<void>(
+			"drawPatch",
+			"(Landroid/graphics/NinePatch;Landroid/graphics/RectF;Landroid/graphics/Paint;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	void RecordingCanvas::drawPatch(__jni_impl::android::graphics::NinePatch arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Paint arg2)
+	{
+		__thiz.callMethod<void>(
+			"drawPatch",
+			"(Landroid/graphics/NinePatch;Landroid/graphics/Rect;Landroid/graphics/Paint;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	void RecordingCanvas::setDensity(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDensity",
+			"(I)V",
+			arg0
+		);
+	}
+	jint RecordingCanvas::getWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
+	jint RecordingCanvas::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
 		);
 	}
 	void RecordingCanvas::setBitmap(__jni_impl::android::graphics::Bitmap arg0)
@@ -203,13 +257,12 @@ namespace __jni_impl::android::graphics
 			"()I"
 		);
 	}
-	void RecordingCanvas::drawPicture(__jni_impl::android::graphics::Picture arg0, __jni_impl::android::graphics::RectF arg1)
+	void RecordingCanvas::drawPicture(__jni_impl::android::graphics::Picture arg0)
 	{
 		__thiz.callMethod<void>(
 			"drawPicture",
-			"(Landroid/graphics/Picture;Landroid/graphics/RectF;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			"(Landroid/graphics/Picture;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void RecordingCanvas::drawPicture(__jni_impl::android::graphics::Picture arg0, __jni_impl::android::graphics::Rect arg1)
@@ -221,12 +274,13 @@ namespace __jni_impl::android::graphics
 			arg1.__jniObject().object()
 		);
 	}
-	void RecordingCanvas::drawPicture(__jni_impl::android::graphics::Picture arg0)
+	void RecordingCanvas::drawPicture(__jni_impl::android::graphics::Picture arg0, __jni_impl::android::graphics::RectF arg1)
 	{
 		__thiz.callMethod<void>(
 			"drawPicture",
-			"(Landroid/graphics/Picture;)V",
-			arg0.__jniObject().object()
+			"(Landroid/graphics/Picture;Landroid/graphics/RectF;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	void RecordingCanvas::drawArc(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jboolean arg6, __jni_impl::android::graphics::Paint arg7)
@@ -267,20 +321,36 @@ namespace __jni_impl::android::graphics
 			arg3
 		);
 	}
-	void RecordingCanvas::drawBitmap(jintArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, jint arg5, jint arg6, jboolean arg7, __jni_impl::android::graphics::Paint arg8)
+	void RecordingCanvas::drawBitmap(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Rect arg2, __jni_impl::android::graphics::Paint arg3)
 	{
 		__thiz.callMethod<void>(
 			"drawBitmap",
-			"([IIIFFIIZLandroid/graphics/Paint;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8.__jniObject().object()
+			"(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object()
+		);
+	}
+	void RecordingCanvas::drawBitmap(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::RectF arg2, __jni_impl::android::graphics::Paint arg3)
+	{
+		__thiz.callMethod<void>(
+			"drawBitmap",
+			"(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/RectF;Landroid/graphics/Paint;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object()
+		);
+	}
+	void RecordingCanvas::drawBitmap(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Matrix arg1, __jni_impl::android::graphics::Paint arg2)
+	{
+		__thiz.callMethod<void>(
+			"drawBitmap",
+			"(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
 	void RecordingCanvas::drawBitmap(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jboolean arg7, __jni_impl::android::graphics::Paint arg8)
@@ -299,36 +369,20 @@ namespace __jni_impl::android::graphics
 			arg8.__jniObject().object()
 		);
 	}
-	void RecordingCanvas::drawBitmap(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Matrix arg1, __jni_impl::android::graphics::Paint arg2)
+	void RecordingCanvas::drawBitmap(jintArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, jint arg5, jint arg6, jboolean arg7, __jni_impl::android::graphics::Paint arg8)
 	{
 		__thiz.callMethod<void>(
 			"drawBitmap",
-			"(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void RecordingCanvas::drawBitmap(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::RectF arg2, __jni_impl::android::graphics::Paint arg3)
-	{
-		__thiz.callMethod<void>(
-			"drawBitmap",
-			"(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/RectF;Landroid/graphics/Paint;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-	void RecordingCanvas::drawBitmap(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Rect arg2, __jni_impl::android::graphics::Paint arg3)
-	{
-		__thiz.callMethod<void>(
-			"drawBitmap",
-			"(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			"([IIIFFIIZLandroid/graphics/Paint;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8.__jniObject().object()
 		);
 	}
 	void RecordingCanvas::drawBitmap(__jni_impl::android::graphics::Bitmap arg0, jfloat arg1, jfloat arg2, __jni_impl::android::graphics::Paint arg3)
@@ -368,14 +422,6 @@ namespace __jni_impl::android::graphics
 			arg3.__jniObject().object()
 		);
 	}
-	void RecordingCanvas::drawColor(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"drawColor",
-			"(I)V",
-			arg0
-		);
-	}
 	void RecordingCanvas::drawColor(jint arg0, __jni_impl::android::graphics::PorterDuff_Mode arg1)
 	{
 		__thiz.callMethod<void>(
@@ -401,6 +447,14 @@ namespace __jni_impl::android::graphics
 			"(ILandroid/graphics/BlendMode;)V",
 			arg0,
 			arg1.__jniObject().object()
+		);
+	}
+	void RecordingCanvas::drawColor(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"drawColor",
+			"(I)V",
+			arg0
 		);
 	}
 	void RecordingCanvas::drawLine(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::Paint arg4)
@@ -435,6 +489,15 @@ namespace __jni_impl::android::graphics
 			arg3.__jniObject().object()
 		);
 	}
+	void RecordingCanvas::drawOval(__jni_impl::android::graphics::RectF arg0, __jni_impl::android::graphics::Paint arg1)
+	{
+		__thiz.callMethod<void>(
+			"drawOval",
+			"(Landroid/graphics/RectF;Landroid/graphics/Paint;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
 	void RecordingCanvas::drawOval(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::Paint arg4)
 	{
 		__thiz.callMethod<void>(
@@ -445,15 +508,6 @@ namespace __jni_impl::android::graphics
 			arg2,
 			arg3,
 			arg4.__jniObject().object()
-		);
-	}
-	void RecordingCanvas::drawOval(__jni_impl::android::graphics::RectF arg0, __jni_impl::android::graphics::Paint arg1)
-	{
-		__thiz.callMethod<void>(
-			"drawOval",
-			"(Landroid/graphics/RectF;Landroid/graphics/Paint;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
 		);
 	}
 	void RecordingCanvas::drawPaint(__jni_impl::android::graphics::Paint arg0)
@@ -483,15 +537,6 @@ namespace __jni_impl::android::graphics
 			arg2.__jniObject().object()
 		);
 	}
-	void RecordingCanvas::drawPoints(jfloatArray arg0, __jni_impl::android::graphics::Paint arg1)
-	{
-		__thiz.callMethod<void>(
-			"drawPoints",
-			"([FLandroid/graphics/Paint;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
 	void RecordingCanvas::drawPoints(jfloatArray arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Paint arg3)
 	{
 		__thiz.callMethod<void>(
@@ -503,16 +548,13 @@ namespace __jni_impl::android::graphics
 			arg3.__jniObject().object()
 		);
 	}
-	void RecordingCanvas::drawPosText(jcharArray arg0, jint arg1, jint arg2, jfloatArray arg3, __jni_impl::android::graphics::Paint arg4)
+	void RecordingCanvas::drawPoints(jfloatArray arg0, __jni_impl::android::graphics::Paint arg1)
 	{
 		__thiz.callMethod<void>(
-			"drawPosText",
-			"([CII[FLandroid/graphics/Paint;)V",
+			"drawPoints",
+			"([FLandroid/graphics/Paint;)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4.__jniObject().object()
+			arg1.__jniObject().object()
 		);
 	}
 	void RecordingCanvas::drawPosText(jstring arg0, jfloatArray arg1, __jni_impl::android::graphics::Paint arg2)
@@ -525,11 +567,21 @@ namespace __jni_impl::android::graphics
 			arg2.__jniObject().object()
 		);
 	}
-	void RecordingCanvas::drawRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::Paint arg4)
+	void RecordingCanvas::drawPosText(const QString &arg0, jfloatArray arg1, __jni_impl::android::graphics::Paint arg2)
 	{
 		__thiz.callMethod<void>(
-			"drawRect",
-			"(FFFFLandroid/graphics/Paint;)V",
+			"drawPosText",
+			"(Ljava/lang/String;[FLandroid/graphics/Paint;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void RecordingCanvas::drawPosText(jcharArray arg0, jint arg1, jint arg2, jfloatArray arg3, __jni_impl::android::graphics::Paint arg4)
+	{
+		__thiz.callMethod<void>(
+			"drawPosText",
+			"([CII[FLandroid/graphics/Paint;)V",
 			arg0,
 			arg1,
 			arg2,
@@ -553,6 +605,18 @@ namespace __jni_impl::android::graphics
 			"(Landroid/graphics/Rect;Landroid/graphics/Paint;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
+		);
+	}
+	void RecordingCanvas::drawRect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::Paint arg4)
+	{
+		__thiz.callMethod<void>(
+			"drawRect",
+			"(FFFFLandroid/graphics/Paint;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4.__jniObject().object()
 		);
 	}
 	void RecordingCanvas::drawRGB(jint arg0, jint arg1, jint arg2)
@@ -590,18 +654,6 @@ namespace __jni_impl::android::graphics
 			arg6.__jniObject().object()
 		);
 	}
-	void RecordingCanvas::drawDoubleRoundRect(__jni_impl::android::graphics::RectF arg0, jfloatArray arg1, __jni_impl::android::graphics::RectF arg2, jfloatArray arg3, __jni_impl::android::graphics::Paint arg4)
-	{
-		__thiz.callMethod<void>(
-			"drawDoubleRoundRect",
-			"(Landroid/graphics/RectF;[FLandroid/graphics/RectF;[FLandroid/graphics/Paint;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object(),
-			arg3,
-			arg4.__jniObject().object()
-		);
-	}
 	void RecordingCanvas::drawDoubleRoundRect(__jni_impl::android::graphics::RectF arg0, jfloat arg1, jfloat arg2, __jni_impl::android::graphics::RectF arg3, jfloat arg4, jfloat arg5, __jni_impl::android::graphics::Paint arg6)
 	{
 		__thiz.callMethod<void>(
@@ -614,6 +666,18 @@ namespace __jni_impl::android::graphics
 			arg4,
 			arg5,
 			arg6.__jniObject().object()
+		);
+	}
+	void RecordingCanvas::drawDoubleRoundRect(__jni_impl::android::graphics::RectF arg0, jfloatArray arg1, __jni_impl::android::graphics::RectF arg2, jfloatArray arg3, __jni_impl::android::graphics::Paint arg4)
+	{
+		__thiz.callMethod<void>(
+			"drawDoubleRoundRect",
+			"(Landroid/graphics/RectF;[FLandroid/graphics/RectF;[FLandroid/graphics/Paint;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object(),
+			arg3,
+			arg4.__jniObject().object()
 		);
 	}
 	void RecordingCanvas::drawText(jstring arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, __jni_impl::android::graphics::Paint arg5)
@@ -629,12 +693,12 @@ namespace __jni_impl::android::graphics
 			arg5.__jniObject().object()
 		);
 	}
-	void RecordingCanvas::drawText(jcharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, __jni_impl::android::graphics::Paint arg5)
+	void RecordingCanvas::drawText(const QString &arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, __jni_impl::android::graphics::Paint arg5)
 	{
 		__thiz.callMethod<void>(
 			"drawText",
-			"([CIIFFLandroid/graphics/Paint;)V",
-			arg0,
+			"(Ljava/lang/String;IIFFLandroid/graphics/Paint;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3,
@@ -653,16 +717,28 @@ namespace __jni_impl::android::graphics
 			arg3.__jniObject().object()
 		);
 	}
-	void RecordingCanvas::drawTextOnPath(jstring arg0, __jni_impl::android::graphics::Path arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::Paint arg4)
+	void RecordingCanvas::drawText(const QString &arg0, jfloat arg1, jfloat arg2, __jni_impl::android::graphics::Paint arg3)
 	{
 		__thiz.callMethod<void>(
-			"drawTextOnPath",
-			"(Ljava/lang/String;Landroid/graphics/Path;FFLandroid/graphics/Paint;)V",
+			"drawText",
+			"(Ljava/lang/String;FFLandroid/graphics/Paint;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2,
+			arg3.__jniObject().object()
+		);
+	}
+	void RecordingCanvas::drawText(jcharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, __jni_impl::android::graphics::Paint arg5)
+	{
+		__thiz.callMethod<void>(
+			"drawText",
+			"([CIIFFLandroid/graphics/Paint;)V",
 			arg0,
-			arg1.__jniObject().object(),
+			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object()
+			arg4,
+			arg5.__jniObject().object()
 		);
 	}
 	void RecordingCanvas::drawTextOnPath(jcharArray arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Path arg3, jfloat arg4, jfloat arg5, __jni_impl::android::graphics::Paint arg6)
@@ -677,6 +753,30 @@ namespace __jni_impl::android::graphics
 			arg4,
 			arg5,
 			arg6.__jniObject().object()
+		);
+	}
+	void RecordingCanvas::drawTextOnPath(jstring arg0, __jni_impl::android::graphics::Path arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::Paint arg4)
+	{
+		__thiz.callMethod<void>(
+			"drawTextOnPath",
+			"(Ljava/lang/String;Landroid/graphics/Path;FFLandroid/graphics/Paint;)V",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2,
+			arg3,
+			arg4.__jniObject().object()
+		);
+	}
+	void RecordingCanvas::drawTextOnPath(const QString &arg0, __jni_impl::android::graphics::Path arg1, jfloat arg2, jfloat arg3, __jni_impl::android::graphics::Paint arg4)
+	{
+		__thiz.callMethod<void>(
+			"drawTextOnPath",
+			"(Ljava/lang/String;Landroid/graphics/Path;FFLandroid/graphics/Paint;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3,
+			arg4.__jniObject().object()
 		);
 	}
 	void RecordingCanvas::drawTextRun(__jni_impl::android::graphics::text::MeasuredText arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, __jni_impl::android::graphics::Paint arg8)
@@ -701,6 +801,22 @@ namespace __jni_impl::android::graphics
 			"drawTextRun",
 			"(Ljava/lang/CharSequence;IIIIFFZLandroid/graphics/Paint;)V",
 			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8.__jniObject().object()
+		);
+	}
+	void RecordingCanvas::drawTextRun(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, jfloat arg5, jfloat arg6, jboolean arg7, __jni_impl::android::graphics::Paint arg8)
+	{
+		__thiz.callMethod<void>(
+			"drawTextRun",
+			"(Ljava/lang/CharSequence;IIIIFFZLandroid/graphics/Paint;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3,
@@ -752,55 +868,6 @@ namespace __jni_impl::android::graphics
 			"drawRenderNode",
 			"(Landroid/graphics/RenderNode;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	jboolean RecordingCanvas::isHardwareAccelerated()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isHardwareAccelerated",
-			"()Z"
-		);
-	}
-	void RecordingCanvas::drawPatch(__jni_impl::android::graphics::NinePatch arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Paint arg2)
-	{
-		__thiz.callMethod<void>(
-			"drawPatch",
-			"(Landroid/graphics/NinePatch;Landroid/graphics/Rect;Landroid/graphics/Paint;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void RecordingCanvas::drawPatch(__jni_impl::android::graphics::NinePatch arg0, __jni_impl::android::graphics::RectF arg1, __jni_impl::android::graphics::Paint arg2)
-	{
-		__thiz.callMethod<void>(
-			"drawPatch",
-			"(Landroid/graphics/NinePatch;Landroid/graphics/RectF;Landroid/graphics/Paint;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void RecordingCanvas::setDensity(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDensity",
-			"(I)V",
-			arg0
-		);
-	}
-	jint RecordingCanvas::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I"
-		);
-	}
-	jint RecordingCanvas::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::graphics

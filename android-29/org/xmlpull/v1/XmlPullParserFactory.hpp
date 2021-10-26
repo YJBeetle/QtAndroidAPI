@@ -28,14 +28,17 @@ namespace __jni_impl::org::xmlpull::v1
 		// Methods
 		static QAndroidJniObject newInstance();
 		static QAndroidJniObject newInstance(jstring arg0, jclass arg1);
+		static QAndroidJniObject newInstance(const QString &arg0, jclass arg1);
 		QAndroidJniObject newPullParser();
 		QAndroidJniObject newSerializer();
-		void setFeature(jstring arg0, jboolean arg1);
-		jboolean getFeature(jstring arg0);
 		void setNamespaceAware(jboolean arg0);
 		void setValidating(jboolean arg0);
 		jboolean isNamespaceAware();
 		jboolean isValidating();
+		void setFeature(jstring arg0, jboolean arg1);
+		void setFeature(const QString &arg0, jboolean arg1);
+		jboolean getFeature(jstring arg0);
+		jboolean getFeature(const QString &arg0);
 	};
 } // namespace __jni_impl::org::xmlpull::v1
 
@@ -81,6 +84,16 @@ namespace __jni_impl::org::xmlpull::v1
 			arg1
 		);
 	}
+	QAndroidJniObject XmlPullParserFactory::newInstance(const QString &arg0, jclass arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"org.xmlpull.v1.XmlPullParserFactory",
+			"newInstance",
+			"(Ljava/lang/String;Ljava/lang/Class;)Lorg/xmlpull/v1/XmlPullParserFactory;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	QAndroidJniObject XmlPullParserFactory::newPullParser()
 	{
 		return __thiz.callObjectMethod(
@@ -93,23 +106,6 @@ namespace __jni_impl::org::xmlpull::v1
 		return __thiz.callObjectMethod(
 			"newSerializer",
 			"()Lorg/xmlpull/v1/XmlSerializer;"
-		);
-	}
-	void XmlPullParserFactory::setFeature(jstring arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFeature",
-			"(Ljava/lang/String;Z)V",
-			arg0,
-			arg1
-		);
-	}
-	jboolean XmlPullParserFactory::getFeature(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getFeature",
-			"(Ljava/lang/String;)Z",
-			arg0
 		);
 	}
 	void XmlPullParserFactory::setNamespaceAware(jboolean arg0)
@@ -140,6 +136,40 @@ namespace __jni_impl::org::xmlpull::v1
 		return __thiz.callMethod<jboolean>(
 			"isValidating",
 			"()Z"
+		);
+	}
+	void XmlPullParserFactory::setFeature(jstring arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setFeature",
+			"(Ljava/lang/String;Z)V",
+			arg0,
+			arg1
+		);
+	}
+	void XmlPullParserFactory::setFeature(const QString &arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setFeature",
+			"(Ljava/lang/String;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	jboolean XmlPullParserFactory::getFeature(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getFeature",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jboolean XmlPullParserFactory::getFeature(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getFeature",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::org::xmlpull::v1

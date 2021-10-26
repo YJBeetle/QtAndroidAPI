@@ -22,14 +22,14 @@ namespace __jni_impl::javax::net::ssl
 		void __constructor(__jni_impl::javax::net::ssl::SSLSocket arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
+		jstring getCipherSuite();
+		QAndroidJniObject getPeerPrincipal();
+		QAndroidJniObject getLocalPrincipal();
 		jarray getPeerCertificates();
 		jarray getLocalCertificates();
 		jarray getPeerCertificateChain();
 		QAndroidJniObject getSocket();
 		QAndroidJniObject getSession();
-		jstring getCipherSuite();
-		QAndroidJniObject getPeerPrincipal();
-		QAndroidJniObject getLocalPrincipal();
 	};
 } // namespace __jni_impl::javax::net::ssl
 
@@ -46,10 +46,32 @@ namespace __jni_impl::javax::net::ssl
 			"javax.net.ssl.HandshakeCompletedEvent",
 			"(Ljavax/net/ssl/SSLSocket;Ljavax/net/ssl/SSLSession;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
+	jstring HandshakeCompletedEvent::getCipherSuite()
+	{
+		return __thiz.callObjectMethod(
+			"getCipherSuite",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject HandshakeCompletedEvent::getPeerPrincipal()
+	{
+		return __thiz.callObjectMethod(
+			"getPeerPrincipal",
+			"()Ljava/security/Principal;"
+		);
+	}
+	QAndroidJniObject HandshakeCompletedEvent::getLocalPrincipal()
+	{
+		return __thiz.callObjectMethod(
+			"getLocalPrincipal",
+			"()Ljava/security/Principal;"
+		);
+	}
 	jarray HandshakeCompletedEvent::getPeerCertificates()
 	{
 		return __thiz.callObjectMethod(
@@ -83,27 +105,6 @@ namespace __jni_impl::javax::net::ssl
 		return __thiz.callObjectMethod(
 			"getSession",
 			"()Ljavax/net/ssl/SSLSession;"
-		);
-	}
-	jstring HandshakeCompletedEvent::getCipherSuite()
-	{
-		return __thiz.callObjectMethod(
-			"getCipherSuite",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject HandshakeCompletedEvent::getPeerPrincipal()
-	{
-		return __thiz.callObjectMethod(
-			"getPeerPrincipal",
-			"()Ljava/security/Principal;"
-		);
-	}
-	QAndroidJniObject HandshakeCompletedEvent::getLocalPrincipal()
-	{
-		return __thiz.callObjectMethod(
-			"getLocalPrincipal",
-			"()Ljava/security/Principal;"
 		);
 	}
 } // namespace __jni_impl::javax::net::ssl

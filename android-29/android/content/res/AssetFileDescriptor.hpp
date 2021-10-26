@@ -15,19 +15,19 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::java::io
 {
-	class FileInputStream;
-}
-namespace __jni_impl::java::io
-{
-	class FileOutputStream;
-}
-namespace __jni_impl::java::io
-{
 	class FileDescriptor;
 }
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::java::io
+{
+	class FileInputStream;
+}
+namespace __jni_impl::java::io
+{
+	class FileOutputStream;
 }
 
 namespace __jni_impl::android::content::res
@@ -47,24 +47,24 @@ namespace __jni_impl::android::content::res
 		jstring toString();
 		jlong getLength();
 		void close();
+		QAndroidJniObject getFileDescriptor();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getExtras();
 		QAndroidJniObject getParcelFileDescriptor();
 		jlong getStartOffset();
 		jlong getDeclaredLength();
 		QAndroidJniObject createInputStream();
 		QAndroidJniObject createOutputStream();
-		QAndroidJniObject getFileDescriptor();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getExtras();
 	};
 } // namespace __jni_impl::android::content::res
 
 #include "../../os/ParcelFileDescriptor.hpp"
 #include "../../os/Bundle.hpp"
-#include "../../../java/io/FileInputStream.hpp"
-#include "../../../java/io/FileOutputStream.hpp"
 #include "../../../java/io/FileDescriptor.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../java/io/FileInputStream.hpp"
+#include "../../../java/io/FileOutputStream.hpp"
 
 namespace __jni_impl::android::content::res
 {
@@ -93,7 +93,8 @@ namespace __jni_impl::android::content::res
 			"(Landroid/os/ParcelFileDescriptor;JJ)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void AssetFileDescriptor::__constructor(__jni_impl::android::os::ParcelFileDescriptor arg0, jlong arg1, jlong arg2, __jni_impl::android::os::Bundle arg3)
 	{
@@ -103,7 +104,8 @@ namespace __jni_impl::android::content::res
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -126,6 +128,36 @@ namespace __jni_impl::android::content::res
 		__thiz.callMethod<void>(
 			"close",
 			"()V"
+		);
+	}
+	QAndroidJniObject AssetFileDescriptor::getFileDescriptor()
+	{
+		return __thiz.callObjectMethod(
+			"getFileDescriptor",
+			"()Ljava/io/FileDescriptor;"
+		);
+	}
+	jint AssetFileDescriptor::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void AssetFileDescriptor::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	QAndroidJniObject AssetFileDescriptor::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
 		);
 	}
 	QAndroidJniObject AssetFileDescriptor::getParcelFileDescriptor()
@@ -161,36 +193,6 @@ namespace __jni_impl::android::content::res
 		return __thiz.callObjectMethod(
 			"createOutputStream",
 			"()Ljava/io/FileOutputStream;"
-		);
-	}
-	QAndroidJniObject AssetFileDescriptor::getFileDescriptor()
-	{
-		return __thiz.callObjectMethod(
-			"getFileDescriptor",
-			"()Ljava/io/FileDescriptor;"
-		);
-	}
-	jint AssetFileDescriptor::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void AssetFileDescriptor::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject AssetFileDescriptor::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
 		);
 	}
 } // namespace __jni_impl::android::content::res

@@ -21,6 +21,7 @@ namespace __jni_impl::android::content::pm
 		
 		// Constructors
 		void __constructor(jstring arg0, jint arg1, jstring arg2, jstring arg3);
+		void __constructor(const QString &arg0, jint arg1, const QString &arg2, const QString &arg3);
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
@@ -53,14 +54,27 @@ namespace __jni_impl::android::content::pm
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void PathPermission::__constructor(const QString &arg0, jint arg1, const QString &arg2, const QString &arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.pm.PathPermission",
+			"(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			QAndroidJniObject::fromString(arg3).object<jstring>()
+		);
 	}
 	void PathPermission::__constructor(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.PathPermission",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

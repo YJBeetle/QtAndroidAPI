@@ -18,9 +18,9 @@ namespace __jni_impl::android::os
 		
 		// Methods
 		jboolean collect();
-		jboolean resetAndStart();
 		jint globalTotal();
 		jint globalMethodInvocations();
+		jboolean resetAndStart();
 	};
 } // namespace __jni_impl::android::os
 
@@ -34,7 +34,8 @@ namespace __jni_impl::android::os
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.Debug$InstructionCount",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -42,13 +43,6 @@ namespace __jni_impl::android::os
 	{
 		return __thiz.callMethod<jboolean>(
 			"collect",
-			"()Z"
-		);
-	}
-	jboolean Debug_InstructionCount::resetAndStart()
-	{
-		return __thiz.callMethod<jboolean>(
-			"resetAndStart",
 			"()Z"
 		);
 	}
@@ -64,6 +58,13 @@ namespace __jni_impl::android::os
 		return __thiz.callMethod<jint>(
 			"globalMethodInvocations",
 			"()I"
+		);
+	}
+	jboolean Debug_InstructionCount::resetAndStart()
+	{
+		return __thiz.callMethod<jboolean>(
+			"resetAndStart",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::os

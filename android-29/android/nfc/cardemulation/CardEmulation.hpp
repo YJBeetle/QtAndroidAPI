@@ -39,14 +39,22 @@ namespace __jni_impl::android::nfc::cardemulation
 		// Methods
 		static QAndroidJniObject getInstance(__jni_impl::android::nfc::NfcAdapter arg0);
 		jboolean isDefaultServiceForCategory(__jni_impl::android::content::ComponentName arg0, jstring arg1);
+		jboolean isDefaultServiceForCategory(__jni_impl::android::content::ComponentName arg0, const QString &arg1);
 		jboolean isDefaultServiceForAid(__jni_impl::android::content::ComponentName arg0, jstring arg1);
+		jboolean isDefaultServiceForAid(__jni_impl::android::content::ComponentName arg0, const QString &arg1);
 		jboolean categoryAllowsForegroundPreference(jstring arg0);
+		jboolean categoryAllowsForegroundPreference(const QString &arg0);
 		jint getSelectionModeForCategory(jstring arg0);
+		jint getSelectionModeForCategory(const QString &arg0);
 		jboolean registerAidsForService(__jni_impl::android::content::ComponentName arg0, jstring arg1, __jni_impl::__JniBaseClass arg2);
+		jboolean registerAidsForService(__jni_impl::android::content::ComponentName arg0, const QString &arg1, __jni_impl::__JniBaseClass arg2);
 		jboolean unsetOffHostForService(__jni_impl::android::content::ComponentName arg0);
 		jboolean setOffHostForService(__jni_impl::android::content::ComponentName arg0, jstring arg1);
+		jboolean setOffHostForService(__jni_impl::android::content::ComponentName arg0, const QString &arg1);
 		QAndroidJniObject getAidsForService(__jni_impl::android::content::ComponentName arg0, jstring arg1);
+		QAndroidJniObject getAidsForService(__jni_impl::android::content::ComponentName arg0, const QString &arg1);
 		jboolean removeAidsForService(__jni_impl::android::content::ComponentName arg0, jstring arg1);
+		jboolean removeAidsForService(__jni_impl::android::content::ComponentName arg0, const QString &arg1);
 		jboolean setPreferredService(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::ComponentName arg1);
 		jboolean unsetPreferredService(__jni_impl::android::app::Activity arg0);
 		jboolean supportsAidPrefixRegistration();
@@ -149,6 +157,15 @@ namespace __jni_impl::android::nfc::cardemulation
 			arg1
 		);
 	}
+	jboolean CardEmulation::isDefaultServiceForCategory(__jni_impl::android::content::ComponentName arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isDefaultServiceForCategory",
+			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	jboolean CardEmulation::isDefaultServiceForAid(__jni_impl::android::content::ComponentName arg0, jstring arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -156,6 +173,15 @@ namespace __jni_impl::android::nfc::cardemulation
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	jboolean CardEmulation::isDefaultServiceForAid(__jni_impl::android::content::ComponentName arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isDefaultServiceForAid",
+			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jboolean CardEmulation::categoryAllowsForegroundPreference(jstring arg0)
@@ -166,12 +192,28 @@ namespace __jni_impl::android::nfc::cardemulation
 			arg0
 		);
 	}
+	jboolean CardEmulation::categoryAllowsForegroundPreference(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"categoryAllowsForegroundPreference",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint CardEmulation::getSelectionModeForCategory(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getSelectionModeForCategory",
 			"(Ljava/lang/String;)I",
 			arg0
+		);
+	}
+	jint CardEmulation::getSelectionModeForCategory(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getSelectionModeForCategory",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean CardEmulation::registerAidsForService(__jni_impl::android::content::ComponentName arg0, jstring arg1, __jni_impl::__JniBaseClass arg2)
@@ -181,6 +223,16 @@ namespace __jni_impl::android::nfc::cardemulation
 			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/util/List;)Z",
 			arg0.__jniObject().object(),
 			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	jboolean CardEmulation::registerAidsForService(__jni_impl::android::content::ComponentName arg0, const QString &arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"registerAidsForService",
+			"(Landroid/content/ComponentName;Ljava/lang/String;Ljava/util/List;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -201,6 +253,15 @@ namespace __jni_impl::android::nfc::cardemulation
 			arg1
 		);
 	}
+	jboolean CardEmulation::setOffHostForService(__jni_impl::android::content::ComponentName arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setOffHostForService",
+			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject CardEmulation::getAidsForService(__jni_impl::android::content::ComponentName arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -210,6 +271,15 @@ namespace __jni_impl::android::nfc::cardemulation
 			arg1
 		);
 	}
+	QAndroidJniObject CardEmulation::getAidsForService(__jni_impl::android::content::ComponentName arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getAidsForService",
+			"(Landroid/content/ComponentName;Ljava/lang/String;)Ljava/util/List;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	jboolean CardEmulation::removeAidsForService(__jni_impl::android::content::ComponentName arg0, jstring arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -217,6 +287,15 @@ namespace __jni_impl::android::nfc::cardemulation
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	jboolean CardEmulation::removeAidsForService(__jni_impl::android::content::ComponentName arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"removeAidsForService",
+			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jboolean CardEmulation::setPreferredService(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::ComponentName arg1)

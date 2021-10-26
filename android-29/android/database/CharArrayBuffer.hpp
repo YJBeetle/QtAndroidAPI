@@ -47,14 +47,16 @@ namespace __jni_impl::android::database
 		__thiz = QAndroidJniObject(
 			"android.database.CharArrayBuffer",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void CharArrayBuffer::__constructor(jcharArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.CharArrayBuffer",
 			"([C)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

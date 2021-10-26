@@ -20,15 +20,16 @@ namespace __jni_impl::android::provider
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		void __constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
 		QAndroidJniObject getPath();
+		jstring getRootId();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jstring getRootId();
 	};
 } // namespace __jni_impl::android::provider
 
@@ -53,7 +54,17 @@ namespace __jni_impl::android::provider
 			"android.provider.DocumentsContract$Path",
 			"(Ljava/lang/String;Ljava/util/List;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void DocumentsContract_Path::__constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.provider.DocumentsContract$Path",
+			"(Ljava/lang/String;Ljava/util/List;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -86,6 +97,13 @@ namespace __jni_impl::android::provider
 			"()Ljava/util/List;"
 		);
 	}
+	jstring DocumentsContract_Path::getRootId()
+	{
+		return __thiz.callObjectMethod(
+			"getRootId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jint DocumentsContract_Path::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -101,13 +119,6 @@ namespace __jni_impl::android::provider
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jstring DocumentsContract_Path::getRootId()
-	{
-		return __thiz.callObjectMethod(
-			"getRootId",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::provider
 

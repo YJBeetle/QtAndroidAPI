@@ -22,7 +22,9 @@ namespace __jni_impl::java::text
 		
 		// Methods
 		static jstring normalize(jstring arg0, __jni_impl::java::text::Normalizer_Form arg1);
+		static jstring normalize(const QString &arg0, __jni_impl::java::text::Normalizer_Form arg1);
 		static jboolean isNormalized(jstring arg0, __jni_impl::java::text::Normalizer_Form arg1);
+		static jboolean isNormalized(const QString &arg0, __jni_impl::java::text::Normalizer_Form arg1);
 	};
 } // namespace __jni_impl::java::text
 
@@ -51,6 +53,16 @@ namespace __jni_impl::java::text
 			arg1.__jniObject().object()
 		).object<jstring>();
 	}
+	jstring Normalizer::normalize(const QString &arg0, __jni_impl::java::text::Normalizer_Form arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.text.Normalizer",
+			"normalize",
+			"(Ljava/lang/CharSequence;Ljava/text/Normalizer$Form;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		).object<jstring>();
+	}
 	jboolean Normalizer::isNormalized(jstring arg0, __jni_impl::java::text::Normalizer_Form arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -58,6 +70,16 @@ namespace __jni_impl::java::text
 			"isNormalized",
 			"(Ljava/lang/CharSequence;Ljava/text/Normalizer$Form;)Z",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean Normalizer::isNormalized(const QString &arg0, __jni_impl::java::text::Normalizer_Form arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"java.text.Normalizer",
+			"isNormalized",
+			"(Ljava/lang/CharSequence;Ljava/text/Normalizer$Form;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

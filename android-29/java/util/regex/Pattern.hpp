@@ -45,16 +45,24 @@ namespace __jni_impl::java::util::regex
 		jstring toString();
 		jint flags();
 		static jboolean matches(jstring arg0, jstring arg1);
+		static jboolean matches(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject compile(jstring arg0);
+		static QAndroidJniObject compile(const QString &arg0);
 		static QAndroidJniObject compile(jstring arg0, jint arg1);
+		static QAndroidJniObject compile(const QString &arg0, jint arg1);
 		QAndroidJniObject matcher(jstring arg0);
+		QAndroidJniObject matcher(const QString &arg0);
 		jarray split(jstring arg0);
+		jarray split(const QString &arg0);
 		jarray split(jstring arg0, jint arg1);
+		jarray split(const QString &arg0, jint arg1);
 		jstring pattern();
 		static jstring quote(jstring arg0);
+		static jstring quote(const QString &arg0);
 		QAndroidJniObject asPredicate();
 		QAndroidJniObject asMatchPredicate();
 		QAndroidJniObject splitAsStream(jstring arg0);
+		QAndroidJniObject splitAsStream(const QString &arg0);
 	};
 } // namespace __jni_impl::java::util::regex
 
@@ -163,6 +171,16 @@ namespace __jni_impl::java::util::regex
 			arg1
 		);
 	}
+	jboolean Pattern::matches(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"java.util.regex.Pattern",
+			"matches",
+			"(Ljava/lang/String;Ljava/lang/CharSequence;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject Pattern::compile(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -170,6 +188,15 @@ namespace __jni_impl::java::util::regex
 			"compile",
 			"(Ljava/lang/String;)Ljava/util/regex/Pattern;",
 			arg0
+		);
+	}
+	QAndroidJniObject Pattern::compile(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.regex.Pattern",
+			"compile",
+			"(Ljava/lang/String;)Ljava/util/regex/Pattern;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Pattern::compile(jstring arg0, jint arg1)
@@ -182,12 +209,30 @@ namespace __jni_impl::java::util::regex
 			arg1
 		);
 	}
+	QAndroidJniObject Pattern::compile(const QString &arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.regex.Pattern",
+			"compile",
+			"(Ljava/lang/String;I)Ljava/util/regex/Pattern;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	QAndroidJniObject Pattern::matcher(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"matcher",
 			"(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;",
 			arg0
+		);
+	}
+	QAndroidJniObject Pattern::matcher(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"matcher",
+			"(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jarray Pattern::split(jstring arg0)
@@ -198,12 +243,29 @@ namespace __jni_impl::java::util::regex
 			arg0
 		).object<jarray>();
 	}
+	jarray Pattern::split(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"split",
+			"(Ljava/lang/CharSequence;)[Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jarray>();
+	}
 	jarray Pattern::split(jstring arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
 			"split",
 			"(Ljava/lang/CharSequence;I)[Ljava/lang/String;",
 			arg0,
+			arg1
+		).object<jarray>();
+	}
+	jarray Pattern::split(const QString &arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"split",
+			"(Ljava/lang/CharSequence;I)[Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		).object<jarray>();
 	}
@@ -221,6 +283,15 @@ namespace __jni_impl::java::util::regex
 			"quote",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring Pattern::quote(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.regex.Pattern",
+			"quote",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject Pattern::asPredicate()
@@ -243,6 +314,14 @@ namespace __jni_impl::java::util::regex
 			"splitAsStream",
 			"(Ljava/lang/CharSequence;)Ljava/util/stream/Stream;",
 			arg0
+		);
+	}
+	QAndroidJniObject Pattern::splitAsStream(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"splitAsStream",
+			"(Ljava/lang/CharSequence;)Ljava/util/stream/Stream;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::util::regex

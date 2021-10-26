@@ -28,11 +28,11 @@ namespace __jni_impl::android::media::session
 		// Methods
 		jstring getName();
 		jstring toString();
+		jint getIcon();
+		jstring getAction();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getExtras();
-		jstring getAction();
-		jint getIcon();
 	};
 } // namespace __jni_impl::android::media::session
 
@@ -74,6 +74,20 @@ namespace __jni_impl::android::media::session
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	jint PlaybackState_CustomAction::getIcon()
+	{
+		return __thiz.callMethod<jint>(
+			"getIcon",
+			"()I"
+		);
+	}
+	jstring PlaybackState_CustomAction::getAction()
+	{
+		return __thiz.callObjectMethod(
+			"getAction",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jint PlaybackState_CustomAction::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -95,20 +109,6 @@ namespace __jni_impl::android::media::session
 		return __thiz.callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
-		);
-	}
-	jstring PlaybackState_CustomAction::getAction()
-	{
-		return __thiz.callObjectMethod(
-			"getAction",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint PlaybackState_CustomAction::getIcon()
-	{
-		return __thiz.callMethod<jint>(
-			"getIcon",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::media::session

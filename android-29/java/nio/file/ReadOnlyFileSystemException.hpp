@@ -33,7 +33,8 @@ namespace __jni_impl::java::nio::file
 	{
 		__thiz = QAndroidJniObject(
 			"java.nio.file.ReadOnlyFileSystemException",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

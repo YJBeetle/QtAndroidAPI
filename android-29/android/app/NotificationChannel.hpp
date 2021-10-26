@@ -5,10 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::net
 {
 	class Uri;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::media
 {
 	class AudioAttributes;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::app
@@ -29,6 +29,7 @@ namespace __jni_impl::android::app
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1, jint arg2);
+		void __constructor(const QString &arg0, const QString &arg1, jint arg2);
 		
 		// Methods
 		jstring getName();
@@ -36,10 +37,11 @@ namespace __jni_impl::android::app
 		jstring toString();
 		jint hashCode();
 		void setName(jstring arg0);
+		void setName(const QString &arg0);
 		jstring getId();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getDescription();
 		void setGroup(jstring arg0);
+		void setGroup(const QString &arg0);
 		void setShowBadge(jboolean arg0);
 		void setSound(__jni_impl::android::net::Uri arg0, __jni_impl::android::media::AudioAttributes arg1);
 		void enableLights(jboolean arg0);
@@ -63,14 +65,16 @@ namespace __jni_impl::android::app
 		jstring getGroup();
 		jboolean canBubble();
 		jboolean hasUserSetImportance();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void setDescription(jstring arg0);
-		jstring getDescription();
+		void setDescription(const QString &arg0);
 	};
 } // namespace __jni_impl::android::app
 
-#include "../os/Parcel.hpp"
 #include "../net/Uri.hpp"
 #include "../media/AudioAttributes.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -100,7 +104,18 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;Ljava/lang/CharSequence;I)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void NotificationChannel::__constructor(const QString &arg0, const QString &arg1, jint arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.NotificationChannel",
+			"(Ljava/lang/String;Ljava/lang/CharSequence;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
 	}
 	
 	// Methods
@@ -141,6 +156,14 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
+	void NotificationChannel::setName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setName",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring NotificationChannel::getId()
 	{
 		return __thiz.callObjectMethod(
@@ -148,21 +171,12 @@ namespace __jni_impl::android::app
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint NotificationChannel::describeContents()
+	jstring NotificationChannel::getDescription()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void NotificationChannel::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void NotificationChannel::setGroup(jstring arg0)
 	{
@@ -170,6 +184,14 @@ namespace __jni_impl::android::app
 			"setGroup",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void NotificationChannel::setGroup(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGroup",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void NotificationChannel::setShowBadge(jboolean arg0)
@@ -344,6 +366,22 @@ namespace __jni_impl::android::app
 			"()Z"
 		);
 	}
+	jint NotificationChannel::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void NotificationChannel::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
 	void NotificationChannel::setDescription(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -352,12 +390,13 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
-	jstring NotificationChannel::getDescription()
+	void NotificationChannel::setDescription(const QString &arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"setDescription",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 } // namespace __jni_impl::android::app
 

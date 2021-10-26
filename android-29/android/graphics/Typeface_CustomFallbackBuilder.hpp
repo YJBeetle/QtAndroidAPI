@@ -33,6 +33,7 @@ namespace __jni_impl::android::graphics
 		QAndroidJniObject setStyle(__jni_impl::android::graphics::fonts::FontStyle arg0);
 		static jint getMaxCustomFallbackCount();
 		QAndroidJniObject setSystemFallback(jstring arg0);
+		QAndroidJniObject setSystemFallback(const QString &arg0);
 		QAndroidJniObject addCustomFallback(__jni_impl::android::graphics::fonts::FontFamily arg0);
 	};
 } // namespace __jni_impl::android::graphics
@@ -51,7 +52,8 @@ namespace __jni_impl::android::graphics
 		__thiz = QAndroidJniObject(
 			"android.graphics.Typeface$CustomFallbackBuilder",
 			"(Landroid/graphics/fonts/FontFamily;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -84,6 +86,14 @@ namespace __jni_impl::android::graphics
 			"setSystemFallback",
 			"(Ljava/lang/String;)Landroid/graphics/Typeface$CustomFallbackBuilder;",
 			arg0
+		);
+	}
+	QAndroidJniObject Typeface_CustomFallbackBuilder::setSystemFallback(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setSystemFallback",
+			"(Ljava/lang/String;)Landroid/graphics/Typeface$CustomFallbackBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Typeface_CustomFallbackBuilder::addCustomFallback(__jni_impl::android::graphics::fonts::FontFamily arg0)

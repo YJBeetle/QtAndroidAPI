@@ -33,8 +33,6 @@ namespace __jni_impl::android::opengl
 		void surfaceRedrawNeeded(__jni_impl::__JniBaseClass arg0);
 		void surfaceDestroyed(__jni_impl::__JniBaseClass arg0);
 		void surfaceRedrawNeededAsync(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
-		void onResume();
-		void onPause();
 		void setGLWrapper(__jni_impl::__JniBaseClass arg0);
 		void setDebugFlags(jint arg0);
 		jint getDebugFlags();
@@ -43,14 +41,16 @@ namespace __jni_impl::android::opengl
 		void setRenderer(__jni_impl::__JniBaseClass arg0);
 		void setEGLContextFactory(__jni_impl::__JniBaseClass arg0);
 		void setEGLWindowSurfaceFactory(__jni_impl::__JniBaseClass arg0);
-		void setEGLConfigChooser(jboolean arg0);
 		void setEGLConfigChooser(__jni_impl::__JniBaseClass arg0);
 		void setEGLConfigChooser(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
+		void setEGLConfigChooser(jboolean arg0);
 		void setEGLContextClientVersion(jint arg0);
 		void setRenderMode(jint arg0);
 		jint getRenderMode();
 		void requestRender();
 		void queueEvent(__jni_impl::__JniBaseClass arg0);
+		void onResume();
+		void onPause();
 	};
 } // namespace __jni_impl::android::opengl
 
@@ -94,7 +94,8 @@ namespace __jni_impl::android::opengl
 		__thiz = QAndroidJniObject(
 			"android.opengl.GLSurfaceView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void GLSurfaceView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -102,7 +103,8 @@ namespace __jni_impl::android::opengl
 			"android.opengl.GLSurfaceView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -148,20 +150,6 @@ namespace __jni_impl::android::opengl
 			"(Landroid/view/SurfaceHolder;Ljava/lang/Runnable;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	void GLSurfaceView::onResume()
-	{
-		__thiz.callMethod<void>(
-			"onResume",
-			"()V"
-		);
-	}
-	void GLSurfaceView::onPause()
-	{
-		__thiz.callMethod<void>(
-			"onPause",
-			"()V"
 		);
 	}
 	void GLSurfaceView::setGLWrapper(__jni_impl::__JniBaseClass arg0)
@@ -226,14 +214,6 @@ namespace __jni_impl::android::opengl
 			arg0.__jniObject().object()
 		);
 	}
-	void GLSurfaceView::setEGLConfigChooser(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEGLConfigChooser",
-			"(Z)V",
-			arg0
-		);
-	}
 	void GLSurfaceView::setEGLConfigChooser(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -253,6 +233,14 @@ namespace __jni_impl::android::opengl
 			arg3,
 			arg4,
 			arg5
+		);
+	}
+	void GLSurfaceView::setEGLConfigChooser(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEGLConfigChooser",
+			"(Z)V",
+			arg0
 		);
 	}
 	void GLSurfaceView::setEGLContextClientVersion(jint arg0)
@@ -291,6 +279,20 @@ namespace __jni_impl::android::opengl
 			"queueEvent",
 			"(Ljava/lang/Runnable;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void GLSurfaceView::onResume()
+	{
+		__thiz.callMethod<void>(
+			"onResume",
+			"()V"
+		);
+	}
+	void GLSurfaceView::onPause()
+	{
+		__thiz.callMethod<void>(
+			"onPause",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::opengl

@@ -25,11 +25,11 @@ namespace __jni_impl::android::nfc::tech
 		void connect();
 		void close();
 		QAndroidJniObject getTag();
+		jbyte getResponseFlags();
+		jbyte getDsfId();
 		jbyteArray transceive(jbyteArray arg0);
 		jint getMaxTransceiveLength();
 		jboolean isConnected();
-		jbyte getResponseFlags();
-		jbyte getDsfId();
 	};
 } // namespace __jni_impl::android::nfc::tech
 
@@ -78,6 +78,20 @@ namespace __jni_impl::android::nfc::tech
 			"()Landroid/nfc/Tag;"
 		);
 	}
+	jbyte NfcV::getResponseFlags()
+	{
+		return __thiz.callMethod<jbyte>(
+			"getResponseFlags",
+			"()B"
+		);
+	}
+	jbyte NfcV::getDsfId()
+	{
+		return __thiz.callMethod<jbyte>(
+			"getDsfId",
+			"()B"
+		);
+	}
 	jbyteArray NfcV::transceive(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -98,20 +112,6 @@ namespace __jni_impl::android::nfc::tech
 		return __thiz.callMethod<jboolean>(
 			"isConnected",
 			"()Z"
-		);
-	}
-	jbyte NfcV::getResponseFlags()
-	{
-		return __thiz.callMethod<jbyte>(
-			"getResponseFlags",
-			"()B"
-		);
-	}
-	jbyte NfcV::getDsfId()
-	{
-		return __thiz.callMethod<jbyte>(
-			"getDsfId",
-			"()B"
 		);
 	}
 } // namespace __jni_impl::android::nfc::tech

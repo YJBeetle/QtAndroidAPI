@@ -102,6 +102,7 @@ namespace __jni_impl::android::print
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1, jint arg2, jint arg3);
+		void __constructor(const QString &arg0, const QString &arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -796,7 +797,19 @@ namespace __jni_impl::android::print
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void PrintAttributes_MediaSize::__constructor(const QString &arg0, const QString &arg1, jint arg2, jint arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"android.print.PrintAttributes$MediaSize",
+			"(Ljava/lang/String;Ljava/lang/String;II)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3
+		);
 	}
 	
 	// Methods

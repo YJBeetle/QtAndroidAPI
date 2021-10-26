@@ -46,15 +46,22 @@ namespace __jni_impl::android::icu::text
 		QAndroidJniObject getLocale();
 		QAndroidJniObject getDialectHandling();
 		jstring localeDisplayName(jstring arg0);
+		jstring localeDisplayName(const QString &arg0);
 		jstring localeDisplayName(__jni_impl::java::util::Locale arg0);
 		jstring localeDisplayName(__jni_impl::android::icu::util::ULocale arg0);
 		jstring languageDisplayName(jstring arg0);
+		jstring languageDisplayName(const QString &arg0);
 		jstring scriptDisplayName(jint arg0);
 		jstring scriptDisplayName(jstring arg0);
+		jstring scriptDisplayName(const QString &arg0);
 		jstring regionDisplayName(jstring arg0);
+		jstring regionDisplayName(const QString &arg0);
 		jstring variantDisplayName(jstring arg0);
+		jstring variantDisplayName(const QString &arg0);
 		jstring keyDisplayName(jstring arg0);
+		jstring keyDisplayName(const QString &arg0);
 		jstring keyValueDisplayName(jstring arg0, jstring arg1);
+		jstring keyValueDisplayName(const QString &arg0, const QString &arg1);
 		QAndroidJniObject getUiList(__jni_impl::__JniBaseClass arg0, jboolean arg1, __jni_impl::__JniBaseClass arg2);
 		QAndroidJniObject getUiListCompareWholeItems(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 	};
@@ -157,6 +164,14 @@ namespace __jni_impl::android::icu::text
 			arg0
 		).object<jstring>();
 	}
+	jstring LocaleDisplayNames::localeDisplayName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"localeDisplayName",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	jstring LocaleDisplayNames::localeDisplayName(__jni_impl::java::util::Locale arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -181,6 +196,14 @@ namespace __jni_impl::android::icu::text
 			arg0
 		).object<jstring>();
 	}
+	jstring LocaleDisplayNames::languageDisplayName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"languageDisplayName",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	jstring LocaleDisplayNames::scriptDisplayName(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -197,12 +220,28 @@ namespace __jni_impl::android::icu::text
 			arg0
 		).object<jstring>();
 	}
+	jstring LocaleDisplayNames::scriptDisplayName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"scriptDisplayName",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	jstring LocaleDisplayNames::regionDisplayName(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"regionDisplayName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring LocaleDisplayNames::regionDisplayName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"regionDisplayName",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring LocaleDisplayNames::variantDisplayName(jstring arg0)
@@ -213,12 +252,28 @@ namespace __jni_impl::android::icu::text
 			arg0
 		).object<jstring>();
 	}
+	jstring LocaleDisplayNames::variantDisplayName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"variantDisplayName",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	jstring LocaleDisplayNames::keyDisplayName(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"keyDisplayName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring LocaleDisplayNames::keyDisplayName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"keyDisplayName",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring LocaleDisplayNames::keyValueDisplayName(jstring arg0, jstring arg1)
@@ -228,6 +283,15 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1
+		).object<jstring>();
+	}
+	jstring LocaleDisplayNames::keyValueDisplayName(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"keyValueDisplayName",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject LocaleDisplayNames::getUiList(__jni_impl::__JniBaseClass arg0, jboolean arg1, __jni_impl::__JniBaseClass arg2)

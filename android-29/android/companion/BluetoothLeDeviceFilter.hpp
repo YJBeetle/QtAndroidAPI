@@ -33,9 +33,9 @@ namespace __jni_impl::android::companion
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
+		static jint getRenamePrefixLengthLimit();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		static jint getRenamePrefixLengthLimit();
 	};
 } // namespace __jni_impl::android::companion
 
@@ -86,6 +86,14 @@ namespace __jni_impl::android::companion
 			"()I"
 		);
 	}
+	jint BluetoothLeDeviceFilter::getRenamePrefixLengthLimit()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.companion.BluetoothLeDeviceFilter",
+			"getRenamePrefixLengthLimit",
+			"()I"
+		);
+	}
 	jint BluetoothLeDeviceFilter::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -100,14 +108,6 @@ namespace __jni_impl::android::companion
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint BluetoothLeDeviceFilter::getRenamePrefixLengthLimit()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.companion.BluetoothLeDeviceFilter",
-			"getRenamePrefixLengthLimit",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::companion

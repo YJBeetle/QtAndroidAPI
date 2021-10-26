@@ -8,10 +8,6 @@
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
 namespace __jni_impl::android::os
 {
 	class PersistableBundle;
@@ -19,6 +15,10 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::service::carrier
 {
 	class CarrierIdentifier;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
 }
 
 namespace __jni_impl::android::service::carrier
@@ -33,15 +33,15 @@ namespace __jni_impl::android::service::carrier
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject onLoadConfig(__jni_impl::android::service::carrier::CarrierIdentifier arg0);
 		void notifyCarrierNetworkChange(jboolean arg0);
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 	};
 } // namespace __jni_impl::android::service::carrier
 
-#include "../../content/Intent.hpp"
 #include "../../os/PersistableBundle.hpp"
 #include "CarrierIdentifier.hpp"
+#include "../../content/Intent.hpp"
 
 namespace __jni_impl::android::service::carrier
 {
@@ -60,18 +60,11 @@ namespace __jni_impl::android::service::carrier
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.carrier.CarrierService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	QAndroidJniObject CarrierService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject CarrierService::onLoadConfig(__jni_impl::android::service::carrier::CarrierIdentifier arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -86,6 +79,14 @@ namespace __jni_impl::android::service::carrier
 			"notifyCarrierNetworkChange",
 			"(Z)V",
 			arg0
+		);
+	}
+	QAndroidJniObject CarrierService::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::service::carrier

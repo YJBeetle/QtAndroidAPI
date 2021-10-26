@@ -31,16 +31,17 @@ namespace __jni_impl::android::media
 		
 		// Constructors
 		void __constructor(jstring arg0, jint arg1);
+		void __constructor(const QString &arg0, jint arg1);
 		void __constructor(__jni_impl::java::io::FileDescriptor arg0, jint arg1);
 		
 		// Methods
 		void start();
 		void stop();
 		void release();
+		void setOrientationHint(jint arg0);
+		void setLocation(jfloat arg0, jfloat arg1);
 		jint addTrack(__jni_impl::android::media::MediaFormat arg0);
 		void writeSampleData(jint arg0, __jni_impl::java::nio::ByteBuffer arg1, __jni_impl::android::media::MediaCodec_BufferInfo arg2);
-		void setLocation(jfloat arg0, jfloat arg1);
-		void setOrientationHint(jint arg0);
 	};
 } // namespace __jni_impl::android::media
 
@@ -60,7 +61,17 @@ namespace __jni_impl::android::media
 			"android.media.MediaMuxer",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void MediaMuxer::__constructor(const QString &arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.media.MediaMuxer",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void MediaMuxer::__constructor(__jni_impl::java::io::FileDescriptor arg0, jint arg1)
 	{
@@ -68,7 +79,8 @@ namespace __jni_impl::android::media
 			"android.media.MediaMuxer",
 			"(Ljava/io/FileDescriptor;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -93,6 +105,23 @@ namespace __jni_impl::android::media
 			"()V"
 		);
 	}
+	void MediaMuxer::setOrientationHint(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOrientationHint",
+			"(I)V",
+			arg0
+		);
+	}
+	void MediaMuxer::setLocation(jfloat arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"setLocation",
+			"(FF)V",
+			arg0,
+			arg1
+		);
+	}
 	jint MediaMuxer::addTrack(__jni_impl::android::media::MediaFormat arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -109,23 +138,6 @@ namespace __jni_impl::android::media
 			arg0,
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
-		);
-	}
-	void MediaMuxer::setLocation(jfloat arg0, jfloat arg1)
-	{
-		__thiz.callMethod<void>(
-			"setLocation",
-			"(FF)V",
-			arg0,
-			arg1
-		);
-	}
-	void MediaMuxer::setOrientationHint(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOrientationHint",
-			"(I)V",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::media

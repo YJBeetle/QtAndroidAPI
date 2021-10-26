@@ -16,11 +16,14 @@ namespace __jni_impl::android::content
 		
 		// Constructors
 		void __constructor(jstring arg0, jint arg1);
+		void __constructor(const QString &arg0, jint arg1);
 		void __constructor(jint arg0);
 		void __constructor(jthrowable arg0);
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
+		void __constructor(const QString &arg0, jthrowable arg1);
 		
 		// Methods
 		jint getNumSuccessfulYieldPoints();
@@ -39,34 +42,56 @@ namespace __jni_impl::android::content
 			"android.content.OperationApplicationException",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void OperationApplicationException::__constructor(const QString &arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.OperationApplicationException",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void OperationApplicationException::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.OperationApplicationException",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void OperationApplicationException::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.OperationApplicationException",
 			"(Ljava/lang/Throwable;)V",
-			arg0);
+			arg0
+		);
 	}
 	void OperationApplicationException::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.OperationApplicationException",
-			"()V");
+			"()V"
+		);
 	}
 	void OperationApplicationException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.OperationApplicationException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void OperationApplicationException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.OperationApplicationException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void OperationApplicationException::__constructor(jstring arg0, jthrowable arg1)
 	{
@@ -74,7 +99,17 @@ namespace __jni_impl::android::content
 			"android.content.OperationApplicationException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void OperationApplicationException::__constructor(const QString &arg0, jthrowable arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.OperationApplicationException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods

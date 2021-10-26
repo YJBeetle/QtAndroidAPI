@@ -31,6 +31,7 @@ namespace __jni_impl::android::companion
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject setAddress(jstring arg0);
+		QAndroidJniObject setAddress(const QString &arg0);
 		QAndroidJniObject setNamePattern(__jni_impl::java::util::regex::Pattern arg0);
 		QAndroidJniObject addServiceUuid(__jni_impl::android::os::ParcelUuid arg0, __jni_impl::android::os::ParcelUuid arg1);
 	};
@@ -49,7 +50,8 @@ namespace __jni_impl::android::companion
 	{
 		__thiz = QAndroidJniObject(
 			"android.companion.BluetoothDeviceFilter$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -66,6 +68,14 @@ namespace __jni_impl::android::companion
 			"setAddress",
 			"(Ljava/lang/String;)Landroid/companion/BluetoothDeviceFilter$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject BluetoothDeviceFilter_Builder::setAddress(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setAddress",
+			"(Ljava/lang/String;)Landroid/companion/BluetoothDeviceFilter$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject BluetoothDeviceFilter_Builder::setNamePattern(__jni_impl::java::util::regex::Pattern arg0)

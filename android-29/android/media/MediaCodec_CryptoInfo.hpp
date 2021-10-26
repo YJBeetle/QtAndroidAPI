@@ -84,7 +84,8 @@ namespace __jni_impl::android::media
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaCodec$CryptoInfo",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

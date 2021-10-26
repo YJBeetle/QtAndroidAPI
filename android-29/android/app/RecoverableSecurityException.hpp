@@ -27,6 +27,7 @@ namespace __jni_impl::android::app
 		
 		// Constructors
 		void __constructor(jthrowable arg0, jstring arg1, __jni_impl::android::app::RemoteAction arg2);
+		void __constructor(jthrowable arg0, const QString &arg1, __jni_impl::android::app::RemoteAction arg2);
 		
 		// Methods
 		QAndroidJniObject getUserAction();
@@ -59,7 +60,18 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/Throwable;Ljava/lang/CharSequence;Landroid/app/RemoteAction;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void RecoverableSecurityException::__constructor(jthrowable arg0, const QString &arg1, __jni_impl::android::app::RemoteAction arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.RecoverableSecurityException",
+			"(Ljava/lang/Throwable;Ljava/lang/CharSequence;Landroid/app/RemoteAction;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods

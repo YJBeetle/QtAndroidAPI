@@ -31,10 +31,15 @@ namespace __jni_impl::java::net
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4);
 		void __constructor(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3);
 		void __constructor(jstring arg0, jstring arg1, jstring arg2);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, jstring arg1, jstring arg2, jint arg3, jstring arg4, jstring arg5, jstring arg6);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2, jint arg3, const QString &arg4, const QString &arg5, const QString &arg6);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -45,6 +50,7 @@ namespace __jni_impl::java::net
 		jboolean isAbsolute();
 		QAndroidJniObject resolve(__jni_impl::java::net::URI arg0);
 		QAndroidJniObject resolve(jstring arg0);
+		QAndroidJniObject resolve(const QString &arg0);
 		QAndroidJniObject normalize();
 		jstring getScheme();
 		jboolean isOpaque();
@@ -54,6 +60,7 @@ namespace __jni_impl::java::net
 		jstring getHost();
 		jint getPort();
 		static QAndroidJniObject create(jstring arg0);
+		static QAndroidJniObject create(const QString &arg0);
 		jstring getAuthority();
 		jstring getQuery();
 		jstring getPath();
@@ -89,7 +96,20 @@ namespace __jni_impl::java::net
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
+	}
+	void URI::__constructor(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4)
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.URI",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			QAndroidJniObject::fromString(arg3).object<jstring>(),
+			QAndroidJniObject::fromString(arg4).object<jstring>()
+		);
 	}
 	void URI::__constructor(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
@@ -99,7 +119,19 @@ namespace __jni_impl::java::net
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void URI::__constructor(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.URI",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			QAndroidJniObject::fromString(arg3).object<jstring>()
+		);
 	}
 	void URI::__constructor(jstring arg0, jstring arg1, jstring arg2)
 	{
@@ -108,14 +140,34 @@ namespace __jni_impl::java::net
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void URI::__constructor(const QString &arg0, const QString &arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.URI",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	void URI::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.URI",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void URI::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.URI",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void URI::__constructor(jstring arg0, jstring arg1, jstring arg2, jint arg3, jstring arg4, jstring arg5, jstring arg6)
 	{
@@ -128,7 +180,22 @@ namespace __jni_impl::java::net
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
+	}
+	void URI::__constructor(const QString &arg0, const QString &arg1, const QString &arg2, jint arg3, const QString &arg4, const QString &arg5, const QString &arg6)
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.URI",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3,
+			QAndroidJniObject::fromString(arg4).object<jstring>(),
+			QAndroidJniObject::fromString(arg5).object<jstring>(),
+			QAndroidJniObject::fromString(arg6).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -191,6 +258,14 @@ namespace __jni_impl::java::net
 			"resolve",
 			"(Ljava/lang/String;)Ljava/net/URI;",
 			arg0
+		);
+	}
+	QAndroidJniObject URI::resolve(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"resolve",
+			"(Ljava/lang/String;)Ljava/net/URI;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject URI::normalize()
@@ -256,6 +331,15 @@ namespace __jni_impl::java::net
 			"create",
 			"(Ljava/lang/String;)Ljava/net/URI;",
 			arg0
+		);
+	}
+	QAndroidJniObject URI::create(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.net.URI",
+			"create",
+			"(Ljava/lang/String;)Ljava/net/URI;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring URI::getAuthority()

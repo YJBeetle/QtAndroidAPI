@@ -19,6 +19,7 @@ namespace __jni_impl::org::apache::http::conn
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -34,14 +35,24 @@ namespace __jni_impl::org::apache::http::conn
 	{
 		__thiz = QAndroidJniObject(
 			"org.apache.http.conn.ConnectTimeoutException",
-			"()V");
+			"()V"
+		);
 	}
 	void ConnectTimeoutException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.apache.http.conn.ConnectTimeoutException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void ConnectTimeoutException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"org.apache.http.conn.ConnectTimeoutException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

@@ -63,7 +63,8 @@ namespace __jni_impl::android::media
 			"android.media.Session2Command$Result",
 			"(ILandroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

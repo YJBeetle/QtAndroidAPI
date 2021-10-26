@@ -23,13 +23,14 @@ namespace __jni_impl::android::view::textclassifier
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		QAndroidJniObject build();
+		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject addLink(jint arg0, jint arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Bundle arg3);
 		QAndroidJniObject addLink(jint arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
 		QAndroidJniObject clearTextLinks();
-		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -46,7 +47,16 @@ namespace __jni_impl::android::view::textclassifier
 		__thiz = QAndroidJniObject(
 			"android.view.textclassifier.TextLinks$Builder",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void TextLinks_Builder::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.textclassifier.TextLinks$Builder",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -55,6 +65,14 @@ namespace __jni_impl::android::view::textclassifier
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextLinks;"
+		);
+	}
+	QAndroidJniObject TextLinks_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setExtras",
+			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextLinks$Builder;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject TextLinks_Builder::addLink(jint arg0, jint arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Bundle arg3)
@@ -83,14 +101,6 @@ namespace __jni_impl::android::view::textclassifier
 		return __thiz.callObjectMethod(
 			"clearTextLinks",
 			"()Landroid/view/textclassifier/TextLinks$Builder;"
-		);
-	}
-	QAndroidJniObject TextLinks_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setExtras",
-			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextLinks$Builder;",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::view::textclassifier

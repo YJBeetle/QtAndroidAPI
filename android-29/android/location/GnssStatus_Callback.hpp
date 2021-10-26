@@ -39,7 +39,8 @@ namespace __jni_impl::android::location
 	{
 		__thiz = QAndroidJniObject(
 			"android.location.GnssStatus$Callback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

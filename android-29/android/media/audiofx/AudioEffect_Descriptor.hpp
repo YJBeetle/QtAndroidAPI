@@ -25,6 +25,7 @@ namespace __jni_impl::android::media::audiofx
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -78,7 +79,8 @@ namespace __jni_impl::android::media::audiofx
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.AudioEffect$Descriptor",
-			"()V");
+			"()V"
+		);
 	}
 	void AudioEffect_Descriptor::__constructor(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4)
 	{
@@ -89,7 +91,20 @@ namespace __jni_impl::android::media::audiofx
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
+	}
+	void AudioEffect_Descriptor::__constructor(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4)
+	{
+		__thiz = QAndroidJniObject(
+			"android.media.audiofx.AudioEffect$Descriptor",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			QAndroidJniObject::fromString(arg3).object<jstring>(),
+			QAndroidJniObject::fromString(arg4).object<jstring>()
+		);
 	}
 	
 	// Methods

@@ -16,13 +16,14 @@ namespace __jni_impl::java::security
 		// Constructors
 		void __constructor(jcharArray arg0);
 		void __constructor(jcharArray arg0, jstring arg1, __jni_impl::__JniBaseClass arg2);
+		void __constructor(jcharArray arg0, const QString &arg1, __jni_impl::__JniBaseClass arg2);
 		
 		// Methods
 		void destroy();
 		jboolean isDestroyed();
-		jcharArray getPassword();
 		jstring getProtectionAlgorithm();
 		QAndroidJniObject getProtectionParameters();
+		jcharArray getPassword();
 	};
 } // namespace __jni_impl::java::security
 
@@ -37,7 +38,8 @@ namespace __jni_impl::java::security
 		__thiz = QAndroidJniObject(
 			"java.security.KeyStore$PasswordProtection",
 			"([C)V",
-			arg0);
+			arg0
+		);
 	}
 	void KeyStore_PasswordProtection::__constructor(jcharArray arg0, jstring arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -46,7 +48,18 @@ namespace __jni_impl::java::security
 			"([CLjava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void KeyStore_PasswordProtection::__constructor(jcharArray arg0, const QString &arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.KeyStore$PasswordProtection",
+			"([CLjava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -64,13 +77,6 @@ namespace __jni_impl::java::security
 			"()Z"
 		);
 	}
-	jcharArray KeyStore_PasswordProtection::getPassword()
-	{
-		return __thiz.callObjectMethod(
-			"getPassword",
-			"()[C"
-		).object<jcharArray>();
-	}
 	jstring KeyStore_PasswordProtection::getProtectionAlgorithm()
 	{
 		return __thiz.callObjectMethod(
@@ -84,6 +90,13 @@ namespace __jni_impl::java::security
 			"getProtectionParameters",
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
+	}
+	jcharArray KeyStore_PasswordProtection::getPassword()
+	{
+		return __thiz.callObjectMethod(
+			"getPassword",
+			"()[C"
+		).object<jcharArray>();
 	}
 } // namespace __jni_impl::java::security
 

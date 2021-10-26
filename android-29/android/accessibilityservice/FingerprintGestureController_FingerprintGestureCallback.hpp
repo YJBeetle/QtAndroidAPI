@@ -32,7 +32,8 @@ namespace __jni_impl::android::accessibilityservice
 	{
 		__thiz = QAndroidJniObject(
 			"android.accessibilityservice.FingerprintGestureController$FingerprintGestureCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -118,7 +118,8 @@ namespace __jni_impl::android::bluetooth
 	{
 		__thiz = QAndroidJniObject(
 			"android.bluetooth.BluetoothClass$Device$Major",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

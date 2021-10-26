@@ -28,6 +28,7 @@ namespace __jni_impl::android::view
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -124,6 +125,15 @@ namespace __jni_impl::android::view
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/view/ViewDebug$HierarchyTraceType;",
 			arg0
+		);
+	}
+	QAndroidJniObject ViewDebug_HierarchyTraceType::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.ViewDebug$HierarchyTraceType",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/view/ViewDebug$HierarchyTraceType;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::view

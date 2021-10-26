@@ -31,7 +31,8 @@ namespace __jni_impl::android::animation
 	{
 		__thiz = QAndroidJniObject(
 			"android.animation.ArgbEvaluator",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

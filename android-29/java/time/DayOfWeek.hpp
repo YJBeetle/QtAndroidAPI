@@ -41,6 +41,7 @@ namespace __jni_impl::java::time
 		static jarray values();
 		jlong getLong(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 		jint getValue();
 		static QAndroidJniObject of(jint arg0);
 		static QAndroidJniObject from(__jni_impl::__JniBaseClass arg0);
@@ -158,6 +159,15 @@ namespace __jni_impl::java::time
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/DayOfWeek;",
 			arg0
+		);
+	}
+	QAndroidJniObject DayOfWeek::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.DayOfWeek",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/time/DayOfWeek;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint DayOfWeek::getValue()

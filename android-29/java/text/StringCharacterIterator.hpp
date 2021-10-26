@@ -15,8 +15,11 @@ namespace __jni_impl::java::text
 		
 		// Constructors
 		void __constructor(jstring arg0, jint arg1, jint arg2, jint arg3);
+		void __constructor(const QString &arg0, jint arg1, jint arg2, jint arg3);
 		void __constructor(jstring arg0, jint arg1);
+		void __constructor(const QString &arg0, jint arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -31,6 +34,7 @@ namespace __jni_impl::java::text
 		jint getEndIndex();
 		jchar setIndex(jint arg0);
 		void setText(jstring arg0);
+		void setText(const QString &arg0);
 		jchar previous();
 	};
 } // namespace __jni_impl::java::text
@@ -49,7 +53,19 @@ namespace __jni_impl::java::text
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void StringCharacterIterator::__constructor(const QString &arg0, jint arg1, jint arg2, jint arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"java.text.StringCharacterIterator",
+			"(Ljava/lang/String;III)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2,
+			arg3
+		);
 	}
 	void StringCharacterIterator::__constructor(jstring arg0, jint arg1)
 	{
@@ -57,14 +73,33 @@ namespace __jni_impl::java::text
 			"java.text.StringCharacterIterator",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void StringCharacterIterator::__constructor(const QString &arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.text.StringCharacterIterator",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void StringCharacterIterator::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.StringCharacterIterator",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void StringCharacterIterator::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.text.StringCharacterIterator",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -153,6 +188,14 @@ namespace __jni_impl::java::text
 			"setText",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void StringCharacterIterator::setText(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setText",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jchar StringCharacterIterator::previous()

@@ -52,14 +52,16 @@ namespace __jni_impl::java::lang::invoke
 		__thiz = QAndroidJniObject(
 			"java.lang.invoke.MutableCallSite",
 			"(Ljava/lang/invoke/MethodType;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MutableCallSite::__constructor(__jni_impl::java::lang::invoke::MethodHandle arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.invoke.MutableCallSite",
 			"(Ljava/lang/invoke/MethodHandle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

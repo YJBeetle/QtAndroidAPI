@@ -39,7 +39,8 @@ namespace __jni_impl::android::app::admin
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.admin.DeviceAdminService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

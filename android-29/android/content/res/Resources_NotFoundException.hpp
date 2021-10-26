@@ -22,7 +22,9 @@ namespace __jni_impl::android::content::res
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, __jni_impl::java::lang::Exception arg1);
+		void __constructor(const QString &arg0, __jni_impl::java::lang::Exception arg1);
 		
 		// Methods
 	};
@@ -39,14 +41,24 @@ namespace __jni_impl::android::content::res
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.res.Resources$NotFoundException",
-			"()V");
+			"()V"
+		);
 	}
 	void Resources_NotFoundException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.res.Resources$NotFoundException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Resources_NotFoundException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.res.Resources$NotFoundException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void Resources_NotFoundException::__constructor(jstring arg0, __jni_impl::java::lang::Exception arg1)
 	{
@@ -54,7 +66,17 @@ namespace __jni_impl::android::content::res
 			"android.content.res.Resources$NotFoundException",
 			"(Ljava/lang/String;Ljava/lang/Exception;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void Resources_NotFoundException::__constructor(const QString &arg0, __jni_impl::java::lang::Exception arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.res.Resources$NotFoundException",
+			"(Ljava/lang/String;Ljava/lang/Exception;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

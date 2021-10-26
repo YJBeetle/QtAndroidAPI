@@ -5,13 +5,17 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::accessibilityservice
-{
-	class AccessibilityServiceInfo;
-}
 namespace __jni_impl::android::view::accessibility
 {
 	class AccessibilityNodeInfo;
+}
+namespace __jni_impl::android::view
+{
+	class InputEvent;
+}
+namespace __jni_impl::android::accessibilityservice
+{
+	class AccessibilityServiceInfo;
 }
 namespace __jni_impl::android::view::accessibility
 {
@@ -37,10 +41,6 @@ namespace __jni_impl::android::os
 {
 	class ParcelFileDescriptor;
 }
-namespace __jni_impl::android::view
-{
-	class InputEvent;
-}
 
 namespace __jni_impl::android::app
 {
@@ -60,10 +60,12 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getServiceInfo();
+		QAndroidJniObject findFocus(jint arg0);
+		jboolean setRotation(jint arg0);
+		jboolean injectInputEvent(__jni_impl::android::view::InputEvent arg0, jboolean arg1);
 		void setOnAccessibilityEventListener(__jni_impl::__JniBaseClass arg0);
-		void adoptShellPermissionIdentity(jarray arg0);
 		void adoptShellPermissionIdentity();
+		void adoptShellPermissionIdentity(jarray arg0);
 		void dropShellPermissionIdentity();
 		jboolean performGlobalAction(jint arg0);
 		void setServiceInfo(__jni_impl::android::accessibilityservice::AccessibilityServiceInfo arg0);
@@ -78,25 +80,28 @@ namespace __jni_impl::android::app
 		void clearWindowAnimationFrameStats();
 		QAndroidJniObject getWindowAnimationFrameStats();
 		void grantRuntimePermission(jstring arg0, jstring arg1);
+		void grantRuntimePermission(const QString &arg0, const QString &arg1);
 		void grantRuntimePermissionAsUser(jstring arg0, jstring arg1, __jni_impl::android::os::UserHandle arg2);
+		void grantRuntimePermissionAsUser(const QString &arg0, const QString &arg1, __jni_impl::android::os::UserHandle arg2);
 		void revokeRuntimePermission(jstring arg0, jstring arg1);
+		void revokeRuntimePermission(const QString &arg0, const QString &arg1);
 		void revokeRuntimePermissionAsUser(jstring arg0, jstring arg1, __jni_impl::android::os::UserHandle arg2);
+		void revokeRuntimePermissionAsUser(const QString &arg0, const QString &arg1, __jni_impl::android::os::UserHandle arg2);
 		QAndroidJniObject executeShellCommand(jstring arg0);
-		QAndroidJniObject findFocus(jint arg0);
-		jboolean setRotation(jint arg0);
-		jboolean injectInputEvent(__jni_impl::android::view::InputEvent arg0, jboolean arg1);
+		QAndroidJniObject executeShellCommand(const QString &arg0);
+		QAndroidJniObject getServiceInfo();
 	};
 } // namespace __jni_impl::android::app
 
-#include "../accessibilityservice/AccessibilityServiceInfo.hpp"
 #include "../view/accessibility/AccessibilityNodeInfo.hpp"
+#include "../view/InputEvent.hpp"
+#include "../accessibilityservice/AccessibilityServiceInfo.hpp"
 #include "../view/accessibility/AccessibilityEvent.hpp"
 #include "../graphics/Bitmap.hpp"
 #include "../view/WindowContentFrameStats.hpp"
 #include "../view/WindowAnimationFrameStats.hpp"
 #include "../os/UserHandle.hpp"
 #include "../os/ParcelFileDescriptor.hpp"
-#include "../view/InputEvent.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -160,11 +165,29 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject UiAutomation::getServiceInfo()
+	QAndroidJniObject UiAutomation::findFocus(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getServiceInfo",
-			"()Landroid/accessibilityservice/AccessibilityServiceInfo;"
+			"findFocus",
+			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
+			arg0
+		);
+	}
+	jboolean UiAutomation::setRotation(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setRotation",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean UiAutomation::injectInputEvent(__jni_impl::android::view::InputEvent arg0, jboolean arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"injectInputEvent",
+			"(Landroid/view/InputEvent;Z)Z",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 	void UiAutomation::setOnAccessibilityEventListener(__jni_impl::__JniBaseClass arg0)
@@ -175,19 +198,19 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object()
 		);
 	}
+	void UiAutomation::adoptShellPermissionIdentity()
+	{
+		__thiz.callMethod<void>(
+			"adoptShellPermissionIdentity",
+			"()V"
+		);
+	}
 	void UiAutomation::adoptShellPermissionIdentity(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"adoptShellPermissionIdentity",
 			"([Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	void UiAutomation::adoptShellPermissionIdentity()
-	{
-		__thiz.callMethod<void>(
-			"adoptShellPermissionIdentity",
-			"()V"
 		);
 	}
 	void UiAutomation::dropShellPermissionIdentity()
@@ -300,6 +323,15 @@ namespace __jni_impl::android::app
 			arg1
 		);
 	}
+	void UiAutomation::grantRuntimePermission(const QString &arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"grantRuntimePermission",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void UiAutomation::grantRuntimePermissionAsUser(jstring arg0, jstring arg1, __jni_impl::android::os::UserHandle arg2)
 	{
 		__thiz.callMethod<void>(
@@ -307,6 +339,16 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/UserHandle;)V",
 			arg0,
 			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void UiAutomation::grantRuntimePermissionAsUser(const QString &arg0, const QString &arg1, __jni_impl::android::os::UserHandle arg2)
+	{
+		__thiz.callMethod<void>(
+			"grantRuntimePermissionAsUser",
+			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/UserHandle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -319,6 +361,15 @@ namespace __jni_impl::android::app
 			arg1
 		);
 	}
+	void UiAutomation::revokeRuntimePermission(const QString &arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"revokeRuntimePermission",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void UiAutomation::revokeRuntimePermissionAsUser(jstring arg0, jstring arg1, __jni_impl::android::os::UserHandle arg2)
 	{
 		__thiz.callMethod<void>(
@@ -326,6 +377,16 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/UserHandle;)V",
 			arg0,
 			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void UiAutomation::revokeRuntimePermissionAsUser(const QString &arg0, const QString &arg1, __jni_impl::android::os::UserHandle arg2)
+	{
+		__thiz.callMethod<void>(
+			"revokeRuntimePermissionAsUser",
+			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/UserHandle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -337,29 +398,19 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
-	QAndroidJniObject UiAutomation::findFocus(jint arg0)
+	QAndroidJniObject UiAutomation::executeShellCommand(const QString &arg0)
 	{
 		return __thiz.callObjectMethod(
-			"findFocus",
-			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
-			arg0
+			"executeShellCommand",
+			"(Ljava/lang/String;)Landroid/os/ParcelFileDescriptor;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jboolean UiAutomation::setRotation(jint arg0)
+	QAndroidJniObject UiAutomation::getServiceInfo()
 	{
-		return __thiz.callMethod<jboolean>(
-			"setRotation",
-			"(I)Z",
-			arg0
-		);
-	}
-	jboolean UiAutomation::injectInputEvent(__jni_impl::android::view::InputEvent arg0, jboolean arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"injectInputEvent",
-			"(Landroid/view/InputEvent;Z)Z",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callObjectMethod(
+			"getServiceInfo",
+			"()Landroid/accessibilityservice/AccessibilityServiceInfo;"
 		);
 	}
 } // namespace __jni_impl::android::app

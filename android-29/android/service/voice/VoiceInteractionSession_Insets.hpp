@@ -87,7 +87,8 @@ namespace __jni_impl::android::service::voice
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.voice.VoiceInteractionSession$Insets",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -36,9 +36,11 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		void setText(jstring arg0);
-		void setCurrentText(jstring arg0);
+		void setText(const QString &arg0);
 		jstring getAccessibilityClassName();
 		void addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2);
+		void setCurrentText(jstring arg0);
+		void setCurrentText(const QString &arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -56,7 +58,8 @@ namespace __jni_impl::android::widget
 		__thiz = QAndroidJniObject(
 			"android.widget.TextSwitcher",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TextSwitcher::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -64,7 +67,8 @@ namespace __jni_impl::android::widget
 			"android.widget.TextSwitcher",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -76,12 +80,12 @@ namespace __jni_impl::android::widget
 			arg0
 		);
 	}
-	void TextSwitcher::setCurrentText(jstring arg0)
+	void TextSwitcher::setText(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"setCurrentText",
+			"setText",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring TextSwitcher::getAccessibilityClassName()
@@ -99,6 +103,22 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object()
+		);
+	}
+	void TextSwitcher::setCurrentText(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCurrentText",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void TextSwitcher::setCurrentText(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCurrentText",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::widget

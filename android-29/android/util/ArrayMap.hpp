@@ -59,20 +59,23 @@ namespace __jni_impl::android::util
 		__thiz = QAndroidJniObject(
 			"android.util.ArrayMap",
 			"(Landroid/util/ArrayMap;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ArrayMap::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.ArrayMap",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void ArrayMap::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.ArrayMap",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

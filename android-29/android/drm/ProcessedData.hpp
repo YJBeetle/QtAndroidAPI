@@ -17,9 +17,9 @@ namespace __jni_impl::android::drm
 		void __constructor();
 		
 		// Methods
-		jbyteArray getData();
 		jstring getAccountId();
 		jstring getSubscriptionId();
+		jbyteArray getData();
 	};
 } // namespace __jni_impl::android::drm
 
@@ -37,13 +37,6 @@ namespace __jni_impl::android::drm
 	}
 	
 	// Methods
-	jbyteArray ProcessedData::getData()
-	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()[B"
-		).object<jbyteArray>();
-	}
 	jstring ProcessedData::getAccountId()
 	{
 		return __thiz.callObjectMethod(
@@ -57,6 +50,13 @@ namespace __jni_impl::android::drm
 			"getSubscriptionId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jbyteArray ProcessedData::getData()
+	{
+		return __thiz.callObjectMethod(
+			"getData",
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::drm
 

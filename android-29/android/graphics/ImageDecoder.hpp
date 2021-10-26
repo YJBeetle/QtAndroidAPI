@@ -69,10 +69,12 @@ namespace __jni_impl::android::graphics
 		// Methods
 		void close();
 		static jboolean isMimeTypeSupported(jstring arg0);
+		static jboolean isMimeTypeSupported(const QString &arg0);
 		static QAndroidJniObject createSource(__jni_impl::java::nio::ByteBuffer arg0);
 		static QAndroidJniObject createSource(__jni_impl::java::io::File arg0);
 		static QAndroidJniObject createSource(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject createSource(__jni_impl::android::content::res::AssetManager arg0, jstring arg1);
+		static QAndroidJniObject createSource(__jni_impl::android::content::res::AssetManager arg0, const QString &arg1);
 		static QAndroidJniObject createSource(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1);
 		static QAndroidJniObject createSource(__jni_impl::android::content::res::Resources arg0, jint arg1);
 		void setTargetSize(jint arg0, jint arg1);
@@ -184,6 +186,15 @@ namespace __jni_impl::android::graphics
 			arg0
 		);
 	}
+	jboolean ImageDecoder::isMimeTypeSupported(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.graphics.ImageDecoder",
+			"isMimeTypeSupported",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject ImageDecoder::createSource(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -219,6 +230,16 @@ namespace __jni_impl::android::graphics
 			"(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/ImageDecoder$Source;",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	QAndroidJniObject ImageDecoder::createSource(__jni_impl::android::content::res::AssetManager arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.ImageDecoder",
+			"createSource",
+			"(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/ImageDecoder$Source;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject ImageDecoder::createSource(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1)

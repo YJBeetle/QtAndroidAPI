@@ -22,10 +22,12 @@ namespace __jni_impl::android::content
 		
 		// Methods
 		void setResult(jint arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
+		void setResult(jint arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2);
 		void finish();
 		void setResultCode(jint arg0);
 		jint getResultCode();
 		void setResultData(jstring arg0);
+		void setResultData(const QString &arg0);
 		jstring getResultData();
 		void setResultExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject getResultExtras(jboolean arg0);
@@ -60,6 +62,16 @@ namespace __jni_impl::android::content
 			arg2.__jniObject().object()
 		);
 	}
+	void BroadcastReceiver_PendingResult::setResult(jint arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2)
+	{
+		__thiz.callMethod<void>(
+			"setResult",
+			"(ILjava/lang/String;Landroid/os/Bundle;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
+	}
 	void BroadcastReceiver_PendingResult::finish()
 	{
 		__thiz.callMethod<void>(
@@ -88,6 +100,14 @@ namespace __jni_impl::android::content
 			"setResultData",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void BroadcastReceiver_PendingResult::setResultData(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setResultData",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring BroadcastReceiver_PendingResult::getResultData()

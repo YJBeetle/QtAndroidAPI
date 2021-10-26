@@ -38,7 +38,8 @@ namespace __jni_impl::android::webkit
 		__thiz = QAndroidJniObject(
 			"android.webkit.WebView$WebViewTransport",
 			"(Landroid/webkit/WebView;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

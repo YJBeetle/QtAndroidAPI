@@ -40,32 +40,42 @@ namespace __jni_impl::android::icu::text
 		
 		// Methods
 		static QAndroidJniObject getInstance(jstring arg0);
+		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(jstring arg0, jint arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, jint arg1);
 		void setFilter(__jni_impl::android::icu::text::UnicodeFilter arg0);
 		QAndroidJniObject getFilter();
 		jstring getID();
 		static jstring getDisplayName(jstring arg0);
+		static jstring getDisplayName(const QString &arg0);
 		static jstring getDisplayName(jstring arg0, __jni_impl::java::util::Locale arg1);
+		static jstring getDisplayName(const QString &arg0, __jni_impl::java::util::Locale arg1);
 		static jstring getDisplayName(jstring arg0, __jni_impl::android::icu::util::ULocale arg1);
+		static jstring getDisplayName(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1);
 		static QAndroidJniObject getAvailableIDs();
 		jarray getElements();
 		void transliterate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::icu::text::Transliterator_Position arg1, jstring arg2);
+		void transliterate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::icu::text::Transliterator_Position arg1, const QString &arg2);
 		jint transliterate(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2);
 		void transliterate(__jni_impl::__JniBaseClass arg0);
 		jstring transliterate(jstring arg0);
+		jstring transliterate(const QString &arg0);
 		void transliterate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::icu::text::Transliterator_Position arg1);
 		void transliterate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::icu::text::Transliterator_Position arg1, jint arg2);
 		void finishTransliteration(__jni_impl::__JniBaseClass arg0, __jni_impl::android::icu::text::Transliterator_Position arg1);
 		void filteredTransliterate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::icu::text::Transliterator_Position arg1, jboolean arg2);
 		jint getMaximumContextLength();
 		static QAndroidJniObject createFromRules(jstring arg0, jstring arg1, jint arg2);
+		static QAndroidJniObject createFromRules(const QString &arg0, const QString &arg1, jint arg2);
 		jstring toRules(jboolean arg0);
 		QAndroidJniObject getSourceSet();
 		QAndroidJniObject getTargetSet();
 		QAndroidJniObject getInverse();
 		static QAndroidJniObject getAvailableSources();
 		static QAndroidJniObject getAvailableTargets(jstring arg0);
+		static QAndroidJniObject getAvailableTargets(const QString &arg0);
 		static QAndroidJniObject getAvailableVariants(jstring arg0, jstring arg1);
+		static QAndroidJniObject getAvailableVariants(const QString &arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -111,6 +121,15 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
+	QAndroidJniObject Transliterator::getInstance(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Transliterator",
+			"getInstance",
+			"(Ljava/lang/String;)Landroid/icu/text/Transliterator;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject Transliterator::getInstance(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -118,6 +137,16 @@ namespace __jni_impl::android::icu::text
 			"getInstance",
 			"(Ljava/lang/String;I)Landroid/icu/text/Transliterator;",
 			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject Transliterator::getInstance(const QString &arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Transliterator",
+			"getInstance",
+			"(Ljava/lang/String;I)Landroid/icu/text/Transliterator;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -152,6 +181,15 @@ namespace __jni_impl::android::icu::text
 			arg0
 		).object<jstring>();
 	}
+	jstring Transliterator::getDisplayName(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Transliterator",
+			"getDisplayName",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	jstring Transliterator::getDisplayName(jstring arg0, __jni_impl::java::util::Locale arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -162,6 +200,16 @@ namespace __jni_impl::android::icu::text
 			arg1.__jniObject().object()
 		).object<jstring>();
 	}
+	jstring Transliterator::getDisplayName(const QString &arg0, __jni_impl::java::util::Locale arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Transliterator",
+			"getDisplayName",
+			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		).object<jstring>();
+	}
 	jstring Transliterator::getDisplayName(jstring arg0, __jni_impl::android::icu::util::ULocale arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -169,6 +217,16 @@ namespace __jni_impl::android::icu::text
 			"getDisplayName",
 			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Ljava/lang/String;",
 			arg0,
+			arg1.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring Transliterator::getDisplayName(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Transliterator",
+			"getDisplayName",
+			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jstring>();
 	}
@@ -197,6 +255,16 @@ namespace __jni_impl::android::icu::text
 			arg2
 		);
 	}
+	void Transliterator::transliterate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::icu::text::Transliterator_Position arg1, const QString &arg2)
+	{
+		__thiz.callMethod<void>(
+			"transliterate",
+			"(Landroid/icu/text/Replaceable;Landroid/icu/text/Transliterator$Position;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
+	}
 	jint Transliterator::transliterate(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2)
 	{
 		return __thiz.callMethod<jint>(
@@ -221,6 +289,14 @@ namespace __jni_impl::android::icu::text
 			"transliterate",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring Transliterator::transliterate(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"transliterate",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	void Transliterator::transliterate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::icu::text::Transliterator_Position arg1)
@@ -279,6 +355,17 @@ namespace __jni_impl::android::icu::text
 			arg2
 		);
 	}
+	QAndroidJniObject Transliterator::createFromRules(const QString &arg0, const QString &arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Transliterator",
+			"createFromRules",
+			"(Ljava/lang/String;Ljava/lang/String;I)Landroid/icu/text/Transliterator;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
+	}
 	jstring Transliterator::toRules(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -325,6 +412,15 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
+	QAndroidJniObject Transliterator::getAvailableTargets(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Transliterator",
+			"getAvailableTargets",
+			"(Ljava/lang/String;)Ljava/util/Enumeration;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject Transliterator::getAvailableVariants(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -333,6 +429,16 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/util/Enumeration;",
 			arg0,
 			arg1
+		);
+	}
+	QAndroidJniObject Transliterator::getAvailableVariants(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Transliterator",
+			"getAvailableVariants",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/util/Enumeration;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::icu::text

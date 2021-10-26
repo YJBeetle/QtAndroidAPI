@@ -32,7 +32,8 @@ namespace __jni_impl::java::nio::charset
 	{
 		__thiz = QAndroidJniObject(
 			"java.nio.charset.CharacterCodingException",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -29,6 +29,7 @@ namespace __jni_impl::java::util
 		// Methods
 		QAndroidJniObject getKeys();
 		jobject handleGetObject(jstring arg0);
+		jobject handleGetObject(const QString &arg0);
 	};
 } // namespace __jni_impl::java::util
 
@@ -45,14 +46,16 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.PropertyResourceBundle",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PropertyResourceBundle::__constructor(__jni_impl::java::io::Reader arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.PropertyResourceBundle",
 			"(Ljava/io/Reader;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -69,6 +72,14 @@ namespace __jni_impl::java::util
 			"handleGetObject",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
+		).object<jobject>();
+	}
+	jobject PropertyResourceBundle::handleGetObject(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"handleGetObject",
+			"(Ljava/lang/String;)Ljava/lang/Object;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
 } // namespace __jni_impl::java::util

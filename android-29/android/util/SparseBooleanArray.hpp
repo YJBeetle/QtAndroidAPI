@@ -48,14 +48,16 @@ namespace __jni_impl::android::util
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.SparseBooleanArray",
-			"()V");
+			"()V"
+		);
 	}
 	void SparseBooleanArray::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.SparseBooleanArray",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

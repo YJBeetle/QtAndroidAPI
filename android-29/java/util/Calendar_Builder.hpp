@@ -47,6 +47,7 @@ namespace __jni_impl::java::util
 		QAndroidJniObject setTimeOfDay(jint arg0, jint arg1, jint arg2, jint arg3);
 		QAndroidJniObject setWeekDefinition(jint arg0, jint arg1);
 		QAndroidJniObject setCalendarType(jstring arg0);
+		QAndroidJniObject setCalendarType(const QString &arg0);
 	};
 } // namespace __jni_impl::java::util
 
@@ -64,7 +65,8 @@ namespace __jni_impl::java::util
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Calendar$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -188,6 +190,14 @@ namespace __jni_impl::java::util
 			"setCalendarType",
 			"(Ljava/lang/String;)Ljava/util/Calendar$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject Calendar_Builder::setCalendarType(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setCalendarType",
+			"(Ljava/lang/String;)Ljava/util/Calendar$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::util

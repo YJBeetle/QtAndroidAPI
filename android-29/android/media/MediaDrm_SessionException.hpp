@@ -19,6 +19,7 @@ namespace __jni_impl::android::media
 		
 		// Constructors
 		void __constructor(jint arg0, jstring arg1);
+		void __constructor(jint arg0, const QString &arg1);
 		
 		// Methods
 		jint getErrorCode();
@@ -51,7 +52,17 @@ namespace __jni_impl::android::media
 			"android.media.MediaDrm$SessionException",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void MediaDrm_SessionException::__constructor(jint arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.media.MediaDrm$SessionException",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods

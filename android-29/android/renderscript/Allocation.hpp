@@ -151,6 +151,7 @@ namespace __jni_impl::android::renderscript
 		static QAndroidJniObject createFromBitmapResource(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::content::res::Resources arg1, jint arg2);
 		static QAndroidJniObject createFromBitmapResource(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::content::res::Resources arg1, jint arg2, __jni_impl::android::renderscript::Allocation_MipmapControl arg3, jint arg4);
 		static QAndroidJniObject createFromString(__jni_impl::android::renderscript::RenderScript arg0, jstring arg1, jint arg2);
+		static QAndroidJniObject createFromString(__jni_impl::android::renderscript::RenderScript arg0, const QString &arg1, jint arg2);
 		void setOnBufferAvailableListener(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::renderscript
@@ -1109,6 +1110,17 @@ namespace __jni_impl::android::renderscript
 			"(Landroid/renderscript/RenderScript;Ljava/lang/String;I)Landroid/renderscript/Allocation;",
 			arg0.__jniObject().object(),
 			arg1,
+			arg2
+		);
+	}
+	QAndroidJniObject Allocation::createFromString(__jni_impl::android::renderscript::RenderScript arg0, const QString &arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.renderscript.Allocation",
+			"createFromString",
+			"(Landroid/renderscript/RenderScript;Ljava/lang/String;I)Landroid/renderscript/Allocation;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}

@@ -66,14 +66,16 @@ namespace __jni_impl::java::util::concurrent::atomic
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.AtomicLong",
-			"()V");
+			"()V"
+		);
 	}
 	void AtomicLong::__constructor(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.AtomicLong",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

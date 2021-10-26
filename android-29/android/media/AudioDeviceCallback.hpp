@@ -32,7 +32,8 @@ namespace __jni_impl::android::media
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.AudioDeviceCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

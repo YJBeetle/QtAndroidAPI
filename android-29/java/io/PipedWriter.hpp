@@ -43,13 +43,15 @@ namespace __jni_impl::java::io
 		__thiz = QAndroidJniObject(
 			"java.io.PipedWriter",
 			"(Ljava/io/PipedReader;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PipedWriter::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PipedWriter",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -44,7 +44,8 @@ namespace __jni_impl::android::media::audiofx
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.Visualizer$MeasurementPeakRms",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

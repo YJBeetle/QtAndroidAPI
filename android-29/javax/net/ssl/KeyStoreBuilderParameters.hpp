@@ -38,14 +38,16 @@ namespace __jni_impl::javax::net::ssl
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.KeyStoreBuilderParameters",
 			"(Ljava/security/KeyStore$Builder;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void KeyStoreBuilderParameters::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.KeyStoreBuilderParameters",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

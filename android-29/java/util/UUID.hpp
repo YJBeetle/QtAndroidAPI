@@ -26,12 +26,13 @@ namespace __jni_impl::java::util
 		jlong timestamp();
 		jlong node();
 		jint variant();
-		static QAndroidJniObject fromString(jstring arg0);
 		static QAndroidJniObject randomUUID();
 		static QAndroidJniObject nameUUIDFromBytes(jbyteArray arg0);
 		jlong getLeastSignificantBits();
 		jlong getMostSignificantBits();
 		jint clockSequence();
+		static QAndroidJniObject fromString(jstring arg0);
+		static QAndroidJniObject fromString(const QString &arg0);
 	};
 } // namespace __jni_impl::java::util
 
@@ -47,7 +48,8 @@ namespace __jni_impl::java::util
 			"java.util.UUID",
 			"(JJ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -117,15 +119,6 @@ namespace __jni_impl::java::util
 			"()I"
 		);
 	}
-	QAndroidJniObject UUID::fromString(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.UUID",
-			"fromString",
-			"(Ljava/lang/String;)Ljava/util/UUID;",
-			arg0
-		);
-	}
 	QAndroidJniObject UUID::randomUUID()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -162,6 +155,24 @@ namespace __jni_impl::java::util
 		return __thiz.callMethod<jint>(
 			"clockSequence",
 			"()I"
+		);
+	}
+	QAndroidJniObject UUID::fromString(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.UUID",
+			"fromString",
+			"(Ljava/lang/String;)Ljava/util/UUID;",
+			arg0
+		);
+	}
+	QAndroidJniObject UUID::fromString(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.UUID",
+			"fromString",
+			"(Ljava/lang/String;)Ljava/util/UUID;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::util

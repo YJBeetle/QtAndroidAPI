@@ -26,6 +26,7 @@ namespace __jni_impl::java::util::jar
 		void __constructor(__jni_impl::java::util::jar::JarEntry arg0);
 		void __constructor(__jni_impl::java::util::zip::ZipEntry arg0);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jarray getCertificates();
@@ -48,21 +49,32 @@ namespace __jni_impl::java::util::jar
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarEntry",
 			"(Ljava/util/jar/JarEntry;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void JarEntry::__constructor(__jni_impl::java::util::zip::ZipEntry arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarEntry",
 			"(Ljava/util/zip/ZipEntry;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void JarEntry::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarEntry",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void JarEntry::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.jar.JarEntry",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

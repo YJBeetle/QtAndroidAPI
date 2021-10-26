@@ -52,7 +52,8 @@ namespace __jni_impl::android::view::animation
 			arg4,
 			arg5,
 			arg6,
-			arg7);
+			arg7
+		);
 	}
 	void TranslateAnimation::__constructor(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
@@ -62,7 +63,8 @@ namespace __jni_impl::android::view::animation
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void TranslateAnimation::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -70,7 +72,8 @@ namespace __jni_impl::android::view::animation
 			"android.view.animation.TranslateAnimation",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

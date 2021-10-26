@@ -17,11 +17,11 @@ namespace __jni_impl::android::content::res
 }
 namespace __jni_impl::android::graphics::drawable
 {
-	class DrawableContainer_DrawableContainerState;
+	class Drawable;
 }
 namespace __jni_impl::android::graphics::drawable
 {
-	class Drawable;
+	class DrawableContainer_DrawableContainerState;
 }
 
 namespace __jni_impl::android::graphics::drawable
@@ -36,15 +36,15 @@ namespace __jni_impl::android::graphics::drawable
 		
 		// Methods
 		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
-		QAndroidJniObject mutate();
 		void addLevel(jint arg0, jint arg1, __jni_impl::android::graphics::drawable::Drawable arg2);
+		QAndroidJniObject mutate();
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
-#include "DrawableContainer_DrawableContainerState.hpp"
 #include "Drawable.hpp"
+#include "DrawableContainer_DrawableContainerState.hpp"
 
 namespace __jni_impl::android::graphics::drawable
 {
@@ -55,7 +55,8 @@ namespace __jni_impl::android::graphics::drawable
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.LevelListDrawable",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -70,13 +71,6 @@ namespace __jni_impl::android::graphics::drawable
 			arg3.__jniObject().object()
 		);
 	}
-	QAndroidJniObject LevelListDrawable::mutate()
-	{
-		return __thiz.callObjectMethod(
-			"mutate",
-			"()Landroid/graphics/drawable/Drawable;"
-		);
-	}
 	void LevelListDrawable::addLevel(jint arg0, jint arg1, __jni_impl::android::graphics::drawable::Drawable arg2)
 	{
 		__thiz.callMethod<void>(
@@ -85,6 +79,13 @@ namespace __jni_impl::android::graphics::drawable
 			arg0,
 			arg1,
 			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject LevelListDrawable::mutate()
+	{
+		return __thiz.callObjectMethod(
+			"mutate",
+			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 } // namespace __jni_impl::android::graphics::drawable

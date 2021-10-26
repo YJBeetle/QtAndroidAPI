@@ -51,14 +51,16 @@ namespace __jni_impl::android::text::method
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.method.DateKeyListener",
-			"()V");
+			"()V"
+		);
 	}
 	void DateKeyListener::__constructor(__jni_impl::java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.method.DateKeyListener",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

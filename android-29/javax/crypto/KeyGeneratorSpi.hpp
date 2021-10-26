@@ -35,7 +35,8 @@ namespace __jni_impl::javax::crypto
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.KeyGeneratorSpi",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

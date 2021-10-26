@@ -32,7 +32,8 @@ namespace __jni_impl::java::util
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.EmptyStackException",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

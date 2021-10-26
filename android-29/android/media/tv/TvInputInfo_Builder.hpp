@@ -34,9 +34,9 @@ namespace __jni_impl::android::media::tv
 		
 		// Methods
 		QAndroidJniObject build();
+		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject setTunerCount(jint arg0);
 		QAndroidJniObject setCanRecord(jboolean arg0);
-		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::media::tv
 
@@ -56,7 +56,8 @@ namespace __jni_impl::android::media::tv
 			"android.media.tv.TvInputInfo$Builder",
 			"(Landroid/content/Context;Landroid/content/ComponentName;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -65,6 +66,14 @@ namespace __jni_impl::android::media::tv
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/media/tv/TvInputInfo;"
+		);
+	}
+	QAndroidJniObject TvInputInfo_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setExtras",
+			"(Landroid/os/Bundle;)Landroid/media/tv/TvInputInfo$Builder;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject TvInputInfo_Builder::setTunerCount(jint arg0)
@@ -81,14 +90,6 @@ namespace __jni_impl::android::media::tv
 			"setCanRecord",
 			"(Z)Landroid/media/tv/TvInputInfo$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject TvInputInfo_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setExtras",
-			"(Landroid/os/Bundle;)Landroid/media/tv/TvInputInfo$Builder;",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::media::tv

@@ -33,8 +33,8 @@ namespace __jni_impl::android::os
 		QAndroidJniObject execute(jobjectArray arg0);
 		jboolean cancel(jboolean arg0);
 		jboolean isCancelled();
-		QAndroidJniObject executeOnExecutor(__jni_impl::__JniBaseClass arg0, jobjectArray arg1);
 		QAndroidJniObject getStatus();
+		QAndroidJniObject executeOnExecutor(__jni_impl::__JniBaseClass arg0, jobjectArray arg1);
 	};
 } // namespace __jni_impl::android::os
 
@@ -66,7 +66,8 @@ namespace __jni_impl::android::os
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.AsyncTask",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -118,6 +119,13 @@ namespace __jni_impl::android::os
 			"()Z"
 		);
 	}
+	QAndroidJniObject AsyncTask::getStatus()
+	{
+		return __thiz.callObjectMethod(
+			"getStatus",
+			"()Landroid/os/AsyncTask$Status;"
+		);
+	}
 	QAndroidJniObject AsyncTask::executeOnExecutor(__jni_impl::__JniBaseClass arg0, jobjectArray arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -125,13 +133,6 @@ namespace __jni_impl::android::os
 			"(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject AsyncTask::getStatus()
-	{
-		return __thiz.callObjectMethod(
-			"getStatus",
-			"()Landroid/os/AsyncTask$Status;"
 		);
 	}
 } // namespace __jni_impl::android::os

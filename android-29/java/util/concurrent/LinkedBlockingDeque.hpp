@@ -107,20 +107,23 @@ namespace __jni_impl::java::util::concurrent
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.LinkedBlockingDeque",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void LinkedBlockingDeque::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.LinkedBlockingDeque",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void LinkedBlockingDeque::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.LinkedBlockingDeque",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

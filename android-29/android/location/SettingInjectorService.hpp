@@ -30,12 +30,13 @@ namespace __jni_impl::android::location
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		void onStart(__jni_impl::android::content::Intent arg0, jint arg1);
+		static void refreshSettings(__jni_impl::android::content::Context arg0);
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		jint onStartCommand(__jni_impl::android::content::Intent arg0, jint arg1, jint arg2);
-		static void refreshSettings(__jni_impl::android::content::Context arg0);
 	};
 } // namespace __jni_impl::android::location
 
@@ -84,7 +85,16 @@ namespace __jni_impl::android::location
 		__thiz = QAndroidJniObject(
 			"android.location.SettingInjectorService",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void SettingInjectorService::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.location.SettingInjectorService",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -95,6 +105,15 @@ namespace __jni_impl::android::location
 			"(Landroid/content/Intent;I)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	void SettingInjectorService::refreshSettings(__jni_impl::android::content::Context arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.location.SettingInjectorService",
+			"refreshSettings",
+			"(Landroid/content/Context;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject SettingInjectorService::onBind(__jni_impl::android::content::Intent arg0)
@@ -113,15 +132,6 @@ namespace __jni_impl::android::location
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
-		);
-	}
-	void SettingInjectorService::refreshSettings(__jni_impl::android::content::Context arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.location.SettingInjectorService",
-			"refreshSettings",
-			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::location

@@ -50,14 +50,16 @@ namespace __jni_impl::java::util::concurrent
 			"java.util.concurrent.FutureTask",
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void FutureTask::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.FutureTask",
 			"(Ljava/util/concurrent/Callable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

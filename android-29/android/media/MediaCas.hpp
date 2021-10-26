@@ -31,6 +31,7 @@ namespace __jni_impl::android::media
 		void processEmm(jbyteArray arg0);
 		void sendEvent(jint arg0, jint arg1, jbyteArray arg2);
 		void provision(jstring arg0);
+		void provision(const QString &arg0);
 		void refreshEntitlements(jint arg0, jbyteArray arg1);
 		static jboolean isSystemIdSupported(jint arg0);
 		static jarray enumeratePlugins();
@@ -52,7 +53,8 @@ namespace __jni_impl::android::media
 		__thiz = QAndroidJniObject(
 			"android.media.MediaCas",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -105,6 +107,14 @@ namespace __jni_impl::android::media
 			"provision",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void MediaCas::provision(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"provision",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void MediaCas::refreshEntitlements(jint arg0, jbyteArray arg1)

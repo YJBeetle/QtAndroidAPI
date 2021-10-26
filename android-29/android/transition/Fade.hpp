@@ -80,20 +80,23 @@ namespace __jni_impl::android::transition
 			"android.transition.Fade",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Fade::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Fade",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Fade::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Fade",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

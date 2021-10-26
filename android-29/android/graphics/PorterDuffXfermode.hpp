@@ -37,7 +37,8 @@ namespace __jni_impl::android::graphics
 		__thiz = QAndroidJniObject(
 			"android.graphics.PorterDuffXfermode",
 			"(Landroid/graphics/PorterDuff$Mode;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

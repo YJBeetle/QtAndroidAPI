@@ -18,9 +18,11 @@ namespace __jni_impl::android::text::style
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		QAndroidJniObject setVerbatim(jstring arg0);
+		QAndroidJniObject setVerbatim(const QString &arg0);
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -34,14 +36,24 @@ namespace __jni_impl::android::text::style
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TtsSpan$VerbatimBuilder",
-			"()V");
+			"()V"
+		);
 	}
 	void TtsSpan_VerbatimBuilder::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TtsSpan$VerbatimBuilder",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void TtsSpan_VerbatimBuilder::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.style.TtsSpan$VerbatimBuilder",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -51,6 +63,14 @@ namespace __jni_impl::android::text::style
 			"setVerbatim",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$VerbatimBuilder;",
 			arg0
+		);
+	}
+	QAndroidJniObject TtsSpan_VerbatimBuilder::setVerbatim(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setVerbatim",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$VerbatimBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::text::style

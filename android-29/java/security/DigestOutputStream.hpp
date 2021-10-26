@@ -50,7 +50,8 @@ namespace __jni_impl::java::security
 			"java.security.DigestOutputStream",
 			"(Ljava/io/OutputStream;Ljava/security/MessageDigest;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

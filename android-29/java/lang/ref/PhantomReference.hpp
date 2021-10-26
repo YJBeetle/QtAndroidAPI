@@ -39,7 +39,8 @@ namespace __jni_impl::java::lang::ref
 			"java.lang.ref.PhantomReference",
 			"(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

@@ -32,15 +32,15 @@ namespace __jni_impl::android::telephony
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jstring getTitle();
-		jstring getSummary();
 		jlong getDataLimitBytes();
 		jint getDataLimitBehavior();
 		jlong getDataUsageBytes();
 		jlong getDataUsageTime();
 		QAndroidJniObject cycleIterator();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getSummary();
+		jstring getTitle();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -138,36 +138,6 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
-	jint SubscriptionPlan::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void SubscriptionPlan::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jstring SubscriptionPlan::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	jstring SubscriptionPlan::getSummary()
-	{
-		return __thiz.callObjectMethod(
-			"getSummary",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
 	jlong SubscriptionPlan::getDataLimitBytes()
 	{
 		return __thiz.callMethod<jlong>(
@@ -202,6 +172,36 @@ namespace __jni_impl::android::telephony
 			"cycleIterator",
 			"()Ljava/util/Iterator;"
 		);
+	}
+	jint SubscriptionPlan::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void SubscriptionPlan::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jstring SubscriptionPlan::getSummary()
+	{
+		return __thiz.callObjectMethod(
+			"getSummary",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring SubscriptionPlan::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::telephony
 

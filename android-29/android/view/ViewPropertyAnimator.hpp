@@ -27,8 +27,11 @@ namespace __jni_impl::android::view
 		QAndroidJniObject y(jfloat arg0);
 		jlong getDuration();
 		void cancel();
-		QAndroidJniObject rotation(jfloat arg0);
-		QAndroidJniObject alpha(jfloat arg0);
+		QAndroidJniObject setDuration(jlong arg0);
+		QAndroidJniObject setStartDelay(jlong arg0);
+		jlong getStartDelay();
+		QAndroidJniObject setInterpolator(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getInterpolator();
 		QAndroidJniObject rotationY(jfloat arg0);
 		QAndroidJniObject rotationX(jfloat arg0);
 		QAndroidJniObject scaleX(jfloat arg0);
@@ -36,6 +39,8 @@ namespace __jni_impl::android::view
 		QAndroidJniObject translationX(jfloat arg0);
 		QAndroidJniObject translationY(jfloat arg0);
 		QAndroidJniObject translationZ(jfloat arg0);
+		QAndroidJniObject setListener(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject rotation(jfloat arg0);
 		QAndroidJniObject xBy(jfloat arg0);
 		QAndroidJniObject yBy(jfloat arg0);
 		QAndroidJniObject zBy(jfloat arg0);
@@ -51,13 +56,8 @@ namespace __jni_impl::android::view
 		QAndroidJniObject withLayer();
 		QAndroidJniObject withStartAction(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject withEndAction(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject setListener(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject setDuration(jlong arg0);
-		QAndroidJniObject setStartDelay(jlong arg0);
-		jlong getStartDelay();
-		QAndroidJniObject setInterpolator(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getInterpolator();
 		QAndroidJniObject setUpdateListener(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject alpha(jfloat arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -121,20 +121,42 @@ namespace __jni_impl::android::view
 			"()V"
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::rotation(jfloat arg0)
+	QAndroidJniObject ViewPropertyAnimator::setDuration(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
-			"rotation",
-			"(F)Landroid/view/ViewPropertyAnimator;",
+			"setDuration",
+			"(J)Landroid/view/ViewPropertyAnimator;",
 			arg0
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::alpha(jfloat arg0)
+	QAndroidJniObject ViewPropertyAnimator::setStartDelay(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
-			"alpha",
-			"(F)Landroid/view/ViewPropertyAnimator;",
+			"setStartDelay",
+			"(J)Landroid/view/ViewPropertyAnimator;",
 			arg0
+		);
+	}
+	jlong ViewPropertyAnimator::getStartDelay()
+	{
+		return __thiz.callMethod<jlong>(
+			"getStartDelay",
+			"()J"
+		);
+	}
+	QAndroidJniObject ViewPropertyAnimator::setInterpolator(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setInterpolator",
+			"(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ViewPropertyAnimator::getInterpolator()
+	{
+		return __thiz.callObjectMethod(
+			"getInterpolator",
+			"()Landroid/animation/TimeInterpolator;"
 		);
 	}
 	QAndroidJniObject ViewPropertyAnimator::rotationY(jfloat arg0)
@@ -189,6 +211,22 @@ namespace __jni_impl::android::view
 	{
 		return __thiz.callObjectMethod(
 			"translationZ",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
+		);
+	}
+	QAndroidJniObject ViewPropertyAnimator::setListener(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setListener",
+			"(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ViewPropertyAnimator::rotation(jfloat arg0)
+	{
+		return __thiz.callObjectMethod(
+			"rotation",
 			"(F)Landroid/view/ViewPropertyAnimator;",
 			arg0
 		);
@@ -312,58 +350,20 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ViewPropertyAnimator::setListener(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setListener",
-			"(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ViewPropertyAnimator::setDuration(jlong arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDuration",
-			"(J)Landroid/view/ViewPropertyAnimator;",
-			arg0
-		);
-	}
-	QAndroidJniObject ViewPropertyAnimator::setStartDelay(jlong arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setStartDelay",
-			"(J)Landroid/view/ViewPropertyAnimator;",
-			arg0
-		);
-	}
-	jlong ViewPropertyAnimator::getStartDelay()
-	{
-		return __thiz.callMethod<jlong>(
-			"getStartDelay",
-			"()J"
-		);
-	}
-	QAndroidJniObject ViewPropertyAnimator::setInterpolator(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setInterpolator",
-			"(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ViewPropertyAnimator::getInterpolator()
-	{
-		return __thiz.callObjectMethod(
-			"getInterpolator",
-			"()Landroid/animation/TimeInterpolator;"
-		);
-	}
 	QAndroidJniObject ViewPropertyAnimator::setUpdateListener(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setUpdateListener",
 			"(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)Landroid/view/ViewPropertyAnimator;",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ViewPropertyAnimator::alpha(jfloat arg0)
+	{
+		return __thiz.callObjectMethod(
+			"alpha",
+			"(F)Landroid/view/ViewPropertyAnimator;",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::view

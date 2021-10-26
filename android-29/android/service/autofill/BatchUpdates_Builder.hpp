@@ -43,7 +43,8 @@ namespace __jni_impl::android::service::autofill
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.autofill.BatchUpdates$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

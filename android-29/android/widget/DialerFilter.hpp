@@ -12,13 +12,13 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::view
-{
-	class KeyEvent;
-}
 namespace __jni_impl::android::graphics
 {
 	class Rect;
+}
+namespace __jni_impl::android::view
+{
+	class KeyEvent;
 }
 
 namespace __jni_impl::android::widget
@@ -39,8 +39,10 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		void append(jstring arg0);
-		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		void append(const QString &arg0);
+		jstring getDigits();
+		jint getMode();
+		void setMode(jint arg0);
 		jboolean isQwertyKeyboard();
 		jstring getLetters();
 		jstring getFilterText();
@@ -49,15 +51,14 @@ namespace __jni_impl::android::widget
 		void setDigitsWatcher(__jni_impl::__JniBaseClass arg0);
 		void setFilterWatcher(__jni_impl::__JniBaseClass arg0);
 		void removeFilterWatcher(__jni_impl::__JniBaseClass arg0);
-		jstring getDigits();
-		jint getMode();
-		void setMode(jint arg0);
+		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "../view/KeyEvent.hpp"
 #include "../graphics/Rect.hpp"
+#include "../view/KeyEvent.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -104,7 +105,8 @@ namespace __jni_impl::android::widget
 		__thiz = QAndroidJniObject(
 			"android.widget.DialerFilter",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DialerFilter::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -112,7 +114,8 @@ namespace __jni_impl::android::widget
 			"android.widget.DialerFilter",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -124,22 +127,34 @@ namespace __jni_impl::android::widget
 			arg0
 		);
 	}
-	jboolean DialerFilter::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	void DialerFilter::append(const QString &arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyDown",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object()
+		__thiz.callMethod<void>(
+			"append",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jboolean DialerFilter::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	jstring DialerFilter::getDigits()
 	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyUp",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"getDigits",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jint DialerFilter::getMode()
+	{
+		return __thiz.callMethod<jint>(
+			"getMode",
+			"()I"
+		);
+	}
+	void DialerFilter::setMode(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMode",
+			"(I)V",
+			arg0
 		);
 	}
 	jboolean DialerFilter::isQwertyKeyboard()
@@ -202,26 +217,22 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	jstring DialerFilter::getDigits()
+	jboolean DialerFilter::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
 	{
-		return __thiz.callObjectMethod(
-			"getDigits",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	jint DialerFilter::getMode()
-	{
-		return __thiz.callMethod<jint>(
-			"getMode",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"onKeyDown",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
-	void DialerFilter::setMode(jint arg0)
+	jboolean DialerFilter::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
 	{
-		__thiz.callMethod<void>(
-			"setMode",
-			"(I)V",
-			arg0
+		return __thiz.callMethod<jboolean>(
+			"onKeyUp",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::widget

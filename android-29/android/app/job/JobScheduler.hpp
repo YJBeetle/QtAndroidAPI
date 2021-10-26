@@ -62,7 +62,8 @@ namespace __jni_impl::android::app::job
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.job.JobScheduler",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

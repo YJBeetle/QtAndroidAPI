@@ -17,9 +17,9 @@ namespace __jni_impl::android::net
 		void __constructor();
 		
 		// Methods
-		void onStarted();
-		void onDataReceived();
 		void onError(jint arg0);
+		void onDataReceived();
+		void onStarted();
 		void onStopped();
 	};
 } // namespace __jni_impl::android::net
@@ -34,15 +34,17 @@ namespace __jni_impl::android::net
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.SocketKeepalive$Callback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	void SocketKeepalive_Callback::onStarted()
+	void SocketKeepalive_Callback::onError(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"onStarted",
-			"()V"
+			"onError",
+			"(I)V",
+			arg0
 		);
 	}
 	void SocketKeepalive_Callback::onDataReceived()
@@ -52,12 +54,11 @@ namespace __jni_impl::android::net
 			"()V"
 		);
 	}
-	void SocketKeepalive_Callback::onError(jint arg0)
+	void SocketKeepalive_Callback::onStarted()
 	{
 		__thiz.callMethod<void>(
-			"onError",
-			"(I)V",
-			arg0
+			"onStarted",
+			"()V"
 		);
 	}
 	void SocketKeepalive_Callback::onStopped()

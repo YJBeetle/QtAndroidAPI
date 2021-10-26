@@ -27,6 +27,10 @@ namespace __jni_impl::android::service::notification
 		jboolean equals(jobject arg0);
 		jstring getKey();
 		QAndroidJniObject getChannel();
+		jstring getOverrideGroupKey();
+		jint getImportance();
+		jboolean canShowBadge();
+		jboolean canBubble();
 		jint getRank();
 		jboolean isAmbient();
 		jint getSuppressedVisualEffects();
@@ -37,10 +41,6 @@ namespace __jni_impl::android::service::notification
 		QAndroidJniObject getSmartReplies();
 		jboolean isSuspended();
 		jlong getLastAudiblyAlertedMillis();
-		jstring getOverrideGroupKey();
-		jint getImportance();
-		jboolean canShowBadge();
-		jboolean canBubble();
 	};
 } // namespace __jni_impl::android::service::notification
 
@@ -76,7 +76,8 @@ namespace __jni_impl::android::service::notification
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.notification.NotificationListenerService$Ranking",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -100,6 +101,34 @@ namespace __jni_impl::android::service::notification
 		return __thiz.callObjectMethod(
 			"getChannel",
 			"()Landroid/app/NotificationChannel;"
+		);
+	}
+	jstring NotificationListenerService_Ranking::getOverrideGroupKey()
+	{
+		return __thiz.callObjectMethod(
+			"getOverrideGroupKey",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint NotificationListenerService_Ranking::getImportance()
+	{
+		return __thiz.callMethod<jint>(
+			"getImportance",
+			"()I"
+		);
+	}
+	jboolean NotificationListenerService_Ranking::canShowBadge()
+	{
+		return __thiz.callMethod<jboolean>(
+			"canShowBadge",
+			"()Z"
+		);
+	}
+	jboolean NotificationListenerService_Ranking::canBubble()
+	{
+		return __thiz.callMethod<jboolean>(
+			"canBubble",
+			"()Z"
 		);
 	}
 	jint NotificationListenerService_Ranking::getRank()
@@ -170,34 +199,6 @@ namespace __jni_impl::android::service::notification
 		return __thiz.callMethod<jlong>(
 			"getLastAudiblyAlertedMillis",
 			"()J"
-		);
-	}
-	jstring NotificationListenerService_Ranking::getOverrideGroupKey()
-	{
-		return __thiz.callObjectMethod(
-			"getOverrideGroupKey",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint NotificationListenerService_Ranking::getImportance()
-	{
-		return __thiz.callMethod<jint>(
-			"getImportance",
-			"()I"
-		);
-	}
-	jboolean NotificationListenerService_Ranking::canShowBadge()
-	{
-		return __thiz.callMethod<jboolean>(
-			"canShowBadge",
-			"()Z"
-		);
-	}
-	jboolean NotificationListenerService_Ranking::canBubble()
-	{
-		return __thiz.callMethod<jboolean>(
-			"canBubble",
-			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::service::notification

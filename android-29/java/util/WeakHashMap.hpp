@@ -54,14 +54,16 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.WeakHashMap",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void WeakHashMap::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.WeakHashMap",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void WeakHashMap::__constructor(jint arg0, jfloat arg1)
 	{
@@ -69,13 +71,15 @@ namespace __jni_impl::java::util
 			"java.util.WeakHashMap",
 			"(IF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void WeakHashMap::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.WeakHashMap",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

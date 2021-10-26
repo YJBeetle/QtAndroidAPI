@@ -11,11 +11,11 @@ namespace __jni_impl::java::util
 }
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class LocaleList;
 }
 namespace __jni_impl::android::os
 {
-	class LocaleList;
+	class Parcel;
 }
 
 namespace __jni_impl::android::content::res
@@ -131,9 +131,7 @@ namespace __jni_impl::android::content::res
 		jint compareTo(jobject arg0);
 		void setLocale(__jni_impl::java::util::Locale arg0);
 		jint diff(__jni_impl::android::content::res::Configuration arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
+		QAndroidJniObject getLocales();
 		jint getLayoutDirection();
 		void setLayoutDirection(__jni_impl::java::util::Locale arg0);
 		jboolean isLayoutSizeAtLeast(jint arg0);
@@ -145,13 +143,15 @@ namespace __jni_impl::android::content::res
 		jboolean isScreenRound();
 		jboolean isScreenWideColorGamut();
 		jboolean isScreenHdr();
-		QAndroidJniObject getLocales();
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::res
 
 #include "../../../java/util/Locale.hpp"
-#include "../../os/Parcel.hpp"
 #include "../../os/LocaleList.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::content::res
 {
@@ -797,14 +797,16 @@ namespace __jni_impl::android::content::res
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.res.Configuration",
-			"()V");
+			"()V"
+		);
 	}
 	void Configuration::__constructor(__jni_impl::android::content::res::Configuration arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.res.Configuration",
 			"(Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -870,28 +872,11 @@ namespace __jni_impl::android::content::res
 			arg0.__jniObject().object()
 		);
 	}
-	jint Configuration::describeContents()
+	QAndroidJniObject Configuration::getLocales()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void Configuration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void Configuration::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"getLocales",
+			"()Landroid/os/LocaleList;"
 		);
 	}
 	jint Configuration::getLayoutDirection()
@@ -979,11 +964,28 @@ namespace __jni_impl::android::content::res
 			"()Z"
 		);
 	}
-	QAndroidJniObject Configuration::getLocales()
+	void Configuration::readFromParcel(__jni_impl::android::os::Parcel arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getLocales",
-			"()Landroid/os/LocaleList;"
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint Configuration::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void Configuration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::content::res

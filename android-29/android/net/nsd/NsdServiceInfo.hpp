@@ -31,15 +31,19 @@ namespace __jni_impl::android::net::nsd
 		jint getPort();
 		QAndroidJniObject getAttributes();
 		void setAttribute(jstring arg0, jstring arg1);
+		void setAttribute(const QString &arg0, const QString &arg1);
 		jstring getServiceType();
-		jstring getServiceName();
-		void setServiceName(jstring arg0);
+		void removeAttribute(jstring arg0);
+		void removeAttribute(const QString &arg0);
+		void setServiceType(jstring arg0);
+		void setServiceType(const QString &arg0);
+		void setHost(__jni_impl::java::net::InetAddress arg0);
+		void setPort(jint arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void setPort(jint arg0);
-		void removeAttribute(jstring arg0);
-		void setServiceType(jstring arg0);
-		void setHost(__jni_impl::java::net::InetAddress arg0);
+		jstring getServiceName();
+		void setServiceName(jstring arg0);
+		void setServiceName(const QString &arg0);
 	};
 } // namespace __jni_impl::android::net::nsd
 
@@ -63,7 +67,8 @@ namespace __jni_impl::android::net::nsd
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.nsd.NsdServiceInfo",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -104,6 +109,15 @@ namespace __jni_impl::android::net::nsd
 			arg1
 		);
 	}
+	void NsdServiceInfo::setAttribute(const QString &arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"setAttribute",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	jstring NsdServiceInfo::getServiceType()
 	{
 		return __thiz.callObjectMethod(
@@ -111,18 +125,51 @@ namespace __jni_impl::android::net::nsd
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jstring NsdServiceInfo::getServiceName()
-	{
-		return __thiz.callObjectMethod(
-			"getServiceName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void NsdServiceInfo::setServiceName(jstring arg0)
+	void NsdServiceInfo::removeAttribute(jstring arg0)
 	{
 		__thiz.callMethod<void>(
-			"setServiceName",
+			"removeAttribute",
 			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void NsdServiceInfo::removeAttribute(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeAttribute",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void NsdServiceInfo::setServiceType(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setServiceType",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void NsdServiceInfo::setServiceType(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setServiceType",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void NsdServiceInfo::setHost(__jni_impl::java::net::InetAddress arg0)
+	{
+		__thiz.callMethod<void>(
+			"setHost",
+			"(Ljava/net/InetAddress;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void NsdServiceInfo::setPort(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPort",
+			"(I)V",
 			arg0
 		);
 	}
@@ -142,36 +189,27 @@ namespace __jni_impl::android::net::nsd
 			arg1
 		);
 	}
-	void NsdServiceInfo::setPort(jint arg0)
+	jstring NsdServiceInfo::getServiceName()
 	{
-		__thiz.callMethod<void>(
-			"setPort",
-			"(I)V",
-			arg0
-		);
+		return __thiz.callObjectMethod(
+			"getServiceName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	void NsdServiceInfo::removeAttribute(jstring arg0)
+	void NsdServiceInfo::setServiceName(jstring arg0)
 	{
 		__thiz.callMethod<void>(
-			"removeAttribute",
+			"setServiceName",
 			"(Ljava/lang/String;)V",
 			arg0
 		);
 	}
-	void NsdServiceInfo::setServiceType(jstring arg0)
+	void NsdServiceInfo::setServiceName(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"setServiceType",
+			"setServiceName",
 			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void NsdServiceInfo::setHost(__jni_impl::java::net::InetAddress arg0)
-	{
-		__thiz.callMethod<void>(
-			"setHost",
-			"(Ljava/net/InetAddress;)V",
-			arg0.__jniObject().object()
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::net::nsd

@@ -31,7 +31,8 @@ namespace __jni_impl::android::renderscript
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.RenderScript$RSErrorHandler",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

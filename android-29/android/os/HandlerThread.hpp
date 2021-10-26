@@ -20,7 +20,9 @@ namespace __jni_impl::android::os
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, jint arg1);
+		void __constructor(const QString &arg0, jint arg1);
 		
 		// Methods
 		void run();
@@ -43,7 +45,16 @@ namespace __jni_impl::android::os
 		__thiz = QAndroidJniObject(
 			"android.os.HandlerThread",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void HandlerThread::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.os.HandlerThread",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void HandlerThread::__constructor(jstring arg0, jint arg1)
 	{
@@ -51,7 +62,17 @@ namespace __jni_impl::android::os
 			"android.os.HandlerThread",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void HandlerThread::__constructor(const QString &arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.os.HandlerThread",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods

@@ -300,7 +300,8 @@ namespace __jni_impl::android::speech::tts
 		__thiz = QAndroidJniObject(
 			"android.speech.tts.TextToSpeech$Engine",
 			"(Landroid/speech/tts/TextToSpeech;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

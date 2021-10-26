@@ -30,9 +30,9 @@ namespace __jni_impl::android::app::job
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jint getFlags();
+		QAndroidJniObject getUri();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getUri();
 	};
 } // namespace __jni_impl::android::app::job
 
@@ -65,7 +65,8 @@ namespace __jni_impl::android::app::job
 			"android.app.job.JobInfo$TriggerContentUri",
 			"(Landroid/net/Uri;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -91,6 +92,13 @@ namespace __jni_impl::android::app::job
 			"()I"
 		);
 	}
+	QAndroidJniObject JobInfo_TriggerContentUri::getUri()
+	{
+		return __thiz.callObjectMethod(
+			"getUri",
+			"()Landroid/net/Uri;"
+		);
+	}
 	jint JobInfo_TriggerContentUri::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -105,13 +113,6 @@ namespace __jni_impl::android::app::job
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject JobInfo_TriggerContentUri::getUri()
-	{
-		return __thiz.callObjectMethod(
-			"getUri",
-			"()Landroid/net/Uri;"
 		);
 	}
 } // namespace __jni_impl::android::app::job

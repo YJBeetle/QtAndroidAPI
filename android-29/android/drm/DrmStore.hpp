@@ -30,7 +30,8 @@ namespace __jni_impl::android::drm
 	{
 		__thiz = QAndroidJniObject(
 			"android.drm.DrmStore",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -11,13 +11,13 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::view
-{
-	class View;
-}
 namespace __jni_impl::android::util
 {
 	class SparseArray;
+}
+namespace __jni_impl::android::view
+{
+	class View;
 }
 namespace __jni_impl::android::view
 {
@@ -48,6 +48,18 @@ namespace __jni_impl::android::widget
 		// Methods
 		jint getCount();
 		QAndroidJniObject getAdapter();
+		jstring getAccessibilityClassName();
+		void addView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
+		void addView(__jni_impl::android::view::View arg0);
+		void addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2);
+		void addView(__jni_impl::android::view::View arg0, jint arg1);
+		void removeView(__jni_impl::android::view::View arg0);
+		void removeViewAt(jint arg0);
+		void removeAllViews();
+		void setOnClickListener(__jni_impl::__JniBaseClass arg0);
+		void onProvideAutofillStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1);
+		void setFocusable(jint arg0);
+		void setFocusableInTouchMode(jboolean arg0);
 		void setOnItemClickListener(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getOnItemClickListener();
 		jboolean performItemClick(__jni_impl::android::view::View arg0, jint arg1, jlong arg2);
@@ -68,24 +80,12 @@ namespace __jni_impl::android::widget
 		QAndroidJniObject getEmptyView();
 		jobject getItemAtPosition(jint arg0);
 		jlong getItemIdAtPosition(jint arg0);
-		jstring getAccessibilityClassName();
-		void addView(__jni_impl::android::view::View arg0, jint arg1);
-		void addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2);
-		void addView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
-		void addView(__jni_impl::android::view::View arg0);
-		void removeView(__jni_impl::android::view::View arg0);
-		void removeViewAt(jint arg0);
-		void removeAllViews();
-		void setOnClickListener(__jni_impl::__JniBaseClass arg0);
-		void onProvideAutofillStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1);
-		void setFocusable(jint arg0);
-		void setFocusableInTouchMode(jboolean arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "../view/View.hpp"
 #include "../util/SparseArray.hpp"
+#include "../view/View.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/ViewStructure.hpp"
 
@@ -130,7 +130,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void AdapterView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -139,7 +140,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void AdapterView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -147,14 +149,16 @@ namespace __jni_impl::android::widget
 			"android.widget.AdapterView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AdapterView::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AdapterView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -170,6 +174,105 @@ namespace __jni_impl::android::widget
 		return __thiz.callObjectMethod(
 			"getAdapter",
 			"()Landroid/widget/Adapter;"
+		);
+	}
+	jstring AdapterView::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	void AdapterView::addView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
+	{
+		__thiz.callMethod<void>(
+			"addView",
+			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void AdapterView::addView(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"addView",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AdapterView::addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2)
+	{
+		__thiz.callMethod<void>(
+			"addView",
+			"(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void AdapterView::addView(__jni_impl::android::view::View arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"addView",
+			"(Landroid/view/View;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void AdapterView::removeView(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeView",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AdapterView::removeViewAt(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeViewAt",
+			"(I)V",
+			arg0
+		);
+	}
+	void AdapterView::removeAllViews()
+	{
+		__thiz.callMethod<void>(
+			"removeAllViews",
+			"()V"
+		);
+	}
+	void AdapterView::setOnClickListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnClickListener",
+			"(Landroid/view/View$OnClickListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AdapterView::onProvideAutofillStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"onProvideAutofillStructure",
+			"(Landroid/view/ViewStructure;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void AdapterView::setFocusable(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFocusable",
+			"(I)V",
+			arg0
+		);
+	}
+	void AdapterView::setFocusableInTouchMode(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFocusableInTouchMode",
+			"(Z)V",
+			arg0
 		);
 	}
 	void AdapterView::setOnItemClickListener(__jni_impl::__JniBaseClass arg0)
@@ -321,105 +424,6 @@ namespace __jni_impl::android::widget
 		return __thiz.callMethod<jlong>(
 			"getItemIdAtPosition",
 			"(I)J",
-			arg0
-		);
-	}
-	jstring AdapterView::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	void AdapterView::addView(__jni_impl::android::view::View arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"addView",
-			"(Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void AdapterView::addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2)
-	{
-		__thiz.callMethod<void>(
-			"addView",
-			"(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void AdapterView::addView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
-	{
-		__thiz.callMethod<void>(
-			"addView",
-			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void AdapterView::addView(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"addView",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void AdapterView::removeView(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeView",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void AdapterView::removeViewAt(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeViewAt",
-			"(I)V",
-			arg0
-		);
-	}
-	void AdapterView::removeAllViews()
-	{
-		__thiz.callMethod<void>(
-			"removeAllViews",
-			"()V"
-		);
-	}
-	void AdapterView::setOnClickListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnClickListener",
-			"(Landroid/view/View$OnClickListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void AdapterView::onProvideAutofillStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"onProvideAutofillStructure",
-			"(Landroid/view/ViewStructure;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void AdapterView::setFocusable(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFocusable",
-			"(I)V",
-			arg0
-		);
-	}
-	void AdapterView::setFocusableInTouchMode(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFocusableInTouchMode",
-			"(Z)V",
 			arg0
 		);
 	}

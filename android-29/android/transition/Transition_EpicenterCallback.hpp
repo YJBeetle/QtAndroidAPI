@@ -41,7 +41,8 @@ namespace __jni_impl::android::transition
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Transition$EpicenterCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -27,19 +27,21 @@ namespace __jni_impl::java::util
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jboolean arg0);
 		void __constructor();
 		void __constructor(jstring arg0, jboolean arg1);
+		void __constructor(const QString &arg0, jboolean arg1);
 		
 		// Methods
 		jint purge();
 		void cancel();
-		void schedule(__jni_impl::java::util::TimerTask arg0, __jni_impl::java::util::Date arg1);
+		void scheduleAtFixedRate(__jni_impl::java::util::TimerTask arg0, jlong arg1, jlong arg2);
+		void scheduleAtFixedRate(__jni_impl::java::util::TimerTask arg0, __jni_impl::java::util::Date arg1, jlong arg2);
 		void schedule(__jni_impl::java::util::TimerTask arg0, jlong arg1);
 		void schedule(__jni_impl::java::util::TimerTask arg0, jlong arg1, jlong arg2);
+		void schedule(__jni_impl::java::util::TimerTask arg0, __jni_impl::java::util::Date arg1);
 		void schedule(__jni_impl::java::util::TimerTask arg0, __jni_impl::java::util::Date arg1, jlong arg2);
-		void scheduleAtFixedRate(__jni_impl::java::util::TimerTask arg0, __jni_impl::java::util::Date arg1, jlong arg2);
-		void scheduleAtFixedRate(__jni_impl::java::util::TimerTask arg0, jlong arg1, jlong arg2);
 	};
 } // namespace __jni_impl::java::util
 
@@ -57,20 +59,31 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.Timer",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Timer::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.Timer",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void Timer::__constructor(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Timer",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void Timer::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Timer",
-			"()V");
+			"()V"
+		);
 	}
 	void Timer::__constructor(jstring arg0, jboolean arg1)
 	{
@@ -78,7 +91,17 @@ namespace __jni_impl::java::util
 			"java.util.Timer",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void Timer::__constructor(const QString &arg0, jboolean arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.Timer",
+			"(Ljava/lang/String;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods
@@ -96,13 +119,24 @@ namespace __jni_impl::java::util
 			"()V"
 		);
 	}
-	void Timer::schedule(__jni_impl::java::util::TimerTask arg0, __jni_impl::java::util::Date arg1)
+	void Timer::scheduleAtFixedRate(__jni_impl::java::util::TimerTask arg0, jlong arg1, jlong arg2)
 	{
 		__thiz.callMethod<void>(
-			"schedule",
-			"(Ljava/util/TimerTask;Ljava/util/Date;)V",
+			"scheduleAtFixedRate",
+			"(Ljava/util/TimerTask;JJ)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg1,
+			arg2
+		);
+	}
+	void Timer::scheduleAtFixedRate(__jni_impl::java::util::TimerTask arg0, __jni_impl::java::util::Date arg1, jlong arg2)
+	{
+		__thiz.callMethod<void>(
+			"scheduleAtFixedRate",
+			"(Ljava/util/TimerTask;Ljava/util/Date;J)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
 		);
 	}
 	void Timer::schedule(__jni_impl::java::util::TimerTask arg0, jlong arg1)
@@ -124,6 +158,15 @@ namespace __jni_impl::java::util
 			arg2
 		);
 	}
+	void Timer::schedule(__jni_impl::java::util::TimerTask arg0, __jni_impl::java::util::Date arg1)
+	{
+		__thiz.callMethod<void>(
+			"schedule",
+			"(Ljava/util/TimerTask;Ljava/util/Date;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
 	void Timer::schedule(__jni_impl::java::util::TimerTask arg0, __jni_impl::java::util::Date arg1, jlong arg2)
 	{
 		__thiz.callMethod<void>(
@@ -131,26 +174,6 @@ namespace __jni_impl::java::util
 			"(Ljava/util/TimerTask;Ljava/util/Date;J)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	void Timer::scheduleAtFixedRate(__jni_impl::java::util::TimerTask arg0, __jni_impl::java::util::Date arg1, jlong arg2)
-	{
-		__thiz.callMethod<void>(
-			"scheduleAtFixedRate",
-			"(Ljava/util/TimerTask;Ljava/util/Date;J)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	void Timer::scheduleAtFixedRate(__jni_impl::java::util::TimerTask arg0, jlong arg1, jlong arg2)
-	{
-		__thiz.callMethod<void>(
-			"scheduleAtFixedRate",
-			"(Ljava/util/TimerTask;JJ)V",
-			arg0.__jniObject().object(),
-			arg1,
 			arg2
 		);
 	}

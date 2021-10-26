@@ -62,10 +62,10 @@ namespace __jni_impl::android::app
 		jint getNavigationMode();
 		void setNavigationMode(jint arg0);
 		jint getDisplayOptions();
-		void addTab(__jni_impl::android::app::ActionBar_Tab arg0, jint arg1, jboolean arg2);
-		void addTab(__jni_impl::android::app::ActionBar_Tab arg0, jboolean arg1);
-		void addTab(__jni_impl::android::app::ActionBar_Tab arg0);
 		void addTab(__jni_impl::android::app::ActionBar_Tab arg0, jint arg1);
+		void addTab(__jni_impl::android::app::ActionBar_Tab arg0);
+		void addTab(__jni_impl::android::app::ActionBar_Tab arg0, jboolean arg1);
+		void addTab(__jni_impl::android::app::ActionBar_Tab arg0, jint arg1, jboolean arg2);
 		void removeTab(__jni_impl::android::app::ActionBar_Tab arg0);
 		void removeTabAt(jint arg0);
 		void removeAllTabs();
@@ -79,33 +79,36 @@ namespace __jni_impl::android::app
 		QAndroidJniObject getThemedContext();
 		void setHomeAsUpIndicator(jint arg0);
 		void setHomeAsUpIndicator(__jni_impl::android::graphics::drawable::Drawable arg0);
-		void setHomeActionContentDescription(jint arg0);
 		void setHomeActionContentDescription(jstring arg0);
+		void setHomeActionContentDescription(const QString &arg0);
+		void setHomeActionContentDescription(jint arg0);
 		void setHideOnContentScrollEnabled(jboolean arg0);
 		jboolean isHideOnContentScrollEnabled();
 		jint getHideOffset();
 		void setHideOffset(jint arg0);
-		jboolean isShowing();
-		void hide();
-		void setTitle(jint arg0);
-		void setTitle(jstring arg0);
-		jstring getTitle();
-		void show();
 		jfloat getElevation();
 		void setElevation(jfloat arg0);
 		void setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
-		jstring getSubtitle();
-		void setSubtitle(jint arg0);
-		void setSubtitle(jstring arg0);
+		jint getHeight();
+		void setIcon(__jni_impl::android::graphics::drawable::Drawable arg0);
+		void setIcon(jint arg0);
 		void setLogo(jint arg0);
 		void setLogo(__jni_impl::android::graphics::drawable::Drawable arg0);
 		void setCustomView(__jni_impl::android::view::View arg0, __jni_impl::android::app::ActionBar_LayoutParams arg1);
-		void setCustomView(__jni_impl::android::view::View arg0);
 		void setCustomView(jint arg0);
+		void setCustomView(__jni_impl::android::view::View arg0);
 		QAndroidJniObject getCustomView();
-		void setIcon(jint arg0);
-		void setIcon(__jni_impl::android::graphics::drawable::Drawable arg0);
-		jint getHeight();
+		void show();
+		jboolean isShowing();
+		void hide();
+		void setSubtitle(jstring arg0);
+		void setSubtitle(const QString &arg0);
+		void setSubtitle(jint arg0);
+		void setTitle(jstring arg0);
+		void setTitle(const QString &arg0);
+		void setTitle(jint arg0);
+		jstring getTitle();
+		jstring getSubtitle();
 	};
 } // namespace __jni_impl::android::app
 
@@ -180,7 +183,8 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ActionBar",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -317,21 +321,11 @@ namespace __jni_impl::android::app
 			"()I"
 		);
 	}
-	void ActionBar::addTab(__jni_impl::android::app::ActionBar_Tab arg0, jint arg1, jboolean arg2)
+	void ActionBar::addTab(__jni_impl::android::app::ActionBar_Tab arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
 			"addTab",
-			"(Landroid/app/ActionBar$Tab;IZ)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		);
-	}
-	void ActionBar::addTab(__jni_impl::android::app::ActionBar_Tab arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"addTab",
-			"(Landroid/app/ActionBar$Tab;Z)V",
+			"(Landroid/app/ActionBar$Tab;I)V",
 			arg0.__jniObject().object(),
 			arg1
 		);
@@ -344,13 +338,23 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object()
 		);
 	}
-	void ActionBar::addTab(__jni_impl::android::app::ActionBar_Tab arg0, jint arg1)
+	void ActionBar::addTab(__jni_impl::android::app::ActionBar_Tab arg0, jboolean arg1)
 	{
 		__thiz.callMethod<void>(
 			"addTab",
-			"(Landroid/app/ActionBar$Tab;I)V",
+			"(Landroid/app/ActionBar$Tab;Z)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	void ActionBar::addTab(__jni_impl::android::app::ActionBar_Tab arg0, jint arg1, jboolean arg2)
+	{
+		__thiz.callMethod<void>(
+			"addTab",
+			"(Landroid/app/ActionBar$Tab;IZ)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
 		);
 	}
 	void ActionBar::removeTab(__jni_impl::android::app::ActionBar_Tab arg0)
@@ -453,19 +457,27 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object()
 		);
 	}
-	void ActionBar::setHomeActionContentDescription(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setHomeActionContentDescription",
-			"(I)V",
-			arg0
-		);
-	}
 	void ActionBar::setHomeActionContentDescription(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setHomeActionContentDescription",
 			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void ActionBar::setHomeActionContentDescription(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setHomeActionContentDescription",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void ActionBar::setHomeActionContentDescription(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setHomeActionContentDescription",
+			"(I)V",
 			arg0
 		);
 	}
@@ -499,50 +511,6 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
-	jboolean ActionBar::isShowing()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isShowing",
-			"()Z"
-		);
-	}
-	void ActionBar::hide()
-	{
-		__thiz.callMethod<void>(
-			"hide",
-			"()V"
-		);
-	}
-	void ActionBar::setTitle(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(I)V",
-			arg0
-		);
-	}
-	void ActionBar::setTitle(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)V",
-			arg0
-		);
-	}
-	jstring ActionBar::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	void ActionBar::show()
-	{
-		__thiz.callMethod<void>(
-			"show",
-			"()V"
-		);
-	}
 	jfloat ActionBar::getElevation()
 	{
 		return __thiz.callMethod<jfloat>(
@@ -566,26 +534,26 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object()
 		);
 	}
-	jstring ActionBar::getSubtitle()
+	jint ActionBar::getHeight()
 	{
-		return __thiz.callObjectMethod(
-			"getSubtitle",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	void ActionBar::setSubtitle(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSubtitle",
-			"(I)V",
-			arg0
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
 		);
 	}
-	void ActionBar::setSubtitle(jstring arg0)
+	void ActionBar::setIcon(__jni_impl::android::graphics::drawable::Drawable arg0)
 	{
 		__thiz.callMethod<void>(
-			"setSubtitle",
-			"(Ljava/lang/CharSequence;)V",
+			"setIcon",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ActionBar::setIcon(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setIcon",
+			"(I)V",
 			arg0
 		);
 	}
@@ -614,20 +582,20 @@ namespace __jni_impl::android::app
 			arg1.__jniObject().object()
 		);
 	}
-	void ActionBar::setCustomView(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCustomView",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void ActionBar::setCustomView(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCustomView",
 			"(I)V",
 			arg0
+		);
+	}
+	void ActionBar::setCustomView(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCustomView",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject ActionBar::getCustomView()
@@ -637,28 +605,88 @@ namespace __jni_impl::android::app
 			"()Landroid/view/View;"
 		);
 	}
-	void ActionBar::setIcon(jint arg0)
+	void ActionBar::show()
 	{
 		__thiz.callMethod<void>(
-			"setIcon",
+			"show",
+			"()V"
+		);
+	}
+	jboolean ActionBar::isShowing()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isShowing",
+			"()Z"
+		);
+	}
+	void ActionBar::hide()
+	{
+		__thiz.callMethod<void>(
+			"hide",
+			"()V"
+		);
+	}
+	void ActionBar::setSubtitle(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSubtitle",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void ActionBar::setSubtitle(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSubtitle",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void ActionBar::setSubtitle(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSubtitle",
 			"(I)V",
 			arg0
 		);
 	}
-	void ActionBar::setIcon(__jni_impl::android::graphics::drawable::Drawable arg0)
+	void ActionBar::setTitle(jstring arg0)
 	{
 		__thiz.callMethod<void>(
-			"setIcon",
-			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+			"setTitle",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
 		);
 	}
-	jint ActionBar::getHeight()
+	void ActionBar::setTitle(const QString &arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I"
+		__thiz.callMethod<void>(
+			"setTitle",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	void ActionBar::setTitle(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTitle",
+			"(I)V",
+			arg0
+		);
+	}
+	jstring ActionBar::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring ActionBar::getSubtitle()
+	{
+		return __thiz.callObjectMethod(
+			"getSubtitle",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::app
 

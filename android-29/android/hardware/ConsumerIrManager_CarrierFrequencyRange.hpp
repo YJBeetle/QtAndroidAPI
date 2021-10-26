@@ -40,7 +40,8 @@ namespace __jni_impl::android::hardware
 			"(Landroid/hardware/ConsumerIrManager;II)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods

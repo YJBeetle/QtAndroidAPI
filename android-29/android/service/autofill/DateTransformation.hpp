@@ -59,7 +59,8 @@ namespace __jni_impl::android::service::autofill
 			"android.service.autofill.DateTransformation",
 			"(Landroid/view/autofill/AutofillId;Landroid/icu/text/DateFormat;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

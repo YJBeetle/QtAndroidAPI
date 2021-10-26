@@ -11,6 +11,10 @@ namespace __jni_impl::android::view
 }
 namespace __jni_impl::android::hardware::camera2
 {
+	class CameraDevice;
+}
+namespace __jni_impl::android::hardware::camera2
+{
 	class CaptureRequest;
 }
 namespace __jni_impl::android::hardware::camera2
@@ -24,10 +28,6 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::hardware::camera2::params
 {
 	class OutputConfiguration;
-}
-namespace __jni_impl::android::hardware::camera2
-{
-	class CameraDevice;
 }
 
 namespace __jni_impl::android::hardware::camera2
@@ -43,6 +43,7 @@ namespace __jni_impl::android::hardware::camera2
 		// Methods
 		void close();
 		void prepare(__jni_impl::android::view::Surface arg0);
+		QAndroidJniObject getDevice();
 		jint captureSingleRequest(__jni_impl::android::hardware::camera2::CaptureRequest arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2);
 		void finalizeOutputConfigurations(__jni_impl::__JniBaseClass arg0);
 		jint capture(__jni_impl::android::hardware::camera2::CaptureRequest arg0, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, __jni_impl::android::os::Handler arg2);
@@ -57,16 +58,15 @@ namespace __jni_impl::android::hardware::camera2
 		jboolean isReprocessable();
 		QAndroidJniObject getInputSurface();
 		void updateOutputConfiguration(__jni_impl::android::hardware::camera2::params::OutputConfiguration arg0);
-		QAndroidJniObject getDevice();
 	};
 } // namespace __jni_impl::android::hardware::camera2
 
 #include "../../view/Surface.hpp"
+#include "CameraDevice.hpp"
 #include "CaptureRequest.hpp"
 #include "CameraCaptureSession_CaptureCallback.hpp"
 #include "../../os/Handler.hpp"
 #include "params/OutputConfiguration.hpp"
-#include "CameraDevice.hpp"
 
 namespace __jni_impl::android::hardware::camera2
 {
@@ -77,7 +77,8 @@ namespace __jni_impl::android::hardware::camera2
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.CameraCaptureSession",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -94,6 +95,13 @@ namespace __jni_impl::android::hardware::camera2
 			"prepare",
 			"(Landroid/view/Surface;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject CameraCaptureSession::getDevice()
+	{
+		return __thiz.callObjectMethod(
+			"getDevice",
+			"()Landroid/hardware/camera2/CameraDevice;"
 		);
 	}
 	jint CameraCaptureSession::captureSingleRequest(__jni_impl::android::hardware::camera2::CaptureRequest arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2)
@@ -218,13 +226,6 @@ namespace __jni_impl::android::hardware::camera2
 			"updateOutputConfiguration",
 			"(Landroid/hardware/camera2/params/OutputConfiguration;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject CameraCaptureSession::getDevice()
-	{
-		return __thiz.callObjectMethod(
-			"getDevice",
-			"()Landroid/hardware/camera2/CameraDevice;"
 		);
 	}
 } // namespace __jni_impl::android::hardware::camera2

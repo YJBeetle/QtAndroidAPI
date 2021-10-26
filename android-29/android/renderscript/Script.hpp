@@ -55,6 +55,7 @@ namespace __jni_impl::android::renderscript
 		
 		// Methods
 		void setTimeZone(jstring arg0);
+		void setTimeZone(const QString &arg0);
 		void bindAllocation(__jni_impl::android::renderscript::Allocation arg0, jint arg1);
 		void setVar(jint arg0, __jni_impl::android::renderscript::BaseObj arg1);
 		void setVar(jint arg0, jboolean arg1);
@@ -102,6 +103,14 @@ namespace __jni_impl::android::renderscript
 			"setTimeZone",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void Script::setTimeZone(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTimeZone",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Script::bindAllocation(__jni_impl::android::renderscript::Allocation arg0, jint arg1)

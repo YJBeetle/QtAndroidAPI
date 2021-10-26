@@ -38,20 +38,23 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.LinkedHashSet",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void LinkedHashSet::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.LinkedHashSet",
-			"()V");
+			"()V"
+		);
 	}
 	void LinkedHashSet::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.LinkedHashSet",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void LinkedHashSet::__constructor(jint arg0, jfloat arg1)
 	{
@@ -59,7 +62,8 @@ namespace __jni_impl::java::util
 			"java.util.LinkedHashSet",
 			"(IF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

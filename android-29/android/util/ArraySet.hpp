@@ -57,27 +57,31 @@ namespace __jni_impl::android::util
 		__thiz = QAndroidJniObject(
 			"android.util.ArraySet",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ArraySet::__constructor(__jni_impl::android::util::ArraySet arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.ArraySet",
 			"(Landroid/util/ArraySet;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ArraySet::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.ArraySet",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void ArraySet::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.ArraySet",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -112,14 +112,16 @@ namespace __jni_impl::android::content
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.SyncStats",
-			"()V");
+			"()V"
+		);
 	}
 	void SyncStats::__constructor(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.SyncStats",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

@@ -38,7 +38,8 @@ namespace __jni_impl::android::view
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ScaleGestureDetector$SimpleOnScaleGestureListener",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

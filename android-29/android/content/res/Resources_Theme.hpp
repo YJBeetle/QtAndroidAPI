@@ -37,15 +37,16 @@ namespace __jni_impl::android::content::res
 		void applyStyle(jint arg0, jboolean arg1);
 		jboolean resolveAttribute(jint arg0, __jni_impl::android::util::TypedValue arg1, jboolean arg2);
 		void rebase();
-		void dump(jint arg0, jstring arg1, jstring arg2);
-		jint getChangingConfigurations();
-		QAndroidJniObject getDrawable(jint arg0);
-		QAndroidJniObject obtainStyledAttributes(__jni_impl::__JniBaseClass arg0, jintArray arg1, jint arg2, jint arg3);
-		QAndroidJniObject obtainStyledAttributes(jintArray arg0);
-		QAndroidJniObject obtainStyledAttributes(jint arg0, jintArray arg1);
 		jintArray getAttributeResolutionStack(jint arg0, jint arg1, jint arg2);
 		jint getExplicitStyle(__jni_impl::__JniBaseClass arg0);
 		void setTo(__jni_impl::android::content::res::Resources_Theme arg0);
+		QAndroidJniObject getDrawable(jint arg0);
+		QAndroidJniObject obtainStyledAttributes(jint arg0, jintArray arg1);
+		QAndroidJniObject obtainStyledAttributes(jintArray arg0);
+		QAndroidJniObject obtainStyledAttributes(__jni_impl::__JniBaseClass arg0, jintArray arg1, jint arg2, jint arg3);
+		void dump(jint arg0, jstring arg1, jstring arg2);
+		void dump(jint arg0, const QString &arg1, const QString &arg2);
+		jint getChangingConfigurations();
 	};
 } // namespace __jni_impl::android::content::res
 
@@ -100,59 +101,6 @@ namespace __jni_impl::android::content::res
 			"()V"
 		);
 	}
-	void Resources_Theme::dump(jint arg0, jstring arg1, jstring arg2)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(ILjava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jint Resources_Theme::getChangingConfigurations()
-	{
-		return __thiz.callMethod<jint>(
-			"getChangingConfigurations",
-			"()I"
-		);
-	}
-	QAndroidJniObject Resources_Theme::getDrawable(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDrawable",
-			"(I)Landroid/graphics/drawable/Drawable;",
-			arg0
-		);
-	}
-	QAndroidJniObject Resources_Theme::obtainStyledAttributes(__jni_impl::__JniBaseClass arg0, jintArray arg1, jint arg2, jint arg3)
-	{
-		return __thiz.callObjectMethod(
-			"obtainStyledAttributes",
-			"(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	QAndroidJniObject Resources_Theme::obtainStyledAttributes(jintArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"obtainStyledAttributes",
-			"([I)Landroid/content/res/TypedArray;",
-			arg0
-		);
-	}
-	QAndroidJniObject Resources_Theme::obtainStyledAttributes(jint arg0, jintArray arg1)
-	{
-		return __thiz.callObjectMethod(
-			"obtainStyledAttributes",
-			"(I[I)Landroid/content/res/TypedArray;",
-			arg0,
-			arg1
-		);
-	}
 	jintArray Resources_Theme::getAttributeResolutionStack(jint arg0, jint arg1, jint arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -177,6 +125,69 @@ namespace __jni_impl::android::content::res
 			"setTo",
 			"(Landroid/content/res/Resources$Theme;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Resources_Theme::getDrawable(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDrawable",
+			"(I)Landroid/graphics/drawable/Drawable;",
+			arg0
+		);
+	}
+	QAndroidJniObject Resources_Theme::obtainStyledAttributes(jint arg0, jintArray arg1)
+	{
+		return __thiz.callObjectMethod(
+			"obtainStyledAttributes",
+			"(I[I)Landroid/content/res/TypedArray;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject Resources_Theme::obtainStyledAttributes(jintArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"obtainStyledAttributes",
+			"([I)Landroid/content/res/TypedArray;",
+			arg0
+		);
+	}
+	QAndroidJniObject Resources_Theme::obtainStyledAttributes(__jni_impl::__JniBaseClass arg0, jintArray arg1, jint arg2, jint arg3)
+	{
+		return __thiz.callObjectMethod(
+			"obtainStyledAttributes",
+			"(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void Resources_Theme::dump(jint arg0, jstring arg1, jstring arg2)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(ILjava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void Resources_Theme::dump(jint arg0, const QString &arg1, const QString &arg2)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(ILjava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
+	}
+	jint Resources_Theme::getChangingConfigurations()
+	{
+		return __thiz.callMethod<jint>(
+			"getChangingConfigurations",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::content::res

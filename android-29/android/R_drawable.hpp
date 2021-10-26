@@ -1422,7 +1422,8 @@ namespace __jni_impl::android
 	{
 		__thiz = QAndroidJniObject(
 			"android.R$drawable",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

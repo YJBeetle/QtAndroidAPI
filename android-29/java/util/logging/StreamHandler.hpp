@@ -43,6 +43,7 @@ namespace __jni_impl::java::util::logging
 		void close();
 		jboolean isLoggable(__jni_impl::java::util::logging::LogRecord arg0);
 		void setEncoding(jstring arg0);
+		void setEncoding(const QString &arg0);
 		void publish(__jni_impl::java::util::logging::LogRecord arg0);
 	};
 } // namespace __jni_impl::java::util::logging
@@ -64,13 +65,15 @@ namespace __jni_impl::java::util::logging
 			"java.util.logging.StreamHandler",
 			"(Ljava/io/OutputStream;Ljava/util/logging/Formatter;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void StreamHandler::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.logging.StreamHandler",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -102,6 +105,14 @@ namespace __jni_impl::java::util::logging
 			"setEncoding",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void StreamHandler::setEncoding(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEncoding",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void StreamHandler::publish(__jni_impl::java::util::logging::LogRecord arg0)

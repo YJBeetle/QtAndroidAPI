@@ -43,18 +43,18 @@ namespace __jni_impl::android::widget
 		QAndroidJniObject getFilter();
 		jobject getItem(jint arg0);
 		QAndroidJniObject getView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2);
-		jboolean hasStableIds();
-		jboolean areAllItemsEnabled();
+		jlong getItemId(jint arg0);
 		QAndroidJniObject getWrappedAdapter();
-		void registerDataSetObserver(__jni_impl::android::database::DataSetObserver arg0);
-		void unregisterDataSetObserver(__jni_impl::android::database::DataSetObserver arg0);
 		jint getHeadersCount();
 		jint getFootersCount();
 		jboolean removeHeader(__jni_impl::android::view::View arg0);
 		jboolean removeFooter(__jni_impl::android::view::View arg0);
 		jint getItemViewType(jint arg0);
 		jint getViewTypeCount();
-		jlong getItemId(jint arg0);
+		void registerDataSetObserver(__jni_impl::android::database::DataSetObserver arg0);
+		void unregisterDataSetObserver(__jni_impl::android::database::DataSetObserver arg0);
+		jboolean hasStableIds();
+		jboolean areAllItemsEnabled();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -76,7 +76,8 @@ namespace __jni_impl::android::widget
 			"(Ljava/util/ArrayList;Ljava/util/ArrayList;Landroid/widget/ListAdapter;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -127,18 +128,12 @@ namespace __jni_impl::android::widget
 			arg2.__jniObject().object()
 		);
 	}
-	jboolean HeaderViewListAdapter::hasStableIds()
+	jlong HeaderViewListAdapter::getItemId(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"hasStableIds",
-			"()Z"
-		);
-	}
-	jboolean HeaderViewListAdapter::areAllItemsEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"areAllItemsEnabled",
-			"()Z"
+		return __thiz.callMethod<jlong>(
+			"getItemId",
+			"(I)J",
+			arg0
 		);
 	}
 	QAndroidJniObject HeaderViewListAdapter::getWrappedAdapter()
@@ -146,22 +141,6 @@ namespace __jni_impl::android::widget
 		return __thiz.callObjectMethod(
 			"getWrappedAdapter",
 			"()Landroid/widget/ListAdapter;"
-		);
-	}
-	void HeaderViewListAdapter::registerDataSetObserver(__jni_impl::android::database::DataSetObserver arg0)
-	{
-		__thiz.callMethod<void>(
-			"registerDataSetObserver",
-			"(Landroid/database/DataSetObserver;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void HeaderViewListAdapter::unregisterDataSetObserver(__jni_impl::android::database::DataSetObserver arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterDataSetObserver",
-			"(Landroid/database/DataSetObserver;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	jint HeaderViewListAdapter::getHeadersCount()
@@ -209,12 +188,34 @@ namespace __jni_impl::android::widget
 			"()I"
 		);
 	}
-	jlong HeaderViewListAdapter::getItemId(jint arg0)
+	void HeaderViewListAdapter::registerDataSetObserver(__jni_impl::android::database::DataSetObserver arg0)
 	{
-		return __thiz.callMethod<jlong>(
-			"getItemId",
-			"(I)J",
-			arg0
+		__thiz.callMethod<void>(
+			"registerDataSetObserver",
+			"(Landroid/database/DataSetObserver;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void HeaderViewListAdapter::unregisterDataSetObserver(__jni_impl::android::database::DataSetObserver arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterDataSetObserver",
+			"(Landroid/database/DataSetObserver;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean HeaderViewListAdapter::hasStableIds()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasStableIds",
+			"()Z"
+		);
+	}
+	jboolean HeaderViewListAdapter::areAllItemsEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"areAllItemsEnabled",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::widget

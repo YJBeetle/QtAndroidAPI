@@ -23,6 +23,7 @@ namespace __jni_impl::android::graphics
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -79,6 +80,15 @@ namespace __jni_impl::android::graphics
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Shader$TileMode;",
 			arg0
+		);
+	}
+	QAndroidJniObject Shader_TileMode::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Shader$TileMode",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/Shader$TileMode;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::graphics

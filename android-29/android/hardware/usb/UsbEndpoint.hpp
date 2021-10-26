@@ -26,12 +26,12 @@ namespace __jni_impl::android::hardware::usb
 		jint getType();
 		jint getAddress();
 		jint getAttributes();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getInterval();
 		jint getEndpointNumber();
 		jint getDirection();
 		jint getMaxPacketSize();
-		jint getInterval();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::hardware::usb
 
@@ -86,20 +86,11 @@ namespace __jni_impl::android::hardware::usb
 			"()I"
 		);
 	}
-	jint UsbEndpoint::describeContents()
+	jint UsbEndpoint::getInterval()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getInterval",
 			"()I"
-		);
-	}
-	void UsbEndpoint::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 	jint UsbEndpoint::getEndpointNumber()
@@ -123,11 +114,20 @@ namespace __jni_impl::android::hardware::usb
 			"()I"
 		);
 	}
-	jint UsbEndpoint::getInterval()
+	jint UsbEndpoint::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getInterval",
+			"describeContents",
 			"()I"
+		);
+	}
+	void UsbEndpoint::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::hardware::usb

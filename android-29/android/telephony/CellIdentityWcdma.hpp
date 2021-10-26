@@ -29,13 +29,13 @@ namespace __jni_impl::android::telephony
 		jint getLac();
 		jint getCid();
 		jint getPsc();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jstring getMobileNetworkOperator();
-		jint getUarfcn();
-		jint getMcc();
-		jint getMnc();
 		jstring getMccString();
 		jstring getMncString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getMcc();
+		jint getMnc();
+		jint getUarfcn();
+		jstring getMobileNetworkOperator();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -105,6 +105,20 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
+	jstring CellIdentityWcdma::getMccString()
+	{
+		return __thiz.callObjectMethod(
+			"getMccString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring CellIdentityWcdma::getMncString()
+	{
+		return __thiz.callObjectMethod(
+			"getMncString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	void CellIdentityWcdma::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -112,20 +126,6 @@ namespace __jni_impl::android::telephony
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jstring CellIdentityWcdma::getMobileNetworkOperator()
-	{
-		return __thiz.callObjectMethod(
-			"getMobileNetworkOperator",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint CellIdentityWcdma::getUarfcn()
-	{
-		return __thiz.callMethod<jint>(
-			"getUarfcn",
-			"()I"
 		);
 	}
 	jint CellIdentityWcdma::getMcc()
@@ -142,17 +142,17 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
-	jstring CellIdentityWcdma::getMccString()
+	jint CellIdentityWcdma::getUarfcn()
 	{
-		return __thiz.callObjectMethod(
-			"getMccString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"getUarfcn",
+			"()I"
+		);
 	}
-	jstring CellIdentityWcdma::getMncString()
+	jstring CellIdentityWcdma::getMobileNetworkOperator()
 	{
 		return __thiz.callObjectMethod(
-			"getMncString",
+			"getMobileNetworkOperator",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

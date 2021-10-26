@@ -29,11 +29,12 @@ namespace __jni_impl::android::net::nsd
 		void __constructor();
 		
 		// Methods
-		void resolveService(__jni_impl::android::net::nsd::NsdServiceInfo arg0, __jni_impl::__JniBaseClass arg1);
 		void discoverServices(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
+		void discoverServices(const QString &arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
 		void registerService(__jni_impl::android::net::nsd::NsdServiceInfo arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
 		void unregisterService(__jni_impl::__JniBaseClass arg0);
 		void stopServiceDiscovery(__jni_impl::__JniBaseClass arg0);
+		void resolveService(__jni_impl::android::net::nsd::NsdServiceInfo arg0, __jni_impl::__JniBaseClass arg1);
 	};
 } // namespace __jni_impl::android::net::nsd
 
@@ -110,21 +111,22 @@ namespace __jni_impl::android::net::nsd
 	}
 	
 	// Methods
-	void NsdManager::resolveService(__jni_impl::android::net::nsd::NsdServiceInfo arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"resolveService",
-			"(Landroid/net/nsd/NsdServiceInfo;Landroid/net/nsd/NsdManager$ResolveListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
 	void NsdManager::discoverServices(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		__thiz.callMethod<void>(
 			"discoverServices",
 			"(Ljava/lang/String;ILandroid/net/nsd/NsdManager$DiscoveryListener;)V",
 			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void NsdManager::discoverServices(const QString &arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		__thiz.callMethod<void>(
+			"discoverServices",
+			"(Ljava/lang/String;ILandroid/net/nsd/NsdManager$DiscoveryListener;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object()
 		);
@@ -153,6 +155,15 @@ namespace __jni_impl::android::net::nsd
 			"stopServiceDiscovery",
 			"(Landroid/net/nsd/NsdManager$DiscoveryListener;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void NsdManager::resolveService(__jni_impl::android::net::nsd::NsdServiceInfo arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"resolveService",
+			"(Landroid/net/nsd/NsdServiceInfo;Landroid/net/nsd/NsdManager$ResolveListener;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::net::nsd

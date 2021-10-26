@@ -21,8 +21,8 @@ namespace __jni_impl::android::net::wifi::aware
 		void __constructor();
 		
 		// Methods
-		void onAttachFailed();
 		void onAttached(__jni_impl::android::net::wifi::aware::WifiAwareSession arg0);
+		void onAttachFailed();
 	};
 } // namespace __jni_impl::android::net::wifi::aware
 
@@ -37,23 +37,24 @@ namespace __jni_impl::android::net::wifi::aware
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.aware.AttachCallback",
-			"()V");
-	}
-	
-	// Methods
-	void AttachCallback::onAttachFailed()
-	{
-		__thiz.callMethod<void>(
-			"onAttachFailed",
 			"()V"
 		);
 	}
+	
+	// Methods
 	void AttachCallback::onAttached(__jni_impl::android::net::wifi::aware::WifiAwareSession arg0)
 	{
 		__thiz.callMethod<void>(
 			"onAttached",
 			"(Landroid/net/wifi/aware/WifiAwareSession;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void AttachCallback::onAttachFailed()
+	{
+		__thiz.callMethod<void>(
+			"onAttachFailed",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::net::wifi::aware

@@ -27,6 +27,7 @@ namespace __jni_impl::android::security
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject setPromptText(jstring arg0);
+		QAndroidJniObject setPromptText(const QString &arg0);
 		QAndroidJniObject setExtraData(jbyteArray arg0);
 	};
 } // namespace __jni_impl::android::security
@@ -44,7 +45,8 @@ namespace __jni_impl::android::security
 		__thiz = QAndroidJniObject(
 			"android.security.ConfirmationPrompt$Builder",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -61,6 +63,14 @@ namespace __jni_impl::android::security
 			"setPromptText",
 			"(Ljava/lang/CharSequence;)Landroid/security/ConfirmationPrompt$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject ConfirmationPrompt_Builder::setPromptText(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setPromptText",
+			"(Ljava/lang/CharSequence;)Landroid/security/ConfirmationPrompt$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject ConfirmationPrompt_Builder::setExtraData(jbyteArray arg0)

@@ -38,7 +38,8 @@ namespace __jni_impl::java::util
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Stack",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

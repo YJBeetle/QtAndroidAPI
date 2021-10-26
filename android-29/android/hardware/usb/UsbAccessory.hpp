@@ -26,13 +26,13 @@ namespace __jni_impl::android::hardware::usb
 		jstring toString();
 		jint hashCode();
 		jstring getVersion();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getDescription();
 		jstring getManufacturer();
+		jstring getUri();
 		jstring getModel();
 		jstring getSerial();
-		jstring getDescription();
-		jstring getUri();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::hardware::usb
 
@@ -88,26 +88,24 @@ namespace __jni_impl::android::hardware::usb
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint UsbAccessory::describeContents()
+	jstring UsbAccessory::getDescription()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void UsbAccessory::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jstring UsbAccessory::getManufacturer()
 	{
 		return __thiz.callObjectMethod(
 			"getManufacturer",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring UsbAccessory::getUri()
+	{
+		return __thiz.callObjectMethod(
+			"getUri",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -125,19 +123,21 @@ namespace __jni_impl::android::hardware::usb
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jstring UsbAccessory::getDescription()
+	jint UsbAccessory::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
-	jstring UsbAccessory::getUri()
+	void UsbAccessory::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
-			"getUri",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::hardware::usb
 

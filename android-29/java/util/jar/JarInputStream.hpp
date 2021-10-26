@@ -60,7 +60,8 @@ namespace __jni_impl::java::util::jar
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarInputStream",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void JarInputStream::__constructor(__jni_impl::java::io::InputStream arg0, jboolean arg1)
 	{
@@ -68,7 +69,8 @@ namespace __jni_impl::java::util::jar
 			"java.util.jar.JarInputStream",
 			"(Ljava/io/InputStream;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

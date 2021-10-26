@@ -24,12 +24,12 @@ namespace __jni_impl::android::view::inputmethod
 		
 		// Methods
 		jstring toString();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getUid();
 		jint getPid();
 		QAndroidJniObject getConnection();
 		QAndroidJniObject getConnectionToken();
+		jint getUid();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
@@ -56,7 +56,8 @@ namespace __jni_impl::android::view::inputmethod
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void InputBinding::__constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::inputmethod::InputBinding arg1)
 	{
@@ -64,7 +65,8 @@ namespace __jni_impl::android::view::inputmethod
 			"android.view.inputmethod.InputBinding",
 			"(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/InputBinding;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -74,29 +76,6 @@ namespace __jni_impl::android::view::inputmethod
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jint InputBinding::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void InputBinding::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jint InputBinding::getUid()
-	{
-		return __thiz.callMethod<jint>(
-			"getUid",
-			"()I"
-		);
 	}
 	jint InputBinding::getPid()
 	{
@@ -117,6 +96,29 @@ namespace __jni_impl::android::view::inputmethod
 		return __thiz.callObjectMethod(
 			"getConnectionToken",
 			"()Landroid/os/IBinder;"
+		);
+	}
+	jint InputBinding::getUid()
+	{
+		return __thiz.callMethod<jint>(
+			"getUid",
+			"()I"
+		);
+	}
+	jint InputBinding::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void InputBinding::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::view::inputmethod

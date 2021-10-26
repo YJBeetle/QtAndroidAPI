@@ -12,6 +12,14 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
+namespace __jni_impl::android::view::autofill
+{
+	class AutofillValue;
+}
+namespace __jni_impl::android::graphics
+{
+	class Canvas;
+}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
@@ -28,14 +36,6 @@ namespace __jni_impl::android::graphics
 {
 	class BlendMode;
 }
-namespace __jni_impl::android::view::autofill
-{
-	class AutofillValue;
-}
-namespace __jni_impl::android::graphics
-{
-	class Canvas;
-}
 
 namespace __jni_impl::android::widget
 {
@@ -51,9 +51,21 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
+		jstring getAccessibilityClassName();
+		void jumpDrawablesToCurrentState();
+		jboolean performClick();
+		void autofill(__jni_impl::android::view::autofill::AutofillValue arg0);
+		jint getAutofillType();
+		QAndroidJniObject getAutofillValue();
+		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
+		void toggle();
+		jboolean isChecked();
+		void setChecked(jboolean arg0);
+		jint getCompoundPaddingLeft();
+		jint getCompoundPaddingRight();
 		void setOnCheckedChangeListener(__jni_impl::__JniBaseClass arg0);
-		void setButtonDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 		void setButtonDrawable(jint arg0);
+		void setButtonDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 		QAndroidJniObject getButtonDrawable();
 		void setButtonTintList(__jni_impl::android::content::res::ColorStateList arg0);
 		QAndroidJniObject getButtonTintList();
@@ -63,28 +75,16 @@ namespace __jni_impl::android::widget
 		QAndroidJniObject getButtonTintBlendMode();
 		void onRestoreInstanceState(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject onSaveInstanceState();
-		jint getCompoundPaddingLeft();
-		jint getCompoundPaddingRight();
-		void toggle();
-		jstring getAccessibilityClassName();
-		void jumpDrawablesToCurrentState();
-		jboolean performClick();
-		void autofill(__jni_impl::android::view::autofill::AutofillValue arg0);
-		jint getAutofillType();
-		QAndroidJniObject getAutofillValue();
-		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
-		jboolean isChecked();
-		void setChecked(jboolean arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
+#include "../view/autofill/AutofillValue.hpp"
+#include "../graphics/Canvas.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../content/res/ColorStateList.hpp"
 #include "../graphics/PorterDuff_Mode.hpp"
 #include "../graphics/BlendMode.hpp"
-#include "../view/autofill/AutofillValue.hpp"
-#include "../graphics/Canvas.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -99,7 +99,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void CompoundButton::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -108,7 +109,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void CompoundButton::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -116,30 +118,112 @@ namespace __jni_impl::android::widget
 			"android.widget.CompoundButton",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void CompoundButton::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CompoundButton",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
+	jstring CompoundButton::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	void CompoundButton::jumpDrawablesToCurrentState()
+	{
+		__thiz.callMethod<void>(
+			"jumpDrawablesToCurrentState",
+			"()V"
+		);
+	}
+	jboolean CompoundButton::performClick()
+	{
+		return __thiz.callMethod<jboolean>(
+			"performClick",
+			"()Z"
+		);
+	}
+	void CompoundButton::autofill(__jni_impl::android::view::autofill::AutofillValue arg0)
+	{
+		__thiz.callMethod<void>(
+			"autofill",
+			"(Landroid/view/autofill/AutofillValue;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint CompoundButton::getAutofillType()
+	{
+		return __thiz.callMethod<jint>(
+			"getAutofillType",
+			"()I"
+		);
+	}
+	QAndroidJniObject CompoundButton::getAutofillValue()
+	{
+		return __thiz.callObjectMethod(
+			"getAutofillValue",
+			"()Landroid/view/autofill/AutofillValue;"
+		);
+	}
+	void CompoundButton::drawableHotspotChanged(jfloat arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"drawableHotspotChanged",
+			"(FF)V",
+			arg0,
+			arg1
+		);
+	}
+	void CompoundButton::toggle()
+	{
+		__thiz.callMethod<void>(
+			"toggle",
+			"()V"
+		);
+	}
+	jboolean CompoundButton::isChecked()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isChecked",
+			"()Z"
+		);
+	}
+	void CompoundButton::setChecked(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setChecked",
+			"(Z)V",
+			arg0
+		);
+	}
+	jint CompoundButton::getCompoundPaddingLeft()
+	{
+		return __thiz.callMethod<jint>(
+			"getCompoundPaddingLeft",
+			"()I"
+		);
+	}
+	jint CompoundButton::getCompoundPaddingRight()
+	{
+		return __thiz.callMethod<jint>(
+			"getCompoundPaddingRight",
+			"()I"
+		);
+	}
 	void CompoundButton::setOnCheckedChangeListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOnCheckedChangeListener",
 			"(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void CompoundButton::setButtonDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		__thiz.callMethod<void>(
-			"setButtonDrawable",
-			"(Landroid/graphics/drawable/Drawable;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -149,6 +233,14 @@ namespace __jni_impl::android::widget
 			"setButtonDrawable",
 			"(I)V",
 			arg0
+		);
+	}
+	void CompoundButton::setButtonDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		__thiz.callMethod<void>(
+			"setButtonDrawable",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject CompoundButton::getButtonDrawable()
@@ -216,94 +308,6 @@ namespace __jni_impl::android::widget
 		return __thiz.callObjectMethod(
 			"onSaveInstanceState",
 			"()Landroid/os/Parcelable;"
-		);
-	}
-	jint CompoundButton::getCompoundPaddingLeft()
-	{
-		return __thiz.callMethod<jint>(
-			"getCompoundPaddingLeft",
-			"()I"
-		);
-	}
-	jint CompoundButton::getCompoundPaddingRight()
-	{
-		return __thiz.callMethod<jint>(
-			"getCompoundPaddingRight",
-			"()I"
-		);
-	}
-	void CompoundButton::toggle()
-	{
-		__thiz.callMethod<void>(
-			"toggle",
-			"()V"
-		);
-	}
-	jstring CompoundButton::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	void CompoundButton::jumpDrawablesToCurrentState()
-	{
-		__thiz.callMethod<void>(
-			"jumpDrawablesToCurrentState",
-			"()V"
-		);
-	}
-	jboolean CompoundButton::performClick()
-	{
-		return __thiz.callMethod<jboolean>(
-			"performClick",
-			"()Z"
-		);
-	}
-	void CompoundButton::autofill(__jni_impl::android::view::autofill::AutofillValue arg0)
-	{
-		__thiz.callMethod<void>(
-			"autofill",
-			"(Landroid/view/autofill/AutofillValue;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jint CompoundButton::getAutofillType()
-	{
-		return __thiz.callMethod<jint>(
-			"getAutofillType",
-			"()I"
-		);
-	}
-	QAndroidJniObject CompoundButton::getAutofillValue()
-	{
-		return __thiz.callObjectMethod(
-			"getAutofillValue",
-			"()Landroid/view/autofill/AutofillValue;"
-		);
-	}
-	void CompoundButton::drawableHotspotChanged(jfloat arg0, jfloat arg1)
-	{
-		__thiz.callMethod<void>(
-			"drawableHotspotChanged",
-			"(FF)V",
-			arg0,
-			arg1
-		);
-	}
-	jboolean CompoundButton::isChecked()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isChecked",
-			"()Z"
-		);
-	}
-	void CompoundButton::setChecked(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setChecked",
-			"(Z)V",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::widget

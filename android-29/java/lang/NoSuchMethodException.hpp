@@ -18,6 +18,7 @@ namespace __jni_impl::java::lang
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -33,14 +34,24 @@ namespace __jni_impl::java::lang
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.NoSuchMethodException",
-			"()V");
+			"()V"
+		);
 	}
 	void NoSuchMethodException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.NoSuchMethodException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void NoSuchMethodException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.NoSuchMethodException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

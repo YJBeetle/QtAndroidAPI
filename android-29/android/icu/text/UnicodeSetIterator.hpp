@@ -72,13 +72,15 @@ namespace __jni_impl::android::icu::text
 		__thiz = QAndroidJniObject(
 			"android.icu.text.UnicodeSetIterator",
 			"(Landroid/icu/text/UnicodeSet;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void UnicodeSetIterator::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.UnicodeSetIterator",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -20,10 +20,11 @@ namespace __jni_impl::java::beans
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		void __constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		jstring getPropertyName();
 		void propertyChange(__jni_impl::java::beans::PropertyChangeEvent arg0);
+		jstring getPropertyName();
 	};
 } // namespace __jni_impl::java::beans
 
@@ -40,17 +41,20 @@ namespace __jni_impl::java::beans
 			"java.beans.PropertyChangeListenerProxy",
 			"(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void PropertyChangeListenerProxy::__constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.beans.PropertyChangeListenerProxy",
+			"(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
-	jstring PropertyChangeListenerProxy::getPropertyName()
-	{
-		return __thiz.callObjectMethod(
-			"getPropertyName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	void PropertyChangeListenerProxy::propertyChange(__jni_impl::java::beans::PropertyChangeEvent arg0)
 	{
 		__thiz.callMethod<void>(
@@ -58,6 +62,13 @@ namespace __jni_impl::java::beans
 			"(Ljava/beans/PropertyChangeEvent;)V",
 			arg0.__jniObject().object()
 		);
+	}
+	jstring PropertyChangeListenerProxy::getPropertyName()
+	{
+		return __thiz.callObjectMethod(
+			"getPropertyName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::beans
 

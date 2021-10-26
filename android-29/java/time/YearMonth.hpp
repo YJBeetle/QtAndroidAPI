@@ -59,7 +59,9 @@ namespace __jni_impl::java::time
 		jobject query(__jni_impl::__JniBaseClass arg0);
 		jboolean isSupported(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject parse(jstring arg0, __jni_impl::java::time::format::DateTimeFormatter arg1);
+		static QAndroidJniObject parse(const QString &arg0, __jni_impl::java::time::format::DateTimeFormatter arg1);
 		static QAndroidJniObject parse(jstring arg0);
+		static QAndroidJniObject parse(const QString &arg0);
 		QAndroidJniObject range(__jni_impl::__JniBaseClass arg0);
 		jint getYear();
 		jint getMonthValue();
@@ -230,6 +232,16 @@ namespace __jni_impl::java::time
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject YearMonth::parse(const QString &arg0, __jni_impl::java::time::format::DateTimeFormatter arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.YearMonth",
+			"parse",
+			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/YearMonth;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject YearMonth::parse(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -237,6 +249,15 @@ namespace __jni_impl::java::time
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/YearMonth;",
 			arg0
+		);
+	}
+	QAndroidJniObject YearMonth::parse(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.YearMonth",
+			"parse",
+			"(Ljava/lang/CharSequence;)Ljava/time/YearMonth;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject YearMonth::range(__jni_impl::__JniBaseClass arg0)

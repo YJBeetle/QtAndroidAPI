@@ -13,18 +13,6 @@ namespace __jni_impl::android::preference
 {
 	class PreferenceGroup;
 }
-namespace __jni_impl::android::view
-{
-	class View;
-}
-namespace __jni_impl::android::view
-{
-	class ViewGroup;
-}
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
@@ -33,6 +21,14 @@ namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
 }
+namespace __jni_impl::android::view
+{
+	class View;
+}
+namespace __jni_impl::android::view
+{
+	class ViewGroup;
+}
 namespace __jni_impl::android::preference
 {
 	class PreferenceManager;
@@ -40,6 +36,10 @@ namespace __jni_impl::android::preference
 namespace __jni_impl::android::content::res
 {
 	class TypedArray;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
 }
 
 namespace __jni_impl::android::preference
@@ -65,27 +65,19 @@ namespace __jni_impl::android::preference
 		QAndroidJniObject getContext();
 		jboolean isEnabled();
 		jstring getFragment();
-		QAndroidJniObject getView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup arg1);
-		jboolean isSelectable();
-		QAndroidJniObject getIntent();
-		void setIntent(__jni_impl::android::content::Intent arg0);
-		void setTitle(jstring arg0);
-		void setTitle(jint arg0);
-		jstring getTitle();
-		QAndroidJniObject getExtras();
-		void setKey(jstring arg0);
-		QAndroidJniObject getSharedPreferences();
 		void setEnabled(jboolean arg0);
 		void saveHierarchyState(__jni_impl::android::os::Bundle arg0);
 		void restoreHierarchyState(__jni_impl::android::os::Bundle arg0);
-		void onParentChanged(__jni_impl::android::preference::Preference arg0, jboolean arg1);
-		jint getOrder();
 		QAndroidJniObject getIcon();
-		void setIcon(jint arg0);
+		QAndroidJniObject getView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup arg1);
 		void setIcon(__jni_impl::android::graphics::drawable::Drawable arg0);
+		void setIcon(jint arg0);
+		jint getOrder();
+		QAndroidJniObject getSharedPreferences();
 		QAndroidJniObject getPreferenceManager();
 		jstring getSummary();
 		void setFragment(jstring arg0);
+		void setFragment(const QString &arg0);
 		void setPreferenceDataStore(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getPreferenceDataStore();
 		QAndroidJniObject peekExtras();
@@ -97,6 +89,7 @@ namespace __jni_impl::android::preference
 		jint getTitleRes();
 		void setSummary(jint arg0);
 		void setSummary(jstring arg0);
+		void setSummary(const QString &arg0);
 		void setSelectable(jboolean arg0);
 		void setShouldDisableView(jboolean arg0);
 		jboolean getShouldDisableView();
@@ -119,22 +112,34 @@ namespace __jni_impl::android::preference
 		void onDependencyChanged(__jni_impl::android::preference::Preference arg0, jboolean arg1);
 		jboolean shouldDisableDependents();
 		void setDependency(jstring arg0);
+		void setDependency(const QString &arg0);
 		jstring getDependency();
 		void setDefaultValue(jobject arg0);
 		jboolean persistStringSet(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getPersistedStringSet(__jni_impl::__JniBaseClass arg0);
+		void setKey(jstring arg0);
+		void setKey(const QString &arg0);
+		QAndroidJniObject getIntent();
+		void setIntent(__jni_impl::android::content::Intent arg0);
+		void setTitle(jstring arg0);
+		void setTitle(const QString &arg0);
+		void setTitle(jint arg0);
+		jstring getTitle();
+		QAndroidJniObject getExtras();
+		void onParentChanged(__jni_impl::android::preference::Preference arg0, jboolean arg1);
+		jboolean isSelectable();
 	};
 } // namespace __jni_impl::android::preference
 
 #include "../content/Context.hpp"
 #include "PreferenceGroup.hpp"
-#include "../view/View.hpp"
-#include "../view/ViewGroup.hpp"
-#include "../content/Intent.hpp"
 #include "../os/Bundle.hpp"
 #include "../graphics/drawable/Drawable.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 #include "PreferenceManager.hpp"
 #include "../content/res/TypedArray.hpp"
+#include "../content/Intent.hpp"
 
 namespace __jni_impl::android::preference
 {
@@ -153,7 +158,8 @@ namespace __jni_impl::android::preference
 		__thiz = QAndroidJniObject(
 			"android.preference.Preference",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Preference::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -161,7 +167,8 @@ namespace __jni_impl::android::preference
 			"android.preference.Preference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Preference::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -170,7 +177,8 @@ namespace __jni_impl::android::preference
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void Preference::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 	{
@@ -180,7 +188,8 @@ namespace __jni_impl::android::preference
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	
 	// Methods
@@ -242,82 +251,6 @@ namespace __jni_impl::android::preference
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Preference::getView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getView",
-			"(Landroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean Preference::isSelectable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSelectable",
-			"()Z"
-		);
-	}
-	QAndroidJniObject Preference::getIntent()
-	{
-		return __thiz.callObjectMethod(
-			"getIntent",
-			"()Landroid/content/Intent;"
-		);
-	}
-	void Preference::setIntent(__jni_impl::android::content::Intent arg0)
-	{
-		__thiz.callMethod<void>(
-			"setIntent",
-			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Preference::setTitle(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)V",
-			arg0
-		);
-	}
-	void Preference::setTitle(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(I)V",
-			arg0
-		);
-	}
-	jstring Preference::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	QAndroidJniObject Preference::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
-		);
-	}
-	void Preference::setKey(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setKey",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	QAndroidJniObject Preference::getSharedPreferences()
-	{
-		return __thiz.callObjectMethod(
-			"getSharedPreferences",
-			"()Landroid/content/SharedPreferences;"
-		);
-	}
 	void Preference::setEnabled(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -342,27 +275,28 @@ namespace __jni_impl::android::preference
 			arg0.__jniObject().object()
 		);
 	}
-	void Preference::onParentChanged(__jni_impl::android::preference::Preference arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"onParentChanged",
-			"(Landroid/preference/Preference;Z)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jint Preference::getOrder()
-	{
-		return __thiz.callMethod<jint>(
-			"getOrder",
-			"()I"
-		);
-	}
 	QAndroidJniObject Preference::getIcon()
 	{
 		return __thiz.callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Drawable;"
+		);
+	}
+	QAndroidJniObject Preference::getView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getView",
+			"(Landroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void Preference::setIcon(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		__thiz.callMethod<void>(
+			"setIcon",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void Preference::setIcon(jint arg0)
@@ -373,12 +307,18 @@ namespace __jni_impl::android::preference
 			arg0
 		);
 	}
-	void Preference::setIcon(__jni_impl::android::graphics::drawable::Drawable arg0)
+	jint Preference::getOrder()
 	{
-		__thiz.callMethod<void>(
-			"setIcon",
-			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"getOrder",
+			"()I"
+		);
+	}
+	QAndroidJniObject Preference::getSharedPreferences()
+	{
+		return __thiz.callObjectMethod(
+			"getSharedPreferences",
+			"()Landroid/content/SharedPreferences;"
 		);
 	}
 	QAndroidJniObject Preference::getPreferenceManager()
@@ -401,6 +341,14 @@ namespace __jni_impl::android::preference
 			"setFragment",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void Preference::setFragment(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFragment",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Preference::setPreferenceDataStore(__jni_impl::__JniBaseClass arg0)
@@ -484,6 +432,14 @@ namespace __jni_impl::android::preference
 			"setSummary",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
+		);
+	}
+	void Preference::setSummary(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSummary",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Preference::setSelectable(jboolean arg0)
@@ -652,6 +608,14 @@ namespace __jni_impl::android::preference
 			arg0
 		);
 	}
+	void Preference::setDependency(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDependency",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring Preference::getDependency()
 	{
 		return __thiz.callObjectMethod(
@@ -681,6 +645,91 @@ namespace __jni_impl::android::preference
 			"getPersistedStringSet",
 			"(Ljava/util/Set;)Ljava/util/Set;",
 			arg0.__jniObject().object()
+		);
+	}
+	void Preference::setKey(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setKey",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void Preference::setKey(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setKey",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject Preference::getIntent()
+	{
+		return __thiz.callObjectMethod(
+			"getIntent",
+			"()Landroid/content/Intent;"
+		);
+	}
+	void Preference::setIntent(__jni_impl::android::content::Intent arg0)
+	{
+		__thiz.callMethod<void>(
+			"setIntent",
+			"(Landroid/content/Intent;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Preference::setTitle(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTitle",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void Preference::setTitle(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTitle",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void Preference::setTitle(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTitle",
+			"(I)V",
+			arg0
+		);
+	}
+	jstring Preference::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	QAndroidJniObject Preference::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	void Preference::onParentChanged(__jni_impl::android::preference::Preference arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"onParentChanged",
+			"(Landroid/preference/Preference;Z)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jboolean Preference::isSelectable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSelectable",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::preference

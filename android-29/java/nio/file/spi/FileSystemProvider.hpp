@@ -56,6 +56,7 @@ namespace __jni_impl::java::nio::file::spi
 		QAndroidJniObject getPath(__jni_impl::java::net::URI arg0);
 		QAndroidJniObject newDirectoryStream(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		QAndroidJniObject readAttributes(__jni_impl::__JniBaseClass arg0, jstring arg1, jarray arg2);
+		QAndroidJniObject readAttributes(__jni_impl::__JniBaseClass arg0, const QString &arg1, jarray arg2);
 		QAndroidJniObject readAttributes(__jni_impl::__JniBaseClass arg0, jclass arg1, jarray arg2);
 		static QAndroidJniObject installedProviders();
 		QAndroidJniObject newFileSystem(__jni_impl::java::net::URI arg0, __jni_impl::__JniBaseClass arg1);
@@ -71,6 +72,7 @@ namespace __jni_impl::java::nio::file::spi
 		void createLink(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		QAndroidJniObject readSymbolicLink(__jni_impl::__JniBaseClass arg0);
 		void setAttribute(__jni_impl::__JniBaseClass arg0, jstring arg1, jobject arg2, jarray arg3);
+		void setAttribute(__jni_impl::__JniBaseClass arg0, const QString &arg1, jobject arg2, jarray arg3);
 		jboolean deleteIfExists(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject newInputStream(__jni_impl::__JniBaseClass arg0, jarray arg1);
 		QAndroidJniObject newOutputStream(__jni_impl::__JniBaseClass arg0, jarray arg1);
@@ -160,6 +162,16 @@ namespace __jni_impl::java::nio::file::spi
 			"(Ljava/nio/file/Path;Ljava/lang/String;[Ljava/nio/file/LinkOption;)Ljava/util/Map;",
 			arg0.__jniObject().object(),
 			arg1,
+			arg2
+		);
+	}
+	QAndroidJniObject FileSystemProvider::readAttributes(__jni_impl::__JniBaseClass arg0, const QString &arg1, jarray arg2)
+	{
+		return __thiz.callObjectMethod(
+			"readAttributes",
+			"(Ljava/nio/file/Path;Ljava/lang/String;[Ljava/nio/file/LinkOption;)Ljava/util/Map;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -301,6 +313,17 @@ namespace __jni_impl::java::nio::file::spi
 			"(Ljava/nio/file/Path;Ljava/lang/String;Ljava/lang/Object;[Ljava/nio/file/LinkOption;)V",
 			arg0.__jniObject().object(),
 			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void FileSystemProvider::setAttribute(__jni_impl::__JniBaseClass arg0, const QString &arg1, jobject arg2, jarray arg3)
+	{
+		__thiz.callMethod<void>(
+			"setAttribute",
+			"(Ljava/nio/file/Path;Ljava/lang/String;Ljava/lang/Object;[Ljava/nio/file/LinkOption;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3
 		);

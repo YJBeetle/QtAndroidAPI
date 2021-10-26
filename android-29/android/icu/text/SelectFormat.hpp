@@ -28,6 +28,7 @@ namespace __jni_impl::android::icu::text
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -35,9 +36,12 @@ namespace __jni_impl::android::icu::text
 		jint hashCode();
 		QAndroidJniObject format(jobject arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
 		jstring format(jstring arg0);
+		jstring format(const QString &arg0);
 		void applyPattern(jstring arg0);
+		void applyPattern(const QString &arg0);
 		jstring toPattern();
 		jobject parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		jobject parseObject(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -55,7 +59,16 @@ namespace __jni_impl::android::icu::text
 		__thiz = QAndroidJniObject(
 			"android.icu.text.SelectFormat",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void SelectFormat::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.text.SelectFormat",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -99,12 +112,28 @@ namespace __jni_impl::android::icu::text
 			arg0
 		).object<jstring>();
 	}
+	jstring SelectFormat::format(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"format",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	void SelectFormat::applyPattern(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"applyPattern",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void SelectFormat::applyPattern(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"applyPattern",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring SelectFormat::toPattern()
@@ -120,6 +149,15 @@ namespace __jni_impl::android::icu::text
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
 			arg0,
+			arg1.__jniObject().object()
+		).object<jobject>();
+	}
+	jobject SelectFormat::parseObject(const QString &arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callObjectMethod(
+			"parseObject",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jobject>();
 	}

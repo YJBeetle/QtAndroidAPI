@@ -59,6 +59,7 @@ namespace __jni_impl::java::time
 		jobject query(__jni_impl::__JniBaseClass arg0);
 		jboolean isSupported(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject parse(jstring arg0);
+		static QAndroidJniObject parse(const QString &arg0);
 		QAndroidJniObject range(__jni_impl::__JniBaseClass arg0);
 		jint getNano();
 		jlong getEpochSecond();
@@ -221,6 +222,15 @@ namespace __jni_impl::java::time
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/Instant;",
 			arg0
+		);
+	}
+	QAndroidJniObject Instant::parse(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.Instant",
+			"parse",
+			"(Ljava/lang/CharSequence;)Ljava/time/Instant;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Instant::range(__jni_impl::__JniBaseClass arg0)

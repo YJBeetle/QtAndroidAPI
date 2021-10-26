@@ -119,7 +119,8 @@ namespace __jni_impl::android::system
 			arg7,
 			arg8,
 			arg9,
-			arg10);
+			arg10
+		);
 	}
 	
 	// Methods

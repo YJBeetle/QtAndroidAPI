@@ -48,6 +48,7 @@ namespace __jni_impl::android::os
 		static QAndroidJniObject getDataDirectory();
 		static QAndroidJniObject getExternalStorageDirectory();
 		static QAndroidJniObject getExternalStoragePublicDirectory(jstring arg0);
+		static QAndroidJniObject getExternalStoragePublicDirectory(const QString &arg0);
 		static QAndroidJniObject getDownloadCacheDirectory();
 		static jstring getExternalStorageState(__jni_impl::java::io::File arg0);
 		static jstring getExternalStorageState();
@@ -256,7 +257,8 @@ namespace __jni_impl::android::os
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.Environment",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -291,6 +293,15 @@ namespace __jni_impl::android::os
 			"getExternalStoragePublicDirectory",
 			"(Ljava/lang/String;)Ljava/io/File;",
 			arg0
+		);
+	}
+	QAndroidJniObject Environment::getExternalStoragePublicDirectory(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.Environment",
+			"getExternalStoragePublicDirectory",
+			"(Ljava/lang/String;)Ljava/io/File;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Environment::getDownloadCacheDirectory()

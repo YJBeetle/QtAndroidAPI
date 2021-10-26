@@ -78,7 +78,8 @@ namespace __jni_impl::android::media::audiofx
 			arg5,
 			arg6,
 			arg7,
-			arg8);
+			arg8
+		);
 	}
 	
 	// Methods

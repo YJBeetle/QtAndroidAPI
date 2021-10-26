@@ -30,7 +30,8 @@ namespace __jni_impl::android
 	{
 		__thiz = QAndroidJniObject(
 			"android.R$menu",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

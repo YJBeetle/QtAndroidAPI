@@ -17,13 +17,13 @@ namespace __jni_impl::android::accounts
 {
 	class Account;
 }
-namespace __jni_impl::android::util
-{
-	class Pair;
-}
 namespace __jni_impl::android::content
 {
 	class ContentProviderOperation;
+}
+namespace __jni_impl::android::util
+{
+	class Pair;
 }
 
 namespace __jni_impl::android::provider
@@ -41,16 +41,16 @@ namespace __jni_impl::android::provider
 		// Methods
 		static jbyteArray get(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::accounts::Account arg1);
 		static void set(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::accounts::Account arg1, jbyteArray arg2);
-		static QAndroidJniObject getWithUri(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::accounts::Account arg1);
 		static QAndroidJniObject newSetOperation(__jni_impl::android::accounts::Account arg0, jbyteArray arg1);
+		static QAndroidJniObject getWithUri(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::accounts::Account arg1);
 	};
 } // namespace __jni_impl::android::provider
 
 #include "../net/Uri.hpp"
 #include "../content/ContentProviderClient.hpp"
 #include "../accounts/Account.hpp"
-#include "../util/Pair.hpp"
 #include "../content/ContentProviderOperation.hpp"
+#include "../util/Pair.hpp"
 
 namespace __jni_impl::android::provider
 {
@@ -102,16 +102,6 @@ namespace __jni_impl::android::provider
 			arg2
 		);
 	}
-	QAndroidJniObject ContactsContract_SyncState::getWithUri(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::accounts::Account arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.ContactsContract$SyncState",
-			"getWithUri",
-			"(Landroid/content/ContentProviderClient;Landroid/accounts/Account;)Landroid/util/Pair;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject ContactsContract_SyncState::newSetOperation(__jni_impl::android::accounts::Account arg0, jbyteArray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -120,6 +110,16 @@ namespace __jni_impl::android::provider
 			"(Landroid/accounts/Account;[B)Landroid/content/ContentProviderOperation;",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	QAndroidJniObject ContactsContract_SyncState::getWithUri(__jni_impl::android::content::ContentProviderClient arg0, __jni_impl::android::accounts::Account arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.ContactsContract$SyncState",
+			"getWithUri",
+			"(Landroid/content/ContentProviderClient;Landroid/accounts/Account;)Landroid/util/Pair;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::provider

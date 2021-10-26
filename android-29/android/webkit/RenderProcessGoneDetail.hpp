@@ -32,7 +32,8 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.RenderProcessGoneDetail",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

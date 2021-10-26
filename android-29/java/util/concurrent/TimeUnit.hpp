@@ -39,6 +39,7 @@ namespace __jni_impl::java::util::concurrent
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 		static QAndroidJniObject of(__jni_impl::java::time::temporal::ChronoUnit arg0);
 		void sleep(jlong arg0);
 		jlong toMillis(jlong arg0);
@@ -144,6 +145,15 @@ namespace __jni_impl::java::util::concurrent
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/util/concurrent/TimeUnit;",
 			arg0
+		);
+	}
+	QAndroidJniObject TimeUnit::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.concurrent.TimeUnit",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/util/concurrent/TimeUnit;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject TimeUnit::of(__jni_impl::java::time::temporal::ChronoUnit arg0)

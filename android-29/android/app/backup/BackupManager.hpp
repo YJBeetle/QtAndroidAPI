@@ -30,6 +30,7 @@ namespace __jni_impl::android::app::backup
 		
 		// Methods
 		static void dataChanged(jstring arg0);
+		static void dataChanged(const QString &arg0);
 		void dataChanged();
 		jint requestRestore(__jni_impl::android::app::backup::RestoreObserver arg0);
 		QAndroidJniObject getUserForAncestralSerialNumber(jlong arg0);
@@ -50,7 +51,8 @@ namespace __jni_impl::android::app::backup
 		__thiz = QAndroidJniObject(
 			"android.app.backup.BackupManager",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -61,6 +63,15 @@ namespace __jni_impl::android::app::backup
 			"dataChanged",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void BackupManager::dataChanged(const QString &arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.app.backup.BackupManager",
+			"dataChanged",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void BackupManager::dataChanged()

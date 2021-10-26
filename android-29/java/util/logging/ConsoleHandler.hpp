@@ -39,7 +39,8 @@ namespace __jni_impl::java::util::logging
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.logging.ConsoleHandler",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

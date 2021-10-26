@@ -65,7 +65,8 @@ namespace __jni_impl::android::inputmethodservice
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.InputMethodService$InputMethodImpl",
 			"(Landroid/inputmethodservice/InputMethodService;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

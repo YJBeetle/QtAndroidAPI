@@ -36,7 +36,8 @@ namespace __jni_impl::java::util::concurrent
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ThreadPoolExecutor$DiscardPolicy",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

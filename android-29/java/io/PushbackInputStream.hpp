@@ -50,7 +50,8 @@ namespace __jni_impl::java::io
 		__thiz = QAndroidJniObject(
 			"java.io.PushbackInputStream",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PushbackInputStream::__constructor(__jni_impl::java::io::InputStream arg0, jint arg1)
 	{
@@ -58,7 +59,8 @@ namespace __jni_impl::java::io
 			"java.io.PushbackInputStream",
 			"(Ljava/io/InputStream;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

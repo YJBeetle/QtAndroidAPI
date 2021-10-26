@@ -22,6 +22,8 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		static QAndroidJniObject get(__jni_impl::android::content::Context arg0);
+		static jint getScrollBarFadeDuration();
+		static jint getScrollBarSize();
 		jint getScaledScrollBarSize();
 		static jint getScrollDefaultDelay();
 		static jint getFadingEdgeLength();
@@ -60,8 +62,6 @@ namespace __jni_impl::android::view
 		jboolean hasPermanentMenuKey();
 		jboolean shouldShowMenuShortcutsWhenKeyboardPresent();
 		jint getScaledMinimumScalingSpan();
-		static jint getScrollBarFadeDuration();
-		static jint getScrollBarSize();
 	};
 } // namespace __jni_impl::android::view
 
@@ -76,7 +76,8 @@ namespace __jni_impl::android::view
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewConfiguration",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -87,6 +88,22 @@ namespace __jni_impl::android::view
 			"get",
 			"(Landroid/content/Context;)Landroid/view/ViewConfiguration;",
 			arg0.__jniObject().object()
+		);
+	}
+	jint ViewConfiguration::getScrollBarFadeDuration()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.ViewConfiguration",
+			"getScrollBarFadeDuration",
+			"()I"
+		);
+	}
+	jint ViewConfiguration::getScrollBarSize()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.ViewConfiguration",
+			"getScrollBarSize",
+			"()I"
 		);
 	}
 	jint ViewConfiguration::getScaledScrollBarSize()
@@ -372,22 +389,6 @@ namespace __jni_impl::android::view
 	{
 		return __thiz.callMethod<jint>(
 			"getScaledMinimumScalingSpan",
-			"()I"
-		);
-	}
-	jint ViewConfiguration::getScrollBarFadeDuration()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.ViewConfiguration",
-			"getScrollBarFadeDuration",
-			"()I"
-		);
-	}
-	jint ViewConfiguration::getScrollBarSize()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.ViewConfiguration",
-			"getScrollBarSize",
 			"()I"
 		);
 	}

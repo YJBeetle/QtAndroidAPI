@@ -46,14 +46,16 @@ namespace __jni_impl::android::text
 		__thiz = QAndroidJniObject(
 			"android.text.PrecomputedText$Params$Builder",
 			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PrecomputedText_Params_Builder::__constructor(__jni_impl::android::text::PrecomputedText_Params arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.PrecomputedText$Params$Builder",
 			"(Landroid/text/PrecomputedText$Params;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

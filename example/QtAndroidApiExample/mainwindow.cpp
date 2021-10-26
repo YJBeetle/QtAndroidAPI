@@ -102,5 +102,12 @@ void MainWindow::on_OpenFile_clicked()
 {
 	QtAndroid::runOnAndroidThreadSync([] {
 		Intent intent = Intent(Intent::ACTION_GET_CONTENT());
+		intent.setType("image/*");
+
+
+//			if (intent.resolveActivity(getPackageManager()) != null) {
+//				startActivityForResult(intent, REQUEST_IMAGE_GET);
+//			}
+
 	});
 }

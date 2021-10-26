@@ -11,15 +11,15 @@ namespace __jni_impl::android::view::textclassifier
 }
 namespace __jni_impl::android::os
 {
+	class Bundle;
+}
+namespace __jni_impl::android::os
+{
 	class LocaleList;
 }
 namespace __jni_impl::java::time
 {
 	class ZonedDateTime;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
 }
 
 namespace __jni_impl::android::view::textclassifier
@@ -31,19 +31,20 @@ namespace __jni_impl::android::view::textclassifier
 		
 		// Constructors
 		void __constructor(jstring arg0, jint arg1, jint arg2);
+		void __constructor(const QString &arg0, jint arg1, jint arg2);
 		
 		// Methods
 		QAndroidJniObject build();
+		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject setDefaultLocales(__jni_impl::android::os::LocaleList arg0);
 		QAndroidJniObject setReferenceTime(__jni_impl::java::time::ZonedDateTime arg0);
-		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
 #include "TextClassification_Request.hpp"
+#include "../../os/Bundle.hpp"
 #include "../../os/LocaleList.hpp"
 #include "../../../java/time/ZonedDateTime.hpp"
-#include "../../os/Bundle.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {
@@ -57,7 +58,18 @@ namespace __jni_impl::android::view::textclassifier
 			"(Ljava/lang/CharSequence;II)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void TextClassification_Request_Builder::__constructor(const QString &arg0, jint arg1, jint arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.textclassifier.TextClassification$Request$Builder",
+			"(Ljava/lang/CharSequence;II)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2
+		);
 	}
 	
 	// Methods
@@ -66,6 +78,14 @@ namespace __jni_impl::android::view::textclassifier
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextClassification$Request;"
+		);
+	}
+	QAndroidJniObject TextClassification_Request_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setExtras",
+			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextClassification$Request$Builder;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject TextClassification_Request_Builder::setDefaultLocales(__jni_impl::android::os::LocaleList arg0)
@@ -81,14 +101,6 @@ namespace __jni_impl::android::view::textclassifier
 		return __thiz.callObjectMethod(
 			"setReferenceTime",
 			"(Ljava/time/ZonedDateTime;)Landroid/view/textclassifier/TextClassification$Request$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject TextClassification_Request_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setExtras",
-			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextClassification$Request$Builder;",
 			arg0.__jniObject().object()
 		);
 	}

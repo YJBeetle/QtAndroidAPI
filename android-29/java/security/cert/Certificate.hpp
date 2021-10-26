@@ -28,6 +28,7 @@ namespace __jni_impl::java::security::cert
 		jbyteArray getEncoded();
 		void verify(__jni_impl::__JniBaseClass arg0);
 		void verify(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void verify(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 		void verify(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::Provider arg1);
 		QAndroidJniObject getPublicKey();
 	};
@@ -99,6 +100,15 @@ namespace __jni_impl::java::security::cert
 			"(Ljava/security/PublicKey;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	void Certificate::verify(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"verify",
+			"(Ljava/security/PublicKey;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void Certificate::verify(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::Provider arg1)

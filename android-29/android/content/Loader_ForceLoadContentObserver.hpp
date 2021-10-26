@@ -22,8 +22,8 @@ namespace __jni_impl::android::content
 		void __constructor(__jni_impl::android::content::Loader arg0);
 		
 		// Methods
-		void onChange(jboolean arg0);
 		jboolean deliverSelfNotifications();
+		void onChange(jboolean arg0);
 	};
 } // namespace __jni_impl::android::content
 
@@ -39,23 +39,24 @@ namespace __jni_impl::android::content
 		__thiz = QAndroidJniObject(
 			"android.content.Loader$ForceLoadContentObserver",
 			"(Landroid/content/Loader;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
+	jboolean Loader_ForceLoadContentObserver::deliverSelfNotifications()
+	{
+		return __thiz.callMethod<jboolean>(
+			"deliverSelfNotifications",
+			"()Z"
+		);
+	}
 	void Loader_ForceLoadContentObserver::onChange(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"onChange",
 			"(Z)V",
 			arg0
-		);
-	}
-	jboolean Loader_ForceLoadContentObserver::deliverSelfNotifications()
-	{
-		return __thiz.callMethod<jboolean>(
-			"deliverSelfNotifications",
-			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::content

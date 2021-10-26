@@ -33,7 +33,8 @@ namespace __jni_impl::java::util
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.FormatterClosedException",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

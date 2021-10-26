@@ -46,7 +46,8 @@ namespace __jni_impl::android::bluetooth::le
 	{
 		__thiz = QAndroidJniObject(
 			"android.bluetooth.le.AdvertiseData$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

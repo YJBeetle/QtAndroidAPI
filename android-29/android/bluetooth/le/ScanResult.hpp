@@ -40,8 +40,6 @@ namespace __jni_impl::android::bluetooth::le
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jboolean isConnectable();
 		jboolean isLegacy();
 		jint getPrimaryPhy();
@@ -54,6 +52,8 @@ namespace __jni_impl::android::bluetooth::le
 		jint getAdvertisingSid();
 		jint getTxPower();
 		jint getPeriodicAdvertisingInterval();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
@@ -124,7 +124,8 @@ namespace __jni_impl::android::bluetooth::le
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void ScanResult::__constructor(__jni_impl::android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, __jni_impl::android::bluetooth::le::ScanRecord arg8, jlong arg9)
 	{
@@ -140,7 +141,8 @@ namespace __jni_impl::android::bluetooth::le
 			arg6,
 			arg7,
 			arg8.__jniObject().object(),
-			arg9);
+			arg9
+		);
 	}
 	
 	// Methods
@@ -164,22 +166,6 @@ namespace __jni_impl::android::bluetooth::le
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I"
-		);
-	}
-	jint ScanResult::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void ScanResult::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 	jboolean ScanResult::isConnectable()
@@ -264,6 +250,22 @@ namespace __jni_impl::android::bluetooth::le
 		return __thiz.callMethod<jint>(
 			"getPeriodicAdvertisingInterval",
 			"()I"
+		);
+	}
+	jint ScanResult::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void ScanResult::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::bluetooth::le

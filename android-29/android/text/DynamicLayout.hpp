@@ -32,8 +32,11 @@ namespace __jni_impl::android::text
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1, __jni_impl::android::text::TextPaint arg2, jint arg3, __jni_impl::android::text::Layout_Alignment arg4, jfloat arg5, jfloat arg6, jboolean arg7, __jni_impl::android::text::TextUtils_TruncateAt arg8, jint arg9);
+		void __constructor(const QString &arg0, const QString &arg1, __jni_impl::android::text::TextPaint arg2, jint arg3, __jni_impl::android::text::Layout_Alignment arg4, jfloat arg5, jfloat arg6, jboolean arg7, __jni_impl::android::text::TextUtils_TruncateAt arg8, jint arg9);
 		void __constructor(jstring arg0, jstring arg1, __jni_impl::android::text::TextPaint arg2, jint arg3, __jni_impl::android::text::Layout_Alignment arg4, jfloat arg5, jfloat arg6, jboolean arg7);
+		void __constructor(const QString &arg0, const QString &arg1, __jni_impl::android::text::TextPaint arg2, jint arg3, __jni_impl::android::text::Layout_Alignment arg4, jfloat arg5, jfloat arg6, jboolean arg7);
 		void __constructor(jstring arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, jboolean arg6);
+		void __constructor(const QString &arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, jboolean arg6);
 		
 		// Methods
 		jint getLineCount();
@@ -75,7 +78,25 @@ namespace __jni_impl::android::text
 			arg6,
 			arg7,
 			arg8.__jniObject().object(),
-			arg9);
+			arg9
+		);
+	}
+	void DynamicLayout::__constructor(const QString &arg0, const QString &arg1, __jni_impl::android::text::TextPaint arg2, jint arg3, __jni_impl::android::text::Layout_Alignment arg4, jfloat arg5, jfloat arg6, jboolean arg7, __jni_impl::android::text::TextUtils_TruncateAt arg8, jint arg9)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.DynamicLayout",
+			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZLandroid/text/TextUtils$TruncateAt;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object(),
+			arg3,
+			arg4.__jniObject().object(),
+			arg5,
+			arg6,
+			arg7,
+			arg8.__jniObject().object(),
+			arg9
+		);
 	}
 	void DynamicLayout::__constructor(jstring arg0, jstring arg1, __jni_impl::android::text::TextPaint arg2, jint arg3, __jni_impl::android::text::Layout_Alignment arg4, jfloat arg5, jfloat arg6, jboolean arg7)
 	{
@@ -89,7 +110,23 @@ namespace __jni_impl::android::text
 			arg4.__jniObject().object(),
 			arg5,
 			arg6,
-			arg7);
+			arg7
+		);
+	}
+	void DynamicLayout::__constructor(const QString &arg0, const QString &arg1, __jni_impl::android::text::TextPaint arg2, jint arg3, __jni_impl::android::text::Layout_Alignment arg4, jfloat arg5, jfloat arg6, jboolean arg7)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.DynamicLayout",
+			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object(),
+			arg3,
+			arg4.__jniObject().object(),
+			arg5,
+			arg6,
+			arg7
+		);
 	}
 	void DynamicLayout::__constructor(jstring arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, jboolean arg6)
 	{
@@ -102,7 +139,22 @@ namespace __jni_impl::android::text
 			arg3.__jniObject().object(),
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
+	}
+	void DynamicLayout::__constructor(const QString &arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, jboolean arg6)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.DynamicLayout",
+			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object(),
+			arg4,
+			arg5,
+			arg6
+		);
 	}
 	
 	// Methods

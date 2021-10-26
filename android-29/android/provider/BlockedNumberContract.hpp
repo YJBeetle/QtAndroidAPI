@@ -27,9 +27,11 @@ namespace __jni_impl::android::provider
 		void __constructor();
 		
 		// Methods
-		static jboolean isBlocked(__jni_impl::android::content::Context arg0, jstring arg1);
 		static jboolean canCurrentUserBlockNumbers(__jni_impl::android::content::Context arg0);
 		static jint unblock(__jni_impl::android::content::Context arg0, jstring arg1);
+		static jint unblock(__jni_impl::android::content::Context arg0, const QString &arg1);
+		static jboolean isBlocked(__jni_impl::android::content::Context arg0, jstring arg1);
+		static jboolean isBlocked(__jni_impl::android::content::Context arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -65,16 +67,6 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	jboolean BlockedNumberContract::isBlocked(__jni_impl::android::content::Context arg0, jstring arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.provider.BlockedNumberContract",
-			"isBlocked",
-			"(Landroid/content/Context;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	jboolean BlockedNumberContract::canCurrentUserBlockNumbers(__jni_impl::android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -92,6 +84,36 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/Context;Ljava/lang/String;)I",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	jint BlockedNumberContract::unblock(__jni_impl::android::content::Context arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.provider.BlockedNumberContract",
+			"unblock",
+			"(Landroid/content/Context;Ljava/lang/String;)I",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	jboolean BlockedNumberContract::isBlocked(__jni_impl::android::content::Context arg0, jstring arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.provider.BlockedNumberContract",
+			"isBlocked",
+			"(Landroid/content/Context;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jboolean BlockedNumberContract::isBlocked(__jni_impl::android::content::Context arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.provider.BlockedNumberContract",
+			"isBlocked",
+			"(Landroid/content/Context;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::provider

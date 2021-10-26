@@ -16,12 +16,17 @@ namespace __jni_impl::android::text::style
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		QAndroidJniObject setGender(jstring arg0);
+		QAndroidJniObject setGender(const QString &arg0);
 		QAndroidJniObject setAnimacy(jstring arg0);
+		QAndroidJniObject setAnimacy(const QString &arg0);
 		QAndroidJniObject setMultiplicity(jstring arg0);
+		QAndroidJniObject setMultiplicity(const QString &arg0);
 		QAndroidJniObject setCase(jstring arg0);
+		QAndroidJniObject setCase(const QString &arg0);
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -36,7 +41,16 @@ namespace __jni_impl::android::text::style
 		__thiz = QAndroidJniObject(
 			"android.text.style.TtsSpan$SemioticClassBuilder",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void TtsSpan_SemioticClassBuilder::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.style.TtsSpan$SemioticClassBuilder",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -48,12 +62,28 @@ namespace __jni_impl::android::text::style
 			arg0
 		);
 	}
+	QAndroidJniObject TtsSpan_SemioticClassBuilder::setGender(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setGender",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$SemioticClassBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject TtsSpan_SemioticClassBuilder::setAnimacy(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setAnimacy",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$SemioticClassBuilder;",
 			arg0
+		);
+	}
+	QAndroidJniObject TtsSpan_SemioticClassBuilder::setAnimacy(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setAnimacy",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$SemioticClassBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject TtsSpan_SemioticClassBuilder::setMultiplicity(jstring arg0)
@@ -64,12 +94,28 @@ namespace __jni_impl::android::text::style
 			arg0
 		);
 	}
+	QAndroidJniObject TtsSpan_SemioticClassBuilder::setMultiplicity(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setMultiplicity",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$SemioticClassBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject TtsSpan_SemioticClassBuilder::setCase(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setCase",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$SemioticClassBuilder;",
 			arg0
+		);
+	}
+	QAndroidJniObject TtsSpan_SemioticClassBuilder::setCase(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setCase",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$SemioticClassBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::text::style

@@ -52,13 +52,15 @@ namespace __jni_impl::java::util::concurrent::atomic
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.AtomicBoolean",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void AtomicBoolean::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.AtomicBoolean",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

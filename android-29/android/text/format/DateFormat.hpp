@@ -38,9 +38,13 @@ namespace __jni_impl::android::text::format
 		
 		// Methods
 		static jstring format(jstring arg0, __jni_impl::java::util::Calendar arg1);
+		static jstring format(const QString &arg0, __jni_impl::java::util::Calendar arg1);
 		static jstring format(jstring arg0, jlong arg1);
+		static jstring format(const QString &arg0, jlong arg1);
 		static jstring format(jstring arg0, __jni_impl::java::util::Date arg1);
+		static jstring format(const QString &arg0, __jni_impl::java::util::Date arg1);
 		static jstring getBestDateTimePattern(__jni_impl::java::util::Locale arg0, jstring arg1);
+		static jstring getBestDateTimePattern(__jni_impl::java::util::Locale arg0, const QString &arg1);
 		static QAndroidJniObject getTimeFormat(__jni_impl::android::content::Context arg0);
 		static QAndroidJniObject getDateFormat(__jni_impl::android::content::Context arg0);
 		static QAndroidJniObject getLongDateFormat(__jni_impl::android::content::Context arg0);
@@ -65,7 +69,8 @@ namespace __jni_impl::android::text::format
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.format.DateFormat",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -79,6 +84,16 @@ namespace __jni_impl::android::text::format
 			arg1.__jniObject().object()
 		).object<jstring>();
 	}
+	jstring DateFormat::format(const QString &arg0, __jni_impl::java::util::Calendar arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.format.DateFormat",
+			"format",
+			"(Ljava/lang/CharSequence;Ljava/util/Calendar;)Ljava/lang/CharSequence;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		).object<jstring>();
+	}
 	jstring DateFormat::format(jstring arg0, jlong arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -86,6 +101,16 @@ namespace __jni_impl::android::text::format
 			"format",
 			"(Ljava/lang/CharSequence;J)Ljava/lang/CharSequence;",
 			arg0,
+			arg1
+		).object<jstring>();
+	}
+	jstring DateFormat::format(const QString &arg0, jlong arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.format.DateFormat",
+			"format",
+			"(Ljava/lang/CharSequence;J)Ljava/lang/CharSequence;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		).object<jstring>();
 	}
@@ -99,6 +124,16 @@ namespace __jni_impl::android::text::format
 			arg1.__jniObject().object()
 		).object<jstring>();
 	}
+	jstring DateFormat::format(const QString &arg0, __jni_impl::java::util::Date arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.format.DateFormat",
+			"format",
+			"(Ljava/lang/CharSequence;Ljava/util/Date;)Ljava/lang/CharSequence;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		).object<jstring>();
+	}
 	jstring DateFormat::getBestDateTimePattern(__jni_impl::java::util::Locale arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -107,6 +142,16 @@ namespace __jni_impl::android::text::format
 			"(Ljava/util/Locale;Ljava/lang/String;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
 			arg1
+		).object<jstring>();
+	}
+	jstring DateFormat::getBestDateTimePattern(__jni_impl::java::util::Locale arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.format.DateFormat",
+			"getBestDateTimePattern",
+			"(Ljava/util/Locale;Ljava/lang/String;)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject DateFormat::getTimeFormat(__jni_impl::android::content::Context arg0)

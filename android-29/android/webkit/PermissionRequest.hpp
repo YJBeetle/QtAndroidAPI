@@ -27,8 +27,8 @@ namespace __jni_impl::android::webkit
 		// Methods
 		jarray getResources();
 		void deny();
-		QAndroidJniObject getOrigin();
 		void grant(jarray arg0);
+		QAndroidJniObject getOrigin();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -75,7 +75,8 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.PermissionRequest",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -93,19 +94,19 @@ namespace __jni_impl::android::webkit
 			"()V"
 		);
 	}
-	QAndroidJniObject PermissionRequest::getOrigin()
-	{
-		return __thiz.callObjectMethod(
-			"getOrigin",
-			"()Landroid/net/Uri;"
-		);
-	}
 	void PermissionRequest::grant(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"grant",
 			"([Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	QAndroidJniObject PermissionRequest::getOrigin()
+	{
+		return __thiz.callObjectMethod(
+			"getOrigin",
+			"()Landroid/net/Uri;"
 		);
 	}
 } // namespace __jni_impl::android::webkit

@@ -35,6 +35,7 @@ namespace __jni_impl::android::telecom
 		
 		// Constructors
 		void __constructor(__jni_impl::android::telecom::PhoneAccountHandle arg0, jstring arg1);
+		void __constructor(__jni_impl::android::telecom::PhoneAccountHandle arg0, const QString &arg1);
 		void __constructor(__jni_impl::android::telecom::PhoneAccount arg0);
 		
 		// Methods
@@ -46,7 +47,9 @@ namespace __jni_impl::android::telecom
 		QAndroidJniObject setIcon(__jni_impl::android::graphics::drawable::Icon arg0);
 		QAndroidJniObject setHighlightColor(jint arg0);
 		QAndroidJniObject setShortDescription(jstring arg0);
+		QAndroidJniObject setShortDescription(const QString &arg0);
 		QAndroidJniObject addSupportedUriScheme(jstring arg0);
+		QAndroidJniObject addSupportedUriScheme(const QString &arg0);
 		QAndroidJniObject setSupportedUriSchemes(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::telecom
@@ -68,14 +71,25 @@ namespace __jni_impl::android::telecom
 			"android.telecom.PhoneAccount$Builder",
 			"(Landroid/telecom/PhoneAccountHandle;Ljava/lang/CharSequence;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void PhoneAccount_Builder::__constructor(__jni_impl::android::telecom::PhoneAccountHandle arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.telecom.PhoneAccount$Builder",
+			"(Landroid/telecom/PhoneAccountHandle;Ljava/lang/CharSequence;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void PhoneAccount_Builder::__constructor(__jni_impl::android::telecom::PhoneAccount arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.PhoneAccount$Builder",
 			"(Landroid/telecom/PhoneAccount;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -142,12 +156,28 @@ namespace __jni_impl::android::telecom
 			arg0
 		);
 	}
+	QAndroidJniObject PhoneAccount_Builder::setShortDescription(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setShortDescription",
+			"(Ljava/lang/CharSequence;)Landroid/telecom/PhoneAccount$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject PhoneAccount_Builder::addSupportedUriScheme(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addSupportedUriScheme",
 			"(Ljava/lang/String;)Landroid/telecom/PhoneAccount$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject PhoneAccount_Builder::addSupportedUriScheme(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"addSupportedUriScheme",
+			"(Ljava/lang/String;)Landroid/telecom/PhoneAccount$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject PhoneAccount_Builder::setSupportedUriSchemes(__jni_impl::__JniBaseClass arg0)

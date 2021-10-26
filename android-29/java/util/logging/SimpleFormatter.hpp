@@ -37,7 +37,8 @@ namespace __jni_impl::java::util::logging
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.logging.SimpleFormatter",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -36,13 +36,13 @@ namespace __jni_impl::android::nfc::tech
 		jstring getType();
 		jboolean isWritable();
 		QAndroidJniObject getTag();
-		jboolean isConnected();
 		QAndroidJniObject getCachedNdefMessage();
 		jint getMaxSize();
 		QAndroidJniObject getNdefMessage();
 		void writeNdefMessage(__jni_impl::android::nfc::NdefMessage arg0);
 		jboolean canMakeReadOnly();
 		jboolean makeReadOnly();
+		jboolean isConnected();
 	};
 } // namespace __jni_impl::android::nfc::tech
 
@@ -146,13 +146,6 @@ namespace __jni_impl::android::nfc::tech
 			"()Landroid/nfc/Tag;"
 		);
 	}
-	jboolean Ndef::isConnected()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isConnected",
-			"()Z"
-		);
-	}
 	QAndroidJniObject Ndef::getCachedNdefMessage()
 	{
 		return __thiz.callObjectMethod(
@@ -193,6 +186,13 @@ namespace __jni_impl::android::nfc::tech
 	{
 		return __thiz.callMethod<jboolean>(
 			"makeReadOnly",
+			"()Z"
+		);
+	}
+	jboolean Ndef::isConnected()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isConnected",
 			"()Z"
 		);
 	}

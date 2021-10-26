@@ -29,12 +29,14 @@ namespace __jni_impl::java::nio::file
 		QAndroidJniObject provider();
 		void close();
 		QAndroidJniObject getPath(jstring arg0, jarray arg1);
+		QAndroidJniObject getPath(const QString &arg0, jarray arg1);
 		jboolean isReadOnly();
 		QAndroidJniObject supportedFileAttributeViews();
 		QAndroidJniObject newWatchService();
 		QAndroidJniObject getRootDirectories();
 		QAndroidJniObject getFileStores();
 		QAndroidJniObject getPathMatcher(jstring arg0);
+		QAndroidJniObject getPathMatcher(const QString &arg0);
 		QAndroidJniObject getUserPrincipalLookupService();
 		jstring getSeparator();
 	};
@@ -86,6 +88,15 @@ namespace __jni_impl::java::nio::file
 			arg1
 		);
 	}
+	QAndroidJniObject FileSystem::getPath(const QString &arg0, jarray arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getPath",
+			"(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	jboolean FileSystem::isReadOnly()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -127,6 +138,14 @@ namespace __jni_impl::java::nio::file
 			"getPathMatcher",
 			"(Ljava/lang/String;)Ljava/nio/file/PathMatcher;",
 			arg0
+		);
+	}
+	QAndroidJniObject FileSystem::getPathMatcher(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getPathMatcher",
+			"(Ljava/lang/String;)Ljava/nio/file/PathMatcher;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject FileSystem::getUserPrincipalLookupService()

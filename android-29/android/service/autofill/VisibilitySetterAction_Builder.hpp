@@ -39,7 +39,8 @@ namespace __jni_impl::android::service::autofill
 			"android.service.autofill.VisibilitySetterAction$Builder",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

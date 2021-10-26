@@ -87,7 +87,8 @@ namespace __jni_impl::android::graphics
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void ColorSpace_Rgb_TransferParameters::__constructor(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5, jdouble arg6)
 	{
@@ -100,7 +101,8 @@ namespace __jni_impl::android::graphics
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	
 	// Methods

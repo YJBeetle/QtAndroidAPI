@@ -17,13 +17,13 @@ namespace __jni_impl::android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::telecom
 {
 	class Connection_RttTextStream;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::telecom
@@ -41,21 +41,21 @@ namespace __jni_impl::android::telecom
 		// Methods
 		jstring toString();
 		QAndroidJniObject getAddress();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getExtras();
 		jint getVideoState();
 		QAndroidJniObject getAccountHandle();
 		QAndroidJniObject getRttTextStream();
 		jboolean isRequestingRtt();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getExtras();
 	};
 } // namespace __jni_impl::android::telecom
 
 #include "PhoneAccountHandle.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
-#include "../os/Parcel.hpp"
 #include "Connection_RttTextStream.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -77,7 +77,8 @@ namespace __jni_impl::android::telecom
 			"(Landroid/telecom/PhoneAccountHandle;Landroid/net/Uri;Landroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ConnectionRequest::__constructor(__jni_impl::android::telecom::PhoneAccountHandle arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::os::Bundle arg2, jint arg3)
 	{
@@ -87,7 +88,8 @@ namespace __jni_impl::android::telecom
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	
 	// Methods
@@ -103,29 +105,6 @@ namespace __jni_impl::android::telecom
 		return __thiz.callObjectMethod(
 			"getAddress",
 			"()Landroid/net/Uri;"
-		);
-	}
-	jint ConnectionRequest::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void ConnectionRequest::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject ConnectionRequest::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
 		);
 	}
 	jint ConnectionRequest::getVideoState()
@@ -154,6 +133,29 @@ namespace __jni_impl::android::telecom
 		return __thiz.callMethod<jboolean>(
 			"isRequestingRtt",
 			"()Z"
+		);
+	}
+	jint ConnectionRequest::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void ConnectionRequest::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	QAndroidJniObject ConnectionRequest::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
 		);
 	}
 } // namespace __jni_impl::android::telecom

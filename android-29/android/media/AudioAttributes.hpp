@@ -53,13 +53,13 @@ namespace __jni_impl::android::media
 		jstring toString();
 		jint hashCode();
 		jint getFlags();
+		jint getUsage();
 		jboolean areHapticChannelsMuted();
 		jint getAllowedCapturePolicy();
+		jint getContentType();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getVolumeControlStream();
-		jint getUsage();
-		jint getContentType();
 	};
 } // namespace __jni_impl::android::media
 
@@ -304,6 +304,13 @@ namespace __jni_impl::android::media
 			"()I"
 		);
 	}
+	jint AudioAttributes::getUsage()
+	{
+		return __thiz.callMethod<jint>(
+			"getUsage",
+			"()I"
+		);
+	}
 	jboolean AudioAttributes::areHapticChannelsMuted()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -315,6 +322,13 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callMethod<jint>(
 			"getAllowedCapturePolicy",
+			"()I"
+		);
+	}
+	jint AudioAttributes::getContentType()
+	{
+		return __thiz.callMethod<jint>(
+			"getContentType",
 			"()I"
 		);
 	}
@@ -338,20 +352,6 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callMethod<jint>(
 			"getVolumeControlStream",
-			"()I"
-		);
-	}
-	jint AudioAttributes::getUsage()
-	{
-		return __thiz.callMethod<jint>(
-			"getUsage",
-			"()I"
-		);
-	}
-	jint AudioAttributes::getContentType()
-	{
-		return __thiz.callMethod<jint>(
-			"getContentType",
 			"()I"
 		);
 	}

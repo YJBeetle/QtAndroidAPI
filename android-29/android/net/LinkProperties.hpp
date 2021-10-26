@@ -9,13 +9,13 @@ namespace __jni_impl::android::net
 {
 	class ProxyInfo;
 }
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::net
 {
 	class RouteInfo;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::net
@@ -35,6 +35,7 @@ namespace __jni_impl::android::net
 		jint hashCode();
 		void clear();
 		void setInterfaceName(jstring arg0);
+		void setInterfaceName(const QString &arg0);
 		jstring getInterfaceName();
 		QAndroidJniObject getLinkAddresses();
 		void setLinkAddresses(__jni_impl::__JniBaseClass arg0);
@@ -43,21 +44,22 @@ namespace __jni_impl::android::net
 		jboolean isPrivateDnsActive();
 		jstring getPrivateDnsServerName();
 		void setDomains(jstring arg0);
+		void setDomains(const QString &arg0);
 		jstring getDomains();
 		void setMtu(jint arg0);
 		jint getMtu();
 		void setHttpProxy(__jni_impl::android::net::ProxyInfo arg0);
 		QAndroidJniObject getHttpProxy();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jboolean addRoute(__jni_impl::android::net::RouteInfo arg0);
 		QAndroidJniObject getRoutes();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net
 
 #include "ProxyInfo.hpp"
-#include "../os/Parcel.hpp"
 #include "RouteInfo.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::net
 {
@@ -76,7 +78,8 @@ namespace __jni_impl::android::net
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.LinkProperties",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -115,6 +118,14 @@ namespace __jni_impl::android::net
 			"setInterfaceName",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void LinkProperties::setInterfaceName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setInterfaceName",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring LinkProperties::getInterfaceName()
@@ -176,6 +187,14 @@ namespace __jni_impl::android::net
 			arg0
 		);
 	}
+	void LinkProperties::setDomains(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDomains",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring LinkProperties::getDomains()
 	{
 		return __thiz.callObjectMethod(
@@ -213,6 +232,21 @@ namespace __jni_impl::android::net
 			"()Landroid/net/ProxyInfo;"
 		);
 	}
+	jboolean LinkProperties::addRoute(__jni_impl::android::net::RouteInfo arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"addRoute",
+			"(Landroid/net/RouteInfo;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject LinkProperties::getRoutes()
+	{
+		return __thiz.callObjectMethod(
+			"getRoutes",
+			"()Ljava/util/List;"
+		);
+	}
 	jint LinkProperties::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -227,21 +261,6 @@ namespace __jni_impl::android::net
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean LinkProperties::addRoute(__jni_impl::android::net::RouteInfo arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"addRoute",
-			"(Landroid/net/RouteInfo;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject LinkProperties::getRoutes()
-	{
-		return __thiz.callObjectMethod(
-			"getRoutes",
-			"()Ljava/util/List;"
 		);
 	}
 } // namespace __jni_impl::android::net

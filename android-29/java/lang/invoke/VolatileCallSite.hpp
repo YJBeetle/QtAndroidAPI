@@ -46,14 +46,16 @@ namespace __jni_impl::java::lang::invoke
 		__thiz = QAndroidJniObject(
 			"java.lang.invoke.VolatileCallSite",
 			"(Ljava/lang/invoke/MethodType;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void VolatileCallSite::__constructor(__jni_impl::java::lang::invoke::MethodHandle arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.invoke.VolatileCallSite",
 			"(Ljava/lang/invoke/MethodHandle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

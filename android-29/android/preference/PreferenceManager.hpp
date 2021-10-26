@@ -33,11 +33,13 @@ namespace __jni_impl::android::preference
 		// Methods
 		QAndroidJniObject getSharedPreferences();
 		QAndroidJniObject findPreference(jstring arg0);
+		QAndroidJniObject findPreference(const QString &arg0);
 		void setPreferenceDataStore(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getPreferenceDataStore();
 		QAndroidJniObject createPreferenceScreen(__jni_impl::android::content::Context arg0);
 		jstring getSharedPreferencesName();
 		void setSharedPreferencesName(jstring arg0);
+		void setSharedPreferencesName(const QString &arg0);
 		jint getSharedPreferencesMode();
 		void setSharedPreferencesMode(jint arg0);
 		void setStorageDefault();
@@ -48,6 +50,7 @@ namespace __jni_impl::android::preference
 		static jstring getDefaultSharedPreferencesName(__jni_impl::android::content::Context arg0);
 		static void setDefaultValues(__jni_impl::android::content::Context arg0, jint arg1, jboolean arg2);
 		static void setDefaultValues(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2, jint arg3, jboolean arg4);
+		static void setDefaultValues(__jni_impl::android::content::Context arg0, const QString &arg1, jint arg2, jint arg3, jboolean arg4);
 	};
 } // namespace __jni_impl::android::preference
 
@@ -99,6 +102,14 @@ namespace __jni_impl::android::preference
 			arg0
 		);
 	}
+	QAndroidJniObject PreferenceManager::findPreference(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"findPreference",
+			"(Ljava/lang/CharSequence;)Landroid/preference/Preference;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void PreferenceManager::setPreferenceDataStore(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -135,6 +146,14 @@ namespace __jni_impl::android::preference
 			"setSharedPreferencesName",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void PreferenceManager::setSharedPreferencesName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSharedPreferencesName",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint PreferenceManager::getSharedPreferencesMode()
@@ -217,6 +236,19 @@ namespace __jni_impl::android::preference
 			"(Landroid/content/Context;Ljava/lang/String;IIZ)V",
 			arg0.__jniObject().object(),
 			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	void PreferenceManager::setDefaultValues(__jni_impl::android::content::Context arg0, const QString &arg1, jint arg2, jint arg3, jboolean arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.preference.PreferenceManager",
+			"setDefaultValues",
+			"(Landroid/content/Context;Ljava/lang/String;IIZ)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3,
 			arg4

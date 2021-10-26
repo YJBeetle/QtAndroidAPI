@@ -26,6 +26,7 @@ namespace __jni_impl::android::util
 		static jbyteArray decode(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
 		static jbyteArray decode(jbyteArray arg0, jint arg1);
 		static jbyteArray decode(jstring arg0, jint arg1);
+		static jbyteArray decode(const QString &arg0, jint arg1);
 		static jbyteArray encode(jbyteArray arg0, jint arg1);
 		static jbyteArray encode(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
 		static jstring encodeToString(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
@@ -118,6 +119,16 @@ namespace __jni_impl::android::util
 			"decode",
 			"(Ljava/lang/String;I)[B",
 			arg0,
+			arg1
+		).object<jbyteArray>();
+	}
+	jbyteArray Base64::decode(const QString &arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.util.Base64",
+			"decode",
+			"(Ljava/lang/String;I)[B",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		).object<jbyteArray>();
 	}

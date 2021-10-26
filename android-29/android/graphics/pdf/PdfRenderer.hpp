@@ -45,7 +45,8 @@ namespace __jni_impl::android::graphics::pdf
 		__thiz = QAndroidJniObject(
 			"android.graphics.pdf.PdfRenderer",
 			"(Landroid/os/ParcelFileDescriptor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

@@ -81,7 +81,9 @@ namespace __jni_impl::java::text
 		QAndroidJniObject format(__jni_impl::java::util::Date arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
 		static QAndroidJniObject getInstance();
 		QAndroidJniObject parse(jstring arg0);
+		QAndroidJniObject parse(const QString &arg0);
 		QAndroidJniObject parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		QAndroidJniObject parse(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
 		static jarray getAvailableLocales();
 		static QAndroidJniObject getDateTimeInstance(jint arg0, jint arg1);
 		static QAndroidJniObject getDateTimeInstance(jint arg0, jint arg1, __jni_impl::java::util::Locale arg2);
@@ -97,6 +99,7 @@ namespace __jni_impl::java::text
 		static QAndroidJniObject getTimeInstance(jint arg0);
 		static QAndroidJniObject getTimeInstance();
 		jobject parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		jobject parseObject(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
 		void setCalendar(__jni_impl::java::util::Calendar arg0);
 		QAndroidJniObject getCalendar();
 		void setNumberFormat(__jni_impl::java::text::NumberFormat arg0);
@@ -353,12 +356,29 @@ namespace __jni_impl::java::text
 			arg0
 		);
 	}
+	QAndroidJniObject DateFormat::parse(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"parse",
+			"(Ljava/lang/String;)Ljava/util/Date;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject DateFormat::parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
 	{
 		return __thiz.callObjectMethod(
 			"parse",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject DateFormat::parse(const QString &arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callObjectMethod(
+			"parse",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -489,6 +509,15 @@ namespace __jni_impl::java::text
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
 			arg0,
+			arg1.__jniObject().object()
+		).object<jobject>();
+	}
+	jobject DateFormat::parseObject(const QString &arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callObjectMethod(
+			"parseObject",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jobject>();
 	}

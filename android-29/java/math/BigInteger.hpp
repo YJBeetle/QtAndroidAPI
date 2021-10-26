@@ -37,11 +37,13 @@ namespace __jni_impl::java::math
 		// Constructors
 		void __constructor(jint arg0, __jni_impl::java::util::Random arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jint arg0, jint arg1, __jni_impl::java::util::Random arg2);
 		void __constructor(jint arg0, jbyteArray arg1, jint arg2, jint arg3);
 		void __constructor(jbyteArray arg0);
 		void __constructor(jbyteArray arg0, jint arg1, jint arg2);
 		void __constructor(jstring arg0, jint arg1);
+		void __constructor(const QString &arg0, jint arg1);
 		void __constructor(jint arg0, jbyteArray arg1);
 		
 		// Methods
@@ -147,14 +149,24 @@ namespace __jni_impl::java::math
 			"java.math.BigInteger",
 			"(ILjava/util/Random;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void BigInteger::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigInteger",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void BigInteger::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.math.BigInteger",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void BigInteger::__constructor(jint arg0, jint arg1, __jni_impl::java::util::Random arg2)
 	{
@@ -163,7 +175,8 @@ namespace __jni_impl::java::math
 			"(IILjava/util/Random;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void BigInteger::__constructor(jint arg0, jbyteArray arg1, jint arg2, jint arg3)
 	{
@@ -173,14 +186,16 @@ namespace __jni_impl::java::math
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void BigInteger::__constructor(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigInteger",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	void BigInteger::__constructor(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -189,7 +204,8 @@ namespace __jni_impl::java::math
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void BigInteger::__constructor(jstring arg0, jint arg1)
 	{
@@ -197,7 +213,17 @@ namespace __jni_impl::java::math
 			"java.math.BigInteger",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void BigInteger::__constructor(const QString &arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.math.BigInteger",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void BigInteger::__constructor(jint arg0, jbyteArray arg1)
 	{
@@ -205,7 +231,8 @@ namespace __jni_impl::java::math
 			"java.math.BigInteger",
 			"(I[B)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

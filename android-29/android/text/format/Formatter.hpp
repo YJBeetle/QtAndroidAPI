@@ -38,7 +38,8 @@ namespace __jni_impl::android::text::format
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.format.Formatter",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -38,6 +38,14 @@ namespace __jni_impl::android::graphics
 {
 	class ColorFilter;
 }
+namespace __jni_impl::android::content::res
+{
+	class ColorStateList;
+}
+namespace __jni_impl::android::graphics
+{
+	class BlendMode;
+}
 namespace __jni_impl::android::graphics
 {
 	class Paint;
@@ -62,14 +70,6 @@ namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable_ConstantState;
 }
-namespace __jni_impl::android::content::res
-{
-	class ColorStateList;
-}
-namespace __jni_impl::android::graphics
-{
-	class BlendMode;
-}
 
 namespace __jni_impl::android::graphics::drawable
 {
@@ -80,7 +80,9 @@ namespace __jni_impl::android::graphics::drawable
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(__jni_impl::android::content::res::Resources arg0, jstring arg1);
+		void __constructor(__jni_impl::android::content::res::Resources arg0, const QString &arg1);
 		void __constructor(__jni_impl::java::io::InputStream arg0);
 		void __constructor(__jni_impl::android::content::res::Resources arg0, __jni_impl::java::io::InputStream arg1);
 		void __constructor();
@@ -106,7 +108,16 @@ namespace __jni_impl::android::graphics::drawable
 		void setFilterBitmap(jboolean arg0);
 		QAndroidJniObject getColorFilter();
 		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
+		void setAlpha(jint arg0);
+		jint getAlpha();
+		void draw(__jni_impl::android::graphics::Canvas arg0);
+		jboolean hasMipMap();
+		void setTintList(__jni_impl::android::content::res::ColorStateList arg0);
+		void setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0);
 		QAndroidJniObject getPaint();
+		void setGravity(jint arg0);
+		jint getGravity();
+		QAndroidJniObject getBitmap();
 		jint getChangingConfigurations();
 		jboolean isStateful();
 		void setAutoMirrored(jboolean arg0);
@@ -120,15 +131,6 @@ namespace __jni_impl::android::graphics::drawable
 		void getOutline(__jni_impl::android::graphics::Outline arg0);
 		QAndroidJniObject mutate();
 		QAndroidJniObject getConstantState();
-		void setGravity(jint arg0);
-		jint getGravity();
-		QAndroidJniObject getBitmap();
-		jint getAlpha();
-		void draw(__jni_impl::android::graphics::Canvas arg0);
-		void setTintList(__jni_impl::android::content::res::ColorStateList arg0);
-		void setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0);
-		jboolean hasMipMap();
-		void setAlpha(jint arg0);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
@@ -140,14 +142,14 @@ namespace __jni_impl::android::graphics::drawable
 #include "../../util/DisplayMetrics.hpp"
 #include "../Shader_TileMode.hpp"
 #include "../ColorFilter.hpp"
+#include "../../content/res/ColorStateList.hpp"
+#include "../BlendMode.hpp"
 #include "../Paint.hpp"
 #include "../Rect.hpp"
 #include "../Insets.hpp"
 #include "../Outline.hpp"
 #include "Drawable.hpp"
 #include "Drawable_ConstantState.hpp"
-#include "../../content/res/ColorStateList.hpp"
-#include "../BlendMode.hpp"
 
 namespace __jni_impl::android::graphics::drawable
 {
@@ -159,7 +161,16 @@ namespace __jni_impl::android::graphics::drawable
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.BitmapDrawable",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void BitmapDrawable::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.graphics.drawable.BitmapDrawable",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void BitmapDrawable::__constructor(__jni_impl::android::content::res::Resources arg0, jstring arg1)
 	{
@@ -167,14 +178,25 @@ namespace __jni_impl::android::graphics::drawable
 			"android.graphics.drawable.BitmapDrawable",
 			"(Landroid/content/res/Resources;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void BitmapDrawable::__constructor(__jni_impl::android::content::res::Resources arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.graphics.drawable.BitmapDrawable",
+			"(Landroid/content/res/Resources;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void BitmapDrawable::__constructor(__jni_impl::java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.BitmapDrawable",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void BitmapDrawable::__constructor(__jni_impl::android::content::res::Resources arg0, __jni_impl::java::io::InputStream arg1)
 	{
@@ -182,27 +204,31 @@ namespace __jni_impl::android::graphics::drawable
 			"android.graphics.drawable.BitmapDrawable",
 			"(Landroid/content/res/Resources;Ljava/io/InputStream;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void BitmapDrawable::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.BitmapDrawable",
-			"()V");
+			"()V"
+		);
 	}
 	void BitmapDrawable::__constructor(__jni_impl::android::content::res::Resources arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.BitmapDrawable",
 			"(Landroid/content/res/Resources;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void BitmapDrawable::__constructor(__jni_impl::android::graphics::Bitmap arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.BitmapDrawable",
 			"(Landroid/graphics/Bitmap;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void BitmapDrawable::__constructor(__jni_impl::android::content::res::Resources arg0, __jni_impl::android::graphics::Bitmap arg1)
 	{
@@ -210,7 +236,8 @@ namespace __jni_impl::android::graphics::drawable
 			"android.graphics.drawable.BitmapDrawable",
 			"(Landroid/content/res/Resources;Landroid/graphics/Bitmap;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -349,11 +376,79 @@ namespace __jni_impl::android::graphics::drawable
 			arg0.__jniObject().object()
 		);
 	}
+	void BitmapDrawable::setAlpha(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAlpha",
+			"(I)V",
+			arg0
+		);
+	}
+	jint BitmapDrawable::getAlpha()
+	{
+		return __thiz.callMethod<jint>(
+			"getAlpha",
+			"()I"
+		);
+	}
+	void BitmapDrawable::draw(__jni_impl::android::graphics::Canvas arg0)
+	{
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean BitmapDrawable::hasMipMap()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasMipMap",
+			"()Z"
+		);
+	}
+	void BitmapDrawable::setTintList(__jni_impl::android::content::res::ColorStateList arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTintList",
+			"(Landroid/content/res/ColorStateList;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void BitmapDrawable::setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTintBlendMode",
+			"(Landroid/graphics/BlendMode;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject BitmapDrawable::getPaint()
 	{
 		return __thiz.callObjectMethod(
 			"getPaint",
 			"()Landroid/graphics/Paint;"
+		);
+	}
+	void BitmapDrawable::setGravity(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGravity",
+			"(I)V",
+			arg0
+		);
+	}
+	jint BitmapDrawable::getGravity()
+	{
+		return __thiz.callMethod<jint>(
+			"getGravity",
+			"()I"
+		);
+	}
+	QAndroidJniObject BitmapDrawable::getBitmap()
+	{
+		return __thiz.callObjectMethod(
+			"getBitmap",
+			"()Landroid/graphics/Bitmap;"
 		);
 	}
 	jint BitmapDrawable::getChangingConfigurations()
@@ -448,74 +543,6 @@ namespace __jni_impl::android::graphics::drawable
 		return __thiz.callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
-		);
-	}
-	void BitmapDrawable::setGravity(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGravity",
-			"(I)V",
-			arg0
-		);
-	}
-	jint BitmapDrawable::getGravity()
-	{
-		return __thiz.callMethod<jint>(
-			"getGravity",
-			"()I"
-		);
-	}
-	QAndroidJniObject BitmapDrawable::getBitmap()
-	{
-		return __thiz.callObjectMethod(
-			"getBitmap",
-			"()Landroid/graphics/Bitmap;"
-		);
-	}
-	jint BitmapDrawable::getAlpha()
-	{
-		return __thiz.callMethod<jint>(
-			"getAlpha",
-			"()I"
-		);
-	}
-	void BitmapDrawable::draw(__jni_impl::android::graphics::Canvas arg0)
-	{
-		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void BitmapDrawable::setTintList(__jni_impl::android::content::res::ColorStateList arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTintList",
-			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void BitmapDrawable::setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTintBlendMode",
-			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean BitmapDrawable::hasMipMap()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasMipMap",
-			"()Z"
-		);
-	}
-	void BitmapDrawable::setAlpha(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAlpha",
-			"(I)V",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::graphics::drawable

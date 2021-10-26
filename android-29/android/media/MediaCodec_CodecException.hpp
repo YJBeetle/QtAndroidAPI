@@ -24,8 +24,8 @@ namespace __jni_impl::android::media
 		// Methods
 		jboolean isTransient();
 		jstring getDiagnosticInfo();
-		jboolean isRecoverable();
 		jint getErrorCode();
+		jboolean isRecoverable();
 	};
 } // namespace __jni_impl::android::media
 
@@ -71,18 +71,18 @@ namespace __jni_impl::android::media
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jboolean MediaCodec_CodecException::isRecoverable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isRecoverable",
-			"()Z"
-		);
-	}
 	jint MediaCodec_CodecException::getErrorCode()
 	{
 		return __thiz.callMethod<jint>(
 			"getErrorCode",
 			"()I"
+		);
+	}
+	jboolean MediaCodec_CodecException::isRecoverable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isRecoverable",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::media

@@ -27,7 +27,9 @@ namespace __jni_impl::java::io
 		
 		// Constructors
 		void __constructor(__jni_impl::java::io::File arg0, jstring arg1);
+		void __constructor(__jni_impl::java::io::File arg0, const QString &arg1);
 		void __constructor(jstring arg0, jstring arg1);
+		void __constructor(const QString &arg0, const QString &arg1);
 		
 		// Methods
 		jlong length();
@@ -43,12 +45,14 @@ namespace __jni_impl::java::io
 		void writeInt(jint arg0);
 		jint readInt();
 		void writeUTF(jstring arg0);
+		void writeUTF(const QString &arg0);
 		jstring readUTF();
 		void writeFloat(jfloat arg0);
 		jfloat readFloat();
 		QAndroidJniObject getFD();
 		QAndroidJniObject getChannel();
 		void writeBytes(jstring arg0);
+		void writeBytes(const QString &arg0);
 		jlong getFilePointer();
 		jlong readLong();
 		void writeLong(jlong arg0);
@@ -64,6 +68,7 @@ namespace __jni_impl::java::io
 		void writeShort(jint arg0);
 		void writeDouble(jdouble arg0);
 		void writeChars(jstring arg0);
+		void writeChars(const QString &arg0);
 		void seek(jlong arg0);
 		void readFully(jbyteArray arg0, jint arg1, jint arg2);
 		void readFully(jbyteArray arg0);
@@ -87,7 +92,17 @@ namespace __jni_impl::java::io
 			"java.io.RandomAccessFile",
 			"(Ljava/io/File;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void RandomAccessFile::__constructor(__jni_impl::java::io::File arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.RandomAccessFile",
+			"(Ljava/io/File;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void RandomAccessFile::__constructor(jstring arg0, jstring arg1)
 	{
@@ -95,7 +110,17 @@ namespace __jni_impl::java::io
 			"java.io.RandomAccessFile",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void RandomAccessFile::__constructor(const QString &arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.RandomAccessFile",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -202,6 +227,14 @@ namespace __jni_impl::java::io
 			arg0
 		);
 	}
+	void RandomAccessFile::writeUTF(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"writeUTF",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring RandomAccessFile::readUTF()
 	{
 		return __thiz.callObjectMethod(
@@ -244,6 +277,14 @@ namespace __jni_impl::java::io
 			"writeBytes",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void RandomAccessFile::writeBytes(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"writeBytes",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jlong RandomAccessFile::getFilePointer()
@@ -356,6 +397,14 @@ namespace __jni_impl::java::io
 			"writeChars",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void RandomAccessFile::writeChars(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"writeChars",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void RandomAccessFile::seek(jlong arg0)

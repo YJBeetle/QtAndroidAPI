@@ -24,8 +24,6 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		jint getDuration();
-		void fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
-		void setFriction(jfloat arg0);
 		jboolean isFinished();
 		void forceFinished(jboolean arg0);
 		jint getCurrX();
@@ -36,13 +34,15 @@ namespace __jni_impl::android::widget
 		jint getFinalX();
 		jint getFinalY();
 		jboolean computeScrollOffset();
-		void startScroll(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		void startScroll(jint arg0, jint arg1, jint arg2, jint arg3);
+		void startScroll(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		void abortAnimation();
 		jint timePassed();
 		void extendDuration(jint arg0);
 		void setFinalX(jint arg0);
 		void setFinalY(jint arg0);
+		void fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
+		void setFriction(jfloat arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -60,7 +60,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/view/animation/Interpolator;Z)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void Scroller::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -68,14 +69,16 @@ namespace __jni_impl::android::widget
 			"android.widget.Scroller",
 			"(Landroid/content/Context;Landroid/view/animation/Interpolator;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Scroller::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Scroller",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -84,29 +87,6 @@ namespace __jni_impl::android::widget
 		return __thiz.callMethod<jint>(
 			"getDuration",
 			"()I"
-		);
-	}
-	void Scroller::fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
-	{
-		__thiz.callMethod<void>(
-			"fling",
-			"(IIIIIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7
-		);
-	}
-	void Scroller::setFriction(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFriction",
-			"(F)V",
-			arg0
 		);
 	}
 	jboolean Scroller::isFinished()
@@ -180,6 +160,17 @@ namespace __jni_impl::android::widget
 			"()Z"
 		);
 	}
+	void Scroller::startScroll(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"startScroll",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
 	void Scroller::startScroll(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		__thiz.callMethod<void>(
@@ -190,17 +181,6 @@ namespace __jni_impl::android::widget
 			arg2,
 			arg3,
 			arg4
-		);
-	}
-	void Scroller::startScroll(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"startScroll",
-			"(IIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
 		);
 	}
 	void Scroller::abortAnimation()
@@ -238,6 +218,29 @@ namespace __jni_impl::android::widget
 		__thiz.callMethod<void>(
 			"setFinalY",
 			"(I)V",
+			arg0
+		);
+	}
+	void Scroller::fling(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
+	{
+		__thiz.callMethod<void>(
+			"fling",
+			"(IIIIIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7
+		);
+	}
+	void Scroller::setFriction(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFriction",
+			"(F)V",
 			arg0
 		);
 	}

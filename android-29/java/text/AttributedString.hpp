@@ -26,7 +26,9 @@ namespace __jni_impl::java::text
 		void __constructor(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2);
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		void __constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
 		QAndroidJniObject getIterator();
@@ -54,7 +56,8 @@ namespace __jni_impl::java::text
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void AttributedString::__constructor(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2)
 	{
@@ -63,21 +66,32 @@ namespace __jni_impl::java::text
 			"(Ljava/text/AttributedCharacterIterator;II)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void AttributedString::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.AttributedString",
 			"(Ljava/text/AttributedCharacterIterator;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AttributedString::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.AttributedString",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void AttributedString::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.text.AttributedString",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void AttributedString::__constructor(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -85,7 +99,17 @@ namespace __jni_impl::java::text
 			"java.text.AttributedString",
 			"(Ljava/lang/String;Ljava/util/Map;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void AttributedString::__constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.text.AttributedString",
+			"(Ljava/lang/String;Ljava/util/Map;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

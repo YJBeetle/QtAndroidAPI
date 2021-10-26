@@ -24,8 +24,8 @@ namespace __jni_impl::android::graphics
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		jint getColor();
 		QAndroidJniObject getMode();
+		jint getColor();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -42,7 +42,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.BlendModeColorFilter",
 			"(ILandroid/graphics/BlendMode;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -61,18 +62,18 @@ namespace __jni_impl::android::graphics
 			"()I"
 		);
 	}
-	jint BlendModeColorFilter::getColor()
-	{
-		return __thiz.callMethod<jint>(
-			"getColor",
-			"()I"
-		);
-	}
 	QAndroidJniObject BlendModeColorFilter::getMode()
 	{
 		return __thiz.callObjectMethod(
 			"getMode",
 			"()Landroid/graphics/BlendMode;"
+		);
+	}
+	jint BlendModeColorFilter::getColor()
+	{
+		return __thiz.callMethod<jint>(
+			"getColor",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::graphics

@@ -36,9 +36,9 @@ namespace __jni_impl::android::widget
 		// Methods
 		void setFactory(__jni_impl::__JniBaseClass arg0);
 		void reset();
-		QAndroidJniObject getNextView();
 		jstring getAccessibilityClassName();
 		void addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2);
+		QAndroidJniObject getNextView();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -56,7 +56,8 @@ namespace __jni_impl::android::widget
 		__thiz = QAndroidJniObject(
 			"android.widget.ViewSwitcher",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ViewSwitcher::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -64,7 +65,8 @@ namespace __jni_impl::android::widget
 			"android.widget.ViewSwitcher",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -83,13 +85,6 @@ namespace __jni_impl::android::widget
 			"()V"
 		);
 	}
-	QAndroidJniObject ViewSwitcher::getNextView()
-	{
-		return __thiz.callObjectMethod(
-			"getNextView",
-			"()Landroid/view/View;"
-		);
-	}
 	jstring ViewSwitcher::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
@@ -105,6 +100,13 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ViewSwitcher::getNextView()
+	{
+		return __thiz.callObjectMethod(
+			"getNextView",
+			"()Landroid/view/View;"
 		);
 	}
 } // namespace __jni_impl::android::widget

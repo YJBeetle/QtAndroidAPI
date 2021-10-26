@@ -34,9 +34,10 @@ namespace __jni_impl::android::net
 		jboolean isLocallyAssigned();
 		jstring toOuiString();
 		static QAndroidJniObject fromBytes(jbyteArray arg0);
+		static QAndroidJniObject fromString(jstring arg0);
+		static QAndroidJniObject fromString(const QString &arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		static QAndroidJniObject fromString(jstring arg0);
 	};
 } // namespace __jni_impl::android::net
 
@@ -151,6 +152,24 @@ namespace __jni_impl::android::net
 			arg0
 		);
 	}
+	QAndroidJniObject MacAddress::fromString(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.net.MacAddress",
+			"fromString",
+			"(Ljava/lang/String;)Landroid/net/MacAddress;",
+			arg0
+		);
+	}
+	QAndroidJniObject MacAddress::fromString(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.net.MacAddress",
+			"fromString",
+			"(Ljava/lang/String;)Landroid/net/MacAddress;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint MacAddress::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -165,15 +184,6 @@ namespace __jni_impl::android::net
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject MacAddress::fromString(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.MacAddress",
-			"fromString",
-			"(Ljava/lang/String;)Landroid/net/MacAddress;",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::net

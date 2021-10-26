@@ -60,7 +60,8 @@ namespace __jni_impl::android::nfc
 		__thiz = QAndroidJniObject(
 			"android.nfc.NdefMessage",
 			"([Landroid/nfc/NdefRecord;)V",
-			arg0);
+			arg0
+		);
 	}
 	void NdefMessage::__constructor(__jni_impl::android::nfc::NdefRecord arg0, jarray arg1)
 	{
@@ -68,14 +69,16 @@ namespace __jni_impl::android::nfc
 			"android.nfc.NdefMessage",
 			"(Landroid/nfc/NdefRecord;[Landroid/nfc/NdefRecord;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void NdefMessage::__constructor(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.nfc.NdefMessage",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

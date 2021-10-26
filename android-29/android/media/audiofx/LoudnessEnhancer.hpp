@@ -19,8 +19,8 @@ namespace __jni_impl::android::media::audiofx
 		void __constructor(jint arg0);
 		
 		// Methods
-		void setTargetGain(jint arg0);
 		jfloat getTargetGain();
+		void setTargetGain(jint arg0);
 	};
 } // namespace __jni_impl::android::media::audiofx
 
@@ -42,23 +42,24 @@ namespace __jni_impl::android::media::audiofx
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.LoudnessEnhancer",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
+	jfloat LoudnessEnhancer::getTargetGain()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getTargetGain",
+			"()F"
+		);
+	}
 	void LoudnessEnhancer::setTargetGain(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setTargetGain",
 			"(I)V",
 			arg0
-		);
-	}
-	jfloat LoudnessEnhancer::getTargetGain()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getTargetGain",
-			"()F"
 		);
 	}
 } // namespace __jni_impl::android::media::audiofx

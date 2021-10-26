@@ -23,6 +23,7 @@ namespace __jni_impl::java::net
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::java::net
 
@@ -79,6 +80,15 @@ namespace __jni_impl::java::net
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/net/Proxy$Type;",
 			arg0
+		);
+	}
+	QAndroidJniObject Proxy_Type::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.net.Proxy$Type",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/net/Proxy$Type;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::net

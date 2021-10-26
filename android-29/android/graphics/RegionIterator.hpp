@@ -42,7 +42,8 @@ namespace __jni_impl::android::graphics
 		__thiz = QAndroidJniObject(
 			"android.graphics.RegionIterator",
 			"(Landroid/graphics/Region;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

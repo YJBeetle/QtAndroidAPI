@@ -35,7 +35,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.LightingColorFilter",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

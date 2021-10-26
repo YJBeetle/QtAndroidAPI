@@ -60,7 +60,8 @@ namespace __jni_impl::android::service::vr
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.vr.VrListenerService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

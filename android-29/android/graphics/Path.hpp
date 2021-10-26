@@ -102,14 +102,16 @@ namespace __jni_impl::android::graphics
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Path",
-			"()V");
+			"()V"
+		);
 	}
 	void Path::__constructor(__jni_impl::android::graphics::Path arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Path",
 			"(Landroid/graphics/Path;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

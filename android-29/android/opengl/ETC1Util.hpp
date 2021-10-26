@@ -56,7 +56,8 @@ namespace __jni_impl::android::opengl
 	{
 		__thiz = QAndroidJniObject(
 			"android.opengl.ETC1Util",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

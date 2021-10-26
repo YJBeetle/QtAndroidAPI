@@ -39,7 +39,8 @@ namespace __jni_impl::java::net
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.CookieHandler",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

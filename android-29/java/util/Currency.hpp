@@ -43,6 +43,7 @@ namespace __jni_impl::java::util
 		// Methods
 		jstring toString();
 		static QAndroidJniObject getInstance(jstring arg0);
+		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
 		jstring getDisplayName(__jni_impl::java::util::Locale arg0);
 		jstring getDisplayName();
@@ -90,6 +91,15 @@ namespace __jni_impl::java::util
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/util/Currency;",
 			arg0
+		);
+	}
+	QAndroidJniObject Currency::getInstance(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.Currency",
+			"getInstance",
+			"(Ljava/lang/String;)Ljava/util/Currency;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Currency::getInstance(__jni_impl::java::util::Locale arg0)

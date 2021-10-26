@@ -25,12 +25,17 @@ namespace __jni_impl::android::text
 		static QAndroidJniObject getInstance(jboolean arg0);
 		static QAndroidJniObject getInstance();
 		jboolean isRtl(jstring arg0);
+		jboolean isRtl(const QString &arg0);
 		jboolean isRtlContext();
 		jboolean getStereoReset();
 		jstring unicodeWrap(jstring arg0, jboolean arg1);
+		jstring unicodeWrap(const QString &arg0, jboolean arg1);
 		jstring unicodeWrap(jstring arg0);
+		jstring unicodeWrap(const QString &arg0);
 		jstring unicodeWrap(jstring arg0, __jni_impl::__JniBaseClass arg1, jboolean arg2);
+		jstring unicodeWrap(const QString &arg0, __jni_impl::__JniBaseClass arg1, jboolean arg2);
 		jstring unicodeWrap(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		jstring unicodeWrap(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 	};
 } // namespace __jni_impl::android::text
 
@@ -83,6 +88,14 @@ namespace __jni_impl::android::text
 			arg0
 		);
 	}
+	jboolean BidiFormatter::isRtl(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isRtl",
+			"(Ljava/lang/CharSequence;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jboolean BidiFormatter::isRtlContext()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -106,12 +119,29 @@ namespace __jni_impl::android::text
 			arg1
 		).object<jstring>();
 	}
+	jstring BidiFormatter::unicodeWrap(const QString &arg0, jboolean arg1)
+	{
+		return __thiz.callObjectMethod(
+			"unicodeWrap",
+			"(Ljava/lang/CharSequence;Z)Ljava/lang/CharSequence;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		).object<jstring>();
+	}
 	jstring BidiFormatter::unicodeWrap(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"unicodeWrap",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring BidiFormatter::unicodeWrap(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"unicodeWrap",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring BidiFormatter::unicodeWrap(jstring arg0, __jni_impl::__JniBaseClass arg1, jboolean arg2)
@@ -124,12 +154,31 @@ namespace __jni_impl::android::text
 			arg2
 		).object<jstring>();
 	}
+	jstring BidiFormatter::unicodeWrap(const QString &arg0, __jni_impl::__JniBaseClass arg1, jboolean arg2)
+	{
+		return __thiz.callObjectMethod(
+			"unicodeWrap",
+			"(Ljava/lang/String;Landroid/text/TextDirectionHeuristic;Z)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2
+		).object<jstring>();
+	}
 	jstring BidiFormatter::unicodeWrap(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"unicodeWrap",
 			"(Ljava/lang/String;Landroid/text/TextDirectionHeuristic;)Ljava/lang/String;",
 			arg0,
+			arg1.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring BidiFormatter::unicodeWrap(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return __thiz.callObjectMethod(
+			"unicodeWrap",
+			"(Ljava/lang/String;Landroid/text/TextDirectionHeuristic;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jstring>();
 	}

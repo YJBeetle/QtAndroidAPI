@@ -45,7 +45,8 @@ namespace __jni_impl::android::renderscript
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Short2",
-			"()V");
+			"()V"
+		);
 	}
 	void Short2::__constructor(jshort arg0, jshort arg1)
 	{
@@ -53,7 +54,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.Short2",
 			"(SS)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

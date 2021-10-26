@@ -77,7 +77,8 @@ namespace __jni_impl::android::bluetooth::le
 	{
 		__thiz = QAndroidJniObject(
 			"android.bluetooth.le.AdvertiseCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

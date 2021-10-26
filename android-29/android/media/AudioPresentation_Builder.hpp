@@ -49,7 +49,8 @@ namespace __jni_impl::android::media
 		__thiz = QAndroidJniObject(
 			"android.media.AudioPresentation$Builder",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

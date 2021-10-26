@@ -39,7 +39,8 @@ namespace __jni_impl::android::os
 		__thiz = QAndroidJniObject(
 			"android.os.ParcelFileDescriptor$AutoCloseOutputStream",
 			"(Landroid/os/ParcelFileDescriptor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

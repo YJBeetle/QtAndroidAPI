@@ -45,7 +45,8 @@ namespace __jni_impl::java::lang::invoke
 		__thiz = QAndroidJniObject(
 			"java.lang.invoke.ConstantCallSite",
 			"(Ljava/lang/invoke/MethodHandle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

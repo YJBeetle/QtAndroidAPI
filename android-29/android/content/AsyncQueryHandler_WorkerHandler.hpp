@@ -49,7 +49,8 @@ namespace __jni_impl::android::content
 			"android.content.AsyncQueryHandler$WorkerHandler",
 			"(Landroid/content/AsyncQueryHandler;Landroid/os/Looper;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

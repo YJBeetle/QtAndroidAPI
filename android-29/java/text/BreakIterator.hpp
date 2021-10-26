@@ -31,6 +31,7 @@ namespace __jni_impl::java::text
 		static jarray getAvailableLocales();
 		void setText(__jni_impl::__JniBaseClass arg0);
 		void setText(jstring arg0);
+		void setText(const QString &arg0);
 		static QAndroidJniObject getWordInstance(__jni_impl::java::util::Locale arg0);
 		static QAndroidJniObject getWordInstance();
 		static QAndroidJniObject getLineInstance();
@@ -134,6 +135,14 @@ namespace __jni_impl::java::text
 			"setText",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void BreakIterator::setText(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setText",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject BreakIterator::getWordInstance(__jni_impl::java::util::Locale arg0)

@@ -35,7 +35,8 @@ namespace __jni_impl::android::os
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.ProxyFileDescriptorCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -55,7 +55,6 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		static jboolean isDefault(__jni_impl::android::net::Uri arg0);
-		void setType(jint arg0);
 		jint inferStreamType();
 		void setStopPreviousRingtone(jboolean arg0);
 		void stopPreviousRingtone();
@@ -63,8 +62,8 @@ namespace __jni_impl::android::media
 		jboolean getIncludeDrm();
 		void setIncludeDrm(jboolean arg0);
 		QAndroidJniObject getCursor();
-		static QAndroidJniObject getRingtone(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1);
 		QAndroidJniObject getRingtone(jint arg0);
+		static QAndroidJniObject getRingtone(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1);
 		QAndroidJniObject getRingtoneUri(jint arg0);
 		jint getRingtonePosition(__jni_impl::android::net::Uri arg0);
 		static QAndroidJniObject getValidRingtoneUri(__jni_impl::android::content::Context arg0);
@@ -73,8 +72,9 @@ namespace __jni_impl::android::media
 		static jint getDefaultType(__jni_impl::android::net::Uri arg0);
 		static QAndroidJniObject getDefaultUri(jint arg0);
 		static QAndroidJniObject openDefaultRingtoneUri(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1);
-		static jboolean hasHapticChannels(__jni_impl::android::net::Uri arg0);
 		jboolean hasHapticChannels(jint arg0);
+		static jboolean hasHapticChannels(__jni_impl::android::net::Uri arg0);
+		void setType(jint arg0);
 	};
 } // namespace __jni_impl::android::media
 
@@ -215,14 +215,16 @@ namespace __jni_impl::android::media
 		__thiz = QAndroidJniObject(
 			"android.media.RingtoneManager",
 			"(Landroid/app/Activity;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void RingtoneManager::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.RingtoneManager",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -233,14 +235,6 @@ namespace __jni_impl::android::media
 			"isDefault",
 			"(Landroid/net/Uri;)Z",
 			arg0.__jniObject().object()
-		);
-	}
-	void RingtoneManager::setType(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setType",
-			"(I)V",
-			arg0
 		);
 	}
 	jint RingtoneManager::inferStreamType()
@@ -294,6 +288,14 @@ namespace __jni_impl::android::media
 			"()Landroid/database/Cursor;"
 		);
 	}
+	QAndroidJniObject RingtoneManager::getRingtone(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getRingtone",
+			"(I)Landroid/media/Ringtone;",
+			arg0
+		);
+	}
 	QAndroidJniObject RingtoneManager::getRingtone(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -302,14 +304,6 @@ namespace __jni_impl::android::media
 			"(Landroid/content/Context;Landroid/net/Uri;)Landroid/media/Ringtone;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject RingtoneManager::getRingtone(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getRingtone",
-			"(I)Landroid/media/Ringtone;",
-			arg0
 		);
 	}
 	QAndroidJniObject RingtoneManager::getRingtoneUri(jint arg0)
@@ -386,6 +380,14 @@ namespace __jni_impl::android::media
 			arg1.__jniObject().object()
 		);
 	}
+	jboolean RingtoneManager::hasHapticChannels(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasHapticChannels",
+			"(I)Z",
+			arg0
+		);
+	}
 	jboolean RingtoneManager::hasHapticChannels(__jni_impl::android::net::Uri arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -395,11 +397,11 @@ namespace __jni_impl::android::media
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean RingtoneManager::hasHapticChannels(jint arg0)
+	void RingtoneManager::setType(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"hasHapticChannels",
-			"(I)Z",
+		__thiz.callMethod<void>(
+			"setType",
+			"(I)V",
 			arg0
 		);
 	}

@@ -39,7 +39,8 @@ namespace __jni_impl::android::content
 		__thiz = QAndroidJniObject(
 			"android.content.Intent$FilterComparison",
 			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

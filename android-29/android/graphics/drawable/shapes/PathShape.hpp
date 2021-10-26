@@ -58,7 +58,8 @@ namespace __jni_impl::android::graphics::drawable::shapes
 			"(Landroid/graphics/Path;FF)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods

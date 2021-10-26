@@ -304,7 +304,8 @@ namespace __jni_impl::android::net
 		__thiz = QAndroidJniObject(
 			"android.net.NetworkCapabilities",
 			"(Landroid/net/NetworkCapabilities;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

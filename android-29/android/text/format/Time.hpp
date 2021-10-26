@@ -48,12 +48,15 @@ namespace __jni_impl::android::text::format
 		void __constructor(__jni_impl::android::text::format::Time arg0);
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jstring toString();
 		void clear(jstring arg0);
+		void clear(const QString &arg0);
 		static jint compare(__jni_impl::android::text::format::Time arg0, __jni_impl::android::text::format::Time arg1);
 		jstring format(jstring arg0);
+		jstring format(const QString &arg0);
 		void set(jlong arg0);
 		void set(jint arg0, jint arg1, jint arg2);
 		void set(__jni_impl::android::text::format::Time arg0);
@@ -63,10 +66,13 @@ namespace __jni_impl::android::text::format
 		jboolean before(__jni_impl::android::text::format::Time arg0);
 		jboolean after(__jni_impl::android::text::format::Time arg0);
 		jboolean parse(jstring arg0);
+		jboolean parse(const QString &arg0);
 		jint getActualMaximum(jint arg0);
 		jint getWeekNumber();
 		void switchTimezone(jstring arg0);
+		void switchTimezone(const QString &arg0);
 		jboolean parse3339(jstring arg0);
+		jboolean parse3339(const QString &arg0);
 		static jstring getCurrentTimezone();
 		void setToNow();
 		jstring format2445();
@@ -297,20 +303,31 @@ namespace __jni_impl::android::text::format
 		__thiz = QAndroidJniObject(
 			"android.text.format.Time",
 			"(Landroid/text/format/Time;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Time::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.format.Time",
-			"()V");
+			"()V"
+		);
 	}
 	void Time::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.format.Time",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Time::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.format.Time",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -329,6 +346,14 @@ namespace __jni_impl::android::text::format
 			arg0
 		);
 	}
+	void Time::clear(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"clear",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint Time::compare(__jni_impl::android::text::format::Time arg0, __jni_impl::android::text::format::Time arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -345,6 +370,14 @@ namespace __jni_impl::android::text::format
 			"format",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring Time::format(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"format",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	void Time::set(jlong arg0)
@@ -426,6 +459,14 @@ namespace __jni_impl::android::text::format
 			arg0
 		);
 	}
+	jboolean Time::parse(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"parse",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint Time::getActualMaximum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -449,12 +490,28 @@ namespace __jni_impl::android::text::format
 			arg0
 		);
 	}
+	void Time::switchTimezone(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"switchTimezone",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jboolean Time::parse3339(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"parse3339",
 			"(Ljava/lang/String;)Z",
 			arg0
+		);
+	}
+	jboolean Time::parse3339(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"parse3339",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring Time::getCurrentTimezone()

@@ -52,6 +52,7 @@ namespace __jni_impl::android::view::accessibility
 		
 		// Constructors
 		void __constructor(jint arg0, jstring arg1);
+		void __constructor(jint arg0, const QString &arg1);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -370,7 +371,17 @@ namespace __jni_impl::android::view::accessibility
 			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void AccessibilityNodeInfo_AccessibilityAction::__constructor(jint arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction",
+			"(ILjava/lang/CharSequence;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods

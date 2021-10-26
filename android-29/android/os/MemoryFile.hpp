@@ -23,6 +23,7 @@ namespace __jni_impl::android::os
 		
 		// Constructors
 		void __constructor(jstring arg0, jint arg1);
+		void __constructor(const QString &arg0, jint arg1);
 		
 		// Methods
 		jint length();
@@ -30,9 +31,9 @@ namespace __jni_impl::android::os
 		QAndroidJniObject getInputStream();
 		jint readBytes(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
 		void writeBytes(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
+		QAndroidJniObject getOutputStream();
 		jboolean isPurgingAllowed();
 		jboolean allowPurging(jboolean arg0);
-		QAndroidJniObject getOutputStream();
 	};
 } // namespace __jni_impl::android::os
 
@@ -50,7 +51,17 @@ namespace __jni_impl::android::os
 			"android.os.MemoryFile",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void MemoryFile::__constructor(const QString &arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.os.MemoryFile",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods
@@ -97,6 +108,13 @@ namespace __jni_impl::android::os
 			arg3
 		);
 	}
+	QAndroidJniObject MemoryFile::getOutputStream()
+	{
+		return __thiz.callObjectMethod(
+			"getOutputStream",
+			"()Ljava/io/OutputStream;"
+		);
+	}
 	jboolean MemoryFile::isPurgingAllowed()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -110,13 +128,6 @@ namespace __jni_impl::android::os
 			"allowPurging",
 			"(Z)Z",
 			arg0
-		);
-	}
-	QAndroidJniObject MemoryFile::getOutputStream()
-	{
-		return __thiz.callObjectMethod(
-			"getOutputStream",
-			"()Ljava/io/OutputStream;"
 		);
 	}
 } // namespace __jni_impl::android::os

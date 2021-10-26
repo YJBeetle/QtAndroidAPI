@@ -224,7 +224,8 @@ namespace __jni_impl::android::net::wifi
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.WifiConfiguration",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

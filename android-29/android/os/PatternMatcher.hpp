@@ -24,11 +24,13 @@ namespace __jni_impl::android::os
 		
 		// Constructors
 		void __constructor(jstring arg0, jint arg1);
+		void __constructor(const QString &arg0, jint arg1);
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
 		jstring toString();
 		jboolean match(jstring arg0);
+		jboolean match(const QString &arg0);
 		jint getType();
 		jstring getPath();
 		jint describeContents();
@@ -85,14 +87,25 @@ namespace __jni_impl::android::os
 			"android.os.PatternMatcher",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void PatternMatcher::__constructor(const QString &arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.os.PatternMatcher",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void PatternMatcher::__constructor(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.PatternMatcher",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -109,6 +122,14 @@ namespace __jni_impl::android::os
 			"match",
 			"(Ljava/lang/String;)Z",
 			arg0
+		);
+	}
+	jboolean PatternMatcher::match(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"match",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint PatternMatcher::getType()

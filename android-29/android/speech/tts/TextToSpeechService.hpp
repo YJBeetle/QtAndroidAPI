@@ -30,8 +30,11 @@ namespace __jni_impl::android::speech::tts
 		// Methods
 		QAndroidJniObject onGetVoices();
 		jstring onGetDefaultVoiceNameFor(jstring arg0, jstring arg1, jstring arg2);
+		jstring onGetDefaultVoiceNameFor(const QString &arg0, const QString &arg1, const QString &arg2);
 		jint onLoadVoice(jstring arg0);
+		jint onLoadVoice(const QString &arg0);
 		jint onIsValidVoiceName(jstring arg0);
+		jint onIsValidVoiceName(const QString &arg0);
 		void onCreate();
 		void onDestroy();
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
@@ -50,7 +53,8 @@ namespace __jni_impl::android::speech::tts
 	{
 		__thiz = QAndroidJniObject(
 			"android.speech.tts.TextToSpeechService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -71,6 +75,16 @@ namespace __jni_impl::android::speech::tts
 			arg2
 		).object<jstring>();
 	}
+	jstring TextToSpeechService::onGetDefaultVoiceNameFor(const QString &arg0, const QString &arg1, const QString &arg2)
+	{
+		return __thiz.callObjectMethod(
+			"onGetDefaultVoiceNameFor",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		).object<jstring>();
+	}
 	jint TextToSpeechService::onLoadVoice(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -79,12 +93,28 @@ namespace __jni_impl::android::speech::tts
 			arg0
 		);
 	}
+	jint TextToSpeechService::onLoadVoice(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"onLoadVoice",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint TextToSpeechService::onIsValidVoiceName(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"onIsValidVoiceName",
 			"(Ljava/lang/String;)I",
 			arg0
+		);
+	}
+	jint TextToSpeechService::onIsValidVoiceName(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"onIsValidVoiceName",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void TextToSpeechService::onCreate()

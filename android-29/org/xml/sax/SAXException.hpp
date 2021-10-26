@@ -28,8 +28,10 @@ namespace __jni_impl::org::xml::sax
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::java::lang::Exception arg1);
+		void __constructor(const QString &arg0, __jni_impl::java::lang::Exception arg1);
 		void __constructor(__jni_impl::java::lang::Exception arg0);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor();
 		
 		// Methods
@@ -55,27 +57,48 @@ namespace __jni_impl::org::xml::sax
 			"org.xml.sax.SAXException",
 			"(Ljava/lang/String;Ljava/lang/Exception;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void SAXException::__constructor(const QString &arg0, __jni_impl::java::lang::Exception arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"org.xml.sax.SAXException",
+			"(Ljava/lang/String;Ljava/lang/Exception;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	void SAXException::__constructor(__jni_impl::java::lang::Exception arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.SAXException",
 			"(Ljava/lang/Exception;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SAXException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.SAXException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void SAXException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"org.xml.sax.SAXException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void SAXException::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.SAXException",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

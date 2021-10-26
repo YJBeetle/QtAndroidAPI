@@ -33,7 +33,8 @@ namespace __jni_impl::android::icu::text
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.IDNA$Info",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

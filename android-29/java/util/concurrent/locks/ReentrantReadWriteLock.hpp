@@ -60,14 +60,16 @@ namespace __jni_impl::java::util::concurrent::locks
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.locks.ReentrantReadWriteLock",
-			"()V");
+			"()V"
+		);
 	}
 	void ReentrantReadWriteLock::__constructor(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.locks.ReentrantReadWriteLock",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

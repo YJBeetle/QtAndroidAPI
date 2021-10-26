@@ -33,7 +33,8 @@ namespace __jni_impl::javax::crypto::spec
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.IvParameterSpec",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	void IvParameterSpec::__constructor(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -42,7 +43,8 @@ namespace __jni_impl::javax::crypto::spec
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods

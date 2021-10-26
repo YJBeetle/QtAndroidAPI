@@ -19,7 +19,9 @@ namespace __jni_impl::java::security::cert
 		// Constructors
 		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
+		void __constructor(const QString &arg0, jthrowable arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor();
 		
 		// Methods
@@ -37,7 +39,8 @@ namespace __jni_impl::java::security::cert
 		__thiz = QAndroidJniObject(
 			"java.security.cert.CertificateParsingException",
 			"(Ljava/lang/Throwable;)V",
-			arg0);
+			arg0
+		);
 	}
 	void CertificateParsingException::__constructor(jstring arg0, jthrowable arg1)
 	{
@@ -45,20 +48,40 @@ namespace __jni_impl::java::security::cert
 			"java.security.cert.CertificateParsingException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void CertificateParsingException::__constructor(const QString &arg0, jthrowable arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.cert.CertificateParsingException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void CertificateParsingException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.CertificateParsingException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void CertificateParsingException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.cert.CertificateParsingException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void CertificateParsingException::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.CertificateParsingException",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

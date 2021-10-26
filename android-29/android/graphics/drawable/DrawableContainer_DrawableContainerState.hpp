@@ -36,6 +36,12 @@ namespace __jni_impl::android::graphics::drawable
 		// Methods
 		void growArray(jint arg0, jint arg1);
 		jarray getChildren();
+		jint getChildCount();
+		jint addChild(__jni_impl::android::graphics::drawable::Drawable arg0);
+		jint getChangingConfigurations();
+		jboolean isStateful();
+		jboolean canApplyTheme();
+		jint getOpacity();
 		QAndroidJniObject getChild(jint arg0);
 		void setEnterFadeDuration(jint arg0);
 		void setExitFadeDuration(jint arg0);
@@ -50,12 +56,6 @@ namespace __jni_impl::android::graphics::drawable
 		jint getEnterFadeDuration();
 		jint getExitFadeDuration();
 		jboolean canConstantState();
-		jint getChangingConfigurations();
-		jboolean isStateful();
-		jboolean canApplyTheme();
-		jint getOpacity();
-		jint addChild(__jni_impl::android::graphics::drawable::Drawable arg0);
-		jint getChildCount();
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
@@ -92,6 +92,49 @@ namespace __jni_impl::android::graphics::drawable
 			"getChildren",
 			"()[Landroid/graphics/drawable/Drawable;"
 		).object<jarray>();
+	}
+	jint DrawableContainer_DrawableContainerState::getChildCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getChildCount",
+			"()I"
+		);
+	}
+	jint DrawableContainer_DrawableContainerState::addChild(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"addChild",
+			"(Landroid/graphics/drawable/Drawable;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	jint DrawableContainer_DrawableContainerState::getChangingConfigurations()
+	{
+		return __thiz.callMethod<jint>(
+			"getChangingConfigurations",
+			"()I"
+		);
+	}
+	jboolean DrawableContainer_DrawableContainerState::isStateful()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isStateful",
+			"()Z"
+		);
+	}
+	jboolean DrawableContainer_DrawableContainerState::canApplyTheme()
+	{
+		return __thiz.callMethod<jboolean>(
+			"canApplyTheme",
+			"()Z"
+		);
+	}
+	jint DrawableContainer_DrawableContainerState::getOpacity()
+	{
+		return __thiz.callMethod<jint>(
+			"getOpacity",
+			"()I"
+		);
 	}
 	QAndroidJniObject DrawableContainer_DrawableContainerState::getChild(jint arg0)
 	{
@@ -194,49 +237,6 @@ namespace __jni_impl::android::graphics::drawable
 		return __thiz.callMethod<jboolean>(
 			"canConstantState",
 			"()Z"
-		);
-	}
-	jint DrawableContainer_DrawableContainerState::getChangingConfigurations()
-	{
-		return __thiz.callMethod<jint>(
-			"getChangingConfigurations",
-			"()I"
-		);
-	}
-	jboolean DrawableContainer_DrawableContainerState::isStateful()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isStateful",
-			"()Z"
-		);
-	}
-	jboolean DrawableContainer_DrawableContainerState::canApplyTheme()
-	{
-		return __thiz.callMethod<jboolean>(
-			"canApplyTheme",
-			"()Z"
-		);
-	}
-	jint DrawableContainer_DrawableContainerState::getOpacity()
-	{
-		return __thiz.callMethod<jint>(
-			"getOpacity",
-			"()I"
-		);
-	}
-	jint DrawableContainer_DrawableContainerState::addChild(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"addChild",
-			"(Landroid/graphics/drawable/Drawable;)I",
-			arg0.__jniObject().object()
-		);
-	}
-	jint DrawableContainer_DrawableContainerState::getChildCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getChildCount",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::graphics::drawable

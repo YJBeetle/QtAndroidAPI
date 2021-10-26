@@ -19,13 +19,16 @@ namespace __jni_impl::android::drm
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
+		jstring getDescription();
+		void setDescription(jstring arg0);
+		void setDescription(const QString &arg0);
 		void addMimeType(jstring arg0);
+		void addMimeType(const QString &arg0);
 		void addFileSuffix(jstring arg0);
+		void addFileSuffix(const QString &arg0);
 		QAndroidJniObject getMimeTypeIterator();
 		QAndroidJniObject getFileSuffixIterator();
 		jstring getDescriprition();
-		void setDescription(jstring arg0);
-		jstring getDescription();
 	};
 } // namespace __jni_impl::android::drm
 
@@ -39,7 +42,8 @@ namespace __jni_impl::android::drm
 	{
 		__thiz = QAndroidJniObject(
 			"android.drm.DrmSupportInfo",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -58,6 +62,29 @@ namespace __jni_impl::android::drm
 			"()I"
 		);
 	}
+	jstring DrmSupportInfo::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void DrmSupportInfo::setDescription(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDescription",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void DrmSupportInfo::setDescription(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDescription",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void DrmSupportInfo::addMimeType(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -66,12 +93,28 @@ namespace __jni_impl::android::drm
 			arg0
 		);
 	}
+	void DrmSupportInfo::addMimeType(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"addMimeType",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void DrmSupportInfo::addFileSuffix(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"addFileSuffix",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void DrmSupportInfo::addFileSuffix(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"addFileSuffix",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject DrmSupportInfo::getMimeTypeIterator()
@@ -92,21 +135,6 @@ namespace __jni_impl::android::drm
 	{
 		return __thiz.callObjectMethod(
 			"getDescriprition",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void DrmSupportInfo::setDescription(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDescription",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	jstring DrmSupportInfo::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

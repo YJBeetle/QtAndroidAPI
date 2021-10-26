@@ -53,14 +53,16 @@ namespace __jni_impl::java::util::jar
 			"java.util.jar.JarOutputStream",
 			"(Ljava/io/OutputStream;Ljava/util/jar/Manifest;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void JarOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarOutputStream",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

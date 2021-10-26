@@ -30,7 +30,8 @@ namespace __jni_impl::android::text
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.NoCopySpan$Concrete",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

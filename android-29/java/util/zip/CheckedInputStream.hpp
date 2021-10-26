@@ -43,7 +43,8 @@ namespace __jni_impl::java::util::zip
 			"java.util.zip.CheckedInputStream",
 			"(Ljava/io/InputStream;Ljava/util/zip/Checksum;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

@@ -31,6 +31,7 @@ namespace __jni_impl::java::util
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		void __constructor();
@@ -48,6 +49,7 @@ namespace __jni_impl::java::util
 		jboolean before(__jni_impl::java::util::Date arg0);
 		jboolean after(__jni_impl::java::util::Date arg0);
 		static jlong parse(jstring arg0);
+		static jlong parse(const QString &arg0);
 		jint getSeconds();
 		QAndroidJniObject toInstant();
 		static jlong UTC(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
@@ -86,7 +88,16 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.Date",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Date::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.Date",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void Date::__constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
@@ -98,7 +109,8 @@ namespace __jni_impl::java::util
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	void Date::__constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
@@ -109,20 +121,23 @@ namespace __jni_impl::java::util
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Date::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Date",
-			"()V");
+			"()V"
+		);
 	}
 	void Date::__constructor(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Date",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	void Date::__constructor(jint arg0, jint arg1, jint arg2)
 	{
@@ -131,7 +146,8 @@ namespace __jni_impl::java::util
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods
@@ -212,6 +228,15 @@ namespace __jni_impl::java::util
 			"parse",
 			"(Ljava/lang/String;)J",
 			arg0
+		);
+	}
+	jlong Date::parse(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jlong>(
+			"java.util.Date",
+			"parse",
+			"(Ljava/lang/String;)J",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint Date::getSeconds()

@@ -38,9 +38,9 @@ namespace __jni_impl::android::graphics::fonts
 		jint hashCode();
 		QAndroidJniObject getFile();
 		QAndroidJniObject getBuffer();
+		QAndroidJniObject getStyle();
 		jint getTtcIndex();
 		jarray getAxes();
-		QAndroidJniObject getStyle();
 		QAndroidJniObject getLocaleList();
 	};
 } // namespace __jni_impl::android::graphics::fonts
@@ -99,6 +99,13 @@ namespace __jni_impl::android::graphics::fonts
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
+	QAndroidJniObject Font::getStyle()
+	{
+		return __thiz.callObjectMethod(
+			"getStyle",
+			"()Landroid/graphics/fonts/FontStyle;"
+		);
+	}
 	jint Font::getTtcIndex()
 	{
 		return __thiz.callMethod<jint>(
@@ -112,13 +119,6 @@ namespace __jni_impl::android::graphics::fonts
 			"getAxes",
 			"()[Landroid/graphics/fonts/FontVariationAxis;"
 		).object<jarray>();
-	}
-	QAndroidJniObject Font::getStyle()
-	{
-		return __thiz.callObjectMethod(
-			"getStyle",
-			"()Landroid/graphics/fonts/FontStyle;"
-		);
 	}
 	QAndroidJniObject Font::getLocaleList()
 	{

@@ -28,6 +28,7 @@ namespace __jni_impl::android::text::method
 		
 		// Methods
 		jstring filter(jstring arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5);
+		jstring filter(const QString &arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5);
 		jboolean onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
 	};
 } // namespace __jni_impl::android::text::method
@@ -44,7 +45,8 @@ namespace __jni_impl::android::text::method
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.method.NumberKeyListener",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -54,6 +56,19 @@ namespace __jni_impl::android::text::method
 			"filter",
 			"(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;",
 			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object(),
+			arg4,
+			arg5
+		).object<jstring>();
+	}
+	jstring NumberKeyListener::filter(const QString &arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5)
+	{
+		return __thiz.callObjectMethod(
+			"filter",
+			"(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),

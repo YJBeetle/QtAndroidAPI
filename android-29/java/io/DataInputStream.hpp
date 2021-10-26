@@ -56,7 +56,8 @@ namespace __jni_impl::java::io
 		__thiz = QAndroidJniObject(
 			"java.io.DataInputStream",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

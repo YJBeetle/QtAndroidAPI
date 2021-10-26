@@ -41,12 +41,15 @@ namespace __jni_impl::android::view::animation
 		void reset();
 		jlong getDuration();
 		void cancel();
-		jlong getStartOffset();
+		void setDuration(jlong arg0);
+		void setInterpolator(__jni_impl::android::content::Context arg0, jint arg1);
+		void setInterpolator(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getInterpolator();
+		jint getRepeatCount();
 		jboolean hasStarted();
-		jboolean getTransformation(jlong arg0, __jni_impl::android::view::animation::Transformation arg1, jfloat arg2);
-		jboolean getTransformation(jlong arg0, __jni_impl::android::view::animation::Transformation arg1);
-		void setRepeatCount(jint arg0);
+		jint getBackgroundColor();
 		void setBackgroundColor(jint arg0);
+		void setRepeatCount(jint arg0);
 		jboolean isInitialized();
 		void setStartOffset(jlong arg0);
 		void restrictDuration(jlong arg0);
@@ -70,13 +73,10 @@ namespace __jni_impl::android::view::animation
 		void setAnimationListener(__jni_impl::__JniBaseClass arg0);
 		jlong computeDurationHint();
 		jboolean hasEnded();
-		void setDuration(jlong arg0);
-		void setInterpolator(__jni_impl::__JniBaseClass arg0);
-		void setInterpolator(__jni_impl::android::content::Context arg0, jint arg1);
-		QAndroidJniObject getInterpolator();
-		jint getRepeatCount();
-		jint getBackgroundColor();
 		jlong getStartTime();
+		jboolean getTransformation(jlong arg0, __jni_impl::android::view::animation::Transformation arg1);
+		jboolean getTransformation(jlong arg0, __jni_impl::android::view::animation::Transformation arg1, jfloat arg2);
+		jlong getStartOffset();
 	};
 } // namespace __jni_impl::android::view::animation
 
@@ -162,7 +162,8 @@ namespace __jni_impl::android::view::animation
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.Animation",
-			"()V");
+			"()V"
+		);
 	}
 	void Animation::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -170,7 +171,8 @@ namespace __jni_impl::android::view::animation
 			"android.view.animation.Animation",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -213,11 +215,43 @@ namespace __jni_impl::android::view::animation
 			"()V"
 		);
 	}
-	jlong Animation::getStartOffset()
+	void Animation::setDuration(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
-			"getStartOffset",
-			"()J"
+		__thiz.callMethod<void>(
+			"setDuration",
+			"(J)V",
+			arg0
+		);
+	}
+	void Animation::setInterpolator(__jni_impl::android::content::Context arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setInterpolator",
+			"(Landroid/content/Context;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void Animation::setInterpolator(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setInterpolator",
+			"(Landroid/view/animation/Interpolator;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Animation::getInterpolator()
+	{
+		return __thiz.callObjectMethod(
+			"getInterpolator",
+			"()Landroid/view/animation/Interpolator;"
+		);
+	}
+	jint Animation::getRepeatCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getRepeatCount",
+			"()I"
 		);
 	}
 	jboolean Animation::hasStarted()
@@ -227,37 +261,25 @@ namespace __jni_impl::android::view::animation
 			"()Z"
 		);
 	}
-	jboolean Animation::getTransformation(jlong arg0, __jni_impl::android::view::animation::Transformation arg1, jfloat arg2)
+	jint Animation::getBackgroundColor()
 	{
-		return __thiz.callMethod<jboolean>(
-			"getTransformation",
-			"(JLandroid/view/animation/Transformation;F)Z",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	jboolean Animation::getTransformation(jlong arg0, __jni_impl::android::view::animation::Transformation arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getTransformation",
-			"(JLandroid/view/animation/Transformation;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void Animation::setRepeatCount(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRepeatCount",
-			"(I)V",
-			arg0
+		return __thiz.callMethod<jint>(
+			"getBackgroundColor",
+			"()I"
 		);
 	}
 	void Animation::setBackgroundColor(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setBackgroundColor",
+			"(I)V",
+			arg0
+		);
+	}
+	void Animation::setRepeatCount(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRepeatCount",
 			"(I)V",
 			arg0
 		);
@@ -434,56 +456,36 @@ namespace __jni_impl::android::view::animation
 			"()Z"
 		);
 	}
-	void Animation::setDuration(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDuration",
-			"(J)V",
-			arg0
-		);
-	}
-	void Animation::setInterpolator(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setInterpolator",
-			"(Landroid/view/animation/Interpolator;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Animation::setInterpolator(__jni_impl::android::content::Context arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setInterpolator",
-			"(Landroid/content/Context;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject Animation::getInterpolator()
-	{
-		return __thiz.callObjectMethod(
-			"getInterpolator",
-			"()Landroid/view/animation/Interpolator;"
-		);
-	}
-	jint Animation::getRepeatCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getRepeatCount",
-			"()I"
-		);
-	}
-	jint Animation::getBackgroundColor()
-	{
-		return __thiz.callMethod<jint>(
-			"getBackgroundColor",
-			"()I"
-		);
-	}
 	jlong Animation::getStartTime()
 	{
 		return __thiz.callMethod<jlong>(
 			"getStartTime",
+			"()J"
+		);
+	}
+	jboolean Animation::getTransformation(jlong arg0, __jni_impl::android::view::animation::Transformation arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getTransformation",
+			"(JLandroid/view/animation/Transformation;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean Animation::getTransformation(jlong arg0, __jni_impl::android::view::animation::Transformation arg1, jfloat arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getTransformation",
+			"(JLandroid/view/animation/Transformation;F)Z",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
+	jlong Animation::getStartOffset()
+	{
+		return __thiz.callMethod<jlong>(
+			"getStartOffset",
 			"()J"
 		);
 	}

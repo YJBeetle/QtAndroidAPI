@@ -25,14 +25,14 @@ namespace __jni_impl::android::telephony
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
-		jint getSlotIndex();
-		jboolean isEuicc();
-		jstring getEid();
 		jstring getIccId();
 		jint getCardId();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jboolean isRemovable();
+		jint getSlotIndex();
+		jboolean isEuicc();
+		jstring getEid();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -81,27 +81,6 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
-	jint UiccCardInfo::getSlotIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getSlotIndex",
-			"()I"
-		);
-	}
-	jboolean UiccCardInfo::isEuicc()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEuicc",
-			"()Z"
-		);
-	}
-	jstring UiccCardInfo::getEid()
-	{
-		return __thiz.callObjectMethod(
-			"getEid",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jstring UiccCardInfo::getIccId()
 	{
 		return __thiz.callObjectMethod(
@@ -138,6 +117,27 @@ namespace __jni_impl::android::telephony
 			"isRemovable",
 			"()Z"
 		);
+	}
+	jint UiccCardInfo::getSlotIndex()
+	{
+		return __thiz.callMethod<jint>(
+			"getSlotIndex",
+			"()I"
+		);
+	}
+	jboolean UiccCardInfo::isEuicc()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEuicc",
+			"()Z"
+		);
+	}
+	jstring UiccCardInfo::getEid()
+	{
+		return __thiz.callObjectMethod(
+			"getEid",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::telephony
 

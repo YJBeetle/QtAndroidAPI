@@ -37,7 +37,8 @@ namespace __jni_impl::android::media::audiofx
 			"android.media.audiofx.DynamicsProcessing$BandBase",
 			"(ZF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

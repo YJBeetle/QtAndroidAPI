@@ -20,6 +20,7 @@ namespace __jni_impl::android::webkit
 		// Methods
 		void cancel();
 		void proceed(jstring arg0, jstring arg1);
+		void proceed(const QString &arg0, const QString &arg1);
 		jboolean useHttpAuthUsernamePassword();
 	};
 } // namespace __jni_impl::android::webkit
@@ -52,6 +53,15 @@ namespace __jni_impl::android::webkit
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
+		);
+	}
+	void HttpAuthHandler::proceed(const QString &arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"proceed",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jboolean HttpAuthHandler::useHttpAuthUsernamePassword()

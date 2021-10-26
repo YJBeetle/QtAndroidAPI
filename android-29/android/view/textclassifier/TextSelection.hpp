@@ -28,14 +28,15 @@ namespace __jni_impl::android::view::textclassifier
 		// Methods
 		jstring toString();
 		jstring getId();
-		jfloat getConfidenceScore(jstring arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getExtras();
 		jint getSelectionStartIndex();
 		jint getSelectionEndIndex();
 		jint getEntityCount();
 		jstring getEntity(jint arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getExtras();
+		jfloat getConfidenceScore(jstring arg0);
+		jfloat getConfidenceScore(const QString &arg0);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -77,37 +78,6 @@ namespace __jni_impl::android::view::textclassifier
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jfloat TextSelection::getConfidenceScore(jstring arg0)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getConfidenceScore",
-			"(Ljava/lang/String;)F",
-			arg0
-		);
-	}
-	jint TextSelection::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void TextSelection::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject TextSelection::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
-		);
-	}
 	jint TextSelection::getSelectionStartIndex()
 	{
 		return __thiz.callMethod<jint>(
@@ -136,6 +106,45 @@ namespace __jni_impl::android::view::textclassifier
 			"(I)Ljava/lang/String;",
 			arg0
 		).object<jstring>();
+	}
+	jint TextSelection::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void TextSelection::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	QAndroidJniObject TextSelection::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	jfloat TextSelection::getConfidenceScore(jstring arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getConfidenceScore",
+			"(Ljava/lang/String;)F",
+			arg0
+		);
+	}
+	jfloat TextSelection::getConfidenceScore(const QString &arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getConfidenceScore",
+			"(Ljava/lang/String;)F",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

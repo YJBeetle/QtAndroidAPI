@@ -55,6 +55,7 @@ namespace __jni_impl::android::icu::util
 		jint compareTo(jobject arg0);
 		jint compareTo(__jni_impl::android::icu::util::VersionInfo arg0);
 		static QAndroidJniObject getInstance(jstring arg0);
+		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(jint arg0, jint arg1, jint arg2);
 		static QAndroidJniObject getInstance(jint arg0, jint arg1);
 		static QAndroidJniObject getInstance(jint arg0);
@@ -381,6 +382,15 @@ namespace __jni_impl::android::icu::util
 			"getInstance",
 			"(Ljava/lang/String;)Landroid/icu/util/VersionInfo;",
 			arg0
+		);
+	}
+	QAndroidJniObject VersionInfo::getInstance(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.VersionInfo",
+			"getInstance",
+			"(Ljava/lang/String;)Landroid/icu/util/VersionInfo;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject VersionInfo::getInstance(jint arg0, jint arg1, jint arg2)

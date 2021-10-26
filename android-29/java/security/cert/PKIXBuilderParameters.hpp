@@ -42,7 +42,8 @@ namespace __jni_impl::java::security::cert
 			"java.security.cert.PKIXBuilderParameters",
 			"(Ljava/util/Set;Ljava/security/cert/CertSelector;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void PKIXBuilderParameters::__constructor(__jni_impl::java::security::KeyStore arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -50,7 +51,8 @@ namespace __jni_impl::java::security::cert
 			"java.security.cert.PKIXBuilderParameters",
 			"(Ljava/security/KeyStore;Ljava/security/cert/CertSelector;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

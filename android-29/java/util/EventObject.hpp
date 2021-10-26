@@ -33,7 +33,8 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.EventObject",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

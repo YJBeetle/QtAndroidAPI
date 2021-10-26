@@ -31,7 +31,9 @@ namespace __jni_impl::java::io
 		void __constructor(__jni_impl::java::io::File arg0, jboolean arg1);
 		void __constructor(__jni_impl::java::io::File arg0);
 		void __constructor(jstring arg0, jboolean arg1);
+		void __constructor(const QString &arg0, jboolean arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		void write(jint arg0);
@@ -57,7 +59,8 @@ namespace __jni_impl::java::io
 		__thiz = QAndroidJniObject(
 			"java.io.FileOutputStream",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void FileOutputStream::__constructor(__jni_impl::java::io::File arg0, jboolean arg1)
 	{
@@ -65,14 +68,16 @@ namespace __jni_impl::java::io
 			"java.io.FileOutputStream",
 			"(Ljava/io/File;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void FileOutputStream::__constructor(__jni_impl::java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.FileOutputStream",
 			"(Ljava/io/File;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void FileOutputStream::__constructor(jstring arg0, jboolean arg1)
 	{
@@ -80,14 +85,33 @@ namespace __jni_impl::java::io
 			"java.io.FileOutputStream",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void FileOutputStream::__constructor(const QString &arg0, jboolean arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.FileOutputStream",
+			"(Ljava/lang/String;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void FileOutputStream::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.FileOutputStream",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void FileOutputStream::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.FileOutputStream",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

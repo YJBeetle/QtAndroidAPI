@@ -45,14 +45,16 @@ namespace __jni_impl::android::util
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.SparseLongArray",
-			"()V");
+			"()V"
+		);
 	}
 	void SparseLongArray::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.SparseLongArray",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

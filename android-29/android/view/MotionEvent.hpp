@@ -10,10 +10,6 @@ namespace __jni_impl::android::graphics
 {
 	class Matrix;
 }
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::view
 {
 	class MotionEvent_PointerCoords;
@@ -21,6 +17,10 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::view
 {
 	class MotionEvent_PointerProperties;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::view
@@ -128,29 +128,36 @@ namespace __jni_impl::android::view
 		// Methods
 		jstring toString();
 		void transform(__jni_impl::android::graphics::Matrix arg0);
-		jfloat getSize(jint arg0);
 		jfloat getSize();
+		jfloat getSize(jint arg0);
 		jint getSource();
 		jint getFlags();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void setAction(jint arg0);
+		jint getDeviceId();
+		void setSource(jint arg0);
+		jint getMetaState();
+		jlong getDownTime();
+		jlong getEventTime();
+		jfloat getX();
+		jfloat getX(jint arg0);
+		jfloat getY();
+		jfloat getY(jint arg0);
 		static QAndroidJniObject obtainNoHistory(__jni_impl::android::view::MotionEvent arg0);
 		jint getActionMasked();
 		jint getActionIndex();
-		jfloat getPressure();
 		jfloat getPressure(jint arg0);
+		jfloat getPressure();
 		jfloat getTouchMajor(jint arg0);
 		jfloat getTouchMajor();
 		jfloat getTouchMinor(jint arg0);
 		jfloat getTouchMinor();
-		jfloat getToolMajor();
 		jfloat getToolMajor(jint arg0);
-		jfloat getToolMinor();
+		jfloat getToolMajor();
 		jfloat getToolMinor(jint arg0);
-		jfloat getOrientation();
+		jfloat getToolMinor();
 		jfloat getOrientation(jint arg0);
-		jfloat getAxisValue(jint arg0);
+		jfloat getOrientation();
 		jfloat getAxisValue(jint arg0, jint arg1);
+		jfloat getAxisValue(jint arg0);
 		jint getPointerCount();
 		jint getPointerId(jint arg0);
 		jint getToolType(jint arg0);
@@ -162,32 +169,32 @@ namespace __jni_impl::android::view
 		jint getActionButton();
 		jfloat getRawX(jint arg0);
 		jfloat getRawX();
-		jfloat getRawY(jint arg0);
 		jfloat getRawY();
+		jfloat getRawY(jint arg0);
 		jfloat getXPrecision();
 		jfloat getYPrecision();
 		jint getHistorySize();
 		jlong getHistoricalEventTime(jint arg0);
 		jfloat getHistoricalX(jint arg0);
 		jfloat getHistoricalX(jint arg0, jint arg1);
-		jfloat getHistoricalY(jint arg0, jint arg1);
 		jfloat getHistoricalY(jint arg0);
-		jfloat getHistoricalPressure(jint arg0);
+		jfloat getHistoricalY(jint arg0, jint arg1);
 		jfloat getHistoricalPressure(jint arg0, jint arg1);
+		jfloat getHistoricalPressure(jint arg0);
 		jfloat getHistoricalSize(jint arg0);
 		jfloat getHistoricalSize(jint arg0, jint arg1);
 		jfloat getHistoricalTouchMajor(jint arg0, jint arg1);
 		jfloat getHistoricalTouchMajor(jint arg0);
-		jfloat getHistoricalTouchMinor(jint arg0, jint arg1);
 		jfloat getHistoricalTouchMinor(jint arg0);
+		jfloat getHistoricalTouchMinor(jint arg0, jint arg1);
 		jfloat getHistoricalToolMajor(jint arg0, jint arg1);
 		jfloat getHistoricalToolMajor(jint arg0);
 		jfloat getHistoricalToolMinor(jint arg0, jint arg1);
 		jfloat getHistoricalToolMinor(jint arg0);
 		jfloat getHistoricalOrientation(jint arg0);
 		jfloat getHistoricalOrientation(jint arg0, jint arg1);
-		jfloat getHistoricalAxisValue(jint arg0, jint arg1);
 		jfloat getHistoricalAxisValue(jint arg0, jint arg1, jint arg2);
+		jfloat getHistoricalAxisValue(jint arg0, jint arg1);
 		void getHistoricalPointerCoords(jint arg0, jint arg1, __jni_impl::android::view::MotionEvent_PointerCoords arg2);
 		jint getEdgeFlags();
 		void setEdgeFlags(jint arg0);
@@ -198,31 +205,25 @@ namespace __jni_impl::android::view
 		static jstring actionToString(jint arg0);
 		static jstring axisToString(jint arg0);
 		static jint axisFromString(jstring arg0);
+		static jint axisFromString(const QString &arg0);
 		jboolean isButtonPressed(jint arg0);
 		jint getAction();
-		jint getDeviceId();
-		void setSource(jint arg0);
-		jint getMetaState();
-		jlong getDownTime();
-		jlong getEventTime();
-		static QAndroidJniObject obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jintArray arg4, jarray arg5, jint arg6, jfloat arg7, jfloat arg8, jint arg9, jint arg10, jint arg11, jint arg12);
-		static QAndroidJniObject obtain(jlong arg0, jlong arg1, jint arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jint arg7, jfloat arg8, jfloat arg9, jint arg10, jint arg11);
-		static QAndroidJniObject obtain(__jni_impl::android::view::MotionEvent arg0);
-		static QAndroidJniObject obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jarray arg4, jarray arg5, jint arg6, jint arg7, jfloat arg8, jfloat arg9, jint arg10, jint arg11, jint arg12, jint arg13);
-		static QAndroidJniObject obtain(jlong arg0, jlong arg1, jint arg2, jfloat arg3, jfloat arg4, jint arg5);
 		static QAndroidJniObject obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7, jint arg8, jfloat arg9, jfloat arg10, jint arg11, jint arg12);
+		static QAndroidJniObject obtain(jlong arg0, jlong arg1, jint arg2, jfloat arg3, jfloat arg4, jint arg5);
+		static QAndroidJniObject obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jarray arg4, jarray arg5, jint arg6, jint arg7, jfloat arg8, jfloat arg9, jint arg10, jint arg11, jint arg12, jint arg13);
+		static QAndroidJniObject obtain(__jni_impl::android::view::MotionEvent arg0);
+		static QAndroidJniObject obtain(jlong arg0, jlong arg1, jint arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jint arg7, jfloat arg8, jfloat arg9, jint arg10, jint arg11);
+		static QAndroidJniObject obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jintArray arg4, jarray arg5, jint arg6, jfloat arg7, jfloat arg8, jint arg9, jint arg10, jint arg11, jint arg12);
 		void recycle();
-		jfloat getX(jint arg0);
-		jfloat getX();
-		jfloat getY();
-		jfloat getY(jint arg0);
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void setAction(jint arg0);
 	};
 } // namespace __jni_impl::android::view
 
 #include "../graphics/Matrix.hpp"
-#include "../os/Parcel.hpp"
 #include "MotionEvent_PointerCoords.hpp"
 #include "MotionEvent_PointerProperties.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -897,19 +898,19 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
+	jfloat MotionEvent::getSize()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getSize",
+			"()F"
+		);
+	}
 	jfloat MotionEvent::getSize(jint arg0)
 	{
 		return __thiz.callMethod<jfloat>(
 			"getSize",
 			"(I)F",
 			arg0
-		);
-	}
-	jfloat MotionEvent::getSize()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getSize",
-			"()F"
 		);
 	}
 	jint MotionEvent::getSource()
@@ -926,20 +927,69 @@ namespace __jni_impl::android::view
 			"()I"
 		);
 	}
-	void MotionEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jint MotionEvent::getDeviceId()
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callMethod<jint>(
+			"getDeviceId",
+			"()I"
 		);
 	}
-	void MotionEvent::setAction(jint arg0)
+	void MotionEvent::setSource(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setAction",
+			"setSource",
 			"(I)V",
+			arg0
+		);
+	}
+	jint MotionEvent::getMetaState()
+	{
+		return __thiz.callMethod<jint>(
+			"getMetaState",
+			"()I"
+		);
+	}
+	jlong MotionEvent::getDownTime()
+	{
+		return __thiz.callMethod<jlong>(
+			"getDownTime",
+			"()J"
+		);
+	}
+	jlong MotionEvent::getEventTime()
+	{
+		return __thiz.callMethod<jlong>(
+			"getEventTime",
+			"()J"
+		);
+	}
+	jfloat MotionEvent::getX()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getX",
+			"()F"
+		);
+	}
+	jfloat MotionEvent::getX(jint arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getX",
+			"(I)F",
+			arg0
+		);
+	}
+	jfloat MotionEvent::getY()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getY",
+			"()F"
+		);
+	}
+	jfloat MotionEvent::getY(jint arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getY",
+			"(I)F",
 			arg0
 		);
 	}
@@ -966,19 +1016,19 @@ namespace __jni_impl::android::view
 			"()I"
 		);
 	}
-	jfloat MotionEvent::getPressure()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getPressure",
-			"()F"
-		);
-	}
 	jfloat MotionEvent::getPressure(jint arg0)
 	{
 		return __thiz.callMethod<jfloat>(
 			"getPressure",
 			"(I)F",
 			arg0
+		);
+	}
+	jfloat MotionEvent::getPressure()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getPressure",
+			"()F"
 		);
 	}
 	jfloat MotionEvent::getTouchMajor(jint arg0)
@@ -1011,13 +1061,6 @@ namespace __jni_impl::android::view
 			"()F"
 		);
 	}
-	jfloat MotionEvent::getToolMajor()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getToolMajor",
-			"()F"
-		);
-	}
 	jfloat MotionEvent::getToolMajor(jint arg0)
 	{
 		return __thiz.callMethod<jfloat>(
@@ -1026,10 +1069,10 @@ namespace __jni_impl::android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getToolMinor()
+	jfloat MotionEvent::getToolMajor()
 	{
 		return __thiz.callMethod<jfloat>(
-			"getToolMinor",
+			"getToolMajor",
 			"()F"
 		);
 	}
@@ -1041,10 +1084,10 @@ namespace __jni_impl::android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getOrientation()
+	jfloat MotionEvent::getToolMinor()
 	{
 		return __thiz.callMethod<jfloat>(
-			"getOrientation",
+			"getToolMinor",
 			"()F"
 		);
 	}
@@ -1056,12 +1099,11 @@ namespace __jni_impl::android::view
 			arg0
 		);
 	}
-	jfloat MotionEvent::getAxisValue(jint arg0)
+	jfloat MotionEvent::getOrientation()
 	{
 		return __thiz.callMethod<jfloat>(
-			"getAxisValue",
-			"(I)F",
-			arg0
+			"getOrientation",
+			"()F"
 		);
 	}
 	jfloat MotionEvent::getAxisValue(jint arg0, jint arg1)
@@ -1071,6 +1113,14 @@ namespace __jni_impl::android::view
 			"(II)F",
 			arg0,
 			arg1
+		);
+	}
+	jfloat MotionEvent::getAxisValue(jint arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getAxisValue",
+			"(I)F",
+			arg0
 		);
 	}
 	jint MotionEvent::getPointerCount()
@@ -1158,19 +1208,19 @@ namespace __jni_impl::android::view
 			"()F"
 		);
 	}
+	jfloat MotionEvent::getRawY()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getRawY",
+			"()F"
+		);
+	}
 	jfloat MotionEvent::getRawY(jint arg0)
 	{
 		return __thiz.callMethod<jfloat>(
 			"getRawY",
 			"(I)F",
 			arg0
-		);
-	}
-	jfloat MotionEvent::getRawY()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getRawY",
-			"()F"
 		);
 	}
 	jfloat MotionEvent::getXPrecision()
@@ -1219,6 +1269,14 @@ namespace __jni_impl::android::view
 			arg1
 		);
 	}
+	jfloat MotionEvent::getHistoricalY(jint arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getHistoricalY",
+			"(I)F",
+			arg0
+		);
+	}
 	jfloat MotionEvent::getHistoricalY(jint arg0, jint arg1)
 	{
 		return __thiz.callMethod<jfloat>(
@@ -1228,12 +1286,13 @@ namespace __jni_impl::android::view
 			arg1
 		);
 	}
-	jfloat MotionEvent::getHistoricalY(jint arg0)
+	jfloat MotionEvent::getHistoricalPressure(jint arg0, jint arg1)
 	{
 		return __thiz.callMethod<jfloat>(
-			"getHistoricalY",
-			"(I)F",
-			arg0
+			"getHistoricalPressure",
+			"(II)F",
+			arg0,
+			arg1
 		);
 	}
 	jfloat MotionEvent::getHistoricalPressure(jint arg0)
@@ -1242,15 +1301,6 @@ namespace __jni_impl::android::view
 			"getHistoricalPressure",
 			"(I)F",
 			arg0
-		);
-	}
-	jfloat MotionEvent::getHistoricalPressure(jint arg0, jint arg1)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getHistoricalPressure",
-			"(II)F",
-			arg0,
-			arg1
 		);
 	}
 	jfloat MotionEvent::getHistoricalSize(jint arg0)
@@ -1287,6 +1337,14 @@ namespace __jni_impl::android::view
 			arg0
 		);
 	}
+	jfloat MotionEvent::getHistoricalTouchMinor(jint arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getHistoricalTouchMinor",
+			"(I)F",
+			arg0
+		);
+	}
 	jfloat MotionEvent::getHistoricalTouchMinor(jint arg0, jint arg1)
 	{
 		return __thiz.callMethod<jfloat>(
@@ -1294,14 +1352,6 @@ namespace __jni_impl::android::view
 			"(II)F",
 			arg0,
 			arg1
-		);
-	}
-	jfloat MotionEvent::getHistoricalTouchMinor(jint arg0)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getHistoricalTouchMinor",
-			"(I)F",
-			arg0
 		);
 	}
 	jfloat MotionEvent::getHistoricalToolMajor(jint arg0, jint arg1)
@@ -1355,15 +1405,6 @@ namespace __jni_impl::android::view
 			arg1
 		);
 	}
-	jfloat MotionEvent::getHistoricalAxisValue(jint arg0, jint arg1)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getHistoricalAxisValue",
-			"(II)F",
-			arg0,
-			arg1
-		);
-	}
 	jfloat MotionEvent::getHistoricalAxisValue(jint arg0, jint arg1, jint arg2)
 	{
 		return __thiz.callMethod<jfloat>(
@@ -1372,6 +1413,15 @@ namespace __jni_impl::android::view
 			arg0,
 			arg1,
 			arg2
+		);
+	}
+	jfloat MotionEvent::getHistoricalAxisValue(jint arg0, jint arg1)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getHistoricalAxisValue",
+			"(II)F",
+			arg0,
+			arg1
 		);
 	}
 	void MotionEvent::getHistoricalPointerCoords(jint arg0, jint arg1, __jni_impl::android::view::MotionEvent_PointerCoords arg2)
@@ -1467,6 +1517,15 @@ namespace __jni_impl::android::view
 			arg0
 		);
 	}
+	jint MotionEvent::axisFromString(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.MotionEvent",
+			"axisFromString",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jboolean MotionEvent::isButtonPressed(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -1482,48 +1541,12 @@ namespace __jni_impl::android::view
 			"()I"
 		);
 	}
-	jint MotionEvent::getDeviceId()
-	{
-		return __thiz.callMethod<jint>(
-			"getDeviceId",
-			"()I"
-		);
-	}
-	void MotionEvent::setSource(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSource",
-			"(I)V",
-			arg0
-		);
-	}
-	jint MotionEvent::getMetaState()
-	{
-		return __thiz.callMethod<jint>(
-			"getMetaState",
-			"()I"
-		);
-	}
-	jlong MotionEvent::getDownTime()
-	{
-		return __thiz.callMethod<jlong>(
-			"getDownTime",
-			"()J"
-		);
-	}
-	jlong MotionEvent::getEventTime()
-	{
-		return __thiz.callMethod<jlong>(
-			"getEventTime",
-			"()J"
-		);
-	}
-	QAndroidJniObject MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jintArray arg4, jarray arg5, jint arg6, jfloat arg7, jfloat arg8, jint arg9, jint arg10, jint arg11, jint arg12)
+	QAndroidJniObject MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7, jint arg8, jfloat arg9, jfloat arg10, jint arg11, jint arg12)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.MotionEvent",
 			"obtain",
-			"(JJII[I[Landroid/view/MotionEvent$PointerCoords;IFFIIII)Landroid/view/MotionEvent;",
+			"(JJIIFFFFIFFII)Landroid/view/MotionEvent;",
 			arg0,
 			arg1,
 			arg2,
@@ -1539,33 +1562,18 @@ namespace __jni_impl::android::view
 			arg12
 		);
 	}
-	QAndroidJniObject MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jint arg7, jfloat arg8, jfloat arg9, jint arg10, jint arg11)
+	QAndroidJniObject MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jfloat arg3, jfloat arg4, jint arg5)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.MotionEvent",
 			"obtain",
-			"(JJIFFFFIFFII)Landroid/view/MotionEvent;",
+			"(JJIFFI)Landroid/view/MotionEvent;",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
 			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8,
-			arg9,
-			arg10,
-			arg11
-		);
-	}
-	QAndroidJniObject MotionEvent::obtain(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.MotionEvent",
-			"obtain",
-			"(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;",
-			arg0.__jniObject().object()
+			arg5
 		);
 	}
 	QAndroidJniObject MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jarray arg4, jarray arg5, jint arg6, jint arg7, jfloat arg8, jfloat arg9, jint arg10, jint arg11, jint arg12, jint arg13)
@@ -1590,26 +1598,41 @@ namespace __jni_impl::android::view
 			arg13
 		);
 	}
-	QAndroidJniObject MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jfloat arg3, jfloat arg4, jint arg5)
+	QAndroidJniObject MotionEvent::obtain(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.MotionEvent",
 			"obtain",
-			"(JJIFFI)Landroid/view/MotionEvent;",
+			"(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jint arg7, jfloat arg8, jfloat arg9, jint arg10, jint arg11)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.MotionEvent",
+			"obtain",
+			"(JJIFFFFIFFII)Landroid/view/MotionEvent;",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
 			arg4,
-			arg5
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9,
+			arg10,
+			arg11
 		);
 	}
-	QAndroidJniObject MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7, jint arg8, jfloat arg9, jfloat arg10, jint arg11, jint arg12)
+	QAndroidJniObject MotionEvent::obtain(jlong arg0, jlong arg1, jint arg2, jint arg3, jintArray arg4, jarray arg5, jint arg6, jfloat arg7, jfloat arg8, jint arg9, jint arg10, jint arg11, jint arg12)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.MotionEvent",
 			"obtain",
-			"(JJIIFFFFIFFII)Landroid/view/MotionEvent;",
+			"(JJII[I[Landroid/view/MotionEvent$PointerCoords;IFFIIII)Landroid/view/MotionEvent;",
 			arg0,
 			arg1,
 			arg2,
@@ -1632,33 +1655,20 @@ namespace __jni_impl::android::view
 			"()V"
 		);
 	}
-	jfloat MotionEvent::getX(jint arg0)
+	void MotionEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
-		return __thiz.callMethod<jfloat>(
-			"getX",
-			"(I)F",
-			arg0
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
-	jfloat MotionEvent::getX()
+	void MotionEvent::setAction(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
-			"getX",
-			"()F"
-		);
-	}
-	jfloat MotionEvent::getY()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getY",
-			"()F"
-		);
-	}
-	jfloat MotionEvent::getY(jint arg0)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getY",
-			"(I)F",
+		__thiz.callMethod<void>(
+			"setAction",
+			"(I)V",
 			arg0
 		);
 	}

@@ -47,7 +47,8 @@ namespace __jni_impl::android::icu::util
 			"android.icu.util.Measure",
 			"(Ljava/lang/Number;Landroid/icu/util/MeasureUnit;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

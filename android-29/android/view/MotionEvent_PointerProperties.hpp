@@ -49,14 +49,16 @@ namespace __jni_impl::android::view
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.MotionEvent$PointerProperties",
-			"()V");
+			"()V"
+		);
 	}
 	void MotionEvent_PointerProperties::__constructor(__jni_impl::android::view::MotionEvent_PointerProperties arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.MotionEvent$PointerProperties",
 			"(Landroid/view/MotionEvent$PointerProperties;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

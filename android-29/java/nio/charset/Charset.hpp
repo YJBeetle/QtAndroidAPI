@@ -47,6 +47,7 @@ namespace __jni_impl::java::nio::charset
 		// Methods
 		jstring name();
 		static QAndroidJniObject forName(jstring arg0);
+		static QAndroidJniObject forName(const QString &arg0);
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
@@ -55,11 +56,13 @@ namespace __jni_impl::java::nio::charset
 		QAndroidJniObject decode(__jni_impl::java::nio::ByteBuffer arg0);
 		QAndroidJniObject encode(__jni_impl::java::nio::CharBuffer arg0);
 		QAndroidJniObject encode(jstring arg0);
+		QAndroidJniObject encode(const QString &arg0);
 		jboolean canEncode();
 		jboolean contains(__jni_impl::java::nio::charset::Charset arg0);
 		jboolean isRegistered();
 		static QAndroidJniObject defaultCharset();
 		static jboolean isSupported(jstring arg0);
+		static jboolean isSupported(const QString &arg0);
 		QAndroidJniObject newEncoder();
 		QAndroidJniObject aliases();
 		static QAndroidJniObject availableCharsets();
@@ -104,6 +107,15 @@ namespace __jni_impl::java::nio::charset
 			"forName",
 			"(Ljava/lang/String;)Ljava/nio/charset/Charset;",
 			arg0
+		);
+	}
+	QAndroidJniObject Charset::forName(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.charset.Charset",
+			"forName",
+			"(Ljava/lang/String;)Ljava/nio/charset/Charset;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean Charset::equals(jobject arg0)
@@ -168,6 +180,14 @@ namespace __jni_impl::java::nio::charset
 			arg0
 		);
 	}
+	QAndroidJniObject Charset::encode(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"encode",
+			"(Ljava/lang/String;)Ljava/nio/ByteBuffer;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jboolean Charset::canEncode()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -205,6 +225,15 @@ namespace __jni_impl::java::nio::charset
 			"isSupported",
 			"(Ljava/lang/String;)Z",
 			arg0
+		);
+	}
+	jboolean Charset::isSupported(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"java.nio.charset.Charset",
+			"isSupported",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Charset::newEncoder()

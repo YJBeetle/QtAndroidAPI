@@ -34,26 +34,35 @@ namespace __jni_impl::android::icu::text
 		
 		// Methods
 		QAndroidJniObject append(__jni_impl::java::lang::StringBuilder arg0, jstring arg1);
+		QAndroidJniObject append(__jni_impl::java::lang::StringBuilder arg0, const QString &arg1);
 		static QAndroidJniObject getInstance(__jni_impl::java::io::InputStream arg0, jstring arg1, __jni_impl::android::icu::text::Normalizer2_Mode arg2);
+		static QAndroidJniObject getInstance(__jni_impl::java::io::InputStream arg0, const QString &arg1, __jni_impl::android::icu::text::Normalizer2_Mode arg2);
 		QAndroidJniObject normalize(jstring arg0, __jni_impl::__JniBaseClass arg1);
-		jstring normalize(jstring arg0);
+		QAndroidJniObject normalize(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		QAndroidJniObject normalize(jstring arg0, __jni_impl::java::lang::StringBuilder arg1);
+		QAndroidJniObject normalize(const QString &arg0, __jni_impl::java::lang::StringBuilder arg1);
+		jstring normalize(jstring arg0);
+		jstring normalize(const QString &arg0);
 		jint getCombiningClass(jint arg0);
 		jboolean isNormalized(jstring arg0);
+		jboolean isNormalized(const QString &arg0);
+		jstring getDecomposition(jint arg0);
 		static QAndroidJniObject getNFCInstance();
 		static QAndroidJniObject getNFDInstance();
 		static QAndroidJniObject getNFKCInstance();
 		static QAndroidJniObject getNFKDInstance();
 		static QAndroidJniObject getNFKCCasefoldInstance();
 		QAndroidJniObject normalizeSecondAndAppend(__jni_impl::java::lang::StringBuilder arg0, jstring arg1);
+		QAndroidJniObject normalizeSecondAndAppend(__jni_impl::java::lang::StringBuilder arg0, const QString &arg1);
 		jstring getRawDecomposition(jint arg0);
 		jint composePair(jint arg0, jint arg1);
 		QAndroidJniObject quickCheck(jstring arg0);
+		QAndroidJniObject quickCheck(const QString &arg0);
 		jint spanQuickCheckYes(jstring arg0);
+		jint spanQuickCheckYes(const QString &arg0);
 		jboolean hasBoundaryBefore(jint arg0);
 		jboolean hasBoundaryAfter(jint arg0);
 		jboolean isInert(jint arg0);
-		jstring getDecomposition(jint arg0);
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -84,6 +93,15 @@ namespace __jni_impl::android::icu::text
 			arg1
 		);
 	}
+	QAndroidJniObject Normalizer2::append(__jni_impl::java::lang::StringBuilder arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"append",
+			"(Ljava/lang/StringBuilder;Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject Normalizer2::getInstance(__jni_impl::java::io::InputStream arg0, jstring arg1, __jni_impl::android::icu::text::Normalizer2_Mode arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -92,6 +110,17 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/io/InputStream;Ljava/lang/String;Landroid/icu/text/Normalizer2$Mode;)Landroid/icu/text/Normalizer2;",
 			arg0.__jniObject().object(),
 			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Normalizer2::getInstance(__jni_impl::java::io::InputStream arg0, const QString &arg1, __jni_impl::android::icu::text::Normalizer2_Mode arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Normalizer2",
+			"getInstance",
+			"(Ljava/io/InputStream;Ljava/lang/String;Landroid/icu/text/Normalizer2$Mode;)Landroid/icu/text/Normalizer2;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -104,13 +133,14 @@ namespace __jni_impl::android::icu::text
 			arg1.__jniObject().object()
 		);
 	}
-	jstring Normalizer2::normalize(jstring arg0)
+	QAndroidJniObject Normalizer2::normalize(const QString &arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"normalize",
-			"(Ljava/lang/CharSequence;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			"(Ljava/lang/CharSequence;Ljava/lang/Appendable;)Ljava/lang/Appendable;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	QAndroidJniObject Normalizer2::normalize(jstring arg0, __jni_impl::java::lang::StringBuilder arg1)
 	{
@@ -120,6 +150,31 @@ namespace __jni_impl::android::icu::text
 			arg0,
 			arg1.__jniObject().object()
 		);
+	}
+	QAndroidJniObject Normalizer2::normalize(const QString &arg0, __jni_impl::java::lang::StringBuilder arg1)
+	{
+		return __thiz.callObjectMethod(
+			"normalize",
+			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;)Ljava/lang/StringBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
+	jstring Normalizer2::normalize(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"normalize",
+			"(Ljava/lang/CharSequence;)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring Normalizer2::normalize(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"normalize",
+			"(Ljava/lang/CharSequence;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
 	}
 	jint Normalizer2::getCombiningClass(jint arg0)
 	{
@@ -136,6 +191,22 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/CharSequence;)Z",
 			arg0
 		);
+	}
+	jboolean Normalizer2::isNormalized(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isNormalized",
+			"(Ljava/lang/CharSequence;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jstring Normalizer2::getDecomposition(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDecomposition",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
 	}
 	QAndroidJniObject Normalizer2::getNFCInstance()
 	{
@@ -186,6 +257,15 @@ namespace __jni_impl::android::icu::text
 			arg1
 		);
 	}
+	QAndroidJniObject Normalizer2::normalizeSecondAndAppend(__jni_impl::java::lang::StringBuilder arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"normalizeSecondAndAppend",
+			"(Ljava/lang/StringBuilder;Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	jstring Normalizer2::getRawDecomposition(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -211,12 +291,28 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
+	QAndroidJniObject Normalizer2::quickCheck(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"quickCheck",
+			"(Ljava/lang/CharSequence;)Landroid/icu/text/Normalizer$QuickCheckResult;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint Normalizer2::spanQuickCheckYes(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"spanQuickCheckYes",
 			"(Ljava/lang/CharSequence;)I",
 			arg0
+		);
+	}
+	jint Normalizer2::spanQuickCheckYes(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"spanQuickCheckYes",
+			"(Ljava/lang/CharSequence;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean Normalizer2::hasBoundaryBefore(jint arg0)
@@ -242,14 +338,6 @@ namespace __jni_impl::android::icu::text
 			"(I)Z",
 			arg0
 		);
-	}
-	jstring Normalizer2::getDecomposition(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDecomposition",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::text
 

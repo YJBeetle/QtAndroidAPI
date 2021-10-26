@@ -38,14 +38,16 @@ namespace __jni_impl::android::animation
 	{
 		__thiz = QAndroidJniObject(
 			"android.animation.RectEvaluator",
-			"()V");
+			"()V"
+		);
 	}
 	void RectEvaluator::__constructor(__jni_impl::android::graphics::Rect arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.animation.RectEvaluator",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

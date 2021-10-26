@@ -16,8 +16,10 @@ namespace __jni_impl::javax::xml::transform::dom
 		
 		// Constructors
 		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jstring arg2);
+		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2);
 		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void __constructor(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		void __constructor();
 		
@@ -26,6 +28,7 @@ namespace __jni_impl::javax::xml::transform::dom
 		void setNode(__jni_impl::__JniBaseClass arg0);
 		jstring getSystemId();
 		void setSystemId(jstring arg0);
+		void setSystemId(const QString &arg0);
 		QAndroidJniObject getNextSibling();
 		void setNextSibling(__jni_impl::__JniBaseClass arg0);
 	};
@@ -52,7 +55,18 @@ namespace __jni_impl::javax::xml::transform::dom
 			"(Lorg/w3c/dom/Node;Lorg/w3c/dom/Node;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
+	}
+	void DOMResult::__constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.xml.transform.dom.DOMResult",
+			"(Lorg/w3c/dom/Node;Lorg/w3c/dom/Node;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	void DOMResult::__constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -60,7 +74,8 @@ namespace __jni_impl::javax::xml::transform::dom
 			"javax.xml.transform.dom.DOMResult",
 			"(Lorg/w3c/dom/Node;Lorg/w3c/dom/Node;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DOMResult::__constructor(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
@@ -68,20 +83,32 @@ namespace __jni_impl::javax::xml::transform::dom
 			"javax.xml.transform.dom.DOMResult",
 			"(Lorg/w3c/dom/Node;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void DOMResult::__constructor(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.xml.transform.dom.DOMResult",
+			"(Lorg/w3c/dom/Node;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void DOMResult::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.dom.DOMResult",
 			"(Lorg/w3c/dom/Node;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DOMResult::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.dom.DOMResult",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -113,6 +140,14 @@ namespace __jni_impl::javax::xml::transform::dom
 			"setSystemId",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void DOMResult::setSystemId(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSystemId",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject DOMResult::getNextSibling()

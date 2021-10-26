@@ -42,7 +42,8 @@ namespace __jni_impl::android::telephony::mbms
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.mbms.MbmsDownloadReceiver",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

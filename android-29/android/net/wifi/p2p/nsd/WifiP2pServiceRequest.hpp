@@ -25,6 +25,7 @@ namespace __jni_impl::android::net::wifi::p2p::nsd
 		jint hashCode();
 		static QAndroidJniObject newInstance(jint arg0);
 		static QAndroidJniObject newInstance(jint arg0, jstring arg1);
+		static QAndroidJniObject newInstance(jint arg0, const QString &arg1);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
@@ -77,6 +78,16 @@ namespace __jni_impl::android::net::wifi::p2p::nsd
 			"(ILjava/lang/String;)Landroid/net/wifi/p2p/nsd/WifiP2pServiceRequest;",
 			arg0,
 			arg1
+		);
+	}
+	QAndroidJniObject WifiP2pServiceRequest::newInstance(jint arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.net.wifi.p2p.nsd.WifiP2pServiceRequest",
+			"newInstance",
+			"(ILjava/lang/String;)Landroid/net/wifi/p2p/nsd/WifiP2pServiceRequest;",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jint WifiP2pServiceRequest::describeContents()

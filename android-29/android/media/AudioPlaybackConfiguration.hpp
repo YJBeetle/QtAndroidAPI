@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::media
 {
 	class AudioAttributes;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::media
@@ -28,14 +28,14 @@ namespace __jni_impl::android::media
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
+		QAndroidJniObject getAudioAttributes();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getAudioAttributes();
 	};
 } // namespace __jni_impl::android::media
 
-#include "../os/Parcel.hpp"
 #include "AudioAttributes.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -73,6 +73,13 @@ namespace __jni_impl::android::media
 			"()I"
 		);
 	}
+	QAndroidJniObject AudioPlaybackConfiguration::getAudioAttributes()
+	{
+		return __thiz.callObjectMethod(
+			"getAudioAttributes",
+			"()Landroid/media/AudioAttributes;"
+		);
+	}
 	jint AudioPlaybackConfiguration::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -87,13 +94,6 @@ namespace __jni_impl::android::media
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject AudioPlaybackConfiguration::getAudioAttributes()
-	{
-		return __thiz.callObjectMethod(
-			"getAudioAttributes",
-			"()Landroid/media/AudioAttributes;"
 		);
 	}
 } // namespace __jni_impl::android::media

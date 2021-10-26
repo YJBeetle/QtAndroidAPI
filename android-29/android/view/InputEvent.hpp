@@ -23,11 +23,11 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		jint getSource();
-		jint describeContents();
-		QAndroidJniObject getDevice();
 		jint getDeviceId();
 		jlong getEventTime();
 		jboolean isFromSource(jint arg0);
+		QAndroidJniObject getDevice();
+		jint describeContents();
 	};
 } // namespace __jni_impl::android::view
 
@@ -61,20 +61,6 @@ namespace __jni_impl::android::view
 			"()I"
 		);
 	}
-	jint InputEvent::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	QAndroidJniObject InputEvent::getDevice()
-	{
-		return __thiz.callObjectMethod(
-			"getDevice",
-			"()Landroid/view/InputDevice;"
-		);
-	}
 	jint InputEvent::getDeviceId()
 	{
 		return __thiz.callMethod<jint>(
@@ -95,6 +81,20 @@ namespace __jni_impl::android::view
 			"isFromSource",
 			"(I)Z",
 			arg0
+		);
+	}
+	QAndroidJniObject InputEvent::getDevice()
+	{
+		return __thiz.callObjectMethod(
+			"getDevice",
+			"()Landroid/view/InputDevice;"
+		);
+	}
+	jint InputEvent::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::view

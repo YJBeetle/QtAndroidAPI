@@ -42,7 +42,8 @@ namespace __jni_impl::java::io
 		__thiz = QAndroidJniObject(
 			"java.io.FilterOutputStream",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

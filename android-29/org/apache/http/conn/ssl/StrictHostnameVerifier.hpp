@@ -20,6 +20,7 @@ namespace __jni_impl::org::apache::http::conn::ssl
 		// Methods
 		jstring toString();
 		void verify(jstring arg0, jarray arg1, jarray arg2);
+		void verify(const QString &arg0, jarray arg1, jarray arg2);
 	};
 } // namespace __jni_impl::org::apache::http::conn::ssl
 
@@ -33,7 +34,8 @@ namespace __jni_impl::org::apache::http::conn::ssl
 	{
 		__thiz = QAndroidJniObject(
 			"org.apache.http.conn.ssl.StrictHostnameVerifier",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -50,6 +52,16 @@ namespace __jni_impl::org::apache::http::conn::ssl
 			"verify",
 			"(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V",
 			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void StrictHostnameVerifier::verify(const QString &arg0, jarray arg1, jarray arg2)
+	{
+		__thiz.callMethod<void>(
+			"verify",
+			"(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);

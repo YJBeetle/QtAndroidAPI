@@ -109,10 +109,11 @@ namespace __jni_impl::android::content::pm
 		
 		// Methods
 		jstring toString();
+		jint getThemeResource();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
-		jint getThemeResource();
+		void dump(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -678,14 +679,16 @@ namespace __jni_impl::android::content::pm
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.ActivityInfo",
-			"()V");
+			"()V"
+		);
 	}
 	void ActivityInfo::__constructor(__jni_impl::android::content::pm::ActivityInfo arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.ActivityInfo",
 			"(Landroid/content/pm/ActivityInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -695,6 +698,13 @@ namespace __jni_impl::android::content::pm
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jint ActivityInfo::getThemeResource()
+	{
+		return __thiz.callMethod<jint>(
+			"getThemeResource",
+			"()I"
+		);
 	}
 	jint ActivityInfo::describeContents()
 	{
@@ -721,11 +731,13 @@ namespace __jni_impl::android::content::pm
 			arg1
 		);
 	}
-	jint ActivityInfo::getThemeResource()
+	void ActivityInfo::dump(__jni_impl::__JniBaseClass arg0, const QString &arg1)
 	{
-		return __thiz.callMethod<jint>(
-			"getThemeResource",
-			"()I"
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::content::pm

@@ -37,7 +37,8 @@ namespace __jni_impl::android::graphics::drawable
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.Animatable2$AnimationCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

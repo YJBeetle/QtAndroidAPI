@@ -29,6 +29,7 @@ namespace __jni_impl::java::util
 		jbyteArray decode(jbyteArray arg0);
 		jint decode(jbyteArray arg0, jbyteArray arg1);
 		jbyteArray decode(jstring arg0);
+		jbyteArray decode(const QString &arg0);
 		QAndroidJniObject wrap(__jni_impl::java::io::InputStream arg0);
 	};
 } // namespace __jni_impl::java::util
@@ -80,6 +81,14 @@ namespace __jni_impl::java::util
 			"decode",
 			"(Ljava/lang/String;)[B",
 			arg0
+		).object<jbyteArray>();
+	}
+	jbyteArray Base64_Decoder::decode(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"decode",
+			"(Ljava/lang/String;)[B",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jbyteArray>();
 	}
 	QAndroidJniObject Base64_Decoder::wrap(__jni_impl::java::io::InputStream arg0)

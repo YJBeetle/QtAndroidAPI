@@ -23,6 +23,7 @@ namespace __jni_impl::java::io
 		
 		// Methods
 		void write(jstring arg0, jint arg1, jint arg2);
+		void write(const QString &arg0, jint arg1, jint arg2);
 		void write(jcharArray arg0, jint arg1, jint arg2);
 		void write(jint arg0);
 		void flush();
@@ -51,6 +52,16 @@ namespace __jni_impl::java::io
 			"write",
 			"(Ljava/lang/String;II)V",
 			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void FilterWriter::write(const QString &arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"write",
+			"(Ljava/lang/String;II)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);

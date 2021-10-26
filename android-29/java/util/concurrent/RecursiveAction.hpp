@@ -37,7 +37,8 @@ namespace __jni_impl::java::util::concurrent
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.RecursiveAction",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -18,6 +18,7 @@ namespace __jni_impl::javax::crypto
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -33,14 +34,24 @@ namespace __jni_impl::javax::crypto
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.ShortBufferException",
-			"()V");
+			"()V"
+		);
 	}
 	void ShortBufferException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.ShortBufferException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void ShortBufferException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.crypto.ShortBufferException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

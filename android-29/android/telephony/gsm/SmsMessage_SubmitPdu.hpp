@@ -47,7 +47,8 @@ namespace __jni_impl::android::telephony::gsm
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.gsm.SmsMessage$SubmitPdu",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

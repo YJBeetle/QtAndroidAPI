@@ -64,6 +64,7 @@ namespace __jni_impl::android::view::textclassifier
 		// Methods
 		jstring toString();
 		QAndroidJniObject getLocale();
+		jint getEventType();
 		jint getEventCategory();
 		jarray getEntityTypes();
 		QAndroidJniObject getEventContext();
@@ -75,7 +76,6 @@ namespace __jni_impl::android::view::textclassifier
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getExtras();
-		jint getEventType();
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -288,6 +288,13 @@ namespace __jni_impl::android::view::textclassifier
 			"()Landroid/icu/util/ULocale;"
 		);
 	}
+	jint TextClassifierEvent::getEventType()
+	{
+		return __thiz.callMethod<jint>(
+			"getEventType",
+			"()I"
+		);
+	}
 	jint TextClassifierEvent::getEventCategory()
 	{
 		return __thiz.callMethod<jint>(
@@ -365,13 +372,6 @@ namespace __jni_impl::android::view::textclassifier
 		return __thiz.callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
-		);
-	}
-	jint TextClassifierEvent::getEventType()
-	{
-		return __thiz.callMethod<jint>(
-			"getEventType",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::view::textclassifier

@@ -62,7 +62,8 @@ namespace __jni_impl::android::app::assist
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.assist.AssistStructure",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

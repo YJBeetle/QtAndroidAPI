@@ -42,7 +42,8 @@ namespace __jni_impl::android::accessibilityservice
 	{
 		__thiz = QAndroidJniObject(
 			"android.accessibilityservice.GestureDescription$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

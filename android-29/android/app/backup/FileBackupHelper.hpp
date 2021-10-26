@@ -55,7 +55,8 @@ namespace __jni_impl::android::app::backup
 			"android.app.backup.FileBackupHelper",
 			"(Landroid/content/Context;[Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

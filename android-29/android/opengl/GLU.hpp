@@ -36,7 +36,8 @@ namespace __jni_impl::android::opengl
 	{
 		__thiz = QAndroidJniObject(
 			"android.opengl.GLU",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -62,7 +62,8 @@ namespace __jni_impl::android::drm
 	{
 		__thiz = QAndroidJniObject(
 			"android.drm.DrmStore$RightsStatus",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

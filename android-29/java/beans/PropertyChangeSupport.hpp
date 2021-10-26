@@ -31,18 +31,28 @@ namespace __jni_impl::java::beans
 		// Methods
 		void addPropertyChangeListener(__jni_impl::__JniBaseClass arg0);
 		void addPropertyChangeListener(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		void addPropertyChangeListener(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		void removePropertyChangeListener(__jni_impl::__JniBaseClass arg0);
 		void removePropertyChangeListener(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		void removePropertyChangeListener(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		void firePropertyChange(__jni_impl::java::beans::PropertyChangeEvent arg0);
 		void firePropertyChange(jstring arg0, jboolean arg1, jboolean arg2);
+		void firePropertyChange(const QString &arg0, jboolean arg1, jboolean arg2);
 		void firePropertyChange(jstring arg0, jobject arg1, jobject arg2);
+		void firePropertyChange(const QString &arg0, jobject arg1, jobject arg2);
 		void firePropertyChange(jstring arg0, jint arg1, jint arg2);
+		void firePropertyChange(const QString &arg0, jint arg1, jint arg2);
 		void fireIndexedPropertyChange(jstring arg0, jint arg1, jboolean arg2, jboolean arg3);
+		void fireIndexedPropertyChange(const QString &arg0, jint arg1, jboolean arg2, jboolean arg3);
 		void fireIndexedPropertyChange(jstring arg0, jint arg1, jobject arg2, jobject arg3);
+		void fireIndexedPropertyChange(const QString &arg0, jint arg1, jobject arg2, jobject arg3);
 		void fireIndexedPropertyChange(jstring arg0, jint arg1, jint arg2, jint arg3);
+		void fireIndexedPropertyChange(const QString &arg0, jint arg1, jint arg2, jint arg3);
 		jboolean hasListeners(jstring arg0);
+		jboolean hasListeners(const QString &arg0);
 		jarray getPropertyChangeListeners();
 		jarray getPropertyChangeListeners(jstring arg0);
+		jarray getPropertyChangeListeners(const QString &arg0);
 	};
 } // namespace __jni_impl::java::beans
 
@@ -60,7 +70,8 @@ namespace __jni_impl::java::beans
 		__thiz = QAndroidJniObject(
 			"java.beans.PropertyChangeSupport",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -81,6 +92,15 @@ namespace __jni_impl::java::beans
 			arg1.__jniObject().object()
 		);
 	}
+	void PropertyChangeSupport::addPropertyChangeListener(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"addPropertyChangeListener",
+			"(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	void PropertyChangeSupport::removePropertyChangeListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -95,6 +115,15 @@ namespace __jni_impl::java::beans
 			"removePropertyChangeListener",
 			"(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void PropertyChangeSupport::removePropertyChangeListener(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"removePropertyChangeListener",
+			"(Ljava/lang/String;Ljava/beans/PropertyChangeListener;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -116,12 +145,32 @@ namespace __jni_impl::java::beans
 			arg2
 		);
 	}
+	void PropertyChangeSupport::firePropertyChange(const QString &arg0, jboolean arg1, jboolean arg2)
+	{
+		__thiz.callMethod<void>(
+			"firePropertyChange",
+			"(Ljava/lang/String;ZZ)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2
+		);
+	}
 	void PropertyChangeSupport::firePropertyChange(jstring arg0, jobject arg1, jobject arg2)
 	{
 		__thiz.callMethod<void>(
 			"firePropertyChange",
 			"(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V",
 			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void PropertyChangeSupport::firePropertyChange(const QString &arg0, jobject arg1, jobject arg2)
+	{
+		__thiz.callMethod<void>(
+			"firePropertyChange",
+			"(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -136,12 +185,33 @@ namespace __jni_impl::java::beans
 			arg2
 		);
 	}
+	void PropertyChangeSupport::firePropertyChange(const QString &arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"firePropertyChange",
+			"(Ljava/lang/String;II)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2
+		);
+	}
 	void PropertyChangeSupport::fireIndexedPropertyChange(jstring arg0, jint arg1, jboolean arg2, jboolean arg3)
 	{
 		__thiz.callMethod<void>(
 			"fireIndexedPropertyChange",
 			"(Ljava/lang/String;IZZ)V",
 			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void PropertyChangeSupport::fireIndexedPropertyChange(const QString &arg0, jint arg1, jboolean arg2, jboolean arg3)
+	{
+		__thiz.callMethod<void>(
+			"fireIndexedPropertyChange",
+			"(Ljava/lang/String;IZZ)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3
@@ -158,6 +228,17 @@ namespace __jni_impl::java::beans
 			arg3
 		);
 	}
+	void PropertyChangeSupport::fireIndexedPropertyChange(const QString &arg0, jint arg1, jobject arg2, jobject arg3)
+	{
+		__thiz.callMethod<void>(
+			"fireIndexedPropertyChange",
+			"(Ljava/lang/String;ILjava/lang/Object;Ljava/lang/Object;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
 	void PropertyChangeSupport::fireIndexedPropertyChange(jstring arg0, jint arg1, jint arg2, jint arg3)
 	{
 		__thiz.callMethod<void>(
@@ -169,12 +250,31 @@ namespace __jni_impl::java::beans
 			arg3
 		);
 	}
+	void PropertyChangeSupport::fireIndexedPropertyChange(const QString &arg0, jint arg1, jint arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"fireIndexedPropertyChange",
+			"(Ljava/lang/String;III)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
 	jboolean PropertyChangeSupport::hasListeners(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasListeners",
 			"(Ljava/lang/String;)Z",
 			arg0
+		);
+	}
+	jboolean PropertyChangeSupport::hasListeners(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasListeners",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jarray PropertyChangeSupport::getPropertyChangeListeners()
@@ -190,6 +290,14 @@ namespace __jni_impl::java::beans
 			"getPropertyChangeListeners",
 			"(Ljava/lang/String;)[Ljava/beans/PropertyChangeListener;",
 			arg0
+		).object<jarray>();
+	}
+	jarray PropertyChangeSupport::getPropertyChangeListeners(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getPropertyChangeListeners",
+			"(Ljava/lang/String;)[Ljava/beans/PropertyChangeListener;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jarray>();
 	}
 } // namespace __jni_impl::java::beans

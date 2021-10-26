@@ -32,6 +32,7 @@ namespace __jni_impl::java::security
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1, jstring arg2, jarray arg3);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2, jarray arg3);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -65,7 +66,19 @@ namespace __jni_impl::java::security
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void UnresolvedPermission::__constructor(const QString &arg0, const QString &arg1, const QString &arg2, jarray arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.UnresolvedPermission",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;[Ljava/security/cert/Certificate;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3
+		);
 	}
 	
 	// Methods

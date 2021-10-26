@@ -96,7 +96,8 @@ namespace __jni_impl::android::inputmethodservice
 	{
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.InputMethodService$Insets",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

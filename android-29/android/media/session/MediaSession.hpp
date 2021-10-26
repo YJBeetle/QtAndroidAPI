@@ -13,6 +13,14 @@ namespace __jni_impl::android::os
 {
 	class Bundle;
 }
+namespace __jni_impl::android::media::session
+{
+	class MediaSession_Token;
+}
+namespace __jni_impl::android::media::session
+{
+	class PlaybackState;
+}
 namespace __jni_impl::android::app
 {
 	class PendingIntent;
@@ -39,19 +47,11 @@ namespace __jni_impl::android::media::session
 }
 namespace __jni_impl::android::media::session
 {
-	class PlaybackState;
-}
-namespace __jni_impl::android::media::session
-{
 	class MediaSession_Callback;
 }
 namespace __jni_impl::android::os
 {
 	class Handler;
-}
-namespace __jni_impl::android::media::session
-{
-	class MediaSession_Token;
 }
 
 namespace __jni_impl::android::media::session
@@ -65,44 +65,48 @@ namespace __jni_impl::android::media::session
 		
 		// Constructors
 		void __constructor(__jni_impl::android::content::Context arg0, jstring arg1);
+		void __constructor(__jni_impl::android::content::Context arg0, const QString &arg1);
 		void __constructor(__jni_impl::android::content::Context arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
+		void __constructor(__jni_impl::android::content::Context arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2);
 		
 		// Methods
 		void release();
 		jboolean isActive();
+		void setActive(jboolean arg0);
+		void setExtras(__jni_impl::android::os::Bundle arg0);
+		QAndroidJniObject getSessionToken();
+		void setPlaybackState(__jni_impl::android::media::session::PlaybackState arg0);
 		void setSessionActivity(__jni_impl::android::app::PendingIntent arg0);
 		void setMediaButtonReceiver(__jni_impl::android::app::PendingIntent arg0);
 		void setPlaybackToLocal(__jni_impl::android::media::AudioAttributes arg0);
 		void setPlaybackToRemote(__jni_impl::android::media::VolumeProvider arg0);
 		void sendSessionEvent(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void sendSessionEvent(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		QAndroidJniObject getController();
 		void setMetadata(__jni_impl::android::media::MediaMetadata arg0);
 		void setQueue(__jni_impl::__JniBaseClass arg0);
 		void setQueueTitle(jstring arg0);
+		void setQueueTitle(const QString &arg0);
 		void setRatingType(jint arg0);
 		QAndroidJniObject getCurrentControllerInfo();
-		void setPlaybackState(__jni_impl::android::media::session::PlaybackState arg0);
 		void setFlags(jint arg0);
-		void setCallback(__jni_impl::android::media::session::MediaSession_Callback arg0, __jni_impl::android::os::Handler arg1);
 		void setCallback(__jni_impl::android::media::session::MediaSession_Callback arg0);
-		QAndroidJniObject getSessionToken();
-		void setActive(jboolean arg0);
-		void setExtras(__jni_impl::android::os::Bundle arg0);
+		void setCallback(__jni_impl::android::media::session::MediaSession_Callback arg0, __jni_impl::android::os::Handler arg1);
 	};
 } // namespace __jni_impl::android::media::session
 
 #include "../../content/Context.hpp"
 #include "../../os/Bundle.hpp"
+#include "MediaSession_Token.hpp"
+#include "PlaybackState.hpp"
 #include "../../app/PendingIntent.hpp"
 #include "../AudioAttributes.hpp"
 #include "../VolumeProvider.hpp"
 #include "MediaController.hpp"
 #include "../MediaMetadata.hpp"
 #include "MediaSessionManager_RemoteUserInfo.hpp"
-#include "PlaybackState.hpp"
 #include "MediaSession_Callback.hpp"
 #include "../../os/Handler.hpp"
-#include "MediaSession_Token.hpp"
 
 namespace __jni_impl::android::media::session
 {
@@ -129,7 +133,17 @@ namespace __jni_impl::android::media::session
 			"android.media.session.MediaSession",
 			"(Landroid/content/Context;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void MediaSession::__constructor(__jni_impl::android::content::Context arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.media.session.MediaSession",
+			"(Landroid/content/Context;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void MediaSession::__constructor(__jni_impl::android::content::Context arg0, jstring arg1, __jni_impl::android::os::Bundle arg2)
 	{
@@ -138,7 +152,18 @@ namespace __jni_impl::android::media::session
 			"(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void MediaSession::__constructor(__jni_impl::android::content::Context arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.media.session.MediaSession",
+			"(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -154,6 +179,37 @@ namespace __jni_impl::android::media::session
 		return __thiz.callMethod<jboolean>(
 			"isActive",
 			"()Z"
+		);
+	}
+	void MediaSession::setActive(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setActive",
+			"(Z)V",
+			arg0
+		);
+	}
+	void MediaSession::setExtras(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"setExtras",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject MediaSession::getSessionToken()
+	{
+		return __thiz.callObjectMethod(
+			"getSessionToken",
+			"()Landroid/media/session/MediaSession$Token;"
+		);
+	}
+	void MediaSession::setPlaybackState(__jni_impl::android::media::session::PlaybackState arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPlaybackState",
+			"(Landroid/media/session/PlaybackState;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void MediaSession::setSessionActivity(__jni_impl::android::app::PendingIntent arg0)
@@ -197,6 +253,15 @@ namespace __jni_impl::android::media::session
 			arg1.__jniObject().object()
 		);
 	}
+	void MediaSession::sendSessionEvent(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"sendSessionEvent",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject MediaSession::getController()
 	{
 		return __thiz.callObjectMethod(
@@ -228,6 +293,14 @@ namespace __jni_impl::android::media::session
 			arg0
 		);
 	}
+	void MediaSession::setQueueTitle(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setQueueTitle",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void MediaSession::setRatingType(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -243,29 +316,12 @@ namespace __jni_impl::android::media::session
 			"()Landroid/media/session/MediaSessionManager$RemoteUserInfo;"
 		);
 	}
-	void MediaSession::setPlaybackState(__jni_impl::android::media::session::PlaybackState arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPlaybackState",
-			"(Landroid/media/session/PlaybackState;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void MediaSession::setFlags(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFlags",
 			"(I)V",
 			arg0
-		);
-	}
-	void MediaSession::setCallback(__jni_impl::android::media::session::MediaSession_Callback arg0, __jni_impl::android::os::Handler arg1)
-	{
-		__thiz.callMethod<void>(
-			"setCallback",
-			"(Landroid/media/session/MediaSession$Callback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
 		);
 	}
 	void MediaSession::setCallback(__jni_impl::android::media::session::MediaSession_Callback arg0)
@@ -276,27 +332,13 @@ namespace __jni_impl::android::media::session
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject MediaSession::getSessionToken()
-	{
-		return __thiz.callObjectMethod(
-			"getSessionToken",
-			"()Landroid/media/session/MediaSession$Token;"
-		);
-	}
-	void MediaSession::setActive(jboolean arg0)
+	void MediaSession::setCallback(__jni_impl::android::media::session::MediaSession_Callback arg0, __jni_impl::android::os::Handler arg1)
 	{
 		__thiz.callMethod<void>(
-			"setActive",
-			"(Z)V",
-			arg0
-		);
-	}
-	void MediaSession::setExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"setExtras",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			"setCallback",
+			"(Landroid/media/session/MediaSession$Callback;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::media::session

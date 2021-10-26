@@ -31,11 +31,10 @@ namespace __jni_impl::android::security::keystore
 		
 		// Constructors
 		void __constructor(jstring arg0, jint arg1);
+		void __constructor(const QString &arg0, jint arg1);
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setAlgorithmParameterSpec(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject setKeySize(jint arg0);
 		QAndroidJniObject setCertificateSubject(__jni_impl::javax::security::auth::x500::X500Principal arg0);
 		QAndroidJniObject setCertificateSerialNumber(__jni_impl::java::math::BigInteger arg0);
 		QAndroidJniObject setCertificateNotBefore(__jni_impl::java::util::Date arg0);
@@ -58,6 +57,8 @@ namespace __jni_impl::android::security::keystore
 		QAndroidJniObject setInvalidatedByBiometricEnrollment(jboolean arg0);
 		QAndroidJniObject setIsStrongBoxBacked(jboolean arg0);
 		QAndroidJniObject setUnlockedDeviceRequired(jboolean arg0);
+		QAndroidJniObject setAlgorithmParameterSpec(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject setKeySize(jint arg0);
 	};
 } // namespace __jni_impl::android::security::keystore
 
@@ -77,7 +78,17 @@ namespace __jni_impl::android::security::keystore
 			"android.security.keystore.KeyGenParameterSpec$Builder",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void KeyGenParameterSpec_Builder::__constructor(const QString &arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.security.keystore.KeyGenParameterSpec$Builder",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods
@@ -86,22 +97,6 @@ namespace __jni_impl::android::security::keystore
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/security/keystore/KeyGenParameterSpec;"
-		);
-	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setAlgorithmParameterSpec(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setAlgorithmParameterSpec",
-			"(Ljava/security/spec/AlgorithmParameterSpec;)Landroid/security/keystore/KeyGenParameterSpec$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject KeyGenParameterSpec_Builder::setKeySize(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setKeySize",
-			"(I)Landroid/security/keystore/KeyGenParameterSpec$Builder;",
-			arg0
 		);
 	}
 	QAndroidJniObject KeyGenParameterSpec_Builder::setCertificateSubject(__jni_impl::javax::security::auth::x500::X500Principal arg0)
@@ -277,6 +272,22 @@ namespace __jni_impl::android::security::keystore
 		return __thiz.callObjectMethod(
 			"setUnlockedDeviceRequired",
 			"(Z)Landroid/security/keystore/KeyGenParameterSpec$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject KeyGenParameterSpec_Builder::setAlgorithmParameterSpec(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setAlgorithmParameterSpec",
+			"(Ljava/security/spec/AlgorithmParameterSpec;)Landroid/security/keystore/KeyGenParameterSpec$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject KeyGenParameterSpec_Builder::setKeySize(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setKeySize",
+			"(I)Landroid/security/keystore/KeyGenParameterSpec$Builder;",
 			arg0
 		);
 	}

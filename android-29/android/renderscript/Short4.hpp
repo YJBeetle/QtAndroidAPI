@@ -59,7 +59,8 @@ namespace __jni_impl::android::renderscript
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Short4",
-			"()V");
+			"()V"
+		);
 	}
 	void Short4::__constructor(jshort arg0, jshort arg1, jshort arg2, jshort arg3)
 	{
@@ -69,7 +70,8 @@ namespace __jni_impl::android::renderscript
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	
 	// Methods

@@ -33,7 +33,8 @@ namespace __jni_impl::java::nio
 	{
 		__thiz = QAndroidJniObject(
 			"java.nio.InvalidMarkException",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

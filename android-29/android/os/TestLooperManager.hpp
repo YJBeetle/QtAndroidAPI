@@ -15,11 +15,11 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::android::os
 {
-	class Handler;
+	class MessageQueue;
 }
 namespace __jni_impl::android::os
 {
-	class MessageQueue;
+	class Handler;
 }
 
 namespace __jni_impl::android::os
@@ -36,17 +36,17 @@ namespace __jni_impl::android::os
 		QAndroidJniObject next();
 		void execute(__jni_impl::android::os::Message arg0);
 		void release();
+		void recycle(__jni_impl::android::os::Message arg0);
+		QAndroidJniObject getMessageQueue();
 		jboolean hasMessages(__jni_impl::android::os::Handler arg0, jobject arg1, jint arg2);
 		jboolean hasMessages(__jni_impl::android::os::Handler arg0, jobject arg1, __jni_impl::__JniBaseClass arg2);
-		QAndroidJniObject getMessageQueue();
-		void recycle(__jni_impl::android::os::Message arg0);
 	};
 } // namespace __jni_impl::android::os
 
 #include "Looper.hpp"
 #include "Message.hpp"
-#include "Handler.hpp"
 #include "MessageQueue.hpp"
+#include "Handler.hpp"
 
 namespace __jni_impl::android::os
 {
@@ -83,6 +83,21 @@ namespace __jni_impl::android::os
 			"()V"
 		);
 	}
+	void TestLooperManager::recycle(__jni_impl::android::os::Message arg0)
+	{
+		__thiz.callMethod<void>(
+			"recycle",
+			"(Landroid/os/Message;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TestLooperManager::getMessageQueue()
+	{
+		return __thiz.callObjectMethod(
+			"getMessageQueue",
+			"()Landroid/os/MessageQueue;"
+		);
+	}
 	jboolean TestLooperManager::hasMessages(__jni_impl::android::os::Handler arg0, jobject arg1, jint arg2)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -101,21 +116,6 @@ namespace __jni_impl::android::os
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject TestLooperManager::getMessageQueue()
-	{
-		return __thiz.callObjectMethod(
-			"getMessageQueue",
-			"()Landroid/os/MessageQueue;"
-		);
-	}
-	void TestLooperManager::recycle(__jni_impl::android::os::Message arg0)
-	{
-		__thiz.callMethod<void>(
-			"recycle",
-			"(Landroid/os/Message;)V",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::os

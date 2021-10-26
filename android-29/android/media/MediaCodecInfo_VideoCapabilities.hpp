@@ -21,16 +21,16 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jint getWidthAlignment();
 		jint getHeightAlignment();
 		QAndroidJniObject getSupportedFrameRates();
 		QAndroidJniObject getSupportedWidthsFor(jint arg0);
 		QAndroidJniObject getSupportedHeightsFor(jint arg0);
 		QAndroidJniObject getSupportedFrameRatesFor(jint arg0, jint arg1);
+		QAndroidJniObject getAchievableFrameRatesFor(jint arg0, jint arg1);
 		QAndroidJniObject getBitrateRange();
 		QAndroidJniObject getSupportedWidths();
 		QAndroidJniObject getSupportedHeights();
-		QAndroidJniObject getAchievableFrameRatesFor(jint arg0, jint arg1);
+		jint getWidthAlignment();
 		QAndroidJniObject getSupportedPerformancePoints();
 		jboolean areSizeAndRateSupported(jint arg0, jint arg1, jdouble arg2);
 		jboolean isSizeSupported(jint arg0, jint arg1);
@@ -52,13 +52,6 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jint MediaCodecInfo_VideoCapabilities::getWidthAlignment()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidthAlignment",
-			"()I"
-		);
-	}
 	jint MediaCodecInfo_VideoCapabilities::getHeightAlignment()
 	{
 		return __thiz.callMethod<jint>(
@@ -98,6 +91,15 @@ namespace __jni_impl::android::media
 			arg1
 		);
 	}
+	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getAchievableFrameRatesFor(jint arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getAchievableFrameRatesFor",
+			"(II)Landroid/util/Range;",
+			arg0,
+			arg1
+		);
+	}
 	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getBitrateRange()
 	{
 		return __thiz.callObjectMethod(
@@ -119,13 +121,11 @@ namespace __jni_impl::android::media
 			"()Landroid/util/Range;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getAchievableFrameRatesFor(jint arg0, jint arg1)
+	jint MediaCodecInfo_VideoCapabilities::getWidthAlignment()
 	{
-		return __thiz.callObjectMethod(
-			"getAchievableFrameRatesFor",
-			"(II)Landroid/util/Range;",
-			arg0,
-			arg1
+		return __thiz.callMethod<jint>(
+			"getWidthAlignment",
+			"()I"
 		);
 	}
 	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedPerformancePoints()

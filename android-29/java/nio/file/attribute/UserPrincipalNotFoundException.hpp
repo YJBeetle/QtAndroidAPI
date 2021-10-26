@@ -17,6 +17,7 @@ namespace __jni_impl::java::nio::file::attribute
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jstring getName();
@@ -34,7 +35,16 @@ namespace __jni_impl::java::nio::file::attribute
 		__thiz = QAndroidJniObject(
 			"java.nio.file.attribute.UserPrincipalNotFoundException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void UserPrincipalNotFoundException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.nio.file.attribute.UserPrincipalNotFoundException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

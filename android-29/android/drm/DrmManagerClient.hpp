@@ -50,6 +50,7 @@ namespace __jni_impl::android::drm
 		void close();
 		void release();
 		QAndroidJniObject getMetadata(jstring arg0);
+		QAndroidJniObject getMetadata(const QString &arg0);
 		QAndroidJniObject getMetadata(__jni_impl::android::net::Uri arg0);
 		void setOnInfoListener(__jni_impl::__JniBaseClass arg0);
 		void setOnEventListener(__jni_impl::__JniBaseClass arg0);
@@ -57,24 +58,35 @@ namespace __jni_impl::android::drm
 		jarray getAvailableDrmEngines();
 		QAndroidJniObject getConstraints(__jni_impl::android::net::Uri arg0, jint arg1);
 		QAndroidJniObject getConstraints(jstring arg0, jint arg1);
+		QAndroidJniObject getConstraints(const QString &arg0, jint arg1);
 		jint saveRights(__jni_impl::android::drm::DrmRights arg0, jstring arg1, jstring arg2);
+		jint saveRights(__jni_impl::android::drm::DrmRights arg0, const QString &arg1, const QString &arg2);
 		jboolean canHandle(__jni_impl::android::net::Uri arg0, jstring arg1);
+		jboolean canHandle(__jni_impl::android::net::Uri arg0, const QString &arg1);
 		jboolean canHandle(jstring arg0, jstring arg1);
+		jboolean canHandle(const QString &arg0, const QString &arg1);
 		jint processDrmInfo(__jni_impl::android::drm::DrmInfo arg0);
 		QAndroidJniObject acquireDrmInfo(__jni_impl::android::drm::DrmInfoRequest arg0);
 		jint acquireRights(__jni_impl::android::drm::DrmInfoRequest arg0);
 		jint getDrmObjectType(__jni_impl::android::net::Uri arg0, jstring arg1);
+		jint getDrmObjectType(__jni_impl::android::net::Uri arg0, const QString &arg1);
 		jint getDrmObjectType(jstring arg0, jstring arg1);
+		jint getDrmObjectType(const QString &arg0, const QString &arg1);
 		jstring getOriginalMimeType(__jni_impl::android::net::Uri arg0);
 		jstring getOriginalMimeType(jstring arg0);
+		jstring getOriginalMimeType(const QString &arg0);
 		jint checkRightsStatus(__jni_impl::android::net::Uri arg0, jint arg1);
 		jint checkRightsStatus(jstring arg0, jint arg1);
+		jint checkRightsStatus(const QString &arg0, jint arg1);
 		jint checkRightsStatus(__jni_impl::android::net::Uri arg0);
 		jint checkRightsStatus(jstring arg0);
+		jint checkRightsStatus(const QString &arg0);
 		jint removeRights(__jni_impl::android::net::Uri arg0);
 		jint removeRights(jstring arg0);
+		jint removeRights(const QString &arg0);
 		jint removeAllRights();
 		jint openConvertSession(jstring arg0);
+		jint openConvertSession(const QString &arg0);
 		QAndroidJniObject convertData(jint arg0, jbyteArray arg1);
 		QAndroidJniObject closeConvertSession(jint arg0);
 	};
@@ -112,7 +124,8 @@ namespace __jni_impl::android::drm
 		__thiz = QAndroidJniObject(
 			"android.drm.DrmManagerClient",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -136,6 +149,14 @@ namespace __jni_impl::android::drm
 			"getMetadata",
 			"(Ljava/lang/String;)Landroid/content/ContentValues;",
 			arg0
+		);
+	}
+	QAndroidJniObject DrmManagerClient::getMetadata(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getMetadata",
+			"(Ljava/lang/String;)Landroid/content/ContentValues;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject DrmManagerClient::getMetadata(__jni_impl::android::net::Uri arg0)
@@ -195,6 +216,15 @@ namespace __jni_impl::android::drm
 			arg1
 		);
 	}
+	QAndroidJniObject DrmManagerClient::getConstraints(const QString &arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getConstraints",
+			"(Ljava/lang/String;I)Landroid/content/ContentValues;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	jint DrmManagerClient::saveRights(__jni_impl::android::drm::DrmRights arg0, jstring arg1, jstring arg2)
 	{
 		return __thiz.callMethod<jint>(
@@ -203,6 +233,16 @@ namespace __jni_impl::android::drm
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
+		);
+	}
+	jint DrmManagerClient::saveRights(__jni_impl::android::drm::DrmRights arg0, const QString &arg1, const QString &arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"saveRights",
+			"(Landroid/drm/DrmRights;Ljava/lang/String;Ljava/lang/String;)I",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	jboolean DrmManagerClient::canHandle(__jni_impl::android::net::Uri arg0, jstring arg1)
@@ -214,6 +254,15 @@ namespace __jni_impl::android::drm
 			arg1
 		);
 	}
+	jboolean DrmManagerClient::canHandle(__jni_impl::android::net::Uri arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"canHandle",
+			"(Landroid/net/Uri;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	jboolean DrmManagerClient::canHandle(jstring arg0, jstring arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -221,6 +270,15 @@ namespace __jni_impl::android::drm
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
 			arg0,
 			arg1
+		);
+	}
+	jboolean DrmManagerClient::canHandle(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"canHandle",
+			"(Ljava/lang/String;Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jint DrmManagerClient::processDrmInfo(__jni_impl::android::drm::DrmInfo arg0)
@@ -256,6 +314,15 @@ namespace __jni_impl::android::drm
 			arg1
 		);
 	}
+	jint DrmManagerClient::getDrmObjectType(__jni_impl::android::net::Uri arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getDrmObjectType",
+			"(Landroid/net/Uri;Ljava/lang/String;)I",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	jint DrmManagerClient::getDrmObjectType(jstring arg0, jstring arg1)
 	{
 		return __thiz.callMethod<jint>(
@@ -263,6 +330,15 @@ namespace __jni_impl::android::drm
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
 			arg1
+		);
+	}
+	jint DrmManagerClient::getDrmObjectType(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getDrmObjectType",
+			"(Ljava/lang/String;Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jstring DrmManagerClient::getOriginalMimeType(__jni_impl::android::net::Uri arg0)
@@ -279,6 +355,14 @@ namespace __jni_impl::android::drm
 			"getOriginalMimeType",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring DrmManagerClient::getOriginalMimeType(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getOriginalMimeType",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jint DrmManagerClient::checkRightsStatus(__jni_impl::android::net::Uri arg0, jint arg1)
@@ -299,6 +383,15 @@ namespace __jni_impl::android::drm
 			arg1
 		);
 	}
+	jint DrmManagerClient::checkRightsStatus(const QString &arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"checkRightsStatus",
+			"(Ljava/lang/String;I)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	jint DrmManagerClient::checkRightsStatus(__jni_impl::android::net::Uri arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -313,6 +406,14 @@ namespace __jni_impl::android::drm
 			"checkRightsStatus",
 			"(Ljava/lang/String;)I",
 			arg0
+		);
+	}
+	jint DrmManagerClient::checkRightsStatus(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"checkRightsStatus",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint DrmManagerClient::removeRights(__jni_impl::android::net::Uri arg0)
@@ -331,6 +432,14 @@ namespace __jni_impl::android::drm
 			arg0
 		);
 	}
+	jint DrmManagerClient::removeRights(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"removeRights",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint DrmManagerClient::removeAllRights()
 	{
 		return __thiz.callMethod<jint>(
@@ -344,6 +453,14 @@ namespace __jni_impl::android::drm
 			"openConvertSession",
 			"(Ljava/lang/String;)I",
 			arg0
+		);
+	}
+	jint DrmManagerClient::openConvertSession(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"openConvertSession",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject DrmManagerClient::convertData(jint arg0, jbyteArray arg1)

@@ -56,7 +56,8 @@ namespace __jni_impl::android::transition
 			"android.transition.Scene",
 			"(Landroid/view/ViewGroup;Landroid/view/ViewGroup;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Scene::__constructor(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::view::View arg1)
 	{
@@ -64,14 +65,16 @@ namespace __jni_impl::android::transition
 			"android.transition.Scene",
 			"(Landroid/view/ViewGroup;Landroid/view/View;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Scene::__constructor(__jni_impl::android::view::ViewGroup arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Scene",
 			"(Landroid/view/ViewGroup;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

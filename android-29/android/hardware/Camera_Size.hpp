@@ -54,7 +54,8 @@ namespace __jni_impl::android::hardware
 			"(Landroid/hardware/Camera;II)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods

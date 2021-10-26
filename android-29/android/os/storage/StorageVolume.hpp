@@ -11,11 +11,11 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::android::content
 {
-	class Intent;
+	class Context;
 }
 namespace __jni_impl::android::content
 {
-	class Context;
+	class Intent;
 }
 
 namespace __jni_impl::android::os::storage
@@ -35,21 +35,22 @@ namespace __jni_impl::android::os::storage
 		jstring toString();
 		jint hashCode();
 		jstring getState();
+		jboolean isPrimary();
+		jstring getDescription(__jni_impl::android::content::Context arg0);
+		jstring getUuid();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jboolean isPrimary();
-		jstring getUuid();
 		jboolean isRemovable();
 		jboolean isEmulated();
 		QAndroidJniObject createAccessIntent(jstring arg0);
+		QAndroidJniObject createAccessIntent(const QString &arg0);
 		QAndroidJniObject createOpenDocumentTreeIntent();
-		jstring getDescription(__jni_impl::android::content::Context arg0);
 	};
 } // namespace __jni_impl::android::os::storage
 
 #include "../Parcel.hpp"
-#include "../../content/Intent.hpp"
 #include "../../content/Context.hpp"
+#include "../../content/Intent.hpp"
 
 namespace __jni_impl::android::os::storage
 {
@@ -109,6 +110,28 @@ namespace __jni_impl::android::os::storage
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	jboolean StorageVolume::isPrimary()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isPrimary",
+			"()Z"
+		);
+	}
+	jstring StorageVolume::getDescription(__jni_impl::android::content::Context arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"(Landroid/content/Context;)Ljava/lang/String;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring StorageVolume::getUuid()
+	{
+		return __thiz.callObjectMethod(
+			"getUuid",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jint StorageVolume::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -124,20 +147,6 @@ namespace __jni_impl::android::os::storage
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jboolean StorageVolume::isPrimary()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isPrimary",
-			"()Z"
-		);
-	}
-	jstring StorageVolume::getUuid()
-	{
-		return __thiz.callObjectMethod(
-			"getUuid",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	jboolean StorageVolume::isRemovable()
 	{
@@ -161,20 +170,20 @@ namespace __jni_impl::android::os::storage
 			arg0
 		);
 	}
+	QAndroidJniObject StorageVolume::createAccessIntent(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"createAccessIntent",
+			"(Ljava/lang/String;)Landroid/content/Intent;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject StorageVolume::createOpenDocumentTreeIntent()
 	{
 		return __thiz.callObjectMethod(
 			"createOpenDocumentTreeIntent",
 			"()Landroid/content/Intent;"
 		);
-	}
-	jstring StorageVolume::getDescription(__jni_impl::android::content::Context arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"(Landroid/content/Context;)Ljava/lang/String;",
-			arg0.__jniObject().object()
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::os::storage
 

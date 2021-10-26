@@ -36,6 +36,7 @@ namespace __jni_impl::java::lang
 		// Constructors
 		void __constructor(jdouble arg0);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -58,6 +59,7 @@ namespace __jni_impl::java::lang
 		jdouble doubleValue();
 		static QAndroidJniObject valueOf(jdouble arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 		static jstring toHexString(jdouble arg0);
 		static jint compare(jdouble arg0, jdouble arg1);
 		QAndroidJniObject resolveConstantDesc(__jni_impl::java::lang::invoke::MethodHandles_Lookup arg0);
@@ -69,6 +71,7 @@ namespace __jni_impl::java::lang
 		static jboolean isFinite(jdouble arg0);
 		static jdouble sum(jdouble arg0, jdouble arg1);
 		static jdouble parseDouble(jstring arg0);
+		static jdouble parseDouble(const QString &arg0);
 	};
 } // namespace __jni_impl::java::lang
 
@@ -163,14 +166,24 @@ namespace __jni_impl::java::lang
 		__thiz = QAndroidJniObject(
 			"java.lang.Double",
 			"(D)V",
-			arg0);
+			arg0
+		);
 	}
 	void Double::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Double",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Double::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.Double",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -337,6 +350,15 @@ namespace __jni_impl::java::lang
 			arg0
 		);
 	}
+	QAndroidJniObject Double::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.lang.Double",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/lang/Double;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring Double::toHexString(jdouble arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -429,6 +451,15 @@ namespace __jni_impl::java::lang
 			"parseDouble",
 			"(Ljava/lang/String;)D",
 			arg0
+		);
+	}
+	jdouble Double::parseDouble(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jdouble>(
+			"java.lang.Double",
+			"parseDouble",
+			"(Ljava/lang/String;)D",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::lang

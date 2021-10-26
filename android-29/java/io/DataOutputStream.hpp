@@ -29,14 +29,17 @@ namespace __jni_impl::java::io
 		void flush();
 		void writeInt(jint arg0);
 		void writeUTF(jstring arg0);
+		void writeUTF(const QString &arg0);
 		void writeFloat(jfloat arg0);
 		void writeBytes(jstring arg0);
+		void writeBytes(const QString &arg0);
 		void writeLong(jlong arg0);
 		void writeBoolean(jboolean arg0);
 		void writeByte(jint arg0);
 		void writeShort(jint arg0);
 		void writeDouble(jdouble arg0);
 		void writeChars(jstring arg0);
+		void writeChars(const QString &arg0);
 		void writeChar(jint arg0);
 	};
 } // namespace __jni_impl::java::io
@@ -53,7 +56,8 @@ namespace __jni_impl::java::io
 		__thiz = QAndroidJniObject(
 			"java.io.DataOutputStream",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -105,6 +109,14 @@ namespace __jni_impl::java::io
 			arg0
 		);
 	}
+	void DataOutputStream::writeUTF(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"writeUTF",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void DataOutputStream::writeFloat(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
@@ -119,6 +131,14 @@ namespace __jni_impl::java::io
 			"writeBytes",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void DataOutputStream::writeBytes(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"writeBytes",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void DataOutputStream::writeLong(jlong arg0)
@@ -167,6 +187,14 @@ namespace __jni_impl::java::io
 			"writeChars",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void DataOutputStream::writeChars(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"writeChars",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void DataOutputStream::writeChar(jint arg0)

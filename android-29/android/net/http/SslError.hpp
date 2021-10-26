@@ -30,7 +30,9 @@ namespace __jni_impl::android::net::http
 		
 		// Constructors
 		void __constructor(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1, jstring arg2);
+		void __constructor(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1, const QString &arg2);
 		void __constructor(jint arg0, __jni_impl::android::net::http::SslCertificate arg1, jstring arg2);
+		void __constructor(jint arg0, __jni_impl::android::net::http::SslCertificate arg1, const QString &arg2);
 		void __constructor(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1);
 		void __constructor(jint arg0, __jni_impl::android::net::http::SslCertificate arg1);
 		
@@ -108,7 +110,18 @@ namespace __jni_impl::android::net::http
 			"(ILjava/security/cert/X509Certificate;Ljava/lang/String;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
+	}
+	void SslError::__constructor(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.net.http.SslError",
+			"(ILjava/security/cert/X509Certificate;Ljava/lang/String;)V",
+			arg0,
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	void SslError::__constructor(jint arg0, __jni_impl::android::net::http::SslCertificate arg1, jstring arg2)
 	{
@@ -117,7 +130,18 @@ namespace __jni_impl::android::net::http
 			"(ILandroid/net/http/SslCertificate;Ljava/lang/String;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
+	}
+	void SslError::__constructor(jint arg0, __jni_impl::android::net::http::SslCertificate arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.net.http.SslError",
+			"(ILandroid/net/http/SslCertificate;Ljava/lang/String;)V",
+			arg0,
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	void SslError::__constructor(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1)
 	{
@@ -125,7 +149,8 @@ namespace __jni_impl::android::net::http
 			"android.net.http.SslError",
 			"(ILjava/security/cert/X509Certificate;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void SslError::__constructor(jint arg0, __jni_impl::android::net::http::SslCertificate arg1)
 	{
@@ -133,7 +158,8 @@ namespace __jni_impl::android::net::http
 			"android.net.http.SslError",
 			"(ILandroid/net/http/SslCertificate;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

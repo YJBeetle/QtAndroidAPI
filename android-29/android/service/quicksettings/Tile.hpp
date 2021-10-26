@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Icon;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::service::quicksettings
@@ -31,22 +31,25 @@ namespace __jni_impl::android::service::quicksettings
 		// Methods
 		jint getState();
 		void setState(jint arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jstring getContentDescription();
 		void setContentDescription(jstring arg0);
-		void setLabel(jstring arg0);
-		jstring getSubtitle();
-		void updateTile();
-		void setSubtitle(jstring arg0);
+		void setContentDescription(const QString &arg0);
 		jstring getLabel();
 		QAndroidJniObject getIcon();
 		void setIcon(__jni_impl::android::graphics::drawable::Icon arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void setSubtitle(jstring arg0);
+		void setSubtitle(const QString &arg0);
+		void setLabel(jstring arg0);
+		void setLabel(const QString &arg0);
+		jstring getSubtitle();
+		void updateTile();
 	};
 } // namespace __jni_impl::android::service::quicksettings
 
-#include "../../os/Parcel.hpp"
 #include "../../graphics/drawable/Icon.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::service::quicksettings
 {
@@ -105,22 +108,6 @@ namespace __jni_impl::android::service::quicksettings
 			arg0
 		);
 	}
-	jint Tile::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void Tile::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	jstring Tile::getContentDescription()
 	{
 		return __thiz.callObjectMethod(
@@ -136,34 +123,12 @@ namespace __jni_impl::android::service::quicksettings
 			arg0
 		);
 	}
-	void Tile::setLabel(jstring arg0)
+	void Tile::setContentDescription(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"setLabel",
+			"setContentDescription",
 			"(Ljava/lang/CharSequence;)V",
-			arg0
-		);
-	}
-	jstring Tile::getSubtitle()
-	{
-		return __thiz.callObjectMethod(
-			"getSubtitle",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	void Tile::updateTile()
-	{
-		__thiz.callMethod<void>(
-			"updateTile",
-			"()V"
-		);
-	}
-	void Tile::setSubtitle(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSubtitle",
-			"(Ljava/lang/CharSequence;)V",
-			arg0
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring Tile::getLabel()
@@ -186,6 +151,68 @@ namespace __jni_impl::android::service::quicksettings
 			"setIcon",
 			"(Landroid/graphics/drawable/Icon;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	jint Tile::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void Tile::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void Tile::setSubtitle(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSubtitle",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void Tile::setSubtitle(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSubtitle",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void Tile::setLabel(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLabel",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void Tile::setLabel(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLabel",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jstring Tile::getSubtitle()
+	{
+		return __thiz.callObjectMethod(
+			"getSubtitle",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	void Tile::updateTile()
+	{
+		__thiz.callMethod<void>(
+			"updateTile",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::service::quicksettings

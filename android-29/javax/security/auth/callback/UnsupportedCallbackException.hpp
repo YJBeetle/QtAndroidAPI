@@ -17,6 +17,7 @@ namespace __jni_impl::javax::security::auth::callback
 		// Constructors
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		void __constructor(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void __constructor(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 		
 		// Methods
 		QAndroidJniObject getCallback();
@@ -34,7 +35,8 @@ namespace __jni_impl::javax::security::auth::callback
 		__thiz = QAndroidJniObject(
 			"javax.security.auth.callback.UnsupportedCallbackException",
 			"(Ljavax/security/auth/callback/Callback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void UnsupportedCallbackException::__constructor(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
@@ -42,7 +44,17 @@ namespace __jni_impl::javax::security::auth::callback
 			"javax.security.auth.callback.UnsupportedCallbackException",
 			"(Ljavax/security/auth/callback/Callback;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void UnsupportedCallbackException::__constructor(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.security.auth.callback.UnsupportedCallbackException",
+			"(Ljavax/security/auth/callback/Callback;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods

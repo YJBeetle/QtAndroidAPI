@@ -33,19 +33,22 @@ namespace __jni_impl::java::text
 		
 		// Methods
 		jboolean equals(jstring arg0, jstring arg1);
+		jboolean equals(const QString &arg0, const QString &arg1);
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jobject clone();
 		jint compare(jobject arg0, jobject arg1);
 		jint compare(jstring arg0, jstring arg1);
+		jint compare(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject getInstance();
 		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
 		static jarray getAvailableLocales();
-		QAndroidJniObject getCollationKey(jstring arg0);
 		void setStrength(jint arg0);
 		void setDecomposition(jint arg0);
 		jint getStrength();
 		jint getDecomposition();
+		QAndroidJniObject getCollationKey(jstring arg0);
+		QAndroidJniObject getCollationKey(const QString &arg0);
 	};
 } // namespace __jni_impl::java::text
 
@@ -123,6 +126,15 @@ namespace __jni_impl::java::text
 			arg1
 		);
 	}
+	jboolean Collator::equals(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/String;Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	jboolean Collator::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -163,6 +175,15 @@ namespace __jni_impl::java::text
 			arg1
 		);
 	}
+	jint Collator::compare(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"compare",
+			"(Ljava/lang/String;Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject Collator::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -187,14 +208,6 @@ namespace __jni_impl::java::text
 			"getAvailableLocales",
 			"()[Ljava/util/Locale;"
 		).object<jarray>();
-	}
-	QAndroidJniObject Collator::getCollationKey(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getCollationKey",
-			"(Ljava/lang/String;)Ljava/text/CollationKey;",
-			arg0
-		);
 	}
 	void Collator::setStrength(jint arg0)
 	{
@@ -224,6 +237,22 @@ namespace __jni_impl::java::text
 		return __thiz.callMethod<jint>(
 			"getDecomposition",
 			"()I"
+		);
+	}
+	QAndroidJniObject Collator::getCollationKey(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getCollationKey",
+			"(Ljava/lang/String;)Ljava/text/CollationKey;",
+			arg0
+		);
+	}
+	QAndroidJniObject Collator::getCollationKey(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getCollationKey",
+			"(Ljava/lang/String;)Ljava/text/CollationKey;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::text

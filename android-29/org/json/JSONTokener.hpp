@@ -19,6 +19,7 @@ namespace __jni_impl::org::json
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jstring toString();
@@ -29,10 +30,13 @@ namespace __jni_impl::org::json
 		void back();
 		jstring nextString(jchar arg0);
 		QAndroidJniObject syntaxError(jstring arg0);
+		QAndroidJniObject syntaxError(const QString &arg0);
 		jchar nextClean();
 		jstring nextTo(jchar arg0);
 		jstring nextTo(jstring arg0);
+		jstring nextTo(const QString &arg0);
 		void skipPast(jstring arg0);
+		void skipPast(const QString &arg0);
 		jchar skipTo(jchar arg0);
 		static jint dehexchar(jchar arg0);
 		jobject nextValue();
@@ -51,7 +55,16 @@ namespace __jni_impl::org::json
 		__thiz = QAndroidJniObject(
 			"org.json.JSONTokener",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void JSONTokener::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"org.json.JSONTokener",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -115,6 +128,14 @@ namespace __jni_impl::org::json
 			arg0
 		);
 	}
+	QAndroidJniObject JSONTokener::syntaxError(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"syntaxError",
+			"(Ljava/lang/String;)Lorg/json/JSONException;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jchar JSONTokener::nextClean()
 	{
 		return __thiz.callMethod<jchar>(
@@ -138,12 +159,28 @@ namespace __jni_impl::org::json
 			arg0
 		).object<jstring>();
 	}
+	jstring JSONTokener::nextTo(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"nextTo",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	void JSONTokener::skipPast(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"skipPast",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void JSONTokener::skipPast(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"skipPast",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jchar JSONTokener::skipTo(jchar arg0)

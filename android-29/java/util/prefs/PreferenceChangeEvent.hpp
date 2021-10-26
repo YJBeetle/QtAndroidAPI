@@ -28,6 +28,7 @@ namespace __jni_impl::java::util::prefs
 		
 		// Constructors
 		void __constructor(__jni_impl::java::util::prefs::Preferences arg0, jstring arg1, jstring arg2);
+		void __constructor(__jni_impl::java::util::prefs::Preferences arg0, const QString &arg1, const QString &arg2);
 		
 		// Methods
 		jstring getKey();
@@ -52,7 +53,18 @@ namespace __jni_impl::java::util::prefs
 			"(Ljava/util/prefs/Preferences;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void PreferenceChangeEvent::__constructor(__jni_impl::java::util::prefs::Preferences arg0, const QString &arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.prefs.PreferenceChangeEvent",
+			"(Ljava/util/prefs/Preferences;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	
 	// Methods

@@ -9,13 +9,13 @@ namespace __jni_impl::android::content
 {
 	class ContentResolver;
 }
-namespace __jni_impl::android::database
-{
-	class CursorWindow;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::database
+{
+	class CursorWindow;
 }
 namespace __jni_impl::android::database
 {
@@ -56,10 +56,12 @@ namespace __jni_impl::android::database
 		jint getCount();
 		jstring getString(jint arg0);
 		jboolean move(jint arg0);
+		void setExtras(__jni_impl::android::os::Bundle arg0);
+		jboolean isClosed();
 		QAndroidJniObject getWindow();
 		QAndroidJniObject getExtras();
-		jboolean isClosed();
 		jint getColumnIndex(jstring arg0);
+		jint getColumnIndex(const QString &arg0);
 		jarray getColumnNames();
 		jbyteArray getBlob(jint arg0);
 		jint getColumnCount();
@@ -79,6 +81,7 @@ namespace __jni_impl::android::database
 		jboolean isBeforeFirst();
 		jboolean isAfterLast();
 		jint getColumnIndexOrThrow(jstring arg0);
+		jint getColumnIndexOrThrow(const QString &arg0);
 		jstring getColumnName(jint arg0);
 		void registerContentObserver(__jni_impl::android::database::ContentObserver arg0);
 		void unregisterContentObserver(__jni_impl::android::database::ContentObserver arg0);
@@ -90,13 +93,12 @@ namespace __jni_impl::android::database
 		QAndroidJniObject getNotificationUris();
 		jboolean getWantsAllOnMoveCalls();
 		QAndroidJniObject respond(__jni_impl::android::os::Bundle arg0);
-		void setExtras(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::database
 
 #include "../content/ContentResolver.hpp"
-#include "CursorWindow.hpp"
 #include "../os/Bundle.hpp"
+#include "CursorWindow.hpp"
 #include "CharArrayBuffer.hpp"
 #include "ContentObserver.hpp"
 #include "DataSetObserver.hpp"
@@ -111,7 +113,8 @@ namespace __jni_impl::android::database
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.AbstractCursor",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -201,6 +204,21 @@ namespace __jni_impl::android::database
 			arg0
 		);
 	}
+	void AbstractCursor::setExtras(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"setExtras",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean AbstractCursor::isClosed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isClosed",
+			"()Z"
+		);
+	}
 	QAndroidJniObject AbstractCursor::getWindow()
 	{
 		return __thiz.callObjectMethod(
@@ -215,19 +233,20 @@ namespace __jni_impl::android::database
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jboolean AbstractCursor::isClosed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isClosed",
-			"()Z"
-		);
-	}
 	jint AbstractCursor::getColumnIndex(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getColumnIndex",
 			"(Ljava/lang/String;)I",
 			arg0
+		);
+	}
+	jint AbstractCursor::getColumnIndex(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getColumnIndex",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jarray AbstractCursor::getColumnNames()
@@ -372,6 +391,14 @@ namespace __jni_impl::android::database
 			arg0
 		);
 	}
+	jint AbstractCursor::getColumnIndexOrThrow(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getColumnIndexOrThrow",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring AbstractCursor::getColumnName(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -456,14 +483,6 @@ namespace __jni_impl::android::database
 		return __thiz.callObjectMethod(
 			"respond",
 			"(Landroid/os/Bundle;)Landroid/os/Bundle;",
-			arg0.__jniObject().object()
-		);
-	}
-	void AbstractCursor::setExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"setExtras",
-			"(Landroid/os/Bundle;)V",
 			arg0.__jniObject().object()
 		);
 	}

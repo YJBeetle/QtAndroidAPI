@@ -35,10 +35,10 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
+		jstring getAccessibilityClassName();
 		void setImageResource(jint arg0);
 		void setImageURI(__jni_impl::android::net::Uri arg0);
 		void setImageDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
-		jstring getAccessibilityClassName();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -56,7 +56,8 @@ namespace __jni_impl::android::widget
 		__thiz = QAndroidJniObject(
 			"android.widget.ImageSwitcher",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ImageSwitcher::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -64,10 +65,18 @@ namespace __jni_impl::android::widget
 			"android.widget.ImageSwitcher",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
+	jstring ImageSwitcher::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
 	void ImageSwitcher::setImageResource(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -91,13 +100,6 @@ namespace __jni_impl::android::widget
 			"(Landroid/graphics/drawable/Drawable;)V",
 			arg0.__jniObject().object()
 		);
-	}
-	jstring ImageSwitcher::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::widget
 

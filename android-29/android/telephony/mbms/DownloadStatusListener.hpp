@@ -41,7 +41,8 @@ namespace __jni_impl::android::telephony::mbms
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.mbms.DownloadStatusListener",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

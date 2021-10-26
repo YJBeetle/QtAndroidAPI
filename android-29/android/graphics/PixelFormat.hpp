@@ -206,7 +206,8 @@ namespace __jni_impl::android::graphics
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.PixelFormat",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

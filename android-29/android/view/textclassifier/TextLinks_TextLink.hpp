@@ -28,13 +28,14 @@ namespace __jni_impl::android::view::textclassifier
 		// Methods
 		jstring toString();
 		jint getEnd();
-		jfloat getConfidenceScore(jstring arg0);
+		jint getStart();
+		jint getEntityCount();
+		jstring getEntity(jint arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getExtras();
-		jint getEntityCount();
-		jstring getEntity(jint arg0);
-		jint getStart();
+		jfloat getConfidenceScore(jstring arg0);
+		jfloat getConfidenceScore(const QString &arg0);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -76,13 +77,27 @@ namespace __jni_impl::android::view::textclassifier
 			"()I"
 		);
 	}
-	jfloat TextLinks_TextLink::getConfidenceScore(jstring arg0)
+	jint TextLinks_TextLink::getStart()
 	{
-		return __thiz.callMethod<jfloat>(
-			"getConfidenceScore",
-			"(Ljava/lang/String;)F",
-			arg0
+		return __thiz.callMethod<jint>(
+			"getStart",
+			"()I"
 		);
+	}
+	jint TextLinks_TextLink::getEntityCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getEntityCount",
+			"()I"
+		);
+	}
+	jstring TextLinks_TextLink::getEntity(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getEntity",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
 	}
 	jint TextLinks_TextLink::describeContents()
 	{
@@ -107,26 +122,20 @@ namespace __jni_impl::android::view::textclassifier
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint TextLinks_TextLink::getEntityCount()
+	jfloat TextLinks_TextLink::getConfidenceScore(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getEntityCount",
-			"()I"
+		return __thiz.callMethod<jfloat>(
+			"getConfidenceScore",
+			"(Ljava/lang/String;)F",
+			arg0
 		);
 	}
-	jstring TextLinks_TextLink::getEntity(jint arg0)
+	jfloat TextLinks_TextLink::getConfidenceScore(const QString &arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getEntity",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jint TextLinks_TextLink::getStart()
-	{
-		return __thiz.callMethod<jint>(
-			"getStart",
-			"()I"
+		return __thiz.callMethod<jfloat>(
+			"getConfidenceScore",
+			"(Ljava/lang/String;)F",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::view::textclassifier

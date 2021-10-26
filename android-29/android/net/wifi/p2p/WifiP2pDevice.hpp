@@ -36,13 +36,13 @@ namespace __jni_impl::android::net::wifi::p2p
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jboolean wpsPbcSupported();
 		jboolean wpsKeypadSupported();
 		jboolean wpsDisplaySupported();
 		jboolean isServiceDiscoveryCapable();
 		jboolean isGroupOwner();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi::p2p
 
@@ -134,14 +134,16 @@ namespace __jni_impl::android::net::wifi::p2p
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.p2p.WifiP2pDevice",
-			"()V");
+			"()V"
+		);
 	}
 	void WifiP2pDevice::__constructor(__jni_impl::android::net::wifi::p2p::WifiP2pDevice arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.p2p.WifiP2pDevice",
 			"(Landroid/net/wifi/p2p/WifiP2pDevice;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -165,22 +167,6 @@ namespace __jni_impl::android::net::wifi::p2p
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I"
-		);
-	}
-	jint WifiP2pDevice::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void WifiP2pDevice::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 	jboolean WifiP2pDevice::wpsPbcSupported()
@@ -216,6 +202,22 @@ namespace __jni_impl::android::net::wifi::p2p
 		return __thiz.callMethod<jboolean>(
 			"isGroupOwner",
 			"()Z"
+		);
+	}
+	jint WifiP2pDevice::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void WifiP2pDevice::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::net::wifi::p2p

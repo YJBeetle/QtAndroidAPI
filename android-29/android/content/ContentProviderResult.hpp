@@ -76,21 +76,24 @@ namespace __jni_impl::android::content
 		__thiz = QAndroidJniObject(
 			"android.content.ContentProviderResult",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ContentProviderResult::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ContentProviderResult",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void ContentProviderResult::__constructor(__jni_impl::android::net::Uri arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ContentProviderResult",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

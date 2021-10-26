@@ -27,10 +27,12 @@ namespace __jni_impl::android::service::autofill
 		
 		// Constructors
 		void __constructor(__jni_impl::android::view::autofill::AutofillId arg0, __jni_impl::java::util::regex::Pattern arg1, jstring arg2);
+		void __constructor(__jni_impl::android::view::autofill::AutofillId arg0, __jni_impl::java::util::regex::Pattern arg1, const QString &arg2);
 		
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject addField(__jni_impl::android::view::autofill::AutofillId arg0, __jni_impl::java::util::regex::Pattern arg1, jstring arg2);
+		QAndroidJniObject addField(__jni_impl::android::view::autofill::AutofillId arg0, __jni_impl::java::util::regex::Pattern arg1, const QString &arg2);
 	};
 } // namespace __jni_impl::android::service::autofill
 
@@ -50,7 +52,18 @@ namespace __jni_impl::android::service::autofill
 			"(Landroid/view/autofill/AutofillId;Ljava/util/regex/Pattern;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
+	}
+	void CharSequenceTransformation_Builder::__constructor(__jni_impl::android::view::autofill::AutofillId arg0, __jni_impl::java::util::regex::Pattern arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.service.autofill.CharSequenceTransformation$Builder",
+			"(Landroid/view/autofill/AutofillId;Ljava/util/regex/Pattern;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -69,6 +82,16 @@ namespace __jni_impl::android::service::autofill
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2
+		);
+	}
+	QAndroidJniObject CharSequenceTransformation_Builder::addField(__jni_impl::android::view::autofill::AutofillId arg0, __jni_impl::java::util::regex::Pattern arg1, const QString &arg2)
+	{
+		return __thiz.callObjectMethod(
+			"addField",
+			"(Landroid/view/autofill/AutofillId;Ljava/util/regex/Pattern;Ljava/lang/String;)Landroid/service/autofill/CharSequenceTransformation$Builder;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::service::autofill

@@ -57,7 +57,8 @@ namespace __jni_impl::android::print::pdf
 			"android.print.pdf.PrintedPdfDocument",
 			"(Landroid/content/Context;Landroid/print/PrintAttributes;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

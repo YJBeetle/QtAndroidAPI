@@ -36,6 +36,7 @@ namespace __jni_impl::android::app::usage
 		jlong getTotalBytes(__jni_impl::java::util::UUID arg0);
 		jlong getFreeBytes(__jni_impl::java::util::UUID arg0);
 		QAndroidJniObject queryStatsForPackage(__jni_impl::java::util::UUID arg0, jstring arg1, __jni_impl::android::os::UserHandle arg2);
+		QAndroidJniObject queryStatsForPackage(__jni_impl::java::util::UUID arg0, const QString &arg1, __jni_impl::android::os::UserHandle arg2);
 		QAndroidJniObject queryStatsForUid(__jni_impl::java::util::UUID arg0, jint arg1);
 		QAndroidJniObject queryStatsForUser(__jni_impl::java::util::UUID arg0, __jni_impl::android::os::UserHandle arg1);
 		QAndroidJniObject queryExternalStatsForUser(__jni_impl::java::util::UUID arg0, __jni_impl::android::os::UserHandle arg1);
@@ -83,6 +84,16 @@ namespace __jni_impl::android::app::usage
 			"(Ljava/util/UUID;Ljava/lang/String;Landroid/os/UserHandle;)Landroid/app/usage/StorageStats;",
 			arg0.__jniObject().object(),
 			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject StorageStatsManager::queryStatsForPackage(__jni_impl::java::util::UUID arg0, const QString &arg1, __jni_impl::android::os::UserHandle arg2)
+	{
+		return __thiz.callObjectMethod(
+			"queryStatsForPackage",
+			"(Ljava/util/UUID;Ljava/lang/String;Landroid/os/UserHandle;)Landroid/app/usage/StorageStats;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}

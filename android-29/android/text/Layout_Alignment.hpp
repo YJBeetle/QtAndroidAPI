@@ -23,6 +23,7 @@ namespace __jni_impl::android::text
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::text
 
@@ -79,6 +80,15 @@ namespace __jni_impl::android::text
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/text/Layout$Alignment;",
 			arg0
+		);
+	}
+	QAndroidJniObject Layout_Alignment::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.Layout$Alignment",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/text/Layout$Alignment;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::text

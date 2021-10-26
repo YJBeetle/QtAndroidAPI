@@ -17,6 +17,7 @@ namespace __jni_impl::java::lang::annotation
 		
 		// Constructors
 		void __constructor(jclass arg0, jstring arg1);
+		void __constructor(jclass arg0, const QString &arg1);
 		
 		// Methods
 		jclass annotationType();
@@ -36,7 +37,17 @@ namespace __jni_impl::java::lang::annotation
 			"java.lang.annotation.IncompleteAnnotationException",
 			"(Ljava/lang/Class;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void IncompleteAnnotationException::__constructor(jclass arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.annotation.IncompleteAnnotationException",
+			"(Ljava/lang/Class;Ljava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods

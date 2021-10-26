@@ -20,11 +20,13 @@ namespace __jni_impl::java::util
 		static jboolean equals(jobject arg0, jobject arg1);
 		static jstring toString(jobject arg0);
 		static jstring toString(jobject arg0, jstring arg1);
+		static jstring toString(jobject arg0, const QString &arg1);
 		static jint hashCode(jobject arg0);
 		static jint checkIndex(jint arg0, jint arg1);
 		static jint hash(jobjectArray arg0);
 		static jobject requireNonNull(jobject arg0, __jni_impl::__JniBaseClass arg1);
 		static jobject requireNonNull(jobject arg0, jstring arg1);
+		static jobject requireNonNull(jobject arg0, const QString &arg1);
 		static jobject requireNonNull(jobject arg0);
 		static jint compare(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2);
 		static jint checkFromIndexSize(jint arg0, jint arg1, jint arg2);
@@ -80,6 +82,16 @@ namespace __jni_impl::java::util
 			arg1
 		).object<jstring>();
 	}
+	jstring Objects::toString(jobject arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.Objects",
+			"toString",
+			"(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		).object<jstring>();
+	}
 	jint Objects::hashCode(jobject arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -126,6 +138,16 @@ namespace __jni_impl::java::util
 			"(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;",
 			arg0,
 			arg1
+		).object<jobject>();
+	}
+	jobject Objects::requireNonNull(jobject arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.Objects",
+			"requireNonNull",
+			"(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jobject>();
 	}
 	jobject Objects::requireNonNull(jobject arg0)

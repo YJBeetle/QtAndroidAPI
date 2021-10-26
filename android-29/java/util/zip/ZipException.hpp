@@ -18,6 +18,7 @@ namespace __jni_impl::java::util::zip
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -33,14 +34,24 @@ namespace __jni_impl::java::util::zip
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.ZipException",
-			"()V");
+			"()V"
+		);
 	}
 	void ZipException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.ZipException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void ZipException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.zip.ZipException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

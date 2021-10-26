@@ -51,14 +51,16 @@ namespace __jni_impl::android::content::pm
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.SigningInfo",
-			"()V");
+			"()V"
+		);
 	}
 	void SigningInfo::__constructor(__jni_impl::android::content::pm::SigningInfo arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.SigningInfo",
 			"(Landroid/content/pm/SigningInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

@@ -48,19 +48,20 @@ namespace __jni_impl::java::security::cert
 		jbyteArray getEncoded();
 		void verify(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::Provider arg1);
 		void verify(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void verify(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 		void verify(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getIssuerDN();
 		jint getVersion();
+		QAndroidJniObject getIssuerX500Principal();
+		jstring getSigAlgName();
+		jbyteArray getSigAlgParams();
+		jstring getSigAlgOID();
 		QAndroidJniObject getThisUpdate();
 		QAndroidJniObject getNextUpdate();
 		jbyteArray getTBSCertList();
 		QAndroidJniObject getRevokedCertificate(__jni_impl::java::math::BigInteger arg0);
 		QAndroidJniObject getRevokedCertificate(__jni_impl::java::security::cert::X509Certificate arg0);
 		QAndroidJniObject getRevokedCertificates();
-		QAndroidJniObject getIssuerX500Principal();
-		jstring getSigAlgName();
-		jbyteArray getSigAlgParams();
-		jstring getSigAlgOID();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -131,6 +132,15 @@ namespace __jni_impl::java::security::cert
 			arg1
 		);
 	}
+	void X509CRL::verify(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"verify",
+			"(Ljava/security/PublicKey;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void X509CRL::verify(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -152,6 +162,34 @@ namespace __jni_impl::java::security::cert
 			"getVersion",
 			"()I"
 		);
+	}
+	QAndroidJniObject X509CRL::getIssuerX500Principal()
+	{
+		return __thiz.callObjectMethod(
+			"getIssuerX500Principal",
+			"()Ljavax/security/auth/x500/X500Principal;"
+		);
+	}
+	jstring X509CRL::getSigAlgName()
+	{
+		return __thiz.callObjectMethod(
+			"getSigAlgName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jbyteArray X509CRL::getSigAlgParams()
+	{
+		return __thiz.callObjectMethod(
+			"getSigAlgParams",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jstring X509CRL::getSigAlgOID()
+	{
+		return __thiz.callObjectMethod(
+			"getSigAlgOID",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject X509CRL::getThisUpdate()
 	{
@@ -196,34 +234,6 @@ namespace __jni_impl::java::security::cert
 			"getRevokedCertificates",
 			"()Ljava/util/Set;"
 		);
-	}
-	QAndroidJniObject X509CRL::getIssuerX500Principal()
-	{
-		return __thiz.callObjectMethod(
-			"getIssuerX500Principal",
-			"()Ljavax/security/auth/x500/X500Principal;"
-		);
-	}
-	jstring X509CRL::getSigAlgName()
-	{
-		return __thiz.callObjectMethod(
-			"getSigAlgName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jbyteArray X509CRL::getSigAlgParams()
-	{
-		return __thiz.callObjectMethod(
-			"getSigAlgParams",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	jstring X509CRL::getSigAlgOID()
-	{
-		return __thiz.callObjectMethod(
-			"getSigAlgOID",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security::cert
 

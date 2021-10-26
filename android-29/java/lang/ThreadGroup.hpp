@@ -27,7 +27,9 @@ namespace __jni_impl::java::lang
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, jstring arg1);
+		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, const QString &arg1);
 		
 		// Methods
 		jstring getName();
@@ -69,7 +71,16 @@ namespace __jni_impl::java::lang
 		__thiz = QAndroidJniObject(
 			"java.lang.ThreadGroup",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void ThreadGroup::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.ThreadGroup",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void ThreadGroup::__constructor(__jni_impl::java::lang::ThreadGroup arg0, jstring arg1)
 	{
@@ -77,7 +88,17 @@ namespace __jni_impl::java::lang
 			"java.lang.ThreadGroup",
 			"(Ljava/lang/ThreadGroup;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void ThreadGroup::__constructor(__jni_impl::java::lang::ThreadGroup arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.ThreadGroup",
+			"(Ljava/lang/ThreadGroup;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods

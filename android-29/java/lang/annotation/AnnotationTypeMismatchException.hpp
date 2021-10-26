@@ -21,6 +21,7 @@ namespace __jni_impl::java::lang::annotation
 		
 		// Constructors
 		void __constructor(__jni_impl::java::lang::reflect::Method arg0, jstring arg1);
+		void __constructor(__jni_impl::java::lang::reflect::Method arg0, const QString &arg1);
 		
 		// Methods
 		QAndroidJniObject element();
@@ -41,7 +42,17 @@ namespace __jni_impl::java::lang::annotation
 			"java.lang.annotation.AnnotationTypeMismatchException",
 			"(Ljava/lang/reflect/Method;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void AnnotationTypeMismatchException::__constructor(__jni_impl::java::lang::reflect::Method arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.annotation.AnnotationTypeMismatchException",
+			"(Ljava/lang/reflect/Method;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods

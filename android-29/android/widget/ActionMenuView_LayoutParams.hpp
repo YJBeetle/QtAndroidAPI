@@ -48,21 +48,24 @@ namespace __jni_impl::android::widget
 			"android.widget.ActionMenuView$LayoutParams",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void ActionMenuView_LayoutParams::__constructor(__jni_impl::android::widget::ActionMenuView_LayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ActionMenuView$LayoutParams",
 			"(Landroid/widget/ActionMenuView$LayoutParams;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ActionMenuView_LayoutParams::__constructor(__jni_impl::android::view::ViewGroup_LayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ActionMenuView$LayoutParams",
 			"(Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ActionMenuView_LayoutParams::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -70,7 +73,8 @@ namespace __jni_impl::android::widget
 			"android.widget.ActionMenuView$LayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

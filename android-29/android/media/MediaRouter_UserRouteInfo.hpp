@@ -10,6 +10,10 @@ namespace __jni_impl::android::media
 {
 	class MediaRouter_RouteCategory;
 }
+namespace __jni_impl::android::graphics::drawable
+{
+	class Drawable;
+}
 namespace __jni_impl::android::media
 {
 	class RemoteControlClient;
@@ -17,10 +21,6 @@ namespace __jni_impl::android::media
 namespace __jni_impl::android::media
 {
 	class MediaRouter_VolumeCallback;
-}
-namespace __jni_impl::android::graphics::drawable
-{
-	class Drawable;
 }
 
 namespace __jni_impl::android::media
@@ -36,6 +36,16 @@ namespace __jni_impl::android::media
 		// Methods
 		void setName(jint arg0);
 		void setName(jstring arg0);
+		void setName(const QString &arg0);
+		void setVolume(jint arg0);
+		void requestSetVolume(jint arg0);
+		void requestUpdateVolume(jint arg0);
+		void setIconDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
+		void setIconResource(jint arg0);
+		void setDescription(jstring arg0);
+		void setDescription(const QString &arg0);
+		void setStatus(jstring arg0);
+		void setStatus(const QString &arg0);
 		QAndroidJniObject getRemoteControlClient();
 		void setRemoteControlClient(__jni_impl::android::media::RemoteControlClient arg0);
 		void setVolumeCallback(__jni_impl::android::media::MediaRouter_VolumeCallback arg0);
@@ -43,20 +53,13 @@ namespace __jni_impl::android::media
 		void setVolumeHandling(jint arg0);
 		void setVolumeMax(jint arg0);
 		void setPlaybackStream(jint arg0);
-		void setStatus(jstring arg0);
-		void setDescription(jstring arg0);
-		void setIconDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
-		void setIconResource(jint arg0);
-		void setVolume(jint arg0);
-		void requestSetVolume(jint arg0);
-		void requestUpdateVolume(jint arg0);
 	};
 } // namespace __jni_impl::android::media
 
 #include "MediaRouter_RouteCategory.hpp"
+#include "../graphics/drawable/Drawable.hpp"
 #include "RemoteControlClient.hpp"
 #include "MediaRouter_VolumeCallback.hpp"
-#include "../graphics/drawable/Drawable.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -85,6 +88,86 @@ namespace __jni_impl::android::media
 			"setName",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
+		);
+	}
+	void MediaRouter_UserRouteInfo::setName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setName",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void MediaRouter_UserRouteInfo::setVolume(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setVolume",
+			"(I)V",
+			arg0
+		);
+	}
+	void MediaRouter_UserRouteInfo::requestSetVolume(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"requestSetVolume",
+			"(I)V",
+			arg0
+		);
+	}
+	void MediaRouter_UserRouteInfo::requestUpdateVolume(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"requestUpdateVolume",
+			"(I)V",
+			arg0
+		);
+	}
+	void MediaRouter_UserRouteInfo::setIconDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		__thiz.callMethod<void>(
+			"setIconDrawable",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void MediaRouter_UserRouteInfo::setIconResource(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setIconResource",
+			"(I)V",
+			arg0
+		);
+	}
+	void MediaRouter_UserRouteInfo::setDescription(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDescription",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void MediaRouter_UserRouteInfo::setDescription(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDescription",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void MediaRouter_UserRouteInfo::setStatus(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setStatus",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void MediaRouter_UserRouteInfo::setStatus(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setStatus",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject MediaRouter_UserRouteInfo::getRemoteControlClient()
@@ -138,62 +221,6 @@ namespace __jni_impl::android::media
 	{
 		__thiz.callMethod<void>(
 			"setPlaybackStream",
-			"(I)V",
-			arg0
-		);
-	}
-	void MediaRouter_UserRouteInfo::setStatus(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStatus",
-			"(Ljava/lang/CharSequence;)V",
-			arg0
-		);
-	}
-	void MediaRouter_UserRouteInfo::setDescription(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDescription",
-			"(Ljava/lang/CharSequence;)V",
-			arg0
-		);
-	}
-	void MediaRouter_UserRouteInfo::setIconDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		__thiz.callMethod<void>(
-			"setIconDrawable",
-			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void MediaRouter_UserRouteInfo::setIconResource(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setIconResource",
-			"(I)V",
-			arg0
-		);
-	}
-	void MediaRouter_UserRouteInfo::setVolume(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setVolume",
-			"(I)V",
-			arg0
-		);
-	}
-	void MediaRouter_UserRouteInfo::requestSetVolume(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"requestSetVolume",
-			"(I)V",
-			arg0
-		);
-	}
-	void MediaRouter_UserRouteInfo::requestUpdateVolume(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"requestUpdateVolume",
 			"(I)V",
 			arg0
 		);

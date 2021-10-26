@@ -83,13 +83,15 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.TreeMap",
 			"(Ljava/util/SortedMap;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TreeMap::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.TreeMap",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

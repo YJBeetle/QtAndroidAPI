@@ -21,8 +21,9 @@ namespace __jni_impl::android::os::health
 		void __constructor();
 		
 		// Methods
-		jint getTimerCount(jint arg0);
+		jstring getDataType();
 		jboolean hasTimer(jint arg0);
+		jint getTimerCount(jint arg0);
 		QAndroidJniObject getTimer(jint arg0);
 		jlong getTimerTime(jint arg0);
 		jint getTimerKeyCount();
@@ -43,7 +44,6 @@ namespace __jni_impl::android::os::health
 		QAndroidJniObject getMeasurements(jint arg0);
 		jint getMeasurementsKeyCount();
 		jint getMeasurementsKeyAt(jint arg0);
-		jstring getDataType();
 	};
 } // namespace __jni_impl::android::os::health
 
@@ -62,19 +62,26 @@ namespace __jni_impl::android::os::health
 	}
 	
 	// Methods
-	jint HealthStats::getTimerCount(jint arg0)
+	jstring HealthStats::getDataType()
 	{
-		return __thiz.callMethod<jint>(
-			"getTimerCount",
-			"(I)I",
-			arg0
-		);
+		return __thiz.callObjectMethod(
+			"getDataType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean HealthStats::hasTimer(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasTimer",
 			"(I)Z",
+			arg0
+		);
+	}
+	jint HealthStats::getTimerCount(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getTimerCount",
+			"(I)I",
 			arg0
 		);
 	}
@@ -232,13 +239,6 @@ namespace __jni_impl::android::os::health
 			"(I)I",
 			arg0
 		);
-	}
-	jstring HealthStats::getDataType()
-	{
-		return __thiz.callObjectMethod(
-			"getDataType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::os::health
 

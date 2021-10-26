@@ -17,6 +17,7 @@ namespace __jni_impl::java::lang
 		
 		// Constructors
 		void __constructor(jstring arg0, jthrowable arg1);
+		void __constructor(const QString &arg0, jthrowable arg1);
 		
 		// Methods
 		jstring typeName();
@@ -35,7 +36,17 @@ namespace __jni_impl::java::lang
 			"java.lang.TypeNotPresentException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void TypeNotPresentException::__constructor(const QString &arg0, jthrowable arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.TypeNotPresentException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods

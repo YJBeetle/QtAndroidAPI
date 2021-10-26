@@ -32,7 +32,8 @@ namespace __jni_impl::android::view::inspector
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.inspector.InspectionCompanion$UninitializedPropertyMapException",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

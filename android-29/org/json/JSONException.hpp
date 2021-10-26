@@ -16,7 +16,9 @@ namespace __jni_impl::org::json
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
+		void __constructor(const QString &arg0, jthrowable arg1);
 		void __constructor(jthrowable arg0);
 		
 		// Methods
@@ -34,7 +36,16 @@ namespace __jni_impl::org::json
 		__thiz = QAndroidJniObject(
 			"org.json.JSONException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void JSONException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"org.json.JSONException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void JSONException::__constructor(jstring arg0, jthrowable arg1)
 	{
@@ -42,14 +53,25 @@ namespace __jni_impl::org::json
 			"org.json.JSONException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void JSONException::__constructor(const QString &arg0, jthrowable arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"org.json.JSONException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void JSONException::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.json.JSONException",
 			"(Ljava/lang/Throwable;)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

@@ -5,13 +5,29 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::view
+{
+	class Surface;
+}
+namespace __jni_impl::android::media
+{
+	class PlaybackParams;
+}
+namespace __jni_impl::android::os
+{
+	class Handler;
+}
+namespace __jni_impl::android::media
+{
+	class MediaTimestamp;
+}
 namespace __jni_impl::android::media
 {
 	class SyncParams;
 }
-namespace __jni_impl::android::view
+namespace __jni_impl::android::media
 {
-	class Surface;
+	class MediaSync_Callback;
 }
 namespace __jni_impl::android::media
 {
@@ -20,22 +36,6 @@ namespace __jni_impl::android::media
 namespace __jni_impl::java::nio
 {
 	class ByteBuffer;
-}
-namespace __jni_impl::android::media
-{
-	class MediaSync_Callback;
-}
-namespace __jni_impl::android::os
-{
-	class Handler;
-}
-namespace __jni_impl::android::media
-{
-	class PlaybackParams;
-}
-namespace __jni_impl::android::media
-{
-	class MediaTimestamp;
 }
 
 namespace __jni_impl::android::media
@@ -53,28 +53,28 @@ namespace __jni_impl::android::media
 		// Methods
 		void flush();
 		void release();
-		void setSyncParams(__jni_impl::android::media::SyncParams arg0);
-		QAndroidJniObject getSyncParams();
-		QAndroidJniObject createInputSurface();
-		void setAudioTrack(__jni_impl::android::media::AudioTrack arg0);
-		void queueAudio(__jni_impl::java::nio::ByteBuffer arg0, jint arg1, jlong arg2);
-		void setCallback(__jni_impl::android::media::MediaSync_Callback arg0, __jni_impl::android::os::Handler arg1);
+		void setSurface(__jni_impl::android::view::Surface arg0);
 		QAndroidJniObject getPlaybackParams();
 		void setPlaybackParams(__jni_impl::android::media::PlaybackParams arg0);
-		void setSurface(__jni_impl::android::view::Surface arg0);
 		void setOnErrorListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
 		QAndroidJniObject getTimestamp();
+		QAndroidJniObject createInputSurface();
+		void setSyncParams(__jni_impl::android::media::SyncParams arg0);
+		QAndroidJniObject getSyncParams();
+		void setCallback(__jni_impl::android::media::MediaSync_Callback arg0, __jni_impl::android::os::Handler arg1);
+		void setAudioTrack(__jni_impl::android::media::AudioTrack arg0);
+		void queueAudio(__jni_impl::java::nio::ByteBuffer arg0, jint arg1, jlong arg2);
 	};
 } // namespace __jni_impl::android::media
 
-#include "SyncParams.hpp"
 #include "../view/Surface.hpp"
+#include "PlaybackParams.hpp"
+#include "../os/Handler.hpp"
+#include "MediaTimestamp.hpp"
+#include "SyncParams.hpp"
+#include "MediaSync_Callback.hpp"
 #include "AudioTrack.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
-#include "MediaSync_Callback.hpp"
-#include "../os/Handler.hpp"
-#include "PlaybackParams.hpp"
-#include "MediaTimestamp.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -99,7 +99,8 @@ namespace __jni_impl::android::media
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaSync",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -117,6 +118,52 @@ namespace __jni_impl::android::media
 			"()V"
 		);
 	}
+	void MediaSync::setSurface(__jni_impl::android::view::Surface arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSurface",
+			"(Landroid/view/Surface;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject MediaSync::getPlaybackParams()
+	{
+		return __thiz.callObjectMethod(
+			"getPlaybackParams",
+			"()Landroid/media/PlaybackParams;"
+		);
+	}
+	void MediaSync::setPlaybackParams(__jni_impl::android::media::PlaybackParams arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPlaybackParams",
+			"(Landroid/media/PlaybackParams;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void MediaSync::setOnErrorListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
+	{
+		__thiz.callMethod<void>(
+			"setOnErrorListener",
+			"(Landroid/media/MediaSync$OnErrorListener;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject MediaSync::getTimestamp()
+	{
+		return __thiz.callObjectMethod(
+			"getTimestamp",
+			"()Landroid/media/MediaTimestamp;"
+		);
+	}
+	QAndroidJniObject MediaSync::createInputSurface()
+	{
+		return __thiz.callObjectMethod(
+			"createInputSurface",
+			"()Landroid/view/Surface;"
+		);
+	}
 	void MediaSync::setSyncParams(__jni_impl::android::media::SyncParams arg0)
 	{
 		__thiz.callMethod<void>(
@@ -132,11 +179,13 @@ namespace __jni_impl::android::media
 			"()Landroid/media/SyncParams;"
 		);
 	}
-	QAndroidJniObject MediaSync::createInputSurface()
+	void MediaSync::setCallback(__jni_impl::android::media::MediaSync_Callback arg0, __jni_impl::android::os::Handler arg1)
 	{
-		return __thiz.callObjectMethod(
-			"createInputSurface",
-			"()Landroid/view/Surface;"
+		__thiz.callMethod<void>(
+			"setCallback",
+			"(Landroid/media/MediaSync$Callback;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	void MediaSync::setAudioTrack(__jni_impl::android::media::AudioTrack arg0)
@@ -155,54 +204,6 @@ namespace __jni_impl::android::media
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
-		);
-	}
-	void MediaSync::setCallback(__jni_impl::android::media::MediaSync_Callback arg0, __jni_impl::android::os::Handler arg1)
-	{
-		__thiz.callMethod<void>(
-			"setCallback",
-			"(Landroid/media/MediaSync$Callback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject MediaSync::getPlaybackParams()
-	{
-		return __thiz.callObjectMethod(
-			"getPlaybackParams",
-			"()Landroid/media/PlaybackParams;"
-		);
-	}
-	void MediaSync::setPlaybackParams(__jni_impl::android::media::PlaybackParams arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPlaybackParams",
-			"(Landroid/media/PlaybackParams;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void MediaSync::setSurface(__jni_impl::android::view::Surface arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSurface",
-			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void MediaSync::setOnErrorListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
-	{
-		__thiz.callMethod<void>(
-			"setOnErrorListener",
-			"(Landroid/media/MediaSync$OnErrorListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject MediaSync::getTimestamp()
-	{
-		return __thiz.callObjectMethod(
-			"getTimestamp",
-			"()Landroid/media/MediaTimestamp;"
 		);
 	}
 } // namespace __jni_impl::android::media

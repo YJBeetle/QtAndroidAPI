@@ -10,14 +10,6 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
-namespace __jni_impl::android::net
-{
-	class Uri;
-}
 namespace __jni_impl::android::content::res
 {
 	class TypedArray;
@@ -25,6 +17,14 @@ namespace __jni_impl::android::content::res
 namespace __jni_impl::android::preference
 {
 	class PreferenceManager;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
+}
+namespace __jni_impl::android::net
+{
+	class Uri;
 }
 
 namespace __jni_impl::android::preference
@@ -41,21 +41,21 @@ namespace __jni_impl::android::preference
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jboolean onActivityResult(jint arg0, jint arg1, __jni_impl::android::content::Intent arg2);
+		jint getRingtoneType();
+		void setRingtoneType(jint arg0);
+		jboolean getShowDefault();
 		void setShowDefault(jboolean arg0);
 		jboolean getShowSilent();
 		void setShowSilent(jboolean arg0);
-		void setRingtoneType(jint arg0);
-		jboolean getShowDefault();
-		jint getRingtoneType();
+		jboolean onActivityResult(jint arg0, jint arg1, __jni_impl::android::content::Intent arg2);
 	};
 } // namespace __jni_impl::android::preference
 
 #include "../content/Context.hpp"
-#include "../content/Intent.hpp"
-#include "../net/Uri.hpp"
 #include "../content/res/TypedArray.hpp"
 #include "PreferenceManager.hpp"
+#include "../content/Intent.hpp"
+#include "../net/Uri.hpp"
 
 namespace __jni_impl::android::preference
 {
@@ -67,7 +67,8 @@ namespace __jni_impl::android::preference
 		__thiz = QAndroidJniObject(
 			"android.preference.RingtonePreference",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void RingtonePreference::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -75,7 +76,8 @@ namespace __jni_impl::android::preference
 			"android.preference.RingtonePreference",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void RingtonePreference::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -84,7 +86,8 @@ namespace __jni_impl::android::preference
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void RingtonePreference::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 	{
@@ -94,18 +97,31 @@ namespace __jni_impl::android::preference
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	
 	// Methods
-	jboolean RingtonePreference::onActivityResult(jint arg0, jint arg1, __jni_impl::android::content::Intent arg2)
+	jint RingtonePreference::getRingtoneType()
+	{
+		return __thiz.callMethod<jint>(
+			"getRingtoneType",
+			"()I"
+		);
+	}
+	void RingtonePreference::setRingtoneType(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRingtoneType",
+			"(I)V",
+			arg0
+		);
+	}
+	jboolean RingtonePreference::getShowDefault()
 	{
 		return __thiz.callMethod<jboolean>(
-			"onActivityResult",
-			"(IILandroid/content/Intent;)Z",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
+			"getShowDefault",
+			"()Z"
 		);
 	}
 	void RingtonePreference::setShowDefault(jboolean arg0)
@@ -131,26 +147,14 @@ namespace __jni_impl::android::preference
 			arg0
 		);
 	}
-	void RingtonePreference::setRingtoneType(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRingtoneType",
-			"(I)V",
-			arg0
-		);
-	}
-	jboolean RingtonePreference::getShowDefault()
+	jboolean RingtonePreference::onActivityResult(jint arg0, jint arg1, __jni_impl::android::content::Intent arg2)
 	{
 		return __thiz.callMethod<jboolean>(
-			"getShowDefault",
-			"()Z"
-		);
-	}
-	jint RingtonePreference::getRingtoneType()
-	{
-		return __thiz.callMethod<jint>(
-			"getRingtoneType",
-			"()I"
+			"onActivityResult",
+			"(IILandroid/content/Intent;)Z",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::preference

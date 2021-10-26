@@ -20,23 +20,11 @@ namespace __jni_impl::android::graphics
 }
 namespace __jni_impl::android::graphics
 {
-	class Rect;
-}
-namespace __jni_impl::android::graphics
-{
-	class Outline;
+	class Canvas;
 }
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
-}
-namespace __jni_impl::android::graphics::drawable
-{
-	class Drawable_ConstantState;
-}
-namespace __jni_impl::android::graphics
-{
-	class Canvas;
 }
 namespace __jni_impl::android::content::res
 {
@@ -45,6 +33,18 @@ namespace __jni_impl::android::content::res
 namespace __jni_impl::android::graphics
 {
 	class BlendMode;
+}
+namespace __jni_impl::android::graphics
+{
+	class Rect;
+}
+namespace __jni_impl::android::graphics
+{
+	class Outline;
+}
+namespace __jni_impl::android::graphics::drawable
+{
+	class Drawable_ConstantState;
 }
 
 namespace __jni_impl::android::graphics::drawable
@@ -65,29 +65,7 @@ namespace __jni_impl::android::graphics::drawable
 		jint getId(jint arg0);
 		void setDither(jboolean arg0);
 		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
-		jint getTopPadding();
-		jint getBottomPadding();
-		jint getChangingConfigurations();
-		jboolean setVisible(jboolean arg0, jboolean arg1);
-		jboolean onLayoutDirectionChanged(jint arg0);
-		void setHotspot(jfloat arg0, jfloat arg1);
-		void setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3);
-		void getHotspotBounds(__jni_impl::android::graphics::Rect arg0);
-		jboolean isProjected();
-		jboolean isStateful();
-		void jumpToCurrentState();
-		void setAutoMirrored(jboolean arg0);
-		jboolean isAutoMirrored();
-		void applyTheme(__jni_impl::android::content::res::Resources_Theme arg0);
-		jboolean canApplyTheme();
-		jint getOpacity();
-		jint getIntrinsicWidth();
-		jint getIntrinsicHeight();
-		jboolean getPadding(__jni_impl::android::graphics::Rect arg0);
-		void getOutline(__jni_impl::android::graphics::Outline arg0);
-		QAndroidJniObject mutate();
-		QAndroidJniObject getConstantState();
-		QAndroidJniObject getDrawable(jint arg0);
+		void setAlpha(jint arg0);
 		jint getAlpha();
 		void draw(__jni_impl::android::graphics::Canvas arg0);
 		void invalidateDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
@@ -96,6 +74,8 @@ namespace __jni_impl::android::graphics::drawable
 		void setPadding(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setPaddingRelative(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setId(jint arg0, jint arg1);
+		void setTintList(__jni_impl::android::content::res::ColorStateList arg0);
+		void setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0);
 		jint addLayer(__jni_impl::android::graphics::drawable::Drawable arg0);
 		QAndroidJniObject findDrawableByLayerId(jint arg0);
 		jint getNumberOfLayers();
@@ -130,22 +110,42 @@ namespace __jni_impl::android::graphics::drawable
 		jint getStartPadding();
 		jint getEndPadding();
 		void setOpacity(jint arg0);
-		void setTintList(__jni_impl::android::content::res::ColorStateList arg0);
-		void setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0);
-		void setAlpha(jint arg0);
+		jint getTopPadding();
+		jint getBottomPadding();
+		QAndroidJniObject getDrawable(jint arg0);
+		jint getChangingConfigurations();
+		jboolean setVisible(jboolean arg0, jboolean arg1);
+		jboolean onLayoutDirectionChanged(jint arg0);
+		void setHotspot(jfloat arg0, jfloat arg1);
+		void setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3);
+		void getHotspotBounds(__jni_impl::android::graphics::Rect arg0);
+		jboolean isProjected();
+		jboolean isStateful();
+		void jumpToCurrentState();
+		void setAutoMirrored(jboolean arg0);
+		jboolean isAutoMirrored();
+		void applyTheme(__jni_impl::android::content::res::Resources_Theme arg0);
+		jboolean canApplyTheme();
+		jint getOpacity();
+		jint getIntrinsicWidth();
+		jint getIntrinsicHeight();
+		jboolean getPadding(__jni_impl::android::graphics::Rect arg0);
+		void getOutline(__jni_impl::android::graphics::Outline arg0);
+		QAndroidJniObject mutate();
+		QAndroidJniObject getConstantState();
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
 #include "../ColorFilter.hpp"
-#include "../Rect.hpp"
-#include "../Outline.hpp"
-#include "Drawable.hpp"
-#include "Drawable_ConstantState.hpp"
 #include "../Canvas.hpp"
+#include "Drawable.hpp"
 #include "../../content/res/ColorStateList.hpp"
 #include "../BlendMode.hpp"
+#include "../Rect.hpp"
+#include "../Outline.hpp"
+#include "Drawable_ConstantState.hpp"
 
 namespace __jni_impl::android::graphics::drawable
 {
@@ -178,7 +178,8 @@ namespace __jni_impl::android::graphics::drawable
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.LayerDrawable",
 			"([Landroid/graphics/drawable/Drawable;)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -217,179 +218,11 @@ namespace __jni_impl::android::graphics::drawable
 			arg0.__jniObject().object()
 		);
 	}
-	jint LayerDrawable::getTopPadding()
-	{
-		return __thiz.callMethod<jint>(
-			"getTopPadding",
-			"()I"
-		);
-	}
-	jint LayerDrawable::getBottomPadding()
-	{
-		return __thiz.callMethod<jint>(
-			"getBottomPadding",
-			"()I"
-		);
-	}
-	jint LayerDrawable::getChangingConfigurations()
-	{
-		return __thiz.callMethod<jint>(
-			"getChangingConfigurations",
-			"()I"
-		);
-	}
-	jboolean LayerDrawable::setVisible(jboolean arg0, jboolean arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setVisible",
-			"(ZZ)Z",
-			arg0,
-			arg1
-		);
-	}
-	jboolean LayerDrawable::onLayoutDirectionChanged(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onLayoutDirectionChanged",
-			"(I)Z",
-			arg0
-		);
-	}
-	void LayerDrawable::setHotspot(jfloat arg0, jfloat arg1)
+	void LayerDrawable::setAlpha(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setHotspot",
-			"(FF)V",
-			arg0,
-			arg1
-		);
-	}
-	void LayerDrawable::setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"setHotspotBounds",
-			"(IIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void LayerDrawable::getHotspotBounds(__jni_impl::android::graphics::Rect arg0)
-	{
-		__thiz.callMethod<void>(
-			"getHotspotBounds",
-			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean LayerDrawable::isProjected()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isProjected",
-			"()Z"
-		);
-	}
-	jboolean LayerDrawable::isStateful()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isStateful",
-			"()Z"
-		);
-	}
-	void LayerDrawable::jumpToCurrentState()
-	{
-		__thiz.callMethod<void>(
-			"jumpToCurrentState",
-			"()V"
-		);
-	}
-	void LayerDrawable::setAutoMirrored(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAutoMirrored",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean LayerDrawable::isAutoMirrored()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAutoMirrored",
-			"()Z"
-		);
-	}
-	void LayerDrawable::applyTheme(__jni_impl::android::content::res::Resources_Theme arg0)
-	{
-		__thiz.callMethod<void>(
-			"applyTheme",
-			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean LayerDrawable::canApplyTheme()
-	{
-		return __thiz.callMethod<jboolean>(
-			"canApplyTheme",
-			"()Z"
-		);
-	}
-	jint LayerDrawable::getOpacity()
-	{
-		return __thiz.callMethod<jint>(
-			"getOpacity",
-			"()I"
-		);
-	}
-	jint LayerDrawable::getIntrinsicWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getIntrinsicWidth",
-			"()I"
-		);
-	}
-	jint LayerDrawable::getIntrinsicHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getIntrinsicHeight",
-			"()I"
-		);
-	}
-	jboolean LayerDrawable::getPadding(__jni_impl::android::graphics::Rect arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getPadding",
-			"(Landroid/graphics/Rect;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	void LayerDrawable::getOutline(__jni_impl::android::graphics::Outline arg0)
-	{
-		__thiz.callMethod<void>(
-			"getOutline",
-			"(Landroid/graphics/Outline;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject LayerDrawable::mutate()
-	{
-		return __thiz.callObjectMethod(
-			"mutate",
-			"()Landroid/graphics/drawable/Drawable;"
-		);
-	}
-	QAndroidJniObject LayerDrawable::getConstantState()
-	{
-		return __thiz.callObjectMethod(
-			"getConstantState",
-			"()Landroid/graphics/drawable/Drawable$ConstantState;"
-		);
-	}
-	QAndroidJniObject LayerDrawable::getDrawable(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDrawable",
-			"(I)Landroid/graphics/drawable/Drawable;",
+			"setAlpha",
+			"(I)V",
 			arg0
 		);
 	}
@@ -464,6 +297,22 @@ namespace __jni_impl::android::graphics::drawable
 			"(II)V",
 			arg0,
 			arg1
+		);
+	}
+	void LayerDrawable::setTintList(__jni_impl::android::content::res::ColorStateList arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTintList",
+			"(Landroid/content/res/ColorStateList;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void LayerDrawable::setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTintBlendMode",
+			"(Landroid/graphics/BlendMode;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	jint LayerDrawable::addLayer(__jni_impl::android::graphics::drawable::Drawable arg0)
@@ -753,28 +602,180 @@ namespace __jni_impl::android::graphics::drawable
 			arg0
 		);
 	}
-	void LayerDrawable::setTintList(__jni_impl::android::content::res::ColorStateList arg0)
+	jint LayerDrawable::getTopPadding()
 	{
-		__thiz.callMethod<void>(
-			"setTintList",
-			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"getTopPadding",
+			"()I"
 		);
 	}
-	void LayerDrawable::setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
+	jint LayerDrawable::getBottomPadding()
 	{
-		__thiz.callMethod<void>(
-			"setTintBlendMode",
-			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"getBottomPadding",
+			"()I"
 		);
 	}
-	void LayerDrawable::setAlpha(jint arg0)
+	QAndroidJniObject LayerDrawable::getDrawable(jint arg0)
 	{
-		__thiz.callMethod<void>(
-			"setAlpha",
-			"(I)V",
+		return __thiz.callObjectMethod(
+			"getDrawable",
+			"(I)Landroid/graphics/drawable/Drawable;",
 			arg0
+		);
+	}
+	jint LayerDrawable::getChangingConfigurations()
+	{
+		return __thiz.callMethod<jint>(
+			"getChangingConfigurations",
+			"()I"
+		);
+	}
+	jboolean LayerDrawable::setVisible(jboolean arg0, jboolean arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setVisible",
+			"(ZZ)Z",
+			arg0,
+			arg1
+		);
+	}
+	jboolean LayerDrawable::onLayoutDirectionChanged(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onLayoutDirectionChanged",
+			"(I)Z",
+			arg0
+		);
+	}
+	void LayerDrawable::setHotspot(jfloat arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"setHotspot",
+			"(FF)V",
+			arg0,
+			arg1
+		);
+	}
+	void LayerDrawable::setHotspotBounds(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"setHotspotBounds",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void LayerDrawable::getHotspotBounds(__jni_impl::android::graphics::Rect arg0)
+	{
+		__thiz.callMethod<void>(
+			"getHotspotBounds",
+			"(Landroid/graphics/Rect;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean LayerDrawable::isProjected()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isProjected",
+			"()Z"
+		);
+	}
+	jboolean LayerDrawable::isStateful()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isStateful",
+			"()Z"
+		);
+	}
+	void LayerDrawable::jumpToCurrentState()
+	{
+		__thiz.callMethod<void>(
+			"jumpToCurrentState",
+			"()V"
+		);
+	}
+	void LayerDrawable::setAutoMirrored(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAutoMirrored",
+			"(Z)V",
+			arg0
+		);
+	}
+	jboolean LayerDrawable::isAutoMirrored()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAutoMirrored",
+			"()Z"
+		);
+	}
+	void LayerDrawable::applyTheme(__jni_impl::android::content::res::Resources_Theme arg0)
+	{
+		__thiz.callMethod<void>(
+			"applyTheme",
+			"(Landroid/content/res/Resources$Theme;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean LayerDrawable::canApplyTheme()
+	{
+		return __thiz.callMethod<jboolean>(
+			"canApplyTheme",
+			"()Z"
+		);
+	}
+	jint LayerDrawable::getOpacity()
+	{
+		return __thiz.callMethod<jint>(
+			"getOpacity",
+			"()I"
+		);
+	}
+	jint LayerDrawable::getIntrinsicWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getIntrinsicWidth",
+			"()I"
+		);
+	}
+	jint LayerDrawable::getIntrinsicHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getIntrinsicHeight",
+			"()I"
+		);
+	}
+	jboolean LayerDrawable::getPadding(__jni_impl::android::graphics::Rect arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getPadding",
+			"(Landroid/graphics/Rect;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	void LayerDrawable::getOutline(__jni_impl::android::graphics::Outline arg0)
+	{
+		__thiz.callMethod<void>(
+			"getOutline",
+			"(Landroid/graphics/Outline;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject LayerDrawable::mutate()
+	{
+		return __thiz.callObjectMethod(
+			"mutate",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
+	}
+	QAndroidJniObject LayerDrawable::getConstantState()
+	{
+		return __thiz.callObjectMethod(
+			"getConstantState",
+			"()Landroid/graphics/drawable/Drawable$ConstantState;"
 		);
 	}
 } // namespace __jni_impl::android::graphics::drawable

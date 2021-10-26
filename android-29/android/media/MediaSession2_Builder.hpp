@@ -13,17 +13,17 @@ namespace __jni_impl::android::media
 {
 	class MediaSession2;
 }
-namespace __jni_impl::android::app
+namespace __jni_impl::android::os
 {
-	class PendingIntent;
+	class Bundle;
 }
 namespace __jni_impl::android::media
 {
 	class MediaSession2_SessionCallback;
 }
-namespace __jni_impl::android::os
+namespace __jni_impl::android::app
 {
-	class Bundle;
+	class PendingIntent;
 }
 
 namespace __jni_impl::android::media
@@ -38,18 +38,19 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setSessionActivity(__jni_impl::android::app::PendingIntent arg0);
-		QAndroidJniObject setId(jstring arg0);
-		QAndroidJniObject setSessionCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::media::MediaSession2_SessionCallback arg1);
 		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
+		QAndroidJniObject setId(jstring arg0);
+		QAndroidJniObject setId(const QString &arg0);
+		QAndroidJniObject setSessionCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::media::MediaSession2_SessionCallback arg1);
+		QAndroidJniObject setSessionActivity(__jni_impl::android::app::PendingIntent arg0);
 	};
 } // namespace __jni_impl::android::media
 
 #include "../content/Context.hpp"
 #include "MediaSession2.hpp"
-#include "../app/PendingIntent.hpp"
-#include "MediaSession2_SessionCallback.hpp"
 #include "../os/Bundle.hpp"
+#include "MediaSession2_SessionCallback.hpp"
+#include "../app/PendingIntent.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -61,7 +62,8 @@ namespace __jni_impl::android::media
 		__thiz = QAndroidJniObject(
 			"android.media.MediaSession2$Builder",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -72,11 +74,11 @@ namespace __jni_impl::android::media
 			"()Landroid/media/MediaSession2;"
 		);
 	}
-	QAndroidJniObject MediaSession2_Builder::setSessionActivity(__jni_impl::android::app::PendingIntent arg0)
+	QAndroidJniObject MediaSession2_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setSessionActivity",
-			"(Landroid/app/PendingIntent;)Landroid/media/MediaSession2$Builder;",
+			"setExtras",
+			"(Landroid/os/Bundle;)Landroid/media/MediaSession2$Builder;",
 			arg0.__jniObject().object()
 		);
 	}
@@ -88,6 +90,14 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
+	QAndroidJniObject MediaSession2_Builder::setId(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setId",
+			"(Ljava/lang/String;)Landroid/media/MediaSession2$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject MediaSession2_Builder::setSessionCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::media::MediaSession2_SessionCallback arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -97,11 +107,11 @@ namespace __jni_impl::android::media
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject MediaSession2_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
+	QAndroidJniObject MediaSession2_Builder::setSessionActivity(__jni_impl::android::app::PendingIntent arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setExtras",
-			"(Landroid/os/Bundle;)Landroid/media/MediaSession2$Builder;",
+			"setSessionActivity",
+			"(Landroid/app/PendingIntent;)Landroid/media/MediaSession2$Builder;",
 			arg0.__jniObject().object()
 		);
 	}

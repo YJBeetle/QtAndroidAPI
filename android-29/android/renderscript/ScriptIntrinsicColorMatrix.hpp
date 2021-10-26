@@ -26,11 +26,7 @@ namespace __jni_impl::android::renderscript
 }
 namespace __jni_impl::android::renderscript
 {
-	class Script_KernelID;
-}
-namespace __jni_impl::android::renderscript
-{
-	class Float4;
+	class Matrix3f;
 }
 namespace __jni_impl::android::renderscript
 {
@@ -38,7 +34,11 @@ namespace __jni_impl::android::renderscript
 }
 namespace __jni_impl::android::renderscript
 {
-	class Matrix3f;
+	class Float4;
+}
+namespace __jni_impl::android::renderscript
+{
+	class Script_KernelID;
 }
 
 namespace __jni_impl::android::renderscript
@@ -52,18 +52,18 @@ namespace __jni_impl::android::renderscript
 		void __constructor();
 		
 		// Methods
-		void forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1);
 		void forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2);
-		static QAndroidJniObject create(__jni_impl::android::renderscript::RenderScript arg0);
+		void forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1);
 		static QAndroidJniObject create(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1);
-		QAndroidJniObject getKernelID();
+		static QAndroidJniObject create(__jni_impl::android::renderscript::RenderScript arg0);
+		void setColorMatrix(__jni_impl::android::renderscript::Matrix3f arg0);
+		void setColorMatrix(__jni_impl::android::renderscript::Matrix4f arg0);
 		void setAdd(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		void setAdd(__jni_impl::android::renderscript::Float4 arg0);
 		void setGreyscale();
 		void setYUVtoRGB();
-		void setColorMatrix(__jni_impl::android::renderscript::Matrix4f arg0);
-		void setColorMatrix(__jni_impl::android::renderscript::Matrix3f arg0);
 		void setRGBtoYUV();
+		QAndroidJniObject getKernelID();
 	};
 } // namespace __jni_impl::android::renderscript
 
@@ -71,10 +71,10 @@ namespace __jni_impl::android::renderscript
 #include "Allocation.hpp"
 #include "Script_LaunchOptions.hpp"
 #include "Element.hpp"
-#include "Script_KernelID.hpp"
-#include "Float4.hpp"
-#include "Matrix4f.hpp"
 #include "Matrix3f.hpp"
+#include "Matrix4f.hpp"
+#include "Float4.hpp"
+#include "Script_KernelID.hpp"
 
 namespace __jni_impl::android::renderscript
 {
@@ -89,15 +89,6 @@ namespace __jni_impl::android::renderscript
 	}
 	
 	// Methods
-	void ScriptIntrinsicColorMatrix::forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
-	{
-		__thiz.callMethod<void>(
-			"forEach",
-			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
 	void ScriptIntrinsicColorMatrix::forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1, __jni_impl::android::renderscript::Script_LaunchOptions arg2)
 	{
 		__thiz.callMethod<void>(
@@ -108,13 +99,13 @@ namespace __jni_impl::android::renderscript
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicColorMatrix::create(__jni_impl::android::renderscript::RenderScript arg0)
+	void ScriptIntrinsicColorMatrix::forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Allocation arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.renderscript.ScriptIntrinsicColorMatrix",
-			"create",
-			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/ScriptIntrinsicColorMatrix;",
-			arg0.__jniObject().object()
+		__thiz.callMethod<void>(
+			"forEach",
+			"(Landroid/renderscript/Allocation;Landroid/renderscript/Allocation;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	QAndroidJniObject ScriptIntrinsicColorMatrix::create(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1)
@@ -127,11 +118,29 @@ namespace __jni_impl::android::renderscript
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicColorMatrix::getKernelID()
+	QAndroidJniObject ScriptIntrinsicColorMatrix::create(__jni_impl::android::renderscript::RenderScript arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getKernelID",
-			"()Landroid/renderscript/Script$KernelID;"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.renderscript.ScriptIntrinsicColorMatrix",
+			"create",
+			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/ScriptIntrinsicColorMatrix;",
+			arg0.__jniObject().object()
+		);
+	}
+	void ScriptIntrinsicColorMatrix::setColorMatrix(__jni_impl::android::renderscript::Matrix3f arg0)
+	{
+		__thiz.callMethod<void>(
+			"setColorMatrix",
+			"(Landroid/renderscript/Matrix3f;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ScriptIntrinsicColorMatrix::setColorMatrix(__jni_impl::android::renderscript::Matrix4f arg0)
+	{
+		__thiz.callMethod<void>(
+			"setColorMatrix",
+			"(Landroid/renderscript/Matrix4f;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void ScriptIntrinsicColorMatrix::setAdd(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
@@ -167,27 +176,18 @@ namespace __jni_impl::android::renderscript
 			"()V"
 		);
 	}
-	void ScriptIntrinsicColorMatrix::setColorMatrix(__jni_impl::android::renderscript::Matrix4f arg0)
-	{
-		__thiz.callMethod<void>(
-			"setColorMatrix",
-			"(Landroid/renderscript/Matrix4f;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ScriptIntrinsicColorMatrix::setColorMatrix(__jni_impl::android::renderscript::Matrix3f arg0)
-	{
-		__thiz.callMethod<void>(
-			"setColorMatrix",
-			"(Landroid/renderscript/Matrix3f;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void ScriptIntrinsicColorMatrix::setRGBtoYUV()
 	{
 		__thiz.callMethod<void>(
 			"setRGBtoYUV",
 			"()V"
+		);
+	}
+	QAndroidJniObject ScriptIntrinsicColorMatrix::getKernelID()
+	{
+		return __thiz.callObjectMethod(
+			"getKernelID",
+			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
 } // namespace __jni_impl::android::renderscript

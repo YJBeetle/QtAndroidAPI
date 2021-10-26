@@ -37,13 +37,13 @@ namespace __jni_impl::android::location
 		// Methods
 		jstring toString();
 		jint getType();
+		jint getStatus();
 		jint getSvid();
 		jint getMessageId();
 		jint getSubmessageId();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jbyteArray getData();
-		jint getStatus();
 	};
 } // namespace __jni_impl::android::location
 
@@ -175,6 +175,13 @@ namespace __jni_impl::android::location
 			"()I"
 		);
 	}
+	jint GnssNavigationMessage::getStatus()
+	{
+		return __thiz.callMethod<jint>(
+			"getStatus",
+			"()I"
+		);
+	}
 	jint GnssNavigationMessage::getSvid()
 	{
 		return __thiz.callMethod<jint>(
@@ -218,13 +225,6 @@ namespace __jni_impl::android::location
 			"getData",
 			"()[B"
 		).object<jbyteArray>();
-	}
-	jint GnssNavigationMessage::getStatus()
-	{
-		return __thiz.callMethod<jint>(
-			"getStatus",
-			"()I"
-		);
 	}
 } // namespace __jni_impl::android::location
 

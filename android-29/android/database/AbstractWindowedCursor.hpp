@@ -35,12 +35,12 @@ namespace __jni_impl::android::database
 		jboolean isNull(jint arg0);
 		jstring getString(jint arg0);
 		jboolean isFloat(jint arg0);
+		jboolean isString(jint arg0);
+		jboolean isBlob(jint arg0);
+		jboolean isLong(jint arg0);
 		QAndroidJniObject getWindow();
 		jbyteArray getBlob(jint arg0);
 		void copyStringToBuffer(jint arg0, __jni_impl::android::database::CharArrayBuffer arg1);
-		jboolean isBlob(jint arg0);
-		jboolean isLong(jint arg0);
-		jboolean isString(jint arg0);
 		void setWindow(__jni_impl::android::database::CursorWindow arg0);
 		jboolean hasWindow();
 	};
@@ -58,7 +58,8 @@ namespace __jni_impl::android::database
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.AbstractWindowedCursor",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -134,6 +135,30 @@ namespace __jni_impl::android::database
 			arg0
 		);
 	}
+	jboolean AbstractWindowedCursor::isString(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isString",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean AbstractWindowedCursor::isBlob(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isBlob",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean AbstractWindowedCursor::isLong(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLong",
+			"(I)Z",
+			arg0
+		);
+	}
 	QAndroidJniObject AbstractWindowedCursor::getWindow()
 	{
 		return __thiz.callObjectMethod(
@@ -156,30 +181,6 @@ namespace __jni_impl::android::database
 			"(ILandroid/database/CharArrayBuffer;)V",
 			arg0,
 			arg1.__jniObject().object()
-		);
-	}
-	jboolean AbstractWindowedCursor::isBlob(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isBlob",
-			"(I)Z",
-			arg0
-		);
-	}
-	jboolean AbstractWindowedCursor::isLong(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isLong",
-			"(I)Z",
-			arg0
-		);
-	}
-	jboolean AbstractWindowedCursor::isString(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isString",
-			"(I)Z",
-			arg0
 		);
 	}
 	void AbstractWindowedCursor::setWindow(__jni_impl::android::database::CursorWindow arg0)

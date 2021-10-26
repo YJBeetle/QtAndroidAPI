@@ -32,6 +32,7 @@ namespace __jni_impl::java::text
 		void setOffset(jint arg0);
 		void setText(__jni_impl::__JniBaseClass arg0);
 		void setText(jstring arg0);
+		void setText(const QString &arg0);
 		jint previous();
 		static jint primaryOrder(jint arg0);
 		static jshort secondaryOrder(jint arg0);
@@ -106,6 +107,14 @@ namespace __jni_impl::java::text
 			"setText",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void CollationElementIterator::setText(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setText",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint CollationElementIterator::previous()

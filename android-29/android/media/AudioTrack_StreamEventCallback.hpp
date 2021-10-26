@@ -21,9 +21,9 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		void onTearDown(__jni_impl::android::media::AudioTrack arg0);
 		void onPresentationEnded(__jni_impl::android::media::AudioTrack arg0);
 		void onDataRequest(__jni_impl::android::media::AudioTrack arg0, jint arg1);
+		void onTearDown(__jni_impl::android::media::AudioTrack arg0);
 	};
 } // namespace __jni_impl::android::media
 
@@ -38,18 +38,11 @@ namespace __jni_impl::android::media
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.AudioTrack$StreamEventCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	void AudioTrack_StreamEventCallback::onTearDown(__jni_impl::android::media::AudioTrack arg0)
-	{
-		__thiz.callMethod<void>(
-			"onTearDown",
-			"(Landroid/media/AudioTrack;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void AudioTrack_StreamEventCallback::onPresentationEnded(__jni_impl::android::media::AudioTrack arg0)
 	{
 		__thiz.callMethod<void>(
@@ -65,6 +58,14 @@ namespace __jni_impl::android::media
 			"(Landroid/media/AudioTrack;I)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	void AudioTrack_StreamEventCallback::onTearDown(__jni_impl::android::media::AudioTrack arg0)
+	{
+		__thiz.callMethod<void>(
+			"onTearDown",
+			"(Landroid/media/AudioTrack;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::media

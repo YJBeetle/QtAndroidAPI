@@ -16,14 +16,15 @@ namespace __jni_impl::android::widget
 		
 		// Constructors
 		void __constructor(__jni_impl::__JniBaseClass arg0, jint arg1, jstring arg2);
+		void __constructor(__jni_impl::__JniBaseClass arg0, jint arg1, const QString &arg2);
 		
 		// Methods
-		void onInvalidated();
-		void onChanged();
-		void setCursor(__jni_impl::__JniBaseClass arg0);
 		jint getPositionForSection(jint arg0);
 		jobjectArray getSections();
 		jint getSectionForPosition(jint arg0);
+		void onInvalidated();
+		void onChanged();
+		void setCursor(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -40,32 +41,21 @@ namespace __jni_impl::android::widget
 			"(Landroid/database/Cursor;ILjava/lang/CharSequence;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void AlphabetIndexer::__constructor(__jni_impl::__JniBaseClass arg0, jint arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.widget.AlphabetIndexer",
+			"(Landroid/database/Cursor;ILjava/lang/CharSequence;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	
 	// Methods
-	void AlphabetIndexer::onInvalidated()
-	{
-		__thiz.callMethod<void>(
-			"onInvalidated",
-			"()V"
-		);
-	}
-	void AlphabetIndexer::onChanged()
-	{
-		__thiz.callMethod<void>(
-			"onChanged",
-			"()V"
-		);
-	}
-	void AlphabetIndexer::setCursor(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCursor",
-			"(Landroid/database/Cursor;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	jint AlphabetIndexer::getPositionForSection(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -87,6 +77,28 @@ namespace __jni_impl::android::widget
 			"getSectionForPosition",
 			"(I)I",
 			arg0
+		);
+	}
+	void AlphabetIndexer::onInvalidated()
+	{
+		__thiz.callMethod<void>(
+			"onInvalidated",
+			"()V"
+		);
+	}
+	void AlphabetIndexer::onChanged()
+	{
+		__thiz.callMethod<void>(
+			"onChanged",
+			"()V"
+		);
+	}
+	void AlphabetIndexer::setCursor(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCursor",
+			"(Landroid/database/Cursor;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::widget

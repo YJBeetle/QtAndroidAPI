@@ -9,13 +9,13 @@ namespace __jni_impl::java::util
 {
 	class Locale;
 }
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::icu::util
 {
 	class ULocale;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::os
@@ -39,20 +39,21 @@ namespace __jni_impl::android::os
 		jint size();
 		static QAndroidJniObject getDefault();
 		static void setDefault(__jni_impl::android::os::LocaleList arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jstring toLanguageTags();
 		static QAndroidJniObject getEmptyLocaleList();
 		static QAndroidJniObject forLanguageTags(jstring arg0);
+		static QAndroidJniObject forLanguageTags(const QString &arg0);
 		static jboolean isPseudoLocale(__jni_impl::android::icu::util::ULocale arg0);
 		QAndroidJniObject getFirstMatch(jarray arg0);
 		static QAndroidJniObject getAdjustedDefault();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::os
 
 #include "../../java/util/Locale.hpp"
-#include "Parcel.hpp"
 #include "../icu/util/ULocale.hpp"
+#include "Parcel.hpp"
 
 namespace __jni_impl::android::os
 {
@@ -72,7 +73,8 @@ namespace __jni_impl::android::os
 		__thiz = QAndroidJniObject(
 			"android.os.LocaleList",
 			"([Ljava/util/Locale;)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -145,22 +147,6 @@ namespace __jni_impl::android::os
 			arg0.__jniObject().object()
 		);
 	}
-	jint LocaleList::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void LocaleList::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	jstring LocaleList::toLanguageTags()
 	{
 		return __thiz.callObjectMethod(
@@ -183,6 +169,15 @@ namespace __jni_impl::android::os
 			"forLanguageTags",
 			"(Ljava/lang/String;)Landroid/os/LocaleList;",
 			arg0
+		);
+	}
+	QAndroidJniObject LocaleList::forLanguageTags(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.LocaleList",
+			"forLanguageTags",
+			"(Ljava/lang/String;)Landroid/os/LocaleList;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean LocaleList::isPseudoLocale(__jni_impl::android::icu::util::ULocale arg0)
@@ -208,6 +203,22 @@ namespace __jni_impl::android::os
 			"android.os.LocaleList",
 			"getAdjustedDefault",
 			"()Landroid/os/LocaleList;"
+		);
+	}
+	jint LocaleList::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void LocaleList::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::os

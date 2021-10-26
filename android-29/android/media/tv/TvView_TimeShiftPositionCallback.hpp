@@ -18,7 +18,9 @@ namespace __jni_impl::android::media::tv
 		
 		// Methods
 		void onTimeShiftStartPositionChanged(jstring arg0, jlong arg1);
+		void onTimeShiftStartPositionChanged(const QString &arg0, jlong arg1);
 		void onTimeShiftCurrentPositionChanged(jstring arg0, jlong arg1);
+		void onTimeShiftCurrentPositionChanged(const QString &arg0, jlong arg1);
 	};
 } // namespace __jni_impl::android::media::tv
 
@@ -32,7 +34,8 @@ namespace __jni_impl::android::media::tv
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.tv.TvView$TimeShiftPositionCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -45,12 +48,30 @@ namespace __jni_impl::android::media::tv
 			arg1
 		);
 	}
+	void TvView_TimeShiftPositionCallback::onTimeShiftStartPositionChanged(const QString &arg0, jlong arg1)
+	{
+		__thiz.callMethod<void>(
+			"onTimeShiftStartPositionChanged",
+			"(Ljava/lang/String;J)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	void TvView_TimeShiftPositionCallback::onTimeShiftCurrentPositionChanged(jstring arg0, jlong arg1)
 	{
 		__thiz.callMethod<void>(
 			"onTimeShiftCurrentPositionChanged",
 			"(Ljava/lang/String;J)V",
 			arg0,
+			arg1
+		);
+	}
+	void TvView_TimeShiftPositionCallback::onTimeShiftCurrentPositionChanged(const QString &arg0, jlong arg1)
+	{
+		__thiz.callMethod<void>(
+			"onTimeShiftCurrentPositionChanged",
+			"(Ljava/lang/String;J)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

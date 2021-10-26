@@ -9,6 +9,10 @@ namespace __jni_impl::android::app
 {
 	class PendingIntent;
 }
+namespace __jni_impl::android::graphics::drawable
+{
+	class Icon;
+}
 namespace __jni_impl::android::os
 {
 	class Parcel;
@@ -16,10 +20,6 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::os
 {
 	class Bundle;
-}
-namespace __jni_impl::android::graphics::drawable
-{
-	class Icon;
 }
 
 namespace __jni_impl::android::app
@@ -46,9 +46,11 @@ namespace __jni_impl::android::app
 		
 		// Constructors
 		void __constructor(jint arg0, jstring arg1, __jni_impl::android::app::PendingIntent arg2);
+		void __constructor(jint arg0, const QString &arg1, __jni_impl::android::app::PendingIntent arg2);
 		
 		// Methods
 		QAndroidJniObject clone();
+		QAndroidJniObject getIcon();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getExtras();
@@ -57,14 +59,13 @@ namespace __jni_impl::android::app
 		jint getSemanticAction();
 		jboolean isContextual();
 		jarray getDataOnlyRemoteInputs();
-		QAndroidJniObject getIcon();
 	};
 } // namespace __jni_impl::android::app
 
 #include "PendingIntent.hpp"
+#include "../graphics/drawable/Icon.hpp"
 #include "../os/Parcel.hpp"
 #include "../os/Bundle.hpp"
-#include "../graphics/drawable/Icon.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -183,7 +184,18 @@ namespace __jni_impl::android::app
 			"(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void Notification_Action::__constructor(jint arg0, const QString &arg1, __jni_impl::android::app::PendingIntent arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.Notification$Action",
+			"(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -192,6 +204,13 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"clone",
 			"()Landroid/app/Notification$Action;"
+		);
+	}
+	QAndroidJniObject Notification_Action::getIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
 	jint Notification_Action::describeContents()
@@ -251,13 +270,6 @@ namespace __jni_impl::android::app
 			"getDataOnlyRemoteInputs",
 			"()[Landroid/app/RemoteInput;"
 		).object<jarray>();
-	}
-	QAndroidJniObject Notification_Action::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Icon;"
-		);
 	}
 } // namespace __jni_impl::android::app
 

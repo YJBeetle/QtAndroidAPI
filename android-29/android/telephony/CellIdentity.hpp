@@ -24,10 +24,10 @@ namespace __jni_impl::android::telephony
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jstring getOperatorAlphaLong();
 		jstring getOperatorAlphaShort();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -69,6 +69,20 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
+	jstring CellIdentity::getOperatorAlphaLong()
+	{
+		return __thiz.callObjectMethod(
+			"getOperatorAlphaLong",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring CellIdentity::getOperatorAlphaShort()
+	{
+		return __thiz.callObjectMethod(
+			"getOperatorAlphaShort",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
 	jint CellIdentity::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -84,20 +98,6 @@ namespace __jni_impl::android::telephony
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jstring CellIdentity::getOperatorAlphaLong()
-	{
-		return __thiz.callObjectMethod(
-			"getOperatorAlphaLong",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	jstring CellIdentity::getOperatorAlphaShort()
-	{
-		return __thiz.callObjectMethod(
-			"getOperatorAlphaShort",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::telephony
 

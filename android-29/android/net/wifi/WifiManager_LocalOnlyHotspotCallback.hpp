@@ -25,9 +25,9 @@ namespace __jni_impl::android::net::wifi
 		void __constructor();
 		
 		// Methods
-		void onFailed(jint arg0);
 		void onStarted(__jni_impl::android::net::wifi::WifiManager_LocalOnlyHotspotReservation arg0);
 		void onStopped();
+		void onFailed(jint arg0);
 	};
 } // namespace __jni_impl::android::net::wifi
 
@@ -70,18 +70,11 @@ namespace __jni_impl::android::net::wifi
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.WifiManager$LocalOnlyHotspotCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	void WifiManager_LocalOnlyHotspotCallback::onFailed(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"onFailed",
-			"(I)V",
-			arg0
-		);
-	}
 	void WifiManager_LocalOnlyHotspotCallback::onStarted(__jni_impl::android::net::wifi::WifiManager_LocalOnlyHotspotReservation arg0)
 	{
 		__thiz.callMethod<void>(
@@ -95,6 +88,14 @@ namespace __jni_impl::android::net::wifi
 		__thiz.callMethod<void>(
 			"onStopped",
 			"()V"
+		);
+	}
+	void WifiManager_LocalOnlyHotspotCallback::onFailed(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"onFailed",
+			"(I)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::net::wifi

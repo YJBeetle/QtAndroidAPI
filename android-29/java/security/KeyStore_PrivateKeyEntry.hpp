@@ -43,7 +43,8 @@ namespace __jni_impl::java::security
 			"java.security.KeyStore$PrivateKeyEntry",
 			"(Ljava/security/PrivateKey;[Ljava/security/cert/Certificate;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void KeyStore_PrivateKeyEntry::__constructor(__jni_impl::__JniBaseClass arg0, jarray arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -52,7 +53,8 @@ namespace __jni_impl::java::security
 			"(Ljava/security/PrivateKey;[Ljava/security/cert/Certificate;Ljava/util/Set;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods

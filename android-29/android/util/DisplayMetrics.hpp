@@ -277,7 +277,8 @@ namespace __jni_impl::android::util
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.DisplayMetrics",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -38,7 +38,8 @@ namespace __jni_impl::android::database
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.Observable",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

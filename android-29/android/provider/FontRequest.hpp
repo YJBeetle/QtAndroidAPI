@@ -15,7 +15,9 @@ namespace __jni_impl::android::provider
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1, jstring arg2);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2);
 		void __constructor(jstring arg0, jstring arg1, jstring arg2, __jni_impl::__JniBaseClass arg3);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2, __jni_impl::__JniBaseClass arg3);
 		
 		// Methods
 		jstring toString();
@@ -39,7 +41,18 @@ namespace __jni_impl::android::provider
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void FontRequest::__constructor(const QString &arg0, const QString &arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.provider.FontRequest",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	void FontRequest::__constructor(jstring arg0, jstring arg1, jstring arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -49,7 +62,19 @@ namespace __jni_impl::android::provider
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
+	}
+	void FontRequest::__constructor(const QString &arg0, const QString &arg1, const QString &arg2, __jni_impl::__JniBaseClass arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"android.provider.FontRequest",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3.__jniObject().object()
+		);
 	}
 	
 	// Methods

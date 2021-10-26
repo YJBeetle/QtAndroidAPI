@@ -22,6 +22,7 @@ namespace __jni_impl::android::text
 		jboolean hasNext();
 		jstring next();
 		void setString(jstring arg0);
+		void setString(const QString &arg0);
 	};
 } // namespace __jni_impl::android::text
 
@@ -36,7 +37,8 @@ namespace __jni_impl::android::text
 		__thiz = QAndroidJniObject(
 			"android.text.TextUtils$SimpleStringSplitter",
 			"(C)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -74,6 +76,14 @@ namespace __jni_impl::android::text
 			"setString",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void TextUtils_SimpleStringSplitter::setString(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setString",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::text

@@ -24,6 +24,7 @@ namespace __jni_impl::android::util
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::util
 
@@ -88,6 +89,15 @@ namespace __jni_impl::android::util
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/util/Xml$Encoding;",
 			arg0
+		);
+	}
+	QAndroidJniObject Xml_Encoding::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.util.Xml$Encoding",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/util/Xml$Encoding;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::util

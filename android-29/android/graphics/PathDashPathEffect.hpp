@@ -45,7 +45,8 @@ namespace __jni_impl::android::graphics
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	
 	// Methods

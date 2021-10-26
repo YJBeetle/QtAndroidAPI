@@ -17,13 +17,13 @@ namespace __jni_impl::android::util
 {
 	class Size;
 }
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
 namespace __jni_impl::android::app
 {
 	class Activity;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
 }
 namespace __jni_impl::android::app
 {
@@ -32,6 +32,10 @@ namespace __jni_impl::android::app
 namespace __jni_impl::android::graphics
 {
 	class Bitmap;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 namespace __jni_impl::android::app
 {
@@ -44,10 +48,6 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::app
 {
 	class ActivityManager_MemoryInfo;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
 }
 namespace __jni_impl::android::app
 {
@@ -82,28 +82,30 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getRecentTasks(jint arg0, jint arg1);
-		QAndroidJniObject getRunningServices(jint arg0);
-		QAndroidJniObject getAppTaskThumbnailSize();
 		jint getMemoryClass();
-		QAndroidJniObject getAppTasks();
-		jboolean isActivityStartAllowedOnDisplay(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2);
 		jint getLargeMemoryClass();
 		jboolean isLowRamDevice();
+		QAndroidJniObject getRecentTasks(jint arg0, jint arg1);
+		QAndroidJniObject getAppTasks();
+		QAndroidJniObject getAppTaskThumbnailSize();
 		jint addAppTask(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::app::ActivityManager_TaskDescription arg2, __jni_impl::android::graphics::Bitmap arg3);
 		QAndroidJniObject getRunningTasks(jint arg0);
+		void moveTaskToFront(jint arg0, jint arg1, __jni_impl::android::os::Bundle arg2);
+		void moveTaskToFront(jint arg0, jint arg1);
+		jboolean isActivityStartAllowedOnDisplay(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2);
+		QAndroidJniObject getRunningServices(jint arg0);
 		QAndroidJniObject getRunningServiceControlPanel(__jni_impl::android::content::ComponentName arg0);
 		void getMemoryInfo(__jni_impl::android::app::ActivityManager_MemoryInfo arg0);
 		jboolean clearApplicationUserData();
 		QAndroidJniObject getProcessesInErrorState();
 		jboolean isBackgroundRestricted();
 		QAndroidJniObject getRunningAppProcesses();
-		void moveTaskToFront(jint arg0, jint arg1, __jni_impl::android::os::Bundle arg2);
-		void moveTaskToFront(jint arg0, jint arg1);
 		static void getMyMemoryState(__jni_impl::android::app::ActivityManager_RunningAppProcessInfo arg0);
 		jarray getProcessMemoryInfo(jintArray arg0);
 		void restartPackage(jstring arg0);
+		void restartPackage(const QString &arg0);
 		void killBackgroundProcesses(jstring arg0);
+		void killBackgroundProcesses(const QString &arg0);
 		QAndroidJniObject getDeviceConfigurationInfo();
 		jint getLauncherLargeIconDensity();
 		jint getLauncherLargeIconSize();
@@ -111,6 +113,7 @@ namespace __jni_impl::android::app
 		static jboolean isRunningInTestHarness();
 		static jboolean isRunningInUserTestHarness();
 		void dumpPackageState(__jni_impl::java::io::FileDescriptor arg0, jstring arg1);
+		void dumpPackageState(__jni_impl::java::io::FileDescriptor arg0, const QString &arg1);
 		void setWatchHeapLimit(jlong arg0);
 		void clearWatchHeapLimit();
 		jboolean isInLockTaskMode();
@@ -122,14 +125,14 @@ namespace __jni_impl::android::app
 #include "../content/Context.hpp"
 #include "../os/Handler.hpp"
 #include "../util/Size.hpp"
-#include "../content/Intent.hpp"
 #include "Activity.hpp"
+#include "../content/Intent.hpp"
 #include "ActivityManager_TaskDescription.hpp"
 #include "../graphics/Bitmap.hpp"
+#include "../os/Bundle.hpp"
 #include "PendingIntent.hpp"
 #include "../content/ComponentName.hpp"
 #include "ActivityManager_MemoryInfo.hpp"
-#include "../os/Bundle.hpp"
 #include "ActivityManager_RunningAppProcessInfo.hpp"
 #include "../content/pm/ConfigurationInfo.hpp"
 #include "../../java/io/FileDescriptor.hpp"
@@ -212,52 +215,11 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject ActivityManager::getRecentTasks(jint arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getRecentTasks",
-			"(II)Ljava/util/List;",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject ActivityManager::getRunningServices(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getRunningServices",
-			"(I)Ljava/util/List;",
-			arg0
-		);
-	}
-	QAndroidJniObject ActivityManager::getAppTaskThumbnailSize()
-	{
-		return __thiz.callObjectMethod(
-			"getAppTaskThumbnailSize",
-			"()Landroid/util/Size;"
-		);
-	}
 	jint ActivityManager::getMemoryClass()
 	{
 		return __thiz.callMethod<jint>(
 			"getMemoryClass",
 			"()I"
-		);
-	}
-	QAndroidJniObject ActivityManager::getAppTasks()
-	{
-		return __thiz.callObjectMethod(
-			"getAppTasks",
-			"()Ljava/util/List;"
-		);
-	}
-	jboolean ActivityManager::isActivityStartAllowedOnDisplay(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isActivityStartAllowedOnDisplay",
-			"(Landroid/content/Context;ILandroid/content/Intent;)Z",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
 		);
 	}
 	jint ActivityManager::getLargeMemoryClass()
@@ -272,6 +234,29 @@ namespace __jni_impl::android::app
 		return __thiz.callMethod<jboolean>(
 			"isLowRamDevice",
 			"()Z"
+		);
+	}
+	QAndroidJniObject ActivityManager::getRecentTasks(jint arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getRecentTasks",
+			"(II)Ljava/util/List;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject ActivityManager::getAppTasks()
+	{
+		return __thiz.callObjectMethod(
+			"getAppTasks",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject ActivityManager::getAppTaskThumbnailSize()
+	{
+		return __thiz.callObjectMethod(
+			"getAppTaskThumbnailSize",
+			"()Landroid/util/Size;"
 		);
 	}
 	jint ActivityManager::addAppTask(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::app::ActivityManager_TaskDescription arg2, __jni_impl::android::graphics::Bitmap arg3)
@@ -289,6 +274,43 @@ namespace __jni_impl::android::app
 	{
 		return __thiz.callObjectMethod(
 			"getRunningTasks",
+			"(I)Ljava/util/List;",
+			arg0
+		);
+	}
+	void ActivityManager::moveTaskToFront(jint arg0, jint arg1, __jni_impl::android::os::Bundle arg2)
+	{
+		__thiz.callMethod<void>(
+			"moveTaskToFront",
+			"(IILandroid/os/Bundle;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void ActivityManager::moveTaskToFront(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"moveTaskToFront",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	jboolean ActivityManager::isActivityStartAllowedOnDisplay(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isActivityStartAllowedOnDisplay",
+			"(Landroid/content/Context;ILandroid/content/Intent;)Z",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ActivityManager::getRunningServices(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getRunningServices",
 			"(I)Ljava/util/List;",
 			arg0
 		);
@@ -337,25 +359,6 @@ namespace __jni_impl::android::app
 			"()Ljava/util/List;"
 		);
 	}
-	void ActivityManager::moveTaskToFront(jint arg0, jint arg1, __jni_impl::android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"moveTaskToFront",
-			"(IILandroid/os/Bundle;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void ActivityManager::moveTaskToFront(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"moveTaskToFront",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
 	void ActivityManager::getMyMemoryState(__jni_impl::android::app::ActivityManager_RunningAppProcessInfo arg0)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -381,12 +384,28 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
+	void ActivityManager::restartPackage(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"restartPackage",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void ActivityManager::killBackgroundProcesses(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"killBackgroundProcesses",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void ActivityManager::killBackgroundProcesses(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"killBackgroundProcesses",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject ActivityManager::getDeviceConfigurationInfo()
@@ -441,6 +460,15 @@ namespace __jni_impl::android::app
 			"(Ljava/io/FileDescriptor;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	void ActivityManager::dumpPackageState(__jni_impl::java::io::FileDescriptor arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"dumpPackageState",
+			"(Ljava/io/FileDescriptor;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void ActivityManager::setWatchHeapLimit(jlong arg0)

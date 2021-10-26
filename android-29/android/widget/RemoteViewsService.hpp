@@ -40,7 +40,8 @@ namespace __jni_impl::android::widget
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RemoteViewsService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

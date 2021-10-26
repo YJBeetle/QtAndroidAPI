@@ -48,14 +48,15 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		void setGravity(jint arg0);
-		jint getGravity();
-		jint getOrientation();
 		jstring getAccessibilityClassName();
 		QAndroidJniObject generateLayoutParams(__jni_impl::__JniBaseClass arg0);
 		jboolean shouldDelayChildPressedState();
 		void onRtlPropertiesChanged(jint arg0);
 		jint getBaseline();
+		jint getOrientation();
+		void setGravity(jint arg0);
+		jint getGravity();
+		void setOrientation(jint arg0);
 		void setDividerDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 		void setShowDividers(jint arg0);
 		jint getShowDividers();
@@ -72,7 +73,6 @@ namespace __jni_impl::android::widget
 		void setWeightSum(jfloat arg0);
 		void setHorizontalGravity(jint arg0);
 		void setVerticalGravity(jint arg0);
-		void setOrientation(jint arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -137,7 +137,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void LinearLayout::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -146,7 +147,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void LinearLayout::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -154,39 +156,19 @@ namespace __jni_impl::android::widget
 			"android.widget.LinearLayout",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void LinearLayout::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.LinearLayout",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
-	void LinearLayout::setGravity(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGravity",
-			"(I)V",
-			arg0
-		);
-	}
-	jint LinearLayout::getGravity()
-	{
-		return __thiz.callMethod<jint>(
-			"getGravity",
-			"()I"
-		);
-	}
-	jint LinearLayout::getOrientation()
-	{
-		return __thiz.callMethod<jint>(
-			"getOrientation",
-			"()I"
-		);
-	}
 	jstring LinearLayout::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
@@ -222,6 +204,36 @@ namespace __jni_impl::android::widget
 		return __thiz.callMethod<jint>(
 			"getBaseline",
 			"()I"
+		);
+	}
+	jint LinearLayout::getOrientation()
+	{
+		return __thiz.callMethod<jint>(
+			"getOrientation",
+			"()I"
+		);
+	}
+	void LinearLayout::setGravity(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGravity",
+			"(I)V",
+			arg0
+		);
+	}
+	jint LinearLayout::getGravity()
+	{
+		return __thiz.callMethod<jint>(
+			"getGravity",
+			"()I"
+		);
+	}
+	void LinearLayout::setOrientation(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOrientation",
+			"(I)V",
+			arg0
 		);
 	}
 	void LinearLayout::setDividerDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
@@ -341,14 +353,6 @@ namespace __jni_impl::android::widget
 	{
 		__thiz.callMethod<void>(
 			"setVerticalGravity",
-			"(I)V",
-			arg0
-		);
-	}
-	void LinearLayout::setOrientation(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOrientation",
 			"(I)V",
 			arg0
 		);

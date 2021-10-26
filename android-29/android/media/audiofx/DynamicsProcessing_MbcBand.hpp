@@ -62,14 +62,16 @@ namespace __jni_impl::android::media::audiofx
 			arg7,
 			arg8,
 			arg9,
-			arg10);
+			arg10
+		);
 	}
 	void DynamicsProcessing_MbcBand::__constructor(__jni_impl::android::media::audiofx::DynamicsProcessing_MbcBand arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.DynamicsProcessing$MbcBand",
 			"(Landroid/media/audiofx/DynamicsProcessing$MbcBand;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

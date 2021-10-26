@@ -17,11 +17,11 @@ namespace __jni_impl::android::content::res
 }
 namespace __jni_impl::android::graphics::drawable
 {
-	class DrawableContainer_DrawableContainerState;
+	class Drawable;
 }
 namespace __jni_impl::android::graphics::drawable
 {
-	class Drawable;
+	class DrawableContainer_DrawableContainerState;
 }
 
 namespace __jni_impl::android::graphics::drawable
@@ -40,6 +40,7 @@ namespace __jni_impl::android::graphics::drawable
 		void start();
 		void stop();
 		jint getDuration(jint arg0);
+		jboolean isRunning();
 		jboolean setVisible(jboolean arg0, jboolean arg1);
 		void unscheduleSelf(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject mutate();
@@ -48,14 +49,13 @@ namespace __jni_impl::android::graphics::drawable
 		jboolean isOneShot();
 		void setOneShot(jboolean arg0);
 		void addFrame(__jni_impl::android::graphics::drawable::Drawable arg0, jint arg1);
-		jboolean isRunning();
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
-#include "DrawableContainer_DrawableContainerState.hpp"
 #include "Drawable.hpp"
+#include "DrawableContainer_DrawableContainerState.hpp"
 
 namespace __jni_impl::android::graphics::drawable
 {
@@ -66,7 +66,8 @@ namespace __jni_impl::android::graphics::drawable
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.AnimationDrawable",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -108,6 +109,13 @@ namespace __jni_impl::android::graphics::drawable
 			"getDuration",
 			"(I)I",
 			arg0
+		);
+	}
+	jboolean AnimationDrawable::isRunning()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isRunning",
+			"()Z"
 		);
 	}
 	jboolean AnimationDrawable::setVisible(jboolean arg0, jboolean arg1)
@@ -171,13 +179,6 @@ namespace __jni_impl::android::graphics::drawable
 			"(Landroid/graphics/drawable/Drawable;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean AnimationDrawable::isRunning()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isRunning",
-			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::graphics::drawable

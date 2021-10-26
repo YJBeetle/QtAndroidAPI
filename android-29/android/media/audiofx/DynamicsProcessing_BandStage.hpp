@@ -36,7 +36,8 @@ namespace __jni_impl::android::media::audiofx
 			"(ZZI)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods

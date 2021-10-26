@@ -22,12 +22,12 @@ namespace __jni_impl::android::graphics
 		void __constructor(__jni_impl::android::graphics::Picture arg0);
 		
 		// Methods
-		QAndroidJniObject beginRecording(jint arg0, jint arg1);
-		void endRecording();
-		jboolean requiresHardwareAcceleration();
 		void draw(__jni_impl::android::graphics::Canvas arg0);
 		jint getWidth();
 		jint getHeight();
+		QAndroidJniObject beginRecording(jint arg0, jint arg1);
+		void endRecording();
+		jboolean requiresHardwareAcceleration();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -42,17 +42,41 @@ namespace __jni_impl::android::graphics
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Picture",
-			"()V");
+			"()V"
+		);
 	}
 	void Picture::__constructor(__jni_impl::android::graphics::Picture arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Picture",
 			"(Landroid/graphics/Picture;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
+	void Picture::draw(__jni_impl::android::graphics::Canvas arg0)
+	{
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint Picture::getWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
+	jint Picture::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
+	}
 	QAndroidJniObject Picture::beginRecording(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -74,28 +98,6 @@ namespace __jni_impl::android::graphics
 		return __thiz.callMethod<jboolean>(
 			"requiresHardwareAcceleration",
 			"()Z"
-		);
-	}
-	void Picture::draw(__jni_impl::android::graphics::Canvas arg0)
-	{
-		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jint Picture::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I"
-		);
-	}
-	jint Picture::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::graphics

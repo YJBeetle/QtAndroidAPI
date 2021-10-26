@@ -77,6 +77,7 @@ namespace __jni_impl::android::icu::text
 		QAndroidJniObject getNumberFormat();
 		jstring formatNumeric(jdouble arg0, __jni_impl::android::icu::text::RelativeDateTimeFormatter_RelativeDateTimeUnit arg1);
 		jstring combineDateAndTime(jstring arg0, jstring arg1);
+		jstring combineDateAndTime(const QString &arg0, const QString &arg1);
 		QAndroidJniObject getCapitalizationContext();
 		QAndroidJniObject getFormatStyle();
 	};
@@ -217,6 +218,15 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1
+		).object<jstring>();
+	}
+	jstring RelativeDateTimeFormatter::combineDateAndTime(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"combineDateAndTime",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject RelativeDateTimeFormatter::getCapitalizationContext()

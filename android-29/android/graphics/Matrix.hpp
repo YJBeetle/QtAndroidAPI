@@ -162,14 +162,16 @@ namespace __jni_impl::android::graphics
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Matrix",
-			"()V");
+			"()V"
+		);
 	}
 	void Matrix::__constructor(__jni_impl::android::graphics::Matrix arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Matrix",
 			"(Landroid/graphics/Matrix;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

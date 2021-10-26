@@ -22,12 +22,12 @@ namespace __jni_impl::android::os
 		
 		// Methods
 		static void sleep(jlong arg0);
-		static jlong uptimeMillis();
 		static jboolean setCurrentTimeMillis(jlong arg0);
 		static jlong elapsedRealtime();
 		static jlong elapsedRealtimeNanos();
 		static jlong currentThreadTimeMillis();
 		static QAndroidJniObject currentGnssTimeClock();
+		static jlong uptimeMillis();
 	};
 } // namespace __jni_impl::android::os
 
@@ -53,14 +53,6 @@ namespace __jni_impl::android::os
 			"sleep",
 			"(J)V",
 			arg0
-		);
-	}
-	jlong SystemClock::uptimeMillis()
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.os.SystemClock",
-			"uptimeMillis",
-			"()J"
 		);
 	}
 	jboolean SystemClock::setCurrentTimeMillis(jlong arg0)
@@ -102,6 +94,14 @@ namespace __jni_impl::android::os
 			"android.os.SystemClock",
 			"currentGnssTimeClock",
 			"()Ljava/time/Clock;"
+		);
+	}
+	jlong SystemClock::uptimeMillis()
+	{
+		return QAndroidJniObject::callStaticMethod<jlong>(
+			"android.os.SystemClock",
+			"uptimeMillis",
+			"()J"
 		);
 	}
 } // namespace __jni_impl::android::os

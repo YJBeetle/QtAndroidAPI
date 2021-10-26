@@ -57,14 +57,16 @@ namespace __jni_impl::android::os
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.StrictMode$VmPolicy$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	void StrictMode_VmPolicy_Builder::__constructor(__jni_impl::android::os::StrictMode_VmPolicy arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.StrictMode$VmPolicy$Builder",
 			"(Landroid/os/StrictMode$VmPolicy;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

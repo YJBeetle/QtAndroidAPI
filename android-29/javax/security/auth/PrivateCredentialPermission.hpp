@@ -28,6 +28,7 @@ namespace __jni_impl::javax::security::auth
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1);
+		void __constructor(const QString &arg0, const QString &arg1);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -55,7 +56,17 @@ namespace __jni_impl::javax::security::auth
 			"javax.security.auth.PrivateCredentialPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void PrivateCredentialPermission::__constructor(const QString &arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.security.auth.PrivateCredentialPermission",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods

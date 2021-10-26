@@ -9,6 +9,10 @@ namespace __jni_impl::android::os
 {
 	class Parcel;
 }
+namespace __jni_impl::android::content
+{
+	class ComponentName;
+}
 namespace __jni_impl::android::os
 {
 	class Bundle;
@@ -16,10 +20,6 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::net
 {
 	class NetworkRequest;
-}
-namespace __jni_impl::android::content
-{
-	class ComponentName;
 }
 namespace __jni_impl::android::content
 {
@@ -57,6 +57,7 @@ namespace __jni_impl::android::app::job
 		jstring toString();
 		jint hashCode();
 		jint getId();
+		QAndroidJniObject getService();
 		static jlong getMinPeriodMillis();
 		static jlong getMinFlexMillis();
 		QAndroidJniObject getTransientExtras();
@@ -84,16 +85,15 @@ namespace __jni_impl::android::app::job
 		jboolean isPrefetch();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getService();
 		QAndroidJniObject getClipData();
 		QAndroidJniObject getExtras();
 	};
 } // namespace __jni_impl::android::app::job
 
 #include "../../os/Parcel.hpp"
+#include "../../content/ComponentName.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../net/NetworkRequest.hpp"
-#include "../../content/ComponentName.hpp"
 #include "../../content/ClipData.hpp"
 #include "../../os/PersistableBundle.hpp"
 
@@ -222,6 +222,13 @@ namespace __jni_impl::android::app::job
 		return __thiz.callMethod<jint>(
 			"getId",
 			"()I"
+		);
+	}
+	QAndroidJniObject JobInfo::getService()
+	{
+		return __thiz.callObjectMethod(
+			"getService",
+			"()Landroid/content/ComponentName;"
 		);
 	}
 	jlong JobInfo::getMinPeriodMillis()
@@ -415,13 +422,6 @@ namespace __jni_impl::android::app::job
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject JobInfo::getService()
-	{
-		return __thiz.callObjectMethod(
-			"getService",
-			"()Landroid/content/ComponentName;"
 		);
 	}
 	QAndroidJniObject JobInfo::getClipData()

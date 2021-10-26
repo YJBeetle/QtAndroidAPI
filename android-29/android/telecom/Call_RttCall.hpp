@@ -21,6 +21,7 @@ namespace __jni_impl::android::telecom
 		
 		// Methods
 		void write(jstring arg0);
+		void write(const QString &arg0);
 		jstring read();
 		jstring readImmediately();
 		jint getRttAudioMode();
@@ -69,6 +70,14 @@ namespace __jni_impl::android::telecom
 			"write",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void Call_RttCall::write(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"write",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring Call_RttCall::read()

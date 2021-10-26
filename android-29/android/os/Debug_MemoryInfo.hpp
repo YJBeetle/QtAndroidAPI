@@ -31,6 +31,7 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getTotalPss();
@@ -40,8 +41,8 @@ namespace __jni_impl::android::os
 		jint getTotalPrivateClean();
 		jint getTotalSharedClean();
 		jstring getMemoryStat(jstring arg0);
+		jstring getMemoryStat(const QString &arg0);
 		QAndroidJniObject getMemoryStats();
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 	};
 } // namespace __jni_impl::android::os
 
@@ -118,10 +119,19 @@ namespace __jni_impl::android::os
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.Debug$MemoryInfo",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
+	void Debug_MemoryInfo::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	jint Debug_MemoryInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -188,19 +198,19 @@ namespace __jni_impl::android::os
 			arg0
 		).object<jstring>();
 	}
+	jstring Debug_MemoryInfo::getMemoryStat(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getMemoryStat",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	QAndroidJniObject Debug_MemoryInfo::getMemoryStats()
 	{
 		return __thiz.callObjectMethod(
 			"getMemoryStats",
 			"()Ljava/util/Map;"
-		);
-	}
-	void Debug_MemoryInfo::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::os

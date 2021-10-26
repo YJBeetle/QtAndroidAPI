@@ -15,13 +15,14 @@ namespace __jni_impl::android::media::session
 		
 		// Constructors
 		void __constructor(jstring arg0, jint arg1, jint arg2);
+		void __constructor(const QString &arg0, jint arg1, jint arg2);
 		
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jstring getPackageName();
-		jint getUid();
 		jint getPid();
+		jint getUid();
 	};
 } // namespace __jni_impl::android::media::session
 
@@ -38,7 +39,18 @@ namespace __jni_impl::android::media::session
 			"(Ljava/lang/String;II)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void MediaSessionManager_RemoteUserInfo::__constructor(const QString &arg0, jint arg1, jint arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.media.session.MediaSessionManager$RemoteUserInfo",
+			"(Ljava/lang/String;II)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2
+		);
 	}
 	
 	// Methods
@@ -64,17 +76,17 @@ namespace __jni_impl::android::media::session
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint MediaSessionManager_RemoteUserInfo::getUid()
-	{
-		return __thiz.callMethod<jint>(
-			"getUid",
-			"()I"
-		);
-	}
 	jint MediaSessionManager_RemoteUserInfo::getPid()
 	{
 		return __thiz.callMethod<jint>(
 			"getPid",
+			"()I"
+		);
+	}
+	jint MediaSessionManager_RemoteUserInfo::getUid()
+	{
+		return __thiz.callMethod<jint>(
+			"getUid",
 			"()I"
 		);
 	}

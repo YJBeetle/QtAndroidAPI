@@ -32,6 +32,7 @@ namespace __jni_impl::android::view::accessibility
 		// Methods
 		QAndroidJniObject getView();
 		void onPrepareExtraData(jint arg0, jstring arg1, __jni_impl::android::os::Bundle arg2, __jni_impl::android::os::Message arg3);
+		void onPrepareExtraData(jint arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2, __jni_impl::android::os::Message arg3);
 	};
 } // namespace __jni_impl::android::view::accessibility
 
@@ -57,7 +58,8 @@ namespace __jni_impl::android::view::accessibility
 			"android.view.accessibility.AccessibilityRequestPreparer",
 			"(Landroid/view/View;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -75,6 +77,17 @@ namespace __jni_impl::android::view::accessibility
 			"(ILjava/lang/String;Landroid/os/Bundle;Landroid/os/Message;)V",
 			arg0,
 			arg1,
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object()
+		);
+	}
+	void AccessibilityRequestPreparer::onPrepareExtraData(jint arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2, __jni_impl::android::os::Message arg3)
+	{
+		__thiz.callMethod<void>(
+			"onPrepareExtraData",
+			"(ILjava/lang/String;Landroid/os/Bundle;Landroid/os/Message;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
 		);

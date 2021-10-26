@@ -42,7 +42,8 @@ namespace __jni_impl::javax::crypto::spec
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.PSource$PSpecified",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

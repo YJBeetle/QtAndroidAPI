@@ -26,7 +26,6 @@ namespace __jni_impl::android::app::usage
 		jstring getPackageName();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jlong getFirstTimeStamp();
 		jlong getLastTimeStamp();
 		jlong getLastTimeUsed();
 		jlong getLastTimeVisible();
@@ -34,6 +33,7 @@ namespace __jni_impl::android::app::usage
 		jlong getTotalTimeVisible();
 		jlong getLastTimeForegroundServiceUsed();
 		jlong getTotalTimeForegroundServiceUsed();
+		jlong getFirstTimeStamp();
 	};
 } // namespace __jni_impl::android::app::usage
 
@@ -57,7 +57,8 @@ namespace __jni_impl::android::app::usage
 		__thiz = QAndroidJniObject(
 			"android.app.usage.UsageStats",
 			"(Landroid/app/usage/UsageStats;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -90,13 +91,6 @@ namespace __jni_impl::android::app::usage
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jlong UsageStats::getFirstTimeStamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getFirstTimeStamp",
-			"()J"
 		);
 	}
 	jlong UsageStats::getLastTimeStamp()
@@ -145,6 +139,13 @@ namespace __jni_impl::android::app::usage
 	{
 		return __thiz.callMethod<jlong>(
 			"getTotalTimeForegroundServiceUsed",
+			"()J"
+		);
+	}
+	jlong UsageStats::getFirstTimeStamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getFirstTimeStamp",
 			"()J"
 		);
 	}

@@ -17,6 +17,18 @@ namespace __jni_impl::android::view
 {
 	class View;
 }
+namespace __jni_impl::android::graphics
+{
+	class Rect;
+}
+namespace __jni_impl::android::graphics
+{
+	class Canvas;
+}
+namespace __jni_impl::android::view
+{
+	class KeyEvent;
+}
 namespace __jni_impl::android::content
 {
 	class Intent;
@@ -28,18 +40,6 @@ namespace __jni_impl::android::graphics::drawable
 namespace __jni_impl::android::view::accessibility
 {
 	class AccessibilityNodeInfo;
-}
-namespace __jni_impl::android::view
-{
-	class KeyEvent;
-}
-namespace __jni_impl::android::graphics
-{
-	class Rect;
-}
-namespace __jni_impl::android::graphics
-{
-	class Canvas;
 }
 
 namespace __jni_impl::android::widget
@@ -58,13 +58,21 @@ namespace __jni_impl::android::widget
 		// Methods
 		jboolean isOpaque();
 		QAndroidJniObject getAdapter();
+		jboolean requestChildRectangleOnScreen(__jni_impl::android::view::View arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2);
+		jstring getAccessibilityClassName();
+		void setAdapter(__jni_impl::__JniBaseClass arg0);
+		void setSelection(jint arg0);
+		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
+		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
 		jint getMaxScrollAmount();
-		void addHeaderView(__jni_impl::android::view::View arg0);
 		void addHeaderView(__jni_impl::android::view::View arg0, jobject arg1, jboolean arg2);
+		void addHeaderView(__jni_impl::android::view::View arg0);
 		jint getHeaderViewsCount();
 		jboolean removeHeaderView(__jni_impl::android::view::View arg0);
-		void addFooterView(__jni_impl::android::view::View arg0, jobject arg1, jboolean arg2);
 		void addFooterView(__jni_impl::android::view::View arg0);
+		void addFooterView(__jni_impl::android::view::View arg0, jobject arg1, jboolean arg2);
 		jint getFooterViewsCount();
 		jboolean removeFooterView(__jni_impl::android::view::View arg0);
 		void setRemoteViewsAdapter(__jni_impl::android::content::Intent arg0);
@@ -88,25 +96,17 @@ namespace __jni_impl::android::widget
 		QAndroidJniObject getOverscrollFooter();
 		jlongArray getCheckItemIds();
 		void onInitializeAccessibilityNodeInfoForItem(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::accessibility::AccessibilityNodeInfo arg2);
-		void setAdapter(__jni_impl::__JniBaseClass arg0);
-		void setSelection(jint arg0);
-		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
-		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
-		jboolean requestChildRectangleOnScreen(__jni_impl::android::view::View arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2);
-		jstring getAccessibilityClassName();
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
 #include "../view/View.hpp"
+#include "../graphics/Rect.hpp"
+#include "../graphics/Canvas.hpp"
+#include "../view/KeyEvent.hpp"
 #include "../content/Intent.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../view/accessibility/AccessibilityNodeInfo.hpp"
-#include "../view/KeyEvent.hpp"
-#include "../graphics/Rect.hpp"
-#include "../graphics/Canvas.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -121,7 +121,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void ListView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -130,7 +131,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void ListView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -138,14 +140,16 @@ namespace __jni_impl::android::widget
 			"android.widget.ListView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ListView::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ListView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -163,19 +167,80 @@ namespace __jni_impl::android::widget
 			"()Landroid/widget/ListAdapter;"
 		);
 	}
+	jboolean ListView::requestChildRectangleOnScreen(__jni_impl::android::view::View arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"requestChildRectangleOnScreen",
+			"(Landroid/view/View;Landroid/graphics/Rect;Z)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
+	jstring ListView::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	void ListView::setAdapter(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAdapter",
+			"(Landroid/widget/ListAdapter;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ListView::setSelection(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSelection",
+			"(I)V",
+			arg0
+		);
+	}
+	jboolean ListView::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyDown",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean ListView::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyUp",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean ListView::onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyMultiple",
+			"(IILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	jboolean ListView::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchKeyEvent",
+			"(Landroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
 	jint ListView::getMaxScrollAmount()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxScrollAmount",
 			"()I"
-		);
-	}
-	void ListView::addHeaderView(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"addHeaderView",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	void ListView::addHeaderView(__jni_impl::android::view::View arg0, jobject arg1, jboolean arg2)
@@ -186,6 +251,14 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
+		);
+	}
+	void ListView::addHeaderView(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"addHeaderView",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	jint ListView::getHeaderViewsCount()
@@ -203,6 +276,14 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object()
 		);
 	}
+	void ListView::addFooterView(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"addFooterView",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void ListView::addFooterView(__jni_impl::android::view::View arg0, jobject arg1, jboolean arg2)
 	{
 		__thiz.callMethod<void>(
@@ -211,14 +292,6 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
-		);
-	}
-	void ListView::addFooterView(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"addFooterView",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	jint ListView::getFooterViewsCount()
@@ -396,75 +469,6 @@ namespace __jni_impl::android::widget
 			arg1,
 			arg2.__jniObject().object()
 		);
-	}
-	void ListView::setAdapter(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAdapter",
-			"(Landroid/widget/ListAdapter;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ListView::setSelection(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSelection",
-			"(I)V",
-			arg0
-		);
-	}
-	jboolean ListView::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyDown",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean ListView::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyUp",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean ListView::onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyMultiple",
-			"(IILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	jboolean ListView::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchKeyEvent",
-			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean ListView::requestChildRectangleOnScreen(__jni_impl::android::view::View arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"requestChildRectangleOnScreen",
-			"(Landroid/view/View;Landroid/graphics/Rect;Z)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	jstring ListView::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::widget
 

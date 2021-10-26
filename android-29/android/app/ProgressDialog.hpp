@@ -11,10 +11,6 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
@@ -22,6 +18,10 @@ namespace __jni_impl::android::graphics::drawable
 namespace __jni_impl::java::text
 {
 	class NumberFormat;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 
 namespace __jni_impl::android::app
@@ -40,12 +40,8 @@ namespace __jni_impl::android::app
 		// Methods
 		void onStart();
 		void setMessage(jstring arg0);
-		void setProgress(jint arg0);
-		void setSecondaryProgress(jint arg0);
-		static QAndroidJniObject show(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2);
-		static QAndroidJniObject show(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4, __jni_impl::__JniBaseClass arg5);
-		static QAndroidJniObject show(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3);
-		static QAndroidJniObject show(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4);
+		void setMessage(const QString &arg0);
+		jint getProgress();
 		jint getSecondaryProgress();
 		void setMax(jint arg0);
 		void incrementProgressBy(jint arg0);
@@ -56,16 +52,26 @@ namespace __jni_impl::android::app
 		jboolean isIndeterminate();
 		void setProgressStyle(jint arg0);
 		void setProgressNumberFormat(jstring arg0);
+		void setProgressNumberFormat(const QString &arg0);
 		void setProgressPercentFormat(__jni_impl::java::text::NumberFormat arg0);
+		static QAndroidJniObject show(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4, __jni_impl::__JniBaseClass arg5);
+		static QAndroidJniObject show(__jni_impl::android::content::Context arg0, const QString &arg1, const QString &arg2, jboolean arg3, jboolean arg4, __jni_impl::__JniBaseClass arg5);
+		static QAndroidJniObject show(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2);
+		static QAndroidJniObject show(__jni_impl::android::content::Context arg0, const QString &arg1, const QString &arg2);
+		static QAndroidJniObject show(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3);
+		static QAndroidJniObject show(__jni_impl::android::content::Context arg0, const QString &arg1, const QString &arg2, jboolean arg3);
+		static QAndroidJniObject show(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4);
+		static QAndroidJniObject show(__jni_impl::android::content::Context arg0, const QString &arg1, const QString &arg2, jboolean arg3, jboolean arg4);
 		jint getMax();
-		jint getProgress();
+		void setProgress(jint arg0);
+		void setSecondaryProgress(jint arg0);
 	};
 } // namespace __jni_impl::android::app
 
 #include "../content/Context.hpp"
-#include "../os/Bundle.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../../java/text/NumberFormat.hpp"
+#include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -91,7 +97,8 @@ namespace __jni_impl::android::app
 		__thiz = QAndroidJniObject(
 			"android.app.ProgressDialog",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ProgressDialog::__constructor(__jni_impl::android::content::Context arg0, jint arg1)
 	{
@@ -99,7 +106,8 @@ namespace __jni_impl::android::app
 			"android.app.ProgressDialog",
 			"(Landroid/content/Context;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -118,70 +126,19 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
-	void ProgressDialog::setProgress(jint arg0)
+	void ProgressDialog::setMessage(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"setProgress",
-			"(I)V",
-			arg0
+			"setMessage",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void ProgressDialog::setSecondaryProgress(jint arg0)
+	jint ProgressDialog::getProgress()
 	{
-		__thiz.callMethod<void>(
-			"setSecondaryProgress",
-			"(I)V",
-			arg0
-		);
-	}
-	QAndroidJniObject ProgressDialog::show(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.ProgressDialog",
-			"show",
-			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/app/ProgressDialog;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject ProgressDialog::show(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4, __jni_impl::__JniBaseClass arg5)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.ProgressDialog",
-			"show",
-			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZLandroid/content/DialogInterface$OnCancelListener;)Landroid/app/ProgressDialog;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ProgressDialog::show(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.ProgressDialog",
-			"show",
-			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Landroid/app/ProgressDialog;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	QAndroidJniObject ProgressDialog::show(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.ProgressDialog",
-			"show",
-			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4
+		return __thiz.callMethod<jint>(
+			"getProgress",
+			"()I"
 		);
 	}
 	jint ProgressDialog::getSecondaryProgress()
@@ -262,12 +219,120 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
+	void ProgressDialog::setProgressNumberFormat(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setProgressNumberFormat",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void ProgressDialog::setProgressPercentFormat(__jni_impl::java::text::NumberFormat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setProgressPercentFormat",
 			"(Ljava/text/NumberFormat;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ProgressDialog::show(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4, __jni_impl::__JniBaseClass arg5)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.ProgressDialog",
+			"show",
+			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZLandroid/content/DialogInterface$OnCancelListener;)Landroid/app/ProgressDialog;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ProgressDialog::show(__jni_impl::android::content::Context arg0, const QString &arg1, const QString &arg2, jboolean arg3, jboolean arg4, __jni_impl::__JniBaseClass arg5)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.ProgressDialog",
+			"show",
+			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZLandroid/content/DialogInterface$OnCancelListener;)Landroid/app/ProgressDialog;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3,
+			arg4,
+			arg5.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ProgressDialog::show(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.ProgressDialog",
+			"show",
+			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/app/ProgressDialog;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
+		);
+	}
+	QAndroidJniObject ProgressDialog::show(__jni_impl::android::content::Context arg0, const QString &arg1, const QString &arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.ProgressDialog",
+			"show",
+			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/app/ProgressDialog;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
+	}
+	QAndroidJniObject ProgressDialog::show(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.ProgressDialog",
+			"show",
+			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Landroid/app/ProgressDialog;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	QAndroidJniObject ProgressDialog::show(__jni_impl::android::content::Context arg0, const QString &arg1, const QString &arg2, jboolean arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.ProgressDialog",
+			"show",
+			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Landroid/app/ProgressDialog;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3
+		);
+	}
+	QAndroidJniObject ProgressDialog::show(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2, jboolean arg3, jboolean arg4)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.ProgressDialog",
+			"show",
+			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	QAndroidJniObject ProgressDialog::show(__jni_impl::android::content::Context arg0, const QString &arg1, const QString &arg2, jboolean arg3, jboolean arg4)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.ProgressDialog",
+			"show",
+			"(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3,
+			arg4
 		);
 	}
 	jint ProgressDialog::getMax()
@@ -277,11 +342,20 @@ namespace __jni_impl::android::app
 			"()I"
 		);
 	}
-	jint ProgressDialog::getProgress()
+	void ProgressDialog::setProgress(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getProgress",
-			"()I"
+		__thiz.callMethod<void>(
+			"setProgress",
+			"(I)V",
+			arg0
+		);
+	}
+	void ProgressDialog::setSecondaryProgress(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSecondaryProgress",
+			"(I)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::app

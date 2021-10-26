@@ -44,7 +44,8 @@ namespace __jni_impl::java::lang
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ThreadLocal",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

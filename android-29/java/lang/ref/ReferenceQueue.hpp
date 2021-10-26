@@ -38,7 +38,8 @@ namespace __jni_impl::java::lang::ref
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ref.ReferenceQueue",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

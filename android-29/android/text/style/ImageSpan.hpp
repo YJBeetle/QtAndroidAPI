@@ -35,7 +35,9 @@ namespace __jni_impl::android::text::style
 		
 		// Constructors
 		void __constructor(__jni_impl::android::graphics::drawable::Drawable arg0, jstring arg1);
+		void __constructor(__jni_impl::android::graphics::drawable::Drawable arg0, const QString &arg1);
 		void __constructor(__jni_impl::android::graphics::drawable::Drawable arg0, jstring arg1, jint arg2);
+		void __constructor(__jni_impl::android::graphics::drawable::Drawable arg0, const QString &arg1, jint arg2);
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1);
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jint arg2);
 		void __constructor(__jni_impl::android::content::Context arg0, jint arg1);
@@ -69,7 +71,17 @@ namespace __jni_impl::android::text::style
 			"android.text.style.ImageSpan",
 			"(Landroid/graphics/drawable/Drawable;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void ImageSpan::__constructor(__jni_impl::android::graphics::drawable::Drawable arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.style.ImageSpan",
+			"(Landroid/graphics/drawable/Drawable;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void ImageSpan::__constructor(__jni_impl::android::graphics::drawable::Drawable arg0, jstring arg1, jint arg2)
 	{
@@ -78,7 +90,18 @@ namespace __jni_impl::android::text::style
 			"(Landroid/graphics/drawable/Drawable;Ljava/lang/String;I)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void ImageSpan::__constructor(__jni_impl::android::graphics::drawable::Drawable arg0, const QString &arg1, jint arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.style.ImageSpan",
+			"(Landroid/graphics/drawable/Drawable;Ljava/lang/String;I)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
 	}
 	void ImageSpan::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1)
 	{
@@ -86,7 +109,8 @@ namespace __jni_impl::android::text::style
 			"android.text.style.ImageSpan",
 			"(Landroid/content/Context;Landroid/net/Uri;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ImageSpan::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jint arg2)
 	{
@@ -95,7 +119,8 @@ namespace __jni_impl::android::text::style
 			"(Landroid/content/Context;Landroid/net/Uri;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void ImageSpan::__constructor(__jni_impl::android::content::Context arg0, jint arg1)
 	{
@@ -103,7 +128,8 @@ namespace __jni_impl::android::text::style
 			"android.text.style.ImageSpan",
 			"(Landroid/content/Context;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void ImageSpan::__constructor(__jni_impl::android::content::Context arg0, jint arg1, jint arg2)
 	{
@@ -112,14 +138,16 @@ namespace __jni_impl::android::text::style
 			"(Landroid/content/Context;II)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void ImageSpan::__constructor(__jni_impl::android::graphics::Bitmap arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.ImageSpan",
 			"(Landroid/graphics/Bitmap;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ImageSpan::__constructor(__jni_impl::android::graphics::Bitmap arg0, jint arg1)
 	{
@@ -127,7 +155,8 @@ namespace __jni_impl::android::text::style
 			"android.text.style.ImageSpan",
 			"(Landroid/graphics/Bitmap;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void ImageSpan::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::graphics::Bitmap arg1)
 	{
@@ -135,7 +164,8 @@ namespace __jni_impl::android::text::style
 			"android.text.style.ImageSpan",
 			"(Landroid/content/Context;Landroid/graphics/Bitmap;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ImageSpan::__constructor(__jni_impl::android::graphics::drawable::Drawable arg0, jint arg1)
 	{
@@ -143,14 +173,16 @@ namespace __jni_impl::android::text::style
 			"android.text.style.ImageSpan",
 			"(Landroid/graphics/drawable/Drawable;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void ImageSpan::__constructor(__jni_impl::android::graphics::drawable::Drawable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.ImageSpan",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ImageSpan::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::graphics::Bitmap arg1, jint arg2)
 	{
@@ -159,7 +191,8 @@ namespace __jni_impl::android::text::style
 			"(Landroid/content/Context;Landroid/graphics/Bitmap;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods

@@ -33,7 +33,8 @@ namespace __jni_impl::java::security::cert
 		__thiz = QAndroidJniObject(
 			"java.security.cert.CertStoreSpi",
 			"(Ljava/security/cert/CertStoreParameters;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

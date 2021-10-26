@@ -71,14 +71,14 @@ namespace __jni_impl::android::bluetooth
 		// Methods
 		jstring getName();
 		jboolean setName(jstring arg0);
+		jboolean setName(const QString &arg0);
 		jint getState();
 		jstring getAddress();
 		jboolean isEnabled();
 		jboolean enable();
-		jint getScanMode();
-		static QAndroidJniObject getDefaultAdapter();
-		QAndroidJniObject getRemoteDevice(jbyteArray arg0);
 		QAndroidJniObject getRemoteDevice(jstring arg0);
+		QAndroidJniObject getRemoteDevice(const QString &arg0);
+		QAndroidJniObject getRemoteDevice(jbyteArray arg0);
 		QAndroidJniObject getBluetoothLeAdvertiser();
 		QAndroidJniObject getBluetoothLeScanner();
 		jboolean disable();
@@ -96,15 +96,20 @@ namespace __jni_impl::android::bluetooth
 		QAndroidJniObject getBondedDevices();
 		jint getProfileConnectionState(jint arg0);
 		QAndroidJniObject listenUsingRfcommWithServiceRecord(jstring arg0, __jni_impl::java::util::UUID arg1);
+		QAndroidJniObject listenUsingRfcommWithServiceRecord(const QString &arg0, __jni_impl::java::util::UUID arg1);
 		QAndroidJniObject listenUsingInsecureRfcommWithServiceRecord(jstring arg0, __jni_impl::java::util::UUID arg1);
+		QAndroidJniObject listenUsingInsecureRfcommWithServiceRecord(const QString &arg0, __jni_impl::java::util::UUID arg1);
 		jboolean getProfileProxy(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
 		void closeProfileProxy(jint arg0, __jni_impl::__JniBaseClass arg1);
 		static jboolean checkBluetoothAddress(jstring arg0);
-		jboolean startLeScan(jarray arg0, __jni_impl::__JniBaseClass arg1);
+		static jboolean checkBluetoothAddress(const QString &arg0);
 		jboolean startLeScan(__jni_impl::__JniBaseClass arg0);
+		jboolean startLeScan(jarray arg0, __jni_impl::__JniBaseClass arg1);
 		void stopLeScan(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject listenUsingL2capChannel();
 		QAndroidJniObject listenUsingInsecureL2capChannel();
+		jint getScanMode();
+		static QAndroidJniObject getDefaultAdapter();
 	};
 } // namespace __jni_impl::android::bluetooth
 
@@ -355,6 +360,14 @@ namespace __jni_impl::android::bluetooth
 			arg0
 		);
 	}
+	jboolean BluetoothAdapter::setName(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setName",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint BluetoothAdapter::getState()
 	{
 		return __thiz.callMethod<jint>(
@@ -383,19 +396,20 @@ namespace __jni_impl::android::bluetooth
 			"()Z"
 		);
 	}
-	jint BluetoothAdapter::getScanMode()
+	QAndroidJniObject BluetoothAdapter::getRemoteDevice(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getScanMode",
-			"()I"
+		return __thiz.callObjectMethod(
+			"getRemoteDevice",
+			"(Ljava/lang/String;)Landroid/bluetooth/BluetoothDevice;",
+			arg0
 		);
 	}
-	QAndroidJniObject BluetoothAdapter::getDefaultAdapter()
+	QAndroidJniObject BluetoothAdapter::getRemoteDevice(const QString &arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.bluetooth.BluetoothAdapter",
-			"getDefaultAdapter",
-			"()Landroid/bluetooth/BluetoothAdapter;"
+		return __thiz.callObjectMethod(
+			"getRemoteDevice",
+			"(Ljava/lang/String;)Landroid/bluetooth/BluetoothDevice;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject BluetoothAdapter::getRemoteDevice(jbyteArray arg0)
@@ -403,14 +417,6 @@ namespace __jni_impl::android::bluetooth
 		return __thiz.callObjectMethod(
 			"getRemoteDevice",
 			"([B)Landroid/bluetooth/BluetoothDevice;",
-			arg0
-		);
-	}
-	QAndroidJniObject BluetoothAdapter::getRemoteDevice(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getRemoteDevice",
-			"(Ljava/lang/String;)Landroid/bluetooth/BluetoothDevice;",
 			arg0
 		);
 	}
@@ -536,12 +542,30 @@ namespace __jni_impl::android::bluetooth
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject BluetoothAdapter::listenUsingRfcommWithServiceRecord(const QString &arg0, __jni_impl::java::util::UUID arg1)
+	{
+		return __thiz.callObjectMethod(
+			"listenUsingRfcommWithServiceRecord",
+			"(Ljava/lang/String;Ljava/util/UUID;)Landroid/bluetooth/BluetoothServerSocket;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject BluetoothAdapter::listenUsingInsecureRfcommWithServiceRecord(jstring arg0, __jni_impl::java::util::UUID arg1)
 	{
 		return __thiz.callObjectMethod(
 			"listenUsingInsecureRfcommWithServiceRecord",
 			"(Ljava/lang/String;Ljava/util/UUID;)Landroid/bluetooth/BluetoothServerSocket;",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject BluetoothAdapter::listenUsingInsecureRfcommWithServiceRecord(const QString &arg0, __jni_impl::java::util::UUID arg1)
+	{
+		return __thiz.callObjectMethod(
+			"listenUsingInsecureRfcommWithServiceRecord",
+			"(Ljava/lang/String;Ljava/util/UUID;)Landroid/bluetooth/BluetoothServerSocket;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -573,13 +597,13 @@ namespace __jni_impl::android::bluetooth
 			arg0
 		);
 	}
-	jboolean BluetoothAdapter::startLeScan(jarray arg0, __jni_impl::__JniBaseClass arg1)
+	jboolean BluetoothAdapter::checkBluetoothAddress(const QString &arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"startLeScan",
-			"([Ljava/util/UUID;Landroid/bluetooth/BluetoothAdapter$LeScanCallback;)Z",
-			arg0,
-			arg1.__jniObject().object()
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.bluetooth.BluetoothAdapter",
+			"checkBluetoothAddress",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean BluetoothAdapter::startLeScan(__jni_impl::__JniBaseClass arg0)
@@ -588,6 +612,15 @@ namespace __jni_impl::android::bluetooth
 			"startLeScan",
 			"(Landroid/bluetooth/BluetoothAdapter$LeScanCallback;)Z",
 			arg0.__jniObject().object()
+		);
+	}
+	jboolean BluetoothAdapter::startLeScan(jarray arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"startLeScan",
+			"([Ljava/util/UUID;Landroid/bluetooth/BluetoothAdapter$LeScanCallback;)Z",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
 	void BluetoothAdapter::stopLeScan(__jni_impl::__JniBaseClass arg0)
@@ -610,6 +643,21 @@ namespace __jni_impl::android::bluetooth
 		return __thiz.callObjectMethod(
 			"listenUsingInsecureL2capChannel",
 			"()Landroid/bluetooth/BluetoothServerSocket;"
+		);
+	}
+	jint BluetoothAdapter::getScanMode()
+	{
+		return __thiz.callMethod<jint>(
+			"getScanMode",
+			"()I"
+		);
+	}
+	QAndroidJniObject BluetoothAdapter::getDefaultAdapter()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.bluetooth.BluetoothAdapter",
+			"getDefaultAdapter",
+			"()Landroid/bluetooth/BluetoothAdapter;"
 		);
 	}
 } // namespace __jni_impl::android::bluetooth

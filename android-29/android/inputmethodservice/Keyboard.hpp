@@ -41,19 +41,20 @@ namespace __jni_impl::android::inputmethodservice
 		
 		// Constructors
 		void __constructor(__jni_impl::android::content::Context arg0, jint arg1, jstring arg2, jint arg3, jint arg4);
+		void __constructor(__jni_impl::android::content::Context arg0, jint arg1, const QString &arg2, jint arg3, jint arg4);
 		void __constructor(__jni_impl::android::content::Context arg0, jint arg1, jint arg2);
 		void __constructor(__jni_impl::android::content::Context arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		void __constructor(__jni_impl::android::content::Context arg0, jint arg1);
 		
 		// Methods
 		QAndroidJniObject getKeys();
+		jint getHeight();
 		QAndroidJniObject getModifierKeys();
 		jboolean setShifted(jboolean arg0);
 		jboolean isShifted();
 		jint getShiftKeyIndex();
 		jintArray getNearestKeys(jint arg0, jint arg1);
 		jint getMinWidth();
-		jint getHeight();
 	};
 } // namespace __jni_impl::android::inputmethodservice
 
@@ -146,7 +147,20 @@ namespace __jni_impl::android::inputmethodservice
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
+	}
+	void Keyboard::__constructor(__jni_impl::android::content::Context arg0, jint arg1, const QString &arg2, jint arg3, jint arg4)
+	{
+		__thiz = QAndroidJniObject(
+			"android.inputmethodservice.Keyboard",
+			"(Landroid/content/Context;ILjava/lang/CharSequence;II)V",
+			arg0.__jniObject().object(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3,
+			arg4
+		);
 	}
 	void Keyboard::__constructor(__jni_impl::android::content::Context arg0, jint arg1, jint arg2)
 	{
@@ -155,7 +169,8 @@ namespace __jni_impl::android::inputmethodservice
 			"(Landroid/content/Context;II)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Keyboard::__constructor(__jni_impl::android::content::Context arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
@@ -166,7 +181,8 @@ namespace __jni_impl::android::inputmethodservice
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Keyboard::__constructor(__jni_impl::android::content::Context arg0, jint arg1)
 	{
@@ -174,7 +190,8 @@ namespace __jni_impl::android::inputmethodservice
 			"android.inputmethodservice.Keyboard",
 			"(Landroid/content/Context;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -183,6 +200,13 @@ namespace __jni_impl::android::inputmethodservice
 		return __thiz.callObjectMethod(
 			"getKeys",
 			"()Ljava/util/List;"
+		);
+	}
+	jint Keyboard::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
 		);
 	}
 	QAndroidJniObject Keyboard::getModifierKeys()
@@ -227,13 +251,6 @@ namespace __jni_impl::android::inputmethodservice
 	{
 		return __thiz.callMethod<jint>(
 			"getMinWidth",
-			"()I"
-		);
-	}
-	jint Keyboard::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
 			"()I"
 		);
 	}

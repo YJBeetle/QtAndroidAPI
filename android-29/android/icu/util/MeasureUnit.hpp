@@ -164,6 +164,7 @@ namespace __jni_impl::android::icu::util
 		static QAndroidJniObject getAvailableTypes();
 		static QAndroidJniObject getAvailable();
 		static QAndroidJniObject getAvailable(jstring arg0);
+		static QAndroidJniObject getAvailable(const QString &arg0);
 	};
 } // namespace __jni_impl::android::icu::util
 
@@ -1321,6 +1322,15 @@ namespace __jni_impl::android::icu::util
 			"getAvailable",
 			"(Ljava/lang/String;)Ljava/util/Set;",
 			arg0
+		);
+	}
+	QAndroidJniObject MeasureUnit::getAvailable(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.MeasureUnit",
+			"getAvailable",
+			"(Ljava/lang/String;)Ljava/util/Set;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::icu::util

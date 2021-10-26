@@ -46,20 +46,23 @@ namespace __jni_impl::android::text
 		__thiz = QAndroidJniObject(
 			"android.text.BidiFormatter$Builder",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void BidiFormatter_Builder::__constructor(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.BidiFormatter$Builder",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void BidiFormatter_Builder::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.BidiFormatter$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

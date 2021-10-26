@@ -92,7 +92,8 @@ namespace __jni_impl::java::util::concurrent
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ForkJoinTask",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -36,7 +36,8 @@ namespace __jni_impl::java::util::concurrent
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ThreadPoolExecutor$DiscardOldestPolicy",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -59,7 +59,8 @@ namespace __jni_impl::android::renderscript
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Int4",
-			"()V");
+			"()V"
+		);
 	}
 	void Int4::__constructor(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -69,7 +70,8 @@ namespace __jni_impl::android::renderscript
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	
 	// Methods

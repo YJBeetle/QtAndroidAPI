@@ -9,6 +9,10 @@ namespace __jni_impl::android::view::contentcapture
 {
 	class ContentCaptureContext_Builder;
 }
+namespace __jni_impl::android::content
+{
+	class LocusId;
+}
 namespace __jni_impl::android::os
 {
 	class Parcel;
@@ -16,10 +20,6 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::os
 {
 	class Bundle;
-}
-namespace __jni_impl::android::content
-{
-	class LocusId;
 }
 
 namespace __jni_impl::android::view::contentcapture
@@ -36,17 +36,18 @@ namespace __jni_impl::android::view::contentcapture
 		// Methods
 		jstring toString();
 		static QAndroidJniObject forLocusId(jstring arg0);
+		static QAndroidJniObject forLocusId(const QString &arg0);
+		QAndroidJniObject getLocusId();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getExtras();
-		QAndroidJniObject getLocusId();
 	};
 } // namespace __jni_impl::android::view::contentcapture
 
 #include "ContentCaptureContext_Builder.hpp"
+#include "../../content/LocusId.hpp"
 #include "../../os/Parcel.hpp"
 #include "../../os/Bundle.hpp"
-#include "../../content/LocusId.hpp"
 
 namespace __jni_impl::android::view::contentcapture
 {
@@ -85,6 +86,22 @@ namespace __jni_impl::android::view::contentcapture
 			arg0
 		);
 	}
+	QAndroidJniObject ContentCaptureContext::forLocusId(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.contentcapture.ContentCaptureContext",
+			"forLocusId",
+			"(Ljava/lang/String;)Landroid/view/contentcapture/ContentCaptureContext;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject ContentCaptureContext::getLocusId()
+	{
+		return __thiz.callObjectMethod(
+			"getLocusId",
+			"()Landroid/content/LocusId;"
+		);
+	}
 	jint ContentCaptureContext::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -106,13 +123,6 @@ namespace __jni_impl::android::view::contentcapture
 		return __thiz.callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
-		);
-	}
-	QAndroidJniObject ContentCaptureContext::getLocusId()
-	{
-		return __thiz.callObjectMethod(
-			"getLocusId",
-			"()Landroid/content/LocusId;"
 		);
 	}
 } // namespace __jni_impl::android::view::contentcapture

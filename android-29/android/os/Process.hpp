@@ -54,7 +54,9 @@ namespace __jni_impl::android::os
 		static jboolean isApplicationUid(jint arg0);
 		static jboolean isIsolated();
 		static jint getUidForName(jstring arg0);
+		static jint getUidForName(const QString &arg0);
 		static jint getGidForName(jstring arg0);
+		static jint getGidForName(const QString &arg0);
 		static void setThreadPriority(jint arg0);
 		static void setThreadPriority(jint arg0, jint arg1);
 		static jintArray getExclusiveCores();
@@ -230,7 +232,8 @@ namespace __jni_impl::android::os
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.Process",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -324,6 +327,15 @@ namespace __jni_impl::android::os
 			arg0
 		);
 	}
+	jint Process::getUidForName(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.os.Process",
+			"getUidForName",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint Process::getGidForName(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -331,6 +343,15 @@ namespace __jni_impl::android::os
 			"getGidForName",
 			"(Ljava/lang/String;)I",
 			arg0
+		);
+	}
+	jint Process::getGidForName(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.os.Process",
+			"getGidForName",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Process::setThreadPriority(jint arg0)

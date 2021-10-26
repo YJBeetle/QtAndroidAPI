@@ -46,7 +46,8 @@ namespace __jni_impl::android::media::tv
 		__thiz = QAndroidJniObject(
 			"android.media.tv.TvInputService$HardwareSession",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

@@ -95,7 +95,8 @@ namespace __jni_impl::android::view
 		__thiz = QAndroidJniObject(
 			"android.view.ViewGroup$LayoutParams",
 			"(Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ViewGroup_LayoutParams::__constructor(jint arg0, jint arg1)
 	{
@@ -103,7 +104,8 @@ namespace __jni_impl::android::view
 			"android.view.ViewGroup$LayoutParams",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void ViewGroup_LayoutParams::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -111,7 +113,8 @@ namespace __jni_impl::android::view
 			"android.view.ViewGroup$LayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

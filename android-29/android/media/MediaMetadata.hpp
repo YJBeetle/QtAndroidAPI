@@ -9,6 +9,14 @@ namespace __jni_impl::android::os
 {
 	class Bundle;
 }
+namespace __jni_impl::android::media
+{
+	class MediaDescription;
+}
+namespace __jni_impl::android::media
+{
+	class Rating;
+}
 namespace __jni_impl::android::os
 {
 	class Parcel;
@@ -16,14 +24,6 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::graphics
 {
 	class Bitmap;
-}
-namespace __jni_impl::android::media
-{
-	class Rating;
-}
-namespace __jni_impl::android::media
-{
-	class MediaDescription;
 }
 
 namespace __jni_impl::android::media
@@ -70,24 +70,30 @@ namespace __jni_impl::android::media
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jlong getLong(jstring arg0);
+		jlong getLong(const QString &arg0);
 		jint size();
 		jboolean containsKey(jstring arg0);
+		jboolean containsKey(const QString &arg0);
 		QAndroidJniObject keySet();
 		jstring getString(jstring arg0);
+		jstring getString(const QString &arg0);
 		jstring getText(jstring arg0);
+		jstring getText(const QString &arg0);
+		QAndroidJniObject getDescription();
+		QAndroidJniObject getRating(jstring arg0);
+		QAndroidJniObject getRating(const QString &arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getBitmap(jstring arg0);
-		QAndroidJniObject getRating(jstring arg0);
-		QAndroidJniObject getDescription();
+		QAndroidJniObject getBitmap(const QString &arg0);
 	};
 } // namespace __jni_impl::android::media
 
 #include "../os/Bundle.hpp"
+#include "MediaDescription.hpp"
+#include "Rating.hpp"
 #include "../os/Parcel.hpp"
 #include "../graphics/Bitmap.hpp"
-#include "Rating.hpp"
-#include "MediaDescription.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -365,6 +371,14 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
+	jlong MediaMetadata::getLong(const QString &arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"getLong",
+			"(Ljava/lang/String;)J",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint MediaMetadata::size()
 	{
 		return __thiz.callMethod<jint>(
@@ -378,6 +392,14 @@ namespace __jni_impl::android::media
 			"containsKey",
 			"(Ljava/lang/String;)Z",
 			arg0
+		);
+	}
+	jboolean MediaMetadata::containsKey(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"containsKey",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject MediaMetadata::keySet()
@@ -395,6 +417,14 @@ namespace __jni_impl::android::media
 			arg0
 		).object<jstring>();
 	}
+	jstring MediaMetadata::getString(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getString",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	jstring MediaMetadata::getText(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -402,6 +432,37 @@ namespace __jni_impl::android::media
 			"(Ljava/lang/String;)Ljava/lang/CharSequence;",
 			arg0
 		).object<jstring>();
+	}
+	jstring MediaMetadata::getText(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getText",
+			"(Ljava/lang/String;)Ljava/lang/CharSequence;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
+	QAndroidJniObject MediaMetadata::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Landroid/media/MediaDescription;"
+		);
+	}
+	QAndroidJniObject MediaMetadata::getRating(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getRating",
+			"(Ljava/lang/String;)Landroid/media/Rating;",
+			arg0
+		);
+	}
+	QAndroidJniObject MediaMetadata::getRating(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getRating",
+			"(Ljava/lang/String;)Landroid/media/Rating;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	jint MediaMetadata::describeContents()
 	{
@@ -427,19 +488,12 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	QAndroidJniObject MediaMetadata::getRating(jstring arg0)
+	QAndroidJniObject MediaMetadata::getBitmap(const QString &arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getRating",
-			"(Ljava/lang/String;)Landroid/media/Rating;",
-			arg0
-		);
-	}
-	QAndroidJniObject MediaMetadata::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Landroid/media/MediaDescription;"
+			"getBitmap",
+			"(Ljava/lang/String;)Landroid/graphics/Bitmap;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::media

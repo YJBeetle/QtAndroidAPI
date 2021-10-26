@@ -36,6 +36,7 @@ namespace __jni_impl::java::util::logging
 		jint hashCode();
 		jint intValue();
 		static QAndroidJniObject parse(jstring arg0);
+		static QAndroidJniObject parse(const QString &arg0);
 		jstring getResourceBundleName();
 		jstring getLocalizedName();
 	};
@@ -171,6 +172,15 @@ namespace __jni_impl::java::util::logging
 			"parse",
 			"(Ljava/lang/String;)Ljava/util/logging/Level;",
 			arg0
+		);
+	}
+	QAndroidJniObject Level::parse(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.logging.Level",
+			"parse",
+			"(Ljava/lang/String;)Ljava/util/logging/Level;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring Level::getResourceBundleName()

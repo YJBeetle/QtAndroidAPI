@@ -18,6 +18,7 @@ namespace __jni_impl::java::lang
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jint arg0);
 		
 		// Methods
@@ -34,21 +35,32 @@ namespace __jni_impl::java::lang
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.IndexOutOfBoundsException",
-			"()V");
+			"()V"
+		);
 	}
 	void IndexOutOfBoundsException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.IndexOutOfBoundsException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void IndexOutOfBoundsException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.IndexOutOfBoundsException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void IndexOutOfBoundsException::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.IndexOutOfBoundsException",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

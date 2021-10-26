@@ -47,19 +47,22 @@ namespace __jni_impl::android::service::notification
 		// Constructors
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		void __constructor(__jni_impl::android::net::Uri arg0, jstring arg1, jstring arg2, jstring arg3, jint arg4, jint arg5, jint arg6);
+		void __constructor(__jni_impl::android::net::Uri arg0, const QString &arg1, const QString &arg2, const QString &arg3, jint arg4, jint arg5, jint arg6);
 		void __constructor(__jni_impl::android::net::Uri arg0, jstring arg1, jint arg2);
+		void __constructor(__jni_impl::android::net::Uri arg0, const QString &arg1, jint arg2);
 		
 		// Methods
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
 		QAndroidJniObject copy();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		static jstring stateToString(jint arg0);
 		static jstring relevanceToString(jint arg0);
 		static QAndroidJniObject newId(__jni_impl::android::content::Context arg0);
 		static jboolean isValidId(__jni_impl::android::net::Uri arg0, jstring arg1);
-		static jstring stateToString(jint arg0);
+		static jboolean isValidId(__jni_impl::android::net::Uri arg0, const QString &arg1);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::service::notification
 
@@ -182,7 +185,8 @@ namespace __jni_impl::android::service::notification
 		__thiz = QAndroidJniObject(
 			"android.service.notification.Condition",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Condition::__constructor(__jni_impl::android::net::Uri arg0, jstring arg1, jstring arg2, jstring arg3, jint arg4, jint arg5, jint arg6)
 	{
@@ -195,7 +199,22 @@ namespace __jni_impl::android::service::notification
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
+	}
+	void Condition::__constructor(__jni_impl::android::net::Uri arg0, const QString &arg1, const QString &arg2, const QString &arg3, jint arg4, jint arg5, jint arg6)
+	{
+		__thiz = QAndroidJniObject(
+			"android.service.notification.Condition",
+			"(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;III)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			QAndroidJniObject::fromString(arg3).object<jstring>(),
+			arg4,
+			arg5,
+			arg6
+		);
 	}
 	void Condition::__constructor(__jni_impl::android::net::Uri arg0, jstring arg1, jint arg2)
 	{
@@ -204,7 +223,18 @@ namespace __jni_impl::android::service::notification
 			"(Landroid/net/Uri;Ljava/lang/String;I)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void Condition::__constructor(__jni_impl::android::net::Uri arg0, const QString &arg1, jint arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.service.notification.Condition",
+			"(Landroid/net/Uri;Ljava/lang/String;I)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
 	}
 	
 	// Methods
@@ -237,21 +267,14 @@ namespace __jni_impl::android::service::notification
 			"()Landroid/service/notification/Condition;"
 		);
 	}
-	jint Condition::describeContents()
+	jstring Condition::stateToString(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void Condition::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.service.notification.Condition",
+			"stateToString",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
 	}
 	jstring Condition::relevanceToString(jint arg0)
 	{
@@ -281,14 +304,31 @@ namespace __jni_impl::android::service::notification
 			arg1
 		);
 	}
-	jstring Condition::stateToString(jint arg0)
+	jboolean Condition::isValidId(__jni_impl::android::net::Uri arg0, const QString &arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.service.notification.Condition",
-			"stateToString",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			"isValidId",
+			"(Landroid/net/Uri;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	jint Condition::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void Condition::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::service::notification
 

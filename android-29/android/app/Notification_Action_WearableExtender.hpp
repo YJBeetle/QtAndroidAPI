@@ -30,10 +30,13 @@ namespace __jni_impl::android::app
 		QAndroidJniObject setAvailableOffline(jboolean arg0);
 		jboolean isAvailableOffline();
 		QAndroidJniObject setInProgressLabel(jstring arg0);
+		QAndroidJniObject setInProgressLabel(const QString &arg0);
 		jstring getInProgressLabel();
 		QAndroidJniObject setConfirmLabel(jstring arg0);
+		QAndroidJniObject setConfirmLabel(const QString &arg0);
 		jstring getConfirmLabel();
 		QAndroidJniObject setCancelLabel(jstring arg0);
+		QAndroidJniObject setCancelLabel(const QString &arg0);
 		jstring getCancelLabel();
 		QAndroidJniObject setHintLaunchesActivity(jboolean arg0);
 		jboolean getHintLaunchesActivity();
@@ -55,14 +58,16 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$Action$WearableExtender",
-			"()V");
+			"()V"
+		);
 	}
 	void Notification_Action_WearableExtender::__constructor(__jni_impl::android::app::Notification_Action arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$Action$WearableExtender",
 			"(Landroid/app/Notification$Action;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -96,6 +101,14 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
+	QAndroidJniObject Notification_Action_WearableExtender::setInProgressLabel(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setInProgressLabel",
+			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Action$WearableExtender;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring Notification_Action_WearableExtender::getInProgressLabel()
 	{
 		return __thiz.callObjectMethod(
@@ -111,6 +124,14 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
+	QAndroidJniObject Notification_Action_WearableExtender::setConfirmLabel(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setConfirmLabel",
+			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Action$WearableExtender;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring Notification_Action_WearableExtender::getConfirmLabel()
 	{
 		return __thiz.callObjectMethod(
@@ -124,6 +145,14 @@ namespace __jni_impl::android::app
 			"setCancelLabel",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Action$WearableExtender;",
 			arg0
+		);
+	}
+	QAndroidJniObject Notification_Action_WearableExtender::setCancelLabel(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setCancelLabel",
+			"(Ljava/lang/CharSequence;)Landroid/app/Notification$Action$WearableExtender;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring Notification_Action_WearableExtender::getCancelLabel()

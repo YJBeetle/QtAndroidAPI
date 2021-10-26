@@ -94,7 +94,8 @@ namespace __jni_impl::android
 	{
 		__thiz = QAndroidJniObject(
 			"android.R$transition",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

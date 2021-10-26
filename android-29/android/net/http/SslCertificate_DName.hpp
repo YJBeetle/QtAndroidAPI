@@ -19,6 +19,7 @@ namespace __jni_impl::android::net::http
 		
 		// Constructors
 		void __constructor(__jni_impl::android::net::http::SslCertificate arg0, jstring arg1);
+		void __constructor(__jni_impl::android::net::http::SslCertificate arg0, const QString &arg1);
 		
 		// Methods
 		jstring getDName();
@@ -41,7 +42,17 @@ namespace __jni_impl::android::net::http
 			"android.net.http.SslCertificate$DName",
 			"(Landroid/net/http/SslCertificate;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void SslCertificate_DName::__constructor(__jni_impl::android::net::http::SslCertificate arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.net.http.SslCertificate$DName",
+			"(Landroid/net/http/SslCertificate;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods

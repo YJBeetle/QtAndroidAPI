@@ -25,12 +25,13 @@ namespace __jni_impl::android::app
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(__jni_impl::android::app::Person arg0);
 		
 		// Methods
-		QAndroidJniObject getUser();
 		jstring getUserDisplayName();
 		QAndroidJniObject setConversationTitle(jstring arg0);
+		QAndroidJniObject setConversationTitle(const QString &arg0);
 		jstring getConversationTitle();
 		QAndroidJniObject addHistoricMessage(__jni_impl::android::app::Notification_MessagingStyle_Message arg0);
 		QAndroidJniObject getHistoricMessages();
@@ -38,8 +39,11 @@ namespace __jni_impl::android::app
 		jboolean isGroupConversation();
 		QAndroidJniObject getMessages();
 		QAndroidJniObject addMessage(jstring arg0, jlong arg1, jstring arg2);
+		QAndroidJniObject addMessage(const QString &arg0, jlong arg1, const QString &arg2);
 		QAndroidJniObject addMessage(jstring arg0, jlong arg1, __jni_impl::android::app::Person arg2);
+		QAndroidJniObject addMessage(const QString &arg0, jlong arg1, __jni_impl::android::app::Person arg2);
 		QAndroidJniObject addMessage(__jni_impl::android::app::Notification_MessagingStyle_Message arg0);
+		QAndroidJniObject getUser();
 	};
 } // namespace __jni_impl::android::app
 
@@ -63,24 +67,27 @@ namespace __jni_impl::android::app
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$MessagingStyle",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Notification_MessagingStyle::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.Notification$MessagingStyle",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void Notification_MessagingStyle::__constructor(__jni_impl::android::app::Person arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$MessagingStyle",
 			"(Landroid/app/Person;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
-	QAndroidJniObject Notification_MessagingStyle::getUser()
-	{
-		return __thiz.callObjectMethod(
-			"getUser",
-			"()Landroid/app/Person;"
-		);
-	}
 	jstring Notification_MessagingStyle::getUserDisplayName()
 	{
 		return __thiz.callObjectMethod(
@@ -94,6 +101,14 @@ namespace __jni_impl::android::app
 			"setConversationTitle",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$MessagingStyle;",
 			arg0
+		);
+	}
+	QAndroidJniObject Notification_MessagingStyle::setConversationTitle(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setConversationTitle",
+			"(Ljava/lang/CharSequence;)Landroid/app/Notification$MessagingStyle;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring Notification_MessagingStyle::getConversationTitle()
@@ -150,6 +165,16 @@ namespace __jni_impl::android::app
 			arg2
 		);
 	}
+	QAndroidJniObject Notification_MessagingStyle::addMessage(const QString &arg0, jlong arg1, const QString &arg2)
+	{
+		return __thiz.callObjectMethod(
+			"addMessage",
+			"(Ljava/lang/CharSequence;JLjava/lang/CharSequence;)Landroid/app/Notification$MessagingStyle;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
+	}
 	QAndroidJniObject Notification_MessagingStyle::addMessage(jstring arg0, jlong arg1, __jni_impl::android::app::Person arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -160,12 +185,29 @@ namespace __jni_impl::android::app
 			arg2.__jniObject().object()
 		);
 	}
+	QAndroidJniObject Notification_MessagingStyle::addMessage(const QString &arg0, jlong arg1, __jni_impl::android::app::Person arg2)
+	{
+		return __thiz.callObjectMethod(
+			"addMessage",
+			"(Ljava/lang/CharSequence;JLandroid/app/Person;)Landroid/app/Notification$MessagingStyle;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
 	QAndroidJniObject Notification_MessagingStyle::addMessage(__jni_impl::android::app::Notification_MessagingStyle_Message arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addMessage",
 			"(Landroid/app/Notification$MessagingStyle$Message;)Landroid/app/Notification$MessagingStyle;",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Notification_MessagingStyle::getUser()
+	{
+		return __thiz.callObjectMethod(
+			"getUser",
+			"()Landroid/app/Person;"
 		);
 	}
 } // namespace __jni_impl::android::app

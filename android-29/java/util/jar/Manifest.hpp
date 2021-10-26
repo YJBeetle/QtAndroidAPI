@@ -44,6 +44,7 @@ namespace __jni_impl::java::util::jar
 		QAndroidJniObject getMainAttributes();
 		QAndroidJniObject getEntries();
 		QAndroidJniObject getAttributes(jstring arg0);
+		QAndroidJniObject getAttributes(const QString &arg0);
 	};
 } // namespace __jni_impl::java::util::jar
 
@@ -62,20 +63,23 @@ namespace __jni_impl::java::util::jar
 		__thiz = QAndroidJniObject(
 			"java.util.jar.Manifest",
 			"(Ljava/util/jar/Manifest;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Manifest::__constructor(__jni_impl::java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.Manifest",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Manifest::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.Manifest",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -144,6 +148,14 @@ namespace __jni_impl::java::util::jar
 			"getAttributes",
 			"(Ljava/lang/String;)Ljava/util/jar/Attributes;",
 			arg0
+		);
+	}
+	QAndroidJniObject Manifest::getAttributes(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAttributes",
+			"(Ljava/lang/String;)Ljava/util/jar/Attributes;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::util::jar

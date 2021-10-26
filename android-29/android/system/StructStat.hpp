@@ -165,7 +165,8 @@ namespace __jni_impl::android::system
 			arg9,
 			arg10,
 			arg11,
-			arg12);
+			arg12
+		);
 	}
 	void StructStat::__constructor(jlong arg0, jlong arg1, jint arg2, jlong arg3, jint arg4, jint arg5, jlong arg6, jlong arg7, __jni_impl::android::system::StructTimespec arg8, __jni_impl::android::system::StructTimespec arg9, __jni_impl::android::system::StructTimespec arg10, jlong arg11, jlong arg12)
 	{
@@ -184,7 +185,8 @@ namespace __jni_impl::android::system
 			arg9.__jniObject().object(),
 			arg10.__jniObject().object(),
 			arg11,
-			arg12);
+			arg12
+		);
 	}
 	
 	// Methods

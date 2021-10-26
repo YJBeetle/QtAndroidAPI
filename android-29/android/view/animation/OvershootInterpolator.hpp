@@ -41,20 +41,23 @@ namespace __jni_impl::android::view::animation
 			"android.view.animation.OvershootInterpolator",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void OvershootInterpolator::__constructor(jfloat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.OvershootInterpolator",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	void OvershootInterpolator::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.OvershootInterpolator",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

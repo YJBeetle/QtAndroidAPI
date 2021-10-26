@@ -15,6 +15,7 @@ namespace __jni_impl::android::icu::text
 		
 		// Constructors
 		void __constructor(jstring arg0, jbyteArray arg1);
+		void __constructor(const QString &arg0, jbyteArray arg1);
 		
 		// Methods
 		jboolean equals(__jni_impl::android::icu::text::CollationKey arg0);
@@ -41,7 +42,17 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.CollationKey",
 			"(Ljava/lang/String;[B)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void CollationKey::__constructor(const QString &arg0, jbyteArray arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.text.CollationKey",
+			"(Ljava/lang/String;[B)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods

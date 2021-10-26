@@ -28,6 +28,7 @@ namespace __jni_impl::java::net
 		QAndroidJniObject getParent();
 		jint getIndex();
 		static QAndroidJniObject getByName(jstring arg0);
+		static QAndroidJniObject getByName(const QString &arg0);
 		static QAndroidJniObject networkInterfaces();
 		QAndroidJniObject inetAddresses();
 		jstring getDisplayName();
@@ -113,6 +114,15 @@ namespace __jni_impl::java::net
 			"getByName",
 			"(Ljava/lang/String;)Ljava/net/NetworkInterface;",
 			arg0
+		);
+	}
+	QAndroidJniObject NetworkInterface::getByName(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.net.NetworkInterface",
+			"getByName",
+			"(Ljava/lang/String;)Ljava/net/NetworkInterface;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject NetworkInterface::networkInterfaces()

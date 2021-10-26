@@ -68,7 +68,8 @@ namespace __jni_impl::android::view
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewOutlineProvider",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

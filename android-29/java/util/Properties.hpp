@@ -74,7 +74,9 @@ namespace __jni_impl::java::util
 		jobject get(jobject arg0);
 		jobject put(jobject arg0, jobject arg1);
 		jstring getProperty(jstring arg0);
+		jstring getProperty(const QString &arg0);
 		jstring getProperty(jstring arg0, jstring arg1);
+		jstring getProperty(const QString &arg0, const QString &arg1);
 		jboolean equals(jobject arg0);
 		jstring toString();
 		QAndroidJniObject values();
@@ -96,22 +98,29 @@ namespace __jni_impl::java::util
 		jobject putIfAbsent(jobject arg0, jobject arg1);
 		jobject compute(jobject arg0, __jni_impl::__JniBaseClass arg1);
 		jobject setProperty(jstring arg0, jstring arg1);
+		jobject setProperty(const QString &arg0, const QString &arg1);
 		void load(__jni_impl::java::io::Reader arg0);
 		void load(__jni_impl::java::io::InputStream arg0);
 		void forEach(__jni_impl::__JniBaseClass arg0);
 		jboolean containsKey(jobject arg0);
 		jobject computeIfAbsent(jobject arg0, __jni_impl::__JniBaseClass arg1);
 		void store(__jni_impl::java::io::Writer arg0, jstring arg1);
+		void store(__jni_impl::java::io::Writer arg0, const QString &arg1);
 		void store(__jni_impl::java::io::OutputStream arg0, jstring arg1);
+		void store(__jni_impl::java::io::OutputStream arg0, const QString &arg1);
 		void storeToXML(__jni_impl::java::io::OutputStream arg0, jstring arg1);
+		void storeToXML(__jni_impl::java::io::OutputStream arg0, const QString &arg1);
 		void storeToXML(__jni_impl::java::io::OutputStream arg0, jstring arg1, __jni_impl::java::nio::charset::Charset arg2);
+		void storeToXML(__jni_impl::java::io::OutputStream arg0, const QString &arg1, __jni_impl::java::nio::charset::Charset arg2);
 		void storeToXML(__jni_impl::java::io::OutputStream arg0, jstring arg1, jstring arg2);
+		void storeToXML(__jni_impl::java::io::OutputStream arg0, const QString &arg1, const QString &arg2);
 		QAndroidJniObject keys();
 		QAndroidJniObject keySet();
 		jboolean containsValue(jobject arg0);
 		jobject getOrDefault(jobject arg0, jobject arg1);
 		jobject computeIfPresent(jobject arg0, __jni_impl::__JniBaseClass arg1);
 		void save(__jni_impl::java::io::OutputStream arg0, jstring arg1);
+		void save(__jni_impl::java::io::OutputStream arg0, const QString &arg1);
 		void loadFromXML(__jni_impl::java::io::InputStream arg0);
 		QAndroidJniObject propertyNames();
 		QAndroidJniObject stringPropertyNames();
@@ -141,20 +150,23 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.Properties",
 			"(Ljava/util/Properties;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Properties::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Properties",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Properties::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Properties",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -200,6 +212,14 @@ namespace __jni_impl::java::util
 			arg0
 		).object<jstring>();
 	}
+	jstring Properties::getProperty(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getProperty",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	jstring Properties::getProperty(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -207,6 +227,15 @@ namespace __jni_impl::java::util
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1
+		).object<jstring>();
+	}
+	jstring Properties::getProperty(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getProperty",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	jboolean Properties::equals(jobject arg0)
@@ -376,6 +405,15 @@ namespace __jni_impl::java::util
 			arg1
 		).object<jobject>();
 	}
+	jobject Properties::setProperty(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"setProperty",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Object;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		).object<jobject>();
+	}
 	void Properties::load(__jni_impl::java::io::Reader arg0)
 	{
 		__thiz.callMethod<void>(
@@ -426,6 +464,15 @@ namespace __jni_impl::java::util
 			arg1
 		);
 	}
+	void Properties::store(__jni_impl::java::io::Writer arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"store",
+			"(Ljava/io/Writer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void Properties::store(__jni_impl::java::io::OutputStream arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -435,6 +482,15 @@ namespace __jni_impl::java::util
 			arg1
 		);
 	}
+	void Properties::store(__jni_impl::java::io::OutputStream arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"store",
+			"(Ljava/io/OutputStream;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void Properties::storeToXML(__jni_impl::java::io::OutputStream arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -442,6 +498,15 @@ namespace __jni_impl::java::util
 			"(Ljava/io/OutputStream;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	void Properties::storeToXML(__jni_impl::java::io::OutputStream arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"storeToXML",
+			"(Ljava/io/OutputStream;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void Properties::storeToXML(__jni_impl::java::io::OutputStream arg0, jstring arg1, __jni_impl::java::nio::charset::Charset arg2)
@@ -454,6 +519,16 @@ namespace __jni_impl::java::util
 			arg2.__jniObject().object()
 		);
 	}
+	void Properties::storeToXML(__jni_impl::java::io::OutputStream arg0, const QString &arg1, __jni_impl::java::nio::charset::Charset arg2)
+	{
+		__thiz.callMethod<void>(
+			"storeToXML",
+			"(Ljava/io/OutputStream;Ljava/lang/String;Ljava/nio/charset/Charset;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
+	}
 	void Properties::storeToXML(__jni_impl::java::io::OutputStream arg0, jstring arg1, jstring arg2)
 	{
 		__thiz.callMethod<void>(
@@ -462,6 +537,16 @@ namespace __jni_impl::java::util
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
+		);
+	}
+	void Properties::storeToXML(__jni_impl::java::io::OutputStream arg0, const QString &arg1, const QString &arg2)
+	{
+		__thiz.callMethod<void>(
+			"storeToXML",
+			"(Ljava/io/OutputStream;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	QAndroidJniObject Properties::keys()
@@ -511,6 +596,15 @@ namespace __jni_impl::java::util
 			"(Ljava/io/OutputStream;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	void Properties::save(__jni_impl::java::io::OutputStream arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"save",
+			"(Ljava/io/OutputStream;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void Properties::loadFromXML(__jni_impl::java::io::InputStream arg0)

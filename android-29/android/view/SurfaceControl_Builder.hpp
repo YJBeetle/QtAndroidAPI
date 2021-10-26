@@ -22,6 +22,7 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		QAndroidJniObject setName(jstring arg0);
+		QAndroidJniObject setName(const QString &arg0);
 		QAndroidJniObject setOpaque(jboolean arg0);
 		QAndroidJniObject build();
 		QAndroidJniObject setParent(__jni_impl::android::view::SurfaceControl arg0);
@@ -41,7 +42,8 @@ namespace __jni_impl::android::view
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.SurfaceControl$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -51,6 +53,14 @@ namespace __jni_impl::android::view
 			"setName",
 			"(Ljava/lang/String;)Landroid/view/SurfaceControl$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject SurfaceControl_Builder::setName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setName",
+			"(Ljava/lang/String;)Landroid/view/SurfaceControl$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject SurfaceControl_Builder::setOpaque(jboolean arg0)

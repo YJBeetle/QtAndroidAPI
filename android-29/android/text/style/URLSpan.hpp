@@ -25,14 +25,15 @@ namespace __jni_impl::android::text::style
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
 		jstring getURL();
+		jint getSpanTypeId();
 		void onClick(__jni_impl::android::view::View arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getSpanTypeId();
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -49,14 +50,24 @@ namespace __jni_impl::android::text::style
 		__thiz = QAndroidJniObject(
 			"android.text.style.URLSpan",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void URLSpan::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.style.URLSpan",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void URLSpan::__constructor(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.URLSpan",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -66,6 +77,13 @@ namespace __jni_impl::android::text::style
 			"getURL",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jint URLSpan::getSpanTypeId()
+	{
+		return __thiz.callMethod<jint>(
+			"getSpanTypeId",
+			"()I"
+		);
 	}
 	void URLSpan::onClick(__jni_impl::android::view::View arg0)
 	{
@@ -89,13 +107,6 @@ namespace __jni_impl::android::text::style
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint URLSpan::getSpanTypeId()
-	{
-		return __thiz.callMethod<jint>(
-			"getSpanTypeId",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::text::style

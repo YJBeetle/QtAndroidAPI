@@ -18,6 +18,7 @@ namespace __jni_impl::javax::security::auth::login
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -33,14 +34,24 @@ namespace __jni_impl::javax::security::auth::login
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.auth.login.LoginException",
-			"()V");
+			"()V"
+		);
 	}
 	void LoginException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.auth.login.LoginException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void LoginException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.security.auth.login.LoginException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

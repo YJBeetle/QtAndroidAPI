@@ -34,7 +34,8 @@ namespace __jni_impl::java::security::spec
 		__thiz = QAndroidJniObject(
 			"java.security.spec.EncodedKeySpec",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

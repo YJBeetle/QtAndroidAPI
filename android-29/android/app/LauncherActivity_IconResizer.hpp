@@ -42,7 +42,8 @@ namespace __jni_impl::android::app
 		__thiz = QAndroidJniObject(
 			"android.app.LauncherActivity$IconResizer",
 			"(Landroid/app/LauncherActivity;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

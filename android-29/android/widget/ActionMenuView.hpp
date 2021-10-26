@@ -16,10 +16,6 @@ namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
 }
-namespace __jni_impl::android::content::res
-{
-	class Configuration;
-}
 namespace __jni_impl::android::view
 {
 	class ViewGroup_LayoutParams;
@@ -31,6 +27,10 @@ namespace __jni_impl::android::widget
 namespace __jni_impl::android::widget
 {
 	class ActionMenuView_LayoutParams;
+}
+namespace __jni_impl::android::content::res
+{
+	class Configuration;
 }
 
 namespace __jni_impl::android::widget
@@ -53,20 +53,20 @@ namespace __jni_impl::android::widget
 		void dismissPopupMenus();
 		void setOverflowIcon(__jni_impl::android::graphics::drawable::Drawable arg0);
 		QAndroidJniObject getOverflowIcon();
-		void onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
-		void onDetachedFromWindow();
 		QAndroidJniObject generateLayoutParams(__jni_impl::__JniBaseClass arg0);
 		void setOnMenuItemClickListener(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getMenu();
+		void onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
+		void onDetachedFromWindow();
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
 #include "../graphics/drawable/Drawable.hpp"
-#include "../content/res/Configuration.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "LinearLayout_LayoutParams.hpp"
 #include "ActionMenuView_LayoutParams.hpp"
+#include "../content/res/Configuration.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -78,7 +78,8 @@ namespace __jni_impl::android::widget
 		__thiz = QAndroidJniObject(
 			"android.widget.ActionMenuView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ActionMenuView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -86,7 +87,8 @@ namespace __jni_impl::android::widget
 			"android.widget.ActionMenuView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -148,21 +150,6 @@ namespace __jni_impl::android::widget
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void ActionMenuView::onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0)
-	{
-		__thiz.callMethod<void>(
-			"onConfigurationChanged",
-			"(Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ActionMenuView::onDetachedFromWindow()
-	{
-		__thiz.callMethod<void>(
-			"onDetachedFromWindow",
-			"()V"
-		);
-	}
 	QAndroidJniObject ActionMenuView::generateLayoutParams(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -184,6 +171,21 @@ namespace __jni_impl::android::widget
 		return __thiz.callObjectMethod(
 			"getMenu",
 			"()Landroid/view/Menu;"
+		);
+	}
+	void ActionMenuView::onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0)
+	{
+		__thiz.callMethod<void>(
+			"onConfigurationChanged",
+			"(Landroid/content/res/Configuration;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ActionMenuView::onDetachedFromWindow()
+	{
+		__thiz.callMethod<void>(
+			"onDetachedFromWindow",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::widget

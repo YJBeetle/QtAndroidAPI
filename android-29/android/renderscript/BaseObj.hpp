@@ -25,6 +25,7 @@ namespace __jni_impl::android::renderscript
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		void setName(jstring arg0);
+		void setName(const QString &arg0);
 		void destroy();
 	};
 } // namespace __jni_impl::android::renderscript
@@ -72,6 +73,14 @@ namespace __jni_impl::android::renderscript
 			"setName",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void BaseObj::setName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setName",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void BaseObj::destroy()

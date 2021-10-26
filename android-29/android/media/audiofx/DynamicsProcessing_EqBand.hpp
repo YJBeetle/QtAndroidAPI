@@ -38,14 +38,16 @@ namespace __jni_impl::android::media::audiofx
 			"(ZFF)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void DynamicsProcessing_EqBand::__constructor(__jni_impl::android::media::audiofx::DynamicsProcessing_EqBand arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.DynamicsProcessing$EqBand",
 			"(Landroid/media/audiofx/DynamicsProcessing$EqBand;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

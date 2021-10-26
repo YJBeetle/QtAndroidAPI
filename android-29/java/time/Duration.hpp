@@ -42,6 +42,7 @@ namespace __jni_impl::java::time
 		jlong toMillis();
 		jlong toNanos();
 		static QAndroidJniObject parse(jstring arg0);
+		static QAndroidJniObject parse(const QString &arg0);
 		jlong toSeconds();
 		jlong getSeconds();
 		jint getNano();
@@ -211,6 +212,15 @@ namespace __jni_impl::java::time
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/Duration;",
 			arg0
+		);
+	}
+	QAndroidJniObject Duration::parse(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.Duration",
+			"parse",
+			"(Ljava/lang/CharSequence;)Ljava/time/Duration;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jlong Duration::toSeconds()

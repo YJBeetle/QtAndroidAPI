@@ -32,7 +32,8 @@ namespace __jni_impl::android::text::style
 		__thiz = QAndroidJniObject(
 			"android.text.style.TabStopSpan$Standard",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

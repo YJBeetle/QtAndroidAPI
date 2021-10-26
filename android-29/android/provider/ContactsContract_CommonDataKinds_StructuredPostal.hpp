@@ -44,6 +44,7 @@ namespace __jni_impl::android::provider
 		// Methods
 		static jint getTypeLabelResource(jint arg0);
 		static jstring getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2);
+		static jstring getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, const QString &arg2);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -214,6 +215,17 @@ namespace __jni_impl::android::provider
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
+		).object<jstring>();
+	}
+	jstring ContactsContract_CommonDataKinds_StructuredPostal::getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, const QString &arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.ContactsContract$CommonDataKinds$StructuredPostal",
+			"getTypeLabel",
+			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		).object<jstring>();
 	}
 } // namespace __jni_impl::android::provider

@@ -33,14 +33,16 @@ namespace __jni_impl::android::media::session
 		void __constructor();
 		
 		// Methods
+		void onExtrasChanged(__jni_impl::android::os::Bundle arg0);
 		void onSessionDestroyed();
 		void onSessionEvent(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void onSessionEvent(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		void onPlaybackStateChanged(__jni_impl::android::media::session::PlaybackState arg0);
 		void onMetadataChanged(__jni_impl::android::media::MediaMetadata arg0);
 		void onQueueChanged(__jni_impl::__JniBaseClass arg0);
 		void onQueueTitleChanged(jstring arg0);
+		void onQueueTitleChanged(const QString &arg0);
 		void onAudioInfoChanged(__jni_impl::android::media::session::MediaController_PlaybackInfo arg0);
-		void onExtrasChanged(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::media::session
 
@@ -58,10 +60,19 @@ namespace __jni_impl::android::media::session
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.session.MediaController$Callback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
+	void MediaController_Callback::onExtrasChanged(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"onExtrasChanged",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void MediaController_Callback::onSessionDestroyed()
 	{
 		__thiz.callMethod<void>(
@@ -75,6 +86,15 @@ namespace __jni_impl::android::media::session
 			"onSessionEvent",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaController_Callback::onSessionEvent(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"onSessionEvent",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -110,19 +130,19 @@ namespace __jni_impl::android::media::session
 			arg0
 		);
 	}
+	void MediaController_Callback::onQueueTitleChanged(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"onQueueTitleChanged",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void MediaController_Callback::onAudioInfoChanged(__jni_impl::android::media::session::MediaController_PlaybackInfo arg0)
 	{
 		__thiz.callMethod<void>(
 			"onAudioInfoChanged",
 			"(Landroid/media/session/MediaController$PlaybackInfo;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void MediaController_Callback::onExtrasChanged(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"onExtrasChanged",
-			"(Landroid/os/Bundle;)V",
 			arg0.__jniObject().object()
 		);
 	}

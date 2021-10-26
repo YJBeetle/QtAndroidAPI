@@ -17,12 +17,14 @@ namespace __jni_impl::java::net
 		
 		// Constructors
 		void __constructor(jstring arg0, jint arg1);
+		void __constructor(const QString &arg0, jint arg1);
 		void __constructor(jstring arg0, jint arg1, jstring arg2);
+		void __constructor(const QString &arg0, jint arg1, const QString &arg2);
 		
 		// Methods
 		jstring getLocation();
-		jint responseCode();
 		jstring getReason();
+		jint responseCode();
 	};
 } // namespace __jni_impl::java::net
 
@@ -38,7 +40,17 @@ namespace __jni_impl::java::net
 			"java.net.HttpRetryException",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void HttpRetryException::__constructor(const QString &arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.HttpRetryException",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void HttpRetryException::__constructor(jstring arg0, jint arg1, jstring arg2)
 	{
@@ -47,7 +59,18 @@ namespace __jni_impl::java::net
 			"(Ljava/lang/String;ILjava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void HttpRetryException::__constructor(const QString &arg0, jint arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.HttpRetryException",
+			"(Ljava/lang/String;ILjava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -58,19 +81,19 @@ namespace __jni_impl::java::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint HttpRetryException::responseCode()
-	{
-		return __thiz.callMethod<jint>(
-			"responseCode",
-			"()I"
-		);
-	}
 	jstring HttpRetryException::getReason()
 	{
 		return __thiz.callObjectMethod(
 			"getReason",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jint HttpRetryException::responseCode()
+	{
+		return __thiz.callMethod<jint>(
+			"responseCode",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::net
 

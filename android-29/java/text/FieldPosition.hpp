@@ -48,21 +48,24 @@ namespace __jni_impl::java::text
 			"java.text.FieldPosition",
 			"(Ljava/text/Format$Field;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void FieldPosition::__constructor(__jni_impl::java::text::Format_Field arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.FieldPosition",
 			"(Ljava/text/Format$Field;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void FieldPosition::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.FieldPosition",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

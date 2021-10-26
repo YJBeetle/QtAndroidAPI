@@ -33,6 +33,7 @@ namespace __jni_impl::android::os
 		static QAndroidJniObject getVmPolicy();
 		static void enableDefaults();
 		static void noteSlowCall(jstring arg0);
+		static void noteSlowCall(const QString &arg0);
 	};
 } // namespace __jni_impl::android::os
 
@@ -117,6 +118,15 @@ namespace __jni_impl::android::os
 			"noteSlowCall",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void StrictMode::noteSlowCall(const QString &arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.StrictMode",
+			"noteSlowCall",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::os

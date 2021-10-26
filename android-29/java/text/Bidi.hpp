@@ -21,10 +21,12 @@ namespace __jni_impl::java::text
 		void __constructor(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5);
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		void __constructor(jstring arg0, jint arg1);
+		void __constructor(const QString &arg0, jint arg1);
 		
 		// Methods
 		jstring toString();
 		jint getLength();
+		jboolean isRightToLeft();
 		jint getLevelAt(jint arg0);
 		QAndroidJniObject createLineBidi(jint arg0, jint arg1);
 		jboolean isMixed();
@@ -37,7 +39,6 @@ namespace __jni_impl::java::text
 		jint getRunLimit(jint arg0);
 		static jboolean requiresBidi(jcharArray arg0, jint arg1, jint arg2);
 		static void reorderVisually(jbyteArray arg0, jint arg1, jobjectArray arg2, jint arg3, jint arg4);
-		jboolean isRightToLeft();
 	};
 } // namespace __jni_impl::java::text
 
@@ -85,14 +86,16 @@ namespace __jni_impl::java::text
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	void Bidi::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.Bidi",
 			"(Ljava/text/AttributedCharacterIterator;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Bidi::__constructor(jstring arg0, jint arg1)
 	{
@@ -100,7 +103,17 @@ namespace __jni_impl::java::text
 			"java.text.Bidi",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void Bidi::__constructor(const QString &arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.text.Bidi",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods
@@ -116,6 +129,13 @@ namespace __jni_impl::java::text
 		return __thiz.callMethod<jint>(
 			"getLength",
 			"()I"
+		);
+	}
+	jboolean Bidi::isRightToLeft()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isRightToLeft",
+			"()Z"
 		);
 	}
 	jint Bidi::getLevelAt(jint arg0)
@@ -216,13 +236,6 @@ namespace __jni_impl::java::text
 			arg2,
 			arg3,
 			arg4
-		);
-	}
-	jboolean Bidi::isRightToLeft()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isRightToLeft",
-			"()Z"
 		);
 	}
 } // namespace __jni_impl::java::text

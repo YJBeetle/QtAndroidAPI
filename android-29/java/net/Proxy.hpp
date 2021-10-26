@@ -56,7 +56,8 @@ namespace __jni_impl::java::net
 			"java.net.Proxy",
 			"(Ljava/net/Proxy$Type;Ljava/net/SocketAddress;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

@@ -19,11 +19,11 @@ namespace __jni_impl::android::content::res
 }
 namespace __jni_impl::android::view
 {
-	class MotionEvent;
+	class PointerIcon;
 }
 namespace __jni_impl::android::view
 {
-	class PointerIcon;
+	class MotionEvent;
 }
 namespace __jni_impl::android::graphics::drawable
 {
@@ -49,39 +49,40 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
+		QAndroidJniObject onResolvePointerIcon(__jni_impl::android::view::MotionEvent arg0, jint arg1);
+		jstring getAccessibilityClassName();
+		jboolean performClick();
+		void setEnabled(jboolean arg0);
+		jint getBaseline();
+		QAndroidJniObject getPopupContext();
+		void setPopupBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
+		void setPopupBackgroundResource(jint arg0);
+		QAndroidJniObject getPopupBackground();
+		void setPrompt(jstring arg0);
+		void setPrompt(const QString &arg0);
+		void setPromptId(jint arg0);
+		void setGravity(jint arg0);
+		jint getGravity();
+		jstring getPrompt();
 		void onClick(__jni_impl::__JniBaseClass arg0, jint arg1);
 		void setOnItemClickListener(__jni_impl::__JniBaseClass arg0);
 		void setAdapter(__jni_impl::__JniBaseClass arg0);
-		void onRestoreInstanceState(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject onSaveInstanceState();
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		void setGravity(jint arg0);
-		jint getGravity();
 		jint getDropDownWidth();
 		void setDropDownWidth(jint arg0);
 		void setDropDownVerticalOffset(jint arg0);
 		jint getDropDownVerticalOffset();
 		void setDropDownHorizontalOffset(jint arg0);
 		jint getDropDownHorizontalOffset();
-		QAndroidJniObject onResolvePointerIcon(__jni_impl::android::view::MotionEvent arg0, jint arg1);
-		jstring getAccessibilityClassName();
-		jboolean performClick();
-		void setEnabled(jboolean arg0);
-		jint getBaseline();
-		jstring getPrompt();
-		QAndroidJniObject getPopupContext();
-		void setPopupBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
-		void setPopupBackgroundResource(jint arg0);
-		QAndroidJniObject getPopupBackground();
-		void setPrompt(jstring arg0);
-		void setPromptId(jint arg0);
+		void onRestoreInstanceState(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject onSaveInstanceState();
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
 #include "../content/res/Resources_Theme.hpp"
-#include "../view/MotionEvent.hpp"
 #include "../view/PointerIcon.hpp"
+#include "../view/MotionEvent.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 
 namespace __jni_impl::android::widget
@@ -110,7 +111,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void Spinner::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 	{
@@ -120,7 +122,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void Spinner::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3, jint arg4)
 	{
@@ -131,7 +134,8 @@ namespace __jni_impl::android::widget
 			arg1.__jniObject().object(),
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void Spinner::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::content::res::Resources_Theme arg5)
 	{
@@ -143,14 +147,16 @@ namespace __jni_impl::android::widget
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void Spinner::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Spinner",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Spinner::__constructor(__jni_impl::android::content::Context arg0, jint arg1)
 	{
@@ -158,7 +164,8 @@ namespace __jni_impl::android::widget
 			"android.widget.Spinner",
 			"(Landroid/content/Context;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void Spinner::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -166,10 +173,125 @@ namespace __jni_impl::android::widget
 			"android.widget.Spinner",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
+	QAndroidJniObject Spinner::onResolvePointerIcon(__jni_impl::android::view::MotionEvent arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"onResolvePointerIcon",
+			"(Landroid/view/MotionEvent;I)Landroid/view/PointerIcon;",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jstring Spinner::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jboolean Spinner::performClick()
+	{
+		return __thiz.callMethod<jboolean>(
+			"performClick",
+			"()Z"
+		);
+	}
+	void Spinner::setEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	jint Spinner::getBaseline()
+	{
+		return __thiz.callMethod<jint>(
+			"getBaseline",
+			"()I"
+		);
+	}
+	QAndroidJniObject Spinner::getPopupContext()
+	{
+		return __thiz.callObjectMethod(
+			"getPopupContext",
+			"()Landroid/content/Context;"
+		);
+	}
+	void Spinner::setPopupBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPopupBackgroundDrawable",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Spinner::setPopupBackgroundResource(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPopupBackgroundResource",
+			"(I)V",
+			arg0
+		);
+	}
+	QAndroidJniObject Spinner::getPopupBackground()
+	{
+		return __thiz.callObjectMethod(
+			"getPopupBackground",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
+	}
+	void Spinner::setPrompt(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPrompt",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void Spinner::setPrompt(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPrompt",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void Spinner::setPromptId(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPromptId",
+			"(I)V",
+			arg0
+		);
+	}
+	void Spinner::setGravity(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGravity",
+			"(I)V",
+			arg0
+		);
+	}
+	jint Spinner::getGravity()
+	{
+		return __thiz.callMethod<jint>(
+			"getGravity",
+			"()I"
+		);
+	}
+	jstring Spinner::getPrompt()
+	{
+		return __thiz.callObjectMethod(
+			"getPrompt",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
 	void Spinner::onClick(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -191,46 +313,8 @@ namespace __jni_impl::android::widget
 	{
 		__thiz.callMethod<void>(
 			"setAdapter",
-			"(Landroid/widget/SpinnerAdapter;)V",
+			"(Landroid/widget/Adapter;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	void Spinner::onRestoreInstanceState(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"onRestoreInstanceState",
-			"(Landroid/os/Parcelable;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Spinner::onSaveInstanceState()
-	{
-		return __thiz.callObjectMethod(
-			"onSaveInstanceState",
-			"()Landroid/os/Parcelable;"
-		);
-	}
-	jboolean Spinner::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	void Spinner::setGravity(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGravity",
-			"(I)V",
-			arg0
-		);
-	}
-	jint Spinner::getGravity()
-	{
-		return __thiz.callMethod<jint>(
-			"getGravity",
-			"()I"
 		);
 	}
 	jint Spinner::getDropDownWidth()
@@ -278,95 +362,27 @@ namespace __jni_impl::android::widget
 			"()I"
 		);
 	}
-	QAndroidJniObject Spinner::onResolvePointerIcon(__jni_impl::android::view::MotionEvent arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"onResolvePointerIcon",
-			"(Landroid/view/MotionEvent;I)Landroid/view/PointerIcon;",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jstring Spinner::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	jboolean Spinner::performClick()
-	{
-		return __thiz.callMethod<jboolean>(
-			"performClick",
-			"()Z"
-		);
-	}
-	void Spinner::setEnabled(jboolean arg0)
+	void Spinner::onRestoreInstanceState(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"setEnabled",
-			"(Z)V",
-			arg0
-		);
-	}
-	jint Spinner::getBaseline()
-	{
-		return __thiz.callMethod<jint>(
-			"getBaseline",
-			"()I"
-		);
-	}
-	jstring Spinner::getPrompt()
-	{
-		return __thiz.callObjectMethod(
-			"getPrompt",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	QAndroidJniObject Spinner::getPopupContext()
-	{
-		return __thiz.callObjectMethod(
-			"getPopupContext",
-			"()Landroid/content/Context;"
-		);
-	}
-	void Spinner::setPopupBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPopupBackgroundDrawable",
-			"(Landroid/graphics/drawable/Drawable;)V",
+			"onRestoreInstanceState",
+			"(Landroid/os/Parcelable;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	void Spinner::setPopupBackgroundResource(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPopupBackgroundResource",
-			"(I)V",
-			arg0
-		);
-	}
-	QAndroidJniObject Spinner::getPopupBackground()
+	QAndroidJniObject Spinner::onSaveInstanceState()
 	{
 		return __thiz.callObjectMethod(
-			"getPopupBackground",
-			"()Landroid/graphics/drawable/Drawable;"
+			"onSaveInstanceState",
+			"()Landroid/os/Parcelable;"
 		);
 	}
-	void Spinner::setPrompt(jstring arg0)
+	jboolean Spinner::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
-		__thiz.callMethod<void>(
-			"setPrompt",
-			"(Ljava/lang/CharSequence;)V",
-			arg0
-		);
-	}
-	void Spinner::setPromptId(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPromptId",
-			"(I)V",
-			arg0
+		return __thiz.callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::widget

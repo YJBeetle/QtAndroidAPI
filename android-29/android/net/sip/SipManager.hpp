@@ -17,10 +17,6 @@ namespace __jni_impl::android::app
 {
 	class PendingIntent;
 }
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
 namespace __jni_impl::android::net::sip
 {
 	class SipAudioCall;
@@ -28,6 +24,10 @@ namespace __jni_impl::android::net::sip
 namespace __jni_impl::android::net::sip
 {
 	class SipAudioCall_Listener;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
 }
 namespace __jni_impl::android::net::sip
 {
@@ -54,33 +54,38 @@ namespace __jni_impl::android::net::sip
 		// Methods
 		static QAndroidJniObject newInstance(__jni_impl::android::content::Context arg0);
 		jboolean isRegistered(jstring arg0);
+		jboolean isRegistered(const QString &arg0);
 		void _register(__jni_impl::android::net::sip::SipProfile arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
 		void close(jstring arg0);
-		void open(__jni_impl::android::net::sip::SipProfile arg0, __jni_impl::android::app::PendingIntent arg1, __jni_impl::__JniBaseClass arg2);
+		void close(const QString &arg0);
 		void open(__jni_impl::android::net::sip::SipProfile arg0);
+		void open(__jni_impl::android::net::sip::SipProfile arg0, __jni_impl::android::app::PendingIntent arg1, __jni_impl::__JniBaseClass arg2);
 		void unregister(__jni_impl::android::net::sip::SipProfile arg0, __jni_impl::__JniBaseClass arg1);
-		static jstring getCallId(__jni_impl::android::content::Intent arg0);
 		static jboolean isApiSupported(__jni_impl::android::content::Context arg0);
 		static jboolean isVoipSupported(__jni_impl::android::content::Context arg0);
 		static jboolean isSipWifiOnly(__jni_impl::android::content::Context arg0);
 		void setRegistrationListener(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		void setRegistrationListener(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		jboolean isOpened(jstring arg0);
-		QAndroidJniObject makeAudioCall(__jni_impl::android::net::sip::SipProfile arg0, __jni_impl::android::net::sip::SipProfile arg1, __jni_impl::android::net::sip::SipAudioCall_Listener arg2, jint arg3);
+		jboolean isOpened(const QString &arg0);
 		QAndroidJniObject makeAudioCall(jstring arg0, jstring arg1, __jni_impl::android::net::sip::SipAudioCall_Listener arg2, jint arg3);
+		QAndroidJniObject makeAudioCall(const QString &arg0, const QString &arg1, __jni_impl::android::net::sip::SipAudioCall_Listener arg2, jint arg3);
+		QAndroidJniObject makeAudioCall(__jni_impl::android::net::sip::SipProfile arg0, __jni_impl::android::net::sip::SipProfile arg1, __jni_impl::android::net::sip::SipAudioCall_Listener arg2, jint arg3);
 		QAndroidJniObject takeAudioCall(__jni_impl::android::content::Intent arg0, __jni_impl::android::net::sip::SipAudioCall_Listener arg1);
 		static jboolean isIncomingCallIntent(__jni_impl::android::content::Intent arg0);
 		static jstring getOfferSessionDescription(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject getSessionFor(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject createSipSession(__jni_impl::android::net::sip::SipProfile arg0, __jni_impl::android::net::sip::SipSession_Listener arg1);
+		static jstring getCallId(__jni_impl::android::content::Intent arg0);
 	};
 } // namespace __jni_impl::android::net::sip
 
 #include "../../content/Context.hpp"
 #include "SipProfile.hpp"
 #include "../../app/PendingIntent.hpp"
-#include "../../content/Intent.hpp"
 #include "SipAudioCall.hpp"
 #include "SipAudioCall_Listener.hpp"
+#include "../../content/Intent.hpp"
 #include "SipSession.hpp"
 #include "SipSession_Listener.hpp"
 
@@ -137,6 +142,14 @@ namespace __jni_impl::android::net::sip
 			arg0
 		);
 	}
+	jboolean SipManager::isRegistered(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isRegistered",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void SipManager::_register(__jni_impl::android::net::sip::SipProfile arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		__thiz.callMethod<void>(
@@ -155,14 +168,12 @@ namespace __jni_impl::android::net::sip
 			arg0
 		);
 	}
-	void SipManager::open(__jni_impl::android::net::sip::SipProfile arg0, __jni_impl::android::app::PendingIntent arg1, __jni_impl::__JniBaseClass arg2)
+	void SipManager::close(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"open",
-			"(Landroid/net/sip/SipProfile;Landroid/app/PendingIntent;Landroid/net/sip/SipRegistrationListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			"close",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void SipManager::open(__jni_impl::android::net::sip::SipProfile arg0)
@@ -173,6 +184,16 @@ namespace __jni_impl::android::net::sip
 			arg0.__jniObject().object()
 		);
 	}
+	void SipManager::open(__jni_impl::android::net::sip::SipProfile arg0, __jni_impl::android::app::PendingIntent arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		__thiz.callMethod<void>(
+			"open",
+			"(Landroid/net/sip/SipProfile;Landroid/app/PendingIntent;Landroid/net/sip/SipRegistrationListener;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
 	void SipManager::unregister(__jni_impl::android::net::sip::SipProfile arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
@@ -181,15 +202,6 @@ namespace __jni_impl::android::net::sip
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
 		);
-	}
-	jstring SipManager::getCallId(__jni_impl::android::content::Intent arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.sip.SipManager",
-			"getCallId",
-			"(Landroid/content/Intent;)Ljava/lang/String;",
-			arg0.__jniObject().object()
-		).object<jstring>();
 	}
 	jboolean SipManager::isApiSupported(__jni_impl::android::content::Context arg0)
 	{
@@ -227,6 +239,15 @@ namespace __jni_impl::android::net::sip
 			arg1.__jniObject().object()
 		);
 	}
+	void SipManager::setRegistrationListener(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"setRegistrationListener",
+			"(Ljava/lang/String;Landroid/net/sip/SipRegistrationListener;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	jboolean SipManager::isOpened(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -235,15 +256,12 @@ namespace __jni_impl::android::net::sip
 			arg0
 		);
 	}
-	QAndroidJniObject SipManager::makeAudioCall(__jni_impl::android::net::sip::SipProfile arg0, __jni_impl::android::net::sip::SipProfile arg1, __jni_impl::android::net::sip::SipAudioCall_Listener arg2, jint arg3)
+	jboolean SipManager::isOpened(const QString &arg0)
 	{
-		return __thiz.callObjectMethod(
-			"makeAudioCall",
-			"(Landroid/net/sip/SipProfile;Landroid/net/sip/SipProfile;Landroid/net/sip/SipAudioCall$Listener;I)Landroid/net/sip/SipAudioCall;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
+		return __thiz.callMethod<jboolean>(
+			"isOpened",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject SipManager::makeAudioCall(jstring arg0, jstring arg1, __jni_impl::android::net::sip::SipAudioCall_Listener arg2, jint arg3)
@@ -253,6 +271,28 @@ namespace __jni_impl::android::net::sip
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/net/sip/SipAudioCall$Listener;I)Landroid/net/sip/SipAudioCall;",
 			arg0,
 			arg1,
+			arg2.__jniObject().object(),
+			arg3
+		);
+	}
+	QAndroidJniObject SipManager::makeAudioCall(const QString &arg0, const QString &arg1, __jni_impl::android::net::sip::SipAudioCall_Listener arg2, jint arg3)
+	{
+		return __thiz.callObjectMethod(
+			"makeAudioCall",
+			"(Ljava/lang/String;Ljava/lang/String;Landroid/net/sip/SipAudioCall$Listener;I)Landroid/net/sip/SipAudioCall;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object(),
+			arg3
+		);
+	}
+	QAndroidJniObject SipManager::makeAudioCall(__jni_impl::android::net::sip::SipProfile arg0, __jni_impl::android::net::sip::SipProfile arg1, __jni_impl::android::net::sip::SipAudioCall_Listener arg2, jint arg3)
+	{
+		return __thiz.callObjectMethod(
+			"makeAudioCall",
+			"(Landroid/net/sip/SipProfile;Landroid/net/sip/SipProfile;Landroid/net/sip/SipAudioCall$Listener;I)Landroid/net/sip/SipAudioCall;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3
 		);
@@ -300,6 +340,15 @@ namespace __jni_impl::android::net::sip
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
 		);
+	}
+	jstring SipManager::getCallId(__jni_impl::android::content::Intent arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.net.sip.SipManager",
+			"getCallId",
+			"(Landroid/content/Intent;)Ljava/lang/String;",
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::net::sip
 

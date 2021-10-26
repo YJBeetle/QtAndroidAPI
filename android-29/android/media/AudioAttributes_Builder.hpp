@@ -23,12 +23,12 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		QAndroidJniObject build();
+		QAndroidJniObject setContentType(jint arg0);
 		QAndroidJniObject setLegacyStreamType(jint arg0);
 		QAndroidJniObject setUsage(jint arg0);
 		QAndroidJniObject setHapticChannelsMuted(jboolean arg0);
 		QAndroidJniObject setAllowedCapturePolicy(jint arg0);
 		QAndroidJniObject setFlags(jint arg0);
-		QAndroidJniObject setContentType(jint arg0);
 	};
 } // namespace __jni_impl::android::media
 
@@ -43,14 +43,16 @@ namespace __jni_impl::android::media
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.AudioAttributes$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	void AudioAttributes_Builder::__constructor(__jni_impl::android::media::AudioAttributes arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.AudioAttributes$Builder",
 			"(Landroid/media/AudioAttributes;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -59,6 +61,14 @@ namespace __jni_impl::android::media
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/media/AudioAttributes;"
+		);
+	}
+	QAndroidJniObject AudioAttributes_Builder::setContentType(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setContentType",
+			"(I)Landroid/media/AudioAttributes$Builder;",
+			arg0
 		);
 	}
 	QAndroidJniObject AudioAttributes_Builder::setLegacyStreamType(jint arg0)
@@ -97,14 +107,6 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callObjectMethod(
 			"setFlags",
-			"(I)Landroid/media/AudioAttributes$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject AudioAttributes_Builder::setContentType(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setContentType",
 			"(I)Landroid/media/AudioAttributes$Builder;",
 			arg0
 		);

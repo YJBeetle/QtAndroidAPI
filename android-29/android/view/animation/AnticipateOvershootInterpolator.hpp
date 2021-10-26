@@ -42,7 +42,8 @@ namespace __jni_impl::android::view::animation
 			"android.view.animation.AnticipateOvershootInterpolator",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AnticipateOvershootInterpolator::__constructor(jfloat arg0, jfloat arg1)
 	{
@@ -50,20 +51,23 @@ namespace __jni_impl::android::view::animation
 			"android.view.animation.AnticipateOvershootInterpolator",
 			"(FF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void AnticipateOvershootInterpolator::__constructor(jfloat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.AnticipateOvershootInterpolator",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	void AnticipateOvershootInterpolator::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.AnticipateOvershootInterpolator",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

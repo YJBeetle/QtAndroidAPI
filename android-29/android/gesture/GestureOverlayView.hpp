@@ -12,9 +12,9 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::view
+namespace __jni_impl::android::graphics
 {
-	class MotionEvent;
+	class Canvas;
 }
 namespace __jni_impl::java::util
 {
@@ -28,9 +28,9 @@ namespace __jni_impl::android::graphics
 {
 	class Path;
 }
-namespace __jni_impl::android::graphics
+namespace __jni_impl::android::view
 {
-	class Canvas;
+	class MotionEvent;
 }
 
 namespace __jni_impl::android::gesture
@@ -52,8 +52,9 @@ namespace __jni_impl::android::gesture
 		
 		// Methods
 		void clear(jboolean arg0);
-		jboolean dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		void draw(__jni_impl::android::graphics::Canvas arg0);
 		jint getOrientation();
+		void setOrientation(jint arg0);
 		QAndroidJniObject getCurrentStroke();
 		void setGestureColor(jint arg0);
 		void setUncertainGestureColor(jint arg0);
@@ -93,17 +94,16 @@ namespace __jni_impl::android::gesture
 		jboolean isGesturing();
 		void cancelClearAnimation();
 		void cancelGesture();
-		void draw(__jni_impl::android::graphics::Canvas arg0);
-		void setOrientation(jint arg0);
+		jboolean dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0);
 	};
 } // namespace __jni_impl::android::gesture
 
 #include "../content/Context.hpp"
-#include "../view/MotionEvent.hpp"
+#include "../graphics/Canvas.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "Gesture.hpp"
 #include "../graphics/Path.hpp"
-#include "../graphics/Canvas.hpp"
+#include "../view/MotionEvent.hpp"
 
 namespace __jni_impl::android::gesture
 {
@@ -146,7 +146,8 @@ namespace __jni_impl::android::gesture
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void GestureOverlayView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -155,7 +156,8 @@ namespace __jni_impl::android::gesture
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void GestureOverlayView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -163,14 +165,16 @@ namespace __jni_impl::android::gesture
 			"android.gesture.GestureOverlayView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void GestureOverlayView::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.gesture.GestureOverlayView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -182,11 +186,11 @@ namespace __jni_impl::android::gesture
 			arg0
 		);
 	}
-	jboolean GestureOverlayView::dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	void GestureOverlayView::draw(__jni_impl::android::graphics::Canvas arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -195,6 +199,14 @@ namespace __jni_impl::android::gesture
 		return __thiz.callMethod<jint>(
 			"getOrientation",
 			"()I"
+		);
+	}
+	void GestureOverlayView::setOrientation(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOrientation",
+			"(I)V",
+			arg0
 		);
 	}
 	QAndroidJniObject GestureOverlayView::getCurrentStroke()
@@ -489,20 +501,12 @@ namespace __jni_impl::android::gesture
 			"()V"
 		);
 	}
-	void GestureOverlayView::draw(__jni_impl::android::graphics::Canvas arg0)
+	jboolean GestureOverlayView::dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
-		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;)V",
+		return __thiz.callMethod<jboolean>(
+			"dispatchTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
 			arg0.__jniObject().object()
-		);
-	}
-	void GestureOverlayView::setOrientation(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOrientation",
-			"(I)V",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::gesture

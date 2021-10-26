@@ -35,7 +35,8 @@ namespace __jni_impl::javax::net::ssl
 	{
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.TrustManagerFactorySpi",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

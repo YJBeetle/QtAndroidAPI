@@ -34,8 +34,6 @@ namespace __jni_impl::android::bluetooth::le
 		jstring toString();
 		jint hashCode();
 		jboolean matches(__jni_impl::android::bluetooth::le::ScanResult arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jstring getDeviceName();
 		QAndroidJniObject getServiceUuid();
 		QAndroidJniObject getServiceUuidMask();
@@ -48,6 +46,8 @@ namespace __jni_impl::android::bluetooth::le
 		jint getManufacturerId();
 		jbyteArray getManufacturerData();
 		jbyteArray getManufacturerDataMask();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
@@ -104,22 +104,6 @@ namespace __jni_impl::android::bluetooth::le
 			"matches",
 			"(Landroid/bluetooth/le/ScanResult;)Z",
 			arg0.__jniObject().object()
-		);
-	}
-	jint ScanFilter::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void ScanFilter::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 	jstring ScanFilter::getDeviceName()
@@ -205,6 +189,22 @@ namespace __jni_impl::android::bluetooth::le
 			"getManufacturerDataMask",
 			"()[B"
 		).object<jbyteArray>();
+	}
+	jint ScanFilter::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void ScanFilter::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::bluetooth::le
 

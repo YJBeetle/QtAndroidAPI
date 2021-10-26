@@ -30,6 +30,7 @@ namespace __jni_impl::java::lang
 		jint hashCode();
 		jboolean isAnnotationPresent(jclass arg0);
 		static QAndroidJniObject getPackage(jstring arg0);
+		static QAndroidJniObject getPackage(const QString &arg0);
 		QAndroidJniObject getAnnotation(jclass arg0);
 		jarray getAnnotationsByType(jclass arg0);
 		jarray getAnnotations();
@@ -46,6 +47,7 @@ namespace __jni_impl::java::lang
 		jstring getImplementationVersion();
 		jstring getImplementationVendor();
 		jboolean isCompatibleWith(jstring arg0);
+		jboolean isCompatibleWith(const QString &arg0);
 	};
 } // namespace __jni_impl::java::lang
 
@@ -101,6 +103,15 @@ namespace __jni_impl::java::lang
 			"getPackage",
 			"(Ljava/lang/String;)Ljava/lang/Package;",
 			arg0
+		);
+	}
+	QAndroidJniObject Package::getPackage(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.lang.Package",
+			"getPackage",
+			"(Ljava/lang/String;)Ljava/lang/Package;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Package::getAnnotation(jclass arg0)
@@ -220,6 +231,14 @@ namespace __jni_impl::java::lang
 			"isCompatibleWith",
 			"(Ljava/lang/String;)Z",
 			arg0
+		);
+	}
+	jboolean Package::isCompatibleWith(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isCompatibleWith",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::lang

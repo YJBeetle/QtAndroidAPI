@@ -18,7 +18,9 @@ namespace __jni_impl::java::security
 		// Constructors
 		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
+		void __constructor(const QString &arg0, jthrowable arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor();
 		
 		// Methods
@@ -36,7 +38,8 @@ namespace __jni_impl::java::security
 		__thiz = QAndroidJniObject(
 			"java.security.ProviderException",
 			"(Ljava/lang/Throwable;)V",
-			arg0);
+			arg0
+		);
 	}
 	void ProviderException::__constructor(jstring arg0, jthrowable arg1)
 	{
@@ -44,20 +47,40 @@ namespace __jni_impl::java::security
 			"java.security.ProviderException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void ProviderException::__constructor(const QString &arg0, jthrowable arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.ProviderException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void ProviderException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.ProviderException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void ProviderException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.ProviderException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void ProviderException::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.ProviderException",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

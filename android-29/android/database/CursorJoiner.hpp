@@ -43,7 +43,8 @@ namespace __jni_impl::android::database
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	
 	// Methods

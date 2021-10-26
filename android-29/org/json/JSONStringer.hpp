@@ -24,6 +24,7 @@ namespace __jni_impl::org::json
 		jstring toString();
 		QAndroidJniObject array();
 		QAndroidJniObject key(jstring arg0);
+		QAndroidJniObject key(const QString &arg0);
 		QAndroidJniObject object();
 		QAndroidJniObject endArray();
 		QAndroidJniObject endObject();
@@ -40,7 +41,8 @@ namespace __jni_impl::org::json
 	{
 		__thiz = QAndroidJniObject(
 			"org.json.JSONStringer",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -96,6 +98,14 @@ namespace __jni_impl::org::json
 			"key",
 			"(Ljava/lang/String;)Lorg/json/JSONStringer;",
 			arg0
+		);
+	}
+	QAndroidJniObject JSONStringer::key(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"key",
+			"(Ljava/lang/String;)Lorg/json/JSONStringer;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject JSONStringer::object()

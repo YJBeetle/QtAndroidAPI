@@ -43,7 +43,8 @@ namespace __jni_impl::android::bluetooth::le
 	{
 		__thiz = QAndroidJniObject(
 			"android.bluetooth.le.ScanSettings$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

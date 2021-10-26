@@ -48,6 +48,7 @@ namespace __jni_impl::android::view::contentcapture
 		void notifyViewDisappeared(__jni_impl::android::view::autofill::AutofillId arg0);
 		void notifyViewsDisappeared(__jni_impl::android::view::autofill::AutofillId arg0, jlongArray arg1);
 		void notifyViewTextChanged(__jni_impl::android::view::autofill::AutofillId arg0, jstring arg1);
+		void notifyViewTextChanged(__jni_impl::android::view::autofill::AutofillId arg0, const QString &arg1);
 		QAndroidJniObject newViewStructure(__jni_impl::android::view::View arg0);
 		QAndroidJniObject newAutofillId(__jni_impl::android::view::autofill::AutofillId arg0, jlong arg1);
 		QAndroidJniObject newVirtualViewStructure(__jni_impl::android::view::autofill::AutofillId arg0, jlong arg1);
@@ -156,6 +157,15 @@ namespace __jni_impl::android::view::contentcapture
 			"(Landroid/view/autofill/AutofillId;Ljava/lang/CharSequence;)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	void ContentCaptureSession::notifyViewTextChanged(__jni_impl::android::view::autofill::AutofillId arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"notifyViewTextChanged",
+			"(Landroid/view/autofill/AutofillId;Ljava/lang/CharSequence;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject ContentCaptureSession::newViewStructure(__jni_impl::android::view::View arg0)

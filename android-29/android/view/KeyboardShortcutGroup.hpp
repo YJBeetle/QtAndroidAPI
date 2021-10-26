@@ -24,14 +24,16 @@ namespace __jni_impl::android::view
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		void __constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
+		jstring getLabel();
+		QAndroidJniObject getItems();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void addItem(__jni_impl::android::view::KeyboardShortcutInfo arg0);
-		QAndroidJniObject getItems();
-		jstring getLabel();
 	};
 } // namespace __jni_impl::android::view
 
@@ -57,17 +59,50 @@ namespace __jni_impl::android::view
 			"android.view.KeyboardShortcutGroup",
 			"(Ljava/lang/CharSequence;Ljava/util/List;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void KeyboardShortcutGroup::__constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.KeyboardShortcutGroup",
+			"(Ljava/lang/CharSequence;Ljava/util/List;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	void KeyboardShortcutGroup::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.KeyboardShortcutGroup",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
+	}
+	void KeyboardShortcutGroup::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.KeyboardShortcutGroup",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
+	jstring KeyboardShortcutGroup::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	QAndroidJniObject KeyboardShortcutGroup::getItems()
+	{
+		return __thiz.callObjectMethod(
+			"getItems",
+			"()Ljava/util/List;"
+		);
+	}
 	jint KeyboardShortcutGroup::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -91,20 +126,6 @@ namespace __jni_impl::android::view
 			"(Landroid/view/KeyboardShortcutInfo;)V",
 			arg0.__jniObject().object()
 		);
-	}
-	QAndroidJniObject KeyboardShortcutGroup::getItems()
-	{
-		return __thiz.callObjectMethod(
-			"getItems",
-			"()Ljava/util/List;"
-		);
-	}
-	jstring KeyboardShortcutGroup::getLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::view
 

@@ -19,6 +19,7 @@ namespace __jni_impl::android::database
 		// Constructors
 		void __constructor(jint arg0, jint arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -36,14 +37,24 @@ namespace __jni_impl::android::database
 			"android.database.CursorIndexOutOfBoundsException",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void CursorIndexOutOfBoundsException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.CursorIndexOutOfBoundsException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void CursorIndexOutOfBoundsException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.database.CursorIndexOutOfBoundsException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

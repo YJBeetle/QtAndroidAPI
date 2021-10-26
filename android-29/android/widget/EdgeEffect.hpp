@@ -35,14 +35,14 @@ namespace __jni_impl::android::widget
 		void finish();
 		QAndroidJniObject getBlendMode();
 		void setBlendMode(__jni_impl::android::graphics::BlendMode arg0);
-		jboolean isFinished();
-		jint getColor();
-		jint getMaxHeight();
-		void onPull(jfloat arg0, jfloat arg1);
-		void onPull(jfloat arg0);
-		void onAbsorb(jint arg0);
 		jboolean draw(__jni_impl::android::graphics::Canvas arg0);
+		jint getMaxHeight();
+		jint getColor();
 		void onRelease();
+		jboolean isFinished();
+		void onPull(jfloat arg0);
+		void onPull(jfloat arg0, jfloat arg1);
+		void onAbsorb(jint arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -68,7 +68,8 @@ namespace __jni_impl::android::widget
 		__thiz = QAndroidJniObject(
 			"android.widget.EdgeEffect",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -111,11 +112,19 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean EdgeEffect::isFinished()
+	jboolean EdgeEffect::draw(__jni_impl::android::graphics::Canvas arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"isFinished",
-			"()Z"
+			"draw",
+			"(Landroid/graphics/Canvas;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jint EdgeEffect::getMaxHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxHeight",
+			"()I"
 		);
 	}
 	jint EdgeEffect::getColor()
@@ -125,11 +134,26 @@ namespace __jni_impl::android::widget
 			"()I"
 		);
 	}
-	jint EdgeEffect::getMaxHeight()
+	void EdgeEffect::onRelease()
 	{
-		return __thiz.callMethod<jint>(
-			"getMaxHeight",
-			"()I"
+		__thiz.callMethod<void>(
+			"onRelease",
+			"()V"
+		);
+	}
+	jboolean EdgeEffect::isFinished()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFinished",
+			"()Z"
+		);
+	}
+	void EdgeEffect::onPull(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"onPull",
+			"(F)V",
+			arg0
 		);
 	}
 	void EdgeEffect::onPull(jfloat arg0, jfloat arg1)
@@ -141,35 +165,12 @@ namespace __jni_impl::android::widget
 			arg1
 		);
 	}
-	void EdgeEffect::onPull(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"onPull",
-			"(F)V",
-			arg0
-		);
-	}
 	void EdgeEffect::onAbsorb(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onAbsorb",
 			"(I)V",
 			arg0
-		);
-	}
-	jboolean EdgeEffect::draw(__jni_impl::android::graphics::Canvas arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"draw",
-			"(Landroid/graphics/Canvas;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	void EdgeEffect::onRelease()
-	{
-		__thiz.callMethod<void>(
-			"onRelease",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::android::widget

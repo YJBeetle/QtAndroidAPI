@@ -94,14 +94,16 @@ namespace __jni_impl::android::content::pm
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.FeatureInfo",
-			"()V");
+			"()V"
+		);
 	}
 	void FeatureInfo::__constructor(__jni_impl::android::content::pm::FeatureInfo arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.FeatureInfo",
 			"(Landroid/content/pm/FeatureInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

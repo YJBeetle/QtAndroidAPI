@@ -26,12 +26,13 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		void connect();
-		jboolean isConnected();
-		void disconnect();
-		static void scanFile(__jni_impl::android::content::Context arg0, jarray arg1, jarray arg2, __jni_impl::__JniBaseClass arg3);
-		void scanFile(jstring arg0, jstring arg1);
 		void onServiceConnected(__jni_impl::android::content::ComponentName arg0, __jni_impl::__JniBaseClass arg1);
 		void onServiceDisconnected(__jni_impl::android::content::ComponentName arg0);
+		void scanFile(jstring arg0, jstring arg1);
+		void scanFile(const QString &arg0, const QString &arg1);
+		static void scanFile(__jni_impl::android::content::Context arg0, jarray arg1, jarray arg2, __jni_impl::__JniBaseClass arg3);
+		void disconnect();
+		jboolean isConnected();
 	};
 } // namespace __jni_impl::android::media
 
@@ -49,7 +50,8 @@ namespace __jni_impl::android::media
 			"android.media.MediaScannerConnection",
 			"(Landroid/content/Context;Landroid/media/MediaScannerConnection$MediaScannerConnectionClient;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -58,41 +60,6 @@ namespace __jni_impl::android::media
 		__thiz.callMethod<void>(
 			"connect",
 			"()V"
-		);
-	}
-	jboolean MediaScannerConnection::isConnected()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isConnected",
-			"()Z"
-		);
-	}
-	void MediaScannerConnection::disconnect()
-	{
-		__thiz.callMethod<void>(
-			"disconnect",
-			"()V"
-		);
-	}
-	void MediaScannerConnection::scanFile(__jni_impl::android::content::Context arg0, jarray arg1, jarray arg2, __jni_impl::__JniBaseClass arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.media.MediaScannerConnection",
-			"scanFile",
-			"(Landroid/content/Context;[Ljava/lang/String;[Ljava/lang/String;Landroid/media/MediaScannerConnection$OnScanCompletedListener;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	void MediaScannerConnection::scanFile(jstring arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"scanFile",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
 		);
 	}
 	void MediaScannerConnection::onServiceConnected(__jni_impl::android::content::ComponentName arg0, __jni_impl::__JniBaseClass arg1)
@@ -110,6 +77,50 @@ namespace __jni_impl::android::media
 			"onServiceDisconnected",
 			"(Landroid/content/ComponentName;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void MediaScannerConnection::scanFile(jstring arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"scanFile",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1
+		);
+	}
+	void MediaScannerConnection::scanFile(const QString &arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"scanFile",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	void MediaScannerConnection::scanFile(__jni_impl::android::content::Context arg0, jarray arg1, jarray arg2, __jni_impl::__JniBaseClass arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.media.MediaScannerConnection",
+			"scanFile",
+			"(Landroid/content/Context;[Ljava/lang/String;[Ljava/lang/String;Landroid/media/MediaScannerConnection$OnScanCompletedListener;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3.__jniObject().object()
+		);
+	}
+	void MediaScannerConnection::disconnect()
+	{
+		__thiz.callMethod<void>(
+			"disconnect",
+			"()V"
+		);
+	}
+	jboolean MediaScannerConnection::isConnected()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isConnected",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::media

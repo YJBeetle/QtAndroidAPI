@@ -17,6 +17,7 @@ namespace __jni_impl::java::util::concurrent
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -32,14 +33,24 @@ namespace __jni_impl::java::util::concurrent
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.BrokenBarrierException",
-			"()V");
+			"()V"
+		);
 	}
 	void BrokenBarrierException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.BrokenBarrierException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void BrokenBarrierException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.concurrent.BrokenBarrierException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

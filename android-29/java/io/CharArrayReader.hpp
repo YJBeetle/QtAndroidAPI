@@ -41,7 +41,8 @@ namespace __jni_impl::java::io
 		__thiz = QAndroidJniObject(
 			"java.io.CharArrayReader",
 			"([C)V",
-			arg0);
+			arg0
+		);
 	}
 	void CharArrayReader::__constructor(jcharArray arg0, jint arg1, jint arg2)
 	{
@@ -50,7 +51,8 @@ namespace __jni_impl::java::io
 			"([CII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods

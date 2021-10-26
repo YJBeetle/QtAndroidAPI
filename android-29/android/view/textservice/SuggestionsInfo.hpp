@@ -29,9 +29,9 @@ namespace __jni_impl::android::view::textservice
 		// Methods
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getCookie();
 		jint getSuggestionsCount();
 		jint getSequence();
-		jint getCookie();
 		void setCookieAndSequence(jint arg0, jint arg1);
 		jint getSuggestionsAttributes();
 		jstring getSuggestionAt(jint arg0);
@@ -79,7 +79,8 @@ namespace __jni_impl::android::view::textservice
 		__thiz = QAndroidJniObject(
 			"android.view.textservice.SuggestionsInfo",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SuggestionsInfo::__constructor(jint arg0, jarray arg1, jint arg2, jint arg3)
 	{
@@ -89,7 +90,8 @@ namespace __jni_impl::android::view::textservice
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void SuggestionsInfo::__constructor(jint arg0, jarray arg1)
 	{
@@ -97,7 +99,8 @@ namespace __jni_impl::android::view::textservice
 			"android.view.textservice.SuggestionsInfo",
 			"(I[Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -117,6 +120,13 @@ namespace __jni_impl::android::view::textservice
 			arg1
 		);
 	}
+	jint SuggestionsInfo::getCookie()
+	{
+		return __thiz.callMethod<jint>(
+			"getCookie",
+			"()I"
+		);
+	}
 	jint SuggestionsInfo::getSuggestionsCount()
 	{
 		return __thiz.callMethod<jint>(
@@ -128,13 +138,6 @@ namespace __jni_impl::android::view::textservice
 	{
 		return __thiz.callMethod<jint>(
 			"getSequence",
-			"()I"
-		);
-	}
-	jint SuggestionsInfo::getCookie()
-	{
-		return __thiz.callMethod<jint>(
-			"getCookie",
 			"()I"
 		);
 	}

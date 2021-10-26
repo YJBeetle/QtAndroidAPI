@@ -24,6 +24,7 @@ namespace __jni_impl::javax::net::ssl
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::javax::net::ssl
 
@@ -88,6 +89,15 @@ namespace __jni_impl::javax::net::ssl
 			"valueOf",
 			"(Ljava/lang/String;)Ljavax/net/ssl/SSLEngineResult$Status;",
 			arg0
+		);
+	}
+	QAndroidJniObject SSLEngineResult_Status::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.net.ssl.SSLEngineResult$Status",
+			"valueOf",
+			"(Ljava/lang/String;)Ljavax/net/ssl/SSLEngineResult$Status;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::javax::net::ssl

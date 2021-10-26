@@ -38,7 +38,8 @@ namespace __jni_impl::java::security
 			"java.security.GuardedObject",
 			"(Ljava/lang/Object;Ljava/security/Guard;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

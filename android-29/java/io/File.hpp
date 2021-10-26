@@ -35,8 +35,11 @@ namespace __jni_impl::java::io
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, jstring arg1);
+		void __constructor(const QString &arg0, const QString &arg1);
 		void __constructor(__jni_impl::java::io::File arg0, jstring arg1);
+		void __constructor(__jni_impl::java::io::File arg0, const QString &arg1);
 		void __constructor(__jni_impl::java::net::URI arg0);
 		
 		// Methods
@@ -74,7 +77,9 @@ namespace __jni_impl::java::io
 		jboolean setExecutable(jboolean arg0);
 		static jarray listRoots();
 		static QAndroidJniObject createTempFile(jstring arg0, jstring arg1, __jni_impl::java::io::File arg2);
+		static QAndroidJniObject createTempFile(const QString &arg0, const QString &arg1, __jni_impl::java::io::File arg2);
 		static QAndroidJniObject createTempFile(jstring arg0, jstring arg1);
+		static QAndroidJniObject createTempFile(const QString &arg0, const QString &arg1);
 		jboolean canWrite();
 		jboolean isFile();
 		jboolean isHidden();
@@ -138,7 +143,16 @@ namespace __jni_impl::java::io
 		__thiz = QAndroidJniObject(
 			"java.io.File",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void File::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.File",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void File::__constructor(jstring arg0, jstring arg1)
 	{
@@ -146,7 +160,17 @@ namespace __jni_impl::java::io
 			"java.io.File",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void File::__constructor(const QString &arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.File",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void File::__constructor(__jni_impl::java::io::File arg0, jstring arg1)
 	{
@@ -154,14 +178,25 @@ namespace __jni_impl::java::io
 			"java.io.File",
 			"(Ljava/io/File;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void File::__constructor(__jni_impl::java::io::File arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.File",
+			"(Ljava/io/File;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void File::__constructor(__jni_impl::java::net::URI arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.File",
 			"(Ljava/net/URI;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -421,6 +456,17 @@ namespace __jni_impl::java::io
 			arg2.__jniObject().object()
 		);
 	}
+	QAndroidJniObject File::createTempFile(const QString &arg0, const QString &arg1, __jni_impl::java::io::File arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.io.File",
+			"createTempFile",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
+	}
 	QAndroidJniObject File::createTempFile(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -429,6 +475,16 @@ namespace __jni_impl::java::io
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;",
 			arg0,
 			arg1
+		);
+	}
+	QAndroidJniObject File::createTempFile(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.io.File",
+			"createTempFile",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jboolean File::canWrite()

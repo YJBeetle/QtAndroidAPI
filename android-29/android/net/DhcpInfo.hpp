@@ -87,7 +87,8 @@ namespace __jni_impl::android::net
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.DhcpInfo",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

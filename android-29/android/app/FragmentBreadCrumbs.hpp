@@ -29,12 +29,14 @@ namespace __jni_impl::android::app
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
+		void onBackStackChanged();
 		void setOnBreadCrumbClickListener(__jni_impl::__JniBaseClass arg0);
 		void setActivity(__jni_impl::android::app::Activity arg0);
 		void setMaxVisible(jint arg0);
 		void setParentTitle(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2);
+		void setParentTitle(const QString &arg0, const QString &arg1, __jni_impl::__JniBaseClass arg2);
 		void setTitle(jstring arg0, jstring arg1);
-		void onBackStackChanged();
+		void setTitle(const QString &arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -53,7 +55,8 @@ namespace __jni_impl::android::app
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void FragmentBreadCrumbs::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -61,17 +64,26 @@ namespace __jni_impl::android::app
 			"android.app.FragmentBreadCrumbs",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void FragmentBreadCrumbs::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.FragmentBreadCrumbs",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
+	void FragmentBreadCrumbs::onBackStackChanged()
+	{
+		__thiz.callMethod<void>(
+			"onBackStackChanged",
+			"()V"
+		);
+	}
 	void FragmentBreadCrumbs::setOnBreadCrumbClickListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -106,6 +118,16 @@ namespace __jni_impl::android::app
 			arg2.__jniObject().object()
 		);
 	}
+	void FragmentBreadCrumbs::setParentTitle(const QString &arg0, const QString &arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		__thiz.callMethod<void>(
+			"setParentTitle",
+			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/view/View$OnClickListener;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
+	}
 	void FragmentBreadCrumbs::setTitle(jstring arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -115,11 +137,13 @@ namespace __jni_impl::android::app
 			arg1
 		);
 	}
-	void FragmentBreadCrumbs::onBackStackChanged()
+	void FragmentBreadCrumbs::setTitle(const QString &arg0, const QString &arg1)
 	{
 		__thiz.callMethod<void>(
-			"onBackStackChanged",
-			"()V"
+			"setTitle",
+			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::app

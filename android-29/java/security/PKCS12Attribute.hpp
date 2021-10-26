@@ -19,6 +19,7 @@ namespace __jni_impl::java::security
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1);
+		void __constructor(const QString &arg0, const QString &arg1);
 		void __constructor(jbyteArray arg0);
 		
 		// Methods
@@ -44,14 +45,25 @@ namespace __jni_impl::java::security
 			"java.security.PKCS12Attribute",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void PKCS12Attribute::__constructor(const QString &arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.PKCS12Attribute",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void PKCS12Attribute::__constructor(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.PKCS12Attribute",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

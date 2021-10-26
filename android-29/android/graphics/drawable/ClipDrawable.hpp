@@ -38,9 +38,9 @@ namespace __jni_impl::android::graphics::drawable
 		
 		// Methods
 		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
+		void draw(__jni_impl::android::graphics::Canvas arg0);
 		void applyTheme(__jni_impl::android::content::res::Resources_Theme arg0);
 		jint getOpacity();
-		void draw(__jni_impl::android::graphics::Canvas arg0);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
@@ -75,7 +75,8 @@ namespace __jni_impl::android::graphics::drawable
 			"(Landroid/graphics/drawable/Drawable;II)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods
@@ -88,6 +89,14 @@ namespace __jni_impl::android::graphics::drawable
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
+		);
+	}
+	void ClipDrawable::draw(__jni_impl::android::graphics::Canvas arg0)
+	{
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void ClipDrawable::applyTheme(__jni_impl::android::content::res::Resources_Theme arg0)
@@ -103,14 +112,6 @@ namespace __jni_impl::android::graphics::drawable
 		return __thiz.callMethod<jint>(
 			"getOpacity",
 			"()I"
-		);
-	}
-	void ClipDrawable::draw(__jni_impl::android::graphics::Canvas arg0)
-	{
-		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::graphics::drawable

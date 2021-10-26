@@ -67,14 +67,16 @@ namespace __jni_impl::java::lang
 		__thiz = QAndroidJniObject(
 			"java.lang.ProcessBuilder",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ProcessBuilder::__constructor(jarray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ProcessBuilder",
 			"([Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

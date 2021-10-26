@@ -24,9 +24,9 @@ namespace __jni_impl::android::app::admin
 		// Methods
 		jstring getPackageName();
 		jlong getId();
+		jlong getTimestamp();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jlong getTimestamp();
 	};
 } // namespace __jni_impl::android::app::admin
 
@@ -67,6 +67,13 @@ namespace __jni_impl::android::app::admin
 			"()J"
 		);
 	}
+	jlong NetworkEvent::getTimestamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimestamp",
+			"()J"
+		);
+	}
 	jint NetworkEvent::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -81,13 +88,6 @@ namespace __jni_impl::android::app::admin
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jlong NetworkEvent::getTimestamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimestamp",
-			"()J"
 		);
 	}
 } // namespace __jni_impl::android::app::admin

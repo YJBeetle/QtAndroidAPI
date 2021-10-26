@@ -46,7 +46,8 @@ namespace __jni_impl::android::view
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ActionMode$Callback2",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

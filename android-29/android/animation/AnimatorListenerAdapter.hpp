@@ -24,9 +24,9 @@ namespace __jni_impl::android::animation
 		void onAnimationStart(__jni_impl::android::animation::Animator arg0);
 		void onAnimationEnd(__jni_impl::android::animation::Animator arg0);
 		void onAnimationRepeat(__jni_impl::android::animation::Animator arg0);
+		void onAnimationCancel(__jni_impl::android::animation::Animator arg0);
 		void onAnimationResume(__jni_impl::android::animation::Animator arg0);
 		void onAnimationPause(__jni_impl::android::animation::Animator arg0);
-		void onAnimationCancel(__jni_impl::android::animation::Animator arg0);
 	};
 } // namespace __jni_impl::android::animation
 
@@ -41,7 +41,8 @@ namespace __jni_impl::android::animation
 	{
 		__thiz = QAndroidJniObject(
 			"android.animation.AnimatorListenerAdapter",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -69,6 +70,14 @@ namespace __jni_impl::android::animation
 			arg0.__jniObject().object()
 		);
 	}
+	void AnimatorListenerAdapter::onAnimationCancel(__jni_impl::android::animation::Animator arg0)
+	{
+		__thiz.callMethod<void>(
+			"onAnimationCancel",
+			"(Landroid/animation/Animator;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void AnimatorListenerAdapter::onAnimationResume(__jni_impl::android::animation::Animator arg0)
 	{
 		__thiz.callMethod<void>(
@@ -81,14 +90,6 @@ namespace __jni_impl::android::animation
 	{
 		__thiz.callMethod<void>(
 			"onAnimationPause",
-			"(Landroid/animation/Animator;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void AnimatorListenerAdapter::onAnimationCancel(__jni_impl::android::animation::Animator arg0)
-	{
-		__thiz.callMethod<void>(
-			"onAnimationCancel",
 			"(Landroid/animation/Animator;)V",
 			arg0.__jniObject().object()
 		);

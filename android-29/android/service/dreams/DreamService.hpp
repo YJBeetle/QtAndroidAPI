@@ -71,15 +71,25 @@ namespace __jni_impl::android::service::dreams
 		
 		// Methods
 		void finish();
+		void setInteractive(jboolean arg0);
+		jboolean isInteractive();
+		void setFullscreen(jboolean arg0);
+		jboolean isFullscreen();
+		void setScreenBright(jboolean arg0);
+		jboolean isScreenBright();
+		void onDreamingStarted();
+		void onDreamingStopped();
+		void onWakeUp();
+		void wakeUp();
 		QAndroidJniObject getWindowManager();
 		QAndroidJniObject getWindow();
 		void onCreate();
 		void onDestroy();
 		QAndroidJniObject findViewById(jint arg0);
 		QAndroidJniObject requireViewById(jint arg0);
-		void setContentView(jint arg0);
-		void setContentView(__jni_impl::android::view::View arg0);
 		void setContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
+		void setContentView(__jni_impl::android::view::View arg0);
+		void setContentView(jint arg0);
 		void addContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
 		void onWindowAttributesChanged(__jni_impl::android::view::WindowManager_LayoutParams arg0);
 		void onContentChanged();
@@ -98,23 +108,13 @@ namespace __jni_impl::android::service::dreams
 		jboolean onMenuOpened(jint arg0, __jni_impl::__JniBaseClass arg1);
 		jboolean onMenuItemSelected(jint arg0, __jni_impl::__JniBaseClass arg1);
 		void onPanelClosed(jint arg0, __jni_impl::__JniBaseClass arg1);
-		jboolean onSearchRequested();
 		jboolean onSearchRequested(__jni_impl::android::view::SearchEvent arg0);
+		jboolean onSearchRequested();
 		QAndroidJniObject onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0, jint arg1);
 		QAndroidJniObject onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0);
 		void onActionModeStarted(__jni_impl::android::view::ActionMode arg0);
 		void onActionModeFinished(__jni_impl::android::view::ActionMode arg0);
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
-		void setInteractive(jboolean arg0);
-		jboolean isInteractive();
-		void setFullscreen(jboolean arg0);
-		jboolean isFullscreen();
-		void setScreenBright(jboolean arg0);
-		jboolean isScreenBright();
-		void onDreamingStarted();
-		void onDreamingStopped();
-		void onWakeUp();
-		void wakeUp();
 	};
 } // namespace __jni_impl::android::service::dreams
 
@@ -156,7 +156,8 @@ namespace __jni_impl::android::service::dreams
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.dreams.DreamService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -164,6 +165,79 @@ namespace __jni_impl::android::service::dreams
 	{
 		__thiz.callMethod<void>(
 			"finish",
+			"()V"
+		);
+	}
+	void DreamService::setInteractive(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setInteractive",
+			"(Z)V",
+			arg0
+		);
+	}
+	jboolean DreamService::isInteractive()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isInteractive",
+			"()Z"
+		);
+	}
+	void DreamService::setFullscreen(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFullscreen",
+			"(Z)V",
+			arg0
+		);
+	}
+	jboolean DreamService::isFullscreen()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFullscreen",
+			"()Z"
+		);
+	}
+	void DreamService::setScreenBright(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setScreenBright",
+			"(Z)V",
+			arg0
+		);
+	}
+	jboolean DreamService::isScreenBright()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isScreenBright",
+			"()Z"
+		);
+	}
+	void DreamService::onDreamingStarted()
+	{
+		__thiz.callMethod<void>(
+			"onDreamingStarted",
+			"()V"
+		);
+	}
+	void DreamService::onDreamingStopped()
+	{
+		__thiz.callMethod<void>(
+			"onDreamingStopped",
+			"()V"
+		);
+	}
+	void DreamService::onWakeUp()
+	{
+		__thiz.callMethod<void>(
+			"onWakeUp",
+			"()V"
+		);
+	}
+	void DreamService::wakeUp()
+	{
+		__thiz.callMethod<void>(
+			"wakeUp",
 			"()V"
 		);
 	}
@@ -211,12 +285,13 @@ namespace __jni_impl::android::service::dreams
 			arg0
 		);
 	}
-	void DreamService::setContentView(jint arg0)
+	void DreamService::setContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
 	{
 		__thiz.callMethod<void>(
 			"setContentView",
-			"(I)V",
-			arg0
+			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	void DreamService::setContentView(__jni_impl::android::view::View arg0)
@@ -227,13 +302,12 @@ namespace __jni_impl::android::service::dreams
 			arg0.__jniObject().object()
 		);
 	}
-	void DreamService::setContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
+	void DreamService::setContentView(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setContentView",
-			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			"(I)V",
+			arg0
 		);
 	}
 	void DreamService::addContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
@@ -384,19 +458,19 @@ namespace __jni_impl::android::service::dreams
 			arg1.__jniObject().object()
 		);
 	}
-	jboolean DreamService::onSearchRequested()
-	{
-		return __thiz.callMethod<jboolean>(
-			"onSearchRequested",
-			"()Z"
-		);
-	}
 	jboolean DreamService::onSearchRequested(__jni_impl::android::view::SearchEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onSearchRequested",
 			"(Landroid/view/SearchEvent;)Z",
 			arg0.__jniObject().object()
+		);
+	}
+	jboolean DreamService::onSearchRequested()
+	{
+		return __thiz.callMethod<jboolean>(
+			"onSearchRequested",
+			"()Z"
 		);
 	}
 	QAndroidJniObject DreamService::onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0, jint arg1)
@@ -438,79 +512,6 @@ namespace __jni_impl::android::service::dreams
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
 			arg0.__jniObject().object()
-		);
-	}
-	void DreamService::setInteractive(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setInteractive",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean DreamService::isInteractive()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isInteractive",
-			"()Z"
-		);
-	}
-	void DreamService::setFullscreen(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFullscreen",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean DreamService::isFullscreen()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFullscreen",
-			"()Z"
-		);
-	}
-	void DreamService::setScreenBright(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setScreenBright",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean DreamService::isScreenBright()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isScreenBright",
-			"()Z"
-		);
-	}
-	void DreamService::onDreamingStarted()
-	{
-		__thiz.callMethod<void>(
-			"onDreamingStarted",
-			"()V"
-		);
-	}
-	void DreamService::onDreamingStopped()
-	{
-		__thiz.callMethod<void>(
-			"onDreamingStopped",
-			"()V"
-		);
-	}
-	void DreamService::onWakeUp()
-	{
-		__thiz.callMethod<void>(
-			"onWakeUp",
-			"()V"
-		);
-	}
-	void DreamService::wakeUp()
-	{
-		__thiz.callMethod<void>(
-			"wakeUp",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::android::service::dreams

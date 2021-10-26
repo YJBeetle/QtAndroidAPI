@@ -38,7 +38,8 @@ namespace __jni_impl::android::util
 		__thiz = QAndroidJniObject(
 			"android.util.MutableDouble",
 			"(D)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

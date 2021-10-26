@@ -59,6 +59,7 @@ namespace __jni_impl::java::time::temporal
 		jstring toString();
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 		QAndroidJniObject range();
 		jlong checkValidValue(jlong arg0);
 		jint checkValidIntValue(jlong arg0);
@@ -352,6 +353,15 @@ namespace __jni_impl::java::time::temporal
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/temporal/ChronoField;",
 			arg0
+		);
+	}
+	QAndroidJniObject ChronoField::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.temporal.ChronoField",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/time/temporal/ChronoField;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject ChronoField::range()

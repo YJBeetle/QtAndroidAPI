@@ -32,7 +32,8 @@ namespace __jni_impl::javax::net::ssl
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.CertPathTrustManagerParameters",
 			"(Ljava/security/cert/CertPathParameters;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

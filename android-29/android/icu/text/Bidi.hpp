@@ -54,12 +54,17 @@ namespace __jni_impl::android::icu::text
 		void __constructor(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5);
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		void __constructor(jstring arg0, jint arg1);
+		void __constructor(const QString &arg0, jint arg1);
 		void __constructor(jint arg0, jint arg1);
 		void __constructor();
 		
 		// Methods
 		jint getLength();
 		jcharArray getText();
+		jboolean isRightToLeft();
+		jbyte getDirection();
+		void setContext(jstring arg0, jstring arg1);
+		void setContext(const QString &arg0, const QString &arg1);
 		void setInverse(jboolean arg0);
 		jboolean isInverse();
 		void setReorderingMode(jint arg0);
@@ -67,9 +72,11 @@ namespace __jni_impl::android::icu::text
 		void setReorderingOptions(jint arg0);
 		jint getReorderingOptions();
 		static jbyte getBaseDirection(jstring arg0);
+		static jbyte getBaseDirection(const QString &arg0);
 		void setPara(__jni_impl::__JniBaseClass arg0);
-		void setPara(jstring arg0, jbyte arg1, jbyteArray arg2);
 		void setPara(jcharArray arg0, jbyte arg1, jbyteArray arg2);
+		void setPara(jstring arg0, jbyte arg1, jbyteArray arg2);
+		void setPara(const QString &arg0, jbyte arg1, jbyteArray arg2);
 		void orderParagraphsLTR(jboolean arg0);
 		jboolean isOrderParagraphsLTR();
 		jstring getTextAsString();
@@ -109,9 +116,7 @@ namespace __jni_impl::android::icu::text
 		static void reorderVisually(jbyteArray arg0, jint arg1, jobjectArray arg2, jint arg3, jint arg4);
 		jstring writeReordered(jint arg0);
 		static jstring writeReverse(jstring arg0, jint arg1);
-		jboolean isRightToLeft();
-		jbyte getDirection();
-		void setContext(jstring arg0, jstring arg1);
+		static jstring writeReverse(const QString &arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -336,14 +341,16 @@ namespace __jni_impl::android::icu::text
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	void Bidi::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.Bidi",
 			"(Ljava/text/AttributedCharacterIterator;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Bidi::__constructor(jstring arg0, jint arg1)
 	{
@@ -351,7 +358,17 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.Bidi",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void Bidi::__constructor(const QString &arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.text.Bidi",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void Bidi::__constructor(jint arg0, jint arg1)
 	{
@@ -359,13 +376,15 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.Bidi",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void Bidi::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.Bidi",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -382,6 +401,38 @@ namespace __jni_impl::android::icu::text
 			"getText",
 			"()[C"
 		).object<jcharArray>();
+	}
+	jboolean Bidi::isRightToLeft()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isRightToLeft",
+			"()Z"
+		);
+	}
+	jbyte Bidi::getDirection()
+	{
+		return __thiz.callMethod<jbyte>(
+			"getDirection",
+			"()B"
+		);
+	}
+	void Bidi::setContext(jstring arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"setContext",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1
+		);
+	}
+	void Bidi::setContext(const QString &arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"setContext",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void Bidi::setInverse(jboolean arg0)
 	{
@@ -437,12 +488,31 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
+	jbyte Bidi::getBaseDirection(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jbyte>(
+			"android.icu.text.Bidi",
+			"getBaseDirection",
+			"(Ljava/lang/CharSequence;)B",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void Bidi::setPara(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPara",
 			"(Ljava/text/AttributedCharacterIterator;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void Bidi::setPara(jcharArray arg0, jbyte arg1, jbyteArray arg2)
+	{
+		__thiz.callMethod<void>(
+			"setPara",
+			"([CB[B)V",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 	void Bidi::setPara(jstring arg0, jbyte arg1, jbyteArray arg2)
@@ -455,12 +525,12 @@ namespace __jni_impl::android::icu::text
 			arg2
 		);
 	}
-	void Bidi::setPara(jcharArray arg0, jbyte arg1, jbyteArray arg2)
+	void Bidi::setPara(const QString &arg0, jbyte arg1, jbyteArray arg2)
 	{
 		__thiz.callMethod<void>(
 			"setPara",
-			"([CB[B)V",
-			arg0,
+			"(Ljava/lang/String;B[B)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -776,28 +846,15 @@ namespace __jni_impl::android::icu::text
 			arg1
 		).object<jstring>();
 	}
-	jboolean Bidi::isRightToLeft()
+	jstring Bidi::writeReverse(const QString &arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isRightToLeft",
-			"()Z"
-		);
-	}
-	jbyte Bidi::getDirection()
-	{
-		return __thiz.callMethod<jbyte>(
-			"getDirection",
-			"()B"
-		);
-	}
-	void Bidi::setContext(jstring arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"setContext",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Bidi",
+			"writeReverse",
+			"(Ljava/lang/String;I)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
-		);
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::text
 

@@ -50,7 +50,8 @@ namespace __jni_impl::java::security::spec
 			"java.security.spec.ECPoint",
 			"(Ljava/math/BigInteger;Ljava/math/BigInteger;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

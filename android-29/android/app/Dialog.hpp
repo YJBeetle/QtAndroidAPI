@@ -89,6 +89,8 @@ namespace __jni_impl::android::app
 		QAndroidJniObject getContext();
 		void create();
 		void cancel();
+		void setOnKeyListener(__jni_impl::__JniBaseClass arg0);
+		void show();
 		void setOwnerActivity(__jni_impl::android::app::Activity arg0);
 		QAndroidJniObject getOwnerActivity();
 		jboolean isShowing();
@@ -100,6 +102,7 @@ namespace __jni_impl::android::app
 		void setOnDismissListener(__jni_impl::__JniBaseClass arg0);
 		void setOnShowListener(__jni_impl::__JniBaseClass arg0);
 		void setDismissMessage(__jni_impl::android::os::Message arg0);
+		void setOnCancelListener(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getWindow();
 		QAndroidJniObject getCurrentFocus();
 		void onRestoreInstanceState(__jni_impl::android::os::Bundle arg0);
@@ -107,9 +110,9 @@ namespace __jni_impl::android::app
 		QAndroidJniObject findViewById(jint arg0);
 		QAndroidJniObject requireViewById(jint arg0);
 		QAndroidJniObject getActionBar();
+		void setContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
 		void setContentView(jint arg0);
 		void setContentView(__jni_impl::android::view::View arg0);
-		void setContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
 		void addContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
 		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
 		jboolean onKeyLongPress(jint arg0, __jni_impl::android::view::KeyEvent arg1);
@@ -161,16 +164,14 @@ namespace __jni_impl::android::app
 		void setFeatureDrawableAlpha(jint arg0, jint arg1);
 		QAndroidJniObject getLayoutInflater();
 		void setTitle(jstring arg0);
+		void setTitle(const QString &arg0);
 		void setTitle(jint arg0);
 		void setVolumeControlStream(jint arg0);
 		jint getVolumeControlStream();
-		QAndroidJniObject onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0, jint arg1);
 		QAndroidJniObject onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0, jint arg1);
 		void onActionModeStarted(__jni_impl::android::view::ActionMode arg0);
 		void onActionModeFinished(__jni_impl::android::view::ActionMode arg0);
-		void show();
-		void setOnKeyListener(__jni_impl::__JniBaseClass arg0);
-		void setOnCancelListener(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -203,14 +204,16 @@ namespace __jni_impl::android::app
 			"android.app.Dialog",
 			"(Landroid/content/Context;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void Dialog::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Dialog",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -232,6 +235,21 @@ namespace __jni_impl::android::app
 	{
 		__thiz.callMethod<void>(
 			"cancel",
+			"()V"
+		);
+	}
+	void Dialog::setOnKeyListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnKeyListener",
+			"(Landroid/content/DialogInterface$OnKeyListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Dialog::show()
+	{
+		__thiz.callMethod<void>(
+			"show",
 			"()V"
 		);
 	}
@@ -319,6 +337,14 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object()
 		);
 	}
+	void Dialog::setOnCancelListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnCancelListener",
+			"(Landroid/content/DialogInterface$OnCancelListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject Dialog::getWindow()
 	{
 		return __thiz.callObjectMethod(
@@ -371,6 +397,15 @@ namespace __jni_impl::android::app
 			"()Landroid/app/ActionBar;"
 		);
 	}
+	void Dialog::setContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
+	{
+		__thiz.callMethod<void>(
+			"setContentView",
+			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
 	void Dialog::setContentView(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -385,15 +420,6 @@ namespace __jni_impl::android::app
 			"setContentView",
 			"(Landroid/view/View;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	void Dialog::setContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
-	{
-		__thiz.callMethod<void>(
-			"setContentView",
-			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
 		);
 	}
 	void Dialog::addContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
@@ -813,6 +839,14 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
+	void Dialog::setTitle(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTitle",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void Dialog::setTitle(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -836,6 +870,14 @@ namespace __jni_impl::android::app
 			"()I"
 		);
 	}
+	QAndroidJniObject Dialog::onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onWindowStartingActionMode",
+			"(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject Dialog::onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -843,14 +885,6 @@ namespace __jni_impl::android::app
 			"(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject Dialog::onWindowStartingActionMode(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onWindowStartingActionMode",
-			"(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;",
-			arg0.__jniObject().object()
 		);
 	}
 	void Dialog::onActionModeStarted(__jni_impl::android::view::ActionMode arg0)
@@ -866,29 +900,6 @@ namespace __jni_impl::android::app
 		__thiz.callMethod<void>(
 			"onActionModeFinished",
 			"(Landroid/view/ActionMode;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Dialog::show()
-	{
-		__thiz.callMethod<void>(
-			"show",
-			"()V"
-		);
-	}
-	void Dialog::setOnKeyListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnKeyListener",
-			"(Landroid/content/DialogInterface$OnKeyListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Dialog::setOnCancelListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnCancelListener",
-			"(Landroid/content/DialogInterface$OnCancelListener;)V",
 			arg0.__jniObject().object()
 		);
 	}

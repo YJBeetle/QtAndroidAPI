@@ -33,19 +33,20 @@ namespace __jni_impl::android::media
 		jint load(__jni_impl::android::content::res::AssetFileDescriptor arg0, jint arg1);
 		jint load(__jni_impl::android::content::Context arg0, jint arg1, jint arg2);
 		jint load(jstring arg0, jint arg1);
+		jint load(const QString &arg0, jint arg1);
 		void setPriority(jint arg0, jint arg1);
 		void resume(jint arg0);
 		void stop(jint arg0);
 		void release();
 		jboolean unload(jint arg0);
+		void setVolume(jint arg0, jfloat arg1, jfloat arg2);
+		jint play(jint arg0, jfloat arg1, jfloat arg2, jint arg3, jint arg4, jfloat arg5);
+		void pause(jint arg0);
 		void autoPause();
 		void autoResume();
 		void setLoop(jint arg0, jint arg1);
 		void setRate(jint arg0, jfloat arg1);
 		void setOnLoadCompleteListener(__jni_impl::__JniBaseClass arg0);
-		void pause(jint arg0);
-		void setVolume(jint arg0, jfloat arg1, jfloat arg2);
-		jint play(jint arg0, jfloat arg1, jfloat arg2, jint arg3, jint arg4, jfloat arg5);
 	};
 } // namespace __jni_impl::android::media
 
@@ -65,7 +66,8 @@ namespace __jni_impl::android::media
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods
@@ -105,6 +107,15 @@ namespace __jni_impl::android::media
 			"load",
 			"(Ljava/lang/String;I)I",
 			arg0,
+			arg1
+		);
+	}
+	jint SoundPool::load(const QString &arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"load",
+			"(Ljava/lang/String;I)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -148,6 +159,37 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
+	void SoundPool::setVolume(jint arg0, jfloat arg1, jfloat arg2)
+	{
+		__thiz.callMethod<void>(
+			"setVolume",
+			"(IFF)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	jint SoundPool::play(jint arg0, jfloat arg1, jfloat arg2, jint arg3, jint arg4, jfloat arg5)
+	{
+		return __thiz.callMethod<jint>(
+			"play",
+			"(IFFIIF)I",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5
+		);
+	}
+	void SoundPool::pause(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"pause",
+			"(I)V",
+			arg0
+		);
+	}
 	void SoundPool::autoPause()
 	{
 		__thiz.callMethod<void>(
@@ -186,37 +228,6 @@ namespace __jni_impl::android::media
 			"setOnLoadCompleteListener",
 			"(Landroid/media/SoundPool$OnLoadCompleteListener;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	void SoundPool::pause(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"pause",
-			"(I)V",
-			arg0
-		);
-	}
-	void SoundPool::setVolume(jint arg0, jfloat arg1, jfloat arg2)
-	{
-		__thiz.callMethod<void>(
-			"setVolume",
-			"(IFF)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jint SoundPool::play(jint arg0, jfloat arg1, jfloat arg2, jint arg3, jint arg4, jfloat arg5)
-	{
-		return __thiz.callMethod<jint>(
-			"play",
-			"(IFFIIF)I",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5
 		);
 	}
 } // namespace __jni_impl::android::media

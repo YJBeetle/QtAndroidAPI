@@ -26,6 +26,7 @@ namespace __jni_impl::android::provider
 		
 		// Methods
 		static void sendString(__jni_impl::android::content::Context arg0, jstring arg1);
+		static void sendString(__jni_impl::android::content::Context arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -72,7 +73,8 @@ namespace __jni_impl::android::provider
 	{
 		__thiz = QAndroidJniObject(
 			"android.provider.Browser",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -84,6 +86,16 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/Context;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	void Browser::sendString(__jni_impl::android::content::Context arg0, const QString &arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.provider.Browser",
+			"sendString",
+			"(Landroid/content/Context;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::provider

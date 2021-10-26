@@ -33,11 +33,11 @@ namespace __jni_impl::android::view::textclassifier
 		jstring toString();
 		jstring getId();
 		QAndroidJniObject getLocale(jint arg0);
-		jfloat getConfidenceScore(__jni_impl::android::icu::util::ULocale arg0);
+		jint getLocaleHypothesisCount();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getExtras();
-		jint getLocaleHypothesisCount();
+		jfloat getConfidenceScore(__jni_impl::android::icu::util::ULocale arg0);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -88,12 +88,11 @@ namespace __jni_impl::android::view::textclassifier
 			arg0
 		);
 	}
-	jfloat TextLanguage::getConfidenceScore(__jni_impl::android::icu::util::ULocale arg0)
+	jint TextLanguage::getLocaleHypothesisCount()
 	{
-		return __thiz.callMethod<jfloat>(
-			"getConfidenceScore",
-			"(Landroid/icu/util/ULocale;)F",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"getLocaleHypothesisCount",
+			"()I"
 		);
 	}
 	jint TextLanguage::describeContents()
@@ -119,11 +118,12 @@ namespace __jni_impl::android::view::textclassifier
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint TextLanguage::getLocaleHypothesisCount()
+	jfloat TextLanguage::getConfidenceScore(__jni_impl::android::icu::util::ULocale arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getLocaleHypothesisCount",
-			"()I"
+		return __thiz.callMethod<jfloat>(
+			"getConfidenceScore",
+			"(Landroid/icu/util/ULocale;)F",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::view::textclassifier

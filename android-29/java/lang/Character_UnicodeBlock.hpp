@@ -320,6 +320,7 @@ namespace __jni_impl::java::lang
 		
 		// Methods
 		static QAndroidJniObject forName(jstring arg0);
+		static QAndroidJniObject forName(const QString &arg0);
 		static QAndroidJniObject of(jint arg0);
 		static QAndroidJniObject of(jchar arg0);
 	};
@@ -2754,6 +2755,15 @@ namespace __jni_impl::java::lang
 			"forName",
 			"(Ljava/lang/String;)Ljava/lang/Character$UnicodeBlock;",
 			arg0
+		);
+	}
+	QAndroidJniObject Character_UnicodeBlock::forName(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.lang.Character$UnicodeBlock",
+			"forName",
+			"(Ljava/lang/String;)Ljava/lang/Character$UnicodeBlock;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Character_UnicodeBlock::of(jint arg0)

@@ -62,7 +62,8 @@ namespace __jni_impl::android
 	{
 		__thiz = QAndroidJniObject(
 			"android.R$integer",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

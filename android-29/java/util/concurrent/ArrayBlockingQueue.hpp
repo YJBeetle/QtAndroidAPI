@@ -76,14 +76,16 @@ namespace __jni_impl::java::util::concurrent
 			"(IZLjava/util/Collection;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ArrayBlockingQueue::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ArrayBlockingQueue",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void ArrayBlockingQueue::__constructor(jint arg0, jboolean arg1)
 	{
@@ -91,7 +93,8 @@ namespace __jni_impl::java::util::concurrent
 			"java.util.concurrent.ArrayBlockingQueue",
 			"(IZ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

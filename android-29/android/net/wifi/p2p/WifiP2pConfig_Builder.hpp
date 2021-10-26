@@ -28,7 +28,9 @@ namespace __jni_impl::android::net::wifi::p2p
 		QAndroidJniObject build();
 		QAndroidJniObject setDeviceAddress(__jni_impl::android::net::MacAddress arg0);
 		QAndroidJniObject setNetworkName(jstring arg0);
+		QAndroidJniObject setNetworkName(const QString &arg0);
 		QAndroidJniObject setPassphrase(jstring arg0);
+		QAndroidJniObject setPassphrase(const QString &arg0);
 		QAndroidJniObject setGroupOperatingBand(jint arg0);
 		QAndroidJniObject setGroupOperatingFrequency(jint arg0);
 		QAndroidJniObject enablePersistentMode(jboolean arg0);
@@ -47,7 +49,8 @@ namespace __jni_impl::android::net::wifi::p2p
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.p2p.WifiP2pConfig$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -74,12 +77,28 @@ namespace __jni_impl::android::net::wifi::p2p
 			arg0
 		);
 	}
+	QAndroidJniObject WifiP2pConfig_Builder::setNetworkName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setNetworkName",
+			"(Ljava/lang/String;)Landroid/net/wifi/p2p/WifiP2pConfig$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject WifiP2pConfig_Builder::setPassphrase(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setPassphrase",
 			"(Ljava/lang/String;)Landroid/net/wifi/p2p/WifiP2pConfig$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject WifiP2pConfig_Builder::setPassphrase(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setPassphrase",
+			"(Ljava/lang/String;)Landroid/net/wifi/p2p/WifiP2pConfig$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject WifiP2pConfig_Builder::setGroupOperatingBand(jint arg0)

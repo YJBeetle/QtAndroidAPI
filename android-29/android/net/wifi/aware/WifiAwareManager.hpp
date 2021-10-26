@@ -38,8 +38,8 @@ namespace __jni_impl::android::net::wifi::aware
 		// Methods
 		void attach(__jni_impl::android::net::wifi::aware::AttachCallback arg0, __jni_impl::android::os::Handler arg1);
 		void attach(__jni_impl::android::net::wifi::aware::AttachCallback arg0, __jni_impl::android::net::wifi::aware::IdentityChangedListener arg1, __jni_impl::android::os::Handler arg2);
-		jboolean isAvailable();
 		QAndroidJniObject getCharacteristics();
+		jboolean isAvailable();
 	};
 } // namespace __jni_impl::android::net::wifi::aware
 
@@ -102,18 +102,18 @@ namespace __jni_impl::android::net::wifi::aware
 			arg2.__jniObject().object()
 		);
 	}
-	jboolean WifiAwareManager::isAvailable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAvailable",
-			"()Z"
-		);
-	}
 	QAndroidJniObject WifiAwareManager::getCharacteristics()
 	{
 		return __thiz.callObjectMethod(
 			"getCharacteristics",
 			"()Landroid/net/wifi/aware/Characteristics;"
+		);
+	}
+	jboolean WifiAwareManager::isAvailable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAvailable",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::net::wifi::aware

@@ -45,7 +45,8 @@ namespace __jni_impl::android::app::slice
 			"android.app.slice.SliceMetrics",
 			"(Landroid/content/Context;Landroid/net/Uri;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

@@ -18,6 +18,7 @@ namespace __jni_impl::java::io
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor();
 		
 		// Methods
@@ -35,13 +36,23 @@ namespace __jni_impl::java::io
 		__thiz = QAndroidJniObject(
 			"java.io.StreamCorruptedException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void StreamCorruptedException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.StreamCorruptedException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void StreamCorruptedException::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.StreamCorruptedException",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

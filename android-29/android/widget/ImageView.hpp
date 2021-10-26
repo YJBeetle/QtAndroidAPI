@@ -18,6 +18,10 @@ namespace __jni_impl::android::graphics
 {
 	class PorterDuff_Mode;
 }
+namespace __jni_impl::android::graphics
+{
+	class Canvas;
+}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
@@ -50,10 +54,6 @@ namespace __jni_impl::android::graphics
 {
 	class Matrix;
 }
-namespace __jni_impl::android::graphics
-{
-	class Canvas;
-}
 
 namespace __jni_impl::android::widget
 {
@@ -74,12 +74,23 @@ namespace __jni_impl::android::widget
 		void setColorFilter(jint arg0);
 		void setColorFilter(jint arg0, __jni_impl::android::graphics::PorterDuff_Mode arg1);
 		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
-		void clearColorFilter();
-		QAndroidJniObject getDrawable();
+		void setAlpha(jint arg0);
+		jstring getAccessibilityClassName();
+		void jumpDrawablesToCurrentState();
+		jintArray onCreateDrawableState(jint arg0);
+		void setVisibility(jint arg0);
+		void onVisibilityAggregated(jboolean arg0);
+		jboolean hasOverlappingRendering();
+		void onRtlPropertiesChanged(jint arg0);
+		void invalidateDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
+		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
+		void setSelected(jboolean arg0);
+		jint getBaseline();
 		void setMaxHeight(jint arg0);
 		jint getMaxHeight();
 		void setMaxWidth(jint arg0);
 		jint getMaxWidth();
+		QAndroidJniObject getDrawable();
 		jboolean getAdjustViewBounds();
 		void setAdjustViewBounds(jboolean arg0);
 		void setImageResource(jint arg0);
@@ -107,24 +118,14 @@ namespace __jni_impl::android::widget
 		jboolean getBaselineAlignBottom();
 		jint getImageAlpha();
 		void setImageAlpha(jint arg0);
-		jstring getAccessibilityClassName();
-		void jumpDrawablesToCurrentState();
-		jintArray onCreateDrawableState(jint arg0);
-		void setVisibility(jint arg0);
-		void onVisibilityAggregated(jboolean arg0);
-		jboolean hasOverlappingRendering();
-		void onRtlPropertiesChanged(jint arg0);
-		void invalidateDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
-		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
-		void setSelected(jboolean arg0);
-		jint getBaseline();
-		void setAlpha(jint arg0);
+		void clearColorFilter();
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
 #include "../graphics/ColorFilter.hpp"
 #include "../graphics/PorterDuff_Mode.hpp"
+#include "../graphics/Canvas.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../net/Uri.hpp"
 #include "../graphics/drawable/Icon.hpp"
@@ -133,7 +134,6 @@ namespace __jni_impl::android::widget
 #include "../graphics/Bitmap.hpp"
 #include "ImageView_ScaleType.hpp"
 #include "../graphics/Matrix.hpp"
-#include "../graphics/Canvas.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -148,7 +148,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void ImageView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -157,7 +158,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void ImageView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -165,14 +167,16 @@ namespace __jni_impl::android::widget
 			"android.widget.ImageView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ImageView::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ImageView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -215,18 +219,97 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	void ImageView::clearColorFilter()
+	void ImageView::setAlpha(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"clearColorFilter",
+			"setAlpha",
+			"(I)V",
+			arg0
+		);
+	}
+	jstring ImageView::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	void ImageView::jumpDrawablesToCurrentState()
+	{
+		__thiz.callMethod<void>(
+			"jumpDrawablesToCurrentState",
 			"()V"
 		);
 	}
-	QAndroidJniObject ImageView::getDrawable()
+	jintArray ImageView::onCreateDrawableState(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getDrawable",
-			"()Landroid/graphics/drawable/Drawable;"
+			"onCreateDrawableState",
+			"(I)[I",
+			arg0
+		).object<jintArray>();
+	}
+	void ImageView::setVisibility(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setVisibility",
+			"(I)V",
+			arg0
+		);
+	}
+	void ImageView::onVisibilityAggregated(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"onVisibilityAggregated",
+			"(Z)V",
+			arg0
+		);
+	}
+	jboolean ImageView::hasOverlappingRendering()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasOverlappingRendering",
+			"()Z"
+		);
+	}
+	void ImageView::onRtlPropertiesChanged(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"onRtlPropertiesChanged",
+			"(I)V",
+			arg0
+		);
+	}
+	void ImageView::invalidateDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		__thiz.callMethod<void>(
+			"invalidateDrawable",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ImageView::drawableHotspotChanged(jfloat arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"drawableHotspotChanged",
+			"(FF)V",
+			arg0,
+			arg1
+		);
+	}
+	void ImageView::setSelected(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSelected",
+			"(Z)V",
+			arg0
+		);
+	}
+	jint ImageView::getBaseline()
+	{
+		return __thiz.callMethod<jint>(
+			"getBaseline",
+			"()I"
 		);
 	}
 	void ImageView::setMaxHeight(jint arg0)
@@ -257,6 +340,13 @@ namespace __jni_impl::android::widget
 		return __thiz.callMethod<jint>(
 			"getMaxWidth",
 			"()I"
+		);
+	}
+	QAndroidJniObject ImageView::getDrawable()
+	{
+		return __thiz.callObjectMethod(
+			"getDrawable",
+			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	jboolean ImageView::getAdjustViewBounds()
@@ -467,97 +557,11 @@ namespace __jni_impl::android::widget
 			arg0
 		);
 	}
-	jstring ImageView::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	void ImageView::jumpDrawablesToCurrentState()
+	void ImageView::clearColorFilter()
 	{
 		__thiz.callMethod<void>(
-			"jumpDrawablesToCurrentState",
+			"clearColorFilter",
 			"()V"
-		);
-	}
-	jintArray ImageView::onCreateDrawableState(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onCreateDrawableState",
-			"(I)[I",
-			arg0
-		).object<jintArray>();
-	}
-	void ImageView::setVisibility(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setVisibility",
-			"(I)V",
-			arg0
-		);
-	}
-	void ImageView::onVisibilityAggregated(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"onVisibilityAggregated",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean ImageView::hasOverlappingRendering()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasOverlappingRendering",
-			"()Z"
-		);
-	}
-	void ImageView::onRtlPropertiesChanged(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"onRtlPropertiesChanged",
-			"(I)V",
-			arg0
-		);
-	}
-	void ImageView::invalidateDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		__thiz.callMethod<void>(
-			"invalidateDrawable",
-			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ImageView::drawableHotspotChanged(jfloat arg0, jfloat arg1)
-	{
-		__thiz.callMethod<void>(
-			"drawableHotspotChanged",
-			"(FF)V",
-			arg0,
-			arg1
-		);
-	}
-	void ImageView::setSelected(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSelected",
-			"(Z)V",
-			arg0
-		);
-	}
-	jint ImageView::getBaseline()
-	{
-		return __thiz.callMethod<jint>(
-			"getBaseline",
-			"()I"
-		);
-	}
-	void ImageView::setAlpha(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAlpha",
-			"(I)V",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::widget

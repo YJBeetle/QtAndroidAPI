@@ -13,6 +13,10 @@ namespace __jni_impl::android::util
 {
 	class TypedValue;
 }
+namespace __jni_impl::android::graphics
+{
+	class Typeface;
+}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
@@ -20,10 +24,6 @@ namespace __jni_impl::android::graphics::drawable
 namespace __jni_impl::android::content::res
 {
 	class ColorStateList;
-}
-namespace __jni_impl::android::graphics
-{
-	class Typeface;
 }
 
 namespace __jni_impl::android::content::res
@@ -50,34 +50,35 @@ namespace __jni_impl::android::content::res
 		jboolean hasValue(jint arg0);
 		jstring getString(jint arg0);
 		jstring getText(jint arg0);
-		jint getChangingConfigurations();
-		jint getColor(jint arg0, jint arg1);
-		QAndroidJniObject getDrawable(jint arg0);
-		QAndroidJniObject getColorStateList(jint arg0);
-		jint getIndexCount();
-		jstring getNonResourceString(jint arg0);
-		jint getLayoutDimension(jint arg0, jstring arg1);
-		jint getLayoutDimension(jint arg0, jint arg1);
-		jint getResourceId(jint arg0, jint arg1);
-		jint getSourceResourceId(jint arg0, jint arg1);
-		jboolean hasValueOrEmpty(jint arg0);
-		QAndroidJniObject peekValue(jint arg0);
-		jstring getPositionDescription();
-		void recycle();
 		QAndroidJniObject getFont(jint arg0);
 		jarray getTextArray(jint arg0);
 		jfloat getDimension(jint arg0, jfloat arg1);
 		jint getDimensionPixelOffset(jint arg0, jint arg1);
 		jint getDimensionPixelSize(jint arg0, jint arg1);
 		jfloat getFraction(jint arg0, jint arg1, jint arg2, jfloat arg3);
+		jstring getPositionDescription();
+		void recycle();
+		jint getColor(jint arg0, jint arg1);
+		QAndroidJniObject getDrawable(jint arg0);
+		QAndroidJniObject getColorStateList(jint arg0);
+		jint getChangingConfigurations();
+		jint getIndexCount();
+		jstring getNonResourceString(jint arg0);
+		jint getLayoutDimension(jint arg0, jstring arg1);
+		jint getLayoutDimension(jint arg0, const QString &arg1);
+		jint getLayoutDimension(jint arg0, jint arg1);
+		jint getResourceId(jint arg0, jint arg1);
+		jint getSourceResourceId(jint arg0, jint arg1);
+		jboolean hasValueOrEmpty(jint arg0);
+		QAndroidJniObject peekValue(jint arg0);
 	};
 } // namespace __jni_impl::android::content::res
 
 #include "Resources.hpp"
 #include "../../util/TypedValue.hpp"
+#include "../../graphics/Typeface.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
 #include "ColorStateList.hpp"
-#include "../../graphics/Typeface.hpp"
 
 namespace __jni_impl::android::content::res
 {
@@ -198,119 +199,6 @@ namespace __jni_impl::android::content::res
 			arg0
 		).object<jstring>();
 	}
-	jint TypedArray::getChangingConfigurations()
-	{
-		return __thiz.callMethod<jint>(
-			"getChangingConfigurations",
-			"()I"
-		);
-	}
-	jint TypedArray::getColor(jint arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"getColor",
-			"(II)I",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject TypedArray::getDrawable(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDrawable",
-			"(I)Landroid/graphics/drawable/Drawable;",
-			arg0
-		);
-	}
-	QAndroidJniObject TypedArray::getColorStateList(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getColorStateList",
-			"(I)Landroid/content/res/ColorStateList;",
-			arg0
-		);
-	}
-	jint TypedArray::getIndexCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getIndexCount",
-			"()I"
-		);
-	}
-	jstring TypedArray::getNonResourceString(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getNonResourceString",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jint TypedArray::getLayoutDimension(jint arg0, jstring arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"getLayoutDimension",
-			"(ILjava/lang/String;)I",
-			arg0,
-			arg1
-		);
-	}
-	jint TypedArray::getLayoutDimension(jint arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"getLayoutDimension",
-			"(II)I",
-			arg0,
-			arg1
-		);
-	}
-	jint TypedArray::getResourceId(jint arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"getResourceId",
-			"(II)I",
-			arg0,
-			arg1
-		);
-	}
-	jint TypedArray::getSourceResourceId(jint arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"getSourceResourceId",
-			"(II)I",
-			arg0,
-			arg1
-		);
-	}
-	jboolean TypedArray::hasValueOrEmpty(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasValueOrEmpty",
-			"(I)Z",
-			arg0
-		);
-	}
-	QAndroidJniObject TypedArray::peekValue(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"peekValue",
-			"(I)Landroid/util/TypedValue;",
-			arg0
-		);
-	}
-	jstring TypedArray::getPositionDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getPositionDescription",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void TypedArray::recycle()
-	{
-		__thiz.callMethod<void>(
-			"recycle",
-			"()V"
-		);
-	}
 	QAndroidJniObject TypedArray::getFont(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -363,6 +251,128 @@ namespace __jni_impl::android::content::res
 			arg1,
 			arg2,
 			arg3
+		);
+	}
+	jstring TypedArray::getPositionDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getPositionDescription",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void TypedArray::recycle()
+	{
+		__thiz.callMethod<void>(
+			"recycle",
+			"()V"
+		);
+	}
+	jint TypedArray::getColor(jint arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getColor",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject TypedArray::getDrawable(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDrawable",
+			"(I)Landroid/graphics/drawable/Drawable;",
+			arg0
+		);
+	}
+	QAndroidJniObject TypedArray::getColorStateList(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getColorStateList",
+			"(I)Landroid/content/res/ColorStateList;",
+			arg0
+		);
+	}
+	jint TypedArray::getChangingConfigurations()
+	{
+		return __thiz.callMethod<jint>(
+			"getChangingConfigurations",
+			"()I"
+		);
+	}
+	jint TypedArray::getIndexCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getIndexCount",
+			"()I"
+		);
+	}
+	jstring TypedArray::getNonResourceString(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getNonResourceString",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jint TypedArray::getLayoutDimension(jint arg0, jstring arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getLayoutDimension",
+			"(ILjava/lang/String;)I",
+			arg0,
+			arg1
+		);
+	}
+	jint TypedArray::getLayoutDimension(jint arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getLayoutDimension",
+			"(ILjava/lang/String;)I",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	jint TypedArray::getLayoutDimension(jint arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getLayoutDimension",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
+	jint TypedArray::getResourceId(jint arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getResourceId",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
+	jint TypedArray::getSourceResourceId(jint arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getSourceResourceId",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
+	jboolean TypedArray::hasValueOrEmpty(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasValueOrEmpty",
+			"(I)Z",
+			arg0
+		);
+	}
+	QAndroidJniObject TypedArray::peekValue(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"peekValue",
+			"(I)Landroid/util/TypedValue;",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::content::res

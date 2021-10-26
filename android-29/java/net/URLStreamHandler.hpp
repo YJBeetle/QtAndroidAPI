@@ -50,7 +50,8 @@ namespace __jni_impl::java::net
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.URLStreamHandler",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -50,11 +50,11 @@ namespace __jni_impl::android::preference
 		// Methods
 		jstring getBreadCrumbTitle(__jni_impl::android::content::res::Resources arg0);
 		jstring getBreadCrumbShortTitle(__jni_impl::android::content::res::Resources arg0);
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jstring getTitle(__jni_impl::android::content::res::Resources arg0);
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		jstring getSummary(__jni_impl::android::content::res::Resources arg0);
+		jstring getTitle(__jni_impl::android::content::res::Resources arg0);
 	};
 } // namespace __jni_impl::android::preference
 
@@ -172,7 +172,8 @@ namespace __jni_impl::android::preference
 	{
 		__thiz = QAndroidJniObject(
 			"android.preference.PreferenceActivity$Header",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -192,6 +193,14 @@ namespace __jni_impl::android::preference
 			arg0.__jniObject().object()
 		).object<jstring>();
 	}
+	void PreferenceActivity_Header::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	jint PreferenceActivity_Header::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -208,26 +217,18 @@ namespace __jni_impl::android::preference
 			arg1
 		);
 	}
-	jstring PreferenceActivity_Header::getTitle(__jni_impl::android::content::res::Resources arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"(Landroid/content/res/Resources;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
-		).object<jstring>();
-	}
-	void PreferenceActivity_Header::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	jstring PreferenceActivity_Header::getSummary(__jni_impl::android::content::res::Resources arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getSummary",
+			"(Landroid/content/res/Resources;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring PreferenceActivity_Header::getTitle(__jni_impl::android::content::res::Resources arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
 			"(Landroid/content/res/Resources;)Ljava/lang/CharSequence;",
 			arg0.__jniObject().object()
 		).object<jstring>();

@@ -31,13 +31,14 @@ namespace __jni_impl::android::app
 		void __constructor(__jni_impl::android::net::Uri arg0);
 		
 		// Methods
-		QAndroidJniObject setTitle(jstring arg0);
-		QAndroidJniObject setDescription(jstring arg0);
 		QAndroidJniObject setDestinationUri(__jni_impl::android::net::Uri arg0);
 		QAndroidJniObject setDestinationInExternalFilesDir(__jni_impl::android::content::Context arg0, jstring arg1, jstring arg2);
+		QAndroidJniObject setDestinationInExternalFilesDir(__jni_impl::android::content::Context arg0, const QString &arg1, const QString &arg2);
 		QAndroidJniObject setDestinationInExternalPublicDir(jstring arg0, jstring arg1);
+		QAndroidJniObject setDestinationInExternalPublicDir(const QString &arg0, const QString &arg1);
 		void allowScanningByMediaScanner();
 		QAndroidJniObject addRequestHeader(jstring arg0, jstring arg1);
+		QAndroidJniObject addRequestHeader(const QString &arg0, const QString &arg1);
 		QAndroidJniObject setShowRunningNotification(jboolean arg0);
 		QAndroidJniObject setNotificationVisibility(jint arg0);
 		QAndroidJniObject setAllowedNetworkTypes(jint arg0);
@@ -47,6 +48,11 @@ namespace __jni_impl::android::app
 		QAndroidJniObject setRequiresDeviceIdle(jboolean arg0);
 		QAndroidJniObject setVisibleInDownloadsUi(jboolean arg0);
 		QAndroidJniObject setMimeType(jstring arg0);
+		QAndroidJniObject setMimeType(const QString &arg0);
+		QAndroidJniObject setDescription(jstring arg0);
+		QAndroidJniObject setDescription(const QString &arg0);
+		QAndroidJniObject setTitle(jstring arg0);
+		QAndroidJniObject setTitle(const QString &arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -105,26 +111,11 @@ namespace __jni_impl::android::app
 		__thiz = QAndroidJniObject(
 			"android.app.DownloadManager$Request",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
-	QAndroidJniObject DownloadManager_Request::setTitle(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)Landroid/app/DownloadManager$Request;",
-			arg0
-		);
-	}
-	QAndroidJniObject DownloadManager_Request::setDescription(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDescription",
-			"(Ljava/lang/CharSequence;)Landroid/app/DownloadManager$Request;",
-			arg0
-		);
-	}
 	QAndroidJniObject DownloadManager_Request::setDestinationUri(__jni_impl::android::net::Uri arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -143,6 +134,16 @@ namespace __jni_impl::android::app
 			arg2
 		);
 	}
+	QAndroidJniObject DownloadManager_Request::setDestinationInExternalFilesDir(__jni_impl::android::content::Context arg0, const QString &arg1, const QString &arg2)
+	{
+		return __thiz.callObjectMethod(
+			"setDestinationInExternalFilesDir",
+			"(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Landroid/app/DownloadManager$Request;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
+	}
 	QAndroidJniObject DownloadManager_Request::setDestinationInExternalPublicDir(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -150,6 +151,15 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/app/DownloadManager$Request;",
 			arg0,
 			arg1
+		);
+	}
+	QAndroidJniObject DownloadManager_Request::setDestinationInExternalPublicDir(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"setDestinationInExternalPublicDir",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/app/DownloadManager$Request;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void DownloadManager_Request::allowScanningByMediaScanner()
@@ -166,6 +176,15 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/app/DownloadManager$Request;",
 			arg0,
 			arg1
+		);
+	}
+	QAndroidJniObject DownloadManager_Request::addRequestHeader(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"addRequestHeader",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/app/DownloadManager$Request;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject DownloadManager_Request::setShowRunningNotification(jboolean arg0)
@@ -238,6 +257,46 @@ namespace __jni_impl::android::app
 			"setMimeType",
 			"(Ljava/lang/String;)Landroid/app/DownloadManager$Request;",
 			arg0
+		);
+	}
+	QAndroidJniObject DownloadManager_Request::setMimeType(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setMimeType",
+			"(Ljava/lang/String;)Landroid/app/DownloadManager$Request;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject DownloadManager_Request::setDescription(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setDescription",
+			"(Ljava/lang/CharSequence;)Landroid/app/DownloadManager$Request;",
+			arg0
+		);
+	}
+	QAndroidJniObject DownloadManager_Request::setDescription(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setDescription",
+			"(Ljava/lang/CharSequence;)Landroid/app/DownloadManager$Request;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject DownloadManager_Request::setTitle(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setTitle",
+			"(Ljava/lang/CharSequence;)Landroid/app/DownloadManager$Request;",
+			arg0
+		);
+	}
+	QAndroidJniObject DownloadManager_Request::setTitle(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setTitle",
+			"(Ljava/lang/CharSequence;)Landroid/app/DownloadManager$Request;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::app

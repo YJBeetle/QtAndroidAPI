@@ -28,6 +28,7 @@ namespace __jni_impl::android::drm
 		jstring getMessage();
 		jint getType();
 		jobject getAttribute(jstring arg0);
+		jobject getAttribute(const QString &arg0);
 		jint getUniqueId();
 	};
 } // namespace __jni_impl::android::drm
@@ -97,6 +98,14 @@ namespace __jni_impl::android::drm
 			"getAttribute",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
+		).object<jobject>();
+	}
+	jobject DrmEvent::getAttribute(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAttribute",
+			"(Ljava/lang/String;)Ljava/lang/Object;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
 	jint DrmEvent::getUniqueId()

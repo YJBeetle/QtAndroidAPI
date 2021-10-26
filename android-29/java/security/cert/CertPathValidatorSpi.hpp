@@ -37,7 +37,8 @@ namespace __jni_impl::java::security::cert
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.CertPathValidatorSpi",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

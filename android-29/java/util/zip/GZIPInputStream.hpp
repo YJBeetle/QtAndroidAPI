@@ -55,7 +55,8 @@ namespace __jni_impl::java::util::zip
 		__thiz = QAndroidJniObject(
 			"java.util.zip.GZIPInputStream",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void GZIPInputStream::__constructor(__jni_impl::java::io::InputStream arg0, jint arg1)
 	{
@@ -63,7 +64,8 @@ namespace __jni_impl::java::util::zip
 			"java.util.zip.GZIPInputStream",
 			"(Ljava/io/InputStream;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

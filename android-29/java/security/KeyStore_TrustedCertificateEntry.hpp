@@ -40,7 +40,8 @@ namespace __jni_impl::java::security
 		__thiz = QAndroidJniObject(
 			"java.security.KeyStore$TrustedCertificateEntry",
 			"(Ljava/security/cert/Certificate;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void KeyStore_TrustedCertificateEntry::__constructor(__jni_impl::java::security::cert::Certificate arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -48,7 +49,8 @@ namespace __jni_impl::java::security
 			"java.security.KeyStore$TrustedCertificateEntry",
 			"(Ljava/security/cert/Certificate;Ljava/util/Set;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

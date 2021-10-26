@@ -25,6 +25,7 @@ namespace __jni_impl::java::time::format
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::java::time::format
 
@@ -97,6 +98,15 @@ namespace __jni_impl::java::time::format
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/format/SignStyle;",
 			arg0
+		);
+	}
+	QAndroidJniObject SignStyle::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.format.SignStyle",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/time/format/SignStyle;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::time::format

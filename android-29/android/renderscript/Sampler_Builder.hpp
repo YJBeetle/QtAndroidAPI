@@ -52,7 +52,8 @@ namespace __jni_impl::android::renderscript
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Sampler$Builder",
 			"(Landroid/renderscript/RenderScript;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

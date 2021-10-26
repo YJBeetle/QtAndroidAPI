@@ -58,7 +58,8 @@ namespace __jni_impl::android::view
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void DisplayCutout::__constructor(__jni_impl::android::graphics::Rect arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -66,7 +67,8 @@ namespace __jni_impl::android::view
 			"android.view.DisplayCutout",
 			"(Landroid/graphics/Rect;Ljava/util/List;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

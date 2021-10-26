@@ -51,6 +51,8 @@ namespace __jni_impl::android::view::inputmethod
 		// Methods
 		void setTarget(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getHandler();
+		jboolean beginBatchEdit();
+		jboolean endBatchEdit();
 		jstring getTextBeforeCursor(jint arg0, jint arg1);
 		jstring getTextAfterCursor(jint arg0, jint arg1);
 		jstring getSelectedText(jint arg0);
@@ -59,9 +61,11 @@ namespace __jni_impl::android::view::inputmethod
 		jboolean deleteSurroundingText(jint arg0, jint arg1);
 		jboolean deleteSurroundingTextInCodePoints(jint arg0, jint arg1);
 		jboolean setComposingText(jstring arg0, jint arg1);
+		jboolean setComposingText(const QString &arg0, jint arg1);
 		jboolean setComposingRegion(jint arg0, jint arg1);
 		jboolean finishComposingText();
 		jboolean commitText(jstring arg0, jint arg1);
+		jboolean commitText(const QString &arg0, jint arg1);
 		jboolean commitCompletion(__jni_impl::android::view::inputmethod::CompletionInfo arg0);
 		jboolean commitCorrection(__jni_impl::android::view::inputmethod::CorrectionInfo arg0);
 		jboolean performEditorAction(jint arg0);
@@ -70,12 +74,11 @@ namespace __jni_impl::android::view::inputmethod
 		jboolean clearMetaKeyStates(jint arg0);
 		jboolean reportFullscreenMode(jboolean arg0);
 		jboolean performPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		jboolean performPrivateCommand(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		jboolean requestCursorUpdates(jint arg0);
 		void closeConnection();
 		jboolean commitContent(__jni_impl::android::view::inputmethod::InputContentInfo arg0, jint arg1, __jni_impl::android::os::Bundle arg2);
 		jboolean setSelection(jint arg0, jint arg1);
-		jboolean beginBatchEdit();
-		jboolean endBatchEdit();
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
@@ -99,7 +102,8 @@ namespace __jni_impl::android::view::inputmethod
 			"android.view.inputmethod.InputConnectionWrapper",
 			"(Landroid/view/inputmethod/InputConnection;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -116,6 +120,20 @@ namespace __jni_impl::android::view::inputmethod
 		return __thiz.callObjectMethod(
 			"getHandler",
 			"()Landroid/os/Handler;"
+		);
+	}
+	jboolean InputConnectionWrapper::beginBatchEdit()
+	{
+		return __thiz.callMethod<jboolean>(
+			"beginBatchEdit",
+			"()Z"
+		);
+	}
+	jboolean InputConnectionWrapper::endBatchEdit()
+	{
+		return __thiz.callMethod<jboolean>(
+			"endBatchEdit",
+			"()Z"
 		);
 	}
 	jstring InputConnectionWrapper::getTextBeforeCursor(jint arg0, jint arg1)
@@ -188,6 +206,15 @@ namespace __jni_impl::android::view::inputmethod
 			arg1
 		);
 	}
+	jboolean InputConnectionWrapper::setComposingText(const QString &arg0, jint arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setComposingText",
+			"(Ljava/lang/CharSequence;I)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	jboolean InputConnectionWrapper::setComposingRegion(jint arg0, jint arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -210,6 +237,15 @@ namespace __jni_impl::android::view::inputmethod
 			"commitText",
 			"(Ljava/lang/CharSequence;I)Z",
 			arg0,
+			arg1
+		);
+	}
+	jboolean InputConnectionWrapper::commitText(const QString &arg0, jint arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"commitText",
+			"(Ljava/lang/CharSequence;I)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -278,6 +314,15 @@ namespace __jni_impl::android::view::inputmethod
 			arg1.__jniObject().object()
 		);
 	}
+	jboolean InputConnectionWrapper::performPrivateCommand(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"performPrivateCommand",
+			"(Ljava/lang/String;Landroid/os/Bundle;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	jboolean InputConnectionWrapper::requestCursorUpdates(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -310,20 +355,6 @@ namespace __jni_impl::android::view::inputmethod
 			"(II)Z",
 			arg0,
 			arg1
-		);
-	}
-	jboolean InputConnectionWrapper::beginBatchEdit()
-	{
-		return __thiz.callMethod<jboolean>(
-			"beginBatchEdit",
-			"()Z"
-		);
-	}
-	jboolean InputConnectionWrapper::endBatchEdit()
-	{
-		return __thiz.callMethod<jboolean>(
-			"endBatchEdit",
-			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::view::inputmethod

@@ -9,10 +9,6 @@ namespace __jni_impl::android::print
 {
 	class PrintAttributes_Resolution;
 }
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::print
 {
 	class PrintAttributes_MediaSize;
@@ -20,6 +16,10 @@ namespace __jni_impl::android::print
 namespace __jni_impl::android::print
 {
 	class PrintAttributes_Margins;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::print
@@ -43,19 +43,19 @@ namespace __jni_impl::android::print
 		jstring toString();
 		jint hashCode();
 		QAndroidJniObject getResolution();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getColorMode();
 		QAndroidJniObject getMediaSize();
 		QAndroidJniObject getMinMargins();
 		jint getDuplexMode();
-		jint getColorMode();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::print
 
 #include "PrintAttributes_Resolution.hpp"
-#include "../os/Parcel.hpp"
 #include "PrintAttributes_MediaSize.hpp"
 #include "PrintAttributes_Margins.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::print
 {
@@ -142,20 +142,11 @@ namespace __jni_impl::android::print
 			"()Landroid/print/PrintAttributes$Resolution;"
 		);
 	}
-	jint PrintAttributes::describeContents()
+	jint PrintAttributes::getColorMode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getColorMode",
 			"()I"
-		);
-	}
-	void PrintAttributes::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 	QAndroidJniObject PrintAttributes::getMediaSize()
@@ -179,11 +170,20 @@ namespace __jni_impl::android::print
 			"()I"
 		);
 	}
-	jint PrintAttributes::getColorMode()
+	jint PrintAttributes::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getColorMode",
+			"describeContents",
 			"()I"
+		);
+	}
+	void PrintAttributes::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::print

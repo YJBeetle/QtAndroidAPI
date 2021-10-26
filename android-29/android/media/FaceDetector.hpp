@@ -39,7 +39,8 @@ namespace __jni_impl::android::media
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods

@@ -42,7 +42,8 @@ namespace __jni_impl::android::text::style
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TtsSpan$DateBuilder",
-			"()V");
+			"()V"
+		);
 	}
 	void TtsSpan_DateBuilder::__constructor(__jni_impl::java::lang::Integer arg0, __jni_impl::java::lang::Integer arg1, __jni_impl::java::lang::Integer arg2, __jni_impl::java::lang::Integer arg3)
 	{
@@ -52,7 +53,8 @@ namespace __jni_impl::android::text::style
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	
 	// Methods

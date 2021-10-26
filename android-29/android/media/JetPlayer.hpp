@@ -29,9 +29,12 @@ namespace __jni_impl::android::media
 		void release();
 		void setEventListener(__jni_impl::__JniBaseClass arg0);
 		void setEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
+		jboolean play();
+		jboolean pause();
 		static QAndroidJniObject getJetPlayer();
 		static jint getMaxTracks();
 		jboolean loadJetFile(jstring arg0);
+		jboolean loadJetFile(const QString &arg0);
 		jboolean loadJetFile(__jni_impl::android::content::res::AssetFileDescriptor arg0);
 		jboolean closeJetFile();
 		jboolean queueJetSegment(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jbyte arg5);
@@ -41,8 +44,6 @@ namespace __jni_impl::android::media
 		jboolean setMuteFlag(jint arg0, jboolean arg1, jboolean arg2);
 		jboolean triggerClip(jint arg0);
 		jboolean clearQueue();
-		jboolean pause();
-		jboolean play();
 	};
 } // namespace __jni_impl::android::media
 
@@ -93,6 +94,20 @@ namespace __jni_impl::android::media
 			arg1.__jniObject().object()
 		);
 	}
+	jboolean JetPlayer::play()
+	{
+		return __thiz.callMethod<jboolean>(
+			"play",
+			"()Z"
+		);
+	}
+	jboolean JetPlayer::pause()
+	{
+		return __thiz.callMethod<jboolean>(
+			"pause",
+			"()Z"
+		);
+	}
 	QAndroidJniObject JetPlayer::getJetPlayer()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -115,6 +130,14 @@ namespace __jni_impl::android::media
 			"loadJetFile",
 			"(Ljava/lang/String;)Z",
 			arg0
+		);
+	}
+	jboolean JetPlayer::loadJetFile(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"loadJetFile",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean JetPlayer::loadJetFile(__jni_impl::android::content::res::AssetFileDescriptor arg0)
@@ -198,20 +221,6 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callMethod<jboolean>(
 			"clearQueue",
-			"()Z"
-		);
-	}
-	jboolean JetPlayer::pause()
-	{
-		return __thiz.callMethod<jboolean>(
-			"pause",
-			"()Z"
-		);
-	}
-	jboolean JetPlayer::play()
-	{
-		return __thiz.callMethod<jboolean>(
-			"play",
 			"()Z"
 		);
 	}

@@ -184,7 +184,8 @@ namespace __jni_impl::android::inputmethodservice
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.Keyboard$Key",
 			"(Landroid/inputmethodservice/Keyboard$Row;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Keyboard_Key::__constructor(__jni_impl::android::content::res::Resources arg0, __jni_impl::android::inputmethodservice::Keyboard_Row arg1, jint arg2, jint arg3, __jni_impl::__JniBaseClass arg4)
 	{
@@ -195,7 +196,8 @@ namespace __jni_impl::android::inputmethodservice
 			arg1.__jniObject().object(),
 			arg2,
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	
 	// Methods

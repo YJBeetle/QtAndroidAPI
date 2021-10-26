@@ -63,14 +63,16 @@ namespace __jni_impl::java::util::concurrent::atomic
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.AtomicLongArray",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void AtomicLongArray::__constructor(jlongArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.AtomicLongArray",
 			"([J)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

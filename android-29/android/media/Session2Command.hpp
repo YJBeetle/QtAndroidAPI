@@ -26,15 +26,16 @@ namespace __jni_impl::android::media
 		// Constructors
 		void __constructor(jint arg0);
 		void __constructor(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void __constructor(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getCommandCode();
 		jstring getCustomAction();
 		QAndroidJniObject getCustomExtras();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
 
@@ -66,7 +67,8 @@ namespace __jni_impl::android::media
 		__thiz = QAndroidJniObject(
 			"android.media.Session2Command",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Session2Command::__constructor(jstring arg0, __jni_impl::android::os::Bundle arg1)
 	{
@@ -74,7 +76,17 @@ namespace __jni_impl::android::media
 			"android.media.Session2Command",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void Session2Command::__constructor(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.media.Session2Command",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -91,22 +103,6 @@ namespace __jni_impl::android::media
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I"
-		);
-	}
-	jint Session2Command::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void Session2Command::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 	jint Session2Command::getCommandCode()
@@ -128,6 +124,22 @@ namespace __jni_impl::android::media
 		return __thiz.callObjectMethod(
 			"getCustomExtras",
 			"()Landroid/os/Bundle;"
+		);
+	}
+	jint Session2Command::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void Session2Command::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::media

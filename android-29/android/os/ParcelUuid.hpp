@@ -29,10 +29,11 @@ namespace __jni_impl::android::os
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
+		static QAndroidJniObject fromString(jstring arg0);
+		static QAndroidJniObject fromString(const QString &arg0);
+		QAndroidJniObject getUuid();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		static QAndroidJniObject fromString(jstring arg0);
-		QAndroidJniObject getUuid();
 	};
 } // namespace __jni_impl::android::os
 
@@ -57,7 +58,8 @@ namespace __jni_impl::android::os
 		__thiz = QAndroidJniObject(
 			"android.os.ParcelUuid",
 			"(Ljava/util/UUID;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -83,6 +85,31 @@ namespace __jni_impl::android::os
 			"()I"
 		);
 	}
+	QAndroidJniObject ParcelUuid::fromString(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.ParcelUuid",
+			"fromString",
+			"(Ljava/lang/String;)Landroid/os/ParcelUuid;",
+			arg0
+		);
+	}
+	QAndroidJniObject ParcelUuid::fromString(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.ParcelUuid",
+			"fromString",
+			"(Ljava/lang/String;)Landroid/os/ParcelUuid;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject ParcelUuid::getUuid()
+	{
+		return __thiz.callObjectMethod(
+			"getUuid",
+			"()Ljava/util/UUID;"
+		);
+	}
 	jint ParcelUuid::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -97,22 +124,6 @@ namespace __jni_impl::android::os
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject ParcelUuid::fromString(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.ParcelUuid",
-			"fromString",
-			"(Ljava/lang/String;)Landroid/os/ParcelUuid;",
-			arg0
-		);
-	}
-	QAndroidJniObject ParcelUuid::getUuid()
-	{
-		return __thiz.callObjectMethod(
-			"getUuid",
-			"()Ljava/util/UUID;"
 		);
 	}
 } // namespace __jni_impl::android::os

@@ -57,7 +57,8 @@ namespace __jni_impl::android::bluetooth
 	{
 		__thiz = QAndroidJniObject(
 			"android.bluetooth.BluetoothGattCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -25,6 +25,7 @@ namespace __jni_impl::android::drm
 		
 		// Constructors
 		void __constructor(jint arg0, jint arg1, __jni_impl::android::drm::ProcessedData arg2, jstring arg3);
+		void __constructor(jint arg0, jint arg1, __jni_impl::android::drm::ProcessedData arg2, const QString &arg3);
 		
 		// Methods
 	};
@@ -85,7 +86,19 @@ namespace __jni_impl::android::drm
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
+	}
+	void DrmInfoStatus::__constructor(jint arg0, jint arg1, __jni_impl::android::drm::ProcessedData arg2, const QString &arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"android.drm.DrmInfoStatus",
+			"(IILandroid/drm/ProcessedData;Ljava/lang/String;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object(),
+			QAndroidJniObject::fromString(arg3).object<jstring>()
+		);
 	}
 	
 	// Methods

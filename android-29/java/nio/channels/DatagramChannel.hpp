@@ -46,15 +46,15 @@ namespace __jni_impl::java::nio::channels
 		static QAndroidJniObject open(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject open();
 		QAndroidJniObject bind(__jni_impl::java::net::SocketAddress arg0);
-		jboolean isConnected();
-		QAndroidJniObject socket();
 		QAndroidJniObject getRemoteAddress();
-		jint send(__jni_impl::java::nio::ByteBuffer arg0, __jni_impl::java::net::SocketAddress arg1);
 		QAndroidJniObject disconnect();
 		QAndroidJniObject getLocalAddress();
 		QAndroidJniObject setOption(__jni_impl::__JniBaseClass arg0, jobject arg1);
 		QAndroidJniObject receive(__jni_impl::java::nio::ByteBuffer arg0);
 		jint validOps();
+		jint send(__jni_impl::java::nio::ByteBuffer arg0, __jni_impl::java::net::SocketAddress arg1);
+		QAndroidJniObject socket();
+		jboolean isConnected();
 	};
 } // namespace __jni_impl::java::nio::channels
 
@@ -161,34 +161,11 @@ namespace __jni_impl::java::nio::channels
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean DatagramChannel::isConnected()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isConnected",
-			"()Z"
-		);
-	}
-	QAndroidJniObject DatagramChannel::socket()
-	{
-		return __thiz.callObjectMethod(
-			"socket",
-			"()Ljava/net/DatagramSocket;"
-		);
-	}
 	QAndroidJniObject DatagramChannel::getRemoteAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getRemoteAddress",
 			"()Ljava/net/SocketAddress;"
-		);
-	}
-	jint DatagramChannel::send(__jni_impl::java::nio::ByteBuffer arg0, __jni_impl::java::net::SocketAddress arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"send",
-			"(Ljava/nio/ByteBuffer;Ljava/net/SocketAddress;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
 		);
 	}
 	QAndroidJniObject DatagramChannel::disconnect()
@@ -227,6 +204,29 @@ namespace __jni_impl::java::nio::channels
 		return __thiz.callMethod<jint>(
 			"validOps",
 			"()I"
+		);
+	}
+	jint DatagramChannel::send(__jni_impl::java::nio::ByteBuffer arg0, __jni_impl::java::net::SocketAddress arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"send",
+			"(Ljava/nio/ByteBuffer;Ljava/net/SocketAddress;)I",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject DatagramChannel::socket()
+	{
+		return __thiz.callObjectMethod(
+			"socket",
+			"()Ljava/net/DatagramSocket;"
+		);
+	}
+	jboolean DatagramChannel::isConnected()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isConnected",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::java::nio::channels

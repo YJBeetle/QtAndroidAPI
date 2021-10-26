@@ -27,6 +27,7 @@ namespace __jni_impl::java::security
 		
 		// Constructors
 		void __constructor(__jni_impl::java::security::Provider arg0, jstring arg1, jstring arg2, jstring arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::__JniBaseClass arg5);
+		void __constructor(__jni_impl::java::security::Provider arg0, const QString &arg1, const QString &arg2, const QString &arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::__JniBaseClass arg5);
 		
 		// Methods
 		jstring toString();
@@ -35,6 +36,7 @@ namespace __jni_impl::java::security
 		jstring getClassName();
 		QAndroidJniObject getProvider();
 		jstring getAttribute(jstring arg0);
+		jstring getAttribute(const QString &arg0);
 		jboolean supportsParameter(jobject arg0);
 		jstring getAlgorithm();
 	};
@@ -59,7 +61,21 @@ namespace __jni_impl::java::security
 			arg2,
 			arg3,
 			arg4.__jniObject().object(),
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
+	}
+	void Provider_Service::__constructor(__jni_impl::java::security::Provider arg0, const QString &arg1, const QString &arg2, const QString &arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::__JniBaseClass arg5)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.Provider$Service",
+			"(Ljava/security/Provider;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/Map;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			QAndroidJniObject::fromString(arg3).object<jstring>(),
+			arg4.__jniObject().object(),
+			arg5.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -105,6 +121,14 @@ namespace __jni_impl::java::security
 			"getAttribute",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring Provider_Service::getAttribute(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAttribute",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jboolean Provider_Service::supportsParameter(jobject arg0)

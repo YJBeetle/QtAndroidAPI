@@ -335,6 +335,7 @@ namespace __jni_impl::android::opengl
 		static void glActiveTexture(jint arg0);
 		static void glAttachShader(jint arg0, jint arg1);
 		static void glBindAttribLocation(jint arg0, jint arg1, jstring arg2);
+		static void glBindAttribLocation(jint arg0, jint arg1, const QString &arg2);
 		static void glBindBuffer(jint arg0, jint arg1);
 		static void glBindFramebuffer(jint arg0, jint arg1);
 		static void glBindRenderbuffer(jint arg0, jint arg1);
@@ -404,6 +405,7 @@ namespace __jni_impl::android::opengl
 		static void glGetAttachedShaders(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3);
 		static void glGetAttachedShaders(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5);
 		static jint glGetAttribLocation(jint arg0, jstring arg1);
+		static jint glGetAttribLocation(jint arg0, const QString &arg1);
 		static void glGetBooleanv(jint arg0, jbooleanArray arg1, jint arg2);
 		static void glGetBooleanv(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
 		static void glGetBufferParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
@@ -437,6 +439,7 @@ namespace __jni_impl::android::opengl
 		static void glGetUniformiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetUniformiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static jint glGetUniformLocation(jint arg0, jstring arg1);
+		static jint glGetUniformLocation(jint arg0, const QString &arg1);
 		static void glGetVertexAttribfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
 		static void glGetVertexAttribfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
 		static void glGetVertexAttribiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
@@ -460,6 +463,7 @@ namespace __jni_impl::android::opengl
 		static void glShaderBinary(jint arg0, __jni_impl::java::nio::IntBuffer arg1, jint arg2, __jni_impl::java::nio::Buffer arg3, jint arg4);
 		static void glShaderBinary(jint arg0, jintArray arg1, jint arg2, jint arg3, __jni_impl::java::nio::Buffer arg4, jint arg5);
 		static void glShaderSource(jint arg0, jstring arg1);
+		static void glShaderSource(jint arg0, const QString &arg1);
 		static void glStencilFunc(jint arg0, jint arg1, jint arg2);
 		static void glStencilFuncSeparate(jint arg0, jint arg1, jint arg2, jint arg3);
 		static void glStencilMask(jint arg0);
@@ -2651,7 +2655,8 @@ namespace __jni_impl::android::opengl
 	{
 		__thiz = QAndroidJniObject(
 			"android.opengl.GLES20",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -2698,6 +2703,17 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2
+		);
+	}
+	void GLES20::glBindAttribLocation(jint arg0, jint arg1, const QString &arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES20",
+			"glBindAttribLocation",
+			"(IILjava/lang/String;)V",
+			arg0,
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	void GLES20::glBindBuffer(jint arg0, jint arg1)
@@ -3457,6 +3473,16 @@ namespace __jni_impl::android::opengl
 			arg1
 		);
 	}
+	jint GLES20::glGetAttribLocation(jint arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.opengl.GLES20",
+			"glGetAttribLocation",
+			"(ILjava/lang/String;)I",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void GLES20::glGetBooleanv(jint arg0, jbooleanArray arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -3823,6 +3849,16 @@ namespace __jni_impl::android::opengl
 			arg1
 		);
 	}
+	jint GLES20::glGetUniformLocation(jint arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.opengl.GLES20",
+			"glGetUniformLocation",
+			"(ILjava/lang/String;)I",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void GLES20::glGetVertexAttribfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -4057,6 +4093,16 @@ namespace __jni_impl::android::opengl
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
+		);
+	}
+	void GLES20::glShaderSource(jint arg0, const QString &arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES20",
+			"glShaderSource",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void GLES20::glStencilFunc(jint arg0, jint arg1, jint arg2)

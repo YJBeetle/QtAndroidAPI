@@ -25,10 +25,10 @@ namespace __jni_impl::android::app::job
 		void __constructor(__jni_impl::android::app::Service arg0);
 		
 		// Methods
+		QAndroidJniObject getBinder();
 		void jobFinished(__jni_impl::android::app::job::JobParameters arg0, jboolean arg1);
 		jboolean onStartJob(__jni_impl::android::app::job::JobParameters arg0);
 		jboolean onStopJob(__jni_impl::android::app::job::JobParameters arg0);
-		QAndroidJniObject getBinder();
 	};
 } // namespace __jni_impl::android::app::job
 
@@ -45,10 +45,18 @@ namespace __jni_impl::android::app::job
 		__thiz = QAndroidJniObject(
 			"android.app.job.JobServiceEngine",
 			"(Landroid/app/Service;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
+	QAndroidJniObject JobServiceEngine::getBinder()
+	{
+		return __thiz.callObjectMethod(
+			"getBinder",
+			"()Landroid/os/IBinder;"
+		);
+	}
 	void JobServiceEngine::jobFinished(__jni_impl::android::app::job::JobParameters arg0, jboolean arg1)
 	{
 		__thiz.callMethod<void>(
@@ -72,13 +80,6 @@ namespace __jni_impl::android::app::job
 			"onStopJob",
 			"(Landroid/app/job/JobParameters;)Z",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject JobServiceEngine::getBinder()
-	{
-		return __thiz.callObjectMethod(
-			"getBinder",
-			"()Landroid/os/IBinder;"
 		);
 	}
 } // namespace __jni_impl::android::app::job

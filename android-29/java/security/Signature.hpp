@@ -49,8 +49,11 @@ namespace __jni_impl::java::security
 		void update(jbyte arg0);
 		void update(__jni_impl::java::nio::ByteBuffer arg0);
 		static QAndroidJniObject getInstance(jstring arg0);
+		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::java::security::Provider arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1);
 		QAndroidJniObject getParameters();
 		jint sign(jbyteArray arg0, jint arg1, jint arg2);
 		jbyteArray sign();
@@ -64,7 +67,9 @@ namespace __jni_impl::java::security
 		void initSign(__jni_impl::__JniBaseClass arg0);
 		void setParameter(__jni_impl::__JniBaseClass arg0);
 		void setParameter(jstring arg0, jobject arg1);
+		void setParameter(const QString &arg0, jobject arg1);
 		jobject getParameter(jstring arg0);
+		jobject getParameter(const QString &arg0);
 	};
 } // namespace __jni_impl::java::security
 
@@ -145,6 +150,15 @@ namespace __jni_impl::java::security
 			arg0
 		);
 	}
+	QAndroidJniObject Signature::getInstance(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.Signature",
+			"getInstance",
+			"(Ljava/lang/String;)Ljava/security/Signature;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject Signature::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -155,6 +169,16 @@ namespace __jni_impl::java::security
 			arg1
 		);
 	}
+	QAndroidJniObject Signature::getInstance(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.Signature",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/Signature;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject Signature::getInstance(jstring arg0, __jni_impl::java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -162,6 +186,16 @@ namespace __jni_impl::java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/Signature;",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Signature::getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.Signature",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/Signature;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -271,12 +305,29 @@ namespace __jni_impl::java::security
 			arg1
 		);
 	}
+	void Signature::setParameter(const QString &arg0, jobject arg1)
+	{
+		__thiz.callMethod<void>(
+			"setParameter",
+			"(Ljava/lang/String;Ljava/lang/Object;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	jobject Signature::getParameter(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getParameter",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
+		).object<jobject>();
+	}
+	jobject Signature::getParameter(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getParameter",
+			"(Ljava/lang/String;)Ljava/lang/Object;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
 } // namespace __jni_impl::java::security

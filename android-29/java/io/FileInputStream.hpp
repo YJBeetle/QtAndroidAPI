@@ -30,6 +30,7 @@ namespace __jni_impl::java::io
 		void __constructor(__jni_impl::java::io::FileDescriptor arg0);
 		void __constructor(__jni_impl::java::io::File arg0);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jint read(jbyteArray arg0);
@@ -57,21 +58,32 @@ namespace __jni_impl::java::io
 		__thiz = QAndroidJniObject(
 			"java.io.FileInputStream",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void FileInputStream::__constructor(__jni_impl::java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.FileInputStream",
 			"(Ljava/io/File;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void FileInputStream::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.FileInputStream",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void FileInputStream::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.FileInputStream",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

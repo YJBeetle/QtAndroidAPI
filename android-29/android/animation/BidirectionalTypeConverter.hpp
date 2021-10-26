@@ -35,7 +35,8 @@ namespace __jni_impl::android::animation
 			"android.animation.BidirectionalTypeConverter",
 			"(Ljava/lang/Class;Ljava/lang/Class;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

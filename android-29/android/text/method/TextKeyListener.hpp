@@ -38,11 +38,12 @@ namespace __jni_impl::android::text::method
 		void onSpanChanged(__jni_impl::__JniBaseClass arg0, jobject arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		void onSpanAdded(__jni_impl::__JniBaseClass arg0, jobject arg1, jint arg2, jint arg3);
 		void onSpanRemoved(__jni_impl::__JniBaseClass arg0, jobject arg1, jint arg2, jint arg3);
-		jboolean onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
-		jboolean onKeyUp(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
+		static jboolean shouldCap(__jni_impl::android::text::method::TextKeyListener_Capitalize arg0, jstring arg1, jint arg2);
+		static jboolean shouldCap(__jni_impl::android::text::method::TextKeyListener_Capitalize arg0, const QString &arg1, jint arg2);
 		jboolean onKeyOther(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::KeyEvent arg2);
 		jint getInputType();
-		static jboolean shouldCap(__jni_impl::android::text::method::TextKeyListener_Capitalize arg0, jstring arg1, jint arg2);
+		jboolean onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
+		jboolean onKeyUp(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
 	};
 } // namespace __jni_impl::android::text::method
 
@@ -61,7 +62,8 @@ namespace __jni_impl::android::text::method
 			"android.text.method.TextKeyListener",
 			"(Landroid/text/method/TextKeyListener$Capitalize;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -134,6 +136,45 @@ namespace __jni_impl::android::text::method
 			arg3
 		);
 	}
+	jboolean TextKeyListener::shouldCap(__jni_impl::android::text::method::TextKeyListener_Capitalize arg0, jstring arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.text.method.TextKeyListener",
+			"shouldCap",
+			"(Landroid/text/method/TextKeyListener$Capitalize;Ljava/lang/CharSequence;I)Z",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
+		);
+	}
+	jboolean TextKeyListener::shouldCap(__jni_impl::android::text::method::TextKeyListener_Capitalize arg0, const QString &arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.text.method.TextKeyListener",
+			"shouldCap",
+			"(Landroid/text/method/TextKeyListener$Capitalize;Ljava/lang/CharSequence;I)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
+	}
+	jboolean TextKeyListener::onKeyOther(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::KeyEvent arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyOther",
+			"(Landroid/view/View;Landroid/text/Editable;Landroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	jint TextKeyListener::getInputType()
+	{
+		return __thiz.callMethod<jint>(
+			"getInputType",
+			"()I"
+		);
+	}
 	jboolean TextKeyListener::onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -154,34 +195,6 @@ namespace __jni_impl::android::text::method
 			arg1.__jniObject().object(),
 			arg2,
 			arg3.__jniObject().object()
-		);
-	}
-	jboolean TextKeyListener::onKeyOther(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::KeyEvent arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyOther",
-			"(Landroid/view/View;Landroid/text/Editable;Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	jint TextKeyListener::getInputType()
-	{
-		return __thiz.callMethod<jint>(
-			"getInputType",
-			"()I"
-		);
-	}
-	jboolean TextKeyListener::shouldCap(__jni_impl::android::text::method::TextKeyListener_Capitalize arg0, jstring arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.text.method.TextKeyListener",
-			"shouldCap",
-			"(Landroid/text/method/TextKeyListener$Capitalize;Ljava/lang/CharSequence;I)Z",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
 		);
 	}
 } // namespace __jni_impl::android::text::method

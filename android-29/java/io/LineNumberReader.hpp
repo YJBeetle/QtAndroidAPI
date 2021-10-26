@@ -47,7 +47,8 @@ namespace __jni_impl::java::io
 		__thiz = QAndroidJniObject(
 			"java.io.LineNumberReader",
 			"(Ljava/io/Reader;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void LineNumberReader::__constructor(__jni_impl::java::io::Reader arg0, jint arg1)
 	{
@@ -55,7 +56,8 @@ namespace __jni_impl::java::io
 			"java.io.LineNumberReader",
 			"(Ljava/io/Reader;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

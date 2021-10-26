@@ -51,14 +51,16 @@ namespace __jni_impl::java::io
 			"java.io.PushbackReader",
 			"(Ljava/io/Reader;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void PushbackReader::__constructor(__jni_impl::java::io::Reader arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PushbackReader",
 			"(Ljava/io/Reader;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

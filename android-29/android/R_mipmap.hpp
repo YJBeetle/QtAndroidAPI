@@ -38,7 +38,8 @@ namespace __jni_impl::android
 	{
 		__thiz = QAndroidJniObject(
 			"android.R$mipmap",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

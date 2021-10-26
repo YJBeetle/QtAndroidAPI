@@ -23,6 +23,7 @@ namespace __jni_impl::java::security::cert
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::__JniBaseClass arg1, jbyteArray arg2);
+		void __constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1, jbyteArray arg2);
 		void __constructor(__jni_impl::javax::security::auth::x500::X500Principal arg0, __jni_impl::__JniBaseClass arg1, jbyteArray arg2);
 		void __constructor(__jni_impl::java::security::cert::X509Certificate arg0, jbyteArray arg1);
 		
@@ -51,7 +52,18 @@ namespace __jni_impl::java::security::cert
 			"(Ljava/lang/String;Ljava/security/PublicKey;[B)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
+	}
+	void TrustAnchor::__constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1, jbyteArray arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.cert.TrustAnchor",
+			"(Ljava/lang/String;Ljava/security/PublicKey;[B)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2
+		);
 	}
 	void TrustAnchor::__constructor(__jni_impl::javax::security::auth::x500::X500Principal arg0, __jni_impl::__JniBaseClass arg1, jbyteArray arg2)
 	{
@@ -60,7 +72,8 @@ namespace __jni_impl::java::security::cert
 			"(Ljavax/security/auth/x500/X500Principal;Ljava/security/PublicKey;[B)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void TrustAnchor::__constructor(__jni_impl::java::security::cert::X509Certificate arg0, jbyteArray arg1)
 	{
@@ -68,7 +81,8 @@ namespace __jni_impl::java::security::cert
 			"java.security.cert.TrustAnchor",
 			"(Ljava/security/cert/X509Certificate;[B)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

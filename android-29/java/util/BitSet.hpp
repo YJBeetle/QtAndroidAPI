@@ -87,13 +87,15 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.BitSet",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void BitSet::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.BitSet",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

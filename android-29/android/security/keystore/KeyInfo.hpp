@@ -21,6 +21,9 @@ namespace __jni_impl::android::security::keystore
 		void __constructor();
 		
 		// Methods
+		jboolean isInsideSecureHardware();
+		jboolean isUserAuthenticationRequirementEnforcedBySecureHardware();
+		jboolean isTrustedUserPresenceRequired();
 		jint getKeySize();
 		jstring getKeystoreAlias();
 		QAndroidJniObject getKeyValidityStart();
@@ -36,9 +39,6 @@ namespace __jni_impl::android::security::keystore
 		jint getUserAuthenticationValidityDurationSeconds();
 		jboolean isUserAuthenticationValidWhileOnBody();
 		jboolean isInvalidatedByBiometricEnrollment();
-		jboolean isInsideSecureHardware();
-		jboolean isUserAuthenticationRequirementEnforcedBySecureHardware();
-		jboolean isTrustedUserPresenceRequired();
 		jint getOrigin();
 	};
 } // namespace __jni_impl::android::security::keystore
@@ -58,6 +58,27 @@ namespace __jni_impl::android::security::keystore
 	}
 	
 	// Methods
+	jboolean KeyInfo::isInsideSecureHardware()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isInsideSecureHardware",
+			"()Z"
+		);
+	}
+	jboolean KeyInfo::isUserAuthenticationRequirementEnforcedBySecureHardware()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isUserAuthenticationRequirementEnforcedBySecureHardware",
+			"()Z"
+		);
+	}
+	jboolean KeyInfo::isTrustedUserPresenceRequired()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isTrustedUserPresenceRequired",
+			"()Z"
+		);
+	}
 	jint KeyInfo::getKeySize()
 	{
 		return __thiz.callMethod<jint>(
@@ -160,27 +181,6 @@ namespace __jni_impl::android::security::keystore
 	{
 		return __thiz.callMethod<jboolean>(
 			"isInvalidatedByBiometricEnrollment",
-			"()Z"
-		);
-	}
-	jboolean KeyInfo::isInsideSecureHardware()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isInsideSecureHardware",
-			"()Z"
-		);
-	}
-	jboolean KeyInfo::isUserAuthenticationRequirementEnforcedBySecureHardware()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isUserAuthenticationRequirementEnforcedBySecureHardware",
-			"()Z"
-		);
-	}
-	jboolean KeyInfo::isTrustedUserPresenceRequired()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isTrustedUserPresenceRequired",
 			"()Z"
 		);
 	}

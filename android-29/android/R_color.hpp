@@ -254,7 +254,8 @@ namespace __jni_impl::android
 	{
 		__thiz = QAndroidJniObject(
 			"android.R$color",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

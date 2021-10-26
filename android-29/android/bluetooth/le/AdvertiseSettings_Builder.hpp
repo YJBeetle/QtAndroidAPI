@@ -22,10 +22,10 @@ namespace __jni_impl::android::bluetooth::le
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setTimeout(jint arg0);
 		QAndroidJniObject setAdvertiseMode(jint arg0);
 		QAndroidJniObject setTxPowerLevel(jint arg0);
 		QAndroidJniObject setConnectable(jboolean arg0);
+		QAndroidJniObject setTimeout(jint arg0);
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
@@ -40,7 +40,8 @@ namespace __jni_impl::android::bluetooth::le
 	{
 		__thiz = QAndroidJniObject(
 			"android.bluetooth.le.AdvertiseSettings$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -49,14 +50,6 @@ namespace __jni_impl::android::bluetooth::le
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/bluetooth/le/AdvertiseSettings;"
-		);
-	}
-	QAndroidJniObject AdvertiseSettings_Builder::setTimeout(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setTimeout",
-			"(I)Landroid/bluetooth/le/AdvertiseSettings$Builder;",
-			arg0
 		);
 	}
 	QAndroidJniObject AdvertiseSettings_Builder::setAdvertiseMode(jint arg0)
@@ -80,6 +73,14 @@ namespace __jni_impl::android::bluetooth::le
 		return __thiz.callObjectMethod(
 			"setConnectable",
 			"(Z)Landroid/bluetooth/le/AdvertiseSettings$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject AdvertiseSettings_Builder::setTimeout(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setTimeout",
+			"(I)Landroid/bluetooth/le/AdvertiseSettings$Builder;",
 			arg0
 		);
 	}

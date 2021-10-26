@@ -53,7 +53,8 @@ namespace __jni_impl::android::hardware
 			"android.hardware.Camera$Area",
 			"(Landroid/graphics/Rect;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

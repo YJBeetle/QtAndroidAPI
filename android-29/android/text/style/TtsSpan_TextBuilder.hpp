@@ -18,9 +18,11 @@ namespace __jni_impl::android::text::style
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		QAndroidJniObject setText(jstring arg0);
+		QAndroidJniObject setText(const QString &arg0);
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -34,14 +36,24 @@ namespace __jni_impl::android::text::style
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TtsSpan$TextBuilder",
-			"()V");
+			"()V"
+		);
 	}
 	void TtsSpan_TextBuilder::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TtsSpan$TextBuilder",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void TtsSpan_TextBuilder::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.style.TtsSpan$TextBuilder",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -51,6 +63,14 @@ namespace __jni_impl::android::text::style
 			"setText",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$TextBuilder;",
 			arg0
+		);
+	}
+	QAndroidJniObject TtsSpan_TextBuilder::setText(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setText",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$TextBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::text::style

@@ -10,13 +10,13 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::graphics::drawable
-{
-	class Drawable;
-}
 namespace __jni_impl::android::graphics
 {
 	class Canvas;
+}
+namespace __jni_impl::android::graphics::drawable
+{
+	class Drawable;
 }
 namespace __jni_impl::android::content::res
 {
@@ -45,19 +45,16 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		void onRestoreInstanceState(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject onSaveInstanceState();
-		void setProgress(jint arg0);
-		void setProgress(jint arg0, jboolean arg1);
-		void setSecondaryProgress(jint arg0);
-		void setMinHeight(jint arg0);
-		jint getMinHeight();
-		void setMaxHeight(jint arg0);
-		jint getMaxHeight();
-		void setMinWidth(jint arg0);
-		jint getMinWidth();
-		void setMaxWidth(jint arg0);
-		jint getMaxWidth();
+		void setInterpolator(__jni_impl::android::content::Context arg0, jint arg1);
+		void setInterpolator(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getInterpolator();
+		jstring getAccessibilityClassName();
+		void jumpDrawablesToCurrentState();
+		void onVisibilityAggregated(jboolean arg0);
+		void postInvalidate();
+		void invalidateDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
+		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
+		jint getProgress();
 		jint getSecondaryProgress();
 		void setMax(jint arg0);
 		void incrementProgressBy(jint arg0);
@@ -66,18 +63,16 @@ namespace __jni_impl::android::widget
 		void setIndeterminateDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 		void setIndeterminate(jboolean arg0);
 		jboolean isIndeterminate();
+		void setMinHeight(jint arg0);
+		jint getMinHeight();
+		void setMaxHeight(jint arg0);
+		jint getMaxHeight();
+		void setMinWidth(jint arg0);
+		jint getMinWidth();
+		void setMaxWidth(jint arg0);
+		jint getMaxWidth();
 		jint getMin();
-		jstring getAccessibilityClassName();
-		void jumpDrawablesToCurrentState();
-		void onVisibilityAggregated(jboolean arg0);
-		void postInvalidate();
-		void invalidateDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
-		void drawableHotspotChanged(jfloat arg0, jfloat arg1);
-		void setInterpolator(__jni_impl::__JniBaseClass arg0);
-		void setInterpolator(__jni_impl::android::content::Context arg0, jint arg1);
-		QAndroidJniObject getInterpolator();
 		jint getMax();
-		jint getProgress();
 		QAndroidJniObject getIndeterminateTintList();
 		void setIndeterminateTintMode(__jni_impl::android::graphics::PorterDuff_Mode arg0);
 		void setIndeterminateTintBlendMode(__jni_impl::android::graphics::BlendMode arg0);
@@ -109,12 +104,17 @@ namespace __jni_impl::android::widget
 		QAndroidJniObject getCurrentDrawable();
 		void setMin(jint arg0);
 		jboolean isAnimating();
+		void onRestoreInstanceState(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject onSaveInstanceState();
+		void setProgress(jint arg0);
+		void setProgress(jint arg0, jboolean arg1);
+		void setSecondaryProgress(jint arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "../graphics/drawable/Drawable.hpp"
 #include "../graphics/Canvas.hpp"
+#include "../graphics/drawable/Drawable.hpp"
 #include "../content/res/ColorStateList.hpp"
 #include "../graphics/PorterDuff_Mode.hpp"
 #include "../graphics/BlendMode.hpp"
@@ -132,7 +132,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void ProgressBar::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -141,7 +142,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void ProgressBar::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -149,114 +151,93 @@ namespace __jni_impl::android::widget
 			"android.widget.ProgressBar",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ProgressBar::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ProgressBar",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
-	}
-	
-	// Methods
-	void ProgressBar::onRestoreInstanceState(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"onRestoreInstanceState",
-			"(Landroid/os/Parcelable;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ProgressBar::onSaveInstanceState()
-	{
-		return __thiz.callObjectMethod(
-			"onSaveInstanceState",
-			"()Landroid/os/Parcelable;"
-		);
-	}
-	void ProgressBar::setProgress(jint arg0)
+	
+	// Methods
+	void ProgressBar::setInterpolator(__jni_impl::android::content::Context arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
-			"setProgress",
-			"(I)V",
+			"setInterpolator",
+			"(Landroid/content/Context;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void ProgressBar::setInterpolator(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setInterpolator",
+			"(Landroid/view/animation/Interpolator;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ProgressBar::getInterpolator()
+	{
+		return __thiz.callObjectMethod(
+			"getInterpolator",
+			"()Landroid/view/animation/Interpolator;"
+		);
+	}
+	jstring ProgressBar::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	void ProgressBar::jumpDrawablesToCurrentState()
+	{
+		__thiz.callMethod<void>(
+			"jumpDrawablesToCurrentState",
+			"()V"
+		);
+	}
+	void ProgressBar::onVisibilityAggregated(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"onVisibilityAggregated",
+			"(Z)V",
 			arg0
 		);
 	}
-	void ProgressBar::setProgress(jint arg0, jboolean arg1)
+	void ProgressBar::postInvalidate()
 	{
 		__thiz.callMethod<void>(
-			"setProgress",
-			"(IZ)V",
+			"postInvalidate",
+			"()V"
+		);
+	}
+	void ProgressBar::invalidateDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		__thiz.callMethod<void>(
+			"invalidateDrawable",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ProgressBar::drawableHotspotChanged(jfloat arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"drawableHotspotChanged",
+			"(FF)V",
 			arg0,
 			arg1
 		);
 	}
-	void ProgressBar::setSecondaryProgress(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSecondaryProgress",
-			"(I)V",
-			arg0
-		);
-	}
-	void ProgressBar::setMinHeight(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMinHeight",
-			"(I)V",
-			arg0
-		);
-	}
-	jint ProgressBar::getMinHeight()
+	jint ProgressBar::getProgress()
 	{
 		return __thiz.callMethod<jint>(
-			"getMinHeight",
-			"()I"
-		);
-	}
-	void ProgressBar::setMaxHeight(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMaxHeight",
-			"(I)V",
-			arg0
-		);
-	}
-	jint ProgressBar::getMaxHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxHeight",
-			"()I"
-		);
-	}
-	void ProgressBar::setMinWidth(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMinWidth",
-			"(I)V",
-			arg0
-		);
-	}
-	jint ProgressBar::getMinWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getMinWidth",
-			"()I"
-		);
-	}
-	void ProgressBar::setMaxWidth(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMaxWidth",
-			"(I)V",
-			arg0
-		);
-	}
-	jint ProgressBar::getMaxWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxWidth",
+			"getProgress",
 			"()I"
 		);
 	}
@@ -322,6 +303,66 @@ namespace __jni_impl::android::widget
 			"()Z"
 		);
 	}
+	void ProgressBar::setMinHeight(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMinHeight",
+			"(I)V",
+			arg0
+		);
+	}
+	jint ProgressBar::getMinHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getMinHeight",
+			"()I"
+		);
+	}
+	void ProgressBar::setMaxHeight(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMaxHeight",
+			"(I)V",
+			arg0
+		);
+	}
+	jint ProgressBar::getMaxHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxHeight",
+			"()I"
+		);
+	}
+	void ProgressBar::setMinWidth(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMinWidth",
+			"(I)V",
+			arg0
+		);
+	}
+	jint ProgressBar::getMinWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getMinWidth",
+			"()I"
+		);
+	}
+	void ProgressBar::setMaxWidth(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMaxWidth",
+			"(I)V",
+			arg0
+		);
+	}
+	jint ProgressBar::getMaxWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxWidth",
+			"()I"
+		);
+	}
 	jint ProgressBar::getMin()
 	{
 		return __thiz.callMethod<jint>(
@@ -329,87 +370,10 @@ namespace __jni_impl::android::widget
 			"()I"
 		);
 	}
-	jstring ProgressBar::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	void ProgressBar::jumpDrawablesToCurrentState()
-	{
-		__thiz.callMethod<void>(
-			"jumpDrawablesToCurrentState",
-			"()V"
-		);
-	}
-	void ProgressBar::onVisibilityAggregated(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"onVisibilityAggregated",
-			"(Z)V",
-			arg0
-		);
-	}
-	void ProgressBar::postInvalidate()
-	{
-		__thiz.callMethod<void>(
-			"postInvalidate",
-			"()V"
-		);
-	}
-	void ProgressBar::invalidateDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		__thiz.callMethod<void>(
-			"invalidateDrawable",
-			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ProgressBar::drawableHotspotChanged(jfloat arg0, jfloat arg1)
-	{
-		__thiz.callMethod<void>(
-			"drawableHotspotChanged",
-			"(FF)V",
-			arg0,
-			arg1
-		);
-	}
-	void ProgressBar::setInterpolator(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setInterpolator",
-			"(Landroid/view/animation/Interpolator;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ProgressBar::setInterpolator(__jni_impl::android::content::Context arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setInterpolator",
-			"(Landroid/content/Context;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject ProgressBar::getInterpolator()
-	{
-		return __thiz.callObjectMethod(
-			"getInterpolator",
-			"()Landroid/view/animation/Interpolator;"
-		);
-	}
 	jint ProgressBar::getMax()
 	{
 		return __thiz.callMethod<jint>(
 			"getMax",
-			"()I"
-		);
-	}
-	jint ProgressBar::getProgress()
-	{
-		return __thiz.callMethod<jint>(
-			"getProgress",
 			"()I"
 		);
 	}
@@ -643,6 +607,46 @@ namespace __jni_impl::android::widget
 		return __thiz.callMethod<jboolean>(
 			"isAnimating",
 			"()Z"
+		);
+	}
+	void ProgressBar::onRestoreInstanceState(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"onRestoreInstanceState",
+			"(Landroid/os/Parcelable;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ProgressBar::onSaveInstanceState()
+	{
+		return __thiz.callObjectMethod(
+			"onSaveInstanceState",
+			"()Landroid/os/Parcelable;"
+		);
+	}
+	void ProgressBar::setProgress(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setProgress",
+			"(I)V",
+			arg0
+		);
+	}
+	void ProgressBar::setProgress(jint arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setProgress",
+			"(IZ)V",
+			arg0,
+			arg1
+		);
+	}
+	void ProgressBar::setSecondaryProgress(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSecondaryProgress",
+			"(I)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::widget

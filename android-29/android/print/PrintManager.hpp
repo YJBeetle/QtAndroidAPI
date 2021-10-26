@@ -30,6 +30,7 @@ namespace __jni_impl::android::print
 		
 		// Methods
 		QAndroidJniObject print(jstring arg0, __jni_impl::android::print::PrintDocumentAdapter arg1, __jni_impl::android::print::PrintAttributes arg2);
+		QAndroidJniObject print(const QString &arg0, __jni_impl::android::print::PrintDocumentAdapter arg1, __jni_impl::android::print::PrintAttributes arg2);
 		QAndroidJniObject getPrintJobs();
 	};
 } // namespace __jni_impl::android::print
@@ -57,6 +58,16 @@ namespace __jni_impl::android::print
 			"print",
 			"(Ljava/lang/String;Landroid/print/PrintDocumentAdapter;Landroid/print/PrintAttributes;)Landroid/print/PrintJob;",
 			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject PrintManager::print(const QString &arg0, __jni_impl::android::print::PrintDocumentAdapter arg1, __jni_impl::android::print::PrintAttributes arg2)
+	{
+		return __thiz.callObjectMethod(
+			"print",
+			"(Ljava/lang/String;Landroid/print/PrintDocumentAdapter;Landroid/print/PrintAttributes;)Landroid/print/PrintJob;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);

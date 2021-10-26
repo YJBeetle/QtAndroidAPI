@@ -9,22 +9,6 @@ namespace __jni_impl::android::app
 {
 	class FragmentHostCallback;
 }
-namespace __jni_impl::android::app
-{
-	class LoaderManager;
-}
-namespace __jni_impl::android::app
-{
-	class FragmentManager;
-}
-namespace __jni_impl::android::view
-{
-	class View;
-}
-namespace __jni_impl::android::content
-{
-	class Context;
-}
 namespace __jni_impl::android::content::res
 {
 	class Configuration;
@@ -53,6 +37,22 @@ namespace __jni_impl::java::io
 {
 	class PrintWriter;
 }
+namespace __jni_impl::android::app
+{
+	class LoaderManager;
+}
+namespace __jni_impl::android::app
+{
+	class FragmentManager;
+}
+namespace __jni_impl::android::view
+{
+	class View;
+}
+namespace __jni_impl::android::content
+{
+	class Context;
+}
 
 namespace __jni_impl::android::app
 {
@@ -65,12 +65,10 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getLoaderManager();
-		QAndroidJniObject getFragmentManager();
-		QAndroidJniObject onCreateView(__jni_impl::android::view::View arg0, jstring arg1, __jni_impl::android::content::Context arg2, __jni_impl::__JniBaseClass arg3);
 		void dispatchConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
 		static QAndroidJniObject createController(__jni_impl::android::app::FragmentHostCallback arg0);
 		QAndroidJniObject findFragmentByWho(jstring arg0);
+		QAndroidJniObject findFragmentByWho(const QString &arg0);
 		void attachHost(__jni_impl::android::app::Fragment arg0);
 		void noteStateNotSaved();
 		QAndroidJniObject saveAllState();
@@ -100,19 +98,20 @@ namespace __jni_impl::android::app
 		QAndroidJniObject retainLoaderNonConfig();
 		void restoreLoaderNonConfig(__jni_impl::android::util::ArrayMap arg0);
 		void dumpLoaders(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
-		void dispatchDestroy();
-		void dispatchStop();
-		void dispatchPause();
-		void dispatchResume();
+		void dumpLoaders(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
+		QAndroidJniObject getLoaderManager();
+		QAndroidJniObject getFragmentManager();
+		QAndroidJniObject onCreateView(__jni_impl::android::view::View arg0, jstring arg1, __jni_impl::android::content::Context arg2, __jni_impl::__JniBaseClass arg3);
+		QAndroidJniObject onCreateView(__jni_impl::android::view::View arg0, const QString &arg1, __jni_impl::android::content::Context arg2, __jni_impl::__JniBaseClass arg3);
 		void dispatchCreate();
+		void dispatchResume();
+		void dispatchPause();
+		void dispatchStop();
+		void dispatchDestroy();
 	};
 } // namespace __jni_impl::android::app
 
 #include "FragmentHostCallback.hpp"
-#include "LoaderManager.hpp"
-#include "FragmentManager.hpp"
-#include "../view/View.hpp"
-#include "../content/Context.hpp"
 #include "../content/res/Configuration.hpp"
 #include "Fragment.hpp"
 #include "FragmentManagerNonConfig.hpp"
@@ -120,6 +119,10 @@ namespace __jni_impl::android::app
 #include "../util/ArrayMap.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
+#include "LoaderManager.hpp"
+#include "FragmentManager.hpp"
+#include "../view/View.hpp"
+#include "../content/Context.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -134,31 +137,6 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject FragmentController::getLoaderManager()
-	{
-		return __thiz.callObjectMethod(
-			"getLoaderManager",
-			"()Landroid/app/LoaderManager;"
-		);
-	}
-	QAndroidJniObject FragmentController::getFragmentManager()
-	{
-		return __thiz.callObjectMethod(
-			"getFragmentManager",
-			"()Landroid/app/FragmentManager;"
-		);
-	}
-	QAndroidJniObject FragmentController::onCreateView(__jni_impl::android::view::View arg0, jstring arg1, __jni_impl::android::content::Context arg2, __jni_impl::__JniBaseClass arg3)
-	{
-		return __thiz.callObjectMethod(
-			"onCreateView",
-			"(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
 	void FragmentController::dispatchConfigurationChanged(__jni_impl::android::content::res::Configuration arg0)
 	{
 		__thiz.callMethod<void>(
@@ -182,6 +160,14 @@ namespace __jni_impl::android::app
 			"findFragmentByWho",
 			"(Ljava/lang/String;)Landroid/app/Fragment;",
 			arg0
+		);
+	}
+	QAndroidJniObject FragmentController::findFragmentByWho(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"findFragmentByWho",
+			"(Ljava/lang/String;)Landroid/app/Fragment;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void FragmentController::attachHost(__jni_impl::android::app::Fragment arg0)
@@ -411,24 +397,57 @@ namespace __jni_impl::android::app
 			arg3
 		);
 	}
-	void FragmentController::dispatchDestroy()
+	void FragmentController::dumpLoaders(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
 	{
 		__thiz.callMethod<void>(
-			"dispatchDestroy",
-			"()V"
+			"dumpLoaders",
+			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3
 		);
 	}
-	void FragmentController::dispatchStop()
+	QAndroidJniObject FragmentController::getLoaderManager()
 	{
-		__thiz.callMethod<void>(
-			"dispatchStop",
-			"()V"
+		return __thiz.callObjectMethod(
+			"getLoaderManager",
+			"()Landroid/app/LoaderManager;"
 		);
 	}
-	void FragmentController::dispatchPause()
+	QAndroidJniObject FragmentController::getFragmentManager()
+	{
+		return __thiz.callObjectMethod(
+			"getFragmentManager",
+			"()Landroid/app/FragmentManager;"
+		);
+	}
+	QAndroidJniObject FragmentController::onCreateView(__jni_impl::android::view::View arg0, jstring arg1, __jni_impl::android::content::Context arg2, __jni_impl::__JniBaseClass arg3)
+	{
+		return __thiz.callObjectMethod(
+			"onCreateView",
+			"(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object()
+		);
+	}
+	QAndroidJniObject FragmentController::onCreateView(__jni_impl::android::view::View arg0, const QString &arg1, __jni_impl::android::content::Context arg2, __jni_impl::__JniBaseClass arg3)
+	{
+		return __thiz.callObjectMethod(
+			"onCreateView",
+			"(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object()
+		);
+	}
+	void FragmentController::dispatchCreate()
 	{
 		__thiz.callMethod<void>(
-			"dispatchPause",
+			"dispatchCreate",
 			"()V"
 		);
 	}
@@ -439,10 +458,24 @@ namespace __jni_impl::android::app
 			"()V"
 		);
 	}
-	void FragmentController::dispatchCreate()
+	void FragmentController::dispatchPause()
 	{
 		__thiz.callMethod<void>(
-			"dispatchCreate",
+			"dispatchPause",
+			"()V"
+		);
+	}
+	void FragmentController::dispatchStop()
+	{
+		__thiz.callMethod<void>(
+			"dispatchStop",
+			"()V"
+		);
+	}
+	void FragmentController::dispatchDestroy()
+	{
+		__thiz.callMethod<void>(
+			"dispatchDestroy",
 			"()V"
 		);
 	}

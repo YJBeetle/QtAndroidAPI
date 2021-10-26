@@ -44,6 +44,7 @@ namespace __jni_impl::android::app
 		// Methods
 		void setTitle(jint arg0);
 		void setTitle(jstring arg0);
+		void setTitle(const QString &arg0);
 		QAndroidJniObject makeListItems();
 	};
 } // namespace __jni_impl::android::app
@@ -63,7 +64,8 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.LauncherActivity",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -81,6 +83,14 @@ namespace __jni_impl::android::app
 			"setTitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
+		);
+	}
+	void LauncherActivity::setTitle(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTitle",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject LauncherActivity::makeListItems()

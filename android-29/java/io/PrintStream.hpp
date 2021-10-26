@@ -45,11 +45,16 @@ namespace __jni_impl::java::io
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1);
+		void __constructor(const QString &arg0, const QString &arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(__jni_impl::java::io::OutputStream arg0, jboolean arg1, __jni_impl::java::nio::charset::Charset arg2);
 		void __constructor(__jni_impl::java::io::OutputStream arg0, jboolean arg1, jstring arg2);
+		void __constructor(__jni_impl::java::io::OutputStream arg0, jboolean arg1, const QString &arg2);
 		void __constructor(jstring arg0, __jni_impl::java::nio::charset::Charset arg1);
+		void __constructor(const QString &arg0, __jni_impl::java::nio::charset::Charset arg1);
 		void __constructor(__jni_impl::java::io::File arg0, jstring arg1);
+		void __constructor(__jni_impl::java::io::File arg0, const QString &arg1);
 		void __constructor(__jni_impl::java::io::File arg0, __jni_impl::java::nio::charset::Charset arg1);
 		void __constructor(__jni_impl::java::io::File arg0);
 		void __constructor(__jni_impl::java::io::OutputStream arg0);
@@ -57,6 +62,7 @@ namespace __jni_impl::java::io
 		
 		// Methods
 		void println(jstring arg0);
+		void println(const QString &arg0);
 		void println(jobject arg0);
 		void println(jfloat arg0);
 		void println(jdouble arg0);
@@ -67,10 +73,14 @@ namespace __jni_impl::java::io
 		void println(jint arg0);
 		void println(jlong arg0);
 		QAndroidJniObject append(jstring arg0);
+		QAndroidJniObject append(const QString &arg0);
 		QAndroidJniObject append(jstring arg0, jint arg1, jint arg2);
+		QAndroidJniObject append(const QString &arg0, jint arg1, jint arg2);
 		QAndroidJniObject append(jchar arg0);
 		QAndroidJniObject format(__jni_impl::java::util::Locale arg0, jstring arg1, jobjectArray arg2);
+		QAndroidJniObject format(__jni_impl::java::util::Locale arg0, const QString &arg1, jobjectArray arg2);
 		QAndroidJniObject format(jstring arg0, jobjectArray arg1);
+		QAndroidJniObject format(const QString &arg0, jobjectArray arg1);
 		void write(jint arg0);
 		void write(jbyteArray arg0, jint arg1, jint arg2);
 		void print(jchar arg0);
@@ -78,6 +88,7 @@ namespace __jni_impl::java::io
 		void print(jdouble arg0);
 		void print(jobject arg0);
 		void print(jstring arg0);
+		void print(const QString &arg0);
 		void print(jcharArray arg0);
 		void print(jlong arg0);
 		void print(jfloat arg0);
@@ -86,7 +97,9 @@ namespace __jni_impl::java::io
 		void close();
 		jboolean checkError();
 		QAndroidJniObject printf(__jni_impl::java::util::Locale arg0, jstring arg1, jobjectArray arg2);
+		QAndroidJniObject printf(__jni_impl::java::util::Locale arg0, const QString &arg1, jobjectArray arg2);
 		QAndroidJniObject printf(jstring arg0, jobjectArray arg1);
+		QAndroidJniObject printf(const QString &arg0, jobjectArray arg1);
 	};
 } // namespace __jni_impl::java::io
 
@@ -109,14 +122,33 @@ namespace __jni_impl::java::io
 			"java.io.PrintStream",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void PrintStream::__constructor(const QString &arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.PrintStream",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void PrintStream::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PrintStream",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void PrintStream::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.PrintStream",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void PrintStream::__constructor(__jni_impl::java::io::OutputStream arg0, jboolean arg1, __jni_impl::java::nio::charset::Charset arg2)
 	{
@@ -125,7 +157,8 @@ namespace __jni_impl::java::io
 			"(Ljava/io/OutputStream;ZLjava/nio/charset/Charset;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void PrintStream::__constructor(__jni_impl::java::io::OutputStream arg0, jboolean arg1, jstring arg2)
 	{
@@ -134,7 +167,18 @@ namespace __jni_impl::java::io
 			"(Ljava/io/OutputStream;ZLjava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void PrintStream::__constructor(__jni_impl::java::io::OutputStream arg0, jboolean arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.PrintStream",
+			"(Ljava/io/OutputStream;ZLjava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	void PrintStream::__constructor(jstring arg0, __jni_impl::java::nio::charset::Charset arg1)
 	{
@@ -142,7 +186,17 @@ namespace __jni_impl::java::io
 			"java.io.PrintStream",
 			"(Ljava/lang/String;Ljava/nio/charset/Charset;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void PrintStream::__constructor(const QString &arg0, __jni_impl::java::nio::charset::Charset arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.PrintStream",
+			"(Ljava/lang/String;Ljava/nio/charset/Charset;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	void PrintStream::__constructor(__jni_impl::java::io::File arg0, jstring arg1)
 	{
@@ -150,7 +204,17 @@ namespace __jni_impl::java::io
 			"java.io.PrintStream",
 			"(Ljava/io/File;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void PrintStream::__constructor(__jni_impl::java::io::File arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.PrintStream",
+			"(Ljava/io/File;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void PrintStream::__constructor(__jni_impl::java::io::File arg0, __jni_impl::java::nio::charset::Charset arg1)
 	{
@@ -158,21 +222,24 @@ namespace __jni_impl::java::io
 			"java.io.PrintStream",
 			"(Ljava/io/File;Ljava/nio/charset/Charset;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void PrintStream::__constructor(__jni_impl::java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PrintStream",
 			"(Ljava/io/File;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PrintStream::__constructor(__jni_impl::java::io::OutputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PrintStream",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PrintStream::__constructor(__jni_impl::java::io::OutputStream arg0, jboolean arg1)
 	{
@@ -180,7 +247,8 @@ namespace __jni_impl::java::io
 			"java.io.PrintStream",
 			"(Ljava/io/OutputStream;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -190,6 +258,14 @@ namespace __jni_impl::java::io
 			"println",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void PrintStream::println(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"println",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void PrintStream::println(jobject arg0)
@@ -271,12 +347,30 @@ namespace __jni_impl::java::io
 			arg0
 		);
 	}
+	QAndroidJniObject PrintStream::append(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"append",
+			"(Ljava/lang/CharSequence;)Ljava/io/PrintStream;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject PrintStream::append(jstring arg0, jint arg1, jint arg2)
 	{
 		return __thiz.callObjectMethod(
 			"append",
 			"(Ljava/lang/CharSequence;II)Ljava/io/PrintStream;",
 			arg0,
+			arg1,
+			arg2
+		);
+	}
+	QAndroidJniObject PrintStream::append(const QString &arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callObjectMethod(
+			"append",
+			"(Ljava/lang/CharSequence;II)Ljava/io/PrintStream;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -299,12 +393,31 @@ namespace __jni_impl::java::io
 			arg2
 		);
 	}
+	QAndroidJniObject PrintStream::format(__jni_impl::java::util::Locale arg0, const QString &arg1, jobjectArray arg2)
+	{
+		return __thiz.callObjectMethod(
+			"format",
+			"(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
+	}
 	QAndroidJniObject PrintStream::format(jstring arg0, jobjectArray arg1)
 	{
 		return __thiz.callObjectMethod(
 			"format",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;",
 			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject PrintStream::format(const QString &arg0, jobjectArray arg1)
+	{
+		return __thiz.callObjectMethod(
+			"format",
+			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -364,6 +477,14 @@ namespace __jni_impl::java::io
 			"print",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void PrintStream::print(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"print",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void PrintStream::print(jcharArray arg0)
@@ -429,12 +550,31 @@ namespace __jni_impl::java::io
 			arg2
 		);
 	}
+	QAndroidJniObject PrintStream::printf(__jni_impl::java::util::Locale arg0, const QString &arg1, jobjectArray arg2)
+	{
+		return __thiz.callObjectMethod(
+			"printf",
+			"(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
+	}
 	QAndroidJniObject PrintStream::printf(jstring arg0, jobjectArray arg1)
 	{
 		return __thiz.callObjectMethod(
 			"printf",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;",
 			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject PrintStream::printf(const QString &arg0, jobjectArray arg1)
+	{
+		return __thiz.callObjectMethod(
+			"printf",
+			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

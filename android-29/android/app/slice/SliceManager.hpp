@@ -41,7 +41,9 @@ namespace __jni_impl::android::app::slice
 		QAndroidJniObject mapIntentToUri(__jni_impl::android::content::Intent arg0);
 		jint checkSlicePermission(__jni_impl::android::net::Uri arg0, jint arg1, jint arg2);
 		void grantSlicePermission(jstring arg0, __jni_impl::android::net::Uri arg1);
+		void grantSlicePermission(const QString &arg0, __jni_impl::android::net::Uri arg1);
 		void revokeSlicePermission(jstring arg0, __jni_impl::android::net::Uri arg1);
+		void revokeSlicePermission(const QString &arg0, __jni_impl::android::net::Uri arg1);
 	};
 } // namespace __jni_impl::android::app::slice
 
@@ -163,12 +165,30 @@ namespace __jni_impl::android::app::slice
 			arg1.__jniObject().object()
 		);
 	}
+	void SliceManager::grantSlicePermission(const QString &arg0, __jni_impl::android::net::Uri arg1)
+	{
+		__thiz.callMethod<void>(
+			"grantSlicePermission",
+			"(Ljava/lang/String;Landroid/net/Uri;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	void SliceManager::revokeSlicePermission(jstring arg0, __jni_impl::android::net::Uri arg1)
 	{
 		__thiz.callMethod<void>(
 			"revokeSlicePermission",
 			"(Ljava/lang/String;Landroid/net/Uri;)V",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void SliceManager::revokeSlicePermission(const QString &arg0, __jni_impl::android::net::Uri arg1)
+	{
+		__thiz.callMethod<void>(
+			"revokeSlicePermission",
+			"(Ljava/lang/String;Landroid/net/Uri;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

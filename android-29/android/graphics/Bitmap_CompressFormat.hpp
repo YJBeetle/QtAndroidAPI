@@ -23,6 +23,7 @@ namespace __jni_impl::android::graphics
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -79,6 +80,15 @@ namespace __jni_impl::android::graphics
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Bitmap$CompressFormat;",
 			arg0
+		);
+	}
+	QAndroidJniObject Bitmap_CompressFormat::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Bitmap$CompressFormat",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/Bitmap$CompressFormat;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::graphics

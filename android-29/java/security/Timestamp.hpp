@@ -52,7 +52,8 @@ namespace __jni_impl::java::security
 			"java.security.Timestamp",
 			"(Ljava/util/Date;Ljava/security/cert/CertPath;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

@@ -13,41 +13,13 @@ namespace __jni_impl::android::view
 {
 	class WindowManager_LayoutParams;
 }
-namespace __jni_impl::android::view
+namespace __jni_impl::android::os
 {
-	class View;
-}
-namespace __jni_impl::android::content::res
-{
-	class Configuration;
-}
-namespace __jni_impl::android::view
-{
-	class ViewGroup_LayoutParams;
-}
-namespace __jni_impl::android::transition
-{
-	class Scene;
-}
-namespace __jni_impl::android::net
-{
-	class Uri;
+	class Bundle;
 }
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
-}
-namespace __jni_impl::android::view
-{
-	class LayoutInflater;
-}
-namespace __jni_impl::android::media::session
-{
-	class MediaController;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
 }
 namespace __jni_impl::android::content::res
 {
@@ -67,6 +39,10 @@ namespace __jni_impl::android::view
 }
 namespace __jni_impl::android::view
 {
+	class View;
+}
+namespace __jni_impl::android::view
+{
 	class InputEvent;
 }
 namespace __jni_impl::android::transition
@@ -76,6 +52,30 @@ namespace __jni_impl::android::transition
 namespace __jni_impl::android::transition
 {
 	class Transition;
+}
+namespace __jni_impl::android::content::res
+{
+	class Configuration;
+}
+namespace __jni_impl::android::view
+{
+	class ViewGroup_LayoutParams;
+}
+namespace __jni_impl::android::transition
+{
+	class Scene;
+}
+namespace __jni_impl::android::net
+{
+	class Uri;
+}
+namespace __jni_impl::android::view
+{
+	class LayoutInflater;
+}
+namespace __jni_impl::android::media::session
+{
+	class MediaController;
 }
 
 namespace __jni_impl::android::view
@@ -122,34 +122,6 @@ namespace __jni_impl::android::view
 		jboolean isActive();
 		void setFormat(jint arg0);
 		jboolean isFloating();
-		QAndroidJniObject getWindowManager();
-		QAndroidJniObject getCurrentFocus();
-		void onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
-		QAndroidJniObject findViewById(jint arg0);
-		QAndroidJniObject requireViewById(jint arg0);
-		void setContentView(__jni_impl::android::view::View arg0);
-		void setContentView(jint arg0);
-		void setContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
-		void addContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
-		QAndroidJniObject getContentScene();
-		void takeKeyEvents(jboolean arg0);
-		void setFeatureDrawableResource(jint arg0, jint arg1);
-		void setFeatureDrawableUri(jint arg0, __jni_impl::android::net::Uri arg1);
-		void setFeatureDrawable(jint arg0, __jni_impl::android::graphics::drawable::Drawable arg1);
-		void setFeatureDrawableAlpha(jint arg0, jint arg1);
-		QAndroidJniObject getLayoutInflater();
-		void setTitle(jstring arg0);
-		void setTitleColor(jint arg0);
-		void setVolumeControlStream(jint arg0);
-		jint getVolumeControlStream();
-		void setMediaController(__jni_impl::android::media::session::MediaController arg0);
-		QAndroidJniObject getMediaController();
-		void setType(jint arg0);
-		void setFlags(jint arg0, jint arg1);
-		void addFlags(jint arg0);
-		void setCallback(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getCallback();
-		void setGravity(jint arg0);
 		void setSystemGestureExclusionRects(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getSystemGestureExclusionRects();
 		void setElevation(jfloat arg0);
@@ -157,12 +129,15 @@ namespace __jni_impl::android::view
 		QAndroidJniObject saveHierarchyState();
 		void restoreHierarchyState(__jni_impl::android::os::Bundle arg0);
 		void setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
+		void setIcon(jint arg0);
 		QAndroidJniObject getWindowStyle();
 		void setContainer(__jni_impl::android::view::Window arg0);
 		QAndroidJniObject getContainer();
 		jboolean hasChildren();
 		void setWindowManager(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, jboolean arg3);
+		void setWindowManager(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2, jboolean arg3);
 		void setWindowManager(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jstring arg2);
+		void setWindowManager(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2);
 		void addOnFrameMetricsAvailableListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
 		void removeOnFrameMetricsAvailableListener(__jni_impl::__JniBaseClass arg0);
 		void setRestrictedCaptionAreaListener(__jni_impl::__JniBaseClass arg0);
@@ -244,29 +219,57 @@ namespace __jni_impl::android::view
 		jboolean isNavigationBarContrastEnforced();
 		void setDecorCaptionShade(jint arg0);
 		void setResizingCaptionDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
-		void setIcon(jint arg0);
+		void setGravity(jint arg0);
 		jboolean isWideColorGamut();
+		QAndroidJniObject getWindowManager();
+		QAndroidJniObject getCurrentFocus();
+		void onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
+		QAndroidJniObject findViewById(jint arg0);
+		QAndroidJniObject requireViewById(jint arg0);
+		void setContentView(jint arg0);
+		void setContentView(__jni_impl::android::view::View arg0);
+		void setContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
+		void addContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1);
+		QAndroidJniObject getContentScene();
+		void takeKeyEvents(jboolean arg0);
+		void setFeatureDrawableResource(jint arg0, jint arg1);
+		void setFeatureDrawableUri(jint arg0, __jni_impl::android::net::Uri arg1);
+		void setFeatureDrawable(jint arg0, __jni_impl::android::graphics::drawable::Drawable arg1);
+		void setFeatureDrawableAlpha(jint arg0, jint arg1);
+		QAndroidJniObject getLayoutInflater();
+		void setTitle(jstring arg0);
+		void setTitle(const QString &arg0);
+		void setTitleColor(jint arg0);
+		void setVolumeControlStream(jint arg0);
+		jint getVolumeControlStream();
+		void setMediaController(__jni_impl::android::media::session::MediaController arg0);
+		QAndroidJniObject getMediaController();
+		void setType(jint arg0);
+		void setFlags(jint arg0, jint arg1);
+		void addFlags(jint arg0);
+		void setCallback(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getCallback();
 	};
 } // namespace __jni_impl::android::view
 
 #include "../content/Context.hpp"
 #include "WindowManager_LayoutParams.hpp"
-#include "View.hpp"
-#include "../content/res/Configuration.hpp"
-#include "ViewGroup_LayoutParams.hpp"
-#include "../transition/Scene.hpp"
-#include "../net/Uri.hpp"
-#include "../graphics/drawable/Drawable.hpp"
-#include "LayoutInflater.hpp"
-#include "../media/session/MediaController.hpp"
 #include "../os/Bundle.hpp"
+#include "../graphics/drawable/Drawable.hpp"
 #include "../content/res/TypedArray.hpp"
 #include "../os/Handler.hpp"
 #include "KeyEvent.hpp"
 #include "MotionEvent.hpp"
+#include "View.hpp"
 #include "InputEvent.hpp"
 #include "../transition/TransitionManager.hpp"
 #include "../transition/Transition.hpp"
+#include "../content/res/Configuration.hpp"
+#include "ViewGroup_LayoutParams.hpp"
+#include "../transition/Scene.hpp"
+#include "../net/Uri.hpp"
+#include "LayoutInflater.hpp"
+#include "../media/session/MediaController.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -476,7 +479,8 @@ namespace __jni_impl::android::view
 		__thiz = QAndroidJniObject(
 			"android.view.Window",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -514,230 +518,6 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jboolean>(
 			"isFloating",
 			"()Z"
-		);
-	}
-	QAndroidJniObject Window::getWindowManager()
-	{
-		return __thiz.callObjectMethod(
-			"getWindowManager",
-			"()Landroid/view/WindowManager;"
-		);
-	}
-	QAndroidJniObject Window::getCurrentFocus()
-	{
-		return __thiz.callObjectMethod(
-			"getCurrentFocus",
-			"()Landroid/view/View;"
-		);
-	}
-	void Window::onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0)
-	{
-		__thiz.callMethod<void>(
-			"onConfigurationChanged",
-			"(Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Window::findViewById(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findViewById",
-			"(I)Landroid/view/View;",
-			arg0
-		);
-	}
-	QAndroidJniObject Window::requireViewById(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"requireViewById",
-			"(I)Landroid/view/View;",
-			arg0
-		);
-	}
-	void Window::setContentView(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContentView",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Window::setContentView(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContentView",
-			"(I)V",
-			arg0
-		);
-	}
-	void Window::setContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
-	{
-		__thiz.callMethod<void>(
-			"setContentView",
-			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void Window::addContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
-	{
-		__thiz.callMethod<void>(
-			"addContentView",
-			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Window::getContentScene()
-	{
-		return __thiz.callObjectMethod(
-			"getContentScene",
-			"()Landroid/transition/Scene;"
-		);
-	}
-	void Window::takeKeyEvents(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"takeKeyEvents",
-			"(Z)V",
-			arg0
-		);
-	}
-	void Window::setFeatureDrawableResource(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFeatureDrawableResource",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void Window::setFeatureDrawableUri(jint arg0, __jni_impl::android::net::Uri arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFeatureDrawableUri",
-			"(ILandroid/net/Uri;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void Window::setFeatureDrawable(jint arg0, __jni_impl::android::graphics::drawable::Drawable arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFeatureDrawable",
-			"(ILandroid/graphics/drawable/Drawable;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void Window::setFeatureDrawableAlpha(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFeatureDrawableAlpha",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject Window::getLayoutInflater()
-	{
-		return __thiz.callObjectMethod(
-			"getLayoutInflater",
-			"()Landroid/view/LayoutInflater;"
-		);
-	}
-	void Window::setTitle(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitle",
-			"(Ljava/lang/CharSequence;)V",
-			arg0
-		);
-	}
-	void Window::setTitleColor(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTitleColor",
-			"(I)V",
-			arg0
-		);
-	}
-	void Window::setVolumeControlStream(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setVolumeControlStream",
-			"(I)V",
-			arg0
-		);
-	}
-	jint Window::getVolumeControlStream()
-	{
-		return __thiz.callMethod<jint>(
-			"getVolumeControlStream",
-			"()I"
-		);
-	}
-	void Window::setMediaController(__jni_impl::android::media::session::MediaController arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMediaController",
-			"(Landroid/media/session/MediaController;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Window::getMediaController()
-	{
-		return __thiz.callObjectMethod(
-			"getMediaController",
-			"()Landroid/media/session/MediaController;"
-		);
-	}
-	void Window::setType(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setType",
-			"(I)V",
-			arg0
-		);
-	}
-	void Window::setFlags(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFlags",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void Window::addFlags(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"addFlags",
-			"(I)V",
-			arg0
-		);
-	}
-	void Window::setCallback(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCallback",
-			"(Landroid/view/Window$Callback;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Window::getCallback()
-	{
-		return __thiz.callObjectMethod(
-			"getCallback",
-			"()Landroid/view/Window$Callback;"
-		);
-	}
-	void Window::setGravity(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGravity",
-			"(I)V",
-			arg0
 		);
 	}
 	void Window::setSystemGestureExclusionRects(__jni_impl::__JniBaseClass arg0)
@@ -794,6 +574,14 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
+	void Window::setIcon(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setIcon",
+			"(I)V",
+			arg0
+		);
+	}
 	QAndroidJniObject Window::getWindowStyle()
 	{
 		return __thiz.callObjectMethod(
@@ -834,6 +622,17 @@ namespace __jni_impl::android::view
 			arg3
 		);
 	}
+	void Window::setWindowManager(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2, jboolean arg3)
+	{
+		__thiz.callMethod<void>(
+			"setWindowManager",
+			"(Landroid/view/WindowManager;Landroid/os/IBinder;Ljava/lang/String;Z)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3
+		);
+	}
 	void Window::setWindowManager(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jstring arg2)
 	{
 		__thiz.callMethod<void>(
@@ -842,6 +641,16 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2
+		);
+	}
+	void Window::setWindowManager(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2)
+	{
+		__thiz.callMethod<void>(
+			"setWindowManager",
+			"(Landroid/view/WindowManager;Landroid/os/IBinder;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	void Window::addOnFrameMetricsAvailableListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
@@ -1486,10 +1295,10 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
-	void Window::setIcon(jint arg0)
+	void Window::setGravity(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setIcon",
+			"setGravity",
 			"(I)V",
 			arg0
 		);
@@ -1499,6 +1308,230 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jboolean>(
 			"isWideColorGamut",
 			"()Z"
+		);
+	}
+	QAndroidJniObject Window::getWindowManager()
+	{
+		return __thiz.callObjectMethod(
+			"getWindowManager",
+			"()Landroid/view/WindowManager;"
+		);
+	}
+	QAndroidJniObject Window::getCurrentFocus()
+	{
+		return __thiz.callObjectMethod(
+			"getCurrentFocus",
+			"()Landroid/view/View;"
+		);
+	}
+	void Window::onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0)
+	{
+		__thiz.callMethod<void>(
+			"onConfigurationChanged",
+			"(Landroid/content/res/Configuration;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Window::findViewById(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"findViewById",
+			"(I)Landroid/view/View;",
+			arg0
+		);
+	}
+	QAndroidJniObject Window::requireViewById(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"requireViewById",
+			"(I)Landroid/view/View;",
+			arg0
+		);
+	}
+	void Window::setContentView(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setContentView",
+			"(I)V",
+			arg0
+		);
+	}
+	void Window::setContentView(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"setContentView",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Window::setContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
+	{
+		__thiz.callMethod<void>(
+			"setContentView",
+			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void Window::addContentView(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewGroup_LayoutParams arg1)
+	{
+		__thiz.callMethod<void>(
+			"addContentView",
+			"(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Window::getContentScene()
+	{
+		return __thiz.callObjectMethod(
+			"getContentScene",
+			"()Landroid/transition/Scene;"
+		);
+	}
+	void Window::takeKeyEvents(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"takeKeyEvents",
+			"(Z)V",
+			arg0
+		);
+	}
+	void Window::setFeatureDrawableResource(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setFeatureDrawableResource",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void Window::setFeatureDrawableUri(jint arg0, __jni_impl::android::net::Uri arg1)
+	{
+		__thiz.callMethod<void>(
+			"setFeatureDrawableUri",
+			"(ILandroid/net/Uri;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void Window::setFeatureDrawable(jint arg0, __jni_impl::android::graphics::drawable::Drawable arg1)
+	{
+		__thiz.callMethod<void>(
+			"setFeatureDrawable",
+			"(ILandroid/graphics/drawable/Drawable;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void Window::setFeatureDrawableAlpha(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setFeatureDrawableAlpha",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject Window::getLayoutInflater()
+	{
+		return __thiz.callObjectMethod(
+			"getLayoutInflater",
+			"()Landroid/view/LayoutInflater;"
+		);
+	}
+	void Window::setTitle(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTitle",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void Window::setTitle(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTitle",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void Window::setTitleColor(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTitleColor",
+			"(I)V",
+			arg0
+		);
+	}
+	void Window::setVolumeControlStream(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setVolumeControlStream",
+			"(I)V",
+			arg0
+		);
+	}
+	jint Window::getVolumeControlStream()
+	{
+		return __thiz.callMethod<jint>(
+			"getVolumeControlStream",
+			"()I"
+		);
+	}
+	void Window::setMediaController(__jni_impl::android::media::session::MediaController arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMediaController",
+			"(Landroid/media/session/MediaController;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Window::getMediaController()
+	{
+		return __thiz.callObjectMethod(
+			"getMediaController",
+			"()Landroid/media/session/MediaController;"
+		);
+	}
+	void Window::setType(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setType",
+			"(I)V",
+			arg0
+		);
+	}
+	void Window::setFlags(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setFlags",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void Window::addFlags(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"addFlags",
+			"(I)V",
+			arg0
+		);
+	}
+	void Window::setCallback(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCallback",
+			"(Landroid/view/Window$Callback;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Window::getCallback()
+	{
+		return __thiz.callObjectMethod(
+			"getCallback",
+			"()Landroid/view/Window$Callback;"
 		);
 	}
 } // namespace __jni_impl::android::view

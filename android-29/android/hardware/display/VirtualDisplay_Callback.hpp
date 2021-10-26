@@ -17,9 +17,9 @@ namespace __jni_impl::android::hardware::display
 		void __constructor();
 		
 		// Methods
-		void onPaused();
 		void onResumed();
 		void onStopped();
+		void onPaused();
 	};
 } // namespace __jni_impl::android::hardware::display
 
@@ -33,17 +33,11 @@ namespace __jni_impl::android::hardware::display
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.display.VirtualDisplay$Callback",
-			"()V");
-	}
-	
-	// Methods
-	void VirtualDisplay_Callback::onPaused()
-	{
-		__thiz.callMethod<void>(
-			"onPaused",
 			"()V"
 		);
 	}
+	
+	// Methods
 	void VirtualDisplay_Callback::onResumed()
 	{
 		__thiz.callMethod<void>(
@@ -55,6 +49,13 @@ namespace __jni_impl::android::hardware::display
 	{
 		__thiz.callMethod<void>(
 			"onStopped",
+			"()V"
+		);
+	}
+	void VirtualDisplay_Callback::onPaused()
+	{
+		__thiz.callMethod<void>(
+			"onPaused",
 			"()V"
 		);
 	}

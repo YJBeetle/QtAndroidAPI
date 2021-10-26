@@ -24,6 +24,7 @@ namespace __jni_impl::android::graphics
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 		jint getComponentCount();
 	};
 } // namespace __jni_impl::android::graphics
@@ -89,6 +90,15 @@ namespace __jni_impl::android::graphics
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$Model;",
 			arg0
+		);
+	}
+	QAndroidJniObject ColorSpace_Model::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.ColorSpace$Model",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$Model;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint ColorSpace_Model::getComponentCount()

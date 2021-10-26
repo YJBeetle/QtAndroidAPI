@@ -15,17 +15,21 @@ namespace __jni_impl::javax::xml::namespace
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, jstring arg1, jstring arg2);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2);
 		void __constructor(jstring arg0, jstring arg1);
+		void __constructor(const QString &arg0, const QString &arg1);
 		
 		// Methods
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
 		static QAndroidJniObject valueOf(jstring arg0);
-		jstring getPrefix();
+		static QAndroidJniObject valueOf(const QString &arg0);
 		jstring getNamespaceURI();
 		jstring getLocalPart();
+		jstring getPrefix();
 	};
 } // namespace __jni_impl::javax::xml::namespace
 
@@ -40,7 +44,16 @@ namespace __jni_impl::javax::xml::namespace
 		__thiz = QAndroidJniObject(
 			"javax.xml.namespace.QName",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void QName::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.xml.namespace.QName",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void QName::__constructor(jstring arg0, jstring arg1, jstring arg2)
 	{
@@ -49,7 +62,18 @@ namespace __jni_impl::javax::xml::namespace
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void QName::__constructor(const QString &arg0, const QString &arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.xml.namespace.QName",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	void QName::__constructor(jstring arg0, jstring arg1)
 	{
@@ -57,7 +81,17 @@ namespace __jni_impl::javax::xml::namespace
 			"javax.xml.namespace.QName",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void QName::__constructor(const QString &arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.xml.namespace.QName",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -92,12 +126,14 @@ namespace __jni_impl::javax::xml::namespace
 			arg0
 		);
 	}
-	jstring QName::getPrefix()
+	QAndroidJniObject QName::valueOf(const QString &arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getPrefix",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.xml.namespace.QName",
+			"valueOf",
+			"(Ljava/lang/String;)Ljavax/xml/namespace/QName;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	jstring QName::getNamespaceURI()
 	{
@@ -110,6 +146,13 @@ namespace __jni_impl::javax::xml::namespace
 	{
 		return __thiz.callObjectMethod(
 			"getLocalPart",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring QName::getPrefix()
+	{
+		return __thiz.callObjectMethod(
+			"getPrefix",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

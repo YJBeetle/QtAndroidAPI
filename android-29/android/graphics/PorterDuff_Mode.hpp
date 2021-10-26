@@ -38,6 +38,7 @@ namespace __jni_impl::android::graphics
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -214,6 +215,15 @@ namespace __jni_impl::android::graphics
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/PorterDuff$Mode;",
 			arg0
+		);
+	}
+	QAndroidJniObject PorterDuff_Mode::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.PorterDuff$Mode",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/PorterDuff$Mode;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::graphics

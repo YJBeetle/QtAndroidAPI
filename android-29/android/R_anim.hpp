@@ -134,7 +134,8 @@ namespace __jni_impl::android
 	{
 		__thiz = QAndroidJniObject(
 			"android.R$anim",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

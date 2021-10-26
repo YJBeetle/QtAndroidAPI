@@ -27,6 +27,7 @@ namespace __jni_impl::javax::xml::transform::sax
 		jboolean isEmpty();
 		jstring getSystemId();
 		void setSystemId(jstring arg0);
+		void setSystemId(const QString &arg0);
 		QAndroidJniObject getInputSource();
 		void setXMLReader(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getXMLReader();
@@ -55,7 +56,8 @@ namespace __jni_impl::javax::xml::transform::sax
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.sax.SAXSource",
 			"(Lorg/xml/sax/InputSource;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SAXSource::__constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::org::xml::sax::InputSource arg1)
 	{
@@ -63,13 +65,15 @@ namespace __jni_impl::javax::xml::transform::sax
 			"javax.xml.transform.sax.SAXSource",
 			"(Lorg/xml/sax/XMLReader;Lorg/xml/sax/InputSource;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void SAXSource::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.sax.SAXSource",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -93,6 +97,14 @@ namespace __jni_impl::javax::xml::transform::sax
 			"setSystemId",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void SAXSource::setSystemId(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSystemId",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject SAXSource::getInputSource()

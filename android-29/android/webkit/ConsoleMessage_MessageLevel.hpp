@@ -25,6 +25,7 @@ namespace __jni_impl::android::webkit
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -97,6 +98,15 @@ namespace __jni_impl::android::webkit
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/webkit/ConsoleMessage$MessageLevel;",
 			arg0
+		);
+	}
+	QAndroidJniObject ConsoleMessage_MessageLevel::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.webkit.ConsoleMessage$MessageLevel",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/webkit/ConsoleMessage$MessageLevel;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::webkit

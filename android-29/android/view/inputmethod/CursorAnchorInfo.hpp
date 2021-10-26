@@ -36,11 +36,9 @@ namespace __jni_impl::android::view::inputmethod
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getMatrix();
 		jint getSelectionStart();
 		jint getSelectionEnd();
-		QAndroidJniObject getMatrix();
 		jint getComposingTextStart();
 		jstring getComposingText();
 		jint getInsertionMarkerFlags();
@@ -50,6 +48,8 @@ namespace __jni_impl::android::view::inputmethod
 		jfloat getInsertionMarkerBottom();
 		QAndroidJniObject getCharacterBounds(jint arg0);
 		jint getCharacterBoundsFlags(jint arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
@@ -96,7 +96,8 @@ namespace __jni_impl::android::view::inputmethod
 		__thiz = QAndroidJniObject(
 			"android.view.inputmethod.CursorAnchorInfo",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -122,20 +123,11 @@ namespace __jni_impl::android::view::inputmethod
 			"()I"
 		);
 	}
-	jint CursorAnchorInfo::describeContents()
+	QAndroidJniObject CursorAnchorInfo::getMatrix()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void CursorAnchorInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callObjectMethod(
+			"getMatrix",
+			"()Landroid/graphics/Matrix;"
 		);
 	}
 	jint CursorAnchorInfo::getSelectionStart()
@@ -150,13 +142,6 @@ namespace __jni_impl::android::view::inputmethod
 		return __thiz.callMethod<jint>(
 			"getSelectionEnd",
 			"()I"
-		);
-	}
-	QAndroidJniObject CursorAnchorInfo::getMatrix()
-	{
-		return __thiz.callObjectMethod(
-			"getMatrix",
-			"()Landroid/graphics/Matrix;"
 		);
 	}
 	jint CursorAnchorInfo::getComposingTextStart()
@@ -222,6 +207,22 @@ namespace __jni_impl::android::view::inputmethod
 			"getCharacterBoundsFlags",
 			"(I)I",
 			arg0
+		);
+	}
+	jint CursorAnchorInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void CursorAnchorInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::view::inputmethod

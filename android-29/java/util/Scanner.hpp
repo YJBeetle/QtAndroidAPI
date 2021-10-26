@@ -59,24 +59,30 @@ namespace __jni_impl::java::util
 		
 		// Constructors
 		void __constructor(__jni_impl::java::io::InputStream arg0, jstring arg1);
+		void __constructor(__jni_impl::java::io::InputStream arg0, const QString &arg1);
 		void __constructor(__jni_impl::java::io::InputStream arg0);
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		void __constructor(__jni_impl::java::io::File arg0);
 		void __constructor(__jni_impl::java::io::File arg0, __jni_impl::java::nio::charset::Charset arg1);
 		void __constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::nio::charset::Charset arg1);
 		void __constructor(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void __constructor(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::java::nio::charset::Charset arg1);
 		void __constructor(__jni_impl::java::io::File arg0, jstring arg1);
+		void __constructor(__jni_impl::java::io::File arg0, const QString &arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		void remove();
 		jstring toString();
 		jboolean hasNext(__jni_impl::java::util::regex::Pattern arg0);
 		jboolean hasNext(jstring arg0);
+		jboolean hasNext(const QString &arg0);
 		jboolean hasNext();
 		jstring next(__jni_impl::java::util::regex::Pattern arg0);
 		jstring next(jstring arg0);
+		jstring next(const QString &arg0);
 		jstring next();
 		QAndroidJniObject delimiter();
 		QAndroidJniObject locale();
@@ -84,6 +90,7 @@ namespace __jni_impl::java::util
 		void close();
 		QAndroidJniObject skip(__jni_impl::java::util::regex::Pattern arg0);
 		QAndroidJniObject skip(jstring arg0);
+		QAndroidJniObject skip(const QString &arg0);
 		QAndroidJniObject reset();
 		jint radix();
 		jdouble nextDouble();
@@ -95,13 +102,16 @@ namespace __jni_impl::java::util
 		jboolean nextBoolean();
 		jfloat nextFloat();
 		QAndroidJniObject findAll(jstring arg0);
+		QAndroidJniObject findAll(const QString &arg0);
 		QAndroidJniObject findAll(__jni_impl::java::util::regex::Pattern arg0);
 		QAndroidJniObject tokens();
 		QAndroidJniObject useLocale(__jni_impl::java::util::Locale arg0);
 		jstring findWithinHorizon(__jni_impl::java::util::regex::Pattern arg0, jint arg1);
 		jstring findWithinHorizon(jstring arg0, jint arg1);
+		jstring findWithinHorizon(const QString &arg0, jint arg1);
 		jstring findInLine(__jni_impl::java::util::regex::Pattern arg0);
 		jstring findInLine(jstring arg0);
+		jstring findInLine(const QString &arg0);
 		jboolean hasNextByte(jint arg0);
 		jboolean hasNextByte();
 		jbyte nextByte();
@@ -120,6 +130,7 @@ namespace __jni_impl::java::util
 		QAndroidJniObject nextBigInteger();
 		QAndroidJniObject useRadix(jint arg0);
 		QAndroidJniObject useDelimiter(jstring arg0);
+		QAndroidJniObject useDelimiter(const QString &arg0);
 		QAndroidJniObject useDelimiter(__jni_impl::java::util::regex::Pattern arg0);
 		jboolean hasNextLine();
 		jstring nextLine();
@@ -154,28 +165,41 @@ namespace __jni_impl::java::util
 			"java.util.Scanner",
 			"(Ljava/io/InputStream;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void Scanner::__constructor(__jni_impl::java::io::InputStream arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.Scanner",
+			"(Ljava/io/InputStream;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void Scanner::__constructor(__jni_impl::java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Scanner",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Scanner::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Scanner",
 			"(Ljava/lang/Readable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Scanner::__constructor(__jni_impl::java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Scanner",
 			"(Ljava/io/File;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Scanner::__constructor(__jni_impl::java::io::File arg0, __jni_impl::java::nio::charset::Charset arg1)
 	{
@@ -183,7 +207,8 @@ namespace __jni_impl::java::util
 			"java.util.Scanner",
 			"(Ljava/io/File;Ljava/nio/charset/Charset;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Scanner::__constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::nio::charset::Charset arg1)
 	{
@@ -191,7 +216,8 @@ namespace __jni_impl::java::util
 			"java.util.Scanner",
 			"(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Scanner::__constructor(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
@@ -199,7 +225,17 @@ namespace __jni_impl::java::util
 			"java.util.Scanner",
 			"(Ljava/nio/channels/ReadableByteChannel;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void Scanner::__constructor(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.Scanner",
+			"(Ljava/nio/channels/ReadableByteChannel;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void Scanner::__constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::java::nio::charset::Charset arg1)
 	{
@@ -207,7 +243,8 @@ namespace __jni_impl::java::util
 			"java.util.Scanner",
 			"(Ljava/nio/channels/ReadableByteChannel;Ljava/nio/charset/Charset;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Scanner::__constructor(__jni_impl::java::io::File arg0, jstring arg1)
 	{
@@ -215,14 +252,33 @@ namespace __jni_impl::java::util
 			"java.util.Scanner",
 			"(Ljava/io/File;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void Scanner::__constructor(__jni_impl::java::io::File arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.Scanner",
+			"(Ljava/io/File;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void Scanner::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Scanner",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Scanner::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.Scanner",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -256,6 +312,14 @@ namespace __jni_impl::java::util
 			arg0
 		);
 	}
+	jboolean Scanner::hasNext(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasNext",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jboolean Scanner::hasNext()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -277,6 +341,14 @@ namespace __jni_impl::java::util
 			"next",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring Scanner::next(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"next",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring Scanner::next()
@@ -328,6 +400,14 @@ namespace __jni_impl::java::util
 			"skip",
 			"(Ljava/lang/String;)Ljava/util/Scanner;",
 			arg0
+		);
+	}
+	QAndroidJniObject Scanner::skip(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"skip",
+			"(Ljava/lang/String;)Ljava/util/Scanner;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Scanner::reset()
@@ -410,6 +490,14 @@ namespace __jni_impl::java::util
 			arg0
 		);
 	}
+	QAndroidJniObject Scanner::findAll(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"findAll",
+			"(Ljava/lang/String;)Ljava/util/stream/Stream;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject Scanner::findAll(__jni_impl::java::util::regex::Pattern arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -451,6 +539,15 @@ namespace __jni_impl::java::util
 			arg1
 		).object<jstring>();
 	}
+	jstring Scanner::findWithinHorizon(const QString &arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"findWithinHorizon",
+			"(Ljava/lang/String;I)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		).object<jstring>();
+	}
 	jstring Scanner::findInLine(__jni_impl::java::util::regex::Pattern arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -465,6 +562,14 @@ namespace __jni_impl::java::util
 			"findInLine",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring Scanner::findInLine(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"findInLine",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jboolean Scanner::hasNextByte(jint arg0)
@@ -601,6 +706,14 @@ namespace __jni_impl::java::util
 			"useDelimiter",
 			"(Ljava/lang/String;)Ljava/util/Scanner;",
 			arg0
+		);
+	}
+	QAndroidJniObject Scanner::useDelimiter(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"useDelimiter",
+			"(Ljava/lang/String;)Ljava/util/Scanner;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Scanner::useDelimiter(__jni_impl::java::util::regex::Pattern arg0)

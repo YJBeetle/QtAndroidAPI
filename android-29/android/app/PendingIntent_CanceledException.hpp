@@ -22,6 +22,7 @@ namespace __jni_impl::android::app
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(__jni_impl::java::lang::Exception arg0);
 		
 		// Methods
@@ -39,21 +40,32 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.PendingIntent$CanceledException",
-			"()V");
+			"()V"
+		);
 	}
 	void PendingIntent_CanceledException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.PendingIntent$CanceledException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void PendingIntent_CanceledException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.PendingIntent$CanceledException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void PendingIntent_CanceledException::__constructor(__jni_impl::java::lang::Exception arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.PendingIntent$CanceledException",
 			"(Ljava/lang/Exception;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

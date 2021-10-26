@@ -20,6 +20,7 @@ namespace __jni_impl::android::util
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		void set(jobject arg0, jobject arg1);
@@ -40,7 +41,16 @@ namespace __jni_impl::android::util
 		__thiz = QAndroidJniObject(
 			"android.util.FloatProperty",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void FloatProperty::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.util.FloatProperty",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

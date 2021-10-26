@@ -19,6 +19,7 @@ namespace __jni_impl::android::webkit
 		
 		// Methods
 		void confirm(jstring arg0);
+		void confirm(const QString &arg0);
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -42,6 +43,14 @@ namespace __jni_impl::android::webkit
 			"confirm",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void JsPromptResult::confirm(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"confirm",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::webkit

@@ -26,16 +26,19 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void setUsername(jstring arg0);
-		void setPassword(jstring arg0);
-		jstring getPassword();
 		void setEapType(jint arg0);
 		jstring getUsername();
 		jint getEapType();
 		void setNonEapInnerMethod(jstring arg0);
+		void setNonEapInnerMethod(const QString &arg0);
 		jstring getNonEapInnerMethod();
+		void setUsername(jstring arg0);
+		void setUsername(const QString &arg0);
+		void setPassword(jstring arg0);
+		void setPassword(const QString &arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getPassword();
 	};
 } // namespace __jni_impl::android::net::wifi::hotspot2::pps
 
@@ -58,14 +61,16 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.hotspot2.pps.Credential$UserCredential",
-			"()V");
+			"()V"
+		);
 	}
 	void Credential_UserCredential::__constructor(__jni_impl::android::net::wifi::hotspot2::pps::Credential_UserCredential arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.hotspot2.pps.Credential$UserCredential",
 			"(Landroid/net/wifi/hotspot2/pps/Credential$UserCredential;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -90,45 +95,6 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 			"hashCode",
 			"()I"
 		);
-	}
-	jint Credential_UserCredential::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void Credential_UserCredential::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void Credential_UserCredential::setUsername(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setUsername",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void Credential_UserCredential::setPassword(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPassword",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	jstring Credential_UserCredential::getPassword()
-	{
-		return __thiz.callObjectMethod(
-			"getPassword",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	void Credential_UserCredential::setEapType(jint arg0)
 	{
@@ -160,10 +126,73 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 			arg0
 		);
 	}
+	void Credential_UserCredential::setNonEapInnerMethod(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setNonEapInnerMethod",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring Credential_UserCredential::getNonEapInnerMethod()
 	{
 		return __thiz.callObjectMethod(
 			"getNonEapInnerMethod",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void Credential_UserCredential::setUsername(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setUsername",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void Credential_UserCredential::setUsername(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setUsername",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void Credential_UserCredential::setPassword(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPassword",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void Credential_UserCredential::setPassword(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPassword",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jint Credential_UserCredential::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void Credential_UserCredential::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jstring Credential_UserCredential::getPassword()
+	{
+		return __thiz.callObjectMethod(
+			"getPassword",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

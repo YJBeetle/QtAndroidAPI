@@ -43,7 +43,8 @@ namespace __jni_impl::android::text::style
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.MetricAffectingSpan",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -210,10 +210,12 @@ namespace __jni_impl::android::opengl
 		static void glGetProgramInterfaceiv(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3);
 		static void glGetProgramInterfaceiv(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4);
 		static jint glGetProgramResourceIndex(jint arg0, jint arg1, jstring arg2);
+		static jint glGetProgramResourceIndex(jint arg0, jint arg1, const QString &arg2);
 		static jstring glGetProgramResourceName(jint arg0, jint arg1, jint arg2);
 		static void glGetProgramResourceiv(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::java::nio::IntBuffer arg4, jint arg5, __jni_impl::java::nio::IntBuffer arg6, __jni_impl::java::nio::IntBuffer arg7);
 		static void glGetProgramResourceiv(jint arg0, jint arg1, jint arg2, jint arg3, jintArray arg4, jint arg5, jint arg6, jintArray arg7, jint arg8, jintArray arg9, jint arg10);
 		static jint glGetProgramResourceLocation(jint arg0, jint arg1, jstring arg2);
+		static jint glGetProgramResourceLocation(jint arg0, jint arg1, const QString &arg2);
 		static void glUseProgramStages(jint arg0, jint arg1, jint arg2);
 		static void glActiveShaderProgram(jint arg0, jint arg1);
 		static jint glCreateShaderProgramv(jint arg0, jarray arg1);
@@ -1640,6 +1642,17 @@ namespace __jni_impl::android::opengl
 			arg2
 		);
 	}
+	jint GLES31::glGetProgramResourceIndex(jint arg0, jint arg1, const QString &arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.opengl.GLES31",
+			"glGetProgramResourceIndex",
+			"(IILjava/lang/String;)I",
+			arg0,
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
+	}
 	jstring GLES31::glGetProgramResourceName(jint arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -1695,6 +1708,17 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2
+		);
+	}
+	jint GLES31::glGetProgramResourceLocation(jint arg0, jint arg1, const QString &arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.opengl.GLES31",
+			"glGetProgramResourceLocation",
+			"(IILjava/lang/String;)I",
+			arg0,
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	void GLES31::glUseProgramStages(jint arg0, jint arg1, jint arg2)

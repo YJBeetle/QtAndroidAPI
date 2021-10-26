@@ -26,6 +26,10 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
+		jint getInputType();
+		jint getImeOptions();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jstring getSuggestAuthority();
 		jstring getSuggestPackage();
 		QAndroidJniObject getSearchActivity();
@@ -48,10 +52,6 @@ namespace __jni_impl::android::app
 		jboolean shouldIncludeInGlobalSearch();
 		jboolean queryAfterZeroResults();
 		jboolean autoUrlDetect();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getInputType();
-		jint getImeOptions();
 	};
 } // namespace __jni_impl::android::app
 
@@ -79,6 +79,36 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
+	jint SearchableInfo::getInputType()
+	{
+		return __thiz.callMethod<jint>(
+			"getInputType",
+			"()I"
+		);
+	}
+	jint SearchableInfo::getImeOptions()
+	{
+		return __thiz.callMethod<jint>(
+			"getImeOptions",
+			"()I"
+		);
+	}
+	jint SearchableInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void SearchableInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
 	jstring SearchableInfo::getSuggestAuthority()
 	{
 		return __thiz.callObjectMethod(
@@ -231,36 +261,6 @@ namespace __jni_impl::android::app
 		return __thiz.callMethod<jboolean>(
 			"autoUrlDetect",
 			"()Z"
-		);
-	}
-	jint SearchableInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void SearchableInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jint SearchableInfo::getInputType()
-	{
-		return __thiz.callMethod<jint>(
-			"getInputType",
-			"()I"
-		);
-	}
-	jint SearchableInfo::getImeOptions()
-	{
-		return __thiz.callMethod<jint>(
-			"getImeOptions",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::app

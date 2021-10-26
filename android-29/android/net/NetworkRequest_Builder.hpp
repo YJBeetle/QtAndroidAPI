@@ -29,6 +29,7 @@ namespace __jni_impl::android::net
 		QAndroidJniObject addTransportType(jint arg0);
 		QAndroidJniObject removeTransportType(jint arg0);
 		QAndroidJniObject setNetworkSpecifier(jstring arg0);
+		QAndroidJniObject setNetworkSpecifier(const QString &arg0);
 		QAndroidJniObject setNetworkSpecifier(__jni_impl::android::net::NetworkSpecifier arg0);
 		QAndroidJniObject addCapability(jint arg0);
 		QAndroidJniObject removeCapability(jint arg0);
@@ -47,7 +48,8 @@ namespace __jni_impl::android::net
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.NetworkRequest$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -80,6 +82,14 @@ namespace __jni_impl::android::net
 			"setNetworkSpecifier",
 			"(Ljava/lang/String;)Landroid/net/NetworkRequest$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject NetworkRequest_Builder::setNetworkSpecifier(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setNetworkSpecifier",
+			"(Ljava/lang/String;)Landroid/net/NetworkRequest$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject NetworkRequest_Builder::setNetworkSpecifier(__jni_impl::android::net::NetworkSpecifier arg0)

@@ -28,17 +28,19 @@ namespace __jni_impl::android::telecom
 		
 		// Constructors
 		void __constructor(__jni_impl::android::content::ComponentName arg0, jstring arg1);
+		void __constructor(__jni_impl::android::content::ComponentName arg0, const QString &arg1);
 		void __constructor(__jni_impl::android::content::ComponentName arg0, jstring arg1, __jni_impl::android::os::UserHandle arg2);
+		void __constructor(__jni_impl::android::content::ComponentName arg0, const QString &arg1, __jni_impl::android::os::UserHandle arg2);
 		
 		// Methods
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
 		jstring getId();
+		QAndroidJniObject getUserHandle();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getComponentName();
-		QAndroidJniObject getUserHandle();
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -65,7 +67,17 @@ namespace __jni_impl::android::telecom
 			"android.telecom.PhoneAccountHandle",
 			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void PhoneAccountHandle::__constructor(__jni_impl::android::content::ComponentName arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.telecom.PhoneAccountHandle",
+			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void PhoneAccountHandle::__constructor(__jni_impl::android::content::ComponentName arg0, jstring arg1, __jni_impl::android::os::UserHandle arg2)
 	{
@@ -74,7 +86,18 @@ namespace __jni_impl::android::telecom
 			"(Landroid/content/ComponentName;Ljava/lang/String;Landroid/os/UserHandle;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void PhoneAccountHandle::__constructor(__jni_impl::android::content::ComponentName arg0, const QString &arg1, __jni_impl::android::os::UserHandle arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.telecom.PhoneAccountHandle",
+			"(Landroid/content/ComponentName;Ljava/lang/String;Landroid/os/UserHandle;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -107,6 +130,13 @@ namespace __jni_impl::android::telecom
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	QAndroidJniObject PhoneAccountHandle::getUserHandle()
+	{
+		return __thiz.callObjectMethod(
+			"getUserHandle",
+			"()Landroid/os/UserHandle;"
+		);
+	}
 	jint PhoneAccountHandle::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -128,13 +158,6 @@ namespace __jni_impl::android::telecom
 		return __thiz.callObjectMethod(
 			"getComponentName",
 			"()Landroid/content/ComponentName;"
-		);
-	}
-	QAndroidJniObject PhoneAccountHandle::getUserHandle()
-	{
-		return __thiz.callObjectMethod(
-			"getUserHandle",
-			"()Landroid/os/UserHandle;"
 		);
 	}
 } // namespace __jni_impl::android::telecom

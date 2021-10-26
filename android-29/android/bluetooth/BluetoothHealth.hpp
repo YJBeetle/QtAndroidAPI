@@ -7,15 +7,15 @@
 
 namespace __jni_impl::android::bluetooth
 {
+	class BluetoothDevice;
+}
+namespace __jni_impl::android::bluetooth
+{
 	class BluetoothHealthCallback;
 }
 namespace __jni_impl::android::bluetooth
 {
 	class BluetoothHealthAppConfiguration;
-}
-namespace __jni_impl::android::bluetooth
-{
-	class BluetoothDevice;
 }
 namespace __jni_impl::android::os
 {
@@ -45,20 +45,21 @@ namespace __jni_impl::android::bluetooth
 		void __constructor();
 		
 		// Methods
+		jint getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0);
+		QAndroidJniObject getConnectedDevices();
+		QAndroidJniObject getDevicesMatchingConnectionStates(jintArray arg0);
 		jboolean registerSinkAppConfiguration(jstring arg0, jint arg1, __jni_impl::android::bluetooth::BluetoothHealthCallback arg2);
+		jboolean registerSinkAppConfiguration(const QString &arg0, jint arg1, __jni_impl::android::bluetooth::BluetoothHealthCallback arg2);
 		jboolean unregisterAppConfiguration(__jni_impl::android::bluetooth::BluetoothHealthAppConfiguration arg0);
 		jboolean connectChannelToSource(__jni_impl::android::bluetooth::BluetoothDevice arg0, __jni_impl::android::bluetooth::BluetoothHealthAppConfiguration arg1);
 		jboolean disconnectChannel(__jni_impl::android::bluetooth::BluetoothDevice arg0, __jni_impl::android::bluetooth::BluetoothHealthAppConfiguration arg1, jint arg2);
 		QAndroidJniObject getMainChannelFd(__jni_impl::android::bluetooth::BluetoothDevice arg0, __jni_impl::android::bluetooth::BluetoothHealthAppConfiguration arg1);
-		jint getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0);
-		QAndroidJniObject getConnectedDevices();
-		QAndroidJniObject getDevicesMatchingConnectionStates(jintArray arg0);
 	};
 } // namespace __jni_impl::android::bluetooth
 
+#include "BluetoothDevice.hpp"
 #include "BluetoothHealthCallback.hpp"
 #include "BluetoothHealthAppConfiguration.hpp"
-#include "BluetoothDevice.hpp"
 #include "../os/ParcelFileDescriptor.hpp"
 
 namespace __jni_impl::android::bluetooth
@@ -158,12 +159,45 @@ namespace __jni_impl::android::bluetooth
 	}
 	
 	// Methods
+	jint BluetoothHealth::getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getConnectionState",
+			"(Landroid/bluetooth/BluetoothDevice;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject BluetoothHealth::getConnectedDevices()
+	{
+		return __thiz.callObjectMethod(
+			"getConnectedDevices",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject BluetoothHealth::getDevicesMatchingConnectionStates(jintArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDevicesMatchingConnectionStates",
+			"([I)Ljava/util/List;",
+			arg0
+		);
+	}
 	jboolean BluetoothHealth::registerSinkAppConfiguration(jstring arg0, jint arg1, __jni_impl::android::bluetooth::BluetoothHealthCallback arg2)
 	{
 		return __thiz.callMethod<jboolean>(
 			"registerSinkAppConfiguration",
 			"(Ljava/lang/String;ILandroid/bluetooth/BluetoothHealthCallback;)Z",
 			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	jboolean BluetoothHealth::registerSinkAppConfiguration(const QString &arg0, jint arg1, __jni_impl::android::bluetooth::BluetoothHealthCallback arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"registerSinkAppConfiguration",
+			"(Ljava/lang/String;ILandroid/bluetooth/BluetoothHealthCallback;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object()
 		);
@@ -202,29 +236,6 @@ namespace __jni_impl::android::bluetooth
 			"(Landroid/bluetooth/BluetoothDevice;Landroid/bluetooth/BluetoothHealthAppConfiguration;)Landroid/os/ParcelFileDescriptor;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	jint BluetoothHealth::getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getConnectionState",
-			"(Landroid/bluetooth/BluetoothDevice;)I",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject BluetoothHealth::getConnectedDevices()
-	{
-		return __thiz.callObjectMethod(
-			"getConnectedDevices",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject BluetoothHealth::getDevicesMatchingConnectionStates(jintArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDevicesMatchingConnectionStates",
-			"([I)Ljava/util/List;",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::bluetooth

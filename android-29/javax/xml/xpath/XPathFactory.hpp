@@ -24,15 +24,20 @@ namespace __jni_impl::javax::xml::xpath
 		
 		// Methods
 		static QAndroidJniObject newInstance(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2);
+		static QAndroidJniObject newInstance(const QString &arg0, const QString &arg1, __jni_impl::java::lang::ClassLoader arg2);
 		static QAndroidJniObject newInstance(jstring arg0);
+		static QAndroidJniObject newInstance(const QString &arg0);
 		static QAndroidJniObject newInstance();
-		void setFeature(jstring arg0, jboolean arg1);
-		jboolean getFeature(jstring arg0);
 		static QAndroidJniObject newDefaultInstance();
 		void setXPathVariableResolver(__jni_impl::__JniBaseClass arg0);
 		void setXPathFunctionResolver(__jni_impl::__JniBaseClass arg0);
 		jboolean isObjectModelSupported(jstring arg0);
+		jboolean isObjectModelSupported(const QString &arg0);
 		QAndroidJniObject newXPath();
+		void setFeature(jstring arg0, jboolean arg1);
+		void setFeature(const QString &arg0, jboolean arg1);
+		jboolean getFeature(jstring arg0);
+		jboolean getFeature(const QString &arg0);
 	};
 } // namespace __jni_impl::javax::xml::xpath
 
@@ -78,6 +83,17 @@ namespace __jni_impl::javax::xml::xpath
 			arg2.__jniObject().object()
 		);
 	}
+	QAndroidJniObject XPathFactory::newInstance(const QString &arg0, const QString &arg1, __jni_impl::java::lang::ClassLoader arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.xml.xpath.XPathFactory",
+			"newInstance",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/xpath/XPathFactory;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
+	}
 	QAndroidJniObject XPathFactory::newInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -87,29 +103,21 @@ namespace __jni_impl::javax::xml::xpath
 			arg0
 		);
 	}
+	QAndroidJniObject XPathFactory::newInstance(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.xml.xpath.XPathFactory",
+			"newInstance",
+			"(Ljava/lang/String;)Ljavax/xml/xpath/XPathFactory;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject XPathFactory::newInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.xml.xpath.XPathFactory",
 			"newInstance",
 			"()Ljavax/xml/xpath/XPathFactory;"
-		);
-	}
-	void XPathFactory::setFeature(jstring arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setFeature",
-			"(Ljava/lang/String;Z)V",
-			arg0,
-			arg1
-		);
-	}
-	jboolean XPathFactory::getFeature(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getFeature",
-			"(Ljava/lang/String;)Z",
-			arg0
 		);
 	}
 	QAndroidJniObject XPathFactory::newDefaultInstance()
@@ -144,11 +152,53 @@ namespace __jni_impl::javax::xml::xpath
 			arg0
 		);
 	}
+	jboolean XPathFactory::isObjectModelSupported(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isObjectModelSupported",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject XPathFactory::newXPath()
 	{
 		return __thiz.callObjectMethod(
 			"newXPath",
 			"()Ljavax/xml/xpath/XPath;"
+		);
+	}
+	void XPathFactory::setFeature(jstring arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setFeature",
+			"(Ljava/lang/String;Z)V",
+			arg0,
+			arg1
+		);
+	}
+	void XPathFactory::setFeature(const QString &arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setFeature",
+			"(Ljava/lang/String;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	jboolean XPathFactory::getFeature(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getFeature",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jboolean XPathFactory::getFeature(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getFeature",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::javax::xml::xpath

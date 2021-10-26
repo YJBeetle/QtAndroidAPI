@@ -17,14 +17,6 @@ namespace __jni_impl::android::graphics
 {
 	class Bitmap_Config;
 }
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
-namespace __jni_impl::android::graphics
-{
-	class Color;
-}
 namespace __jni_impl::java::nio
 {
 	class Buffer;
@@ -57,6 +49,14 @@ namespace __jni_impl::android::graphics
 {
 	class Paint;
 }
+namespace __jni_impl::android::graphics
+{
+	class Color;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
+}
 
 namespace __jni_impl::android::graphics
 {
@@ -73,11 +73,6 @@ namespace __jni_impl::android::graphics
 		// Methods
 		jboolean compress(__jni_impl::android::graphics::Bitmap_CompressFormat arg0, jint arg1, __jni_impl::java::io::OutputStream arg2);
 		QAndroidJniObject copy(__jni_impl::android::graphics::Bitmap_Config arg0, jboolean arg1);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getColor(jint arg0, jint arg1);
-		static QAndroidJniObject createScaledBitmap(__jni_impl::android::graphics::Bitmap arg0, jint arg1, jint arg2, jboolean arg3);
-		void recycle();
 		jint getDensity();
 		void setDensity(jint arg0);
 		void reconfigure(jint arg0, jint arg1, __jni_impl::android::graphics::Bitmap_Config arg2);
@@ -90,21 +85,22 @@ namespace __jni_impl::android::graphics
 		void copyPixelsFromBuffer(__jni_impl::java::nio::Buffer arg0);
 		jboolean isMutable();
 		static QAndroidJniObject wrapHardwareBuffer(__jni_impl::android::hardware::HardwareBuffer arg0, __jni_impl::android::graphics::ColorSpace arg1);
-		static QAndroidJniObject createBitmap(jintArray arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap_Config arg3);
-		static QAndroidJniObject createBitmap(__jni_impl::android::util::DisplayMetrics arg0, jintArray arg1, jint arg2, jint arg3, __jni_impl::android::graphics::Bitmap_Config arg4);
+		static QAndroidJniObject createScaledBitmap(__jni_impl::android::graphics::Bitmap arg0, jint arg1, jint arg2, jboolean arg3);
 		static QAndroidJniObject createBitmap(__jni_impl::android::util::DisplayMetrics arg0, jintArray arg1, jint arg2, jint arg3, jint arg4, jint arg5, __jni_impl::android::graphics::Bitmap_Config arg6);
+		static QAndroidJniObject createBitmap(jintArray arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap_Config arg3);
+		static QAndroidJniObject createBitmap(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Bitmap_Config arg5);
+		static QAndroidJniObject createBitmap(__jni_impl::android::util::DisplayMetrics arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap_Config arg3, jboolean arg4, __jni_impl::android::graphics::ColorSpace arg5);
+		static QAndroidJniObject createBitmap(__jni_impl::android::util::DisplayMetrics arg0, jintArray arg1, jint arg2, jint arg3, __jni_impl::android::graphics::Bitmap_Config arg4);
 		static QAndroidJniObject createBitmap(__jni_impl::android::graphics::Picture arg0);
 		static QAndroidJniObject createBitmap(__jni_impl::android::graphics::Picture arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap_Config arg3);
-		static QAndroidJniObject createBitmap(jint arg0, jint arg1, __jni_impl::android::graphics::Bitmap_Config arg2, jboolean arg3);
-		static QAndroidJniObject createBitmap(__jni_impl::android::util::DisplayMetrics arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap_Config arg3);
 		static QAndroidJniObject createBitmap(jint arg0, jint arg1, __jni_impl::android::graphics::Bitmap_Config arg2);
 		static QAndroidJniObject createBitmap(__jni_impl::android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Matrix arg5, jboolean arg6);
 		static QAndroidJniObject createBitmap(__jni_impl::android::graphics::Bitmap arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		static QAndroidJniObject createBitmap(__jni_impl::android::graphics::Bitmap arg0);
-		static QAndroidJniObject createBitmap(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Bitmap_Config arg5);
 		static QAndroidJniObject createBitmap(__jni_impl::android::util::DisplayMetrics arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap_Config arg3, jboolean arg4);
 		static QAndroidJniObject createBitmap(jint arg0, jint arg1, __jni_impl::android::graphics::Bitmap_Config arg2, jboolean arg3, __jni_impl::android::graphics::ColorSpace arg4);
-		static QAndroidJniObject createBitmap(__jni_impl::android::util::DisplayMetrics arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap_Config arg3, jboolean arg4, __jni_impl::android::graphics::ColorSpace arg5);
+		static QAndroidJniObject createBitmap(__jni_impl::android::util::DisplayMetrics arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap_Config arg3);
+		static QAndroidJniObject createBitmap(jint arg0, jint arg1, __jni_impl::android::graphics::Bitmap_Config arg2, jboolean arg3);
 		jboolean hasAlpha();
 		jbyteArray getNinePatchChunk();
 		jboolean isPremultiplied();
@@ -132,18 +128,20 @@ namespace __jni_impl::android::graphics
 		void getPixels(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
 		void setPixel(jint arg0, jint arg1, jint arg2);
 		void setPixels(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
-		QAndroidJniObject extractAlpha();
 		QAndroidJniObject extractAlpha(__jni_impl::android::graphics::Paint arg0, jintArray arg1);
+		QAndroidJniObject extractAlpha();
 		jboolean sameAs(__jni_impl::android::graphics::Bitmap arg0);
 		void prepareToDraw();
+		void recycle();
+		QAndroidJniObject getColor(jint arg0, jint arg1);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::graphics
 
 #include "Bitmap_CompressFormat.hpp"
 #include "../../java/io/OutputStream.hpp"
 #include "Bitmap_Config.hpp"
-#include "../os/Parcel.hpp"
-#include "Color.hpp"
 #include "../../java/nio/Buffer.hpp"
 #include "../hardware/HardwareBuffer.hpp"
 #include "ColorSpace.hpp"
@@ -152,6 +150,8 @@ namespace __jni_impl::android::graphics
 #include "Matrix.hpp"
 #include "Canvas.hpp"
 #include "Paint.hpp"
+#include "Color.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -198,50 +198,6 @@ namespace __jni_impl::android::graphics
 			"(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint Bitmap::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void Bitmap::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject Bitmap::getColor(jint arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getColor",
-			"(II)Landroid/graphics/Color;",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject Bitmap::createScaledBitmap(__jni_impl::android::graphics::Bitmap arg0, jint arg1, jint arg2, jboolean arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Bitmap",
-			"createScaledBitmap",
-			"(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void Bitmap::recycle()
-	{
-		__thiz.callMethod<void>(
-			"recycle",
-			"()V"
 		);
 	}
 	jint Bitmap::getDensity()
@@ -340,29 +296,16 @@ namespace __jni_impl::android::graphics
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Bitmap::createBitmap(jintArray arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap_Config arg3)
+	QAndroidJniObject Bitmap::createScaledBitmap(__jni_impl::android::graphics::Bitmap arg0, jint arg1, jint arg2, jboolean arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Bitmap",
-			"createBitmap",
-			"([IIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Bitmap::createBitmap(__jni_impl::android::util::DisplayMetrics arg0, jintArray arg1, jint arg2, jint arg3, __jni_impl::android::graphics::Bitmap_Config arg4)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Bitmap",
-			"createBitmap",
-			"(Landroid/util/DisplayMetrics;[IIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
+			"createScaledBitmap",
+			"(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;",
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3,
-			arg4.__jniObject().object()
+			arg3
 		);
 	}
 	QAndroidJniObject Bitmap::createBitmap(__jni_impl::android::util::DisplayMetrics arg0, jintArray arg1, jint arg2, jint arg3, jint arg4, jint arg5, __jni_impl::android::graphics::Bitmap_Config arg6)
@@ -380,6 +323,59 @@ namespace __jni_impl::android::graphics
 			arg6.__jniObject().object()
 		);
 	}
+	QAndroidJniObject Bitmap::createBitmap(jintArray arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap_Config arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Bitmap",
+			"createBitmap",
+			"([IIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Bitmap::createBitmap(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Bitmap_Config arg5)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Bitmap",
+			"createBitmap",
+			"([IIIIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Bitmap::createBitmap(__jni_impl::android::util::DisplayMetrics arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap_Config arg3, jboolean arg4, __jni_impl::android::graphics::ColorSpace arg5)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Bitmap",
+			"createBitmap",
+			"(Landroid/util/DisplayMetrics;IILandroid/graphics/Bitmap$Config;ZLandroid/graphics/ColorSpace;)Landroid/graphics/Bitmap;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3.__jniObject().object(),
+			arg4,
+			arg5.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Bitmap::createBitmap(__jni_impl::android::util::DisplayMetrics arg0, jintArray arg1, jint arg2, jint arg3, __jni_impl::android::graphics::Bitmap_Config arg4)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Bitmap",
+			"createBitmap",
+			"(Landroid/util/DisplayMetrics;[IIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3,
+			arg4.__jniObject().object()
+		);
+	}
 	QAndroidJniObject Bitmap::createBitmap(__jni_impl::android::graphics::Picture arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -395,30 +391,6 @@ namespace __jni_impl::android::graphics
 			"android.graphics.Bitmap",
 			"createBitmap",
 			"(Landroid/graphics/Picture;IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Bitmap::createBitmap(jint arg0, jint arg1, __jni_impl::android::graphics::Bitmap_Config arg2, jboolean arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Bitmap",
-			"createBitmap",
-			"(IILandroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;",
-			arg0,
-			arg1,
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	QAndroidJniObject Bitmap::createBitmap(__jni_impl::android::util::DisplayMetrics arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap_Config arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Bitmap",
-			"createBitmap",
-			"(Landroid/util/DisplayMetrics;IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
@@ -473,20 +445,6 @@ namespace __jni_impl::android::graphics
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Bitmap::createBitmap(jintArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Bitmap_Config arg5)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Bitmap",
-			"createBitmap",
-			"([IIIIILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5.__jniObject().object()
-		);
-	}
 	QAndroidJniObject Bitmap::createBitmap(__jni_impl::android::util::DisplayMetrics arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap_Config arg3, jboolean arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -513,18 +471,28 @@ namespace __jni_impl::android::graphics
 			arg4.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Bitmap::createBitmap(__jni_impl::android::util::DisplayMetrics arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap_Config arg3, jboolean arg4, __jni_impl::android::graphics::ColorSpace arg5)
+	QAndroidJniObject Bitmap::createBitmap(__jni_impl::android::util::DisplayMetrics arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Bitmap_Config arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Bitmap",
 			"createBitmap",
-			"(Landroid/util/DisplayMetrics;IILandroid/graphics/Bitmap$Config;ZLandroid/graphics/ColorSpace;)Landroid/graphics/Bitmap;",
+			"(Landroid/util/DisplayMetrics;IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;",
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object(),
-			arg4,
-			arg5.__jniObject().object()
+			arg3.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Bitmap::createBitmap(jint arg0, jint arg1, __jni_impl::android::graphics::Bitmap_Config arg2, jboolean arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Bitmap",
+			"createBitmap",
+			"(IILandroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;",
+			arg0,
+			arg1,
+			arg2.__jniObject().object(),
+			arg3
 		);
 	}
 	jboolean Bitmap::hasAlpha()
@@ -747,13 +715,6 @@ namespace __jni_impl::android::graphics
 			arg6
 		);
 	}
-	QAndroidJniObject Bitmap::extractAlpha()
-	{
-		return __thiz.callObjectMethod(
-			"extractAlpha",
-			"()Landroid/graphics/Bitmap;"
-		);
-	}
 	QAndroidJniObject Bitmap::extractAlpha(__jni_impl::android::graphics::Paint arg0, jintArray arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -761,6 +722,13 @@ namespace __jni_impl::android::graphics
 			"(Landroid/graphics/Paint;[I)Landroid/graphics/Bitmap;",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	QAndroidJniObject Bitmap::extractAlpha()
+	{
+		return __thiz.callObjectMethod(
+			"extractAlpha",
+			"()Landroid/graphics/Bitmap;"
 		);
 	}
 	jboolean Bitmap::sameAs(__jni_impl::android::graphics::Bitmap arg0)
@@ -776,6 +744,38 @@ namespace __jni_impl::android::graphics
 		__thiz.callMethod<void>(
 			"prepareToDraw",
 			"()V"
+		);
+	}
+	void Bitmap::recycle()
+	{
+		__thiz.callMethod<void>(
+			"recycle",
+			"()V"
+		);
+	}
+	QAndroidJniObject Bitmap::getColor(jint arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getColor",
+			"(II)Landroid/graphics/Color;",
+			arg0,
+			arg1
+		);
+	}
+	jint Bitmap::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void Bitmap::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::graphics

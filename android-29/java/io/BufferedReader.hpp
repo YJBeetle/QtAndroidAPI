@@ -49,14 +49,16 @@ namespace __jni_impl::java::io
 			"java.io.BufferedReader",
 			"(Ljava/io/Reader;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void BufferedReader::__constructor(__jni_impl::java::io::Reader arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.BufferedReader",
 			"(Ljava/io/Reader;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

@@ -31,6 +31,7 @@ namespace __jni_impl::java::time::zone
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 		QAndroidJniObject createDateTime(__jni_impl::java::time::LocalDateTime arg0, __jni_impl::java::time::ZoneOffset arg1, __jni_impl::java::time::ZoneOffset arg2);
 	};
 } // namespace __jni_impl::java::time::zone
@@ -90,6 +91,15 @@ namespace __jni_impl::java::time::zone
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;",
 			arg0
+		);
+	}
+	QAndroidJniObject ZoneOffsetTransitionRule_TimeDefinition::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.zone.ZoneOffsetTransitionRule$TimeDefinition",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject ZoneOffsetTransitionRule_TimeDefinition::createDateTime(__jni_impl::java::time::LocalDateTime arg0, __jni_impl::java::time::ZoneOffset arg1, __jni_impl::java::time::ZoneOffset arg2)

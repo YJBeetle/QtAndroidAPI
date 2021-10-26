@@ -60,7 +60,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/view/View;JJ)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods

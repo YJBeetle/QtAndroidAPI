@@ -226,12 +226,14 @@ namespace __jni_impl::android::icu::lang
 		// Methods
 		static jstring getName(jint arg0);
 		static jint getScript(jint arg0);
-		static jboolean isRightToLeft(jint arg0);
 		static QAndroidJniObject getUsage(jint arg0);
 		static jintArray getCode(__jni_impl::java::util::Locale arg0);
 		static jintArray getCode(jstring arg0);
+		static jintArray getCode(const QString &arg0);
 		static jintArray getCode(__jni_impl::android::icu::util::ULocale arg0);
+		static jboolean isRightToLeft(jint arg0);
 		static jint getCodeFromName(jstring arg0);
+		static jint getCodeFromName(const QString &arg0);
 		static jboolean hasScript(jint arg0, jint arg1);
 		static jint getScriptExtensions(jint arg0, __jni_impl::java::util::BitSet arg1);
 		static jstring getShortName(jint arg0);
@@ -1614,15 +1616,6 @@ namespace __jni_impl::android::icu::lang
 			arg0
 		);
 	}
-	jboolean UScript::isRightToLeft(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.icu.lang.UScript",
-			"isRightToLeft",
-			"(I)Z",
-			arg0
-		);
-	}
 	QAndroidJniObject UScript::getUsage(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -1650,6 +1643,15 @@ namespace __jni_impl::android::icu::lang
 			arg0
 		).object<jintArray>();
 	}
+	jintArray UScript::getCode(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UScript",
+			"getCode",
+			"(Ljava/lang/String;)[I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jintArray>();
+	}
 	jintArray UScript::getCode(__jni_impl::android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -1659,6 +1661,15 @@ namespace __jni_impl::android::icu::lang
 			arg0.__jniObject().object()
 		).object<jintArray>();
 	}
+	jboolean UScript::isRightToLeft(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.icu.lang.UScript",
+			"isRightToLeft",
+			"(I)Z",
+			arg0
+		);
+	}
 	jint UScript::getCodeFromName(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -1666,6 +1677,15 @@ namespace __jni_impl::android::icu::lang
 			"getCodeFromName",
 			"(Ljava/lang/String;)I",
 			arg0
+		);
+	}
+	jint UScript::getCodeFromName(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.icu.lang.UScript",
+			"getCodeFromName",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean UScript::hasScript(jint arg0, jint arg1)

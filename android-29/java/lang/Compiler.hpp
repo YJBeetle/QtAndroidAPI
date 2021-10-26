@@ -19,9 +19,10 @@ namespace __jni_impl::java::lang
 		// Methods
 		static jobject command(jobject arg0);
 		static void enable();
+		static void disable();
 		static jboolean compileClass(jclass arg0);
 		static jboolean compileClasses(jstring arg0);
-		static void disable();
+		static jboolean compileClasses(const QString &arg0);
 	};
 } // namespace __jni_impl::java::lang
 
@@ -56,6 +57,14 @@ namespace __jni_impl::java::lang
 			"()V"
 		);
 	}
+	void Compiler::disable()
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"java.lang.Compiler",
+			"disable",
+			"()V"
+		);
+	}
 	jboolean Compiler::compileClass(jclass arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -74,12 +83,13 @@ namespace __jni_impl::java::lang
 			arg0
 		);
 	}
-	void Compiler::disable()
+	jboolean Compiler::compileClasses(const QString &arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"java.lang.Compiler",
-			"disable",
-			"()V"
+			"compileClasses",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::lang

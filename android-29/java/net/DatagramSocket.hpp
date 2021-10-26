@@ -34,24 +34,21 @@ namespace __jni_impl::java::net
 		// Fields
 		
 		// Constructors
-		void __constructor(jint arg0);
+		void __constructor(jint arg0, __jni_impl::java::net::InetAddress arg1);
 		void __constructor(__jni_impl::java::net::SocketAddress arg0);
 		void __constructor();
-		void __constructor(jint arg0, __jni_impl::java::net::InetAddress arg1);
+		void __constructor(jint arg0);
 		
 		// Methods
-		void connect(__jni_impl::java::net::InetAddress arg0, jint arg1);
 		void connect(__jni_impl::java::net::SocketAddress arg0);
+		void connect(__jni_impl::java::net::InetAddress arg0, jint arg1);
 		void close();
 		jint getPort();
 		QAndroidJniObject getChannel();
 		void bind(__jni_impl::java::net::SocketAddress arg0);
 		jboolean getBroadcast();
-		jboolean isConnected();
-		void send(__jni_impl::java::net::DatagramPacket arg0);
-		jboolean isClosed();
-		QAndroidJniObject getInetAddress();
 		void disconnect();
+		jboolean isClosed();
 		jboolean isBound();
 		jobject getOption(__jni_impl::__JniBaseClass arg0);
 		jint getLocalPort();
@@ -73,6 +70,9 @@ namespace __jni_impl::java::net
 		void receive(__jni_impl::java::net::DatagramPacket arg0);
 		void setBroadcast(jboolean arg0);
 		static void setDatagramSocketImplFactory(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getInetAddress();
+		void send(__jni_impl::java::net::DatagramPacket arg0);
+		jboolean isConnected();
 	};
 } // namespace __jni_impl::java::net
 
@@ -87,36 +87,48 @@ namespace __jni_impl::java::net
 	// Fields
 	
 	// Constructors
-	void DatagramSocket::__constructor(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.DatagramSocket",
-			"(I)V",
-			arg0);
-	}
-	void DatagramSocket::__constructor(__jni_impl::java::net::SocketAddress arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.DatagramSocket",
-			"(Ljava/net/SocketAddress;)V",
-			arg0.__jniObject().object());
-	}
-	void DatagramSocket::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.DatagramSocket",
-			"()V");
-	}
 	void DatagramSocket::__constructor(jint arg0, __jni_impl::java::net::InetAddress arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.DatagramSocket",
 			"(ILjava/net/InetAddress;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void DatagramSocket::__constructor(__jni_impl::java::net::SocketAddress arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.DatagramSocket",
+			"(Ljava/net/SocketAddress;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void DatagramSocket::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.DatagramSocket",
+			"()V"
+		);
+	}
+	void DatagramSocket::__constructor(jint arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.DatagramSocket",
+			"(I)V",
+			arg0
+		);
 	}
 	
 	// Methods
+	void DatagramSocket::connect(__jni_impl::java::net::SocketAddress arg0)
+	{
+		__thiz.callMethod<void>(
+			"connect",
+			"(Ljava/net/SocketAddress;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void DatagramSocket::connect(__jni_impl::java::net::InetAddress arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -124,14 +136,6 @@ namespace __jni_impl::java::net
 			"(Ljava/net/InetAddress;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void DatagramSocket::connect(__jni_impl::java::net::SocketAddress arg0)
-	{
-		__thiz.callMethod<void>(
-			"connect",
-			"(Ljava/net/SocketAddress;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	void DatagramSocket::close()
@@ -170,19 +174,11 @@ namespace __jni_impl::java::net
 			"()Z"
 		);
 	}
-	jboolean DatagramSocket::isConnected()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isConnected",
-			"()Z"
-		);
-	}
-	void DatagramSocket::send(__jni_impl::java::net::DatagramPacket arg0)
+	void DatagramSocket::disconnect()
 	{
 		__thiz.callMethod<void>(
-			"send",
-			"(Ljava/net/DatagramPacket;)V",
-			arg0.__jniObject().object()
+			"disconnect",
+			"()V"
 		);
 	}
 	jboolean DatagramSocket::isClosed()
@@ -190,20 +186,6 @@ namespace __jni_impl::java::net
 		return __thiz.callMethod<jboolean>(
 			"isClosed",
 			"()Z"
-		);
-	}
-	QAndroidJniObject DatagramSocket::getInetAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getInetAddress",
-			"()Ljava/net/InetAddress;"
-		);
-	}
-	void DatagramSocket::disconnect()
-	{
-		__thiz.callMethod<void>(
-			"disconnect",
-			"()V"
 		);
 	}
 	jboolean DatagramSocket::isBound()
@@ -365,6 +347,28 @@ namespace __jni_impl::java::net
 			arg0.__jniObject().object()
 		);
 	}
+	QAndroidJniObject DatagramSocket::getInetAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getInetAddress",
+			"()Ljava/net/InetAddress;"
+		);
+	}
+	void DatagramSocket::send(__jni_impl::java::net::DatagramPacket arg0)
+	{
+		__thiz.callMethod<void>(
+			"send",
+			"(Ljava/net/DatagramPacket;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean DatagramSocket::isConnected()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isConnected",
+			"()Z"
+		);
+	}
 } // namespace __jni_impl::java::net
 
 namespace java::net
@@ -373,10 +377,11 @@ namespace java::net
 	{
 	public:
 		DatagramSocket(QAndroidJniObject obj) { __thiz = obj; }
-		DatagramSocket(jint arg0)
+		DatagramSocket(jint arg0, __jni_impl::java::net::InetAddress arg1)
 		{
 			__constructor(
-				arg0);
+				arg0,
+				arg1);
 		}
 		DatagramSocket(__jni_impl::java::net::SocketAddress arg0)
 		{
@@ -387,11 +392,10 @@ namespace java::net
 		{
 			__constructor();
 		}
-		DatagramSocket(jint arg0, __jni_impl::java::net::InetAddress arg1)
+		DatagramSocket(jint arg0)
 		{
 			__constructor(
-				arg0,
-				arg1);
+				arg0);
 		}
 	};
 } // namespace java::net

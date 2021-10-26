@@ -23,6 +23,7 @@ namespace __jni_impl::android::text
 		jchar charAt(jint arg0);
 		jstring subSequence(jint arg0, jint arg1);
 		static QAndroidJniObject make(jstring arg0, jcharArray arg1, jint arg2, jint arg3);
+		static QAndroidJniObject make(const QString &arg0, jcharArray arg1, jint arg2, jint arg3);
 	};
 } // namespace __jni_impl::android::text
 
@@ -89,6 +90,18 @@ namespace __jni_impl::android::text
 			"make",
 			"(Ljava/lang/CharSequence;[CII)Landroid/text/AlteredCharSequence;",
 			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	QAndroidJniObject AlteredCharSequence::make(const QString &arg0, jcharArray arg1, jint arg2, jint arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.AlteredCharSequence",
+			"make",
+			"(Ljava/lang/CharSequence;[CII)Landroid/text/AlteredCharSequence;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3

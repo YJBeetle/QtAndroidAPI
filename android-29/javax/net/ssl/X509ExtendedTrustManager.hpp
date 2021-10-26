@@ -26,9 +26,13 @@ namespace __jni_impl::javax::net::ssl
 		
 		// Methods
 		void checkServerTrusted(jarray arg0, jstring arg1, __jni_impl::javax::net::ssl::SSLEngine arg2);
+		void checkServerTrusted(jarray arg0, const QString &arg1, __jni_impl::javax::net::ssl::SSLEngine arg2);
 		void checkServerTrusted(jarray arg0, jstring arg1, __jni_impl::java::net::Socket arg2);
+		void checkServerTrusted(jarray arg0, const QString &arg1, __jni_impl::java::net::Socket arg2);
 		void checkClientTrusted(jarray arg0, jstring arg1, __jni_impl::javax::net::ssl::SSLEngine arg2);
+		void checkClientTrusted(jarray arg0, const QString &arg1, __jni_impl::javax::net::ssl::SSLEngine arg2);
 		void checkClientTrusted(jarray arg0, jstring arg1, __jni_impl::java::net::Socket arg2);
+		void checkClientTrusted(jarray arg0, const QString &arg1, __jni_impl::java::net::Socket arg2);
 	};
 } // namespace __jni_impl::javax::net::ssl
 
@@ -44,7 +48,8 @@ namespace __jni_impl::javax::net::ssl
 	{
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.X509ExtendedTrustManager",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -58,6 +63,16 @@ namespace __jni_impl::javax::net::ssl
 			arg2.__jniObject().object()
 		);
 	}
+	void X509ExtendedTrustManager::checkServerTrusted(jarray arg0, const QString &arg1, __jni_impl::javax::net::ssl::SSLEngine arg2)
+	{
+		__thiz.callMethod<void>(
+			"checkServerTrusted",
+			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLEngine;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
+	}
 	void X509ExtendedTrustManager::checkServerTrusted(jarray arg0, jstring arg1, __jni_impl::java::net::Socket arg2)
 	{
 		__thiz.callMethod<void>(
@@ -65,6 +80,16 @@ namespace __jni_impl::javax::net::ssl
 			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)V",
 			arg0,
 			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void X509ExtendedTrustManager::checkServerTrusted(jarray arg0, const QString &arg1, __jni_impl::java::net::Socket arg2)
+	{
+		__thiz.callMethod<void>(
+			"checkServerTrusted",
+			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -78,6 +103,16 @@ namespace __jni_impl::javax::net::ssl
 			arg2.__jniObject().object()
 		);
 	}
+	void X509ExtendedTrustManager::checkClientTrusted(jarray arg0, const QString &arg1, __jni_impl::javax::net::ssl::SSLEngine arg2)
+	{
+		__thiz.callMethod<void>(
+			"checkClientTrusted",
+			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljavax/net/ssl/SSLEngine;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
+	}
 	void X509ExtendedTrustManager::checkClientTrusted(jarray arg0, jstring arg1, __jni_impl::java::net::Socket arg2)
 	{
 		__thiz.callMethod<void>(
@@ -85,6 +120,16 @@ namespace __jni_impl::javax::net::ssl
 			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)V",
 			arg0,
 			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void X509ExtendedTrustManager::checkClientTrusted(jarray arg0, const QString &arg1, __jni_impl::java::net::Socket arg2)
+	{
+		__thiz.callMethod<void>(
+			"checkClientTrusted",
+			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/net/Socket;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}

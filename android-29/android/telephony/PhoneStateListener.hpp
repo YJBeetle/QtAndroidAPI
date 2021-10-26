@@ -50,6 +50,7 @@ namespace __jni_impl::android::telephony
 		void onCallForwardingIndicatorChanged(jboolean arg0);
 		void onCellLocationChanged(__jni_impl::android::telephony::CellLocation arg0);
 		void onCallStateChanged(jint arg0, jstring arg1);
+		void onCallStateChanged(jint arg0, const QString &arg1);
 		void onDataConnectionStateChanged(jint arg0);
 		void onDataConnectionStateChanged(jint arg0, jint arg1);
 		void onDataActivity(jint arg0);
@@ -171,14 +172,16 @@ namespace __jni_impl::android::telephony
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.PhoneStateListener",
-			"()V");
+			"()V"
+		);
 	}
 	void PhoneStateListener::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.PhoneStateListener",
 			"(Ljava/util/concurrent/Executor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -229,6 +232,15 @@ namespace __jni_impl::android::telephony
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
+		);
+	}
+	void PhoneStateListener::onCallStateChanged(jint arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"onCallStateChanged",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void PhoneStateListener::onDataConnectionStateChanged(jint arg0)

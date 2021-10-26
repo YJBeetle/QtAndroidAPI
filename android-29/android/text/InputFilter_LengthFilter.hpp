@@ -18,6 +18,7 @@ namespace __jni_impl::android::text
 		
 		// Methods
 		jstring filter(jstring arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5);
+		jstring filter(const QString &arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5);
 		jint getMax();
 	};
 } // namespace __jni_impl::android::text
@@ -33,7 +34,8 @@ namespace __jni_impl::android::text
 		__thiz = QAndroidJniObject(
 			"android.text.InputFilter$LengthFilter",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -43,6 +45,19 @@ namespace __jni_impl::android::text
 			"filter",
 			"(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;",
 			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object(),
+			arg4,
+			arg5
+		).object<jstring>();
+	}
+	jstring InputFilter_LengthFilter::filter(const QString &arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5)
+	{
+		return __thiz.callObjectMethod(
+			"filter",
+			"(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),

@@ -38,6 +38,7 @@ namespace __jni_impl::java::text
 		// Constructors
 		void __constructor(jdoubleArray arg0, jarray arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -48,12 +49,14 @@ namespace __jni_impl::java::text
 		static jdouble nextDouble(jdouble arg0, jboolean arg1);
 		static jdouble nextDouble(jdouble arg0);
 		QAndroidJniObject parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		QAndroidJniObject parse(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
 		jobjectArray getFormats();
 		void applyPattern(jstring arg0);
+		void applyPattern(const QString &arg0);
 		jstring toPattern();
-		void setChoices(jdoubleArray arg0, jarray arg1);
 		static jdouble previousDouble(jdouble arg0);
 		jdoubleArray getLimits();
+		void setChoices(jdoubleArray arg0, jarray arg1);
 	};
 } // namespace __jni_impl::java::text
 
@@ -74,14 +77,24 @@ namespace __jni_impl::java::text
 			"java.text.ChoiceFormat",
 			"([D[Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void ChoiceFormat::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.ChoiceFormat",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void ChoiceFormat::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.text.ChoiceFormat",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -155,6 +168,15 @@ namespace __jni_impl::java::text
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject ChoiceFormat::parse(const QString &arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callObjectMethod(
+			"parse",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	jobjectArray ChoiceFormat::getFormats()
 	{
 		return __thiz.callObjectMethod(
@@ -170,21 +192,20 @@ namespace __jni_impl::java::text
 			arg0
 		);
 	}
+	void ChoiceFormat::applyPattern(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"applyPattern",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring ChoiceFormat::toPattern()
 	{
 		return __thiz.callObjectMethod(
 			"toPattern",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	void ChoiceFormat::setChoices(jdoubleArray arg0, jarray arg1)
-	{
-		__thiz.callMethod<void>(
-			"setChoices",
-			"([D[Ljava/lang/String;)V",
-			arg0,
-			arg1
-		);
 	}
 	jdouble ChoiceFormat::previousDouble(jdouble arg0)
 	{
@@ -201,6 +222,15 @@ namespace __jni_impl::java::text
 			"getLimits",
 			"()[D"
 		).object<jdoubleArray>();
+	}
+	void ChoiceFormat::setChoices(jdoubleArray arg0, jarray arg1)
+	{
+		__thiz.callMethod<void>(
+			"setChoices",
+			"([D[Ljava/lang/String;)V",
+			arg0,
+			arg1
+		);
 	}
 } // namespace __jni_impl::java::text
 

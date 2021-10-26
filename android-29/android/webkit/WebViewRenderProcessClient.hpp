@@ -42,7 +42,8 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.WebViewRenderProcessClient",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

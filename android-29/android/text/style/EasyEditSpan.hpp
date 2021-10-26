@@ -30,9 +30,9 @@ namespace __jni_impl::android::text::style
 		void __constructor();
 		
 		// Methods
+		jint getSpanTypeId();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getSpanTypeId();
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -71,23 +71,33 @@ namespace __jni_impl::android::text::style
 		__thiz = QAndroidJniObject(
 			"android.text.style.EasyEditSpan",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void EasyEditSpan::__constructor(__jni_impl::android::app::PendingIntent arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.EasyEditSpan",
 			"(Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void EasyEditSpan::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.EasyEditSpan",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
+	jint EasyEditSpan::getSpanTypeId()
+	{
+		return __thiz.callMethod<jint>(
+			"getSpanTypeId",
+			"()I"
+		);
+	}
 	jint EasyEditSpan::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -102,13 +112,6 @@ namespace __jni_impl::android::text::style
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint EasyEditSpan::getSpanTypeId()
-	{
-		return __thiz.callMethod<jint>(
-			"getSpanTypeId",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::text::style

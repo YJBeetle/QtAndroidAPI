@@ -52,10 +52,6 @@ namespace __jni_impl::android::net::wifi::rtt
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		jdouble getLatitude();
-		jdouble getLongitude();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jboolean isLciSubelementValid();
 		jdouble getLatitudeUncertainty();
 		jdouble getLongitudeUncertainty();
@@ -76,6 +72,10 @@ namespace __jni_impl::android::net::wifi::rtt
 		jstring getMapImageMimeType();
 		QAndroidJniObject getMapImageUri();
 		jdouble getAltitude();
+		jdouble getLatitude();
+		jdouble getLongitude();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi::rtt
 
@@ -203,36 +203,6 @@ namespace __jni_impl::android::net::wifi::rtt
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I"
-		);
-	}
-	jdouble ResponderLocation::getLatitude()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getLatitude",
-			"()D"
-		);
-	}
-	jdouble ResponderLocation::getLongitude()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getLongitude",
-			"()D"
-		);
-	}
-	jint ResponderLocation::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void ResponderLocation::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 	jboolean ResponderLocation::isLciSubelementValid()
@@ -373,6 +343,36 @@ namespace __jni_impl::android::net::wifi::rtt
 		return __thiz.callMethod<jdouble>(
 			"getAltitude",
 			"()D"
+		);
+	}
+	jdouble ResponderLocation::getLatitude()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getLatitude",
+			"()D"
+		);
+	}
+	jdouble ResponderLocation::getLongitude()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getLongitude",
+			"()D"
+		);
+	}
+	jint ResponderLocation::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void ResponderLocation::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::net::wifi::rtt

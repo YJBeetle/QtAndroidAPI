@@ -13,10 +13,6 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::media
-{
-	class MediaRouter_RouteGroup;
-}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
@@ -24,6 +20,10 @@ namespace __jni_impl::android::graphics::drawable
 namespace __jni_impl::android::view
 {
 	class Display;
+}
+namespace __jni_impl::android::media
+{
+	class MediaRouter_RouteGroup;
 }
 
 namespace __jni_impl::android::media
@@ -50,10 +50,9 @@ namespace __jni_impl::android::media
 		jstring toString();
 		jboolean isEnabled();
 		jobject getTag();
-		QAndroidJniObject getGroup();
 		jstring getStatus();
-		QAndroidJniObject getCategory();
 		void setTag(jobject arg0);
+		jstring getDescription();
 		jint getVolume();
 		jint getSupportedTypes();
 		jint getDeviceType();
@@ -66,15 +65,16 @@ namespace __jni_impl::android::media
 		jint getVolumeHandling();
 		QAndroidJniObject getPresentationDisplay();
 		jboolean isConnecting();
-		jstring getDescription();
+		QAndroidJniObject getCategory();
+		QAndroidJniObject getGroup();
 	};
 } // namespace __jni_impl::android::media
 
 #include "MediaRouter_RouteCategory.hpp"
 #include "../content/Context.hpp"
-#include "MediaRouter_RouteGroup.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../view/Display.hpp"
+#include "MediaRouter_RouteGroup.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -181,26 +181,12 @@ namespace __jni_impl::android::media
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject MediaRouter_RouteInfo::getGroup()
-	{
-		return __thiz.callObjectMethod(
-			"getGroup",
-			"()Landroid/media/MediaRouter$RouteGroup;"
-		);
-	}
 	jstring MediaRouter_RouteInfo::getStatus()
 	{
 		return __thiz.callObjectMethod(
 			"getStatus",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
-	}
-	QAndroidJniObject MediaRouter_RouteInfo::getCategory()
-	{
-		return __thiz.callObjectMethod(
-			"getCategory",
-			"()Landroid/media/MediaRouter$RouteCategory;"
-		);
 	}
 	void MediaRouter_RouteInfo::setTag(jobject arg0)
 	{
@@ -209,6 +195,13 @@ namespace __jni_impl::android::media
 			"(Ljava/lang/Object;)V",
 			arg0
 		);
+	}
+	jstring MediaRouter_RouteInfo::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint MediaRouter_RouteInfo::getVolume()
 	{
@@ -296,12 +289,19 @@ namespace __jni_impl::android::media
 			"()Z"
 		);
 	}
-	jstring MediaRouter_RouteInfo::getDescription()
+	QAndroidJniObject MediaRouter_RouteInfo::getCategory()
 	{
 		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+			"getCategory",
+			"()Landroid/media/MediaRouter$RouteCategory;"
+		);
+	}
+	QAndroidJniObject MediaRouter_RouteInfo::getGroup()
+	{
+		return __thiz.callObjectMethod(
+			"getGroup",
+			"()Landroid/media/MediaRouter$RouteGroup;"
+		);
 	}
 } // namespace __jni_impl::android::media
 

@@ -115,13 +115,15 @@ namespace __jni_impl::java::util::concurrent
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ConcurrentHashMap",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void ConcurrentHashMap::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ConcurrentHashMap",
-			"()V");
+			"()V"
+		);
 	}
 	void ConcurrentHashMap::__constructor(jint arg0, jfloat arg1)
 	{
@@ -129,7 +131,8 @@ namespace __jni_impl::java::util::concurrent
 			"java.util.concurrent.ConcurrentHashMap",
 			"(IF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void ConcurrentHashMap::__constructor(jint arg0, jfloat arg1, jint arg2)
 	{
@@ -138,14 +141,16 @@ namespace __jni_impl::java::util::concurrent
 			"(IFI)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void ConcurrentHashMap::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ConcurrentHashMap",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

@@ -47,14 +47,16 @@ namespace __jni_impl::android::util
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.LongSparseArray",
-			"()V");
+			"()V"
+		);
 	}
 	void LongSparseArray::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.LongSparseArray",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

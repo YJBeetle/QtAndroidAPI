@@ -44,7 +44,8 @@ namespace __jni_impl::android::content
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ContentUris",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

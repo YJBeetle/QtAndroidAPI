@@ -17,7 +17,9 @@ namespace __jni_impl::javax::net::ssl
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
+		void __constructor(const QString &arg0, jthrowable arg1);
 		void __constructor(jthrowable arg0);
 		
 		// Methods
@@ -35,7 +37,16 @@ namespace __jni_impl::javax::net::ssl
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.SSLException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void SSLException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.net.ssl.SSLException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void SSLException::__constructor(jstring arg0, jthrowable arg1)
 	{
@@ -43,14 +54,25 @@ namespace __jni_impl::javax::net::ssl
 			"javax.net.ssl.SSLException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void SSLException::__constructor(const QString &arg0, jthrowable arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.net.ssl.SSLException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void SSLException::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.SSLException",
 			"(Ljava/lang/Throwable;)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

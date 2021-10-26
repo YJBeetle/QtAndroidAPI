@@ -22,7 +22,9 @@ namespace __jni_impl::android::telephony
 		
 		// Methods
 		void onReceiveUssdResponse(__jni_impl::android::telephony::TelephonyManager arg0, jstring arg1, jstring arg2);
+		void onReceiveUssdResponse(__jni_impl::android::telephony::TelephonyManager arg0, const QString &arg1, const QString &arg2);
 		void onReceiveUssdResponseFailed(__jni_impl::android::telephony::TelephonyManager arg0, jstring arg1, jint arg2);
+		void onReceiveUssdResponseFailed(__jni_impl::android::telephony::TelephonyManager arg0, const QString &arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -37,7 +39,8 @@ namespace __jni_impl::android::telephony
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.TelephonyManager$UssdResponseCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -51,6 +54,16 @@ namespace __jni_impl::android::telephony
 			arg2
 		);
 	}
+	void TelephonyManager_UssdResponseCallback::onReceiveUssdResponse(__jni_impl::android::telephony::TelephonyManager arg0, const QString &arg1, const QString &arg2)
+	{
+		__thiz.callMethod<void>(
+			"onReceiveUssdResponse",
+			"(Landroid/telephony/TelephonyManager;Ljava/lang/String;Ljava/lang/CharSequence;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
+	}
 	void TelephonyManager_UssdResponseCallback::onReceiveUssdResponseFailed(__jni_impl::android::telephony::TelephonyManager arg0, jstring arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
@@ -58,6 +71,16 @@ namespace __jni_impl::android::telephony
 			"(Landroid/telephony/TelephonyManager;Ljava/lang/String;I)V",
 			arg0.__jniObject().object(),
 			arg1,
+			arg2
+		);
+	}
+	void TelephonyManager_UssdResponseCallback::onReceiveUssdResponseFailed(__jni_impl::android::telephony::TelephonyManager arg0, const QString &arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"onReceiveUssdResponseFailed",
+			"(Landroid/telephony/TelephonyManager;Ljava/lang/String;I)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}

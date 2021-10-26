@@ -15,17 +15,9 @@ namespace __jni_impl::android::media
 {
 	class AudioAttributes;
 }
-namespace __jni_impl::android::view
+namespace __jni_impl::android::graphics
 {
-	class KeyEvent;
-}
-namespace __jni_impl::android::view
-{
-	class MotionEvent;
-}
-namespace __jni_impl::android::widget
-{
-	class MediaController;
+	class Canvas;
 }
 namespace __jni_impl::android::net
 {
@@ -39,9 +31,17 @@ namespace __jni_impl::android::media
 {
 	class MediaFormat;
 }
-namespace __jni_impl::android::graphics
+namespace __jni_impl::android::view
 {
-	class Canvas;
+	class KeyEvent;
+}
+namespace __jni_impl::android::view
+{
+	class MotionEvent;
+}
+namespace __jni_impl::android::widget
+{
+	class MediaController;
 }
 
 namespace __jni_impl::android::widget
@@ -62,20 +62,18 @@ namespace __jni_impl::android::widget
 		void resume();
 		void suspend();
 		jint getDuration();
-		jint getAudioSessionId();
-		jint getCurrentPosition();
-		void setOnPreparedListener(__jni_impl::__JniBaseClass arg0);
-		void setOnCompletionListener(__jni_impl::__JniBaseClass arg0);
 		void setAudioAttributes(__jni_impl::android::media::AudioAttributes arg0);
-		void seekTo(jint arg0);
-		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean onTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
-		void setMediaController(__jni_impl::android::widget::MediaController arg0);
+		jstring getAccessibilityClassName();
+		void draw(__jni_impl::android::graphics::Canvas arg0);
+		void setOnInfoListener(__jni_impl::__JniBaseClass arg0);
+		void setOnErrorListener(__jni_impl::__JniBaseClass arg0);
+		jboolean isPlaying();
+		void pause();
 		jint resolveAdjustedSize(jint arg0, jint arg1);
 		void setVideoPath(jstring arg0);
-		void setVideoURI(__jni_impl::android::net::Uri arg0);
+		void setVideoPath(const QString &arg0);
 		void setVideoURI(__jni_impl::android::net::Uri arg0, __jni_impl::__JniBaseClass arg1);
+		void setVideoURI(__jni_impl::android::net::Uri arg0);
 		void setAudioFocusRequest(jint arg0);
 		void addSubtitleSource(__jni_impl::java::io::InputStream arg0, __jni_impl::android::media::MediaFormat arg1);
 		void stopPlayback();
@@ -83,24 +81,27 @@ namespace __jni_impl::android::widget
 		jboolean canPause();
 		jboolean canSeekBackward();
 		jboolean canSeekForward();
-		jstring getAccessibilityClassName();
-		void draw(__jni_impl::android::graphics::Canvas arg0);
-		void pause();
-		jboolean isPlaying();
-		void setOnInfoListener(__jni_impl::__JniBaseClass arg0);
-		void setOnErrorListener(__jni_impl::__JniBaseClass arg0);
+		void seekTo(jint arg0);
+		jint getAudioSessionId();
+		jint getCurrentPosition();
+		void setOnPreparedListener(__jni_impl::__JniBaseClass arg0);
+		void setOnCompletionListener(__jni_impl::__JniBaseClass arg0);
+		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean onTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
+		void setMediaController(__jni_impl::android::widget::MediaController arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
 #include "../media/AudioAttributes.hpp"
-#include "../view/KeyEvent.hpp"
-#include "../view/MotionEvent.hpp"
-#include "MediaController.hpp"
+#include "../graphics/Canvas.hpp"
 #include "../net/Uri.hpp"
 #include "../../java/io/InputStream.hpp"
 #include "../media/MediaFormat.hpp"
-#include "../graphics/Canvas.hpp"
+#include "../view/KeyEvent.hpp"
+#include "../view/MotionEvent.hpp"
+#include "MediaController.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -115,7 +116,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void VideoView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -124,7 +126,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void VideoView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -132,14 +135,16 @@ namespace __jni_impl::android::widget
 			"android.widget.VideoView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void VideoView::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.VideoView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -171,36 +176,6 @@ namespace __jni_impl::android::widget
 			"()I"
 		);
 	}
-	jint VideoView::getAudioSessionId()
-	{
-		return __thiz.callMethod<jint>(
-			"getAudioSessionId",
-			"()I"
-		);
-	}
-	jint VideoView::getCurrentPosition()
-	{
-		return __thiz.callMethod<jint>(
-			"getCurrentPosition",
-			"()I"
-		);
-	}
-	void VideoView::setOnPreparedListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnPreparedListener",
-			"(Landroid/media/MediaPlayer$OnPreparedListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void VideoView::setOnCompletionListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnCompletionListener",
-			"(Landroid/media/MediaPlayer$OnCompletionListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void VideoView::setAudioAttributes(__jni_impl::android::media::AudioAttributes arg0)
 	{
 		__thiz.callMethod<void>(
@@ -209,45 +184,49 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	void VideoView::seekTo(jint arg0)
+	jstring VideoView::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	void VideoView::draw(__jni_impl::android::graphics::Canvas arg0)
 	{
 		__thiz.callMethod<void>(
-			"seekTo",
-			"(I)V",
-			arg0
-		);
-	}
-	jboolean VideoView::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyDown",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean VideoView::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean VideoView::onTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTrackballEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	void VideoView::setMediaController(__jni_impl::android::widget::MediaController arg0)
+	void VideoView::setOnInfoListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"setMediaController",
-			"(Landroid/widget/MediaController;)V",
+			"setOnInfoListener",
+			"(Landroid/media/MediaPlayer$OnInfoListener;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void VideoView::setOnErrorListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnErrorListener",
+			"(Landroid/media/MediaPlayer$OnErrorListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean VideoView::isPlaying()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isPlaying",
+			"()Z"
+		);
+	}
+	void VideoView::pause()
+	{
+		__thiz.callMethod<void>(
+			"pause",
+			"()V"
 		);
 	}
 	jint VideoView::resolveAdjustedSize(jint arg0, jint arg1)
@@ -267,12 +246,12 @@ namespace __jni_impl::android::widget
 			arg0
 		);
 	}
-	void VideoView::setVideoURI(__jni_impl::android::net::Uri arg0)
+	void VideoView::setVideoPath(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"setVideoURI",
-			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object()
+			"setVideoPath",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void VideoView::setVideoURI(__jni_impl::android::net::Uri arg0, __jni_impl::__JniBaseClass arg1)
@@ -282,6 +261,14 @@ namespace __jni_impl::android::widget
 			"(Landroid/net/Uri;Ljava/util/Map;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
+		);
+	}
+	void VideoView::setVideoURI(__jni_impl::android::net::Uri arg0)
+	{
+		__thiz.callMethod<void>(
+			"setVideoURI",
+			"(Landroid/net/Uri;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void VideoView::setAudioFocusRequest(jint arg0)
@@ -336,48 +323,74 @@ namespace __jni_impl::android::widget
 			"()Z"
 		);
 	}
-	jstring VideoView::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	void VideoView::draw(__jni_impl::android::graphics::Canvas arg0)
+	void VideoView::seekTo(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;)V",
+			"seekTo",
+			"(I)V",
+			arg0
+		);
+	}
+	jint VideoView::getAudioSessionId()
+	{
+		return __thiz.callMethod<jint>(
+			"getAudioSessionId",
+			"()I"
+		);
+	}
+	jint VideoView::getCurrentPosition()
+	{
+		return __thiz.callMethod<jint>(
+			"getCurrentPosition",
+			"()I"
+		);
+	}
+	void VideoView::setOnPreparedListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnPreparedListener",
+			"(Landroid/media/MediaPlayer$OnPreparedListener;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	void VideoView::pause()
+	void VideoView::setOnCompletionListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"pause",
-			"()V"
+			"setOnCompletionListener",
+			"(Landroid/media/MediaPlayer$OnCompletionListener;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	jboolean VideoView::isPlaying()
+	jboolean VideoView::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
 	{
 		return __thiz.callMethod<jboolean>(
-			"isPlaying",
-			"()Z"
+			"onKeyDown",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
-	void VideoView::setOnInfoListener(__jni_impl::__JniBaseClass arg0)
+	jboolean VideoView::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
-		__thiz.callMethod<void>(
-			"setOnInfoListener",
-			"(Landroid/media/MediaPlayer$OnInfoListener;)V",
+		return __thiz.callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
 			arg0.__jniObject().object()
 		);
 	}
-	void VideoView::setOnErrorListener(__jni_impl::__JniBaseClass arg0)
+	jboolean VideoView::onTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onTrackballEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	void VideoView::setMediaController(__jni_impl::android::widget::MediaController arg0)
 	{
 		__thiz.callMethod<void>(
-			"setOnErrorListener",
-			"(Landroid/media/MediaPlayer$OnErrorListener;)V",
+			"setMediaController",
+			"(Landroid/widget/MediaController;)V",
 			arg0.__jniObject().object()
 		);
 	}

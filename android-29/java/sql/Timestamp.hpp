@@ -40,6 +40,7 @@ namespace __jni_impl::java::sql
 		jint compareTo(__jni_impl::java::util::Date arg0);
 		static QAndroidJniObject valueOf(__jni_impl::java::time::LocalDateTime arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 		static QAndroidJniObject from(__jni_impl::java::time::Instant arg0);
 		jboolean before(__jni_impl::java::sql::Timestamp arg0);
 		jboolean after(__jni_impl::java::sql::Timestamp arg0);
@@ -72,14 +73,16 @@ namespace __jni_impl::java::sql
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
 	}
 	void Timestamp::__constructor(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.Timestamp",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -153,6 +156,15 @@ namespace __jni_impl::java::sql
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/Timestamp;",
 			arg0
+		);
+	}
+	QAndroidJniObject Timestamp::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.sql.Timestamp",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/sql/Timestamp;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Timestamp::from(__jni_impl::java::time::Instant arg0)

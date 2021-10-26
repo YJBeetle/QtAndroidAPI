@@ -59,7 +59,8 @@ namespace __jni_impl::java::io
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.FileDescriptor",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

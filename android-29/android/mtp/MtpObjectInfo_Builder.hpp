@@ -23,6 +23,7 @@ namespace __jni_impl::android::mtp
 		
 		// Methods
 		QAndroidJniObject setName(jstring arg0);
+		QAndroidJniObject setName(const QString &arg0);
 		QAndroidJniObject build();
 		QAndroidJniObject setParent(jint arg0);
 		QAndroidJniObject setCompressedSize(jlong arg0);
@@ -37,6 +38,7 @@ namespace __jni_impl::android::mtp
 		QAndroidJniObject setImagePixHeight(jlong arg0);
 		QAndroidJniObject setImagePixWidth(jlong arg0);
 		QAndroidJniObject setKeywords(jstring arg0);
+		QAndroidJniObject setKeywords(const QString &arg0);
 		QAndroidJniObject setProtectionStatus(jint arg0);
 		QAndroidJniObject setStorageId(jint arg0);
 		QAndroidJniObject setThumbCompressedSize(jlong arg0);
@@ -57,14 +59,16 @@ namespace __jni_impl::android::mtp
 	{
 		__thiz = QAndroidJniObject(
 			"android.mtp.MtpObjectInfo$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	void MtpObjectInfo_Builder::__constructor(__jni_impl::android::mtp::MtpObjectInfo arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.mtp.MtpObjectInfo$Builder",
 			"(Landroid/mtp/MtpObjectInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -74,6 +78,14 @@ namespace __jni_impl::android::mtp
 			"setName",
 			"(Ljava/lang/String;)Landroid/mtp/MtpObjectInfo$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject MtpObjectInfo_Builder::setName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setName",
+			"(Ljava/lang/String;)Landroid/mtp/MtpObjectInfo$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject MtpObjectInfo_Builder::build()
@@ -185,6 +197,14 @@ namespace __jni_impl::android::mtp
 			"setKeywords",
 			"(Ljava/lang/String;)Landroid/mtp/MtpObjectInfo$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject MtpObjectInfo_Builder::setKeywords(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setKeywords",
+			"(Ljava/lang/String;)Landroid/mtp/MtpObjectInfo$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject MtpObjectInfo_Builder::setProtectionStatus(jint arg0)

@@ -16,6 +16,7 @@ namespace __jni_impl::javax::xml::transform::dom
 		
 		// Constructors
 		void __constructor(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void __constructor(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		void __constructor();
 		
@@ -25,6 +26,7 @@ namespace __jni_impl::javax::xml::transform::dom
 		void setNode(__jni_impl::__JniBaseClass arg0);
 		jstring getSystemId();
 		void setSystemId(jstring arg0);
+		void setSystemId(const QString &arg0);
 	};
 } // namespace __jni_impl::javax::xml::transform::dom
 
@@ -48,20 +50,32 @@ namespace __jni_impl::javax::xml::transform::dom
 			"javax.xml.transform.dom.DOMSource",
 			"(Lorg/w3c/dom/Node;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void DOMSource::__constructor(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.xml.transform.dom.DOMSource",
+			"(Lorg/w3c/dom/Node;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void DOMSource::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.dom.DOMSource",
 			"(Lorg/w3c/dom/Node;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DOMSource::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.dom.DOMSource",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -100,6 +114,14 @@ namespace __jni_impl::javax::xml::transform::dom
 			"setSystemId",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void DOMSource::setSystemId(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSystemId",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::javax::xml::transform::dom

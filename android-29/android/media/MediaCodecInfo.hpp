@@ -30,6 +30,7 @@ namespace __jni_impl::android::media
 		jboolean isVendor();
 		jboolean isSoftwareOnly();
 		QAndroidJniObject getCapabilitiesForType(jstring arg0);
+		QAndroidJniObject getCapabilitiesForType(const QString &arg0);
 	};
 } // namespace __jni_impl::android::media
 
@@ -110,6 +111,14 @@ namespace __jni_impl::android::media
 			"getCapabilitiesForType",
 			"(Ljava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;",
 			arg0
+		);
+	}
+	QAndroidJniObject MediaCodecInfo::getCapabilitiesForType(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getCapabilitiesForType",
+			"(Ljava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::media

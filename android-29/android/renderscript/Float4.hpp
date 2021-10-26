@@ -59,7 +59,8 @@ namespace __jni_impl::android::renderscript
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Float4",
-			"()V");
+			"()V"
+		);
 	}
 	void Float4::__constructor(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
@@ -69,7 +70,8 @@ namespace __jni_impl::android::renderscript
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	
 	// Methods

@@ -62,13 +62,13 @@ namespace __jni_impl::android::bluetooth
 		// Methods
 		jboolean connect(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 		jboolean reportError(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1);
+		jint getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0);
+		QAndroidJniObject getConnectedDevices();
+		QAndroidJniObject getDevicesMatchingConnectionStates(jintArray arg0);
 		jboolean registerApp(__jni_impl::android::bluetooth::BluetoothHidDeviceAppSdpSettings arg0, __jni_impl::android::bluetooth::BluetoothHidDeviceAppQosSettings arg1, __jni_impl::android::bluetooth::BluetoothHidDeviceAppQosSettings arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::bluetooth::BluetoothHidDevice_Callback arg4);
 		jboolean unregisterApp();
 		jboolean sendReport(__jni_impl::android::bluetooth::BluetoothDevice arg0, jint arg1, jbyteArray arg2);
 		jboolean replyReport(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, jbyteArray arg3);
-		jint getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0);
-		QAndroidJniObject getConnectedDevices();
-		QAndroidJniObject getDevicesMatchingConnectionStates(jintArray arg0);
 		jboolean disconnect(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 	};
 } // namespace __jni_impl::android::bluetooth
@@ -271,6 +271,29 @@ namespace __jni_impl::android::bluetooth
 			arg1
 		);
 	}
+	jint BluetoothHidDevice::getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getConnectionState",
+			"(Landroid/bluetooth/BluetoothDevice;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject BluetoothHidDevice::getConnectedDevices()
+	{
+		return __thiz.callObjectMethod(
+			"getConnectedDevices",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject BluetoothHidDevice::getDevicesMatchingConnectionStates(jintArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDevicesMatchingConnectionStates",
+			"([I)Ljava/util/List;",
+			arg0
+		);
+	}
 	jboolean BluetoothHidDevice::registerApp(__jni_impl::android::bluetooth::BluetoothHidDeviceAppSdpSettings arg0, __jni_impl::android::bluetooth::BluetoothHidDeviceAppQosSettings arg1, __jni_impl::android::bluetooth::BluetoothHidDeviceAppQosSettings arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::bluetooth::BluetoothHidDevice_Callback arg4)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -309,29 +332,6 @@ namespace __jni_impl::android::bluetooth
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	jint BluetoothHidDevice::getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getConnectionState",
-			"(Landroid/bluetooth/BluetoothDevice;)I",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject BluetoothHidDevice::getConnectedDevices()
-	{
-		return __thiz.callObjectMethod(
-			"getConnectedDevices",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject BluetoothHidDevice::getDevicesMatchingConnectionStates(jintArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDevicesMatchingConnectionStates",
-			"([I)Ljava/util/List;",
-			arg0
 		);
 	}
 	jboolean BluetoothHidDevice::disconnect(__jni_impl::android::bluetooth::BluetoothDevice arg0)

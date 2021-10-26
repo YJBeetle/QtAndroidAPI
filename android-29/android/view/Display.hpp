@@ -65,9 +65,11 @@ namespace __jni_impl::android::view
 		void getSize(__jni_impl::android::graphics::Point arg0);
 		jint getFlags();
 		jboolean isValid();
-		jint getOrientation();
-		jint getRotation();
 		QAndroidJniObject getMode();
+		jint getRotation();
+		jint getWidth();
+		jint getHeight();
+		jint getOrientation();
 		jint getDisplayId();
 		void getRectSize(__jni_impl::android::graphics::Rect arg0);
 		void getCurrentSizeRange(__jni_impl::android::graphics::Point arg0, __jni_impl::android::graphics::Point arg1);
@@ -85,8 +87,6 @@ namespace __jni_impl::android::view
 		void getMetrics(__jni_impl::android::util::DisplayMetrics arg0);
 		void getRealSize(__jni_impl::android::graphics::Point arg0);
 		void getRealMetrics(__jni_impl::android::util::DisplayMetrics arg0);
-		jint getWidth();
-		jint getHeight();
 	};
 } // namespace __jni_impl::android::view
 
@@ -252,11 +252,11 @@ namespace __jni_impl::android::view
 			"()Z"
 		);
 	}
-	jint Display::getOrientation()
+	QAndroidJniObject Display::getMode()
 	{
-		return __thiz.callMethod<jint>(
-			"getOrientation",
-			"()I"
+		return __thiz.callObjectMethod(
+			"getMode",
+			"()Landroid/view/Display$Mode;"
 		);
 	}
 	jint Display::getRotation()
@@ -266,11 +266,25 @@ namespace __jni_impl::android::view
 			"()I"
 		);
 	}
-	QAndroidJniObject Display::getMode()
+	jint Display::getWidth()
 	{
-		return __thiz.callObjectMethod(
-			"getMode",
-			"()Landroid/view/Display$Mode;"
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
+	jint Display::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
+	}
+	jint Display::getOrientation()
+	{
+		return __thiz.callMethod<jint>(
+			"getOrientation",
+			"()I"
 		);
 	}
 	jint Display::getDisplayId()
@@ -396,20 +410,6 @@ namespace __jni_impl::android::view
 			"getRealMetrics",
 			"(Landroid/util/DisplayMetrics;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	jint Display::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I"
-		);
-	}
-	jint Display::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::view

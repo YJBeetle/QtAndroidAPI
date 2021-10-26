@@ -69,7 +69,8 @@ namespace __jni_impl::java::util::concurrent::locks
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.locks.StampedLock",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -45,7 +45,8 @@ namespace __jni_impl::java::nio::file
 		__thiz = QAndroidJniObject(
 			"java.nio.file.DirectoryIteratorException",
 			"(Ljava/io/IOException;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

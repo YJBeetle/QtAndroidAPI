@@ -8,9 +8,13 @@
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
-namespace __jni_impl::android::content
+namespace __jni_impl::android::telecom
 {
-	class Intent;
+	class CallAudioState;
+}
+namespace __jni_impl::android::bluetooth
+{
+	class BluetoothDevice;
 }
 namespace __jni_impl::android::telecom
 {
@@ -20,13 +24,9 @@ namespace __jni_impl::android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::android::telecom
+namespace __jni_impl::android::content
 {
-	class CallAudioState;
-}
-namespace __jni_impl::android::bluetooth
-{
-	class BluetoothDevice;
+	class Intent;
 }
 
 namespace __jni_impl::android::telecom
@@ -41,29 +41,30 @@ namespace __jni_impl::android::telecom
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
-		jboolean onUnbind(__jni_impl::android::content::Intent arg0);
-		void onConnectionEvent(__jni_impl::android::telecom::Call arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
 		QAndroidJniObject getCallAudioState();
 		void onCallAudioStateChanged(__jni_impl::android::telecom::CallAudioState arg0);
 		void setAudioRoute(jint arg0);
 		void requestBluetoothAudio(__jni_impl::android::bluetooth::BluetoothDevice arg0);
-		void onBringToForeground(jboolean arg0);
-		QAndroidJniObject getCalls();
-		jboolean canAddCall();
 		void setMuted(jboolean arg0);
 		void onCallAdded(__jni_impl::android::telecom::Call arg0);
 		void onCallRemoved(__jni_impl::android::telecom::Call arg0);
 		void onCanAddCallChanged(jboolean arg0);
 		void onSilenceRinger();
+		jboolean canAddCall();
+		void onBringToForeground(jboolean arg0);
+		QAndroidJniObject getCalls();
+		void onConnectionEvent(__jni_impl::android::telecom::Call arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
+		void onConnectionEvent(__jni_impl::android::telecom::Call arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2);
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		jboolean onUnbind(__jni_impl::android::content::Intent arg0);
 	};
 } // namespace __jni_impl::android::telecom
 
-#include "../content/Intent.hpp"
-#include "Call.hpp"
-#include "../os/Bundle.hpp"
 #include "CallAudioState.hpp"
 #include "../bluetooth/BluetoothDevice.hpp"
+#include "Call.hpp"
+#include "../os/Bundle.hpp"
+#include "../content/Intent.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -82,36 +83,11 @@ namespace __jni_impl::android::telecom
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.InCallService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	QAndroidJniObject InCallService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean InCallService::onUnbind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onUnbind",
-			"(Landroid/content/Intent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	void InCallService::onConnectionEvent(__jni_impl::android::telecom::Call arg0, jstring arg1, __jni_impl::android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"onConnectionEvent",
-			"(Landroid/telecom/Call;Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
 	QAndroidJniObject InCallService::getCallAudioState()
 	{
 		return __thiz.callObjectMethod(
@@ -141,28 +117,6 @@ namespace __jni_impl::android::telecom
 			"requestBluetoothAudio",
 			"(Landroid/bluetooth/BluetoothDevice;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	void InCallService::onBringToForeground(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"onBringToForeground",
-			"(Z)V",
-			arg0
-		);
-	}
-	QAndroidJniObject InCallService::getCalls()
-	{
-		return __thiz.callObjectMethod(
-			"getCalls",
-			"()Ljava/util/List;"
-		);
-	}
-	jboolean InCallService::canAddCall()
-	{
-		return __thiz.callMethod<jboolean>(
-			"canAddCall",
-			"()Z"
 		);
 	}
 	void InCallService::setMuted(jboolean arg0)
@@ -202,6 +156,64 @@ namespace __jni_impl::android::telecom
 		__thiz.callMethod<void>(
 			"onSilenceRinger",
 			"()V"
+		);
+	}
+	jboolean InCallService::canAddCall()
+	{
+		return __thiz.callMethod<jboolean>(
+			"canAddCall",
+			"()Z"
+		);
+	}
+	void InCallService::onBringToForeground(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"onBringToForeground",
+			"(Z)V",
+			arg0
+		);
+	}
+	QAndroidJniObject InCallService::getCalls()
+	{
+		return __thiz.callObjectMethod(
+			"getCalls",
+			"()Ljava/util/List;"
+		);
+	}
+	void InCallService::onConnectionEvent(__jni_impl::android::telecom::Call arg0, jstring arg1, __jni_impl::android::os::Bundle arg2)
+	{
+		__thiz.callMethod<void>(
+			"onConnectionEvent",
+			"(Landroid/telecom/Call;Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void InCallService::onConnectionEvent(__jni_impl::android::telecom::Call arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2)
+	{
+		__thiz.callMethod<void>(
+			"onConnectionEvent",
+			"(Landroid/telecom/Call;Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject InCallService::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean InCallService::onUnbind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onUnbind",
+			"(Landroid/content/Intent;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::telecom

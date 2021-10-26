@@ -24,6 +24,7 @@ namespace __jni_impl::java::sql
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::java::sql
 
@@ -88,6 +89,15 @@ namespace __jni_impl::java::sql
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/ClientInfoStatus;",
 			arg0
+		);
+	}
+	QAndroidJniObject ClientInfoStatus::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.sql.ClientInfoStatus",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/sql/ClientInfoStatus;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::sql

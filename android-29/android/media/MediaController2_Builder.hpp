@@ -60,7 +60,8 @@ namespace __jni_impl::android::media
 			"android.media.MediaController2$Builder",
 			"(Landroid/content/Context;Landroid/media/Session2Token;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

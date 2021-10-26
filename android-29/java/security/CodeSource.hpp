@@ -64,7 +64,8 @@ namespace __jni_impl::java::security
 			"java.security.CodeSource",
 			"(Ljava/net/URL;[Ljava/security/cert/Certificate;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

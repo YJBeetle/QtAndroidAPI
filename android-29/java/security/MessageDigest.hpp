@@ -33,8 +33,11 @@ namespace __jni_impl::java::security
 		void update(__jni_impl::java::nio::ByteBuffer arg0);
 		void update(jbyte arg0);
 		static QAndroidJniObject getInstance(jstring arg0);
+		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::java::security::Provider arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1);
 		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, const QString &arg1);
 		void reset();
 		QAndroidJniObject getProvider();
 		jint digest(jbyteArray arg0, jint arg1, jint arg2);
@@ -119,6 +122,15 @@ namespace __jni_impl::java::security
 			arg0
 		);
 	}
+	QAndroidJniObject MessageDigest::getInstance(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.MessageDigest",
+			"getInstance",
+			"(Ljava/lang/String;)Ljava/security/MessageDigest;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject MessageDigest::getInstance(jstring arg0, __jni_impl::java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -126,6 +138,16 @@ namespace __jni_impl::java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/MessageDigest;",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject MessageDigest::getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.MessageDigest",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/MessageDigest;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -137,6 +159,16 @@ namespace __jni_impl::java::security
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/MessageDigest;",
 			arg0,
 			arg1
+		);
+	}
+	QAndroidJniObject MessageDigest::getInstance(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.MessageDigest",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/MessageDigest;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void MessageDigest::reset()

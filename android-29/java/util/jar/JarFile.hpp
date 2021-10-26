@@ -51,7 +51,9 @@ namespace __jni_impl::java::util::jar
 		void __constructor(__jni_impl::java::io::File arg0, jboolean arg1, jint arg2);
 		void __constructor(__jni_impl::java::io::File arg0);
 		void __constructor(jstring arg0, jboolean arg1);
+		void __constructor(const QString &arg0, jboolean arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(__jni_impl::java::io::File arg0, jboolean arg1, jint arg2, __jni_impl::__JniBaseClass arg3);
 		void __constructor(__jni_impl::java::io::File arg0, jboolean arg1);
 		
@@ -61,9 +63,11 @@ namespace __jni_impl::java::util::jar
 		QAndroidJniObject getInputStream(__jni_impl::java::util::zip::ZipEntry arg0);
 		QAndroidJniObject getManifest();
 		QAndroidJniObject getEntry(jstring arg0);
+		QAndroidJniObject getEntry(const QString &arg0);
 		static QAndroidJniObject runtimeVersion();
 		jboolean isMultiRelease();
 		QAndroidJniObject getJarEntry(jstring arg0);
+		QAndroidJniObject getJarEntry(const QString &arg0);
 		static QAndroidJniObject baseVersion();
 		QAndroidJniObject getVersion();
 		QAndroidJniObject versionedStream();
@@ -99,14 +103,16 @@ namespace __jni_impl::java::util::jar
 			"(Ljava/io/File;ZI)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void JarFile::__constructor(__jni_impl::java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarFile",
 			"(Ljava/io/File;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void JarFile::__constructor(jstring arg0, jboolean arg1)
 	{
@@ -114,14 +120,33 @@ namespace __jni_impl::java::util::jar
 			"java.util.jar.JarFile",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void JarFile::__constructor(const QString &arg0, jboolean arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.jar.JarFile",
+			"(Ljava/lang/String;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void JarFile::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarFile",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void JarFile::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.jar.JarFile",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void JarFile::__constructor(__jni_impl::java::io::File arg0, jboolean arg1, jint arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -131,7 +156,8 @@ namespace __jni_impl::java::util::jar
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void JarFile::__constructor(__jni_impl::java::io::File arg0, jboolean arg1)
 	{
@@ -139,7 +165,8 @@ namespace __jni_impl::java::util::jar
 			"java.util.jar.JarFile",
 			"(Ljava/io/File;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -180,6 +207,14 @@ namespace __jni_impl::java::util::jar
 			arg0
 		);
 	}
+	QAndroidJniObject JarFile::getEntry(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getEntry",
+			"(Ljava/lang/String;)Ljava/util/zip/ZipEntry;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject JarFile::runtimeVersion()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -201,6 +236,14 @@ namespace __jni_impl::java::util::jar
 			"getJarEntry",
 			"(Ljava/lang/String;)Ljava/util/jar/JarEntry;",
 			arg0
+		);
+	}
+	QAndroidJniObject JarFile::getJarEntry(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getJarEntry",
+			"(Ljava/lang/String;)Ljava/util/jar/JarEntry;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject JarFile::baseVersion()

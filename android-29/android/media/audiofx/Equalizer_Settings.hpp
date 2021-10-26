@@ -19,6 +19,7 @@ namespace __jni_impl::android::media::audiofx
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jstring toString();
@@ -54,14 +55,24 @@ namespace __jni_impl::android::media::audiofx
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.Equalizer$Settings",
-			"()V");
+			"()V"
+		);
 	}
 	void Equalizer_Settings::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.Equalizer$Settings",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Equalizer_Settings::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.media.audiofx.Equalizer$Settings",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

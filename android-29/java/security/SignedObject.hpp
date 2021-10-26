@@ -47,7 +47,8 @@ namespace __jni_impl::java::security
 			"(Ljava/io/Serializable;Ljava/security/PrivateKey;Ljava/security/Signature;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods

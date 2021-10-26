@@ -16,6 +16,7 @@ namespace __jni_impl::java::util::prefs
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jthrowable arg0);
 		
 		// Methods
@@ -33,14 +34,24 @@ namespace __jni_impl::java::util::prefs
 		__thiz = QAndroidJniObject(
 			"java.util.prefs.BackingStoreException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void BackingStoreException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.prefs.BackingStoreException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void BackingStoreException::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.prefs.BackingStoreException",
 			"(Ljava/lang/Throwable;)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

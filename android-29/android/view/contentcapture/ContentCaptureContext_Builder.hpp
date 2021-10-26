@@ -48,7 +48,8 @@ namespace __jni_impl::android::view::contentcapture
 		__thiz = QAndroidJniObject(
 			"android.view.contentcapture.ContentCaptureContext$Builder",
 			"(Landroid/content/LocusId;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

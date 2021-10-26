@@ -59,7 +59,8 @@ namespace __jni_impl::android::service::autofill
 			"android.service.autofill.RegexValidator",
 			"(Landroid/view/autofill/AutofillId;Ljava/util/regex/Pattern;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

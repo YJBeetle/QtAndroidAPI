@@ -22,10 +22,6 @@ namespace __jni_impl::android::text
 {
 	class TextUtils_TruncateAt;
 }
-namespace __jni_impl::android::text
-{
-	class Layout_Directions;
-}
 namespace __jni_impl::android::graphics
 {
 	class Canvas;
@@ -38,6 +34,10 @@ namespace __jni_impl::android::graphics
 {
 	class Paint;
 }
+namespace __jni_impl::android::text
+{
+	class Layout_Directions;
+}
 
 namespace __jni_impl::android::text
 {
@@ -48,15 +48,25 @@ namespace __jni_impl::android::text
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7);
+		void __constructor(const QString &arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7);
 		void __constructor(jstring arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7, __jni_impl::android::text::TextUtils_TruncateAt arg8, jint arg9);
+		void __constructor(const QString &arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7, __jni_impl::android::text::TextUtils_TruncateAt arg8, jint arg9);
 		
 		// Methods
 		static QAndroidJniObject make(jstring arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7, __jni_impl::android::text::TextUtils_TruncateAt arg8, jint arg9);
+		static QAndroidJniObject make(const QString &arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7, __jni_impl::android::text::TextUtils_TruncateAt arg8, jint arg9);
 		static QAndroidJniObject make(jstring arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7);
+		static QAndroidJniObject make(const QString &arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7);
+		void draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Path arg1, __jni_impl::android::graphics::Paint arg2, jint arg3);
+		jint getHeight();
 		QAndroidJniObject replaceOrMake(jstring arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7, __jni_impl::android::text::TextUtils_TruncateAt arg8, jint arg9);
+		QAndroidJniObject replaceOrMake(const QString &arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7, __jni_impl::android::text::TextUtils_TruncateAt arg8, jint arg9);
 		QAndroidJniObject replaceOrMake(jstring arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7);
-		static QAndroidJniObject isBoring(jstring arg0, __jni_impl::android::text::TextPaint arg1, __jni_impl::android::text::BoringLayout_Metrics arg2);
+		QAndroidJniObject replaceOrMake(const QString &arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7);
 		static QAndroidJniObject isBoring(jstring arg0, __jni_impl::android::text::TextPaint arg1);
+		static QAndroidJniObject isBoring(const QString &arg0, __jni_impl::android::text::TextPaint arg1);
+		static QAndroidJniObject isBoring(jstring arg0, __jni_impl::android::text::TextPaint arg1, __jni_impl::android::text::BoringLayout_Metrics arg2);
+		static QAndroidJniObject isBoring(const QString &arg0, __jni_impl::android::text::TextPaint arg1, __jni_impl::android::text::BoringLayout_Metrics arg2);
 		jint getLineCount();
 		jint getLineTop(jint arg0);
 		jint getLineDescent(jint arg0);
@@ -72,8 +82,6 @@ namespace __jni_impl::android::text
 		jint getEllipsisStart(jint arg0);
 		jint getEllipsizedWidth();
 		void ellipsized(jint arg0, jint arg1);
-		void draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Path arg1, __jni_impl::android::graphics::Paint arg2, jint arg3);
-		jint getHeight();
 	};
 } // namespace __jni_impl::android::text
 
@@ -81,10 +89,10 @@ namespace __jni_impl::android::text
 #include "Layout_Alignment.hpp"
 #include "BoringLayout_Metrics.hpp"
 #include "TextUtils_TruncateAt.hpp"
-#include "Layout_Directions.hpp"
 #include "../graphics/Canvas.hpp"
 #include "../graphics/Path.hpp"
 #include "../graphics/Paint.hpp"
+#include "Layout_Directions.hpp"
 
 namespace __jni_impl::android::text
 {
@@ -103,7 +111,23 @@ namespace __jni_impl::android::text
 			arg4,
 			arg5,
 			arg6.__jniObject().object(),
-			arg7);
+			arg7
+		);
+	}
+	void BoringLayout::__constructor(const QString &arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.BoringLayout",
+			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFLandroid/text/BoringLayout$Metrics;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object(),
+			arg4,
+			arg5,
+			arg6.__jniObject().object(),
+			arg7
+		);
 	}
 	void BoringLayout::__constructor(jstring arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7, __jni_impl::android::text::TextUtils_TruncateAt arg8, jint arg9)
 	{
@@ -119,7 +143,25 @@ namespace __jni_impl::android::text
 			arg6.__jniObject().object(),
 			arg7,
 			arg8.__jniObject().object(),
-			arg9);
+			arg9
+		);
+	}
+	void BoringLayout::__constructor(const QString &arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7, __jni_impl::android::text::TextUtils_TruncateAt arg8, jint arg9)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.BoringLayout",
+			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFLandroid/text/BoringLayout$Metrics;ZLandroid/text/TextUtils$TruncateAt;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object(),
+			arg4,
+			arg5,
+			arg6.__jniObject().object(),
+			arg7,
+			arg8.__jniObject().object(),
+			arg9
+		);
 	}
 	
 	// Methods
@@ -130,6 +172,24 @@ namespace __jni_impl::android::text
 			"make",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFLandroid/text/BoringLayout$Metrics;ZLandroid/text/TextUtils$TruncateAt;I)Landroid/text/BoringLayout;",
 			arg0,
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object(),
+			arg4,
+			arg5,
+			arg6.__jniObject().object(),
+			arg7,
+			arg8.__jniObject().object(),
+			arg9
+		);
+	}
+	QAndroidJniObject BoringLayout::make(const QString &arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7, __jni_impl::android::text::TextUtils_TruncateAt arg8, jint arg9)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.BoringLayout",
+			"make",
+			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFLandroid/text/BoringLayout$Metrics;ZLandroid/text/TextUtils$TruncateAt;I)Landroid/text/BoringLayout;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2,
 			arg3.__jniObject().object(),
@@ -157,12 +217,63 @@ namespace __jni_impl::android::text
 			arg7
 		);
 	}
+	QAndroidJniObject BoringLayout::make(const QString &arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.BoringLayout",
+			"make",
+			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFLandroid/text/BoringLayout$Metrics;Z)Landroid/text/BoringLayout;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object(),
+			arg4,
+			arg5,
+			arg6.__jniObject().object(),
+			arg7
+		);
+	}
+	void BoringLayout::draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Path arg1, __jni_impl::android::graphics::Paint arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;Landroid/graphics/Path;Landroid/graphics/Paint;I)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3
+		);
+	}
+	jint BoringLayout::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
+	}
 	QAndroidJniObject BoringLayout::replaceOrMake(jstring arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7, __jni_impl::android::text::TextUtils_TruncateAt arg8, jint arg9)
 	{
 		return __thiz.callObjectMethod(
 			"replaceOrMake",
 			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFLandroid/text/BoringLayout$Metrics;ZLandroid/text/TextUtils$TruncateAt;I)Landroid/text/BoringLayout;",
 			arg0,
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object(),
+			arg4,
+			arg5,
+			arg6.__jniObject().object(),
+			arg7,
+			arg8.__jniObject().object(),
+			arg9
+		);
+	}
+	QAndroidJniObject BoringLayout::replaceOrMake(const QString &arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7, __jni_impl::android::text::TextUtils_TruncateAt arg8, jint arg9)
+	{
+		return __thiz.callObjectMethod(
+			"replaceOrMake",
+			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFLandroid/text/BoringLayout$Metrics;ZLandroid/text/TextUtils$TruncateAt;I)Landroid/text/BoringLayout;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2,
 			arg3.__jniObject().object(),
@@ -189,6 +300,41 @@ namespace __jni_impl::android::text
 			arg7
 		);
 	}
+	QAndroidJniObject BoringLayout::replaceOrMake(const QString &arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, __jni_impl::android::text::BoringLayout_Metrics arg6, jboolean arg7)
+	{
+		return __thiz.callObjectMethod(
+			"replaceOrMake",
+			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFLandroid/text/BoringLayout$Metrics;Z)Landroid/text/BoringLayout;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object(),
+			arg4,
+			arg5,
+			arg6.__jniObject().object(),
+			arg7
+		);
+	}
+	QAndroidJniObject BoringLayout::isBoring(jstring arg0, __jni_impl::android::text::TextPaint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.BoringLayout",
+			"isBoring",
+			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;)Landroid/text/BoringLayout$Metrics;",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject BoringLayout::isBoring(const QString &arg0, __jni_impl::android::text::TextPaint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.BoringLayout",
+			"isBoring",
+			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;)Landroid/text/BoringLayout$Metrics;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject BoringLayout::isBoring(jstring arg0, __jni_impl::android::text::TextPaint arg1, __jni_impl::android::text::BoringLayout_Metrics arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -200,14 +346,15 @@ namespace __jni_impl::android::text
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject BoringLayout::isBoring(jstring arg0, __jni_impl::android::text::TextPaint arg1)
+	QAndroidJniObject BoringLayout::isBoring(const QString &arg0, __jni_impl::android::text::TextPaint arg1, __jni_impl::android::text::BoringLayout_Metrics arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.text.BoringLayout",
 			"isBoring",
-			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;)Landroid/text/BoringLayout$Metrics;",
-			arg0,
-			arg1.__jniObject().object()
+			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;Landroid/text/BoringLayout$Metrics;)Landroid/text/BoringLayout$Metrics;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
 	jint BoringLayout::getLineCount()
@@ -325,24 +472,6 @@ namespace __jni_impl::android::text
 			"(II)V",
 			arg0,
 			arg1
-		);
-	}
-	void BoringLayout::draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Path arg1, __jni_impl::android::graphics::Paint arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;Landroid/graphics/Path;Landroid/graphics/Paint;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	jint BoringLayout::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::text

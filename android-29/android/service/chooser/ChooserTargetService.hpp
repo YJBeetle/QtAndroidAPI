@@ -10,15 +10,15 @@
 
 namespace __jni_impl::android::content
 {
-	class Intent;
-}
-namespace __jni_impl::android::content
-{
 	class ComponentName;
 }
 namespace __jni_impl::android::content
 {
 	class IntentFilter;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
 }
 
 namespace __jni_impl::android::service::chooser
@@ -35,14 +35,14 @@ namespace __jni_impl::android::service::chooser
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject onGetChooserTargets(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::content::IntentFilter arg1);
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 	};
 } // namespace __jni_impl::android::service::chooser
 
-#include "../../content/Intent.hpp"
 #include "../../content/ComponentName.hpp"
 #include "../../content/IntentFilter.hpp"
+#include "../../content/Intent.hpp"
 
 namespace __jni_impl::android::service::chooser
 {
@@ -77,18 +77,11 @@ namespace __jni_impl::android::service::chooser
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.chooser.ChooserTargetService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	QAndroidJniObject ChooserTargetService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject ChooserTargetService::onGetChooserTargets(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::content::IntentFilter arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -96,6 +89,14 @@ namespace __jni_impl::android::service::chooser
 			"(Landroid/content/ComponentName;Landroid/content/IntentFilter;)Ljava/util/List;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ChooserTargetService::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::service::chooser

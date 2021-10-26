@@ -21,11 +21,11 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
+		void removeOnFileDescriptorEventListener(__jni_impl::java::io::FileDescriptor arg0);
+		void addOnFileDescriptorEventListener(__jni_impl::java::io::FileDescriptor arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
 		jboolean isIdle();
 		void addIdleHandler(__jni_impl::__JniBaseClass arg0);
 		void removeIdleHandler(__jni_impl::__JniBaseClass arg0);
-		void addOnFileDescriptorEventListener(__jni_impl::java::io::FileDescriptor arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
-		void removeOnFileDescriptorEventListener(__jni_impl::java::io::FileDescriptor arg0);
 	};
 } // namespace __jni_impl::android::os
 
@@ -44,6 +44,24 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
+	void MessageQueue::removeOnFileDescriptorEventListener(__jni_impl::java::io::FileDescriptor arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeOnFileDescriptorEventListener",
+			"(Ljava/io/FileDescriptor;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void MessageQueue::addOnFileDescriptorEventListener(__jni_impl::java::io::FileDescriptor arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		__thiz.callMethod<void>(
+			"addOnFileDescriptorEventListener",
+			"(Ljava/io/FileDescriptor;ILandroid/os/MessageQueue$OnFileDescriptorEventListener;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
 	jboolean MessageQueue::isIdle()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -64,24 +82,6 @@ namespace __jni_impl::android::os
 		__thiz.callMethod<void>(
 			"removeIdleHandler",
 			"(Landroid/os/MessageQueue$IdleHandler;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void MessageQueue::addOnFileDescriptorEventListener(__jni_impl::java::io::FileDescriptor arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
-	{
-		__thiz.callMethod<void>(
-			"addOnFileDescriptorEventListener",
-			"(Ljava/io/FileDescriptor;ILandroid/os/MessageQueue$OnFileDescriptorEventListener;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void MessageQueue::removeOnFileDescriptorEventListener(__jni_impl::java::io::FileDescriptor arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeOnFileDescriptorEventListener",
-			"(Ljava/io/FileDescriptor;)V",
 			arg0.__jniObject().object()
 		);
 	}

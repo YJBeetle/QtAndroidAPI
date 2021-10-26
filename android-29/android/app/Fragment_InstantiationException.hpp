@@ -22,6 +22,7 @@ namespace __jni_impl::android::app
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::java::lang::Exception arg1);
+		void __constructor(const QString &arg0, __jni_impl::java::lang::Exception arg1);
 		
 		// Methods
 	};
@@ -40,7 +41,17 @@ namespace __jni_impl::android::app
 			"android.app.Fragment$InstantiationException",
 			"(Ljava/lang/String;Ljava/lang/Exception;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void Fragment_InstantiationException::__constructor(const QString &arg0, __jni_impl::java::lang::Exception arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.Fragment$InstantiationException",
+			"(Ljava/lang/String;Ljava/lang/Exception;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

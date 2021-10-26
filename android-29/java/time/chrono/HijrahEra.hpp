@@ -33,6 +33,7 @@ namespace __jni_impl::java::time::chrono
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 		jint getValue();
 		static QAndroidJniObject of(jint arg0);
 		QAndroidJniObject range(__jni_impl::__JniBaseClass arg0);
@@ -80,6 +81,15 @@ namespace __jni_impl::java::time::chrono
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/chrono/HijrahEra;",
 			arg0
+		);
+	}
+	QAndroidJniObject HijrahEra::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.chrono.HijrahEra",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/time/chrono/HijrahEra;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint HijrahEra::getValue()

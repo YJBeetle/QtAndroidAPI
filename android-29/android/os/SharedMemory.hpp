@@ -34,6 +34,7 @@ namespace __jni_impl::android::os
 		void close();
 		jint getSize();
 		static QAndroidJniObject create(jstring arg0, jint arg1);
+		static QAndroidJniObject create(const QString &arg0, jint arg1);
 		QAndroidJniObject mapReadWrite();
 		QAndroidJniObject mapReadOnly();
 		static void unmap(__jni_impl::java::nio::ByteBuffer arg0);
@@ -99,6 +100,16 @@ namespace __jni_impl::android::os
 			"create",
 			"(Ljava/lang/String;I)Landroid/os/SharedMemory;",
 			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject SharedMemory::create(const QString &arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.SharedMemory",
+			"create",
+			"(Ljava/lang/String;I)Landroid/os/SharedMemory;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

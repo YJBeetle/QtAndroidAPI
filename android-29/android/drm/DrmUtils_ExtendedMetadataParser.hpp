@@ -18,6 +18,7 @@ namespace __jni_impl::android::drm
 		
 		// Methods
 		jstring get(jstring arg0);
+		jstring get(const QString &arg0);
 		QAndroidJniObject iterator();
 		QAndroidJniObject keyIterator();
 	};
@@ -43,6 +44,14 @@ namespace __jni_impl::android::drm
 			"get",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring DrmUtils_ExtendedMetadataParser::get(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"get",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject DrmUtils_ExtendedMetadataParser::iterator()

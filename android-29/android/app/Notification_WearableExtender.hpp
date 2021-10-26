@@ -9,21 +9,21 @@ namespace __jni_impl::android::app
 {
 	class Notification;
 }
-namespace __jni_impl::android::app
-{
-	class Notification_Action;
-}
 namespace __jni_impl::android::graphics
 {
 	class Bitmap;
 }
 namespace __jni_impl::android::app
 {
-	class PendingIntent;
+	class Notification_Builder;
 }
 namespace __jni_impl::android::app
 {
-	class Notification_Builder;
+	class Notification_Action;
+}
+namespace __jni_impl::android::app
+{
+	class PendingIntent;
 }
 
 namespace __jni_impl::android::app
@@ -49,11 +49,12 @@ namespace __jni_impl::android::app
 		// Methods
 		QAndroidJniObject clone();
 		QAndroidJniObject getActions();
+		QAndroidJniObject setBackground(__jni_impl::android::graphics::Bitmap arg0);
+		QAndroidJniObject getBackground();
+		QAndroidJniObject extend(__jni_impl::android::app::Notification_Builder arg0);
 		QAndroidJniObject setGravity(jint arg0);
 		jint getGravity();
 		QAndroidJniObject addAction(__jni_impl::android::app::Notification_Action arg0);
-		QAndroidJniObject setBackground(__jni_impl::android::graphics::Bitmap arg0);
-		QAndroidJniObject getBackground();
 		QAndroidJniObject addActions(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject clearActions();
 		QAndroidJniObject setDisplayIntent(__jni_impl::android::app::PendingIntent arg0);
@@ -89,18 +90,19 @@ namespace __jni_impl::android::app
 		QAndroidJniObject setHintContentIntentLaunchesActivity(jboolean arg0);
 		jboolean getHintContentIntentLaunchesActivity();
 		QAndroidJniObject setDismissalId(jstring arg0);
+		QAndroidJniObject setDismissalId(const QString &arg0);
 		jstring getDismissalId();
 		QAndroidJniObject setBridgeTag(jstring arg0);
+		QAndroidJniObject setBridgeTag(const QString &arg0);
 		jstring getBridgeTag();
-		QAndroidJniObject extend(__jni_impl::android::app::Notification_Builder arg0);
 	};
 } // namespace __jni_impl::android::app
 
 #include "Notification.hpp"
-#include "Notification_Action.hpp"
 #include "../graphics/Bitmap.hpp"
-#include "PendingIntent.hpp"
 #include "Notification_Builder.hpp"
+#include "Notification_Action.hpp"
+#include "PendingIntent.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -174,14 +176,16 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$WearableExtender",
-			"()V");
+			"()V"
+		);
 	}
 	void Notification_WearableExtender::__constructor(__jni_impl::android::app::Notification arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$WearableExtender",
 			"(Landroid/app/Notification;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -197,6 +201,29 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"getActions",
 			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject Notification_WearableExtender::setBackground(__jni_impl::android::graphics::Bitmap arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setBackground",
+			"(Landroid/graphics/Bitmap;)Landroid/app/Notification$WearableExtender;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Notification_WearableExtender::getBackground()
+	{
+		return __thiz.callObjectMethod(
+			"getBackground",
+			"()Landroid/graphics/Bitmap;"
+		);
+	}
+	QAndroidJniObject Notification_WearableExtender::extend(__jni_impl::android::app::Notification_Builder arg0)
+	{
+		return __thiz.callObjectMethod(
+			"extend",
+			"(Landroid/app/Notification$Builder;)Landroid/app/Notification$Builder;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject Notification_WearableExtender::setGravity(jint arg0)
@@ -220,21 +247,6 @@ namespace __jni_impl::android::app
 			"addAction",
 			"(Landroid/app/Notification$Action;)Landroid/app/Notification$WearableExtender;",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::setBackground(__jni_impl::android::graphics::Bitmap arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setBackground",
-			"(Landroid/graphics/Bitmap;)Landroid/app/Notification$WearableExtender;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::getBackground()
-	{
-		return __thiz.callObjectMethod(
-			"getBackground",
-			"()Landroid/graphics/Bitmap;"
 		);
 	}
 	QAndroidJniObject Notification_WearableExtender::addActions(__jni_impl::__JniBaseClass arg0)
@@ -500,6 +512,14 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
+	QAndroidJniObject Notification_WearableExtender::setDismissalId(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setDismissalId",
+			"(Ljava/lang/String;)Landroid/app/Notification$WearableExtender;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring Notification_WearableExtender::getDismissalId()
 	{
 		return __thiz.callObjectMethod(
@@ -515,20 +535,20 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
+	QAndroidJniObject Notification_WearableExtender::setBridgeTag(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setBridgeTag",
+			"(Ljava/lang/String;)Landroid/app/Notification$WearableExtender;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring Notification_WearableExtender::getBridgeTag()
 	{
 		return __thiz.callObjectMethod(
 			"getBridgeTag",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	QAndroidJniObject Notification_WearableExtender::extend(__jni_impl::android::app::Notification_Builder arg0)
-	{
-		return __thiz.callObjectMethod(
-			"extend",
-			"(Landroid/app/Notification$Builder;)Landroid/app/Notification$Builder;",
-			arg0.__jniObject().object()
-		);
 	}
 } // namespace __jni_impl::android::app
 

@@ -36,7 +36,8 @@ namespace __jni_impl::javax::crypto
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.MacSpi",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

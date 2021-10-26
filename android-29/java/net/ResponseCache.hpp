@@ -34,6 +34,7 @@ namespace __jni_impl::java::net
 		
 		// Methods
 		QAndroidJniObject get(__jni_impl::java::net::URI arg0, jstring arg1, __jni_impl::__JniBaseClass arg2);
+		QAndroidJniObject get(__jni_impl::java::net::URI arg0, const QString &arg1, __jni_impl::__JniBaseClass arg2);
 		QAndroidJniObject put(__jni_impl::java::net::URI arg0, __jni_impl::java::net::URLConnection arg1);
 		static QAndroidJniObject getDefault();
 		static void setDefault(__jni_impl::java::net::ResponseCache arg0);
@@ -54,7 +55,8 @@ namespace __jni_impl::java::net
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.ResponseCache",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -65,6 +67,16 @@ namespace __jni_impl::java::net
 			"(Ljava/net/URI;Ljava/lang/String;Ljava/util/Map;)Ljava/net/CacheResponse;",
 			arg0.__jniObject().object(),
 			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ResponseCache::get(__jni_impl::java::net::URI arg0, const QString &arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		return __thiz.callObjectMethod(
+			"get",
+			"(Ljava/net/URI;Ljava/lang/String;Ljava/util/Map;)Ljava/net/CacheResponse;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}

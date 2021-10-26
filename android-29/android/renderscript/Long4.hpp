@@ -59,7 +59,8 @@ namespace __jni_impl::android::renderscript
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Long4",
-			"()V");
+			"()V"
+		);
 	}
 	void Long4::__constructor(jlong arg0, jlong arg1, jlong arg2, jlong arg3)
 	{
@@ -69,7 +70,8 @@ namespace __jni_impl::android::renderscript
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	
 	// Methods

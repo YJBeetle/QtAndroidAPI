@@ -21,8 +21,10 @@ namespace __jni_impl::org::xml::sax::ext
 		// Methods
 		jstring getEncoding();
 		void setEncoding(jstring arg0);
+		void setEncoding(const QString &arg0);
 		jstring getXMLVersion();
 		void setXMLVersion(jstring arg0);
+		void setXMLVersion(const QString &arg0);
 	};
 } // namespace __jni_impl::org::xml::sax::ext
 
@@ -36,14 +38,16 @@ namespace __jni_impl::org::xml::sax::ext
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.ext.Locator2Impl",
-			"()V");
+			"()V"
+		);
 	}
 	void Locator2Impl::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.ext.Locator2Impl",
 			"(Lorg/xml/sax/Locator;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -62,6 +66,14 @@ namespace __jni_impl::org::xml::sax::ext
 			arg0
 		);
 	}
+	void Locator2Impl::setEncoding(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEncoding",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring Locator2Impl::getXMLVersion()
 	{
 		return __thiz.callObjectMethod(
@@ -75,6 +87,14 @@ namespace __jni_impl::org::xml::sax::ext
 			"setXMLVersion",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void Locator2Impl::setXMLVersion(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setXMLVersion",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::org::xml::sax::ext

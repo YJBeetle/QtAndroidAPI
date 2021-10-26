@@ -22,9 +22,9 @@ namespace __jni_impl::javax::crypto::spec
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jint getVersion();
+		jbyteArray getIV();
 		jint getRounds();
 		jint getWordSize();
-		jbyteArray getIV();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -43,7 +43,8 @@ namespace __jni_impl::javax::crypto::spec
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void RC5ParameterSpec::__constructor(jint arg0, jint arg1, jint arg2, jbyteArray arg3)
 	{
@@ -53,7 +54,8 @@ namespace __jni_impl::javax::crypto::spec
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void RC5ParameterSpec::__constructor(jint arg0, jint arg1, jint arg2)
 	{
@@ -62,7 +64,8 @@ namespace __jni_impl::javax::crypto::spec
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods
@@ -88,6 +91,13 @@ namespace __jni_impl::javax::crypto::spec
 			"()I"
 		);
 	}
+	jbyteArray RC5ParameterSpec::getIV()
+	{
+		return __thiz.callObjectMethod(
+			"getIV",
+			"()[B"
+		).object<jbyteArray>();
+	}
 	jint RC5ParameterSpec::getRounds()
 	{
 		return __thiz.callMethod<jint>(
@@ -101,13 +111,6 @@ namespace __jni_impl::javax::crypto::spec
 			"getWordSize",
 			"()I"
 		);
-	}
-	jbyteArray RC5ParameterSpec::getIV()
-	{
-		return __thiz.callObjectMethod(
-			"getIV",
-			"()[B"
-		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::javax::crypto::spec
 

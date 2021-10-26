@@ -38,7 +38,8 @@ namespace __jni_impl::java::text
 		__thiz = QAndroidJniObject(
 			"java.text.ParsePosition",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

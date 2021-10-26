@@ -34,16 +34,16 @@ namespace __jni_impl::javax::security::auth
 		jstring toString();
 		jint hashCode();
 		void setReadOnly();
-		QAndroidJniObject getPrincipals(jclass arg0);
 		QAndroidJniObject getPrincipals();
+		QAndroidJniObject getPrincipals(jclass arg0);
 		jboolean isReadOnly();
 		static QAndroidJniObject getSubject(__jni_impl::java::security::AccessControlContext arg0);
 		static jobject doAs(__jni_impl::javax::security::auth::Subject arg0, __jni_impl::__JniBaseClass arg1);
 		static jobject doAsPrivileged(__jni_impl::javax::security::auth::Subject arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::AccessControlContext arg2);
 		QAndroidJniObject getPublicCredentials();
 		QAndroidJniObject getPublicCredentials(jclass arg0);
-		QAndroidJniObject getPrivateCredentials();
 		QAndroidJniObject getPrivateCredentials(jclass arg0);
+		QAndroidJniObject getPrivateCredentials();
 	};
 } // namespace __jni_impl::javax::security::auth
 
@@ -60,7 +60,8 @@ namespace __jni_impl::javax::security::auth
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.auth.Subject",
-			"()V");
+			"()V"
+		);
 	}
 	void Subject::__constructor(jboolean arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -70,7 +71,8 @@ namespace __jni_impl::javax::security::auth
 			arg0,
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -103,19 +105,19 @@ namespace __jni_impl::javax::security::auth
 			"()V"
 		);
 	}
+	QAndroidJniObject Subject::getPrincipals()
+	{
+		return __thiz.callObjectMethod(
+			"getPrincipals",
+			"()Ljava/util/Set;"
+		);
+	}
 	QAndroidJniObject Subject::getPrincipals(jclass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getPrincipals",
 			"(Ljava/lang/Class;)Ljava/util/Set;",
 			arg0
-		);
-	}
-	QAndroidJniObject Subject::getPrincipals()
-	{
-		return __thiz.callObjectMethod(
-			"getPrincipals",
-			"()Ljava/util/Set;"
 		);
 	}
 	jboolean Subject::isReadOnly()
@@ -139,7 +141,7 @@ namespace __jni_impl::javax::security::auth
 		return QAndroidJniObject::callStaticObjectMethod(
 			"javax.security.auth.Subject",
 			"doAs",
-			"(Ljavax/security/auth/Subject;Ljava/security/PrivilegedExceptionAction;)Ljava/lang/Object;",
+			"(Ljavax/security/auth/Subject;Ljava/security/PrivilegedAction;)Ljava/lang/Object;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
 		).object<jobject>();
@@ -170,19 +172,19 @@ namespace __jni_impl::javax::security::auth
 			arg0
 		);
 	}
-	QAndroidJniObject Subject::getPrivateCredentials()
-	{
-		return __thiz.callObjectMethod(
-			"getPrivateCredentials",
-			"()Ljava/util/Set;"
-		);
-	}
 	QAndroidJniObject Subject::getPrivateCredentials(jclass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getPrivateCredentials",
 			"(Ljava/lang/Class;)Ljava/util/Set;",
 			arg0
+		);
+	}
+	QAndroidJniObject Subject::getPrivateCredentials()
+	{
+		return __thiz.callObjectMethod(
+			"getPrivateCredentials",
+			"()Ljava/util/Set;"
 		);
 	}
 } // namespace __jni_impl::javax::security::auth

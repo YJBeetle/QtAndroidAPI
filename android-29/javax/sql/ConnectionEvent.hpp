@@ -39,7 +39,8 @@ namespace __jni_impl::javax::sql
 		__thiz = QAndroidJniObject(
 			"javax.sql.ConnectionEvent",
 			"(Ljavax/sql/PooledConnection;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ConnectionEvent::__constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::java::sql::SQLException arg1)
 	{
@@ -47,7 +48,8 @@ namespace __jni_impl::javax::sql
 			"javax.sql.ConnectionEvent",
 			"(Ljavax/sql/PooledConnection;Ljava/sql/SQLException;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

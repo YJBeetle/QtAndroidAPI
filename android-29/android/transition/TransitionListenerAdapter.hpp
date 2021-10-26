@@ -40,7 +40,8 @@ namespace __jni_impl::android::transition
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.TransitionListenerAdapter",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

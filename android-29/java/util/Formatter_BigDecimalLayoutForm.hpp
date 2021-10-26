@@ -22,6 +22,7 @@ namespace __jni_impl::java::util
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::java::util
 
@@ -70,6 +71,15 @@ namespace __jni_impl::java::util
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/util/Formatter$BigDecimalLayoutForm;",
 			arg0
+		);
+	}
+	QAndroidJniObject Formatter_BigDecimalLayoutForm::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.Formatter$BigDecimalLayoutForm",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/util/Formatter$BigDecimalLayoutForm;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::util

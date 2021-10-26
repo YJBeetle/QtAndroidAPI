@@ -17,17 +17,21 @@ namespace __jni_impl::java::util
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, jdouble arg1);
+		void __constructor(const QString &arg0, jdouble arg1);
 		
 		// Methods
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
 		static QAndroidJniObject parse(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		static QAndroidJniObject parse(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		static QAndroidJniObject parse(jstring arg0);
+		static QAndroidJniObject parse(const QString &arg0);
 		jdouble getWeight();
-		jstring getRange();
 		static QAndroidJniObject mapEquivalents(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		jstring getRange();
 	};
 } // namespace __jni_impl::java::util
 
@@ -56,7 +60,16 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.Locale$LanguageRange",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Locale_LanguageRange::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.Locale$LanguageRange",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void Locale_LanguageRange::__constructor(jstring arg0, jdouble arg1)
 	{
@@ -64,7 +77,17 @@ namespace __jni_impl::java::util
 			"java.util.Locale$LanguageRange",
 			"(Ljava/lang/String;D)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void Locale_LanguageRange::__constructor(const QString &arg0, jdouble arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.Locale$LanguageRange",
+			"(Ljava/lang/String;D)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods
@@ -100,6 +123,16 @@ namespace __jni_impl::java::util
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject Locale_LanguageRange::parse(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.Locale$LanguageRange",
+			"parse",
+			"(Ljava/lang/String;Ljava/util/Map;)Ljava/util/List;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject Locale_LanguageRange::parse(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -109,19 +142,21 @@ namespace __jni_impl::java::util
 			arg0
 		);
 	}
+	QAndroidJniObject Locale_LanguageRange::parse(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.Locale$LanguageRange",
+			"parse",
+			"(Ljava/lang/String;)Ljava/util/List;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jdouble Locale_LanguageRange::getWeight()
 	{
 		return __thiz.callMethod<jdouble>(
 			"getWeight",
 			"()D"
 		);
-	}
-	jstring Locale_LanguageRange::getRange()
-	{
-		return __thiz.callObjectMethod(
-			"getRange",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	QAndroidJniObject Locale_LanguageRange::mapEquivalents(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -132,6 +167,13 @@ namespace __jni_impl::java::util
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
 		);
+	}
+	jstring Locale_LanguageRange::getRange()
+	{
+		return __thiz.callObjectMethod(
+			"getRange",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util
 

@@ -35,9 +35,13 @@ namespace __jni_impl::java::util
 		
 		// Constructors
 		void __constructor(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12);
+		void __constructor(jint arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12);
 		void __constructor(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10);
+		void __constructor(jint arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10);
 		void __constructor(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
+		void __constructor(jint arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
 		void __constructor(jint arg0, jstring arg1);
+		void __constructor(jint arg0, const QString &arg1);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -112,7 +116,28 @@ namespace __jni_impl::java::util
 			arg9,
 			arg10,
 			arg11,
-			arg12);
+			arg12
+		);
+	}
+	void SimpleTimeZone::__constructor(jint arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.SimpleTimeZone",
+			"(ILjava/lang/String;IIIIIIIIIII)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9,
+			arg10,
+			arg11,
+			arg12
+		);
 	}
 	void SimpleTimeZone::__constructor(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10)
 	{
@@ -129,7 +154,26 @@ namespace __jni_impl::java::util
 			arg7,
 			arg8,
 			arg9,
-			arg10);
+			arg10
+		);
+	}
+	void SimpleTimeZone::__constructor(jint arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.SimpleTimeZone",
+			"(ILjava/lang/String;IIIIIIIII)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9,
+			arg10
+		);
 	}
 	void SimpleTimeZone::__constructor(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
 	{
@@ -145,7 +189,25 @@ namespace __jni_impl::java::util
 			arg6,
 			arg7,
 			arg8,
-			arg9);
+			arg9
+		);
+	}
+	void SimpleTimeZone::__constructor(jint arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.SimpleTimeZone",
+			"(ILjava/lang/String;IIIIIIII)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9
+		);
 	}
 	void SimpleTimeZone::__constructor(jint arg0, jstring arg1)
 	{
@@ -153,7 +215,17 @@ namespace __jni_impl::java::util
 			"java.util.SimpleTimeZone",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void SimpleTimeZone::__constructor(jint arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.SimpleTimeZone",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods

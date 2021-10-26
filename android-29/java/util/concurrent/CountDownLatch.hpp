@@ -23,9 +23,9 @@ namespace __jni_impl::java::util::concurrent
 		// Methods
 		jstring toString();
 		jlong getCount();
-		void countDown();
-		void await();
 		jboolean await(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
+		void await();
+		void countDown();
 	};
 } // namespace __jni_impl::java::util::concurrent
 
@@ -41,7 +41,8 @@ namespace __jni_impl::java::util::concurrent
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.CountDownLatch",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -59,11 +60,13 @@ namespace __jni_impl::java::util::concurrent
 			"()J"
 		);
 	}
-	void CountDownLatch::countDown()
+	jboolean CountDownLatch::await(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
-		__thiz.callMethod<void>(
-			"countDown",
-			"()V"
+		return __thiz.callMethod<jboolean>(
+			"await",
+			"(JLjava/util/concurrent/TimeUnit;)Z",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
 	void CountDownLatch::await()
@@ -73,13 +76,11 @@ namespace __jni_impl::java::util::concurrent
 			"()V"
 		);
 	}
-	jboolean CountDownLatch::await(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
+	void CountDownLatch::countDown()
 	{
-		return __thiz.callMethod<jboolean>(
-			"await",
-			"(JLjava/util/concurrent/TimeUnit;)Z",
-			arg0,
-			arg1.__jniObject().object()
+		__thiz.callMethod<void>(
+			"countDown",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::java::util::concurrent

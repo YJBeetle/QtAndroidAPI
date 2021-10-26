@@ -34,6 +34,7 @@ namespace __jni_impl::android::speech::tts
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, __jni_impl::__JniBaseClass arg5);
+		void __constructor(const QString &arg0, __jni_impl::java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, __jni_impl::__JniBaseClass arg5);
 		
 		// Methods
 		jstring getName();
@@ -146,7 +147,21 @@ namespace __jni_impl::android::speech::tts
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
+	}
+	void Voice::__constructor(const QString &arg0, __jni_impl::java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, __jni_impl::__JniBaseClass arg5)
+	{
+		__thiz = QAndroidJniObject(
+			"android.speech.tts.Voice",
+			"(Ljava/lang/String;Ljava/util/Locale;IIZLjava/util/Set;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3,
+			arg4,
+			arg5.__jniObject().object()
+		);
 	}
 	
 	// Methods

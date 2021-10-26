@@ -22,8 +22,8 @@ namespace __jni_impl::java::util
 		
 		// Methods
 		jstring getMessage();
-		jclass getArgumentClass();
 		jchar getConversion();
+		jclass getArgumentClass();
 	};
 } // namespace __jni_impl::java::util
 
@@ -39,7 +39,8 @@ namespace __jni_impl::java::util
 			"java.util.IllegalFormatConversionException",
 			"(CLjava/lang/Class;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -50,19 +51,19 @@ namespace __jni_impl::java::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jclass IllegalFormatConversionException::getArgumentClass()
-	{
-		return __thiz.callObjectMethod(
-			"getArgumentClass",
-			"()Ljava/lang/Class;"
-		).object<jclass>();
-	}
 	jchar IllegalFormatConversionException::getConversion()
 	{
 		return __thiz.callMethod<jchar>(
 			"getConversion",
 			"()C"
 		);
+	}
+	jclass IllegalFormatConversionException::getArgumentClass()
+	{
+		return __thiz.callObjectMethod(
+			"getArgumentClass",
+			"()Ljava/lang/Class;"
+		).object<jclass>();
 	}
 } // namespace __jni_impl::java::util
 

@@ -31,6 +31,7 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		jstring debug(jstring arg0);
+		jstring debug(const QString &arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -59,7 +60,8 @@ namespace __jni_impl::android::widget
 		__thiz = QAndroidJniObject(
 			"android.widget.AbsoluteLayout$LayoutParams",
 			"(Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AbsoluteLayout_LayoutParams::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -67,7 +69,8 @@ namespace __jni_impl::android::widget
 			"android.widget.AbsoluteLayout$LayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AbsoluteLayout_LayoutParams::__constructor(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -77,7 +80,8 @@ namespace __jni_impl::android::widget
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	
 	// Methods
@@ -87,6 +91,14 @@ namespace __jni_impl::android::widget
 			"debug",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring AbsoluteLayout_LayoutParams::debug(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"debug",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 } // namespace __jni_impl::android::widget

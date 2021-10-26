@@ -48,7 +48,8 @@ namespace __jni_impl::java::util::concurrent
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.CyclicBarrier",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void CyclicBarrier::__constructor(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -56,7 +57,8 @@ namespace __jni_impl::java::util::concurrent
 			"java.util.concurrent.CyclicBarrier",
 			"(ILjava/lang/Runnable;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

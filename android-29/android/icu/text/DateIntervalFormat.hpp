@@ -64,17 +64,24 @@ namespace __jni_impl::android::icu::text
 		QAndroidJniObject format(jobject arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
 		QAndroidJniObject format(__jni_impl::android::icu::util::DateInterval arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
 		static QAndroidJniObject getInstance(jstring arg0);
+		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::java::util::Locale arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::java::util::Locale arg1);
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::android::icu::util::ULocale arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1);
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::java::util::Locale arg1, __jni_impl::android::icu::text::DateIntervalInfo arg2);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::java::util::Locale arg1, __jni_impl::android::icu::text::DateIntervalInfo arg2);
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, __jni_impl::android::icu::text::DateIntervalInfo arg2);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1, __jni_impl::android::icu::text::DateIntervalInfo arg2);
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::android::icu::text::DateIntervalInfo arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::android::icu::text::DateIntervalInfo arg1);
 		void setTimeZone(__jni_impl::android::icu::util::TimeZone arg0);
 		QAndroidJniObject getTimeZone();
 		jobject parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		jobject parseObject(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
+		QAndroidJniObject getDateFormat();
 		QAndroidJniObject getDateIntervalInfo();
 		void setDateIntervalInfo(__jni_impl::android::icu::text::DateIntervalInfo arg0);
-		QAndroidJniObject getDateFormat();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -149,6 +156,15 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
+	QAndroidJniObject DateIntervalFormat::getInstance(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.DateIntervalFormat",
+			"getInstance",
+			"(Ljava/lang/String;)Landroid/icu/text/DateIntervalFormat;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject DateIntervalFormat::getInstance(jstring arg0, __jni_impl::java::util::Locale arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -156,6 +172,16 @@ namespace __jni_impl::android::icu::text
 			"getInstance",
 			"(Ljava/lang/String;Ljava/util/Locale;)Landroid/icu/text/DateIntervalFormat;",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject DateIntervalFormat::getInstance(const QString &arg0, __jni_impl::java::util::Locale arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.DateIntervalFormat",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/util/Locale;)Landroid/icu/text/DateIntervalFormat;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -169,6 +195,16 @@ namespace __jni_impl::android::icu::text
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject DateIntervalFormat::getInstance(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.DateIntervalFormat",
+			"getInstance",
+			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/text/DateIntervalFormat;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject DateIntervalFormat::getInstance(jstring arg0, __jni_impl::java::util::Locale arg1, __jni_impl::android::icu::text::DateIntervalInfo arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -176,6 +212,17 @@ namespace __jni_impl::android::icu::text
 			"getInstance",
 			"(Ljava/lang/String;Ljava/util/Locale;Landroid/icu/text/DateIntervalInfo;)Landroid/icu/text/DateIntervalFormat;",
 			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject DateIntervalFormat::getInstance(const QString &arg0, __jni_impl::java::util::Locale arg1, __jni_impl::android::icu::text::DateIntervalInfo arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.DateIntervalFormat",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/util/Locale;Landroid/icu/text/DateIntervalInfo;)Landroid/icu/text/DateIntervalFormat;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);
@@ -191,6 +238,17 @@ namespace __jni_impl::android::icu::text
 			arg2.__jniObject().object()
 		);
 	}
+	QAndroidJniObject DateIntervalFormat::getInstance(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1, __jni_impl::android::icu::text::DateIntervalInfo arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.DateIntervalFormat",
+			"getInstance",
+			"(Ljava/lang/String;Landroid/icu/util/ULocale;Landroid/icu/text/DateIntervalInfo;)Landroid/icu/text/DateIntervalFormat;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
 	QAndroidJniObject DateIntervalFormat::getInstance(jstring arg0, __jni_impl::android::icu::text::DateIntervalInfo arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -198,6 +256,16 @@ namespace __jni_impl::android::icu::text
 			"getInstance",
 			"(Ljava/lang/String;Landroid/icu/text/DateIntervalInfo;)Landroid/icu/text/DateIntervalFormat;",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject DateIntervalFormat::getInstance(const QString &arg0, __jni_impl::android::icu::text::DateIntervalInfo arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.DateIntervalFormat",
+			"getInstance",
+			"(Ljava/lang/String;Landroid/icu/text/DateIntervalInfo;)Landroid/icu/text/DateIntervalFormat;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -225,6 +293,22 @@ namespace __jni_impl::android::icu::text
 			arg1.__jniObject().object()
 		).object<jobject>();
 	}
+	jobject DateIntervalFormat::parseObject(const QString &arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callObjectMethod(
+			"parseObject",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		).object<jobject>();
+	}
+	QAndroidJniObject DateIntervalFormat::getDateFormat()
+	{
+		return __thiz.callObjectMethod(
+			"getDateFormat",
+			"()Landroid/icu/text/DateFormat;"
+		);
+	}
 	QAndroidJniObject DateIntervalFormat::getDateIntervalInfo()
 	{
 		return __thiz.callObjectMethod(
@@ -238,13 +322,6 @@ namespace __jni_impl::android::icu::text
 			"setDateIntervalInfo",
 			"(Landroid/icu/text/DateIntervalInfo;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject DateIntervalFormat::getDateFormat()
-	{
-		return __thiz.callObjectMethod(
-			"getDateFormat",
-			"()Landroid/icu/text/DateFormat;"
 		);
 	}
 } // namespace __jni_impl::android::icu::text

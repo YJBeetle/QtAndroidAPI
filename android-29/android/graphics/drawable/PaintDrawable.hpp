@@ -40,14 +40,16 @@ namespace __jni_impl::android::graphics::drawable
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.PaintDrawable",
-			"()V");
+			"()V"
+		);
 	}
 	void PaintDrawable::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.PaintDrawable",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

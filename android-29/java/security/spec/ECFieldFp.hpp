@@ -40,7 +40,8 @@ namespace __jni_impl::java::security::spec
 		__thiz = QAndroidJniObject(
 			"java.security.spec.ECFieldFp",
 			"(Ljava/math/BigInteger;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

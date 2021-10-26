@@ -21,13 +21,13 @@ namespace __jni_impl::android::net
 {
 	class Uri;
 }
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Icon;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 
 namespace __jni_impl::android::telecom
@@ -66,11 +66,9 @@ namespace __jni_impl::android::telecom
 		jstring toString();
 		jint hashCode();
 		static QAndroidJniObject builder(__jni_impl::android::telecom::PhoneAccountHandle arg0, jstring arg1);
+		static QAndroidJniObject builder(__jni_impl::android::telecom::PhoneAccountHandle arg0, const QString &arg1);
 		QAndroidJniObject getAddress();
 		jboolean isEnabled();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getExtras();
 		jstring getLabel();
 		QAndroidJniObject getIcon();
 		QAndroidJniObject getAccountHandle();
@@ -81,7 +79,11 @@ namespace __jni_impl::android::telecom
 		jstring getShortDescription();
 		QAndroidJniObject getSupportedUriSchemes();
 		jboolean supportsUriScheme(jstring arg0);
+		jboolean supportsUriScheme(const QString &arg0);
 		jint getHighlightColor();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getExtras();
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -89,8 +91,8 @@ namespace __jni_impl::android::telecom
 #include "PhoneAccount_Builder.hpp"
 #include "PhoneAccountHandle.hpp"
 #include "../net/Uri.hpp"
-#include "../os/Bundle.hpp"
 #include "../graphics/drawable/Icon.hpp"
+#include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -293,6 +295,16 @@ namespace __jni_impl::android::telecom
 			arg1
 		);
 	}
+	QAndroidJniObject PhoneAccount::builder(__jni_impl::android::telecom::PhoneAccountHandle arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telecom.PhoneAccount",
+			"builder",
+			"(Landroid/telecom/PhoneAccountHandle;Ljava/lang/CharSequence;)Landroid/telecom/PhoneAccount$Builder;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject PhoneAccount::getAddress()
 	{
 		return __thiz.callObjectMethod(
@@ -305,29 +317,6 @@ namespace __jni_impl::android::telecom
 		return __thiz.callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
-		);
-	}
-	jint PhoneAccount::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void PhoneAccount::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject PhoneAccount::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring PhoneAccount::getLabel()
@@ -402,11 +391,42 @@ namespace __jni_impl::android::telecom
 			arg0
 		);
 	}
+	jboolean PhoneAccount::supportsUriScheme(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"supportsUriScheme",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint PhoneAccount::getHighlightColor()
 	{
 		return __thiz.callMethod<jint>(
 			"getHighlightColor",
 			"()I"
+		);
+	}
+	jint PhoneAccount::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void PhoneAccount::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	QAndroidJniObject PhoneAccount::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
 		);
 	}
 } // namespace __jni_impl::android::telecom

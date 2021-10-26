@@ -21,11 +21,11 @@ namespace __jni_impl::android::content::res
 }
 namespace __jni_impl::android::content::res
 {
-	class Configuration;
+	class AssetManager;
 }
 namespace __jni_impl::android::content::res
 {
-	class AssetManager;
+	class Configuration;
 }
 
 namespace __jni_impl::android::view
@@ -42,20 +42,21 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		QAndroidJniObject getResources();
-		void applyOverrideConfiguration(__jni_impl::android::content::res::Configuration arg0);
 		QAndroidJniObject getAssets();
-		void setTheme(__jni_impl::android::content::res::Resources_Theme arg0);
 		void setTheme(jint arg0);
+		void setTheme(__jni_impl::android::content::res::Resources_Theme arg0);
 		QAndroidJniObject getTheme();
 		jobject getSystemService(jstring arg0);
+		jobject getSystemService(const QString &arg0);
+		void applyOverrideConfiguration(__jni_impl::android::content::res::Configuration arg0);
 	};
 } // namespace __jni_impl::android::view
 
 #include "../content/Context.hpp"
 #include "../content/res/Resources_Theme.hpp"
 #include "../content/res/Resources.hpp"
-#include "../content/res/Configuration.hpp"
 #include "../content/res/AssetManager.hpp"
+#include "../content/res/Configuration.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -68,7 +69,8 @@ namespace __jni_impl::android::view
 			"android.view.ContextThemeWrapper",
 			"(Landroid/content/Context;Landroid/content/res/Resources$Theme;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ContextThemeWrapper::__constructor(__jni_impl::android::content::Context arg0, jint arg1)
 	{
@@ -76,13 +78,15 @@ namespace __jni_impl::android::view
 			"android.view.ContextThemeWrapper",
 			"(Landroid/content/Context;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void ContextThemeWrapper::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ContextThemeWrapper",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -93,27 +97,11 @@ namespace __jni_impl::android::view
 			"()Landroid/content/res/Resources;"
 		);
 	}
-	void ContextThemeWrapper::applyOverrideConfiguration(__jni_impl::android::content::res::Configuration arg0)
-	{
-		__thiz.callMethod<void>(
-			"applyOverrideConfiguration",
-			"(Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject ContextThemeWrapper::getAssets()
 	{
 		return __thiz.callObjectMethod(
 			"getAssets",
 			"()Landroid/content/res/AssetManager;"
-		);
-	}
-	void ContextThemeWrapper::setTheme(__jni_impl::android::content::res::Resources_Theme arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTheme",
-			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	void ContextThemeWrapper::setTheme(jint arg0)
@@ -122,6 +110,14 @@ namespace __jni_impl::android::view
 			"setTheme",
 			"(I)V",
 			arg0
+		);
+	}
+	void ContextThemeWrapper::setTheme(__jni_impl::android::content::res::Resources_Theme arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTheme",
+			"(Landroid/content/res/Resources$Theme;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject ContextThemeWrapper::getTheme()
@@ -138,6 +134,22 @@ namespace __jni_impl::android::view
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
 		).object<jobject>();
+	}
+	jobject ContextThemeWrapper::getSystemService(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getSystemService",
+			"(Ljava/lang/String;)Ljava/lang/Object;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jobject>();
+	}
+	void ContextThemeWrapper::applyOverrideConfiguration(__jni_impl::android::content::res::Configuration arg0)
+	{
+		__thiz.callMethod<void>(
+			"applyOverrideConfiguration",
+			"(Landroid/content/res/Configuration;)V",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::view
 

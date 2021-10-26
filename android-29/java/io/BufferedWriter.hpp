@@ -26,6 +26,7 @@ namespace __jni_impl::java::io
 		void write(jcharArray arg0, jint arg1, jint arg2);
 		void write(jint arg0);
 		void write(jstring arg0, jint arg1, jint arg2);
+		void write(const QString &arg0, jint arg1, jint arg2);
 		void newLine();
 		void flush();
 		void close();
@@ -44,7 +45,8 @@ namespace __jni_impl::java::io
 		__thiz = QAndroidJniObject(
 			"java.io.BufferedWriter",
 			"(Ljava/io/Writer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void BufferedWriter::__constructor(__jni_impl::java::io::Writer arg0, jint arg1)
 	{
@@ -52,7 +54,8 @@ namespace __jni_impl::java::io
 			"java.io.BufferedWriter",
 			"(Ljava/io/Writer;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -80,6 +83,16 @@ namespace __jni_impl::java::io
 			"write",
 			"(Ljava/lang/String;II)V",
 			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void BufferedWriter::write(const QString &arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"write",
+			"(Ljava/lang/String;II)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);

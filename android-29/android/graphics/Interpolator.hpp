@@ -46,7 +46,8 @@ namespace __jni_impl::android::graphics
 		__thiz = QAndroidJniObject(
 			"android.graphics.Interpolator",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Interpolator::__constructor(jint arg0, jint arg1)
 	{
@@ -54,7 +55,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.Interpolator",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

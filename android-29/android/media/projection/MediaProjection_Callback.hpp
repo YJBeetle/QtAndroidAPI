@@ -31,7 +31,8 @@ namespace __jni_impl::android::media::projection
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.projection.MediaProjection$Callback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

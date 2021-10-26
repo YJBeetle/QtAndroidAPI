@@ -45,7 +45,8 @@ namespace __jni_impl::android::widget
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Filter$FilterResults",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

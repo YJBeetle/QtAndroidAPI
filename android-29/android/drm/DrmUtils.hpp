@@ -36,7 +36,8 @@ namespace __jni_impl::android::drm
 	{
 		__thiz = QAndroidJniObject(
 			"android.drm.DrmUtils",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

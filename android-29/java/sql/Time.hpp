@@ -29,6 +29,7 @@ namespace __jni_impl::java::sql
 		// Methods
 		jstring toString();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 		static QAndroidJniObject valueOf(__jni_impl::java::time::LocalTime arg0);
 		QAndroidJniObject toInstant();
 		jint getYear();
@@ -58,14 +59,16 @@ namespace __jni_impl::java::sql
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Time::__constructor(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.Time",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -83,6 +86,15 @@ namespace __jni_impl::java::sql
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/sql/Time;",
 			arg0
+		);
+	}
+	QAndroidJniObject Time::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.sql.Time",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/sql/Time;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Time::valueOf(__jni_impl::java::time::LocalTime arg0)

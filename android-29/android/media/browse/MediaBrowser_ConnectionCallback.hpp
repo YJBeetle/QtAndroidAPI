@@ -33,7 +33,8 @@ namespace __jni_impl::android::media::browse
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.browse.MediaBrowser$ConnectionCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

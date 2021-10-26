@@ -35,6 +35,7 @@ namespace __jni_impl::android::app::backup
 		void onBackup(__jni_impl::android::os::ParcelFileDescriptor arg0, __jni_impl::android::app::backup::BackupDataOutput arg1, __jni_impl::android::os::ParcelFileDescriptor arg2);
 		void onRestore(__jni_impl::android::app::backup::BackupDataInput arg0, jint arg1, __jni_impl::android::os::ParcelFileDescriptor arg2);
 		void addHelper(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		void addHelper(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 	};
 } // namespace __jni_impl::android::app::backup
 
@@ -51,7 +52,8 @@ namespace __jni_impl::android::app::backup
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.backup.BackupAgentHelper",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -81,6 +83,15 @@ namespace __jni_impl::android::app::backup
 			"addHelper",
 			"(Ljava/lang/String;Landroid/app/backup/BackupHelper;)V",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void BackupAgentHelper::addHelper(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"addHelper",
+			"(Ljava/lang/String;Landroid/app/backup/BackupHelper;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

@@ -37,6 +37,7 @@ namespace __jni_impl::android::graphics
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		static QAndroidJniObject create(jstring arg0, jint arg1);
+		static QAndroidJniObject create(const QString &arg0, jint arg1);
 		static QAndroidJniObject create(__jni_impl::android::graphics::Typeface arg0, jint arg1);
 		static QAndroidJniObject create(__jni_impl::android::graphics::Typeface arg0, jint arg1, jboolean arg2);
 		jint getStyle();
@@ -45,8 +46,10 @@ namespace __jni_impl::android::graphics
 		jboolean isItalic();
 		static QAndroidJniObject defaultFromStyle(jint arg0);
 		static QAndroidJniObject createFromAsset(__jni_impl::android::content::res::AssetManager arg0, jstring arg1);
+		static QAndroidJniObject createFromAsset(__jni_impl::android::content::res::AssetManager arg0, const QString &arg1);
 		static QAndroidJniObject createFromFile(__jni_impl::java::io::File arg0);
 		static QAndroidJniObject createFromFile(jstring arg0);
+		static QAndroidJniObject createFromFile(const QString &arg0);
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -159,6 +162,16 @@ namespace __jni_impl::android::graphics
 			arg1
 		);
 	}
+	QAndroidJniObject Typeface::create(const QString &arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Typeface",
+			"create",
+			"(Ljava/lang/String;I)Landroid/graphics/Typeface;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	QAndroidJniObject Typeface::create(__jni_impl::android::graphics::Typeface arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -227,6 +240,16 @@ namespace __jni_impl::android::graphics
 			arg1
 		);
 	}
+	QAndroidJniObject Typeface::createFromAsset(__jni_impl::android::content::res::AssetManager arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Typeface",
+			"createFromAsset",
+			"(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject Typeface::createFromFile(__jni_impl::java::io::File arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -243,6 +266,15 @@ namespace __jni_impl::android::graphics
 			"createFromFile",
 			"(Ljava/lang/String;)Landroid/graphics/Typeface;",
 			arg0
+		);
+	}
+	QAndroidJniObject Typeface::createFromFile(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Typeface",
+			"createFromFile",
+			"(Ljava/lang/String;)Landroid/graphics/Typeface;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::graphics

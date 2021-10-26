@@ -20,6 +20,7 @@ namespace __jni_impl::android::app::slice
 		
 		// Constructors
 		void __constructor(jstring arg0, jint arg1);
+		void __constructor(const QString &arg0, jint arg1);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -53,7 +54,17 @@ namespace __jni_impl::android::app::slice
 			"android.app.slice.SliceSpec",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void SliceSpec::__constructor(const QString &arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.slice.SliceSpec",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods

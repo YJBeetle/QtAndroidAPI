@@ -43,7 +43,8 @@ namespace __jni_impl::android::view
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.FrameStats",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

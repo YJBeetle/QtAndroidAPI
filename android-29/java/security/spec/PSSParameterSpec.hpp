@@ -18,6 +18,7 @@ namespace __jni_impl::java::security::spec
 		// Constructors
 		void __constructor(jint arg0);
 		void __constructor(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2, jint arg3, jint arg4);
+		void __constructor(const QString &arg0, const QString &arg1, __jni_impl::__JniBaseClass arg2, jint arg3, jint arg4);
 		
 		// Methods
 		jstring toString();
@@ -55,7 +56,8 @@ namespace __jni_impl::java::security::spec
 		__thiz = QAndroidJniObject(
 			"java.security.spec.PSSParameterSpec",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void PSSParameterSpec::__constructor(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2, jint arg3, jint arg4)
 	{
@@ -66,7 +68,20 @@ namespace __jni_impl::java::security::spec
 			arg1,
 			arg2.__jniObject().object(),
 			arg3,
-			arg4);
+			arg4
+		);
+	}
+	void PSSParameterSpec::__constructor(const QString &arg0, const QString &arg1, __jni_impl::__JniBaseClass arg2, jint arg3, jint arg4)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.spec.PSSParameterSpec",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/security/spec/AlgorithmParameterSpec;II)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object(),
+			arg3,
+			arg4
+		);
 	}
 	
 	// Methods

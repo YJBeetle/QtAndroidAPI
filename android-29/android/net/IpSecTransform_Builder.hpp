@@ -66,7 +66,8 @@ namespace __jni_impl::android::net
 		__thiz = QAndroidJniObject(
 			"android.net.IpSecTransform$Builder",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

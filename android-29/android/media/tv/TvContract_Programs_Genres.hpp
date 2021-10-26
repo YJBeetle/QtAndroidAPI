@@ -35,8 +35,10 @@ namespace __jni_impl::android::media::tv
 		
 		// Methods
 		static jarray decode(jstring arg0);
+		static jarray decode(const QString &arg0);
 		static jstring encode(jarray arg0);
 		static jboolean isCanonical(jstring arg0);
+		static jboolean isCanonical(const QString &arg0);
 	};
 } // namespace __jni_impl::android::media::tv
 
@@ -199,6 +201,15 @@ namespace __jni_impl::android::media::tv
 			arg0
 		).object<jarray>();
 	}
+	jarray TvContract_Programs_Genres::decode(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.media.tv.TvContract$Programs$Genres",
+			"decode",
+			"(Ljava/lang/String;)[Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jarray>();
+	}
 	jstring TvContract_Programs_Genres::encode(jarray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -215,6 +226,15 @@ namespace __jni_impl::android::media::tv
 			"isCanonical",
 			"(Ljava/lang/String;)Z",
 			arg0
+		);
+	}
+	jboolean TvContract_Programs_Genres::isCanonical(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.media.tv.TvContract$Programs$Genres",
+			"isCanonical",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::media::tv

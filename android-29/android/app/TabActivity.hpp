@@ -42,6 +42,7 @@ namespace __jni_impl::android::app
 		QAndroidJniObject getTabWidget();
 		QAndroidJniObject getTabHost();
 		void setDefaultTab(jstring arg0);
+		void setDefaultTab(const QString &arg0);
 		void setDefaultTab(jint arg0);
 	};
 } // namespace __jni_impl::android::app
@@ -60,7 +61,8 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.TabActivity",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -91,6 +93,14 @@ namespace __jni_impl::android::app
 			"setDefaultTab",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void TabActivity::setDefaultTab(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDefaultTab",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void TabActivity::setDefaultTab(jint arg0)

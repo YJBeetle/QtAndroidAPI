@@ -38,7 +38,8 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void SweepGradient::__constructor(jfloat arg0, jfloat arg1, jint arg2, jint arg3)
 	{
@@ -48,7 +49,8 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void SweepGradient::__constructor(jfloat arg0, jfloat arg1, jlongArray arg2, jfloatArray arg3)
 	{
@@ -58,7 +60,8 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void SweepGradient::__constructor(jfloat arg0, jfloat arg1, jintArray arg2, jfloatArray arg3)
 	{
@@ -68,7 +71,8 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	
 	// Methods

@@ -50,7 +50,8 @@ namespace __jni_impl::java::util::prefs
 			"java.util.prefs.NodeChangeEvent",
 			"(Ljava/util/prefs/Preferences;Ljava/util/prefs/Preferences;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

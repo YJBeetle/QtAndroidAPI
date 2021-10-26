@@ -83,7 +83,9 @@ namespace __jni_impl::java::time
 		QAndroidJniObject getOffset();
 		jboolean isSupported(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject parse(jstring arg0, __jni_impl::java::time::format::DateTimeFormatter arg1);
+		static QAndroidJniObject parse(const QString &arg0, __jni_impl::java::time::format::DateTimeFormatter arg1);
 		static QAndroidJniObject parse(jstring arg0);
+		static QAndroidJniObject parse(const QString &arg0);
 		QAndroidJniObject range(__jni_impl::__JniBaseClass arg0);
 		jint getNano();
 		jint getYear();
@@ -299,6 +301,16 @@ namespace __jni_impl::java::time
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject ZonedDateTime::parse(const QString &arg0, __jni_impl::java::time::format::DateTimeFormatter arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.ZonedDateTime",
+			"parse",
+			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/ZonedDateTime;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject ZonedDateTime::parse(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -306,6 +318,15 @@ namespace __jni_impl::java::time
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/ZonedDateTime;",
 			arg0
+		);
+	}
+	QAndroidJniObject ZonedDateTime::parse(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.ZonedDateTime",
+			"parse",
+			"(Ljava/lang/CharSequence;)Ljava/time/ZonedDateTime;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject ZonedDateTime::range(__jni_impl::__JniBaseClass arg0)

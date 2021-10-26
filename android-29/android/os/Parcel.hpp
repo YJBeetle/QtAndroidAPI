@@ -78,6 +78,7 @@ namespace __jni_impl::android::os
 		jfloat readFloat();
 		jstring readString();
 		void writeString(jstring arg0);
+		void writeString(const QString &arg0);
 		jlong readLong();
 		void writeLong(jlong arg0);
 		jboolean readBoolean();
@@ -101,7 +102,9 @@ namespace __jni_impl::android::os
 		void unmarshall(jbyteArray arg0, jint arg1, jint arg2);
 		void appendFrom(__jni_impl::android::os::Parcel arg0, jint arg1, jint arg2);
 		void writeInterfaceToken(jstring arg0);
+		void writeInterfaceToken(const QString &arg0);
 		void enforceInterface(jstring arg0);
+		void enforceInterface(const QString &arg0);
 		void writeByteArray(jbyteArray arg0, jint arg1, jint arg2);
 		void writeByteArray(jbyteArray arg0);
 		void writeStrongBinder(__jni_impl::__JniBaseClass arg0);
@@ -154,6 +157,7 @@ namespace __jni_impl::android::os
 		void writeNoException();
 		void readException();
 		void readException(jint arg0, jstring arg1);
+		void readException(jint arg0, const QString &arg1);
 		QAndroidJniObject readStrongBinder();
 		void readMap(__jni_impl::__JniBaseClass arg0, __jni_impl::java::lang::ClassLoader arg1);
 		void readList(__jni_impl::__JniBaseClass arg0, __jni_impl::java::lang::ClassLoader arg1);
@@ -282,6 +286,14 @@ namespace __jni_impl::android::os
 			"writeString",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void Parcel::writeString(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"writeString",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jlong Parcel::readLong()
@@ -460,12 +472,28 @@ namespace __jni_impl::android::os
 			arg0
 		);
 	}
+	void Parcel::writeInterfaceToken(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"writeInterfaceToken",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void Parcel::enforceInterface(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"enforceInterface",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void Parcel::enforceInterface(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"enforceInterface",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Parcel::writeByteArray(jbyteArray arg0, jint arg1, jint arg2)
@@ -881,6 +909,15 @@ namespace __jni_impl::android::os
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
+		);
+	}
+	void Parcel::readException(jint arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"readException",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject Parcel::readStrongBinder()

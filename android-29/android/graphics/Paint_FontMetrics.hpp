@@ -65,7 +65,8 @@ namespace __jni_impl::android::graphics
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Paint$FontMetrics",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

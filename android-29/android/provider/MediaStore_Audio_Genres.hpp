@@ -27,7 +27,9 @@ namespace __jni_impl::android::provider
 		
 		// Methods
 		static QAndroidJniObject getContentUriForAudioId(jstring arg0, jint arg1);
+		static QAndroidJniObject getContentUriForAudioId(const QString &arg0, jint arg1);
 		static QAndroidJniObject getContentUri(jstring arg0);
+		static QAndroidJniObject getContentUri(const QString &arg0);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -82,7 +84,8 @@ namespace __jni_impl::android::provider
 	{
 		__thiz = QAndroidJniObject(
 			"android.provider.MediaStore$Audio$Genres",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -96,6 +99,16 @@ namespace __jni_impl::android::provider
 			arg1
 		);
 	}
+	QAndroidJniObject MediaStore_Audio_Genres::getContentUriForAudioId(const QString &arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.MediaStore$Audio$Genres",
+			"getContentUriForAudioId",
+			"(Ljava/lang/String;I)Landroid/net/Uri;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	QAndroidJniObject MediaStore_Audio_Genres::getContentUri(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -103,6 +116,15 @@ namespace __jni_impl::android::provider
 			"getContentUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
 			arg0
+		);
+	}
+	QAndroidJniObject MediaStore_Audio_Genres::getContentUri(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.MediaStore$Audio$Genres",
+			"getContentUri",
+			"(Ljava/lang/String;)Landroid/net/Uri;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::provider

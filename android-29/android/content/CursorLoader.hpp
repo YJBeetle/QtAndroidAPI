@@ -34,25 +34,29 @@ namespace __jni_impl::android::content
 		// Constructors
 		void __constructor(__jni_impl::android::content::Context arg0);
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jarray arg2, const QString &arg3, jarray arg4, const QString &arg5);
 		
 		// Methods
-		void setSelection(jstring arg0);
-		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
-		void setUri(__jni_impl::android::net::Uri arg0);
-		QAndroidJniObject loadInBackground();
-		void cancelLoadInBackground();
-		void onCanceled(__jni_impl::__JniBaseClass arg0);
-		void onCanceled(jobject arg0);
-		jarray getProjection();
-		void setProjection(jarray arg0);
+		void deliverResult(__jni_impl::__JniBaseClass arg0);
+		void deliverResult(jobject arg0);
+		QAndroidJniObject getUri();
 		jstring getSelection();
 		jarray getSelectionArgs();
 		void setSelectionArgs(jarray arg0);
 		jstring getSortOrder();
 		void setSortOrder(jstring arg0);
-		QAndroidJniObject getUri();
-		void deliverResult(jobject arg0);
-		void deliverResult(__jni_impl::__JniBaseClass arg0);
+		void setSortOrder(const QString &arg0);
+		void cancelLoadInBackground();
+		void onCanceled(__jni_impl::__JniBaseClass arg0);
+		void onCanceled(jobject arg0);
+		jarray getProjection();
+		void setProjection(jarray arg0);
+		QAndroidJniObject loadInBackground();
+		void setSelection(jstring arg0);
+		void setSelection(const QString &arg0);
+		void setUri(__jni_impl::android::net::Uri arg0);
+		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
+		void dump(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
 	};
 } // namespace __jni_impl::android::content
 
@@ -71,7 +75,8 @@ namespace __jni_impl::android::content
 		__thiz = QAndroidJniObject(
 			"android.content.CursorLoader",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CursorLoader::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5)
 	{
@@ -83,42 +88,90 @@ namespace __jni_impl::android::content
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
+	}
+	void CursorLoader::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jarray arg2, const QString &arg3, jarray arg4, const QString &arg5)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.CursorLoader",
+			"(Landroid/content/Context;Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			QAndroidJniObject::fromString(arg3).object<jstring>(),
+			arg4,
+			QAndroidJniObject::fromString(arg5).object<jstring>()
+		);
 	}
 	
 	// Methods
-	void CursorLoader::setSelection(jstring arg0)
+	void CursorLoader::deliverResult(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"setSelection",
+			"deliverResult",
+			"(Landroid/database/Cursor;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void CursorLoader::deliverResult(jobject arg0)
+	{
+		__thiz.callMethod<void>(
+			"deliverResult",
+			"(Ljava/lang/Object;)V",
+			arg0
+		);
+	}
+	QAndroidJniObject CursorLoader::getUri()
+	{
+		return __thiz.callObjectMethod(
+			"getUri",
+			"()Landroid/net/Uri;"
+		);
+	}
+	jstring CursorLoader::getSelection()
+	{
+		return __thiz.callObjectMethod(
+			"getSelection",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jarray CursorLoader::getSelectionArgs()
+	{
+		return __thiz.callObjectMethod(
+			"getSelectionArgs",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	void CursorLoader::setSelectionArgs(jarray arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSelectionArgs",
+			"([Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	jstring CursorLoader::getSortOrder()
+	{
+		return __thiz.callObjectMethod(
+			"getSortOrder",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void CursorLoader::setSortOrder(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSortOrder",
 			"(Ljava/lang/String;)V",
 			arg0
 		);
 	}
-	void CursorLoader::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
+	void CursorLoader::setSortOrder(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"dump",
-			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	void CursorLoader::setUri(__jni_impl::android::net::Uri arg0)
-	{
-		__thiz.callMethod<void>(
-			"setUri",
-			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject CursorLoader::loadInBackground()
-	{
-		return __thiz.callObjectMethod(
-			"loadInBackground",
-			"()Landroid/database/Cursor;"
+			"setSortOrder",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void CursorLoader::cancelLoadInBackground()
@@ -159,64 +212,57 @@ namespace __jni_impl::android::content
 			arg0
 		);
 	}
-	jstring CursorLoader::getSelection()
+	QAndroidJniObject CursorLoader::loadInBackground()
 	{
 		return __thiz.callObjectMethod(
-			"getSelection",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jarray CursorLoader::getSelectionArgs()
-	{
-		return __thiz.callObjectMethod(
-			"getSelectionArgs",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	void CursorLoader::setSelectionArgs(jarray arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSelectionArgs",
-			"([Ljava/lang/String;)V",
-			arg0
+			"loadInBackground",
+			"()Landroid/database/Cursor;"
 		);
 	}
-	jstring CursorLoader::getSortOrder()
-	{
-		return __thiz.callObjectMethod(
-			"getSortOrder",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void CursorLoader::setSortOrder(jstring arg0)
+	void CursorLoader::setSelection(jstring arg0)
 	{
 		__thiz.callMethod<void>(
-			"setSortOrder",
+			"setSelection",
 			"(Ljava/lang/String;)V",
 			arg0
 		);
 	}
-	QAndroidJniObject CursorLoader::getUri()
-	{
-		return __thiz.callObjectMethod(
-			"getUri",
-			"()Landroid/net/Uri;"
-		);
-	}
-	void CursorLoader::deliverResult(jobject arg0)
+	void CursorLoader::setSelection(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"deliverResult",
-			"(Ljava/lang/Object;)V",
-			arg0
+			"setSelection",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void CursorLoader::deliverResult(__jni_impl::__JniBaseClass arg0)
+	void CursorLoader::setUri(__jni_impl::android::net::Uri arg0)
 	{
 		__thiz.callMethod<void>(
-			"deliverResult",
-			"(Landroid/database/Cursor;)V",
+			"setUri",
+			"(Landroid/net/Uri;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void CursorLoader::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3
+		);
+	}
+	void CursorLoader::dump(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3
 		);
 	}
 } // namespace __jni_impl::android::content

@@ -16,7 +16,9 @@ namespace __jni_impl::java::lang::annotation
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
+		void __constructor(const QString &arg0, jthrowable arg1);
 		void __constructor(jthrowable arg0);
 		
 		// Methods
@@ -34,7 +36,16 @@ namespace __jni_impl::java::lang::annotation
 		__thiz = QAndroidJniObject(
 			"java.lang.annotation.AnnotationFormatError",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void AnnotationFormatError::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.annotation.AnnotationFormatError",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void AnnotationFormatError::__constructor(jstring arg0, jthrowable arg1)
 	{
@@ -42,14 +53,25 @@ namespace __jni_impl::java::lang::annotation
 			"java.lang.annotation.AnnotationFormatError",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void AnnotationFormatError::__constructor(const QString &arg0, jthrowable arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.annotation.AnnotationFormatError",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void AnnotationFormatError::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.annotation.AnnotationFormatError",
 			"(Ljava/lang/Throwable;)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

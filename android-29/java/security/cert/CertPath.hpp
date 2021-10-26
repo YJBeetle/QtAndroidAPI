@@ -23,6 +23,7 @@ namespace __jni_impl::java::security::cert
 		QAndroidJniObject getCertificates();
 		jstring getType();
 		jbyteArray getEncoded(jstring arg0);
+		jbyteArray getEncoded(const QString &arg0);
 		jbyteArray getEncoded();
 		QAndroidJniObject getEncodings();
 	};
@@ -84,6 +85,14 @@ namespace __jni_impl::java::security::cert
 			"getEncoded",
 			"(Ljava/lang/String;)[B",
 			arg0
+		).object<jbyteArray>();
+	}
+	jbyteArray CertPath::getEncoded(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getEncoded",
+			"(Ljava/lang/String;)[B",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jbyteArray>();
 	}
 	jbyteArray CertPath::getEncoded()

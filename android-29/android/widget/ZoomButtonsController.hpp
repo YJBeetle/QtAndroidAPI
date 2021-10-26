@@ -11,11 +11,11 @@ namespace __jni_impl::android::view
 }
 namespace __jni_impl::android::view
 {
-	class MotionEvent;
+	class ViewGroup;
 }
 namespace __jni_impl::android::view
 {
-	class ViewGroup;
+	class MotionEvent;
 }
 
 namespace __jni_impl::android::widget
@@ -29,11 +29,10 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::view::View arg0);
 		
 		// Methods
-		void setVisible(jboolean arg0);
 		void setFocusable(jboolean arg0);
 		jboolean isVisible();
-		jboolean onTouch(__jni_impl::android::view::View arg0, __jni_impl::android::view::MotionEvent arg1);
 		QAndroidJniObject getContainer();
+		jboolean onTouch(__jni_impl::android::view::View arg0, __jni_impl::android::view::MotionEvent arg1);
 		void setZoomInEnabled(jboolean arg0);
 		void setZoomOutEnabled(jboolean arg0);
 		void setZoomSpeed(jlong arg0);
@@ -41,12 +40,13 @@ namespace __jni_impl::android::widget
 		jboolean isAutoDismissed();
 		void setAutoDismissed(jboolean arg0);
 		QAndroidJniObject getZoomControls();
+		void setVisible(jboolean arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../view/View.hpp"
-#include "../view/MotionEvent.hpp"
 #include "../view/ViewGroup.hpp"
+#include "../view/MotionEvent.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -58,18 +58,11 @@ namespace __jni_impl::android::widget
 		__thiz = QAndroidJniObject(
 			"android.widget.ZoomButtonsController",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
-	void ZoomButtonsController::setVisible(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setVisible",
-			"(Z)V",
-			arg0
-		);
-	}
 	void ZoomButtonsController::setFocusable(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -85,6 +78,13 @@ namespace __jni_impl::android::widget
 			"()Z"
 		);
 	}
+	QAndroidJniObject ZoomButtonsController::getContainer()
+	{
+		return __thiz.callObjectMethod(
+			"getContainer",
+			"()Landroid/view/ViewGroup;"
+		);
+	}
 	jboolean ZoomButtonsController::onTouch(__jni_impl::android::view::View arg0, __jni_impl::android::view::MotionEvent arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -92,13 +92,6 @@ namespace __jni_impl::android::widget
 			"(Landroid/view/View;Landroid/view/MotionEvent;)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ZoomButtonsController::getContainer()
-	{
-		return __thiz.callObjectMethod(
-			"getContainer",
-			"()Landroid/view/ViewGroup;"
 		);
 	}
 	void ZoomButtonsController::setZoomInEnabled(jboolean arg0)
@@ -153,6 +146,14 @@ namespace __jni_impl::android::widget
 		return __thiz.callObjectMethod(
 			"getZoomControls",
 			"()Landroid/view/View;"
+		);
+	}
+	void ZoomButtonsController::setVisible(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setVisible",
+			"(Z)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::widget

@@ -34,7 +34,8 @@ namespace __jni_impl::android::os
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.DeadSystemException",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

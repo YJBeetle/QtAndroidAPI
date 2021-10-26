@@ -38,13 +38,13 @@ namespace __jni_impl::android::content
 		// Methods
 		jstring toString();
 		void clear();
+		jboolean hasError();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jboolean hasHardError();
 		jboolean hasSoftError();
 		jboolean madeSomeProgress();
 		jstring toDebugString();
-		jboolean hasError();
 	};
 } // namespace __jni_impl::android::content
 
@@ -131,7 +131,8 @@ namespace __jni_impl::android::content
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.SyncResult",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -147,6 +148,13 @@ namespace __jni_impl::android::content
 		__thiz.callMethod<void>(
 			"clear",
 			"()V"
+		);
+	}
+	jboolean SyncResult::hasError()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasError",
+			"()Z"
 		);
 	}
 	jint SyncResult::describeContents()
@@ -192,13 +200,6 @@ namespace __jni_impl::android::content
 			"toDebugString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jboolean SyncResult::hasError()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasError",
-			"()Z"
-		);
 	}
 } // namespace __jni_impl::android::content
 

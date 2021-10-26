@@ -29,12 +29,17 @@ namespace __jni_impl::android::text
 		
 		// Methods
 		static QAndroidJniObject fromHtml(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3);
+		static QAndroidJniObject fromHtml(const QString &arg0, jint arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3);
 		static QAndroidJniObject fromHtml(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
+		static QAndroidJniObject fromHtml(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 		static QAndroidJniObject fromHtml(jstring arg0, jint arg1);
+		static QAndroidJniObject fromHtml(const QString &arg0, jint arg1);
 		static QAndroidJniObject fromHtml(jstring arg0);
+		static QAndroidJniObject fromHtml(const QString &arg0);
 		static jstring toHtml(__jni_impl::__JniBaseClass arg0, jint arg1);
 		static jstring toHtml(__jni_impl::__JniBaseClass arg0);
 		static jstring escapeHtml(jstring arg0);
+		static jstring escapeHtml(const QString &arg0);
 	};
 } // namespace __jni_impl::android::text
 
@@ -141,6 +146,18 @@ namespace __jni_impl::android::text
 			arg3.__jniObject().object()
 		);
 	}
+	QAndroidJniObject Html::fromHtml(const QString &arg0, jint arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.Html",
+			"fromHtml",
+			"(Ljava/lang/String;ILandroid/text/Html$ImageGetter;Landroid/text/Html$TagHandler;)Landroid/text/Spanned;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object()
+		);
+	}
 	QAndroidJniObject Html::fromHtml(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -148,6 +165,17 @@ namespace __jni_impl::android::text
 			"fromHtml",
 			"(Ljava/lang/String;Landroid/text/Html$ImageGetter;Landroid/text/Html$TagHandler;)Landroid/text/Spanned;",
 			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Html::fromHtml(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.Html",
+			"fromHtml",
+			"(Ljava/lang/String;Landroid/text/Html$ImageGetter;Landroid/text/Html$TagHandler;)Landroid/text/Spanned;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);
@@ -162,6 +190,16 @@ namespace __jni_impl::android::text
 			arg1
 		);
 	}
+	QAndroidJniObject Html::fromHtml(const QString &arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.Html",
+			"fromHtml",
+			"(Ljava/lang/String;I)Landroid/text/Spanned;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	QAndroidJniObject Html::fromHtml(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -169,6 +207,15 @@ namespace __jni_impl::android::text
 			"fromHtml",
 			"(Ljava/lang/String;)Landroid/text/Spanned;",
 			arg0
+		);
+	}
+	QAndroidJniObject Html::fromHtml(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.Html",
+			"fromHtml",
+			"(Ljava/lang/String;)Landroid/text/Spanned;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring Html::toHtml(__jni_impl::__JniBaseClass arg0, jint arg1)
@@ -197,6 +244,15 @@ namespace __jni_impl::android::text
 			"escapeHtml",
 			"(Ljava/lang/CharSequence;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring Html::escapeHtml(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.Html",
+			"escapeHtml",
+			"(Ljava/lang/CharSequence;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 } // namespace __jni_impl::android::text

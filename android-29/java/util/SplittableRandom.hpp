@@ -61,13 +61,15 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.SplittableRandom",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	void SplittableRandom::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.SplittableRandom",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

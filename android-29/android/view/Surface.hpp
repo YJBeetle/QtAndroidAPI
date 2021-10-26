@@ -13,10 +13,6 @@ namespace __jni_impl::android::graphics
 {
 	class SurfaceTexture;
 }
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::graphics
 {
 	class Canvas;
@@ -24,6 +20,10 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::graphics
 {
 	class Rect;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::view
@@ -46,21 +46,21 @@ namespace __jni_impl::android::view
 		jstring toString();
 		void release();
 		jboolean isValid();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		QAndroidJniObject lockCanvas(__jni_impl::android::graphics::Rect arg0);
 		void unlockCanvasAndPost(__jni_impl::android::graphics::Canvas arg0);
 		QAndroidJniObject lockHardwareCanvas();
 		void unlockCanvas(__jni_impl::android::graphics::Canvas arg0);
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
 
 #include "SurfaceControl.hpp"
 #include "../graphics/SurfaceTexture.hpp"
-#include "../os/Parcel.hpp"
 #include "../graphics/Canvas.hpp"
 #include "../graphics/Rect.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -108,14 +108,16 @@ namespace __jni_impl::android::view
 		__thiz = QAndroidJniObject(
 			"android.view.Surface",
 			"(Landroid/view/SurfaceControl;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Surface::__constructor(__jni_impl::android::graphics::SurfaceTexture arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.Surface",
 			"(Landroid/graphics/SurfaceTexture;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -138,30 +140,6 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jboolean>(
 			"isValid",
 			"()Z"
-		);
-	}
-	jint Surface::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void Surface::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void Surface::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject Surface::lockCanvas(__jni_impl::android::graphics::Rect arg0)
@@ -193,6 +171,30 @@ namespace __jni_impl::android::view
 			"unlockCanvas",
 			"(Landroid/graphics/Canvas;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void Surface::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint Surface::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void Surface::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::view

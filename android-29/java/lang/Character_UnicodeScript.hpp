@@ -176,8 +176,10 @@ namespace __jni_impl::java::lang
 		
 		// Methods
 		static QAndroidJniObject forName(jstring arg0);
+		static QAndroidJniObject forName(const QString &arg0);
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 		static QAndroidJniObject of(jint arg0);
 	};
 } // namespace __jni_impl::java::lang
@@ -1430,6 +1432,15 @@ namespace __jni_impl::java::lang
 			arg0
 		);
 	}
+	QAndroidJniObject Character_UnicodeScript::forName(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.lang.Character$UnicodeScript",
+			"forName",
+			"(Ljava/lang/String;)Ljava/lang/Character$UnicodeScript;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jarray Character_UnicodeScript::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -1445,6 +1456,15 @@ namespace __jni_impl::java::lang
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Character$UnicodeScript;",
 			arg0
+		);
+	}
+	QAndroidJniObject Character_UnicodeScript::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.lang.Character$UnicodeScript",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/lang/Character$UnicodeScript;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Character_UnicodeScript::of(jint arg0)

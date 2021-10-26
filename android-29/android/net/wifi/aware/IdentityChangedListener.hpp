@@ -31,7 +31,8 @@ namespace __jni_impl::android::net::wifi::aware
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.aware.IdentityChangedListener",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

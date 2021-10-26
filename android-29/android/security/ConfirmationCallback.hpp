@@ -17,10 +17,10 @@ namespace __jni_impl::android::security
 		void __constructor();
 		
 		// Methods
-		void onConfirmed(jbyteArray arg0);
-		void onDismissed();
 		void onError(jthrowable arg0);
 		void onCanceled();
+		void onConfirmed(jbyteArray arg0);
+		void onDismissed();
 	};
 } // namespace __jni_impl::android::security
 
@@ -34,25 +34,11 @@ namespace __jni_impl::android::security
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.ConfirmationCallback",
-			"()V");
-	}
-	
-	// Methods
-	void ConfirmationCallback::onConfirmed(jbyteArray arg0)
-	{
-		__thiz.callMethod<void>(
-			"onConfirmed",
-			"([B)V",
-			arg0
-		);
-	}
-	void ConfirmationCallback::onDismissed()
-	{
-		__thiz.callMethod<void>(
-			"onDismissed",
 			"()V"
 		);
 	}
+	
+	// Methods
 	void ConfirmationCallback::onError(jthrowable arg0)
 	{
 		__thiz.callMethod<void>(
@@ -65,6 +51,21 @@ namespace __jni_impl::android::security
 	{
 		__thiz.callMethod<void>(
 			"onCanceled",
+			"()V"
+		);
+	}
+	void ConfirmationCallback::onConfirmed(jbyteArray arg0)
+	{
+		__thiz.callMethod<void>(
+			"onConfirmed",
+			"([B)V",
+			arg0
+		);
+	}
+	void ConfirmationCallback::onDismissed()
+	{
+		__thiz.callMethod<void>(
+			"onDismissed",
 			"()V"
 		);
 	}

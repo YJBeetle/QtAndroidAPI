@@ -29,6 +29,7 @@ namespace __jni_impl::java::math
 		static jarray values();
 		static QAndroidJniObject valueOf(jint arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::java::math
 
@@ -134,6 +135,15 @@ namespace __jni_impl::java::math
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/math/RoundingMode;",
 			arg0
+		);
+	}
+	QAndroidJniObject RoundingMode::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.math.RoundingMode",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/math/RoundingMode;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::math

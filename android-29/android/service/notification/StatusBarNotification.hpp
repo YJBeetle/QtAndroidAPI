@@ -28,6 +28,7 @@ namespace __jni_impl::android::service::notification
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1, jint arg2, jstring arg3, jint arg4, jint arg5, jint arg6, __jni_impl::android::app::Notification arg7, __jni_impl::android::os::UserHandle arg8, jlong arg9);
+		void __constructor(const QString &arg0, const QString &arg1, jint arg2, const QString &arg3, jint arg4, jint arg5, jint arg6, __jni_impl::android::app::Notification arg7, __jni_impl::android::os::UserHandle arg8, jlong arg9);
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
@@ -37,8 +38,6 @@ namespace __jni_impl::android::service::notification
 		jstring getKey();
 		jint getId();
 		jstring getTag();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jboolean isClearable();
 		jboolean isGroup();
 		jboolean isOngoing();
@@ -50,7 +49,10 @@ namespace __jni_impl::android::service::notification
 		jlong getPostTime();
 		jstring getGroupKey();
 		void setOverrideGroupKey(jstring arg0);
+		void setOverrideGroupKey(const QString &arg0);
 		jstring getOverrideGroupKey();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::service::notification
 
@@ -85,14 +87,33 @@ namespace __jni_impl::android::service::notification
 			arg6,
 			arg7.__jniObject().object(),
 			arg8.__jniObject().object(),
-			arg9);
+			arg9
+		);
+	}
+	void StatusBarNotification::__constructor(const QString &arg0, const QString &arg1, jint arg2, const QString &arg3, jint arg4, jint arg5, jint arg6, __jni_impl::android::app::Notification arg7, __jni_impl::android::os::UserHandle arg8, jlong arg9)
+	{
+		__thiz = QAndroidJniObject(
+			"android.service.notification.StatusBarNotification",
+			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;IIILandroid/app/Notification;Landroid/os/UserHandle;J)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			QAndroidJniObject::fromString(arg3).object<jstring>(),
+			arg4,
+			arg5,
+			arg6,
+			arg7.__jniObject().object(),
+			arg8.__jniObject().object(),
+			arg9
+		);
 	}
 	void StatusBarNotification::__constructor(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.notification.StatusBarNotification",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -137,22 +158,6 @@ namespace __jni_impl::android::service::notification
 			"getTag",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jint StatusBarNotification::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void StatusBarNotification::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
 	}
 	jboolean StatusBarNotification::isClearable()
 	{
@@ -232,12 +237,36 @@ namespace __jni_impl::android::service::notification
 			arg0
 		);
 	}
+	void StatusBarNotification::setOverrideGroupKey(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOverrideGroupKey",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring StatusBarNotification::getOverrideGroupKey()
 	{
 		return __thiz.callObjectMethod(
 			"getOverrideGroupKey",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jint StatusBarNotification::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void StatusBarNotification::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::service::notification
 

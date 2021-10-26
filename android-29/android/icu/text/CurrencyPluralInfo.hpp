@@ -41,8 +41,11 @@ namespace __jni_impl::android::icu::text
 		void setLocale(__jni_impl::android::icu::util::ULocale arg0);
 		QAndroidJniObject getPluralRules();
 		jstring getCurrencyPluralPattern(jstring arg0);
+		jstring getCurrencyPluralPattern(const QString &arg0);
 		void setPluralRules(jstring arg0);
+		void setPluralRules(const QString &arg0);
 		void setCurrencyPluralPattern(jstring arg0, jstring arg1);
+		void setCurrencyPluralPattern(const QString &arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -60,20 +63,23 @@ namespace __jni_impl::android::icu::text
 		__thiz = QAndroidJniObject(
 			"android.icu.text.CurrencyPluralInfo",
 			"(Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CurrencyPluralInfo::__constructor(__jni_impl::java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.CurrencyPluralInfo",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CurrencyPluralInfo::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.CurrencyPluralInfo",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -155,12 +161,28 @@ namespace __jni_impl::android::icu::text
 			arg0
 		).object<jstring>();
 	}
+	jstring CurrencyPluralInfo::getCurrencyPluralPattern(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getCurrencyPluralPattern",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	void CurrencyPluralInfo::setPluralRules(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPluralRules",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void CurrencyPluralInfo::setPluralRules(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPluralRules",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void CurrencyPluralInfo::setCurrencyPluralPattern(jstring arg0, jstring arg1)
@@ -170,6 +192,15 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
+		);
+	}
+	void CurrencyPluralInfo::setCurrencyPluralPattern(const QString &arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"setCurrencyPluralPattern",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::icu::text

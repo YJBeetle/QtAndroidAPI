@@ -64,7 +64,8 @@ namespace __jni_impl::android::media::midi
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.midi.MidiDeviceService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

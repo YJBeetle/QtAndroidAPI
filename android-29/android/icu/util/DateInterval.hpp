@@ -37,7 +37,8 @@ namespace __jni_impl::android::icu::util
 			"android.icu.util.DateInterval",
 			"(JJ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

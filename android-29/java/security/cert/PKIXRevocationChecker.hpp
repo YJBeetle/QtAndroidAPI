@@ -28,6 +28,7 @@ namespace __jni_impl::java::security::cert
 		// Methods
 		QAndroidJniObject clone();
 		QAndroidJniObject getOptions();
+		QAndroidJniObject getSoftFailExceptions();
 		void setOcspResponder(__jni_impl::java::net::URI arg0);
 		QAndroidJniObject getOcspResponder();
 		void setOcspResponderCert(__jni_impl::java::security::cert::X509Certificate arg0);
@@ -37,7 +38,6 @@ namespace __jni_impl::java::security::cert
 		void setOcspResponses(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getOcspResponses();
 		void setOptions(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getSoftFailExceptions();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -69,6 +69,13 @@ namespace __jni_impl::java::security::cert
 		return __thiz.callObjectMethod(
 			"getOptions",
 			"()Ljava/util/Set;"
+		);
+	}
+	QAndroidJniObject PKIXRevocationChecker::getSoftFailExceptions()
+	{
+		return __thiz.callObjectMethod(
+			"getSoftFailExceptions",
+			"()Ljava/util/List;"
 		);
 	}
 	void PKIXRevocationChecker::setOcspResponder(__jni_impl::java::net::URI arg0)
@@ -137,13 +144,6 @@ namespace __jni_impl::java::security::cert
 			"setOptions",
 			"(Ljava/util/Set;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject PKIXRevocationChecker::getSoftFailExceptions()
-	{
-		return __thiz.callObjectMethod(
-			"getSoftFailExceptions",
-			"()Ljava/util/List;"
 		);
 	}
 } // namespace __jni_impl::java::security::cert

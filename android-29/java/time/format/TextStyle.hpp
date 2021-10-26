@@ -26,6 +26,7 @@ namespace __jni_impl::java::time::format
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 		jboolean isStandalone();
 		QAndroidJniObject asStandalone();
 		QAndroidJniObject asNormal();
@@ -109,6 +110,15 @@ namespace __jni_impl::java::time::format
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/format/TextStyle;",
 			arg0
+		);
+	}
+	QAndroidJniObject TextStyle::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.format.TextStyle",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/time/format/TextStyle;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean TextStyle::isStandalone()

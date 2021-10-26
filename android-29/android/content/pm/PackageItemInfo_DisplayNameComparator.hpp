@@ -43,7 +43,8 @@ namespace __jni_impl::android::content::pm
 		__thiz = QAndroidJniObject(
 			"android.content.pm.PackageItemInfo$DisplayNameComparator",
 			"(Landroid/content/pm/PackageManager;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

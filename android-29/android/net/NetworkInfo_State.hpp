@@ -26,6 +26,7 @@ namespace __jni_impl::android::net
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::net
 
@@ -106,6 +107,15 @@ namespace __jni_impl::android::net
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/net/NetworkInfo$State;",
 			arg0
+		);
+	}
+	QAndroidJniObject NetworkInfo_State::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.net.NetworkInfo$State",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/net/NetworkInfo$State;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::net

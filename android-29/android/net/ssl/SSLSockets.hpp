@@ -21,8 +21,8 @@ namespace __jni_impl::android::net::ssl
 		void __constructor();
 		
 		// Methods
-		static void setUseSessionTickets(__jni_impl::javax::net::ssl::SSLSocket arg0, jboolean arg1);
 		static jboolean isSupportedSocket(__jni_impl::javax::net::ssl::SSLSocket arg0);
+		static void setUseSessionTickets(__jni_impl::javax::net::ssl::SSLSocket arg0, jboolean arg1);
 	};
 } // namespace __jni_impl::android::net::ssl
 
@@ -41,6 +41,15 @@ namespace __jni_impl::android::net::ssl
 	}
 	
 	// Methods
+	jboolean SSLSockets::isSupportedSocket(__jni_impl::javax::net::ssl::SSLSocket arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.net.ssl.SSLSockets",
+			"isSupportedSocket",
+			"(Ljavax/net/ssl/SSLSocket;)Z",
+			arg0.__jniObject().object()
+		);
+	}
 	void SSLSockets::setUseSessionTickets(__jni_impl::javax::net::ssl::SSLSocket arg0, jboolean arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -49,15 +58,6 @@ namespace __jni_impl::android::net::ssl
 			"(Ljavax/net/ssl/SSLSocket;Z)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean SSLSockets::isSupportedSocket(__jni_impl::javax::net::ssl::SSLSocket arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.net.ssl.SSLSockets",
-			"isSupportedSocket",
-			"(Ljavax/net/ssl/SSLSocket;)Z",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::net::ssl

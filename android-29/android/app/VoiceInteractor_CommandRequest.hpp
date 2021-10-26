@@ -20,6 +20,7 @@ namespace __jni_impl::android::app
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void __constructor(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		
 		// Methods
 		void onCommandResult(jboolean arg0, __jni_impl::android::os::Bundle arg1);
@@ -39,7 +40,17 @@ namespace __jni_impl::android::app
 			"android.app.VoiceInteractor$CommandRequest",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void VoiceInteractor_CommandRequest::__constructor(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.VoiceInteractor$CommandRequest",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

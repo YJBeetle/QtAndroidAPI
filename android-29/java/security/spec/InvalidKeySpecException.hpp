@@ -18,7 +18,9 @@ namespace __jni_impl::java::security::spec
 		// Constructors
 		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
+		void __constructor(const QString &arg0, jthrowable arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor();
 		
 		// Methods
@@ -36,7 +38,8 @@ namespace __jni_impl::java::security::spec
 		__thiz = QAndroidJniObject(
 			"java.security.spec.InvalidKeySpecException",
 			"(Ljava/lang/Throwable;)V",
-			arg0);
+			arg0
+		);
 	}
 	void InvalidKeySpecException::__constructor(jstring arg0, jthrowable arg1)
 	{
@@ -44,20 +47,40 @@ namespace __jni_impl::java::security::spec
 			"java.security.spec.InvalidKeySpecException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void InvalidKeySpecException::__constructor(const QString &arg0, jthrowable arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.spec.InvalidKeySpecException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void InvalidKeySpecException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.InvalidKeySpecException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void InvalidKeySpecException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.spec.InvalidKeySpecException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void InvalidKeySpecException::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.InvalidKeySpecException",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

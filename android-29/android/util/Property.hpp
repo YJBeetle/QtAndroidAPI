@@ -15,11 +15,13 @@ namespace __jni_impl::android::util
 		
 		// Constructors
 		void __constructor(jclass arg0, jstring arg1);
+		void __constructor(jclass arg0, const QString &arg1);
 		
 		// Methods
 		jstring getName();
 		jobject get(jobject arg0);
 		static QAndroidJniObject of(jclass arg0, jclass arg1, jstring arg2);
+		static QAndroidJniObject of(jclass arg0, jclass arg1, const QString &arg2);
 		void set(jobject arg0, jobject arg1);
 		jclass getType();
 		jboolean isReadOnly();
@@ -38,7 +40,17 @@ namespace __jni_impl::android::util
 			"android.util.Property",
 			"(Ljava/lang/Class;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void Property::__constructor(jclass arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.util.Property",
+			"(Ljava/lang/Class;Ljava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -66,6 +78,17 @@ namespace __jni_impl::android::util
 			arg0,
 			arg1,
 			arg2
+		);
+	}
+	QAndroidJniObject Property::of(jclass arg0, jclass arg1, const QString &arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.util.Property",
+			"of",
+			"(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Landroid/util/Property;",
+			arg0,
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	void Property::set(jobject arg0, jobject arg1)

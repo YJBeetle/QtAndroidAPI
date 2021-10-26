@@ -5,6 +5,10 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::view
+{
+	class Surface;
+}
 namespace __jni_impl::android::media
 {
 	class Image;
@@ -12,10 +16,6 @@ namespace __jni_impl::android::media
 namespace __jni_impl::android::os
 {
 	class Handler;
-}
-namespace __jni_impl::android::view
-{
-	class Surface;
 }
 
 namespace __jni_impl::android::media
@@ -32,21 +32,21 @@ namespace __jni_impl::android::media
 		static QAndroidJniObject newInstance(jint arg0, jint arg1, jint arg2, jint arg3);
 		static QAndroidJniObject newInstance(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4);
 		void close();
+		QAndroidJniObject getSurface();
 		jint getMaxImages();
+		jint getWidth();
+		jint getHeight();
 		jint getImageFormat();
 		QAndroidJniObject acquireLatestImage();
 		QAndroidJniObject acquireNextImage();
 		void setOnImageAvailableListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
 		void discardFreeBuffers();
-		QAndroidJniObject getSurface();
-		jint getWidth();
-		jint getHeight();
 	};
 } // namespace __jni_impl::android::media
 
+#include "../view/Surface.hpp"
 #include "Image.hpp"
 #include "../os/Handler.hpp"
-#include "../view/Surface.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -93,10 +93,31 @@ namespace __jni_impl::android::media
 			"()V"
 		);
 	}
+	QAndroidJniObject ImageReader::getSurface()
+	{
+		return __thiz.callObjectMethod(
+			"getSurface",
+			"()Landroid/view/Surface;"
+		);
+	}
 	jint ImageReader::getMaxImages()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxImages",
+			"()I"
+		);
+	}
+	jint ImageReader::getWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
+	jint ImageReader::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
 			"()I"
 		);
 	}
@@ -135,27 +156,6 @@ namespace __jni_impl::android::media
 		__thiz.callMethod<void>(
 			"discardFreeBuffers",
 			"()V"
-		);
-	}
-	QAndroidJniObject ImageReader::getSurface()
-	{
-		return __thiz.callObjectMethod(
-			"getSurface",
-			"()Landroid/view/Surface;"
-		);
-	}
-	jint ImageReader::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I"
-		);
-	}
-	jint ImageReader::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::media

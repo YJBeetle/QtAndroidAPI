@@ -18,6 +18,7 @@ namespace __jni_impl::android::os
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -33,14 +34,24 @@ namespace __jni_impl::android::os
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.OperationCanceledException",
-			"()V");
+			"()V"
+		);
 	}
 	void OperationCanceledException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.OperationCanceledException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void OperationCanceledException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.os.OperationCanceledException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

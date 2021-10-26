@@ -93,7 +93,8 @@ namespace __jni_impl::android::provider
 	{
 		__thiz = QAndroidJniObject(
 			"android.provider.Contacts$Intents",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

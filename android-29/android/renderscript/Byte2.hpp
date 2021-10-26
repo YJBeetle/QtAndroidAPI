@@ -45,7 +45,8 @@ namespace __jni_impl::android::renderscript
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Byte2",
-			"()V");
+			"()V"
+		);
 	}
 	void Byte2::__constructor(jbyte arg0, jbyte arg1)
 	{
@@ -53,7 +54,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.Byte2",
 			"(BB)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

@@ -23,9 +23,11 @@ namespace __jni_impl::android::app
 		// Methods
 		jboolean isDestroyed();
 		jboolean submitRequest(__jni_impl::android::app::VoiceInteractor_Request arg0, jstring arg1);
+		jboolean submitRequest(__jni_impl::android::app::VoiceInteractor_Request arg0, const QString &arg1);
 		jboolean submitRequest(__jni_impl::android::app::VoiceInteractor_Request arg0);
 		jarray getActiveRequests();
 		QAndroidJniObject getActiveRequest(jstring arg0);
+		QAndroidJniObject getActiveRequest(const QString &arg0);
 		jbooleanArray supportsCommands(jarray arg0);
 		jboolean registerOnDestroyedCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		jboolean unregisterOnDestroyedCallback(__jni_impl::__JniBaseClass arg0);
@@ -64,6 +66,15 @@ namespace __jni_impl::android::app
 			arg1
 		);
 	}
+	jboolean VoiceInteractor::submitRequest(__jni_impl::android::app::VoiceInteractor_Request arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"submitRequest",
+			"(Landroid/app/VoiceInteractor$Request;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	jboolean VoiceInteractor::submitRequest(__jni_impl::android::app::VoiceInteractor_Request arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -85,6 +96,14 @@ namespace __jni_impl::android::app
 			"getActiveRequest",
 			"(Ljava/lang/String;)Landroid/app/VoiceInteractor$Request;",
 			arg0
+		);
+	}
+	QAndroidJniObject VoiceInteractor::getActiveRequest(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getActiveRequest",
+			"(Ljava/lang/String;)Landroid/app/VoiceInteractor$Request;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jbooleanArray VoiceInteractor::supportsCommands(jarray arg0)

@@ -32,7 +32,8 @@ namespace __jni_impl::javax::sql
 		__thiz = QAndroidJniObject(
 			"javax.sql.RowSetEvent",
 			"(Ljavax/sql/RowSet;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

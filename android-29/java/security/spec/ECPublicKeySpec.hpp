@@ -44,7 +44,8 @@ namespace __jni_impl::java::security::spec
 			"java.security.spec.ECPublicKeySpec",
 			"(Ljava/security/spec/ECPoint;Ljava/security/spec/ECParameterSpec;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

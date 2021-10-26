@@ -47,6 +47,7 @@ namespace __jni_impl::android::inputmethodservice
 		void updateCursorAnchorInfo(__jni_impl::android::view::inputmethod::CursorAnchorInfo arg0);
 		void finishInput();
 		void appPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void appPrivateCommand(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 	};
 } // namespace __jni_impl::android::inputmethodservice
 
@@ -66,7 +67,8 @@ namespace __jni_impl::android::inputmethodservice
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.InputMethodService$InputMethodSessionImpl",
 			"(Landroid/inputmethodservice/InputMethodService;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -146,6 +148,15 @@ namespace __jni_impl::android::inputmethodservice
 			"appPrivateCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void InputMethodService_InputMethodSessionImpl::appPrivateCommand(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"appPrivateCommand",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

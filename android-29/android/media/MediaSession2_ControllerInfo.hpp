@@ -29,9 +29,9 @@ namespace __jni_impl::android::media
 		jstring toString();
 		jint hashCode();
 		jstring getPackageName();
-		jint getUid();
 		QAndroidJniObject getRemoteUserInfo();
 		QAndroidJniObject getConnectionHints();
+		jint getUid();
 	};
 } // namespace __jni_impl::android::media
 
@@ -80,13 +80,6 @@ namespace __jni_impl::android::media
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint MediaSession2_ControllerInfo::getUid()
-	{
-		return __thiz.callMethod<jint>(
-			"getUid",
-			"()I"
-		);
-	}
 	QAndroidJniObject MediaSession2_ControllerInfo::getRemoteUserInfo()
 	{
 		return __thiz.callObjectMethod(
@@ -99,6 +92,13 @@ namespace __jni_impl::android::media
 		return __thiz.callObjectMethod(
 			"getConnectionHints",
 			"()Landroid/os/Bundle;"
+		);
+	}
+	jint MediaSession2_ControllerInfo::getUid()
+	{
+		return __thiz.callMethod<jint>(
+			"getUid",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::media

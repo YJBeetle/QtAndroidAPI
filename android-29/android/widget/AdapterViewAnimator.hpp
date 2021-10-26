@@ -12,10 +12,6 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
 namespace __jni_impl::android::animation
 {
 	class ObjectAnimator;
@@ -27,6 +23,10 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::view
 {
 	class MotionEvent;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
 }
 
 namespace __jni_impl::android::widget
@@ -45,14 +45,12 @@ namespace __jni_impl::android::widget
 		// Methods
 		void advance();
 		QAndroidJniObject getAdapter();
-		void setRemoteViewsAdapter(__jni_impl::android::content::Intent arg0);
-		void deferNotifyDataSetChanged();
-		jboolean onRemoteAdapterConnected();
-		void onRemoteAdapterDisconnected();
+		jstring getAccessibilityClassName();
+		jint getBaseline();
 		jint getDisplayedChild();
 		QAndroidJniObject getInAnimation();
-		void setInAnimation(__jni_impl::android::animation::ObjectAnimator arg0);
 		void setInAnimation(__jni_impl::android::content::Context arg0, jint arg1);
+		void setInAnimation(__jni_impl::android::animation::ObjectAnimator arg0);
 		QAndroidJniObject getOutAnimation();
 		void setOutAnimation(__jni_impl::android::content::Context arg0, jint arg1);
 		void setOutAnimation(__jni_impl::android::animation::ObjectAnimator arg0);
@@ -60,24 +58,26 @@ namespace __jni_impl::android::widget
 		void setAdapter(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getSelectedView();
 		void setSelection(jint arg0);
-		void onRestoreInstanceState(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject onSaveInstanceState();
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
 		void showNext();
 		void showPrevious();
 		void setDisplayedChild(jint arg0);
 		void fyiWillBeAdvancedByHostKThx();
-		jstring getAccessibilityClassName();
-		jint getBaseline();
+		void onRestoreInstanceState(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject onSaveInstanceState();
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		void setRemoteViewsAdapter(__jni_impl::android::content::Intent arg0);
+		void deferNotifyDataSetChanged();
+		jboolean onRemoteAdapterConnected();
+		void onRemoteAdapterDisconnected();
 		QAndroidJniObject getCurrentView();
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "../content/Intent.hpp"
 #include "../animation/ObjectAnimator.hpp"
 #include "../view/View.hpp"
 #include "../view/MotionEvent.hpp"
+#include "../content/Intent.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -92,7 +92,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void AdapterViewAnimator::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -101,7 +102,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void AdapterViewAnimator::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -109,14 +111,16 @@ namespace __jni_impl::android::widget
 			"android.widget.AdapterViewAnimator",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AdapterViewAnimator::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AdapterViewAnimator",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -134,33 +138,18 @@ namespace __jni_impl::android::widget
 			"()Landroid/widget/Adapter;"
 		);
 	}
-	void AdapterViewAnimator::setRemoteViewsAdapter(__jni_impl::android::content::Intent arg0)
+	jstring AdapterViewAnimator::getAccessibilityClassName()
 	{
-		__thiz.callMethod<void>(
-			"setRemoteViewsAdapter",
-			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object()
-		);
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
-	void AdapterViewAnimator::deferNotifyDataSetChanged()
+	jint AdapterViewAnimator::getBaseline()
 	{
-		__thiz.callMethod<void>(
-			"deferNotifyDataSetChanged",
-			"()V"
-		);
-	}
-	jboolean AdapterViewAnimator::onRemoteAdapterConnected()
-	{
-		return __thiz.callMethod<jboolean>(
-			"onRemoteAdapterConnected",
-			"()Z"
-		);
-	}
-	void AdapterViewAnimator::onRemoteAdapterDisconnected()
-	{
-		__thiz.callMethod<void>(
-			"onRemoteAdapterDisconnected",
-			"()V"
+		return __thiz.callMethod<jint>(
+			"getBaseline",
+			"()I"
 		);
 	}
 	jint AdapterViewAnimator::getDisplayedChild()
@@ -177,14 +166,6 @@ namespace __jni_impl::android::widget
 			"()Landroid/animation/ObjectAnimator;"
 		);
 	}
-	void AdapterViewAnimator::setInAnimation(__jni_impl::android::animation::ObjectAnimator arg0)
-	{
-		__thiz.callMethod<void>(
-			"setInAnimation",
-			"(Landroid/animation/ObjectAnimator;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void AdapterViewAnimator::setInAnimation(__jni_impl::android::content::Context arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -192,6 +173,14 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;I)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	void AdapterViewAnimator::setInAnimation(__jni_impl::android::animation::ObjectAnimator arg0)
+	{
+		__thiz.callMethod<void>(
+			"setInAnimation",
+			"(Landroid/animation/ObjectAnimator;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject AdapterViewAnimator::getOutAnimation()
@@ -249,29 +238,6 @@ namespace __jni_impl::android::widget
 			arg0
 		);
 	}
-	void AdapterViewAnimator::onRestoreInstanceState(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"onRestoreInstanceState",
-			"(Landroid/os/Parcelable;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject AdapterViewAnimator::onSaveInstanceState()
-	{
-		return __thiz.callObjectMethod(
-			"onSaveInstanceState",
-			"()Landroid/os/Parcelable;"
-		);
-	}
-	jboolean AdapterViewAnimator::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
 	void AdapterViewAnimator::showNext()
 	{
 		__thiz.callMethod<void>(
@@ -301,18 +267,56 @@ namespace __jni_impl::android::widget
 			"()V"
 		);
 	}
-	jstring AdapterViewAnimator::getAccessibilityClassName()
+	void AdapterViewAnimator::onRestoreInstanceState(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"onRestoreInstanceState",
+			"(Landroid/os/Parcelable;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject AdapterViewAnimator::onSaveInstanceState()
 	{
 		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+			"onSaveInstanceState",
+			"()Landroid/os/Parcelable;"
+		);
 	}
-	jint AdapterViewAnimator::getBaseline()
+	jboolean AdapterViewAnimator::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getBaseline",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	void AdapterViewAnimator::setRemoteViewsAdapter(__jni_impl::android::content::Intent arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRemoteViewsAdapter",
+			"(Landroid/content/Intent;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AdapterViewAnimator::deferNotifyDataSetChanged()
+	{
+		__thiz.callMethod<void>(
+			"deferNotifyDataSetChanged",
+			"()V"
+		);
+	}
+	jboolean AdapterViewAnimator::onRemoteAdapterConnected()
+	{
+		return __thiz.callMethod<jboolean>(
+			"onRemoteAdapterConnected",
+			"()Z"
+		);
+	}
+	void AdapterViewAnimator::onRemoteAdapterDisconnected()
+	{
+		__thiz.callMethod<void>(
+			"onRemoteAdapterDisconnected",
+			"()V"
 		);
 	}
 	QAndroidJniObject AdapterViewAnimator::getCurrentView()

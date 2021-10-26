@@ -34,9 +34,13 @@ namespace __jni_impl::android::icu::text
 		// Methods
 		static QAndroidJniObject getUTS46Instance(jint arg0);
 		QAndroidJniObject labelToASCII(jstring arg0, __jni_impl::java::lang::StringBuilder arg1, __jni_impl::android::icu::text::IDNA_Info arg2);
+		QAndroidJniObject labelToASCII(const QString &arg0, __jni_impl::java::lang::StringBuilder arg1, __jni_impl::android::icu::text::IDNA_Info arg2);
 		QAndroidJniObject labelToUnicode(jstring arg0, __jni_impl::java::lang::StringBuilder arg1, __jni_impl::android::icu::text::IDNA_Info arg2);
+		QAndroidJniObject labelToUnicode(const QString &arg0, __jni_impl::java::lang::StringBuilder arg1, __jni_impl::android::icu::text::IDNA_Info arg2);
 		QAndroidJniObject nameToASCII(jstring arg0, __jni_impl::java::lang::StringBuilder arg1, __jni_impl::android::icu::text::IDNA_Info arg2);
+		QAndroidJniObject nameToASCII(const QString &arg0, __jni_impl::java::lang::StringBuilder arg1, __jni_impl::android::icu::text::IDNA_Info arg2);
 		QAndroidJniObject nameToUnicode(jstring arg0, __jni_impl::java::lang::StringBuilder arg1, __jni_impl::android::icu::text::IDNA_Info arg2);
+		QAndroidJniObject nameToUnicode(const QString &arg0, __jni_impl::java::lang::StringBuilder arg1, __jni_impl::android::icu::text::IDNA_Info arg2);
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -124,12 +128,32 @@ namespace __jni_impl::android::icu::text
 			arg2.__jniObject().object()
 		);
 	}
+	QAndroidJniObject IDNA::labelToASCII(const QString &arg0, __jni_impl::java::lang::StringBuilder arg1, __jni_impl::android::icu::text::IDNA_Info arg2)
+	{
+		return __thiz.callObjectMethod(
+			"labelToASCII",
+			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
 	QAndroidJniObject IDNA::labelToUnicode(jstring arg0, __jni_impl::java::lang::StringBuilder arg1, __jni_impl::android::icu::text::IDNA_Info arg2)
 	{
 		return __thiz.callObjectMethod(
 			"labelToUnicode",
 			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
 			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject IDNA::labelToUnicode(const QString &arg0, __jni_impl::java::lang::StringBuilder arg1, __jni_impl::android::icu::text::IDNA_Info arg2)
+	{
+		return __thiz.callObjectMethod(
+			"labelToUnicode",
+			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);
@@ -144,12 +168,32 @@ namespace __jni_impl::android::icu::text
 			arg2.__jniObject().object()
 		);
 	}
+	QAndroidJniObject IDNA::nameToASCII(const QString &arg0, __jni_impl::java::lang::StringBuilder arg1, __jni_impl::android::icu::text::IDNA_Info arg2)
+	{
+		return __thiz.callObjectMethod(
+			"nameToASCII",
+			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
 	QAndroidJniObject IDNA::nameToUnicode(jstring arg0, __jni_impl::java::lang::StringBuilder arg1, __jni_impl::android::icu::text::IDNA_Info arg2)
 	{
 		return __thiz.callObjectMethod(
 			"nameToUnicode",
 			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
 			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject IDNA::nameToUnicode(const QString &arg0, __jni_impl::java::lang::StringBuilder arg1, __jni_impl::android::icu::text::IDNA_Info arg2)
+	{
+		return __thiz.callObjectMethod(
+			"nameToUnicode",
+			"(Ljava/lang/CharSequence;Ljava/lang/StringBuilder;Landroid/icu/text/IDNA$Info;)Ljava/lang/StringBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);

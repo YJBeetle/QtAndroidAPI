@@ -30,10 +30,10 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		static QAndroidJniObject getInstance();
-		QAndroidJniObject findNextKeyboardNavigationCluster(__jni_impl::android::view::View arg0, __jni_impl::android::view::View arg1, jint arg2);
-		QAndroidJniObject findNearestTouchable(__jni_impl::android::view::ViewGroup arg0, jint arg1, jint arg2, jint arg3, jintArray arg4);
 		QAndroidJniObject findNextFocus(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::view::View arg1, jint arg2);
 		QAndroidJniObject findNextFocusFromRect(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::graphics::Rect arg1, jint arg2);
+		QAndroidJniObject findNextKeyboardNavigationCluster(__jni_impl::android::view::View arg0, __jni_impl::android::view::View arg1, jint arg2);
+		QAndroidJniObject findNearestTouchable(__jni_impl::android::view::ViewGroup arg0, jint arg1, jint arg2, jint arg3, jintArray arg4);
 	};
 } // namespace __jni_impl::android::view
 
@@ -62,6 +62,26 @@ namespace __jni_impl::android::view
 			"()Landroid/view/FocusFinder;"
 		);
 	}
+	QAndroidJniObject FocusFinder::findNextFocus(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::view::View arg1, jint arg2)
+	{
+		return __thiz.callObjectMethod(
+			"findNextFocus",
+			"(Landroid/view/ViewGroup;Landroid/view/View;I)Landroid/view/View;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
+	QAndroidJniObject FocusFinder::findNextFocusFromRect(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::graphics::Rect arg1, jint arg2)
+	{
+		return __thiz.callObjectMethod(
+			"findNextFocusFromRect",
+			"(Landroid/view/ViewGroup;Landroid/graphics/Rect;I)Landroid/view/View;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
 	QAndroidJniObject FocusFinder::findNextKeyboardNavigationCluster(__jni_impl::android::view::View arg0, __jni_impl::android::view::View arg1, jint arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -82,26 +102,6 @@ namespace __jni_impl::android::view
 			arg2,
 			arg3,
 			arg4
-		);
-	}
-	QAndroidJniObject FocusFinder::findNextFocus(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::view::View arg1, jint arg2)
-	{
-		return __thiz.callObjectMethod(
-			"findNextFocus",
-			"(Landroid/view/ViewGroup;Landroid/view/View;I)Landroid/view/View;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	QAndroidJniObject FocusFinder::findNextFocusFromRect(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::graphics::Rect arg1, jint arg2)
-	{
-		return __thiz.callObjectMethod(
-			"findNextFocusFromRect",
-			"(Landroid/view/ViewGroup;Landroid/graphics/Rect;I)Landroid/view/View;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
 		);
 	}
 } // namespace __jni_impl::android::view

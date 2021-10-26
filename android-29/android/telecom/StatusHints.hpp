@@ -28,15 +28,16 @@ namespace __jni_impl::android::telecom
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::android::graphics::drawable::Icon arg1, __jni_impl::android::os::Bundle arg2);
+		void __constructor(const QString &arg0, __jni_impl::android::graphics::drawable::Icon arg1, __jni_impl::android::os::Bundle arg2);
 		
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
+		jstring getLabel();
+		QAndroidJniObject getIcon();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getExtras();
-		jstring getLabel();
-		QAndroidJniObject getIcon();
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -64,7 +65,18 @@ namespace __jni_impl::android::telecom
 			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Icon;Landroid/os/Bundle;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void StatusHints::__constructor(const QString &arg0, __jni_impl::android::graphics::drawable::Icon arg1, __jni_impl::android::os::Bundle arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.telecom.StatusHints",
+			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Icon;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -81,6 +93,20 @@ namespace __jni_impl::android::telecom
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I"
+		);
+	}
+	jstring StatusHints::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	QAndroidJniObject StatusHints::getIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
 	jint StatusHints::describeContents()
@@ -104,20 +130,6 @@ namespace __jni_impl::android::telecom
 		return __thiz.callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
-		);
-	}
-	jstring StatusHints::getLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	QAndroidJniObject StatusHints::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
 } // namespace __jni_impl::android::telecom

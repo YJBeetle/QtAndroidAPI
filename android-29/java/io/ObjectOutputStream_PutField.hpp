@@ -18,14 +18,23 @@ namespace __jni_impl::java::io
 		
 		// Methods
 		void put(jstring arg0, jfloat arg1);
+		void put(const QString &arg0, jfloat arg1);
 		void put(jstring arg0, jlong arg1);
+		void put(const QString &arg0, jlong arg1);
 		void put(jstring arg0, jint arg1);
+		void put(const QString &arg0, jint arg1);
 		void put(jstring arg0, jdouble arg1);
+		void put(const QString &arg0, jdouble arg1);
 		void put(jstring arg0, jobject arg1);
+		void put(const QString &arg0, jobject arg1);
 		void put(jstring arg0, jboolean arg1);
+		void put(const QString &arg0, jboolean arg1);
 		void put(jstring arg0, jbyte arg1);
+		void put(const QString &arg0, jbyte arg1);
 		void put(jstring arg0, jchar arg1);
+		void put(const QString &arg0, jchar arg1);
 		void put(jstring arg0, jshort arg1);
+		void put(const QString &arg0, jshort arg1);
 		void write(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::java::io
@@ -40,7 +49,8 @@ namespace __jni_impl::java::io
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.ObjectOutputStream$PutField",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -53,12 +63,30 @@ namespace __jni_impl::java::io
 			arg1
 		);
 	}
+	void ObjectOutputStream_PutField::put(const QString &arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;F)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	void ObjectOutputStream_PutField::put(jstring arg0, jlong arg1)
 	{
 		__thiz.callMethod<void>(
 			"put",
 			"(Ljava/lang/String;J)V",
 			arg0,
+			arg1
+		);
+	}
+	void ObjectOutputStream_PutField::put(const QString &arg0, jlong arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;J)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -71,12 +99,30 @@ namespace __jni_impl::java::io
 			arg1
 		);
 	}
+	void ObjectOutputStream_PutField::put(const QString &arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	void ObjectOutputStream_PutField::put(jstring arg0, jdouble arg1)
 	{
 		__thiz.callMethod<void>(
 			"put",
 			"(Ljava/lang/String;D)V",
 			arg0,
+			arg1
+		);
+	}
+	void ObjectOutputStream_PutField::put(const QString &arg0, jdouble arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;D)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -89,12 +135,30 @@ namespace __jni_impl::java::io
 			arg1
 		);
 	}
+	void ObjectOutputStream_PutField::put(const QString &arg0, jobject arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;Ljava/lang/Object;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	void ObjectOutputStream_PutField::put(jstring arg0, jboolean arg1)
 	{
 		__thiz.callMethod<void>(
 			"put",
 			"(Ljava/lang/String;Z)V",
 			arg0,
+			arg1
+		);
+	}
+	void ObjectOutputStream_PutField::put(const QString &arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -107,6 +171,15 @@ namespace __jni_impl::java::io
 			arg1
 		);
 	}
+	void ObjectOutputStream_PutField::put(const QString &arg0, jbyte arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;B)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	void ObjectOutputStream_PutField::put(jstring arg0, jchar arg1)
 	{
 		__thiz.callMethod<void>(
@@ -116,12 +189,30 @@ namespace __jni_impl::java::io
 			arg1
 		);
 	}
+	void ObjectOutputStream_PutField::put(const QString &arg0, jchar arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;C)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	void ObjectOutputStream_PutField::put(jstring arg0, jshort arg1)
 	{
 		__thiz.callMethod<void>(
 			"put",
 			"(Ljava/lang/String;S)V",
 			arg0,
+			arg1
+		);
+	}
+	void ObjectOutputStream_PutField::put(const QString &arg0, jshort arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;S)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

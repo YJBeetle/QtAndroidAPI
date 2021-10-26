@@ -37,12 +37,12 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		void advance();
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
-		void showNext();
-		void showPrevious();
 		jboolean onInterceptTouchEvent(__jni_impl::android::view::MotionEvent arg0);
 		jstring getAccessibilityClassName();
+		void showNext();
+		void showPrevious();
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -63,7 +63,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void StackView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -72,7 +73,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void StackView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -80,14 +82,16 @@ namespace __jni_impl::android::widget
 			"android.widget.StackView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void StackView::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.StackView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -95,6 +99,35 @@ namespace __jni_impl::android::widget
 	{
 		__thiz.callMethod<void>(
 			"advance",
+			"()V"
+		);
+	}
+	jboolean StackView::onInterceptTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onInterceptTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jstring StackView::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	void StackView::showNext()
+	{
+		__thiz.callMethod<void>(
+			"showNext",
+			"()V"
+		);
+	}
+	void StackView::showPrevious()
+	{
+		__thiz.callMethod<void>(
+			"showPrevious",
 			"()V"
 		);
 	}
@@ -113,35 +146,6 @@ namespace __jni_impl::android::widget
 			"(Landroid/view/MotionEvent;)Z",
 			arg0.__jniObject().object()
 		);
-	}
-	void StackView::showNext()
-	{
-		__thiz.callMethod<void>(
-			"showNext",
-			"()V"
-		);
-	}
-	void StackView::showPrevious()
-	{
-		__thiz.callMethod<void>(
-			"showPrevious",
-			"()V"
-		);
-	}
-	jboolean StackView::onInterceptTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onInterceptTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jstring StackView::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::widget
 

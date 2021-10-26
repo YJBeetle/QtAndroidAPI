@@ -28,6 +28,7 @@ namespace __jni_impl::java::util::logging
 		
 		// Methods
 		void error(jstring arg0, __jni_impl::java::lang::Exception arg1, jint arg2);
+		void error(const QString &arg0, __jni_impl::java::lang::Exception arg1, jint arg2);
 	};
 } // namespace __jni_impl::java::util::logging
 
@@ -84,7 +85,8 @@ namespace __jni_impl::java::util::logging
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.logging.ErrorManager",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -94,6 +96,16 @@ namespace __jni_impl::java::util::logging
 			"error",
 			"(Ljava/lang/String;Ljava/lang/Exception;I)V",
 			arg0,
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
+	void ErrorManager::error(const QString &arg0, __jni_impl::java::lang::Exception arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"error",
+			"(Ljava/lang/String;Ljava/lang/Exception;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2
 		);

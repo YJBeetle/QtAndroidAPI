@@ -30,7 +30,8 @@ namespace __jni_impl::android::view::animation
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.BaseInterpolator",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

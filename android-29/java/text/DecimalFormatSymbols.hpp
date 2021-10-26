@@ -54,15 +54,20 @@ namespace __jni_impl::java::text
 		void setPatternSeparator(jchar arg0);
 		jstring getInfinity();
 		void setInfinity(jstring arg0);
+		void setInfinity(const QString &arg0);
 		jstring getNaN();
 		void setNaN(jstring arg0);
+		void setNaN(const QString &arg0);
 		void setMinusSign(jchar arg0);
 		void setCurrencySymbol(jstring arg0);
+		void setCurrencySymbol(const QString &arg0);
 		void setInternationalCurrencySymbol(jstring arg0);
+		void setInternationalCurrencySymbol(const QString &arg0);
 		jchar getMonetaryDecimalSeparator();
 		void setMonetaryDecimalSeparator(jchar arg0);
 		jstring getExponentSeparator();
 		void setExponentSeparator(jstring arg0);
+		void setExponentSeparator(const QString &arg0);
 		jchar getZeroDigit();
 		jchar getMinusSign();
 		jchar getDecimalSeparator();
@@ -82,14 +87,16 @@ namespace __jni_impl::java::text
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.DecimalFormatSymbols",
-			"()V");
+			"()V"
+		);
 	}
 	void DecimalFormatSymbols::__constructor(__jni_impl::java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.DecimalFormatSymbols",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -275,6 +282,14 @@ namespace __jni_impl::java::text
 			arg0
 		);
 	}
+	void DecimalFormatSymbols::setInfinity(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setInfinity",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring DecimalFormatSymbols::getNaN()
 	{
 		return __thiz.callObjectMethod(
@@ -288,6 +303,14 @@ namespace __jni_impl::java::text
 			"setNaN",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void DecimalFormatSymbols::setNaN(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setNaN",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void DecimalFormatSymbols::setMinusSign(jchar arg0)
@@ -306,12 +329,28 @@ namespace __jni_impl::java::text
 			arg0
 		);
 	}
+	void DecimalFormatSymbols::setCurrencySymbol(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCurrencySymbol",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void DecimalFormatSymbols::setInternationalCurrencySymbol(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setInternationalCurrencySymbol",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void DecimalFormatSymbols::setInternationalCurrencySymbol(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setInternationalCurrencySymbol",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jchar DecimalFormatSymbols::getMonetaryDecimalSeparator()
@@ -342,6 +381,14 @@ namespace __jni_impl::java::text
 			"setExponentSeparator",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void DecimalFormatSymbols::setExponentSeparator(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setExponentSeparator",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jchar DecimalFormatSymbols::getZeroDigit()

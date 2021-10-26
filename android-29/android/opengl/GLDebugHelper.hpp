@@ -68,7 +68,8 @@ namespace __jni_impl::android::opengl
 	{
 		__thiz = QAndroidJniObject(
 			"android.opengl.GLDebugHelper",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

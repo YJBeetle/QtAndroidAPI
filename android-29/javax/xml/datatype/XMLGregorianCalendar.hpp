@@ -68,8 +68,6 @@ namespace __jni_impl::javax::xml::datatype
 		void setYear(__jni_impl::java::math::BigInteger arg0);
 		void setYear(jint arg0);
 		jboolean isValid();
-		void setHour(jint arg0);
-		void setMinute(jint arg0);
 		void setDay(jint arg0);
 		QAndroidJniObject getXMLSchemaType();
 		void setSecond(jint arg0);
@@ -82,8 +80,10 @@ namespace __jni_impl::javax::xml::datatype
 		QAndroidJniObject getEon();
 		QAndroidJniObject getEonAndYear();
 		jint getMillisecond();
-		QAndroidJniObject toGregorianCalendar();
 		QAndroidJniObject toGregorianCalendar(__jni_impl::java::util::TimeZone arg0, __jni_impl::java::util::Locale arg1, __jni_impl::javax::xml::datatype::XMLGregorianCalendar arg2);
+		QAndroidJniObject toGregorianCalendar();
+		void setHour(jint arg0);
+		void setMinute(jint arg0);
 	};
 } // namespace __jni_impl::javax::xml::datatype
 
@@ -104,7 +104,8 @@ namespace __jni_impl::javax::xml::datatype
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.datatype.XMLGregorianCalendar",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -287,22 +288,6 @@ namespace __jni_impl::javax::xml::datatype
 			"()Z"
 		);
 	}
-	void XMLGregorianCalendar::setHour(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setHour",
-			"(I)V",
-			arg0
-		);
-	}
-	void XMLGregorianCalendar::setMinute(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMinute",
-			"(I)V",
-			arg0
-		);
-	}
 	void XMLGregorianCalendar::setDay(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -392,13 +377,6 @@ namespace __jni_impl::javax::xml::datatype
 			"()I"
 		);
 	}
-	QAndroidJniObject XMLGregorianCalendar::toGregorianCalendar()
-	{
-		return __thiz.callObjectMethod(
-			"toGregorianCalendar",
-			"()Ljava/util/GregorianCalendar;"
-		);
-	}
 	QAndroidJniObject XMLGregorianCalendar::toGregorianCalendar(__jni_impl::java::util::TimeZone arg0, __jni_impl::java::util::Locale arg1, __jni_impl::javax::xml::datatype::XMLGregorianCalendar arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -407,6 +385,29 @@ namespace __jni_impl::javax::xml::datatype
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject XMLGregorianCalendar::toGregorianCalendar()
+	{
+		return __thiz.callObjectMethod(
+			"toGregorianCalendar",
+			"()Ljava/util/GregorianCalendar;"
+		);
+	}
+	void XMLGregorianCalendar::setHour(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setHour",
+			"(I)V",
+			arg0
+		);
+	}
+	void XMLGregorianCalendar::setMinute(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMinute",
+			"(I)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::javax::xml::datatype

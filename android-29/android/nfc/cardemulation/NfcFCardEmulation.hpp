@@ -32,9 +32,11 @@ namespace __jni_impl::android::nfc::cardemulation
 		static QAndroidJniObject getInstance(__jni_impl::android::nfc::NfcAdapter arg0);
 		jstring getSystemCodeForService(__jni_impl::android::content::ComponentName arg0);
 		jboolean registerSystemCodeForService(__jni_impl::android::content::ComponentName arg0, jstring arg1);
+		jboolean registerSystemCodeForService(__jni_impl::android::content::ComponentName arg0, const QString &arg1);
 		jboolean unregisterSystemCodeForService(__jni_impl::android::content::ComponentName arg0);
 		jstring getNfcid2ForService(__jni_impl::android::content::ComponentName arg0);
 		jboolean setNfcid2ForService(__jni_impl::android::content::ComponentName arg0, jstring arg1);
+		jboolean setNfcid2ForService(__jni_impl::android::content::ComponentName arg0, const QString &arg1);
 		jboolean enableService(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::ComponentName arg1);
 		jboolean disableService(__jni_impl::android::app::Activity arg0);
 	};
@@ -83,6 +85,15 @@ namespace __jni_impl::android::nfc::cardemulation
 			arg1
 		);
 	}
+	jboolean NfcFCardEmulation::registerSystemCodeForService(__jni_impl::android::content::ComponentName arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"registerSystemCodeForService",
+			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	jboolean NfcFCardEmulation::unregisterSystemCodeForService(__jni_impl::android::content::ComponentName arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -106,6 +117,15 @@ namespace __jni_impl::android::nfc::cardemulation
 			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	jboolean NfcFCardEmulation::setNfcid2ForService(__jni_impl::android::content::ComponentName arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setNfcid2ForService",
+			"(Landroid/content/ComponentName;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jboolean NfcFCardEmulation::enableService(__jni_impl::android::app::Activity arg0, __jni_impl::android::content::ComponentName arg1)

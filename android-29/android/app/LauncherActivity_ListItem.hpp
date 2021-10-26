@@ -93,7 +93,8 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.LauncherActivity$ListItem",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

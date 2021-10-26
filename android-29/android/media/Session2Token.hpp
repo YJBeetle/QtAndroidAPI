@@ -41,11 +41,11 @@ namespace __jni_impl::android::media
 		jint hashCode();
 		jstring getPackageName();
 		jint getType();
-		jstring getServiceName();
+		jint getUid();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getExtras();
-		jint getUid();
+		jstring getServiceName();
 	};
 } // namespace __jni_impl::android::media
 
@@ -87,7 +87,8 @@ namespace __jni_impl::android::media
 			"android.media.Session2Token",
 			"(Landroid/content/Context;Landroid/content/ComponentName;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -127,12 +128,12 @@ namespace __jni_impl::android::media
 			"()I"
 		);
 	}
-	jstring Session2Token::getServiceName()
+	jint Session2Token::getUid()
 	{
-		return __thiz.callObjectMethod(
-			"getServiceName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"getUid",
+			"()I"
+		);
 	}
 	jint Session2Token::describeContents()
 	{
@@ -157,12 +158,12 @@ namespace __jni_impl::android::media
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint Session2Token::getUid()
+	jstring Session2Token::getServiceName()
 	{
-		return __thiz.callMethod<jint>(
-			"getUid",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"getServiceName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media
 

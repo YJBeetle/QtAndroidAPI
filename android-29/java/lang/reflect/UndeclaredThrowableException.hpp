@@ -26,6 +26,7 @@ namespace __jni_impl::java::lang::reflect
 		// Constructors
 		void __constructor(jthrowable arg0);
 		void __constructor(jthrowable arg0, jstring arg1);
+		void __constructor(jthrowable arg0, const QString &arg1);
 		
 		// Methods
 		jthrowable getUndeclaredThrowable();
@@ -45,7 +46,8 @@ namespace __jni_impl::java::lang::reflect
 		__thiz = QAndroidJniObject(
 			"java.lang.reflect.UndeclaredThrowableException",
 			"(Ljava/lang/Throwable;)V",
-			arg0);
+			arg0
+		);
 	}
 	void UndeclaredThrowableException::__constructor(jthrowable arg0, jstring arg1)
 	{
@@ -53,7 +55,17 @@ namespace __jni_impl::java::lang::reflect
 			"java.lang.reflect.UndeclaredThrowableException",
 			"(Ljava/lang/Throwable;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void UndeclaredThrowableException::__constructor(jthrowable arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.reflect.UndeclaredThrowableException",
+			"(Ljava/lang/Throwable;Ljava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods

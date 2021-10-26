@@ -38,7 +38,8 @@ namespace __jni_impl::android::system
 		__thiz = QAndroidJniObject(
 			"android.system.Int64Ref",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

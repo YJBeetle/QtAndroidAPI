@@ -207,7 +207,8 @@ namespace __jni_impl::android::graphics
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.BitmapFactory$Options",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

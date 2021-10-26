@@ -9,13 +9,13 @@ namespace __jni_impl::android::os
 {
 	class Parcel;
 }
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 namespace __jni_impl::android::app
 {
 	class RemoteAction;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 
 namespace __jni_impl::android::view::textclassifier
@@ -41,18 +41,18 @@ namespace __jni_impl::android::view::textclassifier
 		
 		// Methods
 		jstring getType();
-		jfloat getConfidenceScore();
-		jstring getTextReply();
+		QAndroidJniObject getAction();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getExtras();
-		QAndroidJniObject getAction();
+		jfloat getConfidenceScore();
+		jstring getTextReply();
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
 #include "../../os/Parcel.hpp"
-#include "../../os/Bundle.hpp"
 #include "../../app/RemoteAction.hpp"
+#include "../../os/Bundle.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {
@@ -162,19 +162,12 @@ namespace __jni_impl::android::view::textclassifier
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jfloat ConversationAction::getConfidenceScore()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getConfidenceScore",
-			"()F"
-		);
-	}
-	jstring ConversationAction::getTextReply()
+	QAndroidJniObject ConversationAction::getAction()
 	{
 		return __thiz.callObjectMethod(
-			"getTextReply",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+			"getAction",
+			"()Landroid/app/RemoteAction;"
+		);
 	}
 	jint ConversationAction::describeContents()
 	{
@@ -199,12 +192,19 @@ namespace __jni_impl::android::view::textclassifier
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject ConversationAction::getAction()
+	jfloat ConversationAction::getConfidenceScore()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getConfidenceScore",
+			"()F"
+		);
+	}
+	jstring ConversationAction::getTextReply()
 	{
 		return __thiz.callObjectMethod(
-			"getAction",
-			"()Landroid/app/RemoteAction;"
-		);
+			"getTextReply",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

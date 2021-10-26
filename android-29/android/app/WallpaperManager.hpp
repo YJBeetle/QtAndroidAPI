@@ -9,6 +9,14 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
+namespace __jni_impl::android::graphics
+{
+	class Bitmap;
+}
+namespace __jni_impl::android::graphics
+{
+	class Rect;
+}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
@@ -41,17 +49,9 @@ namespace __jni_impl::java::io
 {
 	class InputStream;
 }
-namespace __jni_impl::android::graphics
-{
-	class Rect;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
-}
-namespace __jni_impl::android::graphics
-{
-	class Bitmap;
 }
 
 namespace __jni_impl::android::app
@@ -78,10 +78,17 @@ namespace __jni_impl::android::app
 		void clear();
 		void clear(jint arg0);
 		static QAndroidJniObject getInstance(__jni_impl::android::content::Context arg0);
+		jint setBitmap(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2, jint arg3);
+		void setBitmap(__jni_impl::android::graphics::Bitmap arg0);
+		jint setBitmap(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2);
+		jint getDesiredMinimumWidth();
+		jint getDesiredMinimumHeight();
+		QAndroidJniObject getDrawable();
+		void clearWallpaper();
 		QAndroidJniObject getBuiltInDrawable();
-		QAndroidJniObject getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4, jint arg5);
 		QAndroidJniObject getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4);
 		QAndroidJniObject getBuiltInDrawable(jint arg0);
+		QAndroidJniObject getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4, jint arg5);
 		QAndroidJniObject peekDrawable();
 		QAndroidJniObject getFastDrawable();
 		QAndroidJniObject peekFastDrawable();
@@ -93,31 +100,27 @@ namespace __jni_impl::android::app
 		QAndroidJniObject getWallpaperInfo();
 		jint getWallpaperId(jint arg0);
 		QAndroidJniObject getCropAndSetWallpaperIntent(__jni_impl::android::net::Uri arg0);
-		jint setResource(jint arg0, jint arg1);
 		void setResource(jint arg0);
+		jint setResource(jint arg0, jint arg1);
+		jint setStream(__jni_impl::java::io::InputStream arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2, jint arg3);
 		jint setStream(__jni_impl::java::io::InputStream arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2);
 		void setStream(__jni_impl::java::io::InputStream arg0);
-		jint setStream(__jni_impl::java::io::InputStream arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2, jint arg3);
 		jboolean hasResourceWallpaper(jint arg0);
 		void suggestDesiredDimensions(jint arg0, jint arg1);
 		void setDisplayPadding(__jni_impl::android::graphics::Rect arg0);
 		void setWallpaperOffsets(__jni_impl::__JniBaseClass arg0, jfloat arg1, jfloat arg2);
 		void setWallpaperOffsetSteps(jfloat arg0, jfloat arg1);
 		void sendWallpaperCommand(__jni_impl::__JniBaseClass arg0, jstring arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::os::Bundle arg5);
+		void sendWallpaperCommand(__jni_impl::__JniBaseClass arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::os::Bundle arg5);
 		jboolean isWallpaperSupported();
 		jboolean isSetWallpaperAllowed();
 		void clearWallpaperOffsets(__jni_impl::__JniBaseClass arg0);
-		void setBitmap(__jni_impl::android::graphics::Bitmap arg0);
-		jint setBitmap(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2, jint arg3);
-		jint setBitmap(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2);
-		QAndroidJniObject getDrawable();
-		void clearWallpaper();
-		jint getDesiredMinimumWidth();
-		jint getDesiredMinimumHeight();
 	};
 } // namespace __jni_impl::android::app
 
 #include "../content/Context.hpp"
+#include "../graphics/Bitmap.hpp"
+#include "../graphics/Rect.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../os/ParcelFileDescriptor.hpp"
 #include "../os/Handler.hpp"
@@ -126,9 +129,7 @@ namespace __jni_impl::android::app
 #include "../content/Intent.hpp"
 #include "../net/Uri.hpp"
 #include "../../java/io/InputStream.hpp"
-#include "../graphics/Rect.hpp"
 #include "../os/Bundle.hpp"
-#include "../graphics/Bitmap.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -245,24 +246,68 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object()
 		);
 	}
+	jint WallpaperManager::setBitmap(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2, jint arg3)
+	{
+		return __thiz.callMethod<jint>(
+			"setBitmap",
+			"(Landroid/graphics/Bitmap;Landroid/graphics/Rect;ZI)I",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3
+		);
+	}
+	void WallpaperManager::setBitmap(__jni_impl::android::graphics::Bitmap arg0)
+	{
+		__thiz.callMethod<void>(
+			"setBitmap",
+			"(Landroid/graphics/Bitmap;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint WallpaperManager::setBitmap(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"setBitmap",
+			"(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Z)I",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
+	jint WallpaperManager::getDesiredMinimumWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getDesiredMinimumWidth",
+			"()I"
+		);
+	}
+	jint WallpaperManager::getDesiredMinimumHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getDesiredMinimumHeight",
+			"()I"
+		);
+	}
+	QAndroidJniObject WallpaperManager::getDrawable()
+	{
+		return __thiz.callObjectMethod(
+			"getDrawable",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
+	}
+	void WallpaperManager::clearWallpaper()
+	{
+		__thiz.callMethod<void>(
+			"clearWallpaper",
+			"()V"
+		);
+	}
 	QAndroidJniObject WallpaperManager::getBuiltInDrawable()
 	{
 		return __thiz.callObjectMethod(
 			"getBuiltInDrawable",
 			"()Landroid/graphics/drawable/Drawable;"
-		);
-	}
-	QAndroidJniObject WallpaperManager::getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4, jint arg5)
-	{
-		return __thiz.callObjectMethod(
-			"getBuiltInDrawable",
-			"(IIZFFI)Landroid/graphics/drawable/Drawable;",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5
 		);
 	}
 	QAndroidJniObject WallpaperManager::getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4)
@@ -283,6 +328,19 @@ namespace __jni_impl::android::app
 			"getBuiltInDrawable",
 			"(I)Landroid/graphics/drawable/Drawable;",
 			arg0
+		);
+	}
+	QAndroidJniObject WallpaperManager::getBuiltInDrawable(jint arg0, jint arg1, jboolean arg2, jfloat arg3, jfloat arg4, jint arg5)
+	{
+		return __thiz.callObjectMethod(
+			"getBuiltInDrawable",
+			"(IIZFFI)Landroid/graphics/drawable/Drawable;",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5
 		);
 	}
 	QAndroidJniObject WallpaperManager::peekDrawable()
@@ -369,6 +427,14 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object()
 		);
 	}
+	void WallpaperManager::setResource(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setResource",
+			"(I)V",
+			arg0
+		);
+	}
 	jint WallpaperManager::setResource(jint arg0, jint arg1)
 	{
 		return __thiz.callMethod<jint>(
@@ -378,12 +444,15 @@ namespace __jni_impl::android::app
 			arg1
 		);
 	}
-	void WallpaperManager::setResource(jint arg0)
+	jint WallpaperManager::setStream(__jni_impl::java::io::InputStream arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2, jint arg3)
 	{
-		__thiz.callMethod<void>(
-			"setResource",
-			"(I)V",
-			arg0
+		return __thiz.callMethod<jint>(
+			"setStream",
+			"(Ljava/io/InputStream;Landroid/graphics/Rect;ZI)I",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3
 		);
 	}
 	jint WallpaperManager::setStream(__jni_impl::java::io::InputStream arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2)
@@ -402,17 +471,6 @@ namespace __jni_impl::android::app
 			"setStream",
 			"(Ljava/io/InputStream;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	jint WallpaperManager::setStream(__jni_impl::java::io::InputStream arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2, jint arg3)
-	{
-		return __thiz.callMethod<jint>(
-			"setStream",
-			"(Ljava/io/InputStream;Landroid/graphics/Rect;ZI)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3
 		);
 	}
 	jboolean WallpaperManager::hasResourceWallpaper(jint arg0)
@@ -472,6 +530,19 @@ namespace __jni_impl::android::app
 			arg5.__jniObject().object()
 		);
 	}
+	void WallpaperManager::sendWallpaperCommand(__jni_impl::__JniBaseClass arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::os::Bundle arg5)
+	{
+		__thiz.callMethod<void>(
+			"sendWallpaperCommand",
+			"(Landroid/os/IBinder;Ljava/lang/String;IIILandroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3,
+			arg4,
+			arg5.__jniObject().object()
+		);
+	}
 	jboolean WallpaperManager::isWallpaperSupported()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -492,63 +563,6 @@ namespace __jni_impl::android::app
 			"clearWallpaperOffsets",
 			"(Landroid/os/IBinder;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	void WallpaperManager::setBitmap(__jni_impl::android::graphics::Bitmap arg0)
-	{
-		__thiz.callMethod<void>(
-			"setBitmap",
-			"(Landroid/graphics/Bitmap;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jint WallpaperManager::setBitmap(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2, jint arg3)
-	{
-		return __thiz.callMethod<jint>(
-			"setBitmap",
-			"(Landroid/graphics/Bitmap;Landroid/graphics/Rect;ZI)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3
-		);
-	}
-	jint WallpaperManager::setBitmap(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, jboolean arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"setBitmap",
-			"(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Z)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	QAndroidJniObject WallpaperManager::getDrawable()
-	{
-		return __thiz.callObjectMethod(
-			"getDrawable",
-			"()Landroid/graphics/drawable/Drawable;"
-		);
-	}
-	void WallpaperManager::clearWallpaper()
-	{
-		__thiz.callMethod<void>(
-			"clearWallpaper",
-			"()V"
-		);
-	}
-	jint WallpaperManager::getDesiredMinimumWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getDesiredMinimumWidth",
-			"()I"
-		);
-	}
-	jint WallpaperManager::getDesiredMinimumHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getDesiredMinimumHeight",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::app

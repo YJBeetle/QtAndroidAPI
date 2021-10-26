@@ -26,6 +26,7 @@ namespace __jni_impl::android::icu::lang
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::icu::lang
 
@@ -106,6 +107,15 @@ namespace __jni_impl::android::icu::lang
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/lang/UScript$ScriptUsage;",
 			arg0
+		);
+	}
+	QAndroidJniObject UScript_ScriptUsage::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UScript$ScriptUsage",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/lang/UScript$ScriptUsage;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::icu::lang

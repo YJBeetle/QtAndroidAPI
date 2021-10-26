@@ -32,7 +32,8 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.DownloadManager$Query",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

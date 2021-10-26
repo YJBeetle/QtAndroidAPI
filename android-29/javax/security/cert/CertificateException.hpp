@@ -17,6 +17,7 @@ namespace __jni_impl::javax::security::cert
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -32,14 +33,24 @@ namespace __jni_impl::javax::security::cert
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.cert.CertificateException",
-			"()V");
+			"()V"
+		);
 	}
 	void CertificateException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.cert.CertificateException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void CertificateException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.security.cert.CertificateException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

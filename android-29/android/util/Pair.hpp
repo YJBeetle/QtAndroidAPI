@@ -52,7 +52,8 @@ namespace __jni_impl::android::util
 			"android.util.Pair",
 			"(Ljava/lang/Object;Ljava/lang/Object;)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

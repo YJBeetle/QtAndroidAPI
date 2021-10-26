@@ -32,8 +32,10 @@ namespace __jni_impl::android::app
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::android::content::ComponentName arg1, __jni_impl::android::net::Uri arg2, jint arg3, jboolean arg4);
+		void __constructor(const QString &arg0, __jni_impl::android::content::ComponentName arg1, __jni_impl::android::net::Uri arg2, jint arg3, jboolean arg4);
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		void __constructor(jstring arg0, __jni_impl::android::content::ComponentName arg1, __jni_impl::android::content::ComponentName arg2, __jni_impl::android::net::Uri arg3, __jni_impl::android::service::notification::ZenPolicy arg4, jint arg5, jboolean arg6);
+		void __constructor(const QString &arg0, __jni_impl::android::content::ComponentName arg1, __jni_impl::android::content::ComponentName arg2, __jni_impl::android::net::Uri arg3, __jni_impl::android::service::notification::ZenPolicy arg4, jint arg5, jboolean arg6);
 		
 		// Methods
 		jstring getName();
@@ -41,12 +43,10 @@ namespace __jni_impl::android::app
 		jstring toString();
 		jint hashCode();
 		void setName(jstring arg0);
+		void setName(const QString &arg0);
 		QAndroidJniObject getOwner();
 		jlong getCreationTime();
 		jboolean isEnabled();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void setEnabled(jboolean arg0);
 		void setInterruptionFilter(jint arg0);
 		QAndroidJniObject getConfigurationActivity();
 		QAndroidJniObject getConditionId();
@@ -55,6 +55,9 @@ namespace __jni_impl::android::app
 		void setConditionId(__jni_impl::android::net::Uri arg0);
 		void setZenPolicy(__jni_impl::android::service::notification::ZenPolicy arg0);
 		void setConfigurationActivity(__jni_impl::android::content::ComponentName arg0);
+		void setEnabled(jboolean arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -85,14 +88,28 @@ namespace __jni_impl::android::app
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3,
-			arg4);
+			arg4
+		);
+	}
+	void AutomaticZenRule::__constructor(const QString &arg0, __jni_impl::android::content::ComponentName arg1, __jni_impl::android::net::Uri arg2, jint arg3, jboolean arg4)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.AutomaticZenRule",
+			"(Ljava/lang/String;Landroid/content/ComponentName;Landroid/net/Uri;IZ)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3,
+			arg4
+		);
 	}
 	void AutomaticZenRule::__constructor(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.AutomaticZenRule",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void AutomaticZenRule::__constructor(jstring arg0, __jni_impl::android::content::ComponentName arg1, __jni_impl::android::content::ComponentName arg2, __jni_impl::android::net::Uri arg3, __jni_impl::android::service::notification::ZenPolicy arg4, jint arg5, jboolean arg6)
 	{
@@ -105,7 +122,22 @@ namespace __jni_impl::android::app
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5,
-			arg6);
+			arg6
+		);
+	}
+	void AutomaticZenRule::__constructor(const QString &arg0, __jni_impl::android::content::ComponentName arg1, __jni_impl::android::content::ComponentName arg2, __jni_impl::android::net::Uri arg3, __jni_impl::android::service::notification::ZenPolicy arg4, jint arg5, jboolean arg6)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.AutomaticZenRule",
+			"(Ljava/lang/String;Landroid/content/ComponentName;Landroid/content/ComponentName;Landroid/net/Uri;Landroid/service/notification/ZenPolicy;IZ)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object(),
+			arg4.__jniObject().object(),
+			arg5,
+			arg6
+		);
 	}
 	
 	// Methods
@@ -146,6 +178,14 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
+	void AutomaticZenRule::setName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setName",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject AutomaticZenRule::getOwner()
 	{
 		return __thiz.callObjectMethod(
@@ -165,30 +205,6 @@ namespace __jni_impl::android::app
 		return __thiz.callMethod<jboolean>(
 			"isEnabled",
 			"()Z"
-		);
-	}
-	jint AutomaticZenRule::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void AutomaticZenRule::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void AutomaticZenRule::setEnabled(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEnabled",
-			"(Z)V",
-			arg0
 		);
 	}
 	void AutomaticZenRule::setInterruptionFilter(jint arg0)
@@ -249,6 +265,30 @@ namespace __jni_impl::android::app
 			"setConfigurationActivity",
 			"(Landroid/content/ComponentName;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void AutomaticZenRule::setEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	jint AutomaticZenRule::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void AutomaticZenRule::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::app

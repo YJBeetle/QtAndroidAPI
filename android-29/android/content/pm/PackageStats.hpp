@@ -31,6 +31,7 @@ namespace __jni_impl::android::content::pm
 		void __constructor(__jni_impl::android::content::pm::PackageStats arg0);
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -116,21 +117,32 @@ namespace __jni_impl::android::content::pm
 		__thiz = QAndroidJniObject(
 			"android.content.pm.PackageStats",
 			"(Landroid/content/pm/PackageStats;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PackageStats::__constructor(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.PackageStats",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PackageStats::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.PackageStats",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void PackageStats::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.pm.PackageStats",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

@@ -67,7 +67,9 @@ namespace __jni_impl::java::util::logging
 		
 		// Methods
 		jstring getProperty(jstring arg0);
+		jstring getProperty(const QString &arg0);
 		QAndroidJniObject getLogger(jstring arg0);
+		QAndroidJniObject getLogger(const QString &arg0);
 		void checkAccess();
 		void reset();
 		void readConfiguration();
@@ -125,12 +127,28 @@ namespace __jni_impl::java::util::logging
 			arg0
 		).object<jstring>();
 	}
+	jstring LogManager::getProperty(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getProperty",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	QAndroidJniObject LogManager::getLogger(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getLogger",
 			"(Ljava/lang/String;)Ljava/util/logging/Logger;",
 			arg0
+		);
+	}
+	QAndroidJniObject LogManager::getLogger(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getLogger",
+			"(Ljava/lang/String;)Ljava/util/logging/Logger;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void LogManager::checkAccess()

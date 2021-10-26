@@ -50,15 +50,15 @@ namespace __jni_impl::android::telephony
 		QAndroidJniObject getGroupUuid();
 		jint getSubscriptionType();
 		jint getCardId();
+		jint getSubscriptionId();
+		jstring getMccString();
+		jstring getMncString();
 		jstring getCountryIso();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getMcc();
 		jint getMnc();
 		jint getCarrierId();
-		jint getSubscriptionId();
-		jstring getMccString();
-		jstring getMncString();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -202,6 +202,27 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
+	jint SubscriptionInfo::getSubscriptionId()
+	{
+		return __thiz.callMethod<jint>(
+			"getSubscriptionId",
+			"()I"
+		);
+	}
+	jstring SubscriptionInfo::getMccString()
+	{
+		return __thiz.callObjectMethod(
+			"getMccString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring SubscriptionInfo::getMncString()
+	{
+		return __thiz.callObjectMethod(
+			"getMncString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jstring SubscriptionInfo::getCountryIso()
 	{
 		return __thiz.callObjectMethod(
@@ -245,27 +266,6 @@ namespace __jni_impl::android::telephony
 			"getCarrierId",
 			"()I"
 		);
-	}
-	jint SubscriptionInfo::getSubscriptionId()
-	{
-		return __thiz.callMethod<jint>(
-			"getSubscriptionId",
-			"()I"
-		);
-	}
-	jstring SubscriptionInfo::getMccString()
-	{
-		return __thiz.callObjectMethod(
-			"getMccString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring SubscriptionInfo::getMncString()
-	{
-		return __thiz.callObjectMethod(
-			"getMncString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::telephony
 

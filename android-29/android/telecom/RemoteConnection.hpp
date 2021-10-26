@@ -13,10 +13,6 @@ namespace __jni_impl::android::net
 {
 	class Uri;
 }
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 namespace __jni_impl::android::telecom
 {
 	class RemoteConnection_VideoProvider;
@@ -41,6 +37,10 @@ namespace __jni_impl::android::telecom
 {
 	class CallAudioState;
 }
+namespace __jni_impl::android::os
+{
+	class Bundle;
+}
 
 namespace __jni_impl::android::telecom
 {
@@ -57,7 +57,6 @@ namespace __jni_impl::android::telecom
 		QAndroidJniObject getAddress();
 		void answer();
 		void abort();
-		QAndroidJniObject getExtras();
 		jint getConnectionCapabilities();
 		jint getConnectionProperties();
 		QAndroidJniObject getVideoProvider();
@@ -83,18 +82,19 @@ namespace __jni_impl::android::telecom
 		void postDialContinue(jboolean arg0);
 		void pullExternalCall();
 		void setCallAudioState(__jni_impl::android::telecom::CallAudioState arg0);
+		QAndroidJniObject getExtras();
 	};
 } // namespace __jni_impl::android::telecom
 
 #include "DisconnectCause.hpp"
 #include "../net/Uri.hpp"
-#include "../os/Bundle.hpp"
 #include "RemoteConnection_VideoProvider.hpp"
 #include "StatusHints.hpp"
 #include "RemoteConference.hpp"
 #include "RemoteConnection_Callback.hpp"
 #include "../os/Handler.hpp"
 #include "CallAudioState.hpp"
+#include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -135,13 +135,6 @@ namespace __jni_impl::android::telecom
 		__thiz.callMethod<void>(
 			"abort",
 			"()V"
-		);
-	}
-	QAndroidJniObject RemoteConnection::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
 		);
 	}
 	jint RemoteConnection::getConnectionCapabilities()
@@ -324,6 +317,13 @@ namespace __jni_impl::android::telecom
 			"setCallAudioState",
 			"(Landroid/telecom/CallAudioState;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject RemoteConnection::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
 		);
 	}
 } // namespace __jni_impl::android::telecom

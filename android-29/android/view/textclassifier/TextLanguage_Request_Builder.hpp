@@ -23,6 +23,7 @@ namespace __jni_impl::android::view::textclassifier
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		QAndroidJniObject build();
@@ -43,7 +44,16 @@ namespace __jni_impl::android::view::textclassifier
 		__thiz = QAndroidJniObject(
 			"android.view.textclassifier.TextLanguage$Request$Builder",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
+	}
+	void TextLanguage_Request_Builder::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.textclassifier.TextLanguage$Request$Builder",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

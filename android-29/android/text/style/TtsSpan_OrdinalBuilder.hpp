@@ -17,12 +17,14 @@ namespace __jni_impl::android::text::style
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jlong arg0);
 		void __constructor();
 		
 		// Methods
 		QAndroidJniObject setNumber(jlong arg0);
 		QAndroidJniObject setNumber(jstring arg0);
+		QAndroidJniObject setNumber(const QString &arg0);
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -37,20 +39,31 @@ namespace __jni_impl::android::text::style
 		__thiz = QAndroidJniObject(
 			"android.text.style.TtsSpan$OrdinalBuilder",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void TtsSpan_OrdinalBuilder::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.style.TtsSpan$OrdinalBuilder",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void TtsSpan_OrdinalBuilder::__constructor(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TtsSpan$OrdinalBuilder",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	void TtsSpan_OrdinalBuilder::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TtsSpan$OrdinalBuilder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -68,6 +81,14 @@ namespace __jni_impl::android::text::style
 			"setNumber",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$OrdinalBuilder;",
 			arg0
+		);
+	}
+	QAndroidJniObject TtsSpan_OrdinalBuilder::setNumber(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setNumber",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$OrdinalBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::text::style

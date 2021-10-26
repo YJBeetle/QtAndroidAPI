@@ -25,6 +25,7 @@ namespace __jni_impl::java::io
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::java::io::IOException arg1);
+		void __constructor(const QString &arg0, __jni_impl::java::io::IOException arg1);
 		void __constructor(__jni_impl::java::io::IOException arg0);
 		
 		// Methods
@@ -46,14 +47,25 @@ namespace __jni_impl::java::io
 			"java.io.UncheckedIOException",
 			"(Ljava/lang/String;Ljava/io/IOException;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void UncheckedIOException::__constructor(const QString &arg0, __jni_impl::java::io::IOException arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.UncheckedIOException",
+			"(Ljava/lang/String;Ljava/io/IOException;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	void UncheckedIOException::__constructor(__jni_impl::java::io::IOException arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.UncheckedIOException",
 			"(Ljava/io/IOException;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

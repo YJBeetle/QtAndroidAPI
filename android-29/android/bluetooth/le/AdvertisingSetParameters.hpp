@@ -34,8 +34,6 @@ namespace __jni_impl::android::bluetooth::le
 		
 		// Methods
 		jstring toString();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getTxPowerLevel();
 		jboolean isConnectable();
 		jboolean isScannable();
@@ -45,6 +43,8 @@ namespace __jni_impl::android::bluetooth::le
 		jint getPrimaryPhy();
 		jint getSecondaryPhy();
 		jint getInterval();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
@@ -155,22 +155,6 @@ namespace __jni_impl::android::bluetooth::le
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint AdvertisingSetParameters::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void AdvertisingSetParameters::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	jint AdvertisingSetParameters::getTxPowerLevel()
 	{
 		return __thiz.callMethod<jint>(
@@ -232,6 +216,22 @@ namespace __jni_impl::android::bluetooth::le
 		return __thiz.callMethod<jint>(
 			"getInterval",
 			"()I"
+		);
+	}
+	jint AdvertisingSetParameters::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void AdvertisingSetParameters::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::bluetooth::le

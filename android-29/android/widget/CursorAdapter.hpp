@@ -46,21 +46,22 @@ namespace __jni_impl::android::widget
 		QAndroidJniObject getFilter();
 		jobject getItem(jint arg0);
 		QAndroidJniObject getView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2);
-		jboolean hasStableIds();
+		jlong getItemId(jint arg0);
 		QAndroidJniObject runQueryOnBackgroundThread(jstring arg0);
+		QAndroidJniObject runQueryOnBackgroundThread(const QString &arg0);
 		QAndroidJniObject getFilterQueryProvider();
 		void setFilterQueryProvider(__jni_impl::__JniBaseClass arg0);
 		void changeCursor(__jni_impl::__JniBaseClass arg0);
-		jstring convertToString(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getCursor();
-		QAndroidJniObject getDropDownView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2);
-		jlong getItemId(jint arg0);
 		void setDropDownViewTheme(__jni_impl::android::content::res::Resources_Theme arg0);
 		QAndroidJniObject getDropDownViewTheme();
 		QAndroidJniObject newView(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::ViewGroup arg2);
 		QAndroidJniObject newDropDownView(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::ViewGroup arg2);
 		void bindView(__jni_impl::android::view::View arg0, __jni_impl::android::content::Context arg1, __jni_impl::__JniBaseClass arg2);
 		QAndroidJniObject swapCursor(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getDropDownView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2);
+		QAndroidJniObject getCursor();
+		jstring convertToString(__jni_impl::__JniBaseClass arg0);
+		jboolean hasStableIds();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -96,7 +97,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/database/Cursor;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void CursorAdapter::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jboolean arg2)
 	{
@@ -105,7 +107,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/database/Cursor;Z)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void CursorAdapter::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -113,7 +116,8 @@ namespace __jni_impl::android::widget
 			"android.widget.CursorAdapter",
 			"(Landroid/content/Context;Landroid/database/Cursor;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -149,11 +153,12 @@ namespace __jni_impl::android::widget
 			arg2.__jniObject().object()
 		);
 	}
-	jboolean CursorAdapter::hasStableIds()
+	jlong CursorAdapter::getItemId(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"hasStableIds",
-			"()Z"
+		return __thiz.callMethod<jlong>(
+			"getItemId",
+			"(I)J",
+			arg0
 		);
 	}
 	QAndroidJniObject CursorAdapter::runQueryOnBackgroundThread(jstring arg0)
@@ -162,6 +167,14 @@ namespace __jni_impl::android::widget
 			"runQueryOnBackgroundThread",
 			"(Ljava/lang/CharSequence;)Landroid/database/Cursor;",
 			arg0
+		);
+	}
+	QAndroidJniObject CursorAdapter::runQueryOnBackgroundThread(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"runQueryOnBackgroundThread",
+			"(Ljava/lang/CharSequence;)Landroid/database/Cursor;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject CursorAdapter::getFilterQueryProvider()
@@ -185,39 +198,6 @@ namespace __jni_impl::android::widget
 			"changeCursor",
 			"(Landroid/database/Cursor;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	jstring CursorAdapter::convertToString(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"convertToString",
-			"(Landroid/database/Cursor;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
-		).object<jstring>();
-	}
-	QAndroidJniObject CursorAdapter::getCursor()
-	{
-		return __thiz.callObjectMethod(
-			"getCursor",
-			"()Landroid/database/Cursor;"
-		);
-	}
-	QAndroidJniObject CursorAdapter::getDropDownView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2)
-	{
-		return __thiz.callObjectMethod(
-			"getDropDownView",
-			"(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	jlong CursorAdapter::getItemId(jint arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"getItemId",
-			"(I)J",
-			arg0
 		);
 	}
 	void CursorAdapter::setDropDownViewTheme(__jni_impl::android::content::res::Resources_Theme arg0)
@@ -271,6 +251,38 @@ namespace __jni_impl::android::widget
 			"swapCursor",
 			"(Landroid/database/Cursor;)Landroid/database/Cursor;",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject CursorAdapter::getDropDownView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2)
+	{
+		return __thiz.callObjectMethod(
+			"getDropDownView",
+			"(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject CursorAdapter::getCursor()
+	{
+		return __thiz.callObjectMethod(
+			"getCursor",
+			"()Landroid/database/Cursor;"
+		);
+	}
+	jstring CursorAdapter::convertToString(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"convertToString",
+			"(Landroid/database/Cursor;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	jboolean CursorAdapter::hasStableIds()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasStableIds",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::widget

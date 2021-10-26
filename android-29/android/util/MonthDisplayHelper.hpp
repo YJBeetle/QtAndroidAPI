@@ -47,7 +47,8 @@ namespace __jni_impl::android::util
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void MonthDisplayHelper::__constructor(jint arg0, jint arg1)
 	{
@@ -55,7 +56,8 @@ namespace __jni_impl::android::util
 			"android.util.MonthDisplayHelper",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

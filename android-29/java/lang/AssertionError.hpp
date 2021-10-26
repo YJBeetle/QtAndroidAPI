@@ -20,6 +20,7 @@ namespace __jni_impl::java::lang
 		void __constructor(jfloat arg0);
 		void __constructor(jdouble arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
+		void __constructor(const QString &arg0, jthrowable arg1);
 		void __constructor();
 		void __constructor(jobject arg0);
 		void __constructor(jboolean arg0);
@@ -40,28 +41,32 @@ namespace __jni_impl::java::lang
 		__thiz = QAndroidJniObject(
 			"java.lang.AssertionError",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void AssertionError::__constructor(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.AssertionError",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	void AssertionError::__constructor(jfloat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.AssertionError",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	void AssertionError::__constructor(jdouble arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.AssertionError",
 			"(D)V",
-			arg0);
+			arg0
+		);
 	}
 	void AssertionError::__constructor(jstring arg0, jthrowable arg1)
 	{
@@ -69,34 +74,48 @@ namespace __jni_impl::java::lang
 			"java.lang.AssertionError",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void AssertionError::__constructor(const QString &arg0, jthrowable arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.AssertionError",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void AssertionError::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.AssertionError",
-			"()V");
+			"()V"
+		);
 	}
 	void AssertionError::__constructor(jobject arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.AssertionError",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	void AssertionError::__constructor(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.AssertionError",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void AssertionError::__constructor(jchar arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.AssertionError",
 			"(C)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

@@ -15,14 +15,6 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::android::view
 {
-	class MotionEvent;
-}
-namespace __jni_impl::android::view
-{
-	class KeyEvent;
-}
-namespace __jni_impl::android::view
-{
 	class View;
 }
 namespace __jni_impl::android::view::animation
@@ -36,6 +28,14 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::graphics
 {
 	class Rect;
+}
+namespace __jni_impl::android::view
+{
+	class MotionEvent;
+}
+namespace __jni_impl::android::view
+{
+	class KeyEvent;
 }
 
 namespace __jni_impl::android::widget
@@ -52,38 +52,38 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		void setCallbackDuringFling(jboolean arg0);
-		void setAnimationDuration(jint arg0);
-		void setSpacing(jint arg0);
-		void setUnselectedAlpha(jfloat arg0);
-		void onShowPress(__jni_impl::android::view::MotionEvent arg0);
-		void onLongPress(__jni_impl::android::view::MotionEvent arg0);
-		jboolean onFling(__jni_impl::android::view::MotionEvent arg0, __jni_impl::android::view::MotionEvent arg1, jfloat arg2, jfloat arg3);
-		jboolean onDown(__jni_impl::android::view::MotionEvent arg0);
-		jboolean onSingleTapUp(__jni_impl::android::view::MotionEvent arg0);
-		jboolean onScroll(__jni_impl::android::view::MotionEvent arg0, __jni_impl::android::view::MotionEvent arg1, jfloat arg2, jfloat arg3);
-		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
-		void setGravity(jint arg0);
-		jboolean showContextMenuForChild(__jni_impl::android::view::View arg0, jfloat arg1, jfloat arg2);
 		jboolean showContextMenuForChild(__jni_impl::android::view::View arg0);
+		jboolean showContextMenuForChild(__jni_impl::android::view::View arg0, jfloat arg1, jfloat arg2);
 		jstring getAccessibilityClassName();
 		void dispatchSetSelected(jboolean arg0);
 		QAndroidJniObject generateLayoutParams(__jni_impl::__JniBaseClass arg0);
 		jboolean showContextMenu();
 		jboolean showContextMenu(jfloat arg0, jfloat arg1);
+		void setCallbackDuringFling(jboolean arg0);
+		void setAnimationDuration(jint arg0);
+		void setSpacing(jint arg0);
+		void setUnselectedAlpha(jfloat arg0);
+		void onLongPress(__jni_impl::android::view::MotionEvent arg0);
+		jboolean onFling(__jni_impl::android::view::MotionEvent arg0, __jni_impl::android::view::MotionEvent arg1, jfloat arg2, jfloat arg3);
+		jboolean onSingleTapUp(__jni_impl::android::view::MotionEvent arg0);
+		jboolean onScroll(__jni_impl::android::view::MotionEvent arg0, __jni_impl::android::view::MotionEvent arg1, jfloat arg2, jfloat arg3);
+		void onShowPress(__jni_impl::android::view::MotionEvent arg0);
+		jboolean onDown(__jni_impl::android::view::MotionEvent arg0);
+		void setGravity(jint arg0);
+		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "../view/MotionEvent.hpp"
-#include "../view/KeyEvent.hpp"
 #include "../view/View.hpp"
 #include "../view/animation/Transformation.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../graphics/Rect.hpp"
+#include "../view/MotionEvent.hpp"
+#include "../view/KeyEvent.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -98,7 +98,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void Gallery::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -107,7 +108,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void Gallery::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -115,143 +117,25 @@ namespace __jni_impl::android::widget
 			"android.widget.Gallery",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Gallery::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Gallery",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
-	void Gallery::setCallbackDuringFling(jboolean arg0)
+	jboolean Gallery::showContextMenuForChild(__jni_impl::android::view::View arg0)
 	{
-		__thiz.callMethod<void>(
-			"setCallbackDuringFling",
-			"(Z)V",
-			arg0
-		);
-	}
-	void Gallery::setAnimationDuration(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAnimationDuration",
-			"(I)V",
-			arg0
-		);
-	}
-	void Gallery::setSpacing(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSpacing",
-			"(I)V",
-			arg0
-		);
-	}
-	void Gallery::setUnselectedAlpha(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setUnselectedAlpha",
-			"(F)V",
-			arg0
-		);
-	}
-	void Gallery::onShowPress(__jni_impl::android::view::MotionEvent arg0)
-	{
-		__thiz.callMethod<void>(
-			"onShowPress",
-			"(Landroid/view/MotionEvent;)V",
+		return __thiz.callMethod<jboolean>(
+			"showContextMenuForChild",
+			"(Landroid/view/View;)Z",
 			arg0.__jniObject().object()
-		);
-	}
-	void Gallery::onLongPress(__jni_impl::android::view::MotionEvent arg0)
-	{
-		__thiz.callMethod<void>(
-			"onLongPress",
-			"(Landroid/view/MotionEvent;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean Gallery::onFling(__jni_impl::android::view::MotionEvent arg0, __jni_impl::android::view::MotionEvent arg1, jfloat arg2, jfloat arg3)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onFling",
-			"(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3
-		);
-	}
-	jboolean Gallery::onDown(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onDown",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean Gallery::onSingleTapUp(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onSingleTapUp",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean Gallery::onScroll(__jni_impl::android::view::MotionEvent arg0, __jni_impl::android::view::MotionEvent arg1, jfloat arg2, jfloat arg3)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onScroll",
-			"(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3
-		);
-	}
-	jboolean Gallery::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyDown",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean Gallery::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyUp",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean Gallery::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean Gallery::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchKeyEvent",
-			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	void Gallery::setGravity(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGravity",
-			"(I)V",
-			arg0
 		);
 	}
 	jboolean Gallery::showContextMenuForChild(__jni_impl::android::view::View arg0, jfloat arg1, jfloat arg2)
@@ -262,14 +146,6 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
-		);
-	}
-	jboolean Gallery::showContextMenuForChild(__jni_impl::android::view::View arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"showContextMenuForChild",
-			"(Landroid/view/View;)Z",
-			arg0.__jniObject().object()
 		);
 	}
 	jstring Gallery::getAccessibilityClassName()
@@ -309,6 +185,134 @@ namespace __jni_impl::android::widget
 			"(FF)Z",
 			arg0,
 			arg1
+		);
+	}
+	void Gallery::setCallbackDuringFling(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCallbackDuringFling",
+			"(Z)V",
+			arg0
+		);
+	}
+	void Gallery::setAnimationDuration(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAnimationDuration",
+			"(I)V",
+			arg0
+		);
+	}
+	void Gallery::setSpacing(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSpacing",
+			"(I)V",
+			arg0
+		);
+	}
+	void Gallery::setUnselectedAlpha(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setUnselectedAlpha",
+			"(F)V",
+			arg0
+		);
+	}
+	void Gallery::onLongPress(__jni_impl::android::view::MotionEvent arg0)
+	{
+		__thiz.callMethod<void>(
+			"onLongPress",
+			"(Landroid/view/MotionEvent;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean Gallery::onFling(__jni_impl::android::view::MotionEvent arg0, __jni_impl::android::view::MotionEvent arg1, jfloat arg2, jfloat arg3)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onFling",
+			"(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3
+		);
+	}
+	jboolean Gallery::onSingleTapUp(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onSingleTapUp",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean Gallery::onScroll(__jni_impl::android::view::MotionEvent arg0, __jni_impl::android::view::MotionEvent arg1, jfloat arg2, jfloat arg3)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onScroll",
+			"(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3
+		);
+	}
+	void Gallery::onShowPress(__jni_impl::android::view::MotionEvent arg0)
+	{
+		__thiz.callMethod<void>(
+			"onShowPress",
+			"(Landroid/view/MotionEvent;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean Gallery::onDown(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onDown",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	void Gallery::setGravity(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGravity",
+			"(I)V",
+			arg0
+		);
+	}
+	jboolean Gallery::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyDown",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean Gallery::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyUp",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean Gallery::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean Gallery::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchKeyEvent",
+			"(Landroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::widget

@@ -23,6 +23,7 @@ namespace __jni_impl::java::util::stream
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::java::util::stream
 
@@ -79,6 +80,15 @@ namespace __jni_impl::java::util::stream
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/util/stream/Collector$Characteristics;",
 			arg0
+		);
+	}
+	QAndroidJniObject Collector_Characteristics::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.stream.Collector$Characteristics",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/util/stream/Collector$Characteristics;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::util::stream

@@ -18,11 +18,17 @@ namespace __jni_impl::java::sql
 		// Constructors
 		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
+		void __constructor(const QString &arg0, jthrowable arg1);
 		void __constructor(jstring arg0, jstring arg1, jthrowable arg2);
+		void __constructor(const QString &arg0, const QString &arg1, jthrowable arg2);
 		void __constructor(jstring arg0, jstring arg1, jint arg2, jthrowable arg3);
+		void __constructor(const QString &arg0, const QString &arg1, jint arg2, jthrowable arg3);
 		void __constructor(jstring arg0, jstring arg1, jint arg2);
+		void __constructor(const QString &arg0, const QString &arg1, jint arg2);
 		void __constructor(jstring arg0, jstring arg1);
+		void __constructor(const QString &arg0, const QString &arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor();
 		
 		// Methods
@@ -42,7 +48,8 @@ namespace __jni_impl::java::sql
 		__thiz = QAndroidJniObject(
 			"java.sql.SQLWarning",
 			"(Ljava/lang/Throwable;)V",
-			arg0);
+			arg0
+		);
 	}
 	void SQLWarning::__constructor(jstring arg0, jthrowable arg1)
 	{
@@ -50,7 +57,17 @@ namespace __jni_impl::java::sql
 			"java.sql.SQLWarning",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void SQLWarning::__constructor(const QString &arg0, jthrowable arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.SQLWarning",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void SQLWarning::__constructor(jstring arg0, jstring arg1, jthrowable arg2)
 	{
@@ -59,7 +76,18 @@ namespace __jni_impl::java::sql
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void SQLWarning::__constructor(const QString &arg0, const QString &arg1, jthrowable arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.SQLWarning",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
 	}
 	void SQLWarning::__constructor(jstring arg0, jstring arg1, jint arg2, jthrowable arg3)
 	{
@@ -69,7 +97,19 @@ namespace __jni_impl::java::sql
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void SQLWarning::__constructor(const QString &arg0, const QString &arg1, jint arg2, jthrowable arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.SQLWarning",
+			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3
+		);
 	}
 	void SQLWarning::__constructor(jstring arg0, jstring arg1, jint arg2)
 	{
@@ -78,7 +118,18 @@ namespace __jni_impl::java::sql
 			"(Ljava/lang/String;Ljava/lang/String;I)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void SQLWarning::__constructor(const QString &arg0, const QString &arg1, jint arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.SQLWarning",
+			"(Ljava/lang/String;Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
 	}
 	void SQLWarning::__constructor(jstring arg0, jstring arg1)
 	{
@@ -86,20 +137,40 @@ namespace __jni_impl::java::sql
 			"java.sql.SQLWarning",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void SQLWarning::__constructor(const QString &arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.SQLWarning",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void SQLWarning::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.SQLWarning",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void SQLWarning::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.SQLWarning",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void SQLWarning::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.SQLWarning",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

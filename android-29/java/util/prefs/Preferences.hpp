@@ -34,28 +34,42 @@ namespace __jni_impl::java::util::prefs
 		// Methods
 		jstring name();
 		void remove(jstring arg0);
+		void remove(const QString &arg0);
 		QAndroidJniObject parent();
 		jstring get(jstring arg0, jstring arg1);
+		jstring get(const QString &arg0, const QString &arg1);
 		void put(jstring arg0, jstring arg1);
+		void put(const QString &arg0, const QString &arg1);
 		jstring toString();
 		jboolean getBoolean(jstring arg0, jboolean arg1);
+		jboolean getBoolean(const QString &arg0, jboolean arg1);
 		void putBoolean(jstring arg0, jboolean arg1);
+		void putBoolean(const QString &arg0, jboolean arg1);
 		jint getInt(jstring arg0, jint arg1);
+		jint getInt(const QString &arg0, jint arg1);
 		void putInt(jstring arg0, jint arg1);
+		void putInt(const QString &arg0, jint arg1);
 		jlong getLong(jstring arg0, jlong arg1);
+		jlong getLong(const QString &arg0, jlong arg1);
 		void putLong(jstring arg0, jlong arg1);
+		void putLong(const QString &arg0, jlong arg1);
 		jfloat getFloat(jstring arg0, jfloat arg1);
+		jfloat getFloat(const QString &arg0, jfloat arg1);
 		void putFloat(jstring arg0, jfloat arg1);
+		void putFloat(const QString &arg0, jfloat arg1);
 		jdouble getDouble(jstring arg0, jdouble arg1);
+		jdouble getDouble(const QString &arg0, jdouble arg1);
 		void putDouble(jstring arg0, jdouble arg1);
+		void putDouble(const QString &arg0, jdouble arg1);
 		void clear();
 		void flush();
 		jarray keys();
 		void removeNode();
 		QAndroidJniObject node(jstring arg0);
+		QAndroidJniObject node(const QString &arg0);
 		void sync();
 		void putByteArray(jstring arg0, jbyteArray arg1);
-		jbyteArray getByteArray(jstring arg0, jbyteArray arg1);
+		void putByteArray(const QString &arg0, jbyteArray arg1);
 		static QAndroidJniObject userRoot();
 		static QAndroidJniObject systemRoot();
 		static void importPreferences(__jni_impl::java::io::InputStream arg0);
@@ -63,6 +77,7 @@ namespace __jni_impl::java::util::prefs
 		static QAndroidJniObject systemNodeForPackage(jclass arg0);
 		jarray childrenNames();
 		jboolean nodeExists(jstring arg0);
+		jboolean nodeExists(const QString &arg0);
 		jstring absolutePath();
 		jboolean isUserNode();
 		void addPreferenceChangeListener(__jni_impl::__JniBaseClass arg0);
@@ -71,6 +86,8 @@ namespace __jni_impl::java::util::prefs
 		void removeNodeChangeListener(__jni_impl::__JniBaseClass arg0);
 		void exportNode(__jni_impl::java::io::OutputStream arg0);
 		void exportSubtree(__jni_impl::java::io::OutputStream arg0);
+		jbyteArray getByteArray(jstring arg0, jbyteArray arg1);
+		jbyteArray getByteArray(const QString &arg0, jbyteArray arg1);
 	};
 } // namespace __jni_impl::java::util::prefs
 
@@ -127,6 +144,14 @@ namespace __jni_impl::java::util::prefs
 			arg0
 		);
 	}
+	void Preferences::remove(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"remove",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject Preferences::parent()
 	{
 		return __thiz.callObjectMethod(
@@ -143,6 +168,15 @@ namespace __jni_impl::java::util::prefs
 			arg1
 		).object<jstring>();
 	}
+	jstring Preferences::get(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"get",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		).object<jstring>();
+	}
 	void Preferences::put(jstring arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -150,6 +184,15 @@ namespace __jni_impl::java::util::prefs
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1
+		);
+	}
+	void Preferences::put(const QString &arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jstring Preferences::toString()
@@ -168,12 +211,30 @@ namespace __jni_impl::java::util::prefs
 			arg1
 		);
 	}
+	jboolean Preferences::getBoolean(const QString &arg0, jboolean arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getBoolean",
+			"(Ljava/lang/String;Z)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	void Preferences::putBoolean(jstring arg0, jboolean arg1)
 	{
 		__thiz.callMethod<void>(
 			"putBoolean",
 			"(Ljava/lang/String;Z)V",
 			arg0,
+			arg1
+		);
+	}
+	void Preferences::putBoolean(const QString &arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"putBoolean",
+			"(Ljava/lang/String;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -186,12 +247,30 @@ namespace __jni_impl::java::util::prefs
 			arg1
 		);
 	}
+	jint Preferences::getInt(const QString &arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getInt",
+			"(Ljava/lang/String;I)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	void Preferences::putInt(jstring arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
 			"putInt",
 			"(Ljava/lang/String;I)V",
 			arg0,
+			arg1
+		);
+	}
+	void Preferences::putInt(const QString &arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"putInt",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -204,12 +283,30 @@ namespace __jni_impl::java::util::prefs
 			arg1
 		);
 	}
+	jlong Preferences::getLong(const QString &arg0, jlong arg1)
+	{
+		return __thiz.callMethod<jlong>(
+			"getLong",
+			"(Ljava/lang/String;J)J",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	void Preferences::putLong(jstring arg0, jlong arg1)
 	{
 		__thiz.callMethod<void>(
 			"putLong",
 			"(Ljava/lang/String;J)V",
 			arg0,
+			arg1
+		);
+	}
+	void Preferences::putLong(const QString &arg0, jlong arg1)
+	{
+		__thiz.callMethod<void>(
+			"putLong",
+			"(Ljava/lang/String;J)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -222,12 +319,30 @@ namespace __jni_impl::java::util::prefs
 			arg1
 		);
 	}
+	jfloat Preferences::getFloat(const QString &arg0, jfloat arg1)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getFloat",
+			"(Ljava/lang/String;F)F",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	void Preferences::putFloat(jstring arg0, jfloat arg1)
 	{
 		__thiz.callMethod<void>(
 			"putFloat",
 			"(Ljava/lang/String;F)V",
 			arg0,
+			arg1
+		);
+	}
+	void Preferences::putFloat(const QString &arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"putFloat",
+			"(Ljava/lang/String;F)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -240,12 +355,30 @@ namespace __jni_impl::java::util::prefs
 			arg1
 		);
 	}
+	jdouble Preferences::getDouble(const QString &arg0, jdouble arg1)
+	{
+		return __thiz.callMethod<jdouble>(
+			"getDouble",
+			"(Ljava/lang/String;D)D",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	void Preferences::putDouble(jstring arg0, jdouble arg1)
 	{
 		__thiz.callMethod<void>(
 			"putDouble",
 			"(Ljava/lang/String;D)V",
 			arg0,
+			arg1
+		);
+	}
+	void Preferences::putDouble(const QString &arg0, jdouble arg1)
+	{
+		__thiz.callMethod<void>(
+			"putDouble",
+			"(Ljava/lang/String;D)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -285,6 +418,14 @@ namespace __jni_impl::java::util::prefs
 			arg0
 		);
 	}
+	QAndroidJniObject Preferences::node(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"node",
+			"(Ljava/lang/String;)Ljava/util/prefs/Preferences;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void Preferences::sync()
 	{
 		__thiz.callMethod<void>(
@@ -301,14 +442,14 @@ namespace __jni_impl::java::util::prefs
 			arg1
 		);
 	}
-	jbyteArray Preferences::getByteArray(jstring arg0, jbyteArray arg1)
+	void Preferences::putByteArray(const QString &arg0, jbyteArray arg1)
 	{
-		return __thiz.callObjectMethod(
-			"getByteArray",
-			"(Ljava/lang/String;[B)[B",
-			arg0,
+		__thiz.callMethod<void>(
+			"putByteArray",
+			"(Ljava/lang/String;[B)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
-		).object<jbyteArray>();
+		);
 	}
 	QAndroidJniObject Preferences::userRoot()
 	{
@@ -366,6 +507,14 @@ namespace __jni_impl::java::util::prefs
 			"nodeExists",
 			"(Ljava/lang/String;)Z",
 			arg0
+		);
+	}
+	jboolean Preferences::nodeExists(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"nodeExists",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring Preferences::absolutePath()
@@ -429,6 +578,24 @@ namespace __jni_impl::java::util::prefs
 			"(Ljava/io/OutputStream;)V",
 			arg0.__jniObject().object()
 		);
+	}
+	jbyteArray Preferences::getByteArray(jstring arg0, jbyteArray arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getByteArray",
+			"(Ljava/lang/String;[B)[B",
+			arg0,
+			arg1
+		).object<jbyteArray>();
+	}
+	jbyteArray Preferences::getByteArray(const QString &arg0, jbyteArray arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getByteArray",
+			"(Ljava/lang/String;[B)[B",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::java::util::prefs
 

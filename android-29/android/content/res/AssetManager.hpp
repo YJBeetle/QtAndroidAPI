@@ -30,15 +30,23 @@ namespace __jni_impl::android::content::res
 		
 		// Methods
 		jarray list(jstring arg0);
+		jarray list(const QString &arg0);
 		void close();
 		QAndroidJniObject open(jstring arg0, jint arg1);
+		QAndroidJniObject open(const QString &arg0, jint arg1);
 		QAndroidJniObject open(jstring arg0);
-		QAndroidJniObject openXmlResourceParser(jint arg0, jstring arg1);
-		QAndroidJniObject openXmlResourceParser(jstring arg0);
-		QAndroidJniObject openFd(jstring arg0);
-		QAndroidJniObject openNonAssetFd(jint arg0, jstring arg1);
-		QAndroidJniObject openNonAssetFd(jstring arg0);
+		QAndroidJniObject open(const QString &arg0);
 		jarray getLocales();
+		QAndroidJniObject openNonAssetFd(jstring arg0);
+		QAndroidJniObject openNonAssetFd(const QString &arg0);
+		QAndroidJniObject openNonAssetFd(jint arg0, jstring arg1);
+		QAndroidJniObject openNonAssetFd(jint arg0, const QString &arg1);
+		QAndroidJniObject openXmlResourceParser(jint arg0, jstring arg1);
+		QAndroidJniObject openXmlResourceParser(jint arg0, const QString &arg1);
+		QAndroidJniObject openXmlResourceParser(jstring arg0);
+		QAndroidJniObject openXmlResourceParser(const QString &arg0);
+		QAndroidJniObject openFd(jstring arg0);
+		QAndroidJniObject openFd(const QString &arg0);
 	};
 } // namespace __jni_impl::android::content::res
 
@@ -94,6 +102,14 @@ namespace __jni_impl::android::content::res
 			arg0
 		).object<jarray>();
 	}
+	jarray AssetManager::list(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"list",
+			"(Ljava/lang/String;)[Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jarray>();
+	}
 	void AssetManager::close()
 	{
 		__thiz.callMethod<void>(
@@ -110,6 +126,15 @@ namespace __jni_impl::android::content::res
 			arg1
 		);
 	}
+	QAndroidJniObject AssetManager::open(const QString &arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"open",
+			"(Ljava/lang/String;I)Ljava/io/InputStream;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	QAndroidJniObject AssetManager::open(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -118,29 +143,35 @@ namespace __jni_impl::android::content::res
 			arg0
 		);
 	}
-	QAndroidJniObject AssetManager::openXmlResourceParser(jint arg0, jstring arg1)
+	QAndroidJniObject AssetManager::open(const QString &arg0)
 	{
 		return __thiz.callObjectMethod(
-			"openXmlResourceParser",
-			"(ILjava/lang/String;)Landroid/content/res/XmlResourceParser;",
-			arg0,
-			arg1
+			"open",
+			"(Ljava/lang/String;)Ljava/io/InputStream;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	QAndroidJniObject AssetManager::openXmlResourceParser(jstring arg0)
+	jarray AssetManager::getLocales()
 	{
 		return __thiz.callObjectMethod(
-			"openXmlResourceParser",
-			"(Ljava/lang/String;)Landroid/content/res/XmlResourceParser;",
-			arg0
-		);
+			"getLocales",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject AssetManager::openFd(jstring arg0)
+	QAndroidJniObject AssetManager::openNonAssetFd(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
-			"openFd",
+			"openNonAssetFd",
 			"(Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
 			arg0
+		);
+	}
+	QAndroidJniObject AssetManager::openNonAssetFd(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"openNonAssetFd",
+			"(Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject AssetManager::openNonAssetFd(jint arg0, jstring arg1)
@@ -152,20 +183,64 @@ namespace __jni_impl::android::content::res
 			arg1
 		);
 	}
-	QAndroidJniObject AssetManager::openNonAssetFd(jstring arg0)
+	QAndroidJniObject AssetManager::openNonAssetFd(jint arg0, const QString &arg1)
 	{
 		return __thiz.callObjectMethod(
 			"openNonAssetFd",
+			"(ILjava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	QAndroidJniObject AssetManager::openXmlResourceParser(jint arg0, jstring arg1)
+	{
+		return __thiz.callObjectMethod(
+			"openXmlResourceParser",
+			"(ILjava/lang/String;)Landroid/content/res/XmlResourceParser;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject AssetManager::openXmlResourceParser(jint arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"openXmlResourceParser",
+			"(ILjava/lang/String;)Landroid/content/res/XmlResourceParser;",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	QAndroidJniObject AssetManager::openXmlResourceParser(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"openXmlResourceParser",
+			"(Ljava/lang/String;)Landroid/content/res/XmlResourceParser;",
+			arg0
+		);
+	}
+	QAndroidJniObject AssetManager::openXmlResourceParser(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"openXmlResourceParser",
+			"(Ljava/lang/String;)Landroid/content/res/XmlResourceParser;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject AssetManager::openFd(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"openFd",
 			"(Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
 			arg0
 		);
 	}
-	jarray AssetManager::getLocales()
+	QAndroidJniObject AssetManager::openFd(const QString &arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getLocales",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
+			"openFd",
+			"(Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 } // namespace __jni_impl::android::content::res
 

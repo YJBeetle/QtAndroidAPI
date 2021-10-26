@@ -44,7 +44,8 @@ namespace __jni_impl::android::view::animation
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.LayoutAnimationController$AnimationParameters",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

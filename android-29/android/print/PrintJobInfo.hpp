@@ -46,15 +46,18 @@ namespace __jni_impl::android::print
 		jint getState();
 		QAndroidJniObject getAttributes();
 		jlong getCreationTime();
+		jstring getLabel();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jstring getAdvancedStringOption(jstring arg0);
+		jstring getAdvancedStringOption(const QString &arg0);
 		jboolean hasAdvancedOption(jstring arg0);
+		jboolean hasAdvancedOption(const QString &arg0);
 		jint getAdvancedIntOption(jstring arg0);
+		jint getAdvancedIntOption(const QString &arg0);
 		QAndroidJniObject getPrinterId();
 		jint getCopies();
 		jarray getPages();
-		jstring getLabel();
 	};
 } // namespace __jni_impl::android::print
 
@@ -168,6 +171,13 @@ namespace __jni_impl::android::print
 			"()J"
 		);
 	}
+	jstring PrintJobInfo::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jint PrintJobInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -192,6 +202,14 @@ namespace __jni_impl::android::print
 			arg0
 		).object<jstring>();
 	}
+	jstring PrintJobInfo::getAdvancedStringOption(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAdvancedStringOption",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	jboolean PrintJobInfo::hasAdvancedOption(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -200,12 +218,28 @@ namespace __jni_impl::android::print
 			arg0
 		);
 	}
+	jboolean PrintJobInfo::hasAdvancedOption(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasAdvancedOption",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint PrintJobInfo::getAdvancedIntOption(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getAdvancedIntOption",
 			"(Ljava/lang/String;)I",
 			arg0
+		);
+	}
+	jint PrintJobInfo::getAdvancedIntOption(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getAdvancedIntOption",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject PrintJobInfo::getPrinterId()
@@ -228,13 +262,6 @@ namespace __jni_impl::android::print
 			"getPages",
 			"()[Landroid/print/PageRange;"
 		).object<jarray>();
-	}
-	jstring PrintJobInfo::getLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::print
 

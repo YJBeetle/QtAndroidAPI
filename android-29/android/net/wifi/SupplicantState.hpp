@@ -37,9 +37,10 @@ namespace __jni_impl::android::net::wifi
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
-		static jboolean isValidState(__jni_impl::android::net::wifi::SupplicantState arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		static jboolean isValidState(__jni_impl::android::net::wifi::SupplicantState arg0);
 	};
 } // namespace __jni_impl::android::net::wifi
 
@@ -179,13 +180,13 @@ namespace __jni_impl::android::net::wifi
 			arg0
 		);
 	}
-	jboolean SupplicantState::isValidState(__jni_impl::android::net::wifi::SupplicantState arg0)
+	QAndroidJniObject SupplicantState::valueOf(const QString &arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return QAndroidJniObject::callStaticObjectMethod(
 			"android.net.wifi.SupplicantState",
-			"isValidState",
-			"(Landroid/net/wifi/SupplicantState;)Z",
-			arg0.__jniObject().object()
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/net/wifi/SupplicantState;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint SupplicantState::describeContents()
@@ -202,6 +203,15 @@ namespace __jni_impl::android::net::wifi
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	jboolean SupplicantState::isValidState(__jni_impl::android::net::wifi::SupplicantState arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.net.wifi.SupplicantState",
+			"isValidState",
+			"(Landroid/net/wifi/SupplicantState;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::net::wifi

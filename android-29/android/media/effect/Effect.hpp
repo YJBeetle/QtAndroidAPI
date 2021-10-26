@@ -20,8 +20,9 @@ namespace __jni_impl::android::media::effect
 		jstring getName();
 		void apply(jint arg0, jint arg1, jint arg2, jint arg3);
 		void release();
-		void setUpdateListener(__jni_impl::__JniBaseClass arg0);
 		void setParameter(jstring arg0, jobject arg1);
+		void setParameter(const QString &arg0, jobject arg1);
+		void setUpdateListener(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::media::effect
 
@@ -35,7 +36,8 @@ namespace __jni_impl::android::media::effect
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.effect.Effect",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -64,14 +66,6 @@ namespace __jni_impl::android::media::effect
 			"()V"
 		);
 	}
-	void Effect::setUpdateListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setUpdateListener",
-			"(Landroid/media/effect/EffectUpdateListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void Effect::setParameter(jstring arg0, jobject arg1)
 	{
 		__thiz.callMethod<void>(
@@ -79,6 +73,23 @@ namespace __jni_impl::android::media::effect
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
 			arg1
+		);
+	}
+	void Effect::setParameter(const QString &arg0, jobject arg1)
+	{
+		__thiz.callMethod<void>(
+			"setParameter",
+			"(Ljava/lang/String;Ljava/lang/Object;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	void Effect::setUpdateListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setUpdateListener",
+			"(Landroid/media/effect/EffectUpdateListener;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::media::effect

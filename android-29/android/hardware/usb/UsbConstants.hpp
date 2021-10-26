@@ -294,7 +294,8 @@ namespace __jni_impl::android::hardware::usb
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.usb.UsbConstants",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

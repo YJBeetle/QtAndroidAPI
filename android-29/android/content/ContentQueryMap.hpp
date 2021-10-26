@@ -24,13 +24,15 @@ namespace __jni_impl::android::content
 		
 		// Constructors
 		void __constructor(__jni_impl::__JniBaseClass arg0, jstring arg1, jboolean arg2, __jni_impl::android::os::Handler arg3);
+		void __constructor(__jni_impl::__JniBaseClass arg0, const QString &arg1, jboolean arg2, __jni_impl::android::os::Handler arg3);
 		
 		// Methods
 		void close();
-		void requery();
 		QAndroidJniObject getValues(jstring arg0);
+		QAndroidJniObject getValues(const QString &arg0);
 		void setKeepUpdated(jboolean arg0);
 		QAndroidJniObject getRows();
+		void requery();
 	};
 } // namespace __jni_impl::android::content
 
@@ -50,7 +52,19 @@ namespace __jni_impl::android::content
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
+	}
+	void ContentQueryMap::__constructor(__jni_impl::__JniBaseClass arg0, const QString &arg1, jboolean arg2, __jni_impl::android::os::Handler arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.ContentQueryMap",
+			"(Landroid/database/Cursor;Ljava/lang/String;ZLandroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -61,19 +75,20 @@ namespace __jni_impl::android::content
 			"()V"
 		);
 	}
-	void ContentQueryMap::requery()
-	{
-		__thiz.callMethod<void>(
-			"requery",
-			"()V"
-		);
-	}
 	QAndroidJniObject ContentQueryMap::getValues(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getValues",
 			"(Ljava/lang/String;)Landroid/content/ContentValues;",
 			arg0
+		);
+	}
+	QAndroidJniObject ContentQueryMap::getValues(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getValues",
+			"(Ljava/lang/String;)Landroid/content/ContentValues;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void ContentQueryMap::setKeepUpdated(jboolean arg0)
@@ -89,6 +104,13 @@ namespace __jni_impl::android::content
 		return __thiz.callObjectMethod(
 			"getRows",
 			"()Ljava/util/Map;"
+		);
+	}
+	void ContentQueryMap::requery()
+	{
+		__thiz.callMethod<void>(
+			"requery",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::content

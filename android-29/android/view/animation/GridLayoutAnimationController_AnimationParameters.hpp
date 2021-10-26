@@ -59,7 +59,8 @@ namespace __jni_impl::android::view::animation
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.GridLayoutAnimationController$AnimationParameters",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

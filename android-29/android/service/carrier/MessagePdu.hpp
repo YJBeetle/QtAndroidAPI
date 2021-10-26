@@ -48,7 +48,8 @@ namespace __jni_impl::android::service::carrier
 		__thiz = QAndroidJniObject(
 			"android.service.carrier.MessagePdu",
 			"(Ljava/util/List;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

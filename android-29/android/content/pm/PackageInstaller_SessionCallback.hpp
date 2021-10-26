@@ -20,8 +20,8 @@ namespace __jni_impl::android::content::pm
 		void onBadgingChanged(jint arg0);
 		void onCreated(jint arg0);
 		void onActiveChanged(jint arg0, jboolean arg1);
-		void onFinished(jint arg0, jboolean arg1);
 		void onProgressChanged(jint arg0, jfloat arg1);
+		void onFinished(jint arg0, jboolean arg1);
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -35,7 +35,8 @@ namespace __jni_impl::android::content::pm
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.PackageInstaller$SessionCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -64,20 +65,20 @@ namespace __jni_impl::android::content::pm
 			arg1
 		);
 	}
-	void PackageInstaller_SessionCallback::onFinished(jint arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"onFinished",
-			"(IZ)V",
-			arg0,
-			arg1
-		);
-	}
 	void PackageInstaller_SessionCallback::onProgressChanged(jint arg0, jfloat arg1)
 	{
 		__thiz.callMethod<void>(
 			"onProgressChanged",
 			"(IF)V",
+			arg0,
+			arg1
+		);
+	}
+	void PackageInstaller_SessionCallback::onFinished(jint arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"onFinished",
+			"(IZ)V",
 			arg0,
 			arg1
 		);

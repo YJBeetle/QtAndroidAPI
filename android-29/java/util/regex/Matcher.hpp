@@ -30,28 +30,36 @@ namespace __jni_impl::java::util::regex
 		
 		// Methods
 		jstring group(jstring arg0);
+		jstring group(const QString &arg0);
 		jstring group(jint arg0);
 		jstring group();
 		jstring toString();
 		jboolean matches();
 		jstring replaceFirst(jstring arg0);
+		jstring replaceFirst(const QString &arg0);
 		jstring replaceFirst(__jni_impl::__JniBaseClass arg0);
 		jstring replaceAll(__jni_impl::__JniBaseClass arg0);
 		jstring replaceAll(jstring arg0);
+		jstring replaceAll(const QString &arg0);
 		jint end(jstring arg0);
+		jint end(const QString &arg0);
 		jint end();
 		jint end(jint arg0);
 		jint start(jstring arg0);
+		jint start(const QString &arg0);
 		jint start(jint arg0);
 		jint start();
 		QAndroidJniObject reset();
 		QAndroidJniObject reset(jstring arg0);
+		QAndroidJniObject reset(const QString &arg0);
 		jboolean find();
 		jboolean find(jint arg0);
 		QAndroidJniObject region(jint arg0, jint arg1);
 		QAndroidJniObject pattern();
 		QAndroidJniObject appendReplacement(__jni_impl::java::lang::StringBuffer arg0, jstring arg1);
+		QAndroidJniObject appendReplacement(__jni_impl::java::lang::StringBuffer arg0, const QString &arg1);
 		QAndroidJniObject appendReplacement(__jni_impl::java::lang::StringBuilder arg0, jstring arg1);
+		QAndroidJniObject appendReplacement(__jni_impl::java::lang::StringBuilder arg0, const QString &arg1);
 		QAndroidJniObject appendTail(__jni_impl::java::lang::StringBuffer arg0);
 		QAndroidJniObject appendTail(__jni_impl::java::lang::StringBuilder arg0);
 		QAndroidJniObject results();
@@ -64,6 +72,7 @@ namespace __jni_impl::java::util::regex
 		QAndroidJniObject usePattern(__jni_impl::java::util::regex::Pattern arg0);
 		jboolean lookingAt();
 		static jstring quoteReplacement(jstring arg0);
+		static jstring quoteReplacement(const QString &arg0);
 		jboolean hasTransparentBounds();
 		QAndroidJniObject useTransparentBounds(jboolean arg0);
 		jboolean hasAnchoringBounds();
@@ -94,6 +103,14 @@ namespace __jni_impl::java::util::regex
 			"group",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring Matcher::group(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"group",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring Matcher::group(jint arg0)
@@ -133,6 +150,14 @@ namespace __jni_impl::java::util::regex
 			arg0
 		).object<jstring>();
 	}
+	jstring Matcher::replaceFirst(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"replaceFirst",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	jstring Matcher::replaceFirst(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -157,12 +182,28 @@ namespace __jni_impl::java::util::regex
 			arg0
 		).object<jstring>();
 	}
+	jstring Matcher::replaceAll(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"replaceAll",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	jint Matcher::end(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"end",
 			"(Ljava/lang/String;)I",
 			arg0
+		);
+	}
+	jint Matcher::end(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"end",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint Matcher::end()
@@ -186,6 +227,14 @@ namespace __jni_impl::java::util::regex
 			"start",
 			"(Ljava/lang/String;)I",
 			arg0
+		);
+	}
+	jint Matcher::start(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"start",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint Matcher::start(jint arg0)
@@ -216,6 +265,14 @@ namespace __jni_impl::java::util::regex
 			"reset",
 			"(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;",
 			arg0
+		);
+	}
+	QAndroidJniObject Matcher::reset(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"reset",
+			"(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean Matcher::find()
@@ -258,6 +315,15 @@ namespace __jni_impl::java::util::regex
 			arg1
 		);
 	}
+	QAndroidJniObject Matcher::appendReplacement(__jni_impl::java::lang::StringBuffer arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"appendReplacement",
+			"(Ljava/lang/StringBuffer;Ljava/lang/String;)Ljava/util/regex/Matcher;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject Matcher::appendReplacement(__jni_impl::java::lang::StringBuilder arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -265,6 +331,15 @@ namespace __jni_impl::java::util::regex
 			"(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/util/regex/Matcher;",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	QAndroidJniObject Matcher::appendReplacement(__jni_impl::java::lang::StringBuilder arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"appendReplacement",
+			"(Ljava/lang/StringBuilder;Ljava/lang/String;)Ljava/util/regex/Matcher;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject Matcher::appendTail(__jni_impl::java::lang::StringBuffer arg0)
@@ -354,6 +429,15 @@ namespace __jni_impl::java::util::regex
 			"quoteReplacement",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring Matcher::quoteReplacement(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.regex.Matcher",
+			"quoteReplacement",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jboolean Matcher::hasTransparentBounds()

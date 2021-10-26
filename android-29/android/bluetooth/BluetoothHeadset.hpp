@@ -48,6 +48,7 @@ namespace __jni_impl::android::bluetooth
 		jboolean stopVoiceRecognition(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 		jboolean isAudioConnected(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 		jboolean sendVendorSpecificResultCode(__jni_impl::android::bluetooth::BluetoothDevice arg0, jstring arg1, jstring arg2);
+		jboolean sendVendorSpecificResultCode(__jni_impl::android::bluetooth::BluetoothDevice arg0, const QString &arg1, const QString &arg2);
 	};
 } // namespace __jni_impl::android::bluetooth
 
@@ -242,6 +243,16 @@ namespace __jni_impl::android::bluetooth
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
+		);
+	}
+	jboolean BluetoothHeadset::sendVendorSpecificResultCode(__jni_impl::android::bluetooth::BluetoothDevice arg0, const QString &arg1, const QString &arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"sendVendorSpecificResultCode",
+			"(Landroid/bluetooth/BluetoothDevice;Ljava/lang/String;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::bluetooth

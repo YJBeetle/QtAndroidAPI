@@ -42,6 +42,7 @@ namespace __jni_impl::android::content::pm
 		QAndroidJniObject getPinnedShortcuts();
 		jboolean updateShortcuts(__jni_impl::__JniBaseClass arg0);
 		void disableShortcuts(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void disableShortcuts(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 		void disableShortcuts(__jni_impl::__JniBaseClass arg0);
 		void enableShortcuts(__jni_impl::__JniBaseClass arg0);
 		jint getMaxShortcutCountPerActivity();
@@ -49,6 +50,7 @@ namespace __jni_impl::android::content::pm
 		jint getIconMaxWidth();
 		jint getIconMaxHeight();
 		void reportShortcutUsed(jstring arg0);
+		void reportShortcutUsed(const QString &arg0);
 		jboolean isRequestPinShortcutSupported();
 		jboolean requestPinShortcut(__jni_impl::android::content::pm::ShortcutInfo arg0, __jni_impl::android::content::IntentSender arg1);
 		QAndroidJniObject createShortcutResultIntent(__jni_impl::android::content::pm::ShortcutInfo arg0);
@@ -142,6 +144,15 @@ namespace __jni_impl::android::content::pm
 			arg1
 		);
 	}
+	void ShortcutManager::disableShortcuts(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"disableShortcuts",
+			"(Ljava/util/List;Ljava/lang/CharSequence;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void ShortcutManager::disableShortcuts(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -192,6 +203,14 @@ namespace __jni_impl::android::content::pm
 			"reportShortcutUsed",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void ShortcutManager::reportShortcutUsed(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"reportShortcutUsed",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean ShortcutManager::isRequestPinShortcutSupported()

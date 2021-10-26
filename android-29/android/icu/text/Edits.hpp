@@ -46,7 +46,8 @@ namespace __jni_impl::android::icu::text
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.Edits",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

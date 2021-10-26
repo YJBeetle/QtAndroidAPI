@@ -30,7 +30,8 @@ namespace __jni_impl::android::telephony
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.TelephonyScanManager",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

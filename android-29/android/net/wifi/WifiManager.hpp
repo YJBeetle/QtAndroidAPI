@@ -103,6 +103,9 @@ namespace __jni_impl::android::net::wifi
 		void __constructor();
 		
 		// Methods
+		jboolean startScan();
+		jboolean reconnect();
+		jboolean disconnect();
 		QAndroidJniObject getConfiguredNetworks();
 		jint addNetwork(__jni_impl::android::net::wifi::WifiConfiguration arg0);
 		jint updateNetwork(__jni_impl::android::net::wifi::WifiConfiguration arg0);
@@ -111,6 +114,7 @@ namespace __jni_impl::android::net::wifi
 		jint getMaxNumberOfNetworkSuggestionsPerApp();
 		void addOrUpdatePasspointConfiguration(__jni_impl::android::net::wifi::hotspot2::PasspointConfiguration arg0);
 		void removePasspointConfiguration(jstring arg0);
+		void removePasspointConfiguration(const QString &arg0);
 		QAndroidJniObject getPasspointConfigurations();
 		jboolean removeNetwork(jint arg0);
 		jboolean enableNetwork(jint arg0, jboolean arg1);
@@ -136,18 +140,19 @@ namespace __jni_impl::android::net::wifi
 		void startLocalOnlyHotspot(__jni_impl::android::net::wifi::WifiManager_LocalOnlyHotspotCallback arg0, __jni_impl::android::os::Handler arg1);
 		void setTdlsEnabled(__jni_impl::java::net::InetAddress arg0, jboolean arg1);
 		void setTdlsEnabledWithMacAddress(jstring arg0, jboolean arg1);
+		void setTdlsEnabledWithMacAddress(const QString &arg0, jboolean arg1);
 		void startWps(__jni_impl::android::net::wifi::WpsInfo arg0, __jni_impl::android::net::wifi::WifiManager_WpsCallback arg1);
 		void cancelWps(__jni_impl::android::net::wifi::WifiManager_WpsCallback arg0);
-		QAndroidJniObject createWifiLock(jint arg0, jstring arg1);
 		QAndroidJniObject createWifiLock(jstring arg0);
+		QAndroidJniObject createWifiLock(const QString &arg0);
+		QAndroidJniObject createWifiLock(jint arg0, jstring arg1);
+		QAndroidJniObject createWifiLock(jint arg0, const QString &arg1);
 		QAndroidJniObject createMulticastLock(jstring arg0);
+		QAndroidJniObject createMulticastLock(const QString &arg0);
 		jboolean isWpa3SaeSupported();
 		jboolean isWpa3SuiteBSupported();
 		jboolean isEnhancedOpenSupported();
 		jboolean isEasyConnectSupported();
-		jboolean reconnect();
-		jboolean startScan();
-		jboolean disconnect();
 	};
 } // namespace __jni_impl::android::net::wifi
 
@@ -491,6 +496,27 @@ namespace __jni_impl::android::net::wifi
 	}
 	
 	// Methods
+	jboolean WifiManager::startScan()
+	{
+		return __thiz.callMethod<jboolean>(
+			"startScan",
+			"()Z"
+		);
+	}
+	jboolean WifiManager::reconnect()
+	{
+		return __thiz.callMethod<jboolean>(
+			"reconnect",
+			"()Z"
+		);
+	}
+	jboolean WifiManager::disconnect()
+	{
+		return __thiz.callMethod<jboolean>(
+			"disconnect",
+			"()Z"
+		);
+	}
 	QAndroidJniObject WifiManager::getConfiguredNetworks()
 	{
 		return __thiz.callObjectMethod(
@@ -551,6 +577,14 @@ namespace __jni_impl::android::net::wifi
 			"removePasspointConfiguration",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void WifiManager::removePasspointConfiguration(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"removePasspointConfiguration",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject WifiManager::getPasspointConfigurations()
@@ -745,6 +779,15 @@ namespace __jni_impl::android::net::wifi
 			arg1
 		);
 	}
+	void WifiManager::setTdlsEnabledWithMacAddress(const QString &arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setTdlsEnabledWithMacAddress",
+			"(Ljava/lang/String;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	void WifiManager::startWps(__jni_impl::android::net::wifi::WpsInfo arg0, __jni_impl::android::net::wifi::WifiManager_WpsCallback arg1)
 	{
 		__thiz.callMethod<void>(
@@ -762,6 +805,22 @@ namespace __jni_impl::android::net::wifi
 			arg0.__jniObject().object()
 		);
 	}
+	QAndroidJniObject WifiManager::createWifiLock(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"createWifiLock",
+			"(Ljava/lang/String;)Landroid/net/wifi/WifiManager$WifiLock;",
+			arg0
+		);
+	}
+	QAndroidJniObject WifiManager::createWifiLock(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"createWifiLock",
+			"(Ljava/lang/String;)Landroid/net/wifi/WifiManager$WifiLock;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject WifiManager::createWifiLock(jint arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -771,12 +830,13 @@ namespace __jni_impl::android::net::wifi
 			arg1
 		);
 	}
-	QAndroidJniObject WifiManager::createWifiLock(jstring arg0)
+	QAndroidJniObject WifiManager::createWifiLock(jint arg0, const QString &arg1)
 	{
 		return __thiz.callObjectMethod(
 			"createWifiLock",
-			"(Ljava/lang/String;)Landroid/net/wifi/WifiManager$WifiLock;",
-			arg0
+			"(ILjava/lang/String;)Landroid/net/wifi/WifiManager$WifiLock;",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject WifiManager::createMulticastLock(jstring arg0)
@@ -785,6 +845,14 @@ namespace __jni_impl::android::net::wifi
 			"createMulticastLock",
 			"(Ljava/lang/String;)Landroid/net/wifi/WifiManager$MulticastLock;",
 			arg0
+		);
+	}
+	QAndroidJniObject WifiManager::createMulticastLock(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"createMulticastLock",
+			"(Ljava/lang/String;)Landroid/net/wifi/WifiManager$MulticastLock;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean WifiManager::isWpa3SaeSupported()
@@ -812,27 +880,6 @@ namespace __jni_impl::android::net::wifi
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEasyConnectSupported",
-			"()Z"
-		);
-	}
-	jboolean WifiManager::reconnect()
-	{
-		return __thiz.callMethod<jboolean>(
-			"reconnect",
-			"()Z"
-		);
-	}
-	jboolean WifiManager::startScan()
-	{
-		return __thiz.callMethod<jboolean>(
-			"startScan",
-			"()Z"
-		);
-	}
-	jboolean WifiManager::disconnect()
-	{
-		return __thiz.callMethod<jboolean>(
-			"disconnect",
 			"()Z"
 		);
 	}

@@ -31,8 +31,8 @@ namespace __jni_impl::android::graphics
 		// Methods
 		QAndroidJniObject getSize();
 		jboolean isAnimated();
-		jstring getMimeType();
 		QAndroidJniObject getColorSpace();
+		jstring getMimeType();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -67,19 +67,19 @@ namespace __jni_impl::android::graphics
 			"()Z"
 		);
 	}
-	jstring ImageDecoder_ImageInfo::getMimeType()
-	{
-		return __thiz.callObjectMethod(
-			"getMimeType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject ImageDecoder_ImageInfo::getColorSpace()
 	{
 		return __thiz.callObjectMethod(
 			"getColorSpace",
 			"()Landroid/graphics/ColorSpace;"
 		);
+	}
+	jstring ImageDecoder_ImageInfo::getMimeType()
+	{
+		return __thiz.callObjectMethod(
+			"getMimeType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::graphics
 

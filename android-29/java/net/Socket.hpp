@@ -48,12 +48,15 @@ namespace __jni_impl::java::net
 		// Constructors
 		void __constructor(__jni_impl::java::net::InetAddress arg0, jint arg1);
 		void __constructor(jstring arg0, jint arg1, __jni_impl::java::net::InetAddress arg2, jint arg3);
+		void __constructor(const QString &arg0, jint arg1, __jni_impl::java::net::InetAddress arg2, jint arg3);
 		void __constructor(__jni_impl::java::net::InetAddress arg0, jint arg1, __jni_impl::java::net::InetAddress arg2, jint arg3);
 		void __constructor(jstring arg0, jint arg1, jboolean arg2);
+		void __constructor(const QString &arg0, jint arg1, jboolean arg2);
 		void __constructor(__jni_impl::java::net::InetAddress arg0, jint arg1, jboolean arg2);
 		void __constructor();
 		void __constructor(__jni_impl::java::net::Proxy arg0);
 		void __constructor(jstring arg0, jint arg1);
+		void __constructor(const QString &arg0, jint arg1);
 		
 		// Methods
 		jstring toString();
@@ -64,9 +67,7 @@ namespace __jni_impl::java::net
 		QAndroidJniObject getInputStream();
 		QAndroidJniObject getChannel();
 		void bind(__jni_impl::java::net::SocketAddress arg0);
-		jboolean isConnected();
 		jboolean isClosed();
-		QAndroidJniObject getInetAddress();
 		QAndroidJniObject getOutputStream();
 		jboolean isBound();
 		jobject getOption(__jni_impl::__JniBaseClass arg0);
@@ -101,6 +102,8 @@ namespace __jni_impl::java::net
 		jboolean getReuseAddress();
 		static void setSocketImplFactory(__jni_impl::__JniBaseClass arg0);
 		void setPerformancePreferences(jint arg0, jint arg1, jint arg2);
+		QAndroidJniObject getInetAddress();
+		jboolean isConnected();
 	};
 } // namespace __jni_impl::java::net
 
@@ -124,7 +127,8 @@ namespace __jni_impl::java::net
 			"java.net.Socket",
 			"(Ljava/net/InetAddress;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void Socket::__constructor(jstring arg0, jint arg1, __jni_impl::java::net::InetAddress arg2, jint arg3)
 	{
@@ -134,7 +138,19 @@ namespace __jni_impl::java::net
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
+	}
+	void Socket::__constructor(const QString &arg0, jint arg1, __jni_impl::java::net::InetAddress arg2, jint arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.Socket",
+			"(Ljava/lang/String;ILjava/net/InetAddress;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2.__jniObject().object(),
+			arg3
+		);
 	}
 	void Socket::__constructor(__jni_impl::java::net::InetAddress arg0, jint arg1, __jni_impl::java::net::InetAddress arg2, jint arg3)
 	{
@@ -144,7 +160,8 @@ namespace __jni_impl::java::net
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	void Socket::__constructor(jstring arg0, jint arg1, jboolean arg2)
 	{
@@ -153,7 +170,18 @@ namespace __jni_impl::java::net
 			"(Ljava/lang/String;IZ)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void Socket::__constructor(const QString &arg0, jint arg1, jboolean arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.Socket",
+			"(Ljava/lang/String;IZ)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2
+		);
 	}
 	void Socket::__constructor(__jni_impl::java::net::InetAddress arg0, jint arg1, jboolean arg2)
 	{
@@ -162,20 +190,23 @@ namespace __jni_impl::java::net
 			"(Ljava/net/InetAddress;IZ)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Socket::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.Socket",
-			"()V");
+			"()V"
+		);
 	}
 	void Socket::__constructor(__jni_impl::java::net::Proxy arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.Socket",
 			"(Ljava/net/Proxy;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Socket::__constructor(jstring arg0, jint arg1)
 	{
@@ -183,7 +214,17 @@ namespace __jni_impl::java::net
 			"java.net.Socket",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void Socket::__constructor(const QString &arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.Socket",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods
@@ -247,25 +288,11 @@ namespace __jni_impl::java::net
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean Socket::isConnected()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isConnected",
-			"()Z"
-		);
-	}
 	jboolean Socket::isClosed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isClosed",
 			"()Z"
-		);
-	}
-	QAndroidJniObject Socket::getInetAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getInetAddress",
-			"()Ljava/net/InetAddress;"
 		);
 	}
 	QAndroidJniObject Socket::getOutputStream()
@@ -523,6 +550,20 @@ namespace __jni_impl::java::net
 			arg0,
 			arg1,
 			arg2
+		);
+	}
+	QAndroidJniObject Socket::getInetAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getInetAddress",
+			"()Ljava/net/InetAddress;"
+		);
+	}
+	jboolean Socket::isConnected()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isConnected",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::java::net

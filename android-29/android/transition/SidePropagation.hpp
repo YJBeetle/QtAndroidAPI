@@ -31,9 +31,9 @@ namespace __jni_impl::android::transition
 		void __constructor();
 		
 		// Methods
-		void setPropagationSpeed(jfloat arg0);
-		void setSide(jint arg0);
 		jlong getStartDelay(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::Transition arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3);
+		void setSide(jint arg0);
+		void setPropagationSpeed(jfloat arg0);
 	};
 } // namespace __jni_impl::android::transition
 
@@ -50,16 +50,20 @@ namespace __jni_impl::android::transition
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.SidePropagation",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	void SidePropagation::setPropagationSpeed(jfloat arg0)
+	jlong SidePropagation::getStartDelay(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::Transition arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3)
 	{
-		__thiz.callMethod<void>(
-			"setPropagationSpeed",
-			"(F)V",
-			arg0
+		return __thiz.callMethod<jlong>(
+			"getStartDelay",
+			"(Landroid/view/ViewGroup;Landroid/transition/Transition;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)J",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object()
 		);
 	}
 	void SidePropagation::setSide(jint arg0)
@@ -70,15 +74,12 @@ namespace __jni_impl::android::transition
 			arg0
 		);
 	}
-	jlong SidePropagation::getStartDelay(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::Transition arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3)
+	void SidePropagation::setPropagationSpeed(jfloat arg0)
 	{
-		return __thiz.callMethod<jlong>(
-			"getStartDelay",
-			"(Landroid/view/ViewGroup;Landroid/transition/Transition;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)J",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+		__thiz.callMethod<void>(
+			"setPropagationSpeed",
+			"(F)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::transition

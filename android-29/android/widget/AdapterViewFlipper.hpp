@@ -28,11 +28,10 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
+		jstring getAccessibilityClassName();
 		void setAdapter(__jni_impl::__JniBaseClass arg0);
 		void showNext();
 		void showPrevious();
-		void fyiWillBeAdvancedByHostKThx();
-		jstring getAccessibilityClassName();
 		void setFlipInterval(jint arg0);
 		jint getFlipInterval();
 		void startFlipping();
@@ -40,6 +39,7 @@ namespace __jni_impl::android::widget
 		jboolean isFlipping();
 		void setAutoStart(jboolean arg0);
 		jboolean isAutoStart();
+		void fyiWillBeAdvancedByHostKThx();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -58,7 +58,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void AdapterViewFlipper::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -67,7 +68,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void AdapterViewFlipper::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -75,17 +77,26 @@ namespace __jni_impl::android::widget
 			"android.widget.AdapterViewFlipper",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AdapterViewFlipper::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AdapterViewFlipper",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
+	jstring AdapterViewFlipper::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
 	void AdapterViewFlipper::setAdapter(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -107,20 +118,6 @@ namespace __jni_impl::android::widget
 			"showPrevious",
 			"()V"
 		);
-	}
-	void AdapterViewFlipper::fyiWillBeAdvancedByHostKThx()
-	{
-		__thiz.callMethod<void>(
-			"fyiWillBeAdvancedByHostKThx",
-			"()V"
-		);
-	}
-	jstring AdapterViewFlipper::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
 	}
 	void AdapterViewFlipper::setFlipInterval(jint arg0)
 	{
@@ -171,6 +168,13 @@ namespace __jni_impl::android::widget
 		return __thiz.callMethod<jboolean>(
 			"isAutoStart",
 			"()Z"
+		);
+	}
+	void AdapterViewFlipper::fyiWillBeAdvancedByHostKThx()
+	{
+		__thiz.callMethod<void>(
+			"fyiWillBeAdvancedByHostKThx",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::widget

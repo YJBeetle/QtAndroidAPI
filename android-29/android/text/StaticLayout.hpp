@@ -32,8 +32,11 @@ namespace __jni_impl::android::text
 		
 		// Constructors
 		void __constructor(jstring arg0, jint arg1, jint arg2, __jni_impl::android::text::TextPaint arg3, jint arg4, __jni_impl::android::text::Layout_Alignment arg5, jfloat arg6, jfloat arg7, jboolean arg8, __jni_impl::android::text::TextUtils_TruncateAt arg9, jint arg10);
+		void __constructor(const QString &arg0, jint arg1, jint arg2, __jni_impl::android::text::TextPaint arg3, jint arg4, __jni_impl::android::text::Layout_Alignment arg5, jfloat arg6, jfloat arg7, jboolean arg8, __jni_impl::android::text::TextUtils_TruncateAt arg9, jint arg10);
 		void __constructor(jstring arg0, jint arg1, jint arg2, __jni_impl::android::text::TextPaint arg3, jint arg4, __jni_impl::android::text::Layout_Alignment arg5, jfloat arg6, jfloat arg7, jboolean arg8);
+		void __constructor(const QString &arg0, jint arg1, jint arg2, __jni_impl::android::text::TextPaint arg3, jint arg4, __jni_impl::android::text::Layout_Alignment arg5, jfloat arg6, jfloat arg7, jboolean arg8);
 		void __constructor(jstring arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, jboolean arg6);
+		void __constructor(const QString &arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, jboolean arg6);
 		
 		// Methods
 		jint getLineCount();
@@ -77,7 +80,26 @@ namespace __jni_impl::android::text
 			arg7,
 			arg8,
 			arg9.__jniObject().object(),
-			arg10);
+			arg10
+		);
+	}
+	void StaticLayout::__constructor(const QString &arg0, jint arg1, jint arg2, __jni_impl::android::text::TextPaint arg3, jint arg4, __jni_impl::android::text::Layout_Alignment arg5, jfloat arg6, jfloat arg7, jboolean arg8, __jni_impl::android::text::TextUtils_TruncateAt arg9, jint arg10)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.StaticLayout",
+			"(Ljava/lang/CharSequence;IILandroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZLandroid/text/TextUtils$TruncateAt;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2,
+			arg3.__jniObject().object(),
+			arg4,
+			arg5.__jniObject().object(),
+			arg6,
+			arg7,
+			arg8,
+			arg9.__jniObject().object(),
+			arg10
+		);
 	}
 	void StaticLayout::__constructor(jstring arg0, jint arg1, jint arg2, __jni_impl::android::text::TextPaint arg3, jint arg4, __jni_impl::android::text::Layout_Alignment arg5, jfloat arg6, jfloat arg7, jboolean arg8)
 	{
@@ -92,7 +114,24 @@ namespace __jni_impl::android::text
 			arg5.__jniObject().object(),
 			arg6,
 			arg7,
-			arg8);
+			arg8
+		);
+	}
+	void StaticLayout::__constructor(const QString &arg0, jint arg1, jint arg2, __jni_impl::android::text::TextPaint arg3, jint arg4, __jni_impl::android::text::Layout_Alignment arg5, jfloat arg6, jfloat arg7, jboolean arg8)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.StaticLayout",
+			"(Ljava/lang/CharSequence;IILandroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2,
+			arg3.__jniObject().object(),
+			arg4,
+			arg5.__jniObject().object(),
+			arg6,
+			arg7,
+			arg8
+		);
 	}
 	void StaticLayout::__constructor(jstring arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, jboolean arg6)
 	{
@@ -105,7 +144,22 @@ namespace __jni_impl::android::text
 			arg3.__jniObject().object(),
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
+	}
+	void StaticLayout::__constructor(const QString &arg0, __jni_impl::android::text::TextPaint arg1, jint arg2, __jni_impl::android::text::Layout_Alignment arg3, jfloat arg4, jfloat arg5, jboolean arg6)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.StaticLayout",
+			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object(),
+			arg4,
+			arg5,
+			arg6
+		);
 	}
 	
 	// Methods

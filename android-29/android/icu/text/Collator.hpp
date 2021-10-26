@@ -19,11 +19,11 @@ namespace __jni_impl::android::icu::util
 }
 namespace __jni_impl::android::icu::text
 {
-	class CollationKey;
+	class UnicodeSet;
 }
 namespace __jni_impl::android::icu::text
 {
-	class UnicodeSet;
+	class CollationKey;
 }
 
 namespace __jni_impl::android::icu::text
@@ -46,11 +46,13 @@ namespace __jni_impl::android::icu::text
 		
 		// Methods
 		jboolean equals(jstring arg0, jstring arg1);
+		jboolean equals(const QString &arg0, const QString &arg1);
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jobject clone();
 		jint compare(jobject arg0, jobject arg1);
 		jint compare(jstring arg0, jstring arg1);
+		jint compare(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
 		static QAndroidJniObject getInstance(__jni_impl::android::icu::util::ULocale arg0);
 		static QAndroidJniObject getInstance();
@@ -63,7 +65,6 @@ namespace __jni_impl::android::icu::text
 		static jstring getDisplayName(__jni_impl::java::util::Locale arg0);
 		static jstring getDisplayName(__jni_impl::android::icu::util::ULocale arg0);
 		static jarray getKeywords();
-		QAndroidJniObject getCollationKey(jstring arg0);
 		void setStrength(jint arg0);
 		QAndroidJniObject cloneAsThawed();
 		void setDecomposition(jint arg0);
@@ -78,18 +79,24 @@ namespace __jni_impl::android::icu::text
 		QAndroidJniObject getUCAVersion();
 		static jarray getAvailableULocales();
 		static jarray getKeywordValues(jstring arg0);
+		static jarray getKeywordValues(const QString &arg0);
 		static jarray getKeywordValuesForLocale(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2);
-		static QAndroidJniObject getFunctionalEquivalent(jstring arg0, __jni_impl::android::icu::util::ULocale arg1);
+		static jarray getKeywordValuesForLocale(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2);
 		static QAndroidJniObject getFunctionalEquivalent(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jbooleanArray arg2);
+		static QAndroidJniObject getFunctionalEquivalent(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1, jbooleanArray arg2);
+		static QAndroidJniObject getFunctionalEquivalent(jstring arg0, __jni_impl::android::icu::util::ULocale arg1);
+		static QAndroidJniObject getFunctionalEquivalent(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1);
 		static jintArray getEquivalentReorderCodes(jint arg0);
+		QAndroidJniObject getCollationKey(jstring arg0);
+		QAndroidJniObject getCollationKey(const QString &arg0);
 	};
 } // namespace __jni_impl::android::icu::text
 
 #include "../../../java/util/Locale.hpp"
 #include "../util/ULocale.hpp"
 #include "../util/VersionInfo.hpp"
-#include "CollationKey.hpp"
 #include "UnicodeSet.hpp"
+#include "CollationKey.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -169,6 +176,15 @@ namespace __jni_impl::android::icu::text
 			arg1
 		);
 	}
+	jboolean Collator::equals(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/String;Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	jboolean Collator::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -207,6 +223,15 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
 			arg1
+		);
+	}
+	jint Collator::compare(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"compare",
+			"(Ljava/lang/String;Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject Collator::getInstance(__jni_impl::java::util::Locale arg0)
@@ -309,14 +334,6 @@ namespace __jni_impl::android::icu::text
 			"getKeywords",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
-	}
-	QAndroidJniObject Collator::getCollationKey(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getCollationKey",
-			"(Ljava/lang/String;)Landroid/icu/text/CollationKey;",
-			arg0
-		);
 	}
 	void Collator::setStrength(jint arg0)
 	{
@@ -423,6 +440,15 @@ namespace __jni_impl::android::icu::text
 			arg0
 		).object<jarray>();
 	}
+	jarray Collator::getKeywordValues(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Collator",
+			"getKeywordValues",
+			"(Ljava/lang/String;)[Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jarray>();
+	}
 	jarray Collator::getKeywordValuesForLocale(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -434,15 +460,16 @@ namespace __jni_impl::android::icu::text
 			arg2
 		).object<jarray>();
 	}
-	QAndroidJniObject Collator::getFunctionalEquivalent(jstring arg0, __jni_impl::android::icu::util::ULocale arg1)
+	jarray Collator::getKeywordValuesForLocale(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Collator",
-			"getFunctionalEquivalent",
-			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/util/ULocale;",
-			arg0,
-			arg1.__jniObject().object()
-		);
+			"getKeywordValuesForLocale",
+			"(Ljava/lang/String;Landroid/icu/util/ULocale;Z)[Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2
+		).object<jarray>();
 	}
 	QAndroidJniObject Collator::getFunctionalEquivalent(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jbooleanArray arg2)
 	{
@@ -455,6 +482,37 @@ namespace __jni_impl::android::icu::text
 			arg2
 		);
 	}
+	QAndroidJniObject Collator::getFunctionalEquivalent(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1, jbooleanArray arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Collator",
+			"getFunctionalEquivalent",
+			"(Ljava/lang/String;Landroid/icu/util/ULocale;[Z)Landroid/icu/util/ULocale;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
+	QAndroidJniObject Collator::getFunctionalEquivalent(jstring arg0, __jni_impl::android::icu::util::ULocale arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Collator",
+			"getFunctionalEquivalent",
+			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/util/ULocale;",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Collator::getFunctionalEquivalent(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Collator",
+			"getFunctionalEquivalent",
+			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/util/ULocale;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	jintArray Collator::getEquivalentReorderCodes(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -463,6 +521,22 @@ namespace __jni_impl::android::icu::text
 			"(I)[I",
 			arg0
 		).object<jintArray>();
+	}
+	QAndroidJniObject Collator::getCollationKey(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getCollationKey",
+			"(Ljava/lang/String;)Landroid/icu/text/CollationKey;",
+			arg0
+		);
+	}
+	QAndroidJniObject Collator::getCollationKey(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getCollationKey",
+			"(Ljava/lang/String;)Landroid/icu/text/CollationKey;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 } // namespace __jni_impl::android::icu::text
 

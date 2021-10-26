@@ -25,9 +25,9 @@ namespace __jni_impl::android::net::wifi::rtt
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
+		static jint getMaxPeers();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		static jint getMaxPeers();
 	};
 } // namespace __jni_impl::android::net::wifi::rtt
 
@@ -76,6 +76,14 @@ namespace __jni_impl::android::net::wifi::rtt
 			"()I"
 		);
 	}
+	jint RangingRequest::getMaxPeers()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.net.wifi.rtt.RangingRequest",
+			"getMaxPeers",
+			"()I"
+		);
+	}
 	jint RangingRequest::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -90,14 +98,6 @@ namespace __jni_impl::android::net::wifi::rtt
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint RangingRequest::getMaxPeers()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.net.wifi.rtt.RangingRequest",
-			"getMaxPeers",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::net::wifi::rtt

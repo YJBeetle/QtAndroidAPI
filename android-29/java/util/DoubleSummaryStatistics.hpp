@@ -23,9 +23,9 @@ namespace __jni_impl::java::util
 		void combine(__jni_impl::java::util::DoubleSummaryStatistics arg0);
 		jlong getCount();
 		jdouble getMin();
+		jdouble getMax();
 		jdouble getSum();
 		jdouble getAverage();
-		jdouble getMax();
 	};
 } // namespace __jni_impl::java::util
 
@@ -39,7 +39,8 @@ namespace __jni_impl::java::util
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.DoubleSummaryStatistics",
-			"()V");
+			"()V"
+		);
 	}
 	void DoubleSummaryStatistics::__constructor(jlong arg0, jdouble arg1, jdouble arg2, jdouble arg3)
 	{
@@ -49,7 +50,8 @@ namespace __jni_impl::java::util
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	
 	// Methods
@@ -90,6 +92,13 @@ namespace __jni_impl::java::util
 			"()D"
 		);
 	}
+	jdouble DoubleSummaryStatistics::getMax()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getMax",
+			"()D"
+		);
+	}
 	jdouble DoubleSummaryStatistics::getSum()
 	{
 		return __thiz.callMethod<jdouble>(
@@ -101,13 +110,6 @@ namespace __jni_impl::java::util
 	{
 		return __thiz.callMethod<jdouble>(
 			"getAverage",
-			"()D"
-		);
-	}
-	jdouble DoubleSummaryStatistics::getMax()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getMax",
 			"()D"
 		);
 	}

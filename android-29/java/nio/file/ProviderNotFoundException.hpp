@@ -18,6 +18,7 @@ namespace __jni_impl::java::nio::file
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -33,14 +34,24 @@ namespace __jni_impl::java::nio::file
 	{
 		__thiz = QAndroidJniObject(
 			"java.nio.file.ProviderNotFoundException",
-			"()V");
+			"()V"
+		);
 	}
 	void ProviderNotFoundException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.nio.file.ProviderNotFoundException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void ProviderNotFoundException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.nio.file.ProviderNotFoundException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

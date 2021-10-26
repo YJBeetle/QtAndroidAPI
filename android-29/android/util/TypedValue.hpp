@@ -71,6 +71,8 @@ namespace __jni_impl::android::util
 		// Methods
 		jstring toString();
 		jfloat getFloat();
+		jfloat getDimension(__jni_impl::android::util::DisplayMetrics arg0);
+		jfloat getFraction(jfloat arg0, jfloat arg1);
 		void setTo(__jni_impl::android::util::TypedValue arg0);
 		jboolean isColorType();
 		static jfloat complexToFloat(jint arg0);
@@ -82,8 +84,6 @@ namespace __jni_impl::android::util
 		static jfloat complexToFraction(jint arg0, jfloat arg1, jfloat arg2);
 		static jstring coerceToString(jint arg0, jint arg1);
 		jstring coerceToString();
-		jfloat getDimension(__jni_impl::android::util::DisplayMetrics arg0);
-		jfloat getFraction(jfloat arg0, jfloat arg1);
 	};
 } // namespace __jni_impl::android::util
 
@@ -427,7 +427,8 @@ namespace __jni_impl::android::util
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.TypedValue",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -443,6 +444,23 @@ namespace __jni_impl::android::util
 		return __thiz.callMethod<jfloat>(
 			"getFloat",
 			"()F"
+		);
+	}
+	jfloat TypedValue::getDimension(__jni_impl::android::util::DisplayMetrics arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getDimension",
+			"(Landroid/util/DisplayMetrics;)F",
+			arg0.__jniObject().object()
+		);
+	}
+	jfloat TypedValue::getFraction(jfloat arg0, jfloat arg1)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getFraction",
+			"(FF)F",
+			arg0,
+			arg1
 		);
 	}
 	void TypedValue::setTo(__jni_impl::android::util::TypedValue arg0)
@@ -544,23 +562,6 @@ namespace __jni_impl::android::util
 			"coerceToString",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
-	}
-	jfloat TypedValue::getDimension(__jni_impl::android::util::DisplayMetrics arg0)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getDimension",
-			"(Landroid/util/DisplayMetrics;)F",
-			arg0.__jniObject().object()
-		);
-	}
-	jfloat TypedValue::getFraction(jfloat arg0, jfloat arg1)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getFraction",
-			"(FF)F",
-			arg0,
-			arg1
-		);
 	}
 } // namespace __jni_impl::android::util
 

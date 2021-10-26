@@ -196,8 +196,10 @@ namespace __jni_impl::android::graphics
 		void setWordSpacing(jfloat arg0);
 		jstring getFontFeatureSettings();
 		void setFontFeatureSettings(jstring arg0);
+		void setFontFeatureSettings(const QString &arg0);
 		jstring getFontVariationSettings();
 		jboolean setFontVariationSettings(jstring arg0);
+		jboolean setFontVariationSettings(const QString &arg0);
 		jint getStartHyphenEdit();
 		jint getEndHyphenEdit();
 		void setStartHyphenEdit(jint arg0);
@@ -211,30 +213,42 @@ namespace __jni_impl::android::graphics
 		jfloat getFontSpacing();
 		jfloat measureText(jcharArray arg0, jint arg1, jint arg2);
 		jfloat measureText(jstring arg0);
+		jfloat measureText(const QString &arg0);
 		jfloat measureText(jstring arg0, jint arg1, jint arg2);
+		jfloat measureText(const QString &arg0, jint arg1, jint arg2);
 		jint breakText(jstring arg0, jboolean arg1, jfloat arg2, jfloatArray arg3);
+		jint breakText(const QString &arg0, jboolean arg1, jfloat arg2, jfloatArray arg3);
 		jint breakText(jstring arg0, jint arg1, jint arg2, jboolean arg3, jfloat arg4, jfloatArray arg5);
+		jint breakText(const QString &arg0, jint arg1, jint arg2, jboolean arg3, jfloat arg4, jfloatArray arg5);
 		jint breakText(jcharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloatArray arg4);
 		jint getTextWidths(jcharArray arg0, jint arg1, jint arg2, jfloatArray arg3);
 		jint getTextWidths(jstring arg0, jint arg1, jint arg2, jfloatArray arg3);
+		jint getTextWidths(const QString &arg0, jint arg1, jint arg2, jfloatArray arg3);
 		jint getTextWidths(jstring arg0, jfloatArray arg1);
+		jint getTextWidths(const QString &arg0, jfloatArray arg1);
 		jfloat getTextRunAdvances(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloatArray arg6, jint arg7);
 		jint getTextRunCursor(jcharArray arg0, jint arg1, jint arg2, jboolean arg3, jint arg4, jint arg5);
 		jint getTextRunCursor(jstring arg0, jint arg1, jint arg2, jboolean arg3, jint arg4, jint arg5);
+		jint getTextRunCursor(const QString &arg0, jint arg1, jint arg2, jboolean arg3, jint arg4, jint arg5);
 		void getTextPath(jcharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, __jni_impl::android::graphics::Path arg5);
 		void getTextPath(jstring arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, __jni_impl::android::graphics::Path arg5);
+		void getTextPath(const QString &arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, __jni_impl::android::graphics::Path arg5);
 		void getTextBounds(jcharArray arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3);
 		void getTextBounds(jstring arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3);
+		void getTextBounds(const QString &arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3);
 		jboolean hasGlyph(jstring arg0);
+		jboolean hasGlyph(const QString &arg0);
 		jfloat getRunAdvance(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6);
+		jfloat getRunAdvance(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6);
 		jfloat getRunAdvance(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6);
 		jint getOffsetForAdvance(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6);
 		jint getOffsetForAdvance(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6);
+		jint getOffsetForAdvance(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6);
 		jboolean equalsForTextMeasurement(__jni_impl::android::graphics::Paint arg0);
-		void setFlags(jint arg0);
-		jint getColor();
-		jint getAlpha();
 		void setAlpha(jint arg0);
+		jint getAlpha();
+		jint getColor();
+		void setFlags(jint arg0);
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -455,20 +469,23 @@ namespace __jni_impl::android::graphics
 		__thiz = QAndroidJniObject(
 			"android.graphics.Paint",
 			"(Landroid/graphics/Paint;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Paint::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Paint",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Paint::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Paint",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -1094,6 +1111,14 @@ namespace __jni_impl::android::graphics
 			arg0
 		);
 	}
+	void Paint::setFontFeatureSettings(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFontFeatureSettings",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring Paint::getFontVariationSettings()
 	{
 		return __thiz.callObjectMethod(
@@ -1107,6 +1132,14 @@ namespace __jni_impl::android::graphics
 			"setFontVariationSettings",
 			"(Ljava/lang/String;)Z",
 			arg0
+		);
+	}
+	jboolean Paint::setFontVariationSettings(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setFontVariationSettings",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint Paint::getStartHyphenEdit()
@@ -1208,12 +1241,30 @@ namespace __jni_impl::android::graphics
 			arg0
 		);
 	}
+	jfloat Paint::measureText(const QString &arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"measureText",
+			"(Ljava/lang/String;)F",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jfloat Paint::measureText(jstring arg0, jint arg1, jint arg2)
 	{
 		return __thiz.callMethod<jfloat>(
 			"measureText",
 			"(Ljava/lang/String;II)F",
 			arg0,
+			arg1,
+			arg2
+		);
+	}
+	jfloat Paint::measureText(const QString &arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callMethod<jfloat>(
+			"measureText",
+			"(Ljava/lang/String;II)F",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -1229,12 +1280,36 @@ namespace __jni_impl::android::graphics
 			arg3
 		);
 	}
+	jint Paint::breakText(const QString &arg0, jboolean arg1, jfloat arg2, jfloatArray arg3)
+	{
+		return __thiz.callMethod<jint>(
+			"breakText",
+			"(Ljava/lang/String;ZF[F)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
 	jint Paint::breakText(jstring arg0, jint arg1, jint arg2, jboolean arg3, jfloat arg4, jfloatArray arg5)
 	{
 		return __thiz.callMethod<jint>(
 			"breakText",
 			"(Ljava/lang/CharSequence;IIZF[F)I",
 			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5
+		);
+	}
+	jint Paint::breakText(const QString &arg0, jint arg1, jint arg2, jboolean arg3, jfloat arg4, jfloatArray arg5)
+	{
+		return __thiz.callMethod<jint>(
+			"breakText",
+			"(Ljava/lang/CharSequence;IIZF[F)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3,
@@ -1276,12 +1351,32 @@ namespace __jni_impl::android::graphics
 			arg3
 		);
 	}
+	jint Paint::getTextWidths(const QString &arg0, jint arg1, jint arg2, jfloatArray arg3)
+	{
+		return __thiz.callMethod<jint>(
+			"getTextWidths",
+			"(Ljava/lang/CharSequence;II[F)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
 	jint Paint::getTextWidths(jstring arg0, jfloatArray arg1)
 	{
 		return __thiz.callMethod<jint>(
 			"getTextWidths",
 			"(Ljava/lang/String;[F)I",
 			arg0,
+			arg1
+		);
+	}
+	jint Paint::getTextWidths(const QString &arg0, jfloatArray arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getTextWidths",
+			"(Ljava/lang/String;[F)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -1326,6 +1421,19 @@ namespace __jni_impl::android::graphics
 			arg5
 		);
 	}
+	jint Paint::getTextRunCursor(const QString &arg0, jint arg1, jint arg2, jboolean arg3, jint arg4, jint arg5)
+	{
+		return __thiz.callMethod<jint>(
+			"getTextRunCursor",
+			"(Ljava/lang/CharSequence;IIZII)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5
+		);
+	}
 	void Paint::getTextPath(jcharArray arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, __jni_impl::android::graphics::Path arg5)
 	{
 		__thiz.callMethod<void>(
@@ -1345,6 +1453,19 @@ namespace __jni_impl::android::graphics
 			"getTextPath",
 			"(Ljava/lang/String;IIFFLandroid/graphics/Path;)V",
 			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5.__jniObject().object()
+		);
+	}
+	void Paint::getTextPath(const QString &arg0, jint arg1, jint arg2, jfloat arg3, jfloat arg4, __jni_impl::android::graphics::Path arg5)
+	{
+		__thiz.callMethod<void>(
+			"getTextPath",
+			"(Ljava/lang/String;IIFFLandroid/graphics/Path;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3,
@@ -1374,6 +1495,17 @@ namespace __jni_impl::android::graphics
 			arg3.__jniObject().object()
 		);
 	}
+	void Paint::getTextBounds(const QString &arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3)
+	{
+		__thiz.callMethod<void>(
+			"getTextBounds",
+			"(Ljava/lang/CharSequence;IILandroid/graphics/Rect;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2,
+			arg3.__jniObject().object()
+		);
+	}
 	jboolean Paint::hasGlyph(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -1382,12 +1514,34 @@ namespace __jni_impl::android::graphics
 			arg0
 		);
 	}
+	jboolean Paint::hasGlyph(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasGlyph",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jfloat Paint::getRunAdvance(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6)
 	{
 		return __thiz.callMethod<jfloat>(
 			"getRunAdvance",
 			"(Ljava/lang/CharSequence;IIIIZI)F",
 			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6
+		);
+	}
+	jfloat Paint::getRunAdvance(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jint arg6)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getRunAdvance",
+			"(Ljava/lang/CharSequence;IIIIZI)F",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3,
@@ -1438,6 +1592,20 @@ namespace __jni_impl::android::graphics
 			arg6
 		);
 	}
+	jint Paint::getOffsetForAdvance(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, jboolean arg5, jfloat arg6)
+	{
+		return __thiz.callMethod<jint>(
+			"getOffsetForAdvance",
+			"(Ljava/lang/CharSequence;IIIIZF)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6
+		);
+	}
 	jboolean Paint::equalsForTextMeasurement(__jni_impl::android::graphics::Paint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -1446,19 +1614,12 @@ namespace __jni_impl::android::graphics
 			arg0.__jniObject().object()
 		);
 	}
-	void Paint::setFlags(jint arg0)
+	void Paint::setAlpha(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setFlags",
+			"setAlpha",
 			"(I)V",
 			arg0
-		);
-	}
-	jint Paint::getColor()
-	{
-		return __thiz.callMethod<jint>(
-			"getColor",
-			"()I"
 		);
 	}
 	jint Paint::getAlpha()
@@ -1468,10 +1629,17 @@ namespace __jni_impl::android::graphics
 			"()I"
 		);
 	}
-	void Paint::setAlpha(jint arg0)
+	jint Paint::getColor()
+	{
+		return __thiz.callMethod<jint>(
+			"getColor",
+			"()I"
+		);
+	}
+	void Paint::setFlags(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setAlpha",
+			"setFlags",
 			"(I)V",
 			arg0
 		);

@@ -23,10 +23,10 @@ namespace __jni_impl::android::view
 		// Methods
 		void reset(jobject arg0);
 		void reset();
-		void performedLongPress(__jni_impl::android::view::KeyEvent arg0);
-		void handleUpEvent(__jni_impl::android::view::KeyEvent arg0);
 		void startTracking(__jni_impl::android::view::KeyEvent arg0, jobject arg1);
 		jboolean isTracking(__jni_impl::android::view::KeyEvent arg0);
+		void performedLongPress(__jni_impl::android::view::KeyEvent arg0);
+		void handleUpEvent(__jni_impl::android::view::KeyEvent arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -41,7 +41,8 @@ namespace __jni_impl::android::view
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.KeyEvent$DispatcherState",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -60,22 +61,6 @@ namespace __jni_impl::android::view
 			"()V"
 		);
 	}
-	void KeyEvent_DispatcherState::performedLongPress(__jni_impl::android::view::KeyEvent arg0)
-	{
-		__thiz.callMethod<void>(
-			"performedLongPress",
-			"(Landroid/view/KeyEvent;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void KeyEvent_DispatcherState::handleUpEvent(__jni_impl::android::view::KeyEvent arg0)
-	{
-		__thiz.callMethod<void>(
-			"handleUpEvent",
-			"(Landroid/view/KeyEvent;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void KeyEvent_DispatcherState::startTracking(__jni_impl::android::view::KeyEvent arg0, jobject arg1)
 	{
 		__thiz.callMethod<void>(
@@ -90,6 +75,22 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jboolean>(
 			"isTracking",
 			"(Landroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	void KeyEvent_DispatcherState::performedLongPress(__jni_impl::android::view::KeyEvent arg0)
+	{
+		__thiz.callMethod<void>(
+			"performedLongPress",
+			"(Landroid/view/KeyEvent;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void KeyEvent_DispatcherState::handleUpEvent(__jni_impl::android::view::KeyEvent arg0)
+	{
+		__thiz.callMethod<void>(
+			"handleUpEvent",
+			"(Landroid/view/KeyEvent;)V",
 			arg0.__jniObject().object()
 		);
 	}

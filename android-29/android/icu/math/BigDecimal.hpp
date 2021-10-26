@@ -43,6 +43,7 @@ namespace __jni_impl::android::icu::math
 		void __constructor(jint arg0);
 		void __constructor(jlong arg0);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(__jni_impl::java::math::BigDecimal arg0);
 		void __constructor(__jni_impl::java::math::BigInteger arg0);
 		void __constructor(__jni_impl::java::math::BigInteger arg0, jint arg1);
@@ -204,49 +205,64 @@ namespace __jni_impl::android::icu::math
 			"([CII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void BigDecimal::__constructor(jdouble arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.math.BigDecimal",
 			"(D)V",
-			arg0);
+			arg0
+		);
 	}
 	void BigDecimal::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.math.BigDecimal",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void BigDecimal::__constructor(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.math.BigDecimal",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	void BigDecimal::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.math.BigDecimal",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void BigDecimal::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.math.BigDecimal",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void BigDecimal::__constructor(__jni_impl::java::math::BigDecimal arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.math.BigDecimal",
 			"(Ljava/math/BigDecimal;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void BigDecimal::__constructor(__jni_impl::java::math::BigInteger arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.math.BigDecimal",
 			"(Ljava/math/BigInteger;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void BigDecimal::__constructor(__jni_impl::java::math::BigInteger arg0, jint arg1)
 	{
@@ -254,14 +270,16 @@ namespace __jni_impl::android::icu::math
 			"android.icu.math.BigDecimal",
 			"(Ljava/math/BigInteger;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void BigDecimal::__constructor(jcharArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.math.BigDecimal",
 			"([C)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

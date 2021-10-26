@@ -18,6 +18,7 @@ namespace __jni_impl::android::view
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -33,14 +34,24 @@ namespace __jni_impl::android::view
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.WindowManager$BadTokenException",
-			"()V");
+			"()V"
+		);
 	}
 	void WindowManager_BadTokenException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.WindowManager$BadTokenException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void WindowManager_BadTokenException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.WindowManager$BadTokenException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

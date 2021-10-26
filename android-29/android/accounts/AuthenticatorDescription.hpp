@@ -27,7 +27,9 @@ namespace __jni_impl::android::accounts
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jboolean arg6);
+		void __constructor(const QString &arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5, jboolean arg6);
 		void __constructor(jstring arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5);
+		void __constructor(const QString &arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -36,6 +38,7 @@ namespace __jni_impl::android::accounts
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		static QAndroidJniObject newKey(jstring arg0);
+		static QAndroidJniObject newKey(const QString &arg0);
 	};
 } // namespace __jni_impl::android::accounts
 
@@ -109,7 +112,22 @@ namespace __jni_impl::android::accounts
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
+	}
+	void AuthenticatorDescription::__constructor(const QString &arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5, jboolean arg6)
+	{
+		__thiz = QAndroidJniObject(
+			"android.accounts.AuthenticatorDescription",
+			"(Ljava/lang/String;Ljava/lang/String;IIIIZ)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6
+		);
 	}
 	void AuthenticatorDescription::__constructor(jstring arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
@@ -121,7 +139,21 @@ namespace __jni_impl::android::accounts
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
+	}
+	void AuthenticatorDescription::__constructor(const QString &arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	{
+		__thiz = QAndroidJniObject(
+			"android.accounts.AuthenticatorDescription",
+			"(Ljava/lang/String;Ljava/lang/String;IIII)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3,
+			arg4,
+			arg5
+		);
 	}
 	
 	// Methods
@@ -170,6 +202,15 @@ namespace __jni_impl::android::accounts
 			"newKey",
 			"(Ljava/lang/String;)Landroid/accounts/AuthenticatorDescription;",
 			arg0
+		);
+	}
+	QAndroidJniObject AuthenticatorDescription::newKey(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.accounts.AuthenticatorDescription",
+			"newKey",
+			"(Ljava/lang/String;)Landroid/accounts/AuthenticatorDescription;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::accounts

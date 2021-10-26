@@ -32,16 +32,17 @@ namespace __jni_impl::android::service::chooser
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::android::graphics::drawable::Icon arg1, jfloat arg2, __jni_impl::android::content::ComponentName arg3, __jni_impl::android::os::Bundle arg4);
+		void __constructor(const QString &arg0, __jni_impl::android::graphics::drawable::Icon arg1, jfloat arg2, __jni_impl::android::content::ComponentName arg3, __jni_impl::android::os::Bundle arg4);
 		
 		// Methods
 		jstring toString();
+		QAndroidJniObject getIcon();
 		jfloat getScore();
 		QAndroidJniObject getIntentExtras();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getComponentName();
 		jstring getTitle();
-		QAndroidJniObject getIcon();
 	};
 } // namespace __jni_impl::android::service::chooser
 
@@ -72,7 +73,20 @@ namespace __jni_impl::android::service::chooser
 			arg1.__jniObject().object(),
 			arg2,
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
+	}
+	void ChooserTarget::__constructor(const QString &arg0, __jni_impl::android::graphics::drawable::Icon arg1, jfloat arg2, __jni_impl::android::content::ComponentName arg3, __jni_impl::android::os::Bundle arg4)
+	{
+		__thiz = QAndroidJniObject(
+			"android.service.chooser.ChooserTarget",
+			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Icon;FLandroid/content/ComponentName;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object(),
+			arg4.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -82,6 +96,13 @@ namespace __jni_impl::android::service::chooser
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	QAndroidJniObject ChooserTarget::getIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Icon;"
+		);
 	}
 	jfloat ChooserTarget::getScore()
 	{
@@ -126,13 +147,6 @@ namespace __jni_impl::android::service::chooser
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
-	}
-	QAndroidJniObject ChooserTarget::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Icon;"
-		);
 	}
 } // namespace __jni_impl::android::service::chooser
 

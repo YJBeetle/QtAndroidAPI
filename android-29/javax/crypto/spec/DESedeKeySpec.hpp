@@ -42,7 +42,8 @@ namespace __jni_impl::javax::crypto::spec
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.DESedeKeySpec",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	void DESedeKeySpec::__constructor(jbyteArray arg0, jint arg1)
 	{
@@ -50,7 +51,8 @@ namespace __jni_impl::javax::crypto::spec
 			"javax.crypto.spec.DESedeKeySpec",
 			"([BI)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

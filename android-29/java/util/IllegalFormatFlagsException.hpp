@@ -19,6 +19,7 @@ namespace __jni_impl::java::util
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jstring getMessage();
@@ -37,7 +38,16 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.IllegalFormatFlagsException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void IllegalFormatFlagsException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.IllegalFormatFlagsException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

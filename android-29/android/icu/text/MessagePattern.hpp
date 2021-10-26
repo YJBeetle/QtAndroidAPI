@@ -30,6 +30,7 @@ namespace __jni_impl::android::icu::text
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(__jni_impl::android::icu::text::MessagePattern_ApostropheMode arg0);
 		void __constructor();
 		
@@ -43,15 +44,21 @@ namespace __jni_impl::android::icu::text
 		QAndroidJniObject freeze();
 		jdouble getNumericValue(__jni_impl::android::icu::text::MessagePattern_Part arg0);
 		QAndroidJniObject parse(jstring arg0);
+		QAndroidJniObject parse(const QString &arg0);
+		QAndroidJniObject cloneAsThawed();
 		QAndroidJniObject parseChoiceStyle(jstring arg0);
+		QAndroidJniObject parseChoiceStyle(const QString &arg0);
 		QAndroidJniObject parsePluralStyle(jstring arg0);
+		QAndroidJniObject parsePluralStyle(const QString &arg0);
 		QAndroidJniObject parseSelectStyle(jstring arg0);
+		QAndroidJniObject parseSelectStyle(const QString &arg0);
 		void clearPatternAndSetApostropheMode(__jni_impl::android::icu::text::MessagePattern_ApostropheMode arg0);
 		QAndroidJniObject getApostropheMode();
 		jstring getPatternString();
 		jboolean hasNamedArguments();
 		jboolean hasNumberedArguments();
 		static jint validateArgumentName(jstring arg0);
+		static jint validateArgumentName(const QString &arg0);
 		jstring autoQuoteApostropheDeep();
 		jint countParts();
 		QAndroidJniObject getPart(jint arg0);
@@ -59,9 +66,9 @@ namespace __jni_impl::android::icu::text
 		jint getPatternIndex(jint arg0);
 		jstring getSubstring(__jni_impl::android::icu::text::MessagePattern_Part arg0);
 		jboolean partSubstringMatches(__jni_impl::android::icu::text::MessagePattern_Part arg0, jstring arg1);
+		jboolean partSubstringMatches(__jni_impl::android::icu::text::MessagePattern_Part arg0, const QString &arg1);
 		jdouble getPluralOffset(jint arg0);
 		jint getLimitPartIndex(jint arg0);
-		QAndroidJniObject cloneAsThawed();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -100,20 +107,31 @@ namespace __jni_impl::android::icu::text
 		__thiz = QAndroidJniObject(
 			"android.icu.text.MessagePattern",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void MessagePattern::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.text.MessagePattern",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void MessagePattern::__constructor(__jni_impl::android::icu::text::MessagePattern_ApostropheMode arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.MessagePattern",
 			"(Landroid/icu/text/MessagePattern$ApostropheMode;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void MessagePattern::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.MessagePattern",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -183,12 +201,35 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
+	QAndroidJniObject MessagePattern::parse(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"parse",
+			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject MessagePattern::cloneAsThawed()
+	{
+		return __thiz.callObjectMethod(
+			"cloneAsThawed",
+			"()Landroid/icu/text/MessagePattern;"
+		);
+	}
 	QAndroidJniObject MessagePattern::parseChoiceStyle(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"parseChoiceStyle",
 			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
 			arg0
+		);
+	}
+	QAndroidJniObject MessagePattern::parseChoiceStyle(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"parseChoiceStyle",
+			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject MessagePattern::parsePluralStyle(jstring arg0)
@@ -199,12 +240,28 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
+	QAndroidJniObject MessagePattern::parsePluralStyle(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"parsePluralStyle",
+			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject MessagePattern::parseSelectStyle(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"parseSelectStyle",
 			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
 			arg0
+		);
+	}
+	QAndroidJniObject MessagePattern::parseSelectStyle(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"parseSelectStyle",
+			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void MessagePattern::clearPatternAndSetApostropheMode(__jni_impl::android::icu::text::MessagePattern_ApostropheMode arg0)
@@ -250,6 +307,15 @@ namespace __jni_impl::android::icu::text
 			"validateArgumentName",
 			"(Ljava/lang/String;)I",
 			arg0
+		);
+	}
+	jint MessagePattern::validateArgumentName(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.icu.text.MessagePattern",
+			"validateArgumentName",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring MessagePattern::autoQuoteApostropheDeep()
@@ -307,6 +373,15 @@ namespace __jni_impl::android::icu::text
 			arg1
 		);
 	}
+	jboolean MessagePattern::partSubstringMatches(__jni_impl::android::icu::text::MessagePattern_Part arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"partSubstringMatches",
+			"(Landroid/icu/text/MessagePattern$Part;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	jdouble MessagePattern::getPluralOffset(jint arg0)
 	{
 		return __thiz.callMethod<jdouble>(
@@ -321,13 +396,6 @@ namespace __jni_impl::android::icu::text
 			"getLimitPartIndex",
 			"(I)I",
 			arg0
-		);
-	}
-	QAndroidJniObject MessagePattern::cloneAsThawed()
-	{
-		return __thiz.callObjectMethod(
-			"cloneAsThawed",
-			"()Landroid/icu/text/MessagePattern;"
 		);
 	}
 } // namespace __jni_impl::android::icu::text

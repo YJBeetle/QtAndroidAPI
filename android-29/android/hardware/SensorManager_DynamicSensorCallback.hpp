@@ -37,7 +37,8 @@ namespace __jni_impl::android::hardware
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.SensorManager$DynamicSensorCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

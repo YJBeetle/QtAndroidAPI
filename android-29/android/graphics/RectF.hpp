@@ -48,24 +48,24 @@ namespace __jni_impl::android::graphics
 		void round(__jni_impl::android::graphics::Rect arg0);
 		void sort();
 		jfloat width();
-		void _union(jfloat arg0, jfloat arg1);
 		void _union(__jni_impl::android::graphics::RectF arg0);
 		void _union(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
+		void _union(jfloat arg0, jfloat arg1);
+		void roundOut(__jni_impl::android::graphics::Rect arg0);
 		jfloat centerX();
 		jfloat centerY();
 		void setEmpty();
 		void offsetTo(jfloat arg0, jfloat arg1);
 		void inset(jfloat arg0, jfloat arg1);
 		jboolean setIntersect(__jni_impl::android::graphics::RectF arg0, __jni_impl::android::graphics::RectF arg1);
-		jboolean intersects(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		static jboolean intersects(__jni_impl::android::graphics::RectF arg0, __jni_impl::android::graphics::RectF arg1);
-		void roundOut(__jni_impl::android::graphics::Rect arg0);
-		jboolean intersect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		jboolean intersect(__jni_impl::android::graphics::RectF arg0);
+		jboolean intersects(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		jfloat height();
+		jboolean intersect(__jni_impl::android::graphics::RectF arg0);
+		jboolean intersect(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -114,14 +114,16 @@ namespace __jni_impl::android::graphics
 		__thiz = QAndroidJniObject(
 			"android.graphics.RectF",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void RectF::__constructor(__jni_impl::android::graphics::RectF arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.RectF",
 			"(Landroid/graphics/RectF;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void RectF::__constructor(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
@@ -131,13 +133,15 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void RectF::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.RectF",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -263,15 +267,6 @@ namespace __jni_impl::android::graphics
 			"()F"
 		);
 	}
-	void RectF::_union(jfloat arg0, jfloat arg1)
-	{
-		__thiz.callMethod<void>(
-			"union",
-			"(FF)V",
-			arg0,
-			arg1
-		);
-	}
 	void RectF::_union(__jni_impl::android::graphics::RectF arg0)
 	{
 		__thiz.callMethod<void>(
@@ -291,27 +286,20 @@ namespace __jni_impl::android::graphics
 			arg3
 		);
 	}
-	jint RectF::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void RectF::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	void RectF::_union(jfloat arg0, jfloat arg1)
 	{
 		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+			"union",
+			"(FF)V",
+			arg0,
 			arg1
 		);
 	}
-	void RectF::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	void RectF::roundOut(__jni_impl::android::graphics::Rect arg0)
 	{
 		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
+			"roundOut",
+			"(Landroid/graphics/Rect;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -363,6 +351,16 @@ namespace __jni_impl::android::graphics
 			arg1.__jniObject().object()
 		);
 	}
+	jboolean RectF::intersects(__jni_impl::android::graphics::RectF arg0, __jni_impl::android::graphics::RectF arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.graphics.RectF",
+			"intersects",
+			"(Landroid/graphics/RectF;Landroid/graphics/RectF;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
 	jboolean RectF::intersects(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -374,21 +372,18 @@ namespace __jni_impl::android::graphics
 			arg3
 		);
 	}
-	jboolean RectF::intersects(__jni_impl::android::graphics::RectF arg0, __jni_impl::android::graphics::RectF arg1)
+	jfloat RectF::height()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.graphics.RectF",
-			"intersects",
-			"(Landroid/graphics/RectF;Landroid/graphics/RectF;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+		return __thiz.callMethod<jfloat>(
+			"height",
+			"()F"
 		);
 	}
-	void RectF::roundOut(__jni_impl::android::graphics::Rect arg0)
+	jboolean RectF::intersect(__jni_impl::android::graphics::RectF arg0)
 	{
-		__thiz.callMethod<void>(
-			"roundOut",
-			"(Landroid/graphics/Rect;)V",
+		return __thiz.callMethod<jboolean>(
+			"intersect",
+			"(Landroid/graphics/RectF;)Z",
 			arg0.__jniObject().object()
 		);
 	}
@@ -403,19 +398,28 @@ namespace __jni_impl::android::graphics
 			arg3
 		);
 	}
-	jboolean RectF::intersect(__jni_impl::android::graphics::RectF arg0)
+	void RectF::readFromParcel(__jni_impl::android::os::Parcel arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"intersect",
-			"(Landroid/graphics/RectF;)Z",
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	jfloat RectF::height()
+	jint RectF::describeContents()
 	{
-		return __thiz.callMethod<jfloat>(
-			"height",
-			"()F"
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void RectF::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::graphics

@@ -47,14 +47,16 @@ namespace __jni_impl::android::graphics::text
 		__thiz = QAndroidJniObject(
 			"android.graphics.text.MeasuredText$Builder",
 			"([C)V",
-			arg0);
+			arg0
+		);
 	}
 	void MeasuredText_Builder::__constructor(__jni_impl::android::graphics::text::MeasuredText arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.text.MeasuredText$Builder",
 			"(Landroid/graphics/text/MeasuredText;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

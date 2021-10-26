@@ -19,15 +19,15 @@ namespace __jni_impl::java::net
 }
 namespace __jni_impl::java::net
 {
+	class DatagramPacket;
+}
+namespace __jni_impl::java::net
+{
 	class SocketAddress;
 }
 namespace __jni_impl::java::net
 {
 	class NetworkInterface;
-}
-namespace __jni_impl::java::net
-{
-	class DatagramPacket;
 }
 
 namespace __jni_impl::java::net
@@ -47,9 +47,9 @@ namespace __jni_impl::java::net
 #include "../io/FileDescriptor.hpp"
 #include "DatagramSocket.hpp"
 #include "InetAddress.hpp"
+#include "DatagramPacket.hpp"
 #include "SocketAddress.hpp"
 #include "NetworkInterface.hpp"
-#include "DatagramPacket.hpp"
 
 namespace __jni_impl::java::net
 {
@@ -60,7 +60,8 @@ namespace __jni_impl::java::net
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.DatagramSocketImpl",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

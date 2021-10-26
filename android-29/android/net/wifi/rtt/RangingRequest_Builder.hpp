@@ -55,7 +55,8 @@ namespace __jni_impl::android::net::wifi::rtt
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.rtt.RangingRequest$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

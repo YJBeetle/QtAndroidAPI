@@ -24,8 +24,8 @@ namespace __jni_impl::android::graphics::drawable
 		
 		// Methods
 		void draw(__jni_impl::android::graphics::Canvas arg0);
-		void resetTransition();
 		void startTransition(jint arg0);
+		void resetTransition();
 		void reverseTransition(jint arg0);
 		void setCrossFadeEnabled(jboolean arg0);
 		jboolean isCrossFadeEnabled();
@@ -44,7 +44,8 @@ namespace __jni_impl::android::graphics::drawable
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.TransitionDrawable",
 			"([Landroid/graphics/drawable/Drawable;)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -56,19 +57,19 @@ namespace __jni_impl::android::graphics::drawable
 			arg0.__jniObject().object()
 		);
 	}
-	void TransitionDrawable::resetTransition()
-	{
-		__thiz.callMethod<void>(
-			"resetTransition",
-			"()V"
-		);
-	}
 	void TransitionDrawable::startTransition(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"startTransition",
 			"(I)V",
 			arg0
+		);
+	}
+	void TransitionDrawable::resetTransition()
+	{
+		__thiz.callMethod<void>(
+			"resetTransition",
+			"()V"
 		);
 	}
 	void TransitionDrawable::reverseTransition(jint arg0)

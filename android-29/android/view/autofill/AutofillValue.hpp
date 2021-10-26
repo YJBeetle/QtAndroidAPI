@@ -26,8 +26,6 @@ namespace __jni_impl::android::view::autofill
 		jstring toString();
 		jint hashCode();
 		jboolean isText();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jstring getTextValue();
 		jboolean isToggle();
 		jboolean getToggleValue();
@@ -36,9 +34,12 @@ namespace __jni_impl::android::view::autofill
 		jlong getDateValue();
 		jboolean isDate();
 		static QAndroidJniObject forText(jstring arg0);
+		static QAndroidJniObject forText(const QString &arg0);
 		static QAndroidJniObject forToggle(jboolean arg0);
 		static QAndroidJniObject forList(jint arg0);
 		static QAndroidJniObject forDate(jlong arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::autofill
 
@@ -92,22 +93,6 @@ namespace __jni_impl::android::view::autofill
 		return __thiz.callMethod<jboolean>(
 			"isText",
 			"()Z"
-		);
-	}
-	jint AutofillValue::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void AutofillValue::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 	jstring AutofillValue::getTextValue()
@@ -168,6 +153,15 @@ namespace __jni_impl::android::view::autofill
 			arg0
 		);
 	}
+	QAndroidJniObject AutofillValue::forText(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.autofill.AutofillValue",
+			"forText",
+			"(Ljava/lang/CharSequence;)Landroid/view/autofill/AutofillValue;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject AutofillValue::forToggle(jboolean arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -193,6 +187,22 @@ namespace __jni_impl::android::view::autofill
 			"forDate",
 			"(J)Landroid/view/autofill/AutofillValue;",
 			arg0
+		);
+	}
+	jint AutofillValue::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void AutofillValue::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::view::autofill

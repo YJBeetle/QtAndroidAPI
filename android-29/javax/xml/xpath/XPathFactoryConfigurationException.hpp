@@ -17,6 +17,7 @@ namespace __jni_impl::javax::xml::xpath
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jthrowable arg0);
 		
 		// Methods
@@ -34,14 +35,24 @@ namespace __jni_impl::javax::xml::xpath
 		__thiz = QAndroidJniObject(
 			"javax.xml.xpath.XPathFactoryConfigurationException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void XPathFactoryConfigurationException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.xml.xpath.XPathFactoryConfigurationException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void XPathFactoryConfigurationException::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.xpath.XPathFactoryConfigurationException",
 			"(Ljava/lang/Throwable;)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

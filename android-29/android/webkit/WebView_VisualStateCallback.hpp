@@ -31,7 +31,8 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.WebView$VisualStateCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

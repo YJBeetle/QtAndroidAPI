@@ -9,13 +9,13 @@ namespace __jni_impl::android::widget
 {
 	class TextView;
 }
-namespace __jni_impl::android::view
-{
-	class MotionEvent;
-}
 namespace __jni_impl::android::text
 {
 	class Layout;
+}
+namespace __jni_impl::android::view
+{
+	class MotionEvent;
 }
 
 namespace __jni_impl::android::text::method
@@ -29,16 +29,16 @@ namespace __jni_impl::android::text::method
 		void __constructor();
 		
 		// Methods
-		static jboolean onTouchEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2);
-		static void scrollTo(__jni_impl::android::widget::TextView arg0, __jni_impl::android::text::Layout arg1, jint arg2, jint arg3);
 		static jint getInitialScrollX(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1);
 		static jint getInitialScrollY(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1);
+		static void scrollTo(__jni_impl::android::widget::TextView arg0, __jni_impl::android::text::Layout arg1, jint arg2, jint arg3);
+		static jboolean onTouchEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2);
 	};
 } // namespace __jni_impl::android::text::method
 
 #include "../../widget/TextView.hpp"
-#include "../../view/MotionEvent.hpp"
 #include "../Layout.hpp"
+#include "../../view/MotionEvent.hpp"
 
 namespace __jni_impl::android::text::method
 {
@@ -53,29 +53,6 @@ namespace __jni_impl::android::text::method
 	}
 	
 	// Methods
-	jboolean Touch::onTouchEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.text.method.Touch",
-			"onTouchEvent",
-			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void Touch::scrollTo(__jni_impl::android::widget::TextView arg0, __jni_impl::android::text::Layout arg1, jint arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.text.method.Touch",
-			"scrollTo",
-			"(Landroid/widget/TextView;Landroid/text/Layout;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3
-		);
-	}
 	jint Touch::getInitialScrollX(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -94,6 +71,29 @@ namespace __jni_impl::android::text::method
 			"(Landroid/widget/TextView;Landroid/text/Spannable;)I",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
+		);
+	}
+	void Touch::scrollTo(__jni_impl::android::widget::TextView arg0, __jni_impl::android::text::Layout arg1, jint arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.text.method.Touch",
+			"scrollTo",
+			"(Landroid/widget/TextView;Landroid/text/Layout;II)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3
+		);
+	}
+	jboolean Touch::onTouchEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.text.method.Touch",
+			"onTouchEvent",
+			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::text::method

@@ -24,10 +24,10 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		void enable();
+		void disable();
 		void onSensorChanged(jint arg0, jfloatArray arg1);
 		void onAccuracyChanged(jint arg0, jint arg1);
 		void onOrientationChanged(jint arg0);
-		void disable();
 	};
 } // namespace __jni_impl::android::view
 
@@ -50,7 +50,8 @@ namespace __jni_impl::android::view
 		__thiz = QAndroidJniObject(
 			"android.view.OrientationListener",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void OrientationListener::__constructor(__jni_impl::android::content::Context arg0, jint arg1)
 	{
@@ -58,7 +59,8 @@ namespace __jni_impl::android::view
 			"android.view.OrientationListener",
 			"(Landroid/content/Context;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -66,6 +68,13 @@ namespace __jni_impl::android::view
 	{
 		__thiz.callMethod<void>(
 			"enable",
+			"()V"
+		);
+	}
+	void OrientationListener::disable()
+	{
+		__thiz.callMethod<void>(
+			"disable",
 			"()V"
 		);
 	}
@@ -93,13 +102,6 @@ namespace __jni_impl::android::view
 			"onOrientationChanged",
 			"(I)V",
 			arg0
-		);
-	}
-	void OrientationListener::disable()
-	{
-		__thiz.callMethod<void>(
-			"disable",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::android::view

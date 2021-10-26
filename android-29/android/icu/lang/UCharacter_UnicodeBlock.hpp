@@ -608,6 +608,7 @@ namespace __jni_impl::android::icu::lang
 		
 		// Methods
 		static QAndroidJniObject forName(jstring arg0);
+		static QAndroidJniObject forName(const QString &arg0);
 		static QAndroidJniObject of(jint arg0);
 		static QAndroidJniObject getInstance(jint arg0);
 		jint getID();
@@ -5053,6 +5054,15 @@ namespace __jni_impl::android::icu::lang
 			"forName",
 			"(Ljava/lang/String;)Landroid/icu/lang/UCharacter$UnicodeBlock;",
 			arg0
+		);
+	}
+	QAndroidJniObject UCharacter_UnicodeBlock::forName(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"forName",
+			"(Ljava/lang/String;)Landroid/icu/lang/UCharacter$UnicodeBlock;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject UCharacter_UnicodeBlock::of(jint arg0)

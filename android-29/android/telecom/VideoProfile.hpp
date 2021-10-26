@@ -33,9 +33,9 @@ namespace __jni_impl::android::telecom
 		
 		// Methods
 		jstring toString();
+		jint getVideoState();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getVideoState();
 		jint getQuality();
 		static jstring videoStateToString(jint arg0);
 		static jboolean isAudioOnly(jint arg0);
@@ -130,7 +130,8 @@ namespace __jni_impl::android::telecom
 		__thiz = QAndroidJniObject(
 			"android.telecom.VideoProfile",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void VideoProfile::__constructor(jint arg0, jint arg1)
 	{
@@ -138,7 +139,8 @@ namespace __jni_impl::android::telecom
 			"android.telecom.VideoProfile",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -148,6 +150,13 @@ namespace __jni_impl::android::telecom
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jint VideoProfile::getVideoState()
+	{
+		return __thiz.callMethod<jint>(
+			"getVideoState",
+			"()I"
+		);
 	}
 	jint VideoProfile::describeContents()
 	{
@@ -163,13 +172,6 @@ namespace __jni_impl::android::telecom
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint VideoProfile::getVideoState()
-	{
-		return __thiz.callMethod<jint>(
-			"getVideoState",
-			"()I"
 		);
 	}
 	jint VideoProfile::getQuality()

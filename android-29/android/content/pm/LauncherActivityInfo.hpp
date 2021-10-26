@@ -13,10 +13,6 @@ namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
 }
-namespace __jni_impl::android::content
-{
-	class ComponentName;
-}
 namespace __jni_impl::android::os
 {
 	class UserHandle;
@@ -24,6 +20,10 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::content::pm
 {
 	class ApplicationInfo;
+}
+namespace __jni_impl::android::content
+{
+	class ComponentName;
 }
 
 namespace __jni_impl::android::content::pm
@@ -40,19 +40,19 @@ namespace __jni_impl::android::content::pm
 		jstring getName();
 		jlong getFirstInstallTime();
 		QAndroidJniObject getBadgedIcon(jint arg0);
-		QAndroidJniObject getComponentName();
-		QAndroidJniObject getUser();
-		QAndroidJniObject getApplicationInfo();
 		jstring getLabel();
 		QAndroidJniObject getIcon(jint arg0);
+		QAndroidJniObject getUser();
+		QAndroidJniObject getApplicationInfo();
+		QAndroidJniObject getComponentName();
 	};
 } // namespace __jni_impl::android::content::pm
 
 #include "../Context.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
-#include "../ComponentName.hpp"
 #include "../../os/UserHandle.hpp"
 #include "ApplicationInfo.hpp"
+#include "../ComponentName.hpp"
 
 namespace __jni_impl::android::content::pm
 {
@@ -89,11 +89,19 @@ namespace __jni_impl::android::content::pm
 			arg0
 		);
 	}
-	QAndroidJniObject LauncherActivityInfo::getComponentName()
+	jstring LauncherActivityInfo::getLabel()
 	{
 		return __thiz.callObjectMethod(
-			"getComponentName",
-			"()Landroid/content/ComponentName;"
+			"getLabel",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	QAndroidJniObject LauncherActivityInfo::getIcon(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"(I)Landroid/graphics/drawable/Drawable;",
+			arg0
 		);
 	}
 	QAndroidJniObject LauncherActivityInfo::getUser()
@@ -110,19 +118,11 @@ namespace __jni_impl::android::content::pm
 			"()Landroid/content/pm/ApplicationInfo;"
 		);
 	}
-	jstring LauncherActivityInfo::getLabel()
+	QAndroidJniObject LauncherActivityInfo::getComponentName()
 	{
 		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	QAndroidJniObject LauncherActivityInfo::getIcon(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"(I)Landroid/graphics/drawable/Drawable;",
-			arg0
+			"getComponentName",
+			"()Landroid/content/ComponentName;"
 		);
 	}
 } // namespace __jni_impl::android::content::pm

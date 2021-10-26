@@ -45,7 +45,8 @@ namespace __jni_impl::android::graphics
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void RadialGradient::__constructor(jfloat arg0, jfloat arg1, jfloat arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Shader_TileMode arg5)
 	{
@@ -57,7 +58,8 @@ namespace __jni_impl::android::graphics
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void RadialGradient::__constructor(jfloat arg0, jfloat arg1, jfloat arg2, jlongArray arg3, jfloatArray arg4, __jni_impl::android::graphics::Shader_TileMode arg5)
 	{
@@ -69,7 +71,8 @@ namespace __jni_impl::android::graphics
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void RadialGradient::__constructor(jfloat arg0, jfloat arg1, jfloat arg2, jintArray arg3, jfloatArray arg4, __jni_impl::android::graphics::Shader_TileMode arg5)
 	{
@@ -81,7 +84,8 @@ namespace __jni_impl::android::graphics
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	
 	// Methods

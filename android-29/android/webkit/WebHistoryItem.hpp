@@ -21,10 +21,10 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		jstring getTitle();
 		jstring getUrl();
 		jstring getOriginalUrl();
 		QAndroidJniObject getFavicon();
+		jstring getTitle();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -39,17 +39,11 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.WebHistoryItem",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	jstring WebHistoryItem::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jstring WebHistoryItem::getUrl()
 	{
 		return __thiz.callObjectMethod(
@@ -70,6 +64,13 @@ namespace __jni_impl::android::webkit
 			"getFavicon",
 			"()Landroid/graphics/Bitmap;"
 		);
+	}
+	jstring WebHistoryItem::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::webkit
 

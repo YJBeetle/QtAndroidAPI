@@ -24,9 +24,9 @@ namespace __jni_impl::android::media
 		jstring getName(__jni_impl::android::content::Context arg0);
 		jstring getName();
 		jstring toString();
+		jint getSupportedTypes();
 		jboolean isGroupable();
 		QAndroidJniObject getRoutes(__jni_impl::__JniBaseClass arg0);
-		jint getSupportedTypes();
 	};
 } // namespace __jni_impl::android::media
 
@@ -67,6 +67,13 @@ namespace __jni_impl::android::media
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	jint MediaRouter_RouteCategory::getSupportedTypes()
+	{
+		return __thiz.callMethod<jint>(
+			"getSupportedTypes",
+			"()I"
+		);
+	}
 	jboolean MediaRouter_RouteCategory::isGroupable()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -80,13 +87,6 @@ namespace __jni_impl::android::media
 			"getRoutes",
 			"(Ljava/util/List;)Ljava/util/List;",
 			arg0.__jniObject().object()
-		);
-	}
-	jint MediaRouter_RouteCategory::getSupportedTypes()
-	{
-		return __thiz.callMethod<jint>(
-			"getSupportedTypes",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::media

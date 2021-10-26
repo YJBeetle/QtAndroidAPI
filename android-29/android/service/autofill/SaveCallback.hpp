@@ -24,6 +24,7 @@ namespace __jni_impl::android::service::autofill
 		void onSuccess(__jni_impl::android::content::IntentSender arg0);
 		void onSuccess();
 		void onFailure(jstring arg0);
+		void onFailure(const QString &arg0);
 	};
 } // namespace __jni_impl::android::service::autofill
 
@@ -63,6 +64,14 @@ namespace __jni_impl::android::service::autofill
 			"onFailure",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
+		);
+	}
+	void SaveCallback::onFailure(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"onFailure",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::service::autofill

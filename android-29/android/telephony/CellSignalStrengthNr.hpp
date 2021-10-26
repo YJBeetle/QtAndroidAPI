@@ -27,10 +27,10 @@ namespace __jni_impl::android::telephony
 		jstring toString();
 		jint hashCode();
 		jint getLevel();
-		jint getAsuLevel();
-		jint getDbm();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getAsuLevel();
+		jint getDbm();
 		jint getSsRsrp();
 		jint getSsRsrq();
 		jint getSsSinr();
@@ -92,20 +92,6 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
-	jint CellSignalStrengthNr::getAsuLevel()
-	{
-		return __thiz.callMethod<jint>(
-			"getAsuLevel",
-			"()I"
-		);
-	}
-	jint CellSignalStrengthNr::getDbm()
-	{
-		return __thiz.callMethod<jint>(
-			"getDbm",
-			"()I"
-		);
-	}
 	jint CellSignalStrengthNr::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -120,6 +106,20 @@ namespace __jni_impl::android::telephony
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	jint CellSignalStrengthNr::getAsuLevel()
+	{
+		return __thiz.callMethod<jint>(
+			"getAsuLevel",
+			"()I"
+		);
+	}
+	jint CellSignalStrengthNr::getDbm()
+	{
+		return __thiz.callMethod<jint>(
+			"getDbm",
+			"()I"
 		);
 	}
 	jint CellSignalStrengthNr::getSsRsrp()

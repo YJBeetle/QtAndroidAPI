@@ -21,25 +21,38 @@ namespace __jni_impl::org::xml::sax::helpers
 		jint getLength();
 		void clear();
 		jstring getValue(jstring arg0);
+		jstring getValue(const QString &arg0);
 		jstring getValue(jstring arg0, jstring arg1);
+		jstring getValue(const QString &arg0, const QString &arg1);
 		jstring getValue(jint arg0);
 		void setValue(jint arg0, jstring arg1);
+		void setValue(jint arg0, const QString &arg1);
 		jstring getType(jstring arg0);
+		jstring getType(const QString &arg0);
 		jstring getType(jstring arg0, jstring arg1);
+		jstring getType(const QString &arg0, const QString &arg1);
 		jstring getType(jint arg0);
 		jint getIndex(jstring arg0);
+		jint getIndex(const QString &arg0);
 		jint getIndex(jstring arg0, jstring arg1);
+		jint getIndex(const QString &arg0, const QString &arg1);
 		void setAttribute(jint arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5);
+		void setAttribute(jint arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4, const QString &arg5);
 		void addAttribute(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4);
-		void setURI(jint arg0, jstring arg1);
-		void setLocalName(jint arg0, jstring arg1);
-		void setQName(jint arg0, jstring arg1);
-		void setType(jint arg0, jstring arg1);
+		void addAttribute(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4);
 		jstring getURI(jint arg0);
 		jstring getQName(jint arg0);
-		jstring getLocalName(jint arg0);
-		void setAttributes(__jni_impl::__JniBaseClass arg0);
 		void removeAttribute(jint arg0);
+		void setAttributes(__jni_impl::__JniBaseClass arg0);
+		jstring getLocalName(jint arg0);
+		void setURI(jint arg0, jstring arg1);
+		void setURI(jint arg0, const QString &arg1);
+		void setLocalName(jint arg0, jstring arg1);
+		void setLocalName(jint arg0, const QString &arg1);
+		void setQName(jint arg0, jstring arg1);
+		void setQName(jint arg0, const QString &arg1);
+		void setType(jint arg0, jstring arg1);
+		void setType(jint arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::org::xml::sax::helpers
 
@@ -53,14 +66,16 @@ namespace __jni_impl::org::xml::sax::helpers
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.helpers.AttributesImpl",
-			"()V");
+			"()V"
+		);
 	}
 	void AttributesImpl::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.helpers.AttributesImpl",
 			"(Lorg/xml/sax/Attributes;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -86,6 +101,14 @@ namespace __jni_impl::org::xml::sax::helpers
 			arg0
 		).object<jstring>();
 	}
+	jstring AttributesImpl::getValue(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getValue",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	jstring AttributesImpl::getValue(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -93,6 +116,15 @@ namespace __jni_impl::org::xml::sax::helpers
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1
+		).object<jstring>();
+	}
+	jstring AttributesImpl::getValue(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getValue",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	jstring AttributesImpl::getValue(jint arg0)
@@ -112,12 +144,29 @@ namespace __jni_impl::org::xml::sax::helpers
 			arg1
 		);
 	}
+	void AttributesImpl::setValue(jint arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"setValue",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	jstring AttributesImpl::getType(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getType",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring AttributesImpl::getType(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getType",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring AttributesImpl::getType(jstring arg0, jstring arg1)
@@ -127,6 +176,15 @@ namespace __jni_impl::org::xml::sax::helpers
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1
+		).object<jstring>();
+	}
+	jstring AttributesImpl::getType(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getType",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	jstring AttributesImpl::getType(jint arg0)
@@ -145,6 +203,14 @@ namespace __jni_impl::org::xml::sax::helpers
 			arg0
 		);
 	}
+	jint AttributesImpl::getIndex(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getIndex",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint AttributesImpl::getIndex(jstring arg0, jstring arg1)
 	{
 		return __thiz.callMethod<jint>(
@@ -152,6 +218,15 @@ namespace __jni_impl::org::xml::sax::helpers
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
 			arg1
+		);
+	}
+	jint AttributesImpl::getIndex(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getIndex",
+			"(Ljava/lang/String;Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void AttributesImpl::setAttribute(jint arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5)
@@ -167,6 +242,19 @@ namespace __jni_impl::org::xml::sax::helpers
 			arg5
 		);
 	}
+	void AttributesImpl::setAttribute(jint arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4, const QString &arg5)
+	{
+		__thiz.callMethod<void>(
+			"setAttribute",
+			"(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			QAndroidJniObject::fromString(arg3).object<jstring>(),
+			QAndroidJniObject::fromString(arg4).object<jstring>(),
+			QAndroidJniObject::fromString(arg5).object<jstring>()
+		);
+	}
 	void AttributesImpl::addAttribute(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4)
 	{
 		__thiz.callMethod<void>(
@@ -179,40 +267,16 @@ namespace __jni_impl::org::xml::sax::helpers
 			arg4
 		);
 	}
-	void AttributesImpl::setURI(jint arg0, jstring arg1)
+	void AttributesImpl::addAttribute(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4)
 	{
 		__thiz.callMethod<void>(
-			"setURI",
-			"(ILjava/lang/String;)V",
-			arg0,
-			arg1
-		);
-	}
-	void AttributesImpl::setLocalName(jint arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"setLocalName",
-			"(ILjava/lang/String;)V",
-			arg0,
-			arg1
-		);
-	}
-	void AttributesImpl::setQName(jint arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"setQName",
-			"(ILjava/lang/String;)V",
-			arg0,
-			arg1
-		);
-	}
-	void AttributesImpl::setType(jint arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"setType",
-			"(ILjava/lang/String;)V",
-			arg0,
-			arg1
+			"addAttribute",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			QAndroidJniObject::fromString(arg3).object<jstring>(),
+			QAndroidJniObject::fromString(arg4).object<jstring>()
 		);
 	}
 	jstring AttributesImpl::getURI(jint arg0)
@@ -231,13 +295,13 @@ namespace __jni_impl::org::xml::sax::helpers
 			arg0
 		).object<jstring>();
 	}
-	jstring AttributesImpl::getLocalName(jint arg0)
+	void AttributesImpl::removeAttribute(jint arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getLocalName",
-			"(I)Ljava/lang/String;",
+		__thiz.callMethod<void>(
+			"removeAttribute",
+			"(I)V",
 			arg0
-		).object<jstring>();
+		);
 	}
 	void AttributesImpl::setAttributes(__jni_impl::__JniBaseClass arg0)
 	{
@@ -247,12 +311,84 @@ namespace __jni_impl::org::xml::sax::helpers
 			arg0.__jniObject().object()
 		);
 	}
-	void AttributesImpl::removeAttribute(jint arg0)
+	jstring AttributesImpl::getLocalName(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getLocalName",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	void AttributesImpl::setURI(jint arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
-			"removeAttribute",
-			"(I)V",
-			arg0
+			"setURI",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1
+		);
+	}
+	void AttributesImpl::setURI(jint arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"setURI",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	void AttributesImpl::setLocalName(jint arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"setLocalName",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1
+		);
+	}
+	void AttributesImpl::setLocalName(jint arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"setLocalName",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	void AttributesImpl::setQName(jint arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"setQName",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1
+		);
+	}
+	void AttributesImpl::setQName(jint arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"setQName",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	void AttributesImpl::setType(jint arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"setType",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1
+		);
+	}
+	void AttributesImpl::setType(jint arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"setType",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::org::xml::sax::helpers

@@ -27,11 +27,13 @@ namespace __jni_impl::android::app
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject setReplyAction(__jni_impl::android::app::PendingIntent arg0, __jni_impl::android::app::RemoteInput arg1);
 		QAndroidJniObject addMessage(jstring arg0);
+		QAndroidJniObject addMessage(const QString &arg0);
 		QAndroidJniObject setReadPendingIntent(__jni_impl::android::app::PendingIntent arg0);
 		QAndroidJniObject setLatestTimestamp(jlong arg0);
 	};
@@ -51,7 +53,16 @@ namespace __jni_impl::android::app
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$CarExtender$Builder",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Notification_CarExtender_Builder::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.Notification$CarExtender$Builder",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -77,6 +88,14 @@ namespace __jni_impl::android::app
 			"addMessage",
 			"(Ljava/lang/String;)Landroid/app/Notification$CarExtender$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject Notification_CarExtender_Builder::addMessage(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"addMessage",
+			"(Ljava/lang/String;)Landroid/app/Notification$CarExtender$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Notification_CarExtender_Builder::setReadPendingIntent(__jni_impl::android::app::PendingIntent arg0)

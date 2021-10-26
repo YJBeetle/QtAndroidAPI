@@ -30,14 +30,14 @@ namespace __jni_impl::android::text::method
 		
 		// Methods
 		void initialize(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1);
+		jboolean canSelectArbitrarily();
+		jboolean onKeyOther(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::KeyEvent arg2);
+		void onTakeFocus(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
 		jboolean onKeyDown(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
 		jboolean onKeyUp(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
 		jboolean onTouchEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2);
 		jboolean onTrackballEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2);
 		jboolean onGenericMotionEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2);
-		jboolean canSelectArbitrarily();
-		jboolean onKeyOther(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::KeyEvent arg2);
-		void onTakeFocus(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::text::method
 
@@ -54,7 +54,8 @@ namespace __jni_impl::android::text::method
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.method.BaseMovementMethod",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -65,6 +66,33 @@ namespace __jni_impl::android::text::method
 			"(Landroid/widget/TextView;Landroid/text/Spannable;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
+		);
+	}
+	jboolean BaseMovementMethod::canSelectArbitrarily()
+	{
+		return __thiz.callMethod<jboolean>(
+			"canSelectArbitrarily",
+			"()Z"
+		);
+	}
+	jboolean BaseMovementMethod::onKeyOther(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::KeyEvent arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyOther",
+			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	void BaseMovementMethod::onTakeFocus(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"onTakeFocus",
+			"(Landroid/widget/TextView;Landroid/text/Spannable;I)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
 		);
 	}
 	jboolean BaseMovementMethod::onKeyDown(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3)
@@ -117,33 +145,6 @@ namespace __jni_impl::android::text::method
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
-		);
-	}
-	jboolean BaseMovementMethod::canSelectArbitrarily()
-	{
-		return __thiz.callMethod<jboolean>(
-			"canSelectArbitrarily",
-			"()Z"
-		);
-	}
-	jboolean BaseMovementMethod::onKeyOther(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::KeyEvent arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyOther",
-			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void BaseMovementMethod::onTakeFocus(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"onTakeFocus",
-			"(Landroid/widget/TextView;Landroid/text/Spannable;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
 		);
 	}
 } // namespace __jni_impl::android::text::method

@@ -19,6 +19,7 @@ namespace __jni_impl::java::io
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -40,14 +41,24 @@ namespace __jni_impl::java::io
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.InterruptedIOException",
-			"()V");
+			"()V"
+		);
 	}
 	void InterruptedIOException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.InterruptedIOException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void InterruptedIOException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.InterruptedIOException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

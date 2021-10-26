@@ -10,13 +10,13 @@ namespace __jni_impl::java::io
 {
 	class InputStream;
 }
-namespace __jni_impl::java::math
-{
-	class BigInteger;
-}
 namespace __jni_impl::java::util
 {
 	class Date;
+}
+namespace __jni_impl::java::math
+{
+	class BigInteger;
 }
 
 namespace __jni_impl::javax::security::cert
@@ -35,7 +35,6 @@ namespace __jni_impl::javax::security::cert
 		QAndroidJniObject getIssuerDN();
 		QAndroidJniObject getSubjectDN();
 		jint getVersion();
-		QAndroidJniObject getSerialNumber();
 		jstring getSigAlgName();
 		jbyteArray getSigAlgParams();
 		void checkValidity(__jni_impl::java::util::Date arg0);
@@ -43,12 +42,13 @@ namespace __jni_impl::javax::security::cert
 		QAndroidJniObject getNotBefore();
 		QAndroidJniObject getNotAfter();
 		jstring getSigAlgOID();
+		QAndroidJniObject getSerialNumber();
 	};
 } // namespace __jni_impl::javax::security::cert
 
 #include "../../../java/io/InputStream.hpp"
-#include "../../../java/math/BigInteger.hpp"
 #include "../../../java/util/Date.hpp"
+#include "../../../java/math/BigInteger.hpp"
 
 namespace __jni_impl::javax::security::cert
 {
@@ -59,7 +59,8 @@ namespace __jni_impl::javax::security::cert
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.cert.X509Certificate",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -100,13 +101,6 @@ namespace __jni_impl::javax::security::cert
 		return __thiz.callMethod<jint>(
 			"getVersion",
 			"()I"
-		);
-	}
-	QAndroidJniObject X509Certificate::getSerialNumber()
-	{
-		return __thiz.callObjectMethod(
-			"getSerialNumber",
-			"()Ljava/math/BigInteger;"
 		);
 	}
 	jstring X509Certificate::getSigAlgName()
@@ -158,6 +152,13 @@ namespace __jni_impl::javax::security::cert
 			"getSigAlgOID",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	QAndroidJniObject X509Certificate::getSerialNumber()
+	{
+		return __thiz.callObjectMethod(
+			"getSerialNumber",
+			"()Ljava/math/BigInteger;"
+		);
 	}
 } // namespace __jni_impl::javax::security::cert
 

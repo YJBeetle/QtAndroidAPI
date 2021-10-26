@@ -82,20 +82,23 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.ArrayDeque",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ArrayDeque::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.ArrayDeque",
-			"()V");
+			"()V"
+		);
 	}
 	void ArrayDeque::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.ArrayDeque",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

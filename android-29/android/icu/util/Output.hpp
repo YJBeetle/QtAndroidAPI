@@ -40,14 +40,16 @@ namespace __jni_impl::android::icu::util
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.Output",
-			"()V");
+			"()V"
+		);
 	}
 	void Output::__constructor(jobject arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.Output",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

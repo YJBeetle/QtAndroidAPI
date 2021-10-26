@@ -16,9 +16,12 @@ namespace __jni_impl::java::lang::invoke
 		
 		// Constructors
 		void __constructor(jstring arg0, jthrowable arg1, jboolean arg2, jboolean arg3);
+		void __constructor(const QString &arg0, jthrowable arg1, jboolean arg2, jboolean arg3);
 		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
+		void __constructor(const QString &arg0, jthrowable arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor();
 		
 		// Methods
@@ -39,14 +42,27 @@ namespace __jni_impl::java::lang::invoke
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void LambdaConversionException::__constructor(const QString &arg0, jthrowable arg1, jboolean arg2, jboolean arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.invoke.LambdaConversionException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;ZZ)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2,
+			arg3
+		);
 	}
 	void LambdaConversionException::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.invoke.LambdaConversionException",
 			"(Ljava/lang/Throwable;)V",
-			arg0);
+			arg0
+		);
 	}
 	void LambdaConversionException::__constructor(jstring arg0, jthrowable arg1)
 	{
@@ -54,20 +70,40 @@ namespace __jni_impl::java::lang::invoke
 			"java.lang.invoke.LambdaConversionException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void LambdaConversionException::__constructor(const QString &arg0, jthrowable arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.invoke.LambdaConversionException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void LambdaConversionException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.invoke.LambdaConversionException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void LambdaConversionException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.invoke.LambdaConversionException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void LambdaConversionException::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.invoke.LambdaConversionException",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

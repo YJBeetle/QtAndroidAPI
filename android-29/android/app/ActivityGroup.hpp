@@ -52,14 +52,16 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ActivityGroup",
-			"()V");
+			"()V"
+		);
 	}
 	void ActivityGroup::__constructor(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ActivityGroup",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

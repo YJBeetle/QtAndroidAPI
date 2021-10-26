@@ -5918,7 +5918,8 @@ namespace __jni_impl::android
 	{
 		__thiz = QAndroidJniObject(
 			"android.R$style",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

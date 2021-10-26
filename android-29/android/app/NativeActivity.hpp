@@ -35,7 +35,6 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		void onGlobalLayout();
 		void surfaceCreated(__jni_impl::__JniBaseClass arg0);
 		void surfaceChanged(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2, jint arg3);
 		void surfaceRedrawNeeded(__jni_impl::__JniBaseClass arg0);
@@ -45,6 +44,7 @@ namespace __jni_impl::android::app
 		void onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
 		void onLowMemory();
 		void onWindowFocusChanged(jboolean arg0);
+		void onGlobalLayout();
 	};
 } // namespace __jni_impl::android::app
 
@@ -77,17 +77,11 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.NativeActivity",
-			"()V");
-	}
-	
-	// Methods
-	void NativeActivity::onGlobalLayout()
-	{
-		__thiz.callMethod<void>(
-			"onGlobalLayout",
 			"()V"
 		);
 	}
+	
+	// Methods
 	void NativeActivity::surfaceCreated(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -160,6 +154,13 @@ namespace __jni_impl::android::app
 			"onWindowFocusChanged",
 			"(Z)V",
 			arg0
+		);
+	}
+	void NativeActivity::onGlobalLayout()
+	{
+		__thiz.callMethod<void>(
+			"onGlobalLayout",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::app

@@ -24,13 +24,13 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		jstring getTitle();
 		jint getMode();
 		static jarray parseResult(jint arg0, __jni_impl::android::content::Intent arg1);
 		jarray getAcceptTypes();
 		jboolean isCaptureEnabled();
 		jstring getFilenameHint();
 		QAndroidJniObject createIntent();
+		jstring getTitle();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -66,17 +66,11 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.WebChromeClient$FileChooserParams",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	jstring WebChromeClient_FileChooserParams::getTitle()
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
 	jint WebChromeClient_FileChooserParams::getMode()
 	{
 		return __thiz.callMethod<jint>(
@@ -121,6 +115,13 @@ namespace __jni_impl::android::webkit
 			"createIntent",
 			"()Landroid/content/Intent;"
 		);
+	}
+	jstring WebChromeClient_FileChooserParams::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::webkit
 

@@ -38,7 +38,8 @@ namespace __jni_impl::android::view::animation
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.BounceInterpolator",
-			"()V");
+			"()V"
+		);
 	}
 	void BounceInterpolator::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -46,7 +47,8 @@ namespace __jni_impl::android::view::animation
 			"android.view.animation.BounceInterpolator",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

@@ -60,7 +60,8 @@ namespace __jni_impl::android::view::accessibility
 		__thiz = QAndroidJniObject(
 			"android.view.accessibility.AccessibilityNodeInfo$TouchDelegateInfo",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

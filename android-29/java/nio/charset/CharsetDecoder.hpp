@@ -48,6 +48,7 @@ namespace __jni_impl::java::nio::charset
 		QAndroidJniObject malformedInputAction();
 		QAndroidJniObject unmappableCharacterAction();
 		QAndroidJniObject replaceWith(jstring arg0);
+		QAndroidJniObject replaceWith(const QString &arg0);
 		jfloat maxCharsPerByte();
 		jfloat averageCharsPerByte();
 		jboolean isAutoDetecting();
@@ -158,6 +159,14 @@ namespace __jni_impl::java::nio::charset
 			"replaceWith",
 			"(Ljava/lang/String;)Ljava/nio/charset/CharsetDecoder;",
 			arg0
+		);
+	}
+	QAndroidJniObject CharsetDecoder::replaceWith(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"replaceWith",
+			"(Ljava/lang/String;)Ljava/nio/charset/CharsetDecoder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jfloat CharsetDecoder::maxCharsPerByte()

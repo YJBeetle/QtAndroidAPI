@@ -33,14 +33,16 @@ namespace __jni_impl::android::text
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.LoginFilter$PasswordFilterGMail",
-			"()V");
+			"()V"
+		);
 	}
 	void LoginFilter_PasswordFilterGMail::__constructor(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.LoginFilter$PasswordFilterGMail",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

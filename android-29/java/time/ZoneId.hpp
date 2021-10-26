@@ -42,13 +42,16 @@ namespace __jni_impl::java::time
 		jstring toString();
 		jint hashCode();
 		static QAndroidJniObject of(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		static QAndroidJniObject of(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		static QAndroidJniObject of(jstring arg0);
+		static QAndroidJniObject of(const QString &arg0);
 		static QAndroidJniObject from(__jni_impl::__JniBaseClass arg0);
 		jstring getId();
 		static QAndroidJniObject systemDefault();
 		QAndroidJniObject getRules();
 		static QAndroidJniObject getAvailableZoneIds();
 		static QAndroidJniObject ofOffset(jstring arg0, __jni_impl::java::time::ZoneOffset arg1);
+		static QAndroidJniObject ofOffset(const QString &arg0, __jni_impl::java::time::ZoneOffset arg1);
 		QAndroidJniObject normalized();
 		jstring getDisplayName(__jni_impl::java::time::format::TextStyle arg0, __jni_impl::java::util::Locale arg1);
 	};
@@ -113,6 +116,16 @@ namespace __jni_impl::java::time
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject ZoneId::of(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.ZoneId",
+			"of",
+			"(Ljava/lang/String;Ljava/util/Map;)Ljava/time/ZoneId;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject ZoneId::of(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -120,6 +133,15 @@ namespace __jni_impl::java::time
 			"of",
 			"(Ljava/lang/String;)Ljava/time/ZoneId;",
 			arg0
+		);
+	}
+	QAndroidJniObject ZoneId::of(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.ZoneId",
+			"of",
+			"(Ljava/lang/String;)Ljava/time/ZoneId;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject ZoneId::from(__jni_impl::__JniBaseClass arg0)
@@ -168,6 +190,16 @@ namespace __jni_impl::java::time
 			"ofOffset",
 			"(Ljava/lang/String;Ljava/time/ZoneOffset;)Ljava/time/ZoneId;",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ZoneId::ofOffset(const QString &arg0, __jni_impl::java::time::ZoneOffset arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.ZoneId",
+			"ofOffset",
+			"(Ljava/lang/String;Ljava/time/ZoneOffset;)Ljava/time/ZoneId;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

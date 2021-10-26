@@ -31,7 +31,8 @@ namespace __jni_impl::android::icu::text
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.UFormat",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

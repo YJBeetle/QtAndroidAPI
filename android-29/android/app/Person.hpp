@@ -34,13 +34,13 @@ namespace __jni_impl::android::app
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jstring getKey();
+		QAndroidJniObject getIcon();
+		QAndroidJniObject toBuilder();
+		jstring getUri();
 		jboolean isImportant();
 		jboolean isBot();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getIcon();
-		QAndroidJniObject toBuilder();
-		jstring getUri();
 	};
 } // namespace __jni_impl::android::app
 
@@ -98,6 +98,27 @@ namespace __jni_impl::android::app
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	QAndroidJniObject Person::getIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Icon;"
+		);
+	}
+	QAndroidJniObject Person::toBuilder()
+	{
+		return __thiz.callObjectMethod(
+			"toBuilder",
+			"()Landroid/app/Person$Builder;"
+		);
+	}
+	jstring Person::getUri()
+	{
+		return __thiz.callObjectMethod(
+			"getUri",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jboolean Person::isImportant()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -127,27 +148,6 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	QAndroidJniObject Person::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Icon;"
-		);
-	}
-	QAndroidJniObject Person::toBuilder()
-	{
-		return __thiz.callObjectMethod(
-			"toBuilder",
-			"()Landroid/app/Person$Builder;"
-		);
-	}
-	jstring Person::getUri()
-	{
-		return __thiz.callObjectMethod(
-			"getUri",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::app
 

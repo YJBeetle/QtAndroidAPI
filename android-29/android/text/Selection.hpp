@@ -23,10 +23,10 @@ namespace __jni_impl::android::text
 		void __constructor();
 		
 		// Methods
-		static void setSelection(__jni_impl::__JniBaseClass arg0, jint arg1);
-		static void setSelection(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2);
 		static jint getSelectionStart(jstring arg0);
+		static jint getSelectionStart(const QString &arg0);
 		static jint getSelectionEnd(jstring arg0);
+		static jint getSelectionEnd(const QString &arg0);
 		static void selectAll(__jni_impl::__JniBaseClass arg0);
 		static void extendSelection(__jni_impl::__JniBaseClass arg0, jint arg1);
 		static void removeSelection(__jni_impl::__JniBaseClass arg0);
@@ -42,6 +42,8 @@ namespace __jni_impl::android::text
 		static jboolean extendToRightEdge(__jni_impl::__JniBaseClass arg0, __jni_impl::android::text::Layout arg1);
 		static jboolean moveToLeftEdge(__jni_impl::__JniBaseClass arg0, __jni_impl::android::text::Layout arg1);
 		static jboolean moveToRightEdge(__jni_impl::__JniBaseClass arg0, __jni_impl::android::text::Layout arg1);
+		static void setSelection(__jni_impl::__JniBaseClass arg0, jint arg1);
+		static void setSelection(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::text
 
@@ -76,27 +78,6 @@ namespace __jni_impl::android::text
 	}
 	
 	// Methods
-	void Selection::setSelection(__jni_impl::__JniBaseClass arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.text.Selection",
-			"setSelection",
-			"(Landroid/text/Spannable;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void Selection::setSelection(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.text.Selection",
-			"setSelection",
-			"(Landroid/text/Spannable;II)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		);
-	}
 	jint Selection::getSelectionStart(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -106,6 +87,15 @@ namespace __jni_impl::android::text
 			arg0
 		);
 	}
+	jint Selection::getSelectionStart(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.text.Selection",
+			"getSelectionStart",
+			"(Ljava/lang/CharSequence;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint Selection::getSelectionEnd(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -113,6 +103,15 @@ namespace __jni_impl::android::text
 			"getSelectionEnd",
 			"(Ljava/lang/CharSequence;)I",
 			arg0
+		);
+	}
+	jint Selection::getSelectionEnd(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.text.Selection",
+			"getSelectionEnd",
+			"(Ljava/lang/CharSequence;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Selection::selectAll(__jni_impl::__JniBaseClass arg0)
@@ -261,6 +260,27 @@ namespace __jni_impl::android::text
 			"(Landroid/text/Spannable;Landroid/text/Layout;)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
+		);
+	}
+	void Selection::setSelection(__jni_impl::__JniBaseClass arg0, jint arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.text.Selection",
+			"setSelection",
+			"(Landroid/text/Spannable;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void Selection::setSelection(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.text.Selection",
+			"setSelection",
+			"(Landroid/text/Spannable;II)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
 		);
 	}
 } // namespace __jni_impl::android::text

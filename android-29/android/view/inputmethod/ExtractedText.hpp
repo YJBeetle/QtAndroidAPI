@@ -120,7 +120,8 @@ namespace __jni_impl::android::view::inputmethod
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.inputmethod.ExtractedText",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -29,13 +29,16 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		void setTimeZone(jstring arg0);
+		void setTimeZone(const QString &arg0);
 		jstring getTimeZone();
+		void onVisibilityAggregated(jboolean arg0);
 		jstring getFormat12Hour();
 		void setFormat12Hour(jstring arg0);
+		void setFormat12Hour(const QString &arg0);
 		jstring getFormat24Hour();
 		void setFormat24Hour(jstring arg0);
+		void setFormat24Hour(const QString &arg0);
 		jboolean is24HourModeEnabled();
-		void onVisibilityAggregated(jboolean arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -70,7 +73,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void TextClock::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -79,7 +83,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void TextClock::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -87,14 +92,16 @@ namespace __jni_impl::android::widget
 			"android.widget.TextClock",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void TextClock::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.TextClock",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -106,12 +113,28 @@ namespace __jni_impl::android::widget
 			arg0
 		);
 	}
+	void TextClock::setTimeZone(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTimeZone",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring TextClock::getTimeZone()
 	{
 		return __thiz.callObjectMethod(
 			"getTimeZone",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	void TextClock::onVisibilityAggregated(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"onVisibilityAggregated",
+			"(Z)V",
+			arg0
+		);
 	}
 	jstring TextClock::getFormat12Hour()
 	{
@@ -126,6 +149,14 @@ namespace __jni_impl::android::widget
 			"setFormat12Hour",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
+		);
+	}
+	void TextClock::setFormat12Hour(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFormat12Hour",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring TextClock::getFormat24Hour()
@@ -143,19 +174,19 @@ namespace __jni_impl::android::widget
 			arg0
 		);
 	}
+	void TextClock::setFormat24Hour(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFormat24Hour",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jboolean TextClock::is24HourModeEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"is24HourModeEnabled",
 			"()Z"
-		);
-	}
-	void TextClock::onVisibilityAggregated(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"onVisibilityAggregated",
-			"(Z)V",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::widget

@@ -35,8 +35,6 @@ namespace __jni_impl::android::mtp
 		void __constructor();
 		
 		// Methods
-		jint getObjectHandle();
-		jint getStorageId();
 		jint getEventCode();
 		jint getParameter1();
 		jint getParameter2();
@@ -45,6 +43,8 @@ namespace __jni_impl::android::mtp
 		jint getTransactionId();
 		jint getObjectPropCode();
 		jint getObjectFormatCode();
+		jint getObjectHandle();
+		jint getStorageId();
 	};
 } // namespace __jni_impl::android::mtp
 
@@ -188,20 +188,6 @@ namespace __jni_impl::android::mtp
 	}
 	
 	// Methods
-	jint MtpEvent::getObjectHandle()
-	{
-		return __thiz.callMethod<jint>(
-			"getObjectHandle",
-			"()I"
-		);
-	}
-	jint MtpEvent::getStorageId()
-	{
-		return __thiz.callMethod<jint>(
-			"getStorageId",
-			"()I"
-		);
-	}
 	jint MtpEvent::getEventCode()
 	{
 		return __thiz.callMethod<jint>(
@@ -255,6 +241,20 @@ namespace __jni_impl::android::mtp
 	{
 		return __thiz.callMethod<jint>(
 			"getObjectFormatCode",
+			"()I"
+		);
+	}
+	jint MtpEvent::getObjectHandle()
+	{
+		return __thiz.callMethod<jint>(
+			"getObjectHandle",
+			"()I"
+		);
+	}
+	jint MtpEvent::getStorageId()
+	{
+		return __thiz.callMethod<jint>(
+			"getStorageId",
 			"()I"
 		);
 	}

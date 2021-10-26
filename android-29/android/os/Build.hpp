@@ -248,7 +248,8 @@ namespace __jni_impl::android::os
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.Build",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -25,6 +25,10 @@ namespace __jni_impl::android::content::res
 }
 namespace __jni_impl::android::graphics
 {
+	class Canvas;
+}
+namespace __jni_impl::android::graphics
+{
 	class Rect;
 }
 namespace __jni_impl::android::graphics
@@ -34,10 +38,6 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable_ConstantState;
-}
-namespace __jni_impl::android::graphics
-{
-	class Canvas;
 }
 
 namespace __jni_impl::android::graphics::drawable
@@ -54,6 +54,11 @@ namespace __jni_impl::android::graphics::drawable
 		// Methods
 		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
 		void setColor(__jni_impl::android::content::res::ColorStateList arg0);
+		void draw(__jni_impl::android::graphics::Canvas arg0);
+		jint getRadius();
+		jboolean setDrawableByLayerId(jint arg0, __jni_impl::android::graphics::drawable::Drawable arg1);
+		void setPaddingMode(jint arg0);
+		void setRadius(jint arg0);
 		jboolean setVisible(jboolean arg0, jboolean arg1);
 		QAndroidJniObject getDirtyBounds();
 		void invalidateSelf();
@@ -69,11 +74,6 @@ namespace __jni_impl::android::graphics::drawable
 		void getOutline(__jni_impl::android::graphics::Outline arg0);
 		QAndroidJniObject mutate();
 		QAndroidJniObject getConstantState();
-		void draw(__jni_impl::android::graphics::Canvas arg0);
-		jint getRadius();
-		jboolean setDrawableByLayerId(jint arg0, __jni_impl::android::graphics::drawable::Drawable arg1);
-		void setPaddingMode(jint arg0);
-		void setRadius(jint arg0);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
@@ -81,10 +81,10 @@ namespace __jni_impl::android::graphics::drawable
 #include "Drawable.hpp"
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
+#include "../Canvas.hpp"
 #include "../Rect.hpp"
 #include "../Outline.hpp"
 #include "Drawable_ConstantState.hpp"
-#include "../Canvas.hpp"
 
 namespace __jni_impl::android::graphics::drawable
 {
@@ -105,7 +105,8 @@ namespace __jni_impl::android::graphics::drawable
 			"(Landroid/content/res/ColorStateList;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -126,6 +127,46 @@ namespace __jni_impl::android::graphics::drawable
 			"setColor",
 			"(Landroid/content/res/ColorStateList;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void RippleDrawable::draw(__jni_impl::android::graphics::Canvas arg0)
+	{
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint RippleDrawable::getRadius()
+	{
+		return __thiz.callMethod<jint>(
+			"getRadius",
+			"()I"
+		);
+	}
+	jboolean RippleDrawable::setDrawableByLayerId(jint arg0, __jni_impl::android::graphics::drawable::Drawable arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setDrawableByLayerId",
+			"(ILandroid/graphics/drawable/Drawable;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void RippleDrawable::setPaddingMode(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPaddingMode",
+			"(I)V",
+			arg0
+		);
+	}
+	void RippleDrawable::setRadius(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRadius",
+			"(I)V",
+			arg0
 		);
 	}
 	jboolean RippleDrawable::setVisible(jboolean arg0, jboolean arg1)
@@ -242,46 +283,6 @@ namespace __jni_impl::android::graphics::drawable
 		return __thiz.callObjectMethod(
 			"getConstantState",
 			"()Landroid/graphics/drawable/Drawable$ConstantState;"
-		);
-	}
-	void RippleDrawable::draw(__jni_impl::android::graphics::Canvas arg0)
-	{
-		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jint RippleDrawable::getRadius()
-	{
-		return __thiz.callMethod<jint>(
-			"getRadius",
-			"()I"
-		);
-	}
-	jboolean RippleDrawable::setDrawableByLayerId(jint arg0, __jni_impl::android::graphics::drawable::Drawable arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setDrawableByLayerId",
-			"(ILandroid/graphics/drawable/Drawable;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void RippleDrawable::setPaddingMode(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPaddingMode",
-			"(I)V",
-			arg0
-		);
-	}
-	void RippleDrawable::setRadius(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRadius",
-			"(I)V",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::graphics::drawable

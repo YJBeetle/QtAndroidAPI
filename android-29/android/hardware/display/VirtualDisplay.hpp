@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::view
 {
-	class Display;
+	class Surface;
 }
 namespace __jni_impl::android::view
 {
-	class Surface;
+	class Display;
 }
 
 namespace __jni_impl::android::hardware::display
@@ -28,14 +28,14 @@ namespace __jni_impl::android::hardware::display
 		jstring toString();
 		void release();
 		void resize(jint arg0, jint arg1, jint arg2);
-		QAndroidJniObject getDisplay();
 		QAndroidJniObject getSurface();
 		void setSurface(__jni_impl::android::view::Surface arg0);
+		QAndroidJniObject getDisplay();
 	};
 } // namespace __jni_impl::android::hardware::display
 
-#include "../../view/Display.hpp"
 #include "../../view/Surface.hpp"
+#include "../../view/Display.hpp"
 
 namespace __jni_impl::android::hardware::display
 {
@@ -74,13 +74,6 @@ namespace __jni_impl::android::hardware::display
 			arg2
 		);
 	}
-	QAndroidJniObject VirtualDisplay::getDisplay()
-	{
-		return __thiz.callObjectMethod(
-			"getDisplay",
-			"()Landroid/view/Display;"
-		);
-	}
 	QAndroidJniObject VirtualDisplay::getSurface()
 	{
 		return __thiz.callObjectMethod(
@@ -94,6 +87,13 @@ namespace __jni_impl::android::hardware::display
 			"setSurface",
 			"(Landroid/view/Surface;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject VirtualDisplay::getDisplay()
+	{
+		return __thiz.callObjectMethod(
+			"getDisplay",
+			"()Landroid/view/Display;"
 		);
 	}
 } // namespace __jni_impl::android::hardware::display

@@ -35,13 +35,13 @@ namespace __jni_impl::android::view
 		// Methods
 		jint getLayoutDirection();
 		void setLayoutDirection(jint arg0);
+		void resolveLayoutDirection(jint arg0);
 		void setMargins(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setMarginStart(jint arg0);
 		jint getMarginStart();
 		void setMarginEnd(jint arg0);
 		jint getMarginEnd();
 		jboolean isMarginRelative();
-		void resolveLayoutDirection(jint arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -82,14 +82,16 @@ namespace __jni_impl::android::view
 		__thiz = QAndroidJniObject(
 			"android.view.ViewGroup$MarginLayoutParams",
 			"(Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ViewGroup_MarginLayoutParams::__constructor(__jni_impl::android::view::ViewGroup_MarginLayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewGroup$MarginLayoutParams",
 			"(Landroid/view/ViewGroup$MarginLayoutParams;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ViewGroup_MarginLayoutParams::__constructor(jint arg0, jint arg1)
 	{
@@ -97,7 +99,8 @@ namespace __jni_impl::android::view
 			"android.view.ViewGroup$MarginLayoutParams",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void ViewGroup_MarginLayoutParams::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -105,7 +108,8 @@ namespace __jni_impl::android::view
 			"android.view.ViewGroup$MarginLayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -120,6 +124,14 @@ namespace __jni_impl::android::view
 	{
 		__thiz.callMethod<void>(
 			"setLayoutDirection",
+			"(I)V",
+			arg0
+		);
+	}
+	void ViewGroup_MarginLayoutParams::resolveLayoutDirection(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"resolveLayoutDirection",
 			"(I)V",
 			arg0
 		);
@@ -170,14 +182,6 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jboolean>(
 			"isMarginRelative",
 			"()Z"
-		);
-	}
-	void ViewGroup_MarginLayoutParams::resolveLayoutDirection(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"resolveLayoutDirection",
-			"(I)V",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::view

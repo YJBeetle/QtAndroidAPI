@@ -33,6 +33,7 @@ namespace __jni_impl::java::util::jar
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -196,7 +197,16 @@ namespace __jni_impl::java::util::jar
 		__thiz = QAndroidJniObject(
 			"java.util.jar.Attributes$Name",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Attributes_Name::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.jar.Attributes$Name",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

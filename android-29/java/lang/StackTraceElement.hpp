@@ -15,7 +15,9 @@ namespace __jni_impl::java::lang
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1, jstring arg2, jstring arg3, jstring arg4, jstring arg5, jint arg6);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4, const QString &arg5, jint arg6);
 		void __constructor(jstring arg0, jstring arg1, jstring arg2, jint arg3);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2, jint arg3);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -49,7 +51,22 @@ namespace __jni_impl::java::lang
 			arg3,
 			arg4,
 			arg5,
-			arg6);
+			arg6
+		);
+	}
+	void StackTraceElement::__constructor(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3, const QString &arg4, const QString &arg5, jint arg6)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.StackTraceElement",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			QAndroidJniObject::fromString(arg3).object<jstring>(),
+			QAndroidJniObject::fromString(arg4).object<jstring>(),
+			QAndroidJniObject::fromString(arg5).object<jstring>(),
+			arg6
+		);
 	}
 	void StackTraceElement::__constructor(jstring arg0, jstring arg1, jstring arg2, jint arg3)
 	{
@@ -59,7 +76,19 @@ namespace __jni_impl::java::lang
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void StackTraceElement::__constructor(const QString &arg0, const QString &arg1, const QString &arg2, jint arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.StackTraceElement",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3
+		);
 	}
 	
 	// Methods

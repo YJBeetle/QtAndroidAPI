@@ -33,21 +33,24 @@ namespace __jni_impl::android::telecom
 		
 		// Constructors
 		void __constructor(jint arg0, jstring arg1, jstring arg2, jstring arg3, jint arg4);
+		void __constructor(jint arg0, const QString &arg1, const QString &arg2, const QString &arg3, jint arg4);
 		void __constructor(jint arg0, jstring arg1, jstring arg2, jstring arg3);
+		void __constructor(jint arg0, const QString &arg1, const QString &arg2, const QString &arg3);
 		void __constructor(jint arg0, jstring arg1);
+		void __constructor(jint arg0, const QString &arg1);
 		void __constructor(jint arg0);
 		
 		// Methods
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getCode();
 		jstring getLabel();
 		jstring getDescription();
 		jstring getReason();
 		jint getTone();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -166,7 +169,20 @@ namespace __jni_impl::android::telecom
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
+	}
+	void DisconnectCause::__constructor(jint arg0, const QString &arg1, const QString &arg2, const QString &arg3, jint arg4)
+	{
+		__thiz = QAndroidJniObject(
+			"android.telecom.DisconnectCause",
+			"(ILjava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/String;I)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			QAndroidJniObject::fromString(arg3).object<jstring>(),
+			arg4
+		);
 	}
 	void DisconnectCause::__constructor(jint arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
@@ -176,7 +192,19 @@ namespace __jni_impl::android::telecom
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void DisconnectCause::__constructor(jint arg0, const QString &arg1, const QString &arg2, const QString &arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"android.telecom.DisconnectCause",
+			"(ILjava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			QAndroidJniObject::fromString(arg3).object<jstring>()
+		);
 	}
 	void DisconnectCause::__constructor(jint arg0, jstring arg1)
 	{
@@ -184,14 +212,25 @@ namespace __jni_impl::android::telecom
 			"android.telecom.DisconnectCause",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void DisconnectCause::__constructor(jint arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.telecom.DisconnectCause",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void DisconnectCause::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.DisconnectCause",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -215,22 +254,6 @@ namespace __jni_impl::android::telecom
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I"
-		);
-	}
-	jint DisconnectCause::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void DisconnectCause::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 	jint DisconnectCause::getCode()
@@ -266,6 +289,22 @@ namespace __jni_impl::android::telecom
 		return __thiz.callMethod<jint>(
 			"getTone",
 			"()I"
+		);
+	}
+	jint DisconnectCause::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void DisconnectCause::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::telecom

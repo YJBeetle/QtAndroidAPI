@@ -74,7 +74,8 @@ namespace __jni_impl::android::view
 		__thiz = QAndroidJniObject(
 			"android.view.WindowInsets",
 			"(Landroid/view/WindowInsets;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

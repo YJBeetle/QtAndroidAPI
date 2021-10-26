@@ -38,14 +38,16 @@ namespace __jni_impl::android::animation
 	{
 		__thiz = QAndroidJniObject(
 			"android.animation.PointFEvaluator",
-			"()V");
+			"()V"
+		);
 	}
 	void PointFEvaluator::__constructor(__jni_impl::android::graphics::PointF arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.animation.PointFEvaluator",
 			"(Landroid/graphics/PointF;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

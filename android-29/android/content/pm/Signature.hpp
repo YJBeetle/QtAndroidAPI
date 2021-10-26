@@ -21,6 +21,7 @@ namespace __jni_impl::android::content::pm
 		// Constructors
 		void __constructor(jbyteArray arg0);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -54,14 +55,24 @@ namespace __jni_impl::android::content::pm
 		__thiz = QAndroidJniObject(
 			"android.content.pm.Signature",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	void Signature::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.Signature",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Signature::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.pm.Signature",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

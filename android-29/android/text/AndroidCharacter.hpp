@@ -83,7 +83,8 @@ namespace __jni_impl::android::text
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.AndroidCharacter",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

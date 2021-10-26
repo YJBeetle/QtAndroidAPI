@@ -26,11 +26,13 @@ namespace __jni_impl::android::print
 		
 		// Methods
 		QAndroidJniObject build();
+		void setAttributes(__jni_impl::android::print::PrintAttributes arg0);
 		void setCopies(jint arg0);
 		void setPages(jarray arg0);
 		void putAdvancedOption(jstring arg0, jint arg1);
+		void putAdvancedOption(const QString &arg0, jint arg1);
 		void putAdvancedOption(jstring arg0, jstring arg1);
-		void setAttributes(__jni_impl::android::print::PrintAttributes arg0);
+		void putAdvancedOption(const QString &arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::print
 
@@ -47,7 +49,8 @@ namespace __jni_impl::android::print
 		__thiz = QAndroidJniObject(
 			"android.print.PrintJobInfo$Builder",
 			"(Landroid/print/PrintJobInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -56,6 +59,14 @@ namespace __jni_impl::android::print
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/print/PrintJobInfo;"
+		);
+	}
+	void PrintJobInfo_Builder::setAttributes(__jni_impl::android::print::PrintAttributes arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAttributes",
+			"(Landroid/print/PrintAttributes;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void PrintJobInfo_Builder::setCopies(jint arg0)
@@ -83,6 +94,15 @@ namespace __jni_impl::android::print
 			arg1
 		);
 	}
+	void PrintJobInfo_Builder::putAdvancedOption(const QString &arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"putAdvancedOption",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	void PrintJobInfo_Builder::putAdvancedOption(jstring arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -92,12 +112,13 @@ namespace __jni_impl::android::print
 			arg1
 		);
 	}
-	void PrintJobInfo_Builder::setAttributes(__jni_impl::android::print::PrintAttributes arg0)
+	void PrintJobInfo_Builder::putAdvancedOption(const QString &arg0, const QString &arg1)
 	{
 		__thiz.callMethod<void>(
-			"setAttributes",
-			"(Landroid/print/PrintAttributes;)V",
-			arg0.__jniObject().object()
+			"putAdvancedOption",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::print

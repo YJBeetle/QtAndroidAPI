@@ -27,11 +27,11 @@ namespace __jni_impl::android::text::style
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getBackgroundColor();
 		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
 		jint getSpanTypeId();
-		jint getBackgroundColor();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -48,31 +48,24 @@ namespace __jni_impl::android::text::style
 		__thiz = QAndroidJniObject(
 			"android.text.style.BackgroundColorSpan",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void BackgroundColorSpan::__constructor(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.BackgroundColorSpan",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
-	jint BackgroundColorSpan::describeContents()
+	jint BackgroundColorSpan::getBackgroundColor()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getBackgroundColor",
 			"()I"
-		);
-	}
-	void BackgroundColorSpan::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 	void BackgroundColorSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
@@ -90,11 +83,20 @@ namespace __jni_impl::android::text::style
 			"()I"
 		);
 	}
-	jint BackgroundColorSpan::getBackgroundColor()
+	jint BackgroundColorSpan::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getBackgroundColor",
+			"describeContents",
 			"()I"
+		);
+	}
+	void BackgroundColorSpan::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::text::style

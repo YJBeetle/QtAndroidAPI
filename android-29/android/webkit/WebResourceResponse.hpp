@@ -19,20 +19,25 @@ namespace __jni_impl::android::webkit
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1, __jni_impl::java::io::InputStream arg2);
+		void __constructor(const QString &arg0, const QString &arg1, __jni_impl::java::io::InputStream arg2);
 		void __constructor(jstring arg0, jstring arg1, jint arg2, jstring arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::java::io::InputStream arg5);
+		void __constructor(const QString &arg0, const QString &arg1, jint arg2, const QString &arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::java::io::InputStream arg5);
 		
 		// Methods
 		jstring getEncoding();
 		void setEncoding(jstring arg0);
-		QAndroidJniObject getData();
-		void setData(__jni_impl::java::io::InputStream arg0);
+		void setEncoding(const QString &arg0);
 		void setMimeType(jstring arg0);
+		void setMimeType(const QString &arg0);
 		jstring getMimeType();
 		void setStatusCodeAndReasonPhrase(jint arg0, jstring arg1);
+		void setStatusCodeAndReasonPhrase(jint arg0, const QString &arg1);
 		jint getStatusCode();
 		jstring getReasonPhrase();
 		void setResponseHeaders(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getResponseHeaders();
+		QAndroidJniObject getData();
+		void setData(__jni_impl::java::io::InputStream arg0);
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -50,7 +55,18 @@ namespace __jni_impl::android::webkit
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/io/InputStream;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void WebResourceResponse::__constructor(const QString &arg0, const QString &arg1, __jni_impl::java::io::InputStream arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.webkit.WebResourceResponse",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/io/InputStream;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
 	}
 	void WebResourceResponse::__constructor(jstring arg0, jstring arg1, jint arg2, jstring arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::java::io::InputStream arg5)
 	{
@@ -62,7 +78,21 @@ namespace __jni_impl::android::webkit
 			arg2,
 			arg3,
 			arg4.__jniObject().object(),
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
+	}
+	void WebResourceResponse::__constructor(const QString &arg0, const QString &arg1, jint arg2, const QString &arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::java::io::InputStream arg5)
+	{
+		__thiz = QAndroidJniObject(
+			"android.webkit.WebResourceResponse",
+			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/util/Map;Ljava/io/InputStream;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			QAndroidJniObject::fromString(arg3).object<jstring>(),
+			arg4.__jniObject().object(),
+			arg5.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -81,19 +111,12 @@ namespace __jni_impl::android::webkit
 			arg0
 		);
 	}
-	QAndroidJniObject WebResourceResponse::getData()
-	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()Ljava/io/InputStream;"
-		);
-	}
-	void WebResourceResponse::setData(__jni_impl::java::io::InputStream arg0)
+	void WebResourceResponse::setEncoding(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"setData",
-			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
+			"setEncoding",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void WebResourceResponse::setMimeType(jstring arg0)
@@ -102,6 +125,14 @@ namespace __jni_impl::android::webkit
 			"setMimeType",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void WebResourceResponse::setMimeType(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMimeType",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring WebResourceResponse::getMimeType()
@@ -118,6 +149,15 @@ namespace __jni_impl::android::webkit
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
+		);
+	}
+	void WebResourceResponse::setStatusCodeAndReasonPhrase(jint arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"setStatusCodeAndReasonPhrase",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jint WebResourceResponse::getStatusCode()
@@ -147,6 +187,21 @@ namespace __jni_impl::android::webkit
 		return __thiz.callObjectMethod(
 			"getResponseHeaders",
 			"()Ljava/util/Map;"
+		);
+	}
+	QAndroidJniObject WebResourceResponse::getData()
+	{
+		return __thiz.callObjectMethod(
+			"getData",
+			"()Ljava/io/InputStream;"
+		);
+	}
+	void WebResourceResponse::setData(__jni_impl::java::io::InputStream arg0)
+	{
+		__thiz.callMethod<void>(
+			"setData",
+			"(Ljava/io/InputStream;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::webkit

@@ -52,7 +52,8 @@ namespace __jni_impl::android::telecom
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.RemoteConnection$VideoProvider$Callback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

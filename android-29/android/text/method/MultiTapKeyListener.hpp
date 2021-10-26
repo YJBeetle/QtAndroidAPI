@@ -35,8 +35,8 @@ namespace __jni_impl::android::text::method
 		void onSpanChanged(__jni_impl::__JniBaseClass arg0, jobject arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		void onSpanAdded(__jni_impl::__JniBaseClass arg0, jobject arg1, jint arg2, jint arg3);
 		void onSpanRemoved(__jni_impl::__JniBaseClass arg0, jobject arg1, jint arg2, jint arg3);
-		jboolean onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
 		jint getInputType();
+		jboolean onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
 	};
 } // namespace __jni_impl::android::text::method
 
@@ -55,7 +55,8 @@ namespace __jni_impl::android::text::method
 			"android.text.method.MultiTapKeyListener",
 			"(Landroid/text/method/TextKeyListener$Capitalize;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -104,6 +105,13 @@ namespace __jni_impl::android::text::method
 			arg3
 		);
 	}
+	jint MultiTapKeyListener::getInputType()
+	{
+		return __thiz.callMethod<jint>(
+			"getInputType",
+			"()I"
+		);
+	}
 	jboolean MultiTapKeyListener::onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -113,13 +121,6 @@ namespace __jni_impl::android::text::method
 			arg1.__jniObject().object(),
 			arg2,
 			arg3.__jniObject().object()
-		);
-	}
-	jint MultiTapKeyListener::getInputType()
-	{
-		return __thiz.callMethod<jint>(
-			"getInputType",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::text::method

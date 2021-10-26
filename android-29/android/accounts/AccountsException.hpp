@@ -17,7 +17,9 @@ namespace __jni_impl::android::accounts
 		// Constructors
 		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
+		void __constructor(const QString &arg0, jthrowable arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor();
 		
 		// Methods
@@ -35,7 +37,8 @@ namespace __jni_impl::android::accounts
 		__thiz = QAndroidJniObject(
 			"android.accounts.AccountsException",
 			"(Ljava/lang/Throwable;)V",
-			arg0);
+			arg0
+		);
 	}
 	void AccountsException::__constructor(jstring arg0, jthrowable arg1)
 	{
@@ -43,20 +46,40 @@ namespace __jni_impl::android::accounts
 			"android.accounts.AccountsException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void AccountsException::__constructor(const QString &arg0, jthrowable arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.accounts.AccountsException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void AccountsException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.accounts.AccountsException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void AccountsException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.accounts.AccountsException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void AccountsException::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.accounts.AccountsException",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

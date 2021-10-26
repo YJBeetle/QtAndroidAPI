@@ -53,14 +53,16 @@ namespace __jni_impl::android::database
 			"android.database.MatrixCursor",
 			"([Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void MatrixCursor::__constructor(jarray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.MatrixCursor",
 			"([Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

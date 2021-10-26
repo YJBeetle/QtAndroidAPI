@@ -33,14 +33,16 @@ namespace __jni_impl::android::animation
 	{
 		__thiz = QAndroidJniObject(
 			"android.animation.IntArrayEvaluator",
-			"()V");
+			"()V"
+		);
 	}
 	void IntArrayEvaluator::__constructor(jintArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.animation.IntArrayEvaluator",
 			"([I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

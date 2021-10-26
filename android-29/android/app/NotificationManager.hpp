@@ -79,33 +79,41 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		void notify(jstring arg0, jint arg1, __jni_impl::android::app::Notification arg2);
+		void notify(const QString &arg0, jint arg1, __jni_impl::android::app::Notification arg2);
 		void notify(jint arg0, __jni_impl::android::app::Notification arg1);
 		void cancel(jstring arg0, jint arg1);
+		void cancel(const QString &arg0, jint arg1);
 		void cancel(jint arg0);
 		void cancelAll();
-		QAndroidJniObject getNotificationChannels();
-		QAndroidJniObject getNotificationChannelGroups();
-		jarray getActiveNotifications();
-		jint getCurrentInterruptionFilter();
-		jint getImportance();
 		void notifyAsPackage(jstring arg0, jstring arg1, jint arg2, __jni_impl::android::app::Notification arg3);
+		void notifyAsPackage(const QString &arg0, const QString &arg1, jint arg2, __jni_impl::android::app::Notification arg3);
 		void setNotificationDelegate(jstring arg0);
+		void setNotificationDelegate(const QString &arg0);
 		jstring getNotificationDelegate();
 		jboolean canNotifyAsPackage(jstring arg0);
+		jboolean canNotifyAsPackage(const QString &arg0);
 		void createNotificationChannelGroup(__jni_impl::android::app::NotificationChannelGroup arg0);
 		void createNotificationChannelGroups(__jni_impl::__JniBaseClass arg0);
 		void createNotificationChannel(__jni_impl::android::app::NotificationChannel arg0);
 		void createNotificationChannels(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getNotificationChannel(jstring arg0);
+		QAndroidJniObject getNotificationChannel(const QString &arg0);
 		void deleteNotificationChannel(jstring arg0);
+		void deleteNotificationChannel(const QString &arg0);
 		QAndroidJniObject getNotificationChannelGroup(jstring arg0);
+		QAndroidJniObject getNotificationChannelGroup(const QString &arg0);
 		void deleteNotificationChannelGroup(jstring arg0);
+		void deleteNotificationChannelGroup(const QString &arg0);
 		QAndroidJniObject getAutomaticZenRules();
 		QAndroidJniObject getAutomaticZenRule(jstring arg0);
+		QAndroidJniObject getAutomaticZenRule(const QString &arg0);
 		jstring addAutomaticZenRule(__jni_impl::android::app::AutomaticZenRule arg0);
 		jboolean updateAutomaticZenRule(jstring arg0, __jni_impl::android::app::AutomaticZenRule arg1);
+		jboolean updateAutomaticZenRule(const QString &arg0, __jni_impl::android::app::AutomaticZenRule arg1);
 		void setAutomaticZenRuleState(jstring arg0, __jni_impl::android::service::notification::Condition arg1);
+		void setAutomaticZenRuleState(const QString &arg0, __jni_impl::android::service::notification::Condition arg1);
 		jboolean removeAutomaticZenRule(jstring arg0);
+		jboolean removeAutomaticZenRule(const QString &arg0);
 		jboolean areNotificationsEnabled();
 		jboolean areBubblesAllowed();
 		jboolean areNotificationsPaused();
@@ -115,6 +123,11 @@ namespace __jni_impl::android::app
 		QAndroidJniObject getNotificationPolicy();
 		void setNotificationPolicy(__jni_impl::android::app::NotificationManager_Policy arg0);
 		void setInterruptionFilter(jint arg0);
+		QAndroidJniObject getNotificationChannels();
+		QAndroidJniObject getNotificationChannelGroups();
+		jarray getActiveNotifications();
+		jint getCurrentInterruptionFilter();
+		jint getImportance();
 	};
 } // namespace __jni_impl::android::app
 
@@ -339,6 +352,16 @@ namespace __jni_impl::android::app
 			arg2.__jniObject().object()
 		);
 	}
+	void NotificationManager::notify(const QString &arg0, jint arg1, __jni_impl::android::app::Notification arg2)
+	{
+		__thiz.callMethod<void>(
+			"notify",
+			"(Ljava/lang/String;ILandroid/app/Notification;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
 	void NotificationManager::notify(jint arg0, __jni_impl::android::app::Notification arg1)
 	{
 		__thiz.callMethod<void>(
@@ -357,6 +380,15 @@ namespace __jni_impl::android::app
 			arg1
 		);
 	}
+	void NotificationManager::cancel(const QString &arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"cancel",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	void NotificationManager::cancel(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -372,41 +404,6 @@ namespace __jni_impl::android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject NotificationManager::getNotificationChannels()
-	{
-		return __thiz.callObjectMethod(
-			"getNotificationChannels",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject NotificationManager::getNotificationChannelGroups()
-	{
-		return __thiz.callObjectMethod(
-			"getNotificationChannelGroups",
-			"()Ljava/util/List;"
-		);
-	}
-	jarray NotificationManager::getActiveNotifications()
-	{
-		return __thiz.callObjectMethod(
-			"getActiveNotifications",
-			"()[Landroid/service/notification/StatusBarNotification;"
-		).object<jarray>();
-	}
-	jint NotificationManager::getCurrentInterruptionFilter()
-	{
-		return __thiz.callMethod<jint>(
-			"getCurrentInterruptionFilter",
-			"()I"
-		);
-	}
-	jint NotificationManager::getImportance()
-	{
-		return __thiz.callMethod<jint>(
-			"getImportance",
-			"()I"
-		);
-	}
 	void NotificationManager::notifyAsPackage(jstring arg0, jstring arg1, jint arg2, __jni_impl::android::app::Notification arg3)
 	{
 		__thiz.callMethod<void>(
@@ -418,12 +415,31 @@ namespace __jni_impl::android::app
 			arg3.__jniObject().object()
 		);
 	}
+	void NotificationManager::notifyAsPackage(const QString &arg0, const QString &arg1, jint arg2, __jni_impl::android::app::Notification arg3)
+	{
+		__thiz.callMethod<void>(
+			"notifyAsPackage",
+			"(Ljava/lang/String;Ljava/lang/String;ILandroid/app/Notification;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3.__jniObject().object()
+		);
+	}
 	void NotificationManager::setNotificationDelegate(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNotificationDelegate",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void NotificationManager::setNotificationDelegate(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setNotificationDelegate",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring NotificationManager::getNotificationDelegate()
@@ -439,6 +455,14 @@ namespace __jni_impl::android::app
 			"canNotifyAsPackage",
 			"(Ljava/lang/String;)Z",
 			arg0
+		);
+	}
+	jboolean NotificationManager::canNotifyAsPackage(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"canNotifyAsPackage",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void NotificationManager::createNotificationChannelGroup(__jni_impl::android::app::NotificationChannelGroup arg0)
@@ -481,12 +505,28 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
+	QAndroidJniObject NotificationManager::getNotificationChannel(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getNotificationChannel",
+			"(Ljava/lang/String;)Landroid/app/NotificationChannel;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void NotificationManager::deleteNotificationChannel(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"deleteNotificationChannel",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void NotificationManager::deleteNotificationChannel(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"deleteNotificationChannel",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject NotificationManager::getNotificationChannelGroup(jstring arg0)
@@ -497,12 +537,28 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
+	QAndroidJniObject NotificationManager::getNotificationChannelGroup(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getNotificationChannelGroup",
+			"(Ljava/lang/String;)Landroid/app/NotificationChannelGroup;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void NotificationManager::deleteNotificationChannelGroup(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"deleteNotificationChannelGroup",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void NotificationManager::deleteNotificationChannelGroup(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"deleteNotificationChannelGroup",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject NotificationManager::getAutomaticZenRules()
@@ -518,6 +574,14 @@ namespace __jni_impl::android::app
 			"getAutomaticZenRule",
 			"(Ljava/lang/String;)Landroid/app/AutomaticZenRule;",
 			arg0
+		);
+	}
+	QAndroidJniObject NotificationManager::getAutomaticZenRule(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAutomaticZenRule",
+			"(Ljava/lang/String;)Landroid/app/AutomaticZenRule;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring NotificationManager::addAutomaticZenRule(__jni_impl::android::app::AutomaticZenRule arg0)
@@ -537,6 +601,15 @@ namespace __jni_impl::android::app
 			arg1.__jniObject().object()
 		);
 	}
+	jboolean NotificationManager::updateAutomaticZenRule(const QString &arg0, __jni_impl::android::app::AutomaticZenRule arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"updateAutomaticZenRule",
+			"(Ljava/lang/String;Landroid/app/AutomaticZenRule;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	void NotificationManager::setAutomaticZenRuleState(jstring arg0, __jni_impl::android::service::notification::Condition arg1)
 	{
 		__thiz.callMethod<void>(
@@ -546,12 +619,29 @@ namespace __jni_impl::android::app
 			arg1.__jniObject().object()
 		);
 	}
+	void NotificationManager::setAutomaticZenRuleState(const QString &arg0, __jni_impl::android::service::notification::Condition arg1)
+	{
+		__thiz.callMethod<void>(
+			"setAutomaticZenRuleState",
+			"(Ljava/lang/String;Landroid/service/notification/Condition;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	jboolean NotificationManager::removeAutomaticZenRule(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"removeAutomaticZenRule",
 			"(Ljava/lang/String;)Z",
 			arg0
+		);
+	}
+	jboolean NotificationManager::removeAutomaticZenRule(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"removeAutomaticZenRule",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean NotificationManager::areNotificationsEnabled()
@@ -618,6 +708,41 @@ namespace __jni_impl::android::app
 			"setInterruptionFilter",
 			"(I)V",
 			arg0
+		);
+	}
+	QAndroidJniObject NotificationManager::getNotificationChannels()
+	{
+		return __thiz.callObjectMethod(
+			"getNotificationChannels",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject NotificationManager::getNotificationChannelGroups()
+	{
+		return __thiz.callObjectMethod(
+			"getNotificationChannelGroups",
+			"()Ljava/util/List;"
+		);
+	}
+	jarray NotificationManager::getActiveNotifications()
+	{
+		return __thiz.callObjectMethod(
+			"getActiveNotifications",
+			"()[Landroid/service/notification/StatusBarNotification;"
+		).object<jarray>();
+	}
+	jint NotificationManager::getCurrentInterruptionFilter()
+	{
+		return __thiz.callMethod<jint>(
+			"getCurrentInterruptionFilter",
+			"()I"
+		);
+	}
+	jint NotificationManager::getImportance()
+	{
+		return __thiz.callMethod<jint>(
+			"getImportance",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::app

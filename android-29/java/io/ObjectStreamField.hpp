@@ -23,7 +23,9 @@ namespace __jni_impl::java::io
 		
 		// Constructors
 		void __constructor(jstring arg0, jclass arg1);
+		void __constructor(const QString &arg0, jclass arg1);
 		void __constructor(jstring arg0, jclass arg1, jboolean arg2);
+		void __constructor(const QString &arg0, jclass arg1, jboolean arg2);
 		
 		// Methods
 		jstring getName();
@@ -52,7 +54,17 @@ namespace __jni_impl::java::io
 			"java.io.ObjectStreamField",
 			"(Ljava/lang/String;Ljava/lang/Class;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void ObjectStreamField::__constructor(const QString &arg0, jclass arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.ObjectStreamField",
+			"(Ljava/lang/String;Ljava/lang/Class;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void ObjectStreamField::__constructor(jstring arg0, jclass arg1, jboolean arg2)
 	{
@@ -61,7 +73,18 @@ namespace __jni_impl::java::io
 			"(Ljava/lang/String;Ljava/lang/Class;Z)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void ObjectStreamField::__constructor(const QString &arg0, jclass arg1, jboolean arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.ObjectStreamField",
+			"(Ljava/lang/String;Ljava/lang/Class;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2
+		);
 	}
 	
 	// Methods

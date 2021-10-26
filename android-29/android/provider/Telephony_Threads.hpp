@@ -30,6 +30,7 @@ namespace __jni_impl::android::provider
 		
 		// Methods
 		static jlong getOrCreateThreadId(__jni_impl::android::content::Context arg0, jstring arg1);
+		static jlong getOrCreateThreadId(__jni_impl::android::content::Context arg0, const QString &arg1);
 		static jlong getOrCreateThreadId(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 	};
 } // namespace __jni_impl::android::provider
@@ -88,6 +89,16 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/Context;Ljava/lang/String;)J",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	jlong Telephony_Threads::getOrCreateThreadId(__jni_impl::android::content::Context arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jlong>(
+			"android.provider.Telephony$Threads",
+			"getOrCreateThreadId",
+			"(Landroid/content/Context;Ljava/lang/String;)J",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jlong Telephony_Threads::getOrCreateThreadId(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)

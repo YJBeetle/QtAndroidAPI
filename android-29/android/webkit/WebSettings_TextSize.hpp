@@ -25,6 +25,7 @@ namespace __jni_impl::android::webkit
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -97,6 +98,15 @@ namespace __jni_impl::android::webkit
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/webkit/WebSettings$TextSize;",
 			arg0
+		);
+	}
+	QAndroidJniObject WebSettings_TextSize::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.webkit.WebSettings$TextSize",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/webkit/WebSettings$TextSize;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::webkit

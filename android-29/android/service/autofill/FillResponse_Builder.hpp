@@ -55,8 +55,8 @@ namespace __jni_impl::android::service::autofill
 		QAndroidJniObject setHeader(__jni_impl::android::widget::RemoteViews arg0);
 		QAndroidJniObject setFooter(__jni_impl::android::widget::RemoteViews arg0);
 		QAndroidJniObject setUserData(__jni_impl::android::service::autofill::UserData arg0);
-		QAndroidJniObject setFlags(jint arg0);
 		QAndroidJniObject setAuthentication(jarray arg0, __jni_impl::android::content::IntentSender arg1, __jni_impl::android::widget::RemoteViews arg2);
+		QAndroidJniObject setFlags(jint arg0);
 	};
 } // namespace __jni_impl::android::service::autofill
 
@@ -77,7 +77,8 @@ namespace __jni_impl::android::service::autofill
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.autofill.FillResponse$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -160,14 +161,6 @@ namespace __jni_impl::android::service::autofill
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject FillResponse_Builder::setFlags(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setFlags",
-			"(I)Landroid/service/autofill/FillResponse$Builder;",
-			arg0
-		);
-	}
 	QAndroidJniObject FillResponse_Builder::setAuthentication(jarray arg0, __jni_impl::android::content::IntentSender arg1, __jni_impl::android::widget::RemoteViews arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -176,6 +169,14 @@ namespace __jni_impl::android::service::autofill
 			arg0,
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject FillResponse_Builder::setFlags(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setFlags",
+			"(I)Landroid/service/autofill/FillResponse$Builder;",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::service::autofill

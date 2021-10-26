@@ -41,6 +41,7 @@ namespace __jni_impl::java::time
 		jint compareTo(jobject arg0);
 		jlong getLong(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject of(jstring arg0);
+		static QAndroidJniObject of(const QString &arg0);
 		static QAndroidJniObject from(__jni_impl::__JniBaseClass arg0);
 		jstring getId();
 		jobject query(__jni_impl::__JniBaseClass arg0);
@@ -158,6 +159,15 @@ namespace __jni_impl::java::time
 			"of",
 			"(Ljava/lang/String;)Ljava/time/ZoneOffset;",
 			arg0
+		);
+	}
+	QAndroidJniObject ZoneOffset::of(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.ZoneOffset",
+			"of",
+			"(Ljava/lang/String;)Ljava/time/ZoneOffset;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject ZoneOffset::from(__jni_impl::__JniBaseClass arg0)

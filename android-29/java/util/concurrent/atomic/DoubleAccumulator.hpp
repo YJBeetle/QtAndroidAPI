@@ -46,7 +46,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"java.util.concurrent.atomic.DoubleAccumulator",
 			"(Ljava/util/function/DoubleBinaryOperator;D)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

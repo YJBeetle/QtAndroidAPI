@@ -38,7 +38,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.BlurMaskFilter",
 			"(FLandroid/graphics/BlurMaskFilter$Blur;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

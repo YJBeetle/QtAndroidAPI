@@ -57,6 +57,7 @@ namespace __jni_impl::java::awt::font
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::java::awt::font
 
@@ -385,6 +386,15 @@ namespace __jni_impl::java::awt::font
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/awt/font/NumericShaper$Range;",
 			arg0
+		);
+	}
+	QAndroidJniObject NumericShaper_Range::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.awt.font.NumericShaper$Range",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/awt/font/NumericShaper$Range;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::awt::font

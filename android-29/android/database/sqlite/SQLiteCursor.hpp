@@ -29,12 +29,15 @@ namespace __jni_impl::android::database::sqlite
 		
 		// Constructors
 		void __constructor(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, __jni_impl::android::database::sqlite::SQLiteQuery arg3);
+		void __constructor(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2, __jni_impl::android::database::sqlite::SQLiteQuery arg3);
 		void __constructor(__jni_impl::__JniBaseClass arg0, jstring arg1, __jni_impl::android::database::sqlite::SQLiteQuery arg2);
+		void __constructor(__jni_impl::__JniBaseClass arg0, const QString &arg1, __jni_impl::android::database::sqlite::SQLiteQuery arg2);
 		
 		// Methods
 		void close();
 		jint getCount();
 		jint getColumnIndex(jstring arg0);
+		jint getColumnIndex(const QString &arg0);
 		jarray getColumnNames();
 		void deactivate();
 		jboolean requery();
@@ -63,7 +66,19 @@ namespace __jni_impl::android::database::sqlite
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
+	}
+	void SQLiteCursor::__constructor(__jni_impl::android::database::sqlite::SQLiteDatabase arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2, __jni_impl::android::database::sqlite::SQLiteQuery arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"android.database.sqlite.SQLiteCursor",
+			"(Landroid/database/sqlite/SQLiteDatabase;Landroid/database/sqlite/SQLiteCursorDriver;Ljava/lang/String;Landroid/database/sqlite/SQLiteQuery;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3.__jniObject().object()
+		);
 	}
 	void SQLiteCursor::__constructor(__jni_impl::__JniBaseClass arg0, jstring arg1, __jni_impl::android::database::sqlite::SQLiteQuery arg2)
 	{
@@ -72,7 +87,18 @@ namespace __jni_impl::android::database::sqlite
 			"(Landroid/database/sqlite/SQLiteCursorDriver;Ljava/lang/String;Landroid/database/sqlite/SQLiteQuery;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void SQLiteCursor::__constructor(__jni_impl::__JniBaseClass arg0, const QString &arg1, __jni_impl::android::database::sqlite::SQLiteQuery arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.database.sqlite.SQLiteCursor",
+			"(Landroid/database/sqlite/SQLiteCursorDriver;Ljava/lang/String;Landroid/database/sqlite/SQLiteQuery;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -96,6 +122,14 @@ namespace __jni_impl::android::database::sqlite
 			"getColumnIndex",
 			"(Ljava/lang/String;)I",
 			arg0
+		);
+	}
+	jint SQLiteCursor::getColumnIndex(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getColumnIndex",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jarray SQLiteCursor::getColumnNames()

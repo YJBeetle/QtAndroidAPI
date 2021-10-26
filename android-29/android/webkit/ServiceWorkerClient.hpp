@@ -36,7 +36,8 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.ServiceWorkerClient",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

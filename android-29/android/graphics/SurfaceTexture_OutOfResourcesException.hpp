@@ -17,6 +17,7 @@ namespace __jni_impl::android::graphics
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -32,14 +33,24 @@ namespace __jni_impl::android::graphics
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.SurfaceTexture$OutOfResourcesException",
-			"()V");
+			"()V"
+		);
 	}
 	void SurfaceTexture_OutOfResourcesException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.SurfaceTexture$OutOfResourcesException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void SurfaceTexture_OutOfResourcesException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.graphics.SurfaceTexture$OutOfResourcesException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

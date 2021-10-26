@@ -50,14 +50,15 @@ namespace __jni_impl::android::telephony::euicc
 		
 		// Methods
 		jboolean isEnabled();
-		jstring getEid();
 		QAndroidJniObject createForCardId(jint arg0);
 		void downloadSubscription(__jni_impl::android::telephony::euicc::DownloadableSubscription arg0, jboolean arg1, __jni_impl::android::app::PendingIntent arg2);
 		void startResolutionActivity(__jni_impl::android::app::Activity arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::android::app::PendingIntent arg3);
 		QAndroidJniObject getEuiccInfo();
 		void deleteSubscription(jint arg0, __jni_impl::android::app::PendingIntent arg1);
 		void updateSubscriptionNickname(jint arg0, jstring arg1, __jni_impl::android::app::PendingIntent arg2);
+		void updateSubscriptionNickname(jint arg0, const QString &arg1, __jni_impl::android::app::PendingIntent arg2);
 		void switchToSubscription(jint arg0, __jni_impl::android::app::PendingIntent arg1);
+		jstring getEid();
 	};
 } // namespace __jni_impl::android::telephony::euicc
 
@@ -149,13 +150,6 @@ namespace __jni_impl::android::telephony::euicc
 			"()Z"
 		);
 	}
-	jstring EuiccManager::getEid()
-	{
-		return __thiz.callObjectMethod(
-			"getEid",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject EuiccManager::createForCardId(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -211,6 +205,16 @@ namespace __jni_impl::android::telephony::euicc
 			arg2.__jniObject().object()
 		);
 	}
+	void EuiccManager::updateSubscriptionNickname(jint arg0, const QString &arg1, __jni_impl::android::app::PendingIntent arg2)
+	{
+		__thiz.callMethod<void>(
+			"updateSubscriptionNickname",
+			"(ILjava/lang/String;Landroid/app/PendingIntent;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
+	}
 	void EuiccManager::switchToSubscription(jint arg0, __jni_impl::android::app::PendingIntent arg1)
 	{
 		__thiz.callMethod<void>(
@@ -219,6 +223,13 @@ namespace __jni_impl::android::telephony::euicc
 			arg0,
 			arg1.__jniObject().object()
 		);
+	}
+	jstring EuiccManager::getEid()
+	{
+		return __thiz.callObjectMethod(
+			"getEid",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::telephony::euicc
 

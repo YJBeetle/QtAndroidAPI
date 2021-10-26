@@ -22,6 +22,7 @@ namespace __jni_impl::android::icu::util
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::icu::util
 
@@ -70,6 +71,15 @@ namespace __jni_impl::android::icu::util
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/util/ULocale$Category;",
 			arg0
+		);
+	}
+	QAndroidJniObject ULocale_Category::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.ULocale$Category",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/util/ULocale$Category;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::icu::util

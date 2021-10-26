@@ -15,11 +15,15 @@ namespace __jni_impl::android::renderscript
 }
 namespace __jni_impl::android::renderscript
 {
+	class Byte3;
+}
+namespace __jni_impl::android::renderscript
+{
 	class Byte2;
 }
 namespace __jni_impl::android::renderscript
 {
-	class Byte3;
+	class Short3;
 }
 namespace __jni_impl::android::renderscript
 {
@@ -31,7 +35,11 @@ namespace __jni_impl::android::renderscript
 }
 namespace __jni_impl::android::renderscript
 {
-	class Short3;
+	class Int4;
+}
+namespace __jni_impl::android::renderscript
+{
+	class Int3;
 }
 namespace __jni_impl::android::renderscript
 {
@@ -39,11 +47,7 @@ namespace __jni_impl::android::renderscript
 }
 namespace __jni_impl::android::renderscript
 {
-	class Int4;
-}
-namespace __jni_impl::android::renderscript
-{
-	class Int3;
+	class Long3;
 }
 namespace __jni_impl::android::renderscript
 {
@@ -55,7 +59,7 @@ namespace __jni_impl::android::renderscript
 }
 namespace __jni_impl::android::renderscript
 {
-	class Long3;
+	class Float4;
 }
 namespace __jni_impl::android::renderscript
 {
@@ -67,15 +71,11 @@ namespace __jni_impl::android::renderscript
 }
 namespace __jni_impl::android::renderscript
 {
-	class Float4;
+	class Double4;
 }
 namespace __jni_impl::android::renderscript
 {
 	class Double2;
-}
-namespace __jni_impl::android::renderscript
-{
-	class Double4;
 }
 namespace __jni_impl::android::renderscript
 {
@@ -87,11 +87,11 @@ namespace __jni_impl::android::renderscript
 }
 namespace __jni_impl::android::renderscript
 {
-	class Matrix3f;
+	class Matrix2f;
 }
 namespace __jni_impl::android::renderscript
 {
-	class Matrix2f;
+	class Matrix3f;
 }
 
 namespace __jni_impl::android::renderscript
@@ -109,54 +109,53 @@ namespace __jni_impl::android::renderscript
 		void skip(jint arg0);
 		void reset();
 		void reset(jint arg0);
-		jbyteArray getData();
 		QAndroidJniObject subMatrix4f();
 		void align(jint arg0);
 		void subalign(jint arg0);
 		void addI8(__jni_impl::android::renderscript::Byte4 arg0);
-		void addI8(__jni_impl::android::renderscript::Byte2 arg0);
 		void addI8(__jni_impl::android::renderscript::Byte3 arg0);
+		void addI8(__jni_impl::android::renderscript::Byte2 arg0);
 		void addI8(jbyte arg0);
 		jbyte subI8();
-		void addI16(__jni_impl::android::renderscript::Short4 arg0);
-		void addI16(__jni_impl::android::renderscript::Short2 arg0);
 		void addI16(__jni_impl::android::renderscript::Short3 arg0);
 		void addI16(jshort arg0);
+		void addI16(__jni_impl::android::renderscript::Short4 arg0);
+		void addI16(__jni_impl::android::renderscript::Short2 arg0);
 		jshort subI16();
-		void addI32(__jni_impl::android::renderscript::Int2 arg0);
 		void addI32(__jni_impl::android::renderscript::Int4 arg0);
 		void addI32(__jni_impl::android::renderscript::Int3 arg0);
+		void addI32(__jni_impl::android::renderscript::Int2 arg0);
 		void addI32(jint arg0);
 		jint subI32();
+		void addI64(__jni_impl::android::renderscript::Long3 arg0);
 		void addI64(__jni_impl::android::renderscript::Long4 arg0);
 		void addI64(__jni_impl::android::renderscript::Long2 arg0);
-		void addI64(__jni_impl::android::renderscript::Long3 arg0);
 		void addI64(jlong arg0);
 		jlong subI64();
-		void addU8(__jni_impl::android::renderscript::Short3 arg0);
-		void addU8(__jni_impl::android::renderscript::Short2 arg0);
-		void addU8(__jni_impl::android::renderscript::Short4 arg0);
 		void addU8(jshort arg0);
+		void addU8(__jni_impl::android::renderscript::Short2 arg0);
+		void addU8(__jni_impl::android::renderscript::Short3 arg0);
+		void addU8(__jni_impl::android::renderscript::Short4 arg0);
 		void addU16(__jni_impl::android::renderscript::Int4 arg0);
-		void addU16(__jni_impl::android::renderscript::Int2 arg0);
 		void addU16(__jni_impl::android::renderscript::Int3 arg0);
+		void addU16(__jni_impl::android::renderscript::Int2 arg0);
 		void addU16(jint arg0);
+		void addU32(__jni_impl::android::renderscript::Long2 arg0);
 		void addU32(__jni_impl::android::renderscript::Long3 arg0);
 		void addU32(__jni_impl::android::renderscript::Long4 arg0);
-		void addU32(__jni_impl::android::renderscript::Long2 arg0);
 		void addU32(jlong arg0);
 		void addU64(__jni_impl::android::renderscript::Long2 arg0);
-		void addU64(__jni_impl::android::renderscript::Long4 arg0);
 		void addU64(__jni_impl::android::renderscript::Long3 arg0);
+		void addU64(__jni_impl::android::renderscript::Long4 arg0);
 		void addU64(jlong arg0);
+		void addF32(jfloat arg0);
+		void addF32(__jni_impl::android::renderscript::Float4 arg0);
 		void addF32(__jni_impl::android::renderscript::Float2 arg0);
 		void addF32(__jni_impl::android::renderscript::Float3 arg0);
-		void addF32(__jni_impl::android::renderscript::Float4 arg0);
-		void addF32(jfloat arg0);
 		jfloat subF32();
-		void addF64(__jni_impl::android::renderscript::Double2 arg0);
 		void addF64(jdouble arg0);
 		void addF64(__jni_impl::android::renderscript::Double4 arg0);
+		void addF64(__jni_impl::android::renderscript::Double2 arg0);
 		void addF64(__jni_impl::android::renderscript::Double3 arg0);
 		jdouble subF64();
 		void addObj(__jni_impl::android::renderscript::BaseObj arg0);
@@ -178,38 +177,39 @@ namespace __jni_impl::android::renderscript
 		QAndroidJniObject subLong2();
 		QAndroidJniObject subLong3();
 		QAndroidJniObject subLong4();
-		void addMatrix(__jni_impl::android::renderscript::Matrix3f arg0);
 		void addMatrix(__jni_impl::android::renderscript::Matrix2f arg0);
+		void addMatrix(__jni_impl::android::renderscript::Matrix3f arg0);
 		void addMatrix(__jni_impl::android::renderscript::Matrix4f arg0);
 		QAndroidJniObject subMatrix3f();
 		QAndroidJniObject subMatrix2f();
 		void addBoolean(jboolean arg0);
 		jboolean subBoolean();
+		jbyteArray getData();
 	};
 } // namespace __jni_impl::android::renderscript
 
 #include "Matrix4f.hpp"
 #include "Byte4.hpp"
-#include "Byte2.hpp"
 #include "Byte3.hpp"
+#include "Byte2.hpp"
+#include "Short3.hpp"
 #include "Short4.hpp"
 #include "Short2.hpp"
-#include "Short3.hpp"
-#include "Int2.hpp"
 #include "Int4.hpp"
 #include "Int3.hpp"
+#include "Int2.hpp"
+#include "Long3.hpp"
 #include "Long4.hpp"
 #include "Long2.hpp"
-#include "Long3.hpp"
+#include "Float4.hpp"
 #include "Float2.hpp"
 #include "Float3.hpp"
-#include "Float4.hpp"
-#include "Double2.hpp"
 #include "Double4.hpp"
+#include "Double2.hpp"
 #include "Double3.hpp"
 #include "BaseObj.hpp"
-#include "Matrix3f.hpp"
 #include "Matrix2f.hpp"
+#include "Matrix3f.hpp"
 
 namespace __jni_impl::android::renderscript
 {
@@ -221,14 +221,16 @@ namespace __jni_impl::android::renderscript
 		__thiz = QAndroidJniObject(
 			"android.renderscript.FieldPacker",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void FieldPacker::__constructor(jbyteArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.FieldPacker",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -254,13 +256,6 @@ namespace __jni_impl::android::renderscript
 			"(I)V",
 			arg0
 		);
-	}
-	jbyteArray FieldPacker::getData()
-	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()[B"
-		).object<jbyteArray>();
 	}
 	QAndroidJniObject FieldPacker::subMatrix4f()
 	{
@@ -293,19 +288,19 @@ namespace __jni_impl::android::renderscript
 			arg0.__jniObject().object()
 		);
 	}
-	void FieldPacker::addI8(__jni_impl::android::renderscript::Byte2 arg0)
-	{
-		__thiz.callMethod<void>(
-			"addI8",
-			"(Landroid/renderscript/Byte2;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void FieldPacker::addI8(__jni_impl::android::renderscript::Byte3 arg0)
 	{
 		__thiz.callMethod<void>(
 			"addI8",
 			"(Landroid/renderscript/Byte3;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void FieldPacker::addI8(__jni_impl::android::renderscript::Byte2 arg0)
+	{
+		__thiz.callMethod<void>(
+			"addI8",
+			"(Landroid/renderscript/Byte2;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -324,22 +319,6 @@ namespace __jni_impl::android::renderscript
 			"()B"
 		);
 	}
-	void FieldPacker::addI16(__jni_impl::android::renderscript::Short4 arg0)
-	{
-		__thiz.callMethod<void>(
-			"addI16",
-			"(Landroid/renderscript/Short4;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void FieldPacker::addI16(__jni_impl::android::renderscript::Short2 arg0)
-	{
-		__thiz.callMethod<void>(
-			"addI16",
-			"(Landroid/renderscript/Short2;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void FieldPacker::addI16(__jni_impl::android::renderscript::Short3 arg0)
 	{
 		__thiz.callMethod<void>(
@@ -356,19 +335,27 @@ namespace __jni_impl::android::renderscript
 			arg0
 		);
 	}
+	void FieldPacker::addI16(__jni_impl::android::renderscript::Short4 arg0)
+	{
+		__thiz.callMethod<void>(
+			"addI16",
+			"(Landroid/renderscript/Short4;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void FieldPacker::addI16(__jni_impl::android::renderscript::Short2 arg0)
+	{
+		__thiz.callMethod<void>(
+			"addI16",
+			"(Landroid/renderscript/Short2;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	jshort FieldPacker::subI16()
 	{
 		return __thiz.callMethod<jshort>(
 			"subI16",
 			"()S"
-		);
-	}
-	void FieldPacker::addI32(__jni_impl::android::renderscript::Int2 arg0)
-	{
-		__thiz.callMethod<void>(
-			"addI32",
-			"(Landroid/renderscript/Int2;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	void FieldPacker::addI32(__jni_impl::android::renderscript::Int4 arg0)
@@ -387,6 +374,14 @@ namespace __jni_impl::android::renderscript
 			arg0.__jniObject().object()
 		);
 	}
+	void FieldPacker::addI32(__jni_impl::android::renderscript::Int2 arg0)
+	{
+		__thiz.callMethod<void>(
+			"addI32",
+			"(Landroid/renderscript/Int2;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void FieldPacker::addI32(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -400,6 +395,14 @@ namespace __jni_impl::android::renderscript
 		return __thiz.callMethod<jint>(
 			"subI32",
 			"()I"
+		);
+	}
+	void FieldPacker::addI64(__jni_impl::android::renderscript::Long3 arg0)
+	{
+		__thiz.callMethod<void>(
+			"addI64",
+			"(Landroid/renderscript/Long3;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void FieldPacker::addI64(__jni_impl::android::renderscript::Long4 arg0)
@@ -418,14 +421,6 @@ namespace __jni_impl::android::renderscript
 			arg0.__jniObject().object()
 		);
 	}
-	void FieldPacker::addI64(__jni_impl::android::renderscript::Long3 arg0)
-	{
-		__thiz.callMethod<void>(
-			"addI64",
-			"(Landroid/renderscript/Long3;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void FieldPacker::addI64(jlong arg0)
 	{
 		__thiz.callMethod<void>(
@@ -441,12 +436,12 @@ namespace __jni_impl::android::renderscript
 			"()J"
 		);
 	}
-	void FieldPacker::addU8(__jni_impl::android::renderscript::Short3 arg0)
+	void FieldPacker::addU8(jshort arg0)
 	{
 		__thiz.callMethod<void>(
 			"addU8",
-			"(Landroid/renderscript/Short3;)V",
-			arg0.__jniObject().object()
+			"(S)V",
+			arg0
 		);
 	}
 	void FieldPacker::addU8(__jni_impl::android::renderscript::Short2 arg0)
@@ -454,6 +449,14 @@ namespace __jni_impl::android::renderscript
 		__thiz.callMethod<void>(
 			"addU8",
 			"(Landroid/renderscript/Short2;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void FieldPacker::addU8(__jni_impl::android::renderscript::Short3 arg0)
+	{
+		__thiz.callMethod<void>(
+			"addU8",
+			"(Landroid/renderscript/Short3;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -465,27 +468,11 @@ namespace __jni_impl::android::renderscript
 			arg0.__jniObject().object()
 		);
 	}
-	void FieldPacker::addU8(jshort arg0)
-	{
-		__thiz.callMethod<void>(
-			"addU8",
-			"(S)V",
-			arg0
-		);
-	}
 	void FieldPacker::addU16(__jni_impl::android::renderscript::Int4 arg0)
 	{
 		__thiz.callMethod<void>(
 			"addU16",
 			"(Landroid/renderscript/Int4;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void FieldPacker::addU16(__jni_impl::android::renderscript::Int2 arg0)
-	{
-		__thiz.callMethod<void>(
-			"addU16",
-			"(Landroid/renderscript/Int2;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -497,12 +484,28 @@ namespace __jni_impl::android::renderscript
 			arg0.__jniObject().object()
 		);
 	}
+	void FieldPacker::addU16(__jni_impl::android::renderscript::Int2 arg0)
+	{
+		__thiz.callMethod<void>(
+			"addU16",
+			"(Landroid/renderscript/Int2;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void FieldPacker::addU16(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"addU16",
 			"(I)V",
 			arg0
+		);
+	}
+	void FieldPacker::addU32(__jni_impl::android::renderscript::Long2 arg0)
+	{
+		__thiz.callMethod<void>(
+			"addU32",
+			"(Landroid/renderscript/Long2;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void FieldPacker::addU32(__jni_impl::android::renderscript::Long3 arg0)
@@ -518,14 +521,6 @@ namespace __jni_impl::android::renderscript
 		__thiz.callMethod<void>(
 			"addU32",
 			"(Landroid/renderscript/Long4;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void FieldPacker::addU32(__jni_impl::android::renderscript::Long2 arg0)
-	{
-		__thiz.callMethod<void>(
-			"addU32",
-			"(Landroid/renderscript/Long2;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -545,19 +540,19 @@ namespace __jni_impl::android::renderscript
 			arg0.__jniObject().object()
 		);
 	}
-	void FieldPacker::addU64(__jni_impl::android::renderscript::Long4 arg0)
-	{
-		__thiz.callMethod<void>(
-			"addU64",
-			"(Landroid/renderscript/Long4;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void FieldPacker::addU64(__jni_impl::android::renderscript::Long3 arg0)
 	{
 		__thiz.callMethod<void>(
 			"addU64",
 			"(Landroid/renderscript/Long3;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void FieldPacker::addU64(__jni_impl::android::renderscript::Long4 arg0)
+	{
+		__thiz.callMethod<void>(
+			"addU64",
+			"(Landroid/renderscript/Long4;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -567,6 +562,22 @@ namespace __jni_impl::android::renderscript
 			"addU64",
 			"(J)V",
 			arg0
+		);
+	}
+	void FieldPacker::addF32(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"addF32",
+			"(F)V",
+			arg0
+		);
+	}
+	void FieldPacker::addF32(__jni_impl::android::renderscript::Float4 arg0)
+	{
+		__thiz.callMethod<void>(
+			"addF32",
+			"(Landroid/renderscript/Float4;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void FieldPacker::addF32(__jni_impl::android::renderscript::Float2 arg0)
@@ -585,35 +596,11 @@ namespace __jni_impl::android::renderscript
 			arg0.__jniObject().object()
 		);
 	}
-	void FieldPacker::addF32(__jni_impl::android::renderscript::Float4 arg0)
-	{
-		__thiz.callMethod<void>(
-			"addF32",
-			"(Landroid/renderscript/Float4;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void FieldPacker::addF32(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"addF32",
-			"(F)V",
-			arg0
-		);
-	}
 	jfloat FieldPacker::subF32()
 	{
 		return __thiz.callMethod<jfloat>(
 			"subF32",
 			"()F"
-		);
-	}
-	void FieldPacker::addF64(__jni_impl::android::renderscript::Double2 arg0)
-	{
-		__thiz.callMethod<void>(
-			"addF64",
-			"(Landroid/renderscript/Double2;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	void FieldPacker::addF64(jdouble arg0)
@@ -629,6 +616,14 @@ namespace __jni_impl::android::renderscript
 		__thiz.callMethod<void>(
 			"addF64",
 			"(Landroid/renderscript/Double4;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void FieldPacker::addF64(__jni_impl::android::renderscript::Double2 arg0)
+	{
+		__thiz.callMethod<void>(
+			"addF64",
+			"(Landroid/renderscript/Double2;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -781,19 +776,19 @@ namespace __jni_impl::android::renderscript
 			"()Landroid/renderscript/Long4;"
 		);
 	}
-	void FieldPacker::addMatrix(__jni_impl::android::renderscript::Matrix3f arg0)
-	{
-		__thiz.callMethod<void>(
-			"addMatrix",
-			"(Landroid/renderscript/Matrix3f;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void FieldPacker::addMatrix(__jni_impl::android::renderscript::Matrix2f arg0)
 	{
 		__thiz.callMethod<void>(
 			"addMatrix",
 			"(Landroid/renderscript/Matrix2f;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void FieldPacker::addMatrix(__jni_impl::android::renderscript::Matrix3f arg0)
+	{
+		__thiz.callMethod<void>(
+			"addMatrix",
+			"(Landroid/renderscript/Matrix3f;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -833,6 +828,13 @@ namespace __jni_impl::android::renderscript
 			"subBoolean",
 			"()Z"
 		);
+	}
+	jbyteArray FieldPacker::getData()
+	{
+		return __thiz.callObjectMethod(
+			"getData",
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::renderscript
 

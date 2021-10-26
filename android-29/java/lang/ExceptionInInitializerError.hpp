@@ -25,6 +25,7 @@ namespace __jni_impl::java::lang
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jthrowable arg0);
 		void __constructor();
 		
@@ -46,20 +47,31 @@ namespace __jni_impl::java::lang
 		__thiz = QAndroidJniObject(
 			"java.lang.ExceptionInInitializerError",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void ExceptionInInitializerError::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.ExceptionInInitializerError",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void ExceptionInInitializerError::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ExceptionInInitializerError",
 			"(Ljava/lang/Throwable;)V",
-			arg0);
+			arg0
+		);
 	}
 	void ExceptionInInitializerError::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ExceptionInInitializerError",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

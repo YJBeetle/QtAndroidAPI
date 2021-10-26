@@ -86,7 +86,8 @@ namespace __jni_impl::android
 	{
 		__thiz = QAndroidJniObject(
 			"android.R$dimen",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

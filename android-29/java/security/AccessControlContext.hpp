@@ -47,14 +47,16 @@ namespace __jni_impl::java::security
 			"java.security.AccessControlContext",
 			"(Ljava/security/AccessControlContext;Ljava/security/DomainCombiner;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AccessControlContext::__constructor(jarray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.AccessControlContext",
 			"([Ljava/security/ProtectionDomain;)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

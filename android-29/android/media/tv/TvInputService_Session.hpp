@@ -53,6 +53,8 @@ namespace __jni_impl::android::media::tv
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
+		void onSurfaceChanged(jint arg0, jint arg1, jint arg2);
+		void onRelease();
 		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
 		jboolean onKeyLongPress(jint arg0, __jni_impl::android::view::KeyEvent arg1);
 		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
@@ -60,13 +62,12 @@ namespace __jni_impl::android::media::tv
 		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
 		jboolean onTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
 		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
-		void onRelease();
-		void onSurfaceChanged(jint arg0, jint arg1, jint arg2);
 		jboolean onSetSurface(__jni_impl::android::view::Surface arg0);
 		void setOverlayViewEnabled(jboolean arg0);
 		void notifyChannelRetuned(__jni_impl::android::net::Uri arg0);
 		void notifyTracksChanged(__jni_impl::__JniBaseClass arg0);
 		void notifyTrackSelected(jint arg0, jstring arg1);
+		void notifyTrackSelected(jint arg0, const QString &arg1);
 		void notifyVideoAvailable();
 		void notifyVideoUnavailable(jint arg0);
 		void notifyContentAllowed();
@@ -80,7 +81,9 @@ namespace __jni_impl::android::media::tv
 		void onSetCaptionEnabled(jboolean arg0);
 		void onUnblockContent(__jni_impl::android::media::tv::TvContentRating arg0);
 		jboolean onSelectTrack(jint arg0, jstring arg1);
+		jboolean onSelectTrack(jint arg0, const QString &arg1);
 		void onAppPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void onAppPrivateCommand(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		QAndroidJniObject onCreateOverlayView();
 		void onTimeShiftPlay(__jni_impl::android::net::Uri arg0);
 		void onTimeShiftPause();
@@ -112,10 +115,28 @@ namespace __jni_impl::android::media::tv
 		__thiz = QAndroidJniObject(
 			"android.media.tv.TvInputService$Session",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
+	void TvInputService_Session::onSurfaceChanged(jint arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"onSurfaceChanged",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void TvInputService_Session::onRelease()
+	{
+		__thiz.callMethod<void>(
+			"onRelease",
+			"()V"
+		);
+	}
 	jboolean TvInputService_Session::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -177,23 +198,6 @@ namespace __jni_impl::android::media::tv
 			arg0.__jniObject().object()
 		);
 	}
-	void TvInputService_Session::onRelease()
-	{
-		__thiz.callMethod<void>(
-			"onRelease",
-			"()V"
-		);
-	}
-	void TvInputService_Session::onSurfaceChanged(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"onSurfaceChanged",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
 	jboolean TvInputService_Session::onSetSurface(__jni_impl::android::view::Surface arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -233,6 +237,15 @@ namespace __jni_impl::android::media::tv
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
+		);
+	}
+	void TvInputService_Session::notifyTrackSelected(jint arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"notifyTrackSelected",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void TvInputService_Session::notifyVideoAvailable()
@@ -343,12 +356,30 @@ namespace __jni_impl::android::media::tv
 			arg1
 		);
 	}
+	jboolean TvInputService_Session::onSelectTrack(jint arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onSelectTrack",
+			"(ILjava/lang/String;)Z",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void TvInputService_Session::onAppPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1)
 	{
 		__thiz.callMethod<void>(
 			"onAppPrivateCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void TvInputService_Session::onAppPrivateCommand(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"onAppPrivateCommand",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

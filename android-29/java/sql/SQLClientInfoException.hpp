@@ -17,14 +17,20 @@ namespace __jni_impl::java::sql
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::__JniBaseClass arg1, jthrowable arg2);
+		void __constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1, jthrowable arg2);
 		void __constructor(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2);
+		void __constructor(const QString &arg0, const QString &arg1, __jni_impl::__JniBaseClass arg2);
 		void __constructor(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2, jthrowable arg3);
+		void __constructor(const QString &arg0, const QString &arg1, __jni_impl::__JniBaseClass arg2, jthrowable arg3);
 		void __constructor(jstring arg0, jstring arg1, jint arg2, __jni_impl::__JniBaseClass arg3);
+		void __constructor(const QString &arg0, const QString &arg1, jint arg2, __jni_impl::__JniBaseClass arg3);
 		void __constructor(jstring arg0, jstring arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jthrowable arg4);
+		void __constructor(const QString &arg0, const QString &arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jthrowable arg4);
 		void __constructor();
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		void __constructor(__jni_impl::__JniBaseClass arg0, jthrowable arg1);
 		void __constructor(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		void __constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
 		QAndroidJniObject getFailedProperties();
@@ -44,7 +50,18 @@ namespace __jni_impl::java::sql
 			"(Ljava/lang/String;Ljava/util/Map;Ljava/lang/Throwable;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
+	}
+	void SQLClientInfoException::__constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1, jthrowable arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.SQLClientInfoException",
+			"(Ljava/lang/String;Ljava/util/Map;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2
+		);
 	}
 	void SQLClientInfoException::__constructor(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -53,7 +70,18 @@ namespace __jni_impl::java::sql
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void SQLClientInfoException::__constructor(const QString &arg0, const QString &arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.SQLClientInfoException",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
 	}
 	void SQLClientInfoException::__constructor(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2, jthrowable arg3)
 	{
@@ -63,7 +91,19 @@ namespace __jni_impl::java::sql
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
+	}
+	void SQLClientInfoException::__constructor(const QString &arg0, const QString &arg1, __jni_impl::__JniBaseClass arg2, jthrowable arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.SQLClientInfoException",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/Map;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object(),
+			arg3
+		);
 	}
 	void SQLClientInfoException::__constructor(jstring arg0, jstring arg1, jint arg2, __jni_impl::__JniBaseClass arg3)
 	{
@@ -73,7 +113,19 @@ namespace __jni_impl::java::sql
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
+	}
+	void SQLClientInfoException::__constructor(const QString &arg0, const QString &arg1, jint arg2, __jni_impl::__JniBaseClass arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.SQLClientInfoException",
+			"(Ljava/lang/String;Ljava/lang/String;ILjava/util/Map;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3.__jniObject().object()
+		);
 	}
 	void SQLClientInfoException::__constructor(jstring arg0, jstring arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jthrowable arg4)
 	{
@@ -84,20 +136,35 @@ namespace __jni_impl::java::sql
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),
-			arg4);
+			arg4
+		);
+	}
+	void SQLClientInfoException::__constructor(const QString &arg0, const QString &arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jthrowable arg4)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.SQLClientInfoException",
+			"(Ljava/lang/String;Ljava/lang/String;ILjava/util/Map;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3.__jniObject().object(),
+			arg4
+		);
 	}
 	void SQLClientInfoException::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.SQLClientInfoException",
-			"()V");
+			"()V"
+		);
 	}
 	void SQLClientInfoException::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.SQLClientInfoException",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SQLClientInfoException::__constructor(__jni_impl::__JniBaseClass arg0, jthrowable arg1)
 	{
@@ -105,7 +172,8 @@ namespace __jni_impl::java::sql
 			"java.sql.SQLClientInfoException",
 			"(Ljava/util/Map;Ljava/lang/Throwable;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void SQLClientInfoException::__constructor(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -113,7 +181,17 @@ namespace __jni_impl::java::sql
 			"java.sql.SQLClientInfoException",
 			"(Ljava/lang/String;Ljava/util/Map;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void SQLClientInfoException::__constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.SQLClientInfoException",
+			"(Ljava/lang/String;Ljava/util/Map;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

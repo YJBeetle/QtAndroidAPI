@@ -50,34 +50,37 @@ namespace __jni_impl::android::transition
 		
 		// Methods
 		QAndroidJniObject clone();
-		QAndroidJniObject setOrdering(jint arg0);
-		jint getOrdering();
-		QAndroidJniObject addTransition(__jni_impl::android::transition::Transition arg0);
-		jint getTransitionCount();
-		QAndroidJniObject getTransitionAt(jint arg0);
-		QAndroidJniObject removeTransition(__jni_impl::android::transition::Transition arg0);
 		QAndroidJniObject setDuration(jlong arg0);
 		QAndroidJniObject setStartDelay(jlong arg0);
 		QAndroidJniObject setInterpolator(__jni_impl::__JniBaseClass arg0);
 		void captureStartValues(__jni_impl::android::transition::TransitionValues arg0);
 		void captureEndValues(__jni_impl::android::transition::TransitionValues arg0);
 		QAndroidJniObject addTarget(jint arg0);
+		QAndroidJniObject addTarget(__jni_impl::android::view::View arg0);
 		QAndroidJniObject addTarget(jclass arg0);
 		QAndroidJniObject addTarget(jstring arg0);
-		QAndroidJniObject addTarget(__jni_impl::android::view::View arg0);
+		QAndroidJniObject addTarget(const QString &arg0);
 		QAndroidJniObject removeTarget(__jni_impl::android::view::View arg0);
-		QAndroidJniObject removeTarget(jint arg0);
 		QAndroidJniObject removeTarget(jstring arg0);
+		QAndroidJniObject removeTarget(const QString &arg0);
+		QAndroidJniObject removeTarget(jint arg0);
 		QAndroidJniObject removeTarget(jclass arg0);
 		QAndroidJniObject excludeTarget(jstring arg0, jboolean arg1);
+		QAndroidJniObject excludeTarget(const QString &arg0, jboolean arg1);
+		QAndroidJniObject excludeTarget(jint arg0, jboolean arg1);
 		QAndroidJniObject excludeTarget(__jni_impl::android::view::View arg0, jboolean arg1);
 		QAndroidJniObject excludeTarget(jclass arg0, jboolean arg1);
-		QAndroidJniObject excludeTarget(jint arg0, jboolean arg1);
 		QAndroidJniObject addListener(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject removeListener(__jni_impl::__JniBaseClass arg0);
 		void setEpicenterCallback(__jni_impl::android::transition::Transition_EpicenterCallback arg0);
 		void setPathMotion(__jni_impl::android::transition::PathMotion arg0);
 		void setPropagation(__jni_impl::android::transition::TransitionPropagation arg0);
+		QAndroidJniObject setOrdering(jint arg0);
+		jint getOrdering();
+		QAndroidJniObject addTransition(__jni_impl::android::transition::Transition arg0);
+		jint getTransitionCount();
+		QAndroidJniObject getTransitionAt(jint arg0);
+		QAndroidJniObject removeTransition(__jni_impl::android::transition::Transition arg0);
 	};
 } // namespace __jni_impl::android::transition
 
@@ -112,7 +115,8 @@ namespace __jni_impl::android::transition
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.TransitionSet",
-			"()V");
+			"()V"
+		);
 	}
 	void TransitionSet::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -120,7 +124,8 @@ namespace __jni_impl::android::transition
 			"android.transition.TransitionSet",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -129,52 +134,6 @@ namespace __jni_impl::android::transition
 		return __thiz.callObjectMethod(
 			"clone",
 			"()Landroid/transition/TransitionSet;"
-		);
-	}
-	QAndroidJniObject TransitionSet::setOrdering(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setOrdering",
-			"(I)Landroid/transition/TransitionSet;",
-			arg0
-		);
-	}
-	jint TransitionSet::getOrdering()
-	{
-		return __thiz.callMethod<jint>(
-			"getOrdering",
-			"()I"
-		);
-	}
-	QAndroidJniObject TransitionSet::addTransition(__jni_impl::android::transition::Transition arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addTransition",
-			"(Landroid/transition/Transition;)Landroid/transition/TransitionSet;",
-			arg0.__jniObject().object()
-		);
-	}
-	jint TransitionSet::getTransitionCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getTransitionCount",
-			"()I"
-		);
-	}
-	QAndroidJniObject TransitionSet::getTransitionAt(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getTransitionAt",
-			"(I)Landroid/transition/Transition;",
-			arg0
-		);
-	}
-	QAndroidJniObject TransitionSet::removeTransition(__jni_impl::android::transition::Transition arg0)
-	{
-		return __thiz.callObjectMethod(
-			"removeTransition",
-			"(Landroid/transition/Transition;)Landroid/transition/TransitionSet;",
-			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject TransitionSet::setDuration(jlong arg0)
@@ -225,6 +184,14 @@ namespace __jni_impl::android::transition
 			arg0
 		);
 	}
+	QAndroidJniObject TransitionSet::addTarget(__jni_impl::android::view::View arg0)
+	{
+		return __thiz.callObjectMethod(
+			"addTarget",
+			"(Landroid/view/View;)Landroid/transition/TransitionSet;",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject TransitionSet::addTarget(jclass arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -241,12 +208,12 @@ namespace __jni_impl::android::transition
 			arg0
 		);
 	}
-	QAndroidJniObject TransitionSet::addTarget(__jni_impl::android::view::View arg0)
+	QAndroidJniObject TransitionSet::addTarget(const QString &arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addTarget",
-			"(Landroid/view/View;)Landroid/transition/TransitionSet;",
-			arg0.__jniObject().object()
+			"(Ljava/lang/String;)Landroid/transition/TransitionSet;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject TransitionSet::removeTarget(__jni_impl::android::view::View arg0)
@@ -257,19 +224,27 @@ namespace __jni_impl::android::transition
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject TransitionSet::removeTarget(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"removeTarget",
-			"(I)Landroid/transition/TransitionSet;",
-			arg0
-		);
-	}
 	QAndroidJniObject TransitionSet::removeTarget(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"removeTarget",
 			"(Ljava/lang/String;)Landroid/transition/TransitionSet;",
+			arg0
+		);
+	}
+	QAndroidJniObject TransitionSet::removeTarget(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"removeTarget",
+			"(Ljava/lang/String;)Landroid/transition/TransitionSet;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject TransitionSet::removeTarget(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"removeTarget",
+			"(I)Landroid/transition/TransitionSet;",
 			arg0
 		);
 	}
@@ -290,6 +265,24 @@ namespace __jni_impl::android::transition
 			arg1
 		);
 	}
+	QAndroidJniObject TransitionSet::excludeTarget(const QString &arg0, jboolean arg1)
+	{
+		return __thiz.callObjectMethod(
+			"excludeTarget",
+			"(Ljava/lang/String;Z)Landroid/transition/Transition;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	QAndroidJniObject TransitionSet::excludeTarget(jint arg0, jboolean arg1)
+	{
+		return __thiz.callObjectMethod(
+			"excludeTarget",
+			"(IZ)Landroid/transition/Transition;",
+			arg0,
+			arg1
+		);
+	}
 	QAndroidJniObject TransitionSet::excludeTarget(__jni_impl::android::view::View arg0, jboolean arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -304,15 +297,6 @@ namespace __jni_impl::android::transition
 		return __thiz.callObjectMethod(
 			"excludeTarget",
 			"(Ljava/lang/Class;Z)Landroid/transition/Transition;",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject TransitionSet::excludeTarget(jint arg0, jboolean arg1)
-	{
-		return __thiz.callObjectMethod(
-			"excludeTarget",
-			"(IZ)Landroid/transition/Transition;",
 			arg0,
 			arg1
 		);
@@ -354,6 +338,52 @@ namespace __jni_impl::android::transition
 		__thiz.callMethod<void>(
 			"setPropagation",
 			"(Landroid/transition/TransitionPropagation;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TransitionSet::setOrdering(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setOrdering",
+			"(I)Landroid/transition/TransitionSet;",
+			arg0
+		);
+	}
+	jint TransitionSet::getOrdering()
+	{
+		return __thiz.callMethod<jint>(
+			"getOrdering",
+			"()I"
+		);
+	}
+	QAndroidJniObject TransitionSet::addTransition(__jni_impl::android::transition::Transition arg0)
+	{
+		return __thiz.callObjectMethod(
+			"addTransition",
+			"(Landroid/transition/Transition;)Landroid/transition/TransitionSet;",
+			arg0.__jniObject().object()
+		);
+	}
+	jint TransitionSet::getTransitionCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getTransitionCount",
+			"()I"
+		);
+	}
+	QAndroidJniObject TransitionSet::getTransitionAt(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getTransitionAt",
+			"(I)Landroid/transition/Transition;",
+			arg0
+		);
+	}
+	QAndroidJniObject TransitionSet::removeTransition(__jni_impl::android::transition::Transition arg0)
+	{
+		return __thiz.callObjectMethod(
+			"removeTransition",
+			"(Landroid/transition/Transition;)Landroid/transition/TransitionSet;",
 			arg0.__jniObject().object()
 		);
 	}

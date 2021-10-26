@@ -24,8 +24,11 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		QAndroidJniObject addLine(jstring arg0);
-		QAndroidJniObject setSummaryText(jstring arg0);
+		QAndroidJniObject addLine(const QString &arg0);
 		QAndroidJniObject setBigContentTitle(jstring arg0);
+		QAndroidJniObject setBigContentTitle(const QString &arg0);
+		QAndroidJniObject setSummaryText(jstring arg0);
+		QAndroidJniObject setSummaryText(const QString &arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -40,14 +43,16 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$InboxStyle",
-			"()V");
+			"()V"
+		);
 	}
 	void Notification_InboxStyle::__constructor(__jni_impl::android::app::Notification_Builder arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$InboxStyle",
 			"(Landroid/app/Notification$Builder;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -59,12 +64,12 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_InboxStyle::setSummaryText(jstring arg0)
+	QAndroidJniObject Notification_InboxStyle::addLine(const QString &arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setSummaryText",
+			"addLine",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;",
-			arg0
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Notification_InboxStyle::setBigContentTitle(jstring arg0)
@@ -73,6 +78,30 @@ namespace __jni_impl::android::app
 			"setBigContentTitle",
 			"(Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;",
 			arg0
+		);
+	}
+	QAndroidJniObject Notification_InboxStyle::setBigContentTitle(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setBigContentTitle",
+			"(Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject Notification_InboxStyle::setSummaryText(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setSummaryText",
+			"(Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;",
+			arg0
+		);
+	}
+	QAndroidJniObject Notification_InboxStyle::setSummaryText(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setSummaryText",
+			"(Ljava/lang/CharSequence;)Landroid/app/Notification$InboxStyle;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::app

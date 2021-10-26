@@ -49,7 +49,8 @@ namespace __jni_impl::android::text::method
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.method.DialerKeyListener",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

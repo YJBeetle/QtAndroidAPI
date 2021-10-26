@@ -18,11 +18,14 @@ namespace __jni_impl::android::webkit
 		
 		// Methods
 		void clear(jstring arg0);
+		void clear(const QString &arg0);
 		static QAndroidJniObject getInstance();
 		void allow(jstring arg0);
-		void getOrigins(__jni_impl::__JniBaseClass arg0);
+		void allow(const QString &arg0);
 		void clearAll();
 		void getAllowed(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		void getAllowed(const QString &arg0, __jni_impl::__JniBaseClass arg1);
+		void getOrigins(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -48,6 +51,14 @@ namespace __jni_impl::android::webkit
 			arg0
 		);
 	}
+	void GeolocationPermissions::clear(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"clear",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject GeolocationPermissions::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -64,12 +75,12 @@ namespace __jni_impl::android::webkit
 			arg0
 		);
 	}
-	void GeolocationPermissions::getOrigins(__jni_impl::__JniBaseClass arg0)
+	void GeolocationPermissions::allow(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"getOrigins",
-			"(Landroid/webkit/ValueCallback;)V",
-			arg0.__jniObject().object()
+			"allow",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void GeolocationPermissions::clearAll()
@@ -86,6 +97,23 @@ namespace __jni_impl::android::webkit
 			"(Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
 			arg0,
 			arg1.__jniObject().object()
+		);
+	}
+	void GeolocationPermissions::getAllowed(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"getAllowed",
+			"(Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
+	void GeolocationPermissions::getOrigins(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"getOrigins",
+			"(Landroid/webkit/ValueCallback;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::webkit

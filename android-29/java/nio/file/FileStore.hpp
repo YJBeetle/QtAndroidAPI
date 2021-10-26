@@ -21,12 +21,14 @@ namespace __jni_impl::java::nio::file
 		jstring type();
 		jboolean isReadOnly();
 		jobject getAttribute(jstring arg0);
+		jobject getAttribute(const QString &arg0);
 		jlong getTotalSpace();
 		jlong getUsableSpace();
 		jlong getBlockSize();
 		jlong getUnallocatedSpace();
 		jboolean supportsFileAttributeView(jclass arg0);
 		jboolean supportsFileAttributeView(jstring arg0);
+		jboolean supportsFileAttributeView(const QString &arg0);
 		QAndroidJniObject getFileStoreAttributeView(jclass arg0);
 	};
 } // namespace __jni_impl::java::nio::file
@@ -74,6 +76,14 @@ namespace __jni_impl::java::nio::file
 			arg0
 		).object<jobject>();
 	}
+	jobject FileStore::getAttribute(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAttribute",
+			"(Ljava/lang/String;)Ljava/lang/Object;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jobject>();
+	}
 	jlong FileStore::getTotalSpace()
 	{
 		return __thiz.callMethod<jlong>(
@@ -116,6 +126,14 @@ namespace __jni_impl::java::nio::file
 			"supportsFileAttributeView",
 			"(Ljava/lang/String;)Z",
 			arg0
+		);
+	}
+	jboolean FileStore::supportsFileAttributeView(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"supportsFileAttributeView",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject FileStore::getFileStoreAttributeView(jclass arg0)

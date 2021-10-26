@@ -51,7 +51,8 @@ namespace __jni_impl::android::system
 			"android.system.StructTimespec",
 			"(JJ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

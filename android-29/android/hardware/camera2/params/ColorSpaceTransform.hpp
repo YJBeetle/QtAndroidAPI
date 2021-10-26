@@ -43,14 +43,16 @@ namespace __jni_impl::android::hardware::camera2::params
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.params.ColorSpaceTransform",
 			"([Landroid/util/Rational;)V",
-			arg0);
+			arg0
+		);
 	}
 	void ColorSpaceTransform::__constructor(jintArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.params.ColorSpaceTransform",
 			"([I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

@@ -34,18 +34,18 @@ namespace __jni_impl::android::net
 		jstring getTypeName();
 		QAndroidJniObject getState();
 		jint getType();
-		jboolean isAvailable();
-		jboolean isConnected();
+		jint getSubtype();
+		jstring getReason();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getSubtype();
+		jboolean isConnected();
 		jboolean isFailover();
 		jstring getSubtypeName();
 		jboolean isConnectedOrConnecting();
 		jboolean isRoaming();
 		QAndroidJniObject getDetailedState();
 		jstring getExtraInfo();
-		jstring getReason();
+		jboolean isAvailable();
 	};
 } // namespace __jni_impl::android::net
 
@@ -102,19 +102,19 @@ namespace __jni_impl::android::net
 			"()I"
 		);
 	}
-	jboolean NetworkInfo::isAvailable()
+	jint NetworkInfo::getSubtype()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isAvailable",
-			"()Z"
+		return __thiz.callMethod<jint>(
+			"getSubtype",
+			"()I"
 		);
 	}
-	jboolean NetworkInfo::isConnected()
+	jstring NetworkInfo::getReason()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isConnected",
-			"()Z"
-		);
+		return __thiz.callObjectMethod(
+			"getReason",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jint NetworkInfo::describeContents()
 	{
@@ -132,11 +132,11 @@ namespace __jni_impl::android::net
 			arg1
 		);
 	}
-	jint NetworkInfo::getSubtype()
+	jboolean NetworkInfo::isConnected()
 	{
-		return __thiz.callMethod<jint>(
-			"getSubtype",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"isConnected",
+			"()Z"
 		);
 	}
 	jboolean NetworkInfo::isFailover()
@@ -181,12 +181,12 @@ namespace __jni_impl::android::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jstring NetworkInfo::getReason()
+	jboolean NetworkInfo::isAvailable()
 	{
-		return __thiz.callObjectMethod(
-			"getReason",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jboolean>(
+			"isAvailable",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::net
 

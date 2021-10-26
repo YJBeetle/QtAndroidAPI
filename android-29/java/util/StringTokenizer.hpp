@@ -15,13 +15,17 @@ namespace __jni_impl::java::util
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1);
+		void __constructor(const QString &arg0, const QString &arg1);
 		void __constructor(jstring arg0, jstring arg1, jboolean arg2);
+		void __constructor(const QString &arg0, const QString &arg1, jboolean arg2);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jint countTokens();
 		jboolean hasMoreElements();
 		jstring nextToken(jstring arg0);
+		jstring nextToken(const QString &arg0);
 		jstring nextToken();
 		jobject nextElement();
 		jboolean hasMoreTokens();
@@ -40,7 +44,17 @@ namespace __jni_impl::java::util
 			"java.util.StringTokenizer",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void StringTokenizer::__constructor(const QString &arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.StringTokenizer",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void StringTokenizer::__constructor(jstring arg0, jstring arg1, jboolean arg2)
 	{
@@ -49,14 +63,34 @@ namespace __jni_impl::java::util
 			"(Ljava/lang/String;Ljava/lang/String;Z)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void StringTokenizer::__constructor(const QString &arg0, const QString &arg1, jboolean arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.StringTokenizer",
+			"(Ljava/lang/String;Ljava/lang/String;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
 	}
 	void StringTokenizer::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.StringTokenizer",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void StringTokenizer::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.StringTokenizer",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -80,6 +114,14 @@ namespace __jni_impl::java::util
 			"nextToken",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring StringTokenizer::nextToken(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"nextToken",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring StringTokenizer::nextToken()

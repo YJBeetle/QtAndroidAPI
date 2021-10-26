@@ -40,6 +40,7 @@ namespace __jni_impl::android::graphics::fonts
 		// Constructors
 		void __constructor(__jni_impl::android::content::res::Resources arg0, jint arg1);
 		void __constructor(__jni_impl::android::content::res::AssetManager arg0, jstring arg1);
+		void __constructor(__jni_impl::android::content::res::AssetManager arg0, const QString &arg1);
 		void __constructor(__jni_impl::android::os::ParcelFileDescriptor arg0, jlong arg1, jlong arg2);
 		void __constructor(__jni_impl::java::nio::ByteBuffer arg0);
 		void __constructor(__jni_impl::java::io::File arg0);
@@ -47,10 +48,11 @@ namespace __jni_impl::android::graphics::fonts
 		
 		// Methods
 		QAndroidJniObject build();
+		QAndroidJniObject setFontVariationSettings(jstring arg0);
+		QAndroidJniObject setFontVariationSettings(const QString &arg0);
+		QAndroidJniObject setFontVariationSettings(jarray arg0);
 		QAndroidJniObject setWeight(jint arg0);
 		QAndroidJniObject setTtcIndex(jint arg0);
-		QAndroidJniObject setFontVariationSettings(jarray arg0);
-		QAndroidJniObject setFontVariationSettings(jstring arg0);
 		QAndroidJniObject setSlant(jint arg0);
 	};
 } // namespace __jni_impl::android::graphics::fonts
@@ -73,7 +75,8 @@ namespace __jni_impl::android::graphics::fonts
 			"android.graphics.fonts.Font$Builder",
 			"(Landroid/content/res/Resources;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void Font_Builder::__constructor(__jni_impl::android::content::res::AssetManager arg0, jstring arg1)
 	{
@@ -81,7 +84,17 @@ namespace __jni_impl::android::graphics::fonts
 			"android.graphics.fonts.Font$Builder",
 			"(Landroid/content/res/AssetManager;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void Font_Builder::__constructor(__jni_impl::android::content::res::AssetManager arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.graphics.fonts.Font$Builder",
+			"(Landroid/content/res/AssetManager;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void Font_Builder::__constructor(__jni_impl::android::os::ParcelFileDescriptor arg0, jlong arg1, jlong arg2)
 	{
@@ -90,28 +103,32 @@ namespace __jni_impl::android::graphics::fonts
 			"(Landroid/os/ParcelFileDescriptor;JJ)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Font_Builder::__constructor(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.fonts.Font$Builder",
 			"(Ljava/nio/ByteBuffer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Font_Builder::__constructor(__jni_impl::java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.fonts.Font$Builder",
 			"(Ljava/io/File;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Font_Builder::__constructor(__jni_impl::android::os::ParcelFileDescriptor arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.fonts.Font$Builder",
 			"(Landroid/os/ParcelFileDescriptor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -120,6 +137,30 @@ namespace __jni_impl::android::graphics::fonts
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/graphics/fonts/Font;"
+		);
+	}
+	QAndroidJniObject Font_Builder::setFontVariationSettings(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setFontVariationSettings",
+			"(Ljava/lang/String;)Landroid/graphics/fonts/Font$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject Font_Builder::setFontVariationSettings(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setFontVariationSettings",
+			"(Ljava/lang/String;)Landroid/graphics/fonts/Font$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject Font_Builder::setFontVariationSettings(jarray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setFontVariationSettings",
+			"([Landroid/graphics/fonts/FontVariationAxis;)Landroid/graphics/fonts/Font$Builder;",
+			arg0
 		);
 	}
 	QAndroidJniObject Font_Builder::setWeight(jint arg0)
@@ -135,22 +176,6 @@ namespace __jni_impl::android::graphics::fonts
 		return __thiz.callObjectMethod(
 			"setTtcIndex",
 			"(I)Landroid/graphics/fonts/Font$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject Font_Builder::setFontVariationSettings(jarray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setFontVariationSettings",
-			"([Landroid/graphics/fonts/FontVariationAxis;)Landroid/graphics/fonts/Font$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject Font_Builder::setFontVariationSettings(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setFontVariationSettings",
-			"(Ljava/lang/String;)Landroid/graphics/fonts/Font$Builder;",
 			arg0
 		);
 	}

@@ -44,18 +44,18 @@ namespace __jni_impl::android::view::animation
 		// Methods
 		void start();
 		jboolean isDone();
-		void setAnimation(__jni_impl::android::view::animation::Animation arg0);
+		void setInterpolator(__jni_impl::__JniBaseClass arg0);
+		void setInterpolator(__jni_impl::android::content::Context arg0, jint arg1);
+		QAndroidJniObject getInterpolator();
 		void setAnimation(__jni_impl::android::content::Context arg0, jint arg1);
+		void setAnimation(__jni_impl::android::view::animation::Animation arg0);
+		QAndroidJniObject getAnimation();
+		jint getOrder();
 		jfloat getDelay();
 		void setDelay(jfloat arg0);
 		jboolean willOverlap();
 		QAndroidJniObject getAnimationForView(__jni_impl::android::view::View arg0);
-		void setInterpolator(__jni_impl::android::content::Context arg0, jint arg1);
-		void setInterpolator(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getInterpolator();
-		jint getOrder();
 		void setOrder(jint arg0);
-		QAndroidJniObject getAnimation();
 	};
 } // namespace __jni_impl::android::view::animation
 
@@ -97,14 +97,16 @@ namespace __jni_impl::android::view::animation
 			"android.view.animation.LayoutAnimationController",
 			"(Landroid/view/animation/Animation;F)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void LayoutAnimationController::__constructor(__jni_impl::android::view::animation::Animation arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.LayoutAnimationController",
 			"(Landroid/view/animation/Animation;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void LayoutAnimationController::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -112,7 +114,8 @@ namespace __jni_impl::android::view::animation
 			"android.view.animation.LayoutAnimationController",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -130,12 +133,28 @@ namespace __jni_impl::android::view::animation
 			"()Z"
 		);
 	}
-	void LayoutAnimationController::setAnimation(__jni_impl::android::view::animation::Animation arg0)
+	void LayoutAnimationController::setInterpolator(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"setAnimation",
-			"(Landroid/view/animation/Animation;)V",
+			"setInterpolator",
+			"(Landroid/view/animation/Interpolator;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void LayoutAnimationController::setInterpolator(__jni_impl::android::content::Context arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setInterpolator",
+			"(Landroid/content/Context;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	QAndroidJniObject LayoutAnimationController::getInterpolator()
+	{
+		return __thiz.callObjectMethod(
+			"getInterpolator",
+			"()Landroid/view/animation/Interpolator;"
 		);
 	}
 	void LayoutAnimationController::setAnimation(__jni_impl::android::content::Context arg0, jint arg1)
@@ -145,6 +164,28 @@ namespace __jni_impl::android::view::animation
 			"(Landroid/content/Context;I)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	void LayoutAnimationController::setAnimation(__jni_impl::android::view::animation::Animation arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAnimation",
+			"(Landroid/view/animation/Animation;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject LayoutAnimationController::getAnimation()
+	{
+		return __thiz.callObjectMethod(
+			"getAnimation",
+			"()Landroid/view/animation/Animation;"
+		);
+	}
+	jint LayoutAnimationController::getOrder()
+	{
+		return __thiz.callMethod<jint>(
+			"getOrder",
+			"()I"
 		);
 	}
 	jfloat LayoutAnimationController::getDelay()
@@ -177,50 +218,12 @@ namespace __jni_impl::android::view::animation
 			arg0.__jniObject().object()
 		);
 	}
-	void LayoutAnimationController::setInterpolator(__jni_impl::android::content::Context arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setInterpolator",
-			"(Landroid/content/Context;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void LayoutAnimationController::setInterpolator(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setInterpolator",
-			"(Landroid/view/animation/Interpolator;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject LayoutAnimationController::getInterpolator()
-	{
-		return __thiz.callObjectMethod(
-			"getInterpolator",
-			"()Landroid/view/animation/Interpolator;"
-		);
-	}
-	jint LayoutAnimationController::getOrder()
-	{
-		return __thiz.callMethod<jint>(
-			"getOrder",
-			"()I"
-		);
-	}
 	void LayoutAnimationController::setOrder(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOrder",
 			"(I)V",
 			arg0
-		);
-	}
-	QAndroidJniObject LayoutAnimationController::getAnimation()
-	{
-		return __thiz.callObjectMethod(
-			"getAnimation",
-			"()Landroid/view/animation/Animation;"
 		);
 	}
 } // namespace __jni_impl::android::view::animation

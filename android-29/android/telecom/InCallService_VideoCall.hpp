@@ -5,6 +5,14 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::telecom
+{
+	class InCallService_VideoCall_Callback;
+}
+namespace __jni_impl::android::os
+{
+	class Handler;
+}
 namespace __jni_impl::android::view
 {
 	class Surface;
@@ -16,14 +24,6 @@ namespace __jni_impl::android::telecom
 namespace __jni_impl::android::net
 {
 	class Uri;
-}
-namespace __jni_impl::android::telecom
-{
-	class InCallService_VideoCall_Callback;
-}
-namespace __jni_impl::android::os
-{
-	class Handler;
 }
 
 namespace __jni_impl::android::telecom
@@ -37,8 +37,12 @@ namespace __jni_impl::android::telecom
 		void __constructor();
 		
 		// Methods
-		void setCamera(jstring arg0);
+		void registerCallback(__jni_impl::android::telecom::InCallService_VideoCall_Callback arg0, __jni_impl::android::os::Handler arg1);
+		void registerCallback(__jni_impl::android::telecom::InCallService_VideoCall_Callback arg0);
+		void unregisterCallback(__jni_impl::android::telecom::InCallService_VideoCall_Callback arg0);
 		void setPreviewSurface(__jni_impl::android::view::Surface arg0);
+		void setCamera(jstring arg0);
+		void setCamera(const QString &arg0);
 		void setDisplaySurface(__jni_impl::android::view::Surface arg0);
 		void setDeviceOrientation(jint arg0);
 		void setZoom(jfloat arg0);
@@ -47,17 +51,14 @@ namespace __jni_impl::android::telecom
 		void requestCameraCapabilities();
 		void requestCallDataUsage();
 		void setPauseImage(__jni_impl::android::net::Uri arg0);
-		void registerCallback(__jni_impl::android::telecom::InCallService_VideoCall_Callback arg0, __jni_impl::android::os::Handler arg1);
-		void registerCallback(__jni_impl::android::telecom::InCallService_VideoCall_Callback arg0);
-		void unregisterCallback(__jni_impl::android::telecom::InCallService_VideoCall_Callback arg0);
 	};
 } // namespace __jni_impl::android::telecom
 
+#include "InCallService_VideoCall_Callback.hpp"
+#include "../os/Handler.hpp"
 #include "../view/Surface.hpp"
 #include "VideoProfile.hpp"
 #include "../net/Uri.hpp"
-#include "InCallService_VideoCall_Callback.hpp"
-#include "../os/Handler.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -68,16 +69,34 @@ namespace __jni_impl::android::telecom
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.InCallService$VideoCall",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	void InCallService_VideoCall::setCamera(jstring arg0)
+	void InCallService_VideoCall::registerCallback(__jni_impl::android::telecom::InCallService_VideoCall_Callback arg0, __jni_impl::android::os::Handler arg1)
 	{
 		__thiz.callMethod<void>(
-			"setCamera",
-			"(Ljava/lang/String;)V",
-			arg0
+			"registerCallback",
+			"(Landroid/telecom/InCallService$VideoCall$Callback;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void InCallService_VideoCall::registerCallback(__jni_impl::android::telecom::InCallService_VideoCall_Callback arg0)
+	{
+		__thiz.callMethod<void>(
+			"registerCallback",
+			"(Landroid/telecom/InCallService$VideoCall$Callback;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void InCallService_VideoCall::unregisterCallback(__jni_impl::android::telecom::InCallService_VideoCall_Callback arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterCallback",
+			"(Landroid/telecom/InCallService$VideoCall$Callback;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void InCallService_VideoCall::setPreviewSurface(__jni_impl::android::view::Surface arg0)
@@ -86,6 +105,22 @@ namespace __jni_impl::android::telecom
 			"setPreviewSurface",
 			"(Landroid/view/Surface;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void InCallService_VideoCall::setCamera(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCamera",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void InCallService_VideoCall::setCamera(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCamera",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void InCallService_VideoCall::setDisplaySurface(__jni_impl::android::view::Surface arg0)
@@ -147,31 +182,6 @@ namespace __jni_impl::android::telecom
 		__thiz.callMethod<void>(
 			"setPauseImage",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void InCallService_VideoCall::registerCallback(__jni_impl::android::telecom::InCallService_VideoCall_Callback arg0, __jni_impl::android::os::Handler arg1)
-	{
-		__thiz.callMethod<void>(
-			"registerCallback",
-			"(Landroid/telecom/InCallService$VideoCall$Callback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void InCallService_VideoCall::registerCallback(__jni_impl::android::telecom::InCallService_VideoCall_Callback arg0)
-	{
-		__thiz.callMethod<void>(
-			"registerCallback",
-			"(Landroid/telecom/InCallService$VideoCall$Callback;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void InCallService_VideoCall::unregisterCallback(__jni_impl::android::telecom::InCallService_VideoCall_Callback arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterCallback",
-			"(Landroid/telecom/InCallService$VideoCall$Callback;)V",
 			arg0.__jniObject().object()
 		);
 	}

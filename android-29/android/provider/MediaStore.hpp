@@ -65,6 +65,7 @@ namespace __jni_impl::android::provider
 		// Methods
 		static jstring getVersion(__jni_impl::android::content::Context arg0);
 		static jstring getVersion(__jni_impl::android::content::Context arg0, jstring arg1);
+		static jstring getVersion(__jni_impl::android::content::Context arg0, const QString &arg1);
 		static QAndroidJniObject setIncludePending(__jni_impl::android::net::Uri arg0);
 		static QAndroidJniObject setRequireOriginal(__jni_impl::android::net::Uri arg0);
 		static QAndroidJniObject getExternalVolumeNames(__jni_impl::android::content::Context arg0);
@@ -391,7 +392,8 @@ namespace __jni_impl::android::provider
 	{
 		__thiz = QAndroidJniObject(
 			"android.provider.MediaStore",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -412,6 +414,16 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
 			arg1
+		).object<jstring>();
+	}
+	jstring MediaStore::getVersion(__jni_impl::android::content::Context arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.MediaStore",
+			"getVersion",
+			"(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject MediaStore::setIncludePending(__jni_impl::android::net::Uri arg0)

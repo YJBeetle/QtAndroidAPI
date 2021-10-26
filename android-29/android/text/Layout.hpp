@@ -13,13 +13,9 @@ namespace __jni_impl::android::text
 {
 	class Layout_Alignment;
 }
-namespace __jni_impl::android::text
-{
-	class Layout_Directions;
-}
 namespace __jni_impl::android::graphics
 {
-	class Rect;
+	class Canvas;
 }
 namespace __jni_impl::android::graphics
 {
@@ -27,11 +23,15 @@ namespace __jni_impl::android::graphics
 }
 namespace __jni_impl::android::graphics
 {
-	class Canvas;
+	class Paint;
+}
+namespace __jni_impl::android::text
+{
+	class Layout_Directions;
 }
 namespace __jni_impl::android::graphics
 {
-	class Paint;
+	class Rect;
 }
 
 namespace __jni_impl::android::text
@@ -58,6 +58,10 @@ namespace __jni_impl::android::text
 		
 		// Methods
 		jstring getText();
+		void draw(__jni_impl::android::graphics::Canvas arg0);
+		void draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Path arg1, __jni_impl::android::graphics::Paint arg2, jint arg3);
+		jint getWidth();
+		jint getHeight();
 		jint getLineCount();
 		jint getLineTop(jint arg0);
 		jint getLineDescent(jint arg0);
@@ -72,8 +76,10 @@ namespace __jni_impl::android::text
 		jint getEllipsisCount(jint arg0);
 		jint getEllipsisStart(jint arg0);
 		jint getEllipsizedWidth();
-		static jfloat getDesiredWidth(jstring arg0, jint arg1, jint arg2, __jni_impl::android::text::TextPaint arg3);
 		static jfloat getDesiredWidth(jstring arg0, __jni_impl::android::text::TextPaint arg1);
+		static jfloat getDesiredWidth(const QString &arg0, __jni_impl::android::text::TextPaint arg1);
+		static jfloat getDesiredWidth(jstring arg0, jint arg1, jint arg2, __jni_impl::android::text::TextPaint arg3);
+		static jfloat getDesiredWidth(const QString &arg0, jint arg1, jint arg2, __jni_impl::android::text::TextPaint arg3);
 		QAndroidJniObject getPaint();
 		void increaseWidthTo(jint arg0);
 		QAndroidJniObject getAlignment();
@@ -96,24 +102,21 @@ namespace __jni_impl::android::text
 		jint getOffsetToLeftOf(jint arg0);
 		jint getOffsetToRightOf(jint arg0);
 		void getCursorPath(jint arg0, __jni_impl::android::graphics::Path arg1, jstring arg2);
+		void getCursorPath(jint arg0, __jni_impl::android::graphics::Path arg1, const QString &arg2);
 		void getSelectionPath(jint arg0, jint arg1, __jni_impl::android::graphics::Path arg2);
 		QAndroidJniObject getParagraphAlignment(jint arg0);
 		jint getParagraphLeft(jint arg0);
 		jint getParagraphRight(jint arg0);
-		void draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Path arg1, __jni_impl::android::graphics::Paint arg2, jint arg3);
-		void draw(__jni_impl::android::graphics::Canvas arg0);
-		jint getWidth();
-		jint getHeight();
 	};
 } // namespace __jni_impl::android::text
 
 #include "TextPaint.hpp"
 #include "Layout_Alignment.hpp"
+#include "../graphics/Canvas.hpp"
+#include "../graphics/Path.hpp"
+#include "../graphics/Paint.hpp"
 #include "Layout_Directions.hpp"
 #include "../graphics/Rect.hpp"
-#include "../graphics/Path.hpp"
-#include "../graphics/Canvas.hpp"
-#include "../graphics/Paint.hpp"
 
 namespace __jni_impl::android::text
 {
@@ -218,6 +221,39 @@ namespace __jni_impl::android::text
 			"getText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
+	}
+	void Layout::draw(__jni_impl::android::graphics::Canvas arg0)
+	{
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Layout::draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Path arg1, __jni_impl::android::graphics::Paint arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;Landroid/graphics/Path;Landroid/graphics/Paint;I)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3
+		);
+	}
+	jint Layout::getWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
+	jint Layout::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
 	}
 	jint Layout::getLineCount()
 	{
@@ -327,6 +363,26 @@ namespace __jni_impl::android::text
 			"()I"
 		);
 	}
+	jfloat Layout::getDesiredWidth(jstring arg0, __jni_impl::android::text::TextPaint arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jfloat>(
+			"android.text.Layout",
+			"getDesiredWidth",
+			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;)F",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jfloat Layout::getDesiredWidth(const QString &arg0, __jni_impl::android::text::TextPaint arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jfloat>(
+			"android.text.Layout",
+			"getDesiredWidth",
+			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;)F",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	jfloat Layout::getDesiredWidth(jstring arg0, jint arg1, jint arg2, __jni_impl::android::text::TextPaint arg3)
 	{
 		return QAndroidJniObject::callStaticMethod<jfloat>(
@@ -339,14 +395,16 @@ namespace __jni_impl::android::text
 			arg3.__jniObject().object()
 		);
 	}
-	jfloat Layout::getDesiredWidth(jstring arg0, __jni_impl::android::text::TextPaint arg1)
+	jfloat Layout::getDesiredWidth(const QString &arg0, jint arg1, jint arg2, __jni_impl::android::text::TextPaint arg3)
 	{
 		return QAndroidJniObject::callStaticMethod<jfloat>(
 			"android.text.Layout",
 			"getDesiredWidth",
-			"(Ljava/lang/CharSequence;Landroid/text/TextPaint;)F",
-			arg0,
-			arg1.__jniObject().object()
+			"(Ljava/lang/CharSequence;IILandroid/text/TextPaint;)F",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2,
+			arg3.__jniObject().object()
 		);
 	}
 	QAndroidJniObject Layout::getPaint()
@@ -525,6 +583,16 @@ namespace __jni_impl::android::text
 			arg2
 		);
 	}
+	void Layout::getCursorPath(jint arg0, __jni_impl::android::graphics::Path arg1, const QString &arg2)
+	{
+		__thiz.callMethod<void>(
+			"getCursorPath",
+			"(ILandroid/graphics/Path;Ljava/lang/CharSequence;)V",
+			arg0,
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
+	}
 	void Layout::getSelectionPath(jint arg0, jint arg1, __jni_impl::android::graphics::Path arg2)
 	{
 		__thiz.callMethod<void>(
@@ -557,39 +625,6 @@ namespace __jni_impl::android::text
 			"getParagraphRight",
 			"(I)I",
 			arg0
-		);
-	}
-	void Layout::draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Path arg1, __jni_impl::android::graphics::Paint arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;Landroid/graphics/Path;Landroid/graphics/Paint;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	void Layout::draw(__jni_impl::android::graphics::Canvas arg0)
-	{
-		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jint Layout::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I"
-		);
-	}
-	jint Layout::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::text

@@ -41,6 +41,7 @@ namespace __jni_impl::android::media::projection
 		void registerCallback(__jni_impl::android::media::projection::MediaProjection_Callback arg0, __jni_impl::android::os::Handler arg1);
 		void unregisterCallback(__jni_impl::android::media::projection::MediaProjection_Callback arg0);
 		QAndroidJniObject createVirtualDisplay(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::view::Surface arg5, __jni_impl::android::hardware::display::VirtualDisplay_Callback arg6, __jni_impl::android::os::Handler arg7);
+		QAndroidJniObject createVirtualDisplay(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::view::Surface arg5, __jni_impl::android::hardware::display::VirtualDisplay_Callback arg6, __jni_impl::android::os::Handler arg7);
 	};
 } // namespace __jni_impl::android::media::projection
 
@@ -93,6 +94,21 @@ namespace __jni_impl::android::media::projection
 			"createVirtualDisplay",
 			"(Ljava/lang/String;IIIILandroid/view/Surface;Landroid/hardware/display/VirtualDisplay$Callback;Landroid/os/Handler;)Landroid/hardware/display/VirtualDisplay;",
 			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5.__jniObject().object(),
+			arg6.__jniObject().object(),
+			arg7.__jniObject().object()
+		);
+	}
+	QAndroidJniObject MediaProjection::createVirtualDisplay(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::view::Surface arg5, __jni_impl::android::hardware::display::VirtualDisplay_Callback arg6, __jni_impl::android::os::Handler arg7)
+	{
+		return __thiz.callObjectMethod(
+			"createVirtualDisplay",
+			"(Ljava/lang/String;IIIILandroid/view/Surface;Landroid/hardware/display/VirtualDisplay$Callback;Landroid/os/Handler;)Landroid/hardware/display/VirtualDisplay;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3,

@@ -8,6 +8,10 @@
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
+namespace __jni_impl::android::view
+{
+	class KeyEvent_DispatcherState;
+}
 namespace __jni_impl::android::inputmethodservice
 {
 	class AbstractInputMethodService_AbstractInputMethodImpl;
@@ -32,10 +36,6 @@ namespace __jni_impl::android::content
 {
 	class Intent;
 }
-namespace __jni_impl::android::view
-{
-	class KeyEvent_DispatcherState;
-}
 
 namespace __jni_impl::android::inputmethodservice
 {
@@ -48,22 +48,22 @@ namespace __jni_impl::android::inputmethodservice
 		void __constructor();
 		
 		// Methods
+		QAndroidJniObject getKeyDispatcherState();
 		QAndroidJniObject onCreateInputMethodInterface();
 		QAndroidJniObject onCreateInputMethodSessionInterface();
 		jboolean onTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
 		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
-		QAndroidJniObject getKeyDispatcherState();
 	};
 } // namespace __jni_impl::android::inputmethodservice
 
+#include "../view/KeyEvent_DispatcherState.hpp"
 #include "AbstractInputMethodService_AbstractInputMethodImpl.hpp"
 #include "AbstractInputMethodService_AbstractInputMethodSessionImpl.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
 #include "../view/MotionEvent.hpp"
 #include "../content/Intent.hpp"
-#include "../view/KeyEvent_DispatcherState.hpp"
 
 namespace __jni_impl::android::inputmethodservice
 {
@@ -74,10 +74,18 @@ namespace __jni_impl::android::inputmethodservice
 	{
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.AbstractInputMethodService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
+	QAndroidJniObject AbstractInputMethodService::getKeyDispatcherState()
+	{
+		return __thiz.callObjectMethod(
+			"getKeyDispatcherState",
+			"()Landroid/view/KeyEvent$DispatcherState;"
+		);
+	}
 	QAndroidJniObject AbstractInputMethodService::onCreateInputMethodInterface()
 	{
 		return __thiz.callObjectMethod(
@@ -114,13 +122,6 @@ namespace __jni_impl::android::inputmethodservice
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject AbstractInputMethodService::getKeyDispatcherState()
-	{
-		return __thiz.callObjectMethod(
-			"getKeyDispatcherState",
-			"()Landroid/view/KeyEvent$DispatcherState;"
 		);
 	}
 } // namespace __jni_impl::android::inputmethodservice

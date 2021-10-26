@@ -212,7 +212,8 @@ namespace __jni_impl::android::media
 		__thiz = QAndroidJniObject(
 			"android.media.RemoteControlClient",
 			"(Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void RemoteControlClient::__constructor(__jni_impl::android::app::PendingIntent arg0, __jni_impl::android::os::Looper arg1)
 	{
@@ -220,7 +221,8 @@ namespace __jni_impl::android::media
 			"android.media.RemoteControlClient",
 			"(Landroid/app/PendingIntent;Landroid/os/Looper;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

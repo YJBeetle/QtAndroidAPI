@@ -34,18 +34,23 @@ namespace __jni_impl::java::lang
 		void runFinalization();
 		static QAndroidJniObject version();
 		void loadLibrary(jstring arg0);
+		void loadLibrary(const QString &arg0);
 		void gc();
 		void load(jstring arg0);
+		void load(const QString &arg0);
 		jlong freeMemory();
 		jlong maxMemory();
 		jint availableProcessors();
 		void halt(jint arg0);
 		QAndroidJniObject exec(jarray arg0);
 		QAndroidJniObject exec(jstring arg0, jarray arg1, __jni_impl::java::io::File arg2);
+		QAndroidJniObject exec(const QString &arg0, jarray arg1, __jni_impl::java::io::File arg2);
 		QAndroidJniObject exec(jstring arg0);
+		QAndroidJniObject exec(const QString &arg0);
 		QAndroidJniObject exec(jarray arg0, jarray arg1);
 		QAndroidJniObject exec(jarray arg0, jarray arg1, __jni_impl::java::io::File arg2);
 		QAndroidJniObject exec(jstring arg0, jarray arg1);
+		QAndroidJniObject exec(const QString &arg0, jarray arg1);
 		void addShutdownHook(__jni_impl::java::lang::Thread arg0);
 		jboolean removeShutdownHook(__jni_impl::java::lang::Thread arg0);
 		jlong totalMemory();
@@ -108,6 +113,14 @@ namespace __jni_impl::java::lang
 			arg0
 		);
 	}
+	void Runtime::loadLibrary(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"loadLibrary",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void Runtime::gc()
 	{
 		__thiz.callMethod<void>(
@@ -121,6 +134,14 @@ namespace __jni_impl::java::lang
 			"load",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void Runtime::load(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"load",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jlong Runtime::freeMemory()
@@ -170,12 +191,30 @@ namespace __jni_impl::java::lang
 			arg2.__jniObject().object()
 		);
 	}
+	QAndroidJniObject Runtime::exec(const QString &arg0, jarray arg1, __jni_impl::java::io::File arg2)
+	{
+		return __thiz.callObjectMethod(
+			"exec",
+			"(Ljava/lang/String;[Ljava/lang/String;Ljava/io/File;)Ljava/lang/Process;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
 	QAndroidJniObject Runtime::exec(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"exec",
 			"(Ljava/lang/String;)Ljava/lang/Process;",
 			arg0
+		);
+	}
+	QAndroidJniObject Runtime::exec(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"exec",
+			"(Ljava/lang/String;)Ljava/lang/Process;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Runtime::exec(jarray arg0, jarray arg1)
@@ -203,6 +242,15 @@ namespace __jni_impl::java::lang
 			"exec",
 			"(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/Process;",
 			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject Runtime::exec(const QString &arg0, jarray arg1)
+	{
+		return __thiz.callObjectMethod(
+			"exec",
+			"(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/Process;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

@@ -58,7 +58,6 @@ namespace __jni_impl::android::webkit
 		// Methods
 		QAndroidJniObject getTextSize();
 		void setTextSize(__jni_impl::android::webkit::WebSettings_TextSize arg0);
-		jstring getDatabasePath();
 		void setCacheMode(jint arg0);
 		void setBlockNetworkLoads(jboolean arg0);
 		jboolean getBlockNetworkLoads();
@@ -67,6 +66,7 @@ namespace __jni_impl::android::webkit
 		jboolean getAllowContentAccess();
 		void setAllowFileAccess(jboolean arg0);
 		jboolean getAllowFileAccess();
+		jstring getDatabasePath();
 		void setSupportZoom(jboolean arg0);
 		jboolean supportZoom();
 		void setMediaPlaybackRequiresUserGesture(jboolean arg0);
@@ -96,16 +96,22 @@ namespace __jni_impl::android::webkit
 		void setLayoutAlgorithm(__jni_impl::android::webkit::WebSettings_LayoutAlgorithm arg0);
 		QAndroidJniObject getLayoutAlgorithm();
 		void setStandardFontFamily(jstring arg0);
+		void setStandardFontFamily(const QString &arg0);
 		jstring getStandardFontFamily();
 		void setFixedFontFamily(jstring arg0);
+		void setFixedFontFamily(const QString &arg0);
 		jstring getFixedFontFamily();
 		void setSansSerifFontFamily(jstring arg0);
+		void setSansSerifFontFamily(const QString &arg0);
 		jstring getSansSerifFontFamily();
 		void setSerifFontFamily(jstring arg0);
+		void setSerifFontFamily(const QString &arg0);
 		jstring getSerifFontFamily();
 		void setCursiveFontFamily(jstring arg0);
+		void setCursiveFontFamily(const QString &arg0);
 		jstring getCursiveFontFamily();
 		void setFantasyFontFamily(jstring arg0);
+		void setFantasyFontFamily(const QString &arg0);
 		jstring getFantasyFontFamily();
 		void setMinimumFontSize(jint arg0);
 		jint getMinimumFontSize();
@@ -124,9 +130,12 @@ namespace __jni_impl::android::webkit
 		void setAllowFileAccessFromFileURLs(jboolean arg0);
 		void setPluginState(__jni_impl::android::webkit::WebSettings_PluginState arg0);
 		void setDatabasePath(jstring arg0);
+		void setDatabasePath(const QString &arg0);
 		void setGeolocationDatabasePath(jstring arg0);
+		void setGeolocationDatabasePath(const QString &arg0);
 		void setAppCacheEnabled(jboolean arg0);
 		void setAppCachePath(jstring arg0);
+		void setAppCachePath(const QString &arg0);
 		void setAppCacheMaxSize(jlong arg0);
 		void setDatabaseEnabled(jboolean arg0);
 		void setDomStorageEnabled(jboolean arg0);
@@ -140,8 +149,10 @@ namespace __jni_impl::android::webkit
 		void setJavaScriptCanOpenWindowsAutomatically(jboolean arg0);
 		jboolean getJavaScriptCanOpenWindowsAutomatically();
 		void setDefaultTextEncodingName(jstring arg0);
+		void setDefaultTextEncodingName(const QString &arg0);
 		jstring getDefaultTextEncodingName();
 		void setUserAgentString(jstring arg0);
+		void setUserAgentString(const QString &arg0);
 		jstring getUserAgentString();
 		static jstring getDefaultUserAgent(__jni_impl::android::content::Context arg0);
 		void setNeedInitialFocus(jboolean arg0);
@@ -280,7 +291,8 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.WebSettings",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -298,13 +310,6 @@ namespace __jni_impl::android::webkit
 			"(Landroid/webkit/WebSettings$TextSize;)V",
 			arg0.__jniObject().object()
 		);
-	}
-	jstring WebSettings::getDatabasePath()
-	{
-		return __thiz.callObjectMethod(
-			"getDatabasePath",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	void WebSettings::setCacheMode(jint arg0)
 	{
@@ -365,6 +370,13 @@ namespace __jni_impl::android::webkit
 			"getAllowFileAccess",
 			"()Z"
 		);
+	}
+	jstring WebSettings::getDatabasePath()
+	{
+		return __thiz.callObjectMethod(
+			"getDatabasePath",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void WebSettings::setSupportZoom(jboolean arg0)
 	{
@@ -584,6 +596,14 @@ namespace __jni_impl::android::webkit
 			arg0
 		);
 	}
+	void WebSettings::setStandardFontFamily(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setStandardFontFamily",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring WebSettings::getStandardFontFamily()
 	{
 		return __thiz.callObjectMethod(
@@ -597,6 +617,14 @@ namespace __jni_impl::android::webkit
 			"setFixedFontFamily",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void WebSettings::setFixedFontFamily(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFixedFontFamily",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring WebSettings::getFixedFontFamily()
@@ -614,6 +642,14 @@ namespace __jni_impl::android::webkit
 			arg0
 		);
 	}
+	void WebSettings::setSansSerifFontFamily(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSansSerifFontFamily",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring WebSettings::getSansSerifFontFamily()
 	{
 		return __thiz.callObjectMethod(
@@ -627,6 +663,14 @@ namespace __jni_impl::android::webkit
 			"setSerifFontFamily",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void WebSettings::setSerifFontFamily(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSerifFontFamily",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring WebSettings::getSerifFontFamily()
@@ -644,6 +688,14 @@ namespace __jni_impl::android::webkit
 			arg0
 		);
 	}
+	void WebSettings::setCursiveFontFamily(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCursiveFontFamily",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring WebSettings::getCursiveFontFamily()
 	{
 		return __thiz.callObjectMethod(
@@ -657,6 +709,14 @@ namespace __jni_impl::android::webkit
 			"setFantasyFontFamily",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void WebSettings::setFantasyFontFamily(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFantasyFontFamily",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring WebSettings::getFantasyFontFamily()
@@ -796,12 +856,28 @@ namespace __jni_impl::android::webkit
 			arg0
 		);
 	}
+	void WebSettings::setDatabasePath(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDatabasePath",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void WebSettings::setGeolocationDatabasePath(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setGeolocationDatabasePath",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void WebSettings::setGeolocationDatabasePath(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGeolocationDatabasePath",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void WebSettings::setAppCacheEnabled(jboolean arg0)
@@ -818,6 +894,14 @@ namespace __jni_impl::android::webkit
 			"setAppCachePath",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void WebSettings::setAppCachePath(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAppCachePath",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void WebSettings::setAppCacheMaxSize(jlong arg0)
@@ -917,6 +1001,14 @@ namespace __jni_impl::android::webkit
 			arg0
 		);
 	}
+	void WebSettings::setDefaultTextEncodingName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDefaultTextEncodingName",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring WebSettings::getDefaultTextEncodingName()
 	{
 		return __thiz.callObjectMethod(
@@ -930,6 +1022,14 @@ namespace __jni_impl::android::webkit
 			"setUserAgentString",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void WebSettings::setUserAgentString(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setUserAgentString",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring WebSettings::getUserAgentString()

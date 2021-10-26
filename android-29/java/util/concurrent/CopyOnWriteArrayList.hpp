@@ -84,20 +84,23 @@ namespace __jni_impl::java::util::concurrent
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.CopyOnWriteArrayList",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CopyOnWriteArrayList::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.CopyOnWriteArrayList",
-			"()V");
+			"()V"
+		);
 	}
 	void CopyOnWriteArrayList::__constructor(jobjectArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.CopyOnWriteArrayList",
 			"([Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

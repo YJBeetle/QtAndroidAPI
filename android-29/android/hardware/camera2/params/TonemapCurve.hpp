@@ -30,9 +30,9 @@ namespace __jni_impl::android::hardware::camera2::params
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
-		void copyColorCurve(jint arg0, jfloatArray arg1, jint arg2);
 		jint getPointCount(jint arg0);
 		QAndroidJniObject getPoint(jint arg0, jint arg1);
+		void copyColorCurve(jint arg0, jfloatArray arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
@@ -92,7 +92,8 @@ namespace __jni_impl::android::hardware::camera2::params
 			"([F[F[F)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods
@@ -118,16 +119,6 @@ namespace __jni_impl::android::hardware::camera2::params
 			"()I"
 		);
 	}
-	void TonemapCurve::copyColorCurve(jint arg0, jfloatArray arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"copyColorCurve",
-			"(I[FI)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
 	jint TonemapCurve::getPointCount(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -143,6 +134,16 @@ namespace __jni_impl::android::hardware::camera2::params
 			"(II)Landroid/graphics/PointF;",
 			arg0,
 			arg1
+		);
+	}
+	void TonemapCurve::copyColorCurve(jint arg0, jfloatArray arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"copyColorCurve",
+			"(I[FI)V",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 } // namespace __jni_impl::android::hardware::camera2::params

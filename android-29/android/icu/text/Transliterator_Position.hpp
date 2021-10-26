@@ -67,7 +67,8 @@ namespace __jni_impl::android::icu::text
 		__thiz = QAndroidJniObject(
 			"android.icu.text.Transliterator$Position",
 			"(Landroid/icu/text/Transliterator$Position;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Transliterator_Position::__constructor(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -77,7 +78,8 @@ namespace __jni_impl::android::icu::text
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void Transliterator_Position::__constructor(jint arg0, jint arg1, jint arg2)
 	{
@@ -86,13 +88,15 @@ namespace __jni_impl::android::icu::text
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void Transliterator_Position::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.Transliterator$Position",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

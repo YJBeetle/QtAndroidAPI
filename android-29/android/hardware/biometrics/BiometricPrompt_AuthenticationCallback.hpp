@@ -22,7 +22,9 @@ namespace __jni_impl::android::hardware::biometrics
 		
 		// Methods
 		void onAuthenticationError(jint arg0, jstring arg1);
+		void onAuthenticationError(jint arg0, const QString &arg1);
 		void onAuthenticationHelp(jint arg0, jstring arg1);
+		void onAuthenticationHelp(jint arg0, const QString &arg1);
 		void onAuthenticationSucceeded(__jni_impl::android::hardware::biometrics::BiometricPrompt_AuthenticationResult arg0);
 		void onAuthenticationFailed();
 	};
@@ -39,7 +41,8 @@ namespace __jni_impl::android::hardware::biometrics
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.biometrics.BiometricPrompt$AuthenticationCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -52,6 +55,15 @@ namespace __jni_impl::android::hardware::biometrics
 			arg1
 		);
 	}
+	void BiometricPrompt_AuthenticationCallback::onAuthenticationError(jint arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"onAuthenticationError",
+			"(ILjava/lang/CharSequence;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void BiometricPrompt_AuthenticationCallback::onAuthenticationHelp(jint arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -59,6 +71,15 @@ namespace __jni_impl::android::hardware::biometrics
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
 			arg1
+		);
+	}
+	void BiometricPrompt_AuthenticationCallback::onAuthenticationHelp(jint arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"onAuthenticationHelp",
+			"(ILjava/lang/CharSequence;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void BiometricPrompt_AuthenticationCallback::onAuthenticationSucceeded(__jni_impl::android::hardware::biometrics::BiometricPrompt_AuthenticationResult arg0)

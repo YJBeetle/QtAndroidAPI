@@ -111,14 +111,16 @@ namespace __jni_impl::android::net::wifi
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.WpsInfo",
-			"()V");
+			"()V"
+		);
 	}
 	void WpsInfo::__constructor(__jni_impl::android::net::wifi::WpsInfo arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.WpsInfo",
 			"(Landroid/net/wifi/WpsInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

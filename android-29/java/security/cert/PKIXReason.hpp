@@ -28,6 +28,7 @@ namespace __jni_impl::java::security::cert
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -124,6 +125,15 @@ namespace __jni_impl::java::security::cert
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/security/cert/PKIXReason;",
 			arg0
+		);
+	}
+	QAndroidJniObject PKIXReason::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.cert.PKIXReason",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/security/cert/PKIXReason;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::security::cert

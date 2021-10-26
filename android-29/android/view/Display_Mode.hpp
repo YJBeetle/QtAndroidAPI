@@ -25,12 +25,12 @@ namespace __jni_impl::android::view
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
+		jfloat getRefreshRate();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getPhysicalWidth();
 		jint getModeId();
 		jint getPhysicalHeight();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jfloat getRefreshRate();
 	};
 } // namespace __jni_impl::android::view
 
@@ -79,6 +79,29 @@ namespace __jni_impl::android::view
 			"()I"
 		);
 	}
+	jfloat Display_Mode::getRefreshRate()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getRefreshRate",
+			"()F"
+		);
+	}
+	jint Display_Mode::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void Display_Mode::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
 	jint Display_Mode::getPhysicalWidth()
 	{
 		return __thiz.callMethod<jint>(
@@ -98,29 +121,6 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jint>(
 			"getPhysicalHeight",
 			"()I"
-		);
-	}
-	jint Display_Mode::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void Display_Mode::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jfloat Display_Mode::getRefreshRate()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getRefreshRate",
-			"()F"
 		);
 	}
 } // namespace __jni_impl::android::view

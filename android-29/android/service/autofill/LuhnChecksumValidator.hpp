@@ -48,7 +48,8 @@ namespace __jni_impl::android::service::autofill
 		__thiz = QAndroidJniObject(
 			"android.service.autofill.LuhnChecksumValidator",
 			"([Landroid/view/autofill/AutofillId;)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

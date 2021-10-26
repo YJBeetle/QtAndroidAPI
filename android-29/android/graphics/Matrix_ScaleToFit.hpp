@@ -24,6 +24,7 @@ namespace __jni_impl::android::graphics
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -88,6 +89,15 @@ namespace __jni_impl::android::graphics
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/Matrix$ScaleToFit;",
 			arg0
+		);
+	}
+	QAndroidJniObject Matrix_ScaleToFit::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Matrix$ScaleToFit",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/Matrix$ScaleToFit;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::graphics

@@ -44,7 +44,8 @@ namespace __jni_impl::android::accessibilityservice
 			"(Landroid/graphics/Path;JJ)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void GestureDescription_StrokeDescription::__constructor(__jni_impl::android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3)
 	{
@@ -54,7 +55,8 @@ namespace __jni_impl::android::accessibilityservice
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	
 	// Methods

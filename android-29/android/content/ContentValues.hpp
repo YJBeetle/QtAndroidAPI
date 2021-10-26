@@ -54,16 +54,27 @@ namespace __jni_impl::android::content
 		
 		// Methods
 		void remove(jstring arg0);
+		void remove(const QString &arg0);
 		jobject get(jstring arg0);
+		jobject get(const QString &arg0);
 		void put(jstring arg0, __jni_impl::java::lang::Long arg1);
+		void put(const QString &arg0, __jni_impl::java::lang::Long arg1);
 		void put(jstring arg0, jstring arg1);
+		void put(const QString &arg0, const QString &arg1);
 		void put(jstring arg0, __jni_impl::java::lang::Float arg1);
+		void put(const QString &arg0, __jni_impl::java::lang::Float arg1);
 		void put(jstring arg0, __jni_impl::java::lang::Boolean arg1);
+		void put(const QString &arg0, __jni_impl::java::lang::Boolean arg1);
 		void put(jstring arg0, jbyteArray arg1);
+		void put(const QString &arg0, jbyteArray arg1);
 		void put(jstring arg0, __jni_impl::java::lang::Double arg1);
+		void put(const QString &arg0, __jni_impl::java::lang::Double arg1);
 		void put(jstring arg0, __jni_impl::java::lang::Byte arg1);
+		void put(const QString &arg0, __jni_impl::java::lang::Byte arg1);
 		void put(jstring arg0, __jni_impl::java::lang::Short arg1);
+		void put(const QString &arg0, __jni_impl::java::lang::Short arg1);
 		void put(jstring arg0, __jni_impl::java::lang::Integer arg1);
+		void put(const QString &arg0, __jni_impl::java::lang::Integer arg1);
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
@@ -71,19 +82,30 @@ namespace __jni_impl::android::content
 		jint size();
 		void putAll(__jni_impl::android::content::ContentValues arg0);
 		jboolean containsKey(jstring arg0);
+		jboolean containsKey(const QString &arg0);
 		QAndroidJniObject keySet();
 		QAndroidJniObject getAsBoolean(jstring arg0);
+		QAndroidJniObject getAsBoolean(const QString &arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jstring getAsString(jstring arg0);
+		jstring getAsString(const QString &arg0);
 		void putNull(jstring arg0);
+		void putNull(const QString &arg0);
 		QAndroidJniObject getAsLong(jstring arg0);
+		QAndroidJniObject getAsLong(const QString &arg0);
 		QAndroidJniObject getAsInteger(jstring arg0);
+		QAndroidJniObject getAsInteger(const QString &arg0);
 		QAndroidJniObject getAsShort(jstring arg0);
+		QAndroidJniObject getAsShort(const QString &arg0);
 		QAndroidJniObject getAsByte(jstring arg0);
+		QAndroidJniObject getAsByte(const QString &arg0);
 		QAndroidJniObject getAsDouble(jstring arg0);
+		QAndroidJniObject getAsDouble(const QString &arg0);
 		QAndroidJniObject getAsFloat(jstring arg0);
+		QAndroidJniObject getAsFloat(const QString &arg0);
 		jbyteArray getAsByteArray(jstring arg0);
+		jbyteArray getAsByteArray(const QString &arg0);
 		QAndroidJniObject valueSet();
 	};
 } // namespace __jni_impl::android::content
@@ -123,20 +145,23 @@ namespace __jni_impl::android::content
 		__thiz = QAndroidJniObject(
 			"android.content.ContentValues",
 			"(Landroid/content/ContentValues;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ContentValues::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ContentValues",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void ContentValues::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.ContentValues",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -148,6 +173,14 @@ namespace __jni_impl::android::content
 			arg0
 		);
 	}
+	void ContentValues::remove(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"remove",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jobject ContentValues::get(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -156,12 +189,29 @@ namespace __jni_impl::android::content
 			arg0
 		).object<jobject>();
 	}
+	jobject ContentValues::get(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"get",
+			"(Ljava/lang/String;)Ljava/lang/Object;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jobject>();
+	}
 	void ContentValues::put(jstring arg0, __jni_impl::java::lang::Long arg1)
 	{
 		__thiz.callMethod<void>(
 			"put",
 			"(Ljava/lang/String;Ljava/lang/Long;)V",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void ContentValues::put(const QString &arg0, __jni_impl::java::lang::Long arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;Ljava/lang/Long;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -174,12 +224,30 @@ namespace __jni_impl::android::content
 			arg1
 		);
 	}
+	void ContentValues::put(const QString &arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void ContentValues::put(jstring arg0, __jni_impl::java::lang::Float arg1)
 	{
 		__thiz.callMethod<void>(
 			"put",
 			"(Ljava/lang/String;Ljava/lang/Float;)V",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void ContentValues::put(const QString &arg0, __jni_impl::java::lang::Float arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;Ljava/lang/Float;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -192,12 +260,30 @@ namespace __jni_impl::android::content
 			arg1.__jniObject().object()
 		);
 	}
+	void ContentValues::put(const QString &arg0, __jni_impl::java::lang::Boolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;Ljava/lang/Boolean;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	void ContentValues::put(jstring arg0, jbyteArray arg1)
 	{
 		__thiz.callMethod<void>(
 			"put",
 			"(Ljava/lang/String;[B)V",
 			arg0,
+			arg1
+		);
+	}
+	void ContentValues::put(const QString &arg0, jbyteArray arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;[B)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -210,12 +296,30 @@ namespace __jni_impl::android::content
 			arg1.__jniObject().object()
 		);
 	}
+	void ContentValues::put(const QString &arg0, __jni_impl::java::lang::Double arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;Ljava/lang/Double;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	void ContentValues::put(jstring arg0, __jni_impl::java::lang::Byte arg1)
 	{
 		__thiz.callMethod<void>(
 			"put",
 			"(Ljava/lang/String;Ljava/lang/Byte;)V",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void ContentValues::put(const QString &arg0, __jni_impl::java::lang::Byte arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;Ljava/lang/Byte;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -228,12 +332,30 @@ namespace __jni_impl::android::content
 			arg1.__jniObject().object()
 		);
 	}
+	void ContentValues::put(const QString &arg0, __jni_impl::java::lang::Short arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;Ljava/lang/Short;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	void ContentValues::put(jstring arg0, __jni_impl::java::lang::Integer arg1)
 	{
 		__thiz.callMethod<void>(
 			"put",
 			"(Ljava/lang/String;Ljava/lang/Integer;)V",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void ContentValues::put(const QString &arg0, __jni_impl::java::lang::Integer arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;Ljava/lang/Integer;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -289,6 +411,14 @@ namespace __jni_impl::android::content
 			arg0
 		);
 	}
+	jboolean ContentValues::containsKey(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"containsKey",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject ContentValues::keySet()
 	{
 		return __thiz.callObjectMethod(
@@ -302,6 +432,14 @@ namespace __jni_impl::android::content
 			"getAsBoolean",
 			"(Ljava/lang/String;)Ljava/lang/Boolean;",
 			arg0
+		);
+	}
+	QAndroidJniObject ContentValues::getAsBoolean(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAsBoolean",
+			"(Ljava/lang/String;)Ljava/lang/Boolean;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint ContentValues::describeContents()
@@ -328,12 +466,28 @@ namespace __jni_impl::android::content
 			arg0
 		).object<jstring>();
 	}
+	jstring ContentValues::getAsString(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAsString",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	void ContentValues::putNull(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"putNull",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void ContentValues::putNull(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"putNull",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject ContentValues::getAsLong(jstring arg0)
@@ -344,12 +498,28 @@ namespace __jni_impl::android::content
 			arg0
 		);
 	}
+	QAndroidJniObject ContentValues::getAsLong(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAsLong",
+			"(Ljava/lang/String;)Ljava/lang/Long;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject ContentValues::getAsInteger(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAsInteger",
 			"(Ljava/lang/String;)Ljava/lang/Integer;",
 			arg0
+		);
+	}
+	QAndroidJniObject ContentValues::getAsInteger(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAsInteger",
+			"(Ljava/lang/String;)Ljava/lang/Integer;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject ContentValues::getAsShort(jstring arg0)
@@ -360,12 +530,28 @@ namespace __jni_impl::android::content
 			arg0
 		);
 	}
+	QAndroidJniObject ContentValues::getAsShort(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAsShort",
+			"(Ljava/lang/String;)Ljava/lang/Short;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject ContentValues::getAsByte(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAsByte",
 			"(Ljava/lang/String;)Ljava/lang/Byte;",
 			arg0
+		);
+	}
+	QAndroidJniObject ContentValues::getAsByte(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAsByte",
+			"(Ljava/lang/String;)Ljava/lang/Byte;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject ContentValues::getAsDouble(jstring arg0)
@@ -376,6 +562,14 @@ namespace __jni_impl::android::content
 			arg0
 		);
 	}
+	QAndroidJniObject ContentValues::getAsDouble(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAsDouble",
+			"(Ljava/lang/String;)Ljava/lang/Double;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject ContentValues::getAsFloat(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -384,12 +578,28 @@ namespace __jni_impl::android::content
 			arg0
 		);
 	}
+	QAndroidJniObject ContentValues::getAsFloat(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAsFloat",
+			"(Ljava/lang/String;)Ljava/lang/Float;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jbyteArray ContentValues::getAsByteArray(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAsByteArray",
 			"(Ljava/lang/String;)[B",
 			arg0
+		).object<jbyteArray>();
+	}
+	jbyteArray ContentValues::getAsByteArray(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAsByteArray",
+			"(Ljava/lang/String;)[B",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jbyteArray>();
 	}
 	QAndroidJniObject ContentValues::valueSet()

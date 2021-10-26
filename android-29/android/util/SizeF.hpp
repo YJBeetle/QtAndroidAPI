@@ -21,6 +21,7 @@ namespace __jni_impl::android::util
 		jstring toString();
 		jint hashCode();
 		static QAndroidJniObject parseSizeF(jstring arg0);
+		static QAndroidJniObject parseSizeF(const QString &arg0);
 		jfloat getWidth();
 		jfloat getHeight();
 	};
@@ -38,7 +39,8 @@ namespace __jni_impl::android::util
 			"android.util.SizeF",
 			"(FF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -71,6 +73,15 @@ namespace __jni_impl::android::util
 			"parseSizeF",
 			"(Ljava/lang/String;)Landroid/util/SizeF;",
 			arg0
+		);
+	}
+	QAndroidJniObject SizeF::parseSizeF(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.util.SizeF",
+			"parseSizeF",
+			"(Ljava/lang/String;)Landroid/util/SizeF;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jfloat SizeF::getWidth()

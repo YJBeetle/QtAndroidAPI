@@ -22,6 +22,7 @@ namespace __jni_impl::javax::xml::transform::sax
 		QAndroidJniObject getHandler();
 		jstring getSystemId();
 		void setSystemId(jstring arg0);
+		void setSystemId(const QString &arg0);
 		void setHandler(__jni_impl::__JniBaseClass arg0);
 		void setLexicalHandler(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getLexicalHandler();
@@ -46,14 +47,16 @@ namespace __jni_impl::javax::xml::transform::sax
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.sax.SAXResult",
-			"()V");
+			"()V"
+		);
 	}
 	void SAXResult::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.sax.SAXResult",
 			"(Lorg/xml/sax/ContentHandler;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -77,6 +80,14 @@ namespace __jni_impl::javax::xml::transform::sax
 			"setSystemId",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void SAXResult::setSystemId(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSystemId",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void SAXResult::setHandler(__jni_impl::__JniBaseClass arg0)

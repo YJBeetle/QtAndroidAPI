@@ -32,7 +32,8 @@ namespace __jni_impl::android::graphics
 		__thiz = QAndroidJniObject(
 			"android.graphics.CornerPathEffect",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

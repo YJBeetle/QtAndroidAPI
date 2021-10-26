@@ -22,6 +22,7 @@ namespace __jni_impl::javax::xml::validation
 		
 		// Methods
 		QAndroidJniObject newFactory(jstring arg0);
+		QAndroidJniObject newFactory(const QString &arg0);
 	};
 } // namespace __jni_impl::javax::xml::validation
 
@@ -46,6 +47,14 @@ namespace __jni_impl::javax::xml::validation
 			"newFactory",
 			"(Ljava/lang/String;)Ljavax/xml/validation/SchemaFactory;",
 			arg0
+		);
+	}
+	QAndroidJniObject SchemaFactoryLoader::newFactory(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"newFactory",
+			"(Ljava/lang/String;)Ljavax/xml/validation/SchemaFactory;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::javax::xml::validation

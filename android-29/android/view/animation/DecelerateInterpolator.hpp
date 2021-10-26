@@ -41,20 +41,23 @@ namespace __jni_impl::android::view::animation
 			"android.view.animation.DecelerateInterpolator",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DecelerateInterpolator::__constructor(jfloat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.DecelerateInterpolator",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	void DecelerateInterpolator::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.DecelerateInterpolator",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

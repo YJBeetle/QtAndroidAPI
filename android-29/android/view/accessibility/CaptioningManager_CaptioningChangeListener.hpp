@@ -44,7 +44,8 @@ namespace __jni_impl::android::view::accessibility
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.accessibility.CaptioningManager$CaptioningChangeListener",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

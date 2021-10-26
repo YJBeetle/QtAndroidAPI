@@ -53,7 +53,8 @@ namespace __jni_impl::android::net::wifi::aware
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.aware.ParcelablePeerHandle",
 			"(Landroid/net/wifi/aware/PeerHandle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

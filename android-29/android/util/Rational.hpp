@@ -39,6 +39,7 @@ namespace __jni_impl::android::util
 		jint getNumerator();
 		jint getDenominator();
 		static QAndroidJniObject parseRational(jstring arg0);
+		static QAndroidJniObject parseRational(const QString &arg0);
 	};
 } // namespace __jni_impl::android::util
 
@@ -86,7 +87,8 @@ namespace __jni_impl::android::util
 			"android.util.Rational",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -212,6 +214,15 @@ namespace __jni_impl::android::util
 			"parseRational",
 			"(Ljava/lang/String;)Landroid/util/Rational;",
 			arg0
+		);
+	}
+	QAndroidJniObject Rational::parseRational(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.util.Rational",
+			"parseRational",
+			"(Ljava/lang/String;)Landroid/util/Rational;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::util

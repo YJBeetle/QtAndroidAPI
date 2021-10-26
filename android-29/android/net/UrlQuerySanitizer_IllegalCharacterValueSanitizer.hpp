@@ -40,6 +40,7 @@ namespace __jni_impl::android::net
 		
 		// Methods
 		jstring sanitize(jstring arg0);
+		jstring sanitize(const QString &arg0);
 	};
 } // namespace __jni_impl::android::net
 
@@ -208,7 +209,8 @@ namespace __jni_impl::android::net
 		__thiz = QAndroidJniObject(
 			"android.net.UrlQuerySanitizer$IllegalCharacterValueSanitizer",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -218,6 +220,14 @@ namespace __jni_impl::android::net
 			"sanitize",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring UrlQuerySanitizer_IllegalCharacterValueSanitizer::sanitize(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"sanitize",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 } // namespace __jni_impl::android::net

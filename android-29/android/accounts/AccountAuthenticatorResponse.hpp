@@ -26,11 +26,12 @@ namespace __jni_impl::android::accounts
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		void onResult(__jni_impl::android::os::Bundle arg0);
-		void onRequestContinued();
+		void onError(jint arg0, jstring arg1);
+		void onError(jint arg0, const QString &arg1);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void onError(jint arg0, jstring arg1);
+		void onRequestContinued();
+		void onResult(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::accounts
 
@@ -55,23 +56,27 @@ namespace __jni_impl::android::accounts
 		__thiz = QAndroidJniObject(
 			"android.accounts.AccountAuthenticatorResponse",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
-	}
-	
-	// Methods
-	void AccountAuthenticatorResponse::onResult(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"onResult",
-			"(Landroid/os/Bundle;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	void AccountAuthenticatorResponse::onRequestContinued()
+	
+	// Methods
+	void AccountAuthenticatorResponse::onError(jint arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
-			"onRequestContinued",
-			"()V"
+			"onError",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1
+		);
+	}
+	void AccountAuthenticatorResponse::onError(jint arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"onError",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jint AccountAuthenticatorResponse::describeContents()
@@ -90,13 +95,19 @@ namespace __jni_impl::android::accounts
 			arg1
 		);
 	}
-	void AccountAuthenticatorResponse::onError(jint arg0, jstring arg1)
+	void AccountAuthenticatorResponse::onRequestContinued()
 	{
 		__thiz.callMethod<void>(
-			"onError",
-			"(ILjava/lang/String;)V",
-			arg0,
-			arg1
+			"onRequestContinued",
+			"()V"
+		);
+	}
+	void AccountAuthenticatorResponse::onResult(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"onResult",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::accounts

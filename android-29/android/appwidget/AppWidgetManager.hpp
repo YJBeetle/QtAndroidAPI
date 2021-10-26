@@ -81,10 +81,12 @@ namespace __jni_impl::android::appwidget
 		void partiallyUpdateAppWidget(jint arg0, __jni_impl::android::widget::RemoteViews arg1);
 		void partiallyUpdateAppWidget(jintArray arg0, __jni_impl::android::widget::RemoteViews arg1);
 		void updateAppWidgetProviderInfo(__jni_impl::android::content::ComponentName arg0, jstring arg1);
+		void updateAppWidgetProviderInfo(__jni_impl::android::content::ComponentName arg0, const QString &arg1);
 		void notifyAppWidgetViewDataChanged(jint arg0, jint arg1);
 		void notifyAppWidgetViewDataChanged(jintArray arg0, jint arg1);
 		QAndroidJniObject getInstalledProvidersForProfile(__jni_impl::android::os::UserHandle arg0);
 		QAndroidJniObject getInstalledProvidersForPackage(jstring arg0, __jni_impl::android::os::UserHandle arg1);
+		QAndroidJniObject getInstalledProvidersForPackage(const QString &arg0, __jni_impl::android::os::UserHandle arg1);
 		QAndroidJniObject getInstalledProviders();
 		QAndroidJniObject getAppWidgetInfo(jint arg0);
 		jboolean bindAppWidgetIdIfAllowed(jint arg0, __jni_impl::android::os::UserHandle arg1, __jni_impl::android::content::ComponentName arg2, __jni_impl::android::os::Bundle arg3);
@@ -412,6 +414,15 @@ namespace __jni_impl::android::appwidget
 			arg1
 		);
 	}
+	void AppWidgetManager::updateAppWidgetProviderInfo(__jni_impl::android::content::ComponentName arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"updateAppWidgetProviderInfo",
+			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void AppWidgetManager::notifyAppWidgetViewDataChanged(jint arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -444,6 +455,15 @@ namespace __jni_impl::android::appwidget
 			"getInstalledProvidersForPackage",
 			"(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject AppWidgetManager::getInstalledProvidersForPackage(const QString &arg0, __jni_impl::android::os::UserHandle arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getInstalledProvidersForPackage",
+			"(Ljava/lang/String;Landroid/os/UserHandle;)Ljava/util/List;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

@@ -39,7 +39,8 @@ namespace __jni_impl::android::app
 			"android.app.Instrumentation$ActivityResult",
 			"(ILandroid/content/Intent;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

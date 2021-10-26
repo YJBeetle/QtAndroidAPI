@@ -34,14 +34,14 @@ namespace __jni_impl::android::widget
 		void inflate(jint arg0);
 		QAndroidJniObject getDragToOpenListener();
 		void setForceShowIcon(jboolean arg0);
-		void dismiss();
-		void setOnDismissListener(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getMenuInflater();
+		void setOnMenuItemClickListener(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getMenu();
 		void show();
 		void setGravity(jint arg0);
 		jint getGravity();
-		void setOnMenuItemClickListener(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getMenu();
+		void dismiss();
+		void setOnDismissListener(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getMenuInflater();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -63,7 +63,8 @@ namespace __jni_impl::android::widget
 			arg1.__jniObject().object(),
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void PopupMenu::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::view::View arg1, jint arg2)
 	{
@@ -72,7 +73,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/view/View;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void PopupMenu::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::view::View arg1)
 	{
@@ -80,7 +82,8 @@ namespace __jni_impl::android::widget
 			"android.widget.PopupMenu",
 			"(Landroid/content/Context;Landroid/view/View;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -107,26 +110,19 @@ namespace __jni_impl::android::widget
 			arg0
 		);
 	}
-	void PopupMenu::dismiss()
+	void PopupMenu::setOnMenuItemClickListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"dismiss",
-			"()V"
-		);
-	}
-	void PopupMenu::setOnDismissListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnDismissListener",
-			"(Landroid/widget/PopupMenu$OnDismissListener;)V",
+			"setOnMenuItemClickListener",
+			"(Landroid/widget/PopupMenu$OnMenuItemClickListener;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject PopupMenu::getMenuInflater()
+	QAndroidJniObject PopupMenu::getMenu()
 	{
 		return __thiz.callObjectMethod(
-			"getMenuInflater",
-			"()Landroid/view/MenuInflater;"
+			"getMenu",
+			"()Landroid/view/Menu;"
 		);
 	}
 	void PopupMenu::show()
@@ -151,19 +147,26 @@ namespace __jni_impl::android::widget
 			"()I"
 		);
 	}
-	void PopupMenu::setOnMenuItemClickListener(__jni_impl::__JniBaseClass arg0)
+	void PopupMenu::dismiss()
 	{
 		__thiz.callMethod<void>(
-			"setOnMenuItemClickListener",
-			"(Landroid/widget/PopupMenu$OnMenuItemClickListener;)V",
+			"dismiss",
+			"()V"
+		);
+	}
+	void PopupMenu::setOnDismissListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnDismissListener",
+			"(Landroid/widget/PopupMenu$OnDismissListener;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject PopupMenu::getMenu()
+	QAndroidJniObject PopupMenu::getMenuInflater()
 	{
 		return __thiz.callObjectMethod(
-			"getMenu",
-			"()Landroid/view/Menu;"
+			"getMenuInflater",
+			"()Landroid/view/MenuInflater;"
 		);
 	}
 } // namespace __jni_impl::android::widget

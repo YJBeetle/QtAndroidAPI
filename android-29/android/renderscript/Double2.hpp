@@ -45,7 +45,8 @@ namespace __jni_impl::android::renderscript
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Double2",
-			"()V");
+			"()V"
+		);
 	}
 	void Double2::__constructor(jdouble arg0, jdouble arg1)
 	{
@@ -53,7 +54,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.Double2",
 			"(DD)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

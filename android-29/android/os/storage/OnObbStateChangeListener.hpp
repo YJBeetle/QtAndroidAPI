@@ -26,6 +26,7 @@ namespace __jni_impl::android::os::storage
 		
 		// Methods
 		void onObbStateChange(jstring arg0, jint arg1);
+		void onObbStateChange(const QString &arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::os::storage
 
@@ -95,7 +96,8 @@ namespace __jni_impl::android::os::storage
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.storage.OnObbStateChangeListener",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -105,6 +107,15 @@ namespace __jni_impl::android::os::storage
 			"onObbStateChange",
 			"(Ljava/lang/String;I)V",
 			arg0,
+			arg1
+		);
+	}
+	void OnObbStateChangeListener::onObbStateChange(const QString &arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"onObbStateChange",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

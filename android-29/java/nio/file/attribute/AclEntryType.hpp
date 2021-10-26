@@ -24,6 +24,7 @@ namespace __jni_impl::java::nio::file::attribute
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::java::nio::file::attribute
 
@@ -88,6 +89,15 @@ namespace __jni_impl::java::nio::file::attribute
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/nio/file/attribute/AclEntryType;",
 			arg0
+		);
+	}
+	QAndroidJniObject AclEntryType::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.file.attribute.AclEntryType",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/nio/file/attribute/AclEntryType;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::nio::file::attribute

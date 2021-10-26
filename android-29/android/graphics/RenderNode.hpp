@@ -7,10 +7,6 @@
 
 namespace __jni_impl::android::graphics
 {
-	class RecordingCanvas;
-}
-namespace __jni_impl::android::graphics
-{
 	class Matrix;
 }
 namespace __jni_impl::android::graphics
@@ -25,6 +21,10 @@ namespace __jni_impl::android::graphics
 {
 	class Outline;
 }
+namespace __jni_impl::android::graphics
+{
+	class RecordingCanvas;
+}
 
 namespace __jni_impl::android::graphics
 {
@@ -35,11 +35,10 @@ namespace __jni_impl::android::graphics
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
-		QAndroidJniObject beginRecording();
-		QAndroidJniObject beginRecording(jint arg0, jint arg1);
-		void endRecording();
+		jboolean setAlpha(jfloat arg0);
 		void getMatrix(__jni_impl::android::graphics::Matrix arg0);
 		jfloat getCameraDistance();
 		jboolean setCameraDistance(jfloat arg0);
@@ -76,7 +75,6 @@ namespace __jni_impl::android::graphics
 		jboolean setClipToOutline(jboolean arg0);
 		jboolean offsetTopAndBottom(jint arg0);
 		jboolean offsetLeftAndRight(jint arg0);
-		jlong getUniqueId();
 		void discardDisplayList();
 		jboolean hasDisplayList();
 		jboolean hasIdentityMatrix();
@@ -103,15 +101,18 @@ namespace __jni_impl::android::graphics
 		jlong computeApproximateMemoryUsage();
 		jint getWidth();
 		jint getHeight();
-		jboolean setAlpha(jfloat arg0);
+		jlong getUniqueId();
+		QAndroidJniObject beginRecording(jint arg0, jint arg1);
+		QAndroidJniObject beginRecording();
+		void endRecording();
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "RecordingCanvas.hpp"
 #include "Matrix.hpp"
 #include "Paint.hpp"
 #include "Rect.hpp"
 #include "Outline.hpp"
+#include "RecordingCanvas.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -123,31 +124,25 @@ namespace __jni_impl::android::graphics
 		__thiz = QAndroidJniObject(
 			"android.graphics.RenderNode",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void RenderNode::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.graphics.RenderNode",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
-	QAndroidJniObject RenderNode::beginRecording()
+	jboolean RenderNode::setAlpha(jfloat arg0)
 	{
-		return __thiz.callObjectMethod(
-			"beginRecording",
-			"()Landroid/graphics/RecordingCanvas;"
-		);
-	}
-	QAndroidJniObject RenderNode::beginRecording(jint arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"beginRecording",
-			"(II)Landroid/graphics/RecordingCanvas;",
-			arg0,
-			arg1
-		);
-	}
-	void RenderNode::endRecording()
-	{
-		__thiz.callMethod<void>(
-			"endRecording",
-			"()V"
+		return __thiz.callMethod<jboolean>(
+			"setAlpha",
+			"(F)Z",
+			arg0
 		);
 	}
 	void RenderNode::getMatrix(__jni_impl::android::graphics::Matrix arg0)
@@ -418,13 +413,6 @@ namespace __jni_impl::android::graphics
 			arg0
 		);
 	}
-	jlong RenderNode::getUniqueId()
-	{
-		return __thiz.callMethod<jlong>(
-			"getUniqueId",
-			"()J"
-		);
-	}
 	void RenderNode::discardDisplayList()
 	{
 		__thiz.callMethod<void>(
@@ -624,12 +612,34 @@ namespace __jni_impl::android::graphics
 			"()I"
 		);
 	}
-	jboolean RenderNode::setAlpha(jfloat arg0)
+	jlong RenderNode::getUniqueId()
 	{
-		return __thiz.callMethod<jboolean>(
-			"setAlpha",
-			"(F)Z",
-			arg0
+		return __thiz.callMethod<jlong>(
+			"getUniqueId",
+			"()J"
+		);
+	}
+	QAndroidJniObject RenderNode::beginRecording(jint arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"beginRecording",
+			"(II)Landroid/graphics/RecordingCanvas;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject RenderNode::beginRecording()
+	{
+		return __thiz.callObjectMethod(
+			"beginRecording",
+			"()Landroid/graphics/RecordingCanvas;"
+		);
+	}
+	void RenderNode::endRecording()
+	{
+		__thiz.callMethod<void>(
+			"endRecording",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::graphics

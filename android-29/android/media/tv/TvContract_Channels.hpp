@@ -97,6 +97,7 @@ namespace __jni_impl::android::media::tv
 		
 		// Methods
 		static jstring getVideoResolution(jstring arg0);
+		static jstring getVideoResolution(const QString &arg0);
 	};
 } // namespace __jni_impl::android::media::tv
 
@@ -722,6 +723,15 @@ namespace __jni_impl::android::media::tv
 			"getVideoResolution",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring TvContract_Channels::getVideoResolution(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.media.tv.TvContract$Channels",
+			"getVideoResolution",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media::tv

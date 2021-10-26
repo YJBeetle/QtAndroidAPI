@@ -63,7 +63,8 @@ namespace __jni_impl::android::telecom
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.CallRedirectionService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

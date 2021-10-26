@@ -39,7 +39,8 @@ namespace __jni_impl::android::hardware::camera2::params
 			"(JFF)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods

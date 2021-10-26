@@ -9,6 +9,10 @@ namespace __jni_impl::android::os
 {
 	class Parcel;
 }
+namespace __jni_impl::android::graphics::drawable
+{
+	class Drawable;
+}
 namespace __jni_impl::android::content
 {
 	class Intent;
@@ -16,10 +20,6 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::os
 {
 	class Bundle;
-}
-namespace __jni_impl::android::graphics::drawable
-{
-	class Drawable;
 }
 
 namespace __jni_impl::android::view::textclassifier
@@ -38,23 +38,24 @@ namespace __jni_impl::android::view::textclassifier
 		QAndroidJniObject getActions();
 		jstring getId();
 		jstring getText();
-		jfloat getConfidenceScore(jstring arg0);
+		jstring getLabel();
+		QAndroidJniObject getIcon();
+		jint getEntityCount();
+		jstring getEntity(jint arg0);
+		QAndroidJniObject getOnClickListener();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getIntent();
 		QAndroidJniObject getExtras();
-		jint getEntityCount();
-		jstring getEntity(jint arg0);
-		QAndroidJniObject getOnClickListener();
-		jstring getLabel();
-		QAndroidJniObject getIcon();
+		jfloat getConfidenceScore(jstring arg0);
+		jfloat getConfidenceScore(const QString &arg0);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
 #include "../../os/Parcel.hpp"
+#include "../../graphics/drawable/Drawable.hpp"
 #include "../../content/Intent.hpp"
 #include "../../os/Bundle.hpp"
-#include "../../graphics/drawable/Drawable.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {
@@ -105,12 +106,40 @@ namespace __jni_impl::android::view::textclassifier
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jfloat TextClassification::getConfidenceScore(jstring arg0)
+	jstring TextClassification::getLabel()
 	{
-		return __thiz.callMethod<jfloat>(
-			"getConfidenceScore",
-			"(Ljava/lang/String;)F",
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	QAndroidJniObject TextClassification::getIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
+	}
+	jint TextClassification::getEntityCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getEntityCount",
+			"()I"
+		);
+	}
+	jstring TextClassification::getEntity(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getEntity",
+			"(I)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	QAndroidJniObject TextClassification::getOnClickListener()
+	{
+		return __thiz.callObjectMethod(
+			"getOnClickListener",
+			"()Landroid/view/View$OnClickListener;"
 		);
 	}
 	jint TextClassification::describeContents()
@@ -143,40 +172,20 @@ namespace __jni_impl::android::view::textclassifier
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint TextClassification::getEntityCount()
+	jfloat TextClassification::getConfidenceScore(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getEntityCount",
-			"()I"
-		);
-	}
-	jstring TextClassification::getEntity(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getEntity",
-			"(I)Ljava/lang/String;",
+		return __thiz.callMethod<jfloat>(
+			"getConfidenceScore",
+			"(Ljava/lang/String;)F",
 			arg0
-		).object<jstring>();
-	}
-	QAndroidJniObject TextClassification::getOnClickListener()
-	{
-		return __thiz.callObjectMethod(
-			"getOnClickListener",
-			"()Landroid/view/View$OnClickListener;"
 		);
 	}
-	jstring TextClassification::getLabel()
+	jfloat TextClassification::getConfidenceScore(const QString &arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	QAndroidJniObject TextClassification::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Drawable;"
+		return __thiz.callMethod<jfloat>(
+			"getConfidenceScore",
+			"(Ljava/lang/String;)F",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::view::textclassifier

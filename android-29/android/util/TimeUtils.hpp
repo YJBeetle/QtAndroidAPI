@@ -22,7 +22,9 @@ namespace __jni_impl::android::util
 		
 		// Methods
 		static QAndroidJniObject getTimeZone(jint arg0, jboolean arg1, jlong arg2, jstring arg3);
+		static QAndroidJniObject getTimeZone(jint arg0, jboolean arg1, jlong arg2, const QString &arg3);
 		static QAndroidJniObject getTimeZoneIdsForCountryCode(jstring arg0);
+		static QAndroidJniObject getTimeZoneIdsForCountryCode(const QString &arg0);
 		static jstring getTimeZoneDatabaseVersion();
 	};
 } // namespace __jni_impl::android::util
@@ -54,6 +56,18 @@ namespace __jni_impl::android::util
 			arg3
 		);
 	}
+	QAndroidJniObject TimeUtils::getTimeZone(jint arg0, jboolean arg1, jlong arg2, const QString &arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.util.TimeUtils",
+			"getTimeZone",
+			"(IZJLjava/lang/String;)Ljava/util/TimeZone;",
+			arg0,
+			arg1,
+			arg2,
+			QAndroidJniObject::fromString(arg3).object<jstring>()
+		);
+	}
 	QAndroidJniObject TimeUtils::getTimeZoneIdsForCountryCode(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -61,6 +75,15 @@ namespace __jni_impl::android::util
 			"getTimeZoneIdsForCountryCode",
 			"(Ljava/lang/String;)Ljava/util/List;",
 			arg0
+		);
+	}
+	QAndroidJniObject TimeUtils::getTimeZoneIdsForCountryCode(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.util.TimeUtils",
+			"getTimeZoneIdsForCountryCode",
+			"(Ljava/lang/String;)Ljava/util/List;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring TimeUtils::getTimeZoneDatabaseVersion()

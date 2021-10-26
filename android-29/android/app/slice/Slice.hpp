@@ -9,13 +9,13 @@ namespace __jni_impl::android::os
 {
 	class Parcel;
 }
-namespace __jni_impl::android::app::slice
-{
-	class SliceSpec;
-}
 namespace __jni_impl::android::net
 {
 	class Uri;
+}
+namespace __jni_impl::android::app::slice
+{
+	class SliceSpec;
 }
 
 namespace __jni_impl::android::app::slice
@@ -61,19 +61,19 @@ namespace __jni_impl::android::app::slice
 		
 		// Methods
 		jstring toString();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getUri();
 		QAndroidJniObject getSpec();
 		QAndroidJniObject getItems();
 		QAndroidJniObject getHints();
 		jboolean isCallerNeeded();
-		QAndroidJniObject getUri();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::slice
 
 #include "../../os/Parcel.hpp"
-#include "SliceSpec.hpp"
 #include "../../net/Uri.hpp"
+#include "SliceSpec.hpp"
 
 namespace __jni_impl::android::app::slice
 {
@@ -343,20 +343,11 @@ namespace __jni_impl::android::app::slice
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint Slice::describeContents()
+	QAndroidJniObject Slice::getUri()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void Slice::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callObjectMethod(
+			"getUri",
+			"()Landroid/net/Uri;"
 		);
 	}
 	QAndroidJniObject Slice::getSpec()
@@ -387,11 +378,20 @@ namespace __jni_impl::android::app::slice
 			"()Z"
 		);
 	}
-	QAndroidJniObject Slice::getUri()
+	jint Slice::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"getUri",
-			"()Landroid/net/Uri;"
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void Slice::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::app::slice

@@ -36,6 +36,7 @@ namespace __jni_impl::android::companion
 		// Methods
 		QAndroidJniObject getAssociations();
 		void disassociate(jstring arg0);
+		void disassociate(const QString &arg0);
 		void requestNotificationAccess(__jni_impl::android::content::ComponentName arg0);
 		jboolean hasNotificationAccess(__jni_impl::android::content::ComponentName arg0);
 		void associate(__jni_impl::android::companion::AssociationRequest arg0, __jni_impl::android::companion::CompanionDeviceManager_Callback arg1, __jni_impl::android::os::Handler arg2);
@@ -81,6 +82,14 @@ namespace __jni_impl::android::companion
 			"disassociate",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void CompanionDeviceManager::disassociate(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"disassociate",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void CompanionDeviceManager::requestNotificationAccess(__jni_impl::android::content::ComponentName arg0)

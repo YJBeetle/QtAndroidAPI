@@ -42,7 +42,8 @@ namespace __jni_impl::android::util
 			"android.util.Base64OutputStream",
 			"(Ljava/io/OutputStream;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

@@ -45,7 +45,8 @@ namespace __jni_impl::android::graphics::pdf
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods

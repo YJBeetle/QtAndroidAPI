@@ -33,7 +33,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.PaintFlagsDrawFilter",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

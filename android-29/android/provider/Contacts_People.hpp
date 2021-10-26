@@ -57,6 +57,7 @@ namespace __jni_impl::android::provider
 		static QAndroidJniObject addToMyContactsGroup(__jni_impl::android::content::ContentResolver arg0, jlong arg1);
 		static QAndroidJniObject addToGroup(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jlong arg2);
 		static QAndroidJniObject addToGroup(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jstring arg2);
+		static QAndroidJniObject addToGroup(__jni_impl::android::content::ContentResolver arg0, jlong arg1, const QString &arg2);
 		static QAndroidJniObject createPersonInMyContactsGroup(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::content::ContentValues arg1);
 		static QAndroidJniObject queryGroups(__jni_impl::android::content::ContentResolver arg0, jlong arg1);
 		static void setPhotoData(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, jbyteArray arg2);
@@ -189,6 +190,17 @@ namespace __jni_impl::android::provider
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
+		);
+	}
+	QAndroidJniObject Contacts_People::addToGroup(__jni_impl::android::content::ContentResolver arg0, jlong arg1, const QString &arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.Contacts$People",
+			"addToGroup",
+			"(Landroid/content/ContentResolver;JLjava/lang/String;)Landroid/net/Uri;",
+			arg0.__jniObject().object(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	QAndroidJniObject Contacts_People::createPersonInMyContactsGroup(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::content::ContentValues arg1)

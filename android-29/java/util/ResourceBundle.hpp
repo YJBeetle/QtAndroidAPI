@@ -38,23 +38,35 @@ namespace __jni_impl::java::util
 		
 		// Methods
 		jboolean containsKey(jstring arg0);
+		jboolean containsKey(const QString &arg0);
 		QAndroidJniObject keySet();
 		jobject getObject(jstring arg0);
+		jobject getObject(const QString &arg0);
 		jstring getBaseBundleName();
 		static QAndroidJniObject getBundle(jstring arg0, __jni_impl::java::util::Locale arg1, __jni_impl::__JniBaseClass arg2);
+		static QAndroidJniObject getBundle(const QString &arg0, __jni_impl::java::util::Locale arg1, __jni_impl::__JniBaseClass arg2);
 		static QAndroidJniObject getBundle(jstring arg0, __jni_impl::java::util::Locale arg1, __jni_impl::java::util::ResourceBundle_Control arg2);
+		static QAndroidJniObject getBundle(const QString &arg0, __jni_impl::java::util::Locale arg1, __jni_impl::java::util::ResourceBundle_Control arg2);
 		static QAndroidJniObject getBundle(jstring arg0, __jni_impl::java::util::Locale arg1, __jni_impl::java::lang::ClassLoader arg2);
+		static QAndroidJniObject getBundle(const QString &arg0, __jni_impl::java::util::Locale arg1, __jni_impl::java::lang::ClassLoader arg2);
 		static QAndroidJniObject getBundle(jstring arg0, __jni_impl::java::util::Locale arg1, __jni_impl::java::lang::ClassLoader arg2, __jni_impl::java::util::ResourceBundle_Control arg3);
+		static QAndroidJniObject getBundle(const QString &arg0, __jni_impl::java::util::Locale arg1, __jni_impl::java::lang::ClassLoader arg2, __jni_impl::java::util::ResourceBundle_Control arg3);
 		static QAndroidJniObject getBundle(jstring arg0);
+		static QAndroidJniObject getBundle(const QString &arg0);
 		static QAndroidJniObject getBundle(jstring arg0, __jni_impl::java::util::ResourceBundle_Control arg1);
+		static QAndroidJniObject getBundle(const QString &arg0, __jni_impl::java::util::ResourceBundle_Control arg1);
 		static QAndroidJniObject getBundle(jstring arg0, __jni_impl::java::util::Locale arg1);
+		static QAndroidJniObject getBundle(const QString &arg0, __jni_impl::java::util::Locale arg1);
 		static QAndroidJniObject getBundle(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		static QAndroidJniObject getBundle(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		QAndroidJniObject getLocale();
 		jstring getString(jstring arg0);
+		jstring getString(const QString &arg0);
 		QAndroidJniObject getKeys();
 		static void clearCache(__jni_impl::java::lang::ClassLoader arg0);
 		static void clearCache();
 		jarray getStringArray(jstring arg0);
+		jarray getStringArray(const QString &arg0);
 	};
 } // namespace __jni_impl::java::util
 
@@ -73,7 +85,8 @@ namespace __jni_impl::java::util
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.ResourceBundle",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -83,6 +96,14 @@ namespace __jni_impl::java::util
 			"containsKey",
 			"(Ljava/lang/String;)Z",
 			arg0
+		);
+	}
+	jboolean ResourceBundle::containsKey(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"containsKey",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject ResourceBundle::keySet()
@@ -98,6 +119,14 @@ namespace __jni_impl::java::util
 			"getObject",
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			arg0
+		).object<jobject>();
+	}
+	jobject ResourceBundle::getObject(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getObject",
+			"(Ljava/lang/String;)Ljava/lang/Object;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
 	jstring ResourceBundle::getBaseBundleName()
@@ -118,6 +147,17 @@ namespace __jni_impl::java::util
 			arg2.__jniObject().object()
 		);
 	}
+	QAndroidJniObject ResourceBundle::getBundle(const QString &arg0, __jni_impl::java::util::Locale arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.ResourceBundle",
+			"getBundle",
+			"(Ljava/lang/String;Ljava/util/Locale;Ljava/lang/Module;)Ljava/util/ResourceBundle;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
 	QAndroidJniObject ResourceBundle::getBundle(jstring arg0, __jni_impl::java::util::Locale arg1, __jni_impl::java::util::ResourceBundle_Control arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -129,6 +169,17 @@ namespace __jni_impl::java::util
 			arg2.__jniObject().object()
 		);
 	}
+	QAndroidJniObject ResourceBundle::getBundle(const QString &arg0, __jni_impl::java::util::Locale arg1, __jni_impl::java::util::ResourceBundle_Control arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.ResourceBundle",
+			"getBundle",
+			"(Ljava/lang/String;Ljava/util/Locale;Ljava/util/ResourceBundle$Control;)Ljava/util/ResourceBundle;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
 	QAndroidJniObject ResourceBundle::getBundle(jstring arg0, __jni_impl::java::util::Locale arg1, __jni_impl::java::lang::ClassLoader arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -136,6 +187,17 @@ namespace __jni_impl::java::util
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/Locale;Ljava/lang/ClassLoader;)Ljava/util/ResourceBundle;",
 			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ResourceBundle::getBundle(const QString &arg0, __jni_impl::java::util::Locale arg1, __jni_impl::java::lang::ClassLoader arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.ResourceBundle",
+			"getBundle",
+			"(Ljava/lang/String;Ljava/util/Locale;Ljava/lang/ClassLoader;)Ljava/util/ResourceBundle;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);
@@ -152,6 +214,18 @@ namespace __jni_impl::java::util
 			arg3.__jniObject().object()
 		);
 	}
+	QAndroidJniObject ResourceBundle::getBundle(const QString &arg0, __jni_impl::java::util::Locale arg1, __jni_impl::java::lang::ClassLoader arg2, __jni_impl::java::util::ResourceBundle_Control arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.ResourceBundle",
+			"getBundle",
+			"(Ljava/lang/String;Ljava/util/Locale;Ljava/lang/ClassLoader;Ljava/util/ResourceBundle$Control;)Ljava/util/ResourceBundle;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object()
+		);
+	}
 	QAndroidJniObject ResourceBundle::getBundle(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -161,6 +235,15 @@ namespace __jni_impl::java::util
 			arg0
 		);
 	}
+	QAndroidJniObject ResourceBundle::getBundle(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.ResourceBundle",
+			"getBundle",
+			"(Ljava/lang/String;)Ljava/util/ResourceBundle;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject ResourceBundle::getBundle(jstring arg0, __jni_impl::java::util::ResourceBundle_Control arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -168,6 +251,16 @@ namespace __jni_impl::java::util
 			"getBundle",
 			"(Ljava/lang/String;Ljava/util/ResourceBundle$Control;)Ljava/util/ResourceBundle;",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ResourceBundle::getBundle(const QString &arg0, __jni_impl::java::util::ResourceBundle_Control arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.ResourceBundle",
+			"getBundle",
+			"(Ljava/lang/String;Ljava/util/ResourceBundle$Control;)Ljava/util/ResourceBundle;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -181,6 +274,16 @@ namespace __jni_impl::java::util
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject ResourceBundle::getBundle(const QString &arg0, __jni_impl::java::util::Locale arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.ResourceBundle",
+			"getBundle",
+			"(Ljava/lang/String;Ljava/util/Locale;)Ljava/util/ResourceBundle;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject ResourceBundle::getBundle(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -188,6 +291,16 @@ namespace __jni_impl::java::util
 			"getBundle",
 			"(Ljava/lang/String;Ljava/lang/Module;)Ljava/util/ResourceBundle;",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ResourceBundle::getBundle(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.ResourceBundle",
+			"getBundle",
+			"(Ljava/lang/String;Ljava/lang/Module;)Ljava/util/ResourceBundle;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -204,6 +317,14 @@ namespace __jni_impl::java::util
 			"getString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring ResourceBundle::getString(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getString",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject ResourceBundle::getKeys()
@@ -236,6 +357,14 @@ namespace __jni_impl::java::util
 			"getStringArray",
 			"(Ljava/lang/String;)[Ljava/lang/String;",
 			arg0
+		).object<jarray>();
+	}
+	jarray ResourceBundle::getStringArray(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getStringArray",
+			"(Ljava/lang/String;)[Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jarray>();
 	}
 } // namespace __jni_impl::java::util

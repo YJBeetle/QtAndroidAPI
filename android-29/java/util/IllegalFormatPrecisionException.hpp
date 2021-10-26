@@ -37,7 +37,8 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.IllegalFormatPrecisionException",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

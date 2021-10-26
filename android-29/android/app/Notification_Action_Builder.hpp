@@ -17,13 +17,13 @@ namespace __jni_impl::android::app
 {
 	class PendingIntent;
 }
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 namespace __jni_impl::android::app
 {
 	class RemoteInput;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 
 namespace __jni_impl::android::app
@@ -36,25 +36,27 @@ namespace __jni_impl::android::app
 		// Constructors
 		void __constructor(__jni_impl::android::app::Notification_Action arg0);
 		void __constructor(__jni_impl::android::graphics::drawable::Icon arg0, jstring arg1, __jni_impl::android::app::PendingIntent arg2);
+		void __constructor(__jni_impl::android::graphics::drawable::Icon arg0, const QString &arg1, __jni_impl::android::app::PendingIntent arg2);
 		void __constructor(jint arg0, jstring arg1, __jni_impl::android::app::PendingIntent arg2);
+		void __constructor(jint arg0, const QString &arg1, __jni_impl::android::app::PendingIntent arg2);
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject getExtras();
 		QAndroidJniObject addRemoteInput(__jni_impl::android::app::RemoteInput arg0);
 		QAndroidJniObject setAllowGeneratedReplies(jboolean arg0);
 		QAndroidJniObject setSemanticAction(jint arg0);
 		QAndroidJniObject setContextual(jboolean arg0);
-		QAndroidJniObject addExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject extend(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getExtras();
+		QAndroidJniObject addExtras(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::app
 
 #include "Notification_Action.hpp"
 #include "../graphics/drawable/Icon.hpp"
 #include "PendingIntent.hpp"
-#include "../os/Bundle.hpp"
 #include "RemoteInput.hpp"
+#include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -66,7 +68,8 @@ namespace __jni_impl::android::app
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$Action$Builder",
 			"(Landroid/app/Notification$Action;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Notification_Action_Builder::__constructor(__jni_impl::android::graphics::drawable::Icon arg0, jstring arg1, __jni_impl::android::app::PendingIntent arg2)
 	{
@@ -75,7 +78,18 @@ namespace __jni_impl::android::app
 			"(Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void Notification_Action_Builder::__constructor(__jni_impl::android::graphics::drawable::Icon arg0, const QString &arg1, __jni_impl::android::app::PendingIntent arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.Notification$Action$Builder",
+			"(Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
 	}
 	void Notification_Action_Builder::__constructor(jint arg0, jstring arg1, __jni_impl::android::app::PendingIntent arg2)
 	{
@@ -84,7 +98,18 @@ namespace __jni_impl::android::app
 			"(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void Notification_Action_Builder::__constructor(jint arg0, const QString &arg1, __jni_impl::android::app::PendingIntent arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.Notification$Action$Builder",
+			"(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -93,13 +118,6 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/app/Notification$Action;"
-		);
-	}
-	QAndroidJniObject Notification_Action_Builder::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
 		);
 	}
 	QAndroidJniObject Notification_Action_Builder::addRemoteInput(__jni_impl::android::app::RemoteInput arg0)
@@ -134,19 +152,26 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_Action_Builder::addExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addExtras",
-			"(Landroid/os/Bundle;)Landroid/app/Notification$Action$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject Notification_Action_Builder::extend(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"extend",
 			"(Landroid/app/Notification$Action$Extender;)Landroid/app/Notification$Action$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Notification_Action_Builder::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	QAndroidJniObject Notification_Action_Builder::addExtras(__jni_impl::android::os::Bundle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"addExtras",
+			"(Landroid/os/Bundle;)Landroid/app/Notification$Action$Builder;",
 			arg0.__jniObject().object()
 		);
 	}

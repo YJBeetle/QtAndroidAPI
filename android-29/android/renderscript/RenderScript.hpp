@@ -47,8 +47,6 @@ namespace __jni_impl::android::renderscript
 		static QAndroidJniObject create(__jni_impl::android::content::Context arg0, __jni_impl::android::renderscript::RenderScript_ContextType arg1, jint arg2);
 		void finish();
 		static jlong getMinorVersion();
-		void sendMessage(jint arg0, jintArray arg1);
-		QAndroidJniObject getApplicationContext();
 		void setMessageHandler(__jni_impl::android::renderscript::RenderScript_RSMessageHandler arg0);
 		QAndroidJniObject getMessageHandler();
 		void setErrorHandler(__jni_impl::android::renderscript::RenderScript_RSErrorHandler arg0);
@@ -56,6 +54,8 @@ namespace __jni_impl::android::renderscript
 		static void releaseAllContexts();
 		static QAndroidJniObject createMultiContext(__jni_impl::android::content::Context arg0, __jni_impl::android::renderscript::RenderScript_ContextType arg1, jint arg2, jint arg3);
 		void contextDump();
+		QAndroidJniObject getApplicationContext();
+		void sendMessage(jint arg0, jintArray arg1);
 	};
 } // namespace __jni_impl::android::renderscript
 
@@ -159,22 +159,6 @@ namespace __jni_impl::android::renderscript
 			"()J"
 		);
 	}
-	void RenderScript::sendMessage(jint arg0, jintArray arg1)
-	{
-		__thiz.callMethod<void>(
-			"sendMessage",
-			"(I[I)V",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject RenderScript::getApplicationContext()
-	{
-		return __thiz.callObjectMethod(
-			"getApplicationContext",
-			"()Landroid/content/Context;"
-		);
-	}
 	void RenderScript::setMessageHandler(__jni_impl::android::renderscript::RenderScript_RSMessageHandler arg0)
 	{
 		__thiz.callMethod<void>(
@@ -230,6 +214,22 @@ namespace __jni_impl::android::renderscript
 		__thiz.callMethod<void>(
 			"contextDump",
 			"()V"
+		);
+	}
+	QAndroidJniObject RenderScript::getApplicationContext()
+	{
+		return __thiz.callObjectMethod(
+			"getApplicationContext",
+			"()Landroid/content/Context;"
+		);
+	}
+	void RenderScript::sendMessage(jint arg0, jintArray arg1)
+	{
+		__thiz.callMethod<void>(
+			"sendMessage",
+			"(I[I)V",
+			arg0,
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::renderscript

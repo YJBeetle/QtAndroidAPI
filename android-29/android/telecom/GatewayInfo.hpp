@@ -24,14 +24,15 @@ namespace __jni_impl::android::telecom
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::net::Uri arg2);
+		void __constructor(const QString &arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::net::Uri arg2);
 		
 		// Methods
 		jboolean isEmpty();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jstring getGatewayProviderPackageName();
 		QAndroidJniObject getGatewayAddress();
 		QAndroidJniObject getOriginalAddress();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -58,7 +59,18 @@ namespace __jni_impl::android::telecom
 			"(Ljava/lang/String;Landroid/net/Uri;Landroid/net/Uri;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void GatewayInfo::__constructor(const QString &arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::net::Uri arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.telecom.GatewayInfo",
+			"(Ljava/lang/String;Landroid/net/Uri;Landroid/net/Uri;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -67,6 +79,22 @@ namespace __jni_impl::android::telecom
 		return __thiz.callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
+		);
+	}
+	jint GatewayInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void GatewayInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 	jstring GatewayInfo::getGatewayProviderPackageName()
@@ -88,22 +116,6 @@ namespace __jni_impl::android::telecom
 		return __thiz.callObjectMethod(
 			"getOriginalAddress",
 			"()Landroid/net/Uri;"
-		);
-	}
-	jint GatewayInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void GatewayInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 } // namespace __jni_impl::android::telecom

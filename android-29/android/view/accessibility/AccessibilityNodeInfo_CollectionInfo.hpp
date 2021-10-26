@@ -21,11 +21,11 @@ namespace __jni_impl::android::view::accessibility
 		
 		// Methods
 		jint getRowCount();
+		static QAndroidJniObject obtain(jint arg0, jint arg1, jboolean arg2, jint arg3);
+		static QAndroidJniObject obtain(jint arg0, jint arg1, jboolean arg2);
+		jint getSelectionMode();
 		jboolean isHierarchical();
 		jint getColumnCount();
-		jint getSelectionMode();
-		static QAndroidJniObject obtain(jint arg0, jint arg1, jboolean arg2);
-		static QAndroidJniObject obtain(jint arg0, jint arg1, jboolean arg2, jint arg3);
 	};
 } // namespace __jni_impl::android::view::accessibility
 
@@ -71,25 +71,16 @@ namespace __jni_impl::android::view::accessibility
 			"()I"
 		);
 	}
-	jboolean AccessibilityNodeInfo_CollectionInfo::isHierarchical()
+	QAndroidJniObject AccessibilityNodeInfo_CollectionInfo::obtain(jint arg0, jint arg1, jboolean arg2, jint arg3)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isHierarchical",
-			"()Z"
-		);
-	}
-	jint AccessibilityNodeInfo_CollectionInfo::getColumnCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnCount",
-			"()I"
-		);
-	}
-	jint AccessibilityNodeInfo_CollectionInfo::getSelectionMode()
-	{
-		return __thiz.callMethod<jint>(
-			"getSelectionMode",
-			"()I"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.accessibility.AccessibilityNodeInfo$CollectionInfo",
+			"obtain",
+			"(IIZI)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;",
+			arg0,
+			arg1,
+			arg2,
+			arg3
 		);
 	}
 	QAndroidJniObject AccessibilityNodeInfo_CollectionInfo::obtain(jint arg0, jint arg1, jboolean arg2)
@@ -103,16 +94,25 @@ namespace __jni_impl::android::view::accessibility
 			arg2
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_CollectionInfo::obtain(jint arg0, jint arg1, jboolean arg2, jint arg3)
+	jint AccessibilityNodeInfo_CollectionInfo::getSelectionMode()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.accessibility.AccessibilityNodeInfo$CollectionInfo",
-			"obtain",
-			"(IIZI)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;",
-			arg0,
-			arg1,
-			arg2,
-			arg3
+		return __thiz.callMethod<jint>(
+			"getSelectionMode",
+			"()I"
+		);
+	}
+	jboolean AccessibilityNodeInfo_CollectionInfo::isHierarchical()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isHierarchical",
+			"()Z"
+		);
+	}
+	jint AccessibilityNodeInfo_CollectionInfo::getColumnCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getColumnCount",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::view::accessibility

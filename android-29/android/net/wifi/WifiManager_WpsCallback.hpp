@@ -17,9 +17,10 @@ namespace __jni_impl::android::net::wifi
 		void __constructor();
 		
 		// Methods
-		void onFailed(jint arg0);
-		void onStarted(jstring arg0);
 		void onSucceeded();
+		void onStarted(jstring arg0);
+		void onStarted(const QString &arg0);
+		void onFailed(jint arg0);
 	};
 } // namespace __jni_impl::android::net::wifi
 
@@ -33,16 +34,16 @@ namespace __jni_impl::android::net::wifi
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.WifiManager$WpsCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	void WifiManager_WpsCallback::onFailed(jint arg0)
+	void WifiManager_WpsCallback::onSucceeded()
 	{
 		__thiz.callMethod<void>(
-			"onFailed",
-			"(I)V",
-			arg0
+			"onSucceeded",
+			"()V"
 		);
 	}
 	void WifiManager_WpsCallback::onStarted(jstring arg0)
@@ -53,11 +54,20 @@ namespace __jni_impl::android::net::wifi
 			arg0
 		);
 	}
-	void WifiManager_WpsCallback::onSucceeded()
+	void WifiManager_WpsCallback::onStarted(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"onSucceeded",
-			"()V"
+			"onStarted",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void WifiManager_WpsCallback::onFailed(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"onFailed",
+			"(I)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::net::wifi

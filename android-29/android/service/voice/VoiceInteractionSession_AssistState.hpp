@@ -36,9 +36,9 @@ namespace __jni_impl::android::service::voice
 		jint getIndex();
 		jint getCount();
 		jboolean isFocused();
-		QAndroidJniObject getAssistStructure();
 		QAndroidJniObject getActivityId();
 		QAndroidJniObject getAssistData();
+		QAndroidJniObject getAssistStructure();
 		QAndroidJniObject getAssistContent();
 	};
 } // namespace __jni_impl::android::service::voice
@@ -82,13 +82,6 @@ namespace __jni_impl::android::service::voice
 			"()Z"
 		);
 	}
-	QAndroidJniObject VoiceInteractionSession_AssistState::getAssistStructure()
-	{
-		return __thiz.callObjectMethod(
-			"getAssistStructure",
-			"()Landroid/app/assist/AssistStructure;"
-		);
-	}
 	QAndroidJniObject VoiceInteractionSession_AssistState::getActivityId()
 	{
 		return __thiz.callObjectMethod(
@@ -101,6 +94,13 @@ namespace __jni_impl::android::service::voice
 		return __thiz.callObjectMethod(
 			"getAssistData",
 			"()Landroid/os/Bundle;"
+		);
+	}
+	QAndroidJniObject VoiceInteractionSession_AssistState::getAssistStructure()
+	{
+		return __thiz.callObjectMethod(
+			"getAssistStructure",
+			"()Landroid/app/assist/AssistStructure;"
 		);
 	}
 	QAndroidJniObject VoiceInteractionSession_AssistState::getAssistContent()

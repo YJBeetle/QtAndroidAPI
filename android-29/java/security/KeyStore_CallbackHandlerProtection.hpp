@@ -32,7 +32,8 @@ namespace __jni_impl::java::security
 		__thiz = QAndroidJniObject(
 			"java.security.KeyStore$CallbackHandlerProtection",
 			"(Ljavax/security/auth/callback/CallbackHandler;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

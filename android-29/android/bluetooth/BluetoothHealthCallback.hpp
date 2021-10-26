@@ -47,7 +47,8 @@ namespace __jni_impl::android::bluetooth
 	{
 		__thiz = QAndroidJniObject(
 			"android.bluetooth.BluetoothHealthCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

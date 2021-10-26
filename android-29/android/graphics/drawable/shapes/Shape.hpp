@@ -7,15 +7,15 @@
 
 namespace __jni_impl::android::graphics
 {
-	class Outline;
-}
-namespace __jni_impl::android::graphics
-{
 	class Canvas;
 }
 namespace __jni_impl::android::graphics
 {
 	class Paint;
+}
+namespace __jni_impl::android::graphics
+{
+	class Outline;
 }
 
 namespace __jni_impl::android::graphics::drawable::shapes
@@ -33,17 +33,17 @@ namespace __jni_impl::android::graphics::drawable::shapes
 		jint hashCode();
 		QAndroidJniObject clone();
 		void resize(jfloat arg0, jfloat arg1);
-		void getOutline(__jni_impl::android::graphics::Outline arg0);
 		void draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1);
 		jboolean hasAlpha();
 		jfloat getWidth();
 		jfloat getHeight();
+		void getOutline(__jni_impl::android::graphics::Outline arg0);
 	};
 } // namespace __jni_impl::android::graphics::drawable::shapes
 
-#include "../../Outline.hpp"
 #include "../../Canvas.hpp"
 #include "../../Paint.hpp"
+#include "../../Outline.hpp"
 
 namespace __jni_impl::android::graphics::drawable::shapes
 {
@@ -54,7 +54,8 @@ namespace __jni_impl::android::graphics::drawable::shapes
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.shapes.Shape",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -89,14 +90,6 @@ namespace __jni_impl::android::graphics::drawable::shapes
 			arg1
 		);
 	}
-	void Shape::getOutline(__jni_impl::android::graphics::Outline arg0)
-	{
-		__thiz.callMethod<void>(
-			"getOutline",
-			"(Landroid/graphics/Outline;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void Shape::draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -125,6 +118,14 @@ namespace __jni_impl::android::graphics::drawable::shapes
 		return __thiz.callMethod<jfloat>(
 			"getHeight",
 			"()F"
+		);
+	}
+	void Shape::getOutline(__jni_impl::android::graphics::Outline arg0)
+	{
+		__thiz.callMethod<void>(
+			"getOutline",
+			"(Landroid/graphics/Outline;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::graphics::drawable::shapes

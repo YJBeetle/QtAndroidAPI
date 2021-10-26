@@ -23,6 +23,7 @@ namespace __jni_impl::android::webkit
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -79,6 +80,15 @@ namespace __jni_impl::android::webkit
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/webkit/WebSettings$RenderPriority;",
 			arg0
+		);
+	}
+	QAndroidJniObject WebSettings_RenderPriority::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.webkit.WebSettings$RenderPriority",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/webkit/WebSettings$RenderPriority;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::webkit

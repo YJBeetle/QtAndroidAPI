@@ -31,9 +31,9 @@ namespace __jni_impl::android::app::admin
 		void __constructor();
 		
 		// Methods
+		jint getErrorCode();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getErrorCode();
 	};
 } // namespace __jni_impl::android::app::admin
 
@@ -102,6 +102,13 @@ namespace __jni_impl::android::app::admin
 	}
 	
 	// Methods
+	jint SystemUpdatePolicy_ValidationFailedException::getErrorCode()
+	{
+		return __thiz.callMethod<jint>(
+			"getErrorCode",
+			"()I"
+		);
+	}
 	jint SystemUpdatePolicy_ValidationFailedException::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -116,13 +123,6 @@ namespace __jni_impl::android::app::admin
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint SystemUpdatePolicy_ValidationFailedException::getErrorCode()
-	{
-		return __thiz.callMethod<jint>(
-			"getErrorCode",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::app::admin

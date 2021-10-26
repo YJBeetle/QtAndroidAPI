@@ -96,7 +96,9 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		jboolean isFeatureSupported(jstring arg0);
+		jboolean isFeatureSupported(const QString &arg0);
 		jboolean isFeatureRequired(jstring arg0);
+		jboolean isFeatureRequired(const QString &arg0);
 		jboolean isFormatSupported(__jni_impl::android::media::MediaFormat arg0);
 		QAndroidJniObject getDefaultFormat();
 		jint getMaxSupportedInstances();
@@ -104,6 +106,7 @@ namespace __jni_impl::android::media
 		QAndroidJniObject getEncoderCapabilities();
 		QAndroidJniObject getVideoCapabilities();
 		static QAndroidJniObject createFromProfileLevel(jstring arg0, jint arg1, jint arg2);
+		static QAndroidJniObject createFromProfileLevel(const QString &arg0, jint arg1, jint arg2);
 		jstring getMimeType();
 	};
 } // namespace __jni_impl::android::media
@@ -564,7 +567,8 @@ namespace __jni_impl::android::media
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaCodecInfo$CodecCapabilities",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -576,12 +580,28 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
+	jboolean MediaCodecInfo_CodecCapabilities::isFeatureSupported(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFeatureSupported",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jboolean MediaCodecInfo_CodecCapabilities::isFeatureRequired(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFeatureRequired",
 			"(Ljava/lang/String;)Z",
 			arg0
+		);
+	}
+	jboolean MediaCodecInfo_CodecCapabilities::isFeatureRequired(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFeatureRequired",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean MediaCodecInfo_CodecCapabilities::isFormatSupported(__jni_impl::android::media::MediaFormat arg0)
@@ -634,6 +654,17 @@ namespace __jni_impl::android::media
 			"createFromProfileLevel",
 			"(Ljava/lang/String;II)Landroid/media/MediaCodecInfo$CodecCapabilities;",
 			arg0,
+			arg1,
+			arg2
+		);
+	}
+	QAndroidJniObject MediaCodecInfo_CodecCapabilities::createFromProfileLevel(const QString &arg0, jint arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.media.MediaCodecInfo$CodecCapabilities",
+			"createFromProfileLevel",
+			"(Ljava/lang/String;II)Landroid/media/MediaCodecInfo$CodecCapabilities;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);

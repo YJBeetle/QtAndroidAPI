@@ -19,6 +19,7 @@ namespace __jni_impl::android::text
 		// Methods
 		static QAndroidJniObject getInstance();
 		QAndroidJniObject newEditable(jstring arg0);
+		QAndroidJniObject newEditable(const QString &arg0);
 	};
 } // namespace __jni_impl::android::text
 
@@ -32,7 +33,8 @@ namespace __jni_impl::android::text
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.Editable$Factory",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -50,6 +52,14 @@ namespace __jni_impl::android::text
 			"newEditable",
 			"(Ljava/lang/CharSequence;)Landroid/text/Editable;",
 			arg0
+		);
+	}
+	QAndroidJniObject Editable_Factory::newEditable(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"newEditable",
+			"(Ljava/lang/CharSequence;)Landroid/text/Editable;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::text

@@ -25,6 +25,7 @@ namespace __jni_impl::android::telephony
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -97,6 +98,15 @@ namespace __jni_impl::android::telephony
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/telephony/SmsMessage$MessageClass;",
 			arg0
+		);
+	}
+	QAndroidJniObject SmsMessage_MessageClass::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telephony.SmsMessage$MessageClass",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/telephony/SmsMessage$MessageClass;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::telephony

@@ -24,7 +24,9 @@ namespace __jni_impl::java::security
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::java::security::IdentityScope arg1);
+		void __constructor(const QString &arg0, __jni_impl::java::security::IdentityScope arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jstring toString();
@@ -47,14 +49,33 @@ namespace __jni_impl::java::security
 			"java.security.Signer",
 			"(Ljava/lang/String;Ljava/security/IdentityScope;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void Signer::__constructor(const QString &arg0, __jni_impl::java::security::IdentityScope arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.Signer",
+			"(Ljava/lang/String;Ljava/security/IdentityScope;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	void Signer::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.Signer",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Signer::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.Signer",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

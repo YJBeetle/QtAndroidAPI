@@ -34,7 +34,8 @@ namespace __jni_impl::javax::crypto::spec
 			"javax.crypto.spec.DHGenParameterSpec",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

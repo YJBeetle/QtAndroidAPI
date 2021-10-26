@@ -28,10 +28,12 @@ namespace __jni_impl::android::service::autofill
 		// Constructors
 		void __constructor(__jni_impl::android::view::autofill::AutofillId arg0, __jni_impl::java::util::regex::Pattern arg1, jint arg2);
 		void __constructor(__jni_impl::android::view::autofill::AutofillId arg0, __jni_impl::java::util::regex::Pattern arg1, jint arg2, jstring arg3);
+		void __constructor(__jni_impl::android::view::autofill::AutofillId arg0, __jni_impl::java::util::regex::Pattern arg1, jint arg2, const QString &arg3);
 		
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject addOption(__jni_impl::java::util::regex::Pattern arg0, jint arg1, jstring arg2);
+		QAndroidJniObject addOption(__jni_impl::java::util::regex::Pattern arg0, jint arg1, const QString &arg2);
 		QAndroidJniObject addOption(__jni_impl::java::util::regex::Pattern arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::service::autofill
@@ -52,7 +54,8 @@ namespace __jni_impl::android::service::autofill
 			"(Landroid/view/autofill/AutofillId;Ljava/util/regex/Pattern;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void ImageTransformation_Builder::__constructor(__jni_impl::android::view::autofill::AutofillId arg0, __jni_impl::java::util::regex::Pattern arg1, jint arg2, jstring arg3)
 	{
@@ -62,7 +65,19 @@ namespace __jni_impl::android::service::autofill
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void ImageTransformation_Builder::__constructor(__jni_impl::android::view::autofill::AutofillId arg0, __jni_impl::java::util::regex::Pattern arg1, jint arg2, const QString &arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"android.service.autofill.ImageTransformation$Builder",
+			"(Landroid/view/autofill/AutofillId;Ljava/util/regex/Pattern;ILjava/lang/CharSequence;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			QAndroidJniObject::fromString(arg3).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -81,6 +96,16 @@ namespace __jni_impl::android::service::autofill
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
+		);
+	}
+	QAndroidJniObject ImageTransformation_Builder::addOption(__jni_impl::java::util::regex::Pattern arg0, jint arg1, const QString &arg2)
+	{
+		return __thiz.callObjectMethod(
+			"addOption",
+			"(Ljava/util/regex/Pattern;ILjava/lang/CharSequence;)Landroid/service/autofill/ImageTransformation$Builder;",
+			arg0.__jniObject().object(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	QAndroidJniObject ImageTransformation_Builder::addOption(__jni_impl::java::util::regex::Pattern arg0, jint arg1)

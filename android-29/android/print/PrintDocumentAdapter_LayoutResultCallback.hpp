@@ -23,6 +23,7 @@ namespace __jni_impl::android::print
 		// Methods
 		void onLayoutFinished(__jni_impl::android::print::PrintDocumentInfo arg0, jboolean arg1);
 		void onLayoutFailed(jstring arg0);
+		void onLayoutFailed(const QString &arg0);
 		void onLayoutCancelled();
 	};
 } // namespace __jni_impl::android::print
@@ -57,6 +58,14 @@ namespace __jni_impl::android::print
 			"onLayoutFailed",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
+		);
+	}
+	void PrintDocumentAdapter_LayoutResultCallback::onLayoutFailed(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"onLayoutFailed",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void PrintDocumentAdapter_LayoutResultCallback::onLayoutCancelled()

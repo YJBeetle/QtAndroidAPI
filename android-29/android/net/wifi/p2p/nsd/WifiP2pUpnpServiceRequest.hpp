@@ -20,6 +20,7 @@ namespace __jni_impl::android::net::wifi::p2p::nsd
 		// Methods
 		static QAndroidJniObject newInstance();
 		static QAndroidJniObject newInstance(jstring arg0);
+		static QAndroidJniObject newInstance(const QString &arg0);
 	};
 } // namespace __jni_impl::android::net::wifi::p2p::nsd
 
@@ -52,6 +53,15 @@ namespace __jni_impl::android::net::wifi::p2p::nsd
 			"newInstance",
 			"(Ljava/lang/String;)Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceRequest;",
 			arg0
+		);
+	}
+	QAndroidJniObject WifiP2pUpnpServiceRequest::newInstance(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.net.wifi.p2p.nsd.WifiP2pUpnpServiceRequest",
+			"newInstance",
+			"(Ljava/lang/String;)Landroid/net/wifi/p2p/nsd/WifiP2pUpnpServiceRequest;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::net::wifi::p2p::nsd

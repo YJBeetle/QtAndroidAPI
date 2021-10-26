@@ -18,6 +18,7 @@ namespace __jni_impl::javax::security::cert
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -33,14 +34,24 @@ namespace __jni_impl::javax::security::cert
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.cert.CertificateExpiredException",
-			"()V");
+			"()V"
+		);
 	}
 	void CertificateExpiredException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.security.cert.CertificateExpiredException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void CertificateExpiredException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.security.cert.CertificateExpiredException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

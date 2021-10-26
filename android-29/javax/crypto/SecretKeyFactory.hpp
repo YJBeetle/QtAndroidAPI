@@ -26,13 +26,16 @@ namespace __jni_impl::javax::crypto
 		
 		// Methods
 		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::java::security::Provider arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1);
 		static QAndroidJniObject getInstance(jstring arg0);
+		static QAndroidJniObject getInstance(const QString &arg0);
 		QAndroidJniObject getProvider();
 		QAndroidJniObject getKeySpec(__jni_impl::__JniBaseClass arg0, jclass arg1);
 		QAndroidJniObject translateKey(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject generateSecret(__jni_impl::__JniBaseClass arg0);
 		jstring getAlgorithm();
+		QAndroidJniObject generateSecret(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::javax::crypto
 
@@ -62,6 +65,16 @@ namespace __jni_impl::javax::crypto
 			arg1
 		);
 	}
+	QAndroidJniObject SecretKeyFactory::getInstance(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.crypto.SecretKeyFactory",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/SecretKeyFactory;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject SecretKeyFactory::getInstance(jstring arg0, __jni_impl::java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -72,6 +85,16 @@ namespace __jni_impl::javax::crypto
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject SecretKeyFactory::getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.crypto.SecretKeyFactory",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/SecretKeyFactory;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject SecretKeyFactory::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -79,6 +102,15 @@ namespace __jni_impl::javax::crypto
 			"getInstance",
 			"(Ljava/lang/String;)Ljavax/crypto/SecretKeyFactory;",
 			arg0
+		);
+	}
+	QAndroidJniObject SecretKeyFactory::getInstance(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.crypto.SecretKeyFactory",
+			"getInstance",
+			"(Ljava/lang/String;)Ljavax/crypto/SecretKeyFactory;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject SecretKeyFactory::getProvider()
@@ -105,6 +137,13 @@ namespace __jni_impl::javax::crypto
 			arg0.__jniObject().object()
 		);
 	}
+	jstring SecretKeyFactory::getAlgorithm()
+	{
+		return __thiz.callObjectMethod(
+			"getAlgorithm",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	QAndroidJniObject SecretKeyFactory::generateSecret(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -112,13 +151,6 @@ namespace __jni_impl::javax::crypto
 			"(Ljava/security/spec/KeySpec;)Ljavax/crypto/SecretKey;",
 			arg0.__jniObject().object()
 		);
-	}
-	jstring SecretKeyFactory::getAlgorithm()
-	{
-		return __thiz.callObjectMethod(
-			"getAlgorithm",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::crypto
 

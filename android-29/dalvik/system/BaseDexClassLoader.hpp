@@ -32,10 +32,12 @@ namespace __jni_impl::dalvik::system
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::java::io::File arg1, jstring arg2, __jni_impl::java::lang::ClassLoader arg3);
+		void __constructor(const QString &arg0, __jni_impl::java::io::File arg1, const QString &arg2, __jni_impl::java::lang::ClassLoader arg3);
 		
 		// Methods
 		jstring toString();
 		jstring findLibrary(jstring arg0);
+		jstring findLibrary(const QString &arg0);
 	};
 } // namespace __jni_impl::dalvik::system
 
@@ -57,7 +59,19 @@ namespace __jni_impl::dalvik::system
 			arg0,
 			arg1.__jniObject().object(),
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
+	}
+	void BaseDexClassLoader::__constructor(const QString &arg0, __jni_impl::java::io::File arg1, const QString &arg2, __jni_impl::java::lang::ClassLoader arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"dalvik.system.BaseDexClassLoader",
+			"(Ljava/lang/String;Ljava/io/File;Ljava/lang/String;Ljava/lang/ClassLoader;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -74,6 +88,14 @@ namespace __jni_impl::dalvik::system
 			"findLibrary",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring BaseDexClassLoader::findLibrary(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"findLibrary",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 } // namespace __jni_impl::dalvik::system

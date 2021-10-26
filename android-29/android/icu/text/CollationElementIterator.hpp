@@ -34,6 +34,7 @@ namespace __jni_impl::android::icu::text
 		jint getOffset();
 		void setOffset(jint arg0);
 		void setText(jstring arg0);
+		void setText(const QString &arg0);
 		void setText(__jni_impl::android::icu::text::UCharacterIterator arg0);
 		void setText(__jni_impl::__JniBaseClass arg0);
 		jint previous();
@@ -124,6 +125,14 @@ namespace __jni_impl::android::icu::text
 			"setText",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void CollationElementIterator::setText(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setText",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void CollationElementIterator::setText(__jni_impl::android::icu::text::UCharacterIterator arg0)

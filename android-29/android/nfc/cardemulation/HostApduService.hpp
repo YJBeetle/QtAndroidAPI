@@ -8,13 +8,13 @@
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
 }
 
 namespace __jni_impl::android::nfc::cardemulation
@@ -32,16 +32,16 @@ namespace __jni_impl::android::nfc::cardemulation
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
-		void onDeactivated(jint arg0);
 		void sendResponseApdu(jbyteArray arg0);
 		void notifyUnhandled();
 		jbyteArray processCommandApdu(jbyteArray arg0, __jni_impl::android::os::Bundle arg1);
+		void onDeactivated(jint arg0);
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 	};
 } // namespace __jni_impl::android::nfc::cardemulation
 
-#include "../../content/Intent.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../content/Intent.hpp"
 
 namespace __jni_impl::android::nfc::cardemulation
 {
@@ -82,26 +82,11 @@ namespace __jni_impl::android::nfc::cardemulation
 	{
 		__thiz = QAndroidJniObject(
 			"android.nfc.cardemulation.HostApduService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	QAndroidJniObject HostApduService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
-		);
-	}
-	void HostApduService::onDeactivated(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"onDeactivated",
-			"(I)V",
-			arg0
-		);
-	}
 	void HostApduService::sendResponseApdu(jbyteArray arg0)
 	{
 		__thiz.callMethod<void>(
@@ -125,6 +110,22 @@ namespace __jni_impl::android::nfc::cardemulation
 			arg0,
 			arg1.__jniObject().object()
 		).object<jbyteArray>();
+	}
+	void HostApduService::onDeactivated(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"onDeactivated",
+			"(I)V",
+			arg0
+		);
+	}
+	QAndroidJniObject HostApduService::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::nfc::cardemulation
 

@@ -58,7 +58,8 @@ namespace __jni_impl::android::content
 			"android.content.Entity$NamedContentValues",
 			"(Landroid/net/Uri;Landroid/content/ContentValues;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

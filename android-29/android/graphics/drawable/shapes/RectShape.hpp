@@ -12,10 +12,6 @@ namespace __jni_impl::android::graphics::drawable::shapes
 }
 namespace __jni_impl::android::graphics
 {
-	class Outline;
-}
-namespace __jni_impl::android::graphics
-{
 	class RectF;
 }
 namespace __jni_impl::android::graphics
@@ -25,6 +21,10 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::graphics
 {
 	class Paint;
+}
+namespace __jni_impl::android::graphics
+{
+	class Outline;
 }
 
 namespace __jni_impl::android::graphics::drawable::shapes
@@ -41,16 +41,16 @@ namespace __jni_impl::android::graphics::drawable::shapes
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		QAndroidJniObject clone();
-		void getOutline(__jni_impl::android::graphics::Outline arg0);
 		void draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1);
+		void getOutline(__jni_impl::android::graphics::Outline arg0);
 	};
 } // namespace __jni_impl::android::graphics::drawable::shapes
 
 #include "Shape.hpp"
-#include "../../Outline.hpp"
 #include "../../RectF.hpp"
 #include "../../Canvas.hpp"
 #include "../../Paint.hpp"
+#include "../../Outline.hpp"
 
 namespace __jni_impl::android::graphics::drawable::shapes
 {
@@ -61,7 +61,8 @@ namespace __jni_impl::android::graphics::drawable::shapes
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.shapes.RectShape",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -87,14 +88,6 @@ namespace __jni_impl::android::graphics::drawable::shapes
 			"()Landroid/graphics/drawable/shapes/RectShape;"
 		);
 	}
-	void RectShape::getOutline(__jni_impl::android::graphics::Outline arg0)
-	{
-		__thiz.callMethod<void>(
-			"getOutline",
-			"(Landroid/graphics/Outline;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void RectShape::draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -102,6 +95,14 @@ namespace __jni_impl::android::graphics::drawable::shapes
 			"(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
+		);
+	}
+	void RectShape::getOutline(__jni_impl::android::graphics::Outline arg0)
+	{
+		__thiz.callMethod<void>(
+			"getOutline",
+			"(Landroid/graphics/Outline;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::graphics::drawable::shapes

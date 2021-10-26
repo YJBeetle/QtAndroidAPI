@@ -31,20 +31,24 @@ namespace __jni_impl::android::content::pm
 		// Methods
 		void close();
 		void transfer(jstring arg0);
+		void transfer(const QString &arg0);
 		void commit(__jni_impl::android::content::IntentSender arg0);
-		void fsync(__jni_impl::java::io::OutputStream arg0);
+		void abandon();
 		void setStagingProgress(jfloat arg0);
 		QAndroidJniObject openWrite(jstring arg0, jlong arg1, jlong arg2);
+		QAndroidJniObject openWrite(const QString &arg0, jlong arg1, jlong arg2);
 		jarray getNames();
 		QAndroidJniObject openRead(jstring arg0);
+		QAndroidJniObject openRead(const QString &arg0);
 		void removeSplit(jstring arg0);
+		void removeSplit(const QString &arg0);
 		jboolean isMultiPackage();
 		jboolean isStaged();
 		jint getParentSessionId();
 		jintArray getChildSessionIds();
 		void addChildSessionId(jint arg0);
 		void removeChildSessionId(jint arg0);
-		void abandon();
+		void fsync(__jni_impl::java::io::OutputStream arg0);
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -80,6 +84,14 @@ namespace __jni_impl::android::content::pm
 			arg0
 		);
 	}
+	void PackageInstaller_Session::transfer(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"transfer",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void PackageInstaller_Session::commit(__jni_impl::android::content::IntentSender arg0)
 	{
 		__thiz.callMethod<void>(
@@ -88,12 +100,11 @@ namespace __jni_impl::android::content::pm
 			arg0.__jniObject().object()
 		);
 	}
-	void PackageInstaller_Session::fsync(__jni_impl::java::io::OutputStream arg0)
+	void PackageInstaller_Session::abandon()
 	{
 		__thiz.callMethod<void>(
-			"fsync",
-			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object()
+			"abandon",
+			"()V"
 		);
 	}
 	void PackageInstaller_Session::setStagingProgress(jfloat arg0)
@@ -114,6 +125,16 @@ namespace __jni_impl::android::content::pm
 			arg2
 		);
 	}
+	QAndroidJniObject PackageInstaller_Session::openWrite(const QString &arg0, jlong arg1, jlong arg2)
+	{
+		return __thiz.callObjectMethod(
+			"openWrite",
+			"(Ljava/lang/String;JJ)Ljava/io/OutputStream;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2
+		);
+	}
 	jarray PackageInstaller_Session::getNames()
 	{
 		return __thiz.callObjectMethod(
@@ -129,12 +150,28 @@ namespace __jni_impl::android::content::pm
 			arg0
 		);
 	}
+	QAndroidJniObject PackageInstaller_Session::openRead(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"openRead",
+			"(Ljava/lang/String;)Ljava/io/InputStream;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void PackageInstaller_Session::removeSplit(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeSplit",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void PackageInstaller_Session::removeSplit(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeSplit",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean PackageInstaller_Session::isMultiPackage()
@@ -181,11 +218,12 @@ namespace __jni_impl::android::content::pm
 			arg0
 		);
 	}
-	void PackageInstaller_Session::abandon()
+	void PackageInstaller_Session::fsync(__jni_impl::java::io::OutputStream arg0)
 	{
 		__thiz.callMethod<void>(
-			"abandon",
-			"()V"
+			"fsync",
+			"(Ljava/io/OutputStream;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::content::pm

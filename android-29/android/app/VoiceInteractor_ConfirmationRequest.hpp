@@ -44,7 +44,8 @@ namespace __jni_impl::android::app
 			"android.app.VoiceInteractor$ConfirmationRequest",
 			"(Landroid/app/VoiceInteractor$Prompt;Landroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

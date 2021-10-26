@@ -19,7 +19,9 @@ namespace __jni_impl::android::net::wifi::p2p::nsd
 		
 		// Methods
 		static QAndroidJniObject newInstance(jstring arg0, jstring arg1);
+		static QAndroidJniObject newInstance(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject newInstance(jstring arg0);
+		static QAndroidJniObject newInstance(const QString &arg0);
 		static QAndroidJniObject newInstance();
 	};
 } // namespace __jni_impl::android::net::wifi::p2p::nsd
@@ -48,6 +50,16 @@ namespace __jni_impl::android::net::wifi::p2p::nsd
 			arg1
 		);
 	}
+	QAndroidJniObject WifiP2pDnsSdServiceRequest::newInstance(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.net.wifi.p2p.nsd.WifiP2pDnsSdServiceRequest",
+			"newInstance",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceRequest;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject WifiP2pDnsSdServiceRequest::newInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -55,6 +67,15 @@ namespace __jni_impl::android::net::wifi::p2p::nsd
 			"newInstance",
 			"(Ljava/lang/String;)Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceRequest;",
 			arg0
+		);
+	}
+	QAndroidJniObject WifiP2pDnsSdServiceRequest::newInstance(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.net.wifi.p2p.nsd.WifiP2pDnsSdServiceRequest",
+			"newInstance",
+			"(Ljava/lang/String;)Landroid/net/wifi/p2p/nsd/WifiP2pDnsSdServiceRequest;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject WifiP2pDnsSdServiceRequest::newInstance()

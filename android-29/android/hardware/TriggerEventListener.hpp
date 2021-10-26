@@ -36,7 +36,8 @@ namespace __jni_impl::android::hardware
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.TriggerEventListener",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

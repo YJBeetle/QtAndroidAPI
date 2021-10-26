@@ -33,11 +33,17 @@ namespace __jni_impl::java::security
 		// Methods
 		jstring toString();
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::Provider arg2);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::Provider arg2);
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::__JniBaseClass arg1, jstring arg2);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2);
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		static QAndroidJniObject getInstance(jstring arg0);
+		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::java::security::Provider arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1);
 		QAndroidJniObject getParameters();
 		QAndroidJniObject getProvider();
 		static jbyteArray getSeed(jint arg0);
@@ -67,13 +73,15 @@ namespace __jni_impl::java::security
 		__thiz = QAndroidJniObject(
 			"java.security.SecureRandom",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	void SecureRandom::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.SecureRandom",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -95,6 +103,17 @@ namespace __jni_impl::java::security
 			arg2.__jniObject().object()
 		);
 	}
+	QAndroidJniObject SecureRandom::getInstance(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::Provider arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.SecureRandom",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/SecureRandomParameters;Ljava/security/Provider;)Ljava/security/SecureRandom;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
 	QAndroidJniObject SecureRandom::getInstance(jstring arg0, __jni_impl::__JniBaseClass arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -104,6 +123,17 @@ namespace __jni_impl::java::security
 			arg0,
 			arg1.__jniObject().object(),
 			arg2
+		);
+	}
+	QAndroidJniObject SecureRandom::getInstance(const QString &arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.SecureRandom",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/SecureRandomParameters;Ljava/lang/String;)Ljava/security/SecureRandom;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	QAndroidJniObject SecureRandom::getInstance(jstring arg0, __jni_impl::__JniBaseClass arg1)
@@ -116,6 +146,16 @@ namespace __jni_impl::java::security
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject SecureRandom::getInstance(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.SecureRandom",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/SecureRandomParameters;)Ljava/security/SecureRandom;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject SecureRandom::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -123,6 +163,15 @@ namespace __jni_impl::java::security
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/SecureRandom;",
 			arg0
+		);
+	}
+	QAndroidJniObject SecureRandom::getInstance(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.SecureRandom",
+			"getInstance",
+			"(Ljava/lang/String;)Ljava/security/SecureRandom;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject SecureRandom::getInstance(jstring arg0, jstring arg1)
@@ -135,6 +184,16 @@ namespace __jni_impl::java::security
 			arg1
 		);
 	}
+	QAndroidJniObject SecureRandom::getInstance(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.SecureRandom",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/SecureRandom;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject SecureRandom::getInstance(jstring arg0, __jni_impl::java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -142,6 +201,16 @@ namespace __jni_impl::java::security
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/SecureRandom;",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SecureRandom::getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.SecureRandom",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/SecureRandom;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

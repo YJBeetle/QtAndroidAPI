@@ -39,14 +39,16 @@ namespace __jni_impl::android::graphics
 		__thiz = QAndroidJniObject(
 			"android.graphics.ColorMatrixColorFilter",
 			"(Landroid/graphics/ColorMatrix;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ColorMatrixColorFilter::__constructor(jfloatArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.ColorMatrixColorFilter",
 			"([F)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

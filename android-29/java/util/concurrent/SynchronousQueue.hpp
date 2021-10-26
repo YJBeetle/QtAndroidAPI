@@ -76,14 +76,16 @@ namespace __jni_impl::java::util::concurrent
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.SynchronousQueue",
-			"()V");
+			"()V"
+		);
 	}
 	void SynchronousQueue::__constructor(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.SynchronousQueue",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

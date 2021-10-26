@@ -39,7 +39,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"java.util.concurrent.atomic.AtomicMarkableReference",
 			"(Ljava/lang/Object;Z)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

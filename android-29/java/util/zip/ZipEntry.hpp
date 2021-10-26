@@ -25,6 +25,7 @@ namespace __jni_impl::java::util::zip
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(__jni_impl::java::util::zip::ZipEntry arg0);
 		
 		// Methods
@@ -51,6 +52,7 @@ namespace __jni_impl::java::util::zip
 		void setExtra(jbyteArray arg0);
 		jbyteArray getExtra();
 		void setComment(jstring arg0);
+		void setComment(const QString &arg0);
 		jstring getComment();
 		jboolean isDirectory();
 		QAndroidJniObject getLastModifiedTime();
@@ -85,14 +87,24 @@ namespace __jni_impl::java::util::zip
 		__thiz = QAndroidJniObject(
 			"java.util.zip.ZipEntry",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void ZipEntry::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.zip.ZipEntry",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void ZipEntry::__constructor(__jni_impl::java::util::zip::ZipEntry arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.ZipEntry",
 			"(Ljava/util/zip/ZipEntry;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -265,6 +277,14 @@ namespace __jni_impl::java::util::zip
 			"setComment",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void ZipEntry::setComment(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setComment",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring ZipEntry::getComment()

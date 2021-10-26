@@ -15,16 +15,20 @@ namespace __jni_impl::android::drm
 		
 		// Constructors
 		void __constructor(jint arg0, jbyteArray arg1, jstring arg2);
+		void __constructor(jint arg0, jbyteArray arg1, const QString &arg2);
 		void __constructor(jint arg0, jstring arg1, jstring arg2);
+		void __constructor(jint arg0, const QString &arg1, const QString &arg2);
 		
 		// Methods
 		jobject get(jstring arg0);
+		jobject get(const QString &arg0);
 		void put(jstring arg0, jobject arg1);
+		void put(const QString &arg0, jobject arg1);
 		QAndroidJniObject iterator();
 		QAndroidJniObject keyIterator();
-		jbyteArray getData();
 		jstring getMimeType();
 		jint getInfoType();
+		jbyteArray getData();
 	};
 } // namespace __jni_impl::android::drm
 
@@ -41,7 +45,18 @@ namespace __jni_impl::android::drm
 			"(I[BLjava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void DrmInfo::__constructor(jint arg0, jbyteArray arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.drm.DrmInfo",
+			"(I[BLjava/lang/String;)V",
+			arg0,
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	void DrmInfo::__constructor(jint arg0, jstring arg1, jstring arg2)
 	{
@@ -50,7 +65,18 @@ namespace __jni_impl::android::drm
 			"(ILjava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void DrmInfo::__constructor(jint arg0, const QString &arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.drm.DrmInfo",
+			"(ILjava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -62,12 +88,29 @@ namespace __jni_impl::android::drm
 			arg0
 		).object<jobject>();
 	}
+	jobject DrmInfo::get(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"get",
+			"(Ljava/lang/String;)Ljava/lang/Object;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jobject>();
+	}
 	void DrmInfo::put(jstring arg0, jobject arg1)
 	{
 		__thiz.callMethod<void>(
 			"put",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
+			arg1
+		);
+	}
+	void DrmInfo::put(const QString &arg0, jobject arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;Ljava/lang/Object;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -85,13 +128,6 @@ namespace __jni_impl::android::drm
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jbyteArray DrmInfo::getData()
-	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()[B"
-		).object<jbyteArray>();
-	}
 	jstring DrmInfo::getMimeType()
 	{
 		return __thiz.callObjectMethod(
@@ -105,6 +141,13 @@ namespace __jni_impl::android::drm
 			"getInfoType",
 			"()I"
 		);
+	}
+	jbyteArray DrmInfo::getData()
+	{
+		return __thiz.callObjectMethod(
+			"getData",
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::drm
 

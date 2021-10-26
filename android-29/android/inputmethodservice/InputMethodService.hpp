@@ -49,6 +49,10 @@ namespace __jni_impl::android::view::inputmethod
 {
 	class InputMethodSubtype;
 }
+namespace __jni_impl::android::inputmethodservice
+{
+	class InputMethodService_Insets;
+}
 namespace __jni_impl::java::io
 {
 	class FileDescriptor;
@@ -76,10 +80,6 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::view
 {
 	class LayoutInflater;
-}
-namespace __jni_impl::android::inputmethodservice
-{
-	class InputMethodService_Insets;
 }
 namespace __jni_impl::android::os
 {
@@ -162,6 +162,18 @@ namespace __jni_impl::android::inputmethodservice
 		void onUpdateExtractingViews(__jni_impl::android::view::inputmethod::EditorInfo arg0);
 		void onExtractingInputChanged(__jni_impl::android::view::inputmethod::EditorInfo arg0);
 		jint getInputMethodWindowRecommendedHeight();
+		jint getMaxWidth();
+		void onComputeInsets(__jni_impl::android::inputmethodservice::InputMethodService_Insets arg0);
+		void showStatusIcon(jint arg0);
+		void hideStatusIcon();
+		jboolean isFullscreenMode();
+		jboolean switchToNextInputMethod(jboolean arg0);
+		jboolean shouldOfferSwitchingToNextInputMethod();
+		void setTheme(jint arg0);
+		void switchInputMethod(jstring arg0, __jni_impl::android::view::inputmethod::InputMethodSubtype arg1);
+		void switchInputMethod(const QString &arg0, __jni_impl::android::view::inputmethod::InputMethodSubtype arg1);
+		void switchInputMethod(jstring arg0);
+		void switchInputMethod(const QString &arg0);
 		QAndroidJniObject getWindow();
 		void onCreate();
 		void onDestroy();
@@ -173,17 +185,8 @@ namespace __jni_impl::android::inputmethodservice
 		jboolean onTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
 		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
 		QAndroidJniObject getLayoutInflater();
-		void setTheme(jint arg0);
-		jint getMaxWidth();
-		void showStatusIcon(jint arg0);
-		void hideStatusIcon();
-		jboolean isFullscreenMode();
-		jboolean switchToNextInputMethod(jboolean arg0);
-		jboolean shouldOfferSwitchingToNextInputMethod();
-		void onComputeInsets(__jni_impl::android::inputmethodservice::InputMethodService_Insets arg0);
-		void switchInputMethod(jstring arg0, __jni_impl::android::view::inputmethod::InputMethodSubtype arg1);
-		void switchInputMethod(jstring arg0);
 		void onAppPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void onAppPrivateCommand(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 	};
 } // namespace __jni_impl::android::inputmethodservice
 
@@ -197,6 +200,7 @@ namespace __jni_impl::android::inputmethodservice
 #include "../graphics/Rect.hpp"
 #include "../view/inputmethod/CursorAnchorInfo.hpp"
 #include "../view/inputmethod/InputMethodSubtype.hpp"
+#include "InputMethodService_Insets.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
 #include "../app/Dialog.hpp"
@@ -204,7 +208,6 @@ namespace __jni_impl::android::inputmethodservice
 #include "../view/KeyEvent.hpp"
 #include "../view/MotionEvent.hpp"
 #include "../view/LayoutInflater.hpp"
-#include "InputMethodService_Insets.hpp"
 #include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::inputmethodservice
@@ -244,7 +247,8 @@ namespace __jni_impl::android::inputmethodservice
 	{
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.InputMethodService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -721,6 +725,100 @@ namespace __jni_impl::android::inputmethodservice
 			"()I"
 		);
 	}
+	jint InputMethodService::getMaxWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxWidth",
+			"()I"
+		);
+	}
+	void InputMethodService::onComputeInsets(__jni_impl::android::inputmethodservice::InputMethodService_Insets arg0)
+	{
+		__thiz.callMethod<void>(
+			"onComputeInsets",
+			"(Landroid/inputmethodservice/InputMethodService$Insets;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void InputMethodService::showStatusIcon(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"showStatusIcon",
+			"(I)V",
+			arg0
+		);
+	}
+	void InputMethodService::hideStatusIcon()
+	{
+		__thiz.callMethod<void>(
+			"hideStatusIcon",
+			"()V"
+		);
+	}
+	jboolean InputMethodService::isFullscreenMode()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFullscreenMode",
+			"()Z"
+		);
+	}
+	jboolean InputMethodService::switchToNextInputMethod(jboolean arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"switchToNextInputMethod",
+			"(Z)Z",
+			arg0
+		);
+	}
+	jboolean InputMethodService::shouldOfferSwitchingToNextInputMethod()
+	{
+		return __thiz.callMethod<jboolean>(
+			"shouldOfferSwitchingToNextInputMethod",
+			"()Z"
+		);
+	}
+	void InputMethodService::setTheme(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTheme",
+			"(I)V",
+			arg0
+		);
+	}
+	void InputMethodService::switchInputMethod(jstring arg0, __jni_impl::android::view::inputmethod::InputMethodSubtype arg1)
+	{
+		__thiz.callMethod<void>(
+			"switchInputMethod",
+			"(Ljava/lang/String;Landroid/view/inputmethod/InputMethodSubtype;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void InputMethodService::switchInputMethod(const QString &arg0, __jni_impl::android::view::inputmethod::InputMethodSubtype arg1)
+	{
+		__thiz.callMethod<void>(
+			"switchInputMethod",
+			"(Ljava/lang/String;Landroid/view/inputmethod/InputMethodSubtype;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
+	void InputMethodService::switchInputMethod(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"switchInputMethod",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void InputMethodService::switchInputMethod(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"switchInputMethod",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject InputMethodService::getWindow()
 	{
 		return __thiz.callObjectMethod(
@@ -810,89 +908,21 @@ namespace __jni_impl::android::inputmethodservice
 			"()Landroid/view/LayoutInflater;"
 		);
 	}
-	void InputMethodService::setTheme(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTheme",
-			"(I)V",
-			arg0
-		);
-	}
-	jint InputMethodService::getMaxWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxWidth",
-			"()I"
-		);
-	}
-	void InputMethodService::showStatusIcon(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"showStatusIcon",
-			"(I)V",
-			arg0
-		);
-	}
-	void InputMethodService::hideStatusIcon()
-	{
-		__thiz.callMethod<void>(
-			"hideStatusIcon",
-			"()V"
-		);
-	}
-	jboolean InputMethodService::isFullscreenMode()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFullscreenMode",
-			"()Z"
-		);
-	}
-	jboolean InputMethodService::switchToNextInputMethod(jboolean arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"switchToNextInputMethod",
-			"(Z)Z",
-			arg0
-		);
-	}
-	jboolean InputMethodService::shouldOfferSwitchingToNextInputMethod()
-	{
-		return __thiz.callMethod<jboolean>(
-			"shouldOfferSwitchingToNextInputMethod",
-			"()Z"
-		);
-	}
-	void InputMethodService::onComputeInsets(__jni_impl::android::inputmethodservice::InputMethodService_Insets arg0)
-	{
-		__thiz.callMethod<void>(
-			"onComputeInsets",
-			"(Landroid/inputmethodservice/InputMethodService$Insets;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void InputMethodService::switchInputMethod(jstring arg0, __jni_impl::android::view::inputmethod::InputMethodSubtype arg1)
-	{
-		__thiz.callMethod<void>(
-			"switchInputMethod",
-			"(Ljava/lang/String;Landroid/view/inputmethod/InputMethodSubtype;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void InputMethodService::switchInputMethod(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"switchInputMethod",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
 	void InputMethodService::onAppPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1)
 	{
 		__thiz.callMethod<void>(
 			"onAppPrivateCommand",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void InputMethodService::onAppPrivateCommand(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"onAppPrivateCommand",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

@@ -11,11 +11,11 @@ namespace __jni_impl::java::nio
 }
 namespace __jni_impl::java::nio
 {
-	class IntBuffer;
+	class FloatBuffer;
 }
 namespace __jni_impl::java::nio
 {
-	class FloatBuffer;
+	class IntBuffer;
 }
 
 namespace __jni_impl::android::opengl
@@ -266,51 +266,6 @@ namespace __jni_impl::android::opengl
 		void __constructor();
 		
 		// Methods
-		static void glReadPixels(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, __jni_impl::java::nio::Buffer arg6);
-		static void glActiveTexture(jint arg0);
-		static void glBindTexture(jint arg0, jint arg1);
-		static void glBlendFunc(jint arg0, jint arg1);
-		static void glClear(jint arg0);
-		static void glClearColor(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		static void glClearDepthf(jfloat arg0);
-		static void glClearStencil(jint arg0);
-		static void glColorMask(jboolean arg0, jboolean arg1, jboolean arg2, jboolean arg3);
-		static void glCompressedTexImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, __jni_impl::java::nio::Buffer arg7);
-		static void glCompressedTexSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, __jni_impl::java::nio::Buffer arg8);
-		static void glCopyTexImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
-		static void glCopyTexSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
-		static void glCullFace(jint arg0);
-		static void glDeleteTextures(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
-		static void glDeleteTextures(jint arg0, jintArray arg1, jint arg2);
-		static void glDepthFunc(jint arg0);
-		static void glDepthMask(jboolean arg0);
-		static void glDepthRangef(jfloat arg0, jfloat arg1);
-		static void glDisable(jint arg0);
-		static void glDrawArrays(jint arg0, jint arg1, jint arg2);
-		static void glDrawElements(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::Buffer arg3);
-		static void glEnable(jint arg0);
-		static void glFinish();
-		static void glFlush();
-		static void glFrontFace(jint arg0);
-		static void glGenTextures(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
-		static void glGenTextures(jint arg0, jintArray arg1, jint arg2);
-		static jint glGetError();
-		static void glGetIntegerv(jint arg0, jintArray arg1, jint arg2);
-		static void glGetIntegerv(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
-		static jstring glGetString(jint arg0);
-		static void glHint(jint arg0, jint arg1);
-		static void glLineWidth(jfloat arg0);
-		static void glPixelStorei(jint arg0, jint arg1);
-		static void glPolygonOffset(jfloat arg0, jfloat arg1);
-		static void glSampleCoverage(jfloat arg0, jboolean arg1);
-		static void glScissor(jint arg0, jint arg1, jint arg2, jint arg3);
-		static void glStencilFunc(jint arg0, jint arg1, jint arg2);
-		static void glStencilMask(jint arg0);
-		static void glStencilOp(jint arg0, jint arg1, jint arg2);
-		static void glTexImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, __jni_impl::java::nio::Buffer arg8);
-		static void glTexParameterf(jint arg0, jint arg1, jfloat arg2);
-		static void glTexSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, __jni_impl::java::nio::Buffer arg8);
-		static void glViewport(jint arg0, jint arg1, jint arg2, jint arg3);
 		static void glAlphaFunc(jint arg0, jfloat arg1);
 		static void glAlphaFuncx(jint arg0, jint arg1);
 		static void glClearColorx(jint arg0, jint arg1, jint arg2, jint arg3);
@@ -331,8 +286,8 @@ namespace __jni_impl::android::opengl
 		static void glFrustumf(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5);
 		static void glFrustumx(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		static void glLightModelf(jint arg0, jfloat arg1);
-		static void glLightModelfv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1);
 		static void glLightModelfv(jint arg0, jfloatArray arg1, jint arg2);
+		static void glLightModelfv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1);
 		static void glLightModelx(jint arg0, jint arg1);
 		static void glLightModelxv(jint arg0, jintArray arg1, jint arg2);
 		static void glLightModelxv(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
@@ -344,14 +299,14 @@ namespace __jni_impl::android::opengl
 		static void glLightxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glLineWidthx(jint arg0);
 		static void glLoadIdentity();
-		static void glLoadMatrixf(jfloatArray arg0, jint arg1);
 		static void glLoadMatrixf(__jni_impl::java::nio::FloatBuffer arg0);
-		static void glLoadMatrixx(__jni_impl::java::nio::IntBuffer arg0);
+		static void glLoadMatrixf(jfloatArray arg0, jint arg1);
 		static void glLoadMatrixx(jintArray arg0, jint arg1);
+		static void glLoadMatrixx(__jni_impl::java::nio::IntBuffer arg0);
 		static void glLogicOp(jint arg0);
 		static void glMaterialf(jint arg0, jint arg1, jfloat arg2);
-		static void glMaterialfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
 		static void glMaterialfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
+		static void glMaterialfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
 		static void glMaterialx(jint arg0, jint arg1, jint arg2);
 		static void glMaterialxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glMaterialxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
@@ -389,12 +344,57 @@ namespace __jni_impl::android::opengl
 		static void glTranslatef(jfloat arg0, jfloat arg1, jfloat arg2);
 		static void glTranslatex(jint arg0, jint arg1, jint arg2);
 		static void glVertexPointer(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::Buffer arg3);
+		static void glReadPixels(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, __jni_impl::java::nio::Buffer arg6);
+		static void glActiveTexture(jint arg0);
+		static void glBindTexture(jint arg0, jint arg1);
+		static void glBlendFunc(jint arg0, jint arg1);
+		static void glClear(jint arg0);
+		static void glClearColor(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
+		static void glClearDepthf(jfloat arg0);
+		static void glClearStencil(jint arg0);
+		static void glColorMask(jboolean arg0, jboolean arg1, jboolean arg2, jboolean arg3);
+		static void glCompressedTexImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, __jni_impl::java::nio::Buffer arg7);
+		static void glCompressedTexSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, __jni_impl::java::nio::Buffer arg8);
+		static void glCopyTexImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
+		static void glCopyTexSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
+		static void glCullFace(jint arg0);
+		static void glDeleteTextures(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glDeleteTextures(jint arg0, jintArray arg1, jint arg2);
+		static void glDepthFunc(jint arg0);
+		static void glDepthMask(jboolean arg0);
+		static void glDepthRangef(jfloat arg0, jfloat arg1);
+		static void glDisable(jint arg0);
+		static void glDrawArrays(jint arg0, jint arg1, jint arg2);
+		static void glDrawElements(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::Buffer arg3);
+		static void glEnable(jint arg0);
+		static void glFinish();
+		static void glFlush();
+		static void glFrontFace(jint arg0);
+		static void glGenTextures(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glGenTextures(jint arg0, jintArray arg1, jint arg2);
+		static jint glGetError();
+		static void glGetIntegerv(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glGetIntegerv(jint arg0, jintArray arg1, jint arg2);
+		static jstring glGetString(jint arg0);
+		static void glHint(jint arg0, jint arg1);
+		static void glLineWidth(jfloat arg0);
+		static void glPixelStorei(jint arg0, jint arg1);
+		static void glPolygonOffset(jfloat arg0, jfloat arg1);
+		static void glSampleCoverage(jfloat arg0, jboolean arg1);
+		static void glScissor(jint arg0, jint arg1, jint arg2, jint arg3);
+		static void glStencilFunc(jint arg0, jint arg1, jint arg2);
+		static void glStencilMask(jint arg0);
+		static void glStencilOp(jint arg0, jint arg1, jint arg2);
+		static void glTexImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, __jni_impl::java::nio::Buffer arg8);
+		static void glTexParameterf(jint arg0, jint arg1, jfloat arg2);
+		static void glTexSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, __jni_impl::java::nio::Buffer arg8);
+		static void glViewport(jint arg0, jint arg1, jint arg2, jint arg3);
 	};
 } // namespace __jni_impl::android::opengl
 
 #include "../../java/nio/Buffer.hpp"
-#include "../../java/nio/IntBuffer.hpp"
 #include "../../java/nio/FloatBuffer.hpp"
+#include "../../java/nio/IntBuffer.hpp"
 
 namespace __jni_impl::android::opengl
 {
@@ -2064,502 +2064,11 @@ namespace __jni_impl::android::opengl
 	{
 		__thiz = QAndroidJniObject(
 			"android.opengl.GLES10",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	void GLES10::glReadPixels(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, __jni_impl::java::nio::Buffer arg6)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glReadPixels",
-			"(IIIIIILjava/nio/Buffer;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6.__jniObject().object()
-		);
-	}
-	void GLES10::glActiveTexture(jint arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glActiveTexture",
-			"(I)V",
-			arg0
-		);
-	}
-	void GLES10::glBindTexture(jint arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glBindTexture",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void GLES10::glBlendFunc(jint arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glBlendFunc",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void GLES10::glClear(jint arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glClear",
-			"(I)V",
-			arg0
-		);
-	}
-	void GLES10::glClearColor(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glClearColor",
-			"(FFFF)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES10::glClearDepthf(jfloat arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glClearDepthf",
-			"(F)V",
-			arg0
-		);
-	}
-	void GLES10::glClearStencil(jint arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glClearStencil",
-			"(I)V",
-			arg0
-		);
-	}
-	void GLES10::glColorMask(jboolean arg0, jboolean arg1, jboolean arg2, jboolean arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glColorMask",
-			"(ZZZZ)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES10::glCompressedTexImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, __jni_impl::java::nio::Buffer arg7)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glCompressedTexImage2D",
-			"(IIIIIIILjava/nio/Buffer;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7.__jniObject().object()
-		);
-	}
-	void GLES10::glCompressedTexSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, __jni_impl::java::nio::Buffer arg8)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glCompressedTexSubImage2D",
-			"(IIIIIIIILjava/nio/Buffer;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8.__jniObject().object()
-		);
-	}
-	void GLES10::glCopyTexImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glCopyTexImage2D",
-			"(IIIIIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7
-		);
-	}
-	void GLES10::glCopyTexSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glCopyTexSubImage2D",
-			"(IIIIIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7
-		);
-	}
-	void GLES10::glCullFace(jint arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glCullFace",
-			"(I)V",
-			arg0
-		);
-	}
-	void GLES10::glDeleteTextures(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glDeleteTextures",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void GLES10::glDeleteTextures(jint arg0, jintArray arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glDeleteTextures",
-			"(I[II)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES10::glDepthFunc(jint arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glDepthFunc",
-			"(I)V",
-			arg0
-		);
-	}
-	void GLES10::glDepthMask(jboolean arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glDepthMask",
-			"(Z)V",
-			arg0
-		);
-	}
-	void GLES10::glDepthRangef(jfloat arg0, jfloat arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glDepthRangef",
-			"(FF)V",
-			arg0,
-			arg1
-		);
-	}
-	void GLES10::glDisable(jint arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glDisable",
-			"(I)V",
-			arg0
-		);
-	}
-	void GLES10::glDrawArrays(jint arg0, jint arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glDrawArrays",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES10::glDrawElements(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::Buffer arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glDrawElements",
-			"(IIILjava/nio/Buffer;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	void GLES10::glEnable(jint arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glEnable",
-			"(I)V",
-			arg0
-		);
-	}
-	void GLES10::glFinish()
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glFinish",
-			"()V"
-		);
-	}
-	void GLES10::glFlush()
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glFlush",
-			"()V"
-		);
-	}
-	void GLES10::glFrontFace(jint arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glFrontFace",
-			"(I)V",
-			arg0
-		);
-	}
-	void GLES10::glGenTextures(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glGenTextures",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void GLES10::glGenTextures(jint arg0, jintArray arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glGenTextures",
-			"(I[II)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jint GLES10::glGetError()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.GLES10",
-			"glGetError",
-			"()I"
-		);
-	}
-	void GLES10::glGetIntegerv(jint arg0, jintArray arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glGetIntegerv",
-			"(I[II)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES10::glGetIntegerv(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glGetIntegerv",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jstring GLES10::glGetString(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.opengl.GLES10",
-			"glGetString",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	void GLES10::glHint(jint arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glHint",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void GLES10::glLineWidth(jfloat arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glLineWidth",
-			"(F)V",
-			arg0
-		);
-	}
-	void GLES10::glPixelStorei(jint arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glPixelStorei",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void GLES10::glPolygonOffset(jfloat arg0, jfloat arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glPolygonOffset",
-			"(FF)V",
-			arg0,
-			arg1
-		);
-	}
-	void GLES10::glSampleCoverage(jfloat arg0, jboolean arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glSampleCoverage",
-			"(FZ)V",
-			arg0,
-			arg1
-		);
-	}
-	void GLES10::glScissor(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glScissor",
-			"(IIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES10::glStencilFunc(jint arg0, jint arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glStencilFunc",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES10::glStencilMask(jint arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glStencilMask",
-			"(I)V",
-			arg0
-		);
-	}
-	void GLES10::glStencilOp(jint arg0, jint arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glStencilOp",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES10::glTexImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, __jni_impl::java::nio::Buffer arg8)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glTexImage2D",
-			"(IIIIIIIILjava/nio/Buffer;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8.__jniObject().object()
-		);
-	}
-	void GLES10::glTexParameterf(jint arg0, jint arg1, jfloat arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glTexParameterf",
-			"(IIF)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES10::glTexSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, __jni_impl::java::nio::Buffer arg8)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glTexSubImage2D",
-			"(IIIIIIIILjava/nio/Buffer;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8.__jniObject().object()
-		);
-	}
-	void GLES10::glViewport(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glViewport",
-			"(IIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
 	void GLES10::glAlphaFunc(jint arg0, jfloat arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -2774,16 +2283,6 @@ namespace __jni_impl::android::opengl
 			arg1
 		);
 	}
-	void GLES10::glLightModelfv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glLightModelfv",
-			"(ILjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
 	void GLES10::glLightModelfv(jint arg0, jfloatArray arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -2793,6 +2292,16 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2
+		);
+	}
+	void GLES10::glLightModelfv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glLightModelfv",
+			"(ILjava/nio/FloatBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
 	void GLES10::glLightModelx(jint arg0, jint arg1)
@@ -2911,6 +2420,15 @@ namespace __jni_impl::android::opengl
 			"()V"
 		);
 	}
+	void GLES10::glLoadMatrixf(__jni_impl::java::nio::FloatBuffer arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glLoadMatrixf",
+			"(Ljava/nio/FloatBuffer;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void GLES10::glLoadMatrixf(jfloatArray arg0, jint arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -2921,13 +2439,14 @@ namespace __jni_impl::android::opengl
 			arg1
 		);
 	}
-	void GLES10::glLoadMatrixf(__jni_impl::java::nio::FloatBuffer arg0)
+	void GLES10::glLoadMatrixx(jintArray arg0, jint arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES10",
-			"glLoadMatrixf",
-			"(Ljava/nio/FloatBuffer;)V",
-			arg0.__jniObject().object()
+			"glLoadMatrixx",
+			"([II)V",
+			arg0,
+			arg1
 		);
 	}
 	void GLES10::glLoadMatrixx(__jni_impl::java::nio::IntBuffer arg0)
@@ -2937,16 +2456,6 @@ namespace __jni_impl::android::opengl
 			"glLoadMatrixx",
 			"(Ljava/nio/IntBuffer;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	void GLES10::glLoadMatrixx(jintArray arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glLoadMatrixx",
-			"([II)V",
-			arg0,
-			arg1
 		);
 	}
 	void GLES10::glLogicOp(jint arg0)
@@ -2969,17 +2478,6 @@ namespace __jni_impl::android::opengl
 			arg2
 		);
 	}
-	void GLES10::glMaterialfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES10",
-			"glMaterialfv",
-			"(IILjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
 	void GLES10::glMaterialfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -2990,6 +2488,17 @@ namespace __jni_impl::android::opengl
 			arg1,
 			arg2,
 			arg3
+		);
+	}
+	void GLES10::glMaterialfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glMaterialfv",
+			"(IILjava/nio/FloatBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
 		);
 	}
 	void GLES10::glMaterialx(jint arg0, jint arg1, jint arg2)
@@ -3392,6 +2901,498 @@ namespace __jni_impl::android::opengl
 			arg1,
 			arg2,
 			arg3.__jniObject().object()
+		);
+	}
+	void GLES10::glReadPixels(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, __jni_impl::java::nio::Buffer arg6)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glReadPixels",
+			"(IIIIIILjava/nio/Buffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6.__jniObject().object()
+		);
+	}
+	void GLES10::glActiveTexture(jint arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glActiveTexture",
+			"(I)V",
+			arg0
+		);
+	}
+	void GLES10::glBindTexture(jint arg0, jint arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glBindTexture",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void GLES10::glBlendFunc(jint arg0, jint arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glBlendFunc",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void GLES10::glClear(jint arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glClear",
+			"(I)V",
+			arg0
+		);
+	}
+	void GLES10::glClearColor(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glClearColor",
+			"(FFFF)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES10::glClearDepthf(jfloat arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glClearDepthf",
+			"(F)V",
+			arg0
+		);
+	}
+	void GLES10::glClearStencil(jint arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glClearStencil",
+			"(I)V",
+			arg0
+		);
+	}
+	void GLES10::glColorMask(jboolean arg0, jboolean arg1, jboolean arg2, jboolean arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glColorMask",
+			"(ZZZZ)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES10::glCompressedTexImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, __jni_impl::java::nio::Buffer arg7)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glCompressedTexImage2D",
+			"(IIIIIIILjava/nio/Buffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7.__jniObject().object()
+		);
+	}
+	void GLES10::glCompressedTexSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, __jni_impl::java::nio::Buffer arg8)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glCompressedTexSubImage2D",
+			"(IIIIIIIILjava/nio/Buffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8.__jniObject().object()
+		);
+	}
+	void GLES10::glCopyTexImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glCopyTexImage2D",
+			"(IIIIIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7
+		);
+	}
+	void GLES10::glCopyTexSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glCopyTexSubImage2D",
+			"(IIIIIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7
+		);
+	}
+	void GLES10::glCullFace(jint arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glCullFace",
+			"(I)V",
+			arg0
+		);
+	}
+	void GLES10::glDeleteTextures(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glDeleteTextures",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void GLES10::glDeleteTextures(jint arg0, jintArray arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glDeleteTextures",
+			"(I[II)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES10::glDepthFunc(jint arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glDepthFunc",
+			"(I)V",
+			arg0
+		);
+	}
+	void GLES10::glDepthMask(jboolean arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glDepthMask",
+			"(Z)V",
+			arg0
+		);
+	}
+	void GLES10::glDepthRangef(jfloat arg0, jfloat arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glDepthRangef",
+			"(FF)V",
+			arg0,
+			arg1
+		);
+	}
+	void GLES10::glDisable(jint arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glDisable",
+			"(I)V",
+			arg0
+		);
+	}
+	void GLES10::glDrawArrays(jint arg0, jint arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glDrawArrays",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES10::glDrawElements(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::Buffer arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glDrawElements",
+			"(IIILjava/nio/Buffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object()
+		);
+	}
+	void GLES10::glEnable(jint arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glEnable",
+			"(I)V",
+			arg0
+		);
+	}
+	void GLES10::glFinish()
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glFinish",
+			"()V"
+		);
+	}
+	void GLES10::glFlush()
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glFlush",
+			"()V"
+		);
+	}
+	void GLES10::glFrontFace(jint arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glFrontFace",
+			"(I)V",
+			arg0
+		);
+	}
+	void GLES10::glGenTextures(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glGenTextures",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void GLES10::glGenTextures(jint arg0, jintArray arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glGenTextures",
+			"(I[II)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	jint GLES10::glGetError()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.opengl.GLES10",
+			"glGetError",
+			"()I"
+		);
+	}
+	void GLES10::glGetIntegerv(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glGetIntegerv",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void GLES10::glGetIntegerv(jint arg0, jintArray arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glGetIntegerv",
+			"(I[II)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	jstring GLES10::glGetString(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.opengl.GLES10",
+			"glGetString",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	void GLES10::glHint(jint arg0, jint arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glHint",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void GLES10::glLineWidth(jfloat arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glLineWidth",
+			"(F)V",
+			arg0
+		);
+	}
+	void GLES10::glPixelStorei(jint arg0, jint arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glPixelStorei",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void GLES10::glPolygonOffset(jfloat arg0, jfloat arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glPolygonOffset",
+			"(FF)V",
+			arg0,
+			arg1
+		);
+	}
+	void GLES10::glSampleCoverage(jfloat arg0, jboolean arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glSampleCoverage",
+			"(FZ)V",
+			arg0,
+			arg1
+		);
+	}
+	void GLES10::glScissor(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glScissor",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES10::glStencilFunc(jint arg0, jint arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glStencilFunc",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES10::glStencilMask(jint arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glStencilMask",
+			"(I)V",
+			arg0
+		);
+	}
+	void GLES10::glStencilOp(jint arg0, jint arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glStencilOp",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES10::glTexImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, __jni_impl::java::nio::Buffer arg8)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glTexImage2D",
+			"(IIIIIIIILjava/nio/Buffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8.__jniObject().object()
+		);
+	}
+	void GLES10::glTexParameterf(jint arg0, jint arg1, jfloat arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glTexParameterf",
+			"(IIF)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES10::glTexSubImage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, __jni_impl::java::nio::Buffer arg8)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glTexSubImage2D",
+			"(IIIIIIIILjava/nio/Buffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8.__jniObject().object()
+		);
+	}
+	void GLES10::glViewport(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES10",
+			"glViewport",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
 		);
 	}
 } // namespace __jni_impl::android::opengl

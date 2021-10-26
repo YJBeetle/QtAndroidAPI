@@ -845,7 +845,8 @@ namespace __jni_impl::android::media
 			"android.media.ToneGenerator",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

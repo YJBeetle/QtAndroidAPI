@@ -88,13 +88,13 @@ namespace __jni_impl::android::media
 		jstring toString();
 		jint hashCode();
 		jint getEncoding();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getSampleRate();
 		jint getChannelMask();
 		jint getChannelIndexMask();
 		jint getChannelCount();
 		jint getFrameSizeInBytes();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
 
@@ -584,22 +584,6 @@ namespace __jni_impl::android::media
 			"()I"
 		);
 	}
-	jint AudioFormat::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void AudioFormat::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	jint AudioFormat::getSampleRate()
 	{
 		return __thiz.callMethod<jint>(
@@ -633,6 +617,22 @@ namespace __jni_impl::android::media
 		return __thiz.callMethod<jint>(
 			"getFrameSizeInBytes",
 			"()I"
+		);
+	}
+	jint AudioFormat::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void AudioFormat::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::media

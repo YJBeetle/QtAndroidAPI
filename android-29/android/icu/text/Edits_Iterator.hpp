@@ -21,6 +21,7 @@ namespace __jni_impl::android::icu::text
 		jboolean next();
 		jint newLength();
 		jint oldLength();
+		jint sourceIndex();
 		jboolean findSourceIndex(jint arg0);
 		jboolean findDestinationIndex(jint arg0);
 		jint destinationIndexFromSourceIndex(jint arg0);
@@ -28,7 +29,6 @@ namespace __jni_impl::android::icu::text
 		jboolean hasChange();
 		jint replacementIndex();
 		jint destinationIndex();
-		jint sourceIndex();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -71,6 +71,13 @@ namespace __jni_impl::android::icu::text
 	{
 		return __thiz.callMethod<jint>(
 			"oldLength",
+			"()I"
+		);
+	}
+	jint Edits_Iterator::sourceIndex()
+	{
+		return __thiz.callMethod<jint>(
+			"sourceIndex",
 			"()I"
 		);
 	}
@@ -124,13 +131,6 @@ namespace __jni_impl::android::icu::text
 	{
 		return __thiz.callMethod<jint>(
 			"destinationIndex",
-			"()I"
-		);
-	}
-	jint Edits_Iterator::sourceIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"sourceIndex",
 			"()I"
 		);
 	}

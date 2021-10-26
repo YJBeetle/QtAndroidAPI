@@ -29,6 +29,7 @@ namespace __jni_impl::android::util
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jdouble arg0);
 		void __constructor(jfloat arg0);
 		void __constructor(jshort arg0);
@@ -53,6 +54,7 @@ namespace __jni_impl::android::util
 		jdouble doubleValue();
 		static QAndroidJniObject valueOf(jfloat arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 		static QAndroidJniObject valueOf(jshort arg0);
 		static jstring toHexString(jshort arg0);
 		static jint compare(jshort arg0, jshort arg1);
@@ -65,6 +67,7 @@ namespace __jni_impl::android::util
 		static jshort floor(jshort arg0);
 		static jshort round(jshort arg0);
 		static jboolean isNormalized(jshort arg0);
+		static jfloat toFloat(jshort arg0);
 		jshort halfValue();
 		static jshort halfToShortBits(jshort arg0);
 		static jint halfToIntBits(jshort arg0);
@@ -79,7 +82,7 @@ namespace __jni_impl::android::util
 		static jint getSignificand(jshort arg0);
 		static jshort toHalf(jfloat arg0);
 		static jshort parseHalf(jstring arg0);
-		static jfloat toFloat(jshort arg0);
+		static jshort parseHalf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::util
 
@@ -185,28 +188,40 @@ namespace __jni_impl::android::util
 		__thiz = QAndroidJniObject(
 			"android.util.Half",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Half::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.util.Half",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void Half::__constructor(jdouble arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.Half",
 			"(D)V",
-			arg0);
+			arg0
+		);
 	}
 	void Half::__constructor(jfloat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.Half",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	void Half::__constructor(jshort arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.Half",
 			"(S)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -365,6 +380,15 @@ namespace __jni_impl::android::util
 			arg0
 		);
 	}
+	QAndroidJniObject Half::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.util.Half",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/util/Half;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject Half::valueOf(jshort arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -470,6 +494,15 @@ namespace __jni_impl::android::util
 			"android.util.Half",
 			"isNormalized",
 			"(S)Z",
+			arg0
+		);
+	}
+	jfloat Half::toFloat(jshort arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jfloat>(
+			"android.util.Half",
+			"toFloat",
+			"(S)F",
 			arg0
 		);
 	}
@@ -601,13 +634,13 @@ namespace __jni_impl::android::util
 			arg0
 		);
 	}
-	jfloat Half::toFloat(jshort arg0)
+	jshort Half::parseHalf(const QString &arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
+		return QAndroidJniObject::callStaticMethod<jshort>(
 			"android.util.Half",
-			"toFloat",
-			"(S)F",
-			arg0
+			"parseHalf",
+			"(Ljava/lang/String;)S",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::util

@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view
-{
-	class View;
-}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
+}
+namespace __jni_impl::android::view
+{
+	class View;
 }
 
 namespace __jni_impl::android::app
@@ -27,27 +27,29 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		jobject getTag();
-		QAndroidJniObject setText(jint arg0);
 		QAndroidJniObject setText(jstring arg0);
+		QAndroidJniObject setText(const QString &arg0);
+		QAndroidJniObject setText(jint arg0);
 		jstring getText();
-		jint getPosition();
 		jstring getContentDescription();
-		QAndroidJniObject setContentDescription(jstring arg0);
 		QAndroidJniObject setContentDescription(jint arg0);
+		QAndroidJniObject setContentDescription(jstring arg0);
+		QAndroidJniObject setContentDescription(const QString &arg0);
 		QAndroidJniObject setTag(jobject arg0);
+		QAndroidJniObject getIcon();
+		QAndroidJniObject setIcon(jint arg0);
+		QAndroidJniObject setIcon(__jni_impl::android::graphics::drawable::Drawable arg0);
+		QAndroidJniObject setCustomView(jint arg0);
+		QAndroidJniObject setCustomView(__jni_impl::android::view::View arg0);
+		QAndroidJniObject getCustomView();
 		QAndroidJniObject setTabListener(__jni_impl::__JniBaseClass arg0);
 		void select();
-		QAndroidJniObject setCustomView(__jni_impl::android::view::View arg0);
-		QAndroidJniObject setCustomView(jint arg0);
-		QAndroidJniObject getCustomView();
-		QAndroidJniObject getIcon();
-		QAndroidJniObject setIcon(__jni_impl::android::graphics::drawable::Drawable arg0);
-		QAndroidJniObject setIcon(jint arg0);
+		jint getPosition();
 	};
 } // namespace __jni_impl::android::app
 
-#include "../view/View.hpp"
 #include "../graphics/drawable/Drawable.hpp"
+#include "../view/View.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -65,7 +67,8 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ActionBar$Tab",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -76,19 +79,27 @@ namespace __jni_impl::android::app
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject ActionBar_Tab::setText(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setText",
-			"(I)Landroid/app/ActionBar$Tab;",
-			arg0
-		);
-	}
 	QAndroidJniObject ActionBar_Tab::setText(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setText",
 			"(Ljava/lang/CharSequence;)Landroid/app/ActionBar$Tab;",
+			arg0
+		);
+	}
+	QAndroidJniObject ActionBar_Tab::setText(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setText",
+			"(Ljava/lang/CharSequence;)Landroid/app/ActionBar$Tab;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject ActionBar_Tab::setText(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setText",
+			"(I)Landroid/app/ActionBar$Tab;",
 			arg0
 		);
 	}
@@ -99,27 +110,12 @@ namespace __jni_impl::android::app
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	jint ActionBar_Tab::getPosition()
-	{
-		return __thiz.callMethod<jint>(
-			"getPosition",
-			"()I"
-		);
-	}
 	jstring ActionBar_Tab::getContentDescription()
 	{
 		return __thiz.callObjectMethod(
 			"getContentDescription",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
-	}
-	QAndroidJniObject ActionBar_Tab::setContentDescription(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setContentDescription",
-			"(Ljava/lang/CharSequence;)Landroid/app/ActionBar$Tab;",
-			arg0
-		);
 	}
 	QAndroidJniObject ActionBar_Tab::setContentDescription(jint arg0)
 	{
@@ -129,12 +125,74 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
+	QAndroidJniObject ActionBar_Tab::setContentDescription(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setContentDescription",
+			"(Ljava/lang/CharSequence;)Landroid/app/ActionBar$Tab;",
+			arg0
+		);
+	}
+	QAndroidJniObject ActionBar_Tab::setContentDescription(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setContentDescription",
+			"(Ljava/lang/CharSequence;)Landroid/app/ActionBar$Tab;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject ActionBar_Tab::setTag(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setTag",
 			"(Ljava/lang/Object;)Landroid/app/ActionBar$Tab;",
 			arg0
+		);
+	}
+	QAndroidJniObject ActionBar_Tab::getIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
+	}
+	QAndroidJniObject ActionBar_Tab::setIcon(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setIcon",
+			"(I)Landroid/app/ActionBar$Tab;",
+			arg0
+		);
+	}
+	QAndroidJniObject ActionBar_Tab::setIcon(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setIcon",
+			"(Landroid/graphics/drawable/Drawable;)Landroid/app/ActionBar$Tab;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ActionBar_Tab::setCustomView(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setCustomView",
+			"(I)Landroid/app/ActionBar$Tab;",
+			arg0
+		);
+	}
+	QAndroidJniObject ActionBar_Tab::setCustomView(__jni_impl::android::view::View arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setCustomView",
+			"(Landroid/view/View;)Landroid/app/ActionBar$Tab;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ActionBar_Tab::getCustomView()
+	{
+		return __thiz.callObjectMethod(
+			"getCustomView",
+			"()Landroid/view/View;"
 		);
 	}
 	QAndroidJniObject ActionBar_Tab::setTabListener(__jni_impl::__JniBaseClass arg0)
@@ -152,50 +210,11 @@ namespace __jni_impl::android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject ActionBar_Tab::setCustomView(__jni_impl::android::view::View arg0)
+	jint ActionBar_Tab::getPosition()
 	{
-		return __thiz.callObjectMethod(
-			"setCustomView",
-			"(Landroid/view/View;)Landroid/app/ActionBar$Tab;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ActionBar_Tab::setCustomView(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setCustomView",
-			"(I)Landroid/app/ActionBar$Tab;",
-			arg0
-		);
-	}
-	QAndroidJniObject ActionBar_Tab::getCustomView()
-	{
-		return __thiz.callObjectMethod(
-			"getCustomView",
-			"()Landroid/view/View;"
-		);
-	}
-	QAndroidJniObject ActionBar_Tab::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Drawable;"
-		);
-	}
-	QAndroidJniObject ActionBar_Tab::setIcon(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setIcon",
-			"(Landroid/graphics/drawable/Drawable;)Landroid/app/ActionBar$Tab;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ActionBar_Tab::setIcon(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setIcon",
-			"(I)Landroid/app/ActionBar$Tab;",
-			arg0
+		return __thiz.callMethod<jint>(
+			"getPosition",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::app

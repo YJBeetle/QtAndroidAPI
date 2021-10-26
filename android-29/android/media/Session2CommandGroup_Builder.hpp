@@ -44,14 +44,16 @@ namespace __jni_impl::android::media
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.Session2CommandGroup$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	void Session2CommandGroup_Builder::__constructor(__jni_impl::android::media::Session2CommandGroup arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.Session2CommandGroup$Builder",
 			"(Landroid/media/Session2CommandGroup;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

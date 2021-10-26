@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::os
 {
-	class Bundle;
+	class UserHandle;
 }
 namespace __jni_impl::android::os
 {
-	class UserHandle;
+	class Bundle;
 }
 namespace __jni_impl::android::content
 {
@@ -98,9 +98,6 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getApplicationRestrictions(jstring arg0);
-		QAndroidJniObject getUserRestrictions(__jni_impl::android::os::UserHandle arg0);
-		QAndroidJniObject getUserRestrictions();
 		static jboolean supportsMultipleUsers();
 		jstring getUserName();
 		jboolean isUserAGoat();
@@ -113,21 +110,29 @@ namespace __jni_impl::android::os
 		void setUserRestrictions(__jni_impl::android::os::Bundle arg0, __jni_impl::android::os::UserHandle arg1);
 		void setUserRestrictions(__jni_impl::android::os::Bundle arg0);
 		void setUserRestriction(jstring arg0, jboolean arg1);
+		void setUserRestriction(const QString &arg0, jboolean arg1);
 		jboolean hasUserRestriction(jstring arg0);
+		jboolean hasUserRestriction(const QString &arg0);
 		jlong getSerialNumberForUser(__jni_impl::android::os::UserHandle arg0);
 		QAndroidJniObject getUserForSerialNumber(jlong arg0);
 		static QAndroidJniObject createUserCreationIntent(jstring arg0, jstring arg1, jstring arg2, __jni_impl::android::os::PersistableBundle arg3);
+		static QAndroidJniObject createUserCreationIntent(const QString &arg0, const QString &arg1, const QString &arg2, __jni_impl::android::os::PersistableBundle arg3);
 		jint getUserCount();
 		QAndroidJniObject getUserProfiles();
 		jboolean requestQuietModeEnabled(jboolean arg0, __jni_impl::android::os::UserHandle arg1);
 		jboolean isQuietModeEnabled(__jni_impl::android::os::UserHandle arg0);
 		jboolean setRestrictionsChallenge(jstring arg0);
+		jboolean setRestrictionsChallenge(const QString &arg0);
 		jlong getUserCreationTime(__jni_impl::android::os::UserHandle arg0);
+		QAndroidJniObject getApplicationRestrictions(jstring arg0);
+		QAndroidJniObject getApplicationRestrictions(const QString &arg0);
+		QAndroidJniObject getUserRestrictions(__jni_impl::android::os::UserHandle arg0);
+		QAndroidJniObject getUserRestrictions();
 	};
 } // namespace __jni_impl::android::os
 
-#include "Bundle.hpp"
 #include "UserHandle.hpp"
+#include "Bundle.hpp"
 #include "../content/Intent.hpp"
 #include "PersistableBundle.hpp"
 
@@ -655,29 +660,6 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	QAndroidJniObject UserManager::getApplicationRestrictions(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getApplicationRestrictions",
-			"(Ljava/lang/String;)Landroid/os/Bundle;",
-			arg0
-		);
-	}
-	QAndroidJniObject UserManager::getUserRestrictions(__jni_impl::android::os::UserHandle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getUserRestrictions",
-			"(Landroid/os/UserHandle;)Landroid/os/Bundle;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject UserManager::getUserRestrictions()
-	{
-		return __thiz.callObjectMethod(
-			"getUserRestrictions",
-			"()Landroid/os/Bundle;"
-		);
-	}
 	jboolean UserManager::supportsMultipleUsers()
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -771,12 +753,29 @@ namespace __jni_impl::android::os
 			arg1
 		);
 	}
+	void UserManager::setUserRestriction(const QString &arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setUserRestriction",
+			"(Ljava/lang/String;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	jboolean UserManager::hasUserRestriction(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasUserRestriction",
 			"(Ljava/lang/String;)Z",
 			arg0
+		);
+	}
+	jboolean UserManager::hasUserRestriction(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasUserRestriction",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jlong UserManager::getSerialNumberForUser(__jni_impl::android::os::UserHandle arg0)
@@ -804,6 +803,18 @@ namespace __jni_impl::android::os
 			arg0,
 			arg1,
 			arg2,
+			arg3.__jniObject().object()
+		);
+	}
+	QAndroidJniObject UserManager::createUserCreationIntent(const QString &arg0, const QString &arg1, const QString &arg2, __jni_impl::android::os::PersistableBundle arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.UserManager",
+			"createUserCreationIntent",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/PersistableBundle;)Landroid/content/Intent;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3.__jniObject().object()
 		);
 	}
@@ -846,12 +857,51 @@ namespace __jni_impl::android::os
 			arg0
 		);
 	}
+	jboolean UserManager::setRestrictionsChallenge(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setRestrictionsChallenge",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jlong UserManager::getUserCreationTime(__jni_impl::android::os::UserHandle arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getUserCreationTime",
 			"(Landroid/os/UserHandle;)J",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject UserManager::getApplicationRestrictions(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getApplicationRestrictions",
+			"(Ljava/lang/String;)Landroid/os/Bundle;",
+			arg0
+		);
+	}
+	QAndroidJniObject UserManager::getApplicationRestrictions(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getApplicationRestrictions",
+			"(Ljava/lang/String;)Landroid/os/Bundle;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject UserManager::getUserRestrictions(__jni_impl::android::os::UserHandle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getUserRestrictions",
+			"(Landroid/os/UserHandle;)Landroid/os/Bundle;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject UserManager::getUserRestrictions()
+	{
+		return __thiz.callObjectMethod(
+			"getUserRestrictions",
+			"()Landroid/os/Bundle;"
 		);
 	}
 } // namespace __jni_impl::android::os

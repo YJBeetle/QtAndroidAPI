@@ -53,7 +53,8 @@ namespace __jni_impl::android::view::animation
 			arg4,
 			arg5,
 			arg6,
-			arg7);
+			arg7
+		);
 	}
 	void ScaleAnimation::__constructor(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5)
 	{
@@ -65,7 +66,8 @@ namespace __jni_impl::android::view::animation
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	void ScaleAnimation::__constructor(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
@@ -75,7 +77,8 @@ namespace __jni_impl::android::view::animation
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void ScaleAnimation::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -83,7 +86,8 @@ namespace __jni_impl::android::view::animation
 			"android.view.animation.ScaleAnimation",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

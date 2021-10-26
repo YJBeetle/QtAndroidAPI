@@ -66,11 +66,13 @@ namespace __jni_impl::android::os
 		static jarray createSocketPair();
 		static jarray createReliableSocketPair();
 		static jint parseMode(jstring arg0);
+		static jint parseMode(const QString &arg0);
 		QAndroidJniObject getFileDescriptor();
 		jlong getStatSize();
 		jint getFd();
 		jint detachFd();
 		void closeWithError(jstring arg0);
+		void closeWithError(const QString &arg0);
 		jboolean canDetectErrors();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -158,7 +160,8 @@ namespace __jni_impl::android::os
 		__thiz = QAndroidJniObject(
 			"android.os.ParcelFileDescriptor",
 			"(Landroid/os/ParcelFileDescriptor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -298,6 +301,15 @@ namespace __jni_impl::android::os
 			arg0
 		);
 	}
+	jint ParcelFileDescriptor::parseMode(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.os.ParcelFileDescriptor",
+			"parseMode",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject ParcelFileDescriptor::getFileDescriptor()
 	{
 		return __thiz.callObjectMethod(
@@ -332,6 +344,14 @@ namespace __jni_impl::android::os
 			"closeWithError",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void ParcelFileDescriptor::closeWithError(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"closeWithError",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean ParcelFileDescriptor::canDetectErrors()

@@ -18,8 +18,11 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		jint findTokenStart(jstring arg0, jint arg1);
+		jint findTokenStart(const QString &arg0, jint arg1);
 		jint findTokenEnd(jstring arg0, jint arg1);
+		jint findTokenEnd(const QString &arg0, jint arg1);
 		jstring terminateToken(jstring arg0);
+		jstring terminateToken(const QString &arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -33,7 +36,8 @@ namespace __jni_impl::android::widget
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.MultiAutoCompleteTextView$CommaTokenizer",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -46,6 +50,15 @@ namespace __jni_impl::android::widget
 			arg1
 		);
 	}
+	jint MultiAutoCompleteTextView_CommaTokenizer::findTokenStart(const QString &arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"findTokenStart",
+			"(Ljava/lang/CharSequence;I)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	jint MultiAutoCompleteTextView_CommaTokenizer::findTokenEnd(jstring arg0, jint arg1)
 	{
 		return __thiz.callMethod<jint>(
@@ -55,12 +68,29 @@ namespace __jni_impl::android::widget
 			arg1
 		);
 	}
+	jint MultiAutoCompleteTextView_CommaTokenizer::findTokenEnd(const QString &arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"findTokenEnd",
+			"(Ljava/lang/CharSequence;I)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	jstring MultiAutoCompleteTextView_CommaTokenizer::terminateToken(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"terminateToken",
 			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0
+		).object<jstring>();
+	}
+	jstring MultiAutoCompleteTextView_CommaTokenizer::terminateToken(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"terminateToken",
+			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 } // namespace __jni_impl::android::widget

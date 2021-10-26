@@ -39,7 +39,8 @@ namespace __jni_impl::android::renderscript
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Script$LaunchOptions",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

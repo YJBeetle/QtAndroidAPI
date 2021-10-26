@@ -34,18 +34,22 @@ namespace __jni_impl::javax::crypto
 		
 		// Methods
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::java::security::Provider arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1);
 		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject getInstance(jstring arg0);
+		static QAndroidJniObject getInstance(const QString &arg0);
 		void init(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::SecureRandom arg1);
 		void init(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		void init(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::SecureRandom arg2);
 		void init(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getProvider();
-		jbyteArray generateSecret();
-		QAndroidJniObject generateSecret(jstring arg0);
-		jint generateSecret(jbyteArray arg0, jint arg1);
-		QAndroidJniObject doPhase(__jni_impl::__JniBaseClass arg0, jboolean arg1);
 		jstring getAlgorithm();
+		QAndroidJniObject generateSecret(jstring arg0);
+		QAndroidJniObject generateSecret(const QString &arg0);
+		jint generateSecret(jbyteArray arg0, jint arg1);
+		jbyteArray generateSecret();
+		QAndroidJniObject doPhase(__jni_impl::__JniBaseClass arg0, jboolean arg1);
 	};
 } // namespace __jni_impl::javax::crypto
 
@@ -77,6 +81,16 @@ namespace __jni_impl::javax::crypto
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject KeyAgreement::getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.crypto.KeyAgreement",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/KeyAgreement;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject KeyAgreement::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -87,6 +101,16 @@ namespace __jni_impl::javax::crypto
 			arg1
 		);
 	}
+	QAndroidJniObject KeyAgreement::getInstance(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.crypto.KeyAgreement",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/KeyAgreement;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject KeyAgreement::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -94,6 +118,15 @@ namespace __jni_impl::javax::crypto
 			"getInstance",
 			"(Ljava/lang/String;)Ljavax/crypto/KeyAgreement;",
 			arg0
+		);
+	}
+	QAndroidJniObject KeyAgreement::getInstance(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.crypto.KeyAgreement",
+			"getInstance",
+			"(Ljava/lang/String;)Ljavax/crypto/KeyAgreement;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void KeyAgreement::init(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::SecureRandom arg1)
@@ -139,12 +172,12 @@ namespace __jni_impl::javax::crypto
 			"()Ljava/security/Provider;"
 		);
 	}
-	jbyteArray KeyAgreement::generateSecret()
+	jstring KeyAgreement::getAlgorithm()
 	{
 		return __thiz.callObjectMethod(
-			"generateSecret",
-			"()[B"
-		).object<jbyteArray>();
+			"getAlgorithm",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject KeyAgreement::generateSecret(jstring arg0)
 	{
@@ -152,6 +185,14 @@ namespace __jni_impl::javax::crypto
 			"generateSecret",
 			"(Ljava/lang/String;)Ljavax/crypto/SecretKey;",
 			arg0
+		);
+	}
+	QAndroidJniObject KeyAgreement::generateSecret(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"generateSecret",
+			"(Ljava/lang/String;)Ljavax/crypto/SecretKey;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint KeyAgreement::generateSecret(jbyteArray arg0, jint arg1)
@@ -163,6 +204,13 @@ namespace __jni_impl::javax::crypto
 			arg1
 		);
 	}
+	jbyteArray KeyAgreement::generateSecret()
+	{
+		return __thiz.callObjectMethod(
+			"generateSecret",
+			"()[B"
+		).object<jbyteArray>();
+	}
 	QAndroidJniObject KeyAgreement::doPhase(__jni_impl::__JniBaseClass arg0, jboolean arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -171,13 +219,6 @@ namespace __jni_impl::javax::crypto
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jstring KeyAgreement::getAlgorithm()
-	{
-		return __thiz.callObjectMethod(
-			"getAlgorithm",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::crypto
 

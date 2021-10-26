@@ -36,7 +36,8 @@ namespace __jni_impl::android::graphics::drawable
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.ShapeDrawable$ShaderFactory",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

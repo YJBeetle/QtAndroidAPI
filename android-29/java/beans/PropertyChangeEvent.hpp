@@ -20,14 +20,15 @@ namespace __jni_impl::java::beans
 		
 		// Constructors
 		void __constructor(jobject arg0, jstring arg1, jobject arg2, jobject arg3);
+		void __constructor(jobject arg0, const QString &arg1, jobject arg2, jobject arg3);
 		
 		// Methods
 		jstring toString();
-		jstring getPropertyName();
 		jobject getOldValue();
 		jobject getNewValue();
 		jobject getPropagationId();
 		void setPropagationId(jobject arg0);
+		jstring getPropertyName();
 	};
 } // namespace __jni_impl::java::beans
 
@@ -46,7 +47,19 @@ namespace __jni_impl::java::beans
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void PropertyChangeEvent::__constructor(jobject arg0, const QString &arg1, jobject arg2, jobject arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"java.beans.PropertyChangeEvent",
+			"(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3
+		);
 	}
 	
 	// Methods
@@ -54,13 +67,6 @@ namespace __jni_impl::java::beans
 	{
 		return __thiz.callObjectMethod(
 			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring PropertyChangeEvent::getPropertyName()
-	{
-		return __thiz.callObjectMethod(
-			"getPropertyName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -92,6 +98,13 @@ namespace __jni_impl::java::beans
 			"(Ljava/lang/Object;)V",
 			arg0
 		);
+	}
+	jstring PropertyChangeEvent::getPropertyName()
+	{
+		return __thiz.callObjectMethod(
+			"getPropertyName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::beans
 

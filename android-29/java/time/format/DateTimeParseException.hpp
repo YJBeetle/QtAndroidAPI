@@ -18,7 +18,9 @@ namespace __jni_impl::java::time::format
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1, jint arg2);
+		void __constructor(const QString &arg0, const QString &arg1, jint arg2);
 		void __constructor(jstring arg0, jstring arg1, jint arg2, jthrowable arg3);
+		void __constructor(const QString &arg0, const QString &arg1, jint arg2, jthrowable arg3);
 		
 		// Methods
 		jint getErrorIndex();
@@ -39,7 +41,18 @@ namespace __jni_impl::java::time::format
 			"(Ljava/lang/String;Ljava/lang/CharSequence;I)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void DateTimeParseException::__constructor(const QString &arg0, const QString &arg1, jint arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.time.format.DateTimeParseException",
+			"(Ljava/lang/String;Ljava/lang/CharSequence;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
 	}
 	void DateTimeParseException::__constructor(jstring arg0, jstring arg1, jint arg2, jthrowable arg3)
 	{
@@ -49,7 +62,19 @@ namespace __jni_impl::java::time::format
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void DateTimeParseException::__constructor(const QString &arg0, const QString &arg1, jint arg2, jthrowable arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"java.time.format.DateTimeParseException",
+			"(Ljava/lang/String;Ljava/lang/CharSequence;ILjava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3
+		);
 	}
 	
 	// Methods

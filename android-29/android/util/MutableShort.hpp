@@ -38,7 +38,8 @@ namespace __jni_impl::android::util
 		__thiz = QAndroidJniObject(
 			"android.util.MutableShort",
 			"(S)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

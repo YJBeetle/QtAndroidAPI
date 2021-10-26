@@ -70,22 +70,32 @@ namespace __jni_impl::android::icu::text
 		static QAndroidJniObject getInstance(__jni_impl::android::icu::util::ULocale arg0);
 		jboolean isFrozen();
 		QAndroidJniObject freeze();
-		QAndroidJniObject parse(__jni_impl::android::icu::text::TimeZoneFormat_Style arg0, jstring arg1, __jni_impl::java::text::ParsePosition arg2, __jni_impl::android::icu::util::Output arg3);
-		QAndroidJniObject parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
-		QAndroidJniObject parse(jstring arg0);
 		QAndroidJniObject parse(__jni_impl::android::icu::text::TimeZoneFormat_Style arg0, jstring arg1, __jni_impl::java::text::ParsePosition arg2, __jni_impl::java::util::EnumSet arg3, __jni_impl::android::icu::util::Output arg4);
+		QAndroidJniObject parse(__jni_impl::android::icu::text::TimeZoneFormat_Style arg0, const QString &arg1, __jni_impl::java::text::ParsePosition arg2, __jni_impl::java::util::EnumSet arg3, __jni_impl::android::icu::util::Output arg4);
+		QAndroidJniObject parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		QAndroidJniObject parse(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
+		QAndroidJniObject parse(jstring arg0);
+		QAndroidJniObject parse(const QString &arg0);
+		QAndroidJniObject parse(__jni_impl::android::icu::text::TimeZoneFormat_Style arg0, jstring arg1, __jni_impl::java::text::ParsePosition arg2, __jni_impl::android::icu::util::Output arg3);
+		QAndroidJniObject parse(__jni_impl::android::icu::text::TimeZoneFormat_Style arg0, const QString &arg1, __jni_impl::java::text::ParsePosition arg2, __jni_impl::android::icu::util::Output arg3);
 		jobject parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		jobject parseObject(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
 		QAndroidJniObject formatToCharacterIterator(jobject arg0);
 		QAndroidJniObject getTimeZoneNames();
+		QAndroidJniObject cloneAsThawed();
 		QAndroidJniObject setTimeZoneNames(__jni_impl::android::icu::text::TimeZoneNames arg0);
 		jstring getGMTPattern();
 		QAndroidJniObject setGMTPattern(jstring arg0);
+		QAndroidJniObject setGMTPattern(const QString &arg0);
 		jstring getGMTOffsetPattern(__jni_impl::android::icu::text::TimeZoneFormat_GMTOffsetPatternType arg0);
 		QAndroidJniObject setGMTOffsetPattern(__jni_impl::android::icu::text::TimeZoneFormat_GMTOffsetPatternType arg0, jstring arg1);
+		QAndroidJniObject setGMTOffsetPattern(__jni_impl::android::icu::text::TimeZoneFormat_GMTOffsetPatternType arg0, const QString &arg1);
 		jstring getGMTOffsetDigits();
 		QAndroidJniObject setGMTOffsetDigits(jstring arg0);
+		QAndroidJniObject setGMTOffsetDigits(const QString &arg0);
 		jstring getGMTZeroFormat();
 		QAndroidJniObject setGMTZeroFormat(jstring arg0);
+		QAndroidJniObject setGMTZeroFormat(const QString &arg0);
 		QAndroidJniObject setDefaultParseOptions(__jni_impl::java::util::EnumSet arg0);
 		QAndroidJniObject getDefaultParseOptions();
 		jstring formatOffsetISO8601Basic(jint arg0, jboolean arg1, jboolean arg2, jboolean arg3);
@@ -93,9 +103,11 @@ namespace __jni_impl::android::icu::text
 		jstring formatOffsetLocalizedGMT(jint arg0);
 		jstring formatOffsetShortLocalizedGMT(jint arg0);
 		jint parseOffsetISO8601(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		jint parseOffsetISO8601(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
 		jint parseOffsetLocalizedGMT(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		jint parseOffsetLocalizedGMT(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
 		jint parseOffsetShortLocalizedGMT(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
-		QAndroidJniObject cloneAsThawed();
+		jint parseOffsetShortLocalizedGMT(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -187,34 +199,6 @@ namespace __jni_impl::android::icu::text
 			"()Landroid/icu/text/TimeZoneFormat;"
 		);
 	}
-	QAndroidJniObject TimeZoneFormat::parse(__jni_impl::android::icu::text::TimeZoneFormat_Style arg0, jstring arg1, __jni_impl::java::text::ParsePosition arg2, __jni_impl::android::icu::util::Output arg3)
-	{
-		return __thiz.callObjectMethod(
-			"parse",
-			"(Landroid/icu/text/TimeZoneFormat$Style;Ljava/lang/String;Ljava/text/ParsePosition;Landroid/icu/util/Output;)Landroid/icu/util/TimeZone;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-	QAndroidJniObject TimeZoneFormat::parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parse",
-			"(Ljava/lang/String;Ljava/text/ParsePosition;)Landroid/icu/util/TimeZone;",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject TimeZoneFormat::parse(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"parse",
-			"(Ljava/lang/String;)Landroid/icu/util/TimeZone;",
-			arg0
-		);
-	}
 	QAndroidJniObject TimeZoneFormat::parse(__jni_impl::android::icu::text::TimeZoneFormat_Style arg0, jstring arg1, __jni_impl::java::text::ParsePosition arg2, __jni_impl::java::util::EnumSet arg3, __jni_impl::android::icu::util::Output arg4)
 	{
 		return __thiz.callObjectMethod(
@@ -227,12 +211,89 @@ namespace __jni_impl::android::icu::text
 			arg4.__jniObject().object()
 		);
 	}
+	QAndroidJniObject TimeZoneFormat::parse(__jni_impl::android::icu::text::TimeZoneFormat_Style arg0, const QString &arg1, __jni_impl::java::text::ParsePosition arg2, __jni_impl::java::util::EnumSet arg3, __jni_impl::android::icu::util::Output arg4)
+	{
+		return __thiz.callObjectMethod(
+			"parse",
+			"(Landroid/icu/text/TimeZoneFormat$Style;Ljava/lang/String;Ljava/text/ParsePosition;Ljava/util/EnumSet;Landroid/icu/util/Output;)Landroid/icu/util/TimeZone;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object(),
+			arg4.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TimeZoneFormat::parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callObjectMethod(
+			"parse",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Landroid/icu/util/TimeZone;",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TimeZoneFormat::parse(const QString &arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callObjectMethod(
+			"parse",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Landroid/icu/util/TimeZone;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TimeZoneFormat::parse(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"parse",
+			"(Ljava/lang/String;)Landroid/icu/util/TimeZone;",
+			arg0
+		);
+	}
+	QAndroidJniObject TimeZoneFormat::parse(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"parse",
+			"(Ljava/lang/String;)Landroid/icu/util/TimeZone;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject TimeZoneFormat::parse(__jni_impl::android::icu::text::TimeZoneFormat_Style arg0, jstring arg1, __jni_impl::java::text::ParsePosition arg2, __jni_impl::android::icu::util::Output arg3)
+	{
+		return __thiz.callObjectMethod(
+			"parse",
+			"(Landroid/icu/text/TimeZoneFormat$Style;Ljava/lang/String;Ljava/text/ParsePosition;Landroid/icu/util/Output;)Landroid/icu/util/TimeZone;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TimeZoneFormat::parse(__jni_impl::android::icu::text::TimeZoneFormat_Style arg0, const QString &arg1, __jni_impl::java::text::ParsePosition arg2, __jni_impl::android::icu::util::Output arg3)
+	{
+		return __thiz.callObjectMethod(
+			"parse",
+			"(Landroid/icu/text/TimeZoneFormat$Style;Ljava/lang/String;Ljava/text/ParsePosition;Landroid/icu/util/Output;)Landroid/icu/util/TimeZone;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object()
+		);
+	}
 	jobject TimeZoneFormat::parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
 	{
 		return __thiz.callObjectMethod(
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
 			arg0,
+			arg1.__jniObject().object()
+		).object<jobject>();
+	}
+	jobject TimeZoneFormat::parseObject(const QString &arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callObjectMethod(
+			"parseObject",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jobject>();
 	}
@@ -249,6 +310,13 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callObjectMethod(
 			"getTimeZoneNames",
 			"()Landroid/icu/text/TimeZoneNames;"
+		);
+	}
+	QAndroidJniObject TimeZoneFormat::cloneAsThawed()
+	{
+		return __thiz.callObjectMethod(
+			"cloneAsThawed",
+			"()Landroid/icu/text/TimeZoneFormat;"
 		);
 	}
 	QAndroidJniObject TimeZoneFormat::setTimeZoneNames(__jni_impl::android::icu::text::TimeZoneNames arg0)
@@ -274,6 +342,14 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
+	QAndroidJniObject TimeZoneFormat::setGMTPattern(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setGMTPattern",
+			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring TimeZoneFormat::getGMTOffsetPattern(__jni_impl::android::icu::text::TimeZoneFormat_GMTOffsetPatternType arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -291,6 +367,15 @@ namespace __jni_impl::android::icu::text
 			arg1
 		);
 	}
+	QAndroidJniObject TimeZoneFormat::setGMTOffsetPattern(__jni_impl::android::icu::text::TimeZoneFormat_GMTOffsetPatternType arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"setGMTOffsetPattern",
+			"(Landroid/icu/text/TimeZoneFormat$GMTOffsetPatternType;Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	jstring TimeZoneFormat::getGMTOffsetDigits()
 	{
 		return __thiz.callObjectMethod(
@@ -306,6 +391,14 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
+	QAndroidJniObject TimeZoneFormat::setGMTOffsetDigits(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setGMTOffsetDigits",
+			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring TimeZoneFormat::getGMTZeroFormat()
 	{
 		return __thiz.callObjectMethod(
@@ -319,6 +412,14 @@ namespace __jni_impl::android::icu::text
 			"setGMTZeroFormat",
 			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat;",
 			arg0
+		);
+	}
+	QAndroidJniObject TimeZoneFormat::setGMTZeroFormat(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setGMTZeroFormat",
+			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject TimeZoneFormat::setDefaultParseOptions(__jni_impl::java::util::EnumSet arg0)
@@ -383,12 +484,30 @@ namespace __jni_impl::android::icu::text
 			arg1.__jniObject().object()
 		);
 	}
+	jint TimeZoneFormat::parseOffsetISO8601(const QString &arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"parseOffsetISO8601",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	jint TimeZoneFormat::parseOffsetLocalizedGMT(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
 	{
 		return __thiz.callMethod<jint>(
 			"parseOffsetLocalizedGMT",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)I",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jint TimeZoneFormat::parseOffsetLocalizedGMT(const QString &arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"parseOffsetLocalizedGMT",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -401,11 +520,13 @@ namespace __jni_impl::android::icu::text
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject TimeZoneFormat::cloneAsThawed()
+	jint TimeZoneFormat::parseOffsetShortLocalizedGMT(const QString &arg0, __jni_impl::java::text::ParsePosition arg1)
 	{
-		return __thiz.callObjectMethod(
-			"cloneAsThawed",
-			"()Landroid/icu/text/TimeZoneFormat;"
+		return __thiz.callMethod<jint>(
+			"parseOffsetShortLocalizedGMT",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::icu::text

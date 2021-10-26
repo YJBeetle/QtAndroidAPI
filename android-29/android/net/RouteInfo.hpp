@@ -38,9 +38,9 @@ namespace __jni_impl::android::net
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jstring getInterface();
+		QAndroidJniObject getGateway();
 		jboolean isDefaultRoute();
 		jboolean hasGateway();
-		QAndroidJniObject getGateway();
 	};
 } // namespace __jni_impl::android::net
 
@@ -129,6 +129,13 @@ namespace __jni_impl::android::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	QAndroidJniObject RouteInfo::getGateway()
+	{
+		return __thiz.callObjectMethod(
+			"getGateway",
+			"()Ljava/net/InetAddress;"
+		);
+	}
 	jboolean RouteInfo::isDefaultRoute()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -141,13 +148,6 @@ namespace __jni_impl::android::net
 		return __thiz.callMethod<jboolean>(
 			"hasGateway",
 			"()Z"
-		);
-	}
-	QAndroidJniObject RouteInfo::getGateway()
-	{
-		return __thiz.callObjectMethod(
-			"getGateway",
-			"()Ljava/net/InetAddress;"
 		);
 	}
 } // namespace __jni_impl::android::net

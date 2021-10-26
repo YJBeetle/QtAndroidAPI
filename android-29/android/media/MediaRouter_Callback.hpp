@@ -54,7 +54,8 @@ namespace __jni_impl::android::media
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaRouter$Callback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -32,7 +32,8 @@ namespace __jni_impl::java::nio
 	{
 		__thiz = QAndroidJniObject(
 			"java.nio.BufferUnderflowException",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

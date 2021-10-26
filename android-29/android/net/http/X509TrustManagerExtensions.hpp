@@ -22,8 +22,10 @@ namespace __jni_impl::android::net::http
 		
 		// Methods
 		QAndroidJniObject checkServerTrusted(jarray arg0, jstring arg1, jstring arg2);
+		QAndroidJniObject checkServerTrusted(jarray arg0, const QString &arg1, const QString &arg2);
 		jboolean isUserAddedCertificate(__jni_impl::java::security::cert::X509Certificate arg0);
 		jboolean isSameTrustConfiguration(jstring arg0, jstring arg1);
+		jboolean isSameTrustConfiguration(const QString &arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::net::http
 
@@ -39,7 +41,8 @@ namespace __jni_impl::android::net::http
 		__thiz = QAndroidJniObject(
 			"android.net.http.X509TrustManagerExtensions",
 			"(Ljavax/net/ssl/X509TrustManager;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -51,6 +54,16 @@ namespace __jni_impl::android::net::http
 			arg0,
 			arg1,
 			arg2
+		);
+	}
+	QAndroidJniObject X509TrustManagerExtensions::checkServerTrusted(jarray arg0, const QString &arg1, const QString &arg2)
+	{
+		return __thiz.callObjectMethod(
+			"checkServerTrusted",
+			"([Ljava/security/cert/X509Certificate;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List;",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	jboolean X509TrustManagerExtensions::isUserAddedCertificate(__jni_impl::java::security::cert::X509Certificate arg0)
@@ -68,6 +81,15 @@ namespace __jni_impl::android::net::http
 			"(Ljava/lang/String;Ljava/lang/String;)Z",
 			arg0,
 			arg1
+		);
+	}
+	jboolean X509TrustManagerExtensions::isSameTrustConfiguration(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSameTrustConfiguration",
+			"(Ljava/lang/String;Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::net::http

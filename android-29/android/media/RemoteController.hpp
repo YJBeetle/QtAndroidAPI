@@ -76,7 +76,8 @@ namespace __jni_impl::android::media
 			"android.media.RemoteController",
 			"(Landroid/content/Context;Landroid/media/RemoteController$OnClientUpdateListener;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void RemoteController::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Looper arg2)
 	{
@@ -85,7 +86,8 @@ namespace __jni_impl::android::media
 			"(Landroid/content/Context;Landroid/media/RemoteController$OnClientUpdateListener;Landroid/os/Looper;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods

@@ -18,6 +18,7 @@ namespace __jni_impl::android::opengl
 		// Constructors
 		void __constructor(jint arg0);
 		void __constructor(jint arg0, jstring arg1);
+		void __constructor(jint arg0, const QString &arg1);
 		
 		// Methods
 	};
@@ -34,7 +35,8 @@ namespace __jni_impl::android::opengl
 		__thiz = QAndroidJniObject(
 			"android.opengl.GLException",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void GLException::__constructor(jint arg0, jstring arg1)
 	{
@@ -42,7 +44,17 @@ namespace __jni_impl::android::opengl
 			"android.opengl.GLException",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void GLException::__constructor(jint arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.opengl.GLException",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods

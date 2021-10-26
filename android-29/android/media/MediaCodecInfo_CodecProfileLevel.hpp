@@ -1646,7 +1646,8 @@ namespace __jni_impl::android::media
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaCodecInfo$CodecProfileLevel",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

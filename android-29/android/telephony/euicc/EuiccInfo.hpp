@@ -20,6 +20,7 @@ namespace __jni_impl::android::telephony::euicc
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jstring getOsVersion();
@@ -48,7 +49,16 @@ namespace __jni_impl::android::telephony::euicc
 		__thiz = QAndroidJniObject(
 			"android.telephony.euicc.EuiccInfo",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void EuiccInfo::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.telephony.euicc.EuiccInfo",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

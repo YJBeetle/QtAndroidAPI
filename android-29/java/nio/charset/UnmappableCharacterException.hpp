@@ -36,7 +36,8 @@ namespace __jni_impl::java::nio::charset
 		__thiz = QAndroidJniObject(
 			"java.nio.charset.UnmappableCharacterException",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

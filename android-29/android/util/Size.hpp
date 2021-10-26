@@ -23,6 +23,7 @@ namespace __jni_impl::android::util
 		jint getWidth();
 		jint getHeight();
 		static QAndroidJniObject parseSize(jstring arg0);
+		static QAndroidJniObject parseSize(const QString &arg0);
 	};
 } // namespace __jni_impl::android::util
 
@@ -38,7 +39,8 @@ namespace __jni_impl::android::util
 			"android.util.Size",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -85,6 +87,15 @@ namespace __jni_impl::android::util
 			"parseSize",
 			"(Ljava/lang/String;)Landroid/util/Size;",
 			arg0
+		);
+	}
+	QAndroidJniObject Size::parseSize(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.util.Size",
+			"parseSize",
+			"(Ljava/lang/String;)Landroid/util/Size;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::util

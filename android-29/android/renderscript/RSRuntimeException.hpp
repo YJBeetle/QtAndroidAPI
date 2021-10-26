@@ -17,6 +17,7 @@ namespace __jni_impl::android::renderscript
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -33,7 +34,16 @@ namespace __jni_impl::android::renderscript
 		__thiz = QAndroidJniObject(
 			"android.renderscript.RSRuntimeException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void RSRuntimeException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.renderscript.RSRuntimeException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

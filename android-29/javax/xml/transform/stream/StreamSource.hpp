@@ -29,11 +29,14 @@ namespace __jni_impl::javax::xml::transform::stream
 		// Constructors
 		void __constructor(__jni_impl::java::io::Reader arg0);
 		void __constructor(__jni_impl::java::io::Reader arg0, jstring arg1);
+		void __constructor(__jni_impl::java::io::Reader arg0, const QString &arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(__jni_impl::java::io::File arg0);
 		void __constructor();
 		void __constructor(__jni_impl::java::io::InputStream arg0);
 		void __constructor(__jni_impl::java::io::InputStream arg0, jstring arg1);
+		void __constructor(__jni_impl::java::io::InputStream arg0, const QString &arg1);
 		
 		// Methods
 		jboolean isEmpty();
@@ -42,9 +45,11 @@ namespace __jni_impl::javax::xml::transform::stream
 		QAndroidJniObject getReader();
 		void setSystemId(__jni_impl::java::io::File arg0);
 		void setSystemId(jstring arg0);
+		void setSystemId(const QString &arg0);
 		void setInputStream(__jni_impl::java::io::InputStream arg0);
 		void setReader(__jni_impl::java::io::Reader arg0);
 		void setPublicId(jstring arg0);
+		void setPublicId(const QString &arg0);
 		jstring getPublicId();
 	};
 } // namespace __jni_impl::javax::xml::transform::stream
@@ -71,7 +76,8 @@ namespace __jni_impl::javax::xml::transform::stream
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.stream.StreamSource",
 			"(Ljava/io/Reader;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void StreamSource::__constructor(__jni_impl::java::io::Reader arg0, jstring arg1)
 	{
@@ -79,34 +85,56 @@ namespace __jni_impl::javax::xml::transform::stream
 			"javax.xml.transform.stream.StreamSource",
 			"(Ljava/io/Reader;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void StreamSource::__constructor(__jni_impl::java::io::Reader arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.xml.transform.stream.StreamSource",
+			"(Ljava/io/Reader;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void StreamSource::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.stream.StreamSource",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void StreamSource::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.xml.transform.stream.StreamSource",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void StreamSource::__constructor(__jni_impl::java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.stream.StreamSource",
 			"(Ljava/io/File;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void StreamSource::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.stream.StreamSource",
-			"()V");
+			"()V"
+		);
 	}
 	void StreamSource::__constructor(__jni_impl::java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.stream.StreamSource",
 			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void StreamSource::__constructor(__jni_impl::java::io::InputStream arg0, jstring arg1)
 	{
@@ -114,7 +142,17 @@ namespace __jni_impl::javax::xml::transform::stream
 			"javax.xml.transform.stream.StreamSource",
 			"(Ljava/io/InputStream;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void StreamSource::__constructor(__jni_impl::java::io::InputStream arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.xml.transform.stream.StreamSource",
+			"(Ljava/io/InputStream;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -162,6 +200,14 @@ namespace __jni_impl::javax::xml::transform::stream
 			arg0
 		);
 	}
+	void StreamSource::setSystemId(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSystemId",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void StreamSource::setInputStream(__jni_impl::java::io::InputStream arg0)
 	{
 		__thiz.callMethod<void>(
@@ -184,6 +230,14 @@ namespace __jni_impl::javax::xml::transform::stream
 			"setPublicId",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void StreamSource::setPublicId(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPublicId",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring StreamSource::getPublicId()

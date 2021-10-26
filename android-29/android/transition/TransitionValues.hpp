@@ -55,14 +55,16 @@ namespace __jni_impl::android::transition
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.TransitionValues",
-			"()V");
+			"()V"
+		);
 	}
 	void TransitionValues::__constructor(__jni_impl::android::view::View arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.TransitionValues",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

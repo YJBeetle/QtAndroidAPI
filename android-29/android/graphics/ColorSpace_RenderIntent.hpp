@@ -24,6 +24,7 @@ namespace __jni_impl::android::graphics
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -88,6 +89,15 @@ namespace __jni_impl::android::graphics
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$RenderIntent;",
 			arg0
+		);
+	}
+	QAndroidJniObject ColorSpace_RenderIntent::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.ColorSpace$RenderIntent",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$RenderIntent;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::graphics

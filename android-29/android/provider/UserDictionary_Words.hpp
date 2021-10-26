@@ -42,7 +42,9 @@ namespace __jni_impl::android::provider
 		
 		// Methods
 		static void addWord(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2, jint arg3);
+		static void addWord(__jni_impl::android::content::Context arg0, const QString &arg1, jint arg2, jint arg3);
 		static void addWord(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2, jstring arg3, __jni_impl::java::util::Locale arg4);
+		static void addWord(__jni_impl::android::content::Context arg0, const QString &arg1, jint arg2, const QString &arg3, __jni_impl::java::util::Locale arg4);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -153,7 +155,8 @@ namespace __jni_impl::android::provider
 	{
 		__thiz = QAndroidJniObject(
 			"android.provider.UserDictionary$Words",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -169,6 +172,18 @@ namespace __jni_impl::android::provider
 			arg3
 		);
 	}
+	void UserDictionary_Words::addWord(__jni_impl::android::content::Context arg0, const QString &arg1, jint arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.provider.UserDictionary$Words",
+			"addWord",
+			"(Landroid/content/Context;Ljava/lang/String;II)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3
+		);
+	}
 	void UserDictionary_Words::addWord(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2, jstring arg3, __jni_impl::java::util::Locale arg4)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -179,6 +194,19 @@ namespace __jni_impl::android::provider
 			arg1,
 			arg2,
 			arg3,
+			arg4.__jniObject().object()
+		);
+	}
+	void UserDictionary_Words::addWord(__jni_impl::android::content::Context arg0, const QString &arg1, jint arg2, const QString &arg3, __jni_impl::java::util::Locale arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.provider.UserDictionary$Words",
+			"addWord",
+			"(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Ljava/util/Locale;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			QAndroidJniObject::fromString(arg3).object<jstring>(),
 			arg4.__jniObject().object()
 		);
 	}

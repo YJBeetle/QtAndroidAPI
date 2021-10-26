@@ -90,7 +90,9 @@ namespace __jni_impl::java::time
 		jobject query(__jni_impl::__JniBaseClass arg0);
 		jboolean isSupported(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject parse(jstring arg0, __jni_impl::java::time::format::DateTimeFormatter arg1);
+		static QAndroidJniObject parse(const QString &arg0, __jni_impl::java::time::format::DateTimeFormatter arg1);
 		static QAndroidJniObject parse(jstring arg0);
+		static QAndroidJniObject parse(const QString &arg0);
 		QAndroidJniObject range(__jni_impl::__JniBaseClass arg0);
 		jint getNano();
 		static QAndroidJniObject ofEpochSecond(jlong arg0, jint arg1, __jni_impl::java::time::ZoneOffset arg2);
@@ -384,6 +386,16 @@ namespace __jni_impl::java::time
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject LocalDateTime::parse(const QString &arg0, __jni_impl::java::time::format::DateTimeFormatter arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.LocalDateTime",
+			"parse",
+			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/LocalDateTime;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject LocalDateTime::parse(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -391,6 +403,15 @@ namespace __jni_impl::java::time
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/LocalDateTime;",
 			arg0
+		);
+	}
+	QAndroidJniObject LocalDateTime::parse(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.LocalDateTime",
+			"parse",
+			"(Ljava/lang/CharSequence;)Ljava/time/LocalDateTime;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject LocalDateTime::range(__jni_impl::__JniBaseClass arg0)

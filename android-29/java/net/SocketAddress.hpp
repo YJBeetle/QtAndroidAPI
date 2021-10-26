@@ -30,7 +30,8 @@ namespace __jni_impl::java::net
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.SocketAddress",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

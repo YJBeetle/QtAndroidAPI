@@ -46,14 +46,16 @@ namespace __jni_impl::android::telephony::gsm
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.gsm.GsmCellLocation",
-			"()V");
+			"()V"
+		);
 	}
 	void GsmCellLocation::__constructor(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.gsm.GsmCellLocation",
 			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

@@ -18,6 +18,7 @@ namespace __jni_impl::java::security::spec
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -33,14 +34,24 @@ namespace __jni_impl::java::security::spec
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.InvalidParameterSpecException",
-			"()V");
+			"()V"
+		);
 	}
 	void InvalidParameterSpecException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.spec.InvalidParameterSpecException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void InvalidParameterSpecException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.spec.InvalidParameterSpecException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

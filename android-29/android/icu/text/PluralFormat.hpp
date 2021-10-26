@@ -53,12 +53,17 @@ namespace __jni_impl::android::icu::text
 		
 		// Constructors
 		void __constructor(__jni_impl::android::icu::util::ULocale arg0, jstring arg1);
+		void __constructor(__jni_impl::android::icu::util::ULocale arg0, const QString &arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1);
 		void __constructor(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1);
 		void __constructor(__jni_impl::android::icu::text::PluralRules arg0, jstring arg1);
+		void __constructor(__jni_impl::android::icu::text::PluralRules arg0, const QString &arg1);
 		void __constructor(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::PluralRules arg1, jstring arg2);
+		void __constructor(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::PluralRules arg1, const QString &arg2);
 		void __constructor(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1, jstring arg2);
+		void __constructor(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1, const QString &arg2);
 		void __constructor();
 		void __constructor(__jni_impl::android::icu::util::ULocale arg0);
 		void __constructor(__jni_impl::java::util::Locale arg0);
@@ -74,9 +79,12 @@ namespace __jni_impl::android::icu::text
 		jstring format(jdouble arg0);
 		QAndroidJniObject format(jobject arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
 		QAndroidJniObject parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		QAndroidJniObject parse(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
 		void applyPattern(jstring arg0);
+		void applyPattern(const QString &arg0);
 		jstring toPattern();
 		jobject parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		jobject parseObject(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
 		void setNumberFormat(__jni_impl::android::icu::text::NumberFormat arg0);
 	};
 } // namespace __jni_impl::android::icu::text
@@ -102,14 +110,33 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.PluralFormat",
 			"(Landroid/icu/util/ULocale;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void PluralFormat::__constructor(__jni_impl::android::icu::util::ULocale arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.text.PluralFormat",
+			"(Landroid/icu/util/ULocale;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void PluralFormat::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.PluralFormat",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void PluralFormat::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.text.PluralFormat",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void PluralFormat::__constructor(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1)
 	{
@@ -117,7 +144,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.PluralFormat",
 			"(Ljava/util/Locale;Landroid/icu/text/PluralRules$PluralType;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void PluralFormat::__constructor(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1)
 	{
@@ -125,7 +153,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.PluralFormat",
 			"(Landroid/icu/util/ULocale;Landroid/icu/text/PluralRules$PluralType;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void PluralFormat::__constructor(__jni_impl::android::icu::text::PluralRules arg0, jstring arg1)
 	{
@@ -133,7 +162,17 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.PluralFormat",
 			"(Landroid/icu/text/PluralRules;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void PluralFormat::__constructor(__jni_impl::android::icu::text::PluralRules arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.text.PluralFormat",
+			"(Landroid/icu/text/PluralRules;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void PluralFormat::__constructor(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::PluralRules arg1, jstring arg2)
 	{
@@ -142,7 +181,18 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/util/ULocale;Landroid/icu/text/PluralRules;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
+	}
+	void PluralFormat::__constructor(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::PluralRules arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.text.PluralFormat",
+			"(Landroid/icu/util/ULocale;Landroid/icu/text/PluralRules;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	void PluralFormat::__constructor(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1, jstring arg2)
 	{
@@ -151,27 +201,41 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/util/ULocale;Landroid/icu/text/PluralRules$PluralType;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
+	}
+	void PluralFormat::__constructor(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.text.PluralFormat",
+			"(Landroid/icu/util/ULocale;Landroid/icu/text/PluralRules$PluralType;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	void PluralFormat::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.PluralFormat",
-			"()V");
+			"()V"
+		);
 	}
 	void PluralFormat::__constructor(__jni_impl::android::icu::util::ULocale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.PluralFormat",
 			"(Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PluralFormat::__constructor(__jni_impl::java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.PluralFormat",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PluralFormat::__constructor(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::PluralRules arg1)
 	{
@@ -179,7 +243,8 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.PluralFormat",
 			"(Ljava/util/Locale;Landroid/icu/text/PluralRules;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void PluralFormat::__constructor(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::PluralRules arg1)
 	{
@@ -187,14 +252,16 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.PluralFormat",
 			"(Landroid/icu/util/ULocale;Landroid/icu/text/PluralRules;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void PluralFormat::__constructor(__jni_impl::android::icu::text::PluralRules arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.PluralFormat",
 			"(Landroid/icu/text/PluralRules;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -255,12 +322,29 @@ namespace __jni_impl::android::icu::text
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject PluralFormat::parse(const QString &arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callObjectMethod(
+			"parse",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	void PluralFormat::applyPattern(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"applyPattern",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void PluralFormat::applyPattern(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"applyPattern",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring PluralFormat::toPattern()
@@ -276,6 +360,15 @@ namespace __jni_impl::android::icu::text
 			"parseObject",
 			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
 			arg0,
+			arg1.__jniObject().object()
+		).object<jobject>();
+	}
+	jobject PluralFormat::parseObject(const QString &arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callObjectMethod(
+			"parseObject",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jobject>();
 	}

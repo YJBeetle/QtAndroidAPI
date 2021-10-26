@@ -23,15 +23,18 @@ namespace __jni_impl::android::app
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		QAndroidJniObject build();
+		QAndroidJniObject setAllowDataType(jstring arg0, jboolean arg1);
+		QAndroidJniObject setAllowDataType(const QString &arg0, jboolean arg1);
+		QAndroidJniObject setChoices(jarray arg0);
 		QAndroidJniObject setAllowFreeFormInput(jboolean arg0);
 		QAndroidJniObject setEditChoicesBeforeSending(jint arg0);
-		QAndroidJniObject setAllowDataType(jstring arg0, jboolean arg1);
 		QAndroidJniObject getExtras();
-		QAndroidJniObject setChoices(jarray arg0);
 		QAndroidJniObject setLabel(jstring arg0);
+		QAndroidJniObject setLabel(const QString &arg0);
 		QAndroidJniObject addExtras(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::app
@@ -49,7 +52,16 @@ namespace __jni_impl::android::app
 		__thiz = QAndroidJniObject(
 			"android.app.RemoteInput$Builder",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void RemoteInput_Builder::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.RemoteInput$Builder",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -58,6 +70,32 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/app/RemoteInput;"
+		);
+	}
+	QAndroidJniObject RemoteInput_Builder::setAllowDataType(jstring arg0, jboolean arg1)
+	{
+		return __thiz.callObjectMethod(
+			"setAllowDataType",
+			"(Ljava/lang/String;Z)Landroid/app/RemoteInput$Builder;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject RemoteInput_Builder::setAllowDataType(const QString &arg0, jboolean arg1)
+	{
+		return __thiz.callObjectMethod(
+			"setAllowDataType",
+			"(Ljava/lang/String;Z)Landroid/app/RemoteInput$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	QAndroidJniObject RemoteInput_Builder::setChoices(jarray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setChoices",
+			"([Ljava/lang/CharSequence;)Landroid/app/RemoteInput$Builder;",
+			arg0
 		);
 	}
 	QAndroidJniObject RemoteInput_Builder::setAllowFreeFormInput(jboolean arg0)
@@ -76,28 +114,11 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
-	QAndroidJniObject RemoteInput_Builder::setAllowDataType(jstring arg0, jboolean arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setAllowDataType",
-			"(Ljava/lang/String;Z)Landroid/app/RemoteInput$Builder;",
-			arg0,
-			arg1
-		);
-	}
 	QAndroidJniObject RemoteInput_Builder::getExtras()
 	{
 		return __thiz.callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
-		);
-	}
-	QAndroidJniObject RemoteInput_Builder::setChoices(jarray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setChoices",
-			"([Ljava/lang/CharSequence;)Landroid/app/RemoteInput$Builder;",
-			arg0
 		);
 	}
 	QAndroidJniObject RemoteInput_Builder::setLabel(jstring arg0)
@@ -106,6 +127,14 @@ namespace __jni_impl::android::app
 			"setLabel",
 			"(Ljava/lang/CharSequence;)Landroid/app/RemoteInput$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject RemoteInput_Builder::setLabel(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setLabel",
+			"(Ljava/lang/CharSequence;)Landroid/app/RemoteInput$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject RemoteInput_Builder::addExtras(__jni_impl::android::os::Bundle arg0)

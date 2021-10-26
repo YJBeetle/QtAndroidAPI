@@ -22,8 +22,8 @@ namespace __jni_impl::android::database
 		void __constructor(__jni_impl::android::database::AbstractCursor arg0);
 		
 		// Methods
-		void onChange(jboolean arg0);
 		jboolean deliverSelfNotifications();
+		void onChange(jboolean arg0);
 	};
 } // namespace __jni_impl::android::database
 
@@ -39,23 +39,24 @@ namespace __jni_impl::android::database
 		__thiz = QAndroidJniObject(
 			"android.database.AbstractCursor$SelfContentObserver",
 			"(Landroid/database/AbstractCursor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
+	jboolean AbstractCursor_SelfContentObserver::deliverSelfNotifications()
+	{
+		return __thiz.callMethod<jboolean>(
+			"deliverSelfNotifications",
+			"()Z"
+		);
+	}
 	void AbstractCursor_SelfContentObserver::onChange(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"onChange",
 			"(Z)V",
 			arg0
-		);
-	}
-	jboolean AbstractCursor_SelfContentObserver::deliverSelfNotifications()
-	{
-		return __thiz.callMethod<jboolean>(
-			"deliverSelfNotifications",
-			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::database

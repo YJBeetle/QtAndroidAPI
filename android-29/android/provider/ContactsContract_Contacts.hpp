@@ -48,6 +48,7 @@ namespace __jni_impl::android::provider
 		// Methods
 		static QAndroidJniObject getLookupUri(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1);
 		static QAndroidJniObject getLookupUri(jlong arg0, jstring arg1);
+		static QAndroidJniObject getLookupUri(jlong arg0, const QString &arg1);
 		static QAndroidJniObject lookupContact(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1);
 		static void markAsContacted(__jni_impl::android::content::ContentResolver arg0, jlong arg1);
 		static jboolean isEnterpriseContactId(jlong arg0);
@@ -227,6 +228,16 @@ namespace __jni_impl::android::provider
 			"(JLjava/lang/String;)Landroid/net/Uri;",
 			arg0,
 			arg1
+		);
+	}
+	QAndroidJniObject ContactsContract_Contacts::getLookupUri(jlong arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.ContactsContract$Contacts",
+			"getLookupUri",
+			"(JLjava/lang/String;)Landroid/net/Uri;",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject ContactsContract_Contacts::lookupContact(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1)

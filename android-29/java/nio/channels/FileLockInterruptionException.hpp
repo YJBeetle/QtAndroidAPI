@@ -32,7 +32,8 @@ namespace __jni_impl::java::nio::channels
 	{
 		__thiz = QAndroidJniObject(
 			"java.nio.channels.FileLockInterruptionException",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

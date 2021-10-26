@@ -45,6 +45,7 @@ namespace __jni_impl::android::provider
 		
 		// Methods
 		static QAndroidJniObject buildSourceUri(jstring arg0);
+		static QAndroidJniObject buildSourceUri(const QString &arg0);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -253,6 +254,15 @@ namespace __jni_impl::android::provider
 			"buildSourceUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
 			arg0
+		);
+	}
+	QAndroidJniObject VoicemailContract_Voicemails::buildSourceUri(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.VoicemailContract$Voicemails",
+			"buildSourceUri",
+			"(Ljava/lang/String;)Landroid/net/Uri;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::provider

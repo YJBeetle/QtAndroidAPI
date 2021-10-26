@@ -42,7 +42,8 @@ namespace __jni_impl::android::view::textclassifier
 		__thiz = QAndroidJniObject(
 			"android.view.textclassifier.TextClassifierEvent$TextSelectionEvent$Builder",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

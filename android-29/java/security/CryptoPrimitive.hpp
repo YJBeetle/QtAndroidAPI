@@ -30,6 +30,7 @@ namespace __jni_impl::java::security
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::java::security
 
@@ -142,6 +143,15 @@ namespace __jni_impl::java::security
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/security/CryptoPrimitive;",
 			arg0
+		);
+	}
+	QAndroidJniObject CryptoPrimitive::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.CryptoPrimitive",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/security/CryptoPrimitive;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::security

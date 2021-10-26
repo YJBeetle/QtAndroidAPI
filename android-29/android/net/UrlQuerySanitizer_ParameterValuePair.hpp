@@ -21,6 +21,7 @@ namespace __jni_impl::android::net
 		
 		// Constructors
 		void __constructor(__jni_impl::android::net::UrlQuerySanitizer arg0, jstring arg1, jstring arg2);
+		void __constructor(__jni_impl::android::net::UrlQuerySanitizer arg0, const QString &arg1, const QString &arg2);
 		
 		// Methods
 	};
@@ -54,7 +55,18 @@ namespace __jni_impl::android::net
 			"(Landroid/net/UrlQuerySanitizer;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void UrlQuerySanitizer_ParameterValuePair::__constructor(__jni_impl::android::net::UrlQuerySanitizer arg0, const QString &arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.net.UrlQuerySanitizer$ParameterValuePair",
+			"(Landroid/net/UrlQuerySanitizer;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	
 	// Methods

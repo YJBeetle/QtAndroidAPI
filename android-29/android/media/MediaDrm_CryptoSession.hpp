@@ -23,8 +23,8 @@ namespace __jni_impl::android::media
 		// Methods
 		jbyteArray sign(jbyteArray arg0, jbyteArray arg1);
 		jboolean verify(jbyteArray arg0, jbyteArray arg1, jbyteArray arg2);
-		jbyteArray decrypt(jbyteArray arg0, jbyteArray arg1, jbyteArray arg2);
 		jbyteArray encrypt(jbyteArray arg0, jbyteArray arg1, jbyteArray arg2);
+		jbyteArray decrypt(jbyteArray arg0, jbyteArray arg1, jbyteArray arg2);
 	};
 } // namespace __jni_impl::android::media
 
@@ -62,20 +62,20 @@ namespace __jni_impl::android::media
 			arg2
 		);
 	}
-	jbyteArray MediaDrm_CryptoSession::decrypt(jbyteArray arg0, jbyteArray arg1, jbyteArray arg2)
+	jbyteArray MediaDrm_CryptoSession::encrypt(jbyteArray arg0, jbyteArray arg1, jbyteArray arg2)
 	{
 		return __thiz.callObjectMethod(
-			"decrypt",
+			"encrypt",
 			"([B[B[B)[B",
 			arg0,
 			arg1,
 			arg2
 		).object<jbyteArray>();
 	}
-	jbyteArray MediaDrm_CryptoSession::encrypt(jbyteArray arg0, jbyteArray arg1, jbyteArray arg2)
+	jbyteArray MediaDrm_CryptoSession::decrypt(jbyteArray arg0, jbyteArray arg1, jbyteArray arg2)
 	{
 		return __thiz.callObjectMethod(
-			"encrypt",
+			"decrypt",
 			"([B[B[B)[B",
 			arg0,
 			arg1,

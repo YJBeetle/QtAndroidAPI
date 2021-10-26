@@ -33,15 +33,15 @@ namespace __jni_impl::android::content::res
 		jstring toString();
 		static QAndroidJniObject valueOf(jint arg0);
 		jboolean isOpaque();
+		jint getColorForState(jintArray arg0, jint arg1);
+		QAndroidJniObject withAlpha(jint arg0);
+		jint getDefaultColor();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getChangingConfigurations();
 		jboolean isStateful();
 		static QAndroidJniObject createFromXml(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1);
 		static QAndroidJniObject createFromXml(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::content::res::Resources_Theme arg2);
-		jint getColorForState(jintArray arg0, jint arg1);
-		QAndroidJniObject withAlpha(jint arg0);
-		jint getDefaultColor();
 	};
 } // namespace __jni_impl::android::content::res
 
@@ -68,7 +68,8 @@ namespace __jni_impl::android::content::res
 			"android.content.res.ColorStateList",
 			"([[I[I)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -93,6 +94,30 @@ namespace __jni_impl::android::content::res
 		return __thiz.callMethod<jboolean>(
 			"isOpaque",
 			"()Z"
+		);
+	}
+	jint ColorStateList::getColorForState(jintArray arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getColorForState",
+			"([II)I",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject ColorStateList::withAlpha(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"withAlpha",
+			"(I)Landroid/content/res/ColorStateList;",
+			arg0
+		);
+	}
+	jint ColorStateList::getDefaultColor()
+	{
+		return __thiz.callMethod<jint>(
+			"getDefaultColor",
+			"()I"
 		);
 	}
 	jint ColorStateList::describeContents()
@@ -144,30 +169,6 @@ namespace __jni_impl::android::content::res
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
-		);
-	}
-	jint ColorStateList::getColorForState(jintArray arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"getColorForState",
-			"([II)I",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject ColorStateList::withAlpha(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"withAlpha",
-			"(I)Landroid/content/res/ColorStateList;",
-			arg0
-		);
-	}
-	jint ColorStateList::getDefaultColor()
-	{
-		return __thiz.callMethod<jint>(
-			"getDefaultColor",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::content::res

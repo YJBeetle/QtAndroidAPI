@@ -50,13 +50,15 @@ namespace __jni_impl::java::io
 		__thiz = QAndroidJniObject(
 			"java.io.PipedReader",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void PipedReader::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PipedReader",
-			"()V");
+			"()V"
+		);
 	}
 	void PipedReader::__constructor(__jni_impl::java::io::PipedWriter arg0, jint arg1)
 	{
@@ -64,14 +66,16 @@ namespace __jni_impl::java::io
 			"java.io.PipedReader",
 			"(Ljava/io/PipedWriter;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void PipedReader::__constructor(__jni_impl::java::io::PipedWriter arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PipedReader",
 			"(Ljava/io/PipedWriter;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

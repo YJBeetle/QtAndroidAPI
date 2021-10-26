@@ -22,6 +22,7 @@ namespace __jni_impl::android::telecom
 		
 		// Methods
 		void write(jstring arg0);
+		void write(const QString &arg0);
 		jstring read();
 		jstring readImmediately();
 	};
@@ -48,6 +49,14 @@ namespace __jni_impl::android::telecom
 			"write",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void Connection_RttTextStream::write(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"write",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring Connection_RttTextStream::read()

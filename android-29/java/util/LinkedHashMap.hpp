@@ -53,21 +53,24 @@ namespace __jni_impl::java::util
 			"(IFZ)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void LinkedHashMap::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.LinkedHashMap",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void LinkedHashMap::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.LinkedHashMap",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void LinkedHashMap::__constructor(jint arg0, jfloat arg1)
 	{
@@ -75,13 +78,15 @@ namespace __jni_impl::java::util
 			"java.util.LinkedHashMap",
 			"(IF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void LinkedHashMap::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.LinkedHashMap",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

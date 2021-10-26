@@ -20,7 +20,9 @@ namespace __jni_impl::android::content::pm
 		
 		// Constructors
 		void __constructor(jstring arg0, jint arg1);
+		void __constructor(const QString &arg0, jint arg1);
 		void __constructor(jstring arg0, jlong arg1);
+		void __constructor(const QString &arg0, jlong arg1);
 		
 		// Methods
 		jstring toString();
@@ -53,7 +55,17 @@ namespace __jni_impl::android::content::pm
 			"android.content.pm.VersionedPackage",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void VersionedPackage::__constructor(const QString &arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.pm.VersionedPackage",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void VersionedPackage::__constructor(jstring arg0, jlong arg1)
 	{
@@ -61,7 +73,17 @@ namespace __jni_impl::android::content::pm
 			"android.content.pm.VersionedPackage",
 			"(Ljava/lang/String;J)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void VersionedPackage::__constructor(const QString &arg0, jlong arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.pm.VersionedPackage",
+			"(Ljava/lang/String;J)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods

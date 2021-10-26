@@ -10,10 +10,6 @@ namespace __jni_impl::android::view
 {
 	class KeyEvent_DispatcherState;
 }
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::view
 {
 	class KeyCharacterMap;
@@ -21,6 +17,10 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::view
 {
 	class KeyCharacterMap_KeyData;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::view
@@ -360,6 +360,7 @@ namespace __jni_impl::android::view
 		void __constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8);
 		void __constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
 		void __constructor(jlong arg0, jstring arg1, jint arg2, jint arg3);
+		void __constructor(jlong arg0, const QString &arg1, jint arg2, jint arg3);
 		void __constructor(__jni_impl::android::view::KeyEvent arg0);
 		void __constructor(__jni_impl::android::view::KeyEvent arg0, jlong arg1, jint arg2);
 		void __constructor(jint arg0, jint arg1);
@@ -368,17 +369,14 @@ namespace __jni_impl::android::view
 		void __constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
 		
 		// Methods
-		jboolean dispatch(__jni_impl::__JniBaseClass arg0);
 		jboolean dispatch(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::KeyEvent_DispatcherState arg1, jobject arg2);
+		jboolean dispatch(__jni_impl::__JniBaseClass arg0);
 		jstring toString();
 		jint getModifiers();
 		jboolean isSystem();
 		jint getSource();
 		jint getFlags();
 		jchar getNumber();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getAction();
-		jboolean isCanceled();
 		static jint getMaxKeyCode();
 		static jint getDeadChar(jint arg0, jint arg1);
 		static QAndroidJniObject changeTimeRepeat(__jni_impl::android::view::KeyEvent arg0, jlong arg1, jint arg2);
@@ -419,18 +417,22 @@ namespace __jni_impl::android::view
 		jint getUnicodeChar(jint arg0);
 		jint getUnicodeChar();
 		jboolean getKeyData(__jni_impl::android::view::KeyCharacterMap_KeyData arg0);
-		jchar getMatch(jcharArray arg0, jint arg1);
 		jchar getMatch(jcharArray arg0);
+		jchar getMatch(jcharArray arg0, jint arg1);
 		jboolean isPrintingKey();
 		static jstring keyCodeToString(jint arg0);
 		static jint keyCodeFromString(jstring arg0);
+		static jint keyCodeFromString(const QString &arg0);
+		jint getAction();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jboolean isCanceled();
 	};
 } // namespace __jni_impl::android::view
 
 #include "KeyEvent_DispatcherState.hpp"
-#include "../os/Parcel.hpp"
 #include "KeyCharacterMap.hpp"
 #include "KeyCharacterMap_KeyData.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -2733,7 +2735,8 @@ namespace __jni_impl::android::view
 			arg5,
 			arg6,
 			arg7,
-			arg8);
+			arg8
+		);
 	}
 	void KeyEvent::__constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
 	{
@@ -2749,7 +2752,8 @@ namespace __jni_impl::android::view
 			arg6,
 			arg7,
 			arg8,
-			arg9);
+			arg9
+		);
 	}
 	void KeyEvent::__constructor(jlong arg0, jstring arg1, jint arg2, jint arg3)
 	{
@@ -2759,14 +2763,27 @@ namespace __jni_impl::android::view
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void KeyEvent::__constructor(jlong arg0, const QString &arg1, jint arg2, jint arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.KeyEvent",
+			"(JLjava/lang/String;II)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3
+		);
 	}
 	void KeyEvent::__constructor(__jni_impl::android::view::KeyEvent arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.KeyEvent",
 			"(Landroid/view/KeyEvent;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void KeyEvent::__constructor(__jni_impl::android::view::KeyEvent arg0, jlong arg1, jint arg2)
 	{
@@ -2775,7 +2792,8 @@ namespace __jni_impl::android::view
 			"(Landroid/view/KeyEvent;JI)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void KeyEvent::__constructor(jint arg0, jint arg1)
 	{
@@ -2783,7 +2801,8 @@ namespace __jni_impl::android::view
 			"android.view.KeyEvent",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void KeyEvent::__constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4)
 	{
@@ -2794,7 +2813,8 @@ namespace __jni_impl::android::view
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void KeyEvent::__constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
@@ -2806,7 +2826,8 @@ namespace __jni_impl::android::view
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	void KeyEvent::__constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
 	{
@@ -2820,18 +2841,11 @@ namespace __jni_impl::android::view
 			arg4,
 			arg5,
 			arg6,
-			arg7);
+			arg7
+		);
 	}
 	
 	// Methods
-	jboolean KeyEvent::dispatch(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatch",
-			"(Landroid/view/KeyEvent$Callback;)Z",
-			arg0.__jniObject().object()
-		);
-	}
 	jboolean KeyEvent::dispatch(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::KeyEvent_DispatcherState arg1, jobject arg2)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -2840,6 +2854,14 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2
+		);
+	}
+	jboolean KeyEvent::dispatch(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatch",
+			"(Landroid/view/KeyEvent$Callback;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 	jstring KeyEvent::toString()
@@ -2882,29 +2904,6 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jchar>(
 			"getNumber",
 			"()C"
-		);
-	}
-	void KeyEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jint KeyEvent::getAction()
-	{
-		return __thiz.callMethod<jint>(
-			"getAction",
-			"()I"
-		);
-	}
-	jboolean KeyEvent::isCanceled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isCanceled",
-			"()Z"
 		);
 	}
 	jint KeyEvent::getMaxKeyCode()
@@ -3222,6 +3221,14 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
+	jchar KeyEvent::getMatch(jcharArray arg0)
+	{
+		return __thiz.callMethod<jchar>(
+			"getMatch",
+			"([C)C",
+			arg0
+		);
+	}
 	jchar KeyEvent::getMatch(jcharArray arg0, jint arg1)
 	{
 		return __thiz.callMethod<jchar>(
@@ -3229,14 +3236,6 @@ namespace __jni_impl::android::view
 			"([CI)C",
 			arg0,
 			arg1
-		);
-	}
-	jchar KeyEvent::getMatch(jcharArray arg0)
-	{
-		return __thiz.callMethod<jchar>(
-			"getMatch",
-			"([C)C",
-			arg0
 		);
 	}
 	jboolean KeyEvent::isPrintingKey()
@@ -3262,6 +3261,38 @@ namespace __jni_impl::android::view
 			"keyCodeFromString",
 			"(Ljava/lang/String;)I",
 			arg0
+		);
+	}
+	jint KeyEvent::keyCodeFromString(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.KeyEvent",
+			"keyCodeFromString",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jint KeyEvent::getAction()
+	{
+		return __thiz.callMethod<jint>(
+			"getAction",
+			"()I"
+		);
+	}
+	void KeyEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jboolean KeyEvent::isCanceled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isCanceled",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::view

@@ -318,7 +318,8 @@ namespace __jni_impl::android::app::admin
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.admin.SecurityLog",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

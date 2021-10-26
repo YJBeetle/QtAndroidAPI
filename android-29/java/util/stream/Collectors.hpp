@@ -62,7 +62,9 @@ namespace __jni_impl::java::util::stream
 		
 		// Methods
 		static QAndroidJniObject joining(jstring arg0);
+		static QAndroidJniObject joining(const QString &arg0);
 		static QAndroidJniObject joining(jstring arg0, jstring arg1, jstring arg2);
+		static QAndroidJniObject joining(const QString &arg0, const QString &arg1, const QString &arg2);
 		static QAndroidJniObject joining();
 		static QAndroidJniObject toList();
 		static QAndroidJniObject toMap(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
@@ -142,6 +144,15 @@ namespace __jni_impl::java::util::stream
 			arg0
 		);
 	}
+	QAndroidJniObject Collectors::joining(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.stream.Collectors",
+			"joining",
+			"(Ljava/lang/CharSequence;)Ljava/util/stream/Collector;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject Collectors::joining(jstring arg0, jstring arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -151,6 +162,17 @@ namespace __jni_impl::java::util::stream
 			arg0,
 			arg1,
 			arg2
+		);
+	}
+	QAndroidJniObject Collectors::joining(const QString &arg0, const QString &arg1, const QString &arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.stream.Collectors",
+			"joining",
+			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/util/stream/Collector;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	QAndroidJniObject Collectors::joining()

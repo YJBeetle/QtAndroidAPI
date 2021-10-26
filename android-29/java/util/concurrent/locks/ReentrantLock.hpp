@@ -57,14 +57,16 @@ namespace __jni_impl::java::util::concurrent::locks
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.locks.ReentrantLock",
-			"()V");
+			"()V"
+		);
 	}
 	void ReentrantLock::__constructor(jboolean arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.locks.ReentrantLock",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

@@ -37,7 +37,8 @@ namespace __jni_impl::java::util
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Dictionary",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

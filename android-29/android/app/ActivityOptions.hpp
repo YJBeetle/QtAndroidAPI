@@ -55,6 +55,7 @@ namespace __jni_impl::android::app
 		static QAndroidJniObject makeThumbnailScaleUpAnimation(__jni_impl::android::view::View arg0, __jni_impl::android::graphics::Bitmap arg1, jint arg2, jint arg3);
 		static QAndroidJniObject makeSceneTransitionAnimation(__jni_impl::android::app::Activity arg0, jarray arg1);
 		static QAndroidJniObject makeSceneTransitionAnimation(__jni_impl::android::app::Activity arg0, __jni_impl::android::view::View arg1, jstring arg2);
+		static QAndroidJniObject makeSceneTransitionAnimation(__jni_impl::android::app::Activity arg0, __jni_impl::android::view::View arg1, const QString &arg2);
 		static QAndroidJniObject makeTaskLaunchBehind();
 		static QAndroidJniObject makeBasic();
 		QAndroidJniObject setLaunchBounds(__jni_impl::android::graphics::Rect arg0);
@@ -189,6 +190,17 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2
+		);
+	}
+	QAndroidJniObject ActivityOptions::makeSceneTransitionAnimation(__jni_impl::android::app::Activity arg0, __jni_impl::android::view::View arg1, const QString &arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.ActivityOptions",
+			"makeSceneTransitionAnimation",
+			"(Landroid/app/Activity;Landroid/view/View;Ljava/lang/String;)Landroid/app/ActivityOptions;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	QAndroidJniObject ActivityOptions::makeTaskLaunchBehind()

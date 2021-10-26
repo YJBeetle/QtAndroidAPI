@@ -37,7 +37,9 @@ namespace __jni_impl::java::net
 		jboolean isLinkLocalAddress();
 		jint getScopeId();
 		static QAndroidJniObject getByAddress(jstring arg0, jbyteArray arg1, jint arg2);
+		static QAndroidJniObject getByAddress(const QString &arg0, jbyteArray arg1, jint arg2);
 		static QAndroidJniObject getByAddress(jstring arg0, jbyteArray arg1, __jni_impl::java::net::NetworkInterface arg2);
+		static QAndroidJniObject getByAddress(const QString &arg0, jbyteArray arg1, __jni_impl::java::net::NetworkInterface arg2);
 		jboolean isMulticastAddress();
 		jboolean isAnyLocalAddress();
 		jboolean isLoopbackAddress();
@@ -123,6 +125,17 @@ namespace __jni_impl::java::net
 			arg2
 		);
 	}
+	QAndroidJniObject Inet6Address::getByAddress(const QString &arg0, jbyteArray arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.net.Inet6Address",
+			"getByAddress",
+			"(Ljava/lang/String;[BI)Ljava/net/Inet6Address;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2
+		);
+	}
 	QAndroidJniObject Inet6Address::getByAddress(jstring arg0, jbyteArray arg1, __jni_impl::java::net::NetworkInterface arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -130,6 +143,17 @@ namespace __jni_impl::java::net
 			"getByAddress",
 			"(Ljava/lang/String;[BLjava/net/NetworkInterface;)Ljava/net/Inet6Address;",
 			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Inet6Address::getByAddress(const QString &arg0, jbyteArray arg1, __jni_impl::java::net::NetworkInterface arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.net.Inet6Address",
+			"getByAddress",
+			"(Ljava/lang/String;[BLjava/net/NetworkInterface;)Ljava/net/Inet6Address;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object()
 		);

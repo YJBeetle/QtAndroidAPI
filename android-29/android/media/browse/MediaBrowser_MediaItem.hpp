@@ -30,12 +30,12 @@ namespace __jni_impl::android::media::browse
 		// Methods
 		jstring toString();
 		jint getFlags();
+		QAndroidJniObject getDescription();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jboolean isBrowsable();
 		jboolean isPlayable();
 		jstring getMediaId();
-		QAndroidJniObject getDescription();
 	};
 } // namespace __jni_impl::android::media::browse
 
@@ -75,7 +75,8 @@ namespace __jni_impl::android::media::browse
 			"android.media.browse.MediaBrowser$MediaItem",
 			"(Landroid/media/MediaDescription;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -91,6 +92,13 @@ namespace __jni_impl::android::media::browse
 		return __thiz.callMethod<jint>(
 			"getFlags",
 			"()I"
+		);
+	}
+	QAndroidJniObject MediaBrowser_MediaItem::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Landroid/media/MediaDescription;"
 		);
 	}
 	jint MediaBrowser_MediaItem::describeContents()
@@ -129,13 +137,6 @@ namespace __jni_impl::android::media::browse
 			"getMediaId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	QAndroidJniObject MediaBrowser_MediaItem::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Landroid/media/MediaDescription;"
-		);
 	}
 } // namespace __jni_impl::android::media::browse
 

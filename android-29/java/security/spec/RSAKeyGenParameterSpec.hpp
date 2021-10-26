@@ -59,7 +59,8 @@ namespace __jni_impl::java::security::spec
 			"java.security.spec.RSAKeyGenParameterSpec",
 			"(ILjava/math/BigInteger;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void RSAKeyGenParameterSpec::__constructor(jint arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -68,7 +69,8 @@ namespace __jni_impl::java::security::spec
 			"(ILjava/math/BigInteger;Ljava/security/spec/AlgorithmParameterSpec;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods

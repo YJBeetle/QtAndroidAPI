@@ -30,8 +30,6 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		jstring toString();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		static QAndroidJniObject newUnratedRating(jint arg0);
 		static QAndroidJniObject newHeartRating(jboolean arg0);
 		jboolean hasHeart();
@@ -43,6 +41,8 @@ namespace __jni_impl::android::media
 		jboolean isThumbUp();
 		jfloat getStarRating();
 		jfloat getPercentRating();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
 
@@ -124,22 +124,6 @@ namespace __jni_impl::android::media
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jint Rating::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void Rating::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
 	}
 	QAndroidJniObject Rating::newUnratedRating(jint arg0)
 	{
@@ -227,6 +211,22 @@ namespace __jni_impl::android::media
 		return __thiz.callMethod<jfloat>(
 			"getPercentRating",
 			"()F"
+		);
+	}
+	jint Rating::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void Rating::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::media

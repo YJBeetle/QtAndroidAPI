@@ -420,6 +420,7 @@ namespace __jni_impl::android::opengl
 		static void glGetUniformuiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetUniformuiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static jint glGetFragDataLocation(jint arg0, jstring arg1);
+		static jint glGetFragDataLocation(jint arg0, const QString &arg1);
 		static void glUniform1ui(jint arg0, jint arg1);
 		static void glUniform2ui(jint arg0, jint arg1, jint arg2);
 		static void glUniform3ui(jint arg0, jint arg1, jint arg2, jint arg3);
@@ -446,6 +447,7 @@ namespace __jni_impl::android::opengl
 		static void glGetActiveUniformsiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, jint arg3, __jni_impl::java::nio::IntBuffer arg4);
 		static void glGetActiveUniformsiv(jint arg0, jint arg1, jintArray arg2, jint arg3, jint arg4, jintArray arg5, jint arg6);
 		static jint glGetUniformBlockIndex(jint arg0, jstring arg1);
+		static jint glGetUniformBlockIndex(jint arg0, const QString &arg1);
 		static void glGetActiveUniformBlockiv(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4);
 		static void glGetActiveUniformBlockiv(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3);
 		static void glGetActiveUniformBlockName(jint arg0, jint arg1, __jni_impl::java::nio::Buffer arg2, __jni_impl::java::nio::Buffer arg3);
@@ -2659,7 +2661,8 @@ namespace __jni_impl::android::opengl
 	{
 		__thiz = QAndroidJniObject(
 			"android.opengl.GLES30",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -3619,6 +3622,16 @@ namespace __jni_impl::android::opengl
 			arg1
 		);
 	}
+	jint GLES30::glGetFragDataLocation(jint arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.opengl.GLES30",
+			"glGetFragDataLocation",
+			"(ILjava/lang/String;)I",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void GLES30::glUniform1ui(jint arg0, jint arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -3920,6 +3933,16 @@ namespace __jni_impl::android::opengl
 			"(ILjava/lang/String;)I",
 			arg0,
 			arg1
+		);
+	}
+	jint GLES30::glGetUniformBlockIndex(jint arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.opengl.GLES30",
+			"glGetUniformBlockIndex",
+			"(ILjava/lang/String;)I",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void GLES30::glGetActiveUniformBlockiv(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4)

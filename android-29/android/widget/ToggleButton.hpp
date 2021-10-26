@@ -32,14 +32,16 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jstring getTextOn();
-		void setTextOn(jstring arg0);
-		jstring getTextOff();
-		void setTextOff(jstring arg0);
-		jfloat getDisabledAlpha();
 		jstring getAccessibilityClassName();
 		void setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 		void setChecked(jboolean arg0);
+		jstring getTextOn();
+		void setTextOn(jstring arg0);
+		void setTextOn(const QString &arg0);
+		jstring getTextOff();
+		void setTextOff(jstring arg0);
+		void setTextOff(const QString &arg0);
+		jfloat getDisabledAlpha();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -56,7 +58,8 @@ namespace __jni_impl::android::widget
 		__thiz = QAndroidJniObject(
 			"android.widget.ToggleButton",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ToggleButton::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -64,7 +67,8 @@ namespace __jni_impl::android::widget
 			"android.widget.ToggleButton",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ToggleButton::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -73,7 +77,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void ToggleButton::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 	{
@@ -83,47 +88,11 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	
 	// Methods
-	jstring ToggleButton::getTextOn()
-	{
-		return __thiz.callObjectMethod(
-			"getTextOn",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	void ToggleButton::setTextOn(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTextOn",
-			"(Ljava/lang/CharSequence;)V",
-			arg0
-		);
-	}
-	jstring ToggleButton::getTextOff()
-	{
-		return __thiz.callObjectMethod(
-			"getTextOff",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	void ToggleButton::setTextOff(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTextOff",
-			"(Ljava/lang/CharSequence;)V",
-			arg0
-		);
-	}
-	jfloat ToggleButton::getDisabledAlpha()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getDisabledAlpha",
-			"()F"
-		);
-	}
 	jstring ToggleButton::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
@@ -145,6 +114,59 @@ namespace __jni_impl::android::widget
 			"setChecked",
 			"(Z)V",
 			arg0
+		);
+	}
+	jstring ToggleButton::getTextOn()
+	{
+		return __thiz.callObjectMethod(
+			"getTextOn",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	void ToggleButton::setTextOn(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTextOn",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void ToggleButton::setTextOn(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTextOn",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jstring ToggleButton::getTextOff()
+	{
+		return __thiz.callObjectMethod(
+			"getTextOff",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	void ToggleButton::setTextOff(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTextOff",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void ToggleButton::setTextOff(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTextOff",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jfloat ToggleButton::getDisabledAlpha()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getDisabledAlpha",
+			"()F"
 		);
 	}
 } // namespace __jni_impl::android::widget

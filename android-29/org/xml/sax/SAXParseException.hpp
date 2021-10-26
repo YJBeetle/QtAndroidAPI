@@ -21,15 +21,19 @@ namespace __jni_impl::org::xml::sax
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1, jstring arg2, jint arg3, jint arg4, __jni_impl::java::lang::Exception arg5);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2, jint arg3, jint arg4, __jni_impl::java::lang::Exception arg5);
 		void __constructor(jstring arg0, jstring arg1, jstring arg2, jint arg3, jint arg4);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2, jint arg3, jint arg4);
 		void __constructor(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::lang::Exception arg2);
+		void __constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::lang::Exception arg2);
 		void __constructor(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		void __constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
 		jstring toString();
 		jint getLineNumber();
-		jint getColumnNumber();
 		jstring getSystemId();
+		jint getColumnNumber();
 		jstring getPublicId();
 	};
 } // namespace __jni_impl::org::xml::sax
@@ -51,7 +55,21 @@ namespace __jni_impl::org::xml::sax
 			arg2,
 			arg3,
 			arg4,
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
+	}
+	void SAXParseException::__constructor(const QString &arg0, const QString &arg1, const QString &arg2, jint arg3, jint arg4, __jni_impl::java::lang::Exception arg5)
+	{
+		__thiz = QAndroidJniObject(
+			"org.xml.sax.SAXParseException",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/Exception;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3,
+			arg4,
+			arg5.__jniObject().object()
+		);
 	}
 	void SAXParseException::__constructor(jstring arg0, jstring arg1, jstring arg2, jint arg3, jint arg4)
 	{
@@ -62,7 +80,20 @@ namespace __jni_impl::org::xml::sax
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
+	}
+	void SAXParseException::__constructor(const QString &arg0, const QString &arg1, const QString &arg2, jint arg3, jint arg4)
+	{
+		__thiz = QAndroidJniObject(
+			"org.xml.sax.SAXParseException",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3,
+			arg4
+		);
 	}
 	void SAXParseException::__constructor(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::lang::Exception arg2)
 	{
@@ -71,7 +102,18 @@ namespace __jni_impl::org::xml::sax
 			"(Ljava/lang/String;Lorg/xml/sax/Locator;Ljava/lang/Exception;)V",
 			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void SAXParseException::__constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::lang::Exception arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"org.xml.sax.SAXParseException",
+			"(Ljava/lang/String;Lorg/xml/sax/Locator;Ljava/lang/Exception;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
 	}
 	void SAXParseException::__constructor(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -79,7 +121,17 @@ namespace __jni_impl::org::xml::sax
 			"org.xml.sax.SAXParseException",
 			"(Ljava/lang/String;Lorg/xml/sax/Locator;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void SAXParseException::__constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"org.xml.sax.SAXParseException",
+			"(Ljava/lang/String;Lorg/xml/sax/Locator;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -97,19 +149,19 @@ namespace __jni_impl::org::xml::sax
 			"()I"
 		);
 	}
-	jint SAXParseException::getColumnNumber()
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnNumber",
-			"()I"
-		);
-	}
 	jstring SAXParseException::getSystemId()
 	{
 		return __thiz.callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jint SAXParseException::getColumnNumber()
+	{
+		return __thiz.callMethod<jint>(
+			"getColumnNumber",
+			"()I"
+		);
 	}
 	jstring SAXParseException::getPublicId()
 	{

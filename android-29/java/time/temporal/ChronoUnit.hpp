@@ -41,6 +41,7 @@ namespace __jni_impl::java::time::temporal
 		jstring toString();
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 		jboolean isDateBased();
 		jboolean isTimeBased();
 		jboolean isSupportedBy(__jni_impl::__JniBaseClass arg0);
@@ -216,6 +217,15 @@ namespace __jni_impl::java::time::temporal
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/temporal/ChronoUnit;",
 			arg0
+		);
+	}
+	QAndroidJniObject ChronoUnit::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.temporal.ChronoUnit",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/time/temporal/ChronoUnit;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean ChronoUnit::isDateBased()

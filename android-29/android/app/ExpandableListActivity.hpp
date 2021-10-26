@@ -9,17 +9,17 @@
 #include "../view/ContextThemeWrapper.hpp"
 #include "Activity.hpp"
 
-namespace __jni_impl::android::widget
+namespace __jni_impl::android::os
 {
-	class ExpandableListView;
+	class Bundle;
 }
 namespace __jni_impl::android::view
 {
 	class View;
 }
-namespace __jni_impl::android::os
+namespace __jni_impl::android::widget
 {
-	class Bundle;
+	class ExpandableListView;
 }
 
 namespace __jni_impl::android::app
@@ -33,6 +33,8 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
+		void onContentChanged();
+		void onCreateContextMenu(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::View arg1, __jni_impl::__JniBaseClass arg2);
 		jboolean onChildClick(__jni_impl::android::widget::ExpandableListView arg0, __jni_impl::android::view::View arg1, jint arg2, jint arg3, jlong arg4);
 		void onGroupCollapse(jint arg0);
 		void onGroupExpand(jint arg0);
@@ -43,14 +45,12 @@ namespace __jni_impl::android::app
 		jlong getSelectedPosition();
 		jboolean setSelectedChild(jint arg0, jint arg1, jboolean arg2);
 		void setSelectedGroup(jint arg0);
-		void onContentChanged();
-		void onCreateContextMenu(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::View arg1, __jni_impl::__JniBaseClass arg2);
 	};
 } // namespace __jni_impl::android::app
 
-#include "../widget/ExpandableListView.hpp"
-#include "../view/View.hpp"
 #include "../os/Bundle.hpp"
+#include "../view/View.hpp"
+#include "../widget/ExpandableListView.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -61,10 +61,28 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ExpandableListActivity",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
+	void ExpandableListActivity::onContentChanged()
+	{
+		__thiz.callMethod<void>(
+			"onContentChanged",
+			"()V"
+		);
+	}
+	void ExpandableListActivity::onCreateContextMenu(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::View arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		__thiz.callMethod<void>(
+			"onCreateContextMenu",
+			"(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
 	jboolean ExpandableListActivity::onChildClick(__jni_impl::android::widget::ExpandableListView arg0, __jni_impl::android::view::View arg1, jint arg2, jint arg3, jlong arg4)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -145,23 +163,6 @@ namespace __jni_impl::android::app
 			"setSelectedGroup",
 			"(I)V",
 			arg0
-		);
-	}
-	void ExpandableListActivity::onContentChanged()
-	{
-		__thiz.callMethod<void>(
-			"onContentChanged",
-			"()V"
-		);
-	}
-	void ExpandableListActivity::onCreateContextMenu(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::View arg1, __jni_impl::__JniBaseClass arg2)
-	{
-		__thiz.callMethod<void>(
-			"onCreateContextMenu",
-			"(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::app

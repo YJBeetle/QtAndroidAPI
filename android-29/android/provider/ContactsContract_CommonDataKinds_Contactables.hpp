@@ -89,7 +89,8 @@ namespace __jni_impl::android::provider
 	{
 		__thiz = QAndroidJniObject(
 			"android.provider.ContactsContract$CommonDataKinds$Contactables",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

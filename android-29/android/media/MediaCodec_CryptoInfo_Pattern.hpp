@@ -35,7 +35,8 @@ namespace __jni_impl::android::media
 			"android.media.MediaCodec$CryptoInfo$Pattern",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

@@ -48,28 +48,34 @@ namespace __jni_impl::android::app
 		// Methods
 		jboolean isDestroyed();
 		QAndroidJniObject getFragment(__jni_impl::android::os::Bundle arg0, jstring arg1);
-		jboolean isStateSaved();
+		QAndroidJniObject getFragment(__jni_impl::android::os::Bundle arg0, const QString &arg1);
 		static void enableDebugLogging(jboolean arg0);
 		jboolean executePendingTransactions();
 		QAndroidJniObject findFragmentById(jint arg0);
 		QAndroidJniObject findFragmentByTag(jstring arg0);
+		QAndroidJniObject findFragmentByTag(const QString &arg0);
 		void popBackStack(jstring arg0, jint arg1);
+		void popBackStack(const QString &arg0, jint arg1);
 		void popBackStack(jint arg0, jint arg1);
 		void popBackStack();
 		jboolean popBackStackImmediate();
-		jboolean popBackStackImmediate(jint arg0, jint arg1);
 		jboolean popBackStackImmediate(jstring arg0, jint arg1);
+		jboolean popBackStackImmediate(const QString &arg0, jint arg1);
+		jboolean popBackStackImmediate(jint arg0, jint arg1);
 		jint getBackStackEntryCount();
 		QAndroidJniObject getBackStackEntryAt(jint arg0);
 		void addOnBackStackChangedListener(__jni_impl::__JniBaseClass arg0);
 		void removeOnBackStackChangedListener(__jni_impl::__JniBaseClass arg0);
 		void putFragment(__jni_impl::android::os::Bundle arg0, jstring arg1, __jni_impl::android::app::Fragment arg2);
+		void putFragment(__jni_impl::android::os::Bundle arg0, const QString &arg1, __jni_impl::android::app::Fragment arg2);
 		QAndroidJniObject getFragments();
 		QAndroidJniObject saveFragmentInstanceState(__jni_impl::android::app::Fragment arg0);
 		void registerFragmentLifecycleCallbacks(__jni_impl::android::app::FragmentManager_FragmentLifecycleCallbacks arg0, jboolean arg1);
 		void unregisterFragmentLifecycleCallbacks(__jni_impl::android::app::FragmentManager_FragmentLifecycleCallbacks arg0);
 		QAndroidJniObject getPrimaryNavigationFragment();
+		jboolean isStateSaved();
 		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
+		void dump(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
 		void invalidateOptionsMenu();
 		QAndroidJniObject beginTransaction();
 	};
@@ -99,7 +105,8 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.FragmentManager",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -119,11 +126,13 @@ namespace __jni_impl::android::app
 			arg1
 		);
 	}
-	jboolean FragmentManager::isStateSaved()
+	QAndroidJniObject FragmentManager::getFragment(__jni_impl::android::os::Bundle arg0, const QString &arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isStateSaved",
-			"()Z"
+		return __thiz.callObjectMethod(
+			"getFragment",
+			"(Landroid/os/Bundle;Ljava/lang/String;)Landroid/app/Fragment;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void FragmentManager::enableDebugLogging(jboolean arg0)
@@ -158,12 +167,29 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
+	QAndroidJniObject FragmentManager::findFragmentByTag(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"findFragmentByTag",
+			"(Ljava/lang/String;)Landroid/app/Fragment;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void FragmentManager::popBackStack(jstring arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
 			"popBackStack",
 			"(Ljava/lang/String;I)V",
 			arg0,
+			arg1
+		);
+	}
+	void FragmentManager::popBackStack(const QString &arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"popBackStack",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -190,20 +216,29 @@ namespace __jni_impl::android::app
 			"()Z"
 		);
 	}
-	jboolean FragmentManager::popBackStackImmediate(jint arg0, jint arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"popBackStackImmediate",
-			"(II)Z",
-			arg0,
-			arg1
-		);
-	}
 	jboolean FragmentManager::popBackStackImmediate(jstring arg0, jint arg1)
 	{
 		return __thiz.callMethod<jboolean>(
 			"popBackStackImmediate",
 			"(Ljava/lang/String;I)Z",
+			arg0,
+			arg1
+		);
+	}
+	jboolean FragmentManager::popBackStackImmediate(const QString &arg0, jint arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"popBackStackImmediate",
+			"(Ljava/lang/String;I)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	jboolean FragmentManager::popBackStackImmediate(jint arg0, jint arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"popBackStackImmediate",
+			"(II)Z",
 			arg0,
 			arg1
 		);
@@ -249,6 +284,16 @@ namespace __jni_impl::android::app
 			arg2.__jniObject().object()
 		);
 	}
+	void FragmentManager::putFragment(__jni_impl::android::os::Bundle arg0, const QString &arg1, __jni_impl::android::app::Fragment arg2)
+	{
+		__thiz.callMethod<void>(
+			"putFragment",
+			"(Landroid/os/Bundle;Ljava/lang/String;Landroid/app/Fragment;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
+	}
 	QAndroidJniObject FragmentManager::getFragments()
 	{
 		return __thiz.callObjectMethod(
@@ -288,12 +333,30 @@ namespace __jni_impl::android::app
 			"()Landroid/app/Fragment;"
 		);
 	}
+	jboolean FragmentManager::isStateSaved()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isStateSaved",
+			"()Z"
+		);
+	}
 	void FragmentManager::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
 	{
 		__thiz.callMethod<void>(
 			"dump",
 			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
 			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3
+		);
+	}
+	void FragmentManager::dump(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3

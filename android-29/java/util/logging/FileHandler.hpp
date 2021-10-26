@@ -29,11 +29,16 @@ namespace __jni_impl::java::util::logging
 		
 		// Constructors
 		void __constructor(jstring arg0, jint arg1, jint arg2);
+		void __constructor(const QString &arg0, jint arg1, jint arg2);
 		void __constructor(jstring arg0, jint arg1, jint arg2, jboolean arg3);
+		void __constructor(const QString &arg0, jint arg1, jint arg2, jboolean arg3);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor();
 		void __constructor(jstring arg0, jlong arg1, jint arg2, jboolean arg3);
+		void __constructor(const QString &arg0, jlong arg1, jint arg2, jboolean arg3);
 		void __constructor(jstring arg0, jboolean arg1);
+		void __constructor(const QString &arg0, jboolean arg1);
 		
 		// Methods
 		void close();
@@ -57,7 +62,18 @@ namespace __jni_impl::java::util::logging
 			"(Ljava/lang/String;II)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void FileHandler::__constructor(const QString &arg0, jint arg1, jint arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.logging.FileHandler",
+			"(Ljava/lang/String;II)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2
+		);
 	}
 	void FileHandler::__constructor(jstring arg0, jint arg1, jint arg2, jboolean arg3)
 	{
@@ -67,20 +83,42 @@ namespace __jni_impl::java::util::logging
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void FileHandler::__constructor(const QString &arg0, jint arg1, jint arg2, jboolean arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.logging.FileHandler",
+			"(Ljava/lang/String;IIZ)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2,
+			arg3
+		);
 	}
 	void FileHandler::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.logging.FileHandler",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void FileHandler::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.logging.FileHandler",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void FileHandler::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.logging.FileHandler",
-			"()V");
+			"()V"
+		);
 	}
 	void FileHandler::__constructor(jstring arg0, jlong arg1, jint arg2, jboolean arg3)
 	{
@@ -90,7 +128,19 @@ namespace __jni_impl::java::util::logging
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void FileHandler::__constructor(const QString &arg0, jlong arg1, jint arg2, jboolean arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.logging.FileHandler",
+			"(Ljava/lang/String;JIZ)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2,
+			arg3
+		);
 	}
 	void FileHandler::__constructor(jstring arg0, jboolean arg1)
 	{
@@ -98,7 +148,17 @@ namespace __jni_impl::java::util::logging
 			"java.util.logging.FileHandler",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void FileHandler::__constructor(const QString &arg0, jboolean arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.logging.FileHandler",
+			"(Ljava/lang/String;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods

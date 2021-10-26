@@ -33,8 +33,6 @@ namespace __jni_impl::android::media
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		QAndroidJniObject getFormat();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getAudioSource();
 		jint getClientAudioSource();
 		jint getClientAudioSessionId();
@@ -43,6 +41,8 @@ namespace __jni_impl::android::media
 		jboolean isClientSilenced();
 		QAndroidJniObject getClientEffects();
 		QAndroidJniObject getEffects();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
 
@@ -91,22 +91,6 @@ namespace __jni_impl::android::media
 		return __thiz.callObjectMethod(
 			"getFormat",
 			"()Landroid/media/AudioFormat;"
-		);
-	}
-	jint AudioRecordingConfiguration::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void AudioRecordingConfiguration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 	jint AudioRecordingConfiguration::getAudioSource()
@@ -163,6 +147,22 @@ namespace __jni_impl::android::media
 		return __thiz.callObjectMethod(
 			"getEffects",
 			"()Ljava/util/List;"
+		);
+	}
+	jint AudioRecordingConfiguration::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void AudioRecordingConfiguration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::media

@@ -75,14 +75,16 @@ namespace __jni_impl::android::net::wifi::p2p
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.p2p.WifiP2pInfo",
-			"()V");
+			"()V"
+		);
 	}
 	void WifiP2pInfo::__constructor(__jni_impl::android::net::wifi::p2p::WifiP2pInfo arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.p2p.WifiP2pInfo",
 			"(Landroid/net/wifi/p2p/WifiP2pInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

@@ -24,6 +24,7 @@ namespace __jni_impl::android::provider
 		QAndroidJniObject build();
 		QAndroidJniObject setContactId(jlong arg0);
 		QAndroidJniObject addNameParameter(jstring arg0);
+		QAndroidJniObject addNameParameter(const QString &arg0);
 		QAndroidJniObject setLimit(jint arg0);
 	};
 } // namespace __jni_impl::android::provider
@@ -39,7 +40,8 @@ namespace __jni_impl::android::provider
 	{
 		__thiz = QAndroidJniObject(
 			"android.provider.ContactsContract$Contacts$AggregationSuggestions$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -64,6 +66,14 @@ namespace __jni_impl::android::provider
 			"addNameParameter",
 			"(Ljava/lang/String;)Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject ContactsContract_Contacts_AggregationSuggestions_Builder::addNameParameter(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"addNameParameter",
+			"(Ljava/lang/String;)Landroid/provider/ContactsContract$Contacts$AggregationSuggestions$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject ContactsContract_Contacts_AggregationSuggestions_Builder::setLimit(jint arg0)

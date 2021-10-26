@@ -30,7 +30,6 @@ namespace __jni_impl::android::printservice
 		
 		// Methods
 		jboolean isDestroyed();
-		void onDestroy();
 		QAndroidJniObject getPrinters();
 		void addPrinters(__jni_impl::__JniBaseClass arg0);
 		void removePrinters(__jni_impl::__JniBaseClass arg0);
@@ -42,6 +41,7 @@ namespace __jni_impl::android::printservice
 		void onStopPrinterStateTracking(__jni_impl::android::print::PrinterId arg0);
 		QAndroidJniObject getTrackedPrinters();
 		jboolean isPrinterDiscoveryStarted();
+		void onDestroy();
 	};
 } // namespace __jni_impl::android::printservice
 
@@ -58,7 +58,8 @@ namespace __jni_impl::android::printservice
 	{
 		__thiz = QAndroidJniObject(
 			"android.printservice.PrinterDiscoverySession",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -67,13 +68,6 @@ namespace __jni_impl::android::printservice
 		return __thiz.callMethod<jboolean>(
 			"isDestroyed",
 			"()Z"
-		);
-	}
-	void PrinterDiscoverySession::onDestroy()
-	{
-		__thiz.callMethod<void>(
-			"onDestroy",
-			"()V"
 		);
 	}
 	QAndroidJniObject PrinterDiscoverySession::getPrinters()
@@ -160,6 +154,13 @@ namespace __jni_impl::android::printservice
 		return __thiz.callMethod<jboolean>(
 			"isPrinterDiscoveryStarted",
 			"()Z"
+		);
+	}
+	void PrinterDiscoverySession::onDestroy()
+	{
+		__thiz.callMethod<void>(
+			"onDestroy",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::printservice

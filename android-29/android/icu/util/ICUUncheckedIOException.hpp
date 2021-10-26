@@ -17,8 +17,10 @@ namespace __jni_impl::android::icu::util
 		
 		// Constructors
 		void __constructor(jstring arg0, jthrowable arg1);
+		void __constructor(const QString &arg0, jthrowable arg1);
 		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor();
 		
 		// Methods
@@ -37,27 +39,48 @@ namespace __jni_impl::android::icu::util
 			"android.icu.util.ICUUncheckedIOException",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void ICUUncheckedIOException::__constructor(const QString &arg0, jthrowable arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.ICUUncheckedIOException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void ICUUncheckedIOException::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.ICUUncheckedIOException",
 			"(Ljava/lang/Throwable;)V",
-			arg0);
+			arg0
+		);
 	}
 	void ICUUncheckedIOException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.ICUUncheckedIOException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void ICUUncheckedIOException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.ICUUncheckedIOException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void ICUUncheckedIOException::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.ICUUncheckedIOException",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

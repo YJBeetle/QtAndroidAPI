@@ -20,12 +20,13 @@ namespace __jni_impl::android::view::textclassifier
 		
 		// Constructors
 		void __constructor(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void __constructor(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 		
 		// Methods
 		jstring getId();
+		QAndroidJniObject getConversationActions();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getConversationActions();
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -50,7 +51,17 @@ namespace __jni_impl::android::view::textclassifier
 			"android.view.textclassifier.ConversationActions",
 			"(Ljava/util/List;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void ConversationActions::__constructor(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.textclassifier.ConversationActions",
+			"(Ljava/util/List;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -60,6 +71,13 @@ namespace __jni_impl::android::view::textclassifier
 			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	QAndroidJniObject ConversationActions::getConversationActions()
+	{
+		return __thiz.callObjectMethod(
+			"getConversationActions",
+			"()Ljava/util/List;"
+		);
 	}
 	jint ConversationActions::describeContents()
 	{
@@ -75,13 +93,6 @@ namespace __jni_impl::android::view::textclassifier
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject ConversationActions::getConversationActions()
-	{
-		return __thiz.callObjectMethod(
-			"getConversationActions",
-			"()Ljava/util/List;"
 		);
 	}
 } // namespace __jni_impl::android::view::textclassifier

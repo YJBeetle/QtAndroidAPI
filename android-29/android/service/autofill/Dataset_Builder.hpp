@@ -47,8 +47,9 @@ namespace __jni_impl::android::service::autofill
 		QAndroidJniObject setValue(__jni_impl::android::view::autofill::AutofillId arg0, __jni_impl::android::view::autofill::AutofillValue arg1, __jni_impl::java::util::regex::Pattern arg2, __jni_impl::android::widget::RemoteViews arg3);
 		QAndroidJniObject setValue(__jni_impl::android::view::autofill::AutofillId arg0, __jni_impl::android::view::autofill::AutofillValue arg1);
 		QAndroidJniObject build();
-		QAndroidJniObject setAuthentication(__jni_impl::android::content::IntentSender arg0);
 		QAndroidJniObject setId(jstring arg0);
+		QAndroidJniObject setId(const QString &arg0);
+		QAndroidJniObject setAuthentication(__jni_impl::android::content::IntentSender arg0);
 	};
 } // namespace __jni_impl::android::service::autofill
 
@@ -69,13 +70,15 @@ namespace __jni_impl::android::service::autofill
 		__thiz = QAndroidJniObject(
 			"android.service.autofill.Dataset$Builder",
 			"(Landroid/widget/RemoteViews;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Dataset_Builder::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.autofill.Dataset$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -126,20 +129,28 @@ namespace __jni_impl::android::service::autofill
 			"()Landroid/service/autofill/Dataset;"
 		);
 	}
-	QAndroidJniObject Dataset_Builder::setAuthentication(__jni_impl::android::content::IntentSender arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setAuthentication",
-			"(Landroid/content/IntentSender;)Landroid/service/autofill/Dataset$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject Dataset_Builder::setId(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setId",
 			"(Ljava/lang/String;)Landroid/service/autofill/Dataset$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject Dataset_Builder::setId(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setId",
+			"(Ljava/lang/String;)Landroid/service/autofill/Dataset$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject Dataset_Builder::setAuthentication(__jni_impl::android::content::IntentSender arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setAuthentication",
+			"(Landroid/content/IntentSender;)Landroid/service/autofill/Dataset$Builder;",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::service::autofill

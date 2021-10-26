@@ -33,7 +33,8 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.SafeBrowsingResponse",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

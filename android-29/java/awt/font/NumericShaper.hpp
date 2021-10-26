@@ -51,15 +51,15 @@ namespace __jni_impl::java::awt::font
 		void shape(jcharArray arg0, jint arg1, jint arg2, jint arg3);
 		void shape(jcharArray arg0, jint arg1, jint arg2);
 		void shape(jcharArray arg0, jint arg1, jint arg2, __jni_impl::java::awt::font::NumericShaper_Range arg3);
-		jboolean isContextual();
 		static QAndroidJniObject getShaper(jint arg0);
 		static QAndroidJniObject getShaper(__jni_impl::java::awt::font::NumericShaper_Range arg0);
 		static QAndroidJniObject getContextualShaper(jint arg0, jint arg1);
-		static QAndroidJniObject getContextualShaper(__jni_impl::__JniBaseClass arg0, __jni_impl::java::awt::font::NumericShaper_Range arg1);
 		static QAndroidJniObject getContextualShaper(__jni_impl::__JniBaseClass arg0);
+		static QAndroidJniObject getContextualShaper(__jni_impl::__JniBaseClass arg0, __jni_impl::java::awt::font::NumericShaper_Range arg1);
 		static QAndroidJniObject getContextualShaper(jint arg0);
 		jint getRanges();
 		QAndroidJniObject getRangeSet();
+		jboolean isContextual();
 	};
 } // namespace __jni_impl::java::awt::font
 
@@ -273,13 +273,6 @@ namespace __jni_impl::java::awt::font
 			arg3.__jniObject().object()
 		);
 	}
-	jboolean NumericShaper::isContextual()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isContextual",
-			"()Z"
-		);
-	}
 	QAndroidJniObject NumericShaper::getShaper(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -308,6 +301,15 @@ namespace __jni_impl::java::awt::font
 			arg1
 		);
 	}
+	QAndroidJniObject NumericShaper::getContextualShaper(__jni_impl::__JniBaseClass arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.awt.font.NumericShaper",
+			"getContextualShaper",
+			"(Ljava/util/Set;)Ljava/awt/font/NumericShaper;",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject NumericShaper::getContextualShaper(__jni_impl::__JniBaseClass arg0, __jni_impl::java::awt::font::NumericShaper_Range arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -316,15 +318,6 @@ namespace __jni_impl::java::awt::font
 			"(Ljava/util/Set;Ljava/awt/font/NumericShaper$Range;)Ljava/awt/font/NumericShaper;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject NumericShaper::getContextualShaper(__jni_impl::__JniBaseClass arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.awt.font.NumericShaper",
-			"getContextualShaper",
-			"(Ljava/util/Set;)Ljava/awt/font/NumericShaper;",
-			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject NumericShaper::getContextualShaper(jint arg0)
@@ -348,6 +341,13 @@ namespace __jni_impl::java::awt::font
 		return __thiz.callObjectMethod(
 			"getRangeSet",
 			"()Ljava/util/Set;"
+		);
+	}
+	jboolean NumericShaper::isContextual()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isContextual",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::java::awt::font

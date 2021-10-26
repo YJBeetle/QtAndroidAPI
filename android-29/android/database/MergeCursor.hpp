@@ -61,7 +61,8 @@ namespace __jni_impl::android::database
 		__thiz = QAndroidJniObject(
 			"android.database.MergeCursor",
 			"([Landroid/database/Cursor;)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

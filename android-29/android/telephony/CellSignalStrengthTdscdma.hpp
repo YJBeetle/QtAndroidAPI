@@ -27,11 +27,11 @@ namespace __jni_impl::android::telephony
 		jstring toString();
 		jint hashCode();
 		jint getLevel();
-		jint getAsuLevel();
-		jint getDbm();
+		jint getRscp();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getRscp();
+		jint getAsuLevel();
+		jint getDbm();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -87,17 +87,10 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
-	jint CellSignalStrengthTdscdma::getAsuLevel()
+	jint CellSignalStrengthTdscdma::getRscp()
 	{
 		return __thiz.callMethod<jint>(
-			"getAsuLevel",
-			"()I"
-		);
-	}
-	jint CellSignalStrengthTdscdma::getDbm()
-	{
-		return __thiz.callMethod<jint>(
-			"getDbm",
+			"getRscp",
 			"()I"
 		);
 	}
@@ -117,10 +110,17 @@ namespace __jni_impl::android::telephony
 			arg1
 		);
 	}
-	jint CellSignalStrengthTdscdma::getRscp()
+	jint CellSignalStrengthTdscdma::getAsuLevel()
 	{
 		return __thiz.callMethod<jint>(
-			"getRscp",
+			"getAsuLevel",
+			"()I"
+		);
+	}
+	jint CellSignalStrengthTdscdma::getDbm()
+	{
+		return __thiz.callMethod<jint>(
+			"getDbm",
 			"()I"
 		);
 	}

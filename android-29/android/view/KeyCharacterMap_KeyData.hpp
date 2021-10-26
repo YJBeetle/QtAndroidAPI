@@ -60,7 +60,8 @@ namespace __jni_impl::android::view
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.KeyCharacterMap$KeyData",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

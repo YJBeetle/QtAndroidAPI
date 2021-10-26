@@ -53,7 +53,8 @@ namespace __jni_impl::android::provider
 	{
 		__thiz = QAndroidJniObject(
 			"android.provider.CallLog",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

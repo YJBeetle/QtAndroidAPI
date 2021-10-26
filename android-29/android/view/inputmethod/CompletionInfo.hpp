@@ -20,16 +20,18 @@ namespace __jni_impl::android::view::inputmethod
 		
 		// Constructors
 		void __constructor(jlong arg0, jint arg1, jstring arg2);
+		void __constructor(jlong arg0, jint arg1, const QString &arg2);
 		void __constructor(jlong arg0, jint arg1, jstring arg2, jstring arg3);
+		void __constructor(jlong arg0, jint arg1, const QString &arg2, const QString &arg3);
 		
 		// Methods
 		jstring toString();
 		jlong getId();
 		jstring getText();
+		jstring getLabel();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getPosition();
-		jstring getLabel();
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
@@ -55,7 +57,18 @@ namespace __jni_impl::android::view::inputmethod
 			"(JILjava/lang/CharSequence;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void CompletionInfo::__constructor(jlong arg0, jint arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.inputmethod.CompletionInfo",
+			"(JILjava/lang/CharSequence;)V",
+			arg0,
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	void CompletionInfo::__constructor(jlong arg0, jint arg1, jstring arg2, jstring arg3)
 	{
@@ -65,7 +78,19 @@ namespace __jni_impl::android::view::inputmethod
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void CompletionInfo::__constructor(jlong arg0, jint arg1, const QString &arg2, const QString &arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.inputmethod.CompletionInfo",
+			"(JILjava/lang/CharSequence;Ljava/lang/CharSequence;)V",
+			arg0,
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			QAndroidJniObject::fromString(arg3).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -87,6 +112,13 @@ namespace __jni_impl::android::view::inputmethod
 	{
 		return __thiz.callObjectMethod(
 			"getText",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring CompletionInfo::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
@@ -112,13 +144,6 @@ namespace __jni_impl::android::view::inputmethod
 			"getPosition",
 			"()I"
 		);
-	}
-	jstring CompletionInfo::getLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::view::inputmethod
 

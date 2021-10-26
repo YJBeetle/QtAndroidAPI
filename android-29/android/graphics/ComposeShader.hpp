@@ -56,7 +56,8 @@ namespace __jni_impl::android::graphics
 			"(Landroid/graphics/Shader;Landroid/graphics/Shader;Landroid/graphics/Xfermode;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ComposeShader::__constructor(__jni_impl::android::graphics::Shader arg0, __jni_impl::android::graphics::Shader arg1, __jni_impl::android::graphics::PorterDuff_Mode arg2)
 	{
@@ -65,7 +66,8 @@ namespace __jni_impl::android::graphics
 			"(Landroid/graphics/Shader;Landroid/graphics/Shader;Landroid/graphics/PorterDuff$Mode;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ComposeShader::__constructor(__jni_impl::android::graphics::Shader arg0, __jni_impl::android::graphics::Shader arg1, __jni_impl::android::graphics::BlendMode arg2)
 	{
@@ -74,7 +76,8 @@ namespace __jni_impl::android::graphics
 			"(Landroid/graphics/Shader;Landroid/graphics/Shader;Landroid/graphics/BlendMode;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods

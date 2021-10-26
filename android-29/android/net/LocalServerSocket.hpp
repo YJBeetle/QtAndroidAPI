@@ -27,13 +27,14 @@ namespace __jni_impl::android::net
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(__jni_impl::java::io::FileDescriptor arg0);
 		
 		// Methods
 		QAndroidJniObject accept();
 		void close();
-		QAndroidJniObject getFileDescriptor();
 		QAndroidJniObject getLocalSocketAddress();
+		QAndroidJniObject getFileDescriptor();
 	};
 } // namespace __jni_impl::android::net
 
@@ -51,14 +52,24 @@ namespace __jni_impl::android::net
 		__thiz = QAndroidJniObject(
 			"android.net.LocalServerSocket",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void LocalServerSocket::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.net.LocalServerSocket",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void LocalServerSocket::__constructor(__jni_impl::java::io::FileDescriptor arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.LocalServerSocket",
 			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -76,18 +87,18 @@ namespace __jni_impl::android::net
 			"()V"
 		);
 	}
-	QAndroidJniObject LocalServerSocket::getFileDescriptor()
-	{
-		return __thiz.callObjectMethod(
-			"getFileDescriptor",
-			"()Ljava/io/FileDescriptor;"
-		);
-	}
 	QAndroidJniObject LocalServerSocket::getLocalSocketAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getLocalSocketAddress",
 			"()Landroid/net/LocalSocketAddress;"
+		);
+	}
+	QAndroidJniObject LocalServerSocket::getFileDescriptor()
+	{
+		return __thiz.callObjectMethod(
+			"getFileDescriptor",
+			"()Ljava/io/FileDescriptor;"
 		);
 	}
 } // namespace __jni_impl::android::net

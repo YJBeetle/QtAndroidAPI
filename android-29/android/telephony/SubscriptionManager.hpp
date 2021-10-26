@@ -54,7 +54,8 @@ namespace __jni_impl::android::telephony
 		
 		// Methods
 		static QAndroidJniObject from(__jni_impl::android::content::Context arg0);
-		static jint getSlotIndex(jint arg0);
+		jboolean isNetworkRoaming(jint arg0);
+		static jint getDefaultSmsSubscriptionId();
 		void addOnSubscriptionsChangedListener(__jni_impl::android::telephony::SubscriptionManager_OnSubscriptionsChangedListener arg0);
 		void removeOnSubscriptionsChangedListener(__jni_impl::android::telephony::SubscriptionManager_OnSubscriptionsChangedListener arg0);
 		void addOnOpportunisticSubscriptionsChangedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::telephony::SubscriptionManager_OnOpportunisticSubscriptionsChangedListener arg1);
@@ -84,8 +85,7 @@ namespace __jni_impl::android::telephony
 		void addSubscriptionsIntoGroup(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::ParcelUuid arg1);
 		void removeSubscriptionsFromGroup(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::ParcelUuid arg1);
 		QAndroidJniObject getSubscriptionsInGroup(__jni_impl::android::os::ParcelUuid arg0);
-		jboolean isNetworkRoaming(jint arg0);
-		static jint getDefaultSmsSubscriptionId();
+		static jint getSlotIndex(jint arg0);
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -207,13 +207,20 @@ namespace __jni_impl::android::telephony
 			arg0.__jniObject().object()
 		);
 	}
-	jint SubscriptionManager::getSlotIndex(jint arg0)
+	jboolean SubscriptionManager::isNetworkRoaming(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isNetworkRoaming",
+			"(I)Z",
+			arg0
+		);
+	}
+	jint SubscriptionManager::getDefaultSmsSubscriptionId()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.telephony.SubscriptionManager",
-			"getSlotIndex",
-			"(I)I",
-			arg0
+			"getDefaultSmsSubscriptionId",
+			"()I"
 		);
 	}
 	void SubscriptionManager::addOnSubscriptionsChangedListener(__jni_impl::android::telephony::SubscriptionManager_OnSubscriptionsChangedListener arg0)
@@ -455,20 +462,13 @@ namespace __jni_impl::android::telephony
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean SubscriptionManager::isNetworkRoaming(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isNetworkRoaming",
-			"(I)Z",
-			arg0
-		);
-	}
-	jint SubscriptionManager::getDefaultSmsSubscriptionId()
+	jint SubscriptionManager::getSlotIndex(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.telephony.SubscriptionManager",
-			"getDefaultSmsSubscriptionId",
-			"()I"
+			"getSlotIndex",
+			"(I)I",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::telephony

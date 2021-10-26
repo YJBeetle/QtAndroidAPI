@@ -26,13 +26,16 @@ namespace __jni_impl::java::security::cert
 		
 		// Methods
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::java::security::Provider arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1);
 		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject getInstance(jstring arg0);
+		static QAndroidJniObject getInstance(const QString &arg0);
 		QAndroidJniObject build(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getProvider();
-		static jstring getDefaultType();
-		QAndroidJniObject getRevocationChecker();
 		jstring getAlgorithm();
+		QAndroidJniObject getRevocationChecker();
+		static jstring getDefaultType();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -62,6 +65,16 @@ namespace __jni_impl::java::security::cert
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject CertPathBuilder::getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.cert.CertPathBuilder",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/cert/CertPathBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject CertPathBuilder::getInstance(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -72,6 +85,16 @@ namespace __jni_impl::java::security::cert
 			arg1
 		);
 	}
+	QAndroidJniObject CertPathBuilder::getInstance(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.cert.CertPathBuilder",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/security/cert/CertPathBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject CertPathBuilder::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -79,6 +102,15 @@ namespace __jni_impl::java::security::cert
 			"getInstance",
 			"(Ljava/lang/String;)Ljava/security/cert/CertPathBuilder;",
 			arg0
+		);
+	}
+	QAndroidJniObject CertPathBuilder::getInstance(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.cert.CertPathBuilder",
+			"getInstance",
+			"(Ljava/lang/String;)Ljava/security/cert/CertPathBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject CertPathBuilder::build(__jni_impl::__JniBaseClass arg0)
@@ -96,11 +128,10 @@ namespace __jni_impl::java::security::cert
 			"()Ljava/security/Provider;"
 		);
 	}
-	jstring CertPathBuilder::getDefaultType()
+	jstring CertPathBuilder::getAlgorithm()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.cert.CertPathBuilder",
-			"getDefaultType",
+		return __thiz.callObjectMethod(
+			"getAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -111,10 +142,11 @@ namespace __jni_impl::java::security::cert
 			"()Ljava/security/cert/CertPathChecker;"
 		);
 	}
-	jstring CertPathBuilder::getAlgorithm()
+	jstring CertPathBuilder::getDefaultType()
 	{
-		return __thiz.callObjectMethod(
-			"getAlgorithm",
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.cert.CertPathBuilder",
+			"getDefaultType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

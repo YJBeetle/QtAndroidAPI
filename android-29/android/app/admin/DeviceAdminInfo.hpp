@@ -15,14 +15,6 @@ namespace __jni_impl::android::content::pm
 }
 namespace __jni_impl::android::content::pm
 {
-	class PackageManager;
-}
-namespace __jni_impl::android::graphics::drawable
-{
-	class Drawable;
-}
-namespace __jni_impl::android::content::pm
-{
 	class ActivityInfo;
 }
 namespace __jni_impl::android::os
@@ -32,6 +24,14 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::content
 {
 	class ComponentName;
+}
+namespace __jni_impl::android::content::pm
+{
+	class PackageManager;
+}
+namespace __jni_impl::android::graphics::drawable
+{
+	class Drawable;
 }
 
 namespace __jni_impl::android::app::admin
@@ -57,29 +57,30 @@ namespace __jni_impl::android::app::admin
 		// Methods
 		jstring toString();
 		jstring getPackageName();
-		jstring loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
-		QAndroidJniObject loadIcon(__jni_impl::android::content::pm::PackageManager arg0);
-		jstring loadDescription(__jni_impl::android::content::pm::PackageManager arg0);
-		QAndroidJniObject getActivityInfo();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
-		QAndroidJniObject getComponent();
-		jboolean usesPolicy(jint arg0);
+		jboolean isVisible();
 		jstring getReceiverName();
 		jstring getTagForPolicy(jint arg0);
 		jboolean supportsTransferOwnership();
-		jboolean isVisible();
+		QAndroidJniObject getActivityInfo();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jboolean usesPolicy(jint arg0);
+		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void dump(__jni_impl::__JniBaseClass arg0, const QString &arg1);
+		QAndroidJniObject getComponent();
+		jstring loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
+		QAndroidJniObject loadIcon(__jni_impl::android::content::pm::PackageManager arg0);
+		jstring loadDescription(__jni_impl::android::content::pm::PackageManager arg0);
 	};
 } // namespace __jni_impl::android::app::admin
 
 #include "../../content/Context.hpp"
 #include "../../content/pm/ResolveInfo.hpp"
-#include "../../content/pm/PackageManager.hpp"
-#include "../../graphics/drawable/Drawable.hpp"
 #include "../../content/pm/ActivityInfo.hpp"
 #include "../../os/Parcel.hpp"
 #include "../../content/ComponentName.hpp"
+#include "../../content/pm/PackageManager.hpp"
+#include "../../graphics/drawable/Drawable.hpp"
 
 namespace __jni_impl::android::app::admin
 {
@@ -163,7 +164,8 @@ namespace __jni_impl::android::app::admin
 			"android.app.admin.DeviceAdminInfo",
 			"(Landroid/content/Context;Landroid/content/pm/ResolveInfo;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -181,75 +183,11 @@ namespace __jni_impl::android::app::admin
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jstring DeviceAdminInfo::loadLabel(__jni_impl::android::content::pm::PackageManager arg0)
-	{
-		return __thiz.callObjectMethod(
-			"loadLabel",
-			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
-		).object<jstring>();
-	}
-	QAndroidJniObject DeviceAdminInfo::loadIcon(__jni_impl::android::content::pm::PackageManager arg0)
-	{
-		return __thiz.callObjectMethod(
-			"loadIcon",
-			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object()
-		);
-	}
-	jstring DeviceAdminInfo::loadDescription(__jni_impl::android::content::pm::PackageManager arg0)
-	{
-		return __thiz.callObjectMethod(
-			"loadDescription",
-			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
-		).object<jstring>();
-	}
-	QAndroidJniObject DeviceAdminInfo::getActivityInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getActivityInfo",
-			"()Landroid/content/pm/ActivityInfo;"
-		);
-	}
-	jint DeviceAdminInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void DeviceAdminInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void DeviceAdminInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject DeviceAdminInfo::getComponent()
-	{
-		return __thiz.callObjectMethod(
-			"getComponent",
-			"()Landroid/content/ComponentName;"
-		);
-	}
-	jboolean DeviceAdminInfo::usesPolicy(jint arg0)
+	jboolean DeviceAdminInfo::isVisible()
 	{
 		return __thiz.callMethod<jboolean>(
-			"usesPolicy",
-			"(I)Z",
-			arg0
+			"isVisible",
+			"()Z"
 		);
 	}
 	jstring DeviceAdminInfo::getReceiverName()
@@ -274,12 +212,85 @@ namespace __jni_impl::android::app::admin
 			"()Z"
 		);
 	}
-	jboolean DeviceAdminInfo::isVisible()
+	QAndroidJniObject DeviceAdminInfo::getActivityInfo()
+	{
+		return __thiz.callObjectMethod(
+			"getActivityInfo",
+			"()Landroid/content/pm/ActivityInfo;"
+		);
+	}
+	jint DeviceAdminInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void DeviceAdminInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jboolean DeviceAdminInfo::usesPolicy(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"isVisible",
-			"()Z"
+			"usesPolicy",
+			"(I)Z",
+			arg0
 		);
+	}
+	void DeviceAdminInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void DeviceAdminInfo::dump(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	QAndroidJniObject DeviceAdminInfo::getComponent()
+	{
+		return __thiz.callObjectMethod(
+			"getComponent",
+			"()Landroid/content/ComponentName;"
+		);
+	}
+	jstring DeviceAdminInfo::loadLabel(__jni_impl::android::content::pm::PackageManager arg0)
+	{
+		return __thiz.callObjectMethod(
+			"loadLabel",
+			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	QAndroidJniObject DeviceAdminInfo::loadIcon(__jni_impl::android::content::pm::PackageManager arg0)
+	{
+		return __thiz.callObjectMethod(
+			"loadIcon",
+			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
+			arg0.__jniObject().object()
+		);
+	}
+	jstring DeviceAdminInfo::loadDescription(__jni_impl::android::content::pm::PackageManager arg0)
+	{
+		return __thiz.callObjectMethod(
+			"loadDescription",
+			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::app::admin
 

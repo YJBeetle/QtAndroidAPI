@@ -31,8 +31,8 @@ namespace __jni_impl::android::transition
 		void __constructor();
 		
 		// Methods
-		void setPropagationSpeed(jfloat arg0);
 		jlong getStartDelay(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::Transition arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3);
+		void setPropagationSpeed(jfloat arg0);
 	};
 } // namespace __jni_impl::android::transition
 
@@ -49,18 +49,11 @@ namespace __jni_impl::android::transition
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.CircularPropagation",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	void CircularPropagation::setPropagationSpeed(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPropagationSpeed",
-			"(F)V",
-			arg0
-		);
-	}
 	jlong CircularPropagation::getStartDelay(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::Transition arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3)
 	{
 		return __thiz.callMethod<jlong>(
@@ -70,6 +63,14 @@ namespace __jni_impl::android::transition
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
+		);
+	}
+	void CircularPropagation::setPropagationSpeed(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPropagationSpeed",
+			"(F)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::transition

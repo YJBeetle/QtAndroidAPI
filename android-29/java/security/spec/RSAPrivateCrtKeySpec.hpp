@@ -51,7 +51,8 @@ namespace __jni_impl::java::security::spec
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
 			arg6.__jniObject().object(),
-			arg7.__jniObject().object());
+			arg7.__jniObject().object()
+		);
 	}
 	void RSAPrivateCrtKeySpec::__constructor(__jni_impl::java::math::BigInteger arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2, __jni_impl::java::math::BigInteger arg3, __jni_impl::java::math::BigInteger arg4, __jni_impl::java::math::BigInteger arg5, __jni_impl::java::math::BigInteger arg6, __jni_impl::java::math::BigInteger arg7, __jni_impl::__JniBaseClass arg8)
 	{
@@ -66,7 +67,8 @@ namespace __jni_impl::java::security::spec
 			arg5.__jniObject().object(),
 			arg6.__jniObject().object(),
 			arg7.__jniObject().object(),
-			arg8.__jniObject().object());
+			arg8.__jniObject().object()
+		);
 	}
 	
 	// Methods

@@ -23,12 +23,12 @@ namespace __jni_impl::android::telecom
 		void __constructor(jint arg0, jint arg1, jboolean arg2, jfloat arg3);
 		
 		// Methods
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jboolean isZoomSupported();
 		jfloat getMaxZoom();
 		jint getWidth();
 		jint getHeight();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -53,7 +53,8 @@ namespace __jni_impl::android::telecom
 			"android.telecom.VideoProfile$CameraCapabilities",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void VideoProfile_CameraCapabilities::__constructor(jint arg0, jint arg1, jboolean arg2, jfloat arg3)
 	{
@@ -63,26 +64,11 @@ namespace __jni_impl::android::telecom
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	
 	// Methods
-	jint VideoProfile_CameraCapabilities::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void VideoProfile_CameraCapabilities::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	jboolean VideoProfile_CameraCapabilities::isZoomSupported()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -109,6 +95,22 @@ namespace __jni_impl::android::telecom
 		return __thiz.callMethod<jint>(
 			"getHeight",
 			"()I"
+		);
+	}
+	jint VideoProfile_CameraCapabilities::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void VideoProfile_CameraCapabilities::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::telecom

@@ -35,8 +35,6 @@ namespace __jni_impl::android::media::tv
 		jint getType();
 		jstring getLanguage();
 		QAndroidJniObject getExtra();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jstring getDescription();
 		jint getAudioChannelCount();
 		jint getAudioSampleRate();
@@ -45,6 +43,8 @@ namespace __jni_impl::android::media::tv
 		jfloat getVideoFrameRate();
 		jfloat getVideoPixelAspectRatio();
 		jbyte getVideoActiveFormatDescription();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media::tv
 
@@ -136,22 +136,6 @@ namespace __jni_impl::android::media::tv
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint TvTrackInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void TvTrackInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	jstring TvTrackInfo::getDescription()
 	{
 		return __thiz.callObjectMethod(
@@ -206,6 +190,22 @@ namespace __jni_impl::android::media::tv
 		return __thiz.callMethod<jbyte>(
 			"getVideoActiveFormatDescription",
 			"()B"
+		);
+	}
+	jint TvTrackInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void TvTrackInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::media::tv

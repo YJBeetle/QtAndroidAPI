@@ -24,10 +24,10 @@ namespace __jni_impl::android::view::textclassifier
 		// Methods
 		jstring toString();
 		jstring getPackageName();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jstring getWidgetType();
 		jstring getWidgetVersion();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -68,6 +68,20 @@ namespace __jni_impl::android::view::textclassifier
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	jstring TextClassificationContext::getWidgetType()
+	{
+		return __thiz.callObjectMethod(
+			"getWidgetType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring TextClassificationContext::getWidgetVersion()
+	{
+		return __thiz.callObjectMethod(
+			"getWidgetVersion",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jint TextClassificationContext::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -83,20 +97,6 @@ namespace __jni_impl::android::view::textclassifier
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jstring TextClassificationContext::getWidgetType()
-	{
-		return __thiz.callObjectMethod(
-			"getWidgetType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring TextClassificationContext::getWidgetVersion()
-	{
-		return __thiz.callObjectMethod(
-			"getWidgetVersion",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

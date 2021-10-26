@@ -52,7 +52,8 @@ namespace __jni_impl::java::security
 			"java.security.CodeSigner",
 			"(Ljava/security/cert/CertPath;Ljava/security/Timestamp;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

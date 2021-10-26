@@ -46,7 +46,8 @@ namespace __jni_impl::java::util::concurrent
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.AbstractExecutorService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

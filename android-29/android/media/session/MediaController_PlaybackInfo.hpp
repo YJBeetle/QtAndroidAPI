@@ -29,13 +29,13 @@ namespace __jni_impl::android::media::session
 		
 		// Methods
 		jstring toString();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getAudioAttributes();
+		jint getPlaybackType();
 		jint getVolumeControl();
 		jint getMaxVolume();
 		jint getCurrentVolume();
-		jint getPlaybackType();
+		QAndroidJniObject getAudioAttributes();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media::session
 
@@ -84,27 +84,11 @@ namespace __jni_impl::android::media::session
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint MediaController_PlaybackInfo::describeContents()
+	jint MediaController_PlaybackInfo::getPlaybackType()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getPlaybackType",
 			"()I"
-		);
-	}
-	void MediaController_PlaybackInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject MediaController_PlaybackInfo::getAudioAttributes()
-	{
-		return __thiz.callObjectMethod(
-			"getAudioAttributes",
-			"()Landroid/media/AudioAttributes;"
 		);
 	}
 	jint MediaController_PlaybackInfo::getVolumeControl()
@@ -128,11 +112,27 @@ namespace __jni_impl::android::media::session
 			"()I"
 		);
 	}
-	jint MediaController_PlaybackInfo::getPlaybackType()
+	QAndroidJniObject MediaController_PlaybackInfo::getAudioAttributes()
+	{
+		return __thiz.callObjectMethod(
+			"getAudioAttributes",
+			"()Landroid/media/AudioAttributes;"
+		);
+	}
+	jint MediaController_PlaybackInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getPlaybackType",
+			"describeContents",
 			"()I"
+		);
+	}
+	void MediaController_PlaybackInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::media::session

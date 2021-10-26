@@ -64,21 +64,24 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.EnumMap",
 			"(Ljava/lang/Class;)V",
-			arg0);
+			arg0
+		);
 	}
 	void EnumMap::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.EnumMap",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void EnumMap::__constructor(__jni_impl::java::util::EnumMap arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.EnumMap",
 			"(Ljava/util/EnumMap;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

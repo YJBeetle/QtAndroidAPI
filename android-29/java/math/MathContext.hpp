@@ -27,6 +27,7 @@ namespace __jni_impl::java::math
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jint arg0, __jni_impl::java::math::RoundingMode arg1);
 		void __constructor(jint arg0);
 		
@@ -84,7 +85,16 @@ namespace __jni_impl::java::math
 		__thiz = QAndroidJniObject(
 			"java.math.MathContext",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void MathContext::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.math.MathContext",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void MathContext::__constructor(jint arg0, __jni_impl::java::math::RoundingMode arg1)
 	{
@@ -92,14 +102,16 @@ namespace __jni_impl::java::math
 			"java.math.MathContext",
 			"(ILjava/math/RoundingMode;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void MathContext::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.MathContext",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

@@ -46,7 +46,8 @@ namespace __jni_impl::android::util
 		__thiz = QAndroidJniObject(
 			"android.util.LruCache",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

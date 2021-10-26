@@ -40,7 +40,8 @@ namespace __jni_impl::android::app::admin
 			"android.app.admin.FreezePeriod",
 			"(Ljava/time/MonthDay;Ljava/time/MonthDay;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

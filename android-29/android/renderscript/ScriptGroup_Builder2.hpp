@@ -46,6 +46,7 @@ namespace __jni_impl::android::renderscript
 		
 		// Methods
 		QAndroidJniObject create(jstring arg0, jarray arg1);
+		QAndroidJniObject create(const QString &arg0, jarray arg1);
 		QAndroidJniObject addKernel(__jni_impl::android::renderscript::Script_KernelID arg0, __jni_impl::android::renderscript::Type arg1, jobjectArray arg2);
 		QAndroidJniObject addInput();
 		QAndroidJniObject addInvoke(__jni_impl::android::renderscript::Script_InvokeID arg0, jobjectArray arg1);
@@ -70,7 +71,8 @@ namespace __jni_impl::android::renderscript
 		__thiz = QAndroidJniObject(
 			"android.renderscript.ScriptGroup$Builder2",
 			"(Landroid/renderscript/RenderScript;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -80,6 +82,15 @@ namespace __jni_impl::android::renderscript
 			"create",
 			"(Ljava/lang/String;[Landroid/renderscript/ScriptGroup$Future;)Landroid/renderscript/ScriptGroup;",
 			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject ScriptGroup_Builder2::create(const QString &arg0, jarray arg1)
+	{
+		return __thiz.callObjectMethod(
+			"create",
+			"(Ljava/lang/String;[Landroid/renderscript/ScriptGroup$Future;)Landroid/renderscript/ScriptGroup;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

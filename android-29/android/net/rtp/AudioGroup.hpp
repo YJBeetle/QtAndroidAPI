@@ -22,9 +22,9 @@ namespace __jni_impl::android::net::rtp
 		
 		// Methods
 		void clear();
-		jarray getStreams();
 		void sendDtmf(jint arg0);
 		jint getMode();
+		jarray getStreams();
 		void setMode(jint arg0);
 	};
 } // namespace __jni_impl::android::net::rtp
@@ -67,7 +67,8 @@ namespace __jni_impl::android::net::rtp
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.rtp.AudioGroup",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -77,13 +78,6 @@ namespace __jni_impl::android::net::rtp
 			"clear",
 			"()V"
 		);
-	}
-	jarray AudioGroup::getStreams()
-	{
-		return __thiz.callObjectMethod(
-			"getStreams",
-			"()[Landroid/net/rtp/AudioStream;"
-		).object<jarray>();
 	}
 	void AudioGroup::sendDtmf(jint arg0)
 	{
@@ -99,6 +93,13 @@ namespace __jni_impl::android::net::rtp
 			"getMode",
 			"()I"
 		);
+	}
+	jarray AudioGroup::getStreams()
+	{
+		return __thiz.callObjectMethod(
+			"getStreams",
+			"()[Landroid/net/rtp/AudioStream;"
+		).object<jarray>();
 	}
 	void AudioGroup::setMode(jint arg0)
 	{

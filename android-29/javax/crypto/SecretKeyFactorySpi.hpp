@@ -30,7 +30,8 @@ namespace __jni_impl::javax::crypto
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.SecretKeyFactorySpi",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

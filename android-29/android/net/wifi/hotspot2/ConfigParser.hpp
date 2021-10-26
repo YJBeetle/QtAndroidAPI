@@ -22,6 +22,7 @@ namespace __jni_impl::android::net::wifi::hotspot2
 		
 		// Methods
 		static QAndroidJniObject parsePasspointConfig(jstring arg0, jbyteArray arg1);
+		static QAndroidJniObject parsePasspointConfig(const QString &arg0, jbyteArray arg1);
 	};
 } // namespace __jni_impl::android::net::wifi::hotspot2
 
@@ -47,6 +48,16 @@ namespace __jni_impl::android::net::wifi::hotspot2
 			"parsePasspointConfig",
 			"(Ljava/lang/String;[B)Landroid/net/wifi/hotspot2/PasspointConfiguration;",
 			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject ConfigParser::parsePasspointConfig(const QString &arg0, jbyteArray arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.net.wifi.hotspot2.ConfigParser",
+			"parsePasspointConfig",
+			"(Ljava/lang/String;[B)Landroid/net/wifi/hotspot2/PasspointConfiguration;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

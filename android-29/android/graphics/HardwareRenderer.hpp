@@ -5,6 +5,10 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::view
+{
+	class Surface;
+}
 namespace __jni_impl::android::graphics
 {
 	class RenderNode;
@@ -12,10 +16,6 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::graphics
 {
 	class HardwareRenderer_FrameRenderRequest;
-}
-namespace __jni_impl::android::view
-{
-	class Surface;
 }
 
 namespace __jni_impl::android::graphics
@@ -37,22 +37,23 @@ namespace __jni_impl::android::graphics
 		void start();
 		void stop();
 		void setName(jstring arg0);
+		void setName(const QString &arg0);
 		void destroy();
 		void setOpaque(jboolean arg0);
 		jboolean isOpaque();
+		void setSurface(__jni_impl::android::view::Surface arg0);
 		void setLightSourceGeometry(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		void setLightSourceAlpha(jfloat arg0, jfloat arg1);
 		void setContentRoot(__jni_impl::android::graphics::RenderNode arg0);
 		QAndroidJniObject createRenderRequest();
 		void clearContent();
 		void notifyFramePending();
-		void setSurface(__jni_impl::android::view::Surface arg0);
 	};
 } // namespace __jni_impl::android::graphics
 
+#include "../view/Surface.hpp"
 #include "RenderNode.hpp"
 #include "HardwareRenderer_FrameRenderRequest.hpp"
-#include "../view/Surface.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -98,7 +99,8 @@ namespace __jni_impl::android::graphics
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.HardwareRenderer",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -124,6 +126,14 @@ namespace __jni_impl::android::graphics
 			arg0
 		);
 	}
+	void HardwareRenderer::setName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setName",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void HardwareRenderer::destroy()
 	{
 		__thiz.callMethod<void>(
@@ -144,6 +154,14 @@ namespace __jni_impl::android::graphics
 		return __thiz.callMethod<jboolean>(
 			"isOpaque",
 			"()Z"
+		);
+	}
+	void HardwareRenderer::setSurface(__jni_impl::android::view::Surface arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSurface",
+			"(Landroid/view/Surface;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void HardwareRenderer::setLightSourceGeometry(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
@@ -193,14 +211,6 @@ namespace __jni_impl::android::graphics
 		__thiz.callMethod<void>(
 			"notifyFramePending",
 			"()V"
-		);
-	}
-	void HardwareRenderer::setSurface(__jni_impl::android::view::Surface arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSurface",
-			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::graphics

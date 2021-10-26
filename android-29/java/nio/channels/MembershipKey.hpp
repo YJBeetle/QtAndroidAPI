@@ -30,9 +30,9 @@ namespace __jni_impl::java::nio::channels
 		QAndroidJniObject channel();
 		void drop();
 		jboolean isValid();
-		QAndroidJniObject sourceAddress();
 		QAndroidJniObject unblock(__jni_impl::java::net::InetAddress arg0);
 		QAndroidJniObject networkInterface();
+		QAndroidJniObject sourceAddress();
 	};
 } // namespace __jni_impl::java::nio::channels
 
@@ -88,13 +88,6 @@ namespace __jni_impl::java::nio::channels
 			"()Z"
 		);
 	}
-	QAndroidJniObject MembershipKey::sourceAddress()
-	{
-		return __thiz.callObjectMethod(
-			"sourceAddress",
-			"()Ljava/net/InetAddress;"
-		);
-	}
 	QAndroidJniObject MembershipKey::unblock(__jni_impl::java::net::InetAddress arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -108,6 +101,13 @@ namespace __jni_impl::java::nio::channels
 		return __thiz.callObjectMethod(
 			"networkInterface",
 			"()Ljava/net/NetworkInterface;"
+		);
+	}
+	QAndroidJniObject MembershipKey::sourceAddress()
+	{
+		return __thiz.callObjectMethod(
+			"sourceAddress",
+			"()Ljava/net/InetAddress;"
 		);
 	}
 } // namespace __jni_impl::java::nio::channels

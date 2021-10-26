@@ -15,6 +15,7 @@ namespace __jni_impl::android::icu::text
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1, jboolean arg2);
+		void __constructor(const QString &arg0, const QString &arg1, jboolean arg2);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -39,7 +40,18 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;Ljava/lang/String;Z)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void DateIntervalInfo_PatternInfo::__constructor(const QString &arg0, const QString &arg1, jboolean arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.text.DateIntervalInfo$PatternInfo",
+			"(Ljava/lang/String;Ljava/lang/String;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
 	}
 	
 	// Methods

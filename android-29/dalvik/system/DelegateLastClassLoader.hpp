@@ -26,12 +26,17 @@ namespace __jni_impl::dalvik::system
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2, jboolean arg3);
+		void __constructor(const QString &arg0, const QString &arg1, __jni_impl::java::lang::ClassLoader arg2, jboolean arg3);
 		void __constructor(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2);
+		void __constructor(const QString &arg0, const QString &arg1, __jni_impl::java::lang::ClassLoader arg2);
 		void __constructor(jstring arg0, __jni_impl::java::lang::ClassLoader arg1);
+		void __constructor(const QString &arg0, __jni_impl::java::lang::ClassLoader arg1);
 		
 		// Methods
 		QAndroidJniObject getResource(jstring arg0);
+		QAndroidJniObject getResource(const QString &arg0);
 		QAndroidJniObject getResources(jstring arg0);
+		QAndroidJniObject getResources(const QString &arg0);
 	};
 } // namespace __jni_impl::dalvik::system
 
@@ -51,7 +56,19 @@ namespace __jni_impl::dalvik::system
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
+	}
+	void DelegateLastClassLoader::__constructor(const QString &arg0, const QString &arg1, __jni_impl::java::lang::ClassLoader arg2, jboolean arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"dalvik.system.DelegateLastClassLoader",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object(),
+			arg3
+		);
 	}
 	void DelegateLastClassLoader::__constructor(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2)
 	{
@@ -60,7 +77,18 @@ namespace __jni_impl::dalvik::system
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void DelegateLastClassLoader::__constructor(const QString &arg0, const QString &arg1, __jni_impl::java::lang::ClassLoader arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"dalvik.system.DelegateLastClassLoader",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
 	}
 	void DelegateLastClassLoader::__constructor(jstring arg0, __jni_impl::java::lang::ClassLoader arg1)
 	{
@@ -68,7 +96,17 @@ namespace __jni_impl::dalvik::system
 			"dalvik.system.DelegateLastClassLoader",
 			"(Ljava/lang/String;Ljava/lang/ClassLoader;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void DelegateLastClassLoader::__constructor(const QString &arg0, __jni_impl::java::lang::ClassLoader arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"dalvik.system.DelegateLastClassLoader",
+			"(Ljava/lang/String;Ljava/lang/ClassLoader;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -80,12 +118,28 @@ namespace __jni_impl::dalvik::system
 			arg0
 		);
 	}
+	QAndroidJniObject DelegateLastClassLoader::getResource(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getResource",
+			"(Ljava/lang/String;)Ljava/net/URL;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject DelegateLastClassLoader::getResources(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getResources",
 			"(Ljava/lang/String;)Ljava/util/Enumeration;",
 			arg0
+		);
+	}
+	QAndroidJniObject DelegateLastClassLoader::getResources(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getResources",
+			"(Ljava/lang/String;)Ljava/util/Enumeration;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::dalvik::system

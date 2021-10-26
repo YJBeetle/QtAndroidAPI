@@ -35,13 +35,15 @@ namespace __jni_impl::java::security::cert
 		__thiz = QAndroidJniObject(
 			"java.security.cert.CollectionCertStoreParameters",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void CollectionCertStoreParameters::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.CollectionCertStoreParameters",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

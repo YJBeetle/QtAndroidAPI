@@ -10,10 +10,6 @@
 
 namespace __jni_impl::android::content
 {
-	class Intent;
-}
-namespace __jni_impl::android::content
-{
 	class ComponentName;
 }
 namespace __jni_impl::android::net
@@ -23,6 +19,10 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::service::notification
 {
 	class Condition;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
 }
 
 namespace __jni_impl::android::service::notification
@@ -41,7 +41,6 @@ namespace __jni_impl::android::service::notification
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		void onConnected();
 		static void requestRebind(__jni_impl::android::content::ComponentName arg0);
 		void requestUnbind();
@@ -50,13 +49,14 @@ namespace __jni_impl::android::service::notification
 		void onUnsubscribe(__jni_impl::android::net::Uri arg0);
 		void notifyCondition(__jni_impl::android::service::notification::Condition arg0);
 		void notifyConditions(jarray arg0);
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 	};
 } // namespace __jni_impl::android::service::notification
 
-#include "../../content/Intent.hpp"
 #include "../../content/ComponentName.hpp"
 #include "../../net/Uri.hpp"
 #include "Condition.hpp"
+#include "../../content/Intent.hpp"
 
 namespace __jni_impl::android::service::notification
 {
@@ -107,18 +107,11 @@ namespace __jni_impl::android::service::notification
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.notification.ConditionProviderService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	QAndroidJniObject ConditionProviderService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
-		);
-	}
 	void ConditionProviderService::onConnected()
 	{
 		__thiz.callMethod<void>(
@@ -180,6 +173,14 @@ namespace __jni_impl::android::service::notification
 			"notifyConditions",
 			"([Landroid/service/notification/Condition;)V",
 			arg0
+		);
+	}
+	QAndroidJniObject ConditionProviderService::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::service::notification

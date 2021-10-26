@@ -21,6 +21,7 @@ namespace __jni_impl::android::util
 		static jboolean logStop(jint arg0);
 		static jboolean logEvent(jint arg0);
 		static jboolean logBinaryPushStateChanged(jstring arg0, jlong arg1, jint arg2, jint arg3, jlongArray arg4);
+		static jboolean logBinaryPushStateChanged(const QString &arg0, jlong arg1, jint arg2, jint arg3, jlongArray arg4);
 	};
 } // namespace __jni_impl::android::util
 
@@ -72,6 +73,19 @@ namespace __jni_impl::android::util
 			"logBinaryPushStateChanged",
 			"(Ljava/lang/String;JII[J)Z",
 			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	jboolean StatsLog::logBinaryPushStateChanged(const QString &arg0, jlong arg1, jint arg2, jint arg3, jlongArray arg4)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.util.StatsLog",
+			"logBinaryPushStateChanged",
+			"(Ljava/lang/String;JII[J)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3,

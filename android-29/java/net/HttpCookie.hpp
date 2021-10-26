@@ -19,6 +19,7 @@ namespace __jni_impl::java::net
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1);
+		void __constructor(const QString &arg0, const QString &arg1);
 		
 		// Methods
 		jstring getName();
@@ -28,18 +29,28 @@ namespace __jni_impl::java::net
 		jobject clone();
 		jstring getValue();
 		void setValue(jstring arg0);
+		void setValue(const QString &arg0);
 		jstring getPath();
 		static QAndroidJniObject parse(jstring arg0);
+		static QAndroidJniObject parse(const QString &arg0);
 		void setComment(jstring arg0);
+		void setComment(const QString &arg0);
 		jstring getComment();
 		jint getVersion();
 		void setSecure(jboolean arg0);
+		jstring getDomain();
+		void setDomain(jstring arg0);
+		void setDomain(const QString &arg0);
+		void setPath(jstring arg0);
+		void setPath(const QString &arg0);
 		jboolean getSecure();
 		jboolean isHttpOnly();
 		jstring getPortlist();
 		void setPortlist(jstring arg0);
+		void setPortlist(const QString &arg0);
 		jboolean hasExpired();
 		void setCommentURL(jstring arg0);
+		void setCommentURL(const QString &arg0);
 		jstring getCommentURL();
 		void setDiscard(jboolean arg0);
 		jboolean getDiscard();
@@ -47,10 +58,8 @@ namespace __jni_impl::java::net
 		jlong getMaxAge();
 		void setHttpOnly(jboolean arg0);
 		static jboolean domainMatches(jstring arg0, jstring arg1);
+		static jboolean domainMatches(const QString &arg0, const QString &arg1);
 		void setVersion(jint arg0);
-		void setDomain(jstring arg0);
-		void setPath(jstring arg0);
-		jstring getDomain();
 	};
 } // namespace __jni_impl::java::net
 
@@ -67,7 +76,17 @@ namespace __jni_impl::java::net
 			"java.net.HttpCookie",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void HttpCookie::__constructor(const QString &arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.HttpCookie",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -122,6 +141,14 @@ namespace __jni_impl::java::net
 			arg0
 		);
 	}
+	void HttpCookie::setValue(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setValue",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring HttpCookie::getPath()
 	{
 		return __thiz.callObjectMethod(
@@ -138,12 +165,29 @@ namespace __jni_impl::java::net
 			arg0
 		);
 	}
+	QAndroidJniObject HttpCookie::parse(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.net.HttpCookie",
+			"parse",
+			"(Ljava/lang/String;)Ljava/util/List;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void HttpCookie::setComment(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setComment",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void HttpCookie::setComment(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setComment",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring HttpCookie::getComment()
@@ -166,6 +210,45 @@ namespace __jni_impl::java::net
 			"setSecure",
 			"(Z)V",
 			arg0
+		);
+	}
+	jstring HttpCookie::getDomain()
+	{
+		return __thiz.callObjectMethod(
+			"getDomain",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void HttpCookie::setDomain(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDomain",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void HttpCookie::setDomain(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDomain",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void HttpCookie::setPath(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPath",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void HttpCookie::setPath(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPath",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean HttpCookie::getSecure()
@@ -197,6 +280,14 @@ namespace __jni_impl::java::net
 			arg0
 		);
 	}
+	void HttpCookie::setPortlist(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPortlist",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jboolean HttpCookie::hasExpired()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -210,6 +301,14 @@ namespace __jni_impl::java::net
 			"setCommentURL",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void HttpCookie::setCommentURL(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCommentURL",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring HttpCookie::getCommentURL()
@@ -267,6 +366,16 @@ namespace __jni_impl::java::net
 			arg1
 		);
 	}
+	jboolean HttpCookie::domainMatches(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"java.net.HttpCookie",
+			"domainMatches",
+			"(Ljava/lang/String;Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void HttpCookie::setVersion(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -274,29 +383,6 @@ namespace __jni_impl::java::net
 			"(I)V",
 			arg0
 		);
-	}
-	void HttpCookie::setDomain(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDomain",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void HttpCookie::setPath(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPath",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	jstring HttpCookie::getDomain()
-	{
-		return __thiz.callObjectMethod(
-			"getDomain",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::java::net
 

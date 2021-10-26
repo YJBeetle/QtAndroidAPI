@@ -17,13 +17,13 @@ namespace __jni_impl::android::content
 {
 	class ContentProvider;
 }
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::net
 {
 	class Uri;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 namespace __jni_impl::android::content
 {
@@ -44,9 +44,9 @@ namespace __jni_impl::android::content
 		// Methods
 		jstring toString();
 		QAndroidJniObject apply(__jni_impl::android::content::ContentProvider arg0, jarray arg1, jint arg2);
+		QAndroidJniObject getUri();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getUri();
 		static QAndroidJniObject newAssertQuery(__jni_impl::android::net::Uri arg0);
 		static QAndroidJniObject newInsert(__jni_impl::android::net::Uri arg0);
 		static QAndroidJniObject newUpdate(__jni_impl::android::net::Uri arg0);
@@ -66,8 +66,8 @@ namespace __jni_impl::android::content
 #include "ContentProviderOperation_Builder.hpp"
 #include "ContentProviderResult.hpp"
 #include "ContentProvider.hpp"
-#include "../os/Parcel.hpp"
 #include "../net/Uri.hpp"
+#include "../os/Parcel.hpp"
 #include "ContentValues.hpp"
 
 namespace __jni_impl::android::content
@@ -108,6 +108,13 @@ namespace __jni_impl::android::content
 			arg2
 		);
 	}
+	QAndroidJniObject ContentProviderOperation::getUri()
+	{
+		return __thiz.callObjectMethod(
+			"getUri",
+			"()Landroid/net/Uri;"
+		);
+	}
 	jint ContentProviderOperation::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -122,13 +129,6 @@ namespace __jni_impl::android::content
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject ContentProviderOperation::getUri()
-	{
-		return __thiz.callObjectMethod(
-			"getUri",
-			"()Landroid/net/Uri;"
 		);
 	}
 	QAndroidJniObject ContentProviderOperation::newAssertQuery(__jni_impl::android::net::Uri arg0)

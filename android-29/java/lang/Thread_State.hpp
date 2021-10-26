@@ -26,6 +26,7 @@ namespace __jni_impl::java::lang
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::java::lang
 
@@ -106,6 +107,15 @@ namespace __jni_impl::java::lang
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Thread$State;",
 			arg0
+		);
+	}
+	QAndroidJniObject Thread_State::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.lang.Thread$State",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/lang/Thread$State;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::lang

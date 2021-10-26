@@ -14,13 +14,13 @@ namespace __jni_impl::android::view
 {
 	class View;
 }
-namespace __jni_impl::android::view
-{
-	class LayoutInflater;
-}
 namespace __jni_impl::android::graphics
 {
 	class Canvas;
+}
+namespace __jni_impl::android::view
+{
+	class LayoutInflater;
 }
 
 namespace __jni_impl::android::view
@@ -39,22 +39,22 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		QAndroidJniObject inflate();
-		QAndroidJniObject getLayoutInflater();
 		void setVisibility(jint arg0);
 		void draw(__jni_impl::android::graphics::Canvas arg0);
+		void setLayoutResource(jint arg0);
+		jint getLayoutResource();
 		jint getInflatedId();
 		void setInflatedId(jint arg0);
 		void setLayoutInflater(__jni_impl::android::view::LayoutInflater arg0);
 		void setOnInflateListener(__jni_impl::__JniBaseClass arg0);
-		void setLayoutResource(jint arg0);
-		jint getLayoutResource();
+		QAndroidJniObject getLayoutInflater();
 	};
 } // namespace __jni_impl::android::view
 
 #include "../content/Context.hpp"
 #include "View.hpp"
-#include "LayoutInflater.hpp"
 #include "../graphics/Canvas.hpp"
+#include "LayoutInflater.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -69,7 +69,8 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void ViewStub::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -78,7 +79,8 @@ namespace __jni_impl::android::view
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void ViewStub::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -86,7 +88,8 @@ namespace __jni_impl::android::view
 			"android.view.ViewStub",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ViewStub::__constructor(__jni_impl::android::content::Context arg0, jint arg1)
 	{
@@ -94,14 +97,16 @@ namespace __jni_impl::android::view
 			"android.view.ViewStub",
 			"(Landroid/content/Context;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void ViewStub::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewStub",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -110,13 +115,6 @@ namespace __jni_impl::android::view
 		return __thiz.callObjectMethod(
 			"inflate",
 			"()Landroid/view/View;"
-		);
-	}
-	QAndroidJniObject ViewStub::getLayoutInflater()
-	{
-		return __thiz.callObjectMethod(
-			"getLayoutInflater",
-			"()Landroid/view/LayoutInflater;"
 		);
 	}
 	void ViewStub::setVisibility(jint arg0)
@@ -133,6 +131,21 @@ namespace __jni_impl::android::view
 			"draw",
 			"(Landroid/graphics/Canvas;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void ViewStub::setLayoutResource(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLayoutResource",
+			"(I)V",
+			arg0
+		);
+	}
+	jint ViewStub::getLayoutResource()
+	{
+		return __thiz.callMethod<jint>(
+			"getLayoutResource",
+			"()I"
 		);
 	}
 	jint ViewStub::getInflatedId()
@@ -166,19 +179,11 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
-	void ViewStub::setLayoutResource(jint arg0)
+	QAndroidJniObject ViewStub::getLayoutInflater()
 	{
-		__thiz.callMethod<void>(
-			"setLayoutResource",
-			"(I)V",
-			arg0
-		);
-	}
-	jint ViewStub::getLayoutResource()
-	{
-		return __thiz.callMethod<jint>(
-			"getLayoutResource",
-			"()I"
+		return __thiz.callObjectMethod(
+			"getLayoutInflater",
+			"()Landroid/view/LayoutInflater;"
 		);
 	}
 } // namespace __jni_impl::android::view

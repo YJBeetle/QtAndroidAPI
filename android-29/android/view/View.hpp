@@ -25,9 +25,17 @@ namespace __jni_impl::android::os
 {
 	class Handler;
 }
+namespace __jni_impl::java::util
+{
+	class ArrayList;
+}
 namespace __jni_impl::android::content::res
 {
 	class Configuration;
+}
+namespace __jni_impl::android::view
+{
+	class DragEvent;
 }
 namespace __jni_impl::android::view
 {
@@ -36,22 +44,6 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::view
 {
 	class MotionEvent;
-}
-namespace __jni_impl::android::view::accessibility
-{
-	class AccessibilityEvent;
-}
-namespace __jni_impl::android::view
-{
-	class ActionMode;
-}
-namespace __jni_impl::java::util
-{
-	class ArrayList;
-}
-namespace __jni_impl::android::view
-{
-	class DragEvent;
 }
 namespace __jni_impl::android::view
 {
@@ -92,6 +84,10 @@ namespace __jni_impl::android::content::res
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
+}
+namespace __jni_impl::android::view::accessibility
+{
+	class AccessibilityEvent;
 }
 namespace __jni_impl::android::view::accessibility
 {
@@ -196,6 +192,10 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::view
 {
 	class View_DragShadowBuilder;
+}
+namespace __jni_impl::android::view
+{
+	class ActionMode;
 }
 
 namespace __jni_impl::android::view
@@ -353,43 +353,24 @@ namespace __jni_impl::android::view
 		jint getId();
 		jboolean isOpaque();
 		jboolean isEnabled();
-		jobject getTag(jint arg0);
 		jobject getTag();
+		jobject getTag(jint arg0);
 		jboolean isDirty();
 		QAndroidJniObject getHandler();
-		jboolean post(__jni_impl::__JniBaseClass arg0);
-		jboolean postDelayed(__jni_impl::__JniBaseClass arg0, jlong arg1);
-		jboolean removeCallbacks(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject findViewById(jint arg0);
-		QAndroidJniObject requireViewById(jint arg0);
-		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyLongPress(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
-		jboolean onKeyShortcut(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean onTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
-		void onWindowFocusChanged(jboolean arg0);
-		jboolean hasFocus();
-		jboolean hasWindowFocus();
-		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
-		jboolean dispatchKeyShortcutEvent(__jni_impl::android::view::KeyEvent arg0);
-		jboolean dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean dispatchTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean dispatchGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
-		jboolean dispatchPopulateAccessibilityEvent(__jni_impl::android::view::accessibility::AccessibilityEvent arg0);
-		QAndroidJniObject startActionMode(__jni_impl::__JniBaseClass arg0, jint arg1);
-		QAndroidJniObject startActionMode(__jni_impl::__JniBaseClass arg0);
+		void setX(jfloat arg0);
+		void setY(jfloat arg0);
+		void setZ(jfloat arg0);
+		void setAlpha(jfloat arg0);
 		QAndroidJniObject focusSearch(jint arg0);
 		jboolean hasTransientState();
 		jboolean dispatchUnhandledMove(__jni_impl::android::view::View arg0, jint arg1);
 		void clearFocus();
 		QAndroidJniObject findFocus();
-		void addFocusables(__jni_impl::java::util::ArrayList arg0, jint arg1);
 		void addFocusables(__jni_impl::java::util::ArrayList arg0, jint arg1, jint arg2);
+		void addFocusables(__jni_impl::java::util::ArrayList arg0, jint arg1);
 		void addKeyboardNavigationClusters(__jni_impl::__JniBaseClass arg0, jint arg1);
 		void findViewsWithText(__jni_impl::java::util::ArrayList arg0, jstring arg1, jint arg2);
+		void findViewsWithText(__jni_impl::java::util::ArrayList arg0, const QString &arg1, jint arg2);
 		void dispatchWindowFocusChanged(jboolean arg0);
 		void addTouchables(__jni_impl::java::util::ArrayList arg0);
 		void dispatchDisplayHint(jint arg0);
@@ -472,8 +453,8 @@ namespace __jni_impl::android::view
 		jboolean performLongClick(jfloat arg0, jfloat arg1);
 		jboolean performContextClick();
 		jboolean performContextClick(jfloat arg0, jfloat arg1);
-		jboolean showContextMenu(jfloat arg0, jfloat arg1);
 		jboolean showContextMenu();
+		jboolean showContextMenu(jfloat arg0, jfloat arg1);
 		void setOnKeyListener(__jni_impl::__JniBaseClass arg0);
 		void setOnTouchListener(__jni_impl::__JniBaseClass arg0);
 		void setOnGenericMotionListener(__jni_impl::__JniBaseClass arg0);
@@ -481,14 +462,16 @@ namespace __jni_impl::android::view
 		void setOnDragListener(__jni_impl::__JniBaseClass arg0);
 		void setRevealOnFocusHint(jboolean arg0);
 		jboolean getRevealOnFocusHint();
-		jboolean requestRectangleOnScreen(__jni_impl::android::graphics::Rect arg0, jboolean arg1);
 		jboolean requestRectangleOnScreen(__jni_impl::android::graphics::Rect arg0);
+		jboolean requestRectangleOnScreen(__jni_impl::android::graphics::Rect arg0, jboolean arg1);
 		jboolean hasFocusable();
 		jboolean hasExplicitFocusable();
 		void setAccessibilityPaneTitle(jstring arg0);
+		void setAccessibilityPaneTitle(const QString &arg0);
 		jstring getAccessibilityPaneTitle();
 		void sendAccessibilityEvent(jint arg0);
 		void announceForAccessibility(jstring arg0);
+		void announceForAccessibility(const QString &arg0);
 		void sendAccessibilityEventUnchecked(__jni_impl::android::view::accessibility::AccessibilityEvent arg0);
 		void onPopulateAccessibilityEvent(__jni_impl::android::view::accessibility::AccessibilityEvent arg0);
 		void onInitializeAccessibilityEvent(__jni_impl::android::view::accessibility::AccessibilityEvent arg0);
@@ -498,8 +481,8 @@ namespace __jni_impl::android::view
 		void onProvideAutofillStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1);
 		void onProvideVirtualStructure(__jni_impl::android::view::ViewStructure arg0);
 		void onProvideAutofillVirtualStructure(__jni_impl::android::view::ViewStructure arg0, jint arg1);
-		void autofill(__jni_impl::android::util::SparseArray arg0);
 		void autofill(__jni_impl::android::view::autofill::AutofillValue arg0);
+		void autofill(__jni_impl::android::util::SparseArray arg0);
 		QAndroidJniObject getAutofillId();
 		void setAutofillId(__jni_impl::android::view::autofill::AutofillId arg0);
 		jint getAutofillType();
@@ -511,12 +494,14 @@ namespace __jni_impl::android::view
 		void setContentCaptureSession(__jni_impl::android::view::contentcapture::ContentCaptureSession arg0);
 		QAndroidJniObject getContentCaptureSession();
 		void addExtraDataToAccessibilityNodeInfo(__jni_impl::android::view::accessibility::AccessibilityNodeInfo arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
+		void addExtraDataToAccessibilityNodeInfo(__jni_impl::android::view::accessibility::AccessibilityNodeInfo arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2);
 		jboolean isVisibleToUserForAutofill(jint arg0);
 		QAndroidJniObject getAccessibilityDelegate();
 		void setAccessibilityDelegate(__jni_impl::android::view::View_AccessibilityDelegate arg0);
 		QAndroidJniObject getAccessibilityNodeProvider();
 		jstring getContentDescription();
 		void setContentDescription(jstring arg0);
+		void setContentDescription(const QString &arg0);
 		void setAccessibilityTraversalBefore(jint arg0);
 		jint getAccessibilityTraversalBefore();
 		void setAccessibilityTraversalAfter(jint arg0);
@@ -556,8 +541,8 @@ namespace __jni_impl::android::view
 		jint getVisibility();
 		void setVisibility(jint arg0);
 		void setEnabled(jboolean arg0);
-		void setFocusable(jboolean arg0);
 		void setFocusable(jint arg0);
+		void setFocusable(jboolean arg0);
 		void setFocusableInTouchMode(jboolean arg0);
 		void setAutofillHints(jarray arg0);
 		void setSoundEffectsEnabled(jboolean arg0);
@@ -711,16 +696,16 @@ namespace __jni_impl::android::view
 		void scrollTo(jint arg0, jint arg1);
 		void scrollBy(jint arg0, jint arg1);
 		void invalidate(__jni_impl::android::graphics::Rect arg0);
-		void invalidate();
 		void invalidate(jint arg0, jint arg1, jint arg2, jint arg3);
+		void invalidate();
 		void postOnAnimation(__jni_impl::__JniBaseClass arg0);
 		void postOnAnimationDelayed(__jni_impl::__JniBaseClass arg0, jlong arg1);
-		void postInvalidate(jint arg0, jint arg1, jint arg2, jint arg3);
 		void postInvalidate();
-		void postInvalidateDelayed(jlong arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		void postInvalidate(jint arg0, jint arg1, jint arg2, jint arg3);
 		void postInvalidateDelayed(jlong arg0);
-		void postInvalidateOnAnimation();
+		void postInvalidateDelayed(jlong arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		void postInvalidateOnAnimation(jint arg0, jint arg1, jint arg2, jint arg3);
+		void postInvalidateOnAnimation();
 		void computeScroll();
 		jboolean isHorizontalFadingEdgeEnabled();
 		void setHorizontalFadingEdgeEnabled(jboolean arg0);
@@ -766,8 +751,8 @@ namespace __jni_impl::android::view
 		void destroyDrawingCache();
 		void setDrawingCacheBackgroundColor(jint arg0);
 		jint getDrawingCacheBackgroundColor();
-		void buildDrawingCache();
 		void buildDrawingCache(jboolean arg0);
+		void buildDrawingCache();
 		jboolean isInEditMode();
 		jboolean isHardwareAccelerated();
 		void setClipBounds(__jni_impl::android::graphics::Rect arg0);
@@ -828,8 +813,8 @@ namespace __jni_impl::android::view
 		QAndroidJniObject findViewWithTag(jobject arg0);
 		void setId(jint arg0);
 		jlong getUniqueDrawingId();
-		void setTag(jint arg0, jobject arg1);
 		void setTag(jobject arg0);
+		void setTag(jint arg0, jobject arg1);
 		jint getBaseline();
 		jboolean isInLayout();
 		void forceLayout();
@@ -846,8 +831,8 @@ namespace __jni_impl::android::view
 		void clearAnimation();
 		void setAnimation(__jni_impl::android::view::animation::Animation arg0);
 		void playSoundEffect(jint arg0);
-		jboolean performHapticFeedback(jint arg0);
 		jboolean performHapticFeedback(jint arg0, jint arg1);
+		jboolean performHapticFeedback(jint arg0);
 		void setSystemUiVisibility(jint arg0);
 		jint getSystemUiVisibility();
 		jint getWindowSystemUiVisibility();
@@ -881,21 +866,43 @@ namespace __jni_impl::android::view
 		jboolean onCapturedPointerEvent(__jni_impl::android::view::MotionEvent arg0);
 		void setOnCapturedPointerListener(__jni_impl::__JniBaseClass arg0);
 		void setTransitionName(jstring arg0);
+		void setTransitionName(const QString &arg0);
 		jstring getTransitionName();
 		void setTooltipText(jstring arg0);
+		void setTooltipText(const QString &arg0);
 		jstring getTooltipText();
 		void addOnUnhandledKeyEventListener(__jni_impl::__JniBaseClass arg0);
 		void removeOnUnhandledKeyEventListener(__jni_impl::__JniBaseClass arg0);
-		void setX(jfloat arg0);
-		void setY(jfloat arg0);
-		void setZ(jfloat arg0);
 		jfloat getX();
 		jfloat getY();
 		jfloat getZ();
 		jint getWidth();
 		jint getHeight();
 		QAndroidJniObject getAnimation();
-		void setAlpha(jfloat arg0);
+		jboolean post(__jni_impl::__JniBaseClass arg0);
+		jboolean postDelayed(__jni_impl::__JniBaseClass arg0, jlong arg1);
+		jboolean removeCallbacks(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject findViewById(jint arg0);
+		QAndroidJniObject requireViewById(jint arg0);
+		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyLongPress(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
+		jboolean onKeyShortcut(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean onTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
+		void onWindowFocusChanged(jboolean arg0);
+		jboolean hasFocus();
+		jboolean hasWindowFocus();
+		jboolean dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0);
+		jboolean dispatchKeyShortcutEvent(__jni_impl::android::view::KeyEvent arg0);
+		jboolean dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean dispatchTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean dispatchGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
+		jboolean dispatchPopulateAccessibilityEvent(__jni_impl::android::view::accessibility::AccessibilityEvent arg0);
+		QAndroidJniObject startActionMode(__jni_impl::__JniBaseClass arg0, jint arg1);
+		QAndroidJniObject startActionMode(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -904,13 +911,11 @@ namespace __jni_impl::android::view
 #include "ViewGroup.hpp"
 #include "../content/res/Resources.hpp"
 #include "../os/Handler.hpp"
+#include "../../java/util/ArrayList.hpp"
 #include "../content/res/Configuration.hpp"
+#include "DragEvent.hpp"
 #include "KeyEvent.hpp"
 #include "MotionEvent.hpp"
-#include "accessibility/AccessibilityEvent.hpp"
-#include "ActionMode.hpp"
-#include "../../java/util/ArrayList.hpp"
-#include "DragEvent.hpp"
 #include "PointerIcon.hpp"
 #include "../graphics/Rect.hpp"
 #include "ViewStructure.hpp"
@@ -921,6 +926,7 @@ namespace __jni_impl::android::view
 #include "WindowInsets.hpp"
 #include "../content/res/TypedArray.hpp"
 #include "../graphics/drawable/Drawable.hpp"
+#include "accessibility/AccessibilityEvent.hpp"
 #include "accessibility/AccessibilityNodeInfo.hpp"
 #include "autofill/AutofillValue.hpp"
 #include "autofill/AutofillId.hpp"
@@ -947,6 +953,7 @@ namespace __jni_impl::android::view
 #include "animation/Animation.hpp"
 #include "../content/ClipData.hpp"
 #include "View_DragShadowBuilder.hpp"
+#include "ActionMode.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -1917,7 +1924,8 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void View::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -1926,7 +1934,8 @@ namespace __jni_impl::android::view
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void View::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -1934,14 +1943,16 @@ namespace __jni_impl::android::view
 			"android.view.View",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void View::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.View",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -2005,19 +2016,19 @@ namespace __jni_impl::android::view
 			"()Z"
 		);
 	}
+	jobject View::getTag()
+	{
+		return __thiz.callObjectMethod(
+			"getTag",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
 	jobject View::getTag(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getTag",
 			"(I)Ljava/lang/Object;",
 			arg0
-		).object<jobject>();
-	}
-	jobject View::getTag()
-	{
-		return __thiz.callObjectMethod(
-			"getTag",
-			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
 	jboolean View::isDirty()
@@ -2034,202 +2045,36 @@ namespace __jni_impl::android::view
 			"()Landroid/os/Handler;"
 		);
 	}
-	jboolean View::post(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"post",
-			"(Ljava/lang/Runnable;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean View::postDelayed(__jni_impl::__JniBaseClass arg0, jlong arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"postDelayed",
-			"(Ljava/lang/Runnable;J)Z",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jboolean View::removeCallbacks(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"removeCallbacks",
-			"(Ljava/lang/Runnable;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject View::findViewById(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findViewById",
-			"(I)Landroid/view/View;",
-			arg0
-		);
-	}
-	QAndroidJniObject View::requireViewById(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"requireViewById",
-			"(I)Landroid/view/View;",
-			arg0
-		);
-	}
-	jboolean View::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyDown",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean View::onKeyLongPress(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyLongPress",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean View::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyUp",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean View::onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyMultiple",
-			"(IILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	jboolean View::onKeyShortcut(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyShortcut",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean View::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean View::onTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTrackballEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean View::onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onGenericMotionEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	void View::onWindowFocusChanged(jboolean arg0)
+	void View::setX(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
-			"onWindowFocusChanged",
-			"(Z)V",
+			"setX",
+			"(F)V",
 			arg0
 		);
 	}
-	jboolean View::hasFocus()
+	void View::setY(jfloat arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"hasFocus",
-			"()Z"
+		__thiz.callMethod<void>(
+			"setY",
+			"(F)V",
+			arg0
 		);
 	}
-	jboolean View::hasWindowFocus()
+	void View::setZ(jfloat arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"hasWindowFocus",
-			"()Z"
+		__thiz.callMethod<void>(
+			"setZ",
+			"(F)V",
+			arg0
 		);
 	}
-	jboolean View::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
+	void View::setAlpha(jfloat arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchKeyEvent",
-			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean View::dispatchKeyShortcutEvent(__jni_impl::android::view::KeyEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchKeyShortcutEvent",
-			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean View::dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean View::dispatchTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchTrackballEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean View::dispatchGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchGenericMotionEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean View::dispatchPopulateAccessibilityEvent(__jni_impl::android::view::accessibility::AccessibilityEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchPopulateAccessibilityEvent",
-			"(Landroid/view/accessibility/AccessibilityEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject View::startActionMode(__jni_impl::__JniBaseClass arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"startActionMode",
-			"(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject View::startActionMode(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"startActionMode",
-			"(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;",
-			arg0.__jniObject().object()
+		__thiz.callMethod<void>(
+			"setAlpha",
+			"(F)V",
+			arg0
 		);
 	}
 	QAndroidJniObject View::focusSearch(jint arg0)
@@ -2270,15 +2115,6 @@ namespace __jni_impl::android::view
 			"()Landroid/view/View;"
 		);
 	}
-	void View::addFocusables(__jni_impl::java::util::ArrayList arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"addFocusables",
-			"(Ljava/util/ArrayList;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	void View::addFocusables(__jni_impl::java::util::ArrayList arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
@@ -2287,6 +2123,15 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
+		);
+	}
+	void View::addFocusables(__jni_impl::java::util::ArrayList arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"addFocusables",
+			"(Ljava/util/ArrayList;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 	void View::addKeyboardNavigationClusters(__jni_impl::__JniBaseClass arg0, jint arg1)
@@ -2305,6 +2150,16 @@ namespace __jni_impl::android::view
 			"(Ljava/util/ArrayList;Ljava/lang/CharSequence;I)V",
 			arg0.__jniObject().object(),
 			arg1,
+			arg2
+		);
+	}
+	void View::findViewsWithText(__jni_impl::java::util::ArrayList arg0, const QString &arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"findViewsWithText",
+			"(Ljava/util/ArrayList;Ljava/lang/CharSequence;I)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -2942,6 +2797,13 @@ namespace __jni_impl::android::view
 			arg1
 		);
 	}
+	jboolean View::showContextMenu()
+	{
+		return __thiz.callMethod<jboolean>(
+			"showContextMenu",
+			"()Z"
+		);
+	}
 	jboolean View::showContextMenu(jfloat arg0, jfloat arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -2949,13 +2811,6 @@ namespace __jni_impl::android::view
 			"(FF)Z",
 			arg0,
 			arg1
-		);
-	}
-	jboolean View::showContextMenu()
-	{
-		return __thiz.callMethod<jboolean>(
-			"showContextMenu",
-			"()Z"
 		);
 	}
 	void View::setOnKeyListener(__jni_impl::__JniBaseClass arg0)
@@ -3013,6 +2868,14 @@ namespace __jni_impl::android::view
 			"()Z"
 		);
 	}
+	jboolean View::requestRectangleOnScreen(__jni_impl::android::graphics::Rect arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"requestRectangleOnScreen",
+			"(Landroid/graphics/Rect;)Z",
+			arg0.__jniObject().object()
+		);
+	}
 	jboolean View::requestRectangleOnScreen(__jni_impl::android::graphics::Rect arg0, jboolean arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -3020,14 +2883,6 @@ namespace __jni_impl::android::view
 			"(Landroid/graphics/Rect;Z)Z",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean View::requestRectangleOnScreen(__jni_impl::android::graphics::Rect arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"requestRectangleOnScreen",
-			"(Landroid/graphics/Rect;)Z",
-			arg0.__jniObject().object()
 		);
 	}
 	jboolean View::hasFocusable()
@@ -3052,6 +2907,14 @@ namespace __jni_impl::android::view
 			arg0
 		);
 	}
+	void View::setAccessibilityPaneTitle(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAccessibilityPaneTitle",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring View::getAccessibilityPaneTitle()
 	{
 		return __thiz.callObjectMethod(
@@ -3073,6 +2936,14 @@ namespace __jni_impl::android::view
 			"announceForAccessibility",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
+		);
+	}
+	void View::announceForAccessibility(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"announceForAccessibility",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void View::sendAccessibilityEventUnchecked(__jni_impl::android::view::accessibility::AccessibilityEvent arg0)
@@ -3148,19 +3019,19 @@ namespace __jni_impl::android::view
 			arg1
 		);
 	}
-	void View::autofill(__jni_impl::android::util::SparseArray arg0)
-	{
-		__thiz.callMethod<void>(
-			"autofill",
-			"(Landroid/util/SparseArray;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void View::autofill(__jni_impl::android::view::autofill::AutofillValue arg0)
 	{
 		__thiz.callMethod<void>(
 			"autofill",
 			"(Landroid/view/autofill/AutofillValue;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void View::autofill(__jni_impl::android::util::SparseArray arg0)
+	{
+		__thiz.callMethod<void>(
+			"autofill",
+			"(Landroid/util/SparseArray;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -3247,6 +3118,16 @@ namespace __jni_impl::android::view
 			arg2.__jniObject().object()
 		);
 	}
+	void View::addExtraDataToAccessibilityNodeInfo(__jni_impl::android::view::accessibility::AccessibilityNodeInfo arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2)
+	{
+		__thiz.callMethod<void>(
+			"addExtraDataToAccessibilityNodeInfo",
+			"(Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
+	}
 	jboolean View::isVisibleToUserForAutofill(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -3290,6 +3171,14 @@ namespace __jni_impl::android::view
 			"setContentDescription",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
+		);
+	}
+	void View::setContentDescription(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setContentDescription",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void View::setAccessibilityTraversalBefore(jint arg0)
@@ -3586,19 +3475,19 @@ namespace __jni_impl::android::view
 			arg0
 		);
 	}
-	void View::setFocusable(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFocusable",
-			"(Z)V",
-			arg0
-		);
-	}
 	void View::setFocusable(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setFocusable",
 			"(I)V",
+			arg0
+		);
+	}
+	void View::setFocusable(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFocusable",
+			"(Z)V",
 			arg0
 		);
 	}
@@ -4755,13 +4644,6 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
-	void View::invalidate()
-	{
-		__thiz.callMethod<void>(
-			"invalidate",
-			"()V"
-		);
-	}
 	void View::invalidate(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		__thiz.callMethod<void>(
@@ -4771,6 +4653,13 @@ namespace __jni_impl::android::view
 			arg1,
 			arg2,
 			arg3
+		);
+	}
+	void View::invalidate()
+	{
+		__thiz.callMethod<void>(
+			"invalidate",
+			"()V"
 		);
 	}
 	void View::postOnAnimation(__jni_impl::__JniBaseClass arg0)
@@ -4790,6 +4679,13 @@ namespace __jni_impl::android::view
 			arg1
 		);
 	}
+	void View::postInvalidate()
+	{
+		__thiz.callMethod<void>(
+			"postInvalidate",
+			"()V"
+		);
+	}
 	void View::postInvalidate(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		__thiz.callMethod<void>(
@@ -4801,11 +4697,12 @@ namespace __jni_impl::android::view
 			arg3
 		);
 	}
-	void View::postInvalidate()
+	void View::postInvalidateDelayed(jlong arg0)
 	{
 		__thiz.callMethod<void>(
-			"postInvalidate",
-			"()V"
+			"postInvalidateDelayed",
+			"(J)V",
+			arg0
 		);
 	}
 	void View::postInvalidateDelayed(jlong arg0, jint arg1, jint arg2, jint arg3, jint arg4)
@@ -4820,21 +4717,6 @@ namespace __jni_impl::android::view
 			arg4
 		);
 	}
-	void View::postInvalidateDelayed(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"postInvalidateDelayed",
-			"(J)V",
-			arg0
-		);
-	}
-	void View::postInvalidateOnAnimation()
-	{
-		__thiz.callMethod<void>(
-			"postInvalidateOnAnimation",
-			"()V"
-		);
-	}
 	void View::postInvalidateOnAnimation(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		__thiz.callMethod<void>(
@@ -4844,6 +4726,13 @@ namespace __jni_impl::android::view
 			arg1,
 			arg2,
 			arg3
+		);
+	}
+	void View::postInvalidateOnAnimation()
+	{
+		__thiz.callMethod<void>(
+			"postInvalidateOnAnimation",
+			"()V"
 		);
 	}
 	void View::computeScroll()
@@ -5183,19 +5072,19 @@ namespace __jni_impl::android::view
 			"()I"
 		);
 	}
-	void View::buildDrawingCache()
-	{
-		__thiz.callMethod<void>(
-			"buildDrawingCache",
-			"()V"
-		);
-	}
 	void View::buildDrawingCache(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"buildDrawingCache",
 			"(Z)V",
 			arg0
+		);
+	}
+	void View::buildDrawingCache()
+	{
+		__thiz.callMethod<void>(
+			"buildDrawingCache",
+			"()V"
 		);
 	}
 	jboolean View::isInEditMode()
@@ -5663,6 +5552,14 @@ namespace __jni_impl::android::view
 			"()J"
 		);
 	}
+	void View::setTag(jobject arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTag",
+			"(Ljava/lang/Object;)V",
+			arg0
+		);
+	}
 	void View::setTag(jint arg0, jobject arg1)
 	{
 		__thiz.callMethod<void>(
@@ -5670,14 +5567,6 @@ namespace __jni_impl::android::view
 			"(ILjava/lang/Object;)V",
 			arg0,
 			arg1
-		);
-	}
-	void View::setTag(jobject arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTag",
-			"(Ljava/lang/Object;)V",
-			arg0
 		);
 	}
 	jint View::getBaseline()
@@ -5812,14 +5701,6 @@ namespace __jni_impl::android::view
 			arg0
 		);
 	}
-	jboolean View::performHapticFeedback(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"performHapticFeedback",
-			"(I)Z",
-			arg0
-		);
-	}
 	jboolean View::performHapticFeedback(jint arg0, jint arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -5827,6 +5708,14 @@ namespace __jni_impl::android::view
 			"(II)Z",
 			arg0,
 			arg1
+		);
+	}
+	jboolean View::performHapticFeedback(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"performHapticFeedback",
+			"(I)Z",
+			arg0
 		);
 	}
 	void View::setSystemUiVisibility(jint arg0)
@@ -6098,6 +5987,14 @@ namespace __jni_impl::android::view
 			arg0
 		);
 	}
+	void View::setTransitionName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTransitionName",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring View::getTransitionName()
 	{
 		return __thiz.callObjectMethod(
@@ -6111,6 +6008,14 @@ namespace __jni_impl::android::view
 			"setTooltipText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
+		);
+	}
+	void View::setTooltipText(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTooltipText",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring View::getTooltipText()
@@ -6134,30 +6039,6 @@ namespace __jni_impl::android::view
 			"removeOnUnhandledKeyEventListener",
 			"(Landroid/view/View$OnUnhandledKeyEventListener;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	void View::setX(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setX",
-			"(F)V",
-			arg0
-		);
-	}
-	void View::setY(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setY",
-			"(F)V",
-			arg0
-		);
-	}
-	void View::setZ(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setZ",
-			"(F)V",
-			arg0
 		);
 	}
 	jfloat View::getX()
@@ -6202,12 +6083,202 @@ namespace __jni_impl::android::view
 			"()Landroid/view/animation/Animation;"
 		);
 	}
-	void View::setAlpha(jfloat arg0)
+	jboolean View::post(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"post",
+			"(Ljava/lang/Runnable;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean View::postDelayed(__jni_impl::__JniBaseClass arg0, jlong arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"postDelayed",
+			"(Ljava/lang/Runnable;J)Z",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jboolean View::removeCallbacks(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"removeCallbacks",
+			"(Ljava/lang/Runnable;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject View::findViewById(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"findViewById",
+			"(I)Landroid/view/View;",
+			arg0
+		);
+	}
+	QAndroidJniObject View::requireViewById(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"requireViewById",
+			"(I)Landroid/view/View;",
+			arg0
+		);
+	}
+	jboolean View::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyDown",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean View::onKeyLongPress(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyLongPress",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean View::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyUp",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean View::onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyMultiple",
+			"(IILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	jboolean View::onKeyShortcut(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyShortcut",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean View::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean View::onTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onTrackballEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean View::onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onGenericMotionEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	void View::onWindowFocusChanged(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
-			"setAlpha",
-			"(F)V",
+			"onWindowFocusChanged",
+			"(Z)V",
 			arg0
+		);
+	}
+	jboolean View::hasFocus()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasFocus",
+			"()Z"
+		);
+	}
+	jboolean View::hasWindowFocus()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasWindowFocus",
+			"()Z"
+		);
+	}
+	jboolean View::dispatchKeyEvent(__jni_impl::android::view::KeyEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchKeyEvent",
+			"(Landroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean View::dispatchKeyShortcutEvent(__jni_impl::android::view::KeyEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchKeyShortcutEvent",
+			"(Landroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean View::dispatchTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean View::dispatchTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchTrackballEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean View::dispatchGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchGenericMotionEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean View::dispatchPopulateAccessibilityEvent(__jni_impl::android::view::accessibility::AccessibilityEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchPopulateAccessibilityEvent",
+			"(Landroid/view/accessibility/AccessibilityEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject View::startActionMode(__jni_impl::__JniBaseClass arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"startActionMode",
+			"(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	QAndroidJniObject View::startActionMode(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"startActionMode",
+			"(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::view

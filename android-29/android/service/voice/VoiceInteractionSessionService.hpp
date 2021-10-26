@@ -8,6 +8,14 @@
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
+namespace __jni_impl::android::service::voice
+{
+	class VoiceInteractionSession;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
+}
 namespace __jni_impl::java::io
 {
 	class FileDescriptor;
@@ -24,14 +32,6 @@ namespace __jni_impl::android::content
 {
 	class Intent;
 }
-namespace __jni_impl::android::service::voice
-{
-	class VoiceInteractionSession;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 
 namespace __jni_impl::android::service::voice
 {
@@ -44,21 +44,21 @@ namespace __jni_impl::android::service::voice
 		void __constructor();
 		
 		// Methods
+		QAndroidJniObject onNewSession(__jni_impl::android::os::Bundle arg0);
 		void onCreate();
 		void onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
 		void onLowMemory();
 		void onTrimMemory(jint arg0);
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
-		QAndroidJniObject onNewSession(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::service::voice
 
+#include "VoiceInteractionSession.hpp"
+#include "../../os/Bundle.hpp"
 #include "../../../java/io/FileDescriptor.hpp"
 #include "../../../java/io/PrintWriter.hpp"
 #include "../../content/res/Configuration.hpp"
 #include "../../content/Intent.hpp"
-#include "VoiceInteractionSession.hpp"
-#include "../../os/Bundle.hpp"
 
 namespace __jni_impl::android::service::voice
 {
@@ -69,10 +69,19 @@ namespace __jni_impl::android::service::voice
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.voice.VoiceInteractionSessionService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
+	QAndroidJniObject VoiceInteractionSessionService::onNewSession(__jni_impl::android::os::Bundle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onNewSession",
+			"(Landroid/os/Bundle;)Landroid/service/voice/VoiceInteractionSession;",
+			arg0.__jniObject().object()
+		);
+	}
 	void VoiceInteractionSessionService::onCreate()
 	{
 		__thiz.callMethod<void>(
@@ -108,14 +117,6 @@ namespace __jni_impl::android::service::voice
 		return __thiz.callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject VoiceInteractionSessionService::onNewSession(__jni_impl::android::os::Bundle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onNewSession",
-			"(Landroid/os/Bundle;)Landroid/service/voice/VoiceInteractionSession;",
 			arg0.__jniObject().object()
 		);
 	}

@@ -9,13 +9,13 @@ namespace __jni_impl::android::media::session
 {
 	class PlaybackState;
 }
-namespace __jni_impl::android::media::session
-{
-	class PlaybackState_CustomAction;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::media::session
+{
+	class PlaybackState_CustomAction;
 }
 
 namespace __jni_impl::android::media::session
@@ -31,21 +31,23 @@ namespace __jni_impl::android::media::session
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setState(jint arg0, jlong arg1, jfloat arg2);
 		QAndroidJniObject setState(jint arg0, jlong arg1, jfloat arg2, jlong arg3);
+		QAndroidJniObject setState(jint arg0, jlong arg1, jfloat arg2);
+		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject addCustomAction(__jni_impl::android::media::session::PlaybackState_CustomAction arg0);
 		QAndroidJniObject addCustomAction(jstring arg0, jstring arg1, jint arg2);
+		QAndroidJniObject addCustomAction(const QString &arg0, const QString &arg1, jint arg2);
 		QAndroidJniObject setBufferedPosition(jlong arg0);
 		QAndroidJniObject setActiveQueueItemId(jlong arg0);
 		QAndroidJniObject setErrorMessage(jstring arg0);
+		QAndroidJniObject setErrorMessage(const QString &arg0);
 		QAndroidJniObject setActions(jlong arg0);
-		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::media::session
 
 #include "PlaybackState.hpp"
-#include "PlaybackState_CustomAction.hpp"
 #include "../../os/Bundle.hpp"
+#include "PlaybackState_CustomAction.hpp"
 
 namespace __jni_impl::android::media::session
 {
@@ -56,14 +58,16 @@ namespace __jni_impl::android::media::session
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.session.PlaybackState$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	void PlaybackState_Builder::__constructor(__jni_impl::android::media::session::PlaybackState arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.session.PlaybackState$Builder",
 			"(Landroid/media/session/PlaybackState;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -72,6 +76,17 @@ namespace __jni_impl::android::media::session
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/media/session/PlaybackState;"
+		);
+	}
+	QAndroidJniObject PlaybackState_Builder::setState(jint arg0, jlong arg1, jfloat arg2, jlong arg3)
+	{
+		return __thiz.callObjectMethod(
+			"setState",
+			"(IJFJ)Landroid/media/session/PlaybackState$Builder;",
+			arg0,
+			arg1,
+			arg2,
+			arg3
 		);
 	}
 	QAndroidJniObject PlaybackState_Builder::setState(jint arg0, jlong arg1, jfloat arg2)
@@ -84,15 +99,12 @@ namespace __jni_impl::android::media::session
 			arg2
 		);
 	}
-	QAndroidJniObject PlaybackState_Builder::setState(jint arg0, jlong arg1, jfloat arg2, jlong arg3)
+	QAndroidJniObject PlaybackState_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setState",
-			"(IJFJ)Landroid/media/session/PlaybackState$Builder;",
-			arg0,
-			arg1,
-			arg2,
-			arg3
+			"setExtras",
+			"(Landroid/os/Bundle;)Landroid/media/session/PlaybackState$Builder;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject PlaybackState_Builder::addCustomAction(__jni_impl::android::media::session::PlaybackState_CustomAction arg0)
@@ -110,6 +122,16 @@ namespace __jni_impl::android::media::session
 			"(Ljava/lang/String;Ljava/lang/String;I)Landroid/media/session/PlaybackState$Builder;",
 			arg0,
 			arg1,
+			arg2
+		);
+	}
+	QAndroidJniObject PlaybackState_Builder::addCustomAction(const QString &arg0, const QString &arg1, jint arg2)
+	{
+		return __thiz.callObjectMethod(
+			"addCustomAction",
+			"(Ljava/lang/String;Ljava/lang/String;I)Landroid/media/session/PlaybackState$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -137,20 +159,20 @@ namespace __jni_impl::android::media::session
 			arg0
 		);
 	}
+	QAndroidJniObject PlaybackState_Builder::setErrorMessage(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setErrorMessage",
+			"(Ljava/lang/CharSequence;)Landroid/media/session/PlaybackState$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject PlaybackState_Builder::setActions(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setActions",
 			"(J)Landroid/media/session/PlaybackState$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject PlaybackState_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setExtras",
-			"(Landroid/os/Bundle;)Landroid/media/session/PlaybackState$Builder;",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::media::session

@@ -42,7 +42,8 @@ namespace __jni_impl::java::io
 		__thiz = QAndroidJniObject(
 			"java.io.BufferedOutputStream",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void BufferedOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0, jint arg1)
 	{
@@ -50,7 +51,8 @@ namespace __jni_impl::java::io
 			"java.io.BufferedOutputStream",
 			"(Ljava/io/OutputStream;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

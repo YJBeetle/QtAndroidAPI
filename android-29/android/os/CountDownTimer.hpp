@@ -36,7 +36,8 @@ namespace __jni_impl::android::os
 			"android.os.CountDownTimer",
 			"(JJ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

@@ -31,13 +31,13 @@ namespace __jni_impl::android::widget
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject setSize(jint arg0, jint arg1);
-		QAndroidJniObject setCornerRadius(jfloat arg0);
+		QAndroidJniObject setElevation(jfloat arg0);
 		QAndroidJniObject setInitialZoom(jfloat arg0);
 		QAndroidJniObject setOverlay(__jni_impl::android::graphics::drawable::Drawable arg0);
 		QAndroidJniObject setDefaultSourceToMagnifierOffset(jint arg0, jint arg1);
 		QAndroidJniObject setClippingEnabled(jboolean arg0);
 		QAndroidJniObject setSourceBounds(jint arg0, jint arg1, jint arg2, jint arg3);
-		QAndroidJniObject setElevation(jfloat arg0);
+		QAndroidJniObject setCornerRadius(jfloat arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -55,7 +55,8 @@ namespace __jni_impl::android::widget
 		__thiz = QAndroidJniObject(
 			"android.widget.Magnifier$Builder",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -75,10 +76,10 @@ namespace __jni_impl::android::widget
 			arg1
 		);
 	}
-	QAndroidJniObject Magnifier_Builder::setCornerRadius(jfloat arg0)
+	QAndroidJniObject Magnifier_Builder::setElevation(jfloat arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setCornerRadius",
+			"setElevation",
 			"(F)Landroid/widget/Magnifier$Builder;",
 			arg0
 		);
@@ -127,10 +128,10 @@ namespace __jni_impl::android::widget
 			arg3
 		);
 	}
-	QAndroidJniObject Magnifier_Builder::setElevation(jfloat arg0)
+	QAndroidJniObject Magnifier_Builder::setCornerRadius(jfloat arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setElevation",
+			"setCornerRadius",
 			"(F)Landroid/widget/Magnifier$Builder;",
 			arg0
 		);

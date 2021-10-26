@@ -46,7 +46,8 @@ namespace __jni_impl::android::view::animation
 			"android.view.animation.AlphaAnimation",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AlphaAnimation::__constructor(jfloat arg0, jfloat arg1)
 	{
@@ -54,7 +55,8 @@ namespace __jni_impl::android::view::animation
 			"android.view.animation.AlphaAnimation",
 			"(FF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

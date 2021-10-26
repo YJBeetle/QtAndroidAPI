@@ -88,7 +88,8 @@ namespace __jni_impl::android::net
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.TrafficStats",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

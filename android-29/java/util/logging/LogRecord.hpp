@@ -47,6 +47,7 @@ namespace __jni_impl::java::util::logging
 		
 		// Constructors
 		void __constructor(__jni_impl::java::util::logging::Level arg0, jstring arg1);
+		void __constructor(__jni_impl::java::util::logging::Level arg0, const QString &arg1);
 		
 		// Methods
 		jstring getMessage();
@@ -55,12 +56,16 @@ namespace __jni_impl::java::util::logging
 		jstring getResourceBundleName();
 		QAndroidJniObject getLevel();
 		void setLoggerName(jstring arg0);
+		void setLoggerName(const QString &arg0);
 		void setResourceBundleName(jstring arg0);
+		void setResourceBundleName(const QString &arg0);
 		void setResourceBundle(__jni_impl::java::util::ResourceBundle arg0);
 		void setParameters(jobjectArray arg0);
 		void setThrown(jthrowable arg0);
 		void setSourceClassName(jstring arg0);
+		void setSourceClassName(const QString &arg0);
 		void setSourceMethodName(jstring arg0);
+		void setSourceMethodName(const QString &arg0);
 		QAndroidJniObject getResourceBundle();
 		void setLevel(__jni_impl::java::util::logging::Level arg0);
 		void setInstant(__jni_impl::java::time::Instant arg0);
@@ -71,6 +76,7 @@ namespace __jni_impl::java::util::logging
 		jstring getSourceClassName();
 		jstring getSourceMethodName();
 		void setMessage(jstring arg0);
+		void setMessage(const QString &arg0);
 		jint getThreadID();
 		void setThreadID(jint arg0);
 		QAndroidJniObject getInstant();
@@ -98,7 +104,17 @@ namespace __jni_impl::java::util::logging
 			"java.util.logging.LogRecord",
 			"(Ljava/util/logging/Level;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void LogRecord::__constructor(__jni_impl::java::util::logging::Level arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.logging.LogRecord",
+			"(Ljava/util/logging/Level;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -145,12 +161,28 @@ namespace __jni_impl::java::util::logging
 			arg0
 		);
 	}
+	void LogRecord::setLoggerName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLoggerName",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void LogRecord::setResourceBundleName(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setResourceBundleName",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void LogRecord::setResourceBundleName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setResourceBundleName",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void LogRecord::setResourceBundle(__jni_impl::java::util::ResourceBundle arg0)
@@ -185,12 +217,28 @@ namespace __jni_impl::java::util::logging
 			arg0
 		);
 	}
+	void LogRecord::setSourceClassName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSourceClassName",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void LogRecord::setSourceMethodName(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setSourceMethodName",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void LogRecord::setSourceMethodName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSourceMethodName",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject LogRecord::getResourceBundle()
@@ -266,6 +314,14 @@ namespace __jni_impl::java::util::logging
 			"setMessage",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void LogRecord::setMessage(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMessage",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint LogRecord::getThreadID()

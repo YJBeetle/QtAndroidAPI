@@ -51,13 +51,13 @@ namespace __jni_impl::android::hardware
 		static QAndroidJniObject create(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4);
 		static jboolean isSupported(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4);
 		jint getFormat();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jboolean isClosed();
 		jlong getUsage();
-		jint getLayers();
 		jint getWidth();
 		jint getHeight();
+		jboolean isClosed();
+		jint getLayers();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::hardware
 
@@ -299,41 +299,11 @@ namespace __jni_impl::android::hardware
 			"()I"
 		);
 	}
-	jint HardwareBuffer::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void HardwareBuffer::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jboolean HardwareBuffer::isClosed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isClosed",
-			"()Z"
-		);
-	}
 	jlong HardwareBuffer::getUsage()
 	{
 		return __thiz.callMethod<jlong>(
 			"getUsage",
 			"()J"
-		);
-	}
-	jint HardwareBuffer::getLayers()
-	{
-		return __thiz.callMethod<jint>(
-			"getLayers",
-			"()I"
 		);
 	}
 	jint HardwareBuffer::getWidth()
@@ -348,6 +318,36 @@ namespace __jni_impl::android::hardware
 		return __thiz.callMethod<jint>(
 			"getHeight",
 			"()I"
+		);
+	}
+	jboolean HardwareBuffer::isClosed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isClosed",
+			"()Z"
+		);
+	}
+	jint HardwareBuffer::getLayers()
+	{
+		return __thiz.callMethod<jint>(
+			"getLayers",
+			"()I"
+		);
+	}
+	jint HardwareBuffer::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void HardwareBuffer::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::hardware

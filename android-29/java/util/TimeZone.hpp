@@ -45,6 +45,7 @@ namespace __jni_impl::java::util
 		jint getDSTSavings();
 		jboolean hasSameRules(__jni_impl::java::util::TimeZone arg0);
 		static QAndroidJniObject getTimeZone(jstring arg0);
+		static QAndroidJniObject getTimeZone(const QString &arg0);
 		static QAndroidJniObject getTimeZone(__jni_impl::java::time::ZoneId arg0);
 		static jarray getAvailableIDs(jint arg0);
 		static jarray getAvailableIDs();
@@ -52,6 +53,7 @@ namespace __jni_impl::java::util
 		jboolean inDaylightTime(__jni_impl::java::util::Date arg0);
 		jboolean useDaylightTime();
 		void setID(jstring arg0);
+		void setID(const QString &arg0);
 		void setRawOffset(jint arg0);
 		jboolean observesDaylightTime();
 	};
@@ -84,7 +86,8 @@ namespace __jni_impl::java::util
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.TimeZone",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -205,6 +208,15 @@ namespace __jni_impl::java::util
 			arg0
 		);
 	}
+	QAndroidJniObject TimeZone::getTimeZone(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.TimeZone",
+			"getTimeZone",
+			"(Ljava/lang/String;)Ljava/util/TimeZone;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject TimeZone::getTimeZone(__jni_impl::java::time::ZoneId arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -259,6 +271,14 @@ namespace __jni_impl::java::util
 			"setID",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void TimeZone::setID(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setID",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void TimeZone::setRawOffset(jint arg0)

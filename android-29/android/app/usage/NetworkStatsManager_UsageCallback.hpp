@@ -18,6 +18,7 @@ namespace __jni_impl::android::app::usage
 		
 		// Methods
 		void onThresholdReached(jint arg0, jstring arg1);
+		void onThresholdReached(jint arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::app::usage
 
@@ -31,7 +32,8 @@ namespace __jni_impl::android::app::usage
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.usage.NetworkStatsManager$UsageCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -42,6 +44,15 @@ namespace __jni_impl::android::app::usage
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
+		);
+	}
+	void NetworkStatsManager_UsageCallback::onThresholdReached(jint arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"onThresholdReached",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::app::usage

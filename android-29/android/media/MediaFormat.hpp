@@ -141,34 +141,61 @@ namespace __jni_impl::android::media
 		// Methods
 		jstring toString();
 		jlong getLong(jstring arg0);
+		jlong getLong(const QString &arg0);
 		jlong getLong(jstring arg0, jlong arg1);
+		jlong getLong(const QString &arg0, jlong arg1);
 		jfloat getFloat(jstring arg0, jfloat arg1);
+		jfloat getFloat(const QString &arg0, jfloat arg1);
 		jfloat getFloat(jstring arg0);
+		jfloat getFloat(const QString &arg0);
 		jboolean containsKey(jstring arg0);
+		jboolean containsKey(const QString &arg0);
 		void setLong(jstring arg0, jlong arg1);
+		void setLong(const QString &arg0, jlong arg1);
 		void setFloat(jstring arg0, jfloat arg1);
+		void setFloat(const QString &arg0, jfloat arg1);
 		QAndroidJniObject getByteBuffer(jstring arg0, __jni_impl::java::nio::ByteBuffer arg1);
+		QAndroidJniObject getByteBuffer(const QString &arg0, __jni_impl::java::nio::ByteBuffer arg1);
 		QAndroidJniObject getByteBuffer(jstring arg0);
+		QAndroidJniObject getByteBuffer(const QString &arg0);
 		jint getInteger(jstring arg0, jint arg1);
+		jint getInteger(const QString &arg0, jint arg1);
 		jint getInteger(jstring arg0);
+		jint getInteger(const QString &arg0);
 		jstring getString(jstring arg0);
+		jstring getString(const QString &arg0);
 		jstring getString(jstring arg0, jstring arg1);
+		jstring getString(const QString &arg0, const QString &arg1);
 		QAndroidJniObject getKeys();
 		QAndroidJniObject getNumber(jstring arg0);
+		QAndroidJniObject getNumber(const QString &arg0);
 		QAndroidJniObject getNumber(jstring arg0, __jni_impl::java::lang::Number arg1);
-		QAndroidJniObject getFeatures();
+		QAndroidJniObject getNumber(const QString &arg0, __jni_impl::java::lang::Number arg1);
 		void setString(jstring arg0, jstring arg1);
+		void setString(const QString &arg0, const QString &arg1);
+		QAndroidJniObject getFeatures();
 		jboolean containsFeature(jstring arg0);
+		jboolean containsFeature(const QString &arg0);
 		jint getValueTypeForKey(jstring arg0);
+		jint getValueTypeForKey(const QString &arg0);
 		jboolean getFeatureEnabled(jstring arg0);
+		jboolean getFeatureEnabled(const QString &arg0);
 		void setInteger(jstring arg0, jint arg1);
+		void setInteger(const QString &arg0, jint arg1);
 		void setByteBuffer(jstring arg0, __jni_impl::java::nio::ByteBuffer arg1);
+		void setByteBuffer(const QString &arg0, __jni_impl::java::nio::ByteBuffer arg1);
 		void removeKey(jstring arg0);
+		void removeKey(const QString &arg0);
 		void removeFeature(jstring arg0);
+		void removeFeature(const QString &arg0);
 		void setFeatureEnabled(jstring arg0, jboolean arg1);
+		void setFeatureEnabled(const QString &arg0, jboolean arg1);
 		static QAndroidJniObject createAudioFormat(jstring arg0, jint arg1, jint arg2);
+		static QAndroidJniObject createAudioFormat(const QString &arg0, jint arg1, jint arg2);
 		static QAndroidJniObject createSubtitleFormat(jstring arg0, jstring arg1);
+		static QAndroidJniObject createSubtitleFormat(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject createVideoFormat(jstring arg0, jint arg1, jint arg2);
+		static QAndroidJniObject createVideoFormat(const QString &arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::media
 
@@ -1072,14 +1099,16 @@ namespace __jni_impl::android::media
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaFormat",
-			"()V");
+			"()V"
+		);
 	}
 	void MediaFormat::__constructor(__jni_impl::android::media::MediaFormat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaFormat",
 			"(Landroid/media/MediaFormat;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -1098,12 +1127,29 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
+	jlong MediaFormat::getLong(const QString &arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"getLong",
+			"(Ljava/lang/String;)J",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jlong MediaFormat::getLong(jstring arg0, jlong arg1)
 	{
 		return __thiz.callMethod<jlong>(
 			"getLong",
 			"(Ljava/lang/String;J)J",
 			arg0,
+			arg1
+		);
+	}
+	jlong MediaFormat::getLong(const QString &arg0, jlong arg1)
+	{
+		return __thiz.callMethod<jlong>(
+			"getLong",
+			"(Ljava/lang/String;J)J",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -1116,12 +1162,29 @@ namespace __jni_impl::android::media
 			arg1
 		);
 	}
+	jfloat MediaFormat::getFloat(const QString &arg0, jfloat arg1)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getFloat",
+			"(Ljava/lang/String;F)F",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	jfloat MediaFormat::getFloat(jstring arg0)
 	{
 		return __thiz.callMethod<jfloat>(
 			"getFloat",
 			"(Ljava/lang/String;)F",
 			arg0
+		);
+	}
+	jfloat MediaFormat::getFloat(const QString &arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getFloat",
+			"(Ljava/lang/String;)F",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean MediaFormat::containsKey(jstring arg0)
@@ -1132,12 +1195,29 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
+	jboolean MediaFormat::containsKey(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"containsKey",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void MediaFormat::setLong(jstring arg0, jlong arg1)
 	{
 		__thiz.callMethod<void>(
 			"setLong",
 			"(Ljava/lang/String;J)V",
 			arg0,
+			arg1
+		);
+	}
+	void MediaFormat::setLong(const QString &arg0, jlong arg1)
+	{
+		__thiz.callMethod<void>(
+			"setLong",
+			"(Ljava/lang/String;J)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -1150,12 +1230,30 @@ namespace __jni_impl::android::media
 			arg1
 		);
 	}
+	void MediaFormat::setFloat(const QString &arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"setFloat",
+			"(Ljava/lang/String;F)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	QAndroidJniObject MediaFormat::getByteBuffer(jstring arg0, __jni_impl::java::nio::ByteBuffer arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getByteBuffer",
 			"(Ljava/lang/String;Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject MediaFormat::getByteBuffer(const QString &arg0, __jni_impl::java::nio::ByteBuffer arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getByteBuffer",
+			"(Ljava/lang/String;Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -1167,12 +1265,29 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
+	QAndroidJniObject MediaFormat::getByteBuffer(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getByteBuffer",
+			"(Ljava/lang/String;)Ljava/nio/ByteBuffer;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint MediaFormat::getInteger(jstring arg0, jint arg1)
 	{
 		return __thiz.callMethod<jint>(
 			"getInteger",
 			"(Ljava/lang/String;I)I",
 			arg0,
+			arg1
+		);
+	}
+	jint MediaFormat::getInteger(const QString &arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getInteger",
+			"(Ljava/lang/String;I)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -1184,12 +1299,28 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
+	jint MediaFormat::getInteger(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getInteger",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring MediaFormat::getString(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring MediaFormat::getString(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getString",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring MediaFormat::getString(jstring arg0, jstring arg1)
@@ -1199,6 +1330,15 @@ namespace __jni_impl::android::media
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1
+		).object<jstring>();
+	}
+	jstring MediaFormat::getString(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getString",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject MediaFormat::getKeys()
@@ -1216,6 +1356,14 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
+	QAndroidJniObject MediaFormat::getNumber(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getNumber",
+			"(Ljava/lang/String;)Ljava/lang/Number;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject MediaFormat::getNumber(jstring arg0, __jni_impl::java::lang::Number arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -1225,11 +1373,13 @@ namespace __jni_impl::android::media
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject MediaFormat::getFeatures()
+	QAndroidJniObject MediaFormat::getNumber(const QString &arg0, __jni_impl::java::lang::Number arg1)
 	{
 		return __thiz.callObjectMethod(
-			"getFeatures",
-			"()Ljava/util/Set;"
+			"getNumber",
+			"(Ljava/lang/String;Ljava/lang/Number;)Ljava/lang/Number;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
 		);
 	}
 	void MediaFormat::setString(jstring arg0, jstring arg1)
@@ -1241,12 +1391,36 @@ namespace __jni_impl::android::media
 			arg1
 		);
 	}
+	void MediaFormat::setString(const QString &arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"setString",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	QAndroidJniObject MediaFormat::getFeatures()
+	{
+		return __thiz.callObjectMethod(
+			"getFeatures",
+			"()Ljava/util/Set;"
+		);
+	}
 	jboolean MediaFormat::containsFeature(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"containsFeature",
 			"(Ljava/lang/String;)Z",
 			arg0
+		);
+	}
+	jboolean MediaFormat::containsFeature(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"containsFeature",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint MediaFormat::getValueTypeForKey(jstring arg0)
@@ -1257,6 +1431,14 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
+	jint MediaFormat::getValueTypeForKey(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getValueTypeForKey",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jboolean MediaFormat::getFeatureEnabled(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -1265,12 +1447,29 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
+	jboolean MediaFormat::getFeatureEnabled(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getFeatureEnabled",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void MediaFormat::setInteger(jstring arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
 			"setInteger",
 			"(Ljava/lang/String;I)V",
 			arg0,
+			arg1
+		);
+	}
+	void MediaFormat::setInteger(const QString &arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setInteger",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -1283,12 +1482,29 @@ namespace __jni_impl::android::media
 			arg1.__jniObject().object()
 		);
 	}
+	void MediaFormat::setByteBuffer(const QString &arg0, __jni_impl::java::nio::ByteBuffer arg1)
+	{
+		__thiz.callMethod<void>(
+			"setByteBuffer",
+			"(Ljava/lang/String;Ljava/nio/ByteBuffer;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	void MediaFormat::removeKey(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeKey",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void MediaFormat::removeKey(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeKey",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void MediaFormat::removeFeature(jstring arg0)
@@ -1299,12 +1515,29 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
+	void MediaFormat::removeFeature(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeFeature",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void MediaFormat::setFeatureEnabled(jstring arg0, jboolean arg1)
 	{
 		__thiz.callMethod<void>(
 			"setFeatureEnabled",
 			"(Ljava/lang/String;Z)V",
 			arg0,
+			arg1
+		);
+	}
+	void MediaFormat::setFeatureEnabled(const QString &arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setFeatureEnabled",
+			"(Ljava/lang/String;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -1319,6 +1552,17 @@ namespace __jni_impl::android::media
 			arg2
 		);
 	}
+	QAndroidJniObject MediaFormat::createAudioFormat(const QString &arg0, jint arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.media.MediaFormat",
+			"createAudioFormat",
+			"(Ljava/lang/String;II)Landroid/media/MediaFormat;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2
+		);
+	}
 	QAndroidJniObject MediaFormat::createSubtitleFormat(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -1329,6 +1573,16 @@ namespace __jni_impl::android::media
 			arg1
 		);
 	}
+	QAndroidJniObject MediaFormat::createSubtitleFormat(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.media.MediaFormat",
+			"createSubtitleFormat",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/media/MediaFormat;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject MediaFormat::createVideoFormat(jstring arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -1336,6 +1590,17 @@ namespace __jni_impl::android::media
 			"createVideoFormat",
 			"(Ljava/lang/String;II)Landroid/media/MediaFormat;",
 			arg0,
+			arg1,
+			arg2
+		);
+	}
+	QAndroidJniObject MediaFormat::createVideoFormat(const QString &arg0, jint arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.media.MediaFormat",
+			"createVideoFormat",
+			"(Ljava/lang/String;II)Landroid/media/MediaFormat;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);

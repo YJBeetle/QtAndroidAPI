@@ -15,13 +15,14 @@ namespace __jni_impl::javax::security::auth::callback
 		
 		// Constructors
 		void __constructor(jstring arg0, jboolean arg1);
+		void __constructor(const QString &arg0, jboolean arg1);
 		
 		// Methods
-		jboolean isEchoOn();
 		void setPassword(jcharArray arg0);
-		jcharArray getPassword();
-		void clearPassword();
 		jstring getPrompt();
+		jcharArray getPassword();
+		jboolean isEchoOn();
+		void clearPassword();
 	};
 } // namespace __jni_impl::javax::security::auth::callback
 
@@ -37,17 +38,20 @@ namespace __jni_impl::javax::security::auth::callback
 			"javax.security.auth.callback.PasswordCallback",
 			"(Ljava/lang/String;Z)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void PasswordCallback::__constructor(const QString &arg0, jboolean arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.security.auth.callback.PasswordCallback",
+			"(Ljava/lang/String;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods
-	jboolean PasswordCallback::isEchoOn()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEchoOn",
-			"()Z"
-		);
-	}
 	void PasswordCallback::setPassword(jcharArray arg0)
 	{
 		__thiz.callMethod<void>(
@@ -56,6 +60,13 @@ namespace __jni_impl::javax::security::auth::callback
 			arg0
 		);
 	}
+	jstring PasswordCallback::getPrompt()
+	{
+		return __thiz.callObjectMethod(
+			"getPrompt",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jcharArray PasswordCallback::getPassword()
 	{
 		return __thiz.callObjectMethod(
@@ -63,19 +74,19 @@ namespace __jni_impl::javax::security::auth::callback
 			"()[C"
 		).object<jcharArray>();
 	}
+	jboolean PasswordCallback::isEchoOn()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEchoOn",
+			"()Z"
+		);
+	}
 	void PasswordCallback::clearPassword()
 	{
 		__thiz.callMethod<void>(
 			"clearPassword",
 			"()V"
 		);
-	}
-	jstring PasswordCallback::getPrompt()
-	{
-		return __thiz.callObjectMethod(
-			"getPrompt",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::security::auth::callback
 

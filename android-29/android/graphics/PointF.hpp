@@ -40,9 +40,9 @@ namespace __jni_impl::android::graphics
 		void set(__jni_impl::android::graphics::PointF arg0);
 		void set(jfloat arg0, jfloat arg1);
 		void negate();
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -79,7 +79,8 @@ namespace __jni_impl::android::graphics
 		__thiz = QAndroidJniObject(
 			"android.graphics.PointF",
 			"(Landroid/graphics/Point;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PointF::__constructor(jfloat arg0, jfloat arg1)
 	{
@@ -87,13 +88,15 @@ namespace __jni_impl::android::graphics
 			"android.graphics.PointF",
 			"(FF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void PointF::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.PointF",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -178,6 +181,14 @@ namespace __jni_impl::android::graphics
 			"()V"
 		);
 	}
+	void PointF::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	jint PointF::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -192,14 +203,6 @@ namespace __jni_impl::android::graphics
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void PointF::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::graphics

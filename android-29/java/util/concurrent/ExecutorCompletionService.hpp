@@ -47,7 +47,8 @@ namespace __jni_impl::java::util::concurrent
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ExecutorCompletionService",
 			"(Ljava/util/concurrent/Executor;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ExecutorCompletionService::__constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -55,7 +56,8 @@ namespace __jni_impl::java::util::concurrent
 			"java.util.concurrent.ExecutorCompletionService",
 			"(Ljava/util/concurrent/Executor;Ljava/util/concurrent/BlockingQueue;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

@@ -31,6 +31,7 @@ namespace __jni_impl::android::service::autofill
 		static jint getMaxUserDataSize();
 		jstring getFieldClassificationAlgorithm();
 		jstring getFieldClassificationAlgorithmForCategory(jstring arg0);
+		jstring getFieldClassificationAlgorithmForCategory(const QString &arg0);
 		static jint getMaxFieldClassificationIdsSize();
 		static jint getMaxCategoryCount();
 		static jint getMinValueLength();
@@ -99,6 +100,14 @@ namespace __jni_impl::android::service::autofill
 			"getFieldClassificationAlgorithmForCategory",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring UserData::getFieldClassificationAlgorithmForCategory(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getFieldClassificationAlgorithmForCategory",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jint UserData::getMaxFieldClassificationIdsSize()

@@ -31,6 +31,7 @@ namespace __jni_impl::java::lang::annotation
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::java::lang::annotation
 
@@ -151,6 +152,15 @@ namespace __jni_impl::java::lang::annotation
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/annotation/ElementType;",
 			arg0
+		);
+	}
+	QAndroidJniObject ElementType::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.lang.annotation.ElementType",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/lang/annotation/ElementType;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::lang::annotation

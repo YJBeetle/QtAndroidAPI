@@ -100,13 +100,15 @@ namespace __jni_impl::android::content::pm
 		__thiz = QAndroidJniObject(
 			"android.content.pm.ComponentInfo",
 			"(Landroid/content/pm/ComponentInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ComponentInfo::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.ComponentInfo",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

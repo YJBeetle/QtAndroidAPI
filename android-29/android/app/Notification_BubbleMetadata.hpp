@@ -30,15 +30,15 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getIntent();
 		QAndroidJniObject getDeleteIntent();
 		jint getDesiredHeight();
 		jint getDesiredHeightResId();
 		jboolean getAutoExpandBubble();
 		jboolean isNotificationSuppressed();
 		QAndroidJniObject getIcon();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getIntent();
 	};
 } // namespace __jni_impl::android::app
 
@@ -67,29 +67,6 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	jint Notification_BubbleMetadata::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void Notification_BubbleMetadata::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject Notification_BubbleMetadata::getIntent()
-	{
-		return __thiz.callObjectMethod(
-			"getIntent",
-			"()Landroid/app/PendingIntent;"
-		);
-	}
 	QAndroidJniObject Notification_BubbleMetadata::getDeleteIntent()
 	{
 		return __thiz.callObjectMethod(
@@ -130,6 +107,29 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
+		);
+	}
+	jint Notification_BubbleMetadata::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void Notification_BubbleMetadata::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	QAndroidJniObject Notification_BubbleMetadata::getIntent()
+	{
+		return __thiz.callObjectMethod(
+			"getIntent",
+			"()Landroid/app/PendingIntent;"
 		);
 	}
 } // namespace __jni_impl::android::app

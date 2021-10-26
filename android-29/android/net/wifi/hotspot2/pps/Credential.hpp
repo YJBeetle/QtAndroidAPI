@@ -5,14 +5,6 @@
 
 #include "../../../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::security::cert
-{
-	class X509Certificate;
-}
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::net::wifi::hotspot2::pps
 {
 	class Credential_UserCredential;
@@ -24,6 +16,14 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 namespace __jni_impl::android::net::wifi::hotspot2::pps
 {
 	class Credential_SimCredential;
+}
+namespace __jni_impl::java::security::cert
+{
+	class X509Certificate;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::net::wifi::hotspot2::pps
@@ -42,13 +42,6 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
-		void setCaCertificate(__jni_impl::java::security::cert::X509Certificate arg0);
-		QAndroidJniObject getCaCertificate();
-		jarray getClientCertificateChain();
-		void setRealm(jstring arg0);
-		jstring getRealm();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void setUserCredential(__jni_impl::android::net::wifi::hotspot2::pps::Credential_UserCredential arg0);
 		QAndroidJniObject getUserCredential();
 		void setCertCredential(__jni_impl::android::net::wifi::hotspot2::pps::Credential_CertificateCredential arg0);
@@ -58,14 +51,22 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 		void setClientCertificateChain(jarray arg0);
 		void setClientPrivateKey(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getClientPrivateKey();
+		void setCaCertificate(__jni_impl::java::security::cert::X509Certificate arg0);
+		QAndroidJniObject getCaCertificate();
+		jarray getClientCertificateChain();
+		void setRealm(jstring arg0);
+		void setRealm(const QString &arg0);
+		jstring getRealm();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi::hotspot2::pps
 
-#include "../../../../../java/security/cert/X509Certificate.hpp"
-#include "../../../../os/Parcel.hpp"
 #include "Credential_UserCredential.hpp"
 #include "Credential_CertificateCredential.hpp"
 #include "Credential_SimCredential.hpp"
+#include "../../../../../java/security/cert/X509Certificate.hpp"
+#include "../../../../os/Parcel.hpp"
 
 namespace __jni_impl::android::net::wifi::hotspot2::pps
 {
@@ -84,14 +85,16 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.hotspot2.pps.Credential",
-			"()V");
+			"()V"
+		);
 	}
 	void Credential::__constructor(__jni_impl::android::net::wifi::hotspot2::pps::Credential arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.hotspot2.pps.Credential",
 			"(Landroid/net/wifi/hotspot2/pps/Credential;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -115,59 +118,6 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I"
-		);
-	}
-	void Credential::setCaCertificate(__jni_impl::java::security::cert::X509Certificate arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCaCertificate",
-			"(Ljava/security/cert/X509Certificate;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Credential::getCaCertificate()
-	{
-		return __thiz.callObjectMethod(
-			"getCaCertificate",
-			"()Ljava/security/cert/X509Certificate;"
-		);
-	}
-	jarray Credential::getClientCertificateChain()
-	{
-		return __thiz.callObjectMethod(
-			"getClientCertificateChain",
-			"()[Ljava/security/cert/X509Certificate;"
-		).object<jarray>();
-	}
-	void Credential::setRealm(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRealm",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	jstring Credential::getRealm()
-	{
-		return __thiz.callObjectMethod(
-			"getRealm",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint Credential::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void Credential::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 	void Credential::setUserCredential(__jni_impl::android::net::wifi::hotspot2::pps::Credential_UserCredential arg0)
@@ -236,6 +186,67 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 		return __thiz.callObjectMethod(
 			"getClientPrivateKey",
 			"()Ljava/security/PrivateKey;"
+		);
+	}
+	void Credential::setCaCertificate(__jni_impl::java::security::cert::X509Certificate arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCaCertificate",
+			"(Ljava/security/cert/X509Certificate;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Credential::getCaCertificate()
+	{
+		return __thiz.callObjectMethod(
+			"getCaCertificate",
+			"()Ljava/security/cert/X509Certificate;"
+		);
+	}
+	jarray Credential::getClientCertificateChain()
+	{
+		return __thiz.callObjectMethod(
+			"getClientCertificateChain",
+			"()[Ljava/security/cert/X509Certificate;"
+		).object<jarray>();
+	}
+	void Credential::setRealm(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRealm",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void Credential::setRealm(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRealm",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jstring Credential::getRealm()
+	{
+		return __thiz.callObjectMethod(
+			"getRealm",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint Credential::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void Credential::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::net::wifi::hotspot2::pps

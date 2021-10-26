@@ -42,7 +42,8 @@ namespace __jni_impl::java::util
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Observable",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

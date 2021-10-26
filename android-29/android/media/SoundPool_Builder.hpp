@@ -43,7 +43,8 @@ namespace __jni_impl::android::media
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.SoundPool$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -18,6 +18,7 @@ namespace __jni_impl::java::nio::charset
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jstring getCharsetName();
@@ -35,7 +36,16 @@ namespace __jni_impl::java::nio::charset
 		__thiz = QAndroidJniObject(
 			"java.nio.charset.IllegalCharsetNameException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void IllegalCharsetNameException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.nio.charset.IllegalCharsetNameException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

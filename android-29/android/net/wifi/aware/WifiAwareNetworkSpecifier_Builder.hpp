@@ -30,9 +30,10 @@ namespace __jni_impl::android::net::wifi::aware
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setPskPassphrase(jstring arg0);
-		QAndroidJniObject setTransportProtocol(jint arg0);
 		QAndroidJniObject setPort(jint arg0);
+		QAndroidJniObject setPskPassphrase(jstring arg0);
+		QAndroidJniObject setPskPassphrase(const QString &arg0);
+		QAndroidJniObject setTransportProtocol(jint arg0);
 	};
 } // namespace __jni_impl::android::net::wifi::aware
 
@@ -51,7 +52,8 @@ namespace __jni_impl::android::net::wifi::aware
 			"android.net.wifi.aware.WifiAwareNetworkSpecifier$Builder",
 			"(Landroid/net/wifi/aware/DiscoverySession;Landroid/net/wifi/aware/PeerHandle;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -62,6 +64,14 @@ namespace __jni_impl::android::net::wifi::aware
 			"()Landroid/net/wifi/aware/WifiAwareNetworkSpecifier;"
 		);
 	}
+	QAndroidJniObject WifiAwareNetworkSpecifier_Builder::setPort(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setPort",
+			"(I)Landroid/net/wifi/aware/WifiAwareNetworkSpecifier$Builder;",
+			arg0
+		);
+	}
 	QAndroidJniObject WifiAwareNetworkSpecifier_Builder::setPskPassphrase(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -70,18 +80,18 @@ namespace __jni_impl::android::net::wifi::aware
 			arg0
 		);
 	}
+	QAndroidJniObject WifiAwareNetworkSpecifier_Builder::setPskPassphrase(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setPskPassphrase",
+			"(Ljava/lang/String;)Landroid/net/wifi/aware/WifiAwareNetworkSpecifier$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject WifiAwareNetworkSpecifier_Builder::setTransportProtocol(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setTransportProtocol",
-			"(I)Landroid/net/wifi/aware/WifiAwareNetworkSpecifier$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject WifiAwareNetworkSpecifier_Builder::setPort(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setPort",
 			"(I)Landroid/net/wifi/aware/WifiAwareNetworkSpecifier$Builder;",
 			arg0
 		);

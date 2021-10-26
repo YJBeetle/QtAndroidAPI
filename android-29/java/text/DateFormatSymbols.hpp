@@ -40,6 +40,7 @@ namespace __jni_impl::java::text
 		jstring getLocalPatternChars();
 		jarray getMonths();
 		void setLocalPatternChars(jstring arg0);
+		void setLocalPatternChars(const QString &arg0);
 		jarray getZoneStrings();
 		void setEras(jarray arg0);
 		void setMonths(jarray arg0);
@@ -64,13 +65,15 @@ namespace __jni_impl::java::text
 		__thiz = QAndroidJniObject(
 			"java.text.DateFormatSymbols",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DateFormatSymbols::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.DateFormatSymbols",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -176,6 +179,14 @@ namespace __jni_impl::java::text
 			"setLocalPatternChars",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void DateFormatSymbols::setLocalPatternChars(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLocalPatternChars",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jarray DateFormatSymbols::getZoneStrings()

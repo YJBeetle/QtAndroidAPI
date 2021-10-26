@@ -25,11 +25,11 @@ namespace __jni_impl::android::nfc::tech
 		void connect();
 		void close();
 		QAndroidJniObject getTag();
+		jbyteArray getApplicationData();
+		jbyteArray getProtocolInfo();
 		jbyteArray transceive(jbyteArray arg0);
 		jint getMaxTransceiveLength();
 		jboolean isConnected();
-		jbyteArray getApplicationData();
-		jbyteArray getProtocolInfo();
 	};
 } // namespace __jni_impl::android::nfc::tech
 
@@ -78,6 +78,20 @@ namespace __jni_impl::android::nfc::tech
 			"()Landroid/nfc/Tag;"
 		);
 	}
+	jbyteArray NfcB::getApplicationData()
+	{
+		return __thiz.callObjectMethod(
+			"getApplicationData",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jbyteArray NfcB::getProtocolInfo()
+	{
+		return __thiz.callObjectMethod(
+			"getProtocolInfo",
+			"()[B"
+		).object<jbyteArray>();
+	}
 	jbyteArray NfcB::transceive(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -99,20 +113,6 @@ namespace __jni_impl::android::nfc::tech
 			"isConnected",
 			"()Z"
 		);
-	}
-	jbyteArray NfcB::getApplicationData()
-	{
-		return __thiz.callObjectMethod(
-			"getApplicationData",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	jbyteArray NfcB::getProtocolInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getProtocolInfo",
-			"()[B"
-		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::nfc::tech
 

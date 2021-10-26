@@ -18,7 +18,9 @@ namespace __jni_impl::java::nio::file::attribute
 		
 		// Methods
 		QAndroidJniObject lookupPrincipalByName(jstring arg0);
+		QAndroidJniObject lookupPrincipalByName(const QString &arg0);
 		QAndroidJniObject lookupPrincipalByGroupName(jstring arg0);
+		QAndroidJniObject lookupPrincipalByGroupName(const QString &arg0);
 	};
 } // namespace __jni_impl::java::nio::file::attribute
 
@@ -44,12 +46,28 @@ namespace __jni_impl::java::nio::file::attribute
 			arg0
 		);
 	}
+	QAndroidJniObject UserPrincipalLookupService::lookupPrincipalByName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"lookupPrincipalByName",
+			"(Ljava/lang/String;)Ljava/nio/file/attribute/UserPrincipal;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject UserPrincipalLookupService::lookupPrincipalByGroupName(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"lookupPrincipalByGroupName",
 			"(Ljava/lang/String;)Ljava/nio/file/attribute/GroupPrincipal;",
 			arg0
+		);
+	}
+	QAndroidJniObject UserPrincipalLookupService::lookupPrincipalByGroupName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"lookupPrincipalByGroupName",
+			"(Ljava/lang/String;)Ljava/nio/file/attribute/GroupPrincipal;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::nio::file::attribute

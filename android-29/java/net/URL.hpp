@@ -59,11 +59,17 @@ namespace __jni_impl::java::net
 		
 		// Constructors
 		void __constructor(__jni_impl::java::net::URL arg0, jstring arg1, __jni_impl::java::net::URLStreamHandler arg2);
+		void __constructor(__jni_impl::java::net::URL arg0, const QString &arg1, __jni_impl::java::net::URLStreamHandler arg2);
 		void __constructor(__jni_impl::java::net::URL arg0, jstring arg1);
+		void __constructor(__jni_impl::java::net::URL arg0, const QString &arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, jstring arg1, jint arg2, jstring arg3);
+		void __constructor(const QString &arg0, const QString &arg1, jint arg2, const QString &arg3);
 		void __constructor(jstring arg0, jstring arg1, jstring arg2);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2);
 		void __constructor(jstring arg0, jstring arg1, jint arg2, jstring arg3, __jni_impl::java::net::URLStreamHandler arg4);
+		void __constructor(const QString &arg0, const QString &arg1, jint arg2, const QString &arg3, __jni_impl::java::net::URLStreamHandler arg4);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -115,7 +121,18 @@ namespace __jni_impl::java::net
 			"(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void URL::__constructor(__jni_impl::java::net::URL arg0, const QString &arg1, __jni_impl::java::net::URLStreamHandler arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.URL",
+			"(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
 	}
 	void URL::__constructor(__jni_impl::java::net::URL arg0, jstring arg1)
 	{
@@ -123,14 +140,33 @@ namespace __jni_impl::java::net
 			"java.net.URL",
 			"(Ljava/net/URL;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void URL::__constructor(__jni_impl::java::net::URL arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.URL",
+			"(Ljava/net/URL;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void URL::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.URL",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void URL::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.URL",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void URL::__constructor(jstring arg0, jstring arg1, jint arg2, jstring arg3)
 	{
@@ -140,7 +176,19 @@ namespace __jni_impl::java::net
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void URL::__constructor(const QString &arg0, const QString &arg1, jint arg2, const QString &arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.URL",
+			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			QAndroidJniObject::fromString(arg3).object<jstring>()
+		);
 	}
 	void URL::__constructor(jstring arg0, jstring arg1, jstring arg2)
 	{
@@ -149,7 +197,18 @@ namespace __jni_impl::java::net
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void URL::__constructor(const QString &arg0, const QString &arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.URL",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	void URL::__constructor(jstring arg0, jstring arg1, jint arg2, jstring arg3, __jni_impl::java::net::URLStreamHandler arg4)
 	{
@@ -160,7 +219,20 @@ namespace __jni_impl::java::net
 			arg1,
 			arg2,
 			arg3,
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
+	}
+	void URL::__constructor(const QString &arg0, const QString &arg1, jint arg2, const QString &arg3, __jni_impl::java::net::URLStreamHandler arg4)
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.URL",
+			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/net/URLStreamHandler;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			QAndroidJniObject::fromString(arg3).object<jstring>(),
+			arg4.__jniObject().object()
+		);
 	}
 	
 	// Methods

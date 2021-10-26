@@ -36,6 +36,7 @@ namespace __jni_impl::java::util::jar
 		jobject clone();
 		void clear();
 		jstring getValue(jstring arg0);
+		jstring getValue(const QString &arg0);
 		jstring getValue(__jni_impl::java::util::jar::Attributes_Name arg0);
 		jboolean isEmpty();
 		jint size();
@@ -45,6 +46,7 @@ namespace __jni_impl::java::util::jar
 		QAndroidJniObject keySet();
 		jboolean containsValue(jobject arg0);
 		jstring putValue(jstring arg0, jstring arg1);
+		jstring putValue(const QString &arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::java::util::jar
 
@@ -61,20 +63,23 @@ namespace __jni_impl::java::util::jar
 		__thiz = QAndroidJniObject(
 			"java.util.jar.Attributes",
 			"(Ljava/util/jar/Attributes;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Attributes::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.Attributes",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Attributes::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.Attributes",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -147,6 +152,14 @@ namespace __jni_impl::java::util::jar
 			arg0
 		).object<jstring>();
 	}
+	jstring Attributes::getValue(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getValue",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	jstring Attributes::getValue(__jni_impl::java::util::jar::Attributes_Name arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -214,6 +227,15 @@ namespace __jni_impl::java::util::jar
 			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
 			arg1
+		).object<jstring>();
+	}
+	jstring Attributes::putValue(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"putValue",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util::jar

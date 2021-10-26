@@ -47,7 +47,8 @@ namespace __jni_impl::android::view::animation
 			"android.view.animation.PathInterpolator",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void PathInterpolator::__constructor(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
@@ -57,7 +58,8 @@ namespace __jni_impl::android::view::animation
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void PathInterpolator::__constructor(jfloat arg0, jfloat arg1)
 	{
@@ -65,14 +67,16 @@ namespace __jni_impl::android::view::animation
 			"android.view.animation.PathInterpolator",
 			"(FF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void PathInterpolator::__constructor(__jni_impl::android::graphics::Path arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.PathInterpolator",
 			"(Landroid/graphics/Path;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

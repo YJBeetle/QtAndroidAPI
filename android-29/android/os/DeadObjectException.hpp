@@ -19,6 +19,7 @@ namespace __jni_impl::android::os
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -34,14 +35,24 @@ namespace __jni_impl::android::os
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.DeadObjectException",
-			"()V");
+			"()V"
+		);
 	}
 	void DeadObjectException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.DeadObjectException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void DeadObjectException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.os.DeadObjectException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

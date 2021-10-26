@@ -51,10 +51,15 @@ namespace __jni_impl::android::app
 		// Methods
 		QAndroidJniObject instantiateClassLoader(__jni_impl::java::lang::ClassLoader arg0, __jni_impl::android::content::pm::ApplicationInfo arg1);
 		QAndroidJniObject instantiateApplication(__jni_impl::java::lang::ClassLoader arg0, jstring arg1);
+		QAndroidJniObject instantiateApplication(__jni_impl::java::lang::ClassLoader arg0, const QString &arg1);
 		QAndroidJniObject instantiateActivity(__jni_impl::java::lang::ClassLoader arg0, jstring arg1, __jni_impl::android::content::Intent arg2);
+		QAndroidJniObject instantiateActivity(__jni_impl::java::lang::ClassLoader arg0, const QString &arg1, __jni_impl::android::content::Intent arg2);
 		QAndroidJniObject instantiateReceiver(__jni_impl::java::lang::ClassLoader arg0, jstring arg1, __jni_impl::android::content::Intent arg2);
+		QAndroidJniObject instantiateReceiver(__jni_impl::java::lang::ClassLoader arg0, const QString &arg1, __jni_impl::android::content::Intent arg2);
 		QAndroidJniObject instantiateService(__jni_impl::java::lang::ClassLoader arg0, jstring arg1, __jni_impl::android::content::Intent arg2);
+		QAndroidJniObject instantiateService(__jni_impl::java::lang::ClassLoader arg0, const QString &arg1, __jni_impl::android::content::Intent arg2);
 		QAndroidJniObject instantiateProvider(__jni_impl::java::lang::ClassLoader arg0, jstring arg1);
+		QAndroidJniObject instantiateProvider(__jni_impl::java::lang::ClassLoader arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -76,7 +81,8 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.AppComponentFactory",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -98,6 +104,15 @@ namespace __jni_impl::android::app
 			arg1
 		);
 	}
+	QAndroidJniObject AppComponentFactory::instantiateApplication(__jni_impl::java::lang::ClassLoader arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"instantiateApplication",
+			"(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/app/Application;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject AppComponentFactory::instantiateActivity(__jni_impl::java::lang::ClassLoader arg0, jstring arg1, __jni_impl::android::content::Intent arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -105,6 +120,16 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;",
 			arg0.__jniObject().object(),
 			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject AppComponentFactory::instantiateActivity(__jni_impl::java::lang::ClassLoader arg0, const QString &arg1, __jni_impl::android::content::Intent arg2)
+	{
+		return __thiz.callObjectMethod(
+			"instantiateActivity",
+			"(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Activity;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -118,6 +143,16 @@ namespace __jni_impl::android::app
 			arg2.__jniObject().object()
 		);
 	}
+	QAndroidJniObject AppComponentFactory::instantiateReceiver(__jni_impl::java::lang::ClassLoader arg0, const QString &arg1, __jni_impl::android::content::Intent arg2)
+	{
+		return __thiz.callObjectMethod(
+			"instantiateReceiver",
+			"(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/content/BroadcastReceiver;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
+	}
 	QAndroidJniObject AppComponentFactory::instantiateService(__jni_impl::java::lang::ClassLoader arg0, jstring arg1, __jni_impl::android::content::Intent arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -128,6 +163,16 @@ namespace __jni_impl::android::app
 			arg2.__jniObject().object()
 		);
 	}
+	QAndroidJniObject AppComponentFactory::instantiateService(__jni_impl::java::lang::ClassLoader arg0, const QString &arg1, __jni_impl::android::content::Intent arg2)
+	{
+		return __thiz.callObjectMethod(
+			"instantiateService",
+			"(Ljava/lang/ClassLoader;Ljava/lang/String;Landroid/content/Intent;)Landroid/app/Service;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
+	}
 	QAndroidJniObject AppComponentFactory::instantiateProvider(__jni_impl::java::lang::ClassLoader arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -135,6 +180,15 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/content/ContentProvider;",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	QAndroidJniObject AppComponentFactory::instantiateProvider(__jni_impl::java::lang::ClassLoader arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"instantiateProvider",
+			"(Ljava/lang/ClassLoader;Ljava/lang/String;)Landroid/content/ContentProvider;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::app

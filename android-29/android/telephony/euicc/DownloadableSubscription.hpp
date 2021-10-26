@@ -24,6 +24,7 @@ namespace __jni_impl::android::telephony::euicc
 		// Methods
 		jstring getEncodedActivationCode();
 		static QAndroidJniObject forActivationCode(jstring arg0);
+		static QAndroidJniObject forActivationCode(const QString &arg0);
 		jstring getConfirmationCode();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -67,6 +68,15 @@ namespace __jni_impl::android::telephony::euicc
 			"forActivationCode",
 			"(Ljava/lang/String;)Landroid/telephony/euicc/DownloadableSubscription;",
 			arg0
+		);
+	}
+	QAndroidJniObject DownloadableSubscription::forActivationCode(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telephony.euicc.DownloadableSubscription",
+			"forActivationCode",
+			"(Ljava/lang/String;)Landroid/telephony/euicc/DownloadableSubscription;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring DownloadableSubscription::getConfirmationCode()

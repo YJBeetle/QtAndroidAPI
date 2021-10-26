@@ -27,6 +27,9 @@ namespace __jni_impl::android::telephony
 		jstring toString();
 		jint hashCode();
 		jint getLevel();
+		jint getRssi();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getAsuLevel();
 		jint getRsrq();
 		jint getRssnr();
@@ -34,9 +37,6 @@ namespace __jni_impl::android::telephony
 		jint getCqi();
 		jint getDbm();
 		jint getTimingAdvance();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getRssi();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -92,6 +92,29 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
+	jint CellSignalStrengthLte::getRssi()
+	{
+		return __thiz.callMethod<jint>(
+			"getRssi",
+			"()I"
+		);
+	}
+	jint CellSignalStrengthLte::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void CellSignalStrengthLte::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
 	jint CellSignalStrengthLte::getAsuLevel()
 	{
 		return __thiz.callMethod<jint>(
@@ -138,29 +161,6 @@ namespace __jni_impl::android::telephony
 	{
 		return __thiz.callMethod<jint>(
 			"getTimingAdvance",
-			"()I"
-		);
-	}
-	jint CellSignalStrengthLte::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void CellSignalStrengthLte::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jint CellSignalStrengthLte::getRssi()
-	{
-		return __thiz.callMethod<jint>(
-			"getRssi",
 			"()I"
 		);
 	}

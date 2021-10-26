@@ -22,6 +22,7 @@ namespace __jni_impl::android::net::wifi::hotspot2::omadm
 		
 		// Methods
 		static QAndroidJniObject parseMoText(jstring arg0);
+		static QAndroidJniObject parseMoText(const QString &arg0);
 	};
 } // namespace __jni_impl::android::net::wifi::hotspot2::omadm
 
@@ -47,6 +48,15 @@ namespace __jni_impl::android::net::wifi::hotspot2::omadm
 			"parseMoText",
 			"(Ljava/lang/String;)Landroid/net/wifi/hotspot2/PasspointConfiguration;",
 			arg0
+		);
+	}
+	QAndroidJniObject PpsMoParser::parseMoText(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.net.wifi.hotspot2.omadm.PpsMoParser",
+			"parseMoText",
+			"(Ljava/lang/String;)Landroid/net/wifi/hotspot2/PasspointConfiguration;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::net::wifi::hotspot2::omadm

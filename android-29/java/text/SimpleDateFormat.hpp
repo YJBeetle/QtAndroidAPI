@@ -53,8 +53,11 @@ namespace __jni_impl::java::text
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::java::text::DateFormatSymbols arg1);
+		void __constructor(const QString &arg0, __jni_impl::java::text::DateFormatSymbols arg1);
 		void __constructor(jstring arg0, __jni_impl::java::util::Locale arg1);
+		void __constructor(const QString &arg0, __jni_impl::java::util::Locale arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor();
 		
 		// Methods
@@ -63,12 +66,15 @@ namespace __jni_impl::java::text
 		jobject clone();
 		QAndroidJniObject format(__jni_impl::java::util::Date arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
 		QAndroidJniObject parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		QAndroidJniObject parse(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
 		void applyPattern(jstring arg0);
+		void applyPattern(const QString &arg0);
 		jstring toPattern();
 		void set2DigitYearStart(__jni_impl::java::util::Date arg0);
 		QAndroidJniObject get2DigitYearStart();
 		jstring toLocalizedPattern();
 		void applyLocalizedPattern(jstring arg0);
+		void applyLocalizedPattern(const QString &arg0);
 		QAndroidJniObject getDateFormatSymbols();
 		void setDateFormatSymbols(__jni_impl::java::text::DateFormatSymbols arg0);
 		QAndroidJniObject formatToCharacterIterator(jobject arg0);
@@ -96,7 +102,17 @@ namespace __jni_impl::java::text
 			"java.text.SimpleDateFormat",
 			"(Ljava/lang/String;Ljava/text/DateFormatSymbols;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void SimpleDateFormat::__constructor(const QString &arg0, __jni_impl::java::text::DateFormatSymbols arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.text.SimpleDateFormat",
+			"(Ljava/lang/String;Ljava/text/DateFormatSymbols;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	void SimpleDateFormat::__constructor(jstring arg0, __jni_impl::java::util::Locale arg1)
 	{
@@ -104,20 +120,40 @@ namespace __jni_impl::java::text
 			"java.text.SimpleDateFormat",
 			"(Ljava/lang/String;Ljava/util/Locale;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void SimpleDateFormat::__constructor(const QString &arg0, __jni_impl::java::util::Locale arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.text.SimpleDateFormat",
+			"(Ljava/lang/String;Ljava/util/Locale;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	void SimpleDateFormat::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.SimpleDateFormat",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void SimpleDateFormat::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.text.SimpleDateFormat",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void SimpleDateFormat::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.SimpleDateFormat",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -162,12 +198,29 @@ namespace __jni_impl::java::text
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject SimpleDateFormat::parse(const QString &arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callObjectMethod(
+			"parse",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	void SimpleDateFormat::applyPattern(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"applyPattern",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void SimpleDateFormat::applyPattern(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"applyPattern",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring SimpleDateFormat::toPattern()
@@ -205,6 +258,14 @@ namespace __jni_impl::java::text
 			"applyLocalizedPattern",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void SimpleDateFormat::applyLocalizedPattern(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"applyLocalizedPattern",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject SimpleDateFormat::getDateFormatSymbols()

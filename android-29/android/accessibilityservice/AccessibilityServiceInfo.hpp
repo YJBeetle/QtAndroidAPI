@@ -5,10 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content::pm
-{
-	class PackageManager;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::content::pm
 {
 	class ResolveInfo;
+}
+namespace __jni_impl::android::content::pm
+{
+	class PackageManager;
 }
 
 namespace __jni_impl::android::accessibilityservice
@@ -64,7 +64,8 @@ namespace __jni_impl::android::accessibilityservice
 		jstring toString();
 		jint hashCode();
 		jstring getId();
-		jstring loadDescription(__jni_impl::android::content::pm::PackageManager arg0);
+		jstring getDescription();
+		jint getCapabilities();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getResolveInfo();
@@ -78,14 +79,13 @@ namespace __jni_impl::android::accessibilityservice
 		static jstring feedbackTypeToString(jint arg0);
 		static jstring flagToString(jint arg0);
 		static jstring capabilityToString(jint arg0);
-		jstring getDescription();
-		jint getCapabilities();
+		jstring loadDescription(__jni_impl::android::content::pm::PackageManager arg0);
 	};
 } // namespace __jni_impl::android::accessibilityservice
 
-#include "../content/pm/PackageManager.hpp"
 #include "../os/Parcel.hpp"
 #include "../content/pm/ResolveInfo.hpp"
+#include "../content/pm/PackageManager.hpp"
 
 namespace __jni_impl::android::accessibilityservice
 {
@@ -310,7 +310,8 @@ namespace __jni_impl::android::accessibilityservice
 	{
 		__thiz = QAndroidJniObject(
 			"android.accessibilityservice.AccessibilityServiceInfo",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -343,13 +344,19 @@ namespace __jni_impl::android::accessibilityservice
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jstring AccessibilityServiceInfo::loadDescription(__jni_impl::android::content::pm::PackageManager arg0)
+	jstring AccessibilityServiceInfo::getDescription()
 	{
 		return __thiz.callObjectMethod(
-			"loadDescription",
-			"(Landroid/content/pm/PackageManager;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			"getDescription",
+			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jint AccessibilityServiceInfo::getCapabilities()
+	{
+		return __thiz.callMethod<jint>(
+			"getCapabilities",
+			"()I"
+		);
 	}
 	jint AccessibilityServiceInfo::describeContents()
 	{
@@ -453,19 +460,13 @@ namespace __jni_impl::android::accessibilityservice
 			arg0
 		).object<jstring>();
 	}
-	jstring AccessibilityServiceInfo::getDescription()
+	jstring AccessibilityServiceInfo::loadDescription(__jni_impl::android::content::pm::PackageManager arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/String;"
+			"loadDescription",
+			"(Landroid/content/pm/PackageManager;)Ljava/lang/String;",
+			arg0.__jniObject().object()
 		).object<jstring>();
-	}
-	jint AccessibilityServiceInfo::getCapabilities()
-	{
-		return __thiz.callMethod<jint>(
-			"getCapabilities",
-			"()I"
-		);
 	}
 } // namespace __jni_impl::android::accessibilityservice
 

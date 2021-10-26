@@ -51,11 +51,12 @@ namespace __jni_impl::android::app
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0, jint arg1, jarray arg2);
+		void __constructor(const QString &arg0, jint arg1, jarray arg2);
 		
 		// Methods
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -254,7 +255,8 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ActivityManager$RunningAppProcessInfo",
-			"()V");
+			"()V"
+		);
 	}
 	void ActivityManager_RunningAppProcessInfo::__constructor(jstring arg0, jint arg1, jarray arg2)
 	{
@@ -263,10 +265,29 @@ namespace __jni_impl::android::app
 			"(Ljava/lang/String;I[Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void ActivityManager_RunningAppProcessInfo::__constructor(const QString &arg0, jint arg1, jarray arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.ActivityManager$RunningAppProcessInfo",
+			"(Ljava/lang/String;I[Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2
+		);
 	}
 	
 	// Methods
+	void ActivityManager_RunningAppProcessInfo::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	jint ActivityManager_RunningAppProcessInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -281,14 +302,6 @@ namespace __jni_impl::android::app
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void ActivityManager_RunningAppProcessInfo::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::app

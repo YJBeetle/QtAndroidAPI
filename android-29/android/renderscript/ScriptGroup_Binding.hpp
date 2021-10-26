@@ -37,7 +37,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.ScriptGroup$Binding",
 			"(Landroid/renderscript/Script$FieldID;Ljava/lang/Object;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

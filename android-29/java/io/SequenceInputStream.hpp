@@ -42,7 +42,8 @@ namespace __jni_impl::java::io
 		__thiz = QAndroidJniObject(
 			"java.io.SequenceInputStream",
 			"(Ljava/util/Enumeration;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void SequenceInputStream::__constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::io::InputStream arg1)
 	{
@@ -50,7 +51,8 @@ namespace __jni_impl::java::io
 			"java.io.SequenceInputStream",
 			"(Ljava/io/InputStream;Ljava/io/InputStream;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

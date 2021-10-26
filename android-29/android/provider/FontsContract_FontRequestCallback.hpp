@@ -85,7 +85,8 @@ namespace __jni_impl::android::provider
 	{
 		__thiz = QAndroidJniObject(
 			"android.provider.FontsContract$FontRequestCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -70,27 +70,31 @@ namespace __jni_impl::java::util
 			"java.util.HashMap",
 			"(IF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void HashMap::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.HashMap",
-			"()V");
+			"()V"
+		);
 	}
 	void HashMap::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.HashMap",
 			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void HashMap::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.HashMap",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

@@ -30,7 +30,8 @@ namespace __jni_impl::java::security
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.KeyFactorySpi",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

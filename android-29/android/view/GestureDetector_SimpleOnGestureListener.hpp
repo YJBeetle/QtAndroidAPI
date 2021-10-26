@@ -24,12 +24,12 @@ namespace __jni_impl::android::view
 		jboolean onSingleTapConfirmed(__jni_impl::android::view::MotionEvent arg0);
 		jboolean onDoubleTap(__jni_impl::android::view::MotionEvent arg0);
 		jboolean onDoubleTapEvent(__jni_impl::android::view::MotionEvent arg0);
-		void onShowPress(__jni_impl::android::view::MotionEvent arg0);
 		void onLongPress(__jni_impl::android::view::MotionEvent arg0);
 		jboolean onFling(__jni_impl::android::view::MotionEvent arg0, __jni_impl::android::view::MotionEvent arg1, jfloat arg2, jfloat arg3);
-		jboolean onDown(__jni_impl::android::view::MotionEvent arg0);
 		jboolean onSingleTapUp(__jni_impl::android::view::MotionEvent arg0);
 		jboolean onScroll(__jni_impl::android::view::MotionEvent arg0, __jni_impl::android::view::MotionEvent arg1, jfloat arg2, jfloat arg3);
+		void onShowPress(__jni_impl::android::view::MotionEvent arg0);
+		jboolean onDown(__jni_impl::android::view::MotionEvent arg0);
 		jboolean onContextClick(__jni_impl::android::view::MotionEvent arg0);
 	};
 } // namespace __jni_impl::android::view
@@ -45,7 +45,8 @@ namespace __jni_impl::android::view
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.GestureDetector$SimpleOnGestureListener",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -73,14 +74,6 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
-	void GestureDetector_SimpleOnGestureListener::onShowPress(__jni_impl::android::view::MotionEvent arg0)
-	{
-		__thiz.callMethod<void>(
-			"onShowPress",
-			"(Landroid/view/MotionEvent;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void GestureDetector_SimpleOnGestureListener::onLongPress(__jni_impl::android::view::MotionEvent arg0)
 	{
 		__thiz.callMethod<void>(
@@ -100,14 +93,6 @@ namespace __jni_impl::android::view
 			arg3
 		);
 	}
-	jboolean GestureDetector_SimpleOnGestureListener::onDown(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onDown",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
 	jboolean GestureDetector_SimpleOnGestureListener::onSingleTapUp(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -125,6 +110,22 @@ namespace __jni_impl::android::view
 			arg1.__jniObject().object(),
 			arg2,
 			arg3
+		);
+	}
+	void GestureDetector_SimpleOnGestureListener::onShowPress(__jni_impl::android::view::MotionEvent arg0)
+	{
+		__thiz.callMethod<void>(
+			"onShowPress",
+			"(Landroid/view/MotionEvent;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean GestureDetector_SimpleOnGestureListener::onDown(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onDown",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 	jboolean GestureDetector_SimpleOnGestureListener::onContextClick(__jni_impl::android::view::MotionEvent arg0)

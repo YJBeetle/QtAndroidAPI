@@ -49,7 +49,8 @@ namespace __jni_impl::java::security
 		__thiz = QAndroidJniObject(
 			"java.security.PrivilegedActionException",
 			"(Ljava/lang/Exception;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

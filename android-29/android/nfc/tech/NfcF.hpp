@@ -25,13 +25,13 @@ namespace __jni_impl::android::nfc::tech
 		void connect();
 		void close();
 		QAndroidJniObject getTag();
+		jbyteArray getSystemCode();
+		jbyteArray getManufacturer();
 		jbyteArray transceive(jbyteArray arg0);
 		jint getMaxTransceiveLength();
 		void setTimeout(jint arg0);
 		jint getTimeout();
 		jboolean isConnected();
-		jbyteArray getSystemCode();
-		jbyteArray getManufacturer();
 	};
 } // namespace __jni_impl::android::nfc::tech
 
@@ -80,6 +80,20 @@ namespace __jni_impl::android::nfc::tech
 			"()Landroid/nfc/Tag;"
 		);
 	}
+	jbyteArray NfcF::getSystemCode()
+	{
+		return __thiz.callObjectMethod(
+			"getSystemCode",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jbyteArray NfcF::getManufacturer()
+	{
+		return __thiz.callObjectMethod(
+			"getManufacturer",
+			"()[B"
+		).object<jbyteArray>();
+	}
 	jbyteArray NfcF::transceive(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -116,20 +130,6 @@ namespace __jni_impl::android::nfc::tech
 			"isConnected",
 			"()Z"
 		);
-	}
-	jbyteArray NfcF::getSystemCode()
-	{
-		return __thiz.callObjectMethod(
-			"getSystemCode",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	jbyteArray NfcF::getManufacturer()
-	{
-		return __thiz.callObjectMethod(
-			"getManufacturer",
-			"()[B"
-		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::nfc::tech
 

@@ -40,7 +40,8 @@ namespace __jni_impl::android::view::textclassifier
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.textclassifier.TextClassifier$EntityConfig$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

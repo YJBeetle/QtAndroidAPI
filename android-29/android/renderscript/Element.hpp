@@ -12,11 +12,11 @@ namespace __jni_impl::android::renderscript
 }
 namespace __jni_impl::android::renderscript
 {
-	class Element_DataType;
+	class Element_DataKind;
 }
 namespace __jni_impl::android::renderscript
 {
-	class Element_DataKind;
+	class Element_DataType;
 }
 
 namespace __jni_impl::android::renderscript
@@ -32,7 +32,6 @@ namespace __jni_impl::android::renderscript
 		// Methods
 		static QAndroidJniObject TYPE(__jni_impl::android::renderscript::RenderScript arg0);
 		static QAndroidJniObject BOOLEAN(__jni_impl::android::renderscript::RenderScript arg0);
-		QAndroidJniObject getDataType();
 		jint getBytesSize();
 		jint getVectorSize();
 		jboolean isComplex();
@@ -110,12 +109,13 @@ namespace __jni_impl::android::renderscript
 		static QAndroidJniObject createVector(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element_DataType arg1, jint arg2);
 		static QAndroidJniObject createPixel(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element_DataType arg1, __jni_impl::android::renderscript::Element_DataKind arg2);
 		jboolean isCompatible(__jni_impl::android::renderscript::Element arg0);
+		QAndroidJniObject getDataType();
 	};
 } // namespace __jni_impl::android::renderscript
 
 #include "RenderScript.hpp"
-#include "Element_DataType.hpp"
 #include "Element_DataKind.hpp"
+#include "Element_DataType.hpp"
 
 namespace __jni_impl::android::renderscript
 {
@@ -146,13 +146,6 @@ namespace __jni_impl::android::renderscript
 			"BOOLEAN",
 			"(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Element::getDataType()
-	{
-		return __thiz.callObjectMethod(
-			"getDataType",
-			"()Landroid/renderscript/Element$DataType;"
 		);
 	}
 	jint Element::getBytesSize()
@@ -835,6 +828,13 @@ namespace __jni_impl::android::renderscript
 			"isCompatible",
 			"(Landroid/renderscript/Element;)Z",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Element::getDataType()
+	{
+		return __thiz.callObjectMethod(
+			"getDataType",
+			"()Landroid/renderscript/Element$DataType;"
 		);
 	}
 } // namespace __jni_impl::android::renderscript

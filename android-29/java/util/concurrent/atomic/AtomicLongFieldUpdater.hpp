@@ -38,6 +38,7 @@ namespace __jni_impl::java::util::concurrent::atomic
 		jlong getAndAccumulate(jobject arg0, jlong arg1, __jni_impl::__JniBaseClass arg2);
 		jlong accumulateAndGet(jobject arg0, jlong arg1, __jni_impl::__JniBaseClass arg2);
 		static QAndroidJniObject newUpdater(jclass arg0, jstring arg1);
+		static QAndroidJniObject newUpdater(jclass arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::java::util::concurrent::atomic
 
@@ -207,6 +208,16 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;",
 			arg0,
 			arg1
+		);
+	}
+	QAndroidJniObject AtomicLongFieldUpdater::newUpdater(jclass arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.concurrent.atomic.AtomicLongFieldUpdater",
+			"newUpdater",
+			"(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::util::concurrent::atomic

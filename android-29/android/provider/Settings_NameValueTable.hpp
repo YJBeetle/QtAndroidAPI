@@ -28,6 +28,7 @@ namespace __jni_impl::android::provider
 		
 		// Methods
 		static QAndroidJniObject getUriFor(__jni_impl::android::net::Uri arg0, jstring arg1);
+		static QAndroidJniObject getUriFor(__jni_impl::android::net::Uri arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -59,7 +60,8 @@ namespace __jni_impl::android::provider
 	{
 		__thiz = QAndroidJniObject(
 			"android.provider.Settings$NameValueTable",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -71,6 +73,16 @@ namespace __jni_impl::android::provider
 			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	QAndroidJniObject Settings_NameValueTable::getUriFor(__jni_impl::android::net::Uri arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.Settings$NameValueTable",
+			"getUriFor",
+			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::provider

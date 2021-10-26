@@ -17,14 +17,14 @@ namespace __jni_impl::android::view::accessibility
 		void __constructor();
 		
 		// Methods
-		jint getColumnIndex();
-		jint getRowIndex();
-		jint getColumnSpan();
-		jint getRowSpan();
 		jboolean isHeading();
 		jboolean isSelected();
 		static QAndroidJniObject obtain(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4);
 		static QAndroidJniObject obtain(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4, jboolean arg5);
+		jint getColumnIndex();
+		jint getRowIndex();
+		jint getColumnSpan();
+		jint getRowSpan();
 	};
 } // namespace __jni_impl::android::view::accessibility
 
@@ -42,34 +42,6 @@ namespace __jni_impl::android::view::accessibility
 	}
 	
 	// Methods
-	jint AccessibilityNodeInfo_CollectionItemInfo::getColumnIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnIndex",
-			"()I"
-		);
-	}
-	jint AccessibilityNodeInfo_CollectionItemInfo::getRowIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getRowIndex",
-			"()I"
-		);
-	}
-	jint AccessibilityNodeInfo_CollectionItemInfo::getColumnSpan()
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnSpan",
-			"()I"
-		);
-	}
-	jint AccessibilityNodeInfo_CollectionItemInfo::getRowSpan()
-	{
-		return __thiz.callMethod<jint>(
-			"getRowSpan",
-			"()I"
-		);
-	}
 	jboolean AccessibilityNodeInfo_CollectionItemInfo::isHeading()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -109,6 +81,34 @@ namespace __jni_impl::android::view::accessibility
 			arg3,
 			arg4,
 			arg5
+		);
+	}
+	jint AccessibilityNodeInfo_CollectionItemInfo::getColumnIndex()
+	{
+		return __thiz.callMethod<jint>(
+			"getColumnIndex",
+			"()I"
+		);
+	}
+	jint AccessibilityNodeInfo_CollectionItemInfo::getRowIndex()
+	{
+		return __thiz.callMethod<jint>(
+			"getRowIndex",
+			"()I"
+		);
+	}
+	jint AccessibilityNodeInfo_CollectionItemInfo::getColumnSpan()
+	{
+		return __thiz.callMethod<jint>(
+			"getColumnSpan",
+			"()I"
+		);
+	}
+	jint AccessibilityNodeInfo_CollectionItemInfo::getRowSpan()
+	{
+		return __thiz.callMethod<jint>(
+			"getRowSpan",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::view::accessibility

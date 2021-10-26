@@ -24,6 +24,7 @@ namespace __jni_impl::android::icu::text
 		QAndroidJniObject iterator();
 		jint getBucketCount();
 		jint getBucketIndex(jstring arg0);
+		jint getBucketIndex(const QString &arg0);
 		QAndroidJniObject getBucket(jint arg0);
 	};
 } // namespace __jni_impl::android::icu::text
@@ -63,6 +64,14 @@ namespace __jni_impl::android::icu::text
 			"getBucketIndex",
 			"(Ljava/lang/CharSequence;)I",
 			arg0
+		);
+	}
+	jint AlphabeticIndex_ImmutableIndex::getBucketIndex(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getBucketIndex",
+			"(Ljava/lang/CharSequence;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject AlphabeticIndex_ImmutableIndex::getBucket(jint arg0)

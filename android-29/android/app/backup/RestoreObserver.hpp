@@ -19,6 +19,7 @@ namespace __jni_impl::android::app::backup
 		// Methods
 		void restoreStarting(jint arg0);
 		void onUpdate(jint arg0, jstring arg1);
+		void onUpdate(jint arg0, const QString &arg1);
 		void restoreFinished(jint arg0);
 	};
 } // namespace __jni_impl::android::app::backup
@@ -33,7 +34,8 @@ namespace __jni_impl::android::app::backup
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.backup.RestoreObserver",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -52,6 +54,15 @@ namespace __jni_impl::android::app::backup
 			"(ILjava/lang/String;)V",
 			arg0,
 			arg1
+		);
+	}
+	void RestoreObserver::onUpdate(jint arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"onUpdate",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void RestoreObserver::restoreFinished(jint arg0)

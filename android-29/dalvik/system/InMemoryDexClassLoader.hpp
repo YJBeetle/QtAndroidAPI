@@ -25,6 +25,7 @@ namespace __jni_impl::dalvik::system
 		
 		// Constructors
 		void __constructor(jarray arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2);
+		void __constructor(jarray arg0, const QString &arg1, __jni_impl::java::lang::ClassLoader arg2);
 		void __constructor(jarray arg0, __jni_impl::java::lang::ClassLoader arg1);
 		void __constructor(__jni_impl::java::nio::ByteBuffer arg0, __jni_impl::java::lang::ClassLoader arg1);
 		
@@ -47,7 +48,18 @@ namespace __jni_impl::dalvik::system
 			"([Ljava/nio/ByteBuffer;Ljava/lang/String;Ljava/lang/ClassLoader;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
+	}
+	void InMemoryDexClassLoader::__constructor(jarray arg0, const QString &arg1, __jni_impl::java::lang::ClassLoader arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"dalvik.system.InMemoryDexClassLoader",
+			"([Ljava/nio/ByteBuffer;Ljava/lang/String;Ljava/lang/ClassLoader;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
 	}
 	void InMemoryDexClassLoader::__constructor(jarray arg0, __jni_impl::java::lang::ClassLoader arg1)
 	{
@@ -55,7 +67,8 @@ namespace __jni_impl::dalvik::system
 			"dalvik.system.InMemoryDexClassLoader",
 			"([Ljava/nio/ByteBuffer;Ljava/lang/ClassLoader;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void InMemoryDexClassLoader::__constructor(__jni_impl::java::nio::ByteBuffer arg0, __jni_impl::java::lang::ClassLoader arg1)
 	{
@@ -63,7 +76,8 @@ namespace __jni_impl::dalvik::system
 			"dalvik.system.InMemoryDexClassLoader",
 			"(Ljava/nio/ByteBuffer;Ljava/lang/ClassLoader;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

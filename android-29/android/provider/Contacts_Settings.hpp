@@ -30,7 +30,9 @@ namespace __jni_impl::android::provider
 		
 		// Methods
 		static jstring getSetting(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jstring arg2);
+		static jstring getSetting(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, const QString &arg2);
 		static void setSetting(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jstring arg2, jstring arg3);
+		static void setSetting(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, const QString &arg2, const QString &arg3);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -93,6 +95,17 @@ namespace __jni_impl::android::provider
 			arg2
 		).object<jstring>();
 	}
+	jstring Contacts_Settings::getSetting(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, const QString &arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.Contacts$Settings",
+			"getSetting",
+			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		).object<jstring>();
+	}
 	void Contacts_Settings::setSetting(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -103,6 +116,18 @@ namespace __jni_impl::android::provider
 			arg1,
 			arg2,
 			arg3
+		);
+	}
+	void Contacts_Settings::setSetting(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, const QString &arg2, const QString &arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.provider.Contacts$Settings",
+			"setSetting",
+			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::provider

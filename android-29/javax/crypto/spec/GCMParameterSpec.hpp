@@ -18,8 +18,8 @@ namespace __jni_impl::javax::crypto::spec
 		void __constructor(jint arg0, jbyteArray arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jint getTLen();
 		jbyteArray getIV();
+		jint getTLen();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -35,7 +35,8 @@ namespace __jni_impl::javax::crypto::spec
 			"javax.crypto.spec.GCMParameterSpec",
 			"(I[B)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void GCMParameterSpec::__constructor(jint arg0, jbyteArray arg1, jint arg2, jint arg3)
 	{
@@ -45,23 +46,24 @@ namespace __jni_impl::javax::crypto::spec
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	
 	// Methods
-	jint GCMParameterSpec::getTLen()
-	{
-		return __thiz.callMethod<jint>(
-			"getTLen",
-			"()I"
-		);
-	}
 	jbyteArray GCMParameterSpec::getIV()
 	{
 		return __thiz.callObjectMethod(
 			"getIV",
 			"()[B"
 		).object<jbyteArray>();
+	}
+	jint GCMParameterSpec::getTLen()
+	{
+		return __thiz.callMethod<jint>(
+			"getTLen",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::javax::crypto::spec
 

@@ -17,7 +17,9 @@ namespace __jni_impl::android::system
 		
 		// Constructors
 		void __constructor(jstring arg0, jint arg1);
+		void __constructor(const QString &arg0, jint arg1);
 		void __constructor(jstring arg0, jint arg1, jthrowable arg2);
+		void __constructor(const QString &arg0, jint arg1, jthrowable arg2);
 		
 		// Methods
 		jstring getMessage();
@@ -42,7 +44,17 @@ namespace __jni_impl::android::system
 			"android.system.ErrnoException",
 			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void ErrnoException::__constructor(const QString &arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.system.ErrnoException",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	void ErrnoException::__constructor(jstring arg0, jint arg1, jthrowable arg2)
 	{
@@ -51,7 +63,18 @@ namespace __jni_impl::android::system
 			"(Ljava/lang/String;ILjava/lang/Throwable;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void ErrnoException::__constructor(const QString &arg0, jint arg1, jthrowable arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.system.ErrnoException",
+			"(Ljava/lang/String;ILjava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2
+		);
 	}
 	
 	// Methods

@@ -29,10 +29,10 @@ namespace __jni_impl::java::security::spec
 		void __constructor(__jni_impl::java::security::spec::EllipticCurve arg0, __jni_impl::java::security::spec::ECPoint arg1, __jni_impl::java::math::BigInteger arg2, jint arg3);
 		
 		// Methods
-		QAndroidJniObject getOrder();
 		QAndroidJniObject getCurve();
 		QAndroidJniObject getGenerator();
 		jint getCofactor();
+		QAndroidJniObject getOrder();
 	};
 } // namespace __jni_impl::java::security::spec
 
@@ -53,17 +53,11 @@ namespace __jni_impl::java::security::spec
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	
 	// Methods
-	QAndroidJniObject ECParameterSpec::getOrder()
-	{
-		return __thiz.callObjectMethod(
-			"getOrder",
-			"()Ljava/math/BigInteger;"
-		);
-	}
 	QAndroidJniObject ECParameterSpec::getCurve()
 	{
 		return __thiz.callObjectMethod(
@@ -83,6 +77,13 @@ namespace __jni_impl::java::security::spec
 		return __thiz.callMethod<jint>(
 			"getCofactor",
 			"()I"
+		);
+	}
+	QAndroidJniObject ECParameterSpec::getOrder()
+	{
+		return __thiz.callObjectMethod(
+			"getOrder",
+			"()Ljava/math/BigInteger;"
 		);
 	}
 } // namespace __jni_impl::java::security::spec

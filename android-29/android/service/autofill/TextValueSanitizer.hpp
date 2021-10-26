@@ -24,6 +24,7 @@ namespace __jni_impl::android::service::autofill
 		
 		// Constructors
 		void __constructor(__jni_impl::java::util::regex::Pattern arg0, jstring arg1);
+		void __constructor(__jni_impl::java::util::regex::Pattern arg0, const QString &arg1);
 		
 		// Methods
 		jstring toString();
@@ -54,7 +55,17 @@ namespace __jni_impl::android::service::autofill
 			"android.service.autofill.TextValueSanitizer",
 			"(Ljava/util/regex/Pattern;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void TextValueSanitizer::__constructor(__jni_impl::java::util::regex::Pattern arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.service.autofill.TextValueSanitizer",
+			"(Ljava/util/regex/Pattern;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods

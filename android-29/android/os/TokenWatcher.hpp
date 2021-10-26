@@ -23,16 +23,18 @@ namespace __jni_impl::android::os
 		
 		// Constructors
 		void __constructor(__jni_impl::android::os::Handler arg0, jstring arg1);
+		void __constructor(__jni_impl::android::os::Handler arg0, const QString &arg1);
 		
 		// Methods
 		void release(__jni_impl::__JniBaseClass arg0);
 		void acquire(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void acquire(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 		void cleanup(__jni_impl::__JniBaseClass arg0, jboolean arg1);
 		void released();
-		void dump();
-		void dump(__jni_impl::java::io::PrintWriter arg0);
 		void acquired();
 		jboolean isAcquired();
+		void dump();
+		void dump(__jni_impl::java::io::PrintWriter arg0);
 	};
 } // namespace __jni_impl::android::os
 
@@ -50,7 +52,17 @@ namespace __jni_impl::android::os
 			"android.os.TokenWatcher",
 			"(Landroid/os/Handler;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void TokenWatcher::__constructor(__jni_impl::android::os::Handler arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.os.TokenWatcher",
+			"(Landroid/os/Handler;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -71,6 +83,15 @@ namespace __jni_impl::android::os
 			arg1
 		);
 	}
+	void TokenWatcher::acquire(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"acquire",
+			"(Landroid/os/IBinder;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void TokenWatcher::cleanup(__jni_impl::__JniBaseClass arg0, jboolean arg1)
 	{
 		__thiz.callMethod<void>(
@@ -87,6 +108,20 @@ namespace __jni_impl::android::os
 			"()V"
 		);
 	}
+	void TokenWatcher::acquired()
+	{
+		__thiz.callMethod<void>(
+			"acquired",
+			"()V"
+		);
+	}
+	jboolean TokenWatcher::isAcquired()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAcquired",
+			"()Z"
+		);
+	}
 	void TokenWatcher::dump()
 	{
 		__thiz.callMethod<void>(
@@ -100,20 +135,6 @@ namespace __jni_impl::android::os
 			"dump",
 			"(Ljava/io/PrintWriter;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	void TokenWatcher::acquired()
-	{
-		__thiz.callMethod<void>(
-			"acquired",
-			"()V"
-		);
-	}
-	jboolean TokenWatcher::isAcquired()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAcquired",
-			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::os

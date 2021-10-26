@@ -91,7 +91,9 @@ namespace __jni_impl::java::time
 		QAndroidJniObject getOffset();
 		jboolean isSupported(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject parse(jstring arg0, __jni_impl::java::time::format::DateTimeFormatter arg1);
+		static QAndroidJniObject parse(const QString &arg0, __jni_impl::java::time::format::DateTimeFormatter arg1);
 		static QAndroidJniObject parse(jstring arg0);
+		static QAndroidJniObject parse(const QString &arg0);
 		QAndroidJniObject range(__jni_impl::__JniBaseClass arg0);
 		jint getNano();
 		QAndroidJniObject toInstant();
@@ -343,6 +345,16 @@ namespace __jni_impl::java::time
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject OffsetDateTime::parse(const QString &arg0, __jni_impl::java::time::format::DateTimeFormatter arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.OffsetDateTime",
+			"parse",
+			"(Ljava/lang/CharSequence;Ljava/time/format/DateTimeFormatter;)Ljava/time/OffsetDateTime;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject OffsetDateTime::parse(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -350,6 +362,15 @@ namespace __jni_impl::java::time
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/OffsetDateTime;",
 			arg0
+		);
+	}
+	QAndroidJniObject OffsetDateTime::parse(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.OffsetDateTime",
+			"parse",
+			"(Ljava/lang/CharSequence;)Ljava/time/OffsetDateTime;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject OffsetDateTime::range(__jni_impl::__JniBaseClass arg0)

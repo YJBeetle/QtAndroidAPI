@@ -39,8 +39,11 @@ namespace __jni_impl::javax::crypto
 		void update(__jni_impl::java::nio::ByteBuffer arg0);
 		void update(jbyte arg0);
 		static QAndroidJniObject getInstance(jstring arg0);
+		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::java::security::Provider arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1);
 		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, const QString &arg1);
 		void init(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		void init(__jni_impl::__JniBaseClass arg0);
 		void reset();
@@ -121,6 +124,15 @@ namespace __jni_impl::javax::crypto
 			arg0
 		);
 	}
+	QAndroidJniObject Mac::getInstance(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.crypto.Mac",
+			"getInstance",
+			"(Ljava/lang/String;)Ljavax/crypto/Mac;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject Mac::getInstance(jstring arg0, __jni_impl::java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -128,6 +140,16 @@ namespace __jni_impl::javax::crypto
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/Mac;",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Mac::getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.crypto.Mac",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/Provider;)Ljavax/crypto/Mac;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -139,6 +161,16 @@ namespace __jni_impl::javax::crypto
 			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/Mac;",
 			arg0,
 			arg1
+		);
+	}
+	QAndroidJniObject Mac::getInstance(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.crypto.Mac",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljavax/crypto/Mac;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void Mac::init(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)

@@ -32,10 +32,10 @@ namespace __jni_impl::android::telephony
 		jstring toString();
 		jint hashCode();
 		jboolean isRegistered();
+		jlong getTimeStamp();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getCellConnectionStatus();
-		jlong getTimeStamp();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -133,6 +133,13 @@ namespace __jni_impl::android::telephony
 			"()Z"
 		);
 	}
+	jlong CellInfo::getTimeStamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimeStamp",
+			"()J"
+		);
+	}
 	jint CellInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -154,13 +161,6 @@ namespace __jni_impl::android::telephony
 		return __thiz.callMethod<jint>(
 			"getCellConnectionStatus",
 			"()I"
-		);
-	}
-	jlong CellInfo::getTimeStamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimeStamp",
-			"()J"
 		);
 	}
 } // namespace __jni_impl::android::telephony

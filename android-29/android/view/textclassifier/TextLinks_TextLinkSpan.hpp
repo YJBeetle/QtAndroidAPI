@@ -27,8 +27,8 @@ namespace __jni_impl::android::view::textclassifier
 		void __constructor(__jni_impl::android::view::textclassifier::TextLinks_TextLink arg0);
 		
 		// Methods
-		void onClick(__jni_impl::android::view::View arg0);
 		QAndroidJniObject getTextLink();
+		void onClick(__jni_impl::android::view::View arg0);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -45,23 +45,24 @@ namespace __jni_impl::android::view::textclassifier
 		__thiz = QAndroidJniObject(
 			"android.view.textclassifier.TextLinks$TextLinkSpan",
 			"(Landroid/view/textclassifier/TextLinks$TextLink;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
+	QAndroidJniObject TextLinks_TextLinkSpan::getTextLink()
+	{
+		return __thiz.callObjectMethod(
+			"getTextLink",
+			"()Landroid/view/textclassifier/TextLinks$TextLink;"
+		);
+	}
 	void TextLinks_TextLinkSpan::onClick(__jni_impl::android::view::View arg0)
 	{
 		__thiz.callMethod<void>(
 			"onClick",
 			"(Landroid/view/View;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject TextLinks_TextLinkSpan::getTextLink()
-	{
-		return __thiz.callObjectMethod(
-			"getTextLink",
-			"()Landroid/view/textclassifier/TextLinks$TextLink;"
 		);
 	}
 } // namespace __jni_impl::android::view::textclassifier

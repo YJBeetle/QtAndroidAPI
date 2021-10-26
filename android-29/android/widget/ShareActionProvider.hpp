@@ -10,13 +10,13 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::view
-{
-	class View;
-}
 namespace __jni_impl::android::content
 {
 	class Intent;
+}
+namespace __jni_impl::android::view
+{
+	class View;
 }
 
 namespace __jni_impl::android::widget
@@ -31,18 +31,19 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		QAndroidJniObject onCreateActionView();
-		void onPrepareSubMenu(__jni_impl::__JniBaseClass arg0);
 		void setShareHistoryFileName(jstring arg0);
+		void setShareHistoryFileName(const QString &arg0);
 		void setOnShareTargetSelectedListener(__jni_impl::__JniBaseClass arg0);
 		void setShareIntent(__jni_impl::android::content::Intent arg0);
 		jboolean hasSubMenu();
+		QAndroidJniObject onCreateActionView();
+		void onPrepareSubMenu(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "../view/View.hpp"
 #include "../content/Intent.hpp"
+#include "../view/View.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -62,31 +63,25 @@ namespace __jni_impl::android::widget
 		__thiz = QAndroidJniObject(
 			"android.widget.ShareActionProvider",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
-	}
-	
-	// Methods
-	QAndroidJniObject ShareActionProvider::onCreateActionView()
-	{
-		return __thiz.callObjectMethod(
-			"onCreateActionView",
-			"()Landroid/view/View;"
-		);
-	}
-	void ShareActionProvider::onPrepareSubMenu(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"onPrepareSubMenu",
-			"(Landroid/view/SubMenu;)V",
 			arg0.__jniObject().object()
 		);
 	}
+	
+	// Methods
 	void ShareActionProvider::setShareHistoryFileName(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"setShareHistoryFileName",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void ShareActionProvider::setShareHistoryFileName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setShareHistoryFileName",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void ShareActionProvider::setOnShareTargetSelectedListener(__jni_impl::__JniBaseClass arg0)
@@ -110,6 +105,21 @@ namespace __jni_impl::android::widget
 		return __thiz.callMethod<jboolean>(
 			"hasSubMenu",
 			"()Z"
+		);
+	}
+	QAndroidJniObject ShareActionProvider::onCreateActionView()
+	{
+		return __thiz.callObjectMethod(
+			"onCreateActionView",
+			"()Landroid/view/View;"
+		);
+	}
+	void ShareActionProvider::onPrepareSubMenu(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"onPrepareSubMenu",
+			"(Landroid/view/SubMenu;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::widget

@@ -49,23 +49,28 @@ namespace __jni_impl::javax::xml::datatype
 		// Methods
 		static QAndroidJniObject newInstance();
 		static QAndroidJniObject newInstance(jstring arg0, __jni_impl::java::lang::ClassLoader arg1);
+		static QAndroidJniObject newInstance(const QString &arg0, __jni_impl::java::lang::ClassLoader arg1);
 		static QAndroidJniObject newDefaultInstance();
 		QAndroidJniObject newDuration(jboolean arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
 		QAndroidJniObject newDuration(jboolean arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2, __jni_impl::java::math::BigInteger arg3, __jni_impl::java::math::BigInteger arg4, __jni_impl::java::math::BigInteger arg5, __jni_impl::java::math::BigDecimal arg6);
 		QAndroidJniObject newDuration(jlong arg0);
 		QAndroidJniObject newDuration(jstring arg0);
+		QAndroidJniObject newDuration(const QString &arg0);
 		QAndroidJniObject newDurationDayTime(jboolean arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2, __jni_impl::java::math::BigInteger arg3, __jni_impl::java::math::BigInteger arg4);
 		QAndroidJniObject newDurationDayTime(jboolean arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		QAndroidJniObject newDurationDayTime(jstring arg0);
+		QAndroidJniObject newDurationDayTime(const QString &arg0);
 		QAndroidJniObject newDurationDayTime(jlong arg0);
 		QAndroidJniObject newDurationYearMonth(jlong arg0);
 		QAndroidJniObject newDurationYearMonth(jboolean arg0, jint arg1, jint arg2);
 		QAndroidJniObject newDurationYearMonth(jstring arg0);
+		QAndroidJniObject newDurationYearMonth(const QString &arg0);
 		QAndroidJniObject newDurationYearMonth(jboolean arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2);
 		QAndroidJniObject newXMLGregorianCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
 		QAndroidJniObject newXMLGregorianCalendar(__jni_impl::java::math::BigInteger arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, __jni_impl::java::math::BigDecimal arg6, jint arg7);
 		QAndroidJniObject newXMLGregorianCalendar();
 		QAndroidJniObject newXMLGregorianCalendar(jstring arg0);
+		QAndroidJniObject newXMLGregorianCalendar(const QString &arg0);
 		QAndroidJniObject newXMLGregorianCalendar(__jni_impl::java::util::GregorianCalendar arg0);
 		QAndroidJniObject newXMLGregorianCalendarTime(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		QAndroidJniObject newXMLGregorianCalendarTime(jint arg0, jint arg1, jint arg2, __jni_impl::java::math::BigDecimal arg3, jint arg4);
@@ -129,6 +134,16 @@ namespace __jni_impl::javax::xml::datatype
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject DatatypeFactory::newInstance(const QString &arg0, __jni_impl::java::lang::ClassLoader arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.xml.datatype.DatatypeFactory",
+			"newInstance",
+			"(Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/datatype/DatatypeFactory;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject DatatypeFactory::newDefaultInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -181,6 +196,14 @@ namespace __jni_impl::javax::xml::datatype
 			arg0
 		);
 	}
+	QAndroidJniObject DatatypeFactory::newDuration(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"newDuration",
+			"(Ljava/lang/String;)Ljavax/xml/datatype/Duration;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject DatatypeFactory::newDurationDayTime(jboolean arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2, __jni_impl::java::math::BigInteger arg3, __jni_impl::java::math::BigInteger arg4)
 	{
 		return __thiz.callObjectMethod(
@@ -211,6 +234,14 @@ namespace __jni_impl::javax::xml::datatype
 			"newDurationDayTime",
 			"(Ljava/lang/String;)Ljavax/xml/datatype/Duration;",
 			arg0
+		);
+	}
+	QAndroidJniObject DatatypeFactory::newDurationDayTime(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"newDurationDayTime",
+			"(Ljava/lang/String;)Ljavax/xml/datatype/Duration;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject DatatypeFactory::newDurationDayTime(jlong arg0)
@@ -245,6 +276,14 @@ namespace __jni_impl::javax::xml::datatype
 			"newDurationYearMonth",
 			"(Ljava/lang/String;)Ljavax/xml/datatype/Duration;",
 			arg0
+		);
+	}
+	QAndroidJniObject DatatypeFactory::newDurationYearMonth(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"newDurationYearMonth",
+			"(Ljava/lang/String;)Ljavax/xml/datatype/Duration;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject DatatypeFactory::newDurationYearMonth(jboolean arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2)
@@ -300,6 +339,14 @@ namespace __jni_impl::javax::xml::datatype
 			"newXMLGregorianCalendar",
 			"(Ljava/lang/String;)Ljavax/xml/datatype/XMLGregorianCalendar;",
 			arg0
+		);
+	}
+	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendar(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"newXMLGregorianCalendar",
+			"(Ljava/lang/String;)Ljavax/xml/datatype/XMLGregorianCalendar;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject DatatypeFactory::newXMLGregorianCalendar(__jni_impl::java::util::GregorianCalendar arg0)

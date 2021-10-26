@@ -22,6 +22,7 @@ namespace __jni_impl::java::lang
 		// Constructors
 		void __constructor(jbyte arg0);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -38,14 +39,19 @@ namespace __jni_impl::java::lang
 		jfloat floatValue();
 		jdouble doubleValue();
 		static QAndroidJniObject valueOf(jstring arg0, jint arg1);
+		static QAndroidJniObject valueOf(const QString &arg0, jint arg1);
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 		static QAndroidJniObject valueOf(jbyte arg0);
 		static QAndroidJniObject decode(jstring arg0);
+		static QAndroidJniObject decode(const QString &arg0);
 		static jint compare(jbyte arg0, jbyte arg1);
 		static jlong toUnsignedLong(jbyte arg0);
 		static jint toUnsignedInt(jbyte arg0);
 		static jbyte parseByte(jstring arg0);
+		static jbyte parseByte(const QString &arg0);
 		static jbyte parseByte(jstring arg0, jint arg1);
+		static jbyte parseByte(const QString &arg0, jint arg1);
 		static jint compareUnsigned(jbyte arg0, jbyte arg1);
 	};
 } // namespace __jni_impl::java::lang
@@ -97,14 +103,24 @@ namespace __jni_impl::java::lang
 		__thiz = QAndroidJniObject(
 			"java.lang.Byte",
 			"(B)V",
-			arg0);
+			arg0
+		);
 	}
 	void Byte::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Byte",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Byte::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.Byte",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -216,6 +232,16 @@ namespace __jni_impl::java::lang
 			arg1
 		);
 	}
+	QAndroidJniObject Byte::valueOf(const QString &arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.lang.Byte",
+			"valueOf",
+			"(Ljava/lang/String;I)Ljava/lang/Byte;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	QAndroidJniObject Byte::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -223,6 +249,15 @@ namespace __jni_impl::java::lang
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/lang/Byte;",
 			arg0
+		);
+	}
+	QAndroidJniObject Byte::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.lang.Byte",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/lang/Byte;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Byte::valueOf(jbyte arg0)
@@ -241,6 +276,15 @@ namespace __jni_impl::java::lang
 			"decode",
 			"(Ljava/lang/String;)Ljava/lang/Byte;",
 			arg0
+		);
+	}
+	QAndroidJniObject Byte::decode(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.lang.Byte",
+			"decode",
+			"(Ljava/lang/String;)Ljava/lang/Byte;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint Byte::compare(jbyte arg0, jbyte arg1)
@@ -280,6 +324,15 @@ namespace __jni_impl::java::lang
 			arg0
 		);
 	}
+	jbyte Byte::parseByte(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jbyte>(
+			"java.lang.Byte",
+			"parseByte",
+			"(Ljava/lang/String;)B",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jbyte Byte::parseByte(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jbyte>(
@@ -287,6 +340,16 @@ namespace __jni_impl::java::lang
 			"parseByte",
 			"(Ljava/lang/String;I)B",
 			arg0,
+			arg1
+		);
+	}
+	jbyte Byte::parseByte(const QString &arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jbyte>(
+			"java.lang.Byte",
+			"parseByte",
+			"(Ljava/lang/String;I)B",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

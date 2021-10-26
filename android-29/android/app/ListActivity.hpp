@@ -9,13 +9,13 @@
 #include "../view/ContextThemeWrapper.hpp"
 #include "Activity.hpp"
 
-namespace __jni_impl::android::widget
-{
-	class ListView;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::widget
+{
+	class ListView;
 }
 namespace __jni_impl::android::view
 {
@@ -33,18 +33,18 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		void setListAdapter(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getListView();
 		jint getSelectedItemPosition();
 		jlong getSelectedItemId();
 		void setSelection(jint arg0);
 		void onContentChanged();
+		void setListAdapter(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getListView();
 		QAndroidJniObject getListAdapter();
 	};
 } // namespace __jni_impl::android::app
 
-#include "../widget/ListView.hpp"
 #include "../os/Bundle.hpp"
+#include "../widget/ListView.hpp"
 #include "../view/View.hpp"
 
 namespace __jni_impl::android::app
@@ -56,25 +56,11 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ListActivity",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	void ListActivity::setListAdapter(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setListAdapter",
-			"(Landroid/widget/ListAdapter;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ListActivity::getListView()
-	{
-		return __thiz.callObjectMethod(
-			"getListView",
-			"()Landroid/widget/ListView;"
-		);
-	}
 	jint ListActivity::getSelectedItemPosition()
 	{
 		return __thiz.callMethod<jint>(
@@ -102,6 +88,21 @@ namespace __jni_impl::android::app
 		__thiz.callMethod<void>(
 			"onContentChanged",
 			"()V"
+		);
+	}
+	void ListActivity::setListAdapter(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setListAdapter",
+			"(Landroid/widget/ListAdapter;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ListActivity::getListView()
+	{
+		return __thiz.callObjectMethod(
+			"getListView",
+			"()Landroid/widget/ListView;"
 		);
 	}
 	QAndroidJniObject ListActivity::getListAdapter()

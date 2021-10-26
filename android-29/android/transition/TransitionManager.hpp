@@ -53,7 +53,8 @@ namespace __jni_impl::android::transition
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.TransitionManager",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

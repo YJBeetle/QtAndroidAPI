@@ -140,7 +140,8 @@ namespace __jni_impl::android::graphics::fonts
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.fonts.FontStyle",
-			"()V");
+			"()V"
+		);
 	}
 	void FontStyle::__constructor(jint arg0, jint arg1)
 	{
@@ -148,7 +149,8 @@ namespace __jni_impl::android::graphics::fonts
 			"android.graphics.fonts.FontStyle",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

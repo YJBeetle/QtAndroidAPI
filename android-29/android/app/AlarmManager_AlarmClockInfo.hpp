@@ -26,10 +26,10 @@ namespace __jni_impl::android::app
 		void __constructor(jlong arg0, __jni_impl::android::app::PendingIntent arg1);
 		
 		// Methods
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jlong getTriggerTime();
 		QAndroidJniObject getShowIntent();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -55,10 +55,25 @@ namespace __jni_impl::android::app
 			"android.app.AlarmManager$AlarmClockInfo",
 			"(JLandroid/app/PendingIntent;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
+	jlong AlarmManager_AlarmClockInfo::getTriggerTime()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTriggerTime",
+			"()J"
+		);
+	}
+	QAndroidJniObject AlarmManager_AlarmClockInfo::getShowIntent()
+	{
+		return __thiz.callObjectMethod(
+			"getShowIntent",
+			"()Landroid/app/PendingIntent;"
+		);
+	}
 	jint AlarmManager_AlarmClockInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -73,20 +88,6 @@ namespace __jni_impl::android::app
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jlong AlarmManager_AlarmClockInfo::getTriggerTime()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTriggerTime",
-			"()J"
-		);
-	}
-	QAndroidJniObject AlarmManager_AlarmClockInfo::getShowIntent()
-	{
-		return __thiz.callObjectMethod(
-			"getShowIntent",
-			"()Landroid/app/PendingIntent;"
 		);
 	}
 } // namespace __jni_impl::android::app

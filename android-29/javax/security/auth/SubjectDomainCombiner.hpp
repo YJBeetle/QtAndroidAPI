@@ -43,7 +43,8 @@ namespace __jni_impl::javax::security::auth
 		__thiz = QAndroidJniObject(
 			"javax.security.auth.SubjectDomainCombiner",
 			"(Ljavax/security/auth/Subject;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

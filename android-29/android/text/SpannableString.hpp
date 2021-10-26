@@ -15,6 +15,7 @@ namespace __jni_impl::android::text
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -23,6 +24,7 @@ namespace __jni_impl::android::text
 		jint hashCode();
 		void getChars(jint arg0, jint arg1, jcharArray arg2, jint arg3);
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 		jchar charAt(jint arg0);
 		jstring subSequence(jint arg0, jint arg1);
 		jobjectArray getSpans(jint arg0, jint arg1, jclass arg2);
@@ -46,7 +48,16 @@ namespace __jni_impl::android::text
 		__thiz = QAndroidJniObject(
 			"android.text.SpannableString",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
+	}
+	void SpannableString::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.SpannableString",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -97,6 +108,15 @@ namespace __jni_impl::android::text
 			"valueOf",
 			"(Ljava/lang/CharSequence;)Landroid/text/SpannableString;",
 			arg0
+		);
+	}
+	QAndroidJniObject SpannableString::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.SpannableString",
+			"valueOf",
+			"(Ljava/lang/CharSequence;)Landroid/text/SpannableString;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jchar SpannableString::charAt(jint arg0)

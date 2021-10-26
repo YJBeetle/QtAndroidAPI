@@ -17,6 +17,7 @@ namespace __jni_impl::java::lang
 		
 		// Constructors
 		void __constructor(jclass arg0, jstring arg1);
+		void __constructor(jclass arg0, const QString &arg1);
 		
 		// Methods
 		jclass enumType();
@@ -36,7 +37,17 @@ namespace __jni_impl::java::lang
 			"java.lang.EnumConstantNotPresentException",
 			"(Ljava/lang/Class;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void EnumConstantNotPresentException::__constructor(jclass arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.EnumConstantNotPresentException",
+			"(Ljava/lang/Class;Ljava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods

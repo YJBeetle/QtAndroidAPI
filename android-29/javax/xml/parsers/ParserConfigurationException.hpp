@@ -17,6 +17,7 @@ namespace __jni_impl::javax::xml::parsers
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -32,14 +33,24 @@ namespace __jni_impl::javax::xml::parsers
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.parsers.ParserConfigurationException",
-			"()V");
+			"()V"
+		);
 	}
 	void ParserConfigurationException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.parsers.ParserConfigurationException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void ParserConfigurationException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.xml.parsers.ParserConfigurationException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

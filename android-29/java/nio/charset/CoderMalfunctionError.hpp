@@ -37,7 +37,8 @@ namespace __jni_impl::java::nio::charset
 		__thiz = QAndroidJniObject(
 			"java.nio.charset.CoderMalfunctionError",
 			"(Ljava/lang/Exception;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

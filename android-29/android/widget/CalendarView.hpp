@@ -40,6 +40,7 @@ namespace __jni_impl::android::widget
 		void setFirstDayOfWeek(jint arg0);
 		void setDate(jlong arg0);
 		void setDate(jlong arg0, jboolean arg1, jboolean arg2);
+		jstring getAccessibilityClassName();
 		void setShownWeekCount(jint arg0);
 		jint getShownWeekCount();
 		void setSelectedWeekBackgroundColor(jint arg0);
@@ -62,7 +63,6 @@ namespace __jni_impl::android::widget
 		void setShowWeekNumber(jboolean arg0);
 		jboolean getShowWeekNumber();
 		void setOnDateChangeListener(__jni_impl::__JniBaseClass arg0);
-		jstring getAccessibilityClassName();
 		jlong getMinDate();
 		void setMinDate(jlong arg0);
 		jlong getMaxDate();
@@ -87,7 +87,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void CalendarView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -96,7 +97,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void CalendarView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -104,14 +106,16 @@ namespace __jni_impl::android::widget
 			"android.widget.CalendarView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void CalendarView::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.CalendarView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -154,6 +158,13 @@ namespace __jni_impl::android::widget
 			arg1,
 			arg2
 		);
+	}
+	jstring CalendarView::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void CalendarView::setShownWeekCount(jint arg0)
 	{
@@ -320,13 +331,6 @@ namespace __jni_impl::android::widget
 			"(Landroid/widget/CalendarView$OnDateChangeListener;)V",
 			arg0.__jniObject().object()
 		);
-	}
-	jstring CalendarView::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
 	}
 	jlong CalendarView::getMinDate()
 	{

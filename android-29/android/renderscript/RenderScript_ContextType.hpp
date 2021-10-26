@@ -23,6 +23,7 @@ namespace __jni_impl::android::renderscript
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::renderscript
 
@@ -79,6 +80,15 @@ namespace __jni_impl::android::renderscript
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/renderscript/RenderScript$ContextType;",
 			arg0
+		);
+	}
+	QAndroidJniObject RenderScript_ContextType::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.renderscript.RenderScript$ContextType",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/renderscript/RenderScript$ContextType;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::renderscript

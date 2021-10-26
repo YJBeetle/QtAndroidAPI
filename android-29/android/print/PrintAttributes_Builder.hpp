@@ -34,10 +34,10 @@ namespace __jni_impl::android::print
 		
 		// Methods
 		QAndroidJniObject build();
+		QAndroidJniObject setColorMode(jint arg0);
 		QAndroidJniObject setMediaSize(__jni_impl::android::print::PrintAttributes_MediaSize arg0);
 		QAndroidJniObject setResolution(__jni_impl::android::print::PrintAttributes_Resolution arg0);
 		QAndroidJniObject setDuplexMode(jint arg0);
-		QAndroidJniObject setColorMode(jint arg0);
 		QAndroidJniObject setMinMargins(__jni_impl::android::print::PrintAttributes_Margins arg0);
 	};
 } // namespace __jni_impl::android::print
@@ -56,7 +56,8 @@ namespace __jni_impl::android::print
 	{
 		__thiz = QAndroidJniObject(
 			"android.print.PrintAttributes$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -65,6 +66,14 @@ namespace __jni_impl::android::print
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/print/PrintAttributes;"
+		);
+	}
+	QAndroidJniObject PrintAttributes_Builder::setColorMode(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setColorMode",
+			"(I)Landroid/print/PrintAttributes$Builder;",
+			arg0
 		);
 	}
 	QAndroidJniObject PrintAttributes_Builder::setMediaSize(__jni_impl::android::print::PrintAttributes_MediaSize arg0)
@@ -87,14 +96,6 @@ namespace __jni_impl::android::print
 	{
 		return __thiz.callObjectMethod(
 			"setDuplexMode",
-			"(I)Landroid/print/PrintAttributes$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject PrintAttributes_Builder::setColorMode(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setColorMode",
 			"(I)Landroid/print/PrintAttributes$Builder;",
 			arg0
 		);

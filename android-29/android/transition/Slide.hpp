@@ -67,20 +67,23 @@ namespace __jni_impl::android::transition
 			"android.transition.Slide",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Slide::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Slide",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Slide::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Slide",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

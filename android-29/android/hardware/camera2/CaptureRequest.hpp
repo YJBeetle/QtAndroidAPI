@@ -88,9 +88,9 @@ namespace __jni_impl::android::hardware::camera2
 		jint hashCode();
 		jobject getTag();
 		QAndroidJniObject getKeys();
+		jboolean isReprocess();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jboolean isReprocess();
 	};
 } // namespace __jni_impl::android::hardware::camera2
 
@@ -603,6 +603,13 @@ namespace __jni_impl::android::hardware::camera2
 			"()Ljava/util/List;"
 		);
 	}
+	jboolean CaptureRequest::isReprocess()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isReprocess",
+			"()Z"
+		);
+	}
 	jint CaptureRequest::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -617,13 +624,6 @@ namespace __jni_impl::android::hardware::camera2
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean CaptureRequest::isReprocess()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isReprocess",
-			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::hardware::camera2

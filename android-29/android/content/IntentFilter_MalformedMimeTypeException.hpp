@@ -18,6 +18,7 @@ namespace __jni_impl::android::content
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -33,14 +34,24 @@ namespace __jni_impl::android::content
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.IntentFilter$MalformedMimeTypeException",
-			"()V");
+			"()V"
+		);
 	}
 	void IntentFilter_MalformedMimeTypeException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.IntentFilter$MalformedMimeTypeException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void IntentFilter_MalformedMimeTypeException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.IntentFilter$MalformedMimeTypeException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

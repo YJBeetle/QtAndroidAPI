@@ -35,8 +35,10 @@ namespace __jni_impl::android::widget
 		// Methods
 		jstring getTag();
 		QAndroidJniObject setIndicator(jstring arg0);
+		QAndroidJniObject setIndicator(const QString &arg0);
 		QAndroidJniObject setIndicator(__jni_impl::android::view::View arg0);
 		QAndroidJniObject setIndicator(jstring arg0, __jni_impl::android::graphics::drawable::Drawable arg1);
+		QAndroidJniObject setIndicator(const QString &arg0, __jni_impl::android::graphics::drawable::Drawable arg1);
 		QAndroidJniObject setContent(jint arg0);
 		QAndroidJniObject setContent(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject setContent(__jni_impl::__JniBaseClass arg0);
@@ -76,6 +78,14 @@ namespace __jni_impl::android::widget
 			arg0
 		);
 	}
+	QAndroidJniObject TabHost_TabSpec::setIndicator(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setIndicator",
+			"(Ljava/lang/CharSequence;)Landroid/widget/TabHost$TabSpec;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject TabHost_TabSpec::setIndicator(__jni_impl::android::view::View arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -90,6 +100,15 @@ namespace __jni_impl::android::widget
 			"setIndicator",
 			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Landroid/widget/TabHost$TabSpec;",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TabHost_TabSpec::setIndicator(const QString &arg0, __jni_impl::android::graphics::drawable::Drawable arg1)
+	{
+		return __thiz.callObjectMethod(
+			"setIndicator",
+			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)Landroid/widget/TabHost$TabSpec;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}

@@ -100,7 +100,8 @@ namespace __jni_impl::android::os
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.Build$VERSION",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

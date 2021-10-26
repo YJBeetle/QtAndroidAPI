@@ -41,14 +41,9 @@ namespace __jni_impl::android::graphics
 		jstring toShortString();
 		void sort();
 		jint width();
+		void _union(jint arg0, jint arg1);
 		void _union(jint arg0, jint arg1, jint arg2, jint arg3);
 		void _union(__jni_impl::android::graphics::Rect arg0);
-		void _union(jint arg0, jint arg1);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
-		jstring flattenToString();
-		static QAndroidJniObject unflattenFromString(jstring arg0);
 		jint centerX();
 		jint centerY();
 		jfloat exactCenterX();
@@ -59,9 +54,15 @@ namespace __jni_impl::android::graphics
 		jboolean setIntersect(__jni_impl::android::graphics::Rect arg0, __jni_impl::android::graphics::Rect arg1);
 		static jboolean intersects(__jni_impl::android::graphics::Rect arg0, __jni_impl::android::graphics::Rect arg1);
 		jboolean intersects(jint arg0, jint arg1, jint arg2, jint arg3);
+		jint height();
 		jboolean intersect(__jni_impl::android::graphics::Rect arg0);
 		jboolean intersect(jint arg0, jint arg1, jint arg2, jint arg3);
-		jint height();
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring flattenToString();
+		static QAndroidJniObject unflattenFromString(jstring arg0);
+		static QAndroidJniObject unflattenFromString(const QString &arg0);
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -109,7 +110,8 @@ namespace __jni_impl::android::graphics
 		__thiz = QAndroidJniObject(
 			"android.graphics.Rect",
 			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Rect::__constructor(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
@@ -119,13 +121,15 @@ namespace __jni_impl::android::graphics
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void Rect::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Rect",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -235,6 +239,15 @@ namespace __jni_impl::android::graphics
 			"()I"
 		);
 	}
+	void Rect::_union(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"union",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
 	void Rect::_union(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		__thiz.callMethod<void>(
@@ -252,55 +265,6 @@ namespace __jni_impl::android::graphics
 			"union",
 			"(Landroid/graphics/Rect;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	void Rect::_union(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"union",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	jint Rect::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void Rect::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void Rect::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jstring Rect::flattenToString()
-	{
-		return __thiz.callObjectMethod(
-			"flattenToString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject Rect::unflattenFromString(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Rect",
-			"unflattenFromString",
-			"(Ljava/lang/String;)Landroid/graphics/Rect;",
-			arg0
 		);
 	}
 	jint Rect::centerX()
@@ -386,6 +350,13 @@ namespace __jni_impl::android::graphics
 			arg3
 		);
 	}
+	jint Rect::height()
+	{
+		return __thiz.callMethod<jint>(
+			"height",
+			"()I"
+		);
+	}
 	jboolean Rect::intersect(__jni_impl::android::graphics::Rect arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -405,11 +376,53 @@ namespace __jni_impl::android::graphics
 			arg3
 		);
 	}
-	jint Rect::height()
+	void Rect::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint Rect::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"height",
+			"describeContents",
 			"()I"
+		);
+	}
+	void Rect::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jstring Rect::flattenToString()
+	{
+		return __thiz.callObjectMethod(
+			"flattenToString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject Rect::unflattenFromString(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Rect",
+			"unflattenFromString",
+			"(Ljava/lang/String;)Landroid/graphics/Rect;",
+			arg0
+		);
+	}
+	QAndroidJniObject Rect::unflattenFromString(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Rect",
+			"unflattenFromString",
+			"(Ljava/lang/String;)Landroid/graphics/Rect;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::graphics

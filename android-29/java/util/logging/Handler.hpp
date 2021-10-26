@@ -52,6 +52,7 @@ namespace __jni_impl::java::util::logging
 		void setFormatter(__jni_impl::java::util::logging::Formatter arg0);
 		QAndroidJniObject getFormatter();
 		void setEncoding(jstring arg0);
+		void setEncoding(const QString &arg0);
 		void setErrorManager(__jni_impl::java::util::logging::ErrorManager arg0);
 		QAndroidJniObject getErrorManager();
 		void publish(__jni_impl::java::util::logging::LogRecord arg0);
@@ -158,6 +159,14 @@ namespace __jni_impl::java::util::logging
 			"setEncoding",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void Handler::setEncoding(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEncoding",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void Handler::setErrorManager(__jni_impl::java::util::logging::ErrorManager arg0)

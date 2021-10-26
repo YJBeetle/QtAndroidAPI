@@ -47,6 +47,7 @@ namespace __jni_impl::java::time
 		static jarray values();
 		jlong getLong(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 		jint getValue();
 		static QAndroidJniObject of(jint arg0);
 		static QAndroidJniObject from(__jni_impl::__JniBaseClass arg0);
@@ -216,6 +217,15 @@ namespace __jni_impl::java::time
 			"valueOf",
 			"(Ljava/lang/String;)Ljava/time/Month;",
 			arg0
+		);
+	}
+	QAndroidJniObject Month::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.Month",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/time/Month;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint Month::getValue()

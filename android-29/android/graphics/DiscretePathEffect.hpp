@@ -33,7 +33,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.DiscretePathEffect",
 			"(FF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

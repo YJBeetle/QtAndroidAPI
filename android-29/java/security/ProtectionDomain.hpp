@@ -60,7 +60,8 @@ namespace __jni_impl::java::security
 			"java.security.ProtectionDomain",
 			"(Ljava/security/CodeSource;Ljava/security/PermissionCollection;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ProtectionDomain::__constructor(__jni_impl::java::security::CodeSource arg0, __jni_impl::java::security::PermissionCollection arg1, __jni_impl::java::lang::ClassLoader arg2, jarray arg3)
 	{
@@ -70,7 +71,8 @@ namespace __jni_impl::java::security
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
 	}
 	
 	// Methods

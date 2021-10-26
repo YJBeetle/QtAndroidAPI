@@ -6,13 +6,13 @@
 #include "../../../__JniBaseClass.hpp"
 #include "AccessibilityRecord.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::view::accessibility
 {
 	class AccessibilityRecord;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::view::accessibility
@@ -75,10 +75,7 @@ namespace __jni_impl::android::view::accessibility
 		// Methods
 		jstring toString();
 		jstring getPackageName();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void setAction(jint arg0);
-		jint getAction();
+		jlong getEventTime();
 		jint getRecordCount();
 		void appendRecord(__jni_impl::android::view::accessibility::AccessibilityRecord arg0);
 		QAndroidJniObject getRecord(jint arg0);
@@ -89,20 +86,24 @@ namespace __jni_impl::android::view::accessibility
 		void setEventType(jint arg0);
 		void setEventTime(jlong arg0);
 		void setPackageName(jstring arg0);
+		void setPackageName(const QString &arg0);
 		void setMovementGranularity(jint arg0);
 		jint getMovementGranularity();
 		void initFromParcel(__jni_impl::android::os::Parcel arg0);
 		static jstring eventTypeToString(jint arg0);
-		jlong getEventTime();
+		jint getAction();
 		static QAndroidJniObject obtain(__jni_impl::android::view::accessibility::AccessibilityEvent arg0);
 		static QAndroidJniObject obtain(jint arg0);
 		static QAndroidJniObject obtain();
 		void recycle();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void setAction(jint arg0);
 	};
 } // namespace __jni_impl::android::view::accessibility
 
-#include "../../os/Parcel.hpp"
 #include "AccessibilityRecord.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::view::accessibility
 {
@@ -461,35 +462,11 @@ namespace __jni_impl::android::view::accessibility
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	jint AccessibilityEvent::describeContents()
+	jlong AccessibilityEvent::getEventTime()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void AccessibilityEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void AccessibilityEvent::setAction(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAction",
-			"(I)V",
-			arg0
-		);
-	}
-	jint AccessibilityEvent::getAction()
-	{
-		return __thiz.callMethod<jint>(
-			"getAction",
-			"()I"
+		return __thiz.callMethod<jlong>(
+			"getEventTime",
+			"()J"
 		);
 	}
 	jint AccessibilityEvent::getRecordCount()
@@ -568,6 +545,14 @@ namespace __jni_impl::android::view::accessibility
 			arg0
 		);
 	}
+	void AccessibilityEvent::setPackageName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPackageName",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void AccessibilityEvent::setMovementGranularity(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -600,11 +585,11 @@ namespace __jni_impl::android::view::accessibility
 			arg0
 		).object<jstring>();
 	}
-	jlong AccessibilityEvent::getEventTime()
+	jint AccessibilityEvent::getAction()
 	{
-		return __thiz.callMethod<jlong>(
-			"getEventTime",
-			"()J"
+		return __thiz.callMethod<jint>(
+			"getAction",
+			"()I"
 		);
 	}
 	QAndroidJniObject AccessibilityEvent::obtain(__jni_impl::android::view::accessibility::AccessibilityEvent arg0)
@@ -638,6 +623,30 @@ namespace __jni_impl::android::view::accessibility
 		__thiz.callMethod<void>(
 			"recycle",
 			"()V"
+		);
+	}
+	jint AccessibilityEvent::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void AccessibilityEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void AccessibilityEvent::setAction(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAction",
+			"(I)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::view::accessibility

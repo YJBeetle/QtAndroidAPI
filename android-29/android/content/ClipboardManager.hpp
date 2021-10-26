@@ -27,6 +27,7 @@ namespace __jni_impl::android::content
 		
 		// Methods
 		void setText(jstring arg0);
+		void setText(const QString &arg0);
 		jstring getText();
 		void setPrimaryClip(__jni_impl::android::content::ClipData arg0);
 		void clearPrimaryClip();
@@ -61,6 +62,14 @@ namespace __jni_impl::android::content
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
+		);
+	}
+	void ClipboardManager::setText(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setText",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring ClipboardManager::getText()

@@ -47,7 +47,8 @@ namespace __jni_impl::android::webkit
 		__thiz = QAndroidJniObject(
 			"android.webkit.DateSorter",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

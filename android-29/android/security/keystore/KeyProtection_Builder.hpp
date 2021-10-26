@@ -58,7 +58,8 @@ namespace __jni_impl::android::security::keystore
 		__thiz = QAndroidJniObject(
 			"android.security.keystore.KeyProtection$Builder",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

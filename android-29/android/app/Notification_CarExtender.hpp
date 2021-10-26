@@ -9,6 +9,10 @@ namespace __jni_impl::android::app
 {
 	class Notification;
 }
+namespace __jni_impl::android::app
+{
+	class Notification_Builder;
+}
 namespace __jni_impl::android::graphics
 {
 	class Bitmap;
@@ -16,10 +20,6 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::app
 {
 	class Notification_CarExtender_UnreadConversation;
-}
-namespace __jni_impl::android::app
-{
-	class Notification_Builder;
 }
 
 namespace __jni_impl::android::app
@@ -35,19 +35,19 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		QAndroidJniObject setColor(jint arg0);
+		QAndroidJniObject extend(__jni_impl::android::app::Notification_Builder arg0);
 		QAndroidJniObject getLargeIcon();
 		jint getColor();
+		QAndroidJniObject setLargeIcon(__jni_impl::android::graphics::Bitmap arg0);
 		QAndroidJniObject setUnreadConversation(__jni_impl::android::app::Notification_CarExtender_UnreadConversation arg0);
 		QAndroidJniObject getUnreadConversation();
-		QAndroidJniObject setLargeIcon(__jni_impl::android::graphics::Bitmap arg0);
-		QAndroidJniObject extend(__jni_impl::android::app::Notification_Builder arg0);
 	};
 } // namespace __jni_impl::android::app
 
 #include "Notification.hpp"
+#include "Notification_Builder.hpp"
 #include "../graphics/Bitmap.hpp"
 #include "Notification_CarExtender_UnreadConversation.hpp"
-#include "Notification_Builder.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -58,14 +58,16 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$CarExtender",
-			"()V");
+			"()V"
+		);
 	}
 	void Notification_CarExtender::__constructor(__jni_impl::android::app::Notification arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$CarExtender",
 			"(Landroid/app/Notification;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -75,6 +77,14 @@ namespace __jni_impl::android::app
 			"setColor",
 			"(I)Landroid/app/Notification$CarExtender;",
 			arg0
+		);
+	}
+	QAndroidJniObject Notification_CarExtender::extend(__jni_impl::android::app::Notification_Builder arg0)
+	{
+		return __thiz.callObjectMethod(
+			"extend",
+			"(Landroid/app/Notification$Builder;)Landroid/app/Notification$Builder;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject Notification_CarExtender::getLargeIcon()
@@ -91,6 +101,14 @@ namespace __jni_impl::android::app
 			"()I"
 		);
 	}
+	QAndroidJniObject Notification_CarExtender::setLargeIcon(__jni_impl::android::graphics::Bitmap arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setLargeIcon",
+			"(Landroid/graphics/Bitmap;)Landroid/app/Notification$CarExtender;",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject Notification_CarExtender::setUnreadConversation(__jni_impl::android::app::Notification_CarExtender_UnreadConversation arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -104,22 +122,6 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"getUnreadConversation",
 			"()Landroid/app/Notification$CarExtender$UnreadConversation;"
-		);
-	}
-	QAndroidJniObject Notification_CarExtender::setLargeIcon(__jni_impl::android::graphics::Bitmap arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setLargeIcon",
-			"(Landroid/graphics/Bitmap;)Landroid/app/Notification$CarExtender;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Notification_CarExtender::extend(__jni_impl::android::app::Notification_Builder arg0)
-	{
-		return __thiz.callObjectMethod(
-			"extend",
-			"(Landroid/app/Notification$Builder;)Landroid/app/Notification$Builder;",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::app

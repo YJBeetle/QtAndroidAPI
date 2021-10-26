@@ -13,13 +13,13 @@ namespace __jni_impl::javax::xml::validation
 {
 	class Schema;
 }
-namespace __jni_impl::java::io
-{
-	class File;
-}
 namespace __jni_impl::java::net
 {
 	class URL;
+}
+namespace __jni_impl::java::io
+{
+	class File;
 }
 
 namespace __jni_impl::javax::xml::validation
@@ -34,29 +34,36 @@ namespace __jni_impl::javax::xml::validation
 		
 		// Methods
 		jobject getProperty(jstring arg0);
+		jobject getProperty(const QString &arg0);
 		static QAndroidJniObject newInstance(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2);
+		static QAndroidJniObject newInstance(const QString &arg0, const QString &arg1, __jni_impl::java::lang::ClassLoader arg2);
 		static QAndroidJniObject newInstance(jstring arg0);
+		static QAndroidJniObject newInstance(const QString &arg0);
 		void setProperty(jstring arg0, jobject arg1);
-		void setFeature(jstring arg0, jboolean arg1);
-		jboolean getFeature(jstring arg0);
-		static QAndroidJniObject newDefaultInstance();
-		jboolean isSchemaLanguageSupported(jstring arg0);
-		QAndroidJniObject newSchema(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject newSchema(__jni_impl::java::io::File arg0);
-		QAndroidJniObject newSchema(__jni_impl::java::net::URL arg0);
-		QAndroidJniObject newSchema(jarray arg0);
-		QAndroidJniObject newSchema();
-		void setResourceResolver(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getResourceResolver();
+		void setProperty(const QString &arg0, jobject arg1);
 		void setErrorHandler(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getErrorHandler();
+		static QAndroidJniObject newDefaultInstance();
+		jboolean isSchemaLanguageSupported(jstring arg0);
+		jboolean isSchemaLanguageSupported(const QString &arg0);
+		QAndroidJniObject newSchema(__jni_impl::java::net::URL arg0);
+		QAndroidJniObject newSchema(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject newSchema(__jni_impl::java::io::File arg0);
+		QAndroidJniObject newSchema();
+		QAndroidJniObject newSchema(jarray arg0);
+		void setResourceResolver(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getResourceResolver();
+		void setFeature(jstring arg0, jboolean arg1);
+		void setFeature(const QString &arg0, jboolean arg1);
+		jboolean getFeature(jstring arg0);
+		jboolean getFeature(const QString &arg0);
 	};
 } // namespace __jni_impl::javax::xml::validation
 
 #include "../../../java/lang/ClassLoader.hpp"
 #include "Schema.hpp"
-#include "../../../java/io/File.hpp"
 #include "../../../java/net/URL.hpp"
+#include "../../../java/io/File.hpp"
 
 namespace __jni_impl::javax::xml::validation
 {
@@ -79,6 +86,14 @@ namespace __jni_impl::javax::xml::validation
 			arg0
 		).object<jobject>();
 	}
+	jobject SchemaFactory::getProperty(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getProperty",
+			"(Ljava/lang/String;)Ljava/lang/Object;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jobject>();
+	}
 	QAndroidJniObject SchemaFactory::newInstance(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -87,6 +102,17 @@ namespace __jni_impl::javax::xml::validation
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/validation/SchemaFactory;",
 			arg0,
 			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SchemaFactory::newInstance(const QString &arg0, const QString &arg1, __jni_impl::java::lang::ClassLoader arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.xml.validation.SchemaFactory",
+			"newInstance",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)Ljavax/xml/validation/SchemaFactory;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -99,6 +125,15 @@ namespace __jni_impl::javax::xml::validation
 			arg0
 		);
 	}
+	QAndroidJniObject SchemaFactory::newInstance(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.xml.validation.SchemaFactory",
+			"newInstance",
+			"(Ljava/lang/String;)Ljavax/xml/validation/SchemaFactory;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void SchemaFactory::setProperty(jstring arg0, jobject arg1)
 	{
 		__thiz.callMethod<void>(
@@ -108,21 +143,28 @@ namespace __jni_impl::javax::xml::validation
 			arg1
 		);
 	}
-	void SchemaFactory::setFeature(jstring arg0, jboolean arg1)
+	void SchemaFactory::setProperty(const QString &arg0, jobject arg1)
 	{
 		__thiz.callMethod<void>(
-			"setFeature",
-			"(Ljava/lang/String;Z)V",
-			arg0,
+			"setProperty",
+			"(Ljava/lang/String;Ljava/lang/Object;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
-	jboolean SchemaFactory::getFeature(jstring arg0)
+	void SchemaFactory::setErrorHandler(__jni_impl::__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"getFeature",
-			"(Ljava/lang/String;)Z",
-			arg0
+		__thiz.callMethod<void>(
+			"setErrorHandler",
+			"(Lorg/xml/sax/ErrorHandler;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SchemaFactory::getErrorHandler()
+	{
+		return __thiz.callObjectMethod(
+			"getErrorHandler",
+			"()Lorg/xml/sax/ErrorHandler;"
 		);
 	}
 	QAndroidJniObject SchemaFactory::newDefaultInstance()
@@ -141,6 +183,22 @@ namespace __jni_impl::javax::xml::validation
 			arg0
 		);
 	}
+	jboolean SchemaFactory::isSchemaLanguageSupported(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSchemaLanguageSupported",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject SchemaFactory::newSchema(__jni_impl::java::net::URL arg0)
+	{
+		return __thiz.callObjectMethod(
+			"newSchema",
+			"(Ljava/net/URL;)Ljavax/xml/validation/Schema;",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject SchemaFactory::newSchema(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -157,12 +215,11 @@ namespace __jni_impl::javax::xml::validation
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject SchemaFactory::newSchema(__jni_impl::java::net::URL arg0)
+	QAndroidJniObject SchemaFactory::newSchema()
 	{
 		return __thiz.callObjectMethod(
 			"newSchema",
-			"(Ljava/net/URL;)Ljavax/xml/validation/Schema;",
-			arg0.__jniObject().object()
+			"()Ljavax/xml/validation/Schema;"
 		);
 	}
 	QAndroidJniObject SchemaFactory::newSchema(jarray arg0)
@@ -171,13 +228,6 @@ namespace __jni_impl::javax::xml::validation
 			"newSchema",
 			"([Ljavax/xml/transform/Source;)Ljavax/xml/validation/Schema;",
 			arg0
-		);
-	}
-	QAndroidJniObject SchemaFactory::newSchema()
-	{
-		return __thiz.callObjectMethod(
-			"newSchema",
-			"()Ljavax/xml/validation/Schema;"
 		);
 	}
 	void SchemaFactory::setResourceResolver(__jni_impl::__JniBaseClass arg0)
@@ -195,19 +245,38 @@ namespace __jni_impl::javax::xml::validation
 			"()Lorg/w3c/dom/ls/LSResourceResolver;"
 		);
 	}
-	void SchemaFactory::setErrorHandler(__jni_impl::__JniBaseClass arg0)
+	void SchemaFactory::setFeature(jstring arg0, jboolean arg1)
 	{
 		__thiz.callMethod<void>(
-			"setErrorHandler",
-			"(Lorg/xml/sax/ErrorHandler;)V",
-			arg0.__jniObject().object()
+			"setFeature",
+			"(Ljava/lang/String;Z)V",
+			arg0,
+			arg1
 		);
 	}
-	QAndroidJniObject SchemaFactory::getErrorHandler()
+	void SchemaFactory::setFeature(const QString &arg0, jboolean arg1)
 	{
-		return __thiz.callObjectMethod(
-			"getErrorHandler",
-			"()Lorg/xml/sax/ErrorHandler;"
+		__thiz.callMethod<void>(
+			"setFeature",
+			"(Ljava/lang/String;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	jboolean SchemaFactory::getFeature(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getFeature",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jboolean SchemaFactory::getFeature(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getFeature",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::javax::xml::validation

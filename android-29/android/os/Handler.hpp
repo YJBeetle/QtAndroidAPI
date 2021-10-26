@@ -62,6 +62,7 @@ namespace __jni_impl::android::os
 		jboolean hasCallbacks(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getLooper();
 		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void dump(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::os
 
@@ -79,27 +80,31 @@ namespace __jni_impl::android::os
 			"android.os.Handler",
 			"(Landroid/os/Looper;Landroid/os/Handler$Callback;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Handler::__constructor(__jni_impl::android::os::Looper arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.Handler",
 			"(Landroid/os/Looper;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Handler::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.Handler",
 			"(Landroid/os/Handler$Callback;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Handler::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.Handler",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -393,6 +398,15 @@ namespace __jni_impl::android::os
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	void Handler::dump(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::os

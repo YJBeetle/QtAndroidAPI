@@ -43,7 +43,8 @@ namespace __jni_impl::android::graphics::fonts
 		__thiz = QAndroidJniObject(
 			"android.graphics.fonts.FontFamily$Builder",
 			"(Landroid/graphics/fonts/Font;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

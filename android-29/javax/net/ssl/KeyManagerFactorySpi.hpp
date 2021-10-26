@@ -35,7 +35,8 @@ namespace __jni_impl::javax::net::ssl
 	{
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.KeyManagerFactorySpi",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

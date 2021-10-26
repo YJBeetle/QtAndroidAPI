@@ -61,7 +61,8 @@ namespace __jni_impl::android::view::autofill
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.autofill.AutofillManager$AutofillCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

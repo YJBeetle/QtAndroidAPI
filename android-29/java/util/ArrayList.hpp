@@ -77,20 +77,23 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.ArrayList",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ArrayList::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.ArrayList",
-			"()V");
+			"()V"
+		);
 	}
 	void ArrayList::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.ArrayList",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

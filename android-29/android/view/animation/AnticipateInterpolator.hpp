@@ -41,20 +41,23 @@ namespace __jni_impl::android::view::animation
 			"android.view.animation.AnticipateInterpolator",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void AnticipateInterpolator::__constructor(jfloat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.AnticipateInterpolator",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	void AnticipateInterpolator::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.AnticipateInterpolator",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

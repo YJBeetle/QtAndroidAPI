@@ -13,21 +13,13 @@ namespace __jni_impl::android::content::pm
 {
 	class ResolveInfo;
 }
-namespace __jni_impl::android::content::pm
-{
-	class ServiceInfo;
-}
-namespace __jni_impl::android::content::pm
-{
-	class PackageManager;
-}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
 }
-namespace __jni_impl::android::net
+namespace __jni_impl::android::content::pm
 {
-	class Uri;
+	class PackageManager;
 }
 namespace __jni_impl::android::os
 {
@@ -36,6 +28,14 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::content
 {
 	class ComponentName;
+}
+namespace __jni_impl::android::content::pm
+{
+	class ServiceInfo;
+}
+namespace __jni_impl::android::net
+{
+	class Uri;
 }
 
 namespace __jni_impl::android::app
@@ -52,6 +52,12 @@ namespace __jni_impl::android::app
 		// Methods
 		jstring toString();
 		jstring getPackageName();
+		QAndroidJniObject loadThumbnail(__jni_impl::android::content::pm::PackageManager arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void dump(__jni_impl::__JniBaseClass arg0, const QString &arg1);
+		QAndroidJniObject getComponent();
 		QAndroidJniObject getServiceInfo();
 		jstring getServiceName();
 		jstring loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
@@ -64,22 +70,17 @@ namespace __jni_impl::android::app
 		jstring getSettingsActivity();
 		QAndroidJniObject getSettingsSliceUri();
 		jboolean supportsMultipleDisplays();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
-		QAndroidJniObject getComponent();
-		QAndroidJniObject loadThumbnail(__jni_impl::android::content::pm::PackageManager arg0);
 	};
 } // namespace __jni_impl::android::app
 
 #include "../content/Context.hpp"
 #include "../content/pm/ResolveInfo.hpp"
-#include "../content/pm/ServiceInfo.hpp"
-#include "../content/pm/PackageManager.hpp"
 #include "../graphics/drawable/Drawable.hpp"
-#include "../net/Uri.hpp"
+#include "../content/pm/PackageManager.hpp"
 #include "../os/Parcel.hpp"
 #include "../content/ComponentName.hpp"
+#include "../content/pm/ServiceInfo.hpp"
+#include "../net/Uri.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -100,7 +101,8 @@ namespace __jni_impl::android::app
 			"android.app.WallpaperInfo",
 			"(Landroid/content/Context;Landroid/content/pm/ResolveInfo;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -117,6 +119,55 @@ namespace __jni_impl::android::app
 			"getPackageName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	QAndroidJniObject WallpaperInfo::loadThumbnail(__jni_impl::android::content::pm::PackageManager arg0)
+	{
+		return __thiz.callObjectMethod(
+			"loadThumbnail",
+			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
+			arg0.__jniObject().object()
+		);
+	}
+	jint WallpaperInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void WallpaperInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void WallpaperInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void WallpaperInfo::dump(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	QAndroidJniObject WallpaperInfo::getComponent()
+	{
+		return __thiz.callObjectMethod(
+			"getComponent",
+			"()Landroid/content/ComponentName;"
+		);
 	}
 	QAndroidJniObject WallpaperInfo::getServiceInfo()
 	{
@@ -206,46 +257,6 @@ namespace __jni_impl::android::app
 		return __thiz.callMethod<jboolean>(
 			"supportsMultipleDisplays",
 			"()Z"
-		);
-	}
-	jint WallpaperInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void WallpaperInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void WallpaperInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject WallpaperInfo::getComponent()
-	{
-		return __thiz.callObjectMethod(
-			"getComponent",
-			"()Landroid/content/ComponentName;"
-		);
-	}
-	QAndroidJniObject WallpaperInfo::loadThumbnail(__jni_impl::android::content::pm::PackageManager arg0)
-	{
-		return __thiz.callObjectMethod(
-			"loadThumbnail",
-			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::app

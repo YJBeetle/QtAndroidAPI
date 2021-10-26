@@ -25,9 +25,10 @@ namespace __jni_impl::android::widget
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject addSharedElement(jint arg0, jstring arg1);
 		static QAndroidJniObject fromFillInIntent(__jni_impl::android::content::Intent arg0);
 		static QAndroidJniObject fromPendingIntent(__jni_impl::android::app::PendingIntent arg0);
+		QAndroidJniObject addSharedElement(jint arg0, jstring arg1);
+		QAndroidJniObject addSharedElement(jint arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -43,19 +44,11 @@ namespace __jni_impl::android::widget
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.RemoteViews$RemoteResponse",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	QAndroidJniObject RemoteViews_RemoteResponse::addSharedElement(jint arg0, jstring arg1)
-	{
-		return __thiz.callObjectMethod(
-			"addSharedElement",
-			"(ILjava/lang/String;)Landroid/widget/RemoteViews$RemoteResponse;",
-			arg0,
-			arg1
-		);
-	}
 	QAndroidJniObject RemoteViews_RemoteResponse::fromFillInIntent(__jni_impl::android::content::Intent arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -72,6 +65,24 @@ namespace __jni_impl::android::widget
 			"fromPendingIntent",
 			"(Landroid/app/PendingIntent;)Landroid/widget/RemoteViews$RemoteResponse;",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject RemoteViews_RemoteResponse::addSharedElement(jint arg0, jstring arg1)
+	{
+		return __thiz.callObjectMethod(
+			"addSharedElement",
+			"(ILjava/lang/String;)Landroid/widget/RemoteViews$RemoteResponse;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject RemoteViews_RemoteResponse::addSharedElement(jint arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"addSharedElement",
+			"(ILjava/lang/String;)Landroid/widget/RemoteViews$RemoteResponse;",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::widget

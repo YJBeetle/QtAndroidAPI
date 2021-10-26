@@ -55,7 +55,8 @@ namespace __jni_impl::android::service::notification
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.notification.ZenPolicy$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

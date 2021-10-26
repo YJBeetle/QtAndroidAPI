@@ -41,7 +41,8 @@ namespace __jni_impl::android::accounts
 	{
 		__thiz = QAndroidJniObject(
 			"android.accounts.AccountAuthenticatorActivity",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

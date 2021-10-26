@@ -13,13 +13,13 @@ namespace __jni_impl::android::graphics
 {
 	class Bitmap;
 }
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::content
 {
 	class Context;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::view
@@ -60,16 +60,16 @@ namespace __jni_impl::android::view
 		jboolean equals(jobject arg0);
 		static QAndroidJniObject load(__jni_impl::android::content::res::Resources arg0, jint arg1);
 		static QAndroidJniObject create(__jni_impl::android::graphics::Bitmap arg0, jfloat arg1, jfloat arg2);
+		static QAndroidJniObject getSystemIcon(__jni_impl::android::content::Context arg0, jint arg1);
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		static QAndroidJniObject getSystemIcon(__jni_impl::android::content::Context arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
 
 #include "../content/res/Resources.hpp"
 #include "../graphics/Bitmap.hpp"
-#include "../os/Parcel.hpp"
 #include "../content/Context.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -282,6 +282,16 @@ namespace __jni_impl::android::view
 			arg2
 		);
 	}
+	QAndroidJniObject PointerIcon::getSystemIcon(__jni_impl::android::content::Context arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.PointerIcon",
+			"getSystemIcon",
+			"(Landroid/content/Context;I)Landroid/view/PointerIcon;",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
 	jint PointerIcon::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -294,16 +304,6 @@ namespace __jni_impl::android::view
 		__thiz.callMethod<void>(
 			"writeToParcel",
 			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject PointerIcon::getSystemIcon(__jni_impl::android::content::Context arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.PointerIcon",
-			"getSystemIcon",
-			"(Landroid/content/Context;I)Landroid/view/PointerIcon;",
 			arg0.__jniObject().object(),
 			arg1
 		);

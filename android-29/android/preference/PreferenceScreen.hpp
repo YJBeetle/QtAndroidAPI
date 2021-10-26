@@ -15,6 +15,10 @@ namespace __jni_impl::android::widget
 {
 	class ListView;
 }
+namespace __jni_impl::android::app
+{
+	class Dialog;
+}
 namespace __jni_impl::android::widget
 {
 	class AdapterView;
@@ -22,10 +26,6 @@ namespace __jni_impl::android::widget
 namespace __jni_impl::android::view
 {
 	class View;
-}
-namespace __jni_impl::android::app
-{
-	class Dialog;
 }
 
 namespace __jni_impl::android::preference
@@ -40,18 +40,18 @@ namespace __jni_impl::android::preference
 		
 		// Methods
 		void bind(__jni_impl::android::widget::ListView arg0);
-		void onDismiss(__jni_impl::__JniBaseClass arg0);
-		void onItemClick(__jni_impl::android::widget::AdapterView arg0, __jni_impl::android::view::View arg1, jint arg2, jlong arg3);
 		QAndroidJniObject getDialog();
+		void onItemClick(__jni_impl::android::widget::AdapterView arg0, __jni_impl::android::view::View arg1, jint arg2, jlong arg3);
 		QAndroidJniObject getRootAdapter();
+		void onDismiss(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::preference
 
 #include "../content/Context.hpp"
 #include "../widget/ListView.hpp"
+#include "../app/Dialog.hpp"
 #include "../widget/AdapterView.hpp"
 #include "../view/View.hpp"
-#include "../app/Dialog.hpp"
 
 namespace __jni_impl::android::preference
 {
@@ -74,12 +74,11 @@ namespace __jni_impl::android::preference
 			arg0.__jniObject().object()
 		);
 	}
-	void PreferenceScreen::onDismiss(__jni_impl::__JniBaseClass arg0)
+	QAndroidJniObject PreferenceScreen::getDialog()
 	{
-		__thiz.callMethod<void>(
-			"onDismiss",
-			"(Landroid/content/DialogInterface;)V",
-			arg0.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"getDialog",
+			"()Landroid/app/Dialog;"
 		);
 	}
 	void PreferenceScreen::onItemClick(__jni_impl::android::widget::AdapterView arg0, __jni_impl::android::view::View arg1, jint arg2, jlong arg3)
@@ -93,18 +92,19 @@ namespace __jni_impl::android::preference
 			arg3
 		);
 	}
-	QAndroidJniObject PreferenceScreen::getDialog()
-	{
-		return __thiz.callObjectMethod(
-			"getDialog",
-			"()Landroid/app/Dialog;"
-		);
-	}
 	QAndroidJniObject PreferenceScreen::getRootAdapter()
 	{
 		return __thiz.callObjectMethod(
 			"getRootAdapter",
 			"()Landroid/widget/ListAdapter;"
+		);
+	}
+	void PreferenceScreen::onDismiss(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"onDismiss",
+			"(Landroid/content/DialogInterface;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::preference

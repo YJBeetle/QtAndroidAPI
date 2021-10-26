@@ -25,6 +25,7 @@ namespace __jni_impl::java::security
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0, jstring arg1);
+		void __constructor(const QString &arg0, const QString &arg1);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -47,7 +48,8 @@ namespace __jni_impl::java::security
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.AllPermission",
-			"()V");
+			"()V"
+		);
 	}
 	void AllPermission::__constructor(jstring arg0, jstring arg1)
 	{
@@ -55,7 +57,17 @@ namespace __jni_impl::java::security
 			"java.security.AllPermission",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void AllPermission::__constructor(const QString &arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.AllPermission",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods

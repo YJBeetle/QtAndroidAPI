@@ -35,7 +35,8 @@ namespace __jni_impl::android::text::style
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.TtsSpan$TimeBuilder",
-			"()V");
+			"()V"
+		);
 	}
 	void TtsSpan_TimeBuilder::__constructor(jint arg0, jint arg1)
 	{
@@ -43,7 +44,8 @@ namespace __jni_impl::android::text::style
 			"android.text.style.TtsSpan$TimeBuilder",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

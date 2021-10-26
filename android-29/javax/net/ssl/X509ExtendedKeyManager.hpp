@@ -23,6 +23,7 @@ namespace __jni_impl::javax::net::ssl
 		// Methods
 		jstring chooseEngineClientAlias(jarray arg0, jarray arg1, __jni_impl::javax::net::ssl::SSLEngine arg2);
 		jstring chooseEngineServerAlias(jstring arg0, jarray arg1, __jni_impl::javax::net::ssl::SSLEngine arg2);
+		jstring chooseEngineServerAlias(const QString &arg0, jarray arg1, __jni_impl::javax::net::ssl::SSLEngine arg2);
 	};
 } // namespace __jni_impl::javax::net::ssl
 
@@ -57,6 +58,16 @@ namespace __jni_impl::javax::net::ssl
 			"chooseEngineServerAlias",
 			"(Ljava/lang/String;[Ljava/security/Principal;Ljavax/net/ssl/SSLEngine;)Ljava/lang/String;",
 			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring X509ExtendedKeyManager::chooseEngineServerAlias(const QString &arg0, jarray arg1, __jni_impl::javax::net::ssl::SSLEngine arg2)
+	{
+		return __thiz.callObjectMethod(
+			"chooseEngineServerAlias",
+			"(Ljava/lang/String;[Ljava/security/Principal;Ljavax/net/ssl/SSLEngine;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object()
 		).object<jstring>();

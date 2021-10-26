@@ -51,6 +51,7 @@ namespace __jni_impl::java::util::zip
 		void close();
 		void setMethod(jint arg0);
 		void setComment(jstring arg0);
+		void setComment(const QString &arg0);
 		void setLevel(jint arg0);
 		void finish();
 		void closeEntry();
@@ -90,14 +91,16 @@ namespace __jni_impl::java::util::zip
 			"java.util.zip.ZipOutputStream",
 			"(Ljava/io/OutputStream;Ljava/nio/charset/Charset;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void ZipOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.ZipOutputStream",
 			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -132,6 +135,14 @@ namespace __jni_impl::java::util::zip
 			"setComment",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void ZipOutputStream::setComment(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setComment",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void ZipOutputStream::setLevel(jint arg0)

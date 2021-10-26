@@ -91,20 +91,23 @@ namespace __jni_impl::android::text
 		__thiz = QAndroidJniObject(
 			"android.text.TextPaint",
 			"(Landroid/graphics/Paint;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void TextPaint::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.TextPaint",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void TextPaint::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.TextPaint",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -7,11 +7,11 @@
 
 namespace __jni_impl::java::security
 {
-	class AlgorithmParameters;
+	class SecureRandom;
 }
 namespace __jni_impl::java::security
 {
-	class SecureRandom;
+	class AlgorithmParameters;
 }
 
 namespace __jni_impl::java::security
@@ -28,8 +28,8 @@ namespace __jni_impl::java::security
 	};
 } // namespace __jni_impl::java::security
 
-#include "AlgorithmParameters.hpp"
 #include "SecureRandom.hpp"
+#include "AlgorithmParameters.hpp"
 
 namespace __jni_impl::java::security
 {
@@ -40,7 +40,8 @@ namespace __jni_impl::java::security
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.AlgorithmParameterGeneratorSpi",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

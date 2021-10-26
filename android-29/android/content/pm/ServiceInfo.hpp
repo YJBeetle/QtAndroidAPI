@@ -44,6 +44,7 @@ namespace __jni_impl::android::content::pm
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void dump(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 		jint getForegroundServiceType();
 	};
 } // namespace __jni_impl::android::content::pm
@@ -171,14 +172,16 @@ namespace __jni_impl::android::content::pm
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.ServiceInfo",
-			"()V");
+			"()V"
+		);
 	}
 	void ServiceInfo::__constructor(__jni_impl::android::content::pm::ServiceInfo arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.ServiceInfo",
 			"(Landroid/content/pm/ServiceInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -212,6 +215,15 @@ namespace __jni_impl::android::content::pm
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	void ServiceInfo::dump(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jint ServiceInfo::getForegroundServiceType()

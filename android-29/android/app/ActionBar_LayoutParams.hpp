@@ -55,21 +55,24 @@ namespace __jni_impl::android::app
 		__thiz = QAndroidJniObject(
 			"android.app.ActionBar$LayoutParams",
 			"(Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ActionBar_LayoutParams::__constructor(__jni_impl::android::app::ActionBar_LayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ActionBar$LayoutParams",
 			"(Landroid/app/ActionBar$LayoutParams;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ActionBar_LayoutParams::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ActionBar$LayoutParams",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void ActionBar_LayoutParams::__constructor(jint arg0, jint arg1, jint arg2)
 	{
@@ -78,7 +81,8 @@ namespace __jni_impl::android::app
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void ActionBar_LayoutParams::__constructor(jint arg0, jint arg1)
 	{
@@ -86,7 +90,8 @@ namespace __jni_impl::android::app
 			"android.app.ActionBar$LayoutParams",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void ActionBar_LayoutParams::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -94,7 +99,8 @@ namespace __jni_impl::android::app
 			"android.app.ActionBar$LayoutParams",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

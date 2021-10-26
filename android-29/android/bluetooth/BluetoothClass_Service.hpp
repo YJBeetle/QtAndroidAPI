@@ -102,7 +102,8 @@ namespace __jni_impl::android::bluetooth
 	{
 		__thiz = QAndroidJniObject(
 			"android.bluetooth.BluetoothClass$Service",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

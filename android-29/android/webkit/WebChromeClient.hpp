@@ -56,7 +56,9 @@ namespace __jni_impl::android::webkit
 		void onReceivedIcon(__jni_impl::android::webkit::WebView arg0, __jni_impl::android::graphics::Bitmap arg1);
 		void onProgressChanged(__jni_impl::android::webkit::WebView arg0, jint arg1);
 		void onReceivedTitle(__jni_impl::android::webkit::WebView arg0, jstring arg1);
+		void onReceivedTitle(__jni_impl::android::webkit::WebView arg0, const QString &arg1);
 		void onReceivedTouchIconUrl(__jni_impl::android::webkit::WebView arg0, jstring arg1, jboolean arg2);
+		void onReceivedTouchIconUrl(__jni_impl::android::webkit::WebView arg0, const QString &arg1, jboolean arg2);
 		void onShowCustomView(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1);
 		void onShowCustomView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
 		void onHideCustomView();
@@ -64,17 +66,24 @@ namespace __jni_impl::android::webkit
 		void onRequestFocus(__jni_impl::android::webkit::WebView arg0);
 		void onCloseWindow(__jni_impl::android::webkit::WebView arg0);
 		jboolean onJsAlert(__jni_impl::android::webkit::WebView arg0, jstring arg1, jstring arg2, __jni_impl::android::webkit::JsResult arg3);
+		jboolean onJsAlert(__jni_impl::android::webkit::WebView arg0, const QString &arg1, const QString &arg2, __jni_impl::android::webkit::JsResult arg3);
 		jboolean onJsConfirm(__jni_impl::android::webkit::WebView arg0, jstring arg1, jstring arg2, __jni_impl::android::webkit::JsResult arg3);
+		jboolean onJsConfirm(__jni_impl::android::webkit::WebView arg0, const QString &arg1, const QString &arg2, __jni_impl::android::webkit::JsResult arg3);
 		jboolean onJsPrompt(__jni_impl::android::webkit::WebView arg0, jstring arg1, jstring arg2, jstring arg3, __jni_impl::android::webkit::JsPromptResult arg4);
+		jboolean onJsPrompt(__jni_impl::android::webkit::WebView arg0, const QString &arg1, const QString &arg2, const QString &arg3, __jni_impl::android::webkit::JsPromptResult arg4);
 		jboolean onJsBeforeUnload(__jni_impl::android::webkit::WebView arg0, jstring arg1, jstring arg2, __jni_impl::android::webkit::JsResult arg3);
+		jboolean onJsBeforeUnload(__jni_impl::android::webkit::WebView arg0, const QString &arg1, const QString &arg2, __jni_impl::android::webkit::JsResult arg3);
 		void onExceededDatabaseQuota(jstring arg0, jstring arg1, jlong arg2, jlong arg3, jlong arg4, __jni_impl::__JniBaseClass arg5);
+		void onExceededDatabaseQuota(const QString &arg0, const QString &arg1, jlong arg2, jlong arg3, jlong arg4, __jni_impl::__JniBaseClass arg5);
 		void onReachedMaxAppCacheSize(jlong arg0, jlong arg1, __jni_impl::__JniBaseClass arg2);
 		void onGeolocationPermissionsShowPrompt(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		void onGeolocationPermissionsShowPrompt(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		void onGeolocationPermissionsHidePrompt();
 		void onPermissionRequest(__jni_impl::android::webkit::PermissionRequest arg0);
 		void onPermissionRequestCanceled(__jni_impl::android::webkit::PermissionRequest arg0);
 		jboolean onJsTimeout();
 		void onConsoleMessage(jstring arg0, jint arg1, jstring arg2);
+		void onConsoleMessage(const QString &arg0, jint arg1, const QString &arg2);
 		jboolean onConsoleMessage(__jni_impl::android::webkit::ConsoleMessage arg0);
 		QAndroidJniObject getDefaultVideoPoster();
 		QAndroidJniObject getVideoLoadingProgressView();
@@ -102,7 +111,8 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.WebChromeClient",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -133,6 +143,15 @@ namespace __jni_impl::android::webkit
 			arg1
 		);
 	}
+	void WebChromeClient::onReceivedTitle(__jni_impl::android::webkit::WebView arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"onReceivedTitle",
+			"(Landroid/webkit/WebView;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void WebChromeClient::onReceivedTouchIconUrl(__jni_impl::android::webkit::WebView arg0, jstring arg1, jboolean arg2)
 	{
 		__thiz.callMethod<void>(
@@ -140,6 +159,16 @@ namespace __jni_impl::android::webkit
 			"(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
 			arg0.__jniObject().object(),
 			arg1,
+			arg2
+		);
+	}
+	void WebChromeClient::onReceivedTouchIconUrl(__jni_impl::android::webkit::WebView arg0, const QString &arg1, jboolean arg2)
+	{
+		__thiz.callMethod<void>(
+			"onReceivedTouchIconUrl",
+			"(Landroid/webkit/WebView;Ljava/lang/String;Z)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -207,6 +236,17 @@ namespace __jni_impl::android::webkit
 			arg3.__jniObject().object()
 		);
 	}
+	jboolean WebChromeClient::onJsAlert(__jni_impl::android::webkit::WebView arg0, const QString &arg1, const QString &arg2, __jni_impl::android::webkit::JsResult arg3)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onJsAlert",
+			"(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3.__jniObject().object()
+		);
+	}
 	jboolean WebChromeClient::onJsConfirm(__jni_impl::android::webkit::WebView arg0, jstring arg1, jstring arg2, __jni_impl::android::webkit::JsResult arg3)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -215,6 +255,17 @@ namespace __jni_impl::android::webkit
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
+			arg3.__jniObject().object()
+		);
+	}
+	jboolean WebChromeClient::onJsConfirm(__jni_impl::android::webkit::WebView arg0, const QString &arg1, const QString &arg2, __jni_impl::android::webkit::JsResult arg3)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onJsConfirm",
+			"(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3.__jniObject().object()
 		);
 	}
@@ -230,6 +281,18 @@ namespace __jni_impl::android::webkit
 			arg4.__jniObject().object()
 		);
 	}
+	jboolean WebChromeClient::onJsPrompt(__jni_impl::android::webkit::WebView arg0, const QString &arg1, const QString &arg2, const QString &arg3, __jni_impl::android::webkit::JsPromptResult arg4)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onJsPrompt",
+			"(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsPromptResult;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			QAndroidJniObject::fromString(arg3).object<jstring>(),
+			arg4.__jniObject().object()
+		);
+	}
 	jboolean WebChromeClient::onJsBeforeUnload(__jni_impl::android::webkit::WebView arg0, jstring arg1, jstring arg2, __jni_impl::android::webkit::JsResult arg3)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -241,6 +304,17 @@ namespace __jni_impl::android::webkit
 			arg3.__jniObject().object()
 		);
 	}
+	jboolean WebChromeClient::onJsBeforeUnload(__jni_impl::android::webkit::WebView arg0, const QString &arg1, const QString &arg2, __jni_impl::android::webkit::JsResult arg3)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onJsBeforeUnload",
+			"(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;Landroid/webkit/JsResult;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3.__jniObject().object()
+		);
+	}
 	void WebChromeClient::onExceededDatabaseQuota(jstring arg0, jstring arg1, jlong arg2, jlong arg3, jlong arg4, __jni_impl::__JniBaseClass arg5)
 	{
 		__thiz.callMethod<void>(
@@ -248,6 +322,19 @@ namespace __jni_impl::android::webkit
 			"(Ljava/lang/String;Ljava/lang/String;JJJLandroid/webkit/WebStorage$QuotaUpdater;)V",
 			arg0,
 			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5.__jniObject().object()
+		);
+	}
+	void WebChromeClient::onExceededDatabaseQuota(const QString &arg0, const QString &arg1, jlong arg2, jlong arg3, jlong arg4, __jni_impl::__JniBaseClass arg5)
+	{
+		__thiz.callMethod<void>(
+			"onExceededDatabaseQuota",
+			"(Ljava/lang/String;Ljava/lang/String;JJJLandroid/webkit/WebStorage$QuotaUpdater;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3,
 			arg4,
@@ -270,6 +357,15 @@ namespace __jni_impl::android::webkit
 			"onGeolocationPermissionsShowPrompt",
 			"(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void WebChromeClient::onGeolocationPermissionsShowPrompt(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"onGeolocationPermissionsShowPrompt",
+			"(Ljava/lang/String;Landroid/webkit/GeolocationPermissions$Callback;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -311,6 +407,16 @@ namespace __jni_impl::android::webkit
 			arg0,
 			arg1,
 			arg2
+		);
+	}
+	void WebChromeClient::onConsoleMessage(const QString &arg0, jint arg1, const QString &arg2)
+	{
+		__thiz.callMethod<void>(
+			"onConsoleMessage",
+			"(Ljava/lang/String;ILjava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	jboolean WebChromeClient::onConsoleMessage(__jni_impl::android::webkit::ConsoleMessage arg0)

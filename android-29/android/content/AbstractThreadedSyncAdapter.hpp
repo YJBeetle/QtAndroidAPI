@@ -47,7 +47,9 @@ namespace __jni_impl::android::content
 		QAndroidJniObject getSyncAdapterBinder();
 		jboolean onUnsyncableAccount();
 		void onPerformSync(__jni_impl::android::accounts::Account arg0, __jni_impl::android::os::Bundle arg1, jstring arg2, __jni_impl::android::content::ContentProviderClient arg3, __jni_impl::android::content::SyncResult arg4);
+		void onPerformSync(__jni_impl::android::accounts::Account arg0, __jni_impl::android::os::Bundle arg1, const QString &arg2, __jni_impl::android::content::ContentProviderClient arg3, __jni_impl::android::content::SyncResult arg4);
 		void onSecurityException(__jni_impl::android::accounts::Account arg0, __jni_impl::android::os::Bundle arg1, jstring arg2, __jni_impl::android::content::SyncResult arg3);
+		void onSecurityException(__jni_impl::android::accounts::Account arg0, __jni_impl::android::os::Bundle arg1, const QString &arg2, __jni_impl::android::content::SyncResult arg3);
 		void onSyncCanceled(__jni_impl::java::lang::Thread arg0);
 		void onSyncCanceled();
 	};
@@ -78,7 +80,8 @@ namespace __jni_impl::android::content
 			"android.content.AbstractThreadedSyncAdapter",
 			"(Landroid/content/Context;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void AbstractThreadedSyncAdapter::__constructor(__jni_impl::android::content::Context arg0, jboolean arg1, jboolean arg2)
 	{
@@ -87,7 +90,8 @@ namespace __jni_impl::android::content
 			"(Landroid/content/Context;ZZ)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods
@@ -124,6 +128,18 @@ namespace __jni_impl::android::content
 			arg4.__jniObject().object()
 		);
 	}
+	void AbstractThreadedSyncAdapter::onPerformSync(__jni_impl::android::accounts::Account arg0, __jni_impl::android::os::Bundle arg1, const QString &arg2, __jni_impl::android::content::ContentProviderClient arg3, __jni_impl::android::content::SyncResult arg4)
+	{
+		__thiz.callMethod<void>(
+			"onPerformSync",
+			"(Landroid/accounts/Account;Landroid/os/Bundle;Ljava/lang/String;Landroid/content/ContentProviderClient;Landroid/content/SyncResult;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3.__jniObject().object(),
+			arg4.__jniObject().object()
+		);
+	}
 	void AbstractThreadedSyncAdapter::onSecurityException(__jni_impl::android::accounts::Account arg0, __jni_impl::android::os::Bundle arg1, jstring arg2, __jni_impl::android::content::SyncResult arg3)
 	{
 		__thiz.callMethod<void>(
@@ -132,6 +148,17 @@ namespace __jni_impl::android::content
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
+			arg3.__jniObject().object()
+		);
+	}
+	void AbstractThreadedSyncAdapter::onSecurityException(__jni_impl::android::accounts::Account arg0, __jni_impl::android::os::Bundle arg1, const QString &arg2, __jni_impl::android::content::SyncResult arg3)
+	{
+		__thiz.callMethod<void>(
+			"onSecurityException",
+			"(Landroid/accounts/Account;Landroid/os/Bundle;Ljava/lang/String;Landroid/content/SyncResult;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3.__jniObject().object()
 		);
 	}

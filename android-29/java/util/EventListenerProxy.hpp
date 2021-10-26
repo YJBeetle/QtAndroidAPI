@@ -32,7 +32,8 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.EventListenerProxy",
 			"(Ljava/util/EventListener;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

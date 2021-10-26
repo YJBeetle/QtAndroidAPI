@@ -43,8 +43,6 @@ namespace __jni_impl::android::app::backup
 		void __constructor();
 		
 		// Methods
-		void onCreate();
-		void onDestroy();
 		void onBackup(__jni_impl::android::os::ParcelFileDescriptor arg0, __jni_impl::android::app::backup::BackupDataOutput arg1, __jni_impl::android::os::ParcelFileDescriptor arg2);
 		void onRestore(__jni_impl::android::app::backup::BackupDataInput arg0, jlong arg1, __jni_impl::android::os::ParcelFileDescriptor arg2);
 		void onRestore(__jni_impl::android::app::backup::BackupDataInput arg0, jint arg1, __jni_impl::android::os::ParcelFileDescriptor arg2);
@@ -53,6 +51,8 @@ namespace __jni_impl::android::app::backup
 		void fullBackupFile(__jni_impl::java::io::File arg0, __jni_impl::android::app::backup::FullBackupDataOutput arg1);
 		void onRestoreFile(__jni_impl::android::os::ParcelFileDescriptor arg0, jlong arg1, __jni_impl::java::io::File arg2, jint arg3, jlong arg4, jlong arg5);
 		void onRestoreFinished();
+		void onCreate();
+		void onDestroy();
 	};
 } // namespace __jni_impl::android::app::backup
 
@@ -99,24 +99,11 @@ namespace __jni_impl::android::app::backup
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.backup.BackupAgent",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	void BackupAgent::onCreate()
-	{
-		__thiz.callMethod<void>(
-			"onCreate",
-			"()V"
-		);
-	}
-	void BackupAgent::onDestroy()
-	{
-		__thiz.callMethod<void>(
-			"onDestroy",
-			"()V"
-		);
-	}
 	void BackupAgent::onBackup(__jni_impl::android::os::ParcelFileDescriptor arg0, __jni_impl::android::app::backup::BackupDataOutput arg1, __jni_impl::android::os::ParcelFileDescriptor arg2)
 	{
 		__thiz.callMethod<void>(
@@ -190,6 +177,20 @@ namespace __jni_impl::android::app::backup
 	{
 		__thiz.callMethod<void>(
 			"onRestoreFinished",
+			"()V"
+		);
+	}
+	void BackupAgent::onCreate()
+	{
+		__thiz.callMethod<void>(
+			"onCreate",
+			"()V"
+		);
+	}
+	void BackupAgent::onDestroy()
+	{
+		__thiz.callMethod<void>(
+			"onDestroy",
 			"()V"
 		);
 	}

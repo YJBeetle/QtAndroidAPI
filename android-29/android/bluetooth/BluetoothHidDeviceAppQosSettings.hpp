@@ -90,7 +90,8 @@ namespace __jni_impl::android::bluetooth
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	
 	// Methods

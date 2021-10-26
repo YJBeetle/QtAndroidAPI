@@ -99,7 +99,8 @@ namespace __jni_impl::java::util::concurrent
 			arg2,
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
-			arg5.__jniObject().object());
+			arg5.__jniObject().object()
+		);
 	}
 	void ThreadPoolExecutor::__constructor(jint arg0, jint arg1, jlong arg2, __jni_impl::java::util::concurrent::TimeUnit arg3, __jni_impl::__JniBaseClass arg4)
 	{
@@ -110,7 +111,8 @@ namespace __jni_impl::java::util::concurrent
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object());
+			arg4.__jniObject().object()
+		);
 	}
 	void ThreadPoolExecutor::__constructor(jint arg0, jint arg1, jlong arg2, __jni_impl::java::util::concurrent::TimeUnit arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::__JniBaseClass arg5, __jni_impl::__JniBaseClass arg6)
 	{
@@ -123,7 +125,8 @@ namespace __jni_impl::java::util::concurrent
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	
 	// Methods

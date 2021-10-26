@@ -57,7 +57,8 @@ namespace __jni_impl::android::nfc::cardemulation
 	{
 		__thiz = QAndroidJniObject(
 			"android.nfc.cardemulation.OffHostApduService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

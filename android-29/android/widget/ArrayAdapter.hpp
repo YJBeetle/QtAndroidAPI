@@ -46,25 +46,25 @@ namespace __jni_impl::android::widget
 		void add(jobject arg0);
 		void remove(jobject arg0);
 		void clear();
-		void addAll(jobjectArray arg0);
 		void addAll(__jni_impl::__JniBaseClass arg0);
+		void addAll(jobjectArray arg0);
 		QAndroidJniObject getContext();
 		void insert(jobject arg0, jint arg1);
 		void sort(__jni_impl::__JniBaseClass arg0);
 		jint getCount();
 		QAndroidJniObject getFilter();
 		jobject getItem(jint arg0);
+		void setNotifyOnChange(jboolean arg0);
+		static QAndroidJniObject createFromResource(__jni_impl::android::content::Context arg0, jint arg1, jint arg2);
 		QAndroidJniObject getView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2);
-		jint getPosition(jobject arg0);
-		void notifyDataSetChanged();
-		QAndroidJniObject getDropDownView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2);
-		jarray getAutofillOptions();
 		jlong getItemId(jint arg0);
+		void notifyDataSetChanged();
 		void setDropDownViewTheme(__jni_impl::android::content::res::Resources_Theme arg0);
 		QAndroidJniObject getDropDownViewTheme();
 		void setDropDownViewResource(jint arg0);
-		void setNotifyOnChange(jboolean arg0);
-		static QAndroidJniObject createFromResource(__jni_impl::android::content::Context arg0, jint arg1, jint arg2);
+		QAndroidJniObject getDropDownView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2);
+		jarray getAutofillOptions();
+		jint getPosition(jobject arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -87,7 +87,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
 	}
 	void ArrayAdapter::__constructor(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -96,7 +97,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;ILjava/util/List;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ArrayAdapter::__constructor(__jni_impl::android::content::Context arg0, jint arg1, jint arg2, jobjectArray arg3)
 	{
@@ -106,7 +108,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void ArrayAdapter::__constructor(__jni_impl::android::content::Context arg0, jint arg1)
 	{
@@ -114,7 +117,8 @@ namespace __jni_impl::android::widget
 			"android.widget.ArrayAdapter",
 			"(Landroid/content/Context;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void ArrayAdapter::__constructor(__jni_impl::android::content::Context arg0, jint arg1, jint arg2)
 	{
@@ -123,7 +127,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;II)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void ArrayAdapter::__constructor(__jni_impl::android::content::Context arg0, jint arg1, jobjectArray arg2)
 	{
@@ -132,7 +137,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;I[Ljava/lang/Object;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods
@@ -159,20 +165,20 @@ namespace __jni_impl::android::widget
 			"()V"
 		);
 	}
-	void ArrayAdapter::addAll(jobjectArray arg0)
-	{
-		__thiz.callMethod<void>(
-			"addAll",
-			"([Ljava/lang/Object;)V",
-			arg0
-		);
-	}
 	void ArrayAdapter::addAll(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"addAll",
 			"(Ljava/util/Collection;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void ArrayAdapter::addAll(jobjectArray arg0)
+	{
+		__thiz.callMethod<void>(
+			"addAll",
+			"([Ljava/lang/Object;)V",
+			arg0
 		);
 	}
 	QAndroidJniObject ArrayAdapter::getContext()
@@ -221,6 +227,25 @@ namespace __jni_impl::android::widget
 			arg0
 		).object<jobject>();
 	}
+	void ArrayAdapter::setNotifyOnChange(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setNotifyOnChange",
+			"(Z)V",
+			arg0
+		);
+	}
+	QAndroidJniObject ArrayAdapter::createFromResource(__jni_impl::android::content::Context arg0, jint arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.widget.ArrayAdapter",
+			"createFromResource",
+			"(Landroid/content/Context;II)Landroid/widget/ArrayAdapter;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
+		);
+	}
 	QAndroidJniObject ArrayAdapter::getView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -231,11 +256,11 @@ namespace __jni_impl::android::widget
 			arg2.__jniObject().object()
 		);
 	}
-	jint ArrayAdapter::getPosition(jobject arg0)
+	jlong ArrayAdapter::getItemId(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getPosition",
-			"(Ljava/lang/Object;)I",
+		return __thiz.callMethod<jlong>(
+			"getItemId",
+			"(I)J",
 			arg0
 		);
 	}
@@ -244,31 +269,6 @@ namespace __jni_impl::android::widget
 		__thiz.callMethod<void>(
 			"notifyDataSetChanged",
 			"()V"
-		);
-	}
-	QAndroidJniObject ArrayAdapter::getDropDownView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2)
-	{
-		return __thiz.callObjectMethod(
-			"getDropDownView",
-			"(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	jarray ArrayAdapter::getAutofillOptions()
-	{
-		return __thiz.callObjectMethod(
-			"getAutofillOptions",
-			"()[Ljava/lang/CharSequence;"
-		).object<jarray>();
-	}
-	jlong ArrayAdapter::getItemId(jint arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"getItemId",
-			"(I)J",
-			arg0
 		);
 	}
 	void ArrayAdapter::setDropDownViewTheme(__jni_impl::android::content::res::Resources_Theme arg0)
@@ -294,23 +294,29 @@ namespace __jni_impl::android::widget
 			arg0
 		);
 	}
-	void ArrayAdapter::setNotifyOnChange(jboolean arg0)
+	QAndroidJniObject ArrayAdapter::getDropDownView(jint arg0, __jni_impl::android::view::View arg1, __jni_impl::android::view::ViewGroup arg2)
 	{
-		__thiz.callMethod<void>(
-			"setNotifyOnChange",
-			"(Z)V",
-			arg0
+		return __thiz.callObjectMethod(
+			"getDropDownView",
+			"(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ArrayAdapter::createFromResource(__jni_impl::android::content::Context arg0, jint arg1, jint arg2)
+	jarray ArrayAdapter::getAutofillOptions()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.widget.ArrayAdapter",
-			"createFromResource",
-			"(Landroid/content/Context;II)Landroid/widget/ArrayAdapter;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
+		return __thiz.callObjectMethod(
+			"getAutofillOptions",
+			"()[Ljava/lang/CharSequence;"
+		).object<jarray>();
+	}
+	jint ArrayAdapter::getPosition(jobject arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getPosition",
+			"(Ljava/lang/Object;)I",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::widget

@@ -20,10 +20,10 @@ namespace __jni_impl::javax::crypto::spec
 		
 		// Methods
 		jcharArray getPassword();
-		void clearPassword();
 		jbyteArray getSalt();
 		jint getIterationCount();
 		jint getKeyLength();
+		void clearPassword();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -40,7 +40,8 @@ namespace __jni_impl::javax::crypto::spec
 			"([C[BI)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void PBEKeySpec::__constructor(jcharArray arg0, jbyteArray arg1, jint arg2, jint arg3)
 	{
@@ -50,14 +51,16 @@ namespace __jni_impl::javax::crypto::spec
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void PBEKeySpec::__constructor(jcharArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.PBEKeySpec",
 			"([C)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -67,13 +70,6 @@ namespace __jni_impl::javax::crypto::spec
 			"getPassword",
 			"()[C"
 		).object<jcharArray>();
-	}
-	void PBEKeySpec::clearPassword()
-	{
-		__thiz.callMethod<void>(
-			"clearPassword",
-			"()V"
-		);
 	}
 	jbyteArray PBEKeySpec::getSalt()
 	{
@@ -94,6 +90,13 @@ namespace __jni_impl::javax::crypto::spec
 		return __thiz.callMethod<jint>(
 			"getKeyLength",
 			"()I"
+		);
+	}
+	void PBEKeySpec::clearPassword()
+	{
+		__thiz.callMethod<void>(
+			"clearPassword",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::javax::crypto::spec

@@ -22,7 +22,9 @@ namespace __jni_impl::android::hardware::fingerprint
 		
 		// Methods
 		void onAuthenticationError(jint arg0, jstring arg1);
+		void onAuthenticationError(jint arg0, const QString &arg1);
 		void onAuthenticationHelp(jint arg0, jstring arg1);
+		void onAuthenticationHelp(jint arg0, const QString &arg1);
 		void onAuthenticationSucceeded(__jni_impl::android::hardware::fingerprint::FingerprintManager_AuthenticationResult arg0);
 		void onAuthenticationFailed();
 	};
@@ -39,7 +41,8 @@ namespace __jni_impl::android::hardware::fingerprint
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.fingerprint.FingerprintManager$AuthenticationCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -52,6 +55,15 @@ namespace __jni_impl::android::hardware::fingerprint
 			arg1
 		);
 	}
+	void FingerprintManager_AuthenticationCallback::onAuthenticationError(jint arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"onAuthenticationError",
+			"(ILjava/lang/CharSequence;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void FingerprintManager_AuthenticationCallback::onAuthenticationHelp(jint arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -59,6 +71,15 @@ namespace __jni_impl::android::hardware::fingerprint
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
 			arg1
+		);
+	}
+	void FingerprintManager_AuthenticationCallback::onAuthenticationHelp(jint arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"onAuthenticationHelp",
+			"(ILjava/lang/CharSequence;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void FingerprintManager_AuthenticationCallback::onAuthenticationSucceeded(__jni_impl::android::hardware::fingerprint::FingerprintManager_AuthenticationResult arg0)

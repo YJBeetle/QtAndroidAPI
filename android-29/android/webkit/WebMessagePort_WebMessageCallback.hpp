@@ -41,7 +41,8 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz = QAndroidJniObject(
 			"android.webkit.WebMessagePort$WebMessageCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

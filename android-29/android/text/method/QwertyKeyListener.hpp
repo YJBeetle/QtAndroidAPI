@@ -32,10 +32,11 @@ namespace __jni_impl::android::text::method
 		
 		// Methods
 		static QAndroidJniObject getInstance(jboolean arg0, __jni_impl::android::text::method::TextKeyListener_Capitalize arg1);
-		jboolean onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
-		jint getInputType();
-		static void markAsReplaced(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2, jstring arg3);
 		static QAndroidJniObject getInstanceForFullKeyboard();
+		static void markAsReplaced(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2, jstring arg3);
+		static void markAsReplaced(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2, const QString &arg3);
+		jint getInputType();
+		jboolean onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
 	};
 } // namespace __jni_impl::android::text::method
 
@@ -54,7 +55,8 @@ namespace __jni_impl::android::text::method
 			"android.text.method.QwertyKeyListener",
 			"(Landroid/text/method/TextKeyListener$Capitalize;Z)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -68,22 +70,12 @@ namespace __jni_impl::android::text::method
 			arg1.__jniObject().object()
 		);
 	}
-	jboolean QwertyKeyListener::onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3)
+	QAndroidJniObject QwertyKeyListener::getInstanceForFullKeyboard()
 	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyDown",
-			"(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	jint QwertyKeyListener::getInputType()
-	{
-		return __thiz.callMethod<jint>(
-			"getInputType",
-			"()I"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.method.QwertyKeyListener",
+			"getInstanceForFullKeyboard",
+			"()Landroid/text/method/QwertyKeyListener;"
 		);
 	}
 	void QwertyKeyListener::markAsReplaced(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2, jstring arg3)
@@ -98,12 +90,34 @@ namespace __jni_impl::android::text::method
 			arg3
 		);
 	}
-	QAndroidJniObject QwertyKeyListener::getInstanceForFullKeyboard()
+	void QwertyKeyListener::markAsReplaced(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2, const QString &arg3)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		QAndroidJniObject::callStaticMethod<void>(
 			"android.text.method.QwertyKeyListener",
-			"getInstanceForFullKeyboard",
-			"()Landroid/text/method/QwertyKeyListener;"
+			"markAsReplaced",
+			"(Landroid/text/Spannable;IILjava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			QAndroidJniObject::fromString(arg3).object<jstring>()
+		);
+	}
+	jint QwertyKeyListener::getInputType()
+	{
+		return __thiz.callMethod<jint>(
+			"getInputType",
+			"()I"
+		);
+	}
+	jboolean QwertyKeyListener::onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyDown",
+			"(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::text::method

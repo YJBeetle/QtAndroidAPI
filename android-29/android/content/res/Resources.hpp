@@ -21,18 +21,6 @@ namespace __jni_impl::android::util
 {
 	class TypedValue;
 }
-namespace __jni_impl::android::content::res
-{
-	class Resources_Theme;
-}
-namespace __jni_impl::android::graphics::drawable
-{
-	class Drawable;
-}
-namespace __jni_impl::android::content::res
-{
-	class ColorStateList;
-}
 namespace __jni_impl::android::graphics
 {
 	class Typeface;
@@ -40,6 +28,14 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::content::res
 {
 	class TypedArray;
+}
+namespace __jni_impl::android::graphics::drawable
+{
+	class Drawable;
+}
+namespace __jni_impl::android::content::res
+{
+	class Resources_Theme;
 }
 namespace __jni_impl::android::graphics
 {
@@ -56,6 +52,10 @@ namespace __jni_impl::android::content::res
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::content::res
+{
+	class ColorStateList;
 }
 
 namespace __jni_impl::android::content::res
@@ -74,6 +74,7 @@ namespace __jni_impl::android::content::res
 		jfloat getFloat(jint arg0);
 		void getValue(jint arg0, __jni_impl::android::util::TypedValue arg1, jboolean arg2);
 		void getValue(jstring arg0, __jni_impl::android::util::TypedValue arg1, jboolean arg2);
+		void getValue(const QString &arg0, __jni_impl::android::util::TypedValue arg1, jboolean arg2);
 		jint getInteger(jint arg0);
 		void updateConfiguration(__jni_impl::android::content::res::Configuration arg0, __jni_impl::android::util::DisplayMetrics arg1);
 		jstring getString(jint arg0, jobjectArray arg1);
@@ -81,20 +82,12 @@ namespace __jni_impl::android::content::res
 		jarray getStringArray(jint arg0);
 		jstring getText(jint arg0);
 		jstring getText(jint arg0, jstring arg1);
-		jint getIdentifier(jstring arg0, jstring arg1, jstring arg2);
-		QAndroidJniObject getAssets();
-		jint getColor(jint arg0);
-		jint getColor(jint arg0, __jni_impl::android::content::res::Resources_Theme arg1);
-		QAndroidJniObject getDrawable(jint arg0, __jni_impl::android::content::res::Resources_Theme arg1);
-		QAndroidJniObject getDrawable(jint arg0);
-		QAndroidJniObject getColorStateList(jint arg0, __jni_impl::android::content::res::Resources_Theme arg1);
-		QAndroidJniObject getColorStateList(jint arg0);
-		jintArray getIntArray(jint arg0);
+		jstring getText(jint arg0, const QString &arg1);
 		jstring getQuantityText(jint arg0, jint arg1);
 		static QAndroidJniObject getSystem();
 		QAndroidJniObject getFont(jint arg0);
-		jstring getQuantityString(jint arg0, jint arg1);
 		jstring getQuantityString(jint arg0, jint arg1, jobjectArray arg2);
+		jstring getQuantityString(jint arg0, jint arg1);
 		jarray getTextArray(jint arg0);
 		QAndroidJniObject obtainTypedArray(jint arg0);
 		jfloat getDimension(jint arg0);
@@ -107,8 +100,8 @@ namespace __jni_impl::android::content::res
 		QAndroidJniObject getLayout(jint arg0);
 		QAndroidJniObject getAnimation(jint arg0);
 		QAndroidJniObject getXml(jint arg0);
-		QAndroidJniObject openRawResource(jint arg0);
 		QAndroidJniObject openRawResource(jint arg0, __jni_impl::android::util::TypedValue arg1);
+		QAndroidJniObject openRawResource(jint arg0);
 		QAndroidJniObject openRawResourceFd(jint arg0);
 		void getValueForDensity(jint arg0, jint arg1, __jni_impl::android::util::TypedValue arg2, jboolean arg3);
 		static jint getAttributeSetSourceResId(__jni_impl::__JniBaseClass arg0);
@@ -122,8 +115,19 @@ namespace __jni_impl::android::content::res
 		jstring getResourceEntryName(jint arg0);
 		void parseBundleExtras(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Bundle arg1);
 		void parseBundleExtra(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Bundle arg2);
+		void parseBundleExtra(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Bundle arg2);
 		void flushLayoutCache();
 		void finishPreloading();
+		jintArray getIntArray(jint arg0);
+		QAndroidJniObject getAssets();
+		jint getColor(jint arg0, __jni_impl::android::content::res::Resources_Theme arg1);
+		jint getColor(jint arg0);
+		QAndroidJniObject getDrawable(jint arg0);
+		QAndroidJniObject getDrawable(jint arg0, __jni_impl::android::content::res::Resources_Theme arg1);
+		QAndroidJniObject getColorStateList(jint arg0);
+		QAndroidJniObject getColorStateList(jint arg0, __jni_impl::android::content::res::Resources_Theme arg1);
+		jint getIdentifier(jstring arg0, jstring arg1, jstring arg2);
+		jint getIdentifier(const QString &arg0, const QString &arg1, const QString &arg2);
 	};
 } // namespace __jni_impl::android::content::res
 
@@ -131,15 +135,15 @@ namespace __jni_impl::android::content::res
 #include "../../util/DisplayMetrics.hpp"
 #include "Configuration.hpp"
 #include "../../util/TypedValue.hpp"
-#include "Resources_Theme.hpp"
-#include "../../graphics/drawable/Drawable.hpp"
-#include "ColorStateList.hpp"
 #include "../../graphics/Typeface.hpp"
 #include "TypedArray.hpp"
+#include "../../graphics/drawable/Drawable.hpp"
+#include "Resources_Theme.hpp"
 #include "../../graphics/Movie.hpp"
 #include "../../../java/io/InputStream.hpp"
 #include "AssetFileDescriptor.hpp"
 #include "../../os/Bundle.hpp"
+#include "ColorStateList.hpp"
 
 namespace __jni_impl::android::content::res
 {
@@ -160,7 +164,8 @@ namespace __jni_impl::android::content::res
 			"(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -196,6 +201,16 @@ namespace __jni_impl::android::content::res
 			"getValue",
 			"(Ljava/lang/String;Landroid/util/TypedValue;Z)V",
 			arg0,
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
+	void Resources::getValue(const QString &arg0, __jni_impl::android::util::TypedValue arg1, jboolean arg2)
+	{
+		__thiz.callMethod<void>(
+			"getValue",
+			"(Ljava/lang/String;Landroid/util/TypedValue;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2
 		);
@@ -259,81 +274,14 @@ namespace __jni_impl::android::content::res
 			arg1
 		).object<jstring>();
 	}
-	jint Resources::getIdentifier(jstring arg0, jstring arg1, jstring arg2)
+	jstring Resources::getText(jint arg0, const QString &arg1)
 	{
-		return __thiz.callMethod<jint>(
-			"getIdentifier",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+		return __thiz.callObjectMethod(
+			"getText",
+			"(ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject Resources::getAssets()
-	{
-		return __thiz.callObjectMethod(
-			"getAssets",
-			"()Landroid/content/res/AssetManager;"
-		);
-	}
-	jint Resources::getColor(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getColor",
-			"(I)I",
-			arg0
-		);
-	}
-	jint Resources::getColor(jint arg0, __jni_impl::android::content::res::Resources_Theme arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"getColor",
-			"(ILandroid/content/res/Resources$Theme;)I",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Resources::getDrawable(jint arg0, __jni_impl::android::content::res::Resources_Theme arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getDrawable",
-			"(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Resources::getDrawable(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDrawable",
-			"(I)Landroid/graphics/drawable/Drawable;",
-			arg0
-		);
-	}
-	QAndroidJniObject Resources::getColorStateList(jint arg0, __jni_impl::android::content::res::Resources_Theme arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getColorStateList",
-			"(ILandroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Resources::getColorStateList(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getColorStateList",
-			"(I)Landroid/content/res/ColorStateList;",
-			arg0
-		);
-	}
-	jintArray Resources::getIntArray(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getIntArray",
-			"(I)[I",
-			arg0
-		).object<jintArray>();
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		).object<jstring>();
 	}
 	jstring Resources::getQuantityText(jint arg0, jint arg1)
 	{
@@ -360,15 +308,6 @@ namespace __jni_impl::android::content::res
 			arg0
 		);
 	}
-	jstring Resources::getQuantityString(jint arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getQuantityString",
-			"(II)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
-	}
 	jstring Resources::getQuantityString(jint arg0, jint arg1, jobjectArray arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -377,6 +316,15 @@ namespace __jni_impl::android::content::res
 			arg0,
 			arg1,
 			arg2
+		).object<jstring>();
+	}
+	jstring Resources::getQuantityString(jint arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getQuantityString",
+			"(II)Ljava/lang/String;",
+			arg0,
+			arg1
 		).object<jstring>();
 	}
 	jarray Resources::getTextArray(jint arg0)
@@ -480,14 +428,6 @@ namespace __jni_impl::android::content::res
 			arg0
 		);
 	}
-	QAndroidJniObject Resources::openRawResource(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"openRawResource",
-			"(I)Ljava/io/InputStream;",
-			arg0
-		);
-	}
 	QAndroidJniObject Resources::openRawResource(jint arg0, __jni_impl::android::util::TypedValue arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -495,6 +435,14 @@ namespace __jni_impl::android::content::res
 			"(ILandroid/util/TypedValue;)Ljava/io/InputStream;",
 			arg0,
 			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Resources::openRawResource(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"openRawResource",
+			"(I)Ljava/io/InputStream;",
+			arg0
 		);
 	}
 	QAndroidJniObject Resources::openRawResourceFd(jint arg0)
@@ -606,6 +554,16 @@ namespace __jni_impl::android::content::res
 			arg2.__jniObject().object()
 		);
 	}
+	void Resources::parseBundleExtra(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Bundle arg2)
+	{
+		__thiz.callMethod<void>(
+			"parseBundleExtra",
+			"(Ljava/lang/String;Landroid/util/AttributeSet;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
 	void Resources::flushLayoutCache()
 	{
 		__thiz.callMethod<void>(
@@ -618,6 +576,92 @@ namespace __jni_impl::android::content::res
 		__thiz.callMethod<void>(
 			"finishPreloading",
 			"()V"
+		);
+	}
+	jintArray Resources::getIntArray(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getIntArray",
+			"(I)[I",
+			arg0
+		).object<jintArray>();
+	}
+	QAndroidJniObject Resources::getAssets()
+	{
+		return __thiz.callObjectMethod(
+			"getAssets",
+			"()Landroid/content/res/AssetManager;"
+		);
+	}
+	jint Resources::getColor(jint arg0, __jni_impl::android::content::res::Resources_Theme arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getColor",
+			"(ILandroid/content/res/Resources$Theme;)I",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jint Resources::getColor(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getColor",
+			"(I)I",
+			arg0
+		);
+	}
+	QAndroidJniObject Resources::getDrawable(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDrawable",
+			"(I)Landroid/graphics/drawable/Drawable;",
+			arg0
+		);
+	}
+	QAndroidJniObject Resources::getDrawable(jint arg0, __jni_impl::android::content::res::Resources_Theme arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getDrawable",
+			"(ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Resources::getColorStateList(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getColorStateList",
+			"(I)Landroid/content/res/ColorStateList;",
+			arg0
+		);
+	}
+	QAndroidJniObject Resources::getColorStateList(jint arg0, __jni_impl::android::content::res::Resources_Theme arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getColorStateList",
+			"(ILandroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jint Resources::getIdentifier(jstring arg0, jstring arg1, jstring arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"getIdentifier",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	jint Resources::getIdentifier(const QString &arg0, const QString &arg1, const QString &arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"getIdentifier",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::content::res

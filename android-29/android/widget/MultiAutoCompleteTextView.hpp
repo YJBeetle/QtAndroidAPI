@@ -28,10 +28,10 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		void setTokenizer(__jni_impl::__JniBaseClass arg0);
+		jstring getAccessibilityClassName();
 		jboolean enoughToFilter();
 		void performValidation();
-		jstring getAccessibilityClassName();
+		void setTokenizer(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -50,7 +50,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void MultiAutoCompleteTextView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -59,7 +60,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void MultiAutoCompleteTextView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -67,24 +69,25 @@ namespace __jni_impl::android::widget
 			"android.widget.MultiAutoCompleteTextView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void MultiAutoCompleteTextView::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.MultiAutoCompleteTextView",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
-	void MultiAutoCompleteTextView::setTokenizer(__jni_impl::__JniBaseClass arg0)
+	jstring MultiAutoCompleteTextView::getAccessibilityClassName()
 	{
-		__thiz.callMethod<void>(
-			"setTokenizer",
-			"(Landroid/widget/MultiAutoCompleteTextView$Tokenizer;)V",
-			arg0.__jniObject().object()
-		);
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jboolean MultiAutoCompleteTextView::enoughToFilter()
 	{
@@ -100,12 +103,13 @@ namespace __jni_impl::android::widget
 			"()V"
 		);
 	}
-	jstring MultiAutoCompleteTextView::getAccessibilityClassName()
+	void MultiAutoCompleteTextView::setTokenizer(__jni_impl::__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"setTokenizer",
+			"(Landroid/widget/MultiAutoCompleteTextView$Tokenizer;)V",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::android::widget
 

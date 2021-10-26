@@ -36,7 +36,8 @@ namespace __jni_impl::android::database
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.DefaultDatabaseErrorHandler",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

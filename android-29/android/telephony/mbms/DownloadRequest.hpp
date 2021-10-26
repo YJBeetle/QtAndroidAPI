@@ -34,9 +34,9 @@ namespace __jni_impl::android::telephony::mbms
 		QAndroidJniObject getDestinationUri();
 		static jint getMaxAppIntentSize();
 		static jint getMaxDestinationUriSize();
+		jint getSubscriptionId();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getSubscriptionId();
 	};
 } // namespace __jni_impl::android::telephony::mbms
 
@@ -123,6 +123,13 @@ namespace __jni_impl::android::telephony::mbms
 			"()I"
 		);
 	}
+	jint DownloadRequest::getSubscriptionId()
+	{
+		return __thiz.callMethod<jint>(
+			"getSubscriptionId",
+			"()I"
+		);
+	}
 	jint DownloadRequest::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -137,13 +144,6 @@ namespace __jni_impl::android::telephony::mbms
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint DownloadRequest::getSubscriptionId()
-	{
-		return __thiz.callMethod<jint>(
-			"getSubscriptionId",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::telephony::mbms

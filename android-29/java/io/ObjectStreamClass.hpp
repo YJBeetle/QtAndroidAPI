@@ -59,6 +59,7 @@ namespace __jni_impl::java::io
 		static QAndroidJniObject lookup(jclass arg0);
 		jarray getFields();
 		QAndroidJniObject getField(jstring arg0);
+		QAndroidJniObject getField(const QString &arg0);
 		jclass forClass();
 		jlong getSerialVersionUID();
 		static QAndroidJniObject lookupAny(jclass arg0);
@@ -132,6 +133,14 @@ namespace __jni_impl::java::io
 			"getField",
 			"(Ljava/lang/String;)Ljava/io/ObjectStreamField;",
 			arg0
+		);
+	}
+	QAndroidJniObject ObjectStreamClass::getField(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getField",
+			"(Ljava/lang/String;)Ljava/io/ObjectStreamField;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jclass ObjectStreamClass::forClass()

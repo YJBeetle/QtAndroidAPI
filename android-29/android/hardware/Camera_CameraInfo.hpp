@@ -67,7 +67,8 @@ namespace __jni_impl::android::hardware
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.Camera$CameraInfo",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

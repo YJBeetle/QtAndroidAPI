@@ -23,6 +23,7 @@ namespace __jni_impl::android::icu::text
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -79,6 +80,15 @@ namespace __jni_impl::android::icu::text
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/RelativeDateTimeFormatter$Style;",
 			arg0
+		);
+	}
+	QAndroidJniObject RelativeDateTimeFormatter_Style::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.RelativeDateTimeFormatter$Style",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/text/RelativeDateTimeFormatter$Style;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::icu::text

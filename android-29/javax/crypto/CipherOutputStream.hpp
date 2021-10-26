@@ -49,7 +49,8 @@ namespace __jni_impl::javax::crypto
 			"javax.crypto.CipherOutputStream",
 			"(Ljava/io/OutputStream;Ljavax/crypto/Cipher;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

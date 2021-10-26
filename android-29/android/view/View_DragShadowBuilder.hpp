@@ -50,13 +50,15 @@ namespace __jni_impl::android::view
 		__thiz = QAndroidJniObject(
 			"android.view.View$DragShadowBuilder",
 			"(Landroid/view/View;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void View_DragShadowBuilder::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.View$DragShadowBuilder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

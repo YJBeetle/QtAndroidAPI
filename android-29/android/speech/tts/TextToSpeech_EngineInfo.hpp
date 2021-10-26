@@ -54,7 +54,8 @@ namespace __jni_impl::android::speech::tts
 	{
 		__thiz = QAndroidJniObject(
 			"android.speech.tts.TextToSpeech$EngineInfo",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

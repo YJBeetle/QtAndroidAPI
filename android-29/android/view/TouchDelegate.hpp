@@ -37,9 +37,9 @@ namespace __jni_impl::android::view
 		void __constructor(__jni_impl::android::graphics::Rect arg0, __jni_impl::android::view::View arg1);
 		
 		// Methods
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		QAndroidJniObject getTouchDelegateInfo();
 		jboolean onTouchExplorationHoverEvent(__jni_impl::android::view::MotionEvent arg0);
+		QAndroidJniObject getTouchDelegateInfo();
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -87,14 +87,15 @@ namespace __jni_impl::android::view
 			"android.view.TouchDelegate",
 			"(Landroid/graphics/Rect;Landroid/view/View;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
-	jboolean TouchDelegate::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	jboolean TouchDelegate::onTouchExplorationHoverEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"onTouchEvent",
+			"onTouchExplorationHoverEvent",
 			"(Landroid/view/MotionEvent;)Z",
 			arg0.__jniObject().object()
 		);
@@ -106,10 +107,10 @@ namespace __jni_impl::android::view
 			"()Landroid/view/accessibility/AccessibilityNodeInfo$TouchDelegateInfo;"
 		);
 	}
-	jboolean TouchDelegate::onTouchExplorationHoverEvent(__jni_impl::android::view::MotionEvent arg0)
+	jboolean TouchDelegate::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"onTouchExplorationHoverEvent",
+			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
 			arg0.__jniObject().object()
 		);

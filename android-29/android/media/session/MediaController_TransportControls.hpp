@@ -40,12 +40,16 @@ namespace __jni_impl::android::media::session
 		void stop();
 		void prepare();
 		void rewind();
-		void seekTo(jlong arg0);
+		void play();
 		void prepareFromMediaId(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void prepareFromMediaId(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		void prepareFromSearch(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void prepareFromSearch(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		void prepareFromUri(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1);
 		void playFromMediaId(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void playFromMediaId(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		void playFromSearch(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void playFromSearch(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		void playFromUri(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1);
 		void skipToQueueItem(jlong arg0);
 		void fastForward();
@@ -55,8 +59,9 @@ namespace __jni_impl::android::media::session
 		void setPlaybackSpeed(jfloat arg0);
 		void sendCustomAction(__jni_impl::android::media::session::PlaybackState_CustomAction arg0, __jni_impl::android::os::Bundle arg1);
 		void sendCustomAction(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void sendCustomAction(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		void pause();
-		void play();
+		void seekTo(jlong arg0);
 	};
 } // namespace __jni_impl::android::media::session
 
@@ -100,12 +105,11 @@ namespace __jni_impl::android::media::session
 			"()V"
 		);
 	}
-	void MediaController_TransportControls::seekTo(jlong arg0)
+	void MediaController_TransportControls::play()
 	{
 		__thiz.callMethod<void>(
-			"seekTo",
-			"(J)V",
-			arg0
+			"play",
+			"()V"
 		);
 	}
 	void MediaController_TransportControls::prepareFromMediaId(jstring arg0, __jni_impl::android::os::Bundle arg1)
@@ -117,12 +121,30 @@ namespace __jni_impl::android::media::session
 			arg1.__jniObject().object()
 		);
 	}
+	void MediaController_TransportControls::prepareFromMediaId(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"prepareFromMediaId",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	void MediaController_TransportControls::prepareFromSearch(jstring arg0, __jni_impl::android::os::Bundle arg1)
 	{
 		__thiz.callMethod<void>(
 			"prepareFromSearch",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaController_TransportControls::prepareFromSearch(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"prepareFromSearch",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -144,12 +166,30 @@ namespace __jni_impl::android::media::session
 			arg1.__jniObject().object()
 		);
 	}
+	void MediaController_TransportControls::playFromMediaId(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"playFromMediaId",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	void MediaController_TransportControls::playFromSearch(jstring arg0, __jni_impl::android::os::Bundle arg1)
 	{
 		__thiz.callMethod<void>(
 			"playFromSearch",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaController_TransportControls::playFromSearch(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"playFromSearch",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -225,6 +265,15 @@ namespace __jni_impl::android::media::session
 			arg1.__jniObject().object()
 		);
 	}
+	void MediaController_TransportControls::sendCustomAction(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"sendCustomAction",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	void MediaController_TransportControls::pause()
 	{
 		__thiz.callMethod<void>(
@@ -232,11 +281,12 @@ namespace __jni_impl::android::media::session
 			"()V"
 		);
 	}
-	void MediaController_TransportControls::play()
+	void MediaController_TransportControls::seekTo(jlong arg0)
 	{
 		__thiz.callMethod<void>(
-			"play",
-			"()V"
+			"seekTo",
+			"(J)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::media::session

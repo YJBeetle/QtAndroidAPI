@@ -5,10 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Debug_MemoryInfo;
-}
 namespace __jni_impl::java::io
 {
 	class FileDescriptor;
@@ -16,6 +12,10 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::lang
 {
 	class ClassLoader;
+}
+namespace __jni_impl::android::os
+{
+	class Debug_MemoryInfo;
 }
 
 namespace __jni_impl::android::os
@@ -33,9 +33,6 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		static void getMemoryInfo(__jni_impl::android::os::Debug_MemoryInfo arg0);
-		static void startAllocCounting();
-		static void stopAllocCounting();
 		static void waitForDebugger();
 		static jboolean waitingForDebugger();
 		static jboolean isDebuggerConnected();
@@ -44,10 +41,14 @@ namespace __jni_impl::android::os
 		static void stopNativeTracing();
 		static void enableEmulatorTraceOutput();
 		static void startMethodTracing(jstring arg0, jint arg1, jint arg2);
-		static void startMethodTracing(jstring arg0);
-		static void startMethodTracing();
+		static void startMethodTracing(const QString &arg0, jint arg1, jint arg2);
 		static void startMethodTracing(jstring arg0, jint arg1);
+		static void startMethodTracing(const QString &arg0, jint arg1);
+		static void startMethodTracing(jstring arg0);
+		static void startMethodTracing(const QString &arg0);
+		static void startMethodTracing();
 		static void startMethodTracingSampling(jstring arg0, jint arg1, jint arg2);
+		static void startMethodTracingSampling(const QString &arg0, jint arg1, jint arg2);
 		static void stopMethodTracing();
 		static jlong threadCpuTimeNanos();
 		static jint getGlobalAllocCount();
@@ -84,6 +85,7 @@ namespace __jni_impl::android::os
 		static void resetThreadGcInvocationCount();
 		static void resetAllCounts();
 		static jstring getRuntimeStat(jstring arg0);
+		static jstring getRuntimeStat(const QString &arg0);
 		static QAndroidJniObject getRuntimeStats();
 		static jlong getNativeHeapSize();
 		static jlong getNativeHeapAllocatedSize();
@@ -94,19 +96,25 @@ namespace __jni_impl::android::os
 		static void printLoadedClasses(jint arg0);
 		static jint getLoadedClassCount();
 		static void dumpHprofData(jstring arg0);
+		static void dumpHprofData(const QString &arg0);
 		static jint getBinderSentTransactions();
 		static jint getBinderReceivedTransactions();
 		static jint getBinderLocalObjectCount();
 		static jint getBinderProxyObjectCount();
 		static jint getBinderDeathObjectCount();
 		static jboolean dumpService(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, jarray arg2);
+		static jboolean dumpService(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, jarray arg2);
 		static void attachJvmtiAgent(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2);
+		static void attachJvmtiAgent(const QString &arg0, const QString &arg1, __jni_impl::java::lang::ClassLoader arg2);
+		static void getMemoryInfo(__jni_impl::android::os::Debug_MemoryInfo arg0);
+		static void startAllocCounting();
+		static void stopAllocCounting();
 	};
 } // namespace __jni_impl::android::os
 
-#include "Debug_MemoryInfo.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/lang/ClassLoader.hpp"
+#include "Debug_MemoryInfo.hpp"
 
 namespace __jni_impl::android::os
 {
@@ -149,31 +157,6 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	void Debug::getMemoryInfo(__jni_impl::android::os::Debug_MemoryInfo arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.Debug",
-			"getMemoryInfo",
-			"(Landroid/os/Debug$MemoryInfo;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Debug::startAllocCounting()
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.Debug",
-			"startAllocCounting",
-			"()V"
-		);
-	}
-	void Debug::stopAllocCounting()
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.Debug",
-			"stopAllocCounting",
-			"()V"
-		);
-	}
 	void Debug::waitForDebugger()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -242,21 +225,15 @@ namespace __jni_impl::android::os
 			arg2
 		);
 	}
-	void Debug::startMethodTracing(jstring arg0)
+	void Debug::startMethodTracing(const QString &arg0, jint arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Debug",
 			"startMethodTracing",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void Debug::startMethodTracing()
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.Debug",
-			"startMethodTracing",
-			"()V"
+			"(Ljava/lang/String;II)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2
 		);
 	}
 	void Debug::startMethodTracing(jstring arg0, jint arg1)
@@ -269,6 +246,42 @@ namespace __jni_impl::android::os
 			arg1
 		);
 	}
+	void Debug::startMethodTracing(const QString &arg0, jint arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Debug",
+			"startMethodTracing",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	void Debug::startMethodTracing(jstring arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Debug",
+			"startMethodTracing",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void Debug::startMethodTracing(const QString &arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Debug",
+			"startMethodTracing",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void Debug::startMethodTracing()
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Debug",
+			"startMethodTracing",
+			"()V"
+		);
+	}
 	void Debug::startMethodTracingSampling(jstring arg0, jint arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -276,6 +289,17 @@ namespace __jni_impl::android::os
 			"startMethodTracingSampling",
 			"(Ljava/lang/String;II)V",
 			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void Debug::startMethodTracingSampling(const QString &arg0, jint arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Debug",
+			"startMethodTracingSampling",
+			"(Ljava/lang/String;II)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -569,6 +593,15 @@ namespace __jni_impl::android::os
 			arg0
 		).object<jstring>();
 	}
+	jstring Debug::getRuntimeStat(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.Debug",
+			"getRuntimeStat",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	QAndroidJniObject Debug::getRuntimeStats()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -653,6 +686,15 @@ namespace __jni_impl::android::os
 			arg0
 		);
 	}
+	void Debug::dumpHprofData(const QString &arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Debug",
+			"dumpHprofData",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint Debug::getBinderSentTransactions()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -704,6 +746,17 @@ namespace __jni_impl::android::os
 			arg2
 		);
 	}
+	jboolean Debug::dumpService(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, jarray arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.os.Debug",
+			"dumpService",
+			"(Ljava/lang/String;Ljava/io/FileDescriptor;[Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
 	void Debug::attachJvmtiAgent(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -713,6 +766,42 @@ namespace __jni_impl::android::os
 			arg0,
 			arg1,
 			arg2.__jniObject().object()
+		);
+	}
+	void Debug::attachJvmtiAgent(const QString &arg0, const QString &arg1, __jni_impl::java::lang::ClassLoader arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Debug",
+			"attachJvmtiAgent",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
+	}
+	void Debug::getMemoryInfo(__jni_impl::android::os::Debug_MemoryInfo arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Debug",
+			"getMemoryInfo",
+			"(Landroid/os/Debug$MemoryInfo;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Debug::startAllocCounting()
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Debug",
+			"startAllocCounting",
+			"()V"
+		);
+	}
+	void Debug::stopAllocCounting()
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Debug",
+			"stopAllocCounting",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::os

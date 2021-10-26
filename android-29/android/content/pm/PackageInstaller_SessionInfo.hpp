@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class UserHandle;
 }
 namespace __jni_impl::android::os
 {
-	class UserHandle;
+	class Parcel;
 }
 namespace __jni_impl::android::graphics
 {
@@ -46,16 +46,16 @@ namespace __jni_impl::android::content::pm
 		jlong getSize();
 		jboolean isSealed();
 		jboolean isActive();
-		jstring getInstallerPackageName();
+		jint getMode();
+		jfloat getProgress();
 		jboolean isMultiPackage();
 		jboolean isStaged();
 		jint getParentSessionId();
 		jintArray getChildSessionIds();
+		QAndroidJniObject getUser();
+		jstring getInstallerPackageName();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getUser();
-		jint getMode();
-		jfloat getProgress();
 		jint getSessionId();
 		jint getInstallReason();
 		jstring getAppPackageName();
@@ -76,8 +76,8 @@ namespace __jni_impl::android::content::pm
 	};
 } // namespace __jni_impl::android::content::pm
 
-#include "../../os/Parcel.hpp"
 #include "../../os/UserHandle.hpp"
+#include "../../os/Parcel.hpp"
 #include "../../graphics/Bitmap.hpp"
 #include "../Intent.hpp"
 #include "../../net/Uri.hpp"
@@ -159,12 +159,19 @@ namespace __jni_impl::android::content::pm
 			"()Z"
 		);
 	}
-	jstring PackageInstaller_SessionInfo::getInstallerPackageName()
+	jint PackageInstaller_SessionInfo::getMode()
 	{
-		return __thiz.callObjectMethod(
-			"getInstallerPackageName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"getMode",
+			"()I"
+		);
+	}
+	jfloat PackageInstaller_SessionInfo::getProgress()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getProgress",
+			"()F"
+		);
 	}
 	jboolean PackageInstaller_SessionInfo::isMultiPackage()
 	{
@@ -194,6 +201,20 @@ namespace __jni_impl::android::content::pm
 			"()[I"
 		).object<jintArray>();
 	}
+	QAndroidJniObject PackageInstaller_SessionInfo::getUser()
+	{
+		return __thiz.callObjectMethod(
+			"getUser",
+			"()Landroid/os/UserHandle;"
+		);
+	}
+	jstring PackageInstaller_SessionInfo::getInstallerPackageName()
+	{
+		return __thiz.callObjectMethod(
+			"getInstallerPackageName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jint PackageInstaller_SessionInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -208,27 +229,6 @@ namespace __jni_impl::android::content::pm
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject PackageInstaller_SessionInfo::getUser()
-	{
-		return __thiz.callObjectMethod(
-			"getUser",
-			"()Landroid/os/UserHandle;"
-		);
-	}
-	jint PackageInstaller_SessionInfo::getMode()
-	{
-		return __thiz.callMethod<jint>(
-			"getMode",
-			"()I"
-		);
-	}
-	jfloat PackageInstaller_SessionInfo::getProgress()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getProgress",
-			"()F"
 		);
 	}
 	jint PackageInstaller_SessionInfo::getSessionId()

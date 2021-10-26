@@ -26,6 +26,7 @@ namespace __jni_impl::javax::crypto
 		
 		// Methods
 		jobject getObject(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		jobject getObject(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 		jobject getObject(__jni_impl::__JniBaseClass arg0);
 		jobject getObject(__jni_impl::javax::crypto::Cipher arg0);
 		jstring getAlgorithm();
@@ -46,7 +47,8 @@ namespace __jni_impl::javax::crypto
 			"javax.crypto.SealedObject",
 			"(Ljava/io/Serializable;Ljavax/crypto/Cipher;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -57,6 +59,15 @@ namespace __jni_impl::javax::crypto
 			"(Ljava/security/Key;Ljava/lang/String;)Ljava/lang/Object;",
 			arg0.__jniObject().object(),
 			arg1
+		).object<jobject>();
+	}
+	jobject SealedObject::getObject(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getObject",
+			"(Ljava/security/Key;Ljava/lang/String;)Ljava/lang/Object;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jobject>();
 	}
 	jobject SealedObject::getObject(__jni_impl::__JniBaseClass arg0)

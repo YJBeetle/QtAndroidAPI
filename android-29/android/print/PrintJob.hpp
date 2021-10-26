@@ -36,11 +36,11 @@ namespace __jni_impl::android::print
 		void cancel();
 		jboolean isCancelled();
 		jboolean isCompleted();
-		void restart();
+		jboolean isStarted();
 		jboolean isBlocked();
 		QAndroidJniObject getInfo();
 		jboolean isFailed();
-		jboolean isStarted();
+		void restart();
 	};
 } // namespace __jni_impl::android::print
 
@@ -111,11 +111,11 @@ namespace __jni_impl::android::print
 			"()Z"
 		);
 	}
-	void PrintJob::restart()
+	jboolean PrintJob::isStarted()
 	{
-		__thiz.callMethod<void>(
-			"restart",
-			"()V"
+		return __thiz.callMethod<jboolean>(
+			"isStarted",
+			"()Z"
 		);
 	}
 	jboolean PrintJob::isBlocked()
@@ -139,11 +139,11 @@ namespace __jni_impl::android::print
 			"()Z"
 		);
 	}
-	jboolean PrintJob::isStarted()
+	void PrintJob::restart()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isStarted",
-			"()Z"
+		__thiz.callMethod<void>(
+			"restart",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::print

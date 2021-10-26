@@ -31,7 +31,8 @@ namespace __jni_impl::android::telephony
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.SubscriptionManager$OnSubscriptionsChangedListener",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

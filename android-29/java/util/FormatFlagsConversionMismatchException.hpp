@@ -19,6 +19,7 @@ namespace __jni_impl::java::util
 		
 		// Constructors
 		void __constructor(jstring arg0, jchar arg1);
+		void __constructor(const QString &arg0, jchar arg1);
 		
 		// Methods
 		jstring getMessage();
@@ -39,7 +40,17 @@ namespace __jni_impl::java::util
 			"java.util.FormatFlagsConversionMismatchException",
 			"(Ljava/lang/String;C)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void FormatFlagsConversionMismatchException::__constructor(const QString &arg0, jchar arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.FormatFlagsConversionMismatchException",
+			"(Ljava/lang/String;C)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods

@@ -41,8 +41,8 @@ namespace __jni_impl::android::view::animation
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		jint getDirection();
 		jboolean willOverlap();
+		jint getDirection();
 		jfloat getColumnDelay();
 		void setColumnDelay(jfloat arg0);
 		jfloat getRowDelay();
@@ -132,14 +132,16 @@ namespace __jni_impl::android::view::animation
 			"(Landroid/view/animation/Animation;FF)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void GridLayoutAnimationController::__constructor(__jni_impl::android::view::animation::Animation arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.GridLayoutAnimationController",
 			"(Landroid/view/animation/Animation;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void GridLayoutAnimationController::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -147,22 +149,23 @@ namespace __jni_impl::android::view::animation
 			"android.view.animation.GridLayoutAnimationController",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
-	jint GridLayoutAnimationController::getDirection()
-	{
-		return __thiz.callMethod<jint>(
-			"getDirection",
-			"()I"
-		);
-	}
 	jboolean GridLayoutAnimationController::willOverlap()
 	{
 		return __thiz.callMethod<jboolean>(
 			"willOverlap",
 			"()Z"
+		);
+	}
+	jint GridLayoutAnimationController::getDirection()
+	{
+		return __thiz.callMethod<jint>(
+			"getDirection",
+			"()I"
 		);
 	}
 	jfloat GridLayoutAnimationController::getColumnDelay()

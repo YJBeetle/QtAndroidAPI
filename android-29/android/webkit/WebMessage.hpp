@@ -15,11 +15,13 @@ namespace __jni_impl::android::webkit
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, jarray arg1);
+		void __constructor(const QString &arg0, jarray arg1);
 		
 		// Methods
-		jstring getData();
 		jarray getPorts();
+		jstring getData();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -34,7 +36,16 @@ namespace __jni_impl::android::webkit
 		__thiz = QAndroidJniObject(
 			"android.webkit.WebMessage",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void WebMessage::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.webkit.WebMessage",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void WebMessage::__constructor(jstring arg0, jarray arg1)
 	{
@@ -42,23 +53,33 @@ namespace __jni_impl::android::webkit
 			"android.webkit.WebMessage",
 			"(Ljava/lang/String;[Landroid/webkit/WebMessagePort;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void WebMessage::__constructor(const QString &arg0, jarray arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.webkit.WebMessage",
+			"(Ljava/lang/String;[Landroid/webkit/WebMessagePort;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods
-	jstring WebMessage::getData()
-	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jarray WebMessage::getPorts()
 	{
 		return __thiz.callObjectMethod(
 			"getPorts",
 			"()[Landroid/webkit/WebMessagePort;"
 		).object<jarray>();
+	}
+	jstring WebMessage::getData()
+	{
+		return __thiz.callObjectMethod(
+			"getData",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::webkit
 

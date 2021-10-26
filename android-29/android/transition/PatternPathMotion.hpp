@@ -47,7 +47,8 @@ namespace __jni_impl::android::transition
 		__thiz = QAndroidJniObject(
 			"android.transition.PatternPathMotion",
 			"(Landroid/graphics/Path;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void PatternPathMotion::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -55,13 +56,15 @@ namespace __jni_impl::android::transition
 			"android.transition.PatternPathMotion",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void PatternPathMotion::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.PatternPathMotion",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

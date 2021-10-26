@@ -26,6 +26,7 @@ namespace __jni_impl::java::nio::charset::spi
 		
 		// Methods
 		QAndroidJniObject charsetForName(jstring arg0);
+		QAndroidJniObject charsetForName(const QString &arg0);
 		QAndroidJniObject charsets();
 	};
 } // namespace __jni_impl::java::nio::charset::spi
@@ -52,6 +53,14 @@ namespace __jni_impl::java::nio::charset::spi
 			"charsetForName",
 			"(Ljava/lang/String;)Ljava/nio/charset/Charset;",
 			arg0
+		);
+	}
+	QAndroidJniObject CharsetProvider::charsetForName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"charsetForName",
+			"(Ljava/lang/String;)Ljava/nio/charset/Charset;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject CharsetProvider::charsets()

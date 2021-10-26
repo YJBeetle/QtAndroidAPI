@@ -37,7 +37,8 @@ namespace __jni_impl::android::accessibilityservice
 	{
 		__thiz = QAndroidJniObject(
 			"android.accessibilityservice.AccessibilityService$GestureResultCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

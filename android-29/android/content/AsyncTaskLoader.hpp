@@ -30,12 +30,13 @@ namespace __jni_impl::android::content
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
-		jobject loadInBackground();
+		void setUpdateThrottle(jlong arg0);
 		void cancelLoadInBackground();
 		void onCanceled(jobject arg0);
-		void setUpdateThrottle(jlong arg0);
+		jobject loadInBackground();
 		jboolean isLoadInBackgroundCanceled();
+		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
+		void dump(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
 	};
 } // namespace __jni_impl::android::content
 
@@ -53,27 +54,18 @@ namespace __jni_impl::android::content
 		__thiz = QAndroidJniObject(
 			"android.content.AsyncTaskLoader",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
-	void AsyncTaskLoader::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
+	void AsyncTaskLoader::setUpdateThrottle(jlong arg0)
 	{
 		__thiz.callMethod<void>(
-			"dump",
-			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
+			"setUpdateThrottle",
+			"(J)V",
+			arg0
 		);
-	}
-	jobject AsyncTaskLoader::loadInBackground()
-	{
-		return __thiz.callObjectMethod(
-			"loadInBackground",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
 	}
 	void AsyncTaskLoader::cancelLoadInBackground()
 	{
@@ -90,19 +82,40 @@ namespace __jni_impl::android::content
 			arg0
 		);
 	}
-	void AsyncTaskLoader::setUpdateThrottle(jlong arg0)
+	jobject AsyncTaskLoader::loadInBackground()
 	{
-		__thiz.callMethod<void>(
-			"setUpdateThrottle",
-			"(J)V",
-			arg0
-		);
+		return __thiz.callObjectMethod(
+			"loadInBackground",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jboolean AsyncTaskLoader::isLoadInBackgroundCanceled()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isLoadInBackgroundCanceled",
 			"()Z"
+		);
+	}
+	void AsyncTaskLoader::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3
+		);
+	}
+	void AsyncTaskLoader::dump(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3
 		);
 	}
 } // namespace __jni_impl::android::content

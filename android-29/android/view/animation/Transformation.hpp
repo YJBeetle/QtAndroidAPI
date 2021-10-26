@@ -30,11 +30,11 @@ namespace __jni_impl::android::view::animation
 		void set(__jni_impl::android::view::animation::Transformation arg0);
 		jstring toShortString();
 		void compose(__jni_impl::android::view::animation::Transformation arg0);
+		void setAlpha(jfloat arg0);
 		QAndroidJniObject getMatrix();
 		jfloat getAlpha();
 		jint getTransformationType();
 		void setTransformationType(jint arg0);
-		void setAlpha(jfloat arg0);
 	};
 } // namespace __jni_impl::android::view::animation
 
@@ -77,7 +77,8 @@ namespace __jni_impl::android::view::animation
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.Transformation",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -118,6 +119,14 @@ namespace __jni_impl::android::view::animation
 			arg0.__jniObject().object()
 		);
 	}
+	void Transformation::setAlpha(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAlpha",
+			"(F)V",
+			arg0
+		);
+	}
 	QAndroidJniObject Transformation::getMatrix()
 	{
 		return __thiz.callObjectMethod(
@@ -144,14 +153,6 @@ namespace __jni_impl::android::view::animation
 		__thiz.callMethod<void>(
 			"setTransformationType",
 			"(I)V",
-			arg0
-		);
-	}
-	void Transformation::setAlpha(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAlpha",
-			"(F)V",
 			arg0
 		);
 	}

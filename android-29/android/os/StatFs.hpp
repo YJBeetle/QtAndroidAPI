@@ -15,10 +15,11 @@ namespace __jni_impl::android::os
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
-		jint getBlockCount();
 		void restat(jstring arg0);
+		void restat(const QString &arg0);
 		jlong getBlockSizeLong();
 		jlong getBlockCountLong();
 		jint getFreeBlocks();
@@ -26,9 +27,10 @@ namespace __jni_impl::android::os
 		jint getAvailableBlocks();
 		jlong getAvailableBlocksLong();
 		jlong getAvailableBytes();
+		jint getBlockSize();
+		jint getBlockCount();
 		jlong getTotalBytes();
 		jlong getFreeBytes();
-		jint getBlockSize();
 	};
 } // namespace __jni_impl::android::os
 
@@ -43,23 +45,33 @@ namespace __jni_impl::android::os
 		__thiz = QAndroidJniObject(
 			"android.os.StatFs",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void StatFs::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.os.StatFs",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
-	jint StatFs::getBlockCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getBlockCount",
-			"()I"
-		);
-	}
 	void StatFs::restat(jstring arg0)
 	{
 		__thiz.callMethod<void>(
 			"restat",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void StatFs::restat(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"restat",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jlong StatFs::getBlockSizeLong()
@@ -111,6 +123,20 @@ namespace __jni_impl::android::os
 			"()J"
 		);
 	}
+	jint StatFs::getBlockSize()
+	{
+		return __thiz.callMethod<jint>(
+			"getBlockSize",
+			"()I"
+		);
+	}
+	jint StatFs::getBlockCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getBlockCount",
+			"()I"
+		);
+	}
 	jlong StatFs::getTotalBytes()
 	{
 		return __thiz.callMethod<jlong>(
@@ -123,13 +149,6 @@ namespace __jni_impl::android::os
 		return __thiz.callMethod<jlong>(
 			"getFreeBytes",
 			"()J"
-		);
-	}
-	jint StatFs::getBlockSize()
-	{
-		return __thiz.callMethod<jint>(
-			"getBlockSize",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::os

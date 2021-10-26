@@ -31,12 +31,14 @@ namespace __jni_impl::android::media
 		jobject getObject(jint arg0, jobject arg1);
 		QAndroidJniObject putObject(jint arg0, jobject arg1);
 		jstring getString(jint arg0, jstring arg1);
+		jstring getString(jint arg0, const QString &arg1);
+		QAndroidJniObject putBitmap(jint arg0, __jni_impl::android::graphics::Bitmap arg1);
+		QAndroidJniObject putString(jint arg0, jstring arg1);
+		QAndroidJniObject putString(jint arg0, const QString &arg1);
+		QAndroidJniObject getBitmap(jint arg0, __jni_impl::android::graphics::Bitmap arg1);
 		void addEditableKey(jint arg0);
 		void removeEditableKeys();
 		jintArray getEditableKeys();
-		QAndroidJniObject getBitmap(jint arg0, __jni_impl::android::graphics::Bitmap arg1);
-		QAndroidJniObject putString(jint arg0, jstring arg1);
-		QAndroidJniObject putBitmap(jint arg0, __jni_impl::android::graphics::Bitmap arg1);
 	};
 } // namespace __jni_impl::android::media
 
@@ -135,6 +137,51 @@ namespace __jni_impl::android::media
 			arg1
 		).object<jstring>();
 	}
+	jstring MediaMetadataEditor::getString(jint arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getString",
+			"(ILjava/lang/String;)Ljava/lang/String;",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		).object<jstring>();
+	}
+	QAndroidJniObject MediaMetadataEditor::putBitmap(jint arg0, __jni_impl::android::graphics::Bitmap arg1)
+	{
+		return __thiz.callObjectMethod(
+			"putBitmap",
+			"(ILandroid/graphics/Bitmap;)Landroid/media/MediaMetadataEditor;",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject MediaMetadataEditor::putString(jint arg0, jstring arg1)
+	{
+		return __thiz.callObjectMethod(
+			"putString",
+			"(ILjava/lang/String;)Landroid/media/MediaMetadataEditor;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject MediaMetadataEditor::putString(jint arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"putString",
+			"(ILjava/lang/String;)Landroid/media/MediaMetadataEditor;",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	QAndroidJniObject MediaMetadataEditor::getBitmap(jint arg0, __jni_impl::android::graphics::Bitmap arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getBitmap",
+			"(ILandroid/graphics/Bitmap;)Landroid/graphics/Bitmap;",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
 	void MediaMetadataEditor::addEditableKey(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -156,33 +203,6 @@ namespace __jni_impl::android::media
 			"getEditableKeys",
 			"()[I"
 		).object<jintArray>();
-	}
-	QAndroidJniObject MediaMetadataEditor::getBitmap(jint arg0, __jni_impl::android::graphics::Bitmap arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getBitmap",
-			"(ILandroid/graphics/Bitmap;)Landroid/graphics/Bitmap;",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject MediaMetadataEditor::putString(jint arg0, jstring arg1)
-	{
-		return __thiz.callObjectMethod(
-			"putString",
-			"(ILjava/lang/String;)Landroid/media/MediaMetadataEditor;",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject MediaMetadataEditor::putBitmap(jint arg0, __jni_impl::android::graphics::Bitmap arg1)
-	{
-		return __thiz.callObjectMethod(
-			"putBitmap",
-			"(ILandroid/graphics/Bitmap;)Landroid/media/MediaMetadataEditor;",
-			arg0,
-			arg1.__jniObject().object()
-		);
 	}
 } // namespace __jni_impl::android::media
 

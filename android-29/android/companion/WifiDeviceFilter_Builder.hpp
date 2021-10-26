@@ -42,7 +42,8 @@ namespace __jni_impl::android::companion
 	{
 		__thiz = QAndroidJniObject(
 			"android.companion.WifiDeviceFilter$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

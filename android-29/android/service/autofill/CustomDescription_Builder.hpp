@@ -50,7 +50,8 @@ namespace __jni_impl::android::service::autofill
 		__thiz = QAndroidJniObject(
 			"android.service.autofill.CustomDescription$Builder",
 			"(Landroid/widget/RemoteViews;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

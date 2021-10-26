@@ -31,9 +31,9 @@ namespace __jni_impl::android::view::contentcapture
 		jstring toString();
 		jint hashCode();
 		jint getFlags();
+		QAndroidJniObject getLocusId();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getLocusId();
 	};
 } // namespace __jni_impl::android::view::contentcapture
 
@@ -66,7 +66,8 @@ namespace __jni_impl::android::view::contentcapture
 			"android.view.contentcapture.ContentCaptureCondition",
 			"(Landroid/content/LocusId;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -99,6 +100,13 @@ namespace __jni_impl::android::view::contentcapture
 			"()I"
 		);
 	}
+	QAndroidJniObject ContentCaptureCondition::getLocusId()
+	{
+		return __thiz.callObjectMethod(
+			"getLocusId",
+			"()Landroid/content/LocusId;"
+		);
+	}
 	jint ContentCaptureCondition::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -113,13 +121,6 @@ namespace __jni_impl::android::view::contentcapture
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject ContentCaptureCondition::getLocusId()
-	{
-		return __thiz.callObjectMethod(
-			"getLocusId",
-			"()Landroid/content/LocusId;"
 		);
 	}
 } // namespace __jni_impl::android::view::contentcapture

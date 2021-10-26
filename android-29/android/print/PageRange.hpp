@@ -27,9 +27,9 @@ namespace __jni_impl::android::print
 		jstring toString();
 		jint hashCode();
 		jint getEnd();
+		jint getStart();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getStart();
 	};
 } // namespace __jni_impl::android::print
 
@@ -62,7 +62,8 @@ namespace __jni_impl::android::print
 			"android.print.PageRange",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -95,6 +96,13 @@ namespace __jni_impl::android::print
 			"()I"
 		);
 	}
+	jint PageRange::getStart()
+	{
+		return __thiz.callMethod<jint>(
+			"getStart",
+			"()I"
+		);
+	}
 	jint PageRange::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -109,13 +117,6 @@ namespace __jni_impl::android::print
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint PageRange::getStart()
-	{
-		return __thiz.callMethod<jint>(
-			"getStart",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::print

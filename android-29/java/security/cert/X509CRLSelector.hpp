@@ -48,6 +48,7 @@ namespace __jni_impl::java::security::cert
 		void setIssuerNames(__jni_impl::__JniBaseClass arg0);
 		void addIssuer(__jni_impl::javax::security::auth::x500::X500Principal arg0);
 		void addIssuerName(jstring arg0);
+		void addIssuerName(const QString &arg0);
 		void addIssuerName(jbyteArray arg0);
 		void setMinCRLNumber(__jni_impl::java::math::BigInteger arg0);
 		void setMaxCRLNumber(__jni_impl::java::math::BigInteger arg0);
@@ -78,7 +79,8 @@ namespace __jni_impl::java::security::cert
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.cert.X509CRLSelector",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -134,6 +136,14 @@ namespace __jni_impl::java::security::cert
 			"addIssuerName",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void X509CRLSelector::addIssuerName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"addIssuerName",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void X509CRLSelector::addIssuerName(jbyteArray arg0)

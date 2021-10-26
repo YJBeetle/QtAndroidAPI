@@ -23,6 +23,7 @@ namespace __jni_impl::android::widget
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -79,6 +80,15 @@ namespace __jni_impl::android::widget
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/widget/TextView$BufferType;",
 			arg0
+		);
+	}
+	QAndroidJniObject TextView_BufferType::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.widget.TextView$BufferType",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/widget/TextView$BufferType;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::widget

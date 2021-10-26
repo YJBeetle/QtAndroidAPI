@@ -30,7 +30,8 @@ namespace __jni_impl::javax::microedition::khronos::egl
 	{
 		__thiz = QAndroidJniObject(
 			"javax.microedition.khronos.egl.EGLSurface",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

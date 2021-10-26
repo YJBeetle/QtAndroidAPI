@@ -57,13 +57,15 @@ namespace __jni_impl::java::util::zip
 		__thiz = QAndroidJniObject(
 			"java.util.zip.Inflater",
 			"(Z)V",
-			arg0);
+			arg0
+		);
 	}
 	void Inflater::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.Inflater",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

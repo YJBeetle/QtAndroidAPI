@@ -60,7 +60,8 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.HashSet",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void HashSet::__constructor(jint arg0, jfloat arg1)
 	{
@@ -68,20 +69,23 @@ namespace __jni_impl::java::util
 			"java.util.HashSet",
 			"(IF)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void HashSet::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.HashSet",
 			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void HashSet::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.HashSet",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

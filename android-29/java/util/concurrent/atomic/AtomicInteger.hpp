@@ -67,13 +67,15 @@ namespace __jni_impl::java::util::concurrent::atomic
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.AtomicInteger",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void AtomicInteger::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.AtomicInteger",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

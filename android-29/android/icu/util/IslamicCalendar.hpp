@@ -165,7 +165,8 @@ namespace __jni_impl::android::icu::util
 			"android.icu.util.IslamicCalendar",
 			"(Landroid/icu/util/TimeZone;Ljava/util/Locale;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void IslamicCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1)
 	{
@@ -173,14 +174,16 @@ namespace __jni_impl::android::icu::util
 			"android.icu.util.IslamicCalendar",
 			"(Landroid/icu/util/TimeZone;Landroid/icu/util/ULocale;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void IslamicCalendar::__constructor(__jni_impl::java::util::Date arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.IslamicCalendar",
 			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void IslamicCalendar::__constructor(jint arg0, jint arg1, jint arg2)
 	{
@@ -189,7 +192,8 @@ namespace __jni_impl::android::icu::util
 			"(III)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void IslamicCalendar::__constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
@@ -201,34 +205,39 @@ namespace __jni_impl::android::icu::util
 			arg2,
 			arg3,
 			arg4,
-			arg5);
+			arg5
+		);
 	}
 	void IslamicCalendar::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.IslamicCalendar",
-			"()V");
+			"()V"
+		);
 	}
 	void IslamicCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.IslamicCalendar",
 			"(Landroid/icu/util/TimeZone;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void IslamicCalendar::__constructor(__jni_impl::java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.IslamicCalendar",
 			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void IslamicCalendar::__constructor(__jni_impl::android::icu::util::ULocale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.IslamicCalendar",
 			"(Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

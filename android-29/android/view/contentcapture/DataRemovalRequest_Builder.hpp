@@ -43,7 +43,8 @@ namespace __jni_impl::android::view::contentcapture
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.contentcapture.DataRemovalRequest$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

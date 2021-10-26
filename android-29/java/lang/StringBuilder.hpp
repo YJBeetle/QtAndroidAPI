@@ -27,6 +27,7 @@ namespace __jni_impl::java::lang
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jint arg0);
 		void __constructor();
 		
@@ -34,10 +35,12 @@ namespace __jni_impl::java::lang
 		jint length();
 		jstring toString();
 		QAndroidJniObject append(jstring arg0, jint arg1, jint arg2);
+		QAndroidJniObject append(const QString &arg0, jint arg1, jint arg2);
 		QAndroidJniObject append(jcharArray arg0);
 		QAndroidJniObject append(jcharArray arg0, jint arg1, jint arg2);
 		QAndroidJniObject append(jboolean arg0);
 		QAndroidJniObject append(jstring arg0);
+		QAndroidJniObject append(const QString &arg0);
 		QAndroidJniObject append(__jni_impl::java::lang::StringBuffer arg0);
 		QAndroidJniObject append(jfloat arg0);
 		QAndroidJniObject append(jdouble arg0);
@@ -49,27 +52,34 @@ namespace __jni_impl::java::lang
 		jint compareTo(jobject arg0);
 		jint compareTo(__jni_impl::java::lang::StringBuilder arg0);
 		jint indexOf(jstring arg0, jint arg1);
+		jint indexOf(const QString &arg0, jint arg1);
 		jint indexOf(jstring arg0);
+		jint indexOf(const QString &arg0);
 		jchar charAt(jint arg0);
 		jint codePointAt(jint arg0);
 		jint codePointBefore(jint arg0);
 		jint codePointCount(jint arg0, jint arg1);
 		jint offsetByCodePoints(jint arg0, jint arg1);
 		jint lastIndexOf(jstring arg0);
+		jint lastIndexOf(const QString &arg0);
 		jint lastIndexOf(jstring arg0, jint arg1);
+		jint lastIndexOf(const QString &arg0, jint arg1);
 		jstring substring(jint arg0, jint arg1);
 		jstring substring(jint arg0);
 		QAndroidJniObject replace(jint arg0, jint arg1, jstring arg2);
+		QAndroidJniObject replace(jint arg0, jint arg1, const QString &arg2);
 		QAndroidJniObject codePoints();
 		jstring subSequence(jint arg0, jint arg1);
 		QAndroidJniObject chars();
 		QAndroidJniObject _delete(jint arg0, jint arg1);
 		void setLength(jint arg0);
 		QAndroidJniObject insert(jint arg0, jstring arg1, jint arg2, jint arg3);
+		QAndroidJniObject insert(jint arg0, const QString &arg1, jint arg2, jint arg3);
 		QAndroidJniObject insert(jint arg0, jboolean arg1);
 		QAndroidJniObject insert(jint arg0, jchar arg1);
 		QAndroidJniObject insert(jint arg0, jint arg1);
 		QAndroidJniObject insert(jint arg0, jstring arg1);
+		QAndroidJniObject insert(jint arg0, const QString &arg1);
 		QAndroidJniObject insert(jint arg0, jobject arg1);
 		QAndroidJniObject insert(jint arg0, jcharArray arg1);
 		QAndroidJniObject insert(jint arg0, jcharArray arg1, jint arg2, jint arg3);
@@ -100,20 +110,31 @@ namespace __jni_impl::java::lang
 		__thiz = QAndroidJniObject(
 			"java.lang.StringBuilder",
 			"(Ljava/lang/CharSequence;)V",
-			arg0);
+			arg0
+		);
+	}
+	void StringBuilder::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.StringBuilder",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void StringBuilder::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.StringBuilder",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void StringBuilder::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.StringBuilder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -137,6 +158,16 @@ namespace __jni_impl::java::lang
 			"append",
 			"(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;",
 			arg0,
+			arg1,
+			arg2
+		);
+	}
+	QAndroidJniObject StringBuilder::append(const QString &arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callObjectMethod(
+			"append",
+			"(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -173,6 +204,14 @@ namespace __jni_impl::java::lang
 			"append",
 			"(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;",
 			arg0
+		);
+	}
+	QAndroidJniObject StringBuilder::append(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"append",
+			"(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject StringBuilder::append(__jni_impl::java::lang::StringBuffer arg0)
@@ -267,12 +306,29 @@ namespace __jni_impl::java::lang
 			arg1
 		);
 	}
+	jint StringBuilder::indexOf(const QString &arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"indexOf",
+			"(Ljava/lang/String;I)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	jint StringBuilder::indexOf(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"indexOf",
 			"(Ljava/lang/String;)I",
 			arg0
+		);
+	}
+	jint StringBuilder::indexOf(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"indexOf",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jchar StringBuilder::charAt(jint arg0)
@@ -325,12 +381,29 @@ namespace __jni_impl::java::lang
 			arg0
 		);
 	}
+	jint StringBuilder::lastIndexOf(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"lastIndexOf",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint StringBuilder::lastIndexOf(jstring arg0, jint arg1)
 	{
 		return __thiz.callMethod<jint>(
 			"lastIndexOf",
 			"(Ljava/lang/String;I)I",
 			arg0,
+			arg1
+		);
+	}
+	jint StringBuilder::lastIndexOf(const QString &arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"lastIndexOf",
+			"(Ljava/lang/String;I)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -359,6 +432,16 @@ namespace __jni_impl::java::lang
 			arg0,
 			arg1,
 			arg2
+		);
+	}
+	QAndroidJniObject StringBuilder::replace(jint arg0, jint arg1, const QString &arg2)
+	{
+		return __thiz.callObjectMethod(
+			"replace",
+			"(IILjava/lang/String;)Ljava/lang/StringBuilder;",
+			arg0,
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	QAndroidJniObject StringBuilder::codePoints()
@@ -412,6 +495,17 @@ namespace __jni_impl::java::lang
 			arg3
 		);
 	}
+	QAndroidJniObject StringBuilder::insert(jint arg0, const QString &arg1, jint arg2, jint arg3)
+	{
+		return __thiz.callObjectMethod(
+			"insert",
+			"(ILjava/lang/CharSequence;II)Ljava/lang/StringBuilder;",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3
+		);
+	}
 	QAndroidJniObject StringBuilder::insert(jint arg0, jboolean arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -446,6 +540,15 @@ namespace __jni_impl::java::lang
 			"(ILjava/lang/String;)Ljava/lang/StringBuilder;",
 			arg0,
 			arg1
+		);
+	}
+	QAndroidJniObject StringBuilder::insert(jint arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"insert",
+			"(ILjava/lang/String;)Ljava/lang/StringBuilder;",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject StringBuilder::insert(jint arg0, jobject arg1)

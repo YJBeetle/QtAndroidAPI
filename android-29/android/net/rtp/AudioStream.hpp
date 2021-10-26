@@ -54,7 +54,8 @@ namespace __jni_impl::android::net::rtp
 		__thiz = QAndroidJniObject(
 			"android.net.rtp.AudioStream",
 			"(Ljava/net/InetAddress;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

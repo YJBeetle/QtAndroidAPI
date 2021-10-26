@@ -12,11 +12,11 @@ namespace __jni_impl::android::widget
 }
 namespace __jni_impl::android::view
 {
-	class MotionEvent;
+	class KeyEvent;
 }
 namespace __jni_impl::android::view
 {
-	class KeyEvent;
+	class MotionEvent;
 }
 
 namespace __jni_impl::android::text::method
@@ -32,15 +32,15 @@ namespace __jni_impl::android::text::method
 		// Methods
 		static QAndroidJniObject getInstance();
 		void initialize(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1);
-		jboolean onTouchEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2);
 		jboolean canSelectArbitrarily();
 		void onTakeFocus(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
+		jboolean onTouchEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2);
 	};
 } // namespace __jni_impl::android::text::method
 
 #include "../../widget/TextView.hpp"
-#include "../../view/MotionEvent.hpp"
 #include "../../view/KeyEvent.hpp"
+#include "../../view/MotionEvent.hpp"
 
 namespace __jni_impl::android::text::method
 {
@@ -51,7 +51,8 @@ namespace __jni_impl::android::text::method
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.method.ArrowKeyMovementMethod",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -72,16 +73,6 @@ namespace __jni_impl::android::text::method
 			arg1.__jniObject().object()
 		);
 	}
-	jboolean ArrowKeyMovementMethod::onTouchEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTouchEvent",
-			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
 	jboolean ArrowKeyMovementMethod::canSelectArbitrarily()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -97,6 +88,16 @@ namespace __jni_impl::android::text::method
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2
+		);
+	}
+	jboolean ArrowKeyMovementMethod::onTouchEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::text::method

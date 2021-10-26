@@ -73,14 +73,17 @@ namespace __jni_impl::android::transition
 		void captureStartValues(__jni_impl::android::transition::TransitionValues arg0);
 		void captureEndValues(__jni_impl::android::transition::TransitionValues arg0);
 		QAndroidJniObject addTarget(jstring arg0);
+		QAndroidJniObject addTarget(const QString &arg0);
 		QAndroidJniObject addTarget(__jni_impl::android::view::View arg0);
 		QAndroidJniObject addTarget(jclass arg0);
 		QAndroidJniObject addTarget(jint arg0);
 		QAndroidJniObject removeTarget(__jni_impl::android::view::View arg0);
 		QAndroidJniObject removeTarget(jclass arg0);
 		QAndroidJniObject removeTarget(jstring arg0);
+		QAndroidJniObject removeTarget(const QString &arg0);
 		QAndroidJniObject removeTarget(jint arg0);
 		QAndroidJniObject excludeTarget(jstring arg0, jboolean arg1);
+		QAndroidJniObject excludeTarget(const QString &arg0, jboolean arg1);
 		QAndroidJniObject excludeTarget(jint arg0, jboolean arg1);
 		QAndroidJniObject excludeTarget(jclass arg0, jboolean arg1);
 		QAndroidJniObject excludeTarget(__jni_impl::android::view::View arg0, jboolean arg1);
@@ -153,7 +156,8 @@ namespace __jni_impl::android::transition
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Transition",
-			"()V");
+			"()V"
+		);
 	}
 	void Transition::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -161,7 +165,8 @@ namespace __jni_impl::android::transition
 			"android.transition.Transition",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -280,6 +285,14 @@ namespace __jni_impl::android::transition
 			arg0
 		);
 	}
+	QAndroidJniObject Transition::addTarget(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"addTarget",
+			"(Ljava/lang/String;)Landroid/transition/Transition;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject Transition::addTarget(__jni_impl::android::view::View arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -328,6 +341,14 @@ namespace __jni_impl::android::transition
 			arg0
 		);
 	}
+	QAndroidJniObject Transition::removeTarget(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"removeTarget",
+			"(Ljava/lang/String;)Landroid/transition/Transition;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject Transition::removeTarget(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -342,6 +363,15 @@ namespace __jni_impl::android::transition
 			"excludeTarget",
 			"(Ljava/lang/String;Z)Landroid/transition/Transition;",
 			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject Transition::excludeTarget(const QString &arg0, jboolean arg1)
+	{
+		return __thiz.callObjectMethod(
+			"excludeTarget",
+			"(Ljava/lang/String;Z)Landroid/transition/Transition;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

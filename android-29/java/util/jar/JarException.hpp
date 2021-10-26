@@ -19,6 +19,7 @@ namespace __jni_impl::java::util::jar
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -34,14 +35,24 @@ namespace __jni_impl::java::util::jar
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarException",
-			"()V");
+			"()V"
+		);
 	}
 	void JarException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.JarException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void JarException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.jar.JarException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

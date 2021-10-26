@@ -5,14 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::graphics
-{
-	class Matrix;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 namespace __jni_impl::android::view::autofill
 {
 	class AutofillId;
@@ -21,6 +13,10 @@ namespace __jni_impl::android::view::autofill
 {
 	class AutofillValue;
 }
+namespace __jni_impl::android::graphics
+{
+	class Matrix;
+}
 namespace __jni_impl::android::view
 {
 	class ViewStructure_HtmlInfo;
@@ -28,6 +24,10 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::os
 {
 	class LocaleList;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 
 namespace __jni_impl::android::app::assist
@@ -51,13 +51,7 @@ namespace __jni_impl::android::app::assist
 		jstring getClassName();
 		jboolean isEnabled();
 		jstring getText();
-		jint getTextSelectionStart();
-		jint getTextSelectionEnd();
 		jfloat getTextSize();
-		QAndroidJniObject getTransformation();
-		QAndroidJniObject getExtras();
-		jstring getHint();
-		jint getInputType();
 		jint getChildCount();
 		QAndroidJniObject getChildAt(jint arg0);
 		QAndroidJniObject getAutofillId();
@@ -81,8 +75,15 @@ namespace __jni_impl::android::app::assist
 		jfloat getElevation();
 		jboolean isSelected();
 		jboolean isActivated();
+		jint getWidth();
+		jint getHeight();
 		jint getTextColor();
 		jint getTextStyle();
+		jboolean isChecked();
+		jboolean isCheckable();
+		jstring getHint();
+		jint getInputType();
+		QAndroidJniObject getTransformation();
 		jstring getIdPackage();
 		jstring getIdType();
 		jstring getIdEntry();
@@ -98,20 +99,19 @@ namespace __jni_impl::android::app::assist
 		jint getMinTextEms();
 		jint getMaxTextEms();
 		jint getMaxTextLength();
+		jint getTextSelectionStart();
+		jint getTextSelectionEnd();
 		jarray getAutofillOptions();
-		jboolean isChecked();
-		jboolean isCheckable();
-		jint getWidth();
-		jint getHeight();
+		QAndroidJniObject getExtras();
 	};
 } // namespace __jni_impl::android::app::assist
 
-#include "../../graphics/Matrix.hpp"
-#include "../../os/Bundle.hpp"
 #include "../../view/autofill/AutofillId.hpp"
 #include "../../view/autofill/AutofillValue.hpp"
+#include "../../graphics/Matrix.hpp"
 #include "../../view/ViewStructure_HtmlInfo.hpp"
 #include "../../os/LocaleList.hpp"
+#include "../../os/Bundle.hpp"
 
 namespace __jni_impl::android::app::assist
 {
@@ -196,53 +196,11 @@ namespace __jni_impl::android::app::assist
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	jint AssistStructure_ViewNode::getTextSelectionStart()
-	{
-		return __thiz.callMethod<jint>(
-			"getTextSelectionStart",
-			"()I"
-		);
-	}
-	jint AssistStructure_ViewNode::getTextSelectionEnd()
-	{
-		return __thiz.callMethod<jint>(
-			"getTextSelectionEnd",
-			"()I"
-		);
-	}
 	jfloat AssistStructure_ViewNode::getTextSize()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getTextSize",
 			"()F"
-		);
-	}
-	QAndroidJniObject AssistStructure_ViewNode::getTransformation()
-	{
-		return __thiz.callObjectMethod(
-			"getTransformation",
-			"()Landroid/graphics/Matrix;"
-		);
-	}
-	QAndroidJniObject AssistStructure_ViewNode::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
-		);
-	}
-	jstring AssistStructure_ViewNode::getHint()
-	{
-		return __thiz.callObjectMethod(
-			"getHint",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint AssistStructure_ViewNode::getInputType()
-	{
-		return __thiz.callMethod<jint>(
-			"getInputType",
-			"()I"
 		);
 	}
 	jint AssistStructure_ViewNode::getChildCount()
@@ -407,6 +365,20 @@ namespace __jni_impl::android::app::assist
 			"()Z"
 		);
 	}
+	jint AssistStructure_ViewNode::getWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
+	jint AssistStructure_ViewNode::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
+	}
 	jint AssistStructure_ViewNode::getTextColor()
 	{
 		return __thiz.callMethod<jint>(
@@ -419,6 +391,41 @@ namespace __jni_impl::android::app::assist
 		return __thiz.callMethod<jint>(
 			"getTextStyle",
 			"()I"
+		);
+	}
+	jboolean AssistStructure_ViewNode::isChecked()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isChecked",
+			"()Z"
+		);
+	}
+	jboolean AssistStructure_ViewNode::isCheckable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isCheckable",
+			"()Z"
+		);
+	}
+	jstring AssistStructure_ViewNode::getHint()
+	{
+		return __thiz.callObjectMethod(
+			"getHint",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint AssistStructure_ViewNode::getInputType()
+	{
+		return __thiz.callMethod<jint>(
+			"getInputType",
+			"()I"
+		);
+	}
+	QAndroidJniObject AssistStructure_ViewNode::getTransformation()
+	{
+		return __thiz.callObjectMethod(
+			"getTransformation",
+			"()Landroid/graphics/Matrix;"
 		);
 	}
 	jstring AssistStructure_ViewNode::getIdPackage()
@@ -526,6 +533,20 @@ namespace __jni_impl::android::app::assist
 			"()I"
 		);
 	}
+	jint AssistStructure_ViewNode::getTextSelectionStart()
+	{
+		return __thiz.callMethod<jint>(
+			"getTextSelectionStart",
+			"()I"
+		);
+	}
+	jint AssistStructure_ViewNode::getTextSelectionEnd()
+	{
+		return __thiz.callMethod<jint>(
+			"getTextSelectionEnd",
+			"()I"
+		);
+	}
 	jarray AssistStructure_ViewNode::getAutofillOptions()
 	{
 		return __thiz.callObjectMethod(
@@ -533,32 +554,11 @@ namespace __jni_impl::android::app::assist
 			"()[Ljava/lang/CharSequence;"
 		).object<jarray>();
 	}
-	jboolean AssistStructure_ViewNode::isChecked()
+	QAndroidJniObject AssistStructure_ViewNode::getExtras()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isChecked",
-			"()Z"
-		);
-	}
-	jboolean AssistStructure_ViewNode::isCheckable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isCheckable",
-			"()Z"
-		);
-	}
-	jint AssistStructure_ViewNode::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I"
-		);
-	}
-	jint AssistStructure_ViewNode::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I"
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
 		);
 	}
 } // namespace __jni_impl::android::app::assist

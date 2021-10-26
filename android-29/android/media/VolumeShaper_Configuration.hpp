@@ -34,12 +34,12 @@ namespace __jni_impl::android::media
 		jstring toString();
 		jint hashCode();
 		jlong getDuration();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		static jint getMaximumCurvePoints();
 		jint getInterpolatorType();
 		jfloatArray getTimes();
 		jfloatArray getVolumes();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
 
@@ -155,22 +155,6 @@ namespace __jni_impl::android::media
 			"()J"
 		);
 	}
-	jint VolumeShaper_Configuration::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void VolumeShaper_Configuration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	jint VolumeShaper_Configuration::getMaximumCurvePoints()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -199,6 +183,22 @@ namespace __jni_impl::android::media
 			"getVolumes",
 			"()[F"
 		).object<jfloatArray>();
+	}
+	jint VolumeShaper_Configuration::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void VolumeShaper_Configuration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::media
 

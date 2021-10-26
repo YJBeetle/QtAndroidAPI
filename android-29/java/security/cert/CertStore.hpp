@@ -30,14 +30,17 @@ namespace __jni_impl::java::security::cert
 		
 		// Methods
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::__JniBaseClass arg1, jstring arg2);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2);
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::Provider arg2);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::Provider arg2);
 		QAndroidJniObject getCertificates(__jni_impl::__JniBaseClass arg0);
 		jstring getType();
 		QAndroidJniObject getProvider();
-		static jstring getDefaultType();
 		QAndroidJniObject getCRLs(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getCertStoreParameters();
+		static jstring getDefaultType();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -68,6 +71,16 @@ namespace __jni_impl::java::security::cert
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject CertStore::getInstance(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.cert.CertStore",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/cert/CertStoreParameters;)Ljava/security/cert/CertStore;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject CertStore::getInstance(jstring arg0, __jni_impl::__JniBaseClass arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -79,6 +92,17 @@ namespace __jni_impl::java::security::cert
 			arg2
 		);
 	}
+	QAndroidJniObject CertStore::getInstance(const QString &arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.cert.CertStore",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/cert/CertStoreParameters;Ljava/lang/String;)Ljava/security/cert/CertStore;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
+	}
 	QAndroidJniObject CertStore::getInstance(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::Provider arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -86,6 +110,17 @@ namespace __jni_impl::java::security::cert
 			"getInstance",
 			"(Ljava/lang/String;Ljava/security/cert/CertStoreParameters;Ljava/security/Provider;)Ljava/security/cert/CertStore;",
 			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject CertStore::getInstance(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::Provider arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.cert.CertStore",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/cert/CertStoreParameters;Ljava/security/Provider;)Ljava/security/cert/CertStore;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);
@@ -112,14 +147,6 @@ namespace __jni_impl::java::security::cert
 			"()Ljava/security/Provider;"
 		);
 	}
-	jstring CertStore::getDefaultType()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.cert.CertStore",
-			"getDefaultType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject CertStore::getCRLs(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -134,6 +161,14 @@ namespace __jni_impl::java::security::cert
 			"getCertStoreParameters",
 			"()Ljava/security/cert/CertStoreParameters;"
 		);
+	}
+	jstring CertStore::getDefaultType()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.cert.CertStore",
+			"getDefaultType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security::cert
 

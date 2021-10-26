@@ -21,11 +21,11 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
+		QAndroidJniObject getMediaProjection();
 		jintArray getMatchingUsages();
 		jintArray getMatchingUids();
 		jintArray getExcludeUsages();
 		jintArray getExcludeUids();
-		QAndroidJniObject getMediaProjection();
 	};
 } // namespace __jni_impl::android::media
 
@@ -44,6 +44,13 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	QAndroidJniObject AudioPlaybackCaptureConfiguration::getMediaProjection()
+	{
+		return __thiz.callObjectMethod(
+			"getMediaProjection",
+			"()Landroid/media/projection/MediaProjection;"
+		);
+	}
 	jintArray AudioPlaybackCaptureConfiguration::getMatchingUsages()
 	{
 		return __thiz.callObjectMethod(
@@ -71,13 +78,6 @@ namespace __jni_impl::android::media
 			"getExcludeUids",
 			"()[I"
 		).object<jintArray>();
-	}
-	QAndroidJniObject AudioPlaybackCaptureConfiguration::getMediaProjection()
-	{
-		return __thiz.callObjectMethod(
-			"getMediaProjection",
-			"()Landroid/media/projection/MediaProjection;"
-		);
 	}
 } // namespace __jni_impl::android::media
 

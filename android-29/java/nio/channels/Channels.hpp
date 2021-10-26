@@ -54,7 +54,9 @@ namespace __jni_impl::java::nio::channels
 		static QAndroidJniObject newReader(__jni_impl::__JniBaseClass arg0, __jni_impl::java::nio::charset::CharsetDecoder arg1, jint arg2);
 		static QAndroidJniObject newReader(__jni_impl::__JniBaseClass arg0, __jni_impl::java::nio::charset::Charset arg1);
 		static QAndroidJniObject newReader(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		static QAndroidJniObject newReader(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 		static QAndroidJniObject newWriter(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		static QAndroidJniObject newWriter(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 		static QAndroidJniObject newWriter(__jni_impl::__JniBaseClass arg0, __jni_impl::java::nio::charset::CharsetEncoder arg1, jint arg2);
 		static QAndroidJniObject newWriter(__jni_impl::__JniBaseClass arg0, __jni_impl::java::nio::charset::Charset arg1);
 		static QAndroidJniObject newChannel(__jni_impl::java::io::InputStream arg0);
@@ -133,6 +135,16 @@ namespace __jni_impl::java::nio::channels
 			arg1
 		);
 	}
+	QAndroidJniObject Channels::newReader(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.channels.Channels",
+			"newReader",
+			"(Ljava/nio/channels/ReadableByteChannel;Ljava/lang/String;)Ljava/io/Reader;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject Channels::newWriter(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -141,6 +153,16 @@ namespace __jni_impl::java::nio::channels
 			"(Ljava/nio/channels/WritableByteChannel;Ljava/lang/String;)Ljava/io/Writer;",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	QAndroidJniObject Channels::newWriter(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.channels.Channels",
+			"newWriter",
+			"(Ljava/nio/channels/WritableByteChannel;Ljava/lang/String;)Ljava/io/Writer;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject Channels::newWriter(__jni_impl::__JniBaseClass arg0, __jni_impl::java::nio::charset::CharsetEncoder arg1, jint arg2)

@@ -23,16 +23,21 @@ namespace __jni_impl::android::drm
 		
 		// Constructors
 		void __constructor(__jni_impl::android::drm::ProcessedData arg0, jstring arg1);
+		void __constructor(__jni_impl::android::drm::ProcessedData arg0, const QString &arg1);
 		void __constructor(__jni_impl::java::io::File arg0, jstring arg1);
+		void __constructor(__jni_impl::java::io::File arg0, const QString &arg1);
 		void __constructor(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3);
 		void __constructor(jstring arg0, jstring arg1, jstring arg2);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2);
 		void __constructor(jstring arg0, jstring arg1);
+		void __constructor(const QString &arg0, const QString &arg1);
 		
 		// Methods
-		jbyteArray getData();
 		jstring getMimeType();
 		jstring getAccountId();
 		jstring getSubscriptionId();
+		jbyteArray getData();
 	};
 } // namespace __jni_impl::android::drm
 
@@ -50,7 +55,17 @@ namespace __jni_impl::android::drm
 			"android.drm.DrmRights",
 			"(Landroid/drm/ProcessedData;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void DrmRights::__constructor(__jni_impl::android::drm::ProcessedData arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.drm.DrmRights",
+			"(Landroid/drm/ProcessedData;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void DrmRights::__constructor(__jni_impl::java::io::File arg0, jstring arg1)
 	{
@@ -58,7 +73,17 @@ namespace __jni_impl::android::drm
 			"android.drm.DrmRights",
 			"(Ljava/io/File;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void DrmRights::__constructor(__jni_impl::java::io::File arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.drm.DrmRights",
+			"(Ljava/io/File;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void DrmRights::__constructor(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
 	{
@@ -68,7 +93,19 @@ namespace __jni_impl::android::drm
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void DrmRights::__constructor(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"android.drm.DrmRights",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			QAndroidJniObject::fromString(arg3).object<jstring>()
+		);
 	}
 	void DrmRights::__constructor(jstring arg0, jstring arg1, jstring arg2)
 	{
@@ -77,7 +114,18 @@ namespace __jni_impl::android::drm
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void DrmRights::__constructor(const QString &arg0, const QString &arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.drm.DrmRights",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	void DrmRights::__constructor(jstring arg0, jstring arg1)
 	{
@@ -85,17 +133,20 @@ namespace __jni_impl::android::drm
 			"android.drm.DrmRights",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void DrmRights::__constructor(const QString &arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.drm.DrmRights",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods
-	jbyteArray DrmRights::getData()
-	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()[B"
-		).object<jbyteArray>();
-	}
 	jstring DrmRights::getMimeType()
 	{
 		return __thiz.callObjectMethod(
@@ -116,6 +167,13 @@ namespace __jni_impl::android::drm
 			"getSubscriptionId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jbyteArray DrmRights::getData()
+	{
+		return __thiz.callObjectMethod(
+			"getData",
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::drm
 

@@ -47,7 +47,8 @@ namespace __jni_impl::android::telecom
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.InCallService$VideoCall$Callback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -17,6 +17,7 @@ namespace __jni_impl::android::security
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -32,14 +33,24 @@ namespace __jni_impl::android::security
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.ConfirmationNotAvailableException",
-			"()V");
+			"()V"
+		);
 	}
 	void ConfirmationNotAvailableException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.security.ConfirmationNotAvailableException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void ConfirmationNotAvailableException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.security.ConfirmationNotAvailableException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

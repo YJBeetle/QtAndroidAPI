@@ -13,6 +13,10 @@ namespace __jni_impl::android::content::pm
 {
 	class PackageInstaller_Session;
 }
+namespace __jni_impl::android::content::pm
+{
+	class PackageInstaller_SessionParams;
+}
 namespace __jni_impl::android::content
 {
 	class IntentSender;
@@ -32,10 +36,6 @@ namespace __jni_impl::android::content::pm
 namespace __jni_impl::android::os
 {
 	class Handler;
-}
-namespace __jni_impl::android::content::pm
-{
-	class PackageInstaller_SessionParams;
 }
 
 namespace __jni_impl::android::content::pm
@@ -70,31 +70,34 @@ namespace __jni_impl::android::content::pm
 		// Methods
 		QAndroidJniObject getSessionInfo(jint arg0);
 		QAndroidJniObject openSession(jint arg0);
+		jint createSession(__jni_impl::android::content::pm::PackageInstaller_SessionParams arg0);
 		void installExistingPackage(jstring arg0, jint arg1, __jni_impl::android::content::IntentSender arg2);
+		void installExistingPackage(const QString &arg0, jint arg1, __jni_impl::android::content::IntentSender arg2);
 		void updateSessionAppIcon(jint arg0, __jni_impl::android::graphics::Bitmap arg1);
 		void updateSessionAppLabel(jint arg0, jstring arg1);
+		void updateSessionAppLabel(jint arg0, const QString &arg1);
 		void abandonSession(jint arg0);
 		QAndroidJniObject getAllSessions();
 		QAndroidJniObject getMySessions();
 		QAndroidJniObject getStagedSessions();
 		QAndroidJniObject getActiveStagedSession();
-		void uninstall(__jni_impl::android::content::pm::VersionedPackage arg0, __jni_impl::android::content::IntentSender arg1);
 		void uninstall(jstring arg0, __jni_impl::android::content::IntentSender arg1);
+		void uninstall(const QString &arg0, __jni_impl::android::content::IntentSender arg1);
+		void uninstall(__jni_impl::android::content::pm::VersionedPackage arg0, __jni_impl::android::content::IntentSender arg1);
 		void registerSessionCallback(__jni_impl::android::content::pm::PackageInstaller_SessionCallback arg0, __jni_impl::android::os::Handler arg1);
 		void registerSessionCallback(__jni_impl::android::content::pm::PackageInstaller_SessionCallback arg0);
 		void unregisterSessionCallback(__jni_impl::android::content::pm::PackageInstaller_SessionCallback arg0);
-		jint createSession(__jni_impl::android::content::pm::PackageInstaller_SessionParams arg0);
 	};
 } // namespace __jni_impl::android::content::pm
 
 #include "PackageInstaller_SessionInfo.hpp"
 #include "PackageInstaller_Session.hpp"
+#include "PackageInstaller_SessionParams.hpp"
 #include "../IntentSender.hpp"
 #include "../../graphics/Bitmap.hpp"
 #include "VersionedPackage.hpp"
 #include "PackageInstaller_SessionCallback.hpp"
 #include "../../os/Handler.hpp"
-#include "PackageInstaller_SessionParams.hpp"
 
 namespace __jni_impl::android::content::pm
 {
@@ -268,12 +271,30 @@ namespace __jni_impl::android::content::pm
 			arg0
 		);
 	}
+	jint PackageInstaller::createSession(__jni_impl::android::content::pm::PackageInstaller_SessionParams arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"createSession",
+			"(Landroid/content/pm/PackageInstaller$SessionParams;)I",
+			arg0.__jniObject().object()
+		);
+	}
 	void PackageInstaller::installExistingPackage(jstring arg0, jint arg1, __jni_impl::android::content::IntentSender arg2)
 	{
 		__thiz.callMethod<void>(
 			"installExistingPackage",
 			"(Ljava/lang/String;ILandroid/content/IntentSender;)V",
 			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void PackageInstaller::installExistingPackage(const QString &arg0, jint arg1, __jni_impl::android::content::IntentSender arg2)
+	{
+		__thiz.callMethod<void>(
+			"installExistingPackage",
+			"(Ljava/lang/String;ILandroid/content/IntentSender;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2.__jniObject().object()
 		);
@@ -294,6 +315,15 @@ namespace __jni_impl::android::content::pm
 			"(ILjava/lang/CharSequence;)V",
 			arg0,
 			arg1
+		);
+	}
+	void PackageInstaller::updateSessionAppLabel(jint arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"updateSessionAppLabel",
+			"(ILjava/lang/CharSequence;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void PackageInstaller::abandonSession(jint arg0)
@@ -332,21 +362,30 @@ namespace __jni_impl::android::content::pm
 			"()Landroid/content/pm/PackageInstaller$SessionInfo;"
 		);
 	}
-	void PackageInstaller::uninstall(__jni_impl::android::content::pm::VersionedPackage arg0, __jni_impl::android::content::IntentSender arg1)
-	{
-		__thiz.callMethod<void>(
-			"uninstall",
-			"(Landroid/content/pm/VersionedPackage;Landroid/content/IntentSender;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
 	void PackageInstaller::uninstall(jstring arg0, __jni_impl::android::content::IntentSender arg1)
 	{
 		__thiz.callMethod<void>(
 			"uninstall",
 			"(Ljava/lang/String;Landroid/content/IntentSender;)V",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void PackageInstaller::uninstall(const QString &arg0, __jni_impl::android::content::IntentSender arg1)
+	{
+		__thiz.callMethod<void>(
+			"uninstall",
+			"(Ljava/lang/String;Landroid/content/IntentSender;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
+	void PackageInstaller::uninstall(__jni_impl::android::content::pm::VersionedPackage arg0, __jni_impl::android::content::IntentSender arg1)
+	{
+		__thiz.callMethod<void>(
+			"uninstall",
+			"(Landroid/content/pm/VersionedPackage;Landroid/content/IntentSender;)V",
+			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -372,14 +411,6 @@ namespace __jni_impl::android::content::pm
 		__thiz.callMethod<void>(
 			"unregisterSessionCallback",
 			"(Landroid/content/pm/PackageInstaller$SessionCallback;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jint PackageInstaller::createSession(__jni_impl::android::content::pm::PackageInstaller_SessionParams arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"createSession",
-			"(Landroid/content/pm/PackageInstaller$SessionParams;)I",
 			arg0.__jniObject().object()
 		);
 	}

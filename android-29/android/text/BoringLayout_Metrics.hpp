@@ -39,7 +39,8 @@ namespace __jni_impl::android::text
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.BoringLayout$Metrics",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

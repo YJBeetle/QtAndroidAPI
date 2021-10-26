@@ -53,7 +53,8 @@ namespace __jni_impl::java::util::concurrent
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.Semaphore",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Semaphore::__constructor(jint arg0, jboolean arg1)
 	{
@@ -61,7 +62,8 @@ namespace __jni_impl::java::util::concurrent
 			"java.util.concurrent.Semaphore",
 			"(IZ)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

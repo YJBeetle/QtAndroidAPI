@@ -32,10 +32,10 @@ namespace __jni_impl::android::inputmethodservice
 		jboolean isEnabled();
 		jboolean isRevoked();
 		void revokeSelf();
+		void setEnabled(jboolean arg0);
 		void dispatchKeyEvent(jint arg0, __jni_impl::android::view::KeyEvent arg1, __jni_impl::__JniBaseClass arg2);
 		void dispatchTrackballEvent(jint arg0, __jni_impl::android::view::MotionEvent arg1, __jni_impl::__JniBaseClass arg2);
 		void dispatchGenericMotionEvent(jint arg0, __jni_impl::android::view::MotionEvent arg1, __jni_impl::__JniBaseClass arg2);
-		void setEnabled(jboolean arg0);
 	};
 } // namespace __jni_impl::android::inputmethodservice
 
@@ -53,7 +53,8 @@ namespace __jni_impl::android::inputmethodservice
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.AbstractInputMethodService$AbstractInputMethodSessionImpl",
 			"(Landroid/inputmethodservice/AbstractInputMethodService;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -76,6 +77,14 @@ namespace __jni_impl::android::inputmethodservice
 		__thiz.callMethod<void>(
 			"revokeSelf",
 			"()V"
+		);
+	}
+	void AbstractInputMethodService_AbstractInputMethodSessionImpl::setEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEnabled",
+			"(Z)V",
+			arg0
 		);
 	}
 	void AbstractInputMethodService_AbstractInputMethodSessionImpl::dispatchKeyEvent(jint arg0, __jni_impl::android::view::KeyEvent arg1, __jni_impl::__JniBaseClass arg2)
@@ -106,14 +115,6 @@ namespace __jni_impl::android::inputmethodservice
 			arg0,
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
-		);
-	}
-	void AbstractInputMethodService_AbstractInputMethodSessionImpl::setEnabled(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEnabled",
-			"(Z)V",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::inputmethodservice

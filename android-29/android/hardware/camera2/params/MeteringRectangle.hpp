@@ -39,9 +39,9 @@ namespace __jni_impl::android::hardware::camera2::params
 		jstring toString();
 		jint hashCode();
 		QAndroidJniObject getSize();
+		jint getMeteringWeight();
 		QAndroidJniObject getUpperLeftPoint();
 		QAndroidJniObject getRect();
-		jint getMeteringWeight();
 		jint getX();
 		jint getY();
 		jint getWidth();
@@ -85,7 +85,8 @@ namespace __jni_impl::android::hardware::camera2::params
 			"android.hardware.camera2.params.MeteringRectangle",
 			"(Landroid/graphics/Rect;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void MeteringRectangle::__constructor(__jni_impl::android::graphics::Point arg0, __jni_impl::android::util::Size arg1, jint arg2)
 	{
@@ -94,7 +95,8 @@ namespace __jni_impl::android::hardware::camera2::params
 			"(Landroid/graphics/Point;Landroid/util/Size;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void MeteringRectangle::__constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
@@ -105,7 +107,8 @@ namespace __jni_impl::android::hardware::camera2::params
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	
 	// Methods
@@ -146,6 +149,13 @@ namespace __jni_impl::android::hardware::camera2::params
 			"()Landroid/util/Size;"
 		);
 	}
+	jint MeteringRectangle::getMeteringWeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getMeteringWeight",
+			"()I"
+		);
+	}
 	QAndroidJniObject MeteringRectangle::getUpperLeftPoint()
 	{
 		return __thiz.callObjectMethod(
@@ -158,13 +168,6 @@ namespace __jni_impl::android::hardware::camera2::params
 		return __thiz.callObjectMethod(
 			"getRect",
 			"()Landroid/graphics/Rect;"
-		);
-	}
-	jint MeteringRectangle::getMeteringWeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getMeteringWeight",
-			"()I"
 		);
 	}
 	jint MeteringRectangle::getX()

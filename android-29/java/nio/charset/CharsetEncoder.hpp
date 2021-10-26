@@ -45,6 +45,7 @@ namespace __jni_impl::java::nio::charset
 		QAndroidJniObject encode(__jni_impl::java::nio::CharBuffer arg0);
 		QAndroidJniObject encode(__jni_impl::java::nio::CharBuffer arg0, __jni_impl::java::nio::ByteBuffer arg1, jboolean arg2);
 		jboolean canEncode(jstring arg0);
+		jboolean canEncode(const QString &arg0);
 		jboolean canEncode(jchar arg0);
 		jbyteArray replacement();
 		QAndroidJniObject flush(__jni_impl::java::nio::ByteBuffer arg0);
@@ -111,6 +112,14 @@ namespace __jni_impl::java::nio::charset
 			"canEncode",
 			"(Ljava/lang/CharSequence;)Z",
 			arg0
+		);
+	}
+	jboolean CharsetEncoder::canEncode(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"canEncode",
+			"(Ljava/lang/CharSequence;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean CharsetEncoder::canEncode(jchar arg0)

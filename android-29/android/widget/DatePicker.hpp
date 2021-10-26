@@ -12,10 +12,6 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::content::res
-{
-	class Configuration;
-}
 namespace __jni_impl::android::view
 {
 	class ViewStructure;
@@ -31,6 +27,10 @@ namespace __jni_impl::android::view::autofill
 namespace __jni_impl::android::widget
 {
 	class CalendarView;
+}
+namespace __jni_impl::android::content::res
+{
+	class Configuration;
 }
 
 namespace __jni_impl::android::widget
@@ -75,11 +75,11 @@ namespace __jni_impl::android::widget
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "../content/res/Configuration.hpp"
 #include "../view/ViewStructure.hpp"
 #include "../util/SparseArray.hpp"
 #include "../view/autofill/AutofillValue.hpp"
 #include "CalendarView.hpp"
+#include "../content/res/Configuration.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -94,7 +94,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void DatePicker::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -103,7 +104,8 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void DatePicker::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -111,14 +113,16 @@ namespace __jni_impl::android::widget
 			"android.widget.DatePicker",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void DatePicker::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.DatePicker",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

@@ -8,10 +8,6 @@
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
 namespace __jni_impl::android::telecom
 {
 	class RemoteConnection;
@@ -36,6 +32,10 @@ namespace __jni_impl::android::telecom
 {
 	class RemoteConference;
 }
+namespace __jni_impl::android::content
+{
+	class Intent;
+}
 
 namespace __jni_impl::android::telecom
 {
@@ -49,8 +49,6 @@ namespace __jni_impl::android::telecom
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
-		jboolean onUnbind(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject createRemoteIncomingConnection(__jni_impl::android::telecom::PhoneAccountHandle arg0, __jni_impl::android::telecom::ConnectionRequest arg1);
 		QAndroidJniObject createRemoteOutgoingConnection(__jni_impl::android::telecom::PhoneAccountHandle arg0, __jni_impl::android::telecom::ConnectionRequest arg1);
 		void conferenceRemoteConnections(__jni_impl::android::telecom::RemoteConnection arg0, __jni_impl::android::telecom::RemoteConnection arg1);
@@ -71,16 +69,18 @@ namespace __jni_impl::android::telecom
 		void onRemoteExistingConnectionAdded(__jni_impl::android::telecom::RemoteConnection arg0);
 		void onConnectionServiceFocusLost();
 		void onConnectionServiceFocusGained();
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		jboolean onUnbind(__jni_impl::android::content::Intent arg0);
 	};
 } // namespace __jni_impl::android::telecom
 
-#include "../content/Intent.hpp"
 #include "RemoteConnection.hpp"
 #include "PhoneAccountHandle.hpp"
 #include "ConnectionRequest.hpp"
 #include "Conference.hpp"
 #include "Connection.hpp"
 #include "RemoteConference.hpp"
+#include "../content/Intent.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -99,26 +99,11 @@ namespace __jni_impl::android::telecom
 	{
 		__thiz = QAndroidJniObject(
 			"android.telecom.ConnectionService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
-	QAndroidJniObject ConnectionService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean ConnectionService::onUnbind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onUnbind",
-			"(Landroid/content/Intent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject ConnectionService::createRemoteIncomingConnection(__jni_impl::android::telecom::PhoneAccountHandle arg0, __jni_impl::android::telecom::ConnectionRequest arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -284,6 +269,22 @@ namespace __jni_impl::android::telecom
 		__thiz.callMethod<void>(
 			"onConnectionServiceFocusGained",
 			"()V"
+		);
+	}
+	QAndroidJniObject ConnectionService::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean ConnectionService::onUnbind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onUnbind",
+			"(Landroid/content/Intent;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::telecom

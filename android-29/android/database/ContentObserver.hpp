@@ -25,11 +25,11 @@ namespace __jni_impl::android::database
 		void __constructor(__jni_impl::android::os::Handler arg0);
 		
 		// Methods
-		void onChange(jboolean arg0, __jni_impl::android::net::Uri arg1);
-		void onChange(jboolean arg0);
 		void dispatchChange(jboolean arg0);
 		void dispatchChange(jboolean arg0, __jni_impl::android::net::Uri arg1);
 		jboolean deliverSelfNotifications();
+		void onChange(jboolean arg0);
+		void onChange(jboolean arg0, __jni_impl::android::net::Uri arg1);
 	};
 } // namespace __jni_impl::android::database
 
@@ -46,27 +46,11 @@ namespace __jni_impl::android::database
 		__thiz = QAndroidJniObject(
 			"android.database.ContentObserver",
 			"(Landroid/os/Handler;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
-	void ContentObserver::onChange(jboolean arg0, __jni_impl::android::net::Uri arg1)
-	{
-		__thiz.callMethod<void>(
-			"onChange",
-			"(ZLandroid/net/Uri;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void ContentObserver::onChange(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"onChange",
-			"(Z)V",
-			arg0
-		);
-	}
 	void ContentObserver::dispatchChange(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -89,6 +73,23 @@ namespace __jni_impl::android::database
 		return __thiz.callMethod<jboolean>(
 			"deliverSelfNotifications",
 			"()Z"
+		);
+	}
+	void ContentObserver::onChange(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"onChange",
+			"(Z)V",
+			arg0
+		);
+	}
+	void ContentObserver::onChange(jboolean arg0, __jni_impl::android::net::Uri arg1)
+	{
+		__thiz.callMethod<void>(
+			"onChange",
+			"(ZLandroid/net/Uri;)V",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::database

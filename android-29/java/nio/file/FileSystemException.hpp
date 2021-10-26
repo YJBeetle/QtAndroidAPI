@@ -17,7 +17,9 @@ namespace __jni_impl::java::nio::file
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, jstring arg1, jstring arg2);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2);
 		
 		// Methods
 		jstring getMessage();
@@ -38,7 +40,16 @@ namespace __jni_impl::java::nio::file
 		__thiz = QAndroidJniObject(
 			"java.nio.file.FileSystemException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void FileSystemException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.nio.file.FileSystemException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void FileSystemException::__constructor(jstring arg0, jstring arg1, jstring arg2)
 	{
@@ -47,7 +58,18 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void FileSystemException::__constructor(const QString &arg0, const QString &arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.nio.file.FileSystemException",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	
 	// Methods

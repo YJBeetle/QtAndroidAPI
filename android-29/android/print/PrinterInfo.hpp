@@ -38,11 +38,11 @@ namespace __jni_impl::android::print
 		jstring toString();
 		jint hashCode();
 		QAndroidJniObject getId();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getStatus();
 		jstring getDescription();
 		QAndroidJniObject getCapabilities();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::print
 
@@ -128,22 +128,6 @@ namespace __jni_impl::android::print
 			"()Landroid/print/PrinterId;"
 		);
 	}
-	jint PrinterInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void PrinterInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	jint PrinterInfo::getStatus()
 	{
 		return __thiz.callMethod<jint>(
@@ -163,6 +147,22 @@ namespace __jni_impl::android::print
 		return __thiz.callObjectMethod(
 			"getCapabilities",
 			"()Landroid/print/PrinterCapabilitiesInfo;"
+		);
+	}
+	jint PrinterInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void PrinterInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::print

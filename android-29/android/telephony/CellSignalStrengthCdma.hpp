@@ -27,8 +27,6 @@ namespace __jni_impl::android::telephony
 		jstring toString();
 		jint hashCode();
 		jint getLevel();
-		jint getAsuLevel();
-		jint getDbm();
 		jint getCdmaDbm();
 		jint getCdmaEcio();
 		jint getEvdoDbm();
@@ -38,6 +36,8 @@ namespace __jni_impl::android::telephony
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jint getCdmaLevel();
 		jint getEvdoLevel();
+		jint getAsuLevel();
+		jint getDbm();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -90,20 +90,6 @@ namespace __jni_impl::android::telephony
 	{
 		return __thiz.callMethod<jint>(
 			"getLevel",
-			"()I"
-		);
-	}
-	jint CellSignalStrengthCdma::getAsuLevel()
-	{
-		return __thiz.callMethod<jint>(
-			"getAsuLevel",
-			"()I"
-		);
-	}
-	jint CellSignalStrengthCdma::getDbm()
-	{
-		return __thiz.callMethod<jint>(
-			"getDbm",
 			"()I"
 		);
 	}
@@ -169,6 +155,20 @@ namespace __jni_impl::android::telephony
 	{
 		return __thiz.callMethod<jint>(
 			"getEvdoLevel",
+			"()I"
+		);
+	}
+	jint CellSignalStrengthCdma::getAsuLevel()
+	{
+		return __thiz.callMethod<jint>(
+			"getAsuLevel",
+			"()I"
+		);
+	}
+	jint CellSignalStrengthCdma::getDbm()
+	{
+		return __thiz.callMethod<jint>(
+			"getDbm",
 			"()I"
 		);
 	}

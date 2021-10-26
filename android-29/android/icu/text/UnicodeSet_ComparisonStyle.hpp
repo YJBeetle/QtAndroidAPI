@@ -23,6 +23,7 @@ namespace __jni_impl::android::icu::text
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -79,6 +80,15 @@ namespace __jni_impl::android::icu::text
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSet$ComparisonStyle;",
 			arg0
+		);
+	}
+	QAndroidJniObject UnicodeSet_ComparisonStyle::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.UnicodeSet$ComparisonStyle",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSet$ComparisonStyle;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::icu::text

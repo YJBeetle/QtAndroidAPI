@@ -20,6 +20,7 @@ namespace __jni_impl::org::w3c::dom::ls
 		
 		// Constructors
 		void __constructor(jshort arg0, jstring arg1);
+		void __constructor(jshort arg0, const QString &arg1);
 		
 		// Methods
 	};
@@ -57,7 +58,17 @@ namespace __jni_impl::org::w3c::dom::ls
 			"org.w3c.dom.ls.LSException",
 			"(SLjava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void LSException::__constructor(jshort arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"org.w3c.dom.ls.LSException",
+			"(SLjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods

@@ -41,7 +41,8 @@ namespace __jni_impl::android::media
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.MediaSync$Callback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -23,8 +23,8 @@ namespace __jni_impl::android::se::omapi
 		// Methods
 		void shutdown();
 		jstring getVersion();
-		jboolean isConnected();
 		jarray getReaders();
+		jboolean isConnected();
 	};
 } // namespace __jni_impl::android::se::omapi
 
@@ -42,7 +42,8 @@ namespace __jni_impl::android::se::omapi
 			"(Landroid/content/Context;Ljava/util/concurrent/Executor;Landroid/se/omapi/SEService$OnConnectedListener;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -60,19 +61,19 @@ namespace __jni_impl::android::se::omapi
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jboolean SEService::isConnected()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isConnected",
-			"()Z"
-		);
-	}
 	jarray SEService::getReaders()
 	{
 		return __thiz.callObjectMethod(
 			"getReaders",
 			"()[Landroid/se/omapi/Reader;"
 		).object<jarray>();
+	}
+	jboolean SEService::isConnected()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isConnected",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::se::omapi
 

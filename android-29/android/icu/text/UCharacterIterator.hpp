@@ -27,6 +27,7 @@ namespace __jni_impl::android::icu::text
 		jint next();
 		static QAndroidJniObject getInstance(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject getInstance(jstring arg0);
+		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(__jni_impl::java::lang::StringBuffer arg0);
 		static QAndroidJniObject getInstance(jcharArray arg0);
 		static QAndroidJniObject getInstance(jcharArray arg0, jint arg1, jint arg2);
@@ -107,6 +108,15 @@ namespace __jni_impl::android::icu::text
 			"getInstance",
 			"(Ljava/lang/String;)Landroid/icu/text/UCharacterIterator;",
 			arg0
+		);
+	}
+	QAndroidJniObject UCharacterIterator::getInstance(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.UCharacterIterator",
+			"getInstance",
+			"(Ljava/lang/String;)Landroid/icu/text/UCharacterIterator;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject UCharacterIterator::getInstance(__jni_impl::java::lang::StringBuffer arg0)

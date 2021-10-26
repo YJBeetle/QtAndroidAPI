@@ -52,7 +52,8 @@ namespace __jni_impl::android::icu::util
 			"android.icu.util.CurrencyAmount",
 			"(DLjava/util/Currency;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void CurrencyAmount::__constructor(__jni_impl::java::lang::Number arg0, __jni_impl::java::util::Currency arg1)
 	{
@@ -60,7 +61,8 @@ namespace __jni_impl::android::icu::util
 			"android.icu.util.CurrencyAmount",
 			"(Ljava/lang/Number;Ljava/util/Currency;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void CurrencyAmount::__constructor(jdouble arg0, __jni_impl::android::icu::util::Currency arg1)
 	{
@@ -68,7 +70,8 @@ namespace __jni_impl::android::icu::util
 			"android.icu.util.CurrencyAmount",
 			"(DLandroid/icu/util/Currency;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void CurrencyAmount::__constructor(__jni_impl::java::lang::Number arg0, __jni_impl::android::icu::util::Currency arg1)
 	{
@@ -76,7 +79,8 @@ namespace __jni_impl::android::icu::util
 			"android.icu.util.CurrencyAmount",
 			"(Ljava/lang/Number;Landroid/icu/util/Currency;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

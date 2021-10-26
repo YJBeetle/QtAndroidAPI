@@ -58,14 +58,16 @@ namespace __jni_impl::android::os
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.StrictMode$ThreadPolicy$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	void StrictMode_ThreadPolicy_Builder::__constructor(__jni_impl::android::os::StrictMode_ThreadPolicy arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.StrictMode$ThreadPolicy$Builder",
 			"(Landroid/os/StrictMode$ThreadPolicy;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

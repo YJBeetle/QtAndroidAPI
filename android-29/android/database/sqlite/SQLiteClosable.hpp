@@ -34,7 +34,8 @@ namespace __jni_impl::android::database::sqlite
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.sqlite.SQLiteClosable",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

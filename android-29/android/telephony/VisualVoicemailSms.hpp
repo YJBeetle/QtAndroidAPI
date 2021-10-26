@@ -9,13 +9,13 @@ namespace __jni_impl::android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::telecom
 {
 	class PhoneAccountHandle;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::telephony
@@ -31,17 +31,17 @@ namespace __jni_impl::android::telephony
 		
 		// Methods
 		QAndroidJniObject getFields();
+		QAndroidJniObject getPhoneAccountHandle();
+		jstring getMessageBody();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jstring getMessageBody();
 		jstring getPrefix();
-		QAndroidJniObject getPhoneAccountHandle();
 	};
 } // namespace __jni_impl::android::telephony
 
 #include "../os/Bundle.hpp"
-#include "../os/Parcel.hpp"
 #include "../telecom/PhoneAccountHandle.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::telephony
 {
@@ -71,6 +71,20 @@ namespace __jni_impl::android::telephony
 			"()Landroid/os/Bundle;"
 		);
 	}
+	QAndroidJniObject VisualVoicemailSms::getPhoneAccountHandle()
+	{
+		return __thiz.callObjectMethod(
+			"getPhoneAccountHandle",
+			"()Landroid/telecom/PhoneAccountHandle;"
+		);
+	}
+	jstring VisualVoicemailSms::getMessageBody()
+	{
+		return __thiz.callObjectMethod(
+			"getMessageBody",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jint VisualVoicemailSms::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -87,26 +101,12 @@ namespace __jni_impl::android::telephony
 			arg1
 		);
 	}
-	jstring VisualVoicemailSms::getMessageBody()
-	{
-		return __thiz.callObjectMethod(
-			"getMessageBody",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jstring VisualVoicemailSms::getPrefix()
 	{
 		return __thiz.callObjectMethod(
 			"getPrefix",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	QAndroidJniObject VisualVoicemailSms::getPhoneAccountHandle()
-	{
-		return __thiz.callObjectMethod(
-			"getPhoneAccountHandle",
-			"()Landroid/telecom/PhoneAccountHandle;"
-		);
 	}
 } // namespace __jni_impl::android::telephony
 

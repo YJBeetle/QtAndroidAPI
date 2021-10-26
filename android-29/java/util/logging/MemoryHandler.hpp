@@ -57,13 +57,15 @@ namespace __jni_impl::java::util::logging
 			"(Ljava/util/logging/Handler;ILjava/util/logging/Level;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void MemoryHandler::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.logging.MemoryHandler",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

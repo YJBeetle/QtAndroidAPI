@@ -100,14 +100,16 @@ namespace __jni_impl::android::net::wifi::p2p
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.p2p.WifiP2pConfig",
-			"()V");
+			"()V"
+		);
 	}
 	void WifiP2pConfig::__constructor(__jni_impl::android::net::wifi::p2p::WifiP2pConfig arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.wifi.p2p.WifiP2pConfig",
 			"(Landroid/net/wifi/p2p/WifiP2pConfig;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

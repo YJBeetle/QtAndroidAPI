@@ -37,7 +37,8 @@ namespace __jni_impl::java::net
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.CacheResponse",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

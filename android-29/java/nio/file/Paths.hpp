@@ -22,6 +22,7 @@ namespace __jni_impl::java::nio::file
 		
 		// Methods
 		static QAndroidJniObject get(jstring arg0, jarray arg1);
+		static QAndroidJniObject get(const QString &arg0, jarray arg1);
 		static QAndroidJniObject get(__jni_impl::java::net::URI arg0);
 	};
 } // namespace __jni_impl::java::nio::file
@@ -48,6 +49,16 @@ namespace __jni_impl::java::nio::file
 			"get",
 			"(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;",
 			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject Paths::get(const QString &arg0, jarray arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.file.Paths",
+			"get",
+			"(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

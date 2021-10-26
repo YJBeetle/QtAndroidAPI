@@ -26,6 +26,7 @@ namespace __jni_impl::android::media
 		
 		// Constructors
 		void __constructor(jint arg0, jstring arg1);
+		void __constructor(jint arg0, const QString &arg1);
 		
 		// Methods
 		jint getErrorCode();
@@ -107,7 +108,17 @@ namespace __jni_impl::android::media
 			"android.media.MediaCodec$CryptoException",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void MediaCodec_CryptoException::__constructor(jint arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.media.MediaCodec$CryptoException",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods

@@ -17,7 +17,9 @@ namespace __jni_impl::java::lang
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
+		void __constructor(const QString &arg0, jthrowable arg1);
 		
 		// Methods
 	};
@@ -33,14 +35,24 @@ namespace __jni_impl::java::lang
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.LinkageError",
-			"()V");
+			"()V"
+		);
 	}
 	void LinkageError::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.LinkageError",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void LinkageError::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.LinkageError",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void LinkageError::__constructor(jstring arg0, jthrowable arg1)
 	{
@@ -48,7 +60,17 @@ namespace __jni_impl::java::lang
 			"java.lang.LinkageError",
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void LinkageError::__constructor(const QString &arg0, jthrowable arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.LinkageError",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods

@@ -26,10 +26,10 @@ namespace __jni_impl::android::text::method
 		void __constructor();
 		
 		// Methods
+		jboolean onKeyOther(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::KeyEvent arg2);
 		jboolean forwardDelete(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
 		jboolean backspace(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
 		jboolean onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
-		jboolean onKeyOther(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::KeyEvent arg2);
 	};
 } // namespace __jni_impl::android::text::method
 
@@ -45,10 +45,21 @@ namespace __jni_impl::android::text::method
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.method.BaseKeyListener",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
+	jboolean BaseKeyListener::onKeyOther(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::KeyEvent arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyOther",
+			"(Landroid/view/View;Landroid/text/Editable;Landroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
 	jboolean BaseKeyListener::forwardDelete(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -80,16 +91,6 @@ namespace __jni_impl::android::text::method
 			arg1.__jniObject().object(),
 			arg2,
 			arg3.__jniObject().object()
-		);
-	}
-	jboolean BaseKeyListener::onKeyOther(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::KeyEvent arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyOther",
-			"(Landroid/view/View;Landroid/text/Editable;Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::text::method

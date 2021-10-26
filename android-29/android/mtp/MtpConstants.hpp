@@ -823,7 +823,8 @@ namespace __jni_impl::android::mtp
 	{
 		__thiz = QAndroidJniObject(
 			"android.mtp.MtpConstants",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -18,6 +18,7 @@ namespace __jni_impl::javax::xml::xpath
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jthrowable arg0);
 		
 		// Methods
@@ -35,14 +36,24 @@ namespace __jni_impl::javax::xml::xpath
 		__thiz = QAndroidJniObject(
 			"javax.xml.xpath.XPathFunctionException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void XPathFunctionException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.xml.xpath.XPathFunctionException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void XPathFunctionException::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.xpath.XPathFunctionException",
 			"(Ljava/lang/Throwable;)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

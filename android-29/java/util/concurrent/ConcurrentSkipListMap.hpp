@@ -101,13 +101,15 @@ namespace __jni_impl::java::util::concurrent
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ConcurrentSkipListMap",
 			"(Ljava/util/SortedMap;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ConcurrentSkipListMap::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ConcurrentSkipListMap",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

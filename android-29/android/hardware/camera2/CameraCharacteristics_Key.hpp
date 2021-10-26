@@ -15,6 +15,7 @@ namespace __jni_impl::android::hardware::camera2
 		
 		// Constructors
 		void __constructor(jstring arg0, jclass arg1);
+		void __constructor(const QString &arg0, jclass arg1);
 		
 		// Methods
 		jstring getName();
@@ -36,7 +37,17 @@ namespace __jni_impl::android::hardware::camera2
 			"android.hardware.camera2.CameraCharacteristics$Key",
 			"(Ljava/lang/String;Ljava/lang/Class;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void CameraCharacteristics_Key::__constructor(const QString &arg0, jclass arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.hardware.camera2.CameraCharacteristics$Key",
+			"(Ljava/lang/String;Ljava/lang/Class;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
 	}
 	
 	// Methods

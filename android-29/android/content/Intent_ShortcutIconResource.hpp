@@ -69,7 +69,8 @@ namespace __jni_impl::android::content
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.Intent$ShortcutIconResource",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

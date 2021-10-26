@@ -51,7 +51,6 @@ namespace __jni_impl::java::net
 		void bind(__jni_impl::java::net::SocketAddress arg0);
 		void bind(__jni_impl::java::net::SocketAddress arg0, jint arg1);
 		jboolean isClosed();
-		QAndroidJniObject getInetAddress();
 		jboolean isBound();
 		jobject getOption(__jni_impl::__JniBaseClass arg0);
 		jint getLocalPort();
@@ -66,6 +65,7 @@ namespace __jni_impl::java::net
 		jboolean getReuseAddress();
 		void setPerformancePreferences(jint arg0, jint arg1, jint arg2);
 		static void setSocketFactory(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getInetAddress();
 	};
 } // namespace __jni_impl::java::net
 
@@ -88,7 +88,8 @@ namespace __jni_impl::java::net
 			"(IILjava/net/InetAddress;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	void ServerSocket::__constructor(jint arg0, jint arg1)
 	{
@@ -96,20 +97,23 @@ namespace __jni_impl::java::net
 			"java.net.ServerSocket",
 			"(II)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void ServerSocket::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.ServerSocket",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void ServerSocket::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.net.ServerSocket",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -163,13 +167,6 @@ namespace __jni_impl::java::net
 		return __thiz.callMethod<jboolean>(
 			"isClosed",
 			"()Z"
-		);
-	}
-	QAndroidJniObject ServerSocket::getInetAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getInetAddress",
-			"()Ljava/net/InetAddress;"
 		);
 	}
 	jboolean ServerSocket::isBound()
@@ -279,6 +276,13 @@ namespace __jni_impl::java::net
 			"setSocketFactory",
 			"(Ljava/net/SocketImplFactory;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ServerSocket::getInetAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getInetAddress",
+			"()Ljava/net/InetAddress;"
 		);
 	}
 } // namespace __jni_impl::java::net

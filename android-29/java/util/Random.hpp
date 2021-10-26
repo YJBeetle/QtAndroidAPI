@@ -67,14 +67,16 @@ namespace __jni_impl::java::util
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Random",
-			"()V");
+			"()V"
+		);
 	}
 	void Random::__constructor(jlong arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Random",
 			"(J)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

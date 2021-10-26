@@ -33,35 +33,42 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		QAndroidJniObject add(jint arg0, __jni_impl::android::app::Fragment arg1, jstring arg2);
+		QAndroidJniObject add(jint arg0, __jni_impl::android::app::Fragment arg1, const QString &arg2);
 		QAndroidJniObject add(jint arg0, __jni_impl::android::app::Fragment arg1);
 		QAndroidJniObject add(__jni_impl::android::app::Fragment arg0, jstring arg1);
+		QAndroidJniObject add(__jni_impl::android::app::Fragment arg0, const QString &arg1);
 		QAndroidJniObject remove(__jni_impl::android::app::Fragment arg0);
 		jboolean isEmpty();
 		QAndroidJniObject replace(jint arg0, __jni_impl::android::app::Fragment arg1, jstring arg2);
+		QAndroidJniObject replace(jint arg0, __jni_impl::android::app::Fragment arg1, const QString &arg2);
 		QAndroidJniObject replace(jint arg0, __jni_impl::android::app::Fragment arg1);
 		QAndroidJniObject attach(__jni_impl::android::app::Fragment arg0);
 		QAndroidJniObject detach(__jni_impl::android::app::Fragment arg0);
 		jint commit();
-		QAndroidJniObject hide(__jni_impl::android::app::Fragment arg0);
-		QAndroidJniObject show(__jni_impl::android::app::Fragment arg0);
 		QAndroidJniObject setTransition(jint arg0);
 		QAndroidJniObject setPrimaryNavigationFragment(__jni_impl::android::app::Fragment arg0);
 		QAndroidJniObject setCustomAnimations(jint arg0, jint arg1, jint arg2, jint arg3);
 		QAndroidJniObject setCustomAnimations(jint arg0, jint arg1);
 		QAndroidJniObject addSharedElement(__jni_impl::android::view::View arg0, jstring arg1);
+		QAndroidJniObject addSharedElement(__jni_impl::android::view::View arg0, const QString &arg1);
 		QAndroidJniObject setTransitionStyle(jint arg0);
 		QAndroidJniObject addToBackStack(jstring arg0);
+		QAndroidJniObject addToBackStack(const QString &arg0);
 		jboolean isAddToBackStackAllowed();
 		QAndroidJniObject disallowAddToBackStack();
-		QAndroidJniObject setBreadCrumbTitle(jstring arg0);
 		QAndroidJniObject setBreadCrumbTitle(jint arg0);
-		QAndroidJniObject setBreadCrumbShortTitle(jint arg0);
+		QAndroidJniObject setBreadCrumbTitle(jstring arg0);
+		QAndroidJniObject setBreadCrumbTitle(const QString &arg0);
 		QAndroidJniObject setBreadCrumbShortTitle(jstring arg0);
+		QAndroidJniObject setBreadCrumbShortTitle(const QString &arg0);
+		QAndroidJniObject setBreadCrumbShortTitle(jint arg0);
 		QAndroidJniObject setReorderingAllowed(jboolean arg0);
 		QAndroidJniObject runOnCommit(__jni_impl::__JniBaseClass arg0);
 		jint commitAllowingStateLoss();
 		void commitNow();
 		void commitNowAllowingStateLoss();
+		QAndroidJniObject show(__jni_impl::android::app::Fragment arg0);
+		QAndroidJniObject hide(__jni_impl::android::app::Fragment arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -126,7 +133,8 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.FragmentTransaction",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -138,6 +146,16 @@ namespace __jni_impl::android::app
 			arg0,
 			arg1.__jniObject().object(),
 			arg2
+		);
+	}
+	QAndroidJniObject FragmentTransaction::add(jint arg0, __jni_impl::android::app::Fragment arg1, const QString &arg2)
+	{
+		return __thiz.callObjectMethod(
+			"add",
+			"(ILandroid/app/Fragment;Ljava/lang/String;)Landroid/app/FragmentTransaction;",
+			arg0,
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	QAndroidJniObject FragmentTransaction::add(jint arg0, __jni_impl::android::app::Fragment arg1)
@@ -156,6 +174,15 @@ namespace __jni_impl::android::app
 			"(Landroid/app/Fragment;Ljava/lang/String;)Landroid/app/FragmentTransaction;",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	QAndroidJniObject FragmentTransaction::add(__jni_impl::android::app::Fragment arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"add",
+			"(Landroid/app/Fragment;Ljava/lang/String;)Landroid/app/FragmentTransaction;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject FragmentTransaction::remove(__jni_impl::android::app::Fragment arg0)
@@ -181,6 +208,16 @@ namespace __jni_impl::android::app
 			arg0,
 			arg1.__jniObject().object(),
 			arg2
+		);
+	}
+	QAndroidJniObject FragmentTransaction::replace(jint arg0, __jni_impl::android::app::Fragment arg1, const QString &arg2)
+	{
+		return __thiz.callObjectMethod(
+			"replace",
+			"(ILandroid/app/Fragment;Ljava/lang/String;)Landroid/app/FragmentTransaction;",
+			arg0,
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	QAndroidJniObject FragmentTransaction::replace(jint arg0, __jni_impl::android::app::Fragment arg1)
@@ -213,22 +250,6 @@ namespace __jni_impl::android::app
 		return __thiz.callMethod<jint>(
 			"commit",
 			"()I"
-		);
-	}
-	QAndroidJniObject FragmentTransaction::hide(__jni_impl::android::app::Fragment arg0)
-	{
-		return __thiz.callObjectMethod(
-			"hide",
-			"(Landroid/app/Fragment;)Landroid/app/FragmentTransaction;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject FragmentTransaction::show(__jni_impl::android::app::Fragment arg0)
-	{
-		return __thiz.callObjectMethod(
-			"show",
-			"(Landroid/app/Fragment;)Landroid/app/FragmentTransaction;",
-			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject FragmentTransaction::setTransition(jint arg0)
@@ -276,6 +297,15 @@ namespace __jni_impl::android::app
 			arg1
 		);
 	}
+	QAndroidJniObject FragmentTransaction::addSharedElement(__jni_impl::android::view::View arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"addSharedElement",
+			"(Landroid/view/View;Ljava/lang/String;)Landroid/app/FragmentTransaction;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject FragmentTransaction::setTransitionStyle(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -292,6 +322,14 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
+	QAndroidJniObject FragmentTransaction::addToBackStack(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"addToBackStack",
+			"(Ljava/lang/String;)Landroid/app/FragmentTransaction;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jboolean FragmentTransaction::isAddToBackStackAllowed()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -306,14 +344,6 @@ namespace __jni_impl::android::app
 			"()Landroid/app/FragmentTransaction;"
 		);
 	}
-	QAndroidJniObject FragmentTransaction::setBreadCrumbTitle(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setBreadCrumbTitle",
-			"(Ljava/lang/CharSequence;)Landroid/app/FragmentTransaction;",
-			arg0
-		);
-	}
 	QAndroidJniObject FragmentTransaction::setBreadCrumbTitle(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -322,12 +352,20 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
-	QAndroidJniObject FragmentTransaction::setBreadCrumbShortTitle(jint arg0)
+	QAndroidJniObject FragmentTransaction::setBreadCrumbTitle(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setBreadCrumbShortTitle",
-			"(I)Landroid/app/FragmentTransaction;",
+			"setBreadCrumbTitle",
+			"(Ljava/lang/CharSequence;)Landroid/app/FragmentTransaction;",
 			arg0
+		);
+	}
+	QAndroidJniObject FragmentTransaction::setBreadCrumbTitle(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setBreadCrumbTitle",
+			"(Ljava/lang/CharSequence;)Landroid/app/FragmentTransaction;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject FragmentTransaction::setBreadCrumbShortTitle(jstring arg0)
@@ -335,6 +373,22 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"setBreadCrumbShortTitle",
 			"(Ljava/lang/CharSequence;)Landroid/app/FragmentTransaction;",
+			arg0
+		);
+	}
+	QAndroidJniObject FragmentTransaction::setBreadCrumbShortTitle(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setBreadCrumbShortTitle",
+			"(Ljava/lang/CharSequence;)Landroid/app/FragmentTransaction;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject FragmentTransaction::setBreadCrumbShortTitle(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setBreadCrumbShortTitle",
+			"(I)Landroid/app/FragmentTransaction;",
 			arg0
 		);
 	}
@@ -373,6 +427,22 @@ namespace __jni_impl::android::app
 		__thiz.callMethod<void>(
 			"commitNowAllowingStateLoss",
 			"()V"
+		);
+	}
+	QAndroidJniObject FragmentTransaction::show(__jni_impl::android::app::Fragment arg0)
+	{
+		return __thiz.callObjectMethod(
+			"show",
+			"(Landroid/app/Fragment;)Landroid/app/FragmentTransaction;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject FragmentTransaction::hide(__jni_impl::android::app::Fragment arg0)
+	{
+		return __thiz.callObjectMethod(
+			"hide",
+			"(Landroid/app/Fragment;)Landroid/app/FragmentTransaction;",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::app

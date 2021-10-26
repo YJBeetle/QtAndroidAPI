@@ -40,7 +40,8 @@ namespace __jni_impl::java::util::zip
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.Adler32",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

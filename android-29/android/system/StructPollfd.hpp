@@ -66,7 +66,8 @@ namespace __jni_impl::android::system
 	{
 		__thiz = QAndroidJniObject(
 			"android.system.StructPollfd",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

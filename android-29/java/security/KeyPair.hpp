@@ -34,7 +34,8 @@ namespace __jni_impl::java::security
 			"java.security.KeyPair",
 			"(Ljava/security/PublicKey;Ljava/security/PrivateKey;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

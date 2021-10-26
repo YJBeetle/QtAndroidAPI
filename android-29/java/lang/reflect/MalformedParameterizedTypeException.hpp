@@ -18,6 +18,7 @@ namespace __jni_impl::java::lang::reflect
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 	};
@@ -33,14 +34,24 @@ namespace __jni_impl::java::lang::reflect
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.reflect.MalformedParameterizedTypeException",
-			"()V");
+			"()V"
+		);
 	}
 	void MalformedParameterizedTypeException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.reflect.MalformedParameterizedTypeException",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void MalformedParameterizedTypeException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.reflect.MalformedParameterizedTypeException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods

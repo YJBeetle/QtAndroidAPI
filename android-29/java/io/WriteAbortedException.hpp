@@ -23,6 +23,7 @@ namespace __jni_impl::java::io
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::java::lang::Exception arg1);
+		void __constructor(const QString &arg0, __jni_impl::java::lang::Exception arg1);
 		
 		// Methods
 		jthrowable getCause();
@@ -50,7 +51,17 @@ namespace __jni_impl::java::io
 			"java.io.WriteAbortedException",
 			"(Ljava/lang/String;Ljava/lang/Exception;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void WriteAbortedException::__constructor(const QString &arg0, __jni_impl::java::lang::Exception arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.WriteAbortedException",
+			"(Ljava/lang/String;Ljava/lang/Exception;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

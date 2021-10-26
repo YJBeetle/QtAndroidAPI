@@ -18,7 +18,9 @@ namespace __jni_impl::android::hardware::camera2
 		
 		// Methods
 		void onTorchModeUnavailable(jstring arg0);
+		void onTorchModeUnavailable(const QString &arg0);
 		void onTorchModeChanged(jstring arg0, jboolean arg1);
+		void onTorchModeChanged(const QString &arg0, jboolean arg1);
 	};
 } // namespace __jni_impl::android::hardware::camera2
 
@@ -32,7 +34,8 @@ namespace __jni_impl::android::hardware::camera2
 	{
 		__thiz = QAndroidJniObject(
 			"android.hardware.camera2.CameraManager$TorchCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -44,12 +47,29 @@ namespace __jni_impl::android::hardware::camera2
 			arg0
 		);
 	}
+	void CameraManager_TorchCallback::onTorchModeUnavailable(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"onTorchModeUnavailable",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void CameraManager_TorchCallback::onTorchModeChanged(jstring arg0, jboolean arg1)
 	{
 		__thiz.callMethod<void>(
 			"onTorchModeChanged",
 			"(Ljava/lang/String;Z)V",
 			arg0,
+			arg1
+		);
+	}
+	void CameraManager_TorchCallback::onTorchModeChanged(const QString &arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"onTorchModeChanged",
+			"(Ljava/lang/String;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

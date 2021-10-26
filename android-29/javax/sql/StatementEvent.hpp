@@ -41,7 +41,8 @@ namespace __jni_impl::javax::sql
 			"javax.sql.StatementEvent",
 			"(Ljavax/sql/PooledConnection;Ljava/sql/PreparedStatement;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void StatementEvent::__constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::sql::SQLException arg2)
 	{
@@ -50,7 +51,8 @@ namespace __jni_impl::javax::sql
 			"(Ljavax/sql/PooledConnection;Ljava/sql/PreparedStatement;Ljava/sql/SQLException;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods

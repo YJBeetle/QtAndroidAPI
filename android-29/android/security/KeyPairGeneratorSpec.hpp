@@ -36,13 +36,13 @@ namespace __jni_impl::android::security
 		QAndroidJniObject getContext();
 		QAndroidJniObject getSubjectDN();
 		jboolean isEncryptionRequired();
-		QAndroidJniObject getStartDate();
-		jstring getKeyType();
-		QAndroidJniObject getEndDate();
+		QAndroidJniObject getAlgorithmParameterSpec();
 		jint getKeySize();
 		jstring getKeystoreAlias();
 		QAndroidJniObject getSerialNumber();
-		QAndroidJniObject getAlgorithmParameterSpec();
+		QAndroidJniObject getStartDate();
+		jstring getKeyType();
+		QAndroidJniObject getEndDate();
 	};
 } // namespace __jni_impl::android::security
 
@@ -85,25 +85,11 @@ namespace __jni_impl::android::security
 			"()Z"
 		);
 	}
-	QAndroidJniObject KeyPairGeneratorSpec::getStartDate()
+	QAndroidJniObject KeyPairGeneratorSpec::getAlgorithmParameterSpec()
 	{
 		return __thiz.callObjectMethod(
-			"getStartDate",
-			"()Ljava/util/Date;"
-		);
-	}
-	jstring KeyPairGeneratorSpec::getKeyType()
-	{
-		return __thiz.callObjectMethod(
-			"getKeyType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject KeyPairGeneratorSpec::getEndDate()
-	{
-		return __thiz.callObjectMethod(
-			"getEndDate",
-			"()Ljava/util/Date;"
+			"getAlgorithmParameterSpec",
+			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
 	jint KeyPairGeneratorSpec::getKeySize()
@@ -127,11 +113,25 @@ namespace __jni_impl::android::security
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject KeyPairGeneratorSpec::getAlgorithmParameterSpec()
+	QAndroidJniObject KeyPairGeneratorSpec::getStartDate()
 	{
 		return __thiz.callObjectMethod(
-			"getAlgorithmParameterSpec",
-			"()Ljava/security/spec/AlgorithmParameterSpec;"
+			"getStartDate",
+			"()Ljava/util/Date;"
+		);
+	}
+	jstring KeyPairGeneratorSpec::getKeyType()
+	{
+		return __thiz.callObjectMethod(
+			"getKeyType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject KeyPairGeneratorSpec::getEndDate()
+	{
+		return __thiz.callObjectMethod(
+			"getEndDate",
+			"()Ljava/util/Date;"
 		);
 	}
 } // namespace __jni_impl::android::security

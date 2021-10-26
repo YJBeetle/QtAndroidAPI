@@ -78,8 +78,11 @@ namespace __jni_impl::android::icu::text
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::android::icu::text::DecimalFormatSymbols arg1, __jni_impl::android::icu::text::CurrencyPluralInfo arg2, jint arg3);
+		void __constructor(const QString &arg0, __jni_impl::android::icu::text::DecimalFormatSymbols arg1, __jni_impl::android::icu::text::CurrencyPluralInfo arg2, jint arg3);
 		void __constructor(jstring arg0, __jni_impl::android::icu::text::DecimalFormatSymbols arg1);
+		void __constructor(const QString &arg0, __jni_impl::android::icu::text::DecimalFormatSymbols arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor();
 		
 		// Methods
@@ -94,16 +97,21 @@ namespace __jni_impl::android::icu::text
 		QAndroidJniObject format(jlong arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
 		QAndroidJniObject format(__jni_impl::java::math::BigInteger arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
 		QAndroidJniObject parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		QAndroidJniObject parse(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
 		jboolean isParseBigDecimal();
 		void setDecimalFormatSymbols(__jni_impl::android::icu::text::DecimalFormatSymbols arg0);
 		jstring getPositivePrefix();
 		void setPositivePrefix(jstring arg0);
+		void setPositivePrefix(const QString &arg0);
 		jstring getNegativePrefix();
 		void setNegativePrefix(jstring arg0);
+		void setNegativePrefix(const QString &arg0);
 		jstring getPositiveSuffix();
 		void setPositiveSuffix(jstring arg0);
+		void setPositiveSuffix(const QString &arg0);
 		jstring getNegativeSuffix();
 		void setNegativeSuffix(jstring arg0);
+		void setNegativeSuffix(const QString &arg0);
 		jint getMultiplier();
 		void setMultiplier(jint arg0);
 		jint getGroupingSize();
@@ -111,6 +119,7 @@ namespace __jni_impl::android::icu::text
 		jboolean isDecimalSeparatorAlwaysShown();
 		void setParseBigDecimal(jboolean arg0);
 		void applyPattern(jstring arg0);
+		void applyPattern(const QString &arg0);
 		void setGroupingUsed(jboolean arg0);
 		QAndroidJniObject getDecimalFormatSymbols();
 		void setMinimumIntegerDigits(jint arg0);
@@ -118,6 +127,7 @@ namespace __jni_impl::android::icu::text
 		jstring toPattern();
 		jstring toLocalizedPattern();
 		void applyLocalizedPattern(jstring arg0);
+		void applyLocalizedPattern(const QString &arg0);
 		jboolean isParseIntegerOnly();
 		void setParseIntegerOnly(jboolean arg0);
 		jboolean isGroupingUsed();
@@ -133,9 +143,6 @@ namespace __jni_impl::android::icu::text
 		void setDecimalSeparatorAlwaysShown(jboolean arg0);
 		jint getRoundingMode();
 		QAndroidJniObject formatToCharacterIterator(jobject arg0);
-		QAndroidJniObject parseCurrency(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
-		void setParseStrict(jboolean arg0);
-		jboolean isParseStrict();
 		QAndroidJniObject getRoundingIncrement();
 		void setRoundingIncrement(__jni_impl::android::icu::math::BigDecimal arg0);
 		void setRoundingIncrement(jdouble arg0);
@@ -172,6 +179,10 @@ namespace __jni_impl::android::icu::text
 		void setParseMaxDigits(jint arg0);
 		jboolean isDecimalPatternMatchRequired();
 		void setDecimalPatternMatchRequired(jboolean arg0);
+		QAndroidJniObject parseCurrency(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
+		QAndroidJniObject parseCurrency(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
+		void setParseStrict(jboolean arg0);
+		jboolean isParseStrict();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -231,7 +242,19 @@ namespace __jni_impl::android::icu::text
 			arg0,
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
+	}
+	void DecimalFormat::__constructor(const QString &arg0, __jni_impl::android::icu::text::DecimalFormatSymbols arg1, __jni_impl::android::icu::text::CurrencyPluralInfo arg2, jint arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.text.DecimalFormat",
+			"(Ljava/lang/String;Landroid/icu/text/DecimalFormatSymbols;Landroid/icu/text/CurrencyPluralInfo;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3
+		);
 	}
 	void DecimalFormat::__constructor(jstring arg0, __jni_impl::android::icu::text::DecimalFormatSymbols arg1)
 	{
@@ -239,20 +262,40 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.DecimalFormat",
 			"(Ljava/lang/String;Landroid/icu/text/DecimalFormatSymbols;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void DecimalFormat::__constructor(const QString &arg0, __jni_impl::android::icu::text::DecimalFormatSymbols arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.text.DecimalFormat",
+			"(Ljava/lang/String;Landroid/icu/text/DecimalFormatSymbols;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	void DecimalFormat::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.DecimalFormat",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void DecimalFormat::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.text.DecimalFormat",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void DecimalFormat::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.DecimalFormat",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -354,6 +397,15 @@ namespace __jni_impl::android::icu::text
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject DecimalFormat::parse(const QString &arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callObjectMethod(
+			"parse",
+			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	jboolean DecimalFormat::isParseBigDecimal()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -384,6 +436,14 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
+	void DecimalFormat::setPositivePrefix(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPositivePrefix",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring DecimalFormat::getNegativePrefix()
 	{
 		return __thiz.callObjectMethod(
@@ -397,6 +457,14 @@ namespace __jni_impl::android::icu::text
 			"setNegativePrefix",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void DecimalFormat::setNegativePrefix(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setNegativePrefix",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring DecimalFormat::getPositiveSuffix()
@@ -414,6 +482,14 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
+	void DecimalFormat::setPositiveSuffix(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPositiveSuffix",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring DecimalFormat::getNegativeSuffix()
 	{
 		return __thiz.callObjectMethod(
@@ -427,6 +503,14 @@ namespace __jni_impl::android::icu::text
 			"setNegativeSuffix",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void DecimalFormat::setNegativeSuffix(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setNegativeSuffix",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint DecimalFormat::getMultiplier()
@@ -482,6 +566,14 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
+	void DecimalFormat::applyPattern(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"applyPattern",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void DecimalFormat::setGroupingUsed(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -533,6 +625,14 @@ namespace __jni_impl::android::icu::text
 			"applyLocalizedPattern",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void DecimalFormat::applyLocalizedPattern(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"applyLocalizedPattern",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean DecimalFormat::isParseIntegerOnly()
@@ -645,30 +745,6 @@ namespace __jni_impl::android::icu::text
 			"formatToCharacterIterator",
 			"(Ljava/lang/Object;)Ljava/text/AttributedCharacterIterator;",
 			arg0
-		);
-	}
-	QAndroidJniObject DecimalFormat::parseCurrency(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parseCurrency",
-			"(Ljava/lang/CharSequence;Ljava/text/ParsePosition;)Landroid/icu/util/CurrencyAmount;",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void DecimalFormat::setParseStrict(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setParseStrict",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean DecimalFormat::isParseStrict()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isParseStrict",
-			"()Z"
 		);
 	}
 	QAndroidJniObject DecimalFormat::getRoundingIncrement()
@@ -940,6 +1016,39 @@ namespace __jni_impl::android::icu::text
 			"setDecimalPatternMatchRequired",
 			"(Z)V",
 			arg0
+		);
+	}
+	QAndroidJniObject DecimalFormat::parseCurrency(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callObjectMethod(
+			"parseCurrency",
+			"(Ljava/lang/CharSequence;Ljava/text/ParsePosition;)Landroid/icu/util/CurrencyAmount;",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject DecimalFormat::parseCurrency(const QString &arg0, __jni_impl::java::text::ParsePosition arg1)
+	{
+		return __thiz.callObjectMethod(
+			"parseCurrency",
+			"(Ljava/lang/CharSequence;Ljava/text/ParsePosition;)Landroid/icu/util/CurrencyAmount;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
+	void DecimalFormat::setParseStrict(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setParseStrict",
+			"(Z)V",
+			arg0
+		);
+	}
+	jboolean DecimalFormat::isParseStrict()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isParseStrict",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::icu::text

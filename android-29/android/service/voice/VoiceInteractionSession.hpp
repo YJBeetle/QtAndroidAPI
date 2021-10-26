@@ -13,34 +13,6 @@ namespace __jni_impl::android::os
 {
 	class Handler;
 }
-namespace __jni_impl::java::io
-{
-	class FileDescriptor;
-}
-namespace __jni_impl::java::io
-{
-	class PrintWriter;
-}
-namespace __jni_impl::android::app
-{
-	class Dialog;
-}
-namespace __jni_impl::android::content::res
-{
-	class Configuration;
-}
-namespace __jni_impl::android::view
-{
-	class View;
-}
-namespace __jni_impl::android::view
-{
-	class KeyEvent;
-}
-namespace __jni_impl::android::view
-{
-	class LayoutInflater;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
@@ -61,9 +33,9 @@ namespace __jni_impl::android::app
 {
 	class DirectAction;
 }
-namespace __jni_impl::android::service::voice
+namespace __jni_impl::android::view
 {
-	class VoiceInteractionSession_AssistState;
+	class View;
 }
 namespace __jni_impl::android::app::assist
 {
@@ -72,6 +44,10 @@ namespace __jni_impl::android::app::assist
 namespace __jni_impl::android::app::assist
 {
 	class AssistContent;
+}
+namespace __jni_impl::android::service::voice
+{
+	class VoiceInteractionSession_AssistState;
 }
 namespace __jni_impl::android::graphics
 {
@@ -105,6 +81,30 @@ namespace __jni_impl::android::service::voice
 {
 	class VoiceInteractionSession_Request;
 }
+namespace __jni_impl::java::io
+{
+	class FileDescriptor;
+}
+namespace __jni_impl::java::io
+{
+	class PrintWriter;
+}
+namespace __jni_impl::android::app
+{
+	class Dialog;
+}
+namespace __jni_impl::android::content::res
+{
+	class Configuration;
+}
+namespace __jni_impl::android::view
+{
+	class KeyEvent;
+}
+namespace __jni_impl::android::view
+{
+	class LayoutInflater;
+}
 
 namespace __jni_impl::android::service::voice
 {
@@ -128,22 +128,6 @@ namespace __jni_impl::android::service::voice
 		// Methods
 		QAndroidJniObject getContext();
 		void finish();
-		void hide();
-		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
-		QAndroidJniObject getWindow();
-		void onCreate();
-		void onDestroy();
-		void onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
-		void onLowMemory();
-		void onTrimMemory(jint arg0);
-		void setContentView(__jni_impl::android::view::View arg0);
-		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyLongPress(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
-		jboolean onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
-		void onBackPressed();
-		QAndroidJniObject getLayoutInflater();
-		void setTheme(jint arg0);
 		void show(__jni_impl::android::os::Bundle arg0, jint arg1);
 		void setDisabledShowContext(jint arg0);
 		jint getDisabledShowContext();
@@ -161,8 +145,8 @@ namespace __jni_impl::android::service::voice
 		void onHide();
 		QAndroidJniObject onCreateContentView();
 		void onAssistStructureFailure(jthrowable arg0);
-		void onHandleAssist(__jni_impl::android::service::voice::VoiceInteractionSession_AssistState arg0);
 		void onHandleAssist(__jni_impl::android::os::Bundle arg0, __jni_impl::android::app::assist::AssistStructure arg1, __jni_impl::android::app::assist::AssistContent arg2);
+		void onHandleAssist(__jni_impl::android::service::voice::VoiceInteractionSession_AssistState arg0);
 		void onHandleAssistSecondary(__jni_impl::android::os::Bundle arg0, __jni_impl::android::app::assist::AssistStructure arg1, __jni_impl::android::app::assist::AssistContent arg2, jint arg3, jint arg4);
 		void onHandleScreenshot(__jni_impl::android::graphics::Bitmap arg0);
 		void onCloseSystemDialogs();
@@ -177,26 +161,37 @@ namespace __jni_impl::android::service::voice
 		void onRequestAbortVoice(__jni_impl::android::service::voice::VoiceInteractionSession_AbortVoiceRequest arg0);
 		void onRequestCommand(__jni_impl::android::service::voice::VoiceInteractionSession_CommandRequest arg0);
 		void onCancelRequest(__jni_impl::android::service::voice::VoiceInteractionSession_Request arg0);
+		void hide();
+		void setTheme(jint arg0);
+		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
+		void dump(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
+		QAndroidJniObject getWindow();
+		void onCreate();
+		void onDestroy();
+		void onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
+		void onLowMemory();
+		void onTrimMemory(jint arg0);
+		void setContentView(__jni_impl::android::view::View arg0);
+		jboolean onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyLongPress(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1);
+		jboolean onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
+		void onBackPressed();
+		QAndroidJniObject getLayoutInflater();
 	};
 } // namespace __jni_impl::android::service::voice
 
 #include "../../content/Context.hpp"
 #include "../../os/Handler.hpp"
-#include "../../../java/io/FileDescriptor.hpp"
-#include "../../../java/io/PrintWriter.hpp"
-#include "../../app/Dialog.hpp"
-#include "../../content/res/Configuration.hpp"
-#include "../../view/View.hpp"
-#include "../../view/KeyEvent.hpp"
-#include "../../view/LayoutInflater.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../content/Intent.hpp"
 #include "VoiceInteractionSession_ActivityId.hpp"
 #include "../../os/CancellationSignal.hpp"
 #include "../../app/DirectAction.hpp"
-#include "VoiceInteractionSession_AssistState.hpp"
+#include "../../view/View.hpp"
 #include "../../app/assist/AssistStructure.hpp"
 #include "../../app/assist/AssistContent.hpp"
+#include "VoiceInteractionSession_AssistState.hpp"
 #include "../../graphics/Bitmap.hpp"
 #include "VoiceInteractionSession_Insets.hpp"
 #include "VoiceInteractionSession_ConfirmationRequest.hpp"
@@ -205,6 +200,12 @@ namespace __jni_impl::android::service::voice
 #include "VoiceInteractionSession_AbortVoiceRequest.hpp"
 #include "VoiceInteractionSession_CommandRequest.hpp"
 #include "VoiceInteractionSession_Request.hpp"
+#include "../../../java/io/FileDescriptor.hpp"
+#include "../../../java/io/PrintWriter.hpp"
+#include "../../app/Dialog.hpp"
+#include "../../content/res/Configuration.hpp"
+#include "../../view/KeyEvent.hpp"
+#include "../../view/LayoutInflater.hpp"
 
 namespace __jni_impl::android::service::voice
 {
@@ -272,7 +273,8 @@ namespace __jni_impl::android::service::voice
 		__thiz = QAndroidJniObject(
 			"android.service.voice.VoiceInteractionSession",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void VoiceInteractionSession::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -280,7 +282,8 @@ namespace __jni_impl::android::service::voice
 			"android.service.voice.VoiceInteractionSession",
 			"(Landroid/content/Context;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -296,135 +299,6 @@ namespace __jni_impl::android::service::voice
 		__thiz.callMethod<void>(
 			"finish",
 			"()V"
-		);
-	}
-	void VoiceInteractionSession::hide()
-	{
-		__thiz.callMethod<void>(
-			"hide",
-			"()V"
-		);
-	}
-	void VoiceInteractionSession::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	QAndroidJniObject VoiceInteractionSession::getWindow()
-	{
-		return __thiz.callObjectMethod(
-			"getWindow",
-			"()Landroid/app/Dialog;"
-		);
-	}
-	void VoiceInteractionSession::onCreate()
-	{
-		__thiz.callMethod<void>(
-			"onCreate",
-			"()V"
-		);
-	}
-	void VoiceInteractionSession::onDestroy()
-	{
-		__thiz.callMethod<void>(
-			"onDestroy",
-			"()V"
-		);
-	}
-	void VoiceInteractionSession::onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0)
-	{
-		__thiz.callMethod<void>(
-			"onConfigurationChanged",
-			"(Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void VoiceInteractionSession::onLowMemory()
-	{
-		__thiz.callMethod<void>(
-			"onLowMemory",
-			"()V"
-		);
-	}
-	void VoiceInteractionSession::onTrimMemory(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"onTrimMemory",
-			"(I)V",
-			arg0
-		);
-	}
-	void VoiceInteractionSession::setContentView(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContentView",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean VoiceInteractionSession::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyDown",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean VoiceInteractionSession::onKeyLongPress(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyLongPress",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean VoiceInteractionSession::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyUp",
-			"(ILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean VoiceInteractionSession::onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyMultiple",
-			"(IILandroid/view/KeyEvent;)Z",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void VoiceInteractionSession::onBackPressed()
-	{
-		__thiz.callMethod<void>(
-			"onBackPressed",
-			"()V"
-		);
-	}
-	QAndroidJniObject VoiceInteractionSession::getLayoutInflater()
-	{
-		return __thiz.callObjectMethod(
-			"getLayoutInflater",
-			"()Landroid/view/LayoutInflater;"
-		);
-	}
-	void VoiceInteractionSession::setTheme(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTheme",
-			"(I)V",
-			arg0
 		);
 	}
 	void VoiceInteractionSession::show(__jni_impl::android::os::Bundle arg0, jint arg1)
@@ -568,14 +442,6 @@ namespace __jni_impl::android::service::voice
 			arg0
 		);
 	}
-	void VoiceInteractionSession::onHandleAssist(__jni_impl::android::service::voice::VoiceInteractionSession_AssistState arg0)
-	{
-		__thiz.callMethod<void>(
-			"onHandleAssist",
-			"(Landroid/service/voice/VoiceInteractionSession$AssistState;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void VoiceInteractionSession::onHandleAssist(__jni_impl::android::os::Bundle arg0, __jni_impl::android::app::assist::AssistStructure arg1, __jni_impl::android::app::assist::AssistContent arg2)
 	{
 		__thiz.callMethod<void>(
@@ -584,6 +450,14 @@ namespace __jni_impl::android::service::voice
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
+		);
+	}
+	void VoiceInteractionSession::onHandleAssist(__jni_impl::android::service::voice::VoiceInteractionSession_AssistState arg0)
+	{
+		__thiz.callMethod<void>(
+			"onHandleAssist",
+			"(Landroid/service/voice/VoiceInteractionSession$AssistState;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void VoiceInteractionSession::onHandleAssistSecondary(__jni_impl::android::os::Bundle arg0, __jni_impl::android::app::assist::AssistStructure arg1, __jni_impl::android::app::assist::AssistContent arg2, jint arg3, jint arg4)
@@ -700,6 +574,146 @@ namespace __jni_impl::android::service::voice
 			"onCancelRequest",
 			"(Landroid/service/voice/VoiceInteractionSession$Request;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void VoiceInteractionSession::hide()
+	{
+		__thiz.callMethod<void>(
+			"hide",
+			"()V"
+		);
+	}
+	void VoiceInteractionSession::setTheme(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTheme",
+			"(I)V",
+			arg0
+		);
+	}
+	void VoiceInteractionSession::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3
+		);
+	}
+	void VoiceInteractionSession::dump(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3
+		);
+	}
+	QAndroidJniObject VoiceInteractionSession::getWindow()
+	{
+		return __thiz.callObjectMethod(
+			"getWindow",
+			"()Landroid/app/Dialog;"
+		);
+	}
+	void VoiceInteractionSession::onCreate()
+	{
+		__thiz.callMethod<void>(
+			"onCreate",
+			"()V"
+		);
+	}
+	void VoiceInteractionSession::onDestroy()
+	{
+		__thiz.callMethod<void>(
+			"onDestroy",
+			"()V"
+		);
+	}
+	void VoiceInteractionSession::onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0)
+	{
+		__thiz.callMethod<void>(
+			"onConfigurationChanged",
+			"(Landroid/content/res/Configuration;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void VoiceInteractionSession::onLowMemory()
+	{
+		__thiz.callMethod<void>(
+			"onLowMemory",
+			"()V"
+		);
+	}
+	void VoiceInteractionSession::onTrimMemory(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"onTrimMemory",
+			"(I)V",
+			arg0
+		);
+	}
+	void VoiceInteractionSession::setContentView(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"setContentView",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean VoiceInteractionSession::onKeyDown(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyDown",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean VoiceInteractionSession::onKeyLongPress(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyLongPress",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean VoiceInteractionSession::onKeyUp(jint arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyUp",
+			"(ILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean VoiceInteractionSession::onKeyMultiple(jint arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyMultiple",
+			"(IILandroid/view/KeyEvent;)Z",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void VoiceInteractionSession::onBackPressed()
+	{
+		__thiz.callMethod<void>(
+			"onBackPressed",
+			"()V"
+		);
+	}
+	QAndroidJniObject VoiceInteractionSession::getLayoutInflater()
+	{
+		return __thiz.callObjectMethod(
+			"getLayoutInflater",
+			"()Landroid/view/LayoutInflater;"
 		);
 	}
 } // namespace __jni_impl::android::service::voice

@@ -222,7 +222,8 @@ namespace __jni_impl::android
 	{
 		__thiz = QAndroidJniObject(
 			"android.R$layout",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

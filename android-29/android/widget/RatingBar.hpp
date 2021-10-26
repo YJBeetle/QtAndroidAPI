@@ -27,18 +27,18 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
 		
 		// Methods
-		jboolean isIndicator();
-		void setRating(jfloat arg0);
+		jstring getAccessibilityClassName();
 		void setMax(jint arg0);
-		void setOnRatingBarChangeListener(__jni_impl::__JniBaseClass arg0);
+		jfloat getRating();
+		void setRating(jfloat arg0);
 		QAndroidJniObject getOnRatingBarChangeListener();
+		void setOnRatingBarChangeListener(__jni_impl::__JniBaseClass arg0);
 		void setIsIndicator(jboolean arg0);
 		void setNumStars(jint arg0);
 		jint getNumStars();
 		void setStepSize(jfloat arg0);
 		jfloat getStepSize();
-		jstring getAccessibilityClassName();
-		jfloat getRating();
+		jboolean isIndicator();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -54,7 +54,8 @@ namespace __jni_impl::android::widget
 		__thiz = QAndroidJniObject(
 			"android.widget.RatingBar",
 			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void RatingBar::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -62,7 +63,8 @@ namespace __jni_impl::android::widget
 			"android.widget.RatingBar",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void RatingBar::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 	{
@@ -72,7 +74,8 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void RatingBar::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -81,15 +84,31 @@ namespace __jni_impl::android::widget
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods
-	jboolean RatingBar::isIndicator()
+	jstring RatingBar::getAccessibilityClassName()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isIndicator",
-			"()Z"
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	void RatingBar::setMax(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMax",
+			"(I)V",
+			arg0
+		);
+	}
+	jfloat RatingBar::getRating()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getRating",
+			"()F"
 		);
 	}
 	void RatingBar::setRating(jfloat arg0)
@@ -100,12 +119,11 @@ namespace __jni_impl::android::widget
 			arg0
 		);
 	}
-	void RatingBar::setMax(jint arg0)
+	QAndroidJniObject RatingBar::getOnRatingBarChangeListener()
 	{
-		__thiz.callMethod<void>(
-			"setMax",
-			"(I)V",
-			arg0
+		return __thiz.callObjectMethod(
+			"getOnRatingBarChangeListener",
+			"()Landroid/widget/RatingBar$OnRatingBarChangeListener;"
 		);
 	}
 	void RatingBar::setOnRatingBarChangeListener(__jni_impl::__JniBaseClass arg0)
@@ -114,13 +132,6 @@ namespace __jni_impl::android::widget
 			"setOnRatingBarChangeListener",
 			"(Landroid/widget/RatingBar$OnRatingBarChangeListener;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject RatingBar::getOnRatingBarChangeListener()
-	{
-		return __thiz.callObjectMethod(
-			"getOnRatingBarChangeListener",
-			"()Landroid/widget/RatingBar$OnRatingBarChangeListener;"
 		);
 	}
 	void RatingBar::setIsIndicator(jboolean arg0)
@@ -161,18 +172,11 @@ namespace __jni_impl::android::widget
 			"()F"
 		);
 	}
-	jstring RatingBar::getAccessibilityClassName()
+	jboolean RatingBar::isIndicator()
 	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	jfloat RatingBar::getRating()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getRating",
-			"()F"
+		return __thiz.callMethod<jboolean>(
+			"isIndicator",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::widget

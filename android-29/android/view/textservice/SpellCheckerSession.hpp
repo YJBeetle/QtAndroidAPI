@@ -32,11 +32,11 @@ namespace __jni_impl::android::view::textservice
 		// Methods
 		void close();
 		void cancel();
-		void getSuggestions(jarray arg0, jint arg1, jboolean arg2);
 		void getSuggestions(__jni_impl::android::view::textservice::TextInfo arg0, jint arg1);
-		jboolean isSessionDisconnected();
+		void getSuggestions(jarray arg0, jint arg1, jboolean arg2);
 		QAndroidJniObject getSpellChecker();
 		void getSentenceSuggestions(jarray arg0, jint arg1);
+		jboolean isSessionDisconnected();
 	};
 } // namespace __jni_impl::android::view::textservice
 
@@ -79,16 +79,6 @@ namespace __jni_impl::android::view::textservice
 			"()V"
 		);
 	}
-	void SpellCheckerSession::getSuggestions(jarray arg0, jint arg1, jboolean arg2)
-	{
-		__thiz.callMethod<void>(
-			"getSuggestions",
-			"([Landroid/view/textservice/TextInfo;IZ)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
 	void SpellCheckerSession::getSuggestions(__jni_impl::android::view::textservice::TextInfo arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -98,11 +88,14 @@ namespace __jni_impl::android::view::textservice
 			arg1
 		);
 	}
-	jboolean SpellCheckerSession::isSessionDisconnected()
+	void SpellCheckerSession::getSuggestions(jarray arg0, jint arg1, jboolean arg2)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isSessionDisconnected",
-			"()Z"
+		__thiz.callMethod<void>(
+			"getSuggestions",
+			"([Landroid/view/textservice/TextInfo;IZ)V",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 	QAndroidJniObject SpellCheckerSession::getSpellChecker()
@@ -119,6 +112,13 @@ namespace __jni_impl::android::view::textservice
 			"([Landroid/view/textservice/TextInfo;I)V",
 			arg0,
 			arg1
+		);
+	}
+	jboolean SpellCheckerSession::isSessionDisconnected()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSessionDisconnected",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::view::textservice

@@ -24,9 +24,9 @@ namespace __jni_impl::java::util
 		void combine(__jni_impl::java::util::LongSummaryStatistics arg0);
 		jlong getCount();
 		jlong getMin();
+		jlong getMax();
 		jlong getSum();
 		jdouble getAverage();
-		jlong getMax();
 	};
 } // namespace __jni_impl::java::util
 
@@ -40,7 +40,8 @@ namespace __jni_impl::java::util
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.LongSummaryStatistics",
-			"()V");
+			"()V"
+		);
 	}
 	void LongSummaryStatistics::__constructor(jlong arg0, jlong arg1, jlong arg2, jlong arg3)
 	{
@@ -50,7 +51,8 @@ namespace __jni_impl::java::util
 			arg0,
 			arg1,
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	
 	// Methods
@@ -99,6 +101,13 @@ namespace __jni_impl::java::util
 			"()J"
 		);
 	}
+	jlong LongSummaryStatistics::getMax()
+	{
+		return __thiz.callMethod<jlong>(
+			"getMax",
+			"()J"
+		);
+	}
 	jlong LongSummaryStatistics::getSum()
 	{
 		return __thiz.callMethod<jlong>(
@@ -111,13 +120,6 @@ namespace __jni_impl::java::util
 		return __thiz.callMethod<jdouble>(
 			"getAverage",
 			"()D"
-		);
-	}
-	jlong LongSummaryStatistics::getMax()
-	{
-		return __thiz.callMethod<jlong>(
-			"getMax",
-			"()J"
 		);
 	}
 } // namespace __jni_impl::java::util

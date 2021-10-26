@@ -22,10 +22,11 @@ namespace __jni_impl::android::service::media
 		
 		// Constructors
 		void __constructor(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void __constructor(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		
 		// Methods
-		QAndroidJniObject getExtras();
 		jstring getRootId();
+		QAndroidJniObject getExtras();
 	};
 } // namespace __jni_impl::android::service::media
 
@@ -66,23 +67,33 @@ namespace __jni_impl::android::service::media
 			"android.service.media.MediaBrowserService$BrowserRoot",
 			"(Ljava/lang/String;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaBrowserService_BrowserRoot::__constructor(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.service.media.MediaBrowserService$BrowserRoot",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
-	QAndroidJniObject MediaBrowserService_BrowserRoot::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
-		);
-	}
 	jstring MediaBrowserService_BrowserRoot::getRootId()
 	{
 		return __thiz.callObjectMethod(
 			"getRootId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	QAndroidJniObject MediaBrowserService_BrowserRoot::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
 	}
 } // namespace __jni_impl::android::service::media
 

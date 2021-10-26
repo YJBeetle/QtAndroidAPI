@@ -22,20 +22,20 @@ namespace __jni_impl::android::renderscript
 		void set(jint arg0, jint arg1, jfloat arg2);
 		void load(__jni_impl::android::renderscript::Matrix3f arg0);
 		void multiply(__jni_impl::android::renderscript::Matrix3f arg0);
-		void scale(jfloat arg0, jfloat arg1);
 		void scale(jfloat arg0, jfloat arg1, jfloat arg2);
+		void scale(jfloat arg0, jfloat arg1);
 		jfloatArray getArray();
-		void rotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		void rotate(jfloat arg0);
+		void rotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
+		void loadIdentity();
+		void loadRotate(jfloat arg0);
+		void loadRotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
+		void loadScale(jfloat arg0, jfloat arg1, jfloat arg2);
+		void loadScale(jfloat arg0, jfloat arg1);
 		void loadTranslate(jfloat arg0, jfloat arg1);
 		void loadMultiply(__jni_impl::android::renderscript::Matrix3f arg0, __jni_impl::android::renderscript::Matrix3f arg1);
 		void translate(jfloat arg0, jfloat arg1);
 		void transpose();
-		void loadIdentity();
-		void loadRotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		void loadRotate(jfloat arg0);
-		void loadScale(jfloat arg0, jfloat arg1);
-		void loadScale(jfloat arg0, jfloat arg1, jfloat arg2);
 	};
 } // namespace __jni_impl::android::renderscript
 
@@ -49,14 +49,16 @@ namespace __jni_impl::android::renderscript
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Matrix3f",
-			"()V");
+			"()V"
+		);
 	}
 	void Matrix3f::__constructor(jfloatArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Matrix3f",
 			"([F)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -95,15 +97,6 @@ namespace __jni_impl::android::renderscript
 			arg0.__jniObject().object()
 		);
 	}
-	void Matrix3f::scale(jfloat arg0, jfloat arg1)
-	{
-		__thiz.callMethod<void>(
-			"scale",
-			"(FF)V",
-			arg0,
-			arg1
-		);
-	}
 	void Matrix3f::scale(jfloat arg0, jfloat arg1, jfloat arg2)
 	{
 		__thiz.callMethod<void>(
@@ -114,12 +107,29 @@ namespace __jni_impl::android::renderscript
 			arg2
 		);
 	}
+	void Matrix3f::scale(jfloat arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"scale",
+			"(FF)V",
+			arg0,
+			arg1
+		);
+	}
 	jfloatArray Matrix3f::getArray()
 	{
 		return __thiz.callObjectMethod(
 			"getArray",
 			"()[F"
 		).object<jfloatArray>();
+	}
+	void Matrix3f::rotate(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"rotate",
+			"(F)V",
+			arg0
+		);
 	}
 	void Matrix3f::rotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
@@ -132,12 +142,49 @@ namespace __jni_impl::android::renderscript
 			arg3
 		);
 	}
-	void Matrix3f::rotate(jfloat arg0)
+	void Matrix3f::loadIdentity()
 	{
 		__thiz.callMethod<void>(
-			"rotate",
+			"loadIdentity",
+			"()V"
+		);
+	}
+	void Matrix3f::loadRotate(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"loadRotate",
 			"(F)V",
 			arg0
+		);
+	}
+	void Matrix3f::loadRotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	{
+		__thiz.callMethod<void>(
+			"loadRotate",
+			"(FFFF)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void Matrix3f::loadScale(jfloat arg0, jfloat arg1, jfloat arg2)
+	{
+		__thiz.callMethod<void>(
+			"loadScale",
+			"(FFF)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void Matrix3f::loadScale(jfloat arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"loadScale",
+			"(FF)V",
+			arg0,
+			arg1
 		);
 	}
 	void Matrix3f::loadTranslate(jfloat arg0, jfloat arg1)
@@ -172,51 +219,6 @@ namespace __jni_impl::android::renderscript
 		__thiz.callMethod<void>(
 			"transpose",
 			"()V"
-		);
-	}
-	void Matrix3f::loadIdentity()
-	{
-		__thiz.callMethod<void>(
-			"loadIdentity",
-			"()V"
-		);
-	}
-	void Matrix3f::loadRotate(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
-	{
-		__thiz.callMethod<void>(
-			"loadRotate",
-			"(FFFF)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void Matrix3f::loadRotate(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"loadRotate",
-			"(F)V",
-			arg0
-		);
-	}
-	void Matrix3f::loadScale(jfloat arg0, jfloat arg1)
-	{
-		__thiz.callMethod<void>(
-			"loadScale",
-			"(FF)V",
-			arg0,
-			arg1
-		);
-	}
-	void Matrix3f::loadScale(jfloat arg0, jfloat arg1, jfloat arg2)
-	{
-		__thiz.callMethod<void>(
-			"loadScale",
-			"(FFF)V",
-			arg0,
-			arg1,
-			arg2
 		);
 	}
 } // namespace __jni_impl::android::renderscript

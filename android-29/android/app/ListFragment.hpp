@@ -14,10 +14,6 @@ namespace __jni_impl::android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::android::widget
-{
-	class ListView;
-}
 namespace __jni_impl::android::view
 {
 	class LayoutInflater;
@@ -25,6 +21,10 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::view
 {
 	class ViewGroup;
+}
+namespace __jni_impl::android::widget
+{
+	class ListView;
 }
 
 namespace __jni_impl::android::app
@@ -40,25 +40,26 @@ namespace __jni_impl::android::app
 		// Methods
 		void onDestroyView();
 		void onViewCreated(__jni_impl::android::view::View arg0, __jni_impl::android::os::Bundle arg1);
-		void setListAdapter(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getListView();
+		void setEmptyText(jstring arg0);
+		void setEmptyText(const QString &arg0);
+		void setListShown(jboolean arg0);
+		void setListShownNoAnimation(jboolean arg0);
 		jint getSelectedItemPosition();
 		jlong getSelectedItemId();
 		void setSelection(jint arg0);
 		QAndroidJniObject onCreateView(__jni_impl::android::view::LayoutInflater arg0, __jni_impl::android::view::ViewGroup arg1, __jni_impl::android::os::Bundle arg2);
+		void setListAdapter(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getListView();
 		void onListItemClick(__jni_impl::android::widget::ListView arg0, __jni_impl::android::view::View arg1, jint arg2, jlong arg3);
 		QAndroidJniObject getListAdapter();
-		void setEmptyText(jstring arg0);
-		void setListShown(jboolean arg0);
-		void setListShownNoAnimation(jboolean arg0);
 	};
 } // namespace __jni_impl::android::app
 
 #include "../view/View.hpp"
 #include "../os/Bundle.hpp"
-#include "../widget/ListView.hpp"
 #include "../view/LayoutInflater.hpp"
 #include "../view/ViewGroup.hpp"
+#include "../widget/ListView.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -69,7 +70,8 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.ListFragment",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -89,19 +91,36 @@ namespace __jni_impl::android::app
 			arg1.__jniObject().object()
 		);
 	}
-	void ListFragment::setListAdapter(__jni_impl::__JniBaseClass arg0)
+	void ListFragment::setEmptyText(jstring arg0)
 	{
 		__thiz.callMethod<void>(
-			"setListAdapter",
-			"(Landroid/widget/ListAdapter;)V",
-			arg0.__jniObject().object()
+			"setEmptyText",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
 		);
 	}
-	QAndroidJniObject ListFragment::getListView()
+	void ListFragment::setEmptyText(const QString &arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getListView",
-			"()Landroid/widget/ListView;"
+		__thiz.callMethod<void>(
+			"setEmptyText",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void ListFragment::setListShown(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setListShown",
+			"(Z)V",
+			arg0
+		);
+	}
+	void ListFragment::setListShownNoAnimation(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setListShownNoAnimation",
+			"(Z)V",
+			arg0
 		);
 	}
 	jint ListFragment::getSelectedItemPosition()
@@ -136,6 +155,21 @@ namespace __jni_impl::android::app
 			arg2.__jniObject().object()
 		);
 	}
+	void ListFragment::setListAdapter(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setListAdapter",
+			"(Landroid/widget/ListAdapter;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ListFragment::getListView()
+	{
+		return __thiz.callObjectMethod(
+			"getListView",
+			"()Landroid/widget/ListView;"
+		);
+	}
 	void ListFragment::onListItemClick(__jni_impl::android::widget::ListView arg0, __jni_impl::android::view::View arg1, jint arg2, jlong arg3)
 	{
 		__thiz.callMethod<void>(
@@ -152,30 +186,6 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"getListAdapter",
 			"()Landroid/widget/ListAdapter;"
-		);
-	}
-	void ListFragment::setEmptyText(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEmptyText",
-			"(Ljava/lang/CharSequence;)V",
-			arg0
-		);
-	}
-	void ListFragment::setListShown(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setListShown",
-			"(Z)V",
-			arg0
-		);
-	}
-	void ListFragment::setListShownNoAnimation(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setListShownNoAnimation",
-			"(Z)V",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::app

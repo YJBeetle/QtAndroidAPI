@@ -38,7 +38,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.SumPathEffect",
 			"(Landroid/graphics/PathEffect;Landroid/graphics/PathEffect;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

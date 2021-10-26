@@ -35,6 +35,7 @@ namespace __jni_impl::java::lang
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jdouble arg0);
 		void __constructor(jfloat arg0);
 		
@@ -59,6 +60,7 @@ namespace __jni_impl::java::lang
 		jdouble doubleValue();
 		static QAndroidJniObject valueOf(jfloat arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 		static jstring toHexString(jfloat arg0);
 		static jint compare(jfloat arg0, jfloat arg1);
 		QAndroidJniObject resolveConstantDesc(__jni_impl::java::lang::invoke::MethodHandles_Lookup arg0);
@@ -66,6 +68,7 @@ namespace __jni_impl::java::lang
 		static jboolean isNaN(jfloat arg0);
 		jboolean isNaN();
 		static jfloat parseFloat(jstring arg0);
+		static jfloat parseFloat(const QString &arg0);
 		jboolean isInfinite();
 		static jboolean isInfinite(jfloat arg0);
 		static jboolean isFinite(jfloat arg0);
@@ -164,21 +167,32 @@ namespace __jni_impl::java::lang
 		__thiz = QAndroidJniObject(
 			"java.lang.Float",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Float::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.Float",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void Float::__constructor(jdouble arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Float",
 			"(D)V",
-			arg0);
+			arg0
+		);
 	}
 	void Float::__constructor(jfloat arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Float",
 			"(F)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -345,6 +359,15 @@ namespace __jni_impl::java::lang
 			arg0
 		);
 	}
+	QAndroidJniObject Float::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.lang.Float",
+			"valueOf",
+			"(Ljava/lang/String;)Ljava/lang/Float;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring Float::toHexString(jfloat arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -402,6 +425,15 @@ namespace __jni_impl::java::lang
 			"parseFloat",
 			"(Ljava/lang/String;)F",
 			arg0
+		);
+	}
+	jfloat Float::parseFloat(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jfloat>(
+			"java.lang.Float",
+			"parseFloat",
+			"(Ljava/lang/String;)F",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean Float::isInfinite()

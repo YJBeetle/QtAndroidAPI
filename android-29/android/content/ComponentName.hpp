@@ -26,7 +26,9 @@ namespace __jni_impl::android::content
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		void __constructor(__jni_impl::android::content::Context arg0, jclass arg1);
 		void __constructor(__jni_impl::android::content::Context arg0, jstring arg1);
+		void __constructor(__jni_impl::android::content::Context arg0, const QString &arg1);
 		void __constructor(jstring arg0, jstring arg1);
+		void __constructor(const QString &arg0, const QString &arg1);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -38,16 +40,19 @@ namespace __jni_impl::android::content
 		jstring getPackageName();
 		jstring toShortString();
 		jstring getClassName();
-		jint describeContents();
-		static void writeToParcel(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::os::Parcel arg1);
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		static QAndroidJniObject readFromParcel(__jni_impl::android::os::Parcel arg0);
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		static void writeToParcel(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::os::Parcel arg1);
 		static QAndroidJniObject createRelative(__jni_impl::android::content::Context arg0, jstring arg1);
+		static QAndroidJniObject createRelative(__jni_impl::android::content::Context arg0, const QString &arg1);
 		static QAndroidJniObject createRelative(jstring arg0, jstring arg1);
+		static QAndroidJniObject createRelative(const QString &arg0, const QString &arg1);
 		jstring getShortClassName();
 		jstring flattenToString();
 		jstring flattenToShortString();
 		static QAndroidJniObject unflattenFromString(jstring arg0);
+		static QAndroidJniObject unflattenFromString(const QString &arg0);
 	};
 } // namespace __jni_impl::android::content
 
@@ -72,7 +77,8 @@ namespace __jni_impl::android::content
 		__thiz = QAndroidJniObject(
 			"android.content.ComponentName",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ComponentName::__constructor(__jni_impl::android::content::Context arg0, jclass arg1)
 	{
@@ -80,7 +86,8 @@ namespace __jni_impl::android::content
 			"android.content.ComponentName",
 			"(Landroid/content/Context;Ljava/lang/Class;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void ComponentName::__constructor(__jni_impl::android::content::Context arg0, jstring arg1)
 	{
@@ -88,7 +95,17 @@ namespace __jni_impl::android::content
 			"android.content.ComponentName",
 			"(Landroid/content/Context;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void ComponentName::__constructor(__jni_impl::android::content::Context arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.ComponentName",
+			"(Landroid/content/Context;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void ComponentName::__constructor(jstring arg0, jstring arg1)
 	{
@@ -96,7 +113,17 @@ namespace __jni_impl::android::content
 			"android.content.ComponentName",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void ComponentName::__constructor(const QString &arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.ComponentName",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -166,11 +193,29 @@ namespace __jni_impl::android::content
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	QAndroidJniObject ComponentName::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.ComponentName",
+			"readFromParcel",
+			"(Landroid/os/Parcel;)Landroid/content/ComponentName;",
+			arg0.__jniObject().object()
+		);
+	}
 	jint ComponentName::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
+		);
+	}
+	void ComponentName::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 	void ComponentName::writeToParcel(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::os::Parcel arg1)
@@ -183,24 +228,6 @@ namespace __jni_impl::android::content
 			arg1.__jniObject().object()
 		);
 	}
-	void ComponentName::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject ComponentName::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ComponentName",
-			"readFromParcel",
-			"(Landroid/os/Parcel;)Landroid/content/ComponentName;",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject ComponentName::createRelative(__jni_impl::android::content::Context arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -211,6 +238,16 @@ namespace __jni_impl::android::content
 			arg1
 		);
 	}
+	QAndroidJniObject ComponentName::createRelative(__jni_impl::android::content::Context arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.ComponentName",
+			"createRelative",
+			"(Landroid/content/Context;Ljava/lang/String;)Landroid/content/ComponentName;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject ComponentName::createRelative(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -219,6 +256,16 @@ namespace __jni_impl::android::content
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/ComponentName;",
 			arg0,
 			arg1
+		);
+	}
+	QAndroidJniObject ComponentName::createRelative(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.ComponentName",
+			"createRelative",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/ComponentName;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	jstring ComponentName::getShortClassName()
@@ -249,6 +296,15 @@ namespace __jni_impl::android::content
 			"unflattenFromString",
 			"(Ljava/lang/String;)Landroid/content/ComponentName;",
 			arg0
+		);
+	}
+	QAndroidJniObject ComponentName::unflattenFromString(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.ComponentName",
+			"unflattenFromString",
+			"(Ljava/lang/String;)Landroid/content/ComponentName;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::content

@@ -61,13 +61,15 @@ namespace __jni_impl::java::util::concurrent
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.Phaser",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void Phaser::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.Phaser",
-			"()V");
+			"()V"
+		);
 	}
 	void Phaser::__constructor(__jni_impl::java::util::concurrent::Phaser arg0, jint arg1)
 	{
@@ -75,14 +77,16 @@ namespace __jni_impl::java::util::concurrent
 			"java.util.concurrent.Phaser",
 			"(Ljava/util/concurrent/Phaser;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void Phaser::__constructor(__jni_impl::java::util::concurrent::Phaser arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.Phaser",
 			"(Ljava/util/concurrent/Phaser;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

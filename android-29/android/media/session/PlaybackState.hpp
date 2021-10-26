@@ -61,15 +61,15 @@ namespace __jni_impl::android::media::session
 		jlong getActions();
 		jint getState();
 		jstring getErrorMessage();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getExtras();
-		jlong getPosition();
 		jlong getBufferedPosition();
 		jfloat getPlaybackSpeed();
 		QAndroidJniObject getCustomActions();
 		jlong getLastPositionUpdateTime();
 		jlong getActiveQueueItemId();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getExtras();
+		jlong getPosition();
 	};
 } // namespace __jni_impl::android::media::session
 
@@ -342,36 +342,6 @@ namespace __jni_impl::android::media::session
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	jint PlaybackState::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void PlaybackState::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject PlaybackState::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
-		);
-	}
-	jlong PlaybackState::getPosition()
-	{
-		return __thiz.callMethod<jlong>(
-			"getPosition",
-			"()J"
-		);
-	}
 	jlong PlaybackState::getBufferedPosition()
 	{
 		return __thiz.callMethod<jlong>(
@@ -404,6 +374,36 @@ namespace __jni_impl::android::media::session
 	{
 		return __thiz.callMethod<jlong>(
 			"getActiveQueueItemId",
+			"()J"
+		);
+	}
+	jint PlaybackState::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void PlaybackState::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	QAndroidJniObject PlaybackState::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	jlong PlaybackState::getPosition()
+	{
+		return __thiz.callMethod<jlong>(
+			"getPosition",
 			"()J"
 		);
 	}

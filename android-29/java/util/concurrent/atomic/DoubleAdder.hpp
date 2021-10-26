@@ -44,7 +44,8 @@ namespace __jni_impl::java::util::concurrent::atomic
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.atomic.DoubleAdder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

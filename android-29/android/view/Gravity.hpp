@@ -260,7 +260,8 @@ namespace __jni_impl::android::view
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.Gravity",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

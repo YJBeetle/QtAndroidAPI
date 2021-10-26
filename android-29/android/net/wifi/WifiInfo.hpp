@@ -5,6 +5,10 @@
 
 #include "../../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::os
+{
+	class Parcel;
+}
 namespace __jni_impl::android::net::wifi
 {
 	class SupplicantState;
@@ -12,10 +16,6 @@ namespace __jni_impl::android::net::wifi
 namespace __jni_impl::android::net
 {
 	class NetworkInfo_DetailedState;
-}
-namespace __jni_impl::android::os
-{
-	class Parcel;
 }
 
 namespace __jni_impl::android::net::wifi
@@ -33,6 +33,9 @@ namespace __jni_impl::android::net::wifi
 		
 		// Methods
 		jstring toString();
+		jint getRssi();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jstring getSSID();
 		jstring getBSSID();
 		jint getLinkSpeed();
@@ -47,15 +50,12 @@ namespace __jni_impl::android::net::wifi
 		jint getIpAddress();
 		jboolean getHiddenSSID();
 		static QAndroidJniObject getDetailedStateOf(__jni_impl::android::net::wifi::SupplicantState arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getRssi();
 	};
 } // namespace __jni_impl::android::net::wifi
 
+#include "../../os/Parcel.hpp"
 #include "SupplicantState.hpp"
 #include "../NetworkInfo_DetailedState.hpp"
-#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::net::wifi
 {
@@ -99,6 +99,29 @@ namespace __jni_impl::android::net::wifi
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jint WifiInfo::getRssi()
+	{
+		return __thiz.callMethod<jint>(
+			"getRssi",
+			"()I"
+		);
+	}
+	jint WifiInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void WifiInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 	jstring WifiInfo::getSSID()
 	{
@@ -198,29 +221,6 @@ namespace __jni_impl::android::net::wifi
 			"getDetailedStateOf",
 			"(Landroid/net/wifi/SupplicantState;)Landroid/net/NetworkInfo$DetailedState;",
 			arg0.__jniObject().object()
-		);
-	}
-	jint WifiInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void WifiInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jint WifiInfo::getRssi()
-	{
-		return __thiz.callMethod<jint>(
-			"getRssi",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::net::wifi

@@ -63,7 +63,8 @@ namespace __jni_impl::android::speech
 	{
 		__thiz = QAndroidJniObject(
 			"android.speech.RecognitionService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

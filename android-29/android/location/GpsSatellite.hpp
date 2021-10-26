@@ -17,13 +17,13 @@ namespace __jni_impl::android::location
 		void __constructor();
 		
 		// Methods
+		jfloat getElevation();
 		jboolean hasEphemeris();
 		jint getPrn();
 		jfloat getSnr();
 		jfloat getAzimuth();
 		jboolean hasAlmanac();
 		jboolean usedInFix();
-		jfloat getElevation();
 	};
 } // namespace __jni_impl::android::location
 
@@ -41,6 +41,13 @@ namespace __jni_impl::android::location
 	}
 	
 	// Methods
+	jfloat GpsSatellite::getElevation()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getElevation",
+			"()F"
+		);
+	}
 	jboolean GpsSatellite::hasEphemeris()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -81,13 +88,6 @@ namespace __jni_impl::android::location
 		return __thiz.callMethod<jboolean>(
 			"usedInFix",
 			"()Z"
-		);
-	}
-	jfloat GpsSatellite::getElevation()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getElevation",
-			"()F"
 		);
 	}
 } // namespace __jni_impl::android::location

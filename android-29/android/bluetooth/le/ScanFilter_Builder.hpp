@@ -27,7 +27,9 @@ namespace __jni_impl::android::bluetooth::le
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject setDeviceName(jstring arg0);
+		QAndroidJniObject setDeviceName(const QString &arg0);
 		QAndroidJniObject setDeviceAddress(jstring arg0);
+		QAndroidJniObject setDeviceAddress(const QString &arg0);
 		QAndroidJniObject setServiceUuid(__jni_impl::android::os::ParcelUuid arg0);
 		QAndroidJniObject setServiceUuid(__jni_impl::android::os::ParcelUuid arg0, __jni_impl::android::os::ParcelUuid arg1);
 		QAndroidJniObject setServiceSolicitationUuid(__jni_impl::android::os::ParcelUuid arg0, __jni_impl::android::os::ParcelUuid arg1);
@@ -51,7 +53,8 @@ namespace __jni_impl::android::bluetooth::le
 	{
 		__thiz = QAndroidJniObject(
 			"android.bluetooth.le.ScanFilter$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -70,12 +73,28 @@ namespace __jni_impl::android::bluetooth::le
 			arg0
 		);
 	}
+	QAndroidJniObject ScanFilter_Builder::setDeviceName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setDeviceName",
+			"(Ljava/lang/String;)Landroid/bluetooth/le/ScanFilter$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject ScanFilter_Builder::setDeviceAddress(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setDeviceAddress",
 			"(Ljava/lang/String;)Landroid/bluetooth/le/ScanFilter$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject ScanFilter_Builder::setDeviceAddress(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setDeviceAddress",
+			"(Ljava/lang/String;)Landroid/bluetooth/le/ScanFilter$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject ScanFilter_Builder::setServiceUuid(__jni_impl::android::os::ParcelUuid arg0)

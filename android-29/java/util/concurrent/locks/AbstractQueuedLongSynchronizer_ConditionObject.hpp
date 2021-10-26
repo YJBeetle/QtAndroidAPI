@@ -53,7 +53,8 @@ namespace __jni_impl::java::util::concurrent::locks
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.locks.AbstractQueuedLongSynchronizer$ConditionObject",
 			"(Ljava/util/concurrent/locks/AbstractQueuedLongSynchronizer;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

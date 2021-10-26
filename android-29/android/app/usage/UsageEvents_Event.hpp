@@ -41,11 +41,11 @@ namespace __jni_impl::android::app::usage
 		// Methods
 		jstring getPackageName();
 		jstring getClassName();
+		jlong getTimeStamp();
+		QAndroidJniObject getConfiguration();
+		jint getEventType();
 		jstring getShortcutId();
 		jint getAppStandbyBucket();
-		jlong getTimeStamp();
-		jint getEventType();
-		QAndroidJniObject getConfiguration();
 	};
 } // namespace __jni_impl::android::app::usage
 
@@ -186,7 +186,8 @@ namespace __jni_impl::android::app::usage
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.usage.UsageEvents$Event",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -204,6 +205,27 @@ namespace __jni_impl::android::app::usage
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	jlong UsageEvents_Event::getTimeStamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimeStamp",
+			"()J"
+		);
+	}
+	QAndroidJniObject UsageEvents_Event::getConfiguration()
+	{
+		return __thiz.callObjectMethod(
+			"getConfiguration",
+			"()Landroid/content/res/Configuration;"
+		);
+	}
+	jint UsageEvents_Event::getEventType()
+	{
+		return __thiz.callMethod<jint>(
+			"getEventType",
+			"()I"
+		);
+	}
 	jstring UsageEvents_Event::getShortcutId()
 	{
 		return __thiz.callObjectMethod(
@@ -216,27 +238,6 @@ namespace __jni_impl::android::app::usage
 		return __thiz.callMethod<jint>(
 			"getAppStandbyBucket",
 			"()I"
-		);
-	}
-	jlong UsageEvents_Event::getTimeStamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimeStamp",
-			"()J"
-		);
-	}
-	jint UsageEvents_Event::getEventType()
-	{
-		return __thiz.callMethod<jint>(
-			"getEventType",
-			"()I"
-		);
-	}
-	QAndroidJniObject UsageEvents_Event::getConfiguration()
-	{
-		return __thiz.callObjectMethod(
-			"getConfiguration",
-			"()Landroid/content/res/Configuration;"
 		);
 	}
 } // namespace __jni_impl::android::app::usage

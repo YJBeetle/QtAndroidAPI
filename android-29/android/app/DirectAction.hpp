@@ -5,6 +5,10 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::content
+{
+	class LocusId;
+}
 namespace __jni_impl::android::os
 {
 	class Parcel;
@@ -12,10 +16,6 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::os
 {
 	class Bundle;
-}
-namespace __jni_impl::android::content
-{
-	class LocusId;
 }
 
 namespace __jni_impl::android::app
@@ -33,16 +33,16 @@ namespace __jni_impl::android::app
 		jboolean equals(jobject arg0);
 		jint hashCode();
 		jstring getId();
+		QAndroidJniObject getLocusId();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getExtras();
-		QAndroidJniObject getLocusId();
 	};
 } // namespace __jni_impl::android::app
 
+#include "../content/LocusId.hpp"
 #include "../os/Parcel.hpp"
 #include "../os/Bundle.hpp"
-#include "../content/LocusId.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -87,6 +87,13 @@ namespace __jni_impl::android::app
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	QAndroidJniObject DirectAction::getLocusId()
+	{
+		return __thiz.callObjectMethod(
+			"getLocusId",
+			"()Landroid/content/LocusId;"
+		);
+	}
 	jint DirectAction::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -108,13 +115,6 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
-		);
-	}
-	QAndroidJniObject DirectAction::getLocusId()
-	{
-		return __thiz.callObjectMethod(
-			"getLocusId",
-			"()Landroid/content/LocusId;"
 		);
 	}
 } // namespace __jni_impl::android::app

@@ -36,12 +36,15 @@ namespace __jni_impl::java::net
 		jbyteArray getAddress();
 		jstring getHostName();
 		static QAndroidJniObject getByName(jstring arg0);
+		static QAndroidJniObject getByName(const QString &arg0);
 		jboolean isLinkLocalAddress();
 		jboolean isReachable(__jni_impl::java::net::NetworkInterface arg0, jint arg1, jint arg2);
 		jboolean isReachable(jint arg0);
 		static jarray getAllByName(jstring arg0);
+		static jarray getAllByName(const QString &arg0);
 		static QAndroidJniObject getByAddress(jbyteArray arg0);
 		static QAndroidJniObject getByAddress(jstring arg0, jbyteArray arg1);
+		static QAndroidJniObject getByAddress(const QString &arg0, jbyteArray arg1);
 		jboolean isMulticastAddress();
 		jboolean isAnyLocalAddress();
 		jboolean isLoopbackAddress();
@@ -126,6 +129,15 @@ namespace __jni_impl::java::net
 			arg0
 		);
 	}
+	QAndroidJniObject InetAddress::getByName(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.net.InetAddress",
+			"getByName",
+			"(Ljava/lang/String;)Ljava/net/InetAddress;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jboolean InetAddress::isLinkLocalAddress()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -160,6 +172,15 @@ namespace __jni_impl::java::net
 			arg0
 		).object<jarray>();
 	}
+	jarray InetAddress::getAllByName(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.net.InetAddress",
+			"getAllByName",
+			"(Ljava/lang/String;)[Ljava/net/InetAddress;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jarray>();
+	}
 	QAndroidJniObject InetAddress::getByAddress(jbyteArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -176,6 +197,16 @@ namespace __jni_impl::java::net
 			"getByAddress",
 			"(Ljava/lang/String;[B)Ljava/net/InetAddress;",
 			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject InetAddress::getByAddress(const QString &arg0, jbyteArray arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.net.InetAddress",
+			"getByAddress",
+			"(Ljava/lang/String;[B)Ljava/net/InetAddress;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

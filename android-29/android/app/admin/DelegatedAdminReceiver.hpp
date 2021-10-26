@@ -31,6 +31,7 @@ namespace __jni_impl::android::app::admin
 		
 		// Methods
 		jstring onChoosePrivateKeyAlias(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, jint arg2, __jni_impl::android::net::Uri arg3, jstring arg4);
+		jstring onChoosePrivateKeyAlias(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, jint arg2, __jni_impl::android::net::Uri arg3, const QString &arg4);
 		void onNetworkLogsAvailable(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, jlong arg2, jint arg3);
 		void onReceive(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
 	};
@@ -49,7 +50,8 @@ namespace __jni_impl::android::app::admin
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.admin.DelegatedAdminReceiver",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -63,6 +65,18 @@ namespace __jni_impl::android::app::admin
 			arg2,
 			arg3.__jniObject().object(),
 			arg4
+		).object<jstring>();
+	}
+	jstring DelegatedAdminReceiver::onChoosePrivateKeyAlias(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, jint arg2, __jni_impl::android::net::Uri arg3, const QString &arg4)
+	{
+		return __thiz.callObjectMethod(
+			"onChoosePrivateKeyAlias",
+			"(Landroid/content/Context;Landroid/content/Intent;ILandroid/net/Uri;Ljava/lang/String;)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object(),
+			QAndroidJniObject::fromString(arg4).object<jstring>()
 		).object<jstring>();
 	}
 	void DelegatedAdminReceiver::onNetworkLogsAvailable(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1, jlong arg2, jint arg3)

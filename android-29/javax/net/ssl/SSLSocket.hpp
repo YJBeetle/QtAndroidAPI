@@ -26,7 +26,6 @@ namespace __jni_impl::javax::net::ssl
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getSession();
 		jarray getEnabledCipherSuites();
 		jarray getEnabledProtocols();
 		jboolean getNeedClientAuth();
@@ -51,6 +50,7 @@ namespace __jni_impl::javax::net::ssl
 		void addHandshakeCompletedListener(__jni_impl::__JniBaseClass arg0);
 		void removeHandshakeCompletedListener(__jni_impl::__JniBaseClass arg0);
 		void startHandshake();
+		QAndroidJniObject getSession();
 	};
 } // namespace __jni_impl::javax::net::ssl
 
@@ -70,13 +70,6 @@ namespace __jni_impl::javax::net::ssl
 	}
 	
 	// Methods
-	QAndroidJniObject SSLSocket::getSession()
-	{
-		return __thiz.callObjectMethod(
-			"getSession",
-			"()Ljavax/net/ssl/SSLSession;"
-		);
-	}
 	jarray SSLSocket::getEnabledCipherSuites()
 	{
 		return __thiz.callObjectMethod(
@@ -253,6 +246,13 @@ namespace __jni_impl::javax::net::ssl
 		__thiz.callMethod<void>(
 			"startHandshake",
 			"()V"
+		);
+	}
+	QAndroidJniObject SSLSocket::getSession()
+	{
+		return __thiz.callObjectMethod(
+			"getSession",
+			"()Ljavax/net/ssl/SSLSession;"
 		);
 	}
 } // namespace __jni_impl::javax::net::ssl

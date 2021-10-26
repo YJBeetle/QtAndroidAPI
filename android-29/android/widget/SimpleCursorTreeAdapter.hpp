@@ -41,6 +41,7 @@ namespace __jni_impl::android::widget
 		QAndroidJniObject getViewBinder();
 		void setViewBinder(__jni_impl::__JniBaseClass arg0);
 		void setViewText(__jni_impl::android::widget::TextView arg0, jstring arg1);
+		void setViewText(__jni_impl::android::widget::TextView arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -66,7 +67,8 @@ namespace __jni_impl::android::widget
 			arg4,
 			arg5,
 			arg6,
-			arg7);
+			arg7
+		);
 	}
 	void SimpleCursorTreeAdapter::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, jint arg6, jarray arg7, jintArray arg8)
 	{
@@ -81,7 +83,8 @@ namespace __jni_impl::android::widget
 			arg5,
 			arg6,
 			arg7,
-			arg8);
+			arg8
+		);
 	}
 	void SimpleCursorTreeAdapter::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3, jarray arg4, jintArray arg5, jint arg6, jint arg7, jarray arg8, jintArray arg9)
 	{
@@ -97,7 +100,8 @@ namespace __jni_impl::android::widget
 			arg6,
 			arg7,
 			arg8,
-			arg9);
+			arg9
+		);
 	}
 	
 	// Methods
@@ -123,6 +127,15 @@ namespace __jni_impl::android::widget
 			"(Landroid/widget/TextView;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	void SimpleCursorTreeAdapter::setViewText(__jni_impl::android::widget::TextView arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"setViewText",
+			"(Landroid/widget/TextView;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::widget

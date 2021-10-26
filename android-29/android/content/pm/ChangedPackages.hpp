@@ -23,9 +23,9 @@ namespace __jni_impl::android::content::pm
 		
 		// Methods
 		jint getSequenceNumber();
-		QAndroidJniObject getPackageNames();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getPackageNames();
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -50,7 +50,8 @@ namespace __jni_impl::android::content::pm
 			"android.content.pm.ChangedPackages",
 			"(ILjava/util/List;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -59,13 +60,6 @@ namespace __jni_impl::android::content::pm
 		return __thiz.callMethod<jint>(
 			"getSequenceNumber",
 			"()I"
-		);
-	}
-	QAndroidJniObject ChangedPackages::getPackageNames()
-	{
-		return __thiz.callObjectMethod(
-			"getPackageNames",
-			"()Ljava/util/List;"
 		);
 	}
 	jint ChangedPackages::describeContents()
@@ -82,6 +76,13 @@ namespace __jni_impl::android::content::pm
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	QAndroidJniObject ChangedPackages::getPackageNames()
+	{
+		return __thiz.callObjectMethod(
+			"getPackageNames",
+			"()Ljava/util/List;"
 		);
 	}
 } // namespace __jni_impl::android::content::pm

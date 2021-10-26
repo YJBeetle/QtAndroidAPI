@@ -40,7 +40,8 @@ namespace __jni_impl::android::graphics
 			"android.graphics.PorterDuffColorFilter",
 			"(ILandroid/graphics/PorterDuff$Mode;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

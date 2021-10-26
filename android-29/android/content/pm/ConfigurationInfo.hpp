@@ -108,14 +108,16 @@ namespace __jni_impl::android::content::pm
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.ConfigurationInfo",
-			"()V");
+			"()V"
+		);
 	}
 	void ConfigurationInfo::__constructor(__jni_impl::android::content::pm::ConfigurationInfo arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.pm.ConfigurationInfo",
 			"(Landroid/content/pm/ConfigurationInfo;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

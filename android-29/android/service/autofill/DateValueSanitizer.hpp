@@ -53,7 +53,8 @@ namespace __jni_impl::android::service::autofill
 		__thiz = QAndroidJniObject(
 			"android.service.autofill.DateValueSanitizer",
 			"(Landroid/icu/text/DateFormat;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

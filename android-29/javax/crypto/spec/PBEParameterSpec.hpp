@@ -18,9 +18,9 @@ namespace __jni_impl::javax::crypto::spec
 		void __constructor(jbyteArray arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
 		
 		// Methods
+		QAndroidJniObject getParameterSpec();
 		jbyteArray getSalt();
 		jint getIterationCount();
-		QAndroidJniObject getParameterSpec();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -36,7 +36,8 @@ namespace __jni_impl::javax::crypto::spec
 			"javax.crypto.spec.PBEParameterSpec",
 			"([BI)V",
 			arg0,
-			arg1);
+			arg1
+		);
 	}
 	void PBEParameterSpec::__constructor(jbyteArray arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
 	{
@@ -45,10 +46,18 @@ namespace __jni_impl::javax::crypto::spec
 			"([BILjava/security/spec/AlgorithmParameterSpec;)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object());
+			arg2.__jniObject().object()
+		);
 	}
 	
 	// Methods
+	QAndroidJniObject PBEParameterSpec::getParameterSpec()
+	{
+		return __thiz.callObjectMethod(
+			"getParameterSpec",
+			"()Ljava/security/spec/AlgorithmParameterSpec;"
+		);
+	}
 	jbyteArray PBEParameterSpec::getSalt()
 	{
 		return __thiz.callObjectMethod(
@@ -61,13 +70,6 @@ namespace __jni_impl::javax::crypto::spec
 		return __thiz.callMethod<jint>(
 			"getIterationCount",
 			"()I"
-		);
-	}
-	QAndroidJniObject PBEParameterSpec::getParameterSpec()
-	{
-		return __thiz.callObjectMethod(
-			"getParameterSpec",
-			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
 } // namespace __jni_impl::javax::crypto::spec

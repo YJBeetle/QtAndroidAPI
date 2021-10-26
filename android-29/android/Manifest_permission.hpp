@@ -1452,7 +1452,8 @@ namespace __jni_impl::android
 	{
 		__thiz = QAndroidJniObject(
 			"android.Manifest$permission",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

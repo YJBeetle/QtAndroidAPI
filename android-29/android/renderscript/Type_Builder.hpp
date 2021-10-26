@@ -54,7 +54,8 @@ namespace __jni_impl::android::renderscript
 			"android.renderscript.Type$Builder",
 			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

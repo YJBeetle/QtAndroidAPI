@@ -83,7 +83,8 @@ namespace __jni_impl::android::telephony
 			arg3,
 			arg4,
 			arg5,
-			arg6.__jniObject().object());
+			arg6.__jniObject().object()
+		);
 	}
 	
 	// Methods

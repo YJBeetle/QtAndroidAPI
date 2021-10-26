@@ -21,10 +21,13 @@ namespace __jni_impl::android::drm
 		
 		// Constructors
 		void __constructor(jint arg0, jstring arg1);
+		void __constructor(jint arg0, const QString &arg1);
 		
 		// Methods
 		jobject get(jstring arg0);
+		jobject get(const QString &arg0);
 		void put(jstring arg0, jobject arg1);
+		void put(const QString &arg0, jobject arg1);
 		QAndroidJniObject iterator();
 		QAndroidJniObject keyIterator();
 		jstring getMimeType();
@@ -88,7 +91,17 @@ namespace __jni_impl::android::drm
 			"android.drm.DrmInfoRequest",
 			"(ILjava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void DrmInfoRequest::__constructor(jint arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.drm.DrmInfoRequest",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -100,12 +113,29 @@ namespace __jni_impl::android::drm
 			arg0
 		).object<jobject>();
 	}
+	jobject DrmInfoRequest::get(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"get",
+			"(Ljava/lang/String;)Ljava/lang/Object;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jobject>();
+	}
 	void DrmInfoRequest::put(jstring arg0, jobject arg1)
 	{
 		__thiz.callMethod<void>(
 			"put",
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			arg0,
+			arg1
+		);
+	}
+	void DrmInfoRequest::put(const QString &arg0, jobject arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/String;Ljava/lang/Object;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

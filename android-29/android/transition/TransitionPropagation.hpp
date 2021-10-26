@@ -5,10 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::transition
-{
-	class TransitionValues;
-}
 namespace __jni_impl::android::view
 {
 	class ViewGroup;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::transition
 {
 	class Transition;
+}
+namespace __jni_impl::android::transition
+{
+	class TransitionValues;
 }
 
 namespace __jni_impl::android::transition
@@ -29,15 +29,15 @@ namespace __jni_impl::android::transition
 		void __constructor();
 		
 		// Methods
+		jlong getStartDelay(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::Transition arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3);
 		void captureValues(__jni_impl::android::transition::TransitionValues arg0);
 		jarray getPropagationProperties();
-		jlong getStartDelay(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::Transition arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3);
 	};
 } // namespace __jni_impl::android::transition
 
-#include "TransitionValues.hpp"
 #include "../view/ViewGroup.hpp"
 #include "Transition.hpp"
+#include "TransitionValues.hpp"
 
 namespace __jni_impl::android::transition
 {
@@ -48,10 +48,22 @@ namespace __jni_impl::android::transition
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.TransitionPropagation",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
+	jlong TransitionPropagation::getStartDelay(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::Transition arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3)
+	{
+		return __thiz.callMethod<jlong>(
+			"getStartDelay",
+			"(Landroid/view/ViewGroup;Landroid/transition/Transition;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)J",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object()
+		);
+	}
 	void TransitionPropagation::captureValues(__jni_impl::android::transition::TransitionValues arg0)
 	{
 		__thiz.callMethod<void>(
@@ -66,17 +78,6 @@ namespace __jni_impl::android::transition
 			"getPropagationProperties",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
-	}
-	jlong TransitionPropagation::getStartDelay(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::Transition arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3)
-	{
-		return __thiz.callMethod<jlong>(
-			"getStartDelay",
-			"(Landroid/view/ViewGroup;Landroid/transition/Transition;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)J",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
 	}
 } // namespace __jni_impl::android::transition
 

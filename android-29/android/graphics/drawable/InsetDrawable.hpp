@@ -78,7 +78,8 @@ namespace __jni_impl::android::graphics::drawable
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void InsetDrawable::__constructor(__jni_impl::android::graphics::drawable::Drawable arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
@@ -89,7 +90,8 @@ namespace __jni_impl::android::graphics::drawable
 			arg1,
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
 	}
 	void InsetDrawable::__constructor(__jni_impl::android::graphics::drawable::Drawable arg0, jfloat arg1)
 	{
@@ -97,7 +99,8 @@ namespace __jni_impl::android::graphics::drawable
 			"android.graphics.drawable.InsetDrawable",
 			"(Landroid/graphics/drawable/Drawable;F)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void InsetDrawable::__constructor(__jni_impl::android::graphics::drawable::Drawable arg0, jint arg1)
 	{
@@ -105,7 +108,8 @@ namespace __jni_impl::android::graphics::drawable
 			"android.graphics.drawable.InsetDrawable",
 			"(Landroid/graphics/drawable/Drawable;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods

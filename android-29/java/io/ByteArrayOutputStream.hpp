@@ -28,6 +28,7 @@ namespace __jni_impl::java::io
 		
 		// Methods
 		jstring toString(jstring arg0);
+		jstring toString(const QString &arg0);
 		jstring toString(__jni_impl::java::nio::charset::Charset arg0);
 		jstring toString();
 		jstring toString(jint arg0);
@@ -54,14 +55,16 @@ namespace __jni_impl::java::io
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.ByteArrayOutputStream",
-			"()V");
+			"()V"
+		);
 	}
 	void ByteArrayOutputStream::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.ByteArrayOutputStream",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -71,6 +74,14 @@ namespace __jni_impl::java::io
 			"toString",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring ByteArrayOutputStream::toString(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring ByteArrayOutputStream::toString(__jni_impl::java::nio::charset::Charset arg0)

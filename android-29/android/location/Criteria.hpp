@@ -140,14 +140,16 @@ namespace __jni_impl::android::location
 	{
 		__thiz = QAndroidJniObject(
 			"android.location.Criteria",
-			"()V");
+			"()V"
+		);
 	}
 	void Criteria::__constructor(__jni_impl::android::location::Criteria arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.location.Criteria",
 			"(Landroid/location/Criteria;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

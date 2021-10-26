@@ -54,6 +54,7 @@ namespace __jni_impl::android::icu::lang
 		
 		// Methods
 		static jstring getName(jstring arg0, jstring arg1);
+		static jstring getName(const QString &arg0, const QString &arg1);
 		static jstring getName(jint arg0);
 		static jboolean isJavaIdentifierStart(jint arg0);
 		static jboolean isJavaIdentifierPart(jint arg0);
@@ -63,22 +64,32 @@ namespace __jni_impl::android::icu::lang
 		static jboolean isUpperCase(jint arg0);
 		static jboolean isWhitespace(jint arg0);
 		static jint codePointAt(jstring arg0, jint arg1);
+		static jint codePointAt(const QString &arg0, jint arg1);
 		static jint codePointAt(jcharArray arg0, jint arg1);
 		static jint codePointAt(jcharArray arg0, jint arg1, jint arg2);
 		static jint codePointBefore(jcharArray arg0, jint arg1);
 		static jint codePointBefore(jstring arg0, jint arg1);
+		static jint codePointBefore(const QString &arg0, jint arg1);
 		static jint codePointBefore(jcharArray arg0, jint arg1, jint arg2);
 		static jint codePointCount(jstring arg0, jint arg1, jint arg2);
+		static jint codePointCount(const QString &arg0, jint arg1, jint arg2);
 		static jint codePointCount(jcharArray arg0, jint arg1, jint arg2);
 		static jint offsetByCodePoints(jstring arg0, jint arg1, jint arg2);
+		static jint offsetByCodePoints(const QString &arg0, jint arg1, jint arg2);
 		static jint offsetByCodePoints(jcharArray arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		static jstring toLowerCase(__jni_impl::java::util::Locale arg0, jstring arg1);
+		static jstring toLowerCase(__jni_impl::java::util::Locale arg0, const QString &arg1);
 		static jstring toLowerCase(jstring arg0);
+		static jstring toLowerCase(const QString &arg0);
 		static jint toLowerCase(jint arg0);
 		static jstring toLowerCase(__jni_impl::android::icu::util::ULocale arg0, jstring arg1);
+		static jstring toLowerCase(__jni_impl::android::icu::util::ULocale arg0, const QString &arg1);
 		static jstring toUpperCase(jstring arg0);
+		static jstring toUpperCase(const QString &arg0);
 		static jstring toUpperCase(__jni_impl::java::util::Locale arg0, jstring arg1);
+		static jstring toUpperCase(__jni_impl::java::util::Locale arg0, const QString &arg1);
 		static jstring toUpperCase(__jni_impl::android::icu::util::ULocale arg0, jstring arg1);
+		static jstring toUpperCase(__jni_impl::android::icu::util::ULocale arg0, const QString &arg1);
 		static jint toUpperCase(jint arg0);
 		static jcharArray toChars(jint arg0);
 		static jint toChars(jint arg0, jcharArray arg1, jint arg2);
@@ -96,10 +107,15 @@ namespace __jni_impl::android::icu::lang
 		static jboolean isUnicodeIdentifierPart(jint arg0);
 		static jboolean isIdentifierIgnorable(jint arg0);
 		static jstring toTitleCase(__jni_impl::java::util::Locale arg0, jstring arg1, __jni_impl::android::icu::text::BreakIterator arg2, jint arg3);
+		static jstring toTitleCase(__jni_impl::java::util::Locale arg0, const QString &arg1, __jni_impl::android::icu::text::BreakIterator arg2, jint arg3);
 		static jstring toTitleCase(__jni_impl::android::icu::util::ULocale arg0, jstring arg1, __jni_impl::android::icu::text::BreakIterator arg2);
+		static jstring toTitleCase(__jni_impl::android::icu::util::ULocale arg0, const QString &arg1, __jni_impl::android::icu::text::BreakIterator arg2);
 		static jstring toTitleCase(jstring arg0, __jni_impl::android::icu::text::BreakIterator arg1);
+		static jstring toTitleCase(const QString &arg0, __jni_impl::android::icu::text::BreakIterator arg1);
 		static jstring toTitleCase(__jni_impl::java::util::Locale arg0, jstring arg1, __jni_impl::android::icu::text::BreakIterator arg2);
+		static jstring toTitleCase(__jni_impl::java::util::Locale arg0, const QString &arg1, __jni_impl::android::icu::text::BreakIterator arg2);
 		static jstring toTitleCase(__jni_impl::android::icu::util::ULocale arg0, jstring arg1, __jni_impl::android::icu::text::BreakIterator arg2, jint arg3);
+		static jstring toTitleCase(__jni_impl::android::icu::util::ULocale arg0, const QString &arg1, __jni_impl::android::icu::text::BreakIterator arg2, jint arg3);
 		static jint toTitleCase(jint arg0);
 		static jint digit(jint arg0, jint arg1);
 		static jint digit(jint arg0);
@@ -121,21 +137,29 @@ namespace __jni_impl::android::icu::lang
 		static jboolean isBaseForm(jint arg0);
 		static jint getBidiPairedBracket(jint arg0);
 		static jboolean isLegal(jstring arg0);
+		static jboolean isLegal(const QString &arg0);
 		static jboolean isLegal(jint arg0);
 		static QAndroidJniObject getUnicodeVersion();
 		static jstring getExtendedName(jint arg0);
 		static jstring getNameAlias(jint arg0);
 		static jint getCharFromName(jstring arg0);
+		static jint getCharFromName(const QString &arg0);
 		static jint getCharFromExtendedName(jstring arg0);
+		static jint getCharFromExtendedName(const QString &arg0);
 		static jint getCharFromNameAlias(jstring arg0);
+		static jint getCharFromNameAlias(const QString &arg0);
 		static jstring getPropertyName(jint arg0, jint arg1);
 		static jint getPropertyEnum(jstring arg0);
+		static jint getPropertyEnum(const QString &arg0);
 		static jstring getPropertyValueName(jint arg0, jint arg1, jint arg2);
 		static jint getPropertyValueEnum(jint arg0, jstring arg1);
+		static jint getPropertyValueEnum(jint arg0, const QString &arg1);
 		static jint foldCase(jint arg0, jint arg1);
 		static jstring foldCase(jstring arg0, jboolean arg1);
+		static jstring foldCase(const QString &arg0, jboolean arg1);
 		static jint foldCase(jint arg0, jboolean arg1);
 		static jstring foldCase(jstring arg0, jint arg1);
+		static jstring foldCase(const QString &arg0, jint arg1);
 		static jint getHanNumericValue(jint arg0);
 		static QAndroidJniObject getTypeIterator();
 		static QAndroidJniObject getNameIterator();
@@ -322,6 +346,16 @@ namespace __jni_impl::android::icu::lang
 			arg1
 		).object<jstring>();
 	}
+	jstring UCharacter::getName(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UCharacter",
+			"getName",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		).object<jstring>();
+	}
 	jstring UCharacter::getName(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -404,6 +438,16 @@ namespace __jni_impl::android::icu::lang
 			arg1
 		);
 	}
+	jint UCharacter::codePointAt(const QString &arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.icu.lang.UCharacter",
+			"codePointAt",
+			"(Ljava/lang/CharSequence;I)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	jint UCharacter::codePointAt(jcharArray arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -445,6 +489,16 @@ namespace __jni_impl::android::icu::lang
 			arg1
 		);
 	}
+	jint UCharacter::codePointBefore(const QString &arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.icu.lang.UCharacter",
+			"codePointBefore",
+			"(Ljava/lang/CharSequence;I)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	jint UCharacter::codePointBefore(jcharArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -467,6 +521,17 @@ namespace __jni_impl::android::icu::lang
 			arg2
 		);
 	}
+	jint UCharacter::codePointCount(const QString &arg0, jint arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.icu.lang.UCharacter",
+			"codePointCount",
+			"(Ljava/lang/CharSequence;II)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2
+		);
+	}
 	jint UCharacter::codePointCount(jcharArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -485,6 +550,17 @@ namespace __jni_impl::android::icu::lang
 			"offsetByCodePoints",
 			"(Ljava/lang/CharSequence;II)I",
 			arg0,
+			arg1,
+			arg2
+		);
+	}
+	jint UCharacter::offsetByCodePoints(const QString &arg0, jint arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.icu.lang.UCharacter",
+			"offsetByCodePoints",
+			"(Ljava/lang/CharSequence;II)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
 		);
@@ -512,6 +588,16 @@ namespace __jni_impl::android::icu::lang
 			arg1
 		).object<jstring>();
 	}
+	jstring UCharacter::toLowerCase(__jni_impl::java::util::Locale arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UCharacter",
+			"toLowerCase",
+			"(Ljava/util/Locale;Ljava/lang/String;)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		).object<jstring>();
+	}
 	jstring UCharacter::toLowerCase(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -519,6 +605,15 @@ namespace __jni_impl::android::icu::lang
 			"toLowerCase",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring UCharacter::toLowerCase(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UCharacter",
+			"toLowerCase",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jint UCharacter::toLowerCase(jint arg0)
@@ -540,6 +635,16 @@ namespace __jni_impl::android::icu::lang
 			arg1
 		).object<jstring>();
 	}
+	jstring UCharacter::toLowerCase(__jni_impl::android::icu::util::ULocale arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UCharacter",
+			"toLowerCase",
+			"(Landroid/icu/util/ULocale;Ljava/lang/String;)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		).object<jstring>();
+	}
 	jstring UCharacter::toUpperCase(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -547,6 +652,15 @@ namespace __jni_impl::android::icu::lang
 			"toUpperCase",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring UCharacter::toUpperCase(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UCharacter",
+			"toUpperCase",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring UCharacter::toUpperCase(__jni_impl::java::util::Locale arg0, jstring arg1)
@@ -559,6 +673,16 @@ namespace __jni_impl::android::icu::lang
 			arg1
 		).object<jstring>();
 	}
+	jstring UCharacter::toUpperCase(__jni_impl::java::util::Locale arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UCharacter",
+			"toUpperCase",
+			"(Ljava/util/Locale;Ljava/lang/String;)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		).object<jstring>();
+	}
 	jstring UCharacter::toUpperCase(__jni_impl::android::icu::util::ULocale arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -567,6 +691,16 @@ namespace __jni_impl::android::icu::lang
 			"(Landroid/icu/util/ULocale;Ljava/lang/String;)Ljava/lang/String;",
 			arg0.__jniObject().object(),
 			arg1
+		).object<jstring>();
+	}
+	jstring UCharacter::toUpperCase(__jni_impl::android::icu::util::ULocale arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UCharacter",
+			"toUpperCase",
+			"(Landroid/icu/util/ULocale;Ljava/lang/String;)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	jint UCharacter::toUpperCase(jint arg0)
@@ -728,6 +862,18 @@ namespace __jni_impl::android::icu::lang
 			arg3
 		).object<jstring>();
 	}
+	jstring UCharacter::toTitleCase(__jni_impl::java::util::Locale arg0, const QString &arg1, __jni_impl::android::icu::text::BreakIterator arg2, jint arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UCharacter",
+			"toTitleCase",
+			"(Ljava/util/Locale;Ljava/lang/String;Landroid/icu/text/BreakIterator;I)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object(),
+			arg3
+		).object<jstring>();
+	}
 	jstring UCharacter::toTitleCase(__jni_impl::android::icu::util::ULocale arg0, jstring arg1, __jni_impl::android::icu::text::BreakIterator arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -739,6 +885,17 @@ namespace __jni_impl::android::icu::lang
 			arg2.__jniObject().object()
 		).object<jstring>();
 	}
+	jstring UCharacter::toTitleCase(__jni_impl::android::icu::util::ULocale arg0, const QString &arg1, __jni_impl::android::icu::text::BreakIterator arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UCharacter",
+			"toTitleCase",
+			"(Landroid/icu/util/ULocale;Ljava/lang/String;Landroid/icu/text/BreakIterator;)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		).object<jstring>();
+	}
 	jstring UCharacter::toTitleCase(jstring arg0, __jni_impl::android::icu::text::BreakIterator arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -746,6 +903,16 @@ namespace __jni_impl::android::icu::lang
 			"toTitleCase",
 			"(Ljava/lang/String;Landroid/icu/text/BreakIterator;)Ljava/lang/String;",
 			arg0,
+			arg1.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring UCharacter::toTitleCase(const QString &arg0, __jni_impl::android::icu::text::BreakIterator arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UCharacter",
+			"toTitleCase",
+			"(Ljava/lang/String;Landroid/icu/text/BreakIterator;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jstring>();
 	}
@@ -760,6 +927,17 @@ namespace __jni_impl::android::icu::lang
 			arg2.__jniObject().object()
 		).object<jstring>();
 	}
+	jstring UCharacter::toTitleCase(__jni_impl::java::util::Locale arg0, const QString &arg1, __jni_impl::android::icu::text::BreakIterator arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UCharacter",
+			"toTitleCase",
+			"(Ljava/util/Locale;Ljava/lang/String;Landroid/icu/text/BreakIterator;)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		).object<jstring>();
+	}
 	jstring UCharacter::toTitleCase(__jni_impl::android::icu::util::ULocale arg0, jstring arg1, __jni_impl::android::icu::text::BreakIterator arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -768,6 +946,18 @@ namespace __jni_impl::android::icu::lang
 			"(Landroid/icu/util/ULocale;Ljava/lang/String;Landroid/icu/text/BreakIterator;I)Ljava/lang/String;",
 			arg0.__jniObject().object(),
 			arg1,
+			arg2.__jniObject().object(),
+			arg3
+		).object<jstring>();
+	}
+	jstring UCharacter::toTitleCase(__jni_impl::android::icu::util::ULocale arg0, const QString &arg1, __jni_impl::android::icu::text::BreakIterator arg2, jint arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UCharacter",
+			"toTitleCase",
+			"(Landroid/icu/util/ULocale;Ljava/lang/String;Landroid/icu/text/BreakIterator;I)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3
 		).object<jstring>();
@@ -965,6 +1155,15 @@ namespace __jni_impl::android::icu::lang
 			arg0
 		);
 	}
+	jboolean UCharacter::isLegal(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.icu.lang.UCharacter",
+			"isLegal",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jboolean UCharacter::isLegal(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -1009,6 +1208,15 @@ namespace __jni_impl::android::icu::lang
 			arg0
 		);
 	}
+	jint UCharacter::getCharFromName(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.icu.lang.UCharacter",
+			"getCharFromName",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint UCharacter::getCharFromExtendedName(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -1018,6 +1226,15 @@ namespace __jni_impl::android::icu::lang
 			arg0
 		);
 	}
+	jint UCharacter::getCharFromExtendedName(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.icu.lang.UCharacter",
+			"getCharFromExtendedName",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint UCharacter::getCharFromNameAlias(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -1025,6 +1242,15 @@ namespace __jni_impl::android::icu::lang
 			"getCharFromNameAlias",
 			"(Ljava/lang/String;)I",
 			arg0
+		);
+	}
+	jint UCharacter::getCharFromNameAlias(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.icu.lang.UCharacter",
+			"getCharFromNameAlias",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring UCharacter::getPropertyName(jint arg0, jint arg1)
@@ -1044,6 +1270,15 @@ namespace __jni_impl::android::icu::lang
 			"getPropertyEnum",
 			"(Ljava/lang/CharSequence;)I",
 			arg0
+		);
+	}
+	jint UCharacter::getPropertyEnum(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.icu.lang.UCharacter",
+			"getPropertyEnum",
+			"(Ljava/lang/CharSequence;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring UCharacter::getPropertyValueName(jint arg0, jint arg1, jint arg2)
@@ -1067,6 +1302,16 @@ namespace __jni_impl::android::icu::lang
 			arg1
 		);
 	}
+	jint UCharacter::getPropertyValueEnum(jint arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.icu.lang.UCharacter",
+			"getPropertyValueEnum",
+			"(ILjava/lang/CharSequence;)I",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	jint UCharacter::foldCase(jint arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -1087,6 +1332,16 @@ namespace __jni_impl::android::icu::lang
 			arg1
 		).object<jstring>();
 	}
+	jstring UCharacter::foldCase(const QString &arg0, jboolean arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UCharacter",
+			"foldCase",
+			"(Ljava/lang/String;Z)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		).object<jstring>();
+	}
 	jint UCharacter::foldCase(jint arg0, jboolean arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -1104,6 +1359,16 @@ namespace __jni_impl::android::icu::lang
 			"foldCase",
 			"(Ljava/lang/String;I)Ljava/lang/String;",
 			arg0,
+			arg1
+		).object<jstring>();
+	}
+	jstring UCharacter::foldCase(const QString &arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UCharacter",
+			"foldCase",
+			"(Ljava/lang/String;I)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		).object<jstring>();
 	}

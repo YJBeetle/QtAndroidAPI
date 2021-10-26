@@ -25,13 +25,13 @@ namespace __jni_impl::android::graphics
 		void reset();
 		jfloatArray getArray();
 		void setScale(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		void setSaturation(jfloat arg0);
-		void setRGB2YUV();
-		void setYUV2RGB();
 		void setRotate(jint arg0, jfloat arg1);
 		void setConcat(__jni_impl::android::graphics::ColorMatrix arg0, __jni_impl::android::graphics::ColorMatrix arg1);
 		void preConcat(__jni_impl::android::graphics::ColorMatrix arg0);
 		void postConcat(__jni_impl::android::graphics::ColorMatrix arg0);
+		void setRGB2YUV();
+		void setYUV2RGB();
+		void setSaturation(jfloat arg0);
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -46,20 +46,23 @@ namespace __jni_impl::android::graphics
 		__thiz = QAndroidJniObject(
 			"android.graphics.ColorMatrix",
 			"(Landroid/graphics/ColorMatrix;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void ColorMatrix::__constructor(jfloatArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.ColorMatrix",
 			"([F)V",
-			arg0);
+			arg0
+		);
 	}
 	void ColorMatrix::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.ColorMatrix",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -112,28 +115,6 @@ namespace __jni_impl::android::graphics
 			arg3
 		);
 	}
-	void ColorMatrix::setSaturation(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSaturation",
-			"(F)V",
-			arg0
-		);
-	}
-	void ColorMatrix::setRGB2YUV()
-	{
-		__thiz.callMethod<void>(
-			"setRGB2YUV",
-			"()V"
-		);
-	}
-	void ColorMatrix::setYUV2RGB()
-	{
-		__thiz.callMethod<void>(
-			"setYUV2RGB",
-			"()V"
-		);
-	}
 	void ColorMatrix::setRotate(jint arg0, jfloat arg1)
 	{
 		__thiz.callMethod<void>(
@@ -166,6 +147,28 @@ namespace __jni_impl::android::graphics
 			"postConcat",
 			"(Landroid/graphics/ColorMatrix;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void ColorMatrix::setRGB2YUV()
+	{
+		__thiz.callMethod<void>(
+			"setRGB2YUV",
+			"()V"
+		);
+	}
+	void ColorMatrix::setYUV2RGB()
+	{
+		__thiz.callMethod<void>(
+			"setYUV2RGB",
+			"()V"
+		);
+	}
+	void ColorMatrix::setSaturation(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSaturation",
+			"(F)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::graphics

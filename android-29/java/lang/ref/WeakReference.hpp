@@ -38,7 +38,8 @@ namespace __jni_impl::java::lang::ref
 		__thiz = QAndroidJniObject(
 			"java.lang.ref.WeakReference",
 			"(Ljava/lang/Object;)V",
-			arg0);
+			arg0
+		);
 	}
 	void WeakReference::__constructor(jobject arg0, __jni_impl::java::lang::ref::ReferenceQueue arg1)
 	{
@@ -46,7 +47,8 @@ namespace __jni_impl::java::lang::ref
 			"java.lang.ref.WeakReference",
 			"(Ljava/lang/Object;Ljava/lang/ref/ReferenceQueue;)V",
 			arg0,
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods

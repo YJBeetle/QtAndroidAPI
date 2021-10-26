@@ -26,11 +26,11 @@ namespace __jni_impl::android::renderscript
 }
 namespace __jni_impl::android::renderscript
 {
-	class Script_FieldID;
+	class Script_KernelID;
 }
 namespace __jni_impl::android::renderscript
 {
-	class Script_KernelID;
+	class Script_FieldID;
 }
 
 namespace __jni_impl::android::renderscript
@@ -47,12 +47,12 @@ namespace __jni_impl::android::renderscript
 		void forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Script_LaunchOptions arg1);
 		void forEach(__jni_impl::android::renderscript::Allocation arg0);
 		static QAndroidJniObject create(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1);
-		QAndroidJniObject getFieldID_Input();
+		void setOutput(__jni_impl::android::renderscript::Allocation arg0);
 		void setDotCoefficients(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		void forEach_Dot(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Script_LaunchOptions arg1);
 		void forEach_Dot(__jni_impl::android::renderscript::Allocation arg0);
 		QAndroidJniObject getKernelID_Separate();
-		void setOutput(__jni_impl::android::renderscript::Allocation arg0);
+		QAndroidJniObject getFieldID_Input();
 	};
 } // namespace __jni_impl::android::renderscript
 
@@ -60,8 +60,8 @@ namespace __jni_impl::android::renderscript
 #include "Allocation.hpp"
 #include "Script_LaunchOptions.hpp"
 #include "Element.hpp"
-#include "Script_FieldID.hpp"
 #include "Script_KernelID.hpp"
+#include "Script_FieldID.hpp"
 
 namespace __jni_impl::android::renderscript
 {
@@ -103,11 +103,12 @@ namespace __jni_impl::android::renderscript
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicHistogram::getFieldID_Input()
+	void ScriptIntrinsicHistogram::setOutput(__jni_impl::android::renderscript::Allocation arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getFieldID_Input",
-			"()Landroid/renderscript/Script$FieldID;"
+		__thiz.callMethod<void>(
+			"setOutput",
+			"(Landroid/renderscript/Allocation;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void ScriptIntrinsicHistogram::setDotCoefficients(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
@@ -145,12 +146,11 @@ namespace __jni_impl::android::renderscript
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	void ScriptIntrinsicHistogram::setOutput(__jni_impl::android::renderscript::Allocation arg0)
+	QAndroidJniObject ScriptIntrinsicHistogram::getFieldID_Input()
 	{
-		__thiz.callMethod<void>(
-			"setOutput",
-			"(Landroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"getFieldID_Input",
+			"()Landroid/renderscript/Script$FieldID;"
 		);
 	}
 } // namespace __jni_impl::android::renderscript

@@ -59,8 +59,11 @@ namespace __jni_impl::java::util
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, jstring arg1, jstring arg2);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2);
 		void __constructor(jstring arg0, jstring arg1);
+		void __constructor(const QString &arg0, const QString &arg1);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -83,6 +86,7 @@ namespace __jni_impl::java::util
 		QAndroidJniObject getExtensionKeys();
 		jstring toLanguageTag();
 		static QAndroidJniObject forLanguageTag(jstring arg0);
+		static QAndroidJniObject forLanguageTag(const QString &arg0);
 		jstring getISO3Language();
 		jstring getISO3Country();
 		jstring getScript();
@@ -93,6 +97,7 @@ namespace __jni_impl::java::util
 		jboolean hasExtensions();
 		QAndroidJniObject getUnicodeLocaleAttributes();
 		jstring getUnicodeLocaleType(jstring arg0);
+		jstring getUnicodeLocaleType(const QString &arg0);
 		QAndroidJniObject getUnicodeLocaleKeys();
 		jstring getDisplayLanguage();
 		jstring getDisplayLanguage(__jni_impl::java::util::Locale arg0);
@@ -315,7 +320,16 @@ namespace __jni_impl::java::util
 		__thiz = QAndroidJniObject(
 			"java.util.Locale",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Locale::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.Locale",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void Locale::__constructor(jstring arg0, jstring arg1, jstring arg2)
 	{
@@ -324,7 +338,18 @@ namespace __jni_impl::java::util
 			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void Locale::__constructor(const QString &arg0, const QString &arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.Locale",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	void Locale::__constructor(jstring arg0, jstring arg1)
 	{
@@ -332,7 +357,17 @@ namespace __jni_impl::java::util
 			"java.util.Locale",
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			arg0,
-			arg1);
+			arg1
+		);
+	}
+	void Locale::__constructor(const QString &arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.Locale",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -501,6 +536,15 @@ namespace __jni_impl::java::util
 			arg0
 		);
 	}
+	QAndroidJniObject Locale::forLanguageTag(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.Locale",
+			"forLanguageTag",
+			"(Ljava/lang/String;)Ljava/util/Locale;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring Locale::getISO3Language()
 	{
 		return __thiz.callObjectMethod(
@@ -575,6 +619,14 @@ namespace __jni_impl::java::util
 			"getUnicodeLocaleType",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring Locale::getUnicodeLocaleType(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getUnicodeLocaleType",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject Locale::getUnicodeLocaleKeys()

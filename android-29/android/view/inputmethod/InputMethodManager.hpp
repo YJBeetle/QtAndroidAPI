@@ -9,6 +9,10 @@ namespace __jni_impl::android::view
 {
 	class View;
 }
+namespace __jni_impl::android::os
+{
+	class Bundle;
+}
 namespace __jni_impl::android::view::inputmethod
 {
 	class InputMethodInfo;
@@ -33,10 +37,6 @@ namespace __jni_impl::android::view
 {
 	class KeyEvent;
 }
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 
 namespace __jni_impl::android::view::inputmethod
 {
@@ -57,21 +57,24 @@ namespace __jni_impl::android::view::inputmethod
 		void __constructor();
 		
 		// Methods
-		jboolean isActive();
 		jboolean isActive(__jni_impl::android::view::View arg0);
+		jboolean isActive();
+		void sendAppPrivateCommand(__jni_impl::android::view::View arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
+		void sendAppPrivateCommand(__jni_impl::android::view::View arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2);
 		QAndroidJniObject getInputMethodList();
 		QAndroidJniObject getEnabledInputMethodList();
 		QAndroidJniObject getEnabledInputMethodSubtypeList(__jni_impl::android::view::inputmethod::InputMethodInfo arg0, jboolean arg1);
 		void showStatusIcon(__jni_impl::__JniBaseClass arg0, jstring arg1, jint arg2);
+		void showStatusIcon(__jni_impl::__JniBaseClass arg0, const QString &arg1, jint arg2);
 		void hideStatusIcon(__jni_impl::__JniBaseClass arg0);
 		jboolean isFullscreenMode();
 		jboolean isAcceptingText();
 		void displayCompletions(__jni_impl::android::view::View arg0, jarray arg1);
 		void updateExtractedText(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::inputmethod::ExtractedText arg2);
-		jboolean showSoftInput(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::os::ResultReceiver arg2);
 		jboolean showSoftInput(__jni_impl::android::view::View arg0, jint arg1);
-		jboolean hideSoftInputFromWindow(__jni_impl::__JniBaseClass arg0, jint arg1, __jni_impl::android::os::ResultReceiver arg2);
+		jboolean showSoftInput(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::os::ResultReceiver arg2);
 		jboolean hideSoftInputFromWindow(__jni_impl::__JniBaseClass arg0, jint arg1);
+		jboolean hideSoftInputFromWindow(__jni_impl::__JniBaseClass arg0, jint arg1, __jni_impl::android::os::ResultReceiver arg2);
 		void toggleSoftInputFromWindow(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2);
 		void toggleSoftInput(jint arg0, jint arg1);
 		void restartInput(__jni_impl::android::view::View arg0);
@@ -81,12 +84,15 @@ namespace __jni_impl::android::view::inputmethod
 		void updateCursor(__jni_impl::android::view::View arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		void updateCursorAnchorInfo(__jni_impl::android::view::View arg0, __jni_impl::android::view::inputmethod::CursorAnchorInfo arg1);
 		void setInputMethod(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void setInputMethod(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 		void setInputMethodAndSubtype(__jni_impl::__JniBaseClass arg0, jstring arg1, __jni_impl::android::view::inputmethod::InputMethodSubtype arg2);
+		void setInputMethodAndSubtype(__jni_impl::__JniBaseClass arg0, const QString &arg1, __jni_impl::android::view::inputmethod::InputMethodSubtype arg2);
 		void hideSoftInputFromInputMethod(__jni_impl::__JniBaseClass arg0, jint arg1);
 		void showSoftInputFromInputMethod(__jni_impl::__JniBaseClass arg0, jint arg1);
 		void dispatchKeyEventFromInputMethod(__jni_impl::android::view::View arg0, __jni_impl::android::view::KeyEvent arg1);
 		void showInputMethodPicker();
 		void showInputMethodAndSubtypeEnabler(jstring arg0);
+		void showInputMethodAndSubtypeEnabler(const QString &arg0);
 		QAndroidJniObject getCurrentInputMethodSubtype();
 		jboolean setCurrentInputMethodSubtype(__jni_impl::android::view::inputmethod::InputMethodSubtype arg0);
 		QAndroidJniObject getShortcutInputMethodsAndSubtypes();
@@ -94,19 +100,19 @@ namespace __jni_impl::android::view::inputmethod
 		jboolean switchToNextInputMethod(__jni_impl::__JniBaseClass arg0, jboolean arg1);
 		jboolean shouldOfferSwitchingToNextInputMethod(__jni_impl::__JniBaseClass arg0);
 		void setAdditionalInputMethodSubtypes(jstring arg0, jarray arg1);
+		void setAdditionalInputMethodSubtypes(const QString &arg0, jarray arg1);
 		QAndroidJniObject getLastInputMethodSubtype();
-		void sendAppPrivateCommand(__jni_impl::android::view::View arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
 #include "../View.hpp"
+#include "../../os/Bundle.hpp"
 #include "InputMethodInfo.hpp"
 #include "ExtractedText.hpp"
 #include "../../os/ResultReceiver.hpp"
 #include "CursorAnchorInfo.hpp"
 #include "InputMethodSubtype.hpp"
 #include "../KeyEvent.hpp"
-#include "../../os/Bundle.hpp"
 
 namespace __jni_impl::android::view::inputmethod
 {
@@ -177,6 +183,14 @@ namespace __jni_impl::android::view::inputmethod
 	}
 	
 	// Methods
+	jboolean InputMethodManager::isActive(__jni_impl::android::view::View arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isActive",
+			"(Landroid/view/View;)Z",
+			arg0.__jniObject().object()
+		);
+	}
 	jboolean InputMethodManager::isActive()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -184,12 +198,24 @@ namespace __jni_impl::android::view::inputmethod
 			"()Z"
 		);
 	}
-	jboolean InputMethodManager::isActive(__jni_impl::android::view::View arg0)
+	void InputMethodManager::sendAppPrivateCommand(__jni_impl::android::view::View arg0, jstring arg1, __jni_impl::android::os::Bundle arg2)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isActive",
-			"(Landroid/view/View;)Z",
-			arg0.__jniObject().object()
+		__thiz.callMethod<void>(
+			"sendAppPrivateCommand",
+			"(Landroid/view/View;Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void InputMethodManager::sendAppPrivateCommand(__jni_impl::android::view::View arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2)
+	{
+		__thiz.callMethod<void>(
+			"sendAppPrivateCommand",
+			"(Landroid/view/View;Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
 		);
 	}
 	QAndroidJniObject InputMethodManager::getInputMethodList()
@@ -222,6 +248,16 @@ namespace __jni_impl::android::view::inputmethod
 			"(Landroid/os/IBinder;Ljava/lang/String;I)V",
 			arg0.__jniObject().object(),
 			arg1,
+			arg2
+		);
+	}
+	void InputMethodManager::showStatusIcon(__jni_impl::__JniBaseClass arg0, const QString &arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"showStatusIcon",
+			"(Landroid/os/IBinder;Ljava/lang/String;I)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
@@ -266,16 +302,6 @@ namespace __jni_impl::android::view::inputmethod
 			arg2.__jniObject().object()
 		);
 	}
-	jboolean InputMethodManager::showSoftInput(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::os::ResultReceiver arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"showSoftInput",
-			"(Landroid/view/View;ILandroid/os/ResultReceiver;)Z",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
 	jboolean InputMethodManager::showSoftInput(__jni_impl::android::view::View arg0, jint arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -285,11 +311,11 @@ namespace __jni_impl::android::view::inputmethod
 			arg1
 		);
 	}
-	jboolean InputMethodManager::hideSoftInputFromWindow(__jni_impl::__JniBaseClass arg0, jint arg1, __jni_impl::android::os::ResultReceiver arg2)
+	jboolean InputMethodManager::showSoftInput(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::os::ResultReceiver arg2)
 	{
 		return __thiz.callMethod<jboolean>(
-			"hideSoftInputFromWindow",
-			"(Landroid/os/IBinder;ILandroid/os/ResultReceiver;)Z",
+			"showSoftInput",
+			"(Landroid/view/View;ILandroid/os/ResultReceiver;)Z",
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object()
@@ -302,6 +328,16 @@ namespace __jni_impl::android::view::inputmethod
 			"(Landroid/os/IBinder;I)Z",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	jboolean InputMethodManager::hideSoftInputFromWindow(__jni_impl::__JniBaseClass arg0, jint arg1, __jni_impl::android::os::ResultReceiver arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hideSoftInputFromWindow",
+			"(Landroid/os/IBinder;ILandroid/os/ResultReceiver;)Z",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object()
 		);
 	}
 	void InputMethodManager::toggleSoftInputFromWindow(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2)
@@ -389,6 +425,15 @@ namespace __jni_impl::android::view::inputmethod
 			arg1
 		);
 	}
+	void InputMethodManager::setInputMethod(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"setInputMethod",
+			"(Landroid/os/IBinder;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void InputMethodManager::setInputMethodAndSubtype(__jni_impl::__JniBaseClass arg0, jstring arg1, __jni_impl::android::view::inputmethod::InputMethodSubtype arg2)
 	{
 		__thiz.callMethod<void>(
@@ -396,6 +441,16 @@ namespace __jni_impl::android::view::inputmethod
 			"(Landroid/os/IBinder;Ljava/lang/String;Landroid/view/inputmethod/InputMethodSubtype;)V",
 			arg0.__jniObject().object(),
 			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void InputMethodManager::setInputMethodAndSubtype(__jni_impl::__JniBaseClass arg0, const QString &arg1, __jni_impl::android::view::inputmethod::InputMethodSubtype arg2)
+	{
+		__thiz.callMethod<void>(
+			"setInputMethodAndSubtype",
+			"(Landroid/os/IBinder;Ljava/lang/String;Landroid/view/inputmethod/InputMethodSubtype;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -439,6 +494,14 @@ namespace __jni_impl::android::view::inputmethod
 			"showInputMethodAndSubtypeEnabler",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void InputMethodManager::showInputMethodAndSubtypeEnabler(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"showInputMethodAndSubtypeEnabler",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject InputMethodManager::getCurrentInputMethodSubtype()
@@ -497,21 +560,20 @@ namespace __jni_impl::android::view::inputmethod
 			arg1
 		);
 	}
+	void InputMethodManager::setAdditionalInputMethodSubtypes(const QString &arg0, jarray arg1)
+	{
+		__thiz.callMethod<void>(
+			"setAdditionalInputMethodSubtypes",
+			"(Ljava/lang/String;[Landroid/view/inputmethod/InputMethodSubtype;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	QAndroidJniObject InputMethodManager::getLastInputMethodSubtype()
 	{
 		return __thiz.callObjectMethod(
 			"getLastInputMethodSubtype",
 			"()Landroid/view/inputmethod/InputMethodSubtype;"
-		);
-	}
-	void InputMethodManager::sendAppPrivateCommand(__jni_impl::android::view::View arg0, jstring arg1, __jni_impl::android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"sendAppPrivateCommand",
-			"(Landroid/view/View;Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::view::inputmethod

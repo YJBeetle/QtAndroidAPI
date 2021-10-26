@@ -41,6 +41,7 @@ namespace __jni_impl::java::time
 		static QAndroidJniObject of(jint arg0, jint arg1, jint arg2);
 		static QAndroidJniObject from(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject parse(jstring arg0);
+		static QAndroidJniObject parse(const QString &arg0);
 		QAndroidJniObject getChronology();
 		QAndroidJniObject normalized();
 		QAndroidJniObject plus(__jni_impl::__JniBaseClass arg0);
@@ -156,6 +157,15 @@ namespace __jni_impl::java::time
 			"parse",
 			"(Ljava/lang/CharSequence;)Ljava/time/Period;",
 			arg0
+		);
+	}
+	QAndroidJniObject Period::parse(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.Period",
+			"parse",
+			"(Ljava/lang/CharSequence;)Ljava/time/Period;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Period::getChronology()

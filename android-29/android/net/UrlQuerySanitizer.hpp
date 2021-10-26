@@ -16,11 +16,15 @@ namespace __jni_impl::android::net
 		// Constructors
 		void __constructor();
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		
 		// Methods
 		jstring getValue(jstring arg0);
+		jstring getValue(const QString &arg0);
 		void parseQuery(jstring arg0);
+		void parseQuery(const QString &arg0);
 		jstring unescape(jstring arg0);
+		jstring unescape(const QString &arg0);
 		QAndroidJniObject getUnregisteredParameterValueSanitizer();
 		void setUnregisteredParameterValueSanitizer(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject getAllIllegal();
@@ -33,17 +37,22 @@ namespace __jni_impl::android::net
 		static QAndroidJniObject getSpaceLegal();
 		static QAndroidJniObject getAllButNulAndAngleBracketsLegal();
 		void parseUrl(jstring arg0);
+		void parseUrl(const QString &arg0);
 		QAndroidJniObject getParameterSet();
 		QAndroidJniObject getParameterList();
 		jboolean hasParameter(jstring arg0);
+		jboolean hasParameter(const QString &arg0);
 		void registerParameter(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		void registerParameter(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		void registerParameters(jarray arg0, __jni_impl::__JniBaseClass arg1);
 		void setAllowUnregisteredParamaters(jboolean arg0);
 		jboolean getAllowUnregisteredParamaters();
 		void setPreferFirstRepeatedParameter(jboolean arg0);
 		jboolean getPreferFirstRepeatedParameter();
 		QAndroidJniObject getValueSanitizer(jstring arg0);
+		QAndroidJniObject getValueSanitizer(const QString &arg0);
 		QAndroidJniObject getEffectiveValueSanitizer(jstring arg0);
+		QAndroidJniObject getEffectiveValueSanitizer(const QString &arg0);
 	};
 } // namespace __jni_impl::android::net
 
@@ -57,14 +66,24 @@ namespace __jni_impl::android::net
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.UrlQuerySanitizer",
-			"()V");
+			"()V"
+		);
 	}
 	void UrlQuerySanitizer::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.UrlQuerySanitizer",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void UrlQuerySanitizer::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.net.UrlQuerySanitizer",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -76,6 +95,14 @@ namespace __jni_impl::android::net
 			arg0
 		).object<jstring>();
 	}
+	jstring UrlQuerySanitizer::getValue(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getValue",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	void UrlQuerySanitizer::parseQuery(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -84,12 +111,28 @@ namespace __jni_impl::android::net
 			arg0
 		);
 	}
+	void UrlQuerySanitizer::parseQuery(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"parseQuery",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring UrlQuerySanitizer::unescape(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"unescape",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring UrlQuerySanitizer::unescape(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"unescape",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	QAndroidJniObject UrlQuerySanitizer::getUnregisteredParameterValueSanitizer()
@@ -187,6 +230,14 @@ namespace __jni_impl::android::net
 			arg0
 		);
 	}
+	void UrlQuerySanitizer::parseUrl(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"parseUrl",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject UrlQuerySanitizer::getParameterSet()
 	{
 		return __thiz.callObjectMethod(
@@ -209,12 +260,29 @@ namespace __jni_impl::android::net
 			arg0
 		);
 	}
+	jboolean UrlQuerySanitizer::hasParameter(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasParameter",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void UrlQuerySanitizer::registerParameter(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
 			"registerParameter",
 			"(Ljava/lang/String;Landroid/net/UrlQuerySanitizer$ValueSanitizer;)V",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void UrlQuerySanitizer::registerParameter(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"registerParameter",
+			"(Ljava/lang/String;Landroid/net/UrlQuerySanitizer$ValueSanitizer;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -265,12 +333,28 @@ namespace __jni_impl::android::net
 			arg0
 		);
 	}
+	QAndroidJniObject UrlQuerySanitizer::getValueSanitizer(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getValueSanitizer",
+			"(Ljava/lang/String;)Landroid/net/UrlQuerySanitizer$ValueSanitizer;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject UrlQuerySanitizer::getEffectiveValueSanitizer(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getEffectiveValueSanitizer",
 			"(Ljava/lang/String;)Landroid/net/UrlQuerySanitizer$ValueSanitizer;",
 			arg0
+		);
+	}
+	QAndroidJniObject UrlQuerySanitizer::getEffectiveValueSanitizer(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getEffectiveValueSanitizer",
+			"(Ljava/lang/String;)Landroid/net/UrlQuerySanitizer$ValueSanitizer;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::net

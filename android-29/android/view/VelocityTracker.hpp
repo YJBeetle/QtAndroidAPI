@@ -22,6 +22,8 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		void clear();
+		static QAndroidJniObject obtain();
+		void recycle();
 		void addMovement(__jni_impl::android::view::MotionEvent arg0);
 		void computeCurrentVelocity(jint arg0, jfloat arg1);
 		void computeCurrentVelocity(jint arg0);
@@ -29,8 +31,6 @@ namespace __jni_impl::android::view
 		jfloat getXVelocity();
 		jfloat getYVelocity(jint arg0);
 		jfloat getYVelocity();
-		static QAndroidJniObject obtain();
-		void recycle();
 	};
 } // namespace __jni_impl::android::view
 
@@ -53,6 +53,21 @@ namespace __jni_impl::android::view
 	{
 		__thiz.callMethod<void>(
 			"clear",
+			"()V"
+		);
+	}
+	QAndroidJniObject VelocityTracker::obtain()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.VelocityTracker",
+			"obtain",
+			"()Landroid/view/VelocityTracker;"
+		);
+	}
+	void VelocityTracker::recycle()
+	{
+		__thiz.callMethod<void>(
+			"recycle",
 			"()V"
 		);
 	}
@@ -109,21 +124,6 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jfloat>(
 			"getYVelocity",
 			"()F"
-		);
-	}
-	QAndroidJniObject VelocityTracker::obtain()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.VelocityTracker",
-			"obtain",
-			"()Landroid/view/VelocityTracker;"
-		);
-	}
-	void VelocityTracker::recycle()
-	{
-		__thiz.callMethod<void>(
-			"recycle",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::android::view

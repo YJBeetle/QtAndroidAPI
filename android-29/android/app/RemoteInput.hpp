@@ -9,13 +9,13 @@ namespace __jni_impl::android::os
 {
 	class Parcel;
 }
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 namespace __jni_impl::android::content
 {
 	class Intent;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 
 namespace __jni_impl::android::app
@@ -37,9 +37,9 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
+		jstring getLabel();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getExtras();
 		jstring getResultKey();
 		jarray getChoices();
 		QAndroidJniObject getAllowedDataTypes();
@@ -47,18 +47,19 @@ namespace __jni_impl::android::app
 		jboolean getAllowFreeFormInput();
 		jint getEditChoicesBeforeSending();
 		static QAndroidJniObject getDataResultsFromIntent(__jni_impl::android::content::Intent arg0, jstring arg1);
+		static QAndroidJniObject getDataResultsFromIntent(__jni_impl::android::content::Intent arg0, const QString &arg1);
 		static QAndroidJniObject getResultsFromIntent(__jni_impl::android::content::Intent arg0);
 		static void addResultsToIntent(jarray arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::Bundle arg2);
 		static void addDataResultToIntent(__jni_impl::android::app::RemoteInput arg0, __jni_impl::android::content::Intent arg1, __jni_impl::__JniBaseClass arg2);
 		static void setResultsSource(__jni_impl::android::content::Intent arg0, jint arg1);
 		static jint getResultsSource(__jni_impl::android::content::Intent arg0);
-		jstring getLabel();
+		QAndroidJniObject getExtras();
 	};
 } // namespace __jni_impl::android::app
 
 #include "../os/Parcel.hpp"
-#include "../os/Bundle.hpp"
 #include "../content/Intent.hpp"
+#include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -132,6 +133,13 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
+	jstring RemoteInput::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
 	jint RemoteInput::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -146,13 +154,6 @@ namespace __jni_impl::android::app
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject RemoteInput::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring RemoteInput::getResultKey()
@@ -207,6 +208,16 @@ namespace __jni_impl::android::app
 			arg1
 		);
 	}
+	QAndroidJniObject RemoteInput::getDataResultsFromIntent(__jni_impl::android::content::Intent arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.RemoteInput",
+			"getDataResultsFromIntent",
+			"(Landroid/content/Intent;Ljava/lang/String;)Ljava/util/Map;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject RemoteInput::getResultsFromIntent(__jni_impl::android::content::Intent arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -257,12 +268,12 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object()
 		);
 	}
-	jstring RemoteInput::getLabel()
+	QAndroidJniObject RemoteInput::getExtras()
 	{
 		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
 	}
 } // namespace __jni_impl::android::app
 

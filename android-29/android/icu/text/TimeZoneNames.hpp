@@ -32,14 +32,21 @@ namespace __jni_impl::android::icu::text
 		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
 		static QAndroidJniObject getInstance(__jni_impl::android::icu::util::ULocale arg0);
 		jstring getDisplayName(jstring arg0, __jni_impl::android::icu::text::TimeZoneNames_NameType arg1, jlong arg2);
+		jstring getDisplayName(const QString &arg0, __jni_impl::android::icu::text::TimeZoneNames_NameType arg1, jlong arg2);
 		static QAndroidJniObject getTZDBInstance(__jni_impl::android::icu::util::ULocale arg0);
 		QAndroidJniObject getAvailableMetaZoneIDs(jstring arg0);
+		QAndroidJniObject getAvailableMetaZoneIDs(const QString &arg0);
 		QAndroidJniObject getAvailableMetaZoneIDs();
 		jstring getMetaZoneID(jstring arg0, jlong arg1);
+		jstring getMetaZoneID(const QString &arg0, jlong arg1);
 		jstring getReferenceZoneID(jstring arg0, jstring arg1);
+		jstring getReferenceZoneID(const QString &arg0, const QString &arg1);
 		jstring getMetaZoneDisplayName(jstring arg0, __jni_impl::android::icu::text::TimeZoneNames_NameType arg1);
+		jstring getMetaZoneDisplayName(const QString &arg0, __jni_impl::android::icu::text::TimeZoneNames_NameType arg1);
 		jstring getTimeZoneDisplayName(jstring arg0, __jni_impl::android::icu::text::TimeZoneNames_NameType arg1);
+		jstring getTimeZoneDisplayName(const QString &arg0, __jni_impl::android::icu::text::TimeZoneNames_NameType arg1);
 		jstring getExemplarLocationName(jstring arg0);
+		jstring getExemplarLocationName(const QString &arg0);
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -88,6 +95,16 @@ namespace __jni_impl::android::icu::text
 			arg2
 		).object<jstring>();
 	}
+	jstring TimeZoneNames::getDisplayName(const QString &arg0, __jni_impl::android::icu::text::TimeZoneNames_NameType arg1, jlong arg2)
+	{
+		return __thiz.callObjectMethod(
+			"getDisplayName",
+			"(Ljava/lang/String;Landroid/icu/text/TimeZoneNames$NameType;J)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2
+		).object<jstring>();
+	}
 	QAndroidJniObject TimeZoneNames::getTZDBInstance(__jni_impl::android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -103,6 +120,14 @@ namespace __jni_impl::android::icu::text
 			"getAvailableMetaZoneIDs",
 			"(Ljava/lang/String;)Ljava/util/Set;",
 			arg0
+		);
+	}
+	QAndroidJniObject TimeZoneNames::getAvailableMetaZoneIDs(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAvailableMetaZoneIDs",
+			"(Ljava/lang/String;)Ljava/util/Set;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject TimeZoneNames::getAvailableMetaZoneIDs()
@@ -121,6 +146,15 @@ namespace __jni_impl::android::icu::text
 			arg1
 		).object<jstring>();
 	}
+	jstring TimeZoneNames::getMetaZoneID(const QString &arg0, jlong arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getMetaZoneID",
+			"(Ljava/lang/String;J)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		).object<jstring>();
+	}
 	jstring TimeZoneNames::getReferenceZoneID(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -130,12 +164,30 @@ namespace __jni_impl::android::icu::text
 			arg1
 		).object<jstring>();
 	}
+	jstring TimeZoneNames::getReferenceZoneID(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getReferenceZoneID",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		).object<jstring>();
+	}
 	jstring TimeZoneNames::getMetaZoneDisplayName(jstring arg0, __jni_impl::android::icu::text::TimeZoneNames_NameType arg1)
 	{
 		return __thiz.callObjectMethod(
 			"getMetaZoneDisplayName",
 			"(Ljava/lang/String;Landroid/icu/text/TimeZoneNames$NameType;)Ljava/lang/String;",
 			arg0,
+			arg1.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring TimeZoneNames::getMetaZoneDisplayName(const QString &arg0, __jni_impl::android::icu::text::TimeZoneNames_NameType arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getMetaZoneDisplayName",
+			"(Ljava/lang/String;Landroid/icu/text/TimeZoneNames$NameType;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jstring>();
 	}
@@ -148,12 +200,29 @@ namespace __jni_impl::android::icu::text
 			arg1.__jniObject().object()
 		).object<jstring>();
 	}
+	jstring TimeZoneNames::getTimeZoneDisplayName(const QString &arg0, __jni_impl::android::icu::text::TimeZoneNames_NameType arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getTimeZoneDisplayName",
+			"(Ljava/lang/String;Landroid/icu/text/TimeZoneNames$NameType;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		).object<jstring>();
+	}
 	jstring TimeZoneNames::getExemplarLocationName(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getExemplarLocationName",
 			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring TimeZoneNames::getExemplarLocationName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getExemplarLocationName",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::text

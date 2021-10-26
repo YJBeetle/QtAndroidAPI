@@ -36,7 +36,8 @@ namespace __jni_impl::android::telephony
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.SmsManager$FinancialSmsCallback",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

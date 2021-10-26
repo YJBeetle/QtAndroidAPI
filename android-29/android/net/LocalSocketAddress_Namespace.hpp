@@ -23,6 +23,7 @@ namespace __jni_impl::android::net
 		// Methods
 		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
+		static QAndroidJniObject valueOf(const QString &arg0);
 	};
 } // namespace __jni_impl::android::net
 
@@ -79,6 +80,15 @@ namespace __jni_impl::android::net
 			"valueOf",
 			"(Ljava/lang/String;)Landroid/net/LocalSocketAddress$Namespace;",
 			arg0
+		);
+	}
+	QAndroidJniObject LocalSocketAddress_Namespace::valueOf(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.net.LocalSocketAddress$Namespace",
+			"valueOf",
+			"(Ljava/lang/String;)Landroid/net/LocalSocketAddress$Namespace;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::net

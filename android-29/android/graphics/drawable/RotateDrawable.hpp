@@ -32,7 +32,6 @@ namespace __jni_impl::android::graphics::drawable
 		
 		// Methods
 		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
-		void applyTheme(__jni_impl::android::content::res::Resources_Theme arg0);
 		jfloat getPivotX();
 		void setPivotX(jfloat arg0);
 		jfloat getPivotY();
@@ -46,6 +45,7 @@ namespace __jni_impl::android::graphics::drawable
 		jboolean isPivotXRelative();
 		void setPivotYRelative(jboolean arg0);
 		jboolean isPivotYRelative();
+		void applyTheme(__jni_impl::android::content::res::Resources_Theme arg0);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
@@ -62,7 +62,8 @@ namespace __jni_impl::android::graphics::drawable
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.drawable.RotateDrawable",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -75,14 +76,6 @@ namespace __jni_impl::android::graphics::drawable
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
-		);
-	}
-	void RotateDrawable::applyTheme(__jni_impl::android::content::res::Resources_Theme arg0)
-	{
-		__thiz.callMethod<void>(
-			"applyTheme",
-			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	jfloat RotateDrawable::getPivotX()
@@ -181,6 +174,14 @@ namespace __jni_impl::android::graphics::drawable
 		return __thiz.callMethod<jboolean>(
 			"isPivotYRelative",
 			"()Z"
+		);
+	}
+	void RotateDrawable::applyTheme(__jni_impl::android::content::res::Resources_Theme arg0)
+	{
+		__thiz.callMethod<void>(
+			"applyTheme",
+			"(Landroid/content/res/Resources$Theme;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::graphics::drawable

@@ -57,19 +57,33 @@ namespace __jni_impl::android::database::sqlite
 		// Methods
 		jstring toString();
 		jint update(jstring arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2, jarray arg3);
+		jint update(const QString &arg0, __jni_impl::android::content::ContentValues arg1, const QString &arg2, jarray arg3);
 		jlong replace(jstring arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2);
+		jlong replace(const QString &arg0, const QString &arg1, __jni_impl::android::content::ContentValues arg2);
 		jboolean isOpen();
 		jint _delete(jstring arg0, jstring arg1, jarray arg2);
+		jint _delete(const QString &arg0, const QString &arg1, jarray arg2);
 		jlong insert(jstring arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2);
-		QAndroidJniObject query(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5, jstring arg6, jstring arg7, jstring arg8);
+		jlong insert(const QString &arg0, const QString &arg1, __jni_impl::android::content::ContentValues arg2);
 		QAndroidJniObject query(jstring arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7);
+		QAndroidJniObject query(const QString &arg0, jarray arg1, const QString &arg2, jarray arg3, const QString &arg4, const QString &arg5, const QString &arg6, const QString &arg7);
 		QAndroidJniObject query(jstring arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6);
+		QAndroidJniObject query(const QString &arg0, jarray arg1, const QString &arg2, jarray arg3, const QString &arg4, const QString &arg5, const QString &arg6);
 		QAndroidJniObject query(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5, jstring arg6, jstring arg7, jstring arg8, __jni_impl::android::os::CancellationSignal arg9);
+		QAndroidJniObject query(jboolean arg0, const QString &arg1, jarray arg2, const QString &arg3, jarray arg4, const QString &arg5, const QString &arg6, const QString &arg7, const QString &arg8, __jni_impl::android::os::CancellationSignal arg9);
+		QAndroidJniObject query(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5, jstring arg6, jstring arg7, jstring arg8);
+		QAndroidJniObject query(jboolean arg0, const QString &arg1, jarray arg2, const QString &arg3, jarray arg4, const QString &arg5, const QString &arg6, const QString &arg7, const QString &arg8);
 		static QAndroidJniObject create(__jni_impl::__JniBaseClass arg0);
 		jstring getPath();
 		jboolean isReadOnly();
 		jint getVersion();
 		void setLocale(__jni_impl::java::util::Locale arg0);
+		static QAndroidJniObject openOrCreateDatabase(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
+		static QAndroidJniObject openOrCreateDatabase(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
+		static QAndroidJniObject openOrCreateDatabase(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		static QAndroidJniObject openOrCreateDatabase(const QString &arg0, __jni_impl::__JniBaseClass arg1);
+		static QAndroidJniObject openOrCreateDatabase(__jni_impl::java::io::File arg0, __jni_impl::__JniBaseClass arg1);
+		static jboolean deleteDatabase(__jni_impl::java::io::File arg0);
 		static jint releaseMemory();
 		void setLockingEnabled(jboolean arg0);
 		void beginTransaction();
@@ -82,35 +96,54 @@ namespace __jni_impl::android::database::sqlite
 		jboolean isDbLockedByCurrentThread();
 		jboolean isDbLockedByOtherThreads();
 		jboolean yieldIfContended();
-		jboolean yieldIfContendedSafely();
 		jboolean yieldIfContendedSafely(jlong arg0);
+		jboolean yieldIfContendedSafely();
 		QAndroidJniObject getSyncedTables();
 		static QAndroidJniObject openDatabase(jstring arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::__JniBaseClass arg3);
-		static QAndroidJniObject openDatabase(__jni_impl::java::io::File arg0, __jni_impl::android::database::sqlite::SQLiteDatabase_OpenParams arg1);
+		static QAndroidJniObject openDatabase(const QString &arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::__JniBaseClass arg3);
 		static QAndroidJniObject openDatabase(jstring arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
+		static QAndroidJniObject openDatabase(const QString &arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
+		static QAndroidJniObject openDatabase(__jni_impl::java::io::File arg0, __jni_impl::android::database::sqlite::SQLiteDatabase_OpenParams arg1);
 		static QAndroidJniObject createInMemory(__jni_impl::android::database::sqlite::SQLiteDatabase_OpenParams arg0);
 		void setVersion(jint arg0);
 		jlong getMaximumSize();
 		jlong setMaximumSize(jlong arg0);
 		jlong getPageSize();
 		void setPageSize(jlong arg0);
-		void markTableSyncable(jstring arg0, jstring arg1, jstring arg2);
 		void markTableSyncable(jstring arg0, jstring arg1);
+		void markTableSyncable(const QString &arg0, const QString &arg1);
+		void markTableSyncable(jstring arg0, jstring arg1, jstring arg2);
+		void markTableSyncable(const QString &arg0, const QString &arg1, const QString &arg2);
 		static jstring findEditTable(jstring arg0);
+		static jstring findEditTable(const QString &arg0);
 		QAndroidJniObject compileStatement(jstring arg0);
+		QAndroidJniObject compileStatement(const QString &arg0);
 		QAndroidJniObject queryWithFactory(__jni_impl::__JniBaseClass arg0, jboolean arg1, jstring arg2, jarray arg3, jstring arg4, jarray arg5, jstring arg6, jstring arg7, jstring arg8, jstring arg9, __jni_impl::android::os::CancellationSignal arg10);
+		QAndroidJniObject queryWithFactory(__jni_impl::__JniBaseClass arg0, jboolean arg1, const QString &arg2, jarray arg3, const QString &arg4, jarray arg5, const QString &arg6, const QString &arg7, const QString &arg8, const QString &arg9, __jni_impl::android::os::CancellationSignal arg10);
 		QAndroidJniObject queryWithFactory(__jni_impl::__JniBaseClass arg0, jboolean arg1, jstring arg2, jarray arg3, jstring arg4, jarray arg5, jstring arg6, jstring arg7, jstring arg8, jstring arg9);
-		QAndroidJniObject rawQuery(jstring arg0, jarray arg1);
+		QAndroidJniObject queryWithFactory(__jni_impl::__JniBaseClass arg0, jboolean arg1, const QString &arg2, jarray arg3, const QString &arg4, jarray arg5, const QString &arg6, const QString &arg7, const QString &arg8, const QString &arg9);
 		QAndroidJniObject rawQuery(jstring arg0, jarray arg1, __jni_impl::android::os::CancellationSignal arg2);
+		QAndroidJniObject rawQuery(const QString &arg0, jarray arg1, __jni_impl::android::os::CancellationSignal arg2);
+		QAndroidJniObject rawQuery(jstring arg0, jarray arg1);
+		QAndroidJniObject rawQuery(const QString &arg0, jarray arg1);
 		QAndroidJniObject rawQueryWithFactory(__jni_impl::__JniBaseClass arg0, jstring arg1, jarray arg2, jstring arg3);
+		QAndroidJniObject rawQueryWithFactory(__jni_impl::__JniBaseClass arg0, const QString &arg1, jarray arg2, const QString &arg3);
 		QAndroidJniObject rawQueryWithFactory(__jni_impl::__JniBaseClass arg0, jstring arg1, jarray arg2, jstring arg3, __jni_impl::android::os::CancellationSignal arg4);
+		QAndroidJniObject rawQueryWithFactory(__jni_impl::__JniBaseClass arg0, const QString &arg1, jarray arg2, const QString &arg3, __jni_impl::android::os::CancellationSignal arg4);
 		jlong insertOrThrow(jstring arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2);
+		jlong insertOrThrow(const QString &arg0, const QString &arg1, __jni_impl::android::content::ContentValues arg2);
 		jlong replaceOrThrow(jstring arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2);
+		jlong replaceOrThrow(const QString &arg0, const QString &arg1, __jni_impl::android::content::ContentValues arg2);
 		jlong insertWithOnConflict(jstring arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2, jint arg3);
+		jlong insertWithOnConflict(const QString &arg0, const QString &arg1, __jni_impl::android::content::ContentValues arg2, jint arg3);
 		jint updateWithOnConflict(jstring arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2, jarray arg3, jint arg4);
-		void execSQL(jstring arg0, jobjectArray arg1);
+		jint updateWithOnConflict(const QString &arg0, __jni_impl::android::content::ContentValues arg1, const QString &arg2, jarray arg3, jint arg4);
 		void execSQL(jstring arg0);
+		void execSQL(const QString &arg0);
+		void execSQL(jstring arg0, jobjectArray arg1);
+		void execSQL(const QString &arg0, jobjectArray arg1);
 		void validateSql(jstring arg0, __jni_impl::android::os::CancellationSignal arg1);
+		void validateSql(const QString &arg0, __jni_impl::android::os::CancellationSignal arg1);
 		jboolean needUpgrade(jint arg0);
 		void setMaxSqlCacheSize(jint arg0);
 		void setForeignKeyConstraintsEnabled(jboolean arg0);
@@ -119,10 +152,6 @@ namespace __jni_impl::android::database::sqlite
 		jboolean isWriteAheadLoggingEnabled();
 		QAndroidJniObject getAttachedDbs();
 		jboolean isDatabaseIntegrityOk();
-		static QAndroidJniObject openOrCreateDatabase(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
-		static QAndroidJniObject openOrCreateDatabase(jstring arg0, __jni_impl::__JniBaseClass arg1);
-		static QAndroidJniObject openOrCreateDatabase(__jni_impl::java::io::File arg0, __jni_impl::__JniBaseClass arg1);
-		static jboolean deleteDatabase(__jni_impl::java::io::File arg0);
 	};
 } // namespace __jni_impl::android::database::sqlite
 
@@ -255,6 +284,17 @@ namespace __jni_impl::android::database::sqlite
 			arg3
 		);
 	}
+	jint SQLiteDatabase::update(const QString &arg0, __jni_impl::android::content::ContentValues arg1, const QString &arg2, jarray arg3)
+	{
+		return __thiz.callMethod<jint>(
+			"update",
+			"(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3
+		);
+	}
 	jlong SQLiteDatabase::replace(jstring arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2)
 	{
 		return __thiz.callMethod<jlong>(
@@ -262,6 +302,16 @@ namespace __jni_impl::android::database::sqlite
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J",
 			arg0,
 			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	jlong SQLiteDatabase::replace(const QString &arg0, const QString &arg1, __jni_impl::android::content::ContentValues arg2)
+	{
+		return __thiz.callMethod<jlong>(
+			"replace",
+			"(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -282,6 +332,16 @@ namespace __jni_impl::android::database::sqlite
 			arg2
 		);
 	}
+	jint SQLiteDatabase::_delete(const QString &arg0, const QString &arg1, jarray arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"delete",
+			"(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
+	}
 	jlong SQLiteDatabase::insert(jstring arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2)
 	{
 		return __thiz.callMethod<jlong>(
@@ -290,6 +350,108 @@ namespace __jni_impl::android::database::sqlite
 			arg0,
 			arg1,
 			arg2.__jniObject().object()
+		);
+	}
+	jlong SQLiteDatabase::insert(const QString &arg0, const QString &arg1, __jni_impl::android::content::ContentValues arg2)
+	{
+		return __thiz.callMethod<jlong>(
+			"insert",
+			"(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SQLiteDatabase::query(jstring arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7)
+	{
+		return __thiz.callObjectMethod(
+			"query",
+			"(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7
+		);
+	}
+	QAndroidJniObject SQLiteDatabase::query(const QString &arg0, jarray arg1, const QString &arg2, jarray arg3, const QString &arg4, const QString &arg5, const QString &arg6, const QString &arg7)
+	{
+		return __thiz.callObjectMethod(
+			"query",
+			"(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3,
+			QAndroidJniObject::fromString(arg4).object<jstring>(),
+			QAndroidJniObject::fromString(arg5).object<jstring>(),
+			QAndroidJniObject::fromString(arg6).object<jstring>(),
+			QAndroidJniObject::fromString(arg7).object<jstring>()
+		);
+	}
+	QAndroidJniObject SQLiteDatabase::query(jstring arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6)
+	{
+		return __thiz.callObjectMethod(
+			"query",
+			"(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6
+		);
+	}
+	QAndroidJniObject SQLiteDatabase::query(const QString &arg0, jarray arg1, const QString &arg2, jarray arg3, const QString &arg4, const QString &arg5, const QString &arg6)
+	{
+		return __thiz.callObjectMethod(
+			"query",
+			"(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3,
+			QAndroidJniObject::fromString(arg4).object<jstring>(),
+			QAndroidJniObject::fromString(arg5).object<jstring>(),
+			QAndroidJniObject::fromString(arg6).object<jstring>()
+		);
+	}
+	QAndroidJniObject SQLiteDatabase::query(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5, jstring arg6, jstring arg7, jstring arg8, __jni_impl::android::os::CancellationSignal arg9)
+	{
+		return __thiz.callObjectMethod(
+			"query",
+			"(ZLjava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SQLiteDatabase::query(jboolean arg0, const QString &arg1, jarray arg2, const QString &arg3, jarray arg4, const QString &arg5, const QString &arg6, const QString &arg7, const QString &arg8, __jni_impl::android::os::CancellationSignal arg9)
+	{
+		return __thiz.callObjectMethod(
+			"query",
+			"(ZLjava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			QAndroidJniObject::fromString(arg3).object<jstring>(),
+			arg4,
+			QAndroidJniObject::fromString(arg5).object<jstring>(),
+			QAndroidJniObject::fromString(arg6).object<jstring>(),
+			QAndroidJniObject::fromString(arg7).object<jstring>(),
+			QAndroidJniObject::fromString(arg8).object<jstring>(),
+			arg9.__jniObject().object()
 		);
 	}
 	QAndroidJniObject SQLiteDatabase::query(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5, jstring arg6, jstring arg7, jstring arg8)
@@ -308,50 +470,20 @@ namespace __jni_impl::android::database::sqlite
 			arg8
 		);
 	}
-	QAndroidJniObject SQLiteDatabase::query(jstring arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6, jstring arg7)
+	QAndroidJniObject SQLiteDatabase::query(jboolean arg0, const QString &arg1, jarray arg2, const QString &arg3, jarray arg4, const QString &arg5, const QString &arg6, const QString &arg7, const QString &arg8)
 	{
 		return __thiz.callObjectMethod(
 			"query",
-			"(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
+			"(ZLjava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
 			arg0,
-			arg1,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
-			arg3,
+			QAndroidJniObject::fromString(arg3).object<jstring>(),
 			arg4,
-			arg5,
-			arg6,
-			arg7
-		);
-	}
-	QAndroidJniObject SQLiteDatabase::query(jstring arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, jstring arg5, jstring arg6)
-	{
-		return __thiz.callObjectMethod(
-			"query",
-			"(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6
-		);
-	}
-	QAndroidJniObject SQLiteDatabase::query(jboolean arg0, jstring arg1, jarray arg2, jstring arg3, jarray arg4, jstring arg5, jstring arg6, jstring arg7, jstring arg8, __jni_impl::android::os::CancellationSignal arg9)
-	{
-		return __thiz.callObjectMethod(
-			"query",
-			"(ZLjava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8,
-			arg9.__jniObject().object()
+			QAndroidJniObject::fromString(arg5).object<jstring>(),
+			QAndroidJniObject::fromString(arg6).object<jstring>(),
+			QAndroidJniObject::fromString(arg7).object<jstring>(),
+			QAndroidJniObject::fromString(arg8).object<jstring>()
 		);
 	}
 	QAndroidJniObject SQLiteDatabase::create(__jni_impl::__JniBaseClass arg0)
@@ -389,6 +521,67 @@ namespace __jni_impl::android::database::sqlite
 		__thiz.callMethod<void>(
 			"setLocale",
 			"(Ljava/util/Locale;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SQLiteDatabase::openOrCreateDatabase(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.database.sqlite.SQLiteDatabase",
+			"openOrCreateDatabase",
+			"(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;Landroid/database/DatabaseErrorHandler;)Landroid/database/sqlite/SQLiteDatabase;",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SQLiteDatabase::openOrCreateDatabase(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.database.sqlite.SQLiteDatabase",
+			"openOrCreateDatabase",
+			"(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;Landroid/database/DatabaseErrorHandler;)Landroid/database/sqlite/SQLiteDatabase;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SQLiteDatabase::openOrCreateDatabase(jstring arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.database.sqlite.SQLiteDatabase",
+			"openOrCreateDatabase",
+			"(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SQLiteDatabase::openOrCreateDatabase(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.database.sqlite.SQLiteDatabase",
+			"openOrCreateDatabase",
+			"(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SQLiteDatabase::openOrCreateDatabase(__jni_impl::java::io::File arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.database.sqlite.SQLiteDatabase",
+			"openOrCreateDatabase",
+			"(Ljava/io/File;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean SQLiteDatabase::deleteDatabase(__jni_impl::java::io::File arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.database.sqlite.SQLiteDatabase",
+			"deleteDatabase",
+			"(Ljava/io/File;)Z",
 			arg0.__jniObject().object()
 		);
 	}
@@ -480,19 +673,19 @@ namespace __jni_impl::android::database::sqlite
 			"()Z"
 		);
 	}
-	jboolean SQLiteDatabase::yieldIfContendedSafely()
-	{
-		return __thiz.callMethod<jboolean>(
-			"yieldIfContendedSafely",
-			"()Z"
-		);
-	}
 	jboolean SQLiteDatabase::yieldIfContendedSafely(jlong arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"yieldIfContendedSafely",
 			"(J)Z",
 			arg0
+		);
+	}
+	jboolean SQLiteDatabase::yieldIfContendedSafely()
+	{
+		return __thiz.callMethod<jboolean>(
+			"yieldIfContendedSafely",
+			"()Z"
 		);
 	}
 	QAndroidJniObject SQLiteDatabase::getSyncedTables()
@@ -514,14 +707,16 @@ namespace __jni_impl::android::database::sqlite
 			arg3.__jniObject().object()
 		);
 	}
-	QAndroidJniObject SQLiteDatabase::openDatabase(__jni_impl::java::io::File arg0, __jni_impl::android::database::sqlite::SQLiteDatabase_OpenParams arg1)
+	QAndroidJniObject SQLiteDatabase::openDatabase(const QString &arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::__JniBaseClass arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.database.sqlite.SQLiteDatabase",
 			"openDatabase",
-			"(Ljava/io/File;Landroid/database/sqlite/SQLiteDatabase$OpenParams;)Landroid/database/sqlite/SQLiteDatabase;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			"(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;ILandroid/database/DatabaseErrorHandler;)Landroid/database/sqlite/SQLiteDatabase;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object()
 		);
 	}
 	QAndroidJniObject SQLiteDatabase::openDatabase(jstring arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
@@ -533,6 +728,27 @@ namespace __jni_impl::android::database::sqlite
 			arg0,
 			arg1.__jniObject().object(),
 			arg2
+		);
+	}
+	QAndroidJniObject SQLiteDatabase::openDatabase(const QString &arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.database.sqlite.SQLiteDatabase",
+			"openDatabase",
+			"(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)Landroid/database/sqlite/SQLiteDatabase;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
+	QAndroidJniObject SQLiteDatabase::openDatabase(__jni_impl::java::io::File arg0, __jni_impl::android::database::sqlite::SQLiteDatabase_OpenParams arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.database.sqlite.SQLiteDatabase",
+			"openDatabase",
+			"(Ljava/io/File;Landroid/database/sqlite/SQLiteDatabase$OpenParams;)Landroid/database/sqlite/SQLiteDatabase;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	QAndroidJniObject SQLiteDatabase::createInMemory(__jni_impl::android::database::sqlite::SQLiteDatabase_OpenParams arg0)
@@ -582,6 +798,24 @@ namespace __jni_impl::android::database::sqlite
 			arg0
 		);
 	}
+	void SQLiteDatabase::markTableSyncable(jstring arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"markTableSyncable",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1
+		);
+	}
+	void SQLiteDatabase::markTableSyncable(const QString &arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"markTableSyncable",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void SQLiteDatabase::markTableSyncable(jstring arg0, jstring arg1, jstring arg2)
 	{
 		__thiz.callMethod<void>(
@@ -592,13 +826,14 @@ namespace __jni_impl::android::database::sqlite
 			arg2
 		);
 	}
-	void SQLiteDatabase::markTableSyncable(jstring arg0, jstring arg1)
+	void SQLiteDatabase::markTableSyncable(const QString &arg0, const QString &arg1, const QString &arg2)
 	{
 		__thiz.callMethod<void>(
 			"markTableSyncable",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	jstring SQLiteDatabase::findEditTable(jstring arg0)
@@ -610,12 +845,29 @@ namespace __jni_impl::android::database::sqlite
 			arg0
 		).object<jstring>();
 	}
+	jstring SQLiteDatabase::findEditTable(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.database.sqlite.SQLiteDatabase",
+			"findEditTable",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	QAndroidJniObject SQLiteDatabase::compileStatement(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
 			"compileStatement",
 			"(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;",
 			arg0
+		);
+	}
+	QAndroidJniObject SQLiteDatabase::compileStatement(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"compileStatement",
+			"(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject SQLiteDatabase::queryWithFactory(__jni_impl::__JniBaseClass arg0, jboolean arg1, jstring arg2, jarray arg3, jstring arg4, jarray arg5, jstring arg6, jstring arg7, jstring arg8, jstring arg9, __jni_impl::android::os::CancellationSignal arg10)
@@ -636,6 +888,24 @@ namespace __jni_impl::android::database::sqlite
 			arg10.__jniObject().object()
 		);
 	}
+	QAndroidJniObject SQLiteDatabase::queryWithFactory(__jni_impl::__JniBaseClass arg0, jboolean arg1, const QString &arg2, jarray arg3, const QString &arg4, jarray arg5, const QString &arg6, const QString &arg7, const QString &arg8, const QString &arg9, __jni_impl::android::os::CancellationSignal arg10)
+	{
+		return __thiz.callObjectMethod(
+			"queryWithFactory",
+			"(Landroid/database/sqlite/SQLiteDatabase$CursorFactory;ZLjava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
+			arg0.__jniObject().object(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3,
+			QAndroidJniObject::fromString(arg4).object<jstring>(),
+			arg5,
+			QAndroidJniObject::fromString(arg6).object<jstring>(),
+			QAndroidJniObject::fromString(arg7).object<jstring>(),
+			QAndroidJniObject::fromString(arg8).object<jstring>(),
+			QAndroidJniObject::fromString(arg9).object<jstring>(),
+			arg10.__jniObject().object()
+		);
+	}
 	QAndroidJniObject SQLiteDatabase::queryWithFactory(__jni_impl::__JniBaseClass arg0, jboolean arg1, jstring arg2, jarray arg3, jstring arg4, jarray arg5, jstring arg6, jstring arg7, jstring arg8, jstring arg9)
 	{
 		return __thiz.callObjectMethod(
@@ -653,13 +923,21 @@ namespace __jni_impl::android::database::sqlite
 			arg9
 		);
 	}
-	QAndroidJniObject SQLiteDatabase::rawQuery(jstring arg0, jarray arg1)
+	QAndroidJniObject SQLiteDatabase::queryWithFactory(__jni_impl::__JniBaseClass arg0, jboolean arg1, const QString &arg2, jarray arg3, const QString &arg4, jarray arg5, const QString &arg6, const QString &arg7, const QString &arg8, const QString &arg9)
 	{
 		return __thiz.callObjectMethod(
-			"rawQuery",
-			"(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0,
-			arg1
+			"queryWithFactory",
+			"(Landroid/database/sqlite/SQLiteDatabase$CursorFactory;ZLjava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
+			arg0.__jniObject().object(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3,
+			QAndroidJniObject::fromString(arg4).object<jstring>(),
+			arg5,
+			QAndroidJniObject::fromString(arg6).object<jstring>(),
+			QAndroidJniObject::fromString(arg7).object<jstring>(),
+			QAndroidJniObject::fromString(arg8).object<jstring>(),
+			QAndroidJniObject::fromString(arg9).object<jstring>()
 		);
 	}
 	QAndroidJniObject SQLiteDatabase::rawQuery(jstring arg0, jarray arg1, __jni_impl::android::os::CancellationSignal arg2)
@@ -672,6 +950,34 @@ namespace __jni_impl::android::database::sqlite
 			arg2.__jniObject().object()
 		);
 	}
+	QAndroidJniObject SQLiteDatabase::rawQuery(const QString &arg0, jarray arg1, __jni_impl::android::os::CancellationSignal arg2)
+	{
+		return __thiz.callObjectMethod(
+			"rawQuery",
+			"(Ljava/lang/String;[Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SQLiteDatabase::rawQuery(jstring arg0, jarray arg1)
+	{
+		return __thiz.callObjectMethod(
+			"rawQuery",
+			"(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject SQLiteDatabase::rawQuery(const QString &arg0, jarray arg1)
+	{
+		return __thiz.callObjectMethod(
+			"rawQuery",
+			"(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	QAndroidJniObject SQLiteDatabase::rawQueryWithFactory(__jni_impl::__JniBaseClass arg0, jstring arg1, jarray arg2, jstring arg3)
 	{
 		return __thiz.callObjectMethod(
@@ -681,6 +987,17 @@ namespace __jni_impl::android::database::sqlite
 			arg1,
 			arg2,
 			arg3
+		);
+	}
+	QAndroidJniObject SQLiteDatabase::rawQueryWithFactory(__jni_impl::__JniBaseClass arg0, const QString &arg1, jarray arg2, const QString &arg3)
+	{
+		return __thiz.callObjectMethod(
+			"rawQueryWithFactory",
+			"(Landroid/database/sqlite/SQLiteDatabase$CursorFactory;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 	QAndroidJniObject SQLiteDatabase::rawQueryWithFactory(__jni_impl::__JniBaseClass arg0, jstring arg1, jarray arg2, jstring arg3, __jni_impl::android::os::CancellationSignal arg4)
@@ -695,6 +1012,18 @@ namespace __jni_impl::android::database::sqlite
 			arg4.__jniObject().object()
 		);
 	}
+	QAndroidJniObject SQLiteDatabase::rawQueryWithFactory(__jni_impl::__JniBaseClass arg0, const QString &arg1, jarray arg2, const QString &arg3, __jni_impl::android::os::CancellationSignal arg4)
+	{
+		return __thiz.callObjectMethod(
+			"rawQueryWithFactory",
+			"(Landroid/database/sqlite/SQLiteDatabase$CursorFactory;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			QAndroidJniObject::fromString(arg3).object<jstring>(),
+			arg4.__jniObject().object()
+		);
+	}
 	jlong SQLiteDatabase::insertOrThrow(jstring arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2)
 	{
 		return __thiz.callMethod<jlong>(
@@ -702,6 +1031,16 @@ namespace __jni_impl::android::database::sqlite
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J",
 			arg0,
 			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	jlong SQLiteDatabase::insertOrThrow(const QString &arg0, const QString &arg1, __jni_impl::android::content::ContentValues arg2)
+	{
+		return __thiz.callMethod<jlong>(
+			"insertOrThrow",
+			"(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
@@ -715,6 +1054,16 @@ namespace __jni_impl::android::database::sqlite
 			arg2.__jniObject().object()
 		);
 	}
+	jlong SQLiteDatabase::replaceOrThrow(const QString &arg0, const QString &arg1, __jni_impl::android::content::ContentValues arg2)
+	{
+		return __thiz.callMethod<jlong>(
+			"replaceOrThrow",
+			"(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
+	}
 	jlong SQLiteDatabase::insertWithOnConflict(jstring arg0, jstring arg1, __jni_impl::android::content::ContentValues arg2, jint arg3)
 	{
 		return __thiz.callMethod<jlong>(
@@ -722,6 +1071,17 @@ namespace __jni_impl::android::database::sqlite
 			"(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;I)J",
 			arg0,
 			arg1,
+			arg2.__jniObject().object(),
+			arg3
+		);
+	}
+	jlong SQLiteDatabase::insertWithOnConflict(const QString &arg0, const QString &arg1, __jni_impl::android::content::ContentValues arg2, jint arg3)
+	{
+		return __thiz.callMethod<jlong>(
+			"insertWithOnConflict",
+			"(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;I)J",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object(),
 			arg3
 		);
@@ -738,13 +1098,16 @@ namespace __jni_impl::android::database::sqlite
 			arg4
 		);
 	}
-	void SQLiteDatabase::execSQL(jstring arg0, jobjectArray arg1)
+	jint SQLiteDatabase::updateWithOnConflict(const QString &arg0, __jni_impl::android::content::ContentValues arg1, const QString &arg2, jarray arg3, jint arg4)
 	{
-		__thiz.callMethod<void>(
-			"execSQL",
-			"(Ljava/lang/String;[Ljava/lang/Object;)V",
-			arg0,
-			arg1
+		return __thiz.callMethod<jint>(
+			"updateWithOnConflict",
+			"(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;I)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3,
+			arg4
 		);
 	}
 	void SQLiteDatabase::execSQL(jstring arg0)
@@ -755,12 +1118,47 @@ namespace __jni_impl::android::database::sqlite
 			arg0
 		);
 	}
+	void SQLiteDatabase::execSQL(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"execSQL",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void SQLiteDatabase::execSQL(jstring arg0, jobjectArray arg1)
+	{
+		__thiz.callMethod<void>(
+			"execSQL",
+			"(Ljava/lang/String;[Ljava/lang/Object;)V",
+			arg0,
+			arg1
+		);
+	}
+	void SQLiteDatabase::execSQL(const QString &arg0, jobjectArray arg1)
+	{
+		__thiz.callMethod<void>(
+			"execSQL",
+			"(Ljava/lang/String;[Ljava/lang/Object;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	void SQLiteDatabase::validateSql(jstring arg0, __jni_impl::android::os::CancellationSignal arg1)
 	{
 		__thiz.callMethod<void>(
 			"validateSql",
 			"(Ljava/lang/String;Landroid/os/CancellationSignal;)V",
 			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void SQLiteDatabase::validateSql(const QString &arg0, __jni_impl::android::os::CancellationSignal arg1)
+	{
+		__thiz.callMethod<void>(
+			"validateSql",
+			"(Ljava/lang/String;Landroid/os/CancellationSignal;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
@@ -821,46 +1219,6 @@ namespace __jni_impl::android::database::sqlite
 		return __thiz.callMethod<jboolean>(
 			"isDatabaseIntegrityOk",
 			"()Z"
-		);
-	}
-	QAndroidJniObject SQLiteDatabase::openOrCreateDatabase(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.database.sqlite.SQLiteDatabase",
-			"openOrCreateDatabase",
-			"(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;Landroid/database/DatabaseErrorHandler;)Landroid/database/sqlite/SQLiteDatabase;",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject SQLiteDatabase::openOrCreateDatabase(jstring arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.database.sqlite.SQLiteDatabase",
-			"openOrCreateDatabase",
-			"(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject SQLiteDatabase::openOrCreateDatabase(__jni_impl::java::io::File arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.database.sqlite.SQLiteDatabase",
-			"openOrCreateDatabase",
-			"(Ljava/io/File;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean SQLiteDatabase::deleteDatabase(__jni_impl::java::io::File arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.database.sqlite.SQLiteDatabase",
-			"deleteDatabase",
-			"(Ljava/io/File;)Z",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::database::sqlite

@@ -26,7 +26,9 @@ namespace __jni_impl::android::drm
 		
 		// Constructors
 		void __constructor(jint arg0, jint arg1, jstring arg2);
+		void __constructor(jint arg0, jint arg1, const QString &arg2);
 		void __constructor(jint arg0, jint arg1, jstring arg2, __jni_impl::java::util::HashMap arg3);
+		void __constructor(jint arg0, jint arg1, const QString &arg2, __jni_impl::java::util::HashMap arg3);
 		
 		// Methods
 	};
@@ -88,7 +90,18 @@ namespace __jni_impl::android::drm
 			"(IILjava/lang/String;)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void DrmInfoEvent::__constructor(jint arg0, jint arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.drm.DrmInfoEvent",
+			"(IILjava/lang/String;)V",
+			arg0,
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	void DrmInfoEvent::__constructor(jint arg0, jint arg1, jstring arg2, __jni_impl::java::util::HashMap arg3)
 	{
@@ -98,7 +111,19 @@ namespace __jni_impl::android::drm
 			arg0,
 			arg1,
 			arg2,
-			arg3.__jniObject().object());
+			arg3.__jniObject().object()
+		);
+	}
+	void DrmInfoEvent::__constructor(jint arg0, jint arg1, const QString &arg2, __jni_impl::java::util::HashMap arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"android.drm.DrmInfoEvent",
+			"(IILjava/lang/String;Ljava/util/HashMap;)V",
+			arg0,
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3.__jniObject().object()
+		);
 	}
 	
 	// Methods

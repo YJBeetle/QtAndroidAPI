@@ -49,7 +49,8 @@ namespace __jni_impl::java::io
 		__thiz = QAndroidJniObject(
 			"java.io.ByteArrayInputStream",
 			"([B)V",
-			arg0);
+			arg0
+		);
 	}
 	void ByteArrayInputStream::__constructor(jbyteArray arg0, jint arg1, jint arg2)
 	{
@@ -58,7 +59,8 @@ namespace __jni_impl::java::io
 			"([BII)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	
 	// Methods

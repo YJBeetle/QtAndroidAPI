@@ -22,6 +22,7 @@ namespace __jni_impl::android::util
 		
 		// Methods
 		void println(jstring arg0);
+		void println(const QString &arg0);
 	};
 } // namespace __jni_impl::android::util
 
@@ -37,7 +38,8 @@ namespace __jni_impl::android::util
 		__thiz = QAndroidJniObject(
 			"android.util.PrintStreamPrinter",
 			"(Ljava/io/PrintStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -47,6 +49,14 @@ namespace __jni_impl::android::util
 			"println",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void PrintStreamPrinter::println(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"println",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::util

@@ -40,7 +40,9 @@ namespace __jni_impl::android::text::style
 		// Methods
 		jint getLeadingMargin(jboolean arg0);
 		void drawLeadingMargin(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jstring arg7, jint arg8, jint arg9, jboolean arg10, __jni_impl::android::text::Layout arg11);
+		void drawLeadingMargin(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, const QString &arg7, jint arg8, jint arg9, jboolean arg10, __jni_impl::android::text::Layout arg11);
 		void chooseHeight(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Paint_FontMetricsInt arg5);
+		void chooseHeight(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Paint_FontMetricsInt arg5);
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -60,7 +62,8 @@ namespace __jni_impl::android::text::style
 		__thiz = QAndroidJniObject(
 			"android.text.style.DrawableMarginSpan",
 			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void DrawableMarginSpan::__constructor(__jni_impl::android::graphics::drawable::Drawable arg0, jint arg1)
 	{
@@ -68,7 +71,8 @@ namespace __jni_impl::android::text::style
 			"android.text.style.DrawableMarginSpan",
 			"(Landroid/graphics/drawable/Drawable;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	
 	// Methods
@@ -99,12 +103,44 @@ namespace __jni_impl::android::text::style
 			arg11.__jniObject().object()
 		);
 	}
+	void DrawableMarginSpan::drawLeadingMargin(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, const QString &arg7, jint arg8, jint arg9, jboolean arg10, __jni_impl::android::text::Layout arg11)
+	{
+		__thiz.callMethod<void>(
+			"drawLeadingMargin",
+			"(Landroid/graphics/Canvas;Landroid/graphics/Paint;IIIIILjava/lang/CharSequence;IIZLandroid/text/Layout;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			QAndroidJniObject::fromString(arg7).object<jstring>(),
+			arg8,
+			arg9,
+			arg10,
+			arg11.__jniObject().object()
+		);
+	}
 	void DrawableMarginSpan::chooseHeight(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Paint_FontMetricsInt arg5)
 	{
 		__thiz.callMethod<void>(
 			"chooseHeight",
 			"(Ljava/lang/CharSequence;IIIILandroid/graphics/Paint$FontMetricsInt;)V",
 			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5.__jniObject().object()
+		);
+	}
+	void DrawableMarginSpan::chooseHeight(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Paint_FontMetricsInt arg5)
+	{
+		__thiz.callMethod<void>(
+			"chooseHeight",
+			"(Ljava/lang/CharSequence;IIIILandroid/graphics/Paint$FontMetricsInt;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2,
 			arg3,

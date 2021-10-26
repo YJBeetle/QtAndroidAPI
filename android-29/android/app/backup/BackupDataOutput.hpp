@@ -23,6 +23,7 @@ namespace __jni_impl::android::app::backup
 		// Methods
 		jint getTransportFlags();
 		jint writeEntityHeader(jstring arg0, jint arg1);
+		jint writeEntityHeader(const QString &arg0, jint arg1);
 		jint writeEntityData(jbyteArray arg0, jint arg1);
 		jlong getQuota();
 	};
@@ -56,6 +57,15 @@ namespace __jni_impl::android::app::backup
 			"writeEntityHeader",
 			"(Ljava/lang/String;I)I",
 			arg0,
+			arg1
+		);
+	}
+	jint BackupDataOutput::writeEntityHeader(const QString &arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"writeEntityHeader",
+			"(Ljava/lang/String;I)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}

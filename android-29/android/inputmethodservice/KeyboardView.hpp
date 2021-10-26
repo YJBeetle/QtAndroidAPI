@@ -10,17 +10,13 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::view
-{
-	class View;
-}
-namespace __jni_impl::android::inputmethodservice
-{
-	class Keyboard_Key;
-}
 namespace __jni_impl::android::inputmethodservice
 {
 	class Keyboard;
+}
+namespace __jni_impl::android::view
+{
+	class View;
 }
 namespace __jni_impl::android::view
 {
@@ -29,6 +25,10 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::graphics
 {
 	class Canvas;
+}
+namespace __jni_impl::android::inputmethodservice
+{
+	class Keyboard_Key;
 }
 
 namespace __jni_impl::android::inputmethodservice
@@ -45,10 +45,6 @@ namespace __jni_impl::android::inputmethodservice
 		
 		// Methods
 		void closing();
-		void onClick(__jni_impl::android::view::View arg0);
-		void invalidateKey(jint arg0);
-		jboolean setShifted(jboolean arg0);
-		jboolean isShifted();
 		void setOnKeyboardActionListener(__jni_impl::__JniBaseClass arg0);
 		void setKeyboard(__jni_impl::android::inputmethodservice::Keyboard arg0);
 		QAndroidJniObject getKeyboard();
@@ -61,21 +57,25 @@ namespace __jni_impl::android::inputmethodservice
 		jboolean isProximityCorrectionEnabled();
 		void invalidateAllKeys();
 		jboolean handleBack();
-		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
-		void onDetachedFromWindow();
 		jboolean onHoverEvent(__jni_impl::android::view::MotionEvent arg0);
 		void onSizeChanged(jint arg0, jint arg1, jint arg2, jint arg3);
 		void onDraw(__jni_impl::android::graphics::Canvas arg0);
 		void onMeasure(jint arg0, jint arg1);
+		void invalidateKey(jint arg0);
+		jboolean setShifted(jboolean arg0);
+		jboolean isShifted();
+		void onClick(__jni_impl::android::view::View arg0);
+		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		void onDetachedFromWindow();
 	};
 } // namespace __jni_impl::android::inputmethodservice
 
 #include "../content/Context.hpp"
-#include "../view/View.hpp"
-#include "Keyboard_Key.hpp"
 #include "Keyboard.hpp"
+#include "../view/View.hpp"
 #include "../view/MotionEvent.hpp"
 #include "../graphics/Canvas.hpp"
+#include "Keyboard_Key.hpp"
 
 namespace __jni_impl::android::inputmethodservice
 {
@@ -90,7 +90,8 @@ namespace __jni_impl::android::inputmethodservice
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
 	}
 	void KeyboardView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
@@ -99,7 +100,8 @@ namespace __jni_impl::android::inputmethodservice
 			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
 	}
 	void KeyboardView::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
@@ -107,7 +109,8 @@ namespace __jni_impl::android::inputmethodservice
 			"android.inputmethodservice.KeyboardView",
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -116,37 +119,6 @@ namespace __jni_impl::android::inputmethodservice
 		__thiz.callMethod<void>(
 			"closing",
 			"()V"
-		);
-	}
-	void KeyboardView::onClick(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"onClick",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void KeyboardView::invalidateKey(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"invalidateKey",
-			"(I)V",
-			arg0
-		);
-	}
-	jboolean KeyboardView::setShifted(jboolean arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setShifted",
-			"(Z)Z",
-			arg0
-		);
-	}
-	jboolean KeyboardView::isShifted()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isShifted",
-			"()Z"
 		);
 	}
 	void KeyboardView::setOnKeyboardActionListener(__jni_impl::__JniBaseClass arg0)
@@ -241,21 +213,6 @@ namespace __jni_impl::android::inputmethodservice
 			"()Z"
 		);
 	}
-	jboolean KeyboardView::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTouchEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	void KeyboardView::onDetachedFromWindow()
-	{
-		__thiz.callMethod<void>(
-			"onDetachedFromWindow",
-			"()V"
-		);
-	}
 	jboolean KeyboardView::onHoverEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -290,6 +247,52 @@ namespace __jni_impl::android::inputmethodservice
 			"(II)V",
 			arg0,
 			arg1
+		);
+	}
+	void KeyboardView::invalidateKey(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"invalidateKey",
+			"(I)V",
+			arg0
+		);
+	}
+	jboolean KeyboardView::setShifted(jboolean arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setShifted",
+			"(Z)Z",
+			arg0
+		);
+	}
+	jboolean KeyboardView::isShifted()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isShifted",
+			"()Z"
+		);
+	}
+	void KeyboardView::onClick(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"onClick",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean KeyboardView::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onTouchEvent",
+			"(Landroid/view/MotionEvent;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	void KeyboardView::onDetachedFromWindow()
+	{
+		__thiz.callMethod<void>(
+			"onDetachedFromWindow",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::inputmethodservice

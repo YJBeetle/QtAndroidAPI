@@ -25,13 +25,13 @@ namespace __jni_impl::android::os
 {
 	class Handler;
 }
-namespace __jni_impl::android::net
-{
-	class NetworkSpecifier;
-}
 namespace __jni_impl::android::net::wifi::aware
 {
 	class SubscribeConfig;
+}
+namespace __jni_impl::android::net
+{
+	class NetworkSpecifier;
 }
 
 namespace __jni_impl::android::net::wifi::aware
@@ -47,9 +47,10 @@ namespace __jni_impl::android::net::wifi::aware
 		// Methods
 		void close();
 		void publish(__jni_impl::android::net::wifi::aware::PublishConfig arg0, __jni_impl::android::net::wifi::aware::DiscoverySessionCallback arg1, __jni_impl::android::os::Handler arg2);
+		void subscribe(__jni_impl::android::net::wifi::aware::SubscribeConfig arg0, __jni_impl::android::net::wifi::aware::DiscoverySessionCallback arg1, __jni_impl::android::os::Handler arg2);
 		QAndroidJniObject createNetworkSpecifierOpen(jint arg0, jbyteArray arg1);
 		QAndroidJniObject createNetworkSpecifierPassphrase(jint arg0, jbyteArray arg1, jstring arg2);
-		void subscribe(__jni_impl::android::net::wifi::aware::SubscribeConfig arg0, __jni_impl::android::net::wifi::aware::DiscoverySessionCallback arg1, __jni_impl::android::os::Handler arg2);
+		QAndroidJniObject createNetworkSpecifierPassphrase(jint arg0, jbyteArray arg1, const QString &arg2);
 	};
 } // namespace __jni_impl::android::net::wifi::aware
 
@@ -58,8 +59,8 @@ namespace __jni_impl::android::net::wifi::aware
 #include "PublishConfig.hpp"
 #include "DiscoverySessionCallback.hpp"
 #include "../../../os/Handler.hpp"
-#include "../../NetworkSpecifier.hpp"
 #include "SubscribeConfig.hpp"
+#include "../../NetworkSpecifier.hpp"
 
 namespace __jni_impl::android::net::wifi::aware
 {
@@ -91,6 +92,16 @@ namespace __jni_impl::android::net::wifi::aware
 			arg2.__jniObject().object()
 		);
 	}
+	void WifiAwareSession::subscribe(__jni_impl::android::net::wifi::aware::SubscribeConfig arg0, __jni_impl::android::net::wifi::aware::DiscoverySessionCallback arg1, __jni_impl::android::os::Handler arg2)
+	{
+		__thiz.callMethod<void>(
+			"subscribe",
+			"(Landroid/net/wifi/aware/SubscribeConfig;Landroid/net/wifi/aware/DiscoverySessionCallback;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
 	QAndroidJniObject WifiAwareSession::createNetworkSpecifierOpen(jint arg0, jbyteArray arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -110,14 +121,14 @@ namespace __jni_impl::android::net::wifi::aware
 			arg2
 		);
 	}
-	void WifiAwareSession::subscribe(__jni_impl::android::net::wifi::aware::SubscribeConfig arg0, __jni_impl::android::net::wifi::aware::DiscoverySessionCallback arg1, __jni_impl::android::os::Handler arg2)
+	QAndroidJniObject WifiAwareSession::createNetworkSpecifierPassphrase(jint arg0, jbyteArray arg1, const QString &arg2)
 	{
-		__thiz.callMethod<void>(
-			"subscribe",
-			"(Landroid/net/wifi/aware/SubscribeConfig;Landroid/net/wifi/aware/DiscoverySessionCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"createNetworkSpecifierPassphrase",
+			"(I[BLjava/lang/String;)Landroid/net/NetworkSpecifier;",
+			arg0,
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::net::wifi::aware

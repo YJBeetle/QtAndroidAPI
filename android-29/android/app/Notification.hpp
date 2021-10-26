@@ -173,13 +173,12 @@ namespace __jni_impl::android::app
 		// Constructors
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		void __constructor(jint arg0, jstring arg1, jlong arg2);
+		void __constructor(jint arg0, const QString &arg1, jlong arg2);
 		void __constructor();
 		
 		// Methods
 		jstring toString();
 		QAndroidJniObject clone();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jstring getGroup();
 		jstring getSortKey();
 		jstring getChannelId();
@@ -193,6 +192,8 @@ namespace __jni_impl::android::app
 		jboolean getAllowSystemGeneratedContextualActions();
 		QAndroidJniObject getSmallIcon();
 		QAndroidJniObject getLargeIcon();
+		jint describeContents();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -1080,7 +1081,8 @@ namespace __jni_impl::android::app
 		__thiz = QAndroidJniObject(
 			"android.app.Notification",
 			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Notification::__constructor(jint arg0, jstring arg1, jlong arg2)
 	{
@@ -1089,13 +1091,25 @@ namespace __jni_impl::android::app
 			"(ILjava/lang/CharSequence;J)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
+	}
+	void Notification::__constructor(jint arg0, const QString &arg1, jlong arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.Notification",
+			"(ILjava/lang/CharSequence;J)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
 	}
 	void Notification::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -1111,22 +1125,6 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"clone",
 			"()Landroid/app/Notification;"
-		);
-	}
-	jint Notification::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void Notification::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 	jstring Notification::getGroup()
@@ -1218,6 +1216,22 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"getLargeIcon",
 			"()Landroid/graphics/drawable/Icon;"
+		);
+	}
+	jint Notification::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void Notification::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::app

@@ -27,10 +27,10 @@ namespace __jni_impl::android::location
 		
 		// Methods
 		jstring toString();
-		QAndroidJniObject getMeasurements();
 		QAndroidJniObject getClock();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getMeasurements();
 	};
 } // namespace __jni_impl::android::location
 
@@ -65,13 +65,6 @@ namespace __jni_impl::android::location
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject GnssMeasurementsEvent::getMeasurements()
-	{
-		return __thiz.callObjectMethod(
-			"getMeasurements",
-			"()Ljava/util/Collection;"
-		);
-	}
 	QAndroidJniObject GnssMeasurementsEvent::getClock()
 	{
 		return __thiz.callObjectMethod(
@@ -93,6 +86,13 @@ namespace __jni_impl::android::location
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	QAndroidJniObject GnssMeasurementsEvent::getMeasurements()
+	{
+		return __thiz.callObjectMethod(
+			"getMeasurements",
+			"()Ljava/util/Collection;"
 		);
 	}
 } // namespace __jni_impl::android::location

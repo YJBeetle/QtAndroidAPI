@@ -23,6 +23,7 @@ namespace __jni_impl::android::telephony
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject setClientPrefix(jstring arg0);
+		QAndroidJniObject setClientPrefix(const QString &arg0);
 		QAndroidJniObject setOriginatingNumbers(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject setDestinationPort(jint arg0);
 	};
@@ -39,7 +40,8 @@ namespace __jni_impl::android::telephony
 	{
 		__thiz = QAndroidJniObject(
 			"android.telephony.VisualVoicemailSmsFilterSettings$Builder",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -56,6 +58,14 @@ namespace __jni_impl::android::telephony
 			"setClientPrefix",
 			"(Ljava/lang/String;)Landroid/telephony/VisualVoicemailSmsFilterSettings$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject VisualVoicemailSmsFilterSettings_Builder::setClientPrefix(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setClientPrefix",
+			"(Ljava/lang/String;)Landroid/telephony/VisualVoicemailSmsFilterSettings$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject VisualVoicemailSmsFilterSettings_Builder::setOriginatingNumbers(__jni_impl::__JniBaseClass arg0)

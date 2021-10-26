@@ -53,7 +53,9 @@ namespace __jni_impl::android::media::effect
 		
 		// Methods
 		QAndroidJniObject createEffect(jstring arg0);
+		QAndroidJniObject createEffect(const QString &arg0);
 		static jboolean isEffectSupported(jstring arg0);
+		static jboolean isEffectSupported(const QString &arg0);
 	};
 } // namespace __jni_impl::android::media::effect
 
@@ -297,6 +299,14 @@ namespace __jni_impl::android::media::effect
 			arg0
 		);
 	}
+	QAndroidJniObject EffectFactory::createEffect(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"createEffect",
+			"(Ljava/lang/String;)Landroid/media/effect/Effect;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jboolean EffectFactory::isEffectSupported(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -304,6 +314,15 @@ namespace __jni_impl::android::media::effect
 			"isEffectSupported",
 			"(Ljava/lang/String;)Z",
 			arg0
+		);
+	}
+	jboolean EffectFactory::isEffectSupported(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.media.effect.EffectFactory",
+			"isEffectSupported",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::media::effect

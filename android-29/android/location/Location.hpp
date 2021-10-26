@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class Bundle;
 }
 namespace __jni_impl::android::os
 {
-	class Bundle;
+	class Parcel;
 }
 
 namespace __jni_impl::android::location
@@ -27,6 +27,7 @@ namespace __jni_impl::android::location
 		
 		// Constructors
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(__jni_impl::android::location::Location arg0);
 		
 		// Methods
@@ -35,12 +36,17 @@ namespace __jni_impl::android::location
 		void reset();
 		jstring getProvider();
 		static jdouble convert(jstring arg0);
+		static jdouble convert(const QString &arg0);
 		static jstring convert(jdouble arg0, jint arg1);
 		jlong getTime();
 		void setTime(jlong arg0);
+		void setExtras(__jni_impl::android::os::Bundle arg0);
+		jdouble getAltitude();
+		static void distanceBetween(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jfloatArray arg4);
 		jfloat distanceTo(__jni_impl::android::location::Location arg0);
 		jfloat bearingTo(__jni_impl::android::location::Location arg0);
 		void setProvider(jstring arg0);
+		void setProvider(const QString &arg0);
 		jlong getElapsedRealtimeNanos();
 		void setElapsedRealtimeNanos(jlong arg0);
 		jdouble getElapsedRealtimeUncertaintyNanos();
@@ -78,15 +84,13 @@ namespace __jni_impl::android::location
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void dump(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 		QAndroidJniObject getExtras();
-		void setExtras(__jni_impl::android::os::Bundle arg0);
-		jdouble getAltitude();
-		static void distanceBetween(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jfloatArray arg4);
 	};
 } // namespace __jni_impl::android::location
 
-#include "../os/Parcel.hpp"
 #include "../os/Bundle.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::location
 {
@@ -127,14 +131,24 @@ namespace __jni_impl::android::location
 		__thiz = QAndroidJniObject(
 			"android.location.Location",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Location::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.location.Location",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void Location::__constructor(__jni_impl::android::location::Location arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.location.Location",
 			"(Landroid/location/Location;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods
@@ -176,6 +190,15 @@ namespace __jni_impl::android::location
 			arg0
 		);
 	}
+	jdouble Location::convert(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jdouble>(
+			"android.location.Location",
+			"convert",
+			"(Ljava/lang/String;)D",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jstring Location::convert(jdouble arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -201,6 +224,34 @@ namespace __jni_impl::android::location
 			arg0
 		);
 	}
+	void Location::setExtras(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"setExtras",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jdouble Location::getAltitude()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getAltitude",
+			"()D"
+		);
+	}
+	void Location::distanceBetween(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jfloatArray arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.location.Location",
+			"distanceBetween",
+			"(DDDD[F)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
 	jfloat Location::distanceTo(__jni_impl::android::location::Location arg0)
 	{
 		return __thiz.callMethod<jfloat>(
@@ -223,6 +274,14 @@ namespace __jni_impl::android::location
 			"setProvider",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void Location::setProvider(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setProvider",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jlong Location::getElapsedRealtimeNanos()
@@ -499,39 +558,20 @@ namespace __jni_impl::android::location
 			arg1
 		);
 	}
+	void Location::dump(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject Location::getExtras()
 	{
 		return __thiz.callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
-		);
-	}
-	void Location::setExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"setExtras",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jdouble Location::getAltitude()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getAltitude",
-			"()D"
-		);
-	}
-	void Location::distanceBetween(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jfloatArray arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.location.Location",
-			"distanceBetween",
-			"(DDDD[F)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
 		);
 	}
 } // namespace __jni_impl::android::location

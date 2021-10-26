@@ -99,7 +99,8 @@ namespace __jni_impl::android::service::quicksettings
 	{
 		__thiz = QAndroidJniObject(
 			"android.service.quicksettings.TileService",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods

@@ -71,15 +71,25 @@ namespace __jni_impl::android::provider
 		void __constructor();
 		
 		// Methods
+		static jstring getRootId(__jni_impl::android::net::Uri arg0);
 		static QAndroidJniObject buildRootsUri(jstring arg0);
+		static QAndroidJniObject buildRootsUri(const QString &arg0);
 		static QAndroidJniObject buildRootUri(jstring arg0, jstring arg1);
+		static QAndroidJniObject buildRootUri(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject buildRecentDocumentsUri(jstring arg0, jstring arg1);
+		static QAndroidJniObject buildRecentDocumentsUri(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject buildTreeDocumentUri(jstring arg0, jstring arg1);
+		static QAndroidJniObject buildTreeDocumentUri(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject buildDocumentUri(jstring arg0, jstring arg1);
+		static QAndroidJniObject buildDocumentUri(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject buildDocumentUriUsingTree(__jni_impl::android::net::Uri arg0, jstring arg1);
+		static QAndroidJniObject buildDocumentUriUsingTree(__jni_impl::android::net::Uri arg0, const QString &arg1);
 		static QAndroidJniObject buildChildDocumentsUri(jstring arg0, jstring arg1);
+		static QAndroidJniObject buildChildDocumentsUri(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject buildChildDocumentsUriUsingTree(__jni_impl::android::net::Uri arg0, jstring arg1);
+		static QAndroidJniObject buildChildDocumentsUriUsingTree(__jni_impl::android::net::Uri arg0, const QString &arg1);
 		static QAndroidJniObject buildSearchDocumentsUri(jstring arg0, jstring arg1, jstring arg2);
+		static QAndroidJniObject buildSearchDocumentsUri(const QString &arg0, const QString &arg1, const QString &arg2);
 		static jboolean isDocumentUri(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1);
 		static jboolean isRootsUri(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1);
 		static jboolean isRootUri(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1);
@@ -89,8 +99,10 @@ namespace __jni_impl::android::provider
 		static jstring getSearchDocumentsQuery(__jni_impl::android::net::Uri arg0);
 		static QAndroidJniObject getDocumentThumbnail(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::graphics::Point arg2, __jni_impl::android::os::CancellationSignal arg3);
 		static QAndroidJniObject createDocument(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, jstring arg2, jstring arg3);
+		static QAndroidJniObject createDocument(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, const QString &arg2, const QString &arg3);
 		static jboolean isChildDocument(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::net::Uri arg2);
 		static QAndroidJniObject renameDocument(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, jstring arg2);
+		static QAndroidJniObject renameDocument(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, const QString &arg2);
 		static jboolean deleteDocument(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1);
 		static QAndroidJniObject copyDocument(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::net::Uri arg2);
 		static QAndroidJniObject moveDocument(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::net::Uri arg2, __jni_impl::android::net::Uri arg3);
@@ -99,7 +111,6 @@ namespace __jni_impl::android::provider
 		static QAndroidJniObject getDocumentMetadata(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1);
 		static QAndroidJniObject findDocumentPath(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1);
 		static QAndroidJniObject createWebLinkIntent(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::os::Bundle arg2);
-		static jstring getRootId(__jni_impl::android::net::Uri arg0);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -270,6 +281,15 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
+	jstring DocumentsContract::getRootId(__jni_impl::android::net::Uri arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"getRootId",
+			"(Landroid/net/Uri;)Ljava/lang/String;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
 	QAndroidJniObject DocumentsContract::buildRootsUri(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -277,6 +297,15 @@ namespace __jni_impl::android::provider
 			"buildRootsUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
 			arg0
+		);
+	}
+	QAndroidJniObject DocumentsContract::buildRootsUri(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"buildRootsUri",
+			"(Ljava/lang/String;)Landroid/net/Uri;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject DocumentsContract::buildRootUri(jstring arg0, jstring arg1)
@@ -289,6 +318,16 @@ namespace __jni_impl::android::provider
 			arg1
 		);
 	}
+	QAndroidJniObject DocumentsContract::buildRootUri(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"buildRootUri",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject DocumentsContract::buildRecentDocumentsUri(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -297,6 +336,16 @@ namespace __jni_impl::android::provider
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
 			arg0,
 			arg1
+		);
+	}
+	QAndroidJniObject DocumentsContract::buildRecentDocumentsUri(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"buildRecentDocumentsUri",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject DocumentsContract::buildTreeDocumentUri(jstring arg0, jstring arg1)
@@ -309,6 +358,16 @@ namespace __jni_impl::android::provider
 			arg1
 		);
 	}
+	QAndroidJniObject DocumentsContract::buildTreeDocumentUri(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"buildTreeDocumentUri",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject DocumentsContract::buildDocumentUri(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -317,6 +376,16 @@ namespace __jni_impl::android::provider
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
 			arg0,
 			arg1
+		);
+	}
+	QAndroidJniObject DocumentsContract::buildDocumentUri(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"buildDocumentUri",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject DocumentsContract::buildDocumentUriUsingTree(__jni_impl::android::net::Uri arg0, jstring arg1)
@@ -329,6 +398,16 @@ namespace __jni_impl::android::provider
 			arg1
 		);
 	}
+	QAndroidJniObject DocumentsContract::buildDocumentUriUsingTree(__jni_impl::android::net::Uri arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"buildDocumentUriUsingTree",
+			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject DocumentsContract::buildChildDocumentsUri(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -337,6 +416,16 @@ namespace __jni_impl::android::provider
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
 			arg0,
 			arg1
+		);
+	}
+	QAndroidJniObject DocumentsContract::buildChildDocumentsUri(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"buildChildDocumentsUri",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject DocumentsContract::buildChildDocumentsUriUsingTree(__jni_impl::android::net::Uri arg0, jstring arg1)
@@ -349,6 +438,16 @@ namespace __jni_impl::android::provider
 			arg1
 		);
 	}
+	QAndroidJniObject DocumentsContract::buildChildDocumentsUriUsingTree(__jni_impl::android::net::Uri arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"buildChildDocumentsUriUsingTree",
+			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	QAndroidJniObject DocumentsContract::buildSearchDocumentsUri(jstring arg0, jstring arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -358,6 +457,17 @@ namespace __jni_impl::android::provider
 			arg0,
 			arg1,
 			arg2
+		);
+	}
+	QAndroidJniObject DocumentsContract::buildSearchDocumentsUri(const QString &arg0, const QString &arg1, const QString &arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"buildSearchDocumentsUri",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	jboolean DocumentsContract::isDocumentUri(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1)
@@ -450,6 +560,18 @@ namespace __jni_impl::android::provider
 			arg3
 		);
 	}
+	QAndroidJniObject DocumentsContract::createDocument(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, const QString &arg2, const QString &arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"createDocument",
+			"(Landroid/content/ContentResolver;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			QAndroidJniObject::fromString(arg3).object<jstring>()
+		);
+	}
 	jboolean DocumentsContract::isChildDocument(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::net::Uri arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -470,6 +592,17 @@ namespace __jni_impl::android::provider
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2
+		);
+	}
+	QAndroidJniObject DocumentsContract::renameDocument(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, const QString &arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.DocumentsContract",
+			"renameDocument",
+			"(Landroid/content/ContentResolver;Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	jboolean DocumentsContract::deleteDocument(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1)
@@ -556,15 +689,6 @@ namespace __jni_impl::android::provider
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);
-	}
-	jstring DocumentsContract::getRootId(__jni_impl::android::net::Uri arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.DocumentsContract",
-			"getRootId",
-			"(Landroid/net/Uri;)Ljava/lang/String;",
-			arg0.__jniObject().object()
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::provider
 

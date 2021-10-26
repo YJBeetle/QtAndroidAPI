@@ -25,11 +25,11 @@ namespace __jni_impl::android::renderscript
 		void scale(jfloat arg0, jfloat arg1);
 		jfloatArray getArray();
 		void rotate(jfloat arg0);
-		void loadMultiply(__jni_impl::android::renderscript::Matrix2f arg0, __jni_impl::android::renderscript::Matrix2f arg1);
-		void transpose();
 		void loadIdentity();
 		void loadRotate(jfloat arg0);
 		void loadScale(jfloat arg0, jfloat arg1);
+		void loadMultiply(__jni_impl::android::renderscript::Matrix2f arg0, __jni_impl::android::renderscript::Matrix2f arg1);
+		void transpose();
 	};
 } // namespace __jni_impl::android::renderscript
 
@@ -43,14 +43,16 @@ namespace __jni_impl::android::renderscript
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Matrix2f",
-			"()V");
+			"()V"
+		);
 	}
 	void Matrix2f::__constructor(jfloatArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.renderscript.Matrix2f",
 			"([F)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods
@@ -113,22 +115,6 @@ namespace __jni_impl::android::renderscript
 			arg0
 		);
 	}
-	void Matrix2f::loadMultiply(__jni_impl::android::renderscript::Matrix2f arg0, __jni_impl::android::renderscript::Matrix2f arg1)
-	{
-		__thiz.callMethod<void>(
-			"loadMultiply",
-			"(Landroid/renderscript/Matrix2f;Landroid/renderscript/Matrix2f;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void Matrix2f::transpose()
-	{
-		__thiz.callMethod<void>(
-			"transpose",
-			"()V"
-		);
-	}
 	void Matrix2f::loadIdentity()
 	{
 		__thiz.callMethod<void>(
@@ -151,6 +137,22 @@ namespace __jni_impl::android::renderscript
 			"(FF)V",
 			arg0,
 			arg1
+		);
+	}
+	void Matrix2f::loadMultiply(__jni_impl::android::renderscript::Matrix2f arg0, __jni_impl::android::renderscript::Matrix2f arg1)
+	{
+		__thiz.callMethod<void>(
+			"loadMultiply",
+			"(Landroid/renderscript/Matrix2f;Landroid/renderscript/Matrix2f;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void Matrix2f::transpose()
+	{
+		__thiz.callMethod<void>(
+			"transpose",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::renderscript

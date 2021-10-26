@@ -39,13 +39,19 @@ namespace __jni_impl::java::lang
 		// Constructors
 		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor();
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, jlong arg3, jboolean arg4);
+		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2, jlong arg3, jboolean arg4);
 		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, jlong arg3);
+		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2, jlong arg3);
 		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2);
+		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2);
 		void __constructor(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void __constructor(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, jstring arg1);
+		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, const QString &arg1);
 		
 		// Methods
 		jstring getName();
@@ -83,6 +89,7 @@ namespace __jni_impl::java::lang
 		static jboolean interrupted();
 		void suspend();
 		void setName(jstring arg0);
+		void setName(const QString &arg0);
 		jint countStackFrames();
 		static QAndroidJniObject getAllStackTraces();
 		jlong getId();
@@ -130,27 +137,39 @@ namespace __jni_impl::java::lang
 			"java.lang.Thread",
 			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object());
+			arg1.__jniObject().object()
+		);
 	}
 	void Thread::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Thread",
 			"(Ljava/lang/String;)V",
-			arg0);
+			arg0
+		);
+	}
+	void Thread::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.Thread",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void Thread::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Thread",
-			"()V");
+			"()V"
+		);
 	}
 	void Thread::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Thread",
 			"(Ljava/lang/Runnable;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, jlong arg3, jboolean arg4)
 	{
@@ -161,7 +180,20 @@ namespace __jni_impl::java::lang
 			arg1.__jniObject().object(),
 			arg2,
 			arg3,
-			arg4);
+			arg4
+		);
+	}
+	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2, jlong arg3, jboolean arg4)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.Thread",
+			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;JZ)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3,
+			arg4
+		);
 	}
 	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, jlong arg3)
 	{
@@ -171,7 +203,19 @@ namespace __jni_impl::java::lang
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3);
+			arg3
+		);
+	}
+	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2, jlong arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.Thread",
+			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3
+		);
 	}
 	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2)
 	{
@@ -180,7 +224,18 @@ namespace __jni_impl::java::lang
 			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2);
+			arg2
+		);
+	}
+	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.Thread",
+			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
 	}
 	void Thread::__constructor(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
@@ -188,7 +243,17 @@ namespace __jni_impl::java::lang
 			"java.lang.Thread",
 			"(Ljava/lang/Runnable;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void Thread::__constructor(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.Thread",
+			"(Ljava/lang/Runnable;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, jstring arg1)
 	{
@@ -196,7 +261,17 @@ namespace __jni_impl::java::lang
 			"java.lang.Thread",
 			"(Ljava/lang/ThreadGroup;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
+	}
+	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.Thread",
+			"(Ljava/lang/ThreadGroup;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	
 	// Methods
@@ -467,6 +542,14 @@ namespace __jni_impl::java::lang
 			"setName",
 			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void Thread::setName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setName",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint Thread::countStackFrames()

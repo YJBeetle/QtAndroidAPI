@@ -26,13 +26,13 @@ namespace __jni_impl::android::telephony
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jstring getMccString();
 		jlong getNci();
 		jint getNrarfcn();
 		jint getPci();
 		jint getTac();
 		jstring getMncString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -81,15 +81,6 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
-	void CellIdentityNr::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	jstring CellIdentityNr::getMccString()
 	{
 		return __thiz.callObjectMethod(
@@ -131,6 +122,15 @@ namespace __jni_impl::android::telephony
 			"getMncString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	void CellIdentityNr::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

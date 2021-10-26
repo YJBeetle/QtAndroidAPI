@@ -35,6 +35,7 @@ namespace __jni_impl::javax::net::ssl
 		jarray getSupportedCipherSuites();
 		QAndroidJniObject createSocket(__jni_impl::java::net::Socket arg0, __jni_impl::java::io::InputStream arg1, jboolean arg2);
 		QAndroidJniObject createSocket(__jni_impl::java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3);
+		QAndroidJniObject createSocket(__jni_impl::java::net::Socket arg0, const QString &arg1, jint arg2, jboolean arg3);
 	};
 } // namespace __jni_impl::javax::net::ssl
 
@@ -51,7 +52,8 @@ namespace __jni_impl::javax::net::ssl
 	{
 		__thiz = QAndroidJniObject(
 			"javax.net.ssl.SSLSocketFactory",
-			"()V");
+			"()V"
+		);
 	}
 	
 	// Methods
@@ -94,6 +96,17 @@ namespace __jni_impl::javax::net::ssl
 			"(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;",
 			arg0.__jniObject().object(),
 			arg1,
+			arg2,
+			arg3
+		);
+	}
+	QAndroidJniObject SSLSocketFactory::createSocket(__jni_impl::java::net::Socket arg0, const QString &arg1, jint arg2, jboolean arg3)
+	{
+		return __thiz.callObjectMethod(
+			"createSocket",
+			"(Ljava/net/Socket;Ljava/lang/String;IZ)Ljava/net/Socket;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3
 		);

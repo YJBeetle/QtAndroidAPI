@@ -33,14 +33,16 @@ namespace __jni_impl::android::animation
 	{
 		__thiz = QAndroidJniObject(
 			"android.animation.FloatArrayEvaluator",
-			"()V");
+			"()V"
+		);
 	}
 	void FloatArrayEvaluator::__constructor(jfloatArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.animation.FloatArrayEvaluator",
 			"([F)V",
-			arg0);
+			arg0
+		);
 	}
 	
 	// Methods

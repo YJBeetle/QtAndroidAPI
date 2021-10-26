@@ -44,14 +44,16 @@ namespace __jni_impl::android::app
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$MediaStyle",
-			"()V");
+			"()V"
+		);
 	}
 	void Notification_MediaStyle::__constructor(__jni_impl::android::app::Notification_Builder arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.Notification$MediaStyle",
 			"(Landroid/app/Notification$Builder;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

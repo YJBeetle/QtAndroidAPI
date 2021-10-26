@@ -44,14 +44,16 @@ namespace __jni_impl::android::media::audiofx
 			"(ZZI)V",
 			arg0,
 			arg1,
-			arg2);
+			arg2
+		);
 	}
 	void DynamicsProcessing_Mbc::__constructor(__jni_impl::android::media::audiofx::DynamicsProcessing_Mbc arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.audiofx.DynamicsProcessing$Mbc",
 			"(Landroid/media/audiofx/DynamicsProcessing$Mbc;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

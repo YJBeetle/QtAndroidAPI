@@ -50,13 +50,15 @@ namespace __jni_impl::java::io
 		__thiz = QAndroidJniObject(
 			"java.io.PipedInputStream",
 			"(I)V",
-			arg0);
+			arg0
+		);
 	}
 	void PipedInputStream::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PipedInputStream",
-			"()V");
+			"()V"
+		);
 	}
 	void PipedInputStream::__constructor(__jni_impl::java::io::PipedOutputStream arg0, jint arg1)
 	{
@@ -64,14 +66,16 @@ namespace __jni_impl::java::io
 			"java.io.PipedInputStream",
 			"(Ljava/io/PipedOutputStream;I)V",
 			arg0.__jniObject().object(),
-			arg1);
+			arg1
+		);
 	}
 	void PipedInputStream::__constructor(__jni_impl::java::io::PipedOutputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.PipedInputStream",
 			"(Ljava/io/PipedOutputStream;)V",
-			arg0.__jniObject().object());
+			arg0.__jniObject().object()
+		);
 	}
 	
 	// Methods

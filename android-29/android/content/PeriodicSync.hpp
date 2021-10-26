@@ -32,6 +32,7 @@ namespace __jni_impl::android::content
 		
 		// Constructors
 		void __constructor(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2, jlong arg3);
+		void __constructor(__jni_impl::android::accounts::Account arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2, jlong arg3);
 		
 		// Methods
 		jboolean equals(jobject arg0);
@@ -93,7 +94,19 @@ namespace __jni_impl::android::content
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3);
+			arg3
+		);
+	}
+	void PeriodicSync::__constructor(__jni_impl::android::accounts::Account arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2, jlong arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.PeriodicSync",
+			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;J)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object(),
+			arg3
+		);
 	}
 	
 	// Methods

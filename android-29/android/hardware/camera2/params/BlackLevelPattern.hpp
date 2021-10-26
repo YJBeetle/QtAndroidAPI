@@ -21,8 +21,8 @@ namespace __jni_impl::android::hardware::camera2::params
 		jboolean equals(jobject arg0);
 		jstring toString();
 		jint hashCode();
-		jint getOffsetForIndex(jint arg0, jint arg1);
 		void copyTo(jintArray arg0, jint arg1);
+		jint getOffsetForIndex(jint arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
@@ -69,20 +69,20 @@ namespace __jni_impl::android::hardware::camera2::params
 			"()I"
 		);
 	}
-	jint BlackLevelPattern::getOffsetForIndex(jint arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"getOffsetForIndex",
-			"(II)I",
-			arg0,
-			arg1
-		);
-	}
 	void BlackLevelPattern::copyTo(jintArray arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
 			"copyTo",
 			"([II)V",
+			arg0,
+			arg1
+		);
+	}
+	jint BlackLevelPattern::getOffsetForIndex(jint arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"getOffsetForIndex",
+			"(II)I",
 			arg0,
 			arg1
 		);
