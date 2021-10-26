@@ -8,9 +8,11 @@
 #include <QtAndroidExtras/QtAndroid>
 #include "../../android-29/android/widget/Toast.hpp"
 #include "../../android-29/android/app/ProgressDialog.hpp"
+#include "../../android-29/android/content/Intent.hpp"
 
 using namespace android::widget;
 using namespace android::app;
+using namespace android::content;
 
 #define PROGRESS_DIALOG_MAX 170001
 
@@ -94,4 +96,11 @@ void MainWindow::on_showProgressDialogHorizontal_clicked()
 		}
 	});
 	timer->start(10);
+}
+
+void MainWindow::on_OpenFile_clicked()
+{
+	QtAndroid::runOnAndroidThreadSync([] {
+		Intent intent = Intent(Intent::ACTION_GET_CONTENT());
+	});
 }
