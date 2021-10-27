@@ -82,9 +82,9 @@ namespace __jni_impl::android::view::textclassifier
 } // namespace __jni_impl::android::view::textclassifier
 
 #include "../../os/Parcel.hpp"
-#include "TextClassification.hpp"
-#include "TextClassificationSessionId.hpp"
-#include "TextSelection.hpp"
+#include "./TextClassification.hpp"
+#include "./TextClassificationSessionId.hpp"
+#include "./TextSelection.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {

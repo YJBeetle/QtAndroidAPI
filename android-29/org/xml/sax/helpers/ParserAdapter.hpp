@@ -66,8 +66,8 @@ namespace __jni_impl::org::xml::sax::helpers
 
 #include "../InputSource.hpp"
 #include "../SAXParseException.hpp"
-#include "AttributesImpl.hpp"
-#include "NamespaceSupport.hpp"
+#include "./AttributesImpl.hpp"
+#include "./NamespaceSupport.hpp"
 
 namespace __jni_impl::org::xml::sax::helpers
 {

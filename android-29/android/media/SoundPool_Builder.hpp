@@ -28,8 +28,8 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "AudioAttributes.hpp"
-#include "SoundPool.hpp"
+#include "./AudioAttributes.hpp"
+#include "./SoundPool.hpp"
 
 namespace __jni_impl::android::media
 {

@@ -33,8 +33,8 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "PowerManager.hpp"
-#include "WorkSource.hpp"
+#include "./PowerManager.hpp"
+#include "./WorkSource.hpp"
 
 namespace __jni_impl::android::os
 {

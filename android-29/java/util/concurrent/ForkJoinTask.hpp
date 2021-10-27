@@ -76,9 +76,9 @@ namespace __jni_impl::java::util::concurrent
 #include "../../io/ObjectInputStream.hpp"
 #include "../../io/ObjectOutputStream.hpp"
 #include "../../lang/ref/ReferenceQueue.hpp"
-#include "ForkJoinPool.hpp"
-#include "TimeUnit.hpp"
-#include "locks/ReentrantLock.hpp"
+#include "./ForkJoinPool.hpp"
+#include "./TimeUnit.hpp"
+#include "./locks/ReentrantLock.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {

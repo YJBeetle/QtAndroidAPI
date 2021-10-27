@@ -55,7 +55,7 @@ namespace __jni_impl::android::view::textclassifier
 #include "../../content/Intent.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../os/Bundle.hpp"
-#include "TextClassification.hpp"
+#include "./TextClassification.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {

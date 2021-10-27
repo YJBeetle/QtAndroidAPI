@@ -38,10 +38,10 @@ namespace __jni_impl::java::net
 } // namespace __jni_impl::java::net
 
 #include "../io/FileDescriptor.hpp"
-#include "DatagramPacket.hpp"
-#include "InetAddress.hpp"
-#include "NetworkInterface.hpp"
-#include "SocketAddress.hpp"
+#include "./DatagramPacket.hpp"
+#include "./InetAddress.hpp"
+#include "./NetworkInterface.hpp"
+#include "./SocketAddress.hpp"
 
 namespace __jni_impl::java::net
 {

@@ -119,11 +119,11 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Activity.hpp"
-#include "ActivityManager_MemoryInfo.hpp"
-#include "ActivityManager_RunningAppProcessInfo.hpp"
-#include "ActivityManager_TaskDescription.hpp"
-#include "PendingIntent.hpp"
+#include "./Activity.hpp"
+#include "./ActivityManager_MemoryInfo.hpp"
+#include "./ActivityManager_RunningAppProcessInfo.hpp"
+#include "./ActivityManager_TaskDescription.hpp"
+#include "./PendingIntent.hpp"
 #include "../content/ComponentName.hpp"
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"

@@ -92,12 +92,12 @@ namespace __jni_impl::android::webkit
 #include "../graphics/Bitmap.hpp"
 #include "../os/Message.hpp"
 #include "../view/View.hpp"
-#include "ConsoleMessage.hpp"
-#include "JsPromptResult.hpp"
-#include "JsResult.hpp"
-#include "PermissionRequest.hpp"
-#include "WebChromeClient_FileChooserParams.hpp"
-#include "WebView.hpp"
+#include "./ConsoleMessage.hpp"
+#include "./JsPromptResult.hpp"
+#include "./JsResult.hpp"
+#include "./PermissionRequest.hpp"
+#include "./WebChromeClient_FileChooserParams.hpp"
+#include "./WebView.hpp"
 
 namespace __jni_impl::android::webkit
 {

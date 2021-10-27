@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "CameraMetadata.hpp"
+#include "./CameraMetadata.hpp"
 
 namespace __jni_impl::android::hardware::camera2
 {
@@ -113,8 +113,8 @@ namespace __jni_impl::android::hardware::camera2
 	};
 } // namespace __jni_impl::android::hardware::camera2
 
-#include "CaptureRequest.hpp"
-#include "CaptureResult_Key.hpp"
+#include "./CaptureRequest.hpp"
+#include "./CaptureResult_Key.hpp"
 
 namespace __jni_impl::android::hardware::camera2
 {

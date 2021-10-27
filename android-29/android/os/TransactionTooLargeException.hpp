@@ -3,7 +3,7 @@
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../util/AndroidException.hpp"
-#include "RemoteException.hpp"
+#include "./RemoteException.hpp"
 
 
 namespace __jni_impl::android::os

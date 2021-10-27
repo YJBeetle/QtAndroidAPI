@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "CellSignalStrength.hpp"
+#include "./CellSignalStrength.hpp"
 
 namespace __jni_impl::android::os
 {

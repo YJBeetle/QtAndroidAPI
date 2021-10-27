@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "DynamicsProcessing_Stage.hpp"
-#include "DynamicsProcessing_BandStage.hpp"
+#include "./DynamicsProcessing_Stage.hpp"
+#include "./DynamicsProcessing_BandStage.hpp"
 
 namespace __jni_impl::android::media::audiofx
 {
@@ -27,7 +27,7 @@ namespace __jni_impl::android::media::audiofx
 	};
 } // namespace __jni_impl::android::media::audiofx
 
-#include "DynamicsProcessing_EqBand.hpp"
+#include "./DynamicsProcessing_EqBand.hpp"
 
 namespace __jni_impl::android::media::audiofx
 {

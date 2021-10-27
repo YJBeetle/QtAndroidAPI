@@ -42,8 +42,8 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Path.hpp"
-#include "Rect.hpp"
+#include "./Path.hpp"
+#include "./Rect.hpp"
 
 namespace __jni_impl::android::graphics
 {

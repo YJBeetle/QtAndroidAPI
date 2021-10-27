@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "PackageItemInfo.hpp"
+#include "./PackageItemInfo.hpp"
 
 namespace __jni_impl::android::content::pm
 {
@@ -39,7 +39,7 @@ namespace __jni_impl::android::content::pm
 	};
 } // namespace __jni_impl::android::content::pm
 
-#include "ApplicationInfo.hpp"
+#include "./ApplicationInfo.hpp"
 #include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::content::pm

@@ -26,7 +26,7 @@ namespace __jni_impl::android::net::http
 	};
 } // namespace __jni_impl::android::net::http
 
-#include "SslCertificate.hpp"
+#include "./SslCertificate.hpp"
 
 namespace __jni_impl::android::net::http
 {

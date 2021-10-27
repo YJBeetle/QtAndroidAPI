@@ -51,8 +51,8 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Fragment.hpp"
-#include "FragmentManager.hpp"
+#include "./Fragment.hpp"
+#include "./FragmentManager.hpp"
 #include "../content/Context.hpp"
 #include "../os/Bundle.hpp"
 #include "../view/View.hpp"

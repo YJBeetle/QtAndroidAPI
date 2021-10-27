@@ -31,8 +31,8 @@ namespace __jni_impl::android::opengl
 	};
 } // namespace __jni_impl::android::opengl
 
-#include "EGLDisplay.hpp"
-#include "EGLSurface.hpp"
+#include "./EGLDisplay.hpp"
+#include "./EGLSurface.hpp"
 
 namespace __jni_impl::android::opengl
 {

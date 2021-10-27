@@ -37,7 +37,7 @@ namespace __jni_impl::java::io
 	};
 } // namespace __jni_impl::java::io
 
-#include "Writer.hpp"
+#include "./Writer.hpp"
 #include "../nio/CharBuffer.hpp"
 
 namespace __jni_impl::java::io

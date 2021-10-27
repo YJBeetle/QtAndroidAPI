@@ -25,7 +25,7 @@ namespace __jni_impl::java::text
 	};
 } // namespace __jni_impl::java::text
 
-#include "Normalizer_Form.hpp"
+#include "./Normalizer_Form.hpp"
 
 namespace __jni_impl::java::text
 {

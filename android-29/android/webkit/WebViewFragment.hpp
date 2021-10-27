@@ -48,7 +48,7 @@ namespace __jni_impl::android::webkit
 #include "../view/LayoutInflater.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
-#include "WebView.hpp"
+#include "./WebView.hpp"
 
 namespace __jni_impl::android::webkit
 {

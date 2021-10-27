@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "Handler.hpp"
-#include "StreamHandler.hpp"
+#include "./Handler.hpp"
+#include "./StreamHandler.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -45,7 +45,7 @@ namespace __jni_impl::java::util::logging
 
 #include "../../io/File.hpp"
 #include "../../nio/channels/FileChannel.hpp"
-#include "LogRecord.hpp"
+#include "./LogRecord.hpp"
 
 namespace __jni_impl::java::util::logging
 {

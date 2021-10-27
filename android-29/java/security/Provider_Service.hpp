@@ -41,7 +41,7 @@ namespace __jni_impl::java::security
 
 #include "../lang/Boolean.hpp"
 #include "../lang/ref/Reference.hpp"
-#include "Provider.hpp"
+#include "./Provider.hpp"
 
 namespace __jni_impl::java::security
 {

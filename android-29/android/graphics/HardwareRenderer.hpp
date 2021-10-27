@@ -48,8 +48,8 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "HardwareRenderer_FrameRenderRequest.hpp"
-#include "RenderNode.hpp"
+#include "./HardwareRenderer_FrameRenderRequest.hpp"
+#include "./RenderNode.hpp"
 #include "../view/Surface.hpp"
 
 namespace __jni_impl::android::graphics

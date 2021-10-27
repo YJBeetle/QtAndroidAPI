@@ -240,7 +240,7 @@ namespace __jni_impl::android::icu::lang
 	};
 } // namespace __jni_impl::android::icu::lang
 
-#include "UScript_ScriptUsage.hpp"
+#include "./UScript_ScriptUsage.hpp"
 #include "../util/ULocale.hpp"
 #include "../../../java/util/BitSet.hpp"
 #include "../../../java/util/Locale.hpp"

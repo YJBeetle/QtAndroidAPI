@@ -45,8 +45,8 @@ namespace __jni_impl::org::xml::sax
 	};
 } // namespace __jni_impl::org::xml::sax
 
-#include "InputSource.hpp"
-#include "SAXParseException.hpp"
+#include "./InputSource.hpp"
+#include "./SAXParseException.hpp"
 
 namespace __jni_impl::org::xml::sax
 {

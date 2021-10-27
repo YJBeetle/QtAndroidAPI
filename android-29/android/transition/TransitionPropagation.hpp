@@ -32,8 +32,8 @@ namespace __jni_impl::android::transition
 	};
 } // namespace __jni_impl::android::transition
 
-#include "Transition.hpp"
-#include "TransitionValues.hpp"
+#include "./Transition.hpp"
+#include "./TransitionValues.hpp"
 #include "../view/ViewGroup.hpp"
 
 namespace __jni_impl::android::transition

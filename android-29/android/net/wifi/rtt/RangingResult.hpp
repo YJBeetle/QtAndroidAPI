@@ -54,7 +54,7 @@ namespace __jni_impl::android::net::wifi::rtt
 
 #include "../../MacAddress.hpp"
 #include "../aware/PeerHandle.hpp"
-#include "ResponderLocation.hpp"
+#include "./ResponderLocation.hpp"
 #include "../../../os/Parcel.hpp"
 
 namespace __jni_impl::android::net::wifi::rtt

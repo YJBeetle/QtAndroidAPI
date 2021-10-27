@@ -3,7 +3,7 @@
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
-#include "BackupAgent.hpp"
+#include "./BackupAgent.hpp"
 
 namespace __jni_impl::android::app::backup
 {
@@ -36,8 +36,8 @@ namespace __jni_impl::android::app::backup
 	};
 } // namespace __jni_impl::android::app::backup
 
-#include "BackupDataInput.hpp"
-#include "BackupDataOutput.hpp"
+#include "./BackupDataInput.hpp"
+#include "./BackupDataOutput.hpp"
 #include "../../os/ParcelFileDescriptor.hpp"
 
 namespace __jni_impl::android::app::backup

@@ -38,7 +38,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "ActivityManager_TaskDescription.hpp"
+#include "./ActivityManager_TaskDescription.hpp"
 #include "../content/ComponentName.hpp"
 #include "../content/Intent.hpp"
 

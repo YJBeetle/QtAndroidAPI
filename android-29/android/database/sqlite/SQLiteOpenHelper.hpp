@@ -48,8 +48,8 @@ namespace __jni_impl::android::database::sqlite
 } // namespace __jni_impl::android::database::sqlite
 
 #include "../../content/Context.hpp"
-#include "SQLiteDatabase.hpp"
-#include "SQLiteDatabase_OpenParams.hpp"
+#include "./SQLiteDatabase.hpp"
+#include "./SQLiteDatabase_OpenParams.hpp"
 
 namespace __jni_impl::android::database::sqlite
 {

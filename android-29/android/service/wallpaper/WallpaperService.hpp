@@ -43,7 +43,7 @@ namespace __jni_impl::android::service::wallpaper
 } // namespace __jni_impl::android::service::wallpaper
 
 #include "../../content/Intent.hpp"
-#include "WallpaperService_Engine.hpp"
+#include "./WallpaperService_Engine.hpp"
 #include "../../../java/io/FileDescriptor.hpp"
 #include "../../../java/io/PrintWriter.hpp"
 

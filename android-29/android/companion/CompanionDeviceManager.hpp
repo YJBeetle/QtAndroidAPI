@@ -40,8 +40,8 @@ namespace __jni_impl::android::companion
 	};
 } // namespace __jni_impl::android::companion
 
-#include "AssociationRequest.hpp"
-#include "CompanionDeviceManager_Callback.hpp"
+#include "./AssociationRequest.hpp"
+#include "./CompanionDeviceManager_Callback.hpp"
 #include "../content/ComponentName.hpp"
 #include "../os/Handler.hpp"
 

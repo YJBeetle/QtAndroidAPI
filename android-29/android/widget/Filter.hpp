@@ -26,7 +26,7 @@ namespace __jni_impl::android::widget
 	};
 } // namespace __jni_impl::android::widget
 
-#include "Filter_FilterResults.hpp"
+#include "./Filter_FilterResults.hpp"
 
 namespace __jni_impl::android::widget
 {

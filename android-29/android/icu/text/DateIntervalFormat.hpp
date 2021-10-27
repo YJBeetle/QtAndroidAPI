@@ -2,7 +2,7 @@
 
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/text/Format.hpp"
-#include "UFormat.hpp"
+#include "./UFormat.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -82,8 +82,8 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "DateFormat.hpp"
-#include "DateIntervalInfo.hpp"
+#include "./DateFormat.hpp"
+#include "./DateIntervalInfo.hpp"
 #include "../util/Calendar.hpp"
 #include "../util/DateInterval.hpp"
 #include "../util/TimeZone.hpp"

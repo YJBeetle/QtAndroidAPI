@@ -29,7 +29,7 @@ namespace __jni_impl::android::view::textclassifier
 } // namespace __jni_impl::android::view::textclassifier
 
 #include "../../os/Bundle.hpp"
-#include "TextLanguage_Request.hpp"
+#include "./TextLanguage_Request.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {

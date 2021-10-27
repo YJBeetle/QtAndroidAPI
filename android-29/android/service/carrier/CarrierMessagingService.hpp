@@ -64,7 +64,7 @@ namespace __jni_impl::android::service::carrier
 
 #include "../../content/Intent.hpp"
 #include "../../net/Uri.hpp"
-#include "MessagePdu.hpp"
+#include "./MessagePdu.hpp"
 
 namespace __jni_impl::android::service::carrier
 {

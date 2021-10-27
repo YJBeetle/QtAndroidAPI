@@ -68,11 +68,11 @@ namespace __jni_impl::android::telecom
 
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
-#include "DisconnectCause.hpp"
-#include "RemoteConference.hpp"
-#include "RemoteConnection.hpp"
-#include "RemoteConnection_VideoProvider.hpp"
-#include "StatusHints.hpp"
+#include "./DisconnectCause.hpp"
+#include "./RemoteConference.hpp"
+#include "./RemoteConnection.hpp"
+#include "./RemoteConnection_VideoProvider.hpp"
+#include "./StatusHints.hpp"
 
 namespace __jni_impl::android::telecom
 {

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "spi/AbstractInterruptibleChannel.hpp"
+#include "./spi/AbstractInterruptibleChannel.hpp"
 
 namespace __jni_impl::java::nio
 {
@@ -58,8 +58,8 @@ namespace __jni_impl::java::nio::channels
 
 #include "../ByteBuffer.hpp"
 #include "../MappedByteBuffer.hpp"
-#include "FileChannel_MapMode.hpp"
-#include "FileLock.hpp"
+#include "./FileChannel_MapMode.hpp"
+#include "./FileLock.hpp"
 
 namespace __jni_impl::java::nio::channels
 {

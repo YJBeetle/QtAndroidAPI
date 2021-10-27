@@ -38,9 +38,9 @@ namespace __jni_impl::android::graphics::text
 	};
 } // namespace __jni_impl::android::graphics::text
 
-#include "LineBreaker_ParagraphConstraints.hpp"
-#include "LineBreaker_Result.hpp"
-#include "MeasuredText.hpp"
+#include "./LineBreaker_ParagraphConstraints.hpp"
+#include "./LineBreaker_Result.hpp"
+#include "./MeasuredText.hpp"
 
 namespace __jni_impl::android::graphics::text
 {

@@ -38,9 +38,9 @@ namespace __jni_impl::java::nio::channels::spi
 } // namespace __jni_impl::java::nio::channels::spi
 
 #include "../SelectionKey.hpp"
-#include "AbstractSelectableChannel.hpp"
-#include "AbstractSelectionKey.hpp"
-#include "SelectorProvider.hpp"
+#include "./AbstractSelectableChannel.hpp"
+#include "./AbstractSelectionKey.hpp"
+#include "./SelectorProvider.hpp"
 
 namespace __jni_impl::java::nio::channels::spi
 {

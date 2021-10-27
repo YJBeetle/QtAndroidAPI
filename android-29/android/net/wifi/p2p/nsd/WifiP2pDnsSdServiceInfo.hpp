@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../../../__JniBaseClass.hpp"
-#include "WifiP2pServiceInfo.hpp"
+#include "./WifiP2pServiceInfo.hpp"
 
 
 namespace __jni_impl::android::net::wifi::p2p::nsd

@@ -39,8 +39,8 @@ namespace __jni_impl::android::media::midi
 } // namespace __jni_impl::android::media::midi
 
 #include "../../bluetooth/BluetoothDevice.hpp"
-#include "MidiDeviceInfo.hpp"
-#include "MidiManager_DeviceCallback.hpp"
+#include "./MidiDeviceInfo.hpp"
+#include "./MidiManager_DeviceCallback.hpp"
 #include "../../os/Handler.hpp"
 
 namespace __jni_impl::android::media::midi

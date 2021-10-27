@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Number.hpp"
+#include "./Number.hpp"
 
 namespace __jni_impl::java::util
 {

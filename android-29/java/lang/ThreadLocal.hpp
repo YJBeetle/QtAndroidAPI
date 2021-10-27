@@ -29,7 +29,7 @@ namespace __jni_impl::java::lang
 	};
 } // namespace __jni_impl::java::lang
 
-#include "Thread.hpp"
+#include "./Thread.hpp"
 #include "../util/concurrent/atomic/AtomicInteger.hpp"
 
 namespace __jni_impl::java::lang

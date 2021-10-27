@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "ServiceInfo.hpp"
+#include "./ServiceInfo.hpp"
 
 namespace __jni_impl::android::os
 {

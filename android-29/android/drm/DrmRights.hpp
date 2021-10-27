@@ -38,7 +38,7 @@ namespace __jni_impl::android::drm
 	};
 } // namespace __jni_impl::android::drm
 
-#include "ProcessedData.hpp"
+#include "./ProcessedData.hpp"
 #include "../../java/io/File.hpp"
 
 namespace __jni_impl::android::drm

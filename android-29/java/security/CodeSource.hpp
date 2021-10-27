@@ -48,7 +48,7 @@ namespace __jni_impl::java::security
 #include "../io/ObjectOutputStream.hpp"
 #include "../net/SocketPermission.hpp"
 #include "../net/URL.hpp"
-#include "cert/CertificateFactory.hpp"
+#include "./cert/CertificateFactory.hpp"
 
 namespace __jni_impl::java::security
 {

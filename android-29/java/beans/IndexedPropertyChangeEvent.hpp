@@ -2,7 +2,7 @@
 
 #include "../../__JniBaseClass.hpp"
 #include "../util/EventObject.hpp"
-#include "PropertyChangeEvent.hpp"
+#include "./PropertyChangeEvent.hpp"
 
 namespace __jni_impl::java::lang
 {

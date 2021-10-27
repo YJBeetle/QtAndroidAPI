@@ -41,7 +41,7 @@ namespace __jni_impl::android::gesture
 	};
 } // namespace __jni_impl::android::gesture
 
-#include "OrientedBoundingBox.hpp"
+#include "./OrientedBoundingBox.hpp"
 #include "../graphics/Path.hpp"
 #include "../graphics/RectF.hpp"
 #include "../../java/util/ArrayList.hpp"

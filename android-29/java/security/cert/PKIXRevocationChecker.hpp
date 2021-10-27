@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "PKIXCertPathChecker.hpp"
+#include "./PKIXCertPathChecker.hpp"
 
 namespace __jni_impl::java::net
 {
@@ -39,7 +39,7 @@ namespace __jni_impl::java::security::cert
 } // namespace __jni_impl::java::security::cert
 
 #include "../../net/URI.hpp"
-#include "X509Certificate.hpp"
+#include "./X509Certificate.hpp"
 
 namespace __jni_impl::java::security::cert
 {

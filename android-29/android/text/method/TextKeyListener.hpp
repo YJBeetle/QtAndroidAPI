@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "MetaKeyKeyListener.hpp"
-#include "BaseKeyListener.hpp"
+#include "./MetaKeyKeyListener.hpp"
+#include "./BaseKeyListener.hpp"
 
 namespace __jni_impl::android::text::method
 {
@@ -44,7 +44,7 @@ namespace __jni_impl::android::text::method
 	};
 } // namespace __jni_impl::android::text::method
 
-#include "TextKeyListener_Capitalize.hpp"
+#include "./TextKeyListener_Capitalize.hpp"
 #include "../../view/KeyEvent.hpp"
 #include "../../view/View.hpp"
 

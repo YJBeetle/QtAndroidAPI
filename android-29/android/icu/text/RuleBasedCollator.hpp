@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "Collator.hpp"
+#include "./Collator.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -91,11 +91,11 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "CollationElementIterator.hpp"
-#include "CollationKey.hpp"
-#include "Collator.hpp"
-#include "UCharacterIterator.hpp"
-#include "UnicodeSet.hpp"
+#include "./CollationElementIterator.hpp"
+#include "./CollationKey.hpp"
+#include "./Collator.hpp"
+#include "./UCharacterIterator.hpp"
+#include "./UnicodeSet.hpp"
 #include "../util/VersionInfo.hpp"
 
 namespace __jni_impl::android::icu::text

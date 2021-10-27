@@ -70,10 +70,10 @@ namespace __jni_impl::android::content::pm
 } // namespace __jni_impl::android::content::pm
 
 #include "../IntentFilter.hpp"
-#include "ActivityInfo.hpp"
-#include "PackageManager.hpp"
-#include "ProviderInfo.hpp"
-#include "ServiceInfo.hpp"
+#include "./ActivityInfo.hpp"
+#include "./PackageManager.hpp"
+#include "./ProviderInfo.hpp"
+#include "./ServiceInfo.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../os/Parcel.hpp"
 

@@ -29,7 +29,7 @@ namespace __jni_impl::android::graphics::pdf
 	};
 } // namespace __jni_impl::android::graphics::pdf
 
-#include "PdfRenderer_Page.hpp"
+#include "./PdfRenderer_Page.hpp"
 #include "../../os/ParcelFileDescriptor.hpp"
 
 namespace __jni_impl::android::graphics::pdf

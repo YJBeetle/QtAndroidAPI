@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "TransitionPropagation.hpp"
+#include "./TransitionPropagation.hpp"
 
 namespace __jni_impl::android::transition
 {
@@ -27,7 +27,7 @@ namespace __jni_impl::android::transition
 	};
 } // namespace __jni_impl::android::transition
 
-#include "TransitionValues.hpp"
+#include "./TransitionValues.hpp"
 
 namespace __jni_impl::android::transition
 {

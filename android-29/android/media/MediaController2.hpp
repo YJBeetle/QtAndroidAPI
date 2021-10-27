@@ -43,9 +43,9 @@ namespace __jni_impl::android::media
 } // namespace __jni_impl::android::media
 
 #include "../content/Context.hpp"
-#include "MediaController2_ControllerCallback.hpp"
-#include "Session2Command.hpp"
-#include "Session2Token.hpp"
+#include "./MediaController2_ControllerCallback.hpp"
+#include "./Session2Command.hpp"
+#include "./Session2Token.hpp"
 #include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::media

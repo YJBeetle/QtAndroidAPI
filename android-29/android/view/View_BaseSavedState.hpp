@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "AbsSavedState.hpp"
+#include "./AbsSavedState.hpp"
 
 namespace __jni_impl::android::os
 {

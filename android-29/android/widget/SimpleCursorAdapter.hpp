@@ -1,9 +1,9 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "BaseAdapter.hpp"
-#include "CursorAdapter.hpp"
-#include "ResourceCursorAdapter.hpp"
+#include "./BaseAdapter.hpp"
+#include "./CursorAdapter.hpp"
+#include "./ResourceCursorAdapter.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -53,8 +53,8 @@ namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
 #include "../view/View.hpp"
-#include "ImageView.hpp"
-#include "TextView.hpp"
+#include "./ImageView.hpp"
+#include "./TextView.hpp"
 
 namespace __jni_impl::android::widget
 {

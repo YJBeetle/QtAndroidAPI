@@ -78,7 +78,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "AlertDialog.hpp"
+#include "./AlertDialog.hpp"
 #include "../content/Context.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../view/View.hpp"

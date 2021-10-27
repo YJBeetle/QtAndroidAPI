@@ -33,7 +33,7 @@ namespace __jni_impl::java::util::concurrent
 	};
 } // namespace __jni_impl::java::util::concurrent
 
-#include "ConcurrentHashMap.hpp"
+#include "./ConcurrentHashMap.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {

@@ -36,7 +36,7 @@ namespace __jni_impl::java::io
 	};
 } // namespace __jni_impl::java::io
 
-#include "OutputStream.hpp"
+#include "./OutputStream.hpp"
 
 namespace __jni_impl::java::io
 {

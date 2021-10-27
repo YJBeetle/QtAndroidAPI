@@ -40,7 +40,7 @@ namespace __jni_impl::java::security::cert
 } // namespace __jni_impl::java::security::cert
 
 #include "../../io/ObjectInputStream.hpp"
-#include "CertPath.hpp"
+#include "./CertPath.hpp"
 
 namespace __jni_impl::java::security::cert
 {

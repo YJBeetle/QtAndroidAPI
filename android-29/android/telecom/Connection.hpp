@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Conferenceable.hpp"
+#include "./Conferenceable.hpp"
 
 namespace __jni_impl::android::bluetooth
 {
@@ -183,12 +183,12 @@ namespace __jni_impl::android::telecom
 #include "../bluetooth/BluetoothDevice.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
-#include "CallAudioState.hpp"
-#include "Conference.hpp"
-#include "Connection_RttTextStream.hpp"
-#include "Connection_VideoProvider.hpp"
-#include "DisconnectCause.hpp"
-#include "StatusHints.hpp"
+#include "./CallAudioState.hpp"
+#include "./Conference.hpp"
+#include "./Connection_RttTextStream.hpp"
+#include "./Connection_VideoProvider.hpp"
+#include "./DisconnectCause.hpp"
+#include "./StatusHints.hpp"
 
 namespace __jni_impl::android::telecom
 {

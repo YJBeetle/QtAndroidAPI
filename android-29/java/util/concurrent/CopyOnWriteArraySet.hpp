@@ -41,7 +41,7 @@ namespace __jni_impl::java::util::concurrent
 	};
 } // namespace __jni_impl::java::util::concurrent
 
-#include "CopyOnWriteArrayList.hpp"
+#include "./CopyOnWriteArrayList.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {

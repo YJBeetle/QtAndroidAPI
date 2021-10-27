@@ -45,8 +45,8 @@ namespace __jni_impl::java::util::concurrent
 	};
 } // namespace __jni_impl::java::util::concurrent
 
-#include "TimeUnit.hpp"
-#include "atomic/AtomicReference.hpp"
+#include "./TimeUnit.hpp"
+#include "./atomic/AtomicReference.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {

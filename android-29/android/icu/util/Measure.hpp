@@ -30,7 +30,7 @@ namespace __jni_impl::android::icu::util
 	};
 } // namespace __jni_impl::android::icu::util
 
-#include "MeasureUnit.hpp"
+#include "./MeasureUnit.hpp"
 #include "../../../java/lang/Number.hpp"
 
 namespace __jni_impl::android::icu::util

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Transition.hpp"
-#include "TransitionSet.hpp"
+#include "./Transition.hpp"
+#include "./TransitionSet.hpp"
 
 namespace __jni_impl::android::content
 {

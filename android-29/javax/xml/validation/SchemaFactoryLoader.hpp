@@ -23,7 +23,7 @@ namespace __jni_impl::javax::xml::validation
 	};
 } // namespace __jni_impl::javax::xml::validation
 
-#include "SchemaFactory.hpp"
+#include "./SchemaFactory.hpp"
 
 namespace __jni_impl::javax::xml::validation
 {

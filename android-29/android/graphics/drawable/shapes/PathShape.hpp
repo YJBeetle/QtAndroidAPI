@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../../__JniBaseClass.hpp"
-#include "Shape.hpp"
+#include "./Shape.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -41,7 +41,7 @@ namespace __jni_impl::android::graphics::drawable::shapes
 #include "../../Canvas.hpp"
 #include "../../Paint.hpp"
 #include "../../Path.hpp"
-#include "Shape.hpp"
+#include "./Shape.hpp"
 
 namespace __jni_impl::android::graphics::drawable::shapes
 {

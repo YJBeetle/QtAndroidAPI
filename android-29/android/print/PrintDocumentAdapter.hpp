@@ -49,9 +49,9 @@ namespace __jni_impl::android::print
 #include "../os/Bundle.hpp"
 #include "../os/CancellationSignal.hpp"
 #include "../os/ParcelFileDescriptor.hpp"
-#include "PrintAttributes.hpp"
-#include "PrintDocumentAdapter_LayoutResultCallback.hpp"
-#include "PrintDocumentAdapter_WriteResultCallback.hpp"
+#include "./PrintAttributes.hpp"
+#include "./PrintDocumentAdapter_LayoutResultCallback.hpp"
+#include "./PrintDocumentAdapter_WriteResultCallback.hpp"
 
 namespace __jni_impl::android::print
 {

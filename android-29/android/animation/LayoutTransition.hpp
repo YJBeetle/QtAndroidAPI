@@ -60,7 +60,7 @@ namespace __jni_impl::android::animation
 	};
 } // namespace __jni_impl::android::animation
 
-#include "Animator.hpp"
+#include "./Animator.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 

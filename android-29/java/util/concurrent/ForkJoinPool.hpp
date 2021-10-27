@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "AbstractExecutorService.hpp"
+#include "./AbstractExecutorService.hpp"
 
 namespace __jni_impl::java::lang
 {
@@ -78,10 +78,10 @@ namespace __jni_impl::java::util::concurrent
 
 #include "../../lang/RuntimePermission.hpp"
 #include "../../security/AccessControlContext.hpp"
-#include "CountedCompleter.hpp"
-#include "ForkJoinTask.hpp"
-#include "ForkJoinWorkerThread.hpp"
-#include "TimeUnit.hpp"
+#include "./CountedCompleter.hpp"
+#include "./ForkJoinTask.hpp"
+#include "./ForkJoinWorkerThread.hpp"
+#include "./TimeUnit.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {

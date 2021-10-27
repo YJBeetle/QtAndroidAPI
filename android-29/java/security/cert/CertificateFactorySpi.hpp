@@ -43,9 +43,9 @@ namespace __jni_impl::java::security::cert
 } // namespace __jni_impl::java::security::cert
 
 #include "../../io/InputStream.hpp"
-#include "CRL.hpp"
-#include "CertPath.hpp"
-#include "Certificate.hpp"
+#include "./CRL.hpp"
+#include "./CertPath.hpp"
+#include "./Certificate.hpp"
 
 namespace __jni_impl::java::security::cert
 {

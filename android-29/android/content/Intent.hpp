@@ -572,14 +572,14 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "ClipData.hpp"
-#include "ComponentName.hpp"
-#include "ContentResolver.hpp"
-#include "Context.hpp"
-#include "IntentSender.hpp"
-#include "pm/ActivityInfo.hpp"
-#include "pm/PackageManager.hpp"
-#include "res/Resources.hpp"
+#include "./ClipData.hpp"
+#include "./ComponentName.hpp"
+#include "./ContentResolver.hpp"
+#include "./Context.hpp"
+#include "./IntentSender.hpp"
+#include "./pm/ActivityInfo.hpp"
+#include "./pm/PackageManager.hpp"
+#include "./res/Resources.hpp"
 #include "../graphics/Rect.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "TtsSpan_Builder.hpp"
+#include "./TtsSpan_Builder.hpp"
 
 
 namespace __jni_impl::android::text::style

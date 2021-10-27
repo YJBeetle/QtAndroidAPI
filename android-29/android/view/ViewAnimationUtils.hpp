@@ -27,7 +27,7 @@ namespace __jni_impl::android::view
 } // namespace __jni_impl::android::view
 
 #include "../animation/Animator.hpp"
-#include "View.hpp"
+#include "./View.hpp"
 
 namespace __jni_impl::android::view
 {

@@ -43,7 +43,7 @@ namespace __jni_impl::javax::net::ssl
 
 #include "../../../java/security/KeyStore.hpp"
 #include "../../../java/security/Provider.hpp"
-#include "TrustManagerFactorySpi.hpp"
+#include "./TrustManagerFactorySpi.hpp"
 
 namespace __jni_impl::javax::net::ssl
 {

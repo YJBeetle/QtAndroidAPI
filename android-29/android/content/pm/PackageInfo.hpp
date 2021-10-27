@@ -66,8 +66,8 @@ namespace __jni_impl::android::content::pm
 	};
 } // namespace __jni_impl::android::content::pm
 
-#include "ApplicationInfo.hpp"
-#include "SigningInfo.hpp"
+#include "./ApplicationInfo.hpp"
+#include "./SigningInfo.hpp"
 #include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::content::pm

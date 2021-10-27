@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "AbstractChronology.hpp"
+#include "./AbstractChronology.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -79,8 +79,8 @@ namespace __jni_impl::java::time::chrono
 #include "../Clock.hpp"
 #include "../Instant.hpp"
 #include "../ZoneId.hpp"
-#include "MinguoDate.hpp"
-#include "MinguoEra.hpp"
+#include "./MinguoDate.hpp"
+#include "./MinguoEra.hpp"
 #include "../format/ResolverStyle.hpp"
 #include "../temporal/ChronoField.hpp"
 #include "../temporal/ValueRange.hpp"

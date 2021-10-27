@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "ViewGroup_LayoutParams.hpp"
+#include "./ViewGroup_LayoutParams.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -43,7 +43,7 @@ namespace __jni_impl::android::view
 } // namespace __jni_impl::android::view
 
 #include "../content/Context.hpp"
-#include "ViewGroup_LayoutParams.hpp"
+#include "./ViewGroup_LayoutParams.hpp"
 
 namespace __jni_impl::android::view
 {

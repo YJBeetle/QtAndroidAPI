@@ -31,8 +31,8 @@ namespace __jni_impl::android::bluetooth
 	};
 } // namespace __jni_impl::android::bluetooth
 
-#include "BluetoothDevice.hpp"
-#include "BluetoothHealthAppConfiguration.hpp"
+#include "./BluetoothDevice.hpp"
+#include "./BluetoothHealthAppConfiguration.hpp"
 #include "../os/ParcelFileDescriptor.hpp"
 
 namespace __jni_impl::android::bluetooth

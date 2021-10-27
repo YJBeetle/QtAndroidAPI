@@ -105,12 +105,12 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "AudioDeviceInfo.hpp"
-#include "AudioFormat.hpp"
-#include "AudioManager_AudioRecordingCallback.hpp"
-#include "AudioRecordingConfiguration.hpp"
-#include "AudioTimestamp.hpp"
-#include "MediaSyncEvent.hpp"
+#include "./AudioDeviceInfo.hpp"
+#include "./AudioFormat.hpp"
+#include "./AudioManager_AudioRecordingCallback.hpp"
+#include "./AudioRecordingConfiguration.hpp"
+#include "./AudioTimestamp.hpp"
+#include "./MediaSyncEvent.hpp"
 #include "../os/Handler.hpp"
 #include "../os/PersistableBundle.hpp"
 #include "../../java/nio/ByteBuffer.hpp"

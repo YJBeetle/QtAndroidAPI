@@ -32,8 +32,8 @@ namespace __jni_impl::java::util
 	};
 } // namespace __jni_impl::java::util
 
-#include "Base64_Decoder.hpp"
-#include "Base64_Encoder.hpp"
+#include "./Base64_Decoder.hpp"
+#include "./Base64_Encoder.hpp"
 
 namespace __jni_impl::java::util
 {

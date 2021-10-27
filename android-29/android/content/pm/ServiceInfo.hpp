@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "PackageItemInfo.hpp"
-#include "ComponentInfo.hpp"
+#include "./PackageItemInfo.hpp"
+#include "./ComponentInfo.hpp"
 
 namespace __jni_impl::android::os
 {

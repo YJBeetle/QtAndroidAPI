@@ -56,7 +56,7 @@ namespace __jni_impl::javax::crypto
 #include "../../java/nio/ByteBuffer.hpp"
 #include "../../java/security/Provider.hpp"
 #include "../../java/security/Provider_Service.hpp"
-#include "MacSpi.hpp"
+#include "./MacSpi.hpp"
 
 namespace __jni_impl::javax::crypto
 {

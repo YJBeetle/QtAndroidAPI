@@ -24,7 +24,7 @@ namespace __jni_impl::android::view
 	};
 } // namespace __jni_impl::android::view
 
-#include "ViewStructure_HtmlInfo.hpp"
+#include "./ViewStructure_HtmlInfo.hpp"
 
 namespace __jni_impl::android::view
 {

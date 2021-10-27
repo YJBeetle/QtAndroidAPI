@@ -24,7 +24,7 @@ namespace __jni_impl::android::bluetooth::le
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
-#include "PeriodicAdvertisingParameters.hpp"
+#include "./PeriodicAdvertisingParameters.hpp"
 
 namespace __jni_impl::android::bluetooth::le
 {

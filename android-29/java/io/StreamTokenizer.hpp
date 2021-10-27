@@ -49,8 +49,8 @@ namespace __jni_impl::java::io
 	};
 } // namespace __jni_impl::java::io
 
-#include "InputStream.hpp"
-#include "Reader.hpp"
+#include "./InputStream.hpp"
+#include "./Reader.hpp"
 
 namespace __jni_impl::java::io
 {

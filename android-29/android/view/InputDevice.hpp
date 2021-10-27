@@ -95,8 +95,8 @@ namespace __jni_impl::android::view
 
 #include "../os/Parcel.hpp"
 #include "../os/Vibrator.hpp"
-#include "InputDevice_MotionRange.hpp"
-#include "KeyCharacterMap.hpp"
+#include "./InputDevice_MotionRange.hpp"
+#include "./KeyCharacterMap.hpp"
 
 namespace __jni_impl::android::view
 {

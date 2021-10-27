@@ -50,13 +50,13 @@ namespace __jni_impl::android::renderscript
 	};
 } // namespace __jni_impl::android::renderscript
 
-#include "RenderScript.hpp"
-#include "Script_InvokeID.hpp"
-#include "Script_KernelID.hpp"
-#include "ScriptGroup.hpp"
-#include "ScriptGroup_Closure.hpp"
-#include "ScriptGroup_Input.hpp"
-#include "Type.hpp"
+#include "./RenderScript.hpp"
+#include "./Script_InvokeID.hpp"
+#include "./Script_KernelID.hpp"
+#include "./ScriptGroup.hpp"
+#include "./ScriptGroup_Closure.hpp"
+#include "./ScriptGroup_Input.hpp"
+#include "./Type.hpp"
 
 namespace __jni_impl::android::renderscript
 {

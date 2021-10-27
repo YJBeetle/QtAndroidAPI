@@ -58,8 +58,8 @@ namespace __jni_impl::java::nio::channels
 
 #include "../../net/SocketAddress.hpp"
 #include "../ByteBuffer.hpp"
-#include "AsynchronousChannelGroup.hpp"
-#include "spi/AsynchronousChannelProvider.hpp"
+#include "./AsynchronousChannelGroup.hpp"
+#include "./spi/AsynchronousChannelProvider.hpp"
 #include "../../util/concurrent/TimeUnit.hpp"
 
 namespace __jni_impl::java::nio::channels

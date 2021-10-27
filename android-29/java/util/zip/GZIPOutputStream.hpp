@@ -3,7 +3,7 @@
 #include "../../../__JniBaseClass.hpp"
 #include "../../io/OutputStream.hpp"
 #include "../../io/FilterOutputStream.hpp"
-#include "DeflaterOutputStream.hpp"
+#include "./DeflaterOutputStream.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -34,7 +34,7 @@ namespace __jni_impl::java::util::zip
 } // namespace __jni_impl::java::util::zip
 
 #include "../../io/OutputStream.hpp"
-#include "CRC32.hpp"
+#include "./CRC32.hpp"
 
 namespace __jni_impl::java::util::zip
 {

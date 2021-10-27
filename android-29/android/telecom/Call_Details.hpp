@@ -102,10 +102,10 @@ namespace __jni_impl::android::telecom
 
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
-#include "DisconnectCause.hpp"
-#include "GatewayInfo.hpp"
-#include "PhoneAccountHandle.hpp"
-#include "StatusHints.hpp"
+#include "./DisconnectCause.hpp"
+#include "./GatewayInfo.hpp"
+#include "./PhoneAccountHandle.hpp"
+#include "./StatusHints.hpp"
 
 namespace __jni_impl::android::telecom
 {

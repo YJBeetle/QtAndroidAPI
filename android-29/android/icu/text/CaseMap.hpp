@@ -38,10 +38,10 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "CaseMap_Fold.hpp"
-#include "CaseMap_Lower.hpp"
-#include "CaseMap_Title.hpp"
-#include "CaseMap_Upper.hpp"
+#include "./CaseMap_Fold.hpp"
+#include "./CaseMap_Lower.hpp"
+#include "./CaseMap_Title.hpp"
+#include "./CaseMap_Upper.hpp"
 
 namespace __jni_impl::android::icu::text
 {

@@ -131,9 +131,9 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "ContentResolver.hpp"
-#include "Intent.hpp"
-#include "IntentFilter_AuthorityEntry.hpp"
+#include "./ContentResolver.hpp"
+#include "./Intent.hpp"
+#include "./IntentFilter_AuthorityEntry.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Parcel.hpp"
 #include "../os/PatternMatcher.hpp"

@@ -41,8 +41,8 @@ namespace __jni_impl::java::security::cert
 } // namespace __jni_impl::java::security::cert
 
 #include "../Provider.hpp"
-#include "CertPath.hpp"
-#include "CertPathValidatorSpi.hpp"
+#include "./CertPath.hpp"
+#include "./CertPathValidatorSpi.hpp"
 
 namespace __jni_impl::java::security::cert
 {

@@ -25,7 +25,7 @@ namespace __jni_impl::java::net
 	};
 } // namespace __jni_impl::java::net
 
-#include "URI.hpp"
+#include "./URI.hpp"
 
 namespace __jni_impl::java::net
 {

@@ -156,10 +156,10 @@ namespace __jni_impl::java::util::logging
 #include "../ArrayList.hpp"
 #include "../Locale.hpp"
 #include "../ResourceBundle.hpp"
-#include "Handler.hpp"
-#include "Level.hpp"
-#include "LogManager.hpp"
-#include "LogRecord.hpp"
+#include "./Handler.hpp"
+#include "./Level.hpp"
+#include "./LogManager.hpp"
+#include "./LogRecord.hpp"
 
 namespace __jni_impl::java::util::logging
 {

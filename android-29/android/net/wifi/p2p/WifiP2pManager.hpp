@@ -87,10 +87,10 @@ namespace __jni_impl::android::net::wifi::p2p
 } // namespace __jni_impl::android::net::wifi::p2p
 
 #include "../../../content/Context.hpp"
-#include "WifiP2pConfig.hpp"
-#include "WifiP2pManager_Channel.hpp"
-#include "nsd/WifiP2pServiceInfo.hpp"
-#include "nsd/WifiP2pServiceRequest.hpp"
+#include "./WifiP2pConfig.hpp"
+#include "./WifiP2pManager_Channel.hpp"
+#include "./nsd/WifiP2pServiceInfo.hpp"
+#include "./nsd/WifiP2pServiceRequest.hpp"
 #include "../../../os/Looper.hpp"
 
 namespace __jni_impl::android::net::wifi::p2p

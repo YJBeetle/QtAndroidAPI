@@ -44,7 +44,7 @@ namespace __jni_impl::android::view::contentcapture
 #include "../../content/LocusId.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
-#include "ContentCaptureContext_Builder.hpp"
+#include "./ContentCaptureContext_Builder.hpp"
 
 namespace __jni_impl::android::view::contentcapture
 {

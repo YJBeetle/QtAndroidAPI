@@ -33,7 +33,7 @@ namespace __jni_impl::android::inputmethodservice
 } // namespace __jni_impl::android::inputmethodservice
 
 #include "../content/res/Resources.hpp"
-#include "Keyboard.hpp"
+#include "./Keyboard.hpp"
 
 namespace __jni_impl::android::inputmethodservice
 {

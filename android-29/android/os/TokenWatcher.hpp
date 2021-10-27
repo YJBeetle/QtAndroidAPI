@@ -35,7 +35,7 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "Handler.hpp"
+#include "./Handler.hpp"
 #include "../../java/io/PrintWriter.hpp"
 
 namespace __jni_impl::android::os

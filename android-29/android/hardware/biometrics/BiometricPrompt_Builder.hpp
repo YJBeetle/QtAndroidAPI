@@ -37,7 +37,7 @@ namespace __jni_impl::android::hardware::biometrics
 } // namespace __jni_impl::android::hardware::biometrics
 
 #include "../../content/Context.hpp"
-#include "BiometricPrompt.hpp"
+#include "./BiometricPrompt.hpp"
 
 namespace __jni_impl::android::hardware::biometrics
 {

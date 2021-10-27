@@ -2,7 +2,7 @@
 
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
-#include "IOException.hpp"
+#include "./IOException.hpp"
 
 
 namespace __jni_impl::java::io

@@ -62,8 +62,8 @@ namespace __jni_impl::android::media
 } // namespace __jni_impl::android::media
 
 #include "../app/PendingIntent.hpp"
-#include "RemoteControlClient_MetadataEditor.hpp"
-#include "session/MediaSession.hpp"
+#include "./RemoteControlClient_MetadataEditor.hpp"
+#include "./session/MediaSession.hpp"
 #include "../os/Looper.hpp"
 
 namespace __jni_impl::android::media

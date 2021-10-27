@@ -53,12 +53,12 @@ namespace __jni_impl::android::bluetooth::le
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
-#include "AdvertiseCallback.hpp"
-#include "AdvertiseData.hpp"
-#include "AdvertiseSettings.hpp"
-#include "AdvertisingSetCallback.hpp"
-#include "AdvertisingSetParameters.hpp"
-#include "PeriodicAdvertisingParameters.hpp"
+#include "./AdvertiseCallback.hpp"
+#include "./AdvertiseData.hpp"
+#include "./AdvertiseSettings.hpp"
+#include "./AdvertisingSetCallback.hpp"
+#include "./AdvertisingSetParameters.hpp"
+#include "./PeriodicAdvertisingParameters.hpp"
 #include "../../os/Handler.hpp"
 
 namespace __jni_impl::android::bluetooth::le

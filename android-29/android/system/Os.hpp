@@ -184,11 +184,11 @@ namespace __jni_impl::android::system
 	};
 } // namespace __jni_impl::android::system
 
-#include "Int64Ref.hpp"
-#include "StructStat.hpp"
-#include "StructStatVfs.hpp"
-#include "StructTimeval.hpp"
-#include "StructUtsname.hpp"
+#include "./Int64Ref.hpp"
+#include "./StructStat.hpp"
+#include "./StructStatVfs.hpp"
+#include "./StructTimeval.hpp"
+#include "./StructUtsname.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/net/InetAddress.hpp"
 #include "../../java/net/InetSocketAddress.hpp"

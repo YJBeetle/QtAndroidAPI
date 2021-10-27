@@ -147,9 +147,9 @@ namespace __jni_impl::java::util
 #include "../nio/CharBuffer.hpp"
 #include "../nio/charset/Charset.hpp"
 #include "../nio/charset/CharsetDecoder.hpp"
-#include "Locale.hpp"
-#include "regex/Matcher.hpp"
-#include "regex/Pattern.hpp"
+#include "./Locale.hpp"
+#include "./regex/Matcher.hpp"
+#include "./regex/Pattern.hpp"
 
 namespace __jni_impl::java::util
 {

@@ -81,8 +81,8 @@ namespace __jni_impl::javax::xml::datatype
 #include "../../../java/math/BigInteger.hpp"
 #include "../../../java/util/GregorianCalendar.hpp"
 #include "../../../java/util/regex/Pattern.hpp"
-#include "Duration.hpp"
-#include "XMLGregorianCalendar.hpp"
+#include "./Duration.hpp"
+#include "./XMLGregorianCalendar.hpp"
 
 namespace __jni_impl::javax::xml::datatype
 {

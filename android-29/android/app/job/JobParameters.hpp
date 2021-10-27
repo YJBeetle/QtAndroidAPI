@@ -55,7 +55,7 @@ namespace __jni_impl::android::app::job
 	};
 } // namespace __jni_impl::android::app::job
 
-#include "JobWorkItem.hpp"
+#include "./JobWorkItem.hpp"
 #include "../../content/ClipData.hpp"
 #include "../../net/Network.hpp"
 #include "../../os/Bundle.hpp"

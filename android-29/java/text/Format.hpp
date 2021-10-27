@@ -42,9 +42,9 @@ namespace __jni_impl::java::text
 } // namespace __jni_impl::java::text
 
 #include "../lang/StringBuffer.hpp"
-#include "AttributedCharacterIterator_Attribute.hpp"
-#include "FieldPosition.hpp"
-#include "ParsePosition.hpp"
+#include "./AttributedCharacterIterator_Attribute.hpp"
+#include "./FieldPosition.hpp"
+#include "./ParsePosition.hpp"
 
 namespace __jni_impl::java::text
 {

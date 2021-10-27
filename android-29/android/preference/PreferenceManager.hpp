@@ -52,8 +52,8 @@ namespace __jni_impl::android::preference
 } // namespace __jni_impl::android::preference
 
 #include "../content/Context.hpp"
-#include "Preference.hpp"
-#include "PreferenceScreen.hpp"
+#include "./Preference.hpp"
+#include "./PreferenceScreen.hpp"
 
 namespace __jni_impl::android::preference
 {

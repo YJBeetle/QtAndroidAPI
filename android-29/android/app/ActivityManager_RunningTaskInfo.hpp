@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "TaskInfo.hpp"
+#include "./TaskInfo.hpp"
 
 namespace __jni_impl::android::graphics
 {

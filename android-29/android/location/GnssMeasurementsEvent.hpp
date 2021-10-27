@@ -31,7 +31,7 @@ namespace __jni_impl::android::location
 	};
 } // namespace __jni_impl::android::location
 
-#include "GnssClock.hpp"
+#include "./GnssClock.hpp"
 #include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::location

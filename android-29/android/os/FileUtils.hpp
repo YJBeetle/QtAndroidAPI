@@ -39,7 +39,7 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "CancellationSignal.hpp"
+#include "./CancellationSignal.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/InputStream.hpp"
 #include "../../java/io/OutputStream.hpp"

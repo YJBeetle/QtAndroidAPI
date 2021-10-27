@@ -52,8 +52,8 @@ namespace __jni_impl::java::time
 	};
 } // namespace __jni_impl::java::time
 
-#include "format/TextStyle.hpp"
-#include "temporal/ValueRange.hpp"
+#include "./format/TextStyle.hpp"
+#include "./temporal/ValueRange.hpp"
 #include "../util/Locale.hpp"
 
 namespace __jni_impl::java::time

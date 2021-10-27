@@ -80,11 +80,11 @@ namespace __jni_impl::android::net::sip
 #include "../../app/PendingIntent.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/Intent.hpp"
-#include "SipAudioCall.hpp"
-#include "SipAudioCall_Listener.hpp"
-#include "SipProfile.hpp"
-#include "SipSession.hpp"
-#include "SipSession_Listener.hpp"
+#include "./SipAudioCall.hpp"
+#include "./SipAudioCall_Listener.hpp"
+#include "./SipProfile.hpp"
+#include "./SipSession.hpp"
+#include "./SipSession_Listener.hpp"
 
 namespace __jni_impl::android::net::sip
 {

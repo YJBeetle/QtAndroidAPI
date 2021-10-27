@@ -63,8 +63,8 @@ namespace __jni_impl::java::util
 #include "../lang/ClassLoader.hpp"
 #include "../lang/Void.hpp"
 #include "../lang/reflect/Constructor.hpp"
-#include "Locale.hpp"
-#include "ResourceBundle.hpp"
+#include "./Locale.hpp"
+#include "./ResourceBundle.hpp"
 
 namespace __jni_impl::java::util
 {

@@ -128,12 +128,12 @@ namespace __jni_impl::android::content::res
 	};
 } // namespace __jni_impl::android::content::res
 
-#include "AssetFileDescriptor.hpp"
-#include "AssetManager.hpp"
-#include "ColorStateList.hpp"
-#include "Configuration.hpp"
-#include "Resources_Theme.hpp"
-#include "TypedArray.hpp"
+#include "./AssetFileDescriptor.hpp"
+#include "./AssetManager.hpp"
+#include "./ColorStateList.hpp"
+#include "./Configuration.hpp"
+#include "./Resources_Theme.hpp"
+#include "./TypedArray.hpp"
 #include "../../graphics/Movie.hpp"
 #include "../../graphics/Typeface.hpp"
 #include "../../graphics/drawable/Drawable.hpp"

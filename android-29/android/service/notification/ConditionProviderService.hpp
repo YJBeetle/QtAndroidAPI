@@ -53,7 +53,7 @@ namespace __jni_impl::android::service::notification
 #include "../../content/ComponentName.hpp"
 #include "../../content/Intent.hpp"
 #include "../../net/Uri.hpp"
-#include "Condition.hpp"
+#include "./Condition.hpp"
 
 namespace __jni_impl::android::service::notification
 {

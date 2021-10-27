@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "Formatter.hpp"
+#include "./Formatter.hpp"
 
 namespace __jni_impl::java::util::logging
 {
@@ -23,7 +23,7 @@ namespace __jni_impl::java::util::logging
 	};
 } // namespace __jni_impl::java::util::logging
 
-#include "LogRecord.hpp"
+#include "./LogRecord.hpp"
 
 namespace __jni_impl::java::util::logging
 {

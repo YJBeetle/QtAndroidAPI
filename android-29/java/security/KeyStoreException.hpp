@@ -2,7 +2,7 @@
 
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
-#include "GeneralSecurityException.hpp"
+#include "./GeneralSecurityException.hpp"
 
 
 namespace __jni_impl::java::security

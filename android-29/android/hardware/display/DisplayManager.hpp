@@ -58,8 +58,8 @@ namespace __jni_impl::android::hardware::display
 } // namespace __jni_impl::android::hardware::display
 
 #include "../../content/Context.hpp"
-#include "VirtualDisplay.hpp"
-#include "VirtualDisplay_Callback.hpp"
+#include "./VirtualDisplay.hpp"
+#include "./VirtualDisplay_Callback.hpp"
 #include "../../os/Handler.hpp"
 #include "../../view/Display.hpp"
 #include "../../view/Surface.hpp"

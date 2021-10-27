@@ -32,7 +32,7 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "DecimalFormat.hpp"
+#include "./DecimalFormat.hpp"
 #include "../util/ULocale.hpp"
 
 namespace __jni_impl::android::icu::text

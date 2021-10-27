@@ -39,7 +39,7 @@ namespace __jni_impl::android::speech::tts
 } // namespace __jni_impl::android::speech::tts
 
 #include "../../content/Intent.hpp"
-#include "SynthesisRequest.hpp"
+#include "./SynthesisRequest.hpp"
 
 namespace __jni_impl::android::speech::tts
 {

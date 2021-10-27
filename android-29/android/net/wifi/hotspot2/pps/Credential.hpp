@@ -59,9 +59,9 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 	};
 } // namespace __jni_impl::android::net::wifi::hotspot2::pps
 
-#include "Credential_CertificateCredential.hpp"
-#include "Credential_SimCredential.hpp"
-#include "Credential_UserCredential.hpp"
+#include "./Credential_CertificateCredential.hpp"
+#include "./Credential_SimCredential.hpp"
+#include "./Credential_UserCredential.hpp"
 #include "../../../../os/Parcel.hpp"
 #include "../../../../../java/security/cert/X509Certificate.hpp"
 

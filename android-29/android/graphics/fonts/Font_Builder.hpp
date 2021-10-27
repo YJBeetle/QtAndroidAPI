@@ -56,7 +56,7 @@ namespace __jni_impl::android::graphics::fonts
 
 #include "../../content/res/AssetManager.hpp"
 #include "../../content/res/Resources.hpp"
-#include "Font.hpp"
+#include "./Font.hpp"
 #include "../../os/ParcelFileDescriptor.hpp"
 #include "../../../java/io/File.hpp"
 #include "../../../java/nio/ByteBuffer.hpp"

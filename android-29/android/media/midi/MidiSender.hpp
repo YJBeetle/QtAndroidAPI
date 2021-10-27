@@ -25,7 +25,7 @@ namespace __jni_impl::android::media::midi
 	};
 } // namespace __jni_impl::android::media::midi
 
-#include "MidiReceiver.hpp"
+#include "./MidiReceiver.hpp"
 
 namespace __jni_impl::android::media::midi
 {

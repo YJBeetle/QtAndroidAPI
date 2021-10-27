@@ -45,10 +45,10 @@ namespace __jni_impl::java::security
 } // namespace __jni_impl::java::security
 
 #include "../lang/Exception.hpp"
-#include "AccessControlContext.hpp"
-#include "Permission.hpp"
-#include "PrivilegedActionException.hpp"
-#include "ProtectionDomain.hpp"
+#include "./AccessControlContext.hpp"
+#include "./Permission.hpp"
+#include "./PrivilegedActionException.hpp"
+#include "./ProtectionDomain.hpp"
 
 namespace __jni_impl::java::security
 {

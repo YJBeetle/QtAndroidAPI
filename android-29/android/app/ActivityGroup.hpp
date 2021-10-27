@@ -4,7 +4,7 @@
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../view/ContextThemeWrapper.hpp"
-#include "Activity.hpp"
+#include "./Activity.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -36,8 +36,8 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Activity.hpp"
-#include "LocalActivityManager.hpp"
+#include "./Activity.hpp"
+#include "./LocalActivityManager.hpp"
 #include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::app

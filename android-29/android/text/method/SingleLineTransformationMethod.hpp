@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "ReplacementTransformationMethod.hpp"
+#include "./ReplacementTransformationMethod.hpp"
 
 
 namespace __jni_impl::android::text::method

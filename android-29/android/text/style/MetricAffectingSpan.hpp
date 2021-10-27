@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "CharacterStyle.hpp"
+#include "./CharacterStyle.hpp"
 
 namespace __jni_impl::android::text
 {
@@ -29,7 +29,7 @@ namespace __jni_impl::android::text::style
 } // namespace __jni_impl::android::text::style
 
 #include "../TextPaint.hpp"
-#include "CharacterStyle.hpp"
+#include "./CharacterStyle.hpp"
 
 namespace __jni_impl::android::text::style
 {

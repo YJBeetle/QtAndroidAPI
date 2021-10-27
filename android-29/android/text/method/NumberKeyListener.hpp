@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "MetaKeyKeyListener.hpp"
-#include "BaseKeyListener.hpp"
+#include "./MetaKeyKeyListener.hpp"
+#include "./BaseKeyListener.hpp"
 
 namespace __jni_impl::android::view
 {

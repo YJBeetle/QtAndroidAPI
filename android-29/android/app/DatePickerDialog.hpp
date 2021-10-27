@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Dialog.hpp"
-#include "AlertDialog.hpp"
+#include "./Dialog.hpp"
+#include "./AlertDialog.hpp"
 
 namespace __jni_impl::android::content
 {

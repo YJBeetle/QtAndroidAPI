@@ -3,7 +3,7 @@
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
-#include "LinearLayout.hpp"
+#include "./LinearLayout.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -83,7 +83,7 @@ namespace __jni_impl::android::widget
 #include "../content/Context.hpp"
 #include "../graphics/Rect.hpp"
 #include "../view/KeyEvent.hpp"
-#include "CursorAdapter.hpp"
+#include "./CursorAdapter.hpp"
 
 namespace __jni_impl::android::widget
 {

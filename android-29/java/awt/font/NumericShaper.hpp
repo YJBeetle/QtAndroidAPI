@@ -60,7 +60,7 @@ namespace __jni_impl::java::awt::font
 	};
 } // namespace __jni_impl::java::awt::font
 
-#include "NumericShaper_Range.hpp"
+#include "./NumericShaper_Range.hpp"
 #include "../../io/ObjectOutputStream.hpp"
 
 namespace __jni_impl::java::awt::font

@@ -35,7 +35,7 @@ namespace __jni_impl::java::util::zip
 } // namespace __jni_impl::java::util::zip
 
 #include "../../io/OutputStream.hpp"
-#include "Inflater.hpp"
+#include "./Inflater.hpp"
 
 namespace __jni_impl::java::util::zip
 {

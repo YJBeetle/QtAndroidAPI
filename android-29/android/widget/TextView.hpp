@@ -484,8 +484,8 @@ namespace __jni_impl::android::widget
 #include "../view/inputmethod/EditorInfo.hpp"
 #include "../view/inputmethod/ExtractedText.hpp"
 #include "../view/inputmethod/ExtractedTextRequest.hpp"
-#include "Scroller.hpp"
-#include "TextView_BufferType.hpp"
+#include "./Scroller.hpp"
+#include "./TextView_BufferType.hpp"
 #include "../../java/util/ArrayList.hpp"
 #include "../../java/util/Locale.hpp"
 

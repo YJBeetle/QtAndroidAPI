@@ -40,8 +40,8 @@ namespace __jni_impl::android::media::tv
 } // namespace __jni_impl::android::media::tv
 
 #include "../../content/Intent.hpp"
-#include "TvInputService_RecordingSession.hpp"
-#include "TvInputService_Session.hpp"
+#include "./TvInputService_RecordingSession.hpp"
+#include "./TvInputService_Session.hpp"
 
 namespace __jni_impl::android::media::tv
 {

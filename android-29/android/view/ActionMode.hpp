@@ -52,8 +52,8 @@ namespace __jni_impl::android::view
 	};
 } // namespace __jni_impl::android::view
 
-#include "MenuInflater.hpp"
-#include "View.hpp"
+#include "./MenuInflater.hpp"
+#include "./View.hpp"
 
 namespace __jni_impl::android::view
 {

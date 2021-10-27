@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Animator.hpp"
-#include "ValueAnimator.hpp"
+#include "./Animator.hpp"
+#include "./ValueAnimator.hpp"
 
 
 namespace __jni_impl::android::animation

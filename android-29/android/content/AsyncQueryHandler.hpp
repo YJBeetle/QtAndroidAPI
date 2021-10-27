@@ -51,8 +51,8 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "ContentResolver.hpp"
-#include "ContentValues.hpp"
+#include "./ContentResolver.hpp"
+#include "./ContentValues.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Handler.hpp"
 #include "../os/Looper.hpp"

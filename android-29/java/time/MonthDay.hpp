@@ -78,12 +78,12 @@ namespace __jni_impl::java::time
 } // namespace __jni_impl::java::time
 
 #include "../io/ObjectInputStream.hpp"
-#include "Clock.hpp"
-#include "LocalDate.hpp"
-#include "Month.hpp"
-#include "ZoneId.hpp"
-#include "format/DateTimeFormatter.hpp"
-#include "temporal/ValueRange.hpp"
+#include "./Clock.hpp"
+#include "./LocalDate.hpp"
+#include "./Month.hpp"
+#include "./ZoneId.hpp"
+#include "./format/DateTimeFormatter.hpp"
+#include "./temporal/ValueRange.hpp"
 
 namespace __jni_impl::java::time
 {

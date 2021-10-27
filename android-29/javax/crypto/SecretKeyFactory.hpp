@@ -37,7 +37,7 @@ namespace __jni_impl::javax::crypto
 } // namespace __jni_impl::javax::crypto
 
 #include "../../java/security/Provider.hpp"
-#include "SecretKeyFactorySpi.hpp"
+#include "./SecretKeyFactorySpi.hpp"
 
 namespace __jni_impl::javax::crypto
 {

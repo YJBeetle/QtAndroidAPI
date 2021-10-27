@@ -52,7 +52,7 @@ namespace __jni_impl::java::security
 } // namespace __jni_impl::java::security
 
 #include "../io/File.hpp"
-#include "Provider.hpp"
+#include "./Provider.hpp"
 #include "../util/LinkedHashSet.hpp"
 #include "../util/Properties.hpp"
 

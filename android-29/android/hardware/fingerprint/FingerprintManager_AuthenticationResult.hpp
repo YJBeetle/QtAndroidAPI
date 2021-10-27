@@ -22,7 +22,7 @@ namespace __jni_impl::android::hardware::fingerprint
 	};
 } // namespace __jni_impl::android::hardware::fingerprint
 
-#include "FingerprintManager_CryptoObject.hpp"
+#include "./FingerprintManager_CryptoObject.hpp"
 
 namespace __jni_impl::android::hardware::fingerprint
 {

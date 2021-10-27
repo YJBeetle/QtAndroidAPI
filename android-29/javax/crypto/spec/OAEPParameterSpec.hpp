@@ -27,7 +27,7 @@ namespace __jni_impl::javax::crypto::spec
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
-#include "PSource.hpp"
+#include "./PSource.hpp"
 
 namespace __jni_impl::javax::crypto::spec
 {

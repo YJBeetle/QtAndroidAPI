@@ -165,7 +165,7 @@ namespace __jni_impl::android::icu::util
 	};
 } // namespace __jni_impl::android::icu::util
 
-#include "TimeUnit.hpp"
+#include "./TimeUnit.hpp"
 
 namespace __jni_impl::android::icu::util
 {

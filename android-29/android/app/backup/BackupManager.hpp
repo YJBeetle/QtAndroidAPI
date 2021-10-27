@@ -34,7 +34,7 @@ namespace __jni_impl::android::app::backup
 	};
 } // namespace __jni_impl::android::app::backup
 
-#include "RestoreObserver.hpp"
+#include "./RestoreObserver.hpp"
 #include "../../content/Context.hpp"
 #include "../../os/UserHandle.hpp"
 

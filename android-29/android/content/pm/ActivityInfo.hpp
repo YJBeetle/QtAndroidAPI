@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "PackageItemInfo.hpp"
-#include "ComponentInfo.hpp"
+#include "./PackageItemInfo.hpp"
+#include "./ComponentInfo.hpp"
 
 namespace __jni_impl::android::content::pm
 {
@@ -114,7 +114,7 @@ namespace __jni_impl::android::content::pm
 	};
 } // namespace __jni_impl::android::content::pm
 
-#include "ActivityInfo_WindowLayout.hpp"
+#include "./ActivityInfo_WindowLayout.hpp"
 #include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::content::pm

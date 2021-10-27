@@ -129,9 +129,9 @@ namespace __jni_impl::android::os
 } // namespace __jni_impl::android::os
 
 #include "../content/Intent.hpp"
-#include "Bundle.hpp"
-#include "PersistableBundle.hpp"
-#include "UserHandle.hpp"
+#include "./Bundle.hpp"
+#include "./PersistableBundle.hpp"
+#include "./UserHandle.hpp"
 
 namespace __jni_impl::android::os
 {

@@ -43,7 +43,7 @@ namespace __jni_impl::android::service::voice
 #include "../../app/assist/AssistContent.hpp"
 #include "../../app/assist/AssistStructure.hpp"
 #include "../../os/Bundle.hpp"
-#include "VoiceInteractionSession_ActivityId.hpp"
+#include "./VoiceInteractionSession_ActivityId.hpp"
 
 namespace __jni_impl::android::service::voice
 {

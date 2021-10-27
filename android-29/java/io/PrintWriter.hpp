@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Writer.hpp"
+#include "./Writer.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -104,10 +104,10 @@ namespace __jni_impl::java::io
 	};
 } // namespace __jni_impl::java::io
 
-#include "File.hpp"
-#include "OutputStream.hpp"
-#include "PrintStream.hpp"
-#include "Writer.hpp"
+#include "./File.hpp"
+#include "./OutputStream.hpp"
+#include "./PrintStream.hpp"
+#include "./Writer.hpp"
 #include "../nio/charset/Charset.hpp"
 #include "../util/Formatter.hpp"
 #include "../util/Locale.hpp"

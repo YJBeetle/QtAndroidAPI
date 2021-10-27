@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Format.hpp"
-#include "NumberFormat.hpp"
+#include "./Format.hpp"
+#include "./NumberFormat.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -123,10 +123,10 @@ namespace __jni_impl::java::text
 #include "../math/BigDecimal.hpp"
 #include "../math/BigInteger.hpp"
 #include "../math/RoundingMode.hpp"
-#include "DecimalFormatSymbols.hpp"
-#include "FieldPosition.hpp"
-#include "Format_Field.hpp"
-#include "ParsePosition.hpp"
+#include "./DecimalFormatSymbols.hpp"
+#include "./FieldPosition.hpp"
+#include "./Format_Field.hpp"
+#include "./ParsePosition.hpp"
 #include "../util/Currency.hpp"
 
 namespace __jni_impl::java::text

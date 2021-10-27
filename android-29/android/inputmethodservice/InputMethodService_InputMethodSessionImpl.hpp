@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "AbstractInputMethodService_AbstractInputMethodSessionImpl.hpp"
+#include "./AbstractInputMethodService_AbstractInputMethodSessionImpl.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -49,7 +49,7 @@ namespace __jni_impl::android::inputmethodservice
 } // namespace __jni_impl::android::inputmethodservice
 
 #include "../graphics/Rect.hpp"
-#include "InputMethodService.hpp"
+#include "./InputMethodService.hpp"
 #include "../os/Bundle.hpp"
 #include "../view/inputmethod/CursorAnchorInfo.hpp"
 #include "../view/inputmethod/ExtractedText.hpp"

@@ -48,11 +48,11 @@ namespace __jni_impl::android::hardware::camera2
 	};
 } // namespace __jni_impl::android::hardware::camera2
 
-#include "CameraCaptureSession.hpp"
-#include "CaptureFailure.hpp"
-#include "CaptureRequest.hpp"
-#include "CaptureResult.hpp"
-#include "TotalCaptureResult.hpp"
+#include "./CameraCaptureSession.hpp"
+#include "./CaptureFailure.hpp"
+#include "./CaptureRequest.hpp"
+#include "./CaptureResult.hpp"
+#include "./TotalCaptureResult.hpp"
 #include "../../view/Surface.hpp"
 
 namespace __jni_impl::android::hardware::camera2

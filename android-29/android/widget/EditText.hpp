@@ -2,7 +2,7 @@
 
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
-#include "TextView.hpp"
+#include "./TextView.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -46,7 +46,7 @@ namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
 #include "../text/TextUtils_TruncateAt.hpp"
-#include "TextView_BufferType.hpp"
+#include "./TextView_BufferType.hpp"
 
 namespace __jni_impl::android::widget
 {

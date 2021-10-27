@@ -47,8 +47,8 @@ namespace __jni_impl::android::database::sqlite
 } // namespace __jni_impl::android::database::sqlite
 
 #include "../CursorWindow.hpp"
-#include "SQLiteDatabase.hpp"
-#include "SQLiteQuery.hpp"
+#include "./SQLiteDatabase.hpp"
+#include "./SQLiteQuery.hpp"
 
 namespace __jni_impl::android::database::sqlite
 {

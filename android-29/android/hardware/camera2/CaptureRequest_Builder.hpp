@@ -39,8 +39,8 @@ namespace __jni_impl::android::hardware::camera2
 	};
 } // namespace __jni_impl::android::hardware::camera2
 
-#include "CaptureRequest.hpp"
-#include "CaptureRequest_Key.hpp"
+#include "./CaptureRequest.hpp"
+#include "./CaptureRequest_Key.hpp"
 #include "../../view/Surface.hpp"
 
 namespace __jni_impl::android::hardware::camera2

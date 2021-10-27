@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Fragment.hpp"
+#include "./Fragment.hpp"
 
 namespace __jni_impl::android::os
 {

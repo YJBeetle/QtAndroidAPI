@@ -55,7 +55,7 @@ namespace __jni_impl::android::bluetooth::le
 } // namespace __jni_impl::android::bluetooth::le
 
 #include "../BluetoothDevice.hpp"
-#include "ScanRecord.hpp"
+#include "./ScanRecord.hpp"
 #include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::bluetooth::le

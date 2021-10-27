@@ -53,8 +53,8 @@ namespace __jni_impl::android::hardware::fingerprint
 	};
 } // namespace __jni_impl::android::hardware::fingerprint
 
-#include "FingerprintManager_AuthenticationCallback.hpp"
-#include "FingerprintManager_CryptoObject.hpp"
+#include "./FingerprintManager_AuthenticationCallback.hpp"
+#include "./FingerprintManager_CryptoObject.hpp"
 #include "../../os/CancellationSignal.hpp"
 #include "../../os/Handler.hpp"
 

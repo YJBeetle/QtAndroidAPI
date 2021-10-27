@@ -36,8 +36,8 @@ namespace __jni_impl::android::net::sip
 	};
 } // namespace __jni_impl::android::net::sip
 
-#include "SipAudioCall.hpp"
-#include "SipProfile.hpp"
+#include "./SipAudioCall.hpp"
+#include "./SipProfile.hpp"
 
 namespace __jni_impl::android::net::sip
 {

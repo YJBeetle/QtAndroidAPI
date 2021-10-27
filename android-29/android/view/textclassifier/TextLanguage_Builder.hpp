@@ -36,7 +36,7 @@ namespace __jni_impl::android::view::textclassifier
 
 #include "../../icu/util/ULocale.hpp"
 #include "../../os/Bundle.hpp"
-#include "TextLanguage.hpp"
+#include "./TextLanguage.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {

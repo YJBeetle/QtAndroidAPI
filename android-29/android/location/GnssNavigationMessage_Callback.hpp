@@ -26,7 +26,7 @@ namespace __jni_impl::android::location
 	};
 } // namespace __jni_impl::android::location
 
-#include "GnssNavigationMessage.hpp"
+#include "./GnssNavigationMessage.hpp"
 
 namespace __jni_impl::android::location
 {

@@ -25,7 +25,7 @@ namespace __jni_impl::android::database
 	};
 } // namespace __jni_impl::android::database
 
-#include "CursorJoiner_Result.hpp"
+#include "./CursorJoiner_Result.hpp"
 
 namespace __jni_impl::android::database
 {

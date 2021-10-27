@@ -68,7 +68,7 @@ namespace __jni_impl::android::app::slice
 	};
 } // namespace __jni_impl::android::app::slice
 
-#include "SliceSpec.hpp"
+#include "./SliceSpec.hpp"
 #include "../../net/Uri.hpp"
 #include "../../os/Parcel.hpp"
 

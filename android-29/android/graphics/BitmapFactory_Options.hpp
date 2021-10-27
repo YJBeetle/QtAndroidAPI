@@ -52,9 +52,9 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Bitmap.hpp"
-#include "Bitmap_Config.hpp"
-#include "ColorSpace.hpp"
+#include "./Bitmap.hpp"
+#include "./Bitmap_Config.hpp"
+#include "./ColorSpace.hpp"
 
 namespace __jni_impl::android::graphics
 {

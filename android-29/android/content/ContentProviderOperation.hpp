@@ -60,10 +60,10 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "ContentProvider.hpp"
-#include "ContentProviderOperation_Builder.hpp"
-#include "ContentProviderResult.hpp"
-#include "ContentValues.hpp"
+#include "./ContentProvider.hpp"
+#include "./ContentProviderOperation_Builder.hpp"
+#include "./ContentProviderResult.hpp"
+#include "./ContentValues.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Parcel.hpp"
 

@@ -27,7 +27,7 @@ namespace __jni_impl::java::nio::charset
 	};
 } // namespace __jni_impl::java::nio::charset
 
-#include "Charset.hpp"
+#include "./Charset.hpp"
 
 namespace __jni_impl::java::nio::charset
 {

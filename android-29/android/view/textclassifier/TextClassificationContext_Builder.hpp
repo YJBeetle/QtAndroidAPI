@@ -25,7 +25,7 @@ namespace __jni_impl::android::view::textclassifier
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
-#include "TextClassificationContext.hpp"
+#include "./TextClassificationContext.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {

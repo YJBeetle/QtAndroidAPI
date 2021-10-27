@@ -35,8 +35,8 @@ namespace __jni_impl::java::security
 } // namespace __jni_impl::java::security
 
 #include "../io/ObjectInputStream.hpp"
-#include "Timestamp.hpp"
-#include "cert/CertPath.hpp"
+#include "./Timestamp.hpp"
+#include "./cert/CertPath.hpp"
 
 namespace __jni_impl::java::security
 {

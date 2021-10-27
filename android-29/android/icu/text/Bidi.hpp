@@ -117,8 +117,8 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "BidiClassifier.hpp"
-#include "BidiRun.hpp"
+#include "./BidiClassifier.hpp"
+#include "./BidiRun.hpp"
 
 namespace __jni_impl::android::icu::text
 {

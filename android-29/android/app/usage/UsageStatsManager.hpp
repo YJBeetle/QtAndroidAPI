@@ -39,7 +39,7 @@ namespace __jni_impl::android::app::usage
 	};
 } // namespace __jni_impl::android::app::usage
 
-#include "UsageEvents.hpp"
+#include "./UsageEvents.hpp"
 
 namespace __jni_impl::android::app::usage
 {

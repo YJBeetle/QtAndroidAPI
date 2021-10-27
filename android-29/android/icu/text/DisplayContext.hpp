@@ -38,7 +38,7 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "DisplayContext_Type.hpp"
+#include "./DisplayContext_Type.hpp"
 
 namespace __jni_impl::android::icu::text
 {

@@ -23,7 +23,7 @@ namespace __jni_impl::java::net
 	};
 } // namespace __jni_impl::java::net
 
-#include "URLConnection.hpp"
+#include "./URLConnection.hpp"
 
 namespace __jni_impl::java::net
 {

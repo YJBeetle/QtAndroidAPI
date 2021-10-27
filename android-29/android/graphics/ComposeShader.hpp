@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Shader.hpp"
+#include "./Shader.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -36,10 +36,10 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "BlendMode.hpp"
-#include "PorterDuff_Mode.hpp"
-#include "Shader.hpp"
-#include "Xfermode.hpp"
+#include "./BlendMode.hpp"
+#include "./PorterDuff_Mode.hpp"
+#include "./Shader.hpp"
+#include "./Xfermode.hpp"
 
 namespace __jni_impl::android::graphics
 {

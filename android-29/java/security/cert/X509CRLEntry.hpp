@@ -43,7 +43,7 @@ namespace __jni_impl::java::security::cert
 } // namespace __jni_impl::java::security::cert
 
 #include "../../math/BigInteger.hpp"
-#include "CRLReason.hpp"
+#include "./CRLReason.hpp"
 #include "../../util/Date.hpp"
 #include "../../../javax/security/auth/x500/X500Principal.hpp"
 

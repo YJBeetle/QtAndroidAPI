@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "AbstractCollection.hpp"
-#include "AbstractSet.hpp"
+#include "./AbstractCollection.hpp"
+#include "./AbstractSet.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -47,7 +47,7 @@ namespace __jni_impl::java::util
 
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
-#include "HashMap.hpp"
+#include "./HashMap.hpp"
 
 namespace __jni_impl::java::util
 {

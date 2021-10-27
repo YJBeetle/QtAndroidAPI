@@ -38,7 +38,7 @@ namespace __jni_impl::android::view::textclassifier
 
 #include "../../app/RemoteAction.hpp"
 #include "../../os/Bundle.hpp"
-#include "ConversationAction.hpp"
+#include "./ConversationAction.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {

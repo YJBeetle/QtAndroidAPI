@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "InetAddress.hpp"
+#include "./InetAddress.hpp"
 
 
 namespace __jni_impl::java::net

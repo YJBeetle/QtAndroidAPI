@@ -38,7 +38,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "ActivityManager_RecentTaskInfo.hpp"
+#include "./ActivityManager_RecentTaskInfo.hpp"
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"
 #include "../os/Bundle.hpp"

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "Certificate.hpp"
+#include "./Certificate.hpp"
 
 namespace __jni_impl::java::math
 {

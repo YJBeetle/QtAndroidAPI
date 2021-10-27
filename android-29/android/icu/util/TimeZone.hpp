@@ -103,8 +103,8 @@ namespace __jni_impl::android::icu::util
 	};
 } // namespace __jni_impl::android::icu::util
 
-#include "TimeZone_SystemTimeZoneType.hpp"
-#include "ULocale.hpp"
+#include "./TimeZone_SystemTimeZoneType.hpp"
+#include "./ULocale.hpp"
 #include "../../../java/lang/Integer.hpp"
 #include "../../../java/util/Date.hpp"
 #include "../../../java/util/Locale.hpp"

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "SearchIterator.hpp"
+#include "./SearchIterator.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -54,8 +54,8 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "BreakIterator.hpp"
-#include "RuleBasedCollator.hpp"
+#include "./BreakIterator.hpp"
+#include "./RuleBasedCollator.hpp"
 #include "../util/ULocale.hpp"
 #include "../../../java/util/Locale.hpp"
 

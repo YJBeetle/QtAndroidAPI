@@ -113,9 +113,9 @@ namespace __jni_impl::java::util
 
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
-#include "Locale_Category.hpp"
-#include "Locale_FilteringMode.hpp"
-#include "Optional.hpp"
+#include "./Locale_Category.hpp"
+#include "./Locale_FilteringMode.hpp"
+#include "./Optional.hpp"
 
 namespace __jni_impl::java::util
 {

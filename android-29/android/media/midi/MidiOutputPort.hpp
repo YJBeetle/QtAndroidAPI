@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "MidiSender.hpp"
+#include "./MidiSender.hpp"
 
 namespace __jni_impl::android::media::midi
 {
@@ -30,7 +30,7 @@ namespace __jni_impl::android::media::midi
 	};
 } // namespace __jni_impl::android::media::midi
 
-#include "MidiReceiver.hpp"
+#include "./MidiReceiver.hpp"
 #include "../../../java/io/FileDescriptor.hpp"
 
 namespace __jni_impl::android::media::midi

@@ -59,9 +59,9 @@ namespace __jni_impl::android::graphics
 } // namespace __jni_impl::android::graphics
 
 #include "../content/res/Resources.hpp"
-#include "Bitmap.hpp"
-#include "BitmapFactory_Options.hpp"
-#include "Rect.hpp"
+#include "./Bitmap.hpp"
+#include "./BitmapFactory_Options.hpp"
+#include "./Rect.hpp"
 #include "../util/TypedValue.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/InputStream.hpp"

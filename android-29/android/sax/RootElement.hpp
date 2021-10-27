@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Element.hpp"
+#include "./Element.hpp"
 
 
 namespace __jni_impl::android::sax

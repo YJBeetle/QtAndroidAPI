@@ -90,7 +90,7 @@ namespace __jni_impl::java::lang
 #include "../io/FileOutputStream.hpp"
 #include "../io/InputStream.hpp"
 #include "../io/PrintStream.hpp"
-#include "SecurityManager.hpp"
+#include "./SecurityManager.hpp"
 #include "../util/Properties.hpp"
 #include "../util/ResourceBundle.hpp"
 

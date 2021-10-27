@@ -50,7 +50,7 @@ namespace __jni_impl::android::hardware::camera2::params
 
 #include "../CameraCaptureSession_StateCallback.hpp"
 #include "../CaptureRequest.hpp"
-#include "InputConfiguration.hpp"
+#include "./InputConfiguration.hpp"
 #include "../../../os/Parcel.hpp"
 
 namespace __jni_impl::android::hardware::camera2::params

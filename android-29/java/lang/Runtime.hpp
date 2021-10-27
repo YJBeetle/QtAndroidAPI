@@ -55,8 +55,8 @@ namespace __jni_impl::java::lang
 } // namespace __jni_impl::java::lang
 
 #include "../io/File.hpp"
-#include "Process.hpp"
-#include "Thread.hpp"
+#include "./Process.hpp"
+#include "./Thread.hpp"
 
 namespace __jni_impl::java::lang
 {

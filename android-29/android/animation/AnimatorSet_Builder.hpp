@@ -29,8 +29,8 @@ namespace __jni_impl::android::animation
 	};
 } // namespace __jni_impl::android::animation
 
-#include "Animator.hpp"
-#include "AnimatorSet.hpp"
+#include "./Animator.hpp"
+#include "./AnimatorSet.hpp"
 
 namespace __jni_impl::android::animation
 {

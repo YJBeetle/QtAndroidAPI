@@ -56,9 +56,9 @@ namespace __jni_impl::java::security
 	};
 } // namespace __jni_impl::java::security
 
-#include "MessageDigest.hpp"
-#include "Provider.hpp"
-#include "SecureRandomSpi.hpp"
+#include "./MessageDigest.hpp"
+#include "./Provider.hpp"
+#include "./SecureRandomSpi.hpp"
 
 namespace __jni_impl::java::security
 {

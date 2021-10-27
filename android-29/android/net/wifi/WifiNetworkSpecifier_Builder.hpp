@@ -48,8 +48,8 @@ namespace __jni_impl::android::net::wifi
 } // namespace __jni_impl::android::net::wifi
 
 #include "../MacAddress.hpp"
-#include "WifiEnterpriseConfig.hpp"
-#include "WifiNetworkSpecifier.hpp"
+#include "./WifiEnterpriseConfig.hpp"
+#include "./WifiNetworkSpecifier.hpp"
 #include "../../os/PatternMatcher.hpp"
 
 namespace __jni_impl::android::net::wifi

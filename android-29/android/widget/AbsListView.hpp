@@ -3,7 +3,7 @@
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
-#include "AdapterView.hpp"
+#include "./AdapterView.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -225,7 +225,7 @@ namespace __jni_impl::android::widget
 #include "../view/accessibility/AccessibilityEvent.hpp"
 #include "../view/accessibility/AccessibilityNodeInfo.hpp"
 #include "../view/inputmethod/EditorInfo.hpp"
-#include "AbsListView_LayoutParams.hpp"
+#include "./AbsListView_LayoutParams.hpp"
 #include "../../java/util/ArrayList.hpp"
 
 namespace __jni_impl::android::widget

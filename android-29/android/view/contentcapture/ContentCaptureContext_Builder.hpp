@@ -33,7 +33,7 @@ namespace __jni_impl::android::view::contentcapture
 
 #include "../../content/LocusId.hpp"
 #include "../../os/Bundle.hpp"
-#include "ContentCaptureContext.hpp"
+#include "./ContentCaptureContext.hpp"
 
 namespace __jni_impl::android::view::contentcapture
 {

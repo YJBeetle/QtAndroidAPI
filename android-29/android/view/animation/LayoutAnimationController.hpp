@@ -58,8 +58,8 @@ namespace __jni_impl::android::view::animation
 
 #include "../../content/Context.hpp"
 #include "../View.hpp"
-#include "Animation.hpp"
-#include "LayoutAnimationController_AnimationParameters.hpp"
+#include "./Animation.hpp"
+#include "./LayoutAnimationController_AnimationParameters.hpp"
 #include "../../../java/util/Random.hpp"
 
 namespace __jni_impl::android::view::animation

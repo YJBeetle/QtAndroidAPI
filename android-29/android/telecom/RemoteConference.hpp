@@ -62,10 +62,10 @@ namespace __jni_impl::android::telecom
 
 #include "../os/Bundle.hpp"
 #include "../os/Handler.hpp"
-#include "CallAudioState.hpp"
-#include "DisconnectCause.hpp"
-#include "RemoteConference_Callback.hpp"
-#include "RemoteConnection.hpp"
+#include "./CallAudioState.hpp"
+#include "./DisconnectCause.hpp"
+#include "./RemoteConference_Callback.hpp"
+#include "./RemoteConnection.hpp"
 
 namespace __jni_impl::android::telecom
 {

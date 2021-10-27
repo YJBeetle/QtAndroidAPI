@@ -27,7 +27,7 @@ namespace __jni_impl::java::security
 	};
 } // namespace __jni_impl::java::security
 
-#include "cert/Certificate.hpp"
+#include "./cert/Certificate.hpp"
 
 namespace __jni_impl::java::security
 {

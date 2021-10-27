@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "MidiReceiver.hpp"
+#include "./MidiReceiver.hpp"
 
 namespace __jni_impl::java::io
 {

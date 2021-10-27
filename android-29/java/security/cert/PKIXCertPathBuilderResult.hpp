@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "PKIXCertPathValidatorResult.hpp"
+#include "./PKIXCertPathValidatorResult.hpp"
 
 namespace __jni_impl::java::security::cert
 {
@@ -28,8 +28,8 @@ namespace __jni_impl::java::security::cert
 	};
 } // namespace __jni_impl::java::security::cert
 
-#include "CertPath.hpp"
-#include "TrustAnchor.hpp"
+#include "./CertPath.hpp"
+#include "./TrustAnchor.hpp"
 
 namespace __jni_impl::java::security::cert
 {

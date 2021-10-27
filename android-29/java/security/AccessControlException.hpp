@@ -28,7 +28,7 @@ namespace __jni_impl::java::security
 	};
 } // namespace __jni_impl::java::security
 
-#include "Permission.hpp"
+#include "./Permission.hpp"
 
 namespace __jni_impl::java::security
 {

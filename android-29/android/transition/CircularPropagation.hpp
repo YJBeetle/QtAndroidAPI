@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "TransitionPropagation.hpp"
-#include "VisibilityPropagation.hpp"
+#include "./TransitionPropagation.hpp"
+#include "./VisibilityPropagation.hpp"
 
 namespace __jni_impl::android::transition
 {
@@ -33,8 +33,8 @@ namespace __jni_impl::android::transition
 	};
 } // namespace __jni_impl::android::transition
 
-#include "Transition.hpp"
-#include "TransitionValues.hpp"
+#include "./Transition.hpp"
+#include "./TransitionValues.hpp"
 #include "../view/ViewGroup.hpp"
 
 namespace __jni_impl::android::transition

@@ -37,8 +37,8 @@ namespace __jni_impl::android::hardware::usb
 	};
 } // namespace __jni_impl::android::hardware::usb
 
-#include "UsbDeviceConnection.hpp"
-#include "UsbEndpoint.hpp"
+#include "./UsbDeviceConnection.hpp"
+#include "./UsbEndpoint.hpp"
 #include "../../../java/nio/ByteBuffer.hpp"
 
 namespace __jni_impl::android::hardware::usb

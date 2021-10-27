@@ -46,8 +46,8 @@ namespace __jni_impl::android::net::wifi
 } // namespace __jni_impl::android::net::wifi
 
 #include "../MacAddress.hpp"
-#include "WifiEnterpriseConfig.hpp"
-#include "WifiNetworkSuggestion.hpp"
+#include "./WifiEnterpriseConfig.hpp"
+#include "./WifiNetworkSuggestion.hpp"
 
 namespace __jni_impl::android::net::wifi
 {

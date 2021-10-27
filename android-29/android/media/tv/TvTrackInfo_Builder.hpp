@@ -39,7 +39,7 @@ namespace __jni_impl::android::media::tv
 	};
 } // namespace __jni_impl::android::media::tv
 
-#include "TvTrackInfo.hpp"
+#include "./TvTrackInfo.hpp"
 #include "../../os/Bundle.hpp"
 
 namespace __jni_impl::android::media::tv

@@ -27,8 +27,8 @@ namespace __jni_impl::android::content::pm
 	};
 } // namespace __jni_impl::android::content::pm
 
-#include "PackageManager.hpp"
-#include "ResolveInfo.hpp"
+#include "./PackageManager.hpp"
+#include "./ResolveInfo.hpp"
 
 namespace __jni_impl::android::content::pm
 {

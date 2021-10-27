@@ -23,7 +23,7 @@ namespace __jni_impl::android::hardware
 	};
 } // namespace __jni_impl::android::hardware
 
-#include "ConsumerIrManager.hpp"
+#include "./ConsumerIrManager.hpp"
 
 namespace __jni_impl::android::hardware
 {

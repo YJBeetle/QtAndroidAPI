@@ -3,7 +3,7 @@
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
-#include "RelativeLayout.hpp"
+#include "./RelativeLayout.hpp"
 
 namespace __jni_impl::android::content
 {

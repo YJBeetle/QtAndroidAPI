@@ -26,8 +26,8 @@ namespace __jni_impl::android::webkit
 	};
 } // namespace __jni_impl::android::webkit
 
-#include "WebMessage.hpp"
-#include "WebMessagePort.hpp"
+#include "./WebMessage.hpp"
+#include "./WebMessagePort.hpp"
 
 namespace __jni_impl::android::webkit
 {

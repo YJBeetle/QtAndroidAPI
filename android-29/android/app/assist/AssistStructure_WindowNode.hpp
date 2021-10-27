@@ -28,7 +28,7 @@ namespace __jni_impl::android::app::assist
 	};
 } // namespace __jni_impl::android::app::assist
 
-#include "AssistStructure_ViewNode.hpp"
+#include "./AssistStructure_ViewNode.hpp"
 
 namespace __jni_impl::android::app::assist
 {

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Error.hpp"
-#include "LinkageError.hpp"
+#include "./Error.hpp"
+#include "./LinkageError.hpp"
 
 
 namespace __jni_impl::java::lang

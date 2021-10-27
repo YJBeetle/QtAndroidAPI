@@ -47,7 +47,7 @@ namespace __jni_impl::android::content::pm
 
 #include "../ComponentName.hpp"
 #include "../Context.hpp"
-#include "ApplicationInfo.hpp"
+#include "./ApplicationInfo.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../os/UserHandle.hpp"
 

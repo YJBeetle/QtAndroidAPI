@@ -2,7 +2,7 @@
 
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/text/Format.hpp"
-#include "UFormat.hpp"
+#include "./UFormat.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -78,8 +78,8 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "MeasureFormat_FormatWidth.hpp"
-#include "NumberFormat.hpp"
+#include "./MeasureFormat_FormatWidth.hpp"
+#include "./NumberFormat.hpp"
 #include "../util/Measure.hpp"
 #include "../util/MeasureUnit.hpp"
 #include "../util/ULocale.hpp"

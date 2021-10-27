@@ -107,10 +107,10 @@ namespace __jni_impl::java::net
 #include "../io/InputStream.hpp"
 #include "../io/OutputStream.hpp"
 #include "../lang/Void.hpp"
-#include "InetAddress.hpp"
-#include "Proxy.hpp"
-#include "SocketAddress.hpp"
-#include "SocketImpl.hpp"
+#include "./InetAddress.hpp"
+#include "./Proxy.hpp"
+#include "./SocketAddress.hpp"
+#include "./SocketImpl.hpp"
 #include "../nio/channels/SocketChannel.hpp"
 
 namespace __jni_impl::java::net

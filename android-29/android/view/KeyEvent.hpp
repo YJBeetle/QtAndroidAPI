@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "InputEvent.hpp"
+#include "./InputEvent.hpp"
 
 namespace __jni_impl::android::os
 {
@@ -427,9 +427,9 @@ namespace __jni_impl::android::view
 } // namespace __jni_impl::android::view
 
 #include "../os/Parcel.hpp"
-#include "KeyCharacterMap.hpp"
-#include "KeyCharacterMap_KeyData.hpp"
-#include "KeyEvent_DispatcherState.hpp"
+#include "./KeyCharacterMap.hpp"
+#include "./KeyCharacterMap_KeyData.hpp"
+#include "./KeyEvent_DispatcherState.hpp"
 
 namespace __jni_impl::android::view
 {

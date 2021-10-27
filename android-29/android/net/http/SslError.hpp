@@ -43,7 +43,7 @@ namespace __jni_impl::android::net::http
 	};
 } // namespace __jni_impl::android::net::http
 
-#include "SslCertificate.hpp"
+#include "./SslCertificate.hpp"
 #include "../../../java/security/cert/X509Certificate.hpp"
 
 namespace __jni_impl::android::net::http

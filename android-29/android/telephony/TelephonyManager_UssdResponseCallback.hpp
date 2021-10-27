@@ -25,7 +25,7 @@ namespace __jni_impl::android::telephony
 	};
 } // namespace __jni_impl::android::telephony
 
-#include "TelephonyManager.hpp"
+#include "./TelephonyManager.hpp"
 
 namespace __jni_impl::android::telephony
 {

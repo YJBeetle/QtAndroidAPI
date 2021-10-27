@@ -40,7 +40,7 @@ namespace __jni_impl::android::net::wifi
 	};
 } // namespace __jni_impl::android::net::wifi
 
-#include "WifiConfiguration.hpp"
+#include "./WifiConfiguration.hpp"
 #include "../../os/Parcel.hpp"
 #include "../../os/PatternMatcher.hpp"
 #include "../../util/Pair.hpp"

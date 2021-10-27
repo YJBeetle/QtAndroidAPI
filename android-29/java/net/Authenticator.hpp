@@ -45,10 +45,10 @@ namespace __jni_impl::java::net
 	};
 } // namespace __jni_impl::java::net
 
-#include "Authenticator_RequestorType.hpp"
-#include "InetAddress.hpp"
-#include "PasswordAuthentication.hpp"
-#include "URL.hpp"
+#include "./Authenticator_RequestorType.hpp"
+#include "./InetAddress.hpp"
+#include "./PasswordAuthentication.hpp"
+#include "./URL.hpp"
 
 namespace __jni_impl::java::net
 {

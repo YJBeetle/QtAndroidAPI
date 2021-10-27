@@ -1,9 +1,9 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "GLES20.hpp"
-#include "GLES30.hpp"
-#include "GLES31.hpp"
+#include "./GLES20.hpp"
+#include "./GLES30.hpp"
+#include "./GLES31.hpp"
 
 namespace __jni_impl::java::nio
 {

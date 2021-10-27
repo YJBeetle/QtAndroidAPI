@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "AudioEffect.hpp"
+#include "./AudioEffect.hpp"
 
 namespace __jni_impl::android::media::audiofx
 {
@@ -55,7 +55,7 @@ namespace __jni_impl::android::media::audiofx
 	};
 } // namespace __jni_impl::android::media::audiofx
 
-#include "EnvironmentalReverb_Settings.hpp"
+#include "./EnvironmentalReverb_Settings.hpp"
 
 namespace __jni_impl::android::media::audiofx
 {

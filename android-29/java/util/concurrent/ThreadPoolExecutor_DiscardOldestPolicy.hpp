@@ -22,7 +22,7 @@ namespace __jni_impl::java::util::concurrent
 	};
 } // namespace __jni_impl::java::util::concurrent
 
-#include "ThreadPoolExecutor.hpp"
+#include "./ThreadPoolExecutor.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {

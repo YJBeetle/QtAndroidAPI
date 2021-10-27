@@ -58,10 +58,10 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "UnicodeSet.hpp"
-#include "UnicodeSet_SpanCondition.hpp"
-#include "UnicodeSetSpanner_CountMethod.hpp"
-#include "UnicodeSetSpanner_TrimOption.hpp"
+#include "./UnicodeSet.hpp"
+#include "./UnicodeSet_SpanCondition.hpp"
+#include "./UnicodeSetSpanner_CountMethod.hpp"
+#include "./UnicodeSetSpanner_TrimOption.hpp"
 
 namespace __jni_impl::android::icu::text
 {

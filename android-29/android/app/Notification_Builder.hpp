@@ -159,12 +159,12 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Notification.hpp"
-#include "Notification_Action.hpp"
-#include "Notification_BubbleMetadata.hpp"
-#include "Notification_Style.hpp"
-#include "PendingIntent.hpp"
-#include "Person.hpp"
+#include "./Notification.hpp"
+#include "./Notification_Action.hpp"
+#include "./Notification_BubbleMetadata.hpp"
+#include "./Notification_Style.hpp"
+#include "./PendingIntent.hpp"
+#include "./Person.hpp"
 #include "../content/Context.hpp"
 #include "../content/LocusId.hpp"
 #include "../graphics/Bitmap.hpp"

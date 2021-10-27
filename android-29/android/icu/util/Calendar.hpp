@@ -155,9 +155,9 @@ namespace __jni_impl::android::icu::util
 } // namespace __jni_impl::android::icu::util
 
 #include "../text/DateFormat.hpp"
-#include "Calendar_WeekData.hpp"
-#include "TimeZone.hpp"
-#include "ULocale.hpp"
+#include "./Calendar_WeekData.hpp"
+#include "./TimeZone.hpp"
+#include "./ULocale.hpp"
 #include "../../../java/util/Date.hpp"
 #include "../../../java/util/Locale.hpp"
 

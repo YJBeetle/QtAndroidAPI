@@ -36,7 +36,7 @@ namespace __jni_impl::java::lang
 } // namespace __jni_impl::java::lang
 
 #include "../io/File.hpp"
-#include "ProcessBuilder_Redirect_Type.hpp"
+#include "./ProcessBuilder_Redirect_Type.hpp"
 
 namespace __jni_impl::java::lang
 {

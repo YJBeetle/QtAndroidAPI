@@ -27,7 +27,7 @@ namespace __jni_impl::android::nfc
 } // namespace __jni_impl::android::nfc
 
 #include "../content/Context.hpp"
-#include "NfcAdapter.hpp"
+#include "./NfcAdapter.hpp"
 
 namespace __jni_impl::android::nfc
 {

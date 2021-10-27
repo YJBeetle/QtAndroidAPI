@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "BaseObj.hpp"
+#include "./BaseObj.hpp"
 
 namespace __jni_impl::android::content::res
 {
@@ -155,11 +155,11 @@ namespace __jni_impl::android::renderscript
 
 #include "../content/res/Resources.hpp"
 #include "../graphics/Bitmap.hpp"
-#include "Allocation_MipmapControl.hpp"
-#include "Element.hpp"
-#include "FieldPacker.hpp"
-#include "RenderScript.hpp"
-#include "Type.hpp"
+#include "./Allocation_MipmapControl.hpp"
+#include "./Element.hpp"
+#include "./FieldPacker.hpp"
+#include "./RenderScript.hpp"
+#include "./Type.hpp"
 #include "../view/Surface.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
 

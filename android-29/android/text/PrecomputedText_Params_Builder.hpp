@@ -30,8 +30,8 @@ namespace __jni_impl::android::text
 	};
 } // namespace __jni_impl::android::text
 
-#include "PrecomputedText_Params.hpp"
-#include "TextPaint.hpp"
+#include "./PrecomputedText_Params.hpp"
+#include "./TextPaint.hpp"
 
 namespace __jni_impl::android::text
 {

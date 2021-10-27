@@ -35,7 +35,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Person.hpp"
+#include "./Person.hpp"
 #include "../graphics/drawable/Icon.hpp"
 
 namespace __jni_impl::android::app

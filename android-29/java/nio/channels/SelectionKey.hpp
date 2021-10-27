@@ -44,8 +44,8 @@ namespace __jni_impl::java::nio::channels
 	};
 } // namespace __jni_impl::java::nio::channels
 
-#include "SelectableChannel.hpp"
-#include "Selector.hpp"
+#include "./SelectableChannel.hpp"
+#include "./Selector.hpp"
 
 namespace __jni_impl::java::nio::channels
 {

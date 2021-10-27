@@ -40,7 +40,7 @@ namespace __jni_impl::org::json
 	};
 } // namespace __jni_impl::org::json
 
-#include "JSONException.hpp"
+#include "./JSONException.hpp"
 
 namespace __jni_impl::org::json
 {

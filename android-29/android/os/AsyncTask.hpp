@@ -35,7 +35,7 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "AsyncTask_Status.hpp"
+#include "./AsyncTask_Status.hpp"
 #include "../../java/util/concurrent/TimeUnit.hpp"
 
 namespace __jni_impl::android::os

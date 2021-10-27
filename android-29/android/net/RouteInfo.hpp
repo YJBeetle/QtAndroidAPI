@@ -41,7 +41,7 @@ namespace __jni_impl::android::net
 	};
 } // namespace __jni_impl::android::net
 
-#include "IpPrefix.hpp"
+#include "./IpPrefix.hpp"
 #include "../os/Parcel.hpp"
 #include "../../java/net/InetAddress.hpp"
 

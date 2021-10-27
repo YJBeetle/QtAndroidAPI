@@ -2,7 +2,7 @@
 
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
-#include "XPathException.hpp"
+#include "./XPathException.hpp"
 
 
 namespace __jni_impl::javax::xml::xpath

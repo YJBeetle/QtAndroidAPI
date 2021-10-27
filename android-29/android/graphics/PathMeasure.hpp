@@ -35,8 +35,8 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Matrix.hpp"
-#include "Path.hpp"
+#include "./Matrix.hpp"
+#include "./Path.hpp"
 
 namespace __jni_impl::android::graphics
 {

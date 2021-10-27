@@ -1,9 +1,9 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "CharacterStyle.hpp"
-#include "MetricAffectingSpan.hpp"
-#include "ReplacementSpan.hpp"
+#include "./CharacterStyle.hpp"
+#include "./MetricAffectingSpan.hpp"
+#include "./ReplacementSpan.hpp"
 
 namespace __jni_impl::android::graphics
 {

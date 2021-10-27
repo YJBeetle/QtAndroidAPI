@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "ColorSpace.hpp"
+#include "./ColorSpace.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -56,7 +56,7 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "ColorSpace_Rgb_TransferParameters.hpp"
+#include "./ColorSpace_Rgb_TransferParameters.hpp"
 
 namespace __jni_impl::android::graphics
 {

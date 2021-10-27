@@ -2,8 +2,8 @@
 
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
-#include "SQLException.hpp"
-#include "SQLWarning.hpp"
+#include "./SQLException.hpp"
+#include "./SQLWarning.hpp"
 
 
 namespace __jni_impl::java::sql

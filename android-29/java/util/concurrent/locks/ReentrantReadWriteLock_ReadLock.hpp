@@ -33,7 +33,7 @@ namespace __jni_impl::java::util::concurrent::locks
 } // namespace __jni_impl::java::util::concurrent::locks
 
 #include "../TimeUnit.hpp"
-#include "ReentrantReadWriteLock.hpp"
+#include "./ReentrantReadWriteLock.hpp"
 
 namespace __jni_impl::java::util::concurrent::locks
 {

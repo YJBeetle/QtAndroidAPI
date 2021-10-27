@@ -58,8 +58,8 @@ namespace __jni_impl::java::util::concurrent
 } // namespace __jni_impl::java::util::concurrent
 
 #include "../../io/ObjectInputStream.hpp"
-#include "TimeUnit.hpp"
-#include "locks/ReentrantLock.hpp"
+#include "./TimeUnit.hpp"
+#include "./locks/ReentrantLock.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {

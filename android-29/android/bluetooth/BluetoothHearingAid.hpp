@@ -29,7 +29,7 @@ namespace __jni_impl::android::bluetooth
 	};
 } // namespace __jni_impl::android::bluetooth
 
-#include "BluetoothDevice.hpp"
+#include "./BluetoothDevice.hpp"
 #include "../content/Context.hpp"
 
 namespace __jni_impl::android::bluetooth

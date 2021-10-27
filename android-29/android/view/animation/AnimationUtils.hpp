@@ -37,8 +37,8 @@ namespace __jni_impl::android::view::animation
 } // namespace __jni_impl::android::view::animation
 
 #include "../../content/Context.hpp"
-#include "Animation.hpp"
-#include "LayoutAnimationController.hpp"
+#include "./Animation.hpp"
+#include "./LayoutAnimationController.hpp"
 
 namespace __jni_impl::android::view::animation
 {

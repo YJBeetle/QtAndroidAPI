@@ -2,7 +2,7 @@
 
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
-#include "MediaDrmException.hpp"
+#include "./MediaDrmException.hpp"
 
 
 namespace __jni_impl::android::media

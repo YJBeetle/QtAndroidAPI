@@ -91,9 +91,9 @@ namespace __jni_impl::java::util::logging
 #include "../WeakHashMap.hpp"
 #include "../concurrent/CopyOnWriteArrayList.hpp"
 #include "../concurrent/locks/ReentrantLock.hpp"
-#include "Formatter.hpp"
-#include "Level.hpp"
-#include "Logger.hpp"
+#include "./Formatter.hpp"
+#include "./Level.hpp"
+#include "./Logger.hpp"
 
 namespace __jni_impl::java::util::logging
 {

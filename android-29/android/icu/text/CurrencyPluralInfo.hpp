@@ -46,7 +46,7 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "PluralRules.hpp"
+#include "./PluralRules.hpp"
 #include "../util/ULocale.hpp"
 #include "../../../java/util/Locale.hpp"
 

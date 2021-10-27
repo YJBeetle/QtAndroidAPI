@@ -88,8 +88,8 @@ namespace __jni_impl::android::telecom
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
-#include "PhoneAccount_Builder.hpp"
-#include "PhoneAccountHandle.hpp"
+#include "./PhoneAccount_Builder.hpp"
+#include "./PhoneAccountHandle.hpp"
 
 namespace __jni_impl::android::telecom
 {

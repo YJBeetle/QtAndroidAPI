@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Dictionary.hpp"
-#include "Hashtable.hpp"
+#include "./Dictionary.hpp"
+#include "./Hashtable.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -135,7 +135,7 @@ namespace __jni_impl::java::util
 #include "../io/Writer.hpp"
 #include "../lang/StringBuilder.hpp"
 #include "../nio/charset/Charset.hpp"
-#include "concurrent/ConcurrentHashMap.hpp"
+#include "./concurrent/ConcurrentHashMap.hpp"
 
 namespace __jni_impl::java::util
 {

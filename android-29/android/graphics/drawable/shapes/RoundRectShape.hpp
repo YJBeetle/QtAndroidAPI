@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../../../__JniBaseClass.hpp"
-#include "Shape.hpp"
-#include "RectShape.hpp"
+#include "./Shape.hpp"
+#include "./RectShape.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -52,8 +52,8 @@ namespace __jni_impl::android::graphics::drawable::shapes
 #include "../../Outline.hpp"
 #include "../../Paint.hpp"
 #include "../../RectF.hpp"
-#include "RectShape.hpp"
-#include "Shape.hpp"
+#include "./RectShape.hpp"
+#include "./Shape.hpp"
 
 namespace __jni_impl::android::graphics::drawable::shapes
 {

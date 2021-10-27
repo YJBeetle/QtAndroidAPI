@@ -27,7 +27,7 @@ namespace __jni_impl::android::hardware::biometrics
 	};
 } // namespace __jni_impl::android::hardware::biometrics
 
-#include "BiometricPrompt_AuthenticationResult.hpp"
+#include "./BiometricPrompt_AuthenticationResult.hpp"
 
 namespace __jni_impl::android::hardware::biometrics
 {

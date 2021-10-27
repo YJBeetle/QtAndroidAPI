@@ -65,8 +65,8 @@ namespace __jni_impl::android::hardware::camera2
 } // namespace __jni_impl::android::hardware::camera2
 
 #include "../../graphics/Bitmap.hpp"
-#include "CameraCharacteristics.hpp"
-#include "CaptureResult.hpp"
+#include "./CameraCharacteristics.hpp"
+#include "./CaptureResult.hpp"
 #include "../../location/Location.hpp"
 #include "../../media/Image.hpp"
 #include "../../util/Size.hpp"

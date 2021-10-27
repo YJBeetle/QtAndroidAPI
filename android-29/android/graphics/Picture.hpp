@@ -28,7 +28,7 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Canvas.hpp"
+#include "./Canvas.hpp"
 
 namespace __jni_impl::android::graphics
 {

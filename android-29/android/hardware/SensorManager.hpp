@@ -134,11 +134,11 @@ namespace __jni_impl::android::hardware
 	};
 } // namespace __jni_impl::android::hardware
 
-#include "HardwareBuffer.hpp"
-#include "Sensor.hpp"
-#include "SensorDirectChannel.hpp"
-#include "SensorManager_DynamicSensorCallback.hpp"
-#include "TriggerEventListener.hpp"
+#include "./HardwareBuffer.hpp"
+#include "./Sensor.hpp"
+#include "./SensorDirectChannel.hpp"
+#include "./SensorManager_DynamicSensorCallback.hpp"
+#include "./TriggerEventListener.hpp"
 #include "../os/Handler.hpp"
 #include "../os/MemoryFile.hpp"
 

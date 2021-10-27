@@ -43,7 +43,7 @@ namespace __jni_impl::android::content
 } // namespace __jni_impl::android::content
 
 #include "../accounts/Account.hpp"
-#include "SyncRequest.hpp"
+#include "./SyncRequest.hpp"
 #include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::content

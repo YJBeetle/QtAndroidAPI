@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "TextClassifierEvent.hpp"
+#include "./TextClassifierEvent.hpp"
 
 namespace __jni_impl::android::os
 {

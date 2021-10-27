@@ -1,9 +1,9 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "AbstractCollection.hpp"
-#include "AbstractSet.hpp"
-#include "HashSet.hpp"
+#include "./AbstractCollection.hpp"
+#include "./AbstractSet.hpp"
+#include "./HashSet.hpp"
 
 
 namespace __jni_impl::java::util

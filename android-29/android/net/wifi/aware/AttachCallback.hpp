@@ -23,7 +23,7 @@ namespace __jni_impl::android::net::wifi::aware
 	};
 } // namespace __jni_impl::android::net::wifi::aware
 
-#include "WifiAwareSession.hpp"
+#include "./WifiAwareSession.hpp"
 
 namespace __jni_impl::android::net::wifi::aware
 {

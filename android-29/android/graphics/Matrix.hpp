@@ -84,8 +84,8 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Matrix_ScaleToFit.hpp"
-#include "RectF.hpp"
+#include "./Matrix_ScaleToFit.hpp"
+#include "./RectF.hpp"
 
 namespace __jni_impl::android::graphics
 {

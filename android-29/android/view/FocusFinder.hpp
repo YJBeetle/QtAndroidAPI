@@ -35,8 +35,8 @@ namespace __jni_impl::android::view
 } // namespace __jni_impl::android::view
 
 #include "../graphics/Rect.hpp"
-#include "View.hpp"
-#include "ViewGroup.hpp"
+#include "./View.hpp"
+#include "./ViewGroup.hpp"
 
 namespace __jni_impl::android::view
 {

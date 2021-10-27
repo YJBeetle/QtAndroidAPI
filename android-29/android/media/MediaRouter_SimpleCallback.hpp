@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "MediaRouter_Callback.hpp"
+#include "./MediaRouter_Callback.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -38,9 +38,9 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "MediaRouter.hpp"
-#include "MediaRouter_RouteGroup.hpp"
-#include "MediaRouter_RouteInfo.hpp"
+#include "./MediaRouter.hpp"
+#include "./MediaRouter_RouteGroup.hpp"
+#include "./MediaRouter_RouteInfo.hpp"
 
 namespace __jni_impl::android::media
 {

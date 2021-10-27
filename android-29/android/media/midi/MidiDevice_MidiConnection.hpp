@@ -26,8 +26,8 @@ namespace __jni_impl::android::media::midi
 	};
 } // namespace __jni_impl::android::media::midi
 
-#include "MidiDevice.hpp"
-#include "MidiInputPort.hpp"
+#include "./MidiDevice.hpp"
+#include "./MidiInputPort.hpp"
 
 namespace __jni_impl::android::media::midi
 {

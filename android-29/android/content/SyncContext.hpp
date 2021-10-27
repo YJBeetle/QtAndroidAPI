@@ -23,7 +23,7 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "SyncResult.hpp"
+#include "./SyncResult.hpp"
 
 namespace __jni_impl::android::content
 {

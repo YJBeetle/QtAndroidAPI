@@ -53,11 +53,11 @@ namespace __jni_impl::android::view
 } // namespace __jni_impl::android::view
 
 #include "../os/Bundle.hpp"
-#include "View.hpp"
-#include "ViewGroup.hpp"
-#include "accessibility/AccessibilityEvent.hpp"
-#include "accessibility/AccessibilityNodeInfo.hpp"
-#include "accessibility/AccessibilityNodeProvider.hpp"
+#include "./View.hpp"
+#include "./ViewGroup.hpp"
+#include "./accessibility/AccessibilityEvent.hpp"
+#include "./accessibility/AccessibilityNodeInfo.hpp"
+#include "./accessibility/AccessibilityNodeProvider.hpp"
 
 namespace __jni_impl::android::view
 {

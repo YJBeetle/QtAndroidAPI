@@ -4,7 +4,7 @@
 #include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
 #include "../SQLException.hpp"
-#include "SQLiteException.hpp"
+#include "./SQLiteException.hpp"
 
 
 namespace __jni_impl::android::database::sqlite

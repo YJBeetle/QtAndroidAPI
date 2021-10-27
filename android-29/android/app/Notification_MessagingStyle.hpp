@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Notification_Style.hpp"
+#include "./Notification_Style.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -44,8 +44,8 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Notification_MessagingStyle_Message.hpp"
-#include "Person.hpp"
+#include "./Notification_MessagingStyle_Message.hpp"
+#include "./Person.hpp"
 
 namespace __jni_impl::android::app
 {

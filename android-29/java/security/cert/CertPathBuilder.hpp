@@ -37,7 +37,7 @@ namespace __jni_impl::java::security::cert
 } // namespace __jni_impl::java::security::cert
 
 #include "../Provider.hpp"
-#include "CertPathBuilderSpi.hpp"
+#include "./CertPathBuilderSpi.hpp"
 
 namespace __jni_impl::java::security::cert
 {

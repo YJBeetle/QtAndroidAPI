@@ -41,7 +41,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Person.hpp"
+#include "./Person.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
 

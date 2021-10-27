@@ -41,8 +41,8 @@ namespace __jni_impl::android::telephony::mbms
 
 #include "../../content/Intent.hpp"
 #include "../../net/Uri.hpp"
-#include "DownloadRequest.hpp"
-#include "FileServiceInfo.hpp"
+#include "./DownloadRequest.hpp"
+#include "./FileServiceInfo.hpp"
 
 namespace __jni_impl::android::telephony::mbms
 {

@@ -35,7 +35,7 @@ namespace __jni_impl::android::speech
 } // namespace __jni_impl::android::speech
 
 #include "../os/Bundle.hpp"
-#include "RecognitionService.hpp"
+#include "./RecognitionService.hpp"
 
 namespace __jni_impl::android::speech
 {

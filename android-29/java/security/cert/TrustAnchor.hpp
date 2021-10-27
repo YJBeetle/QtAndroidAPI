@@ -34,7 +34,7 @@ namespace __jni_impl::java::security::cert
 	};
 } // namespace __jni_impl::java::security::cert
 
-#include "X509Certificate.hpp"
+#include "./X509Certificate.hpp"
 #include "../../../javax/security/auth/x500/X500Principal.hpp"
 
 namespace __jni_impl::java::security::cert

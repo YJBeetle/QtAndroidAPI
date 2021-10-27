@@ -42,7 +42,7 @@ namespace __jni_impl::android::companion
 } // namespace __jni_impl::android::companion
 
 #include "../bluetooth/le/ScanFilter.hpp"
-#include "BluetoothLeDeviceFilter.hpp"
+#include "./BluetoothLeDeviceFilter.hpp"
 #include "../../java/nio/ByteOrder.hpp"
 #include "../../java/util/regex/Pattern.hpp"
 

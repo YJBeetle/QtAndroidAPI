@@ -26,7 +26,7 @@ namespace __jni_impl::android::transition
 	};
 } // namespace __jni_impl::android::transition
 
-#include "Transition.hpp"
+#include "./Transition.hpp"
 
 namespace __jni_impl::android::transition
 {

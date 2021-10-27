@@ -30,7 +30,7 @@ namespace __jni_impl::java::security
 } // namespace __jni_impl::java::security
 
 #include "../io/ObjectInputStream.hpp"
-#include "Signature.hpp"
+#include "./Signature.hpp"
 
 namespace __jni_impl::java::security
 {

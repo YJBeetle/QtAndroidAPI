@@ -73,7 +73,7 @@ namespace __jni_impl::android::animation
 	};
 } // namespace __jni_impl::android::animation
 
-#include "TypeConverter.hpp"
+#include "./TypeConverter.hpp"
 #include "../graphics/Path.hpp"
 #include "../util/Property.hpp"
 

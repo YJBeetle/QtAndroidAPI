@@ -90,8 +90,8 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "DownloadManager_Query.hpp"
-#include "DownloadManager_Request.hpp"
+#include "./DownloadManager_Query.hpp"
+#include "./DownloadManager_Request.hpp"
 #include "../content/Context.hpp"
 #include "../net/Uri.hpp"
 #include "../os/ParcelFileDescriptor.hpp"

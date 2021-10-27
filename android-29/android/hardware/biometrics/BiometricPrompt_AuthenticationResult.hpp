@@ -22,7 +22,7 @@ namespace __jni_impl::android::hardware::biometrics
 	};
 } // namespace __jni_impl::android::hardware::biometrics
 
-#include "BiometricPrompt_CryptoObject.hpp"
+#include "./BiometricPrompt_CryptoObject.hpp"
 
 namespace __jni_impl::android::hardware::biometrics
 {

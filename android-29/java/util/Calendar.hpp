@@ -155,9 +155,9 @@ namespace __jni_impl::java::util
 #include "../lang/StringBuilder.hpp"
 #include "../text/DateFormatSymbols.hpp"
 #include "../time/Instant.hpp"
-#include "Date.hpp"
-#include "Locale.hpp"
-#include "TimeZone.hpp"
+#include "./Date.hpp"
+#include "./Locale.hpp"
+#include "./TimeZone.hpp"
 
 namespace __jni_impl::java::util
 {

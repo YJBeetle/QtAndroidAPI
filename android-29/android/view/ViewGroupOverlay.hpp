@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "ViewOverlay.hpp"
+#include "./ViewOverlay.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -29,7 +29,7 @@ namespace __jni_impl::android::view
 } // namespace __jni_impl::android::view
 
 #include "../content/Context.hpp"
-#include "View.hpp"
+#include "./View.hpp"
 
 namespace __jni_impl::android::view
 {

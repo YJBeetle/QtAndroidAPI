@@ -43,8 +43,8 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "AudioDeviceInfo.hpp"
-#include "AudioFormat.hpp"
+#include "./AudioDeviceInfo.hpp"
+#include "./AudioFormat.hpp"
 #include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::media

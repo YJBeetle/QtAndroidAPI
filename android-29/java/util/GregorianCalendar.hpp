@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Calendar.hpp"
+#include "./Calendar.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -72,9 +72,9 @@ namespace __jni_impl::java::util
 
 #include "../io/ObjectInputStream.hpp"
 #include "../time/ZonedDateTime.hpp"
-#include "Date.hpp"
-#include "Locale.hpp"
-#include "TimeZone.hpp"
+#include "./Date.hpp"
+#include "./Locale.hpp"
+#include "./TimeZone.hpp"
 
 namespace __jni_impl::java::util
 {

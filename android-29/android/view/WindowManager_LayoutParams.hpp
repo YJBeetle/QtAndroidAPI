@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "ViewGroup_LayoutParams.hpp"
+#include "./ViewGroup_LayoutParams.hpp"
 
 namespace __jni_impl::android::os
 {

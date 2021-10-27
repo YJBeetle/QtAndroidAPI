@@ -34,9 +34,9 @@ namespace __jni_impl::android::net::wifi::aware
 	};
 } // namespace __jni_impl::android::net::wifi::aware
 
-#include "DiscoverySession.hpp"
-#include "PeerHandle.hpp"
-#include "WifiAwareNetworkSpecifier.hpp"
+#include "./DiscoverySession.hpp"
+#include "./PeerHandle.hpp"
+#include "./WifiAwareNetworkSpecifier.hpp"
 
 namespace __jni_impl::android::net::wifi::aware
 {

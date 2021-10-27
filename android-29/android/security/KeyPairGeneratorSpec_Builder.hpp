@@ -50,7 +50,7 @@ namespace __jni_impl::android::security
 } // namespace __jni_impl::android::security
 
 #include "../content/Context.hpp"
-#include "KeyPairGeneratorSpec.hpp"
+#include "./KeyPairGeneratorSpec.hpp"
 #include "../../java/math/BigInteger.hpp"
 #include "../../java/util/Date.hpp"
 #include "../../javax/security/auth/x500/X500Principal.hpp"

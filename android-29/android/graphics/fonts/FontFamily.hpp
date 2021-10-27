@@ -27,7 +27,7 @@ namespace __jni_impl::android::graphics::fonts
 	};
 } // namespace __jni_impl::android::graphics::fonts
 
-#include "Font.hpp"
+#include "./Font.hpp"
 #include "../../../java/util/ArrayList.hpp"
 
 namespace __jni_impl::android::graphics::fonts

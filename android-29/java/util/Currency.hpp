@@ -55,11 +55,11 @@ namespace __jni_impl::java::util
 } // namespace __jni_impl::java::util
 
 #include "../io/DataInputStream.hpp"
-#include "HashSet.hpp"
-#include "Locale.hpp"
-#include "Optional.hpp"
-#include "Properties.hpp"
-#include "regex/Pattern.hpp"
+#include "./HashSet.hpp"
+#include "./Locale.hpp"
+#include "./Optional.hpp"
+#include "./Properties.hpp"
+#include "./regex/Pattern.hpp"
 
 namespace __jni_impl::java::util
 {

@@ -4,8 +4,8 @@
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../view/ContextThemeWrapper.hpp"
-#include "Activity.hpp"
-#include "ActivityGroup.hpp"
+#include "./Activity.hpp"
+#include "./ActivityGroup.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -44,7 +44,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Activity.hpp"
+#include "./Activity.hpp"
 #include "../os/Bundle.hpp"
 #include "../widget/TabHost.hpp"
 #include "../widget/TabWidget.hpp"

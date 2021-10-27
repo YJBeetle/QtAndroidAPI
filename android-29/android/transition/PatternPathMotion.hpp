@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "PathMotion.hpp"
+#include "./PathMotion.hpp"
 
 namespace __jni_impl::android::content
 {

@@ -37,10 +37,10 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "MediaCodec.hpp"
-#include "MediaCodec_BufferInfo.hpp"
-#include "MediaCodec_CodecException.hpp"
-#include "MediaFormat.hpp"
+#include "./MediaCodec.hpp"
+#include "./MediaCodec_BufferInfo.hpp"
+#include "./MediaCodec_CodecException.hpp"
+#include "./MediaFormat.hpp"
 
 namespace __jni_impl::android::media
 {

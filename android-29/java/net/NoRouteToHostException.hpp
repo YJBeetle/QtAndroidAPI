@@ -3,7 +3,7 @@
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 #include "../io/IOException.hpp"
-#include "SocketException.hpp"
+#include "./SocketException.hpp"
 
 
 namespace __jni_impl::java::net

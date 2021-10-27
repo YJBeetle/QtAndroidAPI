@@ -2,7 +2,7 @@
 
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
-#include "SAXException.hpp"
+#include "./SAXException.hpp"
 
 
 namespace __jni_impl::org::xml::sax

@@ -39,10 +39,10 @@ namespace __jni_impl::android::media::midi
 	};
 } // namespace __jni_impl::android::media::midi
 
-#include "MidiDevice_MidiConnection.hpp"
-#include "MidiDeviceInfo.hpp"
-#include "MidiInputPort.hpp"
-#include "MidiOutputPort.hpp"
+#include "./MidiDevice_MidiConnection.hpp"
+#include "./MidiDeviceInfo.hpp"
+#include "./MidiInputPort.hpp"
+#include "./MidiOutputPort.hpp"
 
 namespace __jni_impl::android::media::midi
 {

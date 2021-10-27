@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Number.hpp"
+#include "./Number.hpp"
 
 namespace __jni_impl::java::lang::invoke
 {
@@ -73,7 +73,7 @@ namespace __jni_impl::java::lang
 	};
 } // namespace __jni_impl::java::lang
 
-#include "invoke/MethodHandles_Lookup.hpp"
+#include "./invoke/MethodHandles_Lookup.hpp"
 #include "../util/Optional.hpp"
 
 namespace __jni_impl::java::lang

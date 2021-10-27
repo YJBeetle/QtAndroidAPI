@@ -4,7 +4,7 @@
 #include "../util/Dictionary.hpp"
 #include "../util/Hashtable.hpp"
 #include "../util/Properties.hpp"
-#include "Provider.hpp"
+#include "./Provider.hpp"
 
 namespace __jni_impl::javax::security::auth
 {

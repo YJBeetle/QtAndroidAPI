@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "PathEffect.hpp"
+#include "./PathEffect.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -22,7 +22,7 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "PathEffect.hpp"
+#include "./PathEffect.hpp"
 
 namespace __jni_impl::android::graphics
 {

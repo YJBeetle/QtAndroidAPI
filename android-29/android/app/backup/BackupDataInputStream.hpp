@@ -27,7 +27,7 @@ namespace __jni_impl::android::app::backup
 	};
 } // namespace __jni_impl::android::app::backup
 
-#include "BackupDataInput.hpp"
+#include "./BackupDataInput.hpp"
 
 namespace __jni_impl::android::app::backup
 {

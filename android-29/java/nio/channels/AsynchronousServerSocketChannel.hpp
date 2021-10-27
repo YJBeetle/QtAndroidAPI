@@ -39,8 +39,8 @@ namespace __jni_impl::java::nio::channels
 } // namespace __jni_impl::java::nio::channels
 
 #include "../../net/SocketAddress.hpp"
-#include "AsynchronousChannelGroup.hpp"
-#include "spi/AsynchronousChannelProvider.hpp"
+#include "./AsynchronousChannelGroup.hpp"
+#include "./spi/AsynchronousChannelProvider.hpp"
 
 namespace __jni_impl::java::nio::channels
 {

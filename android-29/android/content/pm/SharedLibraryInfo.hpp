@@ -39,7 +39,7 @@ namespace __jni_impl::android::content::pm
 	};
 } // namespace __jni_impl::android::content::pm
 
-#include "VersionedPackage.hpp"
+#include "./VersionedPackage.hpp"
 #include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::content::pm

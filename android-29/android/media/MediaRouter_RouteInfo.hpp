@@ -69,8 +69,8 @@ namespace __jni_impl::android::media
 
 #include "../content/Context.hpp"
 #include "../graphics/drawable/Drawable.hpp"
-#include "MediaRouter_RouteCategory.hpp"
-#include "MediaRouter_RouteGroup.hpp"
+#include "./MediaRouter_RouteCategory.hpp"
+#include "./MediaRouter_RouteGroup.hpp"
 #include "../view/Display.hpp"
 
 namespace __jni_impl::android::media

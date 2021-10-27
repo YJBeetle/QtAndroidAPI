@@ -72,8 +72,8 @@ namespace __jni_impl::org::json
 	};
 } // namespace __jni_impl::org::json
 
-#include "JSONObject.hpp"
-#include "JSONTokener.hpp"
+#include "./JSONObject.hpp"
+#include "./JSONTokener.hpp"
 
 namespace __jni_impl::org::json
 {

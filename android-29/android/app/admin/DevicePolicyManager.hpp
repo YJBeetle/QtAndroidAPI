@@ -492,9 +492,9 @@ namespace __jni_impl::android::app::admin
 	};
 } // namespace __jni_impl::android::app::admin
 
-#include "DevicePolicyManager_InstallSystemUpdateCallback.hpp"
-#include "SystemUpdateInfo.hpp"
-#include "SystemUpdatePolicy.hpp"
+#include "./DevicePolicyManager_InstallSystemUpdateCallback.hpp"
+#include "./SystemUpdateInfo.hpp"
+#include "./SystemUpdatePolicy.hpp"
 #include "../../content/ComponentName.hpp"
 #include "../../content/Intent.hpp"
 #include "../../content/IntentFilter.hpp"

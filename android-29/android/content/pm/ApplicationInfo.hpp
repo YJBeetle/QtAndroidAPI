@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "PackageItemInfo.hpp"
+#include "./PackageItemInfo.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -117,7 +117,7 @@ namespace __jni_impl::android::content::pm
 } // namespace __jni_impl::android::content::pm
 
 #include "../Context.hpp"
-#include "PackageManager.hpp"
+#include "./PackageManager.hpp"
 #include "../../os/Parcel.hpp"
 #include "../../../java/util/UUID.hpp"
 

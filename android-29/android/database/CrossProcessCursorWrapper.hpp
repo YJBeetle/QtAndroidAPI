@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "CursorWrapper.hpp"
+#include "./CursorWrapper.hpp"
 
 namespace __jni_impl::android::database
 {
@@ -25,7 +25,7 @@ namespace __jni_impl::android::database
 	};
 } // namespace __jni_impl::android::database
 
-#include "CursorWindow.hpp"
+#include "./CursorWindow.hpp"
 
 namespace __jni_impl::android::database
 {

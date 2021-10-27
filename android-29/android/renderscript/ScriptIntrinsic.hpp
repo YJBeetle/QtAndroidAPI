@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "BaseObj.hpp"
-#include "Script.hpp"
+#include "./BaseObj.hpp"
+#include "./Script.hpp"
 
 namespace __jni_impl::android::renderscript
 {
@@ -23,7 +23,7 @@ namespace __jni_impl::android::renderscript
 	};
 } // namespace __jni_impl::android::renderscript
 
-#include "RenderScript.hpp"
+#include "./RenderScript.hpp"
 
 namespace __jni_impl::android::renderscript
 {

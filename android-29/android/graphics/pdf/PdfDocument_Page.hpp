@@ -28,7 +28,7 @@ namespace __jni_impl::android::graphics::pdf
 } // namespace __jni_impl::android::graphics::pdf
 
 #include "../Canvas.hpp"
-#include "PdfDocument_PageInfo.hpp"
+#include "./PdfDocument_PageInfo.hpp"
 
 namespace __jni_impl::android::graphics::pdf
 {

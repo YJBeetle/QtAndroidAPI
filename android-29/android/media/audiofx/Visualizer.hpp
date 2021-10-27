@@ -52,7 +52,7 @@ namespace __jni_impl::android::media::audiofx
 	};
 } // namespace __jni_impl::android::media::audiofx
 
-#include "Visualizer_MeasurementPeakRms.hpp"
+#include "./Visualizer_MeasurementPeakRms.hpp"
 
 namespace __jni_impl::android::media::audiofx
 {

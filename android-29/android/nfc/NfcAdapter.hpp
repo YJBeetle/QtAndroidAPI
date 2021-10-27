@@ -90,8 +90,8 @@ namespace __jni_impl::android::nfc
 #include "../app/Activity.hpp"
 #include "../app/PendingIntent.hpp"
 #include "../content/Context.hpp"
-#include "NdefMessage.hpp"
-#include "Tag.hpp"
+#include "./NdefMessage.hpp"
+#include "./Tag.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/Handler.hpp"
 

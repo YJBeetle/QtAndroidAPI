@@ -2,9 +2,9 @@
 
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/text/Format.hpp"
-#include "UFormat.hpp"
-#include "NumberFormat.hpp"
-#include "DecimalFormat.hpp"
+#include "./UFormat.hpp"
+#include "./NumberFormat.hpp"
+#include "./DecimalFormat.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -51,7 +51,7 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "CompactDecimalFormat_CompactStyle.hpp"
+#include "./CompactDecimalFormat_CompactStyle.hpp"
 #include "../util/CurrencyAmount.hpp"
 #include "../util/ULocale.hpp"
 #include "../../../java/lang/Number.hpp"

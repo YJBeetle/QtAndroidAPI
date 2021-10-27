@@ -154,14 +154,14 @@ namespace __jni_impl::android::net::wifi
 } // namespace __jni_impl::android::net::wifi
 
 #include "../DhcpInfo.hpp"
-#include "WifiConfiguration.hpp"
-#include "WifiInfo.hpp"
-#include "WifiManager_LocalOnlyHotspotCallback.hpp"
-#include "WifiManager_MulticastLock.hpp"
-#include "WifiManager_WifiLock.hpp"
-#include "WifiManager_WpsCallback.hpp"
-#include "WpsInfo.hpp"
-#include "hotspot2/PasspointConfiguration.hpp"
+#include "./WifiConfiguration.hpp"
+#include "./WifiInfo.hpp"
+#include "./WifiManager_LocalOnlyHotspotCallback.hpp"
+#include "./WifiManager_MulticastLock.hpp"
+#include "./WifiManager_WifiLock.hpp"
+#include "./WifiManager_WpsCallback.hpp"
+#include "./WpsInfo.hpp"
+#include "./hotspot2/PasspointConfiguration.hpp"
 #include "../../os/Handler.hpp"
 #include "../../../java/net/InetAddress.hpp"
 

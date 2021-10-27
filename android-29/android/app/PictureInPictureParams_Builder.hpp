@@ -33,7 +33,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "PictureInPictureParams.hpp"
+#include "./PictureInPictureParams.hpp"
 #include "../graphics/Rect.hpp"
 #include "../util/Rational.hpp"
 

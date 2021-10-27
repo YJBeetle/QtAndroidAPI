@@ -31,7 +31,7 @@ namespace __jni_impl::android::view
 	};
 } // namespace __jni_impl::android::view
 
-#include "MotionEvent.hpp"
+#include "./MotionEvent.hpp"
 
 namespace __jni_impl::android::view
 {

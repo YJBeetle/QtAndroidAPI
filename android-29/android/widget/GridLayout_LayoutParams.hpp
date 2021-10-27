@@ -53,7 +53,7 @@ namespace __jni_impl::android::widget
 #include "../content/res/TypedArray.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/ViewGroup_MarginLayoutParams.hpp"
-#include "GridLayout_Spec.hpp"
+#include "./GridLayout_Spec.hpp"
 
 namespace __jni_impl::android::widget
 {

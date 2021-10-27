@@ -58,7 +58,7 @@ namespace __jni_impl::android::widget
 #include "../database/DataSetObserver.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
-#include "Filter.hpp"
+#include "./Filter.hpp"
 #include "../../java/util/ArrayList.hpp"
 
 namespace __jni_impl::android::widget

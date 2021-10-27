@@ -105,11 +105,11 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Matrix.hpp"
-#include "Outline.hpp"
-#include "Paint.hpp"
-#include "RecordingCanvas.hpp"
-#include "Rect.hpp"
+#include "./Matrix.hpp"
+#include "./Outline.hpp"
+#include "./Paint.hpp"
+#include "./RecordingCanvas.hpp"
+#include "./Rect.hpp"
 
 namespace __jni_impl::android::graphics
 {

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Context.hpp"
-#include "ContextWrapper.hpp"
+#include "./Context.hpp"
+#include "./ContextWrapper.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -24,7 +24,7 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "Context.hpp"
+#include "./Context.hpp"
 
 namespace __jni_impl::android::content
 {

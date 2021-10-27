@@ -106,8 +106,8 @@ namespace __jni_impl::javax::crypto
 #include "../../java/security/Provider_Service.hpp"
 #include "../../java/security/SecureRandom.hpp"
 #include "../../java/security/cert/Certificate.hpp"
-#include "CipherSpi.hpp"
-#include "ExemptionMechanism.hpp"
+#include "./CipherSpi.hpp"
+#include "./ExemptionMechanism.hpp"
 
 namespace __jni_impl::javax::crypto
 {

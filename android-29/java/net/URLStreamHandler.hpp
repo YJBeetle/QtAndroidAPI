@@ -33,10 +33,10 @@ namespace __jni_impl::java::net
 	};
 } // namespace __jni_impl::java::net
 
-#include "InetAddress.hpp"
-#include "Proxy.hpp"
-#include "URL.hpp"
-#include "URLConnection.hpp"
+#include "./InetAddress.hpp"
+#include "./Proxy.hpp"
+#include "./URL.hpp"
+#include "./URLConnection.hpp"
 
 namespace __jni_impl::java::net
 {

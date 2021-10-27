@@ -86,12 +86,12 @@ namespace __jni_impl::android::telecom
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/Handler.hpp"
-#include "CallAudioState.hpp"
-#include "DisconnectCause.hpp"
-#include "RemoteConference.hpp"
-#include "RemoteConnection_Callback.hpp"
-#include "RemoteConnection_VideoProvider.hpp"
-#include "StatusHints.hpp"
+#include "./CallAudioState.hpp"
+#include "./DisconnectCause.hpp"
+#include "./RemoteConference.hpp"
+#include "./RemoteConnection_Callback.hpp"
+#include "./RemoteConnection_VideoProvider.hpp"
+#include "./StatusHints.hpp"
 
 namespace __jni_impl::android::telecom
 {

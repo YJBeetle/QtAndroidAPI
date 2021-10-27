@@ -65,7 +65,7 @@ namespace __jni_impl::java::sql
 #include "../io/PrintStream.hpp"
 #include "../io/PrintWriter.hpp"
 #include "../lang/ClassLoader.hpp"
-#include "SQLPermission.hpp"
+#include "./SQLPermission.hpp"
 #include "../util/Properties.hpp"
 #include "../util/concurrent/CopyOnWriteArrayList.hpp"
 

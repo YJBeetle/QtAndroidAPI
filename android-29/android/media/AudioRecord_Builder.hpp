@@ -34,9 +34,9 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "AudioFormat.hpp"
-#include "AudioPlaybackCaptureConfiguration.hpp"
-#include "AudioRecord.hpp"
+#include "./AudioFormat.hpp"
+#include "./AudioPlaybackCaptureConfiguration.hpp"
+#include "./AudioRecord.hpp"
 
 namespace __jni_impl::android::media
 {

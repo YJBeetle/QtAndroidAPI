@@ -27,7 +27,7 @@ namespace __jni_impl::android::companion
 	};
 } // namespace __jni_impl::android::companion
 
-#include "WifiDeviceFilter.hpp"
+#include "./WifiDeviceFilter.hpp"
 #include "../../java/util/regex/Pattern.hpp"
 
 namespace __jni_impl::android::companion

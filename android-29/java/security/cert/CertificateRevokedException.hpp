@@ -3,7 +3,7 @@
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 #include "../GeneralSecurityException.hpp"
-#include "CertificateException.hpp"
+#include "./CertificateException.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -48,7 +48,7 @@ namespace __jni_impl::java::security::cert
 
 #include "../../io/ObjectInputStream.hpp"
 #include "../../io/ObjectOutputStream.hpp"
-#include "CRLReason.hpp"
+#include "./CRLReason.hpp"
 #include "../../util/Date.hpp"
 #include "../../../javax/security/auth/x500/X500Principal.hpp"
 

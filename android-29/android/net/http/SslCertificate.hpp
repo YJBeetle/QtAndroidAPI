@@ -47,7 +47,7 @@ namespace __jni_impl::android::net::http
 	};
 } // namespace __jni_impl::android::net::http
 
-#include "SslCertificate_DName.hpp"
+#include "./SslCertificate_DName.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../../java/security/cert/X509Certificate.hpp"
 #include "../../../java/util/Date.hpp"

@@ -23,7 +23,7 @@ namespace __jni_impl::android::view
 	};
 } // namespace __jni_impl::android::view
 
-#include "WindowId.hpp"
+#include "./WindowId.hpp"
 
 namespace __jni_impl::android::view
 {

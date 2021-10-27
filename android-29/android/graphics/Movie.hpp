@@ -40,8 +40,8 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Canvas.hpp"
-#include "Paint.hpp"
+#include "./Canvas.hpp"
+#include "./Paint.hpp"
 #include "../../java/io/InputStream.hpp"
 
 namespace __jni_impl::android::graphics

@@ -30,8 +30,8 @@ namespace __jni_impl::java::io
 	};
 } // namespace __jni_impl::java::io
 
-#include "IOException.hpp"
-#include "ObjectInputStream.hpp"
+#include "./IOException.hpp"
+#include "./ObjectInputStream.hpp"
 
 namespace __jni_impl::java::io
 {

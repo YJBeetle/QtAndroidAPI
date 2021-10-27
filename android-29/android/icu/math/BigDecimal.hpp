@@ -106,7 +106,7 @@ namespace __jni_impl::android::icu::math
 	};
 } // namespace __jni_impl::android::icu::math
 
-#include "MathContext.hpp"
+#include "./MathContext.hpp"
 #include "../../../java/math/BigDecimal.hpp"
 #include "../../../java/math/BigInteger.hpp"
 

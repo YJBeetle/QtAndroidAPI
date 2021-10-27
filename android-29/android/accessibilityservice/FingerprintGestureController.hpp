@@ -32,7 +32,7 @@ namespace __jni_impl::android::accessibilityservice
 	};
 } // namespace __jni_impl::android::accessibilityservice
 
-#include "FingerprintGestureController_FingerprintGestureCallback.hpp"
+#include "./FingerprintGestureController_FingerprintGestureCallback.hpp"
 #include "../os/Handler.hpp"
 
 namespace __jni_impl::android::accessibilityservice

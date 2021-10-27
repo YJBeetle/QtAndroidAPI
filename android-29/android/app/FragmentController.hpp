@@ -108,11 +108,11 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Fragment.hpp"
-#include "FragmentHostCallback.hpp"
-#include "FragmentManager.hpp"
-#include "FragmentManagerNonConfig.hpp"
-#include "LoaderManager.hpp"
+#include "./Fragment.hpp"
+#include "./FragmentHostCallback.hpp"
+#include "./FragmentManager.hpp"
+#include "./FragmentManagerNonConfig.hpp"
+#include "./LoaderManager.hpp"
 #include "../content/Context.hpp"
 #include "../content/res/Configuration.hpp"
 #include "../util/ArrayMap.hpp"

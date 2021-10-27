@@ -1,9 +1,9 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "BaseObj.hpp"
-#include "Script.hpp"
-#include "ScriptIntrinsic.hpp"
+#include "./BaseObj.hpp"
+#include "./Script.hpp"
+#include "./ScriptIntrinsic.hpp"
 
 namespace __jni_impl::android::renderscript
 {
@@ -143,10 +143,10 @@ namespace __jni_impl::android::renderscript
 	};
 } // namespace __jni_impl::android::renderscript
 
-#include "Allocation.hpp"
-#include "Double2.hpp"
-#include "Float2.hpp"
-#include "RenderScript.hpp"
+#include "./Allocation.hpp"
+#include "./Double2.hpp"
+#include "./Float2.hpp"
+#include "./RenderScript.hpp"
 
 namespace __jni_impl::android::renderscript
 {

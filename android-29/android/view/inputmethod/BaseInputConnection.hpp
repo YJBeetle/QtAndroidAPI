@@ -91,11 +91,11 @@ namespace __jni_impl::android::view::inputmethod
 #include "../../os/Handler.hpp"
 #include "../KeyEvent.hpp"
 #include "../View.hpp"
-#include "CompletionInfo.hpp"
-#include "CorrectionInfo.hpp"
-#include "ExtractedText.hpp"
-#include "ExtractedTextRequest.hpp"
-#include "InputContentInfo.hpp"
+#include "./CompletionInfo.hpp"
+#include "./CorrectionInfo.hpp"
+#include "./ExtractedText.hpp"
+#include "./ExtractedTextRequest.hpp"
+#include "./InputContentInfo.hpp"
 
 namespace __jni_impl::android::view::inputmethod
 {

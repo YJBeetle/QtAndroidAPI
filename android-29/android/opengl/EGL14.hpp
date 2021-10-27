@@ -180,10 +180,10 @@ namespace __jni_impl::android::opengl
 	};
 } // namespace __jni_impl::android::opengl
 
-#include "EGLConfig.hpp"
-#include "EGLContext.hpp"
-#include "EGLDisplay.hpp"
-#include "EGLSurface.hpp"
+#include "./EGLConfig.hpp"
+#include "./EGLContext.hpp"
+#include "./EGLDisplay.hpp"
+#include "./EGLSurface.hpp"
 
 namespace __jni_impl::android::opengl
 {

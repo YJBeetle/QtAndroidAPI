@@ -28,7 +28,7 @@ namespace __jni_impl::java::util
 	};
 } // namespace __jni_impl::java::util
 
-#include "Vector.hpp"
+#include "./Vector.hpp"
 
 namespace __jni_impl::java::util
 {

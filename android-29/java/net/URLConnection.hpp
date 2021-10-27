@@ -112,8 +112,8 @@ namespace __jni_impl::java::net
 
 #include "../io/InputStream.hpp"
 #include "../io/OutputStream.hpp"
-#include "ContentHandler.hpp"
-#include "URL.hpp"
+#include "./ContentHandler.hpp"
+#include "./URL.hpp"
 #include "../security/Permission.hpp"
 #include "../util/Hashtable.hpp"
 #include "../util/concurrent/ConcurrentHashMap.hpp"

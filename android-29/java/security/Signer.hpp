@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Identity.hpp"
+#include "./Identity.hpp"
 
 namespace __jni_impl::java::security
 {
@@ -32,8 +32,8 @@ namespace __jni_impl::java::security
 	};
 } // namespace __jni_impl::java::security
 
-#include "IdentityScope.hpp"
-#include "KeyPair.hpp"
+#include "./IdentityScope.hpp"
+#include "./KeyPair.hpp"
 
 namespace __jni_impl::java::security
 {

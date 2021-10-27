@@ -1,9 +1,9 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "spi/AbstractInterruptibleChannel.hpp"
-#include "SelectableChannel.hpp"
-#include "spi/AbstractSelectableChannel.hpp"
+#include "./spi/AbstractInterruptibleChannel.hpp"
+#include "./SelectableChannel.hpp"
+#include "./spi/AbstractSelectableChannel.hpp"
 
 namespace __jni_impl::java::nio::channels::spi
 {
@@ -25,7 +25,7 @@ namespace __jni_impl::java::nio::channels
 	};
 } // namespace __jni_impl::java::nio::channels
 
-#include "spi/SelectorProvider.hpp"
+#include "./spi/SelectorProvider.hpp"
 
 namespace __jni_impl::java::nio::channels
 {

@@ -59,9 +59,9 @@ namespace __jni_impl::android::net::sip
 } // namespace __jni_impl::android::net::sip
 
 #include "../../content/Context.hpp"
-#include "SipAudioCall_Listener.hpp"
-#include "SipProfile.hpp"
-#include "SipSession.hpp"
+#include "./SipAudioCall_Listener.hpp"
+#include "./SipProfile.hpp"
+#include "./SipSession.hpp"
 #include "../../os/Message.hpp"
 
 namespace __jni_impl::android::net::sip

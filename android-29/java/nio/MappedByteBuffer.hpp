@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Buffer.hpp"
-#include "ByteBuffer.hpp"
+#include "./Buffer.hpp"
+#include "./ByteBuffer.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -43,8 +43,8 @@ namespace __jni_impl::java::nio
 } // namespace __jni_impl::java::nio
 
 #include "../io/FileDescriptor.hpp"
-#include "Buffer.hpp"
-#include "ByteBuffer.hpp"
+#include "./Buffer.hpp"
+#include "./ByteBuffer.hpp"
 
 namespace __jni_impl::java::nio
 {

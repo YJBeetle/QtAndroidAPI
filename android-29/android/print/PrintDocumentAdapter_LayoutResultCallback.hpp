@@ -25,7 +25,7 @@ namespace __jni_impl::android::print
 	};
 } // namespace __jni_impl::android::print
 
-#include "PrintDocumentInfo.hpp"
+#include "./PrintDocumentInfo.hpp"
 
 namespace __jni_impl::android::print
 {

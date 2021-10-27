@@ -30,7 +30,7 @@ namespace __jni_impl::android::hardware::camera2
 	};
 } // namespace __jni_impl::android::hardware::camera2
 
-#include "CameraDevice.hpp"
+#include "./CameraDevice.hpp"
 
 namespace __jni_impl::android::hardware::camera2
 {

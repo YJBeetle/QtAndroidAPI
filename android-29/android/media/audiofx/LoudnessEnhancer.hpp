@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "AudioEffect.hpp"
+#include "./AudioEffect.hpp"
 
 
 namespace __jni_impl::android::media::audiofx

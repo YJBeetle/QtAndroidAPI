@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "InputStream.hpp"
+#include "./InputStream.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -72,10 +72,10 @@ namespace __jni_impl::java::io
 	};
 } // namespace __jni_impl::java::io
 
-#include "IOException.hpp"
-#include "InputStream.hpp"
-#include "ObjectInputStream_GetField.hpp"
-#include "ObjectStreamClass.hpp"
+#include "./IOException.hpp"
+#include "./InputStream.hpp"
+#include "./ObjectInputStream_GetField.hpp"
+#include "./ObjectStreamClass.hpp"
 #include "../lang/Boolean.hpp"
 #include "../lang/ClassLoader.hpp"
 #include "../lang/Enum.hpp"

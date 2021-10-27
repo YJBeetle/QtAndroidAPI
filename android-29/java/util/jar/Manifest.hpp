@@ -48,7 +48,7 @@ namespace __jni_impl::java::util::jar
 #include "../../io/InputStream.hpp"
 #include "../../io/OutputStream.hpp"
 #include "../../lang/StringBuffer.hpp"
-#include "Attributes.hpp"
+#include "./Attributes.hpp"
 
 namespace __jni_impl::java::util::jar
 {

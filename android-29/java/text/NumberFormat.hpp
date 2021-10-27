@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Format.hpp"
+#include "./Format.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -104,8 +104,8 @@ namespace __jni_impl::java::text
 #include "../lang/Number.hpp"
 #include "../lang/StringBuffer.hpp"
 #include "../math/RoundingMode.hpp"
-#include "FieldPosition.hpp"
-#include "ParsePosition.hpp"
+#include "./FieldPosition.hpp"
+#include "./ParsePosition.hpp"
 #include "../util/Currency.hpp"
 #include "../util/Locale.hpp"
 

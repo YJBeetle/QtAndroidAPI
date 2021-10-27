@@ -28,7 +28,7 @@ namespace __jni_impl::java::security::spec
 } // namespace __jni_impl::java::security::spec
 
 #include "../../math/BigInteger.hpp"
-#include "ECParameterSpec.hpp"
+#include "./ECParameterSpec.hpp"
 
 namespace __jni_impl::java::security::spec
 {

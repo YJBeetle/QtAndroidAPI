@@ -80,8 +80,8 @@ namespace __jni_impl::java::time::chrono
 #include "../LocalDate.hpp"
 #include "../LocalTime.hpp"
 #include "../ZoneId.hpp"
-#include "JapaneseChronology.hpp"
-#include "JapaneseEra.hpp"
+#include "./JapaneseChronology.hpp"
+#include "./JapaneseEra.hpp"
 #include "../temporal/ValueRange.hpp"
 
 namespace __jni_impl::java::time::chrono

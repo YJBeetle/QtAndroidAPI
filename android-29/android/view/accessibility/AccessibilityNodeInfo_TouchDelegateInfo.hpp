@@ -37,7 +37,7 @@ namespace __jni_impl::android::view::accessibility
 
 #include "../../graphics/Region.hpp"
 #include "../../os/Parcel.hpp"
-#include "AccessibilityNodeInfo.hpp"
+#include "./AccessibilityNodeInfo.hpp"
 
 namespace __jni_impl::android::view::accessibility
 {

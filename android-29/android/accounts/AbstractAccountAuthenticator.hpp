@@ -58,8 +58,8 @@ namespace __jni_impl::android::accounts
 	};
 } // namespace __jni_impl::android::accounts
 
-#include "Account.hpp"
-#include "AccountAuthenticatorResponse.hpp"
+#include "./Account.hpp"
+#include "./AccountAuthenticatorResponse.hpp"
 #include "../content/Context.hpp"
 #include "../os/Bundle.hpp"
 

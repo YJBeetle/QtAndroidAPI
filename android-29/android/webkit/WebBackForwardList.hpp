@@ -25,7 +25,7 @@ namespace __jni_impl::android::webkit
 	};
 } // namespace __jni_impl::android::webkit
 
-#include "WebHistoryItem.hpp"
+#include "./WebHistoryItem.hpp"
 
 namespace __jni_impl::android::webkit
 {

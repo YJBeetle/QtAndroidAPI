@@ -24,7 +24,7 @@ namespace __jni_impl::java::lang::ref
 	};
 } // namespace __jni_impl::java::lang::ref
 
-#include "Reference.hpp"
+#include "./Reference.hpp"
 
 namespace __jni_impl::java::lang::ref
 {

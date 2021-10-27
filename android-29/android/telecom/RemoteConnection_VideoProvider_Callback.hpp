@@ -36,9 +36,9 @@ namespace __jni_impl::android::telecom
 	};
 } // namespace __jni_impl::android::telecom
 
-#include "RemoteConnection_VideoProvider.hpp"
-#include "VideoProfile.hpp"
-#include "VideoProfile_CameraCapabilities.hpp"
+#include "./RemoteConnection_VideoProvider.hpp"
+#include "./VideoProfile.hpp"
+#include "./VideoProfile_CameraCapabilities.hpp"
 
 namespace __jni_impl::android::telecom
 {

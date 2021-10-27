@@ -24,7 +24,7 @@ namespace __jni_impl::android::app::usage
 	};
 } // namespace __jni_impl::android::app::usage
 
-#include "NetworkStats_Bucket.hpp"
+#include "./NetworkStats_Bucket.hpp"
 
 namespace __jni_impl::android::app::usage
 {

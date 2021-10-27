@@ -121,12 +121,12 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "ContentProvider_CallingIdentity.hpp"
-#include "ContentValues.hpp"
-#include "Context.hpp"
-#include "pm/ProviderInfo.hpp"
-#include "res/AssetFileDescriptor.hpp"
-#include "res/Configuration.hpp"
+#include "./ContentProvider_CallingIdentity.hpp"
+#include "./ContentValues.hpp"
+#include "./Context.hpp"
+#include "./pm/ProviderInfo.hpp"
+#include "./res/AssetFileDescriptor.hpp"
+#include "./res/Configuration.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/CancellationSignal.hpp"

@@ -113,10 +113,10 @@ namespace __jni_impl::android::bluetooth
 	};
 } // namespace __jni_impl::android::bluetooth
 
-#include "BluetoothClass.hpp"
-#include "BluetoothGatt.hpp"
-#include "BluetoothGattCallback.hpp"
-#include "BluetoothSocket.hpp"
+#include "./BluetoothClass.hpp"
+#include "./BluetoothGatt.hpp"
+#include "./BluetoothGattCallback.hpp"
+#include "./BluetoothSocket.hpp"
 #include "../content/Context.hpp"
 #include "../os/Handler.hpp"
 #include "../os/Parcel.hpp"

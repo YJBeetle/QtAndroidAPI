@@ -40,7 +40,7 @@ namespace __jni_impl::android::view
 
 #include "../content/Context.hpp"
 #include "../content/res/TypedArray.hpp"
-#include "animation/LayoutAnimationController_AnimationParameters.hpp"
+#include "./animation/LayoutAnimationController_AnimationParameters.hpp"
 
 namespace __jni_impl::android::view
 {

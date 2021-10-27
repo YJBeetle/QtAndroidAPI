@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "PKIXParameters.hpp"
+#include "./PKIXParameters.hpp"
 
 namespace __jni_impl::java::security
 {

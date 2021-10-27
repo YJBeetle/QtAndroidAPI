@@ -126,8 +126,8 @@ namespace __jni_impl::android::text
 
 #include "../content/Context.hpp"
 #include "../os/Parcel.hpp"
-#include "TextPaint.hpp"
-#include "TextUtils_TruncateAt.hpp"
+#include "./TextPaint.hpp"
+#include "./TextUtils_TruncateAt.hpp"
 #include "../../java/util/Locale.hpp"
 #include "../../java/util/regex/Pattern.hpp"
 

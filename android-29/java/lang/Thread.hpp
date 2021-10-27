@@ -96,10 +96,10 @@ namespace __jni_impl::java::lang
 	};
 } // namespace __jni_impl::java::lang
 
-#include "ClassLoader.hpp"
-#include "Thread_State.hpp"
-#include "ThreadGroup.hpp"
-#include "ref/ReferenceQueue.hpp"
+#include "./ClassLoader.hpp"
+#include "./Thread_State.hpp"
+#include "./ThreadGroup.hpp"
+#include "./ref/ReferenceQueue.hpp"
 #include "../security/AccessControlContext.hpp"
 
 namespace __jni_impl::java::lang

@@ -31,8 +31,8 @@ namespace __jni_impl::java::net
 	};
 } // namespace __jni_impl::java::net
 
-#include "Inet4Address.hpp"
-#include "InetAddress.hpp"
+#include "./Inet4Address.hpp"
+#include "./InetAddress.hpp"
 
 namespace __jni_impl::java::net
 {

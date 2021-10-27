@@ -94,7 +94,7 @@ namespace __jni_impl::android::media::tv
 
 #include "../../content/Context.hpp"
 #include "../PlaybackParams.hpp"
-#include "TvContentRating.hpp"
+#include "./TvContentRating.hpp"
 #include "../../net/Uri.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../view/KeyEvent.hpp"

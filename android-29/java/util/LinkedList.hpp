@@ -1,9 +1,9 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "AbstractCollection.hpp"
-#include "AbstractList.hpp"
-#include "AbstractSequentialList.hpp"
+#include "./AbstractCollection.hpp"
+#include "./AbstractList.hpp"
+#include "./AbstractSequentialList.hpp"
 
 namespace __jni_impl::java::io
 {

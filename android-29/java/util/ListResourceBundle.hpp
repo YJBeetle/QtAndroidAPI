@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "ResourceBundle.hpp"
+#include "./ResourceBundle.hpp"
 
 
 namespace __jni_impl::java::util

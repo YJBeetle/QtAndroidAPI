@@ -43,7 +43,7 @@ namespace __jni_impl::javax::net::ssl
 } // namespace __jni_impl::javax::net::ssl
 
 #include "../../../java/net/InetAddress.hpp"
-#include "SSLParameters.hpp"
+#include "./SSLParameters.hpp"
 
 namespace __jni_impl::javax::net::ssl
 {

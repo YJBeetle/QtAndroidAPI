@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Animator.hpp"
-#include "ValueAnimator.hpp"
+#include "./Animator.hpp"
+#include "./ValueAnimator.hpp"
 
 namespace __jni_impl::android::animation
 {
@@ -90,9 +90,9 @@ namespace __jni_impl::android::animation
 	};
 } // namespace __jni_impl::android::animation
 
-#include "Animator.hpp"
-#include "TypeConverter.hpp"
-#include "ValueAnimator.hpp"
+#include "./Animator.hpp"
+#include "./TypeConverter.hpp"
+#include "./ValueAnimator.hpp"
 #include "../graphics/Path.hpp"
 #include "../util/Property.hpp"
 

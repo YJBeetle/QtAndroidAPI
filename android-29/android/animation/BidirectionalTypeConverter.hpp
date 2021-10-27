@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "TypeConverter.hpp"
+#include "./TypeConverter.hpp"
 
 
 namespace __jni_impl::android::animation

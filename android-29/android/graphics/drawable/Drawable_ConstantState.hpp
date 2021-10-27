@@ -36,7 +36,7 @@ namespace __jni_impl::android::graphics::drawable
 
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
-#include "Drawable.hpp"
+#include "./Drawable.hpp"
 
 namespace __jni_impl::android::graphics::drawable
 {

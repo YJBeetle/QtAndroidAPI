@@ -32,8 +32,8 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "PendingIntent.hpp"
-#include "RemoteInput.hpp"
+#include "./PendingIntent.hpp"
+#include "./RemoteInput.hpp"
 
 namespace __jni_impl::android::app
 {

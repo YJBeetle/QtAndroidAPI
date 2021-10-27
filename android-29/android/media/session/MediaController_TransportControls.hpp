@@ -63,8 +63,8 @@ namespace __jni_impl::android::media::session
 } // namespace __jni_impl::android::media::session
 
 #include "../Rating.hpp"
-#include "MediaController.hpp"
-#include "PlaybackState_CustomAction.hpp"
+#include "./MediaController.hpp"
+#include "./PlaybackState_CustomAction.hpp"
 #include "../../net/Uri.hpp"
 #include "../../os/Bundle.hpp"
 

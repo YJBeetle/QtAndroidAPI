@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "InputEvent.hpp"
+#include "./InputEvent.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -219,8 +219,8 @@ namespace __jni_impl::android::view
 
 #include "../graphics/Matrix.hpp"
 #include "../os/Parcel.hpp"
-#include "MotionEvent_PointerCoords.hpp"
-#include "MotionEvent_PointerProperties.hpp"
+#include "./MotionEvent_PointerCoords.hpp"
+#include "./MotionEvent_PointerProperties.hpp"
 
 namespace __jni_impl::android::view
 {

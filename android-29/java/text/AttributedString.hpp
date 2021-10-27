@@ -38,7 +38,7 @@ namespace __jni_impl::java::text
 } // namespace __jni_impl::java::text
 
 #include "../lang/StringBuffer.hpp"
-#include "AttributedCharacterIterator_Attribute.hpp"
+#include "./AttributedCharacterIterator_Attribute.hpp"
 
 namespace __jni_impl::java::text
 {

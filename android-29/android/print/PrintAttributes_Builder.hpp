@@ -39,10 +39,10 @@ namespace __jni_impl::android::print
 	};
 } // namespace __jni_impl::android::print
 
-#include "PrintAttributes.hpp"
-#include "PrintAttributes_Margins.hpp"
-#include "PrintAttributes_MediaSize.hpp"
-#include "PrintAttributes_Resolution.hpp"
+#include "./PrintAttributes.hpp"
+#include "./PrintAttributes_Margins.hpp"
+#include "./PrintAttributes_MediaSize.hpp"
+#include "./PrintAttributes_Resolution.hpp"
 
 namespace __jni_impl::android::print
 {

@@ -59,8 +59,8 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "Parcel.hpp"
-#include "UserHandle.hpp"
+#include "./Parcel.hpp"
+#include "./UserHandle.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
 

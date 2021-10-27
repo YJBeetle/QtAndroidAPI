@@ -2,9 +2,9 @@
 
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
-#include "TextView.hpp"
-#include "Button.hpp"
-#include "CompoundButton.hpp"
+#include "./TextView.hpp"
+#include "./Button.hpp"
+#include "./CompoundButton.hpp"
 
 namespace __jni_impl::android::content
 {

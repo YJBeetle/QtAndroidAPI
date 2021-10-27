@@ -31,7 +31,7 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "AsyncQueryHandler.hpp"
+#include "./AsyncQueryHandler.hpp"
 #include "../os/Looper.hpp"
 #include "../os/Message.hpp"
 

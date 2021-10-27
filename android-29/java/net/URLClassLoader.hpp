@@ -74,7 +74,7 @@ namespace __jni_impl::java::net
 #include "../io/InputStream.hpp"
 #include "../lang/ClassLoader.hpp"
 #include "../lang/Package.hpp"
-#include "URL.hpp"
+#include "./URL.hpp"
 #include "../security/AccessControlContext.hpp"
 #include "../security/CodeSource.hpp"
 #include "../security/PermissionCollection.hpp"

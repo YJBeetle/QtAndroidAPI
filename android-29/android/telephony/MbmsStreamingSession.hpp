@@ -43,10 +43,10 @@ namespace __jni_impl::android::telephony
 } // namespace __jni_impl::android::telephony
 
 #include "../content/Context.hpp"
-#include "mbms/MbmsStreamingSessionCallback.hpp"
-#include "mbms/StreamingService.hpp"
-#include "mbms/StreamingServiceCallback.hpp"
-#include "mbms/StreamingServiceInfo.hpp"
+#include "./mbms/MbmsStreamingSessionCallback.hpp"
+#include "./mbms/StreamingService.hpp"
+#include "./mbms/StreamingServiceCallback.hpp"
+#include "./mbms/StreamingServiceInfo.hpp"
 
 namespace __jni_impl::android::telephony
 {

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Settings_NameValueTable.hpp"
+#include "./Settings_NameValueTable.hpp"
 
 namespace __jni_impl::android::content
 {

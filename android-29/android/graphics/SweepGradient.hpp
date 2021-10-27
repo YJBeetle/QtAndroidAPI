@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Shader.hpp"
+#include "./Shader.hpp"
 
 
 namespace __jni_impl::android::graphics

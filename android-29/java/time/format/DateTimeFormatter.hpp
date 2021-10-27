@@ -121,10 +121,10 @@ namespace __jni_impl::java::time::format
 #include "../../text/ParsePosition.hpp"
 #include "../Period.hpp"
 #include "../ZoneId.hpp"
-#include "DateTimeParseException.hpp"
-#include "DecimalStyle.hpp"
-#include "FormatStyle.hpp"
-#include "ResolverStyle.hpp"
+#include "./DateTimeParseException.hpp"
+#include "./DecimalStyle.hpp"
+#include "./FormatStyle.hpp"
+#include "./ResolverStyle.hpp"
 #include "../../util/Locale.hpp"
 
 namespace __jni_impl::java::time::format

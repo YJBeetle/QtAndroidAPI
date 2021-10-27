@@ -2,8 +2,8 @@
 
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/text/Format.hpp"
-#include "UFormat.hpp"
-#include "DateFormat.hpp"
+#include "./UFormat.hpp"
+#include "./DateFormat.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -102,11 +102,11 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "DateFormat_Field.hpp"
-#include "DateFormatSymbols.hpp"
-#include "DisplayContext.hpp"
-#include "NumberFormat.hpp"
-#include "TimeZoneFormat.hpp"
+#include "./DateFormat_Field.hpp"
+#include "./DateFormatSymbols.hpp"
+#include "./DisplayContext.hpp"
+#include "./NumberFormat.hpp"
+#include "./TimeZoneFormat.hpp"
 #include "../util/Calendar.hpp"
 #include "../util/ULocale.hpp"
 #include "../../../java/lang/StringBuffer.hpp"

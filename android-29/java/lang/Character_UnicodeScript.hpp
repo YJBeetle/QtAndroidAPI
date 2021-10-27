@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Enum.hpp"
+#include "./Enum.hpp"
 
 namespace __jni_impl::java::util
 {

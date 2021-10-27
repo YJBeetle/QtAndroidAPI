@@ -25,7 +25,7 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "MediaDrm.hpp"
+#include "./MediaDrm.hpp"
 
 namespace __jni_impl::android::media
 {

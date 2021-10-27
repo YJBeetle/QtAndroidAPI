@@ -44,7 +44,7 @@ namespace __jni_impl::android::text
 	};
 } // namespace __jni_impl::android::text
 
-#include "Layout.hpp"
+#include "./Layout.hpp"
 
 namespace __jni_impl::android::text
 {

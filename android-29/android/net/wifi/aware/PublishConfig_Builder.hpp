@@ -30,7 +30,7 @@ namespace __jni_impl::android::net::wifi::aware
 	};
 } // namespace __jni_impl::android::net::wifi::aware
 
-#include "PublishConfig.hpp"
+#include "./PublishConfig.hpp"
 
 namespace __jni_impl::android::net::wifi::aware
 {

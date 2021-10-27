@@ -60,7 +60,7 @@ namespace __jni_impl::javax::xml::validation
 #include "../../../java/io/File.hpp"
 #include "../../../java/lang/ClassLoader.hpp"
 #include "../../../java/net/URL.hpp"
-#include "Schema.hpp"
+#include "./Schema.hpp"
 
 namespace __jni_impl::javax::xml::validation
 {

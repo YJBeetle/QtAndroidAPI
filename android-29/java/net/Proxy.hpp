@@ -31,8 +31,8 @@ namespace __jni_impl::java::net
 	};
 } // namespace __jni_impl::java::net
 
-#include "Proxy_Type.hpp"
-#include "SocketAddress.hpp"
+#include "./Proxy_Type.hpp"
+#include "./SocketAddress.hpp"
 
 namespace __jni_impl::java::net
 {

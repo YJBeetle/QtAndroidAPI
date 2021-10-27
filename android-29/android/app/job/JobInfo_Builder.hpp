@@ -67,8 +67,8 @@ namespace __jni_impl::android::app::job
 	};
 } // namespace __jni_impl::android::app::job
 
-#include "JobInfo.hpp"
-#include "JobInfo_TriggerContentUri.hpp"
+#include "./JobInfo.hpp"
+#include "./JobInfo_TriggerContentUri.hpp"
 #include "../../content/ClipData.hpp"
 #include "../../content/ComponentName.hpp"
 #include "../../net/NetworkRequest.hpp"

@@ -60,10 +60,10 @@ namespace __jni_impl::android::media
 } // namespace __jni_impl::android::media
 
 #include "../content/Context.hpp"
-#include "MediaRouter_Callback.hpp"
-#include "MediaRouter_RouteCategory.hpp"
-#include "MediaRouter_RouteInfo.hpp"
-#include "MediaRouter_UserRouteInfo.hpp"
+#include "./MediaRouter_Callback.hpp"
+#include "./MediaRouter_RouteCategory.hpp"
+#include "./MediaRouter_RouteInfo.hpp"
+#include "./MediaRouter_UserRouteInfo.hpp"
 
 namespace __jni_impl::android::media
 {

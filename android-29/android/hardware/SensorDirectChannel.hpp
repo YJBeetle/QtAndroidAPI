@@ -34,8 +34,8 @@ namespace __jni_impl::android::hardware
 	};
 } // namespace __jni_impl::android::hardware
 
-#include "Sensor.hpp"
-#include "SensorManager.hpp"
+#include "./Sensor.hpp"
+#include "./SensorManager.hpp"
 
 namespace __jni_impl::android::hardware
 {

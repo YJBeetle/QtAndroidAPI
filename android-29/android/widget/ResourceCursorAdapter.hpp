@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "BaseAdapter.hpp"
-#include "CursorAdapter.hpp"
+#include "./BaseAdapter.hpp"
+#include "./CursorAdapter.hpp"
 
 namespace __jni_impl::android::content
 {

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "LayoutAnimationController.hpp"
+#include "./LayoutAnimationController.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -52,7 +52,7 @@ namespace __jni_impl::android::view::animation
 
 #include "../../content/Context.hpp"
 #include "../View.hpp"
-#include "Animation.hpp"
+#include "./Animation.hpp"
 
 namespace __jni_impl::android::view::animation
 {

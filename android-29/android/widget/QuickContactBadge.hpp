@@ -2,7 +2,7 @@
 
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
-#include "ImageView.hpp"
+#include "./ImageView.hpp"
 
 namespace __jni_impl::android::content
 {

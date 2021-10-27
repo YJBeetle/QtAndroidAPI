@@ -34,7 +34,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "RemoteAction.hpp"
+#include "./RemoteAction.hpp"
 #include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::app

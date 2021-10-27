@@ -76,8 +76,8 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "Handler.hpp"
-#include "Parcel.hpp"
+#include "./Handler.hpp"
+#include "./Parcel.hpp"
 #include "../../java/io/File.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/net/DatagramSocket.hpp"

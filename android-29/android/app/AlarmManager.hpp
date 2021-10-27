@@ -59,8 +59,8 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "AlarmManager_AlarmClockInfo.hpp"
-#include "PendingIntent.hpp"
+#include "./AlarmManager_AlarmClockInfo.hpp"
+#include "./PendingIntent.hpp"
 #include "../os/Handler.hpp"
 
 namespace __jni_impl::android::app

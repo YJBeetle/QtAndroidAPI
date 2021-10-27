@@ -56,7 +56,7 @@ namespace __jni_impl::android::gesture
 	};
 } // namespace __jni_impl::android::gesture
 
-#include "Gesture.hpp"
+#include "./Gesture.hpp"
 #include "../../java/io/InputStream.hpp"
 #include "../../java/io/OutputStream.hpp"
 #include "../../java/util/ArrayList.hpp"

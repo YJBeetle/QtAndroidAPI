@@ -53,7 +53,7 @@ namespace __jni_impl::javax::crypto
 #include "../../java/security/Provider.hpp"
 #include "../../java/security/Provider_Service.hpp"
 #include "../../java/security/SecureRandom.hpp"
-#include "KeyAgreementSpi.hpp"
+#include "./KeyAgreementSpi.hpp"
 
 namespace __jni_impl::javax::crypto
 {

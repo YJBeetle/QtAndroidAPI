@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "View.hpp"
+#include "./View.hpp"
 
 namespace __jni_impl::android::animation
 {
@@ -270,20 +270,20 @@ namespace __jni_impl::android::view
 #include "../graphics/Region.hpp"
 #include "../os/Bundle.hpp"
 #include "../util/SparseArray.hpp"
-#include "ActionMode.hpp"
-#include "DragEvent.hpp"
-#include "KeyEvent.hpp"
-#include "MotionEvent.hpp"
-#include "PointerIcon.hpp"
-#include "View.hpp"
-#include "ViewGroup_LayoutParams.hpp"
-#include "ViewGroupOverlay.hpp"
-#include "ViewOverlay.hpp"
-#include "ViewStructure.hpp"
-#include "WindowInsets.hpp"
-#include "accessibility/AccessibilityEvent.hpp"
-#include "animation/LayoutAnimationController.hpp"
-#include "animation/Transformation.hpp"
+#include "./ActionMode.hpp"
+#include "./DragEvent.hpp"
+#include "./KeyEvent.hpp"
+#include "./MotionEvent.hpp"
+#include "./PointerIcon.hpp"
+#include "./View.hpp"
+#include "./ViewGroup_LayoutParams.hpp"
+#include "./ViewGroupOverlay.hpp"
+#include "./ViewOverlay.hpp"
+#include "./ViewStructure.hpp"
+#include "./WindowInsets.hpp"
+#include "./accessibility/AccessibilityEvent.hpp"
+#include "./animation/LayoutAnimationController.hpp"
+#include "./animation/Transformation.hpp"
 #include "../../java/util/ArrayList.hpp"
 
 namespace __jni_impl::android::view

@@ -2,7 +2,7 @@
 
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
-#include "MediaCasException.hpp"
+#include "./MediaCasException.hpp"
 
 
 namespace __jni_impl::android::media

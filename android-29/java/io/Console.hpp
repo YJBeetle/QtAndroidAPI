@@ -50,9 +50,9 @@ namespace __jni_impl::java::io
 	};
 } // namespace __jni_impl::java::io
 
-#include "PrintWriter.hpp"
-#include "Reader.hpp"
-#include "Writer.hpp"
+#include "./PrintWriter.hpp"
+#include "./Reader.hpp"
+#include "./Writer.hpp"
 #include "../nio/charset/Charset.hpp"
 #include "../util/Formatter.hpp"
 

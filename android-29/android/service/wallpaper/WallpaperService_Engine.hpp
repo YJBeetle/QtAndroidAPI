@@ -75,7 +75,7 @@ namespace __jni_impl::android::service::wallpaper
 #include "../../app/WallpaperColors.hpp"
 #include "../../content/Context.hpp"
 #include "../../os/Bundle.hpp"
-#include "WallpaperService.hpp"
+#include "./WallpaperService.hpp"
 #include "../../view/MotionEvent.hpp"
 #include "../../view/WindowInsets.hpp"
 #include "../../../java/io/FileDescriptor.hpp"

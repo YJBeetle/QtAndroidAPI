@@ -22,7 +22,7 @@ namespace __jni_impl::android::hardware
 	};
 } // namespace __jni_impl::android::hardware
 
-#include "TriggerEvent.hpp"
+#include "./TriggerEvent.hpp"
 
 namespace __jni_impl::android::hardware
 {

@@ -3,7 +3,7 @@
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
-#include "LinearLayout.hpp"
+#include "./LinearLayout.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -49,8 +49,8 @@ namespace __jni_impl::android::widget
 #include "../content/Context.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
-#include "LinearLayout_LayoutParams.hpp"
-#include "TableRow_LayoutParams.hpp"
+#include "./LinearLayout_LayoutParams.hpp"
+#include "./TableRow_LayoutParams.hpp"
 
 namespace __jni_impl::android::widget
 {

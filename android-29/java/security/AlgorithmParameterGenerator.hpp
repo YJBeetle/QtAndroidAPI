@@ -46,10 +46,10 @@ namespace __jni_impl::java::security
 	};
 } // namespace __jni_impl::java::security
 
-#include "AlgorithmParameterGeneratorSpi.hpp"
-#include "AlgorithmParameters.hpp"
-#include "Provider.hpp"
-#include "SecureRandom.hpp"
+#include "./AlgorithmParameterGeneratorSpi.hpp"
+#include "./AlgorithmParameters.hpp"
+#include "./Provider.hpp"
+#include "./SecureRandom.hpp"
 
 namespace __jni_impl::java::security
 {

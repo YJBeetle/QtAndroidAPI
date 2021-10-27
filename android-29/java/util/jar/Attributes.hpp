@@ -48,7 +48,7 @@ namespace __jni_impl::java::util::jar
 } // namespace __jni_impl::java::util::jar
 
 #include "../../io/DataOutputStream.hpp"
-#include "Attributes_Name.hpp"
+#include "./Attributes_Name.hpp"
 
 namespace __jni_impl::java::util::jar
 {

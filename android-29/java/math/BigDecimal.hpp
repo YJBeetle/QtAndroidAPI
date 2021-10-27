@@ -130,9 +130,9 @@ namespace __jni_impl::java::math
 
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
-#include "BigInteger.hpp"
-#include "MathContext.hpp"
-#include "RoundingMode.hpp"
+#include "./BigInteger.hpp"
+#include "./MathContext.hpp"
+#include "./RoundingMode.hpp"
 
 namespace __jni_impl::java::math
 {

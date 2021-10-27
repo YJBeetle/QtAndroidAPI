@@ -44,7 +44,7 @@ namespace __jni_impl::android::database
 } // namespace __jni_impl::android::database
 
 #include "../content/ContentValues.hpp"
-#include "sqlite/SQLiteDatabase.hpp"
+#include "./sqlite/SQLiteDatabase.hpp"
 
 namespace __jni_impl::android::database
 {

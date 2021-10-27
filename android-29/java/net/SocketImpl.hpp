@@ -41,8 +41,8 @@ namespace __jni_impl::java::net
 #include "../io/FileDescriptor.hpp"
 #include "../io/InputStream.hpp"
 #include "../io/OutputStream.hpp"
-#include "InetAddress.hpp"
-#include "SocketAddress.hpp"
+#include "./InetAddress.hpp"
+#include "./SocketAddress.hpp"
 
 namespace __jni_impl::java::net
 {

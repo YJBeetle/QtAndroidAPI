@@ -51,7 +51,7 @@ namespace __jni_impl::javax::xml::parsers
 } // namespace __jni_impl::javax::xml::parsers
 
 #include "../../../java/lang/ClassLoader.hpp"
-#include "SAXParser.hpp"
+#include "./SAXParser.hpp"
 #include "../validation/Schema.hpp"
 
 namespace __jni_impl::javax::xml::parsers

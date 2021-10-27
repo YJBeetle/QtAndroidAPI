@@ -24,7 +24,7 @@ namespace __jni_impl::android::net
 	};
 } // namespace __jni_impl::android::net
 
-#include "UrlQuerySanitizer.hpp"
+#include "./UrlQuerySanitizer.hpp"
 
 namespace __jni_impl::android::net
 {

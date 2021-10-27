@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "DynamicsProcessing_Stage.hpp"
+#include "./DynamicsProcessing_Stage.hpp"
 
 
 namespace __jni_impl::android::media::audiofx

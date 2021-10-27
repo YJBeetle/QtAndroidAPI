@@ -64,9 +64,9 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "DisplayContext.hpp"
-#include "DisplayContext_Type.hpp"
-#include "LocaleDisplayNames_DialectHandling.hpp"
+#include "./DisplayContext.hpp"
+#include "./DisplayContext_Type.hpp"
+#include "./LocaleDisplayNames_DialectHandling.hpp"
 #include "../util/ULocale.hpp"
 #include "../../../java/util/Locale.hpp"
 

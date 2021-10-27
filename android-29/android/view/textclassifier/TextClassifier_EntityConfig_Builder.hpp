@@ -26,7 +26,7 @@ namespace __jni_impl::android::view::textclassifier
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
-#include "TextClassifier_EntityConfig.hpp"
+#include "./TextClassifier_EntityConfig.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {

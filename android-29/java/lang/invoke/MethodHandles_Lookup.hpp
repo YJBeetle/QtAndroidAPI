@@ -100,8 +100,8 @@ namespace __jni_impl::java::lang::invoke
 } // namespace __jni_impl::java::lang::invoke
 
 #include "../IllegalAccessException.hpp"
-#include "MethodHandle.hpp"
-#include "MethodType.hpp"
+#include "./MethodHandle.hpp"
+#include "./MethodType.hpp"
 #include "../reflect/Constructor.hpp"
 #include "../reflect/Field.hpp"
 #include "../reflect/Method.hpp"

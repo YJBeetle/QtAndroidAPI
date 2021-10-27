@@ -3,7 +3,7 @@
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
-#include "RSRuntimeException.hpp"
+#include "./RSRuntimeException.hpp"
 
 
 namespace __jni_impl::android::renderscript

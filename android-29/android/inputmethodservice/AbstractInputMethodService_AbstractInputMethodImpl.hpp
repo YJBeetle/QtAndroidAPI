@@ -24,7 +24,7 @@ namespace __jni_impl::android::inputmethodservice
 	};
 } // namespace __jni_impl::android::inputmethodservice
 
-#include "AbstractInputMethodService.hpp"
+#include "./AbstractInputMethodService.hpp"
 
 namespace __jni_impl::android::inputmethodservice
 {

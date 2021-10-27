@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "TvInputService_Session.hpp"
+#include "./TvInputService_Session.hpp"
 
 namespace __jni_impl::android::content
 {

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "AttributedCharacterIterator_Attribute.hpp"
+#include "./AttributedCharacterIterator_Attribute.hpp"
 
 
 namespace __jni_impl::java::text

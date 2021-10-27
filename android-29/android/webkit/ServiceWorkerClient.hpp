@@ -22,7 +22,7 @@ namespace __jni_impl::android::webkit
 	};
 } // namespace __jni_impl::android::webkit
 
-#include "WebResourceResponse.hpp"
+#include "./WebResourceResponse.hpp"
 
 namespace __jni_impl::android::webkit
 {

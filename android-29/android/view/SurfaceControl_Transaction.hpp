@@ -35,7 +35,7 @@ namespace __jni_impl::android::view
 } // namespace __jni_impl::android::view
 
 #include "../graphics/Rect.hpp"
-#include "SurfaceControl.hpp"
+#include "./SurfaceControl.hpp"
 
 namespace __jni_impl::android::view
 {

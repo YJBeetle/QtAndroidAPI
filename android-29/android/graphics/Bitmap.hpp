@@ -136,14 +136,14 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Bitmap_CompressFormat.hpp"
-#include "Bitmap_Config.hpp"
-#include "Canvas.hpp"
-#include "Color.hpp"
-#include "ColorSpace.hpp"
-#include "Matrix.hpp"
-#include "Paint.hpp"
-#include "Picture.hpp"
+#include "./Bitmap_CompressFormat.hpp"
+#include "./Bitmap_Config.hpp"
+#include "./Canvas.hpp"
+#include "./Color.hpp"
+#include "./ColorSpace.hpp"
+#include "./Matrix.hpp"
+#include "./Paint.hpp"
+#include "./Picture.hpp"
 #include "../hardware/HardwareBuffer.hpp"
 #include "../os/Parcel.hpp"
 #include "../util/DisplayMetrics.hpp"

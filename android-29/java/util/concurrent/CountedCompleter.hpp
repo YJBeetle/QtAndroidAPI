@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "ForkJoinTask.hpp"
+#include "./ForkJoinTask.hpp"
 
 
 namespace __jni_impl::java::util::concurrent

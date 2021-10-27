@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "TextClassifierEvent_Builder.hpp"
+#include "./TextClassifierEvent_Builder.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {
@@ -27,7 +27,7 @@ namespace __jni_impl::android::view::textclassifier
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
-#include "TextClassifierEvent_TextSelectionEvent.hpp"
+#include "./TextClassifierEvent_TextSelectionEvent.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {

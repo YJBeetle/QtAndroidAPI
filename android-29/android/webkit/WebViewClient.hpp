@@ -123,14 +123,14 @@ namespace __jni_impl::android::webkit
 #include "../net/http/SslError.hpp"
 #include "../os/Message.hpp"
 #include "../view/KeyEvent.hpp"
-#include "ClientCertRequest.hpp"
-#include "HttpAuthHandler.hpp"
-#include "RenderProcessGoneDetail.hpp"
-#include "SafeBrowsingResponse.hpp"
-#include "SslErrorHandler.hpp"
-#include "WebResourceError.hpp"
-#include "WebResourceResponse.hpp"
-#include "WebView.hpp"
+#include "./ClientCertRequest.hpp"
+#include "./HttpAuthHandler.hpp"
+#include "./RenderProcessGoneDetail.hpp"
+#include "./SafeBrowsingResponse.hpp"
+#include "./SslErrorHandler.hpp"
+#include "./WebResourceError.hpp"
+#include "./WebResourceResponse.hpp"
+#include "./WebView.hpp"
 
 namespace __jni_impl::android::webkit
 {

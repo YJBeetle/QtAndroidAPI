@@ -38,7 +38,7 @@ namespace __jni_impl::android::app::assist
 	};
 } // namespace __jni_impl::android::app::assist
 
-#include "AssistStructure_WindowNode.hpp"
+#include "./AssistStructure_WindowNode.hpp"
 #include "../../content/ComponentName.hpp"
 #include "../../os/Parcel.hpp"
 

@@ -84,7 +84,7 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "DateTimePatternGenerator_PatternInfo.hpp"
+#include "./DateTimePatternGenerator_PatternInfo.hpp"
 #include "../util/ULocale.hpp"
 #include "../../../java/util/Locale.hpp"
 

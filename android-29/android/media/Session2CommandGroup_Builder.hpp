@@ -29,8 +29,8 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "Session2Command.hpp"
-#include "Session2CommandGroup.hpp"
+#include "./Session2Command.hpp"
+#include "./Session2CommandGroup.hpp"
 
 namespace __jni_impl::android::media
 {

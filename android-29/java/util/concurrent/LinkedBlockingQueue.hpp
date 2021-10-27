@@ -66,9 +66,9 @@ namespace __jni_impl::java::util::concurrent
 
 #include "../../io/ObjectInputStream.hpp"
 #include "../../io/ObjectOutputStream.hpp"
-#include "TimeUnit.hpp"
-#include "atomic/AtomicInteger.hpp"
-#include "locks/ReentrantLock.hpp"
+#include "./TimeUnit.hpp"
+#include "./atomic/AtomicInteger.hpp"
+#include "./locks/ReentrantLock.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {

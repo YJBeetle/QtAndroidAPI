@@ -53,8 +53,8 @@ namespace __jni_impl::java::lang::reflect
 #include "../invoke/MethodHandle.hpp"
 #include "../invoke/MethodHandles_Lookup.hpp"
 #include "../invoke/MethodType.hpp"
-#include "Constructor.hpp"
-#include "Method.hpp"
+#include "./Constructor.hpp"
+#include "./Method.hpp"
 #include "../../util/concurrent/ConcurrentHashMap.hpp"
 
 namespace __jni_impl::java::lang::reflect

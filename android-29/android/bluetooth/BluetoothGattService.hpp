@@ -42,7 +42,7 @@ namespace __jni_impl::android::bluetooth
 	};
 } // namespace __jni_impl::android::bluetooth
 
-#include "BluetoothGattCharacteristic.hpp"
+#include "./BluetoothGattCharacteristic.hpp"
 #include "../os/Parcel.hpp"
 #include "../../java/util/UUID.hpp"
 

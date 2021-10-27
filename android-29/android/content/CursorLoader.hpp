@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Loader.hpp"
-#include "AsyncTaskLoader.hpp"
+#include "./Loader.hpp"
+#include "./AsyncTaskLoader.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -57,7 +57,7 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "Context.hpp"
+#include "./Context.hpp"
 #include "../net/Uri.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"

@@ -31,7 +31,7 @@ namespace __jni_impl::android::bluetooth::le
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
-#include "AdvertiseData.hpp"
+#include "./AdvertiseData.hpp"
 #include "../../os/ParcelUuid.hpp"
 
 namespace __jni_impl::android::bluetooth::le

@@ -55,9 +55,9 @@ namespace __jni_impl::java::time
 } // namespace __jni_impl::java::time
 
 #include "../io/ObjectInputStream.hpp"
-#include "ZoneOffset.hpp"
-#include "format/TextStyle.hpp"
-#include "zone/ZoneRules.hpp"
+#include "./ZoneOffset.hpp"
+#include "./format/TextStyle.hpp"
+#include "./zone/ZoneRules.hpp"
 #include "../util/Locale.hpp"
 
 namespace __jni_impl::java::time

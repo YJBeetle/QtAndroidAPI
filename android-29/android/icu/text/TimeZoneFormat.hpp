@@ -2,7 +2,7 @@
 
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/text/Format.hpp"
-#include "UFormat.hpp"
+#include "./UFormat.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -108,9 +108,9 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "TimeZoneFormat_GMTOffsetPatternType.hpp"
-#include "TimeZoneFormat_Style.hpp"
-#include "TimeZoneNames.hpp"
+#include "./TimeZoneFormat_GMTOffsetPatternType.hpp"
+#include "./TimeZoneFormat_Style.hpp"
+#include "./TimeZoneNames.hpp"
 #include "../util/Output.hpp"
 #include "../util/TimeZone.hpp"
 #include "../util/ULocale.hpp"

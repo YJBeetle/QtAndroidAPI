@@ -44,7 +44,7 @@ namespace __jni_impl::android::os::health
 	};
 } // namespace __jni_impl::android::os::health
 
-#include "TimerStat.hpp"
+#include "./TimerStat.hpp"
 
 namespace __jni_impl::android::os::health
 {

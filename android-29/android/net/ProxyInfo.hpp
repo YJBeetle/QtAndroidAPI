@@ -40,7 +40,7 @@ namespace __jni_impl::android::net
 	};
 } // namespace __jni_impl::android::net
 
-#include "Uri.hpp"
+#include "./Uri.hpp"
 #include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::net

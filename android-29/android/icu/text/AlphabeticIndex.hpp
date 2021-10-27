@@ -63,9 +63,9 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "AlphabeticIndex_ImmutableIndex.hpp"
-#include "RuleBasedCollator.hpp"
-#include "UnicodeSet.hpp"
+#include "./AlphabeticIndex_ImmutableIndex.hpp"
+#include "./RuleBasedCollator.hpp"
+#include "./UnicodeSet.hpp"
 #include "../util/ULocale.hpp"
 #include "../../../java/util/Locale.hpp"
 

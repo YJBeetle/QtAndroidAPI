@@ -39,8 +39,8 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "MediaCas_Session.hpp"
-#include "MediaCodec_CryptoInfo.hpp"
+#include "./MediaCas_Session.hpp"
+#include "./MediaCodec_CryptoInfo.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
 
 namespace __jni_impl::android::media

@@ -69,7 +69,7 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "Intent.hpp"
+#include "./Intent.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/PersistableBundle.hpp"
 

@@ -80,7 +80,7 @@ namespace __jni_impl::android::view::accessibility
 } // namespace __jni_impl::android::view::accessibility
 
 #include "../View.hpp"
-#include "AccessibilityNodeInfo.hpp"
+#include "./AccessibilityNodeInfo.hpp"
 
 namespace __jni_impl::android::view::accessibility
 {

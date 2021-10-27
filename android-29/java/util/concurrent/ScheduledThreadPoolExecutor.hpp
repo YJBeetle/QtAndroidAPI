@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "AbstractExecutorService.hpp"
-#include "ThreadPoolExecutor.hpp"
+#include "./AbstractExecutorService.hpp"
+#include "./ThreadPoolExecutor.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {
@@ -44,8 +44,8 @@ namespace __jni_impl::java::util::concurrent
 	};
 } // namespace __jni_impl::java::util::concurrent
 
-#include "TimeUnit.hpp"
-#include "atomic/AtomicLong.hpp"
+#include "./TimeUnit.hpp"
+#include "./atomic/AtomicLong.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {

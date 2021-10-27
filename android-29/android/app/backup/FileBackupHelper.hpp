@@ -36,8 +36,8 @@ namespace __jni_impl::android::app::backup
 	};
 } // namespace __jni_impl::android::app::backup
 
-#include "BackupDataInputStream.hpp"
-#include "BackupDataOutput.hpp"
+#include "./BackupDataInputStream.hpp"
+#include "./BackupDataOutput.hpp"
 #include "../../content/Context.hpp"
 #include "../../os/ParcelFileDescriptor.hpp"
 

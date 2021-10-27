@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "OutputStream.hpp"
-#include "FilterOutputStream.hpp"
+#include "./OutputStream.hpp"
+#include "./FilterOutputStream.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -102,10 +102,10 @@ namespace __jni_impl::java::io
 	};
 } // namespace __jni_impl::java::io
 
-#include "BufferedWriter.hpp"
-#include "File.hpp"
-#include "OutputStream.hpp"
-#include "OutputStreamWriter.hpp"
+#include "./BufferedWriter.hpp"
+#include "./File.hpp"
+#include "./OutputStream.hpp"
+#include "./OutputStreamWriter.hpp"
 #include "../nio/charset/Charset.hpp"
 #include "../util/Formatter.hpp"
 #include "../util/Locale.hpp"

@@ -26,7 +26,7 @@ namespace __jni_impl::java::security::cert
 	};
 } // namespace __jni_impl::java::security::cert
 
-#include "TrustAnchor.hpp"
+#include "./TrustAnchor.hpp"
 
 namespace __jni_impl::java::security::cert
 {

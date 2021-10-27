@@ -34,7 +34,7 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "Parcel.hpp"
+#include "./Parcel.hpp"
 #include "../../java/util/UUID.hpp"
 
 namespace __jni_impl::android::os

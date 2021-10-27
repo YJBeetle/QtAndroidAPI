@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Layout.hpp"
+#include "./Layout.hpp"
 
 namespace __jni_impl::android::text
 {
@@ -52,10 +52,10 @@ namespace __jni_impl::android::text
 	};
 } // namespace __jni_impl::android::text
 
-#include "Layout_Alignment.hpp"
-#include "Layout_Directions.hpp"
-#include "TextPaint.hpp"
-#include "TextUtils_TruncateAt.hpp"
+#include "./Layout_Alignment.hpp"
+#include "./Layout_Directions.hpp"
+#include "./TextPaint.hpp"
+#include "./TextUtils_TruncateAt.hpp"
 
 namespace __jni_impl::android::text
 {

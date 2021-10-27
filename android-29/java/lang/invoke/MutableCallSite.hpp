@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "CallSite.hpp"
+#include "./CallSite.hpp"
 
 namespace __jni_impl::java::lang::invoke
 {
@@ -35,8 +35,8 @@ namespace __jni_impl::java::lang::invoke
 	};
 } // namespace __jni_impl::java::lang::invoke
 
-#include "MethodHandle.hpp"
-#include "MethodType.hpp"
+#include "./MethodHandle.hpp"
+#include "./MethodType.hpp"
 #include "../../util/concurrent/atomic/AtomicInteger.hpp"
 
 namespace __jni_impl::java::lang::invoke

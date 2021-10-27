@@ -31,8 +31,8 @@ namespace __jni_impl::android::animation
 	};
 } // namespace __jni_impl::android::animation
 
-#include "Animator.hpp"
-#include "StateListAnimator.hpp"
+#include "./Animator.hpp"
+#include "./StateListAnimator.hpp"
 #include "../content/Context.hpp"
 
 namespace __jni_impl::android::animation

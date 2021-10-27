@@ -30,7 +30,7 @@ namespace __jni_impl::android::text
 	};
 } // namespace __jni_impl::android::text
 
-#include "BidiFormatter.hpp"
+#include "./BidiFormatter.hpp"
 #include "../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::text

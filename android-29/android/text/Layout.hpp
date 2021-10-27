@@ -111,9 +111,9 @@ namespace __jni_impl::android::text
 #include "../graphics/Paint.hpp"
 #include "../graphics/Path.hpp"
 #include "../graphics/Rect.hpp"
-#include "Layout_Alignment.hpp"
-#include "Layout_Directions.hpp"
-#include "TextPaint.hpp"
+#include "./Layout_Alignment.hpp"
+#include "./Layout_Directions.hpp"
+#include "./TextPaint.hpp"
 
 namespace __jni_impl::android::text
 {

@@ -40,7 +40,7 @@ namespace __jni_impl::android::view::textclassifier
 
 #include "../../app/Person.hpp"
 #include "../../os/Bundle.hpp"
-#include "ConversationActions_Message.hpp"
+#include "./ConversationActions_Message.hpp"
 #include "../../../java/time/ZonedDateTime.hpp"
 
 namespace __jni_impl::android::view::textclassifier

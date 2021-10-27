@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "PSource.hpp"
+#include "./PSource.hpp"
 
 
 namespace __jni_impl::javax::crypto::spec

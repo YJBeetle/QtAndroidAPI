@@ -34,7 +34,7 @@ namespace __jni_impl::android::media
 } // namespace __jni_impl::android::media
 
 #include "../graphics/PointF.hpp"
-#include "FaceDetector.hpp"
+#include "./FaceDetector.hpp"
 
 namespace __jni_impl::android::media
 {

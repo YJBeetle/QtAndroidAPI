@@ -44,7 +44,7 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "DateIntervalInfo_PatternInfo.hpp"
+#include "./DateIntervalInfo_PatternInfo.hpp"
 #include "../util/ULocale.hpp"
 #include "../../../java/util/Locale.hpp"
 

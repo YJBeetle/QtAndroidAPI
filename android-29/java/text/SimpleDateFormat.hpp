@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Format.hpp"
-#include "DateFormat.hpp"
+#include "./Format.hpp"
+#include "./DateFormat.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -81,10 +81,10 @@ namespace __jni_impl::java::text
 #include "../io/ObjectInputStream.hpp"
 #include "../lang/StringBuffer.hpp"
 #include "../lang/StringBuilder.hpp"
-#include "DateFormatSymbols.hpp"
-#include "FieldPosition.hpp"
-#include "NumberFormat.hpp"
-#include "ParsePosition.hpp"
+#include "./DateFormatSymbols.hpp"
+#include "./FieldPosition.hpp"
+#include "./NumberFormat.hpp"
+#include "./ParsePosition.hpp"
 #include "../util/Date.hpp"
 #include "../util/Locale.hpp"
 

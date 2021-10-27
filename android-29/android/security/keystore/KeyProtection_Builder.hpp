@@ -42,7 +42,7 @@ namespace __jni_impl::android::security::keystore
 	};
 } // namespace __jni_impl::android::security::keystore
 
-#include "KeyProtection.hpp"
+#include "./KeyProtection.hpp"
 #include "../../../java/util/Date.hpp"
 
 namespace __jni_impl::android::security::keystore

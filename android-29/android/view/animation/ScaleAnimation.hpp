@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "Animation.hpp"
+#include "./Animation.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -31,7 +31,7 @@ namespace __jni_impl::android::view::animation
 } // namespace __jni_impl::android::view::animation
 
 #include "../../content/Context.hpp"
-#include "Transformation.hpp"
+#include "./Transformation.hpp"
 
 namespace __jni_impl::android::view::animation
 {

@@ -88,9 +88,9 @@ namespace __jni_impl::java::lang::invoke
 } // namespace __jni_impl::java::lang::invoke
 
 #include "../RuntimeException.hpp"
-#include "MethodHandle.hpp"
-#include "MethodHandles_Lookup.hpp"
-#include "MethodType.hpp"
+#include "./MethodHandle.hpp"
+#include "./MethodHandles_Lookup.hpp"
+#include "./MethodType.hpp"
 #include "../../nio/ByteOrder.hpp"
 #include "../../security/Permission.hpp"
 

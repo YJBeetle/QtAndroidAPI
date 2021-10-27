@@ -4,7 +4,7 @@
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../view/ContextThemeWrapper.hpp"
-#include "Activity.hpp"
+#include "./Activity.hpp"
 
 namespace __jni_impl::android::os
 {

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../../__JniBaseClass.hpp"
-#include "AbstractOwnableSynchronizer.hpp"
+#include "./AbstractOwnableSynchronizer.hpp"
 
 namespace __jni_impl::java::lang
 {
@@ -49,7 +49,7 @@ namespace __jni_impl::java::util::concurrent::locks
 } // namespace __jni_impl::java::util::concurrent::locks
 
 #include "../../../lang/Thread.hpp"
-#include "AbstractQueuedSynchronizer_ConditionObject.hpp"
+#include "./AbstractQueuedSynchronizer_ConditionObject.hpp"
 
 namespace __jni_impl::java::util::concurrent::locks
 {

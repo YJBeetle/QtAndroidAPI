@@ -22,7 +22,7 @@ namespace __jni_impl::java::security
 	};
 } // namespace __jni_impl::java::security
 
-#include "KeyRep_Type.hpp"
+#include "./KeyRep_Type.hpp"
 
 namespace __jni_impl::java::security
 {

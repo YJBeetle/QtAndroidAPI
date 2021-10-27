@@ -42,10 +42,10 @@ namespace __jni_impl::android::bluetooth
 	};
 } // namespace __jni_impl::android::bluetooth
 
-#include "BluetoothAdapter.hpp"
-#include "BluetoothDevice.hpp"
-#include "BluetoothGattServer.hpp"
-#include "BluetoothGattServerCallback.hpp"
+#include "./BluetoothAdapter.hpp"
+#include "./BluetoothDevice.hpp"
+#include "./BluetoothGattServer.hpp"
+#include "./BluetoothGattServerCallback.hpp"
 #include "../content/Context.hpp"
 
 namespace __jni_impl::android::bluetooth

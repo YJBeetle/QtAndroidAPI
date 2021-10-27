@@ -60,10 +60,10 @@ namespace __jni_impl::java::security::cert
 
 #include "../../io/InputStream.hpp"
 #include "../Provider.hpp"
-#include "CRL.hpp"
-#include "CertPath.hpp"
-#include "Certificate.hpp"
-#include "CertificateFactorySpi.hpp"
+#include "./CRL.hpp"
+#include "./CertPath.hpp"
+#include "./Certificate.hpp"
+#include "./CertificateFactorySpi.hpp"
 
 namespace __jni_impl::java::security::cert
 {

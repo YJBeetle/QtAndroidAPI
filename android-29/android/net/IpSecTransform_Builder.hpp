@@ -47,10 +47,10 @@ namespace __jni_impl::android::net
 } // namespace __jni_impl::android::net
 
 #include "../content/Context.hpp"
-#include "IpSecAlgorithm.hpp"
-#include "IpSecManager_SecurityParameterIndex.hpp"
-#include "IpSecManager_UdpEncapsulationSocket.hpp"
-#include "IpSecTransform.hpp"
+#include "./IpSecAlgorithm.hpp"
+#include "./IpSecManager_SecurityParameterIndex.hpp"
+#include "./IpSecManager_UdpEncapsulationSocket.hpp"
+#include "./IpSecTransform.hpp"
 #include "../../java/net/InetAddress.hpp"
 
 namespace __jni_impl::android::net

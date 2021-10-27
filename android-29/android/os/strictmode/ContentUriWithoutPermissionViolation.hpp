@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "Violation.hpp"
+#include "./Violation.hpp"
 
 namespace __jni_impl::android::net
 {

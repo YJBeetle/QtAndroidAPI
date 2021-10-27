@@ -91,10 +91,10 @@ namespace __jni_impl::android::drm
 
 #include "../content/ContentValues.hpp"
 #include "../content/Context.hpp"
-#include "DrmConvertedStatus.hpp"
-#include "DrmInfo.hpp"
-#include "DrmInfoRequest.hpp"
-#include "DrmRights.hpp"
+#include "./DrmConvertedStatus.hpp"
+#include "./DrmInfo.hpp"
+#include "./DrmInfoRequest.hpp"
+#include "./DrmRights.hpp"
 #include "../net/Uri.hpp"
 
 namespace __jni_impl::android::drm

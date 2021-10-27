@@ -2,8 +2,8 @@
 
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/text/Format.hpp"
-#include "UFormat.hpp"
-#include "NumberFormat.hpp"
+#include "./UFormat.hpp"
+#include "./NumberFormat.hpp"
 
 namespace __jni_impl::android::icu::math
 {
@@ -185,8 +185,8 @@ namespace __jni_impl::android::icu::text
 
 #include "../math/BigDecimal.hpp"
 #include "../math/MathContext.hpp"
-#include "CurrencyPluralInfo.hpp"
-#include "DecimalFormatSymbols.hpp"
+#include "./CurrencyPluralInfo.hpp"
+#include "./DecimalFormatSymbols.hpp"
 #include "../util/Currency.hpp"
 #include "../util/Currency_CurrencyUsage.hpp"
 #include "../util/CurrencyAmount.hpp"

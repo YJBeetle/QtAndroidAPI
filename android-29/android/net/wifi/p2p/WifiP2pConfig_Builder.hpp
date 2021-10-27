@@ -35,7 +35,7 @@ namespace __jni_impl::android::net::wifi::p2p
 } // namespace __jni_impl::android::net::wifi::p2p
 
 #include "../../MacAddress.hpp"
-#include "WifiP2pConfig.hpp"
+#include "./WifiP2pConfig.hpp"
 
 namespace __jni_impl::android::net::wifi::p2p
 {

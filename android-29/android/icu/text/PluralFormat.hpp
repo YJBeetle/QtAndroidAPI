@@ -2,7 +2,7 @@
 
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/text/Format.hpp"
-#include "UFormat.hpp"
+#include "./UFormat.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -86,9 +86,9 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "NumberFormat.hpp"
-#include "PluralRules.hpp"
-#include "PluralRules_PluralType.hpp"
+#include "./NumberFormat.hpp"
+#include "./PluralRules.hpp"
+#include "./PluralRules_PluralType.hpp"
 #include "../util/ULocale.hpp"
 #include "../../../java/lang/Number.hpp"
 #include "../../../java/lang/StringBuffer.hpp"

@@ -33,7 +33,7 @@ namespace __jni_impl::android::speech
 } // namespace __jni_impl::android::speech
 
 #include "../content/Intent.hpp"
-#include "RecognitionService_Callback.hpp"
+#include "./RecognitionService_Callback.hpp"
 
 namespace __jni_impl::android::speech
 {

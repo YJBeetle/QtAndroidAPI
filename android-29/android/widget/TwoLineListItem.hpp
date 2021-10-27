@@ -3,7 +3,7 @@
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
-#include "RelativeLayout.hpp"
+#include "./RelativeLayout.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -35,7 +35,7 @@ namespace __jni_impl::android::widget
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "TextView.hpp"
+#include "./TextView.hpp"
 
 namespace __jni_impl::android::widget
 {

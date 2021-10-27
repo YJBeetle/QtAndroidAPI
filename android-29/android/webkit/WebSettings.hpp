@@ -168,11 +168,11 @@ namespace __jni_impl::android::webkit
 } // namespace __jni_impl::android::webkit
 
 #include "../content/Context.hpp"
-#include "WebSettings_LayoutAlgorithm.hpp"
-#include "WebSettings_PluginState.hpp"
-#include "WebSettings_RenderPriority.hpp"
-#include "WebSettings_TextSize.hpp"
-#include "WebSettings_ZoomDensity.hpp"
+#include "./WebSettings_LayoutAlgorithm.hpp"
+#include "./WebSettings_PluginState.hpp"
+#include "./WebSettings_RenderPriority.hpp"
+#include "./WebSettings_TextSize.hpp"
+#include "./WebSettings_ZoomDensity.hpp"
 
 namespace __jni_impl::android::webkit
 {

@@ -41,11 +41,11 @@ namespace __jni_impl::android::renderscript
 	};
 } // namespace __jni_impl::android::renderscript
 
-#include "RenderScript.hpp"
-#include "Script_FieldID.hpp"
-#include "Script_KernelID.hpp"
-#include "ScriptGroup.hpp"
-#include "Type.hpp"
+#include "./RenderScript.hpp"
+#include "./Script_FieldID.hpp"
+#include "./Script_KernelID.hpp"
+#include "./ScriptGroup.hpp"
+#include "./Type.hpp"
 
 namespace __jni_impl::android::renderscript
 {

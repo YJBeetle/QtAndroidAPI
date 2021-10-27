@@ -26,7 +26,7 @@ namespace __jni_impl::android::webkit
 	};
 } // namespace __jni_impl::android::webkit
 
-#include "ConsoleMessage_MessageLevel.hpp"
+#include "./ConsoleMessage_MessageLevel.hpp"
 
 namespace __jni_impl::android::webkit
 {

@@ -56,9 +56,9 @@ namespace __jni_impl::android::view
 #include "../graphics/Bitmap.hpp"
 #include "../graphics/Rect.hpp"
 #include "../os/Handler.hpp"
-#include "Surface.hpp"
-#include "SurfaceView.hpp"
-#include "Window.hpp"
+#include "./Surface.hpp"
+#include "./SurfaceView.hpp"
+#include "./Window.hpp"
 
 namespace __jni_impl::android::view
 {

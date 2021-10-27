@@ -44,9 +44,9 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Activity.hpp"
-#include "KeyguardManager_KeyguardDismissCallback.hpp"
-#include "KeyguardManager_KeyguardLock.hpp"
+#include "./Activity.hpp"
+#include "./KeyguardManager_KeyguardDismissCallback.hpp"
+#include "./KeyguardManager_KeyguardLock.hpp"
 #include "../content/Intent.hpp"
 
 namespace __jni_impl::android::app

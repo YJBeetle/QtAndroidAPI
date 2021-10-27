@@ -64,7 +64,7 @@ namespace __jni_impl::android::media::audiofx
 	};
 } // namespace __jni_impl::android::media::audiofx
 
-#include "AudioEffect_Descriptor.hpp"
+#include "./AudioEffect_Descriptor.hpp"
 #include "../../../java/util/UUID.hpp"
 
 namespace __jni_impl::android::media::audiofx

@@ -32,7 +32,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "VoiceInteractor_Request.hpp"
+#include "./VoiceInteractor_Request.hpp"
 
 namespace __jni_impl::android::app
 {

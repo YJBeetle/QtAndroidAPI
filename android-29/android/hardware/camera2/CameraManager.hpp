@@ -57,10 +57,10 @@ namespace __jni_impl::android::hardware::camera2
 } // namespace __jni_impl::android::hardware::camera2
 
 #include "../../content/Context.hpp"
-#include "CameraCharacteristics.hpp"
-#include "CameraDevice_StateCallback.hpp"
-#include "CameraManager_AvailabilityCallback.hpp"
-#include "CameraManager_TorchCallback.hpp"
+#include "./CameraCharacteristics.hpp"
+#include "./CameraDevice_StateCallback.hpp"
+#include "./CameraManager_AvailabilityCallback.hpp"
+#include "./CameraManager_TorchCallback.hpp"
 #include "../../os/Handler.hpp"
 
 namespace __jni_impl::android::hardware::camera2

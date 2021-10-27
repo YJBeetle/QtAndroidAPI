@@ -38,8 +38,8 @@ namespace __jni_impl::android::telecom
 } // namespace __jni_impl::android::telecom
 
 #include "../content/Intent.hpp"
-#include "Call_Details.hpp"
-#include "CallScreeningService_CallResponse.hpp"
+#include "./Call_Details.hpp"
+#include "./CallScreeningService_CallResponse.hpp"
 
 namespace __jni_impl::android::telecom
 {

@@ -39,8 +39,8 @@ namespace __jni_impl::java::nio::file
 	};
 } // namespace __jni_impl::java::nio::file
 
-#include "attribute/UserPrincipalLookupService.hpp"
-#include "spi/FileSystemProvider.hpp"
+#include "./attribute/UserPrincipalLookupService.hpp"
+#include "./spi/FileSystemProvider.hpp"
 
 namespace __jni_impl::java::nio::file
 {

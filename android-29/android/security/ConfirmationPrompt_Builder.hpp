@@ -30,7 +30,7 @@ namespace __jni_impl::android::security
 } // namespace __jni_impl::android::security
 
 #include "../content/Context.hpp"
-#include "ConfirmationPrompt.hpp"
+#include "./ConfirmationPrompt.hpp"
 
 namespace __jni_impl::android::security
 {

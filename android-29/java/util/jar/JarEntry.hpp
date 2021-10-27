@@ -33,7 +33,7 @@ namespace __jni_impl::java::util::jar
 	};
 } // namespace __jni_impl::java::util::jar
 
-#include "Attributes.hpp"
+#include "./Attributes.hpp"
 #include "../zip/ZipEntry.hpp"
 
 namespace __jni_impl::java::util::jar

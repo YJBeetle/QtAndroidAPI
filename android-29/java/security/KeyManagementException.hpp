@@ -2,8 +2,8 @@
 
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
-#include "GeneralSecurityException.hpp"
-#include "KeyException.hpp"
+#include "./GeneralSecurityException.hpp"
+#include "./KeyException.hpp"
 
 
 namespace __jni_impl::java::security

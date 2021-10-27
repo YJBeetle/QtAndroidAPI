@@ -30,7 +30,7 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "VolumeShaper_Configuration.hpp"
+#include "./VolumeShaper_Configuration.hpp"
 
 namespace __jni_impl::android::media
 {

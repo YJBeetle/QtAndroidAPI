@@ -59,7 +59,7 @@ namespace __jni_impl::java::util::zip
 #include "../../io/InputStream.hpp"
 #include "../../nio/charset/Charset.hpp"
 #include "../jar/JarEntry.hpp"
-#include "ZipEntry.hpp"
+#include "./ZipEntry.hpp"
 
 namespace __jni_impl::java::util::zip
 {

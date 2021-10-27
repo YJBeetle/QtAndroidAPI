@@ -63,7 +63,7 @@ namespace __jni_impl::javax::xml::parsers
 } // namespace __jni_impl::javax::xml::parsers
 
 #include "../../../java/lang/ClassLoader.hpp"
-#include "DocumentBuilder.hpp"
+#include "./DocumentBuilder.hpp"
 #include "../validation/Schema.hpp"
 
 namespace __jni_impl::javax::xml::parsers

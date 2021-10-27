@@ -55,8 +55,8 @@ namespace __jni_impl::android::inputmethodservice
 } // namespace __jni_impl::android::inputmethodservice
 
 #include "../content/Intent.hpp"
-#include "AbstractInputMethodService_AbstractInputMethodImpl.hpp"
-#include "AbstractInputMethodService_AbstractInputMethodSessionImpl.hpp"
+#include "./AbstractInputMethodService_AbstractInputMethodImpl.hpp"
+#include "./AbstractInputMethodService_AbstractInputMethodSessionImpl.hpp"
 #include "../view/KeyEvent_DispatcherState.hpp"
 #include "../view/MotionEvent.hpp"
 #include "../../java/io/FileDescriptor.hpp"

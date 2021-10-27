@@ -51,8 +51,8 @@ namespace __jni_impl::java::lang
 } // namespace __jni_impl::java::lang
 
 #include "../io/File.hpp"
-#include "Process.hpp"
-#include "ProcessBuilder_Redirect.hpp"
+#include "./Process.hpp"
+#include "./ProcessBuilder_Redirect.hpp"
 
 namespace __jni_impl::java::lang
 {

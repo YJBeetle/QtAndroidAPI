@@ -74,10 +74,10 @@ namespace __jni_impl::android::mtp
 
 #include "../hardware/usb/UsbDevice.hpp"
 #include "../hardware/usb/UsbDeviceConnection.hpp"
-#include "MtpDeviceInfo.hpp"
-#include "MtpEvent.hpp"
-#include "MtpObjectInfo.hpp"
-#include "MtpStorageInfo.hpp"
+#include "./MtpDeviceInfo.hpp"
+#include "./MtpEvent.hpp"
+#include "./MtpObjectInfo.hpp"
+#include "./MtpStorageInfo.hpp"
 #include "../os/CancellationSignal.hpp"
 #include "../os/ParcelFileDescriptor.hpp"
 

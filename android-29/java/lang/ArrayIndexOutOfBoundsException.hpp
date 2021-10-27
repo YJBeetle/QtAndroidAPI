@@ -1,9 +1,9 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Exception.hpp"
-#include "RuntimeException.hpp"
-#include "IndexOutOfBoundsException.hpp"
+#include "./Exception.hpp"
+#include "./RuntimeException.hpp"
+#include "./IndexOutOfBoundsException.hpp"
 
 
 namespace __jni_impl::java::lang

@@ -57,10 +57,10 @@ namespace __jni_impl::android::renderscript
 } // namespace __jni_impl::android::renderscript
 
 #include "../content/Context.hpp"
-#include "RenderScript_ContextType.hpp"
-#include "RenderScript_Priority.hpp"
-#include "RenderScript_RSErrorHandler.hpp"
-#include "RenderScript_RSMessageHandler.hpp"
+#include "./RenderScript_ContextType.hpp"
+#include "./RenderScript_Priority.hpp"
+#include "./RenderScript_RSErrorHandler.hpp"
+#include "./RenderScript_RSMessageHandler.hpp"
 
 namespace __jni_impl::android::renderscript
 {

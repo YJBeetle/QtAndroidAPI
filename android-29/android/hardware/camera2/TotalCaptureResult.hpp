@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "CameraMetadata.hpp"
-#include "CaptureResult.hpp"
+#include "./CameraMetadata.hpp"
+#include "./CaptureResult.hpp"
 
 
 namespace __jni_impl::android::hardware::camera2

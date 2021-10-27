@@ -74,7 +74,7 @@ namespace __jni_impl::android::database::sqlite
 } // namespace __jni_impl::android::database::sqlite
 
 #include "../../content/ContentValues.hpp"
-#include "SQLiteDatabase.hpp"
+#include "./SQLiteDatabase.hpp"
 #include "../../os/CancellationSignal.hpp"
 #include "../../../java/lang/StringBuilder.hpp"
 

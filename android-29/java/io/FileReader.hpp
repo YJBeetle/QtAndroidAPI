@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Reader.hpp"
-#include "InputStreamReader.hpp"
+#include "./Reader.hpp"
+#include "./InputStreamReader.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -37,8 +37,8 @@ namespace __jni_impl::java::io
 	};
 } // namespace __jni_impl::java::io
 
-#include "File.hpp"
-#include "FileDescriptor.hpp"
+#include "./File.hpp"
+#include "./FileDescriptor.hpp"
 #include "../nio/charset/Charset.hpp"
 
 namespace __jni_impl::java::io

@@ -78,7 +78,7 @@ namespace __jni_impl::android::media
 #include "../app/Activity.hpp"
 #include "../content/Context.hpp"
 #include "../content/res/AssetFileDescriptor.hpp"
-#include "Ringtone.hpp"
+#include "./Ringtone.hpp"
 #include "../net/Uri.hpp"
 
 namespace __jni_impl::android::media

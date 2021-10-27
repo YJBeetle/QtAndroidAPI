@@ -3,7 +3,7 @@
 #include "../../../__JniBaseClass.hpp"
 #include "../../io/OutputStream.hpp"
 #include "../../io/FilterOutputStream.hpp"
-#include "DeflaterOutputStream.hpp"
+#include "./DeflaterOutputStream.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -60,8 +60,8 @@ namespace __jni_impl::java::util::zip
 #include "../../nio/charset/Charset.hpp"
 #include "../HashSet.hpp"
 #include "../Vector.hpp"
-#include "CRC32.hpp"
-#include "ZipEntry.hpp"
+#include "./CRC32.hpp"
+#include "./ZipEntry.hpp"
 
 namespace __jni_impl::java::util::zip
 {

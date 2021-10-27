@@ -42,11 +42,11 @@ namespace __jni_impl::javax::net::ssl
 } // namespace __jni_impl::javax::net::ssl
 
 #include "../../../java/security/SecureRandom.hpp"
-#include "SSLEngine.hpp"
-#include "SSLParameters.hpp"
-#include "SSLServerSocketFactory.hpp"
-#include "SSLSocket.hpp"
-#include "SSLSocketFactory.hpp"
+#include "./SSLEngine.hpp"
+#include "./SSLParameters.hpp"
+#include "./SSLServerSocketFactory.hpp"
+#include "./SSLSocket.hpp"
+#include "./SSLSocketFactory.hpp"
 
 namespace __jni_impl::javax::net::ssl
 {

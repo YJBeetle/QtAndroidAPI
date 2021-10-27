@@ -26,8 +26,8 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Rect.hpp"
-#include "Region.hpp"
+#include "./Rect.hpp"
+#include "./Region.hpp"
 
 namespace __jni_impl::android::graphics
 {

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "BaseMovementMethod.hpp"
-#include "ScrollingMovementMethod.hpp"
+#include "./BaseMovementMethod.hpp"
+#include "./ScrollingMovementMethod.hpp"
 
 namespace __jni_impl::android::view
 {

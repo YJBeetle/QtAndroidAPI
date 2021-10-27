@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Buffer.hpp"
+#include "./Buffer.hpp"
 
 namespace __jni_impl::java::nio
 {
@@ -66,8 +66,8 @@ namespace __jni_impl::java::nio
 	};
 } // namespace __jni_impl::java::nio
 
-#include "Buffer.hpp"
-#include "ByteOrder.hpp"
+#include "./Buffer.hpp"
+#include "./ByteOrder.hpp"
 
 namespace __jni_impl::java::nio
 {

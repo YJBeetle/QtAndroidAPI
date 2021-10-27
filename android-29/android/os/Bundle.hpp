@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "BaseBundle.hpp"
+#include "./BaseBundle.hpp"
 
 namespace __jni_impl::android::os
 {
@@ -167,8 +167,8 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "Parcel.hpp"
-#include "PersistableBundle.hpp"
+#include "./Parcel.hpp"
+#include "./PersistableBundle.hpp"
 #include "../util/Size.hpp"
 #include "../util/SizeF.hpp"
 #include "../util/SparseArray.hpp"

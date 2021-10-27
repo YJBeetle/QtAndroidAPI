@@ -24,7 +24,7 @@ namespace __jni_impl::android::os::health
 	};
 } // namespace __jni_impl::android::os::health
 
-#include "HealthStats.hpp"
+#include "./HealthStats.hpp"
 
 namespace __jni_impl::android::os::health
 {

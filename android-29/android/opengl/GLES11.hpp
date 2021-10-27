@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "GLES10.hpp"
+#include "./GLES10.hpp"
 
 namespace __jni_impl::java::nio
 {

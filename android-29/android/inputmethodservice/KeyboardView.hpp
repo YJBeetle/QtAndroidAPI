@@ -69,8 +69,8 @@ namespace __jni_impl::android::inputmethodservice
 
 #include "../content/Context.hpp"
 #include "../graphics/Canvas.hpp"
-#include "Keyboard.hpp"
-#include "Keyboard_Key.hpp"
+#include "./Keyboard.hpp"
+#include "./Keyboard_Key.hpp"
 #include "../view/MotionEvent.hpp"
 #include "../view/View.hpp"
 

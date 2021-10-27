@@ -39,7 +39,7 @@ namespace __jni_impl::java::text
 } // namespace __jni_impl::java::text
 
 #include "../lang/StringBuffer.hpp"
-#include "RuleBasedCollator.hpp"
+#include "./RuleBasedCollator.hpp"
 
 namespace __jni_impl::java::text
 {

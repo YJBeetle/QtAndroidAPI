@@ -34,7 +34,7 @@ namespace __jni_impl::android::view::accessibility
 } // namespace __jni_impl::android::view::accessibility
 
 #include "../../os/Bundle.hpp"
-#include "AccessibilityNodeInfo.hpp"
+#include "./AccessibilityNodeInfo.hpp"
 
 namespace __jni_impl::android::view::accessibility
 {

@@ -37,7 +37,7 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "MediaFormat.hpp"
+#include "./MediaFormat.hpp"
 #include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::media

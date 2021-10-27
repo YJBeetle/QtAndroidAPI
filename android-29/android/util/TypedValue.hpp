@@ -84,7 +84,7 @@ namespace __jni_impl::android::util
 	};
 } // namespace __jni_impl::android::util
 
-#include "DisplayMetrics.hpp"
+#include "./DisplayMetrics.hpp"
 
 namespace __jni_impl::android::util
 {

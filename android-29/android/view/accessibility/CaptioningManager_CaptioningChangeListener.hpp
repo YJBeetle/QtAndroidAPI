@@ -29,7 +29,7 @@ namespace __jni_impl::android::view::accessibility
 	};
 } // namespace __jni_impl::android::view::accessibility
 
-#include "CaptioningManager_CaptionStyle.hpp"
+#include "./CaptioningManager_CaptionStyle.hpp"
 #include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::view::accessibility

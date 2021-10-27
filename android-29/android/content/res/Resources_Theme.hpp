@@ -47,8 +47,8 @@ namespace __jni_impl::android::content::res
 	};
 } // namespace __jni_impl::android::content::res
 
-#include "Resources.hpp"
-#include "TypedArray.hpp"
+#include "./Resources.hpp"
+#include "./TypedArray.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../util/TypedValue.hpp"
 

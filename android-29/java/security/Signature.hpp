@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "SignatureSpi.hpp"
+#include "./SignatureSpi.hpp"
 
 namespace __jni_impl::java::nio
 {
@@ -71,11 +71,11 @@ namespace __jni_impl::java::security
 } // namespace __jni_impl::java::security
 
 #include "../nio/ByteBuffer.hpp"
-#include "AlgorithmParameters.hpp"
-#include "Provider.hpp"
-#include "Provider_Service.hpp"
-#include "SecureRandom.hpp"
-#include "cert/Certificate.hpp"
+#include "./AlgorithmParameters.hpp"
+#include "./Provider.hpp"
+#include "./Provider_Service.hpp"
+#include "./SecureRandom.hpp"
+#include "./cert/Certificate.hpp"
 
 namespace __jni_impl::java::security
 {

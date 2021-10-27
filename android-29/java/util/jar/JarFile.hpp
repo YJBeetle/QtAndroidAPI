@@ -81,8 +81,8 @@ namespace __jni_impl::java::util::jar
 #include "../../lang/ref/SoftReference.hpp"
 #include "../../net/URL.hpp"
 #include "../../security/CodeSource.hpp"
-#include "JarEntry.hpp"
-#include "Manifest.hpp"
+#include "./JarEntry.hpp"
+#include "./Manifest.hpp"
 #include "../zip/ZipEntry.hpp"
 
 namespace __jni_impl::java::util::jar

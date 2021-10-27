@@ -30,7 +30,7 @@ namespace __jni_impl::android::media::tv
 	};
 } // namespace __jni_impl::android::media::tv
 
-#include "TvInputInfo.hpp"
+#include "./TvInputInfo.hpp"
 
 namespace __jni_impl::android::media::tv
 {

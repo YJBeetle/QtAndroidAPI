@@ -115,13 +115,13 @@ namespace __jni_impl::android::accessibilityservice
 	};
 } // namespace __jni_impl::android::accessibilityservice
 
-#include "AccessibilityButtonController.hpp"
-#include "AccessibilityService_GestureResultCallback.hpp"
-#include "AccessibilityService_MagnificationController.hpp"
-#include "AccessibilityService_SoftKeyboardController.hpp"
-#include "AccessibilityServiceInfo.hpp"
-#include "FingerprintGestureController.hpp"
-#include "GestureDescription.hpp"
+#include "./AccessibilityButtonController.hpp"
+#include "./AccessibilityService_GestureResultCallback.hpp"
+#include "./AccessibilityService_MagnificationController.hpp"
+#include "./AccessibilityService_SoftKeyboardController.hpp"
+#include "./AccessibilityServiceInfo.hpp"
+#include "./FingerprintGestureController.hpp"
+#include "./GestureDescription.hpp"
 #include "../content/Intent.hpp"
 #include "../os/Handler.hpp"
 #include "../view/KeyEvent.hpp"

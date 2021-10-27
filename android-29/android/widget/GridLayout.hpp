@@ -90,9 +90,9 @@ namespace __jni_impl::android::widget
 #include "../content/Context.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
-#include "GridLayout_Alignment.hpp"
-#include "GridLayout_LayoutParams.hpp"
-#include "GridLayout_Spec.hpp"
+#include "./GridLayout_Alignment.hpp"
+#include "./GridLayout_LayoutParams.hpp"
+#include "./GridLayout_Spec.hpp"
 
 namespace __jni_impl::android::widget
 {

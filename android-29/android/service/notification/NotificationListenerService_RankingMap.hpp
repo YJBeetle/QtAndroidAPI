@@ -33,7 +33,7 @@ namespace __jni_impl::android::service::notification
 } // namespace __jni_impl::android::service::notification
 
 #include "../../os/Parcel.hpp"
-#include "NotificationListenerService_Ranking.hpp"
+#include "./NotificationListenerService_Ranking.hpp"
 
 namespace __jni_impl::android::service::notification
 {

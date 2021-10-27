@@ -3,8 +3,8 @@
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
-#include "AdapterView.hpp"
-#include "AdapterViewAnimator.hpp"
+#include "./AdapterView.hpp"
+#include "./AdapterViewAnimator.hpp"
 
 namespace __jni_impl::android::content
 {

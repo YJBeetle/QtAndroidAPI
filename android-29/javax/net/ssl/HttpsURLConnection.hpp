@@ -47,7 +47,7 @@ namespace __jni_impl::javax::net::ssl
 
 #include "../../../java/net/URL.hpp"
 #include "../../../java/util/Optional.hpp"
-#include "SSLSocketFactory.hpp"
+#include "./SSLSocketFactory.hpp"
 
 namespace __jni_impl::javax::net::ssl
 {

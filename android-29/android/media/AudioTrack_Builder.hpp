@@ -37,9 +37,9 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "AudioAttributes.hpp"
-#include "AudioFormat.hpp"
-#include "AudioTrack.hpp"
+#include "./AudioAttributes.hpp"
+#include "./AudioFormat.hpp"
+#include "./AudioTrack.hpp"
 
 namespace __jni_impl::android::media
 {

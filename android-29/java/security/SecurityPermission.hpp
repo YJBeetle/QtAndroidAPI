@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Permission.hpp"
-#include "BasicPermission.hpp"
+#include "./Permission.hpp"
+#include "./BasicPermission.hpp"
 
 
 namespace __jni_impl::java::security

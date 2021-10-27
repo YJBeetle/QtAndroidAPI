@@ -42,9 +42,9 @@ namespace __jni_impl::java::util
 	};
 } // namespace __jni_impl::java::util
 
-#include "Date.hpp"
-#include "TimerTask.hpp"
-#include "concurrent/atomic/AtomicInteger.hpp"
+#include "./Date.hpp"
+#include "./TimerTask.hpp"
+#include "./concurrent/atomic/AtomicInteger.hpp"
 
 namespace __jni_impl::java::util
 {

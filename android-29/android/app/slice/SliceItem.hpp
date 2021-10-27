@@ -67,7 +67,7 @@ namespace __jni_impl::android::app::slice
 
 #include "../PendingIntent.hpp"
 #include "../RemoteInput.hpp"
-#include "Slice.hpp"
+#include "./Slice.hpp"
 #include "../../graphics/drawable/Icon.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"

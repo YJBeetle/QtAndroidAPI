@@ -35,7 +35,7 @@ namespace __jni_impl::android::view
 
 #include "../graphics/Canvas.hpp"
 #include "../graphics/Point.hpp"
-#include "View.hpp"
+#include "./View.hpp"
 
 namespace __jni_impl::android::view
 {

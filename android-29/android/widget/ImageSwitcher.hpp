@@ -3,9 +3,9 @@
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
-#include "FrameLayout.hpp"
-#include "ViewAnimator.hpp"
-#include "ViewSwitcher.hpp"
+#include "./FrameLayout.hpp"
+#include "./ViewAnimator.hpp"
+#include "./ViewSwitcher.hpp"
 
 namespace __jni_impl::android::content
 {

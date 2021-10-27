@@ -59,7 +59,7 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "MediaFormat.hpp"
+#include "./MediaFormat.hpp"
 
 namespace __jni_impl::android::media
 {

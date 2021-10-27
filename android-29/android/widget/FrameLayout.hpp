@@ -43,7 +43,7 @@ namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
-#include "FrameLayout_LayoutParams.hpp"
+#include "./FrameLayout_LayoutParams.hpp"
 
 namespace __jni_impl::android::widget
 {

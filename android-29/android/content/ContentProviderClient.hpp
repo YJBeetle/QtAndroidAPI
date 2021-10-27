@@ -90,9 +90,9 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "ContentProvider.hpp"
-#include "ContentValues.hpp"
-#include "res/AssetFileDescriptor.hpp"
+#include "./ContentProvider.hpp"
+#include "./ContentValues.hpp"
+#include "./res/AssetFileDescriptor.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/CancellationSignal.hpp"

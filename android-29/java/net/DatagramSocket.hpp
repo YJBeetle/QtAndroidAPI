@@ -82,11 +82,11 @@ namespace __jni_impl::java::net
 } // namespace __jni_impl::java::net
 
 #include "../io/IOException.hpp"
-#include "DatagramPacket.hpp"
-#include "DatagramSocketImpl.hpp"
-#include "InetAddress.hpp"
-#include "SocketAddress.hpp"
-#include "SocketException.hpp"
+#include "./DatagramPacket.hpp"
+#include "./DatagramSocketImpl.hpp"
+#include "./InetAddress.hpp"
+#include "./SocketAddress.hpp"
+#include "./SocketException.hpp"
 #include "../nio/channels/DatagramChannel.hpp"
 
 namespace __jni_impl::java::net

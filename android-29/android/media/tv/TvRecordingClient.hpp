@@ -48,7 +48,7 @@ namespace __jni_impl::android::media::tv
 } // namespace __jni_impl::android::media::tv
 
 #include "../../content/Context.hpp"
-#include "TvRecordingClient_RecordingCallback.hpp"
+#include "./TvRecordingClient_RecordingCallback.hpp"
 #include "../../net/Uri.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Handler.hpp"

@@ -99,7 +99,7 @@ namespace __jni_impl::android::app::admin
 	};
 } // namespace __jni_impl::android::app::admin
 
-#include "DevicePolicyManager.hpp"
+#include "./DevicePolicyManager.hpp"
 #include "../../content/ComponentName.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/Intent.hpp"

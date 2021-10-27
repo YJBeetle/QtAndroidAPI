@@ -46,8 +46,8 @@ namespace __jni_impl::android::gesture
 	};
 } // namespace __jni_impl::android::gesture
 
-#include "Gesture.hpp"
-#include "GestureStore.hpp"
+#include "./Gesture.hpp"
+#include "./GestureStore.hpp"
 #include "../../java/util/ArrayList.hpp"
 
 namespace __jni_impl::android::gesture

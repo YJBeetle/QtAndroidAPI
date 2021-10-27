@@ -42,8 +42,8 @@ namespace __jni_impl::android::content::res
 	};
 } // namespace __jni_impl::android::content::res
 
-#include "Resources.hpp"
-#include "Resources_Theme.hpp"
+#include "./Resources.hpp"
+#include "./Resources_Theme.hpp"
 #include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::content::res

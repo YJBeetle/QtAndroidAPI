@@ -56,10 +56,10 @@ namespace __jni_impl::android::media
 
 #include "../app/PendingIntent.hpp"
 #include "../content/Context.hpp"
-#include "MediaSession2_ControllerInfo.hpp"
-#include "MediaSession2_SessionCallback.hpp"
-#include "Session2Command.hpp"
-#include "Session2Token.hpp"
+#include "./MediaSession2_ControllerInfo.hpp"
+#include "./MediaSession2_SessionCallback.hpp"
+#include "./Session2Command.hpp"
+#include "./Session2Token.hpp"
 #include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::media

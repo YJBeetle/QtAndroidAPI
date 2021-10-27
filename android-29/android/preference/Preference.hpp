@@ -133,8 +133,8 @@ namespace __jni_impl::android::preference
 #include "../content/res/TypedArray.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../os/Bundle.hpp"
-#include "PreferenceGroup.hpp"
-#include "PreferenceManager.hpp"
+#include "./PreferenceGroup.hpp"
+#include "./PreferenceManager.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 

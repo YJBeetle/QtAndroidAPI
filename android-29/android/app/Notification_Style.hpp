@@ -31,8 +31,8 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Notification.hpp"
-#include "Notification_Builder.hpp"
+#include "./Notification.hpp"
+#include "./Notification_Builder.hpp"
 #include "../widget/RemoteViews.hpp"
 
 namespace __jni_impl::android::app

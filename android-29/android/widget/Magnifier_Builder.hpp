@@ -40,7 +40,7 @@ namespace __jni_impl::android::widget
 
 #include "../graphics/drawable/Drawable.hpp"
 #include "../view/View.hpp"
-#include "Magnifier.hpp"
+#include "./Magnifier.hpp"
 
 namespace __jni_impl::android::widget
 {

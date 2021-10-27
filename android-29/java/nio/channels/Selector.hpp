@@ -38,8 +38,8 @@ namespace __jni_impl::java::nio::channels
 	};
 } // namespace __jni_impl::java::nio::channels
 
-#include "SelectionKey.hpp"
-#include "spi/SelectorProvider.hpp"
+#include "./SelectionKey.hpp"
+#include "./spi/SelectorProvider.hpp"
 
 namespace __jni_impl::java::nio::channels
 {

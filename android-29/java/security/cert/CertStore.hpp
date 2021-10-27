@@ -43,7 +43,7 @@ namespace __jni_impl::java::security::cert
 
 #include "../NoSuchAlgorithmException.hpp"
 #include "../Provider.hpp"
-#include "CertStoreSpi.hpp"
+#include "./CertStoreSpi.hpp"
 
 namespace __jni_impl::java::security::cert
 {

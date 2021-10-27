@@ -41,7 +41,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Person_Builder.hpp"
+#include "./Person_Builder.hpp"
 #include "../graphics/drawable/Icon.hpp"
 #include "../os/Parcel.hpp"
 

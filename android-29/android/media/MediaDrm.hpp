@@ -133,9 +133,9 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "MediaDrm_CryptoSession.hpp"
-#include "MediaDrm_KeyRequest.hpp"
-#include "MediaDrm_ProvisionRequest.hpp"
+#include "./MediaDrm_CryptoSession.hpp"
+#include "./MediaDrm_KeyRequest.hpp"
+#include "./MediaDrm_ProvisionRequest.hpp"
 #include "../os/Handler.hpp"
 #include "../os/PersistableBundle.hpp"
 #include "../../java/util/HashMap.hpp"

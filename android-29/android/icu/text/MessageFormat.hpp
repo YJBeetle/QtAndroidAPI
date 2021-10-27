@@ -2,7 +2,7 @@
 
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/text/Format.hpp"
-#include "UFormat.hpp"
+#include "./UFormat.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -98,7 +98,7 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "MessagePattern_ApostropheMode.hpp"
+#include "./MessagePattern_ApostropheMode.hpp"
 #include "../util/ULocale.hpp"
 #include "../../../java/lang/StringBuffer.hpp"
 #include "../../../java/text/FieldPosition.hpp"

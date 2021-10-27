@@ -57,11 +57,11 @@ namespace __jni_impl::java::util::logging
 } // namespace __jni_impl::java::util::logging
 
 #include "../../lang/Exception.hpp"
-#include "ErrorManager.hpp"
-#include "Formatter.hpp"
-#include "Level.hpp"
-#include "LogManager.hpp"
-#include "LogRecord.hpp"
+#include "./ErrorManager.hpp"
+#include "./Formatter.hpp"
+#include "./Level.hpp"
+#include "./LogManager.hpp"
+#include "./LogRecord.hpp"
 
 namespace __jni_impl::java::util::logging
 {

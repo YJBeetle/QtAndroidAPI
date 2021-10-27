@@ -42,8 +42,8 @@ namespace __jni_impl::android::media
 } // namespace __jni_impl::android::media
 
 #include "../graphics/Bitmap.hpp"
-#include "MediaMetadata.hpp"
-#include "Rating.hpp"
+#include "./MediaMetadata.hpp"
+#include "./Rating.hpp"
 
 namespace __jni_impl::android::media
 {

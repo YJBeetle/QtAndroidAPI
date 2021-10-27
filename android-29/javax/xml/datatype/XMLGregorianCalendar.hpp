@@ -89,7 +89,7 @@ namespace __jni_impl::javax::xml::datatype
 #include "../../../java/util/GregorianCalendar.hpp"
 #include "../../../java/util/Locale.hpp"
 #include "../../../java/util/TimeZone.hpp"
-#include "Duration.hpp"
+#include "./Duration.hpp"
 #include "../namespace/QName.hpp"
 
 namespace __jni_impl::javax::xml::datatype

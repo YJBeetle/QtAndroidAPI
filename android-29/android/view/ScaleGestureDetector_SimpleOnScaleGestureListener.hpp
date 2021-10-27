@@ -24,7 +24,7 @@ namespace __jni_impl::android::view
 	};
 } // namespace __jni_impl::android::view
 
-#include "ScaleGestureDetector.hpp"
+#include "./ScaleGestureDetector.hpp"
 
 namespace __jni_impl::android::view
 {

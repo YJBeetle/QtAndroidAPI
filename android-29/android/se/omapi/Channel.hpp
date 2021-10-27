@@ -28,7 +28,7 @@ namespace __jni_impl::android::se::omapi
 	};
 } // namespace __jni_impl::android::se::omapi
 
-#include "Session.hpp"
+#include "./Session.hpp"
 
 namespace __jni_impl::android::se::omapi
 {

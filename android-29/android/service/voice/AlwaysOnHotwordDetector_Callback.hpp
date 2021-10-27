@@ -26,7 +26,7 @@ namespace __jni_impl::android::service::voice
 	};
 } // namespace __jni_impl::android::service::voice
 
-#include "AlwaysOnHotwordDetector_EventPayload.hpp"
+#include "./AlwaysOnHotwordDetector_EventPayload.hpp"
 
 namespace __jni_impl::android::service::voice
 {

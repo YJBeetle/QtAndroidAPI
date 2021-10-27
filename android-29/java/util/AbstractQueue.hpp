@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "AbstractCollection.hpp"
+#include "./AbstractCollection.hpp"
 
 
 namespace __jni_impl::java::util

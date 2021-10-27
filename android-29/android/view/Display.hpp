@@ -91,9 +91,9 @@ namespace __jni_impl::android::view
 #include "../graphics/Point.hpp"
 #include "../graphics/Rect.hpp"
 #include "../util/DisplayMetrics.hpp"
-#include "Display_HdrCapabilities.hpp"
-#include "Display_Mode.hpp"
-#include "DisplayCutout.hpp"
+#include "./Display_HdrCapabilities.hpp"
+#include "./Display_Mode.hpp"
+#include "./DisplayCutout.hpp"
 
 namespace __jni_impl::android::view
 {

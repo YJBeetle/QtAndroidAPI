@@ -44,7 +44,7 @@ namespace __jni_impl::android::printservice
 
 #include "../os/CancellationSignal.hpp"
 #include "../print/PrinterId.hpp"
-#include "CustomPrinterIconCallback.hpp"
+#include "./CustomPrinterIconCallback.hpp"
 
 namespace __jni_impl::android::printservice
 {

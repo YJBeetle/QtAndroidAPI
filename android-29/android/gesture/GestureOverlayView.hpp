@@ -96,7 +96,7 @@ namespace __jni_impl::android::gesture
 } // namespace __jni_impl::android::gesture
 
 #include "../content/Context.hpp"
-#include "Gesture.hpp"
+#include "./Gesture.hpp"
 #include "../graphics/Canvas.hpp"
 #include "../graphics/Path.hpp"
 #include "../view/MotionEvent.hpp"

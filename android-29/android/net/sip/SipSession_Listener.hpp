@@ -42,8 +42,8 @@ namespace __jni_impl::android::net::sip
 	};
 } // namespace __jni_impl::android::net::sip
 
-#include "SipProfile.hpp"
-#include "SipSession.hpp"
+#include "./SipProfile.hpp"
+#include "./SipSession.hpp"
 
 namespace __jni_impl::android::net::sip
 {

@@ -35,7 +35,7 @@ namespace __jni_impl::javax::crypto
 } // namespace __jni_impl::javax::crypto
 
 #include "../../java/io/InputStream.hpp"
-#include "Cipher.hpp"
+#include "./Cipher.hpp"
 
 namespace __jni_impl::javax::crypto
 {

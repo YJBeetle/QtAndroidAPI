@@ -45,7 +45,7 @@ namespace __jni_impl::android::text
 } // namespace __jni_impl::android::text
 
 #include "../graphics/Rect.hpp"
-#include "PrecomputedText_Params.hpp"
+#include "./PrecomputedText_Params.hpp"
 
 namespace __jni_impl::android::text
 {

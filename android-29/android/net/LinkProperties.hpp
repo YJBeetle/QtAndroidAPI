@@ -54,8 +54,8 @@ namespace __jni_impl::android::net
 	};
 } // namespace __jni_impl::android::net
 
-#include "ProxyInfo.hpp"
-#include "RouteInfo.hpp"
+#include "./ProxyInfo.hpp"
+#include "./RouteInfo.hpp"
 #include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::net

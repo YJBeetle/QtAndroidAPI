@@ -77,7 +77,7 @@ namespace __jni_impl::android::app::slice
 } // namespace __jni_impl::android::app::slice
 
 #include "../PendingIntent.hpp"
-#include "Slice.hpp"
+#include "./Slice.hpp"
 #include "../../content/ContentValues.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/Intent.hpp"

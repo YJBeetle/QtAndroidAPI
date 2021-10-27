@@ -28,8 +28,8 @@ namespace __jni_impl::android::media::midi
 	};
 } // namespace __jni_impl::android::media::midi
 
-#include "MidiDeviceInfo.hpp"
-#include "MidiDeviceStatus.hpp"
+#include "./MidiDeviceInfo.hpp"
+#include "./MidiDeviceStatus.hpp"
 
 namespace __jni_impl::android::media::midi
 {

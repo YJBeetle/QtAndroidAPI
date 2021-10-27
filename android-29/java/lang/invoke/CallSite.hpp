@@ -33,9 +33,9 @@ namespace __jni_impl::java::lang::invoke
 	};
 } // namespace __jni_impl::java::lang::invoke
 
-#include "MethodHandle.hpp"
-#include "MethodType.hpp"
-#include "WrongMethodTypeException.hpp"
+#include "./MethodHandle.hpp"
+#include "./MethodType.hpp"
+#include "./WrongMethodTypeException.hpp"
 
 namespace __jni_impl::java::lang::invoke
 {

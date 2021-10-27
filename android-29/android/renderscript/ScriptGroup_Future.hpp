@@ -25,8 +25,8 @@ namespace __jni_impl::android::renderscript
 	};
 } // namespace __jni_impl::android::renderscript
 
-#include "Script_FieldID.hpp"
-#include "ScriptGroup_Closure.hpp"
+#include "./Script_FieldID.hpp"
+#include "./ScriptGroup_Closure.hpp"
 
 namespace __jni_impl::android::renderscript
 {

@@ -61,10 +61,10 @@ namespace __jni_impl::android::telecom
 } // namespace __jni_impl::android::telecom
 
 #include "../os/Bundle.hpp"
-#include "Call.hpp"
-#include "Call_Details.hpp"
-#include "Call_RttCall.hpp"
-#include "InCallService_VideoCall.hpp"
+#include "./Call.hpp"
+#include "./Call_Details.hpp"
+#include "./Call_RttCall.hpp"
+#include "./InCallService_VideoCall.hpp"
 
 namespace __jni_impl::android::telecom
 {

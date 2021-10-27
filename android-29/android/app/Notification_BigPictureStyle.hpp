@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Notification_Style.hpp"
+#include "./Notification_Style.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -38,7 +38,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Notification_Builder.hpp"
+#include "./Notification_Builder.hpp"
 #include "../graphics/Bitmap.hpp"
 #include "../graphics/drawable/Icon.hpp"
 

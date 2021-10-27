@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "ContactsContract_StatusUpdates.hpp"
+#include "./ContactsContract_StatusUpdates.hpp"
 
 
 namespace __jni_impl::android::provider

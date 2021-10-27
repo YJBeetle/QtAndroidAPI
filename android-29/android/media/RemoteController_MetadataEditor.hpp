@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "MediaMetadataEditor.hpp"
+#include "./MediaMetadataEditor.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -23,7 +23,7 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "RemoteController.hpp"
+#include "./RemoteController.hpp"
 
 namespace __jni_impl::android::media
 {

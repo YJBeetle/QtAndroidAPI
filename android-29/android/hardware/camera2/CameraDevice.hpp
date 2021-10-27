@@ -59,11 +59,11 @@ namespace __jni_impl::android::hardware::camera2
 	};
 } // namespace __jni_impl::android::hardware::camera2
 
-#include "CameraCaptureSession_StateCallback.hpp"
-#include "CaptureRequest_Builder.hpp"
-#include "TotalCaptureResult.hpp"
-#include "params/InputConfiguration.hpp"
-#include "params/SessionConfiguration.hpp"
+#include "./CameraCaptureSession_StateCallback.hpp"
+#include "./CaptureRequest_Builder.hpp"
+#include "./TotalCaptureResult.hpp"
+#include "./params/InputConfiguration.hpp"
+#include "./params/SessionConfiguration.hpp"
 #include "../../os/Handler.hpp"
 
 namespace __jni_impl::android::hardware::camera2

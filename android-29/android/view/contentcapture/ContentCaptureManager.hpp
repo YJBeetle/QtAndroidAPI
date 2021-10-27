@@ -31,7 +31,7 @@ namespace __jni_impl::android::view::contentcapture
 } // namespace __jni_impl::android::view::contentcapture
 
 #include "../../content/ComponentName.hpp"
-#include "DataRemovalRequest.hpp"
+#include "./DataRemovalRequest.hpp"
 
 namespace __jni_impl::android::view::contentcapture
 {

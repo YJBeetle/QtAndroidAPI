@@ -97,7 +97,7 @@ namespace __jni_impl::android::widget
 #include "../net/Uri.hpp"
 #include "../view/KeyEvent.hpp"
 #include "../view/MotionEvent.hpp"
-#include "MediaController.hpp"
+#include "./MediaController.hpp"
 #include "../../java/io/InputStream.hpp"
 
 namespace __jni_impl::android::widget

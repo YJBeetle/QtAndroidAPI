@@ -3,7 +3,7 @@
 #include "../../__JniBaseClass.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
-#include "Service.hpp"
+#include "./Service.hpp"
 
 namespace __jni_impl::android::content
 {

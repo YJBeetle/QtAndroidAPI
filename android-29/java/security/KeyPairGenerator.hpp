@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "KeyPairGeneratorSpi.hpp"
+#include "./KeyPairGeneratorSpi.hpp"
 
 namespace __jni_impl::java::security
 {
@@ -44,9 +44,9 @@ namespace __jni_impl::java::security
 	};
 } // namespace __jni_impl::java::security
 
-#include "KeyPair.hpp"
-#include "Provider.hpp"
-#include "SecureRandom.hpp"
+#include "./KeyPair.hpp"
+#include "./Provider.hpp"
+#include "./SecureRandom.hpp"
 
 namespace __jni_impl::java::security
 {

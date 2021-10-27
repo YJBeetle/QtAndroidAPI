@@ -88,11 +88,11 @@ namespace __jni_impl::android::content::pm
 } // namespace __jni_impl::android::content::pm
 
 #include "../IntentSender.hpp"
-#include "PackageInstaller_Session.hpp"
-#include "PackageInstaller_SessionCallback.hpp"
-#include "PackageInstaller_SessionInfo.hpp"
-#include "PackageInstaller_SessionParams.hpp"
-#include "VersionedPackage.hpp"
+#include "./PackageInstaller_Session.hpp"
+#include "./PackageInstaller_SessionCallback.hpp"
+#include "./PackageInstaller_SessionInfo.hpp"
+#include "./PackageInstaller_SessionParams.hpp"
+#include "./VersionedPackage.hpp"
 #include "../../graphics/Bitmap.hpp"
 #include "../../os/Handler.hpp"
 

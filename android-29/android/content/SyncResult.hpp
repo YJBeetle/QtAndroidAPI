@@ -45,7 +45,7 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "SyncStats.hpp"
+#include "./SyncStats.hpp"
 #include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::content

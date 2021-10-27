@@ -58,7 +58,7 @@ namespace __jni_impl::android::view::textservice
 #include "../../content/pm/ServiceInfo.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../os/Parcel.hpp"
-#include "SpellCheckerSubtype.hpp"
+#include "./SpellCheckerSubtype.hpp"
 
 namespace __jni_impl::android::view::textservice
 {

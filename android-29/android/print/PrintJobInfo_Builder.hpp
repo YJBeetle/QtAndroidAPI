@@ -33,8 +33,8 @@ namespace __jni_impl::android::print
 	};
 } // namespace __jni_impl::android::print
 
-#include "PrintAttributes.hpp"
-#include "PrintJobInfo.hpp"
+#include "./PrintAttributes.hpp"
+#include "./PrintJobInfo.hpp"
 
 namespace __jni_impl::android::print
 {

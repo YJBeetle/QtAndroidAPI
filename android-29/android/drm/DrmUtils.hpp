@@ -22,7 +22,7 @@ namespace __jni_impl::android::drm
 	};
 } // namespace __jni_impl::android::drm
 
-#include "DrmUtils_ExtendedMetadataParser.hpp"
+#include "./DrmUtils_ExtendedMetadataParser.hpp"
 
 namespace __jni_impl::android::drm
 {

@@ -193,7 +193,7 @@ namespace __jni_impl::android::icu::util
 	};
 } // namespace __jni_impl::android::icu::util
 
-#include "ULocale_Category.hpp"
+#include "./ULocale_Category.hpp"
 #include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::icu::util

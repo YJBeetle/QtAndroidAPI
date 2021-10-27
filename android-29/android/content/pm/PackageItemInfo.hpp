@@ -50,7 +50,7 @@ namespace __jni_impl::android::content::pm
 	};
 } // namespace __jni_impl::android::content::pm
 
-#include "PackageManager.hpp"
+#include "./PackageManager.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"

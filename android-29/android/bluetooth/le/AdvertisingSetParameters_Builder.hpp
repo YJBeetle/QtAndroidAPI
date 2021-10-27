@@ -31,7 +31,7 @@ namespace __jni_impl::android::bluetooth::le
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
-#include "AdvertisingSetParameters.hpp"
+#include "./AdvertisingSetParameters.hpp"
 
 namespace __jni_impl::android::bluetooth::le
 {

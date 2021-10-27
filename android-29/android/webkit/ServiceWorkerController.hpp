@@ -28,8 +28,8 @@ namespace __jni_impl::android::webkit
 	};
 } // namespace __jni_impl::android::webkit
 
-#include "ServiceWorkerClient.hpp"
-#include "ServiceWorkerWebSettings.hpp"
+#include "./ServiceWorkerClient.hpp"
+#include "./ServiceWorkerWebSettings.hpp"
 
 namespace __jni_impl::android::webkit
 {

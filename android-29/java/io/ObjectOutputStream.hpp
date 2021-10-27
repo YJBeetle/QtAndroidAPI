@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "OutputStream.hpp"
+#include "./OutputStream.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -68,10 +68,10 @@ namespace __jni_impl::java::io
 	};
 } // namespace __jni_impl::java::io
 
-#include "IOException.hpp"
-#include "ObjectOutputStream_PutField.hpp"
-#include "ObjectStreamClass.hpp"
-#include "OutputStream.hpp"
+#include "./IOException.hpp"
+#include "./ObjectOutputStream_PutField.hpp"
+#include "./ObjectStreamClass.hpp"
+#include "./OutputStream.hpp"
 #include "../lang/Boolean.hpp"
 #include "../lang/Enum.hpp"
 

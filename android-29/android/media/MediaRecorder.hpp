@@ -116,10 +116,10 @@ namespace __jni_impl::android::media
 } // namespace __jni_impl::android::media
 
 #include "../hardware/Camera.hpp"
-#include "AudioDeviceInfo.hpp"
-#include "AudioManager_AudioRecordingCallback.hpp"
-#include "AudioRecordingConfiguration.hpp"
-#include "CamcorderProfile.hpp"
+#include "./AudioDeviceInfo.hpp"
+#include "./AudioManager_AudioRecordingCallback.hpp"
+#include "./AudioRecordingConfiguration.hpp"
+#include "./CamcorderProfile.hpp"
 #include "../os/Handler.hpp"
 #include "../os/PersistableBundle.hpp"
 #include "../view/Surface.hpp"

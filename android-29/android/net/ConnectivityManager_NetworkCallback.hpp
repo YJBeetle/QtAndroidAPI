@@ -36,9 +36,9 @@ namespace __jni_impl::android::net
 	};
 } // namespace __jni_impl::android::net
 
-#include "LinkProperties.hpp"
-#include "Network.hpp"
-#include "NetworkCapabilities.hpp"
+#include "./LinkProperties.hpp"
+#include "./Network.hpp"
+#include "./NetworkCapabilities.hpp"
 
 namespace __jni_impl::android::net
 {

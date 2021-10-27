@@ -44,7 +44,7 @@ namespace __jni_impl::android::media::projection
 
 #include "../../hardware/display/VirtualDisplay.hpp"
 #include "../../hardware/display/VirtualDisplay_Callback.hpp"
-#include "MediaProjection_Callback.hpp"
+#include "./MediaProjection_Callback.hpp"
 #include "../../os/Handler.hpp"
 #include "../../view/Surface.hpp"
 

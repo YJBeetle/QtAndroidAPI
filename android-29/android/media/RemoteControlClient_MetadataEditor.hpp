@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "MediaMetadataEditor.hpp"
+#include "./MediaMetadataEditor.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -40,8 +40,8 @@ namespace __jni_impl::android::media
 } // namespace __jni_impl::android::media
 
 #include "../graphics/Bitmap.hpp"
-#include "MediaMetadataEditor.hpp"
-#include "RemoteControlClient.hpp"
+#include "./MediaMetadataEditor.hpp"
+#include "./RemoteControlClient.hpp"
 
 namespace __jni_impl::android::media
 {

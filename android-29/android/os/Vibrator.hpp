@@ -35,7 +35,7 @@ namespace __jni_impl::android::os
 } // namespace __jni_impl::android::os
 
 #include "../media/AudioAttributes.hpp"
-#include "VibrationEffect.hpp"
+#include "./VibrationEffect.hpp"
 
 namespace __jni_impl::android::os
 {

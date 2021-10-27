@@ -75,8 +75,8 @@ namespace __jni_impl::java::time::chrono
 #include "../Clock.hpp"
 #include "../LocalTime.hpp"
 #include "../ZoneId.hpp"
-#include "HijrahChronology.hpp"
-#include "HijrahEra.hpp"
+#include "./HijrahChronology.hpp"
+#include "./HijrahEra.hpp"
 #include "../temporal/ValueRange.hpp"
 
 namespace __jni_impl::java::time::chrono

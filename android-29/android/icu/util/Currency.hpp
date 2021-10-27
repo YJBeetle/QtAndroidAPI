@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "MeasureUnit.hpp"
+#include "./MeasureUnit.hpp"
 
 namespace __jni_impl::android::icu::util
 {
@@ -74,8 +74,8 @@ namespace __jni_impl::android::icu::util
 	};
 } // namespace __jni_impl::android::icu::util
 
-#include "Currency_CurrencyUsage.hpp"
-#include "ULocale.hpp"
+#include "./Currency_CurrencyUsage.hpp"
+#include "./ULocale.hpp"
 #include "../../../java/util/Currency.hpp"
 #include "../../../java/util/Date.hpp"
 #include "../../../java/util/Locale.hpp"

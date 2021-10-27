@@ -159,11 +159,11 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Activity.hpp"
-#include "Application.hpp"
-#include "Instrumentation_ActivityMonitor.hpp"
-#include "Instrumentation_ActivityResult.hpp"
-#include "UiAutomation.hpp"
+#include "./Activity.hpp"
+#include "./Application.hpp"
+#include "./Instrumentation_ActivityMonitor.hpp"
+#include "./Instrumentation_ActivityResult.hpp"
+#include "./UiAutomation.hpp"
 #include "../content/ComponentName.hpp"
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"

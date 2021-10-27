@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "SNIServerName.hpp"
+#include "./SNIServerName.hpp"
 
 namespace __jni_impl::javax::net::ssl
 {
@@ -30,7 +30,7 @@ namespace __jni_impl::javax::net::ssl
 	};
 } // namespace __jni_impl::javax::net::ssl
 
-#include "SNIMatcher.hpp"
+#include "./SNIMatcher.hpp"
 
 namespace __jni_impl::javax::net::ssl
 {

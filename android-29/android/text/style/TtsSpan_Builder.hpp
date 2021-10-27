@@ -29,7 +29,7 @@ namespace __jni_impl::android::text::style
 	};
 } // namespace __jni_impl::android::text::style
 
-#include "TtsSpan.hpp"
+#include "./TtsSpan.hpp"
 
 namespace __jni_impl::android::text::style
 {

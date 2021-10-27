@@ -34,7 +34,7 @@ namespace __jni_impl::android::view
 
 #include "../content/Context.hpp"
 #include "../graphics/drawable/Drawable.hpp"
-#include "View.hpp"
+#include "./View.hpp"
 
 namespace __jni_impl::android::view
 {

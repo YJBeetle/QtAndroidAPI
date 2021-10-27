@@ -128,11 +128,11 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "AutomaticZenRule.hpp"
-#include "Notification.hpp"
-#include "NotificationChannel.hpp"
-#include "NotificationChannelGroup.hpp"
-#include "NotificationManager_Policy.hpp"
+#include "./AutomaticZenRule.hpp"
+#include "./Notification.hpp"
+#include "./NotificationChannel.hpp"
+#include "./NotificationChannelGroup.hpp"
+#include "./NotificationManager_Policy.hpp"
 #include "../content/ComponentName.hpp"
 #include "../content/Context.hpp"
 #include "../os/Handler.hpp"

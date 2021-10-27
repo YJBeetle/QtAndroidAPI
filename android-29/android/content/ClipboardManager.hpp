@@ -37,8 +37,8 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "ClipData.hpp"
-#include "ClipDescription.hpp"
+#include "./ClipData.hpp"
+#include "./ClipDescription.hpp"
 
 namespace __jni_impl::android::content
 {

@@ -39,8 +39,8 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Canvas.hpp"
-#include "Matrix.hpp"
+#include "./Canvas.hpp"
+#include "./Matrix.hpp"
 
 namespace __jni_impl::android::graphics
 {

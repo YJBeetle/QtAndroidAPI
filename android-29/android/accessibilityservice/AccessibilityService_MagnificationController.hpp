@@ -39,7 +39,7 @@ namespace __jni_impl::android::accessibilityservice
 	};
 } // namespace __jni_impl::android::accessibilityservice
 
-#include "AccessibilityService.hpp"
+#include "./AccessibilityService.hpp"
 #include "../graphics/Region.hpp"
 #include "../os/Handler.hpp"
 

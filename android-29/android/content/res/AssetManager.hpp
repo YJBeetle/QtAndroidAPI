@@ -47,7 +47,7 @@ namespace __jni_impl::android::content::res
 	};
 } // namespace __jni_impl::android::content::res
 
-#include "AssetFileDescriptor.hpp"
+#include "./AssetFileDescriptor.hpp"
 #include "../../../java/io/InputStream.hpp"
 
 namespace __jni_impl::android::content::res

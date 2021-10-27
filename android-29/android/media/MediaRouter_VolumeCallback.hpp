@@ -23,7 +23,7 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "MediaRouter_RouteInfo.hpp"
+#include "./MediaRouter_RouteInfo.hpp"
 
 namespace __jni_impl::android::media
 {

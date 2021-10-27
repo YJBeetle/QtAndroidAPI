@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Dialog.hpp"
+#include "./Dialog.hpp"
 
 namespace __jni_impl::android::content
 {

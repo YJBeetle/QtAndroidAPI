@@ -32,7 +32,7 @@ namespace __jni_impl::android::view::textclassifier
 } // namespace __jni_impl::android::view::textclassifier
 
 #include "../../os/Bundle.hpp"
-#include "TextLinks.hpp"
+#include "./TextLinks.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {

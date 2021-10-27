@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "ContentProvider.hpp"
+#include "./ContentProvider.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -37,7 +37,7 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "ContentValues.hpp"
+#include "./ContentValues.hpp"
 #include "../net/Uri.hpp"
 
 namespace __jni_impl::android::content

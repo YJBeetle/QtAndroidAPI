@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "Drawable.hpp"
+#include "./Drawable.hpp"
 
 namespace __jni_impl::android::graphics
 {

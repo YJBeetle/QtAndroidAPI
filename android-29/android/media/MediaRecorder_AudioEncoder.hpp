@@ -29,7 +29,7 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "MediaRecorder.hpp"
+#include "./MediaRecorder.hpp"
 
 namespace __jni_impl::android::media
 {

@@ -30,7 +30,7 @@ namespace __jni_impl::android::app::usage
 	};
 } // namespace __jni_impl::android::app::usage
 
-#include "UsageEvents_Event.hpp"
+#include "./UsageEvents_Event.hpp"
 #include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::app::usage

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Preference.hpp"
+#include "./Preference.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -45,7 +45,7 @@ namespace __jni_impl::android::preference
 
 #include "../content/Context.hpp"
 #include "../os/Bundle.hpp"
-#include "Preference.hpp"
+#include "./Preference.hpp"
 
 namespace __jni_impl::android::preference
 {

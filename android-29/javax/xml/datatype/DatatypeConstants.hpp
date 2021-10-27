@@ -61,7 +61,7 @@ namespace __jni_impl::javax::xml::datatype
 	};
 } // namespace __jni_impl::javax::xml::datatype
 
-#include "DatatypeConstants_Field.hpp"
+#include "./DatatypeConstants_Field.hpp"
 #include "../namespace/QName.hpp"
 
 namespace __jni_impl::javax::xml::datatype

@@ -51,7 +51,7 @@ namespace __jni_impl::android::content::pm
 
 #include "../../appwidget/AppWidgetProviderInfo.hpp"
 #include "../Context.hpp"
-#include "ShortcutInfo.hpp"
+#include "./ShortcutInfo.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
 

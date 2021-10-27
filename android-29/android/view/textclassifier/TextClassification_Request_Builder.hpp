@@ -40,7 +40,7 @@ namespace __jni_impl::android::view::textclassifier
 
 #include "../../os/Bundle.hpp"
 #include "../../os/LocaleList.hpp"
-#include "TextClassification_Request.hpp"
+#include "./TextClassification_Request.hpp"
 #include "../../../java/time/ZonedDateTime.hpp"
 
 namespace __jni_impl::android::view::textclassifier

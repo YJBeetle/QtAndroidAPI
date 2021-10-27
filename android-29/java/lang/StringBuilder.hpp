@@ -95,7 +95,7 @@ namespace __jni_impl::java::lang
 
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
-#include "StringBuffer.hpp"
+#include "./StringBuffer.hpp"
 
 namespace __jni_impl::java::lang
 {

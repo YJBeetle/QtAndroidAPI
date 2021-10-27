@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Notification_Style.hpp"
+#include "./Notification_Style.hpp"
 
 
 namespace __jni_impl::android::app

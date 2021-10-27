@@ -27,7 +27,7 @@ namespace __jni_impl::android::hardware::fingerprint
 	};
 } // namespace __jni_impl::android::hardware::fingerprint
 
-#include "FingerprintManager_AuthenticationResult.hpp"
+#include "./FingerprintManager_AuthenticationResult.hpp"
 
 namespace __jni_impl::android::hardware::fingerprint
 {

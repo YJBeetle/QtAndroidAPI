@@ -77,8 +77,8 @@ namespace __jni_impl::java::time::chrono
 #include "../LocalDate.hpp"
 #include "../LocalTime.hpp"
 #include "../ZoneId.hpp"
-#include "MinguoChronology.hpp"
-#include "MinguoEra.hpp"
+#include "./MinguoChronology.hpp"
+#include "./MinguoEra.hpp"
 #include "../temporal/ValueRange.hpp"
 
 namespace __jni_impl::java::time::chrono

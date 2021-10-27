@@ -258,12 +258,12 @@ namespace __jni_impl::android::view::accessibility
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
 #include "../View.hpp"
-#include "AccessibilityNodeInfo_AccessibilityAction.hpp"
-#include "AccessibilityNodeInfo_CollectionInfo.hpp"
-#include "AccessibilityNodeInfo_CollectionItemInfo.hpp"
-#include "AccessibilityNodeInfo_RangeInfo.hpp"
-#include "AccessibilityNodeInfo_TouchDelegateInfo.hpp"
-#include "AccessibilityWindowInfo.hpp"
+#include "./AccessibilityNodeInfo_AccessibilityAction.hpp"
+#include "./AccessibilityNodeInfo_CollectionInfo.hpp"
+#include "./AccessibilityNodeInfo_CollectionItemInfo.hpp"
+#include "./AccessibilityNodeInfo_RangeInfo.hpp"
+#include "./AccessibilityNodeInfo_TouchDelegateInfo.hpp"
+#include "./AccessibilityWindowInfo.hpp"
 
 namespace __jni_impl::android::view::accessibility
 {

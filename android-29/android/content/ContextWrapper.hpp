@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Context.hpp"
+#include "./Context.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -279,19 +279,19 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "BroadcastReceiver.hpp"
-#include "ComponentName.hpp"
-#include "ContentResolver.hpp"
-#include "Context.hpp"
-#include "Intent.hpp"
-#include "IntentFilter.hpp"
-#include "IntentSender.hpp"
-#include "pm/ApplicationInfo.hpp"
-#include "pm/PackageManager.hpp"
-#include "res/AssetManager.hpp"
-#include "res/Configuration.hpp"
-#include "res/Resources.hpp"
-#include "res/Resources_Theme.hpp"
+#include "./BroadcastReceiver.hpp"
+#include "./ComponentName.hpp"
+#include "./ContentResolver.hpp"
+#include "./Context.hpp"
+#include "./Intent.hpp"
+#include "./IntentFilter.hpp"
+#include "./IntentSender.hpp"
+#include "./pm/ApplicationInfo.hpp"
+#include "./pm/PackageManager.hpp"
+#include "./res/AssetManager.hpp"
+#include "./res/Configuration.hpp"
+#include "./res/Resources.hpp"
+#include "./res/Resources_Theme.hpp"
 #include "../database/sqlite/SQLiteDatabase.hpp"
 #include "../graphics/Bitmap.hpp"
 #include "../graphics/drawable/Drawable.hpp"

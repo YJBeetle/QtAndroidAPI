@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Collator.hpp"
+#include "./Collator.hpp"
 
 namespace __jni_impl::java::lang
 {
@@ -43,8 +43,8 @@ namespace __jni_impl::java::text
 } // namespace __jni_impl::java::text
 
 #include "../lang/StringBuffer.hpp"
-#include "CollationElementIterator.hpp"
-#include "CollationKey.hpp"
+#include "./CollationElementIterator.hpp"
+#include "./CollationKey.hpp"
 
 namespace __jni_impl::java::text
 {

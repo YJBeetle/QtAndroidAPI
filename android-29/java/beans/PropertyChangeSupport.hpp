@@ -53,7 +53,7 @@ namespace __jni_impl::java::beans
 	};
 } // namespace __jni_impl::java::beans
 
-#include "PropertyChangeEvent.hpp"
+#include "./PropertyChangeEvent.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
 

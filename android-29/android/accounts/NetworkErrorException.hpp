@@ -2,7 +2,7 @@
 
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
-#include "AccountsException.hpp"
+#include "./AccountsException.hpp"
 
 
 namespace __jni_impl::android::accounts

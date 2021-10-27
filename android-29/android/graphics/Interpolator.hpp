@@ -31,7 +31,7 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Interpolator_Result.hpp"
+#include "./Interpolator_Result.hpp"
 
 namespace __jni_impl::android::graphics
 {

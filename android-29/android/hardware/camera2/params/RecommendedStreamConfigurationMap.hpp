@@ -58,7 +58,7 @@ namespace __jni_impl::android::hardware::camera2::params
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
-#include "StreamConfigurationMap.hpp"
+#include "./StreamConfigurationMap.hpp"
 #include "../../../util/Range.hpp"
 #include "../../../util/Size.hpp"
 #include "../../../view/Surface.hpp"

@@ -42,8 +42,8 @@ namespace __jni_impl::android::media::session
 	};
 } // namespace __jni_impl::android::media::session
 
-#include "PlaybackState.hpp"
-#include "PlaybackState_CustomAction.hpp"
+#include "./PlaybackState.hpp"
+#include "./PlaybackState_CustomAction.hpp"
 #include "../../os/Bundle.hpp"
 
 namespace __jni_impl::android::media::session

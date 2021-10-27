@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "AttributedCharacterIterator_Attribute.hpp"
-#include "Format_Field.hpp"
+#include "./AttributedCharacterIterator_Attribute.hpp"
+#include "./Format_Field.hpp"
 
 
 namespace __jni_impl::java::text

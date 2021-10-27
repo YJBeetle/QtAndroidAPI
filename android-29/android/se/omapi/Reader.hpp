@@ -30,8 +30,8 @@ namespace __jni_impl::android::se::omapi
 	};
 } // namespace __jni_impl::android::se::omapi
 
-#include "SEService.hpp"
-#include "Session.hpp"
+#include "./SEService.hpp"
+#include "./Session.hpp"
 
 namespace __jni_impl::android::se::omapi
 {

@@ -104,8 +104,8 @@ namespace __jni_impl::android::media
 
 #include "../content/Context.hpp"
 #include "../graphics/Bitmap.hpp"
-#include "MediaDataSource.hpp"
-#include "MediaMetadataRetriever_BitmapParams.hpp"
+#include "./MediaDataSource.hpp"
+#include "./MediaMetadataRetriever_BitmapParams.hpp"
 #include "../net/Uri.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 

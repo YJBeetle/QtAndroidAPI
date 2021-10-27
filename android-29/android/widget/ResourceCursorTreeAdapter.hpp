@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "BaseExpandableListAdapter.hpp"
-#include "CursorTreeAdapter.hpp"
+#include "./BaseExpandableListAdapter.hpp"
+#include "./CursorTreeAdapter.hpp"
 
 namespace __jni_impl::android::content
 {

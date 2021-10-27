@@ -43,7 +43,7 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "StrictMode_VmPolicy.hpp"
+#include "./StrictMode_VmPolicy.hpp"
 
 namespace __jni_impl::android::os
 {

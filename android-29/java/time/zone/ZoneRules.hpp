@@ -64,7 +64,7 @@ namespace __jni_impl::java::time::zone
 #include "../Instant.hpp"
 #include "../LocalDateTime.hpp"
 #include "../ZoneOffset.hpp"
-#include "ZoneOffsetTransition.hpp"
+#include "./ZoneOffsetTransition.hpp"
 
 namespace __jni_impl::java::time::zone
 {

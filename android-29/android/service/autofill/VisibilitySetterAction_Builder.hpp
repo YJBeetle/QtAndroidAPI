@@ -23,7 +23,7 @@ namespace __jni_impl::android::service::autofill
 	};
 } // namespace __jni_impl::android::service::autofill
 
-#include "VisibilitySetterAction.hpp"
+#include "./VisibilitySetterAction.hpp"
 
 namespace __jni_impl::android::service::autofill
 {

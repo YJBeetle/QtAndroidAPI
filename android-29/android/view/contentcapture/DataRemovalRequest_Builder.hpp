@@ -29,7 +29,7 @@ namespace __jni_impl::android::view::contentcapture
 } // namespace __jni_impl::android::view::contentcapture
 
 #include "../../content/LocusId.hpp"
-#include "DataRemovalRequest.hpp"
+#include "./DataRemovalRequest.hpp"
 
 namespace __jni_impl::android::view::contentcapture
 {

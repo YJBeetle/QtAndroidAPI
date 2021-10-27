@@ -39,8 +39,8 @@ namespace __jni_impl::android::bluetooth::le
 } // namespace __jni_impl::android::bluetooth::le
 
 #include "../../app/PendingIntent.hpp"
-#include "ScanCallback.hpp"
-#include "ScanSettings.hpp"
+#include "./ScanCallback.hpp"
+#include "./ScanSettings.hpp"
 
 namespace __jni_impl::android::bluetooth::le
 {

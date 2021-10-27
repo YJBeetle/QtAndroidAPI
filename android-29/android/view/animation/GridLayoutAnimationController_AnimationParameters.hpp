@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "LayoutAnimationController_AnimationParameters.hpp"
+#include "./LayoutAnimationController_AnimationParameters.hpp"
 
 
 namespace __jni_impl::android::view::animation

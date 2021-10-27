@@ -23,7 +23,7 @@ namespace __jni_impl::android::graphics::drawable
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
-#include "Drawable.hpp"
+#include "./Drawable.hpp"
 
 namespace __jni_impl::android::graphics::drawable
 {

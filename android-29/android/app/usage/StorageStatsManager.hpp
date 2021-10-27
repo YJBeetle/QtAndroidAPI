@@ -40,8 +40,8 @@ namespace __jni_impl::android::app::usage
 	};
 } // namespace __jni_impl::android::app::usage
 
-#include "ExternalStorageStats.hpp"
-#include "StorageStats.hpp"
+#include "./ExternalStorageStats.hpp"
+#include "./StorageStats.hpp"
 #include "../../os/UserHandle.hpp"
 #include "../../../java/util/UUID.hpp"
 

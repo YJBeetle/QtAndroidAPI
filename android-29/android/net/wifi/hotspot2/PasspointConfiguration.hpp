@@ -40,8 +40,8 @@ namespace __jni_impl::android::net::wifi::hotspot2
 	};
 } // namespace __jni_impl::android::net::wifi::hotspot2
 
-#include "pps/Credential.hpp"
-#include "pps/HomeSp.hpp"
+#include "./pps/Credential.hpp"
+#include "./pps/HomeSp.hpp"
 #include "../../../os/Parcel.hpp"
 
 namespace __jni_impl::android::net::wifi::hotspot2

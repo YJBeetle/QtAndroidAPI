@@ -34,7 +34,7 @@ namespace __jni_impl::android::view::textservice
 } // namespace __jni_impl::android::view::textservice
 
 #include "../../os/Parcel.hpp"
-#include "SuggestionsInfo.hpp"
+#include "./SuggestionsInfo.hpp"
 
 namespace __jni_impl::android::view::textservice
 {

@@ -65,8 +65,8 @@ namespace __jni_impl::android::telephony::gsm
 	};
 } // namespace __jni_impl::android::telephony::gsm
 
-#include "SmsMessage_MessageClass.hpp"
-#include "SmsMessage_SubmitPdu.hpp"
+#include "./SmsMessage_MessageClass.hpp"
+#include "./SmsMessage_SubmitPdu.hpp"
 
 namespace __jni_impl::android::telephony::gsm
 {

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "JsResult.hpp"
+#include "./JsResult.hpp"
 
 
 namespace __jni_impl::android::webkit

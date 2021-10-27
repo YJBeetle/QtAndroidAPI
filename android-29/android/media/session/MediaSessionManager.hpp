@@ -50,7 +50,7 @@ namespace __jni_impl::android::media::session
 #include "../../content/ComponentName.hpp"
 #include "../../content/Context.hpp"
 #include "../Session2Token.hpp"
-#include "MediaSessionManager_RemoteUserInfo.hpp"
+#include "./MediaSessionManager_RemoteUserInfo.hpp"
 #include "../../os/Handler.hpp"
 
 namespace __jni_impl::android::media::session

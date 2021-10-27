@@ -41,7 +41,7 @@ namespace __jni_impl::android::telephony::mbms
 } // namespace __jni_impl::android::telephony::mbms
 
 #include "../../net/Uri.hpp"
-#include "StreamingServiceInfo.hpp"
+#include "./StreamingServiceInfo.hpp"
 
 namespace __jni_impl::android::telephony::mbms
 {

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Preference.hpp"
-#include "PreferenceGroup.hpp"
+#include "./Preference.hpp"
+#include "./PreferenceGroup.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -33,7 +33,7 @@ namespace __jni_impl::android::preference
 } // namespace __jni_impl::android::preference
 
 #include "../content/Context.hpp"
-#include "Preference.hpp"
+#include "./Preference.hpp"
 
 namespace __jni_impl::android::preference
 {

@@ -34,7 +34,7 @@ namespace __jni_impl::android::media
 } // namespace __jni_impl::android::media
 
 #include "../icu/util/ULocale.hpp"
-#include "AudioPresentation.hpp"
+#include "./AudioPresentation.hpp"
 
 namespace __jni_impl::android::media
 {

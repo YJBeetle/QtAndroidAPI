@@ -34,7 +34,7 @@ namespace __jni_impl::android::database::sqlite
 	};
 } // namespace __jni_impl::android::database::sqlite
 
-#include "SQLiteDatabase_OpenParams.hpp"
+#include "./SQLiteDatabase_OpenParams.hpp"
 
 namespace __jni_impl::android::database::sqlite
 {

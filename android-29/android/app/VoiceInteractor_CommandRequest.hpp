@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "VoiceInteractor_Request.hpp"
+#include "./VoiceInteractor_Request.hpp"
 
 namespace __jni_impl::android::os
 {

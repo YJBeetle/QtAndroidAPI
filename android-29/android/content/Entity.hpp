@@ -33,7 +33,7 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "ContentValues.hpp"
+#include "./ContentValues.hpp"
 #include "../net/Uri.hpp"
 #include "../../java/util/ArrayList.hpp"
 

@@ -57,7 +57,7 @@ namespace __jni_impl::android::gesture
 	};
 } // namespace __jni_impl::android::gesture
 
-#include "GestureStroke.hpp"
+#include "./GestureStroke.hpp"
 #include "../graphics/Bitmap.hpp"
 #include "../graphics/Path.hpp"
 #include "../graphics/RectF.hpp"

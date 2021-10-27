@@ -54,7 +54,7 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "MicrophoneInfo_Coordinate3F.hpp"
+#include "./MicrophoneInfo_Coordinate3F.hpp"
 
 namespace __jni_impl::android::media
 {

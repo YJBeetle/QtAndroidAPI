@@ -33,7 +33,7 @@ namespace __jni_impl::android::media::projection
 
 #include "../../content/Context.hpp"
 #include "../../content/Intent.hpp"
-#include "MediaProjection.hpp"
+#include "./MediaProjection.hpp"
 
 namespace __jni_impl::android::media::projection
 {

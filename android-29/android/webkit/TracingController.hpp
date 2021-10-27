@@ -29,7 +29,7 @@ namespace __jni_impl::android::webkit
 	};
 } // namespace __jni_impl::android::webkit
 
-#include "TracingConfig.hpp"
+#include "./TracingConfig.hpp"
 #include "../../java/io/OutputStream.hpp"
 
 namespace __jni_impl::android::webkit

@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "BaseObj.hpp"
-#include "Allocation.hpp"
+#include "./BaseObj.hpp"
+#include "./Allocation.hpp"
 
 namespace __jni_impl::android::renderscript
 {
@@ -44,10 +44,10 @@ namespace __jni_impl::android::renderscript
 	};
 } // namespace __jni_impl::android::renderscript
 
-#include "Allocation.hpp"
-#include "RenderScript.hpp"
-#include "Type.hpp"
-#include "Type_CubemapFace.hpp"
+#include "./Allocation.hpp"
+#include "./RenderScript.hpp"
+#include "./Type.hpp"
+#include "./Type_CubemapFace.hpp"
 
 namespace __jni_impl::android::renderscript
 {

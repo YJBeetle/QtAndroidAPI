@@ -42,7 +42,7 @@ namespace __jni_impl::android::net
 	};
 } // namespace __jni_impl::android::net
 
-#include "Network.hpp"
+#include "./Network.hpp"
 #include "../os/CancellationSignal.hpp"
 
 namespace __jni_impl::android::net

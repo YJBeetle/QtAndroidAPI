@@ -41,7 +41,7 @@ namespace __jni_impl::android::webkit
 	};
 } // namespace __jni_impl::android::webkit
 
-#include "WebView.hpp"
+#include "./WebView.hpp"
 
 namespace __jni_impl::android::webkit
 {

@@ -60,7 +60,7 @@ namespace __jni_impl::android::net
 	};
 } // namespace __jni_impl::android::net
 
-#include "SSLSessionCache.hpp"
+#include "./SSLSessionCache.hpp"
 #include "../../java/net/InetAddress.hpp"
 #include "../../java/net/Socket.hpp"
 #include "../../javax/net/SocketFactory.hpp"

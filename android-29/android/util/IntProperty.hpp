@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Property.hpp"
+#include "./Property.hpp"
 
 namespace __jni_impl::java::lang
 {

@@ -56,8 +56,8 @@ namespace __jni_impl::android::media::effect
 	};
 } // namespace __jni_impl::android::media::effect
 
-#include "Effect.hpp"
-#include "EffectContext.hpp"
+#include "./Effect.hpp"
+#include "./EffectContext.hpp"
 
 namespace __jni_impl::android::media::effect
 {

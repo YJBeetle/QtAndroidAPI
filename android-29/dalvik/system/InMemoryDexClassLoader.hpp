@@ -2,7 +2,7 @@
 
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/ClassLoader.hpp"
-#include "BaseDexClassLoader.hpp"
+#include "./BaseDexClassLoader.hpp"
 
 namespace __jni_impl::java::lang
 {

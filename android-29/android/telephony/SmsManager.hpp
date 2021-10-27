@@ -123,7 +123,7 @@ namespace __jni_impl::android::telephony
 #include "../content/Context.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
-#include "SmsManager_FinancialSmsCallback.hpp"
+#include "./SmsManager_FinancialSmsCallback.hpp"
 #include "../../java/util/ArrayList.hpp"
 
 namespace __jni_impl::android::telephony

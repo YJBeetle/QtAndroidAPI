@@ -31,7 +31,7 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "UnicodeSet.hpp"
+#include "./UnicodeSet.hpp"
 
 namespace __jni_impl::android::icu::text
 {

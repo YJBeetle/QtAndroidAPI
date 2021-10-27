@@ -54,8 +54,8 @@ namespace __jni_impl::android::telecom
 #include "../graphics/drawable/Icon.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
-#include "PhoneAccount.hpp"
-#include "PhoneAccountHandle.hpp"
+#include "./PhoneAccount.hpp"
+#include "./PhoneAccountHandle.hpp"
 
 namespace __jni_impl::android::telecom
 {

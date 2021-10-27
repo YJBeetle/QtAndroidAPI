@@ -94,8 +94,8 @@ namespace __jni_impl::java::util
 	};
 } // namespace __jni_impl::java::util
 
-#include "ArrayList.hpp"
-#include "Random.hpp"
+#include "./ArrayList.hpp"
+#include "./Random.hpp"
 
 namespace __jni_impl::java::util
 {

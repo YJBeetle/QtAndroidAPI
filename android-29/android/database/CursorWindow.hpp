@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "sqlite/SQLiteClosable.hpp"
+#include "./sqlite/SQLiteClosable.hpp"
 
 namespace __jni_impl::android::database
 {
@@ -62,7 +62,7 @@ namespace __jni_impl::android::database
 	};
 } // namespace __jni_impl::android::database
 
-#include "CharArrayBuffer.hpp"
+#include "./CharArrayBuffer.hpp"
 #include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::database

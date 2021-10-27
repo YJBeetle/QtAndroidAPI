@@ -3,8 +3,8 @@
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../util/AndroidException.hpp"
-#include "RemoteException.hpp"
-#include "DeadObjectException.hpp"
+#include "./RemoteException.hpp"
+#include "./DeadObjectException.hpp"
 
 
 namespace __jni_impl::android::os

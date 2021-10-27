@@ -26,7 +26,7 @@ namespace __jni_impl::android::net
 	};
 } // namespace __jni_impl::android::net
 
-#include "LocalSocketAddress_Namespace.hpp"
+#include "./LocalSocketAddress_Namespace.hpp"
 
 namespace __jni_impl::android::net
 {

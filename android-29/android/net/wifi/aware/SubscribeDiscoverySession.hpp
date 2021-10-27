@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../../__JniBaseClass.hpp"
-#include "DiscoverySession.hpp"
+#include "./DiscoverySession.hpp"
 
 namespace __jni_impl::android::net::wifi::aware
 {
@@ -27,8 +27,8 @@ namespace __jni_impl::android::net::wifi::aware
 	};
 } // namespace __jni_impl::android::net::wifi::aware
 
-#include "SubscribeConfig.hpp"
-#include "WifiAwareManager.hpp"
+#include "./SubscribeConfig.hpp"
+#include "./WifiAwareManager.hpp"
 
 namespace __jni_impl::android::net::wifi::aware
 {

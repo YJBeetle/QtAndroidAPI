@@ -49,7 +49,7 @@ namespace __jni_impl::java::text
 	};
 } // namespace __jni_impl::java::text
 
-#include "CollationKey.hpp"
+#include "./CollationKey.hpp"
 #include "../util/Locale.hpp"
 
 namespace __jni_impl::java::text

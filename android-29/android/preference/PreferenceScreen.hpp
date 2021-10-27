@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Preference.hpp"
-#include "PreferenceGroup.hpp"
+#include "./Preference.hpp"
+#include "./PreferenceGroup.hpp"
 
 namespace __jni_impl::android::app
 {

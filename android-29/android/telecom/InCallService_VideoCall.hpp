@@ -53,8 +53,8 @@ namespace __jni_impl::android::telecom
 
 #include "../net/Uri.hpp"
 #include "../os/Handler.hpp"
-#include "InCallService_VideoCall_Callback.hpp"
-#include "VideoProfile.hpp"
+#include "./InCallService_VideoCall_Callback.hpp"
+#include "./VideoProfile.hpp"
 #include "../view/Surface.hpp"
 
 namespace __jni_impl::android::telecom

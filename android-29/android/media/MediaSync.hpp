@@ -64,11 +64,11 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "AudioTrack.hpp"
-#include "MediaSync_Callback.hpp"
-#include "MediaTimestamp.hpp"
-#include "PlaybackParams.hpp"
-#include "SyncParams.hpp"
+#include "./AudioTrack.hpp"
+#include "./MediaSync_Callback.hpp"
+#include "./MediaTimestamp.hpp"
+#include "./PlaybackParams.hpp"
+#include "./SyncParams.hpp"
 #include "../os/Handler.hpp"
 #include "../view/Surface.hpp"
 #include "../../java/nio/ByteBuffer.hpp"

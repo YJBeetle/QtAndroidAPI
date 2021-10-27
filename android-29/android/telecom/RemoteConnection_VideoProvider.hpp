@@ -47,8 +47,8 @@ namespace __jni_impl::android::telecom
 } // namespace __jni_impl::android::telecom
 
 #include "../net/Uri.hpp"
-#include "RemoteConnection_VideoProvider_Callback.hpp"
-#include "VideoProfile.hpp"
+#include "./RemoteConnection_VideoProvider_Callback.hpp"
+#include "./VideoProfile.hpp"
 #include "../view/Surface.hpp"
 
 namespace __jni_impl::android::telecom

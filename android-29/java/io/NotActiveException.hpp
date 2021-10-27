@@ -2,8 +2,8 @@
 
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
-#include "IOException.hpp"
-#include "ObjectStreamException.hpp"
+#include "./IOException.hpp"
+#include "./ObjectStreamException.hpp"
 
 
 namespace __jni_impl::java::io

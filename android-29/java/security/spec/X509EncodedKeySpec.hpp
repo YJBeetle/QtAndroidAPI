@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "EncodedKeySpec.hpp"
+#include "./EncodedKeySpec.hpp"
 
 
 namespace __jni_impl::java::security::spec

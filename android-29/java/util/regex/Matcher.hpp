@@ -79,7 +79,7 @@ namespace __jni_impl::java::util::regex
 
 #include "../../lang/StringBuffer.hpp"
 #include "../../lang/StringBuilder.hpp"
-#include "Pattern.hpp"
+#include "./Pattern.hpp"
 
 namespace __jni_impl::java::util::regex
 {

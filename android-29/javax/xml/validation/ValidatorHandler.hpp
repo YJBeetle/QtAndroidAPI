@@ -36,7 +36,7 @@ namespace __jni_impl::javax::xml::validation
 	};
 } // namespace __jni_impl::javax::xml::validation
 
-#include "TypeInfoProvider.hpp"
+#include "./TypeInfoProvider.hpp"
 
 namespace __jni_impl::javax::xml::validation
 {

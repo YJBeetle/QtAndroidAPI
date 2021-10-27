@@ -119,7 +119,7 @@ namespace __jni_impl::android::provider
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/CancellationSignal.hpp"
-#include "DocumentsContract_Path.hpp"
+#include "./DocumentsContract_Path.hpp"
 
 namespace __jni_impl::android::provider
 {

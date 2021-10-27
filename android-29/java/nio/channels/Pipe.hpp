@@ -28,8 +28,8 @@ namespace __jni_impl::java::nio::channels
 	};
 } // namespace __jni_impl::java::nio::channels
 
-#include "Pipe_SinkChannel.hpp"
-#include "Pipe_SourceChannel.hpp"
+#include "./Pipe_SinkChannel.hpp"
+#include "./Pipe_SourceChannel.hpp"
 
 namespace __jni_impl::java::nio::channels
 {

@@ -71,9 +71,9 @@ namespace __jni_impl::javax::net::ssl
 } // namespace __jni_impl::javax::net::ssl
 
 #include "../../../java/nio/ByteBuffer.hpp"
-#include "SSLEngineResult.hpp"
-#include "SSLEngineResult_HandshakeStatus.hpp"
-#include "SSLParameters.hpp"
+#include "./SSLEngineResult.hpp"
+#include "./SSLEngineResult_HandshakeStatus.hpp"
+#include "./SSLParameters.hpp"
 
 namespace __jni_impl::javax::net::ssl
 {

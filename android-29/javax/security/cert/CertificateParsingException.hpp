@@ -2,7 +2,7 @@
 
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
-#include "CertificateException.hpp"
+#include "./CertificateException.hpp"
 
 
 namespace __jni_impl::javax::security::cert

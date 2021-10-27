@@ -26,7 +26,7 @@ namespace __jni_impl::android::bluetooth
 	};
 } // namespace __jni_impl::android::bluetooth
 
-#include "BluetoothSocket.hpp"
+#include "./BluetoothSocket.hpp"
 
 namespace __jni_impl::android::bluetooth
 {

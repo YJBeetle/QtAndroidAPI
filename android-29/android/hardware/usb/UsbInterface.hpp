@@ -37,7 +37,7 @@ namespace __jni_impl::android::hardware::usb
 	};
 } // namespace __jni_impl::android::hardware::usb
 
-#include "UsbEndpoint.hpp"
+#include "./UsbEndpoint.hpp"
 #include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::hardware::usb

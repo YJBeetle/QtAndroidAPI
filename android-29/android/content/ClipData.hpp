@@ -63,10 +63,10 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "ClipData_Item.hpp"
-#include "ClipDescription.hpp"
-#include "ContentResolver.hpp"
-#include "Intent.hpp"
+#include "./ClipData_Item.hpp"
+#include "./ClipDescription.hpp"
+#include "./ContentResolver.hpp"
+#include "./Intent.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Parcel.hpp"
 

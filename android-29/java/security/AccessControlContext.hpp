@@ -30,8 +30,8 @@ namespace __jni_impl::java::security
 	};
 } // namespace __jni_impl::java::security
 
-#include "Permission.hpp"
-#include "ProtectionDomain.hpp"
+#include "./Permission.hpp"
+#include "./ProtectionDomain.hpp"
 
 namespace __jni_impl::java::security
 {

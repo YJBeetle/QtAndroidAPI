@@ -37,9 +37,9 @@ namespace __jni_impl::android::view::textservice
 	};
 } // namespace __jni_impl::android::view::textservice
 
-#include "SpellCheckerInfo.hpp"
-#include "TextInfo.hpp"
-#include "TextServicesManager.hpp"
+#include "./SpellCheckerInfo.hpp"
+#include "./TextInfo.hpp"
+#include "./TextServicesManager.hpp"
 
 namespace __jni_impl::android::view::textservice
 {

@@ -2,8 +2,8 @@
 
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
-#include "GeneralSecurityException.hpp"
-#include "UnrecoverableEntryException.hpp"
+#include "./GeneralSecurityException.hpp"
+#include "./UnrecoverableEntryException.hpp"
 
 
 namespace __jni_impl::java::security

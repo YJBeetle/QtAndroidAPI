@@ -35,7 +35,7 @@ namespace __jni_impl::android::view::textclassifier
 
 #include "../../os/Bundle.hpp"
 #include "../../os/LocaleList.hpp"
-#include "TextSelection_Request.hpp"
+#include "./TextSelection_Request.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {

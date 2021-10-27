@@ -108,10 +108,10 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "MediaCodecInfo_AudioCapabilities.hpp"
-#include "MediaCodecInfo_EncoderCapabilities.hpp"
-#include "MediaCodecInfo_VideoCapabilities.hpp"
-#include "MediaFormat.hpp"
+#include "./MediaCodecInfo_AudioCapabilities.hpp"
+#include "./MediaCodecInfo_EncoderCapabilities.hpp"
+#include "./MediaCodecInfo_VideoCapabilities.hpp"
+#include "./MediaFormat.hpp"
 
 namespace __jni_impl::android::media
 {

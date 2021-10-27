@@ -65,8 +65,8 @@ namespace __jni_impl::java::util::regex
 
 #include "../../io/ObjectInputStream.hpp"
 #include "../../lang/StringBuilder.hpp"
-#include "Matcher.hpp"
-#include "PatternSyntaxException.hpp"
+#include "./Matcher.hpp"
+#include "./PatternSyntaxException.hpp"
 
 namespace __jni_impl::java::util::regex
 {

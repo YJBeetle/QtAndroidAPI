@@ -36,7 +36,7 @@ namespace __jni_impl::java::util::jar
 } // namespace __jni_impl::java::util::jar
 
 #include "../../io/OutputStream.hpp"
-#include "Manifest.hpp"
+#include "./Manifest.hpp"
 #include "../zip/ZipEntry.hpp"
 
 namespace __jni_impl::java::util::jar

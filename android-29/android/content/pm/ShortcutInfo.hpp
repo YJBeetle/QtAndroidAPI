@@ -82,7 +82,7 @@ namespace __jni_impl::android::content::pm
 #include "../ComponentName.hpp"
 #include "../Intent.hpp"
 #include "../LocusId.hpp"
-#include "ShortcutInfo_Builder.hpp"
+#include "./ShortcutInfo_Builder.hpp"
 #include "../../os/Parcel.hpp"
 #include "../../os/PersistableBundle.hpp"
 #include "../../os/UserHandle.hpp"

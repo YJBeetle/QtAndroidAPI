@@ -109,8 +109,8 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "ActionBar_LayoutParams.hpp"
-#include "ActionBar_Tab.hpp"
+#include "./ActionBar_LayoutParams.hpp"
+#include "./ActionBar_Tab.hpp"
 #include "../content/Context.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../view/View.hpp"

@@ -38,8 +38,8 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "AudioAttributes.hpp"
-#include "AudioFocusRequest.hpp"
+#include "./AudioAttributes.hpp"
+#include "./AudioFocusRequest.hpp"
 #include "../os/Handler.hpp"
 
 namespace __jni_impl::android::media

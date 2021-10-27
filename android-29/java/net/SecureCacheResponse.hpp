@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "CacheResponse.hpp"
+#include "./CacheResponse.hpp"
 
 namespace __jni_impl::java::util
 {

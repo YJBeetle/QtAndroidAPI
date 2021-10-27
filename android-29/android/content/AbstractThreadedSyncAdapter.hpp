@@ -53,9 +53,9 @@ namespace __jni_impl::android::content
 } // namespace __jni_impl::android::content
 
 #include "../accounts/Account.hpp"
-#include "ContentProviderClient.hpp"
-#include "Context.hpp"
-#include "SyncResult.hpp"
+#include "./ContentProviderClient.hpp"
+#include "./Context.hpp"
+#include "./SyncResult.hpp"
 #include "../os/Bundle.hpp"
 #include "../../java/lang/Thread.hpp"
 

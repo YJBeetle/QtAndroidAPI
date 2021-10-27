@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "SQLiteClosable.hpp"
-#include "SQLiteProgram.hpp"
+#include "./SQLiteClosable.hpp"
+#include "./SQLiteProgram.hpp"
 
 namespace __jni_impl::android::database::sqlite
 {
@@ -28,7 +28,7 @@ namespace __jni_impl::android::database::sqlite
 	};
 } // namespace __jni_impl::android::database::sqlite
 
-#include "SQLiteDatabase.hpp"
+#include "./SQLiteDatabase.hpp"
 #include "../../os/CancellationSignal.hpp"
 
 namespace __jni_impl::android::database::sqlite

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "MaskFilter.hpp"
+#include "./MaskFilter.hpp"
 
 
 namespace __jni_impl::android::graphics

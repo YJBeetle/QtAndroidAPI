@@ -35,7 +35,7 @@ namespace __jni_impl::android::location
 	};
 } // namespace __jni_impl::android::location
 
-#include "Criteria.hpp"
+#include "./Criteria.hpp"
 
 namespace __jni_impl::android::location
 {

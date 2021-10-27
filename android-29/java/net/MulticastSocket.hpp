@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "DatagramSocket.hpp"
+#include "./DatagramSocket.hpp"
 
 namespace __jni_impl::java::net
 {
@@ -55,11 +55,11 @@ namespace __jni_impl::java::net
 	};
 } // namespace __jni_impl::java::net
 
-#include "DatagramPacket.hpp"
-#include "DatagramSocket.hpp"
-#include "InetAddress.hpp"
-#include "NetworkInterface.hpp"
-#include "SocketAddress.hpp"
+#include "./DatagramPacket.hpp"
+#include "./DatagramSocket.hpp"
+#include "./InetAddress.hpp"
+#include "./NetworkInterface.hpp"
+#include "./SocketAddress.hpp"
 
 namespace __jni_impl::java::net
 {

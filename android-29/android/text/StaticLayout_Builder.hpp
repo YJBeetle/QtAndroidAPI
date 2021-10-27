@@ -50,10 +50,10 @@ namespace __jni_impl::android::text
 	};
 } // namespace __jni_impl::android::text
 
-#include "Layout_Alignment.hpp"
-#include "StaticLayout.hpp"
-#include "TextPaint.hpp"
-#include "TextUtils_TruncateAt.hpp"
+#include "./Layout_Alignment.hpp"
+#include "./StaticLayout.hpp"
+#include "./TextPaint.hpp"
+#include "./TextUtils_TruncateAt.hpp"
 
 namespace __jni_impl::android::text
 {

@@ -45,7 +45,7 @@ namespace __jni_impl::javax::crypto
 
 #include "../../java/security/Provider.hpp"
 #include "../../java/security/SecureRandom.hpp"
-#include "KeyGeneratorSpi.hpp"
+#include "./KeyGeneratorSpi.hpp"
 
 namespace __jni_impl::javax::crypto
 {

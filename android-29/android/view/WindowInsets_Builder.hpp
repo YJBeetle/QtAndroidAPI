@@ -38,8 +38,8 @@ namespace __jni_impl::android::view
 } // namespace __jni_impl::android::view
 
 #include "../graphics/Insets.hpp"
-#include "DisplayCutout.hpp"
-#include "WindowInsets.hpp"
+#include "./DisplayCutout.hpp"
+#include "./WindowInsets.hpp"
 
 namespace __jni_impl::android::view
 {

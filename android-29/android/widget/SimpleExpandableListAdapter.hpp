@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "BaseExpandableListAdapter.hpp"
+#include "./BaseExpandableListAdapter.hpp"
 
 namespace __jni_impl::android::content
 {

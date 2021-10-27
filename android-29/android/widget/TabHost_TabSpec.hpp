@@ -45,7 +45,7 @@ namespace __jni_impl::android::widget
 #include "../content/Intent.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../view/View.hpp"
-#include "TabHost.hpp"
+#include "./TabHost.hpp"
 
 namespace __jni_impl::android::widget
 {

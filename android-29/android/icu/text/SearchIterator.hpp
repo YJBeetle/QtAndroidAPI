@@ -46,8 +46,8 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "BreakIterator.hpp"
-#include "SearchIterator_ElementComparisonType.hpp"
+#include "./BreakIterator.hpp"
+#include "./SearchIterator_ElementComparisonType.hpp"
 
 namespace __jni_impl::android::icu::text
 {

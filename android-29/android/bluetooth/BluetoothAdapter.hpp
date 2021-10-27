@@ -110,10 +110,10 @@ namespace __jni_impl::android::bluetooth
 	};
 } // namespace __jni_impl::android::bluetooth
 
-#include "BluetoothDevice.hpp"
-#include "BluetoothServerSocket.hpp"
-#include "le/BluetoothLeAdvertiser.hpp"
-#include "le/BluetoothLeScanner.hpp"
+#include "./BluetoothDevice.hpp"
+#include "./BluetoothServerSocket.hpp"
+#include "./le/BluetoothLeAdvertiser.hpp"
+#include "./le/BluetoothLeScanner.hpp"
 #include "../content/Context.hpp"
 #include "../../java/util/UUID.hpp"
 

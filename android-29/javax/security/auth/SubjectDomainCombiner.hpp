@@ -28,7 +28,7 @@ namespace __jni_impl::javax::security::auth
 } // namespace __jni_impl::javax::security::auth
 
 #include "../../../java/security/ProtectionDomain.hpp"
-#include "Subject.hpp"
+#include "./Subject.hpp"
 
 namespace __jni_impl::javax::security::auth
 {

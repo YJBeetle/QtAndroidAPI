@@ -3,8 +3,8 @@
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 #include "../../io/IOException.hpp"
-#include "ClosedChannelException.hpp"
-#include "AsynchronousCloseException.hpp"
+#include "./ClosedChannelException.hpp"
+#include "./AsynchronousCloseException.hpp"
 
 
 namespace __jni_impl::java::nio::channels

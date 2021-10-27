@@ -34,8 +34,8 @@ namespace __jni_impl::android::webkit
 } // namespace __jni_impl::android::webkit
 
 #include "../os/Handler.hpp"
-#include "WebMessage.hpp"
-#include "WebMessagePort_WebMessageCallback.hpp"
+#include "./WebMessage.hpp"
+#include "./WebMessagePort_WebMessageCallback.hpp"
 
 namespace __jni_impl::android::webkit
 {

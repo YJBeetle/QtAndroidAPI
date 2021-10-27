@@ -37,8 +37,8 @@ namespace __jni_impl::android::transition
 } // namespace __jni_impl::android::transition
 
 #include "../content/Context.hpp"
-#include "Transition.hpp"
-#include "TransitionManager.hpp"
+#include "./Transition.hpp"
+#include "./TransitionManager.hpp"
 #include "../view/ViewGroup.hpp"
 
 namespace __jni_impl::android::transition

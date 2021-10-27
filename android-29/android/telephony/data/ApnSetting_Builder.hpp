@@ -58,7 +58,7 @@ namespace __jni_impl::android::telephony::data
 } // namespace __jni_impl::android::telephony::data
 
 #include "../../net/Uri.hpp"
-#include "ApnSetting.hpp"
+#include "./ApnSetting.hpp"
 #include "../../../java/net/InetAddress.hpp"
 
 namespace __jni_impl::android::telephony::data

@@ -68,10 +68,10 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "ApplicationErrorReport_AnrInfo.hpp"
-#include "ApplicationErrorReport_BatteryInfo.hpp"
-#include "ApplicationErrorReport_CrashInfo.hpp"
-#include "ApplicationErrorReport_RunningServiceInfo.hpp"
+#include "./ApplicationErrorReport_AnrInfo.hpp"
+#include "./ApplicationErrorReport_BatteryInfo.hpp"
+#include "./ApplicationErrorReport_CrashInfo.hpp"
+#include "./ApplicationErrorReport_RunningServiceInfo.hpp"
 #include "../content/ComponentName.hpp"
 #include "../content/Context.hpp"
 #include "../os/Parcel.hpp"

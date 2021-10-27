@@ -115,8 +115,8 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "WallpaperColors.hpp"
-#include "WallpaperInfo.hpp"
+#include "./WallpaperColors.hpp"
+#include "./WallpaperInfo.hpp"
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"
 #include "../graphics/Bitmap.hpp"

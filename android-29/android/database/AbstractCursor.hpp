@@ -94,10 +94,10 @@ namespace __jni_impl::android::database
 } // namespace __jni_impl::android::database
 
 #include "../content/ContentResolver.hpp"
-#include "CharArrayBuffer.hpp"
-#include "ContentObserver.hpp"
-#include "CursorWindow.hpp"
-#include "DataSetObserver.hpp"
+#include "./CharArrayBuffer.hpp"
+#include "./ContentObserver.hpp"
+#include "./CursorWindow.hpp"
+#include "./DataSetObserver.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
 

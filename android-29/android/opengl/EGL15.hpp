@@ -102,12 +102,12 @@ namespace __jni_impl::android::opengl
 	};
 } // namespace __jni_impl::android::opengl
 
-#include "EGLConfig.hpp"
-#include "EGLContext.hpp"
-#include "EGLDisplay.hpp"
-#include "EGLImage.hpp"
-#include "EGLSurface.hpp"
-#include "EGLSync.hpp"
+#include "./EGLConfig.hpp"
+#include "./EGLContext.hpp"
+#include "./EGLDisplay.hpp"
+#include "./EGLImage.hpp"
+#include "./EGLSurface.hpp"
+#include "./EGLSync.hpp"
 #include "../../java/nio/Buffer.hpp"
 
 namespace __jni_impl::android::opengl

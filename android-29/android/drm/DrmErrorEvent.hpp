@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "DrmEvent.hpp"
+#include "./DrmEvent.hpp"
 
 namespace __jni_impl::java::util
 {

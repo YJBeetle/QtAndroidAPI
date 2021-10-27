@@ -44,9 +44,9 @@ namespace __jni_impl::java::time
 	};
 } // namespace __jni_impl::java::time
 
-#include "Duration.hpp"
-#include "Instant.hpp"
-#include "ZoneId.hpp"
+#include "./Duration.hpp"
+#include "./Instant.hpp"
+#include "./ZoneId.hpp"
 
 namespace __jni_impl::java::time
 {

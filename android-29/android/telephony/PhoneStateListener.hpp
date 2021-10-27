@@ -58,9 +58,9 @@ namespace __jni_impl::android::telephony
 	};
 } // namespace __jni_impl::android::telephony
 
-#include "CellLocation.hpp"
-#include "ServiceState.hpp"
-#include "SignalStrength.hpp"
+#include "./CellLocation.hpp"
+#include "./ServiceState.hpp"
+#include "./SignalStrength.hpp"
 
 namespace __jni_impl::android::telephony
 {

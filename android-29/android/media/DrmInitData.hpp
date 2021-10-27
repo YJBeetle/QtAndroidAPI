@@ -26,7 +26,7 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "DrmInitData_SchemeInitData.hpp"
+#include "./DrmInitData_SchemeInitData.hpp"
 #include "../../java/util/UUID.hpp"
 
 namespace __jni_impl::android::media

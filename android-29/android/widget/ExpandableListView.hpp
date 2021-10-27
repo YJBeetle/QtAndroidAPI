@@ -3,9 +3,9 @@
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
-#include "AdapterView.hpp"
-#include "AbsListView.hpp"
-#include "ListView.hpp"
+#include "./AdapterView.hpp"
+#include "./AbsListView.hpp"
+#include "./ListView.hpp"
 
 namespace __jni_impl::android::content
 {

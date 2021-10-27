@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "RtpStream.hpp"
+#include "./RtpStream.hpp"
 
 namespace __jni_impl::android::net::rtp
 {
@@ -37,8 +37,8 @@ namespace __jni_impl::android::net::rtp
 	};
 } // namespace __jni_impl::android::net::rtp
 
-#include "AudioCodec.hpp"
-#include "AudioGroup.hpp"
+#include "./AudioCodec.hpp"
+#include "./AudioGroup.hpp"
 #include "../../../java/net/InetAddress.hpp"
 
 namespace __jni_impl::android::net::rtp

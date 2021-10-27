@@ -66,9 +66,9 @@ namespace __jni_impl::android::media::tv
 	};
 } // namespace __jni_impl::android::media::tv
 
-#include "TvContentRating.hpp"
-#include "TvInputInfo.hpp"
-#include "TvInputManager_TvInputCallback.hpp"
+#include "./TvContentRating.hpp"
+#include "./TvInputInfo.hpp"
+#include "./TvInputManager_TvInputCallback.hpp"
 #include "../../os/Handler.hpp"
 
 namespace __jni_impl::android::media::tv

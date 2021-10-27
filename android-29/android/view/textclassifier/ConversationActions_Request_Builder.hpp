@@ -35,8 +35,8 @@ namespace __jni_impl::android::view::textclassifier
 } // namespace __jni_impl::android::view::textclassifier
 
 #include "../../os/Bundle.hpp"
-#include "ConversationActions_Request.hpp"
-#include "TextClassifier_EntityConfig.hpp"
+#include "./ConversationActions_Request.hpp"
+#include "./TextClassifier_EntityConfig.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {

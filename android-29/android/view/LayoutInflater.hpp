@@ -49,8 +49,8 @@ namespace __jni_impl::android::view
 } // namespace __jni_impl::android::view
 
 #include "../content/Context.hpp"
-#include "View.hpp"
-#include "ViewGroup.hpp"
+#include "./View.hpp"
+#include "./ViewGroup.hpp"
 
 namespace __jni_impl::android::view
 {

@@ -2,7 +2,7 @@
 
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
-#include "TransformerException.hpp"
+#include "./TransformerException.hpp"
 
 
 namespace __jni_impl::javax::xml::transform

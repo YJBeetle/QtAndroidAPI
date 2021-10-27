@@ -53,9 +53,9 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "BroadcastReceiver_PendingResult.hpp"
-#include "Context.hpp"
-#include "Intent.hpp"
+#include "./BroadcastReceiver_PendingResult.hpp"
+#include "./Context.hpp"
+#include "./Intent.hpp"
 #include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::content

@@ -1,9 +1,9 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Exception.hpp"
-#include "RuntimeException.hpp"
-#include "IllegalArgumentException.hpp"
+#include "./Exception.hpp"
+#include "./RuntimeException.hpp"
+#include "./IllegalArgumentException.hpp"
 
 
 namespace __jni_impl::java::lang

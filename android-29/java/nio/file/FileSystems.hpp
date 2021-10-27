@@ -39,7 +39,7 @@ namespace __jni_impl::java::nio::file
 
 #include "../../lang/ClassLoader.hpp"
 #include "../../net/URI.hpp"
-#include "FileSystem.hpp"
+#include "./FileSystem.hpp"
 
 namespace __jni_impl::java::nio::file
 {

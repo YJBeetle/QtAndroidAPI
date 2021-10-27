@@ -53,7 +53,7 @@ namespace __jni_impl::java::util
 
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
-#include "concurrent/atomic/AtomicLong.hpp"
+#include "./concurrent/atomic/AtomicLong.hpp"
 
 namespace __jni_impl::java::util
 {

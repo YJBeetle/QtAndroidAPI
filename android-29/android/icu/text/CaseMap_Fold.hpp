@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "CaseMap.hpp"
+#include "./CaseMap.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -32,8 +32,8 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "CaseMap.hpp"
-#include "Edits.hpp"
+#include "./CaseMap.hpp"
+#include "./Edits.hpp"
 
 namespace __jni_impl::android::icu::text
 {

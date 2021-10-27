@@ -90,8 +90,8 @@ namespace __jni_impl::android::bluetooth
 	};
 } // namespace __jni_impl::android::bluetooth
 
-#include "BluetoothGattDescriptor.hpp"
-#include "BluetoothGattService.hpp"
+#include "./BluetoothGattDescriptor.hpp"
+#include "./BluetoothGattService.hpp"
 #include "../os/Parcel.hpp"
 #include "../../java/lang/Float.hpp"
 #include "../../java/lang/Integer.hpp"

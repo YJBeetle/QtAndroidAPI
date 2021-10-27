@@ -43,7 +43,7 @@ namespace __jni_impl::java::util
 	};
 } // namespace __jni_impl::java::util
 
-#include "Locale.hpp"
+#include "./Locale.hpp"
 
 namespace __jni_impl::java::util
 {

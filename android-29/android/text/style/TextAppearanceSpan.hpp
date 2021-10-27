@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "CharacterStyle.hpp"
-#include "MetricAffectingSpan.hpp"
+#include "./CharacterStyle.hpp"
+#include "./MetricAffectingSpan.hpp"
 
 namespace __jni_impl::android::content
 {

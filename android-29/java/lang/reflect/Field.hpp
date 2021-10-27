@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "AccessibleObject.hpp"
+#include "./AccessibleObject.hpp"
 
 namespace __jni_impl::java::lang::reflect
 {
@@ -56,7 +56,7 @@ namespace __jni_impl::java::lang::reflect
 	};
 } // namespace __jni_impl::java::lang::reflect
 
-#include "AccessibleObject.hpp"
+#include "./AccessibleObject.hpp"
 
 namespace __jni_impl::java::lang::reflect
 {

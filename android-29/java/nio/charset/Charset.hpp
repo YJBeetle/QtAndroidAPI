@@ -72,9 +72,9 @@ namespace __jni_impl::java::nio::charset
 #include "../../lang/ThreadLocal.hpp"
 #include "../ByteBuffer.hpp"
 #include "../CharBuffer.hpp"
-#include "CharsetDecoder.hpp"
-#include "CharsetEncoder.hpp"
-#include "spi/CharsetProvider.hpp"
+#include "./CharsetDecoder.hpp"
+#include "./CharsetEncoder.hpp"
+#include "./spi/CharsetProvider.hpp"
 #include "../../util/Locale.hpp"
 
 namespace __jni_impl::java::nio::charset

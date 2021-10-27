@@ -36,7 +36,7 @@ namespace __jni_impl::android::nfc
 	};
 } // namespace __jni_impl::android::nfc
 
-#include "NdefRecord.hpp"
+#include "./NdefRecord.hpp"
 #include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::nfc

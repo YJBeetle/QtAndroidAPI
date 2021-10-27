@@ -60,7 +60,7 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "PowerManager_WakeLock.hpp"
+#include "./PowerManager_WakeLock.hpp"
 
 namespace __jni_impl::android::os
 {

@@ -64,7 +64,7 @@ namespace __jni_impl::java::util::concurrent
 
 #include "../../io/ObjectInputStream.hpp"
 #include "../../io/ObjectOutputStream.hpp"
-#include "TimeUnit.hpp"
+#include "./TimeUnit.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {

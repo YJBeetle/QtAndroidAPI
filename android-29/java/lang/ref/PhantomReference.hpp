@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "Reference.hpp"
+#include "./Reference.hpp"
 
 namespace __jni_impl::java::lang::ref
 {
@@ -23,7 +23,7 @@ namespace __jni_impl::java::lang::ref
 	};
 } // namespace __jni_impl::java::lang::ref
 
-#include "ReferenceQueue.hpp"
+#include "./ReferenceQueue.hpp"
 
 namespace __jni_impl::java::lang::ref
 {

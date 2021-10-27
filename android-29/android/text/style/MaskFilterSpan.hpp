@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "CharacterStyle.hpp"
+#include "./CharacterStyle.hpp"
 
 namespace __jni_impl::android::graphics
 {

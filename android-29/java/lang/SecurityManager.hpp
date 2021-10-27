@@ -80,8 +80,8 @@ namespace __jni_impl::java::lang
 } // namespace __jni_impl::java::lang
 
 #include "../io/FileDescriptor.hpp"
-#include "Thread.hpp"
-#include "ThreadGroup.hpp"
+#include "./Thread.hpp"
+#include "./ThreadGroup.hpp"
 #include "../net/InetAddress.hpp"
 #include "../security/Permission.hpp"
 

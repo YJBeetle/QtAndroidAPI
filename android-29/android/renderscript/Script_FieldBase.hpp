@@ -37,10 +37,10 @@ namespace __jni_impl::android::renderscript
 	};
 } // namespace __jni_impl::android::renderscript
 
-#include "Allocation.hpp"
-#include "Element.hpp"
-#include "RenderScript.hpp"
-#include "Type.hpp"
+#include "./Allocation.hpp"
+#include "./Element.hpp"
+#include "./RenderScript.hpp"
+#include "./Type.hpp"
 
 namespace __jni_impl::android::renderscript
 {

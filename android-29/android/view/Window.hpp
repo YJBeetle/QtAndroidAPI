@@ -260,13 +260,13 @@ namespace __jni_impl::android::view
 #include "../transition/Scene.hpp"
 #include "../transition/Transition.hpp"
 #include "../transition/TransitionManager.hpp"
-#include "InputEvent.hpp"
-#include "KeyEvent.hpp"
-#include "LayoutInflater.hpp"
-#include "MotionEvent.hpp"
-#include "View.hpp"
-#include "ViewGroup_LayoutParams.hpp"
-#include "WindowManager_LayoutParams.hpp"
+#include "./InputEvent.hpp"
+#include "./KeyEvent.hpp"
+#include "./LayoutInflater.hpp"
+#include "./MotionEvent.hpp"
+#include "./View.hpp"
+#include "./ViewGroup_LayoutParams.hpp"
+#include "./WindowManager_LayoutParams.hpp"
 
 namespace __jni_impl::android::view
 {

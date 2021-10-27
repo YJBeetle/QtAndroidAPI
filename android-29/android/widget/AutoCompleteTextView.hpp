@@ -2,8 +2,8 @@
 
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
-#include "TextView.hpp"
-#include "EditText.hpp"
+#include "./TextView.hpp"
+#include "./EditText.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -109,7 +109,7 @@ namespace __jni_impl::android::widget
 #include "../graphics/drawable/Drawable.hpp"
 #include "../view/KeyEvent.hpp"
 #include "../view/inputmethod/CompletionInfo.hpp"
-#include "Filter.hpp"
+#include "./Filter.hpp"
 
 namespace __jni_impl::android::widget
 {

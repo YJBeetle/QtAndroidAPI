@@ -86,8 +86,8 @@ namespace __jni_impl::java::lang
 
 #include "../io/File.hpp"
 #include "../io/InputStream.hpp"
-#include "Package.hpp"
-#include "Void.hpp"
+#include "./Package.hpp"
+#include "./Void.hpp"
 #include "../net/URL.hpp"
 #include "../nio/ByteBuffer.hpp"
 #include "../security/CodeSource.hpp"

@@ -40,8 +40,8 @@ namespace __jni_impl::android::view::accessibility
 } // namespace __jni_impl::android::view::accessibility
 
 #include "../../content/Context.hpp"
-#include "CaptioningManager_CaptionStyle.hpp"
-#include "CaptioningManager_CaptioningChangeListener.hpp"
+#include "./CaptioningManager_CaptionStyle.hpp"
+#include "./CaptioningManager_CaptioningChangeListener.hpp"
 #include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::view::accessibility

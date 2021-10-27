@@ -51,8 +51,8 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "Parcel.hpp"
-#include "ParcelFileDescriptor.hpp"
+#include "./Parcel.hpp"
+#include "./ParcelFileDescriptor.hpp"
 #include "../../java/io/File.hpp"
 #include "../../java/io/InputStream.hpp"
 

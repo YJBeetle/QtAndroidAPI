@@ -53,7 +53,7 @@ namespace __jni_impl::android::service::voice
 #include "../../content/Intent.hpp"
 #include "../../content/res/Configuration.hpp"
 #include "../../os/Bundle.hpp"
-#include "VoiceInteractionSession.hpp"
+#include "./VoiceInteractionSession.hpp"
 #include "../../../java/io/FileDescriptor.hpp"
 #include "../../../java/io/PrintWriter.hpp"
 

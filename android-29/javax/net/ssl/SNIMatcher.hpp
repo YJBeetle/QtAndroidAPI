@@ -23,7 +23,7 @@ namespace __jni_impl::javax::net::ssl
 	};
 } // namespace __jni_impl::javax::net::ssl
 
-#include "SNIServerName.hpp"
+#include "./SNIServerName.hpp"
 
 namespace __jni_impl::javax::net::ssl
 {

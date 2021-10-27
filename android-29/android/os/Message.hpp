@@ -63,10 +63,10 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "Bundle.hpp"
-#include "Handler.hpp"
-#include "Messenger.hpp"
-#include "Parcel.hpp"
+#include "./Bundle.hpp"
+#include "./Handler.hpp"
+#include "./Messenger.hpp"
+#include "./Parcel.hpp"
 
 namespace __jni_impl::android::os
 {

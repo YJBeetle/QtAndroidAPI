@@ -45,10 +45,10 @@ namespace __jni_impl::android::icu::util
 	};
 } // namespace __jni_impl::android::icu::util
 
-#include "LocaleData_MeasurementSystem.hpp"
-#include "LocaleData_PaperSize.hpp"
-#include "ULocale.hpp"
-#include "VersionInfo.hpp"
+#include "./LocaleData_MeasurementSystem.hpp"
+#include "./LocaleData_PaperSize.hpp"
+#include "./ULocale.hpp"
+#include "./VersionInfo.hpp"
 
 namespace __jni_impl::android::icu::util
 {

@@ -30,7 +30,7 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "Parcel.hpp"
+#include "./Parcel.hpp"
 
 namespace __jni_impl::android::os
 {

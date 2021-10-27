@@ -31,8 +31,8 @@ namespace __jni_impl::android::view
 } // namespace __jni_impl::android::view
 
 #include "../graphics/Rect.hpp"
-#include "ActionMode.hpp"
-#include "View.hpp"
+#include "./ActionMode.hpp"
+#include "./View.hpp"
 
 namespace __jni_impl::android::view
 {

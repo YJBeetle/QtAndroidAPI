@@ -40,9 +40,9 @@ namespace __jni_impl::java::security
 
 #include "../lang/ClassLoader.hpp"
 #include "../nio/ByteBuffer.hpp"
-#include "CodeSource.hpp"
-#include "PermissionCollection.hpp"
-#include "ProtectionDomain.hpp"
+#include "./CodeSource.hpp"
+#include "./PermissionCollection.hpp"
+#include "./ProtectionDomain.hpp"
 
 namespace __jni_impl::java::security
 {

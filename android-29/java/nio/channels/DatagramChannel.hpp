@@ -1,9 +1,9 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "spi/AbstractInterruptibleChannel.hpp"
-#include "SelectableChannel.hpp"
-#include "spi/AbstractSelectableChannel.hpp"
+#include "./spi/AbstractInterruptibleChannel.hpp"
+#include "./SelectableChannel.hpp"
+#include "./spi/AbstractSelectableChannel.hpp"
 
 namespace __jni_impl::java::net
 {
@@ -58,7 +58,7 @@ namespace __jni_impl::java::nio::channels
 #include "../../net/DatagramSocket.hpp"
 #include "../../net/SocketAddress.hpp"
 #include "../ByteBuffer.hpp"
-#include "spi/SelectorProvider.hpp"
+#include "./spi/SelectorProvider.hpp"
 
 namespace __jni_impl::java::nio::channels
 {

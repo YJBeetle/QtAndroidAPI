@@ -71,7 +71,7 @@ namespace __jni_impl::java::security
 
 #include "../io/InputStream.hpp"
 #include "../io/OutputStream.hpp"
-#include "cert/Certificate.hpp"
+#include "./cert/Certificate.hpp"
 #include "../util/Date.hpp"
 
 namespace __jni_impl::java::security

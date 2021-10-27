@@ -51,7 +51,7 @@ namespace __jni_impl::android::net::wifi
 } // namespace __jni_impl::android::net::wifi
 
 #include "../NetworkInfo_DetailedState.hpp"
-#include "SupplicantState.hpp"
+#include "./SupplicantState.hpp"
 #include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::net::wifi

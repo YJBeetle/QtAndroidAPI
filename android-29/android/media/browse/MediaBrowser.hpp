@@ -66,9 +66,9 @@ namespace __jni_impl::android::media::browse
 
 #include "../../content/ComponentName.hpp"
 #include "../../content/Context.hpp"
-#include "MediaBrowser_ConnectionCallback.hpp"
-#include "MediaBrowser_ItemCallback.hpp"
-#include "MediaBrowser_SubscriptionCallback.hpp"
+#include "./MediaBrowser_ConnectionCallback.hpp"
+#include "./MediaBrowser_ItemCallback.hpp"
+#include "./MediaBrowser_SubscriptionCallback.hpp"
 #include "../session/MediaSession_Token.hpp"
 #include "../../os/Bundle.hpp"
 

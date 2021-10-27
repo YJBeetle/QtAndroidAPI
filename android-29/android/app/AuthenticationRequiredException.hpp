@@ -32,7 +32,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "PendingIntent.hpp"
+#include "./PendingIntent.hpp"
 #include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::app

@@ -34,8 +34,8 @@ namespace __jni_impl::android::graphics::pdf
 	};
 } // namespace __jni_impl::android::graphics::pdf
 
-#include "PdfDocument_Page.hpp"
-#include "PdfDocument_PageInfo.hpp"
+#include "./PdfDocument_Page.hpp"
+#include "./PdfDocument_PageInfo.hpp"
 #include "../../../java/io/OutputStream.hpp"
 
 namespace __jni_impl::android::graphics::pdf

@@ -100,9 +100,9 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "ColorSpace.hpp"
-#include "ColorSpace_Connector.hpp"
-#include "ColorSpace_Model.hpp"
+#include "./ColorSpace.hpp"
+#include "./ColorSpace_Connector.hpp"
+#include "./ColorSpace_Model.hpp"
 
 namespace __jni_impl::android::graphics
 {

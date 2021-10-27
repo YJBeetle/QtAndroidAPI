@@ -87,8 +87,8 @@ namespace __jni_impl::android::media
 } // namespace __jni_impl::android::media
 
 #include "../graphics/Bitmap.hpp"
-#include "MediaDescription.hpp"
-#include "Rating.hpp"
+#include "./MediaDescription.hpp"
+#include "./Rating.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
 

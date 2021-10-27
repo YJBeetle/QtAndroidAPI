@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "AbstractExecutorService.hpp"
+#include "./AbstractExecutorService.hpp"
 
 namespace __jni_impl::java::lang
 {
@@ -77,9 +77,9 @@ namespace __jni_impl::java::util::concurrent
 #include "../../lang/RuntimePermission.hpp"
 #include "../../lang/Thread.hpp"
 #include "../HashSet.hpp"
-#include "TimeUnit.hpp"
-#include "atomic/AtomicInteger.hpp"
-#include "locks/ReentrantLock.hpp"
+#include "./TimeUnit.hpp"
+#include "./atomic/AtomicInteger.hpp"
+#include "./locks/ReentrantLock.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {

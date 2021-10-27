@@ -51,7 +51,7 @@ namespace __jni_impl::android::content::pm
 } // namespace __jni_impl::android::content::pm
 
 #include "../Intent.hpp"
-#include "PackageManager.hpp"
+#include "./PackageManager.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../os/Parcel.hpp"
 

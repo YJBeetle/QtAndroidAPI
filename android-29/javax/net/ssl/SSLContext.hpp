@@ -67,11 +67,11 @@ namespace __jni_impl::javax::net::ssl
 
 #include "../../../java/security/Provider.hpp"
 #include "../../../java/security/SecureRandom.hpp"
-#include "SSLContextSpi.hpp"
-#include "SSLEngine.hpp"
-#include "SSLParameters.hpp"
-#include "SSLServerSocketFactory.hpp"
-#include "SSLSocketFactory.hpp"
+#include "./SSLContextSpi.hpp"
+#include "./SSLEngine.hpp"
+#include "./SSLParameters.hpp"
+#include "./SSLServerSocketFactory.hpp"
+#include "./SSLSocketFactory.hpp"
 
 namespace __jni_impl::javax::net::ssl
 {

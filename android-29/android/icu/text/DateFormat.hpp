@@ -2,7 +2,7 @@
 
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/text/Format.hpp"
-#include "UFormat.hpp"
+#include "./UFormat.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -231,10 +231,10 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "DateFormat_BooleanAttribute.hpp"
-#include "DisplayContext.hpp"
-#include "DisplayContext_Type.hpp"
-#include "NumberFormat.hpp"
+#include "./DateFormat_BooleanAttribute.hpp"
+#include "./DisplayContext.hpp"
+#include "./DisplayContext_Type.hpp"
+#include "./NumberFormat.hpp"
 #include "../util/Calendar.hpp"
 #include "../util/TimeZone.hpp"
 #include "../util/ULocale.hpp"

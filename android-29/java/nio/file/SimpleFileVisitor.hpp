@@ -30,7 +30,7 @@ namespace __jni_impl::java::nio::file
 } // namespace __jni_impl::java::nio::file
 
 #include "../../io/IOException.hpp"
-#include "FileVisitResult.hpp"
+#include "./FileVisitResult.hpp"
 
 namespace __jni_impl::java::nio::file
 {

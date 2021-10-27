@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "UnicodeFilter.hpp"
+#include "./UnicodeFilter.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -165,8 +165,8 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "UnicodeSet_ComparisonStyle.hpp"
-#include "UnicodeSet_SpanCondition.hpp"
+#include "./UnicodeSet_ComparisonStyle.hpp"
+#include "./UnicodeSet_SpanCondition.hpp"
 #include "../../../java/lang/StringBuffer.hpp"
 #include "../../../java/text/ParsePosition.hpp"
 

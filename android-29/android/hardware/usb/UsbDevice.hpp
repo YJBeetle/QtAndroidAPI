@@ -53,8 +53,8 @@ namespace __jni_impl::android::hardware::usb
 	};
 } // namespace __jni_impl::android::hardware::usb
 
-#include "UsbConfiguration.hpp"
-#include "UsbInterface.hpp"
+#include "./UsbConfiguration.hpp"
+#include "./UsbInterface.hpp"
 #include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::hardware::usb

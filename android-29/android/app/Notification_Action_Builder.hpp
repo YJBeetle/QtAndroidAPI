@@ -49,9 +49,9 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Notification_Action.hpp"
-#include "PendingIntent.hpp"
-#include "RemoteInput.hpp"
+#include "./Notification_Action.hpp"
+#include "./PendingIntent.hpp"
+#include "./RemoteInput.hpp"
 #include "../graphics/drawable/Icon.hpp"
 #include "../os/Bundle.hpp"
 

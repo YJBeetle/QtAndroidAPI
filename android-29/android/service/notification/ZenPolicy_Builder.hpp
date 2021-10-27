@@ -41,7 +41,7 @@ namespace __jni_impl::android::service::notification
 	};
 } // namespace __jni_impl::android::service::notification
 
-#include "ZenPolicy.hpp"
+#include "./ZenPolicy.hpp"
 
 namespace __jni_impl::android::service::notification
 {

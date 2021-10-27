@@ -55,8 +55,8 @@ namespace __jni_impl::android::view::contentcapture
 #include "../View.hpp"
 #include "../ViewStructure.hpp"
 #include "../autofill/AutofillId.hpp"
-#include "ContentCaptureContext.hpp"
-#include "ContentCaptureSessionId.hpp"
+#include "./ContentCaptureContext.hpp"
+#include "./ContentCaptureSessionId.hpp"
 
 namespace __jni_impl::android::view::contentcapture
 {

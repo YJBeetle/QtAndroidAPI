@@ -39,9 +39,9 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "Handler.hpp"
-#include "Message.hpp"
-#include "Parcel.hpp"
+#include "./Handler.hpp"
+#include "./Message.hpp"
+#include "./Parcel.hpp"
 
 namespace __jni_impl::android::os
 {

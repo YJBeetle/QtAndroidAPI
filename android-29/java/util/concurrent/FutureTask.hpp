@@ -34,7 +34,7 @@ namespace __jni_impl::java::util::concurrent
 } // namespace __jni_impl::java::util::concurrent
 
 #include "../../lang/Thread.hpp"
-#include "TimeUnit.hpp"
+#include "./TimeUnit.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {

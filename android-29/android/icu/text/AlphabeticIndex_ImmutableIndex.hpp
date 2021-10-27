@@ -26,7 +26,7 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "AlphabeticIndex_Bucket.hpp"
+#include "./AlphabeticIndex_Bucket.hpp"
 
 namespace __jni_impl::android::icu::text
 {

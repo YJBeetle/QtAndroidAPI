@@ -33,8 +33,8 @@ namespace __jni_impl::android::net
 	};
 } // namespace __jni_impl::android::net
 
-#include "NetworkRequest.hpp"
-#include "NetworkSpecifier.hpp"
+#include "./NetworkRequest.hpp"
+#include "./NetworkSpecifier.hpp"
 
 namespace __jni_impl::android::net
 {

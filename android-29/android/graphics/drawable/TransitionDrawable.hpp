@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "Drawable.hpp"
-#include "LayerDrawable.hpp"
+#include "./Drawable.hpp"
+#include "./LayerDrawable.hpp"
 
 namespace __jni_impl::android::graphics
 {

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "CRL.hpp"
+#include "./CRL.hpp"
 
 namespace __jni_impl::java::math
 {
@@ -64,8 +64,8 @@ namespace __jni_impl::java::security::cert
 
 #include "../../math/BigInteger.hpp"
 #include "../Provider.hpp"
-#include "X509CRLEntry.hpp"
-#include "X509Certificate.hpp"
+#include "./X509CRLEntry.hpp"
+#include "./X509Certificate.hpp"
 #include "../../util/Date.hpp"
 #include "../../../javax/security/auth/x500/X500Principal.hpp"
 

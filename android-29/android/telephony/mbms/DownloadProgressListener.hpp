@@ -26,8 +26,8 @@ namespace __jni_impl::android::telephony::mbms
 	};
 } // namespace __jni_impl::android::telephony::mbms
 
-#include "DownloadRequest.hpp"
-#include "FileInfo.hpp"
+#include "./DownloadRequest.hpp"
+#include "./FileInfo.hpp"
 
 namespace __jni_impl::android::telephony::mbms
 {

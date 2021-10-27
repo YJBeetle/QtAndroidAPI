@@ -52,9 +52,9 @@ namespace __jni_impl::android::app::usage
 	};
 } // namespace __jni_impl::android::app::usage
 
-#include "NetworkStats.hpp"
-#include "NetworkStats_Bucket.hpp"
-#include "NetworkStatsManager_UsageCallback.hpp"
+#include "./NetworkStats.hpp"
+#include "./NetworkStats_Bucket.hpp"
+#include "./NetworkStatsManager_UsageCallback.hpp"
 #include "../../os/Handler.hpp"
 
 namespace __jni_impl::android::app::usage

@@ -34,8 +34,8 @@ namespace __jni_impl::android::se::omapi
 	};
 } // namespace __jni_impl::android::se::omapi
 
-#include "Channel.hpp"
-#include "Reader.hpp"
+#include "./Channel.hpp"
+#include "./Reader.hpp"
 
 namespace __jni_impl::android::se::omapi
 {

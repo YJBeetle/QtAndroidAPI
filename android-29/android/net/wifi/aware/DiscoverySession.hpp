@@ -35,8 +35,8 @@ namespace __jni_impl::android::net::wifi::aware
 } // namespace __jni_impl::android::net::wifi::aware
 
 #include "../../NetworkSpecifier.hpp"
-#include "PeerHandle.hpp"
-#include "WifiAwareManager.hpp"
+#include "./PeerHandle.hpp"
+#include "./WifiAwareManager.hpp"
 
 namespace __jni_impl::android::net::wifi::aware
 {

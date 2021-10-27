@@ -30,7 +30,7 @@ namespace __jni_impl::javax::net::ssl
 	};
 } // namespace __jni_impl::javax::net::ssl
 
-#include "SSLSocket.hpp"
+#include "./SSLSocket.hpp"
 
 namespace __jni_impl::javax::net::ssl
 {

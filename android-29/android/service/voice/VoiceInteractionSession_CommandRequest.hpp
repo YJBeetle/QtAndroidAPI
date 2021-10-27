@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "VoiceInteractionSession_Request.hpp"
+#include "./VoiceInteractionSession_Request.hpp"
 
 namespace __jni_impl::android::os
 {

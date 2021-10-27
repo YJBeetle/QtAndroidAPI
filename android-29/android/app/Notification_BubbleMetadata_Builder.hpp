@@ -37,8 +37,8 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Notification_BubbleMetadata.hpp"
-#include "PendingIntent.hpp"
+#include "./Notification_BubbleMetadata.hpp"
+#include "./PendingIntent.hpp"
 #include "../graphics/drawable/Icon.hpp"
 
 namespace __jni_impl::android::app

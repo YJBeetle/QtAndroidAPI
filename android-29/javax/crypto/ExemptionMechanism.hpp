@@ -47,7 +47,7 @@ namespace __jni_impl::javax::crypto
 
 #include "../../java/security/AlgorithmParameters.hpp"
 #include "../../java/security/Provider.hpp"
-#include "ExemptionMechanismSpi.hpp"
+#include "./ExemptionMechanismSpi.hpp"
 
 namespace __jni_impl::javax::crypto
 {

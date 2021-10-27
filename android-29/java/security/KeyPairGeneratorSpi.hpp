@@ -28,8 +28,8 @@ namespace __jni_impl::java::security
 	};
 } // namespace __jni_impl::java::security
 
-#include "KeyPair.hpp"
-#include "SecureRandom.hpp"
+#include "./KeyPair.hpp"
+#include "./SecureRandom.hpp"
 
 namespace __jni_impl::java::security
 {

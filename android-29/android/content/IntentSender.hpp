@@ -52,8 +52,8 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "Context.hpp"
-#include "Intent.hpp"
+#include "./Context.hpp"
+#include "./Intent.hpp"
 #include "../os/Handler.hpp"
 #include "../os/Parcel.hpp"
 #include "../os/UserHandle.hpp"

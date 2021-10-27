@@ -56,12 +56,12 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Bitmap.hpp"
-#include "Canvas.hpp"
-#include "Paint.hpp"
-#include "Rect.hpp"
-#include "RectF.hpp"
-#include "Region.hpp"
+#include "./Bitmap.hpp"
+#include "./Canvas.hpp"
+#include "./Paint.hpp"
+#include "./Rect.hpp"
+#include "./RectF.hpp"
+#include "./Region.hpp"
 
 namespace __jni_impl::android::graphics
 {

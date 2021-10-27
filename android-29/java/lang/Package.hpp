@@ -48,7 +48,7 @@ namespace __jni_impl::java::lang
 	};
 } // namespace __jni_impl::java::lang
 
-#include "ClassLoader.hpp"
+#include "./ClassLoader.hpp"
 #include "../net/URL.hpp"
 
 namespace __jni_impl::java::lang

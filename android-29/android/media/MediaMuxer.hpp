@@ -42,8 +42,8 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "MediaCodec_BufferInfo.hpp"
-#include "MediaFormat.hpp"
+#include "./MediaCodec_BufferInfo.hpp"
+#include "./MediaFormat.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
 

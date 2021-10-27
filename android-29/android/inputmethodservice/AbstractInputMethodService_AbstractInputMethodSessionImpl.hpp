@@ -36,7 +36,7 @@ namespace __jni_impl::android::inputmethodservice
 	};
 } // namespace __jni_impl::android::inputmethodservice
 
-#include "AbstractInputMethodService.hpp"
+#include "./AbstractInputMethodService.hpp"
 #include "../view/KeyEvent.hpp"
 #include "../view/MotionEvent.hpp"
 

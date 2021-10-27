@@ -39,8 +39,8 @@ namespace __jni_impl::java::security
 } // namespace __jni_impl::java::security
 
 #include "../io/File.hpp"
-#include "KeyStore.hpp"
-#include "Provider.hpp"
+#include "./KeyStore.hpp"
+#include "./Provider.hpp"
 
 namespace __jni_impl::java::security
 {

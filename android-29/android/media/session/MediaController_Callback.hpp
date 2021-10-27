@@ -44,8 +44,8 @@ namespace __jni_impl::android::media::session
 } // namespace __jni_impl::android::media::session
 
 #include "../MediaMetadata.hpp"
-#include "MediaController_PlaybackInfo.hpp"
-#include "PlaybackState.hpp"
+#include "./MediaController_PlaybackInfo.hpp"
+#include "./PlaybackState.hpp"
 #include "../../os/Bundle.hpp"
 
 namespace __jni_impl::android::media::session

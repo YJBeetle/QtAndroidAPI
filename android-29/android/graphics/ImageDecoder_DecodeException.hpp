@@ -28,7 +28,7 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "ImageDecoder_Source.hpp"
+#include "./ImageDecoder_Source.hpp"
 
 namespace __jni_impl::android::graphics
 {

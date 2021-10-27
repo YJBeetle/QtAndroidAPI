@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "ZoneId.hpp"
+#include "./ZoneId.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -55,8 +55,8 @@ namespace __jni_impl::java::time
 } // namespace __jni_impl::java::time
 
 #include "../io/ObjectInputStream.hpp"
-#include "temporal/ValueRange.hpp"
-#include "zone/ZoneRules.hpp"
+#include "./temporal/ValueRange.hpp"
+#include "./zone/ZoneRules.hpp"
 
 namespace __jni_impl::java::time
 {

@@ -2,8 +2,8 @@
 
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/ClassLoader.hpp"
-#include "BaseDexClassLoader.hpp"
-#include "PathClassLoader.hpp"
+#include "./BaseDexClassLoader.hpp"
+#include "./PathClassLoader.hpp"
 
 namespace __jni_impl::java::lang
 {

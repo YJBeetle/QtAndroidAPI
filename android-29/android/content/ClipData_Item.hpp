@@ -46,8 +46,8 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "Context.hpp"
-#include "Intent.hpp"
+#include "./Context.hpp"
+#include "./Intent.hpp"
 #include "../net/Uri.hpp"
 
 namespace __jni_impl::android::content

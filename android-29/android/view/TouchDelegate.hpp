@@ -41,9 +41,9 @@ namespace __jni_impl::android::view
 } // namespace __jni_impl::android::view
 
 #include "../graphics/Rect.hpp"
-#include "MotionEvent.hpp"
-#include "View.hpp"
-#include "accessibility/AccessibilityNodeInfo_TouchDelegateInfo.hpp"
+#include "./MotionEvent.hpp"
+#include "./View.hpp"
+#include "./accessibility/AccessibilityNodeInfo_TouchDelegateInfo.hpp"
 
 namespace __jni_impl::android::view
 {

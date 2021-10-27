@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "Drawable.hpp"
+#include "./Drawable.hpp"
 
 namespace __jni_impl::android::content::res
 {
@@ -80,8 +80,8 @@ namespace __jni_impl::android::graphics::drawable
 #include "../Canvas.hpp"
 #include "../ColorFilter.hpp"
 #include "../Outline.hpp"
-#include "Drawable.hpp"
-#include "Drawable_ConstantState.hpp"
+#include "./Drawable.hpp"
+#include "./Drawable_ConstantState.hpp"
 
 namespace __jni_impl::android::graphics::drawable
 {

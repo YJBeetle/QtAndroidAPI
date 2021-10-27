@@ -24,7 +24,7 @@ namespace __jni_impl::javax::net::ssl
 	};
 } // namespace __jni_impl::javax::net::ssl
 
-#include "SSLEngine.hpp"
+#include "./SSLEngine.hpp"
 
 namespace __jni_impl::javax::net::ssl
 {

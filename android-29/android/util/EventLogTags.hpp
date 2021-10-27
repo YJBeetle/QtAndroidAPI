@@ -29,7 +29,7 @@ namespace __jni_impl::android::util
 	};
 } // namespace __jni_impl::android::util
 
-#include "EventLogTags_Description.hpp"
+#include "./EventLogTags_Description.hpp"
 #include "../../java/io/BufferedReader.hpp"
 
 namespace __jni_impl::android::util

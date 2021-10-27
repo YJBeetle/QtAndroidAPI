@@ -30,8 +30,8 @@ namespace __jni_impl::android::renderscript
 	};
 } // namespace __jni_impl::android::renderscript
 
-#include "Element.hpp"
-#include "RenderScript.hpp"
+#include "./Element.hpp"
+#include "./RenderScript.hpp"
 
 namespace __jni_impl::android::renderscript
 {

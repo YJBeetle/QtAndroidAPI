@@ -35,8 +35,8 @@ namespace __jni_impl::android::net
 	};
 } // namespace __jni_impl::android::net
 
-#include "LocalSocket.hpp"
-#include "LocalSocketAddress.hpp"
+#include "./LocalSocket.hpp"
+#include "./LocalSocketAddress.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 
 namespace __jni_impl::android::net

@@ -46,9 +46,9 @@ namespace __jni_impl::android::media
 } // namespace __jni_impl::android::media
 
 #include "../content/Intent.hpp"
-#include "MediaSession2.hpp"
-#include "MediaSession2_ControllerInfo.hpp"
-#include "MediaSession2Service_MediaNotification.hpp"
+#include "./MediaSession2.hpp"
+#include "./MediaSession2_ControllerInfo.hpp"
+#include "./MediaSession2Service_MediaNotification.hpp"
 
 namespace __jni_impl::android::media
 {

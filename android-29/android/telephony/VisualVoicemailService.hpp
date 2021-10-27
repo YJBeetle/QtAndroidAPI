@@ -44,8 +44,8 @@ namespace __jni_impl::android::telephony
 
 #include "../content/Intent.hpp"
 #include "../telecom/PhoneAccountHandle.hpp"
-#include "VisualVoicemailService_VisualVoicemailTask.hpp"
-#include "VisualVoicemailSms.hpp"
+#include "./VisualVoicemailService_VisualVoicemailTask.hpp"
+#include "./VisualVoicemailSms.hpp"
 
 namespace __jni_impl::android::telephony
 {

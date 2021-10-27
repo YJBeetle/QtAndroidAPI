@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "View.hpp"
+#include "./View.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -87,7 +87,7 @@ namespace __jni_impl::android::view
 #include "../graphics/Rect.hpp"
 #include "../graphics/SurfaceTexture.hpp"
 #include "../graphics/drawable/Drawable.hpp"
-#include "View.hpp"
+#include "./View.hpp"
 
 namespace __jni_impl::android::view
 {

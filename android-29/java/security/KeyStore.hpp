@@ -94,9 +94,9 @@ namespace __jni_impl::java::security
 #include "../io/File.hpp"
 #include "../io/InputStream.hpp"
 #include "../io/OutputStream.hpp"
-#include "KeyStoreSpi.hpp"
-#include "Provider.hpp"
-#include "cert/Certificate.hpp"
+#include "./KeyStoreSpi.hpp"
+#include "./Provider.hpp"
+#include "./cert/Certificate.hpp"
 #include "../util/Date.hpp"
 
 namespace __jni_impl::java::security

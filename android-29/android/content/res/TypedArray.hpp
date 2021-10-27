@@ -71,8 +71,8 @@ namespace __jni_impl::android::content::res
 	};
 } // namespace __jni_impl::android::content::res
 
-#include "ColorStateList.hpp"
-#include "Resources.hpp"
+#include "./ColorStateList.hpp"
+#include "./Resources.hpp"
 #include "../../graphics/Typeface.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../util/TypedValue.hpp"

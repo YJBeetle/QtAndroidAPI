@@ -28,8 +28,8 @@ namespace __jni_impl::android::net::wifi::rtt
 	};
 } // namespace __jni_impl::android::net::wifi::rtt
 
-#include "RangingRequest.hpp"
-#include "RangingResultCallback.hpp"
+#include "./RangingRequest.hpp"
+#include "./RangingResultCallback.hpp"
 
 namespace __jni_impl::android::net::wifi::rtt
 {

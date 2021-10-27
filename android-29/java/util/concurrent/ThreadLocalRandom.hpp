@@ -72,8 +72,8 @@ namespace __jni_impl::java::util::concurrent
 #include "../../lang/Thread.hpp"
 #include "../../lang/ThreadLocal.hpp"
 #include "../../security/AccessControlContext.hpp"
-#include "atomic/AtomicInteger.hpp"
-#include "atomic/AtomicLong.hpp"
+#include "./atomic/AtomicInteger.hpp"
+#include "./atomic/AtomicLong.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {

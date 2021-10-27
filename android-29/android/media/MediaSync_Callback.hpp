@@ -26,7 +26,7 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "MediaSync.hpp"
+#include "./MediaSync.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
 
 namespace __jni_impl::android::media

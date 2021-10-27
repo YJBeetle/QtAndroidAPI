@@ -3,7 +3,7 @@
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../../java/security/GeneralSecurityException.hpp"
-#include "BadPaddingException.hpp"
+#include "./BadPaddingException.hpp"
 
 
 namespace __jni_impl::javax::crypto

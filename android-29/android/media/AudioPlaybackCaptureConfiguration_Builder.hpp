@@ -30,8 +30,8 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "AudioPlaybackCaptureConfiguration.hpp"
-#include "projection/MediaProjection.hpp"
+#include "./AudioPlaybackCaptureConfiguration.hpp"
+#include "./projection/MediaProjection.hpp"
 
 namespace __jni_impl::android::media
 {

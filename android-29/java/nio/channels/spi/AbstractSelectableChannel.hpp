@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../../__JniBaseClass.hpp"
-#include "AbstractInterruptibleChannel.hpp"
+#include "./AbstractInterruptibleChannel.hpp"
 #include "../SelectableChannel.hpp"
 
 namespace __jni_impl::java::nio::channels
@@ -45,7 +45,7 @@ namespace __jni_impl::java::nio::channels::spi
 #include "../SelectableChannel.hpp"
 #include "../SelectionKey.hpp"
 #include "../Selector.hpp"
-#include "SelectorProvider.hpp"
+#include "./SelectorProvider.hpp"
 
 namespace __jni_impl::java::nio::channels::spi
 {

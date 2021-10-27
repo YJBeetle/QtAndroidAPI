@@ -23,7 +23,7 @@ namespace __jni_impl::android::widget
 	};
 } // namespace __jni_impl::android::widget
 
-#include "GridLayout_Alignment.hpp"
+#include "./GridLayout_Alignment.hpp"
 
 namespace __jni_impl::android::widget
 {

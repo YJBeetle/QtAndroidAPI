@@ -42,8 +42,8 @@ namespace __jni_impl::java::security
 	};
 } // namespace __jni_impl::java::security
 
-#include "AlgorithmParametersSpi.hpp"
-#include "Provider.hpp"
+#include "./AlgorithmParametersSpi.hpp"
+#include "./Provider.hpp"
 
 namespace __jni_impl::java::security
 {

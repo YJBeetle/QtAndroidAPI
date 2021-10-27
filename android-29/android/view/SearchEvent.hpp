@@ -22,7 +22,7 @@ namespace __jni_impl::android::view
 	};
 } // namespace __jni_impl::android::view
 
-#include "InputDevice.hpp"
+#include "./InputDevice.hpp"
 
 namespace __jni_impl::android::view
 {

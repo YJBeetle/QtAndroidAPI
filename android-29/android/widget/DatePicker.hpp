@@ -3,7 +3,7 @@
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
-#include "FrameLayout.hpp"
+#include "./FrameLayout.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -76,7 +76,7 @@ namespace __jni_impl::android::widget
 #include "../util/SparseArray.hpp"
 #include "../view/ViewStructure.hpp"
 #include "../view/autofill/AutofillValue.hpp"
-#include "CalendarView.hpp"
+#include "./CalendarView.hpp"
 
 namespace __jni_impl::android::widget
 {

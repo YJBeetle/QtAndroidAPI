@@ -76,8 +76,8 @@ namespace __jni_impl::android::service::media
 #include "../../media/session/MediaSession_Token.hpp"
 #include "../../media/session/MediaSessionManager_RemoteUserInfo.hpp"
 #include "../../os/Bundle.hpp"
-#include "MediaBrowserService_BrowserRoot.hpp"
-#include "MediaBrowserService_Result.hpp"
+#include "./MediaBrowserService_BrowserRoot.hpp"
+#include "./MediaBrowserService_Result.hpp"
 #include "../../../java/io/FileDescriptor.hpp"
 #include "../../../java/io/PrintWriter.hpp"
 

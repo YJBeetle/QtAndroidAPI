@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Xfermode.hpp"
+#include "./Xfermode.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -22,7 +22,7 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "PorterDuff_Mode.hpp"
+#include "./PorterDuff_Mode.hpp"
 
 namespace __jni_impl::android::graphics
 {

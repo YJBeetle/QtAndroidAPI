@@ -56,7 +56,7 @@ namespace __jni_impl::java::nio::channels::spi
 #include "../Pipe.hpp"
 #include "../ServerSocketChannel.hpp"
 #include "../SocketChannel.hpp"
-#include "AbstractSelector.hpp"
+#include "./AbstractSelector.hpp"
 
 namespace __jni_impl::java::nio::channels::spi
 {

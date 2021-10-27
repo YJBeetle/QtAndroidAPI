@@ -24,7 +24,7 @@ namespace __jni_impl::android::database
 	};
 } // namespace __jni_impl::android::database
 
-#include "MatrixCursor.hpp"
+#include "./MatrixCursor.hpp"
 
 namespace __jni_impl::android::database
 {

@@ -151,7 +151,7 @@ namespace __jni_impl::android::widget
 #include "../os/Parcel.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
-#include "RemoteViews_RemoteResponse.hpp"
+#include "./RemoteViews_RemoteResponse.hpp"
 
 namespace __jni_impl::android::widget
 {

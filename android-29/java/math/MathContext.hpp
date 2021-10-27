@@ -38,7 +38,7 @@ namespace __jni_impl::java::math
 } // namespace __jni_impl::java::math
 
 #include "../io/ObjectInputStream.hpp"
-#include "RoundingMode.hpp"
+#include "./RoundingMode.hpp"
 
 namespace __jni_impl::java::math
 {

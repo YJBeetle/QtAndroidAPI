@@ -23,7 +23,7 @@ namespace __jni_impl::android::net::wifi::hotspot2
 	};
 } // namespace __jni_impl::android::net::wifi::hotspot2
 
-#include "PasspointConfiguration.hpp"
+#include "./PasspointConfiguration.hpp"
 
 namespace __jni_impl::android::net::wifi::hotspot2
 {

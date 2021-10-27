@@ -30,7 +30,7 @@ namespace __jni_impl::android::view::textclassifier
 } // namespace __jni_impl::android::view::textclassifier
 
 #include "../../content/Context.hpp"
-#include "TextClassificationContext.hpp"
+#include "./TextClassificationContext.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {

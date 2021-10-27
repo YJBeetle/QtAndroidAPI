@@ -119,15 +119,15 @@ namespace __jni_impl::java::time
 } // namespace __jni_impl::java::time
 
 #include "../io/ObjectInputStream.hpp"
-#include "Clock.hpp"
-#include "Instant.hpp"
-#include "LocalDate.hpp"
-#include "LocalDateTime.hpp"
-#include "OffsetTime.hpp"
-#include "ZoneId.hpp"
-#include "ZoneOffset.hpp"
-#include "format/DateTimeFormatter.hpp"
-#include "temporal/ValueRange.hpp"
+#include "./Clock.hpp"
+#include "./Instant.hpp"
+#include "./LocalDate.hpp"
+#include "./LocalDateTime.hpp"
+#include "./OffsetTime.hpp"
+#include "./ZoneId.hpp"
+#include "./ZoneOffset.hpp"
+#include "./format/DateTimeFormatter.hpp"
+#include "./temporal/ValueRange.hpp"
 
 namespace __jni_impl::java::time
 {

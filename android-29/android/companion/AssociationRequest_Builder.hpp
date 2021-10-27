@@ -24,7 +24,7 @@ namespace __jni_impl::android::companion
 	};
 } // namespace __jni_impl::android::companion
 
-#include "AssociationRequest.hpp"
+#include "./AssociationRequest.hpp"
 
 namespace __jni_impl::android::companion
 {

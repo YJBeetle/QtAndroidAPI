@@ -40,10 +40,10 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "Handler.hpp"
-#include "Looper.hpp"
-#include "Message.hpp"
-#include "MessageQueue.hpp"
+#include "./Handler.hpp"
+#include "./Looper.hpp"
+#include "./Message.hpp"
+#include "./MessageQueue.hpp"
 
 namespace __jni_impl::android::os
 {

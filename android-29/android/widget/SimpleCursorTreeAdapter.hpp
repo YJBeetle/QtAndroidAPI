@@ -1,9 +1,9 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "BaseExpandableListAdapter.hpp"
-#include "CursorTreeAdapter.hpp"
-#include "ResourceCursorTreeAdapter.hpp"
+#include "./BaseExpandableListAdapter.hpp"
+#include "./CursorTreeAdapter.hpp"
+#include "./ResourceCursorTreeAdapter.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -44,8 +44,8 @@ namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
 #include "../view/View.hpp"
-#include "ImageView.hpp"
-#include "TextView.hpp"
+#include "./ImageView.hpp"
+#include "./TextView.hpp"
 
 namespace __jni_impl::android::widget
 {

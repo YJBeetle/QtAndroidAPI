@@ -35,7 +35,7 @@ namespace __jni_impl::android::view
 } // namespace __jni_impl::android::view
 
 #include "../os/Parcel.hpp"
-#include "KeyboardShortcutInfo.hpp"
+#include "./KeyboardShortcutInfo.hpp"
 
 namespace __jni_impl::android::view
 {

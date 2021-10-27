@@ -33,8 +33,8 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "ColorSpace.hpp"
-#include "ImageDecoder.hpp"
+#include "./ColorSpace.hpp"
+#include "./ImageDecoder.hpp"
 #include "../util/Size.hpp"
 
 namespace __jni_impl::android::graphics

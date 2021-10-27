@@ -43,9 +43,9 @@ namespace __jni_impl::android::telecom
 } // namespace __jni_impl::android::telecom
 
 #include "../os/Bundle.hpp"
-#include "DisconnectCause.hpp"
-#include "RemoteConference.hpp"
-#include "RemoteConnection.hpp"
+#include "./DisconnectCause.hpp"
+#include "./RemoteConference.hpp"
+#include "./RemoteConnection.hpp"
 
 namespace __jni_impl::android::telecom
 {

@@ -3,7 +3,7 @@
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 #include "../../io/IOException.hpp"
-#include "CharacterCodingException.hpp"
+#include "./CharacterCodingException.hpp"
 
 
 namespace __jni_impl::java::nio::charset

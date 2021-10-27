@@ -57,8 +57,8 @@ namespace __jni_impl::java::util
 } // namespace __jni_impl::java::util
 
 #include "../time/ZoneId.hpp"
-#include "Date.hpp"
-#include "Locale.hpp"
+#include "./Date.hpp"
+#include "./Locale.hpp"
 
 namespace __jni_impl::java::util
 {

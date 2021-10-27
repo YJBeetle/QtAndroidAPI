@@ -42,7 +42,7 @@ namespace __jni_impl::java::lang::invoke
 	};
 } // namespace __jni_impl::java::lang::invoke
 
-#include "MethodType.hpp"
+#include "./MethodType.hpp"
 #include "../../util/Optional.hpp"
 
 namespace __jni_impl::java::lang::invoke

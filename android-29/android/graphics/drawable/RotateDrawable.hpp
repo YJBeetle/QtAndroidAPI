@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "Drawable.hpp"
-#include "DrawableWrapper.hpp"
+#include "./Drawable.hpp"
+#include "./DrawableWrapper.hpp"
 
 namespace __jni_impl::android::content::res
 {

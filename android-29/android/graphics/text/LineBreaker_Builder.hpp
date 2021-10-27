@@ -26,7 +26,7 @@ namespace __jni_impl::android::graphics::text
 	};
 } // namespace __jni_impl::android::graphics::text
 
-#include "LineBreaker.hpp"
+#include "./LineBreaker.hpp"
 
 namespace __jni_impl::android::graphics::text
 {

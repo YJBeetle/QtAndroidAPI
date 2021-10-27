@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "PermissionCollection.hpp"
+#include "./PermissionCollection.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -43,8 +43,8 @@ namespace __jni_impl::java::security
 
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
-#include "Permission.hpp"
-#include "PermissionCollection.hpp"
+#include "./Permission.hpp"
+#include "./PermissionCollection.hpp"
 #include "../util/concurrent/ConcurrentHashMap.hpp"
 
 namespace __jni_impl::java::security

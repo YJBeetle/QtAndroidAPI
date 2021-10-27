@@ -63,8 +63,8 @@ namespace __jni_impl::android::telephony::euicc
 #include "../../app/PendingIntent.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/Intent.hpp"
-#include "DownloadableSubscription.hpp"
-#include "EuiccInfo.hpp"
+#include "./DownloadableSubscription.hpp"
+#include "./EuiccInfo.hpp"
 
 namespace __jni_impl::android::telephony::euicc
 {

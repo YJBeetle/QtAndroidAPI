@@ -32,7 +32,7 @@ namespace __jni_impl::android::service::textservice
 } // namespace __jni_impl::android::service::textservice
 
 #include "../../content/Intent.hpp"
-#include "SpellCheckerService_Session.hpp"
+#include "./SpellCheckerService_Session.hpp"
 
 namespace __jni_impl::android::service::textservice
 {

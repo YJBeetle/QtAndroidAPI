@@ -48,7 +48,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "PendingIntent.hpp"
+#include "./PendingIntent.hpp"
 #include "../graphics/drawable/Icon.hpp"
 #include "../os/Parcel.hpp"
 #include "../../java/io/PrintWriter.hpp"

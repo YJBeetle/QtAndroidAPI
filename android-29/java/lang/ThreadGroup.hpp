@@ -55,8 +55,8 @@ namespace __jni_impl::java::lang
 } // namespace __jni_impl::java::lang
 
 #include "../io/PrintStream.hpp"
-#include "Thread.hpp"
-#include "Void.hpp"
+#include "./Thread.hpp"
+#include "./Void.hpp"
 
 namespace __jni_impl::java::lang
 {

@@ -82,7 +82,7 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "PersistableBundle.hpp"
+#include "./PersistableBundle.hpp"
 
 namespace __jni_impl::android::os
 {

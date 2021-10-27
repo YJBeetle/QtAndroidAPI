@@ -48,10 +48,10 @@ namespace __jni_impl::java::util
 	};
 } // namespace __jni_impl::java::util
 
-#include "Calendar.hpp"
-#include "Date.hpp"
-#include "Locale.hpp"
-#include "TimeZone.hpp"
+#include "./Calendar.hpp"
+#include "./Date.hpp"
+#include "./Locale.hpp"
+#include "./TimeZone.hpp"
 
 namespace __jni_impl::java::util
 {

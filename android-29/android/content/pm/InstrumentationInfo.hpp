@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "PackageItemInfo.hpp"
+#include "./PackageItemInfo.hpp"
 
 namespace __jni_impl::android::os
 {

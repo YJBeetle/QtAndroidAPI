@@ -106,10 +106,10 @@ namespace __jni_impl::android::view::inputmethod
 #include "../../os/ResultReceiver.hpp"
 #include "../KeyEvent.hpp"
 #include "../View.hpp"
-#include "CursorAnchorInfo.hpp"
-#include "ExtractedText.hpp"
-#include "InputMethodInfo.hpp"
-#include "InputMethodSubtype.hpp"
+#include "./CursorAnchorInfo.hpp"
+#include "./ExtractedText.hpp"
+#include "./InputMethodInfo.hpp"
+#include "./InputMethodSubtype.hpp"
 
 namespace __jni_impl::android::view::inputmethod
 {

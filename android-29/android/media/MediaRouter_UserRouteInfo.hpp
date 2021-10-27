@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "MediaRouter_RouteInfo.hpp"
+#include "./MediaRouter_RouteInfo.hpp"
 
 namespace __jni_impl::android::graphics::drawable
 {
@@ -54,9 +54,9 @@ namespace __jni_impl::android::media
 } // namespace __jni_impl::android::media
 
 #include "../graphics/drawable/Drawable.hpp"
-#include "MediaRouter_RouteCategory.hpp"
-#include "MediaRouter_VolumeCallback.hpp"
-#include "RemoteControlClient.hpp"
+#include "./MediaRouter_RouteCategory.hpp"
+#include "./MediaRouter_VolumeCallback.hpp"
+#include "./RemoteControlClient.hpp"
 
 namespace __jni_impl::android::media
 {

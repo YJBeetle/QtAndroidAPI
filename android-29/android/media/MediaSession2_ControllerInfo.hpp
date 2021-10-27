@@ -32,7 +32,7 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "session/MediaSessionManager_RemoteUserInfo.hpp"
+#include "./session/MediaSessionManager_RemoteUserInfo.hpp"
 #include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::media

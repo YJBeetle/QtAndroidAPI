@@ -39,7 +39,7 @@ namespace __jni_impl::android::opengl
 	};
 } // namespace __jni_impl::android::opengl
 
-#include "ETC1Util_ETC1Texture.hpp"
+#include "./ETC1Util_ETC1Texture.hpp"
 #include "../../java/io/InputStream.hpp"
 #include "../../java/io/OutputStream.hpp"
 #include "../../java/nio/Buffer.hpp"

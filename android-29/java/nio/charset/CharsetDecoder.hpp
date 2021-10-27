@@ -56,9 +56,9 @@ namespace __jni_impl::java::nio::charset
 
 #include "../ByteBuffer.hpp"
 #include "../CharBuffer.hpp"
-#include "Charset.hpp"
-#include "CoderResult.hpp"
-#include "CodingErrorAction.hpp"
+#include "./Charset.hpp"
+#include "./CoderResult.hpp"
+#include "./CodingErrorAction.hpp"
 
 namespace __jni_impl::java::nio::charset
 {

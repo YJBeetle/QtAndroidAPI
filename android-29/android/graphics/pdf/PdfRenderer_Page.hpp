@@ -43,7 +43,7 @@ namespace __jni_impl::android::graphics::pdf
 #include "../Bitmap.hpp"
 #include "../Matrix.hpp"
 #include "../Rect.hpp"
-#include "PdfRenderer.hpp"
+#include "./PdfRenderer.hpp"
 
 namespace __jni_impl::android::graphics::pdf
 {

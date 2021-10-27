@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Fragment.hpp"
+#include "./Fragment.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -81,9 +81,9 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Dialog.hpp"
-#include "FragmentManager.hpp"
-#include "FragmentTransaction.hpp"
+#include "./Dialog.hpp"
+#include "./FragmentManager.hpp"
+#include "./FragmentTransaction.hpp"
 #include "../content/Context.hpp"
 #include "../os/Bundle.hpp"
 #include "../view/LayoutInflater.hpp"

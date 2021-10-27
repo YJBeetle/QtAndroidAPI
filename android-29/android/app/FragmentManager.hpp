@@ -78,10 +78,10 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Fragment.hpp"
-#include "Fragment_SavedState.hpp"
-#include "FragmentManager_FragmentLifecycleCallbacks.hpp"
-#include "FragmentTransaction.hpp"
+#include "./Fragment.hpp"
+#include "./Fragment_SavedState.hpp"
+#include "./FragmentManager_FragmentLifecycleCallbacks.hpp"
+#include "./FragmentTransaction.hpp"
 #include "../os/Bundle.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"

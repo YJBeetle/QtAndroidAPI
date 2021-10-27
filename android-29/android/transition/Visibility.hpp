@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Transition.hpp"
+#include "./Transition.hpp"
 
 namespace __jni_impl::android::animation
 {
@@ -55,7 +55,7 @@ namespace __jni_impl::android::transition
 
 #include "../animation/Animator.hpp"
 #include "../content/Context.hpp"
-#include "TransitionValues.hpp"
+#include "./TransitionValues.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 

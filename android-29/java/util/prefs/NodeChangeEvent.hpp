@@ -34,7 +34,7 @@ namespace __jni_impl::java::util::prefs
 
 #include "../../io/ObjectInputStream.hpp"
 #include "../../io/ObjectOutputStream.hpp"
-#include "Preferences.hpp"
+#include "./Preferences.hpp"
 
 namespace __jni_impl::java::util::prefs
 {

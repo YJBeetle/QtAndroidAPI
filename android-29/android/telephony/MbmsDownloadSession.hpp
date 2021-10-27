@@ -79,11 +79,11 @@ namespace __jni_impl::android::telephony
 } // namespace __jni_impl::android::telephony
 
 #include "../content/Context.hpp"
-#include "mbms/DownloadProgressListener.hpp"
-#include "mbms/DownloadRequest.hpp"
-#include "mbms/DownloadStatusListener.hpp"
-#include "mbms/FileInfo.hpp"
-#include "mbms/MbmsDownloadSessionCallback.hpp"
+#include "./mbms/DownloadProgressListener.hpp"
+#include "./mbms/DownloadRequest.hpp"
+#include "./mbms/DownloadStatusListener.hpp"
+#include "./mbms/FileInfo.hpp"
+#include "./mbms/MbmsDownloadSessionCallback.hpp"
 #include "../../java/io/File.hpp"
 
 namespace __jni_impl::android::telephony

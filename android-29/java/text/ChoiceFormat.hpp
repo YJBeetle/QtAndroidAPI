@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Format.hpp"
-#include "NumberFormat.hpp"
+#include "./Format.hpp"
+#include "./NumberFormat.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -60,8 +60,8 @@ namespace __jni_impl::java::text
 #include "../io/ObjectInputStream.hpp"
 #include "../lang/Number.hpp"
 #include "../lang/StringBuffer.hpp"
-#include "FieldPosition.hpp"
-#include "ParsePosition.hpp"
+#include "./FieldPosition.hpp"
+#include "./ParsePosition.hpp"
 
 namespace __jni_impl::java::text
 {

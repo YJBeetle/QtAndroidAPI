@@ -26,7 +26,7 @@ namespace __jni_impl::android::webkit
 	};
 } // namespace __jni_impl::android::webkit
 
-#include "TracingConfig.hpp"
+#include "./TracingConfig.hpp"
 
 namespace __jni_impl::android::webkit
 {

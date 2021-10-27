@@ -47,7 +47,7 @@ namespace __jni_impl::android::media
 } // namespace __jni_impl::android::media
 
 #include "../graphics/Bitmap.hpp"
-#include "MediaDescription.hpp"
+#include "./MediaDescription.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
 

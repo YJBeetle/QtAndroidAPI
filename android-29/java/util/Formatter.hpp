@@ -84,8 +84,8 @@ namespace __jni_impl::java::util
 #include "../io/OutputStream.hpp"
 #include "../io/PrintStream.hpp"
 #include "../nio/charset/Charset.hpp"
-#include "Locale.hpp"
-#include "regex/Pattern.hpp"
+#include "./Locale.hpp"
+#include "./regex/Pattern.hpp"
 
 namespace __jni_impl::java::util
 {

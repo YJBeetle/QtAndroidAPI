@@ -28,7 +28,7 @@ namespace __jni_impl::android::text
 	};
 } // namespace __jni_impl::android::text
 
-#include "TextPaint.hpp"
+#include "./TextPaint.hpp"
 
 namespace __jni_impl::android::text
 {

@@ -134,8 +134,8 @@ namespace __jni_impl::android::service::notification
 #include "../../content/Context.hpp"
 #include "../../content/Intent.hpp"
 #include "../../os/UserHandle.hpp"
-#include "NotificationListenerService_RankingMap.hpp"
-#include "StatusBarNotification.hpp"
+#include "./NotificationListenerService_RankingMap.hpp"
+#include "./StatusBarNotification.hpp"
 
 namespace __jni_impl::android::service::notification
 {

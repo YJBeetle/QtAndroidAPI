@@ -67,7 +67,7 @@ namespace __jni_impl::android::net::wifi
 
 #include "../MacAddress.hpp"
 #include "../ProxyInfo.hpp"
-#include "WifiEnterpriseConfig.hpp"
+#include "./WifiEnterpriseConfig.hpp"
 #include "../../os/Parcel.hpp"
 #include "../../../java/util/BitSet.hpp"
 

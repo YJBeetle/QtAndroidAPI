@@ -51,7 +51,7 @@ namespace __jni_impl::android::speech::tts
 	};
 } // namespace __jni_impl::android::speech::tts
 
-#include "TextToSpeech.hpp"
+#include "./TextToSpeech.hpp"
 
 namespace __jni_impl::android::speech::tts
 {

@@ -47,8 +47,8 @@ namespace __jni_impl::android::appwidget
 } // namespace __jni_impl::android::appwidget
 
 #include "../app/Activity.hpp"
-#include "AppWidgetHostView.hpp"
-#include "AppWidgetProviderInfo.hpp"
+#include "./AppWidgetHostView.hpp"
+#include "./AppWidgetProviderInfo.hpp"
 #include "../content/Context.hpp"
 #include "../os/Bundle.hpp"
 

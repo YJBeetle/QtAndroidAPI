@@ -27,7 +27,7 @@ namespace __jni_impl::java::lang::ref
 	};
 } // namespace __jni_impl::java::lang::ref
 
-#include "ReferenceQueue.hpp"
+#include "./ReferenceQueue.hpp"
 
 namespace __jni_impl::java::lang::ref
 {

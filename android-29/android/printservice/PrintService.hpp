@@ -54,8 +54,8 @@ namespace __jni_impl::android::printservice
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"
 #include "../print/PrinterId.hpp"
-#include "PrintJob.hpp"
-#include "PrinterDiscoverySession.hpp"
+#include "./PrintJob.hpp"
+#include "./PrinterDiscoverySession.hpp"
 
 namespace __jni_impl::android::printservice
 {

@@ -61,7 +61,7 @@ namespace __jni_impl::android::service::quicksettings
 #include "../../content/ComponentName.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/Intent.hpp"
-#include "Tile.hpp"
+#include "./Tile.hpp"
 
 namespace __jni_impl::android::service::quicksettings
 {

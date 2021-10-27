@@ -44,7 +44,7 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "StrictMode_ThreadPolicy.hpp"
+#include "./StrictMode_ThreadPolicy.hpp"
 
 namespace __jni_impl::android::os
 {

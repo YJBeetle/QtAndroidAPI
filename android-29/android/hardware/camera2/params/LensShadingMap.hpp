@@ -31,7 +31,7 @@ namespace __jni_impl::android::hardware::camera2::params
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
-#include "RggbChannelVector.hpp"
+#include "./RggbChannelVector.hpp"
 
 namespace __jni_impl::android::hardware::camera2::params
 {

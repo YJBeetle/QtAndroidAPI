@@ -67,8 +67,8 @@ namespace __jni_impl::android::hardware
 } // namespace __jni_impl::android::hardware
 
 #include "../graphics/SurfaceTexture.hpp"
-#include "Camera_CameraInfo.hpp"
-#include "Camera_Parameters.hpp"
+#include "./Camera_CameraInfo.hpp"
+#include "./Camera_Parameters.hpp"
 
 namespace __jni_impl::android::hardware
 {

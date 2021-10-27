@@ -53,7 +53,7 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "Context.hpp"
+#include "./Context.hpp"
 #include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::content

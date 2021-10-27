@@ -35,9 +35,9 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Typeface.hpp"
-#include "fonts/FontFamily.hpp"
-#include "fonts/FontStyle.hpp"
+#include "./Typeface.hpp"
+#include "./fonts/FontFamily.hpp"
+#include "./fonts/FontStyle.hpp"
 
 namespace __jni_impl::android::graphics
 {

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "VoiceInteractor_Request.hpp"
+#include "./VoiceInteractor_Request.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -27,7 +27,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "VoiceInteractor_Prompt.hpp"
+#include "./VoiceInteractor_Prompt.hpp"
 #include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::app

@@ -24,7 +24,7 @@ namespace __jni_impl::android::media::effect
 	};
 } // namespace __jni_impl::android::media::effect
 
-#include "EffectFactory.hpp"
+#include "./EffectFactory.hpp"
 
 namespace __jni_impl::android::media::effect
 {

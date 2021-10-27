@@ -28,7 +28,7 @@ namespace __jni_impl::android::security
 } // namespace __jni_impl::android::security
 
 #include "../content/Context.hpp"
-#include "KeyStoreParameter.hpp"
+#include "./KeyStoreParameter.hpp"
 
 namespace __jni_impl::android::security
 {

@@ -4,8 +4,8 @@
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../view/ContextThemeWrapper.hpp"
-#include "Activity.hpp"
-#include "ListActivity.hpp"
+#include "./Activity.hpp"
+#include "./ListActivity.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -46,7 +46,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "LauncherActivity_ListItem.hpp"
+#include "./LauncherActivity_ListItem.hpp"
 #include "../content/Intent.hpp"
 #include "../os/Bundle.hpp"
 #include "../view/View.hpp"

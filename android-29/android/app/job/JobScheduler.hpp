@@ -33,8 +33,8 @@ namespace __jni_impl::android::app::job
 	};
 } // namespace __jni_impl::android::app::job
 
-#include "JobInfo.hpp"
-#include "JobWorkItem.hpp"
+#include "./JobInfo.hpp"
+#include "./JobWorkItem.hpp"
 
 namespace __jni_impl::android::app::job
 {

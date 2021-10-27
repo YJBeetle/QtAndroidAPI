@@ -84,11 +84,11 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Matrix.hpp"
-#include "Path_Direction.hpp"
-#include "Path_FillType.hpp"
-#include "Path_Op.hpp"
-#include "RectF.hpp"
+#include "./Matrix.hpp"
+#include "./Path_Direction.hpp"
+#include "./Path_FillType.hpp"
+#include "./Path_Op.hpp"
+#include "./RectF.hpp"
 
 namespace __jni_impl::android::graphics
 {

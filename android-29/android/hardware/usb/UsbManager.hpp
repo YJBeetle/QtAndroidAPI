@@ -57,9 +57,9 @@ namespace __jni_impl::android::hardware::usb
 } // namespace __jni_impl::android::hardware::usb
 
 #include "../../app/PendingIntent.hpp"
-#include "UsbAccessory.hpp"
-#include "UsbDevice.hpp"
-#include "UsbDeviceConnection.hpp"
+#include "./UsbAccessory.hpp"
+#include "./UsbDevice.hpp"
+#include "./UsbDeviceConnection.hpp"
 #include "../../os/ParcelFileDescriptor.hpp"
 #include "../../../java/util/HashMap.hpp"
 

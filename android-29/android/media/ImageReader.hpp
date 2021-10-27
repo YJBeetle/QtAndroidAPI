@@ -41,7 +41,7 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "Image.hpp"
+#include "./Image.hpp"
 #include "../os/Handler.hpp"
 #include "../view/Surface.hpp"
 

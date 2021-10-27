@@ -74,8 +74,8 @@ namespace __jni_impl::java::io
 	};
 } // namespace __jni_impl::java::io
 
-#include "File.hpp"
-#include "FileDescriptor.hpp"
+#include "./File.hpp"
+#include "./FileDescriptor.hpp"
 #include "../nio/channels/FileChannel.hpp"
 
 namespace __jni_impl::java::io

@@ -59,9 +59,9 @@ namespace __jni_impl::android::print
 } // namespace __jni_impl::android::print
 
 #include "../os/Parcel.hpp"
-#include "PrintAttributes.hpp"
-#include "PrintJobId.hpp"
-#include "PrinterId.hpp"
+#include "./PrintAttributes.hpp"
+#include "./PrintJobId.hpp"
+#include "./PrinterId.hpp"
 
 namespace __jni_impl::android::print
 {

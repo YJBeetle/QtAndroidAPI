@@ -32,8 +32,8 @@ namespace __jni_impl::javax::net::ssl
 	};
 } // namespace __jni_impl::javax::net::ssl
 
-#include "SSLEngineResult_HandshakeStatus.hpp"
-#include "SSLEngineResult_Status.hpp"
+#include "./SSLEngineResult_HandshakeStatus.hpp"
+#include "./SSLEngineResult_Status.hpp"
 
 namespace __jni_impl::javax::net::ssl
 {

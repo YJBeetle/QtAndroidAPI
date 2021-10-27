@@ -45,8 +45,8 @@ namespace __jni_impl::java::util::concurrent::locks
 } // namespace __jni_impl::java::util::concurrent::locks
 
 #include "../../../lang/Thread.hpp"
-#include "ReentrantReadWriteLock_ReadLock.hpp"
-#include "ReentrantReadWriteLock_WriteLock.hpp"
+#include "./ReentrantReadWriteLock_ReadLock.hpp"
+#include "./ReentrantReadWriteLock_WriteLock.hpp"
 
 namespace __jni_impl::java::util::concurrent::locks
 {

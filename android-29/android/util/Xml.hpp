@@ -39,7 +39,7 @@ namespace __jni_impl::android::util
 	};
 } // namespace __jni_impl::android::util
 
-#include "Xml_Encoding.hpp"
+#include "./Xml_Encoding.hpp"
 #include "../../java/io/InputStream.hpp"
 #include "../../java/io/Reader.hpp"
 

@@ -35,7 +35,7 @@ namespace __jni_impl::android::net::nsd
 	};
 } // namespace __jni_impl::android::net::nsd
 
-#include "NsdServiceInfo.hpp"
+#include "./NsdServiceInfo.hpp"
 
 namespace __jni_impl::android::net::nsd
 {

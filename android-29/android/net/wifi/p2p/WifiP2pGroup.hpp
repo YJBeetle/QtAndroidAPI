@@ -37,7 +37,7 @@ namespace __jni_impl::android::net::wifi::p2p
 	};
 } // namespace __jni_impl::android::net::wifi::p2p
 
-#include "WifiP2pDevice.hpp"
+#include "./WifiP2pDevice.hpp"
 #include "../../../os/Parcel.hpp"
 
 namespace __jni_impl::android::net::wifi::p2p

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Error.hpp"
+#include "./Error.hpp"
 
 
 namespace __jni_impl::java::lang

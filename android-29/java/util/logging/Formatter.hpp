@@ -29,8 +29,8 @@ namespace __jni_impl::java::util::logging
 	};
 } // namespace __jni_impl::java::util::logging
 
-#include "Handler.hpp"
-#include "LogRecord.hpp"
+#include "./Handler.hpp"
+#include "./LogRecord.hpp"
 
 namespace __jni_impl::java::util::logging
 {

@@ -41,9 +41,9 @@ namespace __jni_impl::android::view
 	};
 } // namespace __jni_impl::android::view
 
-#include "View.hpp"
-#include "ViewDebug_HierarchyTraceType.hpp"
-#include "ViewDebug_RecyclerTraceType.hpp"
+#include "./View.hpp"
+#include "./ViewDebug_HierarchyTraceType.hpp"
+#include "./ViewDebug_RecyclerTraceType.hpp"
 
 namespace __jni_impl::android::view
 {

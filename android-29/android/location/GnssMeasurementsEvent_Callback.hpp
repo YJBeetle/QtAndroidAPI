@@ -27,7 +27,7 @@ namespace __jni_impl::android::location
 	};
 } // namespace __jni_impl::android::location
 
-#include "GnssMeasurementsEvent.hpp"
+#include "./GnssMeasurementsEvent.hpp"
 
 namespace __jni_impl::android::location
 {

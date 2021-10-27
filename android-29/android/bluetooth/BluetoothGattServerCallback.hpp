@@ -44,10 +44,10 @@ namespace __jni_impl::android::bluetooth
 	};
 } // namespace __jni_impl::android::bluetooth
 
-#include "BluetoothDevice.hpp"
-#include "BluetoothGattCharacteristic.hpp"
-#include "BluetoothGattDescriptor.hpp"
-#include "BluetoothGattService.hpp"
+#include "./BluetoothDevice.hpp"
+#include "./BluetoothGattCharacteristic.hpp"
+#include "./BluetoothGattDescriptor.hpp"
+#include "./BluetoothGattService.hpp"
 
 namespace __jni_impl::android::bluetooth
 {

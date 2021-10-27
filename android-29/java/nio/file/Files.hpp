@@ -139,9 +139,9 @@ namespace __jni_impl::java::nio::file
 #include "../../io/OutputStream.hpp"
 #include "../channels/FileChannel.hpp"
 #include "../charset/Charset.hpp"
-#include "FileStore.hpp"
-#include "attribute/FileTime.hpp"
-#include "spi/FileSystemProvider.hpp"
+#include "./FileStore.hpp"
+#include "./attribute/FileTime.hpp"
+#include "./spi/FileSystemProvider.hpp"
 
 namespace __jni_impl::java::nio::file
 {

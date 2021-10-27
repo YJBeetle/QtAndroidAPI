@@ -52,9 +52,9 @@ namespace __jni_impl::android::provider
 #include "../graphics/Typeface.hpp"
 #include "../os/CancellationSignal.hpp"
 #include "../os/Handler.hpp"
-#include "FontRequest.hpp"
-#include "FontsContract_FontFamilyResult.hpp"
-#include "FontsContract_FontRequestCallback.hpp"
+#include "./FontRequest.hpp"
+#include "./FontsContract_FontFamilyResult.hpp"
+#include "./FontsContract_FontRequestCallback.hpp"
 
 namespace __jni_impl::android::provider
 {

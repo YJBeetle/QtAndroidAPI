@@ -29,7 +29,7 @@ namespace __jni_impl::android::accessibilityservice
 	};
 } // namespace __jni_impl::android::accessibilityservice
 
-#include "AccessibilityButtonController_AccessibilityButtonCallback.hpp"
+#include "./AccessibilityButtonController_AccessibilityButtonCallback.hpp"
 #include "../os/Handler.hpp"
 
 namespace __jni_impl::android::accessibilityservice

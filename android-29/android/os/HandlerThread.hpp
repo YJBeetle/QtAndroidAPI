@@ -30,7 +30,7 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "Looper.hpp"
+#include "./Looper.hpp"
 
 namespace __jni_impl::android::os
 {

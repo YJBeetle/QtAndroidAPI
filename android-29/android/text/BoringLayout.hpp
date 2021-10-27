@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Layout.hpp"
+#include "./Layout.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -85,11 +85,11 @@ namespace __jni_impl::android::text
 #include "../graphics/Canvas.hpp"
 #include "../graphics/Paint.hpp"
 #include "../graphics/Path.hpp"
-#include "BoringLayout_Metrics.hpp"
-#include "Layout_Alignment.hpp"
-#include "Layout_Directions.hpp"
-#include "TextPaint.hpp"
-#include "TextUtils_TruncateAt.hpp"
+#include "./BoringLayout_Metrics.hpp"
+#include "./Layout_Alignment.hpp"
+#include "./Layout_Directions.hpp"
+#include "./TextPaint.hpp"
+#include "./TextUtils_TruncateAt.hpp"
 
 namespace __jni_impl::android::text
 {

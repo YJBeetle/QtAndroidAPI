@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Reader.hpp"
-#include "FilterReader.hpp"
+#include "./Reader.hpp"
+#include "./FilterReader.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -35,7 +35,7 @@ namespace __jni_impl::java::io
 	};
 } // namespace __jni_impl::java::io
 
-#include "Reader.hpp"
+#include "./Reader.hpp"
 
 namespace __jni_impl::java::io
 {

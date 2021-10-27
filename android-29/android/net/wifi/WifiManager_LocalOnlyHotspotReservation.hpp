@@ -27,8 +27,8 @@ namespace __jni_impl::android::net::wifi
 	};
 } // namespace __jni_impl::android::net::wifi
 
-#include "WifiConfiguration.hpp"
-#include "WifiManager.hpp"
+#include "./WifiConfiguration.hpp"
+#include "./WifiManager.hpp"
 
 namespace __jni_impl::android::net::wifi
 {

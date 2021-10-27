@@ -105,11 +105,11 @@ namespace __jni_impl::android::telecom
 #include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/Handler.hpp"
-#include "Call_Callback.hpp"
-#include "Call_Details.hpp"
-#include "Call_RttCall.hpp"
-#include "InCallService_VideoCall.hpp"
-#include "PhoneAccountHandle.hpp"
+#include "./Call_Callback.hpp"
+#include "./Call_Details.hpp"
+#include "./Call_RttCall.hpp"
+#include "./InCallService_VideoCall.hpp"
+#include "./PhoneAccountHandle.hpp"
 
 namespace __jni_impl::android::telecom
 {

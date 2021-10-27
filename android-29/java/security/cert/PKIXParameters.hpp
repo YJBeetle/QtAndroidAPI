@@ -64,8 +64,8 @@ namespace __jni_impl::java::security::cert
 } // namespace __jni_impl::java::security::cert
 
 #include "../KeyStore.hpp"
-#include "CertStore.hpp"
-#include "PKIXCertPathChecker.hpp"
+#include "./CertStore.hpp"
+#include "./PKIXCertPathChecker.hpp"
 #include "../../util/Date.hpp"
 
 namespace __jni_impl::java::security::cert

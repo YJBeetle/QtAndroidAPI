@@ -77,7 +77,7 @@ namespace __jni_impl::android::widget
 #include "../graphics/Canvas.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
-#include "LinearLayout_LayoutParams.hpp"
+#include "./LinearLayout_LayoutParams.hpp"
 
 namespace __jni_impl::android::widget
 {

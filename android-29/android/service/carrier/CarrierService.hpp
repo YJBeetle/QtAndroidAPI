@@ -38,7 +38,7 @@ namespace __jni_impl::android::service::carrier
 
 #include "../../content/Intent.hpp"
 #include "../../os/PersistableBundle.hpp"
-#include "CarrierIdentifier.hpp"
+#include "./CarrierIdentifier.hpp"
 
 namespace __jni_impl::android::service::carrier
 {

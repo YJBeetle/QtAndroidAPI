@@ -31,7 +31,7 @@ namespace __jni_impl::android::view::textservice
 } // namespace __jni_impl::android::view::textservice
 
 #include "../../os/Bundle.hpp"
-#include "SpellCheckerSession.hpp"
+#include "./SpellCheckerSession.hpp"
 #include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::view::textservice

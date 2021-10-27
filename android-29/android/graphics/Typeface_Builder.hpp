@@ -48,7 +48,7 @@ namespace __jni_impl::android::graphics
 } // namespace __jni_impl::android::graphics
 
 #include "../content/res/AssetManager.hpp"
-#include "Typeface.hpp"
+#include "./Typeface.hpp"
 #include "../../java/io/File.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 

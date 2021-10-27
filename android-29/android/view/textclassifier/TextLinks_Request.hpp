@@ -44,7 +44,7 @@ namespace __jni_impl::android::view::textclassifier
 #include "../../os/Bundle.hpp"
 #include "../../os/LocaleList.hpp"
 #include "../../os/Parcel.hpp"
-#include "TextClassifier_EntityConfig.hpp"
+#include "./TextClassifier_EntityConfig.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {

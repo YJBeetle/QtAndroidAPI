@@ -39,9 +39,9 @@ namespace __jni_impl::java::net
 } // namespace __jni_impl::java::net
 
 #include "../io/IOException.hpp"
-#include "InetSocketAddress.hpp"
-#include "SocketAddress.hpp"
-#include "URI.hpp"
+#include "./InetSocketAddress.hpp"
+#include "./SocketAddress.hpp"
+#include "./URI.hpp"
 
 namespace __jni_impl::java::net
 {

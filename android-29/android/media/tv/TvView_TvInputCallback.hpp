@@ -47,7 +47,7 @@ namespace __jni_impl::android::media::tv
 	};
 } // namespace __jni_impl::android::media::tv
 
-#include "TvContentRating.hpp"
+#include "./TvContentRating.hpp"
 #include "../../net/Uri.hpp"
 
 namespace __jni_impl::android::media::tv

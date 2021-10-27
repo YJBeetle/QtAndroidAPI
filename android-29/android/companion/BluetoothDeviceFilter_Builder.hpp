@@ -34,7 +34,7 @@ namespace __jni_impl::android::companion
 	};
 } // namespace __jni_impl::android::companion
 
-#include "BluetoothDeviceFilter.hpp"
+#include "./BluetoothDeviceFilter.hpp"
 #include "../os/ParcelUuid.hpp"
 #include "../../java/util/regex/Pattern.hpp"
 

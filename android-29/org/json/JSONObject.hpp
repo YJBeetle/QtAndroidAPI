@@ -108,8 +108,8 @@ namespace __jni_impl::org::json
 } // namespace __jni_impl::org::json
 
 #include "../../java/lang/Number.hpp"
-#include "JSONArray.hpp"
-#include "JSONTokener.hpp"
+#include "./JSONArray.hpp"
+#include "./JSONTokener.hpp"
 
 namespace __jni_impl::org::json
 {

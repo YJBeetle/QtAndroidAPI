@@ -57,9 +57,9 @@ namespace __jni_impl::android::net
 	};
 } // namespace __jni_impl::android::net
 
-#include "IpSecManager_SecurityParameterIndex.hpp"
-#include "IpSecManager_UdpEncapsulationSocket.hpp"
-#include "IpSecTransform.hpp"
+#include "./IpSecManager_SecurityParameterIndex.hpp"
+#include "./IpSecManager_UdpEncapsulationSocket.hpp"
+#include "./IpSecTransform.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/net/DatagramSocket.hpp"
 #include "../../java/net/InetAddress.hpp"

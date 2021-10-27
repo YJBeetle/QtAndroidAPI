@@ -34,7 +34,7 @@ namespace __jni_impl::java::security
 } // namespace __jni_impl::java::security
 
 #include "../io/OutputStream.hpp"
-#include "MessageDigest.hpp"
+#include "./MessageDigest.hpp"
 
 namespace __jni_impl::java::security
 {

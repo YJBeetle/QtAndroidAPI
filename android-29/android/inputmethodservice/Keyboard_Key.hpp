@@ -55,7 +55,7 @@ namespace __jni_impl::android::inputmethodservice
 
 #include "../content/res/Resources.hpp"
 #include "../graphics/drawable/Drawable.hpp"
-#include "Keyboard_Row.hpp"
+#include "./Keyboard_Row.hpp"
 
 namespace __jni_impl::android::inputmethodservice
 {

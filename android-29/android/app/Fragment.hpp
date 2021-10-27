@@ -206,11 +206,11 @@ namespace __jni_impl::android::app
 } // namespace __jni_impl::android::app
 
 #include "../animation/Animator.hpp"
-#include "Activity.hpp"
-#include "Fragment_SavedState.hpp"
-#include "FragmentManager.hpp"
-#include "LoaderManager.hpp"
-#include "SharedElementCallback.hpp"
+#include "./Activity.hpp"
+#include "./Fragment_SavedState.hpp"
+#include "./FragmentManager.hpp"
+#include "./LoaderManager.hpp"
+#include "./SharedElementCallback.hpp"
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"
 #include "../content/IntentSender.hpp"

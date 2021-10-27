@@ -46,8 +46,8 @@ namespace __jni_impl::android::net
 	};
 } // namespace __jni_impl::android::net
 
-#include "NetworkInfo_DetailedState.hpp"
-#include "NetworkInfo_State.hpp"
+#include "./NetworkInfo_DetailedState.hpp"
+#include "./NetworkInfo_State.hpp"
 #include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::net

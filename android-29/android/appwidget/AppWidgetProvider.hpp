@@ -41,7 +41,7 @@ namespace __jni_impl::android::appwidget
 	};
 } // namespace __jni_impl::android::appwidget
 
-#include "AppWidgetManager.hpp"
+#include "./AppWidgetManager.hpp"
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"
 #include "../os/Bundle.hpp"

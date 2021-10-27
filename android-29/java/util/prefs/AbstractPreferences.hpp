@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "Preferences.hpp"
+#include "./Preferences.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -88,7 +88,7 @@ namespace __jni_impl::java::util::prefs
 #include "../../io/OutputStream.hpp"
 #include "../../lang/Thread.hpp"
 #include "../StringTokenizer.hpp"
-#include "Preferences.hpp"
+#include "./Preferences.hpp"
 
 namespace __jni_impl::java::util::prefs
 {

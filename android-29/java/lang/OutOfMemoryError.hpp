@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Error.hpp"
-#include "VirtualMachineError.hpp"
+#include "./Error.hpp"
+#include "./VirtualMachineError.hpp"
 
 
 namespace __jni_impl::java::lang

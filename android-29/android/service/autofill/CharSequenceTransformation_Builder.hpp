@@ -33,7 +33,7 @@ namespace __jni_impl::android::service::autofill
 	};
 } // namespace __jni_impl::android::service::autofill
 
-#include "CharSequenceTransformation.hpp"
+#include "./CharSequenceTransformation.hpp"
 #include "../../view/autofill/AutofillId.hpp"
 #include "../../../java/util/regex/Pattern.hpp"
 

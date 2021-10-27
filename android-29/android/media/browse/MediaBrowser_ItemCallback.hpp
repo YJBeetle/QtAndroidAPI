@@ -24,7 +24,7 @@ namespace __jni_impl::android::media::browse
 	};
 } // namespace __jni_impl::android::media::browse
 
-#include "MediaBrowser_MediaItem.hpp"
+#include "./MediaBrowser_MediaItem.hpp"
 
 namespace __jni_impl::android::media::browse
 {

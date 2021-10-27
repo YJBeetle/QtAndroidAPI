@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "MaskFilter.hpp"
+#include "./MaskFilter.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -22,7 +22,7 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "BlurMaskFilter_Blur.hpp"
+#include "./BlurMaskFilter_Blur.hpp"
 
 namespace __jni_impl::android::graphics
 {

@@ -69,7 +69,7 @@ namespace __jni_impl::java::security
 
 #include "../io/InputStream.hpp"
 #include "../io/ObjectInputStream.hpp"
-#include "Provider_Service.hpp"
+#include "./Provider_Service.hpp"
 
 namespace __jni_impl::java::security
 {

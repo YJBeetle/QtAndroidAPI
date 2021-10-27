@@ -50,8 +50,8 @@ namespace __jni_impl::android::view::accessibility
 } // namespace __jni_impl::android::view::accessibility
 
 #include "../../os/Handler.hpp"
-#include "AccessibilityEvent.hpp"
-#include "AccessibilityRequestPreparer.hpp"
+#include "./AccessibilityEvent.hpp"
+#include "./AccessibilityRequestPreparer.hpp"
 
 namespace __jni_impl::android::view::accessibility
 {

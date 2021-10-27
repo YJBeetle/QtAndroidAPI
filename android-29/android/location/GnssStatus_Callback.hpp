@@ -25,7 +25,7 @@ namespace __jni_impl::android::location
 	};
 } // namespace __jni_impl::android::location
 
-#include "GnssStatus.hpp"
+#include "./GnssStatus.hpp"
 
 namespace __jni_impl::android::location
 {

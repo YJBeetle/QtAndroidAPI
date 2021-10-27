@@ -38,7 +38,7 @@ namespace __jni_impl::android::bluetooth::le
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
-#include "ScanFilter.hpp"
+#include "./ScanFilter.hpp"
 #include "../../os/ParcelUuid.hpp"
 
 namespace __jni_impl::android::bluetooth::le

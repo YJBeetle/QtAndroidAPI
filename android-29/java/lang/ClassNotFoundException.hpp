@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Exception.hpp"
-#include "ReflectiveOperationException.hpp"
+#include "./Exception.hpp"
+#include "./ReflectiveOperationException.hpp"
 
 namespace __jni_impl::java::io
 {

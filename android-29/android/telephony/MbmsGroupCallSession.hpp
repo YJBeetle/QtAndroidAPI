@@ -30,7 +30,7 @@ namespace __jni_impl::android::telephony
 } // namespace __jni_impl::android::telephony
 
 #include "../content/Context.hpp"
-#include "mbms/GroupCall.hpp"
+#include "./mbms/GroupCall.hpp"
 
 namespace __jni_impl::android::telephony
 {

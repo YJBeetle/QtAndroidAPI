@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Character_Subset.hpp"
+#include "./Character_Subset.hpp"
 
 
 namespace __jni_impl::java::lang

@@ -38,7 +38,7 @@ namespace __jni_impl::java::util::zip
 } // namespace __jni_impl::java::util::zip
 
 #include "../../io/OutputStream.hpp"
-#include "Deflater.hpp"
+#include "./Deflater.hpp"
 
 namespace __jni_impl::java::util::zip
 {

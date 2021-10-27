@@ -31,7 +31,7 @@ namespace __jni_impl::android::content::res
 	};
 } // namespace __jni_impl::android::content::res
 
-#include "AssetManager.hpp"
+#include "./AssetManager.hpp"
 
 namespace __jni_impl::android::content::res
 {

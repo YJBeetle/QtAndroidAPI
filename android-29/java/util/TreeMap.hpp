@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "AbstractMap.hpp"
+#include "./AbstractMap.hpp"
 
 namespace __jni_impl::java::io
 {

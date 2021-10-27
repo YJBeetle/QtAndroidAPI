@@ -159,7 +159,7 @@ namespace __jni_impl::android::accounts
 	};
 } // namespace __jni_impl::android::accounts
 
-#include "Account.hpp"
+#include "./Account.hpp"
 #include "../app/Activity.hpp"
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"

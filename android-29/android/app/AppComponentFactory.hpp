@@ -60,9 +60,9 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Activity.hpp"
-#include "Application.hpp"
-#include "Service.hpp"
+#include "./Activity.hpp"
+#include "./Application.hpp"
+#include "./Service.hpp"
 #include "../content/BroadcastReceiver.hpp"
 #include "../content/ContentProvider.hpp"
 #include "../content/Intent.hpp"

@@ -30,8 +30,8 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "ColorSpace.hpp"
-#include "ColorSpace_RenderIntent.hpp"
+#include "./ColorSpace.hpp"
+#include "./ColorSpace_RenderIntent.hpp"
 
 namespace __jni_impl::android::graphics
 {

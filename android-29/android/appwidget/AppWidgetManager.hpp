@@ -96,7 +96,7 @@ namespace __jni_impl::android::appwidget
 } // namespace __jni_impl::android::appwidget
 
 #include "../app/PendingIntent.hpp"
-#include "AppWidgetProviderInfo.hpp"
+#include "./AppWidgetProviderInfo.hpp"
 #include "../content/ComponentName.hpp"
 #include "../content/Context.hpp"
 #include "../os/Bundle.hpp"

@@ -34,7 +34,7 @@ namespace __jni_impl::android::view::inputmethod
 } // namespace __jni_impl::android::view::inputmethod
 
 #include "../../graphics/Matrix.hpp"
-#include "CursorAnchorInfo.hpp"
+#include "./CursorAnchorInfo.hpp"
 
 namespace __jni_impl::android::view::inputmethod
 {

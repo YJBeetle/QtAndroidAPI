@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "BaseMovementMethod.hpp"
+#include "./BaseMovementMethod.hpp"
 
 namespace __jni_impl::android::view
 {

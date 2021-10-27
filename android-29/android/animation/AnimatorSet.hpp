@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Animator.hpp"
+#include "./Animator.hpp"
 
 namespace __jni_impl::android::animation
 {
@@ -58,8 +58,8 @@ namespace __jni_impl::android::animation
 	};
 } // namespace __jni_impl::android::animation
 
-#include "Animator.hpp"
-#include "AnimatorSet_Builder.hpp"
+#include "./Animator.hpp"
+#include "./AnimatorSet_Builder.hpp"
 #include "../../java/util/ArrayList.hpp"
 
 namespace __jni_impl::android::animation

@@ -26,7 +26,7 @@ namespace __jni_impl::android::telephony
 	};
 } // namespace __jni_impl::android::telephony
 
-#include "VisualVoicemailSmsFilterSettings.hpp"
+#include "./VisualVoicemailSmsFilterSettings.hpp"
 
 namespace __jni_impl::android::telephony
 {

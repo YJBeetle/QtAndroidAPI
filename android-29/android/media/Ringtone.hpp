@@ -38,7 +38,7 @@ namespace __jni_impl::android::media
 } // namespace __jni_impl::android::media
 
 #include "../content/Context.hpp"
-#include "AudioAttributes.hpp"
+#include "./AudioAttributes.hpp"
 
 namespace __jni_impl::android::media
 {

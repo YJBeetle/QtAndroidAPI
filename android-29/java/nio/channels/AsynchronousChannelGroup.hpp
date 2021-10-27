@@ -34,7 +34,7 @@ namespace __jni_impl::java::nio::channels
 	};
 } // namespace __jni_impl::java::nio::channels
 
-#include "spi/AsynchronousChannelProvider.hpp"
+#include "./spi/AsynchronousChannelProvider.hpp"
 #include "../../util/concurrent/TimeUnit.hpp"
 
 namespace __jni_impl::java::nio::channels

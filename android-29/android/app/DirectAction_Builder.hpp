@@ -33,7 +33,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "DirectAction.hpp"
+#include "./DirectAction.hpp"
 #include "../content/LocusId.hpp"
 #include "../os/Bundle.hpp"
 

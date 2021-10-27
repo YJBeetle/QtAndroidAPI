@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "URLConnection.hpp"
+#include "./URLConnection.hpp"
 
 namespace __jni_impl::java::net
 {
@@ -50,8 +50,8 @@ namespace __jni_impl::java::net
 	};
 } // namespace __jni_impl::java::net
 
-#include "URL.hpp"
-#include "URLConnection.hpp"
+#include "./URL.hpp"
+#include "./URLConnection.hpp"
 #include "../util/jar/Attributes.hpp"
 #include "../util/jar/JarEntry.hpp"
 #include "../util/jar/JarFile.hpp"

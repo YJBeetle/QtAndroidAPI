@@ -31,7 +31,7 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "MediaCas.hpp"
+#include "./MediaCas.hpp"
 #include "../../java/util/ArrayList.hpp"
 
 namespace __jni_impl::android::media

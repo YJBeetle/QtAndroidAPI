@@ -62,7 +62,7 @@ namespace __jni_impl::android::printservice
 
 #include "../print/PrintJobId.hpp"
 #include "../print/PrintJobInfo.hpp"
-#include "PrintDocument.hpp"
+#include "./PrintDocument.hpp"
 
 namespace __jni_impl::android::printservice
 {

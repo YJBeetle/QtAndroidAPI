@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Preference.hpp"
+#include "./Preference.hpp"
 
 namespace __jni_impl::android::content
 {

@@ -42,7 +42,7 @@ namespace __jni_impl::android::graphics::fonts
 	};
 } // namespace __jni_impl::android::graphics::fonts
 
-#include "FontStyle.hpp"
+#include "./FontStyle.hpp"
 #include "../../os/LocaleList.hpp"
 #include "../../../java/io/File.hpp"
 #include "../../../java/nio/ByteBuffer.hpp"

@@ -59,7 +59,7 @@ namespace __jni_impl::android::security::keystore
 	};
 } // namespace __jni_impl::android::security::keystore
 
-#include "KeyGenParameterSpec.hpp"
+#include "./KeyGenParameterSpec.hpp"
 #include "../../../java/math/BigInteger.hpp"
 #include "../../../java/util/Date.hpp"
 #include "../../../javax/security/auth/x500/X500Principal.hpp"

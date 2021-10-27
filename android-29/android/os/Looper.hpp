@@ -40,7 +40,7 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "MessageQueue.hpp"
+#include "./MessageQueue.hpp"
 #include "../../java/lang/Thread.hpp"
 
 namespace __jni_impl::android::os

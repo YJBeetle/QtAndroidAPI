@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "Calendar.hpp"
+#include "./Calendar.hpp"
 
 namespace __jni_impl::android::icu::util
 {
@@ -58,8 +58,8 @@ namespace __jni_impl::android::icu::util
 	};
 } // namespace __jni_impl::android::icu::util
 
-#include "TimeZone.hpp"
-#include "ULocale.hpp"
+#include "./TimeZone.hpp"
+#include "./ULocale.hpp"
 #include "../../../java/util/Date.hpp"
 #include "../../../java/util/Locale.hpp"
 

@@ -79,8 +79,8 @@ namespace __jni_impl::android::view::textclassifier
 #include "../../icu/util/ULocale.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
-#include "TextClassificationContext.hpp"
-#include "TextClassifierEvent_Builder.hpp"
+#include "./TextClassificationContext.hpp"
+#include "./TextClassifierEvent_Builder.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {

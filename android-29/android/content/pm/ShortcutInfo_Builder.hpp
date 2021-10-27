@@ -73,7 +73,7 @@ namespace __jni_impl::android::content::pm
 #include "../Context.hpp"
 #include "../Intent.hpp"
 #include "../LocusId.hpp"
-#include "ShortcutInfo.hpp"
+#include "./ShortcutInfo.hpp"
 #include "../../graphics/drawable/Icon.hpp"
 #include "../../os/PersistableBundle.hpp"
 

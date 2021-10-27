@@ -80,7 +80,7 @@ namespace __jni_impl::android::net
 	};
 } // namespace __jni_impl::android::net
 
-#include "Uri_Builder.hpp"
+#include "./Uri_Builder.hpp"
 #include "../os/Parcel.hpp"
 #include "../../java/io/File.hpp"
 

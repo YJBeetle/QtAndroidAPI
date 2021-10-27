@@ -3,7 +3,7 @@
 #include "../../../__JniBaseClass.hpp"
 #include "../../io/InputStream.hpp"
 #include "../../io/FilterInputStream.hpp"
-#include "InflaterInputStream.hpp"
+#include "./InflaterInputStream.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -33,7 +33,7 @@ namespace __jni_impl::java::util::zip
 } // namespace __jni_impl::java::util::zip
 
 #include "../../io/InputStream.hpp"
-#include "CRC32.hpp"
+#include "./CRC32.hpp"
 
 namespace __jni_impl::java::util::zip
 {

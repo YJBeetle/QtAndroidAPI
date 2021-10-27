@@ -89,8 +89,8 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "CollationKey.hpp"
-#include "UnicodeSet.hpp"
+#include "./CollationKey.hpp"
+#include "./UnicodeSet.hpp"
 #include "../util/ULocale.hpp"
 #include "../util/VersionInfo.hpp"
 #include "../../../java/util/Locale.hpp"

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "ColorFilter.hpp"
+#include "./ColorFilter.hpp"
 
 
 namespace __jni_impl::android::graphics

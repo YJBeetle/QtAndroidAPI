@@ -77,7 +77,7 @@ namespace __jni_impl::android::view::inputmethod
 #include "../../content/pm/ServiceInfo.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
 #include "../../os/Parcel.hpp"
-#include "InputMethodSubtype.hpp"
+#include "./InputMethodSubtype.hpp"
 
 namespace __jni_impl::android::view::inputmethod
 {

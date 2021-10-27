@@ -91,11 +91,11 @@ namespace __jni_impl::java::time::format
 } // namespace __jni_impl::java::time::format
 
 #include "../ZoneId.hpp"
-#include "DateTimeFormatter.hpp"
-#include "FormatStyle.hpp"
-#include "ResolverStyle.hpp"
-#include "SignStyle.hpp"
-#include "TextStyle.hpp"
+#include "./DateTimeFormatter.hpp"
+#include "./FormatStyle.hpp"
+#include "./ResolverStyle.hpp"
+#include "./SignStyle.hpp"
+#include "./TextStyle.hpp"
 #include "../../util/Locale.hpp"
 
 namespace __jni_impl::java::time::format

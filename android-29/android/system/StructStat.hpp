@@ -39,7 +39,7 @@ namespace __jni_impl::android::system
 	};
 } // namespace __jni_impl::android::system
 
-#include "StructTimespec.hpp"
+#include "./StructTimespec.hpp"
 
 namespace __jni_impl::android::system
 {

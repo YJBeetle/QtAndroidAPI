@@ -67,9 +67,9 @@ namespace __jni_impl::java::io
 	};
 } // namespace __jni_impl::java::io
 
-#include "ObjectInputStream.hpp"
-#include "ObjectOutputStream.hpp"
-#include "ObjectStreamField.hpp"
+#include "./ObjectInputStream.hpp"
+#include "./ObjectOutputStream.hpp"
+#include "./ObjectStreamField.hpp"
 #include "../lang/ClassNotFoundException.hpp"
 #include "../lang/Long.hpp"
 #include "../lang/invoke/MethodHandle.hpp"

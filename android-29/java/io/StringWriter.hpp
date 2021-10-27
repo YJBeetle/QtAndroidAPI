@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Writer.hpp"
+#include "./Writer.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -42,7 +42,7 @@ namespace __jni_impl::java::io
 	};
 } // namespace __jni_impl::java::io
 
-#include "Writer.hpp"
+#include "./Writer.hpp"
 #include "../lang/StringBuffer.hpp"
 
 namespace __jni_impl::java::io

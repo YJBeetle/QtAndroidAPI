@@ -29,7 +29,7 @@ namespace __jni_impl::android::bluetooth::le
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
-#include "ScanSettings.hpp"
+#include "./ScanSettings.hpp"
 
 namespace __jni_impl::android::bluetooth::le
 {

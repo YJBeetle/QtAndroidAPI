@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Preference.hpp"
-#include "TwoStatePreference.hpp"
+#include "./Preference.hpp"
+#include "./TwoStatePreference.hpp"
 
 namespace __jni_impl::android::content
 {

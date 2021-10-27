@@ -41,8 +41,8 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "ContentProviderOperation.hpp"
-#include "ContentValues.hpp"
+#include "./ContentProviderOperation.hpp"
+#include "./ContentValues.hpp"
 #include "../net/Uri.hpp"
 
 namespace __jni_impl::android::content

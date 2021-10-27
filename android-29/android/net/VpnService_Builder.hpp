@@ -64,8 +64,8 @@ namespace __jni_impl::android::net
 } // namespace __jni_impl::android::net
 
 #include "../app/PendingIntent.hpp"
-#include "ProxyInfo.hpp"
-#include "VpnService.hpp"
+#include "./ProxyInfo.hpp"
+#include "./VpnService.hpp"
 #include "../os/ParcelFileDescriptor.hpp"
 #include "../../java/net/InetAddress.hpp"
 

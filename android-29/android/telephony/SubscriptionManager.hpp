@@ -89,9 +89,9 @@ namespace __jni_impl::android::telephony
 #include "../app/PendingIntent.hpp"
 #include "../content/Context.hpp"
 #include "../os/ParcelUuid.hpp"
-#include "SubscriptionInfo.hpp"
-#include "SubscriptionManager_OnOpportunisticSubscriptionsChangedListener.hpp"
-#include "SubscriptionManager_OnSubscriptionsChangedListener.hpp"
+#include "./SubscriptionInfo.hpp"
+#include "./SubscriptionManager_OnOpportunisticSubscriptionsChangedListener.hpp"
+#include "./SubscriptionManager_OnSubscriptionsChangedListener.hpp"
 
 namespace __jni_impl::android::telephony
 {

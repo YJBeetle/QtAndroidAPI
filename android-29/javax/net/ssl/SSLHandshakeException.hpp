@@ -3,7 +3,7 @@
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 #include "../../../java/io/IOException.hpp"
-#include "SSLException.hpp"
+#include "./SSLException.hpp"
 
 
 namespace __jni_impl::javax::net::ssl

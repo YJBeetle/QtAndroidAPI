@@ -80,7 +80,7 @@ namespace __jni_impl::java::util::logging
 #include "../../time/Instant.hpp"
 #include "../ResourceBundle.hpp"
 #include "../concurrent/atomic/AtomicLong.hpp"
-#include "Level.hpp"
+#include "./Level.hpp"
 
 namespace __jni_impl::java::util::logging
 {

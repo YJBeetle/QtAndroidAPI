@@ -44,8 +44,8 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Activity.hpp"
-#include "Instrumentation_ActivityResult.hpp"
+#include "./Activity.hpp"
+#include "./Instrumentation_ActivityResult.hpp"
 #include "../content/Intent.hpp"
 #include "../content/IntentFilter.hpp"
 

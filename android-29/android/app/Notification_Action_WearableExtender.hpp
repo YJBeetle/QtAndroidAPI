@@ -43,8 +43,8 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Notification_Action.hpp"
-#include "Notification_Action_Builder.hpp"
+#include "./Notification_Action.hpp"
+#include "./Notification_Action_Builder.hpp"
 
 namespace __jni_impl::android::app
 {

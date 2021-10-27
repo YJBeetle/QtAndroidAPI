@@ -42,7 +42,7 @@ namespace __jni_impl::java::io
 	};
 } // namespace __jni_impl::java::io
 
-#include "ObjectStreamClass.hpp"
+#include "./ObjectStreamClass.hpp"
 
 namespace __jni_impl::java::io
 {

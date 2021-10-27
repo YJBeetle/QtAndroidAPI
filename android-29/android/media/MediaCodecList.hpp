@@ -32,8 +32,8 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "MediaCodecInfo.hpp"
-#include "MediaFormat.hpp"
+#include "./MediaCodecInfo.hpp"
+#include "./MediaFormat.hpp"
 
 namespace __jni_impl::android::media
 {

@@ -59,7 +59,7 @@ namespace __jni_impl::java::net
 
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
-#include "NetworkInterface.hpp"
+#include "./NetworkInterface.hpp"
 
 namespace __jni_impl::java::net
 {

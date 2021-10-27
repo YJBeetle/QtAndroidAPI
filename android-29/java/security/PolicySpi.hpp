@@ -33,10 +33,10 @@ namespace __jni_impl::java::security
 	};
 } // namespace __jni_impl::java::security
 
-#include "CodeSource.hpp"
-#include "Permission.hpp"
-#include "PermissionCollection.hpp"
-#include "ProtectionDomain.hpp"
+#include "./CodeSource.hpp"
+#include "./Permission.hpp"
+#include "./PermissionCollection.hpp"
+#include "./ProtectionDomain.hpp"
 
 namespace __jni_impl::java::security
 {

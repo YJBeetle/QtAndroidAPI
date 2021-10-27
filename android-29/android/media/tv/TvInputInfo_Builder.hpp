@@ -39,7 +39,7 @@ namespace __jni_impl::android::media::tv
 
 #include "../../content/ComponentName.hpp"
 #include "../../content/Context.hpp"
-#include "TvInputInfo.hpp"
+#include "./TvInputInfo.hpp"
 #include "../../os/Bundle.hpp"
 
 namespace __jni_impl::android::media::tv

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "ColorFilter.hpp"
+#include "./ColorFilter.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -24,7 +24,7 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "PorterDuff_Mode.hpp"
+#include "./PorterDuff_Mode.hpp"
 
 namespace __jni_impl::android::graphics
 {

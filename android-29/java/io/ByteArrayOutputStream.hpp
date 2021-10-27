@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "OutputStream.hpp"
+#include "./OutputStream.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -40,7 +40,7 @@ namespace __jni_impl::java::io
 	};
 } // namespace __jni_impl::java::io
 
-#include "OutputStream.hpp"
+#include "./OutputStream.hpp"
 #include "../nio/charset/Charset.hpp"
 
 namespace __jni_impl::java::io

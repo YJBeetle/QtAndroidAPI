@@ -75,12 +75,12 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "ColorSpace_Adaptation.hpp"
-#include "ColorSpace_Connector.hpp"
-#include "ColorSpace_Model.hpp"
-#include "ColorSpace_Named.hpp"
-#include "ColorSpace_RenderIntent.hpp"
-#include "ColorSpace_Rgb_TransferParameters.hpp"
+#include "./ColorSpace_Adaptation.hpp"
+#include "./ColorSpace_Connector.hpp"
+#include "./ColorSpace_Model.hpp"
+#include "./ColorSpace_Named.hpp"
+#include "./ColorSpace_RenderIntent.hpp"
+#include "./ColorSpace_Rgb_TransferParameters.hpp"
 
 namespace __jni_impl::android::graphics
 {

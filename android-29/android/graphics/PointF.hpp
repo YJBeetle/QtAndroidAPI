@@ -43,7 +43,7 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Point.hpp"
+#include "./Point.hpp"
 #include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::graphics

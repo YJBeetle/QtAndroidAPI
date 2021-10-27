@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Conferenceable.hpp"
+#include "./Conferenceable.hpp"
 
 namespace __jni_impl::android::os
 {
@@ -93,12 +93,12 @@ namespace __jni_impl::android::telecom
 } // namespace __jni_impl::android::telecom
 
 #include "../os/Bundle.hpp"
-#include "CallAudioState.hpp"
-#include "Connection.hpp"
-#include "Connection_VideoProvider.hpp"
-#include "DisconnectCause.hpp"
-#include "PhoneAccountHandle.hpp"
-#include "StatusHints.hpp"
+#include "./CallAudioState.hpp"
+#include "./Connection.hpp"
+#include "./Connection_VideoProvider.hpp"
+#include "./DisconnectCause.hpp"
+#include "./PhoneAccountHandle.hpp"
+#include "./StatusHints.hpp"
 
 namespace __jni_impl::android::telecom
 {

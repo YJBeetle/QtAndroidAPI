@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "LoginFilter.hpp"
+#include "./LoginFilter.hpp"
 
 
 namespace __jni_impl::android::text

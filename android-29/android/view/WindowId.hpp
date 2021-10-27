@@ -35,7 +35,7 @@ namespace __jni_impl::android::view
 } // namespace __jni_impl::android::view
 
 #include "../os/Parcel.hpp"
-#include "WindowId_FocusObserver.hpp"
+#include "./WindowId_FocusObserver.hpp"
 
 namespace __jni_impl::android::view
 {

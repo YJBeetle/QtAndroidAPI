@@ -57,8 +57,8 @@ namespace __jni_impl::android::inputmethodservice
 
 #include "../content/Context.hpp"
 #include "../content/res/Resources.hpp"
-#include "Keyboard_Key.hpp"
-#include "Keyboard_Row.hpp"
+#include "./Keyboard_Key.hpp"
+#include "./Keyboard_Row.hpp"
 
 namespace __jni_impl::android::inputmethodservice
 {

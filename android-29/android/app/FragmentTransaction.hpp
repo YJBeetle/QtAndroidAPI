@@ -69,7 +69,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Fragment.hpp"
+#include "./Fragment.hpp"
 #include "../view/View.hpp"
 
 namespace __jni_impl::android::app

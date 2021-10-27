@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "CellInfo.hpp"
+#include "./CellInfo.hpp"
 
 namespace __jni_impl::android::os
 {
@@ -38,8 +38,8 @@ namespace __jni_impl::android::telephony
 } // namespace __jni_impl::android::telephony
 
 #include "../os/Parcel.hpp"
-#include "CellIdentity.hpp"
-#include "CellSignalStrength.hpp"
+#include "./CellIdentity.hpp"
+#include "./CellSignalStrength.hpp"
 
 namespace __jni_impl::android::telephony
 {

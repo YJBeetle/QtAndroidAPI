@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../../__JniBaseClass.hpp"
-#include "PeerHandle.hpp"
+#include "./PeerHandle.hpp"
 
 namespace __jni_impl::android::net::wifi::aware
 {
@@ -29,7 +29,7 @@ namespace __jni_impl::android::net::wifi::aware
 	};
 } // namespace __jni_impl::android::net::wifi::aware
 
-#include "PeerHandle.hpp"
+#include "./PeerHandle.hpp"
 #include "../../../os/Parcel.hpp"
 
 namespace __jni_impl::android::net::wifi::aware

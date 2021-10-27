@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "AudioEffect.hpp"
+#include "./AudioEffect.hpp"
 
 namespace __jni_impl::android::media::audiofx
 {
@@ -78,13 +78,13 @@ namespace __jni_impl::android::media::audiofx
 	};
 } // namespace __jni_impl::android::media::audiofx
 
-#include "DynamicsProcessing_Channel.hpp"
-#include "DynamicsProcessing_Config.hpp"
-#include "DynamicsProcessing_Eq.hpp"
-#include "DynamicsProcessing_EqBand.hpp"
-#include "DynamicsProcessing_Limiter.hpp"
-#include "DynamicsProcessing_Mbc.hpp"
-#include "DynamicsProcessing_MbcBand.hpp"
+#include "./DynamicsProcessing_Channel.hpp"
+#include "./DynamicsProcessing_Config.hpp"
+#include "./DynamicsProcessing_Eq.hpp"
+#include "./DynamicsProcessing_EqBand.hpp"
+#include "./DynamicsProcessing_Limiter.hpp"
+#include "./DynamicsProcessing_Mbc.hpp"
+#include "./DynamicsProcessing_MbcBand.hpp"
 
 namespace __jni_impl::android::media::audiofx
 {

@@ -27,7 +27,7 @@ namespace __jni_impl::android::view
 	};
 } // namespace __jni_impl::android::view
 
-#include "KeyEvent.hpp"
+#include "./KeyEvent.hpp"
 
 namespace __jni_impl::android::view
 {

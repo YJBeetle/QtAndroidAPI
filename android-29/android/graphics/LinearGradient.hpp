@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Shader.hpp"
+#include "./Shader.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -25,7 +25,7 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Shader_TileMode.hpp"
+#include "./Shader_TileMode.hpp"
 
 namespace __jni_impl::android::graphics
 {

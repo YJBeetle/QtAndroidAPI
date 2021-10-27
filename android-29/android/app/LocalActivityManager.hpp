@@ -48,7 +48,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Activity.hpp"
+#include "./Activity.hpp"
 #include "../content/Intent.hpp"
 #include "../os/Bundle.hpp"
 #include "../view/Window.hpp"

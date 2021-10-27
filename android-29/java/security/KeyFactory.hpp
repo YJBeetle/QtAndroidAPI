@@ -37,8 +37,8 @@ namespace __jni_impl::java::security
 	};
 } // namespace __jni_impl::java::security
 
-#include "KeyFactorySpi.hpp"
-#include "Provider.hpp"
+#include "./KeyFactorySpi.hpp"
+#include "./Provider.hpp"
 
 namespace __jni_impl::java::security
 {

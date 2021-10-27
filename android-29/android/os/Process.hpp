@@ -64,7 +64,7 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "UserHandle.hpp"
+#include "./UserHandle.hpp"
 
 namespace __jni_impl::android::os
 {

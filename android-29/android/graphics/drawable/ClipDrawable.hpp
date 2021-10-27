@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "Drawable.hpp"
-#include "DrawableWrapper.hpp"
+#include "./Drawable.hpp"
+#include "./DrawableWrapper.hpp"
 
 namespace __jni_impl::android::content::res
 {
@@ -44,7 +44,7 @@ namespace __jni_impl::android::graphics::drawable
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
 #include "../Canvas.hpp"
-#include "Drawable.hpp"
+#include "./Drawable.hpp"
 
 namespace __jni_impl::android::graphics::drawable
 {

@@ -34,8 +34,8 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "MessagePattern_ArgType.hpp"
-#include "MessagePattern_Part_Type.hpp"
+#include "./MessagePattern_ArgType.hpp"
+#include "./MessagePattern_Part_Type.hpp"
 
 namespace __jni_impl::android::icu::text
 {

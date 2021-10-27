@@ -32,7 +32,7 @@ namespace __jni_impl::android::media::midi
 	};
 } // namespace __jni_impl::android::media::midi
 
-#include "MidiDeviceInfo.hpp"
+#include "./MidiDeviceInfo.hpp"
 #include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::media::midi

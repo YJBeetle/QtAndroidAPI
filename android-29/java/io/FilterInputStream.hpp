@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "InputStream.hpp"
+#include "./InputStream.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -31,7 +31,7 @@ namespace __jni_impl::java::io
 	};
 } // namespace __jni_impl::java::io
 
-#include "InputStream.hpp"
+#include "./InputStream.hpp"
 
 namespace __jni_impl::java::io
 {

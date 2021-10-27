@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "RSAPrivateKeySpec.hpp"
+#include "./RSAPrivateKeySpec.hpp"
 
 namespace __jni_impl::java::math
 {

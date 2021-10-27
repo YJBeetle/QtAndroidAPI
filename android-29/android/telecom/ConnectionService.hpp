@@ -72,12 +72,12 @@ namespace __jni_impl::android::telecom
 } // namespace __jni_impl::android::telecom
 
 #include "../content/Intent.hpp"
-#include "Conference.hpp"
-#include "Connection.hpp"
-#include "ConnectionRequest.hpp"
-#include "PhoneAccountHandle.hpp"
-#include "RemoteConference.hpp"
-#include "RemoteConnection.hpp"
+#include "./Conference.hpp"
+#include "./Connection.hpp"
+#include "./ConnectionRequest.hpp"
+#include "./PhoneAccountHandle.hpp"
+#include "./RemoteConference.hpp"
+#include "./RemoteConnection.hpp"
 
 namespace __jni_impl::android::telecom
 {

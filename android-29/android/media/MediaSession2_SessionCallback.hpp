@@ -46,11 +46,11 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "MediaSession2.hpp"
-#include "MediaSession2_ControllerInfo.hpp"
-#include "Session2Command.hpp"
-#include "Session2Command_Result.hpp"
-#include "Session2CommandGroup.hpp"
+#include "./MediaSession2.hpp"
+#include "./MediaSession2_ControllerInfo.hpp"
+#include "./Session2Command.hpp"
+#include "./Session2Command_Result.hpp"
+#include "./Session2CommandGroup.hpp"
 #include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::media

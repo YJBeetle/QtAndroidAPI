@@ -43,7 +43,7 @@ namespace __jni_impl::android::util
 	};
 } // namespace __jni_impl::android::util
 
-#include "JsonToken.hpp"
+#include "./JsonToken.hpp"
 #include "../../java/io/Reader.hpp"
 
 namespace __jni_impl::android::util

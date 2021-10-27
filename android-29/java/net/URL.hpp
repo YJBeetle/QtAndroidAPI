@@ -99,11 +99,11 @@ namespace __jni_impl::java::net
 #include "../io/ObjectOutputStream.hpp"
 #include "../lang/SecurityManager.hpp"
 #include "../lang/ThreadLocal.hpp"
-#include "InetAddress.hpp"
-#include "Proxy.hpp"
-#include "URI.hpp"
-#include "URLConnection.hpp"
-#include "URLStreamHandler.hpp"
+#include "./InetAddress.hpp"
+#include "./Proxy.hpp"
+#include "./URI.hpp"
+#include "./URLConnection.hpp"
+#include "./URLStreamHandler.hpp"
 #include "../util/Hashtable.hpp"
 
 namespace __jni_impl::java::net

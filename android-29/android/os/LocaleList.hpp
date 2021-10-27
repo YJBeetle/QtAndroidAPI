@@ -49,7 +49,7 @@ namespace __jni_impl::android::os
 } // namespace __jni_impl::android::os
 
 #include "../icu/util/ULocale.hpp"
-#include "Parcel.hpp"
+#include "./Parcel.hpp"
 #include "../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::os

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "SQLiteClosable.hpp"
+#include "./SQLiteClosable.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -153,8 +153,8 @@ namespace __jni_impl::android::database::sqlite
 } // namespace __jni_impl::android::database::sqlite
 
 #include "../../content/ContentValues.hpp"
-#include "SQLiteDatabase_OpenParams.hpp"
-#include "SQLiteStatement.hpp"
+#include "./SQLiteDatabase_OpenParams.hpp"
+#include "./SQLiteStatement.hpp"
 #include "../../os/CancellationSignal.hpp"
 #include "../../../java/io/File.hpp"
 #include "../../../java/util/Locale.hpp"

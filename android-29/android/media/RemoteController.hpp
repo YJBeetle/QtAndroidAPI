@@ -44,7 +44,7 @@ namespace __jni_impl::android::media
 } // namespace __jni_impl::android::media
 
 #include "../content/Context.hpp"
-#include "RemoteController_MetadataEditor.hpp"
+#include "./RemoteController_MetadataEditor.hpp"
 #include "../os/Looper.hpp"
 #include "../view/KeyEvent.hpp"
 

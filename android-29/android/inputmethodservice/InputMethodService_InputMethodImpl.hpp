@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "AbstractInputMethodService_AbstractInputMethodImpl.hpp"
+#include "./AbstractInputMethodService_AbstractInputMethodImpl.hpp"
 
 namespace __jni_impl::android::inputmethodservice
 {
@@ -46,7 +46,7 @@ namespace __jni_impl::android::inputmethodservice
 	};
 } // namespace __jni_impl::android::inputmethodservice
 
-#include "InputMethodService.hpp"
+#include "./InputMethodService.hpp"
 #include "../os/ResultReceiver.hpp"
 #include "../view/inputmethod/EditorInfo.hpp"
 #include "../view/inputmethod/InputBinding.hpp"

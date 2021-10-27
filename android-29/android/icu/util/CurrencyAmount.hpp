@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "Measure.hpp"
+#include "./Measure.hpp"
 
 namespace __jni_impl::android::icu::util
 {
@@ -34,7 +34,7 @@ namespace __jni_impl::android::icu::util
 	};
 } // namespace __jni_impl::android::icu::util
 
-#include "Currency.hpp"
+#include "./Currency.hpp"
 #include "../../../java/lang/Number.hpp"
 #include "../../../java/util/Currency.hpp"
 

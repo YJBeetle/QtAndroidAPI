@@ -42,7 +42,7 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "DropBoxManager_Entry.hpp"
+#include "./DropBoxManager_Entry.hpp"
 #include "../../java/io/File.hpp"
 
 namespace __jni_impl::android::os

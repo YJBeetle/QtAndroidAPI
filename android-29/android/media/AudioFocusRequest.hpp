@@ -29,7 +29,7 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "AudioAttributes.hpp"
+#include "./AudioAttributes.hpp"
 #include "../os/Handler.hpp"
 
 namespace __jni_impl::android::media

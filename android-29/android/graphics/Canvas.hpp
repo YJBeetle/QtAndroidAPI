@@ -187,21 +187,21 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Bitmap.hpp"
-#include "BlendMode.hpp"
-#include "Canvas_EdgeType.hpp"
-#include "Canvas_VertexMode.hpp"
-#include "DrawFilter.hpp"
-#include "Matrix.hpp"
-#include "Paint.hpp"
-#include "Path.hpp"
-#include "Picture.hpp"
-#include "PorterDuff_Mode.hpp"
-#include "Rect.hpp"
-#include "RectF.hpp"
-#include "Region_Op.hpp"
-#include "RenderNode.hpp"
-#include "text/MeasuredText.hpp"
+#include "./Bitmap.hpp"
+#include "./BlendMode.hpp"
+#include "./Canvas_EdgeType.hpp"
+#include "./Canvas_VertexMode.hpp"
+#include "./DrawFilter.hpp"
+#include "./Matrix.hpp"
+#include "./Paint.hpp"
+#include "./Path.hpp"
+#include "./Picture.hpp"
+#include "./PorterDuff_Mode.hpp"
+#include "./Rect.hpp"
+#include "./RectF.hpp"
+#include "./Region_Op.hpp"
+#include "./RenderNode.hpp"
+#include "./text/MeasuredText.hpp"
 
 namespace __jni_impl::android::graphics
 {

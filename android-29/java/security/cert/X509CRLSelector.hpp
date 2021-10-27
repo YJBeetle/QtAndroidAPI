@@ -61,8 +61,8 @@ namespace __jni_impl::java::security::cert
 } // namespace __jni_impl::java::security::cert
 
 #include "../../math/BigInteger.hpp"
-#include "CRL.hpp"
-#include "X509Certificate.hpp"
+#include "./CRL.hpp"
+#include "./X509Certificate.hpp"
 #include "../../util/Date.hpp"
 #include "../../util/HashSet.hpp"
 #include "../../../javax/security/auth/x500/X500Principal.hpp"

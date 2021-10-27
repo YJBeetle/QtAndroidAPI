@@ -32,9 +32,9 @@ namespace __jni_impl::android::print
 	};
 } // namespace __jni_impl::android::print
 
-#include "PrintAttributes.hpp"
-#include "PrintDocumentAdapter.hpp"
-#include "PrintJob.hpp"
+#include "./PrintAttributes.hpp"
+#include "./PrintDocumentAdapter.hpp"
+#include "./PrintJob.hpp"
 
 namespace __jni_impl::android::print
 {

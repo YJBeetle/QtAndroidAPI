@@ -27,8 +27,8 @@ namespace __jni_impl::javax::xml::validation
 	};
 } // namespace __jni_impl::javax::xml::validation
 
-#include "Validator.hpp"
-#include "ValidatorHandler.hpp"
+#include "./Validator.hpp"
+#include "./ValidatorHandler.hpp"
 
 namespace __jni_impl::javax::xml::validation
 {

@@ -49,8 +49,8 @@ namespace __jni_impl::android::hardware::biometrics
 	};
 } // namespace __jni_impl::android::hardware::biometrics
 
-#include "BiometricPrompt_AuthenticationCallback.hpp"
-#include "BiometricPrompt_CryptoObject.hpp"
+#include "./BiometricPrompt_AuthenticationCallback.hpp"
+#include "./BiometricPrompt_CryptoObject.hpp"
 #include "../../os/CancellationSignal.hpp"
 
 namespace __jni_impl::android::hardware::biometrics

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "Handler.hpp"
+#include "./Handler.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -47,9 +47,9 @@ namespace __jni_impl::java::util::logging
 
 #include "../../io/OutputStream.hpp"
 #include "../../io/Writer.hpp"
-#include "Formatter.hpp"
-#include "Level.hpp"
-#include "LogRecord.hpp"
+#include "./Formatter.hpp"
+#include "./Level.hpp"
+#include "./LogRecord.hpp"
 
 namespace __jni_impl::java::util::logging
 {

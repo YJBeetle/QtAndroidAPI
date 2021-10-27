@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "BaseAdapter.hpp"
+#include "./BaseAdapter.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -69,7 +69,7 @@ namespace __jni_impl::android::widget
 #include "../content/res/Resources_Theme.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
-#include "Filter.hpp"
+#include "./Filter.hpp"
 
 namespace __jni_impl::android::widget
 {

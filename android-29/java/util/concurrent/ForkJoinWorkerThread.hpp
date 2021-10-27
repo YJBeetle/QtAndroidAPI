@@ -40,7 +40,7 @@ namespace __jni_impl::java::util::concurrent
 #include "../../lang/ClassLoader.hpp"
 #include "../../lang/ThreadGroup.hpp"
 #include "../../security/AccessControlContext.hpp"
-#include "ForkJoinPool.hpp"
+#include "./ForkJoinPool.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {

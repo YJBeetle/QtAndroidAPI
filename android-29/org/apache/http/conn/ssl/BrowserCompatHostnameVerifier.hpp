@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../../../__JniBaseClass.hpp"
-#include "AbstractVerifier.hpp"
+#include "./AbstractVerifier.hpp"
 
 
 namespace __jni_impl::org::apache::http::conn::ssl

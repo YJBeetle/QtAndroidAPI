@@ -36,7 +36,7 @@ namespace __jni_impl::android::view::inputmethod
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
-#include "InputMethodSubtype.hpp"
+#include "./InputMethodSubtype.hpp"
 
 namespace __jni_impl::android::view::inputmethod
 {

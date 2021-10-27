@@ -25,7 +25,7 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "HardwareRenderer.hpp"
+#include "./HardwareRenderer.hpp"
 
 namespace __jni_impl::android::graphics
 {

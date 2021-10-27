@@ -24,7 +24,7 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "Loader.hpp"
+#include "./Loader.hpp"
 
 namespace __jni_impl::android::content
 {

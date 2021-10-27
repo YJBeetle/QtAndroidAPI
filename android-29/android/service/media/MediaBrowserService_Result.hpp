@@ -23,7 +23,7 @@ namespace __jni_impl::android::service::media
 	};
 } // namespace __jni_impl::android::service::media
 
-#include "MediaBrowserService.hpp"
+#include "./MediaBrowserService.hpp"
 
 namespace __jni_impl::android::service::media
 {

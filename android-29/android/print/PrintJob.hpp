@@ -41,9 +41,9 @@ namespace __jni_impl::android::print
 	};
 } // namespace __jni_impl::android::print
 
-#include "PrintJobId.hpp"
-#include "PrintJobInfo.hpp"
-#include "PrintManager.hpp"
+#include "./PrintJobId.hpp"
+#include "./PrintJobInfo.hpp"
+#include "./PrintManager.hpp"
 
 namespace __jni_impl::android::print
 {

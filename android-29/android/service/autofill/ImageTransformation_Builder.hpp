@@ -35,7 +35,7 @@ namespace __jni_impl::android::service::autofill
 	};
 } // namespace __jni_impl::android::service::autofill
 
-#include "ImageTransformation.hpp"
+#include "./ImageTransformation.hpp"
 #include "../../view/autofill/AutofillId.hpp"
 #include "../../../java/util/regex/Pattern.hpp"
 

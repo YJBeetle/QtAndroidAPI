@@ -36,7 +36,7 @@ namespace __jni_impl::android::gesture
 } // namespace __jni_impl::android::gesture
 
 #include "../content/Context.hpp"
-#include "GestureLibrary.hpp"
+#include "./GestureLibrary.hpp"
 #include "../../java/io/File.hpp"
 
 namespace __jni_impl::android::gesture

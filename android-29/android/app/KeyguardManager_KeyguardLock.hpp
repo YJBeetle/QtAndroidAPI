@@ -23,7 +23,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "KeyguardManager.hpp"
+#include "./KeyguardManager.hpp"
 
 namespace __jni_impl::android::app
 {

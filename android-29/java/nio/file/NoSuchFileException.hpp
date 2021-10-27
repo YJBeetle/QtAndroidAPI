@@ -3,7 +3,7 @@
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 #include "../../io/IOException.hpp"
-#include "FileSystemException.hpp"
+#include "./FileSystemException.hpp"
 
 
 namespace __jni_impl::java::nio::file

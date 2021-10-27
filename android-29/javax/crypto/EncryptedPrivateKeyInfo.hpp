@@ -48,7 +48,7 @@ namespace __jni_impl::javax::crypto
 #include "../../java/security/AlgorithmParameters.hpp"
 #include "../../java/security/Provider.hpp"
 #include "../../java/security/spec/PKCS8EncodedKeySpec.hpp"
-#include "Cipher.hpp"
+#include "./Cipher.hpp"
 
 namespace __jni_impl::javax::crypto
 {

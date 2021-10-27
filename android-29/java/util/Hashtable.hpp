@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Dictionary.hpp"
+#include "./Dictionary.hpp"
 
 namespace __jni_impl::java::io
 {

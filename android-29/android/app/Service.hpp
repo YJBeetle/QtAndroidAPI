@@ -72,8 +72,8 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Application.hpp"
-#include "Notification.hpp"
+#include "./Application.hpp"
+#include "./Notification.hpp"
 #include "../content/Intent.hpp"
 #include "../content/res/Configuration.hpp"
 #include "../../java/io/FileDescriptor.hpp"

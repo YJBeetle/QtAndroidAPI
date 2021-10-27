@@ -42,9 +42,9 @@ namespace __jni_impl::java::security
 } // namespace __jni_impl::java::security
 
 #include "../lang/ClassLoader.hpp"
-#include "CodeSource.hpp"
-#include "Permission.hpp"
-#include "PermissionCollection.hpp"
+#include "./CodeSource.hpp"
+#include "./Permission.hpp"
+#include "./PermissionCollection.hpp"
 
 namespace __jni_impl::java::security
 {

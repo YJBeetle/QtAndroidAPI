@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "SocketAddress.hpp"
+#include "./SocketAddress.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -45,7 +45,7 @@ namespace __jni_impl::java::net
 
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
-#include "InetAddress.hpp"
+#include "./InetAddress.hpp"
 
 namespace __jni_impl::java::net
 {

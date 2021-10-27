@@ -21,7 +21,7 @@ namespace __jni_impl::android::renderscript
 	};
 } // namespace __jni_impl::android::renderscript
 
-#include "Script_FieldID.hpp"
+#include "./Script_FieldID.hpp"
 
 namespace __jni_impl::android::renderscript
 {

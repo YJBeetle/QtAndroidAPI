@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "BaseObj.hpp"
+#include "./BaseObj.hpp"
 
 namespace __jni_impl::android::renderscript
 {
@@ -71,15 +71,15 @@ namespace __jni_impl::android::renderscript
 	};
 } // namespace __jni_impl::android::renderscript
 
-#include "Allocation.hpp"
-#include "BaseObj.hpp"
-#include "Element.hpp"
-#include "FieldPacker.hpp"
-#include "RenderScript.hpp"
-#include "Script_FieldID.hpp"
-#include "Script_InvokeID.hpp"
-#include "Script_KernelID.hpp"
-#include "Script_LaunchOptions.hpp"
+#include "./Allocation.hpp"
+#include "./BaseObj.hpp"
+#include "./Element.hpp"
+#include "./FieldPacker.hpp"
+#include "./RenderScript.hpp"
+#include "./Script_FieldID.hpp"
+#include "./Script_InvokeID.hpp"
+#include "./Script_KernelID.hpp"
+#include "./Script_LaunchOptions.hpp"
 
 namespace __jni_impl::android::renderscript
 {

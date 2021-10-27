@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Buffer.hpp"
+#include "./Buffer.hpp"
 
 namespace __jni_impl::java::nio
 {
@@ -124,14 +124,14 @@ namespace __jni_impl::java::nio
 	};
 } // namespace __jni_impl::java::nio
 
-#include "Buffer.hpp"
-#include "ByteOrder.hpp"
-#include "CharBuffer.hpp"
-#include "DoubleBuffer.hpp"
-#include "FloatBuffer.hpp"
-#include "IntBuffer.hpp"
-#include "LongBuffer.hpp"
-#include "ShortBuffer.hpp"
+#include "./Buffer.hpp"
+#include "./ByteOrder.hpp"
+#include "./CharBuffer.hpp"
+#include "./DoubleBuffer.hpp"
+#include "./FloatBuffer.hpp"
+#include "./IntBuffer.hpp"
+#include "./LongBuffer.hpp"
+#include "./ShortBuffer.hpp"
 
 namespace __jni_impl::java::nio
 {

@@ -100,8 +100,8 @@ namespace __jni_impl::java::security::cert
 
 #include "../../lang/Boolean.hpp"
 #include "../../math/BigInteger.hpp"
-#include "Certificate.hpp"
-#include "X509Certificate.hpp"
+#include "./Certificate.hpp"
+#include "./X509Certificate.hpp"
 #include "../../util/Date.hpp"
 #include "../../../javax/security/auth/x500/X500Principal.hpp"
 

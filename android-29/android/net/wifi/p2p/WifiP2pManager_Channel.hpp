@@ -35,7 +35,7 @@ namespace __jni_impl::android::net::wifi::p2p
 } // namespace __jni_impl::android::net::wifi::p2p
 
 #include "../../../content/Context.hpp"
-#include "WifiP2pManager.hpp"
+#include "./WifiP2pManager.hpp"
 #include "../../../os/Binder.hpp"
 #include "../../../os/Looper.hpp"
 

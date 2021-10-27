@@ -31,7 +31,7 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Rect.hpp"
+#include "./Rect.hpp"
 #include "../../java/io/OutputStream.hpp"
 
 namespace __jni_impl::android::graphics

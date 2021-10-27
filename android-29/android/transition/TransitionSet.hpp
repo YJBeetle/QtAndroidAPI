@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Transition.hpp"
+#include "./Transition.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -82,11 +82,11 @@ namespace __jni_impl::android::transition
 } // namespace __jni_impl::android::transition
 
 #include "../content/Context.hpp"
-#include "PathMotion.hpp"
-#include "Transition.hpp"
-#include "Transition_EpicenterCallback.hpp"
-#include "TransitionPropagation.hpp"
-#include "TransitionValues.hpp"
+#include "./PathMotion.hpp"
+#include "./Transition.hpp"
+#include "./Transition_EpicenterCallback.hpp"
+#include "./TransitionPropagation.hpp"
+#include "./TransitionValues.hpp"
 #include "../view/View.hpp"
 
 namespace __jni_impl::android::transition

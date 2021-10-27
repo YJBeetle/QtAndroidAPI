@@ -77,8 +77,8 @@ namespace __jni_impl::java::time::chrono
 #include "../LocalDate.hpp"
 #include "../LocalTime.hpp"
 #include "../ZoneId.hpp"
-#include "ThaiBuddhistChronology.hpp"
-#include "ThaiBuddhistEra.hpp"
+#include "./ThaiBuddhistChronology.hpp"
+#include "./ThaiBuddhistEra.hpp"
 #include "../temporal/ValueRange.hpp"
 
 namespace __jni_impl::java::time::chrono

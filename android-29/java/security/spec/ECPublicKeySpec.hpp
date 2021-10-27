@@ -27,8 +27,8 @@ namespace __jni_impl::java::security::spec
 	};
 } // namespace __jni_impl::java::security::spec
 
-#include "ECParameterSpec.hpp"
-#include "ECPoint.hpp"
+#include "./ECParameterSpec.hpp"
+#include "./ECPoint.hpp"
 
 namespace __jni_impl::java::security::spec
 {

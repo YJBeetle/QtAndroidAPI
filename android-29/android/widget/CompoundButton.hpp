@@ -2,8 +2,8 @@
 
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
-#include "TextView.hpp"
-#include "Button.hpp"
+#include "./TextView.hpp"
+#include "./Button.hpp"
 
 namespace __jni_impl::android::content
 {

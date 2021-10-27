@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Reader.hpp"
+#include "./Reader.hpp"
 
 
 namespace __jni_impl::java::io

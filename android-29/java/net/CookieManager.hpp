@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "CookieHandler.hpp"
+#include "./CookieHandler.hpp"
 
 namespace __jni_impl::java::net
 {
@@ -31,8 +31,8 @@ namespace __jni_impl::java::net
 	};
 } // namespace __jni_impl::java::net
 
-#include "HttpCookie.hpp"
-#include "URI.hpp"
+#include "./HttpCookie.hpp"
+#include "./URI.hpp"
 
 namespace __jni_impl::java::net
 {

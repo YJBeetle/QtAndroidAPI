@@ -23,7 +23,7 @@ namespace __jni_impl::android::accessibilityservice
 	};
 } // namespace __jni_impl::android::accessibilityservice
 
-#include "GestureDescription.hpp"
+#include "./GestureDescription.hpp"
 
 namespace __jni_impl::android::accessibilityservice
 {

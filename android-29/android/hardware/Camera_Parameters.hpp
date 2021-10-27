@@ -185,8 +185,8 @@ namespace __jni_impl::android::hardware
 	};
 } // namespace __jni_impl::android::hardware
 
-#include "Camera.hpp"
-#include "Camera_Size.hpp"
+#include "./Camera.hpp"
+#include "./Camera_Size.hpp"
 
 namespace __jni_impl::android::hardware
 {

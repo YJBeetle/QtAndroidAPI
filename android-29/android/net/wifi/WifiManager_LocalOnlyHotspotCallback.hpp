@@ -28,7 +28,7 @@ namespace __jni_impl::android::net::wifi
 	};
 } // namespace __jni_impl::android::net::wifi
 
-#include "WifiManager_LocalOnlyHotspotReservation.hpp"
+#include "./WifiManager_LocalOnlyHotspotReservation.hpp"
 
 namespace __jni_impl::android::net::wifi
 {

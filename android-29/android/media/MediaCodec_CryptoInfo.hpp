@@ -30,7 +30,7 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "MediaCodec_CryptoInfo_Pattern.hpp"
+#include "./MediaCodec_CryptoInfo_Pattern.hpp"
 
 namespace __jni_impl::android::media
 {

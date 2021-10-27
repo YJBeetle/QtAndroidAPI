@@ -3,7 +3,7 @@
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
-#include "FrameLayout.hpp"
+#include "./FrameLayout.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -75,9 +75,9 @@ namespace __jni_impl::android::widget
 #include "../content/Context.hpp"
 #include "../view/KeyEvent.hpp"
 #include "../view/View.hpp"
-#include "FrameLayout.hpp"
-#include "TabHost_TabSpec.hpp"
-#include "TabWidget.hpp"
+#include "./FrameLayout.hpp"
+#include "./TabHost_TabSpec.hpp"
+#include "./TabWidget.hpp"
 
 namespace __jni_impl::android::widget
 {

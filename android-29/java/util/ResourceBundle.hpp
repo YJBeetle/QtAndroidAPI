@@ -69,9 +69,9 @@ namespace __jni_impl::java::util
 
 #include "../lang/ClassLoader.hpp"
 #include "../lang/ref/ReferenceQueue.hpp"
-#include "Locale.hpp"
-#include "ResourceBundle_Control.hpp"
-#include "ServiceLoader.hpp"
+#include "./Locale.hpp"
+#include "./ResourceBundle_Control.hpp"
+#include "./ServiceLoader.hpp"
 
 namespace __jni_impl::java::util
 {

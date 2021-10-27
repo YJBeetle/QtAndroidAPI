@@ -72,8 +72,8 @@ namespace __jni_impl::java::time
 } // namespace __jni_impl::java::time
 
 #include "../io/ObjectInputStream.hpp"
-#include "LocalDate.hpp"
-#include "chrono/IsoChronology.hpp"
+#include "./LocalDate.hpp"
+#include "./chrono/IsoChronology.hpp"
 #include "../util/regex/Pattern.hpp"
 
 namespace __jni_impl::java::time

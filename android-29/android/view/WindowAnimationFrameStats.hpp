@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "FrameStats.hpp"
+#include "./FrameStats.hpp"
 
 namespace __jni_impl::android::os
 {

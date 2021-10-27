@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "CameraMetadata.hpp"
+#include "./CameraMetadata.hpp"
 
 namespace __jni_impl::android::hardware::camera2
 {
@@ -122,8 +122,8 @@ namespace __jni_impl::android::hardware::camera2
 	};
 } // namespace __jni_impl::android::hardware::camera2
 
-#include "CameraCharacteristics_Key.hpp"
-#include "params/RecommendedStreamConfigurationMap.hpp"
+#include "./CameraCharacteristics_Key.hpp"
+#include "./params/RecommendedStreamConfigurationMap.hpp"
 
 namespace __jni_impl::android::hardware::camera2
 {

@@ -67,8 +67,8 @@ namespace __jni_impl::android::net
 	};
 } // namespace __jni_impl::android::net
 
-#include "Credentials.hpp"
-#include "LocalSocketAddress.hpp"
+#include "./Credentials.hpp"
+#include "./LocalSocketAddress.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/InputStream.hpp"
 #include "../../java/io/OutputStream.hpp"

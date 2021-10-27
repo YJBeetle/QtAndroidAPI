@@ -35,8 +35,8 @@ namespace __jni_impl::java::nio::channels
 	};
 } // namespace __jni_impl::java::nio::channels
 
-#include "AsynchronousFileChannel.hpp"
-#include "FileChannel.hpp"
+#include "./AsynchronousFileChannel.hpp"
+#include "./FileChannel.hpp"
 
 namespace __jni_impl::java::nio::channels
 {

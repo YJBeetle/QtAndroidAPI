@@ -33,7 +33,7 @@ namespace __jni_impl::android::view::contentcapture
 } // namespace __jni_impl::android::view::contentcapture
 
 #include "../../os/Parcel.hpp"
-#include "DataRemovalRequest_Builder.hpp"
+#include "./DataRemovalRequest_Builder.hpp"
 
 namespace __jni_impl::android::view::contentcapture
 {

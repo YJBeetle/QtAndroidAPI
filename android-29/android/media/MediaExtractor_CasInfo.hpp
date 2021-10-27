@@ -24,7 +24,7 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "MediaCas_Session.hpp"
+#include "./MediaCas_Session.hpp"
 
 namespace __jni_impl::android::media
 {

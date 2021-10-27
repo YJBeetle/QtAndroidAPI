@@ -38,7 +38,7 @@ namespace __jni_impl::android::telephony
 	};
 } // namespace __jni_impl::android::telephony
 
-#include "SubscriptionPlan.hpp"
+#include "./SubscriptionPlan.hpp"
 #include "../../java/time/Period.hpp"
 #include "../../java/time/ZonedDateTime.hpp"
 

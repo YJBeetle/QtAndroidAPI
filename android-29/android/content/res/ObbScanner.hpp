@@ -23,7 +23,7 @@ namespace __jni_impl::android::content::res
 	};
 } // namespace __jni_impl::android::content::res
 
-#include "ObbInfo.hpp"
+#include "./ObbInfo.hpp"
 
 namespace __jni_impl::android::content::res
 {

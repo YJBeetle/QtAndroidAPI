@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "Writer.hpp"
+#include "./Writer.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -28,7 +28,7 @@ namespace __jni_impl::java::io
 	};
 } // namespace __jni_impl::java::io
 
-#include "PipedReader.hpp"
+#include "./PipedReader.hpp"
 
 namespace __jni_impl::java::io
 {

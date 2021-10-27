@@ -190,9 +190,9 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "Bundle.hpp"
-#include "ParcelFileDescriptor.hpp"
-#include "PersistableBundle.hpp"
+#include "./Bundle.hpp"
+#include "./ParcelFileDescriptor.hpp"
+#include "./PersistableBundle.hpp"
 #include "../util/ArrayMap.hpp"
 #include "../util/Size.hpp"
 #include "../util/SizeF.hpp"

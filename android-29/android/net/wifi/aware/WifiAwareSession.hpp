@@ -52,10 +52,10 @@ namespace __jni_impl::android::net::wifi::aware
 } // namespace __jni_impl::android::net::wifi::aware
 
 #include "../../NetworkSpecifier.hpp"
-#include "DiscoverySessionCallback.hpp"
-#include "PublishConfig.hpp"
-#include "SubscribeConfig.hpp"
-#include "WifiAwareManager.hpp"
+#include "./DiscoverySessionCallback.hpp"
+#include "./PublishConfig.hpp"
+#include "./SubscribeConfig.hpp"
+#include "./WifiAwareManager.hpp"
 #include "../../../os/Binder.hpp"
 #include "../../../os/Handler.hpp"
 

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "URLConnection.hpp"
+#include "./URLConnection.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -92,8 +92,8 @@ namespace __jni_impl::java::net
 } // namespace __jni_impl::java::net
 
 #include "../io/InputStream.hpp"
-#include "Authenticator.hpp"
-#include "URL.hpp"
+#include "./Authenticator.hpp"
+#include "./URL.hpp"
 #include "../security/Permission.hpp"
 
 namespace __jni_impl::java::net

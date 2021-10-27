@@ -80,9 +80,9 @@ namespace __jni_impl::android::view::autofill
 #include "../../graphics/Rect.hpp"
 #include "../../service/autofill/UserData.hpp"
 #include "../View.hpp"
-#include "AutofillId.hpp"
-#include "AutofillManager_AutofillCallback.hpp"
-#include "AutofillValue.hpp"
+#include "./AutofillId.hpp"
+#include "./AutofillManager_AutofillCallback.hpp"
+#include "./AutofillValue.hpp"
 
 namespace __jni_impl::android::view::autofill
 {

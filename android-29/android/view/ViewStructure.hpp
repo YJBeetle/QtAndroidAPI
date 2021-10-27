@@ -112,10 +112,10 @@ namespace __jni_impl::android::view
 #include "../graphics/Matrix.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/LocaleList.hpp"
-#include "ViewStructure_HtmlInfo.hpp"
-#include "ViewStructure_HtmlInfo_Builder.hpp"
-#include "autofill/AutofillId.hpp"
-#include "autofill/AutofillValue.hpp"
+#include "./ViewStructure_HtmlInfo.hpp"
+#include "./ViewStructure_HtmlInfo_Builder.hpp"
+#include "./autofill/AutofillId.hpp"
+#include "./autofill/AutofillValue.hpp"
 
 namespace __jni_impl::android::view
 {

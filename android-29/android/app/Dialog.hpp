@@ -172,8 +172,8 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "ActionBar.hpp"
-#include "Activity.hpp"
+#include "./ActionBar.hpp"
+#include "./Activity.hpp"
 #include "../content/Context.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "../net/Uri.hpp"

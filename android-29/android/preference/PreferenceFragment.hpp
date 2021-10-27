@@ -70,9 +70,9 @@ namespace __jni_impl::android::preference
 
 #include "../content/Intent.hpp"
 #include "../os/Bundle.hpp"
-#include "Preference.hpp"
-#include "PreferenceManager.hpp"
-#include "PreferenceScreen.hpp"
+#include "./Preference.hpp"
+#include "./PreferenceManager.hpp"
+#include "./PreferenceScreen.hpp"
 #include "../view/LayoutInflater.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"

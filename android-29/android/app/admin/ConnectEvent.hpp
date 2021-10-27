@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "NetworkEvent.hpp"
+#include "./NetworkEvent.hpp"
 
 namespace __jni_impl::android::os
 {

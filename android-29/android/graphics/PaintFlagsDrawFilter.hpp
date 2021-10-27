@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "DrawFilter.hpp"
+#include "./DrawFilter.hpp"
 
 
 namespace __jni_impl::android::graphics

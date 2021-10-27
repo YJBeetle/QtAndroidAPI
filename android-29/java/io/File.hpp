@@ -95,8 +95,8 @@ namespace __jni_impl::java::io
 	};
 } // namespace __jni_impl::java::io
 
-#include "ObjectInputStream.hpp"
-#include "ObjectOutputStream.hpp"
+#include "./ObjectInputStream.hpp"
+#include "./ObjectOutputStream.hpp"
 #include "../net/URI.hpp"
 #include "../net/URL.hpp"
 

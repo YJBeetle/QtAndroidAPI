@@ -26,7 +26,7 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "projection/MediaProjection.hpp"
+#include "./projection/MediaProjection.hpp"
 
 namespace __jni_impl::android::media
 {

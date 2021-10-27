@@ -32,8 +32,8 @@ namespace __jni_impl::java::nio::file::attribute
 	};
 } // namespace __jni_impl::java::nio::file::attribute
 
-#include "AclEntry.hpp"
-#include "AclEntryType.hpp"
+#include "./AclEntry.hpp"
+#include "./AclEntryType.hpp"
 
 namespace __jni_impl::java::nio::file::attribute
 {

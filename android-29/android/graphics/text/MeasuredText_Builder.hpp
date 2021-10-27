@@ -32,7 +32,7 @@ namespace __jni_impl::android::graphics::text
 } // namespace __jni_impl::android::graphics::text
 
 #include "../Paint.hpp"
-#include "MeasuredText.hpp"
+#include "./MeasuredText.hpp"
 
 namespace __jni_impl::android::graphics::text
 {

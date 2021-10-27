@@ -36,7 +36,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "RemoteInput.hpp"
+#include "./RemoteInput.hpp"
 #include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::app

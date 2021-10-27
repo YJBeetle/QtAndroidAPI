@@ -109,7 +109,7 @@ namespace __jni_impl::android::os
 	};
 } // namespace __jni_impl::android::os
 
-#include "Debug_MemoryInfo.hpp"
+#include "./Debug_MemoryInfo.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/lang/ClassLoader.hpp"
 

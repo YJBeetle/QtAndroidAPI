@@ -41,7 +41,7 @@ namespace __jni_impl::java::nio::channels
 } // namespace __jni_impl::java::nio::channels
 
 #include "../ByteBuffer.hpp"
-#include "FileLock.hpp"
+#include "./FileLock.hpp"
 
 namespace __jni_impl::java::nio::channels
 {

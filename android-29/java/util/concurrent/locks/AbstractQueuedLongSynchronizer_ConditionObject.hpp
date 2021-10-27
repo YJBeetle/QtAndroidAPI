@@ -38,7 +38,7 @@ namespace __jni_impl::java::util::concurrent::locks
 
 #include "../../Date.hpp"
 #include "../TimeUnit.hpp"
-#include "AbstractQueuedLongSynchronizer.hpp"
+#include "./AbstractQueuedLongSynchronizer.hpp"
 
 namespace __jni_impl::java::util::concurrent::locks
 {

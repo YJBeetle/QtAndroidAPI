@@ -60,7 +60,7 @@ namespace __jni_impl::java::util
 #include "../lang/reflect/Method.hpp"
 #include "../net/URL.hpp"
 #include "../security/AccessControlContext.hpp"
-#include "Optional.hpp"
+#include "./Optional.hpp"
 
 namespace __jni_impl::java::util
 {

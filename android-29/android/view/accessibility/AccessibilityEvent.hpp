@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "AccessibilityRecord.hpp"
+#include "./AccessibilityRecord.hpp"
 
 namespace __jni_impl::android::os
 {
@@ -100,7 +100,7 @@ namespace __jni_impl::android::view::accessibility
 } // namespace __jni_impl::android::view::accessibility
 
 #include "../../os/Parcel.hpp"
-#include "AccessibilityRecord.hpp"
+#include "./AccessibilityRecord.hpp"
 
 namespace __jni_impl::android::view::accessibility
 {

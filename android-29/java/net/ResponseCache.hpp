@@ -38,10 +38,10 @@ namespace __jni_impl::java::net
 	};
 } // namespace __jni_impl::java::net
 
-#include "CacheRequest.hpp"
-#include "CacheResponse.hpp"
-#include "URI.hpp"
-#include "URLConnection.hpp"
+#include "./CacheRequest.hpp"
+#include "./CacheResponse.hpp"
+#include "./URI.hpp"
+#include "./URLConnection.hpp"
 
 namespace __jni_impl::java::net
 {

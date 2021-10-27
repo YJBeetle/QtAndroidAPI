@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "BaseExpandableListAdapter.hpp"
+#include "./BaseExpandableListAdapter.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -62,7 +62,7 @@ namespace __jni_impl::android::widget
 #include "../content/Context.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
-#include "Filter.hpp"
+#include "./Filter.hpp"
 
 namespace __jni_impl::android::widget
 {

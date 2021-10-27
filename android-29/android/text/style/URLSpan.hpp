@@ -1,8 +1,8 @@
 #pragma once
 
 #include "../../../__JniBaseClass.hpp"
-#include "CharacterStyle.hpp"
-#include "ClickableSpan.hpp"
+#include "./CharacterStyle.hpp"
+#include "./ClickableSpan.hpp"
 
 namespace __jni_impl::android::os
 {

@@ -45,7 +45,7 @@ namespace __jni_impl::android::mtp
 	};
 } // namespace __jni_impl::android::mtp
 
-#include "MtpObjectInfo.hpp"
+#include "./MtpObjectInfo.hpp"
 
 namespace __jni_impl::android::mtp
 {

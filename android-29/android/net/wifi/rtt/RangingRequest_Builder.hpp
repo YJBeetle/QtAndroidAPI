@@ -41,7 +41,7 @@ namespace __jni_impl::android::net::wifi::rtt
 #include "../../MacAddress.hpp"
 #include "../ScanResult.hpp"
 #include "../aware/PeerHandle.hpp"
-#include "RangingRequest.hpp"
+#include "./RangingRequest.hpp"
 
 namespace __jni_impl::android::net::wifi::rtt
 {

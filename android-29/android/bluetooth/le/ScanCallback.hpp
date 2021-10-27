@@ -28,7 +28,7 @@ namespace __jni_impl::android::bluetooth::le
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
-#include "ScanResult.hpp"
+#include "./ScanResult.hpp"
 
 namespace __jni_impl::android::bluetooth::le
 {

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "ThreadLocal.hpp"
+#include "./ThreadLocal.hpp"
 
 namespace __jni_impl::java::lang
 {
@@ -22,7 +22,7 @@ namespace __jni_impl::java::lang
 	};
 } // namespace __jni_impl::java::lang
 
-#include "Thread.hpp"
+#include "./Thread.hpp"
 
 namespace __jni_impl::java::lang
 {

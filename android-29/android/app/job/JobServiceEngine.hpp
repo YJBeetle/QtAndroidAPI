@@ -30,7 +30,7 @@ namespace __jni_impl::android::app::job
 } // namespace __jni_impl::android::app::job
 
 #include "../Service.hpp"
-#include "JobParameters.hpp"
+#include "./JobParameters.hpp"
 
 namespace __jni_impl::android::app::job
 {

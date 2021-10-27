@@ -26,7 +26,7 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "LauncherActivity.hpp"
+#include "./LauncherActivity.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 
 namespace __jni_impl::android::app

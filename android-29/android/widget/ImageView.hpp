@@ -130,7 +130,7 @@ namespace __jni_impl::android::widget
 #include "../graphics/drawable/Drawable.hpp"
 #include "../graphics/drawable/Icon.hpp"
 #include "../net/Uri.hpp"
-#include "ImageView_ScaleType.hpp"
+#include "./ImageView_ScaleType.hpp"
 
 namespace __jni_impl::android::widget
 {

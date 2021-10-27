@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../../__JniBaseClass.hpp"
-#include "AbstractCursor.hpp"
+#include "./AbstractCursor.hpp"
 
 namespace __jni_impl::android::database
 {
@@ -45,8 +45,8 @@ namespace __jni_impl::android::database
 	};
 } // namespace __jni_impl::android::database
 
-#include "ContentObserver.hpp"
-#include "DataSetObserver.hpp"
+#include "./ContentObserver.hpp"
+#include "./DataSetObserver.hpp"
 
 namespace __jni_impl::android::database
 {

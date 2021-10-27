@@ -47,7 +47,7 @@ namespace __jni_impl::javax::xml::transform
 } // namespace __jni_impl::javax::xml::transform
 
 #include "../../../java/lang/ClassLoader.hpp"
-#include "Transformer.hpp"
+#include "./Transformer.hpp"
 
 namespace __jni_impl::javax::xml::transform
 {

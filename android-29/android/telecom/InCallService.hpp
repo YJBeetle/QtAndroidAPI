@@ -60,8 +60,8 @@ namespace __jni_impl::android::telecom
 #include "../bluetooth/BluetoothDevice.hpp"
 #include "../content/Intent.hpp"
 #include "../os/Bundle.hpp"
-#include "Call.hpp"
-#include "CallAudioState.hpp"
+#include "./Call.hpp"
+#include "./CallAudioState.hpp"
 
 namespace __jni_impl::android::telecom
 {

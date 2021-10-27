@@ -4,7 +4,7 @@
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
-#include "AbstractInputMethodService.hpp"
+#include "./AbstractInputMethodService.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -190,9 +190,9 @@ namespace __jni_impl::android::inputmethodservice
 #include "../app/Dialog.hpp"
 #include "../content/res/Configuration.hpp"
 #include "../graphics/Rect.hpp"
-#include "AbstractInputMethodService_AbstractInputMethodImpl.hpp"
-#include "AbstractInputMethodService_AbstractInputMethodSessionImpl.hpp"
-#include "InputMethodService_Insets.hpp"
+#include "./AbstractInputMethodService_AbstractInputMethodImpl.hpp"
+#include "./AbstractInputMethodService_AbstractInputMethodSessionImpl.hpp"
+#include "./InputMethodService_Insets.hpp"
 #include "../os/Bundle.hpp"
 #include "../view/KeyEvent.hpp"
 #include "../view/LayoutInflater.hpp"

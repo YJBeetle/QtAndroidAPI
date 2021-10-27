@@ -36,7 +36,7 @@ namespace __jni_impl::android::bluetooth::le
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
-#include "AdvertisingSet.hpp"
+#include "./AdvertisingSet.hpp"
 
 namespace __jni_impl::android::bluetooth::le
 {

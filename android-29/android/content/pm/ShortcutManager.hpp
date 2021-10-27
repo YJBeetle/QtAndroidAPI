@@ -57,7 +57,7 @@ namespace __jni_impl::android::content::pm
 #include "../Context.hpp"
 #include "../Intent.hpp"
 #include "../IntentSender.hpp"
-#include "ShortcutInfo.hpp"
+#include "./ShortcutInfo.hpp"
 
 namespace __jni_impl::android::content::pm
 {
