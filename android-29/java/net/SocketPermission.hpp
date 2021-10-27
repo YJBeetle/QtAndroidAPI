@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_SOCKETPERMISSION
-#define JAVA_NET_SOCKETPERMISSION
-
 #include "../../__JniBaseClass.hpp"
 #include "../security/Permission.hpp"
 
@@ -126,6 +123,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_SOCKETPERMISSION
 

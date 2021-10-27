@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_LONGSUMMARYSTATISTICS
-#define JAVA_UTIL_LONGSUMMARYSTATISTICS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -144,6 +141,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_LONGSUMMARYSTATISTICS
 

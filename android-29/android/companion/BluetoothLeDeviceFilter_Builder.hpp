@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_COMPANION_BLUETOOTHLEDEVICEFILTER_BUILDER
-#define ANDROID_COMPANION_BLUETOOTHLEDEVICEFILTER_BUILDER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::bluetooth::le
@@ -155,6 +152,4 @@ namespace android::companion
 		}
 	};
 } // namespace android::companion
-
-#endif // ANDROID_COMPANION_BLUETOOTHLEDEVICEFILTER_BUILDER
 

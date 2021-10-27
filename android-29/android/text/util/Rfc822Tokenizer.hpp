@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_UTIL_RFC822TOKENIZER
-#define ANDROID_TEXT_UTIL_RFC822TOKENIZER
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -149,6 +146,4 @@ namespace android::text::util
 		}
 	};
 } // namespace android::text::util
-
-#endif // ANDROID_TEXT_UTIL_RFC822TOKENIZER
 

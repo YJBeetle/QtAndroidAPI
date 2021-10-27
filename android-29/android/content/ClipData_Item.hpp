@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_CLIPDATA_ITEM
-#define ANDROID_CONTENT_CLIPDATA_ITEM
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -257,6 +254,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_CLIPDATA_ITEM
 

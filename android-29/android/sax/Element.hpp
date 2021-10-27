@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SAX_ELEMENT
-#define ANDROID_SAX_ELEMENT
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -177,6 +174,4 @@ namespace android::sax
 		}
 	};
 } // namespace android::sax
-
-#endif // ANDROID_SAX_ELEMENT
 

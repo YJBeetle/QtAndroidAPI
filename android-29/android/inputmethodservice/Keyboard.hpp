@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_INPUTMETHODSERVICE_KEYBOARD
-#define ANDROID_INPUTMETHODSERVICE_KEYBOARD
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -295,6 +292,4 @@ namespace android::inputmethodservice
 		}
 	};
 } // namespace android::inputmethodservice
-
-#endif // ANDROID_INPUTMETHODSERVICE_KEYBOARD
 

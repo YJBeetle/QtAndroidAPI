@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ACCOUNTS_ACCOUNT
-#define ANDROID_ACCOUNTS_ACCOUNT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -150,6 +147,4 @@ namespace android::accounts
 		}
 	};
 } // namespace android::accounts
-
-#endif // ANDROID_ACCOUNTS_ACCOUNT
 

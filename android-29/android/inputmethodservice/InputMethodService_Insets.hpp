@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_INPUTMETHODSERVICE_INPUTMETHODSERVICE_INSETS
-#define ANDROID_INPUTMETHODSERVICE_INPUTMETHODSERVICE_INSETS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -115,6 +112,4 @@ namespace android::inputmethodservice
 		}
 	};
 } // namespace android::inputmethodservice
-
-#endif // ANDROID_INPUTMETHODSERVICE_INPUTMETHODSERVICE_INSETS
 

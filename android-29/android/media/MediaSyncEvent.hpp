@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIASYNCEVENT
-#define ANDROID_MEDIA_MEDIASYNCEVENT
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -99,6 +96,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIASYNCEVENT
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SPEECH_RECOGNITIONSERVICE
-#define ANDROID_SPEECH_RECOGNITIONSERVICE
-
 #include "../../__JniBaseClass.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
@@ -97,6 +94,4 @@ namespace android::speech
 		}
 	};
 } // namespace android::speech
-
-#endif // ANDROID_SPEECH_RECOGNITIONSERVICE
 

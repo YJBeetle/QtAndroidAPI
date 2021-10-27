@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIAFORMAT
-#define ANDROID_MEDIA_MEDIAFORMAT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -1624,6 +1621,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIAFORMAT
 

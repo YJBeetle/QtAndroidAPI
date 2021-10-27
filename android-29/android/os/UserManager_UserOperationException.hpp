@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_USERMANAGER_USEROPERATIONEXCEPTION
-#define ANDROID_OS_USERMANAGER_USEROPERATIONEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
@@ -58,6 +55,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_USERMANAGER_USEROPERATIONEXCEPTION
 

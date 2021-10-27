@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_SHORT
-#define JAVA_LANG_SHORT
-
 #include "../../__JniBaseClass.hpp"
 #include "Number.hpp"
 
@@ -406,6 +403,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_SHORT
 

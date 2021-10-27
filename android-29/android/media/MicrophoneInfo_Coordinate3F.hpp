@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MICROPHONEINFO_COORDINATE3F
-#define ANDROID_MEDIA_MICROPHONEINFO_COORDINATE3F
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -78,6 +75,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MICROPHONEINFO_COORDINATE3F
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_AWARE_PARCELABLEPEERHANDLE
-#define ANDROID_NET_WIFI_AWARE_PARCELABLEPEERHANDLE
-
 #include "../../../../__JniBaseClass.hpp"
 #include "PeerHandle.hpp"
 
@@ -89,6 +86,4 @@ namespace android::net::wifi::aware
 		}
 	};
 } // namespace android::net::wifi::aware
-
-#endif // ANDROID_NET_WIFI_AWARE_PARCELABLEPEERHANDLE
 

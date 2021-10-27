@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MTP_MTPDEVICEINFO
-#define ANDROID_MTP_MTPDEVICEINFO
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -114,6 +111,4 @@ namespace android::mtp
 		}
 	};
 } // namespace android::mtp
-
-#endif // ANDROID_MTP_MTPDEVICEINFO
 

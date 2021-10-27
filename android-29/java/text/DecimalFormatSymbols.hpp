@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TEXT_DECIMALFORMATSYMBOLS
-#define JAVA_TEXT_DECIMALFORMATSYMBOLS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -448,6 +445,4 @@ namespace java::text
 		}
 	};
 } // namespace java::text
-
-#endif // JAVA_TEXT_DECIMALFORMATSYMBOLS
 

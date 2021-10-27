@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_BUILD
-#define ANDROID_OS_BUILD
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -291,6 +288,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_BUILD
 

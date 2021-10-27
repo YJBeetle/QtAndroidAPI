@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_FILE_PATHS
-#define JAVA_NIO_FILE_PATHS
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::net
@@ -85,6 +82,4 @@ namespace java::nio::file
 		}
 	};
 } // namespace java::nio::file
-
-#endif // JAVA_NIO_FILE_PATHS
 

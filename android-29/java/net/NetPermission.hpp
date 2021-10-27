@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_NETPERMISSION
-#define JAVA_NET_NETPERMISSION
-
 #include "../../__JniBaseClass.hpp"
 #include "../security/Permission.hpp"
 #include "../security/BasicPermission.hpp"
@@ -88,6 +85,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_NETPERMISSION
 

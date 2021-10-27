@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_SPEC_ECPRIVATEKEYSPEC
-#define JAVA_SECURITY_SPEC_ECPRIVATEKEYSPEC
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::math
@@ -79,6 +76,4 @@ namespace java::security::spec
 		}
 	};
 } // namespace java::security::spec
-
-#endif // JAVA_SECURITY_SPEC_ECPRIVATEKEYSPEC
 

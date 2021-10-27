@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OPENGL_ETC1
-#define ANDROID_OPENGL_ETC1
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::nio
@@ -192,6 +189,4 @@ namespace android::opengl
 		}
 	};
 } // namespace android::opengl
-
-#endif // ANDROID_OPENGL_ETC1
 

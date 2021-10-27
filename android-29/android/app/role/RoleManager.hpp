@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_ROLE_ROLEMANAGER
-#define ANDROID_APP_ROLE_ROLEMANAGER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -179,6 +176,4 @@ namespace android::app::role
 		}
 	};
 } // namespace android::app::role
-
-#endif // ANDROID_APP_ROLE_ROLEMANAGER
 

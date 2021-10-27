@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_PAIR
-#define ANDROID_UTIL_PAIR
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -105,6 +102,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_PAIR
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_FILE
-#define JAVA_IO_FILE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -627,6 +624,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_FILE
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_LOCATION_GNSSMEASUREMENTSEVENT
-#define ANDROID_LOCATION_GNSSMEASUREMENTSEVENT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::location
@@ -109,6 +106,4 @@ namespace android::location
 		}
 	};
 } // namespace android::location
-
-#endif // ANDROID_LOCATION_GNSSMEASUREMENTSEVENT
 

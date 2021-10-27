@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APPWIDGET_APPWIDGETPROVIDER
-#define ANDROID_APPWIDGET_APPWIDGETPROVIDER
-
 #include "../../__JniBaseClass.hpp"
 #include "../content/BroadcastReceiver.hpp"
 
@@ -142,6 +139,4 @@ namespace android::appwidget
 		}
 	};
 } // namespace android::appwidget
-
-#endif // ANDROID_APPWIDGET_APPWIDGETPROVIDER
 

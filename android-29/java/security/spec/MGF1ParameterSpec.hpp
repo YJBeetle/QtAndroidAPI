@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_SPEC_MGF1PARAMETERSPEC
-#define JAVA_SECURITY_SPEC_MGF1PARAMETERSPEC
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -175,6 +172,4 @@ namespace java::security::spec
 		}
 	};
 } // namespace java::security::spec
-
-#endif // JAVA_SECURITY_SPEC_MGF1PARAMETERSPEC
 

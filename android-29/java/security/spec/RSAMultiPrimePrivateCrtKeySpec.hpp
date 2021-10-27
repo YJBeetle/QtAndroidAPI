@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_SPEC_RSAMULTIPRIMEPRIVATECRTKEYSPEC
-#define JAVA_SECURITY_SPEC_RSAMULTIPRIMEPRIVATECRTKEYSPEC
-
 #include "../../../__JniBaseClass.hpp"
 #include "RSAPrivateKeySpec.hpp"
 
@@ -161,6 +158,4 @@ namespace java::security::spec
 		}
 	};
 } // namespace java::security::spec
-
-#endif // JAVA_SECURITY_SPEC_RSAMULTIPRIMEPRIVATECRTKEYSPEC
 

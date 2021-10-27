@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIASCANNERCONNECTION
-#define ANDROID_MEDIA_MEDIASCANNERCONNECTION
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -139,6 +136,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIASCANNERCONNECTION
 

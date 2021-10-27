@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_SECURITY_CERT_CERTIFICATE
-#define JAVAX_SECURITY_CERT_CERTIFICATE
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -119,6 +116,4 @@ namespace javax::security::cert
 		}
 	};
 } // namespace javax::security::cert
-
-#endif // JAVAX_SECURITY_CERT_CERTIFICATE
 

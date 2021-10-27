@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_QUICKSETTINGS_TILE
-#define ANDROID_SERVICE_QUICKSETTINGS_TILE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics::drawable
@@ -229,6 +226,4 @@ namespace android::service::quicksettings
 		}
 	};
 } // namespace android::service::quicksettings
-
-#endif // ANDROID_SERVICE_QUICKSETTINGS_TILE
 

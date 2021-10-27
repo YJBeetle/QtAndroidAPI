@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CURRENCY
-#define JAVA_UTIL_CURRENCY
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -191,6 +188,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_CURRENCY
 

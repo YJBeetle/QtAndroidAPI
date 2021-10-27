@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_NOTIFICATION_ZENPOLICY_BUILDER
-#define ANDROID_SERVICE_NOTIFICATION_ZENPOLICY_BUILDER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::service::notification
@@ -229,6 +226,4 @@ namespace android::service::notification
 		}
 	};
 } // namespace android::service::notification
-
-#endif // ANDROID_SERVICE_NOTIFICATION_ZENPOLICY_BUILDER
 

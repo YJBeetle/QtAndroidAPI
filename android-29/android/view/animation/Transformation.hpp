@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_ANIMATION_TRANSFORMATION
-#define ANDROID_VIEW_ANIMATION_TRANSFORMATION
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -170,6 +167,4 @@ namespace android::view::animation
 		}
 	};
 } // namespace android::view::animation
-
-#endif // ANDROID_VIEW_ANIMATION_TRANSFORMATION
 

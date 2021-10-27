@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_LAYOUTDIRECTION
-#define ANDROID_UTIL_LAYOUTDIRECTION
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -80,6 +77,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_LAYOUTDIRECTION
 

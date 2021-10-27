@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_MEDIA_CAMERAPREWARMSERVICE
-#define ANDROID_SERVICE_MEDIA_CAMERAPREWARMSERVICE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
@@ -92,6 +89,4 @@ namespace android::service::media
 		}
 	};
 } // namespace android::service::media
-
-#endif // ANDROID_SERVICE_MEDIA_CAMERAPREWARMSERVICE
 

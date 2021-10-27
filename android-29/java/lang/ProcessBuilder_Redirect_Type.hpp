@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_PROCESSBUILDER_REDIRECT_TYPE
-#define JAVA_LANG_PROCESSBUILDER_REDIRECT_TYPE
-
 #include "../../__JniBaseClass.hpp"
 #include "Enum.hpp"
 
@@ -123,6 +120,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_PROCESSBUILDER_REDIRECT_TYPE
 

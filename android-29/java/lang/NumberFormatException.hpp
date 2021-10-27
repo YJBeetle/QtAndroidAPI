@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_NUMBERFORMATEXCEPTION
-#define JAVA_LANG_NUMBERFORMATEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "Exception.hpp"
 #include "RuntimeException.hpp"
@@ -75,6 +72,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_NUMBERFORMATEXCEPTION
 

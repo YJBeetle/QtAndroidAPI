@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_INSPECTOR_INTFLAGMAPPING
-#define ANDROID_VIEW_INSPECTOR_INTFLAGMAPPING
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -80,6 +77,4 @@ namespace android::view::inspector
 		}
 	};
 } // namespace android::view::inspector
-
-#endif // ANDROID_VIEW_INSPECTOR_INTFLAGMAPPING
 

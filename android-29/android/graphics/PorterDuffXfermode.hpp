@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_PORTERDUFFXFERMODE
-#define ANDROID_GRAPHICS_PORTERDUFFXFERMODE
-
 #include "../../__JniBaseClass.hpp"
 #include "Xfermode.hpp"
 
@@ -57,6 +54,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_PORTERDUFFXFERMODE
 

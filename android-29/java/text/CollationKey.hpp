@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TEXT_COLLATIONKEY
-#define JAVA_TEXT_COLLATIONKEY
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -82,6 +79,4 @@ namespace java::text
 		}
 	};
 } // namespace java::text
-
-#endif // JAVA_TEXT_COLLATIONKEY
 

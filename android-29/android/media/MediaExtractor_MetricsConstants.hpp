@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIAEXTRACTOR_METRICSCONSTANTS
-#define ANDROID_MEDIA_MEDIAEXTRACTOR_METRICSCONSTANTS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -75,6 +72,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIAEXTRACTOR_METRICSCONSTANTS
 

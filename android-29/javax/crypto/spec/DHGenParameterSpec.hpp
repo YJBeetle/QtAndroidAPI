@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_CRYPTO_SPEC_DHGENPARAMETERSPEC
-#define JAVAX_CRYPTO_SPEC_DHGENPARAMETERSPEC
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -69,6 +66,4 @@ namespace javax::crypto::spec
 		}
 	};
 } // namespace javax::crypto::spec
-
-#endif // JAVAX_CRYPTO_SPEC_DHGENPARAMETERSPEC
 

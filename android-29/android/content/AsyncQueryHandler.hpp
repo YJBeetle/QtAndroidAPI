@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_ASYNCQUERYHANDLER
-#define ANDROID_CONTENT_ASYNCQUERYHANDLER
-
 #include "../../__JniBaseClass.hpp"
 #include "../os/Handler.hpp"
 
@@ -196,6 +193,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_ASYNCQUERYHANDLER
 

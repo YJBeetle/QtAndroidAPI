@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TRANSITION_TRANSITIONPROPAGATION
-#define ANDROID_TRANSITION_TRANSITIONPROPAGATION
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::transition
@@ -93,6 +90,4 @@ namespace android::transition
 		}
 	};
 } // namespace android::transition
-
-#endif // ANDROID_TRANSITION_TRANSITIONPROPAGATION
 

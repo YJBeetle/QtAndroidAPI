@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_INVOKE_METHODHANDLES_LOOKUP
-#define JAVA_LANG_INVOKE_METHODHANDLES_LOOKUP
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -574,6 +571,4 @@ namespace java::lang::invoke
 		}
 	};
 } // namespace java::lang::invoke
-
-#endif // JAVA_LANG_INVOKE_METHODHANDLES_LOOKUP
 

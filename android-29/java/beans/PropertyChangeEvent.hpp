@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_BEANS_PROPERTYCHANGEEVENT
-#define JAVA_BEANS_PROPERTYCHANGEEVENT
-
 #include "../../__JniBaseClass.hpp"
 #include "../util/EventObject.hpp"
 
@@ -124,6 +121,4 @@ namespace java::beans
 		}
 	};
 } // namespace java::beans
-
-#endif // JAVA_BEANS_PROPERTYCHANGEEVENT
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_LOGINFILTER
-#define ANDROID_TEXT_LOGINFILTER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -110,6 +107,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_LOGINFILTER
 

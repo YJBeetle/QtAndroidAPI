@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_LAYOUT_DIRECTIONS
-#define ANDROID_TEXT_LAYOUT_DIRECTIONS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -48,6 +45,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_LAYOUT_DIRECTIONS
 

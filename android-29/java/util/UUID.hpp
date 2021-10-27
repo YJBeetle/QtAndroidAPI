@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_UUID
-#define JAVA_UTIL_UUID
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -191,6 +188,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_UUID
 

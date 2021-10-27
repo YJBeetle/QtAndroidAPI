@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_AUDIOPLAYBACKCAPTURECONFIGURATION
-#define ANDROID_MEDIA_AUDIOPLAYBACKCAPTURECONFIGURATION
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media::projection
@@ -93,6 +90,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_AUDIOPLAYBACKCAPTURECONFIGURATION
 

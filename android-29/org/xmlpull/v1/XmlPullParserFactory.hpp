@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_XMLPULL_V1_XMLPULLPARSERFACTORY
-#define ORG_XMLPULL_V1_XMLPULLPARSERFACTORY
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util
@@ -186,6 +183,4 @@ namespace org::xmlpull::v1
 		}
 	};
 } // namespace org::xmlpull::v1
-
-#endif // ORG_XMLPULL_V1_XMLPULLPARSERFACTORY
 

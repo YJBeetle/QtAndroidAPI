@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIASESSION2SERVICE
-#define ANDROID_MEDIA_MEDIASESSION2SERVICE
-
 #include "../../__JniBaseClass.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
@@ -150,6 +147,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIASESSION2SERVICE
 

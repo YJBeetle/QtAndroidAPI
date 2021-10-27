@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_CHRONO_THAIBUDDHISTERA
-#define JAVA_TIME_CHRONO_THAIBUDDHISTERA
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
@@ -134,6 +131,4 @@ namespace java::time::chrono
 		}
 	};
 } // namespace java::time::chrono
-
-#endif // JAVA_TIME_CHRONO_THAIBUDDHISTERA
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DATABASE_MATRIXCURSOR
-#define ANDROID_DATABASE_MATRIXCURSOR
-
 #include "../../__JniBaseClass.hpp"
 #include "AbstractCursor.hpp"
 
@@ -196,6 +193,4 @@ namespace android::database
 		}
 	};
 } // namespace android::database
-
-#endif // ANDROID_DATABASE_MATRIXCURSOR
 

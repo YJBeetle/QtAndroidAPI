@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_LOCKS_ABSTRACTQUEUEDLONGSYNCHRONIZER
-#define JAVA_UTIL_CONCURRENT_LOCKS_ABSTRACTQUEUEDLONGSYNCHRONIZER
-
 #include "../../../../__JniBaseClass.hpp"
 #include "AbstractOwnableSynchronizer.hpp"
 
@@ -251,6 +248,4 @@ namespace java::util::concurrent::locks
 		}
 	};
 } // namespace java::util::concurrent::locks
-
-#endif // JAVA_UTIL_CONCURRENT_LOCKS_ABSTRACTQUEUEDLONGSYNCHRONIZER
 

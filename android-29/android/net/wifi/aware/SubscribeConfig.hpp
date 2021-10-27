@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_AWARE_SUBSCRIBECONFIG
-#define ANDROID_NET_WIFI_AWARE_SUBSCRIBECONFIG
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -121,6 +118,4 @@ namespace android::net::wifi::aware
 		}
 	};
 } // namespace android::net::wifi::aware
-
-#endif // ANDROID_NET_WIFI_AWARE_SUBSCRIBECONFIG
 

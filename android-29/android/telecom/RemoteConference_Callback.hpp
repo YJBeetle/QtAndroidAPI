@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELECOM_REMOTECONFERENCE_CALLBACK
-#define ANDROID_TELECOM_REMOTECONFERENCE_CALLBACK
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -159,6 +156,4 @@ namespace android::telecom
 		}
 	};
 } // namespace android::telecom
-
-#endif // ANDROID_TELECOM_REMOTECONFERENCE_CALLBACK
 

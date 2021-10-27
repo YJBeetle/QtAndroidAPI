@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_LINKEDLIST
-#define JAVA_UTIL_LINKEDLIST
-
 #include "../../__JniBaseClass.hpp"
 #include "AbstractCollection.hpp"
 #include "AbstractList.hpp"
@@ -420,6 +417,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_LINKEDLIST
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_ABSSEEKBAR
-#define ANDROID_WIDGET_ABSSEEKBAR
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "ProgressBar.hpp"
@@ -415,6 +412,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_ABSSEEKBAR
 

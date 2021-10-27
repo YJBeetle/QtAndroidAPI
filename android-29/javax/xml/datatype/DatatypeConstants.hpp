@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_DATATYPE_DATATYPECONSTANTS
-#define JAVAX_XML_DATATYPE_DATATYPECONSTANTS
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::javax::xml::datatype
@@ -363,6 +360,4 @@ namespace javax::xml::datatype
 		}
 	};
 } // namespace javax::xml::datatype
-
-#endif // JAVAX_XML_DATATYPE_DATATYPECONSTANTS
 

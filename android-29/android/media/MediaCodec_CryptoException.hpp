@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIACODEC_CRYPTOEXCEPTION
-#define ANDROID_MEDIA_MEDIACODEC_CRYPTOEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
@@ -145,6 +142,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIACODEC_CRYPTOEXCEPTION
 

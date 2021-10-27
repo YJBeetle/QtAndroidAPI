@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_BASICPERMISSION
-#define JAVA_SECURITY_BASICPERMISSION
-
 #include "../../__JniBaseClass.hpp"
 #include "Permission.hpp"
 
@@ -144,6 +141,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_BASICPERMISSION
 

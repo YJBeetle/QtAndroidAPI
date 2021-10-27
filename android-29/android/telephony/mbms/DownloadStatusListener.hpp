@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_MBMS_DOWNLOADSTATUSLISTENER
-#define ANDROID_TELEPHONY_MBMS_DOWNLOADSTATUSLISTENER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::telephony::mbms
@@ -70,6 +67,4 @@ namespace android::telephony::mbms
 		}
 	};
 } // namespace android::telephony::mbms
-
-#endif // ANDROID_TELEPHONY_MBMS_DOWNLOADSTATUSLISTENER
 

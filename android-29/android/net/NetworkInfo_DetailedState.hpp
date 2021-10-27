@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_NETWORKINFO_DETAILEDSTATE
-#define ANDROID_NET_NETWORKINFO_DETAILEDSTATE
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
@@ -195,6 +192,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_NETWORKINFO_DETAILEDSTATE
 

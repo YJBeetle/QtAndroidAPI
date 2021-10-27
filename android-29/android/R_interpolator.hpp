@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_R_INTERPOLATOR
-#define ANDROID_R_INTERPOLATOR
-
 #include "../__JniBaseClass.hpp"
 
 
@@ -185,6 +182,4 @@ namespace android
 		}
 	};
 } // namespace android
-
-#endif // ANDROID_R_INTERPOLATOR
 

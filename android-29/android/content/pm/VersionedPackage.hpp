@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_PM_VERSIONEDPACKAGE
-#define ANDROID_CONTENT_PM_VERSIONEDPACKAGE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -153,6 +150,4 @@ namespace android::content::pm
 		}
 	};
 } // namespace android::content::pm
-
-#endif // ANDROID_CONTENT_PM_VERSIONEDPACKAGE
 

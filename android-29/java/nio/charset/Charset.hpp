@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHARSET_CHARSET
-#define JAVA_NIO_CHARSET_CHARSET
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -294,6 +291,4 @@ namespace java::nio::charset
 		}
 	};
 } // namespace java::nio::charset
-
-#endif // JAVA_NIO_CHARSET_CHARSET
 

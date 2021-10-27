@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_CARRIER_CARRIERMESSAGINGSERVICE
-#define ANDROID_SERVICE_CARRIER_CARRIERMESSAGINGSERVICE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
@@ -395,6 +392,4 @@ namespace android::service::carrier
 		}
 	};
 } // namespace android::service::carrier
-
-#endif // ANDROID_SERVICE_CARRIER_CARRIERMESSAGINGSERVICE
 

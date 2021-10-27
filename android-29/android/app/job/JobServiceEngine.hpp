@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_JOB_JOBSERVICEENGINE
-#define ANDROID_APP_JOB_JOBSERVICEENGINE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -97,6 +94,4 @@ namespace android::app::job
 		}
 	};
 } // namespace android::app::job
-
-#endif // ANDROID_APP_JOB_JOBSERVICEENGINE
 

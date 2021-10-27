@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TEXT_PARSEPOSITION
-#define JAVA_TEXT_PARSEPOSITION
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -110,6 +107,4 @@ namespace java::text
 		}
 	};
 } // namespace java::text
-
-#endif // JAVA_TEXT_PARSEPOSITION
 

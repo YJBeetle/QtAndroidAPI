@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHANNELS_PIPE
-#define JAVA_NIO_CHANNELS_PIPE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::nio::channels
@@ -83,6 +80,4 @@ namespace java::nio::channels
 		}
 	};
 } // namespace java::nio::channels
-
-#endif // JAVA_NIO_CHANNELS_PIPE
 

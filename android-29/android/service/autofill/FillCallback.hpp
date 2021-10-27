@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_AUTOFILL_FILLCALLBACK
-#define ANDROID_SERVICE_AUTOFILL_FILLCALLBACK
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::service::autofill
@@ -80,6 +77,4 @@ namespace android::service::autofill
 		}
 	};
 } // namespace android::service::autofill
-
-#endif // ANDROID_SERVICE_AUTOFILL_FILLCALLBACK
 

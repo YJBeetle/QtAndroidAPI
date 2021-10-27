@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_CAMERA2_CAMERACONSTRAINEDHIGHSPEEDCAPTURESESSION
-#define ANDROID_HARDWARE_CAMERA2_CAMERACONSTRAINEDHIGHSPEEDCAPTURESESSION
-
 #include "../../../__JniBaseClass.hpp"
 #include "CameraCaptureSession.hpp"
 
@@ -64,6 +61,4 @@ namespace android::hardware::camera2
 		}
 	};
 } // namespace android::hardware::camera2
-
-#endif // ANDROID_HARDWARE_CAMERA2_CAMERACONSTRAINEDHIGHSPEEDCAPTURESESSION
 

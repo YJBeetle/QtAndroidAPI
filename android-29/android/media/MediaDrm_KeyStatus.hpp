@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIADRM_KEYSTATUS
-#define ANDROID_MEDIA_MEDIADRM_KEYSTATUS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -112,6 +109,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIADRM_KEYSTATUS
 

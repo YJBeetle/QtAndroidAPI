@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DATABASE_ABSTRACTCURSOR_SELFCONTENTOBSERVER
-#define ANDROID_DATABASE_ABSTRACTCURSOR_SELFCONTENTOBSERVER
-
 #include "../../__JniBaseClass.hpp"
 #include "ContentObserver.hpp"
 
@@ -74,6 +71,4 @@ namespace android::database
 		}
 	};
 } // namespace android::database
-
-#endif // ANDROID_DATABASE_ABSTRACTCURSOR_SELFCONTENTOBSERVER
 

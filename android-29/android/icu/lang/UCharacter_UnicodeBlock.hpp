@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_LANG_UCHARACTER_UNICODEBLOCK
-#define ANDROID_ICU_LANG_UCHARACTER_UNICODEBLOCK
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Character_Subset.hpp"
 
@@ -5104,6 +5101,4 @@ namespace android::icu::lang
 		}
 	};
 } // namespace android::icu::lang
-
-#endif // ANDROID_ICU_LANG_UCHARACTER_UNICODEBLOCK
 

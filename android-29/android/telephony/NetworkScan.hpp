@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_NETWORKSCAN
-#define ANDROID_TELEPHONY_NETWORKSCAN
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -120,6 +117,4 @@ namespace android::telephony
 		}
 	};
 } // namespace android::telephony
-
-#endif // ANDROID_TELEPHONY_NETWORKSCAN
 

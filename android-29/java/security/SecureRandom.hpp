@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_SECURERANDOM
-#define JAVA_SECURITY_SECURERANDOM
-
 #include "../../__JniBaseClass.hpp"
 #include "../util/Random.hpp"
 
@@ -327,6 +324,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_SECURERANDOM
 

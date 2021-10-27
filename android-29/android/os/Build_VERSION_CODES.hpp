@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_BUILD_VERSION_CODES
-#define ANDROID_OS_BUILD_VERSION_CODES
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -289,6 +286,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_BUILD_VERSION_CODES
 

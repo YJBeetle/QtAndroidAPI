@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_MAILTO
-#define ANDROID_NET_MAILTO
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -145,6 +142,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_MAILTO
 

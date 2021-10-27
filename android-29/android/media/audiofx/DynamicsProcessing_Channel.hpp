@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_CHANNEL
-#define ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_CHANNEL
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media::audiofx
@@ -254,6 +251,4 @@ namespace android::media::audiofx
 		}
 	};
 } // namespace android::media::audiofx
-
-#endif // ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_CHANNEL
 

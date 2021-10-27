@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_FONTSCONTRACT_FONTINFO
-#define ANDROID_PROVIDER_FONTSCONTRACT_FONTINFO
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -101,6 +98,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_FONTSCONTRACT_FONTINFO
 

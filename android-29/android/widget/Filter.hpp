@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_FILTER
-#define ANDROID_WIDGET_FILTER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::widget
@@ -101,6 +98,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_FILTER
 

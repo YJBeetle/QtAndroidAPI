@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_CHRONO_HIJRAHDATE
-#define JAVA_TIME_CHRONO_HIJRAHDATE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -319,6 +316,4 @@ namespace java::time::chrono
 		}
 	};
 } // namespace java::time::chrono
-
-#endif // JAVA_TIME_CHRONO_HIJRAHDATE
 

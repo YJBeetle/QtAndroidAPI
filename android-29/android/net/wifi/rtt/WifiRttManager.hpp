@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_RTT_WIFIRTTMANAGER
-#define ANDROID_NET_WIFI_RTT_WIFIRTTMANAGER
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net::wifi::rtt
@@ -86,6 +83,4 @@ namespace android::net::wifi::rtt
 		}
 	};
 } // namespace android::net::wifi::rtt
-
-#endif // ANDROID_NET_WIFI_RTT_WIFIRTTMANAGER
 

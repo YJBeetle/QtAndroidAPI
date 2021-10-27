@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_METHOD_ARROWKEYMOVEMENTMETHOD
-#define ANDROID_TEXT_METHOD_ARROWKEYMOVEMENTMETHOD
-
 #include "../../../__JniBaseClass.hpp"
 #include "BaseMovementMethod.hpp"
 
@@ -114,6 +111,4 @@ namespace android::text::method
 		}
 	};
 } // namespace android::text::method
-
-#endif // ANDROID_TEXT_METHOD_ARROWKEYMOVEMENTMETHOD
 

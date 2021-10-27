@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_DRAWABLE_PAINTDRAWABLE
-#define ANDROID_GRAPHICS_DRAWABLE_PAINTDRAWABLE
-
 #include "../../../__JniBaseClass.hpp"
 #include "Drawable.hpp"
 #include "ShapeDrawable.hpp"
@@ -88,6 +85,4 @@ namespace android::graphics::drawable
 		}
 	};
 } // namespace android::graphics::drawable
-
-#endif // ANDROID_GRAPHICS_DRAWABLE_PAINTDRAWABLE
 

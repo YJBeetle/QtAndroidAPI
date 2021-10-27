@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIARECORDER_AUDIOSOURCE
-#define ANDROID_MEDIA_MEDIARECORDER_AUDIOSOURCE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media
@@ -141,6 +138,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIARECORDER_AUDIOSOURCE
 

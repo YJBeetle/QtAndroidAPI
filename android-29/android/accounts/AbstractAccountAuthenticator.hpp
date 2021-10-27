@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ACCOUNTS_ABSTRACTACCOUNTAUTHENTICATOR
-#define ANDROID_ACCOUNTS_ABSTRACTACCOUNTAUTHENTICATOR
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::accounts
@@ -347,6 +344,4 @@ namespace android::accounts
 		}
 	};
 } // namespace android::accounts
-
-#endif // ANDROID_ACCOUNTS_ABSTRACTACCOUNTAUTHENTICATOR
 

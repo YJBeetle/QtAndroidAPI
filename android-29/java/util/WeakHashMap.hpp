@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_WEAKHASHMAP
-#define JAVA_UTIL_WEAKHASHMAP
-
 #include "../../__JniBaseClass.hpp"
 #include "AbstractMap.hpp"
 
@@ -220,6 +217,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_WEAKHASHMAP
 

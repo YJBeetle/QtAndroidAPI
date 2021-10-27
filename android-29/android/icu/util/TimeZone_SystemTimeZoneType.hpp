@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_UTIL_TIMEZONE_SYSTEMTIMEZONETYPE
-#define ANDROID_ICU_UTIL_TIMEZONE_SYSTEMTIMEZONETYPE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
@@ -105,6 +102,4 @@ namespace android::icu::util
 		}
 	};
 } // namespace android::icu::util
-
-#endif // ANDROID_ICU_UTIL_TIMEZONE_SYSTEMTIMEZONETYPE
 

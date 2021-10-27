@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_TRANSFORM_SAX_SAXTRANSFORMERFACTORY
-#define JAVAX_XML_TRANSFORM_SAX_SAXTRANSFORMERFACTORY
-
 #include "../../../../__JniBaseClass.hpp"
 #include "../TransformerFactory.hpp"
 
@@ -101,6 +98,4 @@ namespace javax::xml::transform::sax
 		}
 	};
 } // namespace javax::xml::transform::sax
-
-#endif // JAVAX_XML_TRANSFORM_SAX_SAXTRANSFORMERFACTORY
 

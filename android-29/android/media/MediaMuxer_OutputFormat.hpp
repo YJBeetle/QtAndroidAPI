@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIAMUXER_OUTPUTFORMAT
-#define ANDROID_MEDIA_MEDIAMUXER_OUTPUTFORMAT
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -88,6 +85,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIAMUXER_OUTPUTFORMAT
 

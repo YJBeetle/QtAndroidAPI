@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_RENDERSCRIPT_RSINVALIDSTATEEXCEPTION
-#define ANDROID_RENDERSCRIPT_RSINVALIDSTATEEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
@@ -63,6 +60,4 @@ namespace android::renderscript
 		}
 	};
 } // namespace android::renderscript
-
-#endif // ANDROID_RENDERSCRIPT_RSINVALIDSTATEEXCEPTION
 

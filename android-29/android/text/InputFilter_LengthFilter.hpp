@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_INPUTFILTER_LENGTHFILTER
-#define ANDROID_TEXT_INPUTFILTER_LENGTHFILTER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -87,6 +84,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_INPUTFILTER_LENGTHFILTER
 

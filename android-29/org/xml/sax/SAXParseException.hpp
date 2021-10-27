@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_XML_SAX_SAXPARSEEXCEPTION
-#define ORG_XML_SAX_SAXPARSEEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 #include "SAXException.hpp"
@@ -212,6 +209,4 @@ namespace org::xml::sax
 		}
 	};
 } // namespace org::xml::sax
-
-#endif // ORG_XML_SAX_SAXPARSEEXCEPTION
 

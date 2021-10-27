@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_SECURITY_AUTH_LOGIN_LOGINEXCEPTION
-#define JAVAX_SECURITY_AUTH_LOGIN_LOGINEXCEPTION
-
 #include "../../../../__JniBaseClass.hpp"
 #include "../../../../java/lang/Exception.hpp"
 #include "../../../../java/security/GeneralSecurityException.hpp"
@@ -74,6 +71,4 @@ namespace javax::security::auth::login
 		}
 	};
 } // namespace javax::security::auth::login
-
-#endif // JAVAX_SECURITY_AUTH_LOGIN_LOGINEXCEPTION
 

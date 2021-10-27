@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_SSLCERTIFICATESOCKETFACTORY
-#define ANDROID_NET_SSLCERTIFICATESOCKETFACTORY
-
 #include "../../__JniBaseClass.hpp"
 #include "../../javax/net/SocketFactory.hpp"
 #include "../../javax/net/ssl/SSLSocketFactory.hpp"
@@ -290,6 +287,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_SSLCERTIFICATESOCKETFACTORY
 

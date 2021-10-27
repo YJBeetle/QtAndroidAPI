@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TEXT_FIELDPOSITION
-#define JAVA_TEXT_FIELDPOSITION
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::text
@@ -161,6 +158,4 @@ namespace java::text
 		}
 	};
 } // namespace java::text
-
-#endif // JAVA_TEXT_FIELDPOSITION
 

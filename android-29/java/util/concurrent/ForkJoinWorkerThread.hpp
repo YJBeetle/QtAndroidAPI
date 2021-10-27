@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_FORKJOINWORKERTHREAD
-#define JAVA_UTIL_CONCURRENT_FORKJOINWORKERTHREAD
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Thread.hpp"
 
@@ -93,6 +90,4 @@ namespace java::util::concurrent
 		}
 	};
 } // namespace java::util::concurrent
-
-#endif // JAVA_UTIL_CONCURRENT_FORKJOINWORKERTHREAD
 

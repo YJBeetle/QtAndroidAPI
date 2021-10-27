@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_CAMERA2_CAMERADEVICE_STATECALLBACK
-#define ANDROID_HARDWARE_CAMERA2_CAMERADEVICE_STATECALLBACK
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::hardware::camera2
@@ -131,6 +128,4 @@ namespace android::hardware::camera2
 		}
 	};
 } // namespace android::hardware::camera2
-
-#endif // ANDROID_HARDWARE_CAMERA2_CAMERADEVICE_STATECALLBACK
 

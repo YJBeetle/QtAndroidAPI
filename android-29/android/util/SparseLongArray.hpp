@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_SPARSELONGARRAY
-#define ANDROID_UTIL_SPARSELONGARRAY
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -188,6 +185,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_SPARSELONGARRAY
 

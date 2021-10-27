@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_KEYPAIRGENERATOR
-#define JAVA_SECURITY_KEYPAIRGENERATOR
-
 #include "../../__JniBaseClass.hpp"
 #include "KeyPairGeneratorSpi.hpp"
 
@@ -198,6 +195,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_KEYPAIRGENERATOR
 

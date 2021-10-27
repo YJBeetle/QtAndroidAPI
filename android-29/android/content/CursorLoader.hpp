@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_CURSORLOADER
-#define ANDROID_CONTENT_CURSORLOADER
-
 #include "../../__JniBaseClass.hpp"
 #include "Loader.hpp"
 #include "AsyncTaskLoader.hpp"
@@ -290,6 +287,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_CURSORLOADER
 

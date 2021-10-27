@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_RATING
-#define ANDROID_MEDIA_RATING
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -243,6 +240,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_RATING
 

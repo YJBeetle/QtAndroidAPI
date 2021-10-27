@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_USAGE_USAGESTATS
-#define ANDROID_APP_USAGE_USAGESTATS
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -164,6 +161,4 @@ namespace android::app::usage
 		}
 	};
 } // namespace android::app::usage
-
-#endif // ANDROID_APP_USAGE_USAGESTATS
 

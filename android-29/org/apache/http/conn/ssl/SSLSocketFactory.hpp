@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_APACHE_HTTP_CONN_SSL_SSLSOCKETFACTORY
-#define ORG_APACHE_HTTP_CONN_SSL_SSLSOCKETFACTORY
-
 #include "../../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::net
@@ -313,6 +310,4 @@ namespace org::apache::http::conn::ssl
 		}
 	};
 } // namespace org::apache::http::conn::ssl
-
-#endif // ORG_APACHE_HTTP_CONN_SSL_SSLSOCKETFACTORY
 

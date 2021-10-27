@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TRANSITION_TRANSITIONLISTENERADAPTER
-#define ANDROID_TRANSITION_TRANSITIONLISTENERADAPTER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::transition
@@ -99,6 +96,4 @@ namespace android::transition
 		}
 	};
 } // namespace android::transition
-
-#endif // ANDROID_TRANSITION_TRANSITIONLISTENERADAPTER
 

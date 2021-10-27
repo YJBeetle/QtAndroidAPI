@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_EVENTLOG
-#define ANDROID_UTIL_EVENTLOG
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -155,6 +152,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_EVENTLOG
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DATABASE_CHARARRAYBUFFER
-#define ANDROID_DATABASE_CHARARRAYBUFFER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -80,6 +77,4 @@ namespace android::database
 		}
 	};
 } // namespace android::database
-
-#endif // ANDROID_DATABASE_CHARARRAYBUFFER
 

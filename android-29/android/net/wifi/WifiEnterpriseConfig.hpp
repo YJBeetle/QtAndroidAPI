@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_WIFIENTERPRISECONFIG
-#define ANDROID_NET_WIFI_WIFIENTERPRISECONFIG
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -420,6 +417,4 @@ namespace android::net::wifi
 		}
 	};
 } // namespace android::net::wifi
-
-#endif // ANDROID_NET_WIFI_WIFIENTERPRISECONFIG
 

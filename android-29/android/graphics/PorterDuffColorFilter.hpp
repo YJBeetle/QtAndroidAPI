@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_PORTERDUFFCOLORFILTER
-#define ANDROID_GRAPHICS_PORTERDUFFCOLORFILTER
-
 #include "../../__JniBaseClass.hpp"
 #include "ColorFilter.hpp"
 
@@ -76,6 +73,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_PORTERDUFFCOLORFILTER
 

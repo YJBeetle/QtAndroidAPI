@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_REFLECT_ACCESSIBLEOBJECT
-#define JAVA_LANG_REFLECT_ACCESSIBLEOBJECT
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -154,6 +151,4 @@ namespace java::lang::reflect
 		}
 	};
 } // namespace java::lang::reflect
-
-#endif // JAVA_LANG_REFLECT_ACCESSIBLEOBJECT
 

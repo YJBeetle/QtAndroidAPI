@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_SPEC_ENCODEDKEYSPEC
-#define JAVA_SECURITY_SPEC_ENCODEDKEYSPEC
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -75,6 +72,4 @@ namespace java::security::spec
 		}
 	};
 } // namespace java::security::spec
-
-#endif // JAVA_SECURITY_SPEC_ENCODEDKEYSPEC
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_CONTEXTTHEMEWRAPPER
-#define ANDROID_VIEW_CONTEXTTHEMEWRAPPER
-
 #include "../../__JniBaseClass.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
@@ -177,6 +174,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_CONTEXTTHEMEWRAPPER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_NET_SSL_SSLSERVERSOCKETFACTORY
-#define JAVAX_NET_SSL_SSLSERVERSOCKETFACTORY
-
 #include "../../../__JniBaseClass.hpp"
 #include "../ServerSocketFactory.hpp"
 
@@ -79,6 +76,4 @@ namespace javax::net::ssl
 		}
 	};
 } // namespace javax::net::ssl
-
-#endif // JAVAX_NET_SSL_SSLSERVERSOCKETFACTORY
 

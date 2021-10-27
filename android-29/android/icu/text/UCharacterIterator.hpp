@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_UCHARACTERITERATOR
-#define ANDROID_ICU_TEXT_UCHARACTERITERATOR
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -273,6 +270,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_UCHARACTERITERATOR
 

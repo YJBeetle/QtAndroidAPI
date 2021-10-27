@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_TRANSFORM_SAX_SAXSOURCE
-#define JAVAX_XML_TRANSFORM_SAX_SAXSOURCE
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::org::xml::sax
@@ -171,6 +168,4 @@ namespace javax::xml::transform::sax
 		}
 	};
 } // namespace javax::xml::transform::sax
-
-#endif // JAVAX_XML_TRANSFORM_SAX_SAXSOURCE
 

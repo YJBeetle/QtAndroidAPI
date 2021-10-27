@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_OPTIONALDOUBLE
-#define JAVA_UTIL_OPTIONALDOUBLE
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -178,6 +175,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_OPTIONALDOUBLE
 

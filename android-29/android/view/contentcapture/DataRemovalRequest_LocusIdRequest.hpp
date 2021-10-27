@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_CONTENTCAPTURE_DATAREMOVALREQUEST_LOCUSIDREQUEST
-#define ANDROID_VIEW_CONTENTCAPTURE_DATAREMOVALREQUEST_LOCUSIDREQUEST
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -74,6 +71,4 @@ namespace android::view::contentcapture
 		}
 	};
 } // namespace android::view::contentcapture
-
-#endif // ANDROID_VIEW_CONTENTCAPTURE_DATAREMOVALREQUEST_LOCUSIDREQUEST
 

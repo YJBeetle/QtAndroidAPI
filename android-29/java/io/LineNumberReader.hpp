@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_LINENUMBERREADER
-#define JAVA_IO_LINENUMBERREADER
-
 #include "../../__JniBaseClass.hpp"
 #include "Reader.hpp"
 #include "BufferedReader.hpp"
@@ -144,6 +141,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_LINENUMBERREADER
 

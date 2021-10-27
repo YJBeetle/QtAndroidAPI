@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_SPEC_ECPUBLICKEYSPEC
-#define JAVA_SECURITY_SPEC_ECPUBLICKEYSPEC
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::security::spec
@@ -79,6 +76,4 @@ namespace java::security::spec
 		}
 	};
 } // namespace java::security::spec
-
-#endif // JAVA_SECURITY_SPEC_ECPUBLICKEYSPEC
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_P2P_NSD_WIFIP2PDNSSDSERVICEREQUEST
-#define ANDROID_NET_WIFI_P2P_NSD_WIFIP2PDNSSDSERVICEREQUEST
-
 #include "../../../../../__JniBaseClass.hpp"
 #include "WifiP2pServiceRequest.hpp"
 
@@ -100,6 +97,4 @@ namespace android::net::wifi::p2p::nsd
 		}
 	};
 } // namespace android::net::wifi::p2p::nsd
-
-#endif // ANDROID_NET_WIFI_P2P_NSD_WIFIP2PDNSSDSERVICEREQUEST
 

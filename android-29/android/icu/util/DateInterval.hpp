@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_UTIL_DATEINTERVAL
-#define ANDROID_ICU_UTIL_DATEINTERVAL
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -94,6 +91,4 @@ namespace android::icu::util
 		}
 	};
 } // namespace android::icu::util
-
-#endif // ANDROID_ICU_UTIL_DATEINTERVAL
 

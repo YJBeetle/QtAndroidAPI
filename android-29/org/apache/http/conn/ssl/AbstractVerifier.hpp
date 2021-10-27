@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_APACHE_HTTP_CONN_SSL_ABSTRACTVERIFIER
-#define ORG_APACHE_HTTP_CONN_SSL_ABSTRACTVERIFIER
-
 #include "../../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::security::cert
@@ -203,6 +200,4 @@ namespace org::apache::http::conn::ssl
 		}
 	};
 } // namespace org::apache::http::conn::ssl
-
-#endif // ORG_APACHE_HTTP_CONN_SSL_ABSTRACTVERIFIER
 

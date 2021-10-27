@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_DATAINPUTSTREAM
-#define JAVA_IO_DATAINPUTSTREAM
-
 #include "../../__JniBaseClass.hpp"
 #include "InputStream.hpp"
 #include "FilterInputStream.hpp"
@@ -213,6 +210,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_DATAINPUTSTREAM
 

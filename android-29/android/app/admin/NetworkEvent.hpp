@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_ADMIN_NETWORKEVENT
-#define ANDROID_APP_ADMIN_NETWORKEVENT
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -104,6 +101,4 @@ namespace android::app::admin
 		}
 	};
 } // namespace android::app::admin
-
-#endif // ANDROID_APP_ADMIN_NETWORKEVENT
 

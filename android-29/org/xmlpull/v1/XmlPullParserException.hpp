@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_XMLPULL_V1_XMLPULLPARSEREXCEPTION
-#define ORG_XMLPULL_V1_XMLPULLPARSEREXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 
@@ -122,6 +119,4 @@ namespace org::xmlpull::v1
 		}
 	};
 } // namespace org::xmlpull::v1
-
-#endif // ORG_XMLPULL_V1_XMLPULLPARSEREXCEPTION
 

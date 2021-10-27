@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHANNELS_SPI_ABSTRACTSELECTIONKEY
-#define JAVA_NIO_CHANNELS_SPI_ABSTRACTSELECTIONKEY
-
 #include "../../../../__JniBaseClass.hpp"
 #include "../SelectionKey.hpp"
 
@@ -65,6 +62,4 @@ namespace java::nio::channels::spi
 		}
 	};
 } // namespace java::nio::channels::spi
-
-#endif // JAVA_NIO_CHANNELS_SPI_ABSTRACTSELECTIONKEY
 

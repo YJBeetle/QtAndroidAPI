@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_SERVICESTATE
-#define ANDROID_TELEPHONY_SERVICESTATE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -351,6 +348,4 @@ namespace android::telephony
 		}
 	};
 } // namespace android::telephony
-
-#endif // ANDROID_TELEPHONY_SERVICESTATE
 

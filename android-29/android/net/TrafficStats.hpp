@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_TRAFFICSTATS
-#define ANDROID_NET_TRAFFICSTATS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -411,6 +408,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_TRAFFICSTATS
 

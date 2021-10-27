@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_RENDERSCRIPT_SAMPLER
-#define ANDROID_RENDERSCRIPT_SAMPLER
-
 #include "../../__JniBaseClass.hpp"
 #include "BaseObj.hpp"
 
@@ -189,6 +186,4 @@ namespace android::renderscript
 		}
 	};
 } // namespace android::renderscript
-
-#endif // ANDROID_RENDERSCRIPT_SAMPLER
 

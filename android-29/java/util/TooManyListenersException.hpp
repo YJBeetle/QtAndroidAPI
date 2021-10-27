@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_TOOMANYLISTENERSEXCEPTION
-#define JAVA_UTIL_TOOMANYLISTENERSEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 
@@ -73,6 +70,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_TOOMANYLISTENERSEXCEPTION
 

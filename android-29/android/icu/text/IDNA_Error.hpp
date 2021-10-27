@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_IDNA_ERROR
-#define ANDROID_ICU_TEXT_IDNA_ERROR
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
@@ -213,6 +210,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_IDNA_ERROR
 

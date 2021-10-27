@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_IOERROR
-#define JAVA_IO_IOERROR
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Error.hpp"
 
@@ -52,6 +49,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_IOERROR
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_ANDROIDCHARACTER
-#define ANDROID_TEXT_ANDROIDCHARACTER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -154,6 +151,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_ANDROIDCHARACTER
 

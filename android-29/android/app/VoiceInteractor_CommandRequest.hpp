@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_VOICEINTERACTOR_COMMANDREQUEST
-#define ANDROID_APP_VOICEINTERACTOR_COMMANDREQUEST
-
 #include "../../__JniBaseClass.hpp"
 #include "VoiceInteractor_Request.hpp"
 
@@ -79,6 +76,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_VOICEINTERACTOR_COMMANDREQUEST
 

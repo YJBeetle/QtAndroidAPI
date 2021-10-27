@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_LOGGING_LEVEL
-#define JAVA_UTIL_LOGGING_LEVEL
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util
@@ -211,6 +208,4 @@ namespace java::util::logging
 		}
 	};
 } // namespace java::util::logging
-
-#endif // JAVA_UTIL_LOGGING_LEVEL
 

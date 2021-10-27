@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_INVOKE_MUTABLECALLSITE
-#define JAVA_LANG_INVOKE_MUTABLECALLSITE
-
 #include "../../../__JniBaseClass.hpp"
 #include "CallSite.hpp"
 
@@ -116,6 +113,4 @@ namespace java::lang::invoke
 		}
 	};
 } // namespace java::lang::invoke
-
-#endif // JAVA_LANG_INVOKE_MUTABLECALLSITE
 

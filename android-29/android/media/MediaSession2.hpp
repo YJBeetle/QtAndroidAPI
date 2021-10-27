@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIASESSION2
-#define ANDROID_MEDIA_MEDIASESSION2
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -163,6 +160,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIASESSION2
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_ANIMATION_GRIDLAYOUTANIMATIONCONTROLLER
-#define ANDROID_VIEW_ANIMATION_GRIDLAYOUTANIMATIONCONTROLLER
-
 #include "../../../__JniBaseClass.hpp"
 #include "LayoutAnimationController.hpp"
 
@@ -249,6 +246,4 @@ namespace android::view::animation
 		}
 	};
 } // namespace android::view::animation
-
-#endif // ANDROID_VIEW_ANIMATION_GRIDLAYOUTANIMATIONCONTROLLER
 

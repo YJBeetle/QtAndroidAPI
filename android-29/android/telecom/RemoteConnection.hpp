@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELECOM_REMOTECONNECTION
-#define ANDROID_TELECOM_REMOTECONNECTION
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -340,6 +337,4 @@ namespace android::telecom
 		}
 	};
 } // namespace android::telecom
-
-#endif // ANDROID_TELECOM_REMOTECONNECTION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WEBKIT_PERMISSIONREQUEST
-#define ANDROID_WEBKIT_PERMISSIONREQUEST
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -123,6 +120,4 @@ namespace android::webkit
 		}
 	};
 } // namespace android::webkit
-
-#endif // ANDROID_WEBKIT_PERMISSIONREQUEST
 

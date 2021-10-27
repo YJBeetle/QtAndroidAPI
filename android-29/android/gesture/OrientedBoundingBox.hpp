@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GESTURE_ORIENTEDBOUNDINGBOX
-#define ANDROID_GESTURE_ORIENTEDBOUNDINGBOX
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -90,6 +87,4 @@ namespace android::gesture
 		}
 	};
 } // namespace android::gesture
-
-#endif // ANDROID_GESTURE_ORIENTEDBOUNDINGBOX
 

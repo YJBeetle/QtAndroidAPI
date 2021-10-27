@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_CONNECTIVITYMANAGER
-#define ANDROID_NET_CONNECTIVITYMANAGER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -787,6 +784,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_CONNECTIVITYMANAGER
 

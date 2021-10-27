@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_CONCURRENTLINKEDQUEUE
-#define JAVA_UTIL_CONCURRENT_CONCURRENTLINKEDQUEUE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../AbstractCollection.hpp"
 #include "../AbstractQueue.hpp"
@@ -237,6 +234,4 @@ namespace java::util::concurrent
 		}
 	};
 } // namespace java::util::concurrent
-
-#endif // JAVA_UTIL_CONCURRENT_CONCURRENTLINKEDQUEUE
 

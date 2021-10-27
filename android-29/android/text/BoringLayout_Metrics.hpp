@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_BORINGLAYOUT_METRICS
-#define ANDROID_TEXT_BORINGLAYOUT_METRICS
-
 #include "../../__JniBaseClass.hpp"
 #include "../graphics/Paint_FontMetricsInt.hpp"
 
@@ -65,6 +62,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_BORINGLAYOUT_METRICS
 

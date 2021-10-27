@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELECOM_TELECOMMANAGER
-#define ANDROID_TELECOM_TELECOMMANAGER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -768,6 +765,4 @@ namespace android::telecom
 		}
 	};
 } // namespace android::telecom
-
-#endif // ANDROID_TELECOM_TELECOMMANAGER
 

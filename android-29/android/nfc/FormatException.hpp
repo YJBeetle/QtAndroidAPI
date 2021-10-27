@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NFC_FORMATEXCEPTION
-#define ANDROID_NFC_FORMATEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 
@@ -99,6 +96,4 @@ namespace android::nfc
 		}
 	};
 } // namespace android::nfc
-
-#endif // ANDROID_NFC_FORMATEXCEPTION
 

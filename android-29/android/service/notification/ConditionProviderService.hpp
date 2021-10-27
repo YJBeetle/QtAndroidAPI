@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_NOTIFICATION_CONDITIONPROVIDERSERVICE
-#define ANDROID_SERVICE_NOTIFICATION_CONDITIONPROVIDERSERVICE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
@@ -197,6 +194,4 @@ namespace android::service::notification
 		}
 	};
 } // namespace android::service::notification
-
-#endif // ANDROID_SERVICE_NOTIFICATION_CONDITIONPROVIDERSERVICE
 

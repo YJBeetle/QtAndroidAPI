@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_FILE_CLOSEDFILESYSTEMEXCEPTION
-#define JAVA_NIO_FILE_CLOSEDFILESYSTEMEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 #include "../../lang/RuntimeException.hpp"
@@ -52,6 +49,4 @@ namespace java::nio::file
 		}
 	};
 } // namespace java::nio::file
-
-#endif // JAVA_NIO_FILE_CLOSEDFILESYSTEMEXCEPTION
 

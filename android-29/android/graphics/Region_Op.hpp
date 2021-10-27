@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_REGION_OP
-#define ANDROID_GRAPHICS_REGION_OP
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
@@ -132,6 +129,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_REGION_OP
 

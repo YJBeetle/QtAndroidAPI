@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_R_STRING
-#define ANDROID_R_STRING
-
 #include "../__JniBaseClass.hpp"
 
 
@@ -265,6 +262,4 @@ namespace android
 		}
 	};
 } // namespace android
-
-#endif // ANDROID_R_STRING
 

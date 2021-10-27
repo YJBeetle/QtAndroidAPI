@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_UNSUPPORTEDSCHEMEEXCEPTION
-#define ANDROID_MEDIA_UNSUPPORTEDSCHEMEEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "MediaDrmException.hpp"
@@ -62,6 +59,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_UNSUPPORTEDSCHEMEEXCEPTION
 

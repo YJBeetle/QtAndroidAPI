@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_RTT_RESPONDERLOCATION
-#define ANDROID_NET_WIFI_RTT_RESPONDERLOCATION
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::location
@@ -389,6 +386,4 @@ namespace android::net::wifi::rtt
 		}
 	};
 } // namespace android::net::wifi::rtt
-
-#endif // ANDROID_NET_WIFI_RTT_RESPONDERLOCATION
 

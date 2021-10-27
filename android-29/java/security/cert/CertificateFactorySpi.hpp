@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_CERT_CERTIFICATEFACTORYSPI
-#define JAVA_SECURITY_CERT_CERTIFICATEFACTORYSPI
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -151,6 +148,4 @@ namespace java::security::cert
 		}
 	};
 } // namespace java::security::cert
-
-#endif // JAVA_SECURITY_CERT_CERTIFICATEFACTORYSPI
 

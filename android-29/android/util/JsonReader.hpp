@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_JSONREADER
-#define ANDROID_UTIL_JSONREADER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::util
@@ -206,6 +203,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_JSONREADER
 

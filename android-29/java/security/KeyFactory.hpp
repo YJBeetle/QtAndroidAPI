@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_KEYFACTORY
-#define JAVA_SECURITY_KEYFACTORY
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::security
@@ -175,6 +172,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_KEYFACTORY
 

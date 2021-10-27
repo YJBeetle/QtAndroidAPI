@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_NET_SSL_SSLENGINERESULT_HANDSHAKESTATUS
-#define JAVAX_NET_SSL_SSLENGINERESULT_HANDSHAKESTATUS
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
@@ -132,6 +129,4 @@ namespace javax::net::ssl
 		}
 	};
 } // namespace javax::net::ssl
-
-#endif // JAVAX_NET_SSL_SSLENGINERESULT_HANDSHAKESTATUS
 

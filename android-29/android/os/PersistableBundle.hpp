@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_PERSISTABLEBUNDLE
-#define ANDROID_OS_PERSISTABLEBUNDLE
-
 #include "../../__JniBaseClass.hpp"
 #include "BaseBundle.hpp"
 
@@ -181,6 +178,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_PERSISTABLEBUNDLE
 

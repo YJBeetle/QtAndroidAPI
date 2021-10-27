@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_ZOOMBUTTONSCONTROLLER
-#define ANDROID_WIDGET_ZOOMBUTTONSCONTROLLER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::view
@@ -171,6 +168,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_ZOOMBUTTONSCONTROLLER
 

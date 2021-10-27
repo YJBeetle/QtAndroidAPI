@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_REFLECT_EXECUTABLE
-#define JAVA_LANG_REFLECT_EXECUTABLE
-
 #include "../../../__JniBaseClass.hpp"
 #include "AccessibleObject.hpp"
 
@@ -224,6 +221,4 @@ namespace java::lang::reflect
 		}
 	};
 } // namespace java::lang::reflect
-
-#endif // JAVA_LANG_REFLECT_EXECUTABLE
 

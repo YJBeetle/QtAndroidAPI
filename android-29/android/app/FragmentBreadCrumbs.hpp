@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_FRAGMENTBREADCRUMBS
-#define ANDROID_APP_FRAGMENTBREADCRUMBS
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
@@ -174,6 +171,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_FRAGMENTBREADCRUMBS
 

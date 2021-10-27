@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_NETWORKSPECIFIER
-#define ANDROID_NET_NETWORKSPECIFIER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -49,6 +46,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_NETWORKSPECIFIER
 

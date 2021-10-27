@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_GESTUREDETECTOR
-#define ANDROID_VIEW_GESTUREDETECTOR
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -189,6 +186,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_GESTUREDETECTOR
 

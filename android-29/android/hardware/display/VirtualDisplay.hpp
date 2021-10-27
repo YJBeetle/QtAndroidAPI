@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_DISPLAY_VIRTUALDISPLAY
-#define ANDROID_HARDWARE_DISPLAY_VIRTUALDISPLAY
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::view
@@ -110,6 +107,4 @@ namespace android::hardware::display
 		}
 	};
 } // namespace android::hardware::display
-
-#endif // ANDROID_HARDWARE_DISPLAY_VIRTUALDISPLAY
 

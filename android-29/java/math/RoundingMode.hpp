@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_MATH_ROUNDINGMODE
-#define JAVA_MATH_ROUNDINGMODE
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Enum.hpp"
 
@@ -160,6 +157,4 @@ namespace java::math
 		}
 	};
 } // namespace java::math
-
-#endif // JAVA_MATH_ROUNDINGMODE
 

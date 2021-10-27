@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_PORTERDUFF_MODE
-#define ANDROID_GRAPHICS_PORTERDUFF_MODE
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
@@ -240,6 +237,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_PORTERDUFF_MODE
 

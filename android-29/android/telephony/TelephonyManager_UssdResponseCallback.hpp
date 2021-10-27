@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_TELEPHONYMANAGER_USSDRESPONSECALLBACK
-#define ANDROID_TELEPHONY_TELEPHONYMANAGER_USSDRESPONSECALLBACK
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::telephony
@@ -98,6 +95,4 @@ namespace android::telephony
 		}
 	};
 } // namespace android::telephony
-
-#endif // ANDROID_TELEPHONY_TELEPHONYMANAGER_USSDRESPONSECALLBACK
 

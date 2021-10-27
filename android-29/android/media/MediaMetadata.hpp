@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIAMETADATA
-#define ANDROID_MEDIA_MEDIAMETADATA
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -510,6 +507,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIAMETADATA
 

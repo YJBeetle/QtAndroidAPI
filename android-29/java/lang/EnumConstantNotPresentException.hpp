@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_ENUMCONSTANTNOTPRESENTEXCEPTION
-#define JAVA_LANG_ENUMCONSTANTNOTPRESENTEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "Exception.hpp"
 #include "RuntimeException.hpp"
@@ -81,6 +78,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_ENUMCONSTANTNOTPRESENTEXCEPTION
 

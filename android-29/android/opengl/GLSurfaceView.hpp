@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OPENGL_GLSURFACEVIEW
-#define ANDROID_OPENGL_GLSURFACEVIEW
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/SurfaceView.hpp"
@@ -316,6 +313,4 @@ namespace android::opengl
 		}
 	};
 } // namespace android::opengl
-
-#endif // ANDROID_OPENGL_GLSURFACEVIEW
 

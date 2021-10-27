@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WEBKIT_WEBCHROMECLIENT_FILECHOOSERPARAMS
-#define ANDROID_WEBKIT_WEBCHROMECLIENT_FILECHOOSERPARAMS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -137,6 +134,4 @@ namespace android::webkit
 		}
 	};
 } // namespace android::webkit
-
-#endif // ANDROID_WEBKIT_WEBCHROMECLIENT_FILECHOOSERPARAMS
 

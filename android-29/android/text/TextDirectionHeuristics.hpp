@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_TEXTDIRECTIONHEURISTICS
-#define ANDROID_TEXT_TEXTDIRECTIONHEURISTICS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -103,6 +100,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_TEXTDIRECTIONHEURISTICS
 

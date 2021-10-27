@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SYSTEM_STRUCTTIMESPEC
-#define ANDROID_SYSTEM_STRUCTTIMESPEC
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -110,6 +107,4 @@ namespace android::system
 		}
 	};
 } // namespace android::system
-
-#endif // ANDROID_SYSTEM_STRUCTTIMESPEC
 

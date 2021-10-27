@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_PROXY_TYPE
-#define JAVA_NET_PROXY_TYPE
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Enum.hpp"
 
@@ -105,6 +102,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_PROXY_TYPE
 

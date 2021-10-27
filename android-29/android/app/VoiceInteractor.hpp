@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_VOICEINTERACTOR
-#define ANDROID_APP_VOICEINTERACTOR
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -152,6 +149,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_VOICEINTERACTOR
 

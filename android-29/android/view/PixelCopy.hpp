@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_PIXELCOPY
-#define ANDROID_VIEW_PIXELCOPY
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -207,6 +204,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_PIXELCOPY
 

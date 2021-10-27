@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_RENDERSCRIPT_SCRIPT_FIELDBASE
-#define ANDROID_RENDERSCRIPT_SCRIPT_FIELDBASE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::renderscript
@@ -100,6 +97,4 @@ namespace android::renderscript
 		}
 	};
 } // namespace android::renderscript
-
-#endif // ANDROID_RENDERSCRIPT_SCRIPT_FIELDBASE
 

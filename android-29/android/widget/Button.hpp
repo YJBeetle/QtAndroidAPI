@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_BUTTON
-#define ANDROID_WIDGET_BUTTON
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "TextView.hpp"
@@ -140,6 +137,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_BUTTON
 

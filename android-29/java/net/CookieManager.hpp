@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_COOKIEMANAGER
-#define JAVA_NET_COOKIEMANAGER
-
 #include "../../__JniBaseClass.hpp"
 #include "CookieHandler.hpp"
 
@@ -113,6 +110,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_COOKIEMANAGER
 

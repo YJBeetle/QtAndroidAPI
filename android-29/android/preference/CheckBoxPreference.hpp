@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PREFERENCE_CHECKBOXPREFERENCE
-#define ANDROID_PREFERENCE_CHECKBOXPREFERENCE
-
 #include "../../__JniBaseClass.hpp"
 #include "Preference.hpp"
 #include "TwoStatePreference.hpp"
@@ -117,6 +114,4 @@ namespace android::preference
 		}
 	};
 } // namespace android::preference
-
-#endif // ANDROID_PREFERENCE_CHECKBOXPREFERENCE
 

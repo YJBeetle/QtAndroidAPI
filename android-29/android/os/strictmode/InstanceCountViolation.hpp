@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_STRICTMODE_INSTANCECOUNTVIOLATION
-#define ANDROID_OS_STRICTMODE_INSTANCECOUNTVIOLATION
-
 #include "../../../__JniBaseClass.hpp"
 #include "Violation.hpp"
 
@@ -57,6 +54,4 @@ namespace android::os::strictmode
 		}
 	};
 } // namespace android::os::strictmode
-
-#endif // ANDROID_OS_STRICTMODE_INSTANCECOUNTVIOLATION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_W3C_DOM_DOMEXCEPTION
-#define ORG_W3C_DOM_DOMEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
@@ -208,6 +205,4 @@ namespace org::w3c::dom
 		}
 	};
 } // namespace org::w3c::dom
-
-#endif // ORG_W3C_DOM_DOMEXCEPTION
 

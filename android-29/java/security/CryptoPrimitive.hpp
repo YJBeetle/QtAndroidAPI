@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_CRYPTOPRIMITIVE
-#define JAVA_SECURITY_CRYPTOPRIMITIVE
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Enum.hpp"
 
@@ -168,6 +165,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_CRYPTOPRIMITIVE
 

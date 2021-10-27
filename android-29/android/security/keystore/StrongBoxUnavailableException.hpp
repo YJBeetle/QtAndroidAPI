@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SECURITY_KEYSTORE_STRONGBOXUNAVAILABLEEXCEPTION
-#define ANDROID_SECURITY_KEYSTORE_STRONGBOXUNAVAILABLEEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
@@ -115,6 +112,4 @@ namespace android::security::keystore
 		}
 	};
 } // namespace android::security::keystore
-
-#endif // ANDROID_SECURITY_KEYSTORE_STRONGBOXUNAVAILABLEEXCEPTION
 

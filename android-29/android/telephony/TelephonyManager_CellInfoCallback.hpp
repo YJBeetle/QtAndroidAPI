@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_TELEPHONYMANAGER_CELLINFOCALLBACK
-#define ANDROID_TELEPHONY_TELEPHONYMANAGER_CELLINFOCALLBACK
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -84,6 +81,4 @@ namespace android::telephony
 		}
 	};
 } // namespace android::telephony
-
-#endif // ANDROID_TELEPHONY_TELEPHONYMANAGER_CELLINFOCALLBACK
 

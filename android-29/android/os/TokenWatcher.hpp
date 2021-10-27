@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_TOKENWATCHER
-#define ANDROID_OS_TOKENWATCHER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -153,6 +150,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_TOKENWATCHER
 

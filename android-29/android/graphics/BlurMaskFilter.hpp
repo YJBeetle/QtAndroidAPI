@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_BLURMASKFILTER
-#define ANDROID_GRAPHICS_BLURMASKFILTER
-
 #include "../../__JniBaseClass.hpp"
 #include "MaskFilter.hpp"
 
@@ -59,6 +56,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_BLURMASKFILTER
 

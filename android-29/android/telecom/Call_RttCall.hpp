@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELECOM_CALL_RTTCALL
-#define ANDROID_TELECOM_CALL_RTTCALL
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -123,6 +120,4 @@ namespace android::telecom
 		}
 	};
 } // namespace android::telecom
-
-#endif // ANDROID_TELECOM_CALL_RTTCALL
 

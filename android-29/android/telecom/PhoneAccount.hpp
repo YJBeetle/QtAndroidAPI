@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELECOM_PHONEACCOUNT
-#define ANDROID_TELECOM_PHONEACCOUNT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics::drawable
@@ -443,6 +440,4 @@ namespace android::telecom
 		}
 	};
 } // namespace android::telecom
-
-#endif // ANDROID_TELECOM_PHONEACCOUNT
 

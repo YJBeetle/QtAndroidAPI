@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_NET_SSL_HTTPSURLCONNECTION
-#define JAVAX_NET_SSL_HTTPSURLCONNECTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/net/URLConnection.hpp"
 #include "../../../java/net/HttpURLConnection.hpp"
@@ -185,6 +182,4 @@ namespace javax::net::ssl
 		}
 	};
 } // namespace javax::net::ssl
-
-#endif // JAVAX_NET_SSL_HTTPSURLCONNECTION
 

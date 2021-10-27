@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MTP_MTPDEVICE
-#define ANDROID_MTP_MTPDEVICE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::hardware::usb
@@ -306,6 +303,4 @@ namespace android::mtp
 		}
 	};
 } // namespace android::mtp
-
-#endif // ANDROID_MTP_MTPDEVICE
 

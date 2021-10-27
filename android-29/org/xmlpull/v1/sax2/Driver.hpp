@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_XMLPULL_V1_SAX2_DRIVER
-#define ORG_XMLPULL_V1_SAX2_DRIVER
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::org::xml::sax
@@ -447,6 +444,4 @@ namespace org::xmlpull::v1::sax2
 		}
 	};
 } // namespace org::xmlpull::v1::sax2
-
-#endif // ORG_XMLPULL_V1_SAX2_DRIVER
 

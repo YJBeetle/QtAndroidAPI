@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_PENDINGINTENT_CANCELEDEXCEPTION
-#define ANDROID_APP_PENDINGINTENT_CANCELEDEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../util/AndroidException.hpp"
@@ -93,6 +90,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_PENDINGINTENT_CANCELEDEXCEPTION
 

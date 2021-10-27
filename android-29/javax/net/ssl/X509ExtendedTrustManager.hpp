@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_NET_SSL_X509EXTENDEDTRUSTMANAGER
-#define JAVAX_NET_SSL_X509EXTENDEDTRUSTMANAGER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::net
@@ -147,6 +144,4 @@ namespace javax::net::ssl
 		}
 	};
 } // namespace javax::net::ssl
-
-#endif // JAVAX_NET_SSL_X509EXTENDEDTRUSTMANAGER
 

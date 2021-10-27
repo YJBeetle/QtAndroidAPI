@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_ZONE_ZONEOFFSETTRANSITIONRULE_TIMEDEFINITION
-#define JAVA_TIME_ZONE_ZONEOFFSETTRANSITIONRULE_TIMEDEFINITION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
@@ -126,6 +123,4 @@ namespace java::time::zone
 		}
 	};
 } // namespace java::time::zone
-
-#endif // JAVA_TIME_ZONE_ZONEOFFSETTRANSITIONRULE_TIMEDEFINITION
 

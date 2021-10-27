@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_LOCALSOCKETADDRESS
-#define ANDROID_NET_LOCALSOCKETADDRESS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -107,6 +104,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_LOCALSOCKETADDRESS
 

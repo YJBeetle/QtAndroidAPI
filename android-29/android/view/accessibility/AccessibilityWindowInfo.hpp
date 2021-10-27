@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_ACCESSIBILITY_ACCESSIBILITYWINDOWINFO
-#define ANDROID_VIEW_ACCESSIBILITY_ACCESSIBILITYWINDOWINFO
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -296,6 +293,4 @@ namespace android::view::accessibility
 		}
 	};
 } // namespace android::view::accessibility
-
-#endif // ANDROID_VIEW_ACCESSIBILITY_ACCESSIBILITYWINDOWINFO
 

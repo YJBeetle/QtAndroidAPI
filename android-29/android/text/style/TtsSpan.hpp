@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_STYLE_TTSSPAN
-#define ANDROID_TEXT_STYLE_TTSSPAN
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -830,6 +827,4 @@ namespace android::text::style
 		}
 	};
 } // namespace android::text::style
-
-#endif // ANDROID_TEXT_STYLE_TTSSPAN
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_INTENTFILTER_AUTHORITYENTRY
-#define ANDROID_CONTENT_INTENTFILTER_AUTHORITYENTRY
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -102,6 +99,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_INTENTFILTER_AUTHORITYENTRY
 

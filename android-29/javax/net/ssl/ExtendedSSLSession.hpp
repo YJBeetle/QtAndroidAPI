@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_NET_SSL_EXTENDEDSSLSESSION
-#define JAVAX_NET_SSL_EXTENDEDSSLSESSION
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -81,6 +78,4 @@ namespace javax::net::ssl
 		}
 	};
 } // namespace javax::net::ssl
-
-#endif // JAVAX_NET_SSL_EXTENDEDSSLSESSION
 

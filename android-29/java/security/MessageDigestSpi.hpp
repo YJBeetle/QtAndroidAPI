@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_MESSAGEDIGESTSPI
-#define JAVA_SECURITY_MESSAGEDIGESTSPI
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::nio
@@ -62,6 +59,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_MESSAGEDIGESTSPI
 

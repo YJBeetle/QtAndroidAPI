@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_SECURITY_AUTH_CALLBACK_PASSWORDCALLBACK
-#define JAVAX_SECURITY_AUTH_CALLBACK_PASSWORDCALLBACK
-
 #include "../../../../__JniBaseClass.hpp"
 
 
@@ -104,6 +101,4 @@ namespace javax::security::auth::callback
 		}
 	};
 } // namespace javax::security::auth::callback
-
-#endif // JAVAX_SECURITY_AUTH_CALLBACK_PASSWORDCALLBACK
 

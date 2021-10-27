@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_RUNTIMEPERMISSION
-#define JAVA_LANG_RUNTIMEPERMISSION
-
 #include "../../__JniBaseClass.hpp"
 #include "../security/Permission.hpp"
 #include "../security/BasicPermission.hpp"
@@ -88,6 +85,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_RUNTIMEPERMISSION
 

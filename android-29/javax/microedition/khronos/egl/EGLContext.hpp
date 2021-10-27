@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_MICROEDITION_KHRONOS_EGL_EGLCONTEXT
-#define JAVAX_MICROEDITION_KHRONOS_EGL_EGLCONTEXT
-
 #include "../../../../__JniBaseClass.hpp"
 
 
@@ -66,6 +63,4 @@ namespace javax::microedition::khronos::egl
 		}
 	};
 } // namespace javax::microedition::khronos::egl
-
-#endif // JAVAX_MICROEDITION_KHRONOS_EGL_EGLCONTEXT
 

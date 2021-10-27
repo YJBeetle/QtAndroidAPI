@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_KEYBOARDSHORTCUTGROUP
-#define ANDROID_VIEW_KEYBOARDSHORTCUTGROUP
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -148,6 +145,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_KEYBOARDSHORTCUTGROUP
 

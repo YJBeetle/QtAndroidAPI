@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_CASEMAP_FOLD
-#define ANDROID_ICU_TEXT_CASEMAP_FOLD
-
 #include "../../../__JniBaseClass.hpp"
 #include "CaseMap.hpp"
 
@@ -115,6 +112,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_CASEMAP_FOLD
 

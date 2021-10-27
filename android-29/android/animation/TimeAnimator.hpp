@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ANIMATION_TIMEANIMATOR
-#define ANDROID_ANIMATION_TIMEANIMATOR
-
 #include "../../__JniBaseClass.hpp"
 #include "Animator.hpp"
 #include "ValueAnimator.hpp"
@@ -77,6 +74,4 @@ namespace android::animation
 		}
 	};
 } // namespace android::animation
-
-#endif // ANDROID_ANIMATION_TIMEANIMATOR
 

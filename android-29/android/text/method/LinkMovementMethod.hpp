@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_METHOD_LINKMOVEMENTMETHOD
-#define ANDROID_TEXT_METHOD_LINKMOVEMENTMETHOD
-
 #include "../../../__JniBaseClass.hpp"
 #include "BaseMovementMethod.hpp"
 #include "ScrollingMovementMethod.hpp"
@@ -115,6 +112,4 @@ namespace android::text::method
 		}
 	};
 } // namespace android::text::method
-
-#endif // ANDROID_TEXT_METHOD_LINKMOVEMENTMETHOD
 

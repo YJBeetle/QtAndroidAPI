@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_ANNOTATION_INCOMPLETEANNOTATIONEXCEPTION
-#define JAVA_LANG_ANNOTATION_INCOMPLETEANNOTATIONEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../Exception.hpp"
 #include "../RuntimeException.hpp"
@@ -81,6 +78,4 @@ namespace java::lang::annotation
 		}
 	};
 } // namespace java::lang::annotation
-
-#endif // JAVA_LANG_ANNOTATION_INCOMPLETEANNOTATIONEXCEPTION
 

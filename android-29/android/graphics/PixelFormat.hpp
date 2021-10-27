@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_PIXELFORMAT
-#define ANDROID_GRAPHICS_PIXELFORMAT
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -244,6 +241,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_PIXELFORMAT
 

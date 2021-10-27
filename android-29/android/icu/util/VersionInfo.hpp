@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_UTIL_VERSIONINFO
-#define ANDROID_ICU_UTIL_VERSIONINFO
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -477,6 +474,4 @@ namespace android::icu::util
 		}
 	};
 } // namespace android::icu::util
-
-#endif // ANDROID_ICU_UTIL_VERSIONINFO
 

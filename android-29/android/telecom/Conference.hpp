@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELECOM_CONFERENCE
-#define ANDROID_TELECOM_CONFERENCE
-
 #include "../../__JniBaseClass.hpp"
 #include "Conferenceable.hpp"
 
@@ -478,6 +475,4 @@ namespace android::telecom
 		}
 	};
 } // namespace android::telecom
-
-#endif // ANDROID_TELECOM_CONFERENCE
 

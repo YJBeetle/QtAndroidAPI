@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_DEADOBJECTEXCEPTION
-#define ANDROID_OS_DEADOBJECTEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../util/AndroidException.hpp"
@@ -75,6 +72,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_DEADOBJECTEXCEPTION
 

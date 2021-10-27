@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_EXCEPTIONININITIALIZERERROR
-#define JAVA_LANG_EXCEPTIONININITIALIZERERROR
-
 #include "../../__JniBaseClass.hpp"
 #include "Error.hpp"
 #include "LinkageError.hpp"
@@ -106,6 +103,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_EXCEPTIONININITIALIZERERROR
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_SIP_SIPPROFILE
-#define ANDROID_NET_SIP_SIPPROFILE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -176,6 +173,4 @@ namespace android::net::sip
 		}
 	};
 } // namespace android::net::sip
-
-#endif // ANDROID_NET_SIP_SIPPROFILE
 

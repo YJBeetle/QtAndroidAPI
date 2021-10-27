@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_RADIALGRADIENT
-#define ANDROID_GRAPHICS_RADIALGRADIENT
-
 #include "../../__JniBaseClass.hpp"
 #include "Shader.hpp"
 
@@ -139,6 +136,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_RADIALGRADIENT
 

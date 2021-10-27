@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_KEYPAIR
-#define JAVA_SECURITY_KEYPAIR
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -69,6 +66,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_KEYPAIR
 

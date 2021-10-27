@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TRANSITION_TRANSITIONVALUES
-#define ANDROID_TRANSITION_TRANSITIONVALUES
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::view
@@ -109,6 +106,4 @@ namespace android::transition
 		}
 	};
 } // namespace android::transition
-
-#endif // ANDROID_TRANSITION_TRANSITIONVALUES
 

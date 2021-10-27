@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_TELEPHONY_MMS_ADDR
-#define ANDROID_PROVIDER_TELEPHONY_MMS_ADDR
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -93,6 +90,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_TELEPHONY_MMS_ADDR
 

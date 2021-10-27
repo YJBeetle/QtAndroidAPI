@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_XML_SAX_HELPERS_PARSERADAPTER
-#define ORG_XML_SAX_HELPERS_PARSERADAPTER
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::org::xml::sax
@@ -359,6 +356,4 @@ namespace org::xml::sax::helpers
 		}
 	};
 } // namespace org::xml::sax::helpers
-
-#endif // ORG_XML_SAX_HELPERS_PARSERADAPTER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_COLORSPACE_RGB
-#define ANDROID_GRAPHICS_COLORSPACE_RGB
-
 #include "../../__JniBaseClass.hpp"
 #include "ColorSpace.hpp"
 
@@ -439,6 +436,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_COLORSPACE_RGB
 

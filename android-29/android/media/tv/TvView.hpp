@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_TV_TVVIEW
-#define ANDROID_MEDIA_TV_TVVIEW
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../view/View.hpp"
 #include "../../view/ViewGroup.hpp"
@@ -453,6 +450,4 @@ namespace android::media::tv
 		}
 	};
 } // namespace android::media::tv
-
-#endif // ANDROID_MEDIA_TV_TVVIEW
 

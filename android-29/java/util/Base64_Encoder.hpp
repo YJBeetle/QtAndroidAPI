@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_BASE64_ENCODER
-#define JAVA_UTIL_BASE64_ENCODER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -112,6 +109,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_BASE64_ENCODER
 

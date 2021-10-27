@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_ADMIN_FREEZEPERIOD
-#define ANDROID_APP_ADMIN_FREEZEPERIOD
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::time
@@ -82,6 +79,4 @@ namespace android::app::admin
 		}
 	};
 } // namespace android::app::admin
-
-#endif // ANDROID_APP_ADMIN_FREEZEPERIOD
 

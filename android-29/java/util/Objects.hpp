@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_OBJECTS
-#define JAVA_UTIL_OBJECTS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -289,6 +286,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_OBJECTS
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_LOCALE_BUILDER
-#define JAVA_UTIL_LOCALE_BUILDER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util
@@ -253,6 +250,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_LOCALE_BUILDER
 

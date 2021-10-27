@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_R_FRACTION
-#define ANDROID_R_FRACTION
-
 #include "../__JniBaseClass.hpp"
 
 
@@ -49,6 +46,4 @@ namespace android
 		}
 	};
 } // namespace android
-
-#endif // ANDROID_R_FRACTION
 

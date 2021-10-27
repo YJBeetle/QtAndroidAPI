@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_SPEC_ECGENPARAMETERSPEC
-#define JAVA_SECURITY_SPEC_ECGENPARAMETERSPEC
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -60,6 +57,4 @@ namespace java::security::spec
 		}
 	};
 } // namespace java::security::spec
-
-#endif // JAVA_SECURITY_SPEC_ECGENPARAMETERSPEC
 

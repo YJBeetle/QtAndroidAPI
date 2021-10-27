@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_WIFIENTERPRISECONFIG_PHASE2
-#define ANDROID_NET_WIFI_WIFIENTERPRISECONFIG_PHASE2
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -112,6 +109,4 @@ namespace android::net::wifi
 		}
 	};
 } // namespace android::net::wifi
-
-#endif // ANDROID_NET_WIFI_WIFIENTERPRISECONFIG_PHASE2
 

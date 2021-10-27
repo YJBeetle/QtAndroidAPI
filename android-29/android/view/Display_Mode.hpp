@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_DISPLAY_MODE
-#define ANDROID_VIEW_DISPLAY_MODE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -137,6 +134,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_DISPLAY_MODE
 

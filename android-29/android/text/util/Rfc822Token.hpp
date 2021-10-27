@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_UTIL_RFC822TOKEN
-#define ANDROID_TEXT_UTIL_RFC822TOKEN
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -229,6 +226,4 @@ namespace android::text::util
 		}
 	};
 } // namespace android::text::util
-
-#endif // ANDROID_TEXT_UTIL_RFC822TOKEN
 

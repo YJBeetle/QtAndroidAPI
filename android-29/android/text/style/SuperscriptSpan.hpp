@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_STYLE_SUPERSCRIPTSPAN
-#define ANDROID_TEXT_STYLE_SUPERSCRIPTSPAN
-
 #include "../../../__JniBaseClass.hpp"
 #include "CharacterStyle.hpp"
 #include "MetricAffectingSpan.hpp"
@@ -119,6 +116,4 @@ namespace android::text::style
 		}
 	};
 } // namespace android::text::style
-
-#endif // ANDROID_TEXT_STYLE_SUPERSCRIPTSPAN
 

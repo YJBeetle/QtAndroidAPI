@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_PARSERS_FACTORYCONFIGURATIONERROR
-#define JAVAX_XML_PARSERS_FACTORYCONFIGURATIONERROR
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Error.hpp"
 
@@ -142,6 +139,4 @@ namespace javax::xml::parsers
 		}
 	};
 } // namespace javax::xml::parsers
-
-#endif // JAVAX_XML_PARSERS_FACTORYCONFIGURATIONERROR
 

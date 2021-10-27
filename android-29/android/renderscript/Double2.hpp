@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_RENDERSCRIPT_DOUBLE2
-#define ANDROID_RENDERSCRIPT_DOUBLE2
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -79,6 +76,4 @@ namespace android::renderscript
 		}
 	};
 } // namespace android::renderscript
-
-#endif // ANDROID_RENDERSCRIPT_DOUBLE2
 

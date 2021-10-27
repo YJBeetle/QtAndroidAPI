@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_ENUM
-#define JAVA_LANG_ENUM
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -155,6 +152,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_ENUM
 

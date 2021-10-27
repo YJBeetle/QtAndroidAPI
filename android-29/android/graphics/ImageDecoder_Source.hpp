@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_IMAGEDECODER_SOURCE
-#define ANDROID_GRAPHICS_IMAGEDECODER_SOURCE
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -48,6 +45,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_IMAGEDECODER_SOURCE
 

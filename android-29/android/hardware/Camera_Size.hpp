@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_CAMERA_SIZE
-#define ANDROID_HARDWARE_CAMERA_SIZE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::hardware
@@ -91,6 +88,4 @@ namespace android::hardware
 		}
 	};
 } // namespace android::hardware
-
-#endif // ANDROID_HARDWARE_CAMERA_SIZE
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_INPUTMETHODSERVICE_ABSTRACTINPUTMETHODSERVICE_ABSTRACTINPUTMETHODSESSIONIMPL
-#define ANDROID_INPUTMETHODSERVICE_ABSTRACTINPUTMETHODSERVICE_ABSTRACTINPUTMETHODSESSIONIMPL
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::inputmethodservice
@@ -132,6 +129,4 @@ namespace android::inputmethodservice
 		}
 	};
 } // namespace android::inputmethodservice
-
-#endif // ANDROID_INPUTMETHODSERVICE_ABSTRACTINPUTMETHODSERVICE_ABSTRACTINPUTMETHODSESSIONIMPL
 

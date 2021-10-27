@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_INPUTMETHOD_INPUTCONNECTIONWRAPPER
-#define ANDROID_VIEW_INPUTMETHOD_INPUTCONNECTIONWRAPPER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -373,6 +370,4 @@ namespace android::view::inputmethod
 		}
 	};
 } // namespace android::view::inputmethod
-
-#endif // ANDROID_VIEW_INPUTMETHOD_INPUTCONNECTIONWRAPPER
 

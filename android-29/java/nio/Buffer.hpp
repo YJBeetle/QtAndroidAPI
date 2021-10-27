@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_BUFFER
-#define JAVA_NIO_BUFFER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -217,6 +214,4 @@ namespace java::nio
 		}
 	};
 } // namespace java::nio
-
-#endif // JAVA_NIO_BUFFER
 

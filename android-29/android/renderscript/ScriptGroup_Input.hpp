@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_RENDERSCRIPT_SCRIPTGROUP_INPUT
-#define ANDROID_RENDERSCRIPT_SCRIPTGROUP_INPUT
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -48,6 +45,4 @@ namespace android::renderscript
 		}
 	};
 } // namespace android::renderscript
-
-#endif // ANDROID_RENDERSCRIPT_SCRIPTGROUP_INPUT
 

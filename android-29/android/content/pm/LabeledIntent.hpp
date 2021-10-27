@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_PM_LABELEDINTENT
-#define ANDROID_CONTENT_PM_LABELEDINTENT
-
 #include "../../../__JniBaseClass.hpp"
 #include "../Intent.hpp"
 
@@ -258,6 +255,4 @@ namespace android::content::pm
 		}
 	};
 } // namespace android::content::pm
-
-#endif // ANDROID_CONTENT_PM_LABELEDINTENT
 

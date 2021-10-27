@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_OBJECTINPUTSTREAM
-#define JAVA_IO_OBJECTINPUTSTREAM
-
 #include "../../__JniBaseClass.hpp"
 #include "InputStream.hpp"
 
@@ -306,6 +303,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_OBJECTINPUTSTREAM
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_CERT_CERTSTORESPI
-#define JAVA_SECURITY_CERT_CERTSTORESPI
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -69,6 +66,4 @@ namespace java::security::cert
 		}
 	};
 } // namespace java::security::cert
-
-#endif // JAVA_SECURITY_CERT_CERTSTORESPI
 

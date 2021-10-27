@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_TV_TVCONTRACT
-#define ANDROID_MEDIA_TV_TVCONTRACT
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -389,6 +386,4 @@ namespace android::media::tv
 		}
 	};
 } // namespace android::media::tv
-
-#endif // ANDROID_MEDIA_TV_TVCONTRACT
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_NSD_NSDSERVICEINFO
-#define ANDROID_NET_NSD_NSDSERVICEINFO
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -226,6 +223,4 @@ namespace android::net::nsd
 		}
 	};
 } // namespace android::net::nsd
-
-#endif // ANDROID_NET_NSD_NSDSERVICEINFO
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_TEXT_LINEBREAKER
-#define ANDROID_GRAPHICS_TEXT_LINEBREAKER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics::text
@@ -138,6 +135,4 @@ namespace android::graphics::text
 		}
 	};
 } // namespace android::graphics::text
-
-#endif // ANDROID_GRAPHICS_TEXT_LINEBREAKER
 

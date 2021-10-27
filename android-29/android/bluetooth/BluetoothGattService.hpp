@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_BLUETOOTH_BLUETOOTHGATTSERVICE
-#define ANDROID_BLUETOOTH_BLUETOOTHGATTSERVICE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::bluetooth
@@ -178,6 +175,4 @@ namespace android::bluetooth
 		}
 	};
 } // namespace android::bluetooth
-
-#endif // ANDROID_BLUETOOTH_BLUETOOTHGATTSERVICE
 

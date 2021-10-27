@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_METHOD_BASEKEYLISTENER
-#define ANDROID_TEXT_METHOD_BASEKEYLISTENER
-
 #include "../../../__JniBaseClass.hpp"
 #include "MetaKeyKeyListener.hpp"
 
@@ -107,6 +104,4 @@ namespace android::text::method
 		}
 	};
 } // namespace android::text::method
-
-#endif // ANDROID_TEXT_METHOD_BASEKEYLISTENER
 

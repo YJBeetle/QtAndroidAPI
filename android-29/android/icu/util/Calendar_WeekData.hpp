@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_UTIL_CALENDAR_WEEKDATA
-#define ANDROID_ICU_UTIL_CALENDAR_WEEKDATA
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -128,6 +125,4 @@ namespace android::icu::util
 		}
 	};
 } // namespace android::icu::util
-
-#endif // ANDROID_ICU_UTIL_CALENDAR_WEEKDATA
 

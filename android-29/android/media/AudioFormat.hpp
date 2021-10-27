@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_AUDIOFORMAT
-#define ANDROID_MEDIA_AUDIOFORMAT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -649,6 +646,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_AUDIOFORMAT
 

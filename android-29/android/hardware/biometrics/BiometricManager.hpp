@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_BIOMETRICS_BIOMETRICMANAGER
-#define ANDROID_HARDWARE_BIOMETRICS_BIOMETRICMANAGER
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -88,6 +85,4 @@ namespace android::hardware::biometrics
 		}
 	};
 } // namespace android::hardware::biometrics
-
-#endif // ANDROID_HARDWARE_BIOMETRICS_BIOMETRICMANAGER
 

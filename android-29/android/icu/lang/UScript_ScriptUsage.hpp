@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_LANG_USCRIPT_SCRIPTUSAGE
-#define ANDROID_ICU_LANG_USCRIPT_SCRIPTUSAGE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
@@ -132,6 +129,4 @@ namespace android::icu::lang
 		}
 	};
 } // namespace android::icu::lang
-
-#endif // ANDROID_ICU_LANG_USCRIPT_SCRIPTUSAGE
 

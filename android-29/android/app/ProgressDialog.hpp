@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_PROGRESSDIALOG
-#define ANDROID_APP_PROGRESSDIALOG
-
 #include "../../__JniBaseClass.hpp"
 #include "Dialog.hpp"
 #include "AlertDialog.hpp"
@@ -379,6 +376,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_PROGRESSDIALOG
 

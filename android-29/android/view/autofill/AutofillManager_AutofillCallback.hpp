@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_AUTOFILL_AUTOFILLMANAGER_AUTOFILLCALLBACK
-#define ANDROID_VIEW_AUTOFILL_AUTOFILLMANAGER_AUTOFILLCALLBACK
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::view
@@ -99,6 +96,4 @@ namespace android::view::autofill
 		}
 	};
 } // namespace android::view::autofill
-
-#endif // ANDROID_VIEW_AUTOFILL_AUTOFILLMANAGER_AUTOFILLCALLBACK
 

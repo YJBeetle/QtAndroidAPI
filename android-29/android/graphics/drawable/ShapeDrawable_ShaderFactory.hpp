@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_DRAWABLE_SHAPEDRAWABLE_SHADERFACTORY
-#define ANDROID_GRAPHICS_DRAWABLE_SHAPEDRAWABLE_SHADERFACTORY
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -64,6 +61,4 @@ namespace android::graphics::drawable
 		}
 	};
 } // namespace android::graphics::drawable
-
-#endif // ANDROID_GRAPHICS_DRAWABLE_SHAPEDRAWABLE_SHADERFACTORY
 

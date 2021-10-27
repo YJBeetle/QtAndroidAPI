@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_CLIPBOARDMANAGER
-#define ANDROID_CONTENT_CLIPBOARDMANAGER
-
 #include "../../__JniBaseClass.hpp"
 #include "../text/ClipboardManager.hpp"
 
@@ -152,6 +149,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_CLIPBOARDMANAGER
 

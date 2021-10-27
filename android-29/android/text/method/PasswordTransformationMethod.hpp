@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_METHOD_PASSWORDTRANSFORMATIONMETHOD
-#define ANDROID_TEXT_METHOD_PASSWORDTRANSFORMATIONMETHOD
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -171,6 +168,4 @@ namespace android::text::method
 		}
 	};
 } // namespace android::text::method
-
-#endif // ANDROID_TEXT_METHOD_PASSWORDTRANSFORMATIONMETHOD
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_HTTP_SSLERROR
-#define ANDROID_NET_HTTP_SSLERROR
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net::http
@@ -243,6 +240,4 @@ namespace android::net::http
 		}
 	};
 } // namespace android::net::http
-
-#endif // ANDROID_NET_HTTP_SSLERROR
 

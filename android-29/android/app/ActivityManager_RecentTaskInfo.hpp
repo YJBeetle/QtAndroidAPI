@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_ACTIVITYMANAGER_RECENTTASKINFO
-#define ANDROID_APP_ACTIVITYMANAGER_RECENTTASKINFO
-
 #include "../../__JniBaseClass.hpp"
 #include "TaskInfo.hpp"
 
@@ -120,6 +117,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_ACTIVITYMANAGER_RECENTTASKINFO
 

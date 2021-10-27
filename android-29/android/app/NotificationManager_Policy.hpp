@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_NOTIFICATIONMANAGER_POLICY
-#define ANDROID_APP_NOTIFICATIONMANAGER_POLICY
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -350,6 +347,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_NOTIFICATIONMANAGER_POLICY
 

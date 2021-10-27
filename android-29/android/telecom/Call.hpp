@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELECOM_CALL
-#define ANDROID_TELECOM_CALL
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -543,6 +540,4 @@ namespace android::telecom
 		}
 	};
 } // namespace android::telecom
-
-#endif // ANDROID_TELECOM_CALL
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_LOGGING_LOGMANAGER
-#define JAVA_UTIL_LOGGING_LOGMANAGER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -258,6 +255,4 @@ namespace java::util::logging
 		}
 	};
 } // namespace java::util::logging
-
-#endif // JAVA_UTIL_LOGGING_LOGMANAGER
 

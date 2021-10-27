@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_UTIL_ULOCALE_BUILDER
-#define ANDROID_ICU_UTIL_ULOCALE_BUILDER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::icu::util
@@ -253,6 +250,4 @@ namespace android::icu::util
 		}
 	};
 } // namespace android::icu::util
-
-#endif // ANDROID_ICU_UTIL_ULOCALE_BUILDER
 

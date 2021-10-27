@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_VECTOR
-#define JAVA_UTIL_VECTOR
-
 #include "../../__JniBaseClass.hpp"
 #include "AbstractCollection.hpp"
 #include "AbstractList.hpp"
@@ -538,6 +535,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_VECTOR
 

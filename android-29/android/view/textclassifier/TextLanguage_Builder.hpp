@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_TEXTCLASSIFIER_TEXTLANGUAGE_BUILDER
-#define ANDROID_VIEW_TEXTCLASSIFIER_TEXTLANGUAGE_BUILDER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::icu::util
@@ -109,6 +106,4 @@ namespace android::view::textclassifier
 		}
 	};
 } // namespace android::view::textclassifier
-
-#endif // ANDROID_VIEW_TEXTCLASSIFIER_TEXTLANGUAGE_BUILDER
 

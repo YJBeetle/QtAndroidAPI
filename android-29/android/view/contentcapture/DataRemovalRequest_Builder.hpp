@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_CONTENTCAPTURE_DATAREMOVALREQUEST_BUILDER
-#define ANDROID_VIEW_CONTENTCAPTURE_DATAREMOVALREQUEST_BUILDER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -85,6 +82,4 @@ namespace android::view::contentcapture
 		}
 	};
 } // namespace android::view::contentcapture
-
-#endif // ANDROID_VIEW_CONTENTCAPTURE_DATAREMOVALREQUEST_BUILDER
 

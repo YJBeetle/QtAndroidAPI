@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_DAYOFWEEK
-#define JAVA_TIME_DAYOFWEEK
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Enum.hpp"
 
@@ -266,6 +263,4 @@ namespace java::time
 		}
 	};
 } // namespace java::time
-
-#endif // JAVA_TIME_DAYOFWEEK
 

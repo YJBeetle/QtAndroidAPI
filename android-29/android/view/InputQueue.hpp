@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_INPUTQUEUE
-#define ANDROID_VIEW_INPUTQUEUE
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -48,6 +45,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_INPUTQUEUE
 

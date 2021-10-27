@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_EXPANDABLELISTVIEW_EXPANDABLELISTCONTEXTMENUINFO
-#define ANDROID_WIDGET_EXPANDABLELISTVIEW_EXPANDABLELISTCONTEXTMENUINFO
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::view
@@ -82,6 +79,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_EXPANDABLELISTVIEW_EXPANDABLELISTCONTEXTMENUINFO
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_LOCATION_ADDRESS
-#define ANDROID_LOCATION_ADDRESS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -567,6 +564,4 @@ namespace android::location
 		}
 	};
 } // namespace android::location
-
-#endif // ANDROID_LOCATION_ADDRESS
 

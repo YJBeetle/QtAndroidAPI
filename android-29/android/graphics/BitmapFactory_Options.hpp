@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_BITMAPFACTORY_OPTIONS
-#define ANDROID_GRAPHICS_BITMAPFACTORY_OPTIONS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -233,6 +230,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_BITMAPFACTORY_OPTIONS
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_CRYPTO_SPEC_PBEPARAMETERSPEC
-#define JAVAX_CRYPTO_SPEC_PBEPARAMETERSPEC
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -95,6 +92,4 @@ namespace javax::crypto::spec
 		}
 	};
 } // namespace javax::crypto::spec
-
-#endif // JAVAX_CRYPTO_SPEC_PBEPARAMETERSPEC
 

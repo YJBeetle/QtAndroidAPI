@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_TELEPHONYMANAGER
-#define ANDROID_TELEPHONY_TELEPHONYMANAGER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -2035,6 +2032,4 @@ namespace android::telephony
 		}
 	};
 } // namespace android::telephony
-
-#endif // ANDROID_TELEPHONY_TELEPHONYMANAGER
 

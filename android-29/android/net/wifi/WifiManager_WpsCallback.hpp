@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_WIFIMANAGER_WPSCALLBACK
-#define ANDROID_NET_WIFI_WIFIMANAGER_WPSCALLBACK
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -84,6 +81,4 @@ namespace android::net::wifi
 		}
 	};
 } // namespace android::net::wifi
-
-#endif // ANDROID_NET_WIFI_WIFIMANAGER_WPSCALLBACK
 

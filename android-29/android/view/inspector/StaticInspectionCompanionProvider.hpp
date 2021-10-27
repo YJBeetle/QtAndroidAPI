@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_INSPECTOR_STATICINSPECTIONCOMPANIONPROVIDER
-#define ANDROID_VIEW_INSPECTOR_STATICINSPECTIONCOMPANIONPROVIDER
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -58,6 +55,4 @@ namespace android::view::inspector
 		}
 	};
 } // namespace android::view::inspector
-
-#endif // ANDROID_VIEW_INSPECTOR_STATICINSPECTIONCOMPANIONPROVIDER
 

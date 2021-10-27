@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_ABSTRACTMAP
-#define JAVA_UTIL_ABSTRACTMAP
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -176,6 +173,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_ABSTRACTMAP
 

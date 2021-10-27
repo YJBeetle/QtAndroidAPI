@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NFC_TECH_ISODEP
-#define ANDROID_NFC_TECH_ISODEP
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::nfc
@@ -153,6 +150,4 @@ namespace android::nfc::tech
 		}
 	};
 } // namespace android::nfc::tech
-
-#endif // ANDROID_NFC_TECH_ISODEP
 

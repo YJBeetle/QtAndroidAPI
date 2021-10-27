@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TEXT_NORMALIZER
-#define JAVA_TEXT_NORMALIZER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::text
@@ -97,6 +94,4 @@ namespace java::text
 		}
 	};
 } // namespace java::text
-
-#endif // JAVA_TEXT_NORMALIZER
 

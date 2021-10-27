@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_PREFS_PREFERENCECHANGEEVENT
-#define JAVA_UTIL_PREFS_PREFERENCECHANGEEVENT
-
 #include "../../../__JniBaseClass.hpp"
 #include "../EventObject.hpp"
 
@@ -106,6 +103,4 @@ namespace java::util::prefs
 		}
 	};
 } // namespace java::util::prefs
-
-#endif // JAVA_UTIL_PREFS_PREFERENCECHANGEEVENT
 

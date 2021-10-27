@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_SENSORMANAGER
-#define ANDROID_HARDWARE_SENSORMANAGER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::hardware
@@ -865,6 +862,4 @@ namespace android::hardware
 		}
 	};
 } // namespace android::hardware
-
-#endif // ANDROID_HARDWARE_SENSORMANAGER
 

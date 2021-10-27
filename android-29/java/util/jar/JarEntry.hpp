@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_JAR_JARENTRY
-#define JAVA_UTIL_JAR_JARENTRY
-
 #include "../../../__JniBaseClass.hpp"
 #include "../zip/ZipEntry.hpp"
 
@@ -131,6 +128,4 @@ namespace java::util::jar
 		}
 	};
 } // namespace java::util::jar
-
-#endif // JAVA_UTIL_JAR_JARENTRY
 

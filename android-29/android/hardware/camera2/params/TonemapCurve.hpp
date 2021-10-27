@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_CAMERA2_PARAMS_TONEMAPCURVE
-#define ANDROID_HARDWARE_CAMERA2_PARAMS_TONEMAPCURVE
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -163,6 +160,4 @@ namespace android::hardware::camera2::params
 		}
 	};
 } // namespace android::hardware::camera2::params
-
-#endif // ANDROID_HARDWARE_CAMERA2_PARAMS_TONEMAPCURVE
 

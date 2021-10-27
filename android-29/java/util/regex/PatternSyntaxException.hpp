@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_REGEX_PATTERNSYNTAXEXCEPTION
-#define JAVA_UTIL_REGEX_PATTERNSYNTAXEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 #include "../../lang/RuntimeException.hpp"
@@ -101,6 +98,4 @@ namespace java::util::regex
 		}
 	};
 } // namespace java::util::regex
-
-#endif // JAVA_UTIL_REGEX_PATTERNSYNTAXEXCEPTION
 

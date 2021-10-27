@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_FILE_ATTRIBUTE_POSIXFILEPERMISSIONS
-#define JAVA_NIO_FILE_ATTRIBUTE_POSIXFILEPERMISSIONS
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -93,6 +90,4 @@ namespace java::nio::file::attribute
 		}
 	};
 } // namespace java::nio::file::attribute
-
-#endif // JAVA_NIO_FILE_ATTRIBUTE_POSIXFILEPERMISSIONS
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OPENGL_EGLOBJECTHANDLE
-#define ANDROID_OPENGL_EGLOBJECTHANDLE
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -72,6 +69,4 @@ namespace android::opengl
 		}
 	};
 } // namespace android::opengl
-
-#endif // ANDROID_OPENGL_EGLOBJECTHANDLE
 

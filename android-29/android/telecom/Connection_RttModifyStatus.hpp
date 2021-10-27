@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELECOM_CONNECTION_RTTMODIFYSTATUS
-#define ANDROID_TELECOM_CONNECTION_RTTMODIFYSTATUS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -88,6 +85,4 @@ namespace android::telecom
 		}
 	};
 } // namespace android::telecom
-
-#endif // ANDROID_TELECOM_CONNECTION_RTTMODIFYSTATUS
 

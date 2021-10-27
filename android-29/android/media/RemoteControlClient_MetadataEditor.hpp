@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_REMOTECONTROLCLIENT_METADATAEDITOR
-#define ANDROID_MEDIA_REMOTECONTROLCLIENT_METADATAEDITOR
-
 #include "../../__JniBaseClass.hpp"
 #include "MediaMetadataEditor.hpp"
 
@@ -146,6 +143,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_REMOTECONTROLCLIENT_METADATAEDITOR
 

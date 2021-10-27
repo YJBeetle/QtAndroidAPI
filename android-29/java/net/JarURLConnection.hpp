@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_JARURLCONNECTION
-#define JAVA_NET_JARURLCONNECTION
-
 #include "../../__JniBaseClass.hpp"
 #include "URLConnection.hpp"
 
@@ -143,6 +140,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_JARURLCONNECTION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SQL_SQLTRANSACTIONROLLBACKEXCEPTION
-#define JAVA_SQL_SQLTRANSACTIONROLLBACKEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 #include "SQLException.hpp"
@@ -231,6 +228,4 @@ namespace java::sql
 		}
 	};
 } // namespace java::sql
-
-#endif // JAVA_SQL_SQLTRANSACTIONROLLBACKEXCEPTION
 

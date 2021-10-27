@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_INPUTMETHOD_INPUTMETHODSUBTYPE_INPUTMETHODSUBTYPEBUILDER
-#define ANDROID_VIEW_INPUTMETHOD_INPUTMETHODSUBTYPE_INPUTMETHODSUBTYPEBUILDER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::view::inputmethod
@@ -188,6 +185,4 @@ namespace android::view::inputmethod
 		}
 	};
 } // namespace android::view::inputmethod
-
-#endif // ANDROID_VIEW_INPUTMETHOD_INPUTMETHODSUBTYPE_INPUTMETHODSUBTYPEBUILDER
 

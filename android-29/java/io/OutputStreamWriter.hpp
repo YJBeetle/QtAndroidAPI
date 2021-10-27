@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_OUTPUTSTREAMWRITER
-#define JAVA_IO_OUTPUTSTREAMWRITER
-
 #include "../../__JniBaseClass.hpp"
 #include "Writer.hpp"
 
@@ -236,6 +233,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_OUTPUTSTREAMWRITER
 

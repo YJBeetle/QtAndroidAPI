@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_MEDIASTORE_AUDIO_PLAYLISTS_MEMBERS
-#define ANDROID_PROVIDER_MEDIASTORE_AUDIO_PLAYLISTS_MEMBERS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -148,6 +145,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_MEDIASTORE_AUDIO_PLAYLISTS_MEMBERS
 

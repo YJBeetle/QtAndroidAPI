@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GESTURE_GESTURESTORE
-#define ANDROID_GESTURE_GESTURESTORE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::gesture
@@ -274,6 +271,4 @@ namespace android::gesture
 		}
 	};
 } // namespace android::gesture
-
-#endif // ANDROID_GESTURE_GESTURESTORE
 

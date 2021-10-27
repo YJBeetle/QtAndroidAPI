@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_RTP_AUDIOSTREAM
-#define ANDROID_NET_RTP_AUDIOSTREAM
-
 #include "../../../__JniBaseClass.hpp"
 #include "RtpStream.hpp"
 
@@ -126,6 +123,4 @@ namespace android::net::rtp
 		}
 	};
 } // namespace android::net::rtp
-
-#endif // ANDROID_NET_RTP_AUDIOSTREAM
 

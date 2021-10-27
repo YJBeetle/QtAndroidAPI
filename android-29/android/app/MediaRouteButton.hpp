@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_MEDIAROUTEBUTTON
-#define ANDROID_APP_MEDIAROUTEBUTTON
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 
@@ -214,6 +211,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_MEDIAROUTEBUTTON
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_BROKENBARRIEREXCEPTION
-#define JAVA_UTIL_CONCURRENT_BROKENBARRIEREXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 
@@ -73,6 +70,4 @@ namespace java::util::concurrent
 		}
 	};
 } // namespace java::util::concurrent
-
-#endif // JAVA_UTIL_CONCURRENT_BROKENBARRIEREXCEPTION
 

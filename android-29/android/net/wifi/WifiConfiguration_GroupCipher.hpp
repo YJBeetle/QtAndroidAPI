@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_WIFICONFIGURATION_GROUPCIPHER
-#define ANDROID_NET_WIFI_WIFICONFIGURATION_GROUPCIPHER
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -106,6 +103,4 @@ namespace android::net::wifi
 		}
 	};
 } // namespace android::net::wifi
-
-#endif // ANDROID_NET_WIFI_WIFICONFIGURATION_GROUPCIPHER
 

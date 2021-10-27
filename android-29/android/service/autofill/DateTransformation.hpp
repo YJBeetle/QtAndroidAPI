@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_AUTOFILL_DATETRANSFORMATION
-#define ANDROID_SERVICE_AUTOFILL_DATETRANSFORMATION
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::icu::text
@@ -103,6 +100,4 @@ namespace android::service::autofill
 		}
 	};
 } // namespace android::service::autofill
-
-#endif // ANDROID_SERVICE_AUTOFILL_DATETRANSFORMATION
 

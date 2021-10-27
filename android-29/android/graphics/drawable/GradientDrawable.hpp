@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_DRAWABLE_GRADIENTDRAWABLE
-#define ANDROID_GRAPHICS_DRAWABLE_GRADIENTDRAWABLE
-
 #include "../../../__JniBaseClass.hpp"
 #include "Drawable.hpp"
 
@@ -695,6 +692,4 @@ namespace android::graphics::drawable
 		}
 	};
 } // namespace android::graphics::drawable
-
-#endif // ANDROID_GRAPHICS_DRAWABLE_GRADIENTDRAWABLE
 

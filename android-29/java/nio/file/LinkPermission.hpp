@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_FILE_LINKPERMISSION
-#define JAVA_NIO_FILE_LINKPERMISSION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../security/Permission.hpp"
 #include "../../security/BasicPermission.hpp"
@@ -88,6 +85,4 @@ namespace java::nio::file
 		}
 	};
 } // namespace java::nio::file
-
-#endif // JAVA_NIO_FILE_LINKPERMISSION
 

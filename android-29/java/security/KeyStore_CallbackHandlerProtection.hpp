@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_KEYSTORE_CALLBACKHANDLERPROTECTION
-#define JAVA_SECURITY_KEYSTORE_CALLBACKHANDLERPROTECTION
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -59,6 +56,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_KEYSTORE_CALLBACKHANDLERPROTECTION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_TIMEPICKERDIALOG
-#define ANDROID_APP_TIMEPICKERDIALOG
-
 #include "../../__JniBaseClass.hpp"
 #include "Dialog.hpp"
 #include "AlertDialog.hpp"
@@ -156,6 +153,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_TIMEPICKERDIALOG
 

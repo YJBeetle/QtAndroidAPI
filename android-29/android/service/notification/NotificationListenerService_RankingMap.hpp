@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_NOTIFICATION_NOTIFICATIONLISTENERSERVICE_RANKINGMAP
-#define ANDROID_SERVICE_NOTIFICATION_NOTIFICATIONLISTENERSERVICE_RANKINGMAP
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -122,6 +119,4 @@ namespace android::service::notification
 		}
 	};
 } // namespace android::service::notification
-
-#endif // ANDROID_SERVICE_NOTIFICATION_NOTIFICATIONLISTENERSERVICE_RANKINGMAP
 

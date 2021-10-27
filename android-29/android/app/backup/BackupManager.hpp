@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_BACKUP_BACKUPMANAGER
-#define ANDROID_APP_BACKUP_BACKUPMANAGER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app::backup
@@ -112,6 +109,4 @@ namespace android::app::backup
 		}
 	};
 } // namespace android::app::backup
-
-#endif // ANDROID_APP_BACKUP_BACKUPMANAGER
 

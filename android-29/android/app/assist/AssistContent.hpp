@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_ASSIST_ASSISTCONTENT
-#define ANDROID_APP_ASSIST_ASSISTCONTENT
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -202,6 +199,4 @@ namespace android::app::assist
 		}
 	};
 } // namespace android::app::assist
-
-#endif // ANDROID_APP_ASSIST_ASSISTCONTENT
 

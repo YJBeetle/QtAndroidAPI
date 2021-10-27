@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_GSM_SMSMANAGER
-#define ANDROID_TELEPHONY_GSM_SMSMANAGER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -237,6 +234,4 @@ namespace android::telephony::gsm
 		}
 	};
 } // namespace android::telephony::gsm
-
-#endif // ANDROID_TELEPHONY_GSM_SMSMANAGER
 

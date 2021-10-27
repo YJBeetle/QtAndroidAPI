@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WEBKIT_WEBVIEWFRAGMENT
-#define ANDROID_WEBKIT_WEBVIEWFRAGMENT
-
 #include "../../__JniBaseClass.hpp"
 #include "../app/Fragment.hpp"
 
@@ -126,6 +123,4 @@ namespace android::webkit
 		}
 	};
 } // namespace android::webkit
-
-#endif // ANDROID_WEBKIT_WEBVIEWFRAGMENT
 

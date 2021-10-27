@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_HASHTABLE
-#define JAVA_UTIL_HASHTABLE
-
 #include "../../__JniBaseClass.hpp"
 #include "Dictionary.hpp"
 
@@ -380,6 +377,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_HASHTABLE
 

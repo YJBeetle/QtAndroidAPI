@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELECOM_VIDEOPROFILE_CAMERACAPABILITIES
-#define ANDROID_TELECOM_VIDEOPROFILE_CAMERACAPABILITIES
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -137,6 +134,4 @@ namespace android::telecom
 		}
 	};
 } // namespace android::telecom
-
-#endif // ANDROID_TELECOM_VIDEOPROFILE_CAMERACAPABILITIES
 

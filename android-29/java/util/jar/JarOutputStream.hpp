@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_JAR_JAROUTPUTSTREAM
-#define JAVA_UTIL_JAR_JAROUTPUTSTREAM
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../io/OutputStream.hpp"
 #include "../../io/FilterOutputStream.hpp"
@@ -95,6 +92,4 @@ namespace java::util::jar
 		}
 	};
 } // namespace java::util::jar
-
-#endif // JAVA_UTIL_JAR_JAROUTPUTSTREAM
 

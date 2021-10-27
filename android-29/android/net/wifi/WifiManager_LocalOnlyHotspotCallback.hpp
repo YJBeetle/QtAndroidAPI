@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_WIFIMANAGER_LOCALONLYHOTSPOTCALLBACK
-#define ANDROID_NET_WIFI_WIFIMANAGER_LOCALONLYHOTSPOTCALLBACK
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net::wifi
@@ -112,6 +109,4 @@ namespace android::net::wifi
 		}
 	};
 } // namespace android::net::wifi
-
-#endif // ANDROID_NET_WIFI_WIFIMANAGER_LOCALONLYHOTSPOTCALLBACK
 

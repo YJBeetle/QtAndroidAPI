@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHANNELS_ASYNCHRONOUSSERVERSOCKETCHANNEL
-#define JAVA_NIO_CHANNELS_ASYNCHRONOUSSERVERSOCKETCHANNEL
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::net
@@ -145,6 +142,4 @@ namespace java::nio::channels
 		}
 	};
 } // namespace java::nio::channels
-
-#endif // JAVA_NIO_CHANNELS_ASYNCHRONOUSSERVERSOCKETCHANNEL
 

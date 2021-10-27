@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_ANIMATION_ANIMATION_DESCRIPTION
-#define ANDROID_VIEW_ANIMATION_ANIMATION_DESCRIPTION
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -62,6 +59,4 @@ namespace android::view::animation
 		}
 	};
 } // namespace android::view::animation
-
-#endif // ANDROID_VIEW_ANIMATION_ANIMATION_DESCRIPTION
 

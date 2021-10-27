@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_AUTOFILL_FIELDCLASSIFICATION_MATCH
-#define ANDROID_SERVICE_AUTOFILL_FIELDCLASSIFICATION_MATCH
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -72,6 +69,4 @@ namespace android::service::autofill
 		}
 	};
 } // namespace android::service::autofill
-
-#endif // ANDROID_SERVICE_AUTOFILL_FIELDCLASSIFICATION_MATCH
 

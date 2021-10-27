@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_LOGGING_FORMATTER
-#define JAVA_UTIL_LOGGING_FORMATTER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util::logging
@@ -94,6 +91,4 @@ namespace java::util::logging
 		}
 	};
 } // namespace java::util::logging
-
-#endif // JAVA_UTIL_LOGGING_FORMATTER
 

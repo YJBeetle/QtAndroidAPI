@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_EUICC_DOWNLOADABLESUBSCRIPTION
-#define ANDROID_TELEPHONY_EUICC_DOWNLOADABLESUBSCRIPTION
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -116,6 +113,4 @@ namespace android::telephony::euicc
 		}
 	};
 } // namespace android::telephony::euicc
-
-#endif // ANDROID_TELEPHONY_EUICC_DOWNLOADABLESUBSCRIPTION
 

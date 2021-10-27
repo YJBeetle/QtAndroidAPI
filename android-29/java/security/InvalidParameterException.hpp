@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_INVALIDPARAMETEREXCEPTION
-#define JAVA_SECURITY_INVALIDPARAMETEREXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 #include "../lang/RuntimeException.hpp"
@@ -75,6 +72,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_INVALIDPARAMETEREXCEPTION
 

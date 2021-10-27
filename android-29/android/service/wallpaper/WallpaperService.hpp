@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_WALLPAPER_WALLPAPERSERVICE
-#define ANDROID_SERVICE_WALLPAPER_WALLPAPERSERVICE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
@@ -123,6 +120,4 @@ namespace android::service::wallpaper
 		}
 	};
 } // namespace android::service::wallpaper
-
-#endif // ANDROID_SERVICE_WALLPAPER_WALLPAPERSERVICE
 

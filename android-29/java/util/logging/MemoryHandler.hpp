@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_LOGGING_MEMORYHANDLER
-#define JAVA_UTIL_LOGGING_MEMORYHANDLER
-
 #include "../../../__JniBaseClass.hpp"
 #include "Handler.hpp"
 
@@ -142,6 +139,4 @@ namespace java::util::logging
 		}
 	};
 } // namespace java::util::logging
-
-#endif // JAVA_UTIL_LOGGING_MEMORYHANDLER
 

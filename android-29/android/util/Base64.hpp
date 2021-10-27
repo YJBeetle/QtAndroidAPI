@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_BASE64
-#define ANDROID_UTIL_BASE64
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -190,6 +187,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_BASE64
 

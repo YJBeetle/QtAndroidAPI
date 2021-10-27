@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_SESSION_MEDIASESSION_QUEUEITEM
-#define ANDROID_MEDIA_SESSION_MEDIASESSION_QUEUEITEM
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media
@@ -131,6 +128,4 @@ namespace android::media::session
 		}
 	};
 } // namespace android::media::session
-
-#endif // ANDROID_MEDIA_SESSION_MEDIASESSION_QUEUEITEM
 

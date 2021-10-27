@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_DOCUMENTSCONTRACT_PATH
-#define ANDROID_PROVIDER_DOCUMENTSCONTRACT_PATH
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -136,6 +133,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_DOCUMENTSCONTRACT_PATH
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_FLOATPROPERTY
-#define ANDROID_UTIL_FLOATPROPERTY
-
 #include "../../__JniBaseClass.hpp"
 #include "Property.hpp"
 
@@ -96,6 +93,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_FLOATPROPERTY
 

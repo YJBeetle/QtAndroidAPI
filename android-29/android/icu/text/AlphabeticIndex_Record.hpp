@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_ALPHABETICINDEX_RECORD
-#define ANDROID_ICU_TEXT_ALPHABETICINDEX_RECORD
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -72,6 +69,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_ALPHABETICINDEX_RECORD
 

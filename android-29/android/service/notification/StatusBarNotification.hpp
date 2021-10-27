@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_NOTIFICATION_STATUSBARNOTIFICATION
-#define ANDROID_SERVICE_NOTIFICATION_STATUSBARNOTIFICATION
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -297,6 +294,4 @@ namespace android::service::notification
 		}
 	};
 } // namespace android::service::notification
-
-#endif // ANDROID_SERVICE_NOTIFICATION_STATUSBARNOTIFICATION
 

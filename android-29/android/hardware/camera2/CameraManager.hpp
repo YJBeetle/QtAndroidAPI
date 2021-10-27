@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_CAMERA2_CAMERAMANAGER
-#define ANDROID_HARDWARE_CAMERA2_CAMERAMANAGER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -226,6 +223,4 @@ namespace android::hardware::camera2
 		}
 	};
 } // namespace android::hardware::camera2
-
-#endif // ANDROID_HARDWARE_CAMERA2_CAMERAMANAGER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_STORAGE_STORAGEVOLUME
-#define ANDROID_OS_STORAGE_STORAGEVOLUME
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -199,6 +196,4 @@ namespace android::os::storage
 		}
 	};
 } // namespace android::os::storage
-
-#endif // ANDROID_OS_STORAGE_STORAGEVOLUME
 

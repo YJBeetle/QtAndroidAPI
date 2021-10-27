@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_LOCKS_ABSTRACTQUEUEDSYNCHRONIZER_CONDITIONOBJECT
-#define JAVA_UTIL_CONCURRENT_LOCKS_ABSTRACTQUEUEDSYNCHRONIZER_CONDITIONOBJECT
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util
@@ -126,6 +123,4 @@ namespace java::util::concurrent::locks
 		}
 	};
 } // namespace java::util::concurrent::locks
-
-#endif // JAVA_UTIL_CONCURRENT_LOCKS_ABSTRACTQUEUEDSYNCHRONIZER_CONDITIONOBJECT
 

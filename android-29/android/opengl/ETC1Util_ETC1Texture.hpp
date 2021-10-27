@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OPENGL_ETC1UTIL_ETC1TEXTURE
-#define ANDROID_OPENGL_ETC1UTIL_ETC1TEXTURE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::nio
@@ -84,6 +81,4 @@ namespace android::opengl
 		}
 	};
 } // namespace android::opengl
-
-#endif // ANDROID_OPENGL_ETC1UTIL_ETC1TEXTURE
 

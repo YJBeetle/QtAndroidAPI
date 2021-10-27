@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_EXCEPTION
-#define JAVA_LANG_EXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -112,6 +109,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_EXCEPTION
 

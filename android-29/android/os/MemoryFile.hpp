@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_MEMORYFILE
-#define ANDROID_OS_MEMORYFILE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -146,6 +143,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_MEMORYFILE
 

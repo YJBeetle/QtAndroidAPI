@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHANNELS_FILECHANNEL_MAPMODE
-#define JAVA_NIO_CHANNELS_FILECHANNEL_MAPMODE
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -83,6 +80,4 @@ namespace java::nio::channels
 		}
 	};
 } // namespace java::nio::channels
-
-#endif // JAVA_NIO_CHANNELS_FILECHANNEL_MAPMODE
 

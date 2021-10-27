@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_ILLEGALFORMATCONVERSIONEXCEPTION
-#define JAVA_UTIL_ILLEGALFORMATCONVERSIONEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 #include "../lang/RuntimeException.hpp"
@@ -81,6 +78,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_ILLEGALFORMATCONVERSIONEXCEPTION
 

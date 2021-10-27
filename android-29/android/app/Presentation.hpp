@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_PRESENTATION
-#define ANDROID_APP_PRESENTATION
-
 #include "../../__JniBaseClass.hpp"
 #include "Dialog.hpp"
 
@@ -127,6 +124,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_PRESENTATION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_USAGE_STORAGESTATSMANAGER
-#define ANDROID_APP_USAGE_STORAGESTATSMANAGER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app::usage
@@ -138,6 +135,4 @@ namespace android::app::usage
 		}
 	};
 } // namespace android::app::usage
-
-#endif // ANDROID_APP_USAGE_STORAGESTATSMANAGER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_CONTACTSCONTRACT_COMMONDATAKINDS_WEBSITE
-#define ANDROID_PROVIDER_CONTACTSCONTRACT_COMMONDATAKINDS_WEBSITE
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -149,6 +146,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_CONTACTSCONTRACT_COMMONDATAKINDS_WEBSITE
 

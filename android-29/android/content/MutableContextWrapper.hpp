@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_MUTABLECONTEXTWRAPPER
-#define ANDROID_CONTENT_MUTABLECONTEXTWRAPPER
-
 #include "../../__JniBaseClass.hpp"
 #include "Context.hpp"
 #include "ContextWrapper.hpp"
@@ -67,6 +64,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_MUTABLECONTEXTWRAPPER
 

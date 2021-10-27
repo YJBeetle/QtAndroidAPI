@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_NOTIFICATION_BIGPICTURESTYLE
-#define ANDROID_APP_NOTIFICATION_BIGPICTURESTYLE
-
 #include "../../__JniBaseClass.hpp"
 #include "Notification_Style.hpp"
 
@@ -142,6 +139,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_NOTIFICATION_BIGPICTURESTYLE
 

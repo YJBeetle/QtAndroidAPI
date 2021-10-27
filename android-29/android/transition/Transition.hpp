@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TRANSITION_TRANSITION
-#define ANDROID_TRANSITION_TRANSITION
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::animation
@@ -570,6 +567,4 @@ namespace android::transition
 		}
 	};
 } // namespace android::transition
-
-#endif // ANDROID_TRANSITION_TRANSITION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_ANIMATION_ANTICIPATEOVERSHOOTINTERPOLATOR
-#define ANDROID_VIEW_ANIMATION_ANTICIPATEOVERSHOOTINTERPOLATOR
-
 #include "../../../__JniBaseClass.hpp"
 #include "BaseInterpolator.hpp"
 
@@ -110,6 +107,4 @@ namespace android::view::animation
 		}
 	};
 } // namespace android::view::animation
-
-#endif // ANDROID_VIEW_ANIMATION_ANTICIPATEOVERSHOOTINTERPOLATOR
 

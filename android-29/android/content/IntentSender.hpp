@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_INTENTSENDER
-#define ANDROID_CONTENT_INTENTSENDER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -219,6 +216,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_INTENTSENDER
 

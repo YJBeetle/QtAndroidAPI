@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICINTEGERFIELDUPDATER
-#define JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICINTEGERFIELDUPDATER
-
 #include "../../../../__JniBaseClass.hpp"
 
 
@@ -229,6 +226,4 @@ namespace java::util::concurrent::atomic
 		}
 	};
 } // namespace java::util::concurrent::atomic
-
-#endif // JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICINTEGERFIELDUPDATER
 

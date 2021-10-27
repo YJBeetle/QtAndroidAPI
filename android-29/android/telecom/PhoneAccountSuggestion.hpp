@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELECOM_PHONEACCOUNTSUGGESTION
-#define ANDROID_TELECOM_PHONEACCOUNTSUGGESTION
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -173,6 +170,4 @@ namespace android::telecom
 		}
 	};
 } // namespace android::telecom
-
-#endif // ANDROID_TELECOM_PHONEACCOUNTSUGGESTION
 

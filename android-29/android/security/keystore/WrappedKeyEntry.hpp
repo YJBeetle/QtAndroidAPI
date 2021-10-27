@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SECURITY_KEYSTORE_WRAPPEDKEYENTRY
-#define ANDROID_SECURITY_KEYSTORE_WRAPPEDKEYENTRY
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -101,6 +98,4 @@ namespace android::security::keystore
 		}
 	};
 } // namespace android::security::keystore
-
-#endif // ANDROID_SECURITY_KEYSTORE_WRAPPEDKEYENTRY
 

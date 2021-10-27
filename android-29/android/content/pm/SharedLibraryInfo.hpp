@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_PM_SHAREDLIBRARYINFO
-#define ANDROID_CONTENT_PM_SHAREDLIBRARYINFO
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content::pm
@@ -173,6 +170,4 @@ namespace android::content::pm
 		}
 	};
 } // namespace android::content::pm
-
-#endif // ANDROID_CONTENT_PM_SHAREDLIBRARYINFO
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_CONTACTSCONTRACT_DIRECTORY
-#define ANDROID_PROVIDER_CONTACTSCONTRACT_DIRECTORY
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -326,6 +323,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_CONTACTSCONTRACT_DIRECTORY
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DRM_DRMMANAGERCLIENT
-#define ANDROID_DRM_DRMMANAGERCLIENT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -495,6 +492,4 @@ namespace android::drm
 		}
 	};
 } // namespace android::drm
-
-#endif // ANDROID_DRM_DRMMANAGERCLIENT
 

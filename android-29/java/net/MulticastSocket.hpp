@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_MULTICASTSOCKET
-#define JAVA_NET_MULTICASTSOCKET
-
 #include "../../__JniBaseClass.hpp"
 #include "DatagramSocket.hpp"
 
@@ -236,6 +233,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_MULTICASTSOCKET
 

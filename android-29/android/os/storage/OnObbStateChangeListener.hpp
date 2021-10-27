@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_STORAGE_ONOBBSTATECHANGELISTENER
-#define ANDROID_OS_STORAGE_ONOBBSTATECHANGELISTENER
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -133,6 +130,4 @@ namespace android::os::storage
 		}
 	};
 } // namespace android::os::storage
-
-#endif // ANDROID_OS_STORAGE_ONOBBSTATECHANGELISTENER
 

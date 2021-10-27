@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIADRMRESETEXCEPTION
-#define ANDROID_MEDIA_MEDIADRMRESETEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
@@ -63,6 +60,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIADRMRESETEXCEPTION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WEBKIT_WEBSETTINGS_TEXTSIZE
-#define ANDROID_WEBKIT_WEBSETTINGS_TEXTSIZE
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
@@ -123,6 +120,4 @@ namespace android::webkit
 		}
 	};
 } // namespace android::webkit
-
-#endif // ANDROID_WEBKIT_WEBSETTINGS_TEXTSIZE
 

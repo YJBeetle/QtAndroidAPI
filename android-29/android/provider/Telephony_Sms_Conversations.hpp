@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_TELEPHONY_SMS_CONVERSATIONS
-#define ANDROID_PROVIDER_TELEPHONY_SMS_CONVERSATIONS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -89,6 +86,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_TELEPHONY_SMS_CONVERSATIONS
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_ANNOTATION
-#define ANDROID_TEXT_ANNOTATION
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -124,6 +121,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_ANNOTATION
 

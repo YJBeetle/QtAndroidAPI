@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef DALVIK_SYSTEM_DEXFILE
-#define DALVIK_SYSTEM_DEXFILE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -180,6 +177,4 @@ namespace dalvik::system
 		}
 	};
 } // namespace dalvik::system
-
-#endif // DALVIK_SYSTEM_DEXFILE
 

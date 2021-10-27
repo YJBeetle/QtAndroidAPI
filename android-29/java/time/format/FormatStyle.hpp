@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_FORMAT_FORMATSTYLE
-#define JAVA_TIME_FORMAT_FORMATSTYLE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
@@ -114,6 +111,4 @@ namespace java::time::format
 		}
 	};
 } // namespace java::time::format
-
-#endif // JAVA_TIME_FORMAT_FORMATSTYLE
 

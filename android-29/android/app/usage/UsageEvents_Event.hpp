@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_USAGE_USAGEEVENTS_EVENT
-#define ANDROID_APP_USAGE_USAGEEVENTS_EVENT
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content::res
@@ -254,6 +251,4 @@ namespace android::app::usage
 		}
 	};
 } // namespace android::app::usage
-
-#endif // ANDROID_APP_USAGE_USAGEEVENTS_EVENT
 

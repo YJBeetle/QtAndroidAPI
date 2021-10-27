@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PRINT_PDF_PRINTEDPDFDOCUMENT
-#define ANDROID_PRINT_PDF_PRINTEDPDFDOCUMENT
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../graphics/pdf/PdfDocument.hpp"
 
@@ -107,6 +104,4 @@ namespace android::print::pdf
 		}
 	};
 } // namespace android::print::pdf
-
-#endif // ANDROID_PRINT_PDF_PRINTEDPDFDOCUMENT
 

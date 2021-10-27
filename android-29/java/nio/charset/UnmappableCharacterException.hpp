@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHARSET_UNMAPPABLECHARACTEREXCEPTION
-#define JAVA_NIO_CHARSET_UNMAPPABLECHARACTEREXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 #include "../../io/IOException.hpp"
@@ -70,6 +67,4 @@ namespace java::nio::charset
 		}
 	};
 } // namespace java::nio::charset
-
-#endif // JAVA_NIO_CHARSET_UNMAPPABLECHARACTEREXCEPTION
 

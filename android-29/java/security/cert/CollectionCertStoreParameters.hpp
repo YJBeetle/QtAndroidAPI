@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_CERT_COLLECTIONCERTSTOREPARAMETERS
-#define JAVA_SECURITY_CERT_COLLECTIONCERTSTOREPARAMETERS
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -87,6 +84,4 @@ namespace java::security::cert
 		}
 	};
 } // namespace java::security::cert
-
-#endif // JAVA_SECURITY_CERT_COLLECTIONCERTSTOREPARAMETERS
 

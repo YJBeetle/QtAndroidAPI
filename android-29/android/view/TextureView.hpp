@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_TEXTUREVIEW
-#define ANDROID_VIEW_TEXTUREVIEW
-
 #include "../../__JniBaseClass.hpp"
 #include "View.hpp"
 
@@ -343,6 +340,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_TEXTUREVIEW
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PREFERENCE_PREFERENCEACTIVITY
-#define ANDROID_PREFERENCE_PREFERENCEACTIVITY
-
 #include "../../__JniBaseClass.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
@@ -553,6 +550,4 @@ namespace android::preference
 		}
 	};
 } // namespace android::preference
-
-#endif // ANDROID_PREFERENCE_PREFERENCEACTIVITY
 

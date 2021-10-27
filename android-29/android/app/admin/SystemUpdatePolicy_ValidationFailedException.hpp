@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_ADMIN_SYSTEMUPDATEPOLICY_VALIDATIONFAILEDEXCEPTION
-#define ANDROID_APP_ADMIN_SYSTEMUPDATEPOLICY_VALIDATIONFAILEDEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
@@ -139,6 +136,4 @@ namespace android::app::admin
 		}
 	};
 } // namespace android::app::admin
-
-#endif // ANDROID_APP_ADMIN_SYSTEMUPDATEPOLICY_VALIDATIONFAILEDEXCEPTION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_CRYPTO_CIPHEROUTPUTSTREAM
-#define JAVAX_CRYPTO_CIPHEROUTPUTSTREAM
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/io/OutputStream.hpp"
 #include "../../java/io/FilterOutputStream.hpp"
@@ -110,6 +107,4 @@ namespace javax::crypto
 		}
 	};
 } // namespace javax::crypto
-
-#endif // JAVAX_CRYPTO_CIPHEROUTPUTSTREAM
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DATABASE_CROSSPROCESSCURSORWRAPPER
-#define ANDROID_DATABASE_CROSSPROCESSCURSORWRAPPER
-
 #include "../../__JniBaseClass.hpp"
 #include "CursorWrapper.hpp"
 
@@ -85,6 +82,4 @@ namespace android::database
 		}
 	};
 } // namespace android::database
-
-#endif // ANDROID_DATABASE_CROSSPROCESSCURSORWRAPPER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TRANSITION_TRANSITION_EPICENTERCALLBACK
-#define ANDROID_TRANSITION_TRANSITION_EPICENTERCALLBACK
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -68,6 +65,4 @@ namespace android::transition
 		}
 	};
 } // namespace android::transition
-
-#endif // ANDROID_TRANSITION_TRANSITION_EPICENTERCALLBACK
 

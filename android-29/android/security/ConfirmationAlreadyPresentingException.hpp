@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SECURITY_CONFIRMATIONALREADYPRESENTINGEXCEPTION
-#define ANDROID_SECURITY_CONFIRMATIONALREADYPRESENTINGEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 
@@ -73,6 +70,4 @@ namespace android::security
 		}
 	};
 } // namespace android::security
-
-#endif // ANDROID_SECURITY_CONFIRMATIONALREADYPRESENTINGEXCEPTION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NFC_NFCMANAGER
-#define ANDROID_NFC_NFCMANAGER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -66,6 +63,4 @@ namespace android::nfc
 		}
 	};
 } // namespace android::nfc
-
-#endif // ANDROID_NFC_NFCMANAGER
 

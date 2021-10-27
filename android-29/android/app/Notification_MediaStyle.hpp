@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_NOTIFICATION_MEDIASTYLE
-#define ANDROID_APP_NOTIFICATION_MEDIASTYLE
-
 #include "../../__JniBaseClass.hpp"
 #include "Notification_Style.hpp"
 
@@ -92,6 +89,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_NOTIFICATION_MEDIASTYLE
 

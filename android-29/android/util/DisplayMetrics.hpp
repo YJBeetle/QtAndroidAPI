@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_DISPLAYMETRICS
-#define ANDROID_UTIL_DISPLAYMETRICS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -341,6 +338,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_DISPLAYMETRICS
 

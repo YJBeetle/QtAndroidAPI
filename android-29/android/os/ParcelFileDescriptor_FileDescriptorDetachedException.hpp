@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_PARCELFILEDESCRIPTOR_FILEDESCRIPTORDETACHEDEXCEPTION
-#define ANDROID_OS_PARCELFILEDESCRIPTOR_FILEDESCRIPTORDETACHEDEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../../java/io/IOException.hpp"
@@ -51,6 +48,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_PARCELFILEDESCRIPTOR_FILEDESCRIPTORDETACHEDEXCEPTION
 

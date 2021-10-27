@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_TRANSLITERATOR_POSITION
-#define ANDROID_ICU_TEXT_TRANSLITERATOR_POSITION
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -172,6 +169,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_TRANSLITERATOR_POSITION
 

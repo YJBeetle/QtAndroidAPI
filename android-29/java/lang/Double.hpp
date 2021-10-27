@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_DOUBLE
-#define JAVA_LANG_DOUBLE
-
 #include "../../__JniBaseClass.hpp"
 #include "Number.hpp"
 
@@ -482,6 +479,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_DOUBLE
 

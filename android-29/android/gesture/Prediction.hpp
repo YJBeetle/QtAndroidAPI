@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GESTURE_PREDICTION
-#define ANDROID_GESTURE_PREDICTION
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -71,6 +68,4 @@ namespace android::gesture
 		}
 	};
 } // namespace android::gesture
-
-#endif // ANDROID_GESTURE_PREDICTION
 

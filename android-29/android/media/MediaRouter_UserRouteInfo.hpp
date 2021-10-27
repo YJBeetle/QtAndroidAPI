@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIAROUTER_USERROUTEINFO
-#define ANDROID_MEDIA_MEDIAROUTER_USERROUTEINFO
-
 #include "../../__JniBaseClass.hpp"
 #include "MediaRouter_RouteInfo.hpp"
 
@@ -239,6 +236,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIAROUTER_USERROUTEINFO
 

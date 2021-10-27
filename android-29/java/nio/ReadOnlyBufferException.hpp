@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_READONLYBUFFEREXCEPTION
-#define JAVA_NIO_READONLYBUFFEREXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 #include "../lang/RuntimeException.hpp"
@@ -52,6 +49,4 @@ namespace java::nio
 		}
 	};
 } // namespace java::nio
-
-#endif // JAVA_NIO_READONLYBUFFEREXCEPTION
 

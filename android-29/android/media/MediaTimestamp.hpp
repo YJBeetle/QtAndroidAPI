@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIATIMESTAMP
-#define ANDROID_MEDIA_MEDIATIMESTAMP
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -113,6 +110,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIATIMESTAMP
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_BIOMETRICS_BIOMETRICPROMPT
-#define ANDROID_HARDWARE_BIOMETRICS_BIOMETRICPROMPT
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::hardware::biometrics
@@ -230,6 +227,4 @@ namespace android::hardware::biometrics
 		}
 	};
 } // namespace android::hardware::biometrics
-
-#endif // ANDROID_HARDWARE_BIOMETRICS_BIOMETRICPROMPT
 

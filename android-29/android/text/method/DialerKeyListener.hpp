@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_METHOD_DIALERKEYLISTENER
-#define ANDROID_TEXT_METHOD_DIALERKEYLISTENER
-
 #include "../../../__JniBaseClass.hpp"
 #include "MetaKeyKeyListener.hpp"
 #include "BaseKeyListener.hpp"
@@ -83,6 +80,4 @@ namespace android::text::method
 		}
 	};
 } // namespace android::text::method
-
-#endif // ANDROID_TEXT_METHOD_DIALERKEYLISTENER
 

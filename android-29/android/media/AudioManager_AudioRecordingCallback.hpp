@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_AUDIOMANAGER_AUDIORECORDINGCALLBACK
-#define ANDROID_MEDIA_AUDIOMANAGER_AUDIORECORDINGCALLBACK
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -58,6 +55,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_AUDIOMANAGER_AUDIORECORDINGCALLBACK
 

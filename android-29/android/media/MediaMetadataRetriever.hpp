@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIAMETADATARETRIEVER
-#define ANDROID_MEDIA_MEDIAMETADATARETRIEVER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -600,6 +597,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIAMETADATARETRIEVER
 

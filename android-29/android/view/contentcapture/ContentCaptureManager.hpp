@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_CONTENTCAPTURE_CONTENTCAPTUREMANAGER
-#define ANDROID_VIEW_CONTENTCAPTURE_CONTENTCAPTUREMANAGER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -100,6 +97,4 @@ namespace android::view::contentcapture
 		}
 	};
 } // namespace android::view::contentcapture
-
-#endif // ANDROID_VIEW_CONTENTCAPTURE_CONTENTCAPTUREMANAGER
 

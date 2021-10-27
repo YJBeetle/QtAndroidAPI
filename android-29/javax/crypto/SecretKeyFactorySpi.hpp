@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_CRYPTO_SECRETKEYFACTORYSPI
-#define JAVAX_CRYPTO_SECRETKEYFACTORYSPI
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -49,6 +46,4 @@ namespace javax::crypto
 		}
 	};
 } // namespace javax::crypto
-
-#endif // JAVAX_CRYPTO_SECRETKEYFACTORYSPI
 

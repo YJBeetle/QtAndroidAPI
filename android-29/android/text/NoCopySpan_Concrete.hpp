@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_NOCOPYSPAN_CONCRETE
-#define ANDROID_TEXT_NOCOPYSPAN_CONCRETE
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -49,6 +46,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_NOCOPYSPAN_CONCRETE
 

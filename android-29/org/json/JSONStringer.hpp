@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_JSON_JSONSTRINGER
-#define ORG_JSON_JSONSTRINGER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -143,6 +140,4 @@ namespace org::json
 		}
 	};
 } // namespace org::json
-
-#endif // ORG_JSON_JSONSTRINGER
 

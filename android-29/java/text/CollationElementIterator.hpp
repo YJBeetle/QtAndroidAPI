@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TEXT_COLLATIONELEMENTITERATOR
-#define JAVA_TEXT_COLLATIONELEMENTITERATOR
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -173,6 +170,4 @@ namespace java::text
 		}
 	};
 } // namespace java::text
-
-#endif // JAVA_TEXT_COLLATIONELEMENTITERATOR
 

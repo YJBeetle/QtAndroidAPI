@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TRANSITION_EXPLODE
-#define ANDROID_TRANSITION_EXPLODE
-
 #include "../../__JniBaseClass.hpp"
 #include "Transition.hpp"
 #include "Visibility.hpp"
@@ -134,6 +131,4 @@ namespace android::transition
 		}
 	};
 } // namespace android::transition
-
-#endif // ANDROID_TRANSITION_EXPLODE
 

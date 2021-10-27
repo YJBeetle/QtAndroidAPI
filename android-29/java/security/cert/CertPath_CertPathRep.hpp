@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_CERT_CERTPATH_CERTPATHREP
-#define JAVA_SECURITY_CERT_CERTPATH_CERTPATHREP
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -48,6 +45,4 @@ namespace java::security::cert
 		}
 	};
 } // namespace java::security::cert
-
-#endif // JAVA_SECURITY_CERT_CERTPATH_CERTPATHREP
 

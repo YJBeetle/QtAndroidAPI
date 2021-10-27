@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_VIBRATIONEFFECT
-#define ANDROID_OS_VIBRATIONEFFECT
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -149,6 +146,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_VIBRATIONEFFECT
 

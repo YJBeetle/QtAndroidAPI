@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_ZIP_ZIPINPUTSTREAM
-#define JAVA_UTIL_ZIP_ZIPINPUTSTREAM
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../io/InputStream.hpp"
 #include "../../io/FilterInputStream.hpp"
@@ -142,6 +139,4 @@ namespace java::util::zip
 		}
 	};
 } // namespace java::util::zip
-
-#endif // JAVA_UTIL_ZIP_ZIPINPUTSTREAM
 

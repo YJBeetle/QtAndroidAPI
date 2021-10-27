@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_INSPECTOR_INSPECTIONCOMPANION_UNINITIALIZEDPROPERTYMAPEXCEPTION
-#define ANDROID_VIEW_INSPECTOR_INSPECTIONCOMPANION_UNINITIALIZEDPROPERTYMAPEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 #include "../../../java/lang/RuntimeException.hpp"
@@ -51,6 +48,4 @@ namespace android::view::inspector
 		}
 	};
 } // namespace android::view::inspector
-
-#endif // ANDROID_VIEW_INSPECTOR_INSPECTIONCOMPANION_UNINITIALIZEDPROPERTYMAPEXCEPTION
 

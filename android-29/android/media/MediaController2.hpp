@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIACONTROLLER2
-#define ANDROID_MEDIA_MEDIACONTROLLER2
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -116,6 +113,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIACONTROLLER2
 

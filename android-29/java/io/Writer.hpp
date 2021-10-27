@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_WRITER
-#define JAVA_IO_WRITER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -191,6 +188,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_WRITER
 

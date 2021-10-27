@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_BASE64DATAEXCEPTION
-#define ANDROID_UTIL_BASE64DATAEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../../java/io/IOException.hpp"
@@ -62,6 +59,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_BASE64DATAEXCEPTION
 

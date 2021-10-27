@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_SEARCHRECENTSUGGESTIONSPROVIDER
-#define ANDROID_CONTENT_SEARCHRECENTSUGGESTIONSPROVIDER
-
 #include "../../__JniBaseClass.hpp"
 #include "ContentProvider.hpp"
 
@@ -175,6 +172,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_SEARCHRECENTSUGGESTIONSPROVIDER
 

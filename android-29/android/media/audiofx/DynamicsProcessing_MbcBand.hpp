@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_MBCBAND
-#define ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_MBCBAND
-
 #include "../../../__JniBaseClass.hpp"
 #include "DynamicsProcessing_BandBase.hpp"
 
@@ -247,6 +244,4 @@ namespace android::media::audiofx
 		}
 	};
 } // namespace android::media::audiofx
-
-#endif // ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_MBCBAND
 

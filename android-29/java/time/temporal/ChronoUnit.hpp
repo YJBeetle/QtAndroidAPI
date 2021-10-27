@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_TEMPORAL_CHRONOUNIT
-#define JAVA_TIME_TEMPORAL_CHRONOUNIT
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
@@ -296,6 +293,4 @@ namespace java::time::temporal
 		}
 	};
 } // namespace java::time::temporal
-
-#endif // JAVA_TIME_TEMPORAL_CHRONOUNIT
 

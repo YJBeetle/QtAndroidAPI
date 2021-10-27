@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_FORMAT_DATETIMEFORMATTERBUILDER
-#define JAVA_TIME_FORMAT_DATETIMEFORMATTERBUILDER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::time
@@ -502,6 +499,4 @@ namespace java::time::format
 		}
 	};
 } // namespace java::time::format
-
-#endif // JAVA_TIME_FORMAT_DATETIMEFORMATTERBUILDER
 

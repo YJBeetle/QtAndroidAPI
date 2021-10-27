@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_VOID
-#define JAVA_LANG_VOID
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -57,6 +54,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_VOID
 

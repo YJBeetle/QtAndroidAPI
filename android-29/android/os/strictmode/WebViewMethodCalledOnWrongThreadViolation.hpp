@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_STRICTMODE_WEBVIEWMETHODCALLEDONWRONGTHREADVIOLATION
-#define ANDROID_OS_STRICTMODE_WEBVIEWMETHODCALLEDONWRONGTHREADVIOLATION
-
 #include "../../../__JniBaseClass.hpp"
 #include "Violation.hpp"
 
@@ -49,6 +46,4 @@ namespace android::os::strictmode
 		}
 	};
 } // namespace android::os::strictmode
-
-#endif // ANDROID_OS_STRICTMODE_WEBVIEWMETHODCALLEDONWRONGTHREADVIOLATION
 

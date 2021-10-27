@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIADATASOURCE
-#define ANDROID_MEDIA_MEDIADATASOURCE
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -69,6 +66,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIADATASOURCE
 

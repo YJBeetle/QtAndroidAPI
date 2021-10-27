@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_VR_VRLISTENERSERVICE
-#define ANDROID_SERVICE_VR_VRLISTENERSERVICE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
@@ -105,6 +102,4 @@ namespace android::service::vr
 		}
 	};
 } // namespace android::service::vr
-
-#endif // ANDROID_SERVICE_VR_VRLISTENERSERVICE
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_ANDROIDEXCEPTION
-#define ANDROID_UTIL_ANDROIDEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 
@@ -118,6 +115,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_ANDROIDEXCEPTION
 

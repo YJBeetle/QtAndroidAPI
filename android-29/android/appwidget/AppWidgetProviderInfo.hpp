@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APPWIDGET_APPWIDGETPROVIDERINFO
-#define ANDROID_APPWIDGET_APPWIDGETPROVIDERINFO
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -360,6 +357,4 @@ namespace android::appwidget
 		}
 	};
 } // namespace android::appwidget
-
-#endif // ANDROID_APPWIDGET_APPWIDGETPROVIDERINFO
 

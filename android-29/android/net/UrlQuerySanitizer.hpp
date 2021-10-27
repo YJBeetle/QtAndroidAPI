@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_URLQUERYSANITIZER
-#define ANDROID_NET_URLQUERYSANITIZER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -376,6 +373,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_URLQUERYSANITIZER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_CRYPTO_SPEC_PSOURCE_PSPECIFIED
-#define JAVAX_CRYPTO_SPEC_PSOURCE_PSPECIFIED
-
 #include "../../../__JniBaseClass.hpp"
 #include "PSource.hpp"
 
@@ -69,6 +66,4 @@ namespace javax::crypto::spec
 		}
 	};
 } // namespace javax::crypto::spec
-
-#endif // JAVAX_CRYPTO_SPEC_PSOURCE_PSPECIFIED
 

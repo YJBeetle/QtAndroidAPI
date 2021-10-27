@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_CELLINFOLTE
-#define ANDROID_TELEPHONY_CELLINFOLTE
-
 #include "../../__JniBaseClass.hpp"
 #include "CellInfo.hpp"
 
@@ -132,6 +129,4 @@ namespace android::telephony
 		}
 	};
 } // namespace android::telephony
-
-#endif // ANDROID_TELEPHONY_CELLINFOLTE
 

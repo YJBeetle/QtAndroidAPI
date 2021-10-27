@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_ALLPERMISSION
-#define JAVA_SECURITY_ALLPERMISSION
-
 #include "../../__JniBaseClass.hpp"
 #include "Permission.hpp"
 
@@ -128,6 +125,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_ALLPERMISSION
 

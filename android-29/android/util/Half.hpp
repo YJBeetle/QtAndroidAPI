@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_HALF
-#define ANDROID_UTIL_HALF
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Number.hpp"
 
@@ -673,6 +670,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_HALF
 

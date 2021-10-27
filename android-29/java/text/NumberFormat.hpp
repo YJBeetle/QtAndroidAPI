@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TEXT_NUMBERFORMAT
-#define JAVA_TEXT_NUMBERFORMAT
-
 #include "../../__JniBaseClass.hpp"
 #include "Format.hpp"
 
@@ -504,6 +501,4 @@ namespace java::text
 		}
 	};
 } // namespace java::text
-
-#endif // JAVA_TEXT_NUMBERFORMAT
 

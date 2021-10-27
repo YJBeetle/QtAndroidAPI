@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_VIEWDEBUG_HIERARCHYTRACETYPE
-#define ANDROID_VIEW_VIEWDEBUG_HIERARCHYTRACETYPE
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
@@ -150,6 +147,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_VIEWDEBUG_HIERARCHYTRACETYPE
 

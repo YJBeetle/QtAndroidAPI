@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_NOTIFICATION_DECORATEDMEDIACUSTOMVIEWSTYLE
-#define ANDROID_APP_NOTIFICATION_DECORATEDMEDIACUSTOMVIEWSTYLE
-
 #include "../../__JniBaseClass.hpp"
 #include "Notification_Style.hpp"
 #include "Notification_MediaStyle.hpp"
@@ -51,6 +48,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_NOTIFICATION_DECORATEDMEDIACUSTOMVIEWSTYLE
 

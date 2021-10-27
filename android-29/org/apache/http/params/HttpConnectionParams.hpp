@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_APACHE_HTTP_PARAMS_HTTPCONNECTIONPARAMS
-#define ORG_APACHE_HTTP_PARAMS_HTTPCONNECTIONPARAMS
-
 #include "../../../../__JniBaseClass.hpp"
 
 
@@ -174,6 +171,4 @@ namespace org::apache::http::params
 		}
 	};
 } // namespace org::apache::http::params
-
-#endif // ORG_APACHE_HTTP_PARAMS_HTTPCONNECTIONPARAMS
 

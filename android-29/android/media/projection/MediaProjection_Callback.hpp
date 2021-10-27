@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_PROJECTION_MEDIAPROJECTION_CALLBACK
-#define ANDROID_MEDIA_PROJECTION_MEDIAPROJECTION_CALLBACK
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -57,6 +54,4 @@ namespace android::media::projection
 		}
 	};
 } // namespace android::media::projection
-
-#endif // ANDROID_MEDIA_PROJECTION_MEDIAPROJECTION_CALLBACK
 

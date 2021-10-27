@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SECURITY_ATTESTEDKEYPAIR
-#define ANDROID_SECURITY_ATTESTEDKEYPAIR
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::security
@@ -69,6 +66,4 @@ namespace android::security
 		}
 	};
 } // namespace android::security
-
-#endif // ANDROID_SECURITY_ATTESTEDKEYPAIR
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_CERT_PKIXPARAMETERS
-#define JAVA_SECURITY_CERT_PKIXPARAMETERS
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::security
@@ -332,6 +329,4 @@ namespace java::security::cert
 		}
 	};
 } // namespace java::security::cert
-
-#endif // JAVA_SECURITY_CERT_PKIXPARAMETERS
 

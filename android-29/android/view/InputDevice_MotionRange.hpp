@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_INPUTDEVICE_MOTIONRANGE
-#define ANDROID_VIEW_INPUTDEVICE_MOTIONRANGE
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -121,6 +118,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_INPUTDEVICE_MOTIONRANGE
 

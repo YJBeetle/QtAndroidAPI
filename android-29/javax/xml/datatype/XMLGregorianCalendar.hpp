@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_DATATYPE_XMLGREGORIANCALENDAR
-#define JAVAX_XML_DATATYPE_XMLGREGORIANCALENDAR
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::math
@@ -424,6 +421,4 @@ namespace javax::xml::datatype
 		}
 	};
 } // namespace javax::xml::datatype
-
-#endif // JAVAX_XML_DATATYPE_XMLGREGORIANCALENDAR
 

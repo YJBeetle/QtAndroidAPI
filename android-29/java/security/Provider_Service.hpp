@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_PROVIDER_SERVICE
-#define JAVA_SECURITY_PROVIDER_SERVICE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -166,6 +163,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_PROVIDER_SERVICE
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_SETTINGS_SYSTEM
-#define ANDROID_PROVIDER_SETTINGS_SYSTEM
-
 #include "../../__JniBaseClass.hpp"
 #include "Settings_NameValueTable.hpp"
 
@@ -1303,6 +1300,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_SETTINGS_SYSTEM
 

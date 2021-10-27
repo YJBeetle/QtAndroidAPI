@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_SERVICECONFIGURATIONERROR
-#define JAVA_UTIL_SERVICECONFIGURATIONERROR
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Error.hpp"
 
@@ -87,6 +84,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_SERVICECONFIGURATIONERROR
 

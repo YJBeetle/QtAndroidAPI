@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MIDI_MIDIOUTPUTPORT
-#define ANDROID_MEDIA_MIDI_MIDIOUTPUTPORT
-
 #include "../../../__JniBaseClass.hpp"
 #include "MidiSender.hpp"
 
@@ -93,6 +90,4 @@ namespace android::media::midi
 		}
 	};
 } // namespace android::media::midi
-
-#endif // ANDROID_MEDIA_MIDI_MIDIOUTPUTPORT
 

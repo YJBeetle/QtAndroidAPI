@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIAROUTER
-#define ANDROID_MEDIA_MEDIAROUTER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -269,6 +266,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIAROUTER
 

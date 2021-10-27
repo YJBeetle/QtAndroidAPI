@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHANNELS_SOCKETCHANNEL
-#define JAVA_NIO_CHANNELS_SOCKETCHANNEL
-
 #include "../../../__JniBaseClass.hpp"
 #include "spi/AbstractInterruptibleChannel.hpp"
 #include "SelectableChannel.hpp"
@@ -258,6 +255,4 @@ namespace java::nio::channels
 		}
 	};
 } // namespace java::nio::channels
-
-#endif // JAVA_NIO_CHANNELS_SOCKETCHANNEL
 

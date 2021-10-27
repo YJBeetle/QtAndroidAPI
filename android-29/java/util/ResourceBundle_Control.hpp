@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_RESOURCEBUNDLE_CONTROL
-#define JAVA_UTIL_RESOURCEBUNDLE_CONTROL
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -308,6 +305,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_RESOURCEBUNDLE_CONTROL
 

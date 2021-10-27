@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_SURFACETEXTURE_OUTOFRESOURCESEXCEPTION
-#define ANDROID_GRAPHICS_SURFACETEXTURE_OUTOFRESOURCESEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 
@@ -73,6 +70,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_SURFACETEXTURE_OUTOFRESOURCESEXCEPTION
 

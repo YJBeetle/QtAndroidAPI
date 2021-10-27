@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PREFERENCE_PREFERENCESCREEN
-#define ANDROID_PREFERENCE_PREFERENCESCREEN
-
 #include "../../__JniBaseClass.hpp"
 #include "Preference.hpp"
 #include "PreferenceGroup.hpp"
@@ -121,6 +118,4 @@ namespace android::preference
 		}
 	};
 } // namespace android::preference
-
-#endif // ANDROID_PREFERENCE_PREFERENCESCREEN
 

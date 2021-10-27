@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_FORMATTER_BIGDECIMALLAYOUTFORM
-#define JAVA_UTIL_FORMATTER_BIGDECIMALLAYOUTFORM
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Enum.hpp"
 
@@ -96,6 +93,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_FORMATTER_BIGDECIMALLAYOUTFORM
 

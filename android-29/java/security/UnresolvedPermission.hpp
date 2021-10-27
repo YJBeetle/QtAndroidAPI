@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_UNRESOLVEDPERMISSION
-#define JAVA_SECURITY_UNRESOLVEDPERMISSION
-
 #include "../../__JniBaseClass.hpp"
 #include "Permission.hpp"
 
@@ -172,6 +169,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_UNRESOLVEDPERMISSION
 

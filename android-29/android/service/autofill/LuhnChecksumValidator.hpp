@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_AUTOFILL_LUHNCHECKSUMVALIDATOR
-#define ANDROID_SERVICE_AUTOFILL_LUHNCHECKSUMVALIDATOR
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -91,6 +88,4 @@ namespace android::service::autofill
 		}
 	};
 } // namespace android::service::autofill
-
-#endif // ANDROID_SERVICE_AUTOFILL_LUHNCHECKSUMVALIDATOR
 

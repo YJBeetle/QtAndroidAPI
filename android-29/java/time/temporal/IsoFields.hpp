@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_TEMPORAL_ISOFIELDS
-#define JAVA_TIME_TEMPORAL_ISOFIELDS
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -102,6 +99,4 @@ namespace java::time::temporal
 		}
 	};
 } // namespace java::time::temporal
-
-#endif // JAVA_TIME_TEMPORAL_ISOFIELDS
 

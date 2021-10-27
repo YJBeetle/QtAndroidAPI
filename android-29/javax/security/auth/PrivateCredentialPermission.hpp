@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_SECURITY_AUTH_PRIVATECREDENTIALPERMISSION
-#define JAVAX_SECURITY_AUTH_PRIVATECREDENTIALPERMISSION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/security/Permission.hpp"
 
@@ -137,6 +134,4 @@ namespace javax::security::auth
 		}
 	};
 } // namespace javax::security::auth
-
-#endif // JAVAX_SECURITY_AUTH_PRIVATECREDENTIALPERMISSION
 

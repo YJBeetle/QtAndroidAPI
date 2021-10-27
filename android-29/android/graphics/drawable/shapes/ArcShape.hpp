@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_DRAWABLE_SHAPES_ARCSHAPE
-#define ANDROID_GRAPHICS_DRAWABLE_SHAPES_ARCSHAPE
-
 #include "../../../../__JniBaseClass.hpp"
 #include "Shape.hpp"
 #include "RectShape.hpp"
@@ -140,6 +137,4 @@ namespace android::graphics::drawable::shapes
 		}
 	};
 } // namespace android::graphics::drawable::shapes
-
-#endif // ANDROID_GRAPHICS_DRAWABLE_SHAPES_ARCSHAPE
 

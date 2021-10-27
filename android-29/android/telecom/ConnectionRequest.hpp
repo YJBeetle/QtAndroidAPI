@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELECOM_CONNECTIONREQUEST
-#define ANDROID_TELECOM_CONNECTIONREQUEST
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -183,6 +180,4 @@ namespace android::telecom
 		}
 	};
 } // namespace android::telecom
-
-#endif // ANDROID_TELECOM_CONNECTIONREQUEST
 

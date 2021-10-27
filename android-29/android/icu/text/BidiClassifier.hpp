@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_BIDICLASSIFIER
-#define ANDROID_ICU_TEXT_BIDICLASSIFIER
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -77,6 +74,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_BIDICLASSIFIER
 

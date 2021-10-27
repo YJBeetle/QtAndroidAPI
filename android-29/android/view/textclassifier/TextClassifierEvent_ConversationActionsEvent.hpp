@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_TEXTCLASSIFIER_TEXTCLASSIFIEREVENT_CONVERSATIONACTIONSEVENT
-#define ANDROID_VIEW_TEXTCLASSIFIER_TEXTCLASSIFIEREVENT_CONVERSATIONACTIONSEVENT
-
 #include "../../../__JniBaseClass.hpp"
 #include "TextClassifierEvent.hpp"
 
@@ -63,6 +60,4 @@ namespace android::view::textclassifier
 		}
 	};
 } // namespace android::view::textclassifier
-
-#endif // ANDROID_VIEW_TEXTCLASSIFIER_TEXTCLASSIFIEREVENT_CONVERSATIONACTIONSEVENT
 

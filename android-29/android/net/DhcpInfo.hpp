@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_DHCPINFO
-#define ANDROID_NET_DHCPINFO
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -129,6 +126,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_DHCPINFO
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_HOTSPOT2_OMADM_PPSMOPARSER
-#define ANDROID_NET_WIFI_HOTSPOT2_OMADM_PPSMOPARSER
-
 #include "../../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net::wifi::hotspot2
@@ -73,6 +70,4 @@ namespace android::net::wifi::hotspot2::omadm
 		}
 	};
 } // namespace android::net::wifi::hotspot2::omadm
-
-#endif // ANDROID_NET_WIFI_HOTSPOT2_OMADM_PPSMOPARSER
 

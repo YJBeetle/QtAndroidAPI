@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_RENDERSCRIPT_SCRIPTGROUP_BUILDER2
-#define ANDROID_RENDERSCRIPT_SCRIPTGROUP_BUILDER2
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::renderscript
@@ -135,6 +132,4 @@ namespace android::renderscript
 		}
 	};
 } // namespace android::renderscript
-
-#endif // ANDROID_RENDERSCRIPT_SCRIPTGROUP_BUILDER2
 

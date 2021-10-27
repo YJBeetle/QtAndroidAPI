@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WEBKIT_WEBVIEW
-#define ANDROID_WEBKIT_WEBVIEW
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
@@ -1788,6 +1785,4 @@ namespace android::webkit
 		}
 	};
 } // namespace android::webkit
-
-#endif // ANDROID_WEBKIT_WEBVIEW
 

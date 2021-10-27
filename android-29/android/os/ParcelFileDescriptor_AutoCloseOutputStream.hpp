@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_PARCELFILEDESCRIPTOR_AUTOCLOSEOUTPUTSTREAM
-#define ANDROID_OS_PARCELFILEDESCRIPTOR_AUTOCLOSEOUTPUTSTREAM
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/io/OutputStream.hpp"
 #include "../../java/io/FileOutputStream.hpp"
@@ -66,6 +63,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_PARCELFILEDESCRIPTOR_AUTOCLOSEOUTPUTSTREAM
 

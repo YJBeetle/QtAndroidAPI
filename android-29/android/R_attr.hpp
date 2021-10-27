@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_R_ATTR
-#define ANDROID_R_ATTR
-
 #include "../__JniBaseClass.hpp"
 
 
@@ -11265,6 +11262,4 @@ namespace android
 		}
 	};
 } // namespace android
-
-#endif // ANDROID_R_ATTR
 

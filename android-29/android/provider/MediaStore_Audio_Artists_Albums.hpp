@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_MEDIASTORE_AUDIO_ARTISTS_ALBUMS
-#define ANDROID_PROVIDER_MEDIASTORE_AUDIO_ARTISTS_ALBUMS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -76,6 +73,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_MEDIASTORE_AUDIO_ARTISTS_ALBUMS
 

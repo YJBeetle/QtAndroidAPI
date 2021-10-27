@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TRANSITION_CIRCULARPROPAGATION
-#define ANDROID_TRANSITION_CIRCULARPROPAGATION
-
 #include "../../__JniBaseClass.hpp"
 #include "TransitionPropagation.hpp"
 #include "VisibilityPropagation.hpp"
@@ -87,6 +84,4 @@ namespace android::transition
 		}
 	};
 } // namespace android::transition
-
-#endif // ANDROID_TRANSITION_CIRCULARPROPAGATION
 

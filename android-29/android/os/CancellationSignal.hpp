@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_CANCELLATIONSIGNAL
-#define ANDROID_OS_CANCELLATIONSIGNAL
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -82,6 +79,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_CANCELLATIONSIGNAL
 

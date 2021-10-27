@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_BLUETOOTH_BLUETOOTHASSIGNEDNUMBERS
-#define ANDROID_BLUETOOTH_BLUETOOTHASSIGNEDNUMBERS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -1864,6 +1861,4 @@ namespace android::bluetooth
 		}
 	};
 } // namespace android::bluetooth
-
-#endif // ANDROID_BLUETOOTH_BLUETOOTHASSIGNEDNUMBERS
 

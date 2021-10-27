@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_XML_SAX_EXT_ATTRIBUTES2IMPL
-#define ORG_XML_SAX_EXT_ATTRIBUTES2IMPL
-
 #include "../../../../__JniBaseClass.hpp"
 #include "../helpers/AttributesImpl.hpp"
 
@@ -222,6 +219,4 @@ namespace org::xml::sax::ext
 		}
 	};
 } // namespace org::xml::sax::ext
-
-#endif // ORG_XML_SAX_EXT_ATTRIBUTES2IMPL
 

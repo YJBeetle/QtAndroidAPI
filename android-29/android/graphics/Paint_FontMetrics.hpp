@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_PAINT_FONTMETRICS
-#define ANDROID_GRAPHICS_PAINT_FONTMETRICS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -84,6 +81,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_PAINT_FONTMETRICS
 

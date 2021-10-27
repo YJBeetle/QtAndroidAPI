@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_SSL_SSLENGINES
-#define ANDROID_NET_SSL_SSLENGINES
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::javax::net::ssl
@@ -74,6 +71,4 @@ namespace android::net::ssl
 		}
 	};
 } // namespace android::net::ssl
-
-#endif // ANDROID_NET_SSL_SSLENGINES
 

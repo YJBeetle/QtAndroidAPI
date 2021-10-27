@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WEBKIT_JSPROMPTRESULT
-#define ANDROID_WEBKIT_JSPROMPTRESULT
-
 #include "../../__JniBaseClass.hpp"
 #include "JsResult.hpp"
 
@@ -67,6 +64,4 @@ namespace android::webkit
 		}
 	};
 } // namespace android::webkit
-
-#endif // ANDROID_WEBKIT_JSPROMPTRESULT
 

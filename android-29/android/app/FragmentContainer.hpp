@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_FRAGMENTCONTAINER
-#define ANDROID_APP_FRAGMENTCONTAINER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::view
@@ -71,6 +68,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_FRAGMENTCONTAINER
 

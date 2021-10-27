@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NFC_NFCEVENT
-#define ANDROID_NFC_NFCEVENT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::nfc
@@ -75,6 +72,4 @@ namespace android::nfc
 		}
 	};
 } // namespace android::nfc
-
-#endif // ANDROID_NFC_NFCEVENT
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_FILE_FILEVISITOPTION
-#define JAVA_NIO_FILE_FILEVISITOPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
@@ -87,6 +84,4 @@ namespace java::nio::file
 		}
 	};
 } // namespace java::nio::file
-
-#endif // JAVA_NIO_FILE_FILEVISITOPTION
 

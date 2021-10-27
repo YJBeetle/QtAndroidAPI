@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_VIDEOVIEW
-#define ANDROID_WIDGET_VIDEOVIEW
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/SurfaceView.hpp"
@@ -430,6 +427,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_VIDEOVIEW
 

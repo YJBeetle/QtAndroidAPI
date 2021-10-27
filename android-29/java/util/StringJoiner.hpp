@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_STRINGJOINER
-#define JAVA_UTIL_STRINGJOINER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -150,6 +147,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_STRINGJOINER
 

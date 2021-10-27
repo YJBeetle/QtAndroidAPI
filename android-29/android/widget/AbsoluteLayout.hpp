@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_ABSOLUTELAYOUT
-#define ANDROID_WIDGET_ABSOLUTELAYOUT
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
@@ -134,6 +131,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_ABSOLUTELAYOUT
 

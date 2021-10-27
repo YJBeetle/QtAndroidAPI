@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHANNELS_SPI_ABSTRACTINTERRUPTIBLECHANNEL
-#define JAVA_NIO_CHANNELS_SPI_ABSTRACTINTERRUPTIBLECHANNEL
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -69,6 +66,4 @@ namespace java::nio::channels::spi
 		}
 	};
 } // namespace java::nio::channels::spi
-
-#endif // JAVA_NIO_CHANNELS_SPI_ABSTRACTINTERRUPTIBLECHANNEL
 

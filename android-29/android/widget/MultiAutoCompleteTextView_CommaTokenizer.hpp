@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_MULTIAUTOCOMPLETETEXTVIEW_COMMATOKENIZER
-#define ANDROID_WIDGET_MULTIAUTOCOMPLETETEXTVIEW_COMMATOKENIZER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -107,6 +104,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_MULTIAUTOCOMPLETETEXTVIEW_COMMATOKENIZER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SQL_SQLNONTRANSIENTEXCEPTION
-#define JAVA_SQL_SQLNONTRANSIENTEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 #include "SQLException.hpp"
@@ -230,6 +227,4 @@ namespace java::sql
 		}
 	};
 } // namespace java::sql
-
-#endif // JAVA_SQL_SQLNONTRANSIENTEXCEPTION
 

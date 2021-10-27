@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_SETTINGS_SETTINGNOTFOUNDEXCEPTION
-#define ANDROID_PROVIDER_SETTINGS_SETTINGNOTFOUNDEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../util/AndroidException.hpp"
@@ -62,6 +59,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_SETTINGS_SETTINGNOTFOUNDEXCEPTION
 

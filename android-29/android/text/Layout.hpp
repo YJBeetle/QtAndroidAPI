@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_LAYOUT
-#define ANDROID_TEXT_LAYOUT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -641,6 +638,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_LAYOUT
 

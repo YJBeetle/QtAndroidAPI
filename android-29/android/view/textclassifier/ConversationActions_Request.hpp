@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_TEXTCLASSIFIER_CONVERSATIONACTIONS_REQUEST
-#define ANDROID_VIEW_TEXTCLASSIFIER_CONVERSATIONACTIONS_REQUEST
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -156,6 +153,4 @@ namespace android::view::textclassifier
 		}
 	};
 } // namespace android::view::textclassifier
-
-#endif // ANDROID_VIEW_TEXTCLASSIFIER_CONVERSATIONACTIONS_REQUEST
 

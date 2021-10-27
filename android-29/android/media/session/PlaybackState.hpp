@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_SESSION_PLAYBACKSTATE
-#define ANDROID_MEDIA_SESSION_PLAYBACKSTATE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -421,6 +418,4 @@ namespace android::media::session
 		}
 	};
 } // namespace android::media::session
-
-#endif // ANDROID_MEDIA_SESSION_PLAYBACKSTATE
 

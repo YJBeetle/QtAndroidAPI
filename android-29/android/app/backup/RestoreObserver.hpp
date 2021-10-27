@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_BACKUP_RESTOREOBSERVER
-#define ANDROID_APP_BACKUP_RESTOREOBSERVER
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -87,6 +84,4 @@ namespace android::app::backup
 		}
 	};
 } // namespace android::app::backup
-
-#endif // ANDROID_APP_BACKUP_RESTOREOBSERVER
 

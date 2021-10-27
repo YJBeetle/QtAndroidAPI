@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_COUNTDOWNTIMER
-#define ANDROID_OS_COUNTDOWNTIMER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -86,6 +83,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_COUNTDOWNTIMER
 

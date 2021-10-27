@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_DRAWABLE_SHAPES_ROUNDRECTSHAPE
-#define ANDROID_GRAPHICS_DRAWABLE_SHAPES_ROUNDRECTSHAPE
-
 #include "../../../../__JniBaseClass.hpp"
 #include "Shape.hpp"
 #include "RectShape.hpp"
@@ -131,6 +128,4 @@ namespace android::graphics::drawable::shapes
 		}
 	};
 } // namespace android::graphics::drawable::shapes
-
-#endif // ANDROID_GRAPHICS_DRAWABLE_SHAPES_ROUNDRECTSHAPE
 

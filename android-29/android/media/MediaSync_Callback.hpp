@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIASYNC_CALLBACK
-#define ANDROID_MEDIA_MEDIASYNC_CALLBACK
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media
@@ -70,6 +67,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIASYNC_CALLBACK
 

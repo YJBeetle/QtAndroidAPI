@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_VIEWDEBUG_RECYCLERTRACETYPE
-#define ANDROID_VIEW_VIEWDEBUG_RECYCLERTRACETYPE
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
@@ -132,6 +129,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_VIEWDEBUG_RECYCLERTRACETYPE
 

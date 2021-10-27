@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ANIMATION_ARGBEVALUATOR
-#define ANDROID_ANIMATION_ARGBEVALUATOR
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -60,6 +57,4 @@ namespace android::animation
 		}
 	};
 } // namespace android::animation
-
-#endif // ANDROID_ANIMATION_ARGBEVALUATOR
 

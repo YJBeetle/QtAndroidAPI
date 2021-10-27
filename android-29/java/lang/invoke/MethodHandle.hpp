@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_INVOKE_METHODHANDLE
-#define JAVA_LANG_INVOKE_METHODHANDLE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang::invoke
@@ -212,6 +209,4 @@ namespace java::lang::invoke
 		}
 	};
 } // namespace java::lang::invoke
-
-#endif // JAVA_LANG_INVOKE_METHODHANDLE
 

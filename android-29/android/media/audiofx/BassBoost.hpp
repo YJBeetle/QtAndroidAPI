@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_AUDIOFX_BASSBOOST
-#define ANDROID_MEDIA_AUDIOFX_BASSBOOST
-
 #include "../../../__JniBaseClass.hpp"
 #include "AudioEffect.hpp"
 
@@ -126,6 +123,4 @@ namespace android::media::audiofx
 		}
 	};
 } // namespace android::media::audiofx
-
-#endif // ANDROID_MEDIA_AUDIOFX_BASSBOOST
 

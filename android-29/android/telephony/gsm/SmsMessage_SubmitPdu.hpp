@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_GSM_SMSMESSAGE_SUBMITPDU
-#define ANDROID_TELEPHONY_GSM_SMSMESSAGE_SUBMITPDU
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -73,6 +70,4 @@ namespace android::telephony::gsm
 		}
 	};
 } // namespace android::telephony::gsm
-
-#endif // ANDROID_TELEPHONY_GSM_SMSMESSAGE_SUBMITPDU
 

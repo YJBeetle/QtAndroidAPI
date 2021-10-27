@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_WALLPAPERCOLORS
-#define ANDROID_APP_WALLPAPERCOLORS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -185,6 +182,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_WALLPAPERCOLORS
 

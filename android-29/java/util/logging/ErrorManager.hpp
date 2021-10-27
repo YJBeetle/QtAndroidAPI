@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_LOGGING_ERRORMANAGER
-#define JAVA_UTIL_LOGGING_ERRORMANAGER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -124,6 +121,4 @@ namespace java::util::logging
 		}
 	};
 } // namespace java::util::logging
-
-#endif // JAVA_UTIL_LOGGING_ERRORMANAGER
 

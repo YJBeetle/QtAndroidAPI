@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_CONTENTQUERYMAP
-#define ANDROID_CONTENT_CONTENTQUERYMAP
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/util/Observable.hpp"
 
@@ -131,6 +128,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_CONTENTQUERYMAP
 

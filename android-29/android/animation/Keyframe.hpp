@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ANIMATION_KEYFRAME
-#define ANDROID_ANIMATION_KEYFRAME
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -187,6 +184,4 @@ namespace android::animation
 		}
 	};
 } // namespace android::animation
-
-#endif // ANDROID_ANIMATION_KEYFRAME
 

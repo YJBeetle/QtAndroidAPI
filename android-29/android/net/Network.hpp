@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_NETWORK
-#define ANDROID_NET_NETWORK
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -253,6 +250,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_NETWORK
 

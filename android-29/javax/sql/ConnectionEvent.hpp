@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_SQL_CONNECTIONEVENT
-#define JAVAX_SQL_CONNECTIONEVENT
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/util/EventObject.hpp"
 
@@ -81,6 +78,4 @@ namespace javax::sql
 		}
 	};
 } // namespace javax::sql
-
-#endif // JAVAX_SQL_CONNECTIONEVENT
 

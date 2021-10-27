@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APPWIDGET_APPWIDGETHOST
-#define ANDROID_APPWIDGET_APPWIDGETHOST
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -160,6 +157,4 @@ namespace android::appwidget
 		}
 	};
 } // namespace android::appwidget
-
-#endif // ANDROID_APPWIDGET_APPWIDGETHOST
 

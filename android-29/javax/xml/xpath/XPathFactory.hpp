@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_XPATH_XPATHFACTORY
-#define JAVAX_XML_XPATH_XPATHFACTORY
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -215,6 +212,4 @@ namespace javax::xml::xpath
 		}
 	};
 } // namespace javax::xml::xpath
-
-#endif // JAVAX_XML_XPATH_XPATHFACTORY
 

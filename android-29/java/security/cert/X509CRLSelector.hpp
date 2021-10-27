@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_CERT_X509CRLSELECTOR
-#define JAVA_SECURITY_CERT_X509CRLSELECTOR
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::math
@@ -242,6 +239,4 @@ namespace java::security::cert
 		}
 	};
 } // namespace java::security::cert
-
-#endif // JAVA_SECURITY_CERT_X509CRLSELECTOR
 

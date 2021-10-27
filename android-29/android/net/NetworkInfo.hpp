@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_NETWORKINFO
-#define ANDROID_NET_NETWORKINFO
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -202,6 +199,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_NETWORKINFO
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_TEXTUTILS_SIMPLESTRINGSPLITTER
-#define ANDROID_TEXT_TEXTUTILS_SIMPLESTRINGSPLITTER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -101,6 +98,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_TEXTUTILS_SIMPLESTRINGSPLITTER
 

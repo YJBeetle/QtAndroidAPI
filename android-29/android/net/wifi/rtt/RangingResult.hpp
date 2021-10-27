@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_RTT_RANGINGRESULT
-#define ANDROID_NET_WIFI_RTT_RANGINGRESULT
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -224,6 +221,4 @@ namespace android::net::wifi::rtt
 		}
 	};
 } // namespace android::net::wifi::rtt
-
-#endif // ANDROID_NET_WIFI_RTT_RANGINGRESULT
 

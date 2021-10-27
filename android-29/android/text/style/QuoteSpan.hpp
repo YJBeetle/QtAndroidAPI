@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_STYLE_QUOTESPAN
-#define ANDROID_TEXT_STYLE_QUOTESPAN
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -238,6 +235,4 @@ namespace android::text::style
 		}
 	};
 } // namespace android::text::style
-
-#endif // ANDROID_TEXT_STYLE_QUOTESPAN
 

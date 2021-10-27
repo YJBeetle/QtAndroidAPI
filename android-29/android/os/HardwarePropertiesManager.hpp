@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_HARDWAREPROPERTIESMANAGER
-#define ANDROID_OS_HARDWAREPROPERTIESMANAGER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -146,6 +143,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_HARDWAREPROPERTIESMANAGER
 

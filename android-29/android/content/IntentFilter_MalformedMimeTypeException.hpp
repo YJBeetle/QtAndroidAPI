@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_INTENTFILTER_MALFORMEDMIMETYPEEXCEPTION
-#define ANDROID_CONTENT_INTENTFILTER_MALFORMEDMIMETYPEEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../util/AndroidException.hpp"
@@ -74,6 +71,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_INTENTFILTER_MALFORMEDMIMETYPEEXCEPTION
 

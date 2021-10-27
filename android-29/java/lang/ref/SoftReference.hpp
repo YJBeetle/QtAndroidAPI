@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_REF_SOFTREFERENCE
-#define JAVA_LANG_REF_SOFTREFERENCE
-
 #include "../../../__JniBaseClass.hpp"
 #include "Reference.hpp"
 
@@ -81,6 +78,4 @@ namespace java::lang::ref
 		}
 	};
 } // namespace java::lang::ref
-
-#endif // JAVA_LANG_REF_SOFTREFERENCE
 

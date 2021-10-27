@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_UNICODEFILTER
-#define ANDROID_ICU_TEXT_UNICODEFILTER
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -69,6 +66,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_UNICODEFILTER
 

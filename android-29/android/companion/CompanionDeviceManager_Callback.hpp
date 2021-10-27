@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_COMPANION_COMPANIONDEVICEMANAGER_CALLBACK
-#define ANDROID_COMPANION_COMPANIONDEVICEMANAGER_CALLBACK
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -81,6 +78,4 @@ namespace android::companion
 		}
 	};
 } // namespace android::companion
-
-#endif // ANDROID_COMPANION_COMPANIONDEVICEMANAGER_CALLBACK
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_COMPOSESHADER
-#define ANDROID_GRAPHICS_COMPOSESHADER
-
 #include "../../__JniBaseClass.hpp"
 #include "Shader.hpp"
 
@@ -112,6 +109,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_COMPOSESHADER
 

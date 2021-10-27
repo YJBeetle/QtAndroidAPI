@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_EXCHANGER
-#define JAVA_UTIL_CONCURRENT_EXCHANGER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util::concurrent
@@ -74,6 +71,4 @@ namespace java::util::concurrent
 		}
 	};
 } // namespace java::util::concurrent
-
-#endif // JAVA_UTIL_CONCURRENT_EXCHANGER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SECURITY_KEYCHAIN
-#define ANDROID_SECURITY_KEYCHAIN
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -305,6 +302,4 @@ namespace android::security
 		}
 	};
 } // namespace android::security
-
-#endif // ANDROID_SECURITY_KEYCHAIN
 

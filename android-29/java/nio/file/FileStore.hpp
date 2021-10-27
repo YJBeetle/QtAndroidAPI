@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_FILE_FILESTORE
-#define JAVA_NIO_FILE_FILESTORE
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -158,6 +155,4 @@ namespace java::nio::file
 		}
 	};
 } // namespace java::nio::file
-
-#endif // JAVA_NIO_FILE_FILESTORE
 

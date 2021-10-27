@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_PRINTSTREAM
-#define JAVA_IO_PRINTSTREAM
-
 #include "../../__JniBaseClass.hpp"
 #include "OutputStream.hpp"
 #include "FilterOutputStream.hpp"
@@ -665,6 +662,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_PRINTSTREAM
 

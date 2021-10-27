@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_CAMERA2_CAMERAMETADATA
-#define ANDROID_HARDWARE_CAMERA2_CAMERAMETADATA
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -1752,6 +1749,4 @@ namespace android::hardware::camera2
 		}
 	};
 } // namespace android::hardware::camera2
-
-#endif // ANDROID_HARDWARE_CAMERA2_CAMERAMETADATA
 

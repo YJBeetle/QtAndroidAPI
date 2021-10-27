@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_WINDOWANIMATIONFRAMESTATS
-#define ANDROID_VIEW_WINDOWANIMATIONFRAMESTATS
-
 #include "../../__JniBaseClass.hpp"
 #include "FrameStats.hpp"
 
@@ -89,6 +86,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_WINDOWANIMATIONFRAMESTATS
 

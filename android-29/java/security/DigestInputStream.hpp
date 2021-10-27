@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_DIGESTINPUTSTREAM
-#define JAVA_SECURITY_DIGESTINPUTSTREAM
-
 #include "../../__JniBaseClass.hpp"
 #include "../io/InputStream.hpp"
 #include "../io/FilterInputStream.hpp"
@@ -118,6 +115,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_DIGESTINPUTSTREAM
 

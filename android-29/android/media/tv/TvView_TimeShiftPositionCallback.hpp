@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_TV_TVVIEW_TIMESHIFTPOSITIONCALLBACK
-#define ANDROID_MEDIA_TV_TVVIEW_TIMESHIFTPOSITIONCALLBACK
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -89,6 +86,4 @@ namespace android::media::tv
 		}
 	};
 } // namespace android::media::tv
-
-#endif // ANDROID_MEDIA_TV_TVVIEW_TIMESHIFTPOSITIONCALLBACK
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_TEXTCLASSIFIER_TEXTLINKS_TEXTLINKSPAN
-#define ANDROID_VIEW_TEXTCLASSIFIER_TEXTLINKS_TEXTLINKSPAN
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../text/style/CharacterStyle.hpp"
 #include "../../text/style/ClickableSpan.hpp"
@@ -80,6 +77,4 @@ namespace android::view::textclassifier
 		}
 	};
 } // namespace android::view::textclassifier
-
-#endif // ANDROID_VIEW_TEXTCLASSIFIER_TEXTLINKS_TEXTLINKSPAN
 

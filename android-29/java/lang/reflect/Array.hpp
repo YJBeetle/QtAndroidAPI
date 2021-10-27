@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_REFLECT_ARRAY
-#define JAVA_LANG_REFLECT_ARRAY
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -287,6 +284,4 @@ namespace java::lang::reflect
 		}
 	};
 } // namespace java::lang::reflect
-
-#endif // JAVA_LANG_REFLECT_ARRAY
 

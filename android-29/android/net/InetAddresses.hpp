@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_INETADDRESSES
-#define ANDROID_NET_INETADDRESSES
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::net
@@ -93,6 +90,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_INETADDRESSES
 

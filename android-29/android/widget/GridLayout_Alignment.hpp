@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_GRIDLAYOUT_ALIGNMENT
-#define ANDROID_WIDGET_GRIDLAYOUT_ALIGNMENT
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -48,6 +45,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_GRIDLAYOUT_ALIGNMENT
 

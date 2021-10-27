@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_CRYPTO_SHORTBUFFEREXCEPTION
-#define JAVAX_CRYPTO_SHORTBUFFEREXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../../java/security/GeneralSecurityException.hpp"
@@ -74,6 +71,4 @@ namespace javax::crypto
 		}
 	};
 } // namespace javax::crypto
-
-#endif // JAVAX_CRYPTO_SHORTBUFFEREXCEPTION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_SPEC_ECFIELDFP
-#define JAVA_SECURITY_SPEC_ECFIELDFP
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::math
@@ -89,6 +86,4 @@ namespace java::security::spec
 		}
 	};
 } // namespace java::security::spec
-
-#endif // JAVA_SECURITY_SPEC_ECFIELDFP
 

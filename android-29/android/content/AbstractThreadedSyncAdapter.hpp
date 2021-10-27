@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_ABSTRACTTHREADEDSYNCADAPTER
-#define ANDROID_CONTENT_ABSTRACTTHREADEDSYNCADAPTER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::accounts
@@ -200,6 +197,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_ABSTRACTTHREADEDSYNCADAPTER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DATABASE_CURSORJOINER_RESULT
-#define ANDROID_DATABASE_CURSORJOINER_RESULT
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
@@ -105,6 +102,4 @@ namespace android::database
 		}
 	};
 } // namespace android::database
-
-#endif // ANDROID_DATABASE_CURSORJOINER_RESULT
 

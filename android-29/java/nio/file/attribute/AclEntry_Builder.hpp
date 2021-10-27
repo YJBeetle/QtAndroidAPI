@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_FILE_ATTRIBUTE_ACLENTRY_BUILDER
-#define JAVA_NIO_FILE_ATTRIBUTE_ACLENTRY_BUILDER
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::nio::file::attribute
@@ -120,6 +117,4 @@ namespace java::nio::file::attribute
 		}
 	};
 } // namespace java::nio::file::attribute
-
-#endif // JAVA_NIO_FILE_ATTRIBUTE_ACLENTRY_BUILDER
 

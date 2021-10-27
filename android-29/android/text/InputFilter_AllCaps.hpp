@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_INPUTFILTER_ALLCAPS
-#define ANDROID_TEXT_INPUTFILTER_ALLCAPS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util
@@ -96,6 +93,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_INPUTFILTER_ALLCAPS
 

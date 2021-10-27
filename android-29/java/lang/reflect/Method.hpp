@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_REFLECT_METHOD
-#define JAVA_LANG_REFLECT_METHOD
-
 #include "../../../__JniBaseClass.hpp"
 #include "AccessibleObject.hpp"
 #include "Executable.hpp"
@@ -273,6 +270,4 @@ namespace java::lang::reflect
 		}
 	};
 } // namespace java::lang::reflect
-
-#endif // JAVA_LANG_REFLECT_METHOD
 

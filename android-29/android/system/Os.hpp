@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SYSTEM_OS
-#define ANDROID_SYSTEM_OS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::system
@@ -1508,6 +1505,4 @@ namespace android::system
 		}
 	};
 } // namespace android::system
-
-#endif // ANDROID_SYSTEM_OS
 

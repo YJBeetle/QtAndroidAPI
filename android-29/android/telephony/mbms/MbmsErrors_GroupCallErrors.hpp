@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_MBMS_MBMSERRORS_GROUPCALLERRORS
-#define ANDROID_TELEPHONY_MBMS_MBMSERRORS_GROUPCALLERRORS
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -64,6 +61,4 @@ namespace android::telephony::mbms
 		}
 	};
 } // namespace android::telephony::mbms
-
-#endif // ANDROID_TELEPHONY_MBMS_MBMSERRORS_GROUPCALLERRORS
 

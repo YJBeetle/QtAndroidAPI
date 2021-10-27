@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_STORAGE_STORAGEMANAGER
-#define ANDROID_OS_STORAGE_STORAGEMANAGER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -366,6 +363,4 @@ namespace android::os::storage
 		}
 	};
 } // namespace android::os::storage
-
-#endif // ANDROID_OS_STORAGE_STORAGEMANAGER
 

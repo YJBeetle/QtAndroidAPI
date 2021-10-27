@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_GENERALSECURITYEXCEPTION
-#define JAVA_SECURITY_GENERALSECURITYEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 
@@ -113,6 +110,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_GENERALSECURITYEXCEPTION
 

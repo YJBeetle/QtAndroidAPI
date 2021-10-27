@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_STYLE_UNDERLINESPAN
-#define ANDROID_TEXT_STYLE_UNDERLINESPAN
-
 #include "../../../__JniBaseClass.hpp"
 #include "CharacterStyle.hpp"
 
@@ -109,6 +106,4 @@ namespace android::text::style
 		}
 	};
 } // namespace android::text::style
-
-#endif // ANDROID_TEXT_STYLE_UNDERLINESPAN
 

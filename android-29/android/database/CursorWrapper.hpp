@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DATABASE_CURSORWRAPPER
-#define ANDROID_DATABASE_CURSORWRAPPER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -477,6 +474,4 @@ namespace android::database
 		}
 	};
 } // namespace android::database
-
-#endif // ANDROID_DATABASE_CURSORWRAPPER
 

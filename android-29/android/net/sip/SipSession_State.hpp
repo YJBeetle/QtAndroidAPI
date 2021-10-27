@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_SIP_SIPSESSION_STATE
-#define ANDROID_NET_SIP_SIPSESSION_STATE
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -146,6 +143,4 @@ namespace android::net::sip
 		}
 	};
 } // namespace android::net::sip
-
-#endif // ANDROID_NET_SIP_SIPSESSION_STATE
 

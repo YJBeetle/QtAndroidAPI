@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIADRM_PROVISIONREQUEST
-#define ANDROID_MEDIA_MEDIADRM_PROVISIONREQUEST
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -64,6 +61,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIADRM_PROVISIONREQUEST
 

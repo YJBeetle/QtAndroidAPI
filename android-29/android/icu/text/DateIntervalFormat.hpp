@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_DATEINTERVALFORMAT
-#define ANDROID_ICU_TEXT_DATEINTERVALFORMAT
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/text/Format.hpp"
 #include "UFormat.hpp"
@@ -338,6 +335,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_DATEINTERVALFORMAT
 

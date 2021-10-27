@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_VIEWGROUP_LAYOUTPARAMS
-#define ANDROID_VIEW_VIEWGROUP_LAYOUTPARAMS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -153,6 +150,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_VIEWGROUP_LAYOUTPARAMS
 

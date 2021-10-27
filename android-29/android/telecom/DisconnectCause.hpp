@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELECOM_DISCONNECTCAUSE
-#define ANDROID_TELECOM_DISCONNECTCAUSE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -345,6 +342,4 @@ namespace android::telecom
 		}
 	};
 } // namespace android::telecom
-
-#endif // ANDROID_TELECOM_DISCONNECTCAUSE
 

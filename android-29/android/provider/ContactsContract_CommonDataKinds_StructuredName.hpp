@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_CONTACTSCONTRACT_COMMONDATAKINDS_STRUCTUREDNAME
-#define ANDROID_PROVIDER_CONTACTSCONTRACT_COMMONDATAKINDS_STRUCTUREDNAME
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -183,6 +180,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_CONTACTSCONTRACT_COMMONDATAKINDS_STRUCTUREDNAME
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_ACCESSCONTROLCONTEXT
-#define JAVA_SECURITY_ACCESSCONTROLCONTEXT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::security
@@ -111,6 +108,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_ACCESSCONTROLCONTEXT
 

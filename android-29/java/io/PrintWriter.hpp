@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_PRINTWRITER
-#define JAVA_IO_PRINTWRITER
-
 #include "../../__JniBaseClass.hpp"
 #include "Writer.hpp"
 
@@ -696,6 +693,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_PRINTWRITER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_STRICTMODE_VMPOLICY
-#define ANDROID_OS_STRICTMODE_VMPOLICY
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util
@@ -70,6 +67,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_STRICTMODE_VMPOLICY
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MIDI_MIDIDEVICESERVICE
-#define ANDROID_MEDIA_MIDI_MIDIDEVICESERVICE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
@@ -134,6 +131,4 @@ namespace android::media::midi
 		}
 	};
 } // namespace android::media::midi
-
-#endif // ANDROID_MEDIA_MIDI_MIDIDEVICESERVICE
 

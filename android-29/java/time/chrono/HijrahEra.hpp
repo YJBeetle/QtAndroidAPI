@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_CHRONO_HIJRAHERA
-#define JAVA_TIME_CHRONO_HIJRAHERA
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
@@ -139,6 +136,4 @@ namespace java::time::chrono
 		}
 	};
 } // namespace java::time::chrono
-
-#endif // JAVA_TIME_CHRONO_HIJRAHERA
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_IDN
-#define JAVA_NET_IDN
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -153,6 +150,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_IDN
 

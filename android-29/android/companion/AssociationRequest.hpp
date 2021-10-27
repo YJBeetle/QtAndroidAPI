@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_COMPANION_ASSOCIATIONREQUEST
-#define ANDROID_COMPANION_ASSOCIATIONREQUEST
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -105,6 +102,4 @@ namespace android::companion
 		}
 	};
 } // namespace android::companion
-
-#endif // ANDROID_COMPANION_ASSOCIATIONREQUEST
 

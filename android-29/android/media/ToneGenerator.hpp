@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_TONEGENERATOR
-#define ANDROID_MEDIA_TONEGENERATOR
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -904,6 +901,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_TONEGENERATOR
 

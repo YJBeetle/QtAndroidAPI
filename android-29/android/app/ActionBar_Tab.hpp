@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_ACTIONBAR_TAB
-#define ANDROID_APP_ACTIONBAR_TAB
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics::drawable
@@ -231,6 +228,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_ACTIONBAR_TAB
 

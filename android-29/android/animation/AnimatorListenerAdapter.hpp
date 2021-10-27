@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ANIMATION_ANIMATORLISTENERADAPTER
-#define ANDROID_ANIMATION_ANIMATORLISTENERADAPTER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::animation
@@ -108,6 +105,4 @@ namespace android::animation
 		}
 	};
 } // namespace android::animation
-
-#endif // ANDROID_ANIMATION_ANIMATORLISTENERADAPTER
 

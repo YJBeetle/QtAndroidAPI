@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_FONTREQUEST
-#define ANDROID_PROVIDER_FONTREQUEST
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -138,6 +135,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_FONTREQUEST
 

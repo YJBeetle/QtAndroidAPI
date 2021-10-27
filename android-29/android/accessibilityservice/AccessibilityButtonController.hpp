@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ACCESSIBILITYSERVICE_ACCESSIBILITYBUTTONCONTROLLER
-#define ANDROID_ACCESSIBILITYSERVICE_ACCESSIBILITYBUTTONCONTROLLER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::accessibilityservice
@@ -94,6 +91,4 @@ namespace android::accessibilityservice
 		}
 	};
 } // namespace android::accessibilityservice
-
-#endif // ANDROID_ACCESSIBILITYSERVICE_ACCESSIBILITYBUTTONCONTROLLER
 

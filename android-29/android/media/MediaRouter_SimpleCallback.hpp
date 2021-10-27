@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIAROUTER_SIMPLECALLBACK
-#define ANDROID_MEDIA_MEDIAROUTER_SIMPLECALLBACK
-
 #include "../../__JniBaseClass.hpp"
 #include "MediaRouter_Callback.hpp"
 
@@ -150,6 +147,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIAROUTER_SIMPLECALLBACK
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_POINT
-#define ANDROID_GRAPHICS_POINT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -197,6 +194,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_POINT
 

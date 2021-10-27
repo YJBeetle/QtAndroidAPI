@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_PM_LAUNCHERACTIVITYINFO
-#define ANDROID_CONTENT_PM_LAUNCHERACTIVITYINFO
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -139,6 +136,4 @@ namespace android::content::pm
 		}
 	};
 } // namespace android::content::pm
-
-#endif // ANDROID_CONTENT_PM_LAUNCHERACTIVITYINFO
 

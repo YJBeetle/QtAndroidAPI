@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_THREADPOOLEXECUTOR_DISCARDOLDESTPOLICY
-#define JAVA_UTIL_CONCURRENT_THREADPOOLEXECUTOR_DISCARDOLDESTPOLICY
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util::concurrent
@@ -64,6 +61,4 @@ namespace java::util::concurrent
 		}
 	};
 } // namespace java::util::concurrent
-
-#endif // JAVA_UTIL_CONCURRENT_THREADPOOLEXECUTOR_DISCARDOLDESTPOLICY
 

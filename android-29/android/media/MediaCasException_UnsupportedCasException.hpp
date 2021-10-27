@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIACASEXCEPTION_UNSUPPORTEDCASEXCEPTION
-#define ANDROID_MEDIA_MEDIACASEXCEPTION_UNSUPPORTEDCASEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "MediaCasException.hpp"
@@ -50,6 +47,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIACASEXCEPTION_UNSUPPORTEDCASEXCEPTION
 

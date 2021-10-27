@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICLONGFIELDUPDATER
-#define JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICLONGFIELDUPDATER
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -234,6 +231,4 @@ namespace java::util::concurrent::atomic
 		}
 	};
 } // namespace java::util::concurrent::atomic
-
-#endif // JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICLONGFIELDUPDATER
 

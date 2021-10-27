@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_APPOPSMANAGER
-#define ANDROID_APP_APPOPSMANAGER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -801,6 +798,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_APPOPSMANAGER
 

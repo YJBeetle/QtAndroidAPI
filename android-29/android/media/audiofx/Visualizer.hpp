@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_AUDIOFX_VISUALIZER
-#define ANDROID_MEDIA_AUDIOFX_VISUALIZER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media::audiofx
@@ -317,6 +314,4 @@ namespace android::media::audiofx
 		}
 	};
 } // namespace android::media::audiofx
-
-#endif // ANDROID_MEDIA_AUDIOFX_VISUALIZER
 

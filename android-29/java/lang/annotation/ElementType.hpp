@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_ANNOTATION_ELEMENTTYPE
-#define JAVA_LANG_ANNOTATION_ELEMENTTYPE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../Enum.hpp"
 
@@ -186,6 +183,4 @@ namespace java::lang::annotation
 		}
 	};
 } // namespace java::lang::annotation
-
-#endif // JAVA_LANG_ANNOTATION_ELEMENTTYPE
 

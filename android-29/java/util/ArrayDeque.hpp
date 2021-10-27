@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_ARRAYDEQUE
-#define JAVA_UTIL_ARRAYDEQUE
-
 #include "../../__JniBaseClass.hpp"
 #include "AbstractCollection.hpp"
 
@@ -409,6 +406,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_ARRAYDEQUE
 

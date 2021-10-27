@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SQL_TIMESTAMP
-#define JAVA_SQL_TIMESTAMP
-
 #include "../../__JniBaseClass.hpp"
 #include "../util/Date.hpp"
 
@@ -262,6 +259,4 @@ namespace java::sql
 		}
 	};
 } // namespace java::sql
-
-#endif // JAVA_SQL_TIMESTAMP
 

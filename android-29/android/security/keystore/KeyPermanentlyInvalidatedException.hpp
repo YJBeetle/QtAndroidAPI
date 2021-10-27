@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SECURITY_KEYSTORE_KEYPERMANENTLYINVALIDATEDEXCEPTION
-#define ANDROID_SECURITY_KEYSTORE_KEYPERMANENTLYINVALIDATEDEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 #include "../../../java/security/GeneralSecurityException.hpp"
@@ -102,6 +99,4 @@ namespace android::security::keystore
 		}
 	};
 } // namespace android::security::keystore
-
-#endif // ANDROID_SECURITY_KEYSTORE_KEYPERMANENTLYINVALIDATEDEXCEPTION
 

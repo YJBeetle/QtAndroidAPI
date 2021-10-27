@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WEBKIT_WEBRESOURCEERROR
-#define ANDROID_WEBKIT_WEBRESOURCEERROR
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -64,6 +61,4 @@ namespace android::webkit
 		}
 	};
 } // namespace android::webkit
-
-#endif // ANDROID_WEBKIT_WEBRESOURCEERROR
 

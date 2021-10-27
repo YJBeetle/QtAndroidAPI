@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIACODEC_CRYPTOINFO_PATTERN
-#define ANDROID_MEDIA_MEDIACODEC_CRYPTOINFO_PATTERN
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -79,6 +76,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIACODEC_CRYPTOINFO_PATTERN
 

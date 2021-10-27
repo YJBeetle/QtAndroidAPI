@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_STANDARDSOCKETOPTIONS
-#define JAVA_NET_STANDARDSOCKETOPTIONS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -156,6 +153,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_STANDARDSOCKETOPTIONS
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_REJECTEDEXECUTIONEXCEPTION
-#define JAVA_UTIL_CONCURRENT_REJECTEDEXECUTIONEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 #include "../../lang/RuntimeException.hpp"
@@ -114,6 +111,4 @@ namespace java::util::concurrent
 		}
 	};
 } // namespace java::util::concurrent
-
-#endif // JAVA_UTIL_CONCURRENT_REJECTEDEXECUTIONEXCEPTION
 

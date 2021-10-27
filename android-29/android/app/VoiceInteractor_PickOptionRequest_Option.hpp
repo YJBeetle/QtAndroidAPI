@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_VOICEINTERACTOR_PICKOPTIONREQUEST_OPTION
-#define ANDROID_APP_VOICEINTERACTOR_PICKOPTIONREQUEST_OPTION
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -168,6 +165,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_VOICEINTERACTOR_PICKOPTIONREQUEST_OPTION
 

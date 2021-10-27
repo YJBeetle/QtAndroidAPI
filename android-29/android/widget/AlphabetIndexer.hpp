@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_ALPHABETINDEXER
-#define ANDROID_WIDGET_ALPHABETINDEXER
-
 #include "../../__JniBaseClass.hpp"
 #include "../database/DataSetObserver.hpp"
 
@@ -118,6 +115,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_ALPHABETINDEXER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_INPUTMETHODSERVICE_KEYBOARDVIEW
-#define ANDROID_INPUTMETHODSERVICE_KEYBOARDVIEW
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 
@@ -326,6 +323,4 @@ namespace android::inputmethodservice
 		}
 	};
 } // namespace android::inputmethodservice
-
-#endif // ANDROID_INPUTMETHODSERVICE_KEYBOARDVIEW
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_BEANS_PROPERTYCHANGELISTENERPROXY
-#define JAVA_BEANS_PROPERTYCHANGELISTENERPROXY
-
 #include "../../__JniBaseClass.hpp"
 #include "../util/EventListenerProxy.hpp"
 
@@ -86,6 +83,4 @@ namespace java::beans
 		}
 	};
 } // namespace java::beans
-
-#endif // JAVA_BEANS_PROPERTYCHANGELISTENERPROXY
 

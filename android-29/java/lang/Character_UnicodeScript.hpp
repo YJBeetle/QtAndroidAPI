@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_CHARACTER_UNICODESCRIPT
-#define JAVA_LANG_CHARACTER_UNICODESCRIPT
-
 #include "../../__JniBaseClass.hpp"
 #include "Enum.hpp"
 
@@ -1526,6 +1523,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_CHARACTER_UNICODESCRIPT
 

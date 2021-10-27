@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_AUDIODEVICECALLBACK
-#define ANDROID_MEDIA_AUDIODEVICECALLBACK
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -67,6 +64,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_AUDIODEVICECALLBACK
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_DATEFORMAT_FIELD
-#define ANDROID_ICU_TEXT_DATEFORMAT_FIELD
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/text/AttributedCharacterIterator_Attribute.hpp"
 #include "../../../java/text/Format_Field.hpp"
@@ -302,6 +299,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_DATEFORMAT_FIELD
 

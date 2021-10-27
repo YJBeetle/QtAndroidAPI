@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_SESSION_PLAYBACKSTATE_CUSTOMACTION_BUILDER
-#define ANDROID_MEDIA_SESSION_PLAYBACKSTATE_CUSTOMACTION_BUILDER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media::session
@@ -93,6 +90,4 @@ namespace android::media::session
 		}
 	};
 } // namespace android::media::session
-
-#endif // ANDROID_MEDIA_SESSION_PLAYBACKSTATE_CUSTOMACTION_BUILDER
 

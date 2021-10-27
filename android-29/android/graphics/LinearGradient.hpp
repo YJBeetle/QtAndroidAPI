@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_LINEARGRADIENT
-#define ANDROID_GRAPHICS_LINEARGRADIENT
-
 #include "../../__JniBaseClass.hpp"
 #include "Shader.hpp"
 
@@ -147,6 +144,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_LINEARGRADIENT
 

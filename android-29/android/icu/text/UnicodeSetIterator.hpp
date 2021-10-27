@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_UNICODESETITERATOR
-#define ANDROID_ICU_TEXT_UNICODESETITERATOR
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::icu::text
@@ -139,6 +136,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_UNICODESETITERATOR
 

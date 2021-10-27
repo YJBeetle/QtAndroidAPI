@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TEXT_ANNOTATION
-#define JAVA_TEXT_ANNOTATION
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -67,6 +64,4 @@ namespace java::text
 		}
 	};
 } // namespace java::text
-
-#endif // JAVA_TEXT_ANNOTATION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIADRM_CRYPTOSESSION
-#define ANDROID_MEDIA_MEDIADRM_CRYPTOSESSION
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media
@@ -96,6 +93,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIADRM_CRYPTOSESSION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_TREEMAP
-#define JAVA_UTIL_TREEMAP
-
 #include "../../__JniBaseClass.hpp"
 #include "AbstractMap.hpp"
 
@@ -479,6 +476,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_TREEMAP
 

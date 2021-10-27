@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELECOM_CALLSCREENINGSERVICE_CALLRESPONSE_BUILDER
-#define ANDROID_TELECOM_CALLSCREENINGSERVICE_CALLRESPONSE_BUILDER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::telecom
@@ -107,6 +104,4 @@ namespace android::telecom
 		}
 	};
 } // namespace android::telecom
-
-#endif // ANDROID_TELECOM_CALLSCREENINGSERVICE_CALLRESPONSE_BUILDER
 

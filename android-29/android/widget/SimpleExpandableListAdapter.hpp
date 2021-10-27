@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_SIMPLEEXPANDABLELISTADAPTER
-#define ANDROID_WIDGET_SIMPLEEXPANDABLELISTADAPTER
-
 #include "../../__JniBaseClass.hpp"
 #include "BaseExpandableListAdapter.hpp"
 
@@ -267,6 +264,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_SIMPLEEXPANDABLELISTADAPTER
 

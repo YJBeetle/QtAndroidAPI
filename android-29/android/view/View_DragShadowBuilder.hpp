@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_VIEW_DRAGSHADOWBUILDER
-#define ANDROID_VIEW_VIEW_DRAGSHADOWBUILDER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -105,6 +102,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_VIEW_DRAGSHADOWBUILDER
 

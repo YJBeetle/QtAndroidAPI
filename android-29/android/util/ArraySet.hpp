@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_ARRAYSET
-#define ANDROID_UTIL_ARRAYSET
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -291,6 +288,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_ARRAYSET
 

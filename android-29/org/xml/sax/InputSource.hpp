@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_XML_SAX_INPUTSOURCE
-#define ORG_XML_SAX_INPUTSOURCE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -230,6 +227,4 @@ namespace org::xml::sax
 		}
 	};
 } // namespace org::xml::sax
-
-#endif // ORG_XML_SAX_INPUTSOURCE
 

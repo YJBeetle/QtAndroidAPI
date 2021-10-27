@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_STYLE_TYPEFACESPAN
-#define ANDROID_TEXT_STYLE_TYPEFACESPAN
-
 #include "../../../__JniBaseClass.hpp"
 #include "CharacterStyle.hpp"
 #include "MetricAffectingSpan.hpp"
@@ -165,6 +162,4 @@ namespace android::text::style
 		}
 	};
 } // namespace android::text::style
-
-#endif // ANDROID_TEXT_STYLE_TYPEFACESPAN
 

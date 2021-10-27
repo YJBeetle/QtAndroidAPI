@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DATABASE_SQLITE_SQLITESTATEMENT
-#define ANDROID_DATABASE_SQLITE_SQLITESTATEMENT
-
 #include "../../../__JniBaseClass.hpp"
 #include "SQLiteClosable.hpp"
 #include "SQLiteProgram.hpp"
@@ -116,6 +113,4 @@ namespace android::database::sqlite
 		}
 	};
 } // namespace android::database::sqlite
-
-#endif // ANDROID_DATABASE_SQLITE_SQLITESTATEMENT
 

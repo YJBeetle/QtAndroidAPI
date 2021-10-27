@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_PDF_PDFDOCUMENT
-#define ANDROID_GRAPHICS_PDF_PDFDOCUMENT
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics::pdf
@@ -107,6 +104,4 @@ namespace android::graphics::pdf
 		}
 	};
 } // namespace android::graphics::pdf
-
-#endif // ANDROID_GRAPHICS_PDF_PDFDOCUMENT
 

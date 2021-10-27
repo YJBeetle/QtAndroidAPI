@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_SMSMANAGER_FINANCIALSMSCALLBACK
-#define ANDROID_TELEPHONY_SMSMANAGER_FINANCIALSMSCALLBACK
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::database
@@ -63,6 +60,4 @@ namespace android::telephony
 		}
 	};
 } // namespace android::telephony
-
-#endif // ANDROID_TELEPHONY_SMSMANAGER_FINANCIALSMSCALLBACK
 

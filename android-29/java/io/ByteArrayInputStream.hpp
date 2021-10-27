@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_BYTEARRAYINPUTSTREAM
-#define JAVA_IO_BYTEARRAYINPUTSTREAM
-
 #include "../../__JniBaseClass.hpp"
 #include "InputStream.hpp"
 
@@ -172,6 +169,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_BYTEARRAYINPUTSTREAM
 

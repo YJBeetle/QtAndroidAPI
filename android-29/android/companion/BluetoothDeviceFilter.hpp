@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_COMPANION_BLUETOOTHDEVICEFILTER
-#define ANDROID_COMPANION_BLUETOOTHDEVICEFILTER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -97,6 +94,4 @@ namespace android::companion
 		}
 	};
 } // namespace android::companion
-
-#endif // ANDROID_COMPANION_BLUETOOTHDEVICEFILTER
 

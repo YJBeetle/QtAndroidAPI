@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_INTERPOLATOR_RESULT
-#define ANDROID_GRAPHICS_INTERPOLATOR_RESULT
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
@@ -105,6 +102,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_INTERPOLATOR_RESULT
 

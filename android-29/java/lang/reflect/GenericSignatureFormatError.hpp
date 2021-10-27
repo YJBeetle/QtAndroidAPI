@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_REFLECT_GENERICSIGNATUREFORMATERROR
-#define JAVA_LANG_REFLECT_GENERICSIGNATUREFORMATERROR
-
 #include "../../../__JniBaseClass.hpp"
 #include "../Error.hpp"
 #include "../LinkageError.hpp"
@@ -75,6 +72,4 @@ namespace java::lang::reflect
 		}
 	};
 } // namespace java::lang::reflect
-
-#endif // JAVA_LANG_REFLECT_GENERICSIGNATUREFORMATERROR
 

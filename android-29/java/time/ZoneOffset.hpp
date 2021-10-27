@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_ZONEOFFSET
-#define JAVA_TIME_ZONEOFFSET
-
 #include "../../__JniBaseClass.hpp"
 #include "ZoneId.hpp"
 
@@ -285,6 +282,4 @@ namespace java::time
 		}
 	};
 } // namespace java::time
-
-#endif // JAVA_TIME_ZONEOFFSET
 

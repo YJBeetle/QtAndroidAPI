@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PRINT_PRINTATTRIBUTES_RESOLUTION
-#define ANDROID_PRINT_PRINTATTRIBUTES_RESOLUTION
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -126,6 +123,4 @@ namespace android::print
 		}
 	};
 } // namespace android::print
-
-#endif // ANDROID_PRINT_PRINTATTRIBUTES_RESOLUTION
 

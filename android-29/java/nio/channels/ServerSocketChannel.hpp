@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHANNELS_SERVERSOCKETCHANNEL
-#define JAVA_NIO_CHANNELS_SERVERSOCKETCHANNEL
-
 #include "../../../__JniBaseClass.hpp"
 #include "spi/AbstractInterruptibleChannel.hpp"
 #include "SelectableChannel.hpp"
@@ -151,6 +148,4 @@ namespace java::nio::channels
 		}
 	};
 } // namespace java::nio::channels
-
-#endif // JAVA_NIO_CHANNELS_SERVERSOCKETCHANNEL
 

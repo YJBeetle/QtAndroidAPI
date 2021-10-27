@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_BUILD_VERSION
-#define ANDROID_OS_BUILD_VERSION
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -119,6 +116,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_BUILD_VERSION
 

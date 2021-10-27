@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_CONTACTSCONTRACT_PINNEDPOSITIONS
-#define ANDROID_PROVIDER_CONTACTSCONTRACT_PINNEDPOSITIONS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -93,6 +90,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_CONTACTSCONTRACT_PINNEDPOSITIONS
 

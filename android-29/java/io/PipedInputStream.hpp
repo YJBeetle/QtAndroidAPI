@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_PIPEDINPUTSTREAM
-#define JAVA_IO_PIPEDINPUTSTREAM
-
 #include "../../__JniBaseClass.hpp"
 #include "InputStream.hpp"
 
@@ -148,6 +145,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_PIPEDINPUTSTREAM
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_TIMEZONEFORMAT_STYLE
-#define ANDROID_ICU_TEXT_TIMEZONEFORMAT_STYLE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
@@ -258,6 +255,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_TIMEZONEFORMAT_STYLE
 

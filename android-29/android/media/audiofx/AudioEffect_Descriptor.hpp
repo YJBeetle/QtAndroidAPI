@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_AUDIOFX_AUDIOEFFECT_DESCRIPTOR
-#define ANDROID_MEDIA_AUDIOFX_AUDIOEFFECT_DESCRIPTOR
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util
@@ -146,6 +143,4 @@ namespace android::media::audiofx
 		}
 	};
 } // namespace android::media::audiofx
-
-#endif // ANDROID_MEDIA_AUDIOFX_AUDIOEFFECT_DESCRIPTOR
 

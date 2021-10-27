@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_UNICODESET_ENTRYRANGE
-#define ANDROID_ICU_TEXT_UNICODESET_ENTRYRANGE
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -70,6 +67,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_UNICODESET_ENTRYRANGE
 

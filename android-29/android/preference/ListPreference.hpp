@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PREFERENCE_LISTPREFERENCE
-#define ANDROID_PREFERENCE_LISTPREFERENCE
-
 #include "../../__JniBaseClass.hpp"
 #include "Preference.hpp"
 #include "DialogPreference.hpp"
@@ -261,6 +258,4 @@ namespace android::preference
 		}
 	};
 } // namespace android::preference
-
-#endif // ANDROID_PREFERENCE_LISTPREFERENCE
 

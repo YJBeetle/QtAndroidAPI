@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_CONDITIONVARIABLE
-#define ANDROID_OS_CONDITIONVARIABLE
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -96,6 +93,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_CONDITIONVARIABLE
 

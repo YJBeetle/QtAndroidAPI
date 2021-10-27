@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_JAR_MANIFEST
-#define JAVA_UTIL_JAR_MANIFEST
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -182,6 +179,4 @@ namespace java::util::jar
 		}
 	};
 } // namespace java::util::jar
-
-#endif // JAVA_UTIL_JAR_MANIFEST
 

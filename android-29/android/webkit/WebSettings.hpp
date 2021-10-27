@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WEBKIT_WEBSETTINGS
-#define ANDROID_WEBKIT_WEBSETTINGS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -1153,6 +1150,4 @@ namespace android::webkit
 		}
 	};
 } // namespace android::webkit
-
-#endif // ANDROID_WEBKIT_WEBSETTINGS
 

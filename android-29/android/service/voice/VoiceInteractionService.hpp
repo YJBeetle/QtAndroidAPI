@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_VOICE_VOICEINTERACTIONSERVICE
-#define ANDROID_SERVICE_VOICE_VOICEINTERACTIONSERVICE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
@@ -226,6 +223,4 @@ namespace android::service::voice
 		}
 	};
 } // namespace android::service::voice
-
-#endif // ANDROID_SERVICE_VOICE_VOICEINTERACTIONSERVICE
 

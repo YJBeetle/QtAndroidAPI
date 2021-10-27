@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHARSET_CODINGERRORACTION
-#define JAVA_NIO_CHARSET_CODINGERRORACTION
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -83,6 +80,4 @@ namespace java::nio::charset
 		}
 	};
 } // namespace java::nio::charset
-
-#endif // JAVA_NIO_CHARSET_CODINGERRORACTION
 

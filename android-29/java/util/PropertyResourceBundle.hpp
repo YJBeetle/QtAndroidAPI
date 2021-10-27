@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_PROPERTYRESOURCEBUNDLE
-#define JAVA_UTIL_PROPERTYRESOURCEBUNDLE
-
 #include "../../__JniBaseClass.hpp"
 #include "ResourceBundle.hpp"
 
@@ -102,6 +99,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_PROPERTYRESOURCEBUNDLE
 

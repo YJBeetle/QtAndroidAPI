@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ANIMATION_STATELISTANIMATOR
-#define ANDROID_ANIMATION_STATELISTANIMATOR
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::animation
@@ -80,6 +77,4 @@ namespace android::animation
 		}
 	};
 } // namespace android::animation
-
-#endif // ANDROID_ANIMATION_STATELISTANIMATOR
 

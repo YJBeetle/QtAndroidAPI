@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MIDI_MIDIDEVICESTATUS
-#define ANDROID_MEDIA_MIDI_MIDIDEVICESTATUS
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media::midi
@@ -119,6 +116,4 @@ namespace android::media::midi
 		}
 	};
 } // namespace android::media::midi
-
-#endif // ANDROID_MEDIA_MIDI_MIDIDEVICESTATUS
 

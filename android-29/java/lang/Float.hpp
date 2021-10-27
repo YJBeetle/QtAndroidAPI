@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_FLOAT
-#define JAVA_LANG_FLOAT
-
 #include "../../__JniBaseClass.hpp"
 #include "Number.hpp"
 
@@ -496,6 +493,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_FLOAT
 

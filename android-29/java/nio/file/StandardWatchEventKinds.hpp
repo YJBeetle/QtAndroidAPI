@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_FILE_STANDARDWATCHEVENTKINDS
-#define JAVA_NIO_FILE_STANDARDWATCHEVENTKINDS
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -84,6 +81,4 @@ namespace java::nio::file
 		}
 	};
 } // namespace java::nio::file
-
-#endif // JAVA_NIO_FILE_STANDARDWATCHEVENTKINDS
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_CELLSIGNALSTRENGTH
-#define ANDROID_TELEPHONY_CELLSIGNALSTRENGTH
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -129,6 +126,4 @@ namespace android::telephony
 		}
 	};
 } // namespace android::telephony
-
-#endif // ANDROID_TELEPHONY_CELLSIGNALSTRENGTH
 

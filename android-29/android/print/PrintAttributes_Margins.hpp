@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PRINT_PRINTATTRIBUTES_MARGINS
-#define ANDROID_PRINT_PRINTATTRIBUTES_MARGINS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -123,6 +120,4 @@ namespace android::print
 		}
 	};
 } // namespace android::print
-
-#endif // ANDROID_PRINT_PRINTATTRIBUTES_MARGINS
 

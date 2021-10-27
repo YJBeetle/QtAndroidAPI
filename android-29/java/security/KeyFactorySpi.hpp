@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_KEYFACTORYSPI
-#define JAVA_SECURITY_KEYFACTORYSPI
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -49,6 +46,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_KEYFACTORYSPI
 

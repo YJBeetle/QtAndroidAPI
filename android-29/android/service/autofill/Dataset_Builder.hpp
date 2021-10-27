@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_AUTOFILL_DATASET_BUILDER
-#define ANDROID_SERVICE_AUTOFILL_DATASET_BUILDER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -172,6 +169,4 @@ namespace android::service::autofill
 		}
 	};
 } // namespace android::service::autofill
-
-#endif // ANDROID_SERVICE_AUTOFILL_DATASET_BUILDER
 

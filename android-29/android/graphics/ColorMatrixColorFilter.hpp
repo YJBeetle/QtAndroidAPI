@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_COLORMATRIXCOLORFILTER
-#define ANDROID_GRAPHICS_COLORMATRIXCOLORFILTER
-
 #include "../../__JniBaseClass.hpp"
 #include "ColorFilter.hpp"
 
@@ -80,6 +77,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_COLORMATRIXCOLORFILTER
 

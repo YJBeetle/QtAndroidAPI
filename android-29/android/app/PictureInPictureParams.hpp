@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_PICTUREINPICTUREPARAMS
-#define ANDROID_APP_PICTUREINPICTUREPARAMS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -80,6 +77,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_PICTUREINPICTUREPARAMS
 

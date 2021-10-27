@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DRM_DRMINFO
-#define ANDROID_DRM_DRMINFO
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -173,6 +170,4 @@ namespace android::drm
 		}
 	};
 } // namespace android::drm
-
-#endif // ANDROID_DRM_DRMINFO
 

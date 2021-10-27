@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_OBJECTOUTPUTSTREAM_PUTFIELD
-#define JAVA_IO_OBJECTOUTPUTSTREAM_PUTFIELD
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -238,6 +235,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_OBJECTOUTPUTSTREAM_PUTFIELD
 

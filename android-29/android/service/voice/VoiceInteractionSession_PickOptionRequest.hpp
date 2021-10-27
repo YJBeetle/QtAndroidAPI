@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_VOICE_VOICEINTERACTIONSESSION_PICKOPTIONREQUEST
-#define ANDROID_SERVICE_VOICE_VOICEINTERACTIONSESSION_PICKOPTIONREQUEST
-
 #include "../../../__JniBaseClass.hpp"
 #include "VoiceInteractionSession_Request.hpp"
 
@@ -103,6 +100,4 @@ namespace android::service::voice
 		}
 	};
 } // namespace android::service::voice
-
-#endif // ANDROID_SERVICE_VOICE_VOICEINTERACTIONSESSION_PICKOPTIONREQUEST
 

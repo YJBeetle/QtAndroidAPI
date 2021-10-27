@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_DISPLAY_DISPLAYMANAGER
-#define ANDROID_HARDWARE_DISPLAY_DISPLAYMANAGER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -241,6 +238,4 @@ namespace android::hardware::display
 		}
 	};
 } // namespace android::hardware::display
-
-#endif // ANDROID_HARDWARE_DISPLAY_DISPLAYMANAGER
 

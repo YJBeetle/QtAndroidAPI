@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_HOTSPOT2_PPS_CREDENTIAL_SIMCREDENTIAL
-#define ANDROID_NET_WIFI_HOTSPOT2_PPS_CREDENTIAL_SIMCREDENTIAL
-
 #include "../../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -163,6 +160,4 @@ namespace android::net::wifi::hotspot2::pps
 		}
 	};
 } // namespace android::net::wifi::hotspot2::pps
-
-#endif // ANDROID_NET_WIFI_HOTSPOT2_PPS_CREDENTIAL_SIMCREDENTIAL
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SAX_ROOTELEMENT
-#define ANDROID_SAX_ROOTELEMENT
-
 #include "../../__JniBaseClass.hpp"
 #include "Element.hpp"
 
@@ -95,6 +92,4 @@ namespace android::sax
 		}
 	};
 } // namespace android::sax
-
-#endif // ANDROID_SAX_ROOTELEMENT
 

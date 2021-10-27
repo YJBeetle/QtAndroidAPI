@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_REFLECT_CONSTRUCTOR
-#define JAVA_LANG_REFLECT_CONSTRUCTOR
-
 #include "../../../__JniBaseClass.hpp"
 #include "AccessibleObject.hpp"
 #include "Executable.hpp"
@@ -240,6 +237,4 @@ namespace java::lang::reflect
 		}
 	};
 } // namespace java::lang::reflect
-
-#endif // JAVA_LANG_REFLECT_CONSTRUCTOR
 

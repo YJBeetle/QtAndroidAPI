@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_FORMAT_TIME
-#define ANDROID_TEXT_FORMAT_TIME
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -614,6 +611,4 @@ namespace android::text::format
 		}
 	};
 } // namespace android::text::format
-
-#endif // ANDROID_TEXT_FORMAT_TIME
 

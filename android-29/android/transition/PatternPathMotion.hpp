@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TRANSITION_PATTERNPATHMOTION
-#define ANDROID_TRANSITION_PATTERNPATHMOTION
-
 #include "../../__JniBaseClass.hpp"
 #include "PathMotion.hpp"
 
@@ -119,6 +116,4 @@ namespace android::transition
 		}
 	};
 } // namespace android::transition
-
-#endif // ANDROID_TRANSITION_PATTERNPATHMOTION
 

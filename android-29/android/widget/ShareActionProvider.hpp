@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_SHAREACTIONPROVIDER
-#define ANDROID_WIDGET_SHAREACTIONPROVIDER
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/ActionProvider.hpp"
 
@@ -137,6 +134,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_SHAREACTIONPROVIDER
 

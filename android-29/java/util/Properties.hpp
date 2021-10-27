@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_PROPERTIES
-#define JAVA_UTIL_PROPERTIES
-
 #include "../../__JniBaseClass.hpp"
 #include "Dictionary.hpp"
 #include "Hashtable.hpp"
@@ -653,6 +650,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_PROPERTIES
 

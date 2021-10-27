@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SE_OMAPI_SESSION
-#define ANDROID_SE_OMAPI_SESSION
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::se::omapi
@@ -136,6 +133,4 @@ namespace android::se::omapi
 		}
 	};
 } // namespace android::se::omapi
-
-#endif // ANDROID_SE_OMAPI_SESSION
 

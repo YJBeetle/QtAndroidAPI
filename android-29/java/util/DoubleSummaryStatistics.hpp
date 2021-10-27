@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_DOUBLESUMMARYSTATISTICS
-#define JAVA_UTIL_DOUBLESUMMARYSTATISTICS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -135,6 +132,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_DOUBLESUMMARYSTATISTICS
 

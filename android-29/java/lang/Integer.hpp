@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_INTEGER
-#define JAVA_LANG_INTEGER
-
 #include "../../__JniBaseClass.hpp"
 #include "Number.hpp"
 
@@ -777,6 +774,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_INTEGER
 

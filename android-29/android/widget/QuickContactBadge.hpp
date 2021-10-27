@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_QUICKCONTACTBADGE
-#define ANDROID_WIDGET_QUICKCONTACTBADGE
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "ImageView.hpp"
@@ -310,6 +307,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_QUICKCONTACTBADGE
 

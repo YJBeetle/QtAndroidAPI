@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SQL_DRIVERMANAGER
-#define JAVA_SQL_DRIVERMANAGER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -290,6 +287,4 @@ namespace java::sql
 		}
 	};
 } // namespace java::sql
-
-#endif // JAVA_SQL_DRIVERMANAGER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_JSON_JSONEXCEPTION
-#define ORG_JSON_JSONEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 
@@ -101,6 +98,4 @@ namespace org::json
 		}
 	};
 } // namespace org::json
-
-#endif // ORG_JSON_JSONEXCEPTION
 

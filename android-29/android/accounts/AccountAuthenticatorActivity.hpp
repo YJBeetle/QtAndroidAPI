@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ACCOUNTS_ACCOUNTAUTHENTICATORACTIVITY
-#define ANDROID_ACCOUNTS_ACCOUNTAUTHENTICATORACTIVITY
-
 #include "../../__JniBaseClass.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
@@ -75,6 +72,4 @@ namespace android::accounts
 		}
 	};
 } // namespace android::accounts
-
-#endif // ANDROID_ACCOUNTS_ACCOUNTAUTHENTICATORACTIVITY
 

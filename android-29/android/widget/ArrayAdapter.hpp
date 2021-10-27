@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_ARRAYADAPTER
-#define ANDROID_WIDGET_ARRAYADAPTER
-
 #include "../../__JniBaseClass.hpp"
 #include "BaseAdapter.hpp"
 
@@ -372,6 +369,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_ARRAYADAPTER
 

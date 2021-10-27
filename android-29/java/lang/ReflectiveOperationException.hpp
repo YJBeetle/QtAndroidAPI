@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_REFLECTIVEOPERATIONEXCEPTION
-#define JAVA_LANG_REFLECTIVEOPERATIONEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "Exception.hpp"
 
@@ -113,6 +110,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_REFLECTIVEOPERATIONEXCEPTION
 

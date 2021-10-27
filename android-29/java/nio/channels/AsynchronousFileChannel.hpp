@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHANNELS_ASYNCHRONOUSFILECHANNEL
-#define JAVA_NIO_CHANNELS_ASYNCHRONOUSFILECHANNEL
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::nio
@@ -213,6 +210,4 @@ namespace java::nio::channels
 		}
 	};
 } // namespace java::nio::channels
-
-#endif // JAVA_NIO_CHANNELS_ASYNCHRONOUSFILECHANNEL
 

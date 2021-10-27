@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MIDI_MIDIMANAGER
-#define ANDROID_MEDIA_MIDI_MIDIMANAGER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::bluetooth
@@ -117,6 +114,4 @@ namespace android::media::midi
 		}
 	};
 } // namespace android::media::midi
-
-#endif // ANDROID_MEDIA_MIDI_MIDIMANAGER
 

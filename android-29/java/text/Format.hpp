@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TEXT_FORMAT
-#define JAVA_TEXT_FORMAT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -143,6 +140,4 @@ namespace java::text
 		}
 	};
 } // namespace java::text
-
-#endif // JAVA_TEXT_FORMAT
 

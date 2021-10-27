@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NFC_NFCADAPTER
-#define ANDROID_NFC_NFCADAPTER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -465,6 +462,4 @@ namespace android::nfc
 		}
 	};
 } // namespace android::nfc
-
-#endif // ANDROID_NFC_NFCADAPTER
 

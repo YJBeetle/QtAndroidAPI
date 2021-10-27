@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_VIEWGROUP
-#define ANDROID_VIEW_VIEWGROUP
-
 #include "../../__JniBaseClass.hpp"
 #include "View.hpp"
 
@@ -1545,6 +1542,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_VIEWGROUP
 

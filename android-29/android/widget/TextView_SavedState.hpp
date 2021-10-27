@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_TEXTVIEW_SAVEDSTATE
-#define ANDROID_WIDGET_TEXTVIEW_SAVEDSTATE
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/AbsSavedState.hpp"
 #include "../view/View_BaseSavedState.hpp"
@@ -82,6 +79,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_TEXTVIEW_SAVEDSTATE
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_ADMIN_DELEGATEDADMINRECEIVER
-#define ANDROID_APP_ADMIN_DELEGATEDADMINRECEIVER
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/BroadcastReceiver.hpp"
 
@@ -113,6 +110,4 @@ namespace android::app::admin
 		}
 	};
 } // namespace android::app::admin
-
-#endif // ANDROID_APP_ADMIN_DELEGATEDADMINRECEIVER
 

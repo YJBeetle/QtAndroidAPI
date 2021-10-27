@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_CERT_X509CRL
-#define JAVA_SECURITY_CERT_X509CRL
-
 #include "../../../__JniBaseClass.hpp"
 #include "CRL.hpp"
 
@@ -249,6 +246,4 @@ namespace java::security::cert
 		}
 	};
 } // namespace java::security::cert
-
-#endif // JAVA_SECURITY_CERT_X509CRL
 

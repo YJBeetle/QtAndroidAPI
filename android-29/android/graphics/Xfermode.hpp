@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_XFERMODE
-#define ANDROID_GRAPHICS_XFERMODE
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -49,6 +46,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_XFERMODE
 

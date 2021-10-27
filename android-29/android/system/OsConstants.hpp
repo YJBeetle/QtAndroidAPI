@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SYSTEM_OSCONSTANTS
-#define ANDROID_SYSTEM_OSCONSTANTS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -4128,6 +4125,4 @@ namespace android::system
 		}
 	};
 } // namespace android::system
-
-#endif // ANDROID_SYSTEM_OSCONSTANTS
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OPENGL_GLES31
-#define ANDROID_OPENGL_GLES31
-
 #include "../../__JniBaseClass.hpp"
 #include "GLES20.hpp"
 #include "GLES30.hpp"
@@ -2770,6 +2767,4 @@ namespace android::opengl
 		}
 	};
 } // namespace android::opengl
-
-#endif // ANDROID_OPENGL_GLES31
 

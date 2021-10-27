@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_KEYGUARDMANAGER
-#define ANDROID_APP_KEYGUARDMANAGER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -165,6 +162,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_KEYGUARDMANAGER
 

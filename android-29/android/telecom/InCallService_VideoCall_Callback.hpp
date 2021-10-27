@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELECOM_INCALLSERVICE_VIDEOCALL_CALLBACK
-#define ANDROID_TELECOM_INCALLSERVICE_VIDEOCALL_CALLBACK
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::telecom
@@ -125,6 +122,4 @@ namespace android::telecom
 		}
 	};
 } // namespace android::telecom
-
-#endif // ANDROID_TELECOM_INCALLSERVICE_VIDEOCALL_CALLBACK
 

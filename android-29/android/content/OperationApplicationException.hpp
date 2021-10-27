@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_OPERATIONAPPLICATIONEXCEPTION
-#define ANDROID_CONTENT_OPERATIONAPPLICATIONEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 
@@ -161,6 +158,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_OPERATIONAPPLICATIONEXCEPTION
 

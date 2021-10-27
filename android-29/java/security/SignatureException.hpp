@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_SIGNATUREEXCEPTION
-#define JAVA_SECURITY_SIGNATUREEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 #include "GeneralSecurityException.hpp"
@@ -114,6 +111,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_SIGNATUREEXCEPTION
 

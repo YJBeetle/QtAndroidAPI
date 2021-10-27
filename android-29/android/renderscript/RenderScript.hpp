@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_RENDERSCRIPT_RENDERSCRIPT
-#define ANDROID_RENDERSCRIPT_RENDERSCRIPT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -246,6 +243,4 @@ namespace android::renderscript
 		}
 	};
 } // namespace android::renderscript
-
-#endif // ANDROID_RENDERSCRIPT_RENDERSCRIPT
 

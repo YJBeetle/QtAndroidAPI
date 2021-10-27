@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_FORMAT_DECIMALSTYLE
-#define JAVA_TIME_FORMAT_DECIMALSTYLE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util
@@ -183,6 +180,4 @@ namespace java::time::format
 		}
 	};
 } // namespace java::time::format
-
-#endif // JAVA_TIME_FORMAT_DECIMALSTYLE
 

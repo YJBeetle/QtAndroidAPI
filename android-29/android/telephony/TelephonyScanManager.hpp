@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_TELEPHONYSCANMANAGER
-#define ANDROID_TELEPHONY_TELEPHONYSCANMANAGER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -49,6 +46,4 @@ namespace android::telephony
 		}
 	};
 } // namespace android::telephony
-
-#endif // ANDROID_TELEPHONY_TELEPHONYSCANMANAGER
 

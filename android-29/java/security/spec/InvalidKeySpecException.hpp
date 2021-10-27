@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_SPEC_INVALIDKEYSPECEXCEPTION
-#define JAVA_SECURITY_SPEC_INVALIDKEYSPECEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 #include "../GeneralSecurityException.hpp"
@@ -114,6 +111,4 @@ namespace java::security::spec
 		}
 	};
 } // namespace java::security::spec
-
-#endif // JAVA_SECURITY_SPEC_INVALIDKEYSPECEXCEPTION
 

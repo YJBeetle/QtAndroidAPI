@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_STYLE_TABSTOPSPAN_STANDARD
-#define ANDROID_TEXT_STYLE_TABSTOPSPAN_STANDARD
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -59,6 +56,4 @@ namespace android::text::style
 		}
 	};
 } // namespace android::text::style
-
-#endif // ANDROID_TEXT_STYLE_TABSTOPSPAN_STANDARD
 

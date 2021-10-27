@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_CONTENTCAPTURE_CONTENTCAPTURECONDITION
-#define ANDROID_VIEW_CONTENTCAPTURE_CONTENTCAPTURECONDITION
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -139,6 +136,4 @@ namespace android::view::contentcapture
 		}
 	};
 } // namespace android::view::contentcapture
-
-#endif // ANDROID_VIEW_CONTENTCAPTURE_CONTENTCAPTURECONDITION
 

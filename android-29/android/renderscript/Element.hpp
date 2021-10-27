@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_RENDERSCRIPT_ELEMENT
-#define ANDROID_RENDERSCRIPT_ELEMENT
-
 #include "../../__JniBaseClass.hpp"
 #include "BaseObj.hpp"
 
@@ -851,6 +848,4 @@ namespace android::renderscript
 		}
 	};
 } // namespace android::renderscript
-
-#endif // ANDROID_RENDERSCRIPT_ELEMENT
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_VOICE_ALWAYSONHOTWORDDETECTOR_EVENTPAYLOAD
-#define ANDROID_SERVICE_VOICE_ALWAYSONHOTWORDDETECTOR_EVENTPAYLOAD
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media
@@ -69,6 +66,4 @@ namespace android::service::voice
 		}
 	};
 } // namespace android::service::voice
-
-#endif // ANDROID_SERVICE_VOICE_ALWAYSONHOTWORDDETECTOR_EVENTPAYLOAD
 

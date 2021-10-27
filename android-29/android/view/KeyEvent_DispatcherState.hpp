@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_KEYEVENT_DISPATCHERSTATE
-#define ANDROID_VIEW_KEYEVENT_DISPATCHERSTATE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::view
@@ -108,6 +105,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_KEYEVENT_DISPATCHERSTATE
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ACCOUNTS_OPERATIONCANCELEDEXCEPTION
-#define ANDROID_ACCOUNTS_OPERATIONCANCELEDEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "AccountsException.hpp"
@@ -114,6 +111,4 @@ namespace android::accounts
 		}
 	};
 } // namespace android::accounts
-
-#endif // ANDROID_ACCOUNTS_OPERATIONCANCELEDEXCEPTION
 

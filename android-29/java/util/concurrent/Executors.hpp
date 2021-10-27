@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_EXECUTORS
-#define JAVA_UTIL_CONCURRENT_EXECUTORS
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -245,6 +242,4 @@ namespace java::util::concurrent
 		}
 	};
 } // namespace java::util::concurrent
-
-#endif // JAVA_UTIL_CONCURRENT_EXECUTORS
 

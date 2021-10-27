@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_FILE_SIMPLEFILEVISITOR
-#define JAVA_NIO_FILE_SIMPLEFILEVISITOR
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -98,6 +95,4 @@ namespace java::nio::file
 		}
 	};
 } // namespace java::nio::file
-
-#endif // JAVA_NIO_FILE_SIMPLEFILEVISITOR
 

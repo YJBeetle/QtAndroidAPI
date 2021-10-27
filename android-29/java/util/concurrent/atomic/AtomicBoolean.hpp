@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICBOOLEAN
-#define JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICBOOLEAN
-
 #include "../../../../__JniBaseClass.hpp"
 
 
@@ -247,6 +244,4 @@ namespace java::util::concurrent::atomic
 		}
 	};
 } // namespace java::util::concurrent::atomic
-
-#endif // JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICBOOLEAN
 

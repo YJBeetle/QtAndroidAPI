@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_DIGESTOUTPUTSTREAM
-#define JAVA_SECURITY_DIGESTOUTPUTSTREAM
-
 #include "../../__JniBaseClass.hpp"
 #include "../io/OutputStream.hpp"
 #include "../io/FilterOutputStream.hpp"
@@ -119,6 +116,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_DIGESTOUTPUTSTREAM
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WEBKIT_TRACINGCONFIG
-#define ANDROID_WEBKIT_TRACINGCONFIG
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -152,6 +149,4 @@ namespace android::webkit
 		}
 	};
 } // namespace android::webkit
-
-#endif // ANDROID_WEBKIT_TRACINGCONFIG
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_DNSRESOLVER_DNSEXCEPTION
-#define ANDROID_NET_DNSRESOLVER_DNSEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 
@@ -56,6 +53,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_DNSRESOLVER_DNSEXCEPTION
 

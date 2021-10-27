@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_CURSORADAPTER
-#define ANDROID_WIDGET_CURSORADAPTER
-
 #include "../../__JniBaseClass.hpp"
 #include "BaseAdapter.hpp"
 
@@ -315,6 +312,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_CURSORADAPTER
 

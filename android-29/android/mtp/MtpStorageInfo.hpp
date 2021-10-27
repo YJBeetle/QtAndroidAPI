@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MTP_MTPSTORAGEINFO
-#define ANDROID_MTP_MTPSTORAGEINFO
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -88,6 +85,4 @@ namespace android::mtp
 		}
 	};
 } // namespace android::mtp
-
-#endif // ANDROID_MTP_MTPSTORAGEINFO
 

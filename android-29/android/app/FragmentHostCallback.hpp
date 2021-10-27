@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_FRAGMENTHOSTCALLBACK
-#define ANDROID_APP_FRAGMENTHOSTCALLBACK
-
 #include "../../__JniBaseClass.hpp"
 #include "FragmentContainer.hpp"
 
@@ -252,6 +249,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_FRAGMENTHOSTCALLBACK
 

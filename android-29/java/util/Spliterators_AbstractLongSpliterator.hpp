@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_SPLITERATORS_ABSTRACTLONGSPLITERATOR
-#define JAVA_UTIL_SPLITERATORS_ABSTRACTLONGSPLITERATOR
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -72,6 +69,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_SPLITERATORS_ABSTRACTLONGSPLITERATOR
 

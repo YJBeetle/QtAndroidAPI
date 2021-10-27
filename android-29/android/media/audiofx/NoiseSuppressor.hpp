@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_AUDIOFX_NOISESUPPRESSOR
-#define ANDROID_MEDIA_AUDIOFX_NOISESUPPRESSOR
-
 #include "../../../__JniBaseClass.hpp"
 #include "AudioEffect.hpp"
 
@@ -68,6 +65,4 @@ namespace android::media::audiofx
 		}
 	};
 } // namespace android::media::audiofx
-
-#endif // ANDROID_MEDIA_AUDIOFX_NOISESUPPRESSOR
 

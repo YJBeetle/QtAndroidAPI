@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_EMERGENCY_EMERGENCYNUMBER
-#define ANDROID_TELEPHONY_EMERGENCY_EMERGENCYNUMBER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -325,6 +322,4 @@ namespace android::telephony::emergency
 		}
 	};
 } // namespace android::telephony::emergency
-
-#endif // ANDROID_TELEPHONY_EMERGENCY_EMERGENCYNUMBER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_CHARACTER_SUBSET
-#define JAVA_LANG_CHARACTER_SUBSET
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -73,6 +70,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_CHARACTER_SUBSET
 

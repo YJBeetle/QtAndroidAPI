@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TRANSITION_SLIDE
-#define ANDROID_TRANSITION_SLIDE
-
 #include "../../__JniBaseClass.hpp"
 #include "Transition.hpp"
 #include "Visibility.hpp"
@@ -165,6 +162,4 @@ namespace android::transition
 		}
 	};
 } // namespace android::transition
-
-#endif // ANDROID_TRANSITION_SLIDE
 

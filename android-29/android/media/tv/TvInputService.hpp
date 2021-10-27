@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_TV_TVINPUTSERVICE
-#define ANDROID_MEDIA_TV_TVINPUTSERVICE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
@@ -130,6 +127,4 @@ namespace android::media::tv
 		}
 	};
 } // namespace android::media::tv
-
-#endif // ANDROID_MEDIA_TV_TVINPUTSERVICE
 

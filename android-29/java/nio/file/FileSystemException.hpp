@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_FILE_FILESYSTEMEXCEPTION
-#define JAVA_NIO_FILE_FILESYSTEMEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 #include "../../io/IOException.hpp"
@@ -123,6 +120,4 @@ namespace java::nio::file
 		}
 	};
 } // namespace java::nio::file
-
-#endif // JAVA_NIO_FILE_FILESYSTEMEXCEPTION
 

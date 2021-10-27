@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_TELEPHONY_CARRIERS
-#define ANDROID_PROVIDER_TELEPHONY_CARRIERS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -305,6 +302,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_TELEPHONY_CARRIERS
 

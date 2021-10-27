@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_WIFIENTERPRISECONFIG_EAP
-#define ANDROID_NET_WIFI_WIFIENTERPRISECONFIG_EAP
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -120,6 +117,4 @@ namespace android::net::wifi
 		}
 	};
 } // namespace android::net::wifi
-
-#endif // ANDROID_NET_WIFI_WIFIENTERPRISECONFIG_EAP
 

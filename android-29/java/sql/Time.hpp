@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SQL_TIME
-#define JAVA_SQL_TIME
-
 #include "../../__JniBaseClass.hpp"
 #include "../util/Date.hpp"
 
@@ -202,6 +199,4 @@ namespace java::sql
 		}
 	};
 } // namespace java::sql
-
-#endif // JAVA_SQL_TIME
 

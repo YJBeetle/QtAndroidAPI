@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NFC_TAG
-#define ANDROID_NFC_TAG
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -104,6 +101,4 @@ namespace android::nfc
 		}
 	};
 } // namespace android::nfc
-
-#endif // ANDROID_NFC_TAG
 

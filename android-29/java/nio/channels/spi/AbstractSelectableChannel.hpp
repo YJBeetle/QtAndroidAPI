@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHANNELS_SPI_ABSTRACTSELECTABLECHANNEL
-#define JAVA_NIO_CHANNELS_SPI_ABSTRACTSELECTABLECHANNEL
-
 #include "../../../../__JniBaseClass.hpp"
 #include "AbstractInterruptibleChannel.hpp"
 #include "../SelectableChannel.hpp"
@@ -131,6 +128,4 @@ namespace java::nio::channels::spi
 		}
 	};
 } // namespace java::nio::channels::spi
-
-#endif // JAVA_NIO_CHANNELS_SPI_ABSTRACTSELECTABLECHANNEL
 

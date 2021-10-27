@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_JOB_JOBPARAMETERS
-#define ANDROID_APP_JOB_JOBPARAMETERS
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app::job
@@ -194,6 +191,4 @@ namespace android::app::job
 		}
 	};
 } // namespace android::app::job
-
-#endif // ANDROID_APP_JOB_JOBPARAMETERS
 

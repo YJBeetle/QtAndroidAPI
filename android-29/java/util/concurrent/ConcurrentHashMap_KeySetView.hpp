@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_CONCURRENTHASHMAP_KEYSETVIEW
-#define JAVA_UTIL_CONCURRENT_CONCURRENTHASHMAP_KEYSETVIEW
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util::concurrent
@@ -156,6 +153,4 @@ namespace java::util::concurrent
 		}
 	};
 } // namespace java::util::concurrent
-
-#endif // JAVA_UTIL_CONCURRENT_CONCURRENTHASHMAP_KEYSETVIEW
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_SESSION2TOKEN
-#define ANDROID_MEDIA_SESSION2TOKEN
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -181,6 +178,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_SESSION2TOKEN
 

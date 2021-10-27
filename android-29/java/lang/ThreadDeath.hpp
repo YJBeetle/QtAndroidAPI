@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_THREADDEATH
-#define JAVA_LANG_THREADDEATH
-
 #include "../../__JniBaseClass.hpp"
 #include "Error.hpp"
 
@@ -50,6 +47,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_THREADDEATH
 

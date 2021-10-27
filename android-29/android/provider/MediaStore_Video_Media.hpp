@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_MEDIASTORE_VIDEO_MEDIA
-#define ANDROID_PROVIDER_MEDIASTORE_VIDEO_MEDIA
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -110,6 +107,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_MEDIASTORE_VIDEO_MEDIA
 

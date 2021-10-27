@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_BYTEARRAYOUTPUTSTREAM
-#define JAVA_IO_BYTEARRAYOUTPUTSTREAM
-
 #include "../../__JniBaseClass.hpp"
 #include "OutputStream.hpp"
 
@@ -188,6 +185,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_BYTEARRAYOUTPUTSTREAM
 

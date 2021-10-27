@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MTP_MTPCONSTANTS
-#define ANDROID_MTP_MTPCONSTANTS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -851,6 +848,4 @@ namespace android::mtp
 		}
 	};
 } // namespace android::mtp
-
-#endif // ANDROID_MTP_MTPCONSTANTS
 

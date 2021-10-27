@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_R_INTEGER
-#define ANDROID_R_INTEGER
-
 #include "../__JniBaseClass.hpp"
 
 
@@ -81,6 +78,4 @@ namespace android
 		}
 	};
 } // namespace android
-
-#endif // ANDROID_R_INTEGER
 

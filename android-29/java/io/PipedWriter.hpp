@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_PIPEDWRITER
-#define JAVA_IO_PIPEDWRITER
-
 #include "../../__JniBaseClass.hpp"
 #include "Writer.hpp"
 
@@ -114,6 +111,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_PIPEDWRITER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_USAGE_NETWORKSTATS_BUCKET
-#define ANDROID_APP_USAGE_NETWORKSTATS_BUCKET
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -273,6 +270,4 @@ namespace android::app::usage
 		}
 	};
 } // namespace android::app::usage
-
-#endif // ANDROID_APP_USAGE_NETWORKSTATS_BUCKET
 

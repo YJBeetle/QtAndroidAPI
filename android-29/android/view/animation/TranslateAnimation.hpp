@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_ANIMATION_TRANSLATEANIMATION
-#define ANDROID_VIEW_ANIMATION_TRANSLATEANIMATION
-
 #include "../../../__JniBaseClass.hpp"
 #include "Animation.hpp"
 
@@ -124,6 +121,4 @@ namespace android::view::animation
 		}
 	};
 } // namespace android::view::animation
-
-#endif // ANDROID_VIEW_ANIMATION_TRANSLATEANIMATION
 

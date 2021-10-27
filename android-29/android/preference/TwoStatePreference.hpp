@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PREFERENCE_TWOSTATEPREFERENCE
-#define ANDROID_PREFERENCE_TWOSTATEPREFERENCE
-
 #include "../../__JniBaseClass.hpp"
 #include "Preference.hpp"
 
@@ -228,6 +225,4 @@ namespace android::preference
 		}
 	};
 } // namespace android::preference
-
-#endif // ANDROID_PREFERENCE_TWOSTATEPREFERENCE
 

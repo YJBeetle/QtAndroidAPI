@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SPEECH_RECOGNITIONSERVICE_CALLBACK
-#define ANDROID_SPEECH_RECOGNITIONSERVICE_CALLBACK
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -136,6 +133,4 @@ namespace android::speech
 		}
 	};
 } // namespace android::speech
-
-#endif // ANDROID_SPEECH_RECOGNITIONSERVICE_CALLBACK
 

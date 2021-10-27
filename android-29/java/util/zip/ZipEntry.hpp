@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_ZIP_ZIPENTRY
-#define JAVA_UTIL_ZIP_ZIPENTRY
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::nio::file::attribute
@@ -336,6 +333,4 @@ namespace java::util::zip
 		}
 	};
 } // namespace java::util::zip
-
-#endif // JAVA_UTIL_ZIP_ZIPENTRY
 

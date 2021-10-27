@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_COMPANION_COMPANIONDEVICEMANAGER
-#define ANDROID_COMPANION_COMPANIONDEVICEMANAGER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::companion
@@ -132,6 +129,4 @@ namespace android::companion
 		}
 	};
 } // namespace android::companion
-
-#endif // ANDROID_COMPANION_COMPANIONDEVICEMANAGER
 

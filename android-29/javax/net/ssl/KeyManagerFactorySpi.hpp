@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_NET_SSL_KEYMANAGERFACTORYSPI
-#define JAVAX_NET_SSL_KEYMANAGERFACTORYSPI
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::security
@@ -54,6 +51,4 @@ namespace javax::net::ssl
 		}
 	};
 } // namespace javax::net::ssl
-
-#endif // JAVAX_NET_SSL_KEYMANAGERFACTORYSPI
 

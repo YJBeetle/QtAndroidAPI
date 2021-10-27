@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_PHONESTATELISTENER
-#define ANDROID_TELEPHONY_PHONESTATELISTENER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::telephony
@@ -319,6 +316,4 @@ namespace android::telephony
 		}
 	};
 } // namespace android::telephony
-
-#endif // ANDROID_TELEPHONY_PHONESTATELISTENER
 

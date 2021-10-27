@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_COLLATIONELEMENTITERATOR
-#define ANDROID_ICU_TEXT_COLLATIONELEMENTITERATOR
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::icu::text
@@ -207,6 +204,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_COLLATIONELEMENTITERATOR
 

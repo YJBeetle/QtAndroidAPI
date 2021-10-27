@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_PRINTWRITERPRINTER
-#define ANDROID_UTIL_PRINTWRITERPRINTER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -74,6 +71,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_PRINTWRITERPRINTER
 

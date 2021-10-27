@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_RECORDINGCANVAS
-#define ANDROID_GRAPHICS_RECORDINGCANVAS
-
 #include "../../__JniBaseClass.hpp"
 #include "Canvas.hpp"
 
@@ -884,6 +881,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_RECORDINGCANVAS
 

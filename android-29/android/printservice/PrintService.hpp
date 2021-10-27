@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PRINTSERVICE_PRINTSERVICE
-#define ANDROID_PRINTSERVICE_PRINTSERVICE
-
 #include "../../__JniBaseClass.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
@@ -175,6 +172,4 @@ namespace android::printservice
 		}
 	};
 } // namespace android::printservice
-
-#endif // ANDROID_PRINTSERVICE_PRINTSERVICE
 

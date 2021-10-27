@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_ACCESSIBILITY_ACCESSIBILITYNODEINFO_COLLECTIONITEMINFO
-#define ANDROID_VIEW_ACCESSIBILITY_ACCESSIBILITYNODEINFO_COLLECTIONITEMINFO
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -125,6 +122,4 @@ namespace android::view::accessibility
 		}
 	};
 } // namespace android::view::accessibility
-
-#endif // ANDROID_VIEW_ACCESSIBILITY_ACCESSIBILITYNODEINFO_COLLECTIONITEMINFO
 

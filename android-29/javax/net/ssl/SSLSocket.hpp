@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_NET_SSL_SSLSOCKET
-#define JAVAX_NET_SSL_SSLSOCKET
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/net/Socket.hpp"
 
@@ -269,6 +266,4 @@ namespace javax::net::ssl
 		}
 	};
 } // namespace javax::net::ssl
-
-#endif // JAVAX_NET_SSL_SSLSOCKET
 

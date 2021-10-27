@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SQL_SQLPERMISSION
-#define JAVA_SQL_SQLPERMISSION
-
 #include "../../__JniBaseClass.hpp"
 #include "../security/Permission.hpp"
 #include "../security/BasicPermission.hpp"
@@ -88,6 +85,4 @@ namespace java::sql
 		}
 	};
 } // namespace java::sql
-
-#endif // JAVA_SQL_SQLPERMISSION
 

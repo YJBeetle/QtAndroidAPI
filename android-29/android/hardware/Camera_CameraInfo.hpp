@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_CAMERA_CAMERAINFO
-#define ANDROID_HARDWARE_CAMERA_CAMERAINFO
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -86,6 +83,4 @@ namespace android::hardware
 		}
 	};
 } // namespace android::hardware
-
-#endif // ANDROID_HARDWARE_CAMERA_CAMERAINFO
 

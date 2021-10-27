@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_FINGERPRINT_FINGERPRINTMANAGER_AUTHENTICATIONCALLBACK
-#define ANDROID_HARDWARE_FINGERPRINT_FINGERPRINTMANAGER_AUTHENTICATIONCALLBACK
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::hardware::fingerprint
@@ -111,6 +108,4 @@ namespace android::hardware::fingerprint
 		}
 	};
 } // namespace android::hardware::fingerprint
-
-#endif // ANDROID_HARDWARE_FINGERPRINT_FINGERPRINTMANAGER_AUTHENTICATIONCALLBACK
 

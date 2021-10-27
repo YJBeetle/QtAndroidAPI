@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_OBSERVABLE
-#define JAVA_UTIL_OBSERVABLE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util
@@ -113,6 +110,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_OBSERVABLE
 

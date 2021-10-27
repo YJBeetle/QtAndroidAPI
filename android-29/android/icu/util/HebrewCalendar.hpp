@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_UTIL_HEBREWCALENDAR
-#define ANDROID_ICU_UTIL_HEBREWCALENDAR
-
 #include "../../../__JniBaseClass.hpp"
 #include "Calendar.hpp"
 
@@ -332,6 +329,4 @@ namespace android::icu::util
 		}
 	};
 } // namespace android::icu::util
-
-#endif // ANDROID_ICU_UTIL_HEBREWCALENDAR
 

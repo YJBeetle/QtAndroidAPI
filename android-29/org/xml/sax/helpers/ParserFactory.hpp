@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_XML_SAX_HELPERS_PARSERFACTORY
-#define ORG_XML_SAX_HELPERS_PARSERFACTORY
-
 #include "../../../../__JniBaseClass.hpp"
 
 
@@ -77,6 +74,4 @@ namespace org::xml::sax::helpers
 		}
 	};
 } // namespace org::xml::sax::helpers
-
-#endif // ORG_XML_SAX_HELPERS_PARSERFACTORY
 

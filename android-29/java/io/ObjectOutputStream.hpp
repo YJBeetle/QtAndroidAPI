@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_OBJECTOUTPUTSTREAM
-#define JAVA_IO_OBJECTOUTPUTSTREAM
-
 #include "../../__JniBaseClass.hpp"
 #include "OutputStream.hpp"
 
@@ -312,6 +309,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_OBJECTOUTPUTSTREAM
 

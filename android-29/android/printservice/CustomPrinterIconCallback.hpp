@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PRINTSERVICE_CUSTOMPRINTERICONCALLBACK
-#define ANDROID_PRINTSERVICE_CUSTOMPRINTERICONCALLBACK
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics::drawable
@@ -62,6 +59,4 @@ namespace android::printservice
 		}
 	};
 } // namespace android::printservice
-
-#endif // ANDROID_PRINTSERVICE_CUSTOMPRINTERICONCALLBACK
 

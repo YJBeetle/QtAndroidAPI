@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_TV_TVRECORDINGCLIENT
-#define ANDROID_MEDIA_TV_TVRECORDINGCLIENT
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -181,6 +178,4 @@ namespace android::media::tv
 		}
 	};
 } // namespace android::media::tv
-
-#endif // ANDROID_MEDIA_TV_TVRECORDINGCLIENT
 

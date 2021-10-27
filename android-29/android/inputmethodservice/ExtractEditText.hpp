@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_INPUTMETHODSERVICE_EXTRACTEDITTEXT
-#define ANDROID_INPUTMETHODSERVICE_EXTRACTEDITTEXT
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../widget/TextView.hpp"
@@ -200,6 +197,4 @@ namespace android::inputmethodservice
 		}
 	};
 } // namespace android::inputmethodservice
-
-#endif // ANDROID_INPUTMETHODSERVICE_EXTRACTEDITTEXT
 

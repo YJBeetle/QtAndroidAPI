@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_SECURITY
-#define JAVA_SECURITY_SECURITY
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -252,6 +249,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_SECURITY
 

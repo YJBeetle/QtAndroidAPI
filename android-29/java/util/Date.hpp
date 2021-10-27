@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_DATE
-#define JAVA_UTIL_DATE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -443,6 +440,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_DATE
 

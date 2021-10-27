@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_SURFACECONTROL
-#define ANDROID_VIEW_SURFACECONTROL
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -113,6 +110,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_SURFACECONTROL
 

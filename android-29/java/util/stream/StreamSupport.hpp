@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_STREAM_STREAMSUPPORT
-#define JAVA_UTIL_STREAM_STREAMSUPPORT
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -140,6 +137,4 @@ namespace java::util::stream
 		}
 	};
 } // namespace java::util::stream
-
-#endif // JAVA_UTIL_STREAM_STREAMSUPPORT
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_DISPLAY_VIRTUALDISPLAY_CALLBACK
-#define ANDROID_HARDWARE_DISPLAY_VIRTUALDISPLAY_CALLBACK
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -73,6 +70,4 @@ namespace android::hardware::display
 		}
 	};
 } // namespace android::hardware::display
-
-#endif // ANDROID_HARDWARE_DISPLAY_VIRTUALDISPLAY_CALLBACK
 

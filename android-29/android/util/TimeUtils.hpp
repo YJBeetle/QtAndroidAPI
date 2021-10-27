@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_TIMEUTILS
-#define ANDROID_UTIL_TIMEUTILS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util
@@ -108,6 +105,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_TIMEUTILS
 

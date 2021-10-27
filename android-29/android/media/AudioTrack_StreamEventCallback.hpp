@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_AUDIOTRACK_STREAMEVENTCALLBACK
-#define ANDROID_MEDIA_AUDIOTRACK_STREAMEVENTCALLBACK
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media
@@ -82,6 +79,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_AUDIOTRACK_STREAMEVENTCALLBACK
 

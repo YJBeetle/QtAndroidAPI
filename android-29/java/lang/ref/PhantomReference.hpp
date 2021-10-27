@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_REF_PHANTOMREFERENCE
-#define JAVA_LANG_REF_PHANTOMREFERENCE
-
 #include "../../../__JniBaseClass.hpp"
 #include "Reference.hpp"
 
@@ -67,6 +64,4 @@ namespace java::lang::ref
 		}
 	};
 } // namespace java::lang::ref
-
-#endif // JAVA_LANG_REF_PHANTOMREFERENCE
 

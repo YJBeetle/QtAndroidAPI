@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_INVOKE_CONSTANTCALLSITE
-#define JAVA_LANG_INVOKE_CONSTANTCALLSITE
-
 #include "../../../__JniBaseClass.hpp"
 #include "CallSite.hpp"
 
@@ -87,6 +84,4 @@ namespace java::lang::invoke
 		}
 	};
 } // namespace java::lang::invoke
-
-#endif // JAVA_LANG_INVOKE_CONSTANTCALLSITE
 

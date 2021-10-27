@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PREFERENCE_PREFERENCEACTIVITY_HEADER
-#define ANDROID_PREFERENCE_PREFERENCEACTIVITY_HEADER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -247,6 +244,4 @@ namespace android::preference
 		}
 	};
 } // namespace android::preference
-
-#endif // ANDROID_PREFERENCE_PREFERENCEACTIVITY_HEADER
 

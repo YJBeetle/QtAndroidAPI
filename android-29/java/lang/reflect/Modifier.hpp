@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_REFLECT_MODIFIER
-#define JAVA_LANG_REFLECT_MODIFIER
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -328,6 +325,4 @@ namespace java::lang::reflect
 		}
 	};
 } // namespace java::lang::reflect
-
-#endif // JAVA_LANG_REFLECT_MODIFIER
 

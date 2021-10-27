@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_COPYONWRITEARRAYSET
-#define JAVA_UTIL_CONCURRENT_COPYONWRITEARRAYSET
-
 #include "../../../__JniBaseClass.hpp"
 #include "../AbstractCollection.hpp"
 #include "../AbstractSet.hpp"
@@ -217,6 +214,4 @@ namespace java::util::concurrent
 		}
 	};
 } // namespace java::util::concurrent
-
-#endif // JAVA_UTIL_CONCURRENT_COPYONWRITEARRAYSET
 

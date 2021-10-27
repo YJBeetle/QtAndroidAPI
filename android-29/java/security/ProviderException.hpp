@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_PROVIDEREXCEPTION
-#define JAVA_SECURITY_PROVIDEREXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 #include "../lang/RuntimeException.hpp"
@@ -114,6 +111,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_PROVIDEREXCEPTION
 

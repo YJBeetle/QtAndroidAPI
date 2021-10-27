@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_DRAWABLE_DRAWABLE_CONSTANTSTATE
-#define ANDROID_GRAPHICS_DRAWABLE_DRAWABLE_CONSTANTSTATE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content::res
@@ -107,6 +104,4 @@ namespace android::graphics::drawable
 		}
 	};
 } // namespace android::graphics::drawable
-
-#endif // ANDROID_GRAPHICS_DRAWABLE_DRAWABLE_CONSTANTSTATE
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_UIAUTOMATION
-#define ANDROID_APP_UIAUTOMATION
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::accessibilityservice
@@ -427,6 +424,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_UIAUTOMATION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_WINDOWINSETS
-#define ANDROID_VIEW_WINDOWINSETS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -300,6 +297,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_WINDOWINSETS
 

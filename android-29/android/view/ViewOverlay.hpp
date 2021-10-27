@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_VIEWOVERLAY
-#define ANDROID_VIEW_VIEWOVERLAY
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -89,6 +86,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_VIEWOVERLAY
 

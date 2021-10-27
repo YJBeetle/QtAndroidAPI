@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_DRAWABLE_DRAWABLECONTAINER_DRAWABLECONTAINERSTATE
-#define ANDROID_GRAPHICS_DRAWABLE_DRAWABLECONTAINER_DRAWABLECONTAINERSTATE
-
 #include "../../../__JniBaseClass.hpp"
 #include "Drawable_ConstantState.hpp"
 
@@ -253,6 +250,4 @@ namespace android::graphics::drawable
 		}
 	};
 } // namespace android::graphics::drawable
-
-#endif // ANDROID_GRAPHICS_DRAWABLE_DRAWABLECONTAINER_DRAWABLECONTAINERSTATE
 

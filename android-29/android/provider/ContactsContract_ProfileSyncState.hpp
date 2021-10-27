@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_CONTACTSCONTRACT_PROFILESYNCSTATE
-#define ANDROID_PROVIDER_CONTACTSCONTRACT_PROFILESYNCSTATE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::accounts
@@ -136,6 +133,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_CONTACTSCONTRACT_PROFILESYNCSTATE
 

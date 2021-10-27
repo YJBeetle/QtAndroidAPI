@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_INTERNALERROR
-#define JAVA_LANG_INTERNALERROR
-
 #include "../../__JniBaseClass.hpp"
 #include "Error.hpp"
 #include "VirtualMachineError.hpp"
@@ -114,6 +111,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_INTERNALERROR
 

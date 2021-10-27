@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_ARRAYLIST
-#define JAVA_UTIL_ARRAYLIST
-
 #include "../../__JniBaseClass.hpp"
 #include "AbstractCollection.hpp"
 #include "AbstractList.hpp"
@@ -371,6 +368,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_ARRAYLIST
 

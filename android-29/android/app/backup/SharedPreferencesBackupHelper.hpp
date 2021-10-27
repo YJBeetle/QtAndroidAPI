@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_BACKUP_SHAREDPREFERENCESBACKUPHELPER
-#define ANDROID_APP_BACKUP_SHAREDPREFERENCESBACKUPHELPER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app::backup
@@ -102,6 +99,4 @@ namespace android::app::backup
 		}
 	};
 } // namespace android::app::backup
-
-#endif // ANDROID_APP_BACKUP_SHAREDPREFERENCESBACKUPHELPER
 

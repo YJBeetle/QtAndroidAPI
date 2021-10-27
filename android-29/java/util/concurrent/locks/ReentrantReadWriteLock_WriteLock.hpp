@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_LOCKS_REENTRANTREADWRITELOCK_WRITELOCK
-#define JAVA_UTIL_CONCURRENT_LOCKS_REENTRANTREADWRITELOCK_WRITELOCK
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util::concurrent
@@ -132,6 +129,4 @@ namespace java::util::concurrent::locks
 		}
 	};
 } // namespace java::util::concurrent::locks
-
-#endif // JAVA_UTIL_CONCURRENT_LOCKS_REENTRANTREADWRITELOCK_WRITELOCK
 

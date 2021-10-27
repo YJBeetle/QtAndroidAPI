@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_LOCKS_REENTRANTLOCK
-#define JAVA_UTIL_CONCURRENT_LOCKS_REENTRANTLOCK
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -206,6 +203,4 @@ namespace java::util::concurrent::locks
 		}
 	};
 } // namespace java::util::concurrent::locks
-
-#endif // JAVA_UTIL_CONCURRENT_LOCKS_REENTRANTLOCK
 

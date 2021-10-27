@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SE_OMAPI_READER
-#define ANDROID_SE_OMAPI_READER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::se::omapi
@@ -98,6 +95,4 @@ namespace android::se::omapi
 		}
 	};
 } // namespace android::se::omapi
-
-#endif // ANDROID_SE_OMAPI_READER
 

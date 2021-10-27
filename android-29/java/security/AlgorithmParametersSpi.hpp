@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_ALGORITHMPARAMETERSSPI
-#define JAVA_SECURITY_ALGORITHMPARAMETERSSPI
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -49,6 +46,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_ALGORITHMPARAMETERSSPI
 

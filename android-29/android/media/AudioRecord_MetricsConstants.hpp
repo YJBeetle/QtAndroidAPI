@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_AUDIORECORD_METRICSCONSTANTS
-#define ANDROID_MEDIA_AUDIORECORD_METRICSCONSTANTS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -93,6 +90,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_AUDIORECORD_METRICSCONSTANTS
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_SPLITERATORS_ABSTRACTDOUBLESPLITERATOR
-#define JAVA_UTIL_SPLITERATORS_ABSTRACTDOUBLESPLITERATOR
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -72,6 +69,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_SPLITERATORS_ABSTRACTDOUBLESPLITERATOR
 

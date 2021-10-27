@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_WINDOWMANAGER_LAYOUTPARAMS
-#define ANDROID_VIEW_WINDOWMANAGER_LAYOUTPARAMS
-
 #include "../../__JniBaseClass.hpp"
 #include "ViewGroup_LayoutParams.hpp"
 
@@ -1273,6 +1270,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_WINDOWMANAGER_LAYOUTPARAMS
 

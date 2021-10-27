@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_BROWSE_MEDIABROWSER_MEDIAITEM
-#define ANDROID_MEDIA_BROWSE_MEDIABROWSER_MEDIAITEM
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media
@@ -154,6 +151,4 @@ namespace android::media::browse
 		}
 	};
 } // namespace android::media::browse
-
-#endif // ANDROID_MEDIA_BROWSE_MEDIABROWSER_MEDIAITEM
 

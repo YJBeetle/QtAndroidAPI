@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_CAMERA2_PARAMS_SESSIONCONFIGURATION
-#define ANDROID_HARDWARE_CAMERA2_PARAMS_SESSIONCONFIGURATION
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::hardware::camera2
@@ -203,6 +200,4 @@ namespace android::hardware::camera2::params
 		}
 	};
 } // namespace android::hardware::camera2::params
-
-#endif // ANDROID_HARDWARE_CAMERA2_PARAMS_SESSIONCONFIGURATION
 

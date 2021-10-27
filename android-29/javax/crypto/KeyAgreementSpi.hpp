@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_CRYPTO_KEYAGREEMENTSPI
-#define JAVAX_CRYPTO_KEYAGREEMENTSPI
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::security
@@ -54,6 +51,4 @@ namespace javax::crypto
 		}
 	};
 } // namespace javax::crypto
-
-#endif // JAVAX_CRYPTO_KEYAGREEMENTSPI
 

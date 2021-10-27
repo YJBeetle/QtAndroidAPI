@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_LOADER_FORCELOADCONTENTOBSERVER
-#define ANDROID_CONTENT_LOADER_FORCELOADCONTENTOBSERVER
-
 #include "../../__JniBaseClass.hpp"
 #include "../database/ContentObserver.hpp"
 
@@ -74,6 +71,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_LOADER_FORCELOADCONTENTOBSERVER
 

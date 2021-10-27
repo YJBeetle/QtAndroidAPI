@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_KEYSTORE_SECRETKEYENTRY
-#define JAVA_SECURITY_KEYSTORE_SECRETKEYENTRY
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -91,6 +88,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_KEYSTORE_SECRETKEYENTRY
 

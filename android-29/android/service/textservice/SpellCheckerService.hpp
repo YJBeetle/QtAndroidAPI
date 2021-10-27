@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_TEXTSERVICE_SPELLCHECKERSERVICE
-#define ANDROID_SERVICE_TEXTSERVICE_SPELLCHECKERSERVICE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
@@ -88,6 +85,4 @@ namespace android::service::textservice
 		}
 	};
 } // namespace android::service::textservice
-
-#endif // ANDROID_SERVICE_TEXTSERVICE_SPELLCHECKERSERVICE
 

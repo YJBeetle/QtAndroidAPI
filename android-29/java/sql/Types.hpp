@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SQL_TYPES
-#define JAVA_SQL_TYPES
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -360,6 +357,4 @@ namespace java::sql
 		}
 	};
 } // namespace java::sql
-
-#endif // JAVA_SQL_TYPES
 

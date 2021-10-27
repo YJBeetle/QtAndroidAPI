@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_RENDERSCRIPT_RENDERSCRIPT_RSERRORHANDLER
-#define ANDROID_RENDERSCRIPT_RENDERSCRIPT_RSERRORHANDLER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -57,6 +54,4 @@ namespace android::renderscript
 		}
 	};
 } // namespace android::renderscript
-
-#endif // ANDROID_RENDERSCRIPT_RENDERSCRIPT_RSERRORHANDLER
 

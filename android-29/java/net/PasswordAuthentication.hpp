@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_PASSWORDAUTHENTICATION
-#define JAVA_NET_PASSWORDAUTHENTICATION
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -79,6 +76,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_PASSWORDAUTHENTICATION
 

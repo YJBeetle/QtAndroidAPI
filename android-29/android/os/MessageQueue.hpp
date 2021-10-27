@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_MESSAGEQUEUE
-#define ANDROID_OS_MESSAGEQUEUE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -99,6 +96,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_MESSAGEQUEUE
 

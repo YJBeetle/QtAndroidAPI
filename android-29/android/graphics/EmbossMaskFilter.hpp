@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_EMBOSSMASKFILTER
-#define ANDROID_GRAPHICS_EMBOSSMASKFILTER
-
 #include "../../__JniBaseClass.hpp"
 #include "MaskFilter.hpp"
 
@@ -58,6 +55,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_EMBOSSMASKFILTER
 

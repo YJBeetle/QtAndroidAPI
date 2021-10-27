@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DRM_DRMSTORE
-#define ANDROID_DRM_DRMSTORE
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -49,6 +46,4 @@ namespace android::drm
 		}
 	};
 } // namespace android::drm
-
-#endif // ANDROID_DRM_DRMSTORE
 

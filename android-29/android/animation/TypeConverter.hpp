@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ANIMATION_TYPECONVERTER
-#define ANDROID_ANIMATION_TYPECONVERTER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -62,6 +59,4 @@ namespace android::animation
 		}
 	};
 } // namespace android::animation
-
-#endif // ANDROID_ANIMATION_TYPECONVERTER
 

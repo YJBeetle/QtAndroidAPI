@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_TRANSFORM_DOM_DOMSOURCE
-#define JAVAX_XML_TRANSFORM_DOM_DOMSOURCE
-
 #include "../../../../__JniBaseClass.hpp"
 
 
@@ -149,6 +146,4 @@ namespace javax::xml::transform::dom
 		}
 	};
 } // namespace javax::xml::transform::dom
-
-#endif // JAVAX_XML_TRANSFORM_DOM_DOMSOURCE
 

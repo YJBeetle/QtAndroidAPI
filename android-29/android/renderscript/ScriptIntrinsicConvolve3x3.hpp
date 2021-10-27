@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_RENDERSCRIPT_SCRIPTINTRINSICCONVOLVE3X3
-#define ANDROID_RENDERSCRIPT_SCRIPTINTRINSICCONVOLVE3X3
-
 #include "../../__JniBaseClass.hpp"
 #include "BaseObj.hpp"
 #include "Script.hpp"
@@ -145,6 +142,4 @@ namespace android::renderscript
 		}
 	};
 } // namespace android::renderscript
-
-#endif // ANDROID_RENDERSCRIPT_SCRIPTINTRINSICCONVOLVE3X3
 

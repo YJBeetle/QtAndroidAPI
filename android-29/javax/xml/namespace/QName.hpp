@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_NAMESPACE_QNAME
-#define JAVAX_XML_NAMESPACE_QNAME
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -184,6 +181,4 @@ namespace javax::xml::namespace
 		}
 	};
 } // namespace javax::xml::namespace
-
-#endif // JAVAX_XML_NAMESPACE_QNAME
 

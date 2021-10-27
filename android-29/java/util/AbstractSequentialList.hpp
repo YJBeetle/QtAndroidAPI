@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_ABSTRACTSEQUENTIALLIST
-#define JAVA_UTIL_ABSTRACTSEQUENTIALLIST
-
 #include "../../__JniBaseClass.hpp"
 #include "AbstractCollection.hpp"
 #include "AbstractList.hpp"
@@ -115,6 +112,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_ABSTRACTSEQUENTIALLIST
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_RELATIVEDATETIMEFORMATTER
-#define ANDROID_ICU_TEXT_RELATIVEDATETIMEFORMATTER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::icu::text
@@ -257,6 +254,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_RELATIVEDATETIMEFORMATTER
 

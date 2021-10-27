@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHARBUFFER
-#define JAVA_NIO_CHARBUFFER
-
 #include "../../__JniBaseClass.hpp"
 #include "Buffer.hpp"
 
@@ -609,6 +606,4 @@ namespace java::nio
 		}
 	};
 } // namespace java::nio
-
-#endif // JAVA_NIO_CHARBUFFER
 

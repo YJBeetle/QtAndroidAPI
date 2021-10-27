@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_SIP_SIPAUDIOCALL_LISTENER
-#define ANDROID_NET_SIP_SIPAUDIOCALL_LISTENER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net::sip
@@ -163,6 +160,4 @@ namespace android::net::sip
 		}
 	};
 } // namespace android::net::sip
-
-#endif // ANDROID_NET_SIP_SIPAUDIOCALL_LISTENER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ACCOUNTS_ACCOUNTSEXCEPTION
-#define ANDROID_ACCOUNTS_ACCOUNTSEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 
@@ -113,6 +110,4 @@ namespace android::accounts
 		}
 	};
 } // namespace android::accounts
-
-#endif // ANDROID_ACCOUNTS_ACCOUNTSEXCEPTION
 

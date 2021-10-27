@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_RTP_RTPSTREAM
-#define ANDROID_NET_RTP_RTPSTREAM
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::net
@@ -152,6 +149,4 @@ namespace android::net::rtp
 		}
 	};
 } // namespace android::net::rtp
-
-#endif // ANDROID_NET_RTP_RTPSTREAM
 

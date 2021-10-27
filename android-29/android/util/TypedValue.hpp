@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_TYPEDVALUE
-#define ANDROID_UTIL_TYPEDVALUE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::util
@@ -577,6 +574,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_TYPEDVALUE
 

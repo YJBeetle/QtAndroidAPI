@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ACCESSIBILITYSERVICE_GESTUREDESCRIPTION_STROKEDESCRIPTION
-#define ANDROID_ACCESSIBILITYSERVICE_GESTUREDESCRIPTION_STROKEDESCRIPTION
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -124,6 +121,4 @@ namespace android::accessibilityservice
 		}
 	};
 } // namespace android::accessibilityservice
-
-#endif // ANDROID_ACCESSIBILITYSERVICE_GESTUREDESCRIPTION_STROKEDESCRIPTION
 

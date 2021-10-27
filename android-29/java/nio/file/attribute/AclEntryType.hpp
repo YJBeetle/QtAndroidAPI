@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_FILE_ATTRIBUTE_ACLENTRYTYPE
-#define JAVA_NIO_FILE_ATTRIBUTE_ACLENTRYTYPE
-
 #include "../../../../__JniBaseClass.hpp"
 #include "../../../lang/Enum.hpp"
 
@@ -114,6 +111,4 @@ namespace java::nio::file::attribute
 		}
 	};
 } // namespace java::nio::file::attribute
-
-#endif // JAVA_NIO_FILE_ATTRIBUTE_ACLENTRYTYPE
 

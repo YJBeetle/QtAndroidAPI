@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SYSTEM_INT64REF
-#define ANDROID_SYSTEM_INT64REF
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -58,6 +55,4 @@ namespace android::system
 		}
 	};
 } // namespace android::system
-
-#endif // ANDROID_SYSTEM_INT64REF
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_TEXTPAINT
-#define ANDROID_TEXT_TEXTPAINT
-
 #include "../../__JniBaseClass.hpp"
 #include "../graphics/Paint.hpp"
 
@@ -150,6 +147,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_TEXTPAINT
 

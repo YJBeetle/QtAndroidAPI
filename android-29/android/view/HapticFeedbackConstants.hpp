@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_HAPTICFEEDBACKCONSTANTS
-#define ANDROID_VIEW_HAPTICFEEDBACKCONSTANTS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -136,6 +133,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_HAPTICFEEDBACKCONSTANTS
 

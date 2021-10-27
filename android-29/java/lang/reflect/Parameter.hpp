@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_REFLECT_PARAMETER
-#define JAVA_LANG_REFLECT_PARAMETER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang::reflect
@@ -210,6 +207,4 @@ namespace java::lang::reflect
 		}
 	};
 } // namespace java::lang::reflect
-
-#endif // JAVA_LANG_REFLECT_PARAMETER
 

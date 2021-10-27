@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_DRAWABLE_ANIMATIONDRAWABLE
-#define ANDROID_GRAPHICS_DRAWABLE_ANIMATIONDRAWABLE
-
 #include "../../../__JniBaseClass.hpp"
 #include "Drawable.hpp"
 #include "DrawableContainer.hpp"
@@ -195,6 +192,4 @@ namespace android::graphics::drawable
 		}
 	};
 } // namespace android::graphics::drawable
-
-#endif // ANDROID_GRAPHICS_DRAWABLE_ANIMATIONDRAWABLE
 

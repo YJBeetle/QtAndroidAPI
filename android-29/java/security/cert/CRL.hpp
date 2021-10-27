@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_CERT_CRL
-#define JAVA_SECURITY_CERT_CRL
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::security::cert
@@ -78,6 +75,4 @@ namespace java::security::cert
 		}
 	};
 } // namespace java::security::cert
-
-#endif // JAVA_SECURITY_CERT_CRL
 

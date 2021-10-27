@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_BACKUP_BACKUPAGENTHELPER
-#define ANDROID_APP_BACKUP_BACKUPAGENTHELPER
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
@@ -109,6 +106,4 @@ namespace android::app::backup
 		}
 	};
 } // namespace android::app::backup
-
-#endif // ANDROID_APP_BACKUP_BACKUPAGENTHELPER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_RANGE
-#define ANDROID_UTIL_RANGE
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -179,6 +176,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_RANGE
 

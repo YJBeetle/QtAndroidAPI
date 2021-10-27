@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_BANDBASE
-#define ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_BANDBASE
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -95,6 +92,4 @@ namespace android::media::audiofx
 		}
 	};
 } // namespace android::media::audiofx
-
-#endif // ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_BANDBASE
 

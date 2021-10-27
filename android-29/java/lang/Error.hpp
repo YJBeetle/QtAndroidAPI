@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_ERROR
-#define JAVA_LANG_ERROR
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -112,6 +109,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_ERROR
 

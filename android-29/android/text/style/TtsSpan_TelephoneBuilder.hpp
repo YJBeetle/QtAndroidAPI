@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_STYLE_TTSSPAN_TELEPHONEBUILDER
-#define ANDROID_TEXT_STYLE_TTSSPAN_TELEPHONEBUILDER
-
 #include "../../../__JniBaseClass.hpp"
 #include "TtsSpan_Builder.hpp"
 #include "TtsSpan_SemioticClassBuilder.hpp"
@@ -128,6 +125,4 @@ namespace android::text::style
 		}
 	};
 } // namespace android::text::style
-
-#endif // ANDROID_TEXT_STYLE_TTSSPAN_TELEPHONEBUILDER
 

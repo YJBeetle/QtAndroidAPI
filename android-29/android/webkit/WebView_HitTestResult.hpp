@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WEBKIT_WEBVIEW_HITTESTRESULT
-#define ANDROID_WEBKIT_WEBVIEW_HITTESTRESULT
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -144,6 +141,4 @@ namespace android::webkit
 		}
 	};
 } // namespace android::webkit
-
-#endif // ANDROID_WEBKIT_WEBVIEW_HITTESTRESULT
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_RES_ASSETFILEDESCRIPTOR
-#define ANDROID_CONTENT_RES_ASSETFILEDESCRIPTOR
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -220,6 +217,4 @@ namespace android::content::res
 		}
 	};
 } // namespace android::content::res
-
-#endif // ANDROID_CONTENT_RES_ASSETFILEDESCRIPTOR
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TEXT_ATTRIBUTEDCHARACTERITERATOR_ATTRIBUTE
-#define JAVA_TEXT_ATTRIBUTEDCHARACTERITERATOR_ATTRIBUTE
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -100,6 +97,4 @@ namespace java::text
 		}
 	};
 } // namespace java::text
-
-#endif // JAVA_TEXT_ATTRIBUTEDCHARACTERITERATOR_ATTRIBUTE
 

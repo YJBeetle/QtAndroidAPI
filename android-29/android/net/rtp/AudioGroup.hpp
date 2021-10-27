@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_RTP_AUDIOGROUP
-#define ANDROID_NET_RTP_AUDIOGROUP
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -123,6 +120,4 @@ namespace android::net::rtp
 		}
 	};
 } // namespace android::net::rtp
-
-#endif // ANDROID_NET_RTP_AUDIOGROUP
 

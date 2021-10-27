@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_HOTSPOT2_CONFIGPARSER
-#define ANDROID_NET_WIFI_HOTSPOT2_CONFIGPARSER
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net::wifi::hotspot2
@@ -75,6 +72,4 @@ namespace android::net::wifi::hotspot2
 		}
 	};
 } // namespace android::net::wifi::hotspot2
-
-#endif // ANDROID_NET_WIFI_HOTSPOT2_CONFIGPARSER
 

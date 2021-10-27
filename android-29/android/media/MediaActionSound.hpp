@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIAACTIONSOUND
-#define ANDROID_MEDIA_MEDIAACTIONSOUND
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -107,6 +104,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIAACTIONSOUND
 

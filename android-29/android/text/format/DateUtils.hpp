@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_FORMAT_DATEUTILS
-#define ANDROID_TEXT_FORMAT_DATEUTILS
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -644,6 +641,4 @@ namespace android::text::format
 		}
 	};
 } // namespace android::text::format
-
-#endif // ANDROID_TEXT_FORMAT_DATEUTILS
 

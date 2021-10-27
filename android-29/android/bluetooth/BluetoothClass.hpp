@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_BLUETOOTH_BLUETOOTHCLASS
-#define ANDROID_BLUETOOTH_BLUETOOTHCLASS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -130,6 +127,4 @@ namespace android::bluetooth
 		}
 	};
 } // namespace android::bluetooth
-
-#endif // ANDROID_BLUETOOTH_BLUETOOTHCLASS
 

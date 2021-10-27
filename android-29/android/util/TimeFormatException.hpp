@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_TIMEFORMATEXCEPTION
-#define ANDROID_UTIL_TIMEFORMATEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
@@ -50,6 +47,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_TIMEFORMATEXCEPTION
 

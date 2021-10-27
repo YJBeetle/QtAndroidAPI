@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_AWT_FONT_NUMERICSHAPER_RANGE
-#define JAVA_AWT_FONT_NUMERICSHAPER_RANGE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
@@ -411,6 +408,4 @@ namespace java::awt::font
 		}
 	};
 } // namespace java::awt::font
-
-#endif // JAVA_AWT_FONT_NUMERICSHAPER_RANGE
 

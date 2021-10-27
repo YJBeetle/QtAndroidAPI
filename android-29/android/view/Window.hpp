@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_WINDOW
-#define ANDROID_VIEW_WINDOW
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -1549,6 +1546,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_WINDOW
 

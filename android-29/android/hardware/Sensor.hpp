@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_SENSOR
-#define ANDROID_HARDWARE_SENSOR
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -716,6 +713,4 @@ namespace android::hardware
 		}
 	};
 } // namespace android::hardware
-
-#endif // ANDROID_HARDWARE_SENSOR
 

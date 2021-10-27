@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_SLICE_SLICEPROVIDER
-#define ANDROID_APP_SLICE_SLICEPROVIDER
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/ContentProvider.hpp"
 
@@ -336,6 +333,4 @@ namespace android::app::slice
 		}
 	};
 } // namespace android::app::slice
-
-#endif // ANDROID_APP_SLICE_SLICEPROVIDER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_JSON_JSONOBJECT
-#define ORG_JSON_JSONOBJECT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -812,6 +809,4 @@ namespace org::json
 		}
 	};
 } // namespace org::json
-
-#endif // ORG_JSON_JSONOBJECT
 

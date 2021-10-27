@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NFC_CARDEMULATION_CARDEMULATION
-#define ANDROID_NFC_CARDEMULATION_CARDEMULATION
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -336,6 +333,4 @@ namespace android::nfc::cardemulation
 		}
 	};
 } // namespace android::nfc::cardemulation
-
-#endif // ANDROID_NFC_CARDEMULATION_CARDEMULATION
 

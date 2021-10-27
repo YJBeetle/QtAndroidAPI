@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_RECT
-#define ANDROID_GRAPHICS_RECT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -452,6 +449,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_RECT
 

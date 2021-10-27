@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_PM_LAUNCHERAPPS_PINITEMREQUEST
-#define ANDROID_CONTENT_PM_LAUNCHERAPPS_PINITEMREQUEST
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::appwidget
@@ -174,6 +171,4 @@ namespace android::content::pm
 		}
 	};
 } // namespace android::content::pm
-
-#endif // ANDROID_CONTENT_PM_LAUNCHERAPPS_PINITEMREQUEST
 

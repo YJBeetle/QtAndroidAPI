@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SECURITY_KEYSTORE_KEYPROPERTIES
-#define ANDROID_SECURITY_KEYSTORE_KEYPROPERTIES
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -354,6 +351,4 @@ namespace android::security::keystore
 		}
 	};
 } // namespace android::security::keystore
-
-#endif // ANDROID_SECURITY_KEYSTORE_KEYPROPERTIES
 

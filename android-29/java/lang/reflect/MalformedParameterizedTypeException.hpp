@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_REFLECT_MALFORMEDPARAMETERIZEDTYPEEXCEPTION
-#define JAVA_LANG_REFLECT_MALFORMEDPARAMETERIZEDTYPEEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../Exception.hpp"
 #include "../RuntimeException.hpp"
@@ -74,6 +71,4 @@ namespace java::lang::reflect
 		}
 	};
 } // namespace java::lang::reflect
-
-#endif // JAVA_LANG_REFLECT_MALFORMEDPARAMETERIZEDTYPEEXCEPTION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_FACEDETECTOR_FACE
-#define ANDROID_MEDIA_FACEDETECTOR_FACE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -124,6 +121,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_FACEDETECTOR_FACE
 

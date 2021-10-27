@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_MBMS_FILESERVICEINFO
-#define ANDROID_TELEPHONY_MBMS_FILESERVICEINFO
-
 #include "../../../__JniBaseClass.hpp"
 #include "ServiceInfo.hpp"
 
@@ -89,6 +86,4 @@ namespace android::telephony::mbms
 		}
 	};
 } // namespace android::telephony::mbms
-
-#endif // ANDROID_TELEPHONY_MBMS_FILESERVICEINFO
 

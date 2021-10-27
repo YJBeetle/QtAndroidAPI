@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_ASYNCTASK_STATUS
-#define ANDROID_OS_ASYNCTASK_STATUS
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
@@ -105,6 +102,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_ASYNCTASK_STATUS
 

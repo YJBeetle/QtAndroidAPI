@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OPENGL_GLES11
-#define ANDROID_OPENGL_GLES11
-
 #include "../../__JniBaseClass.hpp"
 #include "GLES10.hpp"
 
@@ -1871,6 +1868,4 @@ namespace android::opengl
 		}
 	};
 } // namespace android::opengl
-
-#endif // ANDROID_OPENGL_GLES11
 

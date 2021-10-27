@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_PUSHBACKREADER
-#define JAVA_IO_PUSHBACKREADER
-
 #include "../../__JniBaseClass.hpp"
 #include "Reader.hpp"
 #include "FilterReader.hpp"
@@ -172,6 +169,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_PUSHBACKREADER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_BATTERYMANAGER
-#define ANDROID_OS_BATTERYMANAGER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -367,6 +364,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_BATTERYMANAGER
 

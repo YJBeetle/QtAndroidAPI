@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_BITMAPSHADER
-#define ANDROID_GRAPHICS_BITMAPSHADER
-
 #include "../../__JniBaseClass.hpp"
 #include "Shader.hpp"
 
@@ -66,6 +63,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_BITMAPSHADER
 

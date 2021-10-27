@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_THREADPOOLEXECUTOR
-#define JAVA_UTIL_CONCURRENT_THREADPOOLEXECUTOR
-
 #include "../../../__JniBaseClass.hpp"
 #include "AbstractExecutorService.hpp"
 
@@ -392,6 +389,4 @@ namespace java::util::concurrent
 		}
 	};
 } // namespace java::util::concurrent
-
-#endif // JAVA_UTIL_CONCURRENT_THREADPOOLEXECUTOR
 

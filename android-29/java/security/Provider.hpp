@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_PROVIDER
-#define JAVA_SECURITY_PROVIDER
-
 #include "../../__JniBaseClass.hpp"
 #include "../util/Dictionary.hpp"
 #include "../util/Hashtable.hpp"
@@ -382,6 +379,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_PROVIDER
 

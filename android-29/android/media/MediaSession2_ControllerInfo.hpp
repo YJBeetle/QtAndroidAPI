@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIASESSION2_CONTROLLERINFO
-#define ANDROID_MEDIA_MEDIASESSION2_CONTROLLERINFO
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media::session
@@ -115,6 +112,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIASESSION2_CONTROLLERINFO
 

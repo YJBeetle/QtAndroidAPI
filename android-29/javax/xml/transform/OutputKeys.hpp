@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_TRANSFORM_OUTPUTKEYS
-#define JAVAX_XML_TRANSFORM_OUTPUTKEYS
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -138,6 +135,4 @@ namespace javax::xml::transform
 		}
 	};
 } // namespace javax::xml::transform
-
-#endif // JAVAX_XML_TRANSFORM_OUTPUTKEYS
 

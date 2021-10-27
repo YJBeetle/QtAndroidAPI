@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_AUTOFILL_VISIBILITYSETTERACTION_BUILDER
-#define ANDROID_SERVICE_AUTOFILL_VISIBILITYSETTERACTION_BUILDER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::service::autofill
@@ -76,6 +73,4 @@ namespace android::service::autofill
 		}
 	};
 } // namespace android::service::autofill
-
-#endif // ANDROID_SERVICE_AUTOFILL_VISIBILITYSETTERACTION_BUILDER
 

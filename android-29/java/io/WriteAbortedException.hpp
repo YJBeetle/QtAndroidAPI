@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_WRITEABORTEDEXCEPTION
-#define JAVA_IO_WRITEABORTEDEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 #include "IOException.hpp"
@@ -95,6 +92,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_WRITEABORTEDEXCEPTION
 

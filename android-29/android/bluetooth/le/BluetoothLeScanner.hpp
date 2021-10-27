@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_BLUETOOTH_LE_BLUETOOTHLESCANNER
-#define ANDROID_BLUETOOTH_LE_BLUETOOTHLESCANNER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -148,6 +145,4 @@ namespace android::bluetooth::le
 		}
 	};
 } // namespace android::bluetooth::le
-
-#endif // ANDROID_BLUETOOTH_LE_BLUETOOTHLESCANNER
 

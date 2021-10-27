@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MANIFEST_PERMISSION
-#define ANDROID_MANIFEST_PERMISSION
-
 #include "../__JniBaseClass.hpp"
 
 
@@ -1471,6 +1468,4 @@ namespace android
 		}
 	};
 } // namespace android
-
-#endif // ANDROID_MANIFEST_PERMISSION
 

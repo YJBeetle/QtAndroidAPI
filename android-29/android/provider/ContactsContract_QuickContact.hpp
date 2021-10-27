@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_CONTACTSCONTRACT_QUICKCONTACT
-#define ANDROID_PROVIDER_CONTACTSCONTRACT_QUICKCONTACT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -213,6 +210,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_CONTACTSCONTRACT_QUICKCONTACT
 

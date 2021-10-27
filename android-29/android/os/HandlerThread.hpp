@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_HANDLERTHREAD
-#define ANDROID_OS_HANDLERTHREAD
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Thread.hpp"
 
@@ -132,6 +129,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_HANDLERTHREAD
 

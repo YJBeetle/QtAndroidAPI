@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_TYPEFACE_CUSTOMFALLBACKBUILDER
-#define ANDROID_GRAPHICS_TYPEFACE_CUSTOMFALLBACKBUILDER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -119,6 +116,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_TYPEFACE_CUSTOMFALLBACKBUILDER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_INVALIDPROPERTIESFORMATEXCEPTION
-#define JAVA_UTIL_INVALIDPROPERTIESFORMATEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 #include "../io/IOException.hpp"
@@ -86,6 +83,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_INVALIDPROPERTIESFORMATEXCEPTION
 

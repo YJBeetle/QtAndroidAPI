@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_METHOD_CHARACTERPICKERDIALOG
-#define ANDROID_TEXT_METHOD_CHARACTERPICKERDIALOG
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../app/Dialog.hpp"
 
@@ -114,6 +111,4 @@ namespace android::text::method
 		}
 	};
 } // namespace android::text::method
-
-#endif // ANDROID_TEXT_METHOD_CHARACTERPICKERDIALOG
 

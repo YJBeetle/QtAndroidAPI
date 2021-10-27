@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_SECURECACHERESPONSE
-#define JAVA_NET_SECURECACHERESPONSE
-
 #include "../../__JniBaseClass.hpp"
 #include "CacheResponse.hpp"
 
@@ -103,6 +100,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_SECURECACHERESPONSE
 

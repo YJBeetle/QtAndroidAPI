@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_SYSTEMCLOCK
-#define ANDROID_OS_SYSTEMCLOCK
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::time
@@ -118,6 +115,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_SYSTEMCLOCK
 

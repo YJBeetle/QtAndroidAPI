@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MIDI_MIDIDEVICEINFO
-#define ANDROID_MEDIA_MIDI_MIDIDEVICEINFO
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -253,6 +250,4 @@ namespace android::media::midi
 		}
 	};
 } // namespace android::media::midi
-
-#endif // ANDROID_MEDIA_MIDI_MIDIDEVICEINFO
 

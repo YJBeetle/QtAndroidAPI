@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_SECURITY_AUTH_DESTROYFAILEDEXCEPTION
-#define JAVAX_SECURITY_AUTH_DESTROYFAILEDEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 
@@ -73,6 +70,4 @@ namespace javax::security::auth
 		}
 	};
 } // namespace javax::security::auth
-
-#endif // JAVAX_SECURITY_AUTH_DESTROYFAILEDEXCEPTION
 

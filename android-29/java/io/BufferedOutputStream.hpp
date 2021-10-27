@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_BUFFEREDOUTPUTSTREAM
-#define JAVA_IO_BUFFEREDOUTPUTSTREAM
-
 #include "../../__JniBaseClass.hpp"
 #include "OutputStream.hpp"
 #include "FilterOutputStream.hpp"
@@ -102,6 +99,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_BUFFEREDOUTPUTSTREAM
 

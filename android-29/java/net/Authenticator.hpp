@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_AUTHENTICATOR
-#define JAVA_NET_AUTHENTICATOR
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::net
@@ -248,6 +245,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_AUTHENTICATOR
 

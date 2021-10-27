@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TEXT_FORMAT_FIELD
-#define JAVA_TEXT_FORMAT_FIELD
-
 #include "../../__JniBaseClass.hpp"
 #include "AttributedCharacterIterator_Attribute.hpp"
 
@@ -49,6 +46,4 @@ namespace java::text
 		}
 	};
 } // namespace java::text
-
-#endif // JAVA_TEXT_FORMAT_FIELD
 

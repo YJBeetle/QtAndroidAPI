@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_METHOD_METAKEYKEYLISTENER
-#define ANDROID_TEXT_METHOD_METAKEYKEYLISTENER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::view
@@ -380,6 +377,4 @@ namespace android::text::method
 		}
 	};
 } // namespace android::text::method
-
-#endif // ANDROID_TEXT_METHOD_METAKEYKEYLISTENER
 

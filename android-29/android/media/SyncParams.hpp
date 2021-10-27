@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_SYNCPARAMS
-#define ANDROID_MEDIA_SYNCPARAMS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -181,6 +178,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_SYNCPARAMS
 

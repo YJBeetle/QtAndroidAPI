@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SECURITY_KEYCHAINEXCEPTION
-#define ANDROID_SECURITY_KEYCHAINEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 
@@ -113,6 +110,4 @@ namespace android::security
 		}
 	};
 } // namespace android::security
-
-#endif // ANDROID_SECURITY_KEYCHAINEXCEPTION
 

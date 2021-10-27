@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_COUNTDOWNLATCH
-#define JAVA_UTIL_CONCURRENT_COUNTDOWNLATCH
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util::concurrent
@@ -98,6 +95,4 @@ namespace java::util::concurrent
 		}
 	};
 } // namespace java::util::concurrent
-
-#endif // JAVA_UTIL_CONCURRENT_COUNTDOWNLATCH
 

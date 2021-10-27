@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_MBMS_STREAMINGSERVICECALLBACK
-#define ANDROID_TELEPHONY_MBMS_STREAMINGSERVICECALLBACK
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -113,6 +110,4 @@ namespace android::telephony::mbms
 		}
 	};
 } // namespace android::telephony::mbms
-
-#endif // ANDROID_TELEPHONY_MBMS_STREAMINGSERVICECALLBACK
 

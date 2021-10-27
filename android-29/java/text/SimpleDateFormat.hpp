@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TEXT_SIMPLEDATEFORMAT
-#define JAVA_TEXT_SIMPLEDATEFORMAT
-
 #include "../../__JniBaseClass.hpp"
 #include "Format.hpp"
 #include "DateFormat.hpp"
@@ -322,6 +319,4 @@ namespace java::text
 		}
 	};
 } // namespace java::text
-
-#endif // JAVA_TEXT_SIMPLEDATEFORMAT
 

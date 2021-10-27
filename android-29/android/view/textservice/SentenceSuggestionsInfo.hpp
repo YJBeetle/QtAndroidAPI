@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_TEXTSERVICE_SENTENCESUGGESTIONSINFO
-#define ANDROID_VIEW_TEXTSERVICE_SENTENCESUGGESTIONSINFO
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -141,6 +138,4 @@ namespace android::view::textservice
 		}
 	};
 } // namespace android::view::textservice
-
-#endif // ANDROID_VIEW_TEXTSERVICE_SENTENCESUGGESTIONSINFO
 

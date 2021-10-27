@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_EUICC_EUICCMANAGER
-#define ANDROID_TELEPHONY_EUICC_EUICCMANAGER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -245,6 +242,4 @@ namespace android::telephony::euicc
 		}
 	};
 } // namespace android::telephony::euicc
-
-#endif // ANDROID_TELEPHONY_EUICC_EUICCMANAGER
 

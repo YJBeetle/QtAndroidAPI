@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TEXT_RULEBASEDCOLLATOR
-#define JAVA_TEXT_RULEBASEDCOLLATOR
-
 #include "../../__JniBaseClass.hpp"
 #include "Collator.hpp"
 
@@ -174,6 +171,4 @@ namespace java::text
 		}
 	};
 } // namespace java::text
-
-#endif // JAVA_TEXT_RULEBASEDCOLLATOR
 

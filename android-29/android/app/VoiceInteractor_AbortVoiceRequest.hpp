@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_VOICEINTERACTOR_ABORTVOICEREQUEST
-#define ANDROID_APP_VOICEINTERACTOR_ABORTVOICEREQUEST
-
 #include "../../__JniBaseClass.hpp"
 #include "VoiceInteractor_Request.hpp"
 
@@ -73,6 +70,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_VOICEINTERACTOR_ABORTVOICEREQUEST
 

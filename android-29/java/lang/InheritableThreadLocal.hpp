@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_INHERITABLETHREADLOCAL
-#define JAVA_LANG_INHERITABLETHREADLOCAL
-
 #include "../../__JniBaseClass.hpp"
 #include "ThreadLocal.hpp"
 
@@ -55,6 +52,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_INHERITABLETHREADLOCAL
 

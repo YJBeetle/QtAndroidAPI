@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_ADMIN_SECURITYLOG
-#define ANDROID_APP_ADMIN_SECURITYLOG
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -337,6 +334,4 @@ namespace android::app::admin
 		}
 	};
 } // namespace android::app::admin
-
-#endif // ANDROID_APP_ADMIN_SECURITYLOG
 

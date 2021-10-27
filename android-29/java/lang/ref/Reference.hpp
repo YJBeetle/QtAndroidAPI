@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_REF_REFERENCE
-#define JAVA_LANG_REF_REFERENCE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang::ref
@@ -104,6 +101,4 @@ namespace java::lang::ref
 		}
 	};
 } // namespace java::lang::ref
-
-#endif // JAVA_LANG_REF_REFERENCE
 

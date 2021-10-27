@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef DALVIK_SYSTEM_BASEDEXCLASSLOADER
-#define DALVIK_SYSTEM_BASEDEXCLASSLOADER
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/ClassLoader.hpp"
 
@@ -116,6 +113,4 @@ namespace dalvik::system
 		}
 	};
 } // namespace dalvik::system
-
-#endif // DALVIK_SYSTEM_BASEDEXCLASSLOADER
 

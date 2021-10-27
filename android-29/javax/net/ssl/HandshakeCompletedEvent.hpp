@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_NET_SSL_HANDSHAKECOMPLETEDEVENT
-#define JAVAX_NET_SSL_HANDSHAKECOMPLETEDEVENT
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/util/EventObject.hpp"
 
@@ -123,6 +120,4 @@ namespace javax::net::ssl
 		}
 	};
 } // namespace javax::net::ssl
-
-#endif // JAVAX_NET_SSL_HANDSHAKECOMPLETEDEVENT
 

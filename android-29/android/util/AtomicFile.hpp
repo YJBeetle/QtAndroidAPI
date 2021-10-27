@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_ATOMICFILE
-#define ANDROID_UTIL_ATOMICFILE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -124,6 +121,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_ATOMICFILE
 

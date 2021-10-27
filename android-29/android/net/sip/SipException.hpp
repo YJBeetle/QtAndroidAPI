@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_SIP_SIPEXCEPTION
-#define ANDROID_NET_SIP_SIPEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 
@@ -99,6 +96,4 @@ namespace android::net::sip
 		}
 	};
 } // namespace android::net::sip
-
-#endif // ANDROID_NET_SIP_SIPEXCEPTION
 

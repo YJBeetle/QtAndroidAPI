@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_ARRAYMAP
-#define ANDROID_UTIL_ARRAYMAP
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -305,6 +302,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_ARRAYMAP
 

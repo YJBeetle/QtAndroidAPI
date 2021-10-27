@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SYSTEM_STRUCTTIMEVAL
-#define ANDROID_SYSTEM_STRUCTTIMEVAL
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -105,6 +102,4 @@ namespace android::system
 		}
 	};
 } // namespace android::system
-
-#endif // ANDROID_SYSTEM_STRUCTTIMEVAL
 

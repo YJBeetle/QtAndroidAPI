@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_JETPLAYER
-#define ANDROID_MEDIA_JETPLAYER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content::res
@@ -238,6 +235,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_JETPLAYER
 

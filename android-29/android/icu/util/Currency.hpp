@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_UTIL_CURRENCY
-#define ANDROID_ICU_UTIL_CURRENCY
-
 #include "../../../__JniBaseClass.hpp"
 #include "MeasureUnit.hpp"
 
@@ -424,6 +421,4 @@ namespace android::icu::util
 		}
 	};
 } // namespace android::icu::util
-
-#endif // ANDROID_ICU_UTIL_CURRENCY
 

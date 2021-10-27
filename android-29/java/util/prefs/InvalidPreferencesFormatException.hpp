@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_PREFS_INVALIDPREFERENCESFORMATEXCEPTION
-#define JAVA_UTIL_PREFS_INVALIDPREFERENCESFORMATEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 
@@ -101,6 +98,4 @@ namespace java::util::prefs
 		}
 	};
 } // namespace java::util::prefs
-
-#endif // JAVA_UTIL_PREFS_INVALIDPREFERENCESFORMATEXCEPTION
 

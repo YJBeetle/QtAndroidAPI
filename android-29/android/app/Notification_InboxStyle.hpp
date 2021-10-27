@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_NOTIFICATION_INBOXSTYLE
-#define ANDROID_APP_NOTIFICATION_INBOXSTYLE
-
 #include "../../__JniBaseClass.hpp"
 #include "Notification_Style.hpp"
 
@@ -123,6 +120,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_NOTIFICATION_INBOXSTYLE
 

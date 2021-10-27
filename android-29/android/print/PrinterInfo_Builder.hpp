@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PRINT_PRINTERINFO_BUILDER
-#define ANDROID_PRINT_PRINTERINFO_BUILDER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -189,6 +186,4 @@ namespace android::print
 		}
 	};
 } // namespace android::print
-
-#endif // ANDROID_PRINT_PRINTERINFO_BUILDER
 

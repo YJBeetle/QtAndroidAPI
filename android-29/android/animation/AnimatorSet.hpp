@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ANIMATION_ANIMATORSET
-#define ANDROID_ANIMATION_ANIMATORSET
-
 #include "../../__JniBaseClass.hpp"
 #include "Animator.hpp"
 
@@ -299,6 +296,4 @@ namespace android::animation
 		}
 	};
 } // namespace android::animation
-
-#endif // ANDROID_ANIMATION_ANIMATORSET
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SECURITY_KEYSTOREPARAMETER
-#define ANDROID_SECURITY_KEYSTOREPARAMETER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -56,6 +53,4 @@ namespace android::security
 		}
 	};
 } // namespace android::security
-
-#endif // ANDROID_SECURITY_KEYSTOREPARAMETER
 

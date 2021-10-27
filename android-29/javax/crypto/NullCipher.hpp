@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_CRYPTO_NULLCIPHER
-#define JAVAX_CRYPTO_NULLCIPHER
-
 #include "../../__JniBaseClass.hpp"
 #include "Cipher.hpp"
 
@@ -50,6 +47,4 @@ namespace javax::crypto
 		}
 	};
 } // namespace javax::crypto
-
-#endif // JAVAX_CRYPTO_NULLCIPHER
 

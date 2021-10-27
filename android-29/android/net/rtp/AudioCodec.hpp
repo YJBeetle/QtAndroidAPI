@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_RTP_AUDIOCODEC
-#define ANDROID_NET_RTP_AUDIOCODEC
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -149,6 +146,4 @@ namespace android::net::rtp
 		}
 	};
 } // namespace android::net::rtp
-
-#endif // ANDROID_NET_RTP_AUDIOCODEC
 

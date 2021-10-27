@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_PKCS12ATTRIBUTE
-#define JAVA_SECURITY_PKCS12ATTRIBUTE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util::regex
@@ -131,6 +128,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_PKCS12ATTRIBUTE
 

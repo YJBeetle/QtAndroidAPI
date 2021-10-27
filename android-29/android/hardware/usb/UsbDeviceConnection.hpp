@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_USB_USBDEVICECONNECTION
-#define ANDROID_HARDWARE_USB_USBDEVICECONNECTION
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::hardware::usb
@@ -215,6 +212,4 @@ namespace android::hardware::usb
 		}
 	};
 } // namespace android::hardware::usb
-
-#endif // ANDROID_HARDWARE_USB_USBDEVICECONNECTION
 

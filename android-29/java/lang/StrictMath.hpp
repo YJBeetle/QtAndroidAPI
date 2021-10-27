@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_STRICTMATH
-#define JAVA_LANG_STRICTMATH
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -920,6 +917,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_STRICTMATH
 

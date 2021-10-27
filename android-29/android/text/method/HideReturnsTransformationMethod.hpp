@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_METHOD_HIDERETURNSTRANSFORMATIONMETHOD
-#define ANDROID_TEXT_METHOD_HIDERETURNSTRANSFORMATIONMETHOD
-
 #include "../../../__JniBaseClass.hpp"
 #include "ReplacementTransformationMethod.hpp"
 
@@ -59,6 +56,4 @@ namespace android::text::method
 		}
 	};
 } // namespace android::text::method
-
-#endif // ANDROID_TEXT_METHOD_HIDERETURNSTRANSFORMATIONMETHOD
 

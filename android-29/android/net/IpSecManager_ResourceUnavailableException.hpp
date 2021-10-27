@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_IPSECMANAGER_RESOURCEUNAVAILABLEEXCEPTION
-#define ANDROID_NET_IPSECMANAGER_RESOURCEUNAVAILABLEEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../util/AndroidException.hpp"
@@ -50,6 +47,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_IPSECMANAGER_RESOURCEUNAVAILABLEEXCEPTION
 

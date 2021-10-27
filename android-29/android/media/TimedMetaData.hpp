@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_TIMEDMETADATA
-#define ANDROID_MEDIA_TIMEDMETADATA
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -69,6 +66,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_TIMEDMETADATA
 

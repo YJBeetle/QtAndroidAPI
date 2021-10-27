@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_VALIDATION_SCHEMAFACTORY
-#define JAVAX_XML_VALIDATION_SCHEMAFACTORY
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -293,6 +290,4 @@ namespace javax::xml::validation
 		}
 	};
 } // namespace javax::xml::validation
-
-#endif // JAVAX_XML_VALIDATION_SCHEMAFACTORY
 

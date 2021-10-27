@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_AWARE_SUBSCRIBEDISCOVERYSESSION
-#define ANDROID_NET_WIFI_AWARE_SUBSCRIBEDISCOVERYSESSION
-
 #include "../../../../__JniBaseClass.hpp"
 #include "DiscoverySession.hpp"
 
@@ -68,6 +65,4 @@ namespace android::net::wifi::aware
 		}
 	};
 } // namespace android::net::wifi::aware
-
-#endif // ANDROID_NET_WIFI_AWARE_SUBSCRIBEDISCOVERYSESSION
 

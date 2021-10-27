@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_RENDERSCRIPT_MATRIX2F
-#define ANDROID_RENDERSCRIPT_MATRIX2F
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -174,6 +171,4 @@ namespace android::renderscript
 		}
 	};
 } // namespace android::renderscript
-
-#endif // ANDROID_RENDERSCRIPT_MATRIX2F
 

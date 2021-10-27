@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_TEXTVIEW_BUFFERTYPE
-#define ANDROID_WIDGET_TEXTVIEW_BUFFERTYPE
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
@@ -105,6 +102,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_TEXTVIEW_BUFFERTYPE
 

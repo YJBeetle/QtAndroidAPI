@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_SYNCSTATECONTRACT
-#define ANDROID_PROVIDER_SYNCSTATECONTRACT
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -49,6 +46,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_SYNCSTATECONTRACT
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PRINT_PRINTATTRIBUTES_MEDIASIZE
-#define ANDROID_PRINT_PRINTATTRIBUTES_MEDIASIZE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content::pm
@@ -903,6 +900,4 @@ namespace android::print
 		}
 	};
 } // namespace android::print
-
-#endif // ANDROID_PRINT_PRINTATTRIBUTES_MEDIASIZE
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_LOGGING_CONSOLEHANDLER
-#define JAVA_UTIL_LOGGING_CONSOLEHANDLER
-
 #include "../../../__JniBaseClass.hpp"
 #include "Handler.hpp"
 #include "StreamHandler.hpp"
@@ -73,6 +70,4 @@ namespace java::util::logging
 		}
 	};
 } // namespace java::util::logging
-
-#endif // JAVA_UTIL_LOGGING_CONSOLEHANDLER
 

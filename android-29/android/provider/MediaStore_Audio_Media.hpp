@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_MEDIASTORE_AUDIO_MEDIA
-#define ANDROID_PROVIDER_MEDIASTORE_AUDIO_MEDIA
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -157,6 +154,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_MEDIASTORE_AUDIO_MEDIA
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_SPEC_RSAPRIVATECRTKEYSPEC
-#define JAVA_SECURITY_SPEC_RSAPRIVATECRTKEYSPEC
-
 #include "../../../__JniBaseClass.hpp"
 #include "RSAPrivateKeySpec.hpp"
 
@@ -149,6 +146,4 @@ namespace java::security::spec
 		}
 	};
 } // namespace java::security::spec
-
-#endif // JAVA_SECURITY_SPEC_RSAPRIVATECRTKEYSPEC
 

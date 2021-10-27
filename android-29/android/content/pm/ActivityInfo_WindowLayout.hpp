@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_PM_ACTIVITYINFO_WINDOWLAYOUT
-#define ANDROID_CONTENT_PM_ACTIVITYINFO_WINDOWLAYOUT
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -112,6 +109,4 @@ namespace android::content::pm
 		}
 	};
 } // namespace android::content::pm
-
-#endif // ANDROID_CONTENT_PM_ACTIVITYINFO_WINDOWLAYOUT
 

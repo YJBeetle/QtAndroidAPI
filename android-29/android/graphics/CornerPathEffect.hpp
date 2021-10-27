@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_CORNERPATHEFFECT
-#define ANDROID_GRAPHICS_CORNERPATHEFFECT
-
 #include "../../__JniBaseClass.hpp"
 #include "PathEffect.hpp"
 
@@ -52,6 +49,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_CORNERPATHEFFECT
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_CRYPTO_SEALEDOBJECT
-#define JAVAX_CRYPTO_SEALEDOBJECT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -109,6 +106,4 @@ namespace javax::crypto
 		}
 	};
 } // namespace javax::crypto
-
-#endif // JAVAX_CRYPTO_SEALEDOBJECT
 

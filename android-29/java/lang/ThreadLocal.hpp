@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_THREADLOCAL
-#define JAVA_LANG_THREADLOCAL
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -94,6 +91,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_THREADLOCAL
 

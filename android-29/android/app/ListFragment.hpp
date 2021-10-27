@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_LISTFRAGMENT
-#define ANDROID_APP_LISTFRAGMENT
-
 #include "../../__JniBaseClass.hpp"
 #include "Fragment.hpp"
 
@@ -202,6 +199,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_LISTFRAGMENT
 

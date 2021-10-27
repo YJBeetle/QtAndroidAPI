@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_LOCATION_GNSSCLOCK
-#define ANDROID_LOCATION_GNSSCLOCK
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -248,6 +245,4 @@ namespace android::location
 		}
 	};
 } // namespace android::location
-
-#endif // ANDROID_LOCATION_GNSSCLOCK
 

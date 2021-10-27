@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_SIMPLEADAPTER
-#define ANDROID_WIDGET_SIMPLEADAPTER
-
 #include "../../__JniBaseClass.hpp"
 #include "BaseAdapter.hpp"
 
@@ -244,6 +241,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_SIMPLEADAPTER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_LOCATION_LOCATIONMANAGER
-#define ANDROID_LOCATION_LOCATIONMANAGER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -843,6 +840,4 @@ namespace android::location
 		}
 	};
 } // namespace android::location
-
-#endif // ANDROID_LOCATION_LOCATIONMANAGER
 

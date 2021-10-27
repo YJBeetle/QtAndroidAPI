@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_CERT_CERTIFICATEEXPIREDEXCEPTION
-#define JAVA_SECURITY_CERT_CERTIFICATEEXPIREDEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 #include "../GeneralSecurityException.hpp"
@@ -75,6 +72,4 @@ namespace java::security::cert
 		}
 	};
 } // namespace java::security::cert
-
-#endif // JAVA_SECURITY_CERT_CERTIFICATEEXPIREDEXCEPTION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SPEECH_RECOGNIZERINTENT
-#define ANDROID_SPEECH_RECOGNIZERINTENT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -351,6 +348,4 @@ namespace android::speech
 		}
 	};
 } // namespace android::speech
-
-#endif // ANDROID_SPEECH_RECOGNIZERINTENT
 

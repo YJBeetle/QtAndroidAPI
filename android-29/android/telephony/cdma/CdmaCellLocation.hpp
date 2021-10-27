@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_CDMA_CDMACELLLOCATION
-#define ANDROID_TELEPHONY_CDMA_CDMACELLLOCATION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../CellLocation.hpp"
 
@@ -185,6 +182,4 @@ namespace android::telephony::cdma
 		}
 	};
 } // namespace android::telephony::cdma
-
-#endif // ANDROID_TELEPHONY_CDMA_CDMACELLLOCATION
 

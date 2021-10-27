@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_MOTIONEVENT
-#define ANDROID_VIEW_MOTIONEVENT
-
 #include "../../__JniBaseClass.hpp"
 #include "InputEvent.hpp"
 
@@ -1686,6 +1683,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_MOTIONEVENT
 

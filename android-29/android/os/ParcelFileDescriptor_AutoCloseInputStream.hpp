@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_PARCELFILEDESCRIPTOR_AUTOCLOSEINPUTSTREAM
-#define ANDROID_OS_PARCELFILEDESCRIPTOR_AUTOCLOSEINPUTSTREAM
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/io/InputStream.hpp"
 #include "../../java/io/FileInputStream.hpp"
@@ -94,6 +91,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_PARCELFILEDESCRIPTOR_AUTOCLOSEINPUTSTREAM
 

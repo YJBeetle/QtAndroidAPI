@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_BEANS_PROPERTYCHANGESUPPORT
-#define JAVA_BEANS_PROPERTYCHANGESUPPORT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::beans
@@ -315,6 +312,4 @@ namespace java::beans
 		}
 	};
 } // namespace java::beans
-
-#endif // JAVA_BEANS_PROPERTYCHANGESUPPORT
 

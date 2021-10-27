@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_FINGERPRINT_FINGERPRINTMANAGER
-#define ANDROID_HARDWARE_FINGERPRINT_FINGERPRINTMANAGER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::hardware::fingerprint
@@ -233,6 +230,4 @@ namespace android::hardware::fingerprint
 		}
 	};
 } // namespace android::hardware::fingerprint
-
-#endif // ANDROID_HARDWARE_FINGERPRINT_FINGERPRINTMANAGER
 

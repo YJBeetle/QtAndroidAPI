@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_INPUTMETHOD_CURSORANCHORINFO_BUILDER
-#define ANDROID_VIEW_INPUTMETHOD_CURSORANCHORINFO_BUILDER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -141,6 +138,4 @@ namespace android::view::inputmethod
 		}
 	};
 } // namespace android::view::inputmethod
-
-#endif // ANDROID_VIEW_INPUTMETHOD_CURSORANCHORINFO_BUILDER
 

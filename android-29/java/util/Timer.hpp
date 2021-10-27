@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_TIMER
-#define JAVA_UTIL_TIMER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util
@@ -207,6 +204,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_TIMER
 

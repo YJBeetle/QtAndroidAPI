@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_METHOD_DATETIMEKEYLISTENER
-#define ANDROID_TEXT_METHOD_DATETIMEKEYLISTENER
-
 #include "../../../__JniBaseClass.hpp"
 #include "MetaKeyKeyListener.hpp"
 #include "BaseKeyListener.hpp"
@@ -107,6 +104,4 @@ namespace android::text::method
 		}
 	};
 } // namespace android::text::method
-
-#endif // ANDROID_TEXT_METHOD_DATETIMEKEYLISTENER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_VIEWGROUPOVERLAY
-#define ANDROID_VIEW_VIEWGROUPOVERLAY
-
 #include "../../__JniBaseClass.hpp"
 #include "ViewOverlay.hpp"
 
@@ -77,6 +74,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_VIEWGROUPOVERLAY
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PREFERENCE_RINGTONEPREFERENCE
-#define ANDROID_PREFERENCE_RINGTONEPREFERENCE
-
 #include "../../__JniBaseClass.hpp"
 #include "Preference.hpp"
 
@@ -193,6 +190,4 @@ namespace android::preference
 		}
 	};
 } // namespace android::preference
-
-#endif // ANDROID_PREFERENCE_RINGTONEPREFERENCE
 

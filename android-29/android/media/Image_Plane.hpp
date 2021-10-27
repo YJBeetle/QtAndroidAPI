@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_IMAGE_PLANE
-#define ANDROID_MEDIA_IMAGE_PLANE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::nio
@@ -77,6 +74,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_IMAGE_PLANE
 

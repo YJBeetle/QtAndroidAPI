@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_CONSUMERIRMANAGER
-#define ANDROID_HARDWARE_CONSUMERIRMANAGER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -74,6 +71,4 @@ namespace android::hardware
 		}
 	};
 } // namespace android::hardware
-
-#endif // ANDROID_HARDWARE_CONSUMERIRMANAGER
 

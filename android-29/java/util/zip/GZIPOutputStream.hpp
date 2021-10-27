@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_ZIP_GZIPOUTPUTSTREAM
-#define JAVA_UTIL_ZIP_GZIPOUTPUTSTREAM
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../io/OutputStream.hpp"
 #include "../../io/FilterOutputStream.hpp"
@@ -133,6 +130,4 @@ namespace java::util::zip
 		}
 	};
 } // namespace java::util::zip
-
-#endif // JAVA_UTIL_ZIP_GZIPOUTPUTSTREAM
 

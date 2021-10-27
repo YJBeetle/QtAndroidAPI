@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_ASSIST_ASSISTSTRUCTURE_VIEWNODE
-#define ANDROID_APP_ASSIST_ASSISTSTRUCTURE_VIEWNODE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -575,6 +572,4 @@ namespace android::app::assist
 		}
 	};
 } // namespace android::app::assist
-
-#endif // ANDROID_APP_ASSIST_ASSISTSTRUCTURE_VIEWNODE
 

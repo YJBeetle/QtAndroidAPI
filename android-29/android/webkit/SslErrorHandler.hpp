@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WEBKIT_SSLERRORHANDLER
-#define ANDROID_WEBKIT_SSLERRORHANDLER
-
 #include "../../__JniBaseClass.hpp"
 #include "../os/Handler.hpp"
 
@@ -65,6 +62,4 @@ namespace android::webkit
 		}
 	};
 } // namespace android::webkit
-
-#endif // ANDROID_WEBKIT_SSLERRORHANDLER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PREFERENCE_PREFERENCECATEGORY
-#define ANDROID_PREFERENCE_PREFERENCECATEGORY
-
 #include "../../__JniBaseClass.hpp"
 #include "Preference.hpp"
 #include "PreferenceGroup.hpp"
@@ -133,6 +130,4 @@ namespace android::preference
 		}
 	};
 } // namespace android::preference
-
-#endif // ANDROID_PREFERENCE_PREFERENCECATEGORY
 

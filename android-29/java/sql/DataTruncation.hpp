@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SQL_DATATRUNCATION
-#define JAVA_SQL_DATATRUNCATION
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 #include "SQLException.hpp"
@@ -126,6 +123,4 @@ namespace java::sql
 		}
 	};
 } // namespace java::sql
-
-#endif // JAVA_SQL_DATATRUNCATION
 

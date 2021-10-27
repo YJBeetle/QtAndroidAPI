@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_STACKOVERFLOWERROR
-#define JAVA_LANG_STACKOVERFLOWERROR
-
 #include "../../__JniBaseClass.hpp"
 #include "Error.hpp"
 #include "VirtualMachineError.hpp"
@@ -74,6 +71,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_STACKOVERFLOWERROR
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIAROUTER_ROUTEGROUP
-#define ANDROID_MEDIA_MEDIAROUTER_ROUTEGROUP
-
 #include "../../__JniBaseClass.hpp"
 #include "MediaRouter_RouteInfo.hpp"
 
@@ -162,6 +159,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIAROUTER_ROUTEGROUP
 

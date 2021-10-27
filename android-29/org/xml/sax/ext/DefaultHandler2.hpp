@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_XML_SAX_EXT_DEFAULTHANDLER2
-#define ORG_XML_SAX_EXT_DEFAULTHANDLER2
-
 #include "../../../../__JniBaseClass.hpp"
 #include "../helpers/DefaultHandler.hpp"
 
@@ -300,6 +297,4 @@ namespace org::xml::sax::ext
 		}
 	};
 } // namespace org::xml::sax::ext
-
-#endif // ORG_XML_SAX_EXT_DEFAULTHANDLER2
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_TV_TVCONTRACT_CHANNELS
-#define ANDROID_MEDIA_TV_TVCONTRACT_CHANNELS
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -748,6 +745,4 @@ namespace android::media::tv
 		}
 	};
 } // namespace android::media::tv
-
-#endif // ANDROID_MEDIA_TV_TVCONTRACT_CHANNELS
 

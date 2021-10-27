@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHARSET_ILLEGALCHARSETNAMEEXCEPTION
-#define JAVA_NIO_CHARSET_ILLEGALCHARSETNAMEEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 #include "../../lang/RuntimeException.hpp"
@@ -71,6 +68,4 @@ namespace java::nio::charset
 		}
 	};
 } // namespace java::nio::charset
-
-#endif // JAVA_NIO_CHARSET_ILLEGALCHARSETNAMEEXCEPTION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_REFLECT_FIELD
-#define JAVA_LANG_REFLECT_FIELD
-
 #include "../../../__JniBaseClass.hpp"
 #include "AccessibleObject.hpp"
 
@@ -357,6 +354,4 @@ namespace java::lang::reflect
 		}
 	};
 } // namespace java::lang::reflect
-
-#endif // JAVA_LANG_REFLECT_FIELD
 

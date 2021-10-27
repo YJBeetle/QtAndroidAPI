@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_PROJECTION_MEDIAPROJECTION
-#define ANDROID_MEDIA_PROJECTION_MEDIAPROJECTION
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::hardware::display
@@ -132,6 +129,4 @@ namespace android::media::projection
 		}
 	};
 } // namespace android::media::projection
-
-#endif // ANDROID_MEDIA_PROJECTION_MEDIAPROJECTION
 

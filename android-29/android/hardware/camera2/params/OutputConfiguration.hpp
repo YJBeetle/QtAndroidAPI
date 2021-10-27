@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_CAMERA2_PARAMS_OUTPUTCONFIGURATION
-#define ANDROID_HARDWARE_CAMERA2_PARAMS_OUTPUTCONFIGURATION
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -226,6 +223,4 @@ namespace android::hardware::camera2::params
 		}
 	};
 } // namespace android::hardware::camera2::params
-
-#endif // ANDROID_HARDWARE_CAMERA2_PARAMS_OUTPUTCONFIGURATION
 

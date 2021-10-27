@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_INPUT_INPUTMANAGER
-#define ANDROID_HARDWARE_INPUT_INPUTMANAGER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -112,6 +109,4 @@ namespace android::hardware::input
 		}
 	};
 } // namespace android::hardware::input
-
-#endif // ANDROID_HARDWARE_INPUT_INPUTMANAGER
 

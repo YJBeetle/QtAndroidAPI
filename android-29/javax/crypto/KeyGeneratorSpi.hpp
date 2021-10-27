@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_CRYPTO_KEYGENERATORSPI
-#define JAVAX_CRYPTO_KEYGENERATORSPI
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::security
@@ -54,6 +51,4 @@ namespace javax::crypto
 		}
 	};
 } // namespace javax::crypto
-
-#endif // JAVAX_CRYPTO_KEYGENERATORSPI
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_CHRONO_JAPANESEERA
-#define JAVA_TIME_CHRONO_JAPANESEERA
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -192,6 +189,4 @@ namespace java::time::chrono
 		}
 	};
 } // namespace java::time::chrono
-
-#endif // JAVA_TIME_CHRONO_JAPANESEERA
 

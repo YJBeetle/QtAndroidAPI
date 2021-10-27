@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_INTSUMMARYSTATISTICS
-#define JAVA_UTIL_INTSUMMARYSTATISTICS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -135,6 +132,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_INTSUMMARYSTATISTICS
 

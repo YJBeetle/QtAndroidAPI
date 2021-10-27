@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHANNELS_FILECHANNEL
-#define JAVA_NIO_CHANNELS_FILECHANNEL
-
 #include "../../../__JniBaseClass.hpp"
 #include "spi/AbstractInterruptibleChannel.hpp"
 
@@ -284,6 +281,4 @@ namespace java::nio::channels
 		}
 	};
 } // namespace java::nio::channels
-
-#endif // JAVA_NIO_CHANNELS_FILECHANNEL
 

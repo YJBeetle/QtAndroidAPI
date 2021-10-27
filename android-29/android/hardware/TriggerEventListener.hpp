@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_TRIGGEREVENTLISTENER
-#define ANDROID_HARDWARE_TRIGGEREVENTLISTENER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::hardware
@@ -63,6 +60,4 @@ namespace android::hardware
 		}
 	};
 } // namespace android::hardware
-
-#endif // ANDROID_HARDWARE_TRIGGEREVENTLISTENER
 

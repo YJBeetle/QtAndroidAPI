@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef DALVIK_BYTECODE_OPCODEINFO
-#define DALVIK_BYTECODE_OPCODEINFO
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -64,6 +61,4 @@ namespace dalvik::bytecode
 		}
 	};
 } // namespace dalvik::bytecode
-
-#endif // DALVIK_BYTECODE_OPCODEINFO
 

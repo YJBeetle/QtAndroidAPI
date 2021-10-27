@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_IPSECMANAGER_UDPENCAPSULATIONSOCKET
-#define ANDROID_NET_IPSECMANAGER_UDPENCAPSULATIONSOCKET
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -85,6 +82,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_IPSECMANAGER_UDPENCAPSULATIONSOCKET
 

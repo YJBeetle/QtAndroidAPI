@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_BUNDLE
-#define ANDROID_OS_BUNDLE
-
 #include "../../__JniBaseClass.hpp"
 #include "BaseBundle.hpp"
 
@@ -1211,6 +1208,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_BUNDLE
 

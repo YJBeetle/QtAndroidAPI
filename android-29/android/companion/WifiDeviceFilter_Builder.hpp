@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_COMPANION_WIFIDEVICEFILTER_BUILDER
-#define ANDROID_COMPANION_WIFIDEVICEFILTER_BUILDER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::companion
@@ -76,6 +73,4 @@ namespace android::companion
 		}
 	};
 } // namespace android::companion
-
-#endif // ANDROID_COMPANION_WIFIDEVICEFILTER_BUILDER
 

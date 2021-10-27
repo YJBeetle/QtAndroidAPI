@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_SUMPATHEFFECT
-#define ANDROID_GRAPHICS_SUMPATHEFFECT
-
 #include "../../__JniBaseClass.hpp"
 #include "PathEffect.hpp"
 
@@ -59,6 +56,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_SUMPATHEFFECT
 

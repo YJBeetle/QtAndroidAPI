@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SYSTEM_STRUCTSTAT
-#define ANDROID_SYSTEM_STRUCTSTAT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::system
@@ -241,6 +238,4 @@ namespace android::system
 		}
 	};
 } // namespace android::system
-
-#endif // ANDROID_SYSTEM_STRUCTSTAT
 

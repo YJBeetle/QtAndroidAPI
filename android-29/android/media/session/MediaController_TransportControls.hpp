@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_SESSION_MEDIACONTROLLER_TRANSPORTCONTROLS
-#define ANDROID_MEDIA_SESSION_MEDIACONTROLLER_TRANSPORTCONTROLS
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media
@@ -303,6 +300,4 @@ namespace android::media::session
 		}
 	};
 } // namespace android::media::session
-
-#endif // ANDROID_MEDIA_SESSION_MEDIACONTROLLER_TRANSPORTCONTROLS
 

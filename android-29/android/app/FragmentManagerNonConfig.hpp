@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_FRAGMENTMANAGERNONCONFIG
-#define ANDROID_APP_FRAGMENTMANAGERNONCONFIG
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -48,6 +45,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_FRAGMENTMANAGERNONCONFIG
 

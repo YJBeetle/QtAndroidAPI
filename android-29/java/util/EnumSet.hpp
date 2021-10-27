@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_ENUMSET
-#define JAVA_UTIL_ENUMSET
-
 #include "../../__JniBaseClass.hpp"
 #include "AbstractCollection.hpp"
 #include "AbstractSet.hpp"
@@ -200,6 +197,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_ENUMSET
 

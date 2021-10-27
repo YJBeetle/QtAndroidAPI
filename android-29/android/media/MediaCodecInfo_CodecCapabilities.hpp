@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIACODECINFO_CODECCAPABILITIES
-#define ANDROID_MEDIA_MEDIACODECINFO_CODECCAPABILITIES
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media
@@ -690,6 +687,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIACODECINFO_CODECCAPABILITIES
 

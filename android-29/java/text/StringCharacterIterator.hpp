@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TEXT_STRINGCHARACTERITERATOR
-#define JAVA_TEXT_STRINGCHARACTERITERATOR
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -234,6 +231,4 @@ namespace java::text
 		}
 	};
 } // namespace java::text
-
-#endif // JAVA_TEXT_STRINGCHARACTERITERATOR
 

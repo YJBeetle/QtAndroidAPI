@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_BLENDMODECOLORFILTER
-#define ANDROID_GRAPHICS_BLENDMODECOLORFILTER
-
 #include "../../__JniBaseClass.hpp"
 #include "ColorFilter.hpp"
 
@@ -92,6 +89,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_BLENDMODECOLORFILTER
 

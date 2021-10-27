@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_INPUTMETHOD_EXTRACTEDTEXT
-#define ANDROID_VIEW_INPUTMETHOD_EXTRACTEDTEXT
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -155,6 +152,4 @@ namespace android::view::inputmethod
 		}
 	};
 } // namespace android::view::inputmethod
-
-#endif // ANDROID_VIEW_INPUTMETHOD_EXTRACTEDTEXT
 

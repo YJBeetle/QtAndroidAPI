@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_BROWSE_MEDIABROWSER_CONNECTIONCALLBACK
-#define ANDROID_MEDIA_BROWSE_MEDIABROWSER_CONNECTIONCALLBACK
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -73,6 +70,4 @@ namespace android::media::browse
 		}
 	};
 } // namespace android::media::browse
-
-#endif // ANDROID_MEDIA_BROWSE_MEDIABROWSER_CONNECTIONCALLBACK
 

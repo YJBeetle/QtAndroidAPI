@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_LOGINFILTER_USERNAMEFILTERGMAIL
-#define ANDROID_TEXT_LOGINFILTER_USERNAMEFILTERGMAIL
-
 #include "../../__JniBaseClass.hpp"
 #include "LoginFilter.hpp"
 
@@ -73,6 +70,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_LOGINFILTER_USERNAMEFILTERGMAIL
 

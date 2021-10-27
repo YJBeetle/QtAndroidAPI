@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_VALIDATION_VALIDATORHANDLER
-#define JAVAX_XML_VALIDATION_VALIDATORHANDLER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::javax::xml::validation
@@ -188,6 +185,4 @@ namespace javax::xml::validation
 		}
 	};
 } // namespace javax::xml::validation
-
-#endif // JAVAX_XML_VALIDATION_VALIDATORHANDLER
 

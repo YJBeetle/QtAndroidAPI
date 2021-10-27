@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_GSM_GSMCELLLOCATION
-#define ANDROID_TELEPHONY_GSM_GSMCELLLOCATION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../CellLocation.hpp"
 
@@ -145,6 +142,4 @@ namespace android::telephony::gsm
 		}
 	};
 } // namespace android::telephony::gsm
-
-#endif // ANDROID_TELEPHONY_GSM_GSMCELLLOCATION
 

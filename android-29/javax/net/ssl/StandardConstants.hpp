@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_NET_SSL_STANDARDCONSTANTS
-#define JAVAX_NET_SSL_STANDARDCONSTANTS
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -56,6 +53,4 @@ namespace javax::net::ssl
 		}
 	};
 } // namespace javax::net::ssl
-
-#endif // JAVAX_NET_SSL_STANDARDCONSTANTS
 

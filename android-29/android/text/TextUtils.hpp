@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_TEXTUTILS
-#define ANDROID_TEXT_TEXTUTILS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -1032,6 +1029,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_TEXTUTILS
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_DISPLAY
-#define ANDROID_VIEW_DISPLAY
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -426,6 +423,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_DISPLAY
 

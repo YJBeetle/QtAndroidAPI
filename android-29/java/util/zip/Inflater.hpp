@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_ZIP_INFLATER
-#define JAVA_UTIL_ZIP_INFLATER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::nio
@@ -243,6 +240,4 @@ namespace java::util::zip
 		}
 	};
 } // namespace java::util::zip
-
-#endif // JAVA_UTIL_ZIP_INFLATER
 

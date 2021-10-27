@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_GEOMAGNETICFIELD
-#define ANDROID_HARDWARE_GEOMAGNETICFIELD
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -113,6 +110,4 @@ namespace android::hardware
 		}
 	};
 } // namespace android::hardware
-
-#endif // ANDROID_HARDWARE_GEOMAGNETICFIELD
 

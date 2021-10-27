@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_DATATYPE_DURATION
-#define JAVAX_XML_DATATYPE_DURATION
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -302,6 +299,4 @@ namespace javax::xml::datatype
 		}
 	};
 } // namespace javax::xml::datatype
-
-#endif // JAVAX_XML_DATATYPE_DURATION
 

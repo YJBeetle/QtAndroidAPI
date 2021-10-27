@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_JOB_JOBINFO
-#define ANDROID_APP_JOB_JOBINFO
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -452,6 +449,4 @@ namespace android::app::job
 		}
 	};
 } // namespace android::app::job
-
-#endif // ANDROID_APP_JOB_JOBINFO
 

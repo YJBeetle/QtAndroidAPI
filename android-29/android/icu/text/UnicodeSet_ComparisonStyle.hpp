@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_UNICODESET_COMPARISONSTYLE
-#define ANDROID_ICU_TEXT_UNICODESET_COMPARISONSTYLE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
@@ -105,6 +102,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_UNICODESET_COMPARISONSTYLE
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_KEYSTORE_PASSWORDPROTECTION
-#define JAVA_SECURITY_KEYSTORE_PASSWORDPROTECTION
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -120,6 +117,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_KEYSTORE_PASSWORDPROTECTION
 

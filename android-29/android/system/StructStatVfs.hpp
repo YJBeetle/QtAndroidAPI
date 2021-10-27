@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SYSTEM_STRUCTSTATVFS
-#define ANDROID_SYSTEM_STRUCTSTATVFS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -156,6 +153,4 @@ namespace android::system
 		}
 	};
 } // namespace android::system
-
-#endif // ANDROID_SYSTEM_STRUCTSTATVFS
 

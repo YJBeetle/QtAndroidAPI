@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_PRIORITYQUEUE
-#define JAVA_UTIL_PRIORITYQUEUE
-
 #include "../../__JniBaseClass.hpp"
 #include "AbstractCollection.hpp"
 #include "AbstractQueue.hpp"
@@ -264,6 +261,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_PRIORITYQUEUE
 

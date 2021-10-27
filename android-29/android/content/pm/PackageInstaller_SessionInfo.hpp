@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_PM_PACKAGEINSTALLER_SESSIONINFO
-#define ANDROID_CONTENT_PM_PACKAGEINSTALLER_SESSIONINFO
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -364,6 +361,4 @@ namespace android::content::pm
 		}
 	};
 } // namespace android::content::pm
-
-#endif // ANDROID_CONTENT_PM_PACKAGEINSTALLER_SESSIONINFO
 

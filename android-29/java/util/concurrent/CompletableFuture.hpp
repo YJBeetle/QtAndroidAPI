@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_COMPLETABLEFUTURE
-#define JAVA_UTIL_CONCURRENT_COMPLETABLEFUTURE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util::concurrent
@@ -789,6 +786,4 @@ namespace java::util::concurrent
 		}
 	};
 } // namespace java::util::concurrent
-
-#endif // JAVA_UTIL_CONCURRENT_COMPLETABLEFUTURE
 

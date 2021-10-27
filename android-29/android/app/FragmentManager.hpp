@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_FRAGMENTMANAGER
-#define ANDROID_APP_FRAGMENTMANAGER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -390,6 +387,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_FRAGMENTMANAGER
 

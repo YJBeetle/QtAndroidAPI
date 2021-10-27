@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_ASSIST_ASSISTSTRUCTURE_WINDOWNODE
-#define ANDROID_APP_ASSIST_ASSISTSTRUCTURE_WINDOWNODE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app::assist
@@ -109,6 +106,4 @@ namespace android::app::assist
 		}
 	};
 } // namespace android::app::assist
-
-#endif // ANDROID_APP_ASSIST_ASSISTSTRUCTURE_WINDOWNODE
 

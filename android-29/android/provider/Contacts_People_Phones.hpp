@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_CONTACTS_PEOPLE_PHONES
-#define ANDROID_PROVIDER_CONTACTS_PEOPLE_PHONES
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -66,6 +63,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_CONTACTS_PEOPLE_PHONES
 

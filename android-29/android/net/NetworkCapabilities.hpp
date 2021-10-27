@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_NETWORKCAPABILITIES
-#define ANDROID_NET_NETWORKCAPABILITIES
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -406,6 +403,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_NETWORKCAPABILITIES
 

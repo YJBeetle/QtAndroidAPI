@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WEBKIT_WEBMESSAGE
-#define ANDROID_WEBKIT_WEBMESSAGE
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -102,6 +99,4 @@ namespace android::webkit
 		}
 	};
 } // namespace android::webkit
-
-#endif // ANDROID_WEBKIT_WEBMESSAGE
 

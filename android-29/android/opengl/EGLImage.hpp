@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OPENGL_EGLIMAGE
-#define ANDROID_OPENGL_EGLIMAGE
-
 #include "../../__JniBaseClass.hpp"
 #include "EGLObjectHandle.hpp"
 
@@ -58,6 +55,4 @@ namespace android::opengl
 		}
 	};
 } // namespace android::opengl
-
-#endif // ANDROID_OPENGL_EGLIMAGE
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DATABASE_OBSERVABLE
-#define ANDROID_DATABASE_OBSERVABLE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util
@@ -80,6 +77,4 @@ namespace android::database
 		}
 	};
 } // namespace android::database
-
-#endif // ANDROID_DATABASE_OBSERVABLE
 

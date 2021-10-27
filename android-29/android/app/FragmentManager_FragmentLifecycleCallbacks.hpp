@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_FRAGMENTMANAGER_FRAGMENTLIFECYCLECALLBACKS
-#define ANDROID_APP_FRAGMENTMANAGER_FRAGMENTLIFECYCLECALLBACKS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -222,6 +219,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_FRAGMENTMANAGER_FRAGMENTLIFECYCLECALLBACKS
 

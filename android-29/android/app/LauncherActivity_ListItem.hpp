@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_LAUNCHERACTIVITY_LISTITEM
-#define ANDROID_APP_LAUNCHERACTIVITY_LISTITEM
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content::pm
@@ -112,6 +109,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_LAUNCHERACTIVITY_LISTITEM
 

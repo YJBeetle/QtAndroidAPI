@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_RENDERSCRIPT_ALLOCATION
-#define ANDROID_RENDERSCRIPT_ALLOCATION
-
 #include "../../__JniBaseClass.hpp"
 #include "BaseObj.hpp"
 
@@ -1146,6 +1143,4 @@ namespace android::renderscript
 		}
 	};
 } // namespace android::renderscript
-
-#endif // ANDROID_RENDERSCRIPT_ALLOCATION
 

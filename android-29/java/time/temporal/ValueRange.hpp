@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_TEMPORAL_VALUERANGE
-#define JAVA_TIME_TEMPORAL_VALUERANGE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -200,6 +197,4 @@ namespace java::time::temporal
 		}
 	};
 } // namespace java::time::temporal
-
-#endif // JAVA_TIME_TEMPORAL_VALUERANGE
 

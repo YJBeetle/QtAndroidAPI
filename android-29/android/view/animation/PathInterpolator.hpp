@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_ANIMATION_PATHINTERPOLATOR
-#define ANDROID_VIEW_ANIMATION_PATHINTERPOLATOR
-
 #include "../../../__JniBaseClass.hpp"
 #include "BaseInterpolator.hpp"
 
@@ -123,6 +120,4 @@ namespace android::view::animation
 		}
 	};
 } // namespace android::view::animation
-
-#endif // ANDROID_VIEW_ANIMATION_PATHINTERPOLATOR
 

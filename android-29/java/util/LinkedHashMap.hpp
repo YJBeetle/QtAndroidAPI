@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_LINKEDHASHMAP
-#define JAVA_UTIL_LINKEDHASHMAP
-
 #include "../../__JniBaseClass.hpp"
 #include "AbstractMap.hpp"
 #include "HashMap.hpp"
@@ -196,6 +193,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_LINKEDHASHMAP
 

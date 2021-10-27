@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_MUTABLECHAR
-#define ANDROID_UTIL_MUTABLECHAR
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -58,6 +55,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_MUTABLECHAR
 

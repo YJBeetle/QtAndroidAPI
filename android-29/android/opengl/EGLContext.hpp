@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OPENGL_EGLCONTEXT
-#define ANDROID_OPENGL_EGLCONTEXT
-
 #include "../../__JniBaseClass.hpp"
 #include "EGLObjectHandle.hpp"
 
@@ -58,6 +55,4 @@ namespace android::opengl
 		}
 	};
 } // namespace android::opengl
-
-#endif // ANDROID_OPENGL_EGLCONTEXT
 

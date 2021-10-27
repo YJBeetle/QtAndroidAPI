@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DATABASE_CONTENTOBSERVER
-#define ANDROID_DATABASE_CONTENTOBSERVER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -107,6 +104,4 @@ namespace android::database
 		}
 	};
 } // namespace android::database
-
-#endif // ANDROID_DATABASE_CONTENTOBSERVER
 

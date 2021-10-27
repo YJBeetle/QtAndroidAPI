@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_ANIMATION_LAYOUTANIMATIONCONTROLLER_ANIMATIONPARAMETERS
-#define ANDROID_VIEW_ANIMATION_LAYOUTANIMATIONCONTROLLER_ANIMATIONPARAMETERS
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -63,6 +60,4 @@ namespace android::view::animation
 		}
 	};
 } // namespace android::view::animation
-
-#endif // ANDROID_VIEW_ANIMATION_LAYOUTANIMATIONCONTROLLER_ANIMATIONPARAMETERS
 

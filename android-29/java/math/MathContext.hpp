@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_MATH_MATHCONTEXT
-#define JAVA_MATH_MATHCONTEXT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -177,6 +174,4 @@ namespace java::math
 		}
 	};
 } // namespace java::math
-
-#endif // JAVA_MATH_MATHCONTEXT
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MTP_MTPOBJECTINFO
-#define ANDROID_MTP_MTPOBJECTINFO
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -272,6 +269,4 @@ namespace android::mtp
 		}
 	};
 } // namespace android::mtp
-
-#endif // ANDROID_MTP_MTPOBJECTINFO
 

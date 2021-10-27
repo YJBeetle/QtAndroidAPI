@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHANNELS_PIPE_SINKCHANNEL
-#define JAVA_NIO_CHANNELS_PIPE_SINKCHANNEL
-
 #include "../../../__JniBaseClass.hpp"
 #include "spi/AbstractInterruptibleChannel.hpp"
 #include "SelectableChannel.hpp"
@@ -64,6 +61,4 @@ namespace java::nio::channels
 		}
 	};
 } // namespace java::nio::channels
-
-#endif // JAVA_NIO_CHANNELS_PIPE_SINKCHANNEL
 

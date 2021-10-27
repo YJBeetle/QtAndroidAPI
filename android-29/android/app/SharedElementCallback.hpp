@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_SHAREDELEMENTCALLBACK
-#define ANDROID_APP_SHAREDELEMENTCALLBACK
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -142,6 +139,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_SHAREDELEMENTCALLBACK
 

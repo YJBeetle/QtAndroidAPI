@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SPEECH_TTS_TEXTTOSPEECHSERVICE
-#define ANDROID_SPEECH_TTS_TEXTTOSPEECHSERVICE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
@@ -153,6 +150,4 @@ namespace android::speech::tts
 		}
 	};
 } // namespace android::speech::tts
-
-#endif // ANDROID_SPEECH_TTS_TEXTTOSPEECHSERVICE
 

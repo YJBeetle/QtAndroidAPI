@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_CARRIER_CARRIERMESSAGINGSERVICE_SENDMMSRESULT
-#define ANDROID_SERVICE_CARRIER_CARRIERMESSAGINGSERVICE_SENDMMSRESULT
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -69,6 +66,4 @@ namespace android::service::carrier
 		}
 	};
 } // namespace android::service::carrier
-
-#endif // ANDROID_SERVICE_CARRIER_CARRIERMESSAGINGSERVICE_SENDMMSRESULT
 

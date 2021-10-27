@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_UIMODEMANAGER
-#define ANDROID_APP_UIMODEMANAGER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -175,6 +172,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_UIMODEMANAGER
 

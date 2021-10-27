@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SE_OMAPI_SESERVICE
-#define ANDROID_SE_OMAPI_SESERVICE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -92,6 +89,4 @@ namespace android::se::omapi
 		}
 	};
 } // namespace android::se::omapi
-
-#endif // ANDROID_SE_OMAPI_SESERVICE
 

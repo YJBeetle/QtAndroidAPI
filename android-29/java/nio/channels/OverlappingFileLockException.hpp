@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHANNELS_OVERLAPPINGFILELOCKEXCEPTION
-#define JAVA_NIO_CHANNELS_OVERLAPPINGFILELOCKEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 #include "../../lang/RuntimeException.hpp"
@@ -52,6 +49,4 @@ namespace java::nio::channels
 		}
 	};
 } // namespace java::nio::channels
-
-#endif // JAVA_NIO_CHANNELS_OVERLAPPINGFILELOCKEXCEPTION
 

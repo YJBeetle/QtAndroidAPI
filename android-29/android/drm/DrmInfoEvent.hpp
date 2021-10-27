@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DRM_DRMINFOEVENT
-#define ANDROID_DRM_DRMINFOEVENT
-
 #include "../../__JniBaseClass.hpp"
 #include "DrmEvent.hpp"
 
@@ -152,6 +149,4 @@ namespace android::drm
 		}
 	};
 } // namespace android::drm
-
-#endif // ANDROID_DRM_DRMINFOEVENT
 

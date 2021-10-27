@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_XML
-#define ANDROID_UTIL_XML
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::util
@@ -165,6 +162,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_XML
 

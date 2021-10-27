@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_EXPANDABLELISTACTIVITY
-#define ANDROID_APP_EXPANDABLELISTACTIVITY
-
 #include "../../__JniBaseClass.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
@@ -179,6 +176,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_EXPANDABLELISTACTIVITY
 

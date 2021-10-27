@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_TV_TVINPUTMANAGER_TVINPUTCALLBACK
-#define ANDROID_MEDIA_TV_TVINPUTMANAGER_TVINPUTCALLBACK
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media::tv
@@ -137,6 +134,4 @@ namespace android::media::tv
 		}
 	};
 } // namespace android::media::tv
-
-#endif // ANDROID_MEDIA_TV_TVINPUTMANAGER_TVINPUTCALLBACK
 

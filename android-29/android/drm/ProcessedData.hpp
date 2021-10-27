@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DRM_PROCESSEDDATA
-#define ANDROID_DRM_PROCESSEDDATA
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -72,6 +69,4 @@ namespace android::drm
 		}
 	};
 } // namespace android::drm
-
-#endif // ANDROID_DRM_PROCESSEDDATA
 

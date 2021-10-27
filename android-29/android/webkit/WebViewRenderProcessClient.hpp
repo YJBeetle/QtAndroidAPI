@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WEBKIT_WEBVIEWRENDERPROCESSCLIENT
-#define ANDROID_WEBKIT_WEBVIEWRENDERPROCESSCLIENT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::webkit
@@ -79,6 +76,4 @@ namespace android::webkit
 		}
 	};
 } // namespace android::webkit
-
-#endif // ANDROID_WEBKIT_WEBVIEWRENDERPROCESSCLIENT
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_SESSION_MEDIASESSION_CALLBACK
-#define ANDROID_MEDIA_SESSION_MEDIASESSION_CALLBACK
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -325,6 +322,4 @@ namespace android::media::session
 		}
 	};
 } // namespace android::media::session
-
-#endif // ANDROID_MEDIA_SESSION_MEDIASESSION_CALLBACK
 

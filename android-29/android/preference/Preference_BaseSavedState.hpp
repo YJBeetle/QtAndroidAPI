@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PREFERENCE_PREFERENCE_BASESAVEDSTATE
-#define ANDROID_PREFERENCE_PREFERENCE_BASESAVEDSTATE
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/AbsSavedState.hpp"
 
@@ -80,6 +77,4 @@ namespace android::preference
 		}
 	};
 } // namespace android::preference
-
-#endif // ANDROID_PREFERENCE_PREFERENCE_BASESAVEDSTATE
 

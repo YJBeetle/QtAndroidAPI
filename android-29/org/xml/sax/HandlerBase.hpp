@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_XML_SAX_HANDLERBASE
-#define ORG_XML_SAX_HANDLERBASE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::org::xml::sax
@@ -257,6 +254,4 @@ namespace org::xml::sax
 		}
 	};
 } // namespace org::xml::sax
-
-#endif // ORG_XML_SAX_HANDLERBASE
 

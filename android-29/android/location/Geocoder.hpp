@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_LOCATION_GEOCODER
-#define ANDROID_LOCATION_GEOCODER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -145,6 +142,4 @@ namespace android::location
 		}
 	};
 } // namespace android::location
-
-#endif // ANDROID_LOCATION_GEOCODER
 

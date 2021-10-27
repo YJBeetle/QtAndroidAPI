@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TRANSITION_CHANGEBOUNDS
-#define ANDROID_TRANSITION_CHANGEBOUNDS
-
 #include "../../__JniBaseClass.hpp"
 #include "Transition.hpp"
 
@@ -149,6 +146,4 @@ namespace android::transition
 		}
 	};
 } // namespace android::transition
-
-#endif // ANDROID_TRANSITION_CHANGEBOUNDS
 

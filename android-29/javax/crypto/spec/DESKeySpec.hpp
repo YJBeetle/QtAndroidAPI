@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_CRYPTO_SPEC_DESKEYSPEC
-#define JAVAX_CRYPTO_SPEC_DESKEYSPEC
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -105,6 +102,4 @@ namespace javax::crypto::spec
 		}
 	};
 } // namespace javax::crypto::spec
-
-#endif // JAVAX_CRYPTO_SPEC_DESKEYSPEC
 

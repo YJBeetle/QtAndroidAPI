@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_ABSTRACTQUEUE
-#define JAVA_UTIL_ABSTRACTQUEUE
-
 #include "../../__JniBaseClass.hpp"
 #include "AbstractCollection.hpp"
 
@@ -91,6 +88,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_ABSTRACTQUEUE
 

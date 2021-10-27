@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_PROXY
-#define ANDROID_NET_PROXY
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -110,6 +107,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_PROXY
 

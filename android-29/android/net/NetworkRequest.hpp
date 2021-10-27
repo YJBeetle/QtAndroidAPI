@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_NETWORKREQUEST
-#define ANDROID_NET_NETWORKREQUEST
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -123,6 +120,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_NETWORKREQUEST
 

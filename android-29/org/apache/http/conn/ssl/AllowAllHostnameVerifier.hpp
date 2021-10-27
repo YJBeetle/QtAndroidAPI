@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_APACHE_HTTP_CONN_SSL_ALLOWALLHOSTNAMEVERIFIER
-#define ORG_APACHE_HTTP_CONN_SSL_ALLOWALLHOSTNAMEVERIFIER
-
 #include "../../../../../__JniBaseClass.hpp"
 #include "AbstractVerifier.hpp"
 
@@ -80,6 +77,4 @@ namespace org::apache::http::conn::ssl
 		}
 	};
 } // namespace org::apache::http::conn::ssl
-
-#endif // ORG_APACHE_HTTP_CONN_SSL_ALLOWALLHOSTNAMEVERIFIER
 

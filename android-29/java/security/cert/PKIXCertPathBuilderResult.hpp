@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_CERT_PKIXCERTPATHBUILDERRESULT
-#define JAVA_SECURITY_CERT_PKIXCERTPATHBUILDERRESULT
-
 #include "../../../__JniBaseClass.hpp"
 #include "PKIXCertPathValidatorResult.hpp"
 
@@ -84,6 +81,4 @@ namespace java::security::cert
 		}
 	};
 } // namespace java::security::cert
-
-#endif // JAVA_SECURITY_CERT_PKIXCERTPATHBUILDERRESULT
 

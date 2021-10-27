@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_VALIDATION_TYPEINFOPROVIDER
-#define JAVAX_XML_VALIDATION_TYPEINFOPROVIDER
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -83,6 +80,4 @@ namespace javax::xml::validation
 		}
 	};
 } // namespace javax::xml::validation
-
-#endif // JAVAX_XML_VALIDATION_TYPEINFOPROVIDER
 

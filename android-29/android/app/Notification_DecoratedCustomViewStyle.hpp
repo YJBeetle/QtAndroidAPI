@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_NOTIFICATION_DECORATEDCUSTOMVIEWSTYLE
-#define ANDROID_APP_NOTIFICATION_DECORATEDCUSTOMVIEWSTYLE
-
 #include "../../__JniBaseClass.hpp"
 #include "Notification_Style.hpp"
 
@@ -50,6 +47,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_NOTIFICATION_DECORATEDCUSTOMVIEWSTYLE
 

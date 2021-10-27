@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_JAR_JARINPUTSTREAM
-#define JAVA_UTIL_JAR_JARINPUTSTREAM
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../io/InputStream.hpp"
 #include "../../io/FilterInputStream.hpp"
@@ -126,6 +123,4 @@ namespace java::util::jar
 		}
 	};
 } // namespace java::util::jar
-
-#endif // JAVA_UTIL_JAR_JARINPUTSTREAM
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_DISPLAYCONTEXT_TYPE
-#define ANDROID_ICU_TEXT_DISPLAYCONTEXT_TYPE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
@@ -114,6 +111,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_DISPLAYCONTEXT_TYPE
 

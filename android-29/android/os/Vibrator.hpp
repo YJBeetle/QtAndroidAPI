@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_VIBRATOR
-#define ANDROID_OS_VIBRATOR
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media
@@ -141,6 +138,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_VIBRATOR
 

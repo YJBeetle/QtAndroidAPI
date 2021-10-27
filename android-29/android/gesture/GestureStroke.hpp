@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GESTURE_GESTURESTROKE
-#define ANDROID_GESTURE_GESTURESTROKE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::gesture
@@ -137,6 +134,4 @@ namespace android::gesture
 		}
 	};
 } // namespace android::gesture
-
-#endif // ANDROID_GESTURE_GESTURESTROKE
 

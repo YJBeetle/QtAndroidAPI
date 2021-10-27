@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_BIOMETRICS_BIOMETRICPROMPT_CRYPTOOBJECT
-#define ANDROID_HARDWARE_BIOMETRICS_BIOMETRICPROMPT_CRYPTOOBJECT
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::security
@@ -118,6 +115,4 @@ namespace android::hardware::biometrics
 		}
 	};
 } // namespace android::hardware::biometrics
-
-#endif // ANDROID_HARDWARE_BIOMETRICS_BIOMETRICPROMPT_CRYPTOOBJECT
 

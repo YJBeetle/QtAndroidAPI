@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_INETSOCKETADDRESS
-#define JAVA_NET_INETSOCKETADDRESS
-
 #include "../../__JniBaseClass.hpp"
 #include "SocketAddress.hpp"
 
@@ -196,6 +193,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_INETSOCKETADDRESS
 

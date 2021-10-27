@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_BLUETOOTH_BLUETOOTHA2DP
-#define ANDROID_BLUETOOTH_BLUETOOTHA2DP
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::bluetooth
@@ -135,6 +132,4 @@ namespace android::bluetooth
 		}
 	};
 } // namespace android::bluetooth
-
-#endif // ANDROID_BLUETOOTH_BLUETOOTHA2DP
 

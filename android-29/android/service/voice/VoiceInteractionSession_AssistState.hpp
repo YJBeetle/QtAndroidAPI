@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_VOICE_VOICEINTERACTIONSESSION_ASSISTSTATE
-#define ANDROID_SERVICE_VOICE_VOICEINTERACTIONSESSION_ASSISTSTATE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app::assist
@@ -124,6 +121,4 @@ namespace android::service::voice
 		}
 	};
 } // namespace android::service::voice
-
-#endif // ANDROID_SERVICE_VOICE_VOICEINTERACTIONSESSION_ASSISTSTATE
 

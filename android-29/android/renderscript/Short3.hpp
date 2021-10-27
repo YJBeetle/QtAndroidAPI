@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_RENDERSCRIPT_SHORT3
-#define ANDROID_RENDERSCRIPT_SHORT3
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -88,6 +85,4 @@ namespace android::renderscript
 		}
 	};
 } // namespace android::renderscript
-
-#endif // ANDROID_RENDERSCRIPT_SHORT3
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_RES_TYPEDARRAY
-#define ANDROID_CONTENT_RES_TYPEDARRAY
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content::res
@@ -389,6 +386,4 @@ namespace android::content::res
 		}
 	};
 } // namespace android::content::res
-
-#endif // ANDROID_CONTENT_RES_TYPEDARRAY
 

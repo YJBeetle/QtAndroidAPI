@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_AWT_FONT_NUMERICSHAPER
-#define JAVA_AWT_FONT_NUMERICSHAPER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::awt::font
@@ -364,6 +361,4 @@ namespace java::awt::font
 		}
 	};
 } // namespace java::awt::font
-
-#endif // JAVA_AWT_FONT_NUMERICSHAPER
 

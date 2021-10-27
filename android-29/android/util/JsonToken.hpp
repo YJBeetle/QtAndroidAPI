@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_JSONTOKEN
-#define ANDROID_UTIL_JSONTOKEN
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
@@ -168,6 +165,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_JSONTOKEN
 

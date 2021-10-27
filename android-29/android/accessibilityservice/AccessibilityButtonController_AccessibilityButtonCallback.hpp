@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ACCESSIBILITYSERVICE_ACCESSIBILITYBUTTONCONTROLLER_ACCESSIBILITYBUTTONCALLBACK
-#define ANDROID_ACCESSIBILITYSERVICE_ACCESSIBILITYBUTTONCONTROLLER_ACCESSIBILITYBUTTONCALLBACK
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::accessibilityservice
@@ -73,6 +70,4 @@ namespace android::accessibilityservice
 		}
 	};
 } // namespace android::accessibilityservice
-
-#endif // ANDROID_ACCESSIBILITYSERVICE_ACCESSIBILITYBUTTONCONTROLLER_ACCESSIBILITYBUTTONCALLBACK
 

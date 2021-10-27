@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_XPATH_XPATHEXCEPTION
-#define JAVAX_XML_XPATH_XPATHEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 
@@ -129,6 +126,4 @@ namespace javax::xml::xpath
 		}
 	};
 } // namespace javax::xml::xpath
-
-#endif // JAVAX_XML_XPATH_XPATHEXCEPTION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_JOB_JOBSERVICE
-#define ANDROID_APP_JOB_JOBSERVICE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
@@ -108,6 +105,4 @@ namespace android::app::job
 		}
 	};
 } // namespace android::app::job
-
-#endif // ANDROID_APP_JOB_JOBSERVICE
 

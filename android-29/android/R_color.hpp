@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_R_COLOR
-#define ANDROID_R_COLOR
-
 #include "../__JniBaseClass.hpp"
 
 
@@ -273,6 +270,4 @@ namespace android
 		}
 	};
 } // namespace android
-
-#endif // ANDROID_R_COLOR
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_CAMCORDERPROFILE
-#define ANDROID_MEDIA_CAMCORDERPROFILE
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -366,6 +363,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_CAMCORDERPROFILE
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_STYLE_SUGGESTIONSPAN
-#define ANDROID_TEXT_STYLE_SUGGESTIONSPAN
-
 #include "../../../__JniBaseClass.hpp"
 #include "CharacterStyle.hpp"
 
@@ -308,6 +305,4 @@ namespace android::text::style
 		}
 	};
 } // namespace android::text::style
-
-#endif // ANDROID_TEXT_STYLE_SUGGESTIONSPAN
 

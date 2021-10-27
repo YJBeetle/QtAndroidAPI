@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_STRICTMODE_CONTENTURIWITHOUTPERMISSIONVIOLATION
-#define ANDROID_OS_STRICTMODE_CONTENTURIWITHOUTPERMISSIONVIOLATION
-
 #include "../../../__JniBaseClass.hpp"
 #include "Violation.hpp"
 
@@ -54,6 +51,4 @@ namespace android::os::strictmode
 		}
 	};
 } // namespace android::os::strictmode
-
-#endif // ANDROID_OS_STRICTMODE_CONTENTURIWITHOUTPERMISSIONVIOLATION
 

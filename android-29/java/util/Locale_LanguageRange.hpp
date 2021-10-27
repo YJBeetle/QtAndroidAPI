@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_LOCALE_LANGUAGERANGE
-#define JAVA_UTIL_LOCALE_LANGUAGERANGE
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -196,6 +193,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_LOCALE_LANGUAGERANGE
 

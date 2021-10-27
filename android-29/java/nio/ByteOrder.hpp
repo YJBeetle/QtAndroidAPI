@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_BYTEORDER
-#define JAVA_NIO_BYTEORDER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -83,6 +80,4 @@ namespace java::nio
 		}
 	};
 } // namespace java::nio
-
-#endif // JAVA_NIO_BYTEORDER
 

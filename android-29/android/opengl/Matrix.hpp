@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OPENGL_MATRIX
-#define ANDROID_OPENGL_MATRIX
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -318,6 +315,4 @@ namespace android::opengl
 		}
 	};
 } // namespace android::opengl
-
-#endif // ANDROID_OPENGL_MATRIX
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_CODESOURCE
-#define JAVA_SECURITY_CODESOURCE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -136,6 +133,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_CODESOURCE
 

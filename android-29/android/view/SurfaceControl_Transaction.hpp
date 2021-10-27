@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_SURFACECONTROL_TRANSACTION
-#define ANDROID_VIEW_SURFACECONTROL_TRANSACTION
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -147,6 +144,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_SURFACECONTROL_TRANSACTION
 

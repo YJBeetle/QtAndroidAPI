@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING
-#define ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING
-
 #include "../../../__JniBaseClass.hpp"
 #include "AudioEffect.hpp"
 
@@ -398,6 +395,4 @@ namespace android::media::audiofx
 		}
 	};
 } // namespace android::media::audiofx
-
-#endif // ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING
 

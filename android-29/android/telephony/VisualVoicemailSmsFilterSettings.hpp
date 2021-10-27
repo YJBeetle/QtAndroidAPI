@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_VISUALVOICEMAILSMSFILTERSETTINGS
-#define ANDROID_TELEPHONY_VISUALVOICEMAILSMSFILTERSETTINGS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -132,6 +129,4 @@ namespace android::telephony
 		}
 	};
 } // namespace android::telephony
-
-#endif // ANDROID_TELEPHONY_VISUALVOICEMAILSMSFILTERSETTINGS
 

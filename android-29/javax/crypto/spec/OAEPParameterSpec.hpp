@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_CRYPTO_SPEC_OAEPPARAMETERSPEC
-#define JAVAX_CRYPTO_SPEC_OAEPPARAMETERSPEC
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::javax::crypto::spec
@@ -115,6 +112,4 @@ namespace javax::crypto::spec
 		}
 	};
 } // namespace javax::crypto::spec
-
-#endif // JAVAX_CRYPTO_SPEC_OAEPPARAMETERSPEC
 

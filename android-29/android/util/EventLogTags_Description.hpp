@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_EVENTLOGTAGS_DESCRIPTION
-#define ANDROID_UTIL_EVENTLOGTAGS_DESCRIPTION
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -63,6 +60,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_EVENTLOGTAGS_DESCRIPTION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_ABSTRACTLIST
-#define JAVA_UTIL_ABSTRACTLIST
-
 #include "../../__JniBaseClass.hpp"
 #include "AbstractCollection.hpp"
 
@@ -184,6 +181,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_ABSTRACTLIST
 

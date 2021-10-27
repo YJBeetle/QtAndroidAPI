@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PRINT_PRINTDOCUMENTADAPTER_LAYOUTRESULTCALLBACK
-#define ANDROID_PRINT_PRINTDOCUMENTADAPTER_LAYOUTRESULTCALLBACK
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::print
@@ -89,6 +86,4 @@ namespace android::print
 		}
 	};
 } // namespace android::print
-
-#endif // ANDROID_PRINT_PRINTDOCUMENTADAPTER_LAYOUTRESULTCALLBACK
 

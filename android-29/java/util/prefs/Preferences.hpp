@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_PREFS_PREFERENCES
-#define JAVA_UTIL_PREFS_PREFERENCES
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -611,6 +608,4 @@ namespace java::util::prefs
 		}
 	};
 } // namespace java::util::prefs
-
-#endif // JAVA_UTIL_PREFS_PREFERENCES
 

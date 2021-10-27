@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIASESSION2SERVICE_MEDIANOTIFICATION
-#define ANDROID_MEDIA_MEDIASESSION2SERVICE_MEDIANOTIFICATION
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -74,6 +71,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIASESSION2SERVICE_MEDIANOTIFICATION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_QUICKSETTINGS_TILESERVICE
-#define ANDROID_SERVICE_QUICKSETTINGS_TILESERVICE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
@@ -223,6 +220,4 @@ namespace android::service::quicksettings
 		}
 	};
 } // namespace android::service::quicksettings
-
-#endif // ANDROID_SERVICE_QUICKSETTINGS_TILESERVICE
 

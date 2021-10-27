@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_MAGNIFIER_BUILDER
-#define ANDROID_WIDGET_MAGNIFIER_BUILDER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics::drawable
@@ -151,6 +148,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_MAGNIFIER_BUILDER
 

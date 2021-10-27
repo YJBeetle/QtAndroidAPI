@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_CHARARRAYREADER
-#define JAVA_IO_CHARARRAYREADER
-
 #include "../../__JniBaseClass.hpp"
 #include "Reader.hpp"
 
@@ -139,6 +136,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_CHARARRAYREADER
 

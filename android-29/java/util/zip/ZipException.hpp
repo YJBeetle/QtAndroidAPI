@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_ZIP_ZIPEXCEPTION
-#define JAVA_UTIL_ZIP_ZIPEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Exception.hpp"
 #include "../../io/IOException.hpp"
@@ -74,6 +71,4 @@ namespace java::util::zip
 		}
 	};
 } // namespace java::util::zip
-
-#endif // JAVA_UTIL_ZIP_ZIPEXCEPTION
 

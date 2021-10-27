@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_STRINGBUILDERPRINTER
-#define ANDROID_UTIL_STRINGBUILDERPRINTER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -74,6 +71,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_STRINGBUILDERPRINTER
 

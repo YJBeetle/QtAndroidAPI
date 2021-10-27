@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_STREAM_COLLECTORS
-#define JAVA_UTIL_STREAM_COLLECTORS
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -602,6 +599,4 @@ namespace java::util::stream
 		}
 	};
 } // namespace java::util::stream
-
-#endif // JAVA_UTIL_STREAM_COLLECTORS
 

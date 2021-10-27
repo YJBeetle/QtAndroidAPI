@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_JAR_JARFILE
-#define JAVA_UTIL_JAR_JARFILE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../zip/ZipFile.hpp"
 
@@ -320,6 +317,4 @@ namespace java::util::jar
 		}
 	};
 } // namespace java::util::jar
-
-#endif // JAVA_UTIL_JAR_JARFILE
 

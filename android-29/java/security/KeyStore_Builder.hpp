@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_KEYSTORE_BUILDER
-#define JAVA_SECURITY_KEYSTORE_BUILDER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -161,6 +158,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_KEYSTORE_BUILDER
 

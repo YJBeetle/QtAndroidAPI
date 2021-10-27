@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_OPERATIONCANCELEDEXCEPTION
-#define ANDROID_OS_OPERATIONCANCELEDEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
@@ -74,6 +71,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_OPERATIONCANCELEDEXCEPTION
 

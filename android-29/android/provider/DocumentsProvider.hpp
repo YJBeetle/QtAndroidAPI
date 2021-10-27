@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_DOCUMENTSPROVIDER
-#define ANDROID_PROVIDER_DOCUMENTSPROVIDER
-
 #include "../../__JniBaseClass.hpp"
 #include "../content/ContentProvider.hpp"
 
@@ -930,6 +927,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_DOCUMENTSPROVIDER
 

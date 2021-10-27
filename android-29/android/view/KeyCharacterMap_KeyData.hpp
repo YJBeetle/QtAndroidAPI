@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_KEYCHARACTERMAP_KEYDATA
-#define ANDROID_VIEW_KEYCHARACTERMAP_KEYDATA
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -79,6 +76,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_KEYCHARACTERMAP_KEYDATA
 

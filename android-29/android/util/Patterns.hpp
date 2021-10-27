@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_PATTERNS
-#define ANDROID_UTIL_PATTERNS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util::regex
@@ -159,6 +156,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_PATTERNS
 

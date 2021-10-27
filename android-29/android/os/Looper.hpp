@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_LOOPER
-#define ANDROID_OS_LOOPER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -189,6 +186,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_LOOPER
 

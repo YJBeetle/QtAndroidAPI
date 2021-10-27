@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_CARRIER_MESSAGEPDU
-#define ANDROID_SERVICE_CARRIER_MESSAGEPDU
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -91,6 +88,4 @@ namespace android::service::carrier
 		}
 	};
 } // namespace android::service::carrier
-
-#endif // ANDROID_SERVICE_CARRIER_MESSAGEPDU
 

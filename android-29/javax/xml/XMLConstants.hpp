@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_XMLCONSTANTS
-#define JAVAX_XML_XMLCONSTANTS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -192,6 +189,4 @@ namespace javax::xml
 		}
 	};
 } // namespace javax::xml
-
-#endif // JAVAX_XML_XMLCONSTANTS
 

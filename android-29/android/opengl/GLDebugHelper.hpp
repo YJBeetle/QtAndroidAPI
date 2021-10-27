@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OPENGL_GLDEBUGHELPER
-#define ANDROID_OPENGL_GLDEBUGHELPER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -98,6 +95,4 @@ namespace android::opengl
 		}
 	};
 } // namespace android::opengl
-
-#endif // ANDROID_OPENGL_GLDEBUGHELPER
 

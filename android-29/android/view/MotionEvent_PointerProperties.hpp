@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_MOTIONEVENT_POINTERPROPERTIES
-#define ANDROID_VIEW_MOTIONEVENT_POINTERPROPERTIES
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -111,6 +108,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_MOTIONEVENT_POINTERPROPERTIES
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PRINTSERVICE_PRINTERDISCOVERYSESSION
-#define ANDROID_PRINTSERVICE_PRINTERDISCOVERYSESSION
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -177,6 +174,4 @@ namespace android::printservice
 		}
 	};
 } // namespace android::printservice
-
-#endif // ANDROID_PRINTSERVICE_PRINTERDISCOVERYSESSION
 

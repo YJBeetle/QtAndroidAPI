@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SECURITY_KEYSTORE_KEYGENPARAMETERSPEC
-#define ANDROID_SECURITY_KEYSTORE_KEYGENPARAMETERSPEC
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::math
@@ -271,6 +268,4 @@ namespace android::security::keystore
 		}
 	};
 } // namespace android::security::keystore
-
-#endif // ANDROID_SECURITY_KEYSTORE_KEYGENPARAMETERSPEC
 

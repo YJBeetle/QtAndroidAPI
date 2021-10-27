@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_BASE64
-#define JAVA_UTIL_BASE64
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util
@@ -123,6 +120,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_BASE64
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_METHOD_TOUCH
-#define ANDROID_TEXT_METHOD_TOUCH
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::text
@@ -110,6 +107,4 @@ namespace android::text::method
 		}
 	};
 } // namespace android::text::method
-
-#endif // ANDROID_TEXT_METHOD_TOUCH
 

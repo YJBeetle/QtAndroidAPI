@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_PM_SHORTCUTINFO_BUILDER
-#define ANDROID_CONTENT_PM_SHORTCUTINFO_BUILDER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -264,6 +261,4 @@ namespace android::content::pm
 		}
 	};
 } // namespace android::content::pm
-
-#endif // ANDROID_CONTENT_PM_SHORTCUTINFO_BUILDER
 

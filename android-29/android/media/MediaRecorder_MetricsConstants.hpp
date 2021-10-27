@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIARECORDER_METRICSCONSTANTS
-#define ANDROID_MEDIA_MEDIARECORDER_METRICSCONSTANTS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -192,6 +189,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIARECORDER_METRICSCONSTANTS
 

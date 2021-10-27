@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_PREFS_NODECHANGEEVENT
-#define JAVA_UTIL_PREFS_NODECHANGEEVENT
-
 #include "../../../__JniBaseClass.hpp"
 #include "../EventObject.hpp"
 
@@ -85,6 +82,4 @@ namespace java::util::prefs
 		}
 	};
 } // namespace java::util::prefs
-
-#endif // JAVA_UTIL_PREFS_NODECHANGEEVENT
 

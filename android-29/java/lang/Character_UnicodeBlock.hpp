@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_CHARACTER_UNICODEBLOCK
-#define JAVA_LANG_CHARACTER_UNICODEBLOCK
-
 #include "../../__JniBaseClass.hpp"
 #include "Character_Subset.hpp"
 
@@ -2870,6 +2867,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_CHARACTER_UNICODEBLOCK
 

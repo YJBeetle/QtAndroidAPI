@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_LOGPRINTER
-#define ANDROID_UTIL_LOGPRINTER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -81,6 +78,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_LOGPRINTER
 

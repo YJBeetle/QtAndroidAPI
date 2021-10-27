@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_KEYGUARDMANAGER_KEYGUARDDISMISSCALLBACK
-#define ANDROID_APP_KEYGUARDMANAGER_KEYGUARDDISMISSCALLBACK
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -73,6 +70,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_KEYGUARDMANAGER_KEYGUARDDISMISSCALLBACK
 

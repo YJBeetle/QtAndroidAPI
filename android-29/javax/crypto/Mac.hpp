@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_CRYPTO_MAC
-#define JAVAX_CRYPTO_MAC
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::nio
@@ -256,6 +253,4 @@ namespace javax::crypto
 		}
 	};
 } // namespace javax::crypto
-
-#endif // JAVAX_CRYPTO_MAC
 

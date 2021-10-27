@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_VELOCITYTRACKER
-#define ANDROID_VIEW_VELOCITYTRACKER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::view
@@ -140,6 +137,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_VELOCITYTRACKER
 

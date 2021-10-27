@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_ASYNCTASKLOADER
-#define ANDROID_CONTENT_ASYNCTASKLOADER
-
 #include "../../__JniBaseClass.hpp"
 #include "Loader.hpp"
 
@@ -133,6 +130,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_ASYNCTASKLOADER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_DRAWABLE_GRADIENTDRAWABLE_ORIENTATION
-#define ANDROID_GRAPHICS_DRAWABLE_GRADIENTDRAWABLE_ORIENTATION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
@@ -150,6 +147,4 @@ namespace android::graphics::drawable
 		}
 	};
 } // namespace android::graphics::drawable
-
-#endif // ANDROID_GRAPHICS_DRAWABLE_GRADIENTDRAWABLE_ORIENTATION
 

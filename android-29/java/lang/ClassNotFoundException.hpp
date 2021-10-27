@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_CLASSNOTFOUNDEXCEPTION
-#define JAVA_LANG_CLASSNOTFOUNDEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "Exception.hpp"
 #include "ReflectiveOperationException.hpp"
@@ -118,6 +115,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_CLASSNOTFOUNDEXCEPTION
 

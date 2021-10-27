@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_DATETIMEEXCEPTION
-#define JAVA_TIME_DATETIMEEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 #include "../lang/RuntimeException.hpp"
@@ -88,6 +85,4 @@ namespace java::time
 		}
 	};
 } // namespace java::time
-
-#endif // JAVA_TIME_DATETIMEEXCEPTION
 

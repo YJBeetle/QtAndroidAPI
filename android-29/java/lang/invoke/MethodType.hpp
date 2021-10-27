@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_INVOKE_METHODTYPE
-#define JAVA_LANG_INVOKE_METHODTYPE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -414,6 +411,4 @@ namespace java::lang::invoke
 		}
 	};
 } // namespace java::lang::invoke
-
-#endif // JAVA_LANG_INVOKE_METHODTYPE
 

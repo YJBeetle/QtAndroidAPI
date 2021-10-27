@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_LOCKS_ABSTRACTOWNABLESYNCHRONIZER
-#define JAVA_UTIL_CONCURRENT_LOCKS_ABSTRACTOWNABLESYNCHRONIZER
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -53,6 +50,4 @@ namespace java::util::concurrent::locks
 		}
 	};
 } // namespace java::util::concurrent::locks
-
-#endif // JAVA_UTIL_CONCURRENT_LOCKS_ABSTRACTOWNABLESYNCHRONIZER
 

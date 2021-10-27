@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_DIALOGFRAGMENT
-#define ANDROID_APP_DIALOGFRAGMENT
-
 #include "../../__JniBaseClass.hpp"
 #include "Fragment.hpp"
 
@@ -366,6 +363,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_DIALOGFRAGMENT
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ANIMATION_VALUEANIMATOR
-#define ANDROID_ANIMATION_VALUEANIMATOR
-
 #include "../../__JniBaseClass.hpp"
 #include "Animator.hpp"
 
@@ -470,6 +467,4 @@ namespace android::animation
 		}
 	};
 } // namespace android::animation
-
-#endif // ANDROID_ANIMATION_VALUEANIMATOR
 

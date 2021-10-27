@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_R_DRAWABLE
-#define ANDROID_R_DRAWABLE
-
 #include "../__JniBaseClass.hpp"
 
 
@@ -1441,6 +1438,4 @@ namespace android
 		}
 	};
 } // namespace android
-
-#endif // ANDROID_R_DRAWABLE
 

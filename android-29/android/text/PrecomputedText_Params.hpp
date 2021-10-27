@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_PRECOMPUTEDTEXT_PARAMS
-#define ANDROID_TEXT_PRECOMPUTEDTEXT_PARAMS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::text
@@ -110,6 +107,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_PRECOMPUTEDTEXT_PARAMS
 

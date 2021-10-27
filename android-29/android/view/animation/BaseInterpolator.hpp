@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_ANIMATION_BASEINTERPOLATOR
-#define ANDROID_VIEW_ANIMATION_BASEINTERPOLATOR
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -49,6 +46,4 @@ namespace android::view::animation
 		}
 	};
 } // namespace android::view::animation
-
-#endif // ANDROID_VIEW_ANIMATION_BASEINTERPOLATOR
 

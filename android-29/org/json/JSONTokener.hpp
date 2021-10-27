@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_JSON_JSONTOKENER
-#define ORG_JSON_JSONTOKENER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::org::json
@@ -222,6 +219,4 @@ namespace org::json
 		}
 	};
 } // namespace org::json
-
-#endif // ORG_JSON_JSONTOKENER
 

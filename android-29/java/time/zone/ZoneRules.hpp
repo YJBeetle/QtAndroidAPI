@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_ZONE_ZONERULES
-#define JAVA_TIME_ZONE_ZONERULES
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -242,6 +239,4 @@ namespace java::time::zone
 		}
 	};
 } // namespace java::time::zone
-
-#endif // JAVA_TIME_ZONE_ZONERULES
 

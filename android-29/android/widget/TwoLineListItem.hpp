@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_TWOLINELISTITEM
-#define ANDROID_WIDGET_TWOLINELISTITEM
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
@@ -142,6 +139,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_TWOLINELISTITEM
 

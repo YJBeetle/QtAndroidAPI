@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_INVOKE_WRONGMETHODTYPEEXCEPTION
-#define JAVA_LANG_INVOKE_WRONGMETHODTYPEEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../Exception.hpp"
 #include "../RuntimeException.hpp"
@@ -74,6 +71,4 @@ namespace java::lang::invoke
 		}
 	};
 } // namespace java::lang::invoke
-
-#endif // JAVA_LANG_INVOKE_WRONGMETHODTYPEEXCEPTION
 

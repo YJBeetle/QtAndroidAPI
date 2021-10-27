@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_BREAKITERATOR
-#define ANDROID_ICU_TEXT_BREAKITERATOR
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::icu::util
@@ -476,6 +473,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_BREAKITERATOR
 

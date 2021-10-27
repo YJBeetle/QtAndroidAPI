@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_UTIL_UNIVERSALTIMESCALE
-#define ANDROID_ICU_UTIL_UNIVERSALTIMESCALE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::icu::math
@@ -285,6 +282,4 @@ namespace android::icu::util
 		}
 	};
 } // namespace android::icu::util
-
-#endif // ANDROID_ICU_UTIL_UNIVERSALTIMESCALE
 

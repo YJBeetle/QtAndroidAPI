@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_ACTIVITYNOTFOUNDEXCEPTION
-#define ANDROID_CONTENT_ACTIVITYNOTFOUNDEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
@@ -74,6 +71,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_ACTIVITYNOTFOUNDEXCEPTION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SYSTEM_STRUCTPOLLFD
-#define ANDROID_SYSTEM_STRUCTPOLLFD
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -92,6 +89,4 @@ namespace android::system
 		}
 	};
 } // namespace android::system
-
-#endif // ANDROID_SYSTEM_STRUCTPOLLFD
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_ADMIN_DEVICEPOLICYMANAGER
-#define ANDROID_APP_ADMIN_DEVICEPOLICYMANAGER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app::admin
@@ -3982,6 +3979,4 @@ namespace android::app::admin
 		}
 	};
 } // namespace android::app::admin
-
-#endif // ANDROID_APP_ADMIN_DEVICEPOLICYMANAGER
 

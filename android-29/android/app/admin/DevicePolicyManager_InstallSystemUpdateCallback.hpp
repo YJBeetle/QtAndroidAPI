@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_ADMIN_DEVICEPOLICYMANAGER_INSTALLSYSTEMUPDATECALLBACK
-#define ANDROID_APP_ADMIN_DEVICEPOLICYMANAGER_INSTALLSYSTEMUPDATECALLBACK
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -109,6 +106,4 @@ namespace android::app::admin
 		}
 	};
 } // namespace android::app::admin
-
-#endif // ANDROID_APP_ADMIN_DEVICEPOLICYMANAGER_INSTALLSYSTEMUPDATECALLBACK
 

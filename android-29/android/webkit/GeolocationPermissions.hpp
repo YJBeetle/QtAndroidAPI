@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WEBKIT_GEOLOCATIONPERMISSIONS
-#define ANDROID_WEBKIT_GEOLOCATIONPERMISSIONS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -130,6 +127,4 @@ namespace android::webkit
 		}
 	};
 } // namespace android::webkit
-
-#endif // ANDROID_WEBKIT_GEOLOCATIONPERMISSIONS
 

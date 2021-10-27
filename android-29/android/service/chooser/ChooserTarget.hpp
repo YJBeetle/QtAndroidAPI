@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_CHOOSER_CHOOSERTARGET
-#define ANDROID_SERVICE_CHOOSER_CHOOSERTARGET
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -167,6 +164,4 @@ namespace android::service::chooser
 		}
 	};
 } // namespace android::service::chooser
-
-#endif // ANDROID_SERVICE_CHOOSER_CHOOSERTARGET
 

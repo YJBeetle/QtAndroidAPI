@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_ZOOMBUTTON
-#define ANDROID_WIDGET_ZOOMBUTTON
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "ImageView.hpp"
@@ -192,6 +189,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_ZOOMBUTTON
 

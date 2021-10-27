@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_TV_TVCONTENTRATING
-#define ANDROID_MEDIA_TV_TVCONTENTRATING
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -169,6 +166,4 @@ namespace android::media::tv
 		}
 	};
 } // namespace android::media::tv
-
-#endif // ANDROID_MEDIA_TV_TVCONTENTRATING
 

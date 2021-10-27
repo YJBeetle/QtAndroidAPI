@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DATABASE_MATRIXCURSOR_ROWBUILDER
-#define ANDROID_DATABASE_MATRIXCURSOR_ROWBUILDER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::database
@@ -82,6 +79,4 @@ namespace android::database
 		}
 	};
 } // namespace android::database
-
-#endif // ANDROID_DATABASE_MATRIXCURSOR_ROWBUILDER
 

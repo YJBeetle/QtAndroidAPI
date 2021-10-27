@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PREFERENCE_PREFERENCEFRAGMENT
-#define ANDROID_PREFERENCE_PREFERENCEFRAGMENT
-
 #include "../../__JniBaseClass.hpp"
 #include "../app/Fragment.hpp"
 
@@ -252,6 +249,4 @@ namespace android::preference
 		}
 	};
 } // namespace android::preference
-
-#endif // ANDROID_PREFERENCE_PREFERENCEFRAGMENT
 

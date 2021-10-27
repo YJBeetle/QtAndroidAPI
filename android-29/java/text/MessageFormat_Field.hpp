@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TEXT_MESSAGEFORMAT_FIELD
-#define JAVA_TEXT_MESSAGEFORMAT_FIELD
-
 #include "../../__JniBaseClass.hpp"
 #include "AttributedCharacterIterator_Attribute.hpp"
 #include "Format_Field.hpp"
@@ -59,6 +56,4 @@ namespace java::text
 		}
 	};
 } // namespace java::text
-
-#endif // JAVA_TEXT_MESSAGEFORMAT_FIELD
 

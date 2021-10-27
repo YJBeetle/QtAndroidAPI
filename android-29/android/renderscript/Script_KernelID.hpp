@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_RENDERSCRIPT_SCRIPT_KERNELID
-#define ANDROID_RENDERSCRIPT_SCRIPT_KERNELID
-
 #include "../../__JniBaseClass.hpp"
 #include "BaseObj.hpp"
 
@@ -59,6 +56,4 @@ namespace android::renderscript
 		}
 	};
 } // namespace android::renderscript
-
-#endif // ANDROID_RENDERSCRIPT_SCRIPT_KERNELID
 

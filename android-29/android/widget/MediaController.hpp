@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_MEDIACONTROLLER
-#define ANDROID_WIDGET_MEDIACONTROLLER
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
@@ -219,6 +216,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_MEDIACONTROLLER
 

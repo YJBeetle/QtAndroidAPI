@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_RTT_RANGINGREQUEST
-#define ANDROID_NET_WIFI_RTT_RANGINGREQUEST
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -114,6 +111,4 @@ namespace android::net::wifi::rtt
 		}
 	};
 } // namespace android::net::wifi::rtt
-
-#endif // ANDROID_NET_WIFI_RTT_RANGINGREQUEST
 

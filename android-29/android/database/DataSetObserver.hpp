@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DATABASE_DATASETOBSERVER
-#define ANDROID_DATABASE_DATASETOBSERVER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -65,6 +62,4 @@ namespace android::database
 		}
 	};
 } // namespace android::database
-
-#endif // ANDROID_DATABASE_DATASETOBSERVER
 

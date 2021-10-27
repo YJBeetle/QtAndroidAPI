@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TRANSITION_AUTOTRANSITION
-#define ANDROID_TRANSITION_AUTOTRANSITION
-
 #include "../../__JniBaseClass.hpp"
 #include "Transition.hpp"
 #include "TransitionSet.hpp"
@@ -72,6 +69,4 @@ namespace android::transition
 		}
 	};
 } // namespace android::transition
-
-#endif // ANDROID_TRANSITION_AUTOTRANSITION
 

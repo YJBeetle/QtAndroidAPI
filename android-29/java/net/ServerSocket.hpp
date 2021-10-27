@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_SERVERSOCKET
-#define JAVA_NET_SERVERSOCKET
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -317,6 +314,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_SERVERSOCKET
 

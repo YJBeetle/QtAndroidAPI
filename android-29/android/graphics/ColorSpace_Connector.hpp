@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_COLORSPACE_CONNECTOR
-#define ANDROID_GRAPHICS_COLORSPACE_CONNECTOR
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -102,6 +99,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_COLORSPACE_CONNECTOR
 

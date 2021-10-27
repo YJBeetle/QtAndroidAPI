@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_STRINGSEARCH
-#define ANDROID_ICU_TEXT_STRINGSEARCH
-
 #include "../../../__JniBaseClass.hpp"
 #include "SearchIterator.hpp"
 
@@ -297,6 +294,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_STRINGSEARCH
 

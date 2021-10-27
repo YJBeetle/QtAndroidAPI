@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIACODECINFO_CODECPROFILELEVEL
-#define ANDROID_MEDIA_MEDIACODECINFO_CODECPROFILELEVEL
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -1680,6 +1677,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIACODECINFO_CODECPROFILELEVEL
 

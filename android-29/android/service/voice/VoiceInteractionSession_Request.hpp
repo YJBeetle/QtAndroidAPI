@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_VOICE_VOICEINTERACTIONSESSION_REQUEST
-#define ANDROID_SERVICE_VOICE_VOICEINTERACTIONSESSION_REQUEST
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -101,6 +98,4 @@ namespace android::service::voice
 		}
 	};
 } // namespace android::service::voice
-
-#endif // ANDROID_SERVICE_VOICE_VOICEINTERACTIONSESSION_REQUEST
 

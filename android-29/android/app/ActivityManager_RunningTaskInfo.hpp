@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_ACTIVITYMANAGER_RUNNINGTASKINFO
-#define ANDROID_APP_ACTIVITYMANAGER_RUNNINGTASKINFO
-
 #include "../../__JniBaseClass.hpp"
 #include "TaskInfo.hpp"
 
@@ -126,6 +123,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_ACTIVITYMANAGER_RUNNINGTASKINFO
 

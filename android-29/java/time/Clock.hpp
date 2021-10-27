@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_CLOCK
-#define JAVA_TIME_CLOCK
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::time
@@ -204,6 +201,4 @@ namespace java::time
 		}
 	};
 } // namespace java::time
-
-#endif // JAVA_TIME_CLOCK
 

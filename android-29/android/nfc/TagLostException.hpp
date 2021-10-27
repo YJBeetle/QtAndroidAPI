@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NFC_TAGLOSTEXCEPTION
-#define ANDROID_NFC_TAGLOSTEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../../java/io/IOException.hpp"
@@ -74,6 +71,4 @@ namespace android::nfc
 		}
 	};
 } // namespace android::nfc
-
-#endif // ANDROID_NFC_TAGLOSTEXCEPTION
 

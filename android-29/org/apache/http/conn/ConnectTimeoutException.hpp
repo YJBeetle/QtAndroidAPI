@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_APACHE_HTTP_CONN_CONNECTTIMEOUTEXCEPTION
-#define ORG_APACHE_HTTP_CONN_CONNECTTIMEOUTEXCEPTION
-
 #include "../../../../__JniBaseClass.hpp"
 #include "../../../../java/lang/Exception.hpp"
 #include "../../../../java/io/IOException.hpp"
@@ -75,6 +72,4 @@ namespace org::apache::http::conn
 		}
 	};
 } // namespace org::apache::http::conn
-
-#endif // ORG_APACHE_HTTP_CONN_CONNECTTIMEOUTEXCEPTION
 

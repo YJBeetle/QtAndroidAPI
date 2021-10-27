@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELECOM_CONNECTION
-#define ANDROID_TELECOM_CONNECTION
-
 #include "../../__JniBaseClass.hpp"
 #include "Conferenceable.hpp"
 
@@ -1167,6 +1164,4 @@ namespace android::telecom
 		}
 	};
 } // namespace android::telecom
-
-#endif // ANDROID_TELECOM_CONNECTION
 

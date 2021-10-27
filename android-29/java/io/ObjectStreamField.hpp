@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_OBJECTSTREAMFIELD
-#define JAVA_IO_OBJECTSTREAMFIELD
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -175,6 +172,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_OBJECTSTREAMFIELD
 

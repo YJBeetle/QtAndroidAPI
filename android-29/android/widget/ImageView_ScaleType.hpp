@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_IMAGEVIEW_SCALETYPE
-#define ANDROID_WIDGET_IMAGEVIEW_SCALETYPE
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
@@ -150,6 +147,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_IMAGEVIEW_SCALETYPE
 

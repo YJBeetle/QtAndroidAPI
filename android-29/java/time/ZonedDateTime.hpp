@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_ZONEDDATETIME
-#define JAVA_TIME_ZONEDDATETIME
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -822,6 +819,4 @@ namespace java::time
 		}
 	};
 } // namespace java::time
-
-#endif // JAVA_TIME_ZONEDDATETIME
 

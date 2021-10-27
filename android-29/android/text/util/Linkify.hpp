@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_UTIL_LINKIFY
-#define ANDROID_TEXT_UTIL_LINKIFY
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::widget
@@ -356,6 +353,4 @@ namespace android::text::util
 		}
 	};
 } // namespace android::text::util
-
-#endif // ANDROID_TEXT_UTIL_LINKIFY
 

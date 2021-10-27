@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_SYNCREQUEST
-#define ANDROID_CONTENT_SYNCREQUEST
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -80,6 +77,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_SYNCREQUEST
 

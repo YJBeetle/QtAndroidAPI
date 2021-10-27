@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_DYNAMICLAYOUT
-#define ANDROID_TEXT_DYNAMICLAYOUT
-
 #include "../../__JniBaseClass.hpp"
 #include "Layout.hpp"
 
@@ -297,6 +294,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_DYNAMICLAYOUT
 

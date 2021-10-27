@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_EFFECT_EFFECT
-#define ANDROID_MEDIA_EFFECT_EFFECT
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -106,6 +103,4 @@ namespace android::media::effect
 		}
 	};
 } // namespace android::media::effect
-
-#endif // ANDROID_MEDIA_EFFECT_EFFECT
 

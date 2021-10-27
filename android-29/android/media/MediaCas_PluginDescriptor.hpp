@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIACAS_PLUGINDESCRIPTOR
-#define ANDROID_MEDIA_MEDIACAS_PLUGINDESCRIPTOR
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -72,6 +69,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIACAS_PLUGINDESCRIPTOR
 

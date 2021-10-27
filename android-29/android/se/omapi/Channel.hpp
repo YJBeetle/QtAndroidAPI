@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SE_OMAPI_CHANNEL
-#define ANDROID_SE_OMAPI_CHANNEL
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::se::omapi
@@ -110,6 +107,4 @@ namespace android::se::omapi
 		}
 	};
 } // namespace android::se::omapi
-
-#endif // ANDROID_SE_OMAPI_CHANNEL
 

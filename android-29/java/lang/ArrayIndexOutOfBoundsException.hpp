@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_ARRAYINDEXOUTOFBOUNDSEXCEPTION
-#define JAVA_LANG_ARRAYINDEXOUTOFBOUNDSEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "Exception.hpp"
 #include "RuntimeException.hpp"
@@ -89,6 +86,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_ARRAYINDEXOUTOFBOUNDSEXCEPTION
 

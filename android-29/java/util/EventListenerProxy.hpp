@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_EVENTLISTENERPROXY
-#define JAVA_UTIL_EVENTLISTENERPROXY
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -59,6 +56,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_EVENTLISTENERPROXY
 

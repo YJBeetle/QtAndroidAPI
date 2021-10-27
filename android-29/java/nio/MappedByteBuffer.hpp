@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_MAPPEDBYTEBUFFER
-#define JAVA_NIO_MAPPEDBYTEBUFFER
-
 #include "../../__JniBaseClass.hpp"
 #include "Buffer.hpp"
 #include "ByteBuffer.hpp"
@@ -157,6 +154,4 @@ namespace java::nio
 		}
 	};
 } // namespace java::nio
-
-#endif // JAVA_NIO_MAPPEDBYTEBUFFER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ANIMATION_FLOATARRAYEVALUATOR
-#define ANDROID_ANIMATION_FLOATARRAYEVALUATOR
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -85,6 +82,4 @@ namespace android::animation
 		}
 	};
 } // namespace android::animation
-
-#endif // ANDROID_ANIMATION_FLOATARRAYEVALUATOR
 

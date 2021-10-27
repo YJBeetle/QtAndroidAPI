@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_UNKNOWNHOSTEXCEPTION
-#define JAVA_NET_UNKNOWNHOSTEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 #include "../io/IOException.hpp"
@@ -74,6 +71,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_UNKNOWNHOSTEXCEPTION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_STRINGREADER
-#define JAVA_IO_STRINGREADER
-
 #include "../../__JniBaseClass.hpp"
 #include "Reader.hpp"
 
@@ -130,6 +127,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_STRINGREADER
 

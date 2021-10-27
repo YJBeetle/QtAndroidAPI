@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHANNELS_SELECTIONKEY
-#define JAVA_NIO_CHANNELS_SELECTIONKEY
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::nio::channels
@@ -214,6 +211,4 @@ namespace java::nio::channels
 		}
 	};
 } // namespace java::nio::channels
-
-#endif // JAVA_NIO_CHANNELS_SELECTIONKEY
 

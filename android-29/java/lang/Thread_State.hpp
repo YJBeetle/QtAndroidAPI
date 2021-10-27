@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_THREAD_STATE
-#define JAVA_LANG_THREAD_STATE
-
 #include "../../__JniBaseClass.hpp"
 #include "Enum.hpp"
 
@@ -132,6 +129,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_THREAD_STATE
 

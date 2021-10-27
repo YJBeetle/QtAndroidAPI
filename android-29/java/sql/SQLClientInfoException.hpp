@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SQL_SQLCLIENTINFOEXCEPTION
-#define JAVA_SQL_SQLCLIENTINFOEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 #include "SQLException.hpp"
@@ -272,6 +269,4 @@ namespace java::sql
 		}
 	};
 } // namespace java::sql
-
-#endif // JAVA_SQL_SQLCLIENTINFOEXCEPTION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_DRAWABLE_TRANSITIONDRAWABLE
-#define ANDROID_GRAPHICS_DRAWABLE_TRANSITIONDRAWABLE
-
 #include "../../../__JniBaseClass.hpp"
 #include "Drawable.hpp"
 #include "LayerDrawable.hpp"
@@ -110,6 +107,4 @@ namespace android::graphics::drawable
 		}
 	};
 } // namespace android::graphics::drawable
-
-#endif // ANDROID_GRAPHICS_DRAWABLE_TRANSITIONDRAWABLE
 

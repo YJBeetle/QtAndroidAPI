@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_SETTINGS_SECURE
-#define ANDROID_PROVIDER_SETTINGS_SECURE
-
 #include "../../__JniBaseClass.hpp"
 #include "Settings_NameValueTable.hpp"
 
@@ -972,6 +969,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_SETTINGS_SECURE
 

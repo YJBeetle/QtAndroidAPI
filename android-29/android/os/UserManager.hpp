@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_USERMANAGER
-#define ANDROID_OS_USERMANAGER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -918,6 +915,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_USERMANAGER
 

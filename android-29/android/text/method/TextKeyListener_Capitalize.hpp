@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_METHOD_TEXTKEYLISTENER_CAPITALIZE
-#define ANDROID_TEXT_METHOD_TEXTKEYLISTENER_CAPITALIZE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
@@ -114,6 +111,4 @@ namespace android::text::method
 		}
 	};
 } // namespace android::text::method
-
-#endif // ANDROID_TEXT_METHOD_TEXTKEYLISTENER_CAPITALIZE
 

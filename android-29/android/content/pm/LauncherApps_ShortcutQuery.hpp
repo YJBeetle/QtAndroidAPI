@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_PM_LAUNCHERAPPS_SHORTCUTQUERY
-#define ANDROID_CONTENT_PM_LAUNCHERAPPS_SHORTCUTQUERY
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -148,6 +145,4 @@ namespace android::content::pm
 		}
 	};
 } // namespace android::content::pm
-
-#endif // ANDROID_CONTENT_PM_LAUNCHERAPPS_SHORTCUTQUERY
 

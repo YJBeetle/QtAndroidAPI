@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_AWT_FONT_TEXTATTRIBUTE
-#define JAVA_AWT_FONT_TEXTATTRIBUTE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../text/AttributedCharacterIterator_Attribute.hpp"
 
@@ -595,6 +592,4 @@ namespace java::awt::font
 		}
 	};
 } // namespace java::awt::font
-
-#endif // JAVA_AWT_FONT_TEXTATTRIBUTE
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_FILEUTILS
-#define ANDROID_OS_FILEUTILS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -138,6 +135,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_FILEUTILS
 

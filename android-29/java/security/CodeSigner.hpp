@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_CODESIGNER
-#define JAVA_SECURITY_CODESIGNER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -109,6 +106,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_CODESIGNER
 

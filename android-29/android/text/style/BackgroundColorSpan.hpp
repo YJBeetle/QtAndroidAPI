@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_STYLE_BACKGROUNDCOLORSPAN
-#define ANDROID_TEXT_STYLE_BACKGROUNDCOLORSPAN
-
 #include "../../../__JniBaseClass.hpp"
 #include "CharacterStyle.hpp"
 
@@ -119,6 +116,4 @@ namespace android::text::style
 		}
 	};
 } // namespace android::text::style
-
-#endif // ANDROID_TEXT_STYLE_BACKGROUNDCOLORSPAN
 

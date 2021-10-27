@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_P2P_WIFIP2PCONFIG_BUILDER
-#define ANDROID_NET_WIFI_P2P_WIFIP2PCONFIG_BUILDER
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -139,6 +136,4 @@ namespace android::net::wifi::p2p
 		}
 	};
 } // namespace android::net::wifi::p2p
-
-#endif // ANDROID_NET_WIFI_P2P_WIFIP2PCONFIG_BUILDER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_RES_ASSETFILEDESCRIPTOR_AUTOCLOSEOUTPUTSTREAM
-#define ANDROID_CONTENT_RES_ASSETFILEDESCRIPTOR_AUTOCLOSEOUTPUTSTREAM
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/io/OutputStream.hpp"
 #include "../../../java/io/FileOutputStream.hpp"
@@ -88,6 +85,4 @@ namespace android::content::res
 		}
 	};
 } // namespace android::content::res
-
-#endif // ANDROID_CONTENT_RES_ASSETFILEDESCRIPTOR_AUTOCLOSEOUTPUTSTREAM
 

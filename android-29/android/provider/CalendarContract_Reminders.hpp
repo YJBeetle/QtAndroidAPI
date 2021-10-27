@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_CALENDARCONTRACT_REMINDERS
-#define ANDROID_PROVIDER_CALENDARCONTRACT_REMINDERS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -79,6 +76,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_CALENDARCONTRACT_REMINDERS
 

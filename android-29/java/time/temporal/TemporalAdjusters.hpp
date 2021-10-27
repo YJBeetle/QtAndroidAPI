@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_TEMPORAL_TEMPORALADJUSTERS
-#define JAVA_TIME_TEMPORAL_TEMPORALADJUSTERS
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::time
@@ -188,6 +185,4 @@ namespace java::time::temporal
 		}
 	};
 } // namespace java::time::temporal
-
-#endif // JAVA_TIME_TEMPORAL_TEMPORALADJUSTERS
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_ANNOTATION_ANNOTATIONFORMATERROR
-#define JAVA_LANG_ANNOTATION_ANNOTATIONFORMATERROR
-
 #include "../../../__JniBaseClass.hpp"
 #include "../Error.hpp"
 
@@ -101,6 +98,4 @@ namespace java::lang::annotation
 		}
 	};
 } // namespace java::lang::annotation
-
-#endif // JAVA_LANG_ANNOTATION_ANNOTATIONFORMATERROR
 

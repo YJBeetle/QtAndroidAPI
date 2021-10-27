@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_TABLEROW
-#define ANDROID_WIDGET_TABLEROW
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
@@ -138,6 +135,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_TABLEROW
 

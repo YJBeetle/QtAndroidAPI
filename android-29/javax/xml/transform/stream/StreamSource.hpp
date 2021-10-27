@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_TRANSFORM_STREAM_STREAMSOURCE
-#define JAVAX_XML_TRANSFORM_STREAM_STREAMSOURCE
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -293,6 +290,4 @@ namespace javax::xml::transform::stream
 		}
 	};
 } // namespace javax::xml::transform::stream
-
-#endif // JAVAX_XML_TRANSFORM_STREAM_STREAMSOURCE
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_VPNSERVICE
-#define ANDROID_NET_VPNSERVICE
-
 #include "../../__JniBaseClass.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
@@ -169,6 +166,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_VPNSERVICE
 

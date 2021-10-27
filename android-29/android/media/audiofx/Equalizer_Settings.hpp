@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_AUDIOFX_EQUALIZER_SETTINGS
-#define ANDROID_MEDIA_AUDIOFX_EQUALIZER_SETTINGS
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -102,6 +99,4 @@ namespace android::media::audiofx
 		}
 	};
 } // namespace android::media::audiofx
-
-#endif // ANDROID_MEDIA_AUDIOFX_EQUALIZER_SETTINGS
 

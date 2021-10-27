@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHARSET_SPI_CHARSETPROVIDER
-#define JAVA_NIO_CHARSET_SPI_CHARSETPROVIDER
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -84,6 +81,4 @@ namespace java::nio::charset::spi
 		}
 	};
 } // namespace java::nio::charset::spi
-
-#endif // JAVA_NIO_CHARSET_SPI_CHARSETPROVIDER
 

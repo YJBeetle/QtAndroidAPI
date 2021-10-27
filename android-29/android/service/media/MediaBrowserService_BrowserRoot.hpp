@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_MEDIA_MEDIABROWSERSERVICE_BROWSERROOT
-#define ANDROID_SERVICE_MEDIA_MEDIABROWSERSERVICE_BROWSERROOT
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -111,6 +108,4 @@ namespace android::service::media
 		}
 	};
 } // namespace android::service::media
-
-#endif // ANDROID_SERVICE_MEDIA_MEDIABROWSERSERVICE_BROWSERROOT
 

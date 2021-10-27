@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIACODECINFO_AUDIOCAPABILITIES
-#define ANDROID_MEDIA_MEDIACODECINFO_AUDIOCAPABILITIES
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::util
@@ -94,6 +91,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIACODECINFO_AUDIOCAPABILITIES
 

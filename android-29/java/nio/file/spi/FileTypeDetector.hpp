@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_FILE_SPI_FILETYPEDETECTOR
-#define JAVA_NIO_FILE_SPI_FILETYPEDETECTOR
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -62,6 +59,4 @@ namespace java::nio::file::spi
 		}
 	};
 } // namespace java::nio::file::spi
-
-#endif // JAVA_NIO_FILE_SPI_FILETYPEDETECTOR
 

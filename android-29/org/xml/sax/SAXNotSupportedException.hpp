@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_XML_SAX_SAXNOTSUPPORTEDEXCEPTION
-#define ORG_XML_SAX_SAXNOTSUPPORTEDEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 #include "SAXException.hpp"
@@ -74,6 +71,4 @@ namespace org::xml::sax
 		}
 	};
 } // namespace org::xml::sax
-
-#endif // ORG_XML_SAX_SAXNOTSUPPORTEDEXCEPTION
 

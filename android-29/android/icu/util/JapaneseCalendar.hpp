@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_UTIL_JAPANESECALENDAR
-#define ANDROID_ICU_UTIL_JAPANESECALENDAR
-
 #include "../../../__JniBaseClass.hpp"
 #include "Calendar.hpp"
 #include "GregorianCalendar.hpp"
@@ -278,6 +275,4 @@ namespace android::icu::util
 		}
 	};
 } // namespace android::icu::util
-
-#endif // ANDROID_ICU_UTIL_JAPANESECALENDAR
 

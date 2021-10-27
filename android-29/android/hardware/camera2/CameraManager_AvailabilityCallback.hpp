@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_CAMERA2_CAMERAMANAGER_AVAILABILITYCALLBACK
-#define ANDROID_HARDWARE_CAMERA2_CAMERAMANAGER_AVAILABILITYCALLBACK
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -93,6 +90,4 @@ namespace android::hardware::camera2
 		}
 	};
 } // namespace android::hardware::camera2
-
-#endif // ANDROID_HARDWARE_CAMERA2_CAMERAMANAGER_AVAILABILITYCALLBACK
 

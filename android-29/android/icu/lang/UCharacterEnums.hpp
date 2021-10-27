@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_LANG_UCHARACTERENUMS
-#define ANDROID_ICU_LANG_UCHARACTERENUMS
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -48,6 +45,4 @@ namespace android::icu::lang
 		}
 	};
 } // namespace android::icu::lang
-
-#endif // ANDROID_ICU_LANG_UCHARACTERENUMS
 

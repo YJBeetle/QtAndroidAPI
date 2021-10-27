@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_REGEX_PATTERN
-#define JAVA_UTIL_REGEX_PATTERN
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -338,6 +335,4 @@ namespace java::util::regex
 		}
 	};
 } // namespace java::util::regex
-
-#endif // JAVA_UTIL_REGEX_PATTERN
 

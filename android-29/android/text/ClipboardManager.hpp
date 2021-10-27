@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_CLIPBOARDMANAGER
-#define ANDROID_TEXT_CLIPBOARDMANAGER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -83,6 +80,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_CLIPBOARDMANAGER
 

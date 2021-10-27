@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_MEDIA_MEDIABROWSERSERVICE_RESULT
-#define ANDROID_SERVICE_MEDIA_MEDIABROWSERSERVICE_RESULT
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::service::media
@@ -70,6 +67,4 @@ namespace android::service::media
 		}
 	};
 } // namespace android::service::media
-
-#endif // ANDROID_SERVICE_MEDIA_MEDIABROWSERSERVICE_RESULT
 

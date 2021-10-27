@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_SIMPLETIMEZONE
-#define JAVA_UTIL_SIMPLETIMEZONE
-
 #include "../../__JniBaseClass.hpp"
 #include "TimeZone.hpp"
 
@@ -475,6 +472,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_SIMPLETIMEZONE
 

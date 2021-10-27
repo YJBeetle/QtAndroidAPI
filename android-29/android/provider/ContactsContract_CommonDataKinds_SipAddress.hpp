@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_CONTACTSCONTRACT_COMMONDATAKINDS_SIPADDRESS
-#define ANDROID_PROVIDER_CONTACTSCONTRACT_COMMONDATAKINDS_SIPADDRESS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content::res
@@ -156,6 +153,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_CONTACTSCONTRACT_COMMONDATAKINDS_SIPADDRESS
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_MBMSSTREAMINGSESSION
-#define ANDROID_TELEPHONY_MBMSSTREAMINGSESSION
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -126,6 +123,4 @@ namespace android::telephony
 		}
 	};
 } // namespace android::telephony
-
-#endif // ANDROID_TELEPHONY_MBMSSTREAMINGSESSION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_TEXTSERVICE_SPELLCHECKERINFO
-#define ANDROID_VIEW_TEXTSERVICE_SPELLCHECKERINFO
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -180,6 +177,4 @@ namespace android::view::textservice
 		}
 	};
 } // namespace android::view::textservice
-
-#endif // ANDROID_VIEW_TEXTSERVICE_SPELLCHECKERINFO
 

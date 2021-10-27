@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_EDITABLE_FACTORY
-#define ANDROID_TEXT_EDITABLE_FACTORY
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -76,6 +73,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_EDITABLE_FACTORY
 

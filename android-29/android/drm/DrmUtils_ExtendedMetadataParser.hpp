@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DRM_DRMUTILS_EXTENDEDMETADATAPARSER
-#define ANDROID_DRM_DRMUTILS_EXTENDEDMETADATAPARSER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -82,6 +79,4 @@ namespace android::drm
 		}
 	};
 } // namespace android::drm
-
-#endif // ANDROID_DRM_DRMUTILS_EXTENDEDMETADATAPARSER
 

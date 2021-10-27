@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_METHOD_SINGLELINETRANSFORMATIONMETHOD
-#define ANDROID_TEXT_METHOD_SINGLELINETRANSFORMATIONMETHOD
-
 #include "../../../__JniBaseClass.hpp"
 #include "ReplacementTransformationMethod.hpp"
 
@@ -59,6 +56,4 @@ namespace android::text::method
 		}
 	};
 } // namespace android::text::method
-
-#endif // ANDROID_TEXT_METHOD_SINGLELINETRANSFORMATIONMETHOD
 

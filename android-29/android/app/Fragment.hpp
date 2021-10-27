@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_FRAGMENT
-#define ANDROID_APP_FRAGMENT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::animation
@@ -1154,6 +1151,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_FRAGMENT
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TEXT_BIDI
-#define JAVA_TEXT_BIDI
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -269,6 +266,4 @@ namespace java::text
 		}
 	};
 } // namespace java::text
-
-#endif // JAVA_TEXT_BIDI
 

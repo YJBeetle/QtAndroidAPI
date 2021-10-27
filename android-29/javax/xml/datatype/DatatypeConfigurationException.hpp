@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_DATATYPE_DATATYPECONFIGURATIONEXCEPTION
-#define JAVAX_XML_DATATYPE_DATATYPECONFIGURATIONEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 
@@ -113,6 +110,4 @@ namespace javax::xml::datatype
 		}
 	};
 } // namespace javax::xml::datatype
-
-#endif // JAVAX_XML_DATATYPE_DATATYPECONFIGURATIONEXCEPTION
 

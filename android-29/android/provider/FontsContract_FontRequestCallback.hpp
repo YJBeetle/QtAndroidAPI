@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_FONTSCONTRACT_FONTREQUESTCALLBACK
-#define ANDROID_PROVIDER_FONTSCONTRACT_FONTREQUESTCALLBACK
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -120,6 +117,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_FONTSCONTRACT_FONTREQUESTCALLBACK
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GESTURE_GESTUREPOINT
-#define ANDROID_GESTURE_GESTUREPOINT
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -84,6 +81,4 @@ namespace android::gesture
 		}
 	};
 } // namespace android::gesture
-
-#endif // ANDROID_GESTURE_GESTUREPOINT
 

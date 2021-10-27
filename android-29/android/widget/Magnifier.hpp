@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_MAGNIFIER
-#define ANDROID_WIDGET_MAGNIFIER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -233,6 +230,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_MAGNIFIER
 

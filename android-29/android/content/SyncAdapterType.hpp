@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_SYNCADAPTERTYPE
-#define ANDROID_CONTENT_SYNCADAPTERTYPE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -225,6 +222,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_SYNCADAPTERTYPE
 

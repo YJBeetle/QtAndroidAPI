@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_QUICKVIEWCONSTANTS
-#define ANDROID_CONTENT_QUICKVIEWCONSTANTS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -102,6 +99,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_QUICKVIEWCONSTANTS
 

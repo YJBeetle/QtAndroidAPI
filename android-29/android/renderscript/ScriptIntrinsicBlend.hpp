@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_RENDERSCRIPT_SCRIPTINTRINSICBLEND
-#define ANDROID_RENDERSCRIPT_SCRIPTINTRINSICBLEND
-
 #include "../../__JniBaseClass.hpp"
 #include "BaseObj.hpp"
 #include "Script.hpp"
@@ -522,6 +519,4 @@ namespace android::renderscript
 		}
 	};
 } // namespace android::renderscript
-
-#endif // ANDROID_RENDERSCRIPT_SCRIPTINTRINSICBLEND
 

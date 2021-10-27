@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_BLUETOOTH_BLUETOOTHHIDDEVICEAPPSDPSETTINGS
-#define ANDROID_BLUETOOTH_BLUETOOTHHIDDEVICEAPPSDPSETTINGS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -144,6 +141,4 @@ namespace android::bluetooth
 		}
 	};
 } // namespace android::bluetooth
-
-#endif // ANDROID_BLUETOOTH_BLUETOOTHHIDDEVICEAPPSDPSETTINGS
 

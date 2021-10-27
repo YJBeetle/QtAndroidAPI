@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_PRECOMPUTEDTEXT
-#define ANDROID_TEXT_PRECOMPUTEDTEXT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -240,6 +237,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_PRECOMPUTEDTEXT
 

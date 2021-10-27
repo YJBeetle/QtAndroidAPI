@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_INETADDRESS
-#define JAVA_NET_INETADDRESS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -310,6 +307,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_INETADDRESS
 

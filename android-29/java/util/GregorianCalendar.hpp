@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_GREGORIANCALENDAR
-#define JAVA_UTIL_GREGORIANCALENDAR
-
 #include "../../__JniBaseClass.hpp"
 #include "Calendar.hpp"
 
@@ -412,6 +409,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_GREGORIANCALENDAR
 

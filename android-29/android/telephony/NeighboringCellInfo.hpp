@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_NEIGHBORINGCELLINFO
-#define ANDROID_TELEPHONY_NEIGHBORINGCELLINFO
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -222,6 +219,4 @@ namespace android::telephony
 		}
 	};
 } // namespace android::telephony
-
-#endif // ANDROID_TELEPHONY_NEIGHBORINGCELLINFO
 

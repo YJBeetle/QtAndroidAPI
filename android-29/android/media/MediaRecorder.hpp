@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIARECORDER
-#define ANDROID_MEDIA_MEDIARECORDER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::hardware
@@ -605,6 +602,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIARECORDER
 

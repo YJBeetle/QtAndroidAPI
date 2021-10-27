@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DATABASE_DEFAULTDATABASEERRORHANDLER
-#define ANDROID_DATABASE_DEFAULTDATABASEERRORHANDLER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::database::sqlite
@@ -63,6 +60,4 @@ namespace android::database
 		}
 	};
 } // namespace android::database
-
-#endif // ANDROID_DATABASE_DEFAULTDATABASEERRORHANDLER
 

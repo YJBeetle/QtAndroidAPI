@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_LOCATION_GPSSTATUS
-#define ANDROID_LOCATION_GPSSTATUS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -104,6 +101,4 @@ namespace android::location
 		}
 	};
 } // namespace android::location
-
-#endif // ANDROID_LOCATION_GPSSTATUS
 

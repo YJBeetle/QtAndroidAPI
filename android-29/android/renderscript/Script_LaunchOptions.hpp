@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_RENDERSCRIPT_SCRIPT_LAUNCHOPTIONS
-#define ANDROID_RENDERSCRIPT_SCRIPT_LAUNCHOPTIONS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -127,6 +124,4 @@ namespace android::renderscript
 		}
 	};
 } // namespace android::renderscript
-
-#endif // ANDROID_RENDERSCRIPT_SCRIPT_LAUNCHOPTIONS
 

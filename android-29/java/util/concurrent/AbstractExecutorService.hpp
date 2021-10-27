@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_ABSTRACTEXECUTORSERVICE
-#define JAVA_UTIL_CONCURRENT_ABSTRACTEXECUTORSERVICE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util
@@ -118,6 +115,4 @@ namespace java::util::concurrent
 		}
 	};
 } // namespace java::util::concurrent
-
-#endif // JAVA_UTIL_CONCURRENT_ABSTRACTEXECUTORSERVICE
 

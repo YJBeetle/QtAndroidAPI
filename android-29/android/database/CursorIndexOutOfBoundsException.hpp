@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DATABASE_CURSORINDEXOUTOFBOUNDSEXCEPTION
-#define ANDROID_DATABASE_CURSORINDEXOUTOFBOUNDSEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
@@ -79,6 +76,4 @@ namespace android::database
 		}
 	};
 } // namespace android::database
-
-#endif // ANDROID_DATABASE_CURSORINDEXOUTOFBOUNDSEXCEPTION
 

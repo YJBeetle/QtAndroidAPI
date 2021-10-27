@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_CERT_CERTPATH
-#define JAVA_SECURITY_CERT_CERTPATH
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -123,6 +120,4 @@ namespace java::security::cert
 		}
 	};
 } // namespace java::security::cert
-
-#endif // JAVA_SECURITY_CERT_CERTPATH
 

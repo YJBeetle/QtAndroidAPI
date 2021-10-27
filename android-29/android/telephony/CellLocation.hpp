@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_CELLLOCATION
-#define ANDROID_TELEPHONY_CELLLOCATION
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -67,6 +64,4 @@ namespace android::telephony
 		}
 	};
 } // namespace android::telephony
-
-#endif // ANDROID_TELEPHONY_CELLLOCATION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_NSD_NSDMANAGER
-#define ANDROID_NET_NSD_NSDMANAGER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net::nsd
@@ -180,6 +177,4 @@ namespace android::net::nsd
 		}
 	};
 } // namespace android::net::nsd
-
-#endif // ANDROID_NET_NSD_NSDMANAGER
 

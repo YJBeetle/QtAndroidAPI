@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OPENGL_VISIBILITY
-#define ANDROID_OPENGL_VISIBILITY
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -96,6 +93,4 @@ namespace android::opengl
 		}
 	};
 } // namespace android::opengl
-
-#endif // ANDROID_OPENGL_VISIBILITY
 

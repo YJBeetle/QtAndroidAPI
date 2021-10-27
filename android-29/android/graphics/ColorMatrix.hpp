@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_COLORMATRIX
-#define ANDROID_GRAPHICS_COLORMATRIX
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -195,6 +192,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_COLORMATRIX
 

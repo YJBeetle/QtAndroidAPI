@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_THREAD
-#define JAVA_LANG_THREAD
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -663,6 +660,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_THREAD
 

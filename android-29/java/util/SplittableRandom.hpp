@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_SPLITTABLERANDOM
-#define JAVA_UTIL_SPLITTABLERANDOM
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util::concurrent::atomic
@@ -288,6 +285,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_SPLITTABLERANDOM
 

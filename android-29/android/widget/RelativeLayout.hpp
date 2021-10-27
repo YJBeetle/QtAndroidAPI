@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_RELATIVELAYOUT
-#define ANDROID_WIDGET_RELATIVELAYOUT
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
@@ -399,6 +396,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_RELATIVELAYOUT
 

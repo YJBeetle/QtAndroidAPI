@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TRANSITION_SIDEPROPAGATION
-#define ANDROID_TRANSITION_SIDEPROPAGATION
-
 #include "../../__JniBaseClass.hpp"
 #include "TransitionPropagation.hpp"
 #include "VisibilityPropagation.hpp"
@@ -96,6 +93,4 @@ namespace android::transition
 		}
 	};
 } // namespace android::transition
-
-#endif // ANDROID_TRANSITION_SIDEPROPAGATION
 

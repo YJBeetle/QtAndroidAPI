@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_SERVICE
-#define ANDROID_APP_SERVICE
-
 #include "../../__JniBaseClass.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
@@ -333,6 +330,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_SERVICE
 

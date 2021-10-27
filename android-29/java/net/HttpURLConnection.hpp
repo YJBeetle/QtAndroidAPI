@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_HTTPURLCONNECTION
-#define JAVA_NET_HTTPURLCONNECTION
-
 #include "../../__JniBaseClass.hpp"
 #include "URLConnection.hpp"
 
@@ -541,6 +538,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_HTTPURLCONNECTION
 

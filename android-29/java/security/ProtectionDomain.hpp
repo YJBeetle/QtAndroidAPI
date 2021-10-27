@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_PROTECTIONDOMAIN
-#define JAVA_SECURITY_PROTECTIONDOMAIN
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -150,6 +147,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_PROTECTIONDOMAIN
 

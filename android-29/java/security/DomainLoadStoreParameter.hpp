@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_DOMAINLOADSTOREPARAMETER
-#define JAVA_SECURITY_DOMAINLOADSTOREPARAMETER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::net
@@ -82,6 +79,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_DOMAINLOADSTOREPARAMETER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_ABSOLUTELAYOUT_LAYOUTPARAMS
-#define ANDROID_WIDGET_ABSOLUTELAYOUT_LAYOUTPARAMS
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 
@@ -130,6 +127,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_ABSOLUTELAYOUT_LAYOUTPARAMS
 

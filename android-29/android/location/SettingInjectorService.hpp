@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_LOCATION_SETTINGINJECTORSERVICE
-#define ANDROID_LOCATION_SETTINGINJECTORSERVICE
-
 #include "../../__JniBaseClass.hpp"
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
@@ -149,6 +146,4 @@ namespace android::location
 		}
 	};
 } // namespace android::location
-
-#endif // ANDROID_LOCATION_SETTINGINJECTORSERVICE
 

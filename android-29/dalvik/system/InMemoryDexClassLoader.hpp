@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef DALVIK_SYSTEM_INMEMORYDEXCLASSLOADER
-#define DALVIK_SYSTEM_INMEMORYDEXCLASSLOADER
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/ClassLoader.hpp"
 #include "BaseDexClassLoader.hpp"
@@ -110,6 +107,4 @@ namespace dalvik::system
 		}
 	};
 } // namespace dalvik::system
-
-#endif // DALVIK_SYSTEM_INMEMORYDEXCLASSLOADER
 

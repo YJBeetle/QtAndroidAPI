@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICLONG
-#define JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICLONG
-
 #include "../../../../__JniBaseClass.hpp"
 #include "../../../lang/Number.hpp"
 
@@ -368,6 +365,4 @@ namespace java::util::concurrent::atomic
 		}
 	};
 } // namespace java::util::concurrent::atomic
-
-#endif // JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICLONG
 

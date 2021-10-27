@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_HTTP_SSLCERTIFICATE_DNAME
-#define ANDROID_NET_HTTP_SSLCERTIFICATE_DNAME
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net::http
@@ -100,6 +97,4 @@ namespace android::net::http
 		}
 	};
 } // namespace android::net::http
-
-#endif // ANDROID_NET_HTTP_SSLCERTIFICATE_DNAME
 

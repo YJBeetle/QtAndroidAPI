@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_HTTP_X509TRUSTMANAGEREXTENSIONS
-#define ANDROID_NET_HTTP_X509TRUSTMANAGEREXTENSIONS
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::security::cert
@@ -107,6 +104,4 @@ namespace android::net::http
 		}
 	};
 } // namespace android::net::http
-
-#endif // ANDROID_NET_HTTP_X509TRUSTMANAGEREXTENSIONS
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_SESSION_MEDIASESSIONMANAGER_REMOTEUSERINFO
-#define ANDROID_MEDIA_SESSION_MEDIASESSIONMANAGER_REMOTEUSERINFO
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -107,6 +104,4 @@ namespace android::media::session
 		}
 	};
 } // namespace android::media::session
-
-#endif // ANDROID_MEDIA_SESSION_MEDIASESSIONMANAGER_REMOTEUSERINFO
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_TIMEZONE
-#define JAVA_UTIL_TIMEZONE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::time
@@ -310,6 +307,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_TIMEZONE
 

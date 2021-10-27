@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NFC_NDEFMESSAGE
-#define ANDROID_NFC_NDEFMESSAGE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::nfc
@@ -167,6 +164,4 @@ namespace android::nfc
 		}
 	};
 } // namespace android::nfc
-
-#endif // ANDROID_NFC_NDEFMESSAGE
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NFC_CARDEMULATION_HOSTNFCFSERVICE
-#define ANDROID_NFC_CARDEMULATION_HOSTNFCFSERVICE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
@@ -125,6 +122,4 @@ namespace android::nfc::cardemulation
 		}
 	};
 } // namespace android::nfc::cardemulation
-
-#endif // ANDROID_NFC_CARDEMULATION_HOSTNFCFSERVICE
 

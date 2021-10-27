@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_UTIL_CURRENCY_CURRENCYUSAGE
-#define ANDROID_ICU_UTIL_CURRENCY_CURRENCYUSAGE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
@@ -96,6 +93,4 @@ namespace android::icu::util
 		}
 	};
 } // namespace android::icu::util
-
-#endif // ANDROID_ICU_UTIL_CURRENCY_CURRENCYUSAGE
 

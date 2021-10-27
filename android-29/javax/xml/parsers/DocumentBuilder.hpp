@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_PARSERS_DOCUMENTBUILDER
-#define JAVAX_XML_PARSERS_DOCUMENTBUILDER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -207,6 +204,4 @@ namespace javax::xml::parsers
 		}
 	};
 } // namespace javax::xml::parsers
-
-#endif // JAVAX_XML_PARSERS_DOCUMENTBUILDER
 

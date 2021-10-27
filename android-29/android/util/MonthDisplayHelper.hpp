@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_MONTHDISPLAYHELPER
-#define ANDROID_UTIL_MONTHDISPLAYHELPER
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -182,6 +179,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_MONTHDISPLAYHELPER
 

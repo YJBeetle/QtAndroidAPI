@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_RULEBASEDCOLLATOR
-#define ANDROID_ICU_TEXT_RULEBASEDCOLLATOR
-
 #include "../../../__JniBaseClass.hpp"
 #include "Collator.hpp"
 
@@ -500,6 +497,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_RULEBASEDCOLLATOR
 

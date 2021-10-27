@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_CLASSCASTEXCEPTION
-#define JAVA_LANG_CLASSCASTEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "Exception.hpp"
 #include "RuntimeException.hpp"
@@ -74,6 +71,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_CLASSCASTEXCEPTION
 

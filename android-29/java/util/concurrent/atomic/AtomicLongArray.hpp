@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICLONGARRAY
-#define JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICLONGARRAY
-
 #include "../../../../__JniBaseClass.hpp"
 
 
@@ -374,6 +371,4 @@ namespace java::util::concurrent::atomic
 		}
 	};
 } // namespace java::util::concurrent::atomic
-
-#endif // JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICLONGARRAY
 

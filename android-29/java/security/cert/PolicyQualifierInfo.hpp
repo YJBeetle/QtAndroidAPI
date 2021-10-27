@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_CERT_POLICYQUALIFIERINFO
-#define JAVA_SECURITY_CERT_POLICYQUALIFIERINFO
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -83,6 +80,4 @@ namespace java::security::cert
 		}
 	};
 } // namespace java::security::cert
-
-#endif // JAVA_SECURITY_CERT_POLICYQUALIFIERINFO
 

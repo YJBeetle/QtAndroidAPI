@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MIDI_MIDIMANAGER_DEVICECALLBACK
-#define ANDROID_MEDIA_MIDI_MIDIMANAGER_DEVICECALLBACK
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media::midi
@@ -86,6 +83,4 @@ namespace android::media::midi
 		}
 	};
 } // namespace android::media::midi
-
-#endif // ANDROID_MEDIA_MIDI_MIDIMANAGER_DEVICECALLBACK
 

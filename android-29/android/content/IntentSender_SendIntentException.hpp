@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_INTENTSENDER_SENDINTENTEXCEPTION
-#define ANDROID_CONTENT_INTENTSENDER_SENDINTENTEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../util/AndroidException.hpp"
@@ -93,6 +90,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_INTENTSENDER_SENDINTENTEXCEPTION
 

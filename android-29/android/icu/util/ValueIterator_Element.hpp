@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_UTIL_VALUEITERATOR_ELEMENT
-#define ANDROID_ICU_UTIL_VALUEITERATOR_ELEMENT
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -64,6 +61,4 @@ namespace android::icu::util
 		}
 	};
 } // namespace android::icu::util
-
-#endif // ANDROID_ICU_UTIL_VALUEITERATOR_ELEMENT
 

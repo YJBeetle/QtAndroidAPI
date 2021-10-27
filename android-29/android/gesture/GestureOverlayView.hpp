@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GESTURE_GESTUREOVERLAYVIEW
-#define ANDROID_GESTURE_GESTUREOVERLAYVIEW
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
@@ -545,6 +542,4 @@ namespace android::gesture
 		}
 	};
 } // namespace android::gesture
-
-#endif // ANDROID_GESTURE_GESTUREOVERLAYVIEW
 

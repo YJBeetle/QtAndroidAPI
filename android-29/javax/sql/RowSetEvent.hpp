@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_SQL_ROWSETEVENT
-#define JAVAX_SQL_ROWSETEVENT
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/util/EventObject.hpp"
 
@@ -52,6 +49,4 @@ namespace javax::sql
 		}
 	};
 } // namespace javax::sql
-
-#endif // JAVAX_SQL_ROWSETEVENT
 

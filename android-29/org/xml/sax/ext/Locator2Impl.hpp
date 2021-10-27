@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_XML_SAX_EXT_LOCATOR2IMPL
-#define ORG_XML_SAX_EXT_LOCATOR2IMPL
-
 #include "../../../../__JniBaseClass.hpp"
 #include "../helpers/LocatorImpl.hpp"
 
@@ -116,6 +113,4 @@ namespace org::xml::sax::ext
 		}
 	};
 } // namespace org::xml::sax::ext
-
-#endif // ORG_XML_SAX_EXT_LOCATOR2IMPL
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_ANNOTATION_RETENTIONPOLICY
-#define JAVA_LANG_ANNOTATION_RETENTIONPOLICY
-
 #include "../../../__JniBaseClass.hpp"
 #include "../Enum.hpp"
 
@@ -105,6 +102,4 @@ namespace java::lang::annotation
 		}
 	};
 } // namespace java::lang::annotation
-
-#endif // JAVA_LANG_ANNOTATION_RETENTIONPOLICY
 

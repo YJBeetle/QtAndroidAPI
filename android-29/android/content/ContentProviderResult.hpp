@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_CONTENTPROVIDERRESULT
-#define ANDROID_CONTENT_CONTENTPROVIDERRESULT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -145,6 +142,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_CONTENTPROVIDERRESULT
 

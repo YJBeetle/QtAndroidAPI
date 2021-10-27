@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_MBMSDOWNLOADSESSION
-#define ANDROID_TELEPHONY_MBMSDOWNLOADSESSION
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -378,6 +375,4 @@ namespace android::telephony
 		}
 	};
 } // namespace android::telephony
-
-#endif // ANDROID_TELEPHONY_MBMSDOWNLOADSESSION
 

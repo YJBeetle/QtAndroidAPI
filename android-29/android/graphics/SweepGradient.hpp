@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_SWEEPGRADIENT
-#define ANDROID_GRAPHICS_SWEEPGRADIENT
-
 #include "../../__JniBaseClass.hpp"
 #include "Shader.hpp"
 
@@ -118,6 +115,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_SWEEPGRADIENT
 

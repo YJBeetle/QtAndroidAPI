@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DATABASE_SQLITE_SQLITEDATABASE_OPENPARAMS_BUILDER
-#define ANDROID_DATABASE_SQLITE_SQLITEDATABASE_OPENPARAMS_BUILDER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::database::sqlite
@@ -176,6 +173,4 @@ namespace android::database::sqlite
 		}
 	};
 } // namespace android::database::sqlite
-
-#endif // ANDROID_DATABASE_SQLITE_SQLITEDATABASE_OPENPARAMS_BUILDER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_FONTS_FONTVARIATIONAXIS
-#define ANDROID_GRAPHICS_FONTS_FONTVARIATIONAXIS
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -134,6 +131,4 @@ namespace android::graphics::fonts
 		}
 	};
 } // namespace android::graphics::fonts
-
-#endif // ANDROID_GRAPHICS_FONTS_FONTVARIATIONAXIS
 

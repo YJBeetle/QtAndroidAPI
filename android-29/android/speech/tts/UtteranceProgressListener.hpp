@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SPEECH_TTS_UTTERANCEPROGRESSLISTENER
-#define ANDROID_SPEECH_TTS_UTTERANCEPROGRESSLISTENER
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -211,6 +208,4 @@ namespace android::speech::tts
 		}
 	};
 } // namespace android::speech::tts
-
-#endif // ANDROID_SPEECH_TTS_UTTERANCEPROGRESSLISTENER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_CELLIDENTITYGSM
-#define ANDROID_TELEPHONY_CELLIDENTITYGSM
-
 #include "../../__JniBaseClass.hpp"
 #include "CellIdentity.hpp"
 
@@ -178,6 +175,4 @@ namespace android::telephony
 		}
 	};
 } // namespace android::telephony
-
-#endif // ANDROID_TELEPHONY_CELLIDENTITYGSM
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_TRANSFORM_TRANSFORMER
-#define JAVAX_XML_TRANSFORM_TRANSFORMER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util
@@ -206,6 +203,4 @@ namespace javax::xml::transform
 		}
 	};
 } // namespace javax::xml::transform
-
-#endif // JAVAX_XML_TRANSFORM_TRANSFORMER
 

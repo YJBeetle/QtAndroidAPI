@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHANNELS_ASYNCHRONOUSCHANNELGROUP
-#define JAVA_NIO_CHANNELS_ASYNCHRONOUSCHANNELGROUP
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::nio::channels::spi
@@ -140,6 +137,4 @@ namespace java::nio::channels
 		}
 	};
 } // namespace java::nio::channels
-
-#endif // JAVA_NIO_CHANNELS_ASYNCHRONOUSCHANNELGROUP
 

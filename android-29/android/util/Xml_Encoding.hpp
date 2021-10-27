@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_XML_ENCODING
-#define ANDROID_UTIL_XML_ENCODING
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Enum.hpp"
 
@@ -114,6 +111,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_XML_ENCODING
 

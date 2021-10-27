@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_DOWNLOADMANAGER_QUERY
-#define ANDROID_APP_DOWNLOADMANAGER_QUERY
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -67,6 +64,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_DOWNLOADMANAGER_QUERY
 

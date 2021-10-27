@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_ALARMCLOCK
-#define ANDROID_PROVIDER_ALARMCLOCK
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -256,6 +253,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_ALARMCLOCK
 

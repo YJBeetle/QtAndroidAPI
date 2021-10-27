@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_INVOKE_LAMBDACONVERSIONEXCEPTION
-#define JAVA_LANG_INVOKE_LAMBDACONVERSIONEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../Exception.hpp"
 
@@ -145,6 +142,4 @@ namespace java::lang::invoke
 		}
 	};
 } // namespace java::lang::invoke
-
-#endif // JAVA_LANG_INVOKE_LAMBDACONVERSIONEXCEPTION
 

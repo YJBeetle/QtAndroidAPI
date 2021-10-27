@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_TEXTSERVICE_SPELLCHECKERSERVICE_SESSION
-#define ANDROID_SERVICE_TEXTSERVICE_SPELLCHECKERSERVICE_SESSION
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -135,6 +132,4 @@ namespace android::service::textservice
 		}
 	};
 } // namespace android::service::textservice
-
-#endif // ANDROID_SERVICE_TEXTSERVICE_SPELLCHECKERSERVICE_SESSION
 

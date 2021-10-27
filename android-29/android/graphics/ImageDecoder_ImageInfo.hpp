@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_IMAGEDECODER_IMAGEINFO
-#define ANDROID_GRAPHICS_IMAGEDECODER_IMAGEINFO
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -95,6 +92,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_IMAGEDECODER_IMAGEINFO
 

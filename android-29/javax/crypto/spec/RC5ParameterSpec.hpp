@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_CRYPTO_SPEC_RC5PARAMETERSPEC
-#define JAVAX_CRYPTO_SPEC_RC5PARAMETERSPEC
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -146,6 +143,4 @@ namespace javax::crypto::spec
 		}
 	};
 } // namespace javax::crypto::spec
-
-#endif // JAVAX_CRYPTO_SPEC_RC5PARAMETERSPEC
 

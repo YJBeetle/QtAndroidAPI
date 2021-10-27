@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_MATH_BIGDECIMAL
-#define ANDROID_ICU_MATH_BIGDECIMAL
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Number.hpp"
 
@@ -793,6 +790,4 @@ namespace android::icu::math
 		}
 	};
 } // namespace android::icu::math
-
-#endif // ANDROID_ICU_MATH_BIGDECIMAL
 

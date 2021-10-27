@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_ACCESSNETWORKCONSTANTS_ACCESSNETWORKTYPE
-#define ANDROID_TELEPHONY_ACCESSNETWORKCONSTANTS_ACCESSNETWORKTYPE
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -96,6 +93,4 @@ namespace android::telephony
 		}
 	};
 } // namespace android::telephony
-
-#endif // ANDROID_TELEPHONY_ACCESSNETWORKCONSTANTS_ACCESSNETWORKTYPE
 

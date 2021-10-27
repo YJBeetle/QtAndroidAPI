@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIAMETADATARETRIEVER_BITMAPPARAMS
-#define ANDROID_MEDIA_MEDIAMETADATARETRIEVER_BITMAPPARAMS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -79,6 +76,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIAMETADATARETRIEVER_BITMAPPARAMS
 

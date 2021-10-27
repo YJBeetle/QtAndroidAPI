@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_HEADERVIEWLISTADAPTER
-#define ANDROID_WIDGET_HEADERVIEWLISTADAPTER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::database
@@ -235,6 +232,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_HEADERVIEWLISTADAPTER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_CAMERA2_PARAMS_RGGBCHANNELVECTOR
-#define ANDROID_HARDWARE_CAMERA2_PARAMS_RGGBCHANNELVECTOR
-
 #include "../../../../__JniBaseClass.hpp"
 
 
@@ -173,6 +170,4 @@ namespace android::hardware::camera2::params
 		}
 	};
 } // namespace android::hardware::camera2::params
-
-#endif // ANDROID_HARDWARE_CAMERA2_PARAMS_RGGBCHANNELVECTOR
 

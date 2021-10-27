@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_CONTACTSCONTRACT_PRESENCE
-#define ANDROID_PROVIDER_CONTACTSCONTRACT_PRESENCE
-
 #include "../../__JniBaseClass.hpp"
 #include "ContactsContract_StatusUpdates.hpp"
 
@@ -50,6 +47,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_CONTACTSCONTRACT_PRESENCE
 

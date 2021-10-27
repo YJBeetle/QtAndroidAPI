@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_ACCESSIBILITY_CAPTIONINGMANAGER_CAPTIONINGCHANGELISTENER
-#define ANDROID_VIEW_ACCESSIBILITY_CAPTIONINGMANAGER_CAPTIONINGCHANGELISTENER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::view::accessibility
@@ -95,6 +92,4 @@ namespace android::view::accessibility
 		}
 	};
 } // namespace android::view::accessibility
-
-#endif // ANDROID_VIEW_ACCESSIBILITY_CAPTIONINGMANAGER_CAPTIONINGCHANGELISTENER
 

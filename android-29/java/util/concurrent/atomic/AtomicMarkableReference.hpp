@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICMARKABLEREFERENCE
-#define JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICMARKABLEREFERENCE
-
 #include "../../../../__JniBaseClass.hpp"
 
 
@@ -122,6 +119,4 @@ namespace java::util::concurrent::atomic
 		}
 	};
 } // namespace java::util::concurrent::atomic
-
-#endif // JAVA_UTIL_CONCURRENT_ATOMIC_ATOMICMARKABLEREFERENCE
 

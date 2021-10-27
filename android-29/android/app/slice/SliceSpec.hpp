@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_SLICE_SLICESPEC
-#define ANDROID_APP_SLICE_SLICESPEC
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -137,6 +134,4 @@ namespace android::app::slice
 		}
 	};
 } // namespace android::app::slice
-
-#endif // ANDROID_APP_SLICE_SLICESPEC
 

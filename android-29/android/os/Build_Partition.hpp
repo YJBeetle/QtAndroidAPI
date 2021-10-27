@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_BUILD_PARTITION
-#define ANDROID_OS_BUILD_PARTITION
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -98,6 +95,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_BUILD_PARTITION
 

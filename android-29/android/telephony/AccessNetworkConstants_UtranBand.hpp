@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_ACCESSNETWORKCONSTANTS_UTRANBAND
-#define ANDROID_TELEPHONY_ACCESSNETWORKCONSTANTS_UTRANBAND
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -208,6 +205,4 @@ namespace android::telephony
 		}
 	};
 } // namespace android::telephony
-
-#endif // ANDROID_TELEPHONY_ACCESSNETWORKCONSTANTS_UTRANBAND
 

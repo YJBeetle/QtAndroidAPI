@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_WIFIMANAGER
-#define ANDROID_NET_WIFI_WIFIMANAGER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -897,6 +894,4 @@ namespace android::net::wifi
 		}
 	};
 } // namespace android::net::wifi
-
-#endif // ANDROID_NET_WIFI_WIFIMANAGER
 

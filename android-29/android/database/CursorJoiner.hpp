@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DATABASE_CURSORJOINER
-#define ANDROID_DATABASE_CURSORJOINER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::database
@@ -94,6 +91,4 @@ namespace android::database
 		}
 	};
 } // namespace android::database
-
-#endif // ANDROID_DATABASE_CURSORJOINER
 

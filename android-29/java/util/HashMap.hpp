@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_HASHMAP
-#define JAVA_UTIL_HASHMAP
-
 #include "../../__JniBaseClass.hpp"
 #include "AbstractMap.hpp"
 
@@ -325,6 +322,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_HASHMAP
 

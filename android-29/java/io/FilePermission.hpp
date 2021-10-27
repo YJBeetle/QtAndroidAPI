@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_IO_FILEPERMISSION
-#define JAVA_IO_FILEPERMISSION
-
 #include "../../__JniBaseClass.hpp"
 #include "../security/Permission.hpp"
 
@@ -131,6 +128,4 @@ namespace java::io
 		}
 	};
 } // namespace java::io
-
-#endif // JAVA_IO_FILEPERMISSION
 

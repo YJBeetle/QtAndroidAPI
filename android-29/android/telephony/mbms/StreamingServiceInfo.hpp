@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_MBMS_STREAMINGSERVICEINFO
-#define ANDROID_TELEPHONY_MBMS_STREAMINGSERVICEINFO
-
 #include "../../../__JniBaseClass.hpp"
 #include "ServiceInfo.hpp"
 
@@ -81,6 +78,4 @@ namespace android::telephony::mbms
 		}
 	};
 } // namespace android::telephony::mbms
-
-#endif // ANDROID_TELEPHONY_MBMS_STREAMINGSERVICEINFO
 

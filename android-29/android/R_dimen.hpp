@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_R_DIMEN
-#define ANDROID_R_DIMEN
-
 #include "../__JniBaseClass.hpp"
 
 
@@ -105,6 +102,4 @@ namespace android
 		}
 	};
 } // namespace android
-
-#endif // ANDROID_R_DIMEN
 

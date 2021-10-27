@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_NOTIFICATION_BIGTEXTSTYLE
-#define ANDROID_APP_NOTIFICATION_BIGTEXTSTYLE
-
 #include "../../__JniBaseClass.hpp"
 #include "Notification_Style.hpp"
 
@@ -123,6 +120,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_NOTIFICATION_BIGTEXTSTYLE
 

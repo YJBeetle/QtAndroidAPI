@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_USB_USBCONSTANTS
-#define ANDROID_HARDWARE_USB_USBCONSTANTS
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -313,6 +310,4 @@ namespace android::hardware::usb
 		}
 	};
 } // namespace android::hardware::usb
-
-#endif // ANDROID_HARDWARE_USB_USBCONSTANTS
 

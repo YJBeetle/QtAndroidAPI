@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_SOCKET
-#define JAVA_NET_SOCKET
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -627,6 +624,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_SOCKET
 

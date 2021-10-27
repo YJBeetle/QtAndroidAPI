@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_CAMERA2_CAMERAACCESSEXCEPTION
-#define ANDROID_HARDWARE_CAMERA2_CAMERAACCESSEXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 #include "../../util/AndroidException.hpp"
@@ -172,6 +169,4 @@ namespace android::hardware::camera2
 		}
 	};
 } // namespace android::hardware::camera2
-
-#endif // ANDROID_HARDWARE_CAMERA2_CAMERAACCESSEXCEPTION
 

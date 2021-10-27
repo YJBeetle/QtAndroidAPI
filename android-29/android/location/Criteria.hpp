@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_LOCATION_CRITERIA
-#define ANDROID_LOCATION_CRITERIA
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -345,6 +342,4 @@ namespace android::location
 		}
 	};
 } // namespace android::location
-
-#endif // ANDROID_LOCATION_CRITERIA
 

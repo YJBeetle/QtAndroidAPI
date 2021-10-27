@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_PENDINGINTENT
-#define ANDROID_APP_PENDINGINTENT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -447,6 +444,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_PENDINGINTENT
 

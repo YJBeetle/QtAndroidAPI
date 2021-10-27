@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TEXT_MESSAGEFORMAT
-#define JAVA_TEXT_MESSAGEFORMAT
-
 #include "../../__JniBaseClass.hpp"
 #include "Format.hpp"
 
@@ -355,6 +352,4 @@ namespace java::text
 		}
 	};
 } // namespace java::text
-
-#endif // JAVA_TEXT_MESSAGEFORMAT
 

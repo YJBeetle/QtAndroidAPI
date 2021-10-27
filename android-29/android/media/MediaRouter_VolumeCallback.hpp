@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIAROUTER_VOLUMECALLBACK
-#define ANDROID_MEDIA_MEDIAROUTER_VOLUMECALLBACK
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media
@@ -74,6 +71,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIAROUTER_VOLUMECALLBACK
 

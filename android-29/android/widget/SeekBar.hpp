@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_SEEKBAR
-#define ANDROID_WIDGET_SEEKBAR
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "ProgressBar.hpp"
@@ -130,6 +127,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_SEEKBAR
 

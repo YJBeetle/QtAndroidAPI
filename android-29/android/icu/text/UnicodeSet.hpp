@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_UNICODESET
-#define ANDROID_ICU_TEXT_UNICODESET
-
 #include "../../../__JniBaseClass.hpp"
 #include "UnicodeFilter.hpp"
 
@@ -1333,6 +1330,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_UNICODESET
 

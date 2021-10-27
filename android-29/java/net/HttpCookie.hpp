@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_HTTPCOOKIE
-#define JAVA_NET_HTTPCOOKIE
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util
@@ -400,6 +397,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_HTTPCOOKIE
 

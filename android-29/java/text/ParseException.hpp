@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TEXT_PARSEEXCEPTION
-#define JAVA_TEXT_PARSEEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 
@@ -72,6 +69,4 @@ namespace java::text
 		}
 	};
 } // namespace java::text
-
-#endif // JAVA_TEXT_PARSEEXCEPTION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_AWARE_WIFIAWARENETWORKSPECIFIER
-#define ANDROID_NET_WIFI_AWARE_WIFIAWARENETWORKSPECIFIER
-
 #include "../../../../__JniBaseClass.hpp"
 #include "../../NetworkSpecifier.hpp"
 
@@ -106,6 +103,4 @@ namespace android::net::wifi::aware
 		}
 	};
 } // namespace android::net::wifi::aware
-
-#endif // ANDROID_NET_WIFI_AWARE_WIFIAWARENETWORKSPECIFIER
 

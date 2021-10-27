@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_JAR_ATTRIBUTES_NAME
-#define JAVA_UTIL_JAR_ATTRIBUTES_NAME
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -247,6 +244,4 @@ namespace java::util::jar
 		}
 	};
 } // namespace java::util::jar
-
-#endif // JAVA_UTIL_JAR_ATTRIBUTES_NAME
 

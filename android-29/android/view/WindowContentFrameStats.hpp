@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_WINDOWCONTENTFRAMESTATS
-#define ANDROID_VIEW_WINDOWCONTENTFRAMESTATS
-
 #include "../../__JniBaseClass.hpp"
 #include "FrameStats.hpp"
 
@@ -107,6 +104,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_WINDOWCONTENTFRAMESTATS
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_ASYNCQUERYHANDLER_WORKERHANDLER
-#define ANDROID_CONTENT_ASYNCQUERYHANDLER_WORKERHANDLER
-
 #include "../../__JniBaseClass.hpp"
 #include "../os/Handler.hpp"
 
@@ -78,6 +75,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_ASYNCQUERYHANDLER_WORKERHANDLER
 

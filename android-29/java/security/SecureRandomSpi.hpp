@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_SECURERANDOMSPI
-#define JAVA_SECURITY_SECURERANDOMSPI
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -57,6 +54,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_SECURERANDOMSPI
 

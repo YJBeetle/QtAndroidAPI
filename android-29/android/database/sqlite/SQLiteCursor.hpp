@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DATABASE_SQLITE_SQLITECURSOR
-#define ANDROID_DATABASE_SQLITE_SQLITECURSOR
-
 #include "../../../__JniBaseClass.hpp"
 #include "../AbstractCursor.hpp"
 #include "../AbstractWindowedCursor.hpp"
@@ -218,6 +215,4 @@ namespace android::database::sqlite
 		}
 	};
 } // namespace android::database::sqlite
-
-#endif // ANDROID_DATABASE_SQLITE_SQLITECURSOR
 

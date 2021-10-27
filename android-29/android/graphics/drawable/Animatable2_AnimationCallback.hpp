@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_DRAWABLE_ANIMATABLE2_ANIMATIONCALLBACK
-#define ANDROID_GRAPHICS_DRAWABLE_ANIMATABLE2_ANIMATIONCALLBACK
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics::drawable
@@ -72,6 +69,4 @@ namespace android::graphics::drawable
 		}
 	};
 } // namespace android::graphics::drawable
-
-#endif // ANDROID_GRAPHICS_DRAWABLE_ANIMATABLE2_ANIMATIONCALLBACK
 

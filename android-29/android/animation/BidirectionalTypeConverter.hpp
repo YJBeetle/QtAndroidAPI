@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ANIMATION_BIDIRECTIONALTYPECONVERTER
-#define ANDROID_ANIMATION_BIDIRECTIONALTYPECONVERTER
-
 #include "../../__JniBaseClass.hpp"
 #include "TypeConverter.hpp"
 
@@ -71,6 +68,4 @@ namespace android::animation
 		}
 	};
 } // namespace android::animation
-
-#endif // ANDROID_ANIMATION_BIDIRECTIONALTYPECONVERTER
 

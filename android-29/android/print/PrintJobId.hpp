@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PRINT_PRINTJOBID
-#define ANDROID_PRINT_PRINTJOBID
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -97,6 +94,4 @@ namespace android::print
 		}
 	};
 } // namespace android::print
-
-#endif // ANDROID_PRINT_PRINTJOBID
 

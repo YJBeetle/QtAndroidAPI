@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_BACKUP_FULLBACKUPDATAOUTPUT
-#define ANDROID_APP_BACKUP_FULLBACKUPDATAOUTPUT
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -64,6 +61,4 @@ namespace android::app::backup
 		}
 	};
 } // namespace android::app::backup
-
-#endif // ANDROID_APP_BACKUP_FULLBACKUPDATAOUTPUT
 

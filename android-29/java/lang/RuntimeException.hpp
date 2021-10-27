@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_RUNTIMEEXCEPTION
-#define JAVA_LANG_RUNTIMEEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "Exception.hpp"
 
@@ -113,6 +110,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_RUNTIMEEXCEPTION
 

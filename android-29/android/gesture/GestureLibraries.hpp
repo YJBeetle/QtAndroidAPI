@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GESTURE_GESTURELIBRARIES
-#define ANDROID_GESTURE_GESTURELIBRARIES
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -126,6 +123,4 @@ namespace android::gesture
 		}
 	};
 } // namespace android::gesture
-
-#endif // ANDROID_GESTURE_GESTURELIBRARIES
 

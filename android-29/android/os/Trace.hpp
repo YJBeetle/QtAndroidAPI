@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_TRACE
-#define ANDROID_OS_TRACE
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -152,6 +149,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_TRACE
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_PM_PACKAGEINSTALLER_SESSIONPARAMS
-#define ANDROID_CONTENT_PM_PACKAGEINSTALLER_SESSIONPARAMS
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -234,6 +231,4 @@ namespace android::content::pm
 		}
 	};
 } // namespace android::content::pm
-
-#endif // ANDROID_CONTENT_PM_PACKAGEINSTALLER_SESSIONPARAMS
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_NET_SSL_SNIMATCHER
-#define JAVAX_NET_SSL_SNIMATCHER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::javax::net::ssl
@@ -70,6 +67,4 @@ namespace javax::net::ssl
 		}
 	};
 } // namespace javax::net::ssl
-
-#endif // JAVAX_NET_SSL_SNIMATCHER
 

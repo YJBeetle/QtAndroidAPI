@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_REMOTEVIEWS
-#define ANDROID_WIDGET_REMOTEVIEWS
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::app
@@ -954,6 +951,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_REMOTEVIEWS
 

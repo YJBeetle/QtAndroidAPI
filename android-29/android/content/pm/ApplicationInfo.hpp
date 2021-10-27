@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_PM_APPLICATIONINFO
-#define ANDROID_CONTENT_PM_APPLICATIONINFO
-
 #include "../../../__JniBaseClass.hpp"
 #include "PackageItemInfo.hpp"
 
@@ -731,6 +728,4 @@ namespace android::content::pm
 		}
 	};
 } // namespace android::content::pm
-
-#endif // ANDROID_CONTENT_PM_APPLICATIONINFO
 

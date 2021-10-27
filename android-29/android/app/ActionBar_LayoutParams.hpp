@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_ACTIONBAR_LAYOUTPARAMS
-#define ANDROID_APP_ACTIONBAR_LAYOUTPARAMS
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/ViewGroup_MarginLayoutParams.hpp"
@@ -148,6 +145,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_ACTIONBAR_LAYOUTPARAMS
 

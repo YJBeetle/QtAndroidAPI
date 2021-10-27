@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_AUTOFILL_AUTOFILLVALUE
-#define ANDROID_VIEW_AUTOFILL_AUTOFILLVALUE
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -219,6 +216,4 @@ namespace android::view::autofill
 		}
 	};
 } // namespace android::view::autofill
-
-#endif // ANDROID_VIEW_AUTOFILL_AUTOFILLVALUE
 

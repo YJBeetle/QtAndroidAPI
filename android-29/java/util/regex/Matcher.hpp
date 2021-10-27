@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_REGEX_MATCHER
-#define JAVA_UTIL_REGEX_MATCHER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::lang
@@ -484,6 +481,4 @@ namespace java::util::regex
 		}
 	};
 } // namespace java::util::regex
-
-#endif // JAVA_UTIL_REGEX_MATCHER
 

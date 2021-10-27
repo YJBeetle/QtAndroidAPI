@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WEBKIT_SERVICEWORKERCLIENT
-#define ANDROID_WEBKIT_SERVICEWORKERCLIENT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::webkit
@@ -63,6 +60,4 @@ namespace android::webkit
 		}
 	};
 } // namespace android::webkit
-
-#endif // ANDROID_WEBKIT_SERVICEWORKERCLIENT
 

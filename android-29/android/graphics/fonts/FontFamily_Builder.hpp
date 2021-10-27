@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_FONTS_FONTFAMILY_BUILDER
-#define ANDROID_GRAPHICS_FONTS_FONTFAMILY_BUILDER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics::fonts
@@ -78,6 +75,4 @@ namespace android::graphics::fonts
 		}
 	};
 } // namespace android::graphics::fonts
-
-#endif // ANDROID_GRAPHICS_FONTS_FONTFAMILY_BUILDER
 

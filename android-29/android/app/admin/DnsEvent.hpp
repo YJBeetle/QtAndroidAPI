@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_ADMIN_DNSEVENT
-#define ANDROID_APP_ADMIN_DNSEVENT
-
 #include "../../../__JniBaseClass.hpp"
 #include "NetworkEvent.hpp"
 
@@ -113,6 +110,4 @@ namespace android::app::admin
 		}
 	};
 } // namespace android::app::admin
-
-#endif // ANDROID_APP_ADMIN_DNSEVENT
 

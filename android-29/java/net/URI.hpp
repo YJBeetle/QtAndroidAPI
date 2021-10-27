@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_URI
-#define JAVA_NET_URI
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -489,6 +486,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_URI
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_ABSTRACTCOLLECTION
-#define JAVA_UTIL_ABSTRACTCOLLECTION
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -168,6 +165,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_ABSTRACTCOLLECTION
 

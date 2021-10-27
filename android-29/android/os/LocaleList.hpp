@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_LOCALELIST
-#define ANDROID_OS_LOCALELIST
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::icu::util
@@ -236,6 +233,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_LOCALELIST
 

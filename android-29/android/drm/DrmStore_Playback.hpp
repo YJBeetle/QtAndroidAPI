@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_DRM_DRMSTORE_PLAYBACK
-#define ANDROID_DRM_DRMSTORE_PLAYBACK
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -81,6 +78,4 @@ namespace android::drm
 		}
 	};
 } // namespace android::drm
-
-#endif // ANDROID_DRM_DRMSTORE_PLAYBACK
 

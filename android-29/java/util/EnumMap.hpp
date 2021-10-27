@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_ENUMMAP
-#define JAVA_UTIL_ENUMMAP
-
 #include "../../__JniBaseClass.hpp"
 #include "AbstractMap.hpp"
 
@@ -225,6 +222,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_ENUMMAP
 

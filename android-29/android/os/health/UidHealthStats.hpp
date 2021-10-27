@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_HEALTH_UIDHEALTHSTATS
-#define ANDROID_OS_HEALTH_UIDHEALTHSTATS
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -552,6 +549,4 @@ namespace android::os::health
 		}
 	};
 } // namespace android::os::health
-
-#endif // ANDROID_OS_HEALTH_UIDHEALTHSTATS
 

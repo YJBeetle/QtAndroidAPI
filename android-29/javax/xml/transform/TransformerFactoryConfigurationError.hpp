@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_TRANSFORM_TRANSFORMERFACTORYCONFIGURATIONERROR
-#define JAVAX_XML_TRANSFORM_TRANSFORMERFACTORYCONFIGURATIONERROR
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Error.hpp"
 
@@ -142,6 +139,4 @@ namespace javax::xml::transform
 		}
 	};
 } // namespace javax::xml::transform
-
-#endif // JAVAX_XML_TRANSFORM_TRANSFORMERFACTORYCONFIGURATIONERROR
 

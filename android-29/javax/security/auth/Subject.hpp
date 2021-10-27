@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_SECURITY_AUTH_SUBJECT
-#define JAVAX_SECURITY_AUTH_SUBJECT
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -214,6 +211,4 @@ namespace javax::security::auth
 		}
 	};
 } // namespace javax::security::auth
-
-#endif // JAVAX_SECURITY_AUTH_SUBJECT
 

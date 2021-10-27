@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_SECURITY_AUTH_X500_X500PRINCIPAL
-#define JAVAX_SECURITY_AUTH_X500_X500PRINCIPAL
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -235,6 +232,4 @@ namespace javax::security::auth::x500
 		}
 	};
 } // namespace javax::security::auth::x500
-
-#endif // JAVAX_SECURITY_AUTH_X500_X500PRINCIPAL
 

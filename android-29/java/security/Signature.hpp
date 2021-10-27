@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_SIGNATURE
-#define JAVA_SECURITY_SIGNATURE
-
 #include "../../__JniBaseClass.hpp"
 #include "SignatureSpi.hpp"
 
@@ -344,6 +341,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_SIGNATURE
 

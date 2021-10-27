@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_STATFS
-#define ANDROID_OS_STATFS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -166,6 +163,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_STATFS
 

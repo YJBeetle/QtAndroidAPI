@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_ACTIVITYMANAGER_RUNNINGAPPPROCESSINFO
-#define ANDROID_APP_ACTIVITYMANAGER_RUNNINGAPPPROCESSINFO
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -325,6 +322,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_ACTIVITYMANAGER_RUNNINGAPPPROCESSINFO
 

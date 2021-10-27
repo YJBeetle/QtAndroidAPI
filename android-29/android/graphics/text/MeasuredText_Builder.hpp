@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_TEXT_MEASUREDTEXT_BUILDER
-#define ANDROID_GRAPHICS_TEXT_MEASUREDTEXT_BUILDER
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::graphics
@@ -123,6 +120,4 @@ namespace android::graphics::text
 		}
 	};
 } // namespace android::graphics::text
-
-#endif // ANDROID_GRAPHICS_TEXT_MEASUREDTEXT_BUILDER
 

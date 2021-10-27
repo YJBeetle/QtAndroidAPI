@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_HTTPRETRYEXCEPTION
-#define JAVA_NET_HTTPRETRYEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 #include "../io/IOException.hpp"
@@ -118,6 +115,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_HTTPRETRYEXCEPTION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_MATH_MATHCONTEXT
-#define ANDROID_ICU_MATH_MATHCONTEXT
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -242,6 +239,4 @@ namespace android::icu::math
 		}
 	};
 } // namespace android::icu::math
-
-#endif // ANDROID_ICU_MATH_MATHCONTEXT
 

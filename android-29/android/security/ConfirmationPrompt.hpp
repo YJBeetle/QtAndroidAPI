@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SECURITY_CONFIRMATIONPROMPT
-#define ANDROID_SECURITY_CONFIRMATIONPROMPT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -86,6 +83,4 @@ namespace android::security
 		}
 	};
 } // namespace android::security
-
-#endif // ANDROID_SECURITY_CONFIRMATIONPROMPT
 

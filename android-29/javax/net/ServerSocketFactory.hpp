@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_NET_SERVERSOCKETFACTORY
-#define JAVAX_NET_SERVERSOCKETFACTORY
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::net
@@ -105,6 +102,4 @@ namespace javax::net
 		}
 	};
 } // namespace javax::net
-
-#endif // JAVAX_NET_SERVERSOCKETFACTORY
 

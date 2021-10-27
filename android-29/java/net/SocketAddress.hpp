@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NET_SOCKETADDRESS
-#define JAVA_NET_SOCKETADDRESS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -49,6 +46,4 @@ namespace java::net
 		}
 	};
 } // namespace java::net
-
-#endif // JAVA_NET_SOCKETADDRESS
 

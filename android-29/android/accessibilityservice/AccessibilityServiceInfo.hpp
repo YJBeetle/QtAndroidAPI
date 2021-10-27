@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ACCESSIBILITYSERVICE_ACCESSIBILITYSERVICEINFO
-#define ANDROID_ACCESSIBILITYSERVICE_ACCESSIBILITYSERVICEINFO
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content::pm
@@ -482,6 +479,4 @@ namespace android::accessibilityservice
 		}
 	};
 } // namespace android::accessibilityservice
-
-#endif // ANDROID_ACCESSIBILITYSERVICE_ACCESSIBILITYSERVICEINFO
 

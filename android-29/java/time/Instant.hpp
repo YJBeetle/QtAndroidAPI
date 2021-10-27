@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_INSTANT
-#define JAVA_TIME_INSTANT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -477,6 +474,4 @@ namespace java::time
 		}
 	};
 } // namespace java::time
-
-#endif // JAVA_TIME_INSTANT
 

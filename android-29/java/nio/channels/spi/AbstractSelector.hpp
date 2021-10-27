@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_CHANNELS_SPI_ABSTRACTSELECTOR
-#define JAVA_NIO_CHANNELS_SPI_ABSTRACTSELECTOR
-
 #include "../../../../__JniBaseClass.hpp"
 #include "../Selector.hpp"
 
@@ -93,6 +90,4 @@ namespace java::nio::channels::spi
 		}
 	};
 } // namespace java::nio::channels::spi
-
-#endif // JAVA_NIO_CHANNELS_SPI_ABSTRACTSELECTOR
 

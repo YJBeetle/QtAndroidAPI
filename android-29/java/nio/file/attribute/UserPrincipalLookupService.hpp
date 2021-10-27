@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_FILE_ATTRIBUTE_USERPRINCIPALLOOKUPSERVICE
-#define JAVA_NIO_FILE_ATTRIBUTE_USERPRINCIPALLOOKUPSERVICE
-
 #include "../../../../__JniBaseClass.hpp"
 
 
@@ -84,6 +81,4 @@ namespace java::nio::file::attribute
 		}
 	};
 } // namespace java::nio::file::attribute
-
-#endif // JAVA_NIO_FILE_ATTRIBUTE_USERPRINCIPALLOOKUPSERVICE
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_WIFICONFIGURATION_KEYMGMT
-#define ANDROID_NET_WIFI_WIFICONFIGURATION_KEYMGMT
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -122,6 +119,4 @@ namespace android::net::wifi
 		}
 	};
 } // namespace android::net::wifi
-
-#endif // ANDROID_NET_WIFI_WIFICONFIGURATION_KEYMGMT
 

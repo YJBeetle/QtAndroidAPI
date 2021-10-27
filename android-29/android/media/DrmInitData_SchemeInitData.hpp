@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_DRMINITDATA_SCHEMEINITDATA
-#define ANDROID_MEDIA_DRMINITDATA_SCHEMEINITDATA
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -81,6 +78,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_DRMINITDATA_SCHEMEINITDATA
 

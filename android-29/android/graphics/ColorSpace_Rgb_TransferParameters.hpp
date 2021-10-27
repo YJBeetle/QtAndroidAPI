@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_COLORSPACE_RGB_TRANSFERPARAMETERS
-#define ANDROID_GRAPHICS_COLORSPACE_RGB_TRANSFERPARAMETERS
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -151,6 +148,4 @@ namespace android::graphics
 		}
 	};
 } // namespace android::graphics
-
-#endif // ANDROID_GRAPHICS_COLORSPACE_RGB_TRANSFERPARAMETERS
 

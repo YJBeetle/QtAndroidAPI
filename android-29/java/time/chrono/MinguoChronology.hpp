@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_CHRONO_MINGUOCHRONOLOGY
-#define JAVA_TIME_CHRONO_MINGUOCHRONOLOGY
-
 #include "../../../__JniBaseClass.hpp"
 #include "AbstractChronology.hpp"
 
@@ -290,6 +287,4 @@ namespace java::time::chrono
 		}
 	};
 } // namespace java::time::chrono
-
-#endif // JAVA_TIME_CHRONO_MINGUOCHRONOLOGY
 

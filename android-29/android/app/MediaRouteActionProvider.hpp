@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_MEDIAROUTEACTIONPROVIDER
-#define ANDROID_APP_MEDIAROUTEACTIONPROVIDER
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/ActionProvider.hpp"
 
@@ -121,6 +118,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_MEDIAROUTEACTIONPROVIDER
 

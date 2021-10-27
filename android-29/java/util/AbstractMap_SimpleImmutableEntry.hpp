@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_ABSTRACTMAP_SIMPLEIMMUTABLEENTRY
-#define JAVA_UTIL_ABSTRACTMAP_SIMPLEIMMUTABLEENTRY
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -117,6 +114,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_ABSTRACTMAP_SIMPLEIMMUTABLEENTRY
 

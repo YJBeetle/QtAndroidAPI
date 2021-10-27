@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_MEDIACRYPTO
-#define ANDROID_MEDIA_MEDIACRYPTO
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::util
@@ -103,6 +100,4 @@ namespace android::media
 		}
 	};
 } // namespace android::media
-
-#endif // ANDROID_MEDIA_MEDIACRYPTO
 

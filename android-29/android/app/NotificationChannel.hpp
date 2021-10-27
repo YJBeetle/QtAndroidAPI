@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_NOTIFICATIONCHANNEL
-#define ANDROID_APP_NOTIFICATIONCHANNEL
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::media
@@ -415,6 +412,4 @@ namespace android::app
 		}
 	};
 } // namespace android::app
-
-#endif // ANDROID_APP_NOTIFICATIONCHANNEL
 

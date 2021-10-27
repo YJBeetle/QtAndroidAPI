@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_SPANNEDSTRING
-#define ANDROID_TEXT_SPANNEDSTRING
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -193,6 +190,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_SPANNEDSTRING
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_MATH_BIGINTEGER
-#define JAVA_MATH_BIGINTEGER
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Number.hpp"
 
@@ -687,6 +684,4 @@ namespace java::math
 		}
 	};
 } // namespace java::math
-
-#endif // JAVA_MATH_BIGINTEGER
 

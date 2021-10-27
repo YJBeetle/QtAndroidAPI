@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_STRICTMODE_VIOLATION
-#define ANDROID_OS_STRICTMODE_VIOLATION
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -48,6 +45,4 @@ namespace android::os::strictmode
 		}
 	};
 } // namespace android::os::strictmode
-
-#endif // ANDROID_OS_STRICTMODE_VIOLATION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_WIFI_P2P_WIFIP2PMANAGER_CHANNEL
-#define ANDROID_NET_WIFI_P2P_WIFIP2PMANAGER_CHANNEL
-
 #include "../../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -76,6 +73,4 @@ namespace android::net::wifi::p2p
 		}
 	};
 } // namespace android::net::wifi::p2p
-
-#endif // ANDROID_NET_WIFI_P2P_WIFIP2PMANAGER_CHANNEL
 

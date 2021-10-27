@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_FORMATFLAGSCONVERSIONMISMATCHEXCEPTION
-#define JAVA_UTIL_FORMATFLAGSCONVERSIONMISMATCHEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 #include "../lang/RuntimeException.hpp"
@@ -91,6 +88,4 @@ namespace java::util
 		}
 	};
 } // namespace java::util
-
-#endif // JAVA_UTIL_FORMATFLAGSCONVERSIONMISMATCHEXCEPTION
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_PROVIDER_MEDIASTORE_IMAGES_MEDIA
-#define ANDROID_PROVIDER_MEDIASTORE_IMAGES_MEDIA
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -253,6 +250,4 @@ namespace android::provider
 		}
 	};
 } // namespace android::provider
-
-#endif // ANDROID_PROVIDER_MEDIASTORE_IMAGES_MEDIA
 

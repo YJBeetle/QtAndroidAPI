@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_TEMPORAL_JULIANFIELDS
-#define JAVA_TIME_TEMPORAL_JULIANFIELDS
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -75,6 +72,4 @@ namespace java::time::temporal
 		}
 	};
 } // namespace java::time::temporal
-
-#endif // JAVA_TIME_TEMPORAL_JULIANFIELDS
 

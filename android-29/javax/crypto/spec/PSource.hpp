@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_CRYPTO_SPEC_PSOURCE
-#define JAVAX_CRYPTO_SPEC_PSOURCE
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -56,6 +53,4 @@ namespace javax::crypto::spec
 		}
 	};
 } // namespace javax::crypto::spec
-
-#endif // JAVAX_CRYPTO_SPEC_PSOURCE
 

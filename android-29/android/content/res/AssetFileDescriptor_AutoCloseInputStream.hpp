@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_RES_ASSETFILEDESCRIPTOR_AUTOCLOSEINPUTSTREAM
-#define ANDROID_CONTENT_RES_ASSETFILEDESCRIPTOR_AUTOCLOSEINPUTSTREAM
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/io/InputStream.hpp"
 #include "../../../java/io/FileInputStream.hpp"
@@ -129,6 +126,4 @@ namespace android::content::res
 		}
 	};
 } // namespace android::content::res
-
-#endif // ANDROID_CONTENT_RES_ASSETFILEDESCRIPTOR_AUTOCLOSEINPUTSTREAM
 

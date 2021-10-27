@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_RESOURCECURSORTREEADAPTER
-#define ANDROID_WIDGET_RESOURCECURSORTREEADAPTER
-
 #include "../../__JniBaseClass.hpp"
 #include "BaseExpandableListAdapter.hpp"
 #include "CursorTreeAdapter.hpp"
@@ -144,6 +141,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_RESOURCECURSORTREEADAPTER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_SYSTEM
-#define JAVA_LANG_SYSTEM
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -490,6 +487,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_SYSTEM
 

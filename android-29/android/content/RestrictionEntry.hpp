@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_CONTENT_RESTRICTIONENTRY
-#define ANDROID_CONTENT_RESTRICTIONENTRY
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -576,6 +573,4 @@ namespace android::content
 		}
 	};
 } // namespace android::content
-
-#endif // ANDROID_CONTENT_RESTRICTIONENTRY
 

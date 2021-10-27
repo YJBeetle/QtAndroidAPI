@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TELEPHONY_DATA_APNSETTING
-#define ANDROID_TELEPHONY_DATA_APNSETTING
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -480,6 +477,4 @@ namespace android::telephony::data
 		}
 	};
 } // namespace android::telephony::data
-
-#endif // ANDROID_TELEPHONY_DATA_APNSETTING
 

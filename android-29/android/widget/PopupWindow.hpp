@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_POPUPWINDOW
-#define ANDROID_WIDGET_POPUPWINDOW
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::content
@@ -809,6 +806,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_POPUPWINDOW
 

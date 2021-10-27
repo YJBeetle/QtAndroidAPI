@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_NET_PARSEEXCEPTION
-#define ANDROID_NET_PARSEEXCEPTION
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/lang/Exception.hpp"
 #include "../../java/lang/RuntimeException.hpp"
@@ -58,6 +55,4 @@ namespace android::net
 		}
 	};
 } // namespace android::net
-
-#endif // ANDROID_NET_PARSEEXCEPTION
 

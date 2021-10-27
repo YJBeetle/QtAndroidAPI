@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SYSTEM_STRUCTUTSNAME
-#define ANDROID_SYSTEM_STRUCTUTSNAME
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -120,6 +117,4 @@ namespace android::system
 		}
 	};
 } // namespace android::system
-
-#endif // ANDROID_SYSTEM_STRUCTUTSNAME
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_ICU_TEXT_UFORMAT
-#define ANDROID_ICU_TEXT_UFORMAT
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/text/Format.hpp"
 
@@ -50,6 +47,4 @@ namespace android::icu::text
 		}
 	};
 } // namespace android::icu::text
-
-#endif // ANDROID_ICU_TEXT_UFORMAT
 

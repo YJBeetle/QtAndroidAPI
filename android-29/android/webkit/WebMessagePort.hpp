@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WEBKIT_WEBMESSAGEPORT
-#define ANDROID_WEBKIT_WEBMESSAGEPORT
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -99,6 +96,4 @@ namespace android::webkit
 		}
 	};
 } // namespace android::webkit
-
-#endif // ANDROID_WEBKIT_WEBMESSAGEPORT
 

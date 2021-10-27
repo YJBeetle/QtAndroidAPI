@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_XPATH_XPATHCONSTANTS
-#define JAVAX_XML_XPATH_XPATHCONSTANTS
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::javax::xml::namespace
@@ -107,6 +104,4 @@ namespace javax::xml::xpath
 		}
 	};
 } // namespace javax::xml::xpath
-
-#endif // JAVAX_XML_XPATH_XPATHCONSTANTS
 

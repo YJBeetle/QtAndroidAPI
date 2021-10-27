@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_TEXT_STATICLAYOUT_BUILDER
-#define ANDROID_TEXT_STATICLAYOUT_BUILDER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::text
@@ -232,6 +229,4 @@ namespace android::text
 		}
 	};
 } // namespace android::text
-
-#endif // ANDROID_TEXT_STATICLAYOUT_BUILDER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WEBKIT_HTTPAUTHHANDLER
-#define ANDROID_WEBKIT_HTTPAUTHHANDLER
-
 #include "../../__JniBaseClass.hpp"
 #include "../os/Handler.hpp"
 
@@ -85,6 +82,4 @@ namespace android::webkit
 		}
 	};
 } // namespace android::webkit
-
-#endif // ANDROID_WEBKIT_HTTPAUTHHANDLER
 

@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_DREAMS_DREAMSERVICE
-#define ANDROID_SERVICE_DREAMS_DREAMSERVICE
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
@@ -528,6 +525,4 @@ namespace android::service::dreams
 		}
 	};
 } // namespace android::service::dreams
-
-#endif // ANDROID_SERVICE_DREAMS_DREAMSERVICE
 

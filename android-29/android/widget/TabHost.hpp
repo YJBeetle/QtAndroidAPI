@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_WIDGET_TABHOST
-#define ANDROID_WIDGET_TABHOST
-
 #include "../../__JniBaseClass.hpp"
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
@@ -314,6 +311,4 @@ namespace android::widget
 		}
 	};
 } // namespace android::widget
-
-#endif // ANDROID_WIDGET_TABHOST
 

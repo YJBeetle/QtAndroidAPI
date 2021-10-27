@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_REFLECT_REFLECTPERMISSION
-#define JAVA_LANG_REFLECT_REFLECTPERMISSION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../security/Permission.hpp"
 #include "../../security/BasicPermission.hpp"
@@ -88,6 +85,4 @@ namespace java::lang::reflect
 		}
 	};
 } // namespace java::lang::reflect
-
-#endif // JAVA_LANG_REFLECT_REFLECTPERMISSION
 

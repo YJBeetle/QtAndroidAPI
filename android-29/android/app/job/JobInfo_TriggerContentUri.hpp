@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_JOB_JOBINFO_TRIGGERCONTENTURI
-#define ANDROID_APP_JOB_JOBINFO_TRIGGERCONTENTURI
-
 #include "../../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::net
@@ -131,6 +128,4 @@ namespace android::app::job
 		}
 	};
 } // namespace android::app::job
-
-#endif // ANDROID_APP_JOB_JOBINFO_TRIGGERCONTENTURI
 

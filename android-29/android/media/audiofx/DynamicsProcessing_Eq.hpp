@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_EQ
-#define ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_EQ
-
 #include "../../../__JniBaseClass.hpp"
 #include "DynamicsProcessing_Stage.hpp"
 #include "DynamicsProcessing_BandStage.hpp"
@@ -103,6 +100,4 @@ namespace android::media::audiofx
 		}
 	};
 } // namespace android::media::audiofx
-
-#endif // ANDROID_MEDIA_AUDIOFX_DYNAMICSPROCESSING_EQ
 

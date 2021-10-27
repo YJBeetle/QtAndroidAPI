@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_LOG
-#define ANDROID_UTIL_LOG
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -472,6 +469,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_LOG
 

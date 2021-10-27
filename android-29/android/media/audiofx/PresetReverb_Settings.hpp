@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_MEDIA_AUDIOFX_PRESETREVERB_SETTINGS
-#define ANDROID_MEDIA_AUDIOFX_PRESETREVERB_SETTINGS
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -87,6 +84,4 @@ namespace android::media::audiofx
 		}
 	};
 } // namespace android::media::audiofx
-
-#endif // ANDROID_MEDIA_AUDIOFX_PRESETREVERB_SETTINGS
 

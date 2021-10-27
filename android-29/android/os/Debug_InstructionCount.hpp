@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_DEBUG_INSTRUCTIONCOUNT
-#define ANDROID_OS_DEBUG_INSTRUCTIONCOUNT
-
 #include "../../__JniBaseClass.hpp"
 
 
@@ -81,6 +78,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_DEBUG_INSTRUCTIONCOUNT
 

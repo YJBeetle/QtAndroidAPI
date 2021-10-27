@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_APP_USAGE_NETWORKSTATSMANAGER_USAGECALLBACK
-#define ANDROID_APP_USAGE_NETWORKSTATSMANAGER_USAGECALLBACK
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -69,6 +66,4 @@ namespace android::app::usage
 		}
 	};
 } // namespace android::app::usage
-
-#endif // ANDROID_APP_USAGE_NETWORKSTATSMANAGER_USAGECALLBACK
 

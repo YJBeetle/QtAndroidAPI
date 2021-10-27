@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_SERVICE_RESTRICTIONS_RESTRICTIONSRECEIVER
-#define ANDROID_SERVICE_RESTRICTIONS_RESTRICTIONSRECEIVER
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/BroadcastReceiver.hpp"
 
@@ -101,6 +98,4 @@ namespace android::service::restrictions
 		}
 	};
 } // namespace android::service::restrictions
-
-#endif // ANDROID_SERVICE_RESTRICTIONS_RESTRICTIONSRECEIVER
 

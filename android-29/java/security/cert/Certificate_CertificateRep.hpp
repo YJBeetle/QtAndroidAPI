@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_CERT_CERTIFICATE_CERTIFICATEREP
-#define JAVA_SECURITY_CERT_CERTIFICATE_CERTIFICATEREP
-
 #include "../../../__JniBaseClass.hpp"
 
 
@@ -48,6 +45,4 @@ namespace java::security::cert
 		}
 	};
 } // namespace java::security::cert
-
-#endif // JAVA_SECURITY_CERT_CERTIFICATE_CERTIFICATEREP
 

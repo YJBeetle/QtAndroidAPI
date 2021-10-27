@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_OS_STRICTMODE_THREADPOLICY_BUILDER
-#define ANDROID_OS_STRICTMODE_THREADPOLICY_BUILDER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -246,6 +243,4 @@ namespace android::os
 		}
 	};
 } // namespace android::os
-
-#endif // ANDROID_OS_STRICTMODE_THREADPOLICY_BUILDER
 

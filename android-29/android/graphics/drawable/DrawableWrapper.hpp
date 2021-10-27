@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_GRAPHICS_DRAWABLE_DRAWABLEWRAPPER
-#define ANDROID_GRAPHICS_DRAWABLE_DRAWABLEWRAPPER
-
 #include "../../../__JniBaseClass.hpp"
 #include "Drawable.hpp"
 
@@ -376,6 +373,4 @@ namespace android::graphics::drawable
 		}
 	};
 } // namespace android::graphics::drawable
-
-#endif // ANDROID_GRAPHICS_DRAWABLE_DRAWABLEWRAPPER
 

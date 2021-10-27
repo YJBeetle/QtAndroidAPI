@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_NIO_DOUBLEBUFFER
-#define JAVA_NIO_DOUBLEBUFFER
-
 #include "../../__JniBaseClass.hpp"
 #include "Buffer.hpp"
 
@@ -424,6 +421,4 @@ namespace java::nio
 		}
 	};
 } // namespace java::nio
-
-#endif // JAVA_NIO_DOUBLEBUFFER
 

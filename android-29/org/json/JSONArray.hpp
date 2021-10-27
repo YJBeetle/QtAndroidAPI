@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ORG_JSON_JSONARRAY
-#define ORG_JSON_JSONARRAY
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::org::json
@@ -510,6 +507,4 @@ namespace org::json
 		}
 	};
 } // namespace org::json
-
-#endif // ORG_JSON_JSONARRAY
 

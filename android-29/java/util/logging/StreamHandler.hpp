@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_LOGGING_STREAMHANDLER
-#define JAVA_UTIL_LOGGING_STREAMHANDLER
-
 #include "../../../__JniBaseClass.hpp"
 #include "Handler.hpp"
 
@@ -143,6 +140,4 @@ namespace java::util::logging
 		}
 	};
 } // namespace java::util::logging
-
-#endif // JAVA_UTIL_LOGGING_STREAMHANDLER
 

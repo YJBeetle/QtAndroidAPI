@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVAX_XML_TRANSFORM_TRANSFORMEREXCEPTION
-#define JAVAX_XML_TRANSFORM_TRANSFORMEREXCEPTION
-
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 
@@ -255,6 +252,4 @@ namespace javax::xml::transform
 		}
 	};
 } // namespace javax::xml::transform
-
-#endif // JAVAX_XML_TRANSFORM_TRANSFORMEREXCEPTION
 

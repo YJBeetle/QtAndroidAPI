@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_PERMISSIONS
-#define JAVA_SECURITY_PERMISSIONS
-
 #include "../../__JniBaseClass.hpp"
 #include "PermissionCollection.hpp"
 
@@ -101,6 +98,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_PERMISSIONS
 

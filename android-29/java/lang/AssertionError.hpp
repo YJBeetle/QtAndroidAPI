@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_LANG_ASSERTIONERROR
-#define JAVA_LANG_ASSERTIONERROR
-
 #include "../../__JniBaseClass.hpp"
 #include "Error.hpp"
 
@@ -174,6 +171,4 @@ namespace java::lang
 		}
 	};
 } // namespace java::lang
-
-#endif // JAVA_LANG_ASSERTIONERROR
 

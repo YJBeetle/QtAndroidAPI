@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_VIEW_KEYEVENT
-#define ANDROID_VIEW_KEYEVENT
-
 #include "../../__JniBaseClass.hpp"
 #include "InputEvent.hpp"
 
@@ -3389,6 +3386,4 @@ namespace android::view
 		}
 	};
 } // namespace android::view
-
-#endif // ANDROID_VIEW_KEYEVENT
 

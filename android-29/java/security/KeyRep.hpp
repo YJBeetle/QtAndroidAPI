@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_SECURITY_KEYREP
-#define JAVA_SECURITY_KEYREP
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::security
@@ -74,6 +71,4 @@ namespace java::security
 		}
 	};
 } // namespace java::security
-
-#endif // JAVA_SECURITY_KEYREP
 

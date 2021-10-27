@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_TIME_LOCALDATETIME
-#define JAVA_TIME_LOCALDATETIME
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::java::io
@@ -875,6 +872,4 @@ namespace java::time
 		}
 	};
 } // namespace java::time
-
-#endif // JAVA_TIME_LOCALDATETIME
 

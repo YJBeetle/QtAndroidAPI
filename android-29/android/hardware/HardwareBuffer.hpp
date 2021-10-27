@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_HARDWARE_HARDWAREBUFFER
-#define ANDROID_HARDWARE_HARDWAREBUFFER
-
 #include "../../__JniBaseClass.hpp"
 
 namespace __jni_impl::android::os
@@ -364,6 +361,4 @@ namespace android::hardware
 		}
 	};
 } // namespace android::hardware
-
-#endif // ANDROID_HARDWARE_HARDWAREBUFFER
 

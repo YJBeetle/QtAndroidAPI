@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef ANDROID_UTIL_BASE64INPUTSTREAM
-#define ANDROID_UTIL_BASE64INPUTSTREAM
-
 #include "../../__JniBaseClass.hpp"
 #include "../../java/io/InputStream.hpp"
 #include "../../java/io/FilterInputStream.hpp"
@@ -129,6 +126,4 @@ namespace android::util
 		}
 	};
 } // namespace android::util
-
-#endif // ANDROID_UTIL_BASE64INPUTSTREAM
 

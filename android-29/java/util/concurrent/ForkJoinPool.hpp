@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef JAVA_UTIL_CONCURRENT_FORKJOINPOOL
-#define JAVA_UTIL_CONCURRENT_FORKJOINPOOL
-
 #include "../../../__JniBaseClass.hpp"
 #include "AbstractExecutorService.hpp"
 
@@ -411,6 +408,4 @@ namespace java::util::concurrent
 		}
 	};
 } // namespace java::util::concurrent
-
-#endif // JAVA_UTIL_CONCURRENT_FORKJOINPOOL
 
