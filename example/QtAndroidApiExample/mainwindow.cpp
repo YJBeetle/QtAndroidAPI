@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "mainwindow.hpp"
 #include "ui_mainwindow.h"
 
 #include <memory>
@@ -6,9 +6,9 @@
 #include <QTimer>
 
 #include <QtAndroidExtras/QtAndroid>
-#include "../../android-29/android/widget/Toast.hpp"
-#include "../../android-29/android/app/ProgressDialog.hpp"
-#include "../../android-29/android/content/Intent.hpp"
+#include <android/widget/Toast.hpp>
+#include <android/app/ProgressDialog.hpp>
+#include <android/content/Intent.hpp>
 
 using namespace android::widget;
 using namespace android::app;

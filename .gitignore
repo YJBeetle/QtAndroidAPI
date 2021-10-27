@@ -34,6 +34,7 @@
 # QtCreator
 /example/build*
 *.pro.user
+CMakeLists.txt.user
 
 # macOS
 .DS_Store
