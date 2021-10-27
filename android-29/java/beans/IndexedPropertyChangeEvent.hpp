@@ -4,84 +4,26 @@
 #include "../util/EventObject.hpp"
 #include "./PropertyChangeEvent.hpp"
 
-namespace __jni_impl::java::lang
+namespace java::lang
 {
 	class StringBuilder;
 }
 
-namespace __jni_impl::java::beans
+namespace java::beans
 {
-	class IndexedPropertyChangeEvent : public __jni_impl::java::beans::PropertyChangeEvent
+	class IndexedPropertyChangeEvent : public java::beans::PropertyChangeEvent
 	{
 	public:
 		// Fields
 		
+		IndexedPropertyChangeEvent(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jobject arg0, jstring arg1, jobject arg2, jobject arg3, jint arg4);
-		void __constructor(jobject arg0, const QString &arg1, jobject arg2, jobject arg3, jint arg4);
+		IndexedPropertyChangeEvent(jobject &arg0, jstring &arg1, jobject &arg2, jobject &arg3, jint &arg4);
+		IndexedPropertyChangeEvent(jobject &arg0, const QString &arg1, jobject &arg2, jobject &arg3, jint &arg4);
+		IndexedPropertyChangeEvent() = default;
 		
 		// Methods
 		jint getIndex();
-	};
-} // namespace __jni_impl::java::beans
-
-#include "../lang/StringBuilder.hpp"
-
-namespace __jni_impl::java::beans
-{
-	// Fields
-	
-	// Constructors
-	void IndexedPropertyChangeEvent::__constructor(jobject arg0, jstring arg1, jobject arg2, jobject arg3, jint arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"java.beans.IndexedPropertyChangeEvent",
-			"(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;I)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	void IndexedPropertyChangeEvent::__constructor(jobject arg0, const QString &arg1, jobject arg2, jobject arg3, jint arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"java.beans.IndexedPropertyChangeEvent",
-			"(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;I)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	
-	// Methods
-	jint IndexedPropertyChangeEvent::getIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getIndex",
-			"()I"
-		);
-	}
-} // namespace __jni_impl::java::beans
-
-namespace java::beans
-{
-	class IndexedPropertyChangeEvent : public __jni_impl::java::beans::IndexedPropertyChangeEvent
-	{
-	public:
-		IndexedPropertyChangeEvent(QAndroidJniObject obj) { __thiz = obj; }
-		IndexedPropertyChangeEvent(jobject arg0, jstring arg1, jobject arg2, jobject arg3, jint arg4)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2,
-				arg3,
-				arg4);
-		}
 	};
 } // namespace java::beans
 

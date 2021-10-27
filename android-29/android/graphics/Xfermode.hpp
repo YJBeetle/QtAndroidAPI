@@ -3,47 +3,18 @@
 #include "../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::graphics
+namespace android::graphics
 {
 	class Xfermode : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		Xfermode(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		Xfermode();
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::graphics
-
-
-namespace __jni_impl::android::graphics
-{
-	// Fields
-	
-	// Constructors
-	void Xfermode::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.Xfermode",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::graphics
-
-namespace android::graphics
-{
-	class Xfermode : public __jni_impl::android::graphics::Xfermode
-	{
-	public:
-		Xfermode(QAndroidJniObject obj) { __thiz = obj; }
-		Xfermode()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::graphics
 

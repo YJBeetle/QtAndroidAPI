@@ -3,70 +3,21 @@
 #include "../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::webkit
+namespace android::webkit
 {
 	class WebStorage_Origin : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		WebStorage_Origin(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		WebStorage_Origin() = default;
 		
 		// Methods
 		jstring getOrigin();
 		jlong getQuota();
 		jlong getUsage();
-	};
-} // namespace __jni_impl::android::webkit
-
-
-namespace __jni_impl::android::webkit
-{
-	// Fields
-	
-	// Constructors
-	void WebStorage_Origin::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.webkit.WebStorage$Origin",
-			"(V)V");
-	}
-	
-	// Methods
-	jstring WebStorage_Origin::getOrigin()
-	{
-		return __thiz.callObjectMethod(
-			"getOrigin",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jlong WebStorage_Origin::getQuota()
-	{
-		return __thiz.callMethod<jlong>(
-			"getQuota",
-			"()J"
-		);
-	}
-	jlong WebStorage_Origin::getUsage()
-	{
-		return __thiz.callMethod<jlong>(
-			"getUsage",
-			"()J"
-		);
-	}
-} // namespace __jni_impl::android::webkit
-
-namespace android::webkit
-{
-	class WebStorage_Origin : public __jni_impl::android::webkit::WebStorage_Origin
-	{
-	public:
-		WebStorage_Origin(QAndroidJniObject obj) { __thiz = obj; }
-		WebStorage_Origin()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::webkit
 

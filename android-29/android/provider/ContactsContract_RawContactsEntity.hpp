@@ -2,12 +2,12 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net
+namespace android::net
 {
 	class Uri;
 }
 
-namespace __jni_impl::android::provider
+namespace android::provider
 {
 	class ContactsContract_RawContactsEntity : public __JniBaseClass
 	{
@@ -18,72 +18,11 @@ namespace __jni_impl::android::provider
 		static jstring DATA_ID();
 		static QAndroidJniObject PROFILE_CONTENT_URI();
 		
+		ContactsContract_RawContactsEntity(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		ContactsContract_RawContactsEntity() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::provider
-
-#include "../net/Uri.hpp"
-
-namespace __jni_impl::android::provider
-{
-	// Fields
-	jstring ContactsContract_RawContactsEntity::CONTENT_TYPE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.ContactsContract$RawContactsEntity",
-			"CONTENT_TYPE",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject ContactsContract_RawContactsEntity::CONTENT_URI()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.ContactsContract$RawContactsEntity",
-			"CONTENT_URI",
-			"Landroid/net/Uri;"
-		);
-	}
-	jstring ContactsContract_RawContactsEntity::DATA_ID()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.ContactsContract$RawContactsEntity",
-			"DATA_ID",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject ContactsContract_RawContactsEntity::PROFILE_CONTENT_URI()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.ContactsContract$RawContactsEntity",
-			"PROFILE_CONTENT_URI",
-			"Landroid/net/Uri;"
-		);
-	}
-	
-	// Constructors
-	void ContactsContract_RawContactsEntity::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.provider.ContactsContract$RawContactsEntity",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::provider
-
-namespace android::provider
-{
-	class ContactsContract_RawContactsEntity : public __jni_impl::android::provider::ContactsContract_RawContactsEntity
-	{
-	public:
-		ContactsContract_RawContactsEntity(QAndroidJniObject obj) { __thiz = obj; }
-		ContactsContract_RawContactsEntity()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::provider
 

@@ -5,60 +5,24 @@
 #include "./SelectableChannel.hpp"
 #include "./spi/AbstractSelectableChannel.hpp"
 
-namespace __jni_impl::java::nio::channels::spi
+namespace java::nio::channels::spi
 {
 	class SelectorProvider;
 }
 
-namespace __jni_impl::java::nio::channels
+namespace java::nio::channels
 {
-	class Pipe_SinkChannel : public __jni_impl::java::nio::channels::spi::AbstractSelectableChannel
+	class Pipe_SinkChannel : public java::nio::channels::spi::AbstractSelectableChannel
 	{
 	public:
 		// Fields
 		
+		Pipe_SinkChannel(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		Pipe_SinkChannel() = default;
 		
 		// Methods
 		jint validOps();
-	};
-} // namespace __jni_impl::java::nio::channels
-
-#include "./spi/SelectorProvider.hpp"
-
-namespace __jni_impl::java::nio::channels
-{
-	// Fields
-	
-	// Constructors
-	void Pipe_SinkChannel::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.channels.Pipe$SinkChannel",
-			"(V)V");
-	}
-	
-	// Methods
-	jint Pipe_SinkChannel::validOps()
-	{
-		return __thiz.callMethod<jint>(
-			"validOps",
-			"()I"
-		);
-	}
-} // namespace __jni_impl::java::nio::channels
-
-namespace java::nio::channels
-{
-	class Pipe_SinkChannel : public __jni_impl::java::nio::channels::Pipe_SinkChannel
-	{
-	public:
-		Pipe_SinkChannel(QAndroidJniObject obj) { __thiz = obj; }
-		Pipe_SinkChannel()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::nio::channels
 

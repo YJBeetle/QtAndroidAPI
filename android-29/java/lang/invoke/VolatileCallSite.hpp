@@ -3,99 +3,32 @@
 #include "../../../__JniBaseClass.hpp"
 #include "./CallSite.hpp"
 
-namespace __jni_impl::java::lang::invoke
+namespace java::lang::invoke
 {
 	class MethodHandle;
 }
-namespace __jni_impl::java::lang::invoke
+namespace java::lang::invoke
 {
 	class MethodType;
 }
 
-namespace __jni_impl::java::lang::invoke
+namespace java::lang::invoke
 {
-	class VolatileCallSite : public __jni_impl::java::lang::invoke::CallSite
+	class VolatileCallSite : public java::lang::invoke::CallSite
 	{
 	public:
 		// Fields
 		
+		VolatileCallSite(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(__jni_impl::java::lang::invoke::MethodHandle arg0);
-		void __constructor(__jni_impl::java::lang::invoke::MethodType arg0);
+		VolatileCallSite(java::lang::invoke::MethodHandle &arg0);
+		VolatileCallSite(java::lang::invoke::MethodType &arg0);
+		VolatileCallSite() = default;
 		
 		// Methods
 		QAndroidJniObject dynamicInvoker();
 		QAndroidJniObject getTarget();
-		void setTarget(__jni_impl::java::lang::invoke::MethodHandle arg0);
-	};
-} // namespace __jni_impl::java::lang::invoke
-
-#include "./MethodHandle.hpp"
-#include "./MethodType.hpp"
-
-namespace __jni_impl::java::lang::invoke
-{
-	// Fields
-	
-	// Constructors
-	void VolatileCallSite::__constructor(__jni_impl::java::lang::invoke::MethodHandle arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.invoke.VolatileCallSite",
-			"(Ljava/lang/invoke/MethodHandle;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void VolatileCallSite::__constructor(__jni_impl::java::lang::invoke::MethodType arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.invoke.VolatileCallSite",
-			"(Ljava/lang/invoke/MethodType;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	
-	// Methods
-	QAndroidJniObject VolatileCallSite::dynamicInvoker()
-	{
-		return __thiz.callObjectMethod(
-			"dynamicInvoker",
-			"()Ljava/lang/invoke/MethodHandle;"
-		);
-	}
-	QAndroidJniObject VolatileCallSite::getTarget()
-	{
-		return __thiz.callObjectMethod(
-			"getTarget",
-			"()Ljava/lang/invoke/MethodHandle;"
-		);
-	}
-	void VolatileCallSite::setTarget(__jni_impl::java::lang::invoke::MethodHandle arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTarget",
-			"(Ljava/lang/invoke/MethodHandle;)V",
-			arg0.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::java::lang::invoke
-
-namespace java::lang::invoke
-{
-	class VolatileCallSite : public __jni_impl::java::lang::invoke::VolatileCallSite
-	{
-	public:
-		VolatileCallSite(QAndroidJniObject obj) { __thiz = obj; }
-		VolatileCallSite(__jni_impl::java::lang::invoke::MethodHandle arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		VolatileCallSite(__jni_impl::java::lang::invoke::MethodType arg0)
-		{
-			__constructor(
-				arg0);
-		}
+		void setTarget(java::lang::invoke::MethodHandle arg0);
 	};
 } // namespace java::lang::invoke
 

@@ -4,46 +4,18 @@
 #include "./Violation.hpp"
 
 
-namespace __jni_impl::android::os::strictmode
+namespace android::os::strictmode
 {
-	class CredentialProtectedWhileLockedViolation : public __jni_impl::android::os::strictmode::Violation
+	class CredentialProtectedWhileLockedViolation : public android::os::strictmode::Violation
 	{
 	public:
 		// Fields
 		
+		CredentialProtectedWhileLockedViolation(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		CredentialProtectedWhileLockedViolation() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::os::strictmode
-
-
-namespace __jni_impl::android::os::strictmode
-{
-	// Fields
-	
-	// Constructors
-	void CredentialProtectedWhileLockedViolation::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.strictmode.CredentialProtectedWhileLockedViolation",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::os::strictmode
-
-namespace android::os::strictmode
-{
-	class CredentialProtectedWhileLockedViolation : public __jni_impl::android::os::strictmode::CredentialProtectedWhileLockedViolation
-	{
-	public:
-		CredentialProtectedWhileLockedViolation(QAndroidJniObject obj) { __thiz = obj; }
-		CredentialProtectedWhileLockedViolation()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::os::strictmode
 

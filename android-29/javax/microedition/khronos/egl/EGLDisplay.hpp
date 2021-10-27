@@ -3,47 +3,18 @@
 #include "../../../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::javax::microedition::khronos::egl
+namespace javax::microedition::khronos::egl
 {
 	class EGLDisplay : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		EGLDisplay(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		EGLDisplay();
 		
 		// Methods
-	};
-} // namespace __jni_impl::javax::microedition::khronos::egl
-
-
-namespace __jni_impl::javax::microedition::khronos::egl
-{
-	// Fields
-	
-	// Constructors
-	void EGLDisplay::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"javax.microedition.khronos.egl.EGLDisplay",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::javax::microedition::khronos::egl
-
-namespace javax::microedition::khronos::egl
-{
-	class EGLDisplay : public __jni_impl::javax::microedition::khronos::egl::EGLDisplay
-	{
-	public:
-		EGLDisplay(QAndroidJniObject obj) { __thiz = obj; }
-		EGLDisplay()
-		{
-			__constructor();
-		}
 	};
 } // namespace javax::microedition::khronos::egl
 

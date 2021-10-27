@@ -5,70 +5,20 @@
 #include "../RuntimeException.hpp"
 
 
-namespace __jni_impl::java::lang::invoke
+namespace java::lang::invoke
 {
-	class WrongMethodTypeException : public __jni_impl::java::lang::RuntimeException
+	class WrongMethodTypeException : public java::lang::RuntimeException
 	{
 	public:
 		// Fields
 		
+		WrongMethodTypeException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		WrongMethodTypeException();
+		WrongMethodTypeException(jstring &arg0);
+		WrongMethodTypeException(const QString &arg0);
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::lang::invoke
-
-
-namespace __jni_impl::java::lang::invoke
-{
-	// Fields
-	
-	// Constructors
-	void WrongMethodTypeException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.invoke.WrongMethodTypeException",
-			"()V"
-		);
-	}
-	void WrongMethodTypeException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.invoke.WrongMethodTypeException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void WrongMethodTypeException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.invoke.WrongMethodTypeException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::lang::invoke
-
-namespace java::lang::invoke
-{
-	class WrongMethodTypeException : public __jni_impl::java::lang::invoke::WrongMethodTypeException
-	{
-	public:
-		WrongMethodTypeException(QAndroidJniObject obj) { __thiz = obj; }
-		WrongMethodTypeException()
-		{
-			__constructor();
-		}
-		WrongMethodTypeException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace java::lang::invoke
 

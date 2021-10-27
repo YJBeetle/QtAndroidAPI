@@ -2,12 +2,12 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class Parcel;
 }
 
-namespace __jni_impl::android::telephony
+namespace android::telephony
 {
 	class IccOpenLogicalChannelResponse : public __JniBaseClass
 	{
@@ -20,8 +20,9 @@ namespace __jni_impl::android::telephony
 		static jint STATUS_NO_SUCH_ELEMENT();
 		static jint STATUS_UNKNOWN_ERROR();
 		
+		IccOpenLogicalChannelResponse(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		IccOpenLogicalChannelResponse() = default;
 		
 		// Methods
 		jint describeContents();
@@ -29,124 +30,7 @@ namespace __jni_impl::android::telephony
 		jbyteArray getSelectResponse();
 		jint getStatus();
 		jstring toString();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-	};
-} // namespace __jni_impl::android::telephony
-
-#include "../os/Parcel.hpp"
-
-namespace __jni_impl::android::telephony
-{
-	// Fields
-	QAndroidJniObject IccOpenLogicalChannelResponse::CREATOR()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.telephony.IccOpenLogicalChannelResponse",
-			"CREATOR",
-			"Landroid/os/Parcelable$Creator;"
-		);
-	}
-	jint IccOpenLogicalChannelResponse::INVALID_CHANNEL()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.telephony.IccOpenLogicalChannelResponse",
-			"INVALID_CHANNEL"
-		);
-	}
-	jint IccOpenLogicalChannelResponse::STATUS_MISSING_RESOURCE()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.telephony.IccOpenLogicalChannelResponse",
-			"STATUS_MISSING_RESOURCE"
-		);
-	}
-	jint IccOpenLogicalChannelResponse::STATUS_NO_ERROR()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.telephony.IccOpenLogicalChannelResponse",
-			"STATUS_NO_ERROR"
-		);
-	}
-	jint IccOpenLogicalChannelResponse::STATUS_NO_SUCH_ELEMENT()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.telephony.IccOpenLogicalChannelResponse",
-			"STATUS_NO_SUCH_ELEMENT"
-		);
-	}
-	jint IccOpenLogicalChannelResponse::STATUS_UNKNOWN_ERROR()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.telephony.IccOpenLogicalChannelResponse",
-			"STATUS_UNKNOWN_ERROR"
-		);
-	}
-	
-	// Constructors
-	void IccOpenLogicalChannelResponse::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.telephony.IccOpenLogicalChannelResponse",
-			"(V)V");
-	}
-	
-	// Methods
-	jint IccOpenLogicalChannelResponse::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	jint IccOpenLogicalChannelResponse::getChannel()
-	{
-		return __thiz.callMethod<jint>(
-			"getChannel",
-			"()I"
-		);
-	}
-	jbyteArray IccOpenLogicalChannelResponse::getSelectResponse()
-	{
-		return __thiz.callObjectMethod(
-			"getSelectResponse",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	jint IccOpenLogicalChannelResponse::getStatus()
-	{
-		return __thiz.callMethod<jint>(
-			"getStatus",
-			"()I"
-		);
-	}
-	jstring IccOpenLogicalChannelResponse::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void IccOpenLogicalChannelResponse::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-} // namespace __jni_impl::android::telephony
-
-namespace android::telephony
-{
-	class IccOpenLogicalChannelResponse : public __jni_impl::android::telephony::IccOpenLogicalChannelResponse
-	{
-	public:
-		IccOpenLogicalChannelResponse(QAndroidJniObject obj) { __thiz = obj; }
-		IccOpenLogicalChannelResponse()
-		{
-			__constructor();
-		}
+		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telephony
 

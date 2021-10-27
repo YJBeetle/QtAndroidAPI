@@ -2,16 +2,16 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class ContentResolver;
 }
-namespace __jni_impl::android::net
+namespace android::net
 {
 	class Uri;
 }
 
-namespace __jni_impl::android::provider
+namespace android::provider
 {
 	class CalendarContract_Attendees : public __JniBaseClass
 	{
@@ -19,61 +19,12 @@ namespace __jni_impl::android::provider
 		// Fields
 		static QAndroidJniObject CONTENT_URI();
 		
+		CalendarContract_Attendees(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		CalendarContract_Attendees() = default;
 		
 		// Methods
-		static QAndroidJniObject query(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jarray arg2);
-	};
-} // namespace __jni_impl::android::provider
-
-#include "../content/ContentResolver.hpp"
-#include "../net/Uri.hpp"
-
-namespace __jni_impl::android::provider
-{
-	// Fields
-	QAndroidJniObject CalendarContract_Attendees::CONTENT_URI()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.CalendarContract$Attendees",
-			"CONTENT_URI",
-			"Landroid/net/Uri;"
-		);
-	}
-	
-	// Constructors
-	void CalendarContract_Attendees::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.provider.CalendarContract$Attendees",
-			"(V)V");
-	}
-	
-	// Methods
-	QAndroidJniObject CalendarContract_Attendees::query(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jarray arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.CalendarContract$Attendees",
-			"query",
-			"(Landroid/content/ContentResolver;J[Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		);
-	}
-} // namespace __jni_impl::android::provider
-
-namespace android::provider
-{
-	class CalendarContract_Attendees : public __jni_impl::android::provider::CalendarContract_Attendees
-	{
-	public:
-		CalendarContract_Attendees(QAndroidJniObject obj) { __thiz = obj; }
-		CalendarContract_Attendees()
-		{
-			__constructor();
-		}
+		static QAndroidJniObject query(android::content::ContentResolver arg0, jlong arg1, jarray arg2);
 	};
 } // namespace android::provider
 

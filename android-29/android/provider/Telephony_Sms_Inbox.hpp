@@ -2,12 +2,12 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net
+namespace android::net
 {
 	class Uri;
 }
 
-namespace __jni_impl::android::provider
+namespace android::provider
 {
 	class Telephony_Sms_Inbox : public __JniBaseClass
 	{
@@ -16,56 +16,11 @@ namespace __jni_impl::android::provider
 		static QAndroidJniObject CONTENT_URI();
 		static jstring DEFAULT_SORT_ORDER();
 		
+		Telephony_Sms_Inbox(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		Telephony_Sms_Inbox() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::provider
-
-#include "../net/Uri.hpp"
-
-namespace __jni_impl::android::provider
-{
-	// Fields
-	QAndroidJniObject Telephony_Sms_Inbox::CONTENT_URI()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Telephony$Sms$Inbox",
-			"CONTENT_URI",
-			"Landroid/net/Uri;"
-		);
-	}
-	jstring Telephony_Sms_Inbox::DEFAULT_SORT_ORDER()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Telephony$Sms$Inbox",
-			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	
-	// Constructors
-	void Telephony_Sms_Inbox::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.provider.Telephony$Sms$Inbox",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::provider
-
-namespace android::provider
-{
-	class Telephony_Sms_Inbox : public __jni_impl::android::provider::Telephony_Sms_Inbox
-	{
-	public:
-		Telephony_Sms_Inbox(QAndroidJniObject obj) { __thiz = obj; }
-		Telephony_Sms_Inbox()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::provider
 

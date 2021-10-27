@@ -2,12 +2,12 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class ContentResolver;
 }
 
-namespace __jni_impl::android::provider
+namespace android::provider
 {
 	class ContactsContract_PinnedPositions : public __JniBaseClass
 	{
@@ -16,78 +16,13 @@ namespace __jni_impl::android::provider
 		static jint DEMOTED();
 		static jint UNPINNED();
 		
+		ContactsContract_PinnedPositions(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		ContactsContract_PinnedPositions();
 		
 		// Methods
-		static void pin(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jint arg2);
-		static void undemote(__jni_impl::android::content::ContentResolver arg0, jlong arg1);
-	};
-} // namespace __jni_impl::android::provider
-
-#include "../content/ContentResolver.hpp"
-
-namespace __jni_impl::android::provider
-{
-	// Fields
-	jint ContactsContract_PinnedPositions::DEMOTED()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.provider.ContactsContract$PinnedPositions",
-			"DEMOTED"
-		);
-	}
-	jint ContactsContract_PinnedPositions::UNPINNED()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.provider.ContactsContract$PinnedPositions",
-			"UNPINNED"
-		);
-	}
-	
-	// Constructors
-	void ContactsContract_PinnedPositions::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.provider.ContactsContract$PinnedPositions",
-			"()V"
-		);
-	}
-	
-	// Methods
-	void ContactsContract_PinnedPositions::pin(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.provider.ContactsContract$PinnedPositions",
-			"pin",
-			"(Landroid/content/ContentResolver;JI)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		);
-	}
-	void ContactsContract_PinnedPositions::undemote(__jni_impl::android::content::ContentResolver arg0, jlong arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.provider.ContactsContract$PinnedPositions",
-			"undemote",
-			"(Landroid/content/ContentResolver;J)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-} // namespace __jni_impl::android::provider
-
-namespace android::provider
-{
-	class ContactsContract_PinnedPositions : public __jni_impl::android::provider::ContactsContract_PinnedPositions
-	{
-	public:
-		ContactsContract_PinnedPositions(QAndroidJniObject obj) { __thiz = obj; }
-		ContactsContract_PinnedPositions()
-		{
-			__constructor();
-		}
+		static void pin(android::content::ContentResolver arg0, jlong arg1, jint arg2);
+		static void undemote(android::content::ContentResolver arg0, jlong arg1);
 	};
 } // namespace android::provider
 

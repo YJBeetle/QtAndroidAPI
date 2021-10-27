@@ -6,47 +6,18 @@
 #include "../lang/UnsupportedOperationException.hpp"
 
 
-namespace __jni_impl::java::nio
+namespace java::nio
 {
-	class ReadOnlyBufferException : public __jni_impl::java::lang::UnsupportedOperationException
+	class ReadOnlyBufferException : public java::lang::UnsupportedOperationException
 	{
 	public:
 		// Fields
 		
+		ReadOnlyBufferException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		ReadOnlyBufferException();
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::nio
-
-
-namespace __jni_impl::java::nio
-{
-	// Fields
-	
-	// Constructors
-	void ReadOnlyBufferException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.ReadOnlyBufferException",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::nio
-
-namespace java::nio
-{
-	class ReadOnlyBufferException : public __jni_impl::java::nio::ReadOnlyBufferException
-	{
-	public:
-		ReadOnlyBufferException(QAndroidJniObject obj) { __thiz = obj; }
-		ReadOnlyBufferException()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::nio
 

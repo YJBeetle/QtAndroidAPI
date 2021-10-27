@@ -3,7 +3,7 @@
 #include "../../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::os::health
+namespace android::os::health
 {
 	class ServiceHealthStats : public __JniBaseClass
 	{
@@ -12,53 +12,11 @@ namespace __jni_impl::android::os::health
 		static jint MEASUREMENT_LAUNCH_COUNT();
 		static jint MEASUREMENT_START_SERVICE_COUNT();
 		
+		ServiceHealthStats(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		ServiceHealthStats() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::os::health
-
-
-namespace __jni_impl::android::os::health
-{
-	// Fields
-	jint ServiceHealthStats::MEASUREMENT_LAUNCH_COUNT()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.os.health.ServiceHealthStats",
-			"MEASUREMENT_LAUNCH_COUNT"
-		);
-	}
-	jint ServiceHealthStats::MEASUREMENT_START_SERVICE_COUNT()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.os.health.ServiceHealthStats",
-			"MEASUREMENT_START_SERVICE_COUNT"
-		);
-	}
-	
-	// Constructors
-	void ServiceHealthStats::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.health.ServiceHealthStats",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::os::health
-
-namespace android::os::health
-{
-	class ServiceHealthStats : public __jni_impl::android::os::health::ServiceHealthStats
-	{
-	public:
-		ServiceHealthStats(QAndroidJniObject obj) { __thiz = obj; }
-		ServiceHealthStats()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::os::health
 

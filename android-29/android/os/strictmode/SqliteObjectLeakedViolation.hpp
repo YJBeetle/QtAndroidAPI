@@ -4,46 +4,18 @@
 #include "./Violation.hpp"
 
 
-namespace __jni_impl::android::os::strictmode
+namespace android::os::strictmode
 {
-	class SqliteObjectLeakedViolation : public __jni_impl::android::os::strictmode::Violation
+	class SqliteObjectLeakedViolation : public android::os::strictmode::Violation
 	{
 	public:
 		// Fields
 		
+		SqliteObjectLeakedViolation(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		SqliteObjectLeakedViolation() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::os::strictmode
-
-
-namespace __jni_impl::android::os::strictmode
-{
-	// Fields
-	
-	// Constructors
-	void SqliteObjectLeakedViolation::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.strictmode.SqliteObjectLeakedViolation",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::os::strictmode
-
-namespace android::os::strictmode
-{
-	class SqliteObjectLeakedViolation : public __jni_impl::android::os::strictmode::SqliteObjectLeakedViolation
-	{
-	public:
-		SqliteObjectLeakedViolation(QAndroidJniObject obj) { __thiz = obj; }
-		SqliteObjectLeakedViolation()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::os::strictmode
 

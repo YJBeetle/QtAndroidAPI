@@ -5,54 +5,19 @@
 #include "../util/AndroidException.hpp"
 
 
-namespace __jni_impl::android::net
+namespace android::net
 {
-	class IpSecManager_SpiUnavailableException : public __jni_impl::android::util::AndroidException
+	class IpSecManager_SpiUnavailableException : public android::util::AndroidException
 	{
 	public:
 		// Fields
 		
+		IpSecManager_SpiUnavailableException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		IpSecManager_SpiUnavailableException() = default;
 		
 		// Methods
 		jint getSpi();
-	};
-} // namespace __jni_impl::android::net
-
-
-namespace __jni_impl::android::net
-{
-	// Fields
-	
-	// Constructors
-	void IpSecManager_SpiUnavailableException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.net.IpSecManager$SpiUnavailableException",
-			"(V)V");
-	}
-	
-	// Methods
-	jint IpSecManager_SpiUnavailableException::getSpi()
-	{
-		return __thiz.callMethod<jint>(
-			"getSpi",
-			"()I"
-		);
-	}
-} // namespace __jni_impl::android::net
-
-namespace android::net
-{
-	class IpSecManager_SpiUnavailableException : public __jni_impl::android::net::IpSecManager_SpiUnavailableException
-	{
-	public:
-		IpSecManager_SpiUnavailableException(QAndroidJniObject obj) { __thiz = obj; }
-		IpSecManager_SpiUnavailableException()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::net
 

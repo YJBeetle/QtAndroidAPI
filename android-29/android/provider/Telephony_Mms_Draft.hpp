@@ -2,12 +2,12 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net
+namespace android::net
 {
 	class Uri;
 }
 
-namespace __jni_impl::android::provider
+namespace android::provider
 {
 	class Telephony_Mms_Draft : public __JniBaseClass
 	{
@@ -16,56 +16,11 @@ namespace __jni_impl::android::provider
 		static QAndroidJniObject CONTENT_URI();
 		static jstring DEFAULT_SORT_ORDER();
 		
+		Telephony_Mms_Draft(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		Telephony_Mms_Draft() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::provider
-
-#include "../net/Uri.hpp"
-
-namespace __jni_impl::android::provider
-{
-	// Fields
-	QAndroidJniObject Telephony_Mms_Draft::CONTENT_URI()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Telephony$Mms$Draft",
-			"CONTENT_URI",
-			"Landroid/net/Uri;"
-		);
-	}
-	jstring Telephony_Mms_Draft::DEFAULT_SORT_ORDER()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Telephony$Mms$Draft",
-			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	
-	// Constructors
-	void Telephony_Mms_Draft::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.provider.Telephony$Mms$Draft",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::provider
-
-namespace android::provider
-{
-	class Telephony_Mms_Draft : public __jni_impl::android::provider::Telephony_Mms_Draft
-	{
-	public:
-		Telephony_Mms_Draft(QAndroidJniObject obj) { __thiz = obj; }
-		Telephony_Mms_Draft()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::provider
 

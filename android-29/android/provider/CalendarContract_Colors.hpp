@@ -2,12 +2,12 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net
+namespace android::net
 {
 	class Uri;
 }
 
-namespace __jni_impl::android::provider
+namespace android::provider
 {
 	class CalendarContract_Colors : public __JniBaseClass
 	{
@@ -15,48 +15,11 @@ namespace __jni_impl::android::provider
 		// Fields
 		static QAndroidJniObject CONTENT_URI();
 		
+		CalendarContract_Colors(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		CalendarContract_Colors() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::provider
-
-#include "../net/Uri.hpp"
-
-namespace __jni_impl::android::provider
-{
-	// Fields
-	QAndroidJniObject CalendarContract_Colors::CONTENT_URI()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.CalendarContract$Colors",
-			"CONTENT_URI",
-			"Landroid/net/Uri;"
-		);
-	}
-	
-	// Constructors
-	void CalendarContract_Colors::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.provider.CalendarContract$Colors",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::provider
-
-namespace android::provider
-{
-	class CalendarContract_Colors : public __jni_impl::android::provider::CalendarContract_Colors
-	{
-	public:
-		CalendarContract_Colors(QAndroidJniObject obj) { __thiz = obj; }
-		CalendarContract_Colors()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::provider
 

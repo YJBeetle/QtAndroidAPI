@@ -2,24 +2,24 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::app
+namespace android::app
 {
 	class PendingIntent;
 }
-namespace __jni_impl::android::graphics::drawable
+namespace android::graphics::drawable
 {
 	class Icon;
 }
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class Parcel;
 }
 
-namespace __jni_impl::android::app
+namespace android::app
 {
 	class Notification_Action : public __JniBaseClass
 	{
@@ -41,9 +41,11 @@ namespace __jni_impl::android::app
 		jint icon();
 		jstring title();
 		
+		Notification_Action(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jint arg0, jstring arg1, __jni_impl::android::app::PendingIntent arg2);
-		void __constructor(jint arg0, const QString &arg1, __jni_impl::android::app::PendingIntent arg2);
+		Notification_Action(jint &arg0, jstring &arg1, android::app::PendingIntent &arg2);
+		Notification_Action(jint &arg0, const QString &arg1, android::app::PendingIntent &arg2);
+		Notification_Action() = default;
 		
 		// Methods
 		QAndroidJniObject clone();
@@ -55,234 +57,7 @@ namespace __jni_impl::android::app
 		jarray getRemoteInputs();
 		jint getSemanticAction();
 		jboolean isContextual();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-	};
-} // namespace __jni_impl::android::app
-
-#include "./PendingIntent.hpp"
-#include "../graphics/drawable/Icon.hpp"
-#include "../os/Bundle.hpp"
-#include "../os/Parcel.hpp"
-
-namespace __jni_impl::android::app
-{
-	// Fields
-	QAndroidJniObject Notification_Action::CREATOR()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.app.Notification$Action",
-			"CREATOR",
-			"Landroid/os/Parcelable$Creator;"
-		);
-	}
-	jint Notification_Action::SEMANTIC_ACTION_ARCHIVE()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_ARCHIVE"
-		);
-	}
-	jint Notification_Action::SEMANTIC_ACTION_CALL()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_CALL"
-		);
-	}
-	jint Notification_Action::SEMANTIC_ACTION_DELETE()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_DELETE"
-		);
-	}
-	jint Notification_Action::SEMANTIC_ACTION_MARK_AS_READ()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_MARK_AS_READ"
-		);
-	}
-	jint Notification_Action::SEMANTIC_ACTION_MARK_AS_UNREAD()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_MARK_AS_UNREAD"
-		);
-	}
-	jint Notification_Action::SEMANTIC_ACTION_MUTE()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_MUTE"
-		);
-	}
-	jint Notification_Action::SEMANTIC_ACTION_NONE()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_NONE"
-		);
-	}
-	jint Notification_Action::SEMANTIC_ACTION_REPLY()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_REPLY"
-		);
-	}
-	jint Notification_Action::SEMANTIC_ACTION_THUMBS_DOWN()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_THUMBS_DOWN"
-		);
-	}
-	jint Notification_Action::SEMANTIC_ACTION_THUMBS_UP()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_THUMBS_UP"
-		);
-	}
-	jint Notification_Action::SEMANTIC_ACTION_UNMUTE()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.app.Notification$Action",
-			"SEMANTIC_ACTION_UNMUTE"
-		);
-	}
-	QAndroidJniObject Notification_Action::actionIntent()
-	{
-		return __thiz.getObjectField(
-			"actionIntent",
-			"Landroid/app/PendingIntent;"
-		);
-	}
-	jint Notification_Action::icon()
-	{
-		return __thiz.getField<jint>(
-			"icon"
-		);
-	}
-	jstring Notification_Action::title()
-	{
-		return __thiz.getObjectField(
-			"title",
-			"Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	
-	// Constructors
-	void Notification_Action::__constructor(jint arg0, jstring arg1, __jni_impl::android::app::PendingIntent arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.Notification$Action",
-			"(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void Notification_Action::__constructor(jint arg0, const QString &arg1, __jni_impl::android::app::PendingIntent arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.Notification$Action",
-			"(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
-	
-	// Methods
-	QAndroidJniObject Notification_Action::clone()
-	{
-		return __thiz.callObjectMethod(
-			"clone",
-			"()Landroid/app/Notification$Action;"
-		);
-	}
-	jint Notification_Action::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	jboolean Notification_Action::getAllowGeneratedReplies()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getAllowGeneratedReplies",
-			"()Z"
-		);
-	}
-	jarray Notification_Action::getDataOnlyRemoteInputs()
-	{
-		return __thiz.callObjectMethod(
-			"getDataOnlyRemoteInputs",
-			"()[Landroid/app/RemoteInput;"
-		).object<jarray>();
-	}
-	QAndroidJniObject Notification_Action::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
-		);
-	}
-	QAndroidJniObject Notification_Action::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Icon;"
-		);
-	}
-	jarray Notification_Action::getRemoteInputs()
-	{
-		return __thiz.callObjectMethod(
-			"getRemoteInputs",
-			"()[Landroid/app/RemoteInput;"
-		).object<jarray>();
-	}
-	jint Notification_Action::getSemanticAction()
-	{
-		return __thiz.callMethod<jint>(
-			"getSemanticAction",
-			"()I"
-		);
-	}
-	jboolean Notification_Action::isContextual()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isContextual",
-			"()Z"
-		);
-	}
-	void Notification_Action::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-} // namespace __jni_impl::android::app
-
-namespace android::app
-{
-	class Notification_Action : public __jni_impl::android::app::Notification_Action
-	{
-	public:
-		Notification_Action(QAndroidJniObject obj) { __thiz = obj; }
-		Notification_Action(jint arg0, jstring arg1, __jni_impl::android::app::PendingIntent arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
-		}
+		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app
 

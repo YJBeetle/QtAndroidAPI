@@ -2,25 +2,27 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class Context;
 }
-namespace __jni_impl::java::util
+namespace java::util
 {
 	class Locale;
 }
 
-namespace __jni_impl::android::location
+namespace android::location
 {
 	class Geocoder : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		Geocoder(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(__jni_impl::android::content::Context arg0);
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::java::util::Locale arg1);
+		Geocoder(android::content::Context &arg0);
+		Geocoder(android::content::Context &arg0, java::util::Locale &arg1);
+		Geocoder() = default;
 		
 		// Methods
 		static jboolean isPresent();
@@ -29,117 +31,6 @@ namespace __jni_impl::android::location
 		QAndroidJniObject getFromLocationName(const QString &arg0, jint arg1);
 		QAndroidJniObject getFromLocationName(jstring arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5);
 		QAndroidJniObject getFromLocationName(const QString &arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5);
-	};
-} // namespace __jni_impl::android::location
-
-#include "../content/Context.hpp"
-#include "../../java/util/Locale.hpp"
-
-namespace __jni_impl::android::location
-{
-	// Fields
-	
-	// Constructors
-	void Geocoder::__constructor(__jni_impl::android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.location.Geocoder",
-			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Geocoder::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::java::util::Locale arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.location.Geocoder",
-			"(Landroid/content/Context;Ljava/util/Locale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	
-	// Methods
-	jboolean Geocoder::isPresent()
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.location.Geocoder",
-			"isPresent",
-			"()Z"
-		);
-	}
-	QAndroidJniObject Geocoder::getFromLocation(jdouble arg0, jdouble arg1, jint arg2)
-	{
-		return __thiz.callObjectMethod(
-			"getFromLocation",
-			"(DDI)Ljava/util/List;",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject Geocoder::getFromLocationName(jstring arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getFromLocationName",
-			"(Ljava/lang/String;I)Ljava/util/List;",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject Geocoder::getFromLocationName(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getFromLocationName",
-			"(Ljava/lang/String;I)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	QAndroidJniObject Geocoder::getFromLocationName(jstring arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5)
-	{
-		return __thiz.callObjectMethod(
-			"getFromLocationName",
-			"(Ljava/lang/String;IDDDD)Ljava/util/List;",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5
-		);
-	}
-	QAndroidJniObject Geocoder::getFromLocationName(const QString &arg0, jint arg1, jdouble arg2, jdouble arg3, jdouble arg4, jdouble arg5)
-	{
-		return __thiz.callObjectMethod(
-			"getFromLocationName",
-			"(Ljava/lang/String;IDDDD)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5
-		);
-	}
-} // namespace __jni_impl::android::location
-
-namespace android::location
-{
-	class Geocoder : public __jni_impl::android::location::Geocoder
-	{
-	public:
-		Geocoder(QAndroidJniObject obj) { __thiz = obj; }
-		Geocoder(__jni_impl::android::content::Context arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		Geocoder(__jni_impl::android::content::Context arg0, __jni_impl::java::util::Locale arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
 	};
 } // namespace android::location
 

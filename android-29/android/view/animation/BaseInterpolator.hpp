@@ -3,47 +3,18 @@
 #include "../../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::view::animation
+namespace android::view::animation
 {
 	class BaseInterpolator : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		BaseInterpolator(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		BaseInterpolator();
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::view::animation
-
-
-namespace __jni_impl::android::view::animation
-{
-	// Fields
-	
-	// Constructors
-	void BaseInterpolator::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.animation.BaseInterpolator",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::view::animation
-
-namespace android::view::animation
-{
-	class BaseInterpolator : public __jni_impl::android::view::animation::BaseInterpolator
-	{
-	public:
-		BaseInterpolator(QAndroidJniObject obj) { __thiz = obj; }
-		BaseInterpolator()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::view::animation
 

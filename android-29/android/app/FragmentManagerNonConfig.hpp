@@ -3,46 +3,18 @@
 #include "../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::app
+namespace android::app
 {
 	class FragmentManagerNonConfig : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		FragmentManagerNonConfig(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		FragmentManagerNonConfig() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::app
-
-
-namespace __jni_impl::android::app
-{
-	// Fields
-	
-	// Constructors
-	void FragmentManagerNonConfig::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.FragmentManagerNonConfig",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::app
-
-namespace android::app
-{
-	class FragmentManagerNonConfig : public __jni_impl::android::app::FragmentManagerNonConfig
-	{
-	public:
-		FragmentManagerNonConfig(QAndroidJniObject obj) { __thiz = obj; }
-		FragmentManagerNonConfig()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::app
 

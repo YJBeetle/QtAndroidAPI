@@ -2,20 +2,20 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::content::pm
+namespace android::content::pm
 {
 	class ApplicationInfo;
 }
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class Parcel;
 }
 
-namespace __jni_impl::android::view::textservice
+namespace android::view::textservice
 {
 	class SpellCheckerSubtype : public __JniBaseClass
 	{
@@ -23,17 +23,19 @@ namespace __jni_impl::android::view::textservice
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		SpellCheckerSubtype(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jint arg0, jstring arg1, jstring arg2);
-		void __constructor(jint arg0, const QString &arg1, const QString &arg2);
+		SpellCheckerSubtype(jint &arg0, jstring &arg1, jstring &arg2);
+		SpellCheckerSubtype(jint &arg0, const QString &arg1, const QString &arg2);
+		SpellCheckerSubtype() = default;
 		
 		// Methods
 		jboolean containsExtraValueKey(jstring arg0);
 		jboolean containsExtraValueKey(const QString &arg0);
 		jint describeContents();
 		jboolean equals(jobject arg0);
-		jstring getDisplayName(__jni_impl::android::content::Context arg0, jstring arg1, __jni_impl::android::content::pm::ApplicationInfo arg2);
-		jstring getDisplayName(__jni_impl::android::content::Context arg0, const QString &arg1, __jni_impl::android::content::pm::ApplicationInfo arg2);
+		jstring getDisplayName(android::content::Context arg0, jstring arg1, android::content::pm::ApplicationInfo arg2);
+		jstring getDisplayName(android::content::Context arg0, const QString &arg1, android::content::pm::ApplicationInfo arg2);
 		jstring getExtraValue();
 		jstring getExtraValueOf(jstring arg0);
 		jstring getExtraValueOf(const QString &arg0);
@@ -41,175 +43,7 @@ namespace __jni_impl::android::view::textservice
 		jstring getLocale();
 		jint getNameResId();
 		jint hashCode();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-	};
-} // namespace __jni_impl::android::view::textservice
-
-#include "../../content/Context.hpp"
-#include "../../content/pm/ApplicationInfo.hpp"
-#include "../../os/Parcel.hpp"
-
-namespace __jni_impl::android::view::textservice
-{
-	// Fields
-	QAndroidJniObject SpellCheckerSubtype::CREATOR()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.view.textservice.SpellCheckerSubtype",
-			"CREATOR",
-			"Landroid/os/Parcelable$Creator;"
-		);
-	}
-	
-	// Constructors
-	void SpellCheckerSubtype::__constructor(jint arg0, jstring arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.textservice.SpellCheckerSubtype",
-			"(ILjava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void SpellCheckerSubtype::__constructor(jint arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.textservice.SpellCheckerSubtype",
-			"(ILjava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
-	
-	// Methods
-	jboolean SpellCheckerSubtype::containsExtraValueKey(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"containsExtraValueKey",
-			"(Ljava/lang/String;)Z",
-			arg0
-		);
-	}
-	jboolean SpellCheckerSubtype::containsExtraValueKey(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"containsExtraValueKey",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jint SpellCheckerSubtype::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	jboolean SpellCheckerSubtype::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring SpellCheckerSubtype::getDisplayName(__jni_impl::android::content::Context arg0, jstring arg1, __jni_impl::android::content::pm::ApplicationInfo arg2)
-	{
-		return __thiz.callObjectMethod(
-			"getDisplayName",
-			"(Landroid/content/Context;Ljava/lang/String;Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
-		).object<jstring>();
-	}
-	jstring SpellCheckerSubtype::getDisplayName(__jni_impl::android::content::Context arg0, const QString &arg1, __jni_impl::android::content::pm::ApplicationInfo arg2)
-	{
-		return __thiz.callObjectMethod(
-			"getDisplayName",
-			"(Landroid/content/Context;Ljava/lang/String;Landroid/content/pm/ApplicationInfo;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		).object<jstring>();
-	}
-	jstring SpellCheckerSubtype::getExtraValue()
-	{
-		return __thiz.callObjectMethod(
-			"getExtraValue",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring SpellCheckerSubtype::getExtraValueOf(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getExtraValueOf",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jstring SpellCheckerSubtype::getExtraValueOf(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getExtraValueOf",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
-	jstring SpellCheckerSubtype::getLanguageTag()
-	{
-		return __thiz.callObjectMethod(
-			"getLanguageTag",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring SpellCheckerSubtype::getLocale()
-	{
-		return __thiz.callObjectMethod(
-			"getLocale",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint SpellCheckerSubtype::getNameResId()
-	{
-		return __thiz.callMethod<jint>(
-			"getNameResId",
-			"()I"
-		);
-	}
-	jint SpellCheckerSubtype::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	void SpellCheckerSubtype::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-} // namespace __jni_impl::android::view::textservice
-
-namespace android::view::textservice
-{
-	class SpellCheckerSubtype : public __jni_impl::android::view::textservice::SpellCheckerSubtype
-	{
-	public:
-		SpellCheckerSubtype(QAndroidJniObject obj) { __thiz = obj; }
-		SpellCheckerSubtype(jint arg0, jstring arg1, jstring arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
-		}
+		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::textservice
 

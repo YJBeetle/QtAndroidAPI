@@ -3,81 +3,34 @@
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 
-namespace __jni_impl::java::io
+namespace java::io
 {
 	class ObjectInputStream;
 }
-namespace __jni_impl::java::io
+namespace java::io
 {
 	class ObjectOutputStream;
 }
-namespace __jni_impl::java::lang
+namespace java::lang
 {
 	class Exception;
 }
 
-namespace __jni_impl::java::security
+namespace java::security
 {
-	class PrivilegedActionException : public __jni_impl::java::lang::Exception
+	class PrivilegedActionException : public java::lang::Exception
 	{
 	public:
 		// Fields
 		
+		PrivilegedActionException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(__jni_impl::java::lang::Exception arg0);
+		PrivilegedActionException(java::lang::Exception &arg0);
+		PrivilegedActionException() = default;
 		
 		// Methods
 		QAndroidJniObject getException();
 		jstring toString();
-	};
-} // namespace __jni_impl::java::security
-
-#include "../io/ObjectInputStream.hpp"
-#include "../io/ObjectOutputStream.hpp"
-#include "../lang/Exception.hpp"
-
-namespace __jni_impl::java::security
-{
-	// Fields
-	
-	// Constructors
-	void PrivilegedActionException::__constructor(__jni_impl::java::lang::Exception arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.PrivilegedActionException",
-			"(Ljava/lang/Exception;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	
-	// Methods
-	QAndroidJniObject PrivilegedActionException::getException()
-	{
-		return __thiz.callObjectMethod(
-			"getException",
-			"()Ljava/lang/Exception;"
-		);
-	}
-	jstring PrivilegedActionException::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-} // namespace __jni_impl::java::security
-
-namespace java::security
-{
-	class PrivilegedActionException : public __jni_impl::java::security::PrivilegedActionException
-	{
-	public:
-		PrivilegedActionException(QAndroidJniObject obj) { __thiz = obj; }
-		PrivilegedActionException(__jni_impl::java::lang::Exception arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace java::security
 

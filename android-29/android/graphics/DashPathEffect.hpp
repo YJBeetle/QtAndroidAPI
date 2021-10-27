@@ -4,51 +4,19 @@
 #include "./PathEffect.hpp"
 
 
-namespace __jni_impl::android::graphics
+namespace android::graphics
 {
-	class DashPathEffect : public __jni_impl::android::graphics::PathEffect
+	class DashPathEffect : public android::graphics::PathEffect
 	{
 	public:
 		// Fields
 		
+		DashPathEffect(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jfloatArray arg0, jfloat arg1);
+		DashPathEffect(jfloatArray &arg0, jfloat &arg1);
+		DashPathEffect() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::graphics
-
-
-namespace __jni_impl::android::graphics
-{
-	// Fields
-	
-	// Constructors
-	void DashPathEffect::__constructor(jfloatArray arg0, jfloat arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.DashPathEffect",
-			"([FF)V",
-			arg0,
-			arg1
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::graphics
-
-namespace android::graphics
-{
-	class DashPathEffect : public __jni_impl::android::graphics::DashPathEffect
-	{
-	public:
-		DashPathEffect(QAndroidJniObject obj) { __thiz = obj; }
-		DashPathEffect(jfloatArray arg0, jfloat arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
 	};
 } // namespace android::graphics
 

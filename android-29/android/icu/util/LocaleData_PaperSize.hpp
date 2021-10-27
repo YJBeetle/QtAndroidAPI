@@ -3,62 +3,20 @@
 #include "../../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::icu::util
+namespace android::icu::util
 {
 	class LocaleData_PaperSize : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		LocaleData_PaperSize(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		LocaleData_PaperSize() = default;
 		
 		// Methods
 		jint getHeight();
 		jint getWidth();
-	};
-} // namespace __jni_impl::android::icu::util
-
-
-namespace __jni_impl::android::icu::util
-{
-	// Fields
-	
-	// Constructors
-	void LocaleData_PaperSize::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.LocaleData$PaperSize",
-			"(V)V");
-	}
-	
-	// Methods
-	jint LocaleData_PaperSize::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I"
-		);
-	}
-	jint LocaleData_PaperSize::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I"
-		);
-	}
-} // namespace __jni_impl::android::icu::util
-
-namespace android::icu::util
-{
-	class LocaleData_PaperSize : public __jni_impl::android::icu::util::LocaleData_PaperSize
-	{
-	public:
-		LocaleData_PaperSize(QAndroidJniObject obj) { __thiz = obj; }
-		LocaleData_PaperSize()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::icu::util
 

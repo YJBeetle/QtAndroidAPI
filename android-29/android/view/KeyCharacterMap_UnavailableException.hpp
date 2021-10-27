@@ -6,58 +6,20 @@
 #include "../util/AndroidRuntimeException.hpp"
 
 
-namespace __jni_impl::android::view
+namespace android::view
 {
-	class KeyCharacterMap_UnavailableException : public __jni_impl::android::util::AndroidRuntimeException
+	class KeyCharacterMap_UnavailableException : public android::util::AndroidRuntimeException
 	{
 	public:
 		// Fields
 		
+		KeyCharacterMap_UnavailableException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		KeyCharacterMap_UnavailableException(jstring &arg0);
+		KeyCharacterMap_UnavailableException(const QString &arg0);
+		KeyCharacterMap_UnavailableException() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::view
-
-
-namespace __jni_impl::android::view
-{
-	// Fields
-	
-	// Constructors
-	void KeyCharacterMap_UnavailableException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.KeyCharacterMap$UnavailableException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void KeyCharacterMap_UnavailableException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.KeyCharacterMap$UnavailableException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::view
-
-namespace android::view
-{
-	class KeyCharacterMap_UnavailableException : public __jni_impl::android::view::KeyCharacterMap_UnavailableException
-	{
-	public:
-		KeyCharacterMap_UnavailableException(QAndroidJniObject obj) { __thiz = obj; }
-		KeyCharacterMap_UnavailableException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace android::view
 

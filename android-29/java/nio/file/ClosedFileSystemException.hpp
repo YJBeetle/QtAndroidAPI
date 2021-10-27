@@ -6,47 +6,18 @@
 #include "../../lang/IllegalStateException.hpp"
 
 
-namespace __jni_impl::java::nio::file
+namespace java::nio::file
 {
-	class ClosedFileSystemException : public __jni_impl::java::lang::IllegalStateException
+	class ClosedFileSystemException : public java::lang::IllegalStateException
 	{
 	public:
 		// Fields
 		
+		ClosedFileSystemException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		ClosedFileSystemException();
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::nio::file
-
-
-namespace __jni_impl::java::nio::file
-{
-	// Fields
-	
-	// Constructors
-	void ClosedFileSystemException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.file.ClosedFileSystemException",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::nio::file
-
-namespace java::nio::file
-{
-	class ClosedFileSystemException : public __jni_impl::java::nio::file::ClosedFileSystemException
-	{
-	public:
-		ClosedFileSystemException(QAndroidJniObject obj) { __thiz = obj; }
-		ClosedFileSystemException()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::nio::file
 

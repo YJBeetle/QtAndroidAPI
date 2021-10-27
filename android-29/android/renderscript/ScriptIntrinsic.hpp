@@ -4,52 +4,23 @@
 #include "./BaseObj.hpp"
 #include "./Script.hpp"
 
-namespace __jni_impl::android::renderscript
+namespace android::renderscript
 {
 	class RenderScript;
 }
 
-namespace __jni_impl::android::renderscript
+namespace android::renderscript
 {
-	class ScriptIntrinsic : public __jni_impl::android::renderscript::Script
+	class ScriptIntrinsic : public android::renderscript::Script
 	{
 	public:
 		// Fields
 		
+		ScriptIntrinsic(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		ScriptIntrinsic() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::renderscript
-
-#include "./RenderScript.hpp"
-
-namespace __jni_impl::android::renderscript
-{
-	// Fields
-	
-	// Constructors
-	void ScriptIntrinsic::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.renderscript.ScriptIntrinsic",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::renderscript
-
-namespace android::renderscript
-{
-	class ScriptIntrinsic : public __jni_impl::android::renderscript::ScriptIntrinsic
-	{
-	public:
-		ScriptIntrinsic(QAndroidJniObject obj) { __thiz = obj; }
-		ScriptIntrinsic()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::renderscript
 

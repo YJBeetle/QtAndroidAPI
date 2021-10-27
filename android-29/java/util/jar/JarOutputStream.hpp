@@ -6,90 +6,34 @@
 #include "../zip/DeflaterOutputStream.hpp"
 #include "../zip/ZipOutputStream.hpp"
 
-namespace __jni_impl::java::io
+namespace java::io
 {
 	class OutputStream;
 }
-namespace __jni_impl::java::util::jar
+namespace java::util::jar
 {
 	class Manifest;
 }
-namespace __jni_impl::java::util::zip
+namespace java::util::zip
 {
 	class ZipEntry;
 }
 
-namespace __jni_impl::java::util::jar
+namespace java::util::jar
 {
-	class JarOutputStream : public __jni_impl::java::util::zip::ZipOutputStream
+	class JarOutputStream : public java::util::zip::ZipOutputStream
 	{
 	public:
 		// Fields
 		
+		JarOutputStream(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(__jni_impl::java::io::OutputStream arg0);
-		void __constructor(__jni_impl::java::io::OutputStream arg0, __jni_impl::java::util::jar::Manifest arg1);
+		JarOutputStream(java::io::OutputStream &arg0);
+		JarOutputStream(java::io::OutputStream &arg0, java::util::jar::Manifest &arg1);
+		JarOutputStream() = default;
 		
 		// Methods
-		void putNextEntry(__jni_impl::java::util::zip::ZipEntry arg0);
-	};
-} // namespace __jni_impl::java::util::jar
-
-#include "../../io/OutputStream.hpp"
-#include "./Manifest.hpp"
-#include "../zip/ZipEntry.hpp"
-
-namespace __jni_impl::java::util::jar
-{
-	// Fields
-	
-	// Constructors
-	void JarOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.jar.JarOutputStream",
-			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void JarOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0, __jni_impl::java::util::jar::Manifest arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.jar.JarOutputStream",
-			"(Ljava/io/OutputStream;Ljava/util/jar/Manifest;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	
-	// Methods
-	void JarOutputStream::putNextEntry(__jni_impl::java::util::zip::ZipEntry arg0)
-	{
-		__thiz.callMethod<void>(
-			"putNextEntry",
-			"(Ljava/util/zip/ZipEntry;)V",
-			arg0.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::java::util::jar
-
-namespace java::util::jar
-{
-	class JarOutputStream : public __jni_impl::java::util::jar::JarOutputStream
-	{
-	public:
-		JarOutputStream(QAndroidJniObject obj) { __thiz = obj; }
-		JarOutputStream(__jni_impl::java::io::OutputStream arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		JarOutputStream(__jni_impl::java::io::OutputStream arg0, __jni_impl::java::util::jar::Manifest arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
+		void putNextEntry(java::util::zip::ZipEntry arg0);
 	};
 } // namespace java::util::jar
 

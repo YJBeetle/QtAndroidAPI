@@ -4,56 +4,19 @@
 #include "./ReplacementTransformationMethod.hpp"
 
 
-namespace __jni_impl::android::text::method
+namespace android::text::method
 {
-	class SingleLineTransformationMethod : public __jni_impl::android::text::method::ReplacementTransformationMethod
+	class SingleLineTransformationMethod : public android::text::method::ReplacementTransformationMethod
 	{
 	public:
 		// Fields
 		
+		SingleLineTransformationMethod(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		SingleLineTransformationMethod();
 		
 		// Methods
 		static QAndroidJniObject getInstance();
-	};
-} // namespace __jni_impl::android::text::method
-
-
-namespace __jni_impl::android::text::method
-{
-	// Fields
-	
-	// Constructors
-	void SingleLineTransformationMethod::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.method.SingleLineTransformationMethod",
-			"()V"
-		);
-	}
-	
-	// Methods
-	QAndroidJniObject SingleLineTransformationMethod::getInstance()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.method.SingleLineTransformationMethod",
-			"getInstance",
-			"()Landroid/text/method/SingleLineTransformationMethod;"
-		);
-	}
-} // namespace __jni_impl::android::text::method
-
-namespace android::text::method
-{
-	class SingleLineTransformationMethod : public __jni_impl::android::text::method::SingleLineTransformationMethod
-	{
-	public:
-		SingleLineTransformationMethod(QAndroidJniObject obj) { __thiz = obj; }
-		SingleLineTransformationMethod()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::text::method
 

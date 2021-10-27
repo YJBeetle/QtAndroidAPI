@@ -5,46 +5,18 @@
 #include "../../java/lang/RuntimeException.hpp"
 
 
-namespace __jni_impl::android::util
+namespace android::util
 {
-	class TimeFormatException : public __jni_impl::java::lang::RuntimeException
+	class TimeFormatException : public java::lang::RuntimeException
 	{
 	public:
 		// Fields
 		
+		TimeFormatException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		TimeFormatException() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::util
-
-
-namespace __jni_impl::android::util
-{
-	// Fields
-	
-	// Constructors
-	void TimeFormatException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.util.TimeFormatException",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::util
-
-namespace android::util
-{
-	class TimeFormatException : public __jni_impl::android::util::TimeFormatException
-	{
-	public:
-		TimeFormatException(QAndroidJniObject obj) { __thiz = obj; }
-		TimeFormatException()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::util
 

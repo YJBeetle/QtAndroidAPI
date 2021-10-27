@@ -2,74 +2,76 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::io
+namespace java::io
 {
 	class InputStream;
 }
-namespace __jni_impl::java::io
+namespace java::io
 {
 	class ObjectInputStream;
 }
-namespace __jni_impl::java::io
+namespace java::io
 {
 	class ObjectOutputStream;
 }
-namespace __jni_impl::java::lang
+namespace java::lang
 {
 	class SecurityManager;
 }
-namespace __jni_impl::java::lang
+namespace java::lang
 {
 	class ThreadLocal;
 }
-namespace __jni_impl::java::net
+namespace java::net
 {
 	class InetAddress;
 }
-namespace __jni_impl::java::net
+namespace java::net
 {
 	class Proxy;
 }
-namespace __jni_impl::java::net
+namespace java::net
 {
 	class URI;
 }
-namespace __jni_impl::java::net
+namespace java::net
 {
 	class URLConnection;
 }
-namespace __jni_impl::java::net
+namespace java::net
 {
 	class URLStreamHandler;
 }
-namespace __jni_impl::java::util
+namespace java::util
 {
 	class Hashtable;
 }
 
-namespace __jni_impl::java::net
+namespace java::net
 {
 	class URL : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		URL(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
-		void __constructor(__jni_impl::java::net::URL arg0, jstring arg1);
-		void __constructor(__jni_impl::java::net::URL arg0, const QString &arg1);
-		void __constructor(jstring arg0, jstring arg1, jstring arg2);
-		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2);
-		void __constructor(__jni_impl::java::net::URL arg0, jstring arg1, __jni_impl::java::net::URLStreamHandler arg2);
-		void __constructor(__jni_impl::java::net::URL arg0, const QString &arg1, __jni_impl::java::net::URLStreamHandler arg2);
-		void __constructor(jstring arg0, jstring arg1, jint arg2, jstring arg3);
-		void __constructor(const QString &arg0, const QString &arg1, jint arg2, const QString &arg3);
-		void __constructor(jstring arg0, jstring arg1, jint arg2, jstring arg3, __jni_impl::java::net::URLStreamHandler arg4);
-		void __constructor(const QString &arg0, const QString &arg1, jint arg2, const QString &arg3, __jni_impl::java::net::URLStreamHandler arg4);
+		URL(jstring &arg0);
+		URL(const QString &arg0);
+		URL(java::net::URL &arg0, jstring &arg1);
+		URL(java::net::URL &arg0, const QString &arg1);
+		URL(jstring &arg0, jstring &arg1, jstring &arg2);
+		URL(const QString &arg0, const QString &arg1, const QString &arg2);
+		URL(java::net::URL &arg0, jstring &arg1, java::net::URLStreamHandler &arg2);
+		URL(java::net::URL &arg0, const QString &arg1, java::net::URLStreamHandler &arg2);
+		URL(jstring &arg0, jstring &arg1, jint &arg2, jstring &arg3);
+		URL(const QString &arg0, const QString &arg1, jint &arg2, const QString &arg3);
+		URL(jstring &arg0, jstring &arg1, jint &arg2, jstring &arg3, java::net::URLStreamHandler &arg4);
+		URL(const QString &arg0, const QString &arg1, jint &arg2, const QString &arg3, java::net::URLStreamHandler &arg4);
+		URL() = default;
 		
 		// Methods
-		static void setURLStreamHandlerFactory(__jni_impl::__JniBaseClass arg0);
+		static void setURLStreamHandlerFactory(__JniBaseClass arg0);
 		jboolean equals(jobject arg0);
 		jstring getAuthority();
 		jobject getContent();
@@ -85,364 +87,12 @@ namespace __jni_impl::java::net
 		jstring getUserInfo();
 		jint hashCode();
 		QAndroidJniObject openConnection();
-		QAndroidJniObject openConnection(__jni_impl::java::net::Proxy arg0);
+		QAndroidJniObject openConnection(java::net::Proxy arg0);
 		QAndroidJniObject openStream();
-		jboolean sameFile(__jni_impl::java::net::URL arg0);
+		jboolean sameFile(java::net::URL arg0);
 		jstring toExternalForm();
 		jstring toString();
 		QAndroidJniObject toURI();
-	};
-} // namespace __jni_impl::java::net
-
-#include "../io/InputStream.hpp"
-#include "../io/ObjectInputStream.hpp"
-#include "../io/ObjectOutputStream.hpp"
-#include "../lang/SecurityManager.hpp"
-#include "../lang/ThreadLocal.hpp"
-#include "./InetAddress.hpp"
-#include "./Proxy.hpp"
-#include "./URI.hpp"
-#include "./URLConnection.hpp"
-#include "./URLStreamHandler.hpp"
-#include "../util/Hashtable.hpp"
-
-namespace __jni_impl::java::net
-{
-	// Fields
-	
-	// Constructors
-	void URL::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URL",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void URL::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URL",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void URL::__constructor(__jni_impl::java::net::URL arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URL",
-			"(Ljava/net/URL;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void URL::__constructor(__jni_impl::java::net::URL arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URL",
-			"(Ljava/net/URL;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	void URL::__constructor(jstring arg0, jstring arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URL",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void URL::__constructor(const QString &arg0, const QString &arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URL",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
-	void URL::__constructor(__jni_impl::java::net::URL arg0, jstring arg1, __jni_impl::java::net::URLStreamHandler arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URL",
-			"(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void URL::__constructor(__jni_impl::java::net::URL arg0, const QString &arg1, __jni_impl::java::net::URLStreamHandler arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URL",
-			"(Ljava/net/URL;Ljava/lang/String;Ljava/net/URLStreamHandler;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
-	void URL::__constructor(jstring arg0, jstring arg1, jint arg2, jstring arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URL",
-			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void URL::__constructor(const QString &arg0, const QString &arg1, jint arg2, const QString &arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URL",
-			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>()
-		);
-	}
-	void URL::__constructor(jstring arg0, jstring arg1, jint arg2, jstring arg3, __jni_impl::java::net::URLStreamHandler arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URL",
-			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/net/URLStreamHandler;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4.__jniObject().object()
-		);
-	}
-	void URL::__constructor(const QString &arg0, const QString &arg1, jint arg2, const QString &arg3, __jni_impl::java::net::URLStreamHandler arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.URL",
-			"(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/net/URLStreamHandler;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>(),
-			arg4.__jniObject().object()
-		);
-	}
-	
-	// Methods
-	void URL::setURLStreamHandlerFactory(__jni_impl::__JniBaseClass arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"java.net.URL",
-			"setURLStreamHandlerFactory",
-			"(Ljava/net/URLStreamHandlerFactory;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean URL::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring URL::getAuthority()
-	{
-		return __thiz.callObjectMethod(
-			"getAuthority",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jobject URL::getContent()
-	{
-		return __thiz.callObjectMethod(
-			"getContent",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	jobject URL::getContent(jarray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getContent",
-			"([Ljava/lang/Class;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
-	}
-	jint URL::getDefaultPort()
-	{
-		return __thiz.callMethod<jint>(
-			"getDefaultPort",
-			"()I"
-		);
-	}
-	jstring URL::getFile()
-	{
-		return __thiz.callObjectMethod(
-			"getFile",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring URL::getHost()
-	{
-		return __thiz.callObjectMethod(
-			"getHost",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring URL::getPath()
-	{
-		return __thiz.callObjectMethod(
-			"getPath",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint URL::getPort()
-	{
-		return __thiz.callMethod<jint>(
-			"getPort",
-			"()I"
-		);
-	}
-	jstring URL::getProtocol()
-	{
-		return __thiz.callObjectMethod(
-			"getProtocol",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring URL::getQuery()
-	{
-		return __thiz.callObjectMethod(
-			"getQuery",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring URL::getRef()
-	{
-		return __thiz.callObjectMethod(
-			"getRef",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring URL::getUserInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getUserInfo",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint URL::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	QAndroidJniObject URL::openConnection()
-	{
-		return __thiz.callObjectMethod(
-			"openConnection",
-			"()Ljava/net/URLConnection;"
-		);
-	}
-	QAndroidJniObject URL::openConnection(__jni_impl::java::net::Proxy arg0)
-	{
-		return __thiz.callObjectMethod(
-			"openConnection",
-			"(Ljava/net/Proxy;)Ljava/net/URLConnection;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject URL::openStream()
-	{
-		return __thiz.callObjectMethod(
-			"openStream",
-			"()Ljava/io/InputStream;"
-		);
-	}
-	jboolean URL::sameFile(__jni_impl::java::net::URL arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"sameFile",
-			"(Ljava/net/URL;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jstring URL::toExternalForm()
-	{
-		return __thiz.callObjectMethod(
-			"toExternalForm",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring URL::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject URL::toURI()
-	{
-		return __thiz.callObjectMethod(
-			"toURI",
-			"()Ljava/net/URI;"
-		);
-	}
-} // namespace __jni_impl::java::net
-
-namespace java::net
-{
-	class URL : public __jni_impl::java::net::URL
-	{
-	public:
-		URL(QAndroidJniObject obj) { __thiz = obj; }
-		URL(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		URL(__jni_impl::java::net::URL arg0, jstring arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
-		URL(jstring arg0, jstring arg1, jstring arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
-		}
-		URL(__jni_impl::java::net::URL arg0, jstring arg1, __jni_impl::java::net::URLStreamHandler arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
-		}
-		URL(jstring arg0, jstring arg1, jint arg2, jstring arg3)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2,
-				arg3);
-		}
-		URL(jstring arg0, jstring arg1, jint arg2, jstring arg3, __jni_impl::java::net::URLStreamHandler arg4)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2,
-				arg3,
-				arg4);
-		}
 	};
 } // namespace java::net
 

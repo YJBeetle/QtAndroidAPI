@@ -4,9 +4,9 @@
 #include "../../../java/lang/Enum.hpp"
 
 
-namespace __jni_impl::android::icu::text
+namespace android::icu::text
 {
-	class MessagePattern_ArgType : public __jni_impl::java::lang::Enum
+	class MessagePattern_ArgType : public java::lang::Enum
 	{
 	public:
 		// Fields
@@ -17,124 +17,15 @@ namespace __jni_impl::android::icu::text
 		static QAndroidJniObject SELECTORDINAL();
 		static QAndroidJniObject SIMPLE();
 		
+		MessagePattern_ArgType(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		MessagePattern_ArgType() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
 		static jarray values();
 		jboolean hasPluralStyle();
-	};
-} // namespace __jni_impl::android::icu::text
-
-
-namespace __jni_impl::android::icu::text
-{
-	// Fields
-	QAndroidJniObject MessagePattern_ArgType::CHOICE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.MessagePattern$ArgType",
-			"CHOICE",
-			"Landroid/icu/text/MessagePattern$ArgType;"
-		);
-	}
-	QAndroidJniObject MessagePattern_ArgType::NONE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.MessagePattern$ArgType",
-			"NONE",
-			"Landroid/icu/text/MessagePattern$ArgType;"
-		);
-	}
-	QAndroidJniObject MessagePattern_ArgType::PLURAL()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.MessagePattern$ArgType",
-			"PLURAL",
-			"Landroid/icu/text/MessagePattern$ArgType;"
-		);
-	}
-	QAndroidJniObject MessagePattern_ArgType::SELECT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.MessagePattern$ArgType",
-			"SELECT",
-			"Landroid/icu/text/MessagePattern$ArgType;"
-		);
-	}
-	QAndroidJniObject MessagePattern_ArgType::SELECTORDINAL()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.MessagePattern$ArgType",
-			"SELECTORDINAL",
-			"Landroid/icu/text/MessagePattern$ArgType;"
-		);
-	}
-	QAndroidJniObject MessagePattern_ArgType::SIMPLE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.MessagePattern$ArgType",
-			"SIMPLE",
-			"Landroid/icu/text/MessagePattern$ArgType;"
-		);
-	}
-	
-	// Constructors
-	void MessagePattern_ArgType::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.MessagePattern$ArgType",
-			"(V)V");
-	}
-	
-	// Methods
-	QAndroidJniObject MessagePattern_ArgType::valueOf(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.MessagePattern$ArgType",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern$ArgType;",
-			arg0
-		);
-	}
-	QAndroidJniObject MessagePattern_ArgType::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.MessagePattern$ArgType",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/MessagePattern$ArgType;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jarray MessagePattern_ArgType::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.MessagePattern$ArgType",
-			"values",
-			"()[Landroid/icu/text/MessagePattern$ArgType;"
-		).object<jarray>();
-	}
-	jboolean MessagePattern_ArgType::hasPluralStyle()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasPluralStyle",
-			"()Z"
-		);
-	}
-} // namespace __jni_impl::android::icu::text
-
-namespace android::icu::text
-{
-	class MessagePattern_ArgType : public __jni_impl::android::icu::text::MessagePattern_ArgType
-	{
-	public:
-		MessagePattern_ArgType(QAndroidJniObject obj) { __thiz = obj; }
-		MessagePattern_ArgType()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::icu::text
 

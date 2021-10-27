@@ -2,80 +2,33 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class Intent;
 }
-namespace __jni_impl::android::media::projection
+namespace android::media::projection
 {
 	class MediaProjection;
 }
 
-namespace __jni_impl::android::media::projection
+namespace android::media::projection
 {
 	class MediaProjectionManager : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		MediaProjectionManager(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		MediaProjectionManager() = default;
 		
 		// Methods
 		QAndroidJniObject createScreenCaptureIntent();
-		QAndroidJniObject getMediaProjection(jint arg0, __jni_impl::android::content::Intent arg1);
-	};
-} // namespace __jni_impl::android::media::projection
-
-#include "../../content/Context.hpp"
-#include "../../content/Intent.hpp"
-#include "./MediaProjection.hpp"
-
-namespace __jni_impl::android::media::projection
-{
-	// Fields
-	
-	// Constructors
-	void MediaProjectionManager::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.projection.MediaProjectionManager",
-			"(V)V");
-	}
-	
-	// Methods
-	QAndroidJniObject MediaProjectionManager::createScreenCaptureIntent()
-	{
-		return __thiz.callObjectMethod(
-			"createScreenCaptureIntent",
-			"()Landroid/content/Intent;"
-		);
-	}
-	QAndroidJniObject MediaProjectionManager::getMediaProjection(jint arg0, __jni_impl::android::content::Intent arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getMediaProjection",
-			"(ILandroid/content/Intent;)Landroid/media/projection/MediaProjection;",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::android::media::projection
-
-namespace android::media::projection
-{
-	class MediaProjectionManager : public __jni_impl::android::media::projection::MediaProjectionManager
-	{
-	public:
-		MediaProjectionManager(QAndroidJniObject obj) { __thiz = obj; }
-		MediaProjectionManager()
-		{
-			__constructor();
-		}
+		QAndroidJniObject getMediaProjection(jint arg0, android::content::Intent arg1);
 	};
 } // namespace android::media::projection
 

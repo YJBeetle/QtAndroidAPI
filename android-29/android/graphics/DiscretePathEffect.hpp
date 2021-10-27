@@ -4,51 +4,19 @@
 #include "./PathEffect.hpp"
 
 
-namespace __jni_impl::android::graphics
+namespace android::graphics
 {
-	class DiscretePathEffect : public __jni_impl::android::graphics::PathEffect
+	class DiscretePathEffect : public android::graphics::PathEffect
 	{
 	public:
 		// Fields
 		
+		DiscretePathEffect(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jfloat arg0, jfloat arg1);
+		DiscretePathEffect(jfloat &arg0, jfloat &arg1);
+		DiscretePathEffect() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::graphics
-
-
-namespace __jni_impl::android::graphics
-{
-	// Fields
-	
-	// Constructors
-	void DiscretePathEffect::__constructor(jfloat arg0, jfloat arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.DiscretePathEffect",
-			"(FF)V",
-			arg0,
-			arg1
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::graphics
-
-namespace android::graphics
-{
-	class DiscretePathEffect : public __jni_impl::android::graphics::DiscretePathEffect
-	{
-	public:
-		DiscretePathEffect(QAndroidJniObject obj) { __thiz = obj; }
-		DiscretePathEffect(jfloat arg0, jfloat arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
 	};
 } // namespace android::graphics
 

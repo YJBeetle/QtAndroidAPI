@@ -2,20 +2,20 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::app::slice
+namespace android::app::slice
 {
 	class Slice;
 }
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class Intent;
 }
-namespace __jni_impl::android::net
+namespace android::net
 {
 	class Uri;
 }
 
-namespace __jni_impl::android::app::slice
+namespace android::app::slice
 {
 	class SliceManager : public __JniBaseClass
 	{
@@ -24,183 +24,24 @@ namespace __jni_impl::android::app::slice
 		static jstring CATEGORY_SLICE();
 		static jstring SLICE_METADATA_KEY();
 		
+		SliceManager(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		SliceManager() = default;
 		
 		// Methods
-		QAndroidJniObject bindSlice(__jni_impl::android::content::Intent arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject bindSlice(__jni_impl::android::net::Uri arg0, __jni_impl::__JniBaseClass arg1);
-		jint checkSlicePermission(__jni_impl::android::net::Uri arg0, jint arg1, jint arg2);
+		QAndroidJniObject bindSlice(android::content::Intent arg0, __JniBaseClass arg1);
+		QAndroidJniObject bindSlice(android::net::Uri arg0, __JniBaseClass arg1);
+		jint checkSlicePermission(android::net::Uri arg0, jint arg1, jint arg2);
 		QAndroidJniObject getPinnedSlices();
-		QAndroidJniObject getPinnedSpecs(__jni_impl::android::net::Uri arg0);
-		QAndroidJniObject getSliceDescendants(__jni_impl::android::net::Uri arg0);
-		void grantSlicePermission(jstring arg0, __jni_impl::android::net::Uri arg1);
-		void grantSlicePermission(const QString &arg0, __jni_impl::android::net::Uri arg1);
-		QAndroidJniObject mapIntentToUri(__jni_impl::android::content::Intent arg0);
-		void pinSlice(__jni_impl::android::net::Uri arg0, __jni_impl::__JniBaseClass arg1);
-		void revokeSlicePermission(jstring arg0, __jni_impl::android::net::Uri arg1);
-		void revokeSlicePermission(const QString &arg0, __jni_impl::android::net::Uri arg1);
-		void unpinSlice(__jni_impl::android::net::Uri arg0);
-	};
-} // namespace __jni_impl::android::app::slice
-
-#include "./Slice.hpp"
-#include "../../content/Intent.hpp"
-#include "../../net/Uri.hpp"
-
-namespace __jni_impl::android::app::slice
-{
-	// Fields
-	jstring SliceManager::CATEGORY_SLICE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.app.slice.SliceManager",
-			"CATEGORY_SLICE",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring SliceManager::SLICE_METADATA_KEY()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.app.slice.SliceManager",
-			"SLICE_METADATA_KEY",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	
-	// Constructors
-	void SliceManager::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.slice.SliceManager",
-			"(V)V");
-	}
-	
-	// Methods
-	QAndroidJniObject SliceManager::bindSlice(__jni_impl::android::content::Intent arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		return __thiz.callObjectMethod(
-			"bindSlice",
-			"(Landroid/content/Intent;Ljava/util/Set;)Landroid/app/slice/Slice;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject SliceManager::bindSlice(__jni_impl::android::net::Uri arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		return __thiz.callObjectMethod(
-			"bindSlice",
-			"(Landroid/net/Uri;Ljava/util/Set;)Landroid/app/slice/Slice;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	jint SliceManager::checkSlicePermission(__jni_impl::android::net::Uri arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"checkSlicePermission",
-			"(Landroid/net/Uri;II)I",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject SliceManager::getPinnedSlices()
-	{
-		return __thiz.callObjectMethod(
-			"getPinnedSlices",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject SliceManager::getPinnedSpecs(__jni_impl::android::net::Uri arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getPinnedSpecs",
-			"(Landroid/net/Uri;)Ljava/util/Set;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject SliceManager::getSliceDescendants(__jni_impl::android::net::Uri arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getSliceDescendants",
-			"(Landroid/net/Uri;)Ljava/util/Collection;",
-			arg0.__jniObject().object()
-		);
-	}
-	void SliceManager::grantSlicePermission(jstring arg0, __jni_impl::android::net::Uri arg1)
-	{
-		__thiz.callMethod<void>(
-			"grantSlicePermission",
-			"(Ljava/lang/String;Landroid/net/Uri;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void SliceManager::grantSlicePermission(const QString &arg0, __jni_impl::android::net::Uri arg1)
-	{
-		__thiz.callMethod<void>(
-			"grantSlicePermission",
-			"(Ljava/lang/String;Landroid/net/Uri;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject SliceManager::mapIntentToUri(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"mapIntentToUri",
-			"(Landroid/content/Intent;)Landroid/net/Uri;",
-			arg0.__jniObject().object()
-		);
-	}
-	void SliceManager::pinSlice(__jni_impl::android::net::Uri arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"pinSlice",
-			"(Landroid/net/Uri;Ljava/util/Set;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void SliceManager::revokeSlicePermission(jstring arg0, __jni_impl::android::net::Uri arg1)
-	{
-		__thiz.callMethod<void>(
-			"revokeSlicePermission",
-			"(Ljava/lang/String;Landroid/net/Uri;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void SliceManager::revokeSlicePermission(const QString &arg0, __jni_impl::android::net::Uri arg1)
-	{
-		__thiz.callMethod<void>(
-			"revokeSlicePermission",
-			"(Ljava/lang/String;Landroid/net/Uri;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-	void SliceManager::unpinSlice(__jni_impl::android::net::Uri arg0)
-	{
-		__thiz.callMethod<void>(
-			"unpinSlice",
-			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::android::app::slice
-
-namespace android::app::slice
-{
-	class SliceManager : public __jni_impl::android::app::slice::SliceManager
-	{
-	public:
-		SliceManager(QAndroidJniObject obj) { __thiz = obj; }
-		SliceManager()
-		{
-			__constructor();
-		}
+		QAndroidJniObject getPinnedSpecs(android::net::Uri arg0);
+		QAndroidJniObject getSliceDescendants(android::net::Uri arg0);
+		void grantSlicePermission(jstring arg0, android::net::Uri arg1);
+		void grantSlicePermission(const QString &arg0, android::net::Uri arg1);
+		QAndroidJniObject mapIntentToUri(android::content::Intent arg0);
+		void pinSlice(android::net::Uri arg0, __JniBaseClass arg1);
+		void revokeSlicePermission(jstring arg0, android::net::Uri arg1);
+		void revokeSlicePermission(const QString &arg0, android::net::Uri arg1);
+		void unpinSlice(android::net::Uri arg0);
 	};
 } // namespace android::app::slice
 

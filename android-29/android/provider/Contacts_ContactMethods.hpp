@@ -2,16 +2,16 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::net
+namespace android::net
 {
 	class Uri;
 }
 
-namespace __jni_impl::android::provider
+namespace android::provider
 {
 	class Contacts_ContactMethods : public __JniBaseClass
 	{
@@ -38,8 +38,9 @@ namespace __jni_impl::android::provider
 		static jint PROTOCOL_SKYPE();
 		static jint PROTOCOL_YAHOO();
 		
+		Contacts_ContactMethods(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		Contacts_ContactMethods() = default;
 		
 		// Methods
 		static jobject decodeImProtocol(jstring arg0);
@@ -47,272 +48,9 @@ namespace __jni_impl::android::provider
 		static jstring encodeCustomImProtocol(jstring arg0);
 		static jstring encodeCustomImProtocol(const QString &arg0);
 		static jstring encodePredefinedImProtocol(jint arg0);
-		static jstring getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jint arg2, jstring arg3);
-		static jstring getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jint arg2, const QString &arg3);
-		void addPostalLocation(__jni_impl::android::content::Context arg0, jlong arg1, jdouble arg2, jdouble arg3);
-	};
-} // namespace __jni_impl::android::provider
-
-#include "../content/Context.hpp"
-#include "../net/Uri.hpp"
-
-namespace __jni_impl::android::provider
-{
-	// Fields
-	jstring Contacts_ContactMethods::CONTENT_EMAIL_ITEM_TYPE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Contacts$ContactMethods",
-			"CONTENT_EMAIL_ITEM_TYPE",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring Contacts_ContactMethods::CONTENT_EMAIL_TYPE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Contacts$ContactMethods",
-			"CONTENT_EMAIL_TYPE",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject Contacts_ContactMethods::CONTENT_EMAIL_URI()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Contacts$ContactMethods",
-			"CONTENT_EMAIL_URI",
-			"Landroid/net/Uri;"
-		);
-	}
-	jstring Contacts_ContactMethods::CONTENT_IM_ITEM_TYPE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Contacts$ContactMethods",
-			"CONTENT_IM_ITEM_TYPE",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring Contacts_ContactMethods::CONTENT_POSTAL_ITEM_TYPE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Contacts$ContactMethods",
-			"CONTENT_POSTAL_ITEM_TYPE",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring Contacts_ContactMethods::CONTENT_POSTAL_TYPE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Contacts$ContactMethods",
-			"CONTENT_POSTAL_TYPE",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring Contacts_ContactMethods::CONTENT_TYPE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Contacts$ContactMethods",
-			"CONTENT_TYPE",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject Contacts_ContactMethods::CONTENT_URI()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Contacts$ContactMethods",
-			"CONTENT_URI",
-			"Landroid/net/Uri;"
-		);
-	}
-	jstring Contacts_ContactMethods::DEFAULT_SORT_ORDER()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Contacts$ContactMethods",
-			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring Contacts_ContactMethods::PERSON_ID()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Contacts$ContactMethods",
-			"PERSON_ID",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring Contacts_ContactMethods::POSTAL_LOCATION_LATITUDE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Contacts$ContactMethods",
-			"POSTAL_LOCATION_LATITUDE",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring Contacts_ContactMethods::POSTAL_LOCATION_LONGITUDE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Contacts$ContactMethods",
-			"POSTAL_LOCATION_LONGITUDE",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint Contacts_ContactMethods::PROTOCOL_AIM()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.provider.Contacts$ContactMethods",
-			"PROTOCOL_AIM"
-		);
-	}
-	jint Contacts_ContactMethods::PROTOCOL_GOOGLE_TALK()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.provider.Contacts$ContactMethods",
-			"PROTOCOL_GOOGLE_TALK"
-		);
-	}
-	jint Contacts_ContactMethods::PROTOCOL_ICQ()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.provider.Contacts$ContactMethods",
-			"PROTOCOL_ICQ"
-		);
-	}
-	jint Contacts_ContactMethods::PROTOCOL_JABBER()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.provider.Contacts$ContactMethods",
-			"PROTOCOL_JABBER"
-		);
-	}
-	jint Contacts_ContactMethods::PROTOCOL_MSN()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.provider.Contacts$ContactMethods",
-			"PROTOCOL_MSN"
-		);
-	}
-	jint Contacts_ContactMethods::PROTOCOL_QQ()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.provider.Contacts$ContactMethods",
-			"PROTOCOL_QQ"
-		);
-	}
-	jint Contacts_ContactMethods::PROTOCOL_SKYPE()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.provider.Contacts$ContactMethods",
-			"PROTOCOL_SKYPE"
-		);
-	}
-	jint Contacts_ContactMethods::PROTOCOL_YAHOO()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.provider.Contacts$ContactMethods",
-			"PROTOCOL_YAHOO"
-		);
-	}
-	
-	// Constructors
-	void Contacts_ContactMethods::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.provider.Contacts$ContactMethods",
-			"(V)V");
-	}
-	
-	// Methods
-	jobject Contacts_ContactMethods::decodeImProtocol(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Contacts$ContactMethods",
-			"decodeImProtocol",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
-	}
-	jobject Contacts_ContactMethods::decodeImProtocol(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Contacts$ContactMethods",
-			"decodeImProtocol",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jobject>();
-	}
-	jstring Contacts_ContactMethods::encodeCustomImProtocol(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Contacts$ContactMethods",
-			"encodeCustomImProtocol",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jstring Contacts_ContactMethods::encodeCustomImProtocol(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Contacts$ContactMethods",
-			"encodeCustomImProtocol",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
-	jstring Contacts_ContactMethods::encodePredefinedImProtocol(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Contacts$ContactMethods",
-			"encodePredefinedImProtocol",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jstring Contacts_ContactMethods::getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jint arg2, jstring arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Contacts$ContactMethods",
-			"getDisplayLabel",
-			"(Landroid/content/Context;IILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3
-		).object<jstring>();
-	}
-	jstring Contacts_ContactMethods::getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jint arg2, const QString &arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Contacts$ContactMethods",
-			"getDisplayLabel",
-			"(Landroid/content/Context;IILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>()
-		).object<jstring>();
-	}
-	void Contacts_ContactMethods::addPostalLocation(__jni_impl::android::content::Context arg0, jlong arg1, jdouble arg2, jdouble arg3)
-	{
-		__thiz.callMethod<void>(
-			"addPostalLocation",
-			"(Landroid/content/Context;JDD)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-} // namespace __jni_impl::android::provider
-
-namespace android::provider
-{
-	class Contacts_ContactMethods : public __jni_impl::android::provider::Contacts_ContactMethods
-	{
-	public:
-		Contacts_ContactMethods(QAndroidJniObject obj) { __thiz = obj; }
-		Contacts_ContactMethods()
-		{
-			__constructor();
-		}
+		static jstring getDisplayLabel(android::content::Context arg0, jint arg1, jint arg2, jstring arg3);
+		static jstring getDisplayLabel(android::content::Context arg0, jint arg1, jint arg2, const QString &arg3);
+		void addPostalLocation(android::content::Context arg0, jlong arg1, jdouble arg2, jdouble arg3);
 	};
 } // namespace android::provider
 

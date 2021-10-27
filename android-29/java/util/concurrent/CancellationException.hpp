@@ -6,70 +6,20 @@
 #include "../../lang/IllegalStateException.hpp"
 
 
-namespace __jni_impl::java::util::concurrent
+namespace java::util::concurrent
 {
-	class CancellationException : public __jni_impl::java::lang::IllegalStateException
+	class CancellationException : public java::lang::IllegalStateException
 	{
 	public:
 		// Fields
 		
+		CancellationException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		CancellationException();
+		CancellationException(jstring &arg0);
+		CancellationException(const QString &arg0);
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::util::concurrent
-
-
-namespace __jni_impl::java::util::concurrent
-{
-	// Fields
-	
-	// Constructors
-	void CancellationException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.concurrent.CancellationException",
-			"()V"
-		);
-	}
-	void CancellationException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.concurrent.CancellationException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void CancellationException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.concurrent.CancellationException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::util::concurrent
-
-namespace java::util::concurrent
-{
-	class CancellationException : public __jni_impl::java::util::concurrent::CancellationException
-	{
-	public:
-		CancellationException(QAndroidJniObject obj) { __thiz = obj; }
-		CancellationException()
-		{
-			__constructor();
-		}
-		CancellationException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace java::util::concurrent
 

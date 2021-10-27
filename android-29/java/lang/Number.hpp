@@ -3,15 +3,16 @@
 #include "../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::java::lang
+namespace java::lang
 {
 	class Number : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		Number(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		Number();
 		
 		// Methods
 		jbyte byteValue();
@@ -20,78 +21,6 @@ namespace __jni_impl::java::lang
 		jint intValue();
 		jlong longValue();
 		jshort shortValue();
-	};
-} // namespace __jni_impl::java::lang
-
-
-namespace __jni_impl::java::lang
-{
-	// Fields
-	
-	// Constructors
-	void Number::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Number",
-			"()V"
-		);
-	}
-	
-	// Methods
-	jbyte Number::byteValue()
-	{
-		return __thiz.callMethod<jbyte>(
-			"byteValue",
-			"()B"
-		);
-	}
-	jdouble Number::doubleValue()
-	{
-		return __thiz.callMethod<jdouble>(
-			"doubleValue",
-			"()D"
-		);
-	}
-	jfloat Number::floatValue()
-	{
-		return __thiz.callMethod<jfloat>(
-			"floatValue",
-			"()F"
-		);
-	}
-	jint Number::intValue()
-	{
-		return __thiz.callMethod<jint>(
-			"intValue",
-			"()I"
-		);
-	}
-	jlong Number::longValue()
-	{
-		return __thiz.callMethod<jlong>(
-			"longValue",
-			"()J"
-		);
-	}
-	jshort Number::shortValue()
-	{
-		return __thiz.callMethod<jshort>(
-			"shortValue",
-			"()S"
-		);
-	}
-} // namespace __jni_impl::java::lang
-
-namespace java::lang
-{
-	class Number : public __jni_impl::java::lang::Number
-	{
-	public:
-		Number(QAndroidJniObject obj) { __thiz = obj; }
-		Number()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::lang
 

@@ -3,87 +3,22 @@
 #include "../../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::javax::crypto::spec
+namespace javax::crypto::spec
 {
 	class GCMParameterSpec : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		GCMParameterSpec(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jint arg0, jbyteArray arg1);
-		void __constructor(jint arg0, jbyteArray arg1, jint arg2, jint arg3);
+		GCMParameterSpec(jint &arg0, jbyteArray &arg1);
+		GCMParameterSpec(jint &arg0, jbyteArray &arg1, jint &arg2, jint &arg3);
+		GCMParameterSpec() = default;
 		
 		// Methods
 		jbyteArray getIV();
 		jint getTLen();
-	};
-} // namespace __jni_impl::javax::crypto::spec
-
-
-namespace __jni_impl::javax::crypto::spec
-{
-	// Fields
-	
-	// Constructors
-	void GCMParameterSpec::__constructor(jint arg0, jbyteArray arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.crypto.spec.GCMParameterSpec",
-			"(I[B)V",
-			arg0,
-			arg1
-		);
-	}
-	void GCMParameterSpec::__constructor(jint arg0, jbyteArray arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.crypto.spec.GCMParameterSpec",
-			"(I[BII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	
-	// Methods
-	jbyteArray GCMParameterSpec::getIV()
-	{
-		return __thiz.callObjectMethod(
-			"getIV",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	jint GCMParameterSpec::getTLen()
-	{
-		return __thiz.callMethod<jint>(
-			"getTLen",
-			"()I"
-		);
-	}
-} // namespace __jni_impl::javax::crypto::spec
-
-namespace javax::crypto::spec
-{
-	class GCMParameterSpec : public __jni_impl::javax::crypto::spec::GCMParameterSpec
-	{
-	public:
-		GCMParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
-		GCMParameterSpec(jint arg0, jbyteArray arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
-		GCMParameterSpec(jint arg0, jbyteArray arg1, jint arg2, jint arg3)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2,
-				arg3);
-		}
 	};
 } // namespace javax::crypto::spec
 

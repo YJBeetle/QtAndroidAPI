@@ -3,87 +3,34 @@
 #include "../../__JniBaseClass.hpp"
 #include "./BaseObj.hpp"
 
-namespace __jni_impl::android::renderscript
+namespace android::renderscript
 {
 	class RenderScript;
 }
-namespace __jni_impl::android::renderscript
+namespace android::renderscript
 {
 	class Script_FieldID;
 }
-namespace __jni_impl::android::renderscript
+namespace android::renderscript
 {
 	class ScriptGroup_Future;
 }
 
-namespace __jni_impl::android::renderscript
+namespace android::renderscript
 {
-	class ScriptGroup_Closure : public __jni_impl::android::renderscript::BaseObj
+	class ScriptGroup_Closure : public android::renderscript::BaseObj
 	{
 	public:
 		// Fields
 		
+		ScriptGroup_Closure(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		ScriptGroup_Closure() = default;
 		
 		// Methods
 		void destroy();
-		QAndroidJniObject getGlobal(__jni_impl::android::renderscript::Script_FieldID arg0);
+		QAndroidJniObject getGlobal(android::renderscript::Script_FieldID arg0);
 		QAndroidJniObject getReturn();
-	};
-} // namespace __jni_impl::android::renderscript
-
-#include "./RenderScript.hpp"
-#include "./Script_FieldID.hpp"
-#include "./ScriptGroup_Future.hpp"
-
-namespace __jni_impl::android::renderscript
-{
-	// Fields
-	
-	// Constructors
-	void ScriptGroup_Closure::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.renderscript.ScriptGroup$Closure",
-			"(V)V");
-	}
-	
-	// Methods
-	void ScriptGroup_Closure::destroy()
-	{
-		__thiz.callMethod<void>(
-			"destroy",
-			"()V"
-		);
-	}
-	QAndroidJniObject ScriptGroup_Closure::getGlobal(__jni_impl::android::renderscript::Script_FieldID arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getGlobal",
-			"(Landroid/renderscript/Script$FieldID;)Landroid/renderscript/ScriptGroup$Future;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ScriptGroup_Closure::getReturn()
-	{
-		return __thiz.callObjectMethod(
-			"getReturn",
-			"()Landroid/renderscript/ScriptGroup$Future;"
-		);
-	}
-} // namespace __jni_impl::android::renderscript
-
-namespace android::renderscript
-{
-	class ScriptGroup_Closure : public __jni_impl::android::renderscript::ScriptGroup_Closure
-	{
-	public:
-		ScriptGroup_Closure(QAndroidJniObject obj) { __thiz = obj; }
-		ScriptGroup_Closure()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::renderscript
 

@@ -4,47 +4,18 @@
 #include "../../../java/text/Format.hpp"
 
 
-namespace __jni_impl::android::icu::text
+namespace android::icu::text
 {
-	class UFormat : public __jni_impl::java::text::Format
+	class UFormat : public java::text::Format
 	{
 	public:
 		// Fields
 		
+		UFormat(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		UFormat();
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::icu::text
-
-
-namespace __jni_impl::android::icu::text
-{
-	// Fields
-	
-	// Constructors
-	void UFormat::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.UFormat",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::icu::text
-
-namespace android::icu::text
-{
-	class UFormat : public __jni_impl::android::icu::text::UFormat
-	{
-	public:
-		UFormat(QAndroidJniObject obj) { __thiz = obj; }
-		UFormat()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::icu::text
 

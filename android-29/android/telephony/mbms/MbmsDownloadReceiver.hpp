@@ -3,68 +3,28 @@
 #include "../../../__JniBaseClass.hpp"
 #include "../../content/BroadcastReceiver.hpp"
 
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class Intent;
 }
 
-namespace __jni_impl::android::telephony::mbms
+namespace android::telephony::mbms
 {
-	class MbmsDownloadReceiver : public __jni_impl::android::content::BroadcastReceiver
+	class MbmsDownloadReceiver : public android::content::BroadcastReceiver
 	{
 	public:
 		// Fields
 		
+		MbmsDownloadReceiver(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		MbmsDownloadReceiver();
 		
 		// Methods
-		void onReceive(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1);
-	};
-} // namespace __jni_impl::android::telephony::mbms
-
-#include "../../content/Context.hpp"
-#include "../../content/Intent.hpp"
-
-namespace __jni_impl::android::telephony::mbms
-{
-	// Fields
-	
-	// Constructors
-	void MbmsDownloadReceiver::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.telephony.mbms.MbmsDownloadReceiver",
-			"()V"
-		);
-	}
-	
-	// Methods
-	void MbmsDownloadReceiver::onReceive(__jni_impl::android::content::Context arg0, __jni_impl::android::content::Intent arg1)
-	{
-		__thiz.callMethod<void>(
-			"onReceive",
-			"(Landroid/content/Context;Landroid/content/Intent;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::android::telephony::mbms
-
-namespace android::telephony::mbms
-{
-	class MbmsDownloadReceiver : public __jni_impl::android::telephony::mbms::MbmsDownloadReceiver
-	{
-	public:
-		MbmsDownloadReceiver(QAndroidJniObject obj) { __thiz = obj; }
-		MbmsDownloadReceiver()
-		{
-			__constructor();
-		}
+		void onReceive(android::content::Context arg0, android::content::Intent arg1);
 	};
 } // namespace android::telephony::mbms
 

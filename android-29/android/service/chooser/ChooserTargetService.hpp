@@ -5,22 +5,22 @@
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class ComponentName;
 }
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class Intent;
 }
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class IntentFilter;
 }
 
-namespace __jni_impl::android::service::chooser
+namespace android::service::chooser
 {
-	class ChooserTargetService : public __jni_impl::android::app::Service
+	class ChooserTargetService : public android::app::Service
 	{
 	public:
 		// Fields
@@ -28,86 +28,13 @@ namespace __jni_impl::android::service::chooser
 		static jstring META_DATA_NAME();
 		static jstring SERVICE_INTERFACE();
 		
+		ChooserTargetService(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		ChooserTargetService();
 		
 		// Methods
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
-		QAndroidJniObject onGetChooserTargets(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::content::IntentFilter arg1);
-	};
-} // namespace __jni_impl::android::service::chooser
-
-#include "../../content/ComponentName.hpp"
-#include "../../content/Intent.hpp"
-#include "../../content/IntentFilter.hpp"
-
-namespace __jni_impl::android::service::chooser
-{
-	// Fields
-	jstring ChooserTargetService::BIND_PERMISSION()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.service.chooser.ChooserTargetService",
-			"BIND_PERMISSION",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring ChooserTargetService::META_DATA_NAME()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.service.chooser.ChooserTargetService",
-			"META_DATA_NAME",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring ChooserTargetService::SERVICE_INTERFACE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.service.chooser.ChooserTargetService",
-			"SERVICE_INTERFACE",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	
-	// Constructors
-	void ChooserTargetService::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.service.chooser.ChooserTargetService",
-			"()V"
-		);
-	}
-	
-	// Methods
-	QAndroidJniObject ChooserTargetService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ChooserTargetService::onGetChooserTargets(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::content::IntentFilter arg1)
-	{
-		return __thiz.callObjectMethod(
-			"onGetChooserTargets",
-			"(Landroid/content/ComponentName;Landroid/content/IntentFilter;)Ljava/util/List;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::android::service::chooser
-
-namespace android::service::chooser
-{
-	class ChooserTargetService : public __jni_impl::android::service::chooser::ChooserTargetService
-	{
-	public:
-		ChooserTargetService(QAndroidJniObject obj) { __thiz = obj; }
-		ChooserTargetService()
-		{
-			__constructor();
-		}
+		QAndroidJniObject onBind(android::content::Intent arg0);
+		QAndroidJniObject onGetChooserTargets(android::content::ComponentName arg0, android::content::IntentFilter arg1);
 	};
 } // namespace android::service::chooser
 

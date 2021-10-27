@@ -3,85 +3,31 @@
 #include "../../../__JniBaseClass.hpp"
 #include "./CallSite.hpp"
 
-namespace __jni_impl::java::lang::invoke
+namespace java::lang::invoke
 {
 	class MethodHandle;
 }
-namespace __jni_impl::java::lang::invoke
+namespace java::lang::invoke
 {
 	class MethodType;
 }
 
-namespace __jni_impl::java::lang::invoke
+namespace java::lang::invoke
 {
-	class ConstantCallSite : public __jni_impl::java::lang::invoke::CallSite
+	class ConstantCallSite : public java::lang::invoke::CallSite
 	{
 	public:
 		// Fields
 		
+		ConstantCallSite(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(__jni_impl::java::lang::invoke::MethodHandle arg0);
+		ConstantCallSite(java::lang::invoke::MethodHandle &arg0);
+		ConstantCallSite() = default;
 		
 		// Methods
 		QAndroidJniObject dynamicInvoker();
 		QAndroidJniObject getTarget();
-		void setTarget(__jni_impl::java::lang::invoke::MethodHandle arg0);
-	};
-} // namespace __jni_impl::java::lang::invoke
-
-#include "./MethodHandle.hpp"
-#include "./MethodType.hpp"
-
-namespace __jni_impl::java::lang::invoke
-{
-	// Fields
-	
-	// Constructors
-	void ConstantCallSite::__constructor(__jni_impl::java::lang::invoke::MethodHandle arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.invoke.ConstantCallSite",
-			"(Ljava/lang/invoke/MethodHandle;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	
-	// Methods
-	QAndroidJniObject ConstantCallSite::dynamicInvoker()
-	{
-		return __thiz.callObjectMethod(
-			"dynamicInvoker",
-			"()Ljava/lang/invoke/MethodHandle;"
-		);
-	}
-	QAndroidJniObject ConstantCallSite::getTarget()
-	{
-		return __thiz.callObjectMethod(
-			"getTarget",
-			"()Ljava/lang/invoke/MethodHandle;"
-		);
-	}
-	void ConstantCallSite::setTarget(__jni_impl::java::lang::invoke::MethodHandle arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTarget",
-			"(Ljava/lang/invoke/MethodHandle;)V",
-			arg0.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::java::lang::invoke
-
-namespace java::lang::invoke
-{
-	class ConstantCallSite : public __jni_impl::java::lang::invoke::ConstantCallSite
-	{
-	public:
-		ConstantCallSite(QAndroidJniObject obj) { __thiz = obj; }
-		ConstantCallSite(__jni_impl::java::lang::invoke::MethodHandle arg0)
-		{
-			__constructor(
-				arg0);
-		}
+		void setTarget(java::lang::invoke::MethodHandle arg0);
 	};
 } // namespace java::lang::invoke
 

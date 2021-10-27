@@ -5,70 +5,20 @@
 #include "./RuntimeException.hpp"
 
 
-namespace __jni_impl::java::lang
+namespace java::lang
 {
-	class ClassCastException : public __jni_impl::java::lang::RuntimeException
+	class ClassCastException : public java::lang::RuntimeException
 	{
 	public:
 		// Fields
 		
+		ClassCastException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		ClassCastException();
+		ClassCastException(jstring &arg0);
+		ClassCastException(const QString &arg0);
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::lang
-
-
-namespace __jni_impl::java::lang
-{
-	// Fields
-	
-	// Constructors
-	void ClassCastException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ClassCastException",
-			"()V"
-		);
-	}
-	void ClassCastException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ClassCastException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void ClassCastException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ClassCastException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::lang
-
-namespace java::lang
-{
-	class ClassCastException : public __jni_impl::java::lang::ClassCastException
-	{
-	public:
-		ClassCastException(QAndroidJniObject obj) { __thiz = obj; }
-		ClassCastException()
-		{
-			__constructor();
-		}
-		ClassCastException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace java::lang
 

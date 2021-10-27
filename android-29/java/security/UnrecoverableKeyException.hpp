@@ -6,70 +6,20 @@
 #include "./UnrecoverableEntryException.hpp"
 
 
-namespace __jni_impl::java::security
+namespace java::security
 {
-	class UnrecoverableKeyException : public __jni_impl::java::security::UnrecoverableEntryException
+	class UnrecoverableKeyException : public java::security::UnrecoverableEntryException
 	{
 	public:
 		// Fields
 		
+		UnrecoverableKeyException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		UnrecoverableKeyException();
+		UnrecoverableKeyException(jstring &arg0);
+		UnrecoverableKeyException(const QString &arg0);
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::security
-
-
-namespace __jni_impl::java::security
-{
-	// Fields
-	
-	// Constructors
-	void UnrecoverableKeyException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.UnrecoverableKeyException",
-			"()V"
-		);
-	}
-	void UnrecoverableKeyException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.UnrecoverableKeyException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void UnrecoverableKeyException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.UnrecoverableKeyException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::security
-
-namespace java::security
-{
-	class UnrecoverableKeyException : public __jni_impl::java::security::UnrecoverableKeyException
-	{
-	public:
-		UnrecoverableKeyException(QAndroidJniObject obj) { __thiz = obj; }
-		UnrecoverableKeyException()
-		{
-			__constructor();
-		}
-		UnrecoverableKeyException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace java::security
 

@@ -4,90 +4,26 @@
 #include "../../java/lang/Exception.hpp"
 #include "../util/AndroidException.hpp"
 
-namespace __jni_impl::java::lang
+namespace java::lang
 {
 	class Exception;
 }
 
-namespace __jni_impl::android::content
+namespace android::content
 {
-	class IntentSender_SendIntentException : public __jni_impl::android::util::AndroidException
+	class IntentSender_SendIntentException : public android::util::AndroidException
 	{
 	public:
 		// Fields
 		
+		IntentSender_SendIntentException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(__jni_impl::java::lang::Exception arg0);
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		IntentSender_SendIntentException();
+		IntentSender_SendIntentException(java::lang::Exception &arg0);
+		IntentSender_SendIntentException(jstring &arg0);
+		IntentSender_SendIntentException(const QString &arg0);
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::content
-
-#include "../../java/lang/Exception.hpp"
-
-namespace __jni_impl::android::content
-{
-	// Fields
-	
-	// Constructors
-	void IntentSender_SendIntentException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.IntentSender$SendIntentException",
-			"()V"
-		);
-	}
-	void IntentSender_SendIntentException::__constructor(__jni_impl::java::lang::Exception arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.IntentSender$SendIntentException",
-			"(Ljava/lang/Exception;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void IntentSender_SendIntentException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.IntentSender$SendIntentException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void IntentSender_SendIntentException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.IntentSender$SendIntentException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::content
-
-namespace android::content
-{
-	class IntentSender_SendIntentException : public __jni_impl::android::content::IntentSender_SendIntentException
-	{
-	public:
-		IntentSender_SendIntentException(QAndroidJniObject obj) { __thiz = obj; }
-		IntentSender_SendIntentException()
-		{
-			__constructor();
-		}
-		IntentSender_SendIntentException(__jni_impl::java::lang::Exception arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		IntentSender_SendIntentException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace android::content
 

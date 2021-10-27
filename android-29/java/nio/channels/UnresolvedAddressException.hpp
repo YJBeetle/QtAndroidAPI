@@ -6,47 +6,18 @@
 #include "../../lang/IllegalArgumentException.hpp"
 
 
-namespace __jni_impl::java::nio::channels
+namespace java::nio::channels
 {
-	class UnresolvedAddressException : public __jni_impl::java::lang::IllegalArgumentException
+	class UnresolvedAddressException : public java::lang::IllegalArgumentException
 	{
 	public:
 		// Fields
 		
+		UnresolvedAddressException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		UnresolvedAddressException();
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::nio::channels
-
-
-namespace __jni_impl::java::nio::channels
-{
-	// Fields
-	
-	// Constructors
-	void UnresolvedAddressException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.channels.UnresolvedAddressException",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::nio::channels
-
-namespace java::nio::channels
-{
-	class UnresolvedAddressException : public __jni_impl::java::nio::channels::UnresolvedAddressException
-	{
-	public:
-		UnresolvedAddressException(QAndroidJniObject obj) { __thiz = obj; }
-		UnresolvedAddressException()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::nio::channels
 

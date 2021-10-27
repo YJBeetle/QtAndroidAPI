@@ -2,16 +2,16 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class Parcel;
 }
 
-namespace __jni_impl::android::accounts
+namespace android::accounts
 {
 	class AccountAuthenticatorResponse : public __JniBaseClass
 	{
@@ -19,107 +19,18 @@ namespace __jni_impl::android::accounts
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		AccountAuthenticatorResponse(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(__jni_impl::android::os::Parcel arg0);
+		AccountAuthenticatorResponse(android::os::Parcel &arg0);
+		AccountAuthenticatorResponse() = default;
 		
 		// Methods
 		jint describeContents();
 		void onError(jint arg0, jstring arg1);
 		void onError(jint arg0, const QString &arg1);
 		void onRequestContinued();
-		void onResult(__jni_impl::android::os::Bundle arg0);
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-	};
-} // namespace __jni_impl::android::accounts
-
-#include "../os/Bundle.hpp"
-#include "../os/Parcel.hpp"
-
-namespace __jni_impl::android::accounts
-{
-	// Fields
-	QAndroidJniObject AccountAuthenticatorResponse::CREATOR()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.accounts.AccountAuthenticatorResponse",
-			"CREATOR",
-			"Landroid/os/Parcelable$Creator;"
-		);
-	}
-	
-	// Constructors
-	void AccountAuthenticatorResponse::__constructor(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.accounts.AccountAuthenticatorResponse",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	
-	// Methods
-	jint AccountAuthenticatorResponse::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void AccountAuthenticatorResponse::onError(jint arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"onError",
-			"(ILjava/lang/String;)V",
-			arg0,
-			arg1
-		);
-	}
-	void AccountAuthenticatorResponse::onError(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"onError",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	void AccountAuthenticatorResponse::onRequestContinued()
-	{
-		__thiz.callMethod<void>(
-			"onRequestContinued",
-			"()V"
-		);
-	}
-	void AccountAuthenticatorResponse::onResult(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"onResult",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void AccountAuthenticatorResponse::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-} // namespace __jni_impl::android::accounts
-
-namespace android::accounts
-{
-	class AccountAuthenticatorResponse : public __jni_impl::android::accounts::AccountAuthenticatorResponse
-	{
-	public:
-		AccountAuthenticatorResponse(QAndroidJniObject obj) { __thiz = obj; }
-		AccountAuthenticatorResponse(__jni_impl::android::os::Parcel arg0)
-		{
-			__constructor(
-				arg0);
-		}
+		void onResult(android::os::Bundle arg0);
+		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::accounts
 

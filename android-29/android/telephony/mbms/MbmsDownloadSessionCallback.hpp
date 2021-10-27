@@ -3,84 +3,22 @@
 #include "../../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::telephony::mbms
+namespace android::telephony::mbms
 {
 	class MbmsDownloadSessionCallback : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		MbmsDownloadSessionCallback(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		MbmsDownloadSessionCallback();
 		
 		// Methods
 		void onError(jint arg0, jstring arg1);
 		void onError(jint arg0, const QString &arg1);
-		void onFileServicesUpdated(__jni_impl::__JniBaseClass arg0);
+		void onFileServicesUpdated(__JniBaseClass arg0);
 		void onMiddlewareReady();
-	};
-} // namespace __jni_impl::android::telephony::mbms
-
-
-namespace __jni_impl::android::telephony::mbms
-{
-	// Fields
-	
-	// Constructors
-	void MbmsDownloadSessionCallback::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.telephony.mbms.MbmsDownloadSessionCallback",
-			"()V"
-		);
-	}
-	
-	// Methods
-	void MbmsDownloadSessionCallback::onError(jint arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"onError",
-			"(ILjava/lang/String;)V",
-			arg0,
-			arg1
-		);
-	}
-	void MbmsDownloadSessionCallback::onError(jint arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"onError",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	void MbmsDownloadSessionCallback::onFileServicesUpdated(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"onFileServicesUpdated",
-			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void MbmsDownloadSessionCallback::onMiddlewareReady()
-	{
-		__thiz.callMethod<void>(
-			"onMiddlewareReady",
-			"()V"
-		);
-	}
-} // namespace __jni_impl::android::telephony::mbms
-
-namespace android::telephony::mbms
-{
-	class MbmsDownloadSessionCallback : public __jni_impl::android::telephony::mbms::MbmsDownloadSessionCallback
-	{
-	public:
-		MbmsDownloadSessionCallback(QAndroidJniObject obj) { __thiz = obj; }
-		MbmsDownloadSessionCallback()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::telephony::mbms
 

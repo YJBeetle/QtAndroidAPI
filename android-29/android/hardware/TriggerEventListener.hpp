@@ -2,62 +2,24 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::hardware
+namespace android::hardware
 {
 	class TriggerEvent;
 }
 
-namespace __jni_impl::android::hardware
+namespace android::hardware
 {
 	class TriggerEventListener : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		TriggerEventListener(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		TriggerEventListener();
 		
 		// Methods
-		void onTrigger(__jni_impl::android::hardware::TriggerEvent arg0);
-	};
-} // namespace __jni_impl::android::hardware
-
-#include "./TriggerEvent.hpp"
-
-namespace __jni_impl::android::hardware
-{
-	// Fields
-	
-	// Constructors
-	void TriggerEventListener::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.hardware.TriggerEventListener",
-			"()V"
-		);
-	}
-	
-	// Methods
-	void TriggerEventListener::onTrigger(__jni_impl::android::hardware::TriggerEvent arg0)
-	{
-		__thiz.callMethod<void>(
-			"onTrigger",
-			"(Landroid/hardware/TriggerEvent;)V",
-			arg0.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::android::hardware
-
-namespace android::hardware
-{
-	class TriggerEventListener : public __jni_impl::android::hardware::TriggerEventListener
-	{
-	public:
-		TriggerEventListener(QAndroidJniObject obj) { __thiz = obj; }
-		TriggerEventListener()
-		{
-			__constructor();
-		}
+		void onTrigger(android::hardware::TriggerEvent arg0);
 	};
 } // namespace android::hardware
 

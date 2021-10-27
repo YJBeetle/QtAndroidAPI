@@ -7,47 +7,18 @@
 #include "./DeadObjectException.hpp"
 
 
-namespace __jni_impl::android::os
+namespace android::os
 {
-	class DeadSystemException : public __jni_impl::android::os::DeadObjectException
+	class DeadSystemException : public android::os::DeadObjectException
 	{
 	public:
 		// Fields
 		
+		DeadSystemException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		DeadSystemException();
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::os
-
-
-namespace __jni_impl::android::os
-{
-	// Fields
-	
-	// Constructors
-	void DeadSystemException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.DeadSystemException",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::os
-
-namespace android::os
-{
-	class DeadSystemException : public __jni_impl::android::os::DeadSystemException
-	{
-	public:
-		DeadSystemException(QAndroidJniObject obj) { __thiz = obj; }
-		DeadSystemException()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::os
 

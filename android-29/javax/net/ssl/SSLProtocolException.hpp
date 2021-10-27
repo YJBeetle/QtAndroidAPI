@@ -6,58 +6,20 @@
 #include "./SSLException.hpp"
 
 
-namespace __jni_impl::javax::net::ssl
+namespace javax::net::ssl
 {
-	class SSLProtocolException : public __jni_impl::javax::net::ssl::SSLException
+	class SSLProtocolException : public javax::net::ssl::SSLException
 	{
 	public:
 		// Fields
 		
+		SSLProtocolException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		SSLProtocolException(jstring &arg0);
+		SSLProtocolException(const QString &arg0);
+		SSLProtocolException() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::javax::net::ssl
-
-
-namespace __jni_impl::javax::net::ssl
-{
-	// Fields
-	
-	// Constructors
-	void SSLProtocolException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.net.ssl.SSLProtocolException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void SSLProtocolException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.net.ssl.SSLProtocolException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::javax::net::ssl
-
-namespace javax::net::ssl
-{
-	class SSLProtocolException : public __jni_impl::javax::net::ssl::SSLProtocolException
-	{
-	public:
-		SSLProtocolException(QAndroidJniObject obj) { __thiz = obj; }
-		SSLProtocolException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace javax::net::ssl
 

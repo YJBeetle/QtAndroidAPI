@@ -3,84 +3,23 @@
 #include "../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class CountDownTimer : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		CountDownTimer(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jlong arg0, jlong arg1);
+		CountDownTimer(jlong &arg0, jlong &arg1);
+		CountDownTimer() = default;
 		
 		// Methods
 		void cancel();
 		void onFinish();
 		void onTick(jlong arg0);
 		QAndroidJniObject start();
-	};
-} // namespace __jni_impl::android::os
-
-
-namespace __jni_impl::android::os
-{
-	// Fields
-	
-	// Constructors
-	void CountDownTimer::__constructor(jlong arg0, jlong arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.CountDownTimer",
-			"(JJ)V",
-			arg0,
-			arg1
-		);
-	}
-	
-	// Methods
-	void CountDownTimer::cancel()
-	{
-		__thiz.callMethod<void>(
-			"cancel",
-			"()V"
-		);
-	}
-	void CountDownTimer::onFinish()
-	{
-		__thiz.callMethod<void>(
-			"onFinish",
-			"()V"
-		);
-	}
-	void CountDownTimer::onTick(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"onTick",
-			"(J)V",
-			arg0
-		);
-	}
-	QAndroidJniObject CountDownTimer::start()
-	{
-		return __thiz.callObjectMethod(
-			"start",
-			"()Landroid/os/CountDownTimer;"
-		);
-	}
-} // namespace __jni_impl::android::os
-
-namespace android::os
-{
-	class CountDownTimer : public __jni_impl::android::os::CountDownTimer
-	{
-	public:
-		CountDownTimer(QAndroidJniObject obj) { __thiz = obj; }
-		CountDownTimer(jlong arg0, jlong arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
 	};
 } // namespace android::os
 

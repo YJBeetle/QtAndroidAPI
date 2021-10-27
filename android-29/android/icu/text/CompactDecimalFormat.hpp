@@ -6,139 +6,49 @@
 #include "./NumberFormat.hpp"
 #include "./DecimalFormat.hpp"
 
-namespace __jni_impl::android::icu::text
+namespace android::icu::text
 {
 	class CompactDecimalFormat_CompactStyle;
 }
-namespace __jni_impl::android::icu::util
+namespace android::icu::util
 {
 	class CurrencyAmount;
 }
-namespace __jni_impl::android::icu::util
+namespace android::icu::util
 {
 	class ULocale;
 }
-namespace __jni_impl::java::lang
+namespace java::lang
 {
 	class Number;
 }
-namespace __jni_impl::java::text
+namespace java::text
 {
 	class ParsePosition;
 }
-namespace __jni_impl::java::util
+namespace java::util
 {
 	class Locale;
 }
 
-namespace __jni_impl::android::icu::text
+namespace android::icu::text
 {
-	class CompactDecimalFormat : public __jni_impl::android::icu::text::DecimalFormat
+	class CompactDecimalFormat : public android::icu::text::DecimalFormat
 	{
 	public:
 		// Fields
 		
+		CompactDecimalFormat(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		CompactDecimalFormat() = default;
 		
 		// Methods
-		static QAndroidJniObject getInstance(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::CompactDecimalFormat_CompactStyle arg1);
-		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::CompactDecimalFormat_CompactStyle arg1);
-		QAndroidJniObject parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
-		QAndroidJniObject parse(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
-		QAndroidJniObject parseCurrency(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
-		QAndroidJniObject parseCurrency(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
-	};
-} // namespace __jni_impl::android::icu::text
-
-#include "./CompactDecimalFormat_CompactStyle.hpp"
-#include "../util/CurrencyAmount.hpp"
-#include "../util/ULocale.hpp"
-#include "../../../java/lang/Number.hpp"
-#include "../../../java/text/ParsePosition.hpp"
-#include "../../../java/util/Locale.hpp"
-
-namespace __jni_impl::android::icu::text
-{
-	// Fields
-	
-	// Constructors
-	void CompactDecimalFormat::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.CompactDecimalFormat",
-			"(V)V");
-	}
-	
-	// Methods
-	QAndroidJniObject CompactDecimalFormat::getInstance(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::CompactDecimalFormat_CompactStyle arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.CompactDecimalFormat",
-			"getInstance",
-			"(Landroid/icu/util/ULocale;Landroid/icu/text/CompactDecimalFormat$CompactStyle;)Landroid/icu/text/CompactDecimalFormat;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject CompactDecimalFormat::getInstance(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::CompactDecimalFormat_CompactStyle arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.CompactDecimalFormat",
-			"getInstance",
-			"(Ljava/util/Locale;Landroid/icu/text/CompactDecimalFormat$CompactStyle;)Landroid/icu/text/CompactDecimalFormat;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject CompactDecimalFormat::parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parse",
-			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject CompactDecimalFormat::parse(const QString &arg0, __jni_impl::java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parse",
-			"(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Number;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject CompactDecimalFormat::parseCurrency(jstring arg0, __jni_impl::java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parseCurrency",
-			"(Ljava/lang/CharSequence;Ljava/text/ParsePosition;)Landroid/icu/util/CurrencyAmount;",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject CompactDecimalFormat::parseCurrency(const QString &arg0, __jni_impl::java::text::ParsePosition arg1)
-	{
-		return __thiz.callObjectMethod(
-			"parseCurrency",
-			"(Ljava/lang/CharSequence;Ljava/text/ParsePosition;)Landroid/icu/util/CurrencyAmount;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::android::icu::text
-
-namespace android::icu::text
-{
-	class CompactDecimalFormat : public __jni_impl::android::icu::text::CompactDecimalFormat
-	{
-	public:
-		CompactDecimalFormat(QAndroidJniObject obj) { __thiz = obj; }
-		CompactDecimalFormat()
-		{
-			__constructor();
-		}
+		static QAndroidJniObject getInstance(android::icu::util::ULocale arg0, android::icu::text::CompactDecimalFormat_CompactStyle arg1);
+		static QAndroidJniObject getInstance(java::util::Locale arg0, android::icu::text::CompactDecimalFormat_CompactStyle arg1);
+		QAndroidJniObject parse(jstring arg0, java::text::ParsePosition arg1);
+		QAndroidJniObject parse(const QString &arg0, java::text::ParsePosition arg1);
+		QAndroidJniObject parseCurrency(jstring arg0, java::text::ParsePosition arg1);
+		QAndroidJniObject parseCurrency(const QString &arg0, java::text::ParsePosition arg1);
 	};
 } // namespace android::icu::text
 

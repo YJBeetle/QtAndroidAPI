@@ -3,79 +3,22 @@
 #include "../../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::database::sqlite
+namespace android::database::sqlite
 {
 	class SQLiteClosable : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		SQLiteClosable(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		SQLiteClosable();
 		
 		// Methods
 		void acquireReference();
 		void close();
 		void releaseReference();
 		void releaseReferenceFromContainer();
-	};
-} // namespace __jni_impl::android::database::sqlite
-
-
-namespace __jni_impl::android::database::sqlite
-{
-	// Fields
-	
-	// Constructors
-	void SQLiteClosable::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.sqlite.SQLiteClosable",
-			"()V"
-		);
-	}
-	
-	// Methods
-	void SQLiteClosable::acquireReference()
-	{
-		__thiz.callMethod<void>(
-			"acquireReference",
-			"()V"
-		);
-	}
-	void SQLiteClosable::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
-	}
-	void SQLiteClosable::releaseReference()
-	{
-		__thiz.callMethod<void>(
-			"releaseReference",
-			"()V"
-		);
-	}
-	void SQLiteClosable::releaseReferenceFromContainer()
-	{
-		__thiz.callMethod<void>(
-			"releaseReferenceFromContainer",
-			"()V"
-		);
-	}
-} // namespace __jni_impl::android::database::sqlite
-
-namespace android::database::sqlite
-{
-	class SQLiteClosable : public __jni_impl::android::database::sqlite::SQLiteClosable
-	{
-	public:
-		SQLiteClosable(QAndroidJniObject obj) { __thiz = obj; }
-		SQLiteClosable()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::database::sqlite
 

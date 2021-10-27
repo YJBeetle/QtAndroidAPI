@@ -2,104 +2,31 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::graphics
+namespace android::graphics
 {
 	class Rect;
 }
-namespace __jni_impl::android::view
+namespace android::view
 {
 	class View;
 }
 
-namespace __jni_impl::android::text::method
+namespace android::text::method
 {
 	class ReplacementTransformationMethod : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		ReplacementTransformationMethod(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		ReplacementTransformationMethod();
 		
 		// Methods
-		jstring getTransformation(jstring arg0, __jni_impl::android::view::View arg1);
-		jstring getTransformation(const QString &arg0, __jni_impl::android::view::View arg1);
-		void onFocusChanged(__jni_impl::android::view::View arg0, jstring arg1, jboolean arg2, jint arg3, __jni_impl::android::graphics::Rect arg4);
-		void onFocusChanged(__jni_impl::android::view::View arg0, const QString &arg1, jboolean arg2, jint arg3, __jni_impl::android::graphics::Rect arg4);
-	};
-} // namespace __jni_impl::android::text::method
-
-#include "../../graphics/Rect.hpp"
-#include "../../view/View.hpp"
-
-namespace __jni_impl::android::text::method
-{
-	// Fields
-	
-	// Constructors
-	void ReplacementTransformationMethod::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.method.ReplacementTransformationMethod",
-			"()V"
-		);
-	}
-	
-	// Methods
-	jstring ReplacementTransformationMethod::getTransformation(jstring arg0, __jni_impl::android::view::View arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getTransformation",
-			"(Ljava/lang/CharSequence;Landroid/view/View;)Ljava/lang/CharSequence;",
-			arg0,
-			arg1.__jniObject().object()
-		).object<jstring>();
-	}
-	jstring ReplacementTransformationMethod::getTransformation(const QString &arg0, __jni_impl::android::view::View arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getTransformation",
-			"(Ljava/lang/CharSequence;Landroid/view/View;)Ljava/lang/CharSequence;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		).object<jstring>();
-	}
-	void ReplacementTransformationMethod::onFocusChanged(__jni_impl::android::view::View arg0, jstring arg1, jboolean arg2, jint arg3, __jni_impl::android::graphics::Rect arg4)
-	{
-		__thiz.callMethod<void>(
-			"onFocusChanged",
-			"(Landroid/view/View;Ljava/lang/CharSequence;ZILandroid/graphics/Rect;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4.__jniObject().object()
-		);
-	}
-	void ReplacementTransformationMethod::onFocusChanged(__jni_impl::android::view::View arg0, const QString &arg1, jboolean arg2, jint arg3, __jni_impl::android::graphics::Rect arg4)
-	{
-		__thiz.callMethod<void>(
-			"onFocusChanged",
-			"(Landroid/view/View;Ljava/lang/CharSequence;ZILandroid/graphics/Rect;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3,
-			arg4.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::android::text::method
-
-namespace android::text::method
-{
-	class ReplacementTransformationMethod : public __jni_impl::android::text::method::ReplacementTransformationMethod
-	{
-	public:
-		ReplacementTransformationMethod(QAndroidJniObject obj) { __thiz = obj; }
-		ReplacementTransformationMethod()
-		{
-			__constructor();
-		}
+		jstring getTransformation(jstring arg0, android::view::View arg1);
+		jstring getTransformation(const QString &arg0, android::view::View arg1);
+		void onFocusChanged(android::view::View arg0, jstring arg1, jboolean arg2, jint arg3, android::graphics::Rect arg4);
+		void onFocusChanged(android::view::View arg0, const QString &arg1, jboolean arg2, jint arg3, android::graphics::Rect arg4);
 	};
 } // namespace android::text::method
 

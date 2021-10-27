@@ -5,70 +5,20 @@
 #include "./IOException.hpp"
 
 
-namespace __jni_impl::java::io
+namespace java::io
 {
-	class UnsupportedEncodingException : public __jni_impl::java::io::IOException
+	class UnsupportedEncodingException : public java::io::IOException
 	{
 	public:
 		// Fields
 		
+		UnsupportedEncodingException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		UnsupportedEncodingException();
+		UnsupportedEncodingException(jstring &arg0);
+		UnsupportedEncodingException(const QString &arg0);
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::io
-
-
-namespace __jni_impl::java::io
-{
-	// Fields
-	
-	// Constructors
-	void UnsupportedEncodingException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.UnsupportedEncodingException",
-			"()V"
-		);
-	}
-	void UnsupportedEncodingException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.UnsupportedEncodingException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void UnsupportedEncodingException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.UnsupportedEncodingException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::io
-
-namespace java::io
-{
-	class UnsupportedEncodingException : public __jni_impl::java::io::UnsupportedEncodingException
-	{
-	public:
-		UnsupportedEncodingException(QAndroidJniObject obj) { __thiz = obj; }
-		UnsupportedEncodingException()
-		{
-			__constructor();
-		}
-		UnsupportedEncodingException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace java::io
 

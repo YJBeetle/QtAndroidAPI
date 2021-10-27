@@ -5,70 +5,20 @@
 #include "../../java/lang/RuntimeException.hpp"
 
 
-namespace __jni_impl::android::view
+namespace android::view
 {
-	class WindowManager_BadTokenException : public __jni_impl::java::lang::RuntimeException
+	class WindowManager_BadTokenException : public java::lang::RuntimeException
 	{
 	public:
 		// Fields
 		
+		WindowManager_BadTokenException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		WindowManager_BadTokenException();
+		WindowManager_BadTokenException(jstring &arg0);
+		WindowManager_BadTokenException(const QString &arg0);
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::view
-
-
-namespace __jni_impl::android::view
-{
-	// Fields
-	
-	// Constructors
-	void WindowManager_BadTokenException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.WindowManager$BadTokenException",
-			"()V"
-		);
-	}
-	void WindowManager_BadTokenException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.WindowManager$BadTokenException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void WindowManager_BadTokenException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.WindowManager$BadTokenException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::view
-
-namespace android::view
-{
-	class WindowManager_BadTokenException : public __jni_impl::android::view::WindowManager_BadTokenException
-	{
-	public:
-		WindowManager_BadTokenException(QAndroidJniObject obj) { __thiz = obj; }
-		WindowManager_BadTokenException()
-		{
-			__constructor();
-		}
-		WindowManager_BadTokenException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace android::view
 

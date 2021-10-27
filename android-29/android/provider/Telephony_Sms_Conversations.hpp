@@ -2,12 +2,12 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net
+namespace android::net
 {
 	class Uri;
 }
 
-namespace __jni_impl::android::provider
+namespace android::provider
 {
 	class Telephony_Sms_Conversations : public __JniBaseClass
 	{
@@ -18,72 +18,11 @@ namespace __jni_impl::android::provider
 		static jstring MESSAGE_COUNT();
 		static jstring SNIPPET();
 		
+		Telephony_Sms_Conversations(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		Telephony_Sms_Conversations() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::provider
-
-#include "../net/Uri.hpp"
-
-namespace __jni_impl::android::provider
-{
-	// Fields
-	QAndroidJniObject Telephony_Sms_Conversations::CONTENT_URI()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Telephony$Sms$Conversations",
-			"CONTENT_URI",
-			"Landroid/net/Uri;"
-		);
-	}
-	jstring Telephony_Sms_Conversations::DEFAULT_SORT_ORDER()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Telephony$Sms$Conversations",
-			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring Telephony_Sms_Conversations::MESSAGE_COUNT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Telephony$Sms$Conversations",
-			"MESSAGE_COUNT",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring Telephony_Sms_Conversations::SNIPPET()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Telephony$Sms$Conversations",
-			"SNIPPET",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	
-	// Constructors
-	void Telephony_Sms_Conversations::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.provider.Telephony$Sms$Conversations",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::provider
-
-namespace android::provider
-{
-	class Telephony_Sms_Conversations : public __jni_impl::android::provider::Telephony_Sms_Conversations
-	{
-	public:
-		Telephony_Sms_Conversations(QAndroidJniObject obj) { __thiz = obj; }
-		Telephony_Sms_Conversations()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::provider
 

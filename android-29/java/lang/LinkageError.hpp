@@ -4,96 +4,22 @@
 #include "./Error.hpp"
 
 
-namespace __jni_impl::java::lang
+namespace java::lang
 {
-	class LinkageError : public __jni_impl::java::lang::Error
+	class LinkageError : public java::lang::Error
 	{
 	public:
 		// Fields
 		
+		LinkageError(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
-		void __constructor(jstring arg0, jthrowable arg1);
-		void __constructor(const QString &arg0, jthrowable arg1);
+		LinkageError();
+		LinkageError(jstring &arg0);
+		LinkageError(const QString &arg0);
+		LinkageError(jstring &arg0, jthrowable &arg1);
+		LinkageError(const QString &arg0, jthrowable &arg1);
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::lang
-
-
-namespace __jni_impl::java::lang
-{
-	// Fields
-	
-	// Constructors
-	void LinkageError::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.LinkageError",
-			"()V"
-		);
-	}
-	void LinkageError::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.LinkageError",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void LinkageError::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.LinkageError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void LinkageError::__constructor(jstring arg0, jthrowable arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.LinkageError",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
-		);
-	}
-	void LinkageError::__constructor(const QString &arg0, jthrowable arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.LinkageError",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::lang
-
-namespace java::lang
-{
-	class LinkageError : public __jni_impl::java::lang::LinkageError
-	{
-	public:
-		LinkageError(QAndroidJniObject obj) { __thiz = obj; }
-		LinkageError()
-		{
-			__constructor();
-		}
-		LinkageError(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		LinkageError(jstring arg0, jthrowable arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
 	};
 } // namespace java::lang
 

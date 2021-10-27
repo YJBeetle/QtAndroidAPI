@@ -3,14 +3,14 @@
 #include "../../__JniBaseClass.hpp"
 #include "./DrmEvent.hpp"
 
-namespace __jni_impl::java::util
+namespace java::util
 {
 	class HashMap;
 }
 
-namespace __jni_impl::android::drm
+namespace android::drm
 {
-	class DrmInfoEvent : public __jni_impl::android::drm::DrmEvent
+	class DrmInfoEvent : public android::drm::DrmEvent
 	{
 	public:
 		// Fields
@@ -21,132 +21,15 @@ namespace __jni_impl::android::drm
 		static jint TYPE_RIGHTS_REMOVED();
 		static jint TYPE_WAIT_FOR_RIGHTS();
 		
+		DrmInfoEvent(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jint arg0, jint arg1, jstring arg2);
-		void __constructor(jint arg0, jint arg1, const QString &arg2);
-		void __constructor(jint arg0, jint arg1, jstring arg2, __jni_impl::java::util::HashMap arg3);
-		void __constructor(jint arg0, jint arg1, const QString &arg2, __jni_impl::java::util::HashMap arg3);
+		DrmInfoEvent(jint &arg0, jint &arg1, jstring &arg2);
+		DrmInfoEvent(jint &arg0, jint &arg1, const QString &arg2);
+		DrmInfoEvent(jint &arg0, jint &arg1, jstring &arg2, java::util::HashMap &arg3);
+		DrmInfoEvent(jint &arg0, jint &arg1, const QString &arg2, java::util::HashMap &arg3);
+		DrmInfoEvent() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::drm
-
-#include "../../java/util/HashMap.hpp"
-
-namespace __jni_impl::android::drm
-{
-	// Fields
-	jint DrmInfoEvent::TYPE_ACCOUNT_ALREADY_REGISTERED()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.drm.DrmInfoEvent",
-			"TYPE_ACCOUNT_ALREADY_REGISTERED"
-		);
-	}
-	jint DrmInfoEvent::TYPE_ALREADY_REGISTERED_BY_ANOTHER_ACCOUNT()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.drm.DrmInfoEvent",
-			"TYPE_ALREADY_REGISTERED_BY_ANOTHER_ACCOUNT"
-		);
-	}
-	jint DrmInfoEvent::TYPE_REMOVE_RIGHTS()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.drm.DrmInfoEvent",
-			"TYPE_REMOVE_RIGHTS"
-		);
-	}
-	jint DrmInfoEvent::TYPE_RIGHTS_INSTALLED()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.drm.DrmInfoEvent",
-			"TYPE_RIGHTS_INSTALLED"
-		);
-	}
-	jint DrmInfoEvent::TYPE_RIGHTS_REMOVED()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.drm.DrmInfoEvent",
-			"TYPE_RIGHTS_REMOVED"
-		);
-	}
-	jint DrmInfoEvent::TYPE_WAIT_FOR_RIGHTS()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.drm.DrmInfoEvent",
-			"TYPE_WAIT_FOR_RIGHTS"
-		);
-	}
-	
-	// Constructors
-	void DrmInfoEvent::__constructor(jint arg0, jint arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.drm.DrmInfoEvent",
-			"(IILjava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void DrmInfoEvent::__constructor(jint arg0, jint arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.drm.DrmInfoEvent",
-			"(IILjava/lang/String;)V",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
-	void DrmInfoEvent::__constructor(jint arg0, jint arg1, jstring arg2, __jni_impl::java::util::HashMap arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.drm.DrmInfoEvent",
-			"(IILjava/lang/String;Ljava/util/HashMap;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	void DrmInfoEvent::__constructor(jint arg0, jint arg1, const QString &arg2, __jni_impl::java::util::HashMap arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.drm.DrmInfoEvent",
-			"(IILjava/lang/String;Ljava/util/HashMap;)V",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3.__jniObject().object()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::drm
-
-namespace android::drm
-{
-	class DrmInfoEvent : public __jni_impl::android::drm::DrmInfoEvent
-	{
-	public:
-		DrmInfoEvent(QAndroidJniObject obj) { __thiz = obj; }
-		DrmInfoEvent(jint arg0, jint arg1, jstring arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
-		}
-		DrmInfoEvent(jint arg0, jint arg1, jstring arg2, __jni_impl::java::util::HashMap arg3)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2,
-				arg3);
-		}
 	};
 } // namespace android::drm
 

@@ -5,110 +5,23 @@
 #include "./GeneralSecurityException.hpp"
 
 
-namespace __jni_impl::java::security
+namespace java::security
 {
-	class NoSuchAlgorithmException : public __jni_impl::java::security::GeneralSecurityException
+	class NoSuchAlgorithmException : public java::security::GeneralSecurityException
 	{
 	public:
 		// Fields
 		
+		NoSuchAlgorithmException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
-		void __constructor(jthrowable arg0);
-		void __constructor(jstring arg0, jthrowable arg1);
-		void __constructor(const QString &arg0, jthrowable arg1);
+		NoSuchAlgorithmException();
+		NoSuchAlgorithmException(jstring &arg0);
+		NoSuchAlgorithmException(const QString &arg0);
+		NoSuchAlgorithmException(jthrowable &arg0);
+		NoSuchAlgorithmException(jstring &arg0, jthrowable &arg1);
+		NoSuchAlgorithmException(const QString &arg0, jthrowable &arg1);
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::security
-
-
-namespace __jni_impl::java::security
-{
-	// Fields
-	
-	// Constructors
-	void NoSuchAlgorithmException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.NoSuchAlgorithmException",
-			"()V"
-		);
-	}
-	void NoSuchAlgorithmException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.NoSuchAlgorithmException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void NoSuchAlgorithmException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.NoSuchAlgorithmException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void NoSuchAlgorithmException::__constructor(jthrowable arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.NoSuchAlgorithmException",
-			"(Ljava/lang/Throwable;)V",
-			arg0
-		);
-	}
-	void NoSuchAlgorithmException::__constructor(jstring arg0, jthrowable arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.NoSuchAlgorithmException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
-		);
-	}
-	void NoSuchAlgorithmException::__constructor(const QString &arg0, jthrowable arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.NoSuchAlgorithmException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::security
-
-namespace java::security
-{
-	class NoSuchAlgorithmException : public __jni_impl::java::security::NoSuchAlgorithmException
-	{
-	public:
-		NoSuchAlgorithmException(QAndroidJniObject obj) { __thiz = obj; }
-		NoSuchAlgorithmException()
-		{
-			__constructor();
-		}
-		NoSuchAlgorithmException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		NoSuchAlgorithmException(jthrowable arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		NoSuchAlgorithmException(jstring arg0, jthrowable arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
 	};
 } // namespace java::security
 

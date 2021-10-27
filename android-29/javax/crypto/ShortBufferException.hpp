@@ -5,70 +5,20 @@
 #include "../../java/security/GeneralSecurityException.hpp"
 
 
-namespace __jni_impl::javax::crypto
+namespace javax::crypto
 {
-	class ShortBufferException : public __jni_impl::java::security::GeneralSecurityException
+	class ShortBufferException : public java::security::GeneralSecurityException
 	{
 	public:
 		// Fields
 		
+		ShortBufferException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		ShortBufferException();
+		ShortBufferException(jstring &arg0);
+		ShortBufferException(const QString &arg0);
 		
 		// Methods
-	};
-} // namespace __jni_impl::javax::crypto
-
-
-namespace __jni_impl::javax::crypto
-{
-	// Fields
-	
-	// Constructors
-	void ShortBufferException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"javax.crypto.ShortBufferException",
-			"()V"
-		);
-	}
-	void ShortBufferException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.crypto.ShortBufferException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void ShortBufferException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.crypto.ShortBufferException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::javax::crypto
-
-namespace javax::crypto
-{
-	class ShortBufferException : public __jni_impl::javax::crypto::ShortBufferException
-	{
-	public:
-		ShortBufferException(QAndroidJniObject obj) { __thiz = obj; }
-		ShortBufferException()
-		{
-			__constructor();
-		}
-		ShortBufferException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace javax::crypto
 

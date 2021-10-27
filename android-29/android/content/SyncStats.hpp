@@ -2,12 +2,12 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class Parcel;
 }
 
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class SyncStats : public __JniBaseClass
 	{
@@ -24,151 +24,16 @@ namespace __jni_impl::android::content
 		jlong numSkippedEntries();
 		jlong numUpdates();
 		
+		SyncStats(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(__jni_impl::android::os::Parcel arg0);
+		SyncStats();
+		SyncStats(android::os::Parcel &arg0);
 		
 		// Methods
 		void clear();
 		jint describeContents();
 		jstring toString();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-	};
-} // namespace __jni_impl::android::content
-
-#include "../os/Parcel.hpp"
-
-namespace __jni_impl::android::content
-{
-	// Fields
-	QAndroidJniObject SyncStats::CREATOR()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.content.SyncStats",
-			"CREATOR",
-			"Landroid/os/Parcelable$Creator;"
-		);
-	}
-	jlong SyncStats::numAuthExceptions()
-	{
-		return __thiz.getField<jlong>(
-			"numAuthExceptions"
-		);
-	}
-	jlong SyncStats::numConflictDetectedExceptions()
-	{
-		return __thiz.getField<jlong>(
-			"numConflictDetectedExceptions"
-		);
-	}
-	jlong SyncStats::numDeletes()
-	{
-		return __thiz.getField<jlong>(
-			"numDeletes"
-		);
-	}
-	jlong SyncStats::numEntries()
-	{
-		return __thiz.getField<jlong>(
-			"numEntries"
-		);
-	}
-	jlong SyncStats::numInserts()
-	{
-		return __thiz.getField<jlong>(
-			"numInserts"
-		);
-	}
-	jlong SyncStats::numIoExceptions()
-	{
-		return __thiz.getField<jlong>(
-			"numIoExceptions"
-		);
-	}
-	jlong SyncStats::numParseExceptions()
-	{
-		return __thiz.getField<jlong>(
-			"numParseExceptions"
-		);
-	}
-	jlong SyncStats::numSkippedEntries()
-	{
-		return __thiz.getField<jlong>(
-			"numSkippedEntries"
-		);
-	}
-	jlong SyncStats::numUpdates()
-	{
-		return __thiz.getField<jlong>(
-			"numUpdates"
-		);
-	}
-	
-	// Constructors
-	void SyncStats::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.SyncStats",
-			"()V"
-		);
-	}
-	void SyncStats::__constructor(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.SyncStats",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	
-	// Methods
-	void SyncStats::clear()
-	{
-		__thiz.callMethod<void>(
-			"clear",
-			"()V"
-		);
-	}
-	jint SyncStats::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	jstring SyncStats::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void SyncStats::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-} // namespace __jni_impl::android::content
-
-namespace android::content
-{
-	class SyncStats : public __jni_impl::android::content::SyncStats
-	{
-	public:
-		SyncStats(QAndroidJniObject obj) { __thiz = obj; }
-		SyncStats()
-		{
-			__constructor();
-		}
-		SyncStats(__jni_impl::android::os::Parcel arg0)
-		{
-			__constructor(
-				arg0);
-		}
+		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content
 

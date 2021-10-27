@@ -3,46 +3,18 @@
 #include "../../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::java::security::cert
+namespace java::security::cert
 {
 	class CertPath_CertPathRep : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		CertPath_CertPathRep(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		CertPath_CertPathRep() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::security::cert
-
-
-namespace __jni_impl::java::security::cert
-{
-	// Fields
-	
-	// Constructors
-	void CertPath_CertPathRep::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.cert.CertPath$CertPathRep",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::security::cert
-
-namespace java::security::cert
-{
-	class CertPath_CertPathRep : public __jni_impl::java::security::cert::CertPath_CertPathRep
-	{
-	public:
-		CertPath_CertPathRep(QAndroidJniObject obj) { __thiz = obj; }
-		CertPath_CertPathRep()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::security::cert
 

@@ -3,140 +3,39 @@
 #include "../../__JniBaseClass.hpp"
 #include "./Notification_Style.hpp"
 
-namespace __jni_impl::android::app
+namespace android::app
 {
 	class Notification_Builder;
 }
-namespace __jni_impl::android::graphics
+namespace android::graphics
 {
 	class Bitmap;
 }
-namespace __jni_impl::android::graphics::drawable
+namespace android::graphics::drawable
 {
 	class Icon;
 }
 
-namespace __jni_impl::android::app
+namespace android::app
 {
-	class Notification_BigPictureStyle : public __jni_impl::android::app::Notification_Style
+	class Notification_BigPictureStyle : public android::app::Notification_Style
 	{
 	public:
 		// Fields
 		
+		Notification_BigPictureStyle(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(__jni_impl::android::app::Notification_Builder arg0);
+		Notification_BigPictureStyle();
+		Notification_BigPictureStyle(android::app::Notification_Builder &arg0);
 		
 		// Methods
-		QAndroidJniObject bigLargeIcon(__jni_impl::android::graphics::Bitmap arg0);
-		QAndroidJniObject bigLargeIcon(__jni_impl::android::graphics::drawable::Icon arg0);
-		QAndroidJniObject bigPicture(__jni_impl::android::graphics::Bitmap arg0);
+		QAndroidJniObject bigLargeIcon(android::graphics::Bitmap arg0);
+		QAndroidJniObject bigLargeIcon(android::graphics::drawable::Icon arg0);
+		QAndroidJniObject bigPicture(android::graphics::Bitmap arg0);
 		QAndroidJniObject setBigContentTitle(jstring arg0);
 		QAndroidJniObject setBigContentTitle(const QString &arg0);
 		QAndroidJniObject setSummaryText(jstring arg0);
 		QAndroidJniObject setSummaryText(const QString &arg0);
-	};
-} // namespace __jni_impl::android::app
-
-#include "./Notification_Builder.hpp"
-#include "../graphics/Bitmap.hpp"
-#include "../graphics/drawable/Icon.hpp"
-
-namespace __jni_impl::android::app
-{
-	// Fields
-	
-	// Constructors
-	void Notification_BigPictureStyle::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.Notification$BigPictureStyle",
-			"()V"
-		);
-	}
-	void Notification_BigPictureStyle::__constructor(__jni_impl::android::app::Notification_Builder arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.Notification$BigPictureStyle",
-			"(Landroid/app/Notification$Builder;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	
-	// Methods
-	QAndroidJniObject Notification_BigPictureStyle::bigLargeIcon(__jni_impl::android::graphics::Bitmap arg0)
-	{
-		return __thiz.callObjectMethod(
-			"bigLargeIcon",
-			"(Landroid/graphics/Bitmap;)Landroid/app/Notification$BigPictureStyle;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Notification_BigPictureStyle::bigLargeIcon(__jni_impl::android::graphics::drawable::Icon arg0)
-	{
-		return __thiz.callObjectMethod(
-			"bigLargeIcon",
-			"(Landroid/graphics/drawable/Icon;)Landroid/app/Notification$BigPictureStyle;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Notification_BigPictureStyle::bigPicture(__jni_impl::android::graphics::Bitmap arg0)
-	{
-		return __thiz.callObjectMethod(
-			"bigPicture",
-			"(Landroid/graphics/Bitmap;)Landroid/app/Notification$BigPictureStyle;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Notification_BigPictureStyle::setBigContentTitle(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setBigContentTitle",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigPictureStyle;",
-			arg0
-		);
-	}
-	QAndroidJniObject Notification_BigPictureStyle::setBigContentTitle(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setBigContentTitle",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigPictureStyle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject Notification_BigPictureStyle::setSummaryText(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSummaryText",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigPictureStyle;",
-			arg0
-		);
-	}
-	QAndroidJniObject Notification_BigPictureStyle::setSummaryText(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSummaryText",
-			"(Ljava/lang/CharSequence;)Landroid/app/Notification$BigPictureStyle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-} // namespace __jni_impl::android::app
-
-namespace android::app
-{
-	class Notification_BigPictureStyle : public __jni_impl::android::app::Notification_BigPictureStyle
-	{
-	public:
-		Notification_BigPictureStyle(QAndroidJniObject obj) { __thiz = obj; }
-		Notification_BigPictureStyle()
-		{
-			__constructor();
-		}
-		Notification_BigPictureStyle(__jni_impl::android::app::Notification_Builder arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace android::app
 

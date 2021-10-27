@@ -4,46 +4,18 @@
 #include "./Violation.hpp"
 
 
-namespace __jni_impl::android::os::strictmode
+namespace android::os::strictmode
 {
-	class CustomViolation : public __jni_impl::android::os::strictmode::Violation
+	class CustomViolation : public android::os::strictmode::Violation
 	{
 	public:
 		// Fields
 		
+		CustomViolation(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		CustomViolation() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::os::strictmode
-
-
-namespace __jni_impl::android::os::strictmode
-{
-	// Fields
-	
-	// Constructors
-	void CustomViolation::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.strictmode.CustomViolation",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::os::strictmode
-
-namespace android::os::strictmode
-{
-	class CustomViolation : public __jni_impl::android::os::strictmode::CustomViolation
-	{
-	public:
-		CustomViolation(QAndroidJniObject obj) { __thiz = obj; }
-		CustomViolation()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::os::strictmode
 

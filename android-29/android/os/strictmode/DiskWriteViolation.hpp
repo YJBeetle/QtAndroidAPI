@@ -4,46 +4,18 @@
 #include "./Violation.hpp"
 
 
-namespace __jni_impl::android::os::strictmode
+namespace android::os::strictmode
 {
-	class DiskWriteViolation : public __jni_impl::android::os::strictmode::Violation
+	class DiskWriteViolation : public android::os::strictmode::Violation
 	{
 	public:
 		// Fields
 		
+		DiskWriteViolation(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		DiskWriteViolation() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::os::strictmode
-
-
-namespace __jni_impl::android::os::strictmode
-{
-	// Fields
-	
-	// Constructors
-	void DiskWriteViolation::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.strictmode.DiskWriteViolation",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::os::strictmode
-
-namespace android::os::strictmode
-{
-	class DiskWriteViolation : public __jni_impl::android::os::strictmode::DiskWriteViolation
-	{
-	public:
-		DiskWriteViolation(QAndroidJniObject obj) { __thiz = obj; }
-		DiskWriteViolation()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::os::strictmode
 

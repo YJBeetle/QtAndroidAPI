@@ -6,84 +6,21 @@
 #include "./IndexOutOfBoundsException.hpp"
 
 
-namespace __jni_impl::java::lang
+namespace java::lang
 {
-	class StringIndexOutOfBoundsException : public __jni_impl::java::lang::IndexOutOfBoundsException
+	class StringIndexOutOfBoundsException : public java::lang::IndexOutOfBoundsException
 	{
 	public:
 		// Fields
 		
+		StringIndexOutOfBoundsException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jint arg0);
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		StringIndexOutOfBoundsException();
+		StringIndexOutOfBoundsException(jint &arg0);
+		StringIndexOutOfBoundsException(jstring &arg0);
+		StringIndexOutOfBoundsException(const QString &arg0);
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::lang
-
-
-namespace __jni_impl::java::lang
-{
-	// Fields
-	
-	// Constructors
-	void StringIndexOutOfBoundsException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.StringIndexOutOfBoundsException",
-			"()V"
-		);
-	}
-	void StringIndexOutOfBoundsException::__constructor(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.StringIndexOutOfBoundsException",
-			"(I)V",
-			arg0
-		);
-	}
-	void StringIndexOutOfBoundsException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.StringIndexOutOfBoundsException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void StringIndexOutOfBoundsException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.StringIndexOutOfBoundsException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::lang
-
-namespace java::lang
-{
-	class StringIndexOutOfBoundsException : public __jni_impl::java::lang::StringIndexOutOfBoundsException
-	{
-	public:
-		StringIndexOutOfBoundsException(QAndroidJniObject obj) { __thiz = obj; }
-		StringIndexOutOfBoundsException()
-		{
-			__constructor();
-		}
-		StringIndexOutOfBoundsException(jint arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		StringIndexOutOfBoundsException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace java::lang
 

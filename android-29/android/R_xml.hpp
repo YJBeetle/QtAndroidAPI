@@ -3,47 +3,18 @@
 #include "../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android
+namespace android
 {
 	class R_xml : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		R_xml(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		R_xml();
 		
 		// Methods
-	};
-} // namespace __jni_impl::android
-
-
-namespace __jni_impl::android
-{
-	// Fields
-	
-	// Constructors
-	void R_xml::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.R$xml",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android
-
-namespace android
-{
-	class R_xml : public __jni_impl::android::R_xml
-	{
-	public:
-		R_xml(QAndroidJniObject obj) { __thiz = obj; }
-		R_xml()
-		{
-			__constructor();
-		}
 	};
 } // namespace android
 

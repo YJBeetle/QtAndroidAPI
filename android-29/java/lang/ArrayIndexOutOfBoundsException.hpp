@@ -6,84 +6,21 @@
 #include "./IndexOutOfBoundsException.hpp"
 
 
-namespace __jni_impl::java::lang
+namespace java::lang
 {
-	class ArrayIndexOutOfBoundsException : public __jni_impl::java::lang::IndexOutOfBoundsException
+	class ArrayIndexOutOfBoundsException : public java::lang::IndexOutOfBoundsException
 	{
 	public:
 		// Fields
 		
+		ArrayIndexOutOfBoundsException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jint arg0);
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		ArrayIndexOutOfBoundsException();
+		ArrayIndexOutOfBoundsException(jint &arg0);
+		ArrayIndexOutOfBoundsException(jstring &arg0);
+		ArrayIndexOutOfBoundsException(const QString &arg0);
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::lang
-
-
-namespace __jni_impl::java::lang
-{
-	// Fields
-	
-	// Constructors
-	void ArrayIndexOutOfBoundsException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ArrayIndexOutOfBoundsException",
-			"()V"
-		);
-	}
-	void ArrayIndexOutOfBoundsException::__constructor(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ArrayIndexOutOfBoundsException",
-			"(I)V",
-			arg0
-		);
-	}
-	void ArrayIndexOutOfBoundsException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ArrayIndexOutOfBoundsException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void ArrayIndexOutOfBoundsException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ArrayIndexOutOfBoundsException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::lang
-
-namespace java::lang
-{
-	class ArrayIndexOutOfBoundsException : public __jni_impl::java::lang::ArrayIndexOutOfBoundsException
-	{
-	public:
-		ArrayIndexOutOfBoundsException(QAndroidJniObject obj) { __thiz = obj; }
-		ArrayIndexOutOfBoundsException()
-		{
-			__constructor();
-		}
-		ArrayIndexOutOfBoundsException(jint arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		ArrayIndexOutOfBoundsException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace java::lang
 

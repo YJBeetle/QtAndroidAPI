@@ -3,7 +3,7 @@
 #include "../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::util
+namespace android::util
 {
 	class MutableChar : public __JniBaseClass
 	{
@@ -11,48 +11,12 @@ namespace __jni_impl::android::util
 		// Fields
 		jchar value();
 		
+		MutableChar(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jchar arg0);
+		MutableChar(jchar &arg0);
+		MutableChar() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::util
-
-
-namespace __jni_impl::android::util
-{
-	// Fields
-	jchar MutableChar::value()
-	{
-		return __thiz.getField<jchar>(
-			"value"
-		);
-	}
-	
-	// Constructors
-	void MutableChar::__constructor(jchar arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.util.MutableChar",
-			"(C)V",
-			arg0
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::util
-
-namespace android::util
-{
-	class MutableChar : public __jni_impl::android::util::MutableChar
-	{
-	public:
-		MutableChar(QAndroidJniObject obj) { __thiz = obj; }
-		MutableChar(jchar arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace android::util
 

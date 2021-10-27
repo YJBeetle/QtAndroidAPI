@@ -5,30 +5,30 @@
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class Intent;
 }
-namespace __jni_impl::android::print
+namespace android::print
 {
 	class PrinterId;
 }
-namespace __jni_impl::android::printservice
+namespace android::printservice
 {
 	class PrintJob;
 }
-namespace __jni_impl::android::printservice
+namespace android::printservice
 {
 	class PrinterDiscoverySession;
 }
 
-namespace __jni_impl::android::printservice
+namespace android::printservice
 {
-	class PrintService : public __jni_impl::android::app::Service
+	class PrintService : public android::app::Service
 	{
 	public:
 		// Fields
@@ -40,136 +40,15 @@ namespace __jni_impl::android::printservice
 		static jstring SERVICE_INTERFACE();
 		static jstring SERVICE_META_DATA();
 		
+		PrintService(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		PrintService();
 		
 		// Methods
 		QAndroidJniObject generatePrinterId(jstring arg0);
 		QAndroidJniObject generatePrinterId(const QString &arg0);
 		QAndroidJniObject getActivePrintJobs();
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
-	};
-} // namespace __jni_impl::android::printservice
-
-#include "../content/Context.hpp"
-#include "../content/Intent.hpp"
-#include "../print/PrinterId.hpp"
-#include "./PrintJob.hpp"
-#include "./PrinterDiscoverySession.hpp"
-
-namespace __jni_impl::android::printservice
-{
-	// Fields
-	jstring PrintService::EXTRA_CAN_SELECT_PRINTER()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.printservice.PrintService",
-			"EXTRA_CAN_SELECT_PRINTER",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring PrintService::EXTRA_PRINTER_INFO()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.printservice.PrintService",
-			"EXTRA_PRINTER_INFO",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring PrintService::EXTRA_PRINT_DOCUMENT_INFO()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.printservice.PrintService",
-			"EXTRA_PRINT_DOCUMENT_INFO",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring PrintService::EXTRA_PRINT_JOB_INFO()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.printservice.PrintService",
-			"EXTRA_PRINT_JOB_INFO",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring PrintService::EXTRA_SELECT_PRINTER()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.printservice.PrintService",
-			"EXTRA_SELECT_PRINTER",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring PrintService::SERVICE_INTERFACE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.printservice.PrintService",
-			"SERVICE_INTERFACE",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring PrintService::SERVICE_META_DATA()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.printservice.PrintService",
-			"SERVICE_META_DATA",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	
-	// Constructors
-	void PrintService::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.printservice.PrintService",
-			"()V"
-		);
-	}
-	
-	// Methods
-	QAndroidJniObject PrintService::generatePrinterId(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"generatePrinterId",
-			"(Ljava/lang/String;)Landroid/print/PrinterId;",
-			arg0
-		);
-	}
-	QAndroidJniObject PrintService::generatePrinterId(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"generatePrinterId",
-			"(Ljava/lang/String;)Landroid/print/PrinterId;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject PrintService::getActivePrintJobs()
-	{
-		return __thiz.callObjectMethod(
-			"getActivePrintJobs",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject PrintService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::android::printservice
-
-namespace android::printservice
-{
-	class PrintService : public __jni_impl::android::printservice::PrintService
-	{
-	public:
-		PrintService(QAndroidJniObject obj) { __thiz = obj; }
-		PrintService()
-		{
-			__constructor();
-		}
+		QAndroidJniObject onBind(android::content::Intent arg0);
 	};
 } // namespace android::printservice
 

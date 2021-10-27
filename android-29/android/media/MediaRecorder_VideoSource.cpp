@@ -1,0 +1,34 @@
+#include "./MediaRecorder.hpp"
+#include "./MediaRecorder_VideoSource.hpp"
+
+namespace android::media
+{
+	// Fields
+	jint MediaRecorder_VideoSource::CAMERA()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"android.media.MediaRecorder$VideoSource",
+			"CAMERA"
+		);
+	}
+	jint MediaRecorder_VideoSource::DEFAULT()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"android.media.MediaRecorder$VideoSource",
+			"DEFAULT"
+		);
+	}
+	jint MediaRecorder_VideoSource::SURFACE()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"android.media.MediaRecorder$VideoSource",
+			"SURFACE"
+		);
+	}
+	
+	MediaRecorder_VideoSource::MediaRecorder_VideoSource(QAndroidJniObject obj) { __thiz = obj; }
+	// Constructors
+	
+	// Methods
+} // namespace android::media
+

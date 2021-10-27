@@ -2,95 +2,27 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net
+namespace android::net
 {
 	class Uri;
 }
 
-namespace __jni_impl::android::provider
+namespace android::provider
 {
 	class MediaStore_Files : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		MediaStore_Files(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		MediaStore_Files();
 		
 		// Methods
 		static QAndroidJniObject getContentUri(jstring arg0);
 		static QAndroidJniObject getContentUri(const QString &arg0);
 		static QAndroidJniObject getContentUri(jstring arg0, jlong arg1);
 		static QAndroidJniObject getContentUri(const QString &arg0, jlong arg1);
-	};
-} // namespace __jni_impl::android::provider
-
-#include "../net/Uri.hpp"
-
-namespace __jni_impl::android::provider
-{
-	// Fields
-	
-	// Constructors
-	void MediaStore_Files::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.provider.MediaStore$Files",
-			"()V"
-		);
-	}
-	
-	// Methods
-	QAndroidJniObject MediaStore_Files::getContentUri(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.MediaStore$Files",
-			"getContentUri",
-			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0
-		);
-	}
-	QAndroidJniObject MediaStore_Files::getContentUri(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.MediaStore$Files",
-			"getContentUri",
-			"(Ljava/lang/String;)Landroid/net/Uri;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject MediaStore_Files::getContentUri(jstring arg0, jlong arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.MediaStore$Files",
-			"getContentUri",
-			"(Ljava/lang/String;J)Landroid/net/Uri;",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject MediaStore_Files::getContentUri(const QString &arg0, jlong arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.MediaStore$Files",
-			"getContentUri",
-			"(Ljava/lang/String;J)Landroid/net/Uri;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-} // namespace __jni_impl::android::provider
-
-namespace android::provider
-{
-	class MediaStore_Files : public __jni_impl::android::provider::MediaStore_Files
-	{
-	public:
-		MediaStore_Files(QAndroidJniObject obj) { __thiz = obj; }
-		MediaStore_Files()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::provider
 

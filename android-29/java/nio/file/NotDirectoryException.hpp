@@ -6,58 +6,20 @@
 #include "./FileSystemException.hpp"
 
 
-namespace __jni_impl::java::nio::file
+namespace java::nio::file
 {
-	class NotDirectoryException : public __jni_impl::java::nio::file::FileSystemException
+	class NotDirectoryException : public java::nio::file::FileSystemException
 	{
 	public:
 		// Fields
 		
+		NotDirectoryException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		NotDirectoryException(jstring &arg0);
+		NotDirectoryException(const QString &arg0);
+		NotDirectoryException() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::nio::file
-
-
-namespace __jni_impl::java::nio::file
-{
-	// Fields
-	
-	// Constructors
-	void NotDirectoryException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.file.NotDirectoryException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void NotDirectoryException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.file.NotDirectoryException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::nio::file
-
-namespace java::nio::file
-{
-	class NotDirectoryException : public __jni_impl::java::nio::file::NotDirectoryException
-	{
-	public:
-		NotDirectoryException(QAndroidJniObject obj) { __thiz = obj; }
-		NotDirectoryException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace java::nio::file
 

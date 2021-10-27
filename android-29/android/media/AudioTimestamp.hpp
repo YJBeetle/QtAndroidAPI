@@ -3,7 +3,7 @@
 #include "../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::media
+namespace android::media
 {
 	class AudioTimestamp : public __JniBaseClass
 	{
@@ -14,66 +14,11 @@ namespace __jni_impl::android::media
 		jlong framePosition();
 		jlong nanoTime();
 		
+		AudioTimestamp(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		AudioTimestamp();
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::media
-
-
-namespace __jni_impl::android::media
-{
-	// Fields
-	jint AudioTimestamp::TIMEBASE_BOOTTIME()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.media.AudioTimestamp",
-			"TIMEBASE_BOOTTIME"
-		);
-	}
-	jint AudioTimestamp::TIMEBASE_MONOTONIC()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.media.AudioTimestamp",
-			"TIMEBASE_MONOTONIC"
-		);
-	}
-	jlong AudioTimestamp::framePosition()
-	{
-		return __thiz.getField<jlong>(
-			"framePosition"
-		);
-	}
-	jlong AudioTimestamp::nanoTime()
-	{
-		return __thiz.getField<jlong>(
-			"nanoTime"
-		);
-	}
-	
-	// Constructors
-	void AudioTimestamp::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.AudioTimestamp",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::media
-
-namespace android::media
-{
-	class AudioTimestamp : public __jni_impl::android::media::AudioTimestamp
-	{
-	public:
-		AudioTimestamp(QAndroidJniObject obj) { __thiz = obj; }
-		AudioTimestamp()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::media
 

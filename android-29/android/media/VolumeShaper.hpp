@@ -2,93 +2,31 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::media
+namespace android::media
 {
 	class VolumeShaper_Configuration;
 }
-namespace __jni_impl::android::media
+namespace android::media
 {
 	class VolumeShaper_Operation;
 }
 
-namespace __jni_impl::android::media
+namespace android::media
 {
 	class VolumeShaper : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		VolumeShaper(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		VolumeShaper() = default;
 		
 		// Methods
-		void apply(__jni_impl::android::media::VolumeShaper_Operation arg0);
+		void apply(android::media::VolumeShaper_Operation arg0);
 		void close();
 		jfloat getVolume();
-		void replace(__jni_impl::android::media::VolumeShaper_Configuration arg0, __jni_impl::android::media::VolumeShaper_Operation arg1, jboolean arg2);
-	};
-} // namespace __jni_impl::android::media
-
-#include "./VolumeShaper_Configuration.hpp"
-#include "./VolumeShaper_Operation.hpp"
-
-namespace __jni_impl::android::media
-{
-	// Fields
-	
-	// Constructors
-	void VolumeShaper::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.VolumeShaper",
-			"(V)V");
-	}
-	
-	// Methods
-	void VolumeShaper::apply(__jni_impl::android::media::VolumeShaper_Operation arg0)
-	{
-		__thiz.callMethod<void>(
-			"apply",
-			"(Landroid/media/VolumeShaper$Operation;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void VolumeShaper::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
-	}
-	jfloat VolumeShaper::getVolume()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getVolume",
-			"()F"
-		);
-	}
-	void VolumeShaper::replace(__jni_impl::android::media::VolumeShaper_Configuration arg0, __jni_impl::android::media::VolumeShaper_Operation arg1, jboolean arg2)
-	{
-		__thiz.callMethod<void>(
-			"replace",
-			"(Landroid/media/VolumeShaper$Configuration;Landroid/media/VolumeShaper$Operation;Z)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-} // namespace __jni_impl::android::media
-
-namespace android::media
-{
-	class VolumeShaper : public __jni_impl::android::media::VolumeShaper
-	{
-	public:
-		VolumeShaper(QAndroidJniObject obj) { __thiz = obj; }
-		VolumeShaper()
-		{
-			__constructor();
-		}
+		void replace(android::media::VolumeShaper_Configuration arg0, android::media::VolumeShaper_Operation arg1, jboolean arg2);
 	};
 } // namespace android::media
 

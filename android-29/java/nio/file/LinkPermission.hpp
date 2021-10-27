@@ -5,84 +5,22 @@
 #include "../../security/BasicPermission.hpp"
 
 
-namespace __jni_impl::java::nio::file
+namespace java::nio::file
 {
-	class LinkPermission : public __jni_impl::java::security::BasicPermission
+	class LinkPermission : public java::security::BasicPermission
 	{
 	public:
 		// Fields
 		
+		LinkPermission(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
-		void __constructor(jstring arg0, jstring arg1);
-		void __constructor(const QString &arg0, const QString &arg1);
+		LinkPermission(jstring &arg0);
+		LinkPermission(const QString &arg0);
+		LinkPermission(jstring &arg0, jstring &arg1);
+		LinkPermission(const QString &arg0, const QString &arg1);
+		LinkPermission() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::nio::file
-
-
-namespace __jni_impl::java::nio::file
-{
-	// Fields
-	
-	// Constructors
-	void LinkPermission::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.file.LinkPermission",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void LinkPermission::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.file.LinkPermission",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void LinkPermission::__constructor(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.file.LinkPermission",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
-		);
-	}
-	void LinkPermission::__constructor(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.file.LinkPermission",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::nio::file
-
-namespace java::nio::file
-{
-	class LinkPermission : public __jni_impl::java::nio::file::LinkPermission
-	{
-	public:
-		LinkPermission(QAndroidJniObject obj) { __thiz = obj; }
-		LinkPermission(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		LinkPermission(jstring arg0, jstring arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
 	};
 } // namespace java::nio::file
 

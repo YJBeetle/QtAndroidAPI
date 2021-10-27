@@ -2,32 +2,32 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::app
+namespace android::app
 {
 	class PendingIntent;
 }
-namespace __jni_impl::android::hardware::usb
+namespace android::hardware::usb
 {
 	class UsbAccessory;
 }
-namespace __jni_impl::android::hardware::usb
+namespace android::hardware::usb
 {
 	class UsbDevice;
 }
-namespace __jni_impl::android::hardware::usb
+namespace android::hardware::usb
 {
 	class UsbDeviceConnection;
 }
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class ParcelFileDescriptor;
 }
-namespace __jni_impl::java::util
+namespace java::util
 {
 	class HashMap;
 }
 
-namespace __jni_impl::android::hardware::usb
+namespace android::hardware::usb
 {
 	class UsbManager : public __JniBaseClass
 	{
@@ -41,173 +41,19 @@ namespace __jni_impl::android::hardware::usb
 		static jstring EXTRA_DEVICE();
 		static jstring EXTRA_PERMISSION_GRANTED();
 		
+		UsbManager(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		UsbManager() = default;
 		
 		// Methods
 		jarray getAccessoryList();
 		QAndroidJniObject getDeviceList();
-		jboolean hasPermission(__jni_impl::android::hardware::usb::UsbAccessory arg0);
-		jboolean hasPermission(__jni_impl::android::hardware::usb::UsbDevice arg0);
-		QAndroidJniObject openAccessory(__jni_impl::android::hardware::usb::UsbAccessory arg0);
-		QAndroidJniObject openDevice(__jni_impl::android::hardware::usb::UsbDevice arg0);
-		void requestPermission(__jni_impl::android::hardware::usb::UsbAccessory arg0, __jni_impl::android::app::PendingIntent arg1);
-		void requestPermission(__jni_impl::android::hardware::usb::UsbDevice arg0, __jni_impl::android::app::PendingIntent arg1);
-	};
-} // namespace __jni_impl::android::hardware::usb
-
-#include "../../app/PendingIntent.hpp"
-#include "./UsbAccessory.hpp"
-#include "./UsbDevice.hpp"
-#include "./UsbDeviceConnection.hpp"
-#include "../../os/ParcelFileDescriptor.hpp"
-#include "../../../java/util/HashMap.hpp"
-
-namespace __jni_impl::android::hardware::usb
-{
-	// Fields
-	jstring UsbManager::ACTION_USB_ACCESSORY_ATTACHED()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.hardware.usb.UsbManager",
-			"ACTION_USB_ACCESSORY_ATTACHED",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring UsbManager::ACTION_USB_ACCESSORY_DETACHED()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.hardware.usb.UsbManager",
-			"ACTION_USB_ACCESSORY_DETACHED",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring UsbManager::ACTION_USB_DEVICE_ATTACHED()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.hardware.usb.UsbManager",
-			"ACTION_USB_DEVICE_ATTACHED",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring UsbManager::ACTION_USB_DEVICE_DETACHED()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.hardware.usb.UsbManager",
-			"ACTION_USB_DEVICE_DETACHED",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring UsbManager::EXTRA_ACCESSORY()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.hardware.usb.UsbManager",
-			"EXTRA_ACCESSORY",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring UsbManager::EXTRA_DEVICE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.hardware.usb.UsbManager",
-			"EXTRA_DEVICE",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring UsbManager::EXTRA_PERMISSION_GRANTED()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.hardware.usb.UsbManager",
-			"EXTRA_PERMISSION_GRANTED",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	
-	// Constructors
-	void UsbManager::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.hardware.usb.UsbManager",
-			"(V)V");
-	}
-	
-	// Methods
-	jarray UsbManager::getAccessoryList()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessoryList",
-			"()[Landroid/hardware/usb/UsbAccessory;"
-		).object<jarray>();
-	}
-	QAndroidJniObject UsbManager::getDeviceList()
-	{
-		return __thiz.callObjectMethod(
-			"getDeviceList",
-			"()Ljava/util/HashMap;"
-		);
-	}
-	jboolean UsbManager::hasPermission(__jni_impl::android::hardware::usb::UsbAccessory arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasPermission",
-			"(Landroid/hardware/usb/UsbAccessory;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean UsbManager::hasPermission(__jni_impl::android::hardware::usb::UsbDevice arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasPermission",
-			"(Landroid/hardware/usb/UsbDevice;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject UsbManager::openAccessory(__jni_impl::android::hardware::usb::UsbAccessory arg0)
-	{
-		return __thiz.callObjectMethod(
-			"openAccessory",
-			"(Landroid/hardware/usb/UsbAccessory;)Landroid/os/ParcelFileDescriptor;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject UsbManager::openDevice(__jni_impl::android::hardware::usb::UsbDevice arg0)
-	{
-		return __thiz.callObjectMethod(
-			"openDevice",
-			"(Landroid/hardware/usb/UsbDevice;)Landroid/hardware/usb/UsbDeviceConnection;",
-			arg0.__jniObject().object()
-		);
-	}
-	void UsbManager::requestPermission(__jni_impl::android::hardware::usb::UsbAccessory arg0, __jni_impl::android::app::PendingIntent arg1)
-	{
-		__thiz.callMethod<void>(
-			"requestPermission",
-			"(Landroid/hardware/usb/UsbAccessory;Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void UsbManager::requestPermission(__jni_impl::android::hardware::usb::UsbDevice arg0, __jni_impl::android::app::PendingIntent arg1)
-	{
-		__thiz.callMethod<void>(
-			"requestPermission",
-			"(Landroid/hardware/usb/UsbDevice;Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::android::hardware::usb
-
-namespace android::hardware::usb
-{
-	class UsbManager : public __jni_impl::android::hardware::usb::UsbManager
-	{
-	public:
-		UsbManager(QAndroidJniObject obj) { __thiz = obj; }
-		UsbManager()
-		{
-			__constructor();
-		}
+		jboolean hasPermission(android::hardware::usb::UsbAccessory arg0);
+		jboolean hasPermission(android::hardware::usb::UsbDevice arg0);
+		QAndroidJniObject openAccessory(android::hardware::usb::UsbAccessory arg0);
+		QAndroidJniObject openDevice(android::hardware::usb::UsbDevice arg0);
+		void requestPermission(android::hardware::usb::UsbAccessory arg0, android::app::PendingIntent arg1);
+		void requestPermission(android::hardware::usb::UsbDevice arg0, android::app::PendingIntent arg1);
 	};
 } // namespace android::hardware::usb
 

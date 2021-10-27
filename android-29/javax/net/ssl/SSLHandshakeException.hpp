@@ -6,58 +6,20 @@
 #include "./SSLException.hpp"
 
 
-namespace __jni_impl::javax::net::ssl
+namespace javax::net::ssl
 {
-	class SSLHandshakeException : public __jni_impl::javax::net::ssl::SSLException
+	class SSLHandshakeException : public javax::net::ssl::SSLException
 	{
 	public:
 		// Fields
 		
+		SSLHandshakeException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		SSLHandshakeException(jstring &arg0);
+		SSLHandshakeException(const QString &arg0);
+		SSLHandshakeException() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::javax::net::ssl
-
-
-namespace __jni_impl::javax::net::ssl
-{
-	// Fields
-	
-	// Constructors
-	void SSLHandshakeException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.net.ssl.SSLHandshakeException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void SSLHandshakeException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.net.ssl.SSLHandshakeException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::javax::net::ssl
-
-namespace javax::net::ssl
-{
-	class SSLHandshakeException : public __jni_impl::javax::net::ssl::SSLHandshakeException
-	{
-	public:
-		SSLHandshakeException(QAndroidJniObject obj) { __thiz = obj; }
-		SSLHandshakeException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace javax::net::ssl
 

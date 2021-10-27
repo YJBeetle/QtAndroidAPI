@@ -3,77 +3,22 @@
 #include "../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::net
+namespace android::net
 {
 	class Credentials : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		Credentials(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jint arg0, jint arg1, jint arg2);
+		Credentials(jint &arg0, jint &arg1, jint &arg2);
+		Credentials() = default;
 		
 		// Methods
 		jint getGid();
 		jint getPid();
 		jint getUid();
-	};
-} // namespace __jni_impl::android::net
-
-
-namespace __jni_impl::android::net
-{
-	// Fields
-	
-	// Constructors
-	void Credentials::__constructor(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.net.Credentials",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	
-	// Methods
-	jint Credentials::getGid()
-	{
-		return __thiz.callMethod<jint>(
-			"getGid",
-			"()I"
-		);
-	}
-	jint Credentials::getPid()
-	{
-		return __thiz.callMethod<jint>(
-			"getPid",
-			"()I"
-		);
-	}
-	jint Credentials::getUid()
-	{
-		return __thiz.callMethod<jint>(
-			"getUid",
-			"()I"
-		);
-	}
-} // namespace __jni_impl::android::net
-
-namespace android::net
-{
-	class Credentials : public __jni_impl::android::net::Credentials
-	{
-	public:
-		Credentials(QAndroidJniObject obj) { __thiz = obj; }
-		Credentials(jint arg0, jint arg1, jint arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
-		}
 	};
 } // namespace android::net
 

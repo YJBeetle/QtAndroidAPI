@@ -6,47 +6,18 @@
 #include "../../lang/IllegalStateException.hpp"
 
 
-namespace __jni_impl::java::nio::channels
+namespace java::nio::channels
 {
-	class CancelledKeyException : public __jni_impl::java::lang::IllegalStateException
+	class CancelledKeyException : public java::lang::IllegalStateException
 	{
 	public:
 		// Fields
 		
+		CancelledKeyException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		CancelledKeyException();
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::nio::channels
-
-
-namespace __jni_impl::java::nio::channels
-{
-	// Fields
-	
-	// Constructors
-	void CancelledKeyException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.channels.CancelledKeyException",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::nio::channels
-
-namespace java::nio::channels
-{
-	class CancelledKeyException : public __jni_impl::java::nio::channels::CancelledKeyException
-	{
-	public:
-		CancelledKeyException(QAndroidJniObject obj) { __thiz = obj; }
-		CancelledKeyException()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::nio::channels
 

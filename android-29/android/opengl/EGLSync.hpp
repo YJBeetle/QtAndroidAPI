@@ -4,55 +4,19 @@
 #include "./EGLObjectHandle.hpp"
 
 
-namespace __jni_impl::android::opengl
+namespace android::opengl
 {
-	class EGLSync : public __jni_impl::android::opengl::EGLObjectHandle
+	class EGLSync : public android::opengl::EGLObjectHandle
 	{
 	public:
 		// Fields
 		
+		EGLSync(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		EGLSync() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);
-	};
-} // namespace __jni_impl::android::opengl
-
-
-namespace __jni_impl::android::opengl
-{
-	// Fields
-	
-	// Constructors
-	void EGLSync::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.opengl.EGLSync",
-			"(V)V");
-	}
-	
-	// Methods
-	jboolean EGLSync::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-} // namespace __jni_impl::android::opengl
-
-namespace android::opengl
-{
-	class EGLSync : public __jni_impl::android::opengl::EGLSync
-	{
-	public:
-		EGLSync(QAndroidJniObject obj) { __thiz = obj; }
-		EGLSync()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::opengl
 

@@ -3,14 +3,14 @@
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Enum.hpp"
 
-namespace __jni_impl::android::icu::text
+namespace android::icu::text
 {
 	class DisplayContext_Type;
 }
 
-namespace __jni_impl::android::icu::text
+namespace android::icu::text
 {
-	class DisplayContext : public __jni_impl::java::lang::Enum
+	class DisplayContext : public java::lang::Enum
 	{
 	public:
 		// Fields
@@ -26,8 +26,9 @@ namespace __jni_impl::android::icu::text
 		static QAndroidJniObject STANDARD_NAMES();
 		static QAndroidJniObject SUBSTITUTE();
 		
+		DisplayContext(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		DisplayContext() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);
@@ -35,164 +36,6 @@ namespace __jni_impl::android::icu::text
 		static jarray values();
 		QAndroidJniObject type();
 		jint value();
-	};
-} // namespace __jni_impl::android::icu::text
-
-#include "./DisplayContext_Type.hpp"
-
-namespace __jni_impl::android::icu::text
-{
-	// Fields
-	QAndroidJniObject DisplayContext::CAPITALIZATION_FOR_BEGINNING_OF_SENTENCE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.DisplayContext",
-			"CAPITALIZATION_FOR_BEGINNING_OF_SENTENCE",
-			"Landroid/icu/text/DisplayContext;"
-		);
-	}
-	QAndroidJniObject DisplayContext::CAPITALIZATION_FOR_MIDDLE_OF_SENTENCE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.DisplayContext",
-			"CAPITALIZATION_FOR_MIDDLE_OF_SENTENCE",
-			"Landroid/icu/text/DisplayContext;"
-		);
-	}
-	QAndroidJniObject DisplayContext::CAPITALIZATION_FOR_STANDALONE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.DisplayContext",
-			"CAPITALIZATION_FOR_STANDALONE",
-			"Landroid/icu/text/DisplayContext;"
-		);
-	}
-	QAndroidJniObject DisplayContext::CAPITALIZATION_FOR_UI_LIST_OR_MENU()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.DisplayContext",
-			"CAPITALIZATION_FOR_UI_LIST_OR_MENU",
-			"Landroid/icu/text/DisplayContext;"
-		);
-	}
-	QAndroidJniObject DisplayContext::CAPITALIZATION_NONE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.DisplayContext",
-			"CAPITALIZATION_NONE",
-			"Landroid/icu/text/DisplayContext;"
-		);
-	}
-	QAndroidJniObject DisplayContext::DIALECT_NAMES()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.DisplayContext",
-			"DIALECT_NAMES",
-			"Landroid/icu/text/DisplayContext;"
-		);
-	}
-	QAndroidJniObject DisplayContext::LENGTH_FULL()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.DisplayContext",
-			"LENGTH_FULL",
-			"Landroid/icu/text/DisplayContext;"
-		);
-	}
-	QAndroidJniObject DisplayContext::LENGTH_SHORT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.DisplayContext",
-			"LENGTH_SHORT",
-			"Landroid/icu/text/DisplayContext;"
-		);
-	}
-	QAndroidJniObject DisplayContext::NO_SUBSTITUTE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.DisplayContext",
-			"NO_SUBSTITUTE",
-			"Landroid/icu/text/DisplayContext;"
-		);
-	}
-	QAndroidJniObject DisplayContext::STANDARD_NAMES()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.DisplayContext",
-			"STANDARD_NAMES",
-			"Landroid/icu/text/DisplayContext;"
-		);
-	}
-	QAndroidJniObject DisplayContext::SUBSTITUTE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.DisplayContext",
-			"SUBSTITUTE",
-			"Landroid/icu/text/DisplayContext;"
-		);
-	}
-	
-	// Constructors
-	void DisplayContext::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.DisplayContext",
-			"(V)V");
-	}
-	
-	// Methods
-	QAndroidJniObject DisplayContext::valueOf(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.DisplayContext",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/DisplayContext;",
-			arg0
-		);
-	}
-	QAndroidJniObject DisplayContext::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.DisplayContext",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/DisplayContext;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jarray DisplayContext::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.DisplayContext",
-			"values",
-			"()[Landroid/icu/text/DisplayContext;"
-		).object<jarray>();
-	}
-	QAndroidJniObject DisplayContext::type()
-	{
-		return __thiz.callObjectMethod(
-			"type",
-			"()Landroid/icu/text/DisplayContext$Type;"
-		);
-	}
-	jint DisplayContext::value()
-	{
-		return __thiz.callMethod<jint>(
-			"value",
-			"()I"
-		);
-	}
-} // namespace __jni_impl::android::icu::text
-
-namespace android::icu::text
-{
-	class DisplayContext : public __jni_impl::android::icu::text::DisplayContext
-	{
-	public:
-		DisplayContext(QAndroidJniObject obj) { __thiz = obj; }
-		DisplayContext()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::icu::text
 

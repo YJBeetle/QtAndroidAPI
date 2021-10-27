@@ -3,7 +3,7 @@
 #include "../../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::media::audiofx
+namespace android::media::audiofx
 {
 	class BassBoost_Settings : public __JniBaseClass
 	{
@@ -11,77 +11,14 @@ namespace __jni_impl::android::media::audiofx
 		// Fields
 		jshort strength();
 		
+		BassBoost_Settings(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		BassBoost_Settings();
+		BassBoost_Settings(jstring &arg0);
+		BassBoost_Settings(const QString &arg0);
 		
 		// Methods
 		jstring toString();
-	};
-} // namespace __jni_impl::android::media::audiofx
-
-
-namespace __jni_impl::android::media::audiofx
-{
-	// Fields
-	jshort BassBoost_Settings::strength()
-	{
-		return __thiz.getField<jshort>(
-			"strength"
-		);
-	}
-	
-	// Constructors
-	void BassBoost_Settings::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.audiofx.BassBoost$Settings",
-			"()V"
-		);
-	}
-	void BassBoost_Settings::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.audiofx.BassBoost$Settings",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void BassBoost_Settings::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.audiofx.BassBoost$Settings",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-	jstring BassBoost_Settings::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-} // namespace __jni_impl::android::media::audiofx
-
-namespace android::media::audiofx
-{
-	class BassBoost_Settings : public __jni_impl::android::media::audiofx::BassBoost_Settings
-	{
-	public:
-		BassBoost_Settings(QAndroidJniObject obj) { __thiz = obj; }
-		BassBoost_Settings()
-		{
-			__constructor();
-		}
-		BassBoost_Settings(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace android::media::audiofx
 

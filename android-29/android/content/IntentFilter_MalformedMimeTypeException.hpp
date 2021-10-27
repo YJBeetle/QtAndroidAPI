@@ -5,70 +5,20 @@
 #include "../util/AndroidException.hpp"
 
 
-namespace __jni_impl::android::content
+namespace android::content
 {
-	class IntentFilter_MalformedMimeTypeException : public __jni_impl::android::util::AndroidException
+	class IntentFilter_MalformedMimeTypeException : public android::util::AndroidException
 	{
 	public:
 		// Fields
 		
+		IntentFilter_MalformedMimeTypeException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		IntentFilter_MalformedMimeTypeException();
+		IntentFilter_MalformedMimeTypeException(jstring &arg0);
+		IntentFilter_MalformedMimeTypeException(const QString &arg0);
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::content
-
-
-namespace __jni_impl::android::content
-{
-	// Fields
-	
-	// Constructors
-	void IntentFilter_MalformedMimeTypeException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.IntentFilter$MalformedMimeTypeException",
-			"()V"
-		);
-	}
-	void IntentFilter_MalformedMimeTypeException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.IntentFilter$MalformedMimeTypeException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void IntentFilter_MalformedMimeTypeException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.IntentFilter$MalformedMimeTypeException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::content
-
-namespace android::content
-{
-	class IntentFilter_MalformedMimeTypeException : public __jni_impl::android::content::IntentFilter_MalformedMimeTypeException
-	{
-	public:
-		IntentFilter_MalformedMimeTypeException(QAndroidJniObject obj) { __thiz = obj; }
-		IntentFilter_MalformedMimeTypeException()
-		{
-			__constructor();
-		}
-		IntentFilter_MalformedMimeTypeException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace android::content
 

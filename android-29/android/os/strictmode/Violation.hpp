@@ -3,46 +3,18 @@
 #include "../../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::os::strictmode
+namespace android::os::strictmode
 {
 	class Violation : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		Violation(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		Violation() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::os::strictmode
-
-
-namespace __jni_impl::android::os::strictmode
-{
-	// Fields
-	
-	// Constructors
-	void Violation::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.strictmode.Violation",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::os::strictmode
-
-namespace android::os::strictmode
-{
-	class Violation : public __jni_impl::android::os::strictmode::Violation
-	{
-	public:
-		Violation(QAndroidJniObject obj) { __thiz = obj; }
-		Violation()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::os::strictmode
 

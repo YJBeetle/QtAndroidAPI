@@ -4,62 +4,20 @@
 #include "../SelectionKey.hpp"
 
 
-namespace __jni_impl::java::nio::channels::spi
+namespace java::nio::channels::spi
 {
-	class AbstractSelectionKey : public __jni_impl::java::nio::channels::SelectionKey
+	class AbstractSelectionKey : public java::nio::channels::SelectionKey
 	{
 	public:
 		// Fields
 		
+		AbstractSelectionKey(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		AbstractSelectionKey() = default;
 		
 		// Methods
 		void cancel();
 		jboolean isValid();
-	};
-} // namespace __jni_impl::java::nio::channels::spi
-
-
-namespace __jni_impl::java::nio::channels::spi
-{
-	// Fields
-	
-	// Constructors
-	void AbstractSelectionKey::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.channels.spi.AbstractSelectionKey",
-			"(V)V");
-	}
-	
-	// Methods
-	void AbstractSelectionKey::cancel()
-	{
-		__thiz.callMethod<void>(
-			"cancel",
-			"()V"
-		);
-	}
-	jboolean AbstractSelectionKey::isValid()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isValid",
-			"()Z"
-		);
-	}
-} // namespace __jni_impl::java::nio::channels::spi
-
-namespace java::nio::channels::spi
-{
-	class AbstractSelectionKey : public __jni_impl::java::nio::channels::spi::AbstractSelectionKey
-	{
-	public:
-		AbstractSelectionKey(QAndroidJniObject obj) { __thiz = obj; }
-		AbstractSelectionKey()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::nio::channels::spi
 

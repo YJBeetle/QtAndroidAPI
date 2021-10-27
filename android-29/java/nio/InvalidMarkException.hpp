@@ -6,47 +6,18 @@
 #include "../lang/IllegalStateException.hpp"
 
 
-namespace __jni_impl::java::nio
+namespace java::nio
 {
-	class InvalidMarkException : public __jni_impl::java::lang::IllegalStateException
+	class InvalidMarkException : public java::lang::IllegalStateException
 	{
 	public:
 		// Fields
 		
+		InvalidMarkException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		InvalidMarkException();
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::nio
-
-
-namespace __jni_impl::java::nio
-{
-	// Fields
-	
-	// Constructors
-	void InvalidMarkException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.InvalidMarkException",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::nio
-
-namespace java::nio
-{
-	class InvalidMarkException : public __jni_impl::java::nio::InvalidMarkException
-	{
-	public:
-		InvalidMarkException(QAndroidJniObject obj) { __thiz = obj; }
-		InvalidMarkException()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::nio
 

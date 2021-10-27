@@ -2,12 +2,12 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net
+namespace android::net
 {
 	class Uri;
 }
 
-namespace __jni_impl::android::provider
+namespace android::provider
 {
 	class ContactsContract_DataUsageFeedback : public __JniBaseClass
 	{
@@ -20,89 +20,11 @@ namespace __jni_impl::android::provider
 		static jstring USAGE_TYPE_LONG_TEXT();
 		static jstring USAGE_TYPE_SHORT_TEXT();
 		
+		ContactsContract_DataUsageFeedback(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		ContactsContract_DataUsageFeedback();
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::provider
-
-#include "../net/Uri.hpp"
-
-namespace __jni_impl::android::provider
-{
-	// Fields
-	QAndroidJniObject ContactsContract_DataUsageFeedback::DELETE_USAGE_URI()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.ContactsContract$DataUsageFeedback",
-			"DELETE_USAGE_URI",
-			"Landroid/net/Uri;"
-		);
-	}
-	QAndroidJniObject ContactsContract_DataUsageFeedback::FEEDBACK_URI()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.ContactsContract$DataUsageFeedback",
-			"FEEDBACK_URI",
-			"Landroid/net/Uri;"
-		);
-	}
-	jstring ContactsContract_DataUsageFeedback::USAGE_TYPE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.ContactsContract$DataUsageFeedback",
-			"USAGE_TYPE",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring ContactsContract_DataUsageFeedback::USAGE_TYPE_CALL()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.ContactsContract$DataUsageFeedback",
-			"USAGE_TYPE_CALL",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring ContactsContract_DataUsageFeedback::USAGE_TYPE_LONG_TEXT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.ContactsContract$DataUsageFeedback",
-			"USAGE_TYPE_LONG_TEXT",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring ContactsContract_DataUsageFeedback::USAGE_TYPE_SHORT_TEXT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.ContactsContract$DataUsageFeedback",
-			"USAGE_TYPE_SHORT_TEXT",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	
-	// Constructors
-	void ContactsContract_DataUsageFeedback::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.provider.ContactsContract$DataUsageFeedback",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::provider
-
-namespace android::provider
-{
-	class ContactsContract_DataUsageFeedback : public __jni_impl::android::provider::ContactsContract_DataUsageFeedback
-	{
-	public:
-		ContactsContract_DataUsageFeedback(QAndroidJniObject obj) { __thiz = obj; }
-		ContactsContract_DataUsageFeedback()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::provider
 

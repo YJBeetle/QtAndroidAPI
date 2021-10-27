@@ -3,47 +3,18 @@
 #include "../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::graphics
+namespace android::graphics
 {
 	class MaskFilter : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		MaskFilter(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		MaskFilter();
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::graphics
-
-
-namespace __jni_impl::android::graphics
-{
-	// Fields
-	
-	// Constructors
-	void MaskFilter::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.MaskFilter",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::graphics
-
-namespace android::graphics
-{
-	class MaskFilter : public __jni_impl::android::graphics::MaskFilter
-	{
-	public:
-		MaskFilter(QAndroidJniObject obj) { __thiz = obj; }
-		MaskFilter()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::graphics
 

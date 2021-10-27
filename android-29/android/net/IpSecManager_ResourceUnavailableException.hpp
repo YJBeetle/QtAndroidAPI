@@ -5,46 +5,18 @@
 #include "../util/AndroidException.hpp"
 
 
-namespace __jni_impl::android::net
+namespace android::net
 {
-	class IpSecManager_ResourceUnavailableException : public __jni_impl::android::util::AndroidException
+	class IpSecManager_ResourceUnavailableException : public android::util::AndroidException
 	{
 	public:
 		// Fields
 		
+		IpSecManager_ResourceUnavailableException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		IpSecManager_ResourceUnavailableException() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::net
-
-
-namespace __jni_impl::android::net
-{
-	// Fields
-	
-	// Constructors
-	void IpSecManager_ResourceUnavailableException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.net.IpSecManager$ResourceUnavailableException",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::net
-
-namespace android::net
-{
-	class IpSecManager_ResourceUnavailableException : public __jni_impl::android::net::IpSecManager_ResourceUnavailableException
-	{
-	public:
-		IpSecManager_ResourceUnavailableException(QAndroidJniObject obj) { __thiz = obj; }
-		IpSecManager_ResourceUnavailableException()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::net
 
