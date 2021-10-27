@@ -6,47 +6,18 @@
 #include "../../lang/IllegalStateException.hpp"
 
 
-namespace __jni_impl::java::nio::file
+namespace java::nio::file
 {
-	class ClosedWatchServiceException : public __jni_impl::java::lang::IllegalStateException
+	class ClosedWatchServiceException : public java::lang::IllegalStateException
 	{
 	public:
 		// Fields
 		
+		ClosedWatchServiceException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		ClosedWatchServiceException();
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::nio::file
-
-
-namespace __jni_impl::java::nio::file
-{
-	// Fields
-	
-	// Constructors
-	void ClosedWatchServiceException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.file.ClosedWatchServiceException",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::nio::file
-
-namespace java::nio::file
-{
-	class ClosedWatchServiceException : public __jni_impl::java::nio::file::ClosedWatchServiceException
-	{
-	public:
-		ClosedWatchServiceException(QAndroidJniObject obj) { __thiz = obj; }
-		ClosedWatchServiceException()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::nio::file
 

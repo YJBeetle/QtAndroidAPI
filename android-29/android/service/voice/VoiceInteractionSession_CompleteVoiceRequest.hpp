@@ -3,82 +3,30 @@
 #include "../../../__JniBaseClass.hpp"
 #include "./VoiceInteractionSession_Request.hpp"
 
-namespace __jni_impl::android::app
+namespace android::app
 {
 	class VoiceInteractor_Prompt;
 }
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class Bundle;
 }
 
-namespace __jni_impl::android::service::voice
+namespace android::service::voice
 {
-	class VoiceInteractionSession_CompleteVoiceRequest : public __jni_impl::android::service::voice::VoiceInteractionSession_Request
+	class VoiceInteractionSession_CompleteVoiceRequest : public android::service::voice::VoiceInteractionSession_Request
 	{
 	public:
 		// Fields
 		
+		VoiceInteractionSession_CompleteVoiceRequest(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		VoiceInteractionSession_CompleteVoiceRequest() = default;
 		
 		// Methods
 		jstring getMessage();
 		QAndroidJniObject getVoicePrompt();
-		void sendCompleteResult(__jni_impl::android::os::Bundle arg0);
-	};
-} // namespace __jni_impl::android::service::voice
-
-#include "../../app/VoiceInteractor_Prompt.hpp"
-#include "../../os/Bundle.hpp"
-
-namespace __jni_impl::android::service::voice
-{
-	// Fields
-	
-	// Constructors
-	void VoiceInteractionSession_CompleteVoiceRequest::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.service.voice.VoiceInteractionSession$CompleteVoiceRequest",
-			"(V)V");
-	}
-	
-	// Methods
-	jstring VoiceInteractionSession_CompleteVoiceRequest::getMessage()
-	{
-		return __thiz.callObjectMethod(
-			"getMessage",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	QAndroidJniObject VoiceInteractionSession_CompleteVoiceRequest::getVoicePrompt()
-	{
-		return __thiz.callObjectMethod(
-			"getVoicePrompt",
-			"()Landroid/app/VoiceInteractor$Prompt;"
-		);
-	}
-	void VoiceInteractionSession_CompleteVoiceRequest::sendCompleteResult(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"sendCompleteResult",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::android::service::voice
-
-namespace android::service::voice
-{
-	class VoiceInteractionSession_CompleteVoiceRequest : public __jni_impl::android::service::voice::VoiceInteractionSession_CompleteVoiceRequest
-	{
-	public:
-		VoiceInteractionSession_CompleteVoiceRequest(QAndroidJniObject obj) { __thiz = obj; }
-		VoiceInteractionSession_CompleteVoiceRequest()
-		{
-			__constructor();
-		}
+		void sendCompleteResult(android::os::Bundle arg0);
 	};
 } // namespace android::service::voice
 

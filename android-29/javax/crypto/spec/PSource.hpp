@@ -3,54 +3,19 @@
 #include "../../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::javax::crypto::spec
+namespace javax::crypto::spec
 {
 	class PSource : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		PSource(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		PSource() = default;
 		
 		// Methods
 		jstring getAlgorithm();
-	};
-} // namespace __jni_impl::javax::crypto::spec
-
-
-namespace __jni_impl::javax::crypto::spec
-{
-	// Fields
-	
-	// Constructors
-	void PSource::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"javax.crypto.spec.PSource",
-			"(V)V");
-	}
-	
-	// Methods
-	jstring PSource::getAlgorithm()
-	{
-		return __thiz.callObjectMethod(
-			"getAlgorithm",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-} // namespace __jni_impl::javax::crypto::spec
-
-namespace javax::crypto::spec
-{
-	class PSource : public __jni_impl::javax::crypto::spec::PSource
-	{
-	public:
-		PSource(QAndroidJniObject obj) { __thiz = obj; }
-		PSource()
-		{
-			__constructor();
-		}
 	};
 } // namespace javax::crypto::spec
 

@@ -5,88 +5,27 @@
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class Intent;
 }
 
-namespace __jni_impl::android::service::media
+namespace android::service::media
 {
-	class CameraPrewarmService : public __jni_impl::android::app::Service
+	class CameraPrewarmService : public android::app::Service
 	{
 	public:
 		// Fields
 		
+		CameraPrewarmService(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		CameraPrewarmService();
 		
 		// Methods
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		QAndroidJniObject onBind(android::content::Intent arg0);
 		void onCooldown(jboolean arg0);
 		void onPrewarm();
-		jboolean onUnbind(__jni_impl::android::content::Intent arg0);
-	};
-} // namespace __jni_impl::android::service::media
-
-#include "../../content/Intent.hpp"
-
-namespace __jni_impl::android::service::media
-{
-	// Fields
-	
-	// Constructors
-	void CameraPrewarmService::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.service.media.CameraPrewarmService",
-			"()V"
-		);
-	}
-	
-	// Methods
-	QAndroidJniObject CameraPrewarmService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
-		);
-	}
-	void CameraPrewarmService::onCooldown(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"onCooldown",
-			"(Z)V",
-			arg0
-		);
-	}
-	void CameraPrewarmService::onPrewarm()
-	{
-		__thiz.callMethod<void>(
-			"onPrewarm",
-			"()V"
-		);
-	}
-	jboolean CameraPrewarmService::onUnbind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onUnbind",
-			"(Landroid/content/Intent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::android::service::media
-
-namespace android::service::media
-{
-	class CameraPrewarmService : public __jni_impl::android::service::media::CameraPrewarmService
-	{
-	public:
-		CameraPrewarmService(QAndroidJniObject obj) { __thiz = obj; }
-		CameraPrewarmService()
-		{
-			__constructor();
-		}
+		jboolean onUnbind(android::content::Intent arg0);
 	};
 } // namespace android::service::media
 

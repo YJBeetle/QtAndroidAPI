@@ -2,16 +2,16 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::net
+namespace android::net
 {
 	class Uri;
 }
 
-namespace __jni_impl::android::provider
+namespace android::provider
 {
 	class Telephony_Sms : public __JniBaseClass
 	{
@@ -20,67 +20,12 @@ namespace __jni_impl::android::provider
 		static QAndroidJniObject CONTENT_URI();
 		static jstring DEFAULT_SORT_ORDER();
 		
+		Telephony_Sms(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		Telephony_Sms() = default;
 		
 		// Methods
-		static jstring getDefaultSmsPackage(__jni_impl::android::content::Context arg0);
-	};
-} // namespace __jni_impl::android::provider
-
-#include "../content/Context.hpp"
-#include "../net/Uri.hpp"
-
-namespace __jni_impl::android::provider
-{
-	// Fields
-	QAndroidJniObject Telephony_Sms::CONTENT_URI()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Telephony$Sms",
-			"CONTENT_URI",
-			"Landroid/net/Uri;"
-		);
-	}
-	jstring Telephony_Sms::DEFAULT_SORT_ORDER()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.Telephony$Sms",
-			"DEFAULT_SORT_ORDER",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	
-	// Constructors
-	void Telephony_Sms::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.provider.Telephony$Sms",
-			"(V)V");
-	}
-	
-	// Methods
-	jstring Telephony_Sms::getDefaultSmsPackage(__jni_impl::android::content::Context arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Telephony$Sms",
-			"getDefaultSmsPackage",
-			"(Landroid/content/Context;)Ljava/lang/String;",
-			arg0.__jniObject().object()
-		).object<jstring>();
-	}
-} // namespace __jni_impl::android::provider
-
-namespace android::provider
-{
-	class Telephony_Sms : public __jni_impl::android::provider::Telephony_Sms
-	{
-	public:
-		Telephony_Sms(QAndroidJniObject obj) { __thiz = obj; }
-		Telephony_Sms()
-		{
-			__constructor();
-		}
+		static jstring getDefaultSmsPackage(android::content::Context arg0);
 	};
 } // namespace android::provider
 

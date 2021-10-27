@@ -2,12 +2,12 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class Parcel;
 }
 
-namespace __jni_impl::android::app::admin
+namespace android::app::admin
 {
 	class NetworkEvent : public __JniBaseClass
 	{
@@ -15,90 +15,16 @@ namespace __jni_impl::android::app::admin
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		NetworkEvent(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		NetworkEvent() = default;
 		
 		// Methods
 		jint describeContents();
 		jlong getId();
 		jstring getPackageName();
 		jlong getTimestamp();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-	};
-} // namespace __jni_impl::android::app::admin
-
-#include "../../os/Parcel.hpp"
-
-namespace __jni_impl::android::app::admin
-{
-	// Fields
-	QAndroidJniObject NetworkEvent::CREATOR()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.app.admin.NetworkEvent",
-			"CREATOR",
-			"Landroid/os/Parcelable$Creator;"
-		);
-	}
-	
-	// Constructors
-	void NetworkEvent::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.admin.NetworkEvent",
-			"(V)V");
-	}
-	
-	// Methods
-	jint NetworkEvent::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	jlong NetworkEvent::getId()
-	{
-		return __thiz.callMethod<jlong>(
-			"getId",
-			"()J"
-		);
-	}
-	jstring NetworkEvent::getPackageName()
-	{
-		return __thiz.callObjectMethod(
-			"getPackageName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jlong NetworkEvent::getTimestamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimestamp",
-			"()J"
-		);
-	}
-	void NetworkEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-} // namespace __jni_impl::android::app::admin
-
-namespace android::app::admin
-{
-	class NetworkEvent : public __jni_impl::android::app::admin::NetworkEvent
-	{
-	public:
-		NetworkEvent(QAndroidJniObject obj) { __thiz = obj; }
-		NetworkEvent()
-		{
-			__constructor();
-		}
+		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::app::admin
 

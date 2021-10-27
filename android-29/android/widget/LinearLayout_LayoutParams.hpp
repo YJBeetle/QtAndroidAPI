@@ -4,175 +4,41 @@
 #include "../view/ViewGroup_LayoutParams.hpp"
 #include "../view/ViewGroup_MarginLayoutParams.hpp"
 
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::view
+namespace android::view
 {
 	class ViewGroup_LayoutParams;
 }
-namespace __jni_impl::android::view
+namespace android::view
 {
 	class ViewGroup_MarginLayoutParams;
 }
 
-namespace __jni_impl::android::widget
+namespace android::widget
 {
-	class LinearLayout_LayoutParams : public __jni_impl::android::view::ViewGroup_MarginLayoutParams
+	class LinearLayout_LayoutParams : public android::view::ViewGroup_MarginLayoutParams
 	{
 	public:
 		// Fields
 		jint gravity();
 		jfloat weight();
 		
+		LinearLayout_LayoutParams(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(__jni_impl::android::view::ViewGroup_LayoutParams arg0);
-		void __constructor(__jni_impl::android::view::ViewGroup_MarginLayoutParams arg0);
-		void __constructor(__jni_impl::android::widget::LinearLayout_LayoutParams arg0);
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
-		void __constructor(jint arg0, jint arg1);
-		void __constructor(jint arg0, jint arg1, jfloat arg2);
+		LinearLayout_LayoutParams(android::view::ViewGroup_LayoutParams &arg0);
+		LinearLayout_LayoutParams(android::view::ViewGroup_MarginLayoutParams &arg0);
+		LinearLayout_LayoutParams(android::widget::LinearLayout_LayoutParams &arg0);
+		LinearLayout_LayoutParams(android::content::Context &arg0, __JniBaseClass &arg1);
+		LinearLayout_LayoutParams(jint &arg0, jint &arg1);
+		LinearLayout_LayoutParams(jint &arg0, jint &arg1, jfloat &arg2);
+		LinearLayout_LayoutParams() = default;
 		
 		// Methods
 		jstring debug(jstring arg0);
 		jstring debug(const QString &arg0);
-	};
-} // namespace __jni_impl::android::widget
-
-#include "../content/Context.hpp"
-#include "../view/ViewGroup_LayoutParams.hpp"
-#include "../view/ViewGroup_MarginLayoutParams.hpp"
-
-namespace __jni_impl::android::widget
-{
-	// Fields
-	jint LinearLayout_LayoutParams::gravity()
-	{
-		return __thiz.getField<jint>(
-			"gravity"
-		);
-	}
-	jfloat LinearLayout_LayoutParams::weight()
-	{
-		return __thiz.getField<jfloat>(
-			"weight"
-		);
-	}
-	
-	// Constructors
-	void LinearLayout_LayoutParams::__constructor(__jni_impl::android::view::ViewGroup_LayoutParams arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.widget.LinearLayout$LayoutParams",
-			"(Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void LinearLayout_LayoutParams::__constructor(__jni_impl::android::view::ViewGroup_MarginLayoutParams arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.widget.LinearLayout$LayoutParams",
-			"(Landroid/view/ViewGroup$MarginLayoutParams;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void LinearLayout_LayoutParams::__constructor(__jni_impl::android::widget::LinearLayout_LayoutParams arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.widget.LinearLayout$LayoutParams",
-			"(Landroid/widget/LinearLayout$LayoutParams;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void LinearLayout_LayoutParams::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.widget.LinearLayout$LayoutParams",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void LinearLayout_LayoutParams::__constructor(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.widget.LinearLayout$LayoutParams",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void LinearLayout_LayoutParams::__constructor(jint arg0, jint arg1, jfloat arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.widget.LinearLayout$LayoutParams",
-			"(IIF)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	
-	// Methods
-	jstring LinearLayout_LayoutParams::debug(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"debug",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jstring LinearLayout_LayoutParams::debug(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"debug",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
-} // namespace __jni_impl::android::widget
-
-namespace android::widget
-{
-	class LinearLayout_LayoutParams : public __jni_impl::android::widget::LinearLayout_LayoutParams
-	{
-	public:
-		LinearLayout_LayoutParams(QAndroidJniObject obj) { __thiz = obj; }
-		LinearLayout_LayoutParams(__jni_impl::android::view::ViewGroup_LayoutParams arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		LinearLayout_LayoutParams(__jni_impl::android::view::ViewGroup_MarginLayoutParams arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		LinearLayout_LayoutParams(__jni_impl::android::widget::LinearLayout_LayoutParams arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		LinearLayout_LayoutParams(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
-		LinearLayout_LayoutParams(jint arg0, jint arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
-		LinearLayout_LayoutParams(jint arg0, jint arg1, jfloat arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
-		}
 	};
 } // namespace android::widget
 

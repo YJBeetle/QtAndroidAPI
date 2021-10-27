@@ -5,47 +5,18 @@
 #include "../../../java/lang/RuntimeException.hpp"
 
 
-namespace __jni_impl::android::view::inspector
+namespace android::view::inspector
 {
-	class InspectionCompanion_UninitializedPropertyMapException : public __jni_impl::java::lang::RuntimeException
+	class InspectionCompanion_UninitializedPropertyMapException : public java::lang::RuntimeException
 	{
 	public:
 		// Fields
 		
+		InspectionCompanion_UninitializedPropertyMapException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		InspectionCompanion_UninitializedPropertyMapException();
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::view::inspector
-
-
-namespace __jni_impl::android::view::inspector
-{
-	// Fields
-	
-	// Constructors
-	void InspectionCompanion_UninitializedPropertyMapException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.inspector.InspectionCompanion$UninitializedPropertyMapException",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::view::inspector
-
-namespace android::view::inspector
-{
-	class InspectionCompanion_UninitializedPropertyMapException : public __jni_impl::android::view::inspector::InspectionCompanion_UninitializedPropertyMapException
-	{
-	public:
-		InspectionCompanion_UninitializedPropertyMapException(QAndroidJniObject obj) { __thiz = obj; }
-		InspectionCompanion_UninitializedPropertyMapException()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::view::inspector
 

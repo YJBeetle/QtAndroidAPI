@@ -2,12 +2,12 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class Parcel;
 }
 
-namespace __jni_impl::android::content::pm
+namespace android::content::pm
 {
 	class ChangedPackages : public __JniBaseClass
 	{
@@ -15,87 +15,16 @@ namespace __jni_impl::android::content::pm
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		ChangedPackages(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jint arg0, __jni_impl::__JniBaseClass arg1);
+		ChangedPackages(jint &arg0, __JniBaseClass &arg1);
+		ChangedPackages() = default;
 		
 		// Methods
 		jint describeContents();
 		QAndroidJniObject getPackageNames();
 		jint getSequenceNumber();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-	};
-} // namespace __jni_impl::android::content::pm
-
-#include "../../os/Parcel.hpp"
-
-namespace __jni_impl::android::content::pm
-{
-	// Fields
-	QAndroidJniObject ChangedPackages::CREATOR()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.content.pm.ChangedPackages",
-			"CREATOR",
-			"Landroid/os/Parcelable$Creator;"
-		);
-	}
-	
-	// Constructors
-	void ChangedPackages::__constructor(jint arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.pm.ChangedPackages",
-			"(ILjava/util/List;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	
-	// Methods
-	jint ChangedPackages::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	QAndroidJniObject ChangedPackages::getPackageNames()
-	{
-		return __thiz.callObjectMethod(
-			"getPackageNames",
-			"()Ljava/util/List;"
-		);
-	}
-	jint ChangedPackages::getSequenceNumber()
-	{
-		return __thiz.callMethod<jint>(
-			"getSequenceNumber",
-			"()I"
-		);
-	}
-	void ChangedPackages::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-} // namespace __jni_impl::android::content::pm
-
-namespace android::content::pm
-{
-	class ChangedPackages : public __jni_impl::android::content::pm::ChangedPackages
-	{
-	public:
-		ChangedPackages(QAndroidJniObject obj) { __thiz = obj; }
-		ChangedPackages(jint arg0, __jni_impl::__JniBaseClass arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
+		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::content::pm
 

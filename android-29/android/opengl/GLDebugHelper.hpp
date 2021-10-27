@@ -2,12 +2,12 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::io
+namespace java::io
 {
 	class Writer;
 }
 
-namespace __jni_impl::android::opengl
+namespace android::opengl
 {
 	class GLDebugHelper : public __JniBaseClass
 	{
@@ -18,81 +18,12 @@ namespace __jni_impl::android::opengl
 		static jint CONFIG_LOG_ARGUMENT_NAMES();
 		static jint ERROR_WRONG_THREAD();
 		
+		GLDebugHelper(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		GLDebugHelper();
 		
 		// Methods
-		static QAndroidJniObject wrap(__jni_impl::__JniBaseClass arg0, jint arg1, __jni_impl::java::io::Writer arg2);
-	};
-} // namespace __jni_impl::android::opengl
-
-#include "../../java/io/Writer.hpp"
-
-namespace __jni_impl::android::opengl
-{
-	// Fields
-	jint GLDebugHelper::CONFIG_CHECK_GL_ERROR()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.opengl.GLDebugHelper",
-			"CONFIG_CHECK_GL_ERROR"
-		);
-	}
-	jint GLDebugHelper::CONFIG_CHECK_THREAD()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.opengl.GLDebugHelper",
-			"CONFIG_CHECK_THREAD"
-		);
-	}
-	jint GLDebugHelper::CONFIG_LOG_ARGUMENT_NAMES()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.opengl.GLDebugHelper",
-			"CONFIG_LOG_ARGUMENT_NAMES"
-		);
-	}
-	jint GLDebugHelper::ERROR_WRONG_THREAD()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.opengl.GLDebugHelper",
-			"ERROR_WRONG_THREAD"
-		);
-	}
-	
-	// Constructors
-	void GLDebugHelper::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.opengl.GLDebugHelper",
-			"()V"
-		);
-	}
-	
-	// Methods
-	QAndroidJniObject GLDebugHelper::wrap(__jni_impl::__JniBaseClass arg0, jint arg1, __jni_impl::java::io::Writer arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.opengl.GLDebugHelper",
-			"wrap",
-			"(Ljavax/microedition/khronos/egl/EGL;ILjava/io/Writer;)Ljavax/microedition/khronos/egl/EGL;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::android::opengl
-
-namespace android::opengl
-{
-	class GLDebugHelper : public __jni_impl::android::opengl::GLDebugHelper
-	{
-	public:
-		GLDebugHelper(QAndroidJniObject obj) { __thiz = obj; }
-		GLDebugHelper()
-		{
-			__constructor();
-		}
+		static QAndroidJniObject wrap(__JniBaseClass arg0, jint arg1, java::io::Writer arg2);
 	};
 } // namespace android::opengl
 

@@ -1,0 +1,28 @@
+#include "../../java/util/HashMap.hpp"
+#include "./StrictMode_VmPolicy.hpp"
+
+namespace android::os
+{
+	// Fields
+	QAndroidJniObject StrictMode_VmPolicy::LAX()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.os.StrictMode$VmPolicy",
+			"LAX",
+			"Landroid/os/StrictMode$VmPolicy;"
+		);
+	}
+	
+	StrictMode_VmPolicy::StrictMode_VmPolicy(QAndroidJniObject obj) { __thiz = obj; }
+	// Constructors
+	
+	// Methods
+	jstring StrictMode_VmPolicy::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+} // namespace android::os
+

@@ -3,15 +3,16 @@
 #include "../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class ProxyFileDescriptorCallback : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		ProxyFileDescriptorCallback(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		ProxyFileDescriptorCallback();
 		
 		// Methods
 		void onFsync();
@@ -19,77 +20,6 @@ namespace __jni_impl::android::os
 		jint onRead(jlong arg0, jint arg1, jbyteArray arg2);
 		void onRelease();
 		jint onWrite(jlong arg0, jint arg1, jbyteArray arg2);
-	};
-} // namespace __jni_impl::android::os
-
-
-namespace __jni_impl::android::os
-{
-	// Fields
-	
-	// Constructors
-	void ProxyFileDescriptorCallback::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.ProxyFileDescriptorCallback",
-			"()V"
-		);
-	}
-	
-	// Methods
-	void ProxyFileDescriptorCallback::onFsync()
-	{
-		__thiz.callMethod<void>(
-			"onFsync",
-			"()V"
-		);
-	}
-	jlong ProxyFileDescriptorCallback::onGetSize()
-	{
-		return __thiz.callMethod<jlong>(
-			"onGetSize",
-			"()J"
-		);
-	}
-	jint ProxyFileDescriptorCallback::onRead(jlong arg0, jint arg1, jbyteArray arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"onRead",
-			"(JI[B)I",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void ProxyFileDescriptorCallback::onRelease()
-	{
-		__thiz.callMethod<void>(
-			"onRelease",
-			"()V"
-		);
-	}
-	jint ProxyFileDescriptorCallback::onWrite(jlong arg0, jint arg1, jbyteArray arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"onWrite",
-			"(JI[B)I",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-} // namespace __jni_impl::android::os
-
-namespace android::os
-{
-	class ProxyFileDescriptorCallback : public __jni_impl::android::os::ProxyFileDescriptorCallback
-	{
-	public:
-		ProxyFileDescriptorCallback(QAndroidJniObject obj) { __thiz = obj; }
-		ProxyFileDescriptorCallback()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::os
 

@@ -2,12 +2,12 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class Parcel;
 }
 
-namespace __jni_impl::android::service::carrier
+namespace android::service::carrier
 {
 	class MessagePdu : public __JniBaseClass
 	{
@@ -15,77 +15,15 @@ namespace __jni_impl::android::service::carrier
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		MessagePdu(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(__jni_impl::__JniBaseClass arg0);
+		MessagePdu(__JniBaseClass &arg0);
+		MessagePdu() = default;
 		
 		// Methods
 		jint describeContents();
 		QAndroidJniObject getPdus();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-	};
-} // namespace __jni_impl::android::service::carrier
-
-#include "../../os/Parcel.hpp"
-
-namespace __jni_impl::android::service::carrier
-{
-	// Fields
-	QAndroidJniObject MessagePdu::CREATOR()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.service.carrier.MessagePdu",
-			"CREATOR",
-			"Landroid/os/Parcelable$Creator;"
-		);
-	}
-	
-	// Constructors
-	void MessagePdu::__constructor(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.service.carrier.MessagePdu",
-			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	
-	// Methods
-	jint MessagePdu::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	QAndroidJniObject MessagePdu::getPdus()
-	{
-		return __thiz.callObjectMethod(
-			"getPdus",
-			"()Ljava/util/List;"
-		);
-	}
-	void MessagePdu::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-} // namespace __jni_impl::android::service::carrier
-
-namespace android::service::carrier
-{
-	class MessagePdu : public __jni_impl::android::service::carrier::MessagePdu
-	{
-	public:
-		MessagePdu(QAndroidJniObject obj) { __thiz = obj; }
-		MessagePdu(__jni_impl::__JniBaseClass arg0)
-		{
-			__constructor(
-				arg0);
-		}
+		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::service::carrier
 

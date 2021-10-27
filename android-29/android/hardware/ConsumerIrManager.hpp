@@ -3,72 +3,21 @@
 #include "../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::hardware
+namespace android::hardware
 {
 	class ConsumerIrManager : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		ConsumerIrManager(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		ConsumerIrManager() = default;
 		
 		// Methods
 		jarray getCarrierFrequencies();
 		jboolean hasIrEmitter();
 		void transmit(jint arg0, jintArray arg1);
-	};
-} // namespace __jni_impl::android::hardware
-
-
-namespace __jni_impl::android::hardware
-{
-	// Fields
-	
-	// Constructors
-	void ConsumerIrManager::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.hardware.ConsumerIrManager",
-			"(V)V");
-	}
-	
-	// Methods
-	jarray ConsumerIrManager::getCarrierFrequencies()
-	{
-		return __thiz.callObjectMethod(
-			"getCarrierFrequencies",
-			"()[Landroid/hardware/ConsumerIrManager$CarrierFrequencyRange;"
-		).object<jarray>();
-	}
-	jboolean ConsumerIrManager::hasIrEmitter()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasIrEmitter",
-			"()Z"
-		);
-	}
-	void ConsumerIrManager::transmit(jint arg0, jintArray arg1)
-	{
-		__thiz.callMethod<void>(
-			"transmit",
-			"(I[I)V",
-			arg0,
-			arg1
-		);
-	}
-} // namespace __jni_impl::android::hardware
-
-namespace android::hardware
-{
-	class ConsumerIrManager : public __jni_impl::android::hardware::ConsumerIrManager
-	{
-	public:
-		ConsumerIrManager(QAndroidJniObject obj) { __thiz = obj; }
-		ConsumerIrManager()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::hardware
 

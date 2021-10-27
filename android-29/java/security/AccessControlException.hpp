@@ -5,98 +5,28 @@
 #include "../lang/RuntimeException.hpp"
 #include "../lang/SecurityException.hpp"
 
-namespace __jni_impl::java::security
+namespace java::security
 {
 	class Permission;
 }
 
-namespace __jni_impl::java::security
+namespace java::security
 {
-	class AccessControlException : public __jni_impl::java::lang::SecurityException
+	class AccessControlException : public java::lang::SecurityException
 	{
 	public:
 		// Fields
 		
+		AccessControlException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
-		void __constructor(jstring arg0, __jni_impl::java::security::Permission arg1);
-		void __constructor(const QString &arg0, __jni_impl::java::security::Permission arg1);
+		AccessControlException(jstring &arg0);
+		AccessControlException(const QString &arg0);
+		AccessControlException(jstring &arg0, java::security::Permission &arg1);
+		AccessControlException(const QString &arg0, java::security::Permission &arg1);
+		AccessControlException() = default;
 		
 		// Methods
 		QAndroidJniObject getPermission();
-	};
-} // namespace __jni_impl::java::security
-
-#include "./Permission.hpp"
-
-namespace __jni_impl::java::security
-{
-	// Fields
-	
-	// Constructors
-	void AccessControlException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.AccessControlException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void AccessControlException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.AccessControlException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void AccessControlException::__constructor(jstring arg0, __jni_impl::java::security::Permission arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.AccessControlException",
-			"(Ljava/lang/String;Ljava/security/Permission;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void AccessControlException::__constructor(const QString &arg0, __jni_impl::java::security::Permission arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.AccessControlException",
-			"(Ljava/lang/String;Ljava/security/Permission;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-	
-	// Methods
-	QAndroidJniObject AccessControlException::getPermission()
-	{
-		return __thiz.callObjectMethod(
-			"getPermission",
-			"()Ljava/security/Permission;"
-		);
-	}
-} // namespace __jni_impl::java::security
-
-namespace java::security
-{
-	class AccessControlException : public __jni_impl::java::security::AccessControlException
-	{
-	public:
-		AccessControlException(QAndroidJniObject obj) { __thiz = obj; }
-		AccessControlException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		AccessControlException(jstring arg0, __jni_impl::java::security::Permission arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
 	};
 } // namespace java::security
 

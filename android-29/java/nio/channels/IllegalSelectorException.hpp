@@ -6,47 +6,18 @@
 #include "../../lang/IllegalArgumentException.hpp"
 
 
-namespace __jni_impl::java::nio::channels
+namespace java::nio::channels
 {
-	class IllegalSelectorException : public __jni_impl::java::lang::IllegalArgumentException
+	class IllegalSelectorException : public java::lang::IllegalArgumentException
 	{
 	public:
 		// Fields
 		
+		IllegalSelectorException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		IllegalSelectorException();
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::nio::channels
-
-
-namespace __jni_impl::java::nio::channels
-{
-	// Fields
-	
-	// Constructors
-	void IllegalSelectorException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.channels.IllegalSelectorException",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::nio::channels
-
-namespace java::nio::channels
-{
-	class IllegalSelectorException : public __jni_impl::java::nio::channels::IllegalSelectorException
-	{
-	public:
-		IllegalSelectorException(QAndroidJniObject obj) { __thiz = obj; }
-		IllegalSelectorException()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::nio::channels
 

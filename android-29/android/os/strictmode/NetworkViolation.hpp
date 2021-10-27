@@ -4,46 +4,18 @@
 #include "./Violation.hpp"
 
 
-namespace __jni_impl::android::os::strictmode
+namespace android::os::strictmode
 {
-	class NetworkViolation : public __jni_impl::android::os::strictmode::Violation
+	class NetworkViolation : public android::os::strictmode::Violation
 	{
 	public:
 		// Fields
 		
+		NetworkViolation(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		NetworkViolation() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::os::strictmode
-
-
-namespace __jni_impl::android::os::strictmode
-{
-	// Fields
-	
-	// Constructors
-	void NetworkViolation::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.strictmode.NetworkViolation",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::os::strictmode
-
-namespace android::os::strictmode
-{
-	class NetworkViolation : public __jni_impl::android::os::strictmode::NetworkViolation
-	{
-	public:
-		NetworkViolation(QAndroidJniObject obj) { __thiz = obj; }
-		NetworkViolation()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::os::strictmode
 

@@ -2,81 +2,40 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::io
+namespace java::io
 {
 	class FileDescriptor;
 }
-namespace __jni_impl::java::io
+namespace java::io
 {
 	class InputStream;
 }
-namespace __jni_impl::java::io
+namespace java::io
 {
 	class OutputStream;
 }
-namespace __jni_impl::java::net
+namespace java::net
 {
 	class InetAddress;
 }
-namespace __jni_impl::java::net
+namespace java::net
 {
 	class SocketAddress;
 }
 
-namespace __jni_impl::java::net
+namespace java::net
 {
 	class SocketImpl : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		SocketImpl(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		SocketImpl();
 		
 		// Methods
 		jstring toString();
-	};
-} // namespace __jni_impl::java::net
-
-#include "../io/FileDescriptor.hpp"
-#include "../io/InputStream.hpp"
-#include "../io/OutputStream.hpp"
-#include "./InetAddress.hpp"
-#include "./SocketAddress.hpp"
-
-namespace __jni_impl::java::net
-{
-	// Fields
-	
-	// Constructors
-	void SocketImpl::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.SocketImpl",
-			"()V"
-		);
-	}
-	
-	// Methods
-	jstring SocketImpl::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-} // namespace __jni_impl::java::net
-
-namespace java::net
-{
-	class SocketImpl : public __jni_impl::java::net::SocketImpl
-	{
-	public:
-		SocketImpl(QAndroidJniObject obj) { __thiz = obj; }
-		SocketImpl()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::net
 

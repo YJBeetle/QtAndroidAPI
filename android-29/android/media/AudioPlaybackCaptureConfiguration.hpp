@@ -2,20 +2,21 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::media::projection
+namespace android::media::projection
 {
 	class MediaProjection;
 }
 
-namespace __jni_impl::android::media
+namespace android::media
 {
 	class AudioPlaybackCaptureConfiguration : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		AudioPlaybackCaptureConfiguration(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		AudioPlaybackCaptureConfiguration() = default;
 		
 		// Methods
 		jintArray getExcludeUids();
@@ -23,71 +24,6 @@ namespace __jni_impl::android::media
 		jintArray getMatchingUids();
 		jintArray getMatchingUsages();
 		QAndroidJniObject getMediaProjection();
-	};
-} // namespace __jni_impl::android::media
-
-#include "./projection/MediaProjection.hpp"
-
-namespace __jni_impl::android::media
-{
-	// Fields
-	
-	// Constructors
-	void AudioPlaybackCaptureConfiguration::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.AudioPlaybackCaptureConfiguration",
-			"(V)V");
-	}
-	
-	// Methods
-	jintArray AudioPlaybackCaptureConfiguration::getExcludeUids()
-	{
-		return __thiz.callObjectMethod(
-			"getExcludeUids",
-			"()[I"
-		).object<jintArray>();
-	}
-	jintArray AudioPlaybackCaptureConfiguration::getExcludeUsages()
-	{
-		return __thiz.callObjectMethod(
-			"getExcludeUsages",
-			"()[I"
-		).object<jintArray>();
-	}
-	jintArray AudioPlaybackCaptureConfiguration::getMatchingUids()
-	{
-		return __thiz.callObjectMethod(
-			"getMatchingUids",
-			"()[I"
-		).object<jintArray>();
-	}
-	jintArray AudioPlaybackCaptureConfiguration::getMatchingUsages()
-	{
-		return __thiz.callObjectMethod(
-			"getMatchingUsages",
-			"()[I"
-		).object<jintArray>();
-	}
-	QAndroidJniObject AudioPlaybackCaptureConfiguration::getMediaProjection()
-	{
-		return __thiz.callObjectMethod(
-			"getMediaProjection",
-			"()Landroid/media/projection/MediaProjection;"
-		);
-	}
-} // namespace __jni_impl::android::media
-
-namespace android::media
-{
-	class AudioPlaybackCaptureConfiguration : public __jni_impl::android::media::AudioPlaybackCaptureConfiguration
-	{
-	public:
-		AudioPlaybackCaptureConfiguration(QAndroidJniObject obj) { __thiz = obj; }
-		AudioPlaybackCaptureConfiguration()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::media
 

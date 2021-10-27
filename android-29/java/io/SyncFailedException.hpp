@@ -5,58 +5,20 @@
 #include "./IOException.hpp"
 
 
-namespace __jni_impl::java::io
+namespace java::io
 {
-	class SyncFailedException : public __jni_impl::java::io::IOException
+	class SyncFailedException : public java::io::IOException
 	{
 	public:
 		// Fields
 		
+		SyncFailedException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		SyncFailedException(jstring &arg0);
+		SyncFailedException(const QString &arg0);
+		SyncFailedException() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::io
-
-
-namespace __jni_impl::java::io
-{
-	// Fields
-	
-	// Constructors
-	void SyncFailedException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.SyncFailedException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void SyncFailedException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.SyncFailedException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::io
-
-namespace java::io
-{
-	class SyncFailedException : public __jni_impl::java::io::SyncFailedException
-	{
-	public:
-		SyncFailedException(QAndroidJniObject obj) { __thiz = obj; }
-		SyncFailedException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace java::io
 

@@ -3,74 +3,21 @@
 #include "../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::webkit
+namespace android::webkit
 {
 	class SafeBrowsingResponse : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		SafeBrowsingResponse(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		SafeBrowsingResponse();
 		
 		// Methods
 		void backToSafety(jboolean arg0);
 		void proceed(jboolean arg0);
 		void showInterstitial(jboolean arg0);
-	};
-} // namespace __jni_impl::android::webkit
-
-
-namespace __jni_impl::android::webkit
-{
-	// Fields
-	
-	// Constructors
-	void SafeBrowsingResponse::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.webkit.SafeBrowsingResponse",
-			"()V"
-		);
-	}
-	
-	// Methods
-	void SafeBrowsingResponse::backToSafety(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"backToSafety",
-			"(Z)V",
-			arg0
-		);
-	}
-	void SafeBrowsingResponse::proceed(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"proceed",
-			"(Z)V",
-			arg0
-		);
-	}
-	void SafeBrowsingResponse::showInterstitial(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"showInterstitial",
-			"(Z)V",
-			arg0
-		);
-	}
-} // namespace __jni_impl::android::webkit
-
-namespace android::webkit
-{
-	class SafeBrowsingResponse : public __jni_impl::android::webkit::SafeBrowsingResponse
-	{
-	public:
-		SafeBrowsingResponse(QAndroidJniObject obj) { __thiz = obj; }
-		SafeBrowsingResponse()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::webkit
 

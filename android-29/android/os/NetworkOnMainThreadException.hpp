@@ -5,47 +5,18 @@
 #include "../../java/lang/RuntimeException.hpp"
 
 
-namespace __jni_impl::android::os
+namespace android::os
 {
-	class NetworkOnMainThreadException : public __jni_impl::java::lang::RuntimeException
+	class NetworkOnMainThreadException : public java::lang::RuntimeException
 	{
 	public:
 		// Fields
 		
+		NetworkOnMainThreadException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		NetworkOnMainThreadException();
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::os
-
-
-namespace __jni_impl::android::os
-{
-	// Fields
-	
-	// Constructors
-	void NetworkOnMainThreadException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.NetworkOnMainThreadException",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::os
-
-namespace android::os
-{
-	class NetworkOnMainThreadException : public __jni_impl::android::os::NetworkOnMainThreadException
-	{
-	public:
-		NetworkOnMainThreadException(QAndroidJniObject obj) { __thiz = obj; }
-		NetworkOnMainThreadException()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::os
 

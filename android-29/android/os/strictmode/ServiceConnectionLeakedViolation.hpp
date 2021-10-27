@@ -4,46 +4,18 @@
 #include "./Violation.hpp"
 
 
-namespace __jni_impl::android::os::strictmode
+namespace android::os::strictmode
 {
-	class ServiceConnectionLeakedViolation : public __jni_impl::android::os::strictmode::Violation
+	class ServiceConnectionLeakedViolation : public android::os::strictmode::Violation
 	{
 	public:
 		// Fields
 		
+		ServiceConnectionLeakedViolation(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		ServiceConnectionLeakedViolation() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::os::strictmode
-
-
-namespace __jni_impl::android::os::strictmode
-{
-	// Fields
-	
-	// Constructors
-	void ServiceConnectionLeakedViolation::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.strictmode.ServiceConnectionLeakedViolation",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::os::strictmode
-
-namespace android::os::strictmode
-{
-	class ServiceConnectionLeakedViolation : public __jni_impl::android::os::strictmode::ServiceConnectionLeakedViolation
-	{
-	public:
-		ServiceConnectionLeakedViolation(QAndroidJniObject obj) { __thiz = obj; }
-		ServiceConnectionLeakedViolation()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::os::strictmode
 

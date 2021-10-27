@@ -2,12 +2,12 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::io
+namespace java::io
 {
 	class FileDescriptor;
 }
 
-namespace __jni_impl::android::system
+namespace android::system
 {
 	class StructPollfd : public __JniBaseClass
 	{
@@ -18,75 +18,12 @@ namespace __jni_impl::android::system
 		jshort revents();
 		jobject userData();
 		
+		StructPollfd(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		StructPollfd();
 		
 		// Methods
 		jstring toString();
-	};
-} // namespace __jni_impl::android::system
-
-#include "../../java/io/FileDescriptor.hpp"
-
-namespace __jni_impl::android::system
-{
-	// Fields
-	jshort StructPollfd::events()
-	{
-		return __thiz.getField<jshort>(
-			"events"
-		);
-	}
-	QAndroidJniObject StructPollfd::fd()
-	{
-		return __thiz.getObjectField(
-			"fd",
-			"Ljava/io/FileDescriptor;"
-		);
-	}
-	jshort StructPollfd::revents()
-	{
-		return __thiz.getField<jshort>(
-			"revents"
-		);
-	}
-	jobject StructPollfd::userData()
-	{
-		return __thiz.getObjectField(
-			"userData",
-			"Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	
-	// Constructors
-	void StructPollfd::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.system.StructPollfd",
-			"()V"
-		);
-	}
-	
-	// Methods
-	jstring StructPollfd::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-} // namespace __jni_impl::android::system
-
-namespace android::system
-{
-	class StructPollfd : public __jni_impl::android::system::StructPollfd
-	{
-	public:
-		StructPollfd(QAndroidJniObject obj) { __thiz = obj; }
-		StructPollfd()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::system
 

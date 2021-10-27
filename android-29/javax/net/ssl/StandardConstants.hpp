@@ -3,7 +3,7 @@
 #include "../../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::javax::net::ssl
+namespace javax::net::ssl
 {
 	class StandardConstants : public __JniBaseClass
 	{
@@ -11,46 +11,11 @@ namespace __jni_impl::javax::net::ssl
 		// Fields
 		static jint SNI_HOST_NAME();
 		
+		StandardConstants(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		StandardConstants() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::javax::net::ssl
-
-
-namespace __jni_impl::javax::net::ssl
-{
-	// Fields
-	jint StandardConstants::SNI_HOST_NAME()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"javax.net.ssl.StandardConstants",
-			"SNI_HOST_NAME"
-		);
-	}
-	
-	// Constructors
-	void StandardConstants::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"javax.net.ssl.StandardConstants",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::javax::net::ssl
-
-namespace javax::net::ssl
-{
-	class StandardConstants : public __jni_impl::javax::net::ssl::StandardConstants
-	{
-	public:
-		StandardConstants(QAndroidJniObject obj) { __thiz = obj; }
-		StandardConstants()
-		{
-			__constructor();
-		}
 	};
 } // namespace javax::net::ssl
 

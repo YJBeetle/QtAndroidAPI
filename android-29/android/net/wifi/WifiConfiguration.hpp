@@ -2,28 +2,28 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net
+namespace android::net
 {
 	class MacAddress;
 }
-namespace __jni_impl::android::net
+namespace android::net
 {
 	class ProxyInfo;
 }
-namespace __jni_impl::android::net::wifi
+namespace android::net::wifi
 {
 	class WifiEnterpriseConfig;
 }
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class Parcel;
 }
-namespace __jni_impl::java::util
+namespace java::util
 {
 	class BitSet;
 }
 
-namespace __jni_impl::android::net::wifi
+namespace android::net::wifi
 {
 	class WifiConfiguration : public __JniBaseClass
 	{
@@ -51,245 +51,18 @@ namespace __jni_impl::android::net::wifi
 		jarray wepKeys();
 		jint wepTxKeyIndex();
 		
+		WifiConfiguration(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		WifiConfiguration();
 		
 		// Methods
 		jint describeContents();
 		QAndroidJniObject getHttpProxy();
 		QAndroidJniObject getRandomizedMacAddress();
 		jboolean isPasspoint();
-		void setHttpProxy(__jni_impl::android::net::ProxyInfo arg0);
+		void setHttpProxy(android::net::ProxyInfo arg0);
 		jstring toString();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-	};
-} // namespace __jni_impl::android::net::wifi
-
-#include "../MacAddress.hpp"
-#include "../ProxyInfo.hpp"
-#include "./WifiEnterpriseConfig.hpp"
-#include "../../os/Parcel.hpp"
-#include "../../../java/util/BitSet.hpp"
-
-namespace __jni_impl::android::net::wifi
-{
-	// Fields
-	jstring WifiConfiguration::BSSID()
-	{
-		return __thiz.getObjectField(
-			"BSSID",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring WifiConfiguration::FQDN()
-	{
-		return __thiz.getObjectField(
-			"FQDN",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring WifiConfiguration::SSID()
-	{
-		return __thiz.getObjectField(
-			"SSID",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject WifiConfiguration::allowedAuthAlgorithms()
-	{
-		return __thiz.getObjectField(
-			"allowedAuthAlgorithms",
-			"Ljava/util/BitSet;"
-		);
-	}
-	QAndroidJniObject WifiConfiguration::allowedGroupCiphers()
-	{
-		return __thiz.getObjectField(
-			"allowedGroupCiphers",
-			"Ljava/util/BitSet;"
-		);
-	}
-	QAndroidJniObject WifiConfiguration::allowedGroupManagementCiphers()
-	{
-		return __thiz.getObjectField(
-			"allowedGroupManagementCiphers",
-			"Ljava/util/BitSet;"
-		);
-	}
-	QAndroidJniObject WifiConfiguration::allowedKeyManagement()
-	{
-		return __thiz.getObjectField(
-			"allowedKeyManagement",
-			"Ljava/util/BitSet;"
-		);
-	}
-	QAndroidJniObject WifiConfiguration::allowedPairwiseCiphers()
-	{
-		return __thiz.getObjectField(
-			"allowedPairwiseCiphers",
-			"Ljava/util/BitSet;"
-		);
-	}
-	QAndroidJniObject WifiConfiguration::allowedProtocols()
-	{
-		return __thiz.getObjectField(
-			"allowedProtocols",
-			"Ljava/util/BitSet;"
-		);
-	}
-	QAndroidJniObject WifiConfiguration::allowedSuiteBCiphers()
-	{
-		return __thiz.getObjectField(
-			"allowedSuiteBCiphers",
-			"Ljava/util/BitSet;"
-		);
-	}
-	QAndroidJniObject WifiConfiguration::enterpriseConfig()
-	{
-		return __thiz.getObjectField(
-			"enterpriseConfig",
-			"Landroid/net/wifi/WifiEnterpriseConfig;"
-		);
-	}
-	jboolean WifiConfiguration::hiddenSSID()
-	{
-		return __thiz.getField<jboolean>(
-			"hiddenSSID"
-		);
-	}
-	jboolean WifiConfiguration::isHomeProviderNetwork()
-	{
-		return __thiz.getField<jboolean>(
-			"isHomeProviderNetwork"
-		);
-	}
-	jint WifiConfiguration::networkId()
-	{
-		return __thiz.getField<jint>(
-			"networkId"
-		);
-	}
-	jstring WifiConfiguration::preSharedKey()
-	{
-		return __thiz.getObjectField(
-			"preSharedKey",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint WifiConfiguration::priority()
-	{
-		return __thiz.getField<jint>(
-			"priority"
-		);
-	}
-	jstring WifiConfiguration::providerFriendlyName()
-	{
-		return __thiz.getObjectField(
-			"providerFriendlyName",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jlongArray WifiConfiguration::roamingConsortiumIds()
-	{
-		return __thiz.getObjectField(
-			"roamingConsortiumIds",
-			"[J"
-		).object<jlongArray>();
-	}
-	jint WifiConfiguration::status()
-	{
-		return __thiz.getField<jint>(
-			"status"
-		);
-	}
-	jarray WifiConfiguration::wepKeys()
-	{
-		return __thiz.getObjectField(
-			"wepKeys",
-			"[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	jint WifiConfiguration::wepTxKeyIndex()
-	{
-		return __thiz.getField<jint>(
-			"wepTxKeyIndex"
-		);
-	}
-	
-	// Constructors
-	void WifiConfiguration::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.net.wifi.WifiConfiguration",
-			"()V"
-		);
-	}
-	
-	// Methods
-	jint WifiConfiguration::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	QAndroidJniObject WifiConfiguration::getHttpProxy()
-	{
-		return __thiz.callObjectMethod(
-			"getHttpProxy",
-			"()Landroid/net/ProxyInfo;"
-		);
-	}
-	QAndroidJniObject WifiConfiguration::getRandomizedMacAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getRandomizedMacAddress",
-			"()Landroid/net/MacAddress;"
-		);
-	}
-	jboolean WifiConfiguration::isPasspoint()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isPasspoint",
-			"()Z"
-		);
-	}
-	void WifiConfiguration::setHttpProxy(__jni_impl::android::net::ProxyInfo arg0)
-	{
-		__thiz.callMethod<void>(
-			"setHttpProxy",
-			"(Landroid/net/ProxyInfo;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jstring WifiConfiguration::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void WifiConfiguration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-} // namespace __jni_impl::android::net::wifi
-
-namespace android::net::wifi
-{
-	class WifiConfiguration : public __jni_impl::android::net::wifi::WifiConfiguration
-	{
-	public:
-		WifiConfiguration(QAndroidJniObject obj) { __thiz = obj; }
-		WifiConfiguration()
-		{
-			__constructor();
-		}
+		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::net::wifi
 

@@ -3,108 +3,33 @@
 #include "../../../__JniBaseClass.hpp"
 #include "./TextClassifierEvent.hpp"
 
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class Parcel;
 }
-namespace __jni_impl::android::view::textclassifier
+namespace android::view::textclassifier
 {
 	class TextClassifierEvent_TextSelectionEvent_Builder;
 }
 
-namespace __jni_impl::android::view::textclassifier
+namespace android::view::textclassifier
 {
-	class TextClassifierEvent_TextSelectionEvent : public __jni_impl::android::view::textclassifier::TextClassifierEvent
+	class TextClassifierEvent_TextSelectionEvent : public android::view::textclassifier::TextClassifierEvent
 	{
 	public:
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		TextClassifierEvent_TextSelectionEvent(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		TextClassifierEvent_TextSelectionEvent() = default;
 		
 		// Methods
 		jint getRelativeSuggestedWordEndIndex();
 		jint getRelativeSuggestedWordStartIndex();
 		jint getRelativeWordEndIndex();
 		jint getRelativeWordStartIndex();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-	};
-} // namespace __jni_impl::android::view::textclassifier
-
-#include "../../os/Parcel.hpp"
-#include "./TextClassifierEvent_TextSelectionEvent_Builder.hpp"
-
-namespace __jni_impl::android::view::textclassifier
-{
-	// Fields
-	QAndroidJniObject TextClassifierEvent_TextSelectionEvent::CREATOR()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.view.textclassifier.TextClassifierEvent$TextSelectionEvent",
-			"CREATOR",
-			"Landroid/os/Parcelable$Creator;"
-		);
-	}
-	
-	// Constructors
-	void TextClassifierEvent_TextSelectionEvent::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.textclassifier.TextClassifierEvent$TextSelectionEvent",
-			"(V)V");
-	}
-	
-	// Methods
-	jint TextClassifierEvent_TextSelectionEvent::getRelativeSuggestedWordEndIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getRelativeSuggestedWordEndIndex",
-			"()I"
-		);
-	}
-	jint TextClassifierEvent_TextSelectionEvent::getRelativeSuggestedWordStartIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getRelativeSuggestedWordStartIndex",
-			"()I"
-		);
-	}
-	jint TextClassifierEvent_TextSelectionEvent::getRelativeWordEndIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getRelativeWordEndIndex",
-			"()I"
-		);
-	}
-	jint TextClassifierEvent_TextSelectionEvent::getRelativeWordStartIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getRelativeWordStartIndex",
-			"()I"
-		);
-	}
-	void TextClassifierEvent_TextSelectionEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-} // namespace __jni_impl::android::view::textclassifier
-
-namespace android::view::textclassifier
-{
-	class TextClassifierEvent_TextSelectionEvent : public __jni_impl::android::view::textclassifier::TextClassifierEvent_TextSelectionEvent
-	{
-	public:
-		TextClassifierEvent_TextSelectionEvent(QAndroidJniObject obj) { __thiz = obj; }
-		TextClassifierEvent_TextSelectionEvent()
-		{
-			__constructor();
-		}
+		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::view::textclassifier
 

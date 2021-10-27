@@ -4,46 +4,18 @@
 #include "./AttributedCharacterIterator_Attribute.hpp"
 
 
-namespace __jni_impl::java::text
+namespace java::text
 {
-	class Format_Field : public __jni_impl::java::text::AttributedCharacterIterator_Attribute
+	class Format_Field : public java::text::AttributedCharacterIterator_Attribute
 	{
 	public:
 		// Fields
 		
+		Format_Field(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		Format_Field() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::text
-
-
-namespace __jni_impl::java::text
-{
-	// Fields
-	
-	// Constructors
-	void Format_Field::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.text.Format$Field",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::text
-
-namespace java::text
-{
-	class Format_Field : public __jni_impl::java::text::Format_Field
-	{
-	public:
-		Format_Field(QAndroidJniObject obj) { __thiz = obj; }
-		Format_Field()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::text
 

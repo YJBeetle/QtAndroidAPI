@@ -3,7 +3,7 @@
 #include "../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::java::io
+namespace java::io
 {
 	class FileDescriptor : public __JniBaseClass
 	{
@@ -13,80 +13,13 @@ namespace __jni_impl::java::io
 		static QAndroidJniObject in();
 		static QAndroidJniObject out();
 		
+		FileDescriptor(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		FileDescriptor();
 		
 		// Methods
 		void sync();
 		jboolean valid();
-	};
-} // namespace __jni_impl::java::io
-
-
-namespace __jni_impl::java::io
-{
-	// Fields
-	QAndroidJniObject FileDescriptor::err()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.io.FileDescriptor",
-			"err",
-			"Ljava/io/FileDescriptor;"
-		);
-	}
-	QAndroidJniObject FileDescriptor::in()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.io.FileDescriptor",
-			"in",
-			"Ljava/io/FileDescriptor;"
-		);
-	}
-	QAndroidJniObject FileDescriptor::out()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.io.FileDescriptor",
-			"out",
-			"Ljava/io/FileDescriptor;"
-		);
-	}
-	
-	// Constructors
-	void FileDescriptor::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.FileDescriptor",
-			"()V"
-		);
-	}
-	
-	// Methods
-	void FileDescriptor::sync()
-	{
-		__thiz.callMethod<void>(
-			"sync",
-			"()V"
-		);
-	}
-	jboolean FileDescriptor::valid()
-	{
-		return __thiz.callMethod<jboolean>(
-			"valid",
-			"()Z"
-		);
-	}
-} // namespace __jni_impl::java::io
-
-namespace java::io
-{
-	class FileDescriptor : public __jni_impl::java::io::FileDescriptor
-	{
-	public:
-		FileDescriptor(QAndroidJniObject obj) { __thiz = obj; }
-		FileDescriptor()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::io
 

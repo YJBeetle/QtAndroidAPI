@@ -6,70 +6,20 @@
 #include "./IncompatibleClassChangeError.hpp"
 
 
-namespace __jni_impl::java::lang
+namespace java::lang
 {
-	class NoSuchFieldError : public __jni_impl::java::lang::IncompatibleClassChangeError
+	class NoSuchFieldError : public java::lang::IncompatibleClassChangeError
 	{
 	public:
 		// Fields
 		
+		NoSuchFieldError(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		NoSuchFieldError();
+		NoSuchFieldError(jstring &arg0);
+		NoSuchFieldError(const QString &arg0);
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::lang
-
-
-namespace __jni_impl::java::lang
-{
-	// Fields
-	
-	// Constructors
-	void NoSuchFieldError::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.NoSuchFieldError",
-			"()V"
-		);
-	}
-	void NoSuchFieldError::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.NoSuchFieldError",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void NoSuchFieldError::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.NoSuchFieldError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::lang
-
-namespace java::lang
-{
-	class NoSuchFieldError : public __jni_impl::java::lang::NoSuchFieldError
-	{
-	public:
-		NoSuchFieldError(QAndroidJniObject obj) { __thiz = obj; }
-		NoSuchFieldError()
-		{
-			__constructor();
-		}
-		NoSuchFieldError(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace java::lang
 

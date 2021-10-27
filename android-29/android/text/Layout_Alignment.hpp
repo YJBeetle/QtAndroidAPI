@@ -4,9 +4,9 @@
 #include "../../java/lang/Enum.hpp"
 
 
-namespace __jni_impl::android::text
+namespace android::text
 {
-	class Layout_Alignment : public __jni_impl::java::lang::Enum
+	class Layout_Alignment : public java::lang::Enum
 	{
 	public:
 		// Fields
@@ -14,92 +14,14 @@ namespace __jni_impl::android::text
 		static QAndroidJniObject ALIGN_NORMAL();
 		static QAndroidJniObject ALIGN_OPPOSITE();
 		
+		Layout_Alignment(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		Layout_Alignment() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
 		static jarray values();
-	};
-} // namespace __jni_impl::android::text
-
-
-namespace __jni_impl::android::text
-{
-	// Fields
-	QAndroidJniObject Layout_Alignment::ALIGN_CENTER()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.text.Layout$Alignment",
-			"ALIGN_CENTER",
-			"Landroid/text/Layout$Alignment;"
-		);
-	}
-	QAndroidJniObject Layout_Alignment::ALIGN_NORMAL()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.text.Layout$Alignment",
-			"ALIGN_NORMAL",
-			"Landroid/text/Layout$Alignment;"
-		);
-	}
-	QAndroidJniObject Layout_Alignment::ALIGN_OPPOSITE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.text.Layout$Alignment",
-			"ALIGN_OPPOSITE",
-			"Landroid/text/Layout$Alignment;"
-		);
-	}
-	
-	// Constructors
-	void Layout_Alignment::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.Layout$Alignment",
-			"(V)V");
-	}
-	
-	// Methods
-	QAndroidJniObject Layout_Alignment::valueOf(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.Layout$Alignment",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/text/Layout$Alignment;",
-			arg0
-		);
-	}
-	QAndroidJniObject Layout_Alignment::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.Layout$Alignment",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/text/Layout$Alignment;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jarray Layout_Alignment::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.Layout$Alignment",
-			"values",
-			"()[Landroid/text/Layout$Alignment;"
-		).object<jarray>();
-	}
-} // namespace __jni_impl::android::text
-
-namespace android::text
-{
-	class Layout_Alignment : public __jni_impl::android::text::Layout_Alignment
-	{
-	public:
-		Layout_Alignment(QAndroidJniObject obj) { __thiz = obj; }
-		Layout_Alignment()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::text
 

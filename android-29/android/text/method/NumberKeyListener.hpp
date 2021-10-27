@@ -4,98 +4,30 @@
 #include "./MetaKeyKeyListener.hpp"
 #include "./BaseKeyListener.hpp"
 
-namespace __jni_impl::android::view
+namespace android::view
 {
 	class KeyEvent;
 }
-namespace __jni_impl::android::view
+namespace android::view
 {
 	class View;
 }
 
-namespace __jni_impl::android::text::method
+namespace android::text::method
 {
-	class NumberKeyListener : public __jni_impl::android::text::method::BaseKeyListener
+	class NumberKeyListener : public android::text::method::BaseKeyListener
 	{
 	public:
 		// Fields
 		
+		NumberKeyListener(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		NumberKeyListener();
 		
 		// Methods
-		jstring filter(jstring arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5);
-		jstring filter(const QString &arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5);
-		jboolean onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
-	};
-} // namespace __jni_impl::android::text::method
-
-#include "../../view/KeyEvent.hpp"
-#include "../../view/View.hpp"
-
-namespace __jni_impl::android::text::method
-{
-	// Fields
-	
-	// Constructors
-	void NumberKeyListener::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.method.NumberKeyListener",
-			"()V"
-		);
-	}
-	
-	// Methods
-	jstring NumberKeyListener::filter(jstring arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5)
-	{
-		return __thiz.callObjectMethod(
-			"filter",
-			"(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object(),
-			arg4,
-			arg5
-		).object<jstring>();
-	}
-	jstring NumberKeyListener::filter(const QString &arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5)
-	{
-		return __thiz.callObjectMethod(
-			"filter",
-			"(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3.__jniObject().object(),
-			arg4,
-			arg5
-		).object<jstring>();
-	}
-	jboolean NumberKeyListener::onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyDown",
-			"(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::android::text::method
-
-namespace android::text::method
-{
-	class NumberKeyListener : public __jni_impl::android::text::method::NumberKeyListener
-	{
-	public:
-		NumberKeyListener(QAndroidJniObject obj) { __thiz = obj; }
-		NumberKeyListener()
-		{
-			__constructor();
-		}
+		jstring filter(jstring arg0, jint arg1, jint arg2, __JniBaseClass arg3, jint arg4, jint arg5);
+		jstring filter(const QString &arg0, jint arg1, jint arg2, __JniBaseClass arg3, jint arg4, jint arg5);
+		jboolean onKeyDown(android::view::View arg0, __JniBaseClass arg1, jint arg2, android::view::KeyEvent arg3);
 	};
 } // namespace android::text::method
 

@@ -2,142 +2,42 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class Loader;
 }
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::java::io
+namespace java::io
 {
 	class FileDescriptor;
 }
-namespace __jni_impl::java::io
+namespace java::io
 {
 	class PrintWriter;
 }
 
-namespace __jni_impl::android::app
+namespace android::app
 {
 	class LoaderManager : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		LoaderManager(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		LoaderManager();
 		
 		// Methods
 		static void enableDebugLogging(jboolean arg0);
 		void destroyLoader(jint arg0);
-		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
-		void dump(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
+		void dump(jstring arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
+		void dump(const QString &arg0, java::io::FileDescriptor arg1, java::io::PrintWriter arg2, jarray arg3);
 		QAndroidJniObject getLoader(jint arg0);
-		QAndroidJniObject initLoader(jint arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::__JniBaseClass arg2);
-		QAndroidJniObject restartLoader(jint arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::__JniBaseClass arg2);
-	};
-} // namespace __jni_impl::android::app
-
-#include "../content/Loader.hpp"
-#include "../os/Bundle.hpp"
-#include "../../java/io/FileDescriptor.hpp"
-#include "../../java/io/PrintWriter.hpp"
-
-namespace __jni_impl::android::app
-{
-	// Fields
-	
-	// Constructors
-	void LoaderManager::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.LoaderManager",
-			"()V"
-		);
-	}
-	
-	// Methods
-	void LoaderManager::enableDebugLogging(jboolean arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.app.LoaderManager",
-			"enableDebugLogging",
-			"(Z)V",
-			arg0
-		);
-	}
-	void LoaderManager::destroyLoader(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"destroyLoader",
-			"(I)V",
-			arg0
-		);
-	}
-	void LoaderManager::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	void LoaderManager::dump(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	QAndroidJniObject LoaderManager::getLoader(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getLoader",
-			"(I)Landroid/content/Loader;",
-			arg0
-		);
-	}
-	QAndroidJniObject LoaderManager::initLoader(jint arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::__JniBaseClass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"initLoader",
-			"(ILandroid/os/Bundle;Landroid/app/LoaderManager$LoaderCallbacks;)Landroid/content/Loader;",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject LoaderManager::restartLoader(jint arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::__JniBaseClass arg2)
-	{
-		return __thiz.callObjectMethod(
-			"restartLoader",
-			"(ILandroid/os/Bundle;Landroid/app/LoaderManager$LoaderCallbacks;)Landroid/content/Loader;",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::android::app
-
-namespace android::app
-{
-	class LoaderManager : public __jni_impl::android::app::LoaderManager
-	{
-	public:
-		LoaderManager(QAndroidJniObject obj) { __thiz = obj; }
-		LoaderManager()
-		{
-			__constructor();
-		}
+		QAndroidJniObject initLoader(jint arg0, android::os::Bundle arg1, __JniBaseClass arg2);
+		QAndroidJniObject restartLoader(jint arg0, android::os::Bundle arg1, __JniBaseClass arg2);
 	};
 } // namespace android::app
 

@@ -3,7 +3,7 @@
 #include "../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android
+namespace android
 {
 	class R_mipmap : public __JniBaseClass
 	{
@@ -11,47 +11,11 @@ namespace __jni_impl::android
 		// Fields
 		static jint sym_def_app_icon();
 		
+		R_mipmap(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		R_mipmap();
 		
 		// Methods
-	};
-} // namespace __jni_impl::android
-
-
-namespace __jni_impl::android
-{
-	// Fields
-	jint R_mipmap::sym_def_app_icon()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.R$mipmap",
-			"sym_def_app_icon"
-		);
-	}
-	
-	// Constructors
-	void R_mipmap::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.R$mipmap",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android
-
-namespace android
-{
-	class R_mipmap : public __jni_impl::android::R_mipmap
-	{
-	public:
-		R_mipmap(QAndroidJniObject obj) { __thiz = obj; }
-		R_mipmap()
-		{
-			__constructor();
-		}
 	};
 } // namespace android
 

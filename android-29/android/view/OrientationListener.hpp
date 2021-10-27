@@ -2,12 +2,12 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class Context;
 }
 
-namespace __jni_impl::android::view
+namespace android::view
 {
 	class OrientationListener : public __JniBaseClass
 	{
@@ -15,9 +15,11 @@ namespace __jni_impl::android::view
 		// Fields
 		static jint ORIENTATION_UNKNOWN();
 		
+		OrientationListener(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(__jni_impl::android::content::Context arg0);
-		void __constructor(__jni_impl::android::content::Context arg0, jint arg1);
+		OrientationListener(android::content::Context &arg0);
+		OrientationListener(android::content::Context &arg0, jint &arg1);
+		OrientationListener() = default;
 		
 		// Methods
 		void disable();
@@ -25,101 +27,6 @@ namespace __jni_impl::android::view
 		void onAccuracyChanged(jint arg0, jint arg1);
 		void onOrientationChanged(jint arg0);
 		void onSensorChanged(jint arg0, jfloatArray arg1);
-	};
-} // namespace __jni_impl::android::view
-
-#include "../content/Context.hpp"
-
-namespace __jni_impl::android::view
-{
-	// Fields
-	jint OrientationListener::ORIENTATION_UNKNOWN()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.view.OrientationListener",
-			"ORIENTATION_UNKNOWN"
-		);
-	}
-	
-	// Constructors
-	void OrientationListener::__constructor(__jni_impl::android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.OrientationListener",
-			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void OrientationListener::__constructor(__jni_impl::android::content::Context arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.OrientationListener",
-			"(Landroid/content/Context;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	
-	// Methods
-	void OrientationListener::disable()
-	{
-		__thiz.callMethod<void>(
-			"disable",
-			"()V"
-		);
-	}
-	void OrientationListener::enable()
-	{
-		__thiz.callMethod<void>(
-			"enable",
-			"()V"
-		);
-	}
-	void OrientationListener::onAccuracyChanged(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"onAccuracyChanged",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void OrientationListener::onOrientationChanged(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"onOrientationChanged",
-			"(I)V",
-			arg0
-		);
-	}
-	void OrientationListener::onSensorChanged(jint arg0, jfloatArray arg1)
-	{
-		__thiz.callMethod<void>(
-			"onSensorChanged",
-			"(I[F)V",
-			arg0,
-			arg1
-		);
-	}
-} // namespace __jni_impl::android::view
-
-namespace android::view
-{
-	class OrientationListener : public __jni_impl::android::view::OrientationListener
-	{
-	public:
-		OrientationListener(QAndroidJniObject obj) { __thiz = obj; }
-		OrientationListener(__jni_impl::android::content::Context arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		OrientationListener(__jni_impl::android::content::Context arg0, jint arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
 	};
 } // namespace android::view
 

@@ -2,73 +2,29 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::graphics
+namespace android::graphics
 {
 	class Canvas;
 }
-namespace __jni_impl::android::graphics::pdf
+namespace android::graphics::pdf
 {
 	class PdfDocument_PageInfo;
 }
 
-namespace __jni_impl::android::graphics::pdf
+namespace android::graphics::pdf
 {
 	class PdfDocument_Page : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		PdfDocument_Page(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		PdfDocument_Page() = default;
 		
 		// Methods
 		QAndroidJniObject getCanvas();
 		QAndroidJniObject getInfo();
-	};
-} // namespace __jni_impl::android::graphics::pdf
-
-#include "../Canvas.hpp"
-#include "./PdfDocument_PageInfo.hpp"
-
-namespace __jni_impl::android::graphics::pdf
-{
-	// Fields
-	
-	// Constructors
-	void PdfDocument_Page::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.pdf.PdfDocument$Page",
-			"(V)V");
-	}
-	
-	// Methods
-	QAndroidJniObject PdfDocument_Page::getCanvas()
-	{
-		return __thiz.callObjectMethod(
-			"getCanvas",
-			"()Landroid/graphics/Canvas;"
-		);
-	}
-	QAndroidJniObject PdfDocument_Page::getInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getInfo",
-			"()Landroid/graphics/pdf/PdfDocument$PageInfo;"
-		);
-	}
-} // namespace __jni_impl::android::graphics::pdf
-
-namespace android::graphics::pdf
-{
-	class PdfDocument_Page : public __jni_impl::android::graphics::pdf::PdfDocument_Page
-	{
-	public:
-		PdfDocument_Page(QAndroidJniObject obj) { __thiz = obj; }
-		PdfDocument_Page()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::graphics::pdf
 

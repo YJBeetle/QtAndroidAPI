@@ -3,7 +3,7 @@
 #include "../../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::java::security::spec
+namespace java::security::spec
 {
 	class MGF1ParameterSpec : public __JniBaseClass
 	{
@@ -21,155 +21,15 @@ namespace __jni_impl::java::security::spec
 		static QAndroidJniObject SHA512_224();
 		static QAndroidJniObject SHA512_256();
 		
+		MGF1ParameterSpec(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		MGF1ParameterSpec(jstring &arg0);
+		MGF1ParameterSpec(const QString &arg0);
+		MGF1ParameterSpec() = default;
 		
 		// Methods
 		jstring getDigestAlgorithm();
 		jstring toString();
-	};
-} // namespace __jni_impl::java::security::spec
-
-
-namespace __jni_impl::java::security::spec
-{
-	// Fields
-	QAndroidJniObject MGF1ParameterSpec::SHA1()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.security.spec.MGF1ParameterSpec",
-			"SHA1",
-			"Ljava/security/spec/MGF1ParameterSpec;"
-		);
-	}
-	QAndroidJniObject MGF1ParameterSpec::SHA224()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.security.spec.MGF1ParameterSpec",
-			"SHA224",
-			"Ljava/security/spec/MGF1ParameterSpec;"
-		);
-	}
-	QAndroidJniObject MGF1ParameterSpec::SHA256()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.security.spec.MGF1ParameterSpec",
-			"SHA256",
-			"Ljava/security/spec/MGF1ParameterSpec;"
-		);
-	}
-	QAndroidJniObject MGF1ParameterSpec::SHA384()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.security.spec.MGF1ParameterSpec",
-			"SHA384",
-			"Ljava/security/spec/MGF1ParameterSpec;"
-		);
-	}
-	QAndroidJniObject MGF1ParameterSpec::SHA3_224()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.security.spec.MGF1ParameterSpec",
-			"SHA3_224",
-			"Ljava/security/spec/MGF1ParameterSpec;"
-		);
-	}
-	QAndroidJniObject MGF1ParameterSpec::SHA3_256()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.security.spec.MGF1ParameterSpec",
-			"SHA3_256",
-			"Ljava/security/spec/MGF1ParameterSpec;"
-		);
-	}
-	QAndroidJniObject MGF1ParameterSpec::SHA3_384()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.security.spec.MGF1ParameterSpec",
-			"SHA3_384",
-			"Ljava/security/spec/MGF1ParameterSpec;"
-		);
-	}
-	QAndroidJniObject MGF1ParameterSpec::SHA3_512()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.security.spec.MGF1ParameterSpec",
-			"SHA3_512",
-			"Ljava/security/spec/MGF1ParameterSpec;"
-		);
-	}
-	QAndroidJniObject MGF1ParameterSpec::SHA512()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.security.spec.MGF1ParameterSpec",
-			"SHA512",
-			"Ljava/security/spec/MGF1ParameterSpec;"
-		);
-	}
-	QAndroidJniObject MGF1ParameterSpec::SHA512_224()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.security.spec.MGF1ParameterSpec",
-			"SHA512_224",
-			"Ljava/security/spec/MGF1ParameterSpec;"
-		);
-	}
-	QAndroidJniObject MGF1ParameterSpec::SHA512_256()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.security.spec.MGF1ParameterSpec",
-			"SHA512_256",
-			"Ljava/security/spec/MGF1ParameterSpec;"
-		);
-	}
-	
-	// Constructors
-	void MGF1ParameterSpec::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.spec.MGF1ParameterSpec",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void MGF1ParameterSpec::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.spec.MGF1ParameterSpec",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-	jstring MGF1ParameterSpec::getDigestAlgorithm()
-	{
-		return __thiz.callObjectMethod(
-			"getDigestAlgorithm",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring MGF1ParameterSpec::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-} // namespace __jni_impl::java::security::spec
-
-namespace java::security::spec
-{
-	class MGF1ParameterSpec : public __jni_impl::java::security::spec::MGF1ParameterSpec
-	{
-	public:
-		MGF1ParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
-		MGF1ParameterSpec(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace java::security::spec
 

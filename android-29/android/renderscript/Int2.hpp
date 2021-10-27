@@ -3,7 +3,7 @@
 #include "../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::renderscript
+namespace android::renderscript
 {
 	class Int2 : public __JniBaseClass
 	{
@@ -12,68 +12,12 @@ namespace __jni_impl::android::renderscript
 		jint x();
 		jint y();
 		
+		Int2(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jint arg0, jint arg1);
+		Int2();
+		Int2(jint &arg0, jint &arg1);
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::renderscript
-
-
-namespace __jni_impl::android::renderscript
-{
-	// Fields
-	jint Int2::x()
-	{
-		return __thiz.getField<jint>(
-			"x"
-		);
-	}
-	jint Int2::y()
-	{
-		return __thiz.getField<jint>(
-			"y"
-		);
-	}
-	
-	// Constructors
-	void Int2::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.renderscript.Int2",
-			"()V"
-		);
-	}
-	void Int2::__constructor(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.renderscript.Int2",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::renderscript
-
-namespace android::renderscript
-{
-	class Int2 : public __jni_impl::android::renderscript::Int2
-	{
-	public:
-		Int2(QAndroidJniObject obj) { __thiz = obj; }
-		Int2()
-		{
-			__constructor();
-		}
-		Int2(jint arg0, jint arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
 	};
 } // namespace android::renderscript
 

@@ -5,70 +5,20 @@
 #include "./IOException.hpp"
 
 
-namespace __jni_impl::java::io
+namespace java::io
 {
-	class UTFDataFormatException : public __jni_impl::java::io::IOException
+	class UTFDataFormatException : public java::io::IOException
 	{
 	public:
 		// Fields
 		
+		UTFDataFormatException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		UTFDataFormatException();
+		UTFDataFormatException(jstring &arg0);
+		UTFDataFormatException(const QString &arg0);
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::io
-
-
-namespace __jni_impl::java::io
-{
-	// Fields
-	
-	// Constructors
-	void UTFDataFormatException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.UTFDataFormatException",
-			"()V"
-		);
-	}
-	void UTFDataFormatException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.UTFDataFormatException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void UTFDataFormatException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.UTFDataFormatException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::io
-
-namespace java::io
-{
-	class UTFDataFormatException : public __jni_impl::java::io::UTFDataFormatException
-	{
-	public:
-		UTFDataFormatException(QAndroidJniObject obj) { __thiz = obj; }
-		UTFDataFormatException()
-		{
-			__constructor();
-		}
-		UTFDataFormatException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace java::io
 

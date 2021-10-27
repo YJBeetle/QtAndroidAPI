@@ -4,70 +4,20 @@
 #include "../../java/lang/Exception.hpp"
 
 
-namespace __jni_impl::android::security
+namespace android::security
 {
-	class ConfirmationAlreadyPresentingException : public __jni_impl::java::lang::Exception
+	class ConfirmationAlreadyPresentingException : public java::lang::Exception
 	{
 	public:
 		// Fields
 		
+		ConfirmationAlreadyPresentingException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		ConfirmationAlreadyPresentingException();
+		ConfirmationAlreadyPresentingException(jstring &arg0);
+		ConfirmationAlreadyPresentingException(const QString &arg0);
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::security
-
-
-namespace __jni_impl::android::security
-{
-	// Fields
-	
-	// Constructors
-	void ConfirmationAlreadyPresentingException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.ConfirmationAlreadyPresentingException",
-			"()V"
-		);
-	}
-	void ConfirmationAlreadyPresentingException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.ConfirmationAlreadyPresentingException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void ConfirmationAlreadyPresentingException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.ConfirmationAlreadyPresentingException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::security
-
-namespace android::security
-{
-	class ConfirmationAlreadyPresentingException : public __jni_impl::android::security::ConfirmationAlreadyPresentingException
-	{
-	public:
-		ConfirmationAlreadyPresentingException(QAndroidJniObject obj) { __thiz = obj; }
-		ConfirmationAlreadyPresentingException()
-		{
-			__constructor();
-		}
-		ConfirmationAlreadyPresentingException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace android::security
 

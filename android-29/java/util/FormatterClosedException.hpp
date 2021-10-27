@@ -6,47 +6,18 @@
 #include "../lang/IllegalStateException.hpp"
 
 
-namespace __jni_impl::java::util
+namespace java::util
 {
-	class FormatterClosedException : public __jni_impl::java::lang::IllegalStateException
+	class FormatterClosedException : public java::lang::IllegalStateException
 	{
 	public:
 		// Fields
 		
+		FormatterClosedException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		FormatterClosedException();
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::util
-
-
-namespace __jni_impl::java::util
-{
-	// Fields
-	
-	// Constructors
-	void FormatterClosedException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.FormatterClosedException",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::util
-
-namespace java::util
-{
-	class FormatterClosedException : public __jni_impl::java::util::FormatterClosedException
-	{
-	public:
-		FormatterClosedException(QAndroidJniObject obj) { __thiz = obj; }
-		FormatterClosedException()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::util
 

@@ -2,71 +2,32 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::nio
+namespace java::nio
 {
 	class ByteBuffer;
 }
-namespace __jni_impl::java::security
+namespace java::security
 {
 	class AlgorithmParameters;
 }
-namespace __jni_impl::java::security
+namespace java::security
 {
 	class SecureRandom;
 }
 
-namespace __jni_impl::java::security
+namespace java::security
 {
 	class SignatureSpi : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		SignatureSpi(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		SignatureSpi();
 		
 		// Methods
 		jobject clone();
-	};
-} // namespace __jni_impl::java::security
-
-#include "../nio/ByteBuffer.hpp"
-#include "./AlgorithmParameters.hpp"
-#include "./SecureRandom.hpp"
-
-namespace __jni_impl::java::security
-{
-	// Fields
-	
-	// Constructors
-	void SignatureSpi::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.SignatureSpi",
-			"()V"
-		);
-	}
-	
-	// Methods
-	jobject SignatureSpi::clone()
-	{
-		return __thiz.callObjectMethod(
-			"clone",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-} // namespace __jni_impl::java::security
-
-namespace java::security
-{
-	class SignatureSpi : public __jni_impl::java::security::SignatureSpi
-	{
-	public:
-		SignatureSpi(QAndroidJniObject obj) { __thiz = obj; }
-		SignatureSpi()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::security
 

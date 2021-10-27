@@ -3,7 +3,7 @@
 #include "../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::gesture
+namespace android::gesture
 {
 	class OrientedBoundingBox : public __JniBaseClass
 	{
@@ -16,75 +16,11 @@ namespace __jni_impl::android::gesture
 		jfloat squareness();
 		jfloat width();
 		
+		OrientedBoundingBox(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		OrientedBoundingBox() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::gesture
-
-
-namespace __jni_impl::android::gesture
-{
-	// Fields
-	jfloat OrientedBoundingBox::centerX()
-	{
-		return __thiz.getField<jfloat>(
-			"centerX"
-		);
-	}
-	jfloat OrientedBoundingBox::centerY()
-	{
-		return __thiz.getField<jfloat>(
-			"centerY"
-		);
-	}
-	jfloat OrientedBoundingBox::height()
-	{
-		return __thiz.getField<jfloat>(
-			"height"
-		);
-	}
-	jfloat OrientedBoundingBox::orientation()
-	{
-		return __thiz.getField<jfloat>(
-			"orientation"
-		);
-	}
-	jfloat OrientedBoundingBox::squareness()
-	{
-		return __thiz.getField<jfloat>(
-			"squareness"
-		);
-	}
-	jfloat OrientedBoundingBox::width()
-	{
-		return __thiz.getField<jfloat>(
-			"width"
-		);
-	}
-	
-	// Constructors
-	void OrientedBoundingBox::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.gesture.OrientedBoundingBox",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::gesture
-
-namespace android::gesture
-{
-	class OrientedBoundingBox : public __jni_impl::android::gesture::OrientedBoundingBox
-	{
-	public:
-		OrientedBoundingBox(QAndroidJniObject obj) { __thiz = obj; }
-		OrientedBoundingBox()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::gesture
 

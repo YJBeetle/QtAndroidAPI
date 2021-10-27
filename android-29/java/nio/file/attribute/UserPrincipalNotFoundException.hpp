@@ -5,66 +5,21 @@
 #include "../../../io/IOException.hpp"
 
 
-namespace __jni_impl::java::nio::file::attribute
+namespace java::nio::file::attribute
 {
-	class UserPrincipalNotFoundException : public __jni_impl::java::io::IOException
+	class UserPrincipalNotFoundException : public java::io::IOException
 	{
 	public:
 		// Fields
 		
+		UserPrincipalNotFoundException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		UserPrincipalNotFoundException(jstring &arg0);
+		UserPrincipalNotFoundException(const QString &arg0);
+		UserPrincipalNotFoundException() = default;
 		
 		// Methods
 		jstring getName();
-	};
-} // namespace __jni_impl::java::nio::file::attribute
-
-
-namespace __jni_impl::java::nio::file::attribute
-{
-	// Fields
-	
-	// Constructors
-	void UserPrincipalNotFoundException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.file.attribute.UserPrincipalNotFoundException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void UserPrincipalNotFoundException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.file.attribute.UserPrincipalNotFoundException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-	jstring UserPrincipalNotFoundException::getName()
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-} // namespace __jni_impl::java::nio::file::attribute
-
-namespace java::nio::file::attribute
-{
-	class UserPrincipalNotFoundException : public __jni_impl::java::nio::file::attribute::UserPrincipalNotFoundException
-	{
-	public:
-		UserPrincipalNotFoundException(QAndroidJniObject obj) { __thiz = obj; }
-		UserPrincipalNotFoundException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace java::nio::file::attribute
 

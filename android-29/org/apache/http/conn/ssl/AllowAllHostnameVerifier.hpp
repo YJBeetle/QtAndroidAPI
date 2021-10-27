@@ -4,77 +4,21 @@
 #include "./AbstractVerifier.hpp"
 
 
-namespace __jni_impl::org::apache::http::conn::ssl
+namespace org::apache::http::conn::ssl
 {
-	class AllowAllHostnameVerifier : public __jni_impl::org::apache::http::conn::ssl::AbstractVerifier
+	class AllowAllHostnameVerifier : public org::apache::http::conn::ssl::AbstractVerifier
 	{
 	public:
 		// Fields
 		
+		AllowAllHostnameVerifier(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		AllowAllHostnameVerifier();
 		
 		// Methods
 		jstring toString();
 		void verify(jstring arg0, jarray arg1, jarray arg2);
 		void verify(const QString &arg0, jarray arg1, jarray arg2);
-	};
-} // namespace __jni_impl::org::apache::http::conn::ssl
-
-
-namespace __jni_impl::org::apache::http::conn::ssl
-{
-	// Fields
-	
-	// Constructors
-	void AllowAllHostnameVerifier::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"org.apache.http.conn.ssl.AllowAllHostnameVerifier",
-			"()V"
-		);
-	}
-	
-	// Methods
-	jstring AllowAllHostnameVerifier::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void AllowAllHostnameVerifier::verify(jstring arg0, jarray arg1, jarray arg2)
-	{
-		__thiz.callMethod<void>(
-			"verify",
-			"(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void AllowAllHostnameVerifier::verify(const QString &arg0, jarray arg1, jarray arg2)
-	{
-		__thiz.callMethod<void>(
-			"verify",
-			"(Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
-} // namespace __jni_impl::org::apache::http::conn::ssl
-
-namespace org::apache::http::conn::ssl
-{
-	class AllowAllHostnameVerifier : public __jni_impl::org::apache::http::conn::ssl::AllowAllHostnameVerifier
-	{
-	public:
-		AllowAllHostnameVerifier(QAndroidJniObject obj) { __thiz = obj; }
-		AllowAllHostnameVerifier()
-		{
-			__constructor();
-		}
 	};
 } // namespace org::apache::http::conn::ssl
 

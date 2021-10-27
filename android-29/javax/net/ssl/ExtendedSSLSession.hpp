@@ -3,79 +3,22 @@
 #include "../../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::javax::net::ssl
+namespace javax::net::ssl
 {
 	class ExtendedSSLSession : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		ExtendedSSLSession(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		ExtendedSSLSession();
 		
 		// Methods
 		jarray getLocalSupportedSignatureAlgorithms();
 		jarray getPeerSupportedSignatureAlgorithms();
 		QAndroidJniObject getRequestedServerNames();
 		QAndroidJniObject getStatusResponses();
-	};
-} // namespace __jni_impl::javax::net::ssl
-
-
-namespace __jni_impl::javax::net::ssl
-{
-	// Fields
-	
-	// Constructors
-	void ExtendedSSLSession::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"javax.net.ssl.ExtendedSSLSession",
-			"()V"
-		);
-	}
-	
-	// Methods
-	jarray ExtendedSSLSession::getLocalSupportedSignatureAlgorithms()
-	{
-		return __thiz.callObjectMethod(
-			"getLocalSupportedSignatureAlgorithms",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	jarray ExtendedSSLSession::getPeerSupportedSignatureAlgorithms()
-	{
-		return __thiz.callObjectMethod(
-			"getPeerSupportedSignatureAlgorithms",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	QAndroidJniObject ExtendedSSLSession::getRequestedServerNames()
-	{
-		return __thiz.callObjectMethod(
-			"getRequestedServerNames",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject ExtendedSSLSession::getStatusResponses()
-	{
-		return __thiz.callObjectMethod(
-			"getStatusResponses",
-			"()Ljava/util/List;"
-		);
-	}
-} // namespace __jni_impl::javax::net::ssl
-
-namespace javax::net::ssl
-{
-	class ExtendedSSLSession : public __jni_impl::javax::net::ssl::ExtendedSSLSession
-	{
-	public:
-		ExtendedSSLSession(QAndroidJniObject obj) { __thiz = obj; }
-		ExtendedSSLSession()
-		{
-			__constructor();
-		}
 	};
 } // namespace javax::net::ssl
 

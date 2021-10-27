@@ -4,69 +4,21 @@
 #include "./DynamicsProcessing_Stage.hpp"
 
 
-namespace __jni_impl::android::media::audiofx
+namespace android::media::audiofx
 {
-	class DynamicsProcessing_BandStage : public __jni_impl::android::media::audiofx::DynamicsProcessing_Stage
+	class DynamicsProcessing_BandStage : public android::media::audiofx::DynamicsProcessing_Stage
 	{
 	public:
 		// Fields
 		
+		DynamicsProcessing_BandStage(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jboolean arg0, jboolean arg1, jint arg2);
+		DynamicsProcessing_BandStage(jboolean &arg0, jboolean &arg1, jint &arg2);
+		DynamicsProcessing_BandStage() = default;
 		
 		// Methods
 		jint getBandCount();
 		jstring toString();
-	};
-} // namespace __jni_impl::android::media::audiofx
-
-
-namespace __jni_impl::android::media::audiofx
-{
-	// Fields
-	
-	// Constructors
-	void DynamicsProcessing_BandStage::__constructor(jboolean arg0, jboolean arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.audiofx.DynamicsProcessing$BandStage",
-			"(ZZI)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	
-	// Methods
-	jint DynamicsProcessing_BandStage::getBandCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getBandCount",
-			"()I"
-		);
-	}
-	jstring DynamicsProcessing_BandStage::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-} // namespace __jni_impl::android::media::audiofx
-
-namespace android::media::audiofx
-{
-	class DynamicsProcessing_BandStage : public __jni_impl::android::media::audiofx::DynamicsProcessing_BandStage
-	{
-	public:
-		DynamicsProcessing_BandStage(QAndroidJniObject obj) { __thiz = obj; }
-		DynamicsProcessing_BandStage(jboolean arg0, jboolean arg1, jint arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
-		}
 	};
 } // namespace android::media::audiofx
 

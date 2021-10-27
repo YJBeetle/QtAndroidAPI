@@ -5,70 +5,20 @@
 #include "../../java/lang/RuntimeException.hpp"
 
 
-namespace __jni_impl::android::os
+namespace android::os
 {
-	class OperationCanceledException : public __jni_impl::java::lang::RuntimeException
+	class OperationCanceledException : public java::lang::RuntimeException
 	{
 	public:
 		// Fields
 		
+		OperationCanceledException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		OperationCanceledException();
+		OperationCanceledException(jstring &arg0);
+		OperationCanceledException(const QString &arg0);
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::os
-
-
-namespace __jni_impl::android::os
-{
-	// Fields
-	
-	// Constructors
-	void OperationCanceledException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.OperationCanceledException",
-			"()V"
-		);
-	}
-	void OperationCanceledException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.OperationCanceledException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void OperationCanceledException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.OperationCanceledException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::os
-
-namespace android::os
-{
-	class OperationCanceledException : public __jni_impl::android::os::OperationCanceledException
-	{
-	public:
-		OperationCanceledException(QAndroidJniObject obj) { __thiz = obj; }
-		OperationCanceledException()
-		{
-			__constructor();
-		}
-		OperationCanceledException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace android::os
 

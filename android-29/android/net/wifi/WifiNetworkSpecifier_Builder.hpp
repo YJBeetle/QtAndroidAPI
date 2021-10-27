@@ -2,194 +2,49 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net
+namespace android::net
 {
 	class MacAddress;
 }
-namespace __jni_impl::android::net::wifi
+namespace android::net::wifi
 {
 	class WifiEnterpriseConfig;
 }
-namespace __jni_impl::android::net::wifi
+namespace android::net::wifi
 {
 	class WifiNetworkSpecifier;
 }
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class PatternMatcher;
 }
 
-namespace __jni_impl::android::net::wifi
+namespace android::net::wifi
 {
 	class WifiNetworkSpecifier_Builder : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		WifiNetworkSpecifier_Builder(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		WifiNetworkSpecifier_Builder();
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setBssid(__jni_impl::android::net::MacAddress arg0);
-		QAndroidJniObject setBssidPattern(__jni_impl::android::net::MacAddress arg0, __jni_impl::android::net::MacAddress arg1);
+		QAndroidJniObject setBssid(android::net::MacAddress arg0);
+		QAndroidJniObject setBssidPattern(android::net::MacAddress arg0, android::net::MacAddress arg1);
 		QAndroidJniObject setIsEnhancedOpen(jboolean arg0);
 		QAndroidJniObject setIsHiddenSsid(jboolean arg0);
 		QAndroidJniObject setSsid(jstring arg0);
 		QAndroidJniObject setSsid(const QString &arg0);
-		QAndroidJniObject setSsidPattern(__jni_impl::android::os::PatternMatcher arg0);
-		QAndroidJniObject setWpa2EnterpriseConfig(__jni_impl::android::net::wifi::WifiEnterpriseConfig arg0);
+		QAndroidJniObject setSsidPattern(android::os::PatternMatcher arg0);
+		QAndroidJniObject setWpa2EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0);
 		QAndroidJniObject setWpa2Passphrase(jstring arg0);
 		QAndroidJniObject setWpa2Passphrase(const QString &arg0);
-		QAndroidJniObject setWpa3EnterpriseConfig(__jni_impl::android::net::wifi::WifiEnterpriseConfig arg0);
+		QAndroidJniObject setWpa3EnterpriseConfig(android::net::wifi::WifiEnterpriseConfig arg0);
 		QAndroidJniObject setWpa3Passphrase(jstring arg0);
 		QAndroidJniObject setWpa3Passphrase(const QString &arg0);
-	};
-} // namespace __jni_impl::android::net::wifi
-
-#include "../MacAddress.hpp"
-#include "./WifiEnterpriseConfig.hpp"
-#include "./WifiNetworkSpecifier.hpp"
-#include "../../os/PatternMatcher.hpp"
-
-namespace __jni_impl::android::net::wifi
-{
-	// Fields
-	
-	// Constructors
-	void WifiNetworkSpecifier_Builder::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.net.wifi.WifiNetworkSpecifier$Builder",
-			"()V"
-		);
-	}
-	
-	// Methods
-	QAndroidJniObject WifiNetworkSpecifier_Builder::build()
-	{
-		return __thiz.callObjectMethod(
-			"build",
-			"()Landroid/net/wifi/WifiNetworkSpecifier;"
-		);
-	}
-	QAndroidJniObject WifiNetworkSpecifier_Builder::setBssid(__jni_impl::android::net::MacAddress arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setBssid",
-			"(Landroid/net/MacAddress;)Landroid/net/wifi/WifiNetworkSpecifier$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject WifiNetworkSpecifier_Builder::setBssidPattern(__jni_impl::android::net::MacAddress arg0, __jni_impl::android::net::MacAddress arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setBssidPattern",
-			"(Landroid/net/MacAddress;Landroid/net/MacAddress;)Landroid/net/wifi/WifiNetworkSpecifier$Builder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject WifiNetworkSpecifier_Builder::setIsEnhancedOpen(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setIsEnhancedOpen",
-			"(Z)Landroid/net/wifi/WifiNetworkSpecifier$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject WifiNetworkSpecifier_Builder::setIsHiddenSsid(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setIsHiddenSsid",
-			"(Z)Landroid/net/wifi/WifiNetworkSpecifier$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject WifiNetworkSpecifier_Builder::setSsid(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSsid",
-			"(Ljava/lang/String;)Landroid/net/wifi/WifiNetworkSpecifier$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject WifiNetworkSpecifier_Builder::setSsid(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSsid",
-			"(Ljava/lang/String;)Landroid/net/wifi/WifiNetworkSpecifier$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject WifiNetworkSpecifier_Builder::setSsidPattern(__jni_impl::android::os::PatternMatcher arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSsidPattern",
-			"(Landroid/os/PatternMatcher;)Landroid/net/wifi/WifiNetworkSpecifier$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject WifiNetworkSpecifier_Builder::setWpa2EnterpriseConfig(__jni_impl::android::net::wifi::WifiEnterpriseConfig arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setWpa2EnterpriseConfig",
-			"(Landroid/net/wifi/WifiEnterpriseConfig;)Landroid/net/wifi/WifiNetworkSpecifier$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject WifiNetworkSpecifier_Builder::setWpa2Passphrase(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setWpa2Passphrase",
-			"(Ljava/lang/String;)Landroid/net/wifi/WifiNetworkSpecifier$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject WifiNetworkSpecifier_Builder::setWpa2Passphrase(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setWpa2Passphrase",
-			"(Ljava/lang/String;)Landroid/net/wifi/WifiNetworkSpecifier$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject WifiNetworkSpecifier_Builder::setWpa3EnterpriseConfig(__jni_impl::android::net::wifi::WifiEnterpriseConfig arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setWpa3EnterpriseConfig",
-			"(Landroid/net/wifi/WifiEnterpriseConfig;)Landroid/net/wifi/WifiNetworkSpecifier$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject WifiNetworkSpecifier_Builder::setWpa3Passphrase(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setWpa3Passphrase",
-			"(Ljava/lang/String;)Landroid/net/wifi/WifiNetworkSpecifier$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject WifiNetworkSpecifier_Builder::setWpa3Passphrase(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setWpa3Passphrase",
-			"(Ljava/lang/String;)Landroid/net/wifi/WifiNetworkSpecifier$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-} // namespace __jni_impl::android::net::wifi
-
-namespace android::net::wifi
-{
-	class WifiNetworkSpecifier_Builder : public __jni_impl::android::net::wifi::WifiNetworkSpecifier_Builder
-	{
-	public:
-		WifiNetworkSpecifier_Builder(QAndroidJniObject obj) { __thiz = obj; }
-		WifiNetworkSpecifier_Builder()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::net::wifi
 

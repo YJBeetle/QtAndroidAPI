@@ -2,12 +2,12 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::bluetooth::le
+namespace android::bluetooth::le
 {
 	class ScanResult;
 }
 
-namespace __jni_impl::android::bluetooth::le
+namespace android::bluetooth::le
 {
 	class ScanCallback : public __JniBaseClass
 	{
@@ -18,97 +18,14 @@ namespace __jni_impl::android::bluetooth::le
 		static jint SCAN_FAILED_FEATURE_UNSUPPORTED();
 		static jint SCAN_FAILED_INTERNAL_ERROR();
 		
+		ScanCallback(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		ScanCallback();
 		
 		// Methods
-		void onBatchScanResults(__jni_impl::__JniBaseClass arg0);
+		void onBatchScanResults(__JniBaseClass arg0);
 		void onScanFailed(jint arg0);
-		void onScanResult(jint arg0, __jni_impl::android::bluetooth::le::ScanResult arg1);
-	};
-} // namespace __jni_impl::android::bluetooth::le
-
-#include "./ScanResult.hpp"
-
-namespace __jni_impl::android::bluetooth::le
-{
-	// Fields
-	jint ScanCallback::SCAN_FAILED_ALREADY_STARTED()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.bluetooth.le.ScanCallback",
-			"SCAN_FAILED_ALREADY_STARTED"
-		);
-	}
-	jint ScanCallback::SCAN_FAILED_APPLICATION_REGISTRATION_FAILED()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.bluetooth.le.ScanCallback",
-			"SCAN_FAILED_APPLICATION_REGISTRATION_FAILED"
-		);
-	}
-	jint ScanCallback::SCAN_FAILED_FEATURE_UNSUPPORTED()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.bluetooth.le.ScanCallback",
-			"SCAN_FAILED_FEATURE_UNSUPPORTED"
-		);
-	}
-	jint ScanCallback::SCAN_FAILED_INTERNAL_ERROR()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.bluetooth.le.ScanCallback",
-			"SCAN_FAILED_INTERNAL_ERROR"
-		);
-	}
-	
-	// Constructors
-	void ScanCallback::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.bluetooth.le.ScanCallback",
-			"()V"
-		);
-	}
-	
-	// Methods
-	void ScanCallback::onBatchScanResults(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"onBatchScanResults",
-			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ScanCallback::onScanFailed(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"onScanFailed",
-			"(I)V",
-			arg0
-		);
-	}
-	void ScanCallback::onScanResult(jint arg0, __jni_impl::android::bluetooth::le::ScanResult arg1)
-	{
-		__thiz.callMethod<void>(
-			"onScanResult",
-			"(ILandroid/bluetooth/le/ScanResult;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::android::bluetooth::le
-
-namespace android::bluetooth::le
-{
-	class ScanCallback : public __jni_impl::android::bluetooth::le::ScanCallback
-	{
-	public:
-		ScanCallback(QAndroidJniObject obj) { __thiz = obj; }
-		ScanCallback()
-		{
-			__constructor();
-		}
+		void onScanResult(jint arg0, android::bluetooth::le::ScanResult arg1);
 	};
 } // namespace android::bluetooth::le
 

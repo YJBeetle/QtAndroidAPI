@@ -3,15 +3,16 @@
 #include "../../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::view::accessibility
+namespace android::view::accessibility
 {
 	class AccessibilityNodeInfo_CollectionItemInfo : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		AccessibilityNodeInfo_CollectionItemInfo(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		AccessibilityNodeInfo_CollectionItemInfo() = default;
 		
 		// Methods
 		static QAndroidJniObject obtain(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4);
@@ -22,104 +23,6 @@ namespace __jni_impl::android::view::accessibility
 		jint getRowSpan();
 		jboolean isHeading();
 		jboolean isSelected();
-	};
-} // namespace __jni_impl::android::view::accessibility
-
-
-namespace __jni_impl::android::view::accessibility
-{
-	// Fields
-	
-	// Constructors
-	void AccessibilityNodeInfo_CollectionItemInfo::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.accessibility.AccessibilityNodeInfo$CollectionItemInfo",
-			"(V)V");
-	}
-	
-	// Methods
-	QAndroidJniObject AccessibilityNodeInfo_CollectionItemInfo::obtain(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.accessibility.AccessibilityNodeInfo$CollectionItemInfo",
-			"obtain",
-			"(IIIIZ)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	QAndroidJniObject AccessibilityNodeInfo_CollectionItemInfo::obtain(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4, jboolean arg5)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.accessibility.AccessibilityNodeInfo$CollectionItemInfo",
-			"obtain",
-			"(IIIIZZ)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5
-		);
-	}
-	jint AccessibilityNodeInfo_CollectionItemInfo::getColumnIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnIndex",
-			"()I"
-		);
-	}
-	jint AccessibilityNodeInfo_CollectionItemInfo::getColumnSpan()
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnSpan",
-			"()I"
-		);
-	}
-	jint AccessibilityNodeInfo_CollectionItemInfo::getRowIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getRowIndex",
-			"()I"
-		);
-	}
-	jint AccessibilityNodeInfo_CollectionItemInfo::getRowSpan()
-	{
-		return __thiz.callMethod<jint>(
-			"getRowSpan",
-			"()I"
-		);
-	}
-	jboolean AccessibilityNodeInfo_CollectionItemInfo::isHeading()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isHeading",
-			"()Z"
-		);
-	}
-	jboolean AccessibilityNodeInfo_CollectionItemInfo::isSelected()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSelected",
-			"()Z"
-		);
-	}
-} // namespace __jni_impl::android::view::accessibility
-
-namespace android::view::accessibility
-{
-	class AccessibilityNodeInfo_CollectionItemInfo : public __jni_impl::android::view::accessibility::AccessibilityNodeInfo_CollectionItemInfo
-	{
-	public:
-		AccessibilityNodeInfo_CollectionItemInfo(QAndroidJniObject obj) { __thiz = obj; }
-		AccessibilityNodeInfo_CollectionItemInfo()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::view::accessibility
 

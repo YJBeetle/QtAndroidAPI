@@ -5,70 +5,20 @@
 #include "../../java/lang/RuntimeException.hpp"
 
 
-namespace __jni_impl::android::os
+namespace android::os
 {
-	class ParcelFormatException : public __jni_impl::java::lang::RuntimeException
+	class ParcelFormatException : public java::lang::RuntimeException
 	{
 	public:
 		// Fields
 		
+		ParcelFormatException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		ParcelFormatException();
+		ParcelFormatException(jstring &arg0);
+		ParcelFormatException(const QString &arg0);
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::os
-
-
-namespace __jni_impl::android::os
-{
-	// Fields
-	
-	// Constructors
-	void ParcelFormatException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.ParcelFormatException",
-			"()V"
-		);
-	}
-	void ParcelFormatException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.ParcelFormatException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void ParcelFormatException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.ParcelFormatException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::os
-
-namespace android::os
-{
-	class ParcelFormatException : public __jni_impl::android::os::ParcelFormatException
-	{
-	public:
-		ParcelFormatException(QAndroidJniObject obj) { __thiz = obj; }
-		ParcelFormatException()
-		{
-			__constructor();
-		}
-		ParcelFormatException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace android::os
 

@@ -4,46 +4,18 @@
 #include "./Violation.hpp"
 
 
-namespace __jni_impl::android::os::strictmode
+namespace android::os::strictmode
 {
-	class UntaggedSocketViolation : public __jni_impl::android::os::strictmode::Violation
+	class UntaggedSocketViolation : public android::os::strictmode::Violation
 	{
 	public:
 		// Fields
 		
+		UntaggedSocketViolation(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		UntaggedSocketViolation() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::os::strictmode
-
-
-namespace __jni_impl::android::os::strictmode
-{
-	// Fields
-	
-	// Constructors
-	void UntaggedSocketViolation::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.strictmode.UntaggedSocketViolation",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::os::strictmode
-
-namespace android::os::strictmode
-{
-	class UntaggedSocketViolation : public __jni_impl::android::os::strictmode::UntaggedSocketViolation
-	{
-	public:
-		UntaggedSocketViolation(QAndroidJniObject obj) { __thiz = obj; }
-		UntaggedSocketViolation()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::os::strictmode
 

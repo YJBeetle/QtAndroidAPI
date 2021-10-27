@@ -4,9 +4,9 @@
 #include "../../../java/lang/Enum.hpp"
 
 
-namespace __jni_impl::android::icu::text
+namespace android::icu::text
 {
-	class UnicodeSetSpanner_TrimOption : public __jni_impl::java::lang::Enum
+	class UnicodeSetSpanner_TrimOption : public java::lang::Enum
 	{
 	public:
 		// Fields
@@ -14,92 +14,14 @@ namespace __jni_impl::android::icu::text
 		static QAndroidJniObject LEADING();
 		static QAndroidJniObject TRAILING();
 		
+		UnicodeSetSpanner_TrimOption(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		UnicodeSetSpanner_TrimOption() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
 		static jarray values();
-	};
-} // namespace __jni_impl::android::icu::text
-
-
-namespace __jni_impl::android::icu::text
-{
-	// Fields
-	QAndroidJniObject UnicodeSetSpanner_TrimOption::BOTH()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.UnicodeSetSpanner$TrimOption",
-			"BOTH",
-			"Landroid/icu/text/UnicodeSetSpanner$TrimOption;"
-		);
-	}
-	QAndroidJniObject UnicodeSetSpanner_TrimOption::LEADING()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.UnicodeSetSpanner$TrimOption",
-			"LEADING",
-			"Landroid/icu/text/UnicodeSetSpanner$TrimOption;"
-		);
-	}
-	QAndroidJniObject UnicodeSetSpanner_TrimOption::TRAILING()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.UnicodeSetSpanner$TrimOption",
-			"TRAILING",
-			"Landroid/icu/text/UnicodeSetSpanner$TrimOption;"
-		);
-	}
-	
-	// Constructors
-	void UnicodeSetSpanner_TrimOption::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.UnicodeSetSpanner$TrimOption",
-			"(V)V");
-	}
-	
-	// Methods
-	QAndroidJniObject UnicodeSetSpanner_TrimOption::valueOf(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.UnicodeSetSpanner$TrimOption",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSetSpanner$TrimOption;",
-			arg0
-		);
-	}
-	QAndroidJniObject UnicodeSetSpanner_TrimOption::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.UnicodeSetSpanner$TrimOption",
-			"valueOf",
-			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSetSpanner$TrimOption;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jarray UnicodeSetSpanner_TrimOption::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.UnicodeSetSpanner$TrimOption",
-			"values",
-			"()[Landroid/icu/text/UnicodeSetSpanner$TrimOption;"
-		).object<jarray>();
-	}
-} // namespace __jni_impl::android::icu::text
-
-namespace android::icu::text
-{
-	class UnicodeSetSpanner_TrimOption : public __jni_impl::android::icu::text::UnicodeSetSpanner_TrimOption
-	{
-	public:
-		UnicodeSetSpanner_TrimOption(QAndroidJniObject obj) { __thiz = obj; }
-		UnicodeSetSpanner_TrimOption()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::icu::text
 

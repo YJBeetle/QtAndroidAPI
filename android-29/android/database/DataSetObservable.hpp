@@ -4,63 +4,20 @@
 #include "./Observable.hpp"
 
 
-namespace __jni_impl::android::database
+namespace android::database
 {
-	class DataSetObservable : public __jni_impl::android::database::Observable
+	class DataSetObservable : public android::database::Observable
 	{
 	public:
 		// Fields
 		
+		DataSetObservable(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		DataSetObservable();
 		
 		// Methods
 		void notifyChanged();
 		void notifyInvalidated();
-	};
-} // namespace __jni_impl::android::database
-
-
-namespace __jni_impl::android::database
-{
-	// Fields
-	
-	// Constructors
-	void DataSetObservable::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.DataSetObservable",
-			"()V"
-		);
-	}
-	
-	// Methods
-	void DataSetObservable::notifyChanged()
-	{
-		__thiz.callMethod<void>(
-			"notifyChanged",
-			"()V"
-		);
-	}
-	void DataSetObservable::notifyInvalidated()
-	{
-		__thiz.callMethod<void>(
-			"notifyInvalidated",
-			"()V"
-		);
-	}
-} // namespace __jni_impl::android::database
-
-namespace android::database
-{
-	class DataSetObservable : public __jni_impl::android::database::DataSetObservable
-	{
-	public:
-		DataSetObservable(QAndroidJniObject obj) { __thiz = obj; }
-		DataSetObservable()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::database
 

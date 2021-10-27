@@ -4,72 +4,21 @@
 #include "../../lang/Exception.hpp"
 
 
-namespace __jni_impl::java::util::prefs
+namespace java::util::prefs
 {
-	class BackingStoreException : public __jni_impl::java::lang::Exception
+	class BackingStoreException : public java::lang::Exception
 	{
 	public:
 		// Fields
 		
+		BackingStoreException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
-		void __constructor(jthrowable arg0);
+		BackingStoreException(jstring &arg0);
+		BackingStoreException(const QString &arg0);
+		BackingStoreException(jthrowable &arg0);
+		BackingStoreException() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::util::prefs
-
-
-namespace __jni_impl::java::util::prefs
-{
-	// Fields
-	
-	// Constructors
-	void BackingStoreException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.prefs.BackingStoreException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void BackingStoreException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.prefs.BackingStoreException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void BackingStoreException::__constructor(jthrowable arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.prefs.BackingStoreException",
-			"(Ljava/lang/Throwable;)V",
-			arg0
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::util::prefs
-
-namespace java::util::prefs
-{
-	class BackingStoreException : public __jni_impl::java::util::prefs::BackingStoreException
-	{
-	public:
-		BackingStoreException(QAndroidJniObject obj) { __thiz = obj; }
-		BackingStoreException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		BackingStoreException(jthrowable arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace java::util::prefs
 

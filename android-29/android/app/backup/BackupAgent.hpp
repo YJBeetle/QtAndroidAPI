@@ -4,30 +4,30 @@
 #include "../../content/Context.hpp"
 #include "../../content/ContextWrapper.hpp"
 
-namespace __jni_impl::android::app::backup
+namespace android::app::backup
 {
 	class BackupDataInput;
 }
-namespace __jni_impl::android::app::backup
+namespace android::app::backup
 {
 	class BackupDataOutput;
 }
-namespace __jni_impl::android::app::backup
+namespace android::app::backup
 {
 	class FullBackupDataOutput;
 }
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class ParcelFileDescriptor;
 }
-namespace __jni_impl::java::io
+namespace java::io
 {
 	class File;
 }
 
-namespace __jni_impl::android::app::backup
+namespace android::app::backup
 {
-	class BackupAgent : public __jni_impl::android::content::ContextWrapper
+	class BackupAgent : public android::content::ContextWrapper
 	{
 	public:
 		// Fields
@@ -36,173 +36,21 @@ namespace __jni_impl::android::app::backup
 		static jint TYPE_DIRECTORY();
 		static jint TYPE_FILE();
 		
+		BackupAgent(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		BackupAgent();
 		
 		// Methods
-		void fullBackupFile(__jni_impl::java::io::File arg0, __jni_impl::android::app::backup::FullBackupDataOutput arg1);
-		void onBackup(__jni_impl::android::os::ParcelFileDescriptor arg0, __jni_impl::android::app::backup::BackupDataOutput arg1, __jni_impl::android::os::ParcelFileDescriptor arg2);
+		void fullBackupFile(java::io::File arg0, android::app::backup::FullBackupDataOutput arg1);
+		void onBackup(android::os::ParcelFileDescriptor arg0, android::app::backup::BackupDataOutput arg1, android::os::ParcelFileDescriptor arg2);
 		void onCreate();
 		void onDestroy();
-		void onFullBackup(__jni_impl::android::app::backup::FullBackupDataOutput arg0);
+		void onFullBackup(android::app::backup::FullBackupDataOutput arg0);
 		void onQuotaExceeded(jlong arg0, jlong arg1);
-		void onRestore(__jni_impl::android::app::backup::BackupDataInput arg0, jint arg1, __jni_impl::android::os::ParcelFileDescriptor arg2);
-		void onRestore(__jni_impl::android::app::backup::BackupDataInput arg0, jlong arg1, __jni_impl::android::os::ParcelFileDescriptor arg2);
-		void onRestoreFile(__jni_impl::android::os::ParcelFileDescriptor arg0, jlong arg1, __jni_impl::java::io::File arg2, jint arg3, jlong arg4, jlong arg5);
+		void onRestore(android::app::backup::BackupDataInput arg0, jint arg1, android::os::ParcelFileDescriptor arg2);
+		void onRestore(android::app::backup::BackupDataInput arg0, jlong arg1, android::os::ParcelFileDescriptor arg2);
+		void onRestoreFile(android::os::ParcelFileDescriptor arg0, jlong arg1, java::io::File arg2, jint arg3, jlong arg4, jlong arg5);
 		void onRestoreFinished();
-	};
-} // namespace __jni_impl::android::app::backup
-
-#include "./BackupDataInput.hpp"
-#include "./BackupDataOutput.hpp"
-#include "./FullBackupDataOutput.hpp"
-#include "../../os/ParcelFileDescriptor.hpp"
-#include "../../../java/io/File.hpp"
-
-namespace __jni_impl::android::app::backup
-{
-	// Fields
-	jint BackupAgent::FLAG_CLIENT_SIDE_ENCRYPTION_ENABLED()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.app.backup.BackupAgent",
-			"FLAG_CLIENT_SIDE_ENCRYPTION_ENABLED"
-		);
-	}
-	jint BackupAgent::FLAG_DEVICE_TO_DEVICE_TRANSFER()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.app.backup.BackupAgent",
-			"FLAG_DEVICE_TO_DEVICE_TRANSFER"
-		);
-	}
-	jint BackupAgent::TYPE_DIRECTORY()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.app.backup.BackupAgent",
-			"TYPE_DIRECTORY"
-		);
-	}
-	jint BackupAgent::TYPE_FILE()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.app.backup.BackupAgent",
-			"TYPE_FILE"
-		);
-	}
-	
-	// Constructors
-	void BackupAgent::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.backup.BackupAgent",
-			"()V"
-		);
-	}
-	
-	// Methods
-	void BackupAgent::fullBackupFile(__jni_impl::java::io::File arg0, __jni_impl::android::app::backup::FullBackupDataOutput arg1)
-	{
-		__thiz.callMethod<void>(
-			"fullBackupFile",
-			"(Ljava/io/File;Landroid/app/backup/FullBackupDataOutput;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void BackupAgent::onBackup(__jni_impl::android::os::ParcelFileDescriptor arg0, __jni_impl::android::app::backup::BackupDataOutput arg1, __jni_impl::android::os::ParcelFileDescriptor arg2)
-	{
-		__thiz.callMethod<void>(
-			"onBackup",
-			"(Landroid/os/ParcelFileDescriptor;Landroid/app/backup/BackupDataOutput;Landroid/os/ParcelFileDescriptor;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void BackupAgent::onCreate()
-	{
-		__thiz.callMethod<void>(
-			"onCreate",
-			"()V"
-		);
-	}
-	void BackupAgent::onDestroy()
-	{
-		__thiz.callMethod<void>(
-			"onDestroy",
-			"()V"
-		);
-	}
-	void BackupAgent::onFullBackup(__jni_impl::android::app::backup::FullBackupDataOutput arg0)
-	{
-		__thiz.callMethod<void>(
-			"onFullBackup",
-			"(Landroid/app/backup/FullBackupDataOutput;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void BackupAgent::onQuotaExceeded(jlong arg0, jlong arg1)
-	{
-		__thiz.callMethod<void>(
-			"onQuotaExceeded",
-			"(JJ)V",
-			arg0,
-			arg1
-		);
-	}
-	void BackupAgent::onRestore(__jni_impl::android::app::backup::BackupDataInput arg0, jint arg1, __jni_impl::android::os::ParcelFileDescriptor arg2)
-	{
-		__thiz.callMethod<void>(
-			"onRestore",
-			"(Landroid/app/backup/BackupDataInput;ILandroid/os/ParcelFileDescriptor;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void BackupAgent::onRestore(__jni_impl::android::app::backup::BackupDataInput arg0, jlong arg1, __jni_impl::android::os::ParcelFileDescriptor arg2)
-	{
-		__thiz.callMethod<void>(
-			"onRestore",
-			"(Landroid/app/backup/BackupDataInput;JLandroid/os/ParcelFileDescriptor;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void BackupAgent::onRestoreFile(__jni_impl::android::os::ParcelFileDescriptor arg0, jlong arg1, __jni_impl::java::io::File arg2, jint arg3, jlong arg4, jlong arg5)
-	{
-		__thiz.callMethod<void>(
-			"onRestoreFile",
-			"(Landroid/os/ParcelFileDescriptor;JLjava/io/File;IJJ)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object(),
-			arg3,
-			arg4,
-			arg5
-		);
-	}
-	void BackupAgent::onRestoreFinished()
-	{
-		__thiz.callMethod<void>(
-			"onRestoreFinished",
-			"()V"
-		);
-	}
-} // namespace __jni_impl::android::app::backup
-
-namespace android::app::backup
-{
-	class BackupAgent : public __jni_impl::android::app::backup::BackupAgent
-	{
-	public:
-		BackupAgent(QAndroidJniObject obj) { __thiz = obj; }
-		BackupAgent()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::app::backup
 

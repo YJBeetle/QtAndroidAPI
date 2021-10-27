@@ -2,16 +2,16 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class ContentResolver;
 }
-namespace __jni_impl::android::net
+namespace android::net
 {
 	class Uri;
 }
 
-namespace __jni_impl::android::provider
+namespace android::provider
 {
 	class CalendarContract_EventDays : public __JniBaseClass
 	{
@@ -19,62 +19,12 @@ namespace __jni_impl::android::provider
 		// Fields
 		static QAndroidJniObject CONTENT_URI();
 		
+		CalendarContract_EventDays(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		CalendarContract_EventDays() = default;
 		
 		// Methods
-		static QAndroidJniObject query(__jni_impl::android::content::ContentResolver arg0, jint arg1, jint arg2, jarray arg3);
-	};
-} // namespace __jni_impl::android::provider
-
-#include "../content/ContentResolver.hpp"
-#include "../net/Uri.hpp"
-
-namespace __jni_impl::android::provider
-{
-	// Fields
-	QAndroidJniObject CalendarContract_EventDays::CONTENT_URI()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.provider.CalendarContract$EventDays",
-			"CONTENT_URI",
-			"Landroid/net/Uri;"
-		);
-	}
-	
-	// Constructors
-	void CalendarContract_EventDays::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.provider.CalendarContract$EventDays",
-			"(V)V");
-	}
-	
-	// Methods
-	QAndroidJniObject CalendarContract_EventDays::query(__jni_impl::android::content::ContentResolver arg0, jint arg1, jint arg2, jarray arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.CalendarContract$EventDays",
-			"query",
-			"(Landroid/content/ContentResolver;II[Ljava/lang/String;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-} // namespace __jni_impl::android::provider
-
-namespace android::provider
-{
-	class CalendarContract_EventDays : public __jni_impl::android::provider::CalendarContract_EventDays
-	{
-	public:
-		CalendarContract_EventDays(QAndroidJniObject obj) { __thiz = obj; }
-		CalendarContract_EventDays()
-		{
-			__constructor();
-		}
+		static QAndroidJniObject query(android::content::ContentResolver arg0, jint arg1, jint arg2, jarray arg3);
 	};
 } // namespace android::provider
 

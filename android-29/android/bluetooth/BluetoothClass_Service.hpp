@@ -3,7 +3,7 @@
 #include "../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::bluetooth
+namespace android::bluetooth
 {
 	class BluetoothClass_Service : public __JniBaseClass
 	{
@@ -19,103 +19,11 @@ namespace __jni_impl::android::bluetooth
 		static jint RENDER();
 		static jint TELEPHONY();
 		
+		BluetoothClass_Service(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		BluetoothClass_Service();
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::bluetooth
-
-
-namespace __jni_impl::android::bluetooth
-{
-	// Fields
-	jint BluetoothClass_Service::AUDIO()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.bluetooth.BluetoothClass$Service",
-			"AUDIO"
-		);
-	}
-	jint BluetoothClass_Service::CAPTURE()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.bluetooth.BluetoothClass$Service",
-			"CAPTURE"
-		);
-	}
-	jint BluetoothClass_Service::INFORMATION()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.bluetooth.BluetoothClass$Service",
-			"INFORMATION"
-		);
-	}
-	jint BluetoothClass_Service::LIMITED_DISCOVERABILITY()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.bluetooth.BluetoothClass$Service",
-			"LIMITED_DISCOVERABILITY"
-		);
-	}
-	jint BluetoothClass_Service::NETWORKING()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.bluetooth.BluetoothClass$Service",
-			"NETWORKING"
-		);
-	}
-	jint BluetoothClass_Service::OBJECT_TRANSFER()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.bluetooth.BluetoothClass$Service",
-			"OBJECT_TRANSFER"
-		);
-	}
-	jint BluetoothClass_Service::POSITIONING()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.bluetooth.BluetoothClass$Service",
-			"POSITIONING"
-		);
-	}
-	jint BluetoothClass_Service::RENDER()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.bluetooth.BluetoothClass$Service",
-			"RENDER"
-		);
-	}
-	jint BluetoothClass_Service::TELEPHONY()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.bluetooth.BluetoothClass$Service",
-			"TELEPHONY"
-		);
-	}
-	
-	// Constructors
-	void BluetoothClass_Service::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.bluetooth.BluetoothClass$Service",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::bluetooth
-
-namespace android::bluetooth
-{
-	class BluetoothClass_Service : public __jni_impl::android::bluetooth::BluetoothClass_Service
-	{
-	public:
-		BluetoothClass_Service(QAndroidJniObject obj) { __thiz = obj; }
-		BluetoothClass_Service()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::bluetooth
 

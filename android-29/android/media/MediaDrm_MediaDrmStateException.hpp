@@ -6,54 +6,19 @@
 #include "../../java/lang/IllegalStateException.hpp"
 
 
-namespace __jni_impl::android::media
+namespace android::media
 {
-	class MediaDrm_MediaDrmStateException : public __jni_impl::java::lang::IllegalStateException
+	class MediaDrm_MediaDrmStateException : public java::lang::IllegalStateException
 	{
 	public:
 		// Fields
 		
+		MediaDrm_MediaDrmStateException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		MediaDrm_MediaDrmStateException() = default;
 		
 		// Methods
 		jstring getDiagnosticInfo();
-	};
-} // namespace __jni_impl::android::media
-
-
-namespace __jni_impl::android::media
-{
-	// Fields
-	
-	// Constructors
-	void MediaDrm_MediaDrmStateException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.MediaDrm$MediaDrmStateException",
-			"(V)V");
-	}
-	
-	// Methods
-	jstring MediaDrm_MediaDrmStateException::getDiagnosticInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getDiagnosticInfo",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-} // namespace __jni_impl::android::media
-
-namespace android::media
-{
-	class MediaDrm_MediaDrmStateException : public __jni_impl::android::media::MediaDrm_MediaDrmStateException
-	{
-	public:
-		MediaDrm_MediaDrmStateException(QAndroidJniObject obj) { __thiz = obj; }
-		MediaDrm_MediaDrmStateException()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::media
 

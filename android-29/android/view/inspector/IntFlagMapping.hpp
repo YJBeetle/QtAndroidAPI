@@ -3,78 +3,21 @@
 #include "../../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::view::inspector
+namespace android::view::inspector
 {
 	class IntFlagMapping : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		IntFlagMapping(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		IntFlagMapping();
 		
 		// Methods
 		void add(jint arg0, jint arg1, jstring arg2);
 		void add(jint arg0, jint arg1, const QString &arg2);
 		QAndroidJniObject get(jint arg0);
-	};
-} // namespace __jni_impl::android::view::inspector
-
-
-namespace __jni_impl::android::view::inspector
-{
-	// Fields
-	
-	// Constructors
-	void IntFlagMapping::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.inspector.IntFlagMapping",
-			"()V"
-		);
-	}
-	
-	// Methods
-	void IntFlagMapping::add(jint arg0, jint arg1, jstring arg2)
-	{
-		__thiz.callMethod<void>(
-			"add",
-			"(IILjava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void IntFlagMapping::add(jint arg0, jint arg1, const QString &arg2)
-	{
-		__thiz.callMethod<void>(
-			"add",
-			"(IILjava/lang/String;)V",
-			arg0,
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
-	QAndroidJniObject IntFlagMapping::get(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"get",
-			"(I)Ljava/util/Set;",
-			arg0
-		);
-	}
-} // namespace __jni_impl::android::view::inspector
-
-namespace android::view::inspector
-{
-	class IntFlagMapping : public __jni_impl::android::view::inspector::IntFlagMapping
-	{
-	public:
-		IntFlagMapping(QAndroidJniObject obj) { __thiz = obj; }
-		IntFlagMapping()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::view::inspector
 

@@ -3,41 +3,43 @@
 #include "../../../__JniBaseClass.hpp"
 #include "./SearchIterator.hpp"
 
-namespace __jni_impl::android::icu::text
+namespace android::icu::text
 {
 	class BreakIterator;
 }
-namespace __jni_impl::android::icu::text
+namespace android::icu::text
 {
 	class RuleBasedCollator;
 }
-namespace __jni_impl::android::icu::util
+namespace android::icu::util
 {
 	class ULocale;
 }
-namespace __jni_impl::java::util
+namespace java::util
 {
 	class Locale;
 }
 
-namespace __jni_impl::android::icu::text
+namespace android::icu::text
 {
-	class StringSearch : public __jni_impl::android::icu::text::SearchIterator
+	class StringSearch : public android::icu::text::SearchIterator
 	{
 	public:
 		// Fields
 		
+		StringSearch(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jstring arg0, jstring arg1);
-		void __constructor(const QString &arg0, const QString &arg1);
-		void __constructor(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::icu::text::RuleBasedCollator arg2);
-		void __constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::icu::text::RuleBasedCollator arg2);
-		void __constructor(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::icu::util::ULocale arg2);
-		void __constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::icu::util::ULocale arg2);
-		void __constructor(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::util::Locale arg2);
-		void __constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::util::Locale arg2);
-		void __constructor(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::icu::text::RuleBasedCollator arg2, __jni_impl::android::icu::text::BreakIterator arg3);
-		void __constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::icu::text::RuleBasedCollator arg2, __jni_impl::android::icu::text::BreakIterator arg3);
+		StringSearch(jstring &arg0, jstring &arg1);
+		StringSearch(const QString &arg0, const QString &arg1);
+		StringSearch(jstring &arg0, __JniBaseClass &arg1, android::icu::text::RuleBasedCollator &arg2);
+		StringSearch(const QString &arg0, __JniBaseClass &arg1, android::icu::text::RuleBasedCollator &arg2);
+		StringSearch(jstring &arg0, __JniBaseClass &arg1, android::icu::util::ULocale &arg2);
+		StringSearch(const QString &arg0, __JniBaseClass &arg1, android::icu::util::ULocale &arg2);
+		StringSearch(jstring &arg0, __JniBaseClass &arg1, java::util::Locale &arg2);
+		StringSearch(const QString &arg0, __JniBaseClass &arg1, java::util::Locale &arg2);
+		StringSearch(jstring &arg0, __JniBaseClass &arg1, android::icu::text::RuleBasedCollator &arg2, android::icu::text::BreakIterator &arg3);
+		StringSearch(const QString &arg0, __JniBaseClass &arg1, android::icu::text::RuleBasedCollator &arg2, android::icu::text::BreakIterator &arg3);
+		StringSearch() = default;
 		
 		// Methods
 		QAndroidJniObject getCollator();
@@ -46,252 +48,11 @@ namespace __jni_impl::android::icu::text
 		jboolean isCanonical();
 		void reset();
 		void setCanonical(jboolean arg0);
-		void setCollator(__jni_impl::android::icu::text::RuleBasedCollator arg0);
+		void setCollator(android::icu::text::RuleBasedCollator arg0);
 		void setIndex(jint arg0);
 		void setPattern(jstring arg0);
 		void setPattern(const QString &arg0);
-		void setTarget(__jni_impl::__JniBaseClass arg0);
-	};
-} // namespace __jni_impl::android::icu::text
-
-#include "./BreakIterator.hpp"
-#include "./RuleBasedCollator.hpp"
-#include "../util/ULocale.hpp"
-#include "../../../java/util/Locale.hpp"
-
-namespace __jni_impl::android::icu::text
-{
-	// Fields
-	
-	// Constructors
-	void StringSearch::__constructor(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.StringSearch",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
-		);
-	}
-	void StringSearch::__constructor(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.StringSearch",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	void StringSearch::__constructor(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::icu::text::RuleBasedCollator arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.StringSearch",
-			"(Ljava/lang/String;Ljava/text/CharacterIterator;Landroid/icu/text/RuleBasedCollator;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void StringSearch::__constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::icu::text::RuleBasedCollator arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.StringSearch",
-			"(Ljava/lang/String;Ljava/text/CharacterIterator;Landroid/icu/text/RuleBasedCollator;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void StringSearch::__constructor(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::icu::util::ULocale arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.StringSearch",
-			"(Ljava/lang/String;Ljava/text/CharacterIterator;Landroid/icu/util/ULocale;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void StringSearch::__constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::icu::util::ULocale arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.StringSearch",
-			"(Ljava/lang/String;Ljava/text/CharacterIterator;Landroid/icu/util/ULocale;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void StringSearch::__constructor(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::util::Locale arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.StringSearch",
-			"(Ljava/lang/String;Ljava/text/CharacterIterator;Ljava/util/Locale;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void StringSearch::__constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::util::Locale arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.StringSearch",
-			"(Ljava/lang/String;Ljava/text/CharacterIterator;Ljava/util/Locale;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void StringSearch::__constructor(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::icu::text::RuleBasedCollator arg2, __jni_impl::android::icu::text::BreakIterator arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.StringSearch",
-			"(Ljava/lang/String;Ljava/text/CharacterIterator;Landroid/icu/text/RuleBasedCollator;Landroid/icu/text/BreakIterator;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-	void StringSearch::__constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::icu::text::RuleBasedCollator arg2, __jni_impl::android::icu::text::BreakIterator arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.StringSearch",
-			"(Ljava/lang/String;Ljava/text/CharacterIterator;Landroid/icu/text/RuleBasedCollator;Landroid/icu/text/BreakIterator;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-	
-	// Methods
-	QAndroidJniObject StringSearch::getCollator()
-	{
-		return __thiz.callObjectMethod(
-			"getCollator",
-			"()Landroid/icu/text/RuleBasedCollator;"
-		);
-	}
-	jint StringSearch::getIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getIndex",
-			"()I"
-		);
-	}
-	jstring StringSearch::getPattern()
-	{
-		return __thiz.callObjectMethod(
-			"getPattern",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jboolean StringSearch::isCanonical()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isCanonical",
-			"()Z"
-		);
-	}
-	void StringSearch::reset()
-	{
-		__thiz.callMethod<void>(
-			"reset",
-			"()V"
-		);
-	}
-	void StringSearch::setCanonical(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCanonical",
-			"(Z)V",
-			arg0
-		);
-	}
-	void StringSearch::setCollator(__jni_impl::android::icu::text::RuleBasedCollator arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCollator",
-			"(Landroid/icu/text/RuleBasedCollator;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void StringSearch::setIndex(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setIndex",
-			"(I)V",
-			arg0
-		);
-	}
-	void StringSearch::setPattern(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPattern",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void StringSearch::setPattern(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPattern",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void StringSearch::setTarget(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTarget",
-			"(Ljava/text/CharacterIterator;)V",
-			arg0.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::android::icu::text
-
-namespace android::icu::text
-{
-	class StringSearch : public __jni_impl::android::icu::text::StringSearch
-	{
-	public:
-		StringSearch(QAndroidJniObject obj) { __thiz = obj; }
-		StringSearch(jstring arg0, jstring arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
-		StringSearch(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::icu::text::RuleBasedCollator arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
-		}
-		StringSearch(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::icu::util::ULocale arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
-		}
-		StringSearch(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::util::Locale arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
-		}
-		StringSearch(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::icu::text::RuleBasedCollator arg2, __jni_impl::android::icu::text::BreakIterator arg3)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2,
-				arg3);
-		}
+		void setTarget(__JniBaseClass arg0);
 	};
 } // namespace android::icu::text
 

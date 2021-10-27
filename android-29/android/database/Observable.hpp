@@ -2,79 +2,26 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util
+namespace java::util
 {
 	class ArrayList;
 }
 
-namespace __jni_impl::android::database
+namespace android::database
 {
 	class Observable : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		Observable(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		Observable();
 		
 		// Methods
 		void registerObserver(jobject arg0);
 		void unregisterAll();
 		void unregisterObserver(jobject arg0);
-	};
-} // namespace __jni_impl::android::database
-
-#include "../../java/util/ArrayList.hpp"
-
-namespace __jni_impl::android::database
-{
-	// Fields
-	
-	// Constructors
-	void Observable::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.Observable",
-			"()V"
-		);
-	}
-	
-	// Methods
-	void Observable::registerObserver(jobject arg0)
-	{
-		__thiz.callMethod<void>(
-			"registerObserver",
-			"(Ljava/lang/Object;)V",
-			arg0
-		);
-	}
-	void Observable::unregisterAll()
-	{
-		__thiz.callMethod<void>(
-			"unregisterAll",
-			"()V"
-		);
-	}
-	void Observable::unregisterObserver(jobject arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterObserver",
-			"(Ljava/lang/Object;)V",
-			arg0
-		);
-	}
-} // namespace __jni_impl::android::database
-
-namespace android::database
-{
-	class Observable : public __jni_impl::android::database::Observable
-	{
-	public:
-		Observable(QAndroidJniObject obj) { __thiz = obj; }
-		Observable()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::database
 

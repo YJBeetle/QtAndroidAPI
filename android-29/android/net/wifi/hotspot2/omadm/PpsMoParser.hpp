@@ -2,72 +2,25 @@
 
 #include "../../../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net::wifi::hotspot2
+namespace android::net::wifi::hotspot2
 {
 	class PasspointConfiguration;
 }
 
-namespace __jni_impl::android::net::wifi::hotspot2::omadm
+namespace android::net::wifi::hotspot2::omadm
 {
 	class PpsMoParser : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		PpsMoParser(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		PpsMoParser() = default;
 		
 		// Methods
 		static QAndroidJniObject parseMoText(jstring arg0);
 		static QAndroidJniObject parseMoText(const QString &arg0);
-	};
-} // namespace __jni_impl::android::net::wifi::hotspot2::omadm
-
-#include "../PasspointConfiguration.hpp"
-
-namespace __jni_impl::android::net::wifi::hotspot2::omadm
-{
-	// Fields
-	
-	// Constructors
-	void PpsMoParser::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.net.wifi.hotspot2.omadm.PpsMoParser",
-			"(V)V");
-	}
-	
-	// Methods
-	QAndroidJniObject PpsMoParser::parseMoText(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.wifi.hotspot2.omadm.PpsMoParser",
-			"parseMoText",
-			"(Ljava/lang/String;)Landroid/net/wifi/hotspot2/PasspointConfiguration;",
-			arg0
-		);
-	}
-	QAndroidJniObject PpsMoParser::parseMoText(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.wifi.hotspot2.omadm.PpsMoParser",
-			"parseMoText",
-			"(Ljava/lang/String;)Landroid/net/wifi/hotspot2/PasspointConfiguration;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-} // namespace __jni_impl::android::net::wifi::hotspot2::omadm
-
-namespace android::net::wifi::hotspot2::omadm
-{
-	class PpsMoParser : public __jni_impl::android::net::wifi::hotspot2::omadm::PpsMoParser
-	{
-	public:
-		PpsMoParser(QAndroidJniObject obj) { __thiz = obj; }
-		PpsMoParser()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::net::wifi::hotspot2::omadm
 

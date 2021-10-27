@@ -6,47 +6,18 @@
 #include "../../lang/IllegalStateException.hpp"
 
 
-namespace __jni_impl::java::nio::channels
+namespace java::nio::channels
 {
-	class NonReadableChannelException : public __jni_impl::java::lang::IllegalStateException
+	class NonReadableChannelException : public java::lang::IllegalStateException
 	{
 	public:
 		// Fields
 		
+		NonReadableChannelException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		NonReadableChannelException();
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::nio::channels
-
-
-namespace __jni_impl::java::nio::channels
-{
-	// Fields
-	
-	// Constructors
-	void NonReadableChannelException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.channels.NonReadableChannelException",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::nio::channels
-
-namespace java::nio::channels
-{
-	class NonReadableChannelException : public __jni_impl::java::nio::channels::NonReadableChannelException
-	{
-	public:
-		NonReadableChannelException(QAndroidJniObject obj) { __thiz = obj; }
-		NonReadableChannelException()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::nio::channels
 

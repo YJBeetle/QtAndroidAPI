@@ -3,107 +3,32 @@
 #include "../../../__JniBaseClass.hpp"
 #include "./CharacterStyle.hpp"
 
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class Parcel;
 }
-namespace __jni_impl::android::text
+namespace android::text
 {
 	class TextPaint;
 }
 
-namespace __jni_impl::android::text::style
+namespace android::text::style
 {
-	class StrikethroughSpan : public __jni_impl::android::text::style::CharacterStyle
+	class StrikethroughSpan : public android::text::style::CharacterStyle
 	{
 	public:
 		// Fields
 		
+		StrikethroughSpan(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(__jni_impl::android::os::Parcel arg0);
+		StrikethroughSpan();
+		StrikethroughSpan(android::os::Parcel &arg0);
 		
 		// Methods
 		jint describeContents();
 		jint getSpanTypeId();
-		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-	};
-} // namespace __jni_impl::android::text::style
-
-#include "../../os/Parcel.hpp"
-#include "../TextPaint.hpp"
-
-namespace __jni_impl::android::text::style
-{
-	// Fields
-	
-	// Constructors
-	void StrikethroughSpan::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.style.StrikethroughSpan",
-			"()V"
-		);
-	}
-	void StrikethroughSpan::__constructor(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.style.StrikethroughSpan",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	
-	// Methods
-	jint StrikethroughSpan::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	jint StrikethroughSpan::getSpanTypeId()
-	{
-		return __thiz.callMethod<jint>(
-			"getSpanTypeId",
-			"()I"
-		);
-	}
-	void StrikethroughSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
-	{
-		__thiz.callMethod<void>(
-			"updateDrawState",
-			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void StrikethroughSpan::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-} // namespace __jni_impl::android::text::style
-
-namespace android::text::style
-{
-	class StrikethroughSpan : public __jni_impl::android::text::style::StrikethroughSpan
-	{
-	public:
-		StrikethroughSpan(QAndroidJniObject obj) { __thiz = obj; }
-		StrikethroughSpan()
-		{
-			__constructor();
-		}
-		StrikethroughSpan(__jni_impl::android::os::Parcel arg0)
-		{
-			__constructor(
-				arg0);
-		}
+		void updateDrawState(android::text::TextPaint arg0);
+		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::text::style
 

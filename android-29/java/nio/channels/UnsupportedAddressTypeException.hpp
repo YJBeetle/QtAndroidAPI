@@ -6,47 +6,18 @@
 #include "../../lang/IllegalArgumentException.hpp"
 
 
-namespace __jni_impl::java::nio::channels
+namespace java::nio::channels
 {
-	class UnsupportedAddressTypeException : public __jni_impl::java::lang::IllegalArgumentException
+	class UnsupportedAddressTypeException : public java::lang::IllegalArgumentException
 	{
 	public:
 		// Fields
 		
+		UnsupportedAddressTypeException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		UnsupportedAddressTypeException();
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::nio::channels
-
-
-namespace __jni_impl::java::nio::channels
-{
-	// Fields
-	
-	// Constructors
-	void UnsupportedAddressTypeException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.channels.UnsupportedAddressTypeException",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::nio::channels
-
-namespace java::nio::channels
-{
-	class UnsupportedAddressTypeException : public __jni_impl::java::nio::channels::UnsupportedAddressTypeException
-	{
-	public:
-		UnsupportedAddressTypeException(QAndroidJniObject obj) { __thiz = obj; }
-		UnsupportedAddressTypeException()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::nio::channels
 

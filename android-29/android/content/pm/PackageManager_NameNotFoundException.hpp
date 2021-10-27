@@ -5,70 +5,20 @@
 #include "../../util/AndroidException.hpp"
 
 
-namespace __jni_impl::android::content::pm
+namespace android::content::pm
 {
-	class PackageManager_NameNotFoundException : public __jni_impl::android::util::AndroidException
+	class PackageManager_NameNotFoundException : public android::util::AndroidException
 	{
 	public:
 		// Fields
 		
+		PackageManager_NameNotFoundException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		PackageManager_NameNotFoundException();
+		PackageManager_NameNotFoundException(jstring &arg0);
+		PackageManager_NameNotFoundException(const QString &arg0);
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::content::pm
-
-
-namespace __jni_impl::android::content::pm
-{
-	// Fields
-	
-	// Constructors
-	void PackageManager_NameNotFoundException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.pm.PackageManager$NameNotFoundException",
-			"()V"
-		);
-	}
-	void PackageManager_NameNotFoundException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.pm.PackageManager$NameNotFoundException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void PackageManager_NameNotFoundException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.pm.PackageManager$NameNotFoundException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::content::pm
-
-namespace android::content::pm
-{
-	class PackageManager_NameNotFoundException : public __jni_impl::android::content::pm::PackageManager_NameNotFoundException
-	{
-	public:
-		PackageManager_NameNotFoundException(QAndroidJniObject obj) { __thiz = obj; }
-		PackageManager_NameNotFoundException()
-		{
-			__constructor();
-		}
-		PackageManager_NameNotFoundException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace android::content::pm
 

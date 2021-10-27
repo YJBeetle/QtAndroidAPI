@@ -4,213 +4,55 @@
 #include "./Drawable.hpp"
 #include "./DrawableWrapper.hpp"
 
-namespace __jni_impl::android::content::res
+namespace android::content::res
 {
 	class Resources;
 }
-namespace __jni_impl::android::content::res
+namespace android::content::res
 {
 	class Resources_Theme;
 }
-namespace __jni_impl::android::graphics
+namespace android::graphics
 {
 	class Insets;
 }
-namespace __jni_impl::android::graphics
+namespace android::graphics
 {
 	class Outline;
 }
-namespace __jni_impl::android::graphics
+namespace android::graphics
 {
 	class Rect;
 }
-namespace __jni_impl::android::graphics::drawable
+namespace android::graphics::drawable
 {
 	class Drawable;
 }
 
-namespace __jni_impl::android::graphics::drawable
+namespace android::graphics::drawable
 {
-	class InsetDrawable : public __jni_impl::android::graphics::drawable::DrawableWrapper
+	class InsetDrawable : public android::graphics::drawable::DrawableWrapper
 	{
 	public:
 		// Fields
 		
+		InsetDrawable(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(__jni_impl::android::graphics::drawable::Drawable arg0, jfloat arg1);
-		void __constructor(__jni_impl::android::graphics::drawable::Drawable arg0, jint arg1);
-		void __constructor(__jni_impl::android::graphics::drawable::Drawable arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4);
-		void __constructor(__jni_impl::android::graphics::drawable::Drawable arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		InsetDrawable(android::graphics::drawable::Drawable &arg0, jfloat &arg1);
+		InsetDrawable(android::graphics::drawable::Drawable &arg0, jint &arg1);
+		InsetDrawable(android::graphics::drawable::Drawable &arg0, jfloat &arg1, jfloat &arg2, jfloat &arg3, jfloat &arg4);
+		InsetDrawable(android::graphics::drawable::Drawable &arg0, jint &arg1, jint &arg2, jint &arg3, jint &arg4);
+		InsetDrawable() = default;
 		
 		// Methods
-		void applyTheme(__jni_impl::android::content::res::Resources_Theme arg0);
+		void applyTheme(android::content::res::Resources_Theme arg0);
 		jint getIntrinsicHeight();
 		jint getIntrinsicWidth();
 		jint getOpacity();
 		QAndroidJniObject getOpticalInsets();
-		void getOutline(__jni_impl::android::graphics::Outline arg0);
-		jboolean getPadding(__jni_impl::android::graphics::Rect arg0);
-		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
-	};
-} // namespace __jni_impl::android::graphics::drawable
-
-#include "../../content/res/Resources.hpp"
-#include "../../content/res/Resources_Theme.hpp"
-#include "../Insets.hpp"
-#include "../Outline.hpp"
-#include "../Rect.hpp"
-#include "./Drawable.hpp"
-
-namespace __jni_impl::android::graphics::drawable
-{
-	// Fields
-	
-	// Constructors
-	void InsetDrawable::__constructor(__jni_impl::android::graphics::drawable::Drawable arg0, jfloat arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.drawable.InsetDrawable",
-			"(Landroid/graphics/drawable/Drawable;F)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void InsetDrawable::__constructor(__jni_impl::android::graphics::drawable::Drawable arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.drawable.InsetDrawable",
-			"(Landroid/graphics/drawable/Drawable;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void InsetDrawable::__constructor(__jni_impl::android::graphics::drawable::Drawable arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.drawable.InsetDrawable",
-			"(Landroid/graphics/drawable/Drawable;FFFF)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	void InsetDrawable::__constructor(__jni_impl::android::graphics::drawable::Drawable arg0, jint arg1, jint arg2, jint arg3, jint arg4)
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.drawable.InsetDrawable",
-			"(Landroid/graphics/drawable/Drawable;IIII)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	
-	// Methods
-	void InsetDrawable::applyTheme(__jni_impl::android::content::res::Resources_Theme arg0)
-	{
-		__thiz.callMethod<void>(
-			"applyTheme",
-			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jint InsetDrawable::getIntrinsicHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getIntrinsicHeight",
-			"()I"
-		);
-	}
-	jint InsetDrawable::getIntrinsicWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getIntrinsicWidth",
-			"()I"
-		);
-	}
-	jint InsetDrawable::getOpacity()
-	{
-		return __thiz.callMethod<jint>(
-			"getOpacity",
-			"()I"
-		);
-	}
-	QAndroidJniObject InsetDrawable::getOpticalInsets()
-	{
-		return __thiz.callObjectMethod(
-			"getOpticalInsets",
-			"()Landroid/graphics/Insets;"
-		);
-	}
-	void InsetDrawable::getOutline(__jni_impl::android::graphics::Outline arg0)
-	{
-		__thiz.callMethod<void>(
-			"getOutline",
-			"(Landroid/graphics/Outline;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean InsetDrawable::getPadding(__jni_impl::android::graphics::Rect arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getPadding",
-			"(Landroid/graphics/Rect;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	void InsetDrawable::inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3)
-	{
-		__thiz.callMethod<void>(
-			"inflate",
-			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::android::graphics::drawable
-
-namespace android::graphics::drawable
-{
-	class InsetDrawable : public __jni_impl::android::graphics::drawable::InsetDrawable
-	{
-	public:
-		InsetDrawable(QAndroidJniObject obj) { __thiz = obj; }
-		InsetDrawable(__jni_impl::android::graphics::drawable::Drawable arg0, jfloat arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
-		InsetDrawable(__jni_impl::android::graphics::drawable::Drawable arg0, jint arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
-		InsetDrawable(__jni_impl::android::graphics::drawable::Drawable arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2,
-				arg3,
-				arg4);
-		}
-		InsetDrawable(__jni_impl::android::graphics::drawable::Drawable arg0, jint arg1, jint arg2, jint arg3, jint arg4)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2,
-				arg3,
-				arg4);
-		}
+		void getOutline(android::graphics::Outline arg0);
+		jboolean getPadding(android::graphics::Rect arg0);
+		void inflate(android::content::res::Resources arg0, __JniBaseClass arg1, __JniBaseClass arg2, android::content::res::Resources_Theme arg3);
 	};
 } // namespace android::graphics::drawable
 

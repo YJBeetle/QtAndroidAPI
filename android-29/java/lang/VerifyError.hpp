@@ -5,70 +5,20 @@
 #include "./LinkageError.hpp"
 
 
-namespace __jni_impl::java::lang
+namespace java::lang
 {
-	class VerifyError : public __jni_impl::java::lang::LinkageError
+	class VerifyError : public java::lang::LinkageError
 	{
 	public:
 		// Fields
 		
+		VerifyError(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		VerifyError();
+		VerifyError(jstring &arg0);
+		VerifyError(const QString &arg0);
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::lang
-
-
-namespace __jni_impl::java::lang
-{
-	// Fields
-	
-	// Constructors
-	void VerifyError::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.VerifyError",
-			"()V"
-		);
-	}
-	void VerifyError::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.VerifyError",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void VerifyError::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.VerifyError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::lang
-
-namespace java::lang
-{
-	class VerifyError : public __jni_impl::java::lang::VerifyError
-	{
-	public:
-		VerifyError(QAndroidJniObject obj) { __thiz = obj; }
-		VerifyError()
-		{
-			__constructor();
-		}
-		VerifyError(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace java::lang
 

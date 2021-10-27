@@ -5,58 +5,20 @@
 #include "../../java/io/IOException.hpp"
 
 
-namespace __jni_impl::android::util
+namespace android::util
 {
-	class Base64DataException : public __jni_impl::java::io::IOException
+	class Base64DataException : public java::io::IOException
 	{
 	public:
 		// Fields
 		
+		Base64DataException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		Base64DataException(jstring &arg0);
+		Base64DataException(const QString &arg0);
+		Base64DataException() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::util
-
-
-namespace __jni_impl::android::util
-{
-	// Fields
-	
-	// Constructors
-	void Base64DataException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.util.Base64DataException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void Base64DataException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.util.Base64DataException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::util
-
-namespace android::util
-{
-	class Base64DataException : public __jni_impl::android::util::Base64DataException
-	{
-	public:
-		Base64DataException(QAndroidJniObject obj) { __thiz = obj; }
-		Base64DataException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace android::util
 

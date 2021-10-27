@@ -2,20 +2,20 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::graphics::drawable
+namespace android::graphics::drawable
 {
 	class Icon;
 }
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::android::os
+namespace android::os
 {
 	class Parcel;
 }
 
-namespace __jni_impl::android::telecom
+namespace android::telecom
 {
 	class StatusHints : public __JniBaseClass
 	{
@@ -23,9 +23,11 @@ namespace __jni_impl::android::telecom
 		// Fields
 		static QAndroidJniObject CREATOR();
 		
+		StatusHints(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jstring arg0, __jni_impl::android::graphics::drawable::Icon arg1, __jni_impl::android::os::Bundle arg2);
-		void __constructor(const QString &arg0, __jni_impl::android::graphics::drawable::Icon arg1, __jni_impl::android::os::Bundle arg2);
+		StatusHints(jstring &arg0, android::graphics::drawable::Icon &arg1, android::os::Bundle &arg2);
+		StatusHints(const QString &arg0, android::graphics::drawable::Icon &arg1, android::os::Bundle &arg2);
+		StatusHints() = default;
 		
 		// Methods
 		jint describeContents();
@@ -34,116 +36,7 @@ namespace __jni_impl::android::telecom
 		QAndroidJniObject getIcon();
 		jstring getLabel();
 		jint hashCode();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-	};
-} // namespace __jni_impl::android::telecom
-
-#include "../graphics/drawable/Icon.hpp"
-#include "../os/Bundle.hpp"
-#include "../os/Parcel.hpp"
-
-namespace __jni_impl::android::telecom
-{
-	// Fields
-	QAndroidJniObject StatusHints::CREATOR()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.telecom.StatusHints",
-			"CREATOR",
-			"Landroid/os/Parcelable$Creator;"
-		);
-	}
-	
-	// Constructors
-	void StatusHints::__constructor(jstring arg0, __jni_impl::android::graphics::drawable::Icon arg1, __jni_impl::android::os::Bundle arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.telecom.StatusHints",
-			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Icon;Landroid/os/Bundle;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void StatusHints::__constructor(const QString &arg0, __jni_impl::android::graphics::drawable::Icon arg1, __jni_impl::android::os::Bundle arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.telecom.StatusHints",
-			"(Ljava/lang/CharSequence;Landroid/graphics/drawable/Icon;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	
-	// Methods
-	jint StatusHints::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	jboolean StatusHints::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	QAndroidJniObject StatusHints::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
-		);
-	}
-	QAndroidJniObject StatusHints::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Icon;"
-		);
-	}
-	jstring StatusHints::getLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	jint StatusHints::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	void StatusHints::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-} // namespace __jni_impl::android::telecom
-
-namespace android::telecom
-{
-	class StatusHints : public __jni_impl::android::telecom::StatusHints
-	{
-	public:
-		StatusHints(QAndroidJniObject obj) { __thiz = obj; }
-		StatusHints(jstring arg0, __jni_impl::android::graphics::drawable::Icon arg1, __jni_impl::android::os::Bundle arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
-		}
+		void writeToParcel(android::os::Parcel arg0, jint arg1);
 	};
 } // namespace android::telecom
 

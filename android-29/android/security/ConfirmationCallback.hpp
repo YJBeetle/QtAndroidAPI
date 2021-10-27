@@ -3,81 +3,22 @@
 #include "../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::security
+namespace android::security
 {
 	class ConfirmationCallback : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		ConfirmationCallback(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		ConfirmationCallback();
 		
 		// Methods
 		void onCanceled();
 		void onConfirmed(jbyteArray arg0);
 		void onDismissed();
 		void onError(jthrowable arg0);
-	};
-} // namespace __jni_impl::android::security
-
-
-namespace __jni_impl::android::security
-{
-	// Fields
-	
-	// Constructors
-	void ConfirmationCallback::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.ConfirmationCallback",
-			"()V"
-		);
-	}
-	
-	// Methods
-	void ConfirmationCallback::onCanceled()
-	{
-		__thiz.callMethod<void>(
-			"onCanceled",
-			"()V"
-		);
-	}
-	void ConfirmationCallback::onConfirmed(jbyteArray arg0)
-	{
-		__thiz.callMethod<void>(
-			"onConfirmed",
-			"([B)V",
-			arg0
-		);
-	}
-	void ConfirmationCallback::onDismissed()
-	{
-		__thiz.callMethod<void>(
-			"onDismissed",
-			"()V"
-		);
-	}
-	void ConfirmationCallback::onError(jthrowable arg0)
-	{
-		__thiz.callMethod<void>(
-			"onError",
-			"(Ljava/lang/Throwable;)V",
-			arg0
-		);
-	}
-} // namespace __jni_impl::android::security
-
-namespace android::security
-{
-	class ConfirmationCallback : public __jni_impl::android::security::ConfirmationCallback
-	{
-	public:
-		ConfirmationCallback(QAndroidJniObject obj) { __thiz = obj; }
-		ConfirmationCallback()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::security
 

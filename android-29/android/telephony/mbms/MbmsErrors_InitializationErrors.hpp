@@ -3,7 +3,7 @@
 #include "../../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::telephony::mbms
+namespace android::telephony::mbms
 {
 	class MbmsErrors_InitializationErrors : public __JniBaseClass
 	{
@@ -13,60 +13,11 @@ namespace __jni_impl::android::telephony::mbms
 		static jint ERROR_DUPLICATE_INITIALIZE();
 		static jint ERROR_UNABLE_TO_INITIALIZE();
 		
+		MbmsErrors_InitializationErrors(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		MbmsErrors_InitializationErrors() = default;
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::telephony::mbms
-
-
-namespace __jni_impl::android::telephony::mbms
-{
-	// Fields
-	jint MbmsErrors_InitializationErrors::ERROR_APP_PERMISSIONS_NOT_GRANTED()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.telephony.mbms.MbmsErrors$InitializationErrors",
-			"ERROR_APP_PERMISSIONS_NOT_GRANTED"
-		);
-	}
-	jint MbmsErrors_InitializationErrors::ERROR_DUPLICATE_INITIALIZE()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.telephony.mbms.MbmsErrors$InitializationErrors",
-			"ERROR_DUPLICATE_INITIALIZE"
-		);
-	}
-	jint MbmsErrors_InitializationErrors::ERROR_UNABLE_TO_INITIALIZE()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"android.telephony.mbms.MbmsErrors$InitializationErrors",
-			"ERROR_UNABLE_TO_INITIALIZE"
-		);
-	}
-	
-	// Constructors
-	void MbmsErrors_InitializationErrors::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.telephony.mbms.MbmsErrors$InitializationErrors",
-			"(V)V");
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::telephony::mbms
-
-namespace android::telephony::mbms
-{
-	class MbmsErrors_InitializationErrors : public __jni_impl::android::telephony::mbms::MbmsErrors_InitializationErrors
-	{
-	public:
-		MbmsErrors_InitializationErrors(QAndroidJniObject obj) { __thiz = obj; }
-		MbmsErrors_InitializationErrors()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::telephony::mbms
 

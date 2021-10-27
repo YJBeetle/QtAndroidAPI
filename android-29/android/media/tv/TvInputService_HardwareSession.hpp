@@ -3,94 +3,32 @@
 #include "../../../__JniBaseClass.hpp"
 #include "./TvInputService_Session.hpp"
 
-namespace __jni_impl::android::content
+namespace android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::view
+namespace android::view
 {
 	class Surface;
 }
 
-namespace __jni_impl::android::media::tv
+namespace android::media::tv
 {
-	class TvInputService_HardwareSession : public __jni_impl::android::media::tv::TvInputService_Session
+	class TvInputService_HardwareSession : public android::media::tv::TvInputService_Session
 	{
 	public:
 		// Fields
 		
+		TvInputService_HardwareSession(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(__jni_impl::android::content::Context arg0);
+		TvInputService_HardwareSession(android::content::Context &arg0);
+		TvInputService_HardwareSession() = default;
 		
 		// Methods
 		jstring getHardwareInputId();
 		void onHardwareVideoAvailable();
 		void onHardwareVideoUnavailable(jint arg0);
-		jboolean onSetSurface(__jni_impl::android::view::Surface arg0);
-	};
-} // namespace __jni_impl::android::media::tv
-
-#include "../../content/Context.hpp"
-#include "../../view/Surface.hpp"
-
-namespace __jni_impl::android::media::tv
-{
-	// Fields
-	
-	// Constructors
-	void TvInputService_HardwareSession::__constructor(__jni_impl::android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.tv.TvInputService$HardwareSession",
-			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	
-	// Methods
-	jstring TvInputService_HardwareSession::getHardwareInputId()
-	{
-		return __thiz.callObjectMethod(
-			"getHardwareInputId",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void TvInputService_HardwareSession::onHardwareVideoAvailable()
-	{
-		__thiz.callMethod<void>(
-			"onHardwareVideoAvailable",
-			"()V"
-		);
-	}
-	void TvInputService_HardwareSession::onHardwareVideoUnavailable(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"onHardwareVideoUnavailable",
-			"(I)V",
-			arg0
-		);
-	}
-	jboolean TvInputService_HardwareSession::onSetSurface(__jni_impl::android::view::Surface arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onSetSurface",
-			"(Landroid/view/Surface;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::android::media::tv
-
-namespace android::media::tv
-{
-	class TvInputService_HardwareSession : public __jni_impl::android::media::tv::TvInputService_HardwareSession
-	{
-	public:
-		TvInputService_HardwareSession(QAndroidJniObject obj) { __thiz = obj; }
-		TvInputService_HardwareSession(__jni_impl::android::content::Context arg0)
-		{
-			__constructor(
-				arg0);
-		}
+		jboolean onSetSurface(android::view::Surface arg0);
 	};
 } // namespace android::media::tv
 

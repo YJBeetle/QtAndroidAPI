@@ -6,47 +6,18 @@
 #include "../../lang/IllegalStateException.hpp"
 
 
-namespace __jni_impl::java::nio::channels
+namespace java::nio::channels
 {
-	class IllegalBlockingModeException : public __jni_impl::java::lang::IllegalStateException
+	class IllegalBlockingModeException : public java::lang::IllegalStateException
 	{
 	public:
 		// Fields
 		
+		IllegalBlockingModeException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		IllegalBlockingModeException();
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::nio::channels
-
-
-namespace __jni_impl::java::nio::channels
-{
-	// Fields
-	
-	// Constructors
-	void IllegalBlockingModeException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.channels.IllegalBlockingModeException",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::nio::channels
-
-namespace java::nio::channels
-{
-	class IllegalBlockingModeException : public __jni_impl::java::nio::channels::IllegalBlockingModeException
-	{
-	public:
-		IllegalBlockingModeException(QAndroidJniObject obj) { __thiz = obj; }
-		IllegalBlockingModeException()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::nio::channels
 

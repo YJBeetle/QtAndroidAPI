@@ -4,9 +4,9 @@
 #include "../../lang/Enum.hpp"
 
 
-namespace __jni_impl::java::nio::file
+namespace java::nio::file
 {
-	class FileVisitResult : public __jni_impl::java::lang::Enum
+	class FileVisitResult : public java::lang::Enum
 	{
 	public:
 		// Fields
@@ -15,100 +15,14 @@ namespace __jni_impl::java::nio::file
 		static QAndroidJniObject SKIP_SUBTREE();
 		static QAndroidJniObject TERMINATE();
 		
+		FileVisitResult(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		FileVisitResult() = default;
 		
 		// Methods
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
 		static jarray values();
-	};
-} // namespace __jni_impl::java::nio::file
-
-
-namespace __jni_impl::java::nio::file
-{
-	// Fields
-	QAndroidJniObject FileVisitResult::CONTINUE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.nio.file.FileVisitResult",
-			"CONTINUE",
-			"Ljava/nio/file/FileVisitResult;"
-		);
-	}
-	QAndroidJniObject FileVisitResult::SKIP_SIBLINGS()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.nio.file.FileVisitResult",
-			"SKIP_SIBLINGS",
-			"Ljava/nio/file/FileVisitResult;"
-		);
-	}
-	QAndroidJniObject FileVisitResult::SKIP_SUBTREE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.nio.file.FileVisitResult",
-			"SKIP_SUBTREE",
-			"Ljava/nio/file/FileVisitResult;"
-		);
-	}
-	QAndroidJniObject FileVisitResult::TERMINATE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.nio.file.FileVisitResult",
-			"TERMINATE",
-			"Ljava/nio/file/FileVisitResult;"
-		);
-	}
-	
-	// Constructors
-	void FileVisitResult::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.file.FileVisitResult",
-			"(V)V");
-	}
-	
-	// Methods
-	QAndroidJniObject FileVisitResult::valueOf(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.FileVisitResult",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/nio/file/FileVisitResult;",
-			arg0
-		);
-	}
-	QAndroidJniObject FileVisitResult::valueOf(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.FileVisitResult",
-			"valueOf",
-			"(Ljava/lang/String;)Ljava/nio/file/FileVisitResult;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jarray FileVisitResult::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.FileVisitResult",
-			"values",
-			"()[Ljava/nio/file/FileVisitResult;"
-		).object<jarray>();
-	}
-} // namespace __jni_impl::java::nio::file
-
-namespace java::nio::file
-{
-	class FileVisitResult : public __jni_impl::java::nio::file::FileVisitResult
-	{
-	public:
-		FileVisitResult(QAndroidJniObject obj) { __thiz = obj; }
-		FileVisitResult()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::nio::file
 

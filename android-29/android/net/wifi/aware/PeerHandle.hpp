@@ -3,63 +3,20 @@
 #include "../../../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::net::wifi::aware
+namespace android::net::wifi::aware
 {
 	class PeerHandle : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		PeerHandle(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		PeerHandle() = default;
 		
 		// Methods
 		jboolean equals(jobject arg0);
 		jint hashCode();
-	};
-} // namespace __jni_impl::android::net::wifi::aware
-
-
-namespace __jni_impl::android::net::wifi::aware
-{
-	// Fields
-	
-	// Constructors
-	void PeerHandle::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.net.wifi.aware.PeerHandle",
-			"(V)V");
-	}
-	
-	// Methods
-	jboolean PeerHandle::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jint PeerHandle::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-} // namespace __jni_impl::android::net::wifi::aware
-
-namespace android::net::wifi::aware
-{
-	class PeerHandle : public __jni_impl::android::net::wifi::aware::PeerHandle
-	{
-	public:
-		PeerHandle(QAndroidJniObject obj) { __thiz = obj; }
-		PeerHandle()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::net::wifi::aware
 

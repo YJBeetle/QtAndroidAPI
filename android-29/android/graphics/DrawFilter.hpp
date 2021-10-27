@@ -3,47 +3,18 @@
 #include "../../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android::graphics
+namespace android::graphics
 {
 	class DrawFilter : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		DrawFilter(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		DrawFilter();
 		
 		// Methods
-	};
-} // namespace __jni_impl::android::graphics
-
-
-namespace __jni_impl::android::graphics
-{
-	// Fields
-	
-	// Constructors
-	void DrawFilter::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.DrawFilter",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android::graphics
-
-namespace android::graphics
-{
-	class DrawFilter : public __jni_impl::android::graphics::DrawFilter
-	{
-	public:
-		DrawFilter(QAndroidJniObject obj) { __thiz = obj; }
-		DrawFilter()
-		{
-			__constructor();
-		}
 	};
 } // namespace android::graphics
 

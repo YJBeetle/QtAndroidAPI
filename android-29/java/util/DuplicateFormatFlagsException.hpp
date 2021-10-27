@@ -7,74 +7,22 @@
 #include "./IllegalFormatException.hpp"
 
 
-namespace __jni_impl::java::util
+namespace java::util
 {
-	class DuplicateFormatFlagsException : public __jni_impl::java::util::IllegalFormatException
+	class DuplicateFormatFlagsException : public java::util::IllegalFormatException
 	{
 	public:
 		// Fields
 		
+		DuplicateFormatFlagsException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		DuplicateFormatFlagsException(jstring &arg0);
+		DuplicateFormatFlagsException(const QString &arg0);
+		DuplicateFormatFlagsException() = default;
 		
 		// Methods
 		jstring getFlags();
 		jstring getMessage();
-	};
-} // namespace __jni_impl::java::util
-
-
-namespace __jni_impl::java::util
-{
-	// Fields
-	
-	// Constructors
-	void DuplicateFormatFlagsException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.DuplicateFormatFlagsException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void DuplicateFormatFlagsException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.DuplicateFormatFlagsException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-	jstring DuplicateFormatFlagsException::getFlags()
-	{
-		return __thiz.callObjectMethod(
-			"getFlags",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring DuplicateFormatFlagsException::getMessage()
-	{
-		return __thiz.callObjectMethod(
-			"getMessage",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-} // namespace __jni_impl::java::util
-
-namespace java::util
-{
-	class DuplicateFormatFlagsException : public __jni_impl::java::util::DuplicateFormatFlagsException
-	{
-	public:
-		DuplicateFormatFlagsException(QAndroidJniObject obj) { __thiz = obj; }
-		DuplicateFormatFlagsException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace java::util
 

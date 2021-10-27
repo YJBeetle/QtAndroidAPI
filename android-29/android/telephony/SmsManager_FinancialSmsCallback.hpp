@@ -2,62 +2,24 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::database
+namespace android::database
 {
 	class CursorWindow;
 }
 
-namespace __jni_impl::android::telephony
+namespace android::telephony
 {
 	class SmsManager_FinancialSmsCallback : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		SmsManager_FinancialSmsCallback(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		SmsManager_FinancialSmsCallback();
 		
 		// Methods
-		void onFinancialSmsMessages(__jni_impl::android::database::CursorWindow arg0);
-	};
-} // namespace __jni_impl::android::telephony
-
-#include "../database/CursorWindow.hpp"
-
-namespace __jni_impl::android::telephony
-{
-	// Fields
-	
-	// Constructors
-	void SmsManager_FinancialSmsCallback::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.telephony.SmsManager$FinancialSmsCallback",
-			"()V"
-		);
-	}
-	
-	// Methods
-	void SmsManager_FinancialSmsCallback::onFinancialSmsMessages(__jni_impl::android::database::CursorWindow arg0)
-	{
-		__thiz.callMethod<void>(
-			"onFinancialSmsMessages",
-			"(Landroid/database/CursorWindow;)V",
-			arg0.__jniObject().object()
-		);
-	}
-} // namespace __jni_impl::android::telephony
-
-namespace android::telephony
-{
-	class SmsManager_FinancialSmsCallback : public __jni_impl::android::telephony::SmsManager_FinancialSmsCallback
-	{
-	public:
-		SmsManager_FinancialSmsCallback(QAndroidJniObject obj) { __thiz = obj; }
-		SmsManager_FinancialSmsCallback()
-		{
-			__constructor();
-		}
+		void onFinancialSmsMessages(android::database::CursorWindow arg0);
 	};
 } // namespace android::telephony
 

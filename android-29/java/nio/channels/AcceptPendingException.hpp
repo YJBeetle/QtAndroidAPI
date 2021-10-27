@@ -6,47 +6,18 @@
 #include "../../lang/IllegalStateException.hpp"
 
 
-namespace __jni_impl::java::nio::channels
+namespace java::nio::channels
 {
-	class AcceptPendingException : public __jni_impl::java::lang::IllegalStateException
+	class AcceptPendingException : public java::lang::IllegalStateException
 	{
 	public:
 		// Fields
 		
+		AcceptPendingException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		AcceptPendingException();
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::nio::channels
-
-
-namespace __jni_impl::java::nio::channels
-{
-	// Fields
-	
-	// Constructors
-	void AcceptPendingException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.channels.AcceptPendingException",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::nio::channels
-
-namespace java::nio::channels
-{
-	class AcceptPendingException : public __jni_impl::java::nio::channels::AcceptPendingException
-	{
-	public:
-		AcceptPendingException(QAndroidJniObject obj) { __thiz = obj; }
-		AcceptPendingException()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::nio::channels
 

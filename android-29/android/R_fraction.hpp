@@ -3,47 +3,18 @@
 #include "../__JniBaseClass.hpp"
 
 
-namespace __jni_impl::android
+namespace android
 {
 	class R_fraction : public __JniBaseClass
 	{
 	public:
 		// Fields
 		
+		R_fraction(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		R_fraction();
 		
 		// Methods
-	};
-} // namespace __jni_impl::android
-
-
-namespace __jni_impl::android
-{
-	// Fields
-	
-	// Constructors
-	void R_fraction::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.R$fraction",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::android
-
-namespace android
-{
-	class R_fraction : public __jni_impl::android::R_fraction
-	{
-	public:
-		R_fraction(QAndroidJniObject obj) { __thiz = obj; }
-		R_fraction()
-		{
-			__constructor();
-		}
 	};
 } // namespace android
 

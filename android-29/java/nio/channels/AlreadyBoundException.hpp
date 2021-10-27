@@ -6,47 +6,18 @@
 #include "../../lang/IllegalStateException.hpp"
 
 
-namespace __jni_impl::java::nio::channels
+namespace java::nio::channels
 {
-	class AlreadyBoundException : public __jni_impl::java::lang::IllegalStateException
+	class AlreadyBoundException : public java::lang::IllegalStateException
 	{
 	public:
 		// Fields
 		
+		AlreadyBoundException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		AlreadyBoundException();
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::nio::channels
-
-
-namespace __jni_impl::java::nio::channels
-{
-	// Fields
-	
-	// Constructors
-	void AlreadyBoundException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.nio.channels.AlreadyBoundException",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::nio::channels
-
-namespace java::nio::channels
-{
-	class AlreadyBoundException : public __jni_impl::java::nio::channels::AlreadyBoundException
-	{
-	public:
-		AlreadyBoundException(QAndroidJniObject obj) { __thiz = obj; }
-		AlreadyBoundException()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::nio::channels
 

@@ -4,47 +4,18 @@
 #include "./Error.hpp"
 
 
-namespace __jni_impl::java::lang
+namespace java::lang
 {
-	class ThreadDeath : public __jni_impl::java::lang::Error
+	class ThreadDeath : public java::lang::Error
 	{
 	public:
 		// Fields
 		
+		ThreadDeath(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
+		ThreadDeath();
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::lang
-
-
-namespace __jni_impl::java::lang
-{
-	// Fields
-	
-	// Constructors
-	void ThreadDeath::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ThreadDeath",
-			"()V"
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::lang
-
-namespace java::lang
-{
-	class ThreadDeath : public __jni_impl::java::lang::ThreadDeath
-	{
-	public:
-		ThreadDeath(QAndroidJniObject obj) { __thiz = obj; }
-		ThreadDeath()
-		{
-			__constructor();
-		}
 	};
 } // namespace java::lang
 

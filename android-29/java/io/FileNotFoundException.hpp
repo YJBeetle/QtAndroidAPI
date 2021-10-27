@@ -5,70 +5,20 @@
 #include "./IOException.hpp"
 
 
-namespace __jni_impl::java::io
+namespace java::io
 {
-	class FileNotFoundException : public __jni_impl::java::io::IOException
+	class FileNotFoundException : public java::io::IOException
 	{
 	public:
 		// Fields
 		
+		FileNotFoundException(QAndroidJniObject obj);
 		// Constructors
-		void __constructor();
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
+		FileNotFoundException();
+		FileNotFoundException(jstring &arg0);
+		FileNotFoundException(const QString &arg0);
 		
 		// Methods
-	};
-} // namespace __jni_impl::java::io
-
-
-namespace __jni_impl::java::io
-{
-	// Fields
-	
-	// Constructors
-	void FileNotFoundException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.FileNotFoundException",
-			"()V"
-		);
-	}
-	void FileNotFoundException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.FileNotFoundException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void FileNotFoundException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.FileNotFoundException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	
-	// Methods
-} // namespace __jni_impl::java::io
-
-namespace java::io
-{
-	class FileNotFoundException : public __jni_impl::java::io::FileNotFoundException
-	{
-	public:
-		FileNotFoundException(QAndroidJniObject obj) { __thiz = obj; }
-		FileNotFoundException()
-		{
-			__constructor();
-		}
-		FileNotFoundException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 	};
 } // namespace java::io
 
