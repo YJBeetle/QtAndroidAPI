@@ -25,12 +25,12 @@ namespace __jni_impl::android::app
 		void __constructor(const QString &arg0);
 		
 		// Methods
-		void onStart(__jni_impl::android::content::Intent arg0, jint arg1);
-		void setIntentRedelivery(jboolean arg0);
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		void onCreate();
 		void onDestroy();
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		void onStart(__jni_impl::android::content::Intent arg0, jint arg1);
 		jint onStartCommand(__jni_impl::android::content::Intent arg0, jint arg1, jint arg2);
+		void setIntentRedelivery(jboolean arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -59,21 +59,12 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void IntentService::onStart(__jni_impl::android::content::Intent arg0, jint arg1)
+	QAndroidJniObject IntentService::onBind(__jni_impl::android::content::Intent arg0)
 	{
-		__thiz.callMethod<void>(
-			"onStart",
-			"(Landroid/content/Intent;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void IntentService::setIntentRedelivery(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setIntentRedelivery",
-			"(Z)V",
-			arg0
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
 		);
 	}
 	void IntentService::onCreate()
@@ -90,12 +81,13 @@ namespace __jni_impl::android::app
 			"()V"
 		);
 	}
-	QAndroidJniObject IntentService::onBind(__jni_impl::android::content::Intent arg0)
+	void IntentService::onStart(__jni_impl::android::content::Intent arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+		__thiz.callMethod<void>(
+			"onStart",
+			"(Landroid/content/Intent;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 	jint IntentService::onStartCommand(__jni_impl::android::content::Intent arg0, jint arg1, jint arg2)
@@ -106,6 +98,14 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
+		);
+	}
+	void IntentService::setIntentRedelivery(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setIntentRedelivery",
+			"(Z)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::app

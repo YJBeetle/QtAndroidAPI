@@ -23,9 +23,9 @@ namespace __jni_impl::android::os
 		
 		// Methods
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jlong getActive();
 		jlong getTotal();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::os
 
@@ -59,15 +59,6 @@ namespace __jni_impl::android::os
 			"()I"
 		);
 	}
-	void CpuUsageInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	jlong CpuUsageInfo::getActive()
 	{
 		return __thiz.callMethod<jlong>(
@@ -80,6 +71,15 @@ namespace __jni_impl::android::os
 		return __thiz.callMethod<jlong>(
 			"getTotal",
 			"()J"
+		);
+	}
+	void CpuUsageInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::os

@@ -14,24 +14,24 @@ namespace __jni_impl::org::w3c::dom
 	{
 	public:
 		// Fields
-		jshort code();
-		static jshort INDEX_SIZE_ERR();
 		static jshort DOMSTRING_SIZE_ERR();
 		static jshort HIERARCHY_REQUEST_ERR();
-		static jshort WRONG_DOCUMENT_ERR();
+		static jshort INDEX_SIZE_ERR();
+		static jshort INUSE_ATTRIBUTE_ERR();
+		static jshort INVALID_ACCESS_ERR();
 		static jshort INVALID_CHARACTER_ERR();
-		static jshort NO_DATA_ALLOWED_ERR();
-		static jshort NO_MODIFICATION_ALLOWED_ERR();
+		static jshort INVALID_MODIFICATION_ERR();
+		static jshort INVALID_STATE_ERR();
+		static jshort NAMESPACE_ERR();
 		static jshort NOT_FOUND_ERR();
 		static jshort NOT_SUPPORTED_ERR();
-		static jshort INUSE_ATTRIBUTE_ERR();
-		static jshort INVALID_STATE_ERR();
+		static jshort NO_DATA_ALLOWED_ERR();
+		static jshort NO_MODIFICATION_ALLOWED_ERR();
 		static jshort SYNTAX_ERR();
-		static jshort INVALID_MODIFICATION_ERR();
-		static jshort NAMESPACE_ERR();
-		static jshort INVALID_ACCESS_ERR();
-		static jshort VALIDATION_ERR();
 		static jshort TYPE_MISMATCH_ERR();
+		static jshort VALIDATION_ERR();
+		static jshort WRONG_DOCUMENT_ERR();
+		jshort code();
 		
 		// Constructors
 		void __constructor(jshort arg0, jstring arg1);
@@ -45,19 +45,6 @@ namespace __jni_impl::org::w3c::dom
 namespace __jni_impl::org::w3c::dom
 {
 	// Fields
-	jshort DOMException::code()
-	{
-		return __thiz.getField<jshort>(
-			"code"
-		);
-	}
-	jshort DOMException::INDEX_SIZE_ERR()
-	{
-		return QAndroidJniObject::getStaticField<jshort>(
-			"org.w3c.dom.DOMException",
-			"INDEX_SIZE_ERR"
-		);
-	}
 	jshort DOMException::DOMSTRING_SIZE_ERR()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
@@ -72,11 +59,25 @@ namespace __jni_impl::org::w3c::dom
 			"HIERARCHY_REQUEST_ERR"
 		);
 	}
-	jshort DOMException::WRONG_DOCUMENT_ERR()
+	jshort DOMException::INDEX_SIZE_ERR()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"org.w3c.dom.DOMException",
-			"WRONG_DOCUMENT_ERR"
+			"INDEX_SIZE_ERR"
+		);
+	}
+	jshort DOMException::INUSE_ATTRIBUTE_ERR()
+	{
+		return QAndroidJniObject::getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"INUSE_ATTRIBUTE_ERR"
+		);
+	}
+	jshort DOMException::INVALID_ACCESS_ERR()
+	{
+		return QAndroidJniObject::getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"INVALID_ACCESS_ERR"
 		);
 	}
 	jshort DOMException::INVALID_CHARACTER_ERR()
@@ -86,18 +87,25 @@ namespace __jni_impl::org::w3c::dom
 			"INVALID_CHARACTER_ERR"
 		);
 	}
-	jshort DOMException::NO_DATA_ALLOWED_ERR()
+	jshort DOMException::INVALID_MODIFICATION_ERR()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"org.w3c.dom.DOMException",
-			"NO_DATA_ALLOWED_ERR"
+			"INVALID_MODIFICATION_ERR"
 		);
 	}
-	jshort DOMException::NO_MODIFICATION_ALLOWED_ERR()
+	jshort DOMException::INVALID_STATE_ERR()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"org.w3c.dom.DOMException",
-			"NO_MODIFICATION_ALLOWED_ERR"
+			"INVALID_STATE_ERR"
+		);
+	}
+	jshort DOMException::NAMESPACE_ERR()
+	{
+		return QAndroidJniObject::getStaticField<jshort>(
+			"org.w3c.dom.DOMException",
+			"NAMESPACE_ERR"
 		);
 	}
 	jshort DOMException::NOT_FOUND_ERR()
@@ -114,18 +122,18 @@ namespace __jni_impl::org::w3c::dom
 			"NOT_SUPPORTED_ERR"
 		);
 	}
-	jshort DOMException::INUSE_ATTRIBUTE_ERR()
+	jshort DOMException::NO_DATA_ALLOWED_ERR()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"org.w3c.dom.DOMException",
-			"INUSE_ATTRIBUTE_ERR"
+			"NO_DATA_ALLOWED_ERR"
 		);
 	}
-	jshort DOMException::INVALID_STATE_ERR()
+	jshort DOMException::NO_MODIFICATION_ALLOWED_ERR()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"org.w3c.dom.DOMException",
-			"INVALID_STATE_ERR"
+			"NO_MODIFICATION_ALLOWED_ERR"
 		);
 	}
 	jshort DOMException::SYNTAX_ERR()
@@ -135,25 +143,11 @@ namespace __jni_impl::org::w3c::dom
 			"SYNTAX_ERR"
 		);
 	}
-	jshort DOMException::INVALID_MODIFICATION_ERR()
+	jshort DOMException::TYPE_MISMATCH_ERR()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"org.w3c.dom.DOMException",
-			"INVALID_MODIFICATION_ERR"
-		);
-	}
-	jshort DOMException::NAMESPACE_ERR()
-	{
-		return QAndroidJniObject::getStaticField<jshort>(
-			"org.w3c.dom.DOMException",
-			"NAMESPACE_ERR"
-		);
-	}
-	jshort DOMException::INVALID_ACCESS_ERR()
-	{
-		return QAndroidJniObject::getStaticField<jshort>(
-			"org.w3c.dom.DOMException",
-			"INVALID_ACCESS_ERR"
+			"TYPE_MISMATCH_ERR"
 		);
 	}
 	jshort DOMException::VALIDATION_ERR()
@@ -163,11 +157,17 @@ namespace __jni_impl::org::w3c::dom
 			"VALIDATION_ERR"
 		);
 	}
-	jshort DOMException::TYPE_MISMATCH_ERR()
+	jshort DOMException::WRONG_DOCUMENT_ERR()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
 			"org.w3c.dom.DOMException",
-			"TYPE_MISMATCH_ERR"
+			"WRONG_DOCUMENT_ERR"
+		);
+	}
+	jshort DOMException::code()
+	{
+		return __thiz.getField<jshort>(
+			"code"
 		);
 	}
 	

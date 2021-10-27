@@ -27,12 +27,12 @@ namespace __jni_impl::android::app::job
 		void __constructor();
 		
 		// Methods
-		jint enqueue(__jni_impl::android::app::job::JobInfo arg0, __jni_impl::android::app::job::JobWorkItem arg1);
 		void cancel(jint arg0);
 		void cancelAll();
-		jint schedule(__jni_impl::android::app::job::JobInfo arg0);
+		jint enqueue(__jni_impl::android::app::job::JobInfo arg0, __jni_impl::android::app::job::JobWorkItem arg1);
 		QAndroidJniObject getAllPendingJobs();
 		QAndroidJniObject getPendingJob(jint arg0);
+		jint schedule(__jni_impl::android::app::job::JobInfo arg0);
 	};
 } // namespace __jni_impl::android::app::job
 
@@ -67,15 +67,6 @@ namespace __jni_impl::android::app::job
 	}
 	
 	// Methods
-	jint JobScheduler::enqueue(__jni_impl::android::app::job::JobInfo arg0, __jni_impl::android::app::job::JobWorkItem arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"enqueue",
-			"(Landroid/app/job/JobInfo;Landroid/app/job/JobWorkItem;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
 	void JobScheduler::cancel(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -91,12 +82,13 @@ namespace __jni_impl::android::app::job
 			"()V"
 		);
 	}
-	jint JobScheduler::schedule(__jni_impl::android::app::job::JobInfo arg0)
+	jint JobScheduler::enqueue(__jni_impl::android::app::job::JobInfo arg0, __jni_impl::android::app::job::JobWorkItem arg1)
 	{
 		return __thiz.callMethod<jint>(
-			"schedule",
-			"(Landroid/app/job/JobInfo;)I",
-			arg0.__jniObject().object()
+			"enqueue",
+			"(Landroid/app/job/JobInfo;Landroid/app/job/JobWorkItem;)I",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	QAndroidJniObject JobScheduler::getAllPendingJobs()
@@ -112,6 +104,14 @@ namespace __jni_impl::android::app::job
 			"getPendingJob",
 			"(I)Landroid/app/job/JobInfo;",
 			arg0
+		);
+	}
+	jint JobScheduler::schedule(__jni_impl::android::app::job::JobInfo arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"schedule",
+			"(Landroid/app/job/JobInfo;)I",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::app::job

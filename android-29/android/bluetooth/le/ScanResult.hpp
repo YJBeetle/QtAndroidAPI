@@ -37,22 +37,22 @@ namespace __jni_impl::android::bluetooth::le
 		void __constructor(__jni_impl::android::bluetooth::BluetoothDevice arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, __jni_impl::android::bluetooth::le::ScanRecord arg8, jlong arg9);
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jstring toString();
+		jint getAdvertisingSid();
+		jint getDataStatus();
+		QAndroidJniObject getDevice();
+		jint getPeriodicAdvertisingInterval();
+		jint getPrimaryPhy();
+		jint getRssi();
+		QAndroidJniObject getScanRecord();
+		jint getSecondaryPhy();
+		jlong getTimestampNanos();
+		jint getTxPower();
 		jint hashCode();
 		jboolean isConnectable();
 		jboolean isLegacy();
-		jint getPrimaryPhy();
-		jint getSecondaryPhy();
-		QAndroidJniObject getDevice();
-		QAndroidJniObject getScanRecord();
-		jint getRssi();
-		jlong getTimestampNanos();
-		jint getDataStatus();
-		jint getAdvertisingSid();
-		jint getTxPower();
-		jint getPeriodicAdvertisingInterval();
-		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::bluetooth::le
@@ -146,6 +146,13 @@ namespace __jni_impl::android::bluetooth::le
 	}
 	
 	// Methods
+	jint ScanResult::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean ScanResult::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -154,12 +161,75 @@ namespace __jni_impl::android::bluetooth::le
 			arg0
 		);
 	}
-	jstring ScanResult::toString()
+	jint ScanResult::getAdvertisingSid()
+	{
+		return __thiz.callMethod<jint>(
+			"getAdvertisingSid",
+			"()I"
+		);
+	}
+	jint ScanResult::getDataStatus()
+	{
+		return __thiz.callMethod<jint>(
+			"getDataStatus",
+			"()I"
+		);
+	}
+	QAndroidJniObject ScanResult::getDevice()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getDevice",
+			"()Landroid/bluetooth/BluetoothDevice;"
+		);
+	}
+	jint ScanResult::getPeriodicAdvertisingInterval()
+	{
+		return __thiz.callMethod<jint>(
+			"getPeriodicAdvertisingInterval",
+			"()I"
+		);
+	}
+	jint ScanResult::getPrimaryPhy()
+	{
+		return __thiz.callMethod<jint>(
+			"getPrimaryPhy",
+			"()I"
+		);
+	}
+	jint ScanResult::getRssi()
+	{
+		return __thiz.callMethod<jint>(
+			"getRssi",
+			"()I"
+		);
+	}
+	QAndroidJniObject ScanResult::getScanRecord()
+	{
+		return __thiz.callObjectMethod(
+			"getScanRecord",
+			"()Landroid/bluetooth/le/ScanRecord;"
+		);
+	}
+	jint ScanResult::getSecondaryPhy()
+	{
+		return __thiz.callMethod<jint>(
+			"getSecondaryPhy",
+			"()I"
+		);
+	}
+	jlong ScanResult::getTimestampNanos()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimestampNanos",
+			"()J"
+		);
+	}
+	jint ScanResult::getTxPower()
+	{
+		return __thiz.callMethod<jint>(
+			"getTxPower",
+			"()I"
+		);
 	}
 	jint ScanResult::hashCode()
 	{
@@ -182,82 +252,12 @@ namespace __jni_impl::android::bluetooth::le
 			"()Z"
 		);
 	}
-	jint ScanResult::getPrimaryPhy()
-	{
-		return __thiz.callMethod<jint>(
-			"getPrimaryPhy",
-			"()I"
-		);
-	}
-	jint ScanResult::getSecondaryPhy()
-	{
-		return __thiz.callMethod<jint>(
-			"getSecondaryPhy",
-			"()I"
-		);
-	}
-	QAndroidJniObject ScanResult::getDevice()
+	jstring ScanResult::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getDevice",
-			"()Landroid/bluetooth/BluetoothDevice;"
-		);
-	}
-	QAndroidJniObject ScanResult::getScanRecord()
-	{
-		return __thiz.callObjectMethod(
-			"getScanRecord",
-			"()Landroid/bluetooth/le/ScanRecord;"
-		);
-	}
-	jint ScanResult::getRssi()
-	{
-		return __thiz.callMethod<jint>(
-			"getRssi",
-			"()I"
-		);
-	}
-	jlong ScanResult::getTimestampNanos()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimestampNanos",
-			"()J"
-		);
-	}
-	jint ScanResult::getDataStatus()
-	{
-		return __thiz.callMethod<jint>(
-			"getDataStatus",
-			"()I"
-		);
-	}
-	jint ScanResult::getAdvertisingSid()
-	{
-		return __thiz.callMethod<jint>(
-			"getAdvertisingSid",
-			"()I"
-		);
-	}
-	jint ScanResult::getTxPower()
-	{
-		return __thiz.callMethod<jint>(
-			"getTxPower",
-			"()I"
-		);
-	}
-	jint ScanResult::getPeriodicAdvertisingInterval()
-	{
-		return __thiz.callMethod<jint>(
-			"getPeriodicAdvertisingInterval",
-			"()I"
-		);
-	}
-	jint ScanResult::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void ScanResult::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

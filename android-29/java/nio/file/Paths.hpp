@@ -21,9 +21,9 @@ namespace __jni_impl::java::nio::file
 		void __constructor();
 		
 		// Methods
+		static QAndroidJniObject get(__jni_impl::java::net::URI arg0);
 		static QAndroidJniObject get(jstring arg0, jarray arg1);
 		static QAndroidJniObject get(const QString &arg0, jarray arg1);
-		static QAndroidJniObject get(__jni_impl::java::net::URI arg0);
 	};
 } // namespace __jni_impl::java::nio::file
 
@@ -42,6 +42,15 @@ namespace __jni_impl::java::nio::file
 	}
 	
 	// Methods
+	QAndroidJniObject Paths::get(__jni_impl::java::net::URI arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.file.Paths",
+			"get",
+			"(Ljava/net/URI;)Ljava/nio/file/Path;",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject Paths::get(jstring arg0, jarray arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -60,15 +69,6 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/lang/String;[Ljava/lang/String;)Ljava/nio/file/Path;",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
-		);
-	}
-	QAndroidJniObject Paths::get(__jni_impl::java::net::URI arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.Paths",
-			"get",
-			"(Ljava/net/URI;)Ljava/nio/file/Path;",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::java::nio::file

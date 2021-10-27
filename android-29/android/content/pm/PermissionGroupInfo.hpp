@@ -6,13 +6,13 @@
 #include "../../../__JniBaseClass.hpp"
 #include "PackageItemInfo.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::content::pm
 {
 	class PackageManager;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::content::pm
@@ -33,15 +33,15 @@ namespace __jni_impl::android::content::pm
 		void __constructor(__jni_impl::android::content::pm::PermissionGroupInfo arg0);
 		
 		// Methods
-		jstring toString();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jstring loadDescription(__jni_impl::android::content::pm::PackageManager arg0);
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::pm
 
-#include "../../os/Parcel.hpp"
 #include "PackageManager.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::content::pm
 {
@@ -105,27 +105,11 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	jstring PermissionGroupInfo::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint PermissionGroupInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
-		);
-	}
-	void PermissionGroupInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 	jstring PermissionGroupInfo::loadDescription(__jni_impl::android::content::pm::PackageManager arg0)
@@ -135,6 +119,22 @@ namespace __jni_impl::android::content::pm
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
 			arg0.__jniObject().object()
 		).object<jstring>();
+	}
+	jstring PermissionGroupInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void PermissionGroupInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

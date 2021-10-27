@@ -18,11 +18,11 @@ namespace __jni_impl::java::lang
 		
 		// Methods
 		jbyte byteValue();
-		jshort shortValue();
+		jdouble doubleValue();
+		jfloat floatValue();
 		jint intValue();
 		jlong longValue();
-		jfloat floatValue();
-		jdouble doubleValue();
+		jshort shortValue();
 	};
 } // namespace __jni_impl::java::lang
 
@@ -48,11 +48,18 @@ namespace __jni_impl::java::lang
 			"()B"
 		);
 	}
-	jshort Number::shortValue()
+	jdouble Number::doubleValue()
 	{
-		return __thiz.callMethod<jshort>(
-			"shortValue",
-			"()S"
+		return __thiz.callMethod<jdouble>(
+			"doubleValue",
+			"()D"
+		);
+	}
+	jfloat Number::floatValue()
+	{
+		return __thiz.callMethod<jfloat>(
+			"floatValue",
+			"()F"
 		);
 	}
 	jint Number::intValue()
@@ -69,18 +76,11 @@ namespace __jni_impl::java::lang
 			"()J"
 		);
 	}
-	jfloat Number::floatValue()
+	jshort Number::shortValue()
 	{
-		return __thiz.callMethod<jfloat>(
-			"floatValue",
-			"()F"
-		);
-	}
-	jdouble Number::doubleValue()
-	{
-		return __thiz.callMethod<jdouble>(
-			"doubleValue",
-			"()D"
+		return __thiz.callMethod<jshort>(
+			"shortValue",
+			"()S"
 		);
 	}
 } // namespace __jni_impl::java::lang

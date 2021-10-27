@@ -16,23 +16,23 @@ namespace __jni_impl::java::nio::charset
 	{
 	public:
 		// Fields
-		static QAndroidJniObject UNDERFLOW();
 		static QAndroidJniObject OVERFLOW();
+		static QAndroidJniObject UNDERFLOW();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		jint length();
-		jstring toString();
-		void throwException();
-		jboolean isUnderflow();
-		jboolean isOverflow();
-		jboolean isError();
 		static QAndroidJniObject malformedForLength(jint arg0);
-		jboolean isMalformed();
-		jboolean isUnmappable();
 		static QAndroidJniObject unmappableForLength(jint arg0);
+		jboolean isError();
+		jboolean isMalformed();
+		jboolean isOverflow();
+		jboolean isUnderflow();
+		jboolean isUnmappable();
+		jint length();
+		void throwException();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::nio::charset
 
@@ -41,19 +41,19 @@ namespace __jni_impl::java::nio::charset
 namespace __jni_impl::java::nio::charset
 {
 	// Fields
-	QAndroidJniObject CoderResult::UNDERFLOW()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.nio.charset.CoderResult",
-			"UNDERFLOW",
-			"Ljava/nio/charset/CoderResult;"
-		);
-	}
 	QAndroidJniObject CoderResult::OVERFLOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.charset.CoderResult",
 			"OVERFLOW",
+			"Ljava/nio/charset/CoderResult;"
+		);
+	}
+	QAndroidJniObject CoderResult::UNDERFLOW()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.nio.charset.CoderResult",
+			"UNDERFLOW",
 			"Ljava/nio/charset/CoderResult;"
 		);
 	}
@@ -67,48 +67,6 @@ namespace __jni_impl::java::nio::charset
 	}
 	
 	// Methods
-	jint CoderResult::length()
-	{
-		return __thiz.callMethod<jint>(
-			"length",
-			"()I"
-		);
-	}
-	jstring CoderResult::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void CoderResult::throwException()
-	{
-		__thiz.callMethod<void>(
-			"throwException",
-			"()V"
-		);
-	}
-	jboolean CoderResult::isUnderflow()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isUnderflow",
-			"()Z"
-		);
-	}
-	jboolean CoderResult::isOverflow()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isOverflow",
-			"()Z"
-		);
-	}
-	jboolean CoderResult::isError()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isError",
-			"()Z"
-		);
-	}
 	QAndroidJniObject CoderResult::malformedForLength(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -116,20 +74,6 @@ namespace __jni_impl::java::nio::charset
 			"malformedForLength",
 			"(I)Ljava/nio/charset/CoderResult;",
 			arg0
-		);
-	}
-	jboolean CoderResult::isMalformed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isMalformed",
-			"()Z"
-		);
-	}
-	jboolean CoderResult::isUnmappable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isUnmappable",
-			"()Z"
 		);
 	}
 	QAndroidJniObject CoderResult::unmappableForLength(jint arg0)
@@ -140,6 +84,62 @@ namespace __jni_impl::java::nio::charset
 			"(I)Ljava/nio/charset/CoderResult;",
 			arg0
 		);
+	}
+	jboolean CoderResult::isError()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isError",
+			"()Z"
+		);
+	}
+	jboolean CoderResult::isMalformed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isMalformed",
+			"()Z"
+		);
+	}
+	jboolean CoderResult::isOverflow()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isOverflow",
+			"()Z"
+		);
+	}
+	jboolean CoderResult::isUnderflow()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isUnderflow",
+			"()Z"
+		);
+	}
+	jboolean CoderResult::isUnmappable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isUnmappable",
+			"()Z"
+		);
+	}
+	jint CoderResult::length()
+	{
+		return __thiz.callMethod<jint>(
+			"length",
+			"()I"
+		);
+	}
+	void CoderResult::throwException()
+	{
+		__thiz.callMethod<void>(
+			"throwException",
+			"()V"
+		);
+	}
+	jstring CoderResult::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::nio::charset
 

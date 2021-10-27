@@ -16,11 +16,11 @@ namespace __jni_impl::java::io
 }
 namespace __jni_impl::java::util
 {
-	class TimeZone;
+	class Date;
 }
 namespace __jni_impl::java::util
 {
-	class Date;
+	class TimeZone;
 }
 
 namespace __jni_impl::java::util
@@ -29,60 +29,53 @@ namespace __jni_impl::java::util
 	{
 	public:
 		// Fields
-		static jint WALL_TIME();
 		static jint STANDARD_TIME();
 		static jint UTC_TIME();
+		static jint WALL_TIME();
 		
 		// Constructors
-		void __constructor(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12);
-		void __constructor(jint arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12);
-		void __constructor(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10);
-		void __constructor(jint arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10);
-		void __constructor(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
-		void __constructor(jint arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
 		void __constructor(jint arg0, jstring arg1);
 		void __constructor(jint arg0, const QString &arg1);
+		void __constructor(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
+		void __constructor(jint arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
+		void __constructor(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10);
+		void __constructor(jint arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10);
+		void __constructor(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12);
+		void __constructor(jint arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jobject clone();
-		jint getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
-		jint getOffset(jlong arg0);
+		jboolean equals(jobject arg0);
 		jint getDSTSavings();
-		jboolean hasSameRules(__jni_impl::java::util::TimeZone arg0);
+		jint getOffset(jlong arg0);
+		jint getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		jint getRawOffset();
+		jboolean hasSameRules(__jni_impl::java::util::TimeZone arg0);
+		jint hashCode();
 		jboolean inDaylightTime(__jni_impl::java::util::Date arg0);
-		jboolean useDaylightTime();
-		void setRawOffset(jint arg0);
 		jboolean observesDaylightTime();
-		void setStartRule(jint arg0, jint arg1, jint arg2, jint arg3);
-		void setStartRule(jint arg0, jint arg1, jint arg2);
-		void setStartRule(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4);
+		void setDSTSavings(jint arg0);
+		void setEndRule(jint arg0, jint arg1, jint arg2);
 		void setEndRule(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setEndRule(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4);
-		void setEndRule(jint arg0, jint arg1, jint arg2);
+		void setRawOffset(jint arg0);
+		void setStartRule(jint arg0, jint arg1, jint arg2);
+		void setStartRule(jint arg0, jint arg1, jint arg2, jint arg3);
+		void setStartRule(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4);
 		void setStartYear(jint arg0);
-		void setDSTSavings(jint arg0);
+		jstring toString();
+		jboolean useDaylightTime();
 	};
 } // namespace __jni_impl::java::util
 
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
-#include "TimeZone.hpp"
 #include "Date.hpp"
+#include "TimeZone.hpp"
 
 namespace __jni_impl::java::util
 {
 	// Fields
-	jint SimpleTimeZone::WALL_TIME()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"java.util.SimpleTimeZone",
-			"WALL_TIME"
-		);
-	}
 	jint SimpleTimeZone::STANDARD_TIME()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
@@ -97,8 +90,103 @@ namespace __jni_impl::java::util
 			"UTC_TIME"
 		);
 	}
+	jint SimpleTimeZone::WALL_TIME()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"java.util.SimpleTimeZone",
+			"WALL_TIME"
+		);
+	}
 	
 	// Constructors
+	void SimpleTimeZone::__constructor(jint arg0, jstring arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.SimpleTimeZone",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1
+		);
+	}
+	void SimpleTimeZone::__constructor(jint arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.SimpleTimeZone",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	void SimpleTimeZone::__constructor(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.SimpleTimeZone",
+			"(ILjava/lang/String;IIIIIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9
+		);
+	}
+	void SimpleTimeZone::__constructor(jint arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.SimpleTimeZone",
+			"(ILjava/lang/String;IIIIIIII)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9
+		);
+	}
+	void SimpleTimeZone::__constructor(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.SimpleTimeZone",
+			"(ILjava/lang/String;IIIIIIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9,
+			arg10
+		);
+	}
+	void SimpleTimeZone::__constructor(jint arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.SimpleTimeZone",
+			"(ILjava/lang/String;IIIIIIIII)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9,
+			arg10
+		);
+	}
 	void SimpleTimeZone::__constructor(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12)
 	{
 		__thiz = QAndroidJniObject(
@@ -139,96 +227,15 @@ namespace __jni_impl::java::util
 			arg12
 		);
 	}
-	void SimpleTimeZone::__constructor(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.SimpleTimeZone",
-			"(ILjava/lang/String;IIIIIIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8,
-			arg9,
-			arg10
-		);
-	}
-	void SimpleTimeZone::__constructor(jint arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.SimpleTimeZone",
-			"(ILjava/lang/String;IIIIIIIII)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8,
-			arg9,
-			arg10
-		);
-	}
-	void SimpleTimeZone::__constructor(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.SimpleTimeZone",
-			"(ILjava/lang/String;IIIIIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8,
-			arg9
-		);
-	}
-	void SimpleTimeZone::__constructor(jint arg0, const QString &arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.SimpleTimeZone",
-			"(ILjava/lang/String;IIIIIIII)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8,
-			arg9
-		);
-	}
-	void SimpleTimeZone::__constructor(jint arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.SimpleTimeZone",
-			"(ILjava/lang/String;)V",
-			arg0,
-			arg1
-		);
-	}
-	void SimpleTimeZone::__constructor(jint arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.SimpleTimeZone",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	
 	// Methods
+	jobject SimpleTimeZone::clone()
+	{
+		return __thiz.callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
 	jboolean SimpleTimeZone::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -237,26 +244,20 @@ namespace __jni_impl::java::util
 			arg0
 		);
 	}
-	jstring SimpleTimeZone::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint SimpleTimeZone::hashCode()
+	jint SimpleTimeZone::getDSTSavings()
 	{
 		return __thiz.callMethod<jint>(
-			"hashCode",
+			"getDSTSavings",
 			"()I"
 		);
 	}
-	jobject SimpleTimeZone::clone()
+	jint SimpleTimeZone::getOffset(jlong arg0)
 	{
-		return __thiz.callObjectMethod(
-			"clone",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
+		return __thiz.callMethod<jint>(
+			"getOffset",
+			"(J)I",
+			arg0
+		);
 	}
 	jint SimpleTimeZone::getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
@@ -271,18 +272,10 @@ namespace __jni_impl::java::util
 			arg5
 		);
 	}
-	jint SimpleTimeZone::getOffset(jlong arg0)
+	jint SimpleTimeZone::getRawOffset()
 	{
 		return __thiz.callMethod<jint>(
-			"getOffset",
-			"(J)I",
-			arg0
-		);
-	}
-	jint SimpleTimeZone::getDSTSavings()
-	{
-		return __thiz.callMethod<jint>(
-			"getDSTSavings",
+			"getRawOffset",
 			"()I"
 		);
 	}
@@ -294,10 +287,10 @@ namespace __jni_impl::java::util
 			arg0.__jniObject().object()
 		);
 	}
-	jint SimpleTimeZone::getRawOffset()
+	jint SimpleTimeZone::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"getRawOffset",
+			"hashCode",
 			"()I"
 		);
 	}
@@ -309,21 +302,6 @@ namespace __jni_impl::java::util
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean SimpleTimeZone::useDaylightTime()
-	{
-		return __thiz.callMethod<jboolean>(
-			"useDaylightTime",
-			"()Z"
-		);
-	}
-	void SimpleTimeZone::setRawOffset(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRawOffset",
-			"(I)V",
-			arg0
-		);
-	}
 	jboolean SimpleTimeZone::observesDaylightTime()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -331,37 +309,22 @@ namespace __jni_impl::java::util
 			"()Z"
 		);
 	}
-	void SimpleTimeZone::setStartRule(jint arg0, jint arg1, jint arg2, jint arg3)
+	void SimpleTimeZone::setDSTSavings(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setStartRule",
-			"(IIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
+			"setDSTSavings",
+			"(I)V",
+			arg0
 		);
 	}
-	void SimpleTimeZone::setStartRule(jint arg0, jint arg1, jint arg2)
+	void SimpleTimeZone::setEndRule(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
-			"setStartRule",
+			"setEndRule",
 			"(III)V",
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	void SimpleTimeZone::setStartRule(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4)
-	{
-		__thiz.callMethod<void>(
-			"setStartRule",
-			"(IIIIZ)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
 		);
 	}
 	void SimpleTimeZone::setEndRule(jint arg0, jint arg1, jint arg2, jint arg3)
@@ -387,14 +350,45 @@ namespace __jni_impl::java::util
 			arg4
 		);
 	}
-	void SimpleTimeZone::setEndRule(jint arg0, jint arg1, jint arg2)
+	void SimpleTimeZone::setRawOffset(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setEndRule",
+			"setRawOffset",
+			"(I)V",
+			arg0
+		);
+	}
+	void SimpleTimeZone::setStartRule(jint arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"setStartRule",
 			"(III)V",
 			arg0,
 			arg1,
 			arg2
+		);
+	}
+	void SimpleTimeZone::setStartRule(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"setStartRule",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void SimpleTimeZone::setStartRule(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4)
+	{
+		__thiz.callMethod<void>(
+			"setStartRule",
+			"(IIIIZ)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
 		);
 	}
 	void SimpleTimeZone::setStartYear(jint arg0)
@@ -405,12 +399,18 @@ namespace __jni_impl::java::util
 			arg0
 		);
 	}
-	void SimpleTimeZone::setDSTSavings(jint arg0)
+	jstring SimpleTimeZone::toString()
 	{
-		__thiz.callMethod<void>(
-			"setDSTSavings",
-			"(I)V",
-			arg0
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jboolean SimpleTimeZone::useDaylightTime()
+	{
+		return __thiz.callMethod<jboolean>(
+			"useDaylightTime",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::java::util
@@ -421,7 +421,13 @@ namespace java::util
 	{
 	public:
 		SimpleTimeZone(QAndroidJniObject obj) { __thiz = obj; }
-		SimpleTimeZone(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12)
+		SimpleTimeZone(jint arg0, jstring arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
+		}
+		SimpleTimeZone(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
 		{
 			__constructor(
 				arg0,
@@ -433,10 +439,7 @@ namespace java::util
 				arg6,
 				arg7,
 				arg8,
-				arg9,
-				arg10,
-				arg11,
-				arg12);
+				arg9);
 		}
 		SimpleTimeZone(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10)
 		{
@@ -453,7 +456,7 @@ namespace java::util
 				arg9,
 				arg10);
 		}
-		SimpleTimeZone(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
+		SimpleTimeZone(jint arg0, jstring arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12)
 		{
 			__constructor(
 				arg0,
@@ -465,13 +468,10 @@ namespace java::util
 				arg6,
 				arg7,
 				arg8,
-				arg9);
-		}
-		SimpleTimeZone(jint arg0, jstring arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
+				arg9,
+				arg10,
+				arg11,
+				arg12);
 		}
 	};
 } // namespace java::util

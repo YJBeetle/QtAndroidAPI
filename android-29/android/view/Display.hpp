@@ -7,31 +7,31 @@
 
 namespace __jni_impl::android::graphics
 {
-	class Point;
+	class ColorSpace;
 }
-namespace __jni_impl::android::view
+namespace __jni_impl::android::graphics
 {
-	class Display_Mode;
+	class Point;
 }
 namespace __jni_impl::android::graphics
 {
 	class Rect;
 }
-namespace __jni_impl::android::view
+namespace __jni_impl::android::util
 {
-	class DisplayCutout;
+	class DisplayMetrics;
 }
 namespace __jni_impl::android::view
 {
 	class Display_HdrCapabilities;
 }
-namespace __jni_impl::android::graphics
+namespace __jni_impl::android::view
 {
-	class ColorSpace;
+	class Display_Mode;
 }
-namespace __jni_impl::android::util
+namespace __jni_impl::android::view
 {
-	class DisplayMetrics;
+	class DisplayCutout;
 }
 
 namespace __jni_impl::android::view
@@ -59,44 +59,44 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		jstring getName();
-		jstring toString();
-		jint getState();
-		void getSize(__jni_impl::android::graphics::Point arg0);
-		jint getFlags();
-		jboolean isValid();
-		QAndroidJniObject getMode();
-		jint getRotation();
-		jint getWidth();
-		jint getHeight();
-		jint getOrientation();
-		jint getDisplayId();
-		void getRectSize(__jni_impl::android::graphics::Rect arg0);
+		jlong getAppVsyncOffsetNanos();
 		void getCurrentSizeRange(__jni_impl::android::graphics::Point arg0, __jni_impl::android::graphics::Point arg1);
 		QAndroidJniObject getCutout();
-		jint getPixelFormat();
-		jfloat getRefreshRate();
-		jfloatArray getSupportedRefreshRates();
-		jarray getSupportedModes();
+		jint getDisplayId();
+		jint getFlags();
 		QAndroidJniObject getHdrCapabilities();
-		jboolean isHdr();
-		jboolean isWideColorGamut();
-		QAndroidJniObject getPreferredWideGamutColorSpace();
-		jlong getAppVsyncOffsetNanos();
-		jlong getPresentationDeadlineNanos();
+		jint getHeight();
 		void getMetrics(__jni_impl::android::util::DisplayMetrics arg0);
-		void getRealSize(__jni_impl::android::graphics::Point arg0);
+		QAndroidJniObject getMode();
+		jstring getName();
+		jint getOrientation();
+		jint getPixelFormat();
+		QAndroidJniObject getPreferredWideGamutColorSpace();
+		jlong getPresentationDeadlineNanos();
 		void getRealMetrics(__jni_impl::android::util::DisplayMetrics arg0);
+		void getRealSize(__jni_impl::android::graphics::Point arg0);
+		void getRectSize(__jni_impl::android::graphics::Rect arg0);
+		jfloat getRefreshRate();
+		jint getRotation();
+		void getSize(__jni_impl::android::graphics::Point arg0);
+		jint getState();
+		jarray getSupportedModes();
+		jfloatArray getSupportedRefreshRates();
+		jint getWidth();
+		jboolean isHdr();
+		jboolean isValid();
+		jboolean isWideColorGamut();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::view
 
-#include "../graphics/Point.hpp"
-#include "Display_Mode.hpp"
-#include "../graphics/Rect.hpp"
-#include "DisplayCutout.hpp"
-#include "Display_HdrCapabilities.hpp"
 #include "../graphics/ColorSpace.hpp"
+#include "../graphics/Point.hpp"
+#include "../graphics/Rect.hpp"
 #include "../util/DisplayMetrics.hpp"
+#include "Display_HdrCapabilities.hpp"
+#include "Display_Mode.hpp"
+#include "DisplayCutout.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -209,97 +209,11 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jstring Display::getName()
+	jlong Display::getAppVsyncOffsetNanos()
 	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring Display::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint Display::getState()
-	{
-		return __thiz.callMethod<jint>(
-			"getState",
-			"()I"
-		);
-	}
-	void Display::getSize(__jni_impl::android::graphics::Point arg0)
-	{
-		__thiz.callMethod<void>(
-			"getSize",
-			"(Landroid/graphics/Point;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jint Display::getFlags()
-	{
-		return __thiz.callMethod<jint>(
-			"getFlags",
-			"()I"
-		);
-	}
-	jboolean Display::isValid()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isValid",
-			"()Z"
-		);
-	}
-	QAndroidJniObject Display::getMode()
-	{
-		return __thiz.callObjectMethod(
-			"getMode",
-			"()Landroid/view/Display$Mode;"
-		);
-	}
-	jint Display::getRotation()
-	{
-		return __thiz.callMethod<jint>(
-			"getRotation",
-			"()I"
-		);
-	}
-	jint Display::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I"
-		);
-	}
-	jint Display::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I"
-		);
-	}
-	jint Display::getOrientation()
-	{
-		return __thiz.callMethod<jint>(
-			"getOrientation",
-			"()I"
-		);
-	}
-	jint Display::getDisplayId()
-	{
-		return __thiz.callMethod<jint>(
-			"getDisplayId",
-			"()I"
-		);
-	}
-	void Display::getRectSize(__jni_impl::android::graphics::Rect arg0)
-	{
-		__thiz.callMethod<void>(
-			"getRectSize",
-			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jlong>(
+			"getAppVsyncOffsetNanos",
+			"()J"
 		);
 	}
 	void Display::getCurrentSizeRange(__jni_impl::android::graphics::Point arg0, __jni_impl::android::graphics::Point arg1)
@@ -318,33 +232,19 @@ namespace __jni_impl::android::view
 			"()Landroid/view/DisplayCutout;"
 		);
 	}
-	jint Display::getPixelFormat()
+	jint Display::getDisplayId()
 	{
 		return __thiz.callMethod<jint>(
-			"getPixelFormat",
+			"getDisplayId",
 			"()I"
 		);
 	}
-	jfloat Display::getRefreshRate()
+	jint Display::getFlags()
 	{
-		return __thiz.callMethod<jfloat>(
-			"getRefreshRate",
-			"()F"
+		return __thiz.callMethod<jint>(
+			"getFlags",
+			"()I"
 		);
-	}
-	jfloatArray Display::getSupportedRefreshRates()
-	{
-		return __thiz.callObjectMethod(
-			"getSupportedRefreshRates",
-			"()[F"
-		).object<jfloatArray>();
-	}
-	jarray Display::getSupportedModes()
-	{
-		return __thiz.callObjectMethod(
-			"getSupportedModes",
-			"()[Landroid/view/Display$Mode;"
-		).object<jarray>();
 	}
 	QAndroidJniObject Display::getHdrCapabilities()
 	{
@@ -353,18 +253,47 @@ namespace __jni_impl::android::view
 			"()Landroid/view/Display$HdrCapabilities;"
 		);
 	}
-	jboolean Display::isHdr()
+	jint Display::getHeight()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isHdr",
-			"()Z"
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
 		);
 	}
-	jboolean Display::isWideColorGamut()
+	void Display::getMetrics(__jni_impl::android::util::DisplayMetrics arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isWideColorGamut",
-			"()Z"
+		__thiz.callMethod<void>(
+			"getMetrics",
+			"(Landroid/util/DisplayMetrics;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Display::getMode()
+	{
+		return __thiz.callObjectMethod(
+			"getMode",
+			"()Landroid/view/Display$Mode;"
+		);
+	}
+	jstring Display::getName()
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint Display::getOrientation()
+	{
+		return __thiz.callMethod<jint>(
+			"getOrientation",
+			"()I"
+		);
+	}
+	jint Display::getPixelFormat()
+	{
+		return __thiz.callMethod<jint>(
+			"getPixelFormat",
+			"()I"
 		);
 	}
 	QAndroidJniObject Display::getPreferredWideGamutColorSpace()
@@ -374,13 +303,6 @@ namespace __jni_impl::android::view
 			"()Landroid/graphics/ColorSpace;"
 		);
 	}
-	jlong Display::getAppVsyncOffsetNanos()
-	{
-		return __thiz.callMethod<jlong>(
-			"getAppVsyncOffsetNanos",
-			"()J"
-		);
-	}
 	jlong Display::getPresentationDeadlineNanos()
 	{
 		return __thiz.callMethod<jlong>(
@@ -388,10 +310,10 @@ namespace __jni_impl::android::view
 			"()J"
 		);
 	}
-	void Display::getMetrics(__jni_impl::android::util::DisplayMetrics arg0)
+	void Display::getRealMetrics(__jni_impl::android::util::DisplayMetrics arg0)
 	{
 		__thiz.callMethod<void>(
-			"getMetrics",
+			"getRealMetrics",
 			"(Landroid/util/DisplayMetrics;)V",
 			arg0.__jniObject().object()
 		);
@@ -404,13 +326,91 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
-	void Display::getRealMetrics(__jni_impl::android::util::DisplayMetrics arg0)
+	void Display::getRectSize(__jni_impl::android::graphics::Rect arg0)
 	{
 		__thiz.callMethod<void>(
-			"getRealMetrics",
-			"(Landroid/util/DisplayMetrics;)V",
+			"getRectSize",
+			"(Landroid/graphics/Rect;)V",
 			arg0.__jniObject().object()
 		);
+	}
+	jfloat Display::getRefreshRate()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getRefreshRate",
+			"()F"
+		);
+	}
+	jint Display::getRotation()
+	{
+		return __thiz.callMethod<jint>(
+			"getRotation",
+			"()I"
+		);
+	}
+	void Display::getSize(__jni_impl::android::graphics::Point arg0)
+	{
+		__thiz.callMethod<void>(
+			"getSize",
+			"(Landroid/graphics/Point;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint Display::getState()
+	{
+		return __thiz.callMethod<jint>(
+			"getState",
+			"()I"
+		);
+	}
+	jarray Display::getSupportedModes()
+	{
+		return __thiz.callObjectMethod(
+			"getSupportedModes",
+			"()[Landroid/view/Display$Mode;"
+		).object<jarray>();
+	}
+	jfloatArray Display::getSupportedRefreshRates()
+	{
+		return __thiz.callObjectMethod(
+			"getSupportedRefreshRates",
+			"()[F"
+		).object<jfloatArray>();
+	}
+	jint Display::getWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
+	}
+	jboolean Display::isHdr()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isHdr",
+			"()Z"
+		);
+	}
+	jboolean Display::isValid()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isValid",
+			"()Z"
+		);
+	}
+	jboolean Display::isWideColorGamut()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isWideColorGamut",
+			"()Z"
+		);
+	}
+	jstring Display::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::view
 

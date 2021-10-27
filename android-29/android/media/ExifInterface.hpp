@@ -5,9 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::graphics
+{
+	class Bitmap;
+}
 namespace __jni_impl::java::io
 {
-	class InputStream;
+	class File;
 }
 namespace __jni_impl::java::io
 {
@@ -15,11 +19,7 @@ namespace __jni_impl::java::io
 }
 namespace __jni_impl::java::io
 {
-	class File;
-}
-namespace __jni_impl::android::graphics
-{
-	class Bitmap;
+	class InputStream;
 }
 
 namespace __jni_impl::android::media
@@ -180,43 +180,43 @@ namespace __jni_impl::android::media
 		static jint WHITEBALANCE_MANUAL();
 		
 		// Constructors
-		void __constructor(__jni_impl::java::io::InputStream arg0);
+		void __constructor(__jni_impl::java::io::File arg0);
 		void __constructor(__jni_impl::java::io::FileDescriptor arg0);
+		void __constructor(__jni_impl::java::io::InputStream arg0);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor(__jni_impl::java::io::File arg0);
 		
 		// Methods
+		jdouble getAltitude(jdouble arg0);
 		jstring getAttribute(jstring arg0);
 		jstring getAttribute(const QString &arg0);
-		void setAttribute(jstring arg0, jstring arg1);
-		void setAttribute(const QString &arg0, const QString &arg1);
-		jint getAttributeInt(jstring arg0, jint arg1);
-		jint getAttributeInt(const QString &arg0, jint arg1);
-		jdouble getAttributeDouble(jstring arg0, jdouble arg1);
-		jdouble getAttributeDouble(const QString &arg0, jdouble arg1);
-		void saveAttributes();
-		jboolean hasThumbnail();
-		jboolean hasAttribute(jstring arg0);
-		jboolean hasAttribute(const QString &arg0);
-		jbyteArray getThumbnailBytes();
-		QAndroidJniObject getThumbnailBitmap();
-		jboolean isThumbnailCompressed();
-		jlongArray getThumbnailRange();
-		jlongArray getAttributeRange(jstring arg0);
-		jlongArray getAttributeRange(const QString &arg0);
 		jbyteArray getAttributeBytes(jstring arg0);
 		jbyteArray getAttributeBytes(const QString &arg0);
+		jdouble getAttributeDouble(jstring arg0, jdouble arg1);
+		jdouble getAttributeDouble(const QString &arg0, jdouble arg1);
+		jint getAttributeInt(jstring arg0, jint arg1);
+		jint getAttributeInt(const QString &arg0, jint arg1);
+		jlongArray getAttributeRange(jstring arg0);
+		jlongArray getAttributeRange(const QString &arg0);
 		jboolean getLatLong(jfloatArray arg0);
-		jdouble getAltitude(jdouble arg0);
 		jbyteArray getThumbnail();
+		QAndroidJniObject getThumbnailBitmap();
+		jbyteArray getThumbnailBytes();
+		jlongArray getThumbnailRange();
+		jboolean hasAttribute(jstring arg0);
+		jboolean hasAttribute(const QString &arg0);
+		jboolean hasThumbnail();
+		jboolean isThumbnailCompressed();
+		void saveAttributes();
+		void setAttribute(jstring arg0, jstring arg1);
+		void setAttribute(const QString &arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::media
 
-#include "../../java/io/InputStream.hpp"
-#include "../../java/io/FileDescriptor.hpp"
-#include "../../java/io/File.hpp"
 #include "../graphics/Bitmap.hpp"
+#include "../../java/io/File.hpp"
+#include "../../java/io/FileDescriptor.hpp"
+#include "../../java/io/InputStream.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -1412,11 +1412,11 @@ namespace __jni_impl::android::media
 	}
 	
 	// Constructors
-	void ExifInterface::__constructor(__jni_impl::java::io::InputStream arg0)
+	void ExifInterface::__constructor(__jni_impl::java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.media.ExifInterface",
-			"(Ljava/io/InputStream;)V",
+			"(Ljava/io/File;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -1425,6 +1425,14 @@ namespace __jni_impl::android::media
 		__thiz = QAndroidJniObject(
 			"android.media.ExifInterface",
 			"(Ljava/io/FileDescriptor;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ExifInterface::__constructor(__jni_impl::java::io::InputStream arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.media.ExifInterface",
+			"(Ljava/io/InputStream;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -1444,16 +1452,16 @@ namespace __jni_impl::android::media
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void ExifInterface::__constructor(__jni_impl::java::io::File arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.ExifInterface",
-			"(Ljava/io/File;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	
 	// Methods
+	jdouble ExifInterface::getAltitude(jdouble arg0)
+	{
+		return __thiz.callMethod<jdouble>(
+			"getAltitude",
+			"(D)D",
+			arg0
+		);
+	}
 	jstring ExifInterface::getAttribute(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -1470,22 +1478,38 @@ namespace __jni_impl::android::media
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
-	void ExifInterface::setAttribute(jstring arg0, jstring arg1)
+	jbyteArray ExifInterface::getAttributeBytes(jstring arg0)
 	{
-		__thiz.callMethod<void>(
-			"setAttribute",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
+		return __thiz.callObjectMethod(
+			"getAttributeBytes",
+			"(Ljava/lang/String;)[B",
+			arg0
+		).object<jbyteArray>();
+	}
+	jbyteArray ExifInterface::getAttributeBytes(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAttributeBytes",
+			"(Ljava/lang/String;)[B",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jbyteArray>();
+	}
+	jdouble ExifInterface::getAttributeDouble(jstring arg0, jdouble arg1)
+	{
+		return __thiz.callMethod<jdouble>(
+			"getAttributeDouble",
+			"(Ljava/lang/String;D)D",
 			arg0,
 			arg1
 		);
 	}
-	void ExifInterface::setAttribute(const QString &arg0, const QString &arg1)
+	jdouble ExifInterface::getAttributeDouble(const QString &arg0, jdouble arg1)
 	{
-		__thiz.callMethod<void>(
-			"setAttribute",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
+		return __thiz.callMethod<jdouble>(
+			"getAttributeDouble",
+			"(Ljava/lang/String;D)D",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
+			arg1
 		);
 	}
 	jint ExifInterface::getAttributeInt(jstring arg0, jint arg1)
@@ -1506,37 +1530,57 @@ namespace __jni_impl::android::media
 			arg1
 		);
 	}
-	jdouble ExifInterface::getAttributeDouble(jstring arg0, jdouble arg1)
+	jlongArray ExifInterface::getAttributeRange(jstring arg0)
 	{
-		return __thiz.callMethod<jdouble>(
-			"getAttributeDouble",
-			"(Ljava/lang/String;D)D",
-			arg0,
-			arg1
-		);
+		return __thiz.callObjectMethod(
+			"getAttributeRange",
+			"(Ljava/lang/String;)[J",
+			arg0
+		).object<jlongArray>();
 	}
-	jdouble ExifInterface::getAttributeDouble(const QString &arg0, jdouble arg1)
+	jlongArray ExifInterface::getAttributeRange(const QString &arg0)
 	{
-		return __thiz.callMethod<jdouble>(
-			"getAttributeDouble",
-			"(Ljava/lang/String;D)D",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
+		return __thiz.callObjectMethod(
+			"getAttributeRange",
+			"(Ljava/lang/String;)[J",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jlongArray>();
 	}
-	void ExifInterface::saveAttributes()
-	{
-		__thiz.callMethod<void>(
-			"saveAttributes",
-			"()V"
-		);
-	}
-	jboolean ExifInterface::hasThumbnail()
+	jboolean ExifInterface::getLatLong(jfloatArray arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"hasThumbnail",
-			"()Z"
+			"getLatLong",
+			"([F)Z",
+			arg0
 		);
+	}
+	jbyteArray ExifInterface::getThumbnail()
+	{
+		return __thiz.callObjectMethod(
+			"getThumbnail",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	QAndroidJniObject ExifInterface::getThumbnailBitmap()
+	{
+		return __thiz.callObjectMethod(
+			"getThumbnailBitmap",
+			"()Landroid/graphics/Bitmap;"
+		);
+	}
+	jbyteArray ExifInterface::getThumbnailBytes()
+	{
+		return __thiz.callObjectMethod(
+			"getThumbnailBytes",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jlongArray ExifInterface::getThumbnailRange()
+	{
+		return __thiz.callObjectMethod(
+			"getThumbnailRange",
+			"()[J"
+		).object<jlongArray>();
 	}
 	jboolean ExifInterface::hasAttribute(jstring arg0)
 	{
@@ -1554,18 +1598,11 @@ namespace __jni_impl::android::media
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jbyteArray ExifInterface::getThumbnailBytes()
+	jboolean ExifInterface::hasThumbnail()
 	{
-		return __thiz.callObjectMethod(
-			"getThumbnailBytes",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	QAndroidJniObject ExifInterface::getThumbnailBitmap()
-	{
-		return __thiz.callObjectMethod(
-			"getThumbnailBitmap",
-			"()Landroid/graphics/Bitmap;"
+		return __thiz.callMethod<jboolean>(
+			"hasThumbnail",
+			"()Z"
 		);
 	}
 	jboolean ExifInterface::isThumbnailCompressed()
@@ -1575,67 +1612,30 @@ namespace __jni_impl::android::media
 			"()Z"
 		);
 	}
-	jlongArray ExifInterface::getThumbnailRange()
+	void ExifInterface::saveAttributes()
 	{
-		return __thiz.callObjectMethod(
-			"getThumbnailRange",
-			"()[J"
-		).object<jlongArray>();
-	}
-	jlongArray ExifInterface::getAttributeRange(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAttributeRange",
-			"(Ljava/lang/String;)[J",
-			arg0
-		).object<jlongArray>();
-	}
-	jlongArray ExifInterface::getAttributeRange(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAttributeRange",
-			"(Ljava/lang/String;)[J",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jlongArray>();
-	}
-	jbyteArray ExifInterface::getAttributeBytes(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAttributeBytes",
-			"(Ljava/lang/String;)[B",
-			arg0
-		).object<jbyteArray>();
-	}
-	jbyteArray ExifInterface::getAttributeBytes(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAttributeBytes",
-			"(Ljava/lang/String;)[B",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jbyteArray>();
-	}
-	jboolean ExifInterface::getLatLong(jfloatArray arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getLatLong",
-			"([F)Z",
-			arg0
+		__thiz.callMethod<void>(
+			"saveAttributes",
+			"()V"
 		);
 	}
-	jdouble ExifInterface::getAltitude(jdouble arg0)
+	void ExifInterface::setAttribute(jstring arg0, jstring arg1)
 	{
-		return __thiz.callMethod<jdouble>(
-			"getAltitude",
-			"(D)D",
-			arg0
+		__thiz.callMethod<void>(
+			"setAttribute",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1
 		);
 	}
-	jbyteArray ExifInterface::getThumbnail()
+	void ExifInterface::setAttribute(const QString &arg0, const QString &arg1)
 	{
-		return __thiz.callObjectMethod(
-			"getThumbnail",
-			"()[B"
-		).object<jbyteArray>();
+		__thiz.callMethod<void>(
+			"setAttribute",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 } // namespace __jni_impl::android::media
 
@@ -1645,7 +1645,7 @@ namespace android::media
 	{
 	public:
 		ExifInterface(QAndroidJniObject obj) { __thiz = obj; }
-		ExifInterface(__jni_impl::java::io::InputStream arg0)
+		ExifInterface(__jni_impl::java::io::File arg0)
 		{
 			__constructor(
 				arg0);
@@ -1655,12 +1655,12 @@ namespace android::media
 			__constructor(
 				arg0);
 		}
-		ExifInterface(jstring arg0)
+		ExifInterface(__jni_impl::java::io::InputStream arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		ExifInterface(__jni_impl::java::io::File arg0)
+		ExifInterface(jstring arg0)
 		{
 			__constructor(
 				arg0);

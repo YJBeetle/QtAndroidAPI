@@ -9,13 +9,13 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::os
-{
-	class Looper;
-}
 namespace __jni_impl::android::media
 {
 	class RemoteController_MetadataEditor;
+}
+namespace __jni_impl::android::os
+{
+	class Looper;
 }
 namespace __jni_impl::android::view
 {
@@ -36,19 +36,19 @@ namespace __jni_impl::android::media
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Looper arg2);
 		
 		// Methods
+		jboolean clearArtworkConfiguration();
 		QAndroidJniObject editMetadata();
 		jlong getEstimatedMediaPosition();
-		jboolean sendMediaKeyEvent(__jni_impl::android::view::KeyEvent arg0);
 		jboolean seekTo(jlong arg0);
+		jboolean sendMediaKeyEvent(__jni_impl::android::view::KeyEvent arg0);
 		jboolean setArtworkConfiguration(jint arg0, jint arg1);
-		jboolean clearArtworkConfiguration();
 		jboolean setSynchronizationMode(jint arg0);
 	};
 } // namespace __jni_impl::android::media
 
 #include "../content/Context.hpp"
-#include "../os/Looper.hpp"
 #include "RemoteController_MetadataEditor.hpp"
+#include "../os/Looper.hpp"
 #include "../view/KeyEvent.hpp"
 
 namespace __jni_impl::android::media
@@ -91,6 +91,13 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	jboolean RemoteController::clearArtworkConfiguration()
+	{
+		return __thiz.callMethod<jboolean>(
+			"clearArtworkConfiguration",
+			"()Z"
+		);
+	}
 	QAndroidJniObject RemoteController::editMetadata()
 	{
 		return __thiz.callObjectMethod(
@@ -105,20 +112,20 @@ namespace __jni_impl::android::media
 			"()J"
 		);
 	}
-	jboolean RemoteController::sendMediaKeyEvent(__jni_impl::android::view::KeyEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"sendMediaKeyEvent",
-			"(Landroid/view/KeyEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
 	jboolean RemoteController::seekTo(jlong arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"seekTo",
 			"(J)Z",
 			arg0
+		);
+	}
+	jboolean RemoteController::sendMediaKeyEvent(__jni_impl::android::view::KeyEvent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"sendMediaKeyEvent",
+			"(Landroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 	jboolean RemoteController::setArtworkConfiguration(jint arg0, jint arg1)
@@ -128,13 +135,6 @@ namespace __jni_impl::android::media
 			"(II)Z",
 			arg0,
 			arg1
-		);
-	}
-	jboolean RemoteController::clearArtworkConfiguration()
-	{
-		return __thiz.callMethod<jboolean>(
-			"clearArtworkConfiguration",
-			"()Z"
 		);
 	}
 	jboolean RemoteController::setSynchronizationMode(jint arg0)

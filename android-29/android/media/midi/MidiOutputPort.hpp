@@ -6,13 +6,13 @@
 #include "../../../__JniBaseClass.hpp"
 #include "MidiSender.hpp"
 
-namespace __jni_impl::java::io
-{
-	class FileDescriptor;
-}
 namespace __jni_impl::android::media::midi
 {
 	class MidiReceiver;
+}
+namespace __jni_impl::java::io
+{
+	class FileDescriptor;
 }
 
 namespace __jni_impl::android::media::midi
@@ -27,14 +27,14 @@ namespace __jni_impl::android::media::midi
 		
 		// Methods
 		void close();
-		void onDisconnect(__jni_impl::android::media::midi::MidiReceiver arg0);
-		void onConnect(__jni_impl::android::media::midi::MidiReceiver arg0);
 		jint getPortNumber();
+		void onConnect(__jni_impl::android::media::midi::MidiReceiver arg0);
+		void onDisconnect(__jni_impl::android::media::midi::MidiReceiver arg0);
 	};
 } // namespace __jni_impl::android::media::midi
 
-#include "../../../java/io/FileDescriptor.hpp"
 #include "MidiReceiver.hpp"
+#include "../../../java/io/FileDescriptor.hpp"
 
 namespace __jni_impl::android::media::midi
 {
@@ -56,12 +56,11 @@ namespace __jni_impl::android::media::midi
 			"()V"
 		);
 	}
-	void MidiOutputPort::onDisconnect(__jni_impl::android::media::midi::MidiReceiver arg0)
+	jint MidiOutputPort::getPortNumber()
 	{
-		__thiz.callMethod<void>(
-			"onDisconnect",
-			"(Landroid/media/midi/MidiReceiver;)V",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"getPortNumber",
+			"()I"
 		);
 	}
 	void MidiOutputPort::onConnect(__jni_impl::android::media::midi::MidiReceiver arg0)
@@ -72,11 +71,12 @@ namespace __jni_impl::android::media::midi
 			arg0.__jniObject().object()
 		);
 	}
-	jint MidiOutputPort::getPortNumber()
+	void MidiOutputPort::onDisconnect(__jni_impl::android::media::midi::MidiReceiver arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getPortNumber",
-			"()I"
+		__thiz.callMethod<void>(
+			"onDisconnect",
+			"(Landroid/media/midi/MidiReceiver;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::media::midi

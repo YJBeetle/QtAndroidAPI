@@ -7,15 +7,15 @@
 
 namespace __jni_impl::android::graphics
 {
+	class ColorSpace;
+}
+namespace __jni_impl::android::graphics
+{
 	class ImageDecoder;
 }
 namespace __jni_impl::android::util
 {
 	class Size;
-}
-namespace __jni_impl::android::graphics
-{
-	class ColorSpace;
 }
 
 namespace __jni_impl::android::graphics
@@ -29,16 +29,16 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getSize();
-		jboolean isAnimated();
 		QAndroidJniObject getColorSpace();
 		jstring getMimeType();
+		QAndroidJniObject getSize();
+		jboolean isAnimated();
 	};
 } // namespace __jni_impl::android::graphics
 
+#include "ColorSpace.hpp"
 #include "ImageDecoder.hpp"
 #include "../util/Size.hpp"
-#include "ColorSpace.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -53,20 +53,6 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	QAndroidJniObject ImageDecoder_ImageInfo::getSize()
-	{
-		return __thiz.callObjectMethod(
-			"getSize",
-			"()Landroid/util/Size;"
-		);
-	}
-	jboolean ImageDecoder_ImageInfo::isAnimated()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAnimated",
-			"()Z"
-		);
-	}
 	QAndroidJniObject ImageDecoder_ImageInfo::getColorSpace()
 	{
 		return __thiz.callObjectMethod(
@@ -80,6 +66,20 @@ namespace __jni_impl::android::graphics
 			"getMimeType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	QAndroidJniObject ImageDecoder_ImageInfo::getSize()
+	{
+		return __thiz.callObjectMethod(
+			"getSize",
+			"()Landroid/util/Size;"
+		);
+	}
+	jboolean ImageDecoder_ImageInfo::isAnimated()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAnimated",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::graphics
 

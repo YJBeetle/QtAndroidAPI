@@ -19,9 +19,9 @@ namespace __jni_impl::android::text
 		// Methods
 		jstring filter(jstring arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5);
 		jstring filter(const QString &arg0, jint arg1, jint arg2, __jni_impl::__JniBaseClass arg3, jint arg4, jint arg5);
-		void onStart();
 		jboolean isAllowed(jchar arg0);
 		void onInvalidCharacter(jchar arg0);
+		void onStart();
 		void onStop();
 	};
 } // namespace __jni_impl::android::text
@@ -66,13 +66,6 @@ namespace __jni_impl::android::text
 			arg5
 		).object<jstring>();
 	}
-	void LoginFilter::onStart()
-	{
-		__thiz.callMethod<void>(
-			"onStart",
-			"()V"
-		);
-	}
 	jboolean LoginFilter::isAllowed(jchar arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -87,6 +80,13 @@ namespace __jni_impl::android::text
 			"onInvalidCharacter",
 			"(C)V",
 			arg0
+		);
+	}
+	void LoginFilter::onStart()
+	{
+		__thiz.callMethod<void>(
+			"onStart",
+			"()V"
 		);
 	}
 	void LoginFilter::onStop()

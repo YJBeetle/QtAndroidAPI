@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net
-{
-	class Uri;
-}
 namespace __jni_impl::android::content
 {
 	class ContentResolver;
+}
+namespace __jni_impl::android::net
+{
+	class Uri;
 }
 
 namespace __jni_impl::android::provider
@@ -30,8 +30,8 @@ namespace __jni_impl::android::provider
 	};
 } // namespace __jni_impl::android::provider
 
-#include "../net/Uri.hpp"
 #include "../content/ContentResolver.hpp"
+#include "../net/Uri.hpp"
 
 namespace __jni_impl::android::provider
 {

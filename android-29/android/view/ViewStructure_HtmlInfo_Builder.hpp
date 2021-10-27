@@ -21,9 +21,9 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject build();
 		QAndroidJniObject addAttribute(jstring arg0, jstring arg1);
 		QAndroidJniObject addAttribute(const QString &arg0, const QString &arg1);
+		QAndroidJniObject build();
 	};
 } // namespace __jni_impl::android::view
 
@@ -43,13 +43,6 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	QAndroidJniObject ViewStructure_HtmlInfo_Builder::build()
-	{
-		return __thiz.callObjectMethod(
-			"build",
-			"()Landroid/view/ViewStructure$HtmlInfo;"
-		);
-	}
 	QAndroidJniObject ViewStructure_HtmlInfo_Builder::addAttribute(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -66,6 +59,13 @@ namespace __jni_impl::android::view
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/view/ViewStructure$HtmlInfo$Builder;",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	QAndroidJniObject ViewStructure_HtmlInfo_Builder::build()
+	{
+		return __thiz.callObjectMethod(
+			"build",
+			"()Landroid/view/ViewStructure$HtmlInfo;"
 		);
 	}
 } // namespace __jni_impl::android::view

@@ -21,10 +21,10 @@ namespace __jni_impl::android::text::style
 		void __constructor(const QString &arg0);
 		
 		// Methods
-		QAndroidJniObject setExtension(jstring arg0);
-		QAndroidJniObject setExtension(const QString &arg0);
 		QAndroidJniObject setCountryCode(jstring arg0);
 		QAndroidJniObject setCountryCode(const QString &arg0);
+		QAndroidJniObject setExtension(jstring arg0);
+		QAndroidJniObject setExtension(const QString &arg0);
 		QAndroidJniObject setNumberParts(jstring arg0);
 		QAndroidJniObject setNumberParts(const QString &arg0);
 	};
@@ -61,22 +61,6 @@ namespace __jni_impl::android::text::style
 	}
 	
 	// Methods
-	QAndroidJniObject TtsSpan_TelephoneBuilder::setExtension(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setExtension",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$TelephoneBuilder;",
-			arg0
-		);
-	}
-	QAndroidJniObject TtsSpan_TelephoneBuilder::setExtension(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setExtension",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$TelephoneBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject TtsSpan_TelephoneBuilder::setCountryCode(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -89,6 +73,22 @@ namespace __jni_impl::android::text::style
 	{
 		return __thiz.callObjectMethod(
 			"setCountryCode",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$TelephoneBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject TtsSpan_TelephoneBuilder::setExtension(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setExtension",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$TelephoneBuilder;",
+			arg0
+		);
+	}
+	QAndroidJniObject TtsSpan_TelephoneBuilder::setExtension(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setExtension",
 			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$TelephoneBuilder;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);

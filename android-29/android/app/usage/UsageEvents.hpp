@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::app::usage
 {
 	class UsageEvents_Event;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::app::usage
@@ -27,14 +27,14 @@ namespace __jni_impl::android::app::usage
 		
 		// Methods
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jboolean hasNextEvent();
 		jboolean getNextEvent(__jni_impl::android::app::usage::UsageEvents_Event arg0);
+		jboolean hasNextEvent();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::usage
 
-#include "../../os/Parcel.hpp"
 #include "UsageEvents_Event.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::app::usage
 {
@@ -64,13 +64,12 @@ namespace __jni_impl::android::app::usage
 			"()I"
 		);
 	}
-	void UsageEvents::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jboolean UsageEvents::getNextEvent(__jni_impl::android::app::usage::UsageEvents_Event arg0)
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callMethod<jboolean>(
+			"getNextEvent",
+			"(Landroid/app/usage/UsageEvents$Event;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 	jboolean UsageEvents::hasNextEvent()
@@ -80,12 +79,13 @@ namespace __jni_impl::android::app::usage
 			"()Z"
 		);
 	}
-	jboolean UsageEvents::getNextEvent(__jni_impl::android::app::usage::UsageEvents_Event arg0)
+	void UsageEvents::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"getNextEvent",
-			"(Landroid/app/usage/UsageEvents$Event;)Z",
-			arg0.__jniObject().object()
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::app::usage

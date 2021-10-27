@@ -7,19 +7,19 @@
 
 namespace __jni_impl::android::app
 {
+	class Activity;
+}
+namespace __jni_impl::android::app
+{
 	class Instrumentation_ActivityResult;
 }
 namespace __jni_impl::android::content
 {
-	class IntentFilter;
-}
-namespace __jni_impl::android::app
-{
-	class Activity;
+	class Intent;
 }
 namespace __jni_impl::android::content
 {
-	class Intent;
+	class IntentFilter;
 }
 
 namespace __jni_impl::android::app
@@ -31,26 +31,26 @@ namespace __jni_impl::android::app
 		
 		// Constructors
 		void __constructor();
+		void __constructor(__jni_impl::android::content::IntentFilter arg0, __jni_impl::android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
 		void __constructor(jstring arg0, __jni_impl::android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
 		void __constructor(const QString &arg0, __jni_impl::android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
-		void __constructor(__jni_impl::android::content::IntentFilter arg0, __jni_impl::android::app::Instrumentation_ActivityResult arg1, jboolean arg2);
 		
 		// Methods
-		QAndroidJniObject getResult();
 		QAndroidJniObject getFilter();
-		jboolean isBlocking();
 		jint getHits();
 		QAndroidJniObject getLastActivity();
+		QAndroidJniObject getResult();
+		jboolean isBlocking();
+		QAndroidJniObject onStartActivity(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject waitForActivity();
 		QAndroidJniObject waitForActivityWithTimeout(jlong arg0);
-		QAndroidJniObject onStartActivity(__jni_impl::android::content::Intent arg0);
 	};
 } // namespace __jni_impl::android::app
 
-#include "Instrumentation_ActivityResult.hpp"
-#include "../content/IntentFilter.hpp"
 #include "Activity.hpp"
+#include "Instrumentation_ActivityResult.hpp"
 #include "../content/Intent.hpp"
+#include "../content/IntentFilter.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -62,6 +62,16 @@ namespace __jni_impl::android::app
 		__thiz = QAndroidJniObject(
 			"android.app.Instrumentation$ActivityMonitor",
 			"()V"
+		);
+	}
+	void Instrumentation_ActivityMonitor::__constructor(__jni_impl::android::content::IntentFilter arg0, __jni_impl::android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.Instrumentation$ActivityMonitor",
+			"(Landroid/content/IntentFilter;Landroid/app/Instrumentation$ActivityResult;Z)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
 		);
 	}
 	void Instrumentation_ActivityMonitor::__constructor(jstring arg0, __jni_impl::android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
@@ -84,37 +94,13 @@ namespace __jni_impl::android::app
 			arg2
 		);
 	}
-	void Instrumentation_ActivityMonitor::__constructor(__jni_impl::android::content::IntentFilter arg0, __jni_impl::android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.Instrumentation$ActivityMonitor",
-			"(Landroid/content/IntentFilter;Landroid/app/Instrumentation$ActivityResult;Z)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
 	
 	// Methods
-	QAndroidJniObject Instrumentation_ActivityMonitor::getResult()
-	{
-		return __thiz.callObjectMethod(
-			"getResult",
-			"()Landroid/app/Instrumentation$ActivityResult;"
-		);
-	}
 	QAndroidJniObject Instrumentation_ActivityMonitor::getFilter()
 	{
 		return __thiz.callObjectMethod(
 			"getFilter",
 			"()Landroid/content/IntentFilter;"
-		);
-	}
-	jboolean Instrumentation_ActivityMonitor::isBlocking()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isBlocking",
-			"()Z"
 		);
 	}
 	jint Instrumentation_ActivityMonitor::getHits()
@@ -129,6 +115,28 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"getLastActivity",
 			"()Landroid/app/Activity;"
+		);
+	}
+	QAndroidJniObject Instrumentation_ActivityMonitor::getResult()
+	{
+		return __thiz.callObjectMethod(
+			"getResult",
+			"()Landroid/app/Instrumentation$ActivityResult;"
+		);
+	}
+	jboolean Instrumentation_ActivityMonitor::isBlocking()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isBlocking",
+			"()Z"
+		);
+	}
+	QAndroidJniObject Instrumentation_ActivityMonitor::onStartActivity(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onStartActivity",
+			"(Landroid/content/Intent;)Landroid/app/Instrumentation$ActivityResult;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject Instrumentation_ActivityMonitor::waitForActivity()
@@ -146,14 +154,6 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
-	QAndroidJniObject Instrumentation_ActivityMonitor::onStartActivity(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onStartActivity",
-			"(Landroid/content/Intent;)Landroid/app/Instrumentation$ActivityResult;",
-			arg0.__jniObject().object()
-		);
-	}
 } // namespace __jni_impl::android::app
 
 namespace android::app
@@ -166,14 +166,14 @@ namespace android::app
 		{
 			__constructor();
 		}
-		Instrumentation_ActivityMonitor(jstring arg0, __jni_impl::android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
+		Instrumentation_ActivityMonitor(__jni_impl::android::content::IntentFilter arg0, __jni_impl::android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
 		{
 			__constructor(
 				arg0,
 				arg1,
 				arg2);
 		}
-		Instrumentation_ActivityMonitor(__jni_impl::android::content::IntentFilter arg0, __jni_impl::android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
+		Instrumentation_ActivityMonitor(jstring arg0, __jni_impl::android::app::Instrumentation_ActivityResult arg1, jboolean arg2)
 		{
 			__constructor(
 				arg0,

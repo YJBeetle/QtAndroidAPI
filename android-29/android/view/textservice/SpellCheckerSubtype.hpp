@@ -31,19 +31,19 @@ namespace __jni_impl::android::view::textservice
 		void __constructor(jint arg0, const QString &arg1, const QString &arg2);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		jstring getLocale();
-		jstring getDisplayName(__jni_impl::android::content::Context arg0, jstring arg1, __jni_impl::android::content::pm::ApplicationInfo arg2);
-		jstring getDisplayName(__jni_impl::android::content::Context arg0, const QString &arg1, __jni_impl::android::content::pm::ApplicationInfo arg2);
-		jint getNameResId();
-		jstring getLanguageTag();
-		jstring getExtraValue();
 		jboolean containsExtraValueKey(jstring arg0);
 		jboolean containsExtraValueKey(const QString &arg0);
+		jint describeContents();
+		jboolean equals(jobject arg0);
+		jstring getDisplayName(__jni_impl::android::content::Context arg0, jstring arg1, __jni_impl::android::content::pm::ApplicationInfo arg2);
+		jstring getDisplayName(__jni_impl::android::content::Context arg0, const QString &arg1, __jni_impl::android::content::pm::ApplicationInfo arg2);
+		jstring getExtraValue();
 		jstring getExtraValueOf(jstring arg0);
 		jstring getExtraValueOf(const QString &arg0);
-		jint describeContents();
+		jstring getLanguageTag();
+		jstring getLocale();
+		jint getNameResId();
+		jint hashCode();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::textservice
@@ -87,6 +87,29 @@ namespace __jni_impl::android::view::textservice
 	}
 	
 	// Methods
+	jboolean SpellCheckerSubtype::containsExtraValueKey(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"containsExtraValueKey",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jboolean SpellCheckerSubtype::containsExtraValueKey(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"containsExtraValueKey",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jint SpellCheckerSubtype::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean SpellCheckerSubtype::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -94,20 +117,6 @@ namespace __jni_impl::android::view::textservice
 			"(Ljava/lang/Object;)Z",
 			arg0
 		);
-	}
-	jint SpellCheckerSubtype::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jstring SpellCheckerSubtype::getLocale()
-	{
-		return __thiz.callObjectMethod(
-			"getLocale",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	jstring SpellCheckerSubtype::getDisplayName(__jni_impl::android::content::Context arg0, jstring arg1, __jni_impl::android::content::pm::ApplicationInfo arg2)
 	{
@@ -129,42 +138,12 @@ namespace __jni_impl::android::view::textservice
 			arg2.__jniObject().object()
 		).object<jstring>();
 	}
-	jint SpellCheckerSubtype::getNameResId()
-	{
-		return __thiz.callMethod<jint>(
-			"getNameResId",
-			"()I"
-		);
-	}
-	jstring SpellCheckerSubtype::getLanguageTag()
-	{
-		return __thiz.callObjectMethod(
-			"getLanguageTag",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jstring SpellCheckerSubtype::getExtraValue()
 	{
 		return __thiz.callObjectMethod(
 			"getExtraValue",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jboolean SpellCheckerSubtype::containsExtraValueKey(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"containsExtraValueKey",
-			"(Ljava/lang/String;)Z",
-			arg0
-		);
-	}
-	jboolean SpellCheckerSubtype::containsExtraValueKey(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"containsExtraValueKey",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
 	}
 	jstring SpellCheckerSubtype::getExtraValueOf(jstring arg0)
 	{
@@ -182,10 +161,31 @@ namespace __jni_impl::android::view::textservice
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
-	jint SpellCheckerSubtype::describeContents()
+	jstring SpellCheckerSubtype::getLanguageTag()
+	{
+		return __thiz.callObjectMethod(
+			"getLanguageTag",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring SpellCheckerSubtype::getLocale()
+	{
+		return __thiz.callObjectMethod(
+			"getLocale",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint SpellCheckerSubtype::getNameResId()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getNameResId",
+			"()I"
+		);
+	}
+	jint SpellCheckerSubtype::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
 			"()I"
 		);
 	}

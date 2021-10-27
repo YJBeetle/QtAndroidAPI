@@ -18,11 +18,11 @@ namespace __jni_impl::android::hardware::camera2::params
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jint getFormat();
-		jint getWidth();
 		jint getHeight();
+		jint getWidth();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
@@ -52,24 +52,17 @@ namespace __jni_impl::android::hardware::camera2::params
 			arg0
 		);
 	}
-	jstring InputConfiguration::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint InputConfiguration::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	jint InputConfiguration::getFormat()
 	{
 		return __thiz.callMethod<jint>(
 			"getFormat",
+			"()I"
+		);
+	}
+	jint InputConfiguration::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
 			"()I"
 		);
 	}
@@ -80,12 +73,19 @@ namespace __jni_impl::android::hardware::camera2::params
 			"()I"
 		);
 	}
-	jint InputConfiguration::getHeight()
+	jint InputConfiguration::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"getHeight",
+			"hashCode",
 			"()I"
 		);
+	}
+	jstring InputConfiguration::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::hardware::camera2::params
 

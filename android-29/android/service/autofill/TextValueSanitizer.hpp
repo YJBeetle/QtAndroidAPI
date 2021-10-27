@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util::regex
-{
-	class Pattern;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::java::util::regex
+{
+	class Pattern;
 }
 
 namespace __jni_impl::android::service::autofill
@@ -27,14 +27,14 @@ namespace __jni_impl::android::service::autofill
 		void __constructor(__jni_impl::java::util::regex::Pattern arg0, const QString &arg1);
 		
 		// Methods
-		jstring toString();
 		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::service::autofill
 
-#include "../../../java/util/regex/Pattern.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../java/util/regex/Pattern.hpp"
 
 namespace __jni_impl::android::service::autofill
 {
@@ -69,19 +69,19 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	jstring TextValueSanitizer::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint TextValueSanitizer::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
+	}
+	jstring TextValueSanitizer::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void TextValueSanitizer::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

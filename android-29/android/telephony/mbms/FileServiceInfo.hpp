@@ -24,8 +24,8 @@ namespace __jni_impl::android::telephony::mbms
 		
 		// Methods
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getFiles();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony::mbms
 
@@ -59,6 +59,13 @@ namespace __jni_impl::android::telephony::mbms
 			"()I"
 		);
 	}
+	QAndroidJniObject FileServiceInfo::getFiles()
+	{
+		return __thiz.callObjectMethod(
+			"getFiles",
+			"()Ljava/util/List;"
+		);
+	}
 	void FileServiceInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -66,13 +73,6 @@ namespace __jni_impl::android::telephony::mbms
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject FileServiceInfo::getFiles()
-	{
-		return __thiz.callObjectMethod(
-			"getFiles",
-			"()Ljava/util/List;"
 		);
 	}
 } // namespace __jni_impl::android::telephony::mbms

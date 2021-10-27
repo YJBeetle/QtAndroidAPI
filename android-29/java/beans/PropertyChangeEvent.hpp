@@ -23,12 +23,12 @@ namespace __jni_impl::java::beans
 		void __constructor(jobject arg0, const QString &arg1, jobject arg2, jobject arg3);
 		
 		// Methods
-		jstring toString();
-		jobject getOldValue();
 		jobject getNewValue();
+		jobject getOldValue();
 		jobject getPropagationId();
-		void setPropagationId(jobject arg0);
 		jstring getPropertyName();
+		void setPropagationId(jobject arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::java::beans
 
@@ -63,24 +63,17 @@ namespace __jni_impl::java::beans
 	}
 	
 	// Methods
-	jstring PropertyChangeEvent::toString()
+	jobject PropertyChangeEvent::getNewValue()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getNewValue",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jobject PropertyChangeEvent::getOldValue()
 	{
 		return __thiz.callObjectMethod(
 			"getOldValue",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	jobject PropertyChangeEvent::getNewValue()
-	{
-		return __thiz.callObjectMethod(
-			"getNewValue",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
@@ -91,6 +84,13 @@ namespace __jni_impl::java::beans
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
+	jstring PropertyChangeEvent::getPropertyName()
+	{
+		return __thiz.callObjectMethod(
+			"getPropertyName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	void PropertyChangeEvent::setPropagationId(jobject arg0)
 	{
 		__thiz.callMethod<void>(
@@ -99,10 +99,10 @@ namespace __jni_impl::java::beans
 			arg0
 		);
 	}
-	jstring PropertyChangeEvent::getPropertyName()
+	jstring PropertyChangeEvent::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getPropertyName",
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

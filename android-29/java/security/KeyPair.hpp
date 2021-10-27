@@ -17,8 +17,8 @@ namespace __jni_impl::java::security
 		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getPublic();
 		QAndroidJniObject getPrivate();
+		QAndroidJniObject getPublic();
 	};
 } // namespace __jni_impl::java::security
 
@@ -39,18 +39,18 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject KeyPair::getPublic()
-	{
-		return __thiz.callObjectMethod(
-			"getPublic",
-			"()Ljava/security/PublicKey;"
-		);
-	}
 	QAndroidJniObject KeyPair::getPrivate()
 	{
 		return __thiz.callObjectMethod(
 			"getPrivate",
 			"()Ljava/security/PrivateKey;"
+		);
+	}
+	QAndroidJniObject KeyPair::getPublic()
+	{
+		return __thiz.callObjectMethod(
+			"getPublic",
+			"()Ljava/security/PublicKey;"
 		);
 	}
 } // namespace __jni_impl::java::security

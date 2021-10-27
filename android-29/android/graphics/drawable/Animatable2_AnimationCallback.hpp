@@ -21,8 +21,8 @@ namespace __jni_impl::android::graphics::drawable
 		void __constructor();
 		
 		// Methods
-		void onAnimationStart(__jni_impl::android::graphics::drawable::Drawable arg0);
 		void onAnimationEnd(__jni_impl::android::graphics::drawable::Drawable arg0);
+		void onAnimationStart(__jni_impl::android::graphics::drawable::Drawable arg0);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
@@ -42,18 +42,18 @@ namespace __jni_impl::android::graphics::drawable
 	}
 	
 	// Methods
-	void Animatable2_AnimationCallback::onAnimationStart(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		__thiz.callMethod<void>(
-			"onAnimationStart",
-			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void Animatable2_AnimationCallback::onAnimationEnd(__jni_impl::android::graphics::drawable::Drawable arg0)
 	{
 		__thiz.callMethod<void>(
 			"onAnimationEnd",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Animatable2_AnimationCallback::onAnimationStart(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		__thiz.callMethod<void>(
+			"onAnimationStart",
 			"(Landroid/graphics/drawable/Drawable;)V",
 			arg0.__jniObject().object()
 		);

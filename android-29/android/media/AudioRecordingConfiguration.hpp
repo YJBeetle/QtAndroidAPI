@@ -5,17 +5,17 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
+namespace __jni_impl::android::media
 {
-	class Parcel;
+	class AudioDeviceInfo;
 }
 namespace __jni_impl::android::media
 {
 	class AudioFormat;
 }
-namespace __jni_impl::android::media
+namespace __jni_impl::android::os
 {
-	class AudioDeviceInfo;
+	class Parcel;
 }
 
 namespace __jni_impl::android::media
@@ -30,25 +30,25 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		QAndroidJniObject getFormat();
-		jint getAudioSource();
-		jint getClientAudioSource();
-		jint getClientAudioSessionId();
-		QAndroidJniObject getClientFormat();
-		QAndroidJniObject getAudioDevice();
-		jboolean isClientSilenced();
-		QAndroidJniObject getClientEffects();
-		QAndroidJniObject getEffects();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		QAndroidJniObject getAudioDevice();
+		jint getAudioSource();
+		jint getClientAudioSessionId();
+		jint getClientAudioSource();
+		QAndroidJniObject getClientEffects();
+		QAndroidJniObject getClientFormat();
+		QAndroidJniObject getEffects();
+		QAndroidJniObject getFormat();
+		jint hashCode();
+		jboolean isClientSilenced();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
 
-#include "../os/Parcel.hpp"
-#include "AudioFormat.hpp"
 #include "AudioDeviceInfo.hpp"
+#include "AudioFormat.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -71,6 +71,13 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	jint AudioRecordingConfiguration::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean AudioRecordingConfiguration::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -79,31 +86,17 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	jint AudioRecordingConfiguration::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	QAndroidJniObject AudioRecordingConfiguration::getFormat()
+	QAndroidJniObject AudioRecordingConfiguration::getAudioDevice()
 	{
 		return __thiz.callObjectMethod(
-			"getFormat",
-			"()Landroid/media/AudioFormat;"
+			"getAudioDevice",
+			"()Landroid/media/AudioDeviceInfo;"
 		);
 	}
 	jint AudioRecordingConfiguration::getAudioSource()
 	{
 		return __thiz.callMethod<jint>(
 			"getAudioSource",
-			"()I"
-		);
-	}
-	jint AudioRecordingConfiguration::getClientAudioSource()
-	{
-		return __thiz.callMethod<jint>(
-			"getClientAudioSource",
 			"()I"
 		);
 	}
@@ -114,25 +107,11 @@ namespace __jni_impl::android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject AudioRecordingConfiguration::getClientFormat()
+	jint AudioRecordingConfiguration::getClientAudioSource()
 	{
-		return __thiz.callObjectMethod(
-			"getClientFormat",
-			"()Landroid/media/AudioFormat;"
-		);
-	}
-	QAndroidJniObject AudioRecordingConfiguration::getAudioDevice()
-	{
-		return __thiz.callObjectMethod(
-			"getAudioDevice",
-			"()Landroid/media/AudioDeviceInfo;"
-		);
-	}
-	jboolean AudioRecordingConfiguration::isClientSilenced()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isClientSilenced",
-			"()Z"
+		return __thiz.callMethod<jint>(
+			"getClientAudioSource",
+			"()I"
 		);
 	}
 	QAndroidJniObject AudioRecordingConfiguration::getClientEffects()
@@ -142,6 +121,13 @@ namespace __jni_impl::android::media
 			"()Ljava/util/List;"
 		);
 	}
+	QAndroidJniObject AudioRecordingConfiguration::getClientFormat()
+	{
+		return __thiz.callObjectMethod(
+			"getClientFormat",
+			"()Landroid/media/AudioFormat;"
+		);
+	}
 	QAndroidJniObject AudioRecordingConfiguration::getEffects()
 	{
 		return __thiz.callObjectMethod(
@@ -149,11 +135,25 @@ namespace __jni_impl::android::media
 			"()Ljava/util/List;"
 		);
 	}
-	jint AudioRecordingConfiguration::describeContents()
+	QAndroidJniObject AudioRecordingConfiguration::getFormat()
+	{
+		return __thiz.callObjectMethod(
+			"getFormat",
+			"()Landroid/media/AudioFormat;"
+		);
+	}
+	jint AudioRecordingConfiguration::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
+		);
+	}
+	jboolean AudioRecordingConfiguration::isClientSilenced()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isClientSilenced",
+			"()Z"
 		);
 	}
 	void AudioRecordingConfiguration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

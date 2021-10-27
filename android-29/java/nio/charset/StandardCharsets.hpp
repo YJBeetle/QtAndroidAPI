@@ -16,12 +16,12 @@ namespace __jni_impl::java::nio::charset
 	{
 	public:
 		// Fields
-		static QAndroidJniObject US_ASCII();
 		static QAndroidJniObject ISO_8859_1();
-		static QAndroidJniObject UTF_8();
+		static QAndroidJniObject US_ASCII();
+		static QAndroidJniObject UTF_16();
 		static QAndroidJniObject UTF_16BE();
 		static QAndroidJniObject UTF_16LE();
-		static QAndroidJniObject UTF_16();
+		static QAndroidJniObject UTF_8();
 		
 		// Constructors
 		void __constructor();
@@ -35,14 +35,6 @@ namespace __jni_impl::java::nio::charset
 namespace __jni_impl::java::nio::charset
 {
 	// Fields
-	QAndroidJniObject StandardCharsets::US_ASCII()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.nio.charset.StandardCharsets",
-			"US_ASCII",
-			"Ljava/nio/charset/Charset;"
-		);
-	}
 	QAndroidJniObject StandardCharsets::ISO_8859_1()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -51,11 +43,19 @@ namespace __jni_impl::java::nio::charset
 			"Ljava/nio/charset/Charset;"
 		);
 	}
-	QAndroidJniObject StandardCharsets::UTF_8()
+	QAndroidJniObject StandardCharsets::US_ASCII()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.charset.StandardCharsets",
-			"UTF_8",
+			"US_ASCII",
+			"Ljava/nio/charset/Charset;"
+		);
+	}
+	QAndroidJniObject StandardCharsets::UTF_16()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.nio.charset.StandardCharsets",
+			"UTF_16",
 			"Ljava/nio/charset/Charset;"
 		);
 	}
@@ -75,11 +75,11 @@ namespace __jni_impl::java::nio::charset
 			"Ljava/nio/charset/Charset;"
 		);
 	}
-	QAndroidJniObject StandardCharsets::UTF_16()
+	QAndroidJniObject StandardCharsets::UTF_8()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.charset.StandardCharsets",
-			"UTF_16",
+			"UTF_8",
 			"Ljava/nio/charset/Charset;"
 		);
 	}

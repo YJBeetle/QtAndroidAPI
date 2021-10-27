@@ -22,8 +22,8 @@ namespace __jni_impl::java::util
 		void __constructor(const QString &arg0);
 		
 		// Methods
-		jstring getMessage();
 		jstring getConversion();
+		jstring getMessage();
 	};
 } // namespace __jni_impl::java::util
 
@@ -51,17 +51,17 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	jstring UnknownFormatConversionException::getMessage()
-	{
-		return __thiz.callObjectMethod(
-			"getMessage",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jstring UnknownFormatConversionException::getConversion()
 	{
 		return __thiz.callObjectMethod(
 			"getConversion",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring UnknownFormatConversionException::getMessage()
+	{
+		return __thiz.callObjectMethod(
+			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

@@ -26,11 +26,11 @@ namespace __jni_impl::java::net
 		void __constructor(__jni_impl::java::net::Proxy_Type arg0, __jni_impl::java::net::SocketAddress arg1);
 		
 		// Methods
-		QAndroidJniObject type();
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		QAndroidJniObject address();
+		jboolean equals(jobject arg0);
+		jint hashCode();
+		jstring toString();
+		QAndroidJniObject type();
 	};
 } // namespace __jni_impl::java::net
 
@@ -61,11 +61,11 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
-	QAndroidJniObject Proxy::type()
+	QAndroidJniObject Proxy::address()
 	{
 		return __thiz.callObjectMethod(
-			"type",
-			"()Ljava/net/Proxy$Type;"
+			"address",
+			"()Ljava/net/SocketAddress;"
 		);
 	}
 	jboolean Proxy::equals(jobject arg0)
@@ -76,13 +76,6 @@ namespace __jni_impl::java::net
 			arg0
 		);
 	}
-	jstring Proxy::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint Proxy::hashCode()
 	{
 		return __thiz.callMethod<jint>(
@@ -90,11 +83,18 @@ namespace __jni_impl::java::net
 			"()I"
 		);
 	}
-	QAndroidJniObject Proxy::address()
+	jstring Proxy::toString()
 	{
 		return __thiz.callObjectMethod(
-			"address",
-			"()Ljava/net/SocketAddress;"
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject Proxy::type()
+	{
+		return __thiz.callObjectMethod(
+			"type",
+			"()Ljava/net/Proxy$Type;"
 		);
 	}
 } // namespace __jni_impl::java::net

@@ -17,34 +17,34 @@ namespace __jni_impl::android::mtp
 		void __constructor();
 		
 		// Methods
-		jstring getName();
-		jint getParent();
-		jint getCompressedSize();
-		jint getFormat();
-		jint getSequenceNumber();
-		jstring getKeywords();
-		jint getObjectHandle();
-		jint getStorageId();
-		jint getProtectionStatus();
-		jlong getCompressedSizeLong();
-		jint getThumbFormat();
-		jint getThumbCompressedSize();
-		jlong getThumbCompressedSizeLong();
-		jint getThumbPixWidth();
-		jlong getThumbPixWidthLong();
-		jint getThumbPixHeight();
-		jlong getThumbPixHeightLong();
-		jint getImagePixWidth();
-		jlong getImagePixWidthLong();
-		jint getImagePixHeight();
-		jlong getImagePixHeightLong();
-		jint getImagePixDepth();
-		jlong getImagePixDepthLong();
-		jint getAssociationType();
 		jint getAssociationDesc();
-		jlong getSequenceNumberLong();
+		jint getAssociationType();
+		jint getCompressedSize();
+		jlong getCompressedSizeLong();
 		jlong getDateCreated();
 		jlong getDateModified();
+		jint getFormat();
+		jint getImagePixDepth();
+		jlong getImagePixDepthLong();
+		jint getImagePixHeight();
+		jlong getImagePixHeightLong();
+		jint getImagePixWidth();
+		jlong getImagePixWidthLong();
+		jstring getKeywords();
+		jstring getName();
+		jint getObjectHandle();
+		jint getParent();
+		jint getProtectionStatus();
+		jint getSequenceNumber();
+		jlong getSequenceNumberLong();
+		jint getStorageId();
+		jint getThumbCompressedSize();
+		jlong getThumbCompressedSizeLong();
+		jint getThumbFormat();
+		jint getThumbPixHeight();
+		jlong getThumbPixHeightLong();
+		jint getThumbPixWidth();
+		jlong getThumbPixWidthLong();
 	};
 } // namespace __jni_impl::android::mtp
 
@@ -62,17 +62,17 @@ namespace __jni_impl::android::mtp
 	}
 	
 	// Methods
-	jstring MtpObjectInfo::getName()
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint MtpObjectInfo::getParent()
+	jint MtpObjectInfo::getAssociationDesc()
 	{
 		return __thiz.callMethod<jint>(
-			"getParent",
+			"getAssociationDesc",
+			"()I"
+		);
+	}
+	jint MtpObjectInfo::getAssociationType()
+	{
+		return __thiz.callMethod<jint>(
+			"getAssociationType",
 			"()I"
 		);
 	}
@@ -83,48 +83,6 @@ namespace __jni_impl::android::mtp
 			"()I"
 		);
 	}
-	jint MtpObjectInfo::getFormat()
-	{
-		return __thiz.callMethod<jint>(
-			"getFormat",
-			"()I"
-		);
-	}
-	jint MtpObjectInfo::getSequenceNumber()
-	{
-		return __thiz.callMethod<jint>(
-			"getSequenceNumber",
-			"()I"
-		);
-	}
-	jstring MtpObjectInfo::getKeywords()
-	{
-		return __thiz.callObjectMethod(
-			"getKeywords",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint MtpObjectInfo::getObjectHandle()
-	{
-		return __thiz.callMethod<jint>(
-			"getObjectHandle",
-			"()I"
-		);
-	}
-	jint MtpObjectInfo::getStorageId()
-	{
-		return __thiz.callMethod<jint>(
-			"getStorageId",
-			"()I"
-		);
-	}
-	jint MtpObjectInfo::getProtectionStatus()
-	{
-		return __thiz.callMethod<jint>(
-			"getProtectionStatus",
-			"()I"
-		);
-	}
 	jlong MtpObjectInfo::getCompressedSizeLong()
 	{
 		return __thiz.callMethod<jlong>(
@@ -132,66 +90,38 @@ namespace __jni_impl::android::mtp
 			"()J"
 		);
 	}
-	jint MtpObjectInfo::getThumbFormat()
-	{
-		return __thiz.callMethod<jint>(
-			"getThumbFormat",
-			"()I"
-		);
-	}
-	jint MtpObjectInfo::getThumbCompressedSize()
-	{
-		return __thiz.callMethod<jint>(
-			"getThumbCompressedSize",
-			"()I"
-		);
-	}
-	jlong MtpObjectInfo::getThumbCompressedSizeLong()
+	jlong MtpObjectInfo::getDateCreated()
 	{
 		return __thiz.callMethod<jlong>(
-			"getThumbCompressedSizeLong",
+			"getDateCreated",
 			"()J"
 		);
 	}
-	jint MtpObjectInfo::getThumbPixWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getThumbPixWidth",
-			"()I"
-		);
-	}
-	jlong MtpObjectInfo::getThumbPixWidthLong()
+	jlong MtpObjectInfo::getDateModified()
 	{
 		return __thiz.callMethod<jlong>(
-			"getThumbPixWidthLong",
+			"getDateModified",
 			"()J"
 		);
 	}
-	jint MtpObjectInfo::getThumbPixHeight()
+	jint MtpObjectInfo::getFormat()
 	{
 		return __thiz.callMethod<jint>(
-			"getThumbPixHeight",
+			"getFormat",
 			"()I"
 		);
 	}
-	jlong MtpObjectInfo::getThumbPixHeightLong()
-	{
-		return __thiz.callMethod<jlong>(
-			"getThumbPixHeightLong",
-			"()J"
-		);
-	}
-	jint MtpObjectInfo::getImagePixWidth()
+	jint MtpObjectInfo::getImagePixDepth()
 	{
 		return __thiz.callMethod<jint>(
-			"getImagePixWidth",
+			"getImagePixDepth",
 			"()I"
 		);
 	}
-	jlong MtpObjectInfo::getImagePixWidthLong()
+	jlong MtpObjectInfo::getImagePixDepthLong()
 	{
 		return __thiz.callMethod<jlong>(
-			"getImagePixWidthLong",
+			"getImagePixDepthLong",
 			"()J"
 		);
 	}
@@ -209,31 +139,59 @@ namespace __jni_impl::android::mtp
 			"()J"
 		);
 	}
-	jint MtpObjectInfo::getImagePixDepth()
+	jint MtpObjectInfo::getImagePixWidth()
 	{
 		return __thiz.callMethod<jint>(
-			"getImagePixDepth",
+			"getImagePixWidth",
 			"()I"
 		);
 	}
-	jlong MtpObjectInfo::getImagePixDepthLong()
+	jlong MtpObjectInfo::getImagePixWidthLong()
 	{
 		return __thiz.callMethod<jlong>(
-			"getImagePixDepthLong",
+			"getImagePixWidthLong",
 			"()J"
 		);
 	}
-	jint MtpObjectInfo::getAssociationType()
+	jstring MtpObjectInfo::getKeywords()
+	{
+		return __thiz.callObjectMethod(
+			"getKeywords",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring MtpObjectInfo::getName()
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint MtpObjectInfo::getObjectHandle()
 	{
 		return __thiz.callMethod<jint>(
-			"getAssociationType",
+			"getObjectHandle",
 			"()I"
 		);
 	}
-	jint MtpObjectInfo::getAssociationDesc()
+	jint MtpObjectInfo::getParent()
 	{
 		return __thiz.callMethod<jint>(
-			"getAssociationDesc",
+			"getParent",
+			"()I"
+		);
+	}
+	jint MtpObjectInfo::getProtectionStatus()
+	{
+		return __thiz.callMethod<jint>(
+			"getProtectionStatus",
+			"()I"
+		);
+	}
+	jint MtpObjectInfo::getSequenceNumber()
+	{
+		return __thiz.callMethod<jint>(
+			"getSequenceNumber",
 			"()I"
 		);
 	}
@@ -244,17 +202,59 @@ namespace __jni_impl::android::mtp
 			"()J"
 		);
 	}
-	jlong MtpObjectInfo::getDateCreated()
+	jint MtpObjectInfo::getStorageId()
+	{
+		return __thiz.callMethod<jint>(
+			"getStorageId",
+			"()I"
+		);
+	}
+	jint MtpObjectInfo::getThumbCompressedSize()
+	{
+		return __thiz.callMethod<jint>(
+			"getThumbCompressedSize",
+			"()I"
+		);
+	}
+	jlong MtpObjectInfo::getThumbCompressedSizeLong()
 	{
 		return __thiz.callMethod<jlong>(
-			"getDateCreated",
+			"getThumbCompressedSizeLong",
 			"()J"
 		);
 	}
-	jlong MtpObjectInfo::getDateModified()
+	jint MtpObjectInfo::getThumbFormat()
+	{
+		return __thiz.callMethod<jint>(
+			"getThumbFormat",
+			"()I"
+		);
+	}
+	jint MtpObjectInfo::getThumbPixHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getThumbPixHeight",
+			"()I"
+		);
+	}
+	jlong MtpObjectInfo::getThumbPixHeightLong()
 	{
 		return __thiz.callMethod<jlong>(
-			"getDateModified",
+			"getThumbPixHeightLong",
+			"()J"
+		);
+	}
+	jint MtpObjectInfo::getThumbPixWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getThumbPixWidth",
+			"()I"
+		);
+	}
+	jlong MtpObjectInfo::getThumbPixWidthLong()
+	{
+		return __thiz.callMethod<jlong>(
+			"getThumbPixWidthLong",
 			"()J"
 		);
 	}

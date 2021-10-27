@@ -7,25 +7,25 @@
 #include "Preference.hpp"
 #include "PreferenceGroup.hpp"
 
+namespace __jni_impl::android::app
+{
+	class Dialog;
+}
 namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::widget
+namespace __jni_impl::android::view
 {
-	class ListView;
-}
-namespace __jni_impl::android::app
-{
-	class Dialog;
+	class View;
 }
 namespace __jni_impl::android::widget
 {
 	class AdapterView;
 }
-namespace __jni_impl::android::view
+namespace __jni_impl::android::widget
 {
-	class View;
+	class ListView;
 }
 
 namespace __jni_impl::android::preference
@@ -41,17 +41,17 @@ namespace __jni_impl::android::preference
 		// Methods
 		void bind(__jni_impl::android::widget::ListView arg0);
 		QAndroidJniObject getDialog();
-		void onItemClick(__jni_impl::android::widget::AdapterView arg0, __jni_impl::android::view::View arg1, jint arg2, jlong arg3);
 		QAndroidJniObject getRootAdapter();
 		void onDismiss(__jni_impl::__JniBaseClass arg0);
+		void onItemClick(__jni_impl::android::widget::AdapterView arg0, __jni_impl::android::view::View arg1, jint arg2, jlong arg3);
 	};
 } // namespace __jni_impl::android::preference
 
-#include "../content/Context.hpp"
-#include "../widget/ListView.hpp"
 #include "../app/Dialog.hpp"
-#include "../widget/AdapterView.hpp"
+#include "../content/Context.hpp"
 #include "../view/View.hpp"
+#include "../widget/AdapterView.hpp"
+#include "../widget/ListView.hpp"
 
 namespace __jni_impl::android::preference
 {
@@ -81,17 +81,6 @@ namespace __jni_impl::android::preference
 			"()Landroid/app/Dialog;"
 		);
 	}
-	void PreferenceScreen::onItemClick(__jni_impl::android::widget::AdapterView arg0, __jni_impl::android::view::View arg1, jint arg2, jlong arg3)
-	{
-		__thiz.callMethod<void>(
-			"onItemClick",
-			"(Landroid/widget/AdapterView;Landroid/view/View;IJ)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3
-		);
-	}
 	QAndroidJniObject PreferenceScreen::getRootAdapter()
 	{
 		return __thiz.callObjectMethod(
@@ -105,6 +94,17 @@ namespace __jni_impl::android::preference
 			"onDismiss",
 			"(Landroid/content/DialogInterface;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void PreferenceScreen::onItemClick(__jni_impl::android::widget::AdapterView arg0, __jni_impl::android::view::View arg1, jint arg2, jlong arg3)
+	{
+		__thiz.callMethod<void>(
+			"onItemClick",
+			"(Landroid/widget/AdapterView;Landroid/view/View;IJ)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3
 		);
 	}
 } // namespace __jni_impl::android::preference

@@ -32,12 +32,12 @@ namespace __jni_impl::javax::security::auth
 		
 		// Methods
 		jboolean equals(jobject arg0);
+		jstring getActions();
+		jstring getCredentialClass();
+		jarray getPrincipals();
 		jint hashCode();
 		jboolean implies(__jni_impl::java::security::Permission arg0);
-		jstring getActions();
-		jarray getPrincipals();
 		QAndroidJniObject newPermissionCollection();
-		jstring getCredentialClass();
 	};
 } // namespace __jni_impl::javax::security::auth
 
@@ -78,6 +78,27 @@ namespace __jni_impl::javax::security::auth
 			arg0
 		);
 	}
+	jstring PrivateCredentialPermission::getActions()
+	{
+		return __thiz.callObjectMethod(
+			"getActions",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring PrivateCredentialPermission::getCredentialClass()
+	{
+		return __thiz.callObjectMethod(
+			"getCredentialClass",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jarray PrivateCredentialPermission::getPrincipals()
+	{
+		return __thiz.callObjectMethod(
+			"getPrincipals",
+			"()[[Ljava/lang/String;"
+		).object<jarray>();
+	}
 	jint PrivateCredentialPermission::hashCode()
 	{
 		return __thiz.callMethod<jint>(
@@ -93,33 +114,12 @@ namespace __jni_impl::javax::security::auth
 			arg0.__jniObject().object()
 		);
 	}
-	jstring PrivateCredentialPermission::getActions()
-	{
-		return __thiz.callObjectMethod(
-			"getActions",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jarray PrivateCredentialPermission::getPrincipals()
-	{
-		return __thiz.callObjectMethod(
-			"getPrincipals",
-			"()[[Ljava/lang/String;"
-		).object<jarray>();
-	}
 	QAndroidJniObject PrivateCredentialPermission::newPermissionCollection()
 	{
 		return __thiz.callObjectMethod(
 			"newPermissionCollection",
 			"()Ljava/security/PermissionCollection;"
 		);
-	}
-	jstring PrivateCredentialPermission::getCredentialClass()
-	{
-		return __thiz.callObjectMethod(
-			"getCredentialClass",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::security::auth
 

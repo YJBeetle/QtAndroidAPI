@@ -15,10 +15,10 @@ namespace __jni_impl::android::sax
 		// Fields
 		
 		// Constructors
-		void __constructor(jstring arg0, jstring arg1);
-		void __constructor(const QString &arg0, const QString &arg1);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
+		void __constructor(jstring arg0, jstring arg1);
+		void __constructor(const QString &arg0, const QString &arg1);
 		
 		// Methods
 		QAndroidJniObject getContentHandler();
@@ -31,6 +31,22 @@ namespace __jni_impl::android::sax
 	// Fields
 	
 	// Constructors
+	void RootElement::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.sax.RootElement",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void RootElement::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.sax.RootElement",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void RootElement::__constructor(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -47,22 +63,6 @@ namespace __jni_impl::android::sax
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	void RootElement::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.sax.RootElement",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void RootElement::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.sax.RootElement",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -82,16 +82,16 @@ namespace android::sax
 	{
 	public:
 		RootElement(QAndroidJniObject obj) { __thiz = obj; }
+		RootElement(jstring arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		RootElement(jstring arg0, jstring arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
-		}
-		RootElement(jstring arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::sax

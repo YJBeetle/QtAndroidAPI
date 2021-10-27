@@ -13,18 +13,18 @@ namespace __jni_impl::javax::net::ssl
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BUFFER_UNDERFLOW();
 		static QAndroidJniObject BUFFER_OVERFLOW();
-		static QAndroidJniObject OK();
+		static QAndroidJniObject BUFFER_UNDERFLOW();
 		static QAndroidJniObject CLOSED();
+		static QAndroidJniObject OK();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::javax::net::ssl
 
@@ -32,14 +32,6 @@ namespace __jni_impl::javax::net::ssl
 namespace __jni_impl::javax::net::ssl
 {
 	// Fields
-	QAndroidJniObject SSLEngineResult_Status::BUFFER_UNDERFLOW()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.net.ssl.SSLEngineResult$Status",
-			"BUFFER_UNDERFLOW",
-			"Ljavax/net/ssl/SSLEngineResult$Status;"
-		);
-	}
 	QAndroidJniObject SSLEngineResult_Status::BUFFER_OVERFLOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -48,11 +40,11 @@ namespace __jni_impl::javax::net::ssl
 			"Ljavax/net/ssl/SSLEngineResult$Status;"
 		);
 	}
-	QAndroidJniObject SSLEngineResult_Status::OK()
+	QAndroidJniObject SSLEngineResult_Status::BUFFER_UNDERFLOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.net.ssl.SSLEngineResult$Status",
-			"OK",
+			"BUFFER_UNDERFLOW",
 			"Ljavax/net/ssl/SSLEngineResult$Status;"
 		);
 	}
@@ -61,6 +53,14 @@ namespace __jni_impl::javax::net::ssl
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.net.ssl.SSLEngineResult$Status",
 			"CLOSED",
+			"Ljavax/net/ssl/SSLEngineResult$Status;"
+		);
+	}
+	QAndroidJniObject SSLEngineResult_Status::OK()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.net.ssl.SSLEngineResult$Status",
+			"OK",
 			"Ljavax/net/ssl/SSLEngineResult$Status;"
 		);
 	}
@@ -74,14 +74,6 @@ namespace __jni_impl::javax::net::ssl
 	}
 	
 	// Methods
-	jarray SSLEngineResult_Status::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"javax.net.ssl.SSLEngineResult$Status",
-			"values",
-			"()[Ljavax/net/ssl/SSLEngineResult$Status;"
-		).object<jarray>();
-	}
 	QAndroidJniObject SSLEngineResult_Status::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -99,6 +91,14 @@ namespace __jni_impl::javax::net::ssl
 			"(Ljava/lang/String;)Ljavax/net/ssl/SSLEngineResult$Status;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray SSLEngineResult_Status::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"javax.net.ssl.SSLEngineResult$Status",
+			"values",
+			"()[Ljavax/net/ssl/SSLEngineResult$Status;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::javax::net::ssl
 

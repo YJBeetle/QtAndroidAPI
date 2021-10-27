@@ -39,21 +39,21 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		jint get(jint arg0, jint arg1);
-		static QAndroidJniObject load(jint arg0);
-		jchar getNumber(jint arg0);
-		static jint getDeadChar(jint arg0, jint arg1);
-		jchar getDisplayLabel(jint arg0);
-		jboolean getKeyData(jint arg0, __jni_impl::android::view::KeyCharacterMap_KeyData arg1);
-		jchar getMatch(jint arg0, jcharArray arg1, jint arg2);
-		jchar getMatch(jint arg0, jcharArray arg1);
-		jboolean isPrintingKey(jint arg0);
-		jint getKeyboardType();
-		jarray getEvents(jcharArray arg0);
-		jint getModifierBehavior();
 		static jboolean deviceHasKey(jint arg0);
 		static jbooleanArray deviceHasKeys(jintArray arg0);
+		static jint getDeadChar(jint arg0, jint arg1);
+		static QAndroidJniObject load(jint arg0);
 		jint describeContents();
+		jint get(jint arg0, jint arg1);
+		jchar getDisplayLabel(jint arg0);
+		jarray getEvents(jcharArray arg0);
+		jboolean getKeyData(jint arg0, __jni_impl::android::view::KeyCharacterMap_KeyData arg1);
+		jint getKeyboardType();
+		jchar getMatch(jint arg0, jcharArray arg1);
+		jchar getMatch(jint arg0, jcharArray arg1, jint arg2);
+		jint getModifierBehavior();
+		jchar getNumber(jint arg0);
+		jboolean isPrintingKey(jint arg0);
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
@@ -173,108 +173,6 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jint KeyCharacterMap::get(jint arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"get",
-			"(II)I",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject KeyCharacterMap::load(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.KeyCharacterMap",
-			"load",
-			"(I)Landroid/view/KeyCharacterMap;",
-			arg0
-		);
-	}
-	jchar KeyCharacterMap::getNumber(jint arg0)
-	{
-		return __thiz.callMethod<jchar>(
-			"getNumber",
-			"(I)C",
-			arg0
-		);
-	}
-	jint KeyCharacterMap::getDeadChar(jint arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.KeyCharacterMap",
-			"getDeadChar",
-			"(II)I",
-			arg0,
-			arg1
-		);
-	}
-	jchar KeyCharacterMap::getDisplayLabel(jint arg0)
-	{
-		return __thiz.callMethod<jchar>(
-			"getDisplayLabel",
-			"(I)C",
-			arg0
-		);
-	}
-	jboolean KeyCharacterMap::getKeyData(jint arg0, __jni_impl::android::view::KeyCharacterMap_KeyData arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getKeyData",
-			"(ILandroid/view/KeyCharacterMap$KeyData;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jchar KeyCharacterMap::getMatch(jint arg0, jcharArray arg1, jint arg2)
-	{
-		return __thiz.callMethod<jchar>(
-			"getMatch",
-			"(I[CI)C",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jchar KeyCharacterMap::getMatch(jint arg0, jcharArray arg1)
-	{
-		return __thiz.callMethod<jchar>(
-			"getMatch",
-			"(I[C)C",
-			arg0,
-			arg1
-		);
-	}
-	jboolean KeyCharacterMap::isPrintingKey(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isPrintingKey",
-			"(I)Z",
-			arg0
-		);
-	}
-	jint KeyCharacterMap::getKeyboardType()
-	{
-		return __thiz.callMethod<jint>(
-			"getKeyboardType",
-			"()I"
-		);
-	}
-	jarray KeyCharacterMap::getEvents(jcharArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getEvents",
-			"([C)[Landroid/view/KeyEvent;",
-			arg0
-		).object<jarray>();
-	}
-	jint KeyCharacterMap::getModifierBehavior()
-	{
-		return __thiz.callMethod<jint>(
-			"getModifierBehavior",
-			"()I"
-		);
-	}
 	jboolean KeyCharacterMap::deviceHasKey(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -293,11 +191,113 @@ namespace __jni_impl::android::view
 			arg0
 		).object<jbooleanArray>();
 	}
+	jint KeyCharacterMap::getDeadChar(jint arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.KeyCharacterMap",
+			"getDeadChar",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject KeyCharacterMap::load(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.KeyCharacterMap",
+			"load",
+			"(I)Landroid/view/KeyCharacterMap;",
+			arg0
+		);
+	}
 	jint KeyCharacterMap::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
+		);
+	}
+	jint KeyCharacterMap::get(jint arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"get",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
+	jchar KeyCharacterMap::getDisplayLabel(jint arg0)
+	{
+		return __thiz.callMethod<jchar>(
+			"getDisplayLabel",
+			"(I)C",
+			arg0
+		);
+	}
+	jarray KeyCharacterMap::getEvents(jcharArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getEvents",
+			"([C)[Landroid/view/KeyEvent;",
+			arg0
+		).object<jarray>();
+	}
+	jboolean KeyCharacterMap::getKeyData(jint arg0, __jni_impl::android::view::KeyCharacterMap_KeyData arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getKeyData",
+			"(ILandroid/view/KeyCharacterMap$KeyData;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jint KeyCharacterMap::getKeyboardType()
+	{
+		return __thiz.callMethod<jint>(
+			"getKeyboardType",
+			"()I"
+		);
+	}
+	jchar KeyCharacterMap::getMatch(jint arg0, jcharArray arg1)
+	{
+		return __thiz.callMethod<jchar>(
+			"getMatch",
+			"(I[C)C",
+			arg0,
+			arg1
+		);
+	}
+	jchar KeyCharacterMap::getMatch(jint arg0, jcharArray arg1, jint arg2)
+	{
+		return __thiz.callMethod<jchar>(
+			"getMatch",
+			"(I[CI)C",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	jint KeyCharacterMap::getModifierBehavior()
+	{
+		return __thiz.callMethod<jint>(
+			"getModifierBehavior",
+			"()I"
+		);
+	}
+	jchar KeyCharacterMap::getNumber(jint arg0)
+	{
+		return __thiz.callMethod<jchar>(
+			"getNumber",
+			"(I)C",
+			arg0
+		);
+	}
+	jboolean KeyCharacterMap::isPrintingKey(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isPrintingKey",
+			"(I)Z",
+			arg0
 		);
 	}
 	void KeyCharacterMap::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

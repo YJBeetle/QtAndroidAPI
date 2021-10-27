@@ -21,15 +21,15 @@ namespace __jni_impl::java::util::concurrent::atomic
 		void __constructor(__jni_impl::__JniBaseClass arg0, jlong arg1);
 		
 		// Methods
+		void accumulate(jlong arg0);
+		jdouble doubleValue();
+		jfloat floatValue();
 		jlong get();
-		jstring toString();
+		jlong getThenReset();
 		jint intValue();
 		jlong longValue();
-		jfloat floatValue();
-		jdouble doubleValue();
 		void reset();
-		void accumulate(jlong arg0);
-		jlong getThenReset();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::util::concurrent::atomic
 
@@ -51,6 +51,28 @@ namespace __jni_impl::java::util::concurrent::atomic
 	}
 	
 	// Methods
+	void LongAccumulator::accumulate(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"accumulate",
+			"(J)V",
+			arg0
+		);
+	}
+	jdouble LongAccumulator::doubleValue()
+	{
+		return __thiz.callMethod<jdouble>(
+			"doubleValue",
+			"()D"
+		);
+	}
+	jfloat LongAccumulator::floatValue()
+	{
+		return __thiz.callMethod<jfloat>(
+			"floatValue",
+			"()F"
+		);
+	}
 	jlong LongAccumulator::get()
 	{
 		return __thiz.callMethod<jlong>(
@@ -58,12 +80,12 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"()J"
 		);
 	}
-	jstring LongAccumulator::toString()
+	jlong LongAccumulator::getThenReset()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jlong>(
+			"getThenReset",
+			"()J"
+		);
 	}
 	jint LongAccumulator::intValue()
 	{
@@ -79,20 +101,6 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"()J"
 		);
 	}
-	jfloat LongAccumulator::floatValue()
-	{
-		return __thiz.callMethod<jfloat>(
-			"floatValue",
-			"()F"
-		);
-	}
-	jdouble LongAccumulator::doubleValue()
-	{
-		return __thiz.callMethod<jdouble>(
-			"doubleValue",
-			"()D"
-		);
-	}
 	void LongAccumulator::reset()
 	{
 		__thiz.callMethod<void>(
@@ -100,20 +108,12 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"()V"
 		);
 	}
-	void LongAccumulator::accumulate(jlong arg0)
+	jstring LongAccumulator::toString()
 	{
-		__thiz.callMethod<void>(
-			"accumulate",
-			"(J)V",
-			arg0
-		);
-	}
-	jlong LongAccumulator::getThenReset()
-	{
-		return __thiz.callMethod<jlong>(
-			"getThenReset",
-			"()J"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util::concurrent::atomic
 

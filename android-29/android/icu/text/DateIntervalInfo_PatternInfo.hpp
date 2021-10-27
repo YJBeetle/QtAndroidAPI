@@ -19,11 +19,11 @@ namespace __jni_impl::android::icu::text
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jboolean firstDateInPtnIsLaterDate();
 		jstring getFirstPart();
 		jstring getSecondPart();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -63,20 +63,6 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
-	jstring DateIntervalInfo_PatternInfo::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint DateIntervalInfo_PatternInfo::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	jboolean DateIntervalInfo_PatternInfo::firstDateInPtnIsLaterDate()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -95,6 +81,20 @@ namespace __jni_impl::android::icu::text
 	{
 		return __thiz.callObjectMethod(
 			"getSecondPart",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint DateIntervalInfo_PatternInfo::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring DateIntervalInfo_PatternInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

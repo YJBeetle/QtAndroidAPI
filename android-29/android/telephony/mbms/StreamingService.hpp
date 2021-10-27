@@ -38,8 +38,8 @@ namespace __jni_impl::android::telephony::mbms
 		
 		// Methods
 		void close();
-		QAndroidJniObject getPlaybackUri();
 		QAndroidJniObject getInfo();
+		QAndroidJniObject getPlaybackUri();
 	};
 } // namespace __jni_impl::android::telephony::mbms
 
@@ -150,18 +150,18 @@ namespace __jni_impl::android::telephony::mbms
 			"()V"
 		);
 	}
-	QAndroidJniObject StreamingService::getPlaybackUri()
-	{
-		return __thiz.callObjectMethod(
-			"getPlaybackUri",
-			"()Landroid/net/Uri;"
-		);
-	}
 	QAndroidJniObject StreamingService::getInfo()
 	{
 		return __thiz.callObjectMethod(
 			"getInfo",
 			"()Landroid/telephony/mbms/StreamingServiceInfo;"
+		);
+	}
+	QAndroidJniObject StreamingService::getPlaybackUri()
+	{
+		return __thiz.callObjectMethod(
+			"getPlaybackUri",
+			"()Landroid/net/Uri;"
 		);
 	}
 } // namespace __jni_impl::android::telephony::mbms

@@ -7,9 +7,25 @@
 #include "Dictionary.hpp"
 #include "Hashtable.hpp"
 
-namespace __jni_impl::java::util::concurrent
+namespace __jni_impl::java::io
 {
-	class ConcurrentHashMap;
+	class BufferedWriter;
+}
+namespace __jni_impl::java::io
+{
+	class InputStream;
+}
+namespace __jni_impl::java::io
+{
+	class ObjectInputStream;
+}
+namespace __jni_impl::java::io
+{
+	class ObjectOutputStream;
+}
+namespace __jni_impl::java::io
+{
+	class OutputStream;
 }
 namespace __jni_impl::java::io
 {
@@ -25,35 +41,19 @@ namespace __jni_impl::java::io
 }
 namespace __jni_impl::java::io
 {
-	class InputStream;
+	class Writer;
 }
 namespace __jni_impl::java::lang
 {
 	class StringBuilder;
 }
-namespace __jni_impl::java::io
-{
-	class Writer;
-}
-namespace __jni_impl::java::io
-{
-	class OutputStream;
-}
-namespace __jni_impl::java::io
-{
-	class BufferedWriter;
-}
 namespace __jni_impl::java::nio::charset
 {
 	class Charset;
 }
-namespace __jni_impl::java::io
+namespace __jni_impl::java::util::concurrent
 {
-	class ObjectOutputStream;
-}
-namespace __jni_impl::java::io
-{
-	class ObjectInputStream;
+	class ConcurrentHashMap;
 }
 
 namespace __jni_impl::java::util
@@ -64,93 +64,92 @@ namespace __jni_impl::java::util
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::java::util::Properties arg0);
-		void __constructor(jint arg0);
 		void __constructor();
+		void __constructor(jint arg0);
+		void __constructor(__jni_impl::java::util::Properties arg0);
 		
 		// Methods
-		jboolean remove(jobject arg0, jobject arg1);
-		jobject remove(jobject arg0);
+		void clear();
+		jobject clone();
+		jobject compute(jobject arg0, __jni_impl::__JniBaseClass arg1);
+		jobject computeIfAbsent(jobject arg0, __jni_impl::__JniBaseClass arg1);
+		jobject computeIfPresent(jobject arg0, __jni_impl::__JniBaseClass arg1);
+		jboolean contains(jobject arg0);
+		jboolean containsKey(jobject arg0);
+		jboolean containsValue(jobject arg0);
+		QAndroidJniObject elements();
+		QAndroidJniObject entrySet();
+		jboolean equals(jobject arg0);
+		void forEach(__jni_impl::__JniBaseClass arg0);
 		jobject get(jobject arg0);
-		jobject put(jobject arg0, jobject arg1);
+		jobject getOrDefault(jobject arg0, jobject arg1);
 		jstring getProperty(jstring arg0);
 		jstring getProperty(const QString &arg0);
 		jstring getProperty(jstring arg0, jstring arg1);
 		jstring getProperty(const QString &arg0, const QString &arg1);
-		jboolean equals(jobject arg0);
-		jstring toString();
-		QAndroidJniObject values();
 		jint hashCode();
-		jobject clone();
-		void clear();
 		jboolean isEmpty();
-		jobject replace(jobject arg0, jobject arg1);
-		jboolean replace(jobject arg0, jobject arg1, jobject arg2);
-		void replaceAll(__jni_impl::__JniBaseClass arg0);
-		jint size();
-		jboolean contains(jobject arg0);
+		QAndroidJniObject keySet();
+		QAndroidJniObject keys();
 		void list(__jni_impl::java::io::PrintStream arg0);
 		void list(__jni_impl::java::io::PrintWriter arg0);
-		QAndroidJniObject elements();
+		void load(__jni_impl::java::io::InputStream arg0);
+		void load(__jni_impl::java::io::Reader arg0);
+		void loadFromXML(__jni_impl::java::io::InputStream arg0);
 		jobject merge(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2);
-		QAndroidJniObject entrySet();
+		QAndroidJniObject propertyNames();
+		jobject put(jobject arg0, jobject arg1);
 		void putAll(__jni_impl::__JniBaseClass arg0);
 		jobject putIfAbsent(jobject arg0, jobject arg1);
-		jobject compute(jobject arg0, __jni_impl::__JniBaseClass arg1);
-		jobject setProperty(jstring arg0, jstring arg1);
-		jobject setProperty(const QString &arg0, const QString &arg1);
-		void load(__jni_impl::java::io::Reader arg0);
-		void load(__jni_impl::java::io::InputStream arg0);
-		void forEach(__jni_impl::__JniBaseClass arg0);
-		jboolean containsKey(jobject arg0);
-		jobject computeIfAbsent(jobject arg0, __jni_impl::__JniBaseClass arg1);
-		void store(__jni_impl::java::io::Writer arg0, jstring arg1);
-		void store(__jni_impl::java::io::Writer arg0, const QString &arg1);
-		void store(__jni_impl::java::io::OutputStream arg0, jstring arg1);
-		void store(__jni_impl::java::io::OutputStream arg0, const QString &arg1);
-		void storeToXML(__jni_impl::java::io::OutputStream arg0, jstring arg1);
-		void storeToXML(__jni_impl::java::io::OutputStream arg0, const QString &arg1);
-		void storeToXML(__jni_impl::java::io::OutputStream arg0, jstring arg1, __jni_impl::java::nio::charset::Charset arg2);
-		void storeToXML(__jni_impl::java::io::OutputStream arg0, const QString &arg1, __jni_impl::java::nio::charset::Charset arg2);
-		void storeToXML(__jni_impl::java::io::OutputStream arg0, jstring arg1, jstring arg2);
-		void storeToXML(__jni_impl::java::io::OutputStream arg0, const QString &arg1, const QString &arg2);
-		QAndroidJniObject keys();
-		QAndroidJniObject keySet();
-		jboolean containsValue(jobject arg0);
-		jobject getOrDefault(jobject arg0, jobject arg1);
-		jobject computeIfPresent(jobject arg0, __jni_impl::__JniBaseClass arg1);
+		jboolean remove(jobject arg0, jobject arg1);
+		jobject remove(jobject arg0);
+		jboolean replace(jobject arg0, jobject arg1, jobject arg2);
+		jobject replace(jobject arg0, jobject arg1);
+		void replaceAll(__jni_impl::__JniBaseClass arg0);
 		void save(__jni_impl::java::io::OutputStream arg0, jstring arg1);
 		void save(__jni_impl::java::io::OutputStream arg0, const QString &arg1);
-		void loadFromXML(__jni_impl::java::io::InputStream arg0);
-		QAndroidJniObject propertyNames();
+		jobject setProperty(jstring arg0, jstring arg1);
+		jobject setProperty(const QString &arg0, const QString &arg1);
+		jint size();
+		void store(__jni_impl::java::io::OutputStream arg0, jstring arg1);
+		void store(__jni_impl::java::io::OutputStream arg0, const QString &arg1);
+		void store(__jni_impl::java::io::Writer arg0, jstring arg1);
+		void store(__jni_impl::java::io::Writer arg0, const QString &arg1);
+		void storeToXML(__jni_impl::java::io::OutputStream arg0, jstring arg1);
+		void storeToXML(__jni_impl::java::io::OutputStream arg0, const QString &arg1);
+		void storeToXML(__jni_impl::java::io::OutputStream arg0, jstring arg1, jstring arg2);
+		void storeToXML(__jni_impl::java::io::OutputStream arg0, const QString &arg1, const QString &arg2);
+		void storeToXML(__jni_impl::java::io::OutputStream arg0, jstring arg1, __jni_impl::java::nio::charset::Charset arg2);
+		void storeToXML(__jni_impl::java::io::OutputStream arg0, const QString &arg1, __jni_impl::java::nio::charset::Charset arg2);
 		QAndroidJniObject stringPropertyNames();
+		jstring toString();
+		QAndroidJniObject values();
 	};
 } // namespace __jni_impl::java::util
 
-#include "concurrent/ConcurrentHashMap.hpp"
+#include "../io/BufferedWriter.hpp"
+#include "../io/InputStream.hpp"
+#include "../io/ObjectInputStream.hpp"
+#include "../io/ObjectOutputStream.hpp"
+#include "../io/OutputStream.hpp"
 #include "../io/PrintStream.hpp"
 #include "../io/PrintWriter.hpp"
 #include "../io/Reader.hpp"
-#include "../io/InputStream.hpp"
-#include "../lang/StringBuilder.hpp"
 #include "../io/Writer.hpp"
-#include "../io/OutputStream.hpp"
-#include "../io/BufferedWriter.hpp"
+#include "../lang/StringBuilder.hpp"
 #include "../nio/charset/Charset.hpp"
-#include "../io/ObjectOutputStream.hpp"
-#include "../io/ObjectInputStream.hpp"
+#include "concurrent/ConcurrentHashMap.hpp"
 
 namespace __jni_impl::java::util
 {
 	// Fields
 	
 	// Constructors
-	void Properties::__constructor(__jni_impl::java::util::Properties arg0)
+	void Properties::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Properties",
-			"(Ljava/util/Properties;)V",
-			arg0.__jniObject().object()
+			"()V"
 		);
 	}
 	void Properties::__constructor(jint arg0)
@@ -161,31 +160,110 @@ namespace __jni_impl::java::util
 			arg0
 		);
 	}
-	void Properties::__constructor()
+	void Properties::__constructor(__jni_impl::java::util::Properties arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.Properties",
-			"()V"
+			"(Ljava/util/Properties;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	
 	// Methods
-	jboolean Properties::remove(jobject arg0, jobject arg1)
+	void Properties::clear()
 	{
-		return __thiz.callMethod<jboolean>(
-			"remove",
-			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0,
-			arg1
+		__thiz.callMethod<void>(
+			"clear",
+			"()V"
 		);
 	}
-	jobject Properties::remove(jobject arg0)
+	jobject Properties::clone()
 	{
 		return __thiz.callObjectMethod(
-			"remove",
-			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
+			"clone",
+			"()Ljava/lang/Object;"
 		).object<jobject>();
+	}
+	jobject Properties::compute(jobject arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return __thiz.callObjectMethod(
+			"compute",
+			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
+			arg0,
+			arg1.__jniObject().object()
+		).object<jobject>();
+	}
+	jobject Properties::computeIfAbsent(jobject arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return __thiz.callObjectMethod(
+			"computeIfAbsent",
+			"(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;",
+			arg0,
+			arg1.__jniObject().object()
+		).object<jobject>();
+	}
+	jobject Properties::computeIfPresent(jobject arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return __thiz.callObjectMethod(
+			"computeIfPresent",
+			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
+			arg0,
+			arg1.__jniObject().object()
+		).object<jobject>();
+	}
+	jboolean Properties::contains(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"contains",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jboolean Properties::containsKey(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"containsKey",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jboolean Properties::containsValue(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"containsValue",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	QAndroidJniObject Properties::elements()
+	{
+		return __thiz.callObjectMethod(
+			"elements",
+			"()Ljava/util/Enumeration;"
+		);
+	}
+	QAndroidJniObject Properties::entrySet()
+	{
+		return __thiz.callObjectMethod(
+			"entrySet",
+			"()Ljava/util/Set;"
+		);
+	}
+	jboolean Properties::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	void Properties::forEach(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"forEach",
+			"(Ljava/util/function/BiConsumer;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	jobject Properties::get(jobject arg0)
 	{
@@ -195,10 +273,10 @@ namespace __jni_impl::java::util
 			arg0
 		).object<jobject>();
 	}
-	jobject Properties::put(jobject arg0, jobject arg1)
+	jobject Properties::getOrDefault(jobject arg0, jobject arg1)
 	{
 		return __thiz.callObjectMethod(
-			"put",
+			"getOrDefault",
 			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0,
 			arg1
@@ -238,47 +316,11 @@ namespace __jni_impl::java::util
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
-	jboolean Properties::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring Properties::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject Properties::values()
-	{
-		return __thiz.callObjectMethod(
-			"values",
-			"()Ljava/util/Collection;"
-		);
-	}
 	jint Properties::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I"
-		);
-	}
-	jobject Properties::clone()
-	{
-		return __thiz.callObjectMethod(
-			"clone",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	void Properties::clear()
-	{
-		__thiz.callMethod<void>(
-			"clear",
-			"()V"
 		);
 	}
 	jboolean Properties::isEmpty()
@@ -288,46 +330,18 @@ namespace __jni_impl::java::util
 			"()Z"
 		);
 	}
-	jobject Properties::replace(jobject arg0, jobject arg1)
+	QAndroidJniObject Properties::keySet()
 	{
 		return __thiz.callObjectMethod(
-			"replace",
-			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
-	}
-	jboolean Properties::replace(jobject arg0, jobject arg1, jobject arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"replace",
-			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z",
-			arg0,
-			arg1,
-			arg2
+			"keySet",
+			"()Ljava/util/Set;"
 		);
 	}
-	void Properties::replaceAll(__jni_impl::__JniBaseClass arg0)
+	QAndroidJniObject Properties::keys()
 	{
-		__thiz.callMethod<void>(
-			"replaceAll",
-			"(Ljava/util/function/BiFunction;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jint Properties::size()
-	{
-		return __thiz.callMethod<jint>(
-			"size",
-			"()I"
-		);
-	}
-	jboolean Properties::contains(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"contains",
-			"(Ljava/lang/Object;)Z",
-			arg0
+		return __thiz.callObjectMethod(
+			"keys",
+			"()Ljava/util/Enumeration;"
 		);
 	}
 	void Properties::list(__jni_impl::java::io::PrintStream arg0)
@@ -346,11 +360,28 @@ namespace __jni_impl::java::util
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Properties::elements()
+	void Properties::load(__jni_impl::java::io::InputStream arg0)
 	{
-		return __thiz.callObjectMethod(
-			"elements",
-			"()Ljava/util/Enumeration;"
+		__thiz.callMethod<void>(
+			"load",
+			"(Ljava/io/InputStream;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Properties::load(__jni_impl::java::io::Reader arg0)
+	{
+		__thiz.callMethod<void>(
+			"load",
+			"(Ljava/io/Reader;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Properties::loadFromXML(__jni_impl::java::io::InputStream arg0)
+	{
+		__thiz.callMethod<void>(
+			"loadFromXML",
+			"(Ljava/io/InputStream;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	jobject Properties::merge(jobject arg0, jobject arg1, __jni_impl::__JniBaseClass arg2)
@@ -363,12 +394,21 @@ namespace __jni_impl::java::util
 			arg2.__jniObject().object()
 		).object<jobject>();
 	}
-	QAndroidJniObject Properties::entrySet()
+	QAndroidJniObject Properties::propertyNames()
 	{
 		return __thiz.callObjectMethod(
-			"entrySet",
-			"()Ljava/util/Set;"
+			"propertyNames",
+			"()Ljava/util/Enumeration;"
 		);
+	}
+	jobject Properties::put(jobject arg0, jobject arg1)
+	{
+		return __thiz.callObjectMethod(
+			"put",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0,
+			arg1
+		).object<jobject>();
 	}
 	void Properties::putAll(__jni_impl::__JniBaseClass arg0)
 	{
@@ -387,14 +427,67 @@ namespace __jni_impl::java::util
 			arg1
 		).object<jobject>();
 	}
-	jobject Properties::compute(jobject arg0, __jni_impl::__JniBaseClass arg1)
+	jboolean Properties::remove(jobject arg0, jobject arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"remove",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Z",
+			arg0,
+			arg1
+		);
+	}
+	jobject Properties::remove(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
-			"compute",
-			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
-			arg0,
-			arg1.__jniObject().object()
+			"remove",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0
 		).object<jobject>();
+	}
+	jboolean Properties::replace(jobject arg0, jobject arg1, jobject arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"replace",
+			"(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	jobject Properties::replace(jobject arg0, jobject arg1)
+	{
+		return __thiz.callObjectMethod(
+			"replace",
+			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0,
+			arg1
+		).object<jobject>();
+	}
+	void Properties::replaceAll(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"replaceAll",
+			"(Ljava/util/function/BiFunction;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Properties::save(__jni_impl::java::io::OutputStream arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"save",
+			"(Ljava/io/OutputStream;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void Properties::save(__jni_impl::java::io::OutputStream arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"save",
+			"(Ljava/io/OutputStream;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
 	}
 	jobject Properties::setProperty(jstring arg0, jstring arg1)
 	{
@@ -414,63 +507,11 @@ namespace __jni_impl::java::util
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jobject>();
 	}
-	void Properties::load(__jni_impl::java::io::Reader arg0)
+	jint Properties::size()
 	{
-		__thiz.callMethod<void>(
-			"load",
-			"(Ljava/io/Reader;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Properties::load(__jni_impl::java::io::InputStream arg0)
-	{
-		__thiz.callMethod<void>(
-			"load",
-			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Properties::forEach(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"forEach",
-			"(Ljava/util/function/BiConsumer;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean Properties::containsKey(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"containsKey",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jobject Properties::computeIfAbsent(jobject arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		return __thiz.callObjectMethod(
-			"computeIfAbsent",
-			"(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object;",
-			arg0,
-			arg1.__jniObject().object()
-		).object<jobject>();
-	}
-	void Properties::store(__jni_impl::java::io::Writer arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"store",
-			"(Ljava/io/Writer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void Properties::store(__jni_impl::java::io::Writer arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"store",
-			"(Ljava/io/Writer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
+		return __thiz.callMethod<jint>(
+			"size",
+			"()I"
 		);
 	}
 	void Properties::store(__jni_impl::java::io::OutputStream arg0, jstring arg1)
@@ -487,6 +528,24 @@ namespace __jni_impl::java::util
 		__thiz.callMethod<void>(
 			"store",
 			"(Ljava/io/OutputStream;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	void Properties::store(__jni_impl::java::io::Writer arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"store",
+			"(Ljava/io/Writer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void Properties::store(__jni_impl::java::io::Writer arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"store",
+			"(Ljava/io/Writer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
@@ -509,26 +568,6 @@ namespace __jni_impl::java::util
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	void Properties::storeToXML(__jni_impl::java::io::OutputStream arg0, jstring arg1, __jni_impl::java::nio::charset::Charset arg2)
-	{
-		__thiz.callMethod<void>(
-			"storeToXML",
-			"(Ljava/io/OutputStream;Ljava/lang/String;Ljava/nio/charset/Charset;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void Properties::storeToXML(__jni_impl::java::io::OutputStream arg0, const QString &arg1, __jni_impl::java::nio::charset::Charset arg2)
-	{
-		__thiz.callMethod<void>(
-			"storeToXML",
-			"(Ljava/io/OutputStream;Ljava/lang/String;Ljava/nio/charset/Charset;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
 	void Properties::storeToXML(__jni_impl::java::io::OutputStream arg0, jstring arg1, jstring arg2)
 	{
 		__thiz.callMethod<void>(
@@ -549,77 +588,24 @@ namespace __jni_impl::java::util
 			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
-	QAndroidJniObject Properties::keys()
-	{
-		return __thiz.callObjectMethod(
-			"keys",
-			"()Ljava/util/Enumeration;"
-		);
-	}
-	QAndroidJniObject Properties::keySet()
-	{
-		return __thiz.callObjectMethod(
-			"keySet",
-			"()Ljava/util/Set;"
-		);
-	}
-	jboolean Properties::containsValue(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"containsValue",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jobject Properties::getOrDefault(jobject arg0, jobject arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getOrDefault",
-			"(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
-	}
-	jobject Properties::computeIfPresent(jobject arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		return __thiz.callObjectMethod(
-			"computeIfPresent",
-			"(Ljava/lang/Object;Ljava/util/function/BiFunction;)Ljava/lang/Object;",
-			arg0,
-			arg1.__jniObject().object()
-		).object<jobject>();
-	}
-	void Properties::save(__jni_impl::java::io::OutputStream arg0, jstring arg1)
+	void Properties::storeToXML(__jni_impl::java::io::OutputStream arg0, jstring arg1, __jni_impl::java::nio::charset::Charset arg2)
 	{
 		__thiz.callMethod<void>(
-			"save",
-			"(Ljava/io/OutputStream;Ljava/lang/String;)V",
+			"storeToXML",
+			"(Ljava/io/OutputStream;Ljava/lang/String;Ljava/nio/charset/Charset;)V",
 			arg0.__jniObject().object(),
-			arg1
+			arg1,
+			arg2.__jniObject().object()
 		);
 	}
-	void Properties::save(__jni_impl::java::io::OutputStream arg0, const QString &arg1)
+	void Properties::storeToXML(__jni_impl::java::io::OutputStream arg0, const QString &arg1, __jni_impl::java::nio::charset::Charset arg2)
 	{
 		__thiz.callMethod<void>(
-			"save",
-			"(Ljava/io/OutputStream;Ljava/lang/String;)V",
+			"storeToXML",
+			"(Ljava/io/OutputStream;Ljava/lang/String;Ljava/nio/charset/Charset;)V",
 			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	void Properties::loadFromXML(__jni_impl::java::io::InputStream arg0)
-	{
-		__thiz.callMethod<void>(
-			"loadFromXML",
-			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Properties::propertyNames()
-	{
-		return __thiz.callObjectMethod(
-			"propertyNames",
-			"()Ljava/util/Enumeration;"
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
 		);
 	}
 	QAndroidJniObject Properties::stringPropertyNames()
@@ -627,6 +613,20 @@ namespace __jni_impl::java::util
 		return __thiz.callObjectMethod(
 			"stringPropertyNames",
 			"()Ljava/util/Set;"
+		);
+	}
+	jstring Properties::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject Properties::values()
+	{
+		return __thiz.callObjectMethod(
+			"values",
+			"()Ljava/util/Collection;"
 		);
 	}
 } // namespace __jni_impl::java::util
@@ -637,19 +637,19 @@ namespace java::util
 	{
 	public:
 		Properties(QAndroidJniObject obj) { __thiz = obj; }
-		Properties(__jni_impl::java::util::Properties arg0)
+		Properties()
 		{
-			__constructor(
-				arg0);
+			__constructor();
 		}
 		Properties(jint arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		Properties()
+		Properties(__jni_impl::java::util::Properties arg0)
 		{
-			__constructor();
+			__constructor(
+				arg0);
 		}
 	};
 } // namespace java::util

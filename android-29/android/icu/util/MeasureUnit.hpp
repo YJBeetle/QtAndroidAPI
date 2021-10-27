@@ -156,15 +156,15 @@ namespace __jni_impl::android::icu::util
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jstring getType();
-		jstring getSubtype();
-		static QAndroidJniObject getAvailableTypes();
 		static QAndroidJniObject getAvailable();
 		static QAndroidJniObject getAvailable(jstring arg0);
 		static QAndroidJniObject getAvailable(const QString &arg0);
+		static QAndroidJniObject getAvailableTypes();
+		jboolean equals(jobject arg0);
+		jstring getSubtype();
+		jstring getType();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::icu::util
 
@@ -1263,50 +1263,6 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Methods
-	jboolean MeasureUnit::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring MeasureUnit::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint MeasureUnit::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jstring MeasureUnit::getType()
-	{
-		return __thiz.callObjectMethod(
-			"getType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring MeasureUnit::getSubtype()
-	{
-		return __thiz.callObjectMethod(
-			"getSubtype",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject MeasureUnit::getAvailableTypes()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.MeasureUnit",
-			"getAvailableTypes",
-			"()Ljava/util/Set;"
-		);
-	}
 	QAndroidJniObject MeasureUnit::getAvailable()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -1332,6 +1288,50 @@ namespace __jni_impl::android::icu::util
 			"(Ljava/lang/String;)Ljava/util/Set;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	QAndroidJniObject MeasureUnit::getAvailableTypes()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.MeasureUnit",
+			"getAvailableTypes",
+			"()Ljava/util/Set;"
+		);
+	}
+	jboolean MeasureUnit::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jstring MeasureUnit::getSubtype()
+	{
+		return __thiz.callObjectMethod(
+			"getSubtype",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring MeasureUnit::getType()
+	{
+		return __thiz.callObjectMethod(
+			"getType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint MeasureUnit::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring MeasureUnit::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::util
 

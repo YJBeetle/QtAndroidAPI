@@ -11,11 +11,11 @@ namespace __jni_impl::android::media
 }
 namespace __jni_impl::android::media
 {
-	class MediaCodec_CodecException;
+	class MediaCodec_BufferInfo;
 }
 namespace __jni_impl::android::media
 {
-	class MediaCodec_BufferInfo;
+	class MediaCodec_CodecException;
 }
 namespace __jni_impl::android::media
 {
@@ -41,8 +41,8 @@ namespace __jni_impl::android::media
 } // namespace __jni_impl::android::media
 
 #include "MediaCodec.hpp"
-#include "MediaCodec_CodecException.hpp"
 #include "MediaCodec_BufferInfo.hpp"
+#include "MediaCodec_CodecException.hpp"
 #include "MediaFormat.hpp"
 
 namespace __jni_impl::android::media

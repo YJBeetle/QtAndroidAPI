@@ -25,8 +25,8 @@ namespace __jni_impl::android::service::media
 		void __constructor(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		
 		// Methods
-		jstring getRootId();
 		QAndroidJniObject getExtras();
+		jstring getRootId();
 	};
 } // namespace __jni_impl::android::service::media
 
@@ -81,19 +81,19 @@ namespace __jni_impl::android::service::media
 	}
 	
 	// Methods
-	jstring MediaBrowserService_BrowserRoot::getRootId()
-	{
-		return __thiz.callObjectMethod(
-			"getRootId",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject MediaBrowserService_BrowserRoot::getExtras()
 	{
 		return __thiz.callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
+	}
+	jstring MediaBrowserService_BrowserRoot::getRootId()
+	{
+		return __thiz.callObjectMethod(
+			"getRootId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::service::media
 

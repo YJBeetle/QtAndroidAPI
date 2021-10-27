@@ -5,25 +5,25 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util
-{
-	class HashSet;
-}
 namespace __jni_impl::java::math
 {
 	class BigInteger;
 }
-namespace __jni_impl::java::util
+namespace __jni_impl::java::security::cert
 {
-	class Date;
+	class CRL;
 }
 namespace __jni_impl::java::security::cert
 {
 	class X509Certificate;
 }
-namespace __jni_impl::java::security::cert
+namespace __jni_impl::java::util
 {
-	class CRL;
+	class Date;
+}
+namespace __jni_impl::java::util
+{
+	class HashSet;
 }
 namespace __jni_impl::javax::security::auth::x500
 {
@@ -41,33 +41,33 @@ namespace __jni_impl::java::security::cert
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		jobject clone();
-		jboolean match(__jni_impl::java::security::cert::CRL arg0);
-		void setIssuers(__jni_impl::__JniBaseClass arg0);
-		void setIssuerNames(__jni_impl::__JniBaseClass arg0);
 		void addIssuer(__jni_impl::javax::security::auth::x500::X500Principal arg0);
+		void addIssuerName(jbyteArray arg0);
 		void addIssuerName(jstring arg0);
 		void addIssuerName(const QString &arg0);
-		void addIssuerName(jbyteArray arg0);
-		void setMinCRLNumber(__jni_impl::java::math::BigInteger arg0);
-		void setMaxCRLNumber(__jni_impl::java::math::BigInteger arg0);
-		void setDateAndTime(__jni_impl::java::util::Date arg0);
-		void setCertificateChecking(__jni_impl::java::security::cert::X509Certificate arg0);
-		QAndroidJniObject getIssuers();
-		QAndroidJniObject getIssuerNames();
-		QAndroidJniObject getMinCRL();
-		QAndroidJniObject getMaxCRL();
-		QAndroidJniObject getDateAndTime();
+		jobject clone();
 		QAndroidJniObject getCertificateChecking();
+		QAndroidJniObject getDateAndTime();
+		QAndroidJniObject getIssuerNames();
+		QAndroidJniObject getIssuers();
+		QAndroidJniObject getMaxCRL();
+		QAndroidJniObject getMinCRL();
+		jboolean match(__jni_impl::java::security::cert::CRL arg0);
+		void setCertificateChecking(__jni_impl::java::security::cert::X509Certificate arg0);
+		void setDateAndTime(__jni_impl::java::util::Date arg0);
+		void setIssuerNames(__jni_impl::__JniBaseClass arg0);
+		void setIssuers(__jni_impl::__JniBaseClass arg0);
+		void setMaxCRLNumber(__jni_impl::java::math::BigInteger arg0);
+		void setMinCRLNumber(__jni_impl::java::math::BigInteger arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security::cert
 
-#include "../../util/HashSet.hpp"
 #include "../../math/BigInteger.hpp"
-#include "../../util/Date.hpp"
-#include "X509Certificate.hpp"
 #include "CRL.hpp"
+#include "X509Certificate.hpp"
+#include "../../util/Date.hpp"
+#include "../../util/HashSet.hpp"
 #include "../../../javax/security/auth/x500/X500Principal.hpp"
 
 namespace __jni_impl::java::security::cert
@@ -84,50 +84,20 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	jstring X509CRLSelector::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jobject X509CRLSelector::clone()
-	{
-		return __thiz.callObjectMethod(
-			"clone",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	jboolean X509CRLSelector::match(__jni_impl::java::security::cert::CRL arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"match",
-			"(Ljava/security/cert/CRL;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	void X509CRLSelector::setIssuers(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setIssuers",
-			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void X509CRLSelector::setIssuerNames(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setIssuerNames",
-			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void X509CRLSelector::addIssuer(__jni_impl::javax::security::auth::x500::X500Principal arg0)
 	{
 		__thiz.callMethod<void>(
 			"addIssuer",
 			"(Ljavax/security/auth/x500/X500Principal;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void X509CRLSelector::addIssuerName(jbyteArray arg0)
+	{
+		__thiz.callMethod<void>(
+			"addIssuerName",
+			"([B)V",
+			arg0
 		);
 	}
 	void X509CRLSelector::addIssuerName(jstring arg0)
@@ -146,35 +116,60 @@ namespace __jni_impl::java::security::cert
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void X509CRLSelector::addIssuerName(jbyteArray arg0)
+	jobject X509CRLSelector::clone()
 	{
-		__thiz.callMethod<void>(
-			"addIssuerName",
-			"([B)V",
-			arg0
+		return __thiz.callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	QAndroidJniObject X509CRLSelector::getCertificateChecking()
+	{
+		return __thiz.callObjectMethod(
+			"getCertificateChecking",
+			"()Ljava/security/cert/X509Certificate;"
 		);
 	}
-	void X509CRLSelector::setMinCRLNumber(__jni_impl::java::math::BigInteger arg0)
+	QAndroidJniObject X509CRLSelector::getDateAndTime()
 	{
-		__thiz.callMethod<void>(
-			"setMinCRLNumber",
-			"(Ljava/math/BigInteger;)V",
-			arg0.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"getDateAndTime",
+			"()Ljava/util/Date;"
 		);
 	}
-	void X509CRLSelector::setMaxCRLNumber(__jni_impl::java::math::BigInteger arg0)
+	QAndroidJniObject X509CRLSelector::getIssuerNames()
 	{
-		__thiz.callMethod<void>(
-			"setMaxCRLNumber",
-			"(Ljava/math/BigInteger;)V",
-			arg0.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"getIssuerNames",
+			"()Ljava/util/Collection;"
 		);
 	}
-	void X509CRLSelector::setDateAndTime(__jni_impl::java::util::Date arg0)
+	QAndroidJniObject X509CRLSelector::getIssuers()
 	{
-		__thiz.callMethod<void>(
-			"setDateAndTime",
-			"(Ljava/util/Date;)V",
+		return __thiz.callObjectMethod(
+			"getIssuers",
+			"()Ljava/util/Collection;"
+		);
+	}
+	QAndroidJniObject X509CRLSelector::getMaxCRL()
+	{
+		return __thiz.callObjectMethod(
+			"getMaxCRL",
+			"()Ljava/math/BigInteger;"
+		);
+	}
+	QAndroidJniObject X509CRLSelector::getMinCRL()
+	{
+		return __thiz.callObjectMethod(
+			"getMinCRL",
+			"()Ljava/math/BigInteger;"
+		);
+	}
+	jboolean X509CRLSelector::match(__jni_impl::java::security::cert::CRL arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"match",
+			"(Ljava/security/cert/CRL;)Z",
 			arg0.__jniObject().object()
 		);
 	}
@@ -186,47 +181,52 @@ namespace __jni_impl::java::security::cert
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject X509CRLSelector::getIssuers()
+	void X509CRLSelector::setDateAndTime(__jni_impl::java::util::Date arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getIssuers",
-			"()Ljava/util/Collection;"
+		__thiz.callMethod<void>(
+			"setDateAndTime",
+			"(Ljava/util/Date;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject X509CRLSelector::getIssuerNames()
+	void X509CRLSelector::setIssuerNames(__jni_impl::__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getIssuerNames",
-			"()Ljava/util/Collection;"
+		__thiz.callMethod<void>(
+			"setIssuerNames",
+			"(Ljava/util/Collection;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject X509CRLSelector::getMinCRL()
+	void X509CRLSelector::setIssuers(__jni_impl::__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getMinCRL",
-			"()Ljava/math/BigInteger;"
+		__thiz.callMethod<void>(
+			"setIssuers",
+			"(Ljava/util/Collection;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject X509CRLSelector::getMaxCRL()
+	void X509CRLSelector::setMaxCRLNumber(__jni_impl::java::math::BigInteger arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getMaxCRL",
-			"()Ljava/math/BigInteger;"
+		__thiz.callMethod<void>(
+			"setMaxCRLNumber",
+			"(Ljava/math/BigInteger;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject X509CRLSelector::getDateAndTime()
+	void X509CRLSelector::setMinCRLNumber(__jni_impl::java::math::BigInteger arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getDateAndTime",
-			"()Ljava/util/Date;"
+		__thiz.callMethod<void>(
+			"setMinCRLNumber",
+			"(Ljava/math/BigInteger;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject X509CRLSelector::getCertificateChecking()
+	jstring X509CRLSelector::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getCertificateChecking",
-			"()Ljava/security/cert/X509Certificate;"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security::cert
 

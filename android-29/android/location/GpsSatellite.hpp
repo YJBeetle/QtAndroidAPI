@@ -17,12 +17,12 @@ namespace __jni_impl::android::location
 		void __constructor();
 		
 		// Methods
+		jfloat getAzimuth();
 		jfloat getElevation();
-		jboolean hasEphemeris();
 		jint getPrn();
 		jfloat getSnr();
-		jfloat getAzimuth();
 		jboolean hasAlmanac();
+		jboolean hasEphemeris();
 		jboolean usedInFix();
 	};
 } // namespace __jni_impl::android::location
@@ -41,18 +41,18 @@ namespace __jni_impl::android::location
 	}
 	
 	// Methods
+	jfloat GpsSatellite::getAzimuth()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getAzimuth",
+			"()F"
+		);
+	}
 	jfloat GpsSatellite::getElevation()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getElevation",
 			"()F"
-		);
-	}
-	jboolean GpsSatellite::hasEphemeris()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasEphemeris",
-			"()Z"
 		);
 	}
 	jint GpsSatellite::getPrn()
@@ -69,17 +69,17 @@ namespace __jni_impl::android::location
 			"()F"
 		);
 	}
-	jfloat GpsSatellite::getAzimuth()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getAzimuth",
-			"()F"
-		);
-	}
 	jboolean GpsSatellite::hasAlmanac()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasAlmanac",
+			"()Z"
+		);
+	}
+	jboolean GpsSatellite::hasEphemeris()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasEphemeris",
 			"()Z"
 		);
 	}

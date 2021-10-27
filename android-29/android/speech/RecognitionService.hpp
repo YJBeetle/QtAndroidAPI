@@ -30,8 +30,8 @@ namespace __jni_impl::android::speech
 		void __constructor();
 		
 		// Methods
-		void onDestroy();
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		void onDestroy();
 	};
 } // namespace __jni_impl::android::speech
 
@@ -68,19 +68,19 @@ namespace __jni_impl::android::speech
 	}
 	
 	// Methods
-	void RecognitionService::onDestroy()
-	{
-		__thiz.callMethod<void>(
-			"onDestroy",
-			"()V"
-		);
-	}
 	QAndroidJniObject RecognitionService::onBind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
 			arg0.__jniObject().object()
+		);
+	}
+	void RecognitionService::onDestroy()
+	{
+		__thiz.callMethod<void>(
+			"onDestroy",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::speech

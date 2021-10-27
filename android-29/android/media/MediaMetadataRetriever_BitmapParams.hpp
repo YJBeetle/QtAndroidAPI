@@ -21,8 +21,8 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getPreferredConfig();
 		QAndroidJniObject getActualConfig();
+		QAndroidJniObject getPreferredConfig();
 		void setPreferredConfig(__jni_impl::android::graphics::Bitmap_Config arg0);
 	};
 } // namespace __jni_impl::android::media
@@ -43,17 +43,17 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject MediaMetadataRetriever_BitmapParams::getPreferredConfig()
-	{
-		return __thiz.callObjectMethod(
-			"getPreferredConfig",
-			"()Landroid/graphics/Bitmap$Config;"
-		);
-	}
 	QAndroidJniObject MediaMetadataRetriever_BitmapParams::getActualConfig()
 	{
 		return __thiz.callObjectMethod(
 			"getActualConfig",
+			"()Landroid/graphics/Bitmap$Config;"
+		);
+	}
+	QAndroidJniObject MediaMetadataRetriever_BitmapParams::getPreferredConfig()
+	{
+		return __thiz.callObjectMethod(
+			"getPreferredConfig",
 			"()Landroid/graphics/Bitmap$Config;"
 		);
 	}

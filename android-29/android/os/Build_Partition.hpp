@@ -18,11 +18,11 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		jstring getName();
 		jboolean equals(jobject arg0);
-		jint hashCode();
-		jstring getFingerprint();
 		jlong getBuildTimeMillis();
+		jstring getFingerprint();
+		jstring getName();
+		jint hashCode();
 	};
 } // namespace __jni_impl::android::os
 
@@ -48,13 +48,6 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	jstring Build_Partition::getName()
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jboolean Build_Partition::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -63,11 +56,11 @@ namespace __jni_impl::android::os
 			arg0
 		);
 	}
-	jint Build_Partition::hashCode()
+	jlong Build_Partition::getBuildTimeMillis()
 	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+		return __thiz.callMethod<jlong>(
+			"getBuildTimeMillis",
+			"()J"
 		);
 	}
 	jstring Build_Partition::getFingerprint()
@@ -77,11 +70,18 @@ namespace __jni_impl::android::os
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jlong Build_Partition::getBuildTimeMillis()
+	jstring Build_Partition::getName()
 	{
-		return __thiz.callMethod<jlong>(
-			"getBuildTimeMillis",
-			"()J"
+		return __thiz.callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint Build_Partition::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::os

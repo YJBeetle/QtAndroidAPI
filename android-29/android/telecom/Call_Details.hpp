@@ -9,9 +9,9 @@ namespace __jni_impl::android::net
 {
 	class Uri;
 }
-namespace __jni_impl::android::telecom
+namespace __jni_impl::android::os
 {
-	class PhoneAccountHandle;
+	class Bundle;
 }
 namespace __jni_impl::android::telecom
 {
@@ -23,11 +23,11 @@ namespace __jni_impl::android::telecom
 }
 namespace __jni_impl::android::telecom
 {
-	class StatusHints;
+	class PhoneAccountHandle;
 }
-namespace __jni_impl::android::os
+namespace __jni_impl::android::telecom
 {
-	class Bundle;
+	class StatusHints;
 }
 
 namespace __jni_impl::android::telecom
@@ -75,40 +75,40 @@ namespace __jni_impl::android::telecom
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		QAndroidJniObject getHandle();
-		jint getVideoState();
-		QAndroidJniObject getDisconnectCause();
-		QAndroidJniObject getStatusHints();
+		static jboolean can(jint arg0, jint arg1);
 		static jstring capabilitiesToString(jint arg0);
+		static jboolean hasProperty(jint arg0, jint arg1);
 		static jstring propertiesToString(jint arg0);
+		jboolean can(jint arg0);
+		jboolean equals(jobject arg0);
+		QAndroidJniObject getAccountHandle();
+		jint getCallCapabilities();
+		jint getCallDirection();
+		jint getCallProperties();
 		jstring getCallerDisplayName();
 		jint getCallerDisplayNamePresentation();
-		QAndroidJniObject getAccountHandle();
-		static jboolean can(jint arg0, jint arg1);
-		jboolean can(jint arg0);
-		static jboolean hasProperty(jint arg0, jint arg1);
-		jboolean hasProperty(jint arg0);
-		jint getHandlePresentation();
-		jint getCallCapabilities();
-		jint getCallProperties();
 		jlong getConnectTimeMillis();
-		QAndroidJniObject getGatewayInfo();
-		QAndroidJniObject getIntentExtras();
 		jlong getCreationTimeMillis();
-		jint getCallDirection();
+		QAndroidJniObject getDisconnectCause();
 		QAndroidJniObject getExtras();
+		QAndroidJniObject getGatewayInfo();
+		QAndroidJniObject getHandle();
+		jint getHandlePresentation();
+		QAndroidJniObject getIntentExtras();
+		QAndroidJniObject getStatusHints();
+		jint getVideoState();
+		jboolean hasProperty(jint arg0);
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::telecom
 
 #include "../net/Uri.hpp"
-#include "PhoneAccountHandle.hpp"
+#include "../os/Bundle.hpp"
 #include "DisconnectCause.hpp"
 #include "GatewayInfo.hpp"
+#include "PhoneAccountHandle.hpp"
 #include "StatusHints.hpp"
-#include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -361,54 +361,14 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
-	jboolean Call_Details::equals(jobject arg0)
+	jboolean Call_Details::can(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring Call_Details::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint Call_Details::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	QAndroidJniObject Call_Details::getHandle()
-	{
-		return __thiz.callObjectMethod(
-			"getHandle",
-			"()Landroid/net/Uri;"
-		);
-	}
-	jint Call_Details::getVideoState()
-	{
-		return __thiz.callMethod<jint>(
-			"getVideoState",
-			"()I"
-		);
-	}
-	QAndroidJniObject Call_Details::getDisconnectCause()
-	{
-		return __thiz.callObjectMethod(
-			"getDisconnectCause",
-			"()Landroid/telecom/DisconnectCause;"
-		);
-	}
-	QAndroidJniObject Call_Details::getStatusHints()
-	{
-		return __thiz.callObjectMethod(
-			"getStatusHints",
-			"()Landroid/telecom/StatusHints;"
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.telecom.Call$Details",
+			"can",
+			"(II)Z",
+			arg0,
+			arg1
 		);
 	}
 	jstring Call_Details::capabilitiesToString(jint arg0)
@@ -420,6 +380,16 @@ namespace __jni_impl::android::telecom
 			arg0
 		).object<jstring>();
 	}
+	jboolean Call_Details::hasProperty(jint arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.telecom.Call$Details",
+			"hasProperty",
+			"(II)Z",
+			arg0,
+			arg1
+		);
+	}
 	jstring Call_Details::propertiesToString(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -428,6 +398,50 @@ namespace __jni_impl::android::telecom
 			"(I)Ljava/lang/String;",
 			arg0
 		).object<jstring>();
+	}
+	jboolean Call_Details::can(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"can",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean Call_Details::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	QAndroidJniObject Call_Details::getAccountHandle()
+	{
+		return __thiz.callObjectMethod(
+			"getAccountHandle",
+			"()Landroid/telecom/PhoneAccountHandle;"
+		);
+	}
+	jint Call_Details::getCallCapabilities()
+	{
+		return __thiz.callMethod<jint>(
+			"getCallCapabilities",
+			"()I"
+		);
+	}
+	jint Call_Details::getCallDirection()
+	{
+		return __thiz.callMethod<jint>(
+			"getCallDirection",
+			"()I"
+		);
+	}
+	jint Call_Details::getCallProperties()
+	{
+		return __thiz.callMethod<jint>(
+			"getCallProperties",
+			"()I"
+		);
 	}
 	jstring Call_Details::getCallerDisplayName()
 	{
@@ -443,39 +457,74 @@ namespace __jni_impl::android::telecom
 			"()I"
 		);
 	}
-	QAndroidJniObject Call_Details::getAccountHandle()
+	jlong Call_Details::getConnectTimeMillis()
+	{
+		return __thiz.callMethod<jlong>(
+			"getConnectTimeMillis",
+			"()J"
+		);
+	}
+	jlong Call_Details::getCreationTimeMillis()
+	{
+		return __thiz.callMethod<jlong>(
+			"getCreationTimeMillis",
+			"()J"
+		);
+	}
+	QAndroidJniObject Call_Details::getDisconnectCause()
 	{
 		return __thiz.callObjectMethod(
-			"getAccountHandle",
-			"()Landroid/telecom/PhoneAccountHandle;"
+			"getDisconnectCause",
+			"()Landroid/telecom/DisconnectCause;"
 		);
 	}
-	jboolean Call_Details::can(jint arg0, jint arg1)
+	QAndroidJniObject Call_Details::getExtras()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.telecom.Call$Details",
-			"can",
-			"(II)Z",
-			arg0,
-			arg1
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
 		);
 	}
-	jboolean Call_Details::can(jint arg0)
+	QAndroidJniObject Call_Details::getGatewayInfo()
 	{
-		return __thiz.callMethod<jboolean>(
-			"can",
-			"(I)Z",
-			arg0
+		return __thiz.callObjectMethod(
+			"getGatewayInfo",
+			"()Landroid/telecom/GatewayInfo;"
 		);
 	}
-	jboolean Call_Details::hasProperty(jint arg0, jint arg1)
+	QAndroidJniObject Call_Details::getHandle()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.telecom.Call$Details",
-			"hasProperty",
-			"(II)Z",
-			arg0,
-			arg1
+		return __thiz.callObjectMethod(
+			"getHandle",
+			"()Landroid/net/Uri;"
+		);
+	}
+	jint Call_Details::getHandlePresentation()
+	{
+		return __thiz.callMethod<jint>(
+			"getHandlePresentation",
+			"()I"
+		);
+	}
+	QAndroidJniObject Call_Details::getIntentExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getIntentExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	QAndroidJniObject Call_Details::getStatusHints()
+	{
+		return __thiz.callObjectMethod(
+			"getStatusHints",
+			"()Landroid/telecom/StatusHints;"
+		);
+	}
+	jint Call_Details::getVideoState()
+	{
+		return __thiz.callMethod<jint>(
+			"getVideoState",
+			"()I"
 		);
 	}
 	jboolean Call_Details::hasProperty(jint arg0)
@@ -486,68 +535,19 @@ namespace __jni_impl::android::telecom
 			arg0
 		);
 	}
-	jint Call_Details::getHandlePresentation()
+	jint Call_Details::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"getHandlePresentation",
+			"hashCode",
 			"()I"
 		);
 	}
-	jint Call_Details::getCallCapabilities()
-	{
-		return __thiz.callMethod<jint>(
-			"getCallCapabilities",
-			"()I"
-		);
-	}
-	jint Call_Details::getCallProperties()
-	{
-		return __thiz.callMethod<jint>(
-			"getCallProperties",
-			"()I"
-		);
-	}
-	jlong Call_Details::getConnectTimeMillis()
-	{
-		return __thiz.callMethod<jlong>(
-			"getConnectTimeMillis",
-			"()J"
-		);
-	}
-	QAndroidJniObject Call_Details::getGatewayInfo()
+	jstring Call_Details::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getGatewayInfo",
-			"()Landroid/telecom/GatewayInfo;"
-		);
-	}
-	QAndroidJniObject Call_Details::getIntentExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getIntentExtras",
-			"()Landroid/os/Bundle;"
-		);
-	}
-	jlong Call_Details::getCreationTimeMillis()
-	{
-		return __thiz.callMethod<jlong>(
-			"getCreationTimeMillis",
-			"()J"
-		);
-	}
-	jint Call_Details::getCallDirection()
-	{
-		return __thiz.callMethod<jint>(
-			"getCallDirection",
-			"()I"
-		);
-	}
-	QAndroidJniObject Call_Details::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::telecom
 

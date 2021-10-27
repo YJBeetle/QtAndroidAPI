@@ -23,14 +23,14 @@ namespace __jni_impl::java::net
 		void __constructor();
 		
 		// Methods
-		static jstring toUnicode(jstring arg0);
-		static jstring toUnicode(const QString &arg0);
-		static jstring toUnicode(jstring arg0, jint arg1);
-		static jstring toUnicode(const QString &arg0, jint arg1);
 		static jstring toASCII(jstring arg0);
 		static jstring toASCII(const QString &arg0);
 		static jstring toASCII(jstring arg0, jint arg1);
 		static jstring toASCII(const QString &arg0, jint arg1);
+		static jstring toUnicode(jstring arg0);
+		static jstring toUnicode(const QString &arg0);
+		static jstring toUnicode(jstring arg0, jint arg1);
+		static jstring toUnicode(const QString &arg0, jint arg1);
 	};
 } // namespace __jni_impl::java::net
 
@@ -63,44 +63,6 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
-	jstring IDN::toUnicode(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.net.IDN",
-			"toUnicode",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jstring IDN::toUnicode(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.net.IDN",
-			"toUnicode",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
-	jstring IDN::toUnicode(jstring arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.net.IDN",
-			"toUnicode",
-			"(Ljava/lang/String;I)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
-	}
-	jstring IDN::toUnicode(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.net.IDN",
-			"toUnicode",
-			"(Ljava/lang/String;I)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		).object<jstring>();
-	}
 	jstring IDN::toASCII(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -134,6 +96,44 @@ namespace __jni_impl::java::net
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.net.IDN",
 			"toASCII",
+			"(Ljava/lang/String;I)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		).object<jstring>();
+	}
+	jstring IDN::toUnicode(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.net.IDN",
+			"toUnicode",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring IDN::toUnicode(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.net.IDN",
+			"toUnicode",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
+	jstring IDN::toUnicode(jstring arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.net.IDN",
+			"toUnicode",
+			"(Ljava/lang/String;I)Ljava/lang/String;",
+			arg0,
+			arg1
+		).object<jstring>();
+	}
+	jstring IDN::toUnicode(const QString &arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.net.IDN",
+			"toUnicode",
 			"(Ljava/lang/String;I)Ljava/lang/String;",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1

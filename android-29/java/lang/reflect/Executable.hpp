@@ -22,27 +22,27 @@ namespace __jni_impl::java::lang::reflect
 		void __constructor();
 		
 		// Methods
-		jstring getName();
-		jint getModifiers();
-		jarray getTypeParameters();
-		jarray getParameterTypes();
-		jstring toGenericString();
-		jboolean isSynthetic();
-		jclass getDeclaringClass();
+		jarray getAnnotatedExceptionTypes();
+		jarray getAnnotatedParameterTypes();
+		QAndroidJniObject getAnnotatedReceiverType();
+		QAndroidJniObject getAnnotatedReturnType();
 		QAndroidJniObject getAnnotation(jclass arg0);
 		jarray getAnnotationsByType(jclass arg0);
 		jarray getDeclaredAnnotations();
-		jboolean isVarArgs();
-		jarray getAnnotatedParameterTypes();
-		jint getParameterCount();
-		jarray getParameterAnnotations();
-		jarray getGenericParameterTypes();
-		jarray getGenericExceptionTypes();
+		jclass getDeclaringClass();
 		jarray getExceptionTypes();
-		QAndroidJniObject getAnnotatedReturnType();
+		jarray getGenericExceptionTypes();
+		jarray getGenericParameterTypes();
+		jint getModifiers();
+		jstring getName();
+		jarray getParameterAnnotations();
+		jint getParameterCount();
+		jarray getParameterTypes();
 		jarray getParameters();
-		QAndroidJniObject getAnnotatedReceiverType();
-		jarray getAnnotatedExceptionTypes();
+		jarray getTypeParameters();
+		jboolean isSynthetic();
+		jboolean isVarArgs();
+		jstring toGenericString();
 	};
 } // namespace __jni_impl::java::lang::reflect
 
@@ -61,54 +61,33 @@ namespace __jni_impl::java::lang::reflect
 	}
 	
 	// Methods
-	jstring Executable::getName()
+	jarray Executable::getAnnotatedExceptionTypes()
 	{
 		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint Executable::getModifiers()
-	{
-		return __thiz.callMethod<jint>(
-			"getModifiers",
-			"()I"
-		);
-	}
-	jarray Executable::getTypeParameters()
-	{
-		return __thiz.callObjectMethod(
-			"getTypeParameters",
-			"()[Ljava/lang/reflect/TypeVariable;"
+			"getAnnotatedExceptionTypes",
+			"()[Ljava/lang/reflect/AnnotatedType;"
 		).object<jarray>();
 	}
-	jarray Executable::getParameterTypes()
+	jarray Executable::getAnnotatedParameterTypes()
 	{
 		return __thiz.callObjectMethod(
-			"getParameterTypes",
-			"()[Ljava/lang/Class;"
+			"getAnnotatedParameterTypes",
+			"()[Ljava/lang/reflect/AnnotatedType;"
 		).object<jarray>();
 	}
-	jstring Executable::toGenericString()
+	QAndroidJniObject Executable::getAnnotatedReceiverType()
 	{
 		return __thiz.callObjectMethod(
-			"toGenericString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jboolean Executable::isSynthetic()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSynthetic",
-			"()Z"
+			"getAnnotatedReceiverType",
+			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
-	jclass Executable::getDeclaringClass()
+	QAndroidJniObject Executable::getAnnotatedReturnType()
 	{
 		return __thiz.callObjectMethod(
-			"getDeclaringClass",
-			"()Ljava/lang/Class;"
-		).object<jclass>();
+			"getAnnotatedReturnType",
+			"()Ljava/lang/reflect/AnnotatedType;"
+		);
 	}
 	QAndroidJniObject Executable::getAnnotation(jclass arg0)
 	{
@@ -133,39 +112,18 @@ namespace __jni_impl::java::lang::reflect
 			"()[Ljava/lang/annotation/Annotation;"
 		).object<jarray>();
 	}
-	jboolean Executable::isVarArgs()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isVarArgs",
-			"()Z"
-		);
-	}
-	jarray Executable::getAnnotatedParameterTypes()
+	jclass Executable::getDeclaringClass()
 	{
 		return __thiz.callObjectMethod(
-			"getAnnotatedParameterTypes",
-			"()[Ljava/lang/reflect/AnnotatedType;"
-		).object<jarray>();
+			"getDeclaringClass",
+			"()Ljava/lang/Class;"
+		).object<jclass>();
 	}
-	jint Executable::getParameterCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getParameterCount",
-			"()I"
-		);
-	}
-	jarray Executable::getParameterAnnotations()
+	jarray Executable::getExceptionTypes()
 	{
 		return __thiz.callObjectMethod(
-			"getParameterAnnotations",
-			"()[[Ljava/lang/annotation/Annotation;"
-		).object<jarray>();
-	}
-	jarray Executable::getGenericParameterTypes()
-	{
-		return __thiz.callObjectMethod(
-			"getGenericParameterTypes",
-			"()[Ljava/lang/reflect/Type;"
+			"getExceptionTypes",
+			"()[Ljava/lang/Class;"
 		).object<jarray>();
 	}
 	jarray Executable::getGenericExceptionTypes()
@@ -175,19 +133,47 @@ namespace __jni_impl::java::lang::reflect
 			"()[Ljava/lang/reflect/Type;"
 		).object<jarray>();
 	}
-	jarray Executable::getExceptionTypes()
+	jarray Executable::getGenericParameterTypes()
 	{
 		return __thiz.callObjectMethod(
-			"getExceptionTypes",
-			"()[Ljava/lang/Class;"
+			"getGenericParameterTypes",
+			"()[Ljava/lang/reflect/Type;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Executable::getAnnotatedReturnType()
+	jint Executable::getModifiers()
+	{
+		return __thiz.callMethod<jint>(
+			"getModifiers",
+			"()I"
+		);
+	}
+	jstring Executable::getName()
 	{
 		return __thiz.callObjectMethod(
-			"getAnnotatedReturnType",
-			"()Ljava/lang/reflect/AnnotatedType;"
+			"getName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jarray Executable::getParameterAnnotations()
+	{
+		return __thiz.callObjectMethod(
+			"getParameterAnnotations",
+			"()[[Ljava/lang/annotation/Annotation;"
+		).object<jarray>();
+	}
+	jint Executable::getParameterCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getParameterCount",
+			"()I"
 		);
+	}
+	jarray Executable::getParameterTypes()
+	{
+		return __thiz.callObjectMethod(
+			"getParameterTypes",
+			"()[Ljava/lang/Class;"
+		).object<jarray>();
 	}
 	jarray Executable::getParameters()
 	{
@@ -196,19 +182,33 @@ namespace __jni_impl::java::lang::reflect
 			"()[Ljava/lang/reflect/Parameter;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Executable::getAnnotatedReceiverType()
+	jarray Executable::getTypeParameters()
 	{
 		return __thiz.callObjectMethod(
-			"getAnnotatedReceiverType",
-			"()Ljava/lang/reflect/AnnotatedType;"
+			"getTypeParameters",
+			"()[Ljava/lang/reflect/TypeVariable;"
+		).object<jarray>();
+	}
+	jboolean Executable::isSynthetic()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSynthetic",
+			"()Z"
 		);
 	}
-	jarray Executable::getAnnotatedExceptionTypes()
+	jboolean Executable::isVarArgs()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isVarArgs",
+			"()Z"
+		);
+	}
+	jstring Executable::toGenericString()
 	{
 		return __thiz.callObjectMethod(
-			"getAnnotatedExceptionTypes",
-			"()[Ljava/lang/reflect/AnnotatedType;"
-		).object<jarray>();
+			"toGenericString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::lang::reflect
 

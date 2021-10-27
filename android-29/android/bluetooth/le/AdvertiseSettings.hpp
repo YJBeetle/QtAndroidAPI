@@ -29,13 +29,13 @@ namespace __jni_impl::android::bluetooth::le
 		void __constructor();
 		
 		// Methods
-		jstring toString();
+		jint describeContents();
 		jint getMode();
+		jint getTimeout();
 		jint getTxPowerLevel();
 		jboolean isConnectable();
-		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getTimeout();
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
@@ -111,17 +111,24 @@ namespace __jni_impl::android::bluetooth::le
 	}
 	
 	// Methods
-	jstring AdvertiseSettings::toString()
+	jint AdvertiseSettings::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
 	jint AdvertiseSettings::getMode()
 	{
 		return __thiz.callMethod<jint>(
 			"getMode",
+			"()I"
+		);
+	}
+	jint AdvertiseSettings::getTimeout()
+	{
+		return __thiz.callMethod<jint>(
+			"getTimeout",
 			"()I"
 		);
 	}
@@ -139,12 +146,12 @@ namespace __jni_impl::android::bluetooth::le
 			"()Z"
 		);
 	}
-	jint AdvertiseSettings::describeContents()
+	jstring AdvertiseSettings::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void AdvertiseSettings::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -153,13 +160,6 @@ namespace __jni_impl::android::bluetooth::le
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint AdvertiseSettings::getTimeout()
-	{
-		return __thiz.callMethod<jint>(
-			"getTimeout",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::bluetooth::le

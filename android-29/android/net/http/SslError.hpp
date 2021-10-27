@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::security::cert
-{
-	class X509Certificate;
-}
 namespace __jni_impl::android::net::http
 {
 	class SslCertificate;
+}
+namespace __jni_impl::java::security::cert
+{
+	class X509Certificate;
 }
 
 namespace __jni_impl::android::net::http
@@ -29,25 +29,25 @@ namespace __jni_impl::android::net::http
 		static jint SSL_UNTRUSTED();
 		
 		// Constructors
-		void __constructor(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1, jstring arg2);
-		void __constructor(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1, const QString &arg2);
+		void __constructor(jint arg0, __jni_impl::android::net::http::SslCertificate arg1);
+		void __constructor(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1);
 		void __constructor(jint arg0, __jni_impl::android::net::http::SslCertificate arg1, jstring arg2);
 		void __constructor(jint arg0, __jni_impl::android::net::http::SslCertificate arg1, const QString &arg2);
-		void __constructor(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1);
-		void __constructor(jint arg0, __jni_impl::android::net::http::SslCertificate arg1);
+		void __constructor(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1, jstring arg2);
+		void __constructor(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1, const QString &arg2);
 		
 		// Methods
-		jstring toString();
-		QAndroidJniObject getCertificate();
-		jstring getUrl();
 		jboolean addError(jint arg0);
-		jboolean hasError(jint arg0);
+		QAndroidJniObject getCertificate();
 		jint getPrimaryError();
+		jstring getUrl();
+		jboolean hasError(jint arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::android::net::http
 
-#include "../../../java/security/cert/X509Certificate.hpp"
 #include "SslCertificate.hpp"
+#include "../../../java/security/cert/X509Certificate.hpp"
 
 namespace __jni_impl::android::net::http
 {
@@ -103,24 +103,22 @@ namespace __jni_impl::android::net::http
 	}
 	
 	// Constructors
-	void SslError::__constructor(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1, jstring arg2)
+	void SslError::__constructor(jint arg0, __jni_impl::android::net::http::SslCertificate arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.http.SslError",
-			"(ILjava/security/cert/X509Certificate;Ljava/lang/String;)V",
+			"(ILandroid/net/http/SslCertificate;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2
+			arg1.__jniObject().object()
 		);
 	}
-	void SslError::__constructor(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1, const QString &arg2)
+	void SslError::__constructor(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.http.SslError",
-			"(ILjava/security/cert/X509Certificate;Ljava/lang/String;)V",
+			"(ILjava/security/cert/X509Certificate;)V",
 			arg0,
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
+			arg1.__jniObject().object()
 		);
 	}
 	void SslError::__constructor(jint arg0, __jni_impl::android::net::http::SslCertificate arg1, jstring arg2)
@@ -143,47 +141,28 @@ namespace __jni_impl::android::net::http
 			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
-	void SslError::__constructor(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1)
+	void SslError::__constructor(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.http.SslError",
-			"(ILjava/security/cert/X509Certificate;)V",
+			"(ILjava/security/cert/X509Certificate;Ljava/lang/String;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.__jniObject().object(),
+			arg2
 		);
 	}
-	void SslError::__constructor(jint arg0, __jni_impl::android::net::http::SslCertificate arg1)
+	void SslError::__constructor(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1, const QString &arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.http.SslError",
-			"(ILandroid/net/http/SslCertificate;)V",
+			"(ILjava/security/cert/X509Certificate;Ljava/lang/String;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	
 	// Methods
-	jstring SslError::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject SslError::getCertificate()
-	{
-		return __thiz.callObjectMethod(
-			"getCertificate",
-			"()Landroid/net/http/SslCertificate;"
-		);
-	}
-	jstring SslError::getUrl()
-	{
-		return __thiz.callObjectMethod(
-			"getUrl",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jboolean SslError::addError(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -192,12 +171,11 @@ namespace __jni_impl::android::net::http
 			arg0
 		);
 	}
-	jboolean SslError::hasError(jint arg0)
+	QAndroidJniObject SslError::getCertificate()
 	{
-		return __thiz.callMethod<jboolean>(
-			"hasError",
-			"(I)Z",
-			arg0
+		return __thiz.callObjectMethod(
+			"getCertificate",
+			"()Landroid/net/http/SslCertificate;"
 		);
 	}
 	jint SslError::getPrimaryError()
@@ -207,6 +185,28 @@ namespace __jni_impl::android::net::http
 			"()I"
 		);
 	}
+	jstring SslError::getUrl()
+	{
+		return __thiz.callObjectMethod(
+			"getUrl",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jboolean SslError::hasError(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasError",
+			"(I)Z",
+			arg0
+		);
+	}
+	jstring SslError::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 } // namespace __jni_impl::android::net::http
 
 namespace android::net::http
@@ -215,12 +215,17 @@ namespace android::net::http
 	{
 	public:
 		SslError(QAndroidJniObject obj) { __thiz = obj; }
-		SslError(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1, jstring arg2)
+		SslError(jint arg0, __jni_impl::android::net::http::SslCertificate arg1)
 		{
 			__constructor(
 				arg0,
-				arg1,
-				arg2);
+				arg1);
+		}
+		SslError(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
 		}
 		SslError(jint arg0, __jni_impl::android::net::http::SslCertificate arg1, jstring arg2)
 		{
@@ -229,17 +234,12 @@ namespace android::net::http
 				arg1,
 				arg2);
 		}
-		SslError(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1)
+		SslError(jint arg0, __jni_impl::java::security::cert::X509Certificate arg1, jstring arg2)
 		{
 			__constructor(
 				arg0,
-				arg1);
-		}
-		SslError(jint arg0, __jni_impl::android::net::http::SslCertificate arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
+				arg1,
+				arg2);
 		}
 	};
 } // namespace android::net::http

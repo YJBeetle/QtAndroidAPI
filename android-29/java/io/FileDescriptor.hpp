@@ -12,9 +12,9 @@ namespace __jni_impl::java::io
 	{
 	public:
 		// Fields
+		static QAndroidJniObject err();
 		static QAndroidJniObject in();
 		static QAndroidJniObject out();
-		static QAndroidJniObject err();
 		
 		// Constructors
 		void __constructor();
@@ -29,6 +29,14 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	// Fields
+	QAndroidJniObject FileDescriptor::err()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.io.FileDescriptor",
+			"err",
+			"Ljava/io/FileDescriptor;"
+		);
+	}
 	QAndroidJniObject FileDescriptor::in()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -42,14 +50,6 @@ namespace __jni_impl::java::io
 		return QAndroidJniObject::getStaticObjectField(
 			"java.io.FileDescriptor",
 			"out",
-			"Ljava/io/FileDescriptor;"
-		);
-	}
-	QAndroidJniObject FileDescriptor::err()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.io.FileDescriptor",
-			"err",
 			"Ljava/io/FileDescriptor;"
 		);
 	}

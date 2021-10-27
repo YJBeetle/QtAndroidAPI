@@ -7,15 +7,15 @@
 
 namespace __jni_impl::android::icu::util
 {
-	class ULocale;
-}
-namespace __jni_impl::android::icu::util
-{
 	class LocaleData_MeasurementSystem;
 }
 namespace __jni_impl::android::icu::util
 {
 	class LocaleData_PaperSize;
+}
+namespace __jni_impl::android::icu::util
+{
+	class ULocale;
 }
 namespace __jni_impl::android::icu::util
 {
@@ -37,20 +37,20 @@ namespace __jni_impl::android::icu::util
 		void __constructor();
 		
 		// Methods
+		static QAndroidJniObject getCLDRVersion();
 		static QAndroidJniObject getInstance();
 		static QAndroidJniObject getInstance(__jni_impl::android::icu::util::ULocale arg0);
-		void setNoSubstitute(jboolean arg0);
-		jboolean getNoSubstitute();
-		jstring getDelimiter(jint arg0);
 		static QAndroidJniObject getMeasurementSystem(__jni_impl::android::icu::util::ULocale arg0);
 		static QAndroidJniObject getPaperSize(__jni_impl::android::icu::util::ULocale arg0);
-		static QAndroidJniObject getCLDRVersion();
+		jstring getDelimiter(jint arg0);
+		jboolean getNoSubstitute();
+		void setNoSubstitute(jboolean arg0);
 	};
 } // namespace __jni_impl::android::icu::util
 
-#include "ULocale.hpp"
 #include "LocaleData_MeasurementSystem.hpp"
 #include "LocaleData_PaperSize.hpp"
+#include "ULocale.hpp"
 #include "VersionInfo.hpp"
 
 namespace __jni_impl::android::icu::util
@@ -94,6 +94,14 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Methods
+	QAndroidJniObject LocaleData::getCLDRVersion()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.LocaleData",
+			"getCLDRVersion",
+			"()Landroid/icu/util/VersionInfo;"
+		);
+	}
 	QAndroidJniObject LocaleData::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -110,29 +118,6 @@ namespace __jni_impl::android::icu::util
 			"(Landroid/icu/util/ULocale;)Landroid/icu/util/LocaleData;",
 			arg0.__jniObject().object()
 		);
-	}
-	void LocaleData::setNoSubstitute(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setNoSubstitute",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean LocaleData::getNoSubstitute()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getNoSubstitute",
-			"()Z"
-		);
-	}
-	jstring LocaleData::getDelimiter(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDelimiter",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
 	}
 	QAndroidJniObject LocaleData::getMeasurementSystem(__jni_impl::android::icu::util::ULocale arg0)
 	{
@@ -152,12 +137,27 @@ namespace __jni_impl::android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject LocaleData::getCLDRVersion()
+	jstring LocaleData::getDelimiter(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.LocaleData",
-			"getCLDRVersion",
-			"()Landroid/icu/util/VersionInfo;"
+		return __thiz.callObjectMethod(
+			"getDelimiter",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jboolean LocaleData::getNoSubstitute()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getNoSubstitute",
+			"()Z"
+		);
+	}
+	void LocaleData::setNoSubstitute(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setNoSubstitute",
+			"(Z)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::icu::util

@@ -17,9 +17,9 @@ namespace __jni_impl::java::net
 		// Fields
 		
 		// Constructors
+		void __constructor();
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor();
 		
 		// Methods
 	};
@@ -31,6 +31,13 @@ namespace __jni_impl::java::net
 	// Fields
 	
 	// Constructors
+	void NoRouteToHostException::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.NoRouteToHostException",
+			"()V"
+		);
+	}
 	void NoRouteToHostException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -47,13 +54,6 @@ namespace __jni_impl::java::net
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void NoRouteToHostException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.NoRouteToHostException",
-			"()V"
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::java::net
@@ -64,14 +64,14 @@ namespace java::net
 	{
 	public:
 		NoRouteToHostException(QAndroidJniObject obj) { __thiz = obj; }
+		NoRouteToHostException()
+		{
+			__constructor();
+		}
 		NoRouteToHostException(jstring arg0)
 		{
 			__constructor(
 				arg0);
-		}
-		NoRouteToHostException()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::net

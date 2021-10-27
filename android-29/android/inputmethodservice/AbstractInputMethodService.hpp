@@ -8,9 +8,9 @@
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
-namespace __jni_impl::android::view
+namespace __jni_impl::android::content
 {
-	class KeyEvent_DispatcherState;
+	class Intent;
 }
 namespace __jni_impl::android::inputmethodservice
 {
@@ -20,6 +20,14 @@ namespace __jni_impl::android::inputmethodservice
 {
 	class AbstractInputMethodService_AbstractInputMethodSessionImpl;
 }
+namespace __jni_impl::android::view
+{
+	class KeyEvent_DispatcherState;
+}
+namespace __jni_impl::android::view
+{
+	class MotionEvent;
+}
 namespace __jni_impl::java::io
 {
 	class FileDescriptor;
@@ -27,14 +35,6 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class PrintWriter;
-}
-namespace __jni_impl::android::view
-{
-	class MotionEvent;
-}
-namespace __jni_impl::android::content
-{
-	class Intent;
 }
 
 namespace __jni_impl::android::inputmethodservice
@@ -49,21 +49,21 @@ namespace __jni_impl::android::inputmethodservice
 		
 		// Methods
 		QAndroidJniObject getKeyDispatcherState();
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject onCreateInputMethodInterface();
 		QAndroidJniObject onCreateInputMethodSessionInterface();
-		jboolean onTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
 		jboolean onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0);
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		jboolean onTrackballEvent(__jni_impl::android::view::MotionEvent arg0);
 	};
 } // namespace __jni_impl::android::inputmethodservice
 
-#include "../view/KeyEvent_DispatcherState.hpp"
+#include "../content/Intent.hpp"
 #include "AbstractInputMethodService_AbstractInputMethodImpl.hpp"
 #include "AbstractInputMethodService_AbstractInputMethodSessionImpl.hpp"
+#include "../view/KeyEvent_DispatcherState.hpp"
+#include "../view/MotionEvent.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
-#include "../view/MotionEvent.hpp"
-#include "../content/Intent.hpp"
 
 namespace __jni_impl::android::inputmethodservice
 {
@@ -86,6 +86,14 @@ namespace __jni_impl::android::inputmethodservice
 			"()Landroid/view/KeyEvent$DispatcherState;"
 		);
 	}
+	QAndroidJniObject AbstractInputMethodService::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject AbstractInputMethodService::onCreateInputMethodInterface()
 	{
 		return __thiz.callObjectMethod(
@@ -100,14 +108,6 @@ namespace __jni_impl::android::inputmethodservice
 			"()Landroid/inputmethodservice/AbstractInputMethodService$AbstractInputMethodSessionImpl;"
 		);
 	}
-	jboolean AbstractInputMethodService::onTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onTrackballEvent",
-			"(Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object()
-		);
-	}
 	jboolean AbstractInputMethodService::onGenericMotionEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -116,11 +116,11 @@ namespace __jni_impl::android::inputmethodservice
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject AbstractInputMethodService::onBind(__jni_impl::android::content::Intent arg0)
+	jboolean AbstractInputMethodService::onTrackballEvent(__jni_impl::android::view::MotionEvent arg0)
 	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+		return __thiz.callMethod<jboolean>(
+			"onTrackballEvent",
+			"(Landroid/view/MotionEvent;)Z",
 			arg0.__jniObject().object()
 		);
 	}

@@ -22,16 +22,16 @@ namespace __jni_impl::java::util::concurrent::atomic
 		
 		// Methods
 		void add(jlong arg0);
-		jstring toString();
+		void decrement();
+		jdouble doubleValue();
+		jfloat floatValue();
+		void increment();
 		jint intValue();
 		jlong longValue();
-		jfloat floatValue();
-		jdouble doubleValue();
-		void increment();
 		void reset();
 		jlong sum();
-		void decrement();
 		jlong sumThenReset();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::util::concurrent::atomic
 
@@ -59,12 +59,33 @@ namespace __jni_impl::java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jstring LongAdder::toString()
+	void LongAdder::decrement()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"decrement",
+			"()V"
+		);
+	}
+	jdouble LongAdder::doubleValue()
+	{
+		return __thiz.callMethod<jdouble>(
+			"doubleValue",
+			"()D"
+		);
+	}
+	jfloat LongAdder::floatValue()
+	{
+		return __thiz.callMethod<jfloat>(
+			"floatValue",
+			"()F"
+		);
+	}
+	void LongAdder::increment()
+	{
+		__thiz.callMethod<void>(
+			"increment",
+			"()V"
+		);
 	}
 	jint LongAdder::intValue()
 	{
@@ -78,27 +99,6 @@ namespace __jni_impl::java::util::concurrent::atomic
 		return __thiz.callMethod<jlong>(
 			"longValue",
 			"()J"
-		);
-	}
-	jfloat LongAdder::floatValue()
-	{
-		return __thiz.callMethod<jfloat>(
-			"floatValue",
-			"()F"
-		);
-	}
-	jdouble LongAdder::doubleValue()
-	{
-		return __thiz.callMethod<jdouble>(
-			"doubleValue",
-			"()D"
-		);
-	}
-	void LongAdder::increment()
-	{
-		__thiz.callMethod<void>(
-			"increment",
-			"()V"
 		);
 	}
 	void LongAdder::reset()
@@ -115,19 +115,19 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"()J"
 		);
 	}
-	void LongAdder::decrement()
-	{
-		__thiz.callMethod<void>(
-			"decrement",
-			"()V"
-		);
-	}
 	jlong LongAdder::sumThenReset()
 	{
 		return __thiz.callMethod<jlong>(
 			"sumThenReset",
 			"()J"
 		);
+	}
+	jstring LongAdder::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util::concurrent::atomic
 

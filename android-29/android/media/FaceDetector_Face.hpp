@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::media
-{
-	class FaceDetector;
-}
 namespace __jni_impl::android::graphics
 {
 	class PointF;
+}
+namespace __jni_impl::android::media
+{
+	class FaceDetector;
 }
 
 namespace __jni_impl::android::media
@@ -30,14 +30,14 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		jfloat confidence();
-		void getMidPoint(__jni_impl::android::graphics::PointF arg0);
 		jfloat eyesDistance();
+		void getMidPoint(__jni_impl::android::graphics::PointF arg0);
 		jfloat pose(jint arg0);
 	};
 } // namespace __jni_impl::android::media
 
-#include "FaceDetector.hpp"
 #include "../graphics/PointF.hpp"
+#include "FaceDetector.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -87,19 +87,19 @@ namespace __jni_impl::android::media
 			"()F"
 		);
 	}
+	jfloat FaceDetector_Face::eyesDistance()
+	{
+		return __thiz.callMethod<jfloat>(
+			"eyesDistance",
+			"()F"
+		);
+	}
 	void FaceDetector_Face::getMidPoint(__jni_impl::android::graphics::PointF arg0)
 	{
 		__thiz.callMethod<void>(
 			"getMidPoint",
 			"(Landroid/graphics/PointF;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	jfloat FaceDetector_Face::eyesDistance()
-	{
-		return __thiz.callMethod<jfloat>(
-			"eyesDistance",
-			"()F"
 		);
 	}
 	jfloat FaceDetector_Face::pose(jint arg0)

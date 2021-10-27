@@ -16,9 +16,9 @@ namespace __jni_impl::java::lang::invoke
 		// Fields
 		
 		// Constructors
+		void __constructor();
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor();
 		
 		// Methods
 	};
@@ -30,6 +30,13 @@ namespace __jni_impl::java::lang::invoke
 	// Fields
 	
 	// Constructors
+	void WrongMethodTypeException::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.invoke.WrongMethodTypeException",
+			"()V"
+		);
+	}
 	void WrongMethodTypeException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -46,13 +53,6 @@ namespace __jni_impl::java::lang::invoke
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void WrongMethodTypeException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.invoke.WrongMethodTypeException",
-			"()V"
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::java::lang::invoke
@@ -63,14 +63,14 @@ namespace java::lang::invoke
 	{
 	public:
 		WrongMethodTypeException(QAndroidJniObject obj) { __thiz = obj; }
+		WrongMethodTypeException()
+		{
+			__constructor();
+		}
 		WrongMethodTypeException(jstring arg0)
 		{
 			__constructor(
 				arg0);
-		}
-		WrongMethodTypeException()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::lang::invoke

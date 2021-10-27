@@ -8,13 +8,13 @@
 #include "../../io/FilterOutputStream.hpp"
 #include "DeflaterOutputStream.hpp"
 
-namespace __jni_impl::java::util::zip
-{
-	class CRC32;
-}
 namespace __jni_impl::java::io
 {
 	class OutputStream;
+}
+namespace __jni_impl::java::util::zip
+{
+	class CRC32;
 }
 
 namespace __jni_impl::java::util::zip
@@ -25,25 +25,33 @@ namespace __jni_impl::java::util::zip
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::java::io::OutputStream arg0, jboolean arg1);
 		void __constructor(__jni_impl::java::io::OutputStream arg0);
-		void __constructor(__jni_impl::java::io::OutputStream arg0, jint arg1, jboolean arg2);
+		void __constructor(__jni_impl::java::io::OutputStream arg0, jboolean arg1);
 		void __constructor(__jni_impl::java::io::OutputStream arg0, jint arg1);
+		void __constructor(__jni_impl::java::io::OutputStream arg0, jint arg1, jboolean arg2);
 		
 		// Methods
-		void write(jbyteArray arg0, jint arg1, jint arg2);
 		void finish();
+		void write(jbyteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::java::util::zip
 
-#include "CRC32.hpp"
 #include "../../io/OutputStream.hpp"
+#include "CRC32.hpp"
 
 namespace __jni_impl::java::util::zip
 {
 	// Fields
 	
 	// Constructors
+	void GZIPOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.zip.GZIPOutputStream",
+			"(Ljava/io/OutputStream;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void GZIPOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -53,12 +61,13 @@ namespace __jni_impl::java::util::zip
 			arg1
 		);
 	}
-	void GZIPOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0)
+	void GZIPOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.zip.GZIPOutputStream",
-			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object()
+			"(Ljava/io/OutputStream;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 	void GZIPOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0, jint arg1, jboolean arg2)
@@ -71,17 +80,15 @@ namespace __jni_impl::java::util::zip
 			arg2
 		);
 	}
-	void GZIPOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.zip.GZIPOutputStream",
-			"(Ljava/io/OutputStream;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	
 	// Methods
+	void GZIPOutputStream::finish()
+	{
+		__thiz.callMethod<void>(
+			"finish",
+			"()V"
+		);
+	}
 	void GZIPOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
@@ -92,13 +99,6 @@ namespace __jni_impl::java::util::zip
 			arg2
 		);
 	}
-	void GZIPOutputStream::finish()
-	{
-		__thiz.callMethod<void>(
-			"finish",
-			"()V"
-		);
-	}
 } // namespace __jni_impl::java::util::zip
 
 namespace java::util::zip
@@ -107,16 +107,22 @@ namespace java::util::zip
 	{
 	public:
 		GZIPOutputStream(QAndroidJniObject obj) { __thiz = obj; }
+		GZIPOutputStream(__jni_impl::java::io::OutputStream arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		GZIPOutputStream(__jni_impl::java::io::OutputStream arg0, jboolean arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
 		}
-		GZIPOutputStream(__jni_impl::java::io::OutputStream arg0)
+		GZIPOutputStream(__jni_impl::java::io::OutputStream arg0, jint arg1)
 		{
 			__constructor(
-				arg0);
+				arg0,
+				arg1);
 		}
 		GZIPOutputStream(__jni_impl::java::io::OutputStream arg0, jint arg1, jboolean arg2)
 		{
@@ -124,12 +130,6 @@ namespace java::util::zip
 				arg0,
 				arg1,
 				arg2);
-		}
-		GZIPOutputStream(__jni_impl::java::io::OutputStream arg0, jint arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
 		}
 	};
 } // namespace java::util::zip

@@ -22,13 +22,13 @@ namespace __jni_impl::android::drm
 		// Methods
 		jobject get(jstring arg0);
 		jobject get(const QString &arg0);
-		void put(jstring arg0, jobject arg1);
-		void put(const QString &arg0, jobject arg1);
+		jbyteArray getData();
+		jint getInfoType();
+		jstring getMimeType();
 		QAndroidJniObject iterator();
 		QAndroidJniObject keyIterator();
-		jstring getMimeType();
-		jint getInfoType();
-		jbyteArray getData();
+		void put(jstring arg0, jobject arg1);
+		void put(const QString &arg0, jobject arg1);
 	};
 } // namespace __jni_impl::android::drm
 
@@ -96,6 +96,41 @@ namespace __jni_impl::android::drm
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
+	jbyteArray DrmInfo::getData()
+	{
+		return __thiz.callObjectMethod(
+			"getData",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jint DrmInfo::getInfoType()
+	{
+		return __thiz.callMethod<jint>(
+			"getInfoType",
+			"()I"
+		);
+	}
+	jstring DrmInfo::getMimeType()
+	{
+		return __thiz.callObjectMethod(
+			"getMimeType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject DrmInfo::iterator()
+	{
+		return __thiz.callObjectMethod(
+			"iterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	QAndroidJniObject DrmInfo::keyIterator()
+	{
+		return __thiz.callObjectMethod(
+			"keyIterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
 	void DrmInfo::put(jstring arg0, jobject arg1)
 	{
 		__thiz.callMethod<void>(
@@ -113,41 +148,6 @@ namespace __jni_impl::android::drm
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
-	}
-	QAndroidJniObject DrmInfo::iterator()
-	{
-		return __thiz.callObjectMethod(
-			"iterator",
-			"()Ljava/util/Iterator;"
-		);
-	}
-	QAndroidJniObject DrmInfo::keyIterator()
-	{
-		return __thiz.callObjectMethod(
-			"keyIterator",
-			"()Ljava/util/Iterator;"
-		);
-	}
-	jstring DrmInfo::getMimeType()
-	{
-		return __thiz.callObjectMethod(
-			"getMimeType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint DrmInfo::getInfoType()
-	{
-		return __thiz.callMethod<jint>(
-			"getInfoType",
-			"()I"
-		);
-	}
-	jbyteArray DrmInfo::getData()
-	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()[B"
-		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::drm
 

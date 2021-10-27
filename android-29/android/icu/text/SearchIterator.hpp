@@ -26,26 +26,26 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		jint next();
-		jint last();
 		jint first();
-		QAndroidJniObject getTarget();
-		void setTarget(__jni_impl::__JniBaseClass arg0);
-		void reset();
-		jint getIndex();
-		void setIndex(jint arg0);
-		jint previous();
 		jint following(jint arg0);
-		jint preceding(jint arg0);
-		void setOverlapping(jboolean arg0);
-		void setBreakIterator(__jni_impl::android::icu::text::BreakIterator arg0);
-		jint getMatchStart();
-		jint getMatchLength();
 		QAndroidJniObject getBreakIterator();
-		jstring getMatchedText();
-		jboolean isOverlapping();
-		void setElementComparisonType(__jni_impl::android::icu::text::SearchIterator_ElementComparisonType arg0);
 		QAndroidJniObject getElementComparisonType();
+		jint getIndex();
+		jint getMatchLength();
+		jint getMatchStart();
+		jstring getMatchedText();
+		QAndroidJniObject getTarget();
+		jboolean isOverlapping();
+		jint last();
+		jint next();
+		jint preceding(jint arg0);
+		jint previous();
+		void reset();
+		void setBreakIterator(__jni_impl::android::icu::text::BreakIterator arg0);
+		void setElementComparisonType(__jni_impl::android::icu::text::SearchIterator_ElementComparisonType arg0);
+		void setIndex(jint arg0);
+		void setOverlapping(jboolean arg0);
+		void setTarget(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -72,68 +72,10 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jint SearchIterator::next()
-	{
-		return __thiz.callMethod<jint>(
-			"next",
-			"()I"
-		);
-	}
-	jint SearchIterator::last()
-	{
-		return __thiz.callMethod<jint>(
-			"last",
-			"()I"
-		);
-	}
 	jint SearchIterator::first()
 	{
 		return __thiz.callMethod<jint>(
 			"first",
-			"()I"
-		);
-	}
-	QAndroidJniObject SearchIterator::getTarget()
-	{
-		return __thiz.callObjectMethod(
-			"getTarget",
-			"()Ljava/text/CharacterIterator;"
-		);
-	}
-	void SearchIterator::setTarget(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTarget",
-			"(Ljava/text/CharacterIterator;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void SearchIterator::reset()
-	{
-		__thiz.callMethod<void>(
-			"reset",
-			"()V"
-		);
-	}
-	jint SearchIterator::getIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getIndex",
-			"()I"
-		);
-	}
-	void SearchIterator::setIndex(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setIndex",
-			"(I)V",
-			arg0
-		);
-	}
-	jint SearchIterator::previous()
-	{
-		return __thiz.callMethod<jint>(
-			"previous",
 			"()I"
 		);
 	}
@@ -145,11 +87,119 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
+	QAndroidJniObject SearchIterator::getBreakIterator()
+	{
+		return __thiz.callObjectMethod(
+			"getBreakIterator",
+			"()Landroid/icu/text/BreakIterator;"
+		);
+	}
+	QAndroidJniObject SearchIterator::getElementComparisonType()
+	{
+		return __thiz.callObjectMethod(
+			"getElementComparisonType",
+			"()Landroid/icu/text/SearchIterator$ElementComparisonType;"
+		);
+	}
+	jint SearchIterator::getIndex()
+	{
+		return __thiz.callMethod<jint>(
+			"getIndex",
+			"()I"
+		);
+	}
+	jint SearchIterator::getMatchLength()
+	{
+		return __thiz.callMethod<jint>(
+			"getMatchLength",
+			"()I"
+		);
+	}
+	jint SearchIterator::getMatchStart()
+	{
+		return __thiz.callMethod<jint>(
+			"getMatchStart",
+			"()I"
+		);
+	}
+	jstring SearchIterator::getMatchedText()
+	{
+		return __thiz.callObjectMethod(
+			"getMatchedText",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject SearchIterator::getTarget()
+	{
+		return __thiz.callObjectMethod(
+			"getTarget",
+			"()Ljava/text/CharacterIterator;"
+		);
+	}
+	jboolean SearchIterator::isOverlapping()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isOverlapping",
+			"()Z"
+		);
+	}
+	jint SearchIterator::last()
+	{
+		return __thiz.callMethod<jint>(
+			"last",
+			"()I"
+		);
+	}
+	jint SearchIterator::next()
+	{
+		return __thiz.callMethod<jint>(
+			"next",
+			"()I"
+		);
+	}
 	jint SearchIterator::preceding(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"preceding",
 			"(I)I",
+			arg0
+		);
+	}
+	jint SearchIterator::previous()
+	{
+		return __thiz.callMethod<jint>(
+			"previous",
+			"()I"
+		);
+	}
+	void SearchIterator::reset()
+	{
+		__thiz.callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
+	void SearchIterator::setBreakIterator(__jni_impl::android::icu::text::BreakIterator arg0)
+	{
+		__thiz.callMethod<void>(
+			"setBreakIterator",
+			"(Landroid/icu/text/BreakIterator;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void SearchIterator::setElementComparisonType(__jni_impl::android::icu::text::SearchIterator_ElementComparisonType arg0)
+	{
+		__thiz.callMethod<void>(
+			"setElementComparisonType",
+			"(Landroid/icu/text/SearchIterator$ElementComparisonType;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void SearchIterator::setIndex(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setIndex",
+			"(I)V",
 			arg0
 		);
 	}
@@ -161,62 +211,12 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
-	void SearchIterator::setBreakIterator(__jni_impl::android::icu::text::BreakIterator arg0)
+	void SearchIterator::setTarget(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"setBreakIterator",
-			"(Landroid/icu/text/BreakIterator;)V",
+			"setTarget",
+			"(Ljava/text/CharacterIterator;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	jint SearchIterator::getMatchStart()
-	{
-		return __thiz.callMethod<jint>(
-			"getMatchStart",
-			"()I"
-		);
-	}
-	jint SearchIterator::getMatchLength()
-	{
-		return __thiz.callMethod<jint>(
-			"getMatchLength",
-			"()I"
-		);
-	}
-	QAndroidJniObject SearchIterator::getBreakIterator()
-	{
-		return __thiz.callObjectMethod(
-			"getBreakIterator",
-			"()Landroid/icu/text/BreakIterator;"
-		);
-	}
-	jstring SearchIterator::getMatchedText()
-	{
-		return __thiz.callObjectMethod(
-			"getMatchedText",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jboolean SearchIterator::isOverlapping()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isOverlapping",
-			"()Z"
-		);
-	}
-	void SearchIterator::setElementComparisonType(__jni_impl::android::icu::text::SearchIterator_ElementComparisonType arg0)
-	{
-		__thiz.callMethod<void>(
-			"setElementComparisonType",
-			"(Landroid/icu/text/SearchIterator$ElementComparisonType;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject SearchIterator::getElementComparisonType()
-	{
-		return __thiz.callObjectMethod(
-			"getElementComparisonType",
-			"()Landroid/icu/text/SearchIterator$ElementComparisonType;"
 		);
 	}
 } // namespace __jni_impl::android::icu::text

@@ -15,9 +15,9 @@ namespace __jni_impl::java::util::prefs
 		// Fields
 		
 		// Constructors
-		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
+		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
 		void __constructor(const QString &arg0, jthrowable arg1);
 		
@@ -31,14 +31,6 @@ namespace __jni_impl::java::util::prefs
 	// Fields
 	
 	// Constructors
-	void InvalidPreferencesFormatException::__constructor(jthrowable arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.prefs.InvalidPreferencesFormatException",
-			"(Ljava/lang/Throwable;)V",
-			arg0
-		);
-	}
 	void InvalidPreferencesFormatException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -53,6 +45,14 @@ namespace __jni_impl::java::util::prefs
 			"java.util.prefs.InvalidPreferencesFormatException",
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void InvalidPreferencesFormatException::__constructor(jthrowable arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.prefs.InvalidPreferencesFormatException",
+			"(Ljava/lang/Throwable;)V",
+			arg0
 		);
 	}
 	void InvalidPreferencesFormatException::__constructor(jstring arg0, jthrowable arg1)
@@ -83,12 +83,12 @@ namespace java::util::prefs
 	{
 	public:
 		InvalidPreferencesFormatException(QAndroidJniObject obj) { __thiz = obj; }
-		InvalidPreferencesFormatException(jthrowable arg0)
+		InvalidPreferencesFormatException(jstring arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		InvalidPreferencesFormatException(jstring arg0)
+		InvalidPreferencesFormatException(jthrowable arg0)
 		{
 			__constructor(
 				arg0);

@@ -13,17 +13,17 @@ namespace __jni_impl::android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject SHORTER_FIRST();
 		static QAndroidJniObject LEXICOGRAPHIC();
 		static QAndroidJniObject LONGER_FIRST();
+		static QAndroidJniObject SHORTER_FIRST();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -31,14 +31,6 @@ namespace __jni_impl::android::icu::text
 namespace __jni_impl::android::icu::text
 {
 	// Fields
-	QAndroidJniObject UnicodeSet_ComparisonStyle::SHORTER_FIRST()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.UnicodeSet$ComparisonStyle",
-			"SHORTER_FIRST",
-			"Landroid/icu/text/UnicodeSet$ComparisonStyle;"
-		);
-	}
 	QAndroidJniObject UnicodeSet_ComparisonStyle::LEXICOGRAPHIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -55,6 +47,14 @@ namespace __jni_impl::android::icu::text
 			"Landroid/icu/text/UnicodeSet$ComparisonStyle;"
 		);
 	}
+	QAndroidJniObject UnicodeSet_ComparisonStyle::SHORTER_FIRST()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.UnicodeSet$ComparisonStyle",
+			"SHORTER_FIRST",
+			"Landroid/icu/text/UnicodeSet$ComparisonStyle;"
+		);
+	}
 	
 	// Constructors
 	void UnicodeSet_ComparisonStyle::__constructor()
@@ -65,14 +65,6 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jarray UnicodeSet_ComparisonStyle::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.UnicodeSet$ComparisonStyle",
-			"values",
-			"()[Landroid/icu/text/UnicodeSet$ComparisonStyle;"
-		).object<jarray>();
-	}
 	QAndroidJniObject UnicodeSet_ComparisonStyle::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSet$ComparisonStyle;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray UnicodeSet_ComparisonStyle::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.UnicodeSet$ComparisonStyle",
+			"values",
+			"()[Landroid/icu/text/UnicodeSet$ComparisonStyle;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::icu::text
 

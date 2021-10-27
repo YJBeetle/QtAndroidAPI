@@ -25,25 +25,25 @@ namespace __jni_impl::android::util
 		void __constructor(__jni_impl::java::io::Writer arg0);
 		
 		// Methods
+		QAndroidJniObject beginArray();
+		QAndroidJniObject beginObject();
+		void close();
+		QAndroidJniObject endArray();
+		QAndroidJniObject endObject();
+		void flush();
+		jboolean isLenient();
 		QAndroidJniObject name(jstring arg0);
 		QAndroidJniObject name(const QString &arg0);
-		QAndroidJniObject value(jboolean arg0);
-		QAndroidJniObject value(jdouble arg0);
-		QAndroidJniObject value(jlong arg0);
-		QAndroidJniObject value(jstring arg0);
-		QAndroidJniObject value(const QString &arg0);
-		QAndroidJniObject value(__jni_impl::java::lang::Number arg0);
-		void flush();
-		void close();
-		void setLenient(jboolean arg0);
-		jboolean isLenient();
+		QAndroidJniObject nullValue();
 		void setIndent(jstring arg0);
 		void setIndent(const QString &arg0);
-		QAndroidJniObject beginArray();
-		QAndroidJniObject endArray();
-		QAndroidJniObject beginObject();
-		QAndroidJniObject endObject();
-		QAndroidJniObject nullValue();
+		void setLenient(jboolean arg0);
+		QAndroidJniObject value(jboolean arg0);
+		QAndroidJniObject value(jdouble arg0);
+		QAndroidJniObject value(__jni_impl::java::lang::Number arg0);
+		QAndroidJniObject value(jstring arg0);
+		QAndroidJniObject value(const QString &arg0);
+		QAndroidJniObject value(jlong arg0);
 	};
 } // namespace __jni_impl::android::util
 
@@ -65,6 +65,55 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
+	QAndroidJniObject JsonWriter::beginArray()
+	{
+		return __thiz.callObjectMethod(
+			"beginArray",
+			"()Landroid/util/JsonWriter;"
+		);
+	}
+	QAndroidJniObject JsonWriter::beginObject()
+	{
+		return __thiz.callObjectMethod(
+			"beginObject",
+			"()Landroid/util/JsonWriter;"
+		);
+	}
+	void JsonWriter::close()
+	{
+		__thiz.callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	QAndroidJniObject JsonWriter::endArray()
+	{
+		return __thiz.callObjectMethod(
+			"endArray",
+			"()Landroid/util/JsonWriter;"
+		);
+	}
+	QAndroidJniObject JsonWriter::endObject()
+	{
+		return __thiz.callObjectMethod(
+			"endObject",
+			"()Landroid/util/JsonWriter;"
+		);
+	}
+	void JsonWriter::flush()
+	{
+		__thiz.callMethod<void>(
+			"flush",
+			"()V"
+		);
+	}
+	jboolean JsonWriter::isLenient()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLenient",
+			"()Z"
+		);
+	}
 	QAndroidJniObject JsonWriter::name(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -81,81 +130,11 @@ namespace __jni_impl::android::util
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	QAndroidJniObject JsonWriter::value(jboolean arg0)
+	QAndroidJniObject JsonWriter::nullValue()
 	{
 		return __thiz.callObjectMethod(
-			"value",
-			"(Z)Landroid/util/JsonWriter;",
-			arg0
-		);
-	}
-	QAndroidJniObject JsonWriter::value(jdouble arg0)
-	{
-		return __thiz.callObjectMethod(
-			"value",
-			"(D)Landroid/util/JsonWriter;",
-			arg0
-		);
-	}
-	QAndroidJniObject JsonWriter::value(jlong arg0)
-	{
-		return __thiz.callObjectMethod(
-			"value",
-			"(J)Landroid/util/JsonWriter;",
-			arg0
-		);
-	}
-	QAndroidJniObject JsonWriter::value(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"value",
-			"(Ljava/lang/String;)Landroid/util/JsonWriter;",
-			arg0
-		);
-	}
-	QAndroidJniObject JsonWriter::value(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"value",
-			"(Ljava/lang/String;)Landroid/util/JsonWriter;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject JsonWriter::value(__jni_impl::java::lang::Number arg0)
-	{
-		return __thiz.callObjectMethod(
-			"value",
-			"(Ljava/lang/Number;)Landroid/util/JsonWriter;",
-			arg0.__jniObject().object()
-		);
-	}
-	void JsonWriter::flush()
-	{
-		__thiz.callMethod<void>(
-			"flush",
-			"()V"
-		);
-	}
-	void JsonWriter::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
-	}
-	void JsonWriter::setLenient(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLenient",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean JsonWriter::isLenient()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isLenient",
-			"()Z"
+			"nullValue",
+			"()Landroid/util/JsonWriter;"
 		);
 	}
 	void JsonWriter::setIndent(jstring arg0)
@@ -174,39 +153,60 @@ namespace __jni_impl::android::util
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	QAndroidJniObject JsonWriter::beginArray()
+	void JsonWriter::setLenient(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
-			"beginArray",
-			"()Landroid/util/JsonWriter;"
+		__thiz.callMethod<void>(
+			"setLenient",
+			"(Z)V",
+			arg0
 		);
 	}
-	QAndroidJniObject JsonWriter::endArray()
+	QAndroidJniObject JsonWriter::value(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
-			"endArray",
-			"()Landroid/util/JsonWriter;"
+			"value",
+			"(Z)Landroid/util/JsonWriter;",
+			arg0
 		);
 	}
-	QAndroidJniObject JsonWriter::beginObject()
+	QAndroidJniObject JsonWriter::value(jdouble arg0)
 	{
 		return __thiz.callObjectMethod(
-			"beginObject",
-			"()Landroid/util/JsonWriter;"
+			"value",
+			"(D)Landroid/util/JsonWriter;",
+			arg0
 		);
 	}
-	QAndroidJniObject JsonWriter::endObject()
+	QAndroidJniObject JsonWriter::value(__jni_impl::java::lang::Number arg0)
 	{
 		return __thiz.callObjectMethod(
-			"endObject",
-			"()Landroid/util/JsonWriter;"
+			"value",
+			"(Ljava/lang/Number;)Landroid/util/JsonWriter;",
+			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject JsonWriter::nullValue()
+	QAndroidJniObject JsonWriter::value(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
-			"nullValue",
-			"()Landroid/util/JsonWriter;"
+			"value",
+			"(Ljava/lang/String;)Landroid/util/JsonWriter;",
+			arg0
+		);
+	}
+	QAndroidJniObject JsonWriter::value(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"value",
+			"(Ljava/lang/String;)Landroid/util/JsonWriter;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject JsonWriter::value(jlong arg0)
+	{
+		return __thiz.callObjectMethod(
+			"value",
+			"(J)Landroid/util/JsonWriter;",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::util

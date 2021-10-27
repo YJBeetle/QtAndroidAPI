@@ -5,10 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::graphics::drawable
-{
-	class Drawable;
-}
 namespace __jni_impl::android::graphics
 {
 	class Canvas;
@@ -17,13 +13,17 @@ namespace __jni_impl::android::graphics
 {
 	class Paint;
 }
-namespace __jni_impl::android::text
-{
-	class Layout;
-}
 namespace __jni_impl::android::graphics
 {
 	class Paint_FontMetricsInt;
+}
+namespace __jni_impl::android::graphics::drawable
+{
+	class Drawable;
+}
+namespace __jni_impl::android::text
+{
+	class Layout;
 }
 
 namespace __jni_impl::android::text::style
@@ -38,19 +38,19 @@ namespace __jni_impl::android::text::style
 		void __constructor(__jni_impl::android::graphics::drawable::Drawable arg0, jint arg1);
 		
 		// Methods
-		jint getLeadingMargin(jboolean arg0);
-		void drawLeadingMargin(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jstring arg7, jint arg8, jint arg9, jboolean arg10, __jni_impl::android::text::Layout arg11);
-		void drawLeadingMargin(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, const QString &arg7, jint arg8, jint arg9, jboolean arg10, __jni_impl::android::text::Layout arg11);
 		void chooseHeight(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Paint_FontMetricsInt arg5);
 		void chooseHeight(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Paint_FontMetricsInt arg5);
+		void drawLeadingMargin(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jstring arg7, jint arg8, jint arg9, jboolean arg10, __jni_impl::android::text::Layout arg11);
+		void drawLeadingMargin(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, const QString &arg7, jint arg8, jint arg9, jboolean arg10, __jni_impl::android::text::Layout arg11);
+		jint getLeadingMargin(jboolean arg0);
 	};
 } // namespace __jni_impl::android::text::style
 
-#include "../../graphics/drawable/Drawable.hpp"
 #include "../../graphics/Canvas.hpp"
 #include "../../graphics/Paint.hpp"
-#include "../Layout.hpp"
 #include "../../graphics/Paint_FontMetricsInt.hpp"
+#include "../../graphics/drawable/Drawable.hpp"
+#include "../Layout.hpp"
 
 namespace __jni_impl::android::text::style
 {
@@ -76,12 +76,30 @@ namespace __jni_impl::android::text::style
 	}
 	
 	// Methods
-	jint DrawableMarginSpan::getLeadingMargin(jboolean arg0)
+	void DrawableMarginSpan::chooseHeight(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Paint_FontMetricsInt arg5)
 	{
-		return __thiz.callMethod<jint>(
-			"getLeadingMargin",
-			"(Z)I",
-			arg0
+		__thiz.callMethod<void>(
+			"chooseHeight",
+			"(Ljava/lang/CharSequence;IIIILandroid/graphics/Paint$FontMetricsInt;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5.__jniObject().object()
+		);
+	}
+	void DrawableMarginSpan::chooseHeight(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Paint_FontMetricsInt arg5)
+	{
+		__thiz.callMethod<void>(
+			"chooseHeight",
+			"(Ljava/lang/CharSequence;IIIILandroid/graphics/Paint$FontMetricsInt;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5.__jniObject().object()
 		);
 	}
 	void DrawableMarginSpan::drawLeadingMargin(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jstring arg7, jint arg8, jint arg9, jboolean arg10, __jni_impl::android::text::Layout arg11)
@@ -122,30 +140,12 @@ namespace __jni_impl::android::text::style
 			arg11.__jniObject().object()
 		);
 	}
-	void DrawableMarginSpan::chooseHeight(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Paint_FontMetricsInt arg5)
+	jint DrawableMarginSpan::getLeadingMargin(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
-			"chooseHeight",
-			"(Ljava/lang/CharSequence;IIIILandroid/graphics/Paint$FontMetricsInt;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5.__jniObject().object()
-		);
-	}
-	void DrawableMarginSpan::chooseHeight(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::android::graphics::Paint_FontMetricsInt arg5)
-	{
-		__thiz.callMethod<void>(
-			"chooseHeight",
-			"(Ljava/lang/CharSequence;IIIILandroid/graphics/Paint$FontMetricsInt;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"getLeadingMargin",
+			"(Z)I",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::text::style

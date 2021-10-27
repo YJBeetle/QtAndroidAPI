@@ -8,6 +8,10 @@
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
+namespace __jni_impl::android::content
+{
+	class Intent;
+}
 namespace __jni_impl::android::net
 {
 	class Uri;
@@ -15,10 +19,6 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::telecom
 {
 	class PhoneAccountHandle;
-}
-namespace __jni_impl::android::content
-{
-	class Intent;
 }
 
 namespace __jni_impl::android::telecom
@@ -33,18 +33,18 @@ namespace __jni_impl::android::telecom
 		void __constructor();
 		
 		// Methods
-		void placeCallUnmodified();
-		void onPlaceCall(__jni_impl::android::net::Uri arg0, __jni_impl::android::telecom::PhoneAccountHandle arg1, jboolean arg2);
-		void redirectCall(__jni_impl::android::net::Uri arg0, __jni_impl::android::telecom::PhoneAccountHandle arg1, jboolean arg2);
 		void cancelCall();
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		void onPlaceCall(__jni_impl::android::net::Uri arg0, __jni_impl::android::telecom::PhoneAccountHandle arg1, jboolean arg2);
 		jboolean onUnbind(__jni_impl::android::content::Intent arg0);
+		void placeCallUnmodified();
+		void redirectCall(__jni_impl::android::net::Uri arg0, __jni_impl::android::telecom::PhoneAccountHandle arg1, jboolean arg2);
 	};
 } // namespace __jni_impl::android::telecom
 
+#include "../content/Intent.hpp"
 #include "../net/Uri.hpp"
 #include "PhoneAccountHandle.hpp"
-#include "../content/Intent.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -68,33 +68,6 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
-	void CallRedirectionService::placeCallUnmodified()
-	{
-		__thiz.callMethod<void>(
-			"placeCallUnmodified",
-			"()V"
-		);
-	}
-	void CallRedirectionService::onPlaceCall(__jni_impl::android::net::Uri arg0, __jni_impl::android::telecom::PhoneAccountHandle arg1, jboolean arg2)
-	{
-		__thiz.callMethod<void>(
-			"onPlaceCall",
-			"(Landroid/net/Uri;Landroid/telecom/PhoneAccountHandle;Z)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	void CallRedirectionService::redirectCall(__jni_impl::android::net::Uri arg0, __jni_impl::android::telecom::PhoneAccountHandle arg1, jboolean arg2)
-	{
-		__thiz.callMethod<void>(
-			"redirectCall",
-			"(Landroid/net/Uri;Landroid/telecom/PhoneAccountHandle;Z)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
 	void CallRedirectionService::cancelCall()
 	{
 		__thiz.callMethod<void>(
@@ -110,12 +83,39 @@ namespace __jni_impl::android::telecom
 			arg0.__jniObject().object()
 		);
 	}
+	void CallRedirectionService::onPlaceCall(__jni_impl::android::net::Uri arg0, __jni_impl::android::telecom::PhoneAccountHandle arg1, jboolean arg2)
+	{
+		__thiz.callMethod<void>(
+			"onPlaceCall",
+			"(Landroid/net/Uri;Landroid/telecom/PhoneAccountHandle;Z)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
 	jboolean CallRedirectionService::onUnbind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onUnbind",
 			"(Landroid/content/Intent;)Z",
 			arg0.__jniObject().object()
+		);
+	}
+	void CallRedirectionService::placeCallUnmodified()
+	{
+		__thiz.callMethod<void>(
+			"placeCallUnmodified",
+			"()V"
+		);
+	}
+	void CallRedirectionService::redirectCall(__jni_impl::android::net::Uri arg0, __jni_impl::android::telecom::PhoneAccountHandle arg1, jboolean arg2)
+	{
+		__thiz.callMethod<void>(
+			"redirectCall",
+			"(Landroid/net/Uri;Landroid/telecom/PhoneAccountHandle;Z)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
 		);
 	}
 } // namespace __jni_impl::android::telecom

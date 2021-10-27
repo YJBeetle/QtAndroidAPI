@@ -20,12 +20,12 @@ namespace __jni_impl::android::telecom
 		void __constructor();
 		
 		// Methods
-		void write(jstring arg0);
-		void write(const QString &arg0);
+		jint getRttAudioMode();
 		jstring read();
 		jstring readImmediately();
-		jint getRttAudioMode();
 		void setRttMode(jint arg0);
+		void write(jstring arg0);
+		void write(const QString &arg0);
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -64,20 +64,11 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
-	void Call_RttCall::write(jstring arg0)
+	jint Call_RttCall::getRttAudioMode()
 	{
-		__thiz.callMethod<void>(
-			"write",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void Call_RttCall::write(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"write",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+		return __thiz.callMethod<jint>(
+			"getRttAudioMode",
+			"()I"
 		);
 	}
 	jstring Call_RttCall::read()
@@ -94,19 +85,28 @@ namespace __jni_impl::android::telecom
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint Call_RttCall::getRttAudioMode()
-	{
-		return __thiz.callMethod<jint>(
-			"getRttAudioMode",
-			"()I"
-		);
-	}
 	void Call_RttCall::setRttMode(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setRttMode",
 			"(I)V",
 			arg0
+		);
+	}
+	void Call_RttCall::write(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"write",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void Call_RttCall::write(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"write",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::telecom

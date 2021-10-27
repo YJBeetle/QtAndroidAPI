@@ -20,10 +20,10 @@ namespace __jni_impl::android::view
 		void __constructor(__jni_impl::android::view::MotionEvent_PointerProperties arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
 		void clear();
 		void copyFrom(__jni_impl::android::view::MotionEvent_PointerProperties arg0);
+		jboolean equals(jobject arg0);
+		jint hashCode();
 	};
 } // namespace __jni_impl::android::view
 
@@ -62,21 +62,6 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jboolean MotionEvent_PointerProperties::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jint MotionEvent_PointerProperties::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	void MotionEvent_PointerProperties::clear()
 	{
 		__thiz.callMethod<void>(
@@ -90,6 +75,21 @@ namespace __jni_impl::android::view
 			"copyFrom",
 			"(Landroid/view/MotionEvent$PointerProperties;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	jboolean MotionEvent_PointerProperties::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jint MotionEvent_PointerProperties::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::view

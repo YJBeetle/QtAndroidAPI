@@ -13,18 +13,18 @@ namespace __jni_impl::android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject FILL();
-		static QAndroidJniObject START();
 		static QAndroidJniObject CENTER();
 		static QAndroidJniObject END();
+		static QAndroidJniObject FILL();
+		static QAndroidJniObject START();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -32,22 +32,6 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::graphics
 {
 	// Fields
-	QAndroidJniObject Matrix_ScaleToFit::FILL()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.graphics.Matrix$ScaleToFit",
-			"FILL",
-			"Landroid/graphics/Matrix$ScaleToFit;"
-		);
-	}
-	QAndroidJniObject Matrix_ScaleToFit::START()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.graphics.Matrix$ScaleToFit",
-			"START",
-			"Landroid/graphics/Matrix$ScaleToFit;"
-		);
-	}
 	QAndroidJniObject Matrix_ScaleToFit::CENTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -64,6 +48,22 @@ namespace __jni_impl::android::graphics
 			"Landroid/graphics/Matrix$ScaleToFit;"
 		);
 	}
+	QAndroidJniObject Matrix_ScaleToFit::FILL()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.graphics.Matrix$ScaleToFit",
+			"FILL",
+			"Landroid/graphics/Matrix$ScaleToFit;"
+		);
+	}
+	QAndroidJniObject Matrix_ScaleToFit::START()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.graphics.Matrix$ScaleToFit",
+			"START",
+			"Landroid/graphics/Matrix$ScaleToFit;"
+		);
+	}
 	
 	// Constructors
 	void Matrix_ScaleToFit::__constructor()
@@ -74,14 +74,6 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	jarray Matrix_ScaleToFit::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Matrix$ScaleToFit",
-			"values",
-			"()[Landroid/graphics/Matrix$ScaleToFit;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Matrix_ScaleToFit::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -99,6 +91,14 @@ namespace __jni_impl::android::graphics
 			"(Ljava/lang/String;)Landroid/graphics/Matrix$ScaleToFit;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Matrix_ScaleToFit::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Matrix$ScaleToFit",
+			"values",
+			"()[Landroid/graphics/Matrix$ScaleToFit;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::graphics
 

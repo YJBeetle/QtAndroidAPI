@@ -5,10 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view::animation
-{
-	class LayoutAnimationController_AnimationParameters;
-}
 namespace __jni_impl::android::content
 {
 	class Context;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::content::res
 {
 	class TypedArray;
+}
+namespace __jni_impl::android::view::animation
+{
+	class LayoutAnimationController_AnimationParameters;
 }
 
 namespace __jni_impl::android::view
@@ -33,17 +33,17 @@ namespace __jni_impl::android::view
 		
 		// Constructors
 		void __constructor(__jni_impl::android::view::ViewGroup_LayoutParams arg0);
-		void __constructor(jint arg0, jint arg1);
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
+		void __constructor(jint arg0, jint arg1);
 		
 		// Methods
 		void resolveLayoutDirection(jint arg0);
 	};
 } // namespace __jni_impl::android::view
 
-#include "animation/LayoutAnimationController_AnimationParameters.hpp"
 #include "../content/Context.hpp"
 #include "../content/res/TypedArray.hpp"
+#include "animation/LayoutAnimationController_AnimationParameters.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -98,15 +98,6 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
-	void ViewGroup_LayoutParams::__constructor(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.ViewGroup$LayoutParams",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
 	void ViewGroup_LayoutParams::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -114,6 +105,15 @@ namespace __jni_impl::android::view
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
+		);
+	}
+	void ViewGroup_LayoutParams::__constructor(jint arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.ViewGroup$LayoutParams",
+			"(II)V",
+			arg0,
+			arg1
 		);
 	}
 	
@@ -139,13 +139,13 @@ namespace android::view
 			__constructor(
 				arg0);
 		}
-		ViewGroup_LayoutParams(jint arg0, jint arg1)
+		ViewGroup_LayoutParams(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
 		}
-		ViewGroup_LayoutParams(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+		ViewGroup_LayoutParams(jint arg0, jint arg1)
 		{
 			__constructor(
 				arg0,

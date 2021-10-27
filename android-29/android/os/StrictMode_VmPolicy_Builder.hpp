@@ -23,26 +23,26 @@ namespace __jni_impl::android::os
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setClassInstanceLimit(jclass arg0, jint arg1);
 		QAndroidJniObject detectActivityLeaks();
-		QAndroidJniObject detectNonSdkApiUsage();
-		QAndroidJniObject permitNonSdkApiUsage();
-		QAndroidJniObject detectLeakedSqlLiteObjects();
-		QAndroidJniObject detectLeakedClosableObjects();
-		QAndroidJniObject detectLeakedRegistrationObjects();
-		QAndroidJniObject detectFileUriExposure();
+		QAndroidJniObject detectAll();
 		QAndroidJniObject detectCleartextNetwork();
 		QAndroidJniObject detectContentUriWithoutPermission();
-		QAndroidJniObject detectUntaggedSockets();
-		QAndroidJniObject detectImplicitDirectBoot();
 		QAndroidJniObject detectCredentialProtectedWhileLocked();
+		QAndroidJniObject detectFileUriExposure();
+		QAndroidJniObject detectImplicitDirectBoot();
+		QAndroidJniObject detectLeakedClosableObjects();
+		QAndroidJniObject detectLeakedRegistrationObjects();
+		QAndroidJniObject detectLeakedSqlLiteObjects();
+		QAndroidJniObject detectNonSdkApiUsage();
+		QAndroidJniObject detectUntaggedSockets();
+		QAndroidJniObject penaltyDeath();
 		QAndroidJniObject penaltyDeathOnCleartextNetwork();
 		QAndroidJniObject penaltyDeathOnFileUriExposure();
-		QAndroidJniObject detectAll();
-		QAndroidJniObject penaltyDeath();
-		QAndroidJniObject penaltyLog();
 		QAndroidJniObject penaltyDropBox();
 		QAndroidJniObject penaltyListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		QAndroidJniObject penaltyLog();
+		QAndroidJniObject permitNonSdkApiUsage();
+		QAndroidJniObject setClassInstanceLimit(jclass arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::os
 
@@ -77,15 +77,6 @@ namespace __jni_impl::android::os
 			"()Landroid/os/StrictMode$VmPolicy;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::setClassInstanceLimit(jclass arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setClassInstanceLimit",
-			"(Ljava/lang/Class;I)Landroid/os/StrictMode$VmPolicy$Builder;",
-			arg0,
-			arg1
-		);
-	}
 	QAndroidJniObject StrictMode_VmPolicy_Builder::detectActivityLeaks()
 	{
 		return __thiz.callObjectMethod(
@@ -93,45 +84,10 @@ namespace __jni_impl::android::os
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectNonSdkApiUsage()
+	QAndroidJniObject StrictMode_VmPolicy_Builder::detectAll()
 	{
 		return __thiz.callObjectMethod(
-			"detectNonSdkApiUsage",
-			"()Landroid/os/StrictMode$VmPolicy$Builder;"
-		);
-	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::permitNonSdkApiUsage()
-	{
-		return __thiz.callObjectMethod(
-			"permitNonSdkApiUsage",
-			"()Landroid/os/StrictMode$VmPolicy$Builder;"
-		);
-	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectLeakedSqlLiteObjects()
-	{
-		return __thiz.callObjectMethod(
-			"detectLeakedSqlLiteObjects",
-			"()Landroid/os/StrictMode$VmPolicy$Builder;"
-		);
-	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectLeakedClosableObjects()
-	{
-		return __thiz.callObjectMethod(
-			"detectLeakedClosableObjects",
-			"()Landroid/os/StrictMode$VmPolicy$Builder;"
-		);
-	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectLeakedRegistrationObjects()
-	{
-		return __thiz.callObjectMethod(
-			"detectLeakedRegistrationObjects",
-			"()Landroid/os/StrictMode$VmPolicy$Builder;"
-		);
-	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectFileUriExposure()
-	{
-		return __thiz.callObjectMethod(
-			"detectFileUriExposure",
+			"detectAll",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
@@ -149,10 +105,17 @@ namespace __jni_impl::android::os
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectUntaggedSockets()
+	QAndroidJniObject StrictMode_VmPolicy_Builder::detectCredentialProtectedWhileLocked()
 	{
 		return __thiz.callObjectMethod(
-			"detectUntaggedSockets",
+			"detectCredentialProtectedWhileLocked",
+			"()Landroid/os/StrictMode$VmPolicy$Builder;"
+		);
+	}
+	QAndroidJniObject StrictMode_VmPolicy_Builder::detectFileUriExposure()
+	{
+		return __thiz.callObjectMethod(
+			"detectFileUriExposure",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
@@ -163,10 +126,45 @@ namespace __jni_impl::android::os
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectCredentialProtectedWhileLocked()
+	QAndroidJniObject StrictMode_VmPolicy_Builder::detectLeakedClosableObjects()
 	{
 		return __thiz.callObjectMethod(
-			"detectCredentialProtectedWhileLocked",
+			"detectLeakedClosableObjects",
+			"()Landroid/os/StrictMode$VmPolicy$Builder;"
+		);
+	}
+	QAndroidJniObject StrictMode_VmPolicy_Builder::detectLeakedRegistrationObjects()
+	{
+		return __thiz.callObjectMethod(
+			"detectLeakedRegistrationObjects",
+			"()Landroid/os/StrictMode$VmPolicy$Builder;"
+		);
+	}
+	QAndroidJniObject StrictMode_VmPolicy_Builder::detectLeakedSqlLiteObjects()
+	{
+		return __thiz.callObjectMethod(
+			"detectLeakedSqlLiteObjects",
+			"()Landroid/os/StrictMode$VmPolicy$Builder;"
+		);
+	}
+	QAndroidJniObject StrictMode_VmPolicy_Builder::detectNonSdkApiUsage()
+	{
+		return __thiz.callObjectMethod(
+			"detectNonSdkApiUsage",
+			"()Landroid/os/StrictMode$VmPolicy$Builder;"
+		);
+	}
+	QAndroidJniObject StrictMode_VmPolicy_Builder::detectUntaggedSockets()
+	{
+		return __thiz.callObjectMethod(
+			"detectUntaggedSockets",
+			"()Landroid/os/StrictMode$VmPolicy$Builder;"
+		);
+	}
+	QAndroidJniObject StrictMode_VmPolicy_Builder::penaltyDeath()
+	{
+		return __thiz.callObjectMethod(
+			"penaltyDeath",
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
@@ -184,27 +182,6 @@ namespace __jni_impl::android::os
 			"()Landroid/os/StrictMode$VmPolicy$Builder;"
 		);
 	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::detectAll()
-	{
-		return __thiz.callObjectMethod(
-			"detectAll",
-			"()Landroid/os/StrictMode$VmPolicy$Builder;"
-		);
-	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::penaltyDeath()
-	{
-		return __thiz.callObjectMethod(
-			"penaltyDeath",
-			"()Landroid/os/StrictMode$VmPolicy$Builder;"
-		);
-	}
-	QAndroidJniObject StrictMode_VmPolicy_Builder::penaltyLog()
-	{
-		return __thiz.callObjectMethod(
-			"penaltyLog",
-			"()Landroid/os/StrictMode$VmPolicy$Builder;"
-		);
-	}
 	QAndroidJniObject StrictMode_VmPolicy_Builder::penaltyDropBox()
 	{
 		return __thiz.callObjectMethod(
@@ -219,6 +196,29 @@ namespace __jni_impl::android::os
 			"(Ljava/util/concurrent/Executor;Landroid/os/StrictMode$OnVmViolationListener;)Landroid/os/StrictMode$VmPolicy$Builder;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject StrictMode_VmPolicy_Builder::penaltyLog()
+	{
+		return __thiz.callObjectMethod(
+			"penaltyLog",
+			"()Landroid/os/StrictMode$VmPolicy$Builder;"
+		);
+	}
+	QAndroidJniObject StrictMode_VmPolicy_Builder::permitNonSdkApiUsage()
+	{
+		return __thiz.callObjectMethod(
+			"permitNonSdkApiUsage",
+			"()Landroid/os/StrictMode$VmPolicy$Builder;"
+		);
+	}
+	QAndroidJniObject StrictMode_VmPolicy_Builder::setClassInstanceLimit(jclass arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"setClassInstanceLimit",
+			"(Ljava/lang/Class;I)Landroid/os/StrictMode$VmPolicy$Builder;",
+			arg0,
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::os

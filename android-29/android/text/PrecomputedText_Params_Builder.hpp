@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::text
 {
-	class TextPaint;
+	class PrecomputedText_Params;
 }
 namespace __jni_impl::android::text
 {
-	class PrecomputedText_Params;
+	class TextPaint;
 }
 
 namespace __jni_impl::android::text
@@ -22,8 +22,8 @@ namespace __jni_impl::android::text
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::android::text::TextPaint arg0);
 		void __constructor(__jni_impl::android::text::PrecomputedText_Params arg0);
+		void __constructor(__jni_impl::android::text::TextPaint arg0);
 		
 		// Methods
 		QAndroidJniObject build();
@@ -33,27 +33,27 @@ namespace __jni_impl::android::text
 	};
 } // namespace __jni_impl::android::text
 
-#include "TextPaint.hpp"
 #include "PrecomputedText_Params.hpp"
+#include "TextPaint.hpp"
 
 namespace __jni_impl::android::text
 {
 	// Fields
 	
 	// Constructors
-	void PrecomputedText_Params_Builder::__constructor(__jni_impl::android::text::TextPaint arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.PrecomputedText$Params$Builder",
-			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void PrecomputedText_Params_Builder::__constructor(__jni_impl::android::text::PrecomputedText_Params arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.PrecomputedText$Params$Builder",
 			"(Landroid/text/PrecomputedText$Params;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void PrecomputedText_Params_Builder::__constructor(__jni_impl::android::text::TextPaint arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.PrecomputedText$Params$Builder",
+			"(Landroid/text/TextPaint;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -98,12 +98,12 @@ namespace android::text
 	{
 	public:
 		PrecomputedText_Params_Builder(QAndroidJniObject obj) { __thiz = obj; }
-		PrecomputedText_Params_Builder(__jni_impl::android::text::TextPaint arg0)
+		PrecomputedText_Params_Builder(__jni_impl::android::text::PrecomputedText_Params arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		PrecomputedText_Params_Builder(__jni_impl::android::text::PrecomputedText_Params arg0)
+		PrecomputedText_Params_Builder(__jni_impl::android::text::TextPaint arg0)
 		{
 			__constructor(
 				arg0);

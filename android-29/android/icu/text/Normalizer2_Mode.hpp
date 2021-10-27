@@ -14,17 +14,17 @@ namespace __jni_impl::android::icu::text
 	public:
 		// Fields
 		static QAndroidJniObject COMPOSE();
+		static QAndroidJniObject COMPOSE_CONTIGUOUS();
 		static QAndroidJniObject DECOMPOSE();
 		static QAndroidJniObject FCD();
-		static QAndroidJniObject COMPOSE_CONTIGUOUS();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -37,6 +37,14 @@ namespace __jni_impl::android::icu::text
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.Normalizer2$Mode",
 			"COMPOSE",
+			"Landroid/icu/text/Normalizer2$Mode;"
+		);
+	}
+	QAndroidJniObject Normalizer2_Mode::COMPOSE_CONTIGUOUS()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.Normalizer2$Mode",
+			"COMPOSE_CONTIGUOUS",
 			"Landroid/icu/text/Normalizer2$Mode;"
 		);
 	}
@@ -56,14 +64,6 @@ namespace __jni_impl::android::icu::text
 			"Landroid/icu/text/Normalizer2$Mode;"
 		);
 	}
-	QAndroidJniObject Normalizer2_Mode::COMPOSE_CONTIGUOUS()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.Normalizer2$Mode",
-			"COMPOSE_CONTIGUOUS",
-			"Landroid/icu/text/Normalizer2$Mode;"
-		);
-	}
 	
 	// Constructors
 	void Normalizer2_Mode::__constructor()
@@ -74,14 +74,6 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jarray Normalizer2_Mode::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.Normalizer2$Mode",
-			"values",
-			"()[Landroid/icu/text/Normalizer2$Mode;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Normalizer2_Mode::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -99,6 +91,14 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;)Landroid/icu/text/Normalizer2$Mode;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Normalizer2_Mode::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Normalizer2$Mode",
+			"values",
+			"()[Landroid/icu/text/Normalizer2$Mode;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::icu::text
 

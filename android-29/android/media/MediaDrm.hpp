@@ -5,9 +5,17 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util
+namespace __jni_impl::android::media
 {
-	class UUID;
+	class MediaDrm_CryptoSession;
+}
+namespace __jni_impl::android::media
+{
+	class MediaDrm_KeyRequest;
+}
+namespace __jni_impl::android::media
+{
+	class MediaDrm_ProvisionRequest;
 }
 namespace __jni_impl::android::os
 {
@@ -21,17 +29,9 @@ namespace __jni_impl::java::util
 {
 	class HashMap;
 }
-namespace __jni_impl::android::media
+namespace __jni_impl::java::util
 {
-	class MediaDrm_ProvisionRequest;
-}
-namespace __jni_impl::android::media
-{
-	class MediaDrm_CryptoSession;
-}
-namespace __jni_impl::android::media
-{
-	class MediaDrm_KeyRequest;
+	class UUID;
 }
 
 namespace __jni_impl::android::media
@@ -75,74 +75,74 @@ namespace __jni_impl::android::media
 		void __constructor(__jni_impl::java::util::UUID arg0);
 		
 		// Methods
-		void close();
-		void release();
-		jbyteArray openSession(jint arg0);
-		jbyteArray openSession();
-		void setOnEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
-		void setOnEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
-		void setOnEventListener(__jni_impl::__JniBaseClass arg0);
+		static jint getMaxSecurityLevel();
+		static jboolean isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0);
 		static jboolean isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0, jstring arg1);
 		static jboolean isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0, const QString &arg1);
 		static jboolean isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0, jstring arg1, jint arg2);
 		static jboolean isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0, const QString &arg1, jint arg2);
-		static jboolean isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0);
-		QAndroidJniObject getMetrics();
-		void setOnExpirationUpdateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
-		void setOnExpirationUpdateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
-		void clearOnExpirationUpdateListener();
-		void setOnKeyStatusChangeListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
-		void setOnKeyStatusChangeListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
-		void clearOnKeyStatusChangeListener();
-		void setOnSessionLostStateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
-		void setOnSessionLostStateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
-		void clearOnSessionLostStateListener();
 		void clearOnEventListener();
+		void clearOnExpirationUpdateListener();
+		void clearOnKeyStatusChangeListener();
+		void clearOnSessionLostStateListener();
+		void close();
 		void closeSession(jbyteArray arg0);
-		void removeKeys(jbyteArray arg0);
-		QAndroidJniObject queryKeyStatus(jbyteArray arg0);
-		QAndroidJniObject getProvisionRequest();
-		void provideProvisionResponse(jbyteArray arg0);
-		QAndroidJniObject getOfflineLicenseKeySetIds();
-		void removeOfflineLicense(jbyteArray arg0);
-		jint getOfflineLicenseState(jbyteArray arg0);
-		QAndroidJniObject getSecureStops();
-		QAndroidJniObject getSecureStopIds();
-		jbyteArray getSecureStop(jbyteArray arg0);
-		void releaseSecureStops(jbyteArray arg0);
-		void removeSecureStop(jbyteArray arg0);
-		void removeAllSecureStops();
-		void releaseAllSecureStops();
 		jint getConnectedHdcpLevel();
-		jint getMaxHdcpLevel();
-		jint getOpenSessionCount();
-		jint getMaxSessionCount();
-		static jint getMaxSecurityLevel();
-		jint getSecurityLevel(jbyteArray arg0);
-		jstring getPropertyString(jstring arg0);
-		jstring getPropertyString(const QString &arg0);
-		void setPropertyString(jstring arg0, jstring arg1);
-		void setPropertyString(const QString &arg0, const QString &arg1);
-		jbyteArray getPropertyByteArray(jstring arg0);
-		jbyteArray getPropertyByteArray(const QString &arg0);
-		void setPropertyByteArray(jstring arg0, jbyteArray arg1);
-		void setPropertyByteArray(const QString &arg0, jbyteArray arg1);
 		QAndroidJniObject getCryptoSession(jbyteArray arg0, jstring arg1, jstring arg2);
 		QAndroidJniObject getCryptoSession(jbyteArray arg0, const QString &arg1, const QString &arg2);
 		QAndroidJniObject getKeyRequest(jbyteArray arg0, jbyteArray arg1, jstring arg2, jint arg3, __jni_impl::java::util::HashMap arg4);
 		QAndroidJniObject getKeyRequest(jbyteArray arg0, jbyteArray arg1, const QString &arg2, jint arg3, __jni_impl::java::util::HashMap arg4);
+		jint getMaxHdcpLevel();
+		jint getMaxSessionCount();
+		QAndroidJniObject getMetrics();
+		QAndroidJniObject getOfflineLicenseKeySetIds();
+		jint getOfflineLicenseState(jbyteArray arg0);
+		jint getOpenSessionCount();
+		jbyteArray getPropertyByteArray(jstring arg0);
+		jbyteArray getPropertyByteArray(const QString &arg0);
+		jstring getPropertyString(jstring arg0);
+		jstring getPropertyString(const QString &arg0);
+		QAndroidJniObject getProvisionRequest();
+		jbyteArray getSecureStop(jbyteArray arg0);
+		QAndroidJniObject getSecureStopIds();
+		QAndroidJniObject getSecureStops();
+		jint getSecurityLevel(jbyteArray arg0);
+		jbyteArray openSession();
+		jbyteArray openSession(jint arg0);
 		jbyteArray provideKeyResponse(jbyteArray arg0, jbyteArray arg1);
+		void provideProvisionResponse(jbyteArray arg0);
+		QAndroidJniObject queryKeyStatus(jbyteArray arg0);
+		void release();
+		void releaseAllSecureStops();
+		void releaseSecureStops(jbyteArray arg0);
+		void removeAllSecureStops();
+		void removeKeys(jbyteArray arg0);
+		void removeOfflineLicense(jbyteArray arg0);
+		void removeSecureStop(jbyteArray arg0);
 		void restoreKeys(jbyteArray arg0, jbyteArray arg1);
+		void setOnEventListener(__jni_impl::__JniBaseClass arg0);
+		void setOnEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
+		void setOnEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		void setOnExpirationUpdateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
+		void setOnExpirationUpdateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		void setOnKeyStatusChangeListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
+		void setOnKeyStatusChangeListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		void setOnSessionLostStateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
+		void setOnSessionLostStateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		void setPropertyByteArray(jstring arg0, jbyteArray arg1);
+		void setPropertyByteArray(const QString &arg0, jbyteArray arg1);
+		void setPropertyString(jstring arg0, jstring arg1);
+		void setPropertyString(const QString &arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::media
 
-#include "../../java/util/UUID.hpp"
+#include "MediaDrm_CryptoSession.hpp"
+#include "MediaDrm_KeyRequest.hpp"
+#include "MediaDrm_ProvisionRequest.hpp"
 #include "../os/Handler.hpp"
 #include "../os/PersistableBundle.hpp"
 #include "../../java/util/HashMap.hpp"
-#include "MediaDrm_ProvisionRequest.hpp"
-#include "MediaDrm_CryptoSession.hpp"
-#include "MediaDrm_KeyRequest.hpp"
+#include "../../java/util/UUID.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -374,58 +374,20 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	void MediaDrm::close()
+	jint MediaDrm::getMaxSecurityLevel()
 	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.media.MediaDrm",
+			"getMaxSecurityLevel",
+			"()I"
 		);
 	}
-	void MediaDrm::release()
+	jboolean MediaDrm::isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0)
 	{
-		__thiz.callMethod<void>(
-			"release",
-			"()V"
-		);
-	}
-	jbyteArray MediaDrm::openSession(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"openSession",
-			"(I)[B",
-			arg0
-		).object<jbyteArray>();
-	}
-	jbyteArray MediaDrm::openSession()
-	{
-		return __thiz.callObjectMethod(
-			"openSession",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	void MediaDrm::setOnEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"setOnEventListener",
-			"(Ljava/util/concurrent/Executor;Landroid/media/MediaDrm$OnEventListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaDrm::setOnEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
-	{
-		__thiz.callMethod<void>(
-			"setOnEventListener",
-			"(Landroid/media/MediaDrm$OnEventListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaDrm::setOnEventListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnEventListener",
-			"(Landroid/media/MediaDrm$OnEventListener;)V",
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.media.MediaDrm",
+			"isCryptoSchemeSupported",
+			"(Ljava/util/UUID;)Z",
 			arg0.__jniObject().object()
 		);
 	}
@@ -471,38 +433,11 @@ namespace __jni_impl::android::media
 			arg2
 		);
 	}
-	jboolean MediaDrm::isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.media.MediaDrm",
-			"isCryptoSchemeSupported",
-			"(Ljava/util/UUID;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject MediaDrm::getMetrics()
-	{
-		return __thiz.callObjectMethod(
-			"getMetrics",
-			"()Landroid/os/PersistableBundle;"
-		);
-	}
-	void MediaDrm::setOnExpirationUpdateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
+	void MediaDrm::clearOnEventListener()
 	{
 		__thiz.callMethod<void>(
-			"setOnExpirationUpdateListener",
-			"(Landroid/media/MediaDrm$OnExpirationUpdateListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaDrm::setOnExpirationUpdateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"setOnExpirationUpdateListener",
-			"(Ljava/util/concurrent/Executor;Landroid/media/MediaDrm$OnExpirationUpdateListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			"clearOnEventListener",
+			"()V"
 		);
 	}
 	void MediaDrm::clearOnExpirationUpdateListener()
@@ -512,47 +447,11 @@ namespace __jni_impl::android::media
 			"()V"
 		);
 	}
-	void MediaDrm::setOnKeyStatusChangeListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
-	{
-		__thiz.callMethod<void>(
-			"setOnKeyStatusChangeListener",
-			"(Landroid/media/MediaDrm$OnKeyStatusChangeListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaDrm::setOnKeyStatusChangeListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"setOnKeyStatusChangeListener",
-			"(Ljava/util/concurrent/Executor;Landroid/media/MediaDrm$OnKeyStatusChangeListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
 	void MediaDrm::clearOnKeyStatusChangeListener()
 	{
 		__thiz.callMethod<void>(
 			"clearOnKeyStatusChangeListener",
 			"()V"
-		);
-	}
-	void MediaDrm::setOnSessionLostStateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"setOnSessionLostStateListener",
-			"(Ljava/util/concurrent/Executor;Landroid/media/MediaDrm$OnSessionLostStateListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaDrm::setOnSessionLostStateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
-	{
-		__thiz.callMethod<void>(
-			"setOnSessionLostStateListener",
-			"(Landroid/media/MediaDrm$OnSessionLostStateListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
 		);
 	}
 	void MediaDrm::clearOnSessionLostStateListener()
@@ -562,10 +461,10 @@ namespace __jni_impl::android::media
 			"()V"
 		);
 	}
-	void MediaDrm::clearOnEventListener()
+	void MediaDrm::close()
 	{
 		__thiz.callMethod<void>(
-			"clearOnEventListener",
+			"close",
 			"()V"
 		);
 	}
@@ -577,222 +476,11 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	void MediaDrm::removeKeys(jbyteArray arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeKeys",
-			"([B)V",
-			arg0
-		);
-	}
-	QAndroidJniObject MediaDrm::queryKeyStatus(jbyteArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"queryKeyStatus",
-			"([B)Ljava/util/HashMap;",
-			arg0
-		);
-	}
-	QAndroidJniObject MediaDrm::getProvisionRequest()
-	{
-		return __thiz.callObjectMethod(
-			"getProvisionRequest",
-			"()Landroid/media/MediaDrm$ProvisionRequest;"
-		);
-	}
-	void MediaDrm::provideProvisionResponse(jbyteArray arg0)
-	{
-		__thiz.callMethod<void>(
-			"provideProvisionResponse",
-			"([B)V",
-			arg0
-		);
-	}
-	QAndroidJniObject MediaDrm::getOfflineLicenseKeySetIds()
-	{
-		return __thiz.callObjectMethod(
-			"getOfflineLicenseKeySetIds",
-			"()Ljava/util/List;"
-		);
-	}
-	void MediaDrm::removeOfflineLicense(jbyteArray arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeOfflineLicense",
-			"([B)V",
-			arg0
-		);
-	}
-	jint MediaDrm::getOfflineLicenseState(jbyteArray arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getOfflineLicenseState",
-			"([B)I",
-			arg0
-		);
-	}
-	QAndroidJniObject MediaDrm::getSecureStops()
-	{
-		return __thiz.callObjectMethod(
-			"getSecureStops",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject MediaDrm::getSecureStopIds()
-	{
-		return __thiz.callObjectMethod(
-			"getSecureStopIds",
-			"()Ljava/util/List;"
-		);
-	}
-	jbyteArray MediaDrm::getSecureStop(jbyteArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getSecureStop",
-			"([B)[B",
-			arg0
-		).object<jbyteArray>();
-	}
-	void MediaDrm::releaseSecureStops(jbyteArray arg0)
-	{
-		__thiz.callMethod<void>(
-			"releaseSecureStops",
-			"([B)V",
-			arg0
-		);
-	}
-	void MediaDrm::removeSecureStop(jbyteArray arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeSecureStop",
-			"([B)V",
-			arg0
-		);
-	}
-	void MediaDrm::removeAllSecureStops()
-	{
-		__thiz.callMethod<void>(
-			"removeAllSecureStops",
-			"()V"
-		);
-	}
-	void MediaDrm::releaseAllSecureStops()
-	{
-		__thiz.callMethod<void>(
-			"releaseAllSecureStops",
-			"()V"
-		);
-	}
 	jint MediaDrm::getConnectedHdcpLevel()
 	{
 		return __thiz.callMethod<jint>(
 			"getConnectedHdcpLevel",
 			"()I"
-		);
-	}
-	jint MediaDrm::getMaxHdcpLevel()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxHdcpLevel",
-			"()I"
-		);
-	}
-	jint MediaDrm::getOpenSessionCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getOpenSessionCount",
-			"()I"
-		);
-	}
-	jint MediaDrm::getMaxSessionCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxSessionCount",
-			"()I"
-		);
-	}
-	jint MediaDrm::getMaxSecurityLevel()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.media.MediaDrm",
-			"getMaxSecurityLevel",
-			"()I"
-		);
-	}
-	jint MediaDrm::getSecurityLevel(jbyteArray arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getSecurityLevel",
-			"([B)I",
-			arg0
-		);
-	}
-	jstring MediaDrm::getPropertyString(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getPropertyString",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jstring MediaDrm::getPropertyString(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getPropertyString",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
-	void MediaDrm::setPropertyString(jstring arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"setPropertyString",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
-		);
-	}
-	void MediaDrm::setPropertyString(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setPropertyString",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	jbyteArray MediaDrm::getPropertyByteArray(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getPropertyByteArray",
-			"(Ljava/lang/String;)[B",
-			arg0
-		).object<jbyteArray>();
-	}
-	jbyteArray MediaDrm::getPropertyByteArray(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getPropertyByteArray",
-			"(Ljava/lang/String;)[B",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jbyteArray>();
-	}
-	void MediaDrm::setPropertyByteArray(jstring arg0, jbyteArray arg1)
-	{
-		__thiz.callMethod<void>(
-			"setPropertyByteArray",
-			"(Ljava/lang/String;[B)V",
-			arg0,
-			arg1
-		);
-	}
-	void MediaDrm::setPropertyByteArray(const QString &arg0, jbyteArray arg1)
-	{
-		__thiz.callMethod<void>(
-			"setPropertyByteArray",
-			"(Ljava/lang/String;[B)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
 		);
 	}
 	QAndroidJniObject MediaDrm::getCryptoSession(jbyteArray arg0, jstring arg1, jstring arg2)
@@ -839,6 +527,133 @@ namespace __jni_impl::android::media
 			arg4.__jniObject().object()
 		);
 	}
+	jint MediaDrm::getMaxHdcpLevel()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxHdcpLevel",
+			"()I"
+		);
+	}
+	jint MediaDrm::getMaxSessionCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxSessionCount",
+			"()I"
+		);
+	}
+	QAndroidJniObject MediaDrm::getMetrics()
+	{
+		return __thiz.callObjectMethod(
+			"getMetrics",
+			"()Landroid/os/PersistableBundle;"
+		);
+	}
+	QAndroidJniObject MediaDrm::getOfflineLicenseKeySetIds()
+	{
+		return __thiz.callObjectMethod(
+			"getOfflineLicenseKeySetIds",
+			"()Ljava/util/List;"
+		);
+	}
+	jint MediaDrm::getOfflineLicenseState(jbyteArray arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getOfflineLicenseState",
+			"([B)I",
+			arg0
+		);
+	}
+	jint MediaDrm::getOpenSessionCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getOpenSessionCount",
+			"()I"
+		);
+	}
+	jbyteArray MediaDrm::getPropertyByteArray(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getPropertyByteArray",
+			"(Ljava/lang/String;)[B",
+			arg0
+		).object<jbyteArray>();
+	}
+	jbyteArray MediaDrm::getPropertyByteArray(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getPropertyByteArray",
+			"(Ljava/lang/String;)[B",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jbyteArray>();
+	}
+	jstring MediaDrm::getPropertyString(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getPropertyString",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring MediaDrm::getPropertyString(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getPropertyString",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
+	QAndroidJniObject MediaDrm::getProvisionRequest()
+	{
+		return __thiz.callObjectMethod(
+			"getProvisionRequest",
+			"()Landroid/media/MediaDrm$ProvisionRequest;"
+		);
+	}
+	jbyteArray MediaDrm::getSecureStop(jbyteArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getSecureStop",
+			"([B)[B",
+			arg0
+		).object<jbyteArray>();
+	}
+	QAndroidJniObject MediaDrm::getSecureStopIds()
+	{
+		return __thiz.callObjectMethod(
+			"getSecureStopIds",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject MediaDrm::getSecureStops()
+	{
+		return __thiz.callObjectMethod(
+			"getSecureStops",
+			"()Ljava/util/List;"
+		);
+	}
+	jint MediaDrm::getSecurityLevel(jbyteArray arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getSecurityLevel",
+			"([B)I",
+			arg0
+		);
+	}
+	jbyteArray MediaDrm::openSession()
+	{
+		return __thiz.callObjectMethod(
+			"openSession",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jbyteArray MediaDrm::openSession(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"openSession",
+			"(I)[B",
+			arg0
+		).object<jbyteArray>();
+	}
 	jbyteArray MediaDrm::provideKeyResponse(jbyteArray arg0, jbyteArray arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -848,6 +663,75 @@ namespace __jni_impl::android::media
 			arg1
 		).object<jbyteArray>();
 	}
+	void MediaDrm::provideProvisionResponse(jbyteArray arg0)
+	{
+		__thiz.callMethod<void>(
+			"provideProvisionResponse",
+			"([B)V",
+			arg0
+		);
+	}
+	QAndroidJniObject MediaDrm::queryKeyStatus(jbyteArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"queryKeyStatus",
+			"([B)Ljava/util/HashMap;",
+			arg0
+		);
+	}
+	void MediaDrm::release()
+	{
+		__thiz.callMethod<void>(
+			"release",
+			"()V"
+		);
+	}
+	void MediaDrm::releaseAllSecureStops()
+	{
+		__thiz.callMethod<void>(
+			"releaseAllSecureStops",
+			"()V"
+		);
+	}
+	void MediaDrm::releaseSecureStops(jbyteArray arg0)
+	{
+		__thiz.callMethod<void>(
+			"releaseSecureStops",
+			"([B)V",
+			arg0
+		);
+	}
+	void MediaDrm::removeAllSecureStops()
+	{
+		__thiz.callMethod<void>(
+			"removeAllSecureStops",
+			"()V"
+		);
+	}
+	void MediaDrm::removeKeys(jbyteArray arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeKeys",
+			"([B)V",
+			arg0
+		);
+	}
+	void MediaDrm::removeOfflineLicense(jbyteArray arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeOfflineLicense",
+			"([B)V",
+			arg0
+		);
+	}
+	void MediaDrm::removeSecureStop(jbyteArray arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeSecureStop",
+			"([B)V",
+			arg0
+		);
+	}
 	void MediaDrm::restoreKeys(jbyteArray arg0, jbyteArray arg1)
 	{
 		__thiz.callMethod<void>(
@@ -855,6 +739,122 @@ namespace __jni_impl::android::media
 			"([B[B)V",
 			arg0,
 			arg1
+		);
+	}
+	void MediaDrm::setOnEventListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnEventListener",
+			"(Landroid/media/MediaDrm$OnEventListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void MediaDrm::setOnEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
+	{
+		__thiz.callMethod<void>(
+			"setOnEventListener",
+			"(Landroid/media/MediaDrm$OnEventListener;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaDrm::setOnEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"setOnEventListener",
+			"(Ljava/util/concurrent/Executor;Landroid/media/MediaDrm$OnEventListener;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaDrm::setOnExpirationUpdateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
+	{
+		__thiz.callMethod<void>(
+			"setOnExpirationUpdateListener",
+			"(Landroid/media/MediaDrm$OnExpirationUpdateListener;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaDrm::setOnExpirationUpdateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"setOnExpirationUpdateListener",
+			"(Ljava/util/concurrent/Executor;Landroid/media/MediaDrm$OnExpirationUpdateListener;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaDrm::setOnKeyStatusChangeListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
+	{
+		__thiz.callMethod<void>(
+			"setOnKeyStatusChangeListener",
+			"(Landroid/media/MediaDrm$OnKeyStatusChangeListener;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaDrm::setOnKeyStatusChangeListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"setOnKeyStatusChangeListener",
+			"(Ljava/util/concurrent/Executor;Landroid/media/MediaDrm$OnKeyStatusChangeListener;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaDrm::setOnSessionLostStateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
+	{
+		__thiz.callMethod<void>(
+			"setOnSessionLostStateListener",
+			"(Landroid/media/MediaDrm$OnSessionLostStateListener;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaDrm::setOnSessionLostStateListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"setOnSessionLostStateListener",
+			"(Ljava/util/concurrent/Executor;Landroid/media/MediaDrm$OnSessionLostStateListener;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaDrm::setPropertyByteArray(jstring arg0, jbyteArray arg1)
+	{
+		__thiz.callMethod<void>(
+			"setPropertyByteArray",
+			"(Ljava/lang/String;[B)V",
+			arg0,
+			arg1
+		);
+	}
+	void MediaDrm::setPropertyByteArray(const QString &arg0, jbyteArray arg1)
+	{
+		__thiz.callMethod<void>(
+			"setPropertyByteArray",
+			"(Ljava/lang/String;[B)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	void MediaDrm::setPropertyString(jstring arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"setPropertyString",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1
+		);
+	}
+	void MediaDrm::setPropertyString(const QString &arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"setPropertyString",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::media

@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::net
 {
 	class Uri;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::telephony::mbms
@@ -26,17 +26,17 @@ namespace __jni_impl::android::telephony::mbms
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		QAndroidJniObject getUri();
-		jstring getMimeType();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		jstring getMimeType();
+		QAndroidJniObject getUri();
+		jint hashCode();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony::mbms
 
-#include "../../os/Parcel.hpp"
 #include "../../net/Uri.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::telephony::mbms
 {
@@ -59,26 +59,19 @@ namespace __jni_impl::android::telephony::mbms
 	}
 	
 	// Methods
+	jint FileInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean FileInfo::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
-		);
-	}
-	jint FileInfo::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	QAndroidJniObject FileInfo::getUri()
-	{
-		return __thiz.callObjectMethod(
-			"getUri",
-			"()Landroid/net/Uri;"
 		);
 	}
 	jstring FileInfo::getMimeType()
@@ -88,10 +81,17 @@ namespace __jni_impl::android::telephony::mbms
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint FileInfo::describeContents()
+	QAndroidJniObject FileInfo::getUri()
+	{
+		return __thiz.callObjectMethod(
+			"getUri",
+			"()Landroid/net/Uri;"
+		);
+	}
+	jint FileInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
 		);
 	}

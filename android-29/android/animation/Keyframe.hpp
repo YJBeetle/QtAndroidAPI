@@ -17,21 +17,21 @@ namespace __jni_impl::android::animation
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject clone();
-		jobject getValue();
-		void setValue(jobject arg0);
-		jclass getType();
-		jboolean hasValue();
-		static QAndroidJniObject ofInt(jfloat arg0, jint arg1);
-		static QAndroidJniObject ofInt(jfloat arg0);
-		static QAndroidJniObject ofFloat(jfloat arg0, jfloat arg1);
 		static QAndroidJniObject ofFloat(jfloat arg0);
-		static QAndroidJniObject ofObject(jfloat arg0, jobject arg1);
+		static QAndroidJniObject ofFloat(jfloat arg0, jfloat arg1);
+		static QAndroidJniObject ofInt(jfloat arg0);
+		static QAndroidJniObject ofInt(jfloat arg0, jint arg1);
 		static QAndroidJniObject ofObject(jfloat arg0);
-		void setInterpolator(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getInterpolator();
+		static QAndroidJniObject ofObject(jfloat arg0, jobject arg1);
+		QAndroidJniObject clone();
 		jfloat getFraction();
+		QAndroidJniObject getInterpolator();
+		jclass getType();
+		jobject getValue();
+		jboolean hasValue();
 		void setFraction(jfloat arg0);
+		void setInterpolator(__jni_impl::__JniBaseClass arg0);
+		void setValue(jobject arg0);
 	};
 } // namespace __jni_impl::android::animation
 
@@ -50,57 +50,11 @@ namespace __jni_impl::android::animation
 	}
 	
 	// Methods
-	QAndroidJniObject Keyframe::clone()
-	{
-		return __thiz.callObjectMethod(
-			"clone",
-			"()Landroid/animation/Keyframe;"
-		);
-	}
-	jobject Keyframe::getValue()
-	{
-		return __thiz.callObjectMethod(
-			"getValue",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	void Keyframe::setValue(jobject arg0)
-	{
-		__thiz.callMethod<void>(
-			"setValue",
-			"(Ljava/lang/Object;)V",
-			arg0
-		);
-	}
-	jclass Keyframe::getType()
-	{
-		return __thiz.callObjectMethod(
-			"getType",
-			"()Ljava/lang/Class;"
-		).object<jclass>();
-	}
-	jboolean Keyframe::hasValue()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasValue",
-			"()Z"
-		);
-	}
-	QAndroidJniObject Keyframe::ofInt(jfloat arg0, jint arg1)
+	QAndroidJniObject Keyframe::ofFloat(jfloat arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.animation.Keyframe",
-			"ofInt",
-			"(FI)Landroid/animation/Keyframe;",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject Keyframe::ofInt(jfloat arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.Keyframe",
-			"ofInt",
+			"ofFloat",
 			"(F)Landroid/animation/Keyframe;",
 			arg0
 		);
@@ -115,11 +69,30 @@ namespace __jni_impl::android::animation
 			arg1
 		);
 	}
-	QAndroidJniObject Keyframe::ofFloat(jfloat arg0)
+	QAndroidJniObject Keyframe::ofInt(jfloat arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.animation.Keyframe",
-			"ofFloat",
+			"ofInt",
+			"(F)Landroid/animation/Keyframe;",
+			arg0
+		);
+	}
+	QAndroidJniObject Keyframe::ofInt(jfloat arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.animation.Keyframe",
+			"ofInt",
+			"(FI)Landroid/animation/Keyframe;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject Keyframe::ofObject(jfloat arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.animation.Keyframe",
+			"ofObject",
 			"(F)Landroid/animation/Keyframe;",
 			arg0
 		);
@@ -134,12 +107,53 @@ namespace __jni_impl::android::animation
 			arg1
 		);
 	}
-	QAndroidJniObject Keyframe::ofObject(jfloat arg0)
+	QAndroidJniObject Keyframe::clone()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.animation.Keyframe",
-			"ofObject",
-			"(F)Landroid/animation/Keyframe;",
+		return __thiz.callObjectMethod(
+			"clone",
+			"()Landroid/animation/Keyframe;"
+		);
+	}
+	jfloat Keyframe::getFraction()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getFraction",
+			"()F"
+		);
+	}
+	QAndroidJniObject Keyframe::getInterpolator()
+	{
+		return __thiz.callObjectMethod(
+			"getInterpolator",
+			"()Landroid/animation/TimeInterpolator;"
+		);
+	}
+	jclass Keyframe::getType()
+	{
+		return __thiz.callObjectMethod(
+			"getType",
+			"()Ljava/lang/Class;"
+		).object<jclass>();
+	}
+	jobject Keyframe::getValue()
+	{
+		return __thiz.callObjectMethod(
+			"getValue",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jboolean Keyframe::hasValue()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasValue",
+			"()Z"
+		);
+	}
+	void Keyframe::setFraction(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFraction",
+			"(F)V",
 			arg0
 		);
 	}
@@ -151,25 +165,11 @@ namespace __jni_impl::android::animation
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Keyframe::getInterpolator()
-	{
-		return __thiz.callObjectMethod(
-			"getInterpolator",
-			"()Landroid/animation/TimeInterpolator;"
-		);
-	}
-	jfloat Keyframe::getFraction()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getFraction",
-			"()F"
-		);
-	}
-	void Keyframe::setFraction(jfloat arg0)
+	void Keyframe::setValue(jobject arg0)
 	{
 		__thiz.callMethod<void>(
-			"setFraction",
-			"(F)V",
+			"setValue",
+			"(Ljava/lang/Object;)V",
 			arg0
 		);
 	}

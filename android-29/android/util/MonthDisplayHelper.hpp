@@ -14,23 +14,23 @@ namespace __jni_impl::android::util
 		// Fields
 		
 		// Constructors
-		void __constructor(jint arg0, jint arg1, jint arg2);
 		void __constructor(jint arg0, jint arg1);
+		void __constructor(jint arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jint getOffset();
-		jint getYear();
-		jint getMonth();
-		jint getWeekStartDay();
-		jint getFirstDayOfMonth();
-		jint getNumberOfDaysInMonth();
-		jintArray getDigitsForRow(jint arg0);
-		jint getDayAt(jint arg0, jint arg1);
-		jint getRowOf(jint arg0);
 		jint getColumnOf(jint arg0);
-		void previousMonth();
-		void nextMonth();
+		jint getDayAt(jint arg0, jint arg1);
+		jintArray getDigitsForRow(jint arg0);
+		jint getFirstDayOfMonth();
+		jint getMonth();
+		jint getNumberOfDaysInMonth();
+		jint getOffset();
+		jint getRowOf(jint arg0);
+		jint getWeekStartDay();
+		jint getYear();
 		jboolean isWithinCurrentMonth(jint arg0, jint arg1);
+		void nextMonth();
+		void previousMonth();
 	};
 } // namespace __jni_impl::android::util
 
@@ -40,6 +40,15 @@ namespace __jni_impl::android::util
 	// Fields
 	
 	// Constructors
+	void MonthDisplayHelper::__constructor(jint arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.util.MonthDisplayHelper",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
 	void MonthDisplayHelper::__constructor(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
@@ -50,66 +59,15 @@ namespace __jni_impl::android::util
 			arg2
 		);
 	}
-	void MonthDisplayHelper::__constructor(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.util.MonthDisplayHelper",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
 	
 	// Methods
-	jint MonthDisplayHelper::getOffset()
+	jint MonthDisplayHelper::getColumnOf(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
-			"getOffset",
-			"()I"
-		);
-	}
-	jint MonthDisplayHelper::getYear()
-	{
-		return __thiz.callMethod<jint>(
-			"getYear",
-			"()I"
-		);
-	}
-	jint MonthDisplayHelper::getMonth()
-	{
-		return __thiz.callMethod<jint>(
-			"getMonth",
-			"()I"
-		);
-	}
-	jint MonthDisplayHelper::getWeekStartDay()
-	{
-		return __thiz.callMethod<jint>(
-			"getWeekStartDay",
-			"()I"
-		);
-	}
-	jint MonthDisplayHelper::getFirstDayOfMonth()
-	{
-		return __thiz.callMethod<jint>(
-			"getFirstDayOfMonth",
-			"()I"
-		);
-	}
-	jint MonthDisplayHelper::getNumberOfDaysInMonth()
-	{
-		return __thiz.callMethod<jint>(
-			"getNumberOfDaysInMonth",
-			"()I"
-		);
-	}
-	jintArray MonthDisplayHelper::getDigitsForRow(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDigitsForRow",
-			"(I)[I",
+			"getColumnOf",
+			"(I)I",
 			arg0
-		).object<jintArray>();
+		);
 	}
 	jint MonthDisplayHelper::getDayAt(jint arg0, jint arg1)
 	{
@@ -120,6 +78,42 @@ namespace __jni_impl::android::util
 			arg1
 		);
 	}
+	jintArray MonthDisplayHelper::getDigitsForRow(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDigitsForRow",
+			"(I)[I",
+			arg0
+		).object<jintArray>();
+	}
+	jint MonthDisplayHelper::getFirstDayOfMonth()
+	{
+		return __thiz.callMethod<jint>(
+			"getFirstDayOfMonth",
+			"()I"
+		);
+	}
+	jint MonthDisplayHelper::getMonth()
+	{
+		return __thiz.callMethod<jint>(
+			"getMonth",
+			"()I"
+		);
+	}
+	jint MonthDisplayHelper::getNumberOfDaysInMonth()
+	{
+		return __thiz.callMethod<jint>(
+			"getNumberOfDaysInMonth",
+			"()I"
+		);
+	}
+	jint MonthDisplayHelper::getOffset()
+	{
+		return __thiz.callMethod<jint>(
+			"getOffset",
+			"()I"
+		);
+	}
 	jint MonthDisplayHelper::getRowOf(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -128,26 +122,18 @@ namespace __jni_impl::android::util
 			arg0
 		);
 	}
-	jint MonthDisplayHelper::getColumnOf(jint arg0)
+	jint MonthDisplayHelper::getWeekStartDay()
 	{
 		return __thiz.callMethod<jint>(
-			"getColumnOf",
-			"(I)I",
-			arg0
+			"getWeekStartDay",
+			"()I"
 		);
 	}
-	void MonthDisplayHelper::previousMonth()
+	jint MonthDisplayHelper::getYear()
 	{
-		__thiz.callMethod<void>(
-			"previousMonth",
-			"()V"
-		);
-	}
-	void MonthDisplayHelper::nextMonth()
-	{
-		__thiz.callMethod<void>(
-			"nextMonth",
-			"()V"
+		return __thiz.callMethod<jint>(
+			"getYear",
+			"()I"
 		);
 	}
 	jboolean MonthDisplayHelper::isWithinCurrentMonth(jint arg0, jint arg1)
@@ -159,6 +145,20 @@ namespace __jni_impl::android::util
 			arg1
 		);
 	}
+	void MonthDisplayHelper::nextMonth()
+	{
+		__thiz.callMethod<void>(
+			"nextMonth",
+			"()V"
+		);
+	}
+	void MonthDisplayHelper::previousMonth()
+	{
+		__thiz.callMethod<void>(
+			"previousMonth",
+			"()V"
+		);
+	}
 } // namespace __jni_impl::android::util
 
 namespace android::util
@@ -167,18 +167,18 @@ namespace android::util
 	{
 	public:
 		MonthDisplayHelper(QAndroidJniObject obj) { __thiz = obj; }
+		MonthDisplayHelper(jint arg0, jint arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
+		}
 		MonthDisplayHelper(jint arg0, jint arg1, jint arg2)
 		{
 			__constructor(
 				arg0,
 				arg1,
 				arg2);
-		}
-		MonthDisplayHelper(jint arg0, jint arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
 		}
 	};
 } // namespace android::util

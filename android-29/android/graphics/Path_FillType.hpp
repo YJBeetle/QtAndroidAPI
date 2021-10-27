@@ -13,18 +13,18 @@ namespace __jni_impl::android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject WINDING();
 		static QAndroidJniObject EVEN_ODD();
-		static QAndroidJniObject INVERSE_WINDING();
 		static QAndroidJniObject INVERSE_EVEN_ODD();
+		static QAndroidJniObject INVERSE_WINDING();
+		static QAndroidJniObject WINDING();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -32,19 +32,19 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::graphics
 {
 	// Fields
-	QAndroidJniObject Path_FillType::WINDING()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.graphics.Path$FillType",
-			"WINDING",
-			"Landroid/graphics/Path$FillType;"
-		);
-	}
 	QAndroidJniObject Path_FillType::EVEN_ODD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Path$FillType",
 			"EVEN_ODD",
+			"Landroid/graphics/Path$FillType;"
+		);
+	}
+	QAndroidJniObject Path_FillType::INVERSE_EVEN_ODD()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.graphics.Path$FillType",
+			"INVERSE_EVEN_ODD",
 			"Landroid/graphics/Path$FillType;"
 		);
 	}
@@ -56,11 +56,11 @@ namespace __jni_impl::android::graphics
 			"Landroid/graphics/Path$FillType;"
 		);
 	}
-	QAndroidJniObject Path_FillType::INVERSE_EVEN_ODD()
+	QAndroidJniObject Path_FillType::WINDING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Path$FillType",
-			"INVERSE_EVEN_ODD",
+			"WINDING",
 			"Landroid/graphics/Path$FillType;"
 		);
 	}
@@ -74,14 +74,6 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	jarray Path_FillType::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Path$FillType",
-			"values",
-			"()[Landroid/graphics/Path$FillType;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Path_FillType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -99,6 +91,14 @@ namespace __jni_impl::android::graphics
 			"(Ljava/lang/String;)Landroid/graphics/Path$FillType;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Path_FillType::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Path$FillType",
+			"values",
+			"()[Landroid/graphics/Path$FillType;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::graphics
 

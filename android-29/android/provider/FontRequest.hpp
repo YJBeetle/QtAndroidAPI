@@ -20,11 +20,11 @@ namespace __jni_impl::android::provider
 		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2, __jni_impl::__JniBaseClass arg3);
 		
 		// Methods
-		jstring toString();
 		QAndroidJniObject getCertificates();
-		jstring getQuery();
 		jstring getProviderAuthority();
 		jstring getProviderPackage();
+		jstring getQuery();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::provider
 
@@ -78,26 +78,12 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	jstring FontRequest::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject FontRequest::getCertificates()
 	{
 		return __thiz.callObjectMethod(
 			"getCertificates",
 			"()Ljava/util/List;"
 		);
-	}
-	jstring FontRequest::getQuery()
-	{
-		return __thiz.callObjectMethod(
-			"getQuery",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	jstring FontRequest::getProviderAuthority()
 	{
@@ -110,6 +96,20 @@ namespace __jni_impl::android::provider
 	{
 		return __thiz.callObjectMethod(
 			"getProviderPackage",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring FontRequest::getQuery()
+	{
+		return __thiz.callObjectMethod(
+			"getQuery",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring FontRequest::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::service::autofill
-{
-	class ImageTransformation_Builder;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::service::autofill
+{
+	class ImageTransformation_Builder;
 }
 
 namespace __jni_impl::android::service::autofill
@@ -26,14 +26,14 @@ namespace __jni_impl::android::service::autofill
 		void __constructor();
 		
 		// Methods
-		jstring toString();
 		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::service::autofill
 
-#include "ImageTransformation_Builder.hpp"
 #include "../../os/Parcel.hpp"
+#include "ImageTransformation_Builder.hpp"
 
 namespace __jni_impl::android::service::autofill
 {
@@ -56,19 +56,19 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	jstring ImageTransformation::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint ImageTransformation::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
+	}
+	jstring ImageTransformation::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void ImageTransformation::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

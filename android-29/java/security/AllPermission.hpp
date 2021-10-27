@@ -29,9 +29,9 @@ namespace __jni_impl::java::security
 		
 		// Methods
 		jboolean equals(jobject arg0);
+		jstring getActions();
 		jint hashCode();
 		jboolean implies(__jni_impl::java::security::Permission arg0);
-		jstring getActions();
 		QAndroidJniObject newPermissionCollection();
 	};
 } // namespace __jni_impl::java::security
@@ -79,6 +79,13 @@ namespace __jni_impl::java::security
 			arg0
 		);
 	}
+	jstring AllPermission::getActions()
+	{
+		return __thiz.callObjectMethod(
+			"getActions",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jint AllPermission::hashCode()
 	{
 		return __thiz.callMethod<jint>(
@@ -93,13 +100,6 @@ namespace __jni_impl::java::security
 			"(Ljava/security/Permission;)Z",
 			arg0.__jniObject().object()
 		);
-	}
-	jstring AllPermission::getActions()
-	{
-		return __thiz.callObjectMethod(
-			"getActions",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	QAndroidJniObject AllPermission::newPermissionCollection()
 	{

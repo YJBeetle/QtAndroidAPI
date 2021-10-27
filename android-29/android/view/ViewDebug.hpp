@@ -31,16 +31,16 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		static void trace(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewDebug_HierarchyTraceType arg1);
-		static void trace(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewDebug_RecyclerTraceType arg1, jintArray arg2);
-		static void stopRecyclerTracing();
-		static void startHierarchyTracing(jstring arg0, __jni_impl::android::view::View arg1);
-		static void startHierarchyTracing(const QString &arg0, __jni_impl::android::view::View arg1);
-		static void stopHierarchyTracing();
 		static void dumpCapturedView(jstring arg0, jobject arg1);
 		static void dumpCapturedView(const QString &arg0, jobject arg1);
+		static void startHierarchyTracing(jstring arg0, __jni_impl::android::view::View arg1);
+		static void startHierarchyTracing(const QString &arg0, __jni_impl::android::view::View arg1);
 		static void startRecyclerTracing(jstring arg0, __jni_impl::android::view::View arg1);
 		static void startRecyclerTracing(const QString &arg0, __jni_impl::android::view::View arg1);
+		static void stopHierarchyTracing();
+		static void stopRecyclerTracing();
+		static void trace(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewDebug_HierarchyTraceType arg1);
+		static void trace(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewDebug_RecyclerTraceType arg1, jintArray arg2);
 	};
 } // namespace __jni_impl::android::view
 
@@ -76,33 +76,24 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	void ViewDebug::trace(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewDebug_HierarchyTraceType arg1)
+	void ViewDebug::dumpCapturedView(jstring arg0, jobject arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.view.ViewDebug",
-			"trace",
-			"(Landroid/view/View;Landroid/view/ViewDebug$HierarchyTraceType;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			"dumpCapturedView",
+			"(Ljava/lang/String;Ljava/lang/Object;)V",
+			arg0,
+			arg1
 		);
 	}
-	void ViewDebug::trace(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewDebug_RecyclerTraceType arg1, jintArray arg2)
+	void ViewDebug::dumpCapturedView(const QString &arg0, jobject arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.view.ViewDebug",
-			"trace",
-			"(Landroid/view/View;Landroid/view/ViewDebug$RecyclerTraceType;[I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	void ViewDebug::stopRecyclerTracing()
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.view.ViewDebug",
-			"stopRecyclerTracing",
-			"()V"
+			"dumpCapturedView",
+			"(Ljava/lang/String;Ljava/lang/Object;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
 		);
 	}
 	void ViewDebug::startHierarchyTracing(jstring arg0, __jni_impl::android::view::View arg1)
@@ -125,34 +116,6 @@ namespace __jni_impl::android::view
 			arg1.__jniObject().object()
 		);
 	}
-	void ViewDebug::stopHierarchyTracing()
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.view.ViewDebug",
-			"stopHierarchyTracing",
-			"()V"
-		);
-	}
-	void ViewDebug::dumpCapturedView(jstring arg0, jobject arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.view.ViewDebug",
-			"dumpCapturedView",
-			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0,
-			arg1
-		);
-	}
-	void ViewDebug::dumpCapturedView(const QString &arg0, jobject arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.view.ViewDebug",
-			"dumpCapturedView",
-			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void ViewDebug::startRecyclerTracing(jstring arg0, __jni_impl::android::view::View arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -171,6 +134,43 @@ namespace __jni_impl::android::view
 			"(Ljava/lang/String;Landroid/view/View;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
+		);
+	}
+	void ViewDebug::stopHierarchyTracing()
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.view.ViewDebug",
+			"stopHierarchyTracing",
+			"()V"
+		);
+	}
+	void ViewDebug::stopRecyclerTracing()
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.view.ViewDebug",
+			"stopRecyclerTracing",
+			"()V"
+		);
+	}
+	void ViewDebug::trace(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewDebug_HierarchyTraceType arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.view.ViewDebug",
+			"trace",
+			"(Landroid/view/View;Landroid/view/ViewDebug$HierarchyTraceType;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void ViewDebug::trace(__jni_impl::android::view::View arg0, __jni_impl::android::view::ViewDebug_RecyclerTraceType arg1, jintArray arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.view.ViewDebug",
+			"trace",
+			"(Landroid/view/View;Landroid/view/ViewDebug$RecyclerTraceType;[I)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
 		);
 	}
 } // namespace __jni_impl::android::view

@@ -23,18 +23,18 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 		void __constructor(__jni_impl::android::net::wifi::hotspot2::pps::HomeSp arg0);
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		void setFriendlyName(jstring arg0);
-		void setFriendlyName(const QString &arg0);
-		void setFqdn(jstring arg0);
-		void setFqdn(const QString &arg0);
 		jstring getFqdn();
 		jstring getFriendlyName();
-		void setRoamingConsortiumOis(jlongArray arg0);
 		jlongArray getRoamingConsortiumOis();
-		jint describeContents();
+		jint hashCode();
+		void setFqdn(jstring arg0);
+		void setFqdn(const QString &arg0);
+		void setFriendlyName(jstring arg0);
+		void setFriendlyName(const QString &arg0);
+		void setRoamingConsortiumOis(jlongArray arg0);
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi::hotspot2::pps
@@ -71,6 +71,13 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 	}
 	
 	// Methods
+	jint HomeSp::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean HomeSp::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -79,34 +86,32 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 			arg0
 		);
 	}
-	jstring HomeSp::toString()
+	jstring HomeSp::getFqdn()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
+			"getFqdn",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jstring HomeSp::getFriendlyName()
+	{
+		return __thiz.callObjectMethod(
+			"getFriendlyName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jlongArray HomeSp::getRoamingConsortiumOis()
+	{
+		return __thiz.callObjectMethod(
+			"getRoamingConsortiumOis",
+			"()[J"
+		).object<jlongArray>();
 	}
 	jint HomeSp::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I"
-		);
-	}
-	void HomeSp::setFriendlyName(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFriendlyName",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void HomeSp::setFriendlyName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFriendlyName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void HomeSp::setFqdn(jstring arg0)
@@ -125,19 +130,21 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jstring HomeSp::getFqdn()
+	void HomeSp::setFriendlyName(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getFqdn",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"setFriendlyName",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
 	}
-	jstring HomeSp::getFriendlyName()
+	void HomeSp::setFriendlyName(const QString &arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getFriendlyName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"setFriendlyName",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void HomeSp::setRoamingConsortiumOis(jlongArray arg0)
 	{
@@ -147,19 +154,12 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 			arg0
 		);
 	}
-	jlongArray HomeSp::getRoamingConsortiumOis()
+	jstring HomeSp::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getRoamingConsortiumOis",
-			"()[J"
-		).object<jlongArray>();
-	}
-	jint HomeSp::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void HomeSp::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

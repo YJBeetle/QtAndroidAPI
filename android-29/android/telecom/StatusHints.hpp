@@ -31,13 +31,13 @@ namespace __jni_impl::android::telecom
 		void __constructor(const QString &arg0, __jni_impl::android::graphics::drawable::Icon arg1, __jni_impl::android::os::Bundle arg2);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		jstring getLabel();
-		QAndroidJniObject getIcon();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jboolean equals(jobject arg0);
 		QAndroidJniObject getExtras();
+		QAndroidJniObject getIcon();
+		jstring getLabel();
+		jint hashCode();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -80,6 +80,13 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
+	jint StatusHints::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean StatusHints::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -88,11 +95,18 @@ namespace __jni_impl::android::telecom
 			arg0
 		);
 	}
-	jint StatusHints::hashCode()
+	QAndroidJniObject StatusHints::getExtras()
 	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	QAndroidJniObject StatusHints::getIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
 	jstring StatusHints::getLabel()
@@ -102,17 +116,10 @@ namespace __jni_impl::android::telecom
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject StatusHints::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Icon;"
-		);
-	}
-	jint StatusHints::describeContents()
+	jint StatusHints::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
 		);
 	}
@@ -123,13 +130,6 @@ namespace __jni_impl::android::telecom
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject StatusHints::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
 		);
 	}
 } // namespace __jni_impl::android::telecom

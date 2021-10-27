@@ -24,20 +24,20 @@ namespace __jni_impl::android::webkit
 		void __constructor(const QString &arg0, const QString &arg1, jint arg2, const QString &arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::java::io::InputStream arg5);
 		
 		// Methods
+		QAndroidJniObject getData();
 		jstring getEncoding();
+		jstring getMimeType();
+		jstring getReasonPhrase();
+		QAndroidJniObject getResponseHeaders();
+		jint getStatusCode();
+		void setData(__jni_impl::java::io::InputStream arg0);
 		void setEncoding(jstring arg0);
 		void setEncoding(const QString &arg0);
 		void setMimeType(jstring arg0);
 		void setMimeType(const QString &arg0);
-		jstring getMimeType();
+		void setResponseHeaders(__jni_impl::__JniBaseClass arg0);
 		void setStatusCodeAndReasonPhrase(jint arg0, jstring arg1);
 		void setStatusCodeAndReasonPhrase(jint arg0, const QString &arg1);
-		jint getStatusCode();
-		jstring getReasonPhrase();
-		void setResponseHeaders(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getResponseHeaders();
-		QAndroidJniObject getData();
-		void setData(__jni_impl::java::io::InputStream arg0);
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -96,12 +96,55 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
+	QAndroidJniObject WebResourceResponse::getData()
+	{
+		return __thiz.callObjectMethod(
+			"getData",
+			"()Ljava/io/InputStream;"
+		);
+	}
 	jstring WebResourceResponse::getEncoding()
 	{
 		return __thiz.callObjectMethod(
 			"getEncoding",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jstring WebResourceResponse::getMimeType()
+	{
+		return __thiz.callObjectMethod(
+			"getMimeType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring WebResourceResponse::getReasonPhrase()
+	{
+		return __thiz.callObjectMethod(
+			"getReasonPhrase",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject WebResourceResponse::getResponseHeaders()
+	{
+		return __thiz.callObjectMethod(
+			"getResponseHeaders",
+			"()Ljava/util/Map;"
+		);
+	}
+	jint WebResourceResponse::getStatusCode()
+	{
+		return __thiz.callMethod<jint>(
+			"getStatusCode",
+			"()I"
+		);
+	}
+	void WebResourceResponse::setData(__jni_impl::java::io::InputStream arg0)
+	{
+		__thiz.callMethod<void>(
+			"setData",
+			"(Ljava/io/InputStream;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	void WebResourceResponse::setEncoding(jstring arg0)
 	{
@@ -135,12 +178,13 @@ namespace __jni_impl::android::webkit
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jstring WebResourceResponse::getMimeType()
+	void WebResourceResponse::setResponseHeaders(__jni_impl::__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getMimeType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"setResponseHeaders",
+			"(Ljava/util/Map;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	void WebResourceResponse::setStatusCodeAndReasonPhrase(jint arg0, jstring arg1)
 	{
@@ -158,50 +202,6 @@ namespace __jni_impl::android::webkit
 			"(ILjava/lang/String;)V",
 			arg0,
 			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	jint WebResourceResponse::getStatusCode()
-	{
-		return __thiz.callMethod<jint>(
-			"getStatusCode",
-			"()I"
-		);
-	}
-	jstring WebResourceResponse::getReasonPhrase()
-	{
-		return __thiz.callObjectMethod(
-			"getReasonPhrase",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void WebResourceResponse::setResponseHeaders(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setResponseHeaders",
-			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject WebResourceResponse::getResponseHeaders()
-	{
-		return __thiz.callObjectMethod(
-			"getResponseHeaders",
-			"()Ljava/util/Map;"
-		);
-	}
-	QAndroidJniObject WebResourceResponse::getData()
-	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()Ljava/io/InputStream;"
-		);
-	}
-	void WebResourceResponse::setData(__jni_impl::java::io::InputStream arg0)
-	{
-		__thiz.callMethod<void>(
-			"setData",
-			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::webkit

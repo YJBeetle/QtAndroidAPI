@@ -9,15 +9,15 @@
 
 namespace __jni_impl::android::graphics
 {
+	class Canvas;
+}
+namespace __jni_impl::android::graphics
+{
 	class Paint;
 }
 namespace __jni_impl::android::graphics
 {
 	class Paint_FontMetricsInt;
-}
-namespace __jni_impl::android::graphics
-{
-	class Canvas;
 }
 namespace __jni_impl::android::text
 {
@@ -35,18 +35,18 @@ namespace __jni_impl::android::text::style
 		void __constructor();
 		
 		// Methods
-		jint getSize(__jni_impl::android::graphics::Paint arg0, jstring arg1, jint arg2, jint arg3, __jni_impl::android::graphics::Paint_FontMetricsInt arg4);
-		jint getSize(__jni_impl::android::graphics::Paint arg0, const QString &arg1, jint arg2, jint arg3, __jni_impl::android::graphics::Paint_FontMetricsInt arg4);
 		void draw(__jni_impl::android::graphics::Canvas arg0, jstring arg1, jint arg2, jint arg3, jfloat arg4, jint arg5, jint arg6, jint arg7, __jni_impl::android::graphics::Paint arg8);
 		void draw(__jni_impl::android::graphics::Canvas arg0, const QString &arg1, jint arg2, jint arg3, jfloat arg4, jint arg5, jint arg6, jint arg7, __jni_impl::android::graphics::Paint arg8);
+		jint getSize(__jni_impl::android::graphics::Paint arg0, jstring arg1, jint arg2, jint arg3, __jni_impl::android::graphics::Paint_FontMetricsInt arg4);
+		jint getSize(__jni_impl::android::graphics::Paint arg0, const QString &arg1, jint arg2, jint arg3, __jni_impl::android::graphics::Paint_FontMetricsInt arg4);
 		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
 		void updateMeasureState(__jni_impl::android::text::TextPaint arg0);
 	};
 } // namespace __jni_impl::android::text::style
 
+#include "../../graphics/Canvas.hpp"
 #include "../../graphics/Paint.hpp"
 #include "../../graphics/Paint_FontMetricsInt.hpp"
-#include "../../graphics/Canvas.hpp"
 #include "../TextPaint.hpp"
 
 namespace __jni_impl::android::text::style
@@ -63,30 +63,6 @@ namespace __jni_impl::android::text::style
 	}
 	
 	// Methods
-	jint ReplacementSpan::getSize(__jni_impl::android::graphics::Paint arg0, jstring arg1, jint arg2, jint arg3, __jni_impl::android::graphics::Paint_FontMetricsInt arg4)
-	{
-		return __thiz.callMethod<jint>(
-			"getSize",
-			"(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4.__jniObject().object()
-		);
-	}
-	jint ReplacementSpan::getSize(__jni_impl::android::graphics::Paint arg0, const QString &arg1, jint arg2, jint arg3, __jni_impl::android::graphics::Paint_FontMetricsInt arg4)
-	{
-		return __thiz.callMethod<jint>(
-			"getSize",
-			"(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2,
-			arg3,
-			arg4.__jniObject().object()
-		);
-	}
 	void ReplacementSpan::draw(__jni_impl::android::graphics::Canvas arg0, jstring arg1, jint arg2, jint arg3, jfloat arg4, jint arg5, jint arg6, jint arg7, __jni_impl::android::graphics::Paint arg8)
 	{
 		__thiz.callMethod<void>(
@@ -117,6 +93,30 @@ namespace __jni_impl::android::text::style
 			arg6,
 			arg7,
 			arg8.__jniObject().object()
+		);
+	}
+	jint ReplacementSpan::getSize(__jni_impl::android::graphics::Paint arg0, jstring arg1, jint arg2, jint arg3, __jni_impl::android::graphics::Paint_FontMetricsInt arg4)
+	{
+		return __thiz.callMethod<jint>(
+			"getSize",
+			"(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3,
+			arg4.__jniObject().object()
+		);
+	}
+	jint ReplacementSpan::getSize(__jni_impl::android::graphics::Paint arg0, const QString &arg1, jint arg2, jint arg3, __jni_impl::android::graphics::Paint_FontMetricsInt arg4)
+	{
+		return __thiz.callMethod<jint>(
+			"getSize",
+			"(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2,
+			arg3,
+			arg4.__jniObject().object()
 		);
 	}
 	void ReplacementSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)

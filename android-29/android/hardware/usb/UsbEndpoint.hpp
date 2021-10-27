@@ -22,15 +22,15 @@ namespace __jni_impl::android::hardware::usb
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		jint getType();
+		jint describeContents();
 		jint getAddress();
 		jint getAttributes();
-		jint getInterval();
-		jint getEndpointNumber();
 		jint getDirection();
+		jint getEndpointNumber();
+		jint getInterval();
 		jint getMaxPacketSize();
-		jint describeContents();
+		jint getType();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::hardware::usb
@@ -58,17 +58,10 @@ namespace __jni_impl::android::hardware::usb
 	}
 	
 	// Methods
-	jstring UsbEndpoint::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint UsbEndpoint::getType()
+	jint UsbEndpoint::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getType",
+			"describeContents",
 			"()I"
 		);
 	}
@@ -86,10 +79,10 @@ namespace __jni_impl::android::hardware::usb
 			"()I"
 		);
 	}
-	jint UsbEndpoint::getInterval()
+	jint UsbEndpoint::getDirection()
 	{
 		return __thiz.callMethod<jint>(
-			"getInterval",
+			"getDirection",
 			"()I"
 		);
 	}
@@ -100,10 +93,10 @@ namespace __jni_impl::android::hardware::usb
 			"()I"
 		);
 	}
-	jint UsbEndpoint::getDirection()
+	jint UsbEndpoint::getInterval()
 	{
 		return __thiz.callMethod<jint>(
-			"getDirection",
+			"getInterval",
 			"()I"
 		);
 	}
@@ -114,12 +107,19 @@ namespace __jni_impl::android::hardware::usb
 			"()I"
 		);
 	}
-	jint UsbEndpoint::describeContents()
+	jint UsbEndpoint::getType()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getType",
 			"()I"
 		);
+	}
+	jstring UsbEndpoint::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void UsbEndpoint::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

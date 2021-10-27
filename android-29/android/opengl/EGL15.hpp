@@ -7,6 +7,10 @@
 
 namespace __jni_impl::android::opengl
 {
+	class EGLConfig;
+}
+namespace __jni_impl::android::opengl
+{
 	class EGLContext;
 }
 namespace __jni_impl::android::opengl
@@ -24,10 +28,6 @@ namespace __jni_impl::android::opengl
 namespace __jni_impl::android::opengl
 {
 	class EGLSync;
-}
-namespace __jni_impl::android::opengl
-{
-	class EGLConfig;
 }
 namespace __jni_impl::java::nio
 {
@@ -92,25 +92,25 @@ namespace __jni_impl::android::opengl
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject eglCreateSync(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1, jlongArray arg2, jint arg3);
-		static jboolean eglGetSyncAttrib(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSync arg1, jint arg2, jlongArray arg3, jint arg4);
-		static jboolean eglDestroySync(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSync arg1);
 		static jint eglClientWaitSync(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSync arg1, jint arg2, jlong arg3);
-		static QAndroidJniObject eglGetPlatformDisplay(jint arg0, jlong arg1, jlongArray arg2, jint arg3);
-		static QAndroidJniObject eglCreatePlatformWindowSurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, __jni_impl::java::nio::Buffer arg2, jlongArray arg3, jint arg4);
-		static QAndroidJniObject eglCreatePlatformPixmapSurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, __jni_impl::java::nio::Buffer arg2, jlongArray arg3, jint arg4);
-		static jboolean eglWaitSync(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSync arg1, jint arg2);
 		static QAndroidJniObject eglCreateImage(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLContext arg1, jint arg2, jlong arg3, jlongArray arg4, jint arg5);
+		static QAndroidJniObject eglCreatePlatformPixmapSurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, __jni_impl::java::nio::Buffer arg2, jlongArray arg3, jint arg4);
+		static QAndroidJniObject eglCreatePlatformWindowSurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, __jni_impl::java::nio::Buffer arg2, jlongArray arg3, jint arg4);
+		static QAndroidJniObject eglCreateSync(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1, jlongArray arg2, jint arg3);
 		static jboolean eglDestroyImage(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLImage arg1);
+		static jboolean eglDestroySync(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSync arg1);
+		static QAndroidJniObject eglGetPlatformDisplay(jint arg0, jlong arg1, jlongArray arg2, jint arg3);
+		static jboolean eglGetSyncAttrib(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSync arg1, jint arg2, jlongArray arg3, jint arg4);
+		static jboolean eglWaitSync(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSync arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::opengl
 
+#include "EGLConfig.hpp"
 #include "EGLContext.hpp"
 #include "EGLDisplay.hpp"
 #include "EGLImage.hpp"
 #include "EGLSurface.hpp"
 #include "EGLSync.hpp"
-#include "EGLConfig.hpp"
 #include "../../java/nio/Buffer.hpp"
 
 namespace __jni_impl::android::opengl
@@ -460,6 +460,58 @@ namespace __jni_impl::android::opengl
 	}
 	
 	// Methods
+	jint EGL15::eglClientWaitSync(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSync arg1, jint arg2, jlong arg3)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.opengl.EGL15",
+			"eglClientWaitSync",
+			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSync;IJ)I",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3
+		);
+	}
+	QAndroidJniObject EGL15::eglCreateImage(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLContext arg1, jint arg2, jlong arg3, jlongArray arg4, jint arg5)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.opengl.EGL15",
+			"eglCreateImage",
+			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;IJ[JI)Landroid/opengl/EGLImage;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3,
+			arg4,
+			arg5
+		);
+	}
+	QAndroidJniObject EGL15::eglCreatePlatformPixmapSurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, __jni_impl::java::nio::Buffer arg2, jlongArray arg3, jint arg4)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.opengl.EGL15",
+			"eglCreatePlatformPixmapSurface",
+			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;Ljava/nio/Buffer;[JI)Landroid/opengl/EGLSurface;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3,
+			arg4
+		);
+	}
+	QAndroidJniObject EGL15::eglCreatePlatformWindowSurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, __jni_impl::java::nio::Buffer arg2, jlongArray arg3, jint arg4)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.opengl.EGL15",
+			"eglCreatePlatformWindowSurface",
+			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;Ljava/nio/Buffer;[JI)Landroid/opengl/EGLSurface;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3,
+			arg4
+		);
+	}
 	QAndroidJniObject EGL15::eglCreateSync(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1, jlongArray arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -467,6 +519,38 @@ namespace __jni_impl::android::opengl
 			"eglCreateSync",
 			"(Landroid/opengl/EGLDisplay;I[JI)Landroid/opengl/EGLSync;",
 			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	jboolean EGL15::eglDestroyImage(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLImage arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.EGL15",
+			"eglDestroyImage",
+			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLImage;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean EGL15::eglDestroySync(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSync arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.EGL15",
+			"eglDestroySync",
+			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSync;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject EGL15::eglGetPlatformDisplay(jint arg0, jlong arg1, jlongArray arg2, jint arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.opengl.EGL15",
+			"eglGetPlatformDisplay",
+			"(IJ[JI)Landroid/opengl/EGLDisplay;",
+			arg0,
 			arg1,
 			arg2,
 			arg3
@@ -485,66 +569,6 @@ namespace __jni_impl::android::opengl
 			arg4
 		);
 	}
-	jboolean EGL15::eglDestroySync(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSync arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.EGL15",
-			"eglDestroySync",
-			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSync;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	jint EGL15::eglClientWaitSync(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSync arg1, jint arg2, jlong arg3)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.EGL15",
-			"eglClientWaitSync",
-			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSync;IJ)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3
-		);
-	}
-	QAndroidJniObject EGL15::eglGetPlatformDisplay(jint arg0, jlong arg1, jlongArray arg2, jint arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.opengl.EGL15",
-			"eglGetPlatformDisplay",
-			"(IJ[JI)Landroid/opengl/EGLDisplay;",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	QAndroidJniObject EGL15::eglCreatePlatformWindowSurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, __jni_impl::java::nio::Buffer arg2, jlongArray arg3, jint arg4)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.opengl.EGL15",
-			"eglCreatePlatformWindowSurface",
-			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;Ljava/nio/Buffer;[JI)Landroid/opengl/EGLSurface;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3,
-			arg4
-		);
-	}
-	QAndroidJniObject EGL15::eglCreatePlatformPixmapSurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, __jni_impl::java::nio::Buffer arg2, jlongArray arg3, jint arg4)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.opengl.EGL15",
-			"eglCreatePlatformPixmapSurface",
-			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;Ljava/nio/Buffer;[JI)Landroid/opengl/EGLSurface;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3,
-			arg4
-		);
-	}
 	jboolean EGL15::eglWaitSync(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSync arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -554,30 +578,6 @@ namespace __jni_impl::android::opengl
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2
-		);
-	}
-	QAndroidJniObject EGL15::eglCreateImage(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLContext arg1, jint arg2, jlong arg3, jlongArray arg4, jint arg5)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.opengl.EGL15",
-			"eglCreateImage",
-			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;IJ[JI)Landroid/opengl/EGLImage;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3,
-			arg4,
-			arg5
-		);
-	}
-	jboolean EGL15::eglDestroyImage(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLImage arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.EGL15",
-			"eglDestroyImage",
-			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLImage;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::opengl

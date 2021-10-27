@@ -7,7 +7,11 @@
 
 namespace __jni_impl::java::util
 {
-	class TimeZone;
+	class Calendar;
+}
+namespace __jni_impl::java::util
+{
+	class Date;
 }
 namespace __jni_impl::java::util
 {
@@ -15,11 +19,7 @@ namespace __jni_impl::java::util
 }
 namespace __jni_impl::java::util
 {
-	class Calendar;
-}
-namespace __jni_impl::java::util
-{
-	class Date;
+	class TimeZone;
 }
 
 namespace __jni_impl::java::util
@@ -33,28 +33,28 @@ namespace __jni_impl::java::util
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject set(jint arg0, jint arg1);
 		QAndroidJniObject build();
-		QAndroidJniObject setLocale(__jni_impl::java::util::Locale arg0);
-		QAndroidJniObject setTimeZone(__jni_impl::java::util::TimeZone arg0);
-		QAndroidJniObject setLenient(jboolean arg0);
-		QAndroidJniObject setWeekDate(jint arg0, jint arg1, jint arg2);
-		QAndroidJniObject setDate(jint arg0, jint arg1, jint arg2);
-		QAndroidJniObject setInstant(__jni_impl::java::util::Date arg0);
-		QAndroidJniObject setInstant(jlong arg0);
-		QAndroidJniObject setFields(jintArray arg0);
-		QAndroidJniObject setTimeOfDay(jint arg0, jint arg1, jint arg2);
-		QAndroidJniObject setTimeOfDay(jint arg0, jint arg1, jint arg2, jint arg3);
-		QAndroidJniObject setWeekDefinition(jint arg0, jint arg1);
+		QAndroidJniObject set(jint arg0, jint arg1);
 		QAndroidJniObject setCalendarType(jstring arg0);
 		QAndroidJniObject setCalendarType(const QString &arg0);
+		QAndroidJniObject setDate(jint arg0, jint arg1, jint arg2);
+		QAndroidJniObject setFields(jintArray arg0);
+		QAndroidJniObject setInstant(__jni_impl::java::util::Date arg0);
+		QAndroidJniObject setInstant(jlong arg0);
+		QAndroidJniObject setLenient(jboolean arg0);
+		QAndroidJniObject setLocale(__jni_impl::java::util::Locale arg0);
+		QAndroidJniObject setTimeOfDay(jint arg0, jint arg1, jint arg2);
+		QAndroidJniObject setTimeOfDay(jint arg0, jint arg1, jint arg2, jint arg3);
+		QAndroidJniObject setTimeZone(__jni_impl::java::util::TimeZone arg0);
+		QAndroidJniObject setWeekDate(jint arg0, jint arg1, jint arg2);
+		QAndroidJniObject setWeekDefinition(jint arg0, jint arg1);
 	};
 } // namespace __jni_impl::java::util
 
-#include "TimeZone.hpp"
-#include "Locale.hpp"
 #include "Calendar.hpp"
 #include "Date.hpp"
+#include "Locale.hpp"
+#include "TimeZone.hpp"
 
 namespace __jni_impl::java::util
 {
@@ -70,6 +70,13 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
+	QAndroidJniObject Calendar_Builder::build()
+	{
+		return __thiz.callObjectMethod(
+			"build",
+			"()Ljava/util/Calendar;"
+		);
+	}
 	QAndroidJniObject Calendar_Builder::set(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -79,45 +86,20 @@ namespace __jni_impl::java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Calendar_Builder::build()
+	QAndroidJniObject Calendar_Builder::setCalendarType(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
-			"build",
-			"()Ljava/util/Calendar;"
-		);
-	}
-	QAndroidJniObject Calendar_Builder::setLocale(__jni_impl::java::util::Locale arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setLocale",
-			"(Ljava/util/Locale;)Ljava/util/Calendar$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Calendar_Builder::setTimeZone(__jni_impl::java::util::TimeZone arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setTimeZone",
-			"(Ljava/util/TimeZone;)Ljava/util/Calendar$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Calendar_Builder::setLenient(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setLenient",
-			"(Z)Ljava/util/Calendar$Builder;",
+			"setCalendarType",
+			"(Ljava/lang/String;)Ljava/util/Calendar$Builder;",
 			arg0
 		);
 	}
-	QAndroidJniObject Calendar_Builder::setWeekDate(jint arg0, jint arg1, jint arg2)
+	QAndroidJniObject Calendar_Builder::setCalendarType(const QString &arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setWeekDate",
-			"(III)Ljava/util/Calendar$Builder;",
-			arg0,
-			arg1,
-			arg2
+			"setCalendarType",
+			"(Ljava/lang/String;)Ljava/util/Calendar$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Calendar_Builder::setDate(jint arg0, jint arg1, jint arg2)
@@ -128,6 +110,14 @@ namespace __jni_impl::java::util
 			arg0,
 			arg1,
 			arg2
+		);
+	}
+	QAndroidJniObject Calendar_Builder::setFields(jintArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setFields",
+			"([I)Ljava/util/Calendar$Builder;",
+			arg0
 		);
 	}
 	QAndroidJniObject Calendar_Builder::setInstant(__jni_impl::java::util::Date arg0)
@@ -146,12 +136,20 @@ namespace __jni_impl::java::util
 			arg0
 		);
 	}
-	QAndroidJniObject Calendar_Builder::setFields(jintArray arg0)
+	QAndroidJniObject Calendar_Builder::setLenient(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setFields",
-			"([I)Ljava/util/Calendar$Builder;",
+			"setLenient",
+			"(Z)Ljava/util/Calendar$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject Calendar_Builder::setLocale(__jni_impl::java::util::Locale arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setLocale",
+			"(Ljava/util/Locale;)Ljava/util/Calendar$Builder;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject Calendar_Builder::setTimeOfDay(jint arg0, jint arg1, jint arg2)
@@ -175,6 +173,24 @@ namespace __jni_impl::java::util
 			arg3
 		);
 	}
+	QAndroidJniObject Calendar_Builder::setTimeZone(__jni_impl::java::util::TimeZone arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setTimeZone",
+			"(Ljava/util/TimeZone;)Ljava/util/Calendar$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Calendar_Builder::setWeekDate(jint arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callObjectMethod(
+			"setWeekDate",
+			"(III)Ljava/util/Calendar$Builder;",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
 	QAndroidJniObject Calendar_Builder::setWeekDefinition(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -182,22 +198,6 @@ namespace __jni_impl::java::util
 			"(II)Ljava/util/Calendar$Builder;",
 			arg0,
 			arg1
-		);
-	}
-	QAndroidJniObject Calendar_Builder::setCalendarType(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setCalendarType",
-			"(Ljava/lang/String;)Ljava/util/Calendar$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject Calendar_Builder::setCalendarType(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setCalendarType",
-			"(Ljava/lang/String;)Ljava/util/Calendar$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::util

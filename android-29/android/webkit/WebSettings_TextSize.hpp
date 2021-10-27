@@ -13,19 +13,19 @@ namespace __jni_impl::android::webkit
 	{
 	public:
 		// Fields
-		static QAndroidJniObject SMALLEST();
-		static QAndroidJniObject SMALLER();
-		static QAndroidJniObject NORMAL();
 		static QAndroidJniObject LARGER();
 		static QAndroidJniObject LARGEST();
+		static QAndroidJniObject NORMAL();
+		static QAndroidJniObject SMALLER();
+		static QAndroidJniObject SMALLEST();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -33,30 +33,6 @@ namespace __jni_impl::android::webkit
 namespace __jni_impl::android::webkit
 {
 	// Fields
-	QAndroidJniObject WebSettings_TextSize::SMALLEST()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.webkit.WebSettings$TextSize",
-			"SMALLEST",
-			"Landroid/webkit/WebSettings$TextSize;"
-		);
-	}
-	QAndroidJniObject WebSettings_TextSize::SMALLER()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.webkit.WebSettings$TextSize",
-			"SMALLER",
-			"Landroid/webkit/WebSettings$TextSize;"
-		);
-	}
-	QAndroidJniObject WebSettings_TextSize::NORMAL()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.webkit.WebSettings$TextSize",
-			"NORMAL",
-			"Landroid/webkit/WebSettings$TextSize;"
-		);
-	}
 	QAndroidJniObject WebSettings_TextSize::LARGER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -73,6 +49,30 @@ namespace __jni_impl::android::webkit
 			"Landroid/webkit/WebSettings$TextSize;"
 		);
 	}
+	QAndroidJniObject WebSettings_TextSize::NORMAL()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.webkit.WebSettings$TextSize",
+			"NORMAL",
+			"Landroid/webkit/WebSettings$TextSize;"
+		);
+	}
+	QAndroidJniObject WebSettings_TextSize::SMALLER()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.webkit.WebSettings$TextSize",
+			"SMALLER",
+			"Landroid/webkit/WebSettings$TextSize;"
+		);
+	}
+	QAndroidJniObject WebSettings_TextSize::SMALLEST()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.webkit.WebSettings$TextSize",
+			"SMALLEST",
+			"Landroid/webkit/WebSettings$TextSize;"
+		);
+	}
 	
 	// Constructors
 	void WebSettings_TextSize::__constructor()
@@ -83,14 +83,6 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	jarray WebSettings_TextSize::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.webkit.WebSettings$TextSize",
-			"values",
-			"()[Landroid/webkit/WebSettings$TextSize;"
-		).object<jarray>();
-	}
 	QAndroidJniObject WebSettings_TextSize::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -108,6 +100,14 @@ namespace __jni_impl::android::webkit
 			"(Ljava/lang/String;)Landroid/webkit/WebSettings$TextSize;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray WebSettings_TextSize::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.webkit.WebSettings$TextSize",
+			"values",
+			"()[Landroid/webkit/WebSettings$TextSize;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::webkit
 

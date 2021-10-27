@@ -22,11 +22,11 @@ namespace __jni_impl::java::io
 		void __constructor(__jni_impl::java::io::OutputStream arg0);
 		
 		// Methods
-		void write(jbyteArray arg0, jint arg1, jint arg2);
+		void close();
+		void flush();
 		void write(jbyteArray arg0);
 		void write(jint arg0);
-		void flush();
-		void close();
+		void write(jbyteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::java::io
 
@@ -47,14 +47,18 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	void FilterOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
+	void FilterOutputStream::close()
 	{
 		__thiz.callMethod<void>(
-			"write",
-			"([BII)V",
-			arg0,
-			arg1,
-			arg2
+			"close",
+			"()V"
+		);
+	}
+	void FilterOutputStream::flush()
+	{
+		__thiz.callMethod<void>(
+			"flush",
+			"()V"
 		);
 	}
 	void FilterOutputStream::write(jbyteArray arg0)
@@ -73,18 +77,14 @@ namespace __jni_impl::java::io
 			arg0
 		);
 	}
-	void FilterOutputStream::flush()
+	void FilterOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
-			"flush",
-			"()V"
-		);
-	}
-	void FilterOutputStream::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
+			"write",
+			"([BII)V",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 } // namespace __jni_impl::java::io

@@ -16,6 +16,10 @@ namespace __jni_impl::java::security::spec
 		static QAndroidJniObject SHA224();
 		static QAndroidJniObject SHA256();
 		static QAndroidJniObject SHA384();
+		static QAndroidJniObject SHA3_224();
+		static QAndroidJniObject SHA3_256();
+		static QAndroidJniObject SHA3_384();
+		static QAndroidJniObject SHA3_512();
 		static QAndroidJniObject SHA512();
 		static QAndroidJniObject SHA512_224();
 		static QAndroidJniObject SHA512_256();
@@ -26,6 +30,7 @@ namespace __jni_impl::java::security::spec
 		
 		// Methods
 		jstring getDigestAlgorithm();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security::spec
 
@@ -62,6 +67,38 @@ namespace __jni_impl::java::security::spec
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.MGF1ParameterSpec",
 			"SHA384",
+			"Ljava/security/spec/MGF1ParameterSpec;"
+		);
+	}
+	QAndroidJniObject MGF1ParameterSpec::SHA3_224()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.security.spec.MGF1ParameterSpec",
+			"SHA3_224",
+			"Ljava/security/spec/MGF1ParameterSpec;"
+		);
+	}
+	QAndroidJniObject MGF1ParameterSpec::SHA3_256()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.security.spec.MGF1ParameterSpec",
+			"SHA3_256",
+			"Ljava/security/spec/MGF1ParameterSpec;"
+		);
+	}
+	QAndroidJniObject MGF1ParameterSpec::SHA3_384()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.security.spec.MGF1ParameterSpec",
+			"SHA3_384",
+			"Ljava/security/spec/MGF1ParameterSpec;"
+		);
+	}
+	QAndroidJniObject MGF1ParameterSpec::SHA3_512()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.security.spec.MGF1ParameterSpec",
+			"SHA3_512",
 			"Ljava/security/spec/MGF1ParameterSpec;"
 		);
 	}
@@ -113,6 +150,13 @@ namespace __jni_impl::java::security::spec
 	{
 		return __thiz.callObjectMethod(
 			"getDigestAlgorithm",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring MGF1ParameterSpec::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

@@ -19,17 +19,17 @@ namespace __jni_impl::javax::xml::transform
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::java::lang::Exception arg0, jstring arg1);
-		void __constructor(__jni_impl::java::lang::Exception arg0, const QString &arg1);
+		void __constructor();
 		void __constructor(__jni_impl::java::lang::Exception arg0);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor();
+		void __constructor(__jni_impl::java::lang::Exception arg0, jstring arg1);
+		void __constructor(__jni_impl::java::lang::Exception arg0, const QString &arg1);
 		
 		// Methods
 		jthrowable getCause();
-		jstring getMessage();
 		QAndroidJniObject getException();
+		jstring getMessage();
 	};
 } // namespace __jni_impl::javax::xml::transform
 
@@ -40,22 +40,11 @@ namespace __jni_impl::javax::xml::transform
 	// Fields
 	
 	// Constructors
-	void TransformerFactoryConfigurationError::__constructor(__jni_impl::java::lang::Exception arg0, jstring arg1)
+	void TransformerFactoryConfigurationError::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.TransformerFactoryConfigurationError",
-			"(Ljava/lang/Exception;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void TransformerFactoryConfigurationError::__constructor(__jni_impl::java::lang::Exception arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.transform.TransformerFactoryConfigurationError",
-			"(Ljava/lang/Exception;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
+			"()V"
 		);
 	}
 	void TransformerFactoryConfigurationError::__constructor(__jni_impl::java::lang::Exception arg0)
@@ -82,11 +71,22 @@ namespace __jni_impl::javax::xml::transform
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void TransformerFactoryConfigurationError::__constructor()
+	void TransformerFactoryConfigurationError::__constructor(__jni_impl::java::lang::Exception arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.transform.TransformerFactoryConfigurationError",
-			"()V"
+			"(Ljava/lang/Exception;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void TransformerFactoryConfigurationError::__constructor(__jni_impl::java::lang::Exception arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.xml.transform.TransformerFactoryConfigurationError",
+			"(Ljava/lang/Exception;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	
@@ -98,19 +98,19 @@ namespace __jni_impl::javax::xml::transform
 			"()Ljava/lang/Throwable;"
 		).object<jthrowable>();
 	}
-	jstring TransformerFactoryConfigurationError::getMessage()
-	{
-		return __thiz.callObjectMethod(
-			"getMessage",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject TransformerFactoryConfigurationError::getException()
 	{
 		return __thiz.callObjectMethod(
 			"getException",
 			"()Ljava/lang/Exception;"
 		);
+	}
+	jstring TransformerFactoryConfigurationError::getMessage()
+	{
+		return __thiz.callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::xml::transform
 
@@ -120,11 +120,9 @@ namespace javax::xml::transform
 	{
 	public:
 		TransformerFactoryConfigurationError(QAndroidJniObject obj) { __thiz = obj; }
-		TransformerFactoryConfigurationError(__jni_impl::java::lang::Exception arg0, jstring arg1)
+		TransformerFactoryConfigurationError()
 		{
-			__constructor(
-				arg0,
-				arg1);
+			__constructor();
 		}
 		TransformerFactoryConfigurationError(__jni_impl::java::lang::Exception arg0)
 		{
@@ -136,9 +134,11 @@ namespace javax::xml::transform
 			__constructor(
 				arg0);
 		}
-		TransformerFactoryConfigurationError()
+		TransformerFactoryConfigurationError(__jni_impl::java::lang::Exception arg0, jstring arg1)
 		{
-			__constructor();
+			__constructor(
+				arg0,
+				arg1);
 		}
 	};
 } // namespace javax::xml::transform

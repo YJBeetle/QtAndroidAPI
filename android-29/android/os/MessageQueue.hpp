@@ -21,11 +21,11 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		void removeOnFileDescriptorEventListener(__jni_impl::java::io::FileDescriptor arg0);
+		void addIdleHandler(__jni_impl::__JniBaseClass arg0);
 		void addOnFileDescriptorEventListener(__jni_impl::java::io::FileDescriptor arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
 		jboolean isIdle();
-		void addIdleHandler(__jni_impl::__JniBaseClass arg0);
 		void removeIdleHandler(__jni_impl::__JniBaseClass arg0);
+		void removeOnFileDescriptorEventListener(__jni_impl::java::io::FileDescriptor arg0);
 	};
 } // namespace __jni_impl::android::os
 
@@ -44,11 +44,11 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	void MessageQueue::removeOnFileDescriptorEventListener(__jni_impl::java::io::FileDescriptor arg0)
+	void MessageQueue::addIdleHandler(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"removeOnFileDescriptorEventListener",
-			"(Ljava/io/FileDescriptor;)V",
+			"addIdleHandler",
+			"(Landroid/os/MessageQueue$IdleHandler;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -69,19 +69,19 @@ namespace __jni_impl::android::os
 			"()Z"
 		);
 	}
-	void MessageQueue::addIdleHandler(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"addIdleHandler",
-			"(Landroid/os/MessageQueue$IdleHandler;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void MessageQueue::removeIdleHandler(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"removeIdleHandler",
 			"(Landroid/os/MessageQueue$IdleHandler;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void MessageQueue::removeOnFileDescriptorEventListener(__jni_impl::java::io::FileDescriptor arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeOnFileDescriptorEventListener",
+			"(Ljava/io/FileDescriptor;)V",
 			arg0.__jniObject().object()
 		);
 	}

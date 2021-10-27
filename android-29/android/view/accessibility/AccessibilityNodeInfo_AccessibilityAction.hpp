@@ -56,10 +56,10 @@ namespace __jni_impl::android::view::accessibility
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jint getId();
 		jstring getLabel();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::view::accessibility
 
@@ -393,20 +393,6 @@ namespace __jni_impl::android::view::accessibility
 			arg0
 		);
 	}
-	jstring AccessibilityNodeInfo_AccessibilityAction::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint AccessibilityNodeInfo_AccessibilityAction::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	jint AccessibilityNodeInfo_AccessibilityAction::getId()
 	{
 		return __thiz.callMethod<jint>(
@@ -419,6 +405,20 @@ namespace __jni_impl::android::view::accessibility
 		return __thiz.callObjectMethod(
 			"getLabel",
 			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jint AccessibilityNodeInfo_AccessibilityAction::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring AccessibilityNodeInfo_AccessibilityAction::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 } // namespace __jni_impl::android::view::accessibility

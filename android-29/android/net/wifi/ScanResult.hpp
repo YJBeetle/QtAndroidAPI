@@ -37,10 +37,10 @@ namespace __jni_impl::android::net::wifi
 		void __constructor();
 		
 		// Methods
-		jstring toString();
+		jint describeContents();
 		jboolean is80211mcResponder();
 		jboolean isPasspointNetwork();
-		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi
@@ -166,12 +166,12 @@ namespace __jni_impl::android::net::wifi
 	}
 	
 	// Methods
-	jstring ScanResult::toString()
+	jint ScanResult::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
 	jboolean ScanResult::is80211mcResponder()
 	{
@@ -187,12 +187,12 @@ namespace __jni_impl::android::net::wifi
 			"()Z"
 		);
 	}
-	jint ScanResult::describeContents()
+	jstring ScanResult::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void ScanResult::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

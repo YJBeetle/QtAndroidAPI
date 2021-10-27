@@ -29,10 +29,10 @@ namespace __jni_impl::java::lang::invoke
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject type();
 		QAndroidJniObject dynamicInvoker();
 		QAndroidJniObject getTarget();
 		void setTarget(__jni_impl::java::lang::invoke::MethodHandle arg0);
+		QAndroidJniObject type();
 	};
 } // namespace __jni_impl::java::lang::invoke
 
@@ -53,13 +53,6 @@ namespace __jni_impl::java::lang::invoke
 	}
 	
 	// Methods
-	QAndroidJniObject CallSite::type()
-	{
-		return __thiz.callObjectMethod(
-			"type",
-			"()Ljava/lang/invoke/MethodType;"
-		);
-	}
 	QAndroidJniObject CallSite::dynamicInvoker()
 	{
 		return __thiz.callObjectMethod(
@@ -80,6 +73,13 @@ namespace __jni_impl::java::lang::invoke
 			"setTarget",
 			"(Ljava/lang/invoke/MethodHandle;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject CallSite::type()
+	{
+		return __thiz.callObjectMethod(
+			"type",
+			"()Ljava/lang/invoke/MethodType;"
 		);
 	}
 } // namespace __jni_impl::java::lang::invoke

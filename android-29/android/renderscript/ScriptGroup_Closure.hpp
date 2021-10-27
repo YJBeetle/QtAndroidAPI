@@ -12,11 +12,11 @@ namespace __jni_impl::android::renderscript
 }
 namespace __jni_impl::android::renderscript
 {
-	class ScriptGroup_Future;
+	class Script_FieldID;
 }
 namespace __jni_impl::android::renderscript
 {
-	class Script_FieldID;
+	class ScriptGroup_Future;
 }
 
 namespace __jni_impl::android::renderscript
@@ -37,8 +37,8 @@ namespace __jni_impl::android::renderscript
 } // namespace __jni_impl::android::renderscript
 
 #include "RenderScript.hpp"
-#include "ScriptGroup_Future.hpp"
 #include "Script_FieldID.hpp"
+#include "ScriptGroup_Future.hpp"
 
 namespace __jni_impl::android::renderscript
 {

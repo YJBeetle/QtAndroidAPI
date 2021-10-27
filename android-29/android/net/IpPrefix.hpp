@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::net
-{
-	class InetAddress;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::java::net
+{
+	class InetAddress;
 }
 
 namespace __jni_impl::android::net
@@ -26,20 +26,20 @@ namespace __jni_impl::android::net
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jboolean contains(__jni_impl::java::net::InetAddress arg0);
+		jint describeContents();
+		jboolean equals(jobject arg0);
 		QAndroidJniObject getAddress();
 		jint getPrefixLength();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jbyteArray getRawAddress();
+		jint hashCode();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net
 
-#include "../../java/net/InetAddress.hpp"
 #include "../os/Parcel.hpp"
+#include "../../java/net/InetAddress.hpp"
 
 namespace __jni_impl::android::net
 {
@@ -62,34 +62,27 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	jboolean IpPrefix::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring IpPrefix::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint IpPrefix::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	jboolean IpPrefix::contains(__jni_impl::java::net::InetAddress arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"contains",
 			"(Ljava/net/InetAddress;)Z",
 			arg0.__jniObject().object()
+		);
+	}
+	jint IpPrefix::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	jboolean IpPrefix::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 	QAndroidJniObject IpPrefix::getAddress()
@@ -106,12 +99,26 @@ namespace __jni_impl::android::net
 			"()I"
 		);
 	}
-	jint IpPrefix::describeContents()
+	jbyteArray IpPrefix::getRawAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getRawAddress",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jint IpPrefix::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
 		);
+	}
+	jstring IpPrefix::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void IpPrefix::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -121,13 +128,6 @@ namespace __jni_impl::android::net
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jbyteArray IpPrefix::getRawAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getRawAddress",
-			"()[B"
-		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::net
 

@@ -24,14 +24,14 @@ namespace __jni_impl::android::content::res
 		void __constructor(__jni_impl::android::content::res::AssetFileDescriptor arg0);
 		
 		// Methods
+		jint available();
+		void mark(jint arg0);
+		jboolean markSupported();
+		jint read();
 		jint read(jbyteArray arg0);
 		jint read(jbyteArray arg0, jint arg1, jint arg2);
-		jint read();
-		void mark(jint arg0);
-		jlong skip(jlong arg0);
-		jint available();
-		jboolean markSupported();
 		void reset();
+		jlong skip(jlong arg0);
 	};
 } // namespace __jni_impl::android::content::res
 
@@ -52,6 +52,35 @@ namespace __jni_impl::android::content::res
 	}
 	
 	// Methods
+	jint AssetFileDescriptor_AutoCloseInputStream::available()
+	{
+		return __thiz.callMethod<jint>(
+			"available",
+			"()I"
+		);
+	}
+	void AssetFileDescriptor_AutoCloseInputStream::mark(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"mark",
+			"(I)V",
+			arg0
+		);
+	}
+	jboolean AssetFileDescriptor_AutoCloseInputStream::markSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"markSupported",
+			"()Z"
+		);
+	}
+	jint AssetFileDescriptor_AutoCloseInputStream::read()
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
 	jint AssetFileDescriptor_AutoCloseInputStream::read(jbyteArray arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -70,19 +99,11 @@ namespace __jni_impl::android::content::res
 			arg2
 		);
 	}
-	jint AssetFileDescriptor_AutoCloseInputStream::read()
-	{
-		return __thiz.callMethod<jint>(
-			"read",
-			"()I"
-		);
-	}
-	void AssetFileDescriptor_AutoCloseInputStream::mark(jint arg0)
+	void AssetFileDescriptor_AutoCloseInputStream::reset()
 	{
 		__thiz.callMethod<void>(
-			"mark",
-			"(I)V",
-			arg0
+			"reset",
+			"()V"
 		);
 	}
 	jlong AssetFileDescriptor_AutoCloseInputStream::skip(jlong arg0)
@@ -91,27 +112,6 @@ namespace __jni_impl::android::content::res
 			"skip",
 			"(J)J",
 			arg0
-		);
-	}
-	jint AssetFileDescriptor_AutoCloseInputStream::available()
-	{
-		return __thiz.callMethod<jint>(
-			"available",
-			"()I"
-		);
-	}
-	jboolean AssetFileDescriptor_AutoCloseInputStream::markSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"markSupported",
-			"()Z"
-		);
-	}
-	void AssetFileDescriptor_AutoCloseInputStream::reset()
-	{
-		__thiz.callMethod<void>(
-			"reset",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::android::content::res

@@ -17,9 +17,9 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
+		jobject getData();
 		jstring getName();
 		jstring toString();
-		jobject getData();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -37,6 +37,13 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
+	jobject AlphabeticIndex_Record::getData()
+	{
+		return __thiz.callObjectMethod(
+			"getData",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
 	jstring AlphabeticIndex_Record::getName()
 	{
 		return __thiz.callObjectMethod(
@@ -50,13 +57,6 @@ namespace __jni_impl::android::icu::text
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jobject AlphabeticIndex_Record::getData()
-	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
 	}
 } // namespace __jni_impl::android::icu::text
 

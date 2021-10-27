@@ -22,16 +22,16 @@ namespace __jni_impl::java::util
 		void __constructor(const QString &arg0, jdouble arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		static QAndroidJniObject parse(jstring arg0, __jni_impl::__JniBaseClass arg1);
-		static QAndroidJniObject parse(const QString &arg0, __jni_impl::__JniBaseClass arg1);
+		static QAndroidJniObject mapEquivalents(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		static QAndroidJniObject parse(jstring arg0);
 		static QAndroidJniObject parse(const QString &arg0);
-		jdouble getWeight();
-		static QAndroidJniObject mapEquivalents(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		static QAndroidJniObject parse(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		static QAndroidJniObject parse(const QString &arg0, __jni_impl::__JniBaseClass arg1);
+		jboolean equals(jobject arg0);
 		jstring getRange();
+		jdouble getWeight();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::util
 
@@ -91,26 +91,32 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	jboolean Locale_LanguageRange::equals(jobject arg0)
+	QAndroidJniObject Locale_LanguageRange::mapEquivalents(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.Locale$LanguageRange",
+			"mapEquivalents",
+			"(Ljava/util/List;Ljava/util/Map;)Ljava/util/List;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Locale_LanguageRange::parse(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.Locale$LanguageRange",
+			"parse",
+			"(Ljava/lang/String;)Ljava/util/List;",
 			arg0
 		);
 	}
-	jstring Locale_LanguageRange::toString()
+	QAndroidJniObject Locale_LanguageRange::parse(const QString &arg0)
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint Locale_LanguageRange::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.Locale$LanguageRange",
+			"parse",
+			"(Ljava/lang/String;)Ljava/util/List;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Locale_LanguageRange::parse(jstring arg0, __jni_impl::__JniBaseClass arg1)
@@ -133,23 +139,20 @@ namespace __jni_impl::java::util
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Locale_LanguageRange::parse(jstring arg0)
+	jboolean Locale_LanguageRange::equals(jobject arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Locale$LanguageRange",
-			"parse",
-			"(Ljava/lang/String;)Ljava/util/List;",
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
 			arg0
 		);
 	}
-	QAndroidJniObject Locale_LanguageRange::parse(const QString &arg0)
+	jstring Locale_LanguageRange::getRange()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Locale$LanguageRange",
-			"parse",
-			"(Ljava/lang/String;)Ljava/util/List;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
+		return __thiz.callObjectMethod(
+			"getRange",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jdouble Locale_LanguageRange::getWeight()
 	{
@@ -158,20 +161,17 @@ namespace __jni_impl::java::util
 			"()D"
 		);
 	}
-	QAndroidJniObject Locale_LanguageRange::mapEquivalents(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
+	jint Locale_LanguageRange::hashCode()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Locale$LanguageRange",
-			"mapEquivalents",
-			"(Ljava/util/List;Ljava/util/Map;)Ljava/util/List;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
 	}
-	jstring Locale_LanguageRange::getRange()
+	jstring Locale_LanguageRange::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getRange",
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

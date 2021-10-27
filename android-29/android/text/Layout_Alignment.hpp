@@ -13,17 +13,17 @@ namespace __jni_impl::android::text
 	{
 	public:
 		// Fields
+		static QAndroidJniObject ALIGN_CENTER();
 		static QAndroidJniObject ALIGN_NORMAL();
 		static QAndroidJniObject ALIGN_OPPOSITE();
-		static QAndroidJniObject ALIGN_CENTER();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::text
 
@@ -31,6 +31,14 @@ namespace __jni_impl::android::text
 namespace __jni_impl::android::text
 {
 	// Fields
+	QAndroidJniObject Layout_Alignment::ALIGN_CENTER()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.text.Layout$Alignment",
+			"ALIGN_CENTER",
+			"Landroid/text/Layout$Alignment;"
+		);
+	}
 	QAndroidJniObject Layout_Alignment::ALIGN_NORMAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -47,14 +55,6 @@ namespace __jni_impl::android::text
 			"Landroid/text/Layout$Alignment;"
 		);
 	}
-	QAndroidJniObject Layout_Alignment::ALIGN_CENTER()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.text.Layout$Alignment",
-			"ALIGN_CENTER",
-			"Landroid/text/Layout$Alignment;"
-		);
-	}
 	
 	// Constructors
 	void Layout_Alignment::__constructor()
@@ -65,14 +65,6 @@ namespace __jni_impl::android::text
 	}
 	
 	// Methods
-	jarray Layout_Alignment::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.Layout$Alignment",
-			"values",
-			"()[Landroid/text/Layout$Alignment;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Layout_Alignment::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::android::text
 			"(Ljava/lang/String;)Landroid/text/Layout$Alignment;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Layout_Alignment::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.Layout$Alignment",
+			"values",
+			"()[Landroid/text/Layout$Alignment;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::text
 

@@ -17,9 +17,9 @@ namespace __jni_impl::android::service::autofill
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		jfloat getScore();
 		jstring getCategoryId();
+		jfloat getScore();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::service::autofill
 
@@ -37,10 +37,10 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	jstring FieldClassification_Match::toString()
+	jstring FieldClassification_Match::getCategoryId()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
+			"getCategoryId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -51,10 +51,10 @@ namespace __jni_impl::android::service::autofill
 			"()F"
 		);
 	}
-	jstring FieldClassification_Match::getCategoryId()
+	jstring FieldClassification_Match::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getCategoryId",
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

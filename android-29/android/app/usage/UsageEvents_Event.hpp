@@ -39,13 +39,13 @@ namespace __jni_impl::android::app::usage
 		void __constructor();
 		
 		// Methods
-		jstring getPackageName();
+		jint getAppStandbyBucket();
 		jstring getClassName();
-		jlong getTimeStamp();
 		QAndroidJniObject getConfiguration();
 		jint getEventType();
+		jstring getPackageName();
 		jstring getShortcutId();
-		jint getAppStandbyBucket();
+		jlong getTimeStamp();
 	};
 } // namespace __jni_impl::android::app::usage
 
@@ -191,12 +191,12 @@ namespace __jni_impl::android::app::usage
 	}
 	
 	// Methods
-	jstring UsageEvents_Event::getPackageName()
+	jint UsageEvents_Event::getAppStandbyBucket()
 	{
-		return __thiz.callObjectMethod(
-			"getPackageName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"getAppStandbyBucket",
+			"()I"
+		);
 	}
 	jstring UsageEvents_Event::getClassName()
 	{
@@ -204,13 +204,6 @@ namespace __jni_impl::android::app::usage
 			"getClassName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jlong UsageEvents_Event::getTimeStamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimeStamp",
-			"()J"
-		);
 	}
 	QAndroidJniObject UsageEvents_Event::getConfiguration()
 	{
@@ -226,6 +219,13 @@ namespace __jni_impl::android::app::usage
 			"()I"
 		);
 	}
+	jstring UsageEvents_Event::getPackageName()
+	{
+		return __thiz.callObjectMethod(
+			"getPackageName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jstring UsageEvents_Event::getShortcutId()
 	{
 		return __thiz.callObjectMethod(
@@ -233,11 +233,11 @@ namespace __jni_impl::android::app::usage
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint UsageEvents_Event::getAppStandbyBucket()
+	jlong UsageEvents_Event::getTimeStamp()
 	{
-		return __thiz.callMethod<jint>(
-			"getAppStandbyBucket",
-			"()I"
+		return __thiz.callMethod<jlong>(
+			"getTimeStamp",
+			"()J"
 		);
 	}
 } // namespace __jni_impl::android::app::usage

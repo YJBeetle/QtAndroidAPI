@@ -147,27 +147,27 @@ namespace __jni_impl::android::view
 		jint y();
 		
 		// Constructors
+		void __constructor();
+		void __constructor(__jni_impl::android::os::Parcel arg0);
+		void __constructor(jint arg0);
+		void __constructor(jint arg0, jint arg1);
 		void __constructor(jint arg0, jint arg1, jint arg2);
 		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
-		void __constructor(__jni_impl::android::os::Parcel arg0);
-		void __constructor();
-		void __constructor(jint arg0);
-		void __constructor(jint arg0, jint arg1);
 		
 		// Methods
-		jstring toString();
+		static jboolean mayUseInputMethod(jint arg0);
+		jint copyFrom(__jni_impl::android::view::WindowManager_LayoutParams arg0);
 		jstring debug(jstring arg0);
 		jstring debug(const QString &arg0);
-		jint copyFrom(__jni_impl::android::view::WindowManager_LayoutParams arg0);
-		void setColorMode(jint arg0);
-		jint getColorMode();
-		static jboolean mayUseInputMethod(jint arg0);
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getColorMode();
+		jstring getTitle();
+		void setColorMode(jint arg0);
 		void setTitle(jstring arg0);
 		void setTitle(const QString &arg0);
-		jstring getTitle();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
 
@@ -1052,6 +1052,38 @@ namespace __jni_impl::android::view
 	}
 	
 	// Constructors
+	void WindowManager_LayoutParams::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.WindowManager$LayoutParams",
+			"()V"
+		);
+	}
+	void WindowManager_LayoutParams::__constructor(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.WindowManager$LayoutParams",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void WindowManager_LayoutParams::__constructor(jint arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.WindowManager$LayoutParams",
+			"(I)V",
+			arg0
+		);
+	}
+	void WindowManager_LayoutParams::__constructor(jint arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.WindowManager$LayoutParams",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
 	void WindowManager_LayoutParams::__constructor(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
@@ -1088,46 +1120,24 @@ namespace __jni_impl::android::view
 			arg6
 		);
 	}
-	void WindowManager_LayoutParams::__constructor(__jni_impl::android::os::Parcel arg0)
+	
+	// Methods
+	jboolean WindowManager_LayoutParams::mayUseInputMethod(jint arg0)
 	{
-		__thiz = QAndroidJniObject(
+		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.view.WindowManager$LayoutParams",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void WindowManager_LayoutParams::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.WindowManager$LayoutParams",
-			"()V"
-		);
-	}
-	void WindowManager_LayoutParams::__constructor(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.WindowManager$LayoutParams",
-			"(I)V",
+			"mayUseInputMethod",
+			"(I)Z",
 			arg0
 		);
 	}
-	void WindowManager_LayoutParams::__constructor(jint arg0, jint arg1)
+	jint WindowManager_LayoutParams::copyFrom(__jni_impl::android::view::WindowManager_LayoutParams arg0)
 	{
-		__thiz = QAndroidJniObject(
-			"android.view.WindowManager$LayoutParams",
-			"(II)V",
-			arg0,
-			arg1
+		return __thiz.callMethod<jint>(
+			"copyFrom",
+			"(Landroid/view/WindowManager$LayoutParams;)I",
+			arg0.__jniObject().object()
 		);
-	}
-	
-	// Methods
-	jstring WindowManager_LayoutParams::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	jstring WindowManager_LayoutParams::debug(jstring arg0)
 	{
@@ -1145,20 +1155,11 @@ namespace __jni_impl::android::view
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
-	jint WindowManager_LayoutParams::copyFrom(__jni_impl::android::view::WindowManager_LayoutParams arg0)
+	jint WindowManager_LayoutParams::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"copyFrom",
-			"(Landroid/view/WindowManager$LayoutParams;)I",
-			arg0.__jniObject().object()
-		);
-	}
-	void WindowManager_LayoutParams::setColorMode(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setColorMode",
-			"(I)V",
-			arg0
+			"describeContents",
+			"()I"
 		);
 	}
 	jint WindowManager_LayoutParams::getColorMode()
@@ -1168,29 +1169,19 @@ namespace __jni_impl::android::view
 			"()I"
 		);
 	}
-	jboolean WindowManager_LayoutParams::mayUseInputMethod(jint arg0)
+	jstring WindowManager_LayoutParams::getTitle()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.view.WindowManager$LayoutParams",
-			"mayUseInputMethod",
-			"(I)Z",
-			arg0
-		);
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
-	jint WindowManager_LayoutParams::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void WindowManager_LayoutParams::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	void WindowManager_LayoutParams::setColorMode(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+			"setColorMode",
+			"(I)V",
+			arg0
 		);
 	}
 	void WindowManager_LayoutParams::setTitle(jstring arg0)
@@ -1209,12 +1200,21 @@ namespace __jni_impl::android::view
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jstring WindowManager_LayoutParams::getTitle()
+	jstring WindowManager_LayoutParams::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/CharSequence;"
+			"toString",
+			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	void WindowManager_LayoutParams::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::view
 
@@ -1224,6 +1224,26 @@ namespace android::view
 	{
 	public:
 		WindowManager_LayoutParams(QAndroidJniObject obj) { __thiz = obj; }
+		WindowManager_LayoutParams()
+		{
+			__constructor();
+		}
+		WindowManager_LayoutParams(__jni_impl::android::os::Parcel arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		WindowManager_LayoutParams(jint arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		WindowManager_LayoutParams(jint arg0, jint arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
+		}
 		WindowManager_LayoutParams(jint arg0, jint arg1, jint arg2)
 		{
 			__constructor(
@@ -1250,26 +1270,6 @@ namespace android::view
 				arg4,
 				arg5,
 				arg6);
-		}
-		WindowManager_LayoutParams(__jni_impl::android::os::Parcel arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		WindowManager_LayoutParams()
-		{
-			__constructor();
-		}
-		WindowManager_LayoutParams(jint arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		WindowManager_LayoutParams(jint arg0, jint arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
 		}
 	};
 } // namespace android::view

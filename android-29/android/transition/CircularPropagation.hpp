@@ -7,10 +7,6 @@
 #include "TransitionPropagation.hpp"
 #include "VisibilityPropagation.hpp"
 
-namespace __jni_impl::android::view
-{
-	class ViewGroup;
-}
 namespace __jni_impl::android::transition
 {
 	class Transition;
@@ -18,6 +14,10 @@ namespace __jni_impl::android::transition
 namespace __jni_impl::android::transition
 {
 	class TransitionValues;
+}
+namespace __jni_impl::android::view
+{
+	class ViewGroup;
 }
 
 namespace __jni_impl::android::transition
@@ -36,9 +36,9 @@ namespace __jni_impl::android::transition
 	};
 } // namespace __jni_impl::android::transition
 
-#include "../view/ViewGroup.hpp"
 #include "Transition.hpp"
 #include "TransitionValues.hpp"
+#include "../view/ViewGroup.hpp"
 
 namespace __jni_impl::android::transition
 {

@@ -5,6 +5,14 @@
 
 #include "../../../../../__JniBaseClass.hpp"
 
+namespace __jni_impl::java::net
+{
+	class InetAddress;
+}
+namespace __jni_impl::java::net
+{
+	class Socket;
+}
 namespace __jni_impl::java::security
 {
 	class KeyStore;
@@ -12,14 +20,6 @@ namespace __jni_impl::java::security
 namespace __jni_impl::java::security
 {
 	class SecureRandom;
-}
-namespace __jni_impl::java::net
-{
-	class Socket;
-}
-namespace __jni_impl::java::net
-{
-	class InetAddress;
 }
 
 namespace __jni_impl::org::apache::http::conn::ssl
@@ -45,22 +45,22 @@ namespace __jni_impl::org::apache::http::conn::ssl
 		void __constructor(const QString &arg0, __jni_impl::java::security::KeyStore arg1, const QString &arg2, __jni_impl::java::security::KeyStore arg3, __jni_impl::java::security::SecureRandom arg4, __jni_impl::__JniBaseClass arg5);
 		
 		// Methods
+		static QAndroidJniObject getSocketFactory();
 		QAndroidJniObject connectSocket(__jni_impl::java::net::Socket arg0, jstring arg1, jint arg2, __jni_impl::java::net::InetAddress arg3, jint arg4, __jni_impl::__JniBaseClass arg5);
 		QAndroidJniObject connectSocket(__jni_impl::java::net::Socket arg0, const QString &arg1, jint arg2, __jni_impl::java::net::InetAddress arg3, jint arg4, __jni_impl::__JniBaseClass arg5);
 		QAndroidJniObject createSocket();
 		QAndroidJniObject createSocket(__jni_impl::java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3);
 		QAndroidJniObject createSocket(__jni_impl::java::net::Socket arg0, const QString &arg1, jint arg2, jboolean arg3);
-		static QAndroidJniObject getSocketFactory();
-		void setHostnameVerifier(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getHostnameVerifier();
 		jboolean isSecure(__jni_impl::java::net::Socket arg0);
+		void setHostnameVerifier(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::org::apache::http::conn::ssl
 
+#include "../../../../../java/net/InetAddress.hpp"
+#include "../../../../../java/net/Socket.hpp"
 #include "../../../../../java/security/KeyStore.hpp"
 #include "../../../../../java/security/SecureRandom.hpp"
-#include "../../../../../java/net/Socket.hpp"
-#include "../../../../../java/net/InetAddress.hpp"
 
 namespace __jni_impl::org::apache::http::conn::ssl
 {
@@ -189,6 +189,14 @@ namespace __jni_impl::org::apache::http::conn::ssl
 	}
 	
 	// Methods
+	QAndroidJniObject SSLSocketFactory::getSocketFactory()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"org.apache.http.conn.ssl.SSLSocketFactory",
+			"getSocketFactory",
+			"()Lorg/apache/http/conn/ssl/SSLSocketFactory;"
+		);
+	}
 	QAndroidJniObject SSLSocketFactory::connectSocket(__jni_impl::java::net::Socket arg0, jstring arg1, jint arg2, __jni_impl::java::net::InetAddress arg3, jint arg4, __jni_impl::__JniBaseClass arg5)
 	{
 		return __thiz.callObjectMethod(
@@ -244,22 +252,6 @@ namespace __jni_impl::org::apache::http::conn::ssl
 			arg3
 		);
 	}
-	QAndroidJniObject SSLSocketFactory::getSocketFactory()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"org.apache.http.conn.ssl.SSLSocketFactory",
-			"getSocketFactory",
-			"()Lorg/apache/http/conn/ssl/SSLSocketFactory;"
-		);
-	}
-	void SSLSocketFactory::setHostnameVerifier(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setHostnameVerifier",
-			"(Lorg/apache/http/conn/ssl/X509HostnameVerifier;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject SSLSocketFactory::getHostnameVerifier()
 	{
 		return __thiz.callObjectMethod(
@@ -272,6 +264,14 @@ namespace __jni_impl::org::apache::http::conn::ssl
 		return __thiz.callMethod<jboolean>(
 			"isSecure",
 			"(Ljava/net/Socket;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	void SSLSocketFactory::setHostnameVerifier(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setHostnameVerifier",
+			"(Lorg/apache/http/conn/ssl/X509HostnameVerifier;)V",
 			arg0.__jniObject().object()
 		);
 	}

@@ -17,8 +17,8 @@ namespace __jni_impl::android::database
 		void __constructor();
 		
 		// Methods
-		void onInvalidated();
 		void onChanged();
+		void onInvalidated();
 	};
 } // namespace __jni_impl::android::database
 
@@ -37,17 +37,17 @@ namespace __jni_impl::android::database
 	}
 	
 	// Methods
-	void DataSetObserver::onInvalidated()
-	{
-		__thiz.callMethod<void>(
-			"onInvalidated",
-			"()V"
-		);
-	}
 	void DataSetObserver::onChanged()
 	{
 		__thiz.callMethod<void>(
 			"onChanged",
+			"()V"
+		);
+	}
+	void DataSetObserver::onInvalidated()
+	{
+		__thiz.callMethod<void>(
+			"onInvalidated",
 			"()V"
 		);
 	}

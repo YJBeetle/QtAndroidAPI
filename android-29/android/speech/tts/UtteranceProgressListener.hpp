@@ -17,20 +17,20 @@ namespace __jni_impl::android::speech::tts
 		void __constructor();
 		
 		// Methods
-		void onStart(jstring arg0);
-		void onStart(const QString &arg0);
+		void onAudioAvailable(jstring arg0, jbyteArray arg1);
+		void onAudioAvailable(const QString &arg0, jbyteArray arg1);
+		void onBeginSynthesis(jstring arg0, jint arg1, jint arg2, jint arg3);
+		void onBeginSynthesis(const QString &arg0, jint arg1, jint arg2, jint arg3);
+		void onDone(jstring arg0);
+		void onDone(const QString &arg0);
 		void onError(jstring arg0);
 		void onError(const QString &arg0);
 		void onError(jstring arg0, jint arg1);
 		void onError(const QString &arg0, jint arg1);
-		void onBeginSynthesis(jstring arg0, jint arg1, jint arg2, jint arg3);
-		void onBeginSynthesis(const QString &arg0, jint arg1, jint arg2, jint arg3);
-		void onAudioAvailable(jstring arg0, jbyteArray arg1);
-		void onAudioAvailable(const QString &arg0, jbyteArray arg1);
 		void onRangeStart(jstring arg0, jint arg1, jint arg2, jint arg3);
 		void onRangeStart(const QString &arg0, jint arg1, jint arg2, jint arg3);
-		void onDone(jstring arg0);
-		void onDone(const QString &arg0);
+		void onStart(jstring arg0);
+		void onStart(const QString &arg0);
 		void onStop(jstring arg0, jboolean arg1);
 		void onStop(const QString &arg0, jboolean arg1);
 	};
@@ -51,18 +51,58 @@ namespace __jni_impl::android::speech::tts
 	}
 	
 	// Methods
-	void UtteranceProgressListener::onStart(jstring arg0)
+	void UtteranceProgressListener::onAudioAvailable(jstring arg0, jbyteArray arg1)
 	{
 		__thiz.callMethod<void>(
-			"onStart",
+			"onAudioAvailable",
+			"(Ljava/lang/String;[B)V",
+			arg0,
+			arg1
+		);
+	}
+	void UtteranceProgressListener::onAudioAvailable(const QString &arg0, jbyteArray arg1)
+	{
+		__thiz.callMethod<void>(
+			"onAudioAvailable",
+			"(Ljava/lang/String;[B)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	void UtteranceProgressListener::onBeginSynthesis(jstring arg0, jint arg1, jint arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"onBeginSynthesis",
+			"(Ljava/lang/String;III)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void UtteranceProgressListener::onBeginSynthesis(const QString &arg0, jint arg1, jint arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"onBeginSynthesis",
+			"(Ljava/lang/String;III)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void UtteranceProgressListener::onDone(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"onDone",
 			"(Ljava/lang/String;)V",
 			arg0
 		);
 	}
-	void UtteranceProgressListener::onStart(const QString &arg0)
+	void UtteranceProgressListener::onDone(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"onStart",
+			"onDone",
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
@@ -101,46 +141,6 @@ namespace __jni_impl::android::speech::tts
 			arg1
 		);
 	}
-	void UtteranceProgressListener::onBeginSynthesis(jstring arg0, jint arg1, jint arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"onBeginSynthesis",
-			"(Ljava/lang/String;III)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void UtteranceProgressListener::onBeginSynthesis(const QString &arg0, jint arg1, jint arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"onBeginSynthesis",
-			"(Ljava/lang/String;III)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void UtteranceProgressListener::onAudioAvailable(jstring arg0, jbyteArray arg1)
-	{
-		__thiz.callMethod<void>(
-			"onAudioAvailable",
-			"(Ljava/lang/String;[B)V",
-			arg0,
-			arg1
-		);
-	}
-	void UtteranceProgressListener::onAudioAvailable(const QString &arg0, jbyteArray arg1)
-	{
-		__thiz.callMethod<void>(
-			"onAudioAvailable",
-			"(Ljava/lang/String;[B)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void UtteranceProgressListener::onRangeStart(jstring arg0, jint arg1, jint arg2, jint arg3)
 	{
 		__thiz.callMethod<void>(
@@ -163,18 +163,18 @@ namespace __jni_impl::android::speech::tts
 			arg3
 		);
 	}
-	void UtteranceProgressListener::onDone(jstring arg0)
+	void UtteranceProgressListener::onStart(jstring arg0)
 	{
 		__thiz.callMethod<void>(
-			"onDone",
+			"onStart",
 			"(Ljava/lang/String;)V",
 			arg0
 		);
 	}
-	void UtteranceProgressListener::onDone(const QString &arg0)
+	void UtteranceProgressListener::onStart(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"onDone",
+			"onStart",
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);

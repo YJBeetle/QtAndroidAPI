@@ -5,17 +5,17 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view
+namespace __jni_impl::android::graphics
 {
-	class Surface;
+	class HardwareRenderer_FrameRenderRequest;
 }
 namespace __jni_impl::android::graphics
 {
 	class RenderNode;
 }
-namespace __jni_impl::android::graphics
+namespace __jni_impl::android::view
 {
-	class HardwareRenderer_FrameRenderRequest;
+	class Surface;
 }
 
 namespace __jni_impl::android::graphics
@@ -34,26 +34,26 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		void start();
-		void stop();
+		void clearContent();
+		QAndroidJniObject createRenderRequest();
+		void destroy();
+		jboolean isOpaque();
+		void notifyFramePending();
+		void setContentRoot(__jni_impl::android::graphics::RenderNode arg0);
+		void setLightSourceAlpha(jfloat arg0, jfloat arg1);
+		void setLightSourceGeometry(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		void setName(jstring arg0);
 		void setName(const QString &arg0);
-		void destroy();
 		void setOpaque(jboolean arg0);
-		jboolean isOpaque();
 		void setSurface(__jni_impl::android::view::Surface arg0);
-		void setLightSourceGeometry(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		void setLightSourceAlpha(jfloat arg0, jfloat arg1);
-		void setContentRoot(__jni_impl::android::graphics::RenderNode arg0);
-		QAndroidJniObject createRenderRequest();
-		void clearContent();
-		void notifyFramePending();
+		void start();
+		void stop();
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "../view/Surface.hpp"
-#include "RenderNode.hpp"
 #include "HardwareRenderer_FrameRenderRequest.hpp"
+#include "RenderNode.hpp"
+#include "../view/Surface.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -104,18 +104,67 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	void HardwareRenderer::start()
+	void HardwareRenderer::clearContent()
 	{
 		__thiz.callMethod<void>(
-			"start",
+			"clearContent",
 			"()V"
 		);
 	}
-	void HardwareRenderer::stop()
+	QAndroidJniObject HardwareRenderer::createRenderRequest()
+	{
+		return __thiz.callObjectMethod(
+			"createRenderRequest",
+			"()Landroid/graphics/HardwareRenderer$FrameRenderRequest;"
+		);
+	}
+	void HardwareRenderer::destroy()
 	{
 		__thiz.callMethod<void>(
-			"stop",
+			"destroy",
 			"()V"
+		);
+	}
+	jboolean HardwareRenderer::isOpaque()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isOpaque",
+			"()Z"
+		);
+	}
+	void HardwareRenderer::notifyFramePending()
+	{
+		__thiz.callMethod<void>(
+			"notifyFramePending",
+			"()V"
+		);
+	}
+	void HardwareRenderer::setContentRoot(__jni_impl::android::graphics::RenderNode arg0)
+	{
+		__thiz.callMethod<void>(
+			"setContentRoot",
+			"(Landroid/graphics/RenderNode;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void HardwareRenderer::setLightSourceAlpha(jfloat arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"setLightSourceAlpha",
+			"(FF)V",
+			arg0,
+			arg1
+		);
+	}
+	void HardwareRenderer::setLightSourceGeometry(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	{
+		__thiz.callMethod<void>(
+			"setLightSourceGeometry",
+			"(FFFF)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
 		);
 	}
 	void HardwareRenderer::setName(jstring arg0)
@@ -134,26 +183,12 @@ namespace __jni_impl::android::graphics
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void HardwareRenderer::destroy()
-	{
-		__thiz.callMethod<void>(
-			"destroy",
-			"()V"
-		);
-	}
 	void HardwareRenderer::setOpaque(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOpaque",
 			"(Z)V",
 			arg0
-		);
-	}
-	jboolean HardwareRenderer::isOpaque()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isOpaque",
-			"()Z"
 		);
 	}
 	void HardwareRenderer::setSurface(__jni_impl::android::view::Surface arg0)
@@ -164,52 +199,17 @@ namespace __jni_impl::android::graphics
 			arg0.__jniObject().object()
 		);
 	}
-	void HardwareRenderer::setLightSourceGeometry(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
+	void HardwareRenderer::start()
 	{
 		__thiz.callMethod<void>(
-			"setLightSourceGeometry",
-			"(FFFF)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void HardwareRenderer::setLightSourceAlpha(jfloat arg0, jfloat arg1)
-	{
-		__thiz.callMethod<void>(
-			"setLightSourceAlpha",
-			"(FF)V",
-			arg0,
-			arg1
-		);
-	}
-	void HardwareRenderer::setContentRoot(__jni_impl::android::graphics::RenderNode arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContentRoot",
-			"(Landroid/graphics/RenderNode;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject HardwareRenderer::createRenderRequest()
-	{
-		return __thiz.callObjectMethod(
-			"createRenderRequest",
-			"()Landroid/graphics/HardwareRenderer$FrameRenderRequest;"
-		);
-	}
-	void HardwareRenderer::clearContent()
-	{
-		__thiz.callMethod<void>(
-			"clearContent",
+			"start",
 			"()V"
 		);
 	}
-	void HardwareRenderer::notifyFramePending()
+	void HardwareRenderer::stop()
 	{
 		__thiz.callMethod<void>(
-			"notifyFramePending",
+			"stop",
 			"()V"
 		);
 	}

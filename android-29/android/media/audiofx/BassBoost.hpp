@@ -25,11 +25,11 @@ namespace __jni_impl::android::media::audiofx
 		
 		// Methods
 		QAndroidJniObject getProperties();
-		void setProperties(__jni_impl::android::media::audiofx::BassBoost_Settings arg0);
-		jboolean getStrengthSupported();
-		void setStrength(jshort arg0);
 		jshort getRoundedStrength();
+		jboolean getStrengthSupported();
 		void setParameterListener(__jni_impl::__JniBaseClass arg0);
+		void setProperties(__jni_impl::android::media::audiofx::BassBoost_Settings arg0);
+		void setStrength(jshort arg0);
 	};
 } // namespace __jni_impl::android::media::audiofx
 
@@ -72,12 +72,11 @@ namespace __jni_impl::android::media::audiofx
 			"()Landroid/media/audiofx/BassBoost$Settings;"
 		);
 	}
-	void BassBoost::setProperties(__jni_impl::android::media::audiofx::BassBoost_Settings arg0)
+	jshort BassBoost::getRoundedStrength()
 	{
-		__thiz.callMethod<void>(
-			"setProperties",
-			"(Landroid/media/audiofx/BassBoost$Settings;)V",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jshort>(
+			"getRoundedStrength",
+			"()S"
 		);
 	}
 	jboolean BassBoost::getStrengthSupported()
@@ -87,27 +86,28 @@ namespace __jni_impl::android::media::audiofx
 			"()Z"
 		);
 	}
-	void BassBoost::setStrength(jshort arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStrength",
-			"(S)V",
-			arg0
-		);
-	}
-	jshort BassBoost::getRoundedStrength()
-	{
-		return __thiz.callMethod<jshort>(
-			"getRoundedStrength",
-			"()S"
-		);
-	}
 	void BassBoost::setParameterListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setParameterListener",
 			"(Landroid/media/audiofx/BassBoost$OnParameterChangeListener;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void BassBoost::setProperties(__jni_impl::android::media::audiofx::BassBoost_Settings arg0)
+	{
+		__thiz.callMethod<void>(
+			"setProperties",
+			"(Landroid/media/audiofx/BassBoost$Settings;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void BassBoost::setStrength(jshort arg0)
+	{
+		__thiz.callMethod<void>(
+			"setStrength",
+			"(S)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::media::audiofx

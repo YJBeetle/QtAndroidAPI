@@ -32,29 +32,29 @@ namespace __jni_impl::android::media::audiofx
 		void __constructor(jint arg0, jint arg1);
 		
 		// Methods
-		QAndroidJniObject getProperties();
-		void setProperties(__jni_impl::android::media::audiofx::EnvironmentalReverb_Settings arg0);
-		jshort getDensity();
-		void setDensity(jshort arg0);
-		void setParameterListener(__jni_impl::__JniBaseClass arg0);
-		void setRoomLevel(jshort arg0);
-		jshort getRoomLevel();
-		void setRoomHFLevel(jshort arg0);
-		jshort getRoomHFLevel();
-		void setDecayTime(jint arg0);
-		jint getDecayTime();
-		void setDecayHFRatio(jshort arg0);
 		jshort getDecayHFRatio();
-		void setReflectionsLevel(jshort arg0);
-		jshort getReflectionsLevel();
-		void setReflectionsDelay(jint arg0);
-		jint getReflectionsDelay();
-		void setReverbLevel(jshort arg0);
-		jshort getReverbLevel();
-		void setReverbDelay(jint arg0);
-		jint getReverbDelay();
-		void setDiffusion(jshort arg0);
+		jint getDecayTime();
+		jshort getDensity();
 		jshort getDiffusion();
+		QAndroidJniObject getProperties();
+		jint getReflectionsDelay();
+		jshort getReflectionsLevel();
+		jint getReverbDelay();
+		jshort getReverbLevel();
+		jshort getRoomHFLevel();
+		jshort getRoomLevel();
+		void setDecayHFRatio(jshort arg0);
+		void setDecayTime(jint arg0);
+		void setDensity(jshort arg0);
+		void setDiffusion(jshort arg0);
+		void setParameterListener(__jni_impl::__JniBaseClass arg0);
+		void setProperties(__jni_impl::android::media::audiofx::EnvironmentalReverb_Settings arg0);
+		void setReflectionsDelay(jint arg0);
+		void setReflectionsLevel(jshort arg0);
+		void setReverbDelay(jint arg0);
+		void setReverbLevel(jshort arg0);
+		void setRoomHFLevel(jshort arg0);
+		void setRoomLevel(jshort arg0);
 	};
 } // namespace __jni_impl::android::media::audiofx
 
@@ -146,19 +146,18 @@ namespace __jni_impl::android::media::audiofx
 	}
 	
 	// Methods
-	QAndroidJniObject EnvironmentalReverb::getProperties()
+	jshort EnvironmentalReverb::getDecayHFRatio()
 	{
-		return __thiz.callObjectMethod(
-			"getProperties",
-			"()Landroid/media/audiofx/EnvironmentalReverb$Settings;"
+		return __thiz.callMethod<jshort>(
+			"getDecayHFRatio",
+			"()S"
 		);
 	}
-	void EnvironmentalReverb::setProperties(__jni_impl::android::media::audiofx::EnvironmentalReverb_Settings arg0)
+	jint EnvironmentalReverb::getDecayTime()
 	{
-		__thiz.callMethod<void>(
-			"setProperties",
-			"(Landroid/media/audiofx/EnvironmentalReverb$Settings;)V",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"getDecayTime",
+			"()I"
 		);
 	}
 	jshort EnvironmentalReverb::getDensity()
@@ -168,10 +167,90 @@ namespace __jni_impl::android::media::audiofx
 			"()S"
 		);
 	}
+	jshort EnvironmentalReverb::getDiffusion()
+	{
+		return __thiz.callMethod<jshort>(
+			"getDiffusion",
+			"()S"
+		);
+	}
+	QAndroidJniObject EnvironmentalReverb::getProperties()
+	{
+		return __thiz.callObjectMethod(
+			"getProperties",
+			"()Landroid/media/audiofx/EnvironmentalReverb$Settings;"
+		);
+	}
+	jint EnvironmentalReverb::getReflectionsDelay()
+	{
+		return __thiz.callMethod<jint>(
+			"getReflectionsDelay",
+			"()I"
+		);
+	}
+	jshort EnvironmentalReverb::getReflectionsLevel()
+	{
+		return __thiz.callMethod<jshort>(
+			"getReflectionsLevel",
+			"()S"
+		);
+	}
+	jint EnvironmentalReverb::getReverbDelay()
+	{
+		return __thiz.callMethod<jint>(
+			"getReverbDelay",
+			"()I"
+		);
+	}
+	jshort EnvironmentalReverb::getReverbLevel()
+	{
+		return __thiz.callMethod<jshort>(
+			"getReverbLevel",
+			"()S"
+		);
+	}
+	jshort EnvironmentalReverb::getRoomHFLevel()
+	{
+		return __thiz.callMethod<jshort>(
+			"getRoomHFLevel",
+			"()S"
+		);
+	}
+	jshort EnvironmentalReverb::getRoomLevel()
+	{
+		return __thiz.callMethod<jshort>(
+			"getRoomLevel",
+			"()S"
+		);
+	}
+	void EnvironmentalReverb::setDecayHFRatio(jshort arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDecayHFRatio",
+			"(S)V",
+			arg0
+		);
+	}
+	void EnvironmentalReverb::setDecayTime(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDecayTime",
+			"(I)V",
+			arg0
+		);
+	}
 	void EnvironmentalReverb::setDensity(jshort arg0)
 	{
 		__thiz.callMethod<void>(
 			"setDensity",
+			"(S)V",
+			arg0
+		);
+	}
+	void EnvironmentalReverb::setDiffusion(jshort arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDiffusion",
 			"(S)V",
 			arg0
 		);
@@ -184,79 +263,12 @@ namespace __jni_impl::android::media::audiofx
 			arg0.__jniObject().object()
 		);
 	}
-	void EnvironmentalReverb::setRoomLevel(jshort arg0)
+	void EnvironmentalReverb::setProperties(__jni_impl::android::media::audiofx::EnvironmentalReverb_Settings arg0)
 	{
 		__thiz.callMethod<void>(
-			"setRoomLevel",
-			"(S)V",
-			arg0
-		);
-	}
-	jshort EnvironmentalReverb::getRoomLevel()
-	{
-		return __thiz.callMethod<jshort>(
-			"getRoomLevel",
-			"()S"
-		);
-	}
-	void EnvironmentalReverb::setRoomHFLevel(jshort arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRoomHFLevel",
-			"(S)V",
-			arg0
-		);
-	}
-	jshort EnvironmentalReverb::getRoomHFLevel()
-	{
-		return __thiz.callMethod<jshort>(
-			"getRoomHFLevel",
-			"()S"
-		);
-	}
-	void EnvironmentalReverb::setDecayTime(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDecayTime",
-			"(I)V",
-			arg0
-		);
-	}
-	jint EnvironmentalReverb::getDecayTime()
-	{
-		return __thiz.callMethod<jint>(
-			"getDecayTime",
-			"()I"
-		);
-	}
-	void EnvironmentalReverb::setDecayHFRatio(jshort arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDecayHFRatio",
-			"(S)V",
-			arg0
-		);
-	}
-	jshort EnvironmentalReverb::getDecayHFRatio()
-	{
-		return __thiz.callMethod<jshort>(
-			"getDecayHFRatio",
-			"()S"
-		);
-	}
-	void EnvironmentalReverb::setReflectionsLevel(jshort arg0)
-	{
-		__thiz.callMethod<void>(
-			"setReflectionsLevel",
-			"(S)V",
-			arg0
-		);
-	}
-	jshort EnvironmentalReverb::getReflectionsLevel()
-	{
-		return __thiz.callMethod<jshort>(
-			"getReflectionsLevel",
-			"()S"
+			"setProperties",
+			"(Landroid/media/audiofx/EnvironmentalReverb$Settings;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void EnvironmentalReverb::setReflectionsDelay(jint arg0)
@@ -267,26 +279,12 @@ namespace __jni_impl::android::media::audiofx
 			arg0
 		);
 	}
-	jint EnvironmentalReverb::getReflectionsDelay()
-	{
-		return __thiz.callMethod<jint>(
-			"getReflectionsDelay",
-			"()I"
-		);
-	}
-	void EnvironmentalReverb::setReverbLevel(jshort arg0)
+	void EnvironmentalReverb::setReflectionsLevel(jshort arg0)
 	{
 		__thiz.callMethod<void>(
-			"setReverbLevel",
+			"setReflectionsLevel",
 			"(S)V",
 			arg0
-		);
-	}
-	jshort EnvironmentalReverb::getReverbLevel()
-	{
-		return __thiz.callMethod<jshort>(
-			"getReverbLevel",
-			"()S"
 		);
 	}
 	void EnvironmentalReverb::setReverbDelay(jint arg0)
@@ -297,26 +295,28 @@ namespace __jni_impl::android::media::audiofx
 			arg0
 		);
 	}
-	jint EnvironmentalReverb::getReverbDelay()
-	{
-		return __thiz.callMethod<jint>(
-			"getReverbDelay",
-			"()I"
-		);
-	}
-	void EnvironmentalReverb::setDiffusion(jshort arg0)
+	void EnvironmentalReverb::setReverbLevel(jshort arg0)
 	{
 		__thiz.callMethod<void>(
-			"setDiffusion",
+			"setReverbLevel",
 			"(S)V",
 			arg0
 		);
 	}
-	jshort EnvironmentalReverb::getDiffusion()
+	void EnvironmentalReverb::setRoomHFLevel(jshort arg0)
 	{
-		return __thiz.callMethod<jshort>(
-			"getDiffusion",
-			"()S"
+		__thiz.callMethod<void>(
+			"setRoomHFLevel",
+			"(S)V",
+			arg0
+		);
+	}
+	void EnvironmentalReverb::setRoomLevel(jshort arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRoomLevel",
+			"(S)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::media::audiofx

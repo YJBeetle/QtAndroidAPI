@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::telephony
-{
-	class VisualVoicemailSmsFilterSettings_Builder;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::telephony
+{
+	class VisualVoicemailSmsFilterSettings_Builder;
 }
 
 namespace __jni_impl::android::telephony
@@ -31,14 +31,14 @@ namespace __jni_impl::android::telephony
 		void __constructor();
 		
 		// Methods
-		jstring toString();
 		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony
 
-#include "VisualVoicemailSmsFilterSettings_Builder.hpp"
 #include "../os/Parcel.hpp"
+#include "VisualVoicemailSmsFilterSettings_Builder.hpp"
 
 namespace __jni_impl::android::telephony
 {
@@ -95,19 +95,19 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
-	jstring VisualVoicemailSmsFilterSettings::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint VisualVoicemailSmsFilterSettings::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
+	}
+	jstring VisualVoicemailSmsFilterSettings::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void VisualVoicemailSmsFilterSettings::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

@@ -5,17 +5,17 @@
 
 #include "../../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net::wifi::aware
+namespace __jni_impl::android::net
 {
-	class WifiAwareManager;
+	class NetworkSpecifier;
 }
 namespace __jni_impl::android::net::wifi::aware
 {
 	class PeerHandle;
 }
-namespace __jni_impl::android::net
+namespace __jni_impl::android::net::wifi::aware
 {
-	class NetworkSpecifier;
+	class WifiAwareManager;
 }
 
 namespace __jni_impl::android::net::wifi::aware
@@ -30,16 +30,16 @@ namespace __jni_impl::android::net::wifi::aware
 		
 		// Methods
 		void close();
-		void sendMessage(__jni_impl::android::net::wifi::aware::PeerHandle arg0, jint arg1, jbyteArray arg2);
 		QAndroidJniObject createNetworkSpecifierOpen(__jni_impl::android::net::wifi::aware::PeerHandle arg0);
 		QAndroidJniObject createNetworkSpecifierPassphrase(__jni_impl::android::net::wifi::aware::PeerHandle arg0, jstring arg1);
 		QAndroidJniObject createNetworkSpecifierPassphrase(__jni_impl::android::net::wifi::aware::PeerHandle arg0, const QString &arg1);
+		void sendMessage(__jni_impl::android::net::wifi::aware::PeerHandle arg0, jint arg1, jbyteArray arg2);
 	};
 } // namespace __jni_impl::android::net::wifi::aware
 
-#include "WifiAwareManager.hpp"
-#include "PeerHandle.hpp"
 #include "../../NetworkSpecifier.hpp"
+#include "PeerHandle.hpp"
+#include "WifiAwareManager.hpp"
 
 namespace __jni_impl::android::net::wifi::aware
 {
@@ -59,16 +59,6 @@ namespace __jni_impl::android::net::wifi::aware
 		__thiz.callMethod<void>(
 			"close",
 			"()V"
-		);
-	}
-	void DiscoverySession::sendMessage(__jni_impl::android::net::wifi::aware::PeerHandle arg0, jint arg1, jbyteArray arg2)
-	{
-		__thiz.callMethod<void>(
-			"sendMessage",
-			"(Landroid/net/wifi/aware/PeerHandle;I[B)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
 		);
 	}
 	QAndroidJniObject DiscoverySession::createNetworkSpecifierOpen(__jni_impl::android::net::wifi::aware::PeerHandle arg0)
@@ -95,6 +85,16 @@ namespace __jni_impl::android::net::wifi::aware
 			"(Landroid/net/wifi/aware/PeerHandle;Ljava/lang/String;)Landroid/net/NetworkSpecifier;",
 			arg0.__jniObject().object(),
 			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	void DiscoverySession::sendMessage(__jni_impl::android::net::wifi::aware::PeerHandle arg0, jint arg1, jbyteArray arg2)
+	{
+		__thiz.callMethod<void>(
+			"sendMessage",
+			"(Landroid/net/wifi/aware/PeerHandle;I[B)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
 		);
 	}
 } // namespace __jni_impl::android::net::wifi::aware

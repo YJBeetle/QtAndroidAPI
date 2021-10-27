@@ -33,13 +33,13 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
+		static void enableDebugLogging(jboolean arg0);
+		void destroyLoader(jint arg0);
+		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
+		void dump(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
 		QAndroidJniObject getLoader(jint arg0);
 		QAndroidJniObject initLoader(jint arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::__JniBaseClass arg2);
 		QAndroidJniObject restartLoader(jint arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::__JniBaseClass arg2);
-		void destroyLoader(jint arg0);
-		static void enableDebugLogging(jboolean arg0);
-		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
-		void dump(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
 	};
 } // namespace __jni_impl::android::app
 
@@ -62,6 +62,45 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
+	void LoaderManager::enableDebugLogging(jboolean arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.app.LoaderManager",
+			"enableDebugLogging",
+			"(Z)V",
+			arg0
+		);
+	}
+	void LoaderManager::destroyLoader(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"destroyLoader",
+			"(I)V",
+			arg0
+		);
+	}
+	void LoaderManager::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3
+		);
+	}
+	void LoaderManager::dump(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3
+		);
+	}
 	QAndroidJniObject LoaderManager::getLoader(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -88,45 +127,6 @@ namespace __jni_impl::android::app
 			arg0,
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
-		);
-	}
-	void LoaderManager::destroyLoader(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"destroyLoader",
-			"(I)V",
-			arg0
-		);
-	}
-	void LoaderManager::enableDebugLogging(jboolean arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.app.LoaderManager",
-			"enableDebugLogging",
-			"(Z)V",
-			arg0
-		);
-	}
-	void LoaderManager::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	void LoaderManager::dump(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
 		);
 	}
 } // namespace __jni_impl::android::app

@@ -5,9 +5,9 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view
+namespace __jni_impl::android::content
 {
-	class View;
+	class Context;
 }
 namespace __jni_impl::android::graphics
 {
@@ -17,9 +17,9 @@ namespace __jni_impl::android::graphics
 {
 	class RectF;
 }
-namespace __jni_impl::android::content
+namespace __jni_impl::android::view
 {
-	class Context;
+	class View;
 }
 
 namespace __jni_impl::android::app
@@ -33,20 +33,20 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		void onSharedElementEnd(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
-		void onRejectSharedElements(__jni_impl::__JniBaseClass arg0);
-		void onMapSharedElements(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
-		void onSharedElementStart(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 		QAndroidJniObject onCaptureSharedElementSnapshot(__jni_impl::android::view::View arg0, __jni_impl::android::graphics::Matrix arg1, __jni_impl::android::graphics::RectF arg2);
 		QAndroidJniObject onCreateSnapshotView(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
+		void onMapSharedElements(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		void onRejectSharedElements(__jni_impl::__JniBaseClass arg0);
+		void onSharedElementEnd(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
+		void onSharedElementStart(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 		void onSharedElementsArrived(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 	};
 } // namespace __jni_impl::android::app
 
-#include "../view/View.hpp"
+#include "../content/Context.hpp"
 #include "../graphics/Matrix.hpp"
 #include "../graphics/RectF.hpp"
-#include "../content/Context.hpp"
+#include "../view/View.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -62,43 +62,6 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void SharedElementCallback::onSharedElementEnd(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
-	{
-		__thiz.callMethod<void>(
-			"onSharedElementEnd",
-			"(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void SharedElementCallback::onRejectSharedElements(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"onRejectSharedElements",
-			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void SharedElementCallback::onMapSharedElements(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"onMapSharedElements",
-			"(Ljava/util/List;Ljava/util/Map;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void SharedElementCallback::onSharedElementStart(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
-	{
-		__thiz.callMethod<void>(
-			"onSharedElementStart",
-			"(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
 	QAndroidJniObject SharedElementCallback::onCaptureSharedElementSnapshot(__jni_impl::android::view::View arg0, __jni_impl::android::graphics::Matrix arg1, __jni_impl::android::graphics::RectF arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -116,6 +79,43 @@ namespace __jni_impl::android::app
 			"(Landroid/content/Context;Landroid/os/Parcelable;)Landroid/view/View;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
+		);
+	}
+	void SharedElementCallback::onMapSharedElements(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"onMapSharedElements",
+			"(Ljava/util/List;Ljava/util/Map;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void SharedElementCallback::onRejectSharedElements(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"onRejectSharedElements",
+			"(Ljava/util/List;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void SharedElementCallback::onSharedElementEnd(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		__thiz.callMethod<void>(
+			"onSharedElementEnd",
+			"(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	void SharedElementCallback::onSharedElementStart(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		__thiz.callMethod<void>(
+			"onSharedElementStart",
+			"(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
 	void SharedElementCallback::onSharedElementsArrived(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)

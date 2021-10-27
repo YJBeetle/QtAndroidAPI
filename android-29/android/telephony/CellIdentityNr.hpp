@@ -24,14 +24,14 @@ namespace __jni_impl::android::telephony
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jstring getMccString();
+		jstring getMncString();
 		jlong getNci();
 		jint getNrarfcn();
 		jint getPci();
 		jint getTac();
-		jstring getMncString();
+		jint hashCode();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony
@@ -67,24 +67,17 @@ namespace __jni_impl::android::telephony
 			arg0
 		);
 	}
-	jstring CellIdentityNr::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint CellIdentityNr::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	jstring CellIdentityNr::getMccString()
 	{
 		return __thiz.callObjectMethod(
 			"getMccString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring CellIdentityNr::getMncString()
+	{
+		return __thiz.callObjectMethod(
+			"getMncString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -116,10 +109,17 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
-	jstring CellIdentityNr::getMncString()
+	jint CellIdentityNr::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring CellIdentityNr::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getMncString",
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::media
 {
 	class MediaFormat;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::media
@@ -31,17 +31,17 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		jstring getLanguage();
-		QAndroidJniObject getFormat();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getFormat();
+		jstring getLanguage();
 		jint getTrackType();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
 
-#include "../os/Parcel.hpp"
 #include "MediaFormat.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -98,19 +98,12 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jstring MediaPlayer_TrackInfo::toString()
+	jint MediaPlayer_TrackInfo::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring MediaPlayer_TrackInfo::getLanguage()
-	{
-		return __thiz.callObjectMethod(
-			"getLanguage",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
 	QAndroidJniObject MediaPlayer_TrackInfo::getFormat()
 	{
@@ -119,12 +112,26 @@ namespace __jni_impl::android::media
 			"()Landroid/media/MediaFormat;"
 		);
 	}
-	jint MediaPlayer_TrackInfo::describeContents()
+	jstring MediaPlayer_TrackInfo::getLanguage()
+	{
+		return __thiz.callObjectMethod(
+			"getLanguage",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint MediaPlayer_TrackInfo::getTrackType()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getTrackType",
 			"()I"
 		);
+	}
+	jstring MediaPlayer_TrackInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void MediaPlayer_TrackInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -133,13 +140,6 @@ namespace __jni_impl::android::media
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint MediaPlayer_TrackInfo::getTrackType()
-	{
-		return __thiz.callMethod<jint>(
-			"getTrackType",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::media

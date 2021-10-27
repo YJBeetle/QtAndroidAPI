@@ -5,6 +5,10 @@
 
 #include "../../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::icu::text
+{
+	class PluralRules_PluralType;
+}
 namespace __jni_impl::android::icu::util
 {
 	class ULocale;
@@ -12,10 +16,6 @@ namespace __jni_impl::android::icu::util
 namespace __jni_impl::java::util
 {
 	class Locale;
-}
-namespace __jni_impl::android::icu::text
-{
-	class PluralRules_PluralType;
 }
 
 namespace __jni_impl::android::icu::text
@@ -37,32 +37,32 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		jboolean equals(__jni_impl::android::icu::text::PluralRules arg0);
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		static QAndroidJniObject forLocale(__jni_impl::android::icu::util::ULocale arg0);
-		static QAndroidJniObject forLocale(__jni_impl::java::util::Locale arg0);
-		static QAndroidJniObject forLocale(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1);
-		static QAndroidJniObject forLocale(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1);
-		QAndroidJniObject getKeywords();
-		static QAndroidJniObject parseDescription(jstring arg0);
-		static QAndroidJniObject parseDescription(const QString &arg0);
 		static QAndroidJniObject createRules(jstring arg0);
 		static QAndroidJniObject createRules(const QString &arg0);
-		jdouble getUniqueKeywordValue(jstring arg0);
-		jdouble getUniqueKeywordValue(const QString &arg0);
+		static QAndroidJniObject forLocale(__jni_impl::android::icu::util::ULocale arg0);
+		static QAndroidJniObject forLocale(__jni_impl::java::util::Locale arg0);
+		static QAndroidJniObject forLocale(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1);
+		static QAndroidJniObject forLocale(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1);
+		static QAndroidJniObject parseDescription(jstring arg0);
+		static QAndroidJniObject parseDescription(const QString &arg0);
+		jboolean equals(__jni_impl::android::icu::text::PluralRules arg0);
+		jboolean equals(jobject arg0);
 		QAndroidJniObject getAllKeywordValues(jstring arg0);
 		QAndroidJniObject getAllKeywordValues(const QString &arg0);
+		QAndroidJniObject getKeywords();
 		QAndroidJniObject getSamples(jstring arg0);
 		QAndroidJniObject getSamples(const QString &arg0);
+		jdouble getUniqueKeywordValue(jstring arg0);
+		jdouble getUniqueKeywordValue(const QString &arg0);
+		jint hashCode();
 		jstring select(jdouble arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::android::icu::text
 
+#include "PluralRules_PluralType.hpp"
 #include "../util/ULocale.hpp"
 #include "../../../java/util/Locale.hpp"
-#include "PluralRules_PluralType.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -140,34 +140,22 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jboolean PluralRules::equals(__jni_impl::android::icu::text::PluralRules arg0)
+	QAndroidJniObject PluralRules::createRules(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Landroid/icu/text/PluralRules;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean PluralRules::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.PluralRules",
+			"createRules",
+			"(Ljava/lang/String;)Landroid/icu/text/PluralRules;",
 			arg0
 		);
 	}
-	jstring PluralRules::toString()
+	QAndroidJniObject PluralRules::createRules(const QString &arg0)
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint PluralRules::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.PluralRules",
+			"createRules",
+			"(Ljava/lang/String;)Landroid/icu/text/PluralRules;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject PluralRules::forLocale(__jni_impl::android::icu::util::ULocale arg0)
@@ -188,16 +176,6 @@ namespace __jni_impl::android::icu::text
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject PluralRules::forLocale(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.PluralRules",
-			"forLocale",
-			"(Ljava/util/Locale;Landroid/icu/text/PluralRules$PluralType;)Landroid/icu/text/PluralRules;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject PluralRules::forLocale(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -208,11 +186,14 @@ namespace __jni_impl::android::icu::text
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject PluralRules::getKeywords()
+	QAndroidJniObject PluralRules::forLocale(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::PluralRules_PluralType arg1)
 	{
-		return __thiz.callObjectMethod(
-			"getKeywords",
-			"()Ljava/util/Set;"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.PluralRules",
+			"forLocale",
+			"(Ljava/util/Locale;Landroid/icu/text/PluralRules$PluralType;)Landroid/icu/text/PluralRules;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	QAndroidJniObject PluralRules::parseDescription(jstring arg0)
@@ -233,21 +214,58 @@ namespace __jni_impl::android::icu::text
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	QAndroidJniObject PluralRules::createRules(jstring arg0)
+	jboolean PluralRules::equals(__jni_impl::android::icu::text::PluralRules arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.PluralRules",
-			"createRules",
-			"(Ljava/lang/String;)Landroid/icu/text/PluralRules;",
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Landroid/icu/text/PluralRules;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean PluralRules::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
 			arg0
 		);
 	}
-	QAndroidJniObject PluralRules::createRules(const QString &arg0)
+	QAndroidJniObject PluralRules::getAllKeywordValues(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.PluralRules",
-			"createRules",
-			"(Ljava/lang/String;)Landroid/icu/text/PluralRules;",
+		return __thiz.callObjectMethod(
+			"getAllKeywordValues",
+			"(Ljava/lang/String;)Ljava/util/Collection;",
+			arg0
+		);
+	}
+	QAndroidJniObject PluralRules::getAllKeywordValues(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAllKeywordValues",
+			"(Ljava/lang/String;)Ljava/util/Collection;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject PluralRules::getKeywords()
+	{
+		return __thiz.callObjectMethod(
+			"getKeywords",
+			"()Ljava/util/Set;"
+		);
+	}
+	QAndroidJniObject PluralRules::getSamples(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getSamples",
+			"(Ljava/lang/String;)Ljava/util/Collection;",
+			arg0
+		);
+	}
+	QAndroidJniObject PluralRules::getSamples(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getSamples",
+			"(Ljava/lang/String;)Ljava/util/Collection;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
@@ -267,36 +285,11 @@ namespace __jni_impl::android::icu::text
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	QAndroidJniObject PluralRules::getAllKeywordValues(jstring arg0)
+	jint PluralRules::hashCode()
 	{
-		return __thiz.callObjectMethod(
-			"getAllKeywordValues",
-			"(Ljava/lang/String;)Ljava/util/Collection;",
-			arg0
-		);
-	}
-	QAndroidJniObject PluralRules::getAllKeywordValues(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAllKeywordValues",
-			"(Ljava/lang/String;)Ljava/util/Collection;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject PluralRules::getSamples(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getSamples",
-			"(Ljava/lang/String;)Ljava/util/Collection;",
-			arg0
-		);
-	}
-	QAndroidJniObject PluralRules::getSamples(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getSamples",
-			"(Ljava/lang/String;)Ljava/util/Collection;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
 	}
 	jstring PluralRules::select(jdouble arg0)
@@ -305,6 +298,13 @@ namespace __jni_impl::android::icu::text
 			"select",
 			"(D)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jstring PluralRules::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::text

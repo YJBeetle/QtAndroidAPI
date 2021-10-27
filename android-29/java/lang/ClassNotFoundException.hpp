@@ -24,11 +24,11 @@ namespace __jni_impl::java::lang
 		// Fields
 		
 		// Constructors
-		void __constructor(jstring arg0, jthrowable arg1);
-		void __constructor(const QString &arg0, jthrowable arg1);
+		void __constructor();
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor();
+		void __constructor(jstring arg0, jthrowable arg1);
+		void __constructor(const QString &arg0, jthrowable arg1);
 		
 		// Methods
 		jthrowable getException();
@@ -43,22 +43,11 @@ namespace __jni_impl::java::lang
 	// Fields
 	
 	// Constructors
-	void ClassNotFoundException::__constructor(jstring arg0, jthrowable arg1)
+	void ClassNotFoundException::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ClassNotFoundException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
-		);
-	}
-	void ClassNotFoundException::__constructor(const QString &arg0, jthrowable arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ClassNotFoundException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
+			"()V"
 		);
 	}
 	void ClassNotFoundException::__constructor(jstring arg0)
@@ -77,11 +66,22 @@ namespace __jni_impl::java::lang
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void ClassNotFoundException::__constructor()
+	void ClassNotFoundException::__constructor(jstring arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.ClassNotFoundException",
-			"()V"
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0,
+			arg1
+		);
+	}
+	void ClassNotFoundException::__constructor(const QString &arg0, jthrowable arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.ClassNotFoundException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
 		);
 	}
 	
@@ -101,20 +101,20 @@ namespace java::lang
 	{
 	public:
 		ClassNotFoundException(QAndroidJniObject obj) { __thiz = obj; }
-		ClassNotFoundException(jstring arg0, jthrowable arg1)
+		ClassNotFoundException()
 		{
-			__constructor(
-				arg0,
-				arg1);
+			__constructor();
 		}
 		ClassNotFoundException(jstring arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		ClassNotFoundException()
+		ClassNotFoundException(jstring arg0, jthrowable arg1)
 		{
-			__constructor();
+			__constructor(
+				arg0,
+				arg1);
 		}
 	};
 } // namespace java::lang

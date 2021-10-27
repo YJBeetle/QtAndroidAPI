@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::content::pm
 {
 	class VersionedPackage;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::content::pm
@@ -30,20 +30,20 @@ namespace __jni_impl::android::content::pm
 		void __constructor();
 		
 		// Methods
-		jstring getName();
-		jstring toString();
-		jint getType();
-		jint getVersion();
-		jlong getLongVersion();
+		jint describeContents();
 		QAndroidJniObject getDeclaringPackage();
 		QAndroidJniObject getDependentPackages();
-		jint describeContents();
+		jlong getLongVersion();
+		jstring getName();
+		jint getType();
+		jint getVersion();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::pm
 
-#include "../../os/Parcel.hpp"
 #include "VersionedPackage.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::content::pm
 {
@@ -94,17 +94,38 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
+	jint SharedLibraryInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	QAndroidJniObject SharedLibraryInfo::getDeclaringPackage()
+	{
+		return __thiz.callObjectMethod(
+			"getDeclaringPackage",
+			"()Landroid/content/pm/VersionedPackage;"
+		);
+	}
+	QAndroidJniObject SharedLibraryInfo::getDependentPackages()
+	{
+		return __thiz.callObjectMethod(
+			"getDependentPackages",
+			"()Ljava/util/List;"
+		);
+	}
+	jlong SharedLibraryInfo::getLongVersion()
+	{
+		return __thiz.callMethod<jlong>(
+			"getLongVersion",
+			"()J"
+		);
+	}
 	jstring SharedLibraryInfo::getName()
 	{
 		return __thiz.callObjectMethod(
 			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring SharedLibraryInfo::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -122,33 +143,12 @@ namespace __jni_impl::android::content::pm
 			"()I"
 		);
 	}
-	jlong SharedLibraryInfo::getLongVersion()
-	{
-		return __thiz.callMethod<jlong>(
-			"getLongVersion",
-			"()J"
-		);
-	}
-	QAndroidJniObject SharedLibraryInfo::getDeclaringPackage()
+	jstring SharedLibraryInfo::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getDeclaringPackage",
-			"()Landroid/content/pm/VersionedPackage;"
-		);
-	}
-	QAndroidJniObject SharedLibraryInfo::getDependentPackages()
-	{
-		return __thiz.callObjectMethod(
-			"getDependentPackages",
-			"()Ljava/util/List;"
-		);
-	}
-	jint SharedLibraryInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void SharedLibraryInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

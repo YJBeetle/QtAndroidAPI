@@ -73,24 +73,24 @@ namespace __jni_impl::android::text::format
 		void __constructor();
 		
 		// Methods
-		static jstring getDayOfWeekString(jint arg0, jint arg1);
-		static jstring getAMPMString(jint arg0);
-		static jstring getMonthString(jint arg0, jint arg1);
-		static jstring getRelativeTimeSpanString(__jni_impl::android::content::Context arg0, jlong arg1);
-		static jstring getRelativeTimeSpanString(__jni_impl::android::content::Context arg0, jlong arg1, jboolean arg2);
-		static jstring getRelativeTimeSpanString(jlong arg0);
-		static jstring getRelativeTimeSpanString(jlong arg0, jlong arg1, jlong arg2, jint arg3);
-		static jstring getRelativeTimeSpanString(jlong arg0, jlong arg1, jlong arg2);
-		static jstring getRelativeDateTimeString(__jni_impl::android::content::Context arg0, jlong arg1, jlong arg2, jlong arg3, jint arg4);
-		static jstring formatElapsedTime(__jni_impl::java::lang::StringBuilder arg0, jlong arg1);
-		static jstring formatElapsedTime(jlong arg0);
-		static jstring formatSameDayTime(jlong arg0, jlong arg1, jint arg2, jint arg3);
-		static jboolean isToday(jlong arg0);
 		static jstring formatDateRange(__jni_impl::android::content::Context arg0, jlong arg1, jlong arg2, jint arg3);
 		static QAndroidJniObject formatDateRange(__jni_impl::android::content::Context arg0, __jni_impl::java::util::Formatter arg1, jlong arg2, jlong arg3, jint arg4);
 		static QAndroidJniObject formatDateRange(__jni_impl::android::content::Context arg0, __jni_impl::java::util::Formatter arg1, jlong arg2, jlong arg3, jint arg4, jstring arg5);
 		static QAndroidJniObject formatDateRange(__jni_impl::android::content::Context arg0, __jni_impl::java::util::Formatter arg1, jlong arg2, jlong arg3, jint arg4, const QString &arg5);
 		static jstring formatDateTime(__jni_impl::android::content::Context arg0, jlong arg1, jint arg2);
+		static jstring formatElapsedTime(jlong arg0);
+		static jstring formatElapsedTime(__jni_impl::java::lang::StringBuilder arg0, jlong arg1);
+		static jstring formatSameDayTime(jlong arg0, jlong arg1, jint arg2, jint arg3);
+		static jstring getAMPMString(jint arg0);
+		static jstring getDayOfWeekString(jint arg0, jint arg1);
+		static jstring getMonthString(jint arg0, jint arg1);
+		static jstring getRelativeDateTimeString(__jni_impl::android::content::Context arg0, jlong arg1, jlong arg2, jlong arg3, jint arg4);
+		static jstring getRelativeTimeSpanString(jlong arg0);
+		static jstring getRelativeTimeSpanString(__jni_impl::android::content::Context arg0, jlong arg1);
+		static jstring getRelativeTimeSpanString(__jni_impl::android::content::Context arg0, jlong arg1, jboolean arg2);
+		static jstring getRelativeTimeSpanString(jlong arg0, jlong arg1, jlong arg2);
+		static jstring getRelativeTimeSpanString(jlong arg0, jlong arg1, jlong arg2, jint arg3);
+		static jboolean isToday(jlong arg0);
 	};
 } // namespace __jni_impl::android::text::format
 
@@ -431,141 +431,6 @@ namespace __jni_impl::android::text::format
 	}
 	
 	// Methods
-	jstring DateUtils::getDayOfWeekString(jint arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.format.DateUtils",
-			"getDayOfWeekString",
-			"(II)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
-	}
-	jstring DateUtils::getAMPMString(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.format.DateUtils",
-			"getAMPMString",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jstring DateUtils::getMonthString(jint arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.format.DateUtils",
-			"getMonthString",
-			"(II)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
-	}
-	jstring DateUtils::getRelativeTimeSpanString(__jni_impl::android::content::Context arg0, jlong arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.format.DateUtils",
-			"getRelativeTimeSpanString",
-			"(Landroid/content/Context;J)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
-			arg1
-		).object<jstring>();
-	}
-	jstring DateUtils::getRelativeTimeSpanString(__jni_impl::android::content::Context arg0, jlong arg1, jboolean arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.format.DateUtils",
-			"getRelativeTimeSpanString",
-			"(Landroid/content/Context;JZ)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		).object<jstring>();
-	}
-	jstring DateUtils::getRelativeTimeSpanString(jlong arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.format.DateUtils",
-			"getRelativeTimeSpanString",
-			"(J)Ljava/lang/CharSequence;",
-			arg0
-		).object<jstring>();
-	}
-	jstring DateUtils::getRelativeTimeSpanString(jlong arg0, jlong arg1, jlong arg2, jint arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.format.DateUtils",
-			"getRelativeTimeSpanString",
-			"(JJJI)Ljava/lang/CharSequence;",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		).object<jstring>();
-	}
-	jstring DateUtils::getRelativeTimeSpanString(jlong arg0, jlong arg1, jlong arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.format.DateUtils",
-			"getRelativeTimeSpanString",
-			"(JJJ)Ljava/lang/CharSequence;",
-			arg0,
-			arg1,
-			arg2
-		).object<jstring>();
-	}
-	jstring DateUtils::getRelativeDateTimeString(__jni_impl::android::content::Context arg0, jlong arg1, jlong arg2, jlong arg3, jint arg4)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.format.DateUtils",
-			"getRelativeDateTimeString",
-			"(Landroid/content/Context;JJJI)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		).object<jstring>();
-	}
-	jstring DateUtils::formatElapsedTime(__jni_impl::java::lang::StringBuilder arg0, jlong arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.format.DateUtils",
-			"formatElapsedTime",
-			"(Ljava/lang/StringBuilder;J)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1
-		).object<jstring>();
-	}
-	jstring DateUtils::formatElapsedTime(jlong arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.format.DateUtils",
-			"formatElapsedTime",
-			"(J)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jstring DateUtils::formatSameDayTime(jlong arg0, jlong arg1, jint arg2, jint arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.format.DateUtils",
-			"formatSameDayTime",
-			"(JJII)Ljava/lang/CharSequence;",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		).object<jstring>();
-	}
-	jboolean DateUtils::isToday(jlong arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.text.format.DateUtils",
-			"isToday",
-			"(J)Z",
-			arg0
-		);
-	}
 	jstring DateUtils::formatDateRange(__jni_impl::android::content::Context arg0, jlong arg1, jlong arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -629,6 +494,141 @@ namespace __jni_impl::android::text::format
 			arg1,
 			arg2
 		).object<jstring>();
+	}
+	jstring DateUtils::formatElapsedTime(jlong arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.format.DateUtils",
+			"formatElapsedTime",
+			"(J)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring DateUtils::formatElapsedTime(__jni_impl::java::lang::StringBuilder arg0, jlong arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.format.DateUtils",
+			"formatElapsedTime",
+			"(Ljava/lang/StringBuilder;J)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			arg1
+		).object<jstring>();
+	}
+	jstring DateUtils::formatSameDayTime(jlong arg0, jlong arg1, jint arg2, jint arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.format.DateUtils",
+			"formatSameDayTime",
+			"(JJII)Ljava/lang/CharSequence;",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		).object<jstring>();
+	}
+	jstring DateUtils::getAMPMString(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.format.DateUtils",
+			"getAMPMString",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring DateUtils::getDayOfWeekString(jint arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.format.DateUtils",
+			"getDayOfWeekString",
+			"(II)Ljava/lang/String;",
+			arg0,
+			arg1
+		).object<jstring>();
+	}
+	jstring DateUtils::getMonthString(jint arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.format.DateUtils",
+			"getMonthString",
+			"(II)Ljava/lang/String;",
+			arg0,
+			arg1
+		).object<jstring>();
+	}
+	jstring DateUtils::getRelativeDateTimeString(__jni_impl::android::content::Context arg0, jlong arg1, jlong arg2, jlong arg3, jint arg4)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.format.DateUtils",
+			"getRelativeDateTimeString",
+			"(Landroid/content/Context;JJJI)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		).object<jstring>();
+	}
+	jstring DateUtils::getRelativeTimeSpanString(jlong arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.format.DateUtils",
+			"getRelativeTimeSpanString",
+			"(J)Ljava/lang/CharSequence;",
+			arg0
+		).object<jstring>();
+	}
+	jstring DateUtils::getRelativeTimeSpanString(__jni_impl::android::content::Context arg0, jlong arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.format.DateUtils",
+			"getRelativeTimeSpanString",
+			"(Landroid/content/Context;J)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object(),
+			arg1
+		).object<jstring>();
+	}
+	jstring DateUtils::getRelativeTimeSpanString(__jni_impl::android::content::Context arg0, jlong arg1, jboolean arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.format.DateUtils",
+			"getRelativeTimeSpanString",
+			"(Landroid/content/Context;JZ)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
+		).object<jstring>();
+	}
+	jstring DateUtils::getRelativeTimeSpanString(jlong arg0, jlong arg1, jlong arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.format.DateUtils",
+			"getRelativeTimeSpanString",
+			"(JJJ)Ljava/lang/CharSequence;",
+			arg0,
+			arg1,
+			arg2
+		).object<jstring>();
+	}
+	jstring DateUtils::getRelativeTimeSpanString(jlong arg0, jlong arg1, jlong arg2, jint arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.format.DateUtils",
+			"getRelativeTimeSpanString",
+			"(JJJI)Ljava/lang/CharSequence;",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		).object<jstring>();
+	}
+	jboolean DateUtils::isToday(jlong arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.text.format.DateUtils",
+			"isToday",
+			"(J)Z",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::text::format
 

@@ -5,21 +5,21 @@
 
 #include "../../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net::wifi::rtt
+namespace __jni_impl::android::net
 {
-	class RangingRequest;
+	class MacAddress;
 }
 namespace __jni_impl::android::net::wifi
 {
 	class ScanResult;
 }
-namespace __jni_impl::android::net
-{
-	class MacAddress;
-}
 namespace __jni_impl::android::net::wifi::aware
 {
 	class PeerHandle;
+}
+namespace __jni_impl::android::net::wifi::rtt
+{
+	class RangingRequest;
 }
 
 namespace __jni_impl::android::net::wifi::rtt
@@ -33,18 +33,18 @@ namespace __jni_impl::android::net::wifi::rtt
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject build();
 		QAndroidJniObject addAccessPoint(__jni_impl::android::net::wifi::ScanResult arg0);
 		QAndroidJniObject addAccessPoints(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject addWifiAwarePeer(__jni_impl::android::net::MacAddress arg0);
 		QAndroidJniObject addWifiAwarePeer(__jni_impl::android::net::wifi::aware::PeerHandle arg0);
+		QAndroidJniObject build();
 	};
 } // namespace __jni_impl::android::net::wifi::rtt
 
-#include "RangingRequest.hpp"
-#include "../ScanResult.hpp"
 #include "../../MacAddress.hpp"
+#include "../ScanResult.hpp"
 #include "../aware/PeerHandle.hpp"
+#include "RangingRequest.hpp"
 
 namespace __jni_impl::android::net::wifi::rtt
 {
@@ -60,13 +60,6 @@ namespace __jni_impl::android::net::wifi::rtt
 	}
 	
 	// Methods
-	QAndroidJniObject RangingRequest_Builder::build()
-	{
-		return __thiz.callObjectMethod(
-			"build",
-			"()Landroid/net/wifi/rtt/RangingRequest;"
-		);
-	}
 	QAndroidJniObject RangingRequest_Builder::addAccessPoint(__jni_impl::android::net::wifi::ScanResult arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -97,6 +90,13 @@ namespace __jni_impl::android::net::wifi::rtt
 			"addWifiAwarePeer",
 			"(Landroid/net/wifi/aware/PeerHandle;)Landroid/net/wifi/rtt/RangingRequest$Builder;",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject RangingRequest_Builder::build()
+	{
+		return __thiz.callObjectMethod(
+			"build",
+			"()Landroid/net/wifi/rtt/RangingRequest;"
 		);
 	}
 } // namespace __jni_impl::android::net::wifi::rtt

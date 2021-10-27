@@ -12,11 +12,11 @@ namespace __jni_impl::java::io
 }
 namespace __jni_impl::java::nio::charset
 {
-	class CharsetDecoder;
+	class Charset;
 }
 namespace __jni_impl::java::nio::charset
 {
-	class Charset;
+	class CharsetDecoder;
 }
 
 namespace __jni_impl::java::io
@@ -27,46 +27,36 @@ namespace __jni_impl::java::io
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::nio::charset::CharsetDecoder arg1);
-		void __constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::nio::charset::Charset arg1);
+		void __constructor(__jni_impl::java::io::InputStream arg0);
 		void __constructor(__jni_impl::java::io::InputStream arg0, jstring arg1);
 		void __constructor(__jni_impl::java::io::InputStream arg0, const QString &arg1);
-		void __constructor(__jni_impl::java::io::InputStream arg0);
+		void __constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::nio::charset::Charset arg1);
+		void __constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::nio::charset::CharsetDecoder arg1);
 		
 		// Methods
-		jint read();
-		jint read(jcharArray arg0, jint arg1, jint arg2);
 		void close();
 		jstring getEncoding();
+		jint read();
+		jint read(jcharArray arg0, jint arg1, jint arg2);
 		jboolean ready();
 	};
 } // namespace __jni_impl::java::io
 
 #include "InputStream.hpp"
-#include "../nio/charset/CharsetDecoder.hpp"
 #include "../nio/charset/Charset.hpp"
+#include "../nio/charset/CharsetDecoder.hpp"
 
 namespace __jni_impl::java::io
 {
 	// Fields
 	
 	// Constructors
-	void InputStreamReader::__constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::nio::charset::CharsetDecoder arg1)
+	void InputStreamReader::__constructor(__jni_impl::java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.InputStreamReader",
-			"(Ljava/io/InputStream;Ljava/nio/charset/CharsetDecoder;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void InputStreamReader::__constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::nio::charset::Charset arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.InputStreamReader",
-			"(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			"(Ljava/io/InputStream;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void InputStreamReader::__constructor(__jni_impl::java::io::InputStream arg0, jstring arg1)
@@ -87,16 +77,40 @@ namespace __jni_impl::java::io
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	void InputStreamReader::__constructor(__jni_impl::java::io::InputStream arg0)
+	void InputStreamReader::__constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::nio::charset::Charset arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.io.InputStreamReader",
-			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
+			"(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void InputStreamReader::__constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::nio::charset::CharsetDecoder arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.InputStreamReader",
+			"(Ljava/io/InputStream;Ljava/nio/charset/CharsetDecoder;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	
 	// Methods
+	void InputStreamReader::close()
+	{
+		__thiz.callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	jstring InputStreamReader::getEncoding()
+	{
+		return __thiz.callObjectMethod(
+			"getEncoding",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jint InputStreamReader::read()
 	{
 		return __thiz.callMethod<jint>(
@@ -114,20 +128,6 @@ namespace __jni_impl::java::io
 			arg2
 		);
 	}
-	void InputStreamReader::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
-	}
-	jstring InputStreamReader::getEncoding()
-	{
-		return __thiz.callObjectMethod(
-			"getEncoding",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jboolean InputStreamReader::ready()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -143,7 +143,12 @@ namespace java::io
 	{
 	public:
 		InputStreamReader(QAndroidJniObject obj) { __thiz = obj; }
-		InputStreamReader(__jni_impl::java::io::InputStream arg0, __jni_impl::java::nio::charset::CharsetDecoder arg1)
+		InputStreamReader(__jni_impl::java::io::InputStream arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		InputStreamReader(__jni_impl::java::io::InputStream arg0, jstring arg1)
 		{
 			__constructor(
 				arg0,
@@ -155,16 +160,11 @@ namespace java::io
 				arg0,
 				arg1);
 		}
-		InputStreamReader(__jni_impl::java::io::InputStream arg0, jstring arg1)
+		InputStreamReader(__jni_impl::java::io::InputStream arg0, __jni_impl::java::nio::charset::CharsetDecoder arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
-		}
-		InputStreamReader(__jni_impl::java::io::InputStream arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace java::io

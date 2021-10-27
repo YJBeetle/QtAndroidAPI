@@ -5,10 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view
-{
-	class Surface;
-}
 namespace __jni_impl::android::media
 {
 	class Image;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::media
 namespace __jni_impl::android::os
 {
 	class Handler;
+}
+namespace __jni_impl::android::view
+{
+	class Surface;
 }
 
 namespace __jni_impl::android::media
@@ -32,17 +32,17 @@ namespace __jni_impl::android::media
 		static QAndroidJniObject newInstance(__jni_impl::android::view::Surface arg0, jint arg1);
 		static QAndroidJniObject newInstance(__jni_impl::android::view::Surface arg0, jint arg1, jint arg2);
 		void close();
+		QAndroidJniObject dequeueInputImage();
 		jint getFormat();
 		jint getMaxImages();
-		QAndroidJniObject dequeueInputImage();
 		void queueInputImage(__jni_impl::android::media::Image arg0);
 		void setOnImageReleasedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
 	};
 } // namespace __jni_impl::android::media
 
-#include "../view/Surface.hpp"
 #include "Image.hpp"
 #include "../os/Handler.hpp"
+#include "../view/Surface.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -85,6 +85,13 @@ namespace __jni_impl::android::media
 			"()V"
 		);
 	}
+	QAndroidJniObject ImageWriter::dequeueInputImage()
+	{
+		return __thiz.callObjectMethod(
+			"dequeueInputImage",
+			"()Landroid/media/Image;"
+		);
+	}
 	jint ImageWriter::getFormat()
 	{
 		return __thiz.callMethod<jint>(
@@ -97,13 +104,6 @@ namespace __jni_impl::android::media
 		return __thiz.callMethod<jint>(
 			"getMaxImages",
 			"()I"
-		);
-	}
-	QAndroidJniObject ImageWriter::dequeueInputImage()
-	{
-		return __thiz.callObjectMethod(
-			"dequeueInputImage",
-			"()Landroid/media/Image;"
 		);
 	}
 	void ImageWriter::queueInputImage(__jni_impl::android::media::Image arg0)

@@ -23,8 +23,8 @@ namespace __jni_impl::android::util
 		void __constructor(const QString &arg0);
 		
 		// Methods
-		void set(jobject arg0, jobject arg1);
 		void set(jobject arg0, __jni_impl::java::lang::Integer arg1);
+		void set(jobject arg0, jobject arg1);
 		void setValue(jobject arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::util
@@ -54,15 +54,6 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
-	void IntProperty::set(jobject arg0, jobject arg1)
-	{
-		__thiz.callMethod<void>(
-			"set",
-			"(Ljava/lang/Object;Ljava/lang/Object;)V",
-			arg0,
-			arg1
-		);
-	}
 	void IntProperty::set(jobject arg0, __jni_impl::java::lang::Integer arg1)
 	{
 		__thiz.callMethod<void>(
@@ -70,6 +61,15 @@ namespace __jni_impl::android::util
 			"(Ljava/lang/Object;Ljava/lang/Integer;)V",
 			arg0,
 			arg1.__jniObject().object()
+		);
+	}
+	void IntProperty::set(jobject arg0, jobject arg1)
+	{
+		__thiz.callMethod<void>(
+			"set",
+			"(Ljava/lang/Object;Ljava/lang/Object;)V",
+			arg0,
+			arg1
 		);
 	}
 	void IntProperty::setValue(jobject arg0, jint arg1)

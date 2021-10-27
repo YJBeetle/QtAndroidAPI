@@ -19,8 +19,8 @@ namespace __jni_impl::java::text
 		// Methods
 		jint compareTo(jobject arg0);
 		jint compareTo(__jni_impl::java::text::CollationKey arg0);
-		jbyteArray toByteArray();
 		jstring getSourceString();
+		jbyteArray toByteArray();
 	};
 } // namespace __jni_impl::java::text
 
@@ -54,19 +54,19 @@ namespace __jni_impl::java::text
 			arg0.__jniObject().object()
 		);
 	}
-	jbyteArray CollationKey::toByteArray()
-	{
-		return __thiz.callObjectMethod(
-			"toByteArray",
-			"()[B"
-		).object<jbyteArray>();
-	}
 	jstring CollationKey::getSourceString()
 	{
 		return __thiz.callObjectMethod(
 			"getSourceString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jbyteArray CollationKey::toByteArray()
+	{
+		return __thiz.callObjectMethod(
+			"toByteArray",
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::java::text
 

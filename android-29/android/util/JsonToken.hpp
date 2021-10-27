@@ -14,23 +14,23 @@ namespace __jni_impl::android::util
 	public:
 		// Fields
 		static QAndroidJniObject BEGIN_ARRAY();
-		static QAndroidJniObject END_ARRAY();
 		static QAndroidJniObject BEGIN_OBJECT();
+		static QAndroidJniObject BOOLEAN();
+		static QAndroidJniObject END_ARRAY();
+		static QAndroidJniObject END_DOCUMENT();
 		static QAndroidJniObject END_OBJECT();
 		static QAndroidJniObject NAME();
-		static QAndroidJniObject STRING();
-		static QAndroidJniObject NUMBER();
-		static QAndroidJniObject BOOLEAN();
 		static QAndroidJniObject NULL();
-		static QAndroidJniObject END_DOCUMENT();
+		static QAndroidJniObject NUMBER();
+		static QAndroidJniObject STRING();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::util
 
@@ -46,6 +46,22 @@ namespace __jni_impl::android::util
 			"Landroid/util/JsonToken;"
 		);
 	}
+	QAndroidJniObject JsonToken::BEGIN_OBJECT()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.util.JsonToken",
+			"BEGIN_OBJECT",
+			"Landroid/util/JsonToken;"
+		);
+	}
+	QAndroidJniObject JsonToken::BOOLEAN()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.util.JsonToken",
+			"BOOLEAN",
+			"Landroid/util/JsonToken;"
+		);
+	}
 	QAndroidJniObject JsonToken::END_ARRAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -54,11 +70,11 @@ namespace __jni_impl::android::util
 			"Landroid/util/JsonToken;"
 		);
 	}
-	QAndroidJniObject JsonToken::BEGIN_OBJECT()
+	QAndroidJniObject JsonToken::END_DOCUMENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.JsonToken",
-			"BEGIN_OBJECT",
+			"END_DOCUMENT",
 			"Landroid/util/JsonToken;"
 		);
 	}
@@ -78,11 +94,11 @@ namespace __jni_impl::android::util
 			"Landroid/util/JsonToken;"
 		);
 	}
-	QAndroidJniObject JsonToken::STRING()
+	QAndroidJniObject JsonToken::NULL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.JsonToken",
-			"STRING",
+			"NULL",
 			"Landroid/util/JsonToken;"
 		);
 	}
@@ -94,27 +110,11 @@ namespace __jni_impl::android::util
 			"Landroid/util/JsonToken;"
 		);
 	}
-	QAndroidJniObject JsonToken::BOOLEAN()
+	QAndroidJniObject JsonToken::STRING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.JsonToken",
-			"BOOLEAN",
-			"Landroid/util/JsonToken;"
-		);
-	}
-	QAndroidJniObject JsonToken::NULL()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.util.JsonToken",
-			"NULL",
-			"Landroid/util/JsonToken;"
-		);
-	}
-	QAndroidJniObject JsonToken::END_DOCUMENT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.util.JsonToken",
-			"END_DOCUMENT",
+			"STRING",
 			"Landroid/util/JsonToken;"
 		);
 	}
@@ -128,14 +128,6 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
-	jarray JsonToken::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.util.JsonToken",
-			"values",
-			"()[Landroid/util/JsonToken;"
-		).object<jarray>();
-	}
 	QAndroidJniObject JsonToken::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -153,6 +145,14 @@ namespace __jni_impl::android::util
 			"(Ljava/lang/String;)Landroid/util/JsonToken;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray JsonToken::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.util.JsonToken",
+			"values",
+			"()[Landroid/util/JsonToken;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::util
 

@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::content::pm
 {
-	class PackageManager;
+	class PackageItemInfo;
 }
 namespace __jni_impl::android::content::pm
 {
-	class PackageItemInfo;
+	class PackageManager;
 }
 
 namespace __jni_impl::android::content::pm
@@ -30,8 +30,8 @@ namespace __jni_impl::android::content::pm
 	};
 } // namespace __jni_impl::android::content::pm
 
-#include "PackageManager.hpp"
 #include "PackageItemInfo.hpp"
+#include "PackageManager.hpp"
 
 namespace __jni_impl::android::content::pm
 {

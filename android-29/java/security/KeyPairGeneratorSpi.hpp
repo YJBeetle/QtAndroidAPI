@@ -7,11 +7,11 @@
 
 namespace __jni_impl::java::security
 {
-	class SecureRandom;
+	class KeyPair;
 }
 namespace __jni_impl::java::security
 {
-	class KeyPair;
+	class SecureRandom;
 }
 
 namespace __jni_impl::java::security
@@ -25,14 +25,14 @@ namespace __jni_impl::java::security
 		void __constructor();
 		
 		// Methods
-		void initialize(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::SecureRandom arg1);
-		void initialize(jint arg0, __jni_impl::java::security::SecureRandom arg1);
 		QAndroidJniObject generateKeyPair();
+		void initialize(jint arg0, __jni_impl::java::security::SecureRandom arg1);
+		void initialize(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::SecureRandom arg1);
 	};
 } // namespace __jni_impl::java::security
 
-#include "SecureRandom.hpp"
 #include "KeyPair.hpp"
+#include "SecureRandom.hpp"
 
 namespace __jni_impl::java::security
 {
@@ -48,13 +48,11 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	void KeyPairGeneratorSpi::initialize(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::SecureRandom arg1)
+	QAndroidJniObject KeyPairGeneratorSpi::generateKeyPair()
 	{
-		__thiz.callMethod<void>(
-			"initialize",
-			"(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"generateKeyPair",
+			"()Ljava/security/KeyPair;"
 		);
 	}
 	void KeyPairGeneratorSpi::initialize(jint arg0, __jni_impl::java::security::SecureRandom arg1)
@@ -66,11 +64,13 @@ namespace __jni_impl::java::security
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject KeyPairGeneratorSpi::generateKeyPair()
+	void KeyPairGeneratorSpi::initialize(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::SecureRandom arg1)
 	{
-		return __thiz.callObjectMethod(
-			"generateKeyPair",
-			"()Ljava/security/KeyPair;"
+		__thiz.callMethod<void>(
+			"initialize",
+			"(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::java::security

@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::content
 {
-	class Intent;
+	class Context;
 }
 namespace __jni_impl::android::content
 {
-	class Context;
+	class Intent;
 }
 
 namespace __jni_impl::android::speech
@@ -61,8 +61,8 @@ namespace __jni_impl::android::speech
 	};
 } // namespace __jni_impl::android::speech
 
-#include "../content/Intent.hpp"
 #include "../content/Context.hpp"
+#include "../content/Intent.hpp"
 
 namespace __jni_impl::android::speech
 {

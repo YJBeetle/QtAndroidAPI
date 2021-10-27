@@ -21,9 +21,9 @@ namespace __jni_impl::java::security::spec
 		void __constructor(__jni_impl::java::math::BigInteger arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2, __jni_impl::java::math::BigInteger arg3);
 		
 		// Methods
+		QAndroidJniObject getG();
 		QAndroidJniObject getP();
 		QAndroidJniObject getQ();
-		QAndroidJniObject getG();
 		QAndroidJniObject getX();
 	};
 } // namespace __jni_impl::java::security::spec
@@ -48,6 +48,13 @@ namespace __jni_impl::java::security::spec
 	}
 	
 	// Methods
+	QAndroidJniObject DSAPrivateKeySpec::getG()
+	{
+		return __thiz.callObjectMethod(
+			"getG",
+			"()Ljava/math/BigInteger;"
+		);
+	}
 	QAndroidJniObject DSAPrivateKeySpec::getP()
 	{
 		return __thiz.callObjectMethod(
@@ -59,13 +66,6 @@ namespace __jni_impl::java::security::spec
 	{
 		return __thiz.callObjectMethod(
 			"getQ",
-			"()Ljava/math/BigInteger;"
-		);
-	}
-	QAndroidJniObject DSAPrivateKeySpec::getG()
-	{
-		return __thiz.callObjectMethod(
-			"getG",
 			"()Ljava/math/BigInteger;"
 		);
 	}

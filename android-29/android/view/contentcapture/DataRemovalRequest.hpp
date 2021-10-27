@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view::contentcapture
-{
-	class DataRemovalRequest_Builder;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::view::contentcapture
+{
+	class DataRemovalRequest_Builder;
 }
 
 namespace __jni_impl::android::view::contentcapture
@@ -27,16 +27,16 @@ namespace __jni_impl::android::view::contentcapture
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
+		QAndroidJniObject getLocusIdRequests();
 		jstring getPackageName();
 		jboolean isForEverything();
-		QAndroidJniObject getLocusIdRequests();
-		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::contentcapture
 
-#include "DataRemovalRequest_Builder.hpp"
 #include "../../os/Parcel.hpp"
+#include "DataRemovalRequest_Builder.hpp"
 
 namespace __jni_impl::android::view::contentcapture
 {
@@ -66,6 +66,20 @@ namespace __jni_impl::android::view::contentcapture
 	}
 	
 	// Methods
+	jint DataRemovalRequest::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	QAndroidJniObject DataRemovalRequest::getLocusIdRequests()
+	{
+		return __thiz.callObjectMethod(
+			"getLocusIdRequests",
+			"()Ljava/util/List;"
+		);
+	}
 	jstring DataRemovalRequest::getPackageName()
 	{
 		return __thiz.callObjectMethod(
@@ -78,20 +92,6 @@ namespace __jni_impl::android::view::contentcapture
 		return __thiz.callMethod<jboolean>(
 			"isForEverything",
 			"()Z"
-		);
-	}
-	QAndroidJniObject DataRemovalRequest::getLocusIdRequests()
-	{
-		return __thiz.callObjectMethod(
-			"getLocusIdRequests",
-			"()Ljava/util/List;"
-		);
-	}
-	jint DataRemovalRequest::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
 		);
 	}
 	void DataRemovalRequest::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

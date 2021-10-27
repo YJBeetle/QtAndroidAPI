@@ -47,16 +47,16 @@ namespace __jni_impl::android::hardware
 		void __constructor();
 		
 		// Methods
-		void close();
 		static QAndroidJniObject create(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4);
 		static jboolean isSupported(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4);
+		void close();
+		jint describeContents();
 		jint getFormat();
+		jint getHeight();
+		jint getLayers();
 		jlong getUsage();
 		jint getWidth();
-		jint getHeight();
 		jboolean isClosed();
-		jint getLayers();
-		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::hardware
@@ -259,13 +259,6 @@ namespace __jni_impl::android::hardware
 	}
 	
 	// Methods
-	void HardwareBuffer::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
-	}
 	QAndroidJniObject HardwareBuffer::create(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -292,10 +285,38 @@ namespace __jni_impl::android::hardware
 			arg4
 		);
 	}
+	void HardwareBuffer::close()
+	{
+		__thiz.callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	jint HardwareBuffer::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jint HardwareBuffer::getFormat()
 	{
 		return __thiz.callMethod<jint>(
 			"getFormat",
+			"()I"
+		);
+	}
+	jint HardwareBuffer::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
+	}
+	jint HardwareBuffer::getLayers()
+	{
+		return __thiz.callMethod<jint>(
+			"getLayers",
 			"()I"
 		);
 	}
@@ -313,32 +334,11 @@ namespace __jni_impl::android::hardware
 			"()I"
 		);
 	}
-	jint HardwareBuffer::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I"
-		);
-	}
 	jboolean HardwareBuffer::isClosed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isClosed",
 			"()Z"
-		);
-	}
-	jint HardwareBuffer::getLayers()
-	{
-		return __thiz.callMethod<jint>(
-			"getLayers",
-			"()I"
-		);
-	}
-	jint HardwareBuffer::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
 		);
 	}
 	void HardwareBuffer::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

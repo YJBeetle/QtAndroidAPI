@@ -8,11 +8,11 @@
 
 namespace __jni_impl::android::icu::text
 {
-	class Edits;
+	class CaseMap;
 }
 namespace __jni_impl::android::icu::text
 {
-	class CaseMap;
+	class Edits;
 }
 
 namespace __jni_impl::android::icu::text
@@ -35,8 +35,8 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "Edits.hpp"
 #include "CaseMap.hpp"
+#include "Edits.hpp"
 
 namespace __jni_impl::android::icu::text
 {

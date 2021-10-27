@@ -25,8 +25,8 @@ namespace __jni_impl::android::accessibilityservice
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject build();
 		QAndroidJniObject addStroke(__jni_impl::android::accessibilityservice::GestureDescription_StrokeDescription arg0);
+		QAndroidJniObject build();
 	};
 } // namespace __jni_impl::android::accessibilityservice
 
@@ -47,19 +47,19 @@ namespace __jni_impl::android::accessibilityservice
 	}
 	
 	// Methods
-	QAndroidJniObject GestureDescription_Builder::build()
-	{
-		return __thiz.callObjectMethod(
-			"build",
-			"()Landroid/accessibilityservice/GestureDescription;"
-		);
-	}
 	QAndroidJniObject GestureDescription_Builder::addStroke(__jni_impl::android::accessibilityservice::GestureDescription_StrokeDescription arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addStroke",
 			"(Landroid/accessibilityservice/GestureDescription$StrokeDescription;)Landroid/accessibilityservice/GestureDescription$Builder;",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject GestureDescription_Builder::build()
+	{
+		return __thiz.callObjectMethod(
+			"build",
+			"()Landroid/accessibilityservice/GestureDescription;"
 		);
 	}
 } // namespace __jni_impl::android::accessibilityservice

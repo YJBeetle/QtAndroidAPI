@@ -22,16 +22,16 @@ namespace __jni_impl::android::webkit
 		
 		// Methods
 		static QAndroidJniObject getInstance(__jni_impl::android::content::Context arg0);
-		void setHttpAuthUsernamePassword(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
-		void setHttpAuthUsernamePassword(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3);
+		void clearFormData();
+		void clearHttpAuthUsernamePassword();
+		void clearUsernamePassword();
 		jarray getHttpAuthUsernamePassword(jstring arg0, jstring arg1);
 		jarray getHttpAuthUsernamePassword(const QString &arg0, const QString &arg1);
-		void clearFormData();
-		jboolean hasUsernamePassword();
-		void clearUsernamePassword();
-		jboolean hasHttpAuthUsernamePassword();
-		void clearHttpAuthUsernamePassword();
 		jboolean hasFormData();
+		jboolean hasHttpAuthUsernamePassword();
+		jboolean hasUsernamePassword();
+		void setHttpAuthUsernamePassword(jstring arg0, jstring arg1, jstring arg2, jstring arg3);
+		void setHttpAuthUsernamePassword(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3);
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -60,26 +60,25 @@ namespace __jni_impl::android::webkit
 			arg0.__jniObject().object()
 		);
 	}
-	void WebViewDatabase::setHttpAuthUsernamePassword(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
+	void WebViewDatabase::clearFormData()
 	{
 		__thiz.callMethod<void>(
-			"setHttpAuthUsernamePassword",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
+			"clearFormData",
+			"()V"
 		);
 	}
-	void WebViewDatabase::setHttpAuthUsernamePassword(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3)
+	void WebViewDatabase::clearHttpAuthUsernamePassword()
 	{
 		__thiz.callMethod<void>(
-			"setHttpAuthUsernamePassword",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			QAndroidJniObject::fromString(arg3).object<jstring>()
+			"clearHttpAuthUsernamePassword",
+			"()V"
+		);
+	}
+	void WebViewDatabase::clearUsernamePassword()
+	{
+		__thiz.callMethod<void>(
+			"clearUsernamePassword",
+			"()V"
 		);
 	}
 	jarray WebViewDatabase::getHttpAuthUsernamePassword(jstring arg0, jstring arg1)
@@ -100,25 +99,11 @@ namespace __jni_impl::android::webkit
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jarray>();
 	}
-	void WebViewDatabase::clearFormData()
-	{
-		__thiz.callMethod<void>(
-			"clearFormData",
-			"()V"
-		);
-	}
-	jboolean WebViewDatabase::hasUsernamePassword()
+	jboolean WebViewDatabase::hasFormData()
 	{
 		return __thiz.callMethod<jboolean>(
-			"hasUsernamePassword",
+			"hasFormData",
 			"()Z"
-		);
-	}
-	void WebViewDatabase::clearUsernamePassword()
-	{
-		__thiz.callMethod<void>(
-			"clearUsernamePassword",
-			"()V"
 		);
 	}
 	jboolean WebViewDatabase::hasHttpAuthUsernamePassword()
@@ -128,18 +113,33 @@ namespace __jni_impl::android::webkit
 			"()Z"
 		);
 	}
-	void WebViewDatabase::clearHttpAuthUsernamePassword()
-	{
-		__thiz.callMethod<void>(
-			"clearHttpAuthUsernamePassword",
-			"()V"
-		);
-	}
-	jboolean WebViewDatabase::hasFormData()
+	jboolean WebViewDatabase::hasUsernamePassword()
 	{
 		return __thiz.callMethod<jboolean>(
-			"hasFormData",
+			"hasUsernamePassword",
 			"()Z"
+		);
+	}
+	void WebViewDatabase::setHttpAuthUsernamePassword(jstring arg0, jstring arg1, jstring arg2, jstring arg3)
+	{
+		__thiz.callMethod<void>(
+			"setHttpAuthUsernamePassword",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void WebViewDatabase::setHttpAuthUsernamePassword(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3)
+	{
+		__thiz.callMethod<void>(
+			"setHttpAuthUsernamePassword",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::webkit

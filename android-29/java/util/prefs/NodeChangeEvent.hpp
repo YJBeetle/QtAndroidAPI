@@ -6,10 +6,6 @@
 #include "../../../__JniBaseClass.hpp"
 #include "../EventObject.hpp"
 
-namespace __jni_impl::java::util::prefs
-{
-	class Preferences;
-}
 namespace __jni_impl::java::io
 {
 	class ObjectInputStream;
@@ -17,6 +13,10 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class ObjectOutputStream;
+}
+namespace __jni_impl::java::util::prefs
+{
+	class Preferences;
 }
 
 namespace __jni_impl::java::util::prefs
@@ -30,14 +30,14 @@ namespace __jni_impl::java::util::prefs
 		void __constructor(__jni_impl::java::util::prefs::Preferences arg0, __jni_impl::java::util::prefs::Preferences arg1);
 		
 		// Methods
-		QAndroidJniObject getParent();
 		QAndroidJniObject getChild();
+		QAndroidJniObject getParent();
 	};
 } // namespace __jni_impl::java::util::prefs
 
-#include "Preferences.hpp"
 #include "../../io/ObjectInputStream.hpp"
 #include "../../io/ObjectOutputStream.hpp"
+#include "Preferences.hpp"
 
 namespace __jni_impl::java::util::prefs
 {
@@ -55,17 +55,17 @@ namespace __jni_impl::java::util::prefs
 	}
 	
 	// Methods
-	QAndroidJniObject NodeChangeEvent::getParent()
-	{
-		return __thiz.callObjectMethod(
-			"getParent",
-			"()Ljava/util/prefs/Preferences;"
-		);
-	}
 	QAndroidJniObject NodeChangeEvent::getChild()
 	{
 		return __thiz.callObjectMethod(
 			"getChild",
+			"()Ljava/util/prefs/Preferences;"
+		);
+	}
+	QAndroidJniObject NodeChangeEvent::getParent()
+	{
+		return __thiz.callObjectMethod(
+			"getParent",
 			"()Ljava/util/prefs/Preferences;"
 		);
 	}

@@ -19,20 +19,20 @@ namespace __jni_impl::android::text::style
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject setIntegerPart(jlong arg0);
-		QAndroidJniObject setIntegerPart(jstring arg0);
-		QAndroidJniObject setIntegerPart(const QString &arg0);
+		QAndroidJniObject setDenominator(jstring arg0);
+		QAndroidJniObject setDenominator(const QString &arg0);
+		QAndroidJniObject setDenominator(jlong arg0);
 		QAndroidJniObject setFractionalPart(jstring arg0);
 		QAndroidJniObject setFractionalPart(const QString &arg0);
+		QAndroidJniObject setIntegerPart(jstring arg0);
+		QAndroidJniObject setIntegerPart(const QString &arg0);
+		QAndroidJniObject setIntegerPart(jlong arg0);
 		QAndroidJniObject setNumber(jstring arg0);
 		QAndroidJniObject setNumber(const QString &arg0);
 		QAndroidJniObject setNumber(jlong arg0);
 		QAndroidJniObject setNumerator(jstring arg0);
 		QAndroidJniObject setNumerator(const QString &arg0);
 		QAndroidJniObject setNumerator(jlong arg0);
-		QAndroidJniObject setDenominator(jstring arg0);
-		QAndroidJniObject setDenominator(const QString &arg0);
-		QAndroidJniObject setDenominator(jlong arg0);
 		QAndroidJniObject setUnit(jstring arg0);
 		QAndroidJniObject setUnit(const QString &arg0);
 	};
@@ -53,12 +53,44 @@ namespace __jni_impl::android::text::style
 	}
 	
 	// Methods
-	QAndroidJniObject TtsSpan_MeasureBuilder::setIntegerPart(jlong arg0)
+	QAndroidJniObject TtsSpan_MeasureBuilder::setDenominator(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setIntegerPart",
+			"setDenominator",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;",
+			arg0
+		);
+	}
+	QAndroidJniObject TtsSpan_MeasureBuilder::setDenominator(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setDenominator",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject TtsSpan_MeasureBuilder::setDenominator(jlong arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setDenominator",
 			"(J)Landroid/text/style/TtsSpan$MeasureBuilder;",
 			arg0
+		);
+	}
+	QAndroidJniObject TtsSpan_MeasureBuilder::setFractionalPart(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setFractionalPart",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;",
+			arg0
+		);
+	}
+	QAndroidJniObject TtsSpan_MeasureBuilder::setFractionalPart(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setFractionalPart",
+			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject TtsSpan_MeasureBuilder::setIntegerPart(jstring arg0)
@@ -77,20 +109,12 @@ namespace __jni_impl::android::text::style
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setFractionalPart(jstring arg0)
+	QAndroidJniObject TtsSpan_MeasureBuilder::setIntegerPart(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setFractionalPart",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;",
+			"setIntegerPart",
+			"(J)Landroid/text/style/TtsSpan$MeasureBuilder;",
 			arg0
-		);
-	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setFractionalPart(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setFractionalPart",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject TtsSpan_MeasureBuilder::setNumber(jstring arg0)
@@ -137,30 +161,6 @@ namespace __jni_impl::android::text::style
 	{
 		return __thiz.callObjectMethod(
 			"setNumerator",
-			"(J)Landroid/text/style/TtsSpan$MeasureBuilder;",
-			arg0
-		);
-	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setDenominator(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDenominator",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;",
-			arg0
-		);
-	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setDenominator(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDenominator",
-			"(Ljava/lang/String;)Landroid/text/style/TtsSpan$MeasureBuilder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject TtsSpan_MeasureBuilder::setDenominator(jlong arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDenominator",
 			"(J)Landroid/text/style/TtsSpan$MeasureBuilder;",
 			arg0
 		);

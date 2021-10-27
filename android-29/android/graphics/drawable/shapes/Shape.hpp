@@ -11,11 +11,11 @@ namespace __jni_impl::android::graphics
 }
 namespace __jni_impl::android::graphics
 {
-	class Paint;
+	class Outline;
 }
 namespace __jni_impl::android::graphics
 {
-	class Outline;
+	class Paint;
 }
 
 namespace __jni_impl::android::graphics::drawable::shapes
@@ -29,21 +29,21 @@ namespace __jni_impl::android::graphics::drawable::shapes
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
 		QAndroidJniObject clone();
-		void resize(jfloat arg0, jfloat arg1);
 		void draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1);
-		jboolean hasAlpha();
-		jfloat getWidth();
+		jboolean equals(jobject arg0);
 		jfloat getHeight();
 		void getOutline(__jni_impl::android::graphics::Outline arg0);
+		jfloat getWidth();
+		jboolean hasAlpha();
+		jint hashCode();
+		void resize(jfloat arg0, jfloat arg1);
 	};
 } // namespace __jni_impl::android::graphics::drawable::shapes
 
 #include "../../Canvas.hpp"
-#include "../../Paint.hpp"
 #include "../../Outline.hpp"
+#include "../../Paint.hpp"
 
 namespace __jni_impl::android::graphics::drawable::shapes
 {
@@ -59,35 +59,11 @@ namespace __jni_impl::android::graphics::drawable::shapes
 	}
 	
 	// Methods
-	jboolean Shape::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jint Shape::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	QAndroidJniObject Shape::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
 			"()Landroid/graphics/drawable/shapes/Shape;"
-		);
-	}
-	void Shape::resize(jfloat arg0, jfloat arg1)
-	{
-		__thiz.callMethod<void>(
-			"resize",
-			"(FF)V",
-			arg0,
-			arg1
 		);
 	}
 	void Shape::draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1)
@@ -99,18 +75,12 @@ namespace __jni_impl::android::graphics::drawable::shapes
 			arg1.__jniObject().object()
 		);
 	}
-	jboolean Shape::hasAlpha()
+	jboolean Shape::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"hasAlpha",
-			"()Z"
-		);
-	}
-	jfloat Shape::getWidth()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getWidth",
-			"()F"
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 	jfloat Shape::getHeight()
@@ -126,6 +96,36 @@ namespace __jni_impl::android::graphics::drawable::shapes
 			"getOutline",
 			"(Landroid/graphics/Outline;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	jfloat Shape::getWidth()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getWidth",
+			"()F"
+		);
+	}
+	jboolean Shape::hasAlpha()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasAlpha",
+			"()Z"
+		);
+	}
+	jint Shape::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	void Shape::resize(jfloat arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"resize",
+			"(FF)V",
+			arg0,
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::graphics::drawable::shapes

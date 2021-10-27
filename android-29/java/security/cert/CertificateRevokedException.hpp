@@ -8,18 +8,6 @@
 #include "../GeneralSecurityException.hpp"
 #include "CertificateException.hpp"
 
-namespace __jni_impl::java::util
-{
-	class Date;
-}
-namespace __jni_impl::java::security::cert
-{
-	class CRLReason;
-}
-namespace __jni_impl::javax::security::auth::x500
-{
-	class X500Principal;
-}
 namespace __jni_impl::java::io
 {
 	class ObjectInputStream;
@@ -27,6 +15,18 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class ObjectOutputStream;
+}
+namespace __jni_impl::java::security::cert
+{
+	class CRLReason;
+}
+namespace __jni_impl::java::util
+{
+	class Date;
+}
+namespace __jni_impl::javax::security::auth::x500
+{
+	class X500Principal;
 }
 
 namespace __jni_impl::java::security::cert
@@ -40,20 +40,20 @@ namespace __jni_impl::java::security::cert
 		void __constructor(__jni_impl::java::util::Date arg0, __jni_impl::java::security::cert::CRLReason arg1, __jni_impl::javax::security::auth::x500::X500Principal arg2, __jni_impl::__JniBaseClass arg3);
 		
 		// Methods
-		jstring getMessage();
-		QAndroidJniObject getExtensions();
 		QAndroidJniObject getAuthorityName();
+		QAndroidJniObject getExtensions();
 		QAndroidJniObject getInvalidityDate();
-		QAndroidJniObject getRevocationReason();
+		jstring getMessage();
 		QAndroidJniObject getRevocationDate();
+		QAndroidJniObject getRevocationReason();
 	};
 } // namespace __jni_impl::java::security::cert
 
-#include "../../util/Date.hpp"
-#include "CRLReason.hpp"
-#include "../../../javax/security/auth/x500/X500Principal.hpp"
 #include "../../io/ObjectInputStream.hpp"
 #include "../../io/ObjectOutputStream.hpp"
+#include "CRLReason.hpp"
+#include "../../util/Date.hpp"
+#include "../../../javax/security/auth/x500/X500Principal.hpp"
 
 namespace __jni_impl::java::security::cert
 {
@@ -73,25 +73,18 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	jstring CertificateRevokedException::getMessage()
+	QAndroidJniObject CertificateRevokedException::getAuthorityName()
 	{
 		return __thiz.callObjectMethod(
-			"getMessage",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getAuthorityName",
+			"()Ljavax/security/auth/x500/X500Principal;"
+		);
 	}
 	QAndroidJniObject CertificateRevokedException::getExtensions()
 	{
 		return __thiz.callObjectMethod(
 			"getExtensions",
 			"()Ljava/util/Map;"
-		);
-	}
-	QAndroidJniObject CertificateRevokedException::getAuthorityName()
-	{
-		return __thiz.callObjectMethod(
-			"getAuthorityName",
-			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
 	QAndroidJniObject CertificateRevokedException::getInvalidityDate()
@@ -101,18 +94,25 @@ namespace __jni_impl::java::security::cert
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject CertificateRevokedException::getRevocationReason()
+	jstring CertificateRevokedException::getMessage()
 	{
 		return __thiz.callObjectMethod(
-			"getRevocationReason",
-			"()Ljava/security/cert/CRLReason;"
-		);
+			"getMessage",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject CertificateRevokedException::getRevocationDate()
 	{
 		return __thiz.callObjectMethod(
 			"getRevocationDate",
 			"()Ljava/util/Date;"
+		);
+	}
+	QAndroidJniObject CertificateRevokedException::getRevocationReason()
+	{
+		return __thiz.callObjectMethod(
+			"getRevocationReason",
+			"()Ljava/security/cert/CRLReason;"
 		);
 	}
 } // namespace __jni_impl::java::security::cert

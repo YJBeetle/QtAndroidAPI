@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::math
-{
-	class RoundingMode;
-}
 namespace __jni_impl::java::io
 {
 	class ObjectInputStream;
+}
+namespace __jni_impl::java::math
+{
+	class RoundingMode;
 }
 
 namespace __jni_impl::java::math
@@ -20,37 +20,37 @@ namespace __jni_impl::java::math
 	{
 	public:
 		// Fields
-		static QAndroidJniObject UNLIMITED();
+		static QAndroidJniObject DECIMAL128();
 		static QAndroidJniObject DECIMAL32();
 		static QAndroidJniObject DECIMAL64();
-		static QAndroidJniObject DECIMAL128();
+		static QAndroidJniObject UNLIMITED();
 		
 		// Constructors
+		void __constructor(jint arg0);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
 		void __constructor(jint arg0, __jni_impl::java::math::RoundingMode arg1);
-		void __constructor(jint arg0);
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jint getPrecision();
 		QAndroidJniObject getRoundingMode();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::math
 
-#include "RoundingMode.hpp"
 #include "../io/ObjectInputStream.hpp"
+#include "RoundingMode.hpp"
 
 namespace __jni_impl::java::math
 {
 	// Fields
-	QAndroidJniObject MathContext::UNLIMITED()
+	QAndroidJniObject MathContext::DECIMAL128()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.MathContext",
-			"UNLIMITED",
+			"DECIMAL128",
 			"Ljava/math/MathContext;"
 		);
 	}
@@ -70,16 +70,24 @@ namespace __jni_impl::java::math
 			"Ljava/math/MathContext;"
 		);
 	}
-	QAndroidJniObject MathContext::DECIMAL128()
+	QAndroidJniObject MathContext::UNLIMITED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.MathContext",
-			"DECIMAL128",
+			"UNLIMITED",
 			"Ljava/math/MathContext;"
 		);
 	}
 	
 	// Constructors
+	void MathContext::__constructor(jint arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.math.MathContext",
+			"(I)V",
+			arg0
+		);
+	}
 	void MathContext::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -105,14 +113,6 @@ namespace __jni_impl::java::math
 			arg1.__jniObject().object()
 		);
 	}
-	void MathContext::__constructor(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.math.MathContext",
-			"(I)V",
-			arg0
-		);
-	}
 	
 	// Methods
 	jboolean MathContext::equals(jobject arg0)
@@ -121,20 +121,6 @@ namespace __jni_impl::java::math
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
-		);
-	}
-	jstring MathContext::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint MathContext::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
 		);
 	}
 	jint MathContext::getPrecision()
@@ -151,6 +137,20 @@ namespace __jni_impl::java::math
 			"()Ljava/math/RoundingMode;"
 		);
 	}
+	jint MathContext::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring MathContext::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 } // namespace __jni_impl::java::math
 
 namespace java::math
@@ -159,6 +159,11 @@ namespace java::math
 	{
 	public:
 		MathContext(QAndroidJniObject obj) { __thiz = obj; }
+		MathContext(jint arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		MathContext(jstring arg0)
 		{
 			__constructor(
@@ -169,11 +174,6 @@ namespace java::math
 			__constructor(
 				arg0,
 				arg1);
-		}
-		MathContext(jint arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace java::math

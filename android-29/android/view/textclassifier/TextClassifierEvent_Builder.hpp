@@ -29,17 +29,17 @@ namespace __jni_impl::android::view::textclassifier
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject setLocale(__jni_impl::android::icu::util::ULocale arg0);
-		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
+		QAndroidJniObject setActionIndices(jintArray arg0);
 		QAndroidJniObject setEntityTypes(jarray arg0);
 		QAndroidJniObject setEventContext(__jni_impl::android::view::textclassifier::TextClassificationContext arg0);
-		QAndroidJniObject setResultId(jstring arg0);
-		QAndroidJniObject setResultId(const QString &arg0);
 		QAndroidJniObject setEventIndex(jint arg0);
-		QAndroidJniObject setScores(jfloatArray arg0);
+		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
+		QAndroidJniObject setLocale(__jni_impl::android::icu::util::ULocale arg0);
 		QAndroidJniObject setModelName(jstring arg0);
 		QAndroidJniObject setModelName(const QString &arg0);
-		QAndroidJniObject setActionIndices(jintArray arg0);
+		QAndroidJniObject setResultId(jstring arg0);
+		QAndroidJniObject setResultId(const QString &arg0);
+		QAndroidJniObject setScores(jfloatArray arg0);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -60,20 +60,12 @@ namespace __jni_impl::android::view::textclassifier
 	}
 	
 	// Methods
-	QAndroidJniObject TextClassifierEvent_Builder::setLocale(__jni_impl::android::icu::util::ULocale arg0)
+	QAndroidJniObject TextClassifierEvent_Builder::setActionIndices(jintArray arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setLocale",
-			"(Landroid/icu/util/ULocale;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject TextClassifierEvent_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setExtras",
-			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			arg0.__jniObject().object()
+			"setActionIndices",
+			"([I)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
+			arg0
 		);
 	}
 	QAndroidJniObject TextClassifierEvent_Builder::setEntityTypes(jarray arg0)
@@ -92,22 +84,6 @@ namespace __jni_impl::android::view::textclassifier
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject TextClassifierEvent_Builder::setResultId(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setResultId",
-			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject TextClassifierEvent_Builder::setResultId(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setResultId",
-			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject TextClassifierEvent_Builder::setEventIndex(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -116,12 +92,20 @@ namespace __jni_impl::android::view::textclassifier
 			arg0
 		);
 	}
-	QAndroidJniObject TextClassifierEvent_Builder::setScores(jfloatArray arg0)
+	QAndroidJniObject TextClassifierEvent_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setScores",
-			"([F)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
-			arg0
+			"setExtras",
+			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TextClassifierEvent_Builder::setLocale(__jni_impl::android::icu::util::ULocale arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setLocale",
+			"(Landroid/icu/util/ULocale;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject TextClassifierEvent_Builder::setModelName(jstring arg0)
@@ -140,11 +124,27 @@ namespace __jni_impl::android::view::textclassifier
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	QAndroidJniObject TextClassifierEvent_Builder::setActionIndices(jintArray arg0)
+	QAndroidJniObject TextClassifierEvent_Builder::setResultId(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setActionIndices",
-			"([I)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
+			"setResultId",
+			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject TextClassifierEvent_Builder::setResultId(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setResultId",
+			"(Ljava/lang/String;)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject TextClassifierEvent_Builder::setScores(jfloatArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setScores",
+			"([F)Landroid/view/textclassifier/TextClassifierEvent$Builder;",
 			arg0
 		);
 	}

@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util::regex
-{
-	class Pattern;
-}
 namespace __jni_impl::android::widget
 {
 	class TextView;
+}
+namespace __jni_impl::java::util::regex
+{
+	class Pattern;
 }
 
 namespace __jni_impl::android::text::util
@@ -33,6 +33,9 @@ namespace __jni_impl::android::text::util
 		void __constructor();
 		
 		// Methods
+		static jboolean addLinks(__jni_impl::__JniBaseClass arg0, jint arg1);
+		static jboolean addLinks(__jni_impl::android::widget::TextView arg0, jint arg1);
+		static jboolean addLinks(__jni_impl::__JniBaseClass arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
 		static jboolean addLinks(__jni_impl::__JniBaseClass arg0, __jni_impl::java::util::regex::Pattern arg1, jstring arg2);
 		static jboolean addLinks(__jni_impl::__JniBaseClass arg0, __jni_impl::java::util::regex::Pattern arg1, const QString &arg2);
 		static jboolean addLinks(__jni_impl::__JniBaseClass arg0, __jni_impl::java::util::regex::Pattern arg1, jstring arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::__JniBaseClass arg4);
@@ -41,20 +44,17 @@ namespace __jni_impl::android::text::util
 		static jboolean addLinks(__jni_impl::__JniBaseClass arg0, __jni_impl::java::util::regex::Pattern arg1, const QString &arg2, jarray arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::__JniBaseClass arg5);
 		static jboolean addLinks(__jni_impl::__JniBaseClass arg0, __jni_impl::java::util::regex::Pattern arg1, jstring arg2, jarray arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::__JniBaseClass arg5, __jni_impl::__JniBaseClass arg6);
 		static jboolean addLinks(__jni_impl::__JniBaseClass arg0, __jni_impl::java::util::regex::Pattern arg1, const QString &arg2, jarray arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::__JniBaseClass arg5, __jni_impl::__JniBaseClass arg6);
-		static void addLinks(__jni_impl::android::widget::TextView arg0, __jni_impl::java::util::regex::Pattern arg1, jstring arg2, jarray arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::__JniBaseClass arg5);
-		static void addLinks(__jni_impl::android::widget::TextView arg0, __jni_impl::java::util::regex::Pattern arg1, const QString &arg2, jarray arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::__JniBaseClass arg5);
-		static jboolean addLinks(__jni_impl::__JniBaseClass arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
-		static jboolean addLinks(__jni_impl::android::widget::TextView arg0, jint arg1);
 		static void addLinks(__jni_impl::android::widget::TextView arg0, __jni_impl::java::util::regex::Pattern arg1, jstring arg2);
 		static void addLinks(__jni_impl::android::widget::TextView arg0, __jni_impl::java::util::regex::Pattern arg1, const QString &arg2);
 		static void addLinks(__jni_impl::android::widget::TextView arg0, __jni_impl::java::util::regex::Pattern arg1, jstring arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::__JniBaseClass arg4);
 		static void addLinks(__jni_impl::android::widget::TextView arg0, __jni_impl::java::util::regex::Pattern arg1, const QString &arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::__JniBaseClass arg4);
-		static jboolean addLinks(__jni_impl::__JniBaseClass arg0, jint arg1);
+		static void addLinks(__jni_impl::android::widget::TextView arg0, __jni_impl::java::util::regex::Pattern arg1, jstring arg2, jarray arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::__JniBaseClass arg5);
+		static void addLinks(__jni_impl::android::widget::TextView arg0, __jni_impl::java::util::regex::Pattern arg1, const QString &arg2, jarray arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::__JniBaseClass arg5);
 	};
 } // namespace __jni_impl::android::text::util
 
-#include "../../../java/util/regex/Pattern.hpp"
 #include "../../widget/TextView.hpp"
+#include "../../../java/util/regex/Pattern.hpp"
 
 namespace __jni_impl::android::text::util
 {
@@ -129,6 +129,37 @@ namespace __jni_impl::android::text::util
 	}
 	
 	// Methods
+	jboolean Linkify::addLinks(__jni_impl::__JniBaseClass arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.text.util.Linkify",
+			"addLinks",
+			"(Landroid/text/Spannable;I)Z",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jboolean Linkify::addLinks(__jni_impl::android::widget::TextView arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.text.util.Linkify",
+			"addLinks",
+			"(Landroid/widget/TextView;I)Z",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jboolean Linkify::addLinks(__jni_impl::__JniBaseClass arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.text.util.Linkify",
+			"addLinks",
+			"(Landroid/text/Spannable;ILjava/util/function/Function;)Z",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
 	jboolean Linkify::addLinks(__jni_impl::__JniBaseClass arg0, __jni_impl::java::util::regex::Pattern arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -235,55 +266,6 @@ namespace __jni_impl::android::text::util
 			arg6.__jniObject().object()
 		);
 	}
-	void Linkify::addLinks(__jni_impl::android::widget::TextView arg0, __jni_impl::java::util::regex::Pattern arg1, jstring arg2, jarray arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::__JniBaseClass arg5)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.text.util.Linkify",
-			"addLinks",
-			"(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object()
-		);
-	}
-	void Linkify::addLinks(__jni_impl::android::widget::TextView arg0, __jni_impl::java::util::regex::Pattern arg1, const QString &arg2, jarray arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::__JniBaseClass arg5)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.text.util.Linkify",
-			"addLinks",
-			"(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3,
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object()
-		);
-	}
-	jboolean Linkify::addLinks(__jni_impl::__JniBaseClass arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.text.util.Linkify",
-			"addLinks",
-			"(Landroid/text/Spannable;ILjava/util/function/Function;)Z",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	jboolean Linkify::addLinks(__jni_impl::android::widget::TextView arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.text.util.Linkify",
-			"addLinks",
-			"(Landroid/widget/TextView;I)Z",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	void Linkify::addLinks(__jni_impl::android::widget::TextView arg0, __jni_impl::java::util::regex::Pattern arg1, jstring arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -332,14 +314,32 @@ namespace __jni_impl::android::text::util
 			arg4.__jniObject().object()
 		);
 	}
-	jboolean Linkify::addLinks(__jni_impl::__JniBaseClass arg0, jint arg1)
+	void Linkify::addLinks(__jni_impl::android::widget::TextView arg0, __jni_impl::java::util::regex::Pattern arg1, jstring arg2, jarray arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::__JniBaseClass arg5)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		QAndroidJniObject::callStaticMethod<void>(
 			"android.text.util.Linkify",
 			"addLinks",
-			"(Landroid/text/Spannable;I)Z",
+			"(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V",
 			arg0.__jniObject().object(),
-			arg1
+			arg1.__jniObject().object(),
+			arg2,
+			arg3,
+			arg4.__jniObject().object(),
+			arg5.__jniObject().object()
+		);
+	}
+	void Linkify::addLinks(__jni_impl::android::widget::TextView arg0, __jni_impl::java::util::regex::Pattern arg1, const QString &arg2, jarray arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::__JniBaseClass arg5)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.text.util.Linkify",
+			"addLinks",
+			"(Landroid/widget/TextView;Ljava/util/regex/Pattern;Ljava/lang/String;[Ljava/lang/String;Landroid/text/util/Linkify$MatchFilter;Landroid/text/util/Linkify$TransformFilter;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3,
+			arg4.__jniObject().object(),
+			arg5.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::text::util

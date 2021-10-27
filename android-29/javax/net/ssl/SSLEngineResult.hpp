@@ -7,11 +7,11 @@
 
 namespace __jni_impl::javax::net::ssl
 {
-	class SSLEngineResult_Status;
+	class SSLEngineResult_HandshakeStatus;
 }
 namespace __jni_impl::javax::net::ssl
 {
-	class SSLEngineResult_HandshakeStatus;
+	class SSLEngineResult_Status;
 }
 
 namespace __jni_impl::javax::net::ssl
@@ -26,17 +26,17 @@ namespace __jni_impl::javax::net::ssl
 		void __constructor(__jni_impl::javax::net::ssl::SSLEngineResult_Status arg0, __jni_impl::javax::net::ssl::SSLEngineResult_HandshakeStatus arg1, jint arg2, jint arg3, jlong arg4);
 		
 		// Methods
-		jstring toString();
-		jlong sequenceNumber();
-		QAndroidJniObject getStatus();
-		QAndroidJniObject getHandshakeStatus();
 		jint bytesConsumed();
 		jint bytesProduced();
+		QAndroidJniObject getHandshakeStatus();
+		QAndroidJniObject getStatus();
+		jlong sequenceNumber();
+		jstring toString();
 	};
 } // namespace __jni_impl::javax::net::ssl
 
-#include "SSLEngineResult_Status.hpp"
 #include "SSLEngineResult_HandshakeStatus.hpp"
+#include "SSLEngineResult_Status.hpp"
 
 namespace __jni_impl::javax::net::ssl
 {
@@ -68,34 +68,6 @@ namespace __jni_impl::javax::net::ssl
 	}
 	
 	// Methods
-	jstring SSLEngineResult::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jlong SSLEngineResult::sequenceNumber()
-	{
-		return __thiz.callMethod<jlong>(
-			"sequenceNumber",
-			"()J"
-		);
-	}
-	QAndroidJniObject SSLEngineResult::getStatus()
-	{
-		return __thiz.callObjectMethod(
-			"getStatus",
-			"()Ljavax/net/ssl/SSLEngineResult$Status;"
-		);
-	}
-	QAndroidJniObject SSLEngineResult::getHandshakeStatus()
-	{
-		return __thiz.callObjectMethod(
-			"getHandshakeStatus",
-			"()Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;"
-		);
-	}
 	jint SSLEngineResult::bytesConsumed()
 	{
 		return __thiz.callMethod<jint>(
@@ -109,6 +81,34 @@ namespace __jni_impl::javax::net::ssl
 			"bytesProduced",
 			"()I"
 		);
+	}
+	QAndroidJniObject SSLEngineResult::getHandshakeStatus()
+	{
+		return __thiz.callObjectMethod(
+			"getHandshakeStatus",
+			"()Ljavax/net/ssl/SSLEngineResult$HandshakeStatus;"
+		);
+	}
+	QAndroidJniObject SSLEngineResult::getStatus()
+	{
+		return __thiz.callObjectMethod(
+			"getStatus",
+			"()Ljavax/net/ssl/SSLEngineResult$Status;"
+		);
+	}
+	jlong SSLEngineResult::sequenceNumber()
+	{
+		return __thiz.callMethod<jlong>(
+			"sequenceNumber",
+			"()J"
+		);
+	}
+	jstring SSLEngineResult::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::net::ssl
 

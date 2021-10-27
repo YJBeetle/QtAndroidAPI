@@ -22,9 +22,9 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jint getRequestType();
-		jstring getDefaultUrl();
 		jbyteArray getData();
+		jstring getDefaultUrl();
+		jint getRequestType();
 	};
 } // namespace __jni_impl::android::media
 
@@ -77,12 +77,12 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jint MediaDrm_KeyRequest::getRequestType()
+	jbyteArray MediaDrm_KeyRequest::getData()
 	{
-		return __thiz.callMethod<jint>(
-			"getRequestType",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"getData",
+			"()[B"
+		).object<jbyteArray>();
 	}
 	jstring MediaDrm_KeyRequest::getDefaultUrl()
 	{
@@ -91,12 +91,12 @@ namespace __jni_impl::android::media
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jbyteArray MediaDrm_KeyRequest::getData()
+	jint MediaDrm_KeyRequest::getRequestType()
 	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()[B"
-		).object<jbyteArray>();
+		return __thiz.callMethod<jint>(
+			"getRequestType",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::media
 

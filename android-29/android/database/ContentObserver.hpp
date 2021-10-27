@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Handler;
-}
 namespace __jni_impl::android::net
 {
 	class Uri;
+}
+namespace __jni_impl::android::os
+{
+	class Handler;
 }
 
 namespace __jni_impl::android::database
@@ -25,16 +25,16 @@ namespace __jni_impl::android::database
 		void __constructor(__jni_impl::android::os::Handler arg0);
 		
 		// Methods
+		jboolean deliverSelfNotifications();
 		void dispatchChange(jboolean arg0);
 		void dispatchChange(jboolean arg0, __jni_impl::android::net::Uri arg1);
-		jboolean deliverSelfNotifications();
 		void onChange(jboolean arg0);
 		void onChange(jboolean arg0, __jni_impl::android::net::Uri arg1);
 	};
 } // namespace __jni_impl::android::database
 
-#include "../os/Handler.hpp"
 #include "../net/Uri.hpp"
+#include "../os/Handler.hpp"
 
 namespace __jni_impl::android::database
 {
@@ -51,6 +51,13 @@ namespace __jni_impl::android::database
 	}
 	
 	// Methods
+	jboolean ContentObserver::deliverSelfNotifications()
+	{
+		return __thiz.callMethod<jboolean>(
+			"deliverSelfNotifications",
+			"()Z"
+		);
+	}
 	void ContentObserver::dispatchChange(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -66,13 +73,6 @@ namespace __jni_impl::android::database
 			"(ZLandroid/net/Uri;)V",
 			arg0,
 			arg1.__jniObject().object()
-		);
-	}
-	jboolean ContentObserver::deliverSelfNotifications()
-	{
-		return __thiz.callMethod<jboolean>(
-			"deliverSelfNotifications",
-			"()Z"
 		);
 	}
 	void ContentObserver::onChange(jboolean arg0)

@@ -9,17 +9,17 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::os
+namespace __jni_impl::android::net::wifi::p2p
 {
-	class Looper;
+	class WifiP2pManager;
 }
 namespace __jni_impl::android::os
 {
 	class Binder;
 }
-namespace __jni_impl::android::net::wifi::p2p
+namespace __jni_impl::android::os
 {
-	class WifiP2pManager;
+	class Looper;
 }
 
 namespace __jni_impl::android::net::wifi::p2p
@@ -38,9 +38,9 @@ namespace __jni_impl::android::net::wifi::p2p
 } // namespace __jni_impl::android::net::wifi::p2p
 
 #include "../../../content/Context.hpp"
-#include "../../../os/Looper.hpp"
-#include "../../../os/Binder.hpp"
 #include "WifiP2pManager.hpp"
+#include "../../../os/Binder.hpp"
+#include "../../../os/Looper.hpp"
 
 namespace __jni_impl::android::net::wifi::p2p
 {

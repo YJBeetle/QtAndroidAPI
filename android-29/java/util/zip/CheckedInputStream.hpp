@@ -23,10 +23,10 @@ namespace __jni_impl::java::util::zip
 		void __constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
-		jint read();
-		jlong skip(jlong arg0);
 		QAndroidJniObject getChecksum();
+		jint read();
+		jint read(jbyteArray arg0, jint arg1, jint arg2);
+		jlong skip(jlong arg0);
 	};
 } // namespace __jni_impl::java::util::zip
 
@@ -48,6 +48,20 @@ namespace __jni_impl::java::util::zip
 	}
 	
 	// Methods
+	QAndroidJniObject CheckedInputStream::getChecksum()
+	{
+		return __thiz.callObjectMethod(
+			"getChecksum",
+			"()Ljava/util/zip/Checksum;"
+		);
+	}
+	jint CheckedInputStream::read()
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
 	jint CheckedInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		return __thiz.callMethod<jint>(
@@ -58,26 +72,12 @@ namespace __jni_impl::java::util::zip
 			arg2
 		);
 	}
-	jint CheckedInputStream::read()
-	{
-		return __thiz.callMethod<jint>(
-			"read",
-			"()I"
-		);
-	}
 	jlong CheckedInputStream::skip(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"skip",
 			"(J)J",
 			arg0
-		);
-	}
-	QAndroidJniObject CheckedInputStream::getChecksum()
-	{
-		return __thiz.callObjectMethod(
-			"getChecksum",
-			"()Ljava/util/zip/Checksum;"
 		);
 	}
 } // namespace __jni_impl::java::util::zip

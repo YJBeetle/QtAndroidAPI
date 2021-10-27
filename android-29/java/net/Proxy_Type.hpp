@@ -21,9 +21,9 @@ namespace __jni_impl::java::net
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::net
 
@@ -65,14 +65,6 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
-	jarray Proxy_Type::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.net.Proxy$Type",
-			"values",
-			"()[Ljava/net/Proxy$Type;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Proxy_Type::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::java::net
 			"(Ljava/lang/String;)Ljava/net/Proxy$Type;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Proxy_Type::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.net.Proxy$Type",
+			"values",
+			"()[Ljava/net/Proxy$Type;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::net
 

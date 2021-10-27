@@ -21,19 +21,19 @@ namespace __jni_impl::java::time::chrono
 	{
 	public:
 		// Fields
-		static QAndroidJniObject BEFORE_BE();
 		static QAndroidJniObject BE();
+		static QAndroidJniObject BEFORE_BE();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
+		static QAndroidJniObject of(jint arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
-		jint getValue();
-		static QAndroidJniObject of(jint arg0);
+		static jarray values();
 		jstring getDisplayName(__jni_impl::java::time::format::TextStyle arg0, __jni_impl::java::util::Locale arg1);
+		jint getValue();
 	};
 } // namespace __jni_impl::java::time::chrono
 
@@ -43,19 +43,19 @@ namespace __jni_impl::java::time::chrono
 namespace __jni_impl::java::time::chrono
 {
 	// Fields
-	QAndroidJniObject ThaiBuddhistEra::BEFORE_BE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.time.chrono.ThaiBuddhistEra",
-			"BEFORE_BE",
-			"Ljava/time/chrono/ThaiBuddhistEra;"
-		);
-	}
 	QAndroidJniObject ThaiBuddhistEra::BE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.chrono.ThaiBuddhistEra",
 			"BE",
+			"Ljava/time/chrono/ThaiBuddhistEra;"
+		);
+	}
+	QAndroidJniObject ThaiBuddhistEra::BEFORE_BE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.time.chrono.ThaiBuddhistEra",
+			"BEFORE_BE",
 			"Ljava/time/chrono/ThaiBuddhistEra;"
 		);
 	}
@@ -69,13 +69,14 @@ namespace __jni_impl::java::time::chrono
 	}
 	
 	// Methods
-	jarray ThaiBuddhistEra::values()
+	QAndroidJniObject ThaiBuddhistEra::of(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.ThaiBuddhistEra",
-			"values",
-			"()[Ljava/time/chrono/ThaiBuddhistEra;"
-		).object<jarray>();
+			"of",
+			"(I)Ljava/time/chrono/ThaiBuddhistEra;",
+			arg0
+		);
 	}
 	QAndroidJniObject ThaiBuddhistEra::valueOf(jstring arg0)
 	{
@@ -95,21 +96,13 @@ namespace __jni_impl::java::time::chrono
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jint ThaiBuddhistEra::getValue()
-	{
-		return __thiz.callMethod<jint>(
-			"getValue",
-			"()I"
-		);
-	}
-	QAndroidJniObject ThaiBuddhistEra::of(jint arg0)
+	jarray ThaiBuddhistEra::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.ThaiBuddhistEra",
-			"of",
-			"(I)Ljava/time/chrono/ThaiBuddhistEra;",
-			arg0
-		);
+			"values",
+			"()[Ljava/time/chrono/ThaiBuddhistEra;"
+		).object<jarray>();
 	}
 	jstring ThaiBuddhistEra::getDisplayName(__jni_impl::java::time::format::TextStyle arg0, __jni_impl::java::util::Locale arg1)
 	{
@@ -119,6 +112,13 @@ namespace __jni_impl::java::time::chrono
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
 		).object<jstring>();
+	}
+	jint ThaiBuddhistEra::getValue()
+	{
+		return __thiz.callMethod<jint>(
+			"getValue",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::time::chrono
 

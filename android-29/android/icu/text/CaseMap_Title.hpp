@@ -6,21 +6,21 @@
 #include "../../../__JniBaseClass.hpp"
 #include "CaseMap.hpp"
 
-namespace __jni_impl::java::util
-{
-	class Locale;
-}
 namespace __jni_impl::android::icu::text
 {
 	class BreakIterator;
 }
 namespace __jni_impl::android::icu::text
 {
-	class Edits;
+	class CaseMap;
 }
 namespace __jni_impl::android::icu::text
 {
-	class CaseMap;
+	class Edits;
+}
+namespace __jni_impl::java::util
+{
+	class Locale;
 }
 
 namespace __jni_impl::android::icu::text
@@ -34,23 +34,23 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		jstring apply(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::BreakIterator arg1, jstring arg2);
-		jstring apply(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::BreakIterator arg1, const QString &arg2);
+		QAndroidJniObject adjustToCased();
 		QAndroidJniObject apply(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::BreakIterator arg1, jstring arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::icu::text::Edits arg4);
 		QAndroidJniObject apply(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::BreakIterator arg1, const QString &arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::icu::text::Edits arg4);
-		QAndroidJniObject omitUnchangedText();
-		QAndroidJniObject wholeString();
-		QAndroidJniObject sentences();
-		QAndroidJniObject noLowercase();
+		jstring apply(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::BreakIterator arg1, jstring arg2);
+		jstring apply(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::BreakIterator arg1, const QString &arg2);
 		QAndroidJniObject noBreakAdjustment();
-		QAndroidJniObject adjustToCased();
+		QAndroidJniObject noLowercase();
+		QAndroidJniObject omitUnchangedText();
+		QAndroidJniObject sentences();
+		QAndroidJniObject wholeString();
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "../../../java/util/Locale.hpp"
 #include "BreakIterator.hpp"
-#include "Edits.hpp"
 #include "CaseMap.hpp"
+#include "Edits.hpp"
+#include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -65,25 +65,12 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jstring CaseMap_Title::apply(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::BreakIterator arg1, jstring arg2)
+	QAndroidJniObject CaseMap_Title::adjustToCased()
 	{
 		return __thiz.callObjectMethod(
-			"apply",
-			"(Ljava/util/Locale;Landroid/icu/text/BreakIterator;Ljava/lang/CharSequence;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
-		).object<jstring>();
-	}
-	jstring CaseMap_Title::apply(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::BreakIterator arg1, const QString &arg2)
-	{
-		return __thiz.callObjectMethod(
-			"apply",
-			"(Ljava/util/Locale;Landroid/icu/text/BreakIterator;Ljava/lang/CharSequence;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		).object<jstring>();
+			"adjustToCased",
+			"()Landroid/icu/text/CaseMap$Title;"
+		);
 	}
 	QAndroidJniObject CaseMap_Title::apply(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::BreakIterator arg1, jstring arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::icu::text::Edits arg4)
 	{
@@ -109,24 +96,30 @@ namespace __jni_impl::android::icu::text
 			arg4.__jniObject().object()
 		);
 	}
-	QAndroidJniObject CaseMap_Title::omitUnchangedText()
+	jstring CaseMap_Title::apply(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::BreakIterator arg1, jstring arg2)
 	{
 		return __thiz.callObjectMethod(
-			"omitUnchangedText",
-			"()Landroid/icu/text/CaseMap$Title;"
-		);
+			"apply",
+			"(Ljava/util/Locale;Landroid/icu/text/BreakIterator;Ljava/lang/CharSequence;)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
+		).object<jstring>();
 	}
-	QAndroidJniObject CaseMap_Title::wholeString()
+	jstring CaseMap_Title::apply(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::BreakIterator arg1, const QString &arg2)
 	{
 		return __thiz.callObjectMethod(
-			"wholeString",
-			"()Landroid/icu/text/CaseMap$Title;"
-		);
+			"apply",
+			"(Ljava/util/Locale;Landroid/icu/text/BreakIterator;Ljava/lang/CharSequence;)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		).object<jstring>();
 	}
-	QAndroidJniObject CaseMap_Title::sentences()
+	QAndroidJniObject CaseMap_Title::noBreakAdjustment()
 	{
 		return __thiz.callObjectMethod(
-			"sentences",
+			"noBreakAdjustment",
 			"()Landroid/icu/text/CaseMap$Title;"
 		);
 	}
@@ -137,17 +130,24 @@ namespace __jni_impl::android::icu::text
 			"()Landroid/icu/text/CaseMap$Title;"
 		);
 	}
-	QAndroidJniObject CaseMap_Title::noBreakAdjustment()
+	QAndroidJniObject CaseMap_Title::omitUnchangedText()
 	{
 		return __thiz.callObjectMethod(
-			"noBreakAdjustment",
+			"omitUnchangedText",
 			"()Landroid/icu/text/CaseMap$Title;"
 		);
 	}
-	QAndroidJniObject CaseMap_Title::adjustToCased()
+	QAndroidJniObject CaseMap_Title::sentences()
 	{
 		return __thiz.callObjectMethod(
-			"adjustToCased",
+			"sentences",
+			"()Landroid/icu/text/CaseMap$Title;"
+		);
+	}
+	QAndroidJniObject CaseMap_Title::wholeString()
+	{
+		return __thiz.callObjectMethod(
+			"wholeString",
 			"()Landroid/icu/text/CaseMap$Title;"
 		);
 	}

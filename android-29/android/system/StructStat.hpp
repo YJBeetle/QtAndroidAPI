@@ -34,8 +34,8 @@ namespace __jni_impl::android::system
 		jint st_uid();
 		
 		// Constructors
-		void __constructor(jlong arg0, jlong arg1, jint arg2, jlong arg3, jint arg4, jint arg5, jlong arg6, jlong arg7, jlong arg8, jlong arg9, jlong arg10, jlong arg11, jlong arg12);
 		void __constructor(jlong arg0, jlong arg1, jint arg2, jlong arg3, jint arg4, jint arg5, jlong arg6, jlong arg7, __jni_impl::android::system::StructTimespec arg8, __jni_impl::android::system::StructTimespec arg9, __jni_impl::android::system::StructTimespec arg10, jlong arg11, jlong arg12);
+		void __constructor(jlong arg0, jlong arg1, jint arg2, jlong arg3, jint arg4, jint arg5, jlong arg6, jlong arg7, jlong arg8, jlong arg9, jlong arg10, jlong arg11, jlong arg12);
 		
 		// Methods
 		jstring toString();
@@ -148,26 +148,6 @@ namespace __jni_impl::android::system
 	}
 	
 	// Constructors
-	void StructStat::__constructor(jlong arg0, jlong arg1, jint arg2, jlong arg3, jint arg4, jint arg5, jlong arg6, jlong arg7, jlong arg8, jlong arg9, jlong arg10, jlong arg11, jlong arg12)
-	{
-		__thiz = QAndroidJniObject(
-			"android.system.StructStat",
-			"(JJIJIIJJJJJJJ)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8,
-			arg9,
-			arg10,
-			arg11,
-			arg12
-		);
-	}
 	void StructStat::__constructor(jlong arg0, jlong arg1, jint arg2, jlong arg3, jint arg4, jint arg5, jlong arg6, jlong arg7, __jni_impl::android::system::StructTimespec arg8, __jni_impl::android::system::StructTimespec arg9, __jni_impl::android::system::StructTimespec arg10, jlong arg11, jlong arg12)
 	{
 		__thiz = QAndroidJniObject(
@@ -184,6 +164,26 @@ namespace __jni_impl::android::system
 			arg8.__jniObject().object(),
 			arg9.__jniObject().object(),
 			arg10.__jniObject().object(),
+			arg11,
+			arg12
+		);
+	}
+	void StructStat::__constructor(jlong arg0, jlong arg1, jint arg2, jlong arg3, jint arg4, jint arg5, jlong arg6, jlong arg7, jlong arg8, jlong arg9, jlong arg10, jlong arg11, jlong arg12)
+	{
+		__thiz = QAndroidJniObject(
+			"android.system.StructStat",
+			"(JJIJIIJJJJJJJ)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9,
+			arg10,
 			arg11,
 			arg12
 		);
@@ -205,7 +205,7 @@ namespace android::system
 	{
 	public:
 		StructStat(QAndroidJniObject obj) { __thiz = obj; }
-		StructStat(jlong arg0, jlong arg1, jint arg2, jlong arg3, jint arg4, jint arg5, jlong arg6, jlong arg7, jlong arg8, jlong arg9, jlong arg10, jlong arg11, jlong arg12)
+		StructStat(jlong arg0, jlong arg1, jint arg2, jlong arg3, jint arg4, jint arg5, jlong arg6, jlong arg7, __jni_impl::android::system::StructTimespec arg8, __jni_impl::android::system::StructTimespec arg9, __jni_impl::android::system::StructTimespec arg10, jlong arg11, jlong arg12)
 		{
 			__constructor(
 				arg0,
@@ -222,7 +222,7 @@ namespace android::system
 				arg11,
 				arg12);
 		}
-		StructStat(jlong arg0, jlong arg1, jint arg2, jlong arg3, jint arg4, jint arg5, jlong arg6, jlong arg7, __jni_impl::android::system::StructTimespec arg8, __jni_impl::android::system::StructTimespec arg9, __jni_impl::android::system::StructTimespec arg10, jlong arg11, jlong arg12)
+		StructStat(jlong arg0, jlong arg1, jint arg2, jlong arg3, jint arg4, jint arg5, jlong arg6, jlong arg7, jlong arg8, jlong arg9, jlong arg10, jlong arg11, jlong arg12)
 		{
 			__constructor(
 				arg0,

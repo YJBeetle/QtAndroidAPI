@@ -8,11 +8,11 @@
 
 namespace __jni_impl::java::time
 {
-	class LocalTime;
+	class Instant;
 }
 namespace __jni_impl::java::time
 {
-	class Instant;
+	class LocalTime;
 }
 
 namespace __jni_impl::java::sql
@@ -23,35 +23,43 @@ namespace __jni_impl::java::sql
 		// Fields
 		
 		// Constructors
-		void __constructor(jint arg0, jint arg1, jint arg2);
 		void __constructor(jlong arg0);
+		void __constructor(jint arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jstring toString();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
 		static QAndroidJniObject valueOf(__jni_impl::java::time::LocalTime arg0);
-		QAndroidJniObject toInstant();
-		jint getYear();
-		void setTime(jlong arg0);
 		jint getDate();
 		jint getDay();
 		jint getMonth();
-		QAndroidJniObject toLocalTime();
+		jint getYear();
 		void setDate(jint arg0);
 		void setMonth(jint arg0);
+		void setTime(jlong arg0);
 		void setYear(jint arg0);
+		QAndroidJniObject toInstant();
+		QAndroidJniObject toLocalTime();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::sql
 
-#include "../time/LocalTime.hpp"
 #include "../time/Instant.hpp"
+#include "../time/LocalTime.hpp"
 
 namespace __jni_impl::java::sql
 {
 	// Fields
 	
 	// Constructors
+	void Time::__constructor(jlong arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.Time",
+			"(J)V",
+			arg0
+		);
+	}
 	void Time::__constructor(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
@@ -62,23 +70,8 @@ namespace __jni_impl::java::sql
 			arg2
 		);
 	}
-	void Time::__constructor(jlong arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.Time",
-			"(J)V",
-			arg0
-		);
-	}
 	
 	// Methods
-	jstring Time::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject Time::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -106,28 +99,6 @@ namespace __jni_impl::java::sql
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Time::toInstant()
-	{
-		return __thiz.callObjectMethod(
-			"toInstant",
-			"()Ljava/time/Instant;"
-		);
-	}
-	jint Time::getYear()
-	{
-		return __thiz.callMethod<jint>(
-			"getYear",
-			"()I"
-		);
-	}
-	void Time::setTime(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTime",
-			"(J)V",
-			arg0
-		);
-	}
 	jint Time::getDate()
 	{
 		return __thiz.callMethod<jint>(
@@ -149,11 +120,11 @@ namespace __jni_impl::java::sql
 			"()I"
 		);
 	}
-	QAndroidJniObject Time::toLocalTime()
+	jint Time::getYear()
 	{
-		return __thiz.callObjectMethod(
-			"toLocalTime",
-			"()Ljava/time/LocalTime;"
+		return __thiz.callMethod<jint>(
+			"getYear",
+			"()I"
 		);
 	}
 	void Time::setDate(jint arg0)
@@ -172,6 +143,14 @@ namespace __jni_impl::java::sql
 			arg0
 		);
 	}
+	void Time::setTime(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTime",
+			"(J)V",
+			arg0
+		);
+	}
 	void Time::setYear(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -179,6 +158,27 @@ namespace __jni_impl::java::sql
 			"(I)V",
 			arg0
 		);
+	}
+	QAndroidJniObject Time::toInstant()
+	{
+		return __thiz.callObjectMethod(
+			"toInstant",
+			"()Ljava/time/Instant;"
+		);
+	}
+	QAndroidJniObject Time::toLocalTime()
+	{
+		return __thiz.callObjectMethod(
+			"toLocalTime",
+			"()Ljava/time/LocalTime;"
+		);
+	}
+	jstring Time::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::sql
 
@@ -188,17 +188,17 @@ namespace java::sql
 	{
 	public:
 		Time(QAndroidJniObject obj) { __thiz = obj; }
+		Time(jlong arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		Time(jint arg0, jint arg1, jint arg2)
 		{
 			__constructor(
 				arg0,
 				arg1,
 				arg2);
-		}
-		Time(jlong arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace java::sql

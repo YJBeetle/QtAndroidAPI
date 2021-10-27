@@ -22,24 +22,24 @@ namespace __jni_impl::org::json
 		void __constructor(const QString &arg0);
 		
 		// Methods
-		jstring toString();
+		static jint dehexchar(jchar arg0);
+		void back();
+		jboolean more();
 		jchar next();
 		jchar next(jchar arg0);
 		jstring next(jint arg0);
-		jboolean more();
-		void back();
-		jstring nextString(jchar arg0);
-		QAndroidJniObject syntaxError(jstring arg0);
-		QAndroidJniObject syntaxError(const QString &arg0);
 		jchar nextClean();
+		jstring nextString(jchar arg0);
 		jstring nextTo(jchar arg0);
 		jstring nextTo(jstring arg0);
 		jstring nextTo(const QString &arg0);
+		jobject nextValue();
 		void skipPast(jstring arg0);
 		void skipPast(const QString &arg0);
 		jchar skipTo(jchar arg0);
-		static jint dehexchar(jchar arg0);
-		jobject nextValue();
+		QAndroidJniObject syntaxError(jstring arg0);
+		QAndroidJniObject syntaxError(const QString &arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::org::json
 
@@ -68,12 +68,28 @@ namespace __jni_impl::org::json
 	}
 	
 	// Methods
-	jstring JSONTokener::toString()
+	jint JSONTokener::dehexchar(jchar arg0)
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"org.json.JSONTokener",
+			"dehexchar",
+			"(C)I",
+			arg0
+		);
+	}
+	void JSONTokener::back()
+	{
+		__thiz.callMethod<void>(
+			"back",
+			"()V"
+		);
+	}
+	jboolean JSONTokener::more()
+	{
+		return __thiz.callMethod<jboolean>(
+			"more",
+			"()Z"
+		);
 	}
 	jchar JSONTokener::next()
 	{
@@ -98,18 +114,11 @@ namespace __jni_impl::org::json
 			arg0
 		).object<jstring>();
 	}
-	jboolean JSONTokener::more()
+	jchar JSONTokener::nextClean()
 	{
-		return __thiz.callMethod<jboolean>(
-			"more",
-			"()Z"
-		);
-	}
-	void JSONTokener::back()
-	{
-		__thiz.callMethod<void>(
-			"back",
-			"()V"
+		return __thiz.callMethod<jchar>(
+			"nextClean",
+			"()C"
 		);
 	}
 	jstring JSONTokener::nextString(jchar arg0)
@@ -119,29 +128,6 @@ namespace __jni_impl::org::json
 			"(C)Ljava/lang/String;",
 			arg0
 		).object<jstring>();
-	}
-	QAndroidJniObject JSONTokener::syntaxError(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"syntaxError",
-			"(Ljava/lang/String;)Lorg/json/JSONException;",
-			arg0
-		);
-	}
-	QAndroidJniObject JSONTokener::syntaxError(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"syntaxError",
-			"(Ljava/lang/String;)Lorg/json/JSONException;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jchar JSONTokener::nextClean()
-	{
-		return __thiz.callMethod<jchar>(
-			"nextClean",
-			"()C"
-		);
 	}
 	jstring JSONTokener::nextTo(jchar arg0)
 	{
@@ -167,6 +153,13 @@ namespace __jni_impl::org::json
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
+	jobject JSONTokener::nextValue()
+	{
+		return __thiz.callObjectMethod(
+			"nextValue",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
 	void JSONTokener::skipPast(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -191,21 +184,28 @@ namespace __jni_impl::org::json
 			arg0
 		);
 	}
-	jint JSONTokener::dehexchar(jchar arg0)
+	QAndroidJniObject JSONTokener::syntaxError(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"org.json.JSONTokener",
-			"dehexchar",
-			"(C)I",
+		return __thiz.callObjectMethod(
+			"syntaxError",
+			"(Ljava/lang/String;)Lorg/json/JSONException;",
 			arg0
 		);
 	}
-	jobject JSONTokener::nextValue()
+	QAndroidJniObject JSONTokener::syntaxError(const QString &arg0)
 	{
 		return __thiz.callObjectMethod(
-			"nextValue",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
+			"syntaxError",
+			"(Ljava/lang/String;)Lorg/json/JSONException;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jstring JSONTokener::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::org::json
 

@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::media
 {
-	class Session2CommandGroup;
+	class Session2Command;
 }
 namespace __jni_impl::android::media
 {
-	class Session2Command;
+	class Session2CommandGroup;
 }
 
 namespace __jni_impl::android::media
@@ -26,14 +26,14 @@ namespace __jni_impl::android::media
 		void __constructor(__jni_impl::android::media::Session2CommandGroup arg0);
 		
 		// Methods
-		QAndroidJniObject build();
 		QAndroidJniObject addCommand(__jni_impl::android::media::Session2Command arg0);
+		QAndroidJniObject build();
 		QAndroidJniObject removeCommand(__jni_impl::android::media::Session2Command arg0);
 	};
 } // namespace __jni_impl::android::media
 
-#include "Session2CommandGroup.hpp"
 #include "Session2Command.hpp"
+#include "Session2CommandGroup.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -57,19 +57,19 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject Session2CommandGroup_Builder::build()
-	{
-		return __thiz.callObjectMethod(
-			"build",
-			"()Landroid/media/Session2CommandGroup;"
-		);
-	}
 	QAndroidJniObject Session2CommandGroup_Builder::addCommand(__jni_impl::android::media::Session2Command arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addCommand",
 			"(Landroid/media/Session2Command;)Landroid/media/Session2CommandGroup$Builder;",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Session2CommandGroup_Builder::build()
+	{
+		return __thiz.callObjectMethod(
+			"build",
+			"()Landroid/media/Session2CommandGroup;"
 		);
 	}
 	QAndroidJniObject Session2CommandGroup_Builder::removeCommand(__jni_impl::android::media::Session2Command arg0)

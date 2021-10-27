@@ -12,16 +12,16 @@ namespace __jni_impl::javax::xml::transform
 	{
 	public:
 		// Fields
-		static jstring METHOD();
-		static jstring VERSION();
-		static jstring ENCODING();
-		static jstring OMIT_XML_DECLARATION();
-		static jstring STANDALONE();
+		static jstring CDATA_SECTION_ELEMENTS();
 		static jstring DOCTYPE_PUBLIC();
 		static jstring DOCTYPE_SYSTEM();
-		static jstring CDATA_SECTION_ELEMENTS();
+		static jstring ENCODING();
 		static jstring INDENT();
 		static jstring MEDIA_TYPE();
+		static jstring METHOD();
+		static jstring OMIT_XML_DECLARATION();
+		static jstring STANDALONE();
+		static jstring VERSION();
 		
 		// Constructors
 		void __constructor();
@@ -34,43 +34,11 @@ namespace __jni_impl::javax::xml::transform
 namespace __jni_impl::javax::xml::transform
 {
 	// Fields
-	jstring OutputKeys::METHOD()
+	jstring OutputKeys::CDATA_SECTION_ELEMENTS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
-			"METHOD",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring OutputKeys::VERSION()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.xml.transform.OutputKeys",
-			"VERSION",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring OutputKeys::ENCODING()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.xml.transform.OutputKeys",
-			"ENCODING",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring OutputKeys::OMIT_XML_DECLARATION()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.xml.transform.OutputKeys",
-			"OMIT_XML_DECLARATION",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring OutputKeys::STANDALONE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.xml.transform.OutputKeys",
-			"STANDALONE",
+			"CDATA_SECTION_ELEMENTS",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -90,11 +58,11 @@ namespace __jni_impl::javax::xml::transform
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jstring OutputKeys::CDATA_SECTION_ELEMENTS()
+	jstring OutputKeys::ENCODING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
-			"CDATA_SECTION_ELEMENTS",
+			"ENCODING",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -111,6 +79,38 @@ namespace __jni_impl::javax::xml::transform
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.transform.OutputKeys",
 			"MEDIA_TYPE",
+			"Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring OutputKeys::METHOD()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.xml.transform.OutputKeys",
+			"METHOD",
+			"Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring OutputKeys::OMIT_XML_DECLARATION()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.xml.transform.OutputKeys",
+			"OMIT_XML_DECLARATION",
+			"Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring OutputKeys::STANDALONE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.xml.transform.OutputKeys",
+			"STANDALONE",
+			"Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring OutputKeys::VERSION()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.xml.transform.OutputKeys",
+			"VERSION",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}

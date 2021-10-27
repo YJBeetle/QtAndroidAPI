@@ -5,10 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::net
-{
-	class InetAddress;
-}
 namespace __jni_impl::android::net
 {
 	class IpPrefix;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::java::net
+{
+	class InetAddress;
 }
 
 namespace __jni_impl::android::net
@@ -30,23 +30,23 @@ namespace __jni_impl::android::net
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jboolean matches(__jni_impl::java::net::InetAddress arg0);
-		QAndroidJniObject getDestination();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jstring getInterface();
+		jboolean equals(jobject arg0);
+		QAndroidJniObject getDestination();
 		QAndroidJniObject getGateway();
-		jboolean isDefaultRoute();
+		jstring getInterface();
 		jboolean hasGateway();
+		jint hashCode();
+		jboolean isDefaultRoute();
+		jboolean matches(__jni_impl::java::net::InetAddress arg0);
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net
 
-#include "../../java/net/InetAddress.hpp"
 #include "IpPrefix.hpp"
 #include "../os/Parcel.hpp"
+#include "../../java/net/InetAddress.hpp"
 
 namespace __jni_impl::android::net
 {
@@ -69,6 +69,13 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
+	jint RouteInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean RouteInfo::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -77,18 +84,46 @@ namespace __jni_impl::android::net
 			arg0
 		);
 	}
-	jstring RouteInfo::toString()
+	QAndroidJniObject RouteInfo::getDestination()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
+			"getDestination",
+			"()Landroid/net/IpPrefix;"
+		);
+	}
+	QAndroidJniObject RouteInfo::getGateway()
+	{
+		return __thiz.callObjectMethod(
+			"getGateway",
+			"()Ljava/net/InetAddress;"
+		);
+	}
+	jstring RouteInfo::getInterface()
+	{
+		return __thiz.callObjectMethod(
+			"getInterface",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jboolean RouteInfo::hasGateway()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasGateway",
+			"()Z"
+		);
 	}
 	jint RouteInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I"
+		);
+	}
+	jboolean RouteInfo::isDefaultRoute()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isDefaultRoute",
+			"()Z"
 		);
 	}
 	jboolean RouteInfo::matches(__jni_impl::java::net::InetAddress arg0)
@@ -99,19 +134,12 @@ namespace __jni_impl::android::net
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject RouteInfo::getDestination()
+	jstring RouteInfo::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getDestination",
-			"()Landroid/net/IpPrefix;"
-		);
-	}
-	jint RouteInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void RouteInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -120,34 +148,6 @@ namespace __jni_impl::android::net
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jstring RouteInfo::getInterface()
-	{
-		return __thiz.callObjectMethod(
-			"getInterface",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject RouteInfo::getGateway()
-	{
-		return __thiz.callObjectMethod(
-			"getGateway",
-			"()Ljava/net/InetAddress;"
-		);
-	}
-	jboolean RouteInfo::isDefaultRoute()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isDefaultRoute",
-			"()Z"
-		);
-	}
-	jboolean RouteInfo::hasGateway()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasGateway",
-			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::net

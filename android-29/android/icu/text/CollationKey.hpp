@@ -18,15 +18,15 @@ namespace __jni_impl::android::icu::text
 		void __constructor(const QString &arg0, jbyteArray arg1);
 		
 		// Methods
+		jint compareTo(__jni_impl::android::icu::text::CollationKey arg0);
+		jint compareTo(jobject arg0);
 		jboolean equals(__jni_impl::android::icu::text::CollationKey arg0);
 		jboolean equals(jobject arg0);
+		QAndroidJniObject getBound(jint arg0, jint arg1);
+		jstring getSourceString();
 		jint hashCode();
-		jint compareTo(jobject arg0);
-		jint compareTo(__jni_impl::android::icu::text::CollationKey arg0);
 		QAndroidJniObject merge(__jni_impl::android::icu::text::CollationKey arg0);
 		jbyteArray toByteArray();
-		jstring getSourceString();
-		QAndroidJniObject getBound(jint arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -56,6 +56,22 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
+	jint CollationKey::compareTo(__jni_impl::android::icu::text::CollationKey arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"compareTo",
+			"(Landroid/icu/text/CollationKey;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	jint CollationKey::compareTo(jobject arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"compareTo",
+			"(Ljava/lang/Object;)I",
+			arg0
+		);
+	}
 	jboolean CollationKey::equals(__jni_impl::android::icu::text::CollationKey arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -72,27 +88,27 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
+	QAndroidJniObject CollationKey::getBound(jint arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getBound",
+			"(II)Landroid/icu/text/CollationKey;",
+			arg0,
+			arg1
+		);
+	}
+	jstring CollationKey::getSourceString()
+	{
+		return __thiz.callObjectMethod(
+			"getSourceString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jint CollationKey::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I"
-		);
-	}
-	jint CollationKey::compareTo(jobject arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"compareTo",
-			"(Ljava/lang/Object;)I",
-			arg0
-		);
-	}
-	jint CollationKey::compareTo(__jni_impl::android::icu::text::CollationKey arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"compareTo",
-			"(Landroid/icu/text/CollationKey;)I",
-			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject CollationKey::merge(__jni_impl::android::icu::text::CollationKey arg0)
@@ -109,22 +125,6 @@ namespace __jni_impl::android::icu::text
 			"toByteArray",
 			"()[B"
 		).object<jbyteArray>();
-	}
-	jstring CollationKey::getSourceString()
-	{
-		return __thiz.callObjectMethod(
-			"getSourceString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject CollationKey::getBound(jint arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getBound",
-			"(II)Landroid/icu/text/CollationKey;",
-			arg0,
-			arg1
-		);
 	}
 } // namespace __jni_impl::android::icu::text
 

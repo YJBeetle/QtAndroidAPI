@@ -21,23 +21,23 @@ namespace __jni_impl::javax::xml::transform
 		void __constructor();
 		
 		// Methods
-		void transform(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
-		void reset();
 		void clearParameters();
-		void setParameter(jstring arg0, jobject arg1);
-		void setParameter(const QString &arg0, jobject arg1);
-		jobject getParameter(jstring arg0);
-		jobject getParameter(const QString &arg0);
-		void setURIResolver(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getURIResolver();
-		void setErrorListener(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getErrorListener();
-		void setOutputProperties(__jni_impl::java::util::Properties arg0);
 		QAndroidJniObject getOutputProperties();
-		void setOutputProperty(jstring arg0, jstring arg1);
-		void setOutputProperty(const QString &arg0, const QString &arg1);
 		jstring getOutputProperty(jstring arg0);
 		jstring getOutputProperty(const QString &arg0);
+		jobject getParameter(jstring arg0);
+		jobject getParameter(const QString &arg0);
+		QAndroidJniObject getURIResolver();
+		void reset();
+		void setErrorListener(__jni_impl::__JniBaseClass arg0);
+		void setOutputProperties(__jni_impl::java::util::Properties arg0);
+		void setOutputProperty(jstring arg0, jstring arg1);
+		void setOutputProperty(const QString &arg0, const QString &arg1);
+		void setParameter(jstring arg0, jobject arg1);
+		void setParameter(const QString &arg0, jobject arg1);
+		void setURIResolver(__jni_impl::__JniBaseClass arg0);
+		void transform(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 	};
 } // namespace __jni_impl::javax::xml::transform
 
@@ -56,22 +56,6 @@ namespace __jni_impl::javax::xml::transform
 	}
 	
 	// Methods
-	void Transformer::transform(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"transform",
-			"(Ljavax/xml/transform/Source;Ljavax/xml/transform/Result;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void Transformer::reset()
-	{
-		__thiz.callMethod<void>(
-			"reset",
-			"()V"
-		);
-	}
 	void Transformer::clearParameters()
 	{
 		__thiz.callMethod<void>(
@@ -79,23 +63,35 @@ namespace __jni_impl::javax::xml::transform
 			"()V"
 		);
 	}
-	void Transformer::setParameter(jstring arg0, jobject arg1)
+	QAndroidJniObject Transformer::getErrorListener()
 	{
-		__thiz.callMethod<void>(
-			"setParameter",
-			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0,
-			arg1
+		return __thiz.callObjectMethod(
+			"getErrorListener",
+			"()Ljavax/xml/transform/ErrorListener;"
 		);
 	}
-	void Transformer::setParameter(const QString &arg0, jobject arg1)
+	QAndroidJniObject Transformer::getOutputProperties()
 	{
-		__thiz.callMethod<void>(
-			"setParameter",
-			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
+		return __thiz.callObjectMethod(
+			"getOutputProperties",
+			"()Ljava/util/Properties;"
 		);
+	}
+	jstring Transformer::getOutputProperty(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getOutputProperty",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring Transformer::getOutputProperty(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getOutputProperty",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
 	}
 	jobject Transformer::getParameter(jstring arg0)
 	{
@@ -113,19 +109,18 @@ namespace __jni_impl::javax::xml::transform
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
-	void Transformer::setURIResolver(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setURIResolver",
-			"(Ljavax/xml/transform/URIResolver;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject Transformer::getURIResolver()
 	{
 		return __thiz.callObjectMethod(
 			"getURIResolver",
 			"()Ljavax/xml/transform/URIResolver;"
+		);
+	}
+	void Transformer::reset()
+	{
+		__thiz.callMethod<void>(
+			"reset",
+			"()V"
 		);
 	}
 	void Transformer::setErrorListener(__jni_impl::__JniBaseClass arg0)
@@ -136,26 +131,12 @@ namespace __jni_impl::javax::xml::transform
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Transformer::getErrorListener()
-	{
-		return __thiz.callObjectMethod(
-			"getErrorListener",
-			"()Ljavax/xml/transform/ErrorListener;"
-		);
-	}
 	void Transformer::setOutputProperties(__jni_impl::java::util::Properties arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOutputProperties",
 			"(Ljava/util/Properties;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Transformer::getOutputProperties()
-	{
-		return __thiz.callObjectMethod(
-			"getOutputProperties",
-			"()Ljava/util/Properties;"
 		);
 	}
 	void Transformer::setOutputProperty(jstring arg0, jstring arg1)
@@ -176,21 +157,40 @@ namespace __jni_impl::javax::xml::transform
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	jstring Transformer::getOutputProperty(jstring arg0)
+	void Transformer::setParameter(jstring arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
-			"getOutputProperty",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"setParameter",
+			"(Ljava/lang/String;Ljava/lang/Object;)V",
+			arg0,
+			arg1
+		);
 	}
-	jstring Transformer::getOutputProperty(const QString &arg0)
+	void Transformer::setParameter(const QString &arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
-			"getOutputProperty",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"setParameter",
+			"(Ljava/lang/String;Ljava/lang/Object;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	void Transformer::setURIResolver(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setURIResolver",
+			"(Ljavax/xml/transform/URIResolver;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Transformer::transform(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"transform",
+			"(Ljavax/xml/transform/Source;Ljavax/xml/transform/Result;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::javax::xml::transform
 

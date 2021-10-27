@@ -7,35 +7,35 @@
 
 namespace __jni_impl::android::content
 {
-	class Context;
-}
-namespace __jni_impl::android::content::pm
-{
-	class ResolveInfo;
-}
-namespace __jni_impl::android::view::inputmethod
-{
-	class InputMethodSubtype;
-}
-namespace __jni_impl::android::os
-{
-	class Parcel;
+	class ComponentName;
 }
 namespace __jni_impl::android::content
 {
-	class ComponentName;
-}
-namespace __jni_impl::android::content::pm
-{
-	class ServiceInfo;
+	class Context;
 }
 namespace __jni_impl::android::content::pm
 {
 	class PackageManager;
 }
+namespace __jni_impl::android::content::pm
+{
+	class ResolveInfo;
+}
+namespace __jni_impl::android::content::pm
+{
+	class ServiceInfo;
+}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
+}
+namespace __jni_impl::android::view::inputmethod
+{
+	class InputMethodSubtype;
 }
 
 namespace __jni_impl::android::view::inputmethod
@@ -52,35 +52,35 @@ namespace __jni_impl::android::view::inputmethod
 		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2, const QString &arg3);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jstring getPackageName();
-		jstring getId();
-		jint getSubtypeCount();
-		QAndroidJniObject getSubtypeAt(jint arg0);
-		jint getIsDefaultResourceId();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		void dump(__jni_impl::__JniBaseClass arg0, const QString &arg1);
+		jboolean equals(jobject arg0);
 		QAndroidJniObject getComponent();
+		jstring getId();
+		jint getIsDefaultResourceId();
+		jstring getPackageName();
 		QAndroidJniObject getServiceInfo();
 		jstring getServiceName();
-		jstring loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
-		QAndroidJniObject loadIcon(__jni_impl::android::content::pm::PackageManager arg0);
 		jstring getSettingsActivity();
+		QAndroidJniObject getSubtypeAt(jint arg0);
+		jint getSubtypeCount();
+		jint hashCode();
+		QAndroidJniObject loadIcon(__jni_impl::android::content::pm::PackageManager arg0);
+		jstring loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
-#include "../../content/Context.hpp"
-#include "../../content/pm/ResolveInfo.hpp"
-#include "InputMethodSubtype.hpp"
-#include "../../os/Parcel.hpp"
 #include "../../content/ComponentName.hpp"
-#include "../../content/pm/ServiceInfo.hpp"
+#include "../../content/Context.hpp"
 #include "../../content/pm/PackageManager.hpp"
+#include "../../content/pm/ResolveInfo.hpp"
+#include "../../content/pm/ServiceInfo.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
+#include "../../os/Parcel.hpp"
+#include "InputMethodSubtype.hpp"
 
 namespace __jni_impl::android::view::inputmethod
 {
@@ -128,78 +128,11 @@ namespace __jni_impl::android::view::inputmethod
 	}
 	
 	// Methods
-	jboolean InputMethodInfo::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring InputMethodInfo::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint InputMethodInfo::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jstring InputMethodInfo::getPackageName()
-	{
-		return __thiz.callObjectMethod(
-			"getPackageName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring InputMethodInfo::getId()
-	{
-		return __thiz.callObjectMethod(
-			"getId",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint InputMethodInfo::getSubtypeCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getSubtypeCount",
-			"()I"
-		);
-	}
-	QAndroidJniObject InputMethodInfo::getSubtypeAt(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getSubtypeAt",
-			"(I)Landroid/view/inputmethod/InputMethodSubtype;",
-			arg0
-		);
-	}
-	jint InputMethodInfo::getIsDefaultResourceId()
-	{
-		return __thiz.callMethod<jint>(
-			"getIsDefaultResourceId",
-			"()I"
-		);
-	}
 	jint InputMethodInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
-		);
-	}
-	void InputMethodInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 	void InputMethodInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
@@ -220,12 +153,41 @@ namespace __jni_impl::android::view::inputmethod
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
+	jboolean InputMethodInfo::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
 	QAndroidJniObject InputMethodInfo::getComponent()
 	{
 		return __thiz.callObjectMethod(
 			"getComponent",
 			"()Landroid/content/ComponentName;"
 		);
+	}
+	jstring InputMethodInfo::getId()
+	{
+		return __thiz.callObjectMethod(
+			"getId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint InputMethodInfo::getIsDefaultResourceId()
+	{
+		return __thiz.callMethod<jint>(
+			"getIsDefaultResourceId",
+			"()I"
+		);
+	}
+	jstring InputMethodInfo::getPackageName()
+	{
+		return __thiz.callObjectMethod(
+			"getPackageName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject InputMethodInfo::getServiceInfo()
 	{
@@ -241,13 +203,34 @@ namespace __jni_impl::android::view::inputmethod
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jstring InputMethodInfo::loadLabel(__jni_impl::android::content::pm::PackageManager arg0)
+	jstring InputMethodInfo::getSettingsActivity()
 	{
 		return __thiz.callObjectMethod(
-			"loadLabel",
-			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object()
+			"getSettingsActivity",
+			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	QAndroidJniObject InputMethodInfo::getSubtypeAt(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getSubtypeAt",
+			"(I)Landroid/view/inputmethod/InputMethodSubtype;",
+			arg0
+		);
+	}
+	jint InputMethodInfo::getSubtypeCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getSubtypeCount",
+			"()I"
+		);
+	}
+	jint InputMethodInfo::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
 	}
 	QAndroidJniObject InputMethodInfo::loadIcon(__jni_impl::android::content::pm::PackageManager arg0)
 	{
@@ -257,12 +240,29 @@ namespace __jni_impl::android::view::inputmethod
 			arg0.__jniObject().object()
 		);
 	}
-	jstring InputMethodInfo::getSettingsActivity()
+	jstring InputMethodInfo::loadLabel(__jni_impl::android::content::pm::PackageManager arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getSettingsActivity",
+			"loadLabel",
+			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring InputMethodInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	void InputMethodInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::view::inputmethod
 

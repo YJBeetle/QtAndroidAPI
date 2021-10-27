@@ -13,29 +13,29 @@ namespace __jni_impl::android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject YEAR();
-		static QAndroidJniObject QUARTER();
-		static QAndroidJniObject MONTH();
-		static QAndroidJniObject WEEK();
 		static QAndroidJniObject DAY();
+		static QAndroidJniObject FRIDAY();
 		static QAndroidJniObject HOUR();
 		static QAndroidJniObject MINUTE();
+		static QAndroidJniObject MONDAY();
+		static QAndroidJniObject MONTH();
+		static QAndroidJniObject QUARTER();
+		static QAndroidJniObject SATURDAY();
 		static QAndroidJniObject SECOND();
 		static QAndroidJniObject SUNDAY();
-		static QAndroidJniObject MONDAY();
+		static QAndroidJniObject THURSDAY();
 		static QAndroidJniObject TUESDAY();
 		static QAndroidJniObject WEDNESDAY();
-		static QAndroidJniObject THURSDAY();
-		static QAndroidJniObject FRIDAY();
-		static QAndroidJniObject SATURDAY();
+		static QAndroidJniObject WEEK();
+		static QAndroidJniObject YEAR();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -43,43 +43,19 @@ namespace __jni_impl::android::icu::text
 namespace __jni_impl::android::icu::text
 {
 	// Fields
-	QAndroidJniObject RelativeDateTimeFormatter_RelativeDateTimeUnit::YEAR()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
-			"YEAR",
-			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
-		);
-	}
-	QAndroidJniObject RelativeDateTimeFormatter_RelativeDateTimeUnit::QUARTER()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
-			"QUARTER",
-			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
-		);
-	}
-	QAndroidJniObject RelativeDateTimeFormatter_RelativeDateTimeUnit::MONTH()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
-			"MONTH",
-			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
-		);
-	}
-	QAndroidJniObject RelativeDateTimeFormatter_RelativeDateTimeUnit::WEEK()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
-			"WEEK",
-			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
-		);
-	}
 	QAndroidJniObject RelativeDateTimeFormatter_RelativeDateTimeUnit::DAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
 			"DAY",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
+	QAndroidJniObject RelativeDateTimeFormatter_RelativeDateTimeUnit::FRIDAY()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"FRIDAY",
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
 		);
 	}
@@ -99,6 +75,38 @@ namespace __jni_impl::android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
 		);
 	}
+	QAndroidJniObject RelativeDateTimeFormatter_RelativeDateTimeUnit::MONDAY()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"MONDAY",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
+	QAndroidJniObject RelativeDateTimeFormatter_RelativeDateTimeUnit::MONTH()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"MONTH",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
+	QAndroidJniObject RelativeDateTimeFormatter_RelativeDateTimeUnit::QUARTER()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"QUARTER",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
+	QAndroidJniObject RelativeDateTimeFormatter_RelativeDateTimeUnit::SATURDAY()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"SATURDAY",
+			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		);
+	}
 	QAndroidJniObject RelativeDateTimeFormatter_RelativeDateTimeUnit::SECOND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -115,11 +123,11 @@ namespace __jni_impl::android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_RelativeDateTimeUnit::MONDAY()
+	QAndroidJniObject RelativeDateTimeFormatter_RelativeDateTimeUnit::THURSDAY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
-			"MONDAY",
+			"THURSDAY",
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
 		);
 	}
@@ -139,27 +147,19 @@ namespace __jni_impl::android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_RelativeDateTimeUnit::THURSDAY()
+	QAndroidJniObject RelativeDateTimeFormatter_RelativeDateTimeUnit::WEEK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
-			"THURSDAY",
+			"WEEK",
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_RelativeDateTimeUnit::FRIDAY()
+	QAndroidJniObject RelativeDateTimeFormatter_RelativeDateTimeUnit::YEAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
-			"FRIDAY",
-			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
-		);
-	}
-	QAndroidJniObject RelativeDateTimeFormatter_RelativeDateTimeUnit::SATURDAY()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
-			"SATURDAY",
+			"YEAR",
 			"Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
 		);
 	}
@@ -173,14 +173,6 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jarray RelativeDateTimeFormatter_RelativeDateTimeUnit::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
-			"values",
-			"()[Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
-		).object<jarray>();
-	}
 	QAndroidJniObject RelativeDateTimeFormatter_RelativeDateTimeUnit::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -198,6 +190,14 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;)Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray RelativeDateTimeFormatter_RelativeDateTimeUnit::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.RelativeDateTimeFormatter$RelativeDateTimeUnit",
+			"values",
+			"()[Landroid/icu/text/RelativeDateTimeFormatter$RelativeDateTimeUnit;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::icu::text
 

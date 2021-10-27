@@ -21,13 +21,13 @@ namespace __jni_impl::android::app::assist
 		void __constructor();
 		
 		// Methods
-		jint getTop();
-		jint getLeft();
-		jint getWidth();
-		jint getHeight();
 		jint getDisplayId();
+		jint getHeight();
+		jint getLeft();
 		QAndroidJniObject getRootViewNode();
 		jstring getTitle();
+		jint getTop();
+		jint getWidth();
 	};
 } // namespace __jni_impl::android::app::assist
 
@@ -46,24 +46,10 @@ namespace __jni_impl::android::app::assist
 	}
 	
 	// Methods
-	jint AssistStructure_WindowNode::getTop()
+	jint AssistStructure_WindowNode::getDisplayId()
 	{
 		return __thiz.callMethod<jint>(
-			"getTop",
-			"()I"
-		);
-	}
-	jint AssistStructure_WindowNode::getLeft()
-	{
-		return __thiz.callMethod<jint>(
-			"getLeft",
-			"()I"
-		);
-	}
-	jint AssistStructure_WindowNode::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
+			"getDisplayId",
 			"()I"
 		);
 	}
@@ -74,10 +60,10 @@ namespace __jni_impl::android::app::assist
 			"()I"
 		);
 	}
-	jint AssistStructure_WindowNode::getDisplayId()
+	jint AssistStructure_WindowNode::getLeft()
 	{
 		return __thiz.callMethod<jint>(
-			"getDisplayId",
+			"getLeft",
 			"()I"
 		);
 	}
@@ -94,6 +80,20 @@ namespace __jni_impl::android::app::assist
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
+	}
+	jint AssistStructure_WindowNode::getTop()
+	{
+		return __thiz.callMethod<jint>(
+			"getTop",
+			"()I"
+		);
+	}
+	jint AssistStructure_WindowNode::getWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::android::app::assist
 

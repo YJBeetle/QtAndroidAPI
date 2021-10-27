@@ -6,13 +6,13 @@
 #include "../../__JniBaseClass.hpp"
 #include "ContentProvider.hpp"
 
-namespace __jni_impl::android::net
-{
-	class Uri;
-}
 namespace __jni_impl::android::content
 {
 	class ContentValues;
+}
+namespace __jni_impl::android::net
+{
+	class Uri;
 }
 
 namespace __jni_impl::android::content
@@ -28,20 +28,20 @@ namespace __jni_impl::android::content
 		void __constructor();
 		
 		// Methods
-		jint update(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2, jarray arg3);
-		jint update(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1, const QString &arg2, jarray arg3);
 		jint _delete(__jni_impl::android::net::Uri arg0, jstring arg1, jarray arg2);
 		jint _delete(__jni_impl::android::net::Uri arg0, const QString &arg1, jarray arg2);
 		jstring getType(__jni_impl::android::net::Uri arg0);
 		QAndroidJniObject insert(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1);
+		jboolean onCreate();
 		QAndroidJniObject query(__jni_impl::android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
 		QAndroidJniObject query(__jni_impl::android::net::Uri arg0, jarray arg1, const QString &arg2, jarray arg3, const QString &arg4);
-		jboolean onCreate();
+		jint update(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2, jarray arg3);
+		jint update(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1, const QString &arg2, jarray arg3);
 	};
 } // namespace __jni_impl::android::content
 
-#include "../net/Uri.hpp"
 #include "ContentValues.hpp"
+#include "../net/Uri.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -71,28 +71,6 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
-	jint SearchRecentSuggestionsProvider::update(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2, jarray arg3)
-	{
-		return __thiz.callMethod<jint>(
-			"update",
-			"(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3
-		);
-	}
-	jint SearchRecentSuggestionsProvider::update(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1, const QString &arg2, jarray arg3)
-	{
-		return __thiz.callMethod<jint>(
-			"update",
-			"(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3
-		);
-	}
 	jint SearchRecentSuggestionsProvider::_delete(__jni_impl::android::net::Uri arg0, jstring arg1, jarray arg2)
 	{
 		return __thiz.callMethod<jint>(
@@ -130,6 +108,13 @@ namespace __jni_impl::android::content
 			arg1.__jniObject().object()
 		);
 	}
+	jboolean SearchRecentSuggestionsProvider::onCreate()
+	{
+		return __thiz.callMethod<jboolean>(
+			"onCreate",
+			"()Z"
+		);
+	}
 	QAndroidJniObject SearchRecentSuggestionsProvider::query(__jni_impl::android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
 	{
 		return __thiz.callObjectMethod(
@@ -154,11 +139,26 @@ namespace __jni_impl::android::content
 			QAndroidJniObject::fromString(arg4).object<jstring>()
 		);
 	}
-	jboolean SearchRecentSuggestionsProvider::onCreate()
+	jint SearchRecentSuggestionsProvider::update(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2, jarray arg3)
 	{
-		return __thiz.callMethod<jboolean>(
-			"onCreate",
-			"()Z"
+		return __thiz.callMethod<jint>(
+			"update",
+			"(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3
+		);
+	}
+	jint SearchRecentSuggestionsProvider::update(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1, const QString &arg2, jarray arg3)
+	{
+		return __thiz.callMethod<jint>(
+			"update",
+			"(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3
 		);
 	}
 } // namespace __jni_impl::android::content

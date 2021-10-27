@@ -26,66 +26,66 @@ namespace __jni_impl::android::location
 		static jint FORMAT_SECONDS();
 		
 		// Constructors
+		void __constructor(__jni_impl::android::location::Location arg0);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor(__jni_impl::android::location::Location arg0);
 		
 		// Methods
-		jstring toString();
-		void set(__jni_impl::android::location::Location arg0);
-		void reset();
-		jstring getProvider();
 		static jdouble convert(jstring arg0);
 		static jdouble convert(const QString &arg0);
 		static jstring convert(jdouble arg0, jint arg1);
-		jlong getTime();
-		void setTime(jlong arg0);
-		void setExtras(__jni_impl::android::os::Bundle arg0);
-		jdouble getAltitude();
 		static void distanceBetween(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jfloatArray arg4);
-		jfloat distanceTo(__jni_impl::android::location::Location arg0);
 		jfloat bearingTo(__jni_impl::android::location::Location arg0);
-		void setProvider(jstring arg0);
-		void setProvider(const QString &arg0);
-		jlong getElapsedRealtimeNanos();
-		void setElapsedRealtimeNanos(jlong arg0);
-		jdouble getElapsedRealtimeUncertaintyNanos();
-		void setElapsedRealtimeUncertaintyNanos(jdouble arg0);
-		jboolean hasElapsedRealtimeUncertaintyNanos();
-		jdouble getLatitude();
-		void setLatitude(jdouble arg0);
-		jdouble getLongitude();
-		void setLongitude(jdouble arg0);
-		jboolean hasAltitude();
-		void setAltitude(jdouble arg0);
-		void removeAltitude();
-		jboolean hasSpeed();
-		jfloat getSpeed();
-		void setSpeed(jfloat arg0);
-		void removeSpeed();
-		jboolean hasBearing();
-		jfloat getBearing();
-		void setBearing(jfloat arg0);
-		void removeBearing();
-		jboolean hasAccuracy();
-		jfloat getAccuracy();
-		void setAccuracy(jfloat arg0);
-		void removeAccuracy();
-		jboolean hasVerticalAccuracy();
-		jfloat getVerticalAccuracyMeters();
-		void setVerticalAccuracyMeters(jfloat arg0);
-		jboolean hasSpeedAccuracy();
-		jfloat getSpeedAccuracyMetersPerSecond();
-		void setSpeedAccuracyMetersPerSecond(jfloat arg0);
-		jboolean hasBearingAccuracy();
-		jfloat getBearingAccuracyDegrees();
-		void setBearingAccuracyDegrees(jfloat arg0);
-		jboolean isFromMockProvider();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jfloat distanceTo(__jni_impl::android::location::Location arg0);
 		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		void dump(__jni_impl::__JniBaseClass arg0, const QString &arg1);
+		jfloat getAccuracy();
+		jdouble getAltitude();
+		jfloat getBearing();
+		jfloat getBearingAccuracyDegrees();
+		jlong getElapsedRealtimeNanos();
+		jdouble getElapsedRealtimeUncertaintyNanos();
 		QAndroidJniObject getExtras();
+		jdouble getLatitude();
+		jdouble getLongitude();
+		jstring getProvider();
+		jfloat getSpeed();
+		jfloat getSpeedAccuracyMetersPerSecond();
+		jlong getTime();
+		jfloat getVerticalAccuracyMeters();
+		jboolean hasAccuracy();
+		jboolean hasAltitude();
+		jboolean hasBearing();
+		jboolean hasBearingAccuracy();
+		jboolean hasElapsedRealtimeUncertaintyNanos();
+		jboolean hasSpeed();
+		jboolean hasSpeedAccuracy();
+		jboolean hasVerticalAccuracy();
+		jboolean isFromMockProvider();
+		void removeAccuracy();
+		void removeAltitude();
+		void removeBearing();
+		void removeSpeed();
+		void reset();
+		void set(__jni_impl::android::location::Location arg0);
+		void setAccuracy(jfloat arg0);
+		void setAltitude(jdouble arg0);
+		void setBearing(jfloat arg0);
+		void setBearingAccuracyDegrees(jfloat arg0);
+		void setElapsedRealtimeNanos(jlong arg0);
+		void setElapsedRealtimeUncertaintyNanos(jdouble arg0);
+		void setExtras(__jni_impl::android::os::Bundle arg0);
+		void setLatitude(jdouble arg0);
+		void setLongitude(jdouble arg0);
+		void setProvider(jstring arg0);
+		void setProvider(const QString &arg0);
+		void setSpeed(jfloat arg0);
+		void setSpeedAccuracyMetersPerSecond(jfloat arg0);
+		void setTime(jlong arg0);
+		void setVerticalAccuracyMeters(jfloat arg0);
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::location
 
@@ -126,6 +126,14 @@ namespace __jni_impl::android::location
 	}
 	
 	// Constructors
+	void Location::__constructor(__jni_impl::android::location::Location arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.location.Location",
+			"(Landroid/location/Location;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void Location::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -142,45 +150,8 @@ namespace __jni_impl::android::location
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void Location::__constructor(__jni_impl::android::location::Location arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.location.Location",
-			"(Landroid/location/Location;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	
 	// Methods
-	jstring Location::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void Location::set(__jni_impl::android::location::Location arg0)
-	{
-		__thiz.callMethod<void>(
-			"set",
-			"(Landroid/location/Location;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Location::reset()
-	{
-		__thiz.callMethod<void>(
-			"reset",
-			"()V"
-		);
-	}
-	jstring Location::getProvider()
-	{
-		return __thiz.callObjectMethod(
-			"getProvider",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jdouble Location::convert(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jdouble>(
@@ -209,36 +180,6 @@ namespace __jni_impl::android::location
 			arg1
 		).object<jstring>();
 	}
-	jlong Location::getTime()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTime",
-			"()J"
-		);
-	}
-	void Location::setTime(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTime",
-			"(J)V",
-			arg0
-		);
-	}
-	void Location::setExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"setExtras",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jdouble Location::getAltitude()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getAltitude",
-			"()D"
-		);
-	}
 	void Location::distanceBetween(jdouble arg0, jdouble arg1, jdouble arg2, jdouble arg3, jfloatArray arg4)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -252,285 +193,12 @@ namespace __jni_impl::android::location
 			arg4
 		);
 	}
-	jfloat Location::distanceTo(__jni_impl::android::location::Location arg0)
-	{
-		return __thiz.callMethod<jfloat>(
-			"distanceTo",
-			"(Landroid/location/Location;)F",
-			arg0.__jniObject().object()
-		);
-	}
 	jfloat Location::bearingTo(__jni_impl::android::location::Location arg0)
 	{
 		return __thiz.callMethod<jfloat>(
 			"bearingTo",
 			"(Landroid/location/Location;)F",
 			arg0.__jniObject().object()
-		);
-	}
-	void Location::setProvider(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setProvider",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void Location::setProvider(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setProvider",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jlong Location::getElapsedRealtimeNanos()
-	{
-		return __thiz.callMethod<jlong>(
-			"getElapsedRealtimeNanos",
-			"()J"
-		);
-	}
-	void Location::setElapsedRealtimeNanos(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"setElapsedRealtimeNanos",
-			"(J)V",
-			arg0
-		);
-	}
-	jdouble Location::getElapsedRealtimeUncertaintyNanos()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getElapsedRealtimeUncertaintyNanos",
-			"()D"
-		);
-	}
-	void Location::setElapsedRealtimeUncertaintyNanos(jdouble arg0)
-	{
-		__thiz.callMethod<void>(
-			"setElapsedRealtimeUncertaintyNanos",
-			"(D)V",
-			arg0
-		);
-	}
-	jboolean Location::hasElapsedRealtimeUncertaintyNanos()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasElapsedRealtimeUncertaintyNanos",
-			"()Z"
-		);
-	}
-	jdouble Location::getLatitude()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getLatitude",
-			"()D"
-		);
-	}
-	void Location::setLatitude(jdouble arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLatitude",
-			"(D)V",
-			arg0
-		);
-	}
-	jdouble Location::getLongitude()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getLongitude",
-			"()D"
-		);
-	}
-	void Location::setLongitude(jdouble arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLongitude",
-			"(D)V",
-			arg0
-		);
-	}
-	jboolean Location::hasAltitude()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasAltitude",
-			"()Z"
-		);
-	}
-	void Location::setAltitude(jdouble arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAltitude",
-			"(D)V",
-			arg0
-		);
-	}
-	void Location::removeAltitude()
-	{
-		__thiz.callMethod<void>(
-			"removeAltitude",
-			"()V"
-		);
-	}
-	jboolean Location::hasSpeed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasSpeed",
-			"()Z"
-		);
-	}
-	jfloat Location::getSpeed()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getSpeed",
-			"()F"
-		);
-	}
-	void Location::setSpeed(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSpeed",
-			"(F)V",
-			arg0
-		);
-	}
-	void Location::removeSpeed()
-	{
-		__thiz.callMethod<void>(
-			"removeSpeed",
-			"()V"
-		);
-	}
-	jboolean Location::hasBearing()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasBearing",
-			"()Z"
-		);
-	}
-	jfloat Location::getBearing()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getBearing",
-			"()F"
-		);
-	}
-	void Location::setBearing(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setBearing",
-			"(F)V",
-			arg0
-		);
-	}
-	void Location::removeBearing()
-	{
-		__thiz.callMethod<void>(
-			"removeBearing",
-			"()V"
-		);
-	}
-	jboolean Location::hasAccuracy()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasAccuracy",
-			"()Z"
-		);
-	}
-	jfloat Location::getAccuracy()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getAccuracy",
-			"()F"
-		);
-	}
-	void Location::setAccuracy(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAccuracy",
-			"(F)V",
-			arg0
-		);
-	}
-	void Location::removeAccuracy()
-	{
-		__thiz.callMethod<void>(
-			"removeAccuracy",
-			"()V"
-		);
-	}
-	jboolean Location::hasVerticalAccuracy()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasVerticalAccuracy",
-			"()Z"
-		);
-	}
-	jfloat Location::getVerticalAccuracyMeters()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getVerticalAccuracyMeters",
-			"()F"
-		);
-	}
-	void Location::setVerticalAccuracyMeters(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setVerticalAccuracyMeters",
-			"(F)V",
-			arg0
-		);
-	}
-	jboolean Location::hasSpeedAccuracy()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasSpeedAccuracy",
-			"()Z"
-		);
-	}
-	jfloat Location::getSpeedAccuracyMetersPerSecond()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getSpeedAccuracyMetersPerSecond",
-			"()F"
-		);
-	}
-	void Location::setSpeedAccuracyMetersPerSecond(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSpeedAccuracyMetersPerSecond",
-			"(F)V",
-			arg0
-		);
-	}
-	jboolean Location::hasBearingAccuracy()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasBearingAccuracy",
-			"()Z"
-		);
-	}
-	jfloat Location::getBearingAccuracyDegrees()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getBearingAccuracyDegrees",
-			"()F"
-		);
-	}
-	void Location::setBearingAccuracyDegrees(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setBearingAccuracyDegrees",
-			"(F)V",
-			arg0
-		);
-	}
-	jboolean Location::isFromMockProvider()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFromMockProvider",
-			"()Z"
 		);
 	}
 	jint Location::describeContents()
@@ -540,13 +208,12 @@ namespace __jni_impl::android::location
 			"()I"
 		);
 	}
-	void Location::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jfloat Location::distanceTo(__jni_impl::android::location::Location arg0)
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callMethod<jfloat>(
+			"distanceTo",
+			"(Landroid/location/Location;)F",
+			arg0.__jniObject().object()
 		);
 	}
 	void Location::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
@@ -567,11 +234,344 @@ namespace __jni_impl::android::location
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
+	jfloat Location::getAccuracy()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getAccuracy",
+			"()F"
+		);
+	}
+	jdouble Location::getAltitude()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getAltitude",
+			"()D"
+		);
+	}
+	jfloat Location::getBearing()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getBearing",
+			"()F"
+		);
+	}
+	jfloat Location::getBearingAccuracyDegrees()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getBearingAccuracyDegrees",
+			"()F"
+		);
+	}
+	jlong Location::getElapsedRealtimeNanos()
+	{
+		return __thiz.callMethod<jlong>(
+			"getElapsedRealtimeNanos",
+			"()J"
+		);
+	}
+	jdouble Location::getElapsedRealtimeUncertaintyNanos()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getElapsedRealtimeUncertaintyNanos",
+			"()D"
+		);
+	}
 	QAndroidJniObject Location::getExtras()
 	{
 		return __thiz.callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
+		);
+	}
+	jdouble Location::getLatitude()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getLatitude",
+			"()D"
+		);
+	}
+	jdouble Location::getLongitude()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getLongitude",
+			"()D"
+		);
+	}
+	jstring Location::getProvider()
+	{
+		return __thiz.callObjectMethod(
+			"getProvider",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jfloat Location::getSpeed()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getSpeed",
+			"()F"
+		);
+	}
+	jfloat Location::getSpeedAccuracyMetersPerSecond()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getSpeedAccuracyMetersPerSecond",
+			"()F"
+		);
+	}
+	jlong Location::getTime()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTime",
+			"()J"
+		);
+	}
+	jfloat Location::getVerticalAccuracyMeters()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getVerticalAccuracyMeters",
+			"()F"
+		);
+	}
+	jboolean Location::hasAccuracy()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasAccuracy",
+			"()Z"
+		);
+	}
+	jboolean Location::hasAltitude()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasAltitude",
+			"()Z"
+		);
+	}
+	jboolean Location::hasBearing()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasBearing",
+			"()Z"
+		);
+	}
+	jboolean Location::hasBearingAccuracy()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasBearingAccuracy",
+			"()Z"
+		);
+	}
+	jboolean Location::hasElapsedRealtimeUncertaintyNanos()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasElapsedRealtimeUncertaintyNanos",
+			"()Z"
+		);
+	}
+	jboolean Location::hasSpeed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasSpeed",
+			"()Z"
+		);
+	}
+	jboolean Location::hasSpeedAccuracy()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasSpeedAccuracy",
+			"()Z"
+		);
+	}
+	jboolean Location::hasVerticalAccuracy()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasVerticalAccuracy",
+			"()Z"
+		);
+	}
+	jboolean Location::isFromMockProvider()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFromMockProvider",
+			"()Z"
+		);
+	}
+	void Location::removeAccuracy()
+	{
+		__thiz.callMethod<void>(
+			"removeAccuracy",
+			"()V"
+		);
+	}
+	void Location::removeAltitude()
+	{
+		__thiz.callMethod<void>(
+			"removeAltitude",
+			"()V"
+		);
+	}
+	void Location::removeBearing()
+	{
+		__thiz.callMethod<void>(
+			"removeBearing",
+			"()V"
+		);
+	}
+	void Location::removeSpeed()
+	{
+		__thiz.callMethod<void>(
+			"removeSpeed",
+			"()V"
+		);
+	}
+	void Location::reset()
+	{
+		__thiz.callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
+	void Location::set(__jni_impl::android::location::Location arg0)
+	{
+		__thiz.callMethod<void>(
+			"set",
+			"(Landroid/location/Location;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Location::setAccuracy(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAccuracy",
+			"(F)V",
+			arg0
+		);
+	}
+	void Location::setAltitude(jdouble arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAltitude",
+			"(D)V",
+			arg0
+		);
+	}
+	void Location::setBearing(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setBearing",
+			"(F)V",
+			arg0
+		);
+	}
+	void Location::setBearingAccuracyDegrees(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setBearingAccuracyDegrees",
+			"(F)V",
+			arg0
+		);
+	}
+	void Location::setElapsedRealtimeNanos(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"setElapsedRealtimeNanos",
+			"(J)V",
+			arg0
+		);
+	}
+	void Location::setElapsedRealtimeUncertaintyNanos(jdouble arg0)
+	{
+		__thiz.callMethod<void>(
+			"setElapsedRealtimeUncertaintyNanos",
+			"(D)V",
+			arg0
+		);
+	}
+	void Location::setExtras(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"setExtras",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Location::setLatitude(jdouble arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLatitude",
+			"(D)V",
+			arg0
+		);
+	}
+	void Location::setLongitude(jdouble arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLongitude",
+			"(D)V",
+			arg0
+		);
+	}
+	void Location::setProvider(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setProvider",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void Location::setProvider(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setProvider",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void Location::setSpeed(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSpeed",
+			"(F)V",
+			arg0
+		);
+	}
+	void Location::setSpeedAccuracyMetersPerSecond(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSpeedAccuracyMetersPerSecond",
+			"(F)V",
+			arg0
+		);
+	}
+	void Location::setTime(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTime",
+			"(J)V",
+			arg0
+		);
+	}
+	void Location::setVerticalAccuracyMeters(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setVerticalAccuracyMeters",
+			"(F)V",
+			arg0
+		);
+	}
+	jstring Location::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void Location::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::location
@@ -582,12 +582,12 @@ namespace android::location
 	{
 	public:
 		Location(QAndroidJniObject obj) { __thiz = obj; }
-		Location(jstring arg0)
+		Location(__jni_impl::android::location::Location arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		Location(__jni_impl::android::location::Location arg0)
+		Location(jstring arg0)
 		{
 			__constructor(
 				arg0);

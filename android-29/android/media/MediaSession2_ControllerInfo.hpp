@@ -26,12 +26,12 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
+		QAndroidJniObject getConnectionHints();
 		jstring getPackageName();
 		QAndroidJniObject getRemoteUserInfo();
-		QAndroidJniObject getConnectionHints();
 		jint getUid();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::media
 
@@ -59,18 +59,11 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	jstring MediaSession2_ControllerInfo::toString()
+	QAndroidJniObject MediaSession2_ControllerInfo::getConnectionHints()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint MediaSession2_ControllerInfo::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+			"getConnectionHints",
+			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring MediaSession2_ControllerInfo::getPackageName()
@@ -87,19 +80,26 @@ namespace __jni_impl::android::media
 			"()Landroid/media/session/MediaSessionManager$RemoteUserInfo;"
 		);
 	}
-	QAndroidJniObject MediaSession2_ControllerInfo::getConnectionHints()
-	{
-		return __thiz.callObjectMethod(
-			"getConnectionHints",
-			"()Landroid/os/Bundle;"
-		);
-	}
 	jint MediaSession2_ControllerInfo::getUid()
 	{
 		return __thiz.callMethod<jint>(
 			"getUid",
 			"()I"
 		);
+	}
+	jint MediaSession2_ControllerInfo::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring MediaSession2_ControllerInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media
 

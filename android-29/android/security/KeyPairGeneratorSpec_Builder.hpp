@@ -13,10 +13,6 @@ namespace __jni_impl::android::security
 {
 	class KeyPairGeneratorSpec;
 }
-namespace __jni_impl::javax::security::auth::x500
-{
-	class X500Principal;
-}
 namespace __jni_impl::java::math
 {
 	class BigInteger;
@@ -24,6 +20,10 @@ namespace __jni_impl::java::math
 namespace __jni_impl::java::util
 {
 	class Date;
+}
+namespace __jni_impl::javax::security::auth::x500
+{
+	class X500Principal;
 }
 
 namespace __jni_impl::android::security
@@ -38,25 +38,25 @@ namespace __jni_impl::android::security
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setEncryptionRequired();
 		QAndroidJniObject setAlgorithmParameterSpec(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject setAlias(jstring arg0);
 		QAndroidJniObject setAlias(const QString &arg0);
+		QAndroidJniObject setEncryptionRequired();
+		QAndroidJniObject setEndDate(__jni_impl::java::util::Date arg0);
+		QAndroidJniObject setKeySize(jint arg0);
 		QAndroidJniObject setKeyType(jstring arg0);
 		QAndroidJniObject setKeyType(const QString &arg0);
-		QAndroidJniObject setKeySize(jint arg0);
-		QAndroidJniObject setSubject(__jni_impl::javax::security::auth::x500::X500Principal arg0);
 		QAndroidJniObject setSerialNumber(__jni_impl::java::math::BigInteger arg0);
 		QAndroidJniObject setStartDate(__jni_impl::java::util::Date arg0);
-		QAndroidJniObject setEndDate(__jni_impl::java::util::Date arg0);
+		QAndroidJniObject setSubject(__jni_impl::javax::security::auth::x500::X500Principal arg0);
 	};
 } // namespace __jni_impl::android::security
 
 #include "../content/Context.hpp"
 #include "KeyPairGeneratorSpec.hpp"
-#include "../../javax/security/auth/x500/X500Principal.hpp"
 #include "../../java/math/BigInteger.hpp"
 #include "../../java/util/Date.hpp"
+#include "../../javax/security/auth/x500/X500Principal.hpp"
 
 namespace __jni_impl::android::security
 {
@@ -78,13 +78,6 @@ namespace __jni_impl::android::security
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/security/KeyPairGeneratorSpec;"
-		);
-	}
-	QAndroidJniObject KeyPairGeneratorSpec_Builder::setEncryptionRequired()
-	{
-		return __thiz.callObjectMethod(
-			"setEncryptionRequired",
-			"()Landroid/security/KeyPairGeneratorSpec$Builder;"
 		);
 	}
 	QAndroidJniObject KeyPairGeneratorSpec_Builder::setAlgorithmParameterSpec(__jni_impl::__JniBaseClass arg0)
@@ -111,6 +104,29 @@ namespace __jni_impl::android::security
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
+	QAndroidJniObject KeyPairGeneratorSpec_Builder::setEncryptionRequired()
+	{
+		return __thiz.callObjectMethod(
+			"setEncryptionRequired",
+			"()Landroid/security/KeyPairGeneratorSpec$Builder;"
+		);
+	}
+	QAndroidJniObject KeyPairGeneratorSpec_Builder::setEndDate(__jni_impl::java::util::Date arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setEndDate",
+			"(Ljava/util/Date;)Landroid/security/KeyPairGeneratorSpec$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject KeyPairGeneratorSpec_Builder::setKeySize(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setKeySize",
+			"(I)Landroid/security/KeyPairGeneratorSpec$Builder;",
+			arg0
+		);
+	}
 	QAndroidJniObject KeyPairGeneratorSpec_Builder::setKeyType(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -125,22 +141,6 @@ namespace __jni_impl::android::security
 			"setKeyType",
 			"(Ljava/lang/String;)Landroid/security/KeyPairGeneratorSpec$Builder;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject KeyPairGeneratorSpec_Builder::setKeySize(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setKeySize",
-			"(I)Landroid/security/KeyPairGeneratorSpec$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject KeyPairGeneratorSpec_Builder::setSubject(__jni_impl::javax::security::auth::x500::X500Principal arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSubject",
-			"(Ljavax/security/auth/x500/X500Principal;)Landroid/security/KeyPairGeneratorSpec$Builder;",
-			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject KeyPairGeneratorSpec_Builder::setSerialNumber(__jni_impl::java::math::BigInteger arg0)
@@ -159,11 +159,11 @@ namespace __jni_impl::android::security
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject KeyPairGeneratorSpec_Builder::setEndDate(__jni_impl::java::util::Date arg0)
+	QAndroidJniObject KeyPairGeneratorSpec_Builder::setSubject(__jni_impl::javax::security::auth::x500::X500Principal arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setEndDate",
-			"(Ljava/util/Date;)Landroid/security/KeyPairGeneratorSpec$Builder;",
+			"setSubject",
+			"(Ljavax/security/auth/x500/X500Principal;)Landroid/security/KeyPairGeneratorSpec$Builder;",
 			arg0.__jniObject().object()
 		);
 	}

@@ -5,21 +5,21 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::graphics::pdf
-{
-	class PdfRenderer;
-}
 namespace __jni_impl::android::graphics
 {
 	class Bitmap;
 }
 namespace __jni_impl::android::graphics
 {
-	class Rect;
+	class Matrix;
 }
 namespace __jni_impl::android::graphics
 {
-	class Matrix;
+	class Rect;
+}
+namespace __jni_impl::android::graphics::pdf
+{
+	class PdfRenderer;
 }
 
 namespace __jni_impl::android::graphics::pdf
@@ -36,17 +36,17 @@ namespace __jni_impl::android::graphics::pdf
 		
 		// Methods
 		void close();
+		jint getHeight();
 		jint getIndex();
 		jint getWidth();
-		jint getHeight();
 		void render(__jni_impl::android::graphics::Bitmap arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Matrix arg2, jint arg3);
 	};
 } // namespace __jni_impl::android::graphics::pdf
 
-#include "PdfRenderer.hpp"
 #include "../Bitmap.hpp"
-#include "../Rect.hpp"
 #include "../Matrix.hpp"
+#include "../Rect.hpp"
+#include "PdfRenderer.hpp"
 
 namespace __jni_impl::android::graphics::pdf
 {
@@ -82,6 +82,13 @@ namespace __jni_impl::android::graphics::pdf
 			"()V"
 		);
 	}
+	jint PdfRenderer_Page::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
+	}
 	jint PdfRenderer_Page::getIndex()
 	{
 		return __thiz.callMethod<jint>(
@@ -93,13 +100,6 @@ namespace __jni_impl::android::graphics::pdf
 	{
 		return __thiz.callMethod<jint>(
 			"getWidth",
-			"()I"
-		);
-	}
-	jint PdfRenderer_Page::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
 			"()I"
 		);
 	}

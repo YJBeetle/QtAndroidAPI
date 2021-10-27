@@ -19,8 +19,8 @@ namespace __jni_impl::android::telephony
 		void __constructor();
 		
 		// Methods
-		void onError(jint arg0, jthrowable arg1);
 		void onCellInfo(__jni_impl::__JniBaseClass arg0);
+		void onError(jint arg0, jthrowable arg1);
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -53,6 +53,14 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
+	void TelephonyManager_CellInfoCallback::onCellInfo(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"onCellInfo",
+			"(Ljava/util/List;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void TelephonyManager_CellInfoCallback::onError(jint arg0, jthrowable arg1)
 	{
 		__thiz.callMethod<void>(
@@ -60,14 +68,6 @@ namespace __jni_impl::android::telephony
 			"(ILjava/lang/Throwable;)V",
 			arg0,
 			arg1
-		);
-	}
-	void TelephonyManager_CellInfoCallback::onCellInfo(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"onCellInfo",
-			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::telephony

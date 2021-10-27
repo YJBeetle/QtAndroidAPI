@@ -21,9 +21,9 @@ namespace __jni_impl::android::companion
 		void __constructor();
 		
 		// Methods
+		void onDeviceFound(__jni_impl::android::content::IntentSender arg0);
 		void onFailure(jstring arg0);
 		void onFailure(const QString &arg0);
-		void onDeviceFound(__jni_impl::android::content::IntentSender arg0);
 	};
 } // namespace __jni_impl::android::companion
 
@@ -43,6 +43,14 @@ namespace __jni_impl::android::companion
 	}
 	
 	// Methods
+	void CompanionDeviceManager_Callback::onDeviceFound(__jni_impl::android::content::IntentSender arg0)
+	{
+		__thiz.callMethod<void>(
+			"onDeviceFound",
+			"(Landroid/content/IntentSender;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void CompanionDeviceManager_Callback::onFailure(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -57,14 +65,6 @@ namespace __jni_impl::android::companion
 			"onFailure",
 			"(Ljava/lang/CharSequence;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void CompanionDeviceManager_Callback::onDeviceFound(__jni_impl::android::content::IntentSender arg0)
-	{
-		__thiz.callMethod<void>(
-			"onDeviceFound",
-			"(Landroid/content/IntentSender;)V",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::companion

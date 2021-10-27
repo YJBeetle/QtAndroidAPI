@@ -6,10 +6,6 @@
 #include "../../__JniBaseClass.hpp"
 #include "Permission.hpp"
 
-namespace __jni_impl::java::security
-{
-	class Permission;
-}
 namespace __jni_impl::java::io
 {
 	class ObjectInputStream;
@@ -17,6 +13,10 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class ObjectOutputStream;
+}
+namespace __jni_impl::java::security
+{
+	class Permission;
 }
 namespace __jni_impl::java::security
 {
@@ -36,21 +36,21 @@ namespace __jni_impl::java::security
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jboolean implies(__jni_impl::java::security::Permission arg0);
 		jstring getActions();
-		QAndroidJniObject newPermissionCollection();
-		jstring getUnresolvedType();
-		jstring getUnresolvedName();
 		jstring getUnresolvedActions();
 		jarray getUnresolvedCerts();
+		jstring getUnresolvedName();
+		jstring getUnresolvedType();
+		jint hashCode();
+		jboolean implies(__jni_impl::java::security::Permission arg0);
+		QAndroidJniObject newPermissionCollection();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security
 
-#include "Permission.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "Permission.hpp"
 #include "PermissionCollection.hpp"
 
 namespace __jni_impl::java::security
@@ -90,10 +90,38 @@ namespace __jni_impl::java::security
 			arg0
 		);
 	}
-	jstring UnresolvedPermission::toString()
+	jstring UnresolvedPermission::getActions()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
+			"getActions",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring UnresolvedPermission::getUnresolvedActions()
+	{
+		return __thiz.callObjectMethod(
+			"getUnresolvedActions",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jarray UnresolvedPermission::getUnresolvedCerts()
+	{
+		return __thiz.callObjectMethod(
+			"getUnresolvedCerts",
+			"()[Ljava/security/cert/Certificate;"
+		).object<jarray>();
+	}
+	jstring UnresolvedPermission::getUnresolvedName()
+	{
+		return __thiz.callObjectMethod(
+			"getUnresolvedName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring UnresolvedPermission::getUnresolvedType()
+	{
+		return __thiz.callObjectMethod(
+			"getUnresolvedType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -112,13 +140,6 @@ namespace __jni_impl::java::security
 			arg0.__jniObject().object()
 		);
 	}
-	jstring UnresolvedPermission::getActions()
-	{
-		return __thiz.callObjectMethod(
-			"getActions",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject UnresolvedPermission::newPermissionCollection()
 	{
 		return __thiz.callObjectMethod(
@@ -126,33 +147,12 @@ namespace __jni_impl::java::security
 			"()Ljava/security/PermissionCollection;"
 		);
 	}
-	jstring UnresolvedPermission::getUnresolvedType()
+	jstring UnresolvedPermission::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getUnresolvedType",
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jstring UnresolvedPermission::getUnresolvedName()
-	{
-		return __thiz.callObjectMethod(
-			"getUnresolvedName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring UnresolvedPermission::getUnresolvedActions()
-	{
-		return __thiz.callObjectMethod(
-			"getUnresolvedActions",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jarray UnresolvedPermission::getUnresolvedCerts()
-	{
-		return __thiz.callObjectMethod(
-			"getUnresolvedCerts",
-			"()[Ljava/security/cert/Certificate;"
-		).object<jarray>();
 	}
 } // namespace __jni_impl::java::security
 

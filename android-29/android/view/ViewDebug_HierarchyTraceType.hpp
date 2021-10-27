@@ -13,22 +13,22 @@ namespace __jni_impl::android::view
 	{
 	public:
 		// Fields
+		static QAndroidJniObject BUILD_CACHE();
+		static QAndroidJniObject DRAW();
 		static QAndroidJniObject INVALIDATE();
 		static QAndroidJniObject INVALIDATE_CHILD();
 		static QAndroidJniObject INVALIDATE_CHILD_IN_PARENT();
-		static QAndroidJniObject REQUEST_LAYOUT();
 		static QAndroidJniObject ON_LAYOUT();
 		static QAndroidJniObject ON_MEASURE();
-		static QAndroidJniObject DRAW();
-		static QAndroidJniObject BUILD_CACHE();
+		static QAndroidJniObject REQUEST_LAYOUT();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::view
 
@@ -36,6 +36,22 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::view
 {
 	// Fields
+	QAndroidJniObject ViewDebug_HierarchyTraceType::BUILD_CACHE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.view.ViewDebug$HierarchyTraceType",
+			"BUILD_CACHE",
+			"Landroid/view/ViewDebug$HierarchyTraceType;"
+		);
+	}
+	QAndroidJniObject ViewDebug_HierarchyTraceType::DRAW()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.view.ViewDebug$HierarchyTraceType",
+			"DRAW",
+			"Landroid/view/ViewDebug$HierarchyTraceType;"
+		);
+	}
 	QAndroidJniObject ViewDebug_HierarchyTraceType::INVALIDATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -60,14 +76,6 @@ namespace __jni_impl::android::view
 			"Landroid/view/ViewDebug$HierarchyTraceType;"
 		);
 	}
-	QAndroidJniObject ViewDebug_HierarchyTraceType::REQUEST_LAYOUT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.view.ViewDebug$HierarchyTraceType",
-			"REQUEST_LAYOUT",
-			"Landroid/view/ViewDebug$HierarchyTraceType;"
-		);
-	}
 	QAndroidJniObject ViewDebug_HierarchyTraceType::ON_LAYOUT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -84,19 +92,11 @@ namespace __jni_impl::android::view
 			"Landroid/view/ViewDebug$HierarchyTraceType;"
 		);
 	}
-	QAndroidJniObject ViewDebug_HierarchyTraceType::DRAW()
+	QAndroidJniObject ViewDebug_HierarchyTraceType::REQUEST_LAYOUT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.ViewDebug$HierarchyTraceType",
-			"DRAW",
-			"Landroid/view/ViewDebug$HierarchyTraceType;"
-		);
-	}
-	QAndroidJniObject ViewDebug_HierarchyTraceType::BUILD_CACHE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.view.ViewDebug$HierarchyTraceType",
-			"BUILD_CACHE",
+			"REQUEST_LAYOUT",
 			"Landroid/view/ViewDebug$HierarchyTraceType;"
 		);
 	}
@@ -110,14 +110,6 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jarray ViewDebug_HierarchyTraceType::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.ViewDebug$HierarchyTraceType",
-			"values",
-			"()[Landroid/view/ViewDebug$HierarchyTraceType;"
-		).object<jarray>();
-	}
 	QAndroidJniObject ViewDebug_HierarchyTraceType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -135,6 +127,14 @@ namespace __jni_impl::android::view
 			"(Ljava/lang/String;)Landroid/view/ViewDebug$HierarchyTraceType;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray ViewDebug_HierarchyTraceType::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.ViewDebug$HierarchyTraceType",
+			"values",
+			"()[Landroid/view/ViewDebug$HierarchyTraceType;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::view
 

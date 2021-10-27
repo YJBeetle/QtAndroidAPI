@@ -7,6 +7,10 @@
 #include "Preference.hpp"
 #include "DialogPreference.hpp"
 
+namespace __jni_impl::android::app
+{
+	class AlertDialog_Builder;
+}
 namespace __jni_impl::android::content
 {
 	class Context;
@@ -14,10 +18,6 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::content::res
 {
 	class TypedArray;
-}
-namespace __jni_impl::android::app
-{
-	class AlertDialog_Builder;
 }
 
 namespace __jni_impl::android::preference
@@ -34,22 +34,22 @@ namespace __jni_impl::android::preference
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
+		jint findIndexOfValue(jstring arg0);
+		jint findIndexOfValue(const QString &arg0);
 		jarray getEntries();
+		jarray getEntryValues();
 		QAndroidJniObject getValues();
-		void setValues(__jni_impl::__JniBaseClass arg0);
 		void setEntries(jarray arg0);
 		void setEntries(jint arg0);
 		void setEntryValues(jarray arg0);
 		void setEntryValues(jint arg0);
-		jarray getEntryValues();
-		jint findIndexOfValue(jstring arg0);
-		jint findIndexOfValue(const QString &arg0);
+		void setValues(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::preference
 
+#include "../app/AlertDialog_Builder.hpp"
 #include "../content/Context.hpp"
 #include "../content/res/TypedArray.hpp"
-#include "../app/AlertDialog_Builder.hpp"
 
 namespace __jni_impl::android::preference
 {
@@ -96,10 +96,33 @@ namespace __jni_impl::android::preference
 	}
 	
 	// Methods
+	jint MultiSelectListPreference::findIndexOfValue(jstring arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"findIndexOfValue",
+			"(Ljava/lang/String;)I",
+			arg0
+		);
+	}
+	jint MultiSelectListPreference::findIndexOfValue(const QString &arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"findIndexOfValue",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jarray MultiSelectListPreference::getEntries()
 	{
 		return __thiz.callObjectMethod(
 			"getEntries",
+			"()[Ljava/lang/CharSequence;"
+		).object<jarray>();
+	}
+	jarray MultiSelectListPreference::getEntryValues()
+	{
+		return __thiz.callObjectMethod(
+			"getEntryValues",
 			"()[Ljava/lang/CharSequence;"
 		).object<jarray>();
 	}
@@ -108,14 +131,6 @@ namespace __jni_impl::android::preference
 		return __thiz.callObjectMethod(
 			"getValues",
 			"()Ljava/util/Set;"
-		);
-	}
-	void MultiSelectListPreference::setValues(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setValues",
-			"(Ljava/util/Set;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	void MultiSelectListPreference::setEntries(jarray arg0)
@@ -150,27 +165,12 @@ namespace __jni_impl::android::preference
 			arg0
 		);
 	}
-	jarray MultiSelectListPreference::getEntryValues()
+	void MultiSelectListPreference::setValues(__jni_impl::__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getEntryValues",
-			"()[Ljava/lang/CharSequence;"
-		).object<jarray>();
-	}
-	jint MultiSelectListPreference::findIndexOfValue(jstring arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"findIndexOfValue",
-			"(Ljava/lang/String;)I",
-			arg0
-		);
-	}
-	jint MultiSelectListPreference::findIndexOfValue(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"findIndexOfValue",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+		__thiz.callMethod<void>(
+			"setValues",
+			"(Ljava/util/Set;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::preference

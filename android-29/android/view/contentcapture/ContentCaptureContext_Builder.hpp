@@ -9,13 +9,13 @@ namespace __jni_impl::android::content
 {
 	class LocusId;
 }
-namespace __jni_impl::android::view::contentcapture
-{
-	class ContentCaptureContext;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::view::contentcapture
+{
+	class ContentCaptureContext;
 }
 
 namespace __jni_impl::android::view::contentcapture
@@ -35,8 +35,8 @@ namespace __jni_impl::android::view::contentcapture
 } // namespace __jni_impl::android::view::contentcapture
 
 #include "../../content/LocusId.hpp"
-#include "ContentCaptureContext.hpp"
 #include "../../os/Bundle.hpp"
+#include "ContentCaptureContext.hpp"
 
 namespace __jni_impl::android::view::contentcapture
 {

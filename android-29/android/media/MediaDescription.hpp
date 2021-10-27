@@ -5,21 +5,21 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
+namespace __jni_impl::android::graphics
 {
-	class Parcel;
+	class Bitmap;
 }
 namespace __jni_impl::android::net
 {
 	class Uri;
 }
-namespace __jni_impl::android::graphics
-{
-	class Bitmap;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::media
@@ -42,25 +42,25 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jstring getDescription();
-		QAndroidJniObject getMediaUri();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jstring getMediaId();
+		jboolean equals(jobject arg0);
+		jstring getDescription();
+		QAndroidJniObject getExtras();
 		QAndroidJniObject getIconBitmap();
 		QAndroidJniObject getIconUri();
-		jstring getTitle();
-		QAndroidJniObject getExtras();
+		jstring getMediaId();
+		QAndroidJniObject getMediaUri();
 		jstring getSubtitle();
+		jstring getTitle();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
 
-#include "../os/Parcel.hpp"
-#include "../net/Uri.hpp"
 #include "../graphics/Bitmap.hpp"
+#include "../net/Uri.hpp"
 #include "../os/Bundle.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -140,6 +140,13 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	jint MediaDescription::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean MediaDescription::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -148,13 +155,6 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	jstring MediaDescription::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jstring MediaDescription::getDescription()
 	{
 		return __thiz.callObjectMethod(
@@ -162,35 +162,12 @@ namespace __jni_impl::android::media
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaDescription::getMediaUri()
+	QAndroidJniObject MediaDescription::getExtras()
 	{
 		return __thiz.callObjectMethod(
-			"getMediaUri",
-			"()Landroid/net/Uri;"
+			"getExtras",
+			"()Landroid/os/Bundle;"
 		);
-	}
-	jint MediaDescription::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void MediaDescription::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jstring MediaDescription::getMediaId()
-	{
-		return __thiz.callObjectMethod(
-			"getMediaId",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	QAndroidJniObject MediaDescription::getIconBitmap()
 	{
@@ -206,18 +183,18 @@ namespace __jni_impl::android::media
 			"()Landroid/net/Uri;"
 		);
 	}
-	jstring MediaDescription::getTitle()
+	jstring MediaDescription::getMediaId()
 	{
 		return __thiz.callObjectMethod(
-			"getTitle",
-			"()Ljava/lang/CharSequence;"
+			"getMediaId",
+			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaDescription::getExtras()
+	QAndroidJniObject MediaDescription::getMediaUri()
 	{
 		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
+			"getMediaUri",
+			"()Landroid/net/Uri;"
 		);
 	}
 	jstring MediaDescription::getSubtitle()
@@ -226,6 +203,29 @@ namespace __jni_impl::android::media
 			"getSubtitle",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
+	}
+	jstring MediaDescription::getTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring MediaDescription::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void MediaDescription::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::media
 

@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::os
 {
-	class Handler;
+	class Bundle;
 }
 namespace __jni_impl::android::os
 {
-	class Bundle;
+	class Handler;
 }
 namespace __jni_impl::android::os
 {
@@ -30,14 +30,14 @@ namespace __jni_impl::android::os
 		void __constructor(__jni_impl::android::os::Handler arg0);
 		
 		// Methods
-		void send(jint arg0, __jni_impl::android::os::Bundle arg1);
 		jint describeContents();
+		void send(jint arg0, __jni_impl::android::os::Bundle arg1);
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::os
 
-#include "Handler.hpp"
 #include "Bundle.hpp"
+#include "Handler.hpp"
 #include "Parcel.hpp"
 
 namespace __jni_impl::android::os
@@ -63,6 +63,13 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
+	jint ResultReceiver::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	void ResultReceiver::send(jint arg0, __jni_impl::android::os::Bundle arg1)
 	{
 		__thiz.callMethod<void>(
@@ -70,13 +77,6 @@ namespace __jni_impl::android::os
 			"(ILandroid/os/Bundle;)V",
 			arg0,
 			arg1.__jniObject().object()
-		);
-	}
-	jint ResultReceiver::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
 		);
 	}
 	void ResultReceiver::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

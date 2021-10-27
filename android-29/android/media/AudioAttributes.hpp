@@ -49,17 +49,17 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint getFlags();
-		jint getUsage();
 		jboolean areHapticChannelsMuted();
+		jint describeContents();
+		jboolean equals(jobject arg0);
 		jint getAllowedCapturePolicy();
 		jint getContentType();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getFlags();
+		jint getUsage();
 		jint getVolumeControlStream();
+		jint hashCode();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
 
@@ -275,6 +275,20 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	jboolean AudioAttributes::areHapticChannelsMuted()
+	{
+		return __thiz.callMethod<jboolean>(
+			"areHapticChannelsMuted",
+			"()Z"
+		);
+	}
+	jint AudioAttributes::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean AudioAttributes::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -283,17 +297,17 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	jstring AudioAttributes::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint AudioAttributes::hashCode()
+	jint AudioAttributes::getAllowedCapturePolicy()
 	{
 		return __thiz.callMethod<jint>(
-			"hashCode",
+			"getAllowedCapturePolicy",
+			"()I"
+		);
+	}
+	jint AudioAttributes::getContentType()
+	{
+		return __thiz.callMethod<jint>(
+			"getContentType",
 			"()I"
 		);
 	}
@@ -311,33 +325,26 @@ namespace __jni_impl::android::media
 			"()I"
 		);
 	}
-	jboolean AudioAttributes::areHapticChannelsMuted()
-	{
-		return __thiz.callMethod<jboolean>(
-			"areHapticChannelsMuted",
-			"()Z"
-		);
-	}
-	jint AudioAttributes::getAllowedCapturePolicy()
+	jint AudioAttributes::getVolumeControlStream()
 	{
 		return __thiz.callMethod<jint>(
-			"getAllowedCapturePolicy",
+			"getVolumeControlStream",
 			"()I"
 		);
 	}
-	jint AudioAttributes::getContentType()
+	jint AudioAttributes::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"getContentType",
+			"hashCode",
 			"()I"
 		);
 	}
-	jint AudioAttributes::describeContents()
+	jstring AudioAttributes::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void AudioAttributes::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -346,13 +353,6 @@ namespace __jni_impl::android::media
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint AudioAttributes::getVolumeControlStream()
-	{
-		return __thiz.callMethod<jint>(
-			"getVolumeControlStream",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::media

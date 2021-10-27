@@ -40,9 +40,9 @@ namespace __jni_impl::android::provider
 		void __constructor();
 		
 		// Methods
-		static jint getTypeLabelResource(jint arg0);
 		static jstring getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2);
 		static jstring getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, const QString &arg2);
+		static jint getTypeLabelResource(jint arg0);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -199,15 +199,6 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	jint ContactsContract_CommonDataKinds_Relation::getTypeLabelResource(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.provider.ContactsContract$CommonDataKinds$Relation",
-			"getTypeLabelResource",
-			"(I)I",
-			arg0
-		);
-	}
 	jstring ContactsContract_CommonDataKinds_Relation::getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -229,6 +220,15 @@ namespace __jni_impl::android::provider
 			arg1,
 			QAndroidJniObject::fromString(arg2).object<jstring>()
 		).object<jstring>();
+	}
+	jint ContactsContract_CommonDataKinds_Relation::getTypeLabelResource(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.provider.ContactsContract$CommonDataKinds$Relation",
+			"getTypeLabelResource",
+			"(I)I",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::provider
 

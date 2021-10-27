@@ -21,12 +21,12 @@ namespace __jni_impl::android::service::voice
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		jboolean isActive();
 		void cancel();
-		jint getCallingUid();
 		jstring getCallingPackage();
+		jint getCallingUid();
 		QAndroidJniObject getExtras();
+		jboolean isActive();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::service::voice
 
@@ -45,32 +45,11 @@ namespace __jni_impl::android::service::voice
 	}
 	
 	// Methods
-	jstring VoiceInteractionSession_Request::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jboolean VoiceInteractionSession_Request::isActive()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isActive",
-			"()Z"
-		);
-	}
 	void VoiceInteractionSession_Request::cancel()
 	{
 		__thiz.callMethod<void>(
 			"cancel",
 			"()V"
-		);
-	}
-	jint VoiceInteractionSession_Request::getCallingUid()
-	{
-		return __thiz.callMethod<jint>(
-			"getCallingUid",
-			"()I"
 		);
 	}
 	jstring VoiceInteractionSession_Request::getCallingPackage()
@@ -80,12 +59,33 @@ namespace __jni_impl::android::service::voice
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	jint VoiceInteractionSession_Request::getCallingUid()
+	{
+		return __thiz.callMethod<jint>(
+			"getCallingUid",
+			"()I"
+		);
+	}
 	QAndroidJniObject VoiceInteractionSession_Request::getExtras()
 	{
 		return __thiz.callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
 		);
+	}
+	jboolean VoiceInteractionSession_Request::isActive()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isActive",
+			"()Z"
+		);
+	}
+	jstring VoiceInteractionSession_Request::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::service::voice
 

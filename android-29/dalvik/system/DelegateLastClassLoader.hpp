@@ -25,12 +25,12 @@ namespace __jni_impl::dalvik::system
 		// Fields
 		
 		// Constructors
-		void __constructor(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2, jboolean arg3);
-		void __constructor(const QString &arg0, const QString &arg1, __jni_impl::java::lang::ClassLoader arg2, jboolean arg3);
-		void __constructor(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2);
-		void __constructor(const QString &arg0, const QString &arg1, __jni_impl::java::lang::ClassLoader arg2);
 		void __constructor(jstring arg0, __jni_impl::java::lang::ClassLoader arg1);
 		void __constructor(const QString &arg0, __jni_impl::java::lang::ClassLoader arg1);
+		void __constructor(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2);
+		void __constructor(const QString &arg0, const QString &arg1, __jni_impl::java::lang::ClassLoader arg2);
+		void __constructor(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2, jboolean arg3);
+		void __constructor(const QString &arg0, const QString &arg1, __jni_impl::java::lang::ClassLoader arg2, jboolean arg3);
 		
 		// Methods
 		QAndroidJniObject getResource(jstring arg0);
@@ -48,26 +48,22 @@ namespace __jni_impl::dalvik::system
 	// Fields
 	
 	// Constructors
-	void DelegateLastClassLoader::__constructor(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2, jboolean arg3)
+	void DelegateLastClassLoader::__constructor(jstring arg0, __jni_impl::java::lang::ClassLoader arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"dalvik.system.DelegateLastClassLoader",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;Z)V",
+			"(Ljava/lang/String;Ljava/lang/ClassLoader;)V",
 			arg0,
-			arg1,
-			arg2.__jniObject().object(),
-			arg3
+			arg1.__jniObject().object()
 		);
 	}
-	void DelegateLastClassLoader::__constructor(const QString &arg0, const QString &arg1, __jni_impl::java::lang::ClassLoader arg2, jboolean arg3)
+	void DelegateLastClassLoader::__constructor(const QString &arg0, __jni_impl::java::lang::ClassLoader arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"dalvik.system.DelegateLastClassLoader",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;Z)V",
+			"(Ljava/lang/String;Ljava/lang/ClassLoader;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object(),
-			arg3
+			arg1.__jniObject().object()
 		);
 	}
 	void DelegateLastClassLoader::__constructor(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2)
@@ -90,22 +86,26 @@ namespace __jni_impl::dalvik::system
 			arg2.__jniObject().object()
 		);
 	}
-	void DelegateLastClassLoader::__constructor(jstring arg0, __jni_impl::java::lang::ClassLoader arg1)
+	void DelegateLastClassLoader::__constructor(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2, jboolean arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"dalvik.system.DelegateLastClassLoader",
-			"(Ljava/lang/String;Ljava/lang/ClassLoader;)V",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;Z)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1,
+			arg2.__jniObject().object(),
+			arg3
 		);
 	}
-	void DelegateLastClassLoader::__constructor(const QString &arg0, __jni_impl::java::lang::ClassLoader arg1)
+	void DelegateLastClassLoader::__constructor(const QString &arg0, const QString &arg1, __jni_impl::java::lang::ClassLoader arg2, jboolean arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"dalvik.system.DelegateLastClassLoader",
-			"(Ljava/lang/String;Ljava/lang/ClassLoader;)V",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;Z)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object(),
+			arg3
 		);
 	}
 	
@@ -150,13 +150,11 @@ namespace dalvik::system
 	{
 	public:
 		DelegateLastClassLoader(QAndroidJniObject obj) { __thiz = obj; }
-		DelegateLastClassLoader(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2, jboolean arg3)
+		DelegateLastClassLoader(jstring arg0, __jni_impl::java::lang::ClassLoader arg1)
 		{
 			__constructor(
 				arg0,
-				arg1,
-				arg2,
-				arg3);
+				arg1);
 		}
 		DelegateLastClassLoader(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2)
 		{
@@ -165,11 +163,13 @@ namespace dalvik::system
 				arg1,
 				arg2);
 		}
-		DelegateLastClassLoader(jstring arg0, __jni_impl::java::lang::ClassLoader arg1)
+		DelegateLastClassLoader(jstring arg0, jstring arg1, __jni_impl::java::lang::ClassLoader arg2, jboolean arg3)
 		{
 			__constructor(
 				arg0,
-				arg1);
+				arg1,
+				arg2,
+				arg3);
 		}
 	};
 } // namespace dalvik::system

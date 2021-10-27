@@ -31,14 +31,14 @@ namespace __jni_impl::android::net::wifi::hotspot2
 		void __constructor(__jni_impl::android::net::wifi::hotspot2::PasspointConfiguration arg0);
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jstring toString();
+		QAndroidJniObject getCredential();
+		QAndroidJniObject getHomeSp();
 		jint hashCode();
 		void setCredential(__jni_impl::android::net::wifi::hotspot2::pps::Credential arg0);
 		void setHomeSp(__jni_impl::android::net::wifi::hotspot2::pps::HomeSp arg0);
-		QAndroidJniObject getHomeSp();
-		QAndroidJniObject getCredential();
-		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi::hotspot2
@@ -77,6 +77,13 @@ namespace __jni_impl::android::net::wifi::hotspot2
 	}
 	
 	// Methods
+	jint PasspointConfiguration::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean PasspointConfiguration::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -85,12 +92,19 @@ namespace __jni_impl::android::net::wifi::hotspot2
 			arg0
 		);
 	}
-	jstring PasspointConfiguration::toString()
+	QAndroidJniObject PasspointConfiguration::getCredential()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getCredential",
+			"()Landroid/net/wifi/hotspot2/pps/Credential;"
+		);
+	}
+	QAndroidJniObject PasspointConfiguration::getHomeSp()
+	{
+		return __thiz.callObjectMethod(
+			"getHomeSp",
+			"()Landroid/net/wifi/hotspot2/pps/HomeSp;"
+		);
 	}
 	jint PasspointConfiguration::hashCode()
 	{
@@ -115,26 +129,12 @@ namespace __jni_impl::android::net::wifi::hotspot2
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject PasspointConfiguration::getHomeSp()
+	jstring PasspointConfiguration::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getHomeSp",
-			"()Landroid/net/wifi/hotspot2/pps/HomeSp;"
-		);
-	}
-	QAndroidJniObject PasspointConfiguration::getCredential()
-	{
-		return __thiz.callObjectMethod(
-			"getCredential",
-			"()Landroid/net/wifi/hotspot2/pps/Credential;"
-		);
-	}
-	jint PasspointConfiguration::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void PasspointConfiguration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

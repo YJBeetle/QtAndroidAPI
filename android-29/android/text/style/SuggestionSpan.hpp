@@ -6,21 +6,21 @@
 #include "../../../__JniBaseClass.hpp"
 #include "CharacterStyle.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::java::util
+namespace __jni_impl::android::os
 {
-	class Locale;
+	class Parcel;
 }
 namespace __jni_impl::android::text
 {
 	class TextPaint;
+}
+namespace __jni_impl::java::util
+{
+	class Locale;
 }
 
 namespace __jni_impl::android::text::style
@@ -41,30 +41,30 @@ namespace __jni_impl::android::text::style
 		
 		// Constructors
 		void __constructor(__jni_impl::android::os::Parcel arg0);
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::java::util::Locale arg1, jarray arg2, jint arg3, jclass arg4);
-		void __constructor(__jni_impl::java::util::Locale arg0, jarray arg1, jint arg2);
 		void __constructor(__jni_impl::android::content::Context arg0, jarray arg1, jint arg2);
+		void __constructor(__jni_impl::java::util::Locale arg0, jarray arg1, jint arg2);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::java::util::Locale arg1, jarray arg2, jint arg3, jclass arg4);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		jstring getLocale();
-		jint getFlags();
-		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
-		jarray getSuggestions();
-		QAndroidJniObject getLocaleObject();
-		jint getUnderlineColor();
-		jint getSpanTypeId();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jboolean equals(jobject arg0);
+		jint getFlags();
+		jstring getLocale();
+		QAndroidJniObject getLocaleObject();
+		jint getSpanTypeId();
+		jarray getSuggestions();
+		jint getUnderlineColor();
+		jint hashCode();
 		void setFlags(jint arg0);
+		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::text::style
 
-#include "../../os/Parcel.hpp"
 #include "../../content/Context.hpp"
-#include "../../../java/util/Locale.hpp"
+#include "../../os/Parcel.hpp"
 #include "../TextPaint.hpp"
+#include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::text::style
 {
@@ -147,16 +147,14 @@ namespace __jni_impl::android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	void SuggestionSpan::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::java::util::Locale arg1, jarray arg2, jint arg3, jclass arg4)
+	void SuggestionSpan::__constructor(__jni_impl::android::content::Context arg0, jarray arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.SuggestionSpan",
-			"(Landroid/content/Context;Ljava/util/Locale;[Ljava/lang/String;ILjava/lang/Class;)V",
+			"(Landroid/content/Context;[Ljava/lang/String;I)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3,
-			arg4
+			arg1,
+			arg2
 		);
 	}
 	void SuggestionSpan::__constructor(__jni_impl::java::util::Locale arg0, jarray arg1, jint arg2)
@@ -169,18 +167,27 @@ namespace __jni_impl::android::text::style
 			arg2
 		);
 	}
-	void SuggestionSpan::__constructor(__jni_impl::android::content::Context arg0, jarray arg1, jint arg2)
+	void SuggestionSpan::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::java::util::Locale arg1, jarray arg2, jint arg3, jclass arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.SuggestionSpan",
-			"(Landroid/content/Context;[Ljava/lang/String;I)V",
+			"(Landroid/content/Context;Ljava/util/Locale;[Ljava/lang/String;ILjava/lang/Class;)V",
 			arg0.__jniObject().object(),
-			arg1,
-			arg2
+			arg1.__jniObject().object(),
+			arg2,
+			arg3,
+			arg4
 		);
 	}
 	
 	// Methods
+	jint SuggestionSpan::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean SuggestionSpan::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -189,10 +196,10 @@ namespace __jni_impl::android::text::style
 			arg0
 		);
 	}
-	jint SuggestionSpan::hashCode()
+	jint SuggestionSpan::getFlags()
 	{
 		return __thiz.callMethod<jint>(
-			"hashCode",
+			"getFlags",
 			"()I"
 		);
 	}
@@ -203,11 +210,47 @@ namespace __jni_impl::android::text::style
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint SuggestionSpan::getFlags()
+	QAndroidJniObject SuggestionSpan::getLocaleObject()
+	{
+		return __thiz.callObjectMethod(
+			"getLocaleObject",
+			"()Ljava/util/Locale;"
+		);
+	}
+	jint SuggestionSpan::getSpanTypeId()
 	{
 		return __thiz.callMethod<jint>(
-			"getFlags",
+			"getSpanTypeId",
 			"()I"
+		);
+	}
+	jarray SuggestionSpan::getSuggestions()
+	{
+		return __thiz.callObjectMethod(
+			"getSuggestions",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	jint SuggestionSpan::getUnderlineColor()
+	{
+		return __thiz.callMethod<jint>(
+			"getUnderlineColor",
+			"()I"
+		);
+	}
+	jint SuggestionSpan::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	void SuggestionSpan::setFlags(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFlags",
+			"(I)V",
+			arg0
 		);
 	}
 	void SuggestionSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
@@ -218,41 +261,6 @@ namespace __jni_impl::android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	jarray SuggestionSpan::getSuggestions()
-	{
-		return __thiz.callObjectMethod(
-			"getSuggestions",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	QAndroidJniObject SuggestionSpan::getLocaleObject()
-	{
-		return __thiz.callObjectMethod(
-			"getLocaleObject",
-			"()Ljava/util/Locale;"
-		);
-	}
-	jint SuggestionSpan::getUnderlineColor()
-	{
-		return __thiz.callMethod<jint>(
-			"getUnderlineColor",
-			"()I"
-		);
-	}
-	jint SuggestionSpan::getSpanTypeId()
-	{
-		return __thiz.callMethod<jint>(
-			"getSpanTypeId",
-			"()I"
-		);
-	}
-	jint SuggestionSpan::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
 	void SuggestionSpan::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -260,14 +268,6 @@ namespace __jni_impl::android::text::style
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void SuggestionSpan::setFlags(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFlags",
-			"(I)V",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::text::style
@@ -283,14 +283,12 @@ namespace android::text::style
 			__constructor(
 				arg0);
 		}
-		SuggestionSpan(__jni_impl::android::content::Context arg0, __jni_impl::java::util::Locale arg1, jarray arg2, jint arg3, jclass arg4)
+		SuggestionSpan(__jni_impl::android::content::Context arg0, jarray arg1, jint arg2)
 		{
 			__constructor(
 				arg0,
 				arg1,
-				arg2,
-				arg3,
-				arg4);
+				arg2);
 		}
 		SuggestionSpan(__jni_impl::java::util::Locale arg0, jarray arg1, jint arg2)
 		{
@@ -299,12 +297,14 @@ namespace android::text::style
 				arg1,
 				arg2);
 		}
-		SuggestionSpan(__jni_impl::android::content::Context arg0, jarray arg1, jint arg2)
+		SuggestionSpan(__jni_impl::android::content::Context arg0, __jni_impl::java::util::Locale arg1, jarray arg2, jint arg3, jclass arg4)
 		{
 			__constructor(
 				arg0,
 				arg1,
-				arg2);
+				arg2,
+				arg3,
+				arg4);
 		}
 	};
 } // namespace android::text::style

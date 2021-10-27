@@ -5,10 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view
-{
-	class View;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::os
 {
 	class Message;
+}
+namespace __jni_impl::android::view
+{
+	class View;
 }
 
 namespace __jni_impl::android::view::accessibility
@@ -36,9 +36,9 @@ namespace __jni_impl::android::view::accessibility
 	};
 } // namespace __jni_impl::android::view::accessibility
 
-#include "../View.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Message.hpp"
+#include "../View.hpp"
 
 namespace __jni_impl::android::view::accessibility
 {

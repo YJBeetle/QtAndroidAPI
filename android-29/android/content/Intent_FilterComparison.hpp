@@ -22,8 +22,8 @@ namespace __jni_impl::android::content
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jint hashCode();
 		QAndroidJniObject getIntent();
+		jint hashCode();
 	};
 } // namespace __jni_impl::android::content
 
@@ -52,18 +52,18 @@ namespace __jni_impl::android::content
 			arg0
 		);
 	}
-	jint Intent_FilterComparison::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	QAndroidJniObject Intent_FilterComparison::getIntent()
 	{
 		return __thiz.callObjectMethod(
 			"getIntent",
 			"()Landroid/content/Intent;"
+		);
+	}
+	jint Intent_FilterComparison::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::content

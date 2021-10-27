@@ -23,9 +23,9 @@ namespace __jni_impl::android::content
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jint match(__jni_impl::android::net::Uri arg0);
 		jstring getHost();
 		jint getPort();
+		jint match(__jni_impl::android::net::Uri arg0);
 	};
 } // namespace __jni_impl::android::content
 
@@ -64,14 +64,6 @@ namespace __jni_impl::android::content
 			arg0
 		);
 	}
-	jint IntentFilter_AuthorityEntry::match(__jni_impl::android::net::Uri arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"match",
-			"(Landroid/net/Uri;)I",
-			arg0.__jniObject().object()
-		);
-	}
 	jstring IntentFilter_AuthorityEntry::getHost()
 	{
 		return __thiz.callObjectMethod(
@@ -84,6 +76,14 @@ namespace __jni_impl::android::content
 		return __thiz.callMethod<jint>(
 			"getPort",
 			"()I"
+		);
+	}
+	jint IntentFilter_AuthorityEntry::match(__jni_impl::android::net::Uri arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"match",
+			"(Landroid/net/Uri;)I",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::content

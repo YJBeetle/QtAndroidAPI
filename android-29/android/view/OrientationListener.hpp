@@ -23,11 +23,11 @@ namespace __jni_impl::android::view
 		void __constructor(__jni_impl::android::content::Context arg0, jint arg1);
 		
 		// Methods
-		void enable();
 		void disable();
-		void onSensorChanged(jint arg0, jfloatArray arg1);
+		void enable();
 		void onAccuracyChanged(jint arg0, jint arg1);
 		void onOrientationChanged(jint arg0);
+		void onSensorChanged(jint arg0, jfloatArray arg1);
 	};
 } // namespace __jni_impl::android::view
 
@@ -64,13 +64,6 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	void OrientationListener::enable()
-	{
-		__thiz.callMethod<void>(
-			"enable",
-			"()V"
-		);
-	}
 	void OrientationListener::disable()
 	{
 		__thiz.callMethod<void>(
@@ -78,13 +71,11 @@ namespace __jni_impl::android::view
 			"()V"
 		);
 	}
-	void OrientationListener::onSensorChanged(jint arg0, jfloatArray arg1)
+	void OrientationListener::enable()
 	{
 		__thiz.callMethod<void>(
-			"onSensorChanged",
-			"(I[F)V",
-			arg0,
-			arg1
+			"enable",
+			"()V"
 		);
 	}
 	void OrientationListener::onAccuracyChanged(jint arg0, jint arg1)
@@ -102,6 +93,15 @@ namespace __jni_impl::android::view
 			"onOrientationChanged",
 			"(I)V",
 			arg0
+		);
+	}
+	void OrientationListener::onSensorChanged(jint arg0, jfloatArray arg1)
+	{
+		__thiz.callMethod<void>(
+			"onSensorChanged",
+			"(I[F)V",
+			arg0,
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::view

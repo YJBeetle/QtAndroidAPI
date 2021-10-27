@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::nfc
 {
-	class Tag;
+	class NdefMessage;
 }
 namespace __jni_impl::android::nfc
 {
-	class NdefMessage;
+	class Tag;
 }
 
 namespace __jni_impl::android::nfc::tech
@@ -26,17 +26,17 @@ namespace __jni_impl::android::nfc::tech
 		
 		// Methods
 		static QAndroidJniObject get(__jni_impl::android::nfc::Tag arg0);
-		void format(__jni_impl::android::nfc::NdefMessage arg0);
-		void connect();
 		void close();
-		QAndroidJniObject getTag();
+		void connect();
+		void format(__jni_impl::android::nfc::NdefMessage arg0);
 		void formatReadOnly(__jni_impl::android::nfc::NdefMessage arg0);
+		QAndroidJniObject getTag();
 		jboolean isConnected();
 	};
 } // namespace __jni_impl::android::nfc::tech
 
-#include "../Tag.hpp"
 #include "../NdefMessage.hpp"
+#include "../Tag.hpp"
 
 namespace __jni_impl::android::nfc::tech
 {
@@ -60,12 +60,11 @@ namespace __jni_impl::android::nfc::tech
 			arg0.__jniObject().object()
 		);
 	}
-	void NdefFormatable::format(__jni_impl::android::nfc::NdefMessage arg0)
+	void NdefFormatable::close()
 	{
 		__thiz.callMethod<void>(
-			"format",
-			"(Landroid/nfc/NdefMessage;)V",
-			arg0.__jniObject().object()
+			"close",
+			"()V"
 		);
 	}
 	void NdefFormatable::connect()
@@ -75,18 +74,12 @@ namespace __jni_impl::android::nfc::tech
 			"()V"
 		);
 	}
-	void NdefFormatable::close()
+	void NdefFormatable::format(__jni_impl::android::nfc::NdefMessage arg0)
 	{
 		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
-	}
-	QAndroidJniObject NdefFormatable::getTag()
-	{
-		return __thiz.callObjectMethod(
-			"getTag",
-			"()Landroid/nfc/Tag;"
+			"format",
+			"(Landroid/nfc/NdefMessage;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void NdefFormatable::formatReadOnly(__jni_impl::android::nfc::NdefMessage arg0)
@@ -95,6 +88,13 @@ namespace __jni_impl::android::nfc::tech
 			"formatReadOnly",
 			"(Landroid/nfc/NdefMessage;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject NdefFormatable::getTag()
+	{
+		return __thiz.callObjectMethod(
+			"getTag",
+			"()Landroid/nfc/Tag;"
 		);
 	}
 	jboolean NdefFormatable::isConnected()

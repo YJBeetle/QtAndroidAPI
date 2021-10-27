@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view
-{
-	class View;
-}
 namespace __jni_impl::android::graphics
 {
 	class Outline;
+}
+namespace __jni_impl::android::view
+{
+	class View;
 }
 
 namespace __jni_impl::android::view
@@ -32,8 +32,8 @@ namespace __jni_impl::android::view
 	};
 } // namespace __jni_impl::android::view
 
-#include "View.hpp"
 #include "../graphics/Outline.hpp"
+#include "View.hpp"
 
 namespace __jni_impl::android::view
 {

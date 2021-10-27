@@ -21,31 +21,31 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		jboolean isAlive();
-		void addOnWindowAttachListener(__jni_impl::__JniBaseClass arg0);
-		void removeOnWindowAttachListener(__jni_impl::__JniBaseClass arg0);
-		void addOnWindowFocusChangeListener(__jni_impl::__JniBaseClass arg0);
-		void removeOnWindowFocusChangeListener(__jni_impl::__JniBaseClass arg0);
-		void addOnGlobalFocusChangeListener(__jni_impl::__JniBaseClass arg0);
-		void removeOnGlobalFocusChangeListener(__jni_impl::__JniBaseClass arg0);
-		void addOnGlobalLayoutListener(__jni_impl::__JniBaseClass arg0);
-		void removeGlobalOnLayoutListener(__jni_impl::__JniBaseClass arg0);
-		void removeOnGlobalLayoutListener(__jni_impl::__JniBaseClass arg0);
-		void addOnPreDrawListener(__jni_impl::__JniBaseClass arg0);
-		void removeOnPreDrawListener(__jni_impl::__JniBaseClass arg0);
 		void addOnDrawListener(__jni_impl::__JniBaseClass arg0);
-		void removeOnDrawListener(__jni_impl::__JniBaseClass arg0);
-		void registerFrameCommitCallback(__jni_impl::__JniBaseClass arg0);
-		jboolean unregisterFrameCommitCallback(__jni_impl::__JniBaseClass arg0);
+		void addOnGlobalFocusChangeListener(__jni_impl::__JniBaseClass arg0);
+		void addOnGlobalLayoutListener(__jni_impl::__JniBaseClass arg0);
+		void addOnPreDrawListener(__jni_impl::__JniBaseClass arg0);
 		void addOnScrollChangedListener(__jni_impl::__JniBaseClass arg0);
-		void removeOnScrollChangedListener(__jni_impl::__JniBaseClass arg0);
-		void addOnTouchModeChangeListener(__jni_impl::__JniBaseClass arg0);
-		void removeOnTouchModeChangeListener(__jni_impl::__JniBaseClass arg0);
 		void addOnSystemGestureExclusionRectsChangedListener(__jni_impl::__JniBaseClass arg0);
-		void removeOnSystemGestureExclusionRectsChangedListener(__jni_impl::__JniBaseClass arg0);
+		void addOnTouchModeChangeListener(__jni_impl::__JniBaseClass arg0);
+		void addOnWindowAttachListener(__jni_impl::__JniBaseClass arg0);
+		void addOnWindowFocusChangeListener(__jni_impl::__JniBaseClass arg0);
+		void dispatchOnDraw();
 		void dispatchOnGlobalLayout();
 		jboolean dispatchOnPreDraw();
-		void dispatchOnDraw();
+		jboolean isAlive();
+		void registerFrameCommitCallback(__jni_impl::__JniBaseClass arg0);
+		void removeGlobalOnLayoutListener(__jni_impl::__JniBaseClass arg0);
+		void removeOnDrawListener(__jni_impl::__JniBaseClass arg0);
+		void removeOnGlobalFocusChangeListener(__jni_impl::__JniBaseClass arg0);
+		void removeOnGlobalLayoutListener(__jni_impl::__JniBaseClass arg0);
+		void removeOnPreDrawListener(__jni_impl::__JniBaseClass arg0);
+		void removeOnScrollChangedListener(__jni_impl::__JniBaseClass arg0);
+		void removeOnSystemGestureExclusionRectsChangedListener(__jni_impl::__JniBaseClass arg0);
+		void removeOnTouchModeChangeListener(__jni_impl::__JniBaseClass arg0);
+		void removeOnWindowAttachListener(__jni_impl::__JniBaseClass arg0);
+		void removeOnWindowFocusChangeListener(__jni_impl::__JniBaseClass arg0);
+		jboolean unregisterFrameCommitCallback(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -64,42 +64,11 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jboolean ViewTreeObserver::isAlive()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAlive",
-			"()Z"
-		);
-	}
-	void ViewTreeObserver::addOnWindowAttachListener(__jni_impl::__JniBaseClass arg0)
+	void ViewTreeObserver::addOnDrawListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"addOnWindowAttachListener",
-			"(Landroid/view/ViewTreeObserver$OnWindowAttachListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ViewTreeObserver::removeOnWindowAttachListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeOnWindowAttachListener",
-			"(Landroid/view/ViewTreeObserver$OnWindowAttachListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ViewTreeObserver::addOnWindowFocusChangeListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"addOnWindowFocusChangeListener",
-			"(Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ViewTreeObserver::removeOnWindowFocusChangeListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeOnWindowFocusChangeListener",
-			"(Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;)V",
+			"addOnDrawListener",
+			"(Landroid/view/ViewTreeObserver$OnDrawListener;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -107,14 +76,6 @@ namespace __jni_impl::android::view
 	{
 		__thiz.callMethod<void>(
 			"addOnGlobalFocusChangeListener",
-			"(Landroid/view/ViewTreeObserver$OnGlobalFocusChangeListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ViewTreeObserver::removeOnGlobalFocusChangeListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeOnGlobalFocusChangeListener",
 			"(Landroid/view/ViewTreeObserver$OnGlobalFocusChangeListener;)V",
 			arg0.__jniObject().object()
 		);
@@ -127,67 +88,11 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
-	void ViewTreeObserver::removeGlobalOnLayoutListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeGlobalOnLayoutListener",
-			"(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ViewTreeObserver::removeOnGlobalLayoutListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeOnGlobalLayoutListener",
-			"(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void ViewTreeObserver::addOnPreDrawListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"addOnPreDrawListener",
 			"(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ViewTreeObserver::removeOnPreDrawListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeOnPreDrawListener",
-			"(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ViewTreeObserver::addOnDrawListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"addOnDrawListener",
-			"(Landroid/view/ViewTreeObserver$OnDrawListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ViewTreeObserver::removeOnDrawListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeOnDrawListener",
-			"(Landroid/view/ViewTreeObserver$OnDrawListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ViewTreeObserver::registerFrameCommitCallback(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"registerFrameCommitCallback",
-			"(Ljava/lang/Runnable;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean ViewTreeObserver::unregisterFrameCommitCallback(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"unregisterFrameCommitCallback",
-			"(Ljava/lang/Runnable;)Z",
 			arg0.__jniObject().object()
 		);
 	}
@@ -199,11 +104,11 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
-	void ViewTreeObserver::removeOnScrollChangedListener(__jni_impl::__JniBaseClass arg0)
+	void ViewTreeObserver::addOnSystemGestureExclusionRectsChangedListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"removeOnScrollChangedListener",
-			"(Landroid/view/ViewTreeObserver$OnScrollChangedListener;)V",
+			"addOnSystemGestureExclusionRectsChangedListener",
+			"(Ljava/util/function/Consumer;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -215,28 +120,27 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
-	void ViewTreeObserver::removeOnTouchModeChangeListener(__jni_impl::__JniBaseClass arg0)
+	void ViewTreeObserver::addOnWindowAttachListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"removeOnTouchModeChangeListener",
-			"(Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;)V",
+			"addOnWindowAttachListener",
+			"(Landroid/view/ViewTreeObserver$OnWindowAttachListener;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	void ViewTreeObserver::addOnSystemGestureExclusionRectsChangedListener(__jni_impl::__JniBaseClass arg0)
+	void ViewTreeObserver::addOnWindowFocusChangeListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"addOnSystemGestureExclusionRectsChangedListener",
-			"(Ljava/util/function/Consumer;)V",
+			"addOnWindowFocusChangeListener",
+			"(Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	void ViewTreeObserver::removeOnSystemGestureExclusionRectsChangedListener(__jni_impl::__JniBaseClass arg0)
+	void ViewTreeObserver::dispatchOnDraw()
 	{
 		__thiz.callMethod<void>(
-			"removeOnSystemGestureExclusionRectsChangedListener",
-			"(Ljava/util/function/Consumer;)V",
-			arg0.__jniObject().object()
+			"dispatchOnDraw",
+			"()V"
 		);
 	}
 	void ViewTreeObserver::dispatchOnGlobalLayout()
@@ -253,11 +157,107 @@ namespace __jni_impl::android::view
 			"()Z"
 		);
 	}
-	void ViewTreeObserver::dispatchOnDraw()
+	jboolean ViewTreeObserver::isAlive()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAlive",
+			"()Z"
+		);
+	}
+	void ViewTreeObserver::registerFrameCommitCallback(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"dispatchOnDraw",
-			"()V"
+			"registerFrameCommitCallback",
+			"(Ljava/lang/Runnable;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ViewTreeObserver::removeGlobalOnLayoutListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeGlobalOnLayoutListener",
+			"(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ViewTreeObserver::removeOnDrawListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeOnDrawListener",
+			"(Landroid/view/ViewTreeObserver$OnDrawListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ViewTreeObserver::removeOnGlobalFocusChangeListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeOnGlobalFocusChangeListener",
+			"(Landroid/view/ViewTreeObserver$OnGlobalFocusChangeListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ViewTreeObserver::removeOnGlobalLayoutListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeOnGlobalLayoutListener",
+			"(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ViewTreeObserver::removeOnPreDrawListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeOnPreDrawListener",
+			"(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ViewTreeObserver::removeOnScrollChangedListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeOnScrollChangedListener",
+			"(Landroid/view/ViewTreeObserver$OnScrollChangedListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ViewTreeObserver::removeOnSystemGestureExclusionRectsChangedListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeOnSystemGestureExclusionRectsChangedListener",
+			"(Ljava/util/function/Consumer;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ViewTreeObserver::removeOnTouchModeChangeListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeOnTouchModeChangeListener",
+			"(Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ViewTreeObserver::removeOnWindowAttachListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeOnWindowAttachListener",
+			"(Landroid/view/ViewTreeObserver$OnWindowAttachListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ViewTreeObserver::removeOnWindowFocusChangeListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeOnWindowFocusChangeListener",
+			"(Landroid/view/ViewTreeObserver$OnWindowFocusChangeListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean ViewTreeObserver::unregisterFrameCommitCallback(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"unregisterFrameCommitCallback",
+			"(Ljava/lang/Runnable;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::view

@@ -5,21 +5,21 @@
 
 #include "../../../__JniBaseClass.hpp"
 
+namespace __jni_impl::java::math
+{
+	class BigInteger;
+}
 namespace __jni_impl::java::security::cert
 {
 	class CRLReason;
-}
-namespace __jni_impl::javax::security::auth::x500
-{
-	class X500Principal;
 }
 namespace __jni_impl::java::util
 {
 	class Date;
 }
-namespace __jni_impl::java::math
+namespace __jni_impl::javax::security::auth::x500
 {
-	class BigInteger;
+	class X500Principal;
 }
 
 namespace __jni_impl::java::security::cert
@@ -34,21 +34,21 @@ namespace __jni_impl::java::security::cert
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jbyteArray getEncoded();
-		jboolean hasExtensions();
-		QAndroidJniObject getRevocationReason();
 		QAndroidJniObject getCertificateIssuer();
+		jbyteArray getEncoded();
 		QAndroidJniObject getRevocationDate();
+		QAndroidJniObject getRevocationReason();
 		QAndroidJniObject getSerialNumber();
+		jboolean hasExtensions();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security::cert
 
-#include "CRLReason.hpp"
-#include "../../../javax/security/auth/x500/X500Principal.hpp"
-#include "../../util/Date.hpp"
 #include "../../math/BigInteger.hpp"
+#include "CRLReason.hpp"
+#include "../../util/Date.hpp"
+#include "../../../javax/security/auth/x500/X500Principal.hpp"
 
 namespace __jni_impl::java::security::cert
 {
@@ -72,18 +72,11 @@ namespace __jni_impl::java::security::cert
 			arg0
 		);
 	}
-	jstring X509CRLEntry::toString()
+	QAndroidJniObject X509CRLEntry::getCertificateIssuer()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint X509CRLEntry::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+			"getCertificateIssuer",
+			"()Ljavax/security/auth/x500/X500Principal;"
 		);
 	}
 	jbyteArray X509CRLEntry::getEncoded()
@@ -93,11 +86,11 @@ namespace __jni_impl::java::security::cert
 			"()[B"
 		).object<jbyteArray>();
 	}
-	jboolean X509CRLEntry::hasExtensions()
+	QAndroidJniObject X509CRLEntry::getRevocationDate()
 	{
-		return __thiz.callMethod<jboolean>(
-			"hasExtensions",
-			"()Z"
+		return __thiz.callObjectMethod(
+			"getRevocationDate",
+			"()Ljava/util/Date;"
 		);
 	}
 	QAndroidJniObject X509CRLEntry::getRevocationReason()
@@ -107,26 +100,33 @@ namespace __jni_impl::java::security::cert
 			"()Ljava/security/cert/CRLReason;"
 		);
 	}
-	QAndroidJniObject X509CRLEntry::getCertificateIssuer()
-	{
-		return __thiz.callObjectMethod(
-			"getCertificateIssuer",
-			"()Ljavax/security/auth/x500/X500Principal;"
-		);
-	}
-	QAndroidJniObject X509CRLEntry::getRevocationDate()
-	{
-		return __thiz.callObjectMethod(
-			"getRevocationDate",
-			"()Ljava/util/Date;"
-		);
-	}
 	QAndroidJniObject X509CRLEntry::getSerialNumber()
 	{
 		return __thiz.callObjectMethod(
 			"getSerialNumber",
 			"()Ljava/math/BigInteger;"
 		);
+	}
+	jboolean X509CRLEntry::hasExtensions()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasExtensions",
+			"()Z"
+		);
+	}
+	jint X509CRLEntry::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring X509CRLEntry::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security::cert
 

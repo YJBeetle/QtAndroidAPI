@@ -10,10 +10,6 @@ namespace __jni_impl::android::icu::util
 {
 	class TimeZone;
 }
-namespace __jni_impl::java::util
-{
-	class Locale;
-}
 namespace __jni_impl::android::icu::util
 {
 	class ULocale;
@@ -21,6 +17,10 @@ namespace __jni_impl::android::icu::util
 namespace __jni_impl::java::util
 {
 	class Date;
+}
+namespace __jni_impl::java::util
+{
+	class Locale;
 }
 
 namespace __jni_impl::android::icu::util
@@ -44,15 +44,15 @@ namespace __jni_impl::android::icu::util
 		static jint VAISAKHA();
 		
 		// Constructors
-		void __constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1);
-		void __constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1);
-		void __constructor(__jni_impl::java::util::Date arg0);
-		void __constructor(jint arg0, jint arg1, jint arg2);
-		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		void __constructor();
 		void __constructor(__jni_impl::android::icu::util::TimeZone arg0);
-		void __constructor(__jni_impl::java::util::Locale arg0);
 		void __constructor(__jni_impl::android::icu::util::ULocale arg0);
+		void __constructor(__jni_impl::java::util::Date arg0);
+		void __constructor(__jni_impl::java::util::Locale arg0);
+		void __constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1);
+		void __constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1);
+		void __constructor(jint arg0, jint arg1, jint arg2);
+		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
 		jstring getType();
@@ -60,9 +60,9 @@ namespace __jni_impl::android::icu::util
 } // namespace __jni_impl::android::icu::util
 
 #include "TimeZone.hpp"
-#include "../../../java/util/Locale.hpp"
 #include "ULocale.hpp"
 #include "../../../java/util/Date.hpp"
+#include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::icu::util
 {
@@ -160,13 +160,43 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Constructors
-	void IndianCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
+	void IndianCalendar::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.IndianCalendar",
-			"(Landroid/icu/util/TimeZone;Ljava/util/Locale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			"()V"
+		);
+	}
+	void IndianCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.IndianCalendar",
+			"(Landroid/icu/util/TimeZone;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void IndianCalendar::__constructor(__jni_impl::android::icu::util::ULocale arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.IndianCalendar",
+			"(Landroid/icu/util/ULocale;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void IndianCalendar::__constructor(__jni_impl::java::util::Date arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.IndianCalendar",
+			"(Ljava/util/Date;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void IndianCalendar::__constructor(__jni_impl::java::util::Locale arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.IndianCalendar",
+			"(Ljava/util/Locale;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void IndianCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1)
@@ -178,12 +208,13 @@ namespace __jni_impl::android::icu::util
 			arg1.__jniObject().object()
 		);
 	}
-	void IndianCalendar::__constructor(__jni_impl::java::util::Date arg0)
+	void IndianCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.IndianCalendar",
-			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object()
+			"(Landroid/icu/util/TimeZone;Ljava/util/Locale;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	void IndianCalendar::__constructor(jint arg0, jint arg1, jint arg2)
@@ -209,37 +240,6 @@ namespace __jni_impl::android::icu::util
 			arg5
 		);
 	}
-	void IndianCalendar::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.IndianCalendar",
-			"()V"
-		);
-	}
-	void IndianCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.IndianCalendar",
-			"(Landroid/icu/util/TimeZone;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void IndianCalendar::__constructor(__jni_impl::java::util::Locale arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.IndianCalendar",
-			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void IndianCalendar::__constructor(__jni_impl::android::icu::util::ULocale arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.IndianCalendar",
-			"(Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	
 	// Methods
 	jstring IndianCalendar::getType()
@@ -257,11 +257,29 @@ namespace android::icu::util
 	{
 	public:
 		IndianCalendar(QAndroidJniObject obj) { __thiz = obj; }
-		IndianCalendar(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
+		IndianCalendar()
+		{
+			__constructor();
+		}
+		IndianCalendar(__jni_impl::android::icu::util::TimeZone arg0)
 		{
 			__constructor(
-				arg0,
-				arg1);
+				arg0);
+		}
+		IndianCalendar(__jni_impl::android::icu::util::ULocale arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		IndianCalendar(__jni_impl::java::util::Date arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		IndianCalendar(__jni_impl::java::util::Locale arg0)
+		{
+			__constructor(
+				arg0);
 		}
 		IndianCalendar(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1)
 		{
@@ -269,10 +287,11 @@ namespace android::icu::util
 				arg0,
 				arg1);
 		}
-		IndianCalendar(__jni_impl::java::util::Date arg0)
+		IndianCalendar(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
 		{
 			__constructor(
-				arg0);
+				arg0,
+				arg1);
 		}
 		IndianCalendar(jint arg0, jint arg1, jint arg2)
 		{
@@ -290,25 +309,6 @@ namespace android::icu::util
 				arg3,
 				arg4,
 				arg5);
-		}
-		IndianCalendar()
-		{
-			__constructor();
-		}
-		IndianCalendar(__jni_impl::android::icu::util::TimeZone arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		IndianCalendar(__jni_impl::java::util::Locale arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		IndianCalendar(__jni_impl::android::icu::util::ULocale arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::icu::util

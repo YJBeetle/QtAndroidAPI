@@ -20,18 +20,18 @@ namespace __jni_impl::java::io
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::java::io::InputStream arg0, jint arg1);
 		void __constructor(__jni_impl::java::io::InputStream arg0);
+		void __constructor(__jni_impl::java::io::InputStream arg0, jint arg1);
 		
 		// Methods
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
-		jint read();
+		jint available();
 		void close();
 		void mark(jint arg0);
-		jlong skip(jlong arg0);
-		jint available();
 		jboolean markSupported();
+		jint read();
+		jint read(jbyteArray arg0, jint arg1, jint arg2);
 		void reset();
+		jlong skip(jlong arg0);
 	};
 } // namespace __jni_impl::java::io
 
@@ -42,6 +42,14 @@ namespace __jni_impl::java::io
 	// Fields
 	
 	// Constructors
+	void BufferedInputStream::__constructor(__jni_impl::java::io::InputStream arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.BufferedInputStream",
+			"(Ljava/io/InputStream;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void BufferedInputStream::__constructor(__jni_impl::java::io::InputStream arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -51,30 +59,12 @@ namespace __jni_impl::java::io
 			arg1
 		);
 	}
-	void BufferedInputStream::__constructor(__jni_impl::java::io::InputStream arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.BufferedInputStream",
-			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	
 	// Methods
-	jint BufferedInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint BufferedInputStream::available()
 	{
 		return __thiz.callMethod<jint>(
-			"read",
-			"([BII)I",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jint BufferedInputStream::read()
-	{
-		return __thiz.callMethod<jint>(
-			"read",
+			"available",
 			"()I"
 		);
 	}
@@ -93,21 +83,6 @@ namespace __jni_impl::java::io
 			arg0
 		);
 	}
-	jlong BufferedInputStream::skip(jlong arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"skip",
-			"(J)J",
-			arg0
-		);
-	}
-	jint BufferedInputStream::available()
-	{
-		return __thiz.callMethod<jint>(
-			"available",
-			"()I"
-		);
-	}
 	jboolean BufferedInputStream::markSupported()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -115,11 +90,36 @@ namespace __jni_impl::java::io
 			"()Z"
 		);
 	}
+	jint BufferedInputStream::read()
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
+	jint BufferedInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"([BII)I",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
 	void BufferedInputStream::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
 			"()V"
+		);
+	}
+	jlong BufferedInputStream::skip(jlong arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"skip",
+			"(J)J",
+			arg0
 		);
 	}
 } // namespace __jni_impl::java::io
@@ -130,16 +130,16 @@ namespace java::io
 	{
 	public:
 		BufferedInputStream(QAndroidJniObject obj) { __thiz = obj; }
+		BufferedInputStream(__jni_impl::java::io::InputStream arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		BufferedInputStream(__jni_impl::java::io::InputStream arg0, jint arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
-		}
-		BufferedInputStream(__jni_impl::java::io::InputStream arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace java::io

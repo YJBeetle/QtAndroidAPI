@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Handler;
-}
 namespace __jni_impl::android::media
 {
 	class MediaCas_Session;
+}
+namespace __jni_impl::android::os
+{
+	class Handler;
 }
 
 namespace __jni_impl::android::media
@@ -25,23 +25,23 @@ namespace __jni_impl::android::media
 		void __constructor(jint arg0);
 		
 		// Methods
+		static jarray enumeratePlugins();
+		static jboolean isSystemIdSupported(jint arg0);
 		void close();
-		void setPrivateData(jbyteArray arg0);
-		void processEmm(jbyteArray arg0, jint arg1, jint arg2);
+		QAndroidJniObject openSession();
 		void processEmm(jbyteArray arg0);
-		void sendEvent(jint arg0, jint arg1, jbyteArray arg2);
+		void processEmm(jbyteArray arg0, jint arg1, jint arg2);
 		void provision(jstring arg0);
 		void provision(const QString &arg0);
 		void refreshEntitlements(jint arg0, jbyteArray arg1);
-		static jboolean isSystemIdSupported(jint arg0);
-		static jarray enumeratePlugins();
+		void sendEvent(jint arg0, jint arg1, jbyteArray arg2);
 		void setEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
-		QAndroidJniObject openSession();
+		void setPrivateData(jbyteArray arg0);
 	};
 } // namespace __jni_impl::android::media
 
-#include "../os/Handler.hpp"
 #include "MediaCas_Session.hpp"
+#include "../os/Handler.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -58,6 +58,23 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	jarray MediaCas::enumeratePlugins()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.media.MediaCas",
+			"enumeratePlugins",
+			"()[Landroid/media/MediaCas$PluginDescriptor;"
+		).object<jarray>();
+	}
+	jboolean MediaCas::isSystemIdSupported(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.media.MediaCas",
+			"isSystemIdSupported",
+			"(I)Z",
+			arg0
+		);
+	}
 	void MediaCas::close()
 	{
 		__thiz.callMethod<void>(
@@ -65,22 +82,11 @@ namespace __jni_impl::android::media
 			"()V"
 		);
 	}
-	void MediaCas::setPrivateData(jbyteArray arg0)
+	QAndroidJniObject MediaCas::openSession()
 	{
-		__thiz.callMethod<void>(
-			"setPrivateData",
-			"([B)V",
-			arg0
-		);
-	}
-	void MediaCas::processEmm(jbyteArray arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"processEmm",
-			"([BII)V",
-			arg0,
-			arg1,
-			arg2
+		return __thiz.callObjectMethod(
+			"openSession",
+			"()Landroid/media/MediaCas$Session;"
 		);
 	}
 	void MediaCas::processEmm(jbyteArray arg0)
@@ -91,11 +97,11 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	void MediaCas::sendEvent(jint arg0, jint arg1, jbyteArray arg2)
+	void MediaCas::processEmm(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
-			"sendEvent",
-			"(II[B)V",
+			"processEmm",
+			"([BII)V",
 			arg0,
 			arg1,
 			arg2
@@ -126,22 +132,15 @@ namespace __jni_impl::android::media
 			arg1
 		);
 	}
-	jboolean MediaCas::isSystemIdSupported(jint arg0)
+	void MediaCas::sendEvent(jint arg0, jint arg1, jbyteArray arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.media.MediaCas",
-			"isSystemIdSupported",
-			"(I)Z",
-			arg0
+		__thiz.callMethod<void>(
+			"sendEvent",
+			"(II[B)V",
+			arg0,
+			arg1,
+			arg2
 		);
-	}
-	jarray MediaCas::enumeratePlugins()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.media.MediaCas",
-			"enumeratePlugins",
-			"()[Landroid/media/MediaCas$PluginDescriptor;"
-		).object<jarray>();
 	}
 	void MediaCas::setEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
 	{
@@ -152,11 +151,12 @@ namespace __jni_impl::android::media
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject MediaCas::openSession()
+	void MediaCas::setPrivateData(jbyteArray arg0)
 	{
-		return __thiz.callObjectMethod(
-			"openSession",
-			"()Landroid/media/MediaCas$Session;"
+		__thiz.callMethod<void>(
+			"setPrivateData",
+			"([B)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::media

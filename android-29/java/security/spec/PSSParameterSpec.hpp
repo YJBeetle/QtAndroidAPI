@@ -12,8 +12,8 @@ namespace __jni_impl::java::security::spec
 	{
 	public:
 		// Fields
-		static jint TRAILER_FIELD_BC();
 		static QAndroidJniObject DEFAULT();
+		static jint TRAILER_FIELD_BC();
 		
 		// Constructors
 		void __constructor(jint arg0);
@@ -21,12 +21,12 @@ namespace __jni_impl::java::security::spec
 		void __constructor(const QString &arg0, const QString &arg1, __jni_impl::__JniBaseClass arg2, jint arg3, jint arg4);
 		
 		// Methods
-		jstring toString();
 		jstring getDigestAlgorithm();
 		jstring getMGFAlgorithm();
 		QAndroidJniObject getMGFParameters();
 		jint getSaltLength();
 		jint getTrailerField();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security::spec
 
@@ -34,19 +34,19 @@ namespace __jni_impl::java::security::spec
 namespace __jni_impl::java::security::spec
 {
 	// Fields
-	jint PSSParameterSpec::TRAILER_FIELD_BC()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"java.security.spec.PSSParameterSpec",
-			"TRAILER_FIELD_BC"
-		);
-	}
 	QAndroidJniObject PSSParameterSpec::DEFAULT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.spec.PSSParameterSpec",
 			"DEFAULT",
 			"Ljava/security/spec/PSSParameterSpec;"
+		);
+	}
+	jint PSSParameterSpec::TRAILER_FIELD_BC()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"java.security.spec.PSSParameterSpec",
+			"TRAILER_FIELD_BC"
 		);
 	}
 	
@@ -85,13 +85,6 @@ namespace __jni_impl::java::security::spec
 	}
 	
 	// Methods
-	jstring PSSParameterSpec::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jstring PSSParameterSpec::getDigestAlgorithm()
 	{
 		return __thiz.callObjectMethod(
@@ -126,6 +119,13 @@ namespace __jni_impl::java::security::spec
 			"getTrailerField",
 			"()I"
 		);
+	}
+	jstring PSSParameterSpec::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security::spec
 

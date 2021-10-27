@@ -5,9 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util
+namespace __jni_impl::android::icu::text
 {
-	class Locale;
+	class CollationKey;
+}
+namespace __jni_impl::android::icu::text
+{
+	class UnicodeSet;
 }
 namespace __jni_impl::android::icu::util
 {
@@ -17,13 +21,9 @@ namespace __jni_impl::android::icu::util
 {
 	class VersionInfo;
 }
-namespace __jni_impl::android::icu::text
+namespace __jni_impl::java::util
 {
-	class UnicodeSet;
-}
-namespace __jni_impl::android::icu::text
-{
-	class CollationKey;
+	class Locale;
 }
 
 namespace __jni_impl::android::icu::text
@@ -45,58 +45,58 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jstring arg0, jstring arg1);
-		jboolean equals(const QString &arg0, const QString &arg1);
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		jobject clone();
-		jint compare(jobject arg0, jobject arg1);
-		jint compare(jstring arg0, jstring arg1);
-		jint compare(const QString &arg0, const QString &arg1);
-		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
-		static QAndroidJniObject getInstance(__jni_impl::android::icu::util::ULocale arg0);
-		static QAndroidJniObject getInstance();
-		jboolean isFrozen();
-		QAndroidJniObject freeze();
 		static jarray getAvailableLocales();
-		QAndroidJniObject getVersion();
-		static jstring getDisplayName(__jni_impl::java::util::Locale arg0, __jni_impl::java::util::Locale arg1);
-		static jstring getDisplayName(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::util::ULocale arg1);
-		static jstring getDisplayName(__jni_impl::java::util::Locale arg0);
-		static jstring getDisplayName(__jni_impl::android::icu::util::ULocale arg0);
-		static jarray getKeywords();
-		void setStrength(jint arg0);
-		QAndroidJniObject cloneAsThawed();
-		void setDecomposition(jint arg0);
-		QAndroidJniObject setMaxVariable(jint arg0);
-		jint getMaxVariable();
-		void setReorderCodes(jintArray arg0);
-		QAndroidJniObject getTailoredSet();
-		jint getStrength();
-		jint getDecomposition();
-		jint getVariableTop();
-		jintArray getReorderCodes();
-		QAndroidJniObject getUCAVersion();
 		static jarray getAvailableULocales();
+		static jstring getDisplayName(__jni_impl::android::icu::util::ULocale arg0);
+		static jstring getDisplayName(__jni_impl::java::util::Locale arg0);
+		static jstring getDisplayName(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::util::ULocale arg1);
+		static jstring getDisplayName(__jni_impl::java::util::Locale arg0, __jni_impl::java::util::Locale arg1);
+		static jintArray getEquivalentReorderCodes(jint arg0);
+		static QAndroidJniObject getFunctionalEquivalent(jstring arg0, __jni_impl::android::icu::util::ULocale arg1);
+		static QAndroidJniObject getFunctionalEquivalent(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1);
+		static QAndroidJniObject getFunctionalEquivalent(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jbooleanArray arg2);
+		static QAndroidJniObject getFunctionalEquivalent(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1, jbooleanArray arg2);
+		static QAndroidJniObject getInstance();
+		static QAndroidJniObject getInstance(__jni_impl::android::icu::util::ULocale arg0);
+		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
 		static jarray getKeywordValues(jstring arg0);
 		static jarray getKeywordValues(const QString &arg0);
 		static jarray getKeywordValuesForLocale(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2);
 		static jarray getKeywordValuesForLocale(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2);
-		static QAndroidJniObject getFunctionalEquivalent(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jbooleanArray arg2);
-		static QAndroidJniObject getFunctionalEquivalent(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1, jbooleanArray arg2);
-		static QAndroidJniObject getFunctionalEquivalent(jstring arg0, __jni_impl::android::icu::util::ULocale arg1);
-		static QAndroidJniObject getFunctionalEquivalent(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1);
-		static jintArray getEquivalentReorderCodes(jint arg0);
+		static jarray getKeywords();
+		jobject clone();
+		QAndroidJniObject cloneAsThawed();
+		jint compare(jobject arg0, jobject arg1);
+		jint compare(jstring arg0, jstring arg1);
+		jint compare(const QString &arg0, const QString &arg1);
+		jboolean equals(jobject arg0);
+		jboolean equals(jstring arg0, jstring arg1);
+		jboolean equals(const QString &arg0, const QString &arg1);
+		QAndroidJniObject freeze();
 		QAndroidJniObject getCollationKey(jstring arg0);
 		QAndroidJniObject getCollationKey(const QString &arg0);
+		jint getDecomposition();
+		jint getMaxVariable();
+		jintArray getReorderCodes();
+		jint getStrength();
+		QAndroidJniObject getTailoredSet();
+		QAndroidJniObject getUCAVersion();
+		jint getVariableTop();
+		QAndroidJniObject getVersion();
+		jint hashCode();
+		jboolean isFrozen();
+		void setDecomposition(jint arg0);
+		QAndroidJniObject setMaxVariable(jint arg0);
+		void setReorderCodes(jintArray arg0);
+		void setStrength(jint arg0);
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "../../../java/util/Locale.hpp"
+#include "CollationKey.hpp"
+#include "UnicodeSet.hpp"
 #include "../util/ULocale.hpp"
 #include "../util/VersionInfo.hpp"
-#include "UnicodeSet.hpp"
-#include "CollationKey.hpp"
+#include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -167,113 +167,6 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jboolean Collator::equals(jstring arg0, jstring arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0,
-			arg1
-		);
-	}
-	jboolean Collator::equals(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/String;Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	jboolean Collator::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jint Collator::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jobject Collator::clone()
-	{
-		return __thiz.callObjectMethod(
-			"clone",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	jint Collator::compare(jobject arg0, jobject arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"compare",
-			"(Ljava/lang/Object;Ljava/lang/Object;)I",
-			arg0,
-			arg1
-		);
-	}
-	jint Collator::compare(jstring arg0, jstring arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"compare",
-			"(Ljava/lang/String;Ljava/lang/String;)I",
-			arg0,
-			arg1
-		);
-	}
-	jint Collator::compare(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"compare",
-			"(Ljava/lang/String;Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	QAndroidJniObject Collator::getInstance(__jni_impl::java::util::Locale arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.Collator",
-			"getInstance",
-			"(Ljava/util/Locale;)Landroid/icu/text/Collator;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Collator::getInstance(__jni_impl::android::icu::util::ULocale arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.Collator",
-			"getInstance",
-			"(Landroid/icu/util/ULocale;)Landroid/icu/text/Collator;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Collator::getInstance()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.Collator",
-			"getInstance",
-			"()Landroid/icu/text/Collator;"
-		);
-	}
-	jboolean Collator::isFrozen()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFrozen",
-			"()Z"
-		);
-	}
-	QAndroidJniObject Collator::freeze()
-	{
-		return __thiz.callObjectMethod(
-			"freeze",
-			"()Landroid/icu/text/Collator;"
-		);
-	}
 	jarray Collator::getAvailableLocales()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -282,21 +175,30 @@ namespace __jni_impl::android::icu::text
 			"()[Ljava/util/Locale;"
 		).object<jarray>();
 	}
-	QAndroidJniObject Collator::getVersion()
+	jarray Collator::getAvailableULocales()
 	{
-		return __thiz.callObjectMethod(
-			"getVersion",
-			"()Landroid/icu/util/VersionInfo;"
-		);
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Collator",
+			"getAvailableULocales",
+			"()[Landroid/icu/util/ULocale;"
+		).object<jarray>();
 	}
-	jstring Collator::getDisplayName(__jni_impl::java::util::Locale arg0, __jni_impl::java::util::Locale arg1)
+	jstring Collator::getDisplayName(__jni_impl::android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getDisplayName",
-			"(Ljava/util/Locale;Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			"(Landroid/icu/util/ULocale;)Ljava/lang/String;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring Collator::getDisplayName(__jni_impl::java::util::Locale arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Collator",
+			"getDisplayName",
+			"(Ljava/util/Locale;)Ljava/lang/String;",
+			arg0.__jniObject().object()
 		).object<jstring>();
 	}
 	jstring Collator::getDisplayName(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::util::ULocale arg1)
@@ -309,127 +211,92 @@ namespace __jni_impl::android::icu::text
 			arg1.__jniObject().object()
 		).object<jstring>();
 	}
-	jstring Collator::getDisplayName(__jni_impl::java::util::Locale arg0)
+	jstring Collator::getDisplayName(__jni_impl::java::util::Locale arg0, __jni_impl::java::util::Locale arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Collator",
 			"getDisplayName",
-			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
+			"(Ljava/util/Locale;Ljava/util/Locale;)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		).object<jstring>();
 	}
-	jstring Collator::getDisplayName(__jni_impl::android::icu::util::ULocale arg0)
+	jintArray Collator::getEquivalentReorderCodes(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Collator",
-			"getDisplayName",
-			"(Landroid/icu/util/ULocale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
-		).object<jstring>();
-	}
-	jarray Collator::getKeywords()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.Collator",
-			"getKeywords",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	void Collator::setStrength(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStrength",
-			"(I)V",
+			"getEquivalentReorderCodes",
+			"(I)[I",
 			arg0
+		).object<jintArray>();
+	}
+	QAndroidJniObject Collator::getFunctionalEquivalent(jstring arg0, __jni_impl::android::icu::util::ULocale arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Collator",
+			"getFunctionalEquivalent",
+			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/util/ULocale;",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Collator::cloneAsThawed()
+	QAndroidJniObject Collator::getFunctionalEquivalent(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1)
 	{
-		return __thiz.callObjectMethod(
-			"cloneAsThawed",
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Collator",
+			"getFunctionalEquivalent",
+			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/util/ULocale;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Collator::getFunctionalEquivalent(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jbooleanArray arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Collator",
+			"getFunctionalEquivalent",
+			"(Ljava/lang/String;Landroid/icu/util/ULocale;[Z)Landroid/icu/util/ULocale;",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
+	QAndroidJniObject Collator::getFunctionalEquivalent(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1, jbooleanArray arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Collator",
+			"getFunctionalEquivalent",
+			"(Ljava/lang/String;Landroid/icu/util/ULocale;[Z)Landroid/icu/util/ULocale;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
+	QAndroidJniObject Collator::getInstance()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Collator",
+			"getInstance",
 			"()Landroid/icu/text/Collator;"
 		);
 	}
-	void Collator::setDecomposition(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDecomposition",
-			"(I)V",
-			arg0
-		);
-	}
-	QAndroidJniObject Collator::setMaxVariable(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setMaxVariable",
-			"(I)Landroid/icu/text/Collator;",
-			arg0
-		);
-	}
-	jint Collator::getMaxVariable()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxVariable",
-			"()I"
-		);
-	}
-	void Collator::setReorderCodes(jintArray arg0)
-	{
-		__thiz.callMethod<void>(
-			"setReorderCodes",
-			"([I)V",
-			arg0
-		);
-	}
-	QAndroidJniObject Collator::getTailoredSet()
-	{
-		return __thiz.callObjectMethod(
-			"getTailoredSet",
-			"()Landroid/icu/text/UnicodeSet;"
-		);
-	}
-	jint Collator::getStrength()
-	{
-		return __thiz.callMethod<jint>(
-			"getStrength",
-			"()I"
-		);
-	}
-	jint Collator::getDecomposition()
-	{
-		return __thiz.callMethod<jint>(
-			"getDecomposition",
-			"()I"
-		);
-	}
-	jint Collator::getVariableTop()
-	{
-		return __thiz.callMethod<jint>(
-			"getVariableTop",
-			"()I"
-		);
-	}
-	jintArray Collator::getReorderCodes()
-	{
-		return __thiz.callObjectMethod(
-			"getReorderCodes",
-			"()[I"
-		).object<jintArray>();
-	}
-	QAndroidJniObject Collator::getUCAVersion()
-	{
-		return __thiz.callObjectMethod(
-			"getUCAVersion",
-			"()Landroid/icu/util/VersionInfo;"
-		);
-	}
-	jarray Collator::getAvailableULocales()
+	QAndroidJniObject Collator::getInstance(__jni_impl::android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Collator",
-			"getAvailableULocales",
-			"()[Landroid/icu/util/ULocale;"
-		).object<jarray>();
+			"getInstance",
+			"(Landroid/icu/util/ULocale;)Landroid/icu/text/Collator;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Collator::getInstance(__jni_impl::java::util::Locale arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Collator",
+			"getInstance",
+			"(Ljava/util/Locale;)Landroid/icu/text/Collator;",
+			arg0.__jniObject().object()
+		);
 	}
 	jarray Collator::getKeywordValues(jstring arg0)
 	{
@@ -471,56 +338,87 @@ namespace __jni_impl::android::icu::text
 			arg2
 		).object<jarray>();
 	}
-	QAndroidJniObject Collator::getFunctionalEquivalent(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jbooleanArray arg2)
+	jarray Collator::getKeywords()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.Collator",
-			"getFunctionalEquivalent",
-			"(Ljava/lang/String;Landroid/icu/util/ULocale;[Z)Landroid/icu/util/ULocale;",
+			"getKeywords",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	jobject Collator::clone()
+	{
+		return __thiz.callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	QAndroidJniObject Collator::cloneAsThawed()
+	{
+		return __thiz.callObjectMethod(
+			"cloneAsThawed",
+			"()Landroid/icu/text/Collator;"
+		);
+	}
+	jint Collator::compare(jobject arg0, jobject arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"compare",
+			"(Ljava/lang/Object;Ljava/lang/Object;)I",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2
+			arg1
 		);
 	}
-	QAndroidJniObject Collator::getFunctionalEquivalent(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1, jbooleanArray arg2)
+	jint Collator::compare(jstring arg0, jstring arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.Collator",
-			"getFunctionalEquivalent",
-			"(Ljava/lang/String;Landroid/icu/util/ULocale;[Z)Landroid/icu/util/ULocale;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	QAndroidJniObject Collator::getFunctionalEquivalent(jstring arg0, __jni_impl::android::icu::util::ULocale arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.Collator",
-			"getFunctionalEquivalent",
-			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/util/ULocale;",
+		return __thiz.callMethod<jint>(
+			"compare",
+			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
-			arg1.__jniObject().object()
+			arg1
 		);
 	}
-	QAndroidJniObject Collator::getFunctionalEquivalent(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1)
+	jint Collator::compare(const QString &arg0, const QString &arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.Collator",
-			"getFunctionalEquivalent",
-			"(Ljava/lang/String;Landroid/icu/util/ULocale;)Landroid/icu/util/ULocale;",
+		return __thiz.callMethod<jint>(
+			"compare",
+			"(Ljava/lang/String;Ljava/lang/String;)I",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	jintArray Collator::getEquivalentReorderCodes(jint arg0)
+	jboolean Collator::equals(jobject arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.Collator",
-			"getEquivalentReorderCodes",
-			"(I)[I",
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
 			arg0
-		).object<jintArray>();
+		);
+	}
+	jboolean Collator::equals(jstring arg0, jstring arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/String;Ljava/lang/String;)Z",
+			arg0,
+			arg1
+		);
+	}
+	jboolean Collator::equals(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/String;Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	QAndroidJniObject Collator::freeze()
+	{
+		return __thiz.callObjectMethod(
+			"freeze",
+			"()Landroid/icu/text/Collator;"
+		);
 	}
 	QAndroidJniObject Collator::getCollationKey(jstring arg0)
 	{
@@ -536,6 +434,108 @@ namespace __jni_impl::android::icu::text
 			"getCollationKey",
 			"(Ljava/lang/String;)Landroid/icu/text/CollationKey;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jint Collator::getDecomposition()
+	{
+		return __thiz.callMethod<jint>(
+			"getDecomposition",
+			"()I"
+		);
+	}
+	jint Collator::getMaxVariable()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxVariable",
+			"()I"
+		);
+	}
+	jintArray Collator::getReorderCodes()
+	{
+		return __thiz.callObjectMethod(
+			"getReorderCodes",
+			"()[I"
+		).object<jintArray>();
+	}
+	jint Collator::getStrength()
+	{
+		return __thiz.callMethod<jint>(
+			"getStrength",
+			"()I"
+		);
+	}
+	QAndroidJniObject Collator::getTailoredSet()
+	{
+		return __thiz.callObjectMethod(
+			"getTailoredSet",
+			"()Landroid/icu/text/UnicodeSet;"
+		);
+	}
+	QAndroidJniObject Collator::getUCAVersion()
+	{
+		return __thiz.callObjectMethod(
+			"getUCAVersion",
+			"()Landroid/icu/util/VersionInfo;"
+		);
+	}
+	jint Collator::getVariableTop()
+	{
+		return __thiz.callMethod<jint>(
+			"getVariableTop",
+			"()I"
+		);
+	}
+	QAndroidJniObject Collator::getVersion()
+	{
+		return __thiz.callObjectMethod(
+			"getVersion",
+			"()Landroid/icu/util/VersionInfo;"
+		);
+	}
+	jint Collator::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jboolean Collator::isFrozen()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFrozen",
+			"()Z"
+		);
+	}
+	void Collator::setDecomposition(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDecomposition",
+			"(I)V",
+			arg0
+		);
+	}
+	QAndroidJniObject Collator::setMaxVariable(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setMaxVariable",
+			"(I)Landroid/icu/text/Collator;",
+			arg0
+		);
+	}
+	void Collator::setReorderCodes(jintArray arg0)
+	{
+		__thiz.callMethod<void>(
+			"setReorderCodes",
+			"([I)V",
+			arg0
+		);
+	}
+	void Collator::setStrength(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setStrength",
+			"(I)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::icu::text

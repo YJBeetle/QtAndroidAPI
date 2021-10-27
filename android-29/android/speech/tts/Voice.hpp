@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util
-{
-	class Locale;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::java::util
+{
+	class Locale;
 }
 
 namespace __jni_impl::android::speech::tts
@@ -37,22 +37,22 @@ namespace __jni_impl::android::speech::tts
 		void __constructor(const QString &arg0, __jni_impl::java::util::Locale arg1, jint arg2, jint arg3, jboolean arg4, __jni_impl::__JniBaseClass arg5);
 		
 		// Methods
-		jstring getName();
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		QAndroidJniObject getLocale();
-		jint getLatency();
-		QAndroidJniObject getFeatures();
-		jboolean isNetworkConnectionRequired();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jboolean equals(jobject arg0);
+		QAndroidJniObject getFeatures();
+		jint getLatency();
+		QAndroidJniObject getLocale();
+		jstring getName();
 		jint getQuality();
+		jint hashCode();
+		jboolean isNetworkConnectionRequired();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::speech::tts
 
-#include "../../../java/util/Locale.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::speech::tts
 {
@@ -165,12 +165,12 @@ namespace __jni_impl::android::speech::tts
 	}
 	
 	// Methods
-	jstring Voice::getName()
+	jint Voice::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
 	jboolean Voice::equals(jobject arg0)
 	{
@@ -180,17 +180,17 @@ namespace __jni_impl::android::speech::tts
 			arg0
 		);
 	}
-	jstring Voice::toString()
+	QAndroidJniObject Voice::getFeatures()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getFeatures",
+			"()Ljava/util/Set;"
+		);
 	}
-	jint Voice::hashCode()
+	jint Voice::getLatency()
 	{
 		return __thiz.callMethod<jint>(
-			"hashCode",
+			"getLatency",
 			"()I"
 		);
 	}
@@ -201,18 +201,25 @@ namespace __jni_impl::android::speech::tts
 			"()Ljava/util/Locale;"
 		);
 	}
-	jint Voice::getLatency()
+	jstring Voice::getName()
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint Voice::getQuality()
 	{
 		return __thiz.callMethod<jint>(
-			"getLatency",
+			"getQuality",
 			"()I"
 		);
 	}
-	QAndroidJniObject Voice::getFeatures()
+	jint Voice::hashCode()
 	{
-		return __thiz.callObjectMethod(
-			"getFeatures",
-			"()Ljava/util/Set;"
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
 	}
 	jboolean Voice::isNetworkConnectionRequired()
@@ -222,12 +229,12 @@ namespace __jni_impl::android::speech::tts
 			"()Z"
 		);
 	}
-	jint Voice::describeContents()
+	jstring Voice::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Voice::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -236,13 +243,6 @@ namespace __jni_impl::android::speech::tts
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint Voice::getQuality()
-	{
-		return __thiz.callMethod<jint>(
-			"getQuality",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::speech::tts

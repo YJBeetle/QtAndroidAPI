@@ -83,13 +83,13 @@ namespace __jni_impl::android::hardware::camera2
 		void __constructor();
 		
 		// Methods
-		jobject get(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0);
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		jobject getTag();
-		QAndroidJniObject getKeys();
-		jboolean isReprocess();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		jobject get(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0);
+		QAndroidJniObject getKeys();
+		jobject getTag();
+		jint hashCode();
+		jboolean isReprocess();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::hardware::camera2
@@ -566,13 +566,12 @@ namespace __jni_impl::android::hardware::camera2
 	}
 	
 	// Methods
-	jobject CaptureRequest::get(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0)
+	jint CaptureRequest::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"get",
-			"(Landroid/hardware/camera2/CaptureRequest$Key;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
-		).object<jobject>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
 	jboolean CaptureRequest::equals(jobject arg0)
 	{
@@ -582,18 +581,12 @@ namespace __jni_impl::android::hardware::camera2
 			arg0
 		);
 	}
-	jint CaptureRequest::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jobject CaptureRequest::getTag()
+	jobject CaptureRequest::get(__jni_impl::android::hardware::camera2::CaptureRequest_Key arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getTag",
-			"()Ljava/lang/Object;"
+			"get",
+			"(Landroid/hardware/camera2/CaptureRequest$Key;)Ljava/lang/Object;",
+			arg0.__jniObject().object()
 		).object<jobject>();
 	}
 	QAndroidJniObject CaptureRequest::getKeys()
@@ -603,18 +596,25 @@ namespace __jni_impl::android::hardware::camera2
 			"()Ljava/util/List;"
 		);
 	}
+	jobject CaptureRequest::getTag()
+	{
+		return __thiz.callObjectMethod(
+			"getTag",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jint CaptureRequest::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 	jboolean CaptureRequest::isReprocess()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isReprocess",
 			"()Z"
-		);
-	}
-	jint CaptureRequest::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
 		);
 	}
 	void CaptureRequest::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

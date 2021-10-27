@@ -29,12 +29,12 @@ namespace __jni_impl::android::media
 		void __constructor(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jint hashCode();
 		jint getCommandCode();
 		jstring getCustomAction();
 		QAndroidJniObject getCustomExtras();
-		jint describeContents();
+		jint hashCode();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
@@ -90,19 +90,19 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	jint Session2Command::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean Session2Command::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
-		);
-	}
-	jint Session2Command::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
 		);
 	}
 	jint Session2Command::getCommandCode()
@@ -126,10 +126,10 @@ namespace __jni_impl::android::media
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jint Session2Command::describeContents()
+	jint Session2Command::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
 		);
 	}

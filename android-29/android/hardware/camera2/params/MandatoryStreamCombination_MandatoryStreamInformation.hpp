@@ -18,10 +18,10 @@ namespace __jni_impl::android::hardware::camera2::params
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jint hashCode();
-		jint getFormat();
-		jboolean isInput();
 		QAndroidJniObject getAvailableSizes();
+		jint getFormat();
+		jint hashCode();
+		jboolean isInput();
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
@@ -47,11 +47,11 @@ namespace __jni_impl::android::hardware::camera2::params
 			arg0
 		);
 	}
-	jint MandatoryStreamCombination_MandatoryStreamInformation::hashCode()
+	QAndroidJniObject MandatoryStreamCombination_MandatoryStreamInformation::getAvailableSizes()
 	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+		return __thiz.callObjectMethod(
+			"getAvailableSizes",
+			"()Ljava/util/List;"
 		);
 	}
 	jint MandatoryStreamCombination_MandatoryStreamInformation::getFormat()
@@ -61,18 +61,18 @@ namespace __jni_impl::android::hardware::camera2::params
 			"()I"
 		);
 	}
+	jint MandatoryStreamCombination_MandatoryStreamInformation::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 	jboolean MandatoryStreamCombination_MandatoryStreamInformation::isInput()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isInput",
 			"()Z"
-		);
-	}
-	QAndroidJniObject MandatoryStreamCombination_MandatoryStreamInformation::getAvailableSizes()
-	{
-		return __thiz.callObjectMethod(
-			"getAvailableSizes",
-			"()Ljava/util/List;"
 		);
 	}
 } // namespace __jni_impl::android::hardware::camera2::params

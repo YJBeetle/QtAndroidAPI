@@ -22,8 +22,8 @@ namespace __jni_impl::android::content
 		
 		// Methods
 		jstring getContentDescription();
-		jstring getLabel();
 		QAndroidJniObject getIcon();
+		jstring getLabel();
 	};
 } // namespace __jni_impl::android::content
 
@@ -49,19 +49,19 @@ namespace __jni_impl::android::content
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	jstring ContentResolver_MimeTypeInfo::getLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
 	QAndroidJniObject ContentResolver_MimeTypeInfo::getIcon()
 	{
 		return __thiz.callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
 		);
+	}
+	jstring ContentResolver_MimeTypeInfo::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::content
 

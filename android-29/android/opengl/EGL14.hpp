@@ -7,6 +7,10 @@
 
 namespace __jni_impl::android::opengl
 {
+	class EGLConfig;
+}
+namespace __jni_impl::android::opengl
+{
 	class EGLContext;
 }
 namespace __jni_impl::android::opengl
@@ -16,10 +20,6 @@ namespace __jni_impl::android::opengl
 namespace __jni_impl::android::opengl
 {
 	class EGLSurface;
-}
-namespace __jni_impl::android::opengl
-{
-	class EGLConfig;
 }
 
 namespace __jni_impl::android::opengl
@@ -147,46 +147,46 @@ namespace __jni_impl::android::opengl
 		void __constructor();
 		
 		// Methods
-		static jint eglGetError();
-		static QAndroidJniObject eglGetDisplay(jint arg0);
-		static jboolean eglInitialize(__jni_impl::android::opengl::EGLDisplay arg0, jintArray arg1, jint arg2, jintArray arg3, jint arg4);
-		static jboolean eglTerminate(__jni_impl::android::opengl::EGLDisplay arg0);
-		static jstring eglQueryString(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1);
-		static jboolean eglGetConfigs(__jni_impl::android::opengl::EGLDisplay arg0, jarray arg1, jint arg2, jint arg3, jintArray arg4, jint arg5);
+		static jboolean eglBindAPI(jint arg0);
+		static jboolean eglBindTexImage(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2);
 		static jboolean eglChooseConfig(__jni_impl::android::opengl::EGLDisplay arg0, jintArray arg1, jint arg2, jarray arg3, jint arg4, jint arg5, jintArray arg6, jint arg7);
-		static jboolean eglGetConfigAttrib(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, jint arg2, jintArray arg3, jint arg4);
-		static QAndroidJniObject eglCreateWindowSurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, jobject arg2, jintArray arg3, jint arg4);
+		static jboolean eglCopyBuffers(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2);
+		static QAndroidJniObject eglCreateContext(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, __jni_impl::android::opengl::EGLContext arg2, jintArray arg3, jint arg4);
+		static QAndroidJniObject eglCreatePbufferFromClientBuffer(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1, jint arg2, __jni_impl::android::opengl::EGLConfig arg3, jintArray arg4, jint arg5);
 		static QAndroidJniObject eglCreatePbufferSurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, jintArray arg2, jint arg3);
 		static QAndroidJniObject eglCreatePixmapSurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, jint arg2, jintArray arg3, jint arg4);
-		static jboolean eglDestroySurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1);
-		static jboolean eglQuerySurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2, jintArray arg3, jint arg4);
-		static jboolean eglBindAPI(jint arg0);
-		static jint eglQueryAPI();
-		static jboolean eglWaitClient();
-		static jboolean eglReleaseThread();
-		static QAndroidJniObject eglCreatePbufferFromClientBuffer(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1, jint arg2, __jni_impl::android::opengl::EGLConfig arg3, jintArray arg4, jint arg5);
-		static jboolean eglSurfaceAttrib(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2, jint arg3);
-		static jboolean eglBindTexImage(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2);
-		static jboolean eglReleaseTexImage(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2);
-		static jboolean eglSwapInterval(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1);
-		static QAndroidJniObject eglCreateContext(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, __jni_impl::android::opengl::EGLContext arg2, jintArray arg3, jint arg4);
+		static QAndroidJniObject eglCreateWindowSurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, jobject arg2, jintArray arg3, jint arg4);
 		static jboolean eglDestroyContext(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLContext arg1);
-		static jboolean eglMakeCurrent(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, __jni_impl::android::opengl::EGLSurface arg2, __jni_impl::android::opengl::EGLContext arg3);
+		static jboolean eglDestroySurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1);
+		static jboolean eglGetConfigAttrib(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, jint arg2, jintArray arg3, jint arg4);
+		static jboolean eglGetConfigs(__jni_impl::android::opengl::EGLDisplay arg0, jarray arg1, jint arg2, jint arg3, jintArray arg4, jint arg5);
 		static QAndroidJniObject eglGetCurrentContext();
-		static QAndroidJniObject eglGetCurrentSurface(jint arg0);
 		static QAndroidJniObject eglGetCurrentDisplay();
+		static QAndroidJniObject eglGetCurrentSurface(jint arg0);
+		static QAndroidJniObject eglGetDisplay(jint arg0);
+		static jint eglGetError();
+		static jboolean eglInitialize(__jni_impl::android::opengl::EGLDisplay arg0, jintArray arg1, jint arg2, jintArray arg3, jint arg4);
+		static jboolean eglMakeCurrent(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, __jni_impl::android::opengl::EGLSurface arg2, __jni_impl::android::opengl::EGLContext arg3);
+		static jint eglQueryAPI();
 		static jboolean eglQueryContext(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLContext arg1, jint arg2, jintArray arg3, jint arg4);
+		static jstring eglQueryString(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1);
+		static jboolean eglQuerySurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2, jintArray arg3, jint arg4);
+		static jboolean eglReleaseTexImage(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2);
+		static jboolean eglReleaseThread();
+		static jboolean eglSurfaceAttrib(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2, jint arg3);
+		static jboolean eglSwapBuffers(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1);
+		static jboolean eglSwapInterval(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1);
+		static jboolean eglTerminate(__jni_impl::android::opengl::EGLDisplay arg0);
+		static jboolean eglWaitClient();
 		static jboolean eglWaitGL();
 		static jboolean eglWaitNative(jint arg0);
-		static jboolean eglSwapBuffers(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1);
-		static jboolean eglCopyBuffers(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::opengl
 
+#include "EGLConfig.hpp"
 #include "EGLContext.hpp"
 #include "EGLDisplay.hpp"
 #include "EGLSurface.hpp"
-#include "EGLConfig.hpp"
 
 namespace __jni_impl::android::opengl
 {
@@ -1003,67 +1003,24 @@ namespace __jni_impl::android::opengl
 	}
 	
 	// Methods
-	jint EGL14::eglGetError()
+	jboolean EGL14::eglBindAPI(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.opengl.EGL14",
-			"eglGetError",
-			"()I"
-		);
-	}
-	QAndroidJniObject EGL14::eglGetDisplay(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.opengl.EGL14",
-			"eglGetDisplay",
-			"(I)Landroid/opengl/EGLDisplay;",
+			"eglBindAPI",
+			"(I)Z",
 			arg0
 		);
 	}
-	jboolean EGL14::eglInitialize(__jni_impl::android::opengl::EGLDisplay arg0, jintArray arg1, jint arg2, jintArray arg3, jint arg4)
+	jboolean EGL14::eglBindTexImage(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.opengl.EGL14",
-			"eglInitialize",
-			"(Landroid/opengl/EGLDisplay;[II[II)Z",
+			"eglBindTexImage",
+			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;I)Z",
 			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	jboolean EGL14::eglTerminate(__jni_impl::android::opengl::EGLDisplay arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.EGL14",
-			"eglTerminate",
-			"(Landroid/opengl/EGLDisplay;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jstring EGL14::eglQueryString(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.opengl.EGL14",
-			"eglQueryString",
-			"(Landroid/opengl/EGLDisplay;I)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1
-		).object<jstring>();
-	}
-	jboolean EGL14::eglGetConfigs(__jni_impl::android::opengl::EGLDisplay arg0, jarray arg1, jint arg2, jint arg3, jintArray arg4, jint arg5)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.EGL14",
-			"eglGetConfigs",
-			"(Landroid/opengl/EGLDisplay;[Landroid/opengl/EGLConfig;II[II)Z",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5
+			arg1.__jniObject().object(),
+			arg2
 		);
 	}
 	jboolean EGL14::eglChooseConfig(__jni_impl::android::opengl::EGLDisplay arg0, jintArray arg1, jint arg2, jarray arg3, jint arg4, jint arg5, jintArray arg6, jint arg7)
@@ -1082,30 +1039,42 @@ namespace __jni_impl::android::opengl
 			arg7
 		);
 	}
-	jboolean EGL14::eglGetConfigAttrib(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, jint arg2, jintArray arg3, jint arg4)
+	jboolean EGL14::eglCopyBuffers(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.opengl.EGL14",
-			"eglGetConfigAttrib",
-			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;I[II)Z",
+			"eglCopyBuffers",
+			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;I)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
-			arg2,
+			arg2
+		);
+	}
+	QAndroidJniObject EGL14::eglCreateContext(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, __jni_impl::android::opengl::EGLContext arg2, jintArray arg3, jint arg4)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.opengl.EGL14",
+			"eglCreateContext",
+			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;Landroid/opengl/EGLContext;[II)Landroid/opengl/EGLContext;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
 			arg3,
 			arg4
 		);
 	}
-	QAndroidJniObject EGL14::eglCreateWindowSurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, jobject arg2, jintArray arg3, jint arg4)
+	QAndroidJniObject EGL14::eglCreatePbufferFromClientBuffer(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1, jint arg2, __jni_impl::android::opengl::EGLConfig arg3, jintArray arg4, jint arg5)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.EGL14",
-			"eglCreateWindowSurface",
-			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;Ljava/lang/Object;[II)Landroid/opengl/EGLSurface;",
+			"eglCreatePbufferFromClientBuffer",
+			"(Landroid/opengl/EGLDisplay;IILandroid/opengl/EGLConfig;[II)Landroid/opengl/EGLSurface;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg1,
 			arg2,
-			arg3,
-			arg4
+			arg3.__jniObject().object(),
+			arg4,
+			arg5
 		);
 	}
 	QAndroidJniObject EGL14::eglCreatePbufferSurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, jintArray arg2, jint arg3)
@@ -1133,129 +1102,15 @@ namespace __jni_impl::android::opengl
 			arg4
 		);
 	}
-	jboolean EGL14::eglDestroySurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.EGL14",
-			"eglDestroySurface",
-			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean EGL14::eglQuerySurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2, jintArray arg3, jint arg4)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.EGL14",
-			"eglQuerySurface",
-			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;I[II)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	jboolean EGL14::eglBindAPI(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.EGL14",
-			"eglBindAPI",
-			"(I)Z",
-			arg0
-		);
-	}
-	jint EGL14::eglQueryAPI()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.EGL14",
-			"eglQueryAPI",
-			"()I"
-		);
-	}
-	jboolean EGL14::eglWaitClient()
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.EGL14",
-			"eglWaitClient",
-			"()Z"
-		);
-	}
-	jboolean EGL14::eglReleaseThread()
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.EGL14",
-			"eglReleaseThread",
-			"()Z"
-		);
-	}
-	QAndroidJniObject EGL14::eglCreatePbufferFromClientBuffer(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1, jint arg2, __jni_impl::android::opengl::EGLConfig arg3, jintArray arg4, jint arg5)
+	QAndroidJniObject EGL14::eglCreateWindowSurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, jobject arg2, jintArray arg3, jint arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.EGL14",
-			"eglCreatePbufferFromClientBuffer",
-			"(Landroid/opengl/EGLDisplay;IILandroid/opengl/EGLConfig;[II)Landroid/opengl/EGLSurface;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3.__jniObject().object(),
-			arg4,
-			arg5
-		);
-	}
-	jboolean EGL14::eglSurfaceAttrib(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2, jint arg3)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.EGL14",
-			"eglSurfaceAttrib",
-			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;II)Z",
+			"eglCreateWindowSurface",
+			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;Ljava/lang/Object;[II)Landroid/opengl/EGLSurface;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2,
-			arg3
-		);
-	}
-	jboolean EGL14::eglBindTexImage(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.EGL14",
-			"eglBindTexImage",
-			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;I)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	jboolean EGL14::eglReleaseTexImage(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.EGL14",
-			"eglReleaseTexImage",
-			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;I)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	jboolean EGL14::eglSwapInterval(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.EGL14",
-			"eglSwapInterval",
-			"(Landroid/opengl/EGLDisplay;I)Z",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject EGL14::eglCreateContext(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, __jni_impl::android::opengl::EGLContext arg2, jintArray arg3, jint arg4)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.opengl.EGL14",
-			"eglCreateContext",
-			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;Landroid/opengl/EGLContext;[II)Landroid/opengl/EGLContext;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
 			arg3,
 			arg4
 		);
@@ -1270,6 +1125,98 @@ namespace __jni_impl::android::opengl
 			arg1.__jniObject().object()
 		);
 	}
+	jboolean EGL14::eglDestroySurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.EGL14",
+			"eglDestroySurface",
+			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean EGL14::eglGetConfigAttrib(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLConfig arg1, jint arg2, jintArray arg3, jint arg4)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.EGL14",
+			"eglGetConfigAttrib",
+			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLConfig;I[II)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	jboolean EGL14::eglGetConfigs(__jni_impl::android::opengl::EGLDisplay arg0, jarray arg1, jint arg2, jint arg3, jintArray arg4, jint arg5)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.EGL14",
+			"eglGetConfigs",
+			"(Landroid/opengl/EGLDisplay;[Landroid/opengl/EGLConfig;II[II)Z",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5
+		);
+	}
+	QAndroidJniObject EGL14::eglGetCurrentContext()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.opengl.EGL14",
+			"eglGetCurrentContext",
+			"()Landroid/opengl/EGLContext;"
+		);
+	}
+	QAndroidJniObject EGL14::eglGetCurrentDisplay()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.opengl.EGL14",
+			"eglGetCurrentDisplay",
+			"()Landroid/opengl/EGLDisplay;"
+		);
+	}
+	QAndroidJniObject EGL14::eglGetCurrentSurface(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.opengl.EGL14",
+			"eglGetCurrentSurface",
+			"(I)Landroid/opengl/EGLSurface;",
+			arg0
+		);
+	}
+	QAndroidJniObject EGL14::eglGetDisplay(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.opengl.EGL14",
+			"eglGetDisplay",
+			"(I)Landroid/opengl/EGLDisplay;",
+			arg0
+		);
+	}
+	jint EGL14::eglGetError()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.opengl.EGL14",
+			"eglGetError",
+			"()I"
+		);
+	}
+	jboolean EGL14::eglInitialize(__jni_impl::android::opengl::EGLDisplay arg0, jintArray arg1, jint arg2, jintArray arg3, jint arg4)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.EGL14",
+			"eglInitialize",
+			"(Landroid/opengl/EGLDisplay;[II[II)Z",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
 	jboolean EGL14::eglMakeCurrent(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, __jni_impl::android::opengl::EGLSurface arg2, __jni_impl::android::opengl::EGLContext arg3)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -1282,29 +1229,12 @@ namespace __jni_impl::android::opengl
 			arg3.__jniObject().object()
 		);
 	}
-	QAndroidJniObject EGL14::eglGetCurrentContext()
+	jint EGL14::eglQueryAPI()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.opengl.EGL14",
-			"eglGetCurrentContext",
-			"()Landroid/opengl/EGLContext;"
-		);
-	}
-	QAndroidJniObject EGL14::eglGetCurrentSurface(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.opengl.EGL14",
-			"eglGetCurrentSurface",
-			"(I)Landroid/opengl/EGLSurface;",
-			arg0
-		);
-	}
-	QAndroidJniObject EGL14::eglGetCurrentDisplay()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.opengl.EGL14",
-			"eglGetCurrentDisplay",
-			"()Landroid/opengl/EGLDisplay;"
+			"eglQueryAPI",
+			"()I"
 		);
 	}
 	jboolean EGL14::eglQueryContext(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLContext arg1, jint arg2, jintArray arg3, jint arg4)
@@ -1318,6 +1248,97 @@ namespace __jni_impl::android::opengl
 			arg2,
 			arg3,
 			arg4
+		);
+	}
+	jstring EGL14::eglQueryString(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.opengl.EGL14",
+			"eglQueryString",
+			"(Landroid/opengl/EGLDisplay;I)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			arg1
+		).object<jstring>();
+	}
+	jboolean EGL14::eglQuerySurface(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2, jintArray arg3, jint arg4)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.EGL14",
+			"eglQuerySurface",
+			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;I[II)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	jboolean EGL14::eglReleaseTexImage(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.EGL14",
+			"eglReleaseTexImage",
+			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;I)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
+	jboolean EGL14::eglReleaseThread()
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.EGL14",
+			"eglReleaseThread",
+			"()Z"
+		);
+	}
+	jboolean EGL14::eglSurfaceAttrib(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2, jint arg3)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.EGL14",
+			"eglSurfaceAttrib",
+			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;II)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3
+		);
+	}
+	jboolean EGL14::eglSwapBuffers(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.EGL14",
+			"eglSwapBuffers",
+			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean EGL14::eglSwapInterval(__jni_impl::android::opengl::EGLDisplay arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.EGL14",
+			"eglSwapInterval",
+			"(Landroid/opengl/EGLDisplay;I)Z",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jboolean EGL14::eglTerminate(__jni_impl::android::opengl::EGLDisplay arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.EGL14",
+			"eglTerminate",
+			"(Landroid/opengl/EGLDisplay;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean EGL14::eglWaitClient()
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.EGL14",
+			"eglWaitClient",
+			"()Z"
 		);
 	}
 	jboolean EGL14::eglWaitGL()
@@ -1335,27 +1356,6 @@ namespace __jni_impl::android::opengl
 			"eglWaitNative",
 			"(I)Z",
 			arg0
-		);
-	}
-	jboolean EGL14::eglSwapBuffers(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.EGL14",
-			"eglSwapBuffers",
-			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean EGL14::eglCopyBuffers(__jni_impl::android::opengl::EGLDisplay arg0, __jni_impl::android::opengl::EGLSurface arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.EGL14",
-			"eglCopyBuffers",
-			"(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;I)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
 		);
 	}
 } // namespace __jni_impl::android::opengl

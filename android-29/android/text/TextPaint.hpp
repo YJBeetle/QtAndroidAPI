@@ -26,13 +26,13 @@ namespace __jni_impl::android::text
 		jfloat underlineThickness();
 		
 		// Constructors
+		void __constructor();
 		void __constructor(__jni_impl::android::graphics::Paint arg0);
 		void __constructor(jint arg0);
-		void __constructor();
 		
 		// Methods
-		void set(__jni_impl::android::text::TextPaint arg0);
 		jfloat getUnderlineThickness();
+		void set(__jni_impl::android::text::TextPaint arg0);
 	};
 } // namespace __jni_impl::android::text
 
@@ -86,6 +86,13 @@ namespace __jni_impl::android::text
 	}
 	
 	// Constructors
+	void TextPaint::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.TextPaint",
+			"()V"
+		);
+	}
 	void TextPaint::__constructor(__jni_impl::android::graphics::Paint arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -102,28 +109,21 @@ namespace __jni_impl::android::text
 			arg0
 		);
 	}
-	void TextPaint::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.TextPaint",
-			"()V"
-		);
-	}
 	
 	// Methods
+	jfloat TextPaint::getUnderlineThickness()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getUnderlineThickness",
+			"()F"
+		);
+	}
 	void TextPaint::set(__jni_impl::android::text::TextPaint arg0)
 	{
 		__thiz.callMethod<void>(
 			"set",
 			"(Landroid/text/TextPaint;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	jfloat TextPaint::getUnderlineThickness()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getUnderlineThickness",
-			"()F"
 		);
 	}
 } // namespace __jni_impl::android::text
@@ -134,6 +134,10 @@ namespace android::text
 	{
 	public:
 		TextPaint(QAndroidJniObject obj) { __thiz = obj; }
+		TextPaint()
+		{
+			__constructor();
+		}
 		TextPaint(__jni_impl::android::graphics::Paint arg0)
 		{
 			__constructor(
@@ -143,10 +147,6 @@ namespace android::text
 		{
 			__constructor(
 				arg0);
-		}
-		TextPaint()
-		{
-			__constructor();
 		}
 	};
 } // namespace android::text

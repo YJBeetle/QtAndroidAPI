@@ -22,9 +22,9 @@ namespace __jni_impl::java::util
 		void __constructor(const QString &arg0, jchar arg1);
 		
 		// Methods
-		jstring getMessage();
-		jstring getFlags();
 		jchar getConversion();
+		jstring getFlags();
+		jstring getMessage();
 	};
 } // namespace __jni_impl::java::util
 
@@ -54,12 +54,12 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	jstring FormatFlagsConversionMismatchException::getMessage()
+	jchar FormatFlagsConversionMismatchException::getConversion()
 	{
-		return __thiz.callObjectMethod(
-			"getMessage",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jchar>(
+			"getConversion",
+			"()C"
+		);
 	}
 	jstring FormatFlagsConversionMismatchException::getFlags()
 	{
@@ -68,12 +68,12 @@ namespace __jni_impl::java::util
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jchar FormatFlagsConversionMismatchException::getConversion()
+	jstring FormatFlagsConversionMismatchException::getMessage()
 	{
-		return __thiz.callMethod<jchar>(
-			"getConversion",
-			"()C"
-		);
+		return __thiz.callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util
 

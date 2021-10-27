@@ -7,13 +7,13 @@
 #include "../../java/io/InputStream.hpp"
 #include "../../java/io/FilterInputStream.hpp"
 
-namespace __jni_impl::javax::crypto
-{
-	class Cipher;
-}
 namespace __jni_impl::java::io
 {
 	class InputStream;
+}
+namespace __jni_impl::javax::crypto
+{
+	class Cipher;
 }
 
 namespace __jni_impl::javax::crypto
@@ -27,18 +27,18 @@ namespace __jni_impl::javax::crypto
 		void __constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::javax::crypto::Cipher arg1);
 		
 		// Methods
+		jint available();
+		void close();
+		jboolean markSupported();
 		jint read();
 		jint read(jbyteArray arg0);
 		jint read(jbyteArray arg0, jint arg1, jint arg2);
-		void close();
 		jlong skip(jlong arg0);
-		jint available();
-		jboolean markSupported();
 	};
 } // namespace __jni_impl::javax::crypto
 
-#include "Cipher.hpp"
 #include "../../java/io/InputStream.hpp"
+#include "Cipher.hpp"
 
 namespace __jni_impl::javax::crypto
 {
@@ -56,6 +56,27 @@ namespace __jni_impl::javax::crypto
 	}
 	
 	// Methods
+	jint CipherInputStream::available()
+	{
+		return __thiz.callMethod<jint>(
+			"available",
+			"()I"
+		);
+	}
+	void CipherInputStream::close()
+	{
+		__thiz.callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	jboolean CipherInputStream::markSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"markSupported",
+			"()Z"
+		);
+	}
 	jint CipherInputStream::read()
 	{
 		return __thiz.callMethod<jint>(
@@ -81,33 +102,12 @@ namespace __jni_impl::javax::crypto
 			arg2
 		);
 	}
-	void CipherInputStream::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
-	}
 	jlong CipherInputStream::skip(jlong arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"skip",
 			"(J)J",
 			arg0
-		);
-	}
-	jint CipherInputStream::available()
-	{
-		return __thiz.callMethod<jint>(
-			"available",
-			"()I"
-		);
-	}
-	jboolean CipherInputStream::markSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"markSupported",
-			"()Z"
 		);
 	}
 } // namespace __jni_impl::javax::crypto

@@ -25,22 +25,22 @@ namespace __jni_impl::android::inputmethodservice
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(__jni_impl::android::content::Context arg0);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jboolean performClick();
+		void finishInternalChanges();
+		jboolean hasFocus();
+		jboolean hasVerticalScrollBar();
+		jboolean hasWindowFocus();
 		jboolean isFocused();
-		void setExtractedText(__jni_impl::android::view::inputmethod::ExtractedText arg0);
 		jboolean isInputMethodTarget();
 		jboolean onTextContextMenuItem(jint arg0);
-		jboolean hasFocus();
-		jboolean hasWindowFocus();
+		jboolean performClick();
+		void setExtractedText(__jni_impl::android::view::inputmethod::ExtractedText arg0);
 		void startInternalChanges();
-		void finishInternalChanges();
-		jboolean hasVerticalScrollBar();
 	};
 } // namespace __jni_impl::android::inputmethodservice
 
@@ -52,15 +52,21 @@ namespace __jni_impl::android::inputmethodservice
 	// Fields
 	
 	// Constructors
-	void ExtractEditText::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
+	void ExtractEditText::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.ExtractEditText",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
+			"(Landroid/content/Context;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ExtractEditText::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.inputmethodservice.ExtractEditText",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3
+			arg1.__jniObject().object()
 		);
 	}
 	void ExtractEditText::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
@@ -73,29 +79,44 @@ namespace __jni_impl::android::inputmethodservice
 			arg2
 		);
 	}
-	void ExtractEditText::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+	void ExtractEditText::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.inputmethodservice.ExtractEditText",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void ExtractEditText::__constructor(__jni_impl::android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.inputmethodservice.ExtractEditText",
-			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
+			arg1.__jniObject().object(),
+			arg2,
+			arg3
 		);
 	}
 	
 	// Methods
-	jboolean ExtractEditText::performClick()
+	void ExtractEditText::finishInternalChanges()
+	{
+		__thiz.callMethod<void>(
+			"finishInternalChanges",
+			"()V"
+		);
+	}
+	jboolean ExtractEditText::hasFocus()
 	{
 		return __thiz.callMethod<jboolean>(
-			"performClick",
+			"hasFocus",
+			"()Z"
+		);
+	}
+	jboolean ExtractEditText::hasVerticalScrollBar()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasVerticalScrollBar",
+			"()Z"
+		);
+	}
+	jboolean ExtractEditText::hasWindowFocus()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasWindowFocus",
 			"()Z"
 		);
 	}
@@ -104,14 +125,6 @@ namespace __jni_impl::android::inputmethodservice
 		return __thiz.callMethod<jboolean>(
 			"isFocused",
 			"()Z"
-		);
-	}
-	void ExtractEditText::setExtractedText(__jni_impl::android::view::inputmethod::ExtractedText arg0)
-	{
-		__thiz.callMethod<void>(
-			"setExtractedText",
-			"(Landroid/view/inputmethod/ExtractedText;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	jboolean ExtractEditText::isInputMethodTarget()
@@ -129,18 +142,19 @@ namespace __jni_impl::android::inputmethodservice
 			arg0
 		);
 	}
-	jboolean ExtractEditText::hasFocus()
+	jboolean ExtractEditText::performClick()
 	{
 		return __thiz.callMethod<jboolean>(
-			"hasFocus",
+			"performClick",
 			"()Z"
 		);
 	}
-	jboolean ExtractEditText::hasWindowFocus()
+	void ExtractEditText::setExtractedText(__jni_impl::android::view::inputmethod::ExtractedText arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"hasWindowFocus",
-			"()Z"
+		__thiz.callMethod<void>(
+			"setExtractedText",
+			"(Landroid/view/inputmethod/ExtractedText;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void ExtractEditText::startInternalChanges()
@@ -148,20 +162,6 @@ namespace __jni_impl::android::inputmethodservice
 		__thiz.callMethod<void>(
 			"startInternalChanges",
 			"()V"
-		);
-	}
-	void ExtractEditText::finishInternalChanges()
-	{
-		__thiz.callMethod<void>(
-			"finishInternalChanges",
-			"()V"
-		);
-	}
-	jboolean ExtractEditText::hasVerticalScrollBar()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasVerticalScrollBar",
-			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::inputmethodservice
@@ -172,13 +172,16 @@ namespace android::inputmethodservice
 	{
 	public:
 		ExtractEditText(QAndroidJniObject obj) { __thiz = obj; }
-		ExtractEditText(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
+		ExtractEditText(__jni_impl::android::content::Context arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		ExtractEditText(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 		{
 			__constructor(
 				arg0,
-				arg1,
-				arg2,
-				arg3);
+				arg1);
 		}
 		ExtractEditText(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 		{
@@ -187,16 +190,13 @@ namespace android::inputmethodservice
 				arg1,
 				arg2);
 		}
-		ExtractEditText(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+		ExtractEditText(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 		{
 			__constructor(
 				arg0,
-				arg1);
-		}
-		ExtractEditText(__jni_impl::android::content::Context arg0)
-		{
-			__constructor(
-				arg0);
+				arg1,
+				arg2,
+				arg3);
 		}
 	};
 } // namespace android::inputmethodservice

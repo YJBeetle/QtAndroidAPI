@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util
-{
-	class Locale;
-}
 namespace __jni_impl::java::io
 {
 	class ObjectOutputStream;
+}
+namespace __jni_impl::java::util
+{
+	class Locale;
 }
 
 namespace __jni_impl::java::text
@@ -22,44 +22,51 @@ namespace __jni_impl::java::text
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::java::util::Locale arg0);
 		void __constructor();
+		void __constructor(__jni_impl::java::util::Locale arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		jobject clone();
+		static jarray getAvailableLocales();
 		static QAndroidJniObject getInstance();
 		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
-		static jarray getAvailableLocales();
-		jarray getEras();
-		jarray getShortMonths();
-		jarray getWeekdays();
-		jarray getShortWeekdays();
+		jobject clone();
+		jboolean equals(jobject arg0);
 		jarray getAmPmStrings();
+		jarray getEras();
 		jstring getLocalPatternChars();
 		jarray getMonths();
+		jarray getShortMonths();
+		jarray getShortWeekdays();
+		jarray getWeekdays();
+		jarray getZoneStrings();
+		jint hashCode();
+		void setAmPmStrings(jarray arg0);
+		void setEras(jarray arg0);
 		void setLocalPatternChars(jstring arg0);
 		void setLocalPatternChars(const QString &arg0);
-		jarray getZoneStrings();
-		void setEras(jarray arg0);
 		void setMonths(jarray arg0);
 		void setShortMonths(jarray arg0);
-		void setWeekdays(jarray arg0);
 		void setShortWeekdays(jarray arg0);
-		void setAmPmStrings(jarray arg0);
+		void setWeekdays(jarray arg0);
 		void setZoneStrings(jarray arg0);
 	};
 } // namespace __jni_impl::java::text
 
-#include "../util/Locale.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../util/Locale.hpp"
 
 namespace __jni_impl::java::text
 {
 	// Fields
 	
 	// Constructors
+	void DateFormatSymbols::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.text.DateFormatSymbols",
+			"()V"
+		);
+	}
 	void DateFormatSymbols::__constructor(__jni_impl::java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -68,36 +75,15 @@ namespace __jni_impl::java::text
 			arg0.__jniObject().object()
 		);
 	}
-	void DateFormatSymbols::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.text.DateFormatSymbols",
-			"()V"
-		);
-	}
 	
 	// Methods
-	jboolean DateFormatSymbols::equals(jobject arg0)
+	jarray DateFormatSymbols::getAvailableLocales()
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jint DateFormatSymbols::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jobject DateFormatSymbols::clone()
-	{
-		return __thiz.callObjectMethod(
-			"clone",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.text.DateFormatSymbols",
+			"getAvailableLocales",
+			"()[Ljava/util/Locale;"
+		).object<jarray>();
 	}
 	QAndroidJniObject DateFormatSymbols::getInstance()
 	{
@@ -116,46 +102,32 @@ namespace __jni_impl::java::text
 			arg0.__jniObject().object()
 		);
 	}
-	jarray DateFormatSymbols::getAvailableLocales()
+	jobject DateFormatSymbols::clone()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.text.DateFormatSymbols",
-			"getAvailableLocales",
-			"()[Ljava/util/Locale;"
+		return __thiz.callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jboolean DateFormatSymbols::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jarray DateFormatSymbols::getAmPmStrings()
+	{
+		return __thiz.callObjectMethod(
+			"getAmPmStrings",
+			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
 	jarray DateFormatSymbols::getEras()
 	{
 		return __thiz.callObjectMethod(
 			"getEras",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	jarray DateFormatSymbols::getShortMonths()
-	{
-		return __thiz.callObjectMethod(
-			"getShortMonths",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	jarray DateFormatSymbols::getWeekdays()
-	{
-		return __thiz.callObjectMethod(
-			"getWeekdays",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	jarray DateFormatSymbols::getShortWeekdays()
-	{
-		return __thiz.callObjectMethod(
-			"getShortWeekdays",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	jarray DateFormatSymbols::getAmPmStrings()
-	{
-		return __thiz.callObjectMethod(
-			"getAmPmStrings",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
@@ -173,6 +145,57 @@ namespace __jni_impl::java::text
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
+	jarray DateFormatSymbols::getShortMonths()
+	{
+		return __thiz.callObjectMethod(
+			"getShortMonths",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	jarray DateFormatSymbols::getShortWeekdays()
+	{
+		return __thiz.callObjectMethod(
+			"getShortWeekdays",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	jarray DateFormatSymbols::getWeekdays()
+	{
+		return __thiz.callObjectMethod(
+			"getWeekdays",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	jarray DateFormatSymbols::getZoneStrings()
+	{
+		return __thiz.callObjectMethod(
+			"getZoneStrings",
+			"()[[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	jint DateFormatSymbols::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	void DateFormatSymbols::setAmPmStrings(jarray arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAmPmStrings",
+			"([Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void DateFormatSymbols::setEras(jarray arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEras",
+			"([Ljava/lang/String;)V",
+			arg0
+		);
+	}
 	void DateFormatSymbols::setLocalPatternChars(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -187,21 +210,6 @@ namespace __jni_impl::java::text
 			"setLocalPatternChars",
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jarray DateFormatSymbols::getZoneStrings()
-	{
-		return __thiz.callObjectMethod(
-			"getZoneStrings",
-			"()[[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	void DateFormatSymbols::setEras(jarray arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEras",
-			"([Ljava/lang/String;)V",
-			arg0
 		);
 	}
 	void DateFormatSymbols::setMonths(jarray arg0)
@@ -220,14 +228,6 @@ namespace __jni_impl::java::text
 			arg0
 		);
 	}
-	void DateFormatSymbols::setWeekdays(jarray arg0)
-	{
-		__thiz.callMethod<void>(
-			"setWeekdays",
-			"([Ljava/lang/String;)V",
-			arg0
-		);
-	}
 	void DateFormatSymbols::setShortWeekdays(jarray arg0)
 	{
 		__thiz.callMethod<void>(
@@ -236,10 +236,10 @@ namespace __jni_impl::java::text
 			arg0
 		);
 	}
-	void DateFormatSymbols::setAmPmStrings(jarray arg0)
+	void DateFormatSymbols::setWeekdays(jarray arg0)
 	{
 		__thiz.callMethod<void>(
-			"setAmPmStrings",
+			"setWeekdays",
 			"([Ljava/lang/String;)V",
 			arg0
 		);
@@ -260,14 +260,14 @@ namespace java::text
 	{
 	public:
 		DateFormatSymbols(QAndroidJniObject obj) { __thiz = obj; }
+		DateFormatSymbols()
+		{
+			__constructor();
+		}
 		DateFormatSymbols(__jni_impl::java::util::Locale arg0)
 		{
 			__constructor(
 				arg0);
-		}
-		DateFormatSymbols()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::text

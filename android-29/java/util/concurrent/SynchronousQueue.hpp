@@ -7,10 +7,6 @@
 #include "../AbstractCollection.hpp"
 #include "../AbstractQueue.hpp"
 
-namespace __jni_impl::java::util::concurrent::locks
-{
-	class ReentrantLock;
-}
 namespace __jni_impl::java::io
 {
 	class ObjectInputStream;
@@ -22,6 +18,10 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::util::concurrent
 {
 	class TimeUnit;
+}
+namespace __jni_impl::java::util::concurrent::locks
+{
+	class ReentrantLock;
 }
 
 namespace __jni_impl::java::util::concurrent
@@ -36,36 +36,36 @@ namespace __jni_impl::java::util::concurrent
 		void __constructor(jboolean arg0);
 		
 		// Methods
-		jboolean remove(jobject arg0);
-		void put(jobject arg0);
-		jstring toString();
 		void clear();
-		jboolean isEmpty();
-		jint size();
-		jobjectArray toArray();
-		jobjectArray toArray(jobjectArray arg0);
-		QAndroidJniObject iterator();
 		jboolean contains(jobject arg0);
-		QAndroidJniObject spliterator();
-		jobject poll(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
-		jobject poll();
-		jobject peek();
 		jboolean containsAll(__jni_impl::__JniBaseClass arg0);
-		jboolean retainAll(__jni_impl::__JniBaseClass arg0);
-		jboolean removeAll(__jni_impl::__JniBaseClass arg0);
-		jobject take();
-		jboolean offer(jobject arg0);
-		jboolean offer(jobject arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2);
-		jint remainingCapacity();
 		jint drainTo(__jni_impl::__JniBaseClass arg0);
 		jint drainTo(__jni_impl::__JniBaseClass arg0, jint arg1);
+		jboolean isEmpty();
+		QAndroidJniObject iterator();
+		jboolean offer(jobject arg0);
+		jboolean offer(jobject arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2);
+		jobject peek();
+		jobject poll();
+		jobject poll(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
+		void put(jobject arg0);
+		jint remainingCapacity();
+		jboolean remove(jobject arg0);
+		jboolean removeAll(__jni_impl::__JniBaseClass arg0);
+		jboolean retainAll(__jni_impl::__JniBaseClass arg0);
+		jint size();
+		QAndroidJniObject spliterator();
+		jobject take();
+		jobjectArray toArray();
+		jobjectArray toArray(jobjectArray arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::java::util::concurrent
 
-#include "locks/ReentrantLock.hpp"
 #include "../../io/ObjectInputStream.hpp"
 #include "../../io/ObjectOutputStream.hpp"
 #include "TimeUnit.hpp"
+#include "locks/ReentrantLock.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {
@@ -89,70 +89,11 @@ namespace __jni_impl::java::util::concurrent
 	}
 	
 	// Methods
-	jboolean SynchronousQueue::remove(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"remove",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	void SynchronousQueue::put(jobject arg0)
-	{
-		__thiz.callMethod<void>(
-			"put",
-			"(Ljava/lang/Object;)V",
-			arg0
-		);
-	}
-	jstring SynchronousQueue::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	void SynchronousQueue::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
 			"()V"
-		);
-	}
-	jboolean SynchronousQueue::isEmpty()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEmpty",
-			"()Z"
-		);
-	}
-	jint SynchronousQueue::size()
-	{
-		return __thiz.callMethod<jint>(
-			"size",
-			"()I"
-		);
-	}
-	jobjectArray SynchronousQueue::toArray()
-	{
-		return __thiz.callObjectMethod(
-			"toArray",
-			"()[Ljava/lang/Object;"
-		).object<jobjectArray>();
-	}
-	jobjectArray SynchronousQueue::toArray(jobjectArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"toArray",
-			"([Ljava/lang/Object;)[Ljava/lang/Object;",
-			arg0
-		).object<jobjectArray>();
-	}
-	QAndroidJniObject SynchronousQueue::iterator()
-	{
-		return __thiz.callObjectMethod(
-			"iterator",
-			"()Ljava/util/Iterator;"
 		);
 	}
 	jboolean SynchronousQueue::contains(jobject arg0)
@@ -163,36 +104,6 @@ namespace __jni_impl::java::util::concurrent
 			arg0
 		);
 	}
-	QAndroidJniObject SynchronousQueue::spliterator()
-	{
-		return __thiz.callObjectMethod(
-			"spliterator",
-			"()Ljava/util/Spliterator;"
-		);
-	}
-	jobject SynchronousQueue::poll(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
-	{
-		return __thiz.callObjectMethod(
-			"poll",
-			"(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
-			arg0,
-			arg1.__jniObject().object()
-		).object<jobject>();
-	}
-	jobject SynchronousQueue::poll()
-	{
-		return __thiz.callObjectMethod(
-			"poll",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	jobject SynchronousQueue::peek()
-	{
-		return __thiz.callObjectMethod(
-			"peek",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
 	jboolean SynchronousQueue::containsAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -201,28 +112,36 @@ namespace __jni_impl::java::util::concurrent
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean SynchronousQueue::retainAll(__jni_impl::__JniBaseClass arg0)
+	jint SynchronousQueue::drainTo(__jni_impl::__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"retainAll",
-			"(Ljava/util/Collection;)Z",
+		return __thiz.callMethod<jint>(
+			"drainTo",
+			"(Ljava/util/Collection;)I",
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean SynchronousQueue::removeAll(__jni_impl::__JniBaseClass arg0)
+	jint SynchronousQueue::drainTo(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"removeAll",
-			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"drainTo",
+			"(Ljava/util/Collection;I)I",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
-	jobject SynchronousQueue::take()
+	jboolean SynchronousQueue::isEmpty()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEmpty",
+			"()Z"
+		);
+	}
+	QAndroidJniObject SynchronousQueue::iterator()
 	{
 		return __thiz.callObjectMethod(
-			"take",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
+			"iterator",
+			"()Ljava/util/Iterator;"
+		);
 	}
 	jboolean SynchronousQueue::offer(jobject arg0)
 	{
@@ -242,6 +161,37 @@ namespace __jni_impl::java::util::concurrent
 			arg2.__jniObject().object()
 		);
 	}
+	jobject SynchronousQueue::peek()
+	{
+		return __thiz.callObjectMethod(
+			"peek",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jobject SynchronousQueue::poll()
+	{
+		return __thiz.callObjectMethod(
+			"poll",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jobject SynchronousQueue::poll(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
+	{
+		return __thiz.callObjectMethod(
+			"poll",
+			"(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;",
+			arg0,
+			arg1.__jniObject().object()
+		).object<jobject>();
+	}
+	void SynchronousQueue::put(jobject arg0)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(Ljava/lang/Object;)V",
+			arg0
+		);
+	}
 	jint SynchronousQueue::remainingCapacity()
 	{
 		return __thiz.callMethod<jint>(
@@ -249,22 +199,72 @@ namespace __jni_impl::java::util::concurrent
 			"()I"
 		);
 	}
-	jint SynchronousQueue::drainTo(__jni_impl::__JniBaseClass arg0)
+	jboolean SynchronousQueue::remove(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"drainTo",
-			"(Ljava/util/Collection;)I",
+		return __thiz.callMethod<jboolean>(
+			"remove",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jboolean SynchronousQueue::removeAll(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"removeAll",
+			"(Ljava/util/Collection;)Z",
 			arg0.__jniObject().object()
 		);
 	}
-	jint SynchronousQueue::drainTo(__jni_impl::__JniBaseClass arg0, jint arg1)
+	jboolean SynchronousQueue::retainAll(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"retainAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jint SynchronousQueue::size()
 	{
 		return __thiz.callMethod<jint>(
-			"drainTo",
-			"(Ljava/util/Collection;I)I",
-			arg0.__jniObject().object(),
-			arg1
+			"size",
+			"()I"
 		);
+	}
+	QAndroidJniObject SynchronousQueue::spliterator()
+	{
+		return __thiz.callObjectMethod(
+			"spliterator",
+			"()Ljava/util/Spliterator;"
+		);
+	}
+	jobject SynchronousQueue::take()
+	{
+		return __thiz.callObjectMethod(
+			"take",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jobjectArray SynchronousQueue::toArray()
+	{
+		return __thiz.callObjectMethod(
+			"toArray",
+			"()[Ljava/lang/Object;"
+		).object<jobjectArray>();
+	}
+	jobjectArray SynchronousQueue::toArray(jobjectArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"toArray",
+			"([Ljava/lang/Object;)[Ljava/lang/Object;",
+			arg0
+		).object<jobjectArray>();
+	}
+	jstring SynchronousQueue::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util::concurrent
 

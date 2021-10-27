@@ -21,8 +21,8 @@ namespace __jni_impl::java::security::cert
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject engineValidate(__jni_impl::java::security::cert::CertPath arg0, __jni_impl::__JniBaseClass arg1);
 		QAndroidJniObject engineGetRevocationChecker();
+		QAndroidJniObject engineValidate(__jni_impl::java::security::cert::CertPath arg0, __jni_impl::__JniBaseClass arg1);
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -42,6 +42,13 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
+	QAndroidJniObject CertPathValidatorSpi::engineGetRevocationChecker()
+	{
+		return __thiz.callObjectMethod(
+			"engineGetRevocationChecker",
+			"()Ljava/security/cert/CertPathChecker;"
+		);
+	}
 	QAndroidJniObject CertPathValidatorSpi::engineValidate(__jni_impl::java::security::cert::CertPath arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -49,13 +56,6 @@ namespace __jni_impl::java::security::cert
 			"(Ljava/security/cert/CertPath;Ljava/security/cert/CertPathParameters;)Ljava/security/cert/CertPathValidatorResult;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject CertPathValidatorSpi::engineGetRevocationChecker()
-	{
-		return __thiz.callObjectMethod(
-			"engineGetRevocationChecker",
-			"()Ljava/security/cert/CertPathChecker;"
 		);
 	}
 } // namespace __jni_impl::java::security::cert

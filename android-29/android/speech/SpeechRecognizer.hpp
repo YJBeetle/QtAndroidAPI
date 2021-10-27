@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::content
 {
-	class Context;
+	class ComponentName;
 }
 namespace __jni_impl::android::content
 {
-	class ComponentName;
+	class Context;
 }
 namespace __jni_impl::android::content
 {
@@ -40,19 +40,19 @@ namespace __jni_impl::android::speech
 		void __constructor();
 		
 		// Methods
-		void destroy();
-		void cancel();
-		static jboolean isRecognitionAvailable(__jni_impl::android::content::Context arg0);
-		static QAndroidJniObject createSpeechRecognizer(__jni_impl::android::content::Context arg0, __jni_impl::android::content::ComponentName arg1);
 		static QAndroidJniObject createSpeechRecognizer(__jni_impl::android::content::Context arg0);
+		static QAndroidJniObject createSpeechRecognizer(__jni_impl::android::content::Context arg0, __jni_impl::android::content::ComponentName arg1);
+		static jboolean isRecognitionAvailable(__jni_impl::android::content::Context arg0);
+		void cancel();
+		void destroy();
 		void setRecognitionListener(__jni_impl::__JniBaseClass arg0);
 		void startListening(__jni_impl::android::content::Intent arg0);
 		void stopListening();
 	};
 } // namespace __jni_impl::android::speech
 
-#include "../content/Context.hpp"
 #include "../content/ComponentName.hpp"
+#include "../content/Context.hpp"
 #include "../content/Intent.hpp"
 
 namespace __jni_impl::android::speech
@@ -147,26 +147,12 @@ namespace __jni_impl::android::speech
 	}
 	
 	// Methods
-	void SpeechRecognizer::destroy()
+	QAndroidJniObject SpeechRecognizer::createSpeechRecognizer(__jni_impl::android::content::Context arg0)
 	{
-		__thiz.callMethod<void>(
-			"destroy",
-			"()V"
-		);
-	}
-	void SpeechRecognizer::cancel()
-	{
-		__thiz.callMethod<void>(
-			"cancel",
-			"()V"
-		);
-	}
-	jboolean SpeechRecognizer::isRecognitionAvailable(__jni_impl::android::content::Context arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return QAndroidJniObject::callStaticObjectMethod(
 			"android.speech.SpeechRecognizer",
-			"isRecognitionAvailable",
-			"(Landroid/content/Context;)Z",
+			"createSpeechRecognizer",
+			"(Landroid/content/Context;)Landroid/speech/SpeechRecognizer;",
 			arg0.__jniObject().object()
 		);
 	}
@@ -180,13 +166,27 @@ namespace __jni_impl::android::speech
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject SpeechRecognizer::createSpeechRecognizer(__jni_impl::android::content::Context arg0)
+	jboolean SpeechRecognizer::isRecognitionAvailable(__jni_impl::android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.speech.SpeechRecognizer",
-			"createSpeechRecognizer",
-			"(Landroid/content/Context;)Landroid/speech/SpeechRecognizer;",
+			"isRecognitionAvailable",
+			"(Landroid/content/Context;)Z",
 			arg0.__jniObject().object()
+		);
+	}
+	void SpeechRecognizer::cancel()
+	{
+		__thiz.callMethod<void>(
+			"cancel",
+			"()V"
+		);
+	}
+	void SpeechRecognizer::destroy()
+	{
+		__thiz.callMethod<void>(
+			"destroy",
+			"()V"
 		);
 	}
 	void SpeechRecognizer::setRecognitionListener(__jni_impl::__JniBaseClass arg0)

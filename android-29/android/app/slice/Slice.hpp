@@ -5,17 +5,17 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
+namespace __jni_impl::android::app::slice
 {
-	class Parcel;
+	class SliceSpec;
 }
 namespace __jni_impl::android::net
 {
 	class Uri;
 }
-namespace __jni_impl::android::app::slice
+namespace __jni_impl::android::os
 {
-	class SliceSpec;
+	class Parcel;
 }
 
 namespace __jni_impl::android::app::slice
@@ -60,20 +60,20 @@ namespace __jni_impl::android::app::slice
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		QAndroidJniObject getUri();
-		QAndroidJniObject getSpec();
-		QAndroidJniObject getItems();
-		QAndroidJniObject getHints();
-		jboolean isCallerNeeded();
 		jint describeContents();
+		QAndroidJniObject getHints();
+		QAndroidJniObject getItems();
+		QAndroidJniObject getSpec();
+		QAndroidJniObject getUri();
+		jboolean isCallerNeeded();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::slice
 
-#include "../../os/Parcel.hpp"
-#include "../../net/Uri.hpp"
 #include "SliceSpec.hpp"
+#include "../../net/Uri.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::app::slice
 {
@@ -336,32 +336,11 @@ namespace __jni_impl::android::app::slice
 	}
 	
 	// Methods
-	jstring Slice::toString()
+	jint Slice::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject Slice::getUri()
-	{
-		return __thiz.callObjectMethod(
-			"getUri",
-			"()Landroid/net/Uri;"
-		);
-	}
-	QAndroidJniObject Slice::getSpec()
-	{
-		return __thiz.callObjectMethod(
-			"getSpec",
-			"()Landroid/app/slice/SliceSpec;"
-		);
-	}
-	QAndroidJniObject Slice::getItems()
-	{
-		return __thiz.callObjectMethod(
-			"getItems",
-			"()Ljava/util/List;"
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
 		);
 	}
 	QAndroidJniObject Slice::getHints()
@@ -371,6 +350,27 @@ namespace __jni_impl::android::app::slice
 			"()Ljava/util/List;"
 		);
 	}
+	QAndroidJniObject Slice::getItems()
+	{
+		return __thiz.callObjectMethod(
+			"getItems",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject Slice::getSpec()
+	{
+		return __thiz.callObjectMethod(
+			"getSpec",
+			"()Landroid/app/slice/SliceSpec;"
+		);
+	}
+	QAndroidJniObject Slice::getUri()
+	{
+		return __thiz.callObjectMethod(
+			"getUri",
+			"()Landroid/net/Uri;"
+		);
+	}
 	jboolean Slice::isCallerNeeded()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -378,12 +378,12 @@ namespace __jni_impl::android::app::slice
 			"()Z"
 		);
 	}
-	jint Slice::describeContents()
+	jstring Slice::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Slice::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

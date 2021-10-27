@@ -17,12 +17,12 @@ namespace __jni_impl::java::io
 		void __constructor();
 		
 		// Methods
-		void write(jbyteArray arg0, jint arg1, jint arg2);
+		static QAndroidJniObject nullOutputStream();
+		void close();
+		void flush();
 		void write(jbyteArray arg0);
 		void write(jint arg0);
-		void flush();
-		void close();
-		static QAndroidJniObject nullOutputStream();
+		void write(jbyteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::java::io
 
@@ -41,14 +41,26 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	void OutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
+	QAndroidJniObject OutputStream::nullOutputStream()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.io.OutputStream",
+			"nullOutputStream",
+			"()Ljava/io/OutputStream;"
+		);
+	}
+	void OutputStream::close()
 	{
 		__thiz.callMethod<void>(
-			"write",
-			"([BII)V",
-			arg0,
-			arg1,
-			arg2
+			"close",
+			"()V"
+		);
+	}
+	void OutputStream::flush()
+	{
+		__thiz.callMethod<void>(
+			"flush",
+			"()V"
 		);
 	}
 	void OutputStream::write(jbyteArray arg0)
@@ -67,26 +79,14 @@ namespace __jni_impl::java::io
 			arg0
 		);
 	}
-	void OutputStream::flush()
+	void OutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
-			"flush",
-			"()V"
-		);
-	}
-	void OutputStream::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
-	}
-	QAndroidJniObject OutputStream::nullOutputStream()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.io.OutputStream",
-			"nullOutputStream",
-			"()Ljava/io/OutputStream;"
+			"write",
+			"([BII)V",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 } // namespace __jni_impl::java::io

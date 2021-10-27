@@ -5,6 +5,14 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::gesture
+{
+	class OrientedBoundingBox;
+}
+namespace __jni_impl::android::graphics
+{
+	class Path;
+}
 namespace __jni_impl::android::graphics
 {
 	class RectF;
@@ -12,14 +20,6 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::java::util
 {
 	class ArrayList;
-}
-namespace __jni_impl::android::graphics
-{
-	class Path;
-}
-namespace __jni_impl::android::gesture
-{
-	class OrientedBoundingBox;
 }
 
 namespace __jni_impl::android::gesture
@@ -36,18 +36,18 @@ namespace __jni_impl::android::gesture
 		void __constructor(__jni_impl::java::util::ArrayList arg0);
 		
 		// Methods
+		void clearPath();
 		jobject clone();
+		QAndroidJniObject computeOrientedBoundingBox();
 		QAndroidJniObject getPath();
 		QAndroidJniObject toPath(jfloat arg0, jfloat arg1, jint arg2);
-		void clearPath();
-		QAndroidJniObject computeOrientedBoundingBox();
 	};
 } // namespace __jni_impl::android::gesture
 
+#include "OrientedBoundingBox.hpp"
+#include "../graphics/Path.hpp"
 #include "../graphics/RectF.hpp"
 #include "../../java/util/ArrayList.hpp"
-#include "../graphics/Path.hpp"
-#include "OrientedBoundingBox.hpp"
 
 namespace __jni_impl::android::gesture
 {
@@ -84,12 +84,26 @@ namespace __jni_impl::android::gesture
 	}
 	
 	// Methods
+	void GestureStroke::clearPath()
+	{
+		__thiz.callMethod<void>(
+			"clearPath",
+			"()V"
+		);
+	}
 	jobject GestureStroke::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
+	}
+	QAndroidJniObject GestureStroke::computeOrientedBoundingBox()
+	{
+		return __thiz.callObjectMethod(
+			"computeOrientedBoundingBox",
+			"()Landroid/gesture/OrientedBoundingBox;"
+		);
 	}
 	QAndroidJniObject GestureStroke::getPath()
 	{
@@ -106,20 +120,6 @@ namespace __jni_impl::android::gesture
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	void GestureStroke::clearPath()
-	{
-		__thiz.callMethod<void>(
-			"clearPath",
-			"()V"
-		);
-	}
-	QAndroidJniObject GestureStroke::computeOrientedBoundingBox()
-	{
-		return __thiz.callObjectMethod(
-			"computeOrientedBoundingBox",
-			"()Landroid/gesture/OrientedBoundingBox;"
 		);
 	}
 } // namespace __jni_impl::android::gesture

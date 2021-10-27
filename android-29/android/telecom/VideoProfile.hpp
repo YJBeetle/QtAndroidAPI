@@ -32,18 +32,18 @@ namespace __jni_impl::android::telecom
 		void __constructor(jint arg0, jint arg1);
 		
 		// Methods
-		jstring toString();
-		jint getVideoState();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getQuality();
-		static jstring videoStateToString(jint arg0);
 		static jboolean isAudioOnly(jint arg0);
-		static jboolean isVideo(jint arg0);
-		static jboolean isTransmissionEnabled(jint arg0);
-		static jboolean isReceptionEnabled(jint arg0);
 		static jboolean isBidirectional(jint arg0);
 		static jboolean isPaused(jint arg0);
+		static jboolean isReceptionEnabled(jint arg0);
+		static jboolean isTransmissionEnabled(jint arg0);
+		static jboolean isVideo(jint arg0);
+		static jstring videoStateToString(jint arg0);
+		jint describeContents();
+		jint getQuality();
+		jint getVideoState();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -144,84 +144,11 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
-	jstring VideoProfile::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint VideoProfile::getVideoState()
-	{
-		return __thiz.callMethod<jint>(
-			"getVideoState",
-			"()I"
-		);
-	}
-	jint VideoProfile::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void VideoProfile::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jint VideoProfile::getQuality()
-	{
-		return __thiz.callMethod<jint>(
-			"getQuality",
-			"()I"
-		);
-	}
-	jstring VideoProfile::videoStateToString(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telecom.VideoProfile",
-			"videoStateToString",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
 	jboolean VideoProfile::isAudioOnly(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.telecom.VideoProfile",
 			"isAudioOnly",
-			"(I)Z",
-			arg0
-		);
-	}
-	jboolean VideoProfile::isVideo(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.telecom.VideoProfile",
-			"isVideo",
-			"(I)Z",
-			arg0
-		);
-	}
-	jboolean VideoProfile::isTransmissionEnabled(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.telecom.VideoProfile",
-			"isTransmissionEnabled",
-			"(I)Z",
-			arg0
-		);
-	}
-	jboolean VideoProfile::isReceptionEnabled(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.telecom.VideoProfile",
-			"isReceptionEnabled",
 			"(I)Z",
 			arg0
 		);
@@ -242,6 +169,79 @@ namespace __jni_impl::android::telecom
 			"isPaused",
 			"(I)Z",
 			arg0
+		);
+	}
+	jboolean VideoProfile::isReceptionEnabled(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.telecom.VideoProfile",
+			"isReceptionEnabled",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean VideoProfile::isTransmissionEnabled(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.telecom.VideoProfile",
+			"isTransmissionEnabled",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean VideoProfile::isVideo(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.telecom.VideoProfile",
+			"isVideo",
+			"(I)Z",
+			arg0
+		);
+	}
+	jstring VideoProfile::videoStateToString(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telecom.VideoProfile",
+			"videoStateToString",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jint VideoProfile::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	jint VideoProfile::getQuality()
+	{
+		return __thiz.callMethod<jint>(
+			"getQuality",
+			"()I"
+		);
+	}
+	jint VideoProfile::getVideoState()
+	{
+		return __thiz.callMethod<jint>(
+			"getVideoState",
+			"()I"
+		);
+	}
+	jstring VideoProfile::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void VideoProfile::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::telecom

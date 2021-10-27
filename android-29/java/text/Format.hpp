@@ -11,15 +11,15 @@ namespace __jni_impl::java::lang
 }
 namespace __jni_impl::java::text
 {
+	class AttributedCharacterIterator_Attribute;
+}
+namespace __jni_impl::java::text
+{
 	class FieldPosition;
 }
 namespace __jni_impl::java::text
 {
 	class ParsePosition;
-}
-namespace __jni_impl::java::text
-{
-	class AttributedCharacterIterator_Attribute;
 }
 
 namespace __jni_impl::java::text
@@ -34,20 +34,20 @@ namespace __jni_impl::java::text
 		
 		// Methods
 		jobject clone();
-		QAndroidJniObject format(jobject arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
 		jstring format(jobject arg0);
+		QAndroidJniObject format(jobject arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2);
+		QAndroidJniObject formatToCharacterIterator(jobject arg0);
 		jobject parseObject(jstring arg0);
 		jobject parseObject(const QString &arg0);
 		jobject parseObject(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
 		jobject parseObject(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
-		QAndroidJniObject formatToCharacterIterator(jobject arg0);
 	};
 } // namespace __jni_impl::java::text
 
 #include "../lang/StringBuffer.hpp"
+#include "AttributedCharacterIterator_Attribute.hpp"
 #include "FieldPosition.hpp"
 #include "ParsePosition.hpp"
-#include "AttributedCharacterIterator_Attribute.hpp"
 
 namespace __jni_impl::java::text
 {
@@ -69,6 +69,14 @@ namespace __jni_impl::java::text
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
+	jstring Format::format(jobject arg0)
+	{
+		return __thiz.callObjectMethod(
+			"format",
+			"(Ljava/lang/Object;)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
 	QAndroidJniObject Format::format(jobject arg0, __jni_impl::java::lang::StringBuffer arg1, __jni_impl::java::text::FieldPosition arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -79,13 +87,13 @@ namespace __jni_impl::java::text
 			arg2.__jniObject().object()
 		);
 	}
-	jstring Format::format(jobject arg0)
+	QAndroidJniObject Format::formatToCharacterIterator(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
-			"format",
-			"(Ljava/lang/Object;)Ljava/lang/String;",
+			"formatToCharacterIterator",
+			"(Ljava/lang/Object;)Ljava/text/AttributedCharacterIterator;",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jobject Format::parseObject(jstring arg0)
 	{
@@ -120,14 +128,6 @@ namespace __jni_impl::java::text
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		).object<jobject>();
-	}
-	QAndroidJniObject Format::formatToCharacterIterator(jobject arg0)
-	{
-		return __thiz.callObjectMethod(
-			"formatToCharacterIterator",
-			"(Ljava/lang/Object;)Ljava/text/AttributedCharacterIterator;",
-			arg0
-		);
 	}
 } // namespace __jni_impl::java::text
 

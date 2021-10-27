@@ -17,10 +17,10 @@ namespace __jni_impl::android::print
 		void __constructor();
 		
 		// Methods
-		void onWriteFinished(jarray arg0);
+		void onWriteCancelled();
 		void onWriteFailed(jstring arg0);
 		void onWriteFailed(const QString &arg0);
-		void onWriteCancelled();
+		void onWriteFinished(jarray arg0);
 	};
 } // namespace __jni_impl::android::print
 
@@ -38,12 +38,11 @@ namespace __jni_impl::android::print
 	}
 	
 	// Methods
-	void PrintDocumentAdapter_WriteResultCallback::onWriteFinished(jarray arg0)
+	void PrintDocumentAdapter_WriteResultCallback::onWriteCancelled()
 	{
 		__thiz.callMethod<void>(
-			"onWriteFinished",
-			"([Landroid/print/PageRange;)V",
-			arg0
+			"onWriteCancelled",
+			"()V"
 		);
 	}
 	void PrintDocumentAdapter_WriteResultCallback::onWriteFailed(jstring arg0)
@@ -62,11 +61,12 @@ namespace __jni_impl::android::print
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void PrintDocumentAdapter_WriteResultCallback::onWriteCancelled()
+	void PrintDocumentAdapter_WriteResultCallback::onWriteFinished(jarray arg0)
 	{
 		__thiz.callMethod<void>(
-			"onWriteCancelled",
-			"()V"
+			"onWriteFinished",
+			"([Landroid/print/PageRange;)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::print

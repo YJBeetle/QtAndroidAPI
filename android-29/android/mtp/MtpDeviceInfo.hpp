@@ -17,14 +17,14 @@ namespace __jni_impl::android::mtp
 		void __constructor();
 		
 		// Methods
-		jstring getVersion();
-		jintArray getOperationsSupported();
 		jintArray getEventsSupported();
-		jboolean isOperationSupported(jint arg0);
-		jboolean isEventSupported(jint arg0);
 		jstring getManufacturer();
 		jstring getModel();
+		jintArray getOperationsSupported();
 		jstring getSerialNumber();
+		jstring getVersion();
+		jboolean isEventSupported(jint arg0);
+		jboolean isOperationSupported(jint arg0);
 	};
 } // namespace __jni_impl::android::mtp
 
@@ -42,42 +42,12 @@ namespace __jni_impl::android::mtp
 	}
 	
 	// Methods
-	jstring MtpDeviceInfo::getVersion()
-	{
-		return __thiz.callObjectMethod(
-			"getVersion",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jintArray MtpDeviceInfo::getOperationsSupported()
-	{
-		return __thiz.callObjectMethod(
-			"getOperationsSupported",
-			"()[I"
-		).object<jintArray>();
-	}
 	jintArray MtpDeviceInfo::getEventsSupported()
 	{
 		return __thiz.callObjectMethod(
 			"getEventsSupported",
 			"()[I"
 		).object<jintArray>();
-	}
-	jboolean MtpDeviceInfo::isOperationSupported(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isOperationSupported",
-			"(I)Z",
-			arg0
-		);
-	}
-	jboolean MtpDeviceInfo::isEventSupported(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEventSupported",
-			"(I)Z",
-			arg0
-		);
 	}
 	jstring MtpDeviceInfo::getManufacturer()
 	{
@@ -93,12 +63,42 @@ namespace __jni_impl::android::mtp
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	jintArray MtpDeviceInfo::getOperationsSupported()
+	{
+		return __thiz.callObjectMethod(
+			"getOperationsSupported",
+			"()[I"
+		).object<jintArray>();
+	}
 	jstring MtpDeviceInfo::getSerialNumber()
 	{
 		return __thiz.callObjectMethod(
 			"getSerialNumber",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jstring MtpDeviceInfo::getVersion()
+	{
+		return __thiz.callObjectMethod(
+			"getVersion",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jboolean MtpDeviceInfo::isEventSupported(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEventSupported",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean MtpDeviceInfo::isOperationSupported(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isOperationSupported",
+			"(I)Z",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::mtp
 

@@ -5,6 +5,10 @@
 
 #include "../../../__JniBaseClass.hpp"
 
+namespace __jni_impl::java::io
+{
+	class ObjectInputStream;
+}
 namespace __jni_impl::java::time
 {
 	class DayOfWeek;
@@ -12,10 +16,6 @@ namespace __jni_impl::java::time
 namespace __jni_impl::java::util
 {
 	class Locale;
-}
-namespace __jni_impl::java::io
-{
-	class ObjectInputStream;
 }
 
 namespace __jni_impl::java::time::temporal
@@ -32,24 +32,24 @@ namespace __jni_impl::java::time::temporal
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		static QAndroidJniObject of(__jni_impl::java::util::Locale arg0);
 		static QAndroidJniObject of(__jni_impl::java::time::DayOfWeek arg0, jint arg1);
 		QAndroidJniObject dayOfWeek();
+		jboolean equals(jobject arg0);
 		QAndroidJniObject getFirstDayOfWeek();
 		jint getMinimalDaysInFirstWeek();
-		QAndroidJniObject weekOfYear();
-		QAndroidJniObject weekOfMonth();
+		jint hashCode();
+		jstring toString();
 		QAndroidJniObject weekBasedYear();
+		QAndroidJniObject weekOfMonth();
 		QAndroidJniObject weekOfWeekBasedYear();
+		QAndroidJniObject weekOfYear();
 	};
 } // namespace __jni_impl::java::time::temporal
 
+#include "../../io/ObjectInputStream.hpp"
 #include "../DayOfWeek.hpp"
 #include "../../util/Locale.hpp"
-#include "../../io/ObjectInputStream.hpp"
 
 namespace __jni_impl::java::time::temporal
 {
@@ -88,28 +88,6 @@ namespace __jni_impl::java::time::temporal
 	}
 	
 	// Methods
-	jboolean WeekFields::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring WeekFields::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint WeekFields::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	QAndroidJniObject WeekFields::of(__jni_impl::java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -136,6 +114,14 @@ namespace __jni_impl::java::time::temporal
 			"()Ljava/time/temporal/TemporalField;"
 		);
 	}
+	jboolean WeekFields::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
 	QAndroidJniObject WeekFields::getFirstDayOfWeek()
 	{
 		return __thiz.callObjectMethod(
@@ -150,10 +136,24 @@ namespace __jni_impl::java::time::temporal
 			"()I"
 		);
 	}
-	QAndroidJniObject WeekFields::weekOfYear()
+	jint WeekFields::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring WeekFields::toString()
 	{
 		return __thiz.callObjectMethod(
-			"weekOfYear",
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject WeekFields::weekBasedYear()
+	{
+		return __thiz.callObjectMethod(
+			"weekBasedYear",
 			"()Ljava/time/temporal/TemporalField;"
 		);
 	}
@@ -164,17 +164,17 @@ namespace __jni_impl::java::time::temporal
 			"()Ljava/time/temporal/TemporalField;"
 		);
 	}
-	QAndroidJniObject WeekFields::weekBasedYear()
-	{
-		return __thiz.callObjectMethod(
-			"weekBasedYear",
-			"()Ljava/time/temporal/TemporalField;"
-		);
-	}
 	QAndroidJniObject WeekFields::weekOfWeekBasedYear()
 	{
 		return __thiz.callObjectMethod(
 			"weekOfWeekBasedYear",
+			"()Ljava/time/temporal/TemporalField;"
+		);
+	}
+	QAndroidJniObject WeekFields::weekOfYear()
+	{
+		return __thiz.callObjectMethod(
+			"weekOfYear",
 			"()Ljava/time/temporal/TemporalField;"
 		);
 	}

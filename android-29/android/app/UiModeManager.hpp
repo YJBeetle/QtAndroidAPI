@@ -27,11 +27,11 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		void enableCarMode(jint arg0);
 		void disableCarMode(jint arg0);
+		void enableCarMode(jint arg0);
 		jint getCurrentModeType();
-		void setNightMode(jint arg0);
 		jint getNightMode();
+		void setNightMode(jint arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -123,18 +123,18 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void UiModeManager::enableCarMode(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"enableCarMode",
-			"(I)V",
-			arg0
-		);
-	}
 	void UiModeManager::disableCarMode(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"disableCarMode",
+			"(I)V",
+			arg0
+		);
+	}
+	void UiModeManager::enableCarMode(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"enableCarMode",
 			"(I)V",
 			arg0
 		);
@@ -146,19 +146,19 @@ namespace __jni_impl::android::app
 			"()I"
 		);
 	}
+	jint UiModeManager::getNightMode()
+	{
+		return __thiz.callMethod<jint>(
+			"getNightMode",
+			"()I"
+		);
+	}
 	void UiModeManager::setNightMode(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setNightMode",
 			"(I)V",
 			arg0
-		);
-	}
-	jint UiModeManager::getNightMode()
-	{
-		return __thiz.callMethod<jint>(
-			"getNightMode",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::app

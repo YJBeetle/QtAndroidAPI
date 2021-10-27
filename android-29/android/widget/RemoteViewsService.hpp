@@ -24,8 +24,8 @@ namespace __jni_impl::android::widget
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject onGetViewFactory(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		QAndroidJniObject onGetViewFactory(__jni_impl::android::content::Intent arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -45,19 +45,19 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	QAndroidJniObject RemoteViewsService::onGetViewFactory(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onGetViewFactory",
-			"(Landroid/content/Intent;)Landroid/widget/RemoteViewsService$RemoteViewsFactory;",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject RemoteViewsService::onBind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject RemoteViewsService::onGetViewFactory(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onGetViewFactory",
+			"(Landroid/content/Intent;)Landroid/widget/RemoteViewsService$RemoteViewsFactory;",
 			arg0.__jniObject().object()
 		);
 	}

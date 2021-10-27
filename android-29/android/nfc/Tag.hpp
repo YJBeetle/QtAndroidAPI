@@ -22,10 +22,10 @@ namespace __jni_impl::android::nfc
 		void __constructor();
 		
 		// Methods
-		jstring toString();
+		jint describeContents();
 		jbyteArray getId();
 		jarray getTechList();
-		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::nfc
@@ -53,12 +53,12 @@ namespace __jni_impl::android::nfc
 	}
 	
 	// Methods
-	jstring Tag::toString()
+	jint Tag::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
 	jbyteArray Tag::getId()
 	{
@@ -74,12 +74,12 @@ namespace __jni_impl::android::nfc
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	jint Tag::describeContents()
+	jstring Tag::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Tag::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

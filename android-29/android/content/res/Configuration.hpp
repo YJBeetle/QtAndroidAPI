@@ -5,10 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util
-{
-	class Locale;
-}
 namespace __jni_impl::android::os
 {
 	class LocaleList;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::java::util
+{
+	class Locale;
 }
 
 namespace __jni_impl::android::content::res
@@ -123,35 +123,35 @@ namespace __jni_impl::android::content::res
 		void __constructor(__jni_impl::android::content::res::Configuration arg0);
 		
 		// Methods
-		jboolean equals(__jni_impl::android::content::res::Configuration arg0);
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
+		static jboolean needNewResources(jint arg0, jint arg1);
 		jint compareTo(__jni_impl::android::content::res::Configuration arg0);
 		jint compareTo(jobject arg0);
-		void setLocale(__jni_impl::java::util::Locale arg0);
+		jint describeContents();
 		jint diff(__jni_impl::android::content::res::Configuration arg0);
-		QAndroidJniObject getLocales();
+		jboolean equals(__jni_impl::android::content::res::Configuration arg0);
+		jboolean equals(jobject arg0);
 		jint getLayoutDirection();
-		void setLayoutDirection(__jni_impl::java::util::Locale arg0);
+		QAndroidJniObject getLocales();
+		jint hashCode();
 		jboolean isLayoutSizeAtLeast(jint arg0);
-		void setTo(__jni_impl::android::content::res::Configuration arg0);
-		void setToDefaults();
-		jint updateFrom(__jni_impl::android::content::res::Configuration arg0);
-		static jboolean needNewResources(jint arg0, jint arg1);
-		void setLocales(__jni_impl::android::os::LocaleList arg0);
+		jboolean isScreenHdr();
 		jboolean isScreenRound();
 		jboolean isScreenWideColorGamut();
-		jboolean isScreenHdr();
 		void readFromParcel(__jni_impl::android::os::Parcel arg0);
-		jint describeContents();
+		void setLayoutDirection(__jni_impl::java::util::Locale arg0);
+		void setLocale(__jni_impl::java::util::Locale arg0);
+		void setLocales(__jni_impl::android::os::LocaleList arg0);
+		void setTo(__jni_impl::android::content::res::Configuration arg0);
+		void setToDefaults();
+		jstring toString();
+		jint updateFrom(__jni_impl::android::content::res::Configuration arg0);
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::res
 
-#include "../../../java/util/Locale.hpp"
 #include "../../os/LocaleList.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::content::res
 {
@@ -810,34 +810,14 @@ namespace __jni_impl::android::content::res
 	}
 	
 	// Methods
-	jboolean Configuration::equals(__jni_impl::android::content::res::Configuration arg0)
+	jboolean Configuration::needNewResources(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Landroid/content/res/Configuration;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean Configuration::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring Configuration::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint Configuration::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.content.res.Configuration",
+			"needNewResources",
+			"(II)Z",
+			arg0,
+			arg1
 		);
 	}
 	jint Configuration::compareTo(__jni_impl::android::content::res::Configuration arg0)
@@ -856,12 +836,11 @@ namespace __jni_impl::android::content::res
 			arg0
 		);
 	}
-	void Configuration::setLocale(__jni_impl::java::util::Locale arg0)
+	jint Configuration::describeContents()
 	{
-		__thiz.callMethod<void>(
-			"setLocale",
-			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
 		);
 	}
 	jint Configuration::diff(__jni_impl::android::content::res::Configuration arg0)
@@ -872,11 +851,20 @@ namespace __jni_impl::android::content::res
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Configuration::getLocales()
+	jboolean Configuration::equals(__jni_impl::android::content::res::Configuration arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getLocales",
-			"()Landroid/os/LocaleList;"
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Landroid/content/res/Configuration;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean Configuration::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 	jint Configuration::getLayoutDirection()
@@ -884,6 +872,57 @@ namespace __jni_impl::android::content::res
 		return __thiz.callMethod<jint>(
 			"getLayoutDirection",
 			"()I"
+		);
+	}
+	QAndroidJniObject Configuration::getLocales()
+	{
+		return __thiz.callObjectMethod(
+			"getLocales",
+			"()Landroid/os/LocaleList;"
+		);
+	}
+	jint Configuration::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jboolean Configuration::isLayoutSizeAtLeast(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLayoutSizeAtLeast",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean Configuration::isScreenHdr()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isScreenHdr",
+			"()Z"
+		);
+	}
+	jboolean Configuration::isScreenRound()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isScreenRound",
+			"()Z"
+		);
+	}
+	jboolean Configuration::isScreenWideColorGamut()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isScreenWideColorGamut",
+			"()Z"
+		);
+	}
+	void Configuration::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void Configuration::setLayoutDirection(__jni_impl::java::util::Locale arg0)
@@ -894,12 +933,20 @@ namespace __jni_impl::android::content::res
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean Configuration::isLayoutSizeAtLeast(jint arg0)
+	void Configuration::setLocale(__jni_impl::java::util::Locale arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isLayoutSizeAtLeast",
-			"(I)Z",
-			arg0
+		__thiz.callMethod<void>(
+			"setLocale",
+			"(Ljava/util/Locale;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Configuration::setLocales(__jni_impl::android::os::LocaleList arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLocales",
+			"(Landroid/os/LocaleList;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void Configuration::setTo(__jni_impl::android::content::res::Configuration arg0)
@@ -917,66 +964,19 @@ namespace __jni_impl::android::content::res
 			"()V"
 		);
 	}
+	jstring Configuration::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jint Configuration::updateFrom(__jni_impl::android::content::res::Configuration arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"updateFrom",
 			"(Landroid/content/res/Configuration;)I",
 			arg0.__jniObject().object()
-		);
-	}
-	jboolean Configuration::needNewResources(jint arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.content.res.Configuration",
-			"needNewResources",
-			"(II)Z",
-			arg0,
-			arg1
-		);
-	}
-	void Configuration::setLocales(__jni_impl::android::os::LocaleList arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLocales",
-			"(Landroid/os/LocaleList;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean Configuration::isScreenRound()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isScreenRound",
-			"()Z"
-		);
-	}
-	jboolean Configuration::isScreenWideColorGamut()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isScreenWideColorGamut",
-			"()Z"
-		);
-	}
-	jboolean Configuration::isScreenHdr()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isScreenHdr",
-			"()Z"
-		);
-	}
-	void Configuration::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jint Configuration::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
 		);
 	}
 	void Configuration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

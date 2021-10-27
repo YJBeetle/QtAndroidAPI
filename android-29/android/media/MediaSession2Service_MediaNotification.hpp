@@ -21,8 +21,8 @@ namespace __jni_impl::android::media
 		void __constructor(jint arg0, __jni_impl::android::app::Notification arg1);
 		
 		// Methods
-		jint getNotificationId();
 		QAndroidJniObject getNotification();
+		jint getNotificationId();
 	};
 } // namespace __jni_impl::android::media
 
@@ -44,18 +44,18 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jint MediaSession2Service_MediaNotification::getNotificationId()
-	{
-		return __thiz.callMethod<jint>(
-			"getNotificationId",
-			"()I"
-		);
-	}
 	QAndroidJniObject MediaSession2Service_MediaNotification::getNotification()
 	{
 		return __thiz.callObjectMethod(
 			"getNotification",
 			"()Landroid/app/Notification;"
+		);
+	}
+	jint MediaSession2Service_MediaNotification::getNotificationId()
+	{
+		return __thiz.callMethod<jint>(
+			"getNotificationId",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::media

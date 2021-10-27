@@ -8,13 +8,13 @@
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
-namespace __jni_impl::android::speech::tts
-{
-	class SynthesisRequest;
-}
 namespace __jni_impl::android::content
 {
 	class Intent;
+}
+namespace __jni_impl::android::speech::tts
+{
+	class SynthesisRequest;
 }
 
 namespace __jni_impl::android::speech::tts
@@ -28,21 +28,21 @@ namespace __jni_impl::android::speech::tts
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject onGetVoices();
-		jstring onGetDefaultVoiceNameFor(jstring arg0, jstring arg1, jstring arg2);
-		jstring onGetDefaultVoiceNameFor(const QString &arg0, const QString &arg1, const QString &arg2);
-		jint onLoadVoice(jstring arg0);
-		jint onLoadVoice(const QString &arg0);
-		jint onIsValidVoiceName(jstring arg0);
-		jint onIsValidVoiceName(const QString &arg0);
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		void onCreate();
 		void onDestroy();
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		jstring onGetDefaultVoiceNameFor(jstring arg0, jstring arg1, jstring arg2);
+		jstring onGetDefaultVoiceNameFor(const QString &arg0, const QString &arg1, const QString &arg2);
+		QAndroidJniObject onGetVoices();
+		jint onIsValidVoiceName(jstring arg0);
+		jint onIsValidVoiceName(const QString &arg0);
+		jint onLoadVoice(jstring arg0);
+		jint onLoadVoice(const QString &arg0);
 	};
 } // namespace __jni_impl::android::speech::tts
 
-#include "SynthesisRequest.hpp"
 #include "../../content/Intent.hpp"
+#include "SynthesisRequest.hpp"
 
 namespace __jni_impl::android::speech::tts
 {
@@ -58,11 +58,26 @@ namespace __jni_impl::android::speech::tts
 	}
 	
 	// Methods
-	QAndroidJniObject TextToSpeechService::onGetVoices()
+	QAndroidJniObject TextToSpeechService::onBind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
-			"onGetVoices",
-			"()Ljava/util/List;"
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
+		);
+	}
+	void TextToSpeechService::onCreate()
+	{
+		__thiz.callMethod<void>(
+			"onCreate",
+			"()V"
+		);
+	}
+	void TextToSpeechService::onDestroy()
+	{
+		__thiz.callMethod<void>(
+			"onDestroy",
+			"()V"
 		);
 	}
 	jstring TextToSpeechService::onGetDefaultVoiceNameFor(jstring arg0, jstring arg1, jstring arg2)
@@ -85,20 +100,11 @@ namespace __jni_impl::android::speech::tts
 			QAndroidJniObject::fromString(arg2).object<jstring>()
 		).object<jstring>();
 	}
-	jint TextToSpeechService::onLoadVoice(jstring arg0)
+	QAndroidJniObject TextToSpeechService::onGetVoices()
 	{
-		return __thiz.callMethod<jint>(
-			"onLoadVoice",
-			"(Ljava/lang/String;)I",
-			arg0
-		);
-	}
-	jint TextToSpeechService::onLoadVoice(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"onLoadVoice",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+		return __thiz.callObjectMethod(
+			"onGetVoices",
+			"()Ljava/util/List;"
 		);
 	}
 	jint TextToSpeechService::onIsValidVoiceName(jstring arg0)
@@ -117,26 +123,20 @@ namespace __jni_impl::android::speech::tts
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void TextToSpeechService::onCreate()
+	jint TextToSpeechService::onLoadVoice(jstring arg0)
 	{
-		__thiz.callMethod<void>(
-			"onCreate",
-			"()V"
+		return __thiz.callMethod<jint>(
+			"onLoadVoice",
+			"(Ljava/lang/String;)I",
+			arg0
 		);
 	}
-	void TextToSpeechService::onDestroy()
+	jint TextToSpeechService::onLoadVoice(const QString &arg0)
 	{
-		__thiz.callMethod<void>(
-			"onDestroy",
-			"()V"
-		);
-	}
-	QAndroidJniObject TextToSpeechService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"onLoadVoice",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::speech::tts

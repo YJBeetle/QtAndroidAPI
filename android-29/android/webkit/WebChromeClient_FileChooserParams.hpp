@@ -24,13 +24,13 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		jint getMode();
 		static jarray parseResult(jint arg0, __jni_impl::android::content::Intent arg1);
-		jarray getAcceptTypes();
-		jboolean isCaptureEnabled();
-		jstring getFilenameHint();
 		QAndroidJniObject createIntent();
+		jarray getAcceptTypes();
+		jstring getFilenameHint();
+		jint getMode();
 		jstring getTitle();
+		jboolean isCaptureEnabled();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -71,13 +71,6 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	jint WebChromeClient_FileChooserParams::getMode()
-	{
-		return __thiz.callMethod<jint>(
-			"getMode",
-			"()I"
-		);
-	}
 	jarray WebChromeClient_FileChooserParams::parseResult(jint arg0, __jni_impl::android::content::Intent arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -88,19 +81,19 @@ namespace __jni_impl::android::webkit
 			arg1.__jniObject().object()
 		).object<jarray>();
 	}
+	QAndroidJniObject WebChromeClient_FileChooserParams::createIntent()
+	{
+		return __thiz.callObjectMethod(
+			"createIntent",
+			"()Landroid/content/Intent;"
+		);
+	}
 	jarray WebChromeClient_FileChooserParams::getAcceptTypes()
 	{
 		return __thiz.callObjectMethod(
 			"getAcceptTypes",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
-	}
-	jboolean WebChromeClient_FileChooserParams::isCaptureEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isCaptureEnabled",
-			"()Z"
-		);
 	}
 	jstring WebChromeClient_FileChooserParams::getFilenameHint()
 	{
@@ -109,11 +102,11 @@ namespace __jni_impl::android::webkit
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject WebChromeClient_FileChooserParams::createIntent()
+	jint WebChromeClient_FileChooserParams::getMode()
 	{
-		return __thiz.callObjectMethod(
-			"createIntent",
-			"()Landroid/content/Intent;"
+		return __thiz.callMethod<jint>(
+			"getMode",
+			"()I"
 		);
 	}
 	jstring WebChromeClient_FileChooserParams::getTitle()
@@ -122,6 +115,13 @@ namespace __jni_impl::android::webkit
 			"getTitle",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
+	}
+	jboolean WebChromeClient_FileChooserParams::isCaptureEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isCaptureEnabled",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::webkit
 

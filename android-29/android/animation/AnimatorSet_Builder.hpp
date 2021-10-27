@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::animation
 {
-	class AnimatorSet;
+	class Animator;
 }
 namespace __jni_impl::android::animation
 {
-	class Animator;
+	class AnimatorSet;
 }
 
 namespace __jni_impl::android::animation
@@ -25,15 +25,15 @@ namespace __jni_impl::android::animation
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject before(__jni_impl::android::animation::Animator arg0);
 		QAndroidJniObject after(__jni_impl::android::animation::Animator arg0);
 		QAndroidJniObject after(jlong arg0);
+		QAndroidJniObject before(__jni_impl::android::animation::Animator arg0);
 		QAndroidJniObject with(__jni_impl::android::animation::Animator arg0);
 	};
 } // namespace __jni_impl::android::animation
 
-#include "AnimatorSet.hpp"
 #include "Animator.hpp"
+#include "AnimatorSet.hpp"
 
 namespace __jni_impl::android::animation
 {
@@ -48,14 +48,6 @@ namespace __jni_impl::android::animation
 	}
 	
 	// Methods
-	QAndroidJniObject AnimatorSet_Builder::before(__jni_impl::android::animation::Animator arg0)
-	{
-		return __thiz.callObjectMethod(
-			"before",
-			"(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject AnimatorSet_Builder::after(__jni_impl::android::animation::Animator arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -70,6 +62,14 @@ namespace __jni_impl::android::animation
 			"after",
 			"(J)Landroid/animation/AnimatorSet$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject AnimatorSet_Builder::before(__jni_impl::android::animation::Animator arg0)
+	{
+		return __thiz.callObjectMethod(
+			"before",
+			"(Landroid/animation/Animator;)Landroid/animation/AnimatorSet$Builder;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject AnimatorSet_Builder::with(__jni_impl::android::animation::Animator arg0)

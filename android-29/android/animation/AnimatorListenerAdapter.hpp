@@ -21,12 +21,12 @@ namespace __jni_impl::android::animation
 		void __constructor();
 		
 		// Methods
-		void onAnimationStart(__jni_impl::android::animation::Animator arg0);
-		void onAnimationEnd(__jni_impl::android::animation::Animator arg0);
-		void onAnimationRepeat(__jni_impl::android::animation::Animator arg0);
 		void onAnimationCancel(__jni_impl::android::animation::Animator arg0);
-		void onAnimationResume(__jni_impl::android::animation::Animator arg0);
+		void onAnimationEnd(__jni_impl::android::animation::Animator arg0);
 		void onAnimationPause(__jni_impl::android::animation::Animator arg0);
+		void onAnimationRepeat(__jni_impl::android::animation::Animator arg0);
+		void onAnimationResume(__jni_impl::android::animation::Animator arg0);
+		void onAnimationStart(__jni_impl::android::animation::Animator arg0);
 	};
 } // namespace __jni_impl::android::animation
 
@@ -46,10 +46,10 @@ namespace __jni_impl::android::animation
 	}
 	
 	// Methods
-	void AnimatorListenerAdapter::onAnimationStart(__jni_impl::android::animation::Animator arg0)
+	void AnimatorListenerAdapter::onAnimationCancel(__jni_impl::android::animation::Animator arg0)
 	{
 		__thiz.callMethod<void>(
-			"onAnimationStart",
+			"onAnimationCancel",
 			"(Landroid/animation/Animator;)V",
 			arg0.__jniObject().object()
 		);
@@ -62,18 +62,18 @@ namespace __jni_impl::android::animation
 			arg0.__jniObject().object()
 		);
 	}
-	void AnimatorListenerAdapter::onAnimationRepeat(__jni_impl::android::animation::Animator arg0)
+	void AnimatorListenerAdapter::onAnimationPause(__jni_impl::android::animation::Animator arg0)
 	{
 		__thiz.callMethod<void>(
-			"onAnimationRepeat",
+			"onAnimationPause",
 			"(Landroid/animation/Animator;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	void AnimatorListenerAdapter::onAnimationCancel(__jni_impl::android::animation::Animator arg0)
+	void AnimatorListenerAdapter::onAnimationRepeat(__jni_impl::android::animation::Animator arg0)
 	{
 		__thiz.callMethod<void>(
-			"onAnimationCancel",
+			"onAnimationRepeat",
 			"(Landroid/animation/Animator;)V",
 			arg0.__jniObject().object()
 		);
@@ -86,10 +86,10 @@ namespace __jni_impl::android::animation
 			arg0.__jniObject().object()
 		);
 	}
-	void AnimatorListenerAdapter::onAnimationPause(__jni_impl::android::animation::Animator arg0)
+	void AnimatorListenerAdapter::onAnimationStart(__jni_impl::android::animation::Animator arg0)
 	{
 		__thiz.callMethod<void>(
-			"onAnimationPause",
+			"onAnimationStart",
 			"(Landroid/animation/Animator;)V",
 			arg0.__jniObject().object()
 		);

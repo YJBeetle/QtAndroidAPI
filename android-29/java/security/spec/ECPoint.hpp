@@ -23,9 +23,9 @@ namespace __jni_impl::java::security::spec
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jint hashCode();
 		QAndroidJniObject getAffineX();
 		QAndroidJniObject getAffineY();
+		jint hashCode();
 	};
 } // namespace __jni_impl::java::security::spec
 
@@ -63,13 +63,6 @@ namespace __jni_impl::java::security::spec
 			arg0
 		);
 	}
-	jint ECPoint::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	QAndroidJniObject ECPoint::getAffineX()
 	{
 		return __thiz.callObjectMethod(
@@ -82,6 +75,13 @@ namespace __jni_impl::java::security::spec
 		return __thiz.callObjectMethod(
 			"getAffineY",
 			"()Ljava/math/BigInteger;"
+		);
+	}
+	jint ECPoint::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::java::security::spec

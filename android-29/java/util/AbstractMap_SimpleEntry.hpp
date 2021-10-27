@@ -14,16 +14,16 @@ namespace __jni_impl::java::util
 		// Fields
 		
 		// Constructors
-		void __constructor(jobject arg0, jobject arg1);
 		void __constructor(__jni_impl::__JniBaseClass arg0);
+		void __constructor(jobject arg0, jobject arg1);
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jobject getValue();
 		jobject getKey();
+		jobject getValue();
+		jint hashCode();
 		jobject setValue(jobject arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::java::util
 
@@ -33,6 +33,14 @@ namespace __jni_impl::java::util
 	// Fields
 	
 	// Constructors
+	void AbstractMap_SimpleEntry::__constructor(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.AbstractMap$SimpleEntry",
+			"(Ljava/util/Map$Entry;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void AbstractMap_SimpleEntry::__constructor(jobject arg0, jobject arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -40,14 +48,6 @@ namespace __jni_impl::java::util
 			"(Ljava/lang/Object;Ljava/lang/Object;)V",
 			arg0,
 			arg1
-		);
-	}
-	void AbstractMap_SimpleEntry::__constructor(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.AbstractMap$SimpleEntry",
-			"(Ljava/util/Map$Entry;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	
@@ -60,19 +60,12 @@ namespace __jni_impl::java::util
 			arg0
 		);
 	}
-	jstring AbstractMap_SimpleEntry::toString()
+	jobject AbstractMap_SimpleEntry::getKey()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint AbstractMap_SimpleEntry::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
+			"getKey",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jobject AbstractMap_SimpleEntry::getValue()
 	{
@@ -81,12 +74,12 @@ namespace __jni_impl::java::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	jobject AbstractMap_SimpleEntry::getKey()
+	jint AbstractMap_SimpleEntry::hashCode()
 	{
-		return __thiz.callObjectMethod(
-			"getKey",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
 	}
 	jobject AbstractMap_SimpleEntry::setValue(jobject arg0)
 	{
@@ -96,6 +89,13 @@ namespace __jni_impl::java::util
 			arg0
 		).object<jobject>();
 	}
+	jstring AbstractMap_SimpleEntry::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 } // namespace __jni_impl::java::util
 
 namespace java::util
@@ -104,16 +104,16 @@ namespace java::util
 	{
 	public:
 		AbstractMap_SimpleEntry(QAndroidJniObject obj) { __thiz = obj; }
+		AbstractMap_SimpleEntry(__jni_impl::__JniBaseClass arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		AbstractMap_SimpleEntry(jobject arg0, jobject arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
-		}
-		AbstractMap_SimpleEntry(__jni_impl::__JniBaseClass arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace java::util

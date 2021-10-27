@@ -25,8 +25,8 @@ namespace __jni_impl::android::location
 		void __constructor();
 		
 		// Methods
-		void onStatusChanged(jint arg0);
 		void onGnssMeasurementsReceived(__jni_impl::android::location::GnssMeasurementsEvent arg0);
+		void onStatusChanged(jint arg0);
 	};
 } // namespace __jni_impl::android::location
 
@@ -74,20 +74,20 @@ namespace __jni_impl::android::location
 	}
 	
 	// Methods
-	void GnssMeasurementsEvent_Callback::onStatusChanged(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"onStatusChanged",
-			"(I)V",
-			arg0
-		);
-	}
 	void GnssMeasurementsEvent_Callback::onGnssMeasurementsReceived(__jni_impl::android::location::GnssMeasurementsEvent arg0)
 	{
 		__thiz.callMethod<void>(
 			"onGnssMeasurementsReceived",
 			"(Landroid/location/GnssMeasurementsEvent;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void GnssMeasurementsEvent_Callback::onStatusChanged(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"onStatusChanged",
+			"(I)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::location

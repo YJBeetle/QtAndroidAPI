@@ -22,12 +22,12 @@ namespace __jni_impl::java::security
 		
 		// Methods
 		void add(__jni_impl::java::security::Permission arg0);
-		jstring toString();
 		QAndroidJniObject elements();
-		void setReadOnly();
+		QAndroidJniObject elementsAsStream();
 		jboolean implies(__jni_impl::java::security::Permission arg0);
 		jboolean isReadOnly();
-		QAndroidJniObject elementsAsStream();
+		void setReadOnly();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security
 
@@ -55,13 +55,6 @@ namespace __jni_impl::java::security
 			arg0.__jniObject().object()
 		);
 	}
-	jstring PermissionCollection::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject PermissionCollection::elements()
 	{
 		return __thiz.callObjectMethod(
@@ -69,11 +62,11 @@ namespace __jni_impl::java::security
 			"()Ljava/util/Enumeration;"
 		);
 	}
-	void PermissionCollection::setReadOnly()
+	QAndroidJniObject PermissionCollection::elementsAsStream()
 	{
-		__thiz.callMethod<void>(
-			"setReadOnly",
-			"()V"
+		return __thiz.callObjectMethod(
+			"elementsAsStream",
+			"()Ljava/util/stream/Stream;"
 		);
 	}
 	jboolean PermissionCollection::implies(__jni_impl::java::security::Permission arg0)
@@ -91,12 +84,19 @@ namespace __jni_impl::java::security
 			"()Z"
 		);
 	}
-	QAndroidJniObject PermissionCollection::elementsAsStream()
+	void PermissionCollection::setReadOnly()
+	{
+		__thiz.callMethod<void>(
+			"setReadOnly",
+			"()V"
+		);
+	}
+	jstring PermissionCollection::toString()
 	{
 		return __thiz.callObjectMethod(
-			"elementsAsStream",
-			"()Ljava/util/stream/Stream;"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security
 

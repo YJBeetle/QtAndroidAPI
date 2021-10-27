@@ -21,12 +21,12 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jstring getName(__jni_impl::android::content::Context arg0);
 		jstring getName();
-		jstring toString();
+		jstring getName(__jni_impl::android::content::Context arg0);
+		QAndroidJniObject getRoutes(__jni_impl::__JniBaseClass arg0);
 		jint getSupportedTypes();
 		jboolean isGroupable();
-		QAndroidJniObject getRoutes(__jni_impl::__JniBaseClass arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::android::media
 
@@ -45,6 +45,13 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	jstring MediaRouter_RouteCategory::getName()
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
 	jstring MediaRouter_RouteCategory::getName(__jni_impl::android::content::Context arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -53,19 +60,13 @@ namespace __jni_impl::android::media
 			arg0.__jniObject().object()
 		).object<jstring>();
 	}
-	jstring MediaRouter_RouteCategory::getName()
+	QAndroidJniObject MediaRouter_RouteCategory::getRoutes(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	jstring MediaRouter_RouteCategory::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getRoutes",
+			"(Ljava/util/List;)Ljava/util/List;",
+			arg0.__jniObject().object()
+		);
 	}
 	jint MediaRouter_RouteCategory::getSupportedTypes()
 	{
@@ -81,13 +82,12 @@ namespace __jni_impl::android::media
 			"()Z"
 		);
 	}
-	QAndroidJniObject MediaRouter_RouteCategory::getRoutes(__jni_impl::__JniBaseClass arg0)
+	jstring MediaRouter_RouteCategory::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getRoutes",
-			"(Ljava/util/List;)Ljava/util/List;",
-			arg0.__jniObject().object()
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media
 

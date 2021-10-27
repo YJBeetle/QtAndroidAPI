@@ -21,8 +21,8 @@ namespace __jni_impl::android::security
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getKeyPair();
 		QAndroidJniObject getAttestationRecord();
+		QAndroidJniObject getKeyPair();
 	};
 } // namespace __jni_impl::android::security
 
@@ -41,18 +41,18 @@ namespace __jni_impl::android::security
 	}
 	
 	// Methods
-	QAndroidJniObject AttestedKeyPair::getKeyPair()
-	{
-		return __thiz.callObjectMethod(
-			"getKeyPair",
-			"()Ljava/security/KeyPair;"
-		);
-	}
 	QAndroidJniObject AttestedKeyPair::getAttestationRecord()
 	{
 		return __thiz.callObjectMethod(
 			"getAttestationRecord",
 			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject AttestedKeyPair::getKeyPair()
+	{
+		return __thiz.callObjectMethod(
+			"getKeyPair",
+			"()Ljava/security/KeyPair;"
 		);
 	}
 } // namespace __jni_impl::android::security

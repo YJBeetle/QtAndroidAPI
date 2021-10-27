@@ -21,8 +21,8 @@ namespace __jni_impl::android::opengl
 		void __constructor();
 		
 		// Methods
-		static jint glQueryMatrixxOES(jintArray arg0, jint arg1, jintArray arg2, jint arg3);
 		static jint glQueryMatrixxOES(__jni_impl::java::nio::IntBuffer arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static jint glQueryMatrixxOES(jintArray arg0, jint arg1, jintArray arg2, jint arg3);
 	};
 } // namespace __jni_impl::android::opengl
 
@@ -42,6 +42,16 @@ namespace __jni_impl::android::opengl
 	}
 	
 	// Methods
+	jint GLES10Ext::glQueryMatrixxOES(__jni_impl::java::nio::IntBuffer arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.opengl.GLES10Ext",
+			"glQueryMatrixxOES",
+			"(Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;)I",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
 	jint GLES10Ext::glQueryMatrixxOES(jintArray arg0, jint arg1, jintArray arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -52,16 +62,6 @@ namespace __jni_impl::android::opengl
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	jint GLES10Ext::glQueryMatrixxOES(__jni_impl::java::nio::IntBuffer arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.GLES10Ext",
-			"glQueryMatrixxOES",
-			"(Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::opengl

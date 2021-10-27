@@ -34,9 +34,9 @@ namespace __jni_impl::android::view::accessibility
 		// Methods
 		QAndroidJniObject getTypeface();
 		jboolean hasBackgroundColor();
-		jboolean hasForegroundColor();
-		jboolean hasEdgeType();
 		jboolean hasEdgeColor();
+		jboolean hasEdgeType();
+		jboolean hasForegroundColor();
 		jboolean hasWindowColor();
 	};
 } // namespace __jni_impl::android::view::accessibility
@@ -142,10 +142,10 @@ namespace __jni_impl::android::view::accessibility
 			"()Z"
 		);
 	}
-	jboolean CaptioningManager_CaptionStyle::hasForegroundColor()
+	jboolean CaptioningManager_CaptionStyle::hasEdgeColor()
 	{
 		return __thiz.callMethod<jboolean>(
-			"hasForegroundColor",
+			"hasEdgeColor",
 			"()Z"
 		);
 	}
@@ -156,10 +156,10 @@ namespace __jni_impl::android::view::accessibility
 			"()Z"
 		);
 	}
-	jboolean CaptioningManager_CaptionStyle::hasEdgeColor()
+	jboolean CaptioningManager_CaptionStyle::hasForegroundColor()
 	{
 		return __thiz.callMethod<jboolean>(
-			"hasEdgeColor",
+			"hasForegroundColor",
 			"()Z"
 		);
 	}

@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::service::autofill
-{
-	class UserData;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::service::autofill
+{
+	class UserData;
 }
 
 namespace __jni_impl::android::service::autofill
@@ -36,8 +36,8 @@ namespace __jni_impl::android::service::autofill
 	};
 } // namespace __jni_impl::android::service::autofill
 
-#include "UserData.hpp"
 #include "../../os/Bundle.hpp"
+#include "UserData.hpp"
 
 namespace __jni_impl::android::service::autofill
 {

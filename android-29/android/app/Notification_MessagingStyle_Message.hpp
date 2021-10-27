@@ -26,19 +26,19 @@ namespace __jni_impl::android::app
 		// Fields
 		
 		// Constructors
-		void __constructor(jstring arg0, jlong arg1, jstring arg2);
-		void __constructor(const QString &arg0, jlong arg1, const QString &arg2);
 		void __constructor(jstring arg0, jlong arg1, __jni_impl::android::app::Person arg2);
 		void __constructor(const QString &arg0, jlong arg1, __jni_impl::android::app::Person arg2);
+		void __constructor(jstring arg0, jlong arg1, jstring arg2);
+		void __constructor(const QString &arg0, jlong arg1, const QString &arg2);
 		
 		// Methods
-		jstring getText();
-		jlong getTimestamp();
-		jstring getSender();
-		QAndroidJniObject getSenderPerson();
 		jstring getDataMimeType();
 		QAndroidJniObject getDataUri();
 		QAndroidJniObject getExtras();
+		jstring getSender();
+		QAndroidJniObject getSenderPerson();
+		jstring getText();
+		jlong getTimestamp();
 		QAndroidJniObject setData(jstring arg0, __jni_impl::android::net::Uri arg1);
 		QAndroidJniObject setData(const QString &arg0, __jni_impl::android::net::Uri arg1);
 	};
@@ -53,26 +53,6 @@ namespace __jni_impl::android::app
 	// Fields
 	
 	// Constructors
-	void Notification_MessagingStyle_Message::__constructor(jstring arg0, jlong arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.Notification$MessagingStyle$Message",
-			"(Ljava/lang/CharSequence;JLjava/lang/CharSequence;)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void Notification_MessagingStyle_Message::__constructor(const QString &arg0, jlong arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.Notification$MessagingStyle$Message",
-			"(Ljava/lang/CharSequence;JLjava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
 	void Notification_MessagingStyle_Message::__constructor(jstring arg0, jlong arg1, __jni_impl::android::app::Person arg2)
 	{
 		__thiz = QAndroidJniObject(
@@ -93,36 +73,28 @@ namespace __jni_impl::android::app
 			arg2.__jniObject().object()
 		);
 	}
+	void Notification_MessagingStyle_Message::__constructor(jstring arg0, jlong arg1, jstring arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.Notification$MessagingStyle$Message",
+			"(Ljava/lang/CharSequence;JLjava/lang/CharSequence;)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void Notification_MessagingStyle_Message::__constructor(const QString &arg0, jlong arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.Notification$MessagingStyle$Message",
+			"(Ljava/lang/CharSequence;JLjava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
+	}
 	
 	// Methods
-	jstring Notification_MessagingStyle_Message::getText()
-	{
-		return __thiz.callObjectMethod(
-			"getText",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	jlong Notification_MessagingStyle_Message::getTimestamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimestamp",
-			"()J"
-		);
-	}
-	jstring Notification_MessagingStyle_Message::getSender()
-	{
-		return __thiz.callObjectMethod(
-			"getSender",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	QAndroidJniObject Notification_MessagingStyle_Message::getSenderPerson()
-	{
-		return __thiz.callObjectMethod(
-			"getSenderPerson",
-			"()Landroid/app/Person;"
-		);
-	}
 	jstring Notification_MessagingStyle_Message::getDataMimeType()
 	{
 		return __thiz.callObjectMethod(
@@ -142,6 +114,34 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
+		);
+	}
+	jstring Notification_MessagingStyle_Message::getSender()
+	{
+		return __thiz.callObjectMethod(
+			"getSender",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	QAndroidJniObject Notification_MessagingStyle_Message::getSenderPerson()
+	{
+		return __thiz.callObjectMethod(
+			"getSenderPerson",
+			"()Landroid/app/Person;"
+		);
+	}
+	jstring Notification_MessagingStyle_Message::getText()
+	{
+		return __thiz.callObjectMethod(
+			"getText",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jlong Notification_MessagingStyle_Message::getTimestamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimestamp",
+			"()J"
 		);
 	}
 	QAndroidJniObject Notification_MessagingStyle_Message::setData(jstring arg0, __jni_impl::android::net::Uri arg1)
@@ -170,14 +170,14 @@ namespace android::app
 	{
 	public:
 		Notification_MessagingStyle_Message(QAndroidJniObject obj) { __thiz = obj; }
-		Notification_MessagingStyle_Message(jstring arg0, jlong arg1, jstring arg2)
+		Notification_MessagingStyle_Message(jstring arg0, jlong arg1, __jni_impl::android::app::Person arg2)
 		{
 			__constructor(
 				arg0,
 				arg1,
 				arg2);
 		}
-		Notification_MessagingStyle_Message(jstring arg0, jlong arg1, __jni_impl::android::app::Person arg2)
+		Notification_MessagingStyle_Message(jstring arg0, jlong arg1, jstring arg2)
 		{
 			__constructor(
 				arg0,

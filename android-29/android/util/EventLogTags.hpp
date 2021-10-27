@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::io
-{
-	class BufferedReader;
-}
 namespace __jni_impl::android::util
 {
 	class EventLogTags_Description;
+}
+namespace __jni_impl::java::io
+{
+	class BufferedReader;
 }
 
 namespace __jni_impl::android::util
@@ -32,8 +32,8 @@ namespace __jni_impl::android::util
 	};
 } // namespace __jni_impl::android::util
 
-#include "../../java/io/BufferedReader.hpp"
 #include "EventLogTags_Description.hpp"
+#include "../../java/io/BufferedReader.hpp"
 
 namespace __jni_impl::android::util
 {

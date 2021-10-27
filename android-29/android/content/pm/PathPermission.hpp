@@ -20,14 +20,14 @@ namespace __jni_impl::android::content::pm
 		static QAndroidJniObject CREATOR();
 		
 		// Constructors
+		void __constructor(__jni_impl::android::os::Parcel arg0);
 		void __constructor(jstring arg0, jint arg1, jstring arg2, jstring arg3);
 		void __constructor(const QString &arg0, jint arg1, const QString &arg2, const QString &arg3);
-		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jstring getReadPermission();
 		jstring getWritePermission();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -46,6 +46,14 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Constructors
+	void PathPermission::__constructor(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.pm.PathPermission",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void PathPermission::__constructor(jstring arg0, jint arg1, jstring arg2, jstring arg3)
 	{
 		__thiz = QAndroidJniObject(
@@ -68,25 +76,8 @@ namespace __jni_impl::android::content::pm
 			QAndroidJniObject::fromString(arg3).object<jstring>()
 		);
 	}
-	void PathPermission::__constructor(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.pm.PathPermission",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	
 	// Methods
-	void PathPermission::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	jstring PathPermission::getReadPermission()
 	{
 		return __thiz.callObjectMethod(
@@ -101,6 +92,15 @@ namespace __jni_impl::android::content::pm
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	void PathPermission::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
 } // namespace __jni_impl::android::content::pm
 
 namespace android::content::pm
@@ -109,6 +109,11 @@ namespace android::content::pm
 	{
 	public:
 		PathPermission(QAndroidJniObject obj) { __thiz = obj; }
+		PathPermission(__jni_impl::android::os::Parcel arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		PathPermission(jstring arg0, jint arg1, jstring arg2, jstring arg3)
 		{
 			__constructor(
@@ -116,11 +121,6 @@ namespace android::content::pm
 				arg1,
 				arg2,
 				arg3);
-		}
-		PathPermission(__jni_impl::android::os::Parcel arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::content::pm

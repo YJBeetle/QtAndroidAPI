@@ -6,18 +6,6 @@
 #include "../../__JniBaseClass.hpp"
 #include "PermissionCollection.hpp"
 
-namespace __jni_impl::java::util::concurrent
-{
-	class ConcurrentHashMap;
-}
-namespace __jni_impl::java::security
-{
-	class PermissionCollection;
-}
-namespace __jni_impl::java::security
-{
-	class Permission;
-}
 namespace __jni_impl::java::io
 {
 	class ObjectInputStream;
@@ -25,6 +13,18 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class ObjectOutputStream;
+}
+namespace __jni_impl::java::security
+{
+	class Permission;
+}
+namespace __jni_impl::java::security
+{
+	class PermissionCollection;
+}
+namespace __jni_impl::java::util::concurrent
+{
+	class ConcurrentHashMap;
 }
 
 namespace __jni_impl::java::security
@@ -44,11 +44,11 @@ namespace __jni_impl::java::security
 	};
 } // namespace __jni_impl::java::security
 
-#include "../util/concurrent/ConcurrentHashMap.hpp"
-#include "PermissionCollection.hpp"
-#include "Permission.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "Permission.hpp"
+#include "PermissionCollection.hpp"
+#include "../util/concurrent/ConcurrentHashMap.hpp"
 
 namespace __jni_impl::java::security
 {

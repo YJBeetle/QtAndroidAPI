@@ -5,10 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
-{
-	class ComponentName;
-}
 namespace __jni_impl::android::companion
 {
 	class AssociationRequest;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::companion
 namespace __jni_impl::android::companion
 {
 	class CompanionDeviceManager_Callback;
+}
+namespace __jni_impl::android::content
+{
+	class ComponentName;
 }
 namespace __jni_impl::android::os
 {
@@ -34,18 +34,18 @@ namespace __jni_impl::android::companion
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getAssociations();
+		void associate(__jni_impl::android::companion::AssociationRequest arg0, __jni_impl::android::companion::CompanionDeviceManager_Callback arg1, __jni_impl::android::os::Handler arg2);
 		void disassociate(jstring arg0);
 		void disassociate(const QString &arg0);
-		void requestNotificationAccess(__jni_impl::android::content::ComponentName arg0);
+		QAndroidJniObject getAssociations();
 		jboolean hasNotificationAccess(__jni_impl::android::content::ComponentName arg0);
-		void associate(__jni_impl::android::companion::AssociationRequest arg0, __jni_impl::android::companion::CompanionDeviceManager_Callback arg1, __jni_impl::android::os::Handler arg2);
+		void requestNotificationAccess(__jni_impl::android::content::ComponentName arg0);
 	};
 } // namespace __jni_impl::android::companion
 
-#include "../content/ComponentName.hpp"
 #include "AssociationRequest.hpp"
 #include "CompanionDeviceManager_Callback.hpp"
+#include "../content/ComponentName.hpp"
 #include "../os/Handler.hpp"
 
 namespace __jni_impl::android::companion
@@ -69,11 +69,14 @@ namespace __jni_impl::android::companion
 	}
 	
 	// Methods
-	QAndroidJniObject CompanionDeviceManager::getAssociations()
+	void CompanionDeviceManager::associate(__jni_impl::android::companion::AssociationRequest arg0, __jni_impl::android::companion::CompanionDeviceManager_Callback arg1, __jni_impl::android::os::Handler arg2)
 	{
-		return __thiz.callObjectMethod(
-			"getAssociations",
-			"()Ljava/util/List;"
+		__thiz.callMethod<void>(
+			"associate",
+			"(Landroid/companion/AssociationRequest;Landroid/companion/CompanionDeviceManager$Callback;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
 	void CompanionDeviceManager::disassociate(jstring arg0)
@@ -92,12 +95,11 @@ namespace __jni_impl::android::companion
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void CompanionDeviceManager::requestNotificationAccess(__jni_impl::android::content::ComponentName arg0)
+	QAndroidJniObject CompanionDeviceManager::getAssociations()
 	{
-		__thiz.callMethod<void>(
-			"requestNotificationAccess",
-			"(Landroid/content/ComponentName;)V",
-			arg0.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"getAssociations",
+			"()Ljava/util/List;"
 		);
 	}
 	jboolean CompanionDeviceManager::hasNotificationAccess(__jni_impl::android::content::ComponentName arg0)
@@ -108,14 +110,12 @@ namespace __jni_impl::android::companion
 			arg0.__jniObject().object()
 		);
 	}
-	void CompanionDeviceManager::associate(__jni_impl::android::companion::AssociationRequest arg0, __jni_impl::android::companion::CompanionDeviceManager_Callback arg1, __jni_impl::android::os::Handler arg2)
+	void CompanionDeviceManager::requestNotificationAccess(__jni_impl::android::content::ComponentName arg0)
 	{
 		__thiz.callMethod<void>(
-			"associate",
-			"(Landroid/companion/AssociationRequest;Landroid/companion/CompanionDeviceManager$Callback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			"requestNotificationAccess",
+			"(Landroid/content/ComponentName;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::companion

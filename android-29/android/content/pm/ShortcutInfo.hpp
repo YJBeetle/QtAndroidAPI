@@ -5,33 +5,33 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content::pm
-{
-	class ShortcutInfo_Builder;
-}
-namespace __jni_impl::android::os
-{
-	class UserHandle;
-}
 namespace __jni_impl::android::content
 {
 	class ComponentName;
 }
 namespace __jni_impl::android::content
 {
+	class Intent;
+}
+namespace __jni_impl::android::content
+{
 	class LocusId;
+}
+namespace __jni_impl::android::content::pm
+{
+	class ShortcutInfo_Builder;
 }
 namespace __jni_impl::android::os
 {
 	class Parcel;
 }
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
 namespace __jni_impl::android::os
 {
 	class PersistableBundle;
+}
+namespace __jni_impl::android::os
+{
+	class UserHandle;
 }
 
 namespace __jni_impl::android::content::pm
@@ -55,40 +55,40 @@ namespace __jni_impl::android::content::pm
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		jstring getPackage();
-		jstring getId();
-		jboolean isEnabled();
-		QAndroidJniObject getUserHandle();
-		jarray getIntents();
-		QAndroidJniObject getActivity();
-		jint getRank();
-		QAndroidJniObject getLocusId();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getIntent();
+		QAndroidJniObject getActivity();
 		QAndroidJniObject getCategories();
-		QAndroidJniObject getExtras();
-		jstring getShortLabel();
-		jstring getLongLabel();
 		jstring getDisabledMessage();
 		jint getDisabledReason();
+		QAndroidJniObject getExtras();
+		jstring getId();
+		QAndroidJniObject getIntent();
+		jarray getIntents();
 		jlong getLastChangedTimestamp();
-		jboolean isDynamic();
-		jboolean isPinned();
-		jboolean isDeclaredInManifest();
-		jboolean isImmutable();
+		QAndroidJniObject getLocusId();
+		jstring getLongLabel();
+		jstring getPackage();
+		jint getRank();
+		jstring getShortLabel();
+		QAndroidJniObject getUserHandle();
 		jboolean hasKeyFieldsOnly();
+		jboolean isDeclaredInManifest();
+		jboolean isDynamic();
+		jboolean isEnabled();
+		jboolean isImmutable();
+		jboolean isPinned();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::pm
 
-#include "ShortcutInfo_Builder.hpp"
-#include "../../os/UserHandle.hpp"
 #include "../ComponentName.hpp"
-#include "../LocusId.hpp"
-#include "../../os/Parcel.hpp"
 #include "../Intent.hpp"
+#include "../LocusId.hpp"
+#include "ShortcutInfo_Builder.hpp"
+#include "../../os/Parcel.hpp"
 #include "../../os/PersistableBundle.hpp"
+#include "../../os/UserHandle.hpp"
 
 namespace __jni_impl::android::content::pm
 {
@@ -175,47 +175,12 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	jstring ShortcutInfo::toString()
+	jint ShortcutInfo::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring ShortcutInfo::getPackage()
-	{
-		return __thiz.callObjectMethod(
-			"getPackage",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring ShortcutInfo::getId()
-	{
-		return __thiz.callObjectMethod(
-			"getId",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jboolean ShortcutInfo::isEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEnabled",
-			"()Z"
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
 		);
-	}
-	QAndroidJniObject ShortcutInfo::getUserHandle()
-	{
-		return __thiz.callObjectMethod(
-			"getUserHandle",
-			"()Landroid/os/UserHandle;"
-		);
-	}
-	jarray ShortcutInfo::getIntents()
-	{
-		return __thiz.callObjectMethod(
-			"getIntents",
-			"()[Landroid/content/Intent;"
-		).object<jarray>();
 	}
 	QAndroidJniObject ShortcutInfo::getActivity()
 	{
@@ -224,70 +189,12 @@ namespace __jni_impl::android::content::pm
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	jint ShortcutInfo::getRank()
-	{
-		return __thiz.callMethod<jint>(
-			"getRank",
-			"()I"
-		);
-	}
-	QAndroidJniObject ShortcutInfo::getLocusId()
-	{
-		return __thiz.callObjectMethod(
-			"getLocusId",
-			"()Landroid/content/LocusId;"
-		);
-	}
-	jint ShortcutInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void ShortcutInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject ShortcutInfo::getIntent()
-	{
-		return __thiz.callObjectMethod(
-			"getIntent",
-			"()Landroid/content/Intent;"
-		);
-	}
 	QAndroidJniObject ShortcutInfo::getCategories()
 	{
 		return __thiz.callObjectMethod(
 			"getCategories",
 			"()Ljava/util/Set;"
 		);
-	}
-	QAndroidJniObject ShortcutInfo::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/PersistableBundle;"
-		);
-	}
-	jstring ShortcutInfo::getShortLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getShortLabel",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	jstring ShortcutInfo::getLongLabel()
-	{
-		return __thiz.callObjectMethod(
-			"getLongLabel",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
 	}
 	jstring ShortcutInfo::getDisabledMessage()
 	{
@@ -303,6 +210,34 @@ namespace __jni_impl::android::content::pm
 			"()I"
 		);
 	}
+	QAndroidJniObject ShortcutInfo::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/PersistableBundle;"
+		);
+	}
+	jstring ShortcutInfo::getId()
+	{
+		return __thiz.callObjectMethod(
+			"getId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject ShortcutInfo::getIntent()
+	{
+		return __thiz.callObjectMethod(
+			"getIntent",
+			"()Landroid/content/Intent;"
+		);
+	}
+	jarray ShortcutInfo::getIntents()
+	{
+		return __thiz.callObjectMethod(
+			"getIntents",
+			"()[Landroid/content/Intent;"
+		).object<jarray>();
+	}
 	jlong ShortcutInfo::getLastChangedTimestamp()
 	{
 		return __thiz.callMethod<jlong>(
@@ -310,17 +245,52 @@ namespace __jni_impl::android::content::pm
 			"()J"
 		);
 	}
-	jboolean ShortcutInfo::isDynamic()
+	QAndroidJniObject ShortcutInfo::getLocusId()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isDynamic",
-			"()Z"
+		return __thiz.callObjectMethod(
+			"getLocusId",
+			"()Landroid/content/LocusId;"
 		);
 	}
-	jboolean ShortcutInfo::isPinned()
+	jstring ShortcutInfo::getLongLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLongLabel",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring ShortcutInfo::getPackage()
+	{
+		return __thiz.callObjectMethod(
+			"getPackage",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint ShortcutInfo::getRank()
+	{
+		return __thiz.callMethod<jint>(
+			"getRank",
+			"()I"
+		);
+	}
+	jstring ShortcutInfo::getShortLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getShortLabel",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	QAndroidJniObject ShortcutInfo::getUserHandle()
+	{
+		return __thiz.callObjectMethod(
+			"getUserHandle",
+			"()Landroid/os/UserHandle;"
+		);
+	}
+	jboolean ShortcutInfo::hasKeyFieldsOnly()
 	{
 		return __thiz.callMethod<jboolean>(
-			"isPinned",
+			"hasKeyFieldsOnly",
 			"()Z"
 		);
 	}
@@ -331,6 +301,20 @@ namespace __jni_impl::android::content::pm
 			"()Z"
 		);
 	}
+	jboolean ShortcutInfo::isDynamic()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isDynamic",
+			"()Z"
+		);
+	}
+	jboolean ShortcutInfo::isEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEnabled",
+			"()Z"
+		);
+	}
 	jboolean ShortcutInfo::isImmutable()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -338,11 +322,27 @@ namespace __jni_impl::android::content::pm
 			"()Z"
 		);
 	}
-	jboolean ShortcutInfo::hasKeyFieldsOnly()
+	jboolean ShortcutInfo::isPinned()
 	{
 		return __thiz.callMethod<jboolean>(
-			"hasKeyFieldsOnly",
+			"isPinned",
 			"()Z"
+		);
+	}
+	jstring ShortcutInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void ShortcutInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::content::pm

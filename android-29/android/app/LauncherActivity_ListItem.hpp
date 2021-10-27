@@ -5,17 +5,17 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
+namespace __jni_impl::android::content::pm
 {
-	class Bundle;
+	class ResolveInfo;
 }
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
 }
-namespace __jni_impl::android::content::pm
+namespace __jni_impl::android::os
 {
-	class ResolveInfo;
+	class Bundle;
 }
 
 namespace __jni_impl::android::app
@@ -38,9 +38,9 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "../os/Bundle.hpp"
-#include "../graphics/drawable/Drawable.hpp"
 #include "../content/pm/ResolveInfo.hpp"
+#include "../graphics/drawable/Drawable.hpp"
+#include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::app
 {

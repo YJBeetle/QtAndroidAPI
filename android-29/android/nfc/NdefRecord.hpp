@@ -37,32 +37,32 @@ namespace __jni_impl::android::nfc
 		static jshort TNF_WELL_KNOWN();
 		
 		// Constructors
-		void __constructor(jshort arg0, jbyteArray arg1, jbyteArray arg2, jbyteArray arg3);
 		void __constructor(jbyteArray arg0);
+		void __constructor(jshort arg0, jbyteArray arg1, jbyteArray arg2, jbyteArray arg3);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jbyteArray getId();
-		jbyteArray toByteArray();
-		jbyteArray getType();
-		QAndroidJniObject toUri();
 		static QAndroidJniObject createApplicationRecord(jstring arg0);
 		static QAndroidJniObject createApplicationRecord(const QString &arg0);
-		static QAndroidJniObject createUri(jstring arg0);
-		static QAndroidJniObject createUri(const QString &arg0);
-		static QAndroidJniObject createUri(__jni_impl::android::net::Uri arg0);
-		static QAndroidJniObject createMime(jstring arg0, jbyteArray arg1);
-		static QAndroidJniObject createMime(const QString &arg0, jbyteArray arg1);
 		static QAndroidJniObject createExternal(jstring arg0, jstring arg1, jbyteArray arg2);
 		static QAndroidJniObject createExternal(const QString &arg0, const QString &arg1, jbyteArray arg2);
+		static QAndroidJniObject createMime(jstring arg0, jbyteArray arg1);
+		static QAndroidJniObject createMime(const QString &arg0, jbyteArray arg1);
 		static QAndroidJniObject createTextRecord(jstring arg0, jstring arg1);
 		static QAndroidJniObject createTextRecord(const QString &arg0, const QString &arg1);
-		jshort getTnf();
-		jbyteArray getPayload();
-		jstring toMimeType();
+		static QAndroidJniObject createUri(__jni_impl::android::net::Uri arg0);
+		static QAndroidJniObject createUri(jstring arg0);
+		static QAndroidJniObject createUri(const QString &arg0);
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		jbyteArray getId();
+		jbyteArray getPayload();
+		jshort getTnf();
+		jbyteArray getType();
+		jint hashCode();
+		jbyteArray toByteArray();
+		jstring toMimeType();
+		jstring toString();
+		QAndroidJniObject toUri();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::nfc
@@ -188,6 +188,14 @@ namespace __jni_impl::android::nfc
 	}
 	
 	// Constructors
+	void NdefRecord::__constructor(jbyteArray arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.nfc.NdefRecord",
+			"([B)V",
+			arg0
+		);
+	}
 	void NdefRecord::__constructor(jshort arg0, jbyteArray arg1, jbyteArray arg2, jbyteArray arg3)
 	{
 		__thiz = QAndroidJniObject(
@@ -199,66 +207,8 @@ namespace __jni_impl::android::nfc
 			arg3
 		);
 	}
-	void NdefRecord::__constructor(jbyteArray arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.nfc.NdefRecord",
-			"([B)V",
-			arg0
-		);
-	}
 	
 	// Methods
-	jboolean NdefRecord::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring NdefRecord::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint NdefRecord::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jbyteArray NdefRecord::getId()
-	{
-		return __thiz.callObjectMethod(
-			"getId",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	jbyteArray NdefRecord::toByteArray()
-	{
-		return __thiz.callObjectMethod(
-			"toByteArray",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	jbyteArray NdefRecord::getType()
-	{
-		return __thiz.callObjectMethod(
-			"getType",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	QAndroidJniObject NdefRecord::toUri()
-	{
-		return __thiz.callObjectMethod(
-			"toUri",
-			"()Landroid/net/Uri;"
-		);
-	}
 	QAndroidJniObject NdefRecord::createApplicationRecord(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -275,53 +225,6 @@ namespace __jni_impl::android::nfc
 			"createApplicationRecord",
 			"(Ljava/lang/String;)Landroid/nfc/NdefRecord;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject NdefRecord::createUri(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.nfc.NdefRecord",
-			"createUri",
-			"(Ljava/lang/String;)Landroid/nfc/NdefRecord;",
-			arg0
-		);
-	}
-	QAndroidJniObject NdefRecord::createUri(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.nfc.NdefRecord",
-			"createUri",
-			"(Ljava/lang/String;)Landroid/nfc/NdefRecord;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject NdefRecord::createUri(__jni_impl::android::net::Uri arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.nfc.NdefRecord",
-			"createUri",
-			"(Landroid/net/Uri;)Landroid/nfc/NdefRecord;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject NdefRecord::createMime(jstring arg0, jbyteArray arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.nfc.NdefRecord",
-			"createMime",
-			"(Ljava/lang/String;[B)Landroid/nfc/NdefRecord;",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject NdefRecord::createMime(const QString &arg0, jbyteArray arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.nfc.NdefRecord",
-			"createMime",
-			"(Ljava/lang/String;[B)Landroid/nfc/NdefRecord;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
 		);
 	}
 	QAndroidJniObject NdefRecord::createExternal(jstring arg0, jstring arg1, jbyteArray arg2)
@@ -346,6 +249,26 @@ namespace __jni_impl::android::nfc
 			arg2
 		);
 	}
+	QAndroidJniObject NdefRecord::createMime(jstring arg0, jbyteArray arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.nfc.NdefRecord",
+			"createMime",
+			"(Ljava/lang/String;[B)Landroid/nfc/NdefRecord;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject NdefRecord::createMime(const QString &arg0, jbyteArray arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.nfc.NdefRecord",
+			"createMime",
+			"(Ljava/lang/String;[B)Landroid/nfc/NdefRecord;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	QAndroidJniObject NdefRecord::createTextRecord(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -366,6 +289,62 @@ namespace __jni_impl::android::nfc
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
+	QAndroidJniObject NdefRecord::createUri(__jni_impl::android::net::Uri arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.nfc.NdefRecord",
+			"createUri",
+			"(Landroid/net/Uri;)Landroid/nfc/NdefRecord;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject NdefRecord::createUri(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.nfc.NdefRecord",
+			"createUri",
+			"(Ljava/lang/String;)Landroid/nfc/NdefRecord;",
+			arg0
+		);
+	}
+	QAndroidJniObject NdefRecord::createUri(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.nfc.NdefRecord",
+			"createUri",
+			"(Ljava/lang/String;)Landroid/nfc/NdefRecord;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jint NdefRecord::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	jboolean NdefRecord::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jbyteArray NdefRecord::getId()
+	{
+		return __thiz.callObjectMethod(
+			"getId",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jbyteArray NdefRecord::getPayload()
+	{
+		return __thiz.callObjectMethod(
+			"getPayload",
+			"()[B"
+		).object<jbyteArray>();
+	}
 	jshort NdefRecord::getTnf()
 	{
 		return __thiz.callMethod<jshort>(
@@ -373,10 +352,24 @@ namespace __jni_impl::android::nfc
 			"()S"
 		);
 	}
-	jbyteArray NdefRecord::getPayload()
+	jbyteArray NdefRecord::getType()
 	{
 		return __thiz.callObjectMethod(
-			"getPayload",
+			"getType",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jint NdefRecord::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jbyteArray NdefRecord::toByteArray()
+	{
+		return __thiz.callObjectMethod(
+			"toByteArray",
 			"()[B"
 		).object<jbyteArray>();
 	}
@@ -387,11 +380,18 @@ namespace __jni_impl::android::nfc
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint NdefRecord::describeContents()
+	jstring NdefRecord::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject NdefRecord::toUri()
+	{
+		return __thiz.callObjectMethod(
+			"toUri",
+			"()Landroid/net/Uri;"
 		);
 	}
 	void NdefRecord::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
@@ -411,6 +411,11 @@ namespace android::nfc
 	{
 	public:
 		NdefRecord(QAndroidJniObject obj) { __thiz = obj; }
+		NdefRecord(jbyteArray arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		NdefRecord(jshort arg0, jbyteArray arg1, jbyteArray arg2, jbyteArray arg3)
 		{
 			__constructor(
@@ -418,11 +423,6 @@ namespace android::nfc
 				arg1,
 				arg2,
 				arg3);
-		}
-		NdefRecord(jbyteArray arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::nfc

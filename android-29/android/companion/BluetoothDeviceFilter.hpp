@@ -22,9 +22,9 @@ namespace __jni_impl::android::companion
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::companion
@@ -52,6 +52,13 @@ namespace __jni_impl::android::companion
 	}
 	
 	// Methods
+	jint BluetoothDeviceFilter::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean BluetoothDeviceFilter::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -64,13 +71,6 @@ namespace __jni_impl::android::companion
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I"
-		);
-	}
-	jint BluetoothDeviceFilter::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
 			"()I"
 		);
 	}

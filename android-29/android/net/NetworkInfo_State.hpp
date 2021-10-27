@@ -13,20 +13,20 @@ namespace __jni_impl::android::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject CONNECTING();
 		static QAndroidJniObject CONNECTED();
-		static QAndroidJniObject SUSPENDED();
-		static QAndroidJniObject DISCONNECTING();
+		static QAndroidJniObject CONNECTING();
 		static QAndroidJniObject DISCONNECTED();
+		static QAndroidJniObject DISCONNECTING();
+		static QAndroidJniObject SUSPENDED();
 		static QAndroidJniObject UNKNOWN();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::net
 
@@ -34,14 +34,6 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::net
 {
 	// Fields
-	QAndroidJniObject NetworkInfo_State::CONNECTING()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.net.NetworkInfo$State",
-			"CONNECTING",
-			"Landroid/net/NetworkInfo$State;"
-		);
-	}
 	QAndroidJniObject NetworkInfo_State::CONNECTED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -50,11 +42,19 @@ namespace __jni_impl::android::net
 			"Landroid/net/NetworkInfo$State;"
 		);
 	}
-	QAndroidJniObject NetworkInfo_State::SUSPENDED()
+	QAndroidJniObject NetworkInfo_State::CONNECTING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.NetworkInfo$State",
-			"SUSPENDED",
+			"CONNECTING",
+			"Landroid/net/NetworkInfo$State;"
+		);
+	}
+	QAndroidJniObject NetworkInfo_State::DISCONNECTED()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.net.NetworkInfo$State",
+			"DISCONNECTED",
 			"Landroid/net/NetworkInfo$State;"
 		);
 	}
@@ -66,11 +66,11 @@ namespace __jni_impl::android::net
 			"Landroid/net/NetworkInfo$State;"
 		);
 	}
-	QAndroidJniObject NetworkInfo_State::DISCONNECTED()
+	QAndroidJniObject NetworkInfo_State::SUSPENDED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.NetworkInfo$State",
-			"DISCONNECTED",
+			"SUSPENDED",
 			"Landroid/net/NetworkInfo$State;"
 		);
 	}
@@ -92,14 +92,6 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	jarray NetworkInfo_State::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.NetworkInfo$State",
-			"values",
-			"()[Landroid/net/NetworkInfo$State;"
-		).object<jarray>();
-	}
 	QAndroidJniObject NetworkInfo_State::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -117,6 +109,14 @@ namespace __jni_impl::android::net
 			"(Ljava/lang/String;)Landroid/net/NetworkInfo$State;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray NetworkInfo_State::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.net.NetworkInfo$State",
+			"values",
+			"()[Landroid/net/NetworkInfo$State;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::net
 

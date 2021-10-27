@@ -9,10 +9,6 @@ namespace __jni_impl::android::icu::lang
 {
 	class UScript_ScriptUsage;
 }
-namespace __jni_impl::java::util
-{
-	class Locale;
-}
 namespace __jni_impl::android::icu::util
 {
 	class ULocale;
@@ -20,6 +16,10 @@ namespace __jni_impl::android::icu::util
 namespace __jni_impl::java::util
 {
 	class BitSet;
+}
+namespace __jni_impl::java::util
+{
+	class Locale;
 }
 
 namespace __jni_impl::android::icu::lang
@@ -224,29 +224,29 @@ namespace __jni_impl::android::icu::lang
 		void __constructor();
 		
 		// Methods
-		static jstring getName(jint arg0);
-		static jint getScript(jint arg0);
-		static QAndroidJniObject getUsage(jint arg0);
-		static jintArray getCode(__jni_impl::java::util::Locale arg0);
+		static jboolean breaksBetweenLetters(jint arg0);
+		static jintArray getCode(__jni_impl::android::icu::util::ULocale arg0);
 		static jintArray getCode(jstring arg0);
 		static jintArray getCode(const QString &arg0);
-		static jintArray getCode(__jni_impl::android::icu::util::ULocale arg0);
-		static jboolean isRightToLeft(jint arg0);
+		static jintArray getCode(__jni_impl::java::util::Locale arg0);
 		static jint getCodeFromName(jstring arg0);
 		static jint getCodeFromName(const QString &arg0);
-		static jboolean hasScript(jint arg0, jint arg1);
+		static jstring getName(jint arg0);
+		static jstring getSampleString(jint arg0);
+		static jint getScript(jint arg0);
 		static jint getScriptExtensions(jint arg0, __jni_impl::java::util::BitSet arg1);
 		static jstring getShortName(jint arg0);
-		static jstring getSampleString(jint arg0);
-		static jboolean breaksBetweenLetters(jint arg0);
+		static QAndroidJniObject getUsage(jint arg0);
+		static jboolean hasScript(jint arg0, jint arg1);
 		static jboolean isCased(jint arg0);
+		static jboolean isRightToLeft(jint arg0);
 	};
 } // namespace __jni_impl::android::icu::lang
 
 #include "UScript_ScriptUsage.hpp"
-#include "../../../java/util/Locale.hpp"
 #include "../util/ULocale.hpp"
 #include "../../../java/util/BitSet.hpp"
+#include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::icu::lang
 {
@@ -1598,39 +1598,21 @@ namespace __jni_impl::android::icu::lang
 	}
 	
 	// Methods
-	jstring UScript::getName(jint arg0)
+	jboolean UScript::breaksBetweenLetters(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.icu.lang.UScript",
-			"getName",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jint UScript::getScript(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.icu.lang.UScript",
-			"getScript",
-			"(I)I",
+			"breaksBetweenLetters",
+			"(I)Z",
 			arg0
 		);
 	}
-	QAndroidJniObject UScript::getUsage(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.lang.UScript",
-			"getUsage",
-			"(I)Landroid/icu/lang/UScript$ScriptUsage;",
-			arg0
-		);
-	}
-	jintArray UScript::getCode(__jni_impl::java::util::Locale arg0)
+	jintArray UScript::getCode(__jni_impl::android::icu::util::ULocale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UScript",
 			"getCode",
-			"(Ljava/util/Locale;)[I",
+			"(Landroid/icu/util/ULocale;)[I",
 			arg0.__jniObject().object()
 		).object<jintArray>();
 	}
@@ -1652,23 +1634,14 @@ namespace __jni_impl::android::icu::lang
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jintArray>();
 	}
-	jintArray UScript::getCode(__jni_impl::android::icu::util::ULocale arg0)
+	jintArray UScript::getCode(__jni_impl::java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UScript",
 			"getCode",
-			"(Landroid/icu/util/ULocale;)[I",
+			"(Ljava/util/Locale;)[I",
 			arg0.__jniObject().object()
 		).object<jintArray>();
-	}
-	jboolean UScript::isRightToLeft(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.icu.lang.UScript",
-			"isRightToLeft",
-			"(I)Z",
-			arg0
-		);
 	}
 	jint UScript::getCodeFromName(jstring arg0)
 	{
@@ -1688,14 +1661,31 @@ namespace __jni_impl::android::icu::lang
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jboolean UScript::hasScript(jint arg0, jint arg1)
+	jstring UScript::getName(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UScript",
-			"hasScript",
-			"(II)Z",
-			arg0,
-			arg1
+			"getName",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring UScript::getSampleString(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UScript",
+			"getSampleString",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jint UScript::getScript(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.icu.lang.UScript",
+			"getScript",
+			"(I)I",
+			arg0
 		);
 	}
 	jint UScript::getScriptExtensions(jint arg0, __jni_impl::java::util::BitSet arg1)
@@ -1717,22 +1707,23 @@ namespace __jni_impl::android::icu::lang
 			arg0
 		).object<jstring>();
 	}
-	jstring UScript::getSampleString(jint arg0)
+	QAndroidJniObject UScript::getUsage(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UScript",
-			"getSampleString",
-			"(I)Ljava/lang/String;",
+			"getUsage",
+			"(I)Landroid/icu/lang/UScript$ScriptUsage;",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jboolean UScript::breaksBetweenLetters(jint arg0)
+	jboolean UScript::hasScript(jint arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.icu.lang.UScript",
-			"breaksBetweenLetters",
-			"(I)Z",
-			arg0
+			"hasScript",
+			"(II)Z",
+			arg0,
+			arg1
 		);
 	}
 	jboolean UScript::isCased(jint arg0)
@@ -1740,6 +1731,15 @@ namespace __jni_impl::android::icu::lang
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.icu.lang.UScript",
 			"isCased",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean UScript::isRightToLeft(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.icu.lang.UScript",
+			"isRightToLeft",
 			"(I)Z",
 			arg0
 		);

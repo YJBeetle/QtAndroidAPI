@@ -17,18 +17,18 @@ namespace __jni_impl::org::apache::http::params
 		void __constructor();
 		
 		// Methods
-		static jint getSocketBufferSize(__jni_impl::__JniBaseClass arg0);
-		static void setSocketBufferSize(__jni_impl::__JniBaseClass arg0, jint arg1);
-		static jint getLinger(__jni_impl::__JniBaseClass arg0);
-		static void setLinger(__jni_impl::__JniBaseClass arg0, jint arg1);
 		static jint getConnectionTimeout(__jni_impl::__JniBaseClass arg0);
-		static void setConnectionTimeout(__jni_impl::__JniBaseClass arg0, jint arg1);
+		static jint getLinger(__jni_impl::__JniBaseClass arg0);
+		static jint getSoTimeout(__jni_impl::__JniBaseClass arg0);
+		static jint getSocketBufferSize(__jni_impl::__JniBaseClass arg0);
+		static jboolean getTcpNoDelay(__jni_impl::__JniBaseClass arg0);
 		static jboolean isStaleCheckingEnabled(__jni_impl::__JniBaseClass arg0);
+		static void setConnectionTimeout(__jni_impl::__JniBaseClass arg0, jint arg1);
+		static void setLinger(__jni_impl::__JniBaseClass arg0, jint arg1);
+		static void setSoTimeout(__jni_impl::__JniBaseClass arg0, jint arg1);
+		static void setSocketBufferSize(__jni_impl::__JniBaseClass arg0, jint arg1);
 		static void setStaleCheckingEnabled(__jni_impl::__JniBaseClass arg0, jboolean arg1);
 		static void setTcpNoDelay(__jni_impl::__JniBaseClass arg0, jboolean arg1);
-		static jboolean getTcpNoDelay(__jni_impl::__JniBaseClass arg0);
-		static void setSoTimeout(__jni_impl::__JniBaseClass arg0, jint arg1);
-		static jint getSoTimeout(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::org::apache::http::params
 
@@ -46,23 +46,13 @@ namespace __jni_impl::org::apache::http::params
 	}
 	
 	// Methods
-	jint HttpConnectionParams::getSocketBufferSize(__jni_impl::__JniBaseClass arg0)
+	jint HttpConnectionParams::getConnectionTimeout(__jni_impl::__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"org.apache.http.params.HttpConnectionParams",
-			"getSocketBufferSize",
+			"getConnectionTimeout",
 			"(Lorg/apache/http/params/HttpParams;)I",
 			arg0.__jniObject().object()
-		);
-	}
-	void HttpConnectionParams::setSocketBufferSize(__jni_impl::__JniBaseClass arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"org.apache.http.params.HttpConnectionParams",
-			"setSocketBufferSize",
-			"(Lorg/apache/http/params/HttpParams;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 	jint HttpConnectionParams::getLinger(__jni_impl::__JniBaseClass arg0)
@@ -74,22 +64,39 @@ namespace __jni_impl::org::apache::http::params
 			arg0.__jniObject().object()
 		);
 	}
-	void HttpConnectionParams::setLinger(__jni_impl::__JniBaseClass arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"org.apache.http.params.HttpConnectionParams",
-			"setLinger",
-			"(Lorg/apache/http/params/HttpParams;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jint HttpConnectionParams::getConnectionTimeout(__jni_impl::__JniBaseClass arg0)
+	jint HttpConnectionParams::getSoTimeout(__jni_impl::__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"org.apache.http.params.HttpConnectionParams",
-			"getConnectionTimeout",
+			"getSoTimeout",
 			"(Lorg/apache/http/params/HttpParams;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	jint HttpConnectionParams::getSocketBufferSize(__jni_impl::__JniBaseClass arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"org.apache.http.params.HttpConnectionParams",
+			"getSocketBufferSize",
+			"(Lorg/apache/http/params/HttpParams;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean HttpConnectionParams::getTcpNoDelay(__jni_impl::__JniBaseClass arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"org.apache.http.params.HttpConnectionParams",
+			"getTcpNoDelay",
+			"(Lorg/apache/http/params/HttpParams;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean HttpConnectionParams::isStaleCheckingEnabled(__jni_impl::__JniBaseClass arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"org.apache.http.params.HttpConnectionParams",
+			"isStaleCheckingEnabled",
+			"(Lorg/apache/http/params/HttpParams;)Z",
 			arg0.__jniObject().object()
 		);
 	}
@@ -103,13 +110,34 @@ namespace __jni_impl::org::apache::http::params
 			arg1
 		);
 	}
-	jboolean HttpConnectionParams::isStaleCheckingEnabled(__jni_impl::__JniBaseClass arg0)
+	void HttpConnectionParams::setLinger(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		QAndroidJniObject::callStaticMethod<void>(
 			"org.apache.http.params.HttpConnectionParams",
-			"isStaleCheckingEnabled",
-			"(Lorg/apache/http/params/HttpParams;)Z",
-			arg0.__jniObject().object()
+			"setLinger",
+			"(Lorg/apache/http/params/HttpParams;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void HttpConnectionParams::setSoTimeout(__jni_impl::__JniBaseClass arg0, jint arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"org.apache.http.params.HttpConnectionParams",
+			"setSoTimeout",
+			"(Lorg/apache/http/params/HttpParams;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void HttpConnectionParams::setSocketBufferSize(__jni_impl::__JniBaseClass arg0, jint arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"org.apache.http.params.HttpConnectionParams",
+			"setSocketBufferSize",
+			"(Lorg/apache/http/params/HttpParams;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 	void HttpConnectionParams::setStaleCheckingEnabled(__jni_impl::__JniBaseClass arg0, jboolean arg1)
@@ -130,34 +158,6 @@ namespace __jni_impl::org::apache::http::params
 			"(Lorg/apache/http/params/HttpParams;Z)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean HttpConnectionParams::getTcpNoDelay(__jni_impl::__JniBaseClass arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"org.apache.http.params.HttpConnectionParams",
-			"getTcpNoDelay",
-			"(Lorg/apache/http/params/HttpParams;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	void HttpConnectionParams::setSoTimeout(__jni_impl::__JniBaseClass arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"org.apache.http.params.HttpConnectionParams",
-			"setSoTimeout",
-			"(Lorg/apache/http/params/HttpParams;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jint HttpConnectionParams::getSoTimeout(__jni_impl::__JniBaseClass arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"org.apache.http.params.HttpConnectionParams",
-			"getSoTimeout",
-			"(Lorg/apache/http/params/HttpParams;)I",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::org::apache::http::params

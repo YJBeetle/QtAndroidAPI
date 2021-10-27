@@ -7,6 +7,18 @@
 #include "Shape.hpp"
 #include "RectShape.hpp"
 
+namespace __jni_impl::android::graphics
+{
+	class Canvas;
+}
+namespace __jni_impl::android::graphics
+{
+	class Outline;
+}
+namespace __jni_impl::android::graphics
+{
+	class Paint;
+}
 namespace __jni_impl::android::graphics::drawable::shapes
 {
 	class RectShape;
@@ -14,18 +26,6 @@ namespace __jni_impl::android::graphics::drawable::shapes
 namespace __jni_impl::android::graphics::drawable::shapes
 {
 	class Shape;
-}
-namespace __jni_impl::android::graphics
-{
-	class Canvas;
-}
-namespace __jni_impl::android::graphics
-{
-	class Paint;
-}
-namespace __jni_impl::android::graphics
-{
-	class Outline;
 }
 
 namespace __jni_impl::android::graphics::drawable::shapes
@@ -45,11 +45,11 @@ namespace __jni_impl::android::graphics::drawable::shapes
 	};
 } // namespace __jni_impl::android::graphics::drawable::shapes
 
+#include "../../Canvas.hpp"
+#include "../../Outline.hpp"
+#include "../../Paint.hpp"
 #include "RectShape.hpp"
 #include "Shape.hpp"
-#include "../../Canvas.hpp"
-#include "../../Paint.hpp"
-#include "../../Outline.hpp"
 
 namespace __jni_impl::android::graphics::drawable::shapes
 {

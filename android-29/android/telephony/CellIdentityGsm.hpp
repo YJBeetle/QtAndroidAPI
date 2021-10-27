@@ -24,19 +24,19 @@ namespace __jni_impl::android::telephony
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint getLac();
-		jint getCid();
-		jint getPsc();
-		jstring getMccString();
-		jstring getMncString();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getMcc();
-		jint getMnc();
-		jstring getMobileNetworkOperator();
 		jint getArfcn();
 		jint getBsic();
+		jint getCid();
+		jint getLac();
+		jint getMcc();
+		jstring getMccString();
+		jint getMnc();
+		jstring getMncString();
+		jstring getMobileNetworkOperator();
+		jint getPsc();
+		jint hashCode();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -71,85 +71,6 @@ namespace __jni_impl::android::telephony
 			arg0
 		);
 	}
-	jstring CellIdentityGsm::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint CellIdentityGsm::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jint CellIdentityGsm::getLac()
-	{
-		return __thiz.callMethod<jint>(
-			"getLac",
-			"()I"
-		);
-	}
-	jint CellIdentityGsm::getCid()
-	{
-		return __thiz.callMethod<jint>(
-			"getCid",
-			"()I"
-		);
-	}
-	jint CellIdentityGsm::getPsc()
-	{
-		return __thiz.callMethod<jint>(
-			"getPsc",
-			"()I"
-		);
-	}
-	jstring CellIdentityGsm::getMccString()
-	{
-		return __thiz.callObjectMethod(
-			"getMccString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring CellIdentityGsm::getMncString()
-	{
-		return __thiz.callObjectMethod(
-			"getMncString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void CellIdentityGsm::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jint CellIdentityGsm::getMcc()
-	{
-		return __thiz.callMethod<jint>(
-			"getMcc",
-			"()I"
-		);
-	}
-	jint CellIdentityGsm::getMnc()
-	{
-		return __thiz.callMethod<jint>(
-			"getMnc",
-			"()I"
-		);
-	}
-	jstring CellIdentityGsm::getMobileNetworkOperator()
-	{
-		return __thiz.callObjectMethod(
-			"getMobileNetworkOperator",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint CellIdentityGsm::getArfcn()
 	{
 		return __thiz.callMethod<jint>(
@@ -162,6 +83,85 @@ namespace __jni_impl::android::telephony
 		return __thiz.callMethod<jint>(
 			"getBsic",
 			"()I"
+		);
+	}
+	jint CellIdentityGsm::getCid()
+	{
+		return __thiz.callMethod<jint>(
+			"getCid",
+			"()I"
+		);
+	}
+	jint CellIdentityGsm::getLac()
+	{
+		return __thiz.callMethod<jint>(
+			"getLac",
+			"()I"
+		);
+	}
+	jint CellIdentityGsm::getMcc()
+	{
+		return __thiz.callMethod<jint>(
+			"getMcc",
+			"()I"
+		);
+	}
+	jstring CellIdentityGsm::getMccString()
+	{
+		return __thiz.callObjectMethod(
+			"getMccString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint CellIdentityGsm::getMnc()
+	{
+		return __thiz.callMethod<jint>(
+			"getMnc",
+			"()I"
+		);
+	}
+	jstring CellIdentityGsm::getMncString()
+	{
+		return __thiz.callObjectMethod(
+			"getMncString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring CellIdentityGsm::getMobileNetworkOperator()
+	{
+		return __thiz.callObjectMethod(
+			"getMobileNetworkOperator",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint CellIdentityGsm::getPsc()
+	{
+		return __thiz.callMethod<jint>(
+			"getPsc",
+			"()I"
+		);
+	}
+	jint CellIdentityGsm::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring CellIdentityGsm::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void CellIdentityGsm::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::telephony

@@ -13,13 +13,13 @@ namespace __jni_impl::android::content
 {
 	class Intent;
 }
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 namespace __jni_impl::android::content
 {
 	class IntentSender;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 namespace __jni_impl::android::os
 {
@@ -27,11 +27,11 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::android::os
 {
-	class UserHandle;
+	class Parcel;
 }
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class UserHandle;
 }
 
 namespace __jni_impl::android::app
@@ -51,45 +51,45 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		void cancel();
-		static QAndroidJniObject getBroadcast(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3);
+		static QAndroidJniObject getActivities(__jni_impl::android::content::Context arg0, jint arg1, jarray arg2, jint arg3);
+		static QAndroidJniObject getActivities(__jni_impl::android::content::Context arg0, jint arg1, jarray arg2, jint arg3, __jni_impl::android::os::Bundle arg4);
 		static QAndroidJniObject getActivity(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3);
 		static QAndroidJniObject getActivity(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3, __jni_impl::android::os::Bundle arg4);
-		static QAndroidJniObject getActivities(__jni_impl::android::content::Context arg0, jint arg1, jarray arg2, jint arg3, __jni_impl::android::os::Bundle arg4);
-		static QAndroidJniObject getActivities(__jni_impl::android::content::Context arg0, jint arg1, jarray arg2, jint arg3);
-		static QAndroidJniObject getService(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3);
+		static QAndroidJniObject getBroadcast(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3);
 		static QAndroidJniObject getForegroundService(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3);
-		QAndroidJniObject getIntentSender();
-		void send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4);
-		void send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4, jstring arg5, __jni_impl::android::os::Bundle arg6);
-		void send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4, const QString &arg5, __jni_impl::android::os::Bundle arg6);
-		void send(jint arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Handler arg2);
-		void send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2);
-		void send(jint arg0);
-		void send();
-		void send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4, jstring arg5);
-		void send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4, const QString &arg5);
-		jstring getTargetPackage();
+		static QAndroidJniObject getService(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3);
+		static QAndroidJniObject readPendingIntentOrNullFromParcel(__jni_impl::android::os::Parcel arg0);
+		static void writePendingIntentOrNullToParcel(__jni_impl::android::app::PendingIntent arg0, __jni_impl::android::os::Parcel arg1);
+		void cancel();
+		jint describeContents();
+		jboolean equals(jobject arg0);
 		jstring getCreatorPackage();
 		jint getCreatorUid();
 		QAndroidJniObject getCreatorUserHandle();
-		static void writePendingIntentOrNullToParcel(__jni_impl::android::app::PendingIntent arg0, __jni_impl::android::os::Parcel arg1);
-		static QAndroidJniObject readPendingIntentOrNullFromParcel(__jni_impl::android::os::Parcel arg0);
-		jint describeContents();
+		QAndroidJniObject getIntentSender();
+		jstring getTargetPackage();
+		jint hashCode();
+		void send();
+		void send(jint arg0);
+		void send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2);
+		void send(jint arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Handler arg2);
+		void send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4);
+		void send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4, jstring arg5);
+		void send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4, const QString &arg5);
+		void send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4, jstring arg5, __jni_impl::android::os::Bundle arg6);
+		void send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4, const QString &arg5, __jni_impl::android::os::Bundle arg6);
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"
-#include "../os/Bundle.hpp"
 #include "../content/IntentSender.hpp"
+#include "../os/Bundle.hpp"
 #include "../os/Handler.hpp"
-#include "../os/UserHandle.hpp"
 #include "../os/Parcel.hpp"
+#include "../os/UserHandle.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -147,45 +147,29 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	jboolean PendingIntent::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring PendingIntent::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint PendingIntent::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	void PendingIntent::cancel()
-	{
-		__thiz.callMethod<void>(
-			"cancel",
-			"()V"
-		);
-	}
-	QAndroidJniObject PendingIntent::getBroadcast(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3)
+	QAndroidJniObject PendingIntent::getActivities(__jni_impl::android::content::Context arg0, jint arg1, jarray arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.PendingIntent",
-			"getBroadcast",
-			"(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;",
+			"getActivities",
+			"(Landroid/content/Context;I[Landroid/content/Intent;I)Landroid/app/PendingIntent;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object(),
+			arg2,
 			arg3
+		);
+	}
+	QAndroidJniObject PendingIntent::getActivities(__jni_impl::android::content::Context arg0, jint arg1, jarray arg2, jint arg3, __jni_impl::android::os::Bundle arg4)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.PendingIntent",
+			"getActivities",
+			"(Landroid/content/Context;I[Landroid/content/Intent;ILandroid/os/Bundle;)Landroid/app/PendingIntent;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3,
+			arg4.__jniObject().object()
 		);
 	}
 	QAndroidJniObject PendingIntent::getActivity(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3)
@@ -213,36 +197,11 @@ namespace __jni_impl::android::app
 			arg4.__jniObject().object()
 		);
 	}
-	QAndroidJniObject PendingIntent::getActivities(__jni_impl::android::content::Context arg0, jint arg1, jarray arg2, jint arg3, __jni_impl::android::os::Bundle arg4)
+	QAndroidJniObject PendingIntent::getBroadcast(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.app.PendingIntent",
-			"getActivities",
-			"(Landroid/content/Context;I[Landroid/content/Intent;ILandroid/os/Bundle;)Landroid/app/PendingIntent;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4.__jniObject().object()
-		);
-	}
-	QAndroidJniObject PendingIntent::getActivities(__jni_impl::android::content::Context arg0, jint arg1, jarray arg2, jint arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.PendingIntent",
-			"getActivities",
-			"(Landroid/content/Context;I[Landroid/content/Intent;I)Landroid/app/PendingIntent;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	QAndroidJniObject PendingIntent::getService(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.PendingIntent",
-			"getService",
+			"getBroadcast",
 			"(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;",
 			arg0.__jniObject().object(),
 			arg1,
@@ -262,11 +221,134 @@ namespace __jni_impl::android::app
 			arg3
 		);
 	}
+	QAndroidJniObject PendingIntent::getService(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, jint arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.PendingIntent",
+			"getService",
+			"(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object(),
+			arg3
+		);
+	}
+	QAndroidJniObject PendingIntent::readPendingIntentOrNullFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.PendingIntent",
+			"readPendingIntentOrNullFromParcel",
+			"(Landroid/os/Parcel;)Landroid/app/PendingIntent;",
+			arg0.__jniObject().object()
+		);
+	}
+	void PendingIntent::writePendingIntentOrNullToParcel(__jni_impl::android::app::PendingIntent arg0, __jni_impl::android::os::Parcel arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.app.PendingIntent",
+			"writePendingIntentOrNullToParcel",
+			"(Landroid/app/PendingIntent;Landroid/os/Parcel;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void PendingIntent::cancel()
+	{
+		__thiz.callMethod<void>(
+			"cancel",
+			"()V"
+		);
+	}
+	jint PendingIntent::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	jboolean PendingIntent::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jstring PendingIntent::getCreatorPackage()
+	{
+		return __thiz.callObjectMethod(
+			"getCreatorPackage",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint PendingIntent::getCreatorUid()
+	{
+		return __thiz.callMethod<jint>(
+			"getCreatorUid",
+			"()I"
+		);
+	}
+	QAndroidJniObject PendingIntent::getCreatorUserHandle()
+	{
+		return __thiz.callObjectMethod(
+			"getCreatorUserHandle",
+			"()Landroid/os/UserHandle;"
+		);
+	}
 	QAndroidJniObject PendingIntent::getIntentSender()
 	{
 		return __thiz.callObjectMethod(
 			"getIntentSender",
 			"()Landroid/content/IntentSender;"
+		);
+	}
+	jstring PendingIntent::getTargetPackage()
+	{
+		return __thiz.callObjectMethod(
+			"getTargetPackage",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint PendingIntent::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	void PendingIntent::send()
+	{
+		__thiz.callMethod<void>(
+			"send",
+			"()V"
+		);
+	}
+	void PendingIntent::send(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"send",
+			"(I)V",
+			arg0
+		);
+	}
+	void PendingIntent::send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2)
+	{
+		__thiz.callMethod<void>(
+			"send",
+			"(Landroid/content/Context;ILandroid/content/Intent;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void PendingIntent::send(jint arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Handler arg2)
+	{
+		__thiz.callMethod<void>(
+			"send",
+			"(ILandroid/app/PendingIntent$OnFinished;Landroid/os/Handler;)V",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
 	void PendingIntent::send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4)
@@ -279,6 +361,32 @@ namespace __jni_impl::android::app
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object(),
 			arg4.__jniObject().object()
+		);
+	}
+	void PendingIntent::send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4, jstring arg5)
+	{
+		__thiz.callMethod<void>(
+			"send",
+			"(Landroid/content/Context;ILandroid/content/Intent;Landroid/app/PendingIntent$OnFinished;Landroid/os/Handler;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object(),
+			arg4.__jniObject().object(),
+			arg5
+		);
+	}
+	void PendingIntent::send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4, const QString &arg5)
+	{
+		__thiz.callMethod<void>(
+			"send",
+			"(Landroid/content/Context;ILandroid/content/Intent;Landroid/app/PendingIntent$OnFinished;Landroid/os/Handler;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object(),
+			arg4.__jniObject().object(),
+			QAndroidJniObject::fromString(arg5).object<jstring>()
 		);
 	}
 	void PendingIntent::send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4, jstring arg5, __jni_impl::android::os::Bundle arg6)
@@ -309,120 +417,12 @@ namespace __jni_impl::android::app
 			arg6.__jniObject().object()
 		);
 	}
-	void PendingIntent::send(jint arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Handler arg2)
-	{
-		__thiz.callMethod<void>(
-			"send",
-			"(ILandroid/app/PendingIntent$OnFinished;Landroid/os/Handler;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void PendingIntent::send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2)
-	{
-		__thiz.callMethod<void>(
-			"send",
-			"(Landroid/content/Context;ILandroid/content/Intent;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void PendingIntent::send(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"send",
-			"(I)V",
-			arg0
-		);
-	}
-	void PendingIntent::send()
-	{
-		__thiz.callMethod<void>(
-			"send",
-			"()V"
-		);
-	}
-	void PendingIntent::send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4, jstring arg5)
-	{
-		__thiz.callMethod<void>(
-			"send",
-			"(Landroid/content/Context;ILandroid/content/Intent;Landroid/app/PendingIntent$OnFinished;Landroid/os/Handler;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5
-		);
-	}
-	void PendingIntent::send(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::content::Intent arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::android::os::Handler arg4, const QString &arg5)
-	{
-		__thiz.callMethod<void>(
-			"send",
-			"(Landroid/content/Context;ILandroid/content/Intent;Landroid/app/PendingIntent$OnFinished;Landroid/os/Handler;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			QAndroidJniObject::fromString(arg5).object<jstring>()
-		);
-	}
-	jstring PendingIntent::getTargetPackage()
+	jstring PendingIntent::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getTargetPackage",
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jstring PendingIntent::getCreatorPackage()
-	{
-		return __thiz.callObjectMethod(
-			"getCreatorPackage",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint PendingIntent::getCreatorUid()
-	{
-		return __thiz.callMethod<jint>(
-			"getCreatorUid",
-			"()I"
-		);
-	}
-	QAndroidJniObject PendingIntent::getCreatorUserHandle()
-	{
-		return __thiz.callObjectMethod(
-			"getCreatorUserHandle",
-			"()Landroid/os/UserHandle;"
-		);
-	}
-	void PendingIntent::writePendingIntentOrNullToParcel(__jni_impl::android::app::PendingIntent arg0, __jni_impl::android::os::Parcel arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.app.PendingIntent",
-			"writePendingIntentOrNullToParcel",
-			"(Landroid/app/PendingIntent;Landroid/os/Parcel;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject PendingIntent::readPendingIntentOrNullFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.PendingIntent",
-			"readPendingIntentOrNullFromParcel",
-			"(Landroid/os/Parcel;)Landroid/app/PendingIntent;",
-			arg0.__jniObject().object()
-		);
-	}
-	jint PendingIntent::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
 	}
 	void PendingIntent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

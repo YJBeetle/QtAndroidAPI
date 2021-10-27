@@ -19,9 +19,9 @@ namespace __jni_impl::android::view::animation
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
-		void __constructor(jfloat arg0);
 		void __constructor();
+		void __constructor(jfloat arg0);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
 		jfloat getInterpolation(jfloat arg0);
@@ -35,13 +35,11 @@ namespace __jni_impl::android::view::animation
 	// Fields
 	
 	// Constructors
-	void AnticipateInterpolator::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+	void AnticipateInterpolator::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.AnticipateInterpolator",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			"()V"
 		);
 	}
 	void AnticipateInterpolator::__constructor(jfloat arg0)
@@ -52,11 +50,13 @@ namespace __jni_impl::android::view::animation
 			arg0
 		);
 	}
-	void AnticipateInterpolator::__constructor()
+	void AnticipateInterpolator::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.AnticipateInterpolator",
-			"()V"
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	
@@ -77,20 +77,20 @@ namespace android::view::animation
 	{
 	public:
 		AnticipateInterpolator(QAndroidJniObject obj) { __thiz = obj; }
-		AnticipateInterpolator(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+		AnticipateInterpolator()
 		{
-			__constructor(
-				arg0,
-				arg1);
+			__constructor();
 		}
 		AnticipateInterpolator(jfloat arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		AnticipateInterpolator()
+		AnticipateInterpolator(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 		{
-			__constructor();
+			__constructor(
+				arg0,
+				arg1);
 		}
 	};
 } // namespace android::view::animation

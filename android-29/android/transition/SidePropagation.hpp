@@ -7,10 +7,6 @@
 #include "TransitionPropagation.hpp"
 #include "VisibilityPropagation.hpp"
 
-namespace __jni_impl::android::view
-{
-	class ViewGroup;
-}
 namespace __jni_impl::android::transition
 {
 	class Transition;
@@ -18,6 +14,10 @@ namespace __jni_impl::android::transition
 namespace __jni_impl::android::transition
 {
 	class TransitionValues;
+}
+namespace __jni_impl::android::view
+{
+	class ViewGroup;
 }
 
 namespace __jni_impl::android::transition
@@ -32,14 +32,14 @@ namespace __jni_impl::android::transition
 		
 		// Methods
 		jlong getStartDelay(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::Transition arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3);
-		void setSide(jint arg0);
 		void setPropagationSpeed(jfloat arg0);
+		void setSide(jint arg0);
 	};
 } // namespace __jni_impl::android::transition
 
-#include "../view/ViewGroup.hpp"
 #include "Transition.hpp"
 #include "TransitionValues.hpp"
+#include "../view/ViewGroup.hpp"
 
 namespace __jni_impl::android::transition
 {
@@ -66,19 +66,19 @@ namespace __jni_impl::android::transition
 			arg3.__jniObject().object()
 		);
 	}
-	void SidePropagation::setSide(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSide",
-			"(I)V",
-			arg0
-		);
-	}
 	void SidePropagation::setPropagationSpeed(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPropagationSpeed",
 			"(F)V",
+			arg0
+		);
+	}
+	void SidePropagation::setSide(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSide",
+			"(I)V",
 			arg0
 		);
 	}

@@ -26,11 +26,11 @@ namespace __jni_impl::android::database
 		void __constructor();
 		
 		// Methods
-		void registerObserver(jobject arg0);
-		void registerObserver(__jni_impl::android::database::ContentObserver arg0);
-		void dispatchChange(jboolean arg0, __jni_impl::android::net::Uri arg1);
 		void dispatchChange(jboolean arg0);
+		void dispatchChange(jboolean arg0, __jni_impl::android::net::Uri arg1);
 		void notifyChange(jboolean arg0);
+		void registerObserver(__jni_impl::android::database::ContentObserver arg0);
+		void registerObserver(jobject arg0);
 	};
 } // namespace __jni_impl::android::database
 
@@ -51,20 +51,12 @@ namespace __jni_impl::android::database
 	}
 	
 	// Methods
-	void ContentObservable::registerObserver(jobject arg0)
+	void ContentObservable::dispatchChange(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
-			"registerObserver",
-			"(Ljava/lang/Object;)V",
+			"dispatchChange",
+			"(Z)V",
 			arg0
-		);
-	}
-	void ContentObservable::registerObserver(__jni_impl::android::database::ContentObserver arg0)
-	{
-		__thiz.callMethod<void>(
-			"registerObserver",
-			"(Landroid/database/ContentObserver;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	void ContentObservable::dispatchChange(jboolean arg0, __jni_impl::android::net::Uri arg1)
@@ -76,19 +68,27 @@ namespace __jni_impl::android::database
 			arg1.__jniObject().object()
 		);
 	}
-	void ContentObservable::dispatchChange(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"dispatchChange",
-			"(Z)V",
-			arg0
-		);
-	}
 	void ContentObservable::notifyChange(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"notifyChange",
 			"(Z)V",
+			arg0
+		);
+	}
+	void ContentObservable::registerObserver(__jni_impl::android::database::ContentObserver arg0)
+	{
+		__thiz.callMethod<void>(
+			"registerObserver",
+			"(Landroid/database/ContentObserver;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ContentObservable::registerObserver(jobject arg0)
+	{
+		__thiz.callMethod<void>(
+			"registerObserver",
+			"(Ljava/lang/Object;)V",
 			arg0
 		);
 	}

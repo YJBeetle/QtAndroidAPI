@@ -53,8 +53,8 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject get(jint arg0, jint arg1);
 		static QAndroidJniObject get(jint arg0);
+		static QAndroidJniObject get(jint arg0, jint arg1);
 		static jboolean hasProfile(jint arg0);
 		static jboolean hasProfile(jint arg0, jint arg1);
 	};
@@ -314,6 +314,15 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	QAndroidJniObject CamcorderProfile::get(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.media.CamcorderProfile",
+			"get",
+			"(I)Landroid/media/CamcorderProfile;",
+			arg0
+		);
+	}
 	QAndroidJniObject CamcorderProfile::get(jint arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -322,15 +331,6 @@ namespace __jni_impl::android::media
 			"(II)Landroid/media/CamcorderProfile;",
 			arg0,
 			arg1
-		);
-	}
-	QAndroidJniObject CamcorderProfile::get(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.media.CamcorderProfile",
-			"get",
-			"(I)Landroid/media/CamcorderProfile;",
-			arg0
 		);
 	}
 	jboolean CamcorderProfile::hasProfile(jint arg0)

@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net
-{
-	class Uri;
-}
 namespace __jni_impl::android::content
 {
 	class ContentResolver;
+}
+namespace __jni_impl::android::net
+{
+	class Uri;
 }
 
 namespace __jni_impl::android::provider
@@ -53,14 +53,14 @@ namespace __jni_impl::android::provider
 		void __constructor();
 		
 		// Methods
-		static jboolean isRemoteDirectoryId(jlong arg0);
 		static jboolean isEnterpriseDirectoryId(jlong arg0);
+		static jboolean isRemoteDirectoryId(jlong arg0);
 		static void notifyDirectoryChange(__jni_impl::android::content::ContentResolver arg0);
 	};
 } // namespace __jni_impl::android::provider
 
-#include "../net/Uri.hpp"
 #include "../content/ContentResolver.hpp"
+#include "../net/Uri.hpp"
 
 namespace __jni_impl::android::provider
 {
@@ -285,20 +285,20 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	jboolean ContactsContract_Directory::isRemoteDirectoryId(jlong arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.provider.ContactsContract$Directory",
-			"isRemoteDirectoryId",
-			"(J)Z",
-			arg0
-		);
-	}
 	jboolean ContactsContract_Directory::isEnterpriseDirectoryId(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.provider.ContactsContract$Directory",
 			"isEnterpriseDirectoryId",
+			"(J)Z",
+			arg0
+		);
+	}
+	jboolean ContactsContract_Directory::isRemoteDirectoryId(jlong arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.provider.ContactsContract$Directory",
+			"isRemoteDirectoryId",
 			"(J)Z",
 			arg0
 		);

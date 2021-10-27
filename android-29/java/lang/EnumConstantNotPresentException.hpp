@@ -20,8 +20,8 @@ namespace __jni_impl::java::lang
 		void __constructor(jclass arg0, const QString &arg1);
 		
 		// Methods
-		jclass enumType();
 		jstring constantName();
+		jclass enumType();
 	};
 } // namespace __jni_impl::java::lang
 
@@ -51,19 +51,19 @@ namespace __jni_impl::java::lang
 	}
 	
 	// Methods
-	jclass EnumConstantNotPresentException::enumType()
-	{
-		return __thiz.callObjectMethod(
-			"enumType",
-			"()Ljava/lang/Class;"
-		).object<jclass>();
-	}
 	jstring EnumConstantNotPresentException::constantName()
 	{
 		return __thiz.callObjectMethod(
 			"constantName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jclass EnumConstantNotPresentException::enumType()
+	{
+		return __thiz.callObjectMethod(
+			"enumType",
+			"()Ljava/lang/Class;"
+		).object<jclass>();
 	}
 } // namespace __jni_impl::java::lang
 

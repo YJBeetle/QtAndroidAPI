@@ -20,10 +20,10 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		static jstring toString(jint arg0);
-		static jint getSize(jint arg0);
 		static jint getMode(jint arg0);
+		static jint getSize(jint arg0);
 		static jint makeMeasureSpec(jint arg0, jint arg1);
+		static jstring toString(jint arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -63,29 +63,20 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jstring View_MeasureSpec::toString(jint arg0)
+	jint View_MeasureSpec::getMode(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.View$MeasureSpec",
-			"toString",
-			"(I)Ljava/lang/String;",
+			"getMode",
+			"(I)I",
 			arg0
-		).object<jstring>();
+		);
 	}
 	jint View_MeasureSpec::getSize(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.View$MeasureSpec",
 			"getSize",
-			"(I)I",
-			arg0
-		);
-	}
-	jint View_MeasureSpec::getMode(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.View$MeasureSpec",
-			"getMode",
 			"(I)I",
 			arg0
 		);
@@ -99,6 +90,15 @@ namespace __jni_impl::android::view
 			arg0,
 			arg1
 		);
+	}
+	jstring View_MeasureSpec::toString(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.View$MeasureSpec",
+			"toString",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::view
 

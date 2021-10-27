@@ -19,14 +19,14 @@ namespace __jni_impl::java::io
 		void __constructor(const QString &arg0);
 		
 		// Methods
-		jint read(jcharArray arg0, jint arg1, jint arg2);
-		jint read();
 		void close();
 		void mark(jint arg0);
-		jlong skip(jlong arg0);
 		jboolean markSupported();
-		void reset();
+		jint read();
+		jint read(jcharArray arg0, jint arg1, jint arg2);
 		jboolean ready();
+		void reset();
+		jlong skip(jlong arg0);
 	};
 } // namespace __jni_impl::java::io
 
@@ -54,23 +54,6 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	jint StringReader::read(jcharArray arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"read",
-			"([CII)I",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jint StringReader::read()
-	{
-		return __thiz.callMethod<jint>(
-			"read",
-			"()I"
-		);
-	}
 	void StringReader::close()
 	{
 		__thiz.callMethod<void>(
@@ -86,18 +69,34 @@ namespace __jni_impl::java::io
 			arg0
 		);
 	}
-	jlong StringReader::skip(jlong arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"skip",
-			"(J)J",
-			arg0
-		);
-	}
 	jboolean StringReader::markSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"markSupported",
+			"()Z"
+		);
+	}
+	jint StringReader::read()
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
+	jint StringReader::read(jcharArray arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"([CII)I",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	jboolean StringReader::ready()
+	{
+		return __thiz.callMethod<jboolean>(
+			"ready",
 			"()Z"
 		);
 	}
@@ -108,11 +107,12 @@ namespace __jni_impl::java::io
 			"()V"
 		);
 	}
-	jboolean StringReader::ready()
+	jlong StringReader::skip(jlong arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"ready",
-			"()Z"
+		return __thiz.callMethod<jlong>(
+			"skip",
+			"(J)J",
+			arg0
 		);
 	}
 } // namespace __jni_impl::java::io

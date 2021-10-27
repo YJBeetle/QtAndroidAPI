@@ -7,17 +7,13 @@
 #include "CharacterStyle.hpp"
 #include "MetricAffectingSpan.hpp"
 
-namespace __jni_impl::android::os
+namespace __jni_impl::android::content
 {
-	class Parcel;
+	class Context;
 }
 namespace __jni_impl::android::content::res
 {
 	class ColorStateList;
-}
-namespace __jni_impl::android::content
-{
-	class Context;
 }
 namespace __jni_impl::android::graphics
 {
@@ -26,6 +22,10 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::os
 {
 	class LocaleList;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 namespace __jni_impl::android::text
 {
@@ -41,40 +41,40 @@ namespace __jni_impl::android::text::style
 		
 		// Constructors
 		void __constructor(__jni_impl::android::os::Parcel arg0);
+		void __constructor(__jni_impl::android::content::Context arg0, jint arg1);
+		void __constructor(__jni_impl::android::content::Context arg0, jint arg1, jint arg2);
 		void __constructor(jstring arg0, jint arg1, jint arg2, __jni_impl::android::content::res::ColorStateList arg3, __jni_impl::android::content::res::ColorStateList arg4);
 		void __constructor(const QString &arg0, jint arg1, jint arg2, __jni_impl::android::content::res::ColorStateList arg3, __jni_impl::android::content::res::ColorStateList arg4);
-		void __constructor(__jni_impl::android::content::Context arg0, jint arg1, jint arg2);
-		void __constructor(__jni_impl::android::content::Context arg0, jint arg1);
 		
 		// Methods
+		jint describeContents();
 		jstring getFamily();
-		QAndroidJniObject getTypeface();
-		QAndroidJniObject getTextLocales();
-		jboolean isElegantTextHeight();
-		jint getTextSize();
 		jstring getFontFeatureSettings();
 		jstring getFontVariationSettings();
-		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
-		QAndroidJniObject getTextColor();
 		QAndroidJniObject getLinkTextColor();
-		jint getTextStyle();
-		jint getTextFontWeight();
-		jint getSpanTypeId();
-		jfloat getShadowRadius();
+		jint getShadowColor();
 		jfloat getShadowDx();
 		jfloat getShadowDy();
-		jint getShadowColor();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jfloat getShadowRadius();
+		jint getSpanTypeId();
+		QAndroidJniObject getTextColor();
+		jint getTextFontWeight();
+		QAndroidJniObject getTextLocales();
+		jint getTextSize();
+		jint getTextStyle();
+		QAndroidJniObject getTypeface();
+		jboolean isElegantTextHeight();
+		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
 		void updateMeasureState(__jni_impl::android::text::TextPaint arg0);
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::text::style
 
-#include "../../os/Parcel.hpp"
-#include "../../content/res/ColorStateList.hpp"
 #include "../../content/Context.hpp"
+#include "../../content/res/ColorStateList.hpp"
 #include "../../graphics/Typeface.hpp"
 #include "../../os/LocaleList.hpp"
+#include "../../os/Parcel.hpp"
 #include "../TextPaint.hpp"
 
 namespace __jni_impl::android::text::style
@@ -88,6 +88,25 @@ namespace __jni_impl::android::text::style
 			"android.text.style.TextAppearanceSpan",
 			"(Landroid/os/Parcel;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void TextAppearanceSpan::__constructor(__jni_impl::android::content::Context arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.style.TextAppearanceSpan",
+			"(Landroid/content/Context;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void TextAppearanceSpan::__constructor(__jni_impl::android::content::Context arg0, jint arg1, jint arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.style.TextAppearanceSpan",
+			"(Landroid/content/Context;II)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
 		);
 	}
 	void TextAppearanceSpan::__constructor(jstring arg0, jint arg1, jint arg2, __jni_impl::android::content::res::ColorStateList arg3, __jni_impl::android::content::res::ColorStateList arg4)
@@ -114,61 +133,21 @@ namespace __jni_impl::android::text::style
 			arg4.__jniObject().object()
 		);
 	}
-	void TextAppearanceSpan::__constructor(__jni_impl::android::content::Context arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.style.TextAppearanceSpan",
-			"(Landroid/content/Context;II)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		);
-	}
-	void TextAppearanceSpan::__constructor(__jni_impl::android::content::Context arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.style.TextAppearanceSpan",
-			"(Landroid/content/Context;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	
 	// Methods
+	jint TextAppearanceSpan::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jstring TextAppearanceSpan::getFamily()
 	{
 		return __thiz.callObjectMethod(
 			"getFamily",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	QAndroidJniObject TextAppearanceSpan::getTypeface()
-	{
-		return __thiz.callObjectMethod(
-			"getTypeface",
-			"()Landroid/graphics/Typeface;"
-		);
-	}
-	QAndroidJniObject TextAppearanceSpan::getTextLocales()
-	{
-		return __thiz.callObjectMethod(
-			"getTextLocales",
-			"()Landroid/os/LocaleList;"
-		);
-	}
-	jboolean TextAppearanceSpan::isElegantTextHeight()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isElegantTextHeight",
-			"()Z"
-		);
-	}
-	jint TextAppearanceSpan::getTextSize()
-	{
-		return __thiz.callMethod<jint>(
-			"getTextSize",
-			"()I"
-		);
 	}
 	jstring TextAppearanceSpan::getFontFeatureSettings()
 	{
@@ -184,21 +163,6 @@ namespace __jni_impl::android::text::style
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	void TextAppearanceSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
-	{
-		__thiz.callMethod<void>(
-			"updateDrawState",
-			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject TextAppearanceSpan::getTextColor()
-	{
-		return __thiz.callObjectMethod(
-			"getTextColor",
-			"()Landroid/content/res/ColorStateList;"
-		);
-	}
 	QAndroidJniObject TextAppearanceSpan::getLinkTextColor()
 	{
 		return __thiz.callObjectMethod(
@@ -206,32 +170,11 @@ namespace __jni_impl::android::text::style
 			"()Landroid/content/res/ColorStateList;"
 		);
 	}
-	jint TextAppearanceSpan::getTextStyle()
+	jint TextAppearanceSpan::getShadowColor()
 	{
 		return __thiz.callMethod<jint>(
-			"getTextStyle",
+			"getShadowColor",
 			"()I"
-		);
-	}
-	jint TextAppearanceSpan::getTextFontWeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getTextFontWeight",
-			"()I"
-		);
-	}
-	jint TextAppearanceSpan::getSpanTypeId()
-	{
-		return __thiz.callMethod<jint>(
-			"getSpanTypeId",
-			"()I"
-		);
-	}
-	jfloat TextAppearanceSpan::getShadowRadius()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getShadowRadius",
-			"()F"
 		);
 	}
 	jfloat TextAppearanceSpan::getShadowDx()
@@ -248,18 +191,83 @@ namespace __jni_impl::android::text::style
 			"()F"
 		);
 	}
-	jint TextAppearanceSpan::getShadowColor()
+	jfloat TextAppearanceSpan::getShadowRadius()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getShadowRadius",
+			"()F"
+		);
+	}
+	jint TextAppearanceSpan::getSpanTypeId()
 	{
 		return __thiz.callMethod<jint>(
-			"getShadowColor",
+			"getSpanTypeId",
 			"()I"
 		);
 	}
-	jint TextAppearanceSpan::describeContents()
+	QAndroidJniObject TextAppearanceSpan::getTextColor()
+	{
+		return __thiz.callObjectMethod(
+			"getTextColor",
+			"()Landroid/content/res/ColorStateList;"
+		);
+	}
+	jint TextAppearanceSpan::getTextFontWeight()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getTextFontWeight",
 			"()I"
+		);
+	}
+	QAndroidJniObject TextAppearanceSpan::getTextLocales()
+	{
+		return __thiz.callObjectMethod(
+			"getTextLocales",
+			"()Landroid/os/LocaleList;"
+		);
+	}
+	jint TextAppearanceSpan::getTextSize()
+	{
+		return __thiz.callMethod<jint>(
+			"getTextSize",
+			"()I"
+		);
+	}
+	jint TextAppearanceSpan::getTextStyle()
+	{
+		return __thiz.callMethod<jint>(
+			"getTextStyle",
+			"()I"
+		);
+	}
+	QAndroidJniObject TextAppearanceSpan::getTypeface()
+	{
+		return __thiz.callObjectMethod(
+			"getTypeface",
+			"()Landroid/graphics/Typeface;"
+		);
+	}
+	jboolean TextAppearanceSpan::isElegantTextHeight()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isElegantTextHeight",
+			"()Z"
+		);
+	}
+	void TextAppearanceSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
+	{
+		__thiz.callMethod<void>(
+			"updateDrawState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void TextAppearanceSpan::updateMeasureState(__jni_impl::android::text::TextPaint arg0)
+	{
+		__thiz.callMethod<void>(
+			"updateMeasureState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void TextAppearanceSpan::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
@@ -269,14 +277,6 @@ namespace __jni_impl::android::text::style
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void TextAppearanceSpan::updateMeasureState(__jni_impl::android::text::TextPaint arg0)
-	{
-		__thiz.callMethod<void>(
-			"updateMeasureState",
-			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::text::style
@@ -292,14 +292,11 @@ namespace android::text::style
 			__constructor(
 				arg0);
 		}
-		TextAppearanceSpan(jstring arg0, jint arg1, jint arg2, __jni_impl::android::content::res::ColorStateList arg3, __jni_impl::android::content::res::ColorStateList arg4)
+		TextAppearanceSpan(__jni_impl::android::content::Context arg0, jint arg1)
 		{
 			__constructor(
 				arg0,
-				arg1,
-				arg2,
-				arg3,
-				arg4);
+				arg1);
 		}
 		TextAppearanceSpan(__jni_impl::android::content::Context arg0, jint arg1, jint arg2)
 		{
@@ -308,11 +305,14 @@ namespace android::text::style
 				arg1,
 				arg2);
 		}
-		TextAppearanceSpan(__jni_impl::android::content::Context arg0, jint arg1)
+		TextAppearanceSpan(jstring arg0, jint arg1, jint arg2, __jni_impl::android::content::res::ColorStateList arg3, __jni_impl::android::content::res::ColorStateList arg4)
 		{
 			__constructor(
 				arg0,
-				arg1);
+				arg1,
+				arg2,
+				arg3,
+				arg4);
 		}
 	};
 } // namespace android::text::style

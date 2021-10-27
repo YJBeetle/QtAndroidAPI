@@ -5,6 +5,10 @@
 
 #include "../../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::content
+{
+	class Intent;
+}
 namespace __jni_impl::android::net
 {
 	class Uri;
@@ -12,10 +16,6 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::telephony::mbms
 {
 	class DownloadRequest;
-}
-namespace __jni_impl::android::content
-{
-	class Intent;
 }
 namespace __jni_impl::android::telephony::mbms
 {
@@ -33,18 +33,18 @@ namespace __jni_impl::android::telephony::mbms
 		void __constructor(__jni_impl::android::net::Uri arg0, __jni_impl::android::net::Uri arg1);
 		
 		// Methods
-		QAndroidJniObject build();
 		static QAndroidJniObject fromDownloadRequest(__jni_impl::android::telephony::mbms::DownloadRequest arg0);
 		static QAndroidJniObject fromSerializedRequest(jbyteArray arg0);
-		QAndroidJniObject setSubscriptionId(jint arg0);
+		QAndroidJniObject build();
 		QAndroidJniObject setAppIntent(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject setServiceInfo(__jni_impl::android::telephony::mbms::FileServiceInfo arg0);
+		QAndroidJniObject setSubscriptionId(jint arg0);
 	};
 } // namespace __jni_impl::android::telephony::mbms
 
+#include "../../content/Intent.hpp"
 #include "../../net/Uri.hpp"
 #include "DownloadRequest.hpp"
-#include "../../content/Intent.hpp"
 #include "FileServiceInfo.hpp"
 
 namespace __jni_impl::android::telephony::mbms
@@ -63,13 +63,6 @@ namespace __jni_impl::android::telephony::mbms
 	}
 	
 	// Methods
-	QAndroidJniObject DownloadRequest_Builder::build()
-	{
-		return __thiz.callObjectMethod(
-			"build",
-			"()Landroid/telephony/mbms/DownloadRequest;"
-		);
-	}
 	QAndroidJniObject DownloadRequest_Builder::fromDownloadRequest(__jni_impl::android::telephony::mbms::DownloadRequest arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -88,12 +81,11 @@ namespace __jni_impl::android::telephony::mbms
 			arg0
 		);
 	}
-	QAndroidJniObject DownloadRequest_Builder::setSubscriptionId(jint arg0)
+	QAndroidJniObject DownloadRequest_Builder::build()
 	{
 		return __thiz.callObjectMethod(
-			"setSubscriptionId",
-			"(I)Landroid/telephony/mbms/DownloadRequest$Builder;",
-			arg0
+			"build",
+			"()Landroid/telephony/mbms/DownloadRequest;"
 		);
 	}
 	QAndroidJniObject DownloadRequest_Builder::setAppIntent(__jni_impl::android::content::Intent arg0)
@@ -110,6 +102,14 @@ namespace __jni_impl::android::telephony::mbms
 			"setServiceInfo",
 			"(Landroid/telephony/mbms/FileServiceInfo;)Landroid/telephony/mbms/DownloadRequest$Builder;",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject DownloadRequest_Builder::setSubscriptionId(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setSubscriptionId",
+			"(I)Landroid/telephony/mbms/DownloadRequest$Builder;",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::telephony::mbms

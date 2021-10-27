@@ -8,15 +8,15 @@
 
 namespace __jni_impl::android::renderscript
 {
+	class Allocation;
+}
+namespace __jni_impl::android::renderscript
+{
 	class RenderScript;
 }
 namespace __jni_impl::android::renderscript
 {
 	class Script_KernelID;
-}
-namespace __jni_impl::android::renderscript
-{
-	class Allocation;
 }
 
 namespace __jni_impl::android::renderscript
@@ -30,17 +30,17 @@ namespace __jni_impl::android::renderscript
 		void __constructor();
 		
 		// Methods
-		void execute();
-		jobjectArray execute(jobjectArray arg0);
 		void destroy();
+		jobjectArray execute(jobjectArray arg0);
+		void execute();
 		void setInput(__jni_impl::android::renderscript::Script_KernelID arg0, __jni_impl::android::renderscript::Allocation arg1);
 		void setOutput(__jni_impl::android::renderscript::Script_KernelID arg0, __jni_impl::android::renderscript::Allocation arg1);
 	};
 } // namespace __jni_impl::android::renderscript
 
+#include "Allocation.hpp"
 #include "RenderScript.hpp"
 #include "Script_KernelID.hpp"
-#include "Allocation.hpp"
 
 namespace __jni_impl::android::renderscript
 {
@@ -55,10 +55,10 @@ namespace __jni_impl::android::renderscript
 	}
 	
 	// Methods
-	void ScriptGroup::execute()
+	void ScriptGroup::destroy()
 	{
 		__thiz.callMethod<void>(
-			"execute",
+			"destroy",
 			"()V"
 		);
 	}
@@ -70,10 +70,10 @@ namespace __jni_impl::android::renderscript
 			arg0
 		).object<jobjectArray>();
 	}
-	void ScriptGroup::destroy()
+	void ScriptGroup::execute()
 	{
 		__thiz.callMethod<void>(
-			"destroy",
+			"execute",
 			"()V"
 		);
 	}

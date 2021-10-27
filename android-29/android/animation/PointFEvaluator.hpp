@@ -22,8 +22,8 @@ namespace __jni_impl::android::animation
 		void __constructor(__jni_impl::android::graphics::PointF arg0);
 		
 		// Methods
-		jobject evaluate(jfloat arg0, jobject arg1, jobject arg2);
 		QAndroidJniObject evaluate(jfloat arg0, __jni_impl::android::graphics::PointF arg1, __jni_impl::android::graphics::PointF arg2);
+		jobject evaluate(jfloat arg0, jobject arg1, jobject arg2);
 	};
 } // namespace __jni_impl::android::animation
 
@@ -51,16 +51,6 @@ namespace __jni_impl::android::animation
 	}
 	
 	// Methods
-	jobject PointFEvaluator::evaluate(jfloat arg0, jobject arg1, jobject arg2)
-	{
-		return __thiz.callObjectMethod(
-			"evaluate",
-			"(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1,
-			arg2
-		).object<jobject>();
-	}
 	QAndroidJniObject PointFEvaluator::evaluate(jfloat arg0, __jni_impl::android::graphics::PointF arg1, __jni_impl::android::graphics::PointF arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -70,6 +60,16 @@ namespace __jni_impl::android::animation
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);
+	}
+	jobject PointFEvaluator::evaluate(jfloat arg0, jobject arg1, jobject arg2)
+	{
+		return __thiz.callObjectMethod(
+			"evaluate",
+			"(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0,
+			arg1,
+			arg2
+		).object<jobject>();
 	}
 } // namespace __jni_impl::android::animation
 

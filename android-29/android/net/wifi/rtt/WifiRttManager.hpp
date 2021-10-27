@@ -26,8 +26,8 @@ namespace __jni_impl::android::net::wifi::rtt
 		void __constructor();
 		
 		// Methods
-		void startRanging(__jni_impl::android::net::wifi::rtt::RangingRequest arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::net::wifi::rtt::RangingResultCallback arg2);
 		jboolean isAvailable();
+		void startRanging(__jni_impl::android::net::wifi::rtt::RangingRequest arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::net::wifi::rtt::RangingResultCallback arg2);
 	};
 } // namespace __jni_impl::android::net::wifi::rtt
 
@@ -55,6 +55,13 @@ namespace __jni_impl::android::net::wifi::rtt
 	}
 	
 	// Methods
+	jboolean WifiRttManager::isAvailable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAvailable",
+			"()Z"
+		);
+	}
 	void WifiRttManager::startRanging(__jni_impl::android::net::wifi::rtt::RangingRequest arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::net::wifi::rtt::RangingResultCallback arg2)
 	{
 		__thiz.callMethod<void>(
@@ -63,13 +70,6 @@ namespace __jni_impl::android::net::wifi::rtt
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
-		);
-	}
-	jboolean WifiRttManager::isAvailable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAvailable",
-			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::net::wifi::rtt

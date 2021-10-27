@@ -17,9 +17,9 @@ namespace __jni_impl::java::security::spec
 		void __constructor(jbyteArray arg0);
 		
 		// Methods
+		jstring getAlgorithm();
 		jbyteArray getEncoded();
 		jstring getFormat();
-		jstring getAlgorithm();
 	};
 } // namespace __jni_impl::java::security::spec
 
@@ -39,6 +39,13 @@ namespace __jni_impl::java::security::spec
 	}
 	
 	// Methods
+	jstring EncodedKeySpec::getAlgorithm()
+	{
+		return __thiz.callObjectMethod(
+			"getAlgorithm",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jbyteArray EncodedKeySpec::getEncoded()
 	{
 		return __thiz.callObjectMethod(
@@ -50,13 +57,6 @@ namespace __jni_impl::java::security::spec
 	{
 		return __thiz.callObjectMethod(
 			"getFormat",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring EncodedKeySpec::getAlgorithm()
-	{
-		return __thiz.callObjectMethod(
-			"getAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

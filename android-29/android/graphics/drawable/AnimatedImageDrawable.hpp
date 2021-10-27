@@ -16,11 +16,11 @@ namespace __jni_impl::android::content::res
 }
 namespace __jni_impl::android::graphics
 {
-	class ColorFilter;
+	class Canvas;
 }
 namespace __jni_impl::android::graphics
 {
-	class Canvas;
+	class ColorFilter;
 }
 namespace __jni_impl::android::graphics::drawable
 {
@@ -39,33 +39,33 @@ namespace __jni_impl::android::graphics::drawable
 		void __constructor();
 		
 		// Methods
-		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
-		void start();
-		void stop();
-		jint getRepeatCount();
-		QAndroidJniObject getColorFilter();
-		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
-		void setAlpha(jint arg0);
-		jint getAlpha();
-		void draw(__jni_impl::android::graphics::Canvas arg0);
-		void registerAnimationCallback(__jni_impl::android::graphics::drawable::Animatable2_AnimationCallback arg0);
-		void setRepeatCount(jint arg0);
-		jboolean unregisterAnimationCallback(__jni_impl::android::graphics::drawable::Animatable2_AnimationCallback arg0);
 		void clearAnimationCallbacks();
+		void draw(__jni_impl::android::graphics::Canvas arg0);
+		jint getAlpha();
+		QAndroidJniObject getColorFilter();
+		jint getIntrinsicHeight();
+		jint getIntrinsicWidth();
+		jint getOpacity();
+		jint getRepeatCount();
+		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
+		jboolean isAutoMirrored();
 		jboolean isRunning();
 		jboolean onLayoutDirectionChanged(jint arg0);
+		void registerAnimationCallback(__jni_impl::android::graphics::drawable::Animatable2_AnimationCallback arg0);
+		void setAlpha(jint arg0);
 		void setAutoMirrored(jboolean arg0);
-		jboolean isAutoMirrored();
-		jint getOpacity();
-		jint getIntrinsicWidth();
-		jint getIntrinsicHeight();
+		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
+		void setRepeatCount(jint arg0);
+		void start();
+		void stop();
+		jboolean unregisterAnimationCallback(__jni_impl::android::graphics::drawable::Animatable2_AnimationCallback arg0);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
-#include "../ColorFilter.hpp"
 #include "../Canvas.hpp"
+#include "../ColorFilter.hpp"
 #include "Animatable2_AnimationCallback.hpp"
 
 namespace __jni_impl::android::graphics::drawable
@@ -89,6 +89,63 @@ namespace __jni_impl::android::graphics::drawable
 	}
 	
 	// Methods
+	void AnimatedImageDrawable::clearAnimationCallbacks()
+	{
+		__thiz.callMethod<void>(
+			"clearAnimationCallbacks",
+			"()V"
+		);
+	}
+	void AnimatedImageDrawable::draw(__jni_impl::android::graphics::Canvas arg0)
+	{
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint AnimatedImageDrawable::getAlpha()
+	{
+		return __thiz.callMethod<jint>(
+			"getAlpha",
+			"()I"
+		);
+	}
+	QAndroidJniObject AnimatedImageDrawable::getColorFilter()
+	{
+		return __thiz.callObjectMethod(
+			"getColorFilter",
+			"()Landroid/graphics/ColorFilter;"
+		);
+	}
+	jint AnimatedImageDrawable::getIntrinsicHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getIntrinsicHeight",
+			"()I"
+		);
+	}
+	jint AnimatedImageDrawable::getIntrinsicWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getIntrinsicWidth",
+			"()I"
+		);
+	}
+	jint AnimatedImageDrawable::getOpacity()
+	{
+		return __thiz.callMethod<jint>(
+			"getOpacity",
+			"()I"
+		);
+	}
+	jint AnimatedImageDrawable::getRepeatCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getRepeatCount",
+			"()I"
+		);
+	}
 	void AnimatedImageDrawable::inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3)
 	{
 		__thiz.callMethod<void>(
@@ -100,94 +157,11 @@ namespace __jni_impl::android::graphics::drawable
 			arg3.__jniObject().object()
 		);
 	}
-	void AnimatedImageDrawable::start()
-	{
-		__thiz.callMethod<void>(
-			"start",
-			"()V"
-		);
-	}
-	void AnimatedImageDrawable::stop()
-	{
-		__thiz.callMethod<void>(
-			"stop",
-			"()V"
-		);
-	}
-	jint AnimatedImageDrawable::getRepeatCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getRepeatCount",
-			"()I"
-		);
-	}
-	QAndroidJniObject AnimatedImageDrawable::getColorFilter()
-	{
-		return __thiz.callObjectMethod(
-			"getColorFilter",
-			"()Landroid/graphics/ColorFilter;"
-		);
-	}
-	void AnimatedImageDrawable::setColorFilter(__jni_impl::android::graphics::ColorFilter arg0)
-	{
-		__thiz.callMethod<void>(
-			"setColorFilter",
-			"(Landroid/graphics/ColorFilter;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void AnimatedImageDrawable::setAlpha(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAlpha",
-			"(I)V",
-			arg0
-		);
-	}
-	jint AnimatedImageDrawable::getAlpha()
-	{
-		return __thiz.callMethod<jint>(
-			"getAlpha",
-			"()I"
-		);
-	}
-	void AnimatedImageDrawable::draw(__jni_impl::android::graphics::Canvas arg0)
-	{
-		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void AnimatedImageDrawable::registerAnimationCallback(__jni_impl::android::graphics::drawable::Animatable2_AnimationCallback arg0)
-	{
-		__thiz.callMethod<void>(
-			"registerAnimationCallback",
-			"(Landroid/graphics/drawable/Animatable2$AnimationCallback;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void AnimatedImageDrawable::setRepeatCount(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRepeatCount",
-			"(I)V",
-			arg0
-		);
-	}
-	jboolean AnimatedImageDrawable::unregisterAnimationCallback(__jni_impl::android::graphics::drawable::Animatable2_AnimationCallback arg0)
+	jboolean AnimatedImageDrawable::isAutoMirrored()
 	{
 		return __thiz.callMethod<jboolean>(
-			"unregisterAnimationCallback",
-			"(Landroid/graphics/drawable/Animatable2$AnimationCallback;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	void AnimatedImageDrawable::clearAnimationCallbacks()
-	{
-		__thiz.callMethod<void>(
-			"clearAnimationCallbacks",
-			"()V"
+			"isAutoMirrored",
+			"()Z"
 		);
 	}
 	jboolean AnimatedImageDrawable::isRunning()
@@ -205,6 +179,22 @@ namespace __jni_impl::android::graphics::drawable
 			arg0
 		);
 	}
+	void AnimatedImageDrawable::registerAnimationCallback(__jni_impl::android::graphics::drawable::Animatable2_AnimationCallback arg0)
+	{
+		__thiz.callMethod<void>(
+			"registerAnimationCallback",
+			"(Landroid/graphics/drawable/Animatable2$AnimationCallback;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AnimatedImageDrawable::setAlpha(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAlpha",
+			"(I)V",
+			arg0
+		);
+	}
 	void AnimatedImageDrawable::setAutoMirrored(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -213,32 +203,42 @@ namespace __jni_impl::android::graphics::drawable
 			arg0
 		);
 	}
-	jboolean AnimatedImageDrawable::isAutoMirrored()
+	void AnimatedImageDrawable::setColorFilter(__jni_impl::android::graphics::ColorFilter arg0)
+	{
+		__thiz.callMethod<void>(
+			"setColorFilter",
+			"(Landroid/graphics/ColorFilter;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AnimatedImageDrawable::setRepeatCount(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRepeatCount",
+			"(I)V",
+			arg0
+		);
+	}
+	void AnimatedImageDrawable::start()
+	{
+		__thiz.callMethod<void>(
+			"start",
+			"()V"
+		);
+	}
+	void AnimatedImageDrawable::stop()
+	{
+		__thiz.callMethod<void>(
+			"stop",
+			"()V"
+		);
+	}
+	jboolean AnimatedImageDrawable::unregisterAnimationCallback(__jni_impl::android::graphics::drawable::Animatable2_AnimationCallback arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"isAutoMirrored",
-			"()Z"
-		);
-	}
-	jint AnimatedImageDrawable::getOpacity()
-	{
-		return __thiz.callMethod<jint>(
-			"getOpacity",
-			"()I"
-		);
-	}
-	jint AnimatedImageDrawable::getIntrinsicWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getIntrinsicWidth",
-			"()I"
-		);
-	}
-	jint AnimatedImageDrawable::getIntrinsicHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getIntrinsicHeight",
-			"()I"
+			"unregisterAnimationCallback",
+			"(Landroid/graphics/drawable/Animatable2$AnimationCallback;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::graphics::drawable

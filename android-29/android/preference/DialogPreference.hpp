@@ -6,29 +6,29 @@
 #include "../../__JniBaseClass.hpp"
 #include "Preference.hpp"
 
-namespace __jni_impl::android::content
+namespace __jni_impl::android::app
 {
-	class Context;
+	class AlertDialog_Builder;
 }
 namespace __jni_impl::android::app
 {
 	class Dialog;
 }
+namespace __jni_impl::android::content
+{
+	class Context;
+}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
 }
-namespace __jni_impl::android::app
+namespace __jni_impl::android::os
 {
-	class AlertDialog_Builder;
+	class Bundle;
 }
 namespace __jni_impl::android::view
 {
 	class View;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
 }
 
 namespace __jni_impl::android::preference
@@ -46,39 +46,39 @@ namespace __jni_impl::android::preference
 		
 		// Methods
 		QAndroidJniObject getDialog();
-		void onClick(__jni_impl::__JniBaseClass arg0, jint arg1);
-		void setDialogTitle(jstring arg0);
-		void setDialogTitle(const QString &arg0);
-		void setDialogTitle(jint arg0);
+		QAndroidJniObject getDialogIcon();
+		jint getDialogLayoutResource();
+		jstring getDialogMessage();
 		jstring getDialogTitle();
+		jstring getNegativeButtonText();
+		jstring getPositiveButtonText();
+		void onActivityDestroy();
+		void onClick(__jni_impl::__JniBaseClass arg0, jint arg1);
+		void onDismiss(__jni_impl::__JniBaseClass arg0);
+		void setDialogIcon(__jni_impl::android::graphics::drawable::Drawable arg0);
+		void setDialogIcon(jint arg0);
+		void setDialogLayoutResource(jint arg0);
+		void setDialogMessage(jint arg0);
 		void setDialogMessage(jstring arg0);
 		void setDialogMessage(const QString &arg0);
-		void setDialogMessage(jint arg0);
-		jstring getDialogMessage();
-		void setDialogIcon(jint arg0);
-		void setDialogIcon(__jni_impl::android::graphics::drawable::Drawable arg0);
-		QAndroidJniObject getDialogIcon();
-		void setPositiveButtonText(jint arg0);
-		void setPositiveButtonText(jstring arg0);
-		void setPositiveButtonText(const QString &arg0);
-		jstring getPositiveButtonText();
+		void setDialogTitle(jint arg0);
+		void setDialogTitle(jstring arg0);
+		void setDialogTitle(const QString &arg0);
 		void setNegativeButtonText(jint arg0);
 		void setNegativeButtonText(jstring arg0);
 		void setNegativeButtonText(const QString &arg0);
-		jstring getNegativeButtonText();
-		void setDialogLayoutResource(jint arg0);
-		jint getDialogLayoutResource();
-		void onActivityDestroy();
-		void onDismiss(__jni_impl::__JniBaseClass arg0);
+		void setPositiveButtonText(jint arg0);
+		void setPositiveButtonText(jstring arg0);
+		void setPositiveButtonText(const QString &arg0);
 	};
 } // namespace __jni_impl::android::preference
 
-#include "../content/Context.hpp"
-#include "../app/Dialog.hpp"
-#include "../graphics/drawable/Drawable.hpp"
 #include "../app/AlertDialog_Builder.hpp"
-#include "../view/View.hpp"
+#include "../app/Dialog.hpp"
+#include "../content/Context.hpp"
+#include "../graphics/drawable/Drawable.hpp"
 #include "../os/Bundle.hpp"
+#include "../view/View.hpp"
 
 namespace __jni_impl::android::preference
 {
@@ -132,6 +132,55 @@ namespace __jni_impl::android::preference
 			"()Landroid/app/Dialog;"
 		);
 	}
+	QAndroidJniObject DialogPreference::getDialogIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getDialogIcon",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
+	}
+	jint DialogPreference::getDialogLayoutResource()
+	{
+		return __thiz.callMethod<jint>(
+			"getDialogLayoutResource",
+			"()I"
+		);
+	}
+	jstring DialogPreference::getDialogMessage()
+	{
+		return __thiz.callObjectMethod(
+			"getDialogMessage",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring DialogPreference::getDialogTitle()
+	{
+		return __thiz.callObjectMethod(
+			"getDialogTitle",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring DialogPreference::getNegativeButtonText()
+	{
+		return __thiz.callObjectMethod(
+			"getNegativeButtonText",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring DialogPreference::getPositiveButtonText()
+	{
+		return __thiz.callObjectMethod(
+			"getPositiveButtonText",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	void DialogPreference::onActivityDestroy()
+	{
+		__thiz.callMethod<void>(
+			"onActivityDestroy",
+			"()V"
+		);
+	}
 	void DialogPreference::onClick(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -141,36 +190,45 @@ namespace __jni_impl::android::preference
 			arg1
 		);
 	}
-	void DialogPreference::setDialogTitle(jstring arg0)
+	void DialogPreference::onDismiss(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"setDialogTitle",
-			"(Ljava/lang/CharSequence;)V",
-			arg0
+			"onDismiss",
+			"(Landroid/content/DialogInterface;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	void DialogPreference::setDialogTitle(const QString &arg0)
+	void DialogPreference::setDialogIcon(__jni_impl::android::graphics::drawable::Drawable arg0)
 	{
 		__thiz.callMethod<void>(
-			"setDialogTitle",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+			"setDialogIcon",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	void DialogPreference::setDialogTitle(jint arg0)
+	void DialogPreference::setDialogIcon(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setDialogTitle",
+			"setDialogIcon",
 			"(I)V",
 			arg0
 		);
 	}
-	jstring DialogPreference::getDialogTitle()
+	void DialogPreference::setDialogLayoutResource(jint arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getDialogTitle",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"setDialogLayoutResource",
+			"(I)V",
+			arg0
+		);
+	}
+	void DialogPreference::setDialogMessage(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDialogMessage",
+			"(I)V",
+			arg0
+		);
 	}
 	void DialogPreference::setDialogMessage(jstring arg0)
 	{
@@ -188,74 +246,29 @@ namespace __jni_impl::android::preference
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void DialogPreference::setDialogMessage(jint arg0)
+	void DialogPreference::setDialogTitle(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setDialogMessage",
+			"setDialogTitle",
 			"(I)V",
 			arg0
 		);
 	}
-	jstring DialogPreference::getDialogMessage()
-	{
-		return __thiz.callObjectMethod(
-			"getDialogMessage",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	void DialogPreference::setDialogIcon(jint arg0)
+	void DialogPreference::setDialogTitle(jstring arg0)
 	{
 		__thiz.callMethod<void>(
-			"setDialogIcon",
-			"(I)V",
-			arg0
-		);
-	}
-	void DialogPreference::setDialogIcon(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDialogIcon",
-			"(Landroid/graphics/drawable/Drawable;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject DialogPreference::getDialogIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getDialogIcon",
-			"()Landroid/graphics/drawable/Drawable;"
-		);
-	}
-	void DialogPreference::setPositiveButtonText(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPositiveButtonText",
-			"(I)V",
-			arg0
-		);
-	}
-	void DialogPreference::setPositiveButtonText(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPositiveButtonText",
+			"setDialogTitle",
 			"(Ljava/lang/CharSequence;)V",
 			arg0
 		);
 	}
-	void DialogPreference::setPositiveButtonText(const QString &arg0)
+	void DialogPreference::setDialogTitle(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"setPositiveButtonText",
+			"setDialogTitle",
 			"(Ljava/lang/CharSequence;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
-	}
-	jstring DialogPreference::getPositiveButtonText()
-	{
-		return __thiz.callObjectMethod(
-			"getPositiveButtonText",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
 	}
 	void DialogPreference::setNegativeButtonText(jint arg0)
 	{
@@ -281,41 +294,28 @@ namespace __jni_impl::android::preference
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jstring DialogPreference::getNegativeButtonText()
-	{
-		return __thiz.callObjectMethod(
-			"getNegativeButtonText",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	void DialogPreference::setDialogLayoutResource(jint arg0)
+	void DialogPreference::setPositiveButtonText(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setDialogLayoutResource",
+			"setPositiveButtonText",
 			"(I)V",
 			arg0
 		);
 	}
-	jint DialogPreference::getDialogLayoutResource()
-	{
-		return __thiz.callMethod<jint>(
-			"getDialogLayoutResource",
-			"()I"
-		);
-	}
-	void DialogPreference::onActivityDestroy()
+	void DialogPreference::setPositiveButtonText(jstring arg0)
 	{
 		__thiz.callMethod<void>(
-			"onActivityDestroy",
-			"()V"
+			"setPositiveButtonText",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
 		);
 	}
-	void DialogPreference::onDismiss(__jni_impl::__JniBaseClass arg0)
+	void DialogPreference::setPositiveButtonText(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"onDismiss",
-			"(Landroid/content/DialogInterface;)V",
-			arg0.__jniObject().object()
+			"setPositiveButtonText",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::preference

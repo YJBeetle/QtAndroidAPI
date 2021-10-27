@@ -26,15 +26,15 @@ namespace __jni_impl::android::os
 		void __constructor(__jni_impl::android::os::Handler arg0, const QString &arg1);
 		
 		// Methods
-		void release(__jni_impl::__JniBaseClass arg0);
 		void acquire(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		void acquire(__jni_impl::__JniBaseClass arg0, const QString &arg1);
-		void cleanup(__jni_impl::__JniBaseClass arg0, jboolean arg1);
-		void released();
 		void acquired();
-		jboolean isAcquired();
+		void cleanup(__jni_impl::__JniBaseClass arg0, jboolean arg1);
 		void dump();
 		void dump(__jni_impl::java::io::PrintWriter arg0);
+		jboolean isAcquired();
+		void release(__jni_impl::__JniBaseClass arg0);
+		void released();
 	};
 } // namespace __jni_impl::android::os
 
@@ -66,14 +66,6 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	void TokenWatcher::release(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"release",
-			"(Landroid/os/IBinder;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void TokenWatcher::acquire(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -92,22 +84,6 @@ namespace __jni_impl::android::os
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	void TokenWatcher::cleanup(__jni_impl::__JniBaseClass arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"cleanup",
-			"(Landroid/os/IBinder;Z)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void TokenWatcher::released()
-	{
-		__thiz.callMethod<void>(
-			"released",
-			"()V"
-		);
-	}
 	void TokenWatcher::acquired()
 	{
 		__thiz.callMethod<void>(
@@ -115,11 +91,13 @@ namespace __jni_impl::android::os
 			"()V"
 		);
 	}
-	jboolean TokenWatcher::isAcquired()
+	void TokenWatcher::cleanup(__jni_impl::__JniBaseClass arg0, jboolean arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isAcquired",
-			"()Z"
+		__thiz.callMethod<void>(
+			"cleanup",
+			"(Landroid/os/IBinder;Z)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 	void TokenWatcher::dump()
@@ -135,6 +113,28 @@ namespace __jni_impl::android::os
 			"dump",
 			"(Ljava/io/PrintWriter;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	jboolean TokenWatcher::isAcquired()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAcquired",
+			"()Z"
+		);
+	}
+	void TokenWatcher::release(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"release",
+			"(Landroid/os/IBinder;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void TokenWatcher::released()
+	{
+		__thiz.callMethod<void>(
+			"released",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::os

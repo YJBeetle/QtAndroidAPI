@@ -7,6 +7,10 @@
 #include "Transition.hpp"
 #include "Visibility.hpp"
 
+namespace __jni_impl::android::animation
+{
+	class Animator;
+}
 namespace __jni_impl::android::content
 {
 	class Context;
@@ -15,17 +19,13 @@ namespace __jni_impl::android::transition
 {
 	class TransitionValues;
 }
-namespace __jni_impl::android::animation
+namespace __jni_impl::android::view
 {
-	class Animator;
+	class View;
 }
 namespace __jni_impl::android::view
 {
 	class ViewGroup;
-}
-namespace __jni_impl::android::view
-{
-	class View;
 }
 
 namespace __jni_impl::android::transition
@@ -36,38 +36,36 @@ namespace __jni_impl::android::transition
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
-		void __constructor(jint arg0);
 		void __constructor();
+		void __constructor(jint arg0);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		void captureStartValues(__jni_impl::android::transition::TransitionValues arg0);
 		void captureEndValues(__jni_impl::android::transition::TransitionValues arg0);
+		void captureStartValues(__jni_impl::android::transition::TransitionValues arg0);
+		jint getSlideEdge();
 		QAndroidJniObject onAppear(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::view::View arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3);
 		QAndroidJniObject onDisappear(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::view::View arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3);
 		void setSlideEdge(jint arg0);
-		jint getSlideEdge();
 	};
 } // namespace __jni_impl::android::transition
 
+#include "../animation/Animator.hpp"
 #include "../content/Context.hpp"
 #include "TransitionValues.hpp"
-#include "../animation/Animator.hpp"
-#include "../view/ViewGroup.hpp"
 #include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 
 namespace __jni_impl::android::transition
 {
 	// Fields
 	
 	// Constructors
-	void Slide::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+	void Slide::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Slide",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			"()V"
 		);
 	}
 	void Slide::__constructor(jint arg0)
@@ -78,15 +76,25 @@ namespace __jni_impl::android::transition
 			arg0
 		);
 	}
-	void Slide::__constructor()
+	void Slide::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Slide",
-			"()V"
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	
 	// Methods
+	void Slide::captureEndValues(__jni_impl::android::transition::TransitionValues arg0)
+	{
+		__thiz.callMethod<void>(
+			"captureEndValues",
+			"(Landroid/transition/TransitionValues;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void Slide::captureStartValues(__jni_impl::android::transition::TransitionValues arg0)
 	{
 		__thiz.callMethod<void>(
@@ -95,12 +103,11 @@ namespace __jni_impl::android::transition
 			arg0.__jniObject().object()
 		);
 	}
-	void Slide::captureEndValues(__jni_impl::android::transition::TransitionValues arg0)
+	jint Slide::getSlideEdge()
 	{
-		__thiz.callMethod<void>(
-			"captureEndValues",
-			"(Landroid/transition/TransitionValues;)V",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"getSlideEdge",
+			"()I"
 		);
 	}
 	QAndroidJniObject Slide::onAppear(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::view::View arg1, __jni_impl::android::transition::TransitionValues arg2, __jni_impl::android::transition::TransitionValues arg3)
@@ -133,13 +140,6 @@ namespace __jni_impl::android::transition
 			arg0
 		);
 	}
-	jint Slide::getSlideEdge()
-	{
-		return __thiz.callMethod<jint>(
-			"getSlideEdge",
-			"()I"
-		);
-	}
 } // namespace __jni_impl::android::transition
 
 namespace android::transition
@@ -148,20 +148,20 @@ namespace android::transition
 	{
 	public:
 		Slide(QAndroidJniObject obj) { __thiz = obj; }
-		Slide(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+		Slide()
 		{
-			__constructor(
-				arg0,
-				arg1);
+			__constructor();
 		}
 		Slide(jint arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		Slide()
+		Slide(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 		{
-			__constructor();
+			__constructor(
+				arg0,
+				arg1);
 		}
 	};
 } // namespace android::transition

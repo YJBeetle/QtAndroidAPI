@@ -22,10 +22,10 @@ namespace __jni_impl::android::companion
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		jint hashCode();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::companion
@@ -53,6 +53,13 @@ namespace __jni_impl::android::companion
 	}
 	
 	// Methods
+	jint AssociationRequest::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean AssociationRequest::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -61,13 +68,6 @@ namespace __jni_impl::android::companion
 			arg0
 		);
 	}
-	jstring AssociationRequest::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint AssociationRequest::hashCode()
 	{
 		return __thiz.callMethod<jint>(
@@ -75,12 +75,12 @@ namespace __jni_impl::android::companion
 			"()I"
 		);
 	}
-	jint AssociationRequest::describeContents()
+	jstring AssociationRequest::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void AssociationRequest::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

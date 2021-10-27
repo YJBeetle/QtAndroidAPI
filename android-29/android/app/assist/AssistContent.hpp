@@ -5,25 +5,25 @@
 
 #include "../../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::content
+{
+	class ClipData;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
+}
 namespace __jni_impl::android::net
 {
 	class Uri;
 }
 namespace __jni_impl::android::os
 {
-	class Parcel;
-}
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
-namespace __jni_impl::android::content
-{
-	class ClipData;
+	class Bundle;
 }
 namespace __jni_impl::android::os
 {
-	class Bundle;
+	class Parcel;
 }
 
 namespace __jni_impl::android::app::assist
@@ -38,28 +38,28 @@ namespace __jni_impl::android::app::assist
 		void __constructor();
 		
 		// Methods
-		jboolean isAppProvidedIntent();
-		void setStructuredData(jstring arg0);
-		void setStructuredData(const QString &arg0);
-		jstring getStructuredData();
-		void setWebUri(__jni_impl::android::net::Uri arg0);
-		QAndroidJniObject getWebUri();
-		jboolean isAppProvidedWebUri();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getIntent();
-		void setIntent(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject getClipData();
 		QAndroidJniObject getExtras();
+		QAndroidJniObject getIntent();
+		jstring getStructuredData();
+		QAndroidJniObject getWebUri();
+		jboolean isAppProvidedIntent();
+		jboolean isAppProvidedWebUri();
 		void setClipData(__jni_impl::android::content::ClipData arg0);
+		void setIntent(__jni_impl::android::content::Intent arg0);
+		void setStructuredData(jstring arg0);
+		void setStructuredData(const QString &arg0);
+		void setWebUri(__jni_impl::android::net::Uri arg0);
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::assist
 
-#include "../../net/Uri.hpp"
-#include "../../os/Parcel.hpp"
-#include "../../content/Intent.hpp"
 #include "../../content/ClipData.hpp"
+#include "../../content/Intent.hpp"
+#include "../../net/Uri.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::app::assist
 {
@@ -83,11 +83,76 @@ namespace __jni_impl::android::app::assist
 	}
 	
 	// Methods
+	jint AssistContent::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	QAndroidJniObject AssistContent::getClipData()
+	{
+		return __thiz.callObjectMethod(
+			"getClipData",
+			"()Landroid/content/ClipData;"
+		);
+	}
+	QAndroidJniObject AssistContent::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	QAndroidJniObject AssistContent::getIntent()
+	{
+		return __thiz.callObjectMethod(
+			"getIntent",
+			"()Landroid/content/Intent;"
+		);
+	}
+	jstring AssistContent::getStructuredData()
+	{
+		return __thiz.callObjectMethod(
+			"getStructuredData",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject AssistContent::getWebUri()
+	{
+		return __thiz.callObjectMethod(
+			"getWebUri",
+			"()Landroid/net/Uri;"
+		);
+	}
 	jboolean AssistContent::isAppProvidedIntent()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAppProvidedIntent",
 			"()Z"
+		);
+	}
+	jboolean AssistContent::isAppProvidedWebUri()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAppProvidedWebUri",
+			"()Z"
+		);
+	}
+	void AssistContent::setClipData(__jni_impl::android::content::ClipData arg0)
+	{
+		__thiz.callMethod<void>(
+			"setClipData",
+			"(Landroid/content/ClipData;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AssistContent::setIntent(__jni_impl::android::content::Intent arg0)
+	{
+		__thiz.callMethod<void>(
+			"setIntent",
+			"(Landroid/content/Intent;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void AssistContent::setStructuredData(jstring arg0)
@@ -106,40 +171,12 @@ namespace __jni_impl::android::app::assist
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jstring AssistContent::getStructuredData()
-	{
-		return __thiz.callObjectMethod(
-			"getStructuredData",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	void AssistContent::setWebUri(__jni_impl::android::net::Uri arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWebUri",
 			"(Landroid/net/Uri;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject AssistContent::getWebUri()
-	{
-		return __thiz.callObjectMethod(
-			"getWebUri",
-			"()Landroid/net/Uri;"
-		);
-	}
-	jboolean AssistContent::isAppProvidedWebUri()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAppProvidedWebUri",
-			"()Z"
-		);
-	}
-	jint AssistContent::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
 		);
 	}
 	void AssistContent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
@@ -149,43 +186,6 @@ namespace __jni_impl::android::app::assist
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject AssistContent::getIntent()
-	{
-		return __thiz.callObjectMethod(
-			"getIntent",
-			"()Landroid/content/Intent;"
-		);
-	}
-	void AssistContent::setIntent(__jni_impl::android::content::Intent arg0)
-	{
-		__thiz.callMethod<void>(
-			"setIntent",
-			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject AssistContent::getClipData()
-	{
-		return __thiz.callObjectMethod(
-			"getClipData",
-			"()Landroid/content/ClipData;"
-		);
-	}
-	QAndroidJniObject AssistContent::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
-		);
-	}
-	void AssistContent::setClipData(__jni_impl::android::content::ClipData arg0)
-	{
-		__thiz.callMethod<void>(
-			"setClipData",
-			"(Landroid/content/ClipData;)V",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::app::assist

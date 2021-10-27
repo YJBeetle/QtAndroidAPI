@@ -69,21 +69,21 @@ namespace __jni_impl::android::util
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		jfloat getFloat();
-		jfloat getDimension(__jni_impl::android::util::DisplayMetrics arg0);
-		jfloat getFraction(jfloat arg0, jfloat arg1);
-		void setTo(__jni_impl::android::util::TypedValue arg0);
-		jboolean isColorType();
-		static jfloat complexToFloat(jint arg0);
+		static jfloat applyDimension(jint arg0, jfloat arg1, __jni_impl::android::util::DisplayMetrics arg2);
+		static jstring coerceToString(jint arg0, jint arg1);
 		static jfloat complexToDimension(jint arg0, __jni_impl::android::util::DisplayMetrics arg1);
 		static jint complexToDimensionPixelOffset(jint arg0, __jni_impl::android::util::DisplayMetrics arg1);
 		static jint complexToDimensionPixelSize(jint arg0, __jni_impl::android::util::DisplayMetrics arg1);
-		jint getComplexUnit();
-		static jfloat applyDimension(jint arg0, jfloat arg1, __jni_impl::android::util::DisplayMetrics arg2);
+		static jfloat complexToFloat(jint arg0);
 		static jfloat complexToFraction(jint arg0, jfloat arg1, jfloat arg2);
-		static jstring coerceToString(jint arg0, jint arg1);
 		jstring coerceToString();
+		jint getComplexUnit();
+		jfloat getDimension(__jni_impl::android::util::DisplayMetrics arg0);
+		jfloat getFloat();
+		jfloat getFraction(jfloat arg0, jfloat arg1);
+		jboolean isColorType();
+		void setTo(__jni_impl::android::util::TypedValue arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::android::util
 
@@ -432,60 +432,26 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
-	jstring TypedValue::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jfloat TypedValue::getFloat()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getFloat",
-			"()F"
-		);
-	}
-	jfloat TypedValue::getDimension(__jni_impl::android::util::DisplayMetrics arg0)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getDimension",
-			"(Landroid/util/DisplayMetrics;)F",
-			arg0.__jniObject().object()
-		);
-	}
-	jfloat TypedValue::getFraction(jfloat arg0, jfloat arg1)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getFraction",
-			"(FF)F",
-			arg0,
-			arg1
-		);
-	}
-	void TypedValue::setTo(__jni_impl::android::util::TypedValue arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTo",
-			"(Landroid/util/TypedValue;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean TypedValue::isColorType()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isColorType",
-			"()Z"
-		);
-	}
-	jfloat TypedValue::complexToFloat(jint arg0)
+	jfloat TypedValue::applyDimension(jint arg0, jfloat arg1, __jni_impl::android::util::DisplayMetrics arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jfloat>(
 			"android.util.TypedValue",
-			"complexToFloat",
-			"(I)F",
-			arg0
+			"applyDimension",
+			"(IFLandroid/util/DisplayMetrics;)F",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
 		);
+	}
+	jstring TypedValue::coerceToString(jint arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.util.TypedValue",
+			"coerceToString",
+			"(II)Ljava/lang/String;",
+			arg0,
+			arg1
+		).object<jstring>();
 	}
 	jfloat TypedValue::complexToDimension(jint arg0, __jni_impl::android::util::DisplayMetrics arg1)
 	{
@@ -517,22 +483,13 @@ namespace __jni_impl::android::util
 			arg1.__jniObject().object()
 		);
 	}
-	jint TypedValue::getComplexUnit()
-	{
-		return __thiz.callMethod<jint>(
-			"getComplexUnit",
-			"()I"
-		);
-	}
-	jfloat TypedValue::applyDimension(jint arg0, jfloat arg1, __jni_impl::android::util::DisplayMetrics arg2)
+	jfloat TypedValue::complexToFloat(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jfloat>(
 			"android.util.TypedValue",
-			"applyDimension",
-			"(IFLandroid/util/DisplayMetrics;)F",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
+			"complexToFloat",
+			"(I)F",
+			arg0
 		);
 	}
 	jfloat TypedValue::complexToFraction(jint arg0, jfloat arg1, jfloat arg2)
@@ -546,21 +503,64 @@ namespace __jni_impl::android::util
 			arg2
 		);
 	}
-	jstring TypedValue::coerceToString(jint arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.util.TypedValue",
-			"coerceToString",
-			"(II)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
-	}
 	jstring TypedValue::coerceToString()
 	{
 		return __thiz.callObjectMethod(
 			"coerceToString",
 			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jint TypedValue::getComplexUnit()
+	{
+		return __thiz.callMethod<jint>(
+			"getComplexUnit",
+			"()I"
+		);
+	}
+	jfloat TypedValue::getDimension(__jni_impl::android::util::DisplayMetrics arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getDimension",
+			"(Landroid/util/DisplayMetrics;)F",
+			arg0.__jniObject().object()
+		);
+	}
+	jfloat TypedValue::getFloat()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getFloat",
+			"()F"
+		);
+	}
+	jfloat TypedValue::getFraction(jfloat arg0, jfloat arg1)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getFraction",
+			"(FF)F",
+			arg0,
+			arg1
+		);
+	}
+	jboolean TypedValue::isColorType()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isColorType",
+			"()Z"
+		);
+	}
+	void TypedValue::setTo(__jni_impl::android::util::TypedValue arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTo",
+			"(Landroid/util/TypedValue;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jstring TypedValue::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 } // namespace __jni_impl::android::util

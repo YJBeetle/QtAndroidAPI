@@ -31,15 +31,15 @@ namespace __jni_impl::android::telecom
 		void __constructor(jboolean arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jboolean isMuted();
-		jint getRoute();
-		jint getSupportedRouteMask();
-		QAndroidJniObject getActiveBluetoothDevice();
-		QAndroidJniObject getSupportedBluetoothDevices();
 		static jstring audioRouteToString(jint arg0);
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		QAndroidJniObject getActiveBluetoothDevice();
+		jint getRoute();
+		QAndroidJniObject getSupportedBluetoothDevices();
+		jint getSupportedRouteMask();
+		jboolean isMuted();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telecom
@@ -107,56 +107,6 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
-	jboolean CallAudioState::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring CallAudioState::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jboolean CallAudioState::isMuted()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isMuted",
-			"()Z"
-		);
-	}
-	jint CallAudioState::getRoute()
-	{
-		return __thiz.callMethod<jint>(
-			"getRoute",
-			"()I"
-		);
-	}
-	jint CallAudioState::getSupportedRouteMask()
-	{
-		return __thiz.callMethod<jint>(
-			"getSupportedRouteMask",
-			"()I"
-		);
-	}
-	QAndroidJniObject CallAudioState::getActiveBluetoothDevice()
-	{
-		return __thiz.callObjectMethod(
-			"getActiveBluetoothDevice",
-			"()Landroid/bluetooth/BluetoothDevice;"
-		);
-	}
-	QAndroidJniObject CallAudioState::getSupportedBluetoothDevices()
-	{
-		return __thiz.callObjectMethod(
-			"getSupportedBluetoothDevices",
-			"()Ljava/util/Collection;"
-		);
-	}
 	jstring CallAudioState::audioRouteToString(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -172,6 +122,56 @@ namespace __jni_impl::android::telecom
 			"describeContents",
 			"()I"
 		);
+	}
+	jboolean CallAudioState::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	QAndroidJniObject CallAudioState::getActiveBluetoothDevice()
+	{
+		return __thiz.callObjectMethod(
+			"getActiveBluetoothDevice",
+			"()Landroid/bluetooth/BluetoothDevice;"
+		);
+	}
+	jint CallAudioState::getRoute()
+	{
+		return __thiz.callMethod<jint>(
+			"getRoute",
+			"()I"
+		);
+	}
+	QAndroidJniObject CallAudioState::getSupportedBluetoothDevices()
+	{
+		return __thiz.callObjectMethod(
+			"getSupportedBluetoothDevices",
+			"()Ljava/util/Collection;"
+		);
+	}
+	jint CallAudioState::getSupportedRouteMask()
+	{
+		return __thiz.callMethod<jint>(
+			"getSupportedRouteMask",
+			"()I"
+		);
+	}
+	jboolean CallAudioState::isMuted()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isMuted",
+			"()Z"
+		);
+	}
+	jstring CallAudioState::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void CallAudioState::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

@@ -34,15 +34,15 @@ namespace __jni_impl::android::service::autofill
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		jint getType();
-		jstring getDatasetId();
-		QAndroidJniObject getClientState();
-		QAndroidJniObject getSelectedDatasetIds();
-		QAndroidJniObject getIgnoredDatasetIds();
 		QAndroidJniObject getChangedFields();
+		QAndroidJniObject getClientState();
+		jstring getDatasetId();
 		QAndroidJniObject getFieldsClassification();
+		QAndroidJniObject getIgnoredDatasetIds();
 		QAndroidJniObject getManuallyEnteredField();
+		QAndroidJniObject getSelectedDatasetIds();
+		jint getType();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::service::autofill
 
@@ -98,18 +98,18 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	jstring FillEventHistory_Event::toString()
+	QAndroidJniObject FillEventHistory_Event::getChangedFields()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getChangedFields",
+			"()Ljava/util/Map;"
+		);
 	}
-	jint FillEventHistory_Event::getType()
+	QAndroidJniObject FillEventHistory_Event::getClientState()
 	{
-		return __thiz.callMethod<jint>(
-			"getType",
-			"()I"
+		return __thiz.callObjectMethod(
+			"getClientState",
+			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring FillEventHistory_Event::getDatasetId()
@@ -119,18 +119,11 @@ namespace __jni_impl::android::service::autofill
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject FillEventHistory_Event::getClientState()
+	QAndroidJniObject FillEventHistory_Event::getFieldsClassification()
 	{
 		return __thiz.callObjectMethod(
-			"getClientState",
-			"()Landroid/os/Bundle;"
-		);
-	}
-	QAndroidJniObject FillEventHistory_Event::getSelectedDatasetIds()
-	{
-		return __thiz.callObjectMethod(
-			"getSelectedDatasetIds",
-			"()Ljava/util/Set;"
+			"getFieldsClassification",
+			"()Ljava/util/Map;"
 		);
 	}
 	QAndroidJniObject FillEventHistory_Event::getIgnoredDatasetIds()
@@ -140,26 +133,33 @@ namespace __jni_impl::android::service::autofill
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject FillEventHistory_Event::getChangedFields()
-	{
-		return __thiz.callObjectMethod(
-			"getChangedFields",
-			"()Ljava/util/Map;"
-		);
-	}
-	QAndroidJniObject FillEventHistory_Event::getFieldsClassification()
-	{
-		return __thiz.callObjectMethod(
-			"getFieldsClassification",
-			"()Ljava/util/Map;"
-		);
-	}
 	QAndroidJniObject FillEventHistory_Event::getManuallyEnteredField()
 	{
 		return __thiz.callObjectMethod(
 			"getManuallyEnteredField",
 			"()Ljava/util/Map;"
 		);
+	}
+	QAndroidJniObject FillEventHistory_Event::getSelectedDatasetIds()
+	{
+		return __thiz.callObjectMethod(
+			"getSelectedDatasetIds",
+			"()Ljava/util/Set;"
+		);
+	}
+	jint FillEventHistory_Event::getType()
+	{
+		return __thiz.callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
+	jstring FillEventHistory_Event::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::service::autofill
 

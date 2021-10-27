@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view::textclassifier
-{
-	class ConversationActions_Request;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::view::textclassifier
+{
+	class ConversationActions_Request;
 }
 namespace __jni_impl::android::view::textclassifier
 {
@@ -32,13 +32,13 @@ namespace __jni_impl::android::view::textclassifier
 		QAndroidJniObject build();
 		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject setHints(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject setTypeConfig(__jni_impl::android::view::textclassifier::TextClassifier_EntityConfig arg0);
 		QAndroidJniObject setMaxSuggestions(jint arg0);
+		QAndroidJniObject setTypeConfig(__jni_impl::android::view::textclassifier::TextClassifier_EntityConfig arg0);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
-#include "ConversationActions_Request.hpp"
 #include "../../os/Bundle.hpp"
+#include "ConversationActions_Request.hpp"
 #include "TextClassifier_EntityConfig.hpp"
 
 namespace __jni_impl::android::view::textclassifier
@@ -79,20 +79,20 @@ namespace __jni_impl::android::view::textclassifier
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ConversationActions_Request_Builder::setTypeConfig(__jni_impl::android::view::textclassifier::TextClassifier_EntityConfig arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setTypeConfig",
-			"(Landroid/view/textclassifier/TextClassifier$EntityConfig;)Landroid/view/textclassifier/ConversationActions$Request$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject ConversationActions_Request_Builder::setMaxSuggestions(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setMaxSuggestions",
 			"(I)Landroid/view/textclassifier/ConversationActions$Request$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject ConversationActions_Request_Builder::setTypeConfig(__jni_impl::android::view::textclassifier::TextClassifier_EntityConfig arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setTypeConfig",
+			"(Landroid/view/textclassifier/TextClassifier$EntityConfig;)Landroid/view/textclassifier/ConversationActions$Request$Builder;",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::view::textclassifier

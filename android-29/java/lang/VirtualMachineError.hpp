@@ -15,12 +15,12 @@ namespace __jni_impl::java::lang
 		// Fields
 		
 		// Constructors
+		void __constructor();
+		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
 		void __constructor(const QString &arg0, jthrowable arg1);
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
-		void __constructor();
 		
 		// Methods
 	};
@@ -32,6 +32,29 @@ namespace __jni_impl::java::lang
 	// Fields
 	
 	// Constructors
+	void VirtualMachineError::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.VirtualMachineError",
+			"()V"
+		);
+	}
+	void VirtualMachineError::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.VirtualMachineError",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void VirtualMachineError::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.VirtualMachineError",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void VirtualMachineError::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -58,29 +81,6 @@ namespace __jni_impl::java::lang
 			arg1
 		);
 	}
-	void VirtualMachineError::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.VirtualMachineError",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void VirtualMachineError::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.VirtualMachineError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void VirtualMachineError::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.VirtualMachineError",
-			"()V"
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::java::lang
@@ -91,6 +91,15 @@ namespace java::lang
 	{
 	public:
 		VirtualMachineError(QAndroidJniObject obj) { __thiz = obj; }
+		VirtualMachineError()
+		{
+			__constructor();
+		}
+		VirtualMachineError(jstring arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		VirtualMachineError(jthrowable arg0)
 		{
 			__constructor(
@@ -101,15 +110,6 @@ namespace java::lang
 			__constructor(
 				arg0,
 				arg1);
-		}
-		VirtualMachineError(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		VirtualMachineError()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::lang

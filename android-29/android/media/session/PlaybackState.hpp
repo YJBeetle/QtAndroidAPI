@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class Bundle;
 }
 namespace __jni_impl::android::os
 {
-	class Bundle;
+	class Parcel;
 }
 
 namespace __jni_impl::android::media::session
@@ -57,24 +57,24 @@ namespace __jni_impl::android::media::session
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		jlong getActions();
-		jint getState();
-		jstring getErrorMessage();
-		jlong getBufferedPosition();
-		jfloat getPlaybackSpeed();
-		QAndroidJniObject getCustomActions();
-		jlong getLastPositionUpdateTime();
-		jlong getActiveQueueItemId();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jlong getActions();
+		jlong getActiveQueueItemId();
+		jlong getBufferedPosition();
+		QAndroidJniObject getCustomActions();
+		jstring getErrorMessage();
 		QAndroidJniObject getExtras();
+		jlong getLastPositionUpdateTime();
+		jfloat getPlaybackSpeed();
 		jlong getPosition();
+		jint getState();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media::session
 
-#include "../../os/Parcel.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::media::session
 {
@@ -314,59 +314,17 @@ namespace __jni_impl::android::media::session
 	}
 	
 	// Methods
-	jstring PlaybackState::toString()
+	jint PlaybackState::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
 	jlong PlaybackState::getActions()
 	{
 		return __thiz.callMethod<jlong>(
 			"getActions",
-			"()J"
-		);
-	}
-	jint PlaybackState::getState()
-	{
-		return __thiz.callMethod<jint>(
-			"getState",
-			"()I"
-		);
-	}
-	jstring PlaybackState::getErrorMessage()
-	{
-		return __thiz.callObjectMethod(
-			"getErrorMessage",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	jlong PlaybackState::getBufferedPosition()
-	{
-		return __thiz.callMethod<jlong>(
-			"getBufferedPosition",
-			"()J"
-		);
-	}
-	jfloat PlaybackState::getPlaybackSpeed()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getPlaybackSpeed",
-			"()F"
-		);
-	}
-	QAndroidJniObject PlaybackState::getCustomActions()
-	{
-		return __thiz.callObjectMethod(
-			"getCustomActions",
-			"()Ljava/util/List;"
-		);
-	}
-	jlong PlaybackState::getLastPositionUpdateTime()
-	{
-		return __thiz.callMethod<jlong>(
-			"getLastPositionUpdateTime",
 			"()J"
 		);
 	}
@@ -377,21 +335,26 @@ namespace __jni_impl::android::media::session
 			"()J"
 		);
 	}
-	jint PlaybackState::describeContents()
+	jlong PlaybackState::getBufferedPosition()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		return __thiz.callMethod<jlong>(
+			"getBufferedPosition",
+			"()J"
 		);
 	}
-	void PlaybackState::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	QAndroidJniObject PlaybackState::getCustomActions()
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callObjectMethod(
+			"getCustomActions",
+			"()Ljava/util/List;"
 		);
+	}
+	jstring PlaybackState::getErrorMessage()
+	{
+		return __thiz.callObjectMethod(
+			"getErrorMessage",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	QAndroidJniObject PlaybackState::getExtras()
 	{
@@ -400,11 +363,48 @@ namespace __jni_impl::android::media::session
 			"()Landroid/os/Bundle;"
 		);
 	}
+	jlong PlaybackState::getLastPositionUpdateTime()
+	{
+		return __thiz.callMethod<jlong>(
+			"getLastPositionUpdateTime",
+			"()J"
+		);
+	}
+	jfloat PlaybackState::getPlaybackSpeed()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getPlaybackSpeed",
+			"()F"
+		);
+	}
 	jlong PlaybackState::getPosition()
 	{
 		return __thiz.callMethod<jlong>(
 			"getPosition",
 			"()J"
+		);
+	}
+	jint PlaybackState::getState()
+	{
+		return __thiz.callMethod<jint>(
+			"getState",
+			"()I"
+		);
+	}
+	jstring PlaybackState::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void PlaybackState::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::media::session

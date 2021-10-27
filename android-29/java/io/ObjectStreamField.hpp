@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::lang::reflect
-{
-	class Field;
-}
 namespace __jni_impl::java::lang
 {
 	class StringBuilder;
+}
+namespace __jni_impl::java::lang::reflect
+{
+	class Field;
 }
 
 namespace __jni_impl::java::io
@@ -28,20 +28,20 @@ namespace __jni_impl::java::io
 		void __constructor(const QString &arg0, jclass arg1, jboolean arg2);
 		
 		// Methods
-		jstring getName();
-		jstring toString();
-		jboolean isPrimitive();
 		jint compareTo(jobject arg0);
+		jstring getName();
+		jint getOffset();
 		jclass getType();
 		jchar getTypeCode();
 		jstring getTypeString();
-		jint getOffset();
+		jboolean isPrimitive();
 		jboolean isUnshared();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::io
 
-#include "../lang/reflect/Field.hpp"
 #include "../lang/StringBuilder.hpp"
+#include "../lang/reflect/Field.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -88,6 +88,14 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
+	jint ObjectStreamField::compareTo(jobject arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"compareTo",
+			"(Ljava/lang/Object;)I",
+			arg0
+		);
+	}
 	jstring ObjectStreamField::getName()
 	{
 		return __thiz.callObjectMethod(
@@ -95,26 +103,11 @@ namespace __jni_impl::java::io
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jstring ObjectStreamField::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jboolean ObjectStreamField::isPrimitive()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isPrimitive",
-			"()Z"
-		);
-	}
-	jint ObjectStreamField::compareTo(jobject arg0)
+	jint ObjectStreamField::getOffset()
 	{
 		return __thiz.callMethod<jint>(
-			"compareTo",
-			"(Ljava/lang/Object;)I",
-			arg0
+			"getOffset",
+			"()I"
 		);
 	}
 	jclass ObjectStreamField::getType()
@@ -138,11 +131,11 @@ namespace __jni_impl::java::io
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint ObjectStreamField::getOffset()
+	jboolean ObjectStreamField::isPrimitive()
 	{
-		return __thiz.callMethod<jint>(
-			"getOffset",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"isPrimitive",
+			"()Z"
 		);
 	}
 	jboolean ObjectStreamField::isUnshared()
@@ -151,6 +144,13 @@ namespace __jni_impl::java::io
 			"isUnshared",
 			"()Z"
 		);
+	}
+	jstring ObjectStreamField::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::io
 

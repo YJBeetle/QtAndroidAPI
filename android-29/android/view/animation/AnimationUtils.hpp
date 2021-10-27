@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view::animation
-{
-	class Animation;
-}
 namespace __jni_impl::android::content
 {
 	class Context;
+}
+namespace __jni_impl::android::view::animation
+{
+	class Animation;
 }
 namespace __jni_impl::android::view::animation
 {
@@ -29,18 +29,18 @@ namespace __jni_impl::android::view::animation
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject makeOutAnimation(__jni_impl::android::content::Context arg0, jboolean arg1);
-		static QAndroidJniObject makeInChildBottomAnimation(__jni_impl::android::content::Context arg0);
-		static QAndroidJniObject loadInterpolator(__jni_impl::android::content::Context arg0, jint arg1);
 		static jlong currentAnimationTimeMillis();
 		static QAndroidJniObject loadAnimation(__jni_impl::android::content::Context arg0, jint arg1);
+		static QAndroidJniObject loadInterpolator(__jni_impl::android::content::Context arg0, jint arg1);
 		static QAndroidJniObject loadLayoutAnimation(__jni_impl::android::content::Context arg0, jint arg1);
 		static QAndroidJniObject makeInAnimation(__jni_impl::android::content::Context arg0, jboolean arg1);
+		static QAndroidJniObject makeInChildBottomAnimation(__jni_impl::android::content::Context arg0);
+		static QAndroidJniObject makeOutAnimation(__jni_impl::android::content::Context arg0, jboolean arg1);
 	};
 } // namespace __jni_impl::android::view::animation
 
-#include "Animation.hpp"
 #include "../../content/Context.hpp"
+#include "Animation.hpp"
 #include "LayoutAnimationController.hpp"
 
 namespace __jni_impl::android::view::animation
@@ -57,35 +57,6 @@ namespace __jni_impl::android::view::animation
 	}
 	
 	// Methods
-	QAndroidJniObject AnimationUtils::makeOutAnimation(__jni_impl::android::content::Context arg0, jboolean arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.animation.AnimationUtils",
-			"makeOutAnimation",
-			"(Landroid/content/Context;Z)Landroid/view/animation/Animation;",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject AnimationUtils::makeInChildBottomAnimation(__jni_impl::android::content::Context arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.animation.AnimationUtils",
-			"makeInChildBottomAnimation",
-			"(Landroid/content/Context;)Landroid/view/animation/Animation;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject AnimationUtils::loadInterpolator(__jni_impl::android::content::Context arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.animation.AnimationUtils",
-			"loadInterpolator",
-			"(Landroid/content/Context;I)Landroid/view/animation/Interpolator;",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	jlong AnimationUtils::currentAnimationTimeMillis()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
@@ -100,6 +71,16 @@ namespace __jni_impl::android::view::animation
 			"android.view.animation.AnimationUtils",
 			"loadAnimation",
 			"(Landroid/content/Context;I)Landroid/view/animation/Animation;",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	QAndroidJniObject AnimationUtils::loadInterpolator(__jni_impl::android::content::Context arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.animation.AnimationUtils",
+			"loadInterpolator",
+			"(Landroid/content/Context;I)Landroid/view/animation/Interpolator;",
 			arg0.__jniObject().object(),
 			arg1
 		);
@@ -119,6 +100,25 @@ namespace __jni_impl::android::view::animation
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.animation.AnimationUtils",
 			"makeInAnimation",
+			"(Landroid/content/Context;Z)Landroid/view/animation/Animation;",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	QAndroidJniObject AnimationUtils::makeInChildBottomAnimation(__jni_impl::android::content::Context arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.animation.AnimationUtils",
+			"makeInChildBottomAnimation",
+			"(Landroid/content/Context;)Landroid/view/animation/Animation;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject AnimationUtils::makeOutAnimation(__jni_impl::android::content::Context arg0, jboolean arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.animation.AnimationUtils",
+			"makeOutAnimation",
 			"(Landroid/content/Context;Z)Landroid/view/animation/Animation;",
 			arg0.__jniObject().object(),
 			arg1

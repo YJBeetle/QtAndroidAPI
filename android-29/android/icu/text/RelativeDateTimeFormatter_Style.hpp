@@ -14,16 +14,16 @@ namespace __jni_impl::android::icu::text
 	public:
 		// Fields
 		static QAndroidJniObject LONG();
-		static QAndroidJniObject SHORT();
 		static QAndroidJniObject NARROW();
+		static QAndroidJniObject SHORT();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -39,19 +39,19 @@ namespace __jni_impl::android::icu::text
 			"Landroid/icu/text/RelativeDateTimeFormatter$Style;"
 		);
 	}
-	QAndroidJniObject RelativeDateTimeFormatter_Style::SHORT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.RelativeDateTimeFormatter$Style",
-			"SHORT",
-			"Landroid/icu/text/RelativeDateTimeFormatter$Style;"
-		);
-	}
 	QAndroidJniObject RelativeDateTimeFormatter_Style::NARROW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.RelativeDateTimeFormatter$Style",
 			"NARROW",
+			"Landroid/icu/text/RelativeDateTimeFormatter$Style;"
+		);
+	}
+	QAndroidJniObject RelativeDateTimeFormatter_Style::SHORT()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.RelativeDateTimeFormatter$Style",
+			"SHORT",
 			"Landroid/icu/text/RelativeDateTimeFormatter$Style;"
 		);
 	}
@@ -65,14 +65,6 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jarray RelativeDateTimeFormatter_Style::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.RelativeDateTimeFormatter$Style",
-			"values",
-			"()[Landroid/icu/text/RelativeDateTimeFormatter$Style;"
-		).object<jarray>();
-	}
 	QAndroidJniObject RelativeDateTimeFormatter_Style::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;)Landroid/icu/text/RelativeDateTimeFormatter$Style;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray RelativeDateTimeFormatter_Style::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.RelativeDateTimeFormatter$Style",
+			"values",
+			"()[Landroid/icu/text/RelativeDateTimeFormatter$Style;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::icu::text
 

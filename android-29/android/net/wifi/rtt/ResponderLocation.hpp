@@ -5,25 +5,25 @@
 
 #include "../../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
+namespace __jni_impl::android::location
 {
-	class Parcel;
+	class Address;
 }
 namespace __jni_impl::android::location
 {
 	class Location;
 }
-namespace __jni_impl::android::location
+namespace __jni_impl::android::net
 {
-	class Address;
+	class Uri;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 namespace __jni_impl::android::util
 {
 	class SparseArray;
-}
-namespace __jni_impl::android::net
-{
-	class Uri;
 }
 
 namespace __jni_impl::android::net::wifi::rtt
@@ -50,40 +50,40 @@ namespace __jni_impl::android::net::wifi::rtt
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jint hashCode();
-		jboolean isLciSubelementValid();
-		jdouble getLatitudeUncertainty();
-		jdouble getLongitudeUncertainty();
+		jdouble getAltitude();
 		jint getAltitudeType();
 		jdouble getAltitudeUncertainty();
+		QAndroidJniObject getColocatedBssids();
 		jint getDatum();
-		jboolean getRegisteredLocationAgreementIndication();
-		jint getLciVersion();
-		QAndroidJniObject toLocation();
-		jboolean isZaxisSubelementValid();
 		jint getExpectedToMove();
 		jdouble getFloorNumber();
 		jdouble getHeightAboveFloorMeters();
 		jdouble getHeightAboveFloorUncertaintyMeters();
-		QAndroidJniObject getColocatedBssids();
-		QAndroidJniObject toCivicLocationAddress();
-		QAndroidJniObject toCivicLocationSparseArray();
+		jdouble getLatitude();
+		jdouble getLatitudeUncertainty();
+		jint getLciVersion();
+		jdouble getLongitude();
+		jdouble getLongitudeUncertainty();
 		jstring getMapImageMimeType();
 		QAndroidJniObject getMapImageUri();
-		jdouble getAltitude();
-		jdouble getLatitude();
-		jdouble getLongitude();
-		jint describeContents();
+		jboolean getRegisteredLocationAgreementIndication();
+		jint hashCode();
+		jboolean isLciSubelementValid();
+		jboolean isZaxisSubelementValid();
+		QAndroidJniObject toCivicLocationAddress();
+		QAndroidJniObject toCivicLocationSparseArray();
+		QAndroidJniObject toLocation();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi::rtt
 
-#include "../../../os/Parcel.hpp"
-#include "../../../location/Location.hpp"
 #include "../../../location/Address.hpp"
-#include "../../../util/SparseArray.hpp"
+#include "../../../location/Location.hpp"
 #include "../../Uri.hpp"
+#include "../../../os/Parcel.hpp"
+#include "../../../util/SparseArray.hpp"
 
 namespace __jni_impl::android::net::wifi::rtt
 {
@@ -190,6 +190,13 @@ namespace __jni_impl::android::net::wifi::rtt
 	}
 	
 	// Methods
+	jint ResponderLocation::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean ResponderLocation::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -198,31 +205,10 @@ namespace __jni_impl::android::net::wifi::rtt
 			arg0
 		);
 	}
-	jint ResponderLocation::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jboolean ResponderLocation::isLciSubelementValid()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isLciSubelementValid",
-			"()Z"
-		);
-	}
-	jdouble ResponderLocation::getLatitudeUncertainty()
+	jdouble ResponderLocation::getAltitude()
 	{
 		return __thiz.callMethod<jdouble>(
-			"getLatitudeUncertainty",
-			"()D"
-		);
-	}
-	jdouble ResponderLocation::getLongitudeUncertainty()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getLongitudeUncertainty",
+			"getAltitude",
 			"()D"
 		);
 	}
@@ -240,39 +226,18 @@ namespace __jni_impl::android::net::wifi::rtt
 			"()D"
 		);
 	}
+	QAndroidJniObject ResponderLocation::getColocatedBssids()
+	{
+		return __thiz.callObjectMethod(
+			"getColocatedBssids",
+			"()Ljava/util/List;"
+		);
+	}
 	jint ResponderLocation::getDatum()
 	{
 		return __thiz.callMethod<jint>(
 			"getDatum",
 			"()I"
-		);
-	}
-	jboolean ResponderLocation::getRegisteredLocationAgreementIndication()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getRegisteredLocationAgreementIndication",
-			"()Z"
-		);
-	}
-	jint ResponderLocation::getLciVersion()
-	{
-		return __thiz.callMethod<jint>(
-			"getLciVersion",
-			"()I"
-		);
-	}
-	QAndroidJniObject ResponderLocation::toLocation()
-	{
-		return __thiz.callObjectMethod(
-			"toLocation",
-			"()Landroid/location/Location;"
-		);
-	}
-	jboolean ResponderLocation::isZaxisSubelementValid()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isZaxisSubelementValid",
-			"()Z"
 		);
 	}
 	jint ResponderLocation::getExpectedToMove()
@@ -303,25 +268,39 @@ namespace __jni_impl::android::net::wifi::rtt
 			"()D"
 		);
 	}
-	QAndroidJniObject ResponderLocation::getColocatedBssids()
+	jdouble ResponderLocation::getLatitude()
 	{
-		return __thiz.callObjectMethod(
-			"getColocatedBssids",
-			"()Ljava/util/List;"
+		return __thiz.callMethod<jdouble>(
+			"getLatitude",
+			"()D"
 		);
 	}
-	QAndroidJniObject ResponderLocation::toCivicLocationAddress()
+	jdouble ResponderLocation::getLatitudeUncertainty()
 	{
-		return __thiz.callObjectMethod(
-			"toCivicLocationAddress",
-			"()Landroid/location/Address;"
+		return __thiz.callMethod<jdouble>(
+			"getLatitudeUncertainty",
+			"()D"
 		);
 	}
-	QAndroidJniObject ResponderLocation::toCivicLocationSparseArray()
+	jint ResponderLocation::getLciVersion()
 	{
-		return __thiz.callObjectMethod(
-			"toCivicLocationSparseArray",
-			"()Landroid/util/SparseArray;"
+		return __thiz.callMethod<jint>(
+			"getLciVersion",
+			"()I"
+		);
+	}
+	jdouble ResponderLocation::getLongitude()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getLongitude",
+			"()D"
+		);
+	}
+	jdouble ResponderLocation::getLongitudeUncertainty()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getLongitudeUncertainty",
+			"()D"
 		);
 	}
 	jstring ResponderLocation::getMapImageMimeType()
@@ -338,32 +317,53 @@ namespace __jni_impl::android::net::wifi::rtt
 			"()Landroid/net/Uri;"
 		);
 	}
-	jdouble ResponderLocation::getAltitude()
+	jboolean ResponderLocation::getRegisteredLocationAgreementIndication()
 	{
-		return __thiz.callMethod<jdouble>(
-			"getAltitude",
-			"()D"
+		return __thiz.callMethod<jboolean>(
+			"getRegisteredLocationAgreementIndication",
+			"()Z"
 		);
 	}
-	jdouble ResponderLocation::getLatitude()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getLatitude",
-			"()D"
-		);
-	}
-	jdouble ResponderLocation::getLongitude()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getLongitude",
-			"()D"
-		);
-	}
-	jint ResponderLocation::describeContents()
+	jint ResponderLocation::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
+		);
+	}
+	jboolean ResponderLocation::isLciSubelementValid()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLciSubelementValid",
+			"()Z"
+		);
+	}
+	jboolean ResponderLocation::isZaxisSubelementValid()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isZaxisSubelementValid",
+			"()Z"
+		);
+	}
+	QAndroidJniObject ResponderLocation::toCivicLocationAddress()
+	{
+		return __thiz.callObjectMethod(
+			"toCivicLocationAddress",
+			"()Landroid/location/Address;"
+		);
+	}
+	QAndroidJniObject ResponderLocation::toCivicLocationSparseArray()
+	{
+		return __thiz.callObjectMethod(
+			"toCivicLocationSparseArray",
+			"()Landroid/util/SparseArray;"
+		);
+	}
+	QAndroidJniObject ResponderLocation::toLocation()
+	{
+		return __thiz.callObjectMethod(
+			"toLocation",
+			"()Landroid/location/Location;"
 		);
 	}
 	void ResponderLocation::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

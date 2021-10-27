@@ -26,12 +26,12 @@ namespace __jni_impl::android::drm
 		// Methods
 		jobject get(jstring arg0);
 		jobject get(const QString &arg0);
-		void put(jstring arg0, jobject arg1);
-		void put(const QString &arg0, jobject arg1);
+		jint getInfoType();
+		jstring getMimeType();
 		QAndroidJniObject iterator();
 		QAndroidJniObject keyIterator();
-		jstring getMimeType();
-		jint getInfoType();
+		void put(jstring arg0, jobject arg1);
+		void put(const QString &arg0, jobject arg1);
 	};
 } // namespace __jni_impl::android::drm
 
@@ -121,6 +121,34 @@ namespace __jni_impl::android::drm
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
+	jint DrmInfoRequest::getInfoType()
+	{
+		return __thiz.callMethod<jint>(
+			"getInfoType",
+			"()I"
+		);
+	}
+	jstring DrmInfoRequest::getMimeType()
+	{
+		return __thiz.callObjectMethod(
+			"getMimeType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject DrmInfoRequest::iterator()
+	{
+		return __thiz.callObjectMethod(
+			"iterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	QAndroidJniObject DrmInfoRequest::keyIterator()
+	{
+		return __thiz.callObjectMethod(
+			"keyIterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
 	void DrmInfoRequest::put(jstring arg0, jobject arg1)
 	{
 		__thiz.callMethod<void>(
@@ -137,34 +165,6 @@ namespace __jni_impl::android::drm
 			"(Ljava/lang/String;Ljava/lang/Object;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
-		);
-	}
-	QAndroidJniObject DrmInfoRequest::iterator()
-	{
-		return __thiz.callObjectMethod(
-			"iterator",
-			"()Ljava/util/Iterator;"
-		);
-	}
-	QAndroidJniObject DrmInfoRequest::keyIterator()
-	{
-		return __thiz.callObjectMethod(
-			"keyIterator",
-			"()Ljava/util/Iterator;"
-		);
-	}
-	jstring DrmInfoRequest::getMimeType()
-	{
-		return __thiz.callObjectMethod(
-			"getMimeType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint DrmInfoRequest::getInfoType()
-	{
-		return __thiz.callMethod<jint>(
-			"getInfoType",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::drm

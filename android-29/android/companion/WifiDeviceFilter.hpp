@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util::regex
-{
-	class Pattern;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::java::util::regex
+{
+	class Pattern;
 }
 
 namespace __jni_impl::android::companion
@@ -26,15 +26,15 @@ namespace __jni_impl::android::companion
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::companion
 
-#include "../../java/util/regex/Pattern.hpp"
 #include "../os/Parcel.hpp"
+#include "../../java/util/regex/Pattern.hpp"
 
 namespace __jni_impl::android::companion
 {
@@ -57,6 +57,13 @@ namespace __jni_impl::android::companion
 	}
 	
 	// Methods
+	jint WifiDeviceFilter::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean WifiDeviceFilter::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -69,13 +76,6 @@ namespace __jni_impl::android::companion
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I"
-		);
-	}
-	jint WifiDeviceFilter::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
 			"()I"
 		);
 	}

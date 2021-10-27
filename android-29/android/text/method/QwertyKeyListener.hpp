@@ -13,11 +13,11 @@ namespace __jni_impl::android::text::method
 }
 namespace __jni_impl::android::view
 {
-	class View;
+	class KeyEvent;
 }
 namespace __jni_impl::android::view
 {
-	class KeyEvent;
+	class View;
 }
 
 namespace __jni_impl::android::text::method
@@ -41,8 +41,8 @@ namespace __jni_impl::android::text::method
 } // namespace __jni_impl::android::text::method
 
 #include "TextKeyListener_Capitalize.hpp"
-#include "../../view/View.hpp"
 #include "../../view/KeyEvent.hpp"
+#include "../../view/View.hpp"
 
 namespace __jni_impl::android::text::method
 {

@@ -21,12 +21,12 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		static void sleep(jlong arg0);
-		static jboolean setCurrentTimeMillis(jlong arg0);
+		static QAndroidJniObject currentGnssTimeClock();
+		static jlong currentThreadTimeMillis();
 		static jlong elapsedRealtime();
 		static jlong elapsedRealtimeNanos();
-		static jlong currentThreadTimeMillis();
-		static QAndroidJniObject currentGnssTimeClock();
+		static jboolean setCurrentTimeMillis(jlong arg0);
+		static void sleep(jlong arg0);
 		static jlong uptimeMillis();
 	};
 } // namespace __jni_impl::android::os
@@ -46,22 +46,20 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	void SystemClock::sleep(jlong arg0)
+	QAndroidJniObject SystemClock::currentGnssTimeClock()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.SystemClock",
-			"sleep",
-			"(J)V",
-			arg0
+			"currentGnssTimeClock",
+			"()Ljava/time/Clock;"
 		);
 	}
-	jboolean SystemClock::setCurrentTimeMillis(jlong arg0)
+	jlong SystemClock::currentThreadTimeMillis()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.os.SystemClock",
-			"setCurrentTimeMillis",
-			"(J)Z",
-			arg0
+			"currentThreadTimeMillis",
+			"()J"
 		);
 	}
 	jlong SystemClock::elapsedRealtime()
@@ -80,20 +78,22 @@ namespace __jni_impl::android::os
 			"()J"
 		);
 	}
-	jlong SystemClock::currentThreadTimeMillis()
+	jboolean SystemClock::setCurrentTimeMillis(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.os.SystemClock",
-			"currentThreadTimeMillis",
-			"()J"
+			"setCurrentTimeMillis",
+			"(J)Z",
+			arg0
 		);
 	}
-	QAndroidJniObject SystemClock::currentGnssTimeClock()
+	void SystemClock::sleep(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.SystemClock",
-			"currentGnssTimeClock",
-			"()Ljava/time/Clock;"
+			"sleep",
+			"(J)V",
+			arg0
 		);
 	}
 	jlong SystemClock::uptimeMillis()

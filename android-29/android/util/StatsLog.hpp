@@ -17,11 +17,11 @@ namespace __jni_impl::android::util
 		void __constructor();
 		
 		// Methods
-		static jboolean logStart(jint arg0);
-		static jboolean logStop(jint arg0);
-		static jboolean logEvent(jint arg0);
 		static jboolean logBinaryPushStateChanged(jstring arg0, jlong arg1, jint arg2, jint arg3, jlongArray arg4);
 		static jboolean logBinaryPushStateChanged(const QString &arg0, jlong arg1, jint arg2, jint arg3, jlongArray arg4);
+		static jboolean logEvent(jint arg0);
+		static jboolean logStart(jint arg0);
+		static jboolean logStop(jint arg0);
 	};
 } // namespace __jni_impl::android::util
 
@@ -39,33 +39,6 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
-	jboolean StatsLog::logStart(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.util.StatsLog",
-			"logStart",
-			"(I)Z",
-			arg0
-		);
-	}
-	jboolean StatsLog::logStop(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.util.StatsLog",
-			"logStop",
-			"(I)Z",
-			arg0
-		);
-	}
-	jboolean StatsLog::logEvent(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.util.StatsLog",
-			"logEvent",
-			"(I)Z",
-			arg0
-		);
-	}
 	jboolean StatsLog::logBinaryPushStateChanged(jstring arg0, jlong arg1, jint arg2, jint arg3, jlongArray arg4)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -90,6 +63,33 @@ namespace __jni_impl::android::util
 			arg2,
 			arg3,
 			arg4
+		);
+	}
+	jboolean StatsLog::logEvent(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.util.StatsLog",
+			"logEvent",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean StatsLog::logStart(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.util.StatsLog",
+			"logStart",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean StatsLog::logStop(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.util.StatsLog",
+			"logStop",
+			"(I)Z",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::util

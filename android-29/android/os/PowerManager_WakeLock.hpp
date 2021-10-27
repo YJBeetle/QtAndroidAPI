@@ -25,14 +25,14 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		void release();
-		void release(jint arg0);
 		void acquire();
 		void acquire(jlong arg0);
-		void setReferenceCounted(jboolean arg0);
 		jboolean isHeld();
+		void release();
+		void release(jint arg0);
+		void setReferenceCounted(jboolean arg0);
 		void setWorkSource(__jni_impl::android::os::WorkSource arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::android::os
 
@@ -52,12 +52,27 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	jstring PowerManager_WakeLock::toString()
+	void PowerManager_WakeLock::acquire()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"acquire",
+			"()V"
+		);
+	}
+	void PowerManager_WakeLock::acquire(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"acquire",
+			"(J)V",
+			arg0
+		);
+	}
+	jboolean PowerManager_WakeLock::isHeld()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isHeld",
+			"()Z"
+		);
 	}
 	void PowerManager_WakeLock::release()
 	{
@@ -74,34 +89,12 @@ namespace __jni_impl::android::os
 			arg0
 		);
 	}
-	void PowerManager_WakeLock::acquire()
-	{
-		__thiz.callMethod<void>(
-			"acquire",
-			"()V"
-		);
-	}
-	void PowerManager_WakeLock::acquire(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"acquire",
-			"(J)V",
-			arg0
-		);
-	}
 	void PowerManager_WakeLock::setReferenceCounted(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setReferenceCounted",
 			"(Z)V",
 			arg0
-		);
-	}
-	jboolean PowerManager_WakeLock::isHeld()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isHeld",
-			"()Z"
 		);
 	}
 	void PowerManager_WakeLock::setWorkSource(__jni_impl::android::os::WorkSource arg0)
@@ -111,6 +104,13 @@ namespace __jni_impl::android::os
 			"(Landroid/os/WorkSource;)V",
 			arg0.__jniObject().object()
 		);
+	}
+	jstring PowerManager_WakeLock::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::os
 

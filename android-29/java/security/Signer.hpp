@@ -23,15 +23,15 @@ namespace __jni_impl::java::security
 		// Fields
 		
 		// Constructors
-		void __constructor(jstring arg0, __jni_impl::java::security::IdentityScope arg1);
-		void __constructor(const QString &arg0, __jni_impl::java::security::IdentityScope arg1);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
+		void __constructor(jstring arg0, __jni_impl::java::security::IdentityScope arg1);
+		void __constructor(const QString &arg0, __jni_impl::java::security::IdentityScope arg1);
 		
 		// Methods
-		jstring toString();
 		QAndroidJniObject getPrivateKey();
 		void setKeyPair(__jni_impl::java::security::KeyPair arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security
 
@@ -43,6 +43,22 @@ namespace __jni_impl::java::security
 	// Fields
 	
 	// Constructors
+	void Signer::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.Signer",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void Signer::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.Signer",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void Signer::__constructor(jstring arg0, __jni_impl::java::security::IdentityScope arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -61,31 +77,8 @@ namespace __jni_impl::java::security
 			arg1.__jniObject().object()
 		);
 	}
-	void Signer::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.Signer",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void Signer::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.Signer",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	
 	// Methods
-	jstring Signer::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject Signer::getPrivateKey()
 	{
 		return __thiz.callObjectMethod(
@@ -101,6 +94,13 @@ namespace __jni_impl::java::security
 			arg0.__jniObject().object()
 		);
 	}
+	jstring Signer::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 } // namespace __jni_impl::java::security
 
 namespace java::security
@@ -109,16 +109,16 @@ namespace java::security
 	{
 	public:
 		Signer(QAndroidJniObject obj) { __thiz = obj; }
+		Signer(jstring arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		Signer(jstring arg0, __jni_impl::java::security::IdentityScope arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
-		}
-		Signer(jstring arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace java::security

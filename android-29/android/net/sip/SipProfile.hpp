@@ -22,20 +22,20 @@ namespace __jni_impl::android::net::sip
 		void __constructor();
 		
 		// Methods
-		jint getPort();
-		jstring getProtocol();
-		jstring getDisplayName();
-		jstring getUserName();
-		jstring getUriString();
-		jstring getAuthUserName();
-		jstring getSipDomain();
-		jstring getProfileName();
-		jboolean getSendKeepAlive();
-		jboolean getAutoRegistration();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jstring getProxyAddress();
+		jstring getAuthUserName();
+		jboolean getAutoRegistration();
+		jstring getDisplayName();
 		jstring getPassword();
+		jint getPort();
+		jstring getProfileName();
+		jstring getProtocol();
+		jstring getProxyAddress();
+		jboolean getSendKeepAlive();
+		jstring getSipDomain();
+		jstring getUriString();
+		jstring getUserName();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::sip
 
@@ -62,40 +62,12 @@ namespace __jni_impl::android::net::sip
 	}
 	
 	// Methods
-	jint SipProfile::getPort()
+	jint SipProfile::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getPort",
+			"describeContents",
 			"()I"
 		);
-	}
-	jstring SipProfile::getProtocol()
-	{
-		return __thiz.callObjectMethod(
-			"getProtocol",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring SipProfile::getDisplayName()
-	{
-		return __thiz.callObjectMethod(
-			"getDisplayName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring SipProfile::getUserName()
-	{
-		return __thiz.callObjectMethod(
-			"getUserName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring SipProfile::getUriString()
-	{
-		return __thiz.callObjectMethod(
-			"getUriString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	jstring SipProfile::getAuthUserName()
 	{
@@ -104,17 +76,52 @@ namespace __jni_impl::android::net::sip
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jstring SipProfile::getSipDomain()
+	jboolean SipProfile::getAutoRegistration()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getAutoRegistration",
+			"()Z"
+		);
+	}
+	jstring SipProfile::getDisplayName()
 	{
 		return __thiz.callObjectMethod(
-			"getSipDomain",
+			"getDisplayName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jstring SipProfile::getPassword()
+	{
+		return __thiz.callObjectMethod(
+			"getPassword",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint SipProfile::getPort()
+	{
+		return __thiz.callMethod<jint>(
+			"getPort",
+			"()I"
+		);
 	}
 	jstring SipProfile::getProfileName()
 	{
 		return __thiz.callObjectMethod(
 			"getProfileName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring SipProfile::getProtocol()
+	{
+		return __thiz.callObjectMethod(
+			"getProtocol",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring SipProfile::getProxyAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getProxyAddress",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -125,19 +132,26 @@ namespace __jni_impl::android::net::sip
 			"()Z"
 		);
 	}
-	jboolean SipProfile::getAutoRegistration()
+	jstring SipProfile::getSipDomain()
 	{
-		return __thiz.callMethod<jboolean>(
-			"getAutoRegistration",
-			"()Z"
-		);
+		return __thiz.callObjectMethod(
+			"getSipDomain",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	jint SipProfile::describeContents()
+	jstring SipProfile::getUriString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"getUriString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring SipProfile::getUserName()
+	{
+		return __thiz.callObjectMethod(
+			"getUserName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void SipProfile::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -147,20 +161,6 @@ namespace __jni_impl::android::net::sip
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jstring SipProfile::getProxyAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getProxyAddress",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring SipProfile::getPassword()
-	{
-		return __thiz.callObjectMethod(
-			"getPassword",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::net::sip
 

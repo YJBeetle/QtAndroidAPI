@@ -23,11 +23,11 @@ namespace __jni_impl::android::content
 		void __constructor(const QString &arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jstring getId();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		jstring getId();
+		jint hashCode();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content
@@ -65,6 +65,13 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
+	jint LocusId::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean LocusId::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -73,10 +80,10 @@ namespace __jni_impl::android::content
 			arg0
 		);
 	}
-	jstring LocusId::toString()
+	jstring LocusId::getId()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
+			"getId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -87,19 +94,12 @@ namespace __jni_impl::android::content
 			"()I"
 		);
 	}
-	jstring LocusId::getId()
+	jstring LocusId::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getId",
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jint LocusId::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
 	}
 	void LocusId::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

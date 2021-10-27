@@ -6,13 +6,13 @@
 #include "../../../__JniBaseClass.hpp"
 #include "BaseMovementMethod.hpp"
 
-namespace __jni_impl::android::widget
-{
-	class TextView;
-}
 namespace __jni_impl::android::view
 {
 	class MotionEvent;
+}
+namespace __jni_impl::android::widget
+{
+	class TextView;
 }
 
 namespace __jni_impl::android::text::method
@@ -32,8 +32,8 @@ namespace __jni_impl::android::text::method
 	};
 } // namespace __jni_impl::android::text::method
 
-#include "../../widget/TextView.hpp"
 #include "../../view/MotionEvent.hpp"
+#include "../../widget/TextView.hpp"
 
 namespace __jni_impl::android::text::method
 {

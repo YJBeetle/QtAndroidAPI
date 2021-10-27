@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
-{
-	class Context;
-}
 namespace __jni_impl::android::bluetooth
 {
 	class BluetoothDevice;
+}
+namespace __jni_impl::android::content
+{
+	class Context;
 }
 
 namespace __jni_impl::android::bluetooth
@@ -41,19 +41,19 @@ namespace __jni_impl::android::bluetooth
 		void __constructor();
 		
 		// Methods
-		jint getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 		QAndroidJniObject getConnectedDevices();
+		jint getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 		QAndroidJniObject getDevicesMatchingConnectionStates(jintArray arg0);
-		jboolean startVoiceRecognition(__jni_impl::android::bluetooth::BluetoothDevice arg0);
-		jboolean stopVoiceRecognition(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 		jboolean isAudioConnected(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 		jboolean sendVendorSpecificResultCode(__jni_impl::android::bluetooth::BluetoothDevice arg0, jstring arg1, jstring arg2);
 		jboolean sendVendorSpecificResultCode(__jni_impl::android::bluetooth::BluetoothDevice arg0, const QString &arg1, const QString &arg2);
+		jboolean startVoiceRecognition(__jni_impl::android::bluetooth::BluetoothDevice arg0);
+		jboolean stopVoiceRecognition(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 	};
 } // namespace __jni_impl::android::bluetooth
 
-#include "../content/Context.hpp"
 #include "BluetoothDevice.hpp"
+#include "../content/Context.hpp"
 
 namespace __jni_impl::android::bluetooth
 {
@@ -188,6 +188,13 @@ namespace __jni_impl::android::bluetooth
 	}
 	
 	// Methods
+	QAndroidJniObject BluetoothHeadset::getConnectedDevices()
+	{
+		return __thiz.callObjectMethod(
+			"getConnectedDevices",
+			"()Ljava/util/List;"
+		);
+	}
 	jint BluetoothHeadset::getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -196,35 +203,12 @@ namespace __jni_impl::android::bluetooth
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject BluetoothHeadset::getConnectedDevices()
-	{
-		return __thiz.callObjectMethod(
-			"getConnectedDevices",
-			"()Ljava/util/List;"
-		);
-	}
 	QAndroidJniObject BluetoothHeadset::getDevicesMatchingConnectionStates(jintArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getDevicesMatchingConnectionStates",
 			"([I)Ljava/util/List;",
 			arg0
-		);
-	}
-	jboolean BluetoothHeadset::startVoiceRecognition(__jni_impl::android::bluetooth::BluetoothDevice arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"startVoiceRecognition",
-			"(Landroid/bluetooth/BluetoothDevice;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean BluetoothHeadset::stopVoiceRecognition(__jni_impl::android::bluetooth::BluetoothDevice arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"stopVoiceRecognition",
-			"(Landroid/bluetooth/BluetoothDevice;)Z",
-			arg0.__jniObject().object()
 		);
 	}
 	jboolean BluetoothHeadset::isAudioConnected(__jni_impl::android::bluetooth::BluetoothDevice arg0)
@@ -253,6 +237,22 @@ namespace __jni_impl::android::bluetooth
 			arg0.__jniObject().object(),
 			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
+	}
+	jboolean BluetoothHeadset::startVoiceRecognition(__jni_impl::android::bluetooth::BluetoothDevice arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"startVoiceRecognition",
+			"(Landroid/bluetooth/BluetoothDevice;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean BluetoothHeadset::stopVoiceRecognition(__jni_impl::android::bluetooth::BluetoothDevice arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"stopVoiceRecognition",
+			"(Landroid/bluetooth/BluetoothDevice;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::bluetooth

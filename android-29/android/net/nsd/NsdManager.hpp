@@ -32,9 +32,9 @@ namespace __jni_impl::android::net::nsd
 		void discoverServices(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
 		void discoverServices(const QString &arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
 		void registerService(__jni_impl::android::net::nsd::NsdServiceInfo arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
-		void unregisterService(__jni_impl::__JniBaseClass arg0);
-		void stopServiceDiscovery(__jni_impl::__JniBaseClass arg0);
 		void resolveService(__jni_impl::android::net::nsd::NsdServiceInfo arg0, __jni_impl::__JniBaseClass arg1);
+		void stopServiceDiscovery(__jni_impl::__JniBaseClass arg0);
+		void unregisterService(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::net::nsd
 
@@ -141,12 +141,13 @@ namespace __jni_impl::android::net::nsd
 			arg2.__jniObject().object()
 		);
 	}
-	void NsdManager::unregisterService(__jni_impl::__JniBaseClass arg0)
+	void NsdManager::resolveService(__jni_impl::android::net::nsd::NsdServiceInfo arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
-			"unregisterService",
-			"(Landroid/net/nsd/NsdManager$RegistrationListener;)V",
-			arg0.__jniObject().object()
+			"resolveService",
+			"(Landroid/net/nsd/NsdServiceInfo;Landroid/net/nsd/NsdManager$ResolveListener;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	void NsdManager::stopServiceDiscovery(__jni_impl::__JniBaseClass arg0)
@@ -157,13 +158,12 @@ namespace __jni_impl::android::net::nsd
 			arg0.__jniObject().object()
 		);
 	}
-	void NsdManager::resolveService(__jni_impl::android::net::nsd::NsdServiceInfo arg0, __jni_impl::__JniBaseClass arg1)
+	void NsdManager::unregisterService(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"resolveService",
-			"(Landroid/net/nsd/NsdServiceInfo;Landroid/net/nsd/NsdManager$ResolveListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			"unregisterService",
+			"(Landroid/net/nsd/NsdManager$RegistrationListener;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::net::nsd

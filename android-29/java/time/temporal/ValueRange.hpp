@@ -21,22 +21,22 @@ namespace __jni_impl::java::time::temporal
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		static QAndroidJniObject of(jlong arg0, jlong arg1);
-		static QAndroidJniObject of(jlong arg0, jlong arg1, jlong arg2, jlong arg3);
 		static QAndroidJniObject of(jlong arg0, jlong arg1, jlong arg2);
-		jlong checkValidValue(jlong arg0, __jni_impl::__JniBaseClass arg1);
+		static QAndroidJniObject of(jlong arg0, jlong arg1, jlong arg2, jlong arg3);
 		jint checkValidIntValue(jlong arg0, __jni_impl::__JniBaseClass arg1);
-		jboolean isIntValue();
-		jboolean isValidValue(jlong arg0);
-		jlong getMinimum();
-		jlong getMaximum();
-		jboolean isValidIntValue(jlong arg0);
-		jboolean isFixed();
+		jlong checkValidValue(jlong arg0, __jni_impl::__JniBaseClass arg1);
+		jboolean equals(jobject arg0);
 		jlong getLargestMinimum();
+		jlong getMaximum();
+		jlong getMinimum();
 		jlong getSmallestMaximum();
+		jint hashCode();
+		jboolean isFixed();
+		jboolean isIntValue();
+		jboolean isValidIntValue(jlong arg0);
+		jboolean isValidValue(jlong arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::java::time::temporal
 
@@ -55,28 +55,6 @@ namespace __jni_impl::java::time::temporal
 	}
 	
 	// Methods
-	jboolean ValueRange::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring ValueRange::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint ValueRange::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	QAndroidJniObject ValueRange::of(jlong arg0, jlong arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -85,6 +63,17 @@ namespace __jni_impl::java::time::temporal
 			"(JJ)Ljava/time/temporal/ValueRange;",
 			arg0,
 			arg1
+		);
+	}
+	QAndroidJniObject ValueRange::of(jlong arg0, jlong arg1, jlong arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.temporal.ValueRange",
+			"of",
+			"(JJJ)Ljava/time/temporal/ValueRange;",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 	QAndroidJniObject ValueRange::of(jlong arg0, jlong arg1, jlong arg2, jlong arg3)
@@ -99,15 +88,13 @@ namespace __jni_impl::java::time::temporal
 			arg3
 		);
 	}
-	QAndroidJniObject ValueRange::of(jlong arg0, jlong arg1, jlong arg2)
+	jint ValueRange::checkValidIntValue(jlong arg0, __jni_impl::__JniBaseClass arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.temporal.ValueRange",
-			"of",
-			"(JJJ)Ljava/time/temporal/ValueRange;",
+		return __thiz.callMethod<jint>(
+			"checkValidIntValue",
+			"(JLjava/time/temporal/TemporalField;)I",
 			arg0,
-			arg1,
-			arg2
+			arg1.__jniObject().object()
 		);
 	}
 	jlong ValueRange::checkValidValue(jlong arg0, __jni_impl::__JniBaseClass arg1)
@@ -119,34 +106,18 @@ namespace __jni_impl::java::time::temporal
 			arg1.__jniObject().object()
 		);
 	}
-	jint ValueRange::checkValidIntValue(jlong arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"checkValidIntValue",
-			"(JLjava/time/temporal/TemporalField;)I",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean ValueRange::isIntValue()
+	jboolean ValueRange::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"isIntValue",
-			"()Z"
-		);
-	}
-	jboolean ValueRange::isValidValue(jlong arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isValidValue",
-			"(J)Z",
+			"equals",
+			"(Ljava/lang/Object;)Z",
 			arg0
 		);
 	}
-	jlong ValueRange::getMinimum()
+	jlong ValueRange::getLargestMinimum()
 	{
 		return __thiz.callMethod<jlong>(
-			"getMinimum",
+			"getLargestMinimum",
 			"()J"
 		);
 	}
@@ -157,25 +128,10 @@ namespace __jni_impl::java::time::temporal
 			"()J"
 		);
 	}
-	jboolean ValueRange::isValidIntValue(jlong arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isValidIntValue",
-			"(J)Z",
-			arg0
-		);
-	}
-	jboolean ValueRange::isFixed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFixed",
-			"()Z"
-		);
-	}
-	jlong ValueRange::getLargestMinimum()
+	jlong ValueRange::getMinimum()
 	{
 		return __thiz.callMethod<jlong>(
-			"getLargestMinimum",
+			"getMinimum",
 			"()J"
 		);
 	}
@@ -185,6 +141,50 @@ namespace __jni_impl::java::time::temporal
 			"getSmallestMaximum",
 			"()J"
 		);
+	}
+	jint ValueRange::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jboolean ValueRange::isFixed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFixed",
+			"()Z"
+		);
+	}
+	jboolean ValueRange::isIntValue()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isIntValue",
+			"()Z"
+		);
+	}
+	jboolean ValueRange::isValidIntValue(jlong arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isValidIntValue",
+			"(J)Z",
+			arg0
+		);
+	}
+	jboolean ValueRange::isValidValue(jlong arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isValidValue",
+			"(J)Z",
+			arg0
+		);
+	}
+	jstring ValueRange::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::time::temporal
 

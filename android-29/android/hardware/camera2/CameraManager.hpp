@@ -11,23 +11,23 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::android::hardware::camera2
 {
-	class CameraManager_AvailabilityCallback;
-}
-namespace __jni_impl::android::os
-{
-	class Handler;
-}
-namespace __jni_impl::android::hardware::camera2
-{
-	class CameraManager_TorchCallback;
-}
-namespace __jni_impl::android::hardware::camera2
-{
 	class CameraCharacteristics;
 }
 namespace __jni_impl::android::hardware::camera2
 {
 	class CameraDevice_StateCallback;
+}
+namespace __jni_impl::android::hardware::camera2
+{
+	class CameraManager_AvailabilityCallback;
+}
+namespace __jni_impl::android::hardware::camera2
+{
+	class CameraManager_TorchCallback;
+}
+namespace __jni_impl::android::os
+{
+	class Handler;
 }
 
 namespace __jni_impl::android::hardware::camera2
@@ -41,30 +41,30 @@ namespace __jni_impl::android::hardware::camera2
 		void __constructor();
 		
 		// Methods
-		jarray getCameraIdList();
-		void registerAvailabilityCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::hardware::camera2::CameraManager_AvailabilityCallback arg1);
-		void registerAvailabilityCallback(__jni_impl::android::hardware::camera2::CameraManager_AvailabilityCallback arg0, __jni_impl::android::os::Handler arg1);
-		void unregisterAvailabilityCallback(__jni_impl::android::hardware::camera2::CameraManager_AvailabilityCallback arg0);
-		void registerTorchCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::hardware::camera2::CameraManager_TorchCallback arg1);
-		void registerTorchCallback(__jni_impl::android::hardware::camera2::CameraManager_TorchCallback arg0, __jni_impl::android::os::Handler arg1);
-		void unregisterTorchCallback(__jni_impl::android::hardware::camera2::CameraManager_TorchCallback arg0);
 		QAndroidJniObject getCameraCharacteristics(jstring arg0);
 		QAndroidJniObject getCameraCharacteristics(const QString &arg0);
-		void openCamera(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::camera2::CameraDevice_StateCallback arg2);
-		void openCamera(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::camera2::CameraDevice_StateCallback arg2);
+		jarray getCameraIdList();
 		void openCamera(jstring arg0, __jni_impl::android::hardware::camera2::CameraDevice_StateCallback arg1, __jni_impl::android::os::Handler arg2);
 		void openCamera(const QString &arg0, __jni_impl::android::hardware::camera2::CameraDevice_StateCallback arg1, __jni_impl::android::os::Handler arg2);
+		void openCamera(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::camera2::CameraDevice_StateCallback arg2);
+		void openCamera(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::camera2::CameraDevice_StateCallback arg2);
+		void registerAvailabilityCallback(__jni_impl::android::hardware::camera2::CameraManager_AvailabilityCallback arg0, __jni_impl::android::os::Handler arg1);
+		void registerAvailabilityCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::hardware::camera2::CameraManager_AvailabilityCallback arg1);
+		void registerTorchCallback(__jni_impl::android::hardware::camera2::CameraManager_TorchCallback arg0, __jni_impl::android::os::Handler arg1);
+		void registerTorchCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::hardware::camera2::CameraManager_TorchCallback arg1);
 		void setTorchMode(jstring arg0, jboolean arg1);
 		void setTorchMode(const QString &arg0, jboolean arg1);
+		void unregisterAvailabilityCallback(__jni_impl::android::hardware::camera2::CameraManager_AvailabilityCallback arg0);
+		void unregisterTorchCallback(__jni_impl::android::hardware::camera2::CameraManager_TorchCallback arg0);
 	};
 } // namespace __jni_impl::android::hardware::camera2
 
 #include "../../content/Context.hpp"
-#include "CameraManager_AvailabilityCallback.hpp"
-#include "../../os/Handler.hpp"
-#include "CameraManager_TorchCallback.hpp"
 #include "CameraCharacteristics.hpp"
 #include "CameraDevice_StateCallback.hpp"
+#include "CameraManager_AvailabilityCallback.hpp"
+#include "CameraManager_TorchCallback.hpp"
+#include "../../os/Handler.hpp"
 
 namespace __jni_impl::android::hardware::camera2
 {
@@ -79,65 +79,6 @@ namespace __jni_impl::android::hardware::camera2
 	}
 	
 	// Methods
-	jarray CameraManager::getCameraIdList()
-	{
-		return __thiz.callObjectMethod(
-			"getCameraIdList",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	void CameraManager::registerAvailabilityCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::hardware::camera2::CameraManager_AvailabilityCallback arg1)
-	{
-		__thiz.callMethod<void>(
-			"registerAvailabilityCallback",
-			"(Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraManager$AvailabilityCallback;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void CameraManager::registerAvailabilityCallback(__jni_impl::android::hardware::camera2::CameraManager_AvailabilityCallback arg0, __jni_impl::android::os::Handler arg1)
-	{
-		__thiz.callMethod<void>(
-			"registerAvailabilityCallback",
-			"(Landroid/hardware/camera2/CameraManager$AvailabilityCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void CameraManager::unregisterAvailabilityCallback(__jni_impl::android::hardware::camera2::CameraManager_AvailabilityCallback arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterAvailabilityCallback",
-			"(Landroid/hardware/camera2/CameraManager$AvailabilityCallback;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void CameraManager::registerTorchCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::hardware::camera2::CameraManager_TorchCallback arg1)
-	{
-		__thiz.callMethod<void>(
-			"registerTorchCallback",
-			"(Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraManager$TorchCallback;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void CameraManager::registerTorchCallback(__jni_impl::android::hardware::camera2::CameraManager_TorchCallback arg0, __jni_impl::android::os::Handler arg1)
-	{
-		__thiz.callMethod<void>(
-			"registerTorchCallback",
-			"(Landroid/hardware/camera2/CameraManager$TorchCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void CameraManager::unregisterTorchCallback(__jni_impl::android::hardware::camera2::CameraManager_TorchCallback arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterTorchCallback",
-			"(Landroid/hardware/camera2/CameraManager$TorchCallback;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject CameraManager::getCameraCharacteristics(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -152,6 +93,33 @@ namespace __jni_impl::android::hardware::camera2
 			"getCameraCharacteristics",
 			"(Ljava/lang/String;)Landroid/hardware/camera2/CameraCharacteristics;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jarray CameraManager::getCameraIdList()
+	{
+		return __thiz.callObjectMethod(
+			"getCameraIdList",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	void CameraManager::openCamera(jstring arg0, __jni_impl::android::hardware::camera2::CameraDevice_StateCallback arg1, __jni_impl::android::os::Handler arg2)
+	{
+		__thiz.callMethod<void>(
+			"openCamera",
+			"(Ljava/lang/String;Landroid/hardware/camera2/CameraDevice$StateCallback;Landroid/os/Handler;)V",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	void CameraManager::openCamera(const QString &arg0, __jni_impl::android::hardware::camera2::CameraDevice_StateCallback arg1, __jni_impl::android::os::Handler arg2)
+	{
+		__thiz.callMethod<void>(
+			"openCamera",
+			"(Ljava/lang/String;Landroid/hardware/camera2/CameraDevice$StateCallback;Landroid/os/Handler;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
 	void CameraManager::openCamera(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::camera2::CameraDevice_StateCallback arg2)
@@ -174,24 +142,40 @@ namespace __jni_impl::android::hardware::camera2
 			arg2.__jniObject().object()
 		);
 	}
-	void CameraManager::openCamera(jstring arg0, __jni_impl::android::hardware::camera2::CameraDevice_StateCallback arg1, __jni_impl::android::os::Handler arg2)
+	void CameraManager::registerAvailabilityCallback(__jni_impl::android::hardware::camera2::CameraManager_AvailabilityCallback arg0, __jni_impl::android::os::Handler arg1)
 	{
 		__thiz.callMethod<void>(
-			"openCamera",
-			"(Ljava/lang/String;Landroid/hardware/camera2/CameraDevice$StateCallback;Landroid/os/Handler;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			"registerAvailabilityCallback",
+			"(Landroid/hardware/camera2/CameraManager$AvailabilityCallback;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
-	void CameraManager::openCamera(const QString &arg0, __jni_impl::android::hardware::camera2::CameraDevice_StateCallback arg1, __jni_impl::android::os::Handler arg2)
+	void CameraManager::registerAvailabilityCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::hardware::camera2::CameraManager_AvailabilityCallback arg1)
 	{
 		__thiz.callMethod<void>(
-			"openCamera",
-			"(Ljava/lang/String;Landroid/hardware/camera2/CameraDevice$StateCallback;Landroid/os/Handler;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			"registerAvailabilityCallback",
+			"(Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraManager$AvailabilityCallback;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void CameraManager::registerTorchCallback(__jni_impl::android::hardware::camera2::CameraManager_TorchCallback arg0, __jni_impl::android::os::Handler arg1)
+	{
+		__thiz.callMethod<void>(
+			"registerTorchCallback",
+			"(Landroid/hardware/camera2/CameraManager$TorchCallback;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void CameraManager::registerTorchCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::hardware::camera2::CameraManager_TorchCallback arg1)
+	{
+		__thiz.callMethod<void>(
+			"registerTorchCallback",
+			"(Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraManager$TorchCallback;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	void CameraManager::setTorchMode(jstring arg0, jboolean arg1)
@@ -210,6 +194,22 @@ namespace __jni_impl::android::hardware::camera2
 			"(Ljava/lang/String;Z)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
+		);
+	}
+	void CameraManager::unregisterAvailabilityCallback(__jni_impl::android::hardware::camera2::CameraManager_AvailabilityCallback arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterAvailabilityCallback",
+			"(Landroid/hardware/camera2/CameraManager$AvailabilityCallback;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void CameraManager::unregisterTorchCallback(__jni_impl::android::hardware::camera2::CameraManager_TorchCallback arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterTorchCallback",
+			"(Landroid/hardware/camera2/CameraManager$TorchCallback;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::hardware::camera2

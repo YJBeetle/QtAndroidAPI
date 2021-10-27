@@ -9,10 +9,6 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::javax::security::auth::x500
-{
-	class X500Principal;
-}
 namespace __jni_impl::java::math
 {
 	class BigInteger;
@@ -20,6 +16,10 @@ namespace __jni_impl::java::math
 namespace __jni_impl::java::util
 {
 	class Date;
+}
+namespace __jni_impl::javax::security::auth::x500
+{
+	class X500Principal;
 }
 
 namespace __jni_impl::android::security
@@ -33,23 +33,23 @@ namespace __jni_impl::android::security
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getContext();
-		QAndroidJniObject getSubjectDN();
-		jboolean isEncryptionRequired();
 		QAndroidJniObject getAlgorithmParameterSpec();
+		QAndroidJniObject getContext();
+		QAndroidJniObject getEndDate();
 		jint getKeySize();
+		jstring getKeyType();
 		jstring getKeystoreAlias();
 		QAndroidJniObject getSerialNumber();
 		QAndroidJniObject getStartDate();
-		jstring getKeyType();
-		QAndroidJniObject getEndDate();
+		QAndroidJniObject getSubjectDN();
+		jboolean isEncryptionRequired();
 	};
 } // namespace __jni_impl::android::security
 
 #include "../content/Context.hpp"
-#include "../../javax/security/auth/x500/X500Principal.hpp"
 #include "../../java/math/BigInteger.hpp"
 #include "../../java/util/Date.hpp"
+#include "../../javax/security/auth/x500/X500Principal.hpp"
 
 namespace __jni_impl::android::security
 {
@@ -64,6 +64,13 @@ namespace __jni_impl::android::security
 	}
 	
 	// Methods
+	QAndroidJniObject KeyPairGeneratorSpec::getAlgorithmParameterSpec()
+	{
+		return __thiz.callObjectMethod(
+			"getAlgorithmParameterSpec",
+			"()Ljava/security/spec/AlgorithmParameterSpec;"
+		);
+	}
 	QAndroidJniObject KeyPairGeneratorSpec::getContext()
 	{
 		return __thiz.callObjectMethod(
@@ -71,25 +78,11 @@ namespace __jni_impl::android::security
 			"()Landroid/content/Context;"
 		);
 	}
-	QAndroidJniObject KeyPairGeneratorSpec::getSubjectDN()
+	QAndroidJniObject KeyPairGeneratorSpec::getEndDate()
 	{
 		return __thiz.callObjectMethod(
-			"getSubjectDN",
-			"()Ljavax/security/auth/x500/X500Principal;"
-		);
-	}
-	jboolean KeyPairGeneratorSpec::isEncryptionRequired()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEncryptionRequired",
-			"()Z"
-		);
-	}
-	QAndroidJniObject KeyPairGeneratorSpec::getAlgorithmParameterSpec()
-	{
-		return __thiz.callObjectMethod(
-			"getAlgorithmParameterSpec",
-			"()Ljava/security/spec/AlgorithmParameterSpec;"
+			"getEndDate",
+			"()Ljava/util/Date;"
 		);
 	}
 	jint KeyPairGeneratorSpec::getKeySize()
@@ -98,6 +91,13 @@ namespace __jni_impl::android::security
 			"getKeySize",
 			"()I"
 		);
+	}
+	jstring KeyPairGeneratorSpec::getKeyType()
+	{
+		return __thiz.callObjectMethod(
+			"getKeyType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jstring KeyPairGeneratorSpec::getKeystoreAlias()
 	{
@@ -120,18 +120,18 @@ namespace __jni_impl::android::security
 			"()Ljava/util/Date;"
 		);
 	}
-	jstring KeyPairGeneratorSpec::getKeyType()
+	QAndroidJniObject KeyPairGeneratorSpec::getSubjectDN()
 	{
 		return __thiz.callObjectMethod(
-			"getKeyType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getSubjectDN",
+			"()Ljavax/security/auth/x500/X500Principal;"
+		);
 	}
-	QAndroidJniObject KeyPairGeneratorSpec::getEndDate()
+	jboolean KeyPairGeneratorSpec::isEncryptionRequired()
 	{
-		return __thiz.callObjectMethod(
-			"getEndDate",
-			"()Ljava/util/Date;"
+		return __thiz.callMethod<jboolean>(
+			"isEncryptionRequired",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::security

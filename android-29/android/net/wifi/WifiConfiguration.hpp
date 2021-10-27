@@ -5,25 +5,25 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util
+namespace __jni_impl::android::net
 {
-	class BitSet;
-}
-namespace __jni_impl::android::net::wifi
-{
-	class WifiEnterpriseConfig;
+	class MacAddress;
 }
 namespace __jni_impl::android::net
 {
 	class ProxyInfo;
 }
-namespace __jni_impl::android::net
+namespace __jni_impl::android::net::wifi
 {
-	class MacAddress;
+	class WifiEnterpriseConfig;
 }
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::java::util
+{
+	class BitSet;
 }
 
 namespace __jni_impl::android::net::wifi
@@ -58,21 +58,21 @@ namespace __jni_impl::android::net::wifi
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		void setHttpProxy(__jni_impl::android::net::ProxyInfo arg0);
+		jint describeContents();
 		QAndroidJniObject getHttpProxy();
 		QAndroidJniObject getRandomizedMacAddress();
 		jboolean isPasspoint();
-		jint describeContents();
+		void setHttpProxy(__jni_impl::android::net::ProxyInfo arg0);
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi
 
-#include "../../../java/util/BitSet.hpp"
-#include "WifiEnterpriseConfig.hpp"
-#include "../ProxyInfo.hpp"
 #include "../MacAddress.hpp"
+#include "../ProxyInfo.hpp"
+#include "WifiEnterpriseConfig.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../java/util/BitSet.hpp"
 
 namespace __jni_impl::android::net::wifi
 {
@@ -229,19 +229,11 @@ namespace __jni_impl::android::net::wifi
 	}
 	
 	// Methods
-	jstring WifiConfiguration::toString()
+	jint WifiConfiguration::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void WifiConfiguration::setHttpProxy(__jni_impl::android::net::ProxyInfo arg0)
-	{
-		__thiz.callMethod<void>(
-			"setHttpProxy",
-			"(Landroid/net/ProxyInfo;)V",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
 		);
 	}
 	QAndroidJniObject WifiConfiguration::getHttpProxy()
@@ -265,12 +257,20 @@ namespace __jni_impl::android::net::wifi
 			"()Z"
 		);
 	}
-	jint WifiConfiguration::describeContents()
+	void WifiConfiguration::setHttpProxy(__jni_impl::android::net::ProxyInfo arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		__thiz.callMethod<void>(
+			"setHttpProxy",
+			"(Landroid/net/ProxyInfo;)V",
+			arg0.__jniObject().object()
 		);
+	}
+	jstring WifiConfiguration::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void WifiConfiguration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

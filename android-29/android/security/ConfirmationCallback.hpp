@@ -17,10 +17,10 @@ namespace __jni_impl::android::security
 		void __constructor();
 		
 		// Methods
-		void onError(jthrowable arg0);
 		void onCanceled();
 		void onConfirmed(jbyteArray arg0);
 		void onDismissed();
+		void onError(jthrowable arg0);
 	};
 } // namespace __jni_impl::android::security
 
@@ -39,14 +39,6 @@ namespace __jni_impl::android::security
 	}
 	
 	// Methods
-	void ConfirmationCallback::onError(jthrowable arg0)
-	{
-		__thiz.callMethod<void>(
-			"onError",
-			"(Ljava/lang/Throwable;)V",
-			arg0
-		);
-	}
 	void ConfirmationCallback::onCanceled()
 	{
 		__thiz.callMethod<void>(
@@ -67,6 +59,14 @@ namespace __jni_impl::android::security
 		__thiz.callMethod<void>(
 			"onDismissed",
 			"()V"
+		);
+	}
+	void ConfirmationCallback::onError(jthrowable arg0)
+	{
+		__thiz.callMethod<void>(
+			"onError",
+			"(Ljava/lang/Throwable;)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::security

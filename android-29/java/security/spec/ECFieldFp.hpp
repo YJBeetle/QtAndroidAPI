@@ -22,9 +22,9 @@ namespace __jni_impl::java::security::spec
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jint hashCode();
-		QAndroidJniObject getP();
 		jint getFieldSize();
+		QAndroidJniObject getP();
+		jint hashCode();
 	};
 } // namespace __jni_impl::java::security::spec
 
@@ -53,10 +53,10 @@ namespace __jni_impl::java::security::spec
 			arg0
 		);
 	}
-	jint ECFieldFp::hashCode()
+	jint ECFieldFp::getFieldSize()
 	{
 		return __thiz.callMethod<jint>(
-			"hashCode",
+			"getFieldSize",
 			"()I"
 		);
 	}
@@ -67,10 +67,10 @@ namespace __jni_impl::java::security::spec
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	jint ECFieldFp::getFieldSize()
+	jint ECFieldFp::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"getFieldSize",
+			"hashCode",
 			"()I"
 		);
 	}

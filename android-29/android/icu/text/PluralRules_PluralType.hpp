@@ -20,9 +20,9 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -56,14 +56,6 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jarray PluralRules_PluralType::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.PluralRules$PluralType",
-			"values",
-			"()[Landroid/icu/text/PluralRules$PluralType;"
-		).object<jarray>();
-	}
 	QAndroidJniObject PluralRules_PluralType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -81,6 +73,14 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;)Landroid/icu/text/PluralRules$PluralType;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray PluralRules_PluralType::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.PluralRules$PluralType",
+			"values",
+			"()[Landroid/icu/text/PluralRules$PluralType;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::icu::text
 

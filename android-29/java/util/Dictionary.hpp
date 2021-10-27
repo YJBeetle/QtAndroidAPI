@@ -17,13 +17,13 @@ namespace __jni_impl::java::util
 		void __constructor();
 		
 		// Methods
-		jobject remove(jobject arg0);
-		jobject get(jobject arg0);
-		jobject put(jobject arg0, jobject arg1);
-		jboolean isEmpty();
-		jint size();
 		QAndroidJniObject elements();
+		jobject get(jobject arg0);
+		jboolean isEmpty();
 		QAndroidJniObject keys();
+		jobject put(jobject arg0, jobject arg1);
+		jobject remove(jobject arg0);
+		jint size();
 	};
 } // namespace __jni_impl::java::util
 
@@ -42,13 +42,12 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	jobject Dictionary::remove(jobject arg0)
+	QAndroidJniObject Dictionary::elements()
 	{
 		return __thiz.callObjectMethod(
-			"remove",
-			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			"elements",
+			"()Ljava/util/Enumeration;"
+		);
 	}
 	jobject Dictionary::get(jobject arg0)
 	{
@@ -57,6 +56,20 @@ namespace __jni_impl::java::util
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
 		).object<jobject>();
+	}
+	jboolean Dictionary::isEmpty()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEmpty",
+			"()Z"
+		);
+	}
+	QAndroidJniObject Dictionary::keys()
+	{
+		return __thiz.callObjectMethod(
+			"keys",
+			"()Ljava/util/Enumeration;"
+		);
 	}
 	jobject Dictionary::put(jobject arg0, jobject arg1)
 	{
@@ -67,32 +80,19 @@ namespace __jni_impl::java::util
 			arg1
 		).object<jobject>();
 	}
-	jboolean Dictionary::isEmpty()
+	jobject Dictionary::remove(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isEmpty",
-			"()Z"
-		);
+		return __thiz.callObjectMethod(
+			"remove",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0
+		).object<jobject>();
 	}
 	jint Dictionary::size()
 	{
 		return __thiz.callMethod<jint>(
 			"size",
 			"()I"
-		);
-	}
-	QAndroidJniObject Dictionary::elements()
-	{
-		return __thiz.callObjectMethod(
-			"elements",
-			"()Ljava/util/Enumeration;"
-		);
-	}
-	QAndroidJniObject Dictionary::keys()
-	{
-		return __thiz.callObjectMethod(
-			"keys",
-			"()Ljava/util/Enumeration;"
 		);
 	}
 } // namespace __jni_impl::java::util

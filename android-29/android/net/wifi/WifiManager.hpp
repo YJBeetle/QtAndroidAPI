@@ -5,25 +5,41 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net::wifi
-{
-	class WifiConfiguration;
-}
-namespace __jni_impl::android::net::wifi::hotspot2
-{
-	class PasspointConfiguration;
-}
-namespace __jni_impl::android::net::wifi
-{
-	class WifiInfo;
-}
 namespace __jni_impl::android::net
 {
 	class DhcpInfo;
 }
 namespace __jni_impl::android::net::wifi
 {
+	class WifiConfiguration;
+}
+namespace __jni_impl::android::net::wifi
+{
+	class WifiInfo;
+}
+namespace __jni_impl::android::net::wifi
+{
 	class WifiManager_LocalOnlyHotspotCallback;
+}
+namespace __jni_impl::android::net::wifi
+{
+	class WifiManager_MulticastLock;
+}
+namespace __jni_impl::android::net::wifi
+{
+	class WifiManager_WifiLock;
+}
+namespace __jni_impl::android::net::wifi
+{
+	class WifiManager_WpsCallback;
+}
+namespace __jni_impl::android::net::wifi
+{
+	class WpsInfo;
+}
+namespace __jni_impl::android::net::wifi::hotspot2
+{
+	class PasspointConfiguration;
 }
 namespace __jni_impl::android::os
 {
@@ -32,22 +48,6 @@ namespace __jni_impl::android::os
 namespace __jni_impl::java::net
 {
 	class InetAddress;
-}
-namespace __jni_impl::android::net::wifi
-{
-	class WpsInfo;
-}
-namespace __jni_impl::android::net::wifi
-{
-	class WifiManager_WpsCallback;
-}
-namespace __jni_impl::android::net::wifi
-{
-	class WifiManager_WifiLock;
-}
-namespace __jni_impl::android::net::wifi
-{
-	class WifiManager_MulticastLock;
 }
 
 namespace __jni_impl::android::net::wifi
@@ -103,70 +103,70 @@ namespace __jni_impl::android::net::wifi
 		void __constructor();
 		
 		// Methods
-		jboolean startScan();
-		jboolean reconnect();
-		jboolean disconnect();
-		QAndroidJniObject getConfiguredNetworks();
-		jint addNetwork(__jni_impl::android::net::wifi::WifiConfiguration arg0);
-		jint updateNetwork(__jni_impl::android::net::wifi::WifiConfiguration arg0);
-		jint addNetworkSuggestions(__jni_impl::__JniBaseClass arg0);
-		jint removeNetworkSuggestions(__jni_impl::__JniBaseClass arg0);
-		jint getMaxNumberOfNetworkSuggestionsPerApp();
-		void addOrUpdatePasspointConfiguration(__jni_impl::android::net::wifi::hotspot2::PasspointConfiguration arg0);
-		void removePasspointConfiguration(jstring arg0);
-		void removePasspointConfiguration(const QString &arg0);
-		QAndroidJniObject getPasspointConfigurations();
-		jboolean removeNetwork(jint arg0);
-		jboolean enableNetwork(jint arg0, jboolean arg1);
-		jboolean disableNetwork(jint arg0);
-		jboolean reassociate();
-		jboolean pingSupplicant();
-		jboolean is5GHzBandSupported();
-		jboolean isP2pSupported();
-		jboolean isDeviceToApRttSupported();
-		jboolean isPreferredNetworkOffloadSupported();
-		jboolean isTdlsSupported();
-		jboolean isEnhancedPowerReportingSupported();
-		QAndroidJniObject getConnectionInfo();
-		QAndroidJniObject getScanResults();
-		jboolean isScanAlwaysAvailable();
-		jboolean saveConfiguration();
-		QAndroidJniObject getDhcpInfo();
-		jboolean setWifiEnabled(jboolean arg0);
-		jint getWifiState();
-		jboolean isWifiEnabled();
 		static jint calculateSignalLevel(jint arg0, jint arg1);
 		static jint compareSignalLevel(jint arg0, jint arg1);
-		void startLocalOnlyHotspot(__jni_impl::android::net::wifi::WifiManager_LocalOnlyHotspotCallback arg0, __jni_impl::android::os::Handler arg1);
-		void setTdlsEnabled(__jni_impl::java::net::InetAddress arg0, jboolean arg1);
-		void setTdlsEnabledWithMacAddress(jstring arg0, jboolean arg1);
-		void setTdlsEnabledWithMacAddress(const QString &arg0, jboolean arg1);
-		void startWps(__jni_impl::android::net::wifi::WpsInfo arg0, __jni_impl::android::net::wifi::WifiManager_WpsCallback arg1);
+		jint addNetwork(__jni_impl::android::net::wifi::WifiConfiguration arg0);
+		jint addNetworkSuggestions(__jni_impl::__JniBaseClass arg0);
+		void addOrUpdatePasspointConfiguration(__jni_impl::android::net::wifi::hotspot2::PasspointConfiguration arg0);
 		void cancelWps(__jni_impl::android::net::wifi::WifiManager_WpsCallback arg0);
+		QAndroidJniObject createMulticastLock(jstring arg0);
+		QAndroidJniObject createMulticastLock(const QString &arg0);
 		QAndroidJniObject createWifiLock(jstring arg0);
 		QAndroidJniObject createWifiLock(const QString &arg0);
 		QAndroidJniObject createWifiLock(jint arg0, jstring arg1);
 		QAndroidJniObject createWifiLock(jint arg0, const QString &arg1);
-		QAndroidJniObject createMulticastLock(jstring arg0);
-		QAndroidJniObject createMulticastLock(const QString &arg0);
+		jboolean disableNetwork(jint arg0);
+		jboolean disconnect();
+		jboolean enableNetwork(jint arg0, jboolean arg1);
+		QAndroidJniObject getConfiguredNetworks();
+		QAndroidJniObject getConnectionInfo();
+		QAndroidJniObject getDhcpInfo();
+		jint getMaxNumberOfNetworkSuggestionsPerApp();
+		QAndroidJniObject getPasspointConfigurations();
+		QAndroidJniObject getScanResults();
+		jint getWifiState();
+		jboolean is5GHzBandSupported();
+		jboolean isDeviceToApRttSupported();
+		jboolean isEasyConnectSupported();
+		jboolean isEnhancedOpenSupported();
+		jboolean isEnhancedPowerReportingSupported();
+		jboolean isP2pSupported();
+		jboolean isPreferredNetworkOffloadSupported();
+		jboolean isScanAlwaysAvailable();
+		jboolean isTdlsSupported();
+		jboolean isWifiEnabled();
 		jboolean isWpa3SaeSupported();
 		jboolean isWpa3SuiteBSupported();
-		jboolean isEnhancedOpenSupported();
-		jboolean isEasyConnectSupported();
+		jboolean pingSupplicant();
+		jboolean reassociate();
+		jboolean reconnect();
+		jboolean removeNetwork(jint arg0);
+		jint removeNetworkSuggestions(__jni_impl::__JniBaseClass arg0);
+		void removePasspointConfiguration(jstring arg0);
+		void removePasspointConfiguration(const QString &arg0);
+		jboolean saveConfiguration();
+		void setTdlsEnabled(__jni_impl::java::net::InetAddress arg0, jboolean arg1);
+		void setTdlsEnabledWithMacAddress(jstring arg0, jboolean arg1);
+		void setTdlsEnabledWithMacAddress(const QString &arg0, jboolean arg1);
+		jboolean setWifiEnabled(jboolean arg0);
+		void startLocalOnlyHotspot(__jni_impl::android::net::wifi::WifiManager_LocalOnlyHotspotCallback arg0, __jni_impl::android::os::Handler arg1);
+		jboolean startScan();
+		void startWps(__jni_impl::android::net::wifi::WpsInfo arg0, __jni_impl::android::net::wifi::WifiManager_WpsCallback arg1);
+		jint updateNetwork(__jni_impl::android::net::wifi::WifiConfiguration arg0);
 	};
 } // namespace __jni_impl::android::net::wifi
 
-#include "WifiConfiguration.hpp"
-#include "hotspot2/PasspointConfiguration.hpp"
-#include "WifiInfo.hpp"
 #include "../DhcpInfo.hpp"
+#include "WifiConfiguration.hpp"
+#include "WifiInfo.hpp"
 #include "WifiManager_LocalOnlyHotspotCallback.hpp"
+#include "WifiManager_MulticastLock.hpp"
+#include "WifiManager_WifiLock.hpp"
+#include "WifiManager_WpsCallback.hpp"
+#include "WpsInfo.hpp"
+#include "hotspot2/PasspointConfiguration.hpp"
 #include "../../os/Handler.hpp"
 #include "../../../java/net/InetAddress.hpp"
-#include "WpsInfo.hpp"
-#include "WifiManager_WpsCallback.hpp"
-#include "WifiManager_WifiLock.hpp"
-#include "WifiManager_MulticastLock.hpp"
 
 namespace __jni_impl::android::net::wifi
 {
@@ -496,242 +496,6 @@ namespace __jni_impl::android::net::wifi
 	}
 	
 	// Methods
-	jboolean WifiManager::startScan()
-	{
-		return __thiz.callMethod<jboolean>(
-			"startScan",
-			"()Z"
-		);
-	}
-	jboolean WifiManager::reconnect()
-	{
-		return __thiz.callMethod<jboolean>(
-			"reconnect",
-			"()Z"
-		);
-	}
-	jboolean WifiManager::disconnect()
-	{
-		return __thiz.callMethod<jboolean>(
-			"disconnect",
-			"()Z"
-		);
-	}
-	QAndroidJniObject WifiManager::getConfiguredNetworks()
-	{
-		return __thiz.callObjectMethod(
-			"getConfiguredNetworks",
-			"()Ljava/util/List;"
-		);
-	}
-	jint WifiManager::addNetwork(__jni_impl::android::net::wifi::WifiConfiguration arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"addNetwork",
-			"(Landroid/net/wifi/WifiConfiguration;)I",
-			arg0.__jniObject().object()
-		);
-	}
-	jint WifiManager::updateNetwork(__jni_impl::android::net::wifi::WifiConfiguration arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"updateNetwork",
-			"(Landroid/net/wifi/WifiConfiguration;)I",
-			arg0.__jniObject().object()
-		);
-	}
-	jint WifiManager::addNetworkSuggestions(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"addNetworkSuggestions",
-			"(Ljava/util/List;)I",
-			arg0.__jniObject().object()
-		);
-	}
-	jint WifiManager::removeNetworkSuggestions(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"removeNetworkSuggestions",
-			"(Ljava/util/List;)I",
-			arg0.__jniObject().object()
-		);
-	}
-	jint WifiManager::getMaxNumberOfNetworkSuggestionsPerApp()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxNumberOfNetworkSuggestionsPerApp",
-			"()I"
-		);
-	}
-	void WifiManager::addOrUpdatePasspointConfiguration(__jni_impl::android::net::wifi::hotspot2::PasspointConfiguration arg0)
-	{
-		__thiz.callMethod<void>(
-			"addOrUpdatePasspointConfiguration",
-			"(Landroid/net/wifi/hotspot2/PasspointConfiguration;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void WifiManager::removePasspointConfiguration(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"removePasspointConfiguration",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void WifiManager::removePasspointConfiguration(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"removePasspointConfiguration",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject WifiManager::getPasspointConfigurations()
-	{
-		return __thiz.callObjectMethod(
-			"getPasspointConfigurations",
-			"()Ljava/util/List;"
-		);
-	}
-	jboolean WifiManager::removeNetwork(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"removeNetwork",
-			"(I)Z",
-			arg0
-		);
-	}
-	jboolean WifiManager::enableNetwork(jint arg0, jboolean arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"enableNetwork",
-			"(IZ)Z",
-			arg0,
-			arg1
-		);
-	}
-	jboolean WifiManager::disableNetwork(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"disableNetwork",
-			"(I)Z",
-			arg0
-		);
-	}
-	jboolean WifiManager::reassociate()
-	{
-		return __thiz.callMethod<jboolean>(
-			"reassociate",
-			"()Z"
-		);
-	}
-	jboolean WifiManager::pingSupplicant()
-	{
-		return __thiz.callMethod<jboolean>(
-			"pingSupplicant",
-			"()Z"
-		);
-	}
-	jboolean WifiManager::is5GHzBandSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"is5GHzBandSupported",
-			"()Z"
-		);
-	}
-	jboolean WifiManager::isP2pSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isP2pSupported",
-			"()Z"
-		);
-	}
-	jboolean WifiManager::isDeviceToApRttSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isDeviceToApRttSupported",
-			"()Z"
-		);
-	}
-	jboolean WifiManager::isPreferredNetworkOffloadSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isPreferredNetworkOffloadSupported",
-			"()Z"
-		);
-	}
-	jboolean WifiManager::isTdlsSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isTdlsSupported",
-			"()Z"
-		);
-	}
-	jboolean WifiManager::isEnhancedPowerReportingSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEnhancedPowerReportingSupported",
-			"()Z"
-		);
-	}
-	QAndroidJniObject WifiManager::getConnectionInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getConnectionInfo",
-			"()Landroid/net/wifi/WifiInfo;"
-		);
-	}
-	QAndroidJniObject WifiManager::getScanResults()
-	{
-		return __thiz.callObjectMethod(
-			"getScanResults",
-			"()Ljava/util/List;"
-		);
-	}
-	jboolean WifiManager::isScanAlwaysAvailable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isScanAlwaysAvailable",
-			"()Z"
-		);
-	}
-	jboolean WifiManager::saveConfiguration()
-	{
-		return __thiz.callMethod<jboolean>(
-			"saveConfiguration",
-			"()Z"
-		);
-	}
-	QAndroidJniObject WifiManager::getDhcpInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getDhcpInfo",
-			"()Landroid/net/DhcpInfo;"
-		);
-	}
-	jboolean WifiManager::setWifiEnabled(jboolean arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setWifiEnabled",
-			"(Z)Z",
-			arg0
-		);
-	}
-	jint WifiManager::getWifiState()
-	{
-		return __thiz.callMethod<jint>(
-			"getWifiState",
-			"()I"
-		);
-	}
-	jboolean WifiManager::isWifiEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isWifiEnabled",
-			"()Z"
-		);
-	}
 	jint WifiManager::calculateSignalLevel(jint arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -752,49 +516,28 @@ namespace __jni_impl::android::net::wifi
 			arg1
 		);
 	}
-	void WifiManager::startLocalOnlyHotspot(__jni_impl::android::net::wifi::WifiManager_LocalOnlyHotspotCallback arg0, __jni_impl::android::os::Handler arg1)
+	jint WifiManager::addNetwork(__jni_impl::android::net::wifi::WifiConfiguration arg0)
 	{
-		__thiz.callMethod<void>(
-			"startLocalOnlyHotspot",
-			"(Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"addNetwork",
+			"(Landroid/net/wifi/WifiConfiguration;)I",
+			arg0.__jniObject().object()
 		);
 	}
-	void WifiManager::setTdlsEnabled(__jni_impl::java::net::InetAddress arg0, jboolean arg1)
+	jint WifiManager::addNetworkSuggestions(__jni_impl::__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
-			"setTdlsEnabled",
-			"(Ljava/net/InetAddress;Z)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callMethod<jint>(
+			"addNetworkSuggestions",
+			"(Ljava/util/List;)I",
+			arg0.__jniObject().object()
 		);
 	}
-	void WifiManager::setTdlsEnabledWithMacAddress(jstring arg0, jboolean arg1)
+	void WifiManager::addOrUpdatePasspointConfiguration(__jni_impl::android::net::wifi::hotspot2::PasspointConfiguration arg0)
 	{
 		__thiz.callMethod<void>(
-			"setTdlsEnabledWithMacAddress",
-			"(Ljava/lang/String;Z)V",
-			arg0,
-			arg1
-		);
-	}
-	void WifiManager::setTdlsEnabledWithMacAddress(const QString &arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setTdlsEnabledWithMacAddress",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	void WifiManager::startWps(__jni_impl::android::net::wifi::WpsInfo arg0, __jni_impl::android::net::wifi::WifiManager_WpsCallback arg1)
-	{
-		__thiz.callMethod<void>(
-			"startWps",
-			"(Landroid/net/wifi/WpsInfo;Landroid/net/wifi/WifiManager$WpsCallback;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			"addOrUpdatePasspointConfiguration",
+			"(Landroid/net/wifi/hotspot2/PasspointConfiguration;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void WifiManager::cancelWps(__jni_impl::android::net::wifi::WifiManager_WpsCallback arg0)
@@ -803,6 +546,22 @@ namespace __jni_impl::android::net::wifi
 			"cancelWps",
 			"(Landroid/net/wifi/WifiManager$WpsCallback;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject WifiManager::createMulticastLock(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"createMulticastLock",
+			"(Ljava/lang/String;)Landroid/net/wifi/WifiManager$MulticastLock;",
+			arg0
+		);
+	}
+	QAndroidJniObject WifiManager::createMulticastLock(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"createMulticastLock",
+			"(Ljava/lang/String;)Landroid/net/wifi/WifiManager$MulticastLock;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject WifiManager::createWifiLock(jstring arg0)
@@ -839,20 +598,147 @@ namespace __jni_impl::android::net::wifi
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	QAndroidJniObject WifiManager::createMulticastLock(jstring arg0)
+	jboolean WifiManager::disableNetwork(jint arg0)
 	{
-		return __thiz.callObjectMethod(
-			"createMulticastLock",
-			"(Ljava/lang/String;)Landroid/net/wifi/WifiManager$MulticastLock;",
+		return __thiz.callMethod<jboolean>(
+			"disableNetwork",
+			"(I)Z",
 			arg0
 		);
 	}
-	QAndroidJniObject WifiManager::createMulticastLock(const QString &arg0)
+	jboolean WifiManager::disconnect()
+	{
+		return __thiz.callMethod<jboolean>(
+			"disconnect",
+			"()Z"
+		);
+	}
+	jboolean WifiManager::enableNetwork(jint arg0, jboolean arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"enableNetwork",
+			"(IZ)Z",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject WifiManager::getConfiguredNetworks()
 	{
 		return __thiz.callObjectMethod(
-			"createMulticastLock",
-			"(Ljava/lang/String;)Landroid/net/wifi/WifiManager$MulticastLock;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+			"getConfiguredNetworks",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject WifiManager::getConnectionInfo()
+	{
+		return __thiz.callObjectMethod(
+			"getConnectionInfo",
+			"()Landroid/net/wifi/WifiInfo;"
+		);
+	}
+	QAndroidJniObject WifiManager::getDhcpInfo()
+	{
+		return __thiz.callObjectMethod(
+			"getDhcpInfo",
+			"()Landroid/net/DhcpInfo;"
+		);
+	}
+	jint WifiManager::getMaxNumberOfNetworkSuggestionsPerApp()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxNumberOfNetworkSuggestionsPerApp",
+			"()I"
+		);
+	}
+	QAndroidJniObject WifiManager::getPasspointConfigurations()
+	{
+		return __thiz.callObjectMethod(
+			"getPasspointConfigurations",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject WifiManager::getScanResults()
+	{
+		return __thiz.callObjectMethod(
+			"getScanResults",
+			"()Ljava/util/List;"
+		);
+	}
+	jint WifiManager::getWifiState()
+	{
+		return __thiz.callMethod<jint>(
+			"getWifiState",
+			"()I"
+		);
+	}
+	jboolean WifiManager::is5GHzBandSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"is5GHzBandSupported",
+			"()Z"
+		);
+	}
+	jboolean WifiManager::isDeviceToApRttSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isDeviceToApRttSupported",
+			"()Z"
+		);
+	}
+	jboolean WifiManager::isEasyConnectSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEasyConnectSupported",
+			"()Z"
+		);
+	}
+	jboolean WifiManager::isEnhancedOpenSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEnhancedOpenSupported",
+			"()Z"
+		);
+	}
+	jboolean WifiManager::isEnhancedPowerReportingSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEnhancedPowerReportingSupported",
+			"()Z"
+		);
+	}
+	jboolean WifiManager::isP2pSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isP2pSupported",
+			"()Z"
+		);
+	}
+	jboolean WifiManager::isPreferredNetworkOffloadSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isPreferredNetworkOffloadSupported",
+			"()Z"
+		);
+	}
+	jboolean WifiManager::isScanAlwaysAvailable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isScanAlwaysAvailable",
+			"()Z"
+		);
+	}
+	jboolean WifiManager::isTdlsSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isTdlsSupported",
+			"()Z"
+		);
+	}
+	jboolean WifiManager::isWifiEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isWifiEnabled",
+			"()Z"
 		);
 	}
 	jboolean WifiManager::isWpa3SaeSupported()
@@ -869,18 +755,132 @@ namespace __jni_impl::android::net::wifi
 			"()Z"
 		);
 	}
-	jboolean WifiManager::isEnhancedOpenSupported()
+	jboolean WifiManager::pingSupplicant()
 	{
 		return __thiz.callMethod<jboolean>(
-			"isEnhancedOpenSupported",
+			"pingSupplicant",
 			"()Z"
 		);
 	}
-	jboolean WifiManager::isEasyConnectSupported()
+	jboolean WifiManager::reassociate()
 	{
 		return __thiz.callMethod<jboolean>(
-			"isEasyConnectSupported",
+			"reassociate",
 			"()Z"
+		);
+	}
+	jboolean WifiManager::reconnect()
+	{
+		return __thiz.callMethod<jboolean>(
+			"reconnect",
+			"()Z"
+		);
+	}
+	jboolean WifiManager::removeNetwork(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"removeNetwork",
+			"(I)Z",
+			arg0
+		);
+	}
+	jint WifiManager::removeNetworkSuggestions(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"removeNetworkSuggestions",
+			"(Ljava/util/List;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	void WifiManager::removePasspointConfiguration(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"removePasspointConfiguration",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void WifiManager::removePasspointConfiguration(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"removePasspointConfiguration",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jboolean WifiManager::saveConfiguration()
+	{
+		return __thiz.callMethod<jboolean>(
+			"saveConfiguration",
+			"()Z"
+		);
+	}
+	void WifiManager::setTdlsEnabled(__jni_impl::java::net::InetAddress arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setTdlsEnabled",
+			"(Ljava/net/InetAddress;Z)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void WifiManager::setTdlsEnabledWithMacAddress(jstring arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setTdlsEnabledWithMacAddress",
+			"(Ljava/lang/String;Z)V",
+			arg0,
+			arg1
+		);
+	}
+	void WifiManager::setTdlsEnabledWithMacAddress(const QString &arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setTdlsEnabledWithMacAddress",
+			"(Ljava/lang/String;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	jboolean WifiManager::setWifiEnabled(jboolean arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setWifiEnabled",
+			"(Z)Z",
+			arg0
+		);
+	}
+	void WifiManager::startLocalOnlyHotspot(__jni_impl::android::net::wifi::WifiManager_LocalOnlyHotspotCallback arg0, __jni_impl::android::os::Handler arg1)
+	{
+		__thiz.callMethod<void>(
+			"startLocalOnlyHotspot",
+			"(Landroid/net/wifi/WifiManager$LocalOnlyHotspotCallback;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean WifiManager::startScan()
+	{
+		return __thiz.callMethod<jboolean>(
+			"startScan",
+			"()Z"
+		);
+	}
+	void WifiManager::startWps(__jni_impl::android::net::wifi::WpsInfo arg0, __jni_impl::android::net::wifi::WifiManager_WpsCallback arg1)
+	{
+		__thiz.callMethod<void>(
+			"startWps",
+			"(Landroid/net/wifi/WpsInfo;Landroid/net/wifi/WifiManager$WpsCallback;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	jint WifiManager::updateNetwork(__jni_impl::android::net::wifi::WifiConfiguration arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"updateNetwork",
+			"(Landroid/net/wifi/WifiConfiguration;)I",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::net::wifi

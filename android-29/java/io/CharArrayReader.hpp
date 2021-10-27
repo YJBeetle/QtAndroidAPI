@@ -19,14 +19,14 @@ namespace __jni_impl::java::io
 		void __constructor(jcharArray arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jint read();
-		jint read(jcharArray arg0, jint arg1, jint arg2);
 		void close();
 		void mark(jint arg0);
-		jlong skip(jlong arg0);
 		jboolean markSupported();
-		void reset();
+		jint read();
+		jint read(jcharArray arg0, jint arg1, jint arg2);
 		jboolean ready();
+		void reset();
+		jlong skip(jlong arg0);
 	};
 } // namespace __jni_impl::java::io
 
@@ -56,6 +56,28 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
+	void CharArrayReader::close()
+	{
+		__thiz.callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	void CharArrayReader::mark(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"mark",
+			"(I)V",
+			arg0
+		);
+	}
+	jboolean CharArrayReader::markSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"markSupported",
+			"()Z"
+		);
+	}
 	jint CharArrayReader::read()
 	{
 		return __thiz.callMethod<jint>(
@@ -73,33 +95,10 @@ namespace __jni_impl::java::io
 			arg2
 		);
 	}
-	void CharArrayReader::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
-	}
-	void CharArrayReader::mark(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"mark",
-			"(I)V",
-			arg0
-		);
-	}
-	jlong CharArrayReader::skip(jlong arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"skip",
-			"(J)J",
-			arg0
-		);
-	}
-	jboolean CharArrayReader::markSupported()
+	jboolean CharArrayReader::ready()
 	{
 		return __thiz.callMethod<jboolean>(
-			"markSupported",
+			"ready",
 			"()Z"
 		);
 	}
@@ -110,11 +109,12 @@ namespace __jni_impl::java::io
 			"()V"
 		);
 	}
-	jboolean CharArrayReader::ready()
+	jlong CharArrayReader::skip(jlong arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"ready",
-			"()Z"
+		return __thiz.callMethod<jlong>(
+			"skip",
+			"(J)J",
+			arg0
 		);
 	}
 } // namespace __jni_impl::java::io

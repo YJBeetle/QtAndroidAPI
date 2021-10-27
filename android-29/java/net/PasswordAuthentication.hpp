@@ -18,8 +18,8 @@ namespace __jni_impl::java::net
 		void __constructor(const QString &arg0, jcharArray arg1);
 		
 		// Methods
-		jstring getUserName();
 		jcharArray getPassword();
+		jstring getUserName();
 	};
 } // namespace __jni_impl::java::net
 
@@ -49,19 +49,19 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
-	jstring PasswordAuthentication::getUserName()
-	{
-		return __thiz.callObjectMethod(
-			"getUserName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jcharArray PasswordAuthentication::getPassword()
 	{
 		return __thiz.callObjectMethod(
 			"getPassword",
 			"()[C"
 		).object<jcharArray>();
+	}
+	jstring PasswordAuthentication::getUserName()
+	{
+		return __thiz.callObjectMethod(
+			"getUserName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::net
 

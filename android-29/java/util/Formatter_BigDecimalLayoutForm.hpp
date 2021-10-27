@@ -13,16 +13,16 @@ namespace __jni_impl::java::util
 	{
 	public:
 		// Fields
-		static QAndroidJniObject SCIENTIFIC();
 		static QAndroidJniObject DECIMAL_FLOAT();
+		static QAndroidJniObject SCIENTIFIC();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::util
 
@@ -30,19 +30,19 @@ namespace __jni_impl::java::util
 namespace __jni_impl::java::util
 {
 	// Fields
-	QAndroidJniObject Formatter_BigDecimalLayoutForm::SCIENTIFIC()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.util.Formatter$BigDecimalLayoutForm",
-			"SCIENTIFIC",
-			"Ljava/util/Formatter$BigDecimalLayoutForm;"
-		);
-	}
 	QAndroidJniObject Formatter_BigDecimalLayoutForm::DECIMAL_FLOAT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.Formatter$BigDecimalLayoutForm",
 			"DECIMAL_FLOAT",
+			"Ljava/util/Formatter$BigDecimalLayoutForm;"
+		);
+	}
+	QAndroidJniObject Formatter_BigDecimalLayoutForm::SCIENTIFIC()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.util.Formatter$BigDecimalLayoutForm",
+			"SCIENTIFIC",
 			"Ljava/util/Formatter$BigDecimalLayoutForm;"
 		);
 	}
@@ -56,14 +56,6 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	jarray Formatter_BigDecimalLayoutForm::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Formatter$BigDecimalLayoutForm",
-			"values",
-			"()[Ljava/util/Formatter$BigDecimalLayoutForm;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Formatter_BigDecimalLayoutForm::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -81,6 +73,14 @@ namespace __jni_impl::java::util
 			"(Ljava/lang/String;)Ljava/util/Formatter$BigDecimalLayoutForm;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Formatter_BigDecimalLayoutForm::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.Formatter$BigDecimalLayoutForm",
+			"values",
+			"()[Ljava/util/Formatter$BigDecimalLayoutForm;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::util
 

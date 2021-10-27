@@ -20,11 +20,11 @@ namespace __jni_impl::android::view::accessibility
 		void __constructor();
 		
 		// Methods
-		jint getType();
-		jfloat getMin();
 		static QAndroidJniObject obtain(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		jfloat getMax();
 		jfloat getCurrent();
+		jfloat getMax();
+		jfloat getMin();
+		jint getType();
 	};
 } // namespace __jni_impl::android::view::accessibility
 
@@ -63,20 +63,6 @@ namespace __jni_impl::android::view::accessibility
 	}
 	
 	// Methods
-	jint AccessibilityNodeInfo_RangeInfo::getType()
-	{
-		return __thiz.callMethod<jint>(
-			"getType",
-			"()I"
-		);
-	}
-	jfloat AccessibilityNodeInfo_RangeInfo::getMin()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getMin",
-			"()F"
-		);
-	}
 	QAndroidJniObject AccessibilityNodeInfo_RangeInfo::obtain(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -89,6 +75,13 @@ namespace __jni_impl::android::view::accessibility
 			arg3
 		);
 	}
+	jfloat AccessibilityNodeInfo_RangeInfo::getCurrent()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getCurrent",
+			"()F"
+		);
+	}
 	jfloat AccessibilityNodeInfo_RangeInfo::getMax()
 	{
 		return __thiz.callMethod<jfloat>(
@@ -96,11 +89,18 @@ namespace __jni_impl::android::view::accessibility
 			"()F"
 		);
 	}
-	jfloat AccessibilityNodeInfo_RangeInfo::getCurrent()
+	jfloat AccessibilityNodeInfo_RangeInfo::getMin()
 	{
 		return __thiz.callMethod<jfloat>(
-			"getCurrent",
+			"getMin",
 			"()F"
+		);
+	}
+	jint AccessibilityNodeInfo_RangeInfo::getType()
+	{
+		return __thiz.callMethod<jint>(
+			"getType",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::view::accessibility

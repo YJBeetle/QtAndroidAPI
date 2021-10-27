@@ -19,19 +19,19 @@ namespace __jni_impl::java::net
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jint hashCode();
-		jstring getHostAddress();
 		jbyteArray getAddress();
-		jboolean isLinkLocalAddress();
-		jboolean isMulticastAddress();
+		jstring getHostAddress();
+		jint hashCode();
 		jboolean isAnyLocalAddress();
+		jboolean isLinkLocalAddress();
 		jboolean isLoopbackAddress();
-		jboolean isSiteLocalAddress();
 		jboolean isMCGlobal();
-		jboolean isMCNodeLocal();
 		jboolean isMCLinkLocal();
-		jboolean isMCSiteLocal();
+		jboolean isMCNodeLocal();
 		jboolean isMCOrgLocal();
+		jboolean isMCSiteLocal();
+		jboolean isMulticastAddress();
+		jboolean isSiteLocalAddress();
 	};
 } // namespace __jni_impl::java::net
 
@@ -57,12 +57,12 @@ namespace __jni_impl::java::net
 			arg0
 		);
 	}
-	jint Inet4Address::hashCode()
+	jbyteArray Inet4Address::getAddress()
 	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"getAddress",
+			"()[B"
+		).object<jbyteArray>();
 	}
 	jstring Inet4Address::getHostAddress()
 	{
@@ -71,31 +71,24 @@ namespace __jni_impl::java::net
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jbyteArray Inet4Address::getAddress()
+	jint Inet4Address::hashCode()
 	{
-		return __thiz.callObjectMethod(
-			"getAddress",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	jboolean Inet4Address::isLinkLocalAddress()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isLinkLocalAddress",
-			"()Z"
-		);
-	}
-	jboolean Inet4Address::isMulticastAddress()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isMulticastAddress",
-			"()Z"
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
 	}
 	jboolean Inet4Address::isAnyLocalAddress()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isAnyLocalAddress",
+			"()Z"
+		);
+	}
+	jboolean Inet4Address::isLinkLocalAddress()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLinkLocalAddress",
 			"()Z"
 		);
 	}
@@ -106,24 +99,10 @@ namespace __jni_impl::java::net
 			"()Z"
 		);
 	}
-	jboolean Inet4Address::isSiteLocalAddress()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSiteLocalAddress",
-			"()Z"
-		);
-	}
 	jboolean Inet4Address::isMCGlobal()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMCGlobal",
-			"()Z"
-		);
-	}
-	jboolean Inet4Address::isMCNodeLocal()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isMCNodeLocal",
 			"()Z"
 		);
 	}
@@ -134,10 +113,10 @@ namespace __jni_impl::java::net
 			"()Z"
 		);
 	}
-	jboolean Inet4Address::isMCSiteLocal()
+	jboolean Inet4Address::isMCNodeLocal()
 	{
 		return __thiz.callMethod<jboolean>(
-			"isMCSiteLocal",
+			"isMCNodeLocal",
 			"()Z"
 		);
 	}
@@ -145,6 +124,27 @@ namespace __jni_impl::java::net
 	{
 		return __thiz.callMethod<jboolean>(
 			"isMCOrgLocal",
+			"()Z"
+		);
+	}
+	jboolean Inet4Address::isMCSiteLocal()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isMCSiteLocal",
+			"()Z"
+		);
+	}
+	jboolean Inet4Address::isMulticastAddress()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isMulticastAddress",
+			"()Z"
+		);
+	}
+	jboolean Inet4Address::isSiteLocalAddress()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSiteLocalAddress",
 			"()Z"
 		);
 	}

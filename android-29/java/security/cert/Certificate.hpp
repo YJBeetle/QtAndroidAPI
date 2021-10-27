@@ -22,15 +22,15 @@ namespace __jni_impl::java::security::cert
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jstring getType();
 		jbyteArray getEncoded();
+		QAndroidJniObject getPublicKey();
+		jstring getType();
+		jint hashCode();
+		jstring toString();
 		void verify(__jni_impl::__JniBaseClass arg0);
 		void verify(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		void verify(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 		void verify(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::Provider arg1);
-		QAndroidJniObject getPublicKey();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -57,10 +57,24 @@ namespace __jni_impl::java::security::cert
 			arg0
 		);
 	}
-	jstring Certificate::toString()
+	jbyteArray Certificate::getEncoded()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
+			"getEncoded",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	QAndroidJniObject Certificate::getPublicKey()
+	{
+		return __thiz.callObjectMethod(
+			"getPublicKey",
+			"()Ljava/security/PublicKey;"
+		);
+	}
+	jstring Certificate::getType()
+	{
+		return __thiz.callObjectMethod(
+			"getType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -71,19 +85,12 @@ namespace __jni_impl::java::security::cert
 			"()I"
 		);
 	}
-	jstring Certificate::getType()
+	jstring Certificate::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getType",
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jbyteArray Certificate::getEncoded()
-	{
-		return __thiz.callObjectMethod(
-			"getEncoded",
-			"()[B"
-		).object<jbyteArray>();
 	}
 	void Certificate::verify(__jni_impl::__JniBaseClass arg0)
 	{
@@ -118,13 +125,6 @@ namespace __jni_impl::java::security::cert
 			"(Ljava/security/PublicKey;Ljava/security/Provider;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Certificate::getPublicKey()
-	{
-		return __thiz.callObjectMethod(
-			"getPublicKey",
-			"()Ljava/security/PublicKey;"
 		);
 	}
 } // namespace __jni_impl::java::security::cert

@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net
-{
-	class Uri;
-}
 namespace __jni_impl::android::media
 {
 	class AudioAttributes;
+}
+namespace __jni_impl::android::net
+{
+	class Uri;
 }
 namespace __jni_impl::android::os
 {
@@ -32,48 +32,48 @@ namespace __jni_impl::android::app
 		void __constructor(const QString &arg0, const QString &arg1, jint arg2);
 		
 		// Methods
-		jstring getName();
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		void setName(jstring arg0);
-		void setName(const QString &arg0);
-		jstring getId();
-		jstring getDescription();
-		void setGroup(jstring arg0);
-		void setGroup(const QString &arg0);
-		void setShowBadge(jboolean arg0);
-		void setSound(__jni_impl::android::net::Uri arg0, __jni_impl::android::media::AudioAttributes arg1);
-		void enableLights(jboolean arg0);
-		void setLightColor(jint arg0);
-		void enableVibration(jboolean arg0);
-		void setVibrationPattern(jlongArray arg0);
-		void setImportance(jint arg0);
-		void setBypassDnd(jboolean arg0);
-		void setLockscreenVisibility(jint arg0);
-		void setAllowBubbles(jboolean arg0);
-		jint getImportance();
-		jboolean canBypassDnd();
-		QAndroidJniObject getSound();
-		QAndroidJniObject getAudioAttributes();
-		jboolean shouldShowLights();
-		jint getLightColor();
-		jboolean shouldVibrate();
-		jlongArray getVibrationPattern();
-		jint getLockscreenVisibility();
-		jboolean canShowBadge();
-		jstring getGroup();
 		jboolean canBubble();
-		jboolean hasUserSetImportance();
+		jboolean canBypassDnd();
+		jboolean canShowBadge();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void enableLights(jboolean arg0);
+		void enableVibration(jboolean arg0);
+		jboolean equals(jobject arg0);
+		QAndroidJniObject getAudioAttributes();
+		jstring getDescription();
+		jstring getGroup();
+		jstring getId();
+		jint getImportance();
+		jint getLightColor();
+		jint getLockscreenVisibility();
+		jstring getName();
+		QAndroidJniObject getSound();
+		jlongArray getVibrationPattern();
+		jboolean hasUserSetImportance();
+		jint hashCode();
+		void setAllowBubbles(jboolean arg0);
+		void setBypassDnd(jboolean arg0);
 		void setDescription(jstring arg0);
 		void setDescription(const QString &arg0);
+		void setGroup(jstring arg0);
+		void setGroup(const QString &arg0);
+		void setImportance(jint arg0);
+		void setLightColor(jint arg0);
+		void setLockscreenVisibility(jint arg0);
+		void setName(jstring arg0);
+		void setName(const QString &arg0);
+		void setShowBadge(jboolean arg0);
+		void setSound(__jni_impl::android::net::Uri arg0, __jni_impl::android::media::AudioAttributes arg1);
+		void setVibrationPattern(jlongArray arg0);
+		jboolean shouldShowLights();
+		jboolean shouldVibrate();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
-#include "../net/Uri.hpp"
 #include "../media/AudioAttributes.hpp"
+#include "../net/Uri.hpp"
 #include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::app
@@ -119,12 +119,49 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	jstring NotificationChannel::getName()
+	jboolean NotificationChannel::canBubble()
 	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		return __thiz.callMethod<jboolean>(
+			"canBubble",
+			"()Z"
+		);
+	}
+	jboolean NotificationChannel::canBypassDnd()
+	{
+		return __thiz.callMethod<jboolean>(
+			"canBypassDnd",
+			"()Z"
+		);
+	}
+	jboolean NotificationChannel::canShowBadge()
+	{
+		return __thiz.callMethod<jboolean>(
+			"canShowBadge",
+			"()Z"
+		);
+	}
+	jint NotificationChannel::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void NotificationChannel::enableLights(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"enableLights",
+			"(Z)V",
+			arg0
+		);
+	}
+	void NotificationChannel::enableVibration(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"enableVibration",
+			"(Z)V",
+			arg0
+		);
 	}
 	jboolean NotificationChannel::equals(jobject arg0)
 	{
@@ -134,18 +171,160 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
-	jstring NotificationChannel::toString()
+	QAndroidJniObject NotificationChannel::getAudioAttributes()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
+			"getAudioAttributes",
+			"()Landroid/media/AudioAttributes;"
+		);
+	}
+	jstring NotificationChannel::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jstring NotificationChannel::getGroup()
+	{
+		return __thiz.callObjectMethod(
+			"getGroup",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring NotificationChannel::getId()
+	{
+		return __thiz.callObjectMethod(
+			"getId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint NotificationChannel::getImportance()
+	{
+		return __thiz.callMethod<jint>(
+			"getImportance",
+			"()I"
+		);
+	}
+	jint NotificationChannel::getLightColor()
+	{
+		return __thiz.callMethod<jint>(
+			"getLightColor",
+			"()I"
+		);
+	}
+	jint NotificationChannel::getLockscreenVisibility()
+	{
+		return __thiz.callMethod<jint>(
+			"getLockscreenVisibility",
+			"()I"
+		);
+	}
+	jstring NotificationChannel::getName()
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	QAndroidJniObject NotificationChannel::getSound()
+	{
+		return __thiz.callObjectMethod(
+			"getSound",
+			"()Landroid/net/Uri;"
+		);
+	}
+	jlongArray NotificationChannel::getVibrationPattern()
+	{
+		return __thiz.callObjectMethod(
+			"getVibrationPattern",
+			"()[J"
+		).object<jlongArray>();
+	}
+	jboolean NotificationChannel::hasUserSetImportance()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasUserSetImportance",
+			"()Z"
+		);
 	}
 	jint NotificationChannel::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I"
+		);
+	}
+	void NotificationChannel::setAllowBubbles(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAllowBubbles",
+			"(Z)V",
+			arg0
+		);
+	}
+	void NotificationChannel::setBypassDnd(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setBypassDnd",
+			"(Z)V",
+			arg0
+		);
+	}
+	void NotificationChannel::setDescription(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDescription",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void NotificationChannel::setDescription(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDescription",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void NotificationChannel::setGroup(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGroup",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void NotificationChannel::setGroup(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGroup",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void NotificationChannel::setImportance(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setImportance",
+			"(I)V",
+			arg0
+		);
+	}
+	void NotificationChannel::setLightColor(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLightColor",
+			"(I)V",
+			arg0
+		);
+	}
+	void NotificationChannel::setLockscreenVisibility(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLockscreenVisibility",
+			"(I)V",
+			arg0
 		);
 	}
 	void NotificationChannel::setName(jstring arg0)
@@ -161,36 +340,6 @@ namespace __jni_impl::android::app
 		__thiz.callMethod<void>(
 			"setName",
 			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring NotificationChannel::getId()
-	{
-		return __thiz.callObjectMethod(
-			"getId",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring NotificationChannel::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void NotificationChannel::setGroup(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGroup",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void NotificationChannel::setGroup(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGroup",
-			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
@@ -211,96 +360,12 @@ namespace __jni_impl::android::app
 			arg1.__jniObject().object()
 		);
 	}
-	void NotificationChannel::enableLights(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"enableLights",
-			"(Z)V",
-			arg0
-		);
-	}
-	void NotificationChannel::setLightColor(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLightColor",
-			"(I)V",
-			arg0
-		);
-	}
-	void NotificationChannel::enableVibration(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"enableVibration",
-			"(Z)V",
-			arg0
-		);
-	}
 	void NotificationChannel::setVibrationPattern(jlongArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setVibrationPattern",
 			"([J)V",
 			arg0
-		);
-	}
-	void NotificationChannel::setImportance(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setImportance",
-			"(I)V",
-			arg0
-		);
-	}
-	void NotificationChannel::setBypassDnd(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setBypassDnd",
-			"(Z)V",
-			arg0
-		);
-	}
-	void NotificationChannel::setLockscreenVisibility(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLockscreenVisibility",
-			"(I)V",
-			arg0
-		);
-	}
-	void NotificationChannel::setAllowBubbles(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAllowBubbles",
-			"(Z)V",
-			arg0
-		);
-	}
-	jint NotificationChannel::getImportance()
-	{
-		return __thiz.callMethod<jint>(
-			"getImportance",
-			"()I"
-		);
-	}
-	jboolean NotificationChannel::canBypassDnd()
-	{
-		return __thiz.callMethod<jboolean>(
-			"canBypassDnd",
-			"()Z"
-		);
-	}
-	QAndroidJniObject NotificationChannel::getSound()
-	{
-		return __thiz.callObjectMethod(
-			"getSound",
-			"()Landroid/net/Uri;"
-		);
-	}
-	QAndroidJniObject NotificationChannel::getAudioAttributes()
-	{
-		return __thiz.callObjectMethod(
-			"getAudioAttributes",
-			"()Landroid/media/AudioAttributes;"
 		);
 	}
 	jboolean NotificationChannel::shouldShowLights()
@@ -310,13 +375,6 @@ namespace __jni_impl::android::app
 			"()Z"
 		);
 	}
-	jint NotificationChannel::getLightColor()
-	{
-		return __thiz.callMethod<jint>(
-			"getLightColor",
-			"()I"
-		);
-	}
 	jboolean NotificationChannel::shouldVibrate()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -324,54 +382,12 @@ namespace __jni_impl::android::app
 			"()Z"
 		);
 	}
-	jlongArray NotificationChannel::getVibrationPattern()
+	jstring NotificationChannel::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getVibrationPattern",
-			"()[J"
-		).object<jlongArray>();
-	}
-	jint NotificationChannel::getLockscreenVisibility()
-	{
-		return __thiz.callMethod<jint>(
-			"getLockscreenVisibility",
-			"()I"
-		);
-	}
-	jboolean NotificationChannel::canShowBadge()
-	{
-		return __thiz.callMethod<jboolean>(
-			"canShowBadge",
-			"()Z"
-		);
-	}
-	jstring NotificationChannel::getGroup()
-	{
-		return __thiz.callObjectMethod(
-			"getGroup",
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jboolean NotificationChannel::canBubble()
-	{
-		return __thiz.callMethod<jboolean>(
-			"canBubble",
-			"()Z"
-		);
-	}
-	jboolean NotificationChannel::hasUserSetImportance()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasUserSetImportance",
-			"()Z"
-		);
-	}
-	jint NotificationChannel::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
 	}
 	void NotificationChannel::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -380,22 +396,6 @@ namespace __jni_impl::android::app
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void NotificationChannel::setDescription(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDescription",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void NotificationChannel::setDescription(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDescription",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::app

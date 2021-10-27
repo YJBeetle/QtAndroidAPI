@@ -28,12 +28,12 @@ namespace __jni_impl::java::time::chrono
 		void __constructor();
 		
 		// Methods
-		static jarray values();
+		static QAndroidJniObject of(jint arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
-		jint getValue();
-		static QAndroidJniObject of(jint arg0);
+		static jarray values();
 		jstring getDisplayName(__jni_impl::java::time::format::TextStyle arg0, __jni_impl::java::util::Locale arg1);
+		jint getValue();
 	};
 } // namespace __jni_impl::java::time::chrono
 
@@ -69,13 +69,14 @@ namespace __jni_impl::java::time::chrono
 	}
 	
 	// Methods
-	jarray MinguoEra::values()
+	QAndroidJniObject MinguoEra::of(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.MinguoEra",
-			"values",
-			"()[Ljava/time/chrono/MinguoEra;"
-		).object<jarray>();
+			"of",
+			"(I)Ljava/time/chrono/MinguoEra;",
+			arg0
+		);
 	}
 	QAndroidJniObject MinguoEra::valueOf(jstring arg0)
 	{
@@ -95,21 +96,13 @@ namespace __jni_impl::java::time::chrono
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jint MinguoEra::getValue()
-	{
-		return __thiz.callMethod<jint>(
-			"getValue",
-			"()I"
-		);
-	}
-	QAndroidJniObject MinguoEra::of(jint arg0)
+	jarray MinguoEra::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.MinguoEra",
-			"of",
-			"(I)Ljava/time/chrono/MinguoEra;",
-			arg0
-		);
+			"values",
+			"()[Ljava/time/chrono/MinguoEra;"
+		).object<jarray>();
 	}
 	jstring MinguoEra::getDisplayName(__jni_impl::java::time::format::TextStyle arg0, __jni_impl::java::util::Locale arg1)
 	{
@@ -119,6 +112,13 @@ namespace __jni_impl::java::time::chrono
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
 		).object<jstring>();
+	}
+	jint MinguoEra::getValue()
+	{
+		return __thiz.callMethod<jint>(
+			"getValue",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::time::chrono
 

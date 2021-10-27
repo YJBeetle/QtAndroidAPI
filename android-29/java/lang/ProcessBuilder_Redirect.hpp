@@ -20,21 +20,21 @@ namespace __jni_impl::java::lang
 	{
 	public:
 		// Fields
-		static QAndroidJniObject PIPE();
-		static QAndroidJniObject INHERIT();
 		static QAndroidJniObject DISCARD();
+		static QAndroidJniObject INHERIT();
+		static QAndroidJniObject PIPE();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject type();
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		static QAndroidJniObject to(__jni_impl::java::io::File arg0);
-		static QAndroidJniObject from(__jni_impl::java::io::File arg0);
-		QAndroidJniObject file();
 		static QAndroidJniObject appendTo(__jni_impl::java::io::File arg0);
+		static QAndroidJniObject from(__jni_impl::java::io::File arg0);
+		static QAndroidJniObject to(__jni_impl::java::io::File arg0);
+		jboolean equals(jobject arg0);
+		QAndroidJniObject file();
+		jint hashCode();
+		QAndroidJniObject type();
 	};
 } // namespace __jni_impl::java::lang
 
@@ -44,11 +44,11 @@ namespace __jni_impl::java::lang
 namespace __jni_impl::java::lang
 {
 	// Fields
-	QAndroidJniObject ProcessBuilder_Redirect::PIPE()
+	QAndroidJniObject ProcessBuilder_Redirect::DISCARD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect",
-			"PIPE",
+			"DISCARD",
 			"Ljava/lang/ProcessBuilder$Redirect;"
 		);
 	}
@@ -60,11 +60,11 @@ namespace __jni_impl::java::lang
 			"Ljava/lang/ProcessBuilder$Redirect;"
 		);
 	}
-	QAndroidJniObject ProcessBuilder_Redirect::DISCARD()
+	QAndroidJniObject ProcessBuilder_Redirect::PIPE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect",
-			"DISCARD",
+			"PIPE",
 			"Ljava/lang/ProcessBuilder$Redirect;"
 		);
 	}
@@ -78,33 +78,11 @@ namespace __jni_impl::java::lang
 	}
 	
 	// Methods
-	QAndroidJniObject ProcessBuilder_Redirect::type()
-	{
-		return __thiz.callObjectMethod(
-			"type",
-			"()Ljava/lang/ProcessBuilder$Redirect$Type;"
-		);
-	}
-	jboolean ProcessBuilder_Redirect::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jint ProcessBuilder_Redirect::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	QAndroidJniObject ProcessBuilder_Redirect::to(__jni_impl::java::io::File arg0)
+	QAndroidJniObject ProcessBuilder_Redirect::appendTo(__jni_impl::java::io::File arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.lang.ProcessBuilder$Redirect",
-			"to",
+			"appendTo",
 			"(Ljava/io/File;)Ljava/lang/ProcessBuilder$Redirect;",
 			arg0.__jniObject().object()
 		);
@@ -118,6 +96,23 @@ namespace __jni_impl::java::lang
 			arg0.__jniObject().object()
 		);
 	}
+	QAndroidJniObject ProcessBuilder_Redirect::to(__jni_impl::java::io::File arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.lang.ProcessBuilder$Redirect",
+			"to",
+			"(Ljava/io/File;)Ljava/lang/ProcessBuilder$Redirect;",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean ProcessBuilder_Redirect::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
 	QAndroidJniObject ProcessBuilder_Redirect::file()
 	{
 		return __thiz.callObjectMethod(
@@ -125,13 +120,18 @@ namespace __jni_impl::java::lang
 			"()Ljava/io/File;"
 		);
 	}
-	QAndroidJniObject ProcessBuilder_Redirect::appendTo(__jni_impl::java::io::File arg0)
+	jint ProcessBuilder_Redirect::hashCode()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.ProcessBuilder$Redirect",
-			"appendTo",
-			"(Ljava/io/File;)Ljava/lang/ProcessBuilder$Redirect;",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	QAndroidJniObject ProcessBuilder_Redirect::type()
+	{
+		return __thiz.callObjectMethod(
+			"type",
+			"()Ljava/lang/ProcessBuilder$Redirect$Type;"
 		);
 	}
 } // namespace __jni_impl::java::lang

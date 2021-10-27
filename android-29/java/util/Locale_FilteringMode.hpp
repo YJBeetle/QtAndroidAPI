@@ -23,9 +23,9 @@ namespace __jni_impl::java::util
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::util
 
@@ -83,14 +83,6 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	jarray Locale_FilteringMode::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Locale$FilteringMode",
-			"values",
-			"()[Ljava/util/Locale$FilteringMode;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Locale_FilteringMode::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -108,6 +100,14 @@ namespace __jni_impl::java::util
 			"(Ljava/lang/String;)Ljava/util/Locale$FilteringMode;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Locale_FilteringMode::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.Locale$FilteringMode",
+			"values",
+			"()[Ljava/util/Locale$FilteringMode;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::util
 

@@ -19,10 +19,10 @@ namespace __jni_impl::java::util
 		
 		// Methods
 		jboolean add(jobject arg0);
-		jobject remove();
-		void clear();
 		jboolean addAll(__jni_impl::__JniBaseClass arg0);
+		void clear();
 		jobject element();
+		jobject remove();
 	};
 } // namespace __jni_impl::java::util
 
@@ -48,20 +48,6 @@ namespace __jni_impl::java::util
 			arg0
 		);
 	}
-	jobject AbstractQueue::remove()
-	{
-		return __thiz.callObjectMethod(
-			"remove",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	void AbstractQueue::clear()
-	{
-		__thiz.callMethod<void>(
-			"clear",
-			"()V"
-		);
-	}
 	jboolean AbstractQueue::addAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -70,10 +56,24 @@ namespace __jni_impl::java::util
 			arg0.__jniObject().object()
 		);
 	}
+	void AbstractQueue::clear()
+	{
+		__thiz.callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
 	jobject AbstractQueue::element()
 	{
 		return __thiz.callObjectMethod(
 			"element",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jobject AbstractQueue::remove()
+	{
+		return __thiz.callObjectMethod(
+			"remove",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}

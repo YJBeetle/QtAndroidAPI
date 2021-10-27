@@ -43,23 +43,23 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		jboolean isInteractive();
-		QAndroidJniObject newWakeLock(jint arg0, jstring arg1);
-		QAndroidJniObject newWakeLock(jint arg0, const QString &arg1);
-		jboolean isWakeLockLevelSupported(jint arg0);
-		jboolean isScreenOn();
-		jboolean isPowerSaveMode();
+		void addThermalStatusListener(__jni_impl::__JniBaseClass arg0);
+		void addThermalStatusListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		jint getCurrentThermalStatus();
 		jint getLocationPowerSaveMode();
 		jboolean isDeviceIdleMode();
 		jboolean isIgnoringBatteryOptimizations(jstring arg0);
 		jboolean isIgnoringBatteryOptimizations(const QString &arg0);
+		jboolean isInteractive();
+		jboolean isPowerSaveMode();
+		jboolean isScreenOn();
 		jboolean isSustainedPerformanceModeSupported();
-		jint getCurrentThermalStatus();
-		void addThermalStatusListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
-		void addThermalStatusListener(__jni_impl::__JniBaseClass arg0);
-		void removeThermalStatusListener(__jni_impl::__JniBaseClass arg0);
+		jboolean isWakeLockLevelSupported(jint arg0);
+		QAndroidJniObject newWakeLock(jint arg0, jstring arg1);
+		QAndroidJniObject newWakeLock(jint arg0, const QString &arg1);
 		void reboot(jstring arg0);
 		void reboot(const QString &arg0);
+		void removeThermalStatusListener(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::os
 
@@ -234,51 +234,28 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	jboolean PowerManager::isInteractive()
+	void PowerManager::addThermalStatusListener(__jni_impl::__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isInteractive",
-			"()Z"
+		__thiz.callMethod<void>(
+			"addThermalStatusListener",
+			"(Landroid/os/PowerManager$OnThermalStatusChangedListener;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject PowerManager::newWakeLock(jint arg0, jstring arg1)
+	void PowerManager::addThermalStatusListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
-			"newWakeLock",
-			"(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;",
-			arg0,
-			arg1
+		__thiz.callMethod<void>(
+			"addThermalStatusListener",
+			"(Ljava/util/concurrent/Executor;Landroid/os/PowerManager$OnThermalStatusChangedListener;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject PowerManager::newWakeLock(jint arg0, const QString &arg1)
+	jint PowerManager::getCurrentThermalStatus()
 	{
-		return __thiz.callObjectMethod(
-			"newWakeLock",
-			"(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	jboolean PowerManager::isWakeLockLevelSupported(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isWakeLockLevelSupported",
-			"(I)Z",
-			arg0
-		);
-	}
-	jboolean PowerManager::isScreenOn()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isScreenOn",
-			"()Z"
-		);
-	}
-	jboolean PowerManager::isPowerSaveMode()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isPowerSaveMode",
-			"()Z"
+		return __thiz.callMethod<jint>(
+			"getCurrentThermalStatus",
+			"()I"
 		);
 	}
 	jint PowerManager::getLocationPowerSaveMode()
@@ -311,6 +288,27 @@ namespace __jni_impl::android::os
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
+	jboolean PowerManager::isInteractive()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isInteractive",
+			"()Z"
+		);
+	}
+	jboolean PowerManager::isPowerSaveMode()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isPowerSaveMode",
+			"()Z"
+		);
+	}
+	jboolean PowerManager::isScreenOn()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isScreenOn",
+			"()Z"
+		);
+	}
 	jboolean PowerManager::isSustainedPerformanceModeSupported()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -318,36 +316,30 @@ namespace __jni_impl::android::os
 			"()Z"
 		);
 	}
-	jint PowerManager::getCurrentThermalStatus()
+	jboolean PowerManager::isWakeLockLevelSupported(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getCurrentThermalStatus",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"isWakeLockLevelSupported",
+			"(I)Z",
+			arg0
 		);
 	}
-	void PowerManager::addThermalStatusListener(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
+	QAndroidJniObject PowerManager::newWakeLock(jint arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
-			"addThermalStatusListener",
-			"(Ljava/util/concurrent/Executor;Landroid/os/PowerManager$OnThermalStatusChangedListener;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"newWakeLock",
+			"(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;",
+			arg0,
+			arg1
 		);
 	}
-	void PowerManager::addThermalStatusListener(__jni_impl::__JniBaseClass arg0)
+	QAndroidJniObject PowerManager::newWakeLock(jint arg0, const QString &arg1)
 	{
-		__thiz.callMethod<void>(
-			"addThermalStatusListener",
-			"(Landroid/os/PowerManager$OnThermalStatusChangedListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void PowerManager::removeThermalStatusListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeThermalStatusListener",
-			"(Landroid/os/PowerManager$OnThermalStatusChangedListener;)V",
-			arg0.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"newWakeLock",
+			"(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void PowerManager::reboot(jstring arg0)
@@ -364,6 +356,14 @@ namespace __jni_impl::android::os
 			"reboot",
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void PowerManager::removeThermalStatusListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeThermalStatusListener",
+			"(Landroid/os/PowerManager$OnThermalStatusChangedListener;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::os

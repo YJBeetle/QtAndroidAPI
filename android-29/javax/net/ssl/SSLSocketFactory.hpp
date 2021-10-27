@@ -6,17 +6,17 @@
 #include "../../../__JniBaseClass.hpp"
 #include "../SocketFactory.hpp"
 
-namespace __jni_impl::javax::net
+namespace __jni_impl::java::io
 {
-	class SocketFactory;
+	class InputStream;
 }
 namespace __jni_impl::java::net
 {
 	class Socket;
 }
-namespace __jni_impl::java::io
+namespace __jni_impl::javax::net
 {
-	class InputStream;
+	class SocketFactory;
 }
 
 namespace __jni_impl::javax::net::ssl
@@ -31,17 +31,17 @@ namespace __jni_impl::javax::net::ssl
 		
 		// Methods
 		static QAndroidJniObject getDefault();
-		jarray getDefaultCipherSuites();
-		jarray getSupportedCipherSuites();
 		QAndroidJniObject createSocket(__jni_impl::java::net::Socket arg0, __jni_impl::java::io::InputStream arg1, jboolean arg2);
 		QAndroidJniObject createSocket(__jni_impl::java::net::Socket arg0, jstring arg1, jint arg2, jboolean arg3);
 		QAndroidJniObject createSocket(__jni_impl::java::net::Socket arg0, const QString &arg1, jint arg2, jboolean arg3);
+		jarray getDefaultCipherSuites();
+		jarray getSupportedCipherSuites();
 	};
 } // namespace __jni_impl::javax::net::ssl
 
-#include "../SocketFactory.hpp"
-#include "../../../java/net/Socket.hpp"
 #include "../../../java/io/InputStream.hpp"
+#include "../../../java/net/Socket.hpp"
+#include "../SocketFactory.hpp"
 
 namespace __jni_impl::javax::net::ssl
 {
@@ -64,20 +64,6 @@ namespace __jni_impl::javax::net::ssl
 			"getDefault",
 			"()Ljavax/net/SocketFactory;"
 		);
-	}
-	jarray SSLSocketFactory::getDefaultCipherSuites()
-	{
-		return __thiz.callObjectMethod(
-			"getDefaultCipherSuites",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	jarray SSLSocketFactory::getSupportedCipherSuites()
-	{
-		return __thiz.callObjectMethod(
-			"getSupportedCipherSuites",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
 	}
 	QAndroidJniObject SSLSocketFactory::createSocket(__jni_impl::java::net::Socket arg0, __jni_impl::java::io::InputStream arg1, jboolean arg2)
 	{
@@ -110,6 +96,20 @@ namespace __jni_impl::javax::net::ssl
 			arg2,
 			arg3
 		);
+	}
+	jarray SSLSocketFactory::getDefaultCipherSuites()
+	{
+		return __thiz.callObjectMethod(
+			"getDefaultCipherSuites",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	jarray SSLSocketFactory::getSupportedCipherSuites()
+	{
+		return __thiz.callObjectMethod(
+			"getSupportedCipherSuites",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::javax::net::ssl
 

@@ -22,16 +22,16 @@ namespace __jni_impl::android::speech::tts
 		void __constructor(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		
 		// Methods
-		jstring getLanguage();
-		jstring getCountry();
-		jstring getVariant();
-		jstring getText();
-		jstring getCharSequenceText();
-		jstring getVoiceName();
-		jint getSpeechRate();
-		jint getPitch();
-		QAndroidJniObject getParams();
 		jint getCallerUid();
+		jstring getCharSequenceText();
+		jstring getCountry();
+		jstring getLanguage();
+		QAndroidJniObject getParams();
+		jint getPitch();
+		jint getSpeechRate();
+		jstring getText();
+		jstring getVariant();
+		jstring getVoiceName();
 	};
 } // namespace __jni_impl::android::speech::tts
 
@@ -46,7 +46,7 @@ namespace __jni_impl::android::speech::tts
 	{
 		__thiz = QAndroidJniObject(
 			"android.speech.tts.SynthesisRequest",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			"(Ljava/lang/CharSequence;Landroid/os/Bundle;)V",
 			arg0,
 			arg1.__jniObject().object()
 		);
@@ -55,13 +55,34 @@ namespace __jni_impl::android::speech::tts
 	{
 		__thiz = QAndroidJniObject(
 			"android.speech.tts.SynthesisRequest",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			"(Ljava/lang/CharSequence;Landroid/os/Bundle;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
 		);
 	}
 	
 	// Methods
+	jint SynthesisRequest::getCallerUid()
+	{
+		return __thiz.callMethod<jint>(
+			"getCallerUid",
+			"()I"
+		);
+	}
+	jstring SynthesisRequest::getCharSequenceText()
+	{
+		return __thiz.callObjectMethod(
+			"getCharSequenceText",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring SynthesisRequest::getCountry()
+	{
+		return __thiz.callObjectMethod(
+			"getCountry",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jstring SynthesisRequest::getLanguage()
 	{
 		return __thiz.callObjectMethod(
@@ -69,10 +90,31 @@ namespace __jni_impl::android::speech::tts
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jstring SynthesisRequest::getCountry()
+	QAndroidJniObject SynthesisRequest::getParams()
 	{
 		return __thiz.callObjectMethod(
-			"getCountry",
+			"getParams",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	jint SynthesisRequest::getPitch()
+	{
+		return __thiz.callMethod<jint>(
+			"getPitch",
+			"()I"
+		);
+	}
+	jint SynthesisRequest::getSpeechRate()
+	{
+		return __thiz.callMethod<jint>(
+			"getSpeechRate",
+			"()I"
+		);
+	}
+	jstring SynthesisRequest::getText()
+	{
+		return __thiz.callObjectMethod(
+			"getText",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -83,54 +125,12 @@ namespace __jni_impl::android::speech::tts
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jstring SynthesisRequest::getText()
-	{
-		return __thiz.callObjectMethod(
-			"getText",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring SynthesisRequest::getCharSequenceText()
-	{
-		return __thiz.callObjectMethod(
-			"getCharSequenceText",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
 	jstring SynthesisRequest::getVoiceName()
 	{
 		return __thiz.callObjectMethod(
 			"getVoiceName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jint SynthesisRequest::getSpeechRate()
-	{
-		return __thiz.callMethod<jint>(
-			"getSpeechRate",
-			"()I"
-		);
-	}
-	jint SynthesisRequest::getPitch()
-	{
-		return __thiz.callMethod<jint>(
-			"getPitch",
-			"()I"
-		);
-	}
-	QAndroidJniObject SynthesisRequest::getParams()
-	{
-		return __thiz.callObjectMethod(
-			"getParams",
-			"()Landroid/os/Bundle;"
-		);
-	}
-	jint SynthesisRequest::getCallerUid()
-	{
-		return __thiz.callMethod<jint>(
-			"getCallerUid",
-			"()I"
-		);
 	}
 } // namespace __jni_impl::android::speech::tts
 

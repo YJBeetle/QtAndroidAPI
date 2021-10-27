@@ -22,10 +22,10 @@ namespace __jni_impl::android::content::pm
 		void __constructor(jint arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		jint getSequenceNumber();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getPackageNames();
+		jint getSequenceNumber();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -55,17 +55,24 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	jint ChangedPackages::getSequenceNumber()
-	{
-		return __thiz.callMethod<jint>(
-			"getSequenceNumber",
-			"()I"
-		);
-	}
 	jint ChangedPackages::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
+			"()I"
+		);
+	}
+	QAndroidJniObject ChangedPackages::getPackageNames()
+	{
+		return __thiz.callObjectMethod(
+			"getPackageNames",
+			"()Ljava/util/List;"
+		);
+	}
+	jint ChangedPackages::getSequenceNumber()
+	{
+		return __thiz.callMethod<jint>(
+			"getSequenceNumber",
 			"()I"
 		);
 	}
@@ -76,13 +83,6 @@ namespace __jni_impl::android::content::pm
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject ChangedPackages::getPackageNames()
-	{
-		return __thiz.callObjectMethod(
-			"getPackageNames",
-			"()Ljava/util/List;"
 		);
 	}
 } // namespace __jni_impl::android::content::pm

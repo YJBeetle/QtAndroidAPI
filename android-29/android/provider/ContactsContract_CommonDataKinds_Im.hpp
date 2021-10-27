@@ -40,12 +40,12 @@ namespace __jni_impl::android::provider
 		void __constructor();
 		
 		// Methods
-		static jint getTypeLabelResource(jint arg0);
-		static jstring getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2);
-		static jstring getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, const QString &arg2);
-		static jint getProtocolLabelResource(jint arg0);
 		static jstring getProtocolLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2);
 		static jstring getProtocolLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, const QString &arg2);
+		static jint getProtocolLabelResource(jint arg0);
+		static jstring getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2);
+		static jstring getTypeLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, const QString &arg2);
+		static jint getTypeLabelResource(jint arg0);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -203,11 +203,33 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	jint ContactsContract_CommonDataKinds_Im::getTypeLabelResource(jint arg0)
+	jstring ContactsContract_CommonDataKinds_Im::getProtocolLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.ContactsContract$CommonDataKinds$Im",
+			"getProtocolLabel",
+			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
+		).object<jstring>();
+	}
+	jstring ContactsContract_CommonDataKinds_Im::getProtocolLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, const QString &arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.ContactsContract$CommonDataKinds$Im",
+			"getProtocolLabel",
+			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		).object<jstring>();
+	}
+	jint ContactsContract_CommonDataKinds_Im::getProtocolLabelResource(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
-			"getTypeLabelResource",
+			"getProtocolLabelResource",
 			"(I)I",
 			arg0
 		);
@@ -234,36 +256,14 @@ namespace __jni_impl::android::provider
 			QAndroidJniObject::fromString(arg2).object<jstring>()
 		).object<jstring>();
 	}
-	jint ContactsContract_CommonDataKinds_Im::getProtocolLabelResource(jint arg0)
+	jint ContactsContract_CommonDataKinds_Im::getTypeLabelResource(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.provider.ContactsContract$CommonDataKinds$Im",
-			"getProtocolLabelResource",
+			"getTypeLabelResource",
 			"(I)I",
 			arg0
 		);
-	}
-	jstring ContactsContract_CommonDataKinds_Im::getProtocolLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, jstring arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.ContactsContract$CommonDataKinds$Im",
-			"getProtocolLabel",
-			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		).object<jstring>();
-	}
-	jstring ContactsContract_CommonDataKinds_Im::getProtocolLabel(__jni_impl::android::content::res::Resources arg0, jint arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.ContactsContract$CommonDataKinds$Im",
-			"getProtocolLabel",
-			"(Landroid/content/res/Resources;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::provider
 

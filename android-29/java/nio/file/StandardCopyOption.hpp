@@ -13,17 +13,17 @@ namespace __jni_impl::java::nio::file
 	{
 	public:
 		// Fields
-		static QAndroidJniObject REPLACE_EXISTING();
-		static QAndroidJniObject COPY_ATTRIBUTES();
 		static QAndroidJniObject ATOMIC_MOVE();
+		static QAndroidJniObject COPY_ATTRIBUTES();
+		static QAndroidJniObject REPLACE_EXISTING();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::nio::file
 
@@ -31,11 +31,11 @@ namespace __jni_impl::java::nio::file
 namespace __jni_impl::java::nio::file
 {
 	// Fields
-	QAndroidJniObject StandardCopyOption::REPLACE_EXISTING()
+	QAndroidJniObject StandardCopyOption::ATOMIC_MOVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.StandardCopyOption",
-			"REPLACE_EXISTING",
+			"ATOMIC_MOVE",
 			"Ljava/nio/file/StandardCopyOption;"
 		);
 	}
@@ -47,11 +47,11 @@ namespace __jni_impl::java::nio::file
 			"Ljava/nio/file/StandardCopyOption;"
 		);
 	}
-	QAndroidJniObject StandardCopyOption::ATOMIC_MOVE()
+	QAndroidJniObject StandardCopyOption::REPLACE_EXISTING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.StandardCopyOption",
-			"ATOMIC_MOVE",
+			"REPLACE_EXISTING",
 			"Ljava/nio/file/StandardCopyOption;"
 		);
 	}
@@ -65,14 +65,6 @@ namespace __jni_impl::java::nio::file
 	}
 	
 	// Methods
-	jarray StandardCopyOption::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.StandardCopyOption",
-			"values",
-			"()[Ljava/nio/file/StandardCopyOption;"
-		).object<jarray>();
-	}
 	QAndroidJniObject StandardCopyOption::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/lang/String;)Ljava/nio/file/StandardCopyOption;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray StandardCopyOption::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.file.StandardCopyOption",
+			"values",
+			"()[Ljava/nio/file/StandardCopyOption;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::nio::file
 

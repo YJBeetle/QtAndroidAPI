@@ -22,13 +22,13 @@ namespace __jni_impl::android::content::pm
 		void __constructor();
 		
 		// Methods
-		jstring getName();
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jstring getPackageName();
-		jboolean isHidden();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		jstring getName();
+		jstring getPackageName();
+		jint hashCode();
+		jboolean isHidden();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::pm
@@ -56,12 +56,12 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	jstring ModuleInfo::getName()
+	jint ModuleInfo::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
 	jboolean ModuleInfo::equals(jobject arg0)
 	{
@@ -71,10 +71,17 @@ namespace __jni_impl::android::content::pm
 			arg0
 		);
 	}
-	jstring ModuleInfo::toString()
+	jstring ModuleInfo::getName()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
+			"getName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring ModuleInfo::getPackageName()
+	{
+		return __thiz.callObjectMethod(
+			"getPackageName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -85,13 +92,6 @@ namespace __jni_impl::android::content::pm
 			"()I"
 		);
 	}
-	jstring ModuleInfo::getPackageName()
-	{
-		return __thiz.callObjectMethod(
-			"getPackageName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jboolean ModuleInfo::isHidden()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -99,12 +99,12 @@ namespace __jni_impl::android::content::pm
 			"()Z"
 		);
 	}
-	jint ModuleInfo::describeContents()
+	jstring ModuleInfo::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void ModuleInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

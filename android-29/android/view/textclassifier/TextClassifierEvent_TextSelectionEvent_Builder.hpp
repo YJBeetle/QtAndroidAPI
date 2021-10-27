@@ -23,10 +23,10 @@ namespace __jni_impl::android::view::textclassifier
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setRelativeWordStartIndex(jint arg0);
-		QAndroidJniObject setRelativeWordEndIndex(jint arg0);
-		QAndroidJniObject setRelativeSuggestedWordStartIndex(jint arg0);
 		QAndroidJniObject setRelativeSuggestedWordEndIndex(jint arg0);
+		QAndroidJniObject setRelativeSuggestedWordStartIndex(jint arg0);
+		QAndroidJniObject setRelativeWordEndIndex(jint arg0);
+		QAndroidJniObject setRelativeWordStartIndex(jint arg0);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -54,18 +54,10 @@ namespace __jni_impl::android::view::textclassifier
 			"()Landroid/view/textclassifier/TextClassifierEvent$TextSelectionEvent;"
 		);
 	}
-	QAndroidJniObject TextClassifierEvent_TextSelectionEvent_Builder::setRelativeWordStartIndex(jint arg0)
+	QAndroidJniObject TextClassifierEvent_TextSelectionEvent_Builder::setRelativeSuggestedWordEndIndex(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setRelativeWordStartIndex",
-			"(I)Landroid/view/textclassifier/TextClassifierEvent$TextSelectionEvent$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject TextClassifierEvent_TextSelectionEvent_Builder::setRelativeWordEndIndex(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setRelativeWordEndIndex",
+			"setRelativeSuggestedWordEndIndex",
 			"(I)Landroid/view/textclassifier/TextClassifierEvent$TextSelectionEvent$Builder;",
 			arg0
 		);
@@ -78,10 +70,18 @@ namespace __jni_impl::android::view::textclassifier
 			arg0
 		);
 	}
-	QAndroidJniObject TextClassifierEvent_TextSelectionEvent_Builder::setRelativeSuggestedWordEndIndex(jint arg0)
+	QAndroidJniObject TextClassifierEvent_TextSelectionEvent_Builder::setRelativeWordEndIndex(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setRelativeSuggestedWordEndIndex",
+			"setRelativeWordEndIndex",
+			"(I)Landroid/view/textclassifier/TextClassifierEvent$TextSelectionEvent$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject TextClassifierEvent_TextSelectionEvent_Builder::setRelativeWordStartIndex(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setRelativeWordStartIndex",
 			"(I)Landroid/view/textclassifier/TextClassifierEvent$TextSelectionEvent$Builder;",
 			arg0
 		);

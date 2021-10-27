@@ -11,11 +11,11 @@ namespace __jni_impl::java::security
 }
 namespace __jni_impl::javax::net::ssl
 {
-	class SSLSocketFactory;
+	class SSLEngine;
 }
 namespace __jni_impl::javax::net::ssl
 {
-	class SSLSocket;
+	class SSLParameters;
 }
 namespace __jni_impl::javax::net::ssl
 {
@@ -23,11 +23,11 @@ namespace __jni_impl::javax::net::ssl
 }
 namespace __jni_impl::javax::net::ssl
 {
-	class SSLEngine;
+	class SSLSocket;
 }
 namespace __jni_impl::javax::net::ssl
 {
-	class SSLParameters;
+	class SSLSocketFactory;
 }
 
 namespace __jni_impl::javax::net::ssl
@@ -45,11 +45,11 @@ namespace __jni_impl::javax::net::ssl
 } // namespace __jni_impl::javax::net::ssl
 
 #include "../../../java/security/SecureRandom.hpp"
-#include "SSLSocketFactory.hpp"
-#include "SSLSocket.hpp"
-#include "SSLServerSocketFactory.hpp"
 #include "SSLEngine.hpp"
 #include "SSLParameters.hpp"
+#include "SSLServerSocketFactory.hpp"
+#include "SSLSocket.hpp"
+#include "SSLSocketFactory.hpp"
 
 namespace __jni_impl::javax::net::ssl
 {

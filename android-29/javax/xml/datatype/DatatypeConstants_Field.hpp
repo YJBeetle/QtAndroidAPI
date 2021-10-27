@@ -17,8 +17,8 @@ namespace __jni_impl::javax::xml::datatype
 		void __constructor();
 		
 		// Methods
-		jstring toString();
 		jint getId();
+		jstring toString();
 	};
 } // namespace __jni_impl::javax::xml::datatype
 
@@ -36,19 +36,19 @@ namespace __jni_impl::javax::xml::datatype
 	}
 	
 	// Methods
-	jstring DatatypeConstants_Field::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint DatatypeConstants_Field::getId()
 	{
 		return __thiz.callMethod<jint>(
 			"getId",
 			"()I"
 		);
+	}
+	jstring DatatypeConstants_Field::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::xml::datatype
 

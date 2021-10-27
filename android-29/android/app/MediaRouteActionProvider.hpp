@@ -27,12 +27,12 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		jboolean isVisible();
-		void setRouteTypes(jint arg0);
-		void setExtendedSettingsClickListener(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject onCreateActionView(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject onCreateActionView();
+		QAndroidJniObject onCreateActionView(__jni_impl::__JniBaseClass arg0);
 		jboolean onPerformDefaultAction();
 		jboolean overridesItemVisibility();
+		void setExtendedSettingsClickListener(__jni_impl::__JniBaseClass arg0);
+		void setRouteTypes(jint arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -61,20 +61,11 @@ namespace __jni_impl::android::app
 			"()Z"
 		);
 	}
-	void MediaRouteActionProvider::setRouteTypes(jint arg0)
+	QAndroidJniObject MediaRouteActionProvider::onCreateActionView()
 	{
-		__thiz.callMethod<void>(
-			"setRouteTypes",
-			"(I)V",
-			arg0
-		);
-	}
-	void MediaRouteActionProvider::setExtendedSettingsClickListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setExtendedSettingsClickListener",
-			"(Landroid/view/View$OnClickListener;)V",
-			arg0.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"onCreateActionView",
+			"()Landroid/view/View;"
 		);
 	}
 	QAndroidJniObject MediaRouteActionProvider::onCreateActionView(__jni_impl::__JniBaseClass arg0)
@@ -83,13 +74,6 @@ namespace __jni_impl::android::app
 			"onCreateActionView",
 			"(Landroid/view/MenuItem;)Landroid/view/View;",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject MediaRouteActionProvider::onCreateActionView()
-	{
-		return __thiz.callObjectMethod(
-			"onCreateActionView",
-			"()Landroid/view/View;"
 		);
 	}
 	jboolean MediaRouteActionProvider::onPerformDefaultAction()
@@ -104,6 +88,22 @@ namespace __jni_impl::android::app
 		return __thiz.callMethod<jboolean>(
 			"overridesItemVisibility",
 			"()Z"
+		);
+	}
+	void MediaRouteActionProvider::setExtendedSettingsClickListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setExtendedSettingsClickListener",
+			"(Landroid/view/View$OnClickListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void MediaRouteActionProvider::setRouteTypes(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRouteTypes",
+			"(I)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::app

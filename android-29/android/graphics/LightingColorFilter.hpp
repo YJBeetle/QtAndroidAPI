@@ -18,8 +18,8 @@ namespace __jni_impl::android::graphics
 		void __constructor(jint arg0, jint arg1);
 		
 		// Methods
-		jint getColorMultiply();
 		jint getColorAdd();
+		jint getColorMultiply();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -40,17 +40,17 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	jint LightingColorFilter::getColorMultiply()
-	{
-		return __thiz.callMethod<jint>(
-			"getColorMultiply",
-			"()I"
-		);
-	}
 	jint LightingColorFilter::getColorAdd()
 	{
 		return __thiz.callMethod<jint>(
 			"getColorAdd",
+			"()I"
+		);
+	}
+	jint LightingColorFilter::getColorMultiply()
+	{
+		return __thiz.callMethod<jint>(
+			"getColorMultiply",
 			"()I"
 		);
 	}

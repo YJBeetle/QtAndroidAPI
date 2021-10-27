@@ -13,29 +13,29 @@ namespace __jni_impl::android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject EMPTY_LABEL();
-		static QAndroidJniObject LABEL_TOO_LONG();
-		static QAndroidJniObject DOMAIN_NAME_TOO_LONG();
-		static QAndroidJniObject LEADING_HYPHEN();
-		static QAndroidJniObject TRAILING_HYPHEN();
-		static QAndroidJniObject HYPHEN_3_4();
-		static QAndroidJniObject LEADING_COMBINING_MARK();
-		static QAndroidJniObject DISALLOWED();
-		static QAndroidJniObject PUNYCODE();
-		static QAndroidJniObject LABEL_HAS_DOT();
-		static QAndroidJniObject INVALID_ACE_LABEL();
 		static QAndroidJniObject BIDI();
 		static QAndroidJniObject CONTEXTJ();
-		static QAndroidJniObject CONTEXTO_PUNCTUATION();
 		static QAndroidJniObject CONTEXTO_DIGITS();
+		static QAndroidJniObject CONTEXTO_PUNCTUATION();
+		static QAndroidJniObject DISALLOWED();
+		static QAndroidJniObject DOMAIN_NAME_TOO_LONG();
+		static QAndroidJniObject EMPTY_LABEL();
+		static QAndroidJniObject HYPHEN_3_4();
+		static QAndroidJniObject INVALID_ACE_LABEL();
+		static QAndroidJniObject LABEL_HAS_DOT();
+		static QAndroidJniObject LABEL_TOO_LONG();
+		static QAndroidJniObject LEADING_COMBINING_MARK();
+		static QAndroidJniObject LEADING_HYPHEN();
+		static QAndroidJniObject PUNYCODE();
+		static QAndroidJniObject TRAILING_HYPHEN();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -43,94 +43,6 @@ namespace __jni_impl::android::icu::text
 namespace __jni_impl::android::icu::text
 {
 	// Fields
-	QAndroidJniObject IDNA_Error::EMPTY_LABEL()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.IDNA$Error",
-			"EMPTY_LABEL",
-			"Landroid/icu/text/IDNA$Error;"
-		);
-	}
-	QAndroidJniObject IDNA_Error::LABEL_TOO_LONG()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.IDNA$Error",
-			"LABEL_TOO_LONG",
-			"Landroid/icu/text/IDNA$Error;"
-		);
-	}
-	QAndroidJniObject IDNA_Error::DOMAIN_NAME_TOO_LONG()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.IDNA$Error",
-			"DOMAIN_NAME_TOO_LONG",
-			"Landroid/icu/text/IDNA$Error;"
-		);
-	}
-	QAndroidJniObject IDNA_Error::LEADING_HYPHEN()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.IDNA$Error",
-			"LEADING_HYPHEN",
-			"Landroid/icu/text/IDNA$Error;"
-		);
-	}
-	QAndroidJniObject IDNA_Error::TRAILING_HYPHEN()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.IDNA$Error",
-			"TRAILING_HYPHEN",
-			"Landroid/icu/text/IDNA$Error;"
-		);
-	}
-	QAndroidJniObject IDNA_Error::HYPHEN_3_4()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.IDNA$Error",
-			"HYPHEN_3_4",
-			"Landroid/icu/text/IDNA$Error;"
-		);
-	}
-	QAndroidJniObject IDNA_Error::LEADING_COMBINING_MARK()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.IDNA$Error",
-			"LEADING_COMBINING_MARK",
-			"Landroid/icu/text/IDNA$Error;"
-		);
-	}
-	QAndroidJniObject IDNA_Error::DISALLOWED()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.IDNA$Error",
-			"DISALLOWED",
-			"Landroid/icu/text/IDNA$Error;"
-		);
-	}
-	QAndroidJniObject IDNA_Error::PUNYCODE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.IDNA$Error",
-			"PUNYCODE",
-			"Landroid/icu/text/IDNA$Error;"
-		);
-	}
-	QAndroidJniObject IDNA_Error::LABEL_HAS_DOT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.IDNA$Error",
-			"LABEL_HAS_DOT",
-			"Landroid/icu/text/IDNA$Error;"
-		);
-	}
-	QAndroidJniObject IDNA_Error::INVALID_ACE_LABEL()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.IDNA$Error",
-			"INVALID_ACE_LABEL",
-			"Landroid/icu/text/IDNA$Error;"
-		);
-	}
 	QAndroidJniObject IDNA_Error::BIDI()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -147,6 +59,14 @@ namespace __jni_impl::android::icu::text
 			"Landroid/icu/text/IDNA$Error;"
 		);
 	}
+	QAndroidJniObject IDNA_Error::CONTEXTO_DIGITS()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"CONTEXTO_DIGITS",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
 	QAndroidJniObject IDNA_Error::CONTEXTO_PUNCTUATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -155,11 +75,91 @@ namespace __jni_impl::android::icu::text
 			"Landroid/icu/text/IDNA$Error;"
 		);
 	}
-	QAndroidJniObject IDNA_Error::CONTEXTO_DIGITS()
+	QAndroidJniObject IDNA_Error::DISALLOWED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.IDNA$Error",
-			"CONTEXTO_DIGITS",
+			"DISALLOWED",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	QAndroidJniObject IDNA_Error::DOMAIN_NAME_TOO_LONG()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"DOMAIN_NAME_TOO_LONG",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	QAndroidJniObject IDNA_Error::EMPTY_LABEL()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"EMPTY_LABEL",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	QAndroidJniObject IDNA_Error::HYPHEN_3_4()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"HYPHEN_3_4",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	QAndroidJniObject IDNA_Error::INVALID_ACE_LABEL()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"INVALID_ACE_LABEL",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	QAndroidJniObject IDNA_Error::LABEL_HAS_DOT()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"LABEL_HAS_DOT",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	QAndroidJniObject IDNA_Error::LABEL_TOO_LONG()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"LABEL_TOO_LONG",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	QAndroidJniObject IDNA_Error::LEADING_COMBINING_MARK()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"LEADING_COMBINING_MARK",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	QAndroidJniObject IDNA_Error::LEADING_HYPHEN()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"LEADING_HYPHEN",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	QAndroidJniObject IDNA_Error::PUNYCODE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"PUNYCODE",
+			"Landroid/icu/text/IDNA$Error;"
+		);
+	}
+	QAndroidJniObject IDNA_Error::TRAILING_HYPHEN()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.IDNA$Error",
+			"TRAILING_HYPHEN",
 			"Landroid/icu/text/IDNA$Error;"
 		);
 	}
@@ -173,14 +173,6 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jarray IDNA_Error::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.IDNA$Error",
-			"values",
-			"()[Landroid/icu/text/IDNA$Error;"
-		).object<jarray>();
-	}
 	QAndroidJniObject IDNA_Error::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -198,6 +190,14 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;)Landroid/icu/text/IDNA$Error;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray IDNA_Error::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.IDNA$Error",
+			"values",
+			"()[Landroid/icu/text/IDNA$Error;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::icu::text
 

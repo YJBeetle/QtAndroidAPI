@@ -10,13 +10,13 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::view
-{
-	class Display;
-}
 namespace __jni_impl::android::content::res
 {
 	class Resources;
+}
+namespace __jni_impl::android::view
+{
+	class Display;
 }
 
 namespace __jni_impl::android::app
@@ -31,17 +31,17 @@ namespace __jni_impl::android::app
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::view::Display arg1, jint arg2);
 		
 		// Methods
-		QAndroidJniObject getResources();
 		QAndroidJniObject getDisplay();
-		void show();
-		void onDisplayRemoved();
+		QAndroidJniObject getResources();
 		void onDisplayChanged();
+		void onDisplayRemoved();
+		void show();
 	};
 } // namespace __jni_impl::android::app
 
 #include "../content/Context.hpp"
-#include "../view/Display.hpp"
 #include "../content/res/Resources.hpp"
+#include "../view/Display.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -69,13 +69,6 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject Presentation::getResources()
-	{
-		return __thiz.callObjectMethod(
-			"getResources",
-			"()Landroid/content/res/Resources;"
-		);
-	}
 	QAndroidJniObject Presentation::getDisplay()
 	{
 		return __thiz.callObjectMethod(
@@ -83,10 +76,17 @@ namespace __jni_impl::android::app
 			"()Landroid/view/Display;"
 		);
 	}
-	void Presentation::show()
+	QAndroidJniObject Presentation::getResources()
+	{
+		return __thiz.callObjectMethod(
+			"getResources",
+			"()Landroid/content/res/Resources;"
+		);
+	}
+	void Presentation::onDisplayChanged()
 	{
 		__thiz.callMethod<void>(
-			"show",
+			"onDisplayChanged",
 			"()V"
 		);
 	}
@@ -97,10 +97,10 @@ namespace __jni_impl::android::app
 			"()V"
 		);
 	}
-	void Presentation::onDisplayChanged()
+	void Presentation::show()
 	{
 		__thiz.callMethod<void>(
-			"onDisplayChanged",
+			"show",
 			"()V"
 		);
 	}

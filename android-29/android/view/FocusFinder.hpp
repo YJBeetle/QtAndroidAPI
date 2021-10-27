@@ -5,6 +5,10 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::graphics
+{
+	class Rect;
+}
 namespace __jni_impl::android::view
 {
 	class View;
@@ -12,10 +16,6 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::view
 {
 	class ViewGroup;
-}
-namespace __jni_impl::android::graphics
-{
-	class Rect;
 }
 
 namespace __jni_impl::android::view
@@ -30,16 +30,16 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		static QAndroidJniObject getInstance();
+		QAndroidJniObject findNearestTouchable(__jni_impl::android::view::ViewGroup arg0, jint arg1, jint arg2, jint arg3, jintArray arg4);
 		QAndroidJniObject findNextFocus(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::view::View arg1, jint arg2);
 		QAndroidJniObject findNextFocusFromRect(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::graphics::Rect arg1, jint arg2);
 		QAndroidJniObject findNextKeyboardNavigationCluster(__jni_impl::android::view::View arg0, __jni_impl::android::view::View arg1, jint arg2);
-		QAndroidJniObject findNearestTouchable(__jni_impl::android::view::ViewGroup arg0, jint arg1, jint arg2, jint arg3, jintArray arg4);
 	};
 } // namespace __jni_impl::android::view
 
+#include "../graphics/Rect.hpp"
 #include "View.hpp"
 #include "ViewGroup.hpp"
-#include "../graphics/Rect.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -60,6 +60,18 @@ namespace __jni_impl::android::view
 			"android.view.FocusFinder",
 			"getInstance",
 			"()Landroid/view/FocusFinder;"
+		);
+	}
+	QAndroidJniObject FocusFinder::findNearestTouchable(__jni_impl::android::view::ViewGroup arg0, jint arg1, jint arg2, jint arg3, jintArray arg4)
+	{
+		return __thiz.callObjectMethod(
+			"findNearestTouchable",
+			"(Landroid/view/ViewGroup;III[I)Landroid/view/View;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3,
+			arg4
 		);
 	}
 	QAndroidJniObject FocusFinder::findNextFocus(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::view::View arg1, jint arg2)
@@ -90,18 +102,6 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2
-		);
-	}
-	QAndroidJniObject FocusFinder::findNearestTouchable(__jni_impl::android::view::ViewGroup arg0, jint arg1, jint arg2, jint arg3, jintArray arg4)
-	{
-		return __thiz.callObjectMethod(
-			"findNearestTouchable",
-			"(Landroid/view/ViewGroup;III[I)Landroid/view/View;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4
 		);
 	}
 } // namespace __jni_impl::android::view

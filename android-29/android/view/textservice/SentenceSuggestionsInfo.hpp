@@ -23,16 +23,16 @@ namespace __jni_impl::android::view::textservice
 		static QAndroidJniObject CREATOR();
 		
 		// Constructors
-		void __constructor(jarray arg0, jintArray arg1, jintArray arg2);
 		void __constructor(__jni_impl::android::os::Parcel arg0);
+		void __constructor(jarray arg0, jintArray arg1, jintArray arg2);
 		
 		// Methods
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getOffsetAt(jint arg0);
-		QAndroidJniObject getSuggestionsInfoAt(jint arg0);
-		jint getSuggestionsCount();
 		jint getLengthAt(jint arg0);
+		jint getOffsetAt(jint arg0);
+		jint getSuggestionsCount();
+		QAndroidJniObject getSuggestionsInfoAt(jint arg0);
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::textservice
 
@@ -52,6 +52,14 @@ namespace __jni_impl::android::view::textservice
 	}
 	
 	// Constructors
+	void SentenceSuggestionsInfo::__constructor(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.textservice.SentenceSuggestionsInfo",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void SentenceSuggestionsInfo::__constructor(jarray arg0, jintArray arg1, jintArray arg2)
 	{
 		__thiz = QAndroidJniObject(
@@ -60,14 +68,6 @@ namespace __jni_impl::android::view::textservice
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	void SentenceSuggestionsInfo::__constructor(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.textservice.SentenceSuggestionsInfo",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	
@@ -79,13 +79,12 @@ namespace __jni_impl::android::view::textservice
 			"()I"
 		);
 	}
-	void SentenceSuggestionsInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jint SentenceSuggestionsInfo::getLengthAt(jint arg0)
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callMethod<jint>(
+			"getLengthAt",
+			"(I)I",
+			arg0
 		);
 	}
 	jint SentenceSuggestionsInfo::getOffsetAt(jint arg0)
@@ -96,6 +95,13 @@ namespace __jni_impl::android::view::textservice
 			arg0
 		);
 	}
+	jint SentenceSuggestionsInfo::getSuggestionsCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getSuggestionsCount",
+			"()I"
+		);
+	}
 	QAndroidJniObject SentenceSuggestionsInfo::getSuggestionsInfoAt(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -104,19 +110,13 @@ namespace __jni_impl::android::view::textservice
 			arg0
 		);
 	}
-	jint SentenceSuggestionsInfo::getSuggestionsCount()
+	void SentenceSuggestionsInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
-			"getSuggestionsCount",
-			"()I"
-		);
-	}
-	jint SentenceSuggestionsInfo::getLengthAt(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getLengthAt",
-			"(I)I",
-			arg0
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::view::textservice
@@ -127,17 +127,17 @@ namespace android::view::textservice
 	{
 	public:
 		SentenceSuggestionsInfo(QAndroidJniObject obj) { __thiz = obj; }
+		SentenceSuggestionsInfo(__jni_impl::android::os::Parcel arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		SentenceSuggestionsInfo(jarray arg0, jintArray arg1, jintArray arg2)
 		{
 			__constructor(
 				arg0,
 				arg1,
 				arg2);
-		}
-		SentenceSuggestionsInfo(__jni_impl::android::os::Parcel arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::view::textservice

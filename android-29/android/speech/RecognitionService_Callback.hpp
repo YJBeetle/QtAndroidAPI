@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::speech
-{
-	class RecognitionService;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::speech
+{
+	class RecognitionService;
 }
 
 namespace __jni_impl::android::speech
@@ -25,20 +25,20 @@ namespace __jni_impl::android::speech
 		void __constructor();
 		
 		// Methods
-		void error(jint arg0);
-		void results(__jni_impl::android::os::Bundle arg0);
 		void beginningOfSpeech();
 		void bufferReceived(jbyteArray arg0);
 		void endOfSpeech();
+		void error(jint arg0);
+		jint getCallingUid();
 		void partialResults(__jni_impl::android::os::Bundle arg0);
 		void readyForSpeech(__jni_impl::android::os::Bundle arg0);
+		void results(__jni_impl::android::os::Bundle arg0);
 		void rmsChanged(jfloat arg0);
-		jint getCallingUid();
 	};
 } // namespace __jni_impl::android::speech
 
-#include "RecognitionService.hpp"
 #include "../os/Bundle.hpp"
+#include "RecognitionService.hpp"
 
 namespace __jni_impl::android::speech
 {
@@ -53,22 +53,6 @@ namespace __jni_impl::android::speech
 	}
 	
 	// Methods
-	void RecognitionService_Callback::error(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"error",
-			"(I)V",
-			arg0
-		);
-	}
-	void RecognitionService_Callback::results(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"results",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void RecognitionService_Callback::beginningOfSpeech()
 	{
 		__thiz.callMethod<void>(
@@ -91,6 +75,21 @@ namespace __jni_impl::android::speech
 			"()V"
 		);
 	}
+	void RecognitionService_Callback::error(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"error",
+			"(I)V",
+			arg0
+		);
+	}
+	jint RecognitionService_Callback::getCallingUid()
+	{
+		return __thiz.callMethod<jint>(
+			"getCallingUid",
+			"()I"
+		);
+	}
 	void RecognitionService_Callback::partialResults(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
@@ -107,19 +106,20 @@ namespace __jni_impl::android::speech
 			arg0.__jniObject().object()
 		);
 	}
+	void RecognitionService_Callback::results(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"results",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void RecognitionService_Callback::rmsChanged(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
 			"rmsChanged",
 			"(F)V",
 			arg0
-		);
-	}
-	jint RecognitionService_Callback::getCallingUid()
-	{
-		return __thiz.callMethod<jint>(
-			"getCallingUid",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::speech

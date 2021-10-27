@@ -17,14 +17,14 @@ namespace __jni_impl::android::graphics::text
 		void __constructor();
 		
 		// Methods
-		void setTabStops(jfloatArray arg0, jfloat arg1);
+		jfloat getDefaultTabStop();
 		jfloat getFirstWidth();
 		jint getFirstWidthLineCount();
 		jfloatArray getTabStops();
-		jfloat getDefaultTabStop();
-		void setWidth(jfloat arg0);
 		jfloat getWidth();
 		void setIndent(jfloat arg0, jint arg1);
+		void setTabStops(jfloatArray arg0, jfloat arg1);
+		void setWidth(jfloat arg0);
 	};
 } // namespace __jni_impl::android::graphics::text
 
@@ -43,13 +43,11 @@ namespace __jni_impl::android::graphics::text
 	}
 	
 	// Methods
-	void LineBreaker_ParagraphConstraints::setTabStops(jfloatArray arg0, jfloat arg1)
+	jfloat LineBreaker_ParagraphConstraints::getDefaultTabStop()
 	{
-		__thiz.callMethod<void>(
-			"setTabStops",
-			"([FF)V",
-			arg0,
-			arg1
+		return __thiz.callMethod<jfloat>(
+			"getDefaultTabStop",
+			"()F"
 		);
 	}
 	jfloat LineBreaker_ParagraphConstraints::getFirstWidth()
@@ -73,21 +71,6 @@ namespace __jni_impl::android::graphics::text
 			"()[F"
 		).object<jfloatArray>();
 	}
-	jfloat LineBreaker_ParagraphConstraints::getDefaultTabStop()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getDefaultTabStop",
-			"()F"
-		);
-	}
-	void LineBreaker_ParagraphConstraints::setWidth(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setWidth",
-			"(F)V",
-			arg0
-		);
-	}
 	jfloat LineBreaker_ParagraphConstraints::getWidth()
 	{
 		return __thiz.callMethod<jfloat>(
@@ -102,6 +85,23 @@ namespace __jni_impl::android::graphics::text
 			"(FI)V",
 			arg0,
 			arg1
+		);
+	}
+	void LineBreaker_ParagraphConstraints::setTabStops(jfloatArray arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"setTabStops",
+			"([FF)V",
+			arg0,
+			arg1
+		);
+	}
+	void LineBreaker_ParagraphConstraints::setWidth(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setWidth",
+			"(F)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::graphics::text

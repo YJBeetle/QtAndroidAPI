@@ -84,16 +84,16 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint getEncoding();
-		jint getSampleRate();
-		jint getChannelMask();
-		jint getChannelIndexMask();
-		jint getChannelCount();
-		jint getFrameSizeInBytes();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		jint getChannelCount();
+		jint getChannelIndexMask();
+		jint getChannelMask();
+		jint getEncoding();
+		jint getFrameSizeInBytes();
+		jint getSampleRate();
+		jint hashCode();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
@@ -555,6 +555,13 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	jint AudioFormat::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean AudioFormat::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -563,38 +570,10 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	jstring AudioFormat::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint AudioFormat::hashCode()
+	jint AudioFormat::getChannelCount()
 	{
 		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jint AudioFormat::getEncoding()
-	{
-		return __thiz.callMethod<jint>(
-			"getEncoding",
-			"()I"
-		);
-	}
-	jint AudioFormat::getSampleRate()
-	{
-		return __thiz.callMethod<jint>(
-			"getSampleRate",
-			"()I"
-		);
-	}
-	jint AudioFormat::getChannelMask()
-	{
-		return __thiz.callMethod<jint>(
-			"getChannelMask",
+			"getChannelCount",
 			"()I"
 		);
 	}
@@ -605,10 +584,17 @@ namespace __jni_impl::android::media
 			"()I"
 		);
 	}
-	jint AudioFormat::getChannelCount()
+	jint AudioFormat::getChannelMask()
 	{
 		return __thiz.callMethod<jint>(
-			"getChannelCount",
+			"getChannelMask",
+			"()I"
+		);
+	}
+	jint AudioFormat::getEncoding()
+	{
+		return __thiz.callMethod<jint>(
+			"getEncoding",
 			"()I"
 		);
 	}
@@ -619,12 +605,26 @@ namespace __jni_impl::android::media
 			"()I"
 		);
 	}
-	jint AudioFormat::describeContents()
+	jint AudioFormat::getSampleRate()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getSampleRate",
 			"()I"
 		);
+	}
+	jint AudioFormat::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring AudioFormat::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void AudioFormat::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

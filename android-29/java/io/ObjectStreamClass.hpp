@@ -5,13 +5,33 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::lang
+namespace __jni_impl::java::io
 {
-	class Long;
+	class ObjectInputStream;
+}
+namespace __jni_impl::java::io
+{
+	class ObjectOutputStream;
+}
+namespace __jni_impl::java::io
+{
+	class ObjectStreamField;
 }
 namespace __jni_impl::java::lang
 {
 	class ClassNotFoundException;
+}
+namespace __jni_impl::java::lang
+{
+	class Long;
+}
+namespace __jni_impl::java::lang::invoke
+{
+	class MethodHandle;
+}
+namespace __jni_impl::java::lang::ref
+{
+	class ReferenceQueue;
 }
 namespace __jni_impl::java::lang::reflect
 {
@@ -20,22 +40,6 @@ namespace __jni_impl::java::lang::reflect
 namespace __jni_impl::java::lang::reflect
 {
 	class Method;
-}
-namespace __jni_impl::java::io
-{
-	class ObjectStreamField;
-}
-namespace __jni_impl::java::lang::ref
-{
-	class ReferenceQueue;
-}
-namespace __jni_impl::java::io
-{
-	class ObjectInputStream;
-}
-namespace __jni_impl::java::io
-{
-	class ObjectOutputStream;
 }
 namespace __jni_impl::java::security
 {
@@ -54,26 +58,27 @@ namespace __jni_impl::java::io
 		void __constructor();
 		
 		// Methods
-		jstring getName();
-		jstring toString();
 		static QAndroidJniObject lookup(jclass arg0);
-		jarray getFields();
+		static QAndroidJniObject lookupAny(jclass arg0);
+		jclass forClass();
 		QAndroidJniObject getField(jstring arg0);
 		QAndroidJniObject getField(const QString &arg0);
-		jclass forClass();
+		jarray getFields();
+		jstring getName();
 		jlong getSerialVersionUID();
-		static QAndroidJniObject lookupAny(jclass arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::java::io
 
-#include "../lang/Long.hpp"
-#include "../lang/ClassNotFoundException.hpp"
-#include "../lang/reflect/Constructor.hpp"
-#include "../lang/reflect/Method.hpp"
-#include "ObjectStreamField.hpp"
-#include "../lang/ref/ReferenceQueue.hpp"
 #include "ObjectInputStream.hpp"
 #include "ObjectOutputStream.hpp"
+#include "ObjectStreamField.hpp"
+#include "../lang/ClassNotFoundException.hpp"
+#include "../lang/Long.hpp"
+#include "../lang/invoke/MethodHandle.hpp"
+#include "../lang/ref/ReferenceQueue.hpp"
+#include "../lang/reflect/Constructor.hpp"
+#include "../lang/reflect/Method.hpp"
 #include "../security/ProtectionDomain.hpp"
 
 namespace __jni_impl::java::io
@@ -97,20 +102,6 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	jstring ObjectStreamClass::getName()
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring ObjectStreamClass::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject ObjectStreamClass::lookup(jclass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -120,12 +111,21 @@ namespace __jni_impl::java::io
 			arg0
 		);
 	}
-	jarray ObjectStreamClass::getFields()
+	QAndroidJniObject ObjectStreamClass::lookupAny(jclass arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.io.ObjectStreamClass",
+			"lookupAny",
+			"(Ljava/lang/Class;)Ljava/io/ObjectStreamClass;",
+			arg0
+		);
+	}
+	jclass ObjectStreamClass::forClass()
 	{
 		return __thiz.callObjectMethod(
-			"getFields",
-			"()[Ljava/io/ObjectStreamField;"
-		).object<jarray>();
+			"forClass",
+			"()Ljava/lang/Class;"
+		).object<jclass>();
 	}
 	QAndroidJniObject ObjectStreamClass::getField(jstring arg0)
 	{
@@ -143,12 +143,19 @@ namespace __jni_impl::java::io
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jclass ObjectStreamClass::forClass()
+	jarray ObjectStreamClass::getFields()
 	{
 		return __thiz.callObjectMethod(
-			"forClass",
-			"()Ljava/lang/Class;"
-		).object<jclass>();
+			"getFields",
+			"()[Ljava/io/ObjectStreamField;"
+		).object<jarray>();
+	}
+	jstring ObjectStreamClass::getName()
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jlong ObjectStreamClass::getSerialVersionUID()
 	{
@@ -157,14 +164,12 @@ namespace __jni_impl::java::io
 			"()J"
 		);
 	}
-	QAndroidJniObject ObjectStreamClass::lookupAny(jclass arg0)
+	jstring ObjectStreamClass::toString()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.io.ObjectStreamClass",
-			"lookupAny",
-			"(Ljava/lang/Class;)Ljava/io/ObjectStreamClass;",
-			arg0
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::io
 

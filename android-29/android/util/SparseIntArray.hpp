@@ -18,21 +18,21 @@ namespace __jni_impl::android::util
 		void __constructor(jint arg0);
 		
 		// Methods
+		void append(jint arg0, jint arg1);
+		void clear();
+		QAndroidJniObject clone();
+		void _delete(jint arg0);
 		jint get(jint arg0);
 		jint get(jint arg0, jint arg1);
-		void put(jint arg0, jint arg1);
-		jstring toString();
-		void append(jint arg0, jint arg1);
-		QAndroidJniObject clone();
-		void clear();
-		jint size();
-		void _delete(jint arg0);
-		void removeAt(jint arg0);
-		jint keyAt(jint arg0);
-		jint valueAt(jint arg0);
-		void setValueAt(jint arg0, jint arg1);
 		jint indexOfKey(jint arg0);
 		jint indexOfValue(jint arg0);
+		jint keyAt(jint arg0);
+		void put(jint arg0, jint arg1);
+		void removeAt(jint arg0);
+		void setValueAt(jint arg0, jint arg1);
+		jint size();
+		jstring toString();
+		jint valueAt(jint arg0);
 	};
 } // namespace __jni_impl::android::util
 
@@ -59,6 +59,37 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
+	void SparseIntArray::append(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"append",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void SparseIntArray::clear()
+	{
+		__thiz.callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	QAndroidJniObject SparseIntArray::clone()
+	{
+		return __thiz.callObjectMethod(
+			"clone",
+			"()Landroid/util/SparseIntArray;"
+		);
+	}
+	void SparseIntArray::_delete(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"delete",
+			"(I)V",
+			arg0
+		);
+	}
 	jint SparseIntArray::get(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -76,93 +107,6 @@ namespace __jni_impl::android::util
 			arg1
 		);
 	}
-	void SparseIntArray::put(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"put",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	jstring SparseIntArray::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void SparseIntArray::append(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"append",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject SparseIntArray::clone()
-	{
-		return __thiz.callObjectMethod(
-			"clone",
-			"()Landroid/util/SparseIntArray;"
-		);
-	}
-	void SparseIntArray::clear()
-	{
-		__thiz.callMethod<void>(
-			"clear",
-			"()V"
-		);
-	}
-	jint SparseIntArray::size()
-	{
-		return __thiz.callMethod<jint>(
-			"size",
-			"()I"
-		);
-	}
-	void SparseIntArray::_delete(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"delete",
-			"(I)V",
-			arg0
-		);
-	}
-	void SparseIntArray::removeAt(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeAt",
-			"(I)V",
-			arg0
-		);
-	}
-	jint SparseIntArray::keyAt(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"keyAt",
-			"(I)I",
-			arg0
-		);
-	}
-	jint SparseIntArray::valueAt(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"valueAt",
-			"(I)I",
-			arg0
-		);
-	}
-	void SparseIntArray::setValueAt(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setValueAt",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
 	jint SparseIntArray::indexOfKey(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -175,6 +119,62 @@ namespace __jni_impl::android::util
 	{
 		return __thiz.callMethod<jint>(
 			"indexOfValue",
+			"(I)I",
+			arg0
+		);
+	}
+	jint SparseIntArray::keyAt(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"keyAt",
+			"(I)I",
+			arg0
+		);
+	}
+	void SparseIntArray::put(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"put",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void SparseIntArray::removeAt(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeAt",
+			"(I)V",
+			arg0
+		);
+	}
+	void SparseIntArray::setValueAt(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setValueAt",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	jint SparseIntArray::size()
+	{
+		return __thiz.callMethod<jint>(
+			"size",
+			"()I"
+		);
+	}
+	jstring SparseIntArray::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint SparseIntArray::valueAt(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"valueAt",
 			"(I)I",
 			arg0
 		);

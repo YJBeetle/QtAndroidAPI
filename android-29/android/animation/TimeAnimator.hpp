@@ -19,9 +19,9 @@ namespace __jni_impl::android::animation
 		void __constructor();
 		
 		// Methods
-		void start();
 		void setCurrentPlayTime(jlong arg0);
 		void setTimeListener(__jni_impl::__JniBaseClass arg0);
+		void start();
 	};
 } // namespace __jni_impl::android::animation
 
@@ -40,13 +40,6 @@ namespace __jni_impl::android::animation
 	}
 	
 	// Methods
-	void TimeAnimator::start()
-	{
-		__thiz.callMethod<void>(
-			"start",
-			"()V"
-		);
-	}
 	void TimeAnimator::setCurrentPlayTime(jlong arg0)
 	{
 		__thiz.callMethod<void>(
@@ -61,6 +54,13 @@ namespace __jni_impl::android::animation
 			"setTimeListener",
 			"(Landroid/animation/TimeAnimator$TimeListener;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void TimeAnimator::start()
+	{
+		__thiz.callMethod<void>(
+			"start",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::animation

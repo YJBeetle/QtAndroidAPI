@@ -13,8 +13,8 @@ namespace __jni_impl::android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DIALECT_HANDLING();
 		static QAndroidJniObject CAPITALIZATION();
+		static QAndroidJniObject DIALECT_HANDLING();
 		static QAndroidJniObject DISPLAY_LENGTH();
 		static QAndroidJniObject SUBSTITUTE_HANDLING();
 		
@@ -22,9 +22,9 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -32,19 +32,19 @@ namespace __jni_impl::android::icu::text
 namespace __jni_impl::android::icu::text
 {
 	// Fields
-	QAndroidJniObject DisplayContext_Type::DIALECT_HANDLING()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.DisplayContext$Type",
-			"DIALECT_HANDLING",
-			"Landroid/icu/text/DisplayContext$Type;"
-		);
-	}
 	QAndroidJniObject DisplayContext_Type::CAPITALIZATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DisplayContext$Type",
 			"CAPITALIZATION",
+			"Landroid/icu/text/DisplayContext$Type;"
+		);
+	}
+	QAndroidJniObject DisplayContext_Type::DIALECT_HANDLING()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.DisplayContext$Type",
+			"DIALECT_HANDLING",
 			"Landroid/icu/text/DisplayContext$Type;"
 		);
 	}
@@ -74,14 +74,6 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jarray DisplayContext_Type::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.DisplayContext$Type",
-			"values",
-			"()[Landroid/icu/text/DisplayContext$Type;"
-		).object<jarray>();
-	}
 	QAndroidJniObject DisplayContext_Type::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -99,6 +91,14 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;)Landroid/icu/text/DisplayContext$Type;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray DisplayContext_Type::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.DisplayContext$Type",
+			"values",
+			"()[Landroid/icu/text/DisplayContext$Type;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::icu::text
 

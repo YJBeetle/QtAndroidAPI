@@ -17,10 +17,10 @@ namespace __jni_impl::android::net::wifi
 		void __constructor();
 		
 		// Methods
-		void onSucceeded();
+		void onFailed(jint arg0);
 		void onStarted(jstring arg0);
 		void onStarted(const QString &arg0);
-		void onFailed(jint arg0);
+		void onSucceeded();
 	};
 } // namespace __jni_impl::android::net::wifi
 
@@ -39,11 +39,12 @@ namespace __jni_impl::android::net::wifi
 	}
 	
 	// Methods
-	void WifiManager_WpsCallback::onSucceeded()
+	void WifiManager_WpsCallback::onFailed(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"onSucceeded",
-			"()V"
+			"onFailed",
+			"(I)V",
+			arg0
 		);
 	}
 	void WifiManager_WpsCallback::onStarted(jstring arg0)
@@ -62,12 +63,11 @@ namespace __jni_impl::android::net::wifi
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void WifiManager_WpsCallback::onFailed(jint arg0)
+	void WifiManager_WpsCallback::onSucceeded()
 	{
 		__thiz.callMethod<void>(
-			"onFailed",
-			"(I)V",
-			arg0
+			"onSucceeded",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::net::wifi

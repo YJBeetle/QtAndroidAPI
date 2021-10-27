@@ -8,11 +8,11 @@
 
 namespace __jni_impl::java::lang::invoke
 {
-	class MethodType;
+	class MethodHandle;
 }
 namespace __jni_impl::java::lang::invoke
 {
-	class MethodHandle;
+	class MethodType;
 }
 
 namespace __jni_impl::java::lang::invoke
@@ -23,8 +23,8 @@ namespace __jni_impl::java::lang::invoke
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::java::lang::invoke::MethodType arg0);
 		void __constructor(__jni_impl::java::lang::invoke::MethodHandle arg0);
+		void __constructor(__jni_impl::java::lang::invoke::MethodType arg0);
 		
 		// Methods
 		QAndroidJniObject dynamicInvoker();
@@ -33,27 +33,27 @@ namespace __jni_impl::java::lang::invoke
 	};
 } // namespace __jni_impl::java::lang::invoke
 
-#include "MethodType.hpp"
 #include "MethodHandle.hpp"
+#include "MethodType.hpp"
 
 namespace __jni_impl::java::lang::invoke
 {
 	// Fields
 	
 	// Constructors
-	void VolatileCallSite::__constructor(__jni_impl::java::lang::invoke::MethodType arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.invoke.VolatileCallSite",
-			"(Ljava/lang/invoke/MethodType;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void VolatileCallSite::__constructor(__jni_impl::java::lang::invoke::MethodHandle arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.invoke.VolatileCallSite",
 			"(Ljava/lang/invoke/MethodHandle;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void VolatileCallSite::__constructor(__jni_impl::java::lang::invoke::MethodType arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.invoke.VolatileCallSite",
+			"(Ljava/lang/invoke/MethodType;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -89,12 +89,12 @@ namespace java::lang::invoke
 	{
 	public:
 		VolatileCallSite(QAndroidJniObject obj) { __thiz = obj; }
-		VolatileCallSite(__jni_impl::java::lang::invoke::MethodType arg0)
+		VolatileCallSite(__jni_impl::java::lang::invoke::MethodHandle arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		VolatileCallSite(__jni_impl::java::lang::invoke::MethodHandle arg0)
+		VolatileCallSite(__jni_impl::java::lang::invoke::MethodType arg0)
 		{
 			__constructor(
 				arg0);

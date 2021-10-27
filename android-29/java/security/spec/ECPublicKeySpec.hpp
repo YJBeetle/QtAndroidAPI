@@ -7,11 +7,11 @@
 
 namespace __jni_impl::java::security::spec
 {
-	class ECPoint;
+	class ECParameterSpec;
 }
 namespace __jni_impl::java::security::spec
 {
-	class ECParameterSpec;
+	class ECPoint;
 }
 
 namespace __jni_impl::java::security::spec
@@ -30,8 +30,8 @@ namespace __jni_impl::java::security::spec
 	};
 } // namespace __jni_impl::java::security::spec
 
-#include "ECPoint.hpp"
 #include "ECParameterSpec.hpp"
+#include "ECPoint.hpp"
 
 namespace __jni_impl::java::security::spec
 {

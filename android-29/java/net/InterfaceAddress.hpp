@@ -7,11 +7,11 @@
 
 namespace __jni_impl::java::net
 {
-	class InetAddress;
+	class Inet4Address;
 }
 namespace __jni_impl::java::net
 {
-	class Inet4Address;
+	class InetAddress;
 }
 
 namespace __jni_impl::java::net
@@ -26,16 +26,16 @@ namespace __jni_impl::java::net
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		QAndroidJniObject getAddress();
 		QAndroidJniObject getBroadcast();
 		jshort getNetworkPrefixLength();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::net
 
-#include "InetAddress.hpp"
 #include "Inet4Address.hpp"
+#include "InetAddress.hpp"
 
 namespace __jni_impl::java::net
 {
@@ -58,20 +58,6 @@ namespace __jni_impl::java::net
 			arg0
 		);
 	}
-	jstring InterfaceAddress::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint InterfaceAddress::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	QAndroidJniObject InterfaceAddress::getAddress()
 	{
 		return __thiz.callObjectMethod(
@@ -92,6 +78,20 @@ namespace __jni_impl::java::net
 			"getNetworkPrefixLength",
 			"()S"
 		);
+	}
+	jint InterfaceAddress::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring InterfaceAddress::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::net
 

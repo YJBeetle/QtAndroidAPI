@@ -21,12 +21,12 @@ namespace __jni_impl::java::security::cert
 		void __constructor();
 		
 		// Methods
-		jobject clone();
-		void init(jboolean arg0);
-		void check(__jni_impl::java::security::cert::Certificate arg0, __jni_impl::__JniBaseClass arg1);
 		void check(__jni_impl::java::security::cert::Certificate arg0);
-		jboolean isForwardCheckingSupported();
+		void check(__jni_impl::java::security::cert::Certificate arg0, __jni_impl::__JniBaseClass arg1);
+		jobject clone();
 		QAndroidJniObject getSupportedExtensions();
+		void init(jboolean arg0);
+		jboolean isForwardCheckingSupported();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -45,19 +45,12 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	jobject PKIXCertPathChecker::clone()
-	{
-		return __thiz.callObjectMethod(
-			"clone",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	void PKIXCertPathChecker::init(jboolean arg0)
+	void PKIXCertPathChecker::check(__jni_impl::java::security::cert::Certificate arg0)
 	{
 		__thiz.callMethod<void>(
-			"init",
-			"(Z)V",
-			arg0
+			"check",
+			"(Ljava/security/cert/Certificate;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void PKIXCertPathChecker::check(__jni_impl::java::security::cert::Certificate arg0, __jni_impl::__JniBaseClass arg1)
@@ -69,12 +62,26 @@ namespace __jni_impl::java::security::cert
 			arg1.__jniObject().object()
 		);
 	}
-	void PKIXCertPathChecker::check(__jni_impl::java::security::cert::Certificate arg0)
+	jobject PKIXCertPathChecker::clone()
+	{
+		return __thiz.callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	QAndroidJniObject PKIXCertPathChecker::getSupportedExtensions()
+	{
+		return __thiz.callObjectMethod(
+			"getSupportedExtensions",
+			"()Ljava/util/Set;"
+		);
+	}
+	void PKIXCertPathChecker::init(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
-			"check",
-			"(Ljava/security/cert/Certificate;)V",
-			arg0.__jniObject().object()
+			"init",
+			"(Z)V",
+			arg0
 		);
 	}
 	jboolean PKIXCertPathChecker::isForwardCheckingSupported()
@@ -82,13 +89,6 @@ namespace __jni_impl::java::security::cert
 		return __thiz.callMethod<jboolean>(
 			"isForwardCheckingSupported",
 			"()Z"
-		);
-	}
-	QAndroidJniObject PKIXCertPathChecker::getSupportedExtensions()
-	{
-		return __thiz.callObjectMethod(
-			"getSupportedExtensions",
-			"()Ljava/util/Set;"
 		);
 	}
 } // namespace __jni_impl::java::security::cert

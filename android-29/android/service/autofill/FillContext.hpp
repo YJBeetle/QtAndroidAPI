@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::app::assist
 {
 	class AssistStructure;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 namespace __jni_impl::android::view::autofill
 {
@@ -30,17 +30,17 @@ namespace __jni_impl::android::service::autofill
 		void __constructor();
 		
 		// Methods
-		jstring toString();
+		jint describeContents();
+		QAndroidJniObject getFocusedId();
 		jint getRequestId();
 		QAndroidJniObject getStructure();
-		QAndroidJniObject getFocusedId();
-		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::service::autofill
 
-#include "../../os/Parcel.hpp"
 #include "../../app/assist/AssistStructure.hpp"
+#include "../../os/Parcel.hpp"
 #include "../../view/autofill/AutofillId.hpp"
 
 namespace __jni_impl::android::service::autofill
@@ -64,12 +64,19 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	jstring FillContext::toString()
+	jint FillContext::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	QAndroidJniObject FillContext::getFocusedId()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getFocusedId",
+			"()Landroid/view/autofill/AutofillId;"
+		);
 	}
 	jint FillContext::getRequestId()
 	{
@@ -85,19 +92,12 @@ namespace __jni_impl::android::service::autofill
 			"()Landroid/app/assist/AssistStructure;"
 		);
 	}
-	QAndroidJniObject FillContext::getFocusedId()
+	jstring FillContext::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getFocusedId",
-			"()Landroid/view/autofill/AutofillId;"
-		);
-	}
-	jint FillContext::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void FillContext::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

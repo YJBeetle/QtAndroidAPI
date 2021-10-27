@@ -24,9 +24,9 @@ namespace __jni_impl::android::app
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		void dump(__jni_impl::__JniBaseClass arg0, const QString &arg1);
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -67,15 +67,6 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void ApplicationErrorReport_RunningServiceInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	void ApplicationErrorReport_RunningServiceInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -92,6 +83,15 @@ namespace __jni_impl::android::app
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	void ApplicationErrorReport_RunningServiceInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::app

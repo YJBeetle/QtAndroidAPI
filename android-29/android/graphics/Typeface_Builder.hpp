@@ -9,17 +9,17 @@ namespace __jni_impl::android::content::res
 {
 	class AssetManager;
 }
-namespace __jni_impl::java::io
+namespace __jni_impl::android::graphics
 {
-	class FileDescriptor;
+	class Typeface;
 }
 namespace __jni_impl::java::io
 {
 	class File;
 }
-namespace __jni_impl::android::graphics
+namespace __jni_impl::java::io
 {
-	class Typeface;
+	class FileDescriptor;
 }
 
 namespace __jni_impl::android::graphics
@@ -30,52 +30,50 @@ namespace __jni_impl::android::graphics
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::android::content::res::AssetManager arg0, jstring arg1);
-		void __constructor(__jni_impl::android::content::res::AssetManager arg0, const QString &arg1);
+		void __constructor(__jni_impl::java::io::File arg0);
+		void __constructor(__jni_impl::java::io::FileDescriptor arg0);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor(__jni_impl::java::io::FileDescriptor arg0);
-		void __constructor(__jni_impl::java::io::File arg0);
+		void __constructor(__jni_impl::android::content::res::AssetManager arg0, jstring arg1);
+		void __constructor(__jni_impl::android::content::res::AssetManager arg0, const QString &arg1);
 		
 		// Methods
 		QAndroidJniObject build();
+		QAndroidJniObject setFallback(jstring arg0);
+		QAndroidJniObject setFallback(const QString &arg0);
 		QAndroidJniObject setFontVariationSettings(jarray arg0);
 		QAndroidJniObject setFontVariationSettings(jstring arg0);
 		QAndroidJniObject setFontVariationSettings(const QString &arg0);
-		QAndroidJniObject setWeight(jint arg0);
 		QAndroidJniObject setItalic(jboolean arg0);
 		QAndroidJniObject setTtcIndex(jint arg0);
-		QAndroidJniObject setFallback(jstring arg0);
-		QAndroidJniObject setFallback(const QString &arg0);
+		QAndroidJniObject setWeight(jint arg0);
 	};
 } // namespace __jni_impl::android::graphics
 
 #include "../content/res/AssetManager.hpp"
-#include "../../java/io/FileDescriptor.hpp"
-#include "../../java/io/File.hpp"
 #include "Typeface.hpp"
+#include "../../java/io/File.hpp"
+#include "../../java/io/FileDescriptor.hpp"
 
 namespace __jni_impl::android::graphics
 {
 	// Fields
 	
 	// Constructors
-	void Typeface_Builder::__constructor(__jni_impl::android::content::res::AssetManager arg0, jstring arg1)
+	void Typeface_Builder::__constructor(__jni_impl::java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Typeface$Builder",
-			"(Landroid/content/res/AssetManager;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1
+			"(Ljava/io/File;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	void Typeface_Builder::__constructor(__jni_impl::android::content::res::AssetManager arg0, const QString &arg1)
+	void Typeface_Builder::__constructor(__jni_impl::java::io::FileDescriptor arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Typeface$Builder",
-			"(Landroid/content/res/AssetManager;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
+			"(Ljava/io/FileDescriptor;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void Typeface_Builder::__constructor(jstring arg0)
@@ -94,20 +92,22 @@ namespace __jni_impl::android::graphics
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void Typeface_Builder::__constructor(__jni_impl::java::io::FileDescriptor arg0)
+	void Typeface_Builder::__constructor(__jni_impl::android::content::res::AssetManager arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Typeface$Builder",
-			"(Ljava/io/FileDescriptor;)V",
-			arg0.__jniObject().object()
+			"(Landroid/content/res/AssetManager;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
-	void Typeface_Builder::__constructor(__jni_impl::java::io::File arg0)
+	void Typeface_Builder::__constructor(__jni_impl::android::content::res::AssetManager arg0, const QString &arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.graphics.Typeface$Builder",
-			"(Ljava/io/File;)V",
-			arg0.__jniObject().object()
+			"(Landroid/content/res/AssetManager;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	
@@ -117,6 +117,22 @@ namespace __jni_impl::android::graphics
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/graphics/Typeface;"
+		);
+	}
+	QAndroidJniObject Typeface_Builder::setFallback(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setFallback",
+			"(Ljava/lang/String;)Landroid/graphics/Typeface$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject Typeface_Builder::setFallback(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setFallback",
+			"(Ljava/lang/String;)Landroid/graphics/Typeface$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Typeface_Builder::setFontVariationSettings(jarray arg0)
@@ -143,14 +159,6 @@ namespace __jni_impl::android::graphics
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	QAndroidJniObject Typeface_Builder::setWeight(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setWeight",
-			"(I)Landroid/graphics/Typeface$Builder;",
-			arg0
-		);
-	}
 	QAndroidJniObject Typeface_Builder::setItalic(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -167,20 +175,12 @@ namespace __jni_impl::android::graphics
 			arg0
 		);
 	}
-	QAndroidJniObject Typeface_Builder::setFallback(jstring arg0)
+	QAndroidJniObject Typeface_Builder::setWeight(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setFallback",
-			"(Ljava/lang/String;)Landroid/graphics/Typeface$Builder;",
+			"setWeight",
+			"(I)Landroid/graphics/Typeface$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject Typeface_Builder::setFallback(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setFallback",
-			"(Ljava/lang/String;)Landroid/graphics/Typeface$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::graphics
@@ -191,13 +191,7 @@ namespace android::graphics
 	{
 	public:
 		Typeface_Builder(QAndroidJniObject obj) { __thiz = obj; }
-		Typeface_Builder(__jni_impl::android::content::res::AssetManager arg0, jstring arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
-		Typeface_Builder(jstring arg0)
+		Typeface_Builder(__jni_impl::java::io::File arg0)
 		{
 			__constructor(
 				arg0);
@@ -207,10 +201,16 @@ namespace android::graphics
 			__constructor(
 				arg0);
 		}
-		Typeface_Builder(__jni_impl::java::io::File arg0)
+		Typeface_Builder(jstring arg0)
 		{
 			__constructor(
 				arg0);
+		}
+		Typeface_Builder(__jni_impl::android::content::res::AssetManager arg0, jstring arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
 		}
 	};
 } // namespace android::graphics

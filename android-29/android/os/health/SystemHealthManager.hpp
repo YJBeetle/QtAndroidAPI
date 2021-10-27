@@ -21,8 +21,8 @@ namespace __jni_impl::android::os::health
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject takeUidSnapshot(jint arg0);
 		QAndroidJniObject takeMyUidSnapshot();
+		QAndroidJniObject takeUidSnapshot(jint arg0);
 		jarray takeUidSnapshots(jintArray arg0);
 	};
 } // namespace __jni_impl::android::os::health
@@ -42,19 +42,19 @@ namespace __jni_impl::android::os::health
 	}
 	
 	// Methods
+	QAndroidJniObject SystemHealthManager::takeMyUidSnapshot()
+	{
+		return __thiz.callObjectMethod(
+			"takeMyUidSnapshot",
+			"()Landroid/os/health/HealthStats;"
+		);
+	}
 	QAndroidJniObject SystemHealthManager::takeUidSnapshot(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"takeUidSnapshot",
 			"(I)Landroid/os/health/HealthStats;",
 			arg0
-		);
-	}
-	QAndroidJniObject SystemHealthManager::takeMyUidSnapshot()
-	{
-		return __thiz.callObjectMethod(
-			"takeMyUidSnapshot",
-			"()Landroid/os/health/HealthStats;"
 		);
 	}
 	jarray SystemHealthManager::takeUidSnapshots(jintArray arg0)

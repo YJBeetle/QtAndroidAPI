@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::icu::text
 {
-	class BidiRun;
+	class BidiClassifier;
 }
 namespace __jni_impl::android::icu::text
 {
-	class BidiClassifier;
+	class BidiRun;
 }
 
 namespace __jni_impl::android::icu::text
@@ -51,77 +51,77 @@ namespace __jni_impl::android::icu::text
 		static jbyte RTL();
 		
 		// Constructors
-		void __constructor(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5);
+		void __constructor();
 		void __constructor(__jni_impl::__JniBaseClass arg0);
+		void __constructor(jint arg0, jint arg1);
 		void __constructor(jstring arg0, jint arg1);
 		void __constructor(const QString &arg0, jint arg1);
-		void __constructor(jint arg0, jint arg1);
-		void __constructor();
+		void __constructor(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
-		jint getLength();
-		jcharArray getText();
-		jboolean isRightToLeft();
-		jbyte getDirection();
-		void setContext(jstring arg0, jstring arg1);
-		void setContext(const QString &arg0, const QString &arg1);
-		void setInverse(jboolean arg0);
-		jboolean isInverse();
-		void setReorderingMode(jint arg0);
-		jint getReorderingMode();
-		void setReorderingOptions(jint arg0);
-		jint getReorderingOptions();
 		static jbyte getBaseDirection(jstring arg0);
 		static jbyte getBaseDirection(const QString &arg0);
+		static jintArray invertMap(jintArray arg0);
+		static jintArray reorderLogical(jbyteArray arg0);
+		static jintArray reorderVisual(jbyteArray arg0);
+		static void reorderVisually(jbyteArray arg0, jint arg1, jobjectArray arg2, jint arg3, jint arg4);
+		static jboolean requiresBidi(jcharArray arg0, jint arg1, jint arg2);
+		static jstring writeReverse(jstring arg0, jint arg1);
+		static jstring writeReverse(const QString &arg0, jint arg1);
+		jboolean baseIsLeftToRight();
+		jint countParagraphs();
+		jint countRuns();
+		QAndroidJniObject createLineBidi(jint arg0, jint arg1);
+		jint getBaseLevel();
+		QAndroidJniObject getCustomClassifier();
+		jint getCustomizedClass(jint arg0);
+		jbyte getDirection();
+		jint getLength();
+		jbyte getLevelAt(jint arg0);
+		jbyteArray getLevels();
+		jint getLogicalIndex(jint arg0);
+		jintArray getLogicalMap();
+		QAndroidJniObject getLogicalRun(jint arg0);
+		jbyte getParaLevel();
+		QAndroidJniObject getParagraph(jint arg0);
+		QAndroidJniObject getParagraphByIndex(jint arg0);
+		jint getParagraphIndex(jint arg0);
+		jint getProcessedLength();
+		jint getReorderingMode();
+		jint getReorderingOptions();
+		jint getResultLength();
+		jint getRunCount();
+		jint getRunLevel(jint arg0);
+		jint getRunLimit(jint arg0);
+		jint getRunStart(jint arg0);
+		jcharArray getText();
+		jstring getTextAsString();
+		jint getVisualIndex(jint arg0);
+		jintArray getVisualMap();
+		QAndroidJniObject getVisualRun(jint arg0);
+		jboolean isInverse();
+		jboolean isLeftToRight();
+		jboolean isMixed();
+		jboolean isOrderParagraphsLTR();
+		jboolean isRightToLeft();
+		void orderParagraphsLTR(jboolean arg0);
+		void setContext(jstring arg0, jstring arg1);
+		void setContext(const QString &arg0, const QString &arg1);
+		void setCustomClassifier(__jni_impl::android::icu::text::BidiClassifier arg0);
+		void setInverse(jboolean arg0);
+		QAndroidJniObject setLine(jint arg0, jint arg1);
 		void setPara(__jni_impl::__JniBaseClass arg0);
 		void setPara(jcharArray arg0, jbyte arg1, jbyteArray arg2);
 		void setPara(jstring arg0, jbyte arg1, jbyteArray arg2);
 		void setPara(const QString &arg0, jbyte arg1, jbyteArray arg2);
-		void orderParagraphsLTR(jboolean arg0);
-		jboolean isOrderParagraphsLTR();
-		jstring getTextAsString();
-		jint getProcessedLength();
-		jint getResultLength();
-		jbyte getParaLevel();
-		jint countParagraphs();
-		QAndroidJniObject getParagraphByIndex(jint arg0);
-		QAndroidJniObject getParagraph(jint arg0);
-		jint getParagraphIndex(jint arg0);
-		void setCustomClassifier(__jni_impl::android::icu::text::BidiClassifier arg0);
-		QAndroidJniObject getCustomClassifier();
-		jint getCustomizedClass(jint arg0);
-		QAndroidJniObject setLine(jint arg0, jint arg1);
-		jbyte getLevelAt(jint arg0);
-		jbyteArray getLevels();
-		QAndroidJniObject getLogicalRun(jint arg0);
-		jint countRuns();
-		QAndroidJniObject getVisualRun(jint arg0);
-		jint getVisualIndex(jint arg0);
-		jint getLogicalIndex(jint arg0);
-		jintArray getLogicalMap();
-		jintArray getVisualMap();
-		static jintArray reorderLogical(jbyteArray arg0);
-		static jintArray reorderVisual(jbyteArray arg0);
-		static jintArray invertMap(jintArray arg0);
-		QAndroidJniObject createLineBidi(jint arg0, jint arg1);
-		jboolean isMixed();
-		jboolean isLeftToRight();
-		jboolean baseIsLeftToRight();
-		jint getBaseLevel();
-		jint getRunCount();
-		jint getRunLevel(jint arg0);
-		jint getRunStart(jint arg0);
-		jint getRunLimit(jint arg0);
-		static jboolean requiresBidi(jcharArray arg0, jint arg1, jint arg2);
-		static void reorderVisually(jbyteArray arg0, jint arg1, jobjectArray arg2, jint arg3, jint arg4);
+		void setReorderingMode(jint arg0);
+		void setReorderingOptions(jint arg0);
 		jstring writeReordered(jint arg0);
-		static jstring writeReverse(jstring arg0, jint arg1);
-		static jstring writeReverse(const QString &arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "BidiRun.hpp"
 #include "BidiClassifier.hpp"
+#include "BidiRun.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -331,17 +331,11 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Constructors
-	void Bidi::__constructor(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5)
+	void Bidi::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.Bidi",
-			"([CI[BIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5
+			"()V"
 		);
 	}
 	void Bidi::__constructor(__jni_impl::__JniBaseClass arg0)
@@ -350,6 +344,15 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.Bidi",
 			"(Ljava/text/AttributedCharacterIterator;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void Bidi::__constructor(jint arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.text.Bidi",
+			"(II)V",
+			arg0,
+			arg1
 		);
 	}
 	void Bidi::__constructor(jstring arg0, jint arg1)
@@ -370,29 +373,302 @@ namespace __jni_impl::android::icu::text
 			arg1
 		);
 	}
-	void Bidi::__constructor(jint arg0, jint arg1)
+	void Bidi::__constructor(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.Bidi",
-			"(II)V",
+			"([CI[BIII)V",
 			arg0,
-			arg1
-		);
-	}
-	void Bidi::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.Bidi",
-			"()V"
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5
 		);
 	}
 	
 	// Methods
+	jbyte Bidi::getBaseDirection(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jbyte>(
+			"android.icu.text.Bidi",
+			"getBaseDirection",
+			"(Ljava/lang/CharSequence;)B",
+			arg0
+		);
+	}
+	jbyte Bidi::getBaseDirection(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jbyte>(
+			"android.icu.text.Bidi",
+			"getBaseDirection",
+			"(Ljava/lang/CharSequence;)B",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jintArray Bidi::invertMap(jintArray arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Bidi",
+			"invertMap",
+			"([I)[I",
+			arg0
+		).object<jintArray>();
+	}
+	jintArray Bidi::reorderLogical(jbyteArray arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Bidi",
+			"reorderLogical",
+			"([B)[I",
+			arg0
+		).object<jintArray>();
+	}
+	jintArray Bidi::reorderVisual(jbyteArray arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Bidi",
+			"reorderVisual",
+			"([B)[I",
+			arg0
+		).object<jintArray>();
+	}
+	void Bidi::reorderVisually(jbyteArray arg0, jint arg1, jobjectArray arg2, jint arg3, jint arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.icu.text.Bidi",
+			"reorderVisually",
+			"([BI[Ljava/lang/Object;II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	jboolean Bidi::requiresBidi(jcharArray arg0, jint arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.icu.text.Bidi",
+			"requiresBidi",
+			"([CII)Z",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	jstring Bidi::writeReverse(jstring arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Bidi",
+			"writeReverse",
+			"(Ljava/lang/String;I)Ljava/lang/String;",
+			arg0,
+			arg1
+		).object<jstring>();
+	}
+	jstring Bidi::writeReverse(const QString &arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.Bidi",
+			"writeReverse",
+			"(Ljava/lang/String;I)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		).object<jstring>();
+	}
+	jboolean Bidi::baseIsLeftToRight()
+	{
+		return __thiz.callMethod<jboolean>(
+			"baseIsLeftToRight",
+			"()Z"
+		);
+	}
+	jint Bidi::countParagraphs()
+	{
+		return __thiz.callMethod<jint>(
+			"countParagraphs",
+			"()I"
+		);
+	}
+	jint Bidi::countRuns()
+	{
+		return __thiz.callMethod<jint>(
+			"countRuns",
+			"()I"
+		);
+	}
+	QAndroidJniObject Bidi::createLineBidi(jint arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"createLineBidi",
+			"(II)Landroid/icu/text/Bidi;",
+			arg0,
+			arg1
+		);
+	}
+	jint Bidi::getBaseLevel()
+	{
+		return __thiz.callMethod<jint>(
+			"getBaseLevel",
+			"()I"
+		);
+	}
+	QAndroidJniObject Bidi::getCustomClassifier()
+	{
+		return __thiz.callObjectMethod(
+			"getCustomClassifier",
+			"()Landroid/icu/text/BidiClassifier;"
+		);
+	}
+	jint Bidi::getCustomizedClass(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getCustomizedClass",
+			"(I)I",
+			arg0
+		);
+	}
+	jbyte Bidi::getDirection()
+	{
+		return __thiz.callMethod<jbyte>(
+			"getDirection",
+			"()B"
+		);
+	}
 	jint Bidi::getLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getLength",
 			"()I"
+		);
+	}
+	jbyte Bidi::getLevelAt(jint arg0)
+	{
+		return __thiz.callMethod<jbyte>(
+			"getLevelAt",
+			"(I)B",
+			arg0
+		);
+	}
+	jbyteArray Bidi::getLevels()
+	{
+		return __thiz.callObjectMethod(
+			"getLevels",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jint Bidi::getLogicalIndex(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getLogicalIndex",
+			"(I)I",
+			arg0
+		);
+	}
+	jintArray Bidi::getLogicalMap()
+	{
+		return __thiz.callObjectMethod(
+			"getLogicalMap",
+			"()[I"
+		).object<jintArray>();
+	}
+	QAndroidJniObject Bidi::getLogicalRun(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getLogicalRun",
+			"(I)Landroid/icu/text/BidiRun;",
+			arg0
+		);
+	}
+	jbyte Bidi::getParaLevel()
+	{
+		return __thiz.callMethod<jbyte>(
+			"getParaLevel",
+			"()B"
+		);
+	}
+	QAndroidJniObject Bidi::getParagraph(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getParagraph",
+			"(I)Landroid/icu/text/BidiRun;",
+			arg0
+		);
+	}
+	QAndroidJniObject Bidi::getParagraphByIndex(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getParagraphByIndex",
+			"(I)Landroid/icu/text/BidiRun;",
+			arg0
+		);
+	}
+	jint Bidi::getParagraphIndex(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getParagraphIndex",
+			"(I)I",
+			arg0
+		);
+	}
+	jint Bidi::getProcessedLength()
+	{
+		return __thiz.callMethod<jint>(
+			"getProcessedLength",
+			"()I"
+		);
+	}
+	jint Bidi::getReorderingMode()
+	{
+		return __thiz.callMethod<jint>(
+			"getReorderingMode",
+			"()I"
+		);
+	}
+	jint Bidi::getReorderingOptions()
+	{
+		return __thiz.callMethod<jint>(
+			"getReorderingOptions",
+			"()I"
+		);
+	}
+	jint Bidi::getResultLength()
+	{
+		return __thiz.callMethod<jint>(
+			"getResultLength",
+			"()I"
+		);
+	}
+	jint Bidi::getRunCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getRunCount",
+			"()I"
+		);
+	}
+	jint Bidi::getRunLevel(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getRunLevel",
+			"(I)I",
+			arg0
+		);
+	}
+	jint Bidi::getRunLimit(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getRunLimit",
+			"(I)I",
+			arg0
+		);
+	}
+	jint Bidi::getRunStart(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getRunStart",
+			"(I)I",
+			arg0
 		);
 	}
 	jcharArray Bidi::getText()
@@ -402,6 +678,64 @@ namespace __jni_impl::android::icu::text
 			"()[C"
 		).object<jcharArray>();
 	}
+	jstring Bidi::getTextAsString()
+	{
+		return __thiz.callObjectMethod(
+			"getTextAsString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint Bidi::getVisualIndex(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getVisualIndex",
+			"(I)I",
+			arg0
+		);
+	}
+	jintArray Bidi::getVisualMap()
+	{
+		return __thiz.callObjectMethod(
+			"getVisualMap",
+			"()[I"
+		).object<jintArray>();
+	}
+	QAndroidJniObject Bidi::getVisualRun(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getVisualRun",
+			"(I)Landroid/icu/text/BidiRun;",
+			arg0
+		);
+	}
+	jboolean Bidi::isInverse()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isInverse",
+			"()Z"
+		);
+	}
+	jboolean Bidi::isLeftToRight()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLeftToRight",
+			"()Z"
+		);
+	}
+	jboolean Bidi::isMixed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isMixed",
+			"()Z"
+		);
+	}
+	jboolean Bidi::isOrderParagraphsLTR()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isOrderParagraphsLTR",
+			"()Z"
+		);
+	}
 	jboolean Bidi::isRightToLeft()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -409,11 +743,12 @@ namespace __jni_impl::android::icu::text
 			"()Z"
 		);
 	}
-	jbyte Bidi::getDirection()
+	void Bidi::orderParagraphsLTR(jboolean arg0)
 	{
-		return __thiz.callMethod<jbyte>(
-			"getDirection",
-			"()B"
+		__thiz.callMethod<void>(
+			"orderParagraphsLTR",
+			"(Z)V",
+			arg0
 		);
 	}
 	void Bidi::setContext(jstring arg0, jstring arg1)
@@ -434,6 +769,14 @@ namespace __jni_impl::android::icu::text
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
+	void Bidi::setCustomClassifier(__jni_impl::android::icu::text::BidiClassifier arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCustomClassifier",
+			"(Landroid/icu/text/BidiClassifier;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void Bidi::setInverse(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -442,59 +785,13 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
-	jboolean Bidi::isInverse()
+	QAndroidJniObject Bidi::setLine(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isInverse",
-			"()Z"
-		);
-	}
-	void Bidi::setReorderingMode(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setReorderingMode",
-			"(I)V",
-			arg0
-		);
-	}
-	jint Bidi::getReorderingMode()
-	{
-		return __thiz.callMethod<jint>(
-			"getReorderingMode",
-			"()I"
-		);
-	}
-	void Bidi::setReorderingOptions(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setReorderingOptions",
-			"(I)V",
-			arg0
-		);
-	}
-	jint Bidi::getReorderingOptions()
-	{
-		return __thiz.callMethod<jint>(
-			"getReorderingOptions",
-			"()I"
-		);
-	}
-	jbyte Bidi::getBaseDirection(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jbyte>(
-			"android.icu.text.Bidi",
-			"getBaseDirection",
-			"(Ljava/lang/CharSequence;)B",
-			arg0
-		);
-	}
-	jbyte Bidi::getBaseDirection(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jbyte>(
-			"android.icu.text.Bidi",
-			"getBaseDirection",
-			"(Ljava/lang/CharSequence;)B",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+		return __thiz.callObjectMethod(
+			"setLine",
+			"(II)Landroid/icu/text/Bidi;",
+			arg0,
+			arg1
 		);
 	}
 	void Bidi::setPara(__jni_impl::__JniBaseClass arg0)
@@ -535,297 +832,20 @@ namespace __jni_impl::android::icu::text
 			arg2
 		);
 	}
-	void Bidi::orderParagraphsLTR(jboolean arg0)
+	void Bidi::setReorderingMode(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"orderParagraphsLTR",
-			"(Z)V",
+			"setReorderingMode",
+			"(I)V",
 			arg0
 		);
 	}
-	jboolean Bidi::isOrderParagraphsLTR()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isOrderParagraphsLTR",
-			"()Z"
-		);
-	}
-	jstring Bidi::getTextAsString()
-	{
-		return __thiz.callObjectMethod(
-			"getTextAsString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint Bidi::getProcessedLength()
-	{
-		return __thiz.callMethod<jint>(
-			"getProcessedLength",
-			"()I"
-		);
-	}
-	jint Bidi::getResultLength()
-	{
-		return __thiz.callMethod<jint>(
-			"getResultLength",
-			"()I"
-		);
-	}
-	jbyte Bidi::getParaLevel()
-	{
-		return __thiz.callMethod<jbyte>(
-			"getParaLevel",
-			"()B"
-		);
-	}
-	jint Bidi::countParagraphs()
-	{
-		return __thiz.callMethod<jint>(
-			"countParagraphs",
-			"()I"
-		);
-	}
-	QAndroidJniObject Bidi::getParagraphByIndex(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getParagraphByIndex",
-			"(I)Landroid/icu/text/BidiRun;",
-			arg0
-		);
-	}
-	QAndroidJniObject Bidi::getParagraph(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getParagraph",
-			"(I)Landroid/icu/text/BidiRun;",
-			arg0
-		);
-	}
-	jint Bidi::getParagraphIndex(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getParagraphIndex",
-			"(I)I",
-			arg0
-		);
-	}
-	void Bidi::setCustomClassifier(__jni_impl::android::icu::text::BidiClassifier arg0)
+	void Bidi::setReorderingOptions(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setCustomClassifier",
-			"(Landroid/icu/text/BidiClassifier;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Bidi::getCustomClassifier()
-	{
-		return __thiz.callObjectMethod(
-			"getCustomClassifier",
-			"()Landroid/icu/text/BidiClassifier;"
-		);
-	}
-	jint Bidi::getCustomizedClass(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getCustomizedClass",
-			"(I)I",
+			"setReorderingOptions",
+			"(I)V",
 			arg0
-		);
-	}
-	QAndroidJniObject Bidi::setLine(jint arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setLine",
-			"(II)Landroid/icu/text/Bidi;",
-			arg0,
-			arg1
-		);
-	}
-	jbyte Bidi::getLevelAt(jint arg0)
-	{
-		return __thiz.callMethod<jbyte>(
-			"getLevelAt",
-			"(I)B",
-			arg0
-		);
-	}
-	jbyteArray Bidi::getLevels()
-	{
-		return __thiz.callObjectMethod(
-			"getLevels",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	QAndroidJniObject Bidi::getLogicalRun(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getLogicalRun",
-			"(I)Landroid/icu/text/BidiRun;",
-			arg0
-		);
-	}
-	jint Bidi::countRuns()
-	{
-		return __thiz.callMethod<jint>(
-			"countRuns",
-			"()I"
-		);
-	}
-	QAndroidJniObject Bidi::getVisualRun(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getVisualRun",
-			"(I)Landroid/icu/text/BidiRun;",
-			arg0
-		);
-	}
-	jint Bidi::getVisualIndex(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getVisualIndex",
-			"(I)I",
-			arg0
-		);
-	}
-	jint Bidi::getLogicalIndex(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getLogicalIndex",
-			"(I)I",
-			arg0
-		);
-	}
-	jintArray Bidi::getLogicalMap()
-	{
-		return __thiz.callObjectMethod(
-			"getLogicalMap",
-			"()[I"
-		).object<jintArray>();
-	}
-	jintArray Bidi::getVisualMap()
-	{
-		return __thiz.callObjectMethod(
-			"getVisualMap",
-			"()[I"
-		).object<jintArray>();
-	}
-	jintArray Bidi::reorderLogical(jbyteArray arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.Bidi",
-			"reorderLogical",
-			"([B)[I",
-			arg0
-		).object<jintArray>();
-	}
-	jintArray Bidi::reorderVisual(jbyteArray arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.Bidi",
-			"reorderVisual",
-			"([B)[I",
-			arg0
-		).object<jintArray>();
-	}
-	jintArray Bidi::invertMap(jintArray arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.Bidi",
-			"invertMap",
-			"([I)[I",
-			arg0
-		).object<jintArray>();
-	}
-	QAndroidJniObject Bidi::createLineBidi(jint arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"createLineBidi",
-			"(II)Landroid/icu/text/Bidi;",
-			arg0,
-			arg1
-		);
-	}
-	jboolean Bidi::isMixed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isMixed",
-			"()Z"
-		);
-	}
-	jboolean Bidi::isLeftToRight()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isLeftToRight",
-			"()Z"
-		);
-	}
-	jboolean Bidi::baseIsLeftToRight()
-	{
-		return __thiz.callMethod<jboolean>(
-			"baseIsLeftToRight",
-			"()Z"
-		);
-	}
-	jint Bidi::getBaseLevel()
-	{
-		return __thiz.callMethod<jint>(
-			"getBaseLevel",
-			"()I"
-		);
-	}
-	jint Bidi::getRunCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getRunCount",
-			"()I"
-		);
-	}
-	jint Bidi::getRunLevel(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getRunLevel",
-			"(I)I",
-			arg0
-		);
-	}
-	jint Bidi::getRunStart(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getRunStart",
-			"(I)I",
-			arg0
-		);
-	}
-	jint Bidi::getRunLimit(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getRunLimit",
-			"(I)I",
-			arg0
-		);
-	}
-	jboolean Bidi::requiresBidi(jcharArray arg0, jint arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.icu.text.Bidi",
-			"requiresBidi",
-			"([CII)Z",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void Bidi::reorderVisually(jbyteArray arg0, jint arg1, jobjectArray arg2, jint arg3, jint arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.icu.text.Bidi",
-			"reorderVisually",
-			"([BI[Ljava/lang/Object;II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
 		);
 	}
 	jstring Bidi::writeReordered(jint arg0)
@@ -836,26 +856,6 @@ namespace __jni_impl::android::icu::text
 			arg0
 		).object<jstring>();
 	}
-	jstring Bidi::writeReverse(jstring arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.Bidi",
-			"writeReverse",
-			"(Ljava/lang/String;I)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
-	}
-	jstring Bidi::writeReverse(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.Bidi",
-			"writeReverse",
-			"(Ljava/lang/String;I)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		).object<jstring>();
-	}
 } // namespace __jni_impl::android::icu::text
 
 namespace android::icu::text
@@ -864,6 +864,27 @@ namespace android::icu::text
 	{
 	public:
 		Bidi(QAndroidJniObject obj) { __thiz = obj; }
+		Bidi()
+		{
+			__constructor();
+		}
+		Bidi(__jni_impl::__JniBaseClass arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		Bidi(jint arg0, jint arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
+		}
+		Bidi(jstring arg0, jint arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
+		}
 		Bidi(jcharArray arg0, jint arg1, jbyteArray arg2, jint arg3, jint arg4, jint arg5)
 		{
 			__constructor(
@@ -873,27 +894,6 @@ namespace android::icu::text
 				arg3,
 				arg4,
 				arg5);
-		}
-		Bidi(__jni_impl::__JniBaseClass arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		Bidi(jstring arg0, jint arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
-		Bidi(jint arg0, jint arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
-		Bidi()
-		{
-			__constructor();
 		}
 	};
 } // namespace android::icu::text

@@ -25,15 +25,15 @@ namespace __jni_impl::java::nio::channels
 		void __constructor();
 		
 		// Methods
-		void shutdown();
-		QAndroidJniObject provider();
+		static QAndroidJniObject withCachedThreadPool(__jni_impl::__JniBaseClass arg0, jint arg1);
+		static QAndroidJniObject withFixedThreadPool(jint arg0, __jni_impl::__JniBaseClass arg1);
+		static QAndroidJniObject withThreadPool(__jni_impl::__JniBaseClass arg0);
+		jboolean awaitTermination(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
 		jboolean isShutdown();
 		jboolean isTerminated();
+		QAndroidJniObject provider();
+		void shutdown();
 		void shutdownNow();
-		jboolean awaitTermination(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
-		static QAndroidJniObject withFixedThreadPool(jint arg0, __jni_impl::__JniBaseClass arg1);
-		static QAndroidJniObject withCachedThreadPool(__jni_impl::__JniBaseClass arg0, jint arg1);
-		static QAndroidJniObject withThreadPool(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::java::nio::channels
 
@@ -53,18 +53,42 @@ namespace __jni_impl::java::nio::channels
 	}
 	
 	// Methods
-	void AsynchronousChannelGroup::shutdown()
+	QAndroidJniObject AsynchronousChannelGroup::withCachedThreadPool(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
-		__thiz.callMethod<void>(
-			"shutdown",
-			"()V"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.channels.AsynchronousChannelGroup",
+			"withCachedThreadPool",
+			"(Ljava/util/concurrent/ExecutorService;I)Ljava/nio/channels/AsynchronousChannelGroup;",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
-	QAndroidJniObject AsynchronousChannelGroup::provider()
+	QAndroidJniObject AsynchronousChannelGroup::withFixedThreadPool(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
-		return __thiz.callObjectMethod(
-			"provider",
-			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.channels.AsynchronousChannelGroup",
+			"withFixedThreadPool",
+			"(ILjava/util/concurrent/ThreadFactory;)Ljava/nio/channels/AsynchronousChannelGroup;",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject AsynchronousChannelGroup::withThreadPool(__jni_impl::__JniBaseClass arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.channels.AsynchronousChannelGroup",
+			"withThreadPool",
+			"(Ljava/util/concurrent/ExecutorService;)Ljava/nio/channels/AsynchronousChannelGroup;",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean AsynchronousChannelGroup::awaitTermination(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"awaitTermination",
+			"(JLjava/util/concurrent/TimeUnit;)Z",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
 	jboolean AsynchronousChannelGroup::isShutdown()
@@ -81,49 +105,25 @@ namespace __jni_impl::java::nio::channels
 			"()Z"
 		);
 	}
+	QAndroidJniObject AsynchronousChannelGroup::provider()
+	{
+		return __thiz.callObjectMethod(
+			"provider",
+			"()Ljava/nio/channels/spi/AsynchronousChannelProvider;"
+		);
+	}
+	void AsynchronousChannelGroup::shutdown()
+	{
+		__thiz.callMethod<void>(
+			"shutdown",
+			"()V"
+		);
+	}
 	void AsynchronousChannelGroup::shutdownNow()
 	{
 		__thiz.callMethod<void>(
 			"shutdownNow",
 			"()V"
-		);
-	}
-	jboolean AsynchronousChannelGroup::awaitTermination(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"awaitTermination",
-			"(JLjava/util/concurrent/TimeUnit;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject AsynchronousChannelGroup::withFixedThreadPool(jint arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.channels.AsynchronousChannelGroup",
-			"withFixedThreadPool",
-			"(ILjava/util/concurrent/ThreadFactory;)Ljava/nio/channels/AsynchronousChannelGroup;",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject AsynchronousChannelGroup::withCachedThreadPool(__jni_impl::__JniBaseClass arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.channels.AsynchronousChannelGroup",
-			"withCachedThreadPool",
-			"(Ljava/util/concurrent/ExecutorService;I)Ljava/nio/channels/AsynchronousChannelGroup;",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject AsynchronousChannelGroup::withThreadPool(__jni_impl::__JniBaseClass arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.channels.AsynchronousChannelGroup",
-			"withThreadPool",
-			"(Ljava/util/concurrent/ExecutorService;)Ljava/nio/channels/AsynchronousChannelGroup;",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::java::nio::channels

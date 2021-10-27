@@ -25,11 +25,11 @@ namespace __jni_impl::android::os
 		void __constructor(const QString &arg0, jint arg1);
 		
 		// Methods
-		void run();
+		QAndroidJniObject getLooper();
 		jint getThreadId();
 		jboolean quit();
 		jboolean quitSafely();
-		QAndroidJniObject getLooper();
+		void run();
 	};
 } // namespace __jni_impl::android::os
 
@@ -76,11 +76,11 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	void HandlerThread::run()
+	QAndroidJniObject HandlerThread::getLooper()
 	{
-		__thiz.callMethod<void>(
-			"run",
-			"()V"
+		return __thiz.callObjectMethod(
+			"getLooper",
+			"()Landroid/os/Looper;"
 		);
 	}
 	jint HandlerThread::getThreadId()
@@ -104,11 +104,11 @@ namespace __jni_impl::android::os
 			"()Z"
 		);
 	}
-	QAndroidJniObject HandlerThread::getLooper()
+	void HandlerThread::run()
 	{
-		return __thiz.callObjectMethod(
-			"getLooper",
-			"()Landroid/os/Looper;"
+		__thiz.callMethod<void>(
+			"run",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::os

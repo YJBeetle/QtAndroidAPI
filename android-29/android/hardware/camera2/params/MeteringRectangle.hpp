@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::graphics
 {
-	class Rect;
+	class Point;
 }
 namespace __jni_impl::android::graphics
 {
-	class Point;
+	class Rect;
 }
 namespace __jni_impl::android::util
 {
@@ -34,23 +34,23 @@ namespace __jni_impl::android::hardware::camera2::params
 		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		
 		// Methods
-		jboolean equals(jobject arg0);
 		jboolean equals(__jni_impl::android::hardware::camera2::params::MeteringRectangle arg0);
-		jstring toString();
-		jint hashCode();
-		QAndroidJniObject getSize();
+		jboolean equals(jobject arg0);
+		jint getHeight();
 		jint getMeteringWeight();
-		QAndroidJniObject getUpperLeftPoint();
 		QAndroidJniObject getRect();
+		QAndroidJniObject getSize();
+		QAndroidJniObject getUpperLeftPoint();
+		jint getWidth();
 		jint getX();
 		jint getY();
-		jint getWidth();
-		jint getHeight();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
-#include "../../../graphics/Rect.hpp"
 #include "../../../graphics/Point.hpp"
+#include "../../../graphics/Rect.hpp"
 #include "../../../util/Size.hpp"
 
 namespace __jni_impl::android::hardware::camera2::params
@@ -112,14 +112,6 @@ namespace __jni_impl::android::hardware::camera2::params
 	}
 	
 	// Methods
-	jboolean MeteringRectangle::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
 	jboolean MeteringRectangle::equals(__jni_impl::android::hardware::camera2::params::MeteringRectangle arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -128,25 +120,19 @@ namespace __jni_impl::android::hardware::camera2::params
 			arg0.__jniObject().object()
 		);
 	}
-	jstring MeteringRectangle::toString()
+	jboolean MeteringRectangle::equals(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint MeteringRectangle::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
-	QAndroidJniObject MeteringRectangle::getSize()
+	jint MeteringRectangle::getHeight()
 	{
-		return __thiz.callObjectMethod(
-			"getSize",
-			"()Landroid/util/Size;"
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
 		);
 	}
 	jint MeteringRectangle::getMeteringWeight()
@@ -156,6 +142,20 @@ namespace __jni_impl::android::hardware::camera2::params
 			"()I"
 		);
 	}
+	QAndroidJniObject MeteringRectangle::getRect()
+	{
+		return __thiz.callObjectMethod(
+			"getRect",
+			"()Landroid/graphics/Rect;"
+		);
+	}
+	QAndroidJniObject MeteringRectangle::getSize()
+	{
+		return __thiz.callObjectMethod(
+			"getSize",
+			"()Landroid/util/Size;"
+		);
+	}
 	QAndroidJniObject MeteringRectangle::getUpperLeftPoint()
 	{
 		return __thiz.callObjectMethod(
@@ -163,11 +163,11 @@ namespace __jni_impl::android::hardware::camera2::params
 			"()Landroid/graphics/Point;"
 		);
 	}
-	QAndroidJniObject MeteringRectangle::getRect()
+	jint MeteringRectangle::getWidth()
 	{
-		return __thiz.callObjectMethod(
-			"getRect",
-			"()Landroid/graphics/Rect;"
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I"
 		);
 	}
 	jint MeteringRectangle::getX()
@@ -184,19 +184,19 @@ namespace __jni_impl::android::hardware::camera2::params
 			"()I"
 		);
 	}
-	jint MeteringRectangle::getWidth()
+	jint MeteringRectangle::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"getWidth",
+			"hashCode",
 			"()I"
 		);
 	}
-	jint MeteringRectangle::getHeight()
+	jstring MeteringRectangle::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::hardware::camera2::params
 

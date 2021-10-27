@@ -9,13 +9,13 @@ namespace __jni_impl::android::app
 {
 	class DirectAction;
 }
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 namespace __jni_impl::android::content
 {
 	class LocusId;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 
 namespace __jni_impl::android::app
@@ -37,8 +37,8 @@ namespace __jni_impl::android::app
 } // namespace __jni_impl::android::app
 
 #include "DirectAction.hpp"
-#include "../os/Bundle.hpp"
 #include "../content/LocusId.hpp"
+#include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::app
 {

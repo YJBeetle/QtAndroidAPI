@@ -21,19 +21,19 @@ namespace __jni_impl::android::os
 		static QAndroidJniObject EMPTY();
 		
 		// Constructors
+		void __constructor();
 		void __constructor(__jni_impl::android::os::PersistableBundle arg0);
 		void __constructor(jint arg0);
-		void __constructor();
 		
 		// Methods
-		jstring toString();
 		jobject clone();
-		void putPersistableBundle(jstring arg0, __jni_impl::android::os::PersistableBundle arg1);
-		void putPersistableBundle(const QString &arg0, __jni_impl::android::os::PersistableBundle arg1);
-		QAndroidJniObject getPersistableBundle(jstring arg0);
-		QAndroidJniObject getPersistableBundle(const QString &arg0);
 		QAndroidJniObject deepCopy();
 		jint describeContents();
+		QAndroidJniObject getPersistableBundle(jstring arg0);
+		QAndroidJniObject getPersistableBundle(const QString &arg0);
+		void putPersistableBundle(jstring arg0, __jni_impl::android::os::PersistableBundle arg1);
+		void putPersistableBundle(const QString &arg0, __jni_impl::android::os::PersistableBundle arg1);
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::os
@@ -61,6 +61,13 @@ namespace __jni_impl::android::os
 	}
 	
 	// Constructors
+	void PersistableBundle::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.os.PersistableBundle",
+			"()V"
+		);
+	}
 	void PersistableBundle::__constructor(__jni_impl::android::os::PersistableBundle arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -77,28 +84,44 @@ namespace __jni_impl::android::os
 			arg0
 		);
 	}
-	void PersistableBundle::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.PersistableBundle",
-			"()V"
-		);
-	}
 	
 	// Methods
-	jstring PersistableBundle::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jobject PersistableBundle::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
+	}
+	QAndroidJniObject PersistableBundle::deepCopy()
+	{
+		return __thiz.callObjectMethod(
+			"deepCopy",
+			"()Landroid/os/PersistableBundle;"
+		);
+	}
+	jint PersistableBundle::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	QAndroidJniObject PersistableBundle::getPersistableBundle(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getPersistableBundle",
+			"(Ljava/lang/String;)Landroid/os/PersistableBundle;",
+			arg0
+		);
+	}
+	QAndroidJniObject PersistableBundle::getPersistableBundle(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getPersistableBundle",
+			"(Ljava/lang/String;)Landroid/os/PersistableBundle;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 	void PersistableBundle::putPersistableBundle(jstring arg0, __jni_impl::android::os::PersistableBundle arg1)
 	{
@@ -118,35 +141,12 @@ namespace __jni_impl::android::os
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject PersistableBundle::getPersistableBundle(jstring arg0)
+	jstring PersistableBundle::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getPersistableBundle",
-			"(Ljava/lang/String;)Landroid/os/PersistableBundle;",
-			arg0
-		);
-	}
-	QAndroidJniObject PersistableBundle::getPersistableBundle(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getPersistableBundle",
-			"(Ljava/lang/String;)Landroid/os/PersistableBundle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject PersistableBundle::deepCopy()
-	{
-		return __thiz.callObjectMethod(
-			"deepCopy",
-			"()Landroid/os/PersistableBundle;"
-		);
-	}
-	jint PersistableBundle::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void PersistableBundle::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -165,6 +165,10 @@ namespace android::os
 	{
 	public:
 		PersistableBundle(QAndroidJniObject obj) { __thiz = obj; }
+		PersistableBundle()
+		{
+			__constructor();
+		}
 		PersistableBundle(__jni_impl::android::os::PersistableBundle arg0)
 		{
 			__constructor(
@@ -174,10 +178,6 @@ namespace android::os
 		{
 			__constructor(
 				arg0);
-		}
-		PersistableBundle()
-		{
-			__constructor();
 		}
 	};
 } // namespace android::os

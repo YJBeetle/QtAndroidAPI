@@ -6,14 +6,6 @@
 #include "../../../__JniBaseClass.hpp"
 #include "../NetworkSpecifier.hpp"
 
-namespace __jni_impl::android::os
-{
-	class PatternMatcher;
-}
-namespace __jni_impl::android::util
-{
-	class Pair;
-}
 namespace __jni_impl::android::net::wifi
 {
 	class WifiConfiguration;
@@ -21,6 +13,14 @@ namespace __jni_impl::android::net::wifi
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::os
+{
+	class PatternMatcher;
+}
+namespace __jni_impl::android::util
+{
+	class Pair;
 }
 
 namespace __jni_impl::android::net::wifi
@@ -35,18 +35,18 @@ namespace __jni_impl::android::net::wifi
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		jint hashCode();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi
 
-#include "../../os/PatternMatcher.hpp"
-#include "../../util/Pair.hpp"
 #include "WifiConfiguration.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../os/PatternMatcher.hpp"
+#include "../../util/Pair.hpp"
 
 namespace __jni_impl::android::net::wifi
 {
@@ -69,6 +69,13 @@ namespace __jni_impl::android::net::wifi
 	}
 	
 	// Methods
+	jint WifiNetworkSpecifier::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean WifiNetworkSpecifier::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -77,13 +84,6 @@ namespace __jni_impl::android::net::wifi
 			arg0
 		);
 	}
-	jstring WifiNetworkSpecifier::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint WifiNetworkSpecifier::hashCode()
 	{
 		return __thiz.callMethod<jint>(
@@ -91,12 +91,12 @@ namespace __jni_impl::android::net::wifi
 			"()I"
 		);
 	}
-	jint WifiNetworkSpecifier::describeContents()
+	jstring WifiNetworkSpecifier::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void WifiNetworkSpecifier::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

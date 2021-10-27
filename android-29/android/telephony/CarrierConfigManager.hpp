@@ -197,10 +197,10 @@ namespace __jni_impl::android::telephony
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getConfigForSubId(jint arg0);
 		static jboolean isConfigForIdentifiedCarrier(__jni_impl::android::os::PersistableBundle arg0);
-		void notifyConfigChangedForSubId(jint arg0);
 		QAndroidJniObject getConfig();
+		QAndroidJniObject getConfigForSubId(jint arg0);
+		void notifyConfigChangedForSubId(jint arg0);
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -1595,14 +1595,6 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
-	QAndroidJniObject CarrierConfigManager::getConfigForSubId(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getConfigForSubId",
-			"(I)Landroid/os/PersistableBundle;",
-			arg0
-		);
-	}
 	jboolean CarrierConfigManager::isConfigForIdentifiedCarrier(__jni_impl::android::os::PersistableBundle arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -1612,19 +1604,27 @@ namespace __jni_impl::android::telephony
 			arg0.__jniObject().object()
 		);
 	}
+	QAndroidJniObject CarrierConfigManager::getConfig()
+	{
+		return __thiz.callObjectMethod(
+			"getConfig",
+			"()Landroid/os/PersistableBundle;"
+		);
+	}
+	QAndroidJniObject CarrierConfigManager::getConfigForSubId(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getConfigForSubId",
+			"(I)Landroid/os/PersistableBundle;",
+			arg0
+		);
+	}
 	void CarrierConfigManager::notifyConfigChangedForSubId(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"notifyConfigChangedForSubId",
 			"(I)V",
 			arg0
-		);
-	}
-	QAndroidJniObject CarrierConfigManager::getConfig()
-	{
-		return __thiz.callObjectMethod(
-			"getConfig",
-			"()Landroid/os/PersistableBundle;"
 		);
 	}
 } // namespace __jni_impl::android::telephony

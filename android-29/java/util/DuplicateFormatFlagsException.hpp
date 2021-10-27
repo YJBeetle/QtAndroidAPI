@@ -22,8 +22,8 @@ namespace __jni_impl::java::util
 		void __constructor(const QString &arg0);
 		
 		// Methods
-		jstring getMessage();
 		jstring getFlags();
+		jstring getMessage();
 	};
 } // namespace __jni_impl::java::util
 
@@ -51,17 +51,17 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	jstring DuplicateFormatFlagsException::getMessage()
-	{
-		return __thiz.callObjectMethod(
-			"getMessage",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jstring DuplicateFormatFlagsException::getFlags()
 	{
 		return __thiz.callObjectMethod(
 			"getFlags",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring DuplicateFormatFlagsException::getMessage()
+	{
+		return __thiz.callObjectMethod(
+			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

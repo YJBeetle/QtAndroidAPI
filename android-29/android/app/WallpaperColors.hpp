@@ -5,9 +5,9 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
+namespace __jni_impl::android::graphics
 {
-	class Parcel;
+	class Bitmap;
 }
 namespace __jni_impl::android::graphics
 {
@@ -17,9 +17,9 @@ namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
 }
-namespace __jni_impl::android::graphics
+namespace __jni_impl::android::os
 {
-	class Bitmap;
+	class Parcel;
 }
 
 namespace __jni_impl::android::app
@@ -35,23 +35,23 @@ namespace __jni_impl::android::app
 		void __constructor(__jni_impl::android::graphics::Color arg0, __jni_impl::android::graphics::Color arg1, __jni_impl::android::graphics::Color arg2);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		static QAndroidJniObject fromDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 		static QAndroidJniObject fromBitmap(__jni_impl::android::graphics::Bitmap arg0);
+		static QAndroidJniObject fromDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
+		jint describeContents();
+		jboolean equals(jobject arg0);
 		QAndroidJniObject getPrimaryColor();
 		QAndroidJniObject getSecondaryColor();
 		QAndroidJniObject getTertiaryColor();
-		jint describeContents();
+		jint hashCode();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
-#include "../os/Parcel.hpp"
+#include "../graphics/Bitmap.hpp"
 #include "../graphics/Color.hpp"
 #include "../graphics/drawable/Drawable.hpp"
-#include "../graphics/Bitmap.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -86,26 +86,13 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	jboolean WallpaperColors::equals(jobject arg0)
+	QAndroidJniObject WallpaperColors::fromBitmap(__jni_impl::android::graphics::Bitmap arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring WallpaperColors::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint WallpaperColors::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.app.WallpaperColors",
+			"fromBitmap",
+			"(Landroid/graphics/Bitmap;)Landroid/app/WallpaperColors;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject WallpaperColors::fromDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
@@ -117,13 +104,19 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject WallpaperColors::fromBitmap(__jni_impl::android::graphics::Bitmap arg0)
+	jint WallpaperColors::describeContents()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.app.WallpaperColors",
-			"fromBitmap",
-			"(Landroid/graphics/Bitmap;)Landroid/app/WallpaperColors;",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	jboolean WallpaperColors::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 	QAndroidJniObject WallpaperColors::getPrimaryColor()
@@ -147,12 +140,19 @@ namespace __jni_impl::android::app
 			"()Landroid/graphics/Color;"
 		);
 	}
-	jint WallpaperColors::describeContents()
+	jint WallpaperColors::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
 		);
+	}
+	jstring WallpaperColors::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void WallpaperColors::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

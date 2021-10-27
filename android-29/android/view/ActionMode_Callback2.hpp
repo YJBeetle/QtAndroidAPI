@@ -5,6 +5,10 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::graphics
+{
+	class Rect;
+}
 namespace __jni_impl::android::view
 {
 	class ActionMode;
@@ -12,10 +16,6 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::view
 {
 	class View;
-}
-namespace __jni_impl::android::graphics
-{
-	class Rect;
 }
 
 namespace __jni_impl::android::view
@@ -33,9 +33,9 @@ namespace __jni_impl::android::view
 	};
 } // namespace __jni_impl::android::view
 
+#include "../graphics/Rect.hpp"
 #include "ActionMode.hpp"
 #include "View.hpp"
-#include "../graphics/Rect.hpp"
 
 namespace __jni_impl::android::view
 {

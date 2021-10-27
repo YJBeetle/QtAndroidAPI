@@ -16,12 +16,12 @@ namespace __jni_impl::java::security
 		// Fields
 		
 		// Constructors
+		void __constructor();
+		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
 		void __constructor(const QString &arg0, jthrowable arg1);
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
-		void __constructor();
 		
 		// Methods
 	};
@@ -33,6 +33,29 @@ namespace __jni_impl::java::security
 	// Fields
 	
 	// Constructors
+	void SignatureException::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.SignatureException",
+			"()V"
+		);
+	}
+	void SignatureException::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.SignatureException",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void SignatureException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.SignatureException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void SignatureException::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -59,29 +82,6 @@ namespace __jni_impl::java::security
 			arg1
 		);
 	}
-	void SignatureException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.SignatureException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void SignatureException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.SignatureException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void SignatureException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.SignatureException",
-			"()V"
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::java::security
@@ -92,6 +92,15 @@ namespace java::security
 	{
 	public:
 		SignatureException(QAndroidJniObject obj) { __thiz = obj; }
+		SignatureException()
+		{
+			__constructor();
+		}
+		SignatureException(jstring arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		SignatureException(jthrowable arg0)
 		{
 			__constructor(
@@ -102,15 +111,6 @@ namespace java::security
 			__constructor(
 				arg0,
 				arg1);
-		}
-		SignatureException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		SignatureException()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::security

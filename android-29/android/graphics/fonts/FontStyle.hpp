@@ -32,10 +32,10 @@ namespace __jni_impl::android::graphics::fonts
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jint getSlant();
 		jint getWeight();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::graphics::fonts
 
@@ -162,20 +162,6 @@ namespace __jni_impl::android::graphics::fonts
 			arg0
 		);
 	}
-	jstring FontStyle::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint FontStyle::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	jint FontStyle::getSlant()
 	{
 		return __thiz.callMethod<jint>(
@@ -189,6 +175,20 @@ namespace __jni_impl::android::graphics::fonts
 			"getWeight",
 			"()I"
 		);
+	}
+	jint FontStyle::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring FontStyle::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::graphics::fonts
 

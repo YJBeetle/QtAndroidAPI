@@ -30,27 +30,27 @@ namespace __jni_impl::android::service::notification
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint getPriorityMessageSenders();
 		jint getPriorityCallSenders();
-		jint getPriorityCategoryReminders();
-		jint getPriorityCategoryEvents();
-		jint getPriorityCategoryMessages();
-		jint getPriorityCategoryCalls();
-		jint getPriorityCategoryRepeatCallers();
 		jint getPriorityCategoryAlarms();
+		jint getPriorityCategoryCalls();
+		jint getPriorityCategoryEvents();
 		jint getPriorityCategoryMedia();
+		jint getPriorityCategoryMessages();
+		jint getPriorityCategoryReminders();
+		jint getPriorityCategoryRepeatCallers();
 		jint getPriorityCategorySystem();
+		jint getPriorityMessageSenders();
+		jint getVisualEffectAmbient();
+		jint getVisualEffectBadge();
 		jint getVisualEffectFullScreenIntent();
 		jint getVisualEffectLights();
+		jint getVisualEffectNotificationList();
 		jint getVisualEffectPeek();
 		jint getVisualEffectStatusBar();
-		jint getVisualEffectBadge();
-		jint getVisualEffectAmbient();
-		jint getVisualEffectNotificationList();
-		jint describeContents();
+		jint hashCode();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::service::notification
@@ -134,6 +134,13 @@ namespace __jni_impl::android::service::notification
 	}
 	
 	// Methods
+	jint ZenPolicy::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean ZenPolicy::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -142,66 +149,10 @@ namespace __jni_impl::android::service::notification
 			arg0
 		);
 	}
-	jstring ZenPolicy::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint ZenPolicy::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jint ZenPolicy::getPriorityMessageSenders()
-	{
-		return __thiz.callMethod<jint>(
-			"getPriorityMessageSenders",
-			"()I"
-		);
-	}
 	jint ZenPolicy::getPriorityCallSenders()
 	{
 		return __thiz.callMethod<jint>(
 			"getPriorityCallSenders",
-			"()I"
-		);
-	}
-	jint ZenPolicy::getPriorityCategoryReminders()
-	{
-		return __thiz.callMethod<jint>(
-			"getPriorityCategoryReminders",
-			"()I"
-		);
-	}
-	jint ZenPolicy::getPriorityCategoryEvents()
-	{
-		return __thiz.callMethod<jint>(
-			"getPriorityCategoryEvents",
-			"()I"
-		);
-	}
-	jint ZenPolicy::getPriorityCategoryMessages()
-	{
-		return __thiz.callMethod<jint>(
-			"getPriorityCategoryMessages",
-			"()I"
-		);
-	}
-	jint ZenPolicy::getPriorityCategoryCalls()
-	{
-		return __thiz.callMethod<jint>(
-			"getPriorityCategoryCalls",
-			"()I"
-		);
-	}
-	jint ZenPolicy::getPriorityCategoryRepeatCallers()
-	{
-		return __thiz.callMethod<jint>(
-			"getPriorityCategoryRepeatCallers",
 			"()I"
 		);
 	}
@@ -212,6 +163,20 @@ namespace __jni_impl::android::service::notification
 			"()I"
 		);
 	}
+	jint ZenPolicy::getPriorityCategoryCalls()
+	{
+		return __thiz.callMethod<jint>(
+			"getPriorityCategoryCalls",
+			"()I"
+		);
+	}
+	jint ZenPolicy::getPriorityCategoryEvents()
+	{
+		return __thiz.callMethod<jint>(
+			"getPriorityCategoryEvents",
+			"()I"
+		);
+	}
 	jint ZenPolicy::getPriorityCategoryMedia()
 	{
 		return __thiz.callMethod<jint>(
@@ -219,10 +184,52 @@ namespace __jni_impl::android::service::notification
 			"()I"
 		);
 	}
+	jint ZenPolicy::getPriorityCategoryMessages()
+	{
+		return __thiz.callMethod<jint>(
+			"getPriorityCategoryMessages",
+			"()I"
+		);
+	}
+	jint ZenPolicy::getPriorityCategoryReminders()
+	{
+		return __thiz.callMethod<jint>(
+			"getPriorityCategoryReminders",
+			"()I"
+		);
+	}
+	jint ZenPolicy::getPriorityCategoryRepeatCallers()
+	{
+		return __thiz.callMethod<jint>(
+			"getPriorityCategoryRepeatCallers",
+			"()I"
+		);
+	}
 	jint ZenPolicy::getPriorityCategorySystem()
 	{
 		return __thiz.callMethod<jint>(
 			"getPriorityCategorySystem",
+			"()I"
+		);
+	}
+	jint ZenPolicy::getPriorityMessageSenders()
+	{
+		return __thiz.callMethod<jint>(
+			"getPriorityMessageSenders",
+			"()I"
+		);
+	}
+	jint ZenPolicy::getVisualEffectAmbient()
+	{
+		return __thiz.callMethod<jint>(
+			"getVisualEffectAmbient",
+			"()I"
+		);
+	}
+	jint ZenPolicy::getVisualEffectBadge()
+	{
+		return __thiz.callMethod<jint>(
+			"getVisualEffectBadge",
 			"()I"
 		);
 	}
@@ -240,6 +247,13 @@ namespace __jni_impl::android::service::notification
 			"()I"
 		);
 	}
+	jint ZenPolicy::getVisualEffectNotificationList()
+	{
+		return __thiz.callMethod<jint>(
+			"getVisualEffectNotificationList",
+			"()I"
+		);
+	}
 	jint ZenPolicy::getVisualEffectPeek()
 	{
 		return __thiz.callMethod<jint>(
@@ -254,33 +268,19 @@ namespace __jni_impl::android::service::notification
 			"()I"
 		);
 	}
-	jint ZenPolicy::getVisualEffectBadge()
+	jint ZenPolicy::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"getVisualEffectBadge",
+			"hashCode",
 			"()I"
 		);
 	}
-	jint ZenPolicy::getVisualEffectAmbient()
+	jstring ZenPolicy::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"getVisualEffectAmbient",
-			"()I"
-		);
-	}
-	jint ZenPolicy::getVisualEffectNotificationList()
-	{
-		return __thiz.callMethod<jint>(
-			"getVisualEffectNotificationList",
-			"()I"
-		);
-	}
-	jint ZenPolicy::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void ZenPolicy::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

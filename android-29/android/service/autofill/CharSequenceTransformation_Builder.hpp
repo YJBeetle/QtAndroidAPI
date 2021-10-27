@@ -5,6 +5,10 @@
 
 #include "../../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::service::autofill
+{
+	class CharSequenceTransformation;
+}
 namespace __jni_impl::android::view::autofill
 {
 	class AutofillId;
@@ -12,10 +16,6 @@ namespace __jni_impl::android::view::autofill
 namespace __jni_impl::java::util::regex
 {
 	class Pattern;
-}
-namespace __jni_impl::android::service::autofill
-{
-	class CharSequenceTransformation;
 }
 
 namespace __jni_impl::android::service::autofill
@@ -30,15 +30,15 @@ namespace __jni_impl::android::service::autofill
 		void __constructor(__jni_impl::android::view::autofill::AutofillId arg0, __jni_impl::java::util::regex::Pattern arg1, const QString &arg2);
 		
 		// Methods
-		QAndroidJniObject build();
 		QAndroidJniObject addField(__jni_impl::android::view::autofill::AutofillId arg0, __jni_impl::java::util::regex::Pattern arg1, jstring arg2);
 		QAndroidJniObject addField(__jni_impl::android::view::autofill::AutofillId arg0, __jni_impl::java::util::regex::Pattern arg1, const QString &arg2);
+		QAndroidJniObject build();
 	};
 } // namespace __jni_impl::android::service::autofill
 
+#include "CharSequenceTransformation.hpp"
 #include "../../view/autofill/AutofillId.hpp"
 #include "../../../java/util/regex/Pattern.hpp"
-#include "CharSequenceTransformation.hpp"
 
 namespace __jni_impl::android::service::autofill
 {
@@ -67,13 +67,6 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	QAndroidJniObject CharSequenceTransformation_Builder::build()
-	{
-		return __thiz.callObjectMethod(
-			"build",
-			"()Landroid/service/autofill/CharSequenceTransformation;"
-		);
-	}
 	QAndroidJniObject CharSequenceTransformation_Builder::addField(__jni_impl::android::view::autofill::AutofillId arg0, __jni_impl::java::util::regex::Pattern arg1, jstring arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -92,6 +85,13 @@ namespace __jni_impl::android::service::autofill
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
+	}
+	QAndroidJniObject CharSequenceTransformation_Builder::build()
+	{
+		return __thiz.callObjectMethod(
+			"build",
+			"()Landroid/service/autofill/CharSequenceTransformation;"
 		);
 	}
 } // namespace __jni_impl::android::service::autofill

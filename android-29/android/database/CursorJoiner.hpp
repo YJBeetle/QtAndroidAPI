@@ -21,10 +21,10 @@ namespace __jni_impl::android::database
 		void __constructor(__jni_impl::__JniBaseClass arg0, jarray arg1, __jni_impl::__JniBaseClass arg2, jarray arg3);
 		
 		// Methods
-		void remove();
-		QAndroidJniObject iterator();
 		jboolean hasNext();
+		QAndroidJniObject iterator();
 		QAndroidJniObject next();
+		void remove();
 	};
 } // namespace __jni_impl::android::database
 
@@ -48,11 +48,11 @@ namespace __jni_impl::android::database
 	}
 	
 	// Methods
-	void CursorJoiner::remove()
+	jboolean CursorJoiner::hasNext()
 	{
-		__thiz.callMethod<void>(
-			"remove",
-			"()V"
+		return __thiz.callMethod<jboolean>(
+			"hasNext",
+			"()Z"
 		);
 	}
 	QAndroidJniObject CursorJoiner::iterator()
@@ -62,18 +62,18 @@ namespace __jni_impl::android::database
 			"()Ljava/util/Iterator;"
 		);
 	}
-	jboolean CursorJoiner::hasNext()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasNext",
-			"()Z"
-		);
-	}
 	QAndroidJniObject CursorJoiner::next()
 	{
 		return __thiz.callObjectMethod(
 			"next",
 			"()Landroid/database/CursorJoiner$Result;"
+		);
+	}
+	void CursorJoiner::remove()
+	{
+		__thiz.callMethod<void>(
+			"remove",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::database

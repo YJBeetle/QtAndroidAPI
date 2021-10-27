@@ -21,18 +21,18 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jint getHeightAlignment();
-		QAndroidJniObject getSupportedFrameRates();
-		QAndroidJniObject getSupportedWidthsFor(jint arg0);
-		QAndroidJniObject getSupportedHeightsFor(jint arg0);
-		QAndroidJniObject getSupportedFrameRatesFor(jint arg0, jint arg1);
+		jboolean areSizeAndRateSupported(jint arg0, jint arg1, jdouble arg2);
 		QAndroidJniObject getAchievableFrameRatesFor(jint arg0, jint arg1);
 		QAndroidJniObject getBitrateRange();
-		QAndroidJniObject getSupportedWidths();
+		jint getHeightAlignment();
+		QAndroidJniObject getSupportedFrameRates();
+		QAndroidJniObject getSupportedFrameRatesFor(jint arg0, jint arg1);
 		QAndroidJniObject getSupportedHeights();
-		jint getWidthAlignment();
+		QAndroidJniObject getSupportedHeightsFor(jint arg0);
 		QAndroidJniObject getSupportedPerformancePoints();
-		jboolean areSizeAndRateSupported(jint arg0, jint arg1, jdouble arg2);
+		QAndroidJniObject getSupportedWidths();
+		QAndroidJniObject getSupportedWidthsFor(jint arg0);
+		jint getWidthAlignment();
 		jboolean isSizeSupported(jint arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
@@ -52,43 +52,14 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jint MediaCodecInfo_VideoCapabilities::getHeightAlignment()
+	jboolean MediaCodecInfo_VideoCapabilities::areSizeAndRateSupported(jint arg0, jint arg1, jdouble arg2)
 	{
-		return __thiz.callMethod<jint>(
-			"getHeightAlignment",
-			"()I"
-		);
-	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedFrameRates()
-	{
-		return __thiz.callObjectMethod(
-			"getSupportedFrameRates",
-			"()Landroid/util/Range;"
-		);
-	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedWidthsFor(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getSupportedWidthsFor",
-			"(I)Landroid/util/Range;",
-			arg0
-		);
-	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedHeightsFor(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getSupportedHeightsFor",
-			"(I)Landroid/util/Range;",
-			arg0
-		);
-	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedFrameRatesFor(jint arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getSupportedFrameRatesFor",
-			"(II)Landroid/util/Range;",
+		return __thiz.callMethod<jboolean>(
+			"areSizeAndRateSupported",
+			"(IID)Z",
 			arg0,
-			arg1
+			arg1,
+			arg2
 		);
 	}
 	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getAchievableFrameRatesFor(jint arg0, jint arg1)
@@ -107,11 +78,27 @@ namespace __jni_impl::android::media
 			"()Landroid/util/Range;"
 		);
 	}
-	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedWidths()
+	jint MediaCodecInfo_VideoCapabilities::getHeightAlignment()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeightAlignment",
+			"()I"
+		);
+	}
+	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedFrameRates()
 	{
 		return __thiz.callObjectMethod(
-			"getSupportedWidths",
+			"getSupportedFrameRates",
 			"()Landroid/util/Range;"
+		);
+	}
+	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedFrameRatesFor(jint arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getSupportedFrameRatesFor",
+			"(II)Landroid/util/Range;",
+			arg0,
+			arg1
 		);
 	}
 	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedHeights()
@@ -121,11 +108,12 @@ namespace __jni_impl::android::media
 			"()Landroid/util/Range;"
 		);
 	}
-	jint MediaCodecInfo_VideoCapabilities::getWidthAlignment()
+	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedHeightsFor(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getWidthAlignment",
-			"()I"
+		return __thiz.callObjectMethod(
+			"getSupportedHeightsFor",
+			"(I)Landroid/util/Range;",
+			arg0
 		);
 	}
 	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedPerformancePoints()
@@ -135,14 +123,26 @@ namespace __jni_impl::android::media
 			"()Ljava/util/List;"
 		);
 	}
-	jboolean MediaCodecInfo_VideoCapabilities::areSizeAndRateSupported(jint arg0, jint arg1, jdouble arg2)
+	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedWidths()
 	{
-		return __thiz.callMethod<jboolean>(
-			"areSizeAndRateSupported",
-			"(IID)Z",
-			arg0,
-			arg1,
-			arg2
+		return __thiz.callObjectMethod(
+			"getSupportedWidths",
+			"()Landroid/util/Range;"
+		);
+	}
+	QAndroidJniObject MediaCodecInfo_VideoCapabilities::getSupportedWidthsFor(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getSupportedWidthsFor",
+			"(I)Landroid/util/Range;",
+			arg0
+		);
+	}
+	jint MediaCodecInfo_VideoCapabilities::getWidthAlignment()
+	{
+		return __thiz.callMethod<jint>(
+			"getWidthAlignment",
+			"()I"
 		);
 	}
 	jboolean MediaCodecInfo_VideoCapabilities::isSizeSupported(jint arg0, jint arg1)

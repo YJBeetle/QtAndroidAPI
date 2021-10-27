@@ -54,11 +54,11 @@ namespace __jni_impl::android::media
 		void __constructor(jint arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jboolean covers(__jni_impl::android::media::MediaFormat arg0);
 		jboolean covers(__jni_impl::android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint arg0);
+		jboolean covers(__jni_impl::android::media::MediaFormat arg0);
+		jboolean equals(jobject arg0);
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::media
 
@@ -345,26 +345,12 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jboolean MediaCodecInfo_VideoCapabilities_PerformancePoint::equals(jobject arg0)
+	jboolean MediaCodecInfo_VideoCapabilities_PerformancePoint::covers(__jni_impl::android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring MediaCodecInfo_VideoCapabilities_PerformancePoint::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint MediaCodecInfo_VideoCapabilities_PerformancePoint::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+			"covers",
+			"(Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 	jboolean MediaCodecInfo_VideoCapabilities_PerformancePoint::covers(__jni_impl::android::media::MediaFormat arg0)
@@ -375,13 +361,27 @@ namespace __jni_impl::android::media
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean MediaCodecInfo_VideoCapabilities_PerformancePoint::covers(__jni_impl::android::media::MediaCodecInfo_VideoCapabilities_PerformancePoint arg0)
+	jboolean MediaCodecInfo_VideoCapabilities_PerformancePoint::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"covers",
-			"(Landroid/media/MediaCodecInfo$VideoCapabilities$PerformancePoint;)Z",
-			arg0.__jniObject().object()
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
+	}
+	jint MediaCodecInfo_VideoCapabilities_PerformancePoint::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring MediaCodecInfo_VideoCapabilities_PerformancePoint::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media
 

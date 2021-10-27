@@ -22,11 +22,11 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		void release();
+		jint describeContents();
 		jboolean isValid();
 		void readFromParcel(__jni_impl::android::os::Parcel arg0);
-		jint describeContents();
+		void release();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
@@ -54,18 +54,11 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jstring SurfaceControl::toString()
+	jint SurfaceControl::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void SurfaceControl::release()
-	{
-		__thiz.callMethod<void>(
-			"release",
-			"()V"
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
 		);
 	}
 	jboolean SurfaceControl::isValid()
@@ -83,12 +76,19 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
-	jint SurfaceControl::describeContents()
+	void SurfaceControl::release()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		__thiz.callMethod<void>(
+			"release",
+			"()V"
 		);
+	}
+	jstring SurfaceControl::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void SurfaceControl::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

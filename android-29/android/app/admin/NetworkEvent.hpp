@@ -22,10 +22,10 @@ namespace __jni_impl::android::app::admin
 		void __constructor();
 		
 		// Methods
-		jstring getPackageName();
-		jlong getId();
-		jlong getTimestamp();
 		jint describeContents();
+		jlong getId();
+		jstring getPackageName();
+		jlong getTimestamp();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::admin
@@ -53,12 +53,12 @@ namespace __jni_impl::android::app::admin
 	}
 	
 	// Methods
-	jstring NetworkEvent::getPackageName()
+	jint NetworkEvent::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"getPackageName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
 	jlong NetworkEvent::getId()
 	{
@@ -67,18 +67,18 @@ namespace __jni_impl::android::app::admin
 			"()J"
 		);
 	}
+	jstring NetworkEvent::getPackageName()
+	{
+		return __thiz.callObjectMethod(
+			"getPackageName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jlong NetworkEvent::getTimestamp()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTimestamp",
 			"()J"
-		);
-	}
-	jint NetworkEvent::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
 		);
 	}
 	void NetworkEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

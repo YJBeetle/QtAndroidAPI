@@ -26,17 +26,17 @@ namespace __jni_impl::android::content
 		void __constructor();
 		
 		// Methods
-		void setText(jstring arg0);
-		void setText(const QString &arg0);
-		jstring getText();
-		void setPrimaryClip(__jni_impl::android::content::ClipData arg0);
+		void addPrimaryClipChangedListener(__jni_impl::__JniBaseClass arg0);
 		void clearPrimaryClip();
 		QAndroidJniObject getPrimaryClip();
 		QAndroidJniObject getPrimaryClipDescription();
+		jstring getText();
 		jboolean hasPrimaryClip();
-		void addPrimaryClipChangedListener(__jni_impl::__JniBaseClass arg0);
-		void removePrimaryClipChangedListener(__jni_impl::__JniBaseClass arg0);
 		jboolean hasText();
+		void removePrimaryClipChangedListener(__jni_impl::__JniBaseClass arg0);
+		void setPrimaryClip(__jni_impl::android::content::ClipData arg0);
+		void setText(jstring arg0);
+		void setText(const QString &arg0);
 	};
 } // namespace __jni_impl::android::content
 
@@ -56,34 +56,11 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
-	void ClipboardManager::setText(jstring arg0)
+	void ClipboardManager::addPrimaryClipChangedListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"setText",
-			"(Ljava/lang/CharSequence;)V",
-			arg0
-		);
-	}
-	void ClipboardManager::setText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setText",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring ClipboardManager::getText()
-	{
-		return __thiz.callObjectMethod(
-			"getText",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	void ClipboardManager::setPrimaryClip(__jni_impl::android::content::ClipData arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPrimaryClip",
-			"(Landroid/content/ClipData;)V",
+			"addPrimaryClipChangedListener",
+			"(Landroid/content/ClipboardManager$OnPrimaryClipChangedListener;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -108,6 +85,13 @@ namespace __jni_impl::android::content
 			"()Landroid/content/ClipDescription;"
 		);
 	}
+	jstring ClipboardManager::getText()
+	{
+		return __thiz.callObjectMethod(
+			"getText",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
 	jboolean ClipboardManager::hasPrimaryClip()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -115,12 +99,11 @@ namespace __jni_impl::android::content
 			"()Z"
 		);
 	}
-	void ClipboardManager::addPrimaryClipChangedListener(__jni_impl::__JniBaseClass arg0)
+	jboolean ClipboardManager::hasText()
 	{
-		__thiz.callMethod<void>(
-			"addPrimaryClipChangedListener",
-			"(Landroid/content/ClipboardManager$OnPrimaryClipChangedListener;)V",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jboolean>(
+			"hasText",
+			"()Z"
 		);
 	}
 	void ClipboardManager::removePrimaryClipChangedListener(__jni_impl::__JniBaseClass arg0)
@@ -131,11 +114,28 @@ namespace __jni_impl::android::content
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean ClipboardManager::hasText()
+	void ClipboardManager::setPrimaryClip(__jni_impl::android::content::ClipData arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"hasText",
-			"()Z"
+		__thiz.callMethod<void>(
+			"setPrimaryClip",
+			"(Landroid/content/ClipData;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ClipboardManager::setText(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setText",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void ClipboardManager::setText(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setText",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::content

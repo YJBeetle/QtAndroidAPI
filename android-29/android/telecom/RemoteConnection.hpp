@@ -5,29 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::telecom
-{
-	class DisconnectCause;
-}
 namespace __jni_impl::android::net
 {
 	class Uri;
 }
-namespace __jni_impl::android::telecom
+namespace __jni_impl::android::os
 {
-	class RemoteConnection_VideoProvider;
-}
-namespace __jni_impl::android::telecom
-{
-	class StatusHints;
-}
-namespace __jni_impl::android::telecom
-{
-	class RemoteConference;
-}
-namespace __jni_impl::android::telecom
-{
-	class RemoteConnection_Callback;
+	class Bundle;
 }
 namespace __jni_impl::android::os
 {
@@ -37,9 +21,25 @@ namespace __jni_impl::android::telecom
 {
 	class CallAudioState;
 }
-namespace __jni_impl::android::os
+namespace __jni_impl::android::telecom
 {
-	class Bundle;
+	class DisconnectCause;
+}
+namespace __jni_impl::android::telecom
+{
+	class RemoteConference;
+}
+namespace __jni_impl::android::telecom
+{
+	class RemoteConnection_Callback;
+}
+namespace __jni_impl::android::telecom
+{
+	class RemoteConnection_VideoProvider;
+}
+namespace __jni_impl::android::telecom
+{
+	class StatusHints;
 }
 
 namespace __jni_impl::android::telecom
@@ -53,48 +53,48 @@ namespace __jni_impl::android::telecom
 		void __constructor();
 		
 		// Methods
-		jint getState();
-		QAndroidJniObject getAddress();
-		void answer();
 		void abort();
-		jint getConnectionCapabilities();
-		jint getConnectionProperties();
-		QAndroidJniObject getVideoProvider();
-		jint getVideoState();
-		QAndroidJniObject getDisconnectCause();
-		QAndroidJniObject getConferenceableConnections();
-		QAndroidJniObject getStatusHints();
+		void answer();
+		void disconnect();
+		QAndroidJniObject getAddress();
 		jint getAddressPresentation();
 		jstring getCallerDisplayName();
 		jint getCallerDisplayNamePresentation();
 		QAndroidJniObject getConference();
-		jboolean isRingbackRequested();
-		void registerCallback(__jni_impl::android::telecom::RemoteConnection_Callback arg0);
-		void registerCallback(__jni_impl::android::telecom::RemoteConnection_Callback arg0, __jni_impl::android::os::Handler arg1);
-		void unregisterCallback(__jni_impl::android::telecom::RemoteConnection_Callback arg0);
-		jboolean isVoipAudioMode();
-		void reject();
+		QAndroidJniObject getConferenceableConnections();
+		jint getConnectionCapabilities();
+		jint getConnectionProperties();
+		QAndroidJniObject getDisconnectCause();
+		QAndroidJniObject getExtras();
+		jint getState();
+		QAndroidJniObject getStatusHints();
+		QAndroidJniObject getVideoProvider();
+		jint getVideoState();
 		void hold();
-		void unhold();
-		void disconnect();
+		jboolean isRingbackRequested();
+		jboolean isVoipAudioMode();
 		void playDtmfTone(jchar arg0);
-		void stopDtmfTone();
 		void postDialContinue(jboolean arg0);
 		void pullExternalCall();
+		void registerCallback(__jni_impl::android::telecom::RemoteConnection_Callback arg0);
+		void registerCallback(__jni_impl::android::telecom::RemoteConnection_Callback arg0, __jni_impl::android::os::Handler arg1);
+		void reject();
 		void setCallAudioState(__jni_impl::android::telecom::CallAudioState arg0);
-		QAndroidJniObject getExtras();
+		void stopDtmfTone();
+		void unhold();
+		void unregisterCallback(__jni_impl::android::telecom::RemoteConnection_Callback arg0);
 	};
 } // namespace __jni_impl::android::telecom
 
-#include "DisconnectCause.hpp"
 #include "../net/Uri.hpp"
-#include "RemoteConnection_VideoProvider.hpp"
-#include "StatusHints.hpp"
-#include "RemoteConference.hpp"
-#include "RemoteConnection_Callback.hpp"
+#include "../os/Bundle.hpp"
 #include "../os/Handler.hpp"
 #include "CallAudioState.hpp"
-#include "../os/Bundle.hpp"
+#include "DisconnectCause.hpp"
+#include "RemoteConference.hpp"
+#include "RemoteConnection_Callback.hpp"
+#include "RemoteConnection_VideoProvider.hpp"
+#include "StatusHints.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -109,18 +109,11 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
-	jint RemoteConnection::getState()
+	void RemoteConnection::abort()
 	{
-		return __thiz.callMethod<jint>(
-			"getState",
-			"()I"
-		);
-	}
-	QAndroidJniObject RemoteConnection::getAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getAddress",
-			"()Landroid/net/Uri;"
+		__thiz.callMethod<void>(
+			"abort",
+			"()V"
 		);
 	}
 	void RemoteConnection::answer()
@@ -130,60 +123,18 @@ namespace __jni_impl::android::telecom
 			"()V"
 		);
 	}
-	void RemoteConnection::abort()
+	void RemoteConnection::disconnect()
 	{
 		__thiz.callMethod<void>(
-			"abort",
+			"disconnect",
 			"()V"
 		);
 	}
-	jint RemoteConnection::getConnectionCapabilities()
-	{
-		return __thiz.callMethod<jint>(
-			"getConnectionCapabilities",
-			"()I"
-		);
-	}
-	jint RemoteConnection::getConnectionProperties()
-	{
-		return __thiz.callMethod<jint>(
-			"getConnectionProperties",
-			"()I"
-		);
-	}
-	QAndroidJniObject RemoteConnection::getVideoProvider()
+	QAndroidJniObject RemoteConnection::getAddress()
 	{
 		return __thiz.callObjectMethod(
-			"getVideoProvider",
-			"()Landroid/telecom/RemoteConnection$VideoProvider;"
-		);
-	}
-	jint RemoteConnection::getVideoState()
-	{
-		return __thiz.callMethod<jint>(
-			"getVideoState",
-			"()I"
-		);
-	}
-	QAndroidJniObject RemoteConnection::getDisconnectCause()
-	{
-		return __thiz.callObjectMethod(
-			"getDisconnectCause",
-			"()Landroid/telecom/DisconnectCause;"
-		);
-	}
-	QAndroidJniObject RemoteConnection::getConferenceableConnections()
-	{
-		return __thiz.callObjectMethod(
-			"getConferenceableConnections",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject RemoteConnection::getStatusHints()
-	{
-		return __thiz.callObjectMethod(
-			"getStatusHints",
-			"()Landroid/telecom/StatusHints;"
+			"getAddress",
+			"()Landroid/net/Uri;"
 		);
 	}
 	jint RemoteConnection::getAddressPresentation()
@@ -214,11 +165,111 @@ namespace __jni_impl::android::telecom
 			"()Landroid/telecom/RemoteConference;"
 		);
 	}
+	QAndroidJniObject RemoteConnection::getConferenceableConnections()
+	{
+		return __thiz.callObjectMethod(
+			"getConferenceableConnections",
+			"()Ljava/util/List;"
+		);
+	}
+	jint RemoteConnection::getConnectionCapabilities()
+	{
+		return __thiz.callMethod<jint>(
+			"getConnectionCapabilities",
+			"()I"
+		);
+	}
+	jint RemoteConnection::getConnectionProperties()
+	{
+		return __thiz.callMethod<jint>(
+			"getConnectionProperties",
+			"()I"
+		);
+	}
+	QAndroidJniObject RemoteConnection::getDisconnectCause()
+	{
+		return __thiz.callObjectMethod(
+			"getDisconnectCause",
+			"()Landroid/telecom/DisconnectCause;"
+		);
+	}
+	QAndroidJniObject RemoteConnection::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	jint RemoteConnection::getState()
+	{
+		return __thiz.callMethod<jint>(
+			"getState",
+			"()I"
+		);
+	}
+	QAndroidJniObject RemoteConnection::getStatusHints()
+	{
+		return __thiz.callObjectMethod(
+			"getStatusHints",
+			"()Landroid/telecom/StatusHints;"
+		);
+	}
+	QAndroidJniObject RemoteConnection::getVideoProvider()
+	{
+		return __thiz.callObjectMethod(
+			"getVideoProvider",
+			"()Landroid/telecom/RemoteConnection$VideoProvider;"
+		);
+	}
+	jint RemoteConnection::getVideoState()
+	{
+		return __thiz.callMethod<jint>(
+			"getVideoState",
+			"()I"
+		);
+	}
+	void RemoteConnection::hold()
+	{
+		__thiz.callMethod<void>(
+			"hold",
+			"()V"
+		);
+	}
 	jboolean RemoteConnection::isRingbackRequested()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRingbackRequested",
 			"()Z"
+		);
+	}
+	jboolean RemoteConnection::isVoipAudioMode()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isVoipAudioMode",
+			"()Z"
+		);
+	}
+	void RemoteConnection::playDtmfTone(jchar arg0)
+	{
+		__thiz.callMethod<void>(
+			"playDtmfTone",
+			"(C)V",
+			arg0
+		);
+	}
+	void RemoteConnection::postDialContinue(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"postDialContinue",
+			"(Z)V",
+			arg0
+		);
+	}
+	void RemoteConnection::pullExternalCall()
+	{
+		__thiz.callMethod<void>(
+			"pullExternalCall",
+			"()V"
 		);
 	}
 	void RemoteConnection::registerCallback(__jni_impl::android::telecom::RemoteConnection_Callback arg0)
@@ -238,76 +289,10 @@ namespace __jni_impl::android::telecom
 			arg1.__jniObject().object()
 		);
 	}
-	void RemoteConnection::unregisterCallback(__jni_impl::android::telecom::RemoteConnection_Callback arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterCallback",
-			"(Landroid/telecom/RemoteConnection$Callback;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean RemoteConnection::isVoipAudioMode()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isVoipAudioMode",
-			"()Z"
-		);
-	}
 	void RemoteConnection::reject()
 	{
 		__thiz.callMethod<void>(
 			"reject",
-			"()V"
-		);
-	}
-	void RemoteConnection::hold()
-	{
-		__thiz.callMethod<void>(
-			"hold",
-			"()V"
-		);
-	}
-	void RemoteConnection::unhold()
-	{
-		__thiz.callMethod<void>(
-			"unhold",
-			"()V"
-		);
-	}
-	void RemoteConnection::disconnect()
-	{
-		__thiz.callMethod<void>(
-			"disconnect",
-			"()V"
-		);
-	}
-	void RemoteConnection::playDtmfTone(jchar arg0)
-	{
-		__thiz.callMethod<void>(
-			"playDtmfTone",
-			"(C)V",
-			arg0
-		);
-	}
-	void RemoteConnection::stopDtmfTone()
-	{
-		__thiz.callMethod<void>(
-			"stopDtmfTone",
-			"()V"
-		);
-	}
-	void RemoteConnection::postDialContinue(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"postDialContinue",
-			"(Z)V",
-			arg0
-		);
-	}
-	void RemoteConnection::pullExternalCall()
-	{
-		__thiz.callMethod<void>(
-			"pullExternalCall",
 			"()V"
 		);
 	}
@@ -319,11 +304,26 @@ namespace __jni_impl::android::telecom
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject RemoteConnection::getExtras()
+	void RemoteConnection::stopDtmfTone()
 	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
+		__thiz.callMethod<void>(
+			"stopDtmfTone",
+			"()V"
+		);
+	}
+	void RemoteConnection::unhold()
+	{
+		__thiz.callMethod<void>(
+			"unhold",
+			"()V"
+		);
+	}
+	void RemoteConnection::unregisterCallback(__jni_impl::android::telecom::RemoteConnection_Callback arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterCallback",
+			"(Landroid/telecom/RemoteConnection$Callback;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::telecom

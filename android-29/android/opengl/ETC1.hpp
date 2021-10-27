@@ -25,15 +25,15 @@ namespace __jni_impl::android::opengl
 		void __constructor();
 		
 		// Methods
-		static void encodeBlock(__jni_impl::java::nio::Buffer arg0, jint arg1, __jni_impl::java::nio::Buffer arg2);
-		static jboolean isValid(__jni_impl::java::nio::Buffer arg0);
-		static jint getWidth(__jni_impl::java::nio::Buffer arg0);
-		static jint getHeight(__jni_impl::java::nio::Buffer arg0);
 		static void decodeBlock(__jni_impl::java::nio::Buffer arg0, __jni_impl::java::nio::Buffer arg1);
-		static jint getEncodedDataSize(jint arg0, jint arg1);
-		static void encodeImage(__jni_impl::java::nio::Buffer arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::java::nio::Buffer arg5);
 		static void decodeImage(__jni_impl::java::nio::Buffer arg0, __jni_impl::java::nio::Buffer arg1, jint arg2, jint arg3, jint arg4, jint arg5);
+		static void encodeBlock(__jni_impl::java::nio::Buffer arg0, jint arg1, __jni_impl::java::nio::Buffer arg2);
+		static void encodeImage(__jni_impl::java::nio::Buffer arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::java::nio::Buffer arg5);
 		static void formatHeader(__jni_impl::java::nio::Buffer arg0, jint arg1, jint arg2);
+		static jint getEncodedDataSize(jint arg0, jint arg1);
+		static jint getHeight(__jni_impl::java::nio::Buffer arg0);
+		static jint getWidth(__jni_impl::java::nio::Buffer arg0);
+		static jboolean isValid(__jni_impl::java::nio::Buffer arg0);
 	};
 } // namespace __jni_impl::android::opengl
 
@@ -81,44 +81,6 @@ namespace __jni_impl::android::opengl
 	}
 	
 	// Methods
-	void ETC1::encodeBlock(__jni_impl::java::nio::Buffer arg0, jint arg1, __jni_impl::java::nio::Buffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.ETC1",
-			"encodeBlock",
-			"(Ljava/nio/Buffer;ILjava/nio/Buffer;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	jboolean ETC1::isValid(__jni_impl::java::nio::Buffer arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.ETC1",
-			"isValid",
-			"(Ljava/nio/Buffer;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jint ETC1::getWidth(__jni_impl::java::nio::Buffer arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.ETC1",
-			"getWidth",
-			"(Ljava/nio/Buffer;)I",
-			arg0.__jniObject().object()
-		);
-	}
-	jint ETC1::getHeight(__jni_impl::java::nio::Buffer arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.ETC1",
-			"getHeight",
-			"(Ljava/nio/Buffer;)I",
-			arg0.__jniObject().object()
-		);
-	}
 	void ETC1::decodeBlock(__jni_impl::java::nio::Buffer arg0, __jni_impl::java::nio::Buffer arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -127,30 +89,6 @@ namespace __jni_impl::android::opengl
 			"(Ljava/nio/Buffer;Ljava/nio/Buffer;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	jint ETC1::getEncodedDataSize(jint arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.ETC1",
-			"getEncodedDataSize",
-			"(II)I",
-			arg0,
-			arg1
-		);
-	}
-	void ETC1::encodeImage(__jni_impl::java::nio::Buffer arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::java::nio::Buffer arg5)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.ETC1",
-			"encodeImage",
-			"(Ljava/nio/Buffer;IIIILjava/nio/Buffer;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5.__jniObject().object()
 		);
 	}
 	void ETC1::decodeImage(__jni_impl::java::nio::Buffer arg0, __jni_impl::java::nio::Buffer arg1, jint arg2, jint arg3, jint arg4, jint arg5)
@@ -167,6 +105,31 @@ namespace __jni_impl::android::opengl
 			arg5
 		);
 	}
+	void ETC1::encodeBlock(__jni_impl::java::nio::Buffer arg0, jint arg1, __jni_impl::java::nio::Buffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.ETC1",
+			"encodeBlock",
+			"(Ljava/nio/Buffer;ILjava/nio/Buffer;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void ETC1::encodeImage(__jni_impl::java::nio::Buffer arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::java::nio::Buffer arg5)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.ETC1",
+			"encodeImage",
+			"(Ljava/nio/Buffer;IIIILjava/nio/Buffer;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5.__jniObject().object()
+		);
+	}
 	void ETC1::formatHeader(__jni_impl::java::nio::Buffer arg0, jint arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -176,6 +139,43 @@ namespace __jni_impl::android::opengl
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
+		);
+	}
+	jint ETC1::getEncodedDataSize(jint arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.opengl.ETC1",
+			"getEncodedDataSize",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
+	jint ETC1::getHeight(__jni_impl::java::nio::Buffer arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.opengl.ETC1",
+			"getHeight",
+			"(Ljava/nio/Buffer;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	jint ETC1::getWidth(__jni_impl::java::nio::Buffer arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.opengl.ETC1",
+			"getWidth",
+			"(Ljava/nio/Buffer;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean ETC1::isValid(__jni_impl::java::nio::Buffer arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.ETC1",
+			"isValid",
+			"(Ljava/nio/Buffer;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::opengl

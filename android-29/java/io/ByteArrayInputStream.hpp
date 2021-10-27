@@ -23,17 +23,17 @@ namespace __jni_impl::java::io
 		void __constructor(jbyteArray arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
-		jint read();
+		jint available();
 		void close();
 		void mark(jint arg0);
+		jboolean markSupported();
+		jint read();
+		jint read(jbyteArray arg0, jint arg1, jint arg2);
 		jbyteArray readAllBytes();
 		jint readNBytes(jbyteArray arg0, jint arg1, jint arg2);
-		jlong transferTo(__jni_impl::java::io::OutputStream arg0);
-		jlong skip(jlong arg0);
-		jint available();
-		jboolean markSupported();
 		void reset();
+		jlong skip(jlong arg0);
+		jlong transferTo(__jni_impl::java::io::OutputStream arg0);
 	};
 } // namespace __jni_impl::java::io
 
@@ -64,20 +64,10 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	jint ByteArrayInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint ByteArrayInputStream::available()
 	{
 		return __thiz.callMethod<jint>(
-			"read",
-			"([BII)I",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jint ByteArrayInputStream::read()
-	{
-		return __thiz.callMethod<jint>(
-			"read",
+			"available",
 			"()I"
 		);
 	}
@@ -94,6 +84,30 @@ namespace __jni_impl::java::io
 			"mark",
 			"(I)V",
 			arg0
+		);
+	}
+	jboolean ByteArrayInputStream::markSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"markSupported",
+			"()Z"
+		);
+	}
+	jint ByteArrayInputStream::read()
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
+	jint ByteArrayInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"([BII)I",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 	jbyteArray ByteArrayInputStream::readAllBytes()
@@ -113,12 +127,11 @@ namespace __jni_impl::java::io
 			arg2
 		);
 	}
-	jlong ByteArrayInputStream::transferTo(__jni_impl::java::io::OutputStream arg0)
+	void ByteArrayInputStream::reset()
 	{
-		return __thiz.callMethod<jlong>(
-			"transferTo",
-			"(Ljava/io/OutputStream;)J",
-			arg0.__jniObject().object()
+		__thiz.callMethod<void>(
+			"reset",
+			"()V"
 		);
 	}
 	jlong ByteArrayInputStream::skip(jlong arg0)
@@ -129,25 +142,12 @@ namespace __jni_impl::java::io
 			arg0
 		);
 	}
-	jint ByteArrayInputStream::available()
+	jlong ByteArrayInputStream::transferTo(__jni_impl::java::io::OutputStream arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"available",
-			"()I"
-		);
-	}
-	jboolean ByteArrayInputStream::markSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"markSupported",
-			"()Z"
-		);
-	}
-	void ByteArrayInputStream::reset()
-	{
-		__thiz.callMethod<void>(
-			"reset",
-			"()V"
+		return __thiz.callMethod<jlong>(
+			"transferTo",
+			"(Ljava/io/OutputStream;)J",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::java::io

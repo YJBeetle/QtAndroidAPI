@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Handler;
-}
 namespace __jni_impl::android::content::res
 {
 	class AssetFileDescriptor;
+}
+namespace __jni_impl::android::os
+{
+	class Handler;
 }
 
 namespace __jni_impl::android::media
@@ -25,30 +25,30 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
+		static QAndroidJniObject getJetPlayer();
+		static jint getMaxTracks();
+		jboolean clearQueue();
 		jobject clone();
+		jboolean closeJetFile();
+		jboolean loadJetFile(__jni_impl::android::content::res::AssetFileDescriptor arg0);
+		jboolean loadJetFile(jstring arg0);
+		jboolean loadJetFile(const QString &arg0);
+		jboolean pause();
+		jboolean play();
+		jboolean queueJetSegment(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jbyte arg5);
+		jboolean queueJetSegmentMuteArray(jint arg0, jint arg1, jint arg2, jint arg3, jbooleanArray arg4, jbyte arg5);
 		void release();
 		void setEventListener(__jni_impl::__JniBaseClass arg0);
 		void setEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
-		jboolean play();
-		jboolean pause();
-		static QAndroidJniObject getJetPlayer();
-		static jint getMaxTracks();
-		jboolean loadJetFile(jstring arg0);
-		jboolean loadJetFile(const QString &arg0);
-		jboolean loadJetFile(__jni_impl::android::content::res::AssetFileDescriptor arg0);
-		jboolean closeJetFile();
-		jboolean queueJetSegment(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jbyte arg5);
-		jboolean queueJetSegmentMuteArray(jint arg0, jint arg1, jint arg2, jint arg3, jbooleanArray arg4, jbyte arg5);
-		jboolean setMuteFlags(jint arg0, jboolean arg1);
 		jboolean setMuteArray(jbooleanArray arg0, jboolean arg1);
 		jboolean setMuteFlag(jint arg0, jboolean arg1, jboolean arg2);
+		jboolean setMuteFlags(jint arg0, jboolean arg1);
 		jboolean triggerClip(jint arg0);
-		jboolean clearQueue();
 	};
 } // namespace __jni_impl::android::media
 
-#include "../os/Handler.hpp"
 #include "../content/res/AssetFileDescriptor.hpp"
+#include "../os/Handler.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -63,51 +63,6 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jobject JetPlayer::clone()
-	{
-		return __thiz.callObjectMethod(
-			"clone",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	void JetPlayer::release()
-	{
-		__thiz.callMethod<void>(
-			"release",
-			"()V"
-		);
-	}
-	void JetPlayer::setEventListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEventListener",
-			"(Landroid/media/JetPlayer$OnJetEventListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void JetPlayer::setEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
-	{
-		__thiz.callMethod<void>(
-			"setEventListener",
-			"(Landroid/media/JetPlayer$OnJetEventListener;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean JetPlayer::play()
-	{
-		return __thiz.callMethod<jboolean>(
-			"play",
-			"()Z"
-		);
-	}
-	jboolean JetPlayer::pause()
-	{
-		return __thiz.callMethod<jboolean>(
-			"pause",
-			"()Z"
-		);
-	}
 	QAndroidJniObject JetPlayer::getJetPlayer()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -122,6 +77,35 @@ namespace __jni_impl::android::media
 			"android.media.JetPlayer",
 			"getMaxTracks",
 			"()I"
+		);
+	}
+	jboolean JetPlayer::clearQueue()
+	{
+		return __thiz.callMethod<jboolean>(
+			"clearQueue",
+			"()Z"
+		);
+	}
+	jobject JetPlayer::clone()
+	{
+		return __thiz.callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jboolean JetPlayer::closeJetFile()
+	{
+		return __thiz.callMethod<jboolean>(
+			"closeJetFile",
+			"()Z"
+		);
+	}
+	jboolean JetPlayer::loadJetFile(__jni_impl::android::content::res::AssetFileDescriptor arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"loadJetFile",
+			"(Landroid/content/res/AssetFileDescriptor;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 	jboolean JetPlayer::loadJetFile(jstring arg0)
@@ -140,18 +124,17 @@ namespace __jni_impl::android::media
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jboolean JetPlayer::loadJetFile(__jni_impl::android::content::res::AssetFileDescriptor arg0)
+	jboolean JetPlayer::pause()
 	{
 		return __thiz.callMethod<jboolean>(
-			"loadJetFile",
-			"(Landroid/content/res/AssetFileDescriptor;)Z",
-			arg0.__jniObject().object()
+			"pause",
+			"()Z"
 		);
 	}
-	jboolean JetPlayer::closeJetFile()
+	jboolean JetPlayer::play()
 	{
 		return __thiz.callMethod<jboolean>(
-			"closeJetFile",
+			"play",
 			"()Z"
 		);
 	}
@@ -181,13 +164,28 @@ namespace __jni_impl::android::media
 			arg5
 		);
 	}
-	jboolean JetPlayer::setMuteFlags(jint arg0, jboolean arg1)
+	void JetPlayer::release()
 	{
-		return __thiz.callMethod<jboolean>(
-			"setMuteFlags",
-			"(IZ)Z",
-			arg0,
-			arg1
+		__thiz.callMethod<void>(
+			"release",
+			"()V"
+		);
+	}
+	void JetPlayer::setEventListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEventListener",
+			"(Landroid/media/JetPlayer$OnJetEventListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void JetPlayer::setEventListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
+	{
+		__thiz.callMethod<void>(
+			"setEventListener",
+			"(Landroid/media/JetPlayer$OnJetEventListener;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	jboolean JetPlayer::setMuteArray(jbooleanArray arg0, jboolean arg1)
@@ -209,19 +207,21 @@ namespace __jni_impl::android::media
 			arg2
 		);
 	}
+	jboolean JetPlayer::setMuteFlags(jint arg0, jboolean arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setMuteFlags",
+			"(IZ)Z",
+			arg0,
+			arg1
+		);
+	}
 	jboolean JetPlayer::triggerClip(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"triggerClip",
 			"(I)Z",
 			arg0
-		);
-	}
-	jboolean JetPlayer::clearQueue()
-	{
-		return __thiz.callMethod<jboolean>(
-			"clearQueue",
-			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::media

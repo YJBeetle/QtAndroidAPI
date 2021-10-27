@@ -5,17 +5,17 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view
+namespace __jni_impl::android::graphics
 {
-	class View;
+	class Point;
 }
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
 }
-namespace __jni_impl::android::graphics
+namespace __jni_impl::android::view
 {
-	class Point;
+	class View;
 }
 
 namespace __jni_impl::android::widget
@@ -31,30 +31,30 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::view::View arg0);
 		
 		// Methods
-		void update();
-		QAndroidJniObject getOverlay();
-		jfloat getElevation();
-		jfloat getZoom();
-		jint getWidth();
-		jint getHeight();
+		void dismiss();
 		jfloat getCornerRadius();
+		jint getDefaultHorizontalSourceToMagnifierOffset();
+		jint getDefaultVerticalSourceToMagnifierOffset();
+		jfloat getElevation();
+		jint getHeight();
+		QAndroidJniObject getOverlay();
+		QAndroidJniObject getPosition();
+		jint getSourceHeight();
+		QAndroidJniObject getSourcePosition();
+		jint getSourceWidth();
+		jint getWidth();
+		jfloat getZoom();
+		jboolean isClippingEnabled();
 		void setZoom(jfloat arg0);
 		void show(jfloat arg0, jfloat arg1);
 		void show(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		void dismiss();
-		jint getSourceWidth();
-		jint getSourceHeight();
-		jint getDefaultHorizontalSourceToMagnifierOffset();
-		jint getDefaultVerticalSourceToMagnifierOffset();
-		jboolean isClippingEnabled();
-		QAndroidJniObject getSourcePosition();
-		QAndroidJniObject getPosition();
+		void update();
 	};
 } // namespace __jni_impl::android::widget
 
-#include "../view/View.hpp"
-#include "../graphics/drawable/Drawable.hpp"
 #include "../graphics/Point.hpp"
+#include "../graphics/drawable/Drawable.hpp"
+#include "../view/View.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -85,18 +85,32 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	void Magnifier::update()
+	void Magnifier::dismiss()
 	{
 		__thiz.callMethod<void>(
-			"update",
+			"dismiss",
 			"()V"
 		);
 	}
-	QAndroidJniObject Magnifier::getOverlay()
+	jfloat Magnifier::getCornerRadius()
 	{
-		return __thiz.callObjectMethod(
-			"getOverlay",
-			"()Landroid/graphics/drawable/Drawable;"
+		return __thiz.callMethod<jfloat>(
+			"getCornerRadius",
+			"()F"
+		);
+	}
+	jint Magnifier::getDefaultHorizontalSourceToMagnifierOffset()
+	{
+		return __thiz.callMethod<jint>(
+			"getDefaultHorizontalSourceToMagnifierOffset",
+			"()I"
+		);
+	}
+	jint Magnifier::getDefaultVerticalSourceToMagnifierOffset()
+	{
+		return __thiz.callMethod<jint>(
+			"getDefaultVerticalSourceToMagnifierOffset",
+			"()I"
 		);
 	}
 	jfloat Magnifier::getElevation()
@@ -106,11 +120,46 @@ namespace __jni_impl::android::widget
 			"()F"
 		);
 	}
-	jfloat Magnifier::getZoom()
+	jint Magnifier::getHeight()
 	{
-		return __thiz.callMethod<jfloat>(
-			"getZoom",
-			"()F"
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
+	}
+	QAndroidJniObject Magnifier::getOverlay()
+	{
+		return __thiz.callObjectMethod(
+			"getOverlay",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
+	}
+	QAndroidJniObject Magnifier::getPosition()
+	{
+		return __thiz.callObjectMethod(
+			"getPosition",
+			"()Landroid/graphics/Point;"
+		);
+	}
+	jint Magnifier::getSourceHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getSourceHeight",
+			"()I"
+		);
+	}
+	QAndroidJniObject Magnifier::getSourcePosition()
+	{
+		return __thiz.callObjectMethod(
+			"getSourcePosition",
+			"()Landroid/graphics/Point;"
+		);
+	}
+	jint Magnifier::getSourceWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getSourceWidth",
+			"()I"
 		);
 	}
 	jint Magnifier::getWidth()
@@ -120,18 +169,18 @@ namespace __jni_impl::android::widget
 			"()I"
 		);
 	}
-	jint Magnifier::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I"
-		);
-	}
-	jfloat Magnifier::getCornerRadius()
+	jfloat Magnifier::getZoom()
 	{
 		return __thiz.callMethod<jfloat>(
-			"getCornerRadius",
+			"getZoom",
 			"()F"
+		);
+	}
+	jboolean Magnifier::isClippingEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isClippingEnabled",
+			"()Z"
 		);
 	}
 	void Magnifier::setZoom(jfloat arg0)
@@ -162,60 +211,11 @@ namespace __jni_impl::android::widget
 			arg3
 		);
 	}
-	void Magnifier::dismiss()
+	void Magnifier::update()
 	{
 		__thiz.callMethod<void>(
-			"dismiss",
+			"update",
 			"()V"
-		);
-	}
-	jint Magnifier::getSourceWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getSourceWidth",
-			"()I"
-		);
-	}
-	jint Magnifier::getSourceHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getSourceHeight",
-			"()I"
-		);
-	}
-	jint Magnifier::getDefaultHorizontalSourceToMagnifierOffset()
-	{
-		return __thiz.callMethod<jint>(
-			"getDefaultHorizontalSourceToMagnifierOffset",
-			"()I"
-		);
-	}
-	jint Magnifier::getDefaultVerticalSourceToMagnifierOffset()
-	{
-		return __thiz.callMethod<jint>(
-			"getDefaultVerticalSourceToMagnifierOffset",
-			"()I"
-		);
-	}
-	jboolean Magnifier::isClippingEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isClippingEnabled",
-			"()Z"
-		);
-	}
-	QAndroidJniObject Magnifier::getSourcePosition()
-	{
-		return __thiz.callObjectMethod(
-			"getSourcePosition",
-			"()Landroid/graphics/Point;"
-		);
-	}
-	QAndroidJniObject Magnifier::getPosition()
-	{
-		return __thiz.callObjectMethod(
-			"getPosition",
-			"()Landroid/graphics/Point;"
 		);
 	}
 } // namespace __jni_impl::android::widget

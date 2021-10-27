@@ -6,18 +6,6 @@
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Number.hpp"
 
-namespace __jni_impl::java::math
-{
-	class BigInteger;
-}
-namespace __jni_impl::java::lang
-{
-	class ThreadLocal;
-}
-namespace __jni_impl::java::math
-{
-	class MathContext;
-}
 namespace __jni_impl::java::io
 {
 	class ObjectInputStream;
@@ -25,6 +13,14 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class ObjectOutputStream;
+}
+namespace __jni_impl::java::math
+{
+	class BigInteger;
+}
+namespace __jni_impl::java::math
+{
+	class MathContext;
 }
 namespace __jni_impl::java::math
 {
@@ -37,150 +33,119 @@ namespace __jni_impl::java::math
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ZERO();
 		static QAndroidJniObject ONE();
-		static QAndroidJniObject TEN();
-		static jint ROUND_UP();
-		static jint ROUND_DOWN();
 		static jint ROUND_CEILING();
+		static jint ROUND_DOWN();
 		static jint ROUND_FLOOR();
-		static jint ROUND_HALF_UP();
 		static jint ROUND_HALF_DOWN();
 		static jint ROUND_HALF_EVEN();
+		static jint ROUND_HALF_UP();
 		static jint ROUND_UNNECESSARY();
+		static jint ROUND_UP();
+		static QAndroidJniObject TEN();
+		static QAndroidJniObject ZERO();
 		
 		// Constructors
-		void __constructor(__jni_impl::java::math::BigInteger arg0, jint arg1);
-		void __constructor(__jni_impl::java::math::BigInteger arg0, __jni_impl::java::math::MathContext arg1);
-		void __constructor(__jni_impl::java::math::BigInteger arg0);
-		void __constructor(jdouble arg0, __jni_impl::java::math::MathContext arg1);
+		void __constructor(jcharArray arg0);
 		void __constructor(jdouble arg0);
-		void __constructor(jlong arg0);
-		void __constructor(jint arg0, __jni_impl::java::math::MathContext arg1);
 		void __constructor(jint arg0);
-		void __constructor(__jni_impl::java::math::BigInteger arg0, jint arg1, __jni_impl::java::math::MathContext arg2);
-		void __constructor(jlong arg0, __jni_impl::java::math::MathContext arg1);
-		void __constructor(jcharArray arg0, jint arg1, jint arg2, __jni_impl::java::math::MathContext arg3);
-		void __constructor(jcharArray arg0, jint arg1, jint arg2);
-		void __constructor(jstring arg0, __jni_impl::java::math::MathContext arg1);
-		void __constructor(const QString &arg0, __jni_impl::java::math::MathContext arg1);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
+		void __constructor(__jni_impl::java::math::BigInteger arg0);
+		void __constructor(jlong arg0);
 		void __constructor(jcharArray arg0, __jni_impl::java::math::MathContext arg1);
-		void __constructor(jcharArray arg0);
+		void __constructor(jdouble arg0, __jni_impl::java::math::MathContext arg1);
+		void __constructor(jint arg0, __jni_impl::java::math::MathContext arg1);
+		void __constructor(jstring arg0, __jni_impl::java::math::MathContext arg1);
+		void __constructor(const QString &arg0, __jni_impl::java::math::MathContext arg1);
+		void __constructor(__jni_impl::java::math::BigInteger arg0, jint arg1);
+		void __constructor(__jni_impl::java::math::BigInteger arg0, __jni_impl::java::math::MathContext arg1);
+		void __constructor(jlong arg0, __jni_impl::java::math::MathContext arg1);
+		void __constructor(jcharArray arg0, jint arg1, jint arg2);
+		void __constructor(__jni_impl::java::math::BigInteger arg0, jint arg1, __jni_impl::java::math::MathContext arg2);
+		void __constructor(jcharArray arg0, jint arg1, jint arg2, __jni_impl::java::math::MathContext arg3);
 		
 		// Methods
+		static QAndroidJniObject valueOf(jdouble arg0);
+		static QAndroidJniObject valueOf(jlong arg0);
+		static QAndroidJniObject valueOf(jlong arg0, jint arg1);
+		QAndroidJniObject abs();
+		QAndroidJniObject abs(__jni_impl::java::math::MathContext arg0);
 		QAndroidJniObject add(__jni_impl::java::math::BigDecimal arg0);
 		QAndroidJniObject add(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1);
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		QAndroidJniObject abs(__jni_impl::java::math::MathContext arg0);
-		QAndroidJniObject abs();
-		QAndroidJniObject sqrt(__jni_impl::java::math::MathContext arg0);
-		QAndroidJniObject pow(jint arg0);
-		QAndroidJniObject pow(jint arg0, __jni_impl::java::math::MathContext arg1);
-		QAndroidJniObject min(__jni_impl::java::math::BigDecimal arg0);
-		QAndroidJniObject max(__jni_impl::java::math::BigDecimal arg0);
-		jint compareTo(__jni_impl::java::math::BigDecimal arg0);
+		jbyte byteValueExact();
 		jint compareTo(jobject arg0);
-		jint intValue();
-		jlong longValue();
-		jfloat floatValue();
-		jdouble doubleValue();
-		static QAndroidJniObject valueOf(jlong arg0);
-		static QAndroidJniObject valueOf(jdouble arg0);
-		static QAndroidJniObject valueOf(jlong arg0, jint arg1);
-		jint signum();
-		QAndroidJniObject divide(__jni_impl::java::math::BigDecimal arg0, jint arg1);
-		QAndroidJniObject divide(__jni_impl::java::math::BigDecimal arg0, jint arg1, jint arg2);
-		QAndroidJniObject divide(__jni_impl::java::math::BigDecimal arg0, jint arg1, __jni_impl::java::math::RoundingMode arg2);
+		jint compareTo(__jni_impl::java::math::BigDecimal arg0);
 		QAndroidJniObject divide(__jni_impl::java::math::BigDecimal arg0);
+		QAndroidJniObject divide(__jni_impl::java::math::BigDecimal arg0, jint arg1);
 		QAndroidJniObject divide(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1);
 		QAndroidJniObject divide(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::RoundingMode arg1);
-		QAndroidJniObject remainder(__jni_impl::java::math::BigDecimal arg0);
-		QAndroidJniObject remainder(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1);
-		QAndroidJniObject multiply(__jni_impl::java::math::BigDecimal arg0);
-		QAndroidJniObject multiply(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1);
-		QAndroidJniObject round(__jni_impl::java::math::MathContext arg0);
-		QAndroidJniObject ulp();
-		jint scale();
-		QAndroidJniObject plus(__jni_impl::java::math::MathContext arg0);
-		QAndroidJniObject plus();
+		QAndroidJniObject divide(__jni_impl::java::math::BigDecimal arg0, jint arg1, jint arg2);
+		QAndroidJniObject divide(__jni_impl::java::math::BigDecimal arg0, jint arg1, __jni_impl::java::math::RoundingMode arg2);
+		jarray divideAndRemainder(__jni_impl::java::math::BigDecimal arg0);
+		jarray divideAndRemainder(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1);
 		QAndroidJniObject divideToIntegralValue(__jni_impl::java::math::BigDecimal arg0);
 		QAndroidJniObject divideToIntegralValue(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1);
-		jlong longValueExact();
-		QAndroidJniObject movePointRight(jint arg0);
-		QAndroidJniObject toBigIntegerExact();
-		jarray divideAndRemainder(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1);
-		jarray divideAndRemainder(__jni_impl::java::math::BigDecimal arg0);
-		QAndroidJniObject subtract(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1);
-		QAndroidJniObject subtract(__jni_impl::java::math::BigDecimal arg0);
-		jint precision();
-		QAndroidJniObject scaleByPowerOfTen(jint arg0);
-		QAndroidJniObject unscaledValue();
-		jstring toEngineeringString();
-		QAndroidJniObject negate(__jni_impl::java::math::MathContext arg0);
-		QAndroidJniObject negate();
-		QAndroidJniObject toBigInteger();
+		jdouble doubleValue();
+		jboolean equals(jobject arg0);
+		jfloat floatValue();
+		jint hashCode();
+		jint intValue();
 		jint intValueExact();
-		jshort shortValueExact();
-		jbyte byteValueExact();
-		QAndroidJniObject setScale(jint arg0, __jni_impl::java::math::RoundingMode arg1);
-		QAndroidJniObject setScale(jint arg0, jint arg1);
-		QAndroidJniObject setScale(jint arg0);
-		jstring toPlainString();
+		jlong longValue();
+		jlong longValueExact();
+		QAndroidJniObject max(__jni_impl::java::math::BigDecimal arg0);
+		QAndroidJniObject min(__jni_impl::java::math::BigDecimal arg0);
 		QAndroidJniObject movePointLeft(jint arg0);
+		QAndroidJniObject movePointRight(jint arg0);
+		QAndroidJniObject multiply(__jni_impl::java::math::BigDecimal arg0);
+		QAndroidJniObject multiply(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1);
+		QAndroidJniObject negate();
+		QAndroidJniObject negate(__jni_impl::java::math::MathContext arg0);
+		QAndroidJniObject plus();
+		QAndroidJniObject plus(__jni_impl::java::math::MathContext arg0);
+		QAndroidJniObject pow(jint arg0);
+		QAndroidJniObject pow(jint arg0, __jni_impl::java::math::MathContext arg1);
+		jint precision();
+		QAndroidJniObject remainder(__jni_impl::java::math::BigDecimal arg0);
+		QAndroidJniObject remainder(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1);
+		QAndroidJniObject round(__jni_impl::java::math::MathContext arg0);
+		jint scale();
+		QAndroidJniObject scaleByPowerOfTen(jint arg0);
+		QAndroidJniObject setScale(jint arg0);
+		QAndroidJniObject setScale(jint arg0, jint arg1);
+		QAndroidJniObject setScale(jint arg0, __jni_impl::java::math::RoundingMode arg1);
+		jshort shortValueExact();
+		jint signum();
+		QAndroidJniObject sqrt(__jni_impl::java::math::MathContext arg0);
 		QAndroidJniObject stripTrailingZeros();
+		QAndroidJniObject subtract(__jni_impl::java::math::BigDecimal arg0);
+		QAndroidJniObject subtract(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1);
+		QAndroidJniObject toBigInteger();
+		QAndroidJniObject toBigIntegerExact();
+		jstring toEngineeringString();
+		jstring toPlainString();
+		jstring toString();
+		QAndroidJniObject ulp();
+		QAndroidJniObject unscaledValue();
 	};
 } // namespace __jni_impl::java::math
 
-#include "BigInteger.hpp"
-#include "../lang/ThreadLocal.hpp"
-#include "MathContext.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "BigInteger.hpp"
+#include "MathContext.hpp"
 #include "RoundingMode.hpp"
 
 namespace __jni_impl::java::math
 {
 	// Fields
-	QAndroidJniObject BigDecimal::ZERO()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.math.BigDecimal",
-			"ZERO",
-			"Ljava/math/BigDecimal;"
-		);
-	}
 	QAndroidJniObject BigDecimal::ONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.math.BigDecimal",
 			"ONE",
 			"Ljava/math/BigDecimal;"
-		);
-	}
-	QAndroidJniObject BigDecimal::TEN()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.math.BigDecimal",
-			"TEN",
-			"Ljava/math/BigDecimal;"
-		);
-	}
-	jint BigDecimal::ROUND_UP()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"java.math.BigDecimal",
-			"ROUND_UP"
-		);
-	}
-	jint BigDecimal::ROUND_DOWN()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"java.math.BigDecimal",
-			"ROUND_DOWN"
 		);
 	}
 	jint BigDecimal::ROUND_CEILING()
@@ -190,18 +155,18 @@ namespace __jni_impl::java::math
 			"ROUND_CEILING"
 		);
 	}
+	jint BigDecimal::ROUND_DOWN()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"java.math.BigDecimal",
+			"ROUND_DOWN"
+		);
+	}
 	jint BigDecimal::ROUND_FLOOR()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.math.BigDecimal",
 			"ROUND_FLOOR"
-		);
-	}
-	jint BigDecimal::ROUND_HALF_UP()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"java.math.BigDecimal",
-			"ROUND_HALF_UP"
 		);
 	}
 	jint BigDecimal::ROUND_HALF_DOWN()
@@ -218,6 +183,13 @@ namespace __jni_impl::java::math
 			"ROUND_HALF_EVEN"
 		);
 	}
+	jint BigDecimal::ROUND_HALF_UP()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"java.math.BigDecimal",
+			"ROUND_HALF_UP"
+		);
+	}
 	jint BigDecimal::ROUND_UNNECESSARY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
@@ -225,24 +197,69 @@ namespace __jni_impl::java::math
 			"ROUND_UNNECESSARY"
 		);
 	}
-	
-	// Constructors
-	void BigDecimal::__constructor(__jni_impl::java::math::BigInteger arg0, jint arg1)
+	jint BigDecimal::ROUND_UP()
 	{
-		__thiz = QAndroidJniObject(
+		return QAndroidJniObject::getStaticField<jint>(
 			"java.math.BigDecimal",
-			"(Ljava/math/BigInteger;I)V",
-			arg0.__jniObject().object(),
-			arg1
+			"ROUND_UP"
 		);
 	}
-	void BigDecimal::__constructor(__jni_impl::java::math::BigInteger arg0, __jni_impl::java::math::MathContext arg1)
+	QAndroidJniObject BigDecimal::TEN()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.math.BigDecimal",
+			"TEN",
+			"Ljava/math/BigDecimal;"
+		);
+	}
+	QAndroidJniObject BigDecimal::ZERO()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.math.BigDecimal",
+			"ZERO",
+			"Ljava/math/BigDecimal;"
+		);
+	}
+	
+	// Constructors
+	void BigDecimal::__constructor(jcharArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
-			"(Ljava/math/BigInteger;Ljava/math/MathContext;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			"([C)V",
+			arg0
+		);
+	}
+	void BigDecimal::__constructor(jdouble arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.math.BigDecimal",
+			"(D)V",
+			arg0
+		);
+	}
+	void BigDecimal::__constructor(jint arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.math.BigDecimal",
+			"(I)V",
+			arg0
+		);
+	}
+	void BigDecimal::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.math.BigDecimal",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void BigDecimal::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.math.BigDecimal",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void BigDecimal::__constructor(__jni_impl::java::math::BigInteger arg0)
@@ -251,6 +268,23 @@ namespace __jni_impl::java::math
 			"java.math.BigDecimal",
 			"(Ljava/math/BigInteger;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void BigDecimal::__constructor(jlong arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.math.BigDecimal",
+			"(J)V",
+			arg0
+		);
+	}
+	void BigDecimal::__constructor(jcharArray arg0, __jni_impl::java::math::MathContext arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.math.BigDecimal",
+			"([CLjava/math/MathContext;)V",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
 	void BigDecimal::__constructor(jdouble arg0, __jni_impl::java::math::MathContext arg1)
@@ -262,22 +296,6 @@ namespace __jni_impl::java::math
 			arg1.__jniObject().object()
 		);
 	}
-	void BigDecimal::__constructor(jdouble arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.math.BigDecimal",
-			"(D)V",
-			arg0
-		);
-	}
-	void BigDecimal::__constructor(jlong arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.math.BigDecimal",
-			"(J)V",
-			arg0
-		);
-	}
 	void BigDecimal::__constructor(jint arg0, __jni_impl::java::math::MathContext arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -285,54 +303,6 @@ namespace __jni_impl::java::math
 			"(ILjava/math/MathContext;)V",
 			arg0,
 			arg1.__jniObject().object()
-		);
-	}
-	void BigDecimal::__constructor(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.math.BigDecimal",
-			"(I)V",
-			arg0
-		);
-	}
-	void BigDecimal::__constructor(__jni_impl::java::math::BigInteger arg0, jint arg1, __jni_impl::java::math::MathContext arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.math.BigDecimal",
-			"(Ljava/math/BigInteger;ILjava/math/MathContext;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void BigDecimal::__constructor(jlong arg0, __jni_impl::java::math::MathContext arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.math.BigDecimal",
-			"(JLjava/math/MathContext;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void BigDecimal::__constructor(jcharArray arg0, jint arg1, jint arg2, __jni_impl::java::math::MathContext arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"java.math.BigDecimal",
-			"([CIILjava/math/MathContext;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	void BigDecimal::__constructor(jcharArray arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.math.BigDecimal",
-			"([CII)V",
-			arg0,
-			arg1,
-			arg2
 		);
 	}
 	void BigDecimal::__constructor(jstring arg0, __jni_impl::java::math::MathContext arg1)
@@ -353,41 +323,109 @@ namespace __jni_impl::java::math
 			arg1.__jniObject().object()
 		);
 	}
-	void BigDecimal::__constructor(jstring arg0)
+	void BigDecimal::__constructor(__jni_impl::java::math::BigInteger arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
-			"(Ljava/lang/String;)V",
-			arg0
+			"(Ljava/math/BigInteger;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
-	void BigDecimal::__constructor(const QString &arg0)
+	void BigDecimal::__constructor(__jni_impl::java::math::BigInteger arg0, __jni_impl::java::math::MathContext arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+			"(Ljava/math/BigInteger;Ljava/math/MathContext;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
-	void BigDecimal::__constructor(jcharArray arg0, __jni_impl::java::math::MathContext arg1)
+	void BigDecimal::__constructor(jlong arg0, __jni_impl::java::math::MathContext arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
-			"([CLjava/math/MathContext;)V",
+			"(JLjava/math/MathContext;)V",
 			arg0,
 			arg1.__jniObject().object()
 		);
 	}
-	void BigDecimal::__constructor(jcharArray arg0)
+	void BigDecimal::__constructor(jcharArray arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"java.math.BigDecimal",
-			"([C)V",
-			arg0
+			"([CII)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void BigDecimal::__constructor(__jni_impl::java::math::BigInteger arg0, jint arg1, __jni_impl::java::math::MathContext arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.math.BigDecimal",
+			"(Ljava/math/BigInteger;ILjava/math/MathContext;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void BigDecimal::__constructor(jcharArray arg0, jint arg1, jint arg2, __jni_impl::java::math::MathContext arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"java.math.BigDecimal",
+			"([CIILjava/math/MathContext;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object()
 		);
 	}
 	
 	// Methods
+	QAndroidJniObject BigDecimal::valueOf(jdouble arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.math.BigDecimal",
+			"valueOf",
+			"(D)Ljava/math/BigDecimal;",
+			arg0
+		);
+	}
+	QAndroidJniObject BigDecimal::valueOf(jlong arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.math.BigDecimal",
+			"valueOf",
+			"(J)Ljava/math/BigDecimal;",
+			arg0
+		);
+	}
+	QAndroidJniObject BigDecimal::valueOf(jlong arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.math.BigDecimal",
+			"valueOf",
+			"(JI)Ljava/math/BigDecimal;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject BigDecimal::abs()
+	{
+		return __thiz.callObjectMethod(
+			"abs",
+			"()Ljava/math/BigDecimal;"
+		);
+	}
+	QAndroidJniObject BigDecimal::abs(__jni_impl::java::math::MathContext arg0)
+	{
+		return __thiz.callObjectMethod(
+			"abs",
+			"(Ljava/math/MathContext;)Ljava/math/BigDecimal;",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject BigDecimal::add(__jni_impl::java::math::BigDecimal arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -405,90 +443,11 @@ namespace __jni_impl::java::math
 			arg1.__jniObject().object()
 		);
 	}
-	jboolean BigDecimal::equals(jobject arg0)
+	jbyte BigDecimal::byteValueExact()
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring BigDecimal::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint BigDecimal::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	QAndroidJniObject BigDecimal::abs(__jni_impl::java::math::MathContext arg0)
-	{
-		return __thiz.callObjectMethod(
-			"abs",
-			"(Ljava/math/MathContext;)Ljava/math/BigDecimal;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject BigDecimal::abs()
-	{
-		return __thiz.callObjectMethod(
-			"abs",
-			"()Ljava/math/BigDecimal;"
-		);
-	}
-	QAndroidJniObject BigDecimal::sqrt(__jni_impl::java::math::MathContext arg0)
-	{
-		return __thiz.callObjectMethod(
-			"sqrt",
-			"(Ljava/math/MathContext;)Ljava/math/BigDecimal;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject BigDecimal::pow(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"pow",
-			"(I)Ljava/math/BigDecimal;",
-			arg0
-		);
-	}
-	QAndroidJniObject BigDecimal::pow(jint arg0, __jni_impl::java::math::MathContext arg1)
-	{
-		return __thiz.callObjectMethod(
-			"pow",
-			"(ILjava/math/MathContext;)Ljava/math/BigDecimal;",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject BigDecimal::min(__jni_impl::java::math::BigDecimal arg0)
-	{
-		return __thiz.callObjectMethod(
-			"min",
-			"(Ljava/math/BigDecimal;)Ljava/math/BigDecimal;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject BigDecimal::max(__jni_impl::java::math::BigDecimal arg0)
-	{
-		return __thiz.callObjectMethod(
-			"max",
-			"(Ljava/math/BigDecimal;)Ljava/math/BigDecimal;",
-			arg0.__jniObject().object()
-		);
-	}
-	jint BigDecimal::compareTo(__jni_impl::java::math::BigDecimal arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"compareTo",
-			"(Ljava/math/BigDecimal;)I",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jbyte>(
+			"byteValueExact",
+			"()B"
 		);
 	}
 	jint BigDecimal::compareTo(jobject arg0)
@@ -499,67 +458,20 @@ namespace __jni_impl::java::math
 			arg0
 		);
 	}
-	jint BigDecimal::intValue()
+	jint BigDecimal::compareTo(__jni_impl::java::math::BigDecimal arg0)
 	{
 		return __thiz.callMethod<jint>(
-			"intValue",
-			"()I"
+			"compareTo",
+			"(Ljava/math/BigDecimal;)I",
+			arg0.__jniObject().object()
 		);
 	}
-	jlong BigDecimal::longValue()
+	QAndroidJniObject BigDecimal::divide(__jni_impl::java::math::BigDecimal arg0)
 	{
-		return __thiz.callMethod<jlong>(
-			"longValue",
-			"()J"
-		);
-	}
-	jfloat BigDecimal::floatValue()
-	{
-		return __thiz.callMethod<jfloat>(
-			"floatValue",
-			"()F"
-		);
-	}
-	jdouble BigDecimal::doubleValue()
-	{
-		return __thiz.callMethod<jdouble>(
-			"doubleValue",
-			"()D"
-		);
-	}
-	QAndroidJniObject BigDecimal::valueOf(jlong arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.math.BigDecimal",
-			"valueOf",
-			"(J)Ljava/math/BigDecimal;",
-			arg0
-		);
-	}
-	QAndroidJniObject BigDecimal::valueOf(jdouble arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.math.BigDecimal",
-			"valueOf",
-			"(D)Ljava/math/BigDecimal;",
-			arg0
-		);
-	}
-	QAndroidJniObject BigDecimal::valueOf(jlong arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.math.BigDecimal",
-			"valueOf",
-			"(JI)Ljava/math/BigDecimal;",
-			arg0,
-			arg1
-		);
-	}
-	jint BigDecimal::signum()
-	{
-		return __thiz.callMethod<jint>(
-			"signum",
-			"()I"
+		return __thiz.callObjectMethod(
+			"divide",
+			"(Ljava/math/BigDecimal;)Ljava/math/BigDecimal;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject BigDecimal::divide(__jni_impl::java::math::BigDecimal arg0, jint arg1)
@@ -569,6 +481,24 @@ namespace __jni_impl::java::math
 			"(Ljava/math/BigDecimal;I)Ljava/math/BigDecimal;",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	QAndroidJniObject BigDecimal::divide(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1)
+	{
+		return __thiz.callObjectMethod(
+			"divide",
+			"(Ljava/math/BigDecimal;Ljava/math/MathContext;)Ljava/math/BigDecimal;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject BigDecimal::divide(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::RoundingMode arg1)
+	{
+		return __thiz.callObjectMethod(
+			"divide",
+			"(Ljava/math/BigDecimal;Ljava/math/RoundingMode;)Ljava/math/BigDecimal;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	QAndroidJniObject BigDecimal::divide(__jni_impl::java::math::BigDecimal arg0, jint arg1, jint arg2)
@@ -591,47 +521,127 @@ namespace __jni_impl::java::math
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject BigDecimal::divide(__jni_impl::java::math::BigDecimal arg0)
+	jarray BigDecimal::divideAndRemainder(__jni_impl::java::math::BigDecimal arg0)
 	{
 		return __thiz.callObjectMethod(
-			"divide",
+			"divideAndRemainder",
+			"(Ljava/math/BigDecimal;)[Ljava/math/BigDecimal;",
+			arg0.__jniObject().object()
+		).object<jarray>();
+	}
+	jarray BigDecimal::divideAndRemainder(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1)
+	{
+		return __thiz.callObjectMethod(
+			"divideAndRemainder",
+			"(Ljava/math/BigDecimal;Ljava/math/MathContext;)[Ljava/math/BigDecimal;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		).object<jarray>();
+	}
+	QAndroidJniObject BigDecimal::divideToIntegralValue(__jni_impl::java::math::BigDecimal arg0)
+	{
+		return __thiz.callObjectMethod(
+			"divideToIntegralValue",
 			"(Ljava/math/BigDecimal;)Ljava/math/BigDecimal;",
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject BigDecimal::divide(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1)
+	QAndroidJniObject BigDecimal::divideToIntegralValue(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1)
 	{
 		return __thiz.callObjectMethod(
-			"divide",
+			"divideToIntegralValue",
 			"(Ljava/math/BigDecimal;Ljava/math/MathContext;)Ljava/math/BigDecimal;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject BigDecimal::divide(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::RoundingMode arg1)
+	jdouble BigDecimal::doubleValue()
 	{
-		return __thiz.callObjectMethod(
-			"divide",
-			"(Ljava/math/BigDecimal;Ljava/math/RoundingMode;)Ljava/math/BigDecimal;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+		return __thiz.callMethod<jdouble>(
+			"doubleValue",
+			"()D"
 		);
 	}
-	QAndroidJniObject BigDecimal::remainder(__jni_impl::java::math::BigDecimal arg0)
+	jboolean BigDecimal::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jfloat BigDecimal::floatValue()
+	{
+		return __thiz.callMethod<jfloat>(
+			"floatValue",
+			"()F"
+		);
+	}
+	jint BigDecimal::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jint BigDecimal::intValue()
+	{
+		return __thiz.callMethod<jint>(
+			"intValue",
+			"()I"
+		);
+	}
+	jint BigDecimal::intValueExact()
+	{
+		return __thiz.callMethod<jint>(
+			"intValueExact",
+			"()I"
+		);
+	}
+	jlong BigDecimal::longValue()
+	{
+		return __thiz.callMethod<jlong>(
+			"longValue",
+			"()J"
+		);
+	}
+	jlong BigDecimal::longValueExact()
+	{
+		return __thiz.callMethod<jlong>(
+			"longValueExact",
+			"()J"
+		);
+	}
+	QAndroidJniObject BigDecimal::max(__jni_impl::java::math::BigDecimal arg0)
 	{
 		return __thiz.callObjectMethod(
-			"remainder",
+			"max",
 			"(Ljava/math/BigDecimal;)Ljava/math/BigDecimal;",
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject BigDecimal::remainder(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1)
+	QAndroidJniObject BigDecimal::min(__jni_impl::java::math::BigDecimal arg0)
 	{
 		return __thiz.callObjectMethod(
-			"remainder",
-			"(Ljava/math/BigDecimal;Ljava/math/MathContext;)Ljava/math/BigDecimal;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			"min",
+			"(Ljava/math/BigDecimal;)Ljava/math/BigDecimal;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject BigDecimal::movePointLeft(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"movePointLeft",
+			"(I)Ljava/math/BigDecimal;",
+			arg0
+		);
+	}
+	QAndroidJniObject BigDecimal::movePointRight(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"movePointRight",
+			"(I)Ljava/math/BigDecimal;",
+			arg0
 		);
 	}
 	QAndroidJniObject BigDecimal::multiply(__jni_impl::java::math::BigDecimal arg0)
@@ -651,32 +661,17 @@ namespace __jni_impl::java::math
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject BigDecimal::round(__jni_impl::java::math::MathContext arg0)
+	QAndroidJniObject BigDecimal::negate()
 	{
 		return __thiz.callObjectMethod(
-			"round",
-			"(Ljava/math/MathContext;)Ljava/math/BigDecimal;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject BigDecimal::ulp()
-	{
-		return __thiz.callObjectMethod(
-			"ulp",
+			"negate",
 			"()Ljava/math/BigDecimal;"
 		);
 	}
-	jint BigDecimal::scale()
-	{
-		return __thiz.callMethod<jint>(
-			"scale",
-			"()I"
-		);
-	}
-	QAndroidJniObject BigDecimal::plus(__jni_impl::java::math::MathContext arg0)
+	QAndroidJniObject BigDecimal::negate(__jni_impl::java::math::MathContext arg0)
 	{
 		return __thiz.callObjectMethod(
-			"plus",
+			"negate",
 			"(Ljava/math/MathContext;)Ljava/math/BigDecimal;",
 			arg0.__jniObject().object()
 		);
@@ -688,83 +683,67 @@ namespace __jni_impl::java::math
 			"()Ljava/math/BigDecimal;"
 		);
 	}
-	QAndroidJniObject BigDecimal::divideToIntegralValue(__jni_impl::java::math::BigDecimal arg0)
+	QAndroidJniObject BigDecimal::plus(__jni_impl::java::math::MathContext arg0)
 	{
 		return __thiz.callObjectMethod(
-			"divideToIntegralValue",
-			"(Ljava/math/BigDecimal;)Ljava/math/BigDecimal;",
+			"plus",
+			"(Ljava/math/MathContext;)Ljava/math/BigDecimal;",
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject BigDecimal::divideToIntegralValue(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1)
+	QAndroidJniObject BigDecimal::pow(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"divideToIntegralValue",
-			"(Ljava/math/BigDecimal;Ljava/math/MathContext;)Ljava/math/BigDecimal;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	jlong BigDecimal::longValueExact()
-	{
-		return __thiz.callMethod<jlong>(
-			"longValueExact",
-			"()J"
-		);
-	}
-	QAndroidJniObject BigDecimal::movePointRight(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"movePointRight",
+			"pow",
 			"(I)Ljava/math/BigDecimal;",
 			arg0
 		);
 	}
-	QAndroidJniObject BigDecimal::toBigIntegerExact()
+	QAndroidJniObject BigDecimal::pow(jint arg0, __jni_impl::java::math::MathContext arg1)
 	{
 		return __thiz.callObjectMethod(
-			"toBigIntegerExact",
-			"()Ljava/math/BigInteger;"
-		);
-	}
-	jarray BigDecimal::divideAndRemainder(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1)
-	{
-		return __thiz.callObjectMethod(
-			"divideAndRemainder",
-			"(Ljava/math/BigDecimal;Ljava/math/MathContext;)[Ljava/math/BigDecimal;",
-			arg0.__jniObject().object(),
+			"pow",
+			"(ILjava/math/MathContext;)Ljava/math/BigDecimal;",
+			arg0,
 			arg1.__jniObject().object()
-		).object<jarray>();
-	}
-	jarray BigDecimal::divideAndRemainder(__jni_impl::java::math::BigDecimal arg0)
-	{
-		return __thiz.callObjectMethod(
-			"divideAndRemainder",
-			"(Ljava/math/BigDecimal;)[Ljava/math/BigDecimal;",
-			arg0.__jniObject().object()
-		).object<jarray>();
-	}
-	QAndroidJniObject BigDecimal::subtract(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1)
-	{
-		return __thiz.callObjectMethod(
-			"subtract",
-			"(Ljava/math/BigDecimal;Ljava/math/MathContext;)Ljava/math/BigDecimal;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject BigDecimal::subtract(__jni_impl::java::math::BigDecimal arg0)
-	{
-		return __thiz.callObjectMethod(
-			"subtract",
-			"(Ljava/math/BigDecimal;)Ljava/math/BigDecimal;",
-			arg0.__jniObject().object()
 		);
 	}
 	jint BigDecimal::precision()
 	{
 		return __thiz.callMethod<jint>(
 			"precision",
+			"()I"
+		);
+	}
+	QAndroidJniObject BigDecimal::remainder(__jni_impl::java::math::BigDecimal arg0)
+	{
+		return __thiz.callObjectMethod(
+			"remainder",
+			"(Ljava/math/BigDecimal;)Ljava/math/BigDecimal;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject BigDecimal::remainder(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1)
+	{
+		return __thiz.callObjectMethod(
+			"remainder",
+			"(Ljava/math/BigDecimal;Ljava/math/MathContext;)Ljava/math/BigDecimal;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject BigDecimal::round(__jni_impl::java::math::MathContext arg0)
+	{
+		return __thiz.callObjectMethod(
+			"round",
+			"(Ljava/math/MathContext;)Ljava/math/BigDecimal;",
+			arg0.__jniObject().object()
+		);
+	}
+	jint BigDecimal::scale()
+	{
+		return __thiz.callMethod<jint>(
+			"scale",
 			"()I"
 		);
 	}
@@ -776,70 +755,12 @@ namespace __jni_impl::java::math
 			arg0
 		);
 	}
-	QAndroidJniObject BigDecimal::unscaledValue()
-	{
-		return __thiz.callObjectMethod(
-			"unscaledValue",
-			"()Ljava/math/BigInteger;"
-		);
-	}
-	jstring BigDecimal::toEngineeringString()
-	{
-		return __thiz.callObjectMethod(
-			"toEngineeringString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject BigDecimal::negate(__jni_impl::java::math::MathContext arg0)
-	{
-		return __thiz.callObjectMethod(
-			"negate",
-			"(Ljava/math/MathContext;)Ljava/math/BigDecimal;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject BigDecimal::negate()
-	{
-		return __thiz.callObjectMethod(
-			"negate",
-			"()Ljava/math/BigDecimal;"
-		);
-	}
-	QAndroidJniObject BigDecimal::toBigInteger()
-	{
-		return __thiz.callObjectMethod(
-			"toBigInteger",
-			"()Ljava/math/BigInteger;"
-		);
-	}
-	jint BigDecimal::intValueExact()
-	{
-		return __thiz.callMethod<jint>(
-			"intValueExact",
-			"()I"
-		);
-	}
-	jshort BigDecimal::shortValueExact()
-	{
-		return __thiz.callMethod<jshort>(
-			"shortValueExact",
-			"()S"
-		);
-	}
-	jbyte BigDecimal::byteValueExact()
-	{
-		return __thiz.callMethod<jbyte>(
-			"byteValueExact",
-			"()B"
-		);
-	}
-	QAndroidJniObject BigDecimal::setScale(jint arg0, __jni_impl::java::math::RoundingMode arg1)
+	QAndroidJniObject BigDecimal::setScale(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setScale",
-			"(ILjava/math/RoundingMode;)Ljava/math/BigDecimal;",
-			arg0,
-			arg1.__jniObject().object()
+			"(I)Ljava/math/BigDecimal;",
+			arg0
 		);
 	}
 	QAndroidJniObject BigDecimal::setScale(jint arg0, jint arg1)
@@ -851,13 +772,81 @@ namespace __jni_impl::java::math
 			arg1
 		);
 	}
-	QAndroidJniObject BigDecimal::setScale(jint arg0)
+	QAndroidJniObject BigDecimal::setScale(jint arg0, __jni_impl::java::math::RoundingMode arg1)
 	{
 		return __thiz.callObjectMethod(
 			"setScale",
-			"(I)Ljava/math/BigDecimal;",
-			arg0
+			"(ILjava/math/RoundingMode;)Ljava/math/BigDecimal;",
+			arg0,
+			arg1.__jniObject().object()
 		);
+	}
+	jshort BigDecimal::shortValueExact()
+	{
+		return __thiz.callMethod<jshort>(
+			"shortValueExact",
+			"()S"
+		);
+	}
+	jint BigDecimal::signum()
+	{
+		return __thiz.callMethod<jint>(
+			"signum",
+			"()I"
+		);
+	}
+	QAndroidJniObject BigDecimal::sqrt(__jni_impl::java::math::MathContext arg0)
+	{
+		return __thiz.callObjectMethod(
+			"sqrt",
+			"(Ljava/math/MathContext;)Ljava/math/BigDecimal;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject BigDecimal::stripTrailingZeros()
+	{
+		return __thiz.callObjectMethod(
+			"stripTrailingZeros",
+			"()Ljava/math/BigDecimal;"
+		);
+	}
+	QAndroidJniObject BigDecimal::subtract(__jni_impl::java::math::BigDecimal arg0)
+	{
+		return __thiz.callObjectMethod(
+			"subtract",
+			"(Ljava/math/BigDecimal;)Ljava/math/BigDecimal;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject BigDecimal::subtract(__jni_impl::java::math::BigDecimal arg0, __jni_impl::java::math::MathContext arg1)
+	{
+		return __thiz.callObjectMethod(
+			"subtract",
+			"(Ljava/math/BigDecimal;Ljava/math/MathContext;)Ljava/math/BigDecimal;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject BigDecimal::toBigInteger()
+	{
+		return __thiz.callObjectMethod(
+			"toBigInteger",
+			"()Ljava/math/BigInteger;"
+		);
+	}
+	QAndroidJniObject BigDecimal::toBigIntegerExact()
+	{
+		return __thiz.callObjectMethod(
+			"toBigIntegerExact",
+			"()Ljava/math/BigInteger;"
+		);
+	}
+	jstring BigDecimal::toEngineeringString()
+	{
+		return __thiz.callObjectMethod(
+			"toEngineeringString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jstring BigDecimal::toPlainString()
 	{
@@ -866,19 +855,25 @@ namespace __jni_impl::java::math
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject BigDecimal::movePointLeft(jint arg0)
+	jstring BigDecimal::toString()
 	{
 		return __thiz.callObjectMethod(
-			"movePointLeft",
-			"(I)Ljava/math/BigDecimal;",
-			arg0
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject BigDecimal::ulp()
+	{
+		return __thiz.callObjectMethod(
+			"ulp",
+			"()Ljava/math/BigDecimal;"
 		);
 	}
-	QAndroidJniObject BigDecimal::stripTrailingZeros()
+	QAndroidJniObject BigDecimal::unscaledValue()
 	{
 		return __thiz.callObjectMethod(
-			"stripTrailingZeros",
-			"()Ljava/math/BigDecimal;"
+			"unscaledValue",
+			"()Ljava/math/BigInteger;"
 		);
 	}
 } // namespace __jni_impl::java::math
@@ -889,6 +884,60 @@ namespace java::math
 	{
 	public:
 		BigDecimal(QAndroidJniObject obj) { __thiz = obj; }
+		BigDecimal(jcharArray arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		BigDecimal(jdouble arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		BigDecimal(jint arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		BigDecimal(jstring arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		BigDecimal(__jni_impl::java::math::BigInteger arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		BigDecimal(jlong arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		BigDecimal(jcharArray arg0, __jni_impl::java::math::MathContext arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
+		}
+		BigDecimal(jdouble arg0, __jni_impl::java::math::MathContext arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
+		}
+		BigDecimal(jint arg0, __jni_impl::java::math::MathContext arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
+		}
+		BigDecimal(jstring arg0, __jni_impl::java::math::MathContext arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
+		}
 		BigDecimal(__jni_impl::java::math::BigInteger arg0, jint arg1)
 		{
 			__constructor(
@@ -901,58 +950,11 @@ namespace java::math
 				arg0,
 				arg1);
 		}
-		BigDecimal(__jni_impl::java::math::BigInteger arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		BigDecimal(jdouble arg0, __jni_impl::java::math::MathContext arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
-		BigDecimal(jdouble arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		BigDecimal(jlong arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		BigDecimal(jint arg0, __jni_impl::java::math::MathContext arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
-		BigDecimal(jint arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		BigDecimal(__jni_impl::java::math::BigInteger arg0, jint arg1, __jni_impl::java::math::MathContext arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
-		}
 		BigDecimal(jlong arg0, __jni_impl::java::math::MathContext arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
-		}
-		BigDecimal(jcharArray arg0, jint arg1, jint arg2, __jni_impl::java::math::MathContext arg3)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2,
-				arg3);
 		}
 		BigDecimal(jcharArray arg0, jint arg1, jint arg2)
 		{
@@ -961,27 +963,20 @@ namespace java::math
 				arg1,
 				arg2);
 		}
-		BigDecimal(jstring arg0, __jni_impl::java::math::MathContext arg1)
+		BigDecimal(__jni_impl::java::math::BigInteger arg0, jint arg1, __jni_impl::java::math::MathContext arg2)
 		{
 			__constructor(
 				arg0,
-				arg1);
+				arg1,
+				arg2);
 		}
-		BigDecimal(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		BigDecimal(jcharArray arg0, __jni_impl::java::math::MathContext arg1)
+		BigDecimal(jcharArray arg0, jint arg1, jint arg2, __jni_impl::java::math::MathContext arg3)
 		{
 			__constructor(
 				arg0,
-				arg1);
-		}
-		BigDecimal(jcharArray arg0)
-		{
-			__constructor(
-				arg0);
+				arg1,
+				arg2,
+				arg3);
 		}
 	};
 } // namespace java::math

@@ -18,17 +18,17 @@ namespace __jni_impl::java::security::spec
 		// Fields
 		
 		// Constructors
+		void __constructor(jint arg0);
 		void __constructor(jint arg0, jintArray arg1);
 		void __constructor(jint arg0, __jni_impl::java::math::BigInteger arg1);
-		void __constructor(jint arg0);
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jint hashCode();
-		jint getM();
 		jint getFieldSize();
-		QAndroidJniObject getReductionPolynomial();
+		jint getM();
 		jintArray getMidTermsOfReductionPolynomial();
+		QAndroidJniObject getReductionPolynomial();
+		jint hashCode();
 	};
 } // namespace __jni_impl::java::security::spec
 
@@ -39,6 +39,14 @@ namespace __jni_impl::java::security::spec
 	// Fields
 	
 	// Constructors
+	void ECFieldF2m::__constructor(jint arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.spec.ECFieldF2m",
+			"(I)V",
+			arg0
+		);
+	}
 	void ECFieldF2m::__constructor(jint arg0, jintArray arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -57,14 +65,6 @@ namespace __jni_impl::java::security::spec
 			arg1.__jniObject().object()
 		);
 	}
-	void ECFieldF2m::__constructor(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.spec.ECFieldF2m",
-			"(I)V",
-			arg0
-		);
-	}
 	
 	// Methods
 	jboolean ECFieldF2m::equals(jobject arg0)
@@ -75,10 +75,10 @@ namespace __jni_impl::java::security::spec
 			arg0
 		);
 	}
-	jint ECFieldF2m::hashCode()
+	jint ECFieldF2m::getFieldSize()
 	{
 		return __thiz.callMethod<jint>(
-			"hashCode",
+			"getFieldSize",
 			"()I"
 		);
 	}
@@ -89,12 +89,12 @@ namespace __jni_impl::java::security::spec
 			"()I"
 		);
 	}
-	jint ECFieldF2m::getFieldSize()
+	jintArray ECFieldF2m::getMidTermsOfReductionPolynomial()
 	{
-		return __thiz.callMethod<jint>(
-			"getFieldSize",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"getMidTermsOfReductionPolynomial",
+			"()[I"
+		).object<jintArray>();
 	}
 	QAndroidJniObject ECFieldF2m::getReductionPolynomial()
 	{
@@ -103,12 +103,12 @@ namespace __jni_impl::java::security::spec
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	jintArray ECFieldF2m::getMidTermsOfReductionPolynomial()
+	jint ECFieldF2m::hashCode()
 	{
-		return __thiz.callObjectMethod(
-			"getMidTermsOfReductionPolynomial",
-			"()[I"
-		).object<jintArray>();
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::java::security::spec
 
@@ -118,6 +118,11 @@ namespace java::security::spec
 	{
 	public:
 		ECFieldF2m(QAndroidJniObject obj) { __thiz = obj; }
+		ECFieldF2m(jint arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		ECFieldF2m(jint arg0, jintArray arg1)
 		{
 			__constructor(
@@ -129,11 +134,6 @@ namespace java::security::spec
 			__constructor(
 				arg0,
 				arg1);
-		}
-		ECFieldF2m(jint arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace java::security::spec

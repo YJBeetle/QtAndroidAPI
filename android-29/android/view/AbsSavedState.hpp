@@ -27,8 +27,8 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getSuperState();
 		jint describeContents();
+		QAndroidJniObject getSuperState();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
@@ -65,18 +65,18 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	QAndroidJniObject AbsSavedState::getSuperState()
-	{
-		return __thiz.callObjectMethod(
-			"getSuperState",
-			"()Landroid/os/Parcelable;"
-		);
-	}
 	jint AbsSavedState::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
+		);
+	}
+	QAndroidJniObject AbsSavedState::getSuperState()
+	{
+		return __thiz.callObjectMethod(
+			"getSuperState",
+			"()Landroid/os/Parcelable;"
 		);
 	}
 	void AbsSavedState::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

@@ -23,14 +23,14 @@ namespace __jni_impl::android::util
 		void __constructor(__jni_impl::java::io::InputStream arg0, jint arg1);
 		
 		// Methods
-		jint read();
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
+		jint available();
 		void close();
 		void mark(jint arg0);
-		jlong skip(jlong arg0);
-		jint available();
 		jboolean markSupported();
+		jint read();
+		jint read(jbyteArray arg0, jint arg1, jint arg2);
 		void reset();
+		jlong skip(jlong arg0);
 	};
 } // namespace __jni_impl::android::util
 
@@ -52,21 +52,11 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
-	jint Base64InputStream::read()
+	jint Base64InputStream::available()
 	{
 		return __thiz.callMethod<jint>(
-			"read",
+			"available",
 			"()I"
-		);
-	}
-	jint Base64InputStream::read(jbyteArray arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"read",
-			"([BII)I",
-			arg0,
-			arg1,
-			arg2
 		);
 	}
 	void Base64InputStream::close()
@@ -84,21 +74,6 @@ namespace __jni_impl::android::util
 			arg0
 		);
 	}
-	jlong Base64InputStream::skip(jlong arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"skip",
-			"(J)J",
-			arg0
-		);
-	}
-	jint Base64InputStream::available()
-	{
-		return __thiz.callMethod<jint>(
-			"available",
-			"()I"
-		);
-	}
 	jboolean Base64InputStream::markSupported()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -106,11 +81,36 @@ namespace __jni_impl::android::util
 			"()Z"
 		);
 	}
+	jint Base64InputStream::read()
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
+	jint Base64InputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"([BII)I",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
 	void Base64InputStream::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
 			"()V"
+		);
+	}
+	jlong Base64InputStream::skip(jlong arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"skip",
+			"(J)J",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::util

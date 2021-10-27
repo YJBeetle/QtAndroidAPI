@@ -7,11 +7,11 @@
 
 namespace __jni_impl::java::util::regex
 {
-	class Pattern;
+	class Matcher;
 }
 namespace __jni_impl::java::util::regex
 {
-	class Matcher;
+	class Pattern;
 }
 
 namespace __jni_impl::android::util
@@ -39,8 +39,8 @@ namespace __jni_impl::android::util
 	};
 } // namespace __jni_impl::android::util
 
-#include "../../java/util/regex/Pattern.hpp"
 #include "../../java/util/regex/Matcher.hpp"
+#include "../../java/util/regex/Pattern.hpp"
 
 namespace __jni_impl::android::util
 {

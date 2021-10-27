@@ -19,17 +19,17 @@ namespace __jni_impl::android::app
 		static QAndroidJniObject CREATOR();
 		
 		// Constructors
-		void __constructor(jarray arg0, jstring arg1);
-		void __constructor(jarray arg0, const QString &arg1);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
+		void __constructor(jarray arg0, jstring arg1);
+		void __constructor(jarray arg0, const QString &arg1);
 		
 		// Methods
-		jstring toString();
-		jstring getVoicePromptAt(jint arg0);
 		jint countVoicePrompts();
-		jstring getVisualPrompt();
 		jint describeContents();
+		jstring getVisualPrompt();
+		jstring getVoicePromptAt(jint arg0);
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
@@ -49,6 +49,22 @@ namespace __jni_impl::android::app
 	}
 	
 	// Constructors
+	void VoiceInteractor_Prompt::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.VoiceInteractor$Prompt",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void VoiceInteractor_Prompt::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.VoiceInteractor$Prompt",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void VoiceInteractor_Prompt::__constructor(jarray arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -67,43 +83,19 @@ namespace __jni_impl::android::app
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	void VoiceInteractor_Prompt::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.VoiceInteractor$Prompt",
-			"(Ljava/lang/CharSequence;)V",
-			arg0
-		);
-	}
-	void VoiceInteractor_Prompt::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.VoiceInteractor$Prompt",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	
 	// Methods
-	jstring VoiceInteractor_Prompt::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring VoiceInteractor_Prompt::getVoicePromptAt(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getVoicePromptAt",
-			"(I)Ljava/lang/CharSequence;",
-			arg0
-		).object<jstring>();
-	}
 	jint VoiceInteractor_Prompt::countVoicePrompts()
 	{
 		return __thiz.callMethod<jint>(
 			"countVoicePrompts",
+			"()I"
+		);
+	}
+	jint VoiceInteractor_Prompt::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
 			"()I"
 		);
 	}
@@ -114,12 +106,20 @@ namespace __jni_impl::android::app
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	jint VoiceInteractor_Prompt::describeContents()
+	jstring VoiceInteractor_Prompt::getVoicePromptAt(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"getVoicePromptAt",
+			"(I)Ljava/lang/CharSequence;",
+			arg0
+		).object<jstring>();
+	}
+	jstring VoiceInteractor_Prompt::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void VoiceInteractor_Prompt::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -138,16 +138,16 @@ namespace android::app
 	{
 	public:
 		VoiceInteractor_Prompt(QAndroidJniObject obj) { __thiz = obj; }
+		VoiceInteractor_Prompt(jstring arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		VoiceInteractor_Prompt(jarray arg0, jstring arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
-		}
-		VoiceInteractor_Prompt(jstring arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::app

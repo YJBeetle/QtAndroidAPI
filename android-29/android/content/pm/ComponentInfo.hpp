@@ -30,14 +30,14 @@ namespace __jni_impl::android::content::pm
 		jstring splitName();
 		
 		// Constructors
-		void __constructor(__jni_impl::android::content::pm::ComponentInfo arg0);
 		void __constructor();
+		void __constructor(__jni_impl::android::content::pm::ComponentInfo arg0);
 		
 		// Methods
-		jboolean isEnabled();
+		jint getBannerResource();
 		jint getIconResource();
 		jint getLogoResource();
-		jint getBannerResource();
+		jboolean isEnabled();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::pm
@@ -95,6 +95,13 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Constructors
+	void ComponentInfo::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.pm.ComponentInfo",
+			"()V"
+		);
+	}
 	void ComponentInfo::__constructor(__jni_impl::android::content::pm::ComponentInfo arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -103,20 +110,13 @@ namespace __jni_impl::android::content::pm
 			arg0.__jniObject().object()
 		);
 	}
-	void ComponentInfo::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.pm.ComponentInfo",
-			"()V"
-		);
-	}
 	
 	// Methods
-	jboolean ComponentInfo::isEnabled()
+	jint ComponentInfo::getBannerResource()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isEnabled",
-			"()Z"
+		return __thiz.callMethod<jint>(
+			"getBannerResource",
+			"()I"
 		);
 	}
 	jint ComponentInfo::getIconResource()
@@ -133,11 +133,11 @@ namespace __jni_impl::android::content::pm
 			"()I"
 		);
 	}
-	jint ComponentInfo::getBannerResource()
+	jboolean ComponentInfo::isEnabled()
 	{
-		return __thiz.callMethod<jint>(
-			"getBannerResource",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"isEnabled",
+			"()Z"
 		);
 	}
 	void ComponentInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
@@ -157,14 +157,14 @@ namespace android::content::pm
 	{
 	public:
 		ComponentInfo(QAndroidJniObject obj) { __thiz = obj; }
+		ComponentInfo()
+		{
+			__constructor();
+		}
 		ComponentInfo(__jni_impl::android::content::pm::ComponentInfo arg0)
 		{
 			__constructor(
 				arg0);
-		}
-		ComponentInfo()
-		{
-			__constructor();
 		}
 	};
 } // namespace android::content::pm

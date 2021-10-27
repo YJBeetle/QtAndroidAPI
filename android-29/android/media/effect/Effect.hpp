@@ -17,8 +17,8 @@ namespace __jni_impl::android::media::effect
 		void __constructor();
 		
 		// Methods
-		jstring getName();
 		void apply(jint arg0, jint arg1, jint arg2, jint arg3);
+		jstring getName();
 		void release();
 		void setParameter(jstring arg0, jobject arg1);
 		void setParameter(const QString &arg0, jobject arg1);
@@ -41,13 +41,6 @@ namespace __jni_impl::android::media::effect
 	}
 	
 	// Methods
-	jstring Effect::getName()
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	void Effect::apply(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		__thiz.callMethod<void>(
@@ -58,6 +51,13 @@ namespace __jni_impl::android::media::effect
 			arg2,
 			arg3
 		);
+	}
+	jstring Effect::getName()
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Effect::release()
 	{

@@ -17,14 +17,14 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		void setCacheMode(jint arg0);
-		void setBlockNetworkLoads(jboolean arg0);
+		jboolean getAllowContentAccess();
+		jboolean getAllowFileAccess();
 		jboolean getBlockNetworkLoads();
 		jint getCacheMode();
 		void setAllowContentAccess(jboolean arg0);
-		jboolean getAllowContentAccess();
 		void setAllowFileAccess(jboolean arg0);
-		jboolean getAllowFileAccess();
+		void setBlockNetworkLoads(jboolean arg0);
+		void setCacheMode(jint arg0);
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -43,20 +43,18 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	void ServiceWorkerWebSettings::setCacheMode(jint arg0)
+	jboolean ServiceWorkerWebSettings::getAllowContentAccess()
 	{
-		__thiz.callMethod<void>(
-			"setCacheMode",
-			"(I)V",
-			arg0
+		return __thiz.callMethod<jboolean>(
+			"getAllowContentAccess",
+			"()Z"
 		);
 	}
-	void ServiceWorkerWebSettings::setBlockNetworkLoads(jboolean arg0)
+	jboolean ServiceWorkerWebSettings::getAllowFileAccess()
 	{
-		__thiz.callMethod<void>(
-			"setBlockNetworkLoads",
-			"(Z)V",
-			arg0
+		return __thiz.callMethod<jboolean>(
+			"getAllowFileAccess",
+			"()Z"
 		);
 	}
 	jboolean ServiceWorkerWebSettings::getBlockNetworkLoads()
@@ -81,13 +79,6 @@ namespace __jni_impl::android::webkit
 			arg0
 		);
 	}
-	jboolean ServiceWorkerWebSettings::getAllowContentAccess()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getAllowContentAccess",
-			"()Z"
-		);
-	}
 	void ServiceWorkerWebSettings::setAllowFileAccess(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -96,11 +87,20 @@ namespace __jni_impl::android::webkit
 			arg0
 		);
 	}
-	jboolean ServiceWorkerWebSettings::getAllowFileAccess()
+	void ServiceWorkerWebSettings::setBlockNetworkLoads(jboolean arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"getAllowFileAccess",
-			"()Z"
+		__thiz.callMethod<void>(
+			"setBlockNetworkLoads",
+			"(Z)V",
+			arg0
+		);
+	}
+	void ServiceWorkerWebSettings::setCacheMode(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCacheMode",
+			"(I)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::webkit

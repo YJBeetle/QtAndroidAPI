@@ -23,39 +23,39 @@ namespace __jni_impl::android::util
 		void __constructor();
 		
 		// Methods
-		static jint println(jint arg0, jstring arg1, jstring arg2);
-		static jint println(jint arg0, const QString &arg1, const QString &arg2);
-		static jint i(jstring arg0, jstring arg1);
-		static jint i(const QString &arg0, const QString &arg1);
-		static jint i(jstring arg0, jstring arg1, jthrowable arg2);
-		static jint i(const QString &arg0, const QString &arg1, jthrowable arg2);
 		static jint d(jstring arg0, jstring arg1);
 		static jint d(const QString &arg0, const QString &arg1);
 		static jint d(jstring arg0, jstring arg1, jthrowable arg2);
 		static jint d(const QString &arg0, const QString &arg1, jthrowable arg2);
-		static jint e(jstring arg0, jstring arg1, jthrowable arg2);
-		static jint e(const QString &arg0, const QString &arg1, jthrowable arg2);
 		static jint e(jstring arg0, jstring arg1);
 		static jint e(const QString &arg0, const QString &arg1);
+		static jint e(jstring arg0, jstring arg1, jthrowable arg2);
+		static jint e(const QString &arg0, const QString &arg1, jthrowable arg2);
+		static jstring getStackTraceString(jthrowable arg0);
+		static jint i(jstring arg0, jstring arg1);
+		static jint i(const QString &arg0, const QString &arg1);
+		static jint i(jstring arg0, jstring arg1, jthrowable arg2);
+		static jint i(const QString &arg0, const QString &arg1, jthrowable arg2);
+		static jboolean isLoggable(jstring arg0, jint arg1);
+		static jboolean isLoggable(const QString &arg0, jint arg1);
+		static jint println(jint arg0, jstring arg1, jstring arg2);
+		static jint println(jint arg0, const QString &arg1, const QString &arg2);
 		static jint v(jstring arg0, jstring arg1);
 		static jint v(const QString &arg0, const QString &arg1);
 		static jint v(jstring arg0, jstring arg1, jthrowable arg2);
 		static jint v(const QString &arg0, const QString &arg1, jthrowable arg2);
+		static jint w(jstring arg0, jstring arg1);
+		static jint w(const QString &arg0, const QString &arg1);
 		static jint w(jstring arg0, jthrowable arg1);
 		static jint w(const QString &arg0, jthrowable arg1);
 		static jint w(jstring arg0, jstring arg1, jthrowable arg2);
 		static jint w(const QString &arg0, const QString &arg1, jthrowable arg2);
-		static jint w(jstring arg0, jstring arg1);
-		static jint w(const QString &arg0, const QString &arg1);
-		static jboolean isLoggable(jstring arg0, jint arg1);
-		static jboolean isLoggable(const QString &arg0, jint arg1);
+		static jint wtf(jstring arg0, jstring arg1);
+		static jint wtf(const QString &arg0, const QString &arg1);
 		static jint wtf(jstring arg0, jthrowable arg1);
 		static jint wtf(const QString &arg0, jthrowable arg1);
 		static jint wtf(jstring arg0, jstring arg1, jthrowable arg2);
 		static jint wtf(const QString &arg0, const QString &arg1, jthrowable arg2);
-		static jint wtf(jstring arg0, jstring arg1);
-		static jint wtf(const QString &arg0, const QString &arg1);
-		static jstring getStackTraceString(jthrowable arg0);
 	};
 } // namespace __jni_impl::android::util
 
@@ -115,27 +115,98 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
-	jint Log::println(jint arg0, jstring arg1, jstring arg2)
+	jint Log::d(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.util.Log",
-			"println",
-			"(ILjava/lang/String;Ljava/lang/String;)I",
+			"d",
+			"(Ljava/lang/String;Ljava/lang/String;)I",
+			arg0,
+			arg1
+		);
+	}
+	jint Log::d(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.util.Log",
+			"d",
+			"(Ljava/lang/String;Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	jint Log::d(jstring arg0, jstring arg1, jthrowable arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.util.Log",
+			"d",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
 			arg0,
 			arg1,
 			arg2
 		);
 	}
-	jint Log::println(jint arg0, const QString &arg1, const QString &arg2)
+	jint Log::d(const QString &arg0, const QString &arg1, jthrowable arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.util.Log",
-			"println",
-			"(ILjava/lang/String;Ljava/lang/String;)I",
-			arg0,
+			"d",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
+			arg2
 		);
+	}
+	jint Log::e(jstring arg0, jstring arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.util.Log",
+			"e",
+			"(Ljava/lang/String;Ljava/lang/String;)I",
+			arg0,
+			arg1
+		);
+	}
+	jint Log::e(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.util.Log",
+			"e",
+			"(Ljava/lang/String;Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	jint Log::e(jstring arg0, jstring arg1, jthrowable arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.util.Log",
+			"e",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	jint Log::e(const QString &arg0, const QString &arg1, jthrowable arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.util.Log",
+			"e",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
+	}
+	jstring Log::getStackTraceString(jthrowable arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.util.Log",
+			"getStackTraceString",
+			"(Ljava/lang/Throwable;)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
 	}
 	jint Log::i(jstring arg0, jstring arg1)
 	{
@@ -179,88 +250,46 @@ namespace __jni_impl::android::util
 			arg2
 		);
 	}
-	jint Log::d(jstring arg0, jstring arg1)
+	jboolean Log::isLoggable(jstring arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.util.Log",
-			"d",
-			"(Ljava/lang/String;Ljava/lang/String;)I",
+			"isLoggable",
+			"(Ljava/lang/String;I)Z",
 			arg0,
 			arg1
 		);
 	}
-	jint Log::d(const QString &arg0, const QString &arg1)
+	jboolean Log::isLoggable(const QString &arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.util.Log",
-			"d",
-			"(Ljava/lang/String;Ljava/lang/String;)I",
+			"isLoggable",
+			"(Ljava/lang/String;I)Z",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
+			arg1
 		);
 	}
-	jint Log::d(jstring arg0, jstring arg1, jthrowable arg2)
+	jint Log::println(jint arg0, jstring arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.util.Log",
-			"d",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
+			"println",
+			"(ILjava/lang/String;Ljava/lang/String;)I",
 			arg0,
 			arg1,
 			arg2
 		);
 	}
-	jint Log::d(const QString &arg0, const QString &arg1, jthrowable arg2)
+	jint Log::println(jint arg0, const QString &arg1, const QString &arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.util.Log",
-			"d",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
-	jint Log::e(jstring arg0, jstring arg1, jthrowable arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.util.Log",
-			"e",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
+			"println",
+			"(ILjava/lang/String;Ljava/lang/String;)I",
 			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jint Log::e(const QString &arg0, const QString &arg1, jthrowable arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.util.Log",
-			"e",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
-	jint Log::e(jstring arg0, jstring arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.util.Log",
-			"e",
-			"(Ljava/lang/String;Ljava/lang/String;)I",
-			arg0,
-			arg1
-		);
-	}
-	jint Log::e(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.util.Log",
-			"e",
-			"(Ljava/lang/String;Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	jint Log::v(jstring arg0, jstring arg1)
@@ -305,6 +334,26 @@ namespace __jni_impl::android::util
 			arg2
 		);
 	}
+	jint Log::w(jstring arg0, jstring arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.util.Log",
+			"w",
+			"(Ljava/lang/String;Ljava/lang/String;)I",
+			arg0,
+			arg1
+		);
+	}
+	jint Log::w(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.util.Log",
+			"w",
+			"(Ljava/lang/String;Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	jint Log::w(jstring arg0, jthrowable arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -347,44 +396,24 @@ namespace __jni_impl::android::util
 			arg2
 		);
 	}
-	jint Log::w(jstring arg0, jstring arg1)
+	jint Log::wtf(jstring arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.util.Log",
-			"w",
+			"wtf",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			arg0,
 			arg1
 		);
 	}
-	jint Log::w(const QString &arg0, const QString &arg1)
+	jint Log::wtf(const QString &arg0, const QString &arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.util.Log",
-			"w",
+			"wtf",
 			"(Ljava/lang/String;Ljava/lang/String;)I",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	jboolean Log::isLoggable(jstring arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.util.Log",
-			"isLoggable",
-			"(Ljava/lang/String;I)Z",
-			arg0,
-			arg1
-		);
-	}
-	jboolean Log::isLoggable(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.util.Log",
-			"isLoggable",
-			"(Ljava/lang/String;I)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
 		);
 	}
 	jint Log::wtf(jstring arg0, jthrowable arg1)
@@ -428,35 +457,6 @@ namespace __jni_impl::android::util
 			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
-	}
-	jint Log::wtf(jstring arg0, jstring arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.util.Log",
-			"wtf",
-			"(Ljava/lang/String;Ljava/lang/String;)I",
-			arg0,
-			arg1
-		);
-	}
-	jint Log::wtf(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.util.Log",
-			"wtf",
-			"(Ljava/lang/String;Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	jstring Log::getStackTraceString(jthrowable arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.util.Log",
-			"getStackTraceString",
-			"(Ljava/lang/Throwable;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::util
 

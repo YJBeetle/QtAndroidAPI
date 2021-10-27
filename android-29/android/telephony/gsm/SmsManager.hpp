@@ -35,14 +35,14 @@ namespace __jni_impl::android::telephony::gsm
 		
 		// Methods
 		static QAndroidJniObject getDefault();
-		void sendTextMessage(jstring arg0, jstring arg1, jstring arg2, __jni_impl::android::app::PendingIntent arg3, __jni_impl::android::app::PendingIntent arg4);
-		void sendTextMessage(const QString &arg0, const QString &arg1, const QString &arg2, __jni_impl::android::app::PendingIntent arg3, __jni_impl::android::app::PendingIntent arg4);
 		QAndroidJniObject divideMessage(jstring arg0);
 		QAndroidJniObject divideMessage(const QString &arg0);
-		void sendMultipartTextMessage(jstring arg0, jstring arg1, __jni_impl::java::util::ArrayList arg2, __jni_impl::java::util::ArrayList arg3, __jni_impl::java::util::ArrayList arg4);
-		void sendMultipartTextMessage(const QString &arg0, const QString &arg1, __jni_impl::java::util::ArrayList arg2, __jni_impl::java::util::ArrayList arg3, __jni_impl::java::util::ArrayList arg4);
 		void sendDataMessage(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, __jni_impl::android::app::PendingIntent arg4, __jni_impl::android::app::PendingIntent arg5);
 		void sendDataMessage(const QString &arg0, const QString &arg1, jshort arg2, jbyteArray arg3, __jni_impl::android::app::PendingIntent arg4, __jni_impl::android::app::PendingIntent arg5);
+		void sendMultipartTextMessage(jstring arg0, jstring arg1, __jni_impl::java::util::ArrayList arg2, __jni_impl::java::util::ArrayList arg3, __jni_impl::java::util::ArrayList arg4);
+		void sendMultipartTextMessage(const QString &arg0, const QString &arg1, __jni_impl::java::util::ArrayList arg2, __jni_impl::java::util::ArrayList arg3, __jni_impl::java::util::ArrayList arg4);
+		void sendTextMessage(jstring arg0, jstring arg1, jstring arg2, __jni_impl::android::app::PendingIntent arg3, __jni_impl::android::app::PendingIntent arg4);
+		void sendTextMessage(const QString &arg0, const QString &arg1, const QString &arg2, __jni_impl::android::app::PendingIntent arg3, __jni_impl::android::app::PendingIntent arg4);
 	};
 } // namespace __jni_impl::android::telephony::gsm
 
@@ -133,30 +133,6 @@ namespace __jni_impl::android::telephony::gsm
 			"()Landroid/telephony/gsm/SmsManager;"
 		);
 	}
-	void SmsManager::sendTextMessage(jstring arg0, jstring arg1, jstring arg2, __jni_impl::android::app::PendingIntent arg3, __jni_impl::android::app::PendingIntent arg4)
-	{
-		__thiz.callMethod<void>(
-			"sendTextMessage",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
-		);
-	}
-	void SmsManager::sendTextMessage(const QString &arg0, const QString &arg1, const QString &arg2, __jni_impl::android::app::PendingIntent arg3, __jni_impl::android::app::PendingIntent arg4)
-	{
-		__thiz.callMethod<void>(
-			"sendTextMessage",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
-		);
-	}
 	QAndroidJniObject SmsManager::divideMessage(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -171,30 +147,6 @@ namespace __jni_impl::android::telephony::gsm
 			"divideMessage",
 			"(Ljava/lang/String;)Ljava/util/ArrayList;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void SmsManager::sendMultipartTextMessage(jstring arg0, jstring arg1, __jni_impl::java::util::ArrayList arg2, __jni_impl::java::util::ArrayList arg3, __jni_impl::java::util::ArrayList arg4)
-	{
-		__thiz.callMethod<void>(
-			"sendMultipartTextMessage",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
-		);
-	}
-	void SmsManager::sendMultipartTextMessage(const QString &arg0, const QString &arg1, __jni_impl::java::util::ArrayList arg2, __jni_impl::java::util::ArrayList arg3, __jni_impl::java::util::ArrayList arg4)
-	{
-		__thiz.callMethod<void>(
-			"sendMultipartTextMessage",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
 		);
 	}
 	void SmsManager::sendDataMessage(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, __jni_impl::android::app::PendingIntent arg4, __jni_impl::android::app::PendingIntent arg5)
@@ -221,6 +173,54 @@ namespace __jni_impl::android::telephony::gsm
 			arg3,
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object()
+		);
+	}
+	void SmsManager::sendMultipartTextMessage(jstring arg0, jstring arg1, __jni_impl::java::util::ArrayList arg2, __jni_impl::java::util::ArrayList arg3, __jni_impl::java::util::ArrayList arg4)
+	{
+		__thiz.callMethod<void>(
+			"sendMultipartTextMessage",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object(),
+			arg4.__jniObject().object()
+		);
+	}
+	void SmsManager::sendMultipartTextMessage(const QString &arg0, const QString &arg1, __jni_impl::java::util::ArrayList arg2, __jni_impl::java::util::ArrayList arg3, __jni_impl::java::util::ArrayList arg4)
+	{
+		__thiz.callMethod<void>(
+			"sendMultipartTextMessage",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object(),
+			arg4.__jniObject().object()
+		);
+	}
+	void SmsManager::sendTextMessage(jstring arg0, jstring arg1, jstring arg2, __jni_impl::android::app::PendingIntent arg3, __jni_impl::android::app::PendingIntent arg4)
+	{
+		__thiz.callMethod<void>(
+			"sendTextMessage",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object(),
+			arg4.__jniObject().object()
+		);
+	}
+	void SmsManager::sendTextMessage(const QString &arg0, const QString &arg1, const QString &arg2, __jni_impl::android::app::PendingIntent arg3, __jni_impl::android::app::PendingIntent arg4)
+	{
+		__thiz.callMethod<void>(
+			"sendTextMessage",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/PendingIntent;Landroid/app/PendingIntent;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3.__jniObject().object(),
+			arg4.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::telephony::gsm

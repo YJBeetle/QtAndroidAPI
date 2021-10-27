@@ -7,15 +7,15 @@
 
 namespace __jni_impl::java::net
 {
+	class CacheRequest;
+}
+namespace __jni_impl::java::net
+{
 	class CacheResponse;
 }
 namespace __jni_impl::java::net
 {
 	class URI;
-}
-namespace __jni_impl::java::net
-{
-	class CacheRequest;
 }
 namespace __jni_impl::java::net
 {
@@ -33,17 +33,17 @@ namespace __jni_impl::java::net
 		void __constructor();
 		
 		// Methods
+		static QAndroidJniObject getDefault();
+		static void setDefault(__jni_impl::java::net::ResponseCache arg0);
 		QAndroidJniObject get(__jni_impl::java::net::URI arg0, jstring arg1, __jni_impl::__JniBaseClass arg2);
 		QAndroidJniObject get(__jni_impl::java::net::URI arg0, const QString &arg1, __jni_impl::__JniBaseClass arg2);
 		QAndroidJniObject put(__jni_impl::java::net::URI arg0, __jni_impl::java::net::URLConnection arg1);
-		static QAndroidJniObject getDefault();
-		static void setDefault(__jni_impl::java::net::ResponseCache arg0);
 	};
 } // namespace __jni_impl::java::net
 
+#include "CacheRequest.hpp"
 #include "CacheResponse.hpp"
 #include "URI.hpp"
-#include "CacheRequest.hpp"
 #include "URLConnection.hpp"
 
 namespace __jni_impl::java::net
@@ -60,6 +60,23 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
+	QAndroidJniObject ResponseCache::getDefault()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.net.ResponseCache",
+			"getDefault",
+			"()Ljava/net/ResponseCache;"
+		);
+	}
+	void ResponseCache::setDefault(__jni_impl::java::net::ResponseCache arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"java.net.ResponseCache",
+			"setDefault",
+			"(Ljava/net/ResponseCache;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject ResponseCache::get(__jni_impl::java::net::URI arg0, jstring arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -87,23 +104,6 @@ namespace __jni_impl::java::net
 			"(Ljava/net/URI;Ljava/net/URLConnection;)Ljava/net/CacheRequest;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ResponseCache::getDefault()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.net.ResponseCache",
-			"getDefault",
-			"()Ljava/net/ResponseCache;"
-		);
-	}
-	void ResponseCache::setDefault(__jni_impl::java::net::ResponseCache arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"java.net.ResponseCache",
-			"setDefault",
-			"(Ljava/net/ResponseCache;)V",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::java::net

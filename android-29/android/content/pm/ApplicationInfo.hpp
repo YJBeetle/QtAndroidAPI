@@ -6,14 +6,6 @@
 #include "../../../__JniBaseClass.hpp"
 #include "PackageItemInfo.hpp"
 
-namespace __jni_impl::java::util
-{
-	class UUID;
-}
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::content
 {
 	class Context;
@@ -21,6 +13,14 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::content::pm
 {
 	class PackageManager;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
+}
+namespace __jni_impl::java::util
+{
+	class UUID;
 }
 
 namespace __jni_impl::android::content::pm
@@ -106,23 +106,23 @@ namespace __jni_impl::android::content::pm
 		void __constructor(__jni_impl::android::content::pm::ApplicationInfo arg0);
 		
 		// Methods
-		jstring toString();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		static jstring getCategoryTitle(__jni_impl::android::content::Context arg0, jint arg1);
-		jboolean isVirtualPreload();
-		jboolean isProfileableByShell();
-		jboolean isResourceOverlay();
+		jint describeContents();
 		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		void dump(__jni_impl::__JniBaseClass arg0, const QString &arg1);
+		jboolean isProfileableByShell();
+		jboolean isResourceOverlay();
+		jboolean isVirtualPreload();
 		jstring loadDescription(__jni_impl::android::content::pm::PackageManager arg0);
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::pm
 
-#include "../../../java/util/UUID.hpp"
-#include "../../os/Parcel.hpp"
 #include "../Context.hpp"
 #include "PackageManager.hpp"
+#include "../../os/Parcel.hpp"
+#include "../../../java/util/UUID.hpp"
 
 namespace __jni_impl::android::content::pm
 {
@@ -632,29 +632,6 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	jstring ApplicationInfo::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint ApplicationInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void ApplicationInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	jstring ApplicationInfo::getCategoryTitle(__jni_impl::android::content::Context arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -665,25 +642,11 @@ namespace __jni_impl::android::content::pm
 			arg1
 		).object<jstring>();
 	}
-	jboolean ApplicationInfo::isVirtualPreload()
+	jint ApplicationInfo::describeContents()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isVirtualPreload",
-			"()Z"
-		);
-	}
-	jboolean ApplicationInfo::isProfileableByShell()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isProfileableByShell",
-			"()Z"
-		);
-	}
-	jboolean ApplicationInfo::isResourceOverlay()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isResourceOverlay",
-			"()Z"
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
 		);
 	}
 	void ApplicationInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
@@ -704,6 +667,27 @@ namespace __jni_impl::android::content::pm
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
+	jboolean ApplicationInfo::isProfileableByShell()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isProfileableByShell",
+			"()Z"
+		);
+	}
+	jboolean ApplicationInfo::isResourceOverlay()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isResourceOverlay",
+			"()Z"
+		);
+	}
+	jboolean ApplicationInfo::isVirtualPreload()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isVirtualPreload",
+			"()Z"
+		);
+	}
 	jstring ApplicationInfo::loadDescription(__jni_impl::android::content::pm::PackageManager arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -711,6 +695,22 @@ namespace __jni_impl::android::content::pm
 			"(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;",
 			arg0.__jniObject().object()
 		).object<jstring>();
+	}
+	jstring ApplicationInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void ApplicationInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

@@ -19,15 +19,15 @@ namespace __jni_impl::java::io
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::java::io::PipedInputStream arg0);
 		void __constructor();
+		void __constructor(__jni_impl::java::io::PipedInputStream arg0);
 		
 		// Methods
-		void write(jint arg0);
-		void write(jbyteArray arg0, jint arg1, jint arg2);
+		void close();
 		void connect(__jni_impl::java::io::PipedInputStream arg0);
 		void flush();
-		void close();
+		void write(jint arg0);
+		void write(jbyteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::java::io
 
@@ -38,6 +38,13 @@ namespace __jni_impl::java::io
 	// Fields
 	
 	// Constructors
+	void PipedOutputStream::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.PipedOutputStream",
+			"()V"
+		);
+	}
 	void PipedOutputStream::__constructor(__jni_impl::java::io::PipedInputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -46,15 +53,30 @@ namespace __jni_impl::java::io
 			arg0.__jniObject().object()
 		);
 	}
-	void PipedOutputStream::__constructor()
+	
+	// Methods
+	void PipedOutputStream::close()
 	{
-		__thiz = QAndroidJniObject(
-			"java.io.PipedOutputStream",
+		__thiz.callMethod<void>(
+			"close",
 			"()V"
 		);
 	}
-	
-	// Methods
+	void PipedOutputStream::connect(__jni_impl::java::io::PipedInputStream arg0)
+	{
+		__thiz.callMethod<void>(
+			"connect",
+			"(Ljava/io/PipedInputStream;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void PipedOutputStream::flush()
+	{
+		__thiz.callMethod<void>(
+			"flush",
+			"()V"
+		);
+	}
 	void PipedOutputStream::write(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -73,28 +95,6 @@ namespace __jni_impl::java::io
 			arg2
 		);
 	}
-	void PipedOutputStream::connect(__jni_impl::java::io::PipedInputStream arg0)
-	{
-		__thiz.callMethod<void>(
-			"connect",
-			"(Ljava/io/PipedInputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void PipedOutputStream::flush()
-	{
-		__thiz.callMethod<void>(
-			"flush",
-			"()V"
-		);
-	}
-	void PipedOutputStream::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
-	}
 } // namespace __jni_impl::java::io
 
 namespace java::io
@@ -103,14 +103,14 @@ namespace java::io
 	{
 	public:
 		PipedOutputStream(QAndroidJniObject obj) { __thiz = obj; }
+		PipedOutputStream()
+		{
+			__constructor();
+		}
 		PipedOutputStream(__jni_impl::java::io::PipedInputStream arg0)
 		{
 			__constructor(
 				arg0);
-		}
-		PipedOutputStream()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::io

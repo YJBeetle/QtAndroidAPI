@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::renderscript
 {
-	class RenderScript;
+	class Element;
 }
 namespace __jni_impl::android::renderscript
 {
-	class Element;
+	class RenderScript;
 }
 
 namespace __jni_impl::android::renderscript
@@ -33,8 +33,8 @@ namespace __jni_impl::android::renderscript
 	};
 } // namespace __jni_impl::android::renderscript
 
-#include "RenderScript.hpp"
 #include "Element.hpp"
+#include "RenderScript.hpp"
 
 namespace __jni_impl::android::renderscript
 {

@@ -22,8 +22,8 @@ namespace __jni_impl::android::net::http
 		void __constructor(__jni_impl::android::net::http::SslCertificate arg0, const QString &arg1);
 		
 		// Methods
-		jstring getDName();
 		jstring getCName();
+		jstring getDName();
 		jstring getOName();
 		jstring getUName();
 	};
@@ -56,17 +56,17 @@ namespace __jni_impl::android::net::http
 	}
 	
 	// Methods
-	jstring SslCertificate_DName::getDName()
-	{
-		return __thiz.callObjectMethod(
-			"getDName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jstring SslCertificate_DName::getCName()
 	{
 		return __thiz.callObjectMethod(
 			"getCName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring SslCertificate_DName::getDName()
+	{
+		return __thiz.callObjectMethod(
+			"getDName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

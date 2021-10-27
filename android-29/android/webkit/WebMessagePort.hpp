@@ -5,6 +5,10 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::os
+{
+	class Handler;
+}
 namespace __jni_impl::android::webkit
 {
 	class WebMessage;
@@ -12,10 +16,6 @@ namespace __jni_impl::android::webkit
 namespace __jni_impl::android::webkit
 {
 	class WebMessagePort_WebMessageCallback;
-}
-namespace __jni_impl::android::os
-{
-	class Handler;
 }
 
 namespace __jni_impl::android::webkit
@@ -36,9 +36,9 @@ namespace __jni_impl::android::webkit
 	};
 } // namespace __jni_impl::android::webkit
 
+#include "../os/Handler.hpp"
 #include "WebMessage.hpp"
 #include "WebMessagePort_WebMessageCallback.hpp"
-#include "../os/Handler.hpp"
 
 namespace __jni_impl::android::webkit
 {

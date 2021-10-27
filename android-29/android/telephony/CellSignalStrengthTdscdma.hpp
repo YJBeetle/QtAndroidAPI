@@ -23,15 +23,15 @@ namespace __jni_impl::android::telephony
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint getLevel();
-		jint getRscp();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jboolean equals(jobject arg0);
 		jint getAsuLevel();
 		jint getDbm();
+		jint getLevel();
+		jint getRscp();
+		jint hashCode();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -58,6 +58,13 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
+	jint CellSignalStrengthTdscdma::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean CellSignalStrengthTdscdma::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -66,17 +73,17 @@ namespace __jni_impl::android::telephony
 			arg0
 		);
 	}
-	jstring CellSignalStrengthTdscdma::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint CellSignalStrengthTdscdma::hashCode()
+	jint CellSignalStrengthTdscdma::getAsuLevel()
 	{
 		return __thiz.callMethod<jint>(
-			"hashCode",
+			"getAsuLevel",
+			"()I"
+		);
+	}
+	jint CellSignalStrengthTdscdma::getDbm()
+	{
+		return __thiz.callMethod<jint>(
+			"getDbm",
 			"()I"
 		);
 	}
@@ -94,12 +101,19 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
-	jint CellSignalStrengthTdscdma::describeContents()
+	jint CellSignalStrengthTdscdma::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
 		);
+	}
+	jstring CellSignalStrengthTdscdma::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void CellSignalStrengthTdscdma::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -108,20 +122,6 @@ namespace __jni_impl::android::telephony
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint CellSignalStrengthTdscdma::getAsuLevel()
-	{
-		return __thiz.callMethod<jint>(
-			"getAsuLevel",
-			"()I"
-		);
-	}
-	jint CellSignalStrengthTdscdma::getDbm()
-	{
-		return __thiz.callMethod<jint>(
-			"getDbm",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::telephony

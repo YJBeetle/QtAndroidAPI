@@ -16,12 +16,12 @@ namespace __jni_impl::java::security
 		// Fields
 		
 		// Constructors
+		void __constructor();
+		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
 		void __constructor(const QString &arg0, jthrowable arg1);
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
-		void __constructor();
 		
 		// Methods
 	};
@@ -33,6 +33,29 @@ namespace __jni_impl::java::security
 	// Fields
 	
 	// Constructors
+	void ProviderException::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.ProviderException",
+			"()V"
+		);
+	}
+	void ProviderException::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.ProviderException",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void ProviderException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.ProviderException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void ProviderException::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -59,29 +82,6 @@ namespace __jni_impl::java::security
 			arg1
 		);
 	}
-	void ProviderException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.ProviderException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void ProviderException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.ProviderException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void ProviderException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.ProviderException",
-			"()V"
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::java::security
@@ -92,6 +92,15 @@ namespace java::security
 	{
 	public:
 		ProviderException(QAndroidJniObject obj) { __thiz = obj; }
+		ProviderException()
+		{
+			__constructor();
+		}
+		ProviderException(jstring arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		ProviderException(jthrowable arg0)
 		{
 			__constructor(
@@ -102,15 +111,6 @@ namespace java::security
 			__constructor(
 				arg0,
 				arg1);
-		}
-		ProviderException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		ProviderException()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::security

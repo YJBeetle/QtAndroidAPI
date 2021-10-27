@@ -5,17 +5,17 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::security
+namespace __jni_impl::java::nio
 {
-	class SecureRandom;
+	class ByteBuffer;
 }
 namespace __jni_impl::java::security
 {
 	class AlgorithmParameters;
 }
-namespace __jni_impl::java::nio
+namespace __jni_impl::java::security
 {
-	class ByteBuffer;
+	class SecureRandom;
 }
 
 namespace __jni_impl::javax::crypto
@@ -32,9 +32,9 @@ namespace __jni_impl::javax::crypto
 	};
 } // namespace __jni_impl::javax::crypto
 
-#include "../../java/security/SecureRandom.hpp"
-#include "../../java/security/AlgorithmParameters.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
+#include "../../java/security/AlgorithmParameters.hpp"
+#include "../../java/security/SecureRandom.hpp"
 
 namespace __jni_impl::javax::crypto
 {

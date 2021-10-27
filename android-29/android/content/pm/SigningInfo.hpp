@@ -24,11 +24,11 @@ namespace __jni_impl::android::content::pm
 		
 		// Methods
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jarray getApkContentsSigners();
+		jarray getSigningCertificateHistory();
 		jboolean hasMultipleSigners();
 		jboolean hasPastSigningCertificates();
-		jarray getSigningCertificateHistory();
-		jarray getApkContentsSigners();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -71,14 +71,19 @@ namespace __jni_impl::android::content::pm
 			"()I"
 		);
 	}
-	void SigningInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jarray SigningInfo::getApkContentsSigners()
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
+		return __thiz.callObjectMethod(
+			"getApkContentsSigners",
+			"()[Landroid/content/pm/Signature;"
+		).object<jarray>();
+	}
+	jarray SigningInfo::getSigningCertificateHistory()
+	{
+		return __thiz.callObjectMethod(
+			"getSigningCertificateHistory",
+			"()[Landroid/content/pm/Signature;"
+		).object<jarray>();
 	}
 	jboolean SigningInfo::hasMultipleSigners()
 	{
@@ -94,19 +99,14 @@ namespace __jni_impl::android::content::pm
 			"()Z"
 		);
 	}
-	jarray SigningInfo::getSigningCertificateHistory()
+	void SigningInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
-			"getSigningCertificateHistory",
-			"()[Landroid/content/pm/Signature;"
-		).object<jarray>();
-	}
-	jarray SigningInfo::getApkContentsSigners()
-	{
-		return __thiz.callObjectMethod(
-			"getApkContentsSigners",
-			"()[Landroid/content/pm/Signature;"
-		).object<jarray>();
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content::pm
 

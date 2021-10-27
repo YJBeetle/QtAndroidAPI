@@ -22,14 +22,14 @@ namespace __jni_impl::android::nfc::tech
 		
 		// Methods
 		static QAndroidJniObject get(__jni_impl::android::nfc::Tag arg0);
-		void connect();
 		void close();
-		QAndroidJniObject getTag();
-		jbyte getResponseFlags();
+		void connect();
 		jbyte getDsfId();
-		jbyteArray transceive(jbyteArray arg0);
 		jint getMaxTransceiveLength();
+		jbyte getResponseFlags();
+		QAndroidJniObject getTag();
 		jboolean isConnected();
+		jbyteArray transceive(jbyteArray arg0);
 	};
 } // namespace __jni_impl::android::nfc::tech
 
@@ -57,13 +57,6 @@ namespace __jni_impl::android::nfc::tech
 			arg0.__jniObject().object()
 		);
 	}
-	void NfcV::connect()
-	{
-		__thiz.callMethod<void>(
-			"connect",
-			"()V"
-		);
-	}
 	void NfcV::close()
 	{
 		__thiz.callMethod<void>(
@@ -71,18 +64,11 @@ namespace __jni_impl::android::nfc::tech
 			"()V"
 		);
 	}
-	QAndroidJniObject NfcV::getTag()
+	void NfcV::connect()
 	{
-		return __thiz.callObjectMethod(
-			"getTag",
-			"()Landroid/nfc/Tag;"
-		);
-	}
-	jbyte NfcV::getResponseFlags()
-	{
-		return __thiz.callMethod<jbyte>(
-			"getResponseFlags",
-			"()B"
+		__thiz.callMethod<void>(
+			"connect",
+			"()V"
 		);
 	}
 	jbyte NfcV::getDsfId()
@@ -92,19 +78,25 @@ namespace __jni_impl::android::nfc::tech
 			"()B"
 		);
 	}
-	jbyteArray NfcV::transceive(jbyteArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"transceive",
-			"([B)[B",
-			arg0
-		).object<jbyteArray>();
-	}
 	jint NfcV::getMaxTransceiveLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxTransceiveLength",
 			"()I"
+		);
+	}
+	jbyte NfcV::getResponseFlags()
+	{
+		return __thiz.callMethod<jbyte>(
+			"getResponseFlags",
+			"()B"
+		);
+	}
+	QAndroidJniObject NfcV::getTag()
+	{
+		return __thiz.callObjectMethod(
+			"getTag",
+			"()Landroid/nfc/Tag;"
 		);
 	}
 	jboolean NfcV::isConnected()
@@ -113,6 +105,14 @@ namespace __jni_impl::android::nfc::tech
 			"isConnected",
 			"()Z"
 		);
+	}
+	jbyteArray NfcV::transceive(jbyteArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"transceive",
+			"([B)[B",
+			arg0
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::nfc::tech
 

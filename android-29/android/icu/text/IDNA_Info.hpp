@@ -17,9 +17,9 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		jboolean isTransitionalDifferent();
-		jboolean hasErrors();
 		QAndroidJniObject getErrors();
+		jboolean hasErrors();
+		jboolean isTransitionalDifferent();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -38,11 +38,11 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jboolean IDNA_Info::isTransitionalDifferent()
+	QAndroidJniObject IDNA_Info::getErrors()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isTransitionalDifferent",
-			"()Z"
+		return __thiz.callObjectMethod(
+			"getErrors",
+			"()Ljava/util/Set;"
 		);
 	}
 	jboolean IDNA_Info::hasErrors()
@@ -52,11 +52,11 @@ namespace __jni_impl::android::icu::text
 			"()Z"
 		);
 	}
-	QAndroidJniObject IDNA_Info::getErrors()
+	jboolean IDNA_Info::isTransitionalDifferent()
 	{
-		return __thiz.callObjectMethod(
-			"getErrors",
-			"()Ljava/util/Set;"
+		return __thiz.callMethod<jboolean>(
+			"isTransitionalDifferent",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::icu::text

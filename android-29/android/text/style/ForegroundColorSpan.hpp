@@ -23,14 +23,14 @@ namespace __jni_impl::android::text::style
 		// Fields
 		
 		// Constructors
-		void __constructor(jint arg0);
 		void __constructor(__jni_impl::android::os::Parcel arg0);
+		void __constructor(jint arg0);
 		
 		// Methods
-		jint getForegroundColor();
-		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
-		jint getSpanTypeId();
 		jint describeContents();
+		jint getForegroundColor();
+		jint getSpanTypeId();
+		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::text::style
@@ -43,14 +43,6 @@ namespace __jni_impl::android::text::style
 	// Fields
 	
 	// Constructors
-	void ForegroundColorSpan::__constructor(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.style.ForegroundColorSpan",
-			"(I)V",
-			arg0
-		);
-	}
 	void ForegroundColorSpan::__constructor(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -59,21 +51,28 @@ namespace __jni_impl::android::text::style
 			arg0.__jniObject().object()
 		);
 	}
+	void ForegroundColorSpan::__constructor(jint arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.style.ForegroundColorSpan",
+			"(I)V",
+			arg0
+		);
+	}
 	
 	// Methods
+	jint ForegroundColorSpan::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jint ForegroundColorSpan::getForegroundColor()
 	{
 		return __thiz.callMethod<jint>(
 			"getForegroundColor",
 			"()I"
-		);
-	}
-	void ForegroundColorSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
-	{
-		__thiz.callMethod<void>(
-			"updateDrawState",
-			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	jint ForegroundColorSpan::getSpanTypeId()
@@ -83,11 +82,12 @@ namespace __jni_impl::android::text::style
 			"()I"
 		);
 	}
-	jint ForegroundColorSpan::describeContents()
+	void ForegroundColorSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		__thiz.callMethod<void>(
+			"updateDrawState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void ForegroundColorSpan::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
@@ -107,12 +107,12 @@ namespace android::text::style
 	{
 	public:
 		ForegroundColorSpan(QAndroidJniObject obj) { __thiz = obj; }
-		ForegroundColorSpan(jint arg0)
+		ForegroundColorSpan(__jni_impl::android::os::Parcel arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		ForegroundColorSpan(__jni_impl::android::os::Parcel arg0)
+		ForegroundColorSpan(jint arg0)
 		{
 			__constructor(
 				arg0);

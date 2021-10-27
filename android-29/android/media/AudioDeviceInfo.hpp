@@ -42,18 +42,18 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jint hashCode();
-		jint getId();
-		jint getType();
 		jstring getAddress();
-		jstring getProductName();
-		jboolean isSource();
-		jboolean isSink();
-		jintArray getSampleRates();
-		jintArray getChannelMasks();
-		jintArray getChannelIndexMasks();
 		jintArray getChannelCounts();
+		jintArray getChannelIndexMasks();
+		jintArray getChannelMasks();
 		jintArray getEncodings();
+		jint getId();
+		jstring getProductName();
+		jintArray getSampleRates();
+		jint getType();
+		jint hashCode();
+		jboolean isSink();
+		jboolean isSource();
 	};
 } // namespace __jni_impl::android::media
 
@@ -247,27 +247,6 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	jint AudioDeviceInfo::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jint AudioDeviceInfo::getId()
-	{
-		return __thiz.callMethod<jint>(
-			"getId",
-			"()I"
-		);
-	}
-	jint AudioDeviceInfo::getType()
-	{
-		return __thiz.callMethod<jint>(
-			"getType",
-			"()I"
-		);
-	}
 	jstring AudioDeviceInfo::getAddress()
 	{
 		return __thiz.callObjectMethod(
@@ -275,38 +254,10 @@ namespace __jni_impl::android::media
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jstring AudioDeviceInfo::getProductName()
+	jintArray AudioDeviceInfo::getChannelCounts()
 	{
 		return __thiz.callObjectMethod(
-			"getProductName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	jboolean AudioDeviceInfo::isSource()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSource",
-			"()Z"
-		);
-	}
-	jboolean AudioDeviceInfo::isSink()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSink",
-			"()Z"
-		);
-	}
-	jintArray AudioDeviceInfo::getSampleRates()
-	{
-		return __thiz.callObjectMethod(
-			"getSampleRates",
-			"()[I"
-		).object<jintArray>();
-	}
-	jintArray AudioDeviceInfo::getChannelMasks()
-	{
-		return __thiz.callObjectMethod(
-			"getChannelMasks",
+			"getChannelCounts",
 			"()[I"
 		).object<jintArray>();
 	}
@@ -317,10 +268,10 @@ namespace __jni_impl::android::media
 			"()[I"
 		).object<jintArray>();
 	}
-	jintArray AudioDeviceInfo::getChannelCounts()
+	jintArray AudioDeviceInfo::getChannelMasks()
 	{
 		return __thiz.callObjectMethod(
-			"getChannelCounts",
+			"getChannelMasks",
 			"()[I"
 		).object<jintArray>();
 	}
@@ -330,6 +281,55 @@ namespace __jni_impl::android::media
 			"getEncodings",
 			"()[I"
 		).object<jintArray>();
+	}
+	jint AudioDeviceInfo::getId()
+	{
+		return __thiz.callMethod<jint>(
+			"getId",
+			"()I"
+		);
+	}
+	jstring AudioDeviceInfo::getProductName()
+	{
+		return __thiz.callObjectMethod(
+			"getProductName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jintArray AudioDeviceInfo::getSampleRates()
+	{
+		return __thiz.callObjectMethod(
+			"getSampleRates",
+			"()[I"
+		).object<jintArray>();
+	}
+	jint AudioDeviceInfo::getType()
+	{
+		return __thiz.callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
+	jint AudioDeviceInfo::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jboolean AudioDeviceInfo::isSink()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSink",
+			"()Z"
+		);
+	}
+	jboolean AudioDeviceInfo::isSource()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSource",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::media
 

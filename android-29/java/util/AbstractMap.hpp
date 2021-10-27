@@ -17,21 +17,21 @@ namespace __jni_impl::java::util
 		void __constructor();
 		
 		// Methods
-		jobject remove(jobject arg0);
-		jobject get(jobject arg0);
-		jobject put(jobject arg0, jobject arg1);
+		void clear();
+		jboolean containsKey(jobject arg0);
+		jboolean containsValue(jobject arg0);
+		QAndroidJniObject entrySet();
 		jboolean equals(jobject arg0);
+		jobject get(jobject arg0);
+		jint hashCode();
+		jboolean isEmpty();
+		QAndroidJniObject keySet();
+		jobject put(jobject arg0, jobject arg1);
+		void putAll(__jni_impl::__JniBaseClass arg0);
+		jobject remove(jobject arg0);
+		jint size();
 		jstring toString();
 		QAndroidJniObject values();
-		jint hashCode();
-		void clear();
-		jboolean isEmpty();
-		jint size();
-		QAndroidJniObject entrySet();
-		void putAll(__jni_impl::__JniBaseClass arg0);
-		jboolean containsKey(jobject arg0);
-		QAndroidJniObject keySet();
-		jboolean containsValue(jobject arg0);
 	};
 } // namespace __jni_impl::java::util
 
@@ -49,13 +49,43 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	jobject AbstractMap::remove(jobject arg0)
+	void AbstractMap::clear()
+	{
+		__thiz.callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	jboolean AbstractMap::containsKey(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"containsKey",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jboolean AbstractMap::containsValue(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"containsValue",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	QAndroidJniObject AbstractMap::entrySet()
 	{
 		return __thiz.callObjectMethod(
-			"remove",
-			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			"entrySet",
+			"()Ljava/util/Set;"
+		);
+	}
+	jboolean AbstractMap::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
 			arg0
-		).object<jobject>();
+		);
 	}
 	jobject AbstractMap::get(jobject arg0)
 	{
@@ -64,6 +94,27 @@ namespace __jni_impl::java::util
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
 		).object<jobject>();
+	}
+	jint AbstractMap::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jboolean AbstractMap::isEmpty()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEmpty",
+			"()Z"
+		);
+	}
+	QAndroidJniObject AbstractMap::keySet()
+	{
+		return __thiz.callObjectMethod(
+			"keySet",
+			"()Ljava/util/Set;"
+		);
 	}
 	jobject AbstractMap::put(jobject arg0, jobject arg1)
 	{
@@ -74,12 +125,27 @@ namespace __jni_impl::java::util
 			arg1
 		).object<jobject>();
 	}
-	jboolean AbstractMap::equals(jobject arg0)
+	void AbstractMap::putAll(__jni_impl::__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
+		__thiz.callMethod<void>(
+			"putAll",
+			"(Ljava/util/Map;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jobject AbstractMap::remove(jobject arg0)
+	{
+		return __thiz.callObjectMethod(
+			"remove",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
+		).object<jobject>();
+	}
+	jint AbstractMap::size()
+	{
+		return __thiz.callMethod<jint>(
+			"size",
+			"()I"
 		);
 	}
 	jstring AbstractMap::toString()
@@ -94,72 +160,6 @@ namespace __jni_impl::java::util
 		return __thiz.callObjectMethod(
 			"values",
 			"()Ljava/util/Collection;"
-		);
-	}
-	jint AbstractMap::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	void AbstractMap::clear()
-	{
-		__thiz.callMethod<void>(
-			"clear",
-			"()V"
-		);
-	}
-	jboolean AbstractMap::isEmpty()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEmpty",
-			"()Z"
-		);
-	}
-	jint AbstractMap::size()
-	{
-		return __thiz.callMethod<jint>(
-			"size",
-			"()I"
-		);
-	}
-	QAndroidJniObject AbstractMap::entrySet()
-	{
-		return __thiz.callObjectMethod(
-			"entrySet",
-			"()Ljava/util/Set;"
-		);
-	}
-	void AbstractMap::putAll(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"putAll",
-			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean AbstractMap::containsKey(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"containsKey",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	QAndroidJniObject AbstractMap::keySet()
-	{
-		return __thiz.callObjectMethod(
-			"keySet",
-			"()Ljava/util/Set;"
-		);
-	}
-	jboolean AbstractMap::containsValue(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"containsValue",
-			"(Ljava/lang/Object;)Z",
-			arg0
 		);
 	}
 } // namespace __jni_impl::java::util

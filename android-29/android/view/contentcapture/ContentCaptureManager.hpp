@@ -25,11 +25,11 @@ namespace __jni_impl::android::view::contentcapture
 		void __constructor();
 		
 		// Methods
+		QAndroidJniObject getContentCaptureConditions();
 		QAndroidJniObject getServiceComponentName();
 		jboolean isContentCaptureEnabled();
-		QAndroidJniObject getContentCaptureConditions();
-		void setContentCaptureEnabled(jboolean arg0);
 		void removeData(__jni_impl::android::view::contentcapture::DataRemovalRequest arg0);
+		void setContentCaptureEnabled(jboolean arg0);
 	};
 } // namespace __jni_impl::android::view::contentcapture
 
@@ -49,6 +49,13 @@ namespace __jni_impl::android::view::contentcapture
 	}
 	
 	// Methods
+	QAndroidJniObject ContentCaptureManager::getContentCaptureConditions()
+	{
+		return __thiz.callObjectMethod(
+			"getContentCaptureConditions",
+			"()Ljava/util/Set;"
+		);
+	}
 	QAndroidJniObject ContentCaptureManager::getServiceComponentName()
 	{
 		return __thiz.callObjectMethod(
@@ -63,11 +70,12 @@ namespace __jni_impl::android::view::contentcapture
 			"()Z"
 		);
 	}
-	QAndroidJniObject ContentCaptureManager::getContentCaptureConditions()
+	void ContentCaptureManager::removeData(__jni_impl::android::view::contentcapture::DataRemovalRequest arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getContentCaptureConditions",
-			"()Ljava/util/Set;"
+		__thiz.callMethod<void>(
+			"removeData",
+			"(Landroid/view/contentcapture/DataRemovalRequest;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void ContentCaptureManager::setContentCaptureEnabled(jboolean arg0)
@@ -76,14 +84,6 @@ namespace __jni_impl::android::view::contentcapture
 			"setContentCaptureEnabled",
 			"(Z)V",
 			arg0
-		);
-	}
-	void ContentCaptureManager::removeData(__jni_impl::android::view::contentcapture::DataRemovalRequest arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeData",
-			"(Landroid/view/contentcapture/DataRemovalRequest;)V",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::view::contentcapture

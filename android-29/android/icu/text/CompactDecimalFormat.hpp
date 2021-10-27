@@ -9,17 +9,17 @@
 #include "NumberFormat.hpp"
 #include "DecimalFormat.hpp"
 
-namespace __jni_impl::android::icu::util
-{
-	class ULocale;
-}
 namespace __jni_impl::android::icu::text
 {
 	class CompactDecimalFormat_CompactStyle;
 }
-namespace __jni_impl::java::util
+namespace __jni_impl::android::icu::util
 {
-	class Locale;
+	class CurrencyAmount;
+}
+namespace __jni_impl::android::icu::util
+{
+	class ULocale;
 }
 namespace __jni_impl::java::lang
 {
@@ -29,9 +29,9 @@ namespace __jni_impl::java::text
 {
 	class ParsePosition;
 }
-namespace __jni_impl::android::icu::util
+namespace __jni_impl::java::util
 {
-	class CurrencyAmount;
+	class Locale;
 }
 
 namespace __jni_impl::android::icu::text
@@ -45,8 +45,8 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::CompactDecimalFormat_CompactStyle arg1);
 		static QAndroidJniObject getInstance(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::CompactDecimalFormat_CompactStyle arg1);
+		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::CompactDecimalFormat_CompactStyle arg1);
 		QAndroidJniObject parse(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
 		QAndroidJniObject parse(const QString &arg0, __jni_impl::java::text::ParsePosition arg1);
 		QAndroidJniObject parseCurrency(jstring arg0, __jni_impl::java::text::ParsePosition arg1);
@@ -54,12 +54,12 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "../util/ULocale.hpp"
 #include "CompactDecimalFormat_CompactStyle.hpp"
-#include "../../../java/util/Locale.hpp"
+#include "../util/CurrencyAmount.hpp"
+#include "../util/ULocale.hpp"
 #include "../../../java/lang/Number.hpp"
 #include "../../../java/text/ParsePosition.hpp"
-#include "../util/CurrencyAmount.hpp"
+#include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -74,22 +74,22 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	QAndroidJniObject CompactDecimalFormat::getInstance(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::CompactDecimalFormat_CompactStyle arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.CompactDecimalFormat",
-			"getInstance",
-			"(Ljava/util/Locale;Landroid/icu/text/CompactDecimalFormat$CompactStyle;)Landroid/icu/text/CompactDecimalFormat;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject CompactDecimalFormat::getInstance(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::CompactDecimalFormat_CompactStyle arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.CompactDecimalFormat",
 			"getInstance",
 			"(Landroid/icu/util/ULocale;Landroid/icu/text/CompactDecimalFormat$CompactStyle;)Landroid/icu/text/CompactDecimalFormat;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject CompactDecimalFormat::getInstance(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::CompactDecimalFormat_CompactStyle arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.CompactDecimalFormat",
+			"getInstance",
+			"(Ljava/util/Locale;Landroid/icu/text/CompactDecimalFormat$CompactStyle;)Landroid/icu/text/CompactDecimalFormat;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
 		);

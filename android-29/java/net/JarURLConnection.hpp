@@ -20,7 +20,7 @@ namespace __jni_impl::java::util::jar
 }
 namespace __jni_impl::java::util::jar
 {
-	class Manifest;
+	class JarEntry;
 }
 namespace __jni_impl::java::util::jar
 {
@@ -28,7 +28,7 @@ namespace __jni_impl::java::util::jar
 }
 namespace __jni_impl::java::util::jar
 {
-	class JarEntry;
+	class Manifest;
 }
 
 namespace __jni_impl::java::net
@@ -42,23 +42,23 @@ namespace __jni_impl::java::net
 		void __constructor();
 		
 		// Methods
-		jarray getCertificates();
-		QAndroidJniObject getMainAttributes();
 		QAndroidJniObject getAttributes();
-		QAndroidJniObject getManifest();
-		QAndroidJniObject getJarFile();
-		QAndroidJniObject getJarEntry();
+		jarray getCertificates();
 		jstring getEntryName();
+		QAndroidJniObject getJarEntry();
+		QAndroidJniObject getJarFile();
 		QAndroidJniObject getJarFileURL();
+		QAndroidJniObject getMainAttributes();
+		QAndroidJniObject getManifest();
 	};
 } // namespace __jni_impl::java::net
 
 #include "URL.hpp"
 #include "URLConnection.hpp"
 #include "../util/jar/Attributes.hpp"
-#include "../util/jar/Manifest.hpp"
-#include "../util/jar/JarFile.hpp"
 #include "../util/jar/JarEntry.hpp"
+#include "../util/jar/JarFile.hpp"
+#include "../util/jar/Manifest.hpp"
 
 namespace __jni_impl::java::net
 {
@@ -73,20 +73,6 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
-	jarray JarURLConnection::getCertificates()
-	{
-		return __thiz.callObjectMethod(
-			"getCertificates",
-			"()[Ljava/security/cert/Certificate;"
-		).object<jarray>();
-	}
-	QAndroidJniObject JarURLConnection::getMainAttributes()
-	{
-		return __thiz.callObjectMethod(
-			"getMainAttributes",
-			"()Ljava/util/jar/Attributes;"
-		);
-	}
 	QAndroidJniObject JarURLConnection::getAttributes()
 	{
 		return __thiz.callObjectMethod(
@@ -94,11 +80,25 @@ namespace __jni_impl::java::net
 			"()Ljava/util/jar/Attributes;"
 		);
 	}
-	QAndroidJniObject JarURLConnection::getManifest()
+	jarray JarURLConnection::getCertificates()
 	{
 		return __thiz.callObjectMethod(
-			"getManifest",
-			"()Ljava/util/jar/Manifest;"
+			"getCertificates",
+			"()[Ljava/security/cert/Certificate;"
+		).object<jarray>();
+	}
+	jstring JarURLConnection::getEntryName()
+	{
+		return __thiz.callObjectMethod(
+			"getEntryName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject JarURLConnection::getJarEntry()
+	{
+		return __thiz.callObjectMethod(
+			"getJarEntry",
+			"()Ljava/util/jar/JarEntry;"
 		);
 	}
 	QAndroidJniObject JarURLConnection::getJarFile()
@@ -108,25 +108,25 @@ namespace __jni_impl::java::net
 			"()Ljava/util/jar/JarFile;"
 		);
 	}
-	QAndroidJniObject JarURLConnection::getJarEntry()
-	{
-		return __thiz.callObjectMethod(
-			"getJarEntry",
-			"()Ljava/util/jar/JarEntry;"
-		);
-	}
-	jstring JarURLConnection::getEntryName()
-	{
-		return __thiz.callObjectMethod(
-			"getEntryName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject JarURLConnection::getJarFileURL()
 	{
 		return __thiz.callObjectMethod(
 			"getJarFileURL",
 			"()Ljava/net/URL;"
+		);
+	}
+	QAndroidJniObject JarURLConnection::getMainAttributes()
+	{
+		return __thiz.callObjectMethod(
+			"getMainAttributes",
+			"()Ljava/util/jar/Attributes;"
+		);
+	}
+	QAndroidJniObject JarURLConnection::getManifest()
+	{
+		return __thiz.callObjectMethod(
+			"getManifest",
+			"()Ljava/util/jar/Manifest;"
 		);
 	}
 } // namespace __jni_impl::java::net

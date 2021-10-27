@@ -19,11 +19,11 @@ namespace __jni_impl::java::io
 		void __constructor(const QString &arg0);
 		
 		// Methods
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
-		jint read();
-		jlong skip(jlong arg0);
 		jint available();
+		jint read();
+		jint read(jbyteArray arg0, jint arg1, jint arg2);
 		void reset();
+		jlong skip(jlong arg0);
 	};
 } // namespace __jni_impl::java::io
 
@@ -51,6 +51,20 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
+	jint StringBufferInputStream::available()
+	{
+		return __thiz.callMethod<jint>(
+			"available",
+			"()I"
+		);
+	}
+	jint StringBufferInputStream::read()
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
 	jint StringBufferInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		return __thiz.callMethod<jint>(
@@ -61,11 +75,11 @@ namespace __jni_impl::java::io
 			arg2
 		);
 	}
-	jint StringBufferInputStream::read()
+	void StringBufferInputStream::reset()
 	{
-		return __thiz.callMethod<jint>(
-			"read",
-			"()I"
+		__thiz.callMethod<void>(
+			"reset",
+			"()V"
 		);
 	}
 	jlong StringBufferInputStream::skip(jlong arg0)
@@ -74,20 +88,6 @@ namespace __jni_impl::java::io
 			"skip",
 			"(J)J",
 			arg0
-		);
-	}
-	jint StringBufferInputStream::available()
-	{
-		return __thiz.callMethod<jint>(
-			"available",
-			"()I"
-		);
-	}
-	void StringBufferInputStream::reset()
-	{
-		__thiz.callMethod<void>(
-			"reset",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::java::io

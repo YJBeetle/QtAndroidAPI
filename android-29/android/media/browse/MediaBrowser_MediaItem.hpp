@@ -28,14 +28,14 @@ namespace __jni_impl::android::media::browse
 		void __constructor(__jni_impl::android::media::MediaDescription arg0, jint arg1);
 		
 		// Methods
-		jstring toString();
-		jint getFlags();
-		QAndroidJniObject getDescription();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getDescription();
+		jint getFlags();
+		jstring getMediaId();
 		jboolean isBrowsable();
 		jboolean isPlayable();
-		jstring getMediaId();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media::browse
 
@@ -80,17 +80,10 @@ namespace __jni_impl::android::media::browse
 	}
 	
 	// Methods
-	jstring MediaBrowser_MediaItem::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint MediaBrowser_MediaItem::getFlags()
+	jint MediaBrowser_MediaItem::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getFlags",
+			"describeContents",
 			"()I"
 		);
 	}
@@ -101,21 +94,19 @@ namespace __jni_impl::android::media::browse
 			"()Landroid/media/MediaDescription;"
 		);
 	}
-	jint MediaBrowser_MediaItem::describeContents()
+	jint MediaBrowser_MediaItem::getFlags()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getFlags",
 			"()I"
 		);
 	}
-	void MediaBrowser_MediaItem::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jstring MediaBrowser_MediaItem::getMediaId()
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
+		return __thiz.callObjectMethod(
+			"getMediaId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean MediaBrowser_MediaItem::isBrowsable()
 	{
@@ -131,12 +122,21 @@ namespace __jni_impl::android::media::browse
 			"()Z"
 		);
 	}
-	jstring MediaBrowser_MediaItem::getMediaId()
+	jstring MediaBrowser_MediaItem::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getMediaId",
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	void MediaBrowser_MediaItem::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::media::browse
 

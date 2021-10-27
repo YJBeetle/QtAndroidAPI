@@ -24,11 +24,11 @@ namespace __jni_impl::android::nfc::tech
 		
 		// Methods
 		static QAndroidJniObject get(__jni_impl::android::nfc::Tag arg0);
-		void connect();
 		void close();
-		jint getType();
-		QAndroidJniObject getTag();
+		void connect();
 		jbyteArray getBarcode();
+		QAndroidJniObject getTag();
+		jint getType();
 		jboolean isConnected();
 	};
 } // namespace __jni_impl::android::nfc::tech
@@ -71,13 +71,6 @@ namespace __jni_impl::android::nfc::tech
 			arg0.__jniObject().object()
 		);
 	}
-	void NfcBarcode::connect()
-	{
-		__thiz.callMethod<void>(
-			"connect",
-			"()V"
-		);
-	}
 	void NfcBarcode::close()
 	{
 		__thiz.callMethod<void>(
@@ -85,18 +78,11 @@ namespace __jni_impl::android::nfc::tech
 			"()V"
 		);
 	}
-	jint NfcBarcode::getType()
+	void NfcBarcode::connect()
 	{
-		return __thiz.callMethod<jint>(
-			"getType",
-			"()I"
-		);
-	}
-	QAndroidJniObject NfcBarcode::getTag()
-	{
-		return __thiz.callObjectMethod(
-			"getTag",
-			"()Landroid/nfc/Tag;"
+		__thiz.callMethod<void>(
+			"connect",
+			"()V"
 		);
 	}
 	jbyteArray NfcBarcode::getBarcode()
@@ -105,6 +91,20 @@ namespace __jni_impl::android::nfc::tech
 			"getBarcode",
 			"()[B"
 		).object<jbyteArray>();
+	}
+	QAndroidJniObject NfcBarcode::getTag()
+	{
+		return __thiz.callObjectMethod(
+			"getTag",
+			"()Landroid/nfc/Tag;"
+		);
+	}
+	jint NfcBarcode::getType()
+	{
+		return __thiz.callMethod<jint>(
+			"getType",
+			"()I"
+		);
 	}
 	jboolean NfcBarcode::isConnected()
 	{

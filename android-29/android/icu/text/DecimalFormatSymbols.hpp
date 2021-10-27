@@ -5,6 +5,14 @@
 
 #include "../../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::icu::text
+{
+	class NumberingSystem;
+}
+namespace __jni_impl::android::icu::util
+{
+	class Currency;
+}
 namespace __jni_impl::android::icu::util
 {
 	class ULocale;
@@ -12,14 +20,6 @@ namespace __jni_impl::android::icu::util
 namespace __jni_impl::java::util
 {
 	class Locale;
-}
-namespace __jni_impl::android::icu::util
-{
-	class Currency;
-}
-namespace __jni_impl::android::icu::text
-{
-	class NumberingSystem;
 }
 
 namespace __jni_impl::android::icu::text
@@ -33,105 +33,105 @@ namespace __jni_impl::android::icu::text
 		static jint CURRENCY_SPC_SURROUNDING_MATCH();
 		
 		// Constructors
+		void __constructor();
 		void __constructor(__jni_impl::android::icu::util::ULocale arg0);
 		void __constructor(__jni_impl::java::util::Locale arg0);
-		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		jobject clone();
-		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
+		static QAndroidJniObject forNumberingSystem(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::NumberingSystem arg1);
+		static QAndroidJniObject forNumberingSystem(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::NumberingSystem arg1);
+		static jarray getAvailableLocales();
 		static QAndroidJniObject getInstance();
 		static QAndroidJniObject getInstance(__jni_impl::android::icu::util::ULocale arg0);
-		static jarray getAvailableLocales();
-		QAndroidJniObject getLocale();
+		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
+		jobject clone();
+		jboolean equals(jobject arg0);
 		QAndroidJniObject getCurrency();
-		void setCurrency(__jni_impl::android::icu::util::Currency arg0);
-		jstring getInternationalCurrencySymbol();
 		jstring getCurrencySymbol();
-		void setZeroDigit(jchar arg0);
-		jchar getGroupingSeparator();
-		void setGroupingSeparator(jchar arg0);
-		void setDecimalSeparator(jchar arg0);
-		jchar getPerMill();
-		void setPerMill(jchar arg0);
-		jchar getPercent();
-		void setPercent(jchar arg0);
+		jchar getDecimalSeparator();
+		jstring getDecimalSeparatorString();
 		jchar getDigit();
-		void setDigit(jchar arg0);
-		jchar getPatternSeparator();
-		void setPatternSeparator(jchar arg0);
+		jarray getDigitStrings();
+		jcharArray getDigits();
+		jstring getExponentMultiplicationSign();
+		jstring getExponentSeparator();
+		jchar getGroupingSeparator();
+		jstring getGroupingSeparatorString();
 		jstring getInfinity();
-		void setInfinity(jstring arg0);
-		void setInfinity(const QString &arg0);
+		jstring getInternationalCurrencySymbol();
+		QAndroidJniObject getLocale();
+		jchar getMinusSign();
+		jstring getMinusSignString();
+		jchar getMonetaryDecimalSeparator();
+		jstring getMonetaryDecimalSeparatorString();
+		jchar getMonetaryGroupingSeparator();
+		jstring getMonetaryGroupingSeparatorString();
 		jstring getNaN();
-		void setNaN(jstring arg0);
-		void setNaN(const QString &arg0);
-		void setMinusSign(jchar arg0);
+		jchar getPadEscape();
+		jstring getPatternForCurrencySpacing(jint arg0, jboolean arg1);
+		jchar getPatternSeparator();
+		jchar getPerMill();
+		jstring getPerMillString();
+		jchar getPercent();
+		jstring getPercentString();
+		jchar getPlusSign();
+		jstring getPlusSignString();
+		jchar getSignificantDigit();
+		QAndroidJniObject getULocale();
+		jchar getZeroDigit();
+		jint hashCode();
+		void setCurrency(__jni_impl::android::icu::util::Currency arg0);
 		void setCurrencySymbol(jstring arg0);
 		void setCurrencySymbol(const QString &arg0);
-		void setInternationalCurrencySymbol(jstring arg0);
-		void setInternationalCurrencySymbol(const QString &arg0);
-		jchar getMonetaryDecimalSeparator();
-		void setMonetaryDecimalSeparator(jchar arg0);
-		jstring getExponentSeparator();
-		void setExponentSeparator(jstring arg0);
-		void setExponentSeparator(const QString &arg0);
-		jchar getZeroDigit();
-		jchar getMinusSign();
-		jchar getDecimalSeparator();
-		static QAndroidJniObject forNumberingSystem(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::NumberingSystem arg1);
-		static QAndroidJniObject forNumberingSystem(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::NumberingSystem arg1);
-		jcharArray getDigits();
-		jarray getDigitStrings();
-		void setDigitStrings(jarray arg0);
-		jchar getSignificantDigit();
-		void setSignificantDigit(jchar arg0);
-		jstring getGroupingSeparatorString();
-		void setGroupingSeparatorString(jstring arg0);
-		void setGroupingSeparatorString(const QString &arg0);
-		jstring getDecimalSeparatorString();
+		void setDecimalSeparator(jchar arg0);
 		void setDecimalSeparatorString(jstring arg0);
 		void setDecimalSeparatorString(const QString &arg0);
-		jstring getPerMillString();
-		void setPerMillString(jstring arg0);
-		void setPerMillString(const QString &arg0);
-		jstring getPercentString();
-		void setPercentString(jstring arg0);
-		void setPercentString(const QString &arg0);
-		jstring getMinusSignString();
-		void setMinusSignString(jstring arg0);
-		void setMinusSignString(const QString &arg0);
-		jchar getPlusSign();
-		void setPlusSign(jchar arg0);
-		jstring getPlusSignString();
-		void setPlusSignString(jstring arg0);
-		void setPlusSignString(const QString &arg0);
-		jstring getMonetaryDecimalSeparatorString();
-		void setMonetaryDecimalSeparatorString(jstring arg0);
-		void setMonetaryDecimalSeparatorString(const QString &arg0);
-		jchar getMonetaryGroupingSeparator();
-		void setMonetaryGroupingSeparator(jchar arg0);
-		jstring getMonetaryGroupingSeparatorString();
-		void setMonetaryGroupingSeparatorString(jstring arg0);
-		void setMonetaryGroupingSeparatorString(const QString &arg0);
-		jstring getExponentMultiplicationSign();
+		void setDigit(jchar arg0);
+		void setDigitStrings(jarray arg0);
 		void setExponentMultiplicationSign(jstring arg0);
 		void setExponentMultiplicationSign(const QString &arg0);
-		jchar getPadEscape();
+		void setExponentSeparator(jstring arg0);
+		void setExponentSeparator(const QString &arg0);
+		void setGroupingSeparator(jchar arg0);
+		void setGroupingSeparatorString(jstring arg0);
+		void setGroupingSeparatorString(const QString &arg0);
+		void setInfinity(jstring arg0);
+		void setInfinity(const QString &arg0);
+		void setInternationalCurrencySymbol(jstring arg0);
+		void setInternationalCurrencySymbol(const QString &arg0);
+		void setMinusSign(jchar arg0);
+		void setMinusSignString(jstring arg0);
+		void setMinusSignString(const QString &arg0);
+		void setMonetaryDecimalSeparator(jchar arg0);
+		void setMonetaryDecimalSeparatorString(jstring arg0);
+		void setMonetaryDecimalSeparatorString(const QString &arg0);
+		void setMonetaryGroupingSeparator(jchar arg0);
+		void setMonetaryGroupingSeparatorString(jstring arg0);
+		void setMonetaryGroupingSeparatorString(const QString &arg0);
+		void setNaN(jstring arg0);
+		void setNaN(const QString &arg0);
 		void setPadEscape(jchar arg0);
-		jstring getPatternForCurrencySpacing(jint arg0, jboolean arg1);
 		void setPatternForCurrencySpacing(jint arg0, jboolean arg1, jstring arg2);
 		void setPatternForCurrencySpacing(jint arg0, jboolean arg1, const QString &arg2);
-		QAndroidJniObject getULocale();
+		void setPatternSeparator(jchar arg0);
+		void setPerMill(jchar arg0);
+		void setPerMillString(jstring arg0);
+		void setPerMillString(const QString &arg0);
+		void setPercent(jchar arg0);
+		void setPercentString(jstring arg0);
+		void setPercentString(const QString &arg0);
+		void setPlusSign(jchar arg0);
+		void setPlusSignString(jstring arg0);
+		void setPlusSignString(const QString &arg0);
+		void setSignificantDigit(jchar arg0);
+		void setZeroDigit(jchar arg0);
 	};
 } // namespace __jni_impl::android::icu::text
 
+#include "NumberingSystem.hpp"
+#include "../util/Currency.hpp"
 #include "../util/ULocale.hpp"
 #include "../../../java/util/Locale.hpp"
-#include "../util/Currency.hpp"
-#include "NumberingSystem.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -159,6 +159,13 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Constructors
+	void DecimalFormatSymbols::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.text.DecimalFormatSymbols",
+			"()V"
+		);
+	}
 	void DecimalFormatSymbols::__constructor(__jni_impl::android::icu::util::ULocale arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -175,45 +182,35 @@ namespace __jni_impl::android::icu::text
 			arg0.__jniObject().object()
 		);
 	}
-	void DecimalFormatSymbols::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.DecimalFormatSymbols",
-			"()V"
-		);
-	}
 	
 	// Methods
-	jboolean DecimalFormatSymbols::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jint DecimalFormatSymbols::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jobject DecimalFormatSymbols::clone()
-	{
-		return __thiz.callObjectMethod(
-			"clone",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	QAndroidJniObject DecimalFormatSymbols::getInstance(__jni_impl::java::util::Locale arg0)
+	QAndroidJniObject DecimalFormatSymbols::forNumberingSystem(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::NumberingSystem arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DecimalFormatSymbols",
-			"getInstance",
-			"(Ljava/util/Locale;)Landroid/icu/text/DecimalFormatSymbols;",
-			arg0.__jniObject().object()
+			"forNumberingSystem",
+			"(Landroid/icu/util/ULocale;Landroid/icu/text/NumberingSystem;)Landroid/icu/text/DecimalFormatSymbols;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
+	}
+	QAndroidJniObject DecimalFormatSymbols::forNumberingSystem(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::NumberingSystem arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.DecimalFormatSymbols",
+			"forNumberingSystem",
+			"(Ljava/util/Locale;Landroid/icu/text/NumberingSystem;)Landroid/icu/text/DecimalFormatSymbols;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	jarray DecimalFormatSymbols::getAvailableLocales()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.DecimalFormatSymbols",
+			"getAvailableLocales",
+			"()[Ljava/util/Locale;"
+		).object<jarray>();
 	}
 	QAndroidJniObject DecimalFormatSymbols::getInstance()
 	{
@@ -232,19 +229,28 @@ namespace __jni_impl::android::icu::text
 			arg0.__jniObject().object()
 		);
 	}
-	jarray DecimalFormatSymbols::getAvailableLocales()
+	QAndroidJniObject DecimalFormatSymbols::getInstance(__jni_impl::java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.DecimalFormatSymbols",
-			"getAvailableLocales",
-			"()[Ljava/util/Locale;"
-		).object<jarray>();
+			"getInstance",
+			"(Ljava/util/Locale;)Landroid/icu/text/DecimalFormatSymbols;",
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject DecimalFormatSymbols::getLocale()
+	jobject DecimalFormatSymbols::clone()
 	{
 		return __thiz.callObjectMethod(
-			"getLocale",
-			"()Ljava/util/Locale;"
+			"clone",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jboolean DecimalFormatSymbols::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 	QAndroidJniObject DecimalFormatSymbols::getCurrency()
@@ -254,21 +260,6 @@ namespace __jni_impl::android::icu::text
 			"()Landroid/icu/util/Currency;"
 		);
 	}
-	void DecimalFormatSymbols::setCurrency(__jni_impl::android::icu::util::Currency arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCurrency",
-			"(Landroid/icu/util/Currency;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jstring DecimalFormatSymbols::getInternationalCurrencySymbol()
-	{
-		return __thiz.callObjectMethod(
-			"getInternationalCurrencySymbol",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jstring DecimalFormatSymbols::getCurrencySymbol()
 	{
 		return __thiz.callObjectMethod(
@@ -276,13 +267,54 @@ namespace __jni_impl::android::icu::text
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	void DecimalFormatSymbols::setZeroDigit(jchar arg0)
+	jchar DecimalFormatSymbols::getDecimalSeparator()
 	{
-		__thiz.callMethod<void>(
-			"setZeroDigit",
-			"(C)V",
-			arg0
+		return __thiz.callMethod<jchar>(
+			"getDecimalSeparator",
+			"()C"
 		);
+	}
+	jstring DecimalFormatSymbols::getDecimalSeparatorString()
+	{
+		return __thiz.callObjectMethod(
+			"getDecimalSeparatorString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jchar DecimalFormatSymbols::getDigit()
+	{
+		return __thiz.callMethod<jchar>(
+			"getDigit",
+			"()C"
+		);
+	}
+	jarray DecimalFormatSymbols::getDigitStrings()
+	{
+		return __thiz.callObjectMethod(
+			"getDigitStrings",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	jcharArray DecimalFormatSymbols::getDigits()
+	{
+		return __thiz.callObjectMethod(
+			"getDigits",
+			"()[C"
+		).object<jcharArray>();
+	}
+	jstring DecimalFormatSymbols::getExponentMultiplicationSign()
+	{
+		return __thiz.callObjectMethod(
+			"getExponentMultiplicationSign",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring DecimalFormatSymbols::getExponentSeparator()
+	{
+		return __thiz.callObjectMethod(
+			"getExponentSeparator",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jchar DecimalFormatSymbols::getGroupingSeparator()
 	{
@@ -291,20 +323,104 @@ namespace __jni_impl::android::icu::text
 			"()C"
 		);
 	}
-	void DecimalFormatSymbols::setGroupingSeparator(jchar arg0)
+	jstring DecimalFormatSymbols::getGroupingSeparatorString()
 	{
-		__thiz.callMethod<void>(
-			"setGroupingSeparator",
-			"(C)V",
-			arg0
+		return __thiz.callObjectMethod(
+			"getGroupingSeparatorString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring DecimalFormatSymbols::getInfinity()
+	{
+		return __thiz.callObjectMethod(
+			"getInfinity",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring DecimalFormatSymbols::getInternationalCurrencySymbol()
+	{
+		return __thiz.callObjectMethod(
+			"getInternationalCurrencySymbol",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject DecimalFormatSymbols::getLocale()
+	{
+		return __thiz.callObjectMethod(
+			"getLocale",
+			"()Ljava/util/Locale;"
 		);
 	}
-	void DecimalFormatSymbols::setDecimalSeparator(jchar arg0)
+	jchar DecimalFormatSymbols::getMinusSign()
 	{
-		__thiz.callMethod<void>(
-			"setDecimalSeparator",
-			"(C)V",
-			arg0
+		return __thiz.callMethod<jchar>(
+			"getMinusSign",
+			"()C"
+		);
+	}
+	jstring DecimalFormatSymbols::getMinusSignString()
+	{
+		return __thiz.callObjectMethod(
+			"getMinusSignString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jchar DecimalFormatSymbols::getMonetaryDecimalSeparator()
+	{
+		return __thiz.callMethod<jchar>(
+			"getMonetaryDecimalSeparator",
+			"()C"
+		);
+	}
+	jstring DecimalFormatSymbols::getMonetaryDecimalSeparatorString()
+	{
+		return __thiz.callObjectMethod(
+			"getMonetaryDecimalSeparatorString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jchar DecimalFormatSymbols::getMonetaryGroupingSeparator()
+	{
+		return __thiz.callMethod<jchar>(
+			"getMonetaryGroupingSeparator",
+			"()C"
+		);
+	}
+	jstring DecimalFormatSymbols::getMonetaryGroupingSeparatorString()
+	{
+		return __thiz.callObjectMethod(
+			"getMonetaryGroupingSeparatorString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring DecimalFormatSymbols::getNaN()
+	{
+		return __thiz.callObjectMethod(
+			"getNaN",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jchar DecimalFormatSymbols::getPadEscape()
+	{
+		return __thiz.callMethod<jchar>(
+			"getPadEscape",
+			"()C"
+		);
+	}
+	jstring DecimalFormatSymbols::getPatternForCurrencySpacing(jint arg0, jboolean arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getPatternForCurrencySpacing",
+			"(IZ)Ljava/lang/String;",
+			arg0,
+			arg1
+		).object<jstring>();
+	}
+	jchar DecimalFormatSymbols::getPatternSeparator()
+	{
+		return __thiz.callMethod<jchar>(
+			"getPatternSeparator",
+			"()C"
 		);
 	}
 	jchar DecimalFormatSymbols::getPerMill()
@@ -314,13 +430,12 @@ namespace __jni_impl::android::icu::text
 			"()C"
 		);
 	}
-	void DecimalFormatSymbols::setPerMill(jchar arg0)
+	jstring DecimalFormatSymbols::getPerMillString()
 	{
-		__thiz.callMethod<void>(
-			"setPerMill",
-			"(C)V",
-			arg0
-		);
+		return __thiz.callObjectMethod(
+			"getPerMillString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jchar DecimalFormatSymbols::getPercent()
 	{
@@ -329,96 +444,61 @@ namespace __jni_impl::android::icu::text
 			"()C"
 		);
 	}
-	void DecimalFormatSymbols::setPercent(jchar arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPercent",
-			"(C)V",
-			arg0
-		);
-	}
-	jchar DecimalFormatSymbols::getDigit()
-	{
-		return __thiz.callMethod<jchar>(
-			"getDigit",
-			"()C"
-		);
-	}
-	void DecimalFormatSymbols::setDigit(jchar arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDigit",
-			"(C)V",
-			arg0
-		);
-	}
-	jchar DecimalFormatSymbols::getPatternSeparator()
-	{
-		return __thiz.callMethod<jchar>(
-			"getPatternSeparator",
-			"()C"
-		);
-	}
-	void DecimalFormatSymbols::setPatternSeparator(jchar arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPatternSeparator",
-			"(C)V",
-			arg0
-		);
-	}
-	jstring DecimalFormatSymbols::getInfinity()
+	jstring DecimalFormatSymbols::getPercentString()
 	{
 		return __thiz.callObjectMethod(
-			"getInfinity",
+			"getPercentString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	void DecimalFormatSymbols::setInfinity(jstring arg0)
+	jchar DecimalFormatSymbols::getPlusSign()
 	{
-		__thiz.callMethod<void>(
-			"setInfinity",
-			"(Ljava/lang/String;)V",
-			arg0
+		return __thiz.callMethod<jchar>(
+			"getPlusSign",
+			"()C"
 		);
 	}
-	void DecimalFormatSymbols::setInfinity(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setInfinity",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring DecimalFormatSymbols::getNaN()
+	jstring DecimalFormatSymbols::getPlusSignString()
 	{
 		return __thiz.callObjectMethod(
-			"getNaN",
+			"getPlusSignString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	void DecimalFormatSymbols::setNaN(jstring arg0)
+	jchar DecimalFormatSymbols::getSignificantDigit()
 	{
-		__thiz.callMethod<void>(
-			"setNaN",
-			"(Ljava/lang/String;)V",
-			arg0
+		return __thiz.callMethod<jchar>(
+			"getSignificantDigit",
+			"()C"
 		);
 	}
-	void DecimalFormatSymbols::setNaN(const QString &arg0)
+	QAndroidJniObject DecimalFormatSymbols::getULocale()
 	{
-		__thiz.callMethod<void>(
-			"setNaN",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+		return __thiz.callObjectMethod(
+			"getULocale",
+			"()Landroid/icu/util/ULocale;"
 		);
 	}
-	void DecimalFormatSymbols::setMinusSign(jchar arg0)
+	jchar DecimalFormatSymbols::getZeroDigit()
+	{
+		return __thiz.callMethod<jchar>(
+			"getZeroDigit",
+			"()C"
+		);
+	}
+	jint DecimalFormatSymbols::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	void DecimalFormatSymbols::setCurrency(__jni_impl::android::icu::util::Currency arg0)
 	{
 		__thiz.callMethod<void>(
-			"setMinusSign",
-			"(C)V",
-			arg0
+			"setCurrency",
+			"(Landroid/icu/util/Currency;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void DecimalFormatSymbols::setCurrencySymbol(jstring arg0)
@@ -433,6 +513,118 @@ namespace __jni_impl::android::icu::text
 	{
 		__thiz.callMethod<void>(
 			"setCurrencySymbol",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void DecimalFormatSymbols::setDecimalSeparator(jchar arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDecimalSeparator",
+			"(C)V",
+			arg0
+		);
+	}
+	void DecimalFormatSymbols::setDecimalSeparatorString(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDecimalSeparatorString",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void DecimalFormatSymbols::setDecimalSeparatorString(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDecimalSeparatorString",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void DecimalFormatSymbols::setDigit(jchar arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDigit",
+			"(C)V",
+			arg0
+		);
+	}
+	void DecimalFormatSymbols::setDigitStrings(jarray arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDigitStrings",
+			"([Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void DecimalFormatSymbols::setExponentMultiplicationSign(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setExponentMultiplicationSign",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void DecimalFormatSymbols::setExponentMultiplicationSign(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setExponentMultiplicationSign",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void DecimalFormatSymbols::setExponentSeparator(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setExponentSeparator",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void DecimalFormatSymbols::setExponentSeparator(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setExponentSeparator",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void DecimalFormatSymbols::setGroupingSeparator(jchar arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGroupingSeparator",
+			"(C)V",
+			arg0
+		);
+	}
+	void DecimalFormatSymbols::setGroupingSeparatorString(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGroupingSeparatorString",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void DecimalFormatSymbols::setGroupingSeparatorString(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGroupingSeparatorString",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void DecimalFormatSymbols::setInfinity(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setInfinity",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void DecimalFormatSymbols::setInfinity(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setInfinity",
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
@@ -453,220 +645,13 @@ namespace __jni_impl::android::icu::text
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jchar DecimalFormatSymbols::getMonetaryDecimalSeparator()
-	{
-		return __thiz.callMethod<jchar>(
-			"getMonetaryDecimalSeparator",
-			"()C"
-		);
-	}
-	void DecimalFormatSymbols::setMonetaryDecimalSeparator(jchar arg0)
+	void DecimalFormatSymbols::setMinusSign(jchar arg0)
 	{
 		__thiz.callMethod<void>(
-			"setMonetaryDecimalSeparator",
+			"setMinusSign",
 			"(C)V",
 			arg0
 		);
-	}
-	jstring DecimalFormatSymbols::getExponentSeparator()
-	{
-		return __thiz.callObjectMethod(
-			"getExponentSeparator",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void DecimalFormatSymbols::setExponentSeparator(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setExponentSeparator",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void DecimalFormatSymbols::setExponentSeparator(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setExponentSeparator",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jchar DecimalFormatSymbols::getZeroDigit()
-	{
-		return __thiz.callMethod<jchar>(
-			"getZeroDigit",
-			"()C"
-		);
-	}
-	jchar DecimalFormatSymbols::getMinusSign()
-	{
-		return __thiz.callMethod<jchar>(
-			"getMinusSign",
-			"()C"
-		);
-	}
-	jchar DecimalFormatSymbols::getDecimalSeparator()
-	{
-		return __thiz.callMethod<jchar>(
-			"getDecimalSeparator",
-			"()C"
-		);
-	}
-	QAndroidJniObject DecimalFormatSymbols::forNumberingSystem(__jni_impl::java::util::Locale arg0, __jni_impl::android::icu::text::NumberingSystem arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.DecimalFormatSymbols",
-			"forNumberingSystem",
-			"(Ljava/util/Locale;Landroid/icu/text/NumberingSystem;)Landroid/icu/text/DecimalFormatSymbols;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject DecimalFormatSymbols::forNumberingSystem(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::text::NumberingSystem arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.DecimalFormatSymbols",
-			"forNumberingSystem",
-			"(Landroid/icu/util/ULocale;Landroid/icu/text/NumberingSystem;)Landroid/icu/text/DecimalFormatSymbols;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	jcharArray DecimalFormatSymbols::getDigits()
-	{
-		return __thiz.callObjectMethod(
-			"getDigits",
-			"()[C"
-		).object<jcharArray>();
-	}
-	jarray DecimalFormatSymbols::getDigitStrings()
-	{
-		return __thiz.callObjectMethod(
-			"getDigitStrings",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	void DecimalFormatSymbols::setDigitStrings(jarray arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDigitStrings",
-			"([Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	jchar DecimalFormatSymbols::getSignificantDigit()
-	{
-		return __thiz.callMethod<jchar>(
-			"getSignificantDigit",
-			"()C"
-		);
-	}
-	void DecimalFormatSymbols::setSignificantDigit(jchar arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSignificantDigit",
-			"(C)V",
-			arg0
-		);
-	}
-	jstring DecimalFormatSymbols::getGroupingSeparatorString()
-	{
-		return __thiz.callObjectMethod(
-			"getGroupingSeparatorString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void DecimalFormatSymbols::setGroupingSeparatorString(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGroupingSeparatorString",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void DecimalFormatSymbols::setGroupingSeparatorString(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGroupingSeparatorString",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring DecimalFormatSymbols::getDecimalSeparatorString()
-	{
-		return __thiz.callObjectMethod(
-			"getDecimalSeparatorString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void DecimalFormatSymbols::setDecimalSeparatorString(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDecimalSeparatorString",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void DecimalFormatSymbols::setDecimalSeparatorString(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDecimalSeparatorString",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring DecimalFormatSymbols::getPerMillString()
-	{
-		return __thiz.callObjectMethod(
-			"getPerMillString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void DecimalFormatSymbols::setPerMillString(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPerMillString",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void DecimalFormatSymbols::setPerMillString(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPerMillString",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring DecimalFormatSymbols::getPercentString()
-	{
-		return __thiz.callObjectMethod(
-			"getPercentString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void DecimalFormatSymbols::setPercentString(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPercentString",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void DecimalFormatSymbols::setPercentString(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPercentString",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring DecimalFormatSymbols::getMinusSignString()
-	{
-		return __thiz.callObjectMethod(
-			"getMinusSignString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	void DecimalFormatSymbols::setMinusSignString(jstring arg0)
 	{
@@ -684,50 +669,13 @@ namespace __jni_impl::android::icu::text
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jchar DecimalFormatSymbols::getPlusSign()
-	{
-		return __thiz.callMethod<jchar>(
-			"getPlusSign",
-			"()C"
-		);
-	}
-	void DecimalFormatSymbols::setPlusSign(jchar arg0)
+	void DecimalFormatSymbols::setMonetaryDecimalSeparator(jchar arg0)
 	{
 		__thiz.callMethod<void>(
-			"setPlusSign",
+			"setMonetaryDecimalSeparator",
 			"(C)V",
 			arg0
 		);
-	}
-	jstring DecimalFormatSymbols::getPlusSignString()
-	{
-		return __thiz.callObjectMethod(
-			"getPlusSignString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void DecimalFormatSymbols::setPlusSignString(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPlusSignString",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void DecimalFormatSymbols::setPlusSignString(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPlusSignString",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring DecimalFormatSymbols::getMonetaryDecimalSeparatorString()
-	{
-		return __thiz.callObjectMethod(
-			"getMonetaryDecimalSeparatorString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	void DecimalFormatSymbols::setMonetaryDecimalSeparatorString(jstring arg0)
 	{
@@ -745,13 +693,6 @@ namespace __jni_impl::android::icu::text
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jchar DecimalFormatSymbols::getMonetaryGroupingSeparator()
-	{
-		return __thiz.callMethod<jchar>(
-			"getMonetaryGroupingSeparator",
-			"()C"
-		);
-	}
 	void DecimalFormatSymbols::setMonetaryGroupingSeparator(jchar arg0)
 	{
 		__thiz.callMethod<void>(
@@ -759,13 +700,6 @@ namespace __jni_impl::android::icu::text
 			"(C)V",
 			arg0
 		);
-	}
-	jstring DecimalFormatSymbols::getMonetaryGroupingSeparatorString()
-	{
-		return __thiz.callObjectMethod(
-			"getMonetaryGroupingSeparatorString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	void DecimalFormatSymbols::setMonetaryGroupingSeparatorString(jstring arg0)
 	{
@@ -783,34 +717,20 @@ namespace __jni_impl::android::icu::text
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jstring DecimalFormatSymbols::getExponentMultiplicationSign()
-	{
-		return __thiz.callObjectMethod(
-			"getExponentMultiplicationSign",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void DecimalFormatSymbols::setExponentMultiplicationSign(jstring arg0)
+	void DecimalFormatSymbols::setNaN(jstring arg0)
 	{
 		__thiz.callMethod<void>(
-			"setExponentMultiplicationSign",
+			"setNaN",
 			"(Ljava/lang/String;)V",
 			arg0
 		);
 	}
-	void DecimalFormatSymbols::setExponentMultiplicationSign(const QString &arg0)
+	void DecimalFormatSymbols::setNaN(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"setExponentMultiplicationSign",
+			"setNaN",
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jchar DecimalFormatSymbols::getPadEscape()
-	{
-		return __thiz.callMethod<jchar>(
-			"getPadEscape",
-			"()C"
 		);
 	}
 	void DecimalFormatSymbols::setPadEscape(jchar arg0)
@@ -820,15 +740,6 @@ namespace __jni_impl::android::icu::text
 			"(C)V",
 			arg0
 		);
-	}
-	jstring DecimalFormatSymbols::getPatternForCurrencySpacing(jint arg0, jboolean arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getPatternForCurrencySpacing",
-			"(IZ)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
 	}
 	void DecimalFormatSymbols::setPatternForCurrencySpacing(jint arg0, jboolean arg1, jstring arg2)
 	{
@@ -850,11 +761,100 @@ namespace __jni_impl::android::icu::text
 			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
-	QAndroidJniObject DecimalFormatSymbols::getULocale()
+	void DecimalFormatSymbols::setPatternSeparator(jchar arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getULocale",
-			"()Landroid/icu/util/ULocale;"
+		__thiz.callMethod<void>(
+			"setPatternSeparator",
+			"(C)V",
+			arg0
+		);
+	}
+	void DecimalFormatSymbols::setPerMill(jchar arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPerMill",
+			"(C)V",
+			arg0
+		);
+	}
+	void DecimalFormatSymbols::setPerMillString(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPerMillString",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void DecimalFormatSymbols::setPerMillString(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPerMillString",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void DecimalFormatSymbols::setPercent(jchar arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPercent",
+			"(C)V",
+			arg0
+		);
+	}
+	void DecimalFormatSymbols::setPercentString(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPercentString",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void DecimalFormatSymbols::setPercentString(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPercentString",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void DecimalFormatSymbols::setPlusSign(jchar arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPlusSign",
+			"(C)V",
+			arg0
+		);
+	}
+	void DecimalFormatSymbols::setPlusSignString(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPlusSignString",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void DecimalFormatSymbols::setPlusSignString(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPlusSignString",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void DecimalFormatSymbols::setSignificantDigit(jchar arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSignificantDigit",
+			"(C)V",
+			arg0
+		);
+	}
+	void DecimalFormatSymbols::setZeroDigit(jchar arg0)
+	{
+		__thiz.callMethod<void>(
+			"setZeroDigit",
+			"(C)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::icu::text
@@ -865,6 +865,10 @@ namespace android::icu::text
 	{
 	public:
 		DecimalFormatSymbols(QAndroidJniObject obj) { __thiz = obj; }
+		DecimalFormatSymbols()
+		{
+			__constructor();
+		}
 		DecimalFormatSymbols(__jni_impl::android::icu::util::ULocale arg0)
 		{
 			__constructor(
@@ -874,10 +878,6 @@ namespace android::icu::text
 		{
 			__constructor(
 				arg0);
-		}
-		DecimalFormatSymbols()
-		{
-			__constructor();
 		}
 	};
 } // namespace android::icu::text

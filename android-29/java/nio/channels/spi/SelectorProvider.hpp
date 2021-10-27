@@ -17,10 +17,6 @@ namespace __jni_impl::java::nio::channels
 {
 	class Pipe;
 }
-namespace __jni_impl::java::nio::channels::spi
-{
-	class AbstractSelector;
-}
 namespace __jni_impl::java::nio::channels
 {
 	class ServerSocketChannel;
@@ -28,6 +24,10 @@ namespace __jni_impl::java::nio::channels
 namespace __jni_impl::java::nio::channels
 {
 	class SocketChannel;
+}
+namespace __jni_impl::java::nio::channels::spi
+{
+	class AbstractSelector;
 }
 
 namespace __jni_impl::java::nio::channels::spi
@@ -43,21 +43,23 @@ namespace __jni_impl::java::nio::channels::spi
 		// Methods
 		static QAndroidJniObject provider();
 		QAndroidJniObject inheritedChannel();
-		QAndroidJniObject openDatagramChannel(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject openDatagramChannel();
+		QAndroidJniObject openDatagramChannel(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject openPipe();
 		QAndroidJniObject openSelector();
 		QAndroidJniObject openServerSocketChannel();
+		QAndroidJniObject openServerSocketChannel(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject openSocketChannel();
+		QAndroidJniObject openSocketChannel(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::java::nio::channels::spi
 
 #include "../../../lang/Void.hpp"
 #include "../DatagramChannel.hpp"
 #include "../Pipe.hpp"
-#include "AbstractSelector.hpp"
 #include "../ServerSocketChannel.hpp"
 #include "../SocketChannel.hpp"
+#include "AbstractSelector.hpp"
 
 namespace __jni_impl::java::nio::channels::spi
 {
@@ -87,19 +89,19 @@ namespace __jni_impl::java::nio::channels::spi
 			"()Ljava/nio/channels/Channel;"
 		);
 	}
+	QAndroidJniObject SelectorProvider::openDatagramChannel()
+	{
+		return __thiz.callObjectMethod(
+			"openDatagramChannel",
+			"()Ljava/nio/channels/DatagramChannel;"
+		);
+	}
 	QAndroidJniObject SelectorProvider::openDatagramChannel(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"openDatagramChannel",
 			"(Ljava/net/ProtocolFamily;)Ljava/nio/channels/DatagramChannel;",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject SelectorProvider::openDatagramChannel()
-	{
-		return __thiz.callObjectMethod(
-			"openDatagramChannel",
-			"()Ljava/nio/channels/DatagramChannel;"
 		);
 	}
 	QAndroidJniObject SelectorProvider::openPipe()
@@ -123,11 +125,27 @@ namespace __jni_impl::java::nio::channels::spi
 			"()Ljava/nio/channels/ServerSocketChannel;"
 		);
 	}
+	QAndroidJniObject SelectorProvider::openServerSocketChannel(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"openServerSocketChannel",
+			"(Ljava/net/ProtocolFamily;)Ljava/nio/channels/ServerSocketChannel;",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject SelectorProvider::openSocketChannel()
 	{
 		return __thiz.callObjectMethod(
 			"openSocketChannel",
 			"()Ljava/nio/channels/SocketChannel;"
+		);
+	}
+	QAndroidJniObject SelectorProvider::openSocketChannel(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"openSocketChannel",
+			"(Ljava/net/ProtocolFamily;)Ljava/nio/channels/SocketChannel;",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::java::nio::channels::spi

@@ -13,18 +13,18 @@ namespace __jni_impl::android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NORMAL();
-		static QAndroidJniObject SOLID();
-		static QAndroidJniObject OUTER();
 		static QAndroidJniObject INNER();
+		static QAndroidJniObject NORMAL();
+		static QAndroidJniObject OUTER();
+		static QAndroidJniObject SOLID();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -32,19 +32,19 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::graphics
 {
 	// Fields
+	QAndroidJniObject BlurMaskFilter_Blur::INNER()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.graphics.BlurMaskFilter$Blur",
+			"INNER",
+			"Landroid/graphics/BlurMaskFilter$Blur;"
+		);
+	}
 	QAndroidJniObject BlurMaskFilter_Blur::NORMAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlurMaskFilter$Blur",
 			"NORMAL",
-			"Landroid/graphics/BlurMaskFilter$Blur;"
-		);
-	}
-	QAndroidJniObject BlurMaskFilter_Blur::SOLID()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.graphics.BlurMaskFilter$Blur",
-			"SOLID",
 			"Landroid/graphics/BlurMaskFilter$Blur;"
 		);
 	}
@@ -56,11 +56,11 @@ namespace __jni_impl::android::graphics
 			"Landroid/graphics/BlurMaskFilter$Blur;"
 		);
 	}
-	QAndroidJniObject BlurMaskFilter_Blur::INNER()
+	QAndroidJniObject BlurMaskFilter_Blur::SOLID()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.BlurMaskFilter$Blur",
-			"INNER",
+			"SOLID",
 			"Landroid/graphics/BlurMaskFilter$Blur;"
 		);
 	}
@@ -74,14 +74,6 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	jarray BlurMaskFilter_Blur::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.BlurMaskFilter$Blur",
-			"values",
-			"()[Landroid/graphics/BlurMaskFilter$Blur;"
-		).object<jarray>();
-	}
 	QAndroidJniObject BlurMaskFilter_Blur::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -99,6 +91,14 @@ namespace __jni_impl::android::graphics
 			"(Ljava/lang/String;)Landroid/graphics/BlurMaskFilter$Blur;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray BlurMaskFilter_Blur::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.BlurMaskFilter$Blur",
+			"values",
+			"()[Landroid/graphics/BlurMaskFilter$Blur;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::graphics
 

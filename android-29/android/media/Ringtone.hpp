@@ -25,18 +25,18 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		void stop();
+		QAndroidJniObject getAudioAttributes();
+		jint getStreamType();
+		jstring getTitle(__jni_impl::android::content::Context arg0);
+		jfloat getVolume();
+		jboolean isLooping();
+		jboolean isPlaying();
+		void play();
 		void setAudioAttributes(__jni_impl::android::media::AudioAttributes arg0);
 		void setLooping(jboolean arg0);
-		jboolean isLooping();
-		void setVolume(jfloat arg0);
-		jfloat getVolume();
-		void play();
-		jboolean isPlaying();
 		void setStreamType(jint arg0);
-		jint getStreamType();
-		QAndroidJniObject getAudioAttributes();
-		jstring getTitle(__jni_impl::android::content::Context arg0);
+		void setVolume(jfloat arg0);
+		void stop();
 	};
 } // namespace __jni_impl::android::media
 
@@ -56,10 +56,53 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	void Ringtone::stop()
+	QAndroidJniObject Ringtone::getAudioAttributes()
+	{
+		return __thiz.callObjectMethod(
+			"getAudioAttributes",
+			"()Landroid/media/AudioAttributes;"
+		);
+	}
+	jint Ringtone::getStreamType()
+	{
+		return __thiz.callMethod<jint>(
+			"getStreamType",
+			"()I"
+		);
+	}
+	jstring Ringtone::getTitle(__jni_impl::android::content::Context arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getTitle",
+			"(Landroid/content/Context;)Ljava/lang/String;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	jfloat Ringtone::getVolume()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getVolume",
+			"()F"
+		);
+	}
+	jboolean Ringtone::isLooping()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLooping",
+			"()Z"
+		);
+	}
+	jboolean Ringtone::isPlaying()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isPlaying",
+			"()Z"
+		);
+	}
+	void Ringtone::play()
 	{
 		__thiz.callMethod<void>(
-			"stop",
+			"play",
 			"()V"
 		);
 	}
@@ -79,11 +122,12 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	jboolean Ringtone::isLooping()
+	void Ringtone::setStreamType(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isLooping",
-			"()Z"
+		__thiz.callMethod<void>(
+			"setStreamType",
+			"(I)V",
+			arg0
 		);
 	}
 	void Ringtone::setVolume(jfloat arg0)
@@ -94,56 +138,12 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	jfloat Ringtone::getVolume()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getVolume",
-			"()F"
-		);
-	}
-	void Ringtone::play()
+	void Ringtone::stop()
 	{
 		__thiz.callMethod<void>(
-			"play",
+			"stop",
 			"()V"
 		);
-	}
-	jboolean Ringtone::isPlaying()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isPlaying",
-			"()Z"
-		);
-	}
-	void Ringtone::setStreamType(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStreamType",
-			"(I)V",
-			arg0
-		);
-	}
-	jint Ringtone::getStreamType()
-	{
-		return __thiz.callMethod<jint>(
-			"getStreamType",
-			"()I"
-		);
-	}
-	QAndroidJniObject Ringtone::getAudioAttributes()
-	{
-		return __thiz.callObjectMethod(
-			"getAudioAttributes",
-			"()Landroid/media/AudioAttributes;"
-		);
-	}
-	jstring Ringtone::getTitle(__jni_impl::android::content::Context arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getTitle",
-			"(Landroid/content/Context;)Ljava/lang/String;",
-			arg0.__jniObject().object()
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media
 

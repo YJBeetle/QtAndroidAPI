@@ -5,10 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view
-{
-	class Surface;
-}
 namespace __jni_impl::android::media
 {
 	class Image;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::media
 namespace __jni_impl::android::os
 {
 	class Handler;
+}
+namespace __jni_impl::android::view
+{
+	class Surface;
 }
 
 namespace __jni_impl::android::media
@@ -31,22 +31,22 @@ namespace __jni_impl::android::media
 		// Methods
 		static QAndroidJniObject newInstance(jint arg0, jint arg1, jint arg2, jint arg3);
 		static QAndroidJniObject newInstance(jint arg0, jint arg1, jint arg2, jint arg3, jlong arg4);
-		void close();
-		QAndroidJniObject getSurface();
-		jint getMaxImages();
-		jint getWidth();
-		jint getHeight();
-		jint getImageFormat();
 		QAndroidJniObject acquireLatestImage();
 		QAndroidJniObject acquireNextImage();
-		void setOnImageAvailableListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
+		void close();
 		void discardFreeBuffers();
+		jint getHeight();
+		jint getImageFormat();
+		jint getMaxImages();
+		QAndroidJniObject getSurface();
+		jint getWidth();
+		void setOnImageAvailableListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
 	};
 } // namespace __jni_impl::android::media
 
-#include "../view/Surface.hpp"
 #include "Image.hpp"
 #include "../os/Handler.hpp"
+#include "../view/Surface.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -86,6 +86,20 @@ namespace __jni_impl::android::media
 			arg4
 		);
 	}
+	QAndroidJniObject ImageReader::acquireLatestImage()
+	{
+		return __thiz.callObjectMethod(
+			"acquireLatestImage",
+			"()Landroid/media/Image;"
+		);
+	}
+	QAndroidJniObject ImageReader::acquireNextImage()
+	{
+		return __thiz.callObjectMethod(
+			"acquireNextImage",
+			"()Landroid/media/Image;"
+		);
+	}
 	void ImageReader::close()
 	{
 		__thiz.callMethod<void>(
@@ -93,25 +107,11 @@ namespace __jni_impl::android::media
 			"()V"
 		);
 	}
-	QAndroidJniObject ImageReader::getSurface()
+	void ImageReader::discardFreeBuffers()
 	{
-		return __thiz.callObjectMethod(
-			"getSurface",
-			"()Landroid/view/Surface;"
-		);
-	}
-	jint ImageReader::getMaxImages()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxImages",
-			"()I"
-		);
-	}
-	jint ImageReader::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I"
+		__thiz.callMethod<void>(
+			"discardFreeBuffers",
+			"()V"
 		);
 	}
 	jint ImageReader::getHeight()
@@ -128,18 +128,25 @@ namespace __jni_impl::android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject ImageReader::acquireLatestImage()
+	jint ImageReader::getMaxImages()
 	{
-		return __thiz.callObjectMethod(
-			"acquireLatestImage",
-			"()Landroid/media/Image;"
+		return __thiz.callMethod<jint>(
+			"getMaxImages",
+			"()I"
 		);
 	}
-	QAndroidJniObject ImageReader::acquireNextImage()
+	QAndroidJniObject ImageReader::getSurface()
 	{
 		return __thiz.callObjectMethod(
-			"acquireNextImage",
-			"()Landroid/media/Image;"
+			"getSurface",
+			"()Landroid/view/Surface;"
+		);
+	}
+	jint ImageReader::getWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I"
 		);
 	}
 	void ImageReader::setOnImageAvailableListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1)
@@ -149,13 +156,6 @@ namespace __jni_impl::android::media
 			"(Landroid/media/ImageReader$OnImageAvailableListener;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	void ImageReader::discardFreeBuffers()
-	{
-		__thiz.callMethod<void>(
-			"discardFreeBuffers",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::android::media

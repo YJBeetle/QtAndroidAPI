@@ -23,18 +23,18 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		void onTerminate();
-		void registerOnProvideAssistDataListener(__jni_impl::__JniBaseClass arg0);
-		void unregisterOnProvideAssistDataListener(__jni_impl::__JniBaseClass arg0);
 		static jstring getProcessName();
-		void registerComponentCallbacks(__jni_impl::__JniBaseClass arg0);
-		void unregisterComponentCallbacks(__jni_impl::__JniBaseClass arg0);
-		void registerActivityLifecycleCallbacks(__jni_impl::__JniBaseClass arg0);
-		void unregisterActivityLifecycleCallbacks(__jni_impl::__JniBaseClass arg0);
-		void onCreate();
 		void onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
+		void onCreate();
 		void onLowMemory();
+		void onTerminate();
 		void onTrimMemory(jint arg0);
+		void registerActivityLifecycleCallbacks(__jni_impl::__JniBaseClass arg0);
+		void registerComponentCallbacks(__jni_impl::__JniBaseClass arg0);
+		void registerOnProvideAssistDataListener(__jni_impl::__JniBaseClass arg0);
+		void unregisterActivityLifecycleCallbacks(__jni_impl::__JniBaseClass arg0);
+		void unregisterComponentCallbacks(__jni_impl::__JniBaseClass arg0);
+		void unregisterOnProvideAssistDataListener(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::app
 
@@ -54,29 +54,6 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void Application::onTerminate()
-	{
-		__thiz.callMethod<void>(
-			"onTerminate",
-			"()V"
-		);
-	}
-	void Application::registerOnProvideAssistDataListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"registerOnProvideAssistDataListener",
-			"(Landroid/app/Application$OnProvideAssistDataListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Application::unregisterOnProvideAssistDataListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterOnProvideAssistDataListener",
-			"(Landroid/app/Application$OnProvideAssistDataListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	jstring Application::getProcessName()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -84,6 +61,51 @@ namespace __jni_impl::android::app
 			"getProcessName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	void Application::onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0)
+	{
+		__thiz.callMethod<void>(
+			"onConfigurationChanged",
+			"(Landroid/content/res/Configuration;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Application::onCreate()
+	{
+		__thiz.callMethod<void>(
+			"onCreate",
+			"()V"
+		);
+	}
+	void Application::onLowMemory()
+	{
+		__thiz.callMethod<void>(
+			"onLowMemory",
+			"()V"
+		);
+	}
+	void Application::onTerminate()
+	{
+		__thiz.callMethod<void>(
+			"onTerminate",
+			"()V"
+		);
+	}
+	void Application::onTrimMemory(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"onTrimMemory",
+			"(I)V",
+			arg0
+		);
+	}
+	void Application::registerActivityLifecycleCallbacks(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"registerActivityLifecycleCallbacks",
+			"(Landroid/app/Application$ActivityLifecycleCallbacks;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	void Application::registerComponentCallbacks(__jni_impl::__JniBaseClass arg0)
 	{
@@ -93,19 +115,11 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object()
 		);
 	}
-	void Application::unregisterComponentCallbacks(__jni_impl::__JniBaseClass arg0)
+	void Application::registerOnProvideAssistDataListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"unregisterComponentCallbacks",
-			"(Landroid/content/ComponentCallbacks;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Application::registerActivityLifecycleCallbacks(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"registerActivityLifecycleCallbacks",
-			"(Landroid/app/Application$ActivityLifecycleCallbacks;)V",
+			"registerOnProvideAssistDataListener",
+			"(Landroid/app/Application$OnProvideAssistDataListener;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -117,34 +131,20 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object()
 		);
 	}
-	void Application::onCreate()
+	void Application::unregisterComponentCallbacks(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"onCreate",
-			"()V"
-		);
-	}
-	void Application::onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0)
-	{
-		__thiz.callMethod<void>(
-			"onConfigurationChanged",
-			"(Landroid/content/res/Configuration;)V",
+			"unregisterComponentCallbacks",
+			"(Landroid/content/ComponentCallbacks;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	void Application::onLowMemory()
+	void Application::unregisterOnProvideAssistDataListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"onLowMemory",
-			"()V"
-		);
-	}
-	void Application::onTrimMemory(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"onTrimMemory",
-			"(I)V",
-			arg0
+			"unregisterOnProvideAssistDataListener",
+			"(Landroid/app/Application$OnProvideAssistDataListener;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::app

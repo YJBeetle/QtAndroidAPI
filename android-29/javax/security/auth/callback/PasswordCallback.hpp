@@ -18,11 +18,11 @@ namespace __jni_impl::javax::security::auth::callback
 		void __constructor(const QString &arg0, jboolean arg1);
 		
 		// Methods
-		void setPassword(jcharArray arg0);
-		jstring getPrompt();
-		jcharArray getPassword();
-		jboolean isEchoOn();
 		void clearPassword();
+		jcharArray getPassword();
+		jstring getPrompt();
+		jboolean isEchoOn();
+		void setPassword(jcharArray arg0);
 	};
 } // namespace __jni_impl::javax::security::auth::callback
 
@@ -52,20 +52,12 @@ namespace __jni_impl::javax::security::auth::callback
 	}
 	
 	// Methods
-	void PasswordCallback::setPassword(jcharArray arg0)
+	void PasswordCallback::clearPassword()
 	{
 		__thiz.callMethod<void>(
-			"setPassword",
-			"([C)V",
-			arg0
+			"clearPassword",
+			"()V"
 		);
-	}
-	jstring PasswordCallback::getPrompt()
-	{
-		return __thiz.callObjectMethod(
-			"getPrompt",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	jcharArray PasswordCallback::getPassword()
 	{
@@ -74,6 +66,13 @@ namespace __jni_impl::javax::security::auth::callback
 			"()[C"
 		).object<jcharArray>();
 	}
+	jstring PasswordCallback::getPrompt()
+	{
+		return __thiz.callObjectMethod(
+			"getPrompt",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jboolean PasswordCallback::isEchoOn()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -81,11 +80,12 @@ namespace __jni_impl::javax::security::auth::callback
 			"()Z"
 		);
 	}
-	void PasswordCallback::clearPassword()
+	void PasswordCallback::setPassword(jcharArray arg0)
 	{
 		__thiz.callMethod<void>(
-			"clearPassword",
-			"()V"
+			"setPassword",
+			"([C)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::javax::security::auth::callback

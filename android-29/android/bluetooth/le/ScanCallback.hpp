@@ -25,9 +25,9 @@ namespace __jni_impl::android::bluetooth::le
 		void __constructor();
 		
 		// Methods
-		void onScanResult(jint arg0, __jni_impl::android::bluetooth::le::ScanResult arg1);
 		void onBatchScanResults(__jni_impl::__JniBaseClass arg0);
 		void onScanFailed(jint arg0);
+		void onScanResult(jint arg0, __jni_impl::android::bluetooth::le::ScanResult arg1);
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
@@ -75,15 +75,6 @@ namespace __jni_impl::android::bluetooth::le
 	}
 	
 	// Methods
-	void ScanCallback::onScanResult(jint arg0, __jni_impl::android::bluetooth::le::ScanResult arg1)
-	{
-		__thiz.callMethod<void>(
-			"onScanResult",
-			"(ILandroid/bluetooth/le/ScanResult;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
 	void ScanCallback::onBatchScanResults(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -98,6 +89,15 @@ namespace __jni_impl::android::bluetooth::le
 			"onScanFailed",
 			"(I)V",
 			arg0
+		);
+	}
+	void ScanCallback::onScanResult(jint arg0, __jni_impl::android::bluetooth::le::ScanResult arg1)
+	{
+		__thiz.callMethod<void>(
+			"onScanResult",
+			"(ILandroid/bluetooth/le/ScanResult;)V",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::bluetooth::le

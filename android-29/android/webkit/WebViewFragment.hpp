@@ -6,13 +6,9 @@
 #include "../../__JniBaseClass.hpp"
 #include "../app/Fragment.hpp"
 
-namespace __jni_impl::android::webkit
+namespace __jni_impl::android::os
 {
-	class WebView;
-}
-namespace __jni_impl::android::view
-{
-	class View;
+	class Bundle;
 }
 namespace __jni_impl::android::view
 {
@@ -20,11 +16,15 @@ namespace __jni_impl::android::view
 }
 namespace __jni_impl::android::view
 {
+	class View;
+}
+namespace __jni_impl::android::view
+{
 	class ViewGroup;
 }
-namespace __jni_impl::android::os
+namespace __jni_impl::android::webkit
 {
-	class Bundle;
+	class WebView;
 }
 
 namespace __jni_impl::android::webkit
@@ -39,19 +39,19 @@ namespace __jni_impl::android::webkit
 		
 		// Methods
 		QAndroidJniObject getWebView();
-		void onDestroyView();
-		void onResume();
-		void onPause();
-		void onDestroy();
 		QAndroidJniObject onCreateView(__jni_impl::android::view::LayoutInflater arg0, __jni_impl::android::view::ViewGroup arg1, __jni_impl::android::os::Bundle arg2);
+		void onDestroy();
+		void onDestroyView();
+		void onPause();
+		void onResume();
 	};
 } // namespace __jni_impl::android::webkit
 
-#include "WebView.hpp"
-#include "../view/View.hpp"
-#include "../view/LayoutInflater.hpp"
-#include "../view/ViewGroup.hpp"
 #include "../os/Bundle.hpp"
+#include "../view/LayoutInflater.hpp"
+#include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
+#include "WebView.hpp"
 
 namespace __jni_impl::android::webkit
 {
@@ -74,17 +74,27 @@ namespace __jni_impl::android::webkit
 			"()Landroid/webkit/WebView;"
 		);
 	}
+	QAndroidJniObject WebViewFragment::onCreateView(__jni_impl::android::view::LayoutInflater arg0, __jni_impl::android::view::ViewGroup arg1, __jni_impl::android::os::Bundle arg2)
+	{
+		return __thiz.callObjectMethod(
+			"onCreateView",
+			"(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	void WebViewFragment::onDestroy()
+	{
+		__thiz.callMethod<void>(
+			"onDestroy",
+			"()V"
+		);
+	}
 	void WebViewFragment::onDestroyView()
 	{
 		__thiz.callMethod<void>(
 			"onDestroyView",
-			"()V"
-		);
-	}
-	void WebViewFragment::onResume()
-	{
-		__thiz.callMethod<void>(
-			"onResume",
 			"()V"
 		);
 	}
@@ -95,21 +105,11 @@ namespace __jni_impl::android::webkit
 			"()V"
 		);
 	}
-	void WebViewFragment::onDestroy()
+	void WebViewFragment::onResume()
 	{
 		__thiz.callMethod<void>(
-			"onDestroy",
+			"onResume",
 			"()V"
-		);
-	}
-	QAndroidJniObject WebViewFragment::onCreateView(__jni_impl::android::view::LayoutInflater arg0, __jni_impl::android::view::ViewGroup arg1, __jni_impl::android::os::Bundle arg2)
-	{
-		return __thiz.callObjectMethod(
-			"onCreateView",
-			"(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::webkit

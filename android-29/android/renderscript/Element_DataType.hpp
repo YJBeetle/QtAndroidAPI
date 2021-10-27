@@ -13,44 +13,44 @@ namespace __jni_impl::android::renderscript
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NONE();
+		static QAndroidJniObject BOOLEAN();
 		static QAndroidJniObject FLOAT_16();
 		static QAndroidJniObject FLOAT_32();
 		static QAndroidJniObject FLOAT_64();
-		static QAndroidJniObject SIGNED_8();
+		static QAndroidJniObject MATRIX_2X2();
+		static QAndroidJniObject MATRIX_3X3();
+		static QAndroidJniObject MATRIX_4X4();
+		static QAndroidJniObject NONE();
+		static QAndroidJniObject RS_ALLOCATION();
+		static QAndroidJniObject RS_ELEMENT();
+		static QAndroidJniObject RS_FONT();
+		static QAndroidJniObject RS_MESH();
+		static QAndroidJniObject RS_PROGRAM_FRAGMENT();
+		static QAndroidJniObject RS_PROGRAM_RASTER();
+		static QAndroidJniObject RS_PROGRAM_STORE();
+		static QAndroidJniObject RS_PROGRAM_VERTEX();
+		static QAndroidJniObject RS_SAMPLER();
+		static QAndroidJniObject RS_SCRIPT();
+		static QAndroidJniObject RS_TYPE();
 		static QAndroidJniObject SIGNED_16();
 		static QAndroidJniObject SIGNED_32();
 		static QAndroidJniObject SIGNED_64();
-		static QAndroidJniObject UNSIGNED_8();
+		static QAndroidJniObject SIGNED_8();
 		static QAndroidJniObject UNSIGNED_16();
 		static QAndroidJniObject UNSIGNED_32();
-		static QAndroidJniObject UNSIGNED_64();
-		static QAndroidJniObject BOOLEAN();
-		static QAndroidJniObject UNSIGNED_5_6_5();
-		static QAndroidJniObject UNSIGNED_5_5_5_1();
 		static QAndroidJniObject UNSIGNED_4_4_4_4();
-		static QAndroidJniObject MATRIX_4X4();
-		static QAndroidJniObject MATRIX_3X3();
-		static QAndroidJniObject MATRIX_2X2();
-		static QAndroidJniObject RS_ELEMENT();
-		static QAndroidJniObject RS_TYPE();
-		static QAndroidJniObject RS_ALLOCATION();
-		static QAndroidJniObject RS_SAMPLER();
-		static QAndroidJniObject RS_SCRIPT();
-		static QAndroidJniObject RS_MESH();
-		static QAndroidJniObject RS_PROGRAM_FRAGMENT();
-		static QAndroidJniObject RS_PROGRAM_VERTEX();
-		static QAndroidJniObject RS_PROGRAM_RASTER();
-		static QAndroidJniObject RS_PROGRAM_STORE();
-		static QAndroidJniObject RS_FONT();
+		static QAndroidJniObject UNSIGNED_5_5_5_1();
+		static QAndroidJniObject UNSIGNED_5_6_5();
+		static QAndroidJniObject UNSIGNED_64();
+		static QAndroidJniObject UNSIGNED_8();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::renderscript
 
@@ -58,11 +58,11 @@ namespace __jni_impl::android::renderscript
 namespace __jni_impl::android::renderscript
 {
 	// Fields
-	QAndroidJniObject Element_DataType::NONE()
+	QAndroidJniObject Element_DataType::BOOLEAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
-			"NONE",
+			"BOOLEAN",
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
@@ -90,11 +90,123 @@ namespace __jni_impl::android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::SIGNED_8()
+	QAndroidJniObject Element_DataType::MATRIX_2X2()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
-			"SIGNED_8",
+			"MATRIX_2X2",
+			"Landroid/renderscript/Element$DataType;"
+		);
+	}
+	QAndroidJniObject Element_DataType::MATRIX_3X3()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.renderscript.Element$DataType",
+			"MATRIX_3X3",
+			"Landroid/renderscript/Element$DataType;"
+		);
+	}
+	QAndroidJniObject Element_DataType::MATRIX_4X4()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.renderscript.Element$DataType",
+			"MATRIX_4X4",
+			"Landroid/renderscript/Element$DataType;"
+		);
+	}
+	QAndroidJniObject Element_DataType::NONE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.renderscript.Element$DataType",
+			"NONE",
+			"Landroid/renderscript/Element$DataType;"
+		);
+	}
+	QAndroidJniObject Element_DataType::RS_ALLOCATION()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.renderscript.Element$DataType",
+			"RS_ALLOCATION",
+			"Landroid/renderscript/Element$DataType;"
+		);
+	}
+	QAndroidJniObject Element_DataType::RS_ELEMENT()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.renderscript.Element$DataType",
+			"RS_ELEMENT",
+			"Landroid/renderscript/Element$DataType;"
+		);
+	}
+	QAndroidJniObject Element_DataType::RS_FONT()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.renderscript.Element$DataType",
+			"RS_FONT",
+			"Landroid/renderscript/Element$DataType;"
+		);
+	}
+	QAndroidJniObject Element_DataType::RS_MESH()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.renderscript.Element$DataType",
+			"RS_MESH",
+			"Landroid/renderscript/Element$DataType;"
+		);
+	}
+	QAndroidJniObject Element_DataType::RS_PROGRAM_FRAGMENT()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.renderscript.Element$DataType",
+			"RS_PROGRAM_FRAGMENT",
+			"Landroid/renderscript/Element$DataType;"
+		);
+	}
+	QAndroidJniObject Element_DataType::RS_PROGRAM_RASTER()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.renderscript.Element$DataType",
+			"RS_PROGRAM_RASTER",
+			"Landroid/renderscript/Element$DataType;"
+		);
+	}
+	QAndroidJniObject Element_DataType::RS_PROGRAM_STORE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.renderscript.Element$DataType",
+			"RS_PROGRAM_STORE",
+			"Landroid/renderscript/Element$DataType;"
+		);
+	}
+	QAndroidJniObject Element_DataType::RS_PROGRAM_VERTEX()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.renderscript.Element$DataType",
+			"RS_PROGRAM_VERTEX",
+			"Landroid/renderscript/Element$DataType;"
+		);
+	}
+	QAndroidJniObject Element_DataType::RS_SAMPLER()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.renderscript.Element$DataType",
+			"RS_SAMPLER",
+			"Landroid/renderscript/Element$DataType;"
+		);
+	}
+	QAndroidJniObject Element_DataType::RS_SCRIPT()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.renderscript.Element$DataType",
+			"RS_SCRIPT",
+			"Landroid/renderscript/Element$DataType;"
+		);
+	}
+	QAndroidJniObject Element_DataType::RS_TYPE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.renderscript.Element$DataType",
+			"RS_TYPE",
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
@@ -122,11 +234,11 @@ namespace __jni_impl::android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::UNSIGNED_8()
+	QAndroidJniObject Element_DataType::SIGNED_8()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
-			"UNSIGNED_8",
+			"SIGNED_8",
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
@@ -146,27 +258,11 @@ namespace __jni_impl::android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::UNSIGNED_64()
+	QAndroidJniObject Element_DataType::UNSIGNED_4_4_4_4()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
-			"UNSIGNED_64",
-			"Landroid/renderscript/Element$DataType;"
-		);
-	}
-	QAndroidJniObject Element_DataType::BOOLEAN()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.renderscript.Element$DataType",
-			"BOOLEAN",
-			"Landroid/renderscript/Element$DataType;"
-		);
-	}
-	QAndroidJniObject Element_DataType::UNSIGNED_5_6_5()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.renderscript.Element$DataType",
-			"UNSIGNED_5_6_5",
+			"UNSIGNED_4_4_4_4",
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
@@ -178,123 +274,27 @@ namespace __jni_impl::android::renderscript
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::UNSIGNED_4_4_4_4()
+	QAndroidJniObject Element_DataType::UNSIGNED_5_6_5()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
-			"UNSIGNED_4_4_4_4",
+			"UNSIGNED_5_6_5",
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::MATRIX_4X4()
+	QAndroidJniObject Element_DataType::UNSIGNED_64()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
-			"MATRIX_4X4",
+			"UNSIGNED_64",
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
-	QAndroidJniObject Element_DataType::MATRIX_3X3()
+	QAndroidJniObject Element_DataType::UNSIGNED_8()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.renderscript.Element$DataType",
-			"MATRIX_3X3",
-			"Landroid/renderscript/Element$DataType;"
-		);
-	}
-	QAndroidJniObject Element_DataType::MATRIX_2X2()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.renderscript.Element$DataType",
-			"MATRIX_2X2",
-			"Landroid/renderscript/Element$DataType;"
-		);
-	}
-	QAndroidJniObject Element_DataType::RS_ELEMENT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.renderscript.Element$DataType",
-			"RS_ELEMENT",
-			"Landroid/renderscript/Element$DataType;"
-		);
-	}
-	QAndroidJniObject Element_DataType::RS_TYPE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.renderscript.Element$DataType",
-			"RS_TYPE",
-			"Landroid/renderscript/Element$DataType;"
-		);
-	}
-	QAndroidJniObject Element_DataType::RS_ALLOCATION()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.renderscript.Element$DataType",
-			"RS_ALLOCATION",
-			"Landroid/renderscript/Element$DataType;"
-		);
-	}
-	QAndroidJniObject Element_DataType::RS_SAMPLER()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.renderscript.Element$DataType",
-			"RS_SAMPLER",
-			"Landroid/renderscript/Element$DataType;"
-		);
-	}
-	QAndroidJniObject Element_DataType::RS_SCRIPT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.renderscript.Element$DataType",
-			"RS_SCRIPT",
-			"Landroid/renderscript/Element$DataType;"
-		);
-	}
-	QAndroidJniObject Element_DataType::RS_MESH()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.renderscript.Element$DataType",
-			"RS_MESH",
-			"Landroid/renderscript/Element$DataType;"
-		);
-	}
-	QAndroidJniObject Element_DataType::RS_PROGRAM_FRAGMENT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.renderscript.Element$DataType",
-			"RS_PROGRAM_FRAGMENT",
-			"Landroid/renderscript/Element$DataType;"
-		);
-	}
-	QAndroidJniObject Element_DataType::RS_PROGRAM_VERTEX()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.renderscript.Element$DataType",
-			"RS_PROGRAM_VERTEX",
-			"Landroid/renderscript/Element$DataType;"
-		);
-	}
-	QAndroidJniObject Element_DataType::RS_PROGRAM_RASTER()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.renderscript.Element$DataType",
-			"RS_PROGRAM_RASTER",
-			"Landroid/renderscript/Element$DataType;"
-		);
-	}
-	QAndroidJniObject Element_DataType::RS_PROGRAM_STORE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.renderscript.Element$DataType",
-			"RS_PROGRAM_STORE",
-			"Landroid/renderscript/Element$DataType;"
-		);
-	}
-	QAndroidJniObject Element_DataType::RS_FONT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.renderscript.Element$DataType",
-			"RS_FONT",
+			"UNSIGNED_8",
 			"Landroid/renderscript/Element$DataType;"
 		);
 	}
@@ -308,14 +308,6 @@ namespace __jni_impl::android::renderscript
 	}
 	
 	// Methods
-	jarray Element_DataType::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.renderscript.Element$DataType",
-			"values",
-			"()[Landroid/renderscript/Element$DataType;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Element_DataType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -333,6 +325,14 @@ namespace __jni_impl::android::renderscript
 			"(Ljava/lang/String;)Landroid/renderscript/Element$DataType;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Element_DataType::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.renderscript.Element$DataType",
+			"values",
+			"()[Landroid/renderscript/Element$DataType;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::renderscript
 

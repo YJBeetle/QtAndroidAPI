@@ -5,21 +5,21 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view::textclassifier
-{
-	class TextLinks_Request;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::os
+{
+	class LocaleList;
 }
 namespace __jni_impl::android::view::textclassifier
 {
 	class TextClassifier_EntityConfig;
 }
-namespace __jni_impl::android::os
+namespace __jni_impl::android::view::textclassifier
 {
-	class LocaleList;
+	class TextLinks_Request;
 }
 
 namespace __jni_impl::android::view::textclassifier
@@ -35,16 +35,16 @@ namespace __jni_impl::android::view::textclassifier
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
-		QAndroidJniObject setEntityConfig(__jni_impl::android::view::textclassifier::TextClassifier_EntityConfig arg0);
 		QAndroidJniObject setDefaultLocales(__jni_impl::android::os::LocaleList arg0);
+		QAndroidJniObject setEntityConfig(__jni_impl::android::view::textclassifier::TextClassifier_EntityConfig arg0);
+		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
-#include "TextLinks_Request.hpp"
 #include "../../os/Bundle.hpp"
-#include "TextClassifier_EntityConfig.hpp"
 #include "../../os/LocaleList.hpp"
+#include "TextClassifier_EntityConfig.hpp"
+#include "TextLinks_Request.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {
@@ -76,11 +76,11 @@ namespace __jni_impl::android::view::textclassifier
 			"()Landroid/view/textclassifier/TextLinks$Request;"
 		);
 	}
-	QAndroidJniObject TextLinks_Request_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
+	QAndroidJniObject TextLinks_Request_Builder::setDefaultLocales(__jni_impl::android::os::LocaleList arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setExtras",
-			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextLinks$Request$Builder;",
+			"setDefaultLocales",
+			"(Landroid/os/LocaleList;)Landroid/view/textclassifier/TextLinks$Request$Builder;",
 			arg0.__jniObject().object()
 		);
 	}
@@ -92,11 +92,11 @@ namespace __jni_impl::android::view::textclassifier
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject TextLinks_Request_Builder::setDefaultLocales(__jni_impl::android::os::LocaleList arg0)
+	QAndroidJniObject TextLinks_Request_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setDefaultLocales",
-			"(Landroid/os/LocaleList;)Landroid/view/textclassifier/TextLinks$Request$Builder;",
+			"setExtras",
+			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextLinks$Request$Builder;",
 			arg0.__jniObject().object()
 		);
 	}

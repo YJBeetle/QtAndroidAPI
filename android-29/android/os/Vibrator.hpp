@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class VibrationEffect;
-}
 namespace __jni_impl::android::media
 {
 	class AudioAttributes;
+}
+namespace __jni_impl::android::os
+{
+	class VibrationEffect;
 }
 
 namespace __jni_impl::android::os
@@ -26,19 +26,19 @@ namespace __jni_impl::android::os
 		
 		// Methods
 		void cancel();
-		jboolean hasVibrator();
 		jboolean hasAmplitudeControl();
+		jboolean hasVibrator();
 		void vibrate(__jni_impl::android::os::VibrationEffect arg0);
-		void vibrate(__jni_impl::android::os::VibrationEffect arg0, __jni_impl::android::media::AudioAttributes arg1);
-		void vibrate(jlongArray arg0, jint arg1);
-		void vibrate(jlongArray arg0, jint arg1, __jni_impl::android::media::AudioAttributes arg2);
-		void vibrate(jlong arg0, __jni_impl::android::media::AudioAttributes arg1);
 		void vibrate(jlong arg0);
+		void vibrate(jlongArray arg0, jint arg1);
+		void vibrate(__jni_impl::android::os::VibrationEffect arg0, __jni_impl::android::media::AudioAttributes arg1);
+		void vibrate(jlong arg0, __jni_impl::android::media::AudioAttributes arg1);
+		void vibrate(jlongArray arg0, jint arg1, __jni_impl::android::media::AudioAttributes arg2);
 	};
 } // namespace __jni_impl::android::os
 
-#include "VibrationEffect.hpp"
 #include "../media/AudioAttributes.hpp"
+#include "VibrationEffect.hpp"
 
 namespace __jni_impl::android::os
 {
@@ -60,17 +60,17 @@ namespace __jni_impl::android::os
 			"()V"
 		);
 	}
-	jboolean Vibrator::hasVibrator()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasVibrator",
-			"()Z"
-		);
-	}
 	jboolean Vibrator::hasAmplitudeControl()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasAmplitudeControl",
+			"()Z"
+		);
+	}
+	jboolean Vibrator::hasVibrator()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasVibrator",
 			"()Z"
 		);
 	}
@@ -82,13 +82,12 @@ namespace __jni_impl::android::os
 			arg0.__jniObject().object()
 		);
 	}
-	void Vibrator::vibrate(__jni_impl::android::os::VibrationEffect arg0, __jni_impl::android::media::AudioAttributes arg1)
+	void Vibrator::vibrate(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"vibrate",
-			"(Landroid/os/VibrationEffect;Landroid/media/AudioAttributes;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			"(J)V",
+			arg0
 		);
 	}
 	void Vibrator::vibrate(jlongArray arg0, jint arg1)
@@ -100,14 +99,13 @@ namespace __jni_impl::android::os
 			arg1
 		);
 	}
-	void Vibrator::vibrate(jlongArray arg0, jint arg1, __jni_impl::android::media::AudioAttributes arg2)
+	void Vibrator::vibrate(__jni_impl::android::os::VibrationEffect arg0, __jni_impl::android::media::AudioAttributes arg1)
 	{
 		__thiz.callMethod<void>(
 			"vibrate",
-			"([JILandroid/media/AudioAttributes;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
+			"(Landroid/os/VibrationEffect;Landroid/media/AudioAttributes;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	void Vibrator::vibrate(jlong arg0, __jni_impl::android::media::AudioAttributes arg1)
@@ -119,12 +117,14 @@ namespace __jni_impl::android::os
 			arg1.__jniObject().object()
 		);
 	}
-	void Vibrator::vibrate(jlong arg0)
+	void Vibrator::vibrate(jlongArray arg0, jint arg1, __jni_impl::android::media::AudioAttributes arg2)
 	{
 		__thiz.callMethod<void>(
 			"vibrate",
-			"(J)V",
-			arg0
+			"([JILandroid/media/AudioAttributes;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::os

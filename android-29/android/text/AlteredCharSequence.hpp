@@ -17,13 +17,13 @@ namespace __jni_impl::android::text
 		void __constructor();
 		
 		// Methods
-		jint length();
-		jstring toString();
-		void getChars(jint arg0, jint arg1, jcharArray arg2, jint arg3);
-		jchar charAt(jint arg0);
-		jstring subSequence(jint arg0, jint arg1);
 		static QAndroidJniObject make(jstring arg0, jcharArray arg1, jint arg2, jint arg3);
 		static QAndroidJniObject make(const QString &arg0, jcharArray arg1, jint arg2, jint arg3);
+		jchar charAt(jint arg0);
+		void getChars(jint arg0, jint arg1, jcharArray arg2, jint arg3);
+		jint length();
+		jstring subSequence(jint arg0, jint arg1);
+		jstring toString();
 	};
 } // namespace __jni_impl::android::text
 
@@ -41,48 +41,6 @@ namespace __jni_impl::android::text
 	}
 	
 	// Methods
-	jint AlteredCharSequence::length()
-	{
-		return __thiz.callMethod<jint>(
-			"length",
-			"()I"
-		);
-	}
-	jstring AlteredCharSequence::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void AlteredCharSequence::getChars(jint arg0, jint arg1, jcharArray arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"getChars",
-			"(II[CI)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	jchar AlteredCharSequence::charAt(jint arg0)
-	{
-		return __thiz.callMethod<jchar>(
-			"charAt",
-			"(I)C",
-			arg0
-		);
-	}
-	jstring AlteredCharSequence::subSequence(jint arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"subSequence",
-			"(II)Ljava/lang/CharSequence;",
-			arg0,
-			arg1
-		).object<jstring>();
-	}
 	QAndroidJniObject AlteredCharSequence::make(jstring arg0, jcharArray arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -106,6 +64,48 @@ namespace __jni_impl::android::text
 			arg2,
 			arg3
 		);
+	}
+	jchar AlteredCharSequence::charAt(jint arg0)
+	{
+		return __thiz.callMethod<jchar>(
+			"charAt",
+			"(I)C",
+			arg0
+		);
+	}
+	void AlteredCharSequence::getChars(jint arg0, jint arg1, jcharArray arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"getChars",
+			"(II[CI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	jint AlteredCharSequence::length()
+	{
+		return __thiz.callMethod<jint>(
+			"length",
+			"()I"
+		);
+	}
+	jstring AlteredCharSequence::subSequence(jint arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"subSequence",
+			"(II)Ljava/lang/CharSequence;",
+			arg0,
+			arg1
+		).object<jstring>();
+	}
+	jstring AlteredCharSequence::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::text
 

@@ -12,10 +12,10 @@ namespace __jni_impl::java::nio::file
 	{
 	public:
 		// Fields
-		static QAndroidJniObject OVERFLOW();
 		static QAndroidJniObject ENTRY_CREATE();
 		static QAndroidJniObject ENTRY_DELETE();
 		static QAndroidJniObject ENTRY_MODIFY();
+		static QAndroidJniObject OVERFLOW();
 		
 		// Constructors
 		void __constructor();
@@ -28,14 +28,6 @@ namespace __jni_impl::java::nio::file
 namespace __jni_impl::java::nio::file
 {
 	// Fields
-	QAndroidJniObject StandardWatchEventKinds::OVERFLOW()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.nio.file.StandardWatchEventKinds",
-			"OVERFLOW",
-			"Ljava/nio/file/WatchEvent$Kind;"
-		);
-	}
 	QAndroidJniObject StandardWatchEventKinds::ENTRY_CREATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -57,6 +49,14 @@ namespace __jni_impl::java::nio::file
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.StandardWatchEventKinds",
 			"ENTRY_MODIFY",
+			"Ljava/nio/file/WatchEvent$Kind;"
+		);
+	}
+	QAndroidJniObject StandardWatchEventKinds::OVERFLOW()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.nio.file.StandardWatchEventKinds",
+			"OVERFLOW",
 			"Ljava/nio/file/WatchEvent$Kind;"
 		);
 	}

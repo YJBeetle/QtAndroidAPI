@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::net
 {
 	class Uri;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::content
@@ -27,18 +27,18 @@ namespace __jni_impl::android::content
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		jboolean isReadPermission();
-		jboolean isWritePermission();
+		jint describeContents();
 		jlong getPersistedTime();
 		QAndroidJniObject getUri();
-		jint describeContents();
+		jboolean isReadPermission();
+		jboolean isWritePermission();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content
 
-#include "../os/Parcel.hpp"
 #include "../net/Uri.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -68,25 +68,11 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
-	jstring UriPermission::toString()
+	jint UriPermission::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jboolean UriPermission::isReadPermission()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isReadPermission",
-			"()Z"
-		);
-	}
-	jboolean UriPermission::isWritePermission()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isWritePermission",
-			"()Z"
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
 		);
 	}
 	jlong UriPermission::getPersistedTime()
@@ -103,12 +89,26 @@ namespace __jni_impl::android::content
 			"()Landroid/net/Uri;"
 		);
 	}
-	jint UriPermission::describeContents()
+	jboolean UriPermission::isReadPermission()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"isReadPermission",
+			"()Z"
 		);
+	}
+	jboolean UriPermission::isWritePermission()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isWritePermission",
+			"()Z"
+		);
+	}
+	jstring UriPermission::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void UriPermission::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

@@ -26,13 +26,13 @@ namespace __jni_impl::android::bluetooth
 		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
-		jint getServiceType();
-		jint getTokenRate();
-		jint getTokenBucketSize();
-		jint getPeakBandwidth();
-		jint getLatency();
-		jint getDelayVariation();
 		jint describeContents();
+		jint getDelayVariation();
+		jint getLatency();
+		jint getPeakBandwidth();
+		jint getServiceType();
+		jint getTokenBucketSize();
+		jint getTokenRate();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::bluetooth
@@ -95,38 +95,10 @@ namespace __jni_impl::android::bluetooth
 	}
 	
 	// Methods
-	jint BluetoothHidDeviceAppQosSettings::getServiceType()
+	jint BluetoothHidDeviceAppQosSettings::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getServiceType",
-			"()I"
-		);
-	}
-	jint BluetoothHidDeviceAppQosSettings::getTokenRate()
-	{
-		return __thiz.callMethod<jint>(
-			"getTokenRate",
-			"()I"
-		);
-	}
-	jint BluetoothHidDeviceAppQosSettings::getTokenBucketSize()
-	{
-		return __thiz.callMethod<jint>(
-			"getTokenBucketSize",
-			"()I"
-		);
-	}
-	jint BluetoothHidDeviceAppQosSettings::getPeakBandwidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getPeakBandwidth",
-			"()I"
-		);
-	}
-	jint BluetoothHidDeviceAppQosSettings::getLatency()
-	{
-		return __thiz.callMethod<jint>(
-			"getLatency",
+			"describeContents",
 			"()I"
 		);
 	}
@@ -137,10 +109,38 @@ namespace __jni_impl::android::bluetooth
 			"()I"
 		);
 	}
-	jint BluetoothHidDeviceAppQosSettings::describeContents()
+	jint BluetoothHidDeviceAppQosSettings::getLatency()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getLatency",
+			"()I"
+		);
+	}
+	jint BluetoothHidDeviceAppQosSettings::getPeakBandwidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getPeakBandwidth",
+			"()I"
+		);
+	}
+	jint BluetoothHidDeviceAppQosSettings::getServiceType()
+	{
+		return __thiz.callMethod<jint>(
+			"getServiceType",
+			"()I"
+		);
+	}
+	jint BluetoothHidDeviceAppQosSettings::getTokenBucketSize()
+	{
+		return __thiz.callMethod<jint>(
+			"getTokenBucketSize",
+			"()I"
+		);
+	}
+	jint BluetoothHidDeviceAppQosSettings::getTokenRate()
+	{
+		return __thiz.callMethod<jint>(
+			"getTokenRate",
 			"()I"
 		);
 	}

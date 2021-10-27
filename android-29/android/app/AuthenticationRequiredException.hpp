@@ -29,8 +29,8 @@ namespace __jni_impl::android::app
 		void __constructor(jthrowable arg0, __jni_impl::android::app::PendingIntent arg1);
 		
 		// Methods
-		QAndroidJniObject getUserAction();
 		jint describeContents();
+		QAndroidJniObject getUserAction();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
@@ -62,18 +62,18 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject AuthenticationRequiredException::getUserAction()
-	{
-		return __thiz.callObjectMethod(
-			"getUserAction",
-			"()Landroid/app/PendingIntent;"
-		);
-	}
 	jint AuthenticationRequiredException::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
+		);
+	}
+	QAndroidJniObject AuthenticationRequiredException::getUserAction()
+	{
+		return __thiz.callObjectMethod(
+			"getUserAction",
+			"()Landroid/app/PendingIntent;"
 		);
 	}
 	void AuthenticationRequiredException::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

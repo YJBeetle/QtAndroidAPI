@@ -26,12 +26,12 @@ namespace __jni_impl::android::content::pm
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject setChangedSince(jlong arg0);
-		QAndroidJniObject setShortcutIds(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject setQueryFlags(jint arg0);
 		QAndroidJniObject setActivity(__jni_impl::android::content::ComponentName arg0);
+		QAndroidJniObject setChangedSince(jlong arg0);
 		QAndroidJniObject setPackage(jstring arg0);
 		QAndroidJniObject setPackage(const QString &arg0);
+		QAndroidJniObject setQueryFlags(jint arg0);
+		QAndroidJniObject setShortcutIds(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -86,36 +86,20 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	QAndroidJniObject LauncherApps_ShortcutQuery::setChangedSince(jlong arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setChangedSince",
-			"(J)Landroid/content/pm/LauncherApps$ShortcutQuery;",
-			arg0
-		);
-	}
-	QAndroidJniObject LauncherApps_ShortcutQuery::setShortcutIds(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setShortcutIds",
-			"(Ljava/util/List;)Landroid/content/pm/LauncherApps$ShortcutQuery;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject LauncherApps_ShortcutQuery::setQueryFlags(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setQueryFlags",
-			"(I)Landroid/content/pm/LauncherApps$ShortcutQuery;",
-			arg0
-		);
-	}
 	QAndroidJniObject LauncherApps_ShortcutQuery::setActivity(__jni_impl::android::content::ComponentName arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setActivity",
 			"(Landroid/content/ComponentName;)Landroid/content/pm/LauncherApps$ShortcutQuery;",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject LauncherApps_ShortcutQuery::setChangedSince(jlong arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setChangedSince",
+			"(J)Landroid/content/pm/LauncherApps$ShortcutQuery;",
+			arg0
 		);
 	}
 	QAndroidJniObject LauncherApps_ShortcutQuery::setPackage(jstring arg0)
@@ -132,6 +116,22 @@ namespace __jni_impl::android::content::pm
 			"setPackage",
 			"(Ljava/lang/String;)Landroid/content/pm/LauncherApps$ShortcutQuery;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject LauncherApps_ShortcutQuery::setQueryFlags(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setQueryFlags",
+			"(I)Landroid/content/pm/LauncherApps$ShortcutQuery;",
+			arg0
+		);
+	}
+	QAndroidJniObject LauncherApps_ShortcutQuery::setShortcutIds(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setShortcutIds",
+			"(Ljava/util/List;)Landroid/content/pm/LauncherApps$ShortcutQuery;",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::content::pm

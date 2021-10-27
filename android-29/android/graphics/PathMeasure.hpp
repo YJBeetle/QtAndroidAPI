@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::graphics
 {
-	class Path;
+	class Matrix;
 }
 namespace __jni_impl::android::graphics
 {
-	class Matrix;
+	class Path;
 }
 
 namespace __jni_impl::android::graphics
@@ -30,16 +30,16 @@ namespace __jni_impl::android::graphics
 		// Methods
 		jfloat getLength();
 		jboolean getMatrix(jfloat arg0, __jni_impl::android::graphics::Matrix arg1, jint arg2);
-		jboolean isClosed();
-		void setPath(__jni_impl::android::graphics::Path arg0, jboolean arg1);
 		jboolean getPosTan(jfloat arg0, jfloatArray arg1, jfloatArray arg2);
 		jboolean getSegment(jfloat arg0, jfloat arg1, __jni_impl::android::graphics::Path arg2, jboolean arg3);
+		jboolean isClosed();
 		jboolean nextContour();
+		void setPath(__jni_impl::android::graphics::Path arg0, jboolean arg1);
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Path.hpp"
 #include "Matrix.hpp"
+#include "Path.hpp"
 
 namespace __jni_impl::android::graphics
 {
@@ -95,22 +95,6 @@ namespace __jni_impl::android::graphics
 			arg2
 		);
 	}
-	jboolean PathMeasure::isClosed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isClosed",
-			"()Z"
-		);
-	}
-	void PathMeasure::setPath(__jni_impl::android::graphics::Path arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setPath",
-			"(Landroid/graphics/Path;Z)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	jboolean PathMeasure::getPosTan(jfloat arg0, jfloatArray arg1, jfloatArray arg2)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -132,11 +116,27 @@ namespace __jni_impl::android::graphics
 			arg3
 		);
 	}
+	jboolean PathMeasure::isClosed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isClosed",
+			"()Z"
+		);
+	}
 	jboolean PathMeasure::nextContour()
 	{
 		return __thiz.callMethod<jboolean>(
 			"nextContour",
 			"()Z"
+		);
+	}
+	void PathMeasure::setPath(__jni_impl::android::graphics::Path arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setPath",
+			"(Landroid/graphics/Path;Z)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::graphics

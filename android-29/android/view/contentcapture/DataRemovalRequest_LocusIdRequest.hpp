@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view::contentcapture
-{
-	class DataRemovalRequest;
-}
 namespace __jni_impl::android::content
 {
 	class LocusId;
+}
+namespace __jni_impl::android::view::contentcapture
+{
+	class DataRemovalRequest;
 }
 
 namespace __jni_impl::android::view::contentcapture
@@ -30,8 +30,8 @@ namespace __jni_impl::android::view::contentcapture
 	};
 } // namespace __jni_impl::android::view::contentcapture
 
-#include "DataRemovalRequest.hpp"
 #include "../../content/LocusId.hpp"
+#include "DataRemovalRequest.hpp"
 
 namespace __jni_impl::android::view::contentcapture
 {

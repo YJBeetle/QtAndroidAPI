@@ -25,10 +25,10 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		void replace(__jni_impl::android::media::VolumeShaper_Configuration arg0, __jni_impl::android::media::VolumeShaper_Operation arg1, jboolean arg2);
 		void apply(__jni_impl::android::media::VolumeShaper_Operation arg0);
 		void close();
 		jfloat getVolume();
+		void replace(__jni_impl::android::media::VolumeShaper_Configuration arg0, __jni_impl::android::media::VolumeShaper_Operation arg1, jboolean arg2);
 	};
 } // namespace __jni_impl::android::media
 
@@ -48,16 +48,6 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	void VolumeShaper::replace(__jni_impl::android::media::VolumeShaper_Configuration arg0, __jni_impl::android::media::VolumeShaper_Operation arg1, jboolean arg2)
-	{
-		__thiz.callMethod<void>(
-			"replace",
-			"(Landroid/media/VolumeShaper$Configuration;Landroid/media/VolumeShaper$Operation;Z)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
 	void VolumeShaper::apply(__jni_impl::android::media::VolumeShaper_Operation arg0)
 	{
 		__thiz.callMethod<void>(
@@ -78,6 +68,16 @@ namespace __jni_impl::android::media
 		return __thiz.callMethod<jfloat>(
 			"getVolume",
 			"()F"
+		);
+	}
+	void VolumeShaper::replace(__jni_impl::android::media::VolumeShaper_Configuration arg0, __jni_impl::android::media::VolumeShaper_Operation arg1, jboolean arg2)
+	{
+		__thiz.callMethod<void>(
+			"replace",
+			"(Landroid/media/VolumeShaper$Configuration;Landroid/media/VolumeShaper$Operation;Z)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
 		);
 	}
 } // namespace __jni_impl::android::media

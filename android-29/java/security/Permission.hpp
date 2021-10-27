@@ -22,14 +22,14 @@ namespace __jni_impl::java::security
 		void __constructor(const QString &arg0);
 		
 		// Methods
-		jstring getName();
+		void checkGuard(jobject arg0);
 		jboolean equals(jobject arg0);
-		jstring toString();
+		jstring getActions();
+		jstring getName();
 		jint hashCode();
 		jboolean implies(__jni_impl::java::security::Permission arg0);
-		jstring getActions();
 		QAndroidJniObject newPermissionCollection();
-		void checkGuard(jobject arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security
 
@@ -58,12 +58,13 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	jstring Permission::getName()
+	void Permission::checkGuard(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"checkGuard",
+			"(Ljava/lang/Object;)V",
+			arg0
+		);
 	}
 	jboolean Permission::equals(jobject arg0)
 	{
@@ -73,10 +74,17 @@ namespace __jni_impl::java::security
 			arg0
 		);
 	}
-	jstring Permission::toString()
+	jstring Permission::getActions()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
+			"getActions",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring Permission::getName()
+	{
+		return __thiz.callObjectMethod(
+			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -95,13 +103,6 @@ namespace __jni_impl::java::security
 			arg0.__jniObject().object()
 		);
 	}
-	jstring Permission::getActions()
-	{
-		return __thiz.callObjectMethod(
-			"getActions",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject Permission::newPermissionCollection()
 	{
 		return __thiz.callObjectMethod(
@@ -109,13 +110,12 @@ namespace __jni_impl::java::security
 			"()Ljava/security/PermissionCollection;"
 		);
 	}
-	void Permission::checkGuard(jobject arg0)
+	jstring Permission::toString()
 	{
-		__thiz.callMethod<void>(
-			"checkGuard",
-			"(Ljava/lang/Object;)V",
-			arg0
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security
 

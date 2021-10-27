@@ -11,11 +11,11 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::java::util
 {
-	class Locale;
+	class Date;
 }
 namespace __jni_impl::java::util
 {
-	class Date;
+	class Locale;
 }
 
 namespace __jni_impl::android::telephony::mbms
@@ -30,20 +30,20 @@ namespace __jni_impl::android::telephony::mbms
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jint hashCode();
 		QAndroidJniObject getLocales();
 		jstring getNameForLocale(__jni_impl::java::util::Locale arg0);
 		QAndroidJniObject getNamedContentLocales();
 		jstring getServiceClassName();
 		jstring getServiceId();
-		QAndroidJniObject getSessionStartTime();
 		QAndroidJniObject getSessionEndTime();
+		QAndroidJniObject getSessionStartTime();
+		jint hashCode();
 	};
 } // namespace __jni_impl::android::telephony::mbms
 
 #include "../../os/Parcel.hpp"
-#include "../../../java/util/Locale.hpp"
 #include "../../../java/util/Date.hpp"
+#include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::telephony::mbms
 {
@@ -64,13 +64,6 @@ namespace __jni_impl::android::telephony::mbms
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
-		);
-	}
-	jint ServiceInfo::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
 		);
 	}
 	QAndroidJniObject ServiceInfo::getLocales()
@@ -109,6 +102,13 @@ namespace __jni_impl::android::telephony::mbms
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	QAndroidJniObject ServiceInfo::getSessionEndTime()
+	{
+		return __thiz.callObjectMethod(
+			"getSessionEndTime",
+			"()Ljava/util/Date;"
+		);
+	}
 	QAndroidJniObject ServiceInfo::getSessionStartTime()
 	{
 		return __thiz.callObjectMethod(
@@ -116,11 +116,11 @@ namespace __jni_impl::android::telephony::mbms
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject ServiceInfo::getSessionEndTime()
+	jint ServiceInfo::hashCode()
 	{
-		return __thiz.callObjectMethod(
-			"getSessionEndTime",
-			"()Ljava/util/Date;"
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::telephony::mbms

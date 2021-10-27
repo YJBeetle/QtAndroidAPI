@@ -26,8 +26,8 @@ namespace __jni_impl::android::text::method
 		void __constructor(__jni_impl::java::util::Locale arg0);
 		
 		// Methods
-		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
 		static QAndroidJniObject getInstance();
+		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
 		jint getInputType();
 	};
 } // namespace __jni_impl::android::text::method
@@ -64,6 +64,14 @@ namespace __jni_impl::android::text::method
 	}
 	
 	// Methods
+	QAndroidJniObject DateKeyListener::getInstance()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.method.DateKeyListener",
+			"getInstance",
+			"()Landroid/text/method/DateKeyListener;"
+		);
+	}
 	QAndroidJniObject DateKeyListener::getInstance(__jni_impl::java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -71,14 +79,6 @@ namespace __jni_impl::android::text::method
 			"getInstance",
 			"(Ljava/util/Locale;)Landroid/text/method/DateKeyListener;",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject DateKeyListener::getInstance()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.method.DateKeyListener",
-			"getInstance",
-			"()Landroid/text/method/DateKeyListener;"
 		);
 	}
 	jint DateKeyListener::getInputType()

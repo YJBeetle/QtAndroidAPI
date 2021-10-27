@@ -21,10 +21,6 @@ namespace __jni_impl::android::app
 {
 	class ApplicationErrorReport_RunningServiceInfo;
 }
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::content
 {
 	class ComponentName;
@@ -32,6 +28,10 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::content
 {
 	class Context;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::app
@@ -61,13 +61,13 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		static QAndroidJniObject getErrorReportReceiver(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2);
 		static QAndroidJniObject getErrorReportReceiver(__jni_impl::android::content::Context arg0, const QString &arg1, jint arg2);
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		void dump(__jni_impl::__JniBaseClass arg0, const QString &arg1);
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -75,9 +75,9 @@ namespace __jni_impl::android::app
 #include "ApplicationErrorReport_BatteryInfo.hpp"
 #include "ApplicationErrorReport_CrashInfo.hpp"
 #include "ApplicationErrorReport_RunningServiceInfo.hpp"
-#include "../os/Parcel.hpp"
 #include "../content/ComponentName.hpp"
 #include "../content/Context.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -203,14 +203,6 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void ApplicationErrorReport::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject ApplicationErrorReport::getErrorReportReceiver(__jni_impl::android::content::Context arg0, jstring arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -240,15 +232,6 @@ namespace __jni_impl::android::app
 			"()I"
 		);
 	}
-	void ApplicationErrorReport::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	void ApplicationErrorReport::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -265,6 +248,23 @@ namespace __jni_impl::android::app
 			"(Landroid/util/Printer;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	void ApplicationErrorReport::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ApplicationErrorReport::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::app

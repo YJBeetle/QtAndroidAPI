@@ -21,9 +21,9 @@ namespace __jni_impl::android::opengl
 		void __constructor(jint arg0, jint arg1, __jni_impl::java::nio::ByteBuffer arg2);
 		
 		// Methods
-		jint getWidth();
-		jint getHeight();
 		QAndroidJniObject getData();
+		jint getHeight();
+		jint getWidth();
 	};
 } // namespace __jni_impl::android::opengl
 
@@ -46,11 +46,11 @@ namespace __jni_impl::android::opengl
 	}
 	
 	// Methods
-	jint ETC1Util_ETC1Texture::getWidth()
+	QAndroidJniObject ETC1Util_ETC1Texture::getData()
 	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I"
+		return __thiz.callObjectMethod(
+			"getData",
+			"()Ljava/nio/ByteBuffer;"
 		);
 	}
 	jint ETC1Util_ETC1Texture::getHeight()
@@ -60,11 +60,11 @@ namespace __jni_impl::android::opengl
 			"()I"
 		);
 	}
-	QAndroidJniObject ETC1Util_ETC1Texture::getData()
+	jint ETC1Util_ETC1Texture::getWidth()
 	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()Ljava/nio/ByteBuffer;"
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::opengl

@@ -26,14 +26,14 @@ namespace __jni_impl::android::os
 		void __constructor(const QString &arg0, jint arg1);
 		
 		// Methods
-		jint length();
+		jboolean allowPurging(jboolean arg0);
 		void close();
 		QAndroidJniObject getInputStream();
-		jint readBytes(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
-		void writeBytes(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
 		QAndroidJniObject getOutputStream();
 		jboolean isPurgingAllowed();
-		jboolean allowPurging(jboolean arg0);
+		jint length();
+		jint readBytes(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
+		void writeBytes(jbyteArray arg0, jint arg1, jint arg2, jint arg3);
 	};
 } // namespace __jni_impl::android::os
 
@@ -65,11 +65,12 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	jint MemoryFile::length()
+	jboolean MemoryFile::allowPurging(jboolean arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"length",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"allowPurging",
+			"(Z)Z",
+			arg0
 		);
 	}
 	void MemoryFile::close()
@@ -84,6 +85,27 @@ namespace __jni_impl::android::os
 		return __thiz.callObjectMethod(
 			"getInputStream",
 			"()Ljava/io/InputStream;"
+		);
+	}
+	QAndroidJniObject MemoryFile::getOutputStream()
+	{
+		return __thiz.callObjectMethod(
+			"getOutputStream",
+			"()Ljava/io/OutputStream;"
+		);
+	}
+	jboolean MemoryFile::isPurgingAllowed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isPurgingAllowed",
+			"()Z"
+		);
+	}
+	jint MemoryFile::length()
+	{
+		return __thiz.callMethod<jint>(
+			"length",
+			"()I"
 		);
 	}
 	jint MemoryFile::readBytes(jbyteArray arg0, jint arg1, jint arg2, jint arg3)
@@ -106,28 +128,6 @@ namespace __jni_impl::android::os
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	QAndroidJniObject MemoryFile::getOutputStream()
-	{
-		return __thiz.callObjectMethod(
-			"getOutputStream",
-			"()Ljava/io/OutputStream;"
-		);
-	}
-	jboolean MemoryFile::isPurgingAllowed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isPurgingAllowed",
-			"()Z"
-		);
-	}
-	jboolean MemoryFile::allowPurging(jboolean arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"allowPurging",
-			"(Z)Z",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::os

@@ -27,8 +27,8 @@ namespace __jni_impl::android::view::animation
 		void __constructor(jfloat arg0, jfloat arg1);
 		
 		// Methods
-		jboolean willChangeTransformationMatrix();
 		jboolean willChangeBounds();
+		jboolean willChangeTransformationMatrix();
 	};
 } // namespace __jni_impl::android::view::animation
 
@@ -60,17 +60,17 @@ namespace __jni_impl::android::view::animation
 	}
 	
 	// Methods
-	jboolean AlphaAnimation::willChangeTransformationMatrix()
-	{
-		return __thiz.callMethod<jboolean>(
-			"willChangeTransformationMatrix",
-			"()Z"
-		);
-	}
 	jboolean AlphaAnimation::willChangeBounds()
 	{
 		return __thiz.callMethod<jboolean>(
 			"willChangeBounds",
+			"()Z"
+		);
+	}
+	jboolean AlphaAnimation::willChangeTransformationMatrix()
+	{
+		return __thiz.callMethod<jboolean>(
+			"willChangeTransformationMatrix",
 			"()Z"
 		);
 	}

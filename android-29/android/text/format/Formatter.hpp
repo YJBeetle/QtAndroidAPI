@@ -22,8 +22,8 @@ namespace __jni_impl::android::text::format
 		
 		// Methods
 		static jstring formatFileSize(__jni_impl::android::content::Context arg0, jlong arg1);
-		static jstring formatShortFileSize(__jni_impl::android::content::Context arg0, jlong arg1);
 		static jstring formatIpAddress(jint arg0);
+		static jstring formatShortFileSize(__jni_impl::android::content::Context arg0, jlong arg1);
 	};
 } // namespace __jni_impl::android::text::format
 
@@ -53,6 +53,15 @@ namespace __jni_impl::android::text::format
 			arg1
 		).object<jstring>();
 	}
+	jstring Formatter::formatIpAddress(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.format.Formatter",
+			"formatIpAddress",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
 	jstring Formatter::formatShortFileSize(__jni_impl::android::content::Context arg0, jlong arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -61,15 +70,6 @@ namespace __jni_impl::android::text::format
 			"(Landroid/content/Context;J)Ljava/lang/String;",
 			arg0.__jniObject().object(),
 			arg1
-		).object<jstring>();
-	}
-	jstring Formatter::formatIpAddress(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.format.Formatter",
-			"formatIpAddress",
-			"(I)Ljava/lang/String;",
-			arg0
 		).object<jstring>();
 	}
 } // namespace __jni_impl::android::text::format

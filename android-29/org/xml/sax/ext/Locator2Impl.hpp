@@ -20,9 +20,9 @@ namespace __jni_impl::org::xml::sax::ext
 		
 		// Methods
 		jstring getEncoding();
+		jstring getXMLVersion();
 		void setEncoding(jstring arg0);
 		void setEncoding(const QString &arg0);
-		jstring getXMLVersion();
 		void setXMLVersion(jstring arg0);
 		void setXMLVersion(const QString &arg0);
 	};
@@ -58,6 +58,13 @@ namespace __jni_impl::org::xml::sax::ext
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	jstring Locator2Impl::getXMLVersion()
+	{
+		return __thiz.callObjectMethod(
+			"getXMLVersion",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	void Locator2Impl::setEncoding(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -73,13 +80,6 @@ namespace __jni_impl::org::xml::sax::ext
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
-	}
-	jstring Locator2Impl::getXMLVersion()
-	{
-		return __thiz.callObjectMethod(
-			"getXMLVersion",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	void Locator2Impl::setXMLVersion(jstring arg0)
 	{

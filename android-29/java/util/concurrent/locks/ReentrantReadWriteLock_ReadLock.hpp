@@ -5,13 +5,13 @@
 
 #include "../../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util::concurrent::locks
-{
-	class ReentrantReadWriteLock;
-}
 namespace __jni_impl::java::util::concurrent
 {
 	class TimeUnit;
+}
+namespace __jni_impl::java::util::concurrent::locks
+{
+	class ReentrantReadWriteLock;
 }
 
 namespace __jni_impl::java::util::concurrent::locks
@@ -26,17 +26,17 @@ namespace __jni_impl::java::util::concurrent::locks
 		
 		// Methods
 		void lock();
-		jstring toString();
-		QAndroidJniObject newCondition();
 		void lockInterruptibly();
-		jboolean tryLock(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
+		QAndroidJniObject newCondition();
+		jstring toString();
 		jboolean tryLock();
+		jboolean tryLock(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
 		void unlock();
 	};
 } // namespace __jni_impl::java::util::concurrent::locks
 
-#include "ReentrantReadWriteLock.hpp"
 #include "../TimeUnit.hpp"
+#include "ReentrantReadWriteLock.hpp"
 
 namespace __jni_impl::java::util::concurrent::locks
 {
@@ -58,12 +58,12 @@ namespace __jni_impl::java::util::concurrent::locks
 			"()V"
 		);
 	}
-	jstring ReentrantReadWriteLock_ReadLock::toString()
+	void ReentrantReadWriteLock_ReadLock::lockInterruptibly()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"lockInterruptibly",
+			"()V"
+		);
 	}
 	QAndroidJniObject ReentrantReadWriteLock_ReadLock::newCondition()
 	{
@@ -72,11 +72,18 @@ namespace __jni_impl::java::util::concurrent::locks
 			"()Ljava/util/concurrent/locks/Condition;"
 		);
 	}
-	void ReentrantReadWriteLock_ReadLock::lockInterruptibly()
+	jstring ReentrantReadWriteLock_ReadLock::toString()
 	{
-		__thiz.callMethod<void>(
-			"lockInterruptibly",
-			"()V"
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jboolean ReentrantReadWriteLock_ReadLock::tryLock()
+	{
+		return __thiz.callMethod<jboolean>(
+			"tryLock",
+			"()Z"
 		);
 	}
 	jboolean ReentrantReadWriteLock_ReadLock::tryLock(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
@@ -86,13 +93,6 @@ namespace __jni_impl::java::util::concurrent::locks
 			"(JLjava/util/concurrent/TimeUnit;)Z",
 			arg0,
 			arg1.__jniObject().object()
-		);
-	}
-	jboolean ReentrantReadWriteLock_ReadLock::tryLock()
-	{
-		return __thiz.callMethod<jboolean>(
-			"tryLock",
-			"()Z"
 		);
 	}
 	void ReentrantReadWriteLock_ReadLock::unlock()

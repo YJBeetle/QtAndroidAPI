@@ -10,10 +10,6 @@
 
 namespace __jni_impl::android::renderscript
 {
-	class RenderScript;
-}
-namespace __jni_impl::android::renderscript
-{
 	class Allocation;
 }
 namespace __jni_impl::android::renderscript
@@ -22,11 +18,15 @@ namespace __jni_impl::android::renderscript
 }
 namespace __jni_impl::android::renderscript
 {
-	class Script_KernelID;
+	class RenderScript;
 }
 namespace __jni_impl::android::renderscript
 {
 	class Script_FieldID;
+}
+namespace __jni_impl::android::renderscript
+{
+	class Script_KernelID;
 }
 
 namespace __jni_impl::android::renderscript
@@ -40,19 +40,19 @@ namespace __jni_impl::android::renderscript
 		void __constructor();
 		
 		// Methods
-		void forEach(__jni_impl::android::renderscript::Allocation arg0);
 		static QAndroidJniObject create(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1);
-		void setInput(__jni_impl::android::renderscript::Allocation arg0);
-		QAndroidJniObject getKernelID();
+		void forEach(__jni_impl::android::renderscript::Allocation arg0);
 		QAndroidJniObject getFieldID_Input();
+		QAndroidJniObject getKernelID();
+		void setInput(__jni_impl::android::renderscript::Allocation arg0);
 	};
 } // namespace __jni_impl::android::renderscript
 
-#include "RenderScript.hpp"
 #include "Allocation.hpp"
 #include "Element.hpp"
-#include "Script_KernelID.hpp"
+#include "RenderScript.hpp"
 #include "Script_FieldID.hpp"
+#include "Script_KernelID.hpp"
 
 namespace __jni_impl::android::renderscript
 {
@@ -67,14 +67,6 @@ namespace __jni_impl::android::renderscript
 	}
 	
 	// Methods
-	void ScriptIntrinsicYuvToRGB::forEach(__jni_impl::android::renderscript::Allocation arg0)
-	{
-		__thiz.callMethod<void>(
-			"forEach",
-			"(Landroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject ScriptIntrinsicYuvToRGB::create(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -85,12 +77,19 @@ namespace __jni_impl::android::renderscript
 			arg1.__jniObject().object()
 		);
 	}
-	void ScriptIntrinsicYuvToRGB::setInput(__jni_impl::android::renderscript::Allocation arg0)
+	void ScriptIntrinsicYuvToRGB::forEach(__jni_impl::android::renderscript::Allocation arg0)
 	{
 		__thiz.callMethod<void>(
-			"setInput",
+			"forEach",
 			"(Landroid/renderscript/Allocation;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ScriptIntrinsicYuvToRGB::getFieldID_Input()
+	{
+		return __thiz.callObjectMethod(
+			"getFieldID_Input",
+			"()Landroid/renderscript/Script$FieldID;"
 		);
 	}
 	QAndroidJniObject ScriptIntrinsicYuvToRGB::getKernelID()
@@ -100,11 +99,12 @@ namespace __jni_impl::android::renderscript
 			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicYuvToRGB::getFieldID_Input()
+	void ScriptIntrinsicYuvToRGB::setInput(__jni_impl::android::renderscript::Allocation arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getFieldID_Input",
-			"()Landroid/renderscript/Script$FieldID;"
+		__thiz.callMethod<void>(
+			"setInput",
+			"(Landroid/renderscript/Allocation;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::renderscript

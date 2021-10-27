@@ -7,23 +7,23 @@
 
 namespace __jni_impl::java::io
 {
+	class PrintWriter;
+}
+namespace __jni_impl::java::io
+{
 	class Reader;
 }
 namespace __jni_impl::java::io
 {
 	class Writer;
 }
-namespace __jni_impl::java::io
+namespace __jni_impl::java::nio::charset
 {
-	class PrintWriter;
+	class Charset;
 }
 namespace __jni_impl::java::util
 {
 	class Formatter;
-}
-namespace __jni_impl::java::nio::charset
-{
-	class Charset;
 }
 
 namespace __jni_impl::java::io
@@ -37,27 +37,27 @@ namespace __jni_impl::java::io
 		void __constructor();
 		
 		// Methods
+		void flush();
 		QAndroidJniObject format(jstring arg0, jobjectArray arg1);
 		QAndroidJniObject format(const QString &arg0, jobjectArray arg1);
+		QAndroidJniObject printf(jstring arg0, jobjectArray arg1);
+		QAndroidJniObject printf(const QString &arg0, jobjectArray arg1);
 		jstring readLine();
 		jstring readLine(jstring arg0, jobjectArray arg1);
 		jstring readLine(const QString &arg0, jobjectArray arg1);
-		void flush();
-		QAndroidJniObject reader();
-		QAndroidJniObject writer();
-		QAndroidJniObject printf(jstring arg0, jobjectArray arg1);
-		QAndroidJniObject printf(const QString &arg0, jobjectArray arg1);
 		jcharArray readPassword();
 		jcharArray readPassword(jstring arg0, jobjectArray arg1);
 		jcharArray readPassword(const QString &arg0, jobjectArray arg1);
+		QAndroidJniObject reader();
+		QAndroidJniObject writer();
 	};
 } // namespace __jni_impl::java::io
 
+#include "PrintWriter.hpp"
 #include "Reader.hpp"
 #include "Writer.hpp"
-#include "PrintWriter.hpp"
-#include "../util/Formatter.hpp"
 #include "../nio/charset/Charset.hpp"
+#include "../util/Formatter.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -72,6 +72,13 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
+	void Console::flush()
+	{
+		__thiz.callMethod<void>(
+			"flush",
+			"()V"
+		);
+	}
 	QAndroidJniObject Console::format(jstring arg0, jobjectArray arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -85,6 +92,24 @@ namespace __jni_impl::java::io
 	{
 		return __thiz.callObjectMethod(
 			"format",
+			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/Console;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	QAndroidJniObject Console::printf(jstring arg0, jobjectArray arg1)
+	{
+		return __thiz.callObjectMethod(
+			"printf",
+			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/Console;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject Console::printf(const QString &arg0, jobjectArray arg1)
+	{
+		return __thiz.callObjectMethod(
+			"printf",
 			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/Console;",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
@@ -115,45 +140,6 @@ namespace __jni_impl::java::io
 			arg1
 		).object<jstring>();
 	}
-	void Console::flush()
-	{
-		__thiz.callMethod<void>(
-			"flush",
-			"()V"
-		);
-	}
-	QAndroidJniObject Console::reader()
-	{
-		return __thiz.callObjectMethod(
-			"reader",
-			"()Ljava/io/Reader;"
-		);
-	}
-	QAndroidJniObject Console::writer()
-	{
-		return __thiz.callObjectMethod(
-			"writer",
-			"()Ljava/io/PrintWriter;"
-		);
-	}
-	QAndroidJniObject Console::printf(jstring arg0, jobjectArray arg1)
-	{
-		return __thiz.callObjectMethod(
-			"printf",
-			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/Console;",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject Console::printf(const QString &arg0, jobjectArray arg1)
-	{
-		return __thiz.callObjectMethod(
-			"printf",
-			"(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/Console;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	jcharArray Console::readPassword()
 	{
 		return __thiz.callObjectMethod(
@@ -178,6 +164,20 @@ namespace __jni_impl::java::io
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		).object<jcharArray>();
+	}
+	QAndroidJniObject Console::reader()
+	{
+		return __thiz.callObjectMethod(
+			"reader",
+			"()Ljava/io/Reader;"
+		);
+	}
+	QAndroidJniObject Console::writer()
+	{
+		return __thiz.callObjectMethod(
+			"writer",
+			"()Ljava/io/PrintWriter;"
+		);
 	}
 } // namespace __jni_impl::java::io
 

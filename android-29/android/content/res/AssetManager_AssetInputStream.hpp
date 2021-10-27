@@ -22,15 +22,15 @@ namespace __jni_impl::android::content::res
 		void __constructor();
 		
 		// Methods
-		jint read();
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
-		jint read(jbyteArray arg0);
+		jint available();
 		void close();
 		void mark(jint arg0);
-		jlong skip(jlong arg0);
-		jint available();
 		jboolean markSupported();
+		jint read();
+		jint read(jbyteArray arg0);
+		jint read(jbyteArray arg0, jint arg1, jint arg2);
 		void reset();
+		jlong skip(jlong arg0);
 	};
 } // namespace __jni_impl::android::content::res
 
@@ -49,29 +49,11 @@ namespace __jni_impl::android::content::res
 	}
 	
 	// Methods
-	jint AssetManager_AssetInputStream::read()
+	jint AssetManager_AssetInputStream::available()
 	{
 		return __thiz.callMethod<jint>(
-			"read",
+			"available",
 			"()I"
-		);
-	}
-	jint AssetManager_AssetInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"read",
-			"([BII)I",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jint AssetManager_AssetInputStream::read(jbyteArray arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"read",
-			"([B)I",
-			arg0
 		);
 	}
 	void AssetManager_AssetInputStream::close()
@@ -89,21 +71,6 @@ namespace __jni_impl::android::content::res
 			arg0
 		);
 	}
-	jlong AssetManager_AssetInputStream::skip(jlong arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"skip",
-			"(J)J",
-			arg0
-		);
-	}
-	jint AssetManager_AssetInputStream::available()
-	{
-		return __thiz.callMethod<jint>(
-			"available",
-			"()I"
-		);
-	}
 	jboolean AssetManager_AssetInputStream::markSupported()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -111,11 +78,44 @@ namespace __jni_impl::android::content::res
 			"()Z"
 		);
 	}
+	jint AssetManager_AssetInputStream::read()
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
+	jint AssetManager_AssetInputStream::read(jbyteArray arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"([B)I",
+			arg0
+		);
+	}
+	jint AssetManager_AssetInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"([BII)I",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
 	void AssetManager_AssetInputStream::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
 			"()V"
+		);
+	}
+	jlong AssetManager_AssetInputStream::skip(jlong arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"skip",
+			"(J)J",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::content::res

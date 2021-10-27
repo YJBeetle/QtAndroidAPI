@@ -5,10 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view
-{
-	class WindowInsets;
-}
 namespace __jni_impl::android::graphics
 {
 	class Insets;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::view
 {
 	class DisplayCutout;
+}
+namespace __jni_impl::android::view
+{
+	class WindowInsets;
 }
 
 namespace __jni_impl::android::view
@@ -31,18 +31,18 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setSystemWindowInsets(__jni_impl::android::graphics::Insets arg0);
-		QAndroidJniObject setSystemGestureInsets(__jni_impl::android::graphics::Insets arg0);
-		QAndroidJniObject setMandatorySystemGestureInsets(__jni_impl::android::graphics::Insets arg0);
-		QAndroidJniObject setTappableElementInsets(__jni_impl::android::graphics::Insets arg0);
-		QAndroidJniObject setStableInsets(__jni_impl::android::graphics::Insets arg0);
 		QAndroidJniObject setDisplayCutout(__jni_impl::android::view::DisplayCutout arg0);
+		QAndroidJniObject setMandatorySystemGestureInsets(__jni_impl::android::graphics::Insets arg0);
+		QAndroidJniObject setStableInsets(__jni_impl::android::graphics::Insets arg0);
+		QAndroidJniObject setSystemGestureInsets(__jni_impl::android::graphics::Insets arg0);
+		QAndroidJniObject setSystemWindowInsets(__jni_impl::android::graphics::Insets arg0);
+		QAndroidJniObject setTappableElementInsets(__jni_impl::android::graphics::Insets arg0);
 	};
 } // namespace __jni_impl::android::view
 
-#include "WindowInsets.hpp"
 #include "../graphics/Insets.hpp"
 #include "DisplayCutout.hpp"
+#include "WindowInsets.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -73,19 +73,11 @@ namespace __jni_impl::android::view
 			"()Landroid/view/WindowInsets;"
 		);
 	}
-	QAndroidJniObject WindowInsets_Builder::setSystemWindowInsets(__jni_impl::android::graphics::Insets arg0)
+	QAndroidJniObject WindowInsets_Builder::setDisplayCutout(__jni_impl::android::view::DisplayCutout arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setSystemWindowInsets",
-			"(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject WindowInsets_Builder::setSystemGestureInsets(__jni_impl::android::graphics::Insets arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSystemGestureInsets",
-			"(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;",
+			"setDisplayCutout",
+			"(Landroid/view/DisplayCutout;)Landroid/view/WindowInsets$Builder;",
 			arg0.__jniObject().object()
 		);
 	}
@@ -93,14 +85,6 @@ namespace __jni_impl::android::view
 	{
 		return __thiz.callObjectMethod(
 			"setMandatorySystemGestureInsets",
-			"(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject WindowInsets_Builder::setTappableElementInsets(__jni_impl::android::graphics::Insets arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setTappableElementInsets",
 			"(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;",
 			arg0.__jniObject().object()
 		);
@@ -113,11 +97,27 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject WindowInsets_Builder::setDisplayCutout(__jni_impl::android::view::DisplayCutout arg0)
+	QAndroidJniObject WindowInsets_Builder::setSystemGestureInsets(__jni_impl::android::graphics::Insets arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setDisplayCutout",
-			"(Landroid/view/DisplayCutout;)Landroid/view/WindowInsets$Builder;",
+			"setSystemGestureInsets",
+			"(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject WindowInsets_Builder::setSystemWindowInsets(__jni_impl::android::graphics::Insets arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setSystemWindowInsets",
+			"(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject WindowInsets_Builder::setTappableElementInsets(__jni_impl::android::graphics::Insets arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setTappableElementInsets",
+			"(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;",
 			arg0.__jniObject().object()
 		);
 	}

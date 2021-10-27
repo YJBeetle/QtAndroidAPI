@@ -9,17 +9,17 @@ namespace __jni_impl::android::content
 {
 	class Intent;
 }
-namespace __jni_impl::android::os
+namespace __jni_impl::android::media
 {
-	class Bundle;
+	class Rating;
 }
 namespace __jni_impl::android::net
 {
 	class Uri;
 }
-namespace __jni_impl::android::media
+namespace __jni_impl::android::os
 {
-	class Rating;
+	class Bundle;
 }
 namespace __jni_impl::android::os
 {
@@ -37,40 +37,40 @@ namespace __jni_impl::android::media::session
 		void __constructor();
 		
 		// Methods
+		void onCommand(jstring arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::ResultReceiver arg2);
+		void onCommand(const QString &arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::ResultReceiver arg2);
+		void onCustomAction(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void onCustomAction(const QString &arg0, __jni_impl::android::os::Bundle arg1);
+		void onFastForward();
 		jboolean onMediaButtonEvent(__jni_impl::android::content::Intent arg0);
+		void onPause();
+		void onPlay();
+		void onPlayFromMediaId(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void onPlayFromMediaId(const QString &arg0, __jni_impl::android::os::Bundle arg1);
+		void onPlayFromSearch(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void onPlayFromSearch(const QString &arg0, __jni_impl::android::os::Bundle arg1);
+		void onPlayFromUri(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1);
 		void onPrepare();
 		void onPrepareFromMediaId(jstring arg0, __jni_impl::android::os::Bundle arg1);
 		void onPrepareFromMediaId(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		void onPrepareFromSearch(jstring arg0, __jni_impl::android::os::Bundle arg1);
 		void onPrepareFromSearch(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		void onPrepareFromUri(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1);
-		void onPlay();
-		void onPlayFromSearch(jstring arg0, __jni_impl::android::os::Bundle arg1);
-		void onPlayFromSearch(const QString &arg0, __jni_impl::android::os::Bundle arg1);
-		void onPlayFromMediaId(jstring arg0, __jni_impl::android::os::Bundle arg1);
-		void onPlayFromMediaId(const QString &arg0, __jni_impl::android::os::Bundle arg1);
-		void onPlayFromUri(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1);
-		void onSkipToQueueItem(jlong arg0);
-		void onSkipToNext();
-		void onSkipToPrevious();
-		void onFastForward();
 		void onRewind();
 		void onSeekTo(jlong arg0);
-		void onSetRating(__jni_impl::android::media::Rating arg0);
 		void onSetPlaybackSpeed(jfloat arg0);
-		void onCustomAction(jstring arg0, __jni_impl::android::os::Bundle arg1);
-		void onCustomAction(const QString &arg0, __jni_impl::android::os::Bundle arg1);
-		void onCommand(jstring arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::ResultReceiver arg2);
-		void onCommand(const QString &arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::ResultReceiver arg2);
-		void onPause();
+		void onSetRating(__jni_impl::android::media::Rating arg0);
+		void onSkipToNext();
+		void onSkipToPrevious();
+		void onSkipToQueueItem(jlong arg0);
 		void onStop();
 	};
 } // namespace __jni_impl::android::media::session
 
 #include "../../content/Intent.hpp"
-#include "../../os/Bundle.hpp"
-#include "../../net/Uri.hpp"
 #include "../Rating.hpp"
+#include "../../net/Uri.hpp"
+#include "../../os/Bundle.hpp"
 #include "../../os/ResultReceiver.hpp"
 
 namespace __jni_impl::android::media::session
@@ -87,12 +87,116 @@ namespace __jni_impl::android::media::session
 	}
 	
 	// Methods
+	void MediaSession_Callback::onCommand(jstring arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::ResultReceiver arg2)
+	{
+		__thiz.callMethod<void>(
+			"onCommand",
+			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	void MediaSession_Callback::onCommand(const QString &arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::ResultReceiver arg2)
+	{
+		__thiz.callMethod<void>(
+			"onCommand",
+			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	void MediaSession_Callback::onCustomAction(jstring arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"onCustomAction",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaSession_Callback::onCustomAction(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"onCustomAction",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaSession_Callback::onFastForward()
+	{
+		__thiz.callMethod<void>(
+			"onFastForward",
+			"()V"
+		);
+	}
 	jboolean MediaSession_Callback::onMediaButtonEvent(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onMediaButtonEvent",
 			"(Landroid/content/Intent;)Z",
 			arg0.__jniObject().object()
+		);
+	}
+	void MediaSession_Callback::onPause()
+	{
+		__thiz.callMethod<void>(
+			"onPause",
+			"()V"
+		);
+	}
+	void MediaSession_Callback::onPlay()
+	{
+		__thiz.callMethod<void>(
+			"onPlay",
+			"()V"
+		);
+	}
+	void MediaSession_Callback::onPlayFromMediaId(jstring arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"onPlayFromMediaId",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaSession_Callback::onPlayFromMediaId(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"onPlayFromMediaId",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaSession_Callback::onPlayFromSearch(jstring arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"onPlayFromSearch",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaSession_Callback::onPlayFromSearch(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"onPlayFromSearch",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaSession_Callback::onPlayFromUri(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"onPlayFromUri",
+			"(Landroid/net/Uri;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	void MediaSession_Callback::onPrepare()
@@ -147,64 +251,35 @@ namespace __jni_impl::android::media::session
 			arg1.__jniObject().object()
 		);
 	}
-	void MediaSession_Callback::onPlay()
+	void MediaSession_Callback::onRewind()
 	{
 		__thiz.callMethod<void>(
-			"onPlay",
+			"onRewind",
 			"()V"
 		);
 	}
-	void MediaSession_Callback::onPlayFromSearch(jstring arg0, __jni_impl::android::os::Bundle arg1)
+	void MediaSession_Callback::onSeekTo(jlong arg0)
 	{
 		__thiz.callMethod<void>(
-			"onPlayFromSearch",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaSession_Callback::onPlayFromSearch(const QString &arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onPlayFromSearch",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaSession_Callback::onPlayFromMediaId(jstring arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onPlayFromMediaId",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaSession_Callback::onPlayFromMediaId(const QString &arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onPlayFromMediaId",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaSession_Callback::onPlayFromUri(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onPlayFromUri",
-			"(Landroid/net/Uri;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaSession_Callback::onSkipToQueueItem(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"onSkipToQueueItem",
+			"onSeekTo",
 			"(J)V",
 			arg0
+		);
+	}
+	void MediaSession_Callback::onSetPlaybackSpeed(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"onSetPlaybackSpeed",
+			"(F)V",
+			arg0
+		);
+	}
+	void MediaSession_Callback::onSetRating(__jni_impl::android::media::Rating arg0)
+	{
+		__thiz.callMethod<void>(
+			"onSetRating",
+			"(Landroid/media/Rating;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void MediaSession_Callback::onSkipToNext()
@@ -221,87 +296,12 @@ namespace __jni_impl::android::media::session
 			"()V"
 		);
 	}
-	void MediaSession_Callback::onFastForward()
+	void MediaSession_Callback::onSkipToQueueItem(jlong arg0)
 	{
 		__thiz.callMethod<void>(
-			"onFastForward",
-			"()V"
-		);
-	}
-	void MediaSession_Callback::onRewind()
-	{
-		__thiz.callMethod<void>(
-			"onRewind",
-			"()V"
-		);
-	}
-	void MediaSession_Callback::onSeekTo(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"onSeekTo",
+			"onSkipToQueueItem",
 			"(J)V",
 			arg0
-		);
-	}
-	void MediaSession_Callback::onSetRating(__jni_impl::android::media::Rating arg0)
-	{
-		__thiz.callMethod<void>(
-			"onSetRating",
-			"(Landroid/media/Rating;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void MediaSession_Callback::onSetPlaybackSpeed(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"onSetPlaybackSpeed",
-			"(F)V",
-			arg0
-		);
-	}
-	void MediaSession_Callback::onCustomAction(jstring arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onCustomAction",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaSession_Callback::onCustomAction(const QString &arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onCustomAction",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaSession_Callback::onCommand(jstring arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::ResultReceiver arg2)
-	{
-		__thiz.callMethod<void>(
-			"onCommand",
-			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void MediaSession_Callback::onCommand(const QString &arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::ResultReceiver arg2)
-	{
-		__thiz.callMethod<void>(
-			"onCommand",
-			"(Ljava/lang/String;Landroid/os/Bundle;Landroid/os/ResultReceiver;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void MediaSession_Callback::onPause()
-	{
-		__thiz.callMethod<void>(
-			"onPause",
-			"()V"
 		);
 	}
 	void MediaSession_Callback::onStop()

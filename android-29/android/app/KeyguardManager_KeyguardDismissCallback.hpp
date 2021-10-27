@@ -17,9 +17,9 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		void onDismissSucceeded();
 		void onDismissCancelled();
 		void onDismissError();
+		void onDismissSucceeded();
 	};
 } // namespace __jni_impl::android::app
 
@@ -38,13 +38,6 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void KeyguardManager_KeyguardDismissCallback::onDismissSucceeded()
-	{
-		__thiz.callMethod<void>(
-			"onDismissSucceeded",
-			"()V"
-		);
-	}
 	void KeyguardManager_KeyguardDismissCallback::onDismissCancelled()
 	{
 		__thiz.callMethod<void>(
@@ -56,6 +49,13 @@ namespace __jni_impl::android::app
 	{
 		__thiz.callMethod<void>(
 			"onDismissError",
+			"()V"
+		);
+	}
+	void KeyguardManager_KeyguardDismissCallback::onDismissSucceeded()
+	{
+		__thiz.callMethod<void>(
+			"onDismissSucceeded",
 			"()V"
 		);
 	}

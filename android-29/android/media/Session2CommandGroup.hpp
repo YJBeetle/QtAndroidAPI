@@ -26,10 +26,10 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getCommands();
-		jboolean hasCommand(jint arg0);
-		jboolean hasCommand(__jni_impl::android::media::Session2Command arg0);
 		jint describeContents();
+		QAndroidJniObject getCommands();
+		jboolean hasCommand(__jni_impl::android::media::Session2Command arg0);
+		jboolean hasCommand(jint arg0);
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
@@ -58,19 +58,18 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	jint Session2CommandGroup::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	QAndroidJniObject Session2CommandGroup::getCommands()
 	{
 		return __thiz.callObjectMethod(
 			"getCommands",
 			"()Ljava/util/Set;"
-		);
-	}
-	jboolean Session2CommandGroup::hasCommand(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasCommand",
-			"(I)Z",
-			arg0
 		);
 	}
 	jboolean Session2CommandGroup::hasCommand(__jni_impl::android::media::Session2Command arg0)
@@ -81,11 +80,12 @@ namespace __jni_impl::android::media
 			arg0.__jniObject().object()
 		);
 	}
-	jint Session2CommandGroup::describeContents()
+	jboolean Session2CommandGroup::hasCommand(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"hasCommand",
+			"(I)Z",
+			arg0
 		);
 	}
 	void Session2CommandGroup::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

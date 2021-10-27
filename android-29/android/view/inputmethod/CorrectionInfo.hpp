@@ -23,12 +23,12 @@ namespace __jni_impl::android::view::inputmethod
 		void __constructor(jint arg0, const QString &arg1, const QString &arg2);
 		
 		// Methods
-		jstring toString();
-		jint getOffset();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jstring getOldText();
 		jstring getNewText();
+		jint getOffset();
+		jstring getOldText();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
@@ -69,11 +69,18 @@ namespace __jni_impl::android::view::inputmethod
 	}
 	
 	// Methods
-	jstring CorrectionInfo::toString()
+	jint CorrectionInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	jstring CorrectionInfo::getNewText()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
+			"getNewText",
+			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
 	jint CorrectionInfo::getOffset()
@@ -83,12 +90,19 @@ namespace __jni_impl::android::view::inputmethod
 			"()I"
 		);
 	}
-	jint CorrectionInfo::describeContents()
+	jstring CorrectionInfo::getOldText()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"getOldText",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring CorrectionInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void CorrectionInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -98,20 +112,6 @@ namespace __jni_impl::android::view::inputmethod
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jstring CorrectionInfo::getOldText()
-	{
-		return __thiz.callObjectMethod(
-			"getOldText",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	jstring CorrectionInfo::getNewText()
-	{
-		return __thiz.callObjectMethod(
-			"getNewText",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::view::inputmethod
 

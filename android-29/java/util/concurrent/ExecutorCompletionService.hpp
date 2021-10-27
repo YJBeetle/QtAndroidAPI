@@ -26,11 +26,11 @@ namespace __jni_impl::java::util::concurrent
 		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject poll(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
 		QAndroidJniObject poll();
-		QAndroidJniObject take();
+		QAndroidJniObject poll(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
 		QAndroidJniObject submit(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject submit(__jni_impl::__JniBaseClass arg0, jobject arg1);
+		QAndroidJniObject take();
 	};
 } // namespace __jni_impl::java::util::concurrent
 
@@ -61,15 +61,6 @@ namespace __jni_impl::java::util::concurrent
 	}
 	
 	// Methods
-	QAndroidJniObject ExecutorCompletionService::poll(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
-	{
-		return __thiz.callObjectMethod(
-			"poll",
-			"(JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/Future;",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
 	QAndroidJniObject ExecutorCompletionService::poll()
 	{
 		return __thiz.callObjectMethod(
@@ -77,11 +68,13 @@ namespace __jni_impl::java::util::concurrent
 			"()Ljava/util/concurrent/Future;"
 		);
 	}
-	QAndroidJniObject ExecutorCompletionService::take()
+	QAndroidJniObject ExecutorCompletionService::poll(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
 		return __thiz.callObjectMethod(
-			"take",
-			"()Ljava/util/concurrent/Future;"
+			"poll",
+			"(JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/Future;",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
 	QAndroidJniObject ExecutorCompletionService::submit(__jni_impl::__JniBaseClass arg0)
@@ -99,6 +92,13 @@ namespace __jni_impl::java::util::concurrent
 			"(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Future;",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	QAndroidJniObject ExecutorCompletionService::take()
+	{
+		return __thiz.callObjectMethod(
+			"take",
+			"()Ljava/util/concurrent/Future;"
 		);
 	}
 } // namespace __jni_impl::java::util::concurrent

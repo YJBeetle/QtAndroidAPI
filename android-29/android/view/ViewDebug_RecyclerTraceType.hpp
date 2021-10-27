@@ -13,20 +13,20 @@ namespace __jni_impl::android::view
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NEW_VIEW();
 		static QAndroidJniObject BIND_VIEW();
+		static QAndroidJniObject MOVE_FROM_ACTIVE_TO_SCRAP_HEAP();
+		static QAndroidJniObject MOVE_TO_SCRAP_HEAP();
+		static QAndroidJniObject NEW_VIEW();
 		static QAndroidJniObject RECYCLE_FROM_ACTIVE_HEAP();
 		static QAndroidJniObject RECYCLE_FROM_SCRAP_HEAP();
-		static QAndroidJniObject MOVE_TO_SCRAP_HEAP();
-		static QAndroidJniObject MOVE_FROM_ACTIVE_TO_SCRAP_HEAP();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::view
 
@@ -34,19 +34,35 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::view
 {
 	// Fields
-	QAndroidJniObject ViewDebug_RecyclerTraceType::NEW_VIEW()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.view.ViewDebug$RecyclerTraceType",
-			"NEW_VIEW",
-			"Landroid/view/ViewDebug$RecyclerTraceType;"
-		);
-	}
 	QAndroidJniObject ViewDebug_RecyclerTraceType::BIND_VIEW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.view.ViewDebug$RecyclerTraceType",
 			"BIND_VIEW",
+			"Landroid/view/ViewDebug$RecyclerTraceType;"
+		);
+	}
+	QAndroidJniObject ViewDebug_RecyclerTraceType::MOVE_FROM_ACTIVE_TO_SCRAP_HEAP()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.view.ViewDebug$RecyclerTraceType",
+			"MOVE_FROM_ACTIVE_TO_SCRAP_HEAP",
+			"Landroid/view/ViewDebug$RecyclerTraceType;"
+		);
+	}
+	QAndroidJniObject ViewDebug_RecyclerTraceType::MOVE_TO_SCRAP_HEAP()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.view.ViewDebug$RecyclerTraceType",
+			"MOVE_TO_SCRAP_HEAP",
+			"Landroid/view/ViewDebug$RecyclerTraceType;"
+		);
+	}
+	QAndroidJniObject ViewDebug_RecyclerTraceType::NEW_VIEW()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.view.ViewDebug$RecyclerTraceType",
+			"NEW_VIEW",
 			"Landroid/view/ViewDebug$RecyclerTraceType;"
 		);
 	}
@@ -66,22 +82,6 @@ namespace __jni_impl::android::view
 			"Landroid/view/ViewDebug$RecyclerTraceType;"
 		);
 	}
-	QAndroidJniObject ViewDebug_RecyclerTraceType::MOVE_TO_SCRAP_HEAP()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.view.ViewDebug$RecyclerTraceType",
-			"MOVE_TO_SCRAP_HEAP",
-			"Landroid/view/ViewDebug$RecyclerTraceType;"
-		);
-	}
-	QAndroidJniObject ViewDebug_RecyclerTraceType::MOVE_FROM_ACTIVE_TO_SCRAP_HEAP()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.view.ViewDebug$RecyclerTraceType",
-			"MOVE_FROM_ACTIVE_TO_SCRAP_HEAP",
-			"Landroid/view/ViewDebug$RecyclerTraceType;"
-		);
-	}
 	
 	// Constructors
 	void ViewDebug_RecyclerTraceType::__constructor()
@@ -92,14 +92,6 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jarray ViewDebug_RecyclerTraceType::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.ViewDebug$RecyclerTraceType",
-			"values",
-			"()[Landroid/view/ViewDebug$RecyclerTraceType;"
-		).object<jarray>();
-	}
 	QAndroidJniObject ViewDebug_RecyclerTraceType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -117,6 +109,14 @@ namespace __jni_impl::android::view
 			"(Ljava/lang/String;)Landroid/view/ViewDebug$RecyclerTraceType;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray ViewDebug_RecyclerTraceType::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.ViewDebug$RecyclerTraceType",
+			"values",
+			"()[Landroid/view/ViewDebug$RecyclerTraceType;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::view
 

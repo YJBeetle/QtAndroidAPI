@@ -10,11 +10,11 @@
 
 namespace __jni_impl::android::content
 {
-	class Intent;
+	class Context;
 }
 namespace __jni_impl::android::content
 {
-	class Context;
+	class Intent;
 }
 
 namespace __jni_impl::android::location
@@ -33,15 +33,15 @@ namespace __jni_impl::android::location
 		void __constructor(const QString &arg0);
 		
 		// Methods
-		void onStart(__jni_impl::android::content::Intent arg0, jint arg1);
 		static void refreshSettings(__jni_impl::android::content::Context arg0);
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		void onStart(__jni_impl::android::content::Intent arg0, jint arg1);
 		jint onStartCommand(__jni_impl::android::content::Intent arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::location
 
-#include "../content/Intent.hpp"
 #include "../content/Context.hpp"
+#include "../content/Intent.hpp"
 
 namespace __jni_impl::android::location
 {
@@ -98,15 +98,6 @@ namespace __jni_impl::android::location
 	}
 	
 	// Methods
-	void SettingInjectorService::onStart(__jni_impl::android::content::Intent arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"onStart",
-			"(Landroid/content/Intent;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	void SettingInjectorService::refreshSettings(__jni_impl::android::content::Context arg0)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -122,6 +113,15 @@ namespace __jni_impl::android::location
 			"onBind",
 			"(Landroid/content/Intent;)Landroid/os/IBinder;",
 			arg0.__jniObject().object()
+		);
+	}
+	void SettingInjectorService::onStart(__jni_impl::android::content::Intent arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"onStart",
+			"(Landroid/content/Intent;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 	jint SettingInjectorService::onStartCommand(__jni_impl::android::content::Intent arg0, jint arg1, jint arg2)

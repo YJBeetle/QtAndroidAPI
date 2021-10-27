@@ -5,6 +5,14 @@
 
 #include "../../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::app::backup
+{
+	class BackupDataInputStream;
+}
+namespace __jni_impl::android::app::backup
+{
+	class BackupDataOutput;
+}
 namespace __jni_impl::android::content
 {
 	class Context;
@@ -12,14 +20,6 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::os
 {
 	class ParcelFileDescriptor;
-}
-namespace __jni_impl::android::app::backup
-{
-	class BackupDataOutput;
-}
-namespace __jni_impl::android::app::backup
-{
-	class BackupDataInputStream;
 }
 
 namespace __jni_impl::android::app::backup
@@ -39,10 +39,10 @@ namespace __jni_impl::android::app::backup
 	};
 } // namespace __jni_impl::android::app::backup
 
+#include "BackupDataInputStream.hpp"
+#include "BackupDataOutput.hpp"
 #include "../../content/Context.hpp"
 #include "../../os/ParcelFileDescriptor.hpp"
-#include "BackupDataOutput.hpp"
-#include "BackupDataInputStream.hpp"
 
 namespace __jni_impl::android::app::backup
 {

@@ -8,13 +8,13 @@
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
-namespace __jni_impl::android::service::textservice
-{
-	class SpellCheckerService_Session;
-}
 namespace __jni_impl::android::content
 {
 	class Intent;
+}
+namespace __jni_impl::android::service::textservice
+{
+	class SpellCheckerService_Session;
 }
 
 namespace __jni_impl::android::service::textservice
@@ -34,8 +34,8 @@ namespace __jni_impl::android::service::textservice
 	};
 } // namespace __jni_impl::android::service::textservice
 
-#include "SpellCheckerService_Session.hpp"
 #include "../../content/Intent.hpp"
+#include "SpellCheckerService_Session.hpp"
 
 namespace __jni_impl::android::service::textservice
 {

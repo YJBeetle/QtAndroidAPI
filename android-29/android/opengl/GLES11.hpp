@@ -12,11 +12,11 @@ namespace __jni_impl::java::nio
 }
 namespace __jni_impl::java::nio
 {
-	class IntBuffer;
+	class FloatBuffer;
 }
 namespace __jni_impl::java::nio
 {
-	class FloatBuffer;
+	class IntBuffer;
 }
 
 namespace __jni_impl::android::opengl
@@ -152,81 +152,81 @@ namespace __jni_impl::android::opengl
 		void __constructor();
 		
 		// Methods
-		static void glColorPointer(jint arg0, jint arg1, jint arg2, jint arg3);
-		static void glNormalPointer(jint arg0, jint arg1, jint arg2);
-		static void glTexCoordPointer(jint arg0, jint arg1, jint arg2, jint arg3);
-		static void glVertexPointer(jint arg0, jint arg1, jint arg2, jint arg3);
 		static void glBindBuffer(jint arg0, jint arg1);
 		static void glBufferData(jint arg0, jint arg1, __jni_impl::java::nio::Buffer arg2, jint arg3);
 		static void glBufferSubData(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::Buffer arg3);
+		static void glClipPlanef(jint arg0, __jni_impl::java::nio::FloatBuffer arg1);
+		static void glClipPlanef(jint arg0, jfloatArray arg1, jint arg2);
+		static void glClipPlanex(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glClipPlanex(jint arg0, jintArray arg1, jint arg2);
+		static void glColor4ub(jbyte arg0, jbyte arg1, jbyte arg2, jbyte arg3);
+		static void glColorPointer(jint arg0, jint arg1, jint arg2, jint arg3);
 		static void glDeleteBuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
 		static void glDeleteBuffers(jint arg0, jintArray arg1, jint arg2);
 		static void glDrawElements(jint arg0, jint arg1, jint arg2, jint arg3);
 		static void glGenBuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
 		static void glGenBuffers(jint arg0, jintArray arg1, jint arg2);
-		static void glGetBooleanv(jint arg0, jbooleanArray arg1, jint arg2);
 		static void glGetBooleanv(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glGetBooleanv(jint arg0, jbooleanArray arg1, jint arg2);
 		static void glGetBufferParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetBufferParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glGetFloatv(jint arg0, jfloatArray arg1, jint arg2);
-		static void glGetFloatv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1);
-		static void glGetTexParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
-		static void glGetTexParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
-		static void glGetTexParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glGetTexParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static jboolean glIsBuffer(jint arg0);
-		static jboolean glIsEnabled(jint arg0);
-		static jboolean glIsTexture(jint arg0);
-		static void glTexParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
-		static void glTexParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
-		static void glTexParameteri(jint arg0, jint arg1, jint arg2);
-		static void glTexParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glTexParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glClipPlanef(jint arg0, __jni_impl::java::nio::FloatBuffer arg1);
-		static void glClipPlanef(jint arg0, jfloatArray arg1, jint arg2);
-		static void glClipPlanex(jint arg0, jintArray arg1, jint arg2);
-		static void glClipPlanex(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
-		static void glColor4ub(jbyte arg0, jbyte arg1, jbyte arg2, jbyte arg3);
 		static void glGetClipPlanef(jint arg0, __jni_impl::java::nio::FloatBuffer arg1);
 		static void glGetClipPlanef(jint arg0, jfloatArray arg1, jint arg2);
-		static void glGetClipPlanex(jint arg0, jintArray arg1, jint arg2);
 		static void glGetClipPlanex(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glGetClipPlanex(jint arg0, jintArray arg1, jint arg2);
 		static void glGetFixedv(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
 		static void glGetFixedv(jint arg0, jintArray arg1, jint arg2);
-		static void glGetLightfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
+		static void glGetFloatv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1);
+		static void glGetFloatv(jint arg0, jfloatArray arg1, jint arg2);
 		static void glGetLightfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
+		static void glGetLightfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
 		static void glGetLightxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetLightxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glGetMaterialfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
 		static void glGetMaterialfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
-		static void glGetMaterialxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glGetMaterialxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glGetTexEnvfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
+		static void glGetMaterialxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glGetTexEnvfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
+		static void glGetTexEnvfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
 		static void glGetTexEnviv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetTexEnviv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glGetTexEnvxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetTexEnvxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetTexParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
+		static void glGetTexParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
+		static void glGetTexParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glGetTexParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glGetTexParameterxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetTexParameterxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static jboolean glIsBuffer(jint arg0);
+		static jboolean glIsEnabled(jint arg0);
+		static jboolean glIsTexture(jint arg0);
+		static void glNormalPointer(jint arg0, jint arg1, jint arg2);
 		static void glPointParameterf(jint arg0, jfloat arg1);
-		static void glPointParameterfv(jint arg0, jfloatArray arg1, jint arg2);
 		static void glPointParameterfv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1);
+		static void glPointParameterfv(jint arg0, jfloatArray arg1, jint arg2);
 		static void glPointParameterx(jint arg0, jint arg1);
-		static void glPointParameterxv(jint arg0, jintArray arg1, jint arg2);
 		static void glPointParameterxv(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glPointParameterxv(jint arg0, jintArray arg1, jint arg2);
 		static void glPointSizePointerOES(jint arg0, jint arg1, __jni_impl::java::nio::Buffer arg2);
+		static void glTexCoordPointer(jint arg0, jint arg1, jint arg2, jint arg3);
 		static void glTexEnvi(jint arg0, jint arg1, jint arg2);
-		static void glTexEnviv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glTexEnviv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glTexEnviv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glTexParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
+		static void glTexParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
+		static void glTexParameteri(jint arg0, jint arg1, jint arg2);
+		static void glTexParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glTexParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glTexParameterxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glTexParameterxv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glVertexPointer(jint arg0, jint arg1, jint arg2, jint arg3);
 	};
 } // namespace __jni_impl::android::opengl
 
 #include "../../java/nio/Buffer.hpp"
-#include "../../java/nio/IntBuffer.hpp"
 #include "../../java/nio/FloatBuffer.hpp"
+#include "../../java/nio/IntBuffer.hpp"
 
 namespace __jni_impl::android::opengl
 {
@@ -1096,53 +1096,6 @@ namespace __jni_impl::android::opengl
 	}
 	
 	// Methods
-	void GLES11::glColorPointer(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glColorPointer",
-			"(IIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES11::glNormalPointer(jint arg0, jint arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glNormalPointer",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES11::glTexCoordPointer(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glTexCoordPointer",
-			"(IIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES11::glVertexPointer(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glVertexPointer",
-			"(IIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
 	void GLES11::glBindBuffer(jint arg0, jint arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -1175,6 +1128,72 @@ namespace __jni_impl::android::opengl
 			arg1,
 			arg2,
 			arg3.__jniObject().object()
+		);
+	}
+	void GLES11::glClipPlanef(jint arg0, __jni_impl::java::nio::FloatBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glClipPlanef",
+			"(ILjava/nio/FloatBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void GLES11::glClipPlanef(jint arg0, jfloatArray arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glClipPlanef",
+			"(I[FI)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES11::glClipPlanex(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glClipPlanex",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void GLES11::glClipPlanex(jint arg0, jintArray arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glClipPlanex",
+			"(I[II)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES11::glColor4ub(jbyte arg0, jbyte arg1, jbyte arg2, jbyte arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glColor4ub",
+			"(BBBB)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES11::glColorPointer(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glColorPointer",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
 		);
 	}
 	void GLES11::glDeleteBuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
@@ -1231,6 +1250,16 @@ namespace __jni_impl::android::opengl
 			arg2
 		);
 	}
+	void GLES11::glGetBooleanv(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glGetBooleanv",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
 	void GLES11::glGetBooleanv(jint arg0, jbooleanArray arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -1240,16 +1269,6 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	void GLES11::glGetBooleanv(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glGetBooleanv",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
 		);
 	}
 	void GLES11::glGetBufferParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
@@ -1269,211 +1288,6 @@ namespace __jni_impl::android::opengl
 			"android.opengl.GLES11",
 			"glGetBufferParameteriv",
 			"(II[II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES11::glGetFloatv(jint arg0, jfloatArray arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glGetFloatv",
-			"(I[FI)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES11::glGetFloatv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glGetFloatv",
-			"(ILjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void GLES11::glGetTexParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glGetTexParameterfv",
-			"(IILjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void GLES11::glGetTexParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glGetTexParameterfv",
-			"(II[FI)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES11::glGetTexParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glGetTexParameteriv",
-			"(II[II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES11::glGetTexParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glGetTexParameteriv",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	jboolean GLES11::glIsBuffer(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.GLES11",
-			"glIsBuffer",
-			"(I)Z",
-			arg0
-		);
-	}
-	jboolean GLES11::glIsEnabled(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.GLES11",
-			"glIsEnabled",
-			"(I)Z",
-			arg0
-		);
-	}
-	jboolean GLES11::glIsTexture(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.GLES11",
-			"glIsTexture",
-			"(I)Z",
-			arg0
-		);
-	}
-	void GLES11::glTexParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glTexParameterfv",
-			"(IILjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void GLES11::glTexParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glTexParameterfv",
-			"(II[FI)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES11::glTexParameteri(jint arg0, jint arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glTexParameteri",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES11::glTexParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glTexParameteriv",
-			"(II[II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES11::glTexParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glTexParameteriv",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void GLES11::glClipPlanef(jint arg0, __jni_impl::java::nio::FloatBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glClipPlanef",
-			"(ILjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void GLES11::glClipPlanef(jint arg0, jfloatArray arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glClipPlanef",
-			"(I[FI)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES11::glClipPlanex(jint arg0, jintArray arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glClipPlanex",
-			"(I[II)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES11::glClipPlanex(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glClipPlanex",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void GLES11::glColor4ub(jbyte arg0, jbyte arg1, jbyte arg2, jbyte arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glColor4ub",
-			"(BBBB)V",
 			arg0,
 			arg1,
 			arg2,
@@ -1501,6 +1315,16 @@ namespace __jni_impl::android::opengl
 			arg2
 		);
 	}
+	void GLES11::glGetClipPlanex(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glGetClipPlanex",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
 	void GLES11::glGetClipPlanex(jint arg0, jintArray arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -1510,16 +1334,6 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	void GLES11::glGetClipPlanex(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glGetClipPlanex",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
 		);
 	}
 	void GLES11::glGetFixedv(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
@@ -1543,16 +1357,25 @@ namespace __jni_impl::android::opengl
 			arg2
 		);
 	}
-	void GLES11::glGetLightfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
+	void GLES11::glGetFloatv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES11",
-			"glGetLightfv",
-			"(II[FI)V",
+			"glGetFloatv",
+			"(ILjava/nio/FloatBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void GLES11::glGetFloatv(jint arg0, jfloatArray arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glGetFloatv",
+			"(I[FI)V",
 			arg0,
 			arg1,
-			arg2,
-			arg3
+			arg2
 		);
 	}
 	void GLES11::glGetLightfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
@@ -1564,6 +1387,18 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2.__jniObject().object()
+		);
+	}
+	void GLES11::glGetLightfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glGetLightfv",
+			"(II[FI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
 		);
 	}
 	void GLES11::glGetLightxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
@@ -1612,18 +1447,6 @@ namespace __jni_impl::android::opengl
 			arg3
 		);
 	}
-	void GLES11::glGetMaterialxv(jint arg0, jint arg1, jintArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glGetMaterialxv",
-			"(II[II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
 	void GLES11::glGetMaterialxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -1635,12 +1458,12 @@ namespace __jni_impl::android::opengl
 			arg2.__jniObject().object()
 		);
 	}
-	void GLES11::glGetTexEnvfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
+	void GLES11::glGetMaterialxv(jint arg0, jint arg1, jintArray arg2, jint arg3)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES11",
-			"glGetTexEnvfv",
-			"(II[FI)V",
+			"glGetMaterialxv",
+			"(II[II)V",
 			arg0,
 			arg1,
 			arg2,
@@ -1656,6 +1479,18 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2.__jniObject().object()
+		);
+	}
+	void GLES11::glGetTexEnvfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glGetTexEnvfv",
+			"(II[FI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
 		);
 	}
 	void GLES11::glGetTexEnviv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
@@ -1704,6 +1539,52 @@ namespace __jni_impl::android::opengl
 			arg3
 		);
 	}
+	void GLES11::glGetTexParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glGetTexParameterfv",
+			"(IILjava/nio/FloatBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES11::glGetTexParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glGetTexParameterfv",
+			"(II[FI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES11::glGetTexParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glGetTexParameteriv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES11::glGetTexParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glGetTexParameteriv",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
 	void GLES11::glGetTexParameterxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -1727,6 +1608,44 @@ namespace __jni_impl::android::opengl
 			arg3
 		);
 	}
+	jboolean GLES11::glIsBuffer(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.GLES11",
+			"glIsBuffer",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean GLES11::glIsEnabled(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.GLES11",
+			"glIsEnabled",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean GLES11::glIsTexture(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.GLES11",
+			"glIsTexture",
+			"(I)Z",
+			arg0
+		);
+	}
+	void GLES11::glNormalPointer(jint arg0, jint arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glNormalPointer",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
 	void GLES11::glPointParameterf(jint arg0, jfloat arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -1735,6 +1654,16 @@ namespace __jni_impl::android::opengl
 			"(IF)V",
 			arg0,
 			arg1
+		);
+	}
+	void GLES11::glPointParameterfv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glPointParameterfv",
+			"(ILjava/nio/FloatBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
 	void GLES11::glPointParameterfv(jint arg0, jfloatArray arg1, jint arg2)
@@ -1748,16 +1677,6 @@ namespace __jni_impl::android::opengl
 			arg2
 		);
 	}
-	void GLES11::glPointParameterfv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glPointParameterfv",
-			"(ILjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
 	void GLES11::glPointParameterx(jint arg0, jint arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -1766,6 +1685,16 @@ namespace __jni_impl::android::opengl
 			"(II)V",
 			arg0,
 			arg1
+		);
+	}
+	void GLES11::glPointParameterxv(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glPointParameterxv",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
 	void GLES11::glPointParameterxv(jint arg0, jintArray arg1, jint arg2)
@@ -1779,16 +1708,6 @@ namespace __jni_impl::android::opengl
 			arg2
 		);
 	}
-	void GLES11::glPointParameterxv(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES11",
-			"glPointParameterxv",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
 	void GLES11::glPointSizePointerOES(jint arg0, jint arg1, __jni_impl::java::nio::Buffer arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -1800,6 +1719,18 @@ namespace __jni_impl::android::opengl
 			arg2.__jniObject().object()
 		);
 	}
+	void GLES11::glTexCoordPointer(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glTexCoordPointer",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
 	void GLES11::glTexEnvi(jint arg0, jint arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -1809,6 +1740,17 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2
+		);
+	}
+	void GLES11::glTexEnviv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glTexEnviv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
 		);
 	}
 	void GLES11::glTexEnviv(jint arg0, jint arg1, jintArray arg2, jint arg3)
@@ -1823,15 +1765,61 @@ namespace __jni_impl::android::opengl
 			arg3
 		);
 	}
-	void GLES11::glTexEnviv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	void GLES11::glTexParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES11",
-			"glTexEnviv",
+			"glTexParameterfv",
+			"(IILjava/nio/FloatBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES11::glTexParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glTexParameterfv",
+			"(II[FI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES11::glTexParameteri(jint arg0, jint arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glTexParameteri",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES11::glTexParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glTexParameteriv",
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
 			arg2.__jniObject().object()
+		);
+	}
+	void GLES11::glTexParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glTexParameteriv",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
 		);
 	}
 	void GLES11::glTexParameterxv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
@@ -1851,6 +1839,18 @@ namespace __jni_impl::android::opengl
 			"android.opengl.GLES11",
 			"glTexParameterxv",
 			"(II[II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES11::glVertexPointer(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES11",
+			"glVertexPointer",
+			"(IIII)V",
 			arg0,
 			arg1,
 			arg2,

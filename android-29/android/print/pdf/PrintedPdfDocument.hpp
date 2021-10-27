@@ -10,17 +10,17 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::print
+namespace __jni_impl::android::graphics
 {
-	class PrintAttributes;
+	class Rect;
 }
 namespace __jni_impl::android::graphics::pdf
 {
 	class PdfDocument_Page;
 }
-namespace __jni_impl::android::graphics
+namespace __jni_impl::android::print
 {
-	class Rect;
+	class PrintAttributes;
 }
 
 namespace __jni_impl::android::print::pdf
@@ -34,17 +34,17 @@ namespace __jni_impl::android::print::pdf
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::print::PrintAttributes arg1);
 		
 		// Methods
+		QAndroidJniObject getPageContentRect();
+		jint getPageHeight();
 		jint getPageWidth();
 		QAndroidJniObject startPage(jint arg0);
-		jint getPageHeight();
-		QAndroidJniObject getPageContentRect();
 	};
 } // namespace __jni_impl::android::print::pdf
 
 #include "../../content/Context.hpp"
-#include "../PrintAttributes.hpp"
-#include "../../graphics/pdf/PdfDocument_Page.hpp"
 #include "../../graphics/Rect.hpp"
+#include "../../graphics/pdf/PdfDocument_Page.hpp"
+#include "../PrintAttributes.hpp"
 
 namespace __jni_impl::android::print::pdf
 {
@@ -62,6 +62,20 @@ namespace __jni_impl::android::print::pdf
 	}
 	
 	// Methods
+	QAndroidJniObject PrintedPdfDocument::getPageContentRect()
+	{
+		return __thiz.callObjectMethod(
+			"getPageContentRect",
+			"()Landroid/graphics/Rect;"
+		);
+	}
+	jint PrintedPdfDocument::getPageHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getPageHeight",
+			"()I"
+		);
+	}
 	jint PrintedPdfDocument::getPageWidth()
 	{
 		return __thiz.callMethod<jint>(
@@ -75,20 +89,6 @@ namespace __jni_impl::android::print::pdf
 			"startPage",
 			"(I)Landroid/graphics/pdf/PdfDocument$Page;",
 			arg0
-		);
-	}
-	jint PrintedPdfDocument::getPageHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getPageHeight",
-			"()I"
-		);
-	}
-	QAndroidJniObject PrintedPdfDocument::getPageContentRect()
-	{
-		return __thiz.callObjectMethod(
-			"getPageContentRect",
-			"()Landroid/graphics/Rect;"
 		);
 	}
 } // namespace __jni_impl::android::print::pdf

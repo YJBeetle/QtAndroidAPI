@@ -17,9 +17,9 @@ namespace __jni_impl::java::net
 		// Fields
 		
 		// Constructors
+		void __constructor();
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor();
 		
 		// Methods
 	};
@@ -31,6 +31,13 @@ namespace __jni_impl::java::net
 	// Fields
 	
 	// Constructors
+	void BindException::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.BindException",
+			"()V"
+		);
+	}
 	void BindException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -47,13 +54,6 @@ namespace __jni_impl::java::net
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void BindException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.BindException",
-			"()V"
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::java::net
@@ -64,14 +64,14 @@ namespace java::net
 	{
 	public:
 		BindException(QAndroidJniObject obj) { __thiz = obj; }
+		BindException()
+		{
+			__constructor();
+		}
 		BindException(jstring arg0)
 		{
 			__constructor(
 				arg0);
-		}
-		BindException()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::net

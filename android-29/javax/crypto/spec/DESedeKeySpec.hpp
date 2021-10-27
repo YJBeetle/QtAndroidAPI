@@ -19,8 +19,8 @@ namespace __jni_impl::javax::crypto::spec
 		void __constructor(jbyteArray arg0, jint arg1);
 		
 		// Methods
-		jbyteArray getKey();
 		static jboolean isParityAdjusted(jbyteArray arg0, jint arg1);
+		jbyteArray getKey();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -56,13 +56,6 @@ namespace __jni_impl::javax::crypto::spec
 	}
 	
 	// Methods
-	jbyteArray DESedeKeySpec::getKey()
-	{
-		return __thiz.callObjectMethod(
-			"getKey",
-			"()[B"
-		).object<jbyteArray>();
-	}
 	jboolean DESedeKeySpec::isParityAdjusted(jbyteArray arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -72,6 +65,13 @@ namespace __jni_impl::javax::crypto::spec
 			arg0,
 			arg1
 		);
+	}
+	jbyteArray DESedeKeySpec::getKey()
+	{
+		return __thiz.callObjectMethod(
+			"getKey",
+			"()[B"
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::javax::crypto::spec
 

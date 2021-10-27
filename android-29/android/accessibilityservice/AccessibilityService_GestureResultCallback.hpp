@@ -21,8 +21,8 @@ namespace __jni_impl::android::accessibilityservice
 		void __constructor();
 		
 		// Methods
-		void onCompleted(__jni_impl::android::accessibilityservice::GestureDescription arg0);
 		void onCancelled(__jni_impl::android::accessibilityservice::GestureDescription arg0);
+		void onCompleted(__jni_impl::android::accessibilityservice::GestureDescription arg0);
 	};
 } // namespace __jni_impl::android::accessibilityservice
 
@@ -42,18 +42,18 @@ namespace __jni_impl::android::accessibilityservice
 	}
 	
 	// Methods
-	void AccessibilityService_GestureResultCallback::onCompleted(__jni_impl::android::accessibilityservice::GestureDescription arg0)
-	{
-		__thiz.callMethod<void>(
-			"onCompleted",
-			"(Landroid/accessibilityservice/GestureDescription;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void AccessibilityService_GestureResultCallback::onCancelled(__jni_impl::android::accessibilityservice::GestureDescription arg0)
 	{
 		__thiz.callMethod<void>(
 			"onCancelled",
+			"(Landroid/accessibilityservice/GestureDescription;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AccessibilityService_GestureResultCallback::onCompleted(__jni_impl::android::accessibilityservice::GestureDescription arg0)
+	{
+		__thiz.callMethod<void>(
+			"onCompleted",
 			"(Landroid/accessibilityservice/GestureDescription;)V",
 			arg0.__jniObject().object()
 		);

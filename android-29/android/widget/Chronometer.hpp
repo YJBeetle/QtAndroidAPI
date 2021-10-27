@@ -24,26 +24,26 @@ namespace __jni_impl::android::widget
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(__jni_impl::android::content::Context arg0);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		void start();
-		void stop();
-		void setFormat(jstring arg0);
-		void setFormat(const QString &arg0);
-		jstring getFormat();
-		jlong getBase();
 		jstring getAccessibilityClassName();
+		jlong getBase();
 		jstring getContentDescription();
+		jstring getFormat();
+		QAndroidJniObject getOnChronometerTickListener();
 		jboolean isCountDown();
-		void setCountDown(jboolean arg0);
 		jboolean isTheFinalCountDown();
 		void setBase(jlong arg0);
+		void setCountDown(jboolean arg0);
+		void setFormat(jstring arg0);
+		void setFormat(const QString &arg0);
 		void setOnChronometerTickListener(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getOnChronometerTickListener();
+		void start();
+		void stop();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -55,15 +55,21 @@ namespace __jni_impl::android::widget
 	// Fields
 	
 	// Constructors
-	void Chronometer::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
+	void Chronometer::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Chronometer",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
+			"(Landroid/content/Context;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Chronometer::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.widget.Chronometer",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3
+			arg1.__jniObject().object()
 		);
 	}
 	void Chronometer::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
@@ -76,37 +82,82 @@ namespace __jni_impl::android::widget
 			arg2
 		);
 	}
-	void Chronometer::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+	void Chronometer::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Chronometer",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void Chronometer::__constructor(__jni_impl::android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.widget.Chronometer",
-			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
+			arg1.__jniObject().object(),
+			arg2,
+			arg3
 		);
 	}
 	
 	// Methods
-	void Chronometer::start()
+	jstring Chronometer::getAccessibilityClassName()
 	{
-		__thiz.callMethod<void>(
-			"start",
-			"()V"
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jlong Chronometer::getBase()
+	{
+		return __thiz.callMethod<jlong>(
+			"getBase",
+			"()J"
 		);
 	}
-	void Chronometer::stop()
+	jstring Chronometer::getContentDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getContentDescription",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring Chronometer::getFormat()
+	{
+		return __thiz.callObjectMethod(
+			"getFormat",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject Chronometer::getOnChronometerTickListener()
+	{
+		return __thiz.callObjectMethod(
+			"getOnChronometerTickListener",
+			"()Landroid/widget/Chronometer$OnChronometerTickListener;"
+		);
+	}
+	jboolean Chronometer::isCountDown()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isCountDown",
+			"()Z"
+		);
+	}
+	jboolean Chronometer::isTheFinalCountDown()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isTheFinalCountDown",
+			"()Z"
+		);
+	}
+	void Chronometer::setBase(jlong arg0)
 	{
 		__thiz.callMethod<void>(
-			"stop",
-			"()V"
+			"setBase",
+			"(J)V",
+			arg0
+		);
+	}
+	void Chronometer::setCountDown(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCountDown",
+			"(Z)V",
+			arg0
 		);
 	}
 	void Chronometer::setFormat(jstring arg0)
@@ -125,64 +176,6 @@ namespace __jni_impl::android::widget
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jstring Chronometer::getFormat()
-	{
-		return __thiz.callObjectMethod(
-			"getFormat",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jlong Chronometer::getBase()
-	{
-		return __thiz.callMethod<jlong>(
-			"getBase",
-			"()J"
-		);
-	}
-	jstring Chronometer::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	jstring Chronometer::getContentDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getContentDescription",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	jboolean Chronometer::isCountDown()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isCountDown",
-			"()Z"
-		);
-	}
-	void Chronometer::setCountDown(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCountDown",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean Chronometer::isTheFinalCountDown()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isTheFinalCountDown",
-			"()Z"
-		);
-	}
-	void Chronometer::setBase(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"setBase",
-			"(J)V",
-			arg0
-		);
-	}
 	void Chronometer::setOnChronometerTickListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -191,11 +184,18 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Chronometer::getOnChronometerTickListener()
+	void Chronometer::start()
 	{
-		return __thiz.callObjectMethod(
-			"getOnChronometerTickListener",
-			"()Landroid/widget/Chronometer$OnChronometerTickListener;"
+		__thiz.callMethod<void>(
+			"start",
+			"()V"
+		);
+	}
+	void Chronometer::stop()
+	{
+		__thiz.callMethod<void>(
+			"stop",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::widget
@@ -206,13 +206,16 @@ namespace android::widget
 	{
 	public:
 		Chronometer(QAndroidJniObject obj) { __thiz = obj; }
-		Chronometer(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
+		Chronometer(__jni_impl::android::content::Context arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		Chronometer(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 		{
 			__constructor(
 				arg0,
-				arg1,
-				arg2,
-				arg3);
+				arg1);
 		}
 		Chronometer(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 		{
@@ -221,16 +224,13 @@ namespace android::widget
 				arg1,
 				arg2);
 		}
-		Chronometer(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+		Chronometer(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 		{
 			__constructor(
 				arg0,
-				arg1);
-		}
-		Chronometer(__jni_impl::android::content::Context arg0)
-		{
-			__constructor(
-				arg0);
+				arg1,
+				arg2,
+				arg3);
 		}
 	};
 } // namespace android::widget

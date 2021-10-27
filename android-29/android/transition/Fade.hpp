@@ -7,6 +7,10 @@
 #include "Transition.hpp"
 #include "Visibility.hpp"
 
+namespace __jni_impl::android::animation
+{
+	class Animator;
+}
 namespace __jni_impl::android::content
 {
 	class Context;
@@ -15,17 +19,13 @@ namespace __jni_impl::android::transition
 {
 	class TransitionValues;
 }
-namespace __jni_impl::android::animation
+namespace __jni_impl::android::view
 {
-	class Animator;
+	class View;
 }
 namespace __jni_impl::android::view
 {
 	class ViewGroup;
-}
-namespace __jni_impl::android::view
-{
-	class View;
 }
 
 namespace __jni_impl::android::transition
@@ -38,9 +38,9 @@ namespace __jni_impl::android::transition
 		static jint OUT();
 		
 		// Constructors
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
-		void __constructor(jint arg0);
 		void __constructor();
+		void __constructor(jint arg0);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
 		void captureStartValues(__jni_impl::android::transition::TransitionValues arg0);
@@ -49,11 +49,11 @@ namespace __jni_impl::android::transition
 	};
 } // namespace __jni_impl::android::transition
 
+#include "../animation/Animator.hpp"
 #include "../content/Context.hpp"
 #include "TransitionValues.hpp"
-#include "../animation/Animator.hpp"
-#include "../view/ViewGroup.hpp"
 #include "../view/View.hpp"
+#include "../view/ViewGroup.hpp"
 
 namespace __jni_impl::android::transition
 {
@@ -74,13 +74,11 @@ namespace __jni_impl::android::transition
 	}
 	
 	// Constructors
-	void Fade::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+	void Fade::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Fade",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			"()V"
 		);
 	}
 	void Fade::__constructor(jint arg0)
@@ -91,11 +89,13 @@ namespace __jni_impl::android::transition
 			arg0
 		);
 	}
-	void Fade::__constructor()
+	void Fade::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.transition.Fade",
-			"()V"
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	
@@ -138,20 +138,20 @@ namespace android::transition
 	{
 	public:
 		Fade(QAndroidJniObject obj) { __thiz = obj; }
-		Fade(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+		Fade()
 		{
-			__constructor(
-				arg0,
-				arg1);
+			__constructor();
 		}
 		Fade(jint arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		Fade()
+		Fade(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 		{
-			__constructor();
+			__constructor(
+				arg0,
+				arg1);
 		}
 	};
 } // namespace android::transition

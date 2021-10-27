@@ -8,17 +8,17 @@
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
-namespace __jni_impl::android::media::tv
+namespace __jni_impl::android::content
 {
-	class TvInputService_Session;
+	class Intent;
 }
 namespace __jni_impl::android::media::tv
 {
 	class TvInputService_RecordingSession;
 }
-namespace __jni_impl::android::content
+namespace __jni_impl::android::media::tv
 {
-	class Intent;
+	class TvInputService_Session;
 }
 
 namespace __jni_impl::android::media::tv
@@ -34,17 +34,17 @@ namespace __jni_impl::android::media::tv
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject onCreateSession(jstring arg0);
-		QAndroidJniObject onCreateSession(const QString &arg0);
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject onCreateRecordingSession(jstring arg0);
 		QAndroidJniObject onCreateRecordingSession(const QString &arg0);
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		QAndroidJniObject onCreateSession(jstring arg0);
+		QAndroidJniObject onCreateSession(const QString &arg0);
 	};
 } // namespace __jni_impl::android::media::tv
 
-#include "TvInputService_Session.hpp"
-#include "TvInputService_RecordingSession.hpp"
 #include "../../content/Intent.hpp"
+#include "TvInputService_RecordingSession.hpp"
+#include "TvInputService_Session.hpp"
 
 namespace __jni_impl::android::media::tv
 {
@@ -76,20 +76,12 @@ namespace __jni_impl::android::media::tv
 	}
 	
 	// Methods
-	QAndroidJniObject TvInputService::onCreateSession(jstring arg0)
+	QAndroidJniObject TvInputService::onBind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
-			"onCreateSession",
-			"(Ljava/lang/String;)Landroid/media/tv/TvInputService$Session;",
-			arg0
-		);
-	}
-	QAndroidJniObject TvInputService::onCreateSession(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onCreateSession",
-			"(Ljava/lang/String;)Landroid/media/tv/TvInputService$Session;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject TvInputService::onCreateRecordingSession(jstring arg0)
@@ -108,12 +100,20 @@ namespace __jni_impl::android::media::tv
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	QAndroidJniObject TvInputService::onBind(__jni_impl::android::content::Intent arg0)
+	QAndroidJniObject TvInputService::onCreateSession(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			"onCreateSession",
+			"(Ljava/lang/String;)Landroid/media/tv/TvInputService$Session;",
+			arg0
+		);
+	}
+	QAndroidJniObject TvInputService::onCreateSession(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onCreateSession",
+			"(Ljava/lang/String;)Landroid/media/tv/TvInputService$Session;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::media::tv

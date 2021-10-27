@@ -21,21 +21,21 @@ namespace __jni_impl::java::io
 		void __constructor();
 		
 		// Methods
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
-		jint read(jbyteArray arg0);
-		jint read();
+		static QAndroidJniObject nullInputStream();
+		jint available();
 		void close();
 		void mark(jint arg0);
+		jboolean markSupported();
+		jint read();
+		jint read(jbyteArray arg0);
+		jint read(jbyteArray arg0, jint arg1, jint arg2);
 		jbyteArray readAllBytes();
 		jbyteArray readNBytes(jint arg0);
 		jint readNBytes(jbyteArray arg0, jint arg1, jint arg2);
-		jlong transferTo(__jni_impl::java::io::OutputStream arg0);
-		jlong skip(jlong arg0);
-		jint available();
-		jboolean markSupported();
 		void reset();
-		static QAndroidJniObject nullInputStream();
+		jlong skip(jlong arg0);
 		void skipNBytes(jlong arg0);
+		jlong transferTo(__jni_impl::java::io::OutputStream arg0);
 	};
 } // namespace __jni_impl::java::io
 
@@ -55,28 +55,18 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	jint InputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	QAndroidJniObject InputStream::nullInputStream()
 	{
-		return __thiz.callMethod<jint>(
-			"read",
-			"([BII)I",
-			arg0,
-			arg1,
-			arg2
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.io.InputStream",
+			"nullInputStream",
+			"()Ljava/io/InputStream;"
 		);
 	}
-	jint InputStream::read(jbyteArray arg0)
+	jint InputStream::available()
 	{
 		return __thiz.callMethod<jint>(
-			"read",
-			"([B)I",
-			arg0
-		);
-	}
-	jint InputStream::read()
-	{
-		return __thiz.callMethod<jint>(
-			"read",
+			"available",
 			"()I"
 		);
 	}
@@ -93,6 +83,38 @@ namespace __jni_impl::java::io
 			"mark",
 			"(I)V",
 			arg0
+		);
+	}
+	jboolean InputStream::markSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"markSupported",
+			"()Z"
+		);
+	}
+	jint InputStream::read()
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
+	jint InputStream::read(jbyteArray arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"([B)I",
+			arg0
+		);
+	}
+	jint InputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"([BII)I",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 	jbyteArray InputStream::readAllBytes()
@@ -120,12 +142,11 @@ namespace __jni_impl::java::io
 			arg2
 		);
 	}
-	jlong InputStream::transferTo(__jni_impl::java::io::OutputStream arg0)
+	void InputStream::reset()
 	{
-		return __thiz.callMethod<jlong>(
-			"transferTo",
-			"(Ljava/io/OutputStream;)J",
-			arg0.__jniObject().object()
+		__thiz.callMethod<void>(
+			"reset",
+			"()V"
 		);
 	}
 	jlong InputStream::skip(jlong arg0)
@@ -136,41 +157,20 @@ namespace __jni_impl::java::io
 			arg0
 		);
 	}
-	jint InputStream::available()
-	{
-		return __thiz.callMethod<jint>(
-			"available",
-			"()I"
-		);
-	}
-	jboolean InputStream::markSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"markSupported",
-			"()Z"
-		);
-	}
-	void InputStream::reset()
-	{
-		__thiz.callMethod<void>(
-			"reset",
-			"()V"
-		);
-	}
-	QAndroidJniObject InputStream::nullInputStream()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.io.InputStream",
-			"nullInputStream",
-			"()Ljava/io/InputStream;"
-		);
-	}
 	void InputStream::skipNBytes(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"skipNBytes",
 			"(J)V",
 			arg0
+		);
+	}
+	jlong InputStream::transferTo(__jni_impl::java::io::OutputStream arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"transferTo",
+			"(Ljava/io/OutputStream;)J",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::java::io

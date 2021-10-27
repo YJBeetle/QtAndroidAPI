@@ -9,13 +9,13 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::net
-{
-	class Uri;
-}
 namespace __jni_impl::android::media
 {
 	class AudioAttributes;
+}
+namespace __jni_impl::android::net
+{
+	class Uri;
 }
 
 namespace __jni_impl::android::media
@@ -30,15 +30,15 @@ namespace __jni_impl::android::media
 		void __constructor(const QString &arg0);
 		
 		// Methods
-		void stop();
-		void play(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jboolean arg2, jint arg3);
 		void play(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jboolean arg2, __jni_impl::android::media::AudioAttributes arg3);
+		void play(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jboolean arg2, jint arg3);
+		void stop();
 	};
 } // namespace __jni_impl::android::media
 
 #include "../content/Context.hpp"
-#include "../net/Uri.hpp"
 #include "AudioAttributes.hpp"
+#include "../net/Uri.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -63,11 +63,15 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	void AsyncPlayer::stop()
+	void AsyncPlayer::play(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jboolean arg2, __jni_impl::android::media::AudioAttributes arg3)
 	{
 		__thiz.callMethod<void>(
-			"stop",
-			"()V"
+			"play",
+			"(Landroid/content/Context;Landroid/net/Uri;ZLandroid/media/AudioAttributes;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object()
 		);
 	}
 	void AsyncPlayer::play(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jboolean arg2, jint arg3)
@@ -81,15 +85,11 @@ namespace __jni_impl::android::media
 			arg3
 		);
 	}
-	void AsyncPlayer::play(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1, jboolean arg2, __jni_impl::android::media::AudioAttributes arg3)
+	void AsyncPlayer::stop()
 	{
 		__thiz.callMethod<void>(
-			"play",
-			"(Landroid/content/Context;Landroid/net/Uri;ZLandroid/media/AudioAttributes;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3.__jniObject().object()
+			"stop",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::media

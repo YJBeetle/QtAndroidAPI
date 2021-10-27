@@ -14,16 +14,16 @@ namespace __jni_impl::java::util::stream
 	public:
 		// Fields
 		static QAndroidJniObject CONCURRENT();
-		static QAndroidJniObject UNORDERED();
 		static QAndroidJniObject IDENTITY_FINISH();
+		static QAndroidJniObject UNORDERED();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::util::stream
 
@@ -39,19 +39,19 @@ namespace __jni_impl::java::util::stream
 			"Ljava/util/stream/Collector$Characteristics;"
 		);
 	}
-	QAndroidJniObject Collector_Characteristics::UNORDERED()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.util.stream.Collector$Characteristics",
-			"UNORDERED",
-			"Ljava/util/stream/Collector$Characteristics;"
-		);
-	}
 	QAndroidJniObject Collector_Characteristics::IDENTITY_FINISH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.stream.Collector$Characteristics",
 			"IDENTITY_FINISH",
+			"Ljava/util/stream/Collector$Characteristics;"
+		);
+	}
+	QAndroidJniObject Collector_Characteristics::UNORDERED()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.util.stream.Collector$Characteristics",
+			"UNORDERED",
 			"Ljava/util/stream/Collector$Characteristics;"
 		);
 	}
@@ -65,14 +65,6 @@ namespace __jni_impl::java::util::stream
 	}
 	
 	// Methods
-	jarray Collector_Characteristics::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.stream.Collector$Characteristics",
-			"values",
-			"()[Ljava/util/stream/Collector$Characteristics;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Collector_Characteristics::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::java::util::stream
 			"(Ljava/lang/String;)Ljava/util/stream/Collector$Characteristics;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Collector_Characteristics::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.stream.Collector$Characteristics",
+			"values",
+			"()[Ljava/util/stream/Collector$Characteristics;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::util::stream
 

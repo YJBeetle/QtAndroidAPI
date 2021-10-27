@@ -20,8 +20,8 @@ namespace __jni_impl::android::media::midi
 		
 		// Methods
 		jstring getName();
-		jint getType();
 		jint getPortNumber();
+		jint getType();
 	};
 } // namespace __jni_impl::android::media::midi
 
@@ -60,17 +60,17 @@ namespace __jni_impl::android::media::midi
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint MidiDeviceInfo_PortInfo::getType()
-	{
-		return __thiz.callMethod<jint>(
-			"getType",
-			"()I"
-		);
-	}
 	jint MidiDeviceInfo_PortInfo::getPortNumber()
 	{
 		return __thiz.callMethod<jint>(
 			"getPortNumber",
+			"()I"
+		);
+	}
+	jint MidiDeviceInfo_PortInfo::getType()
+	{
+		return __thiz.callMethod<jint>(
+			"getType",
 			"()I"
 		);
 	}

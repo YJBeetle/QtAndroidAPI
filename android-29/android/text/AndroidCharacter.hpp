@@ -26,8 +26,8 @@ namespace __jni_impl::android::text
 		static void getDirectionalities(jcharArray arg0, jbyteArray arg1, jint arg2);
 		static jint getEastAsianWidth(jchar arg0);
 		static void getEastAsianWidths(jcharArray arg0, jint arg1, jint arg2, jbyteArray arg3);
-		static jboolean mirror(jcharArray arg0, jint arg1, jint arg2);
 		static jchar getMirror(jchar arg0);
+		static jboolean mirror(jcharArray arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::text
 
@@ -120,6 +120,15 @@ namespace __jni_impl::android::text
 			arg3
 		);
 	}
+	jchar AndroidCharacter::getMirror(jchar arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jchar>(
+			"android.text.AndroidCharacter",
+			"getMirror",
+			"(C)C",
+			arg0
+		);
+	}
 	jboolean AndroidCharacter::mirror(jcharArray arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -129,15 +138,6 @@ namespace __jni_impl::android::text
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	jchar AndroidCharacter::getMirror(jchar arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jchar>(
-			"android.text.AndroidCharacter",
-			"getMirror",
-			"(C)C",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::text

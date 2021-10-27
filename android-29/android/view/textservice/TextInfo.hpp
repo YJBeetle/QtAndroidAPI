@@ -20,20 +20,20 @@ namespace __jni_impl::android::view::textservice
 		
 		// Constructors
 		void __constructor(__jni_impl::android::os::Parcel arg0);
-		void __constructor(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		void __constructor(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		void __constructor(jstring arg0, jint arg1, jint arg2);
-		void __constructor(const QString &arg0, jint arg1, jint arg2);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
+		void __constructor(jstring arg0, jint arg1, jint arg2);
+		void __constructor(const QString &arg0, jint arg1, jint arg2);
+		void __constructor(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		void __constructor(const QString &arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		
 		// Methods
-		jstring getText();
-		jstring getCharSequence();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jstring getCharSequence();
 		jint getCookie();
 		jint getSequence();
+		jstring getText();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::textservice
 
@@ -60,6 +60,42 @@ namespace __jni_impl::android::view::textservice
 			arg0.__jniObject().object()
 		);
 	}
+	void TextInfo::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.textservice.TextInfo",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void TextInfo::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.textservice.TextInfo",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void TextInfo::__constructor(jstring arg0, jint arg1, jint arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.textservice.TextInfo",
+			"(Ljava/lang/String;II)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void TextInfo::__constructor(const QString &arg0, jint arg1, jint arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.textservice.TextInfo",
+			"(Ljava/lang/String;II)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2
+		);
+	}
 	void TextInfo::__constructor(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
@@ -84,58 +120,8 @@ namespace __jni_impl::android::view::textservice
 			arg4
 		);
 	}
-	void TextInfo::__constructor(jstring arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.textservice.TextInfo",
-			"(Ljava/lang/String;II)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void TextInfo::__constructor(const QString &arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.textservice.TextInfo",
-			"(Ljava/lang/String;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
-	void TextInfo::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.textservice.TextInfo",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void TextInfo::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.textservice.TextInfo",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	
 	// Methods
-	jstring TextInfo::getText()
-	{
-		return __thiz.callObjectMethod(
-			"getText",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring TextInfo::getCharSequence()
-	{
-		return __thiz.callObjectMethod(
-			"getCharSequence",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
 	jint TextInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -143,14 +129,12 @@ namespace __jni_impl::android::view::textservice
 			"()I"
 		);
 	}
-	void TextInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jstring TextInfo::getCharSequence()
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
+		return __thiz.callObjectMethod(
+			"getCharSequence",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jint TextInfo::getCookie()
 	{
@@ -166,6 +150,22 @@ namespace __jni_impl::android::view::textservice
 			"()I"
 		);
 	}
+	jstring TextInfo::getText()
+	{
+		return __thiz.callObjectMethod(
+			"getText",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void TextInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
 } // namespace __jni_impl::android::view::textservice
 
 namespace android::view::textservice
@@ -179,14 +179,10 @@ namespace android::view::textservice
 			__constructor(
 				arg0);
 		}
-		TextInfo(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+		TextInfo(jstring arg0)
 		{
 			__constructor(
-				arg0,
-				arg1,
-				arg2,
-				arg3,
-				arg4);
+				arg0);
 		}
 		TextInfo(jstring arg0, jint arg1, jint arg2)
 		{
@@ -195,10 +191,14 @@ namespace android::view::textservice
 				arg1,
 				arg2);
 		}
-		TextInfo(jstring arg0)
+		TextInfo(jstring arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 		{
 			__constructor(
-				arg0);
+				arg0,
+				arg1,
+				arg2,
+				arg3,
+				arg4);
 		}
 	};
 } // namespace android::view::textservice

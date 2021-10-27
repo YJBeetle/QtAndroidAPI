@@ -27,10 +27,10 @@ namespace __jni_impl::android::net::wifi::aware
 		
 		// Methods
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getMaxMatchFilterLength();
 		jint getMaxServiceNameLength();
 		jint getMaxServiceSpecificInfoLength();
-		jint getMaxMatchFilterLength();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi::aware
 
@@ -65,13 +65,11 @@ namespace __jni_impl::android::net::wifi::aware
 			"()I"
 		);
 	}
-	void Characteristics::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jint Characteristics::getMaxMatchFilterLength()
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callMethod<jint>(
+			"getMaxMatchFilterLength",
+			"()I"
 		);
 	}
 	jint Characteristics::getMaxServiceNameLength()
@@ -88,11 +86,13 @@ namespace __jni_impl::android::net::wifi::aware
 			"()I"
 		);
 	}
-	jint Characteristics::getMaxMatchFilterLength()
+	void Characteristics::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
-			"getMaxMatchFilterLength",
-			"()I"
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::net::wifi::aware

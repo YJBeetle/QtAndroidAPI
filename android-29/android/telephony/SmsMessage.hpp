@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::telephony
 {
-	class SmsMessage_SubmitPdu;
+	class SmsMessage_MessageClass;
 }
 namespace __jni_impl::android::telephony
 {
-	class SmsMessage_MessageClass;
+	class SmsMessage_SubmitPdu;
 }
 
 namespace __jni_impl::android::telephony
@@ -35,48 +35,48 @@ namespace __jni_impl::android::telephony
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject createFromPdu(jbyteArray arg0, jstring arg1);
-		static QAndroidJniObject createFromPdu(jbyteArray arg0, const QString &arg1);
-		static QAndroidJniObject createFromPdu(jbyteArray arg0);
-		static jint getTPLayerLengthForPDU(jstring arg0);
-		static jint getTPLayerLengthForPDU(const QString &arg0);
 		static jintArray calculateLength(jstring arg0, jboolean arg1);
 		static jintArray calculateLength(const QString &arg0, jboolean arg1);
-		static QAndroidJniObject getSubmitPdu(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, jboolean arg4);
-		static QAndroidJniObject getSubmitPdu(const QString &arg0, const QString &arg1, jshort arg2, jbyteArray arg3, jboolean arg4);
+		static QAndroidJniObject createFromPdu(jbyteArray arg0);
+		static QAndroidJniObject createFromPdu(jbyteArray arg0, jstring arg1);
+		static QAndroidJniObject createFromPdu(jbyteArray arg0, const QString &arg1);
 		static QAndroidJniObject getSubmitPdu(jstring arg0, jstring arg1, jstring arg2, jboolean arg3);
 		static QAndroidJniObject getSubmitPdu(const QString &arg0, const QString &arg1, const QString &arg2, jboolean arg3);
-		jstring getServiceCenterAddress();
-		jstring getOriginatingAddress();
-		jstring getDisplayOriginatingAddress();
-		jstring getMessageBody();
-		QAndroidJniObject getMessageClass();
+		static QAndroidJniObject getSubmitPdu(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, jboolean arg4);
+		static QAndroidJniObject getSubmitPdu(const QString &arg0, const QString &arg1, jshort arg2, jbyteArray arg3, jboolean arg4);
+		static jint getTPLayerLengthForPDU(jstring arg0);
+		static jint getTPLayerLengthForPDU(const QString &arg0);
 		jstring getDisplayMessageBody();
-		jstring getPseudoSubject();
-		jlong getTimestampMillis();
-		jboolean isEmail();
+		jstring getDisplayOriginatingAddress();
 		jstring getEmailBody();
 		jstring getEmailFrom();
+		jint getIndexOnIcc();
+		jint getIndexOnSim();
+		jstring getMessageBody();
+		QAndroidJniObject getMessageClass();
+		jstring getOriginatingAddress();
+		jbyteArray getPdu();
 		jint getProtocolIdentifier();
-		jboolean isReplace();
+		jstring getPseudoSubject();
+		jstring getServiceCenterAddress();
+		jint getStatus();
+		jint getStatusOnIcc();
+		jint getStatusOnSim();
+		jlong getTimestampMillis();
+		jbyteArray getUserData();
 		jboolean isCphsMwiMessage();
+		jboolean isEmail();
 		jboolean isMWIClearMessage();
 		jboolean isMWISetMessage();
 		jboolean isMwiDontStore();
-		jbyteArray getPdu();
-		jint getStatusOnSim();
-		jint getStatusOnIcc();
-		jint getIndexOnSim();
-		jint getIndexOnIcc();
-		jint getStatus();
-		jboolean isStatusReportMessage();
+		jboolean isReplace();
 		jboolean isReplyPathPresent();
-		jbyteArray getUserData();
+		jboolean isStatusReportMessage();
 	};
 } // namespace __jni_impl::android::telephony
 
-#include "SmsMessage_SubmitPdu.hpp"
 #include "SmsMessage_MessageClass.hpp"
+#include "SmsMessage_SubmitPdu.hpp"
 
 namespace __jni_impl::android::telephony
 {
@@ -163,6 +163,35 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
+	jintArray SmsMessage::calculateLength(jstring arg0, jboolean arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telephony.SmsMessage",
+			"calculateLength",
+			"(Ljava/lang/CharSequence;Z)[I",
+			arg0,
+			arg1
+		).object<jintArray>();
+	}
+	jintArray SmsMessage::calculateLength(const QString &arg0, jboolean arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telephony.SmsMessage",
+			"calculateLength",
+			"(Ljava/lang/CharSequence;Z)[I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		).object<jintArray>();
+	}
+	QAndroidJniObject SmsMessage::createFromPdu(jbyteArray arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telephony.SmsMessage",
+			"createFromPdu",
+			"([B)Landroid/telephony/SmsMessage;",
+			arg0
+		);
+	}
 	QAndroidJniObject SmsMessage::createFromPdu(jbyteArray arg0, jstring arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -183,52 +212,29 @@ namespace __jni_impl::android::telephony
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	QAndroidJniObject SmsMessage::createFromPdu(jbyteArray arg0)
+	QAndroidJniObject SmsMessage::getSubmitPdu(jstring arg0, jstring arg1, jstring arg2, jboolean arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.SmsMessage",
-			"createFromPdu",
-			"([B)Landroid/telephony/SmsMessage;",
-			arg0
-		);
-	}
-	jint SmsMessage::getTPLayerLengthForPDU(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.telephony.SmsMessage",
-			"getTPLayerLengthForPDU",
-			"(Ljava/lang/String;)I",
-			arg0
-		);
-	}
-	jint SmsMessage::getTPLayerLengthForPDU(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.telephony.SmsMessage",
-			"getTPLayerLengthForPDU",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jintArray SmsMessage::calculateLength(jstring arg0, jboolean arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.SmsMessage",
-			"calculateLength",
-			"(Ljava/lang/String;Z)[I",
+			"getSubmitPdu",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Landroid/telephony/SmsMessage$SubmitPdu;",
 			arg0,
-			arg1
-		).object<jintArray>();
+			arg1,
+			arg2,
+			arg3
+		);
 	}
-	jintArray SmsMessage::calculateLength(const QString &arg0, jboolean arg1)
+	QAndroidJniObject SmsMessage::getSubmitPdu(const QString &arg0, const QString &arg1, const QString &arg2, jboolean arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.telephony.SmsMessage",
-			"calculateLength",
-			"(Ljava/lang/String;Z)[I",
+			"getSubmitPdu",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Landroid/telephony/SmsMessage$SubmitPdu;",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		).object<jintArray>();
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3
+		);
 	}
 	QAndroidJniObject SmsMessage::getSubmitPdu(jstring arg0, jstring arg1, jshort arg2, jbyteArray arg3, jboolean arg4)
 	{
@@ -256,63 +262,22 @@ namespace __jni_impl::android::telephony
 			arg4
 		);
 	}
-	QAndroidJniObject SmsMessage::getSubmitPdu(jstring arg0, jstring arg1, jstring arg2, jboolean arg3)
+	jint SmsMessage::getTPLayerLengthForPDU(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.telephony.SmsMessage",
-			"getSubmitPdu",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Landroid/telephony/SmsMessage$SubmitPdu;",
-			arg0,
-			arg1,
-			arg2,
-			arg3
+			"getTPLayerLengthForPDU",
+			"(Ljava/lang/String;)I",
+			arg0
 		);
 	}
-	QAndroidJniObject SmsMessage::getSubmitPdu(const QString &arg0, const QString &arg1, const QString &arg2, jboolean arg3)
+	jint SmsMessage::getTPLayerLengthForPDU(const QString &arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.telephony.SmsMessage",
-			"getSubmitPdu",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)Landroid/telephony/SmsMessage$SubmitPdu;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3
-		);
-	}
-	jstring SmsMessage::getServiceCenterAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getServiceCenterAddress",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring SmsMessage::getOriginatingAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getOriginatingAddress",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring SmsMessage::getDisplayOriginatingAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getDisplayOriginatingAddress",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring SmsMessage::getMessageBody()
-	{
-		return __thiz.callObjectMethod(
-			"getMessageBody",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject SmsMessage::getMessageClass()
-	{
-		return __thiz.callObjectMethod(
-			"getMessageClass",
-			"()Landroid/telephony/SmsMessage$MessageClass;"
+			"getTPLayerLengthForPDU",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring SmsMessage::getDisplayMessageBody()
@@ -322,26 +287,12 @@ namespace __jni_impl::android::telephony
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jstring SmsMessage::getPseudoSubject()
+	jstring SmsMessage::getDisplayOriginatingAddress()
 	{
 		return __thiz.callObjectMethod(
-			"getPseudoSubject",
+			"getDisplayOriginatingAddress",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jlong SmsMessage::getTimestampMillis()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimestampMillis",
-			"()J"
-		);
-	}
-	jboolean SmsMessage::isEmail()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEmail",
-			"()Z"
-		);
 	}
 	jstring SmsMessage::getEmailBody()
 	{
@@ -357,6 +308,48 @@ namespace __jni_impl::android::telephony
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	jint SmsMessage::getIndexOnIcc()
+	{
+		return __thiz.callMethod<jint>(
+			"getIndexOnIcc",
+			"()I"
+		);
+	}
+	jint SmsMessage::getIndexOnSim()
+	{
+		return __thiz.callMethod<jint>(
+			"getIndexOnSim",
+			"()I"
+		);
+	}
+	jstring SmsMessage::getMessageBody()
+	{
+		return __thiz.callObjectMethod(
+			"getMessageBody",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject SmsMessage::getMessageClass()
+	{
+		return __thiz.callObjectMethod(
+			"getMessageClass",
+			"()Landroid/telephony/SmsMessage$MessageClass;"
+		);
+	}
+	jstring SmsMessage::getOriginatingAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getOriginatingAddress",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jbyteArray SmsMessage::getPdu()
+	{
+		return __thiz.callObjectMethod(
+			"getPdu",
+			"()[B"
+		).object<jbyteArray>();
+	}
 	jint SmsMessage::getProtocolIdentifier()
 	{
 		return __thiz.callMethod<jint>(
@@ -364,17 +357,66 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
-	jboolean SmsMessage::isReplace()
+	jstring SmsMessage::getPseudoSubject()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isReplace",
-			"()Z"
+		return __thiz.callObjectMethod(
+			"getPseudoSubject",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring SmsMessage::getServiceCenterAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getServiceCenterAddress",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint SmsMessage::getStatus()
+	{
+		return __thiz.callMethod<jint>(
+			"getStatus",
+			"()I"
 		);
+	}
+	jint SmsMessage::getStatusOnIcc()
+	{
+		return __thiz.callMethod<jint>(
+			"getStatusOnIcc",
+			"()I"
+		);
+	}
+	jint SmsMessage::getStatusOnSim()
+	{
+		return __thiz.callMethod<jint>(
+			"getStatusOnSim",
+			"()I"
+		);
+	}
+	jlong SmsMessage::getTimestampMillis()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimestampMillis",
+			"()J"
+		);
+	}
+	jbyteArray SmsMessage::getUserData()
+	{
+		return __thiz.callObjectMethod(
+			"getUserData",
+			"()[B"
+		).object<jbyteArray>();
 	}
 	jboolean SmsMessage::isCphsMwiMessage()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isCphsMwiMessage",
+			"()Z"
+		);
+	}
+	jboolean SmsMessage::isEmail()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEmail",
 			"()Z"
 		);
 	}
@@ -399,52 +441,10 @@ namespace __jni_impl::android::telephony
 			"()Z"
 		);
 	}
-	jbyteArray SmsMessage::getPdu()
-	{
-		return __thiz.callObjectMethod(
-			"getPdu",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	jint SmsMessage::getStatusOnSim()
-	{
-		return __thiz.callMethod<jint>(
-			"getStatusOnSim",
-			"()I"
-		);
-	}
-	jint SmsMessage::getStatusOnIcc()
-	{
-		return __thiz.callMethod<jint>(
-			"getStatusOnIcc",
-			"()I"
-		);
-	}
-	jint SmsMessage::getIndexOnSim()
-	{
-		return __thiz.callMethod<jint>(
-			"getIndexOnSim",
-			"()I"
-		);
-	}
-	jint SmsMessage::getIndexOnIcc()
-	{
-		return __thiz.callMethod<jint>(
-			"getIndexOnIcc",
-			"()I"
-		);
-	}
-	jint SmsMessage::getStatus()
-	{
-		return __thiz.callMethod<jint>(
-			"getStatus",
-			"()I"
-		);
-	}
-	jboolean SmsMessage::isStatusReportMessage()
+	jboolean SmsMessage::isReplace()
 	{
 		return __thiz.callMethod<jboolean>(
-			"isStatusReportMessage",
+			"isReplace",
 			"()Z"
 		);
 	}
@@ -455,12 +455,12 @@ namespace __jni_impl::android::telephony
 			"()Z"
 		);
 	}
-	jbyteArray SmsMessage::getUserData()
+	jboolean SmsMessage::isStatusReportMessage()
 	{
-		return __thiz.callObjectMethod(
-			"getUserData",
-			"()[B"
-		).object<jbyteArray>();
+		return __thiz.callMethod<jboolean>(
+			"isStatusReportMessage",
+			"()Z"
+		);
 	}
 } // namespace __jni_impl::android::telephony
 

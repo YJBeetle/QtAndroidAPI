@@ -25,11 +25,11 @@ namespace __jni_impl::android::accessibilityservice
 		void __constructor();
 		
 		// Methods
-		jboolean removeOnShowModeChangedListener(__jni_impl::__JniBaseClass arg0);
-		jboolean setShowMode(jint arg0);
-		jint getShowMode();
 		void addOnShowModeChangedListener(__jni_impl::__JniBaseClass arg0);
 		void addOnShowModeChangedListener(__jni_impl::__JniBaseClass arg0, __jni_impl::android::os::Handler arg1);
+		jint getShowMode();
+		jboolean removeOnShowModeChangedListener(__jni_impl::__JniBaseClass arg0);
+		jboolean setShowMode(jint arg0);
 	};
 } // namespace __jni_impl::android::accessibilityservice
 
@@ -49,29 +49,6 @@ namespace __jni_impl::android::accessibilityservice
 	}
 	
 	// Methods
-	jboolean AccessibilityService_SoftKeyboardController::removeOnShowModeChangedListener(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"removeOnShowModeChangedListener",
-			"(Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController$OnShowModeChangedListener;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean AccessibilityService_SoftKeyboardController::setShowMode(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setShowMode",
-			"(I)Z",
-			arg0
-		);
-	}
-	jint AccessibilityService_SoftKeyboardController::getShowMode()
-	{
-		return __thiz.callMethod<jint>(
-			"getShowMode",
-			"()I"
-		);
-	}
 	void AccessibilityService_SoftKeyboardController::addOnShowModeChangedListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -87,6 +64,29 @@ namespace __jni_impl::android::accessibilityservice
 			"(Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController$OnShowModeChangedListener;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
+		);
+	}
+	jint AccessibilityService_SoftKeyboardController::getShowMode()
+	{
+		return __thiz.callMethod<jint>(
+			"getShowMode",
+			"()I"
+		);
+	}
+	jboolean AccessibilityService_SoftKeyboardController::removeOnShowModeChangedListener(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"removeOnShowModeChangedListener",
+			"(Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController$OnShowModeChangedListener;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean AccessibilityService_SoftKeyboardController::setShowMode(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setShowMode",
+			"(I)Z",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::accessibilityservice

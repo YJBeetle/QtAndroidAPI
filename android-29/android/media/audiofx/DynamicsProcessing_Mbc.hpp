@@ -20,13 +20,13 @@ namespace __jni_impl::android::media::audiofx
 		// Fields
 		
 		// Constructors
-		void __constructor(jboolean arg0, jboolean arg1, jint arg2);
 		void __constructor(__jni_impl::android::media::audiofx::DynamicsProcessing_Mbc arg0);
+		void __constructor(jboolean arg0, jboolean arg1, jint arg2);
 		
 		// Methods
-		jstring toString();
-		void setBand(jint arg0, __jni_impl::android::media::audiofx::DynamicsProcessing_MbcBand arg1);
 		QAndroidJniObject getBand(jint arg0);
+		void setBand(jint arg0, __jni_impl::android::media::audiofx::DynamicsProcessing_MbcBand arg1);
+		jstring toString();
 	};
 } // namespace __jni_impl::android::media::audiofx
 
@@ -37,6 +37,14 @@ namespace __jni_impl::android::media::audiofx
 	// Fields
 	
 	// Constructors
+	void DynamicsProcessing_Mbc::__constructor(__jni_impl::android::media::audiofx::DynamicsProcessing_Mbc arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.media.audiofx.DynamicsProcessing$Mbc",
+			"(Landroid/media/audiofx/DynamicsProcessing$Mbc;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void DynamicsProcessing_Mbc::__constructor(jboolean arg0, jboolean arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
@@ -47,22 +55,15 @@ namespace __jni_impl::android::media::audiofx
 			arg2
 		);
 	}
-	void DynamicsProcessing_Mbc::__constructor(__jni_impl::android::media::audiofx::DynamicsProcessing_Mbc arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.audiofx.DynamicsProcessing$Mbc",
-			"(Landroid/media/audiofx/DynamicsProcessing$Mbc;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	
 	// Methods
-	jstring DynamicsProcessing_Mbc::toString()
+	QAndroidJniObject DynamicsProcessing_Mbc::getBand(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getBand",
+			"(I)Landroid/media/audiofx/DynamicsProcessing$MbcBand;",
+			arg0
+		);
 	}
 	void DynamicsProcessing_Mbc::setBand(jint arg0, __jni_impl::android::media::audiofx::DynamicsProcessing_MbcBand arg1)
 	{
@@ -73,13 +74,12 @@ namespace __jni_impl::android::media::audiofx
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject DynamicsProcessing_Mbc::getBand(jint arg0)
+	jstring DynamicsProcessing_Mbc::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getBand",
-			"(I)Landroid/media/audiofx/DynamicsProcessing$MbcBand;",
-			arg0
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media::audiofx
 
@@ -89,17 +89,17 @@ namespace android::media::audiofx
 	{
 	public:
 		DynamicsProcessing_Mbc(QAndroidJniObject obj) { __thiz = obj; }
+		DynamicsProcessing_Mbc(__jni_impl::android::media::audiofx::DynamicsProcessing_Mbc arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		DynamicsProcessing_Mbc(jboolean arg0, jboolean arg1, jint arg2)
 		{
 			__constructor(
 				arg0,
 				arg1,
 				arg2);
-		}
-		DynamicsProcessing_Mbc(__jni_impl::android::media::audiofx::DynamicsProcessing_Mbc arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::media::audiofx

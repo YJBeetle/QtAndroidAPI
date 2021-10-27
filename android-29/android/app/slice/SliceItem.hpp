@@ -5,29 +5,29 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
+namespace __jni_impl::android::app
 {
-	class Parcel;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
-namespace __jni_impl::android::graphics::drawable
-{
-	class Icon;
+	class PendingIntent;
 }
 namespace __jni_impl::android::app
 {
 	class RemoteInput;
 }
-namespace __jni_impl::android::app
-{
-	class PendingIntent;
-}
 namespace __jni_impl::android::app::slice
 {
 	class Slice;
+}
+namespace __jni_impl::android::graphics::drawable
+{
+	class Icon;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::app::slice
@@ -50,30 +50,30 @@ namespace __jni_impl::android::app::slice
 		void __constructor();
 		
 		// Methods
-		jint getInt();
-		jlong getLong();
+		jint describeContents();
+		QAndroidJniObject getAction();
 		QAndroidJniObject getBundle();
 		jstring getFormat();
-		jstring getText();
-		QAndroidJniObject getIcon();
-		QAndroidJniObject getRemoteInput();
-		QAndroidJniObject getAction();
 		QAndroidJniObject getHints();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jstring getSubType();
+		QAndroidJniObject getIcon();
+		jint getInt();
+		jlong getLong();
+		QAndroidJniObject getRemoteInput();
 		QAndroidJniObject getSlice();
+		jstring getSubType();
+		jstring getText();
 		jboolean hasHint(jstring arg0);
 		jboolean hasHint(const QString &arg0);
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::slice
 
-#include "../../os/Parcel.hpp"
-#include "../../os/Bundle.hpp"
-#include "../../graphics/drawable/Icon.hpp"
-#include "../RemoteInput.hpp"
 #include "../PendingIntent.hpp"
+#include "../RemoteInput.hpp"
 #include "Slice.hpp"
+#include "../../graphics/drawable/Icon.hpp"
+#include "../../os/Bundle.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::app::slice
 {
@@ -160,18 +160,18 @@ namespace __jni_impl::android::app::slice
 	}
 	
 	// Methods
-	jint SliceItem::getInt()
+	jint SliceItem::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getInt",
+			"describeContents",
 			"()I"
 		);
 	}
-	jlong SliceItem::getLong()
+	QAndroidJniObject SliceItem::getAction()
 	{
-		return __thiz.callMethod<jlong>(
-			"getLong",
-			"()J"
+		return __thiz.callObjectMethod(
+			"getAction",
+			"()Landroid/app/PendingIntent;"
 		);
 	}
 	QAndroidJniObject SliceItem::getBundle()
@@ -188,18 +188,32 @@ namespace __jni_impl::android::app::slice
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jstring SliceItem::getText()
+	QAndroidJniObject SliceItem::getHints()
 	{
 		return __thiz.callObjectMethod(
-			"getText",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+			"getHints",
+			"()Ljava/util/List;"
+		);
 	}
 	QAndroidJniObject SliceItem::getIcon()
 	{
 		return __thiz.callObjectMethod(
 			"getIcon",
 			"()Landroid/graphics/drawable/Icon;"
+		);
+	}
+	jint SliceItem::getInt()
+	{
+		return __thiz.callMethod<jint>(
+			"getInt",
+			"()I"
+		);
+	}
+	jlong SliceItem::getLong()
+	{
+		return __thiz.callMethod<jlong>(
+			"getLong",
+			"()J"
 		);
 	}
 	QAndroidJniObject SliceItem::getRemoteInput()
@@ -209,34 +223,11 @@ namespace __jni_impl::android::app::slice
 			"()Landroid/app/RemoteInput;"
 		);
 	}
-	QAndroidJniObject SliceItem::getAction()
+	QAndroidJniObject SliceItem::getSlice()
 	{
 		return __thiz.callObjectMethod(
-			"getAction",
-			"()Landroid/app/PendingIntent;"
-		);
-	}
-	QAndroidJniObject SliceItem::getHints()
-	{
-		return __thiz.callObjectMethod(
-			"getHints",
-			"()Ljava/util/List;"
-		);
-	}
-	jint SliceItem::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void SliceItem::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+			"getSlice",
+			"()Landroid/app/slice/Slice;"
 		);
 	}
 	jstring SliceItem::getSubType()
@@ -246,12 +237,12 @@ namespace __jni_impl::android::app::slice
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SliceItem::getSlice()
+	jstring SliceItem::getText()
 	{
 		return __thiz.callObjectMethod(
-			"getSlice",
-			"()Landroid/app/slice/Slice;"
-		);
+			"getText",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	jboolean SliceItem::hasHint(jstring arg0)
 	{
@@ -267,6 +258,15 @@ namespace __jni_impl::android::app::slice
 			"hasHint",
 			"(Ljava/lang/String;)Z",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void SliceItem::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::app::slice

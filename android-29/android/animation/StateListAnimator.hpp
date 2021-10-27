@@ -21,9 +21,9 @@ namespace __jni_impl::android::animation
 		void __constructor();
 		
 		// Methods
+		void addState(jintArray arg0, __jni_impl::android::animation::Animator arg1);
 		QAndroidJniObject clone();
 		void jumpToCurrentState();
-		void addState(jintArray arg0, __jni_impl::android::animation::Animator arg1);
 	};
 } // namespace __jni_impl::android::animation
 
@@ -43,6 +43,15 @@ namespace __jni_impl::android::animation
 	}
 	
 	// Methods
+	void StateListAnimator::addState(jintArray arg0, __jni_impl::android::animation::Animator arg1)
+	{
+		__thiz.callMethod<void>(
+			"addState",
+			"([ILandroid/animation/Animator;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject StateListAnimator::clone()
 	{
 		return __thiz.callObjectMethod(
@@ -55,15 +64,6 @@ namespace __jni_impl::android::animation
 		__thiz.callMethod<void>(
 			"jumpToCurrentState",
 			"()V"
-		);
-	}
-	void StateListAnimator::addState(jintArray arg0, __jni_impl::android::animation::Animator arg1)
-	{
-		__thiz.callMethod<void>(
-			"addState",
-			"([ILandroid/animation/Animator;)V",
-			arg0,
-			arg1.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::animation

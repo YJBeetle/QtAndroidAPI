@@ -11,14 +11,6 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::view
-{
-	class ViewGroup_LayoutParams;
-}
-namespace __jni_impl::android::widget
-{
-	class LinearLayout_LayoutParams;
-}
 namespace __jni_impl::android::graphics
 {
 	class Canvas;
@@ -26,6 +18,14 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
+}
+namespace __jni_impl::android::view
+{
+	class ViewGroup_LayoutParams;
+}
+namespace __jni_impl::android::widget
+{
+	class LinearLayout_LayoutParams;
 }
 
 namespace __jni_impl::android::widget
@@ -42,45 +42,45 @@ namespace __jni_impl::android::widget
 		static jint VERTICAL();
 		
 		// Constructors
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(__jni_impl::android::content::Context arg0);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jstring getAccessibilityClassName();
 		QAndroidJniObject generateLayoutParams(__jni_impl::__JniBaseClass arg0);
-		jboolean shouldDelayChildPressedState();
-		void onRtlPropertiesChanged(jint arg0);
+		jstring getAccessibilityClassName();
 		jint getBaseline();
-		jint getOrientation();
-		void setGravity(jint arg0);
-		jint getGravity();
-		void setOrientation(jint arg0);
-		void setDividerDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
-		void setShowDividers(jint arg0);
-		jint getShowDividers();
-		QAndroidJniObject getDividerDrawable();
-		void setDividerPadding(jint arg0);
-		jint getDividerPadding();
-		jboolean isBaselineAligned();
-		void setBaselineAligned(jboolean arg0);
-		jboolean isMeasureWithLargestChildEnabled();
-		void setMeasureWithLargestChildEnabled(jboolean arg0);
 		jint getBaselineAlignedChildIndex();
-		void setBaselineAlignedChildIndex(jint arg0);
+		QAndroidJniObject getDividerDrawable();
+		jint getDividerPadding();
+		jint getGravity();
+		jint getOrientation();
+		jint getShowDividers();
 		jfloat getWeightSum();
-		void setWeightSum(jfloat arg0);
+		jboolean isBaselineAligned();
+		jboolean isMeasureWithLargestChildEnabled();
+		void onRtlPropertiesChanged(jint arg0);
+		void setBaselineAligned(jboolean arg0);
+		void setBaselineAlignedChildIndex(jint arg0);
+		void setDividerDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
+		void setDividerPadding(jint arg0);
+		void setGravity(jint arg0);
 		void setHorizontalGravity(jint arg0);
+		void setMeasureWithLargestChildEnabled(jboolean arg0);
+		void setOrientation(jint arg0);
+		void setShowDividers(jint arg0);
 		void setVerticalGravity(jint arg0);
+		void setWeightSum(jfloat arg0);
+		jboolean shouldDelayChildPressedState();
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "../view/ViewGroup_LayoutParams.hpp"
-#include "LinearLayout_LayoutParams.hpp"
 #include "../graphics/Canvas.hpp"
 #include "../graphics/drawable/Drawable.hpp"
+#include "../view/ViewGroup_LayoutParams.hpp"
+#include "LinearLayout_LayoutParams.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -129,15 +129,21 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Constructors
-	void LinearLayout::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
+	void LinearLayout::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.LinearLayout",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
+			"(Landroid/content/Context;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void LinearLayout::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.widget.LinearLayout",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3
+			arg1.__jniObject().object()
 		);
 	}
 	void LinearLayout::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
@@ -150,32 +156,19 @@ namespace __jni_impl::android::widget
 			arg2
 		);
 	}
-	void LinearLayout::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+	void LinearLayout::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.LinearLayout",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void LinearLayout::__constructor(__jni_impl::android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.widget.LinearLayout",
-			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
+			arg1.__jniObject().object(),
+			arg2,
+			arg3
 		);
 	}
 	
 	// Methods
-	jstring LinearLayout::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
 	QAndroidJniObject LinearLayout::generateLayoutParams(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -184,10 +177,80 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean LinearLayout::shouldDelayChildPressedState()
+	jstring LinearLayout::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jint LinearLayout::getBaseline()
+	{
+		return __thiz.callMethod<jint>(
+			"getBaseline",
+			"()I"
+		);
+	}
+	jint LinearLayout::getBaselineAlignedChildIndex()
+	{
+		return __thiz.callMethod<jint>(
+			"getBaselineAlignedChildIndex",
+			"()I"
+		);
+	}
+	QAndroidJniObject LinearLayout::getDividerDrawable()
+	{
+		return __thiz.callObjectMethod(
+			"getDividerDrawable",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
+	}
+	jint LinearLayout::getDividerPadding()
+	{
+		return __thiz.callMethod<jint>(
+			"getDividerPadding",
+			"()I"
+		);
+	}
+	jint LinearLayout::getGravity()
+	{
+		return __thiz.callMethod<jint>(
+			"getGravity",
+			"()I"
+		);
+	}
+	jint LinearLayout::getOrientation()
+	{
+		return __thiz.callMethod<jint>(
+			"getOrientation",
+			"()I"
+		);
+	}
+	jint LinearLayout::getShowDividers()
+	{
+		return __thiz.callMethod<jint>(
+			"getShowDividers",
+			"()I"
+		);
+	}
+	jfloat LinearLayout::getWeightSum()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getWeightSum",
+			"()F"
+		);
+	}
+	jboolean LinearLayout::isBaselineAligned()
 	{
 		return __thiz.callMethod<jboolean>(
-			"shouldDelayChildPressedState",
+			"isBaselineAligned",
+			"()Z"
+		);
+	}
+	jboolean LinearLayout::isMeasureWithLargestChildEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isMeasureWithLargestChildEnabled",
 			"()Z"
 		);
 	}
@@ -199,39 +262,18 @@ namespace __jni_impl::android::widget
 			arg0
 		);
 	}
-	jint LinearLayout::getBaseline()
-	{
-		return __thiz.callMethod<jint>(
-			"getBaseline",
-			"()I"
-		);
-	}
-	jint LinearLayout::getOrientation()
-	{
-		return __thiz.callMethod<jint>(
-			"getOrientation",
-			"()I"
-		);
-	}
-	void LinearLayout::setGravity(jint arg0)
+	void LinearLayout::setBaselineAligned(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
-			"setGravity",
-			"(I)V",
+			"setBaselineAligned",
+			"(Z)V",
 			arg0
 		);
 	}
-	jint LinearLayout::getGravity()
-	{
-		return __thiz.callMethod<jint>(
-			"getGravity",
-			"()I"
-		);
-	}
-	void LinearLayout::setOrientation(jint arg0)
+	void LinearLayout::setBaselineAlignedChildIndex(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setOrientation",
+			"setBaselineAlignedChildIndex",
 			"(I)V",
 			arg0
 		);
@@ -244,28 +286,6 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	void LinearLayout::setShowDividers(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setShowDividers",
-			"(I)V",
-			arg0
-		);
-	}
-	jint LinearLayout::getShowDividers()
-	{
-		return __thiz.callMethod<jint>(
-			"getShowDividers",
-			"()I"
-		);
-	}
-	QAndroidJniObject LinearLayout::getDividerDrawable()
-	{
-		return __thiz.callObjectMethod(
-			"getDividerDrawable",
-			"()Landroid/graphics/drawable/Drawable;"
-		);
-	}
 	void LinearLayout::setDividerPadding(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -274,33 +294,20 @@ namespace __jni_impl::android::widget
 			arg0
 		);
 	}
-	jint LinearLayout::getDividerPadding()
-	{
-		return __thiz.callMethod<jint>(
-			"getDividerPadding",
-			"()I"
-		);
-	}
-	jboolean LinearLayout::isBaselineAligned()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isBaselineAligned",
-			"()Z"
-		);
-	}
-	void LinearLayout::setBaselineAligned(jboolean arg0)
+	void LinearLayout::setGravity(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setBaselineAligned",
-			"(Z)V",
+			"setGravity",
+			"(I)V",
 			arg0
 		);
 	}
-	jboolean LinearLayout::isMeasureWithLargestChildEnabled()
+	void LinearLayout::setHorizontalGravity(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isMeasureWithLargestChildEnabled",
-			"()Z"
+		__thiz.callMethod<void>(
+			"setHorizontalGravity",
+			"(I)V",
+			arg0
 		);
 	}
 	void LinearLayout::setMeasureWithLargestChildEnabled(jboolean arg0)
@@ -311,40 +318,18 @@ namespace __jni_impl::android::widget
 			arg0
 		);
 	}
-	jint LinearLayout::getBaselineAlignedChildIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getBaselineAlignedChildIndex",
-			"()I"
-		);
-	}
-	void LinearLayout::setBaselineAlignedChildIndex(jint arg0)
+	void LinearLayout::setOrientation(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setBaselineAlignedChildIndex",
+			"setOrientation",
 			"(I)V",
 			arg0
 		);
 	}
-	jfloat LinearLayout::getWeightSum()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getWeightSum",
-			"()F"
-		);
-	}
-	void LinearLayout::setWeightSum(jfloat arg0)
+	void LinearLayout::setShowDividers(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setWeightSum",
-			"(F)V",
-			arg0
-		);
-	}
-	void LinearLayout::setHorizontalGravity(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setHorizontalGravity",
+			"setShowDividers",
 			"(I)V",
 			arg0
 		);
@@ -357,6 +342,21 @@ namespace __jni_impl::android::widget
 			arg0
 		);
 	}
+	void LinearLayout::setWeightSum(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setWeightSum",
+			"(F)V",
+			arg0
+		);
+	}
+	jboolean LinearLayout::shouldDelayChildPressedState()
+	{
+		return __thiz.callMethod<jboolean>(
+			"shouldDelayChildPressedState",
+			"()Z"
+		);
+	}
 } // namespace __jni_impl::android::widget
 
 namespace android::widget
@@ -365,13 +365,16 @@ namespace android::widget
 	{
 	public:
 		LinearLayout(QAndroidJniObject obj) { __thiz = obj; }
-		LinearLayout(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
+		LinearLayout(__jni_impl::android::content::Context arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		LinearLayout(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 		{
 			__constructor(
 				arg0,
-				arg1,
-				arg2,
-				arg3);
+				arg1);
 		}
 		LinearLayout(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 		{
@@ -380,16 +383,13 @@ namespace android::widget
 				arg1,
 				arg2);
 		}
-		LinearLayout(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+		LinearLayout(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 		{
 			__constructor(
 				arg0,
-				arg1);
-		}
-		LinearLayout(__jni_impl::android::content::Context arg0)
-		{
-			__constructor(
-				arg0);
+				arg1,
+				arg2,
+				arg3);
 		}
 	};
 } // namespace android::widget

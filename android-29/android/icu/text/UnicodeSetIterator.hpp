@@ -22,15 +22,15 @@ namespace __jni_impl::android::icu::text
 		jstring string();
 		
 		// Constructors
-		void __constructor(__jni_impl::android::icu::text::UnicodeSet arg0);
 		void __constructor();
+		void __constructor(__jni_impl::android::icu::text::UnicodeSet arg0);
 		
 		// Methods
-		jboolean next();
-		void reset(__jni_impl::android::icu::text::UnicodeSet arg0);
-		void reset();
 		jstring getString();
+		jboolean next();
 		jboolean nextRange();
+		void reset();
+		void reset(__jni_impl::android::icu::text::UnicodeSet arg0);
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -67,6 +67,13 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Constructors
+	void UnicodeSetIterator::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.text.UnicodeSetIterator",
+			"()V"
+		);
+	}
 	void UnicodeSetIterator::__constructor(__jni_impl::android::icu::text::UnicodeSet arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -75,20 +82,34 @@ namespace __jni_impl::android::icu::text
 			arg0.__jniObject().object()
 		);
 	}
-	void UnicodeSetIterator::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.text.UnicodeSetIterator",
-			"()V"
-		);
-	}
 	
 	// Methods
+	jstring UnicodeSetIterator::getString()
+	{
+		return __thiz.callObjectMethod(
+			"getString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jboolean UnicodeSetIterator::next()
 	{
 		return __thiz.callMethod<jboolean>(
 			"next",
 			"()Z"
+		);
+	}
+	jboolean UnicodeSetIterator::nextRange()
+	{
+		return __thiz.callMethod<jboolean>(
+			"nextRange",
+			"()Z"
+		);
+	}
+	void UnicodeSetIterator::reset()
+	{
+		__thiz.callMethod<void>(
+			"reset",
+			"()V"
 		);
 	}
 	void UnicodeSetIterator::reset(__jni_impl::android::icu::text::UnicodeSet arg0)
@@ -99,27 +120,6 @@ namespace __jni_impl::android::icu::text
 			arg0.__jniObject().object()
 		);
 	}
-	void UnicodeSetIterator::reset()
-	{
-		__thiz.callMethod<void>(
-			"reset",
-			"()V"
-		);
-	}
-	jstring UnicodeSetIterator::getString()
-	{
-		return __thiz.callObjectMethod(
-			"getString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jboolean UnicodeSetIterator::nextRange()
-	{
-		return __thiz.callMethod<jboolean>(
-			"nextRange",
-			"()Z"
-		);
-	}
 } // namespace __jni_impl::android::icu::text
 
 namespace android::icu::text
@@ -128,14 +128,14 @@ namespace android::icu::text
 	{
 	public:
 		UnicodeSetIterator(QAndroidJniObject obj) { __thiz = obj; }
+		UnicodeSetIterator()
+		{
+			__constructor();
+		}
 		UnicodeSetIterator(__jni_impl::android::icu::text::UnicodeSet arg0)
 		{
 			__constructor(
 				arg0);
-		}
-		UnicodeSetIterator()
-		{
-			__constructor();
 		}
 	};
 } // namespace android::icu::text

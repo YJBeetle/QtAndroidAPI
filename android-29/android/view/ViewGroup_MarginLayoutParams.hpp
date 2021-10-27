@@ -6,13 +6,13 @@
 #include "../../__JniBaseClass.hpp"
 #include "ViewGroup_LayoutParams.hpp"
 
-namespace __jni_impl::android::view
-{
-	class ViewGroup_LayoutParams;
-}
 namespace __jni_impl::android::content
 {
 	class Context;
+}
+namespace __jni_impl::android::view
+{
+	class ViewGroup_LayoutParams;
 }
 
 namespace __jni_impl::android::view
@@ -29,24 +29,24 @@ namespace __jni_impl::android::view
 		// Constructors
 		void __constructor(__jni_impl::android::view::ViewGroup_LayoutParams arg0);
 		void __constructor(__jni_impl::android::view::ViewGroup_MarginLayoutParams arg0);
-		void __constructor(jint arg0, jint arg1);
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
+		void __constructor(jint arg0, jint arg1);
 		
 		// Methods
 		jint getLayoutDirection();
-		void setLayoutDirection(jint arg0);
-		void resolveLayoutDirection(jint arg0);
-		void setMargins(jint arg0, jint arg1, jint arg2, jint arg3);
-		void setMarginStart(jint arg0);
-		jint getMarginStart();
-		void setMarginEnd(jint arg0);
 		jint getMarginEnd();
+		jint getMarginStart();
 		jboolean isMarginRelative();
+		void resolveLayoutDirection(jint arg0);
+		void setLayoutDirection(jint arg0);
+		void setMarginEnd(jint arg0);
+		void setMarginStart(jint arg0);
+		void setMargins(jint arg0, jint arg1, jint arg2, jint arg3);
 	};
 } // namespace __jni_impl::android::view
 
-#include "ViewGroup_LayoutParams.hpp"
 #include "../content/Context.hpp"
+#include "ViewGroup_LayoutParams.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -93,15 +93,6 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
-	void ViewGroup_MarginLayoutParams::__constructor(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.ViewGroup$MarginLayoutParams",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
 	void ViewGroup_MarginLayoutParams::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -109,6 +100,15 @@ namespace __jni_impl::android::view
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
+		);
+	}
+	void ViewGroup_MarginLayoutParams::__constructor(jint arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.ViewGroup$MarginLayoutParams",
+			"(II)V",
+			arg0,
+			arg1
 		);
 	}
 	
@@ -120,6 +120,35 @@ namespace __jni_impl::android::view
 			"()I"
 		);
 	}
+	jint ViewGroup_MarginLayoutParams::getMarginEnd()
+	{
+		return __thiz.callMethod<jint>(
+			"getMarginEnd",
+			"()I"
+		);
+	}
+	jint ViewGroup_MarginLayoutParams::getMarginStart()
+	{
+		return __thiz.callMethod<jint>(
+			"getMarginStart",
+			"()I"
+		);
+	}
+	jboolean ViewGroup_MarginLayoutParams::isMarginRelative()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isMarginRelative",
+			"()Z"
+		);
+	}
+	void ViewGroup_MarginLayoutParams::resolveLayoutDirection(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"resolveLayoutDirection",
+			"(I)V",
+			arg0
+		);
+	}
 	void ViewGroup_MarginLayoutParams::setLayoutDirection(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -128,10 +157,18 @@ namespace __jni_impl::android::view
 			arg0
 		);
 	}
-	void ViewGroup_MarginLayoutParams::resolveLayoutDirection(jint arg0)
+	void ViewGroup_MarginLayoutParams::setMarginEnd(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"resolveLayoutDirection",
+			"setMarginEnd",
+			"(I)V",
+			arg0
+		);
+	}
+	void ViewGroup_MarginLayoutParams::setMarginStart(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMarginStart",
 			"(I)V",
 			arg0
 		);
@@ -145,43 +182,6 @@ namespace __jni_impl::android::view
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	void ViewGroup_MarginLayoutParams::setMarginStart(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMarginStart",
-			"(I)V",
-			arg0
-		);
-	}
-	jint ViewGroup_MarginLayoutParams::getMarginStart()
-	{
-		return __thiz.callMethod<jint>(
-			"getMarginStart",
-			"()I"
-		);
-	}
-	void ViewGroup_MarginLayoutParams::setMarginEnd(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMarginEnd",
-			"(I)V",
-			arg0
-		);
-	}
-	jint ViewGroup_MarginLayoutParams::getMarginEnd()
-	{
-		return __thiz.callMethod<jint>(
-			"getMarginEnd",
-			"()I"
-		);
-	}
-	jboolean ViewGroup_MarginLayoutParams::isMarginRelative()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isMarginRelative",
-			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::view
@@ -202,13 +202,13 @@ namespace android::view
 			__constructor(
 				arg0);
 		}
-		ViewGroup_MarginLayoutParams(jint arg0, jint arg1)
+		ViewGroup_MarginLayoutParams(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
 		}
-		ViewGroup_MarginLayoutParams(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+		ViewGroup_MarginLayoutParams(jint arg0, jint arg1)
 		{
 			__constructor(
 				arg0,

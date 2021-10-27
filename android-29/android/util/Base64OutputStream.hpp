@@ -23,9 +23,9 @@ namespace __jni_impl::android::util
 		void __constructor(__jni_impl::java::io::OutputStream arg0, jint arg1);
 		
 		// Methods
-		void write(jbyteArray arg0, jint arg1, jint arg2);
-		void write(jint arg0);
 		void close();
+		void write(jint arg0);
+		void write(jbyteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::util
 
@@ -47,14 +47,11 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
-	void Base64OutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
+	void Base64OutputStream::close()
 	{
 		__thiz.callMethod<void>(
-			"write",
-			"([BII)V",
-			arg0,
-			arg1,
-			arg2
+			"close",
+			"()V"
 		);
 	}
 	void Base64OutputStream::write(jint arg0)
@@ -65,11 +62,14 @@ namespace __jni_impl::android::util
 			arg0
 		);
 	}
-	void Base64OutputStream::close()
+	void Base64OutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
-			"close",
-			"()V"
+			"write",
+			"([BII)V",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 } // namespace __jni_impl::android::util

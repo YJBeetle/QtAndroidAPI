@@ -18,9 +18,9 @@ namespace __jni_impl::javax::crypto::spec
 		void __constructor(jbyteArray arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
 		
 		// Methods
+		jint getIterationCount();
 		QAndroidJniObject getParameterSpec();
 		jbyteArray getSalt();
-		jint getIterationCount();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -51,6 +51,13 @@ namespace __jni_impl::javax::crypto::spec
 	}
 	
 	// Methods
+	jint PBEParameterSpec::getIterationCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getIterationCount",
+			"()I"
+		);
+	}
 	QAndroidJniObject PBEParameterSpec::getParameterSpec()
 	{
 		return __thiz.callObjectMethod(
@@ -64,13 +71,6 @@ namespace __jni_impl::javax::crypto::spec
 			"getSalt",
 			"()[B"
 		).object<jbyteArray>();
-	}
-	jint PBEParameterSpec::getIterationCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getIterationCount",
-			"()I"
-		);
 	}
 } // namespace __jni_impl::javax::crypto::spec
 

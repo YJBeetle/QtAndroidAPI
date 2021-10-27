@@ -5,13 +5,17 @@
 
 #include "../../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::content
+{
+	class IntentFilter;
+}
 namespace __jni_impl::android::content::pm
 {
 	class ActivityInfo;
 }
-namespace __jni_impl::android::content
+namespace __jni_impl::android::content::pm
 {
-	class IntentFilter;
+	class PackageManager;
 }
 namespace __jni_impl::android::content::pm
 {
@@ -21,17 +25,13 @@ namespace __jni_impl::android::content::pm
 {
 	class ServiceInfo;
 }
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
-namespace __jni_impl::android::content::pm
-{
-	class PackageManager;
-}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::content::pm
@@ -61,24 +61,24 @@ namespace __jni_impl::android::content::pm
 		void __constructor(__jni_impl::android::content::pm::ResolveInfo arg0);
 		
 		// Methods
-		jstring toString();
-		jint getIconResource();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		void dump(__jni_impl::__JniBaseClass arg0, const QString &arg1);
-		jstring loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
+		jint getIconResource();
 		QAndroidJniObject loadIcon(__jni_impl::android::content::pm::PackageManager arg0);
+		jstring loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::pm
 
-#include "ActivityInfo.hpp"
 #include "../IntentFilter.hpp"
+#include "ActivityInfo.hpp"
+#include "PackageManager.hpp"
 #include "ProviderInfo.hpp"
 #include "ServiceInfo.hpp"
-#include "../../os/Parcel.hpp"
-#include "PackageManager.hpp"
 #include "../../graphics/drawable/Drawable.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::content::pm
 {
@@ -200,34 +200,11 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	jstring ResolveInfo::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint ResolveInfo::getIconResource()
-	{
-		return __thiz.callMethod<jint>(
-			"getIconResource",
-			"()I"
-		);
-	}
 	jint ResolveInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
-		);
-	}
-	void ResolveInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 	void ResolveInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
@@ -248,6 +225,21 @@ namespace __jni_impl::android::content::pm
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
+	jint ResolveInfo::getIconResource()
+	{
+		return __thiz.callMethod<jint>(
+			"getIconResource",
+			"()I"
+		);
+	}
+	QAndroidJniObject ResolveInfo::loadIcon(__jni_impl::android::content::pm::PackageManager arg0)
+	{
+		return __thiz.callObjectMethod(
+			"loadIcon",
+			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
+			arg0.__jniObject().object()
+		);
+	}
 	jstring ResolveInfo::loadLabel(__jni_impl::android::content::pm::PackageManager arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -256,12 +248,20 @@ namespace __jni_impl::android::content::pm
 			arg0.__jniObject().object()
 		).object<jstring>();
 	}
-	QAndroidJniObject ResolveInfo::loadIcon(__jni_impl::android::content::pm::PackageManager arg0)
+	jstring ResolveInfo::toString()
 	{
 		return __thiz.callObjectMethod(
-			"loadIcon",
-			"(Landroid/content/pm/PackageManager;)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object()
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void ResolveInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::content::pm

@@ -31,29 +31,29 @@ namespace __jni_impl::android::text::method
 		void __constructor();
 		
 		// Methods
-		static jint getMetaState(jstring arg0, jint arg1);
-		static jint getMetaState(const QString &arg0, jint arg1);
-		static jint getMetaState(jstring arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
-		static jint getMetaState(const QString &arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
-		static jint getMetaState(jlong arg0);
-		static jint getMetaState(jlong arg0, jint arg1);
+		static jlong adjustMetaAfterKeypress(jlong arg0);
+		static void adjustMetaAfterKeypress(__jni_impl::__JniBaseClass arg0);
+		static void clearMetaKeyState(__jni_impl::__JniBaseClass arg0, jint arg1);
 		static jint getMetaState(jstring arg0);
 		static jint getMetaState(const QString &arg0);
+		static jint getMetaState(jlong arg0);
 		static jint getMetaState(jstring arg0, __jni_impl::android::view::KeyEvent arg1);
 		static jint getMetaState(const QString &arg0, __jni_impl::android::view::KeyEvent arg1);
-		jlong clearMetaKeyState(jlong arg0, jint arg1);
-		void clearMetaKeyState(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
-		static void clearMetaKeyState(__jni_impl::__JniBaseClass arg0, jint arg1);
-		static void adjustMetaAfterKeypress(__jni_impl::__JniBaseClass arg0);
-		static jlong adjustMetaAfterKeypress(jlong arg0);
+		static jint getMetaState(jstring arg0, jint arg1);
+		static jint getMetaState(const QString &arg0, jint arg1);
+		static jint getMetaState(jlong arg0, jint arg1);
+		static jint getMetaState(jstring arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
+		static jint getMetaState(const QString &arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
+		static jlong handleKeyDown(jlong arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
+		static jlong handleKeyUp(jlong arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
 		static jboolean isMetaTracker(jstring arg0, jobject arg1);
 		static jboolean isMetaTracker(const QString &arg0, jobject arg1);
-		static void resetMetaState(__jni_impl::__JniBaseClass arg0);
 		static jboolean isSelectingMetaTracker(jstring arg0, jobject arg1);
 		static jboolean isSelectingMetaTracker(const QString &arg0, jobject arg1);
 		static jlong resetLockedMeta(jlong arg0);
-		static jlong handleKeyDown(jlong arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
-		static jlong handleKeyUp(jlong arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2);
+		static void resetMetaState(__jni_impl::__JniBaseClass arg0);
+		jlong clearMetaKeyState(jlong arg0, jint arg1);
+		void clearMetaKeyState(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
 		jboolean onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
 		jboolean onKeyUp(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
 	};
@@ -118,6 +118,81 @@ namespace __jni_impl::android::text::method
 	}
 	
 	// Methods
+	jlong MetaKeyKeyListener::adjustMetaAfterKeypress(jlong arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jlong>(
+			"android.text.method.MetaKeyKeyListener",
+			"adjustMetaAfterKeypress",
+			"(J)J",
+			arg0
+		);
+	}
+	void MetaKeyKeyListener::adjustMetaAfterKeypress(__jni_impl::__JniBaseClass arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.text.method.MetaKeyKeyListener",
+			"adjustMetaAfterKeypress",
+			"(Landroid/text/Spannable;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void MetaKeyKeyListener::clearMetaKeyState(__jni_impl::__JniBaseClass arg0, jint arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.text.method.MetaKeyKeyListener",
+			"clearMetaKeyState",
+			"(Landroid/text/Editable;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jint MetaKeyKeyListener::getMetaState(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.text.method.MetaKeyKeyListener",
+			"getMetaState",
+			"(Ljava/lang/CharSequence;)I",
+			arg0
+		);
+	}
+	jint MetaKeyKeyListener::getMetaState(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.text.method.MetaKeyKeyListener",
+			"getMetaState",
+			"(Ljava/lang/CharSequence;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jint MetaKeyKeyListener::getMetaState(jlong arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.text.method.MetaKeyKeyListener",
+			"getMetaState",
+			"(J)I",
+			arg0
+		);
+	}
+	jint MetaKeyKeyListener::getMetaState(jstring arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.text.method.MetaKeyKeyListener",
+			"getMetaState",
+			"(Ljava/lang/CharSequence;Landroid/view/KeyEvent;)I",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jint MetaKeyKeyListener::getMetaState(const QString &arg0, __jni_impl::android::view::KeyEvent arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.text.method.MetaKeyKeyListener",
+			"getMetaState",
+			"(Ljava/lang/CharSequence;Landroid/view/KeyEvent;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	jint MetaKeyKeyListener::getMetaState(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -135,6 +210,16 @@ namespace __jni_impl::android::text::method
 			"getMetaState",
 			"(Ljava/lang/CharSequence;I)I",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	jint MetaKeyKeyListener::getMetaState(jlong arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.text.method.MetaKeyKeyListener",
+			"getMetaState",
+			"(JI)I",
+			arg0,
 			arg1
 		);
 	}
@@ -160,108 +245,26 @@ namespace __jni_impl::android::text::method
 			arg2.__jniObject().object()
 		);
 	}
-	jint MetaKeyKeyListener::getMetaState(jlong arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.text.method.MetaKeyKeyListener",
-			"getMetaState",
-			"(J)I",
-			arg0
-		);
-	}
-	jint MetaKeyKeyListener::getMetaState(jlong arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.text.method.MetaKeyKeyListener",
-			"getMetaState",
-			"(JI)I",
-			arg0,
-			arg1
-		);
-	}
-	jint MetaKeyKeyListener::getMetaState(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.text.method.MetaKeyKeyListener",
-			"getMetaState",
-			"(Ljava/lang/CharSequence;)I",
-			arg0
-		);
-	}
-	jint MetaKeyKeyListener::getMetaState(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.text.method.MetaKeyKeyListener",
-			"getMetaState",
-			"(Ljava/lang/CharSequence;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jint MetaKeyKeyListener::getMetaState(jstring arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.text.method.MetaKeyKeyListener",
-			"getMetaState",
-			"(Ljava/lang/CharSequence;Landroid/view/KeyEvent;)I",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jint MetaKeyKeyListener::getMetaState(const QString &arg0, __jni_impl::android::view::KeyEvent arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.text.method.MetaKeyKeyListener",
-			"getMetaState",
-			"(Ljava/lang/CharSequence;Landroid/view/KeyEvent;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-	jlong MetaKeyKeyListener::clearMetaKeyState(jlong arg0, jint arg1)
-	{
-		return __thiz.callMethod<jlong>(
-			"clearMetaKeyState",
-			"(JI)J",
-			arg0,
-			arg1
-		);
-	}
-	void MetaKeyKeyListener::clearMetaKeyState(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"clearMetaKeyState",
-			"(Landroid/view/View;Landroid/text/Editable;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	void MetaKeyKeyListener::clearMetaKeyState(__jni_impl::__JniBaseClass arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.text.method.MetaKeyKeyListener",
-			"clearMetaKeyState",
-			"(Landroid/text/Editable;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void MetaKeyKeyListener::adjustMetaAfterKeypress(__jni_impl::__JniBaseClass arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.text.method.MetaKeyKeyListener",
-			"adjustMetaAfterKeypress",
-			"(Landroid/text/Spannable;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jlong MetaKeyKeyListener::adjustMetaAfterKeypress(jlong arg0)
+	jlong MetaKeyKeyListener::handleKeyDown(jlong arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.text.method.MetaKeyKeyListener",
-			"adjustMetaAfterKeypress",
-			"(J)J",
-			arg0
+			"handleKeyDown",
+			"(JILandroid/view/KeyEvent;)J",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	jlong MetaKeyKeyListener::handleKeyUp(jlong arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jlong>(
+			"android.text.method.MetaKeyKeyListener",
+			"handleKeyUp",
+			"(JILandroid/view/KeyEvent;)J",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
 		);
 	}
 	jboolean MetaKeyKeyListener::isMetaTracker(jstring arg0, jobject arg1)
@@ -282,15 +285,6 @@ namespace __jni_impl::android::text::method
 			"(Ljava/lang/CharSequence;Ljava/lang/Object;)Z",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
-		);
-	}
-	void MetaKeyKeyListener::resetMetaState(__jni_impl::__JniBaseClass arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.text.method.MetaKeyKeyListener",
-			"resetMetaState",
-			"(Landroid/text/Spannable;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	jboolean MetaKeyKeyListener::isSelectingMetaTracker(jstring arg0, jobject arg1)
@@ -322,26 +316,32 @@ namespace __jni_impl::android::text::method
 			arg0
 		);
 	}
-	jlong MetaKeyKeyListener::handleKeyDown(jlong arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2)
+	void MetaKeyKeyListener::resetMetaState(__jni_impl::__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		QAndroidJniObject::callStaticMethod<void>(
 			"android.text.method.MetaKeyKeyListener",
-			"handleKeyDown",
-			"(JILandroid/view/KeyEvent;)J",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
+			"resetMetaState",
+			"(Landroid/text/Spannable;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	jlong MetaKeyKeyListener::handleKeyUp(jlong arg0, jint arg1, __jni_impl::android::view::KeyEvent arg2)
+	jlong MetaKeyKeyListener::clearMetaKeyState(jlong arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.text.method.MetaKeyKeyListener",
-			"handleKeyUp",
-			"(JILandroid/view/KeyEvent;)J",
+		return __thiz.callMethod<jlong>(
+			"clearMetaKeyState",
+			"(JI)J",
 			arg0,
-			arg1,
-			arg2.__jniObject().object()
+			arg1
+		);
+	}
+	void MetaKeyKeyListener::clearMetaKeyState(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"clearMetaKeyState",
+			"(Landroid/view/View;Landroid/text/Editable;I)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
 		);
 	}
 	jboolean MetaKeyKeyListener::onKeyDown(__jni_impl::android::view::View arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3)

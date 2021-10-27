@@ -5,10 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util
-{
-	class Date;
-}
 namespace __jni_impl::java::security
 {
 	class KeyStore;
@@ -21,6 +17,10 @@ namespace __jni_impl::java::security::cert
 {
 	class PKIXCertPathChecker;
 }
+namespace __jni_impl::java::util
+{
+	class Date;
+}
 
 namespace __jni_impl::java::security::cert
 {
@@ -30,60 +30,52 @@ namespace __jni_impl::java::security::cert
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::__JniBaseClass arg0);
 		void __constructor(__jni_impl::java::security::KeyStore arg0);
+		void __constructor(__jni_impl::__JniBaseClass arg0);
 		
 		// Methods
-		jstring toString();
-		jobject clone();
-		QAndroidJniObject getDate();
-		void setDate(__jni_impl::java::util::Date arg0);
-		void setTrustAnchors(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getTrustAnchors();
-		QAndroidJniObject getInitialPolicies();
-		void setInitialPolicies(__jni_impl::__JniBaseClass arg0);
-		void setCertStores(__jni_impl::__JniBaseClass arg0);
-		void addCertStore(__jni_impl::java::security::cert::CertStore arg0);
-		QAndroidJniObject getCertStores();
-		void setRevocationEnabled(jboolean arg0);
-		jboolean isRevocationEnabled();
-		void setExplicitPolicyRequired(jboolean arg0);
-		jboolean isExplicitPolicyRequired();
-		void setPolicyMappingInhibited(jboolean arg0);
-		jboolean isPolicyMappingInhibited();
-		void setAnyPolicyInhibited(jboolean arg0);
-		jboolean isAnyPolicyInhibited();
-		void setPolicyQualifiersRejected(jboolean arg0);
-		jboolean getPolicyQualifiersRejected();
-		void setCertPathCheckers(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getCertPathCheckers();
 		void addCertPathChecker(__jni_impl::java::security::cert::PKIXCertPathChecker arg0);
+		void addCertStore(__jni_impl::java::security::cert::CertStore arg0);
+		jobject clone();
+		QAndroidJniObject getCertPathCheckers();
+		QAndroidJniObject getCertStores();
+		QAndroidJniObject getDate();
+		QAndroidJniObject getInitialPolicies();
+		jboolean getPolicyQualifiersRejected();
 		jstring getSigProvider();
+		QAndroidJniObject getTargetCertConstraints();
+		QAndroidJniObject getTrustAnchors();
+		jboolean isAnyPolicyInhibited();
+		jboolean isExplicitPolicyRequired();
+		jboolean isPolicyMappingInhibited();
+		jboolean isRevocationEnabled();
+		void setAnyPolicyInhibited(jboolean arg0);
+		void setCertPathCheckers(__jni_impl::__JniBaseClass arg0);
+		void setCertStores(__jni_impl::__JniBaseClass arg0);
+		void setDate(__jni_impl::java::util::Date arg0);
+		void setExplicitPolicyRequired(jboolean arg0);
+		void setInitialPolicies(__jni_impl::__JniBaseClass arg0);
+		void setPolicyMappingInhibited(jboolean arg0);
+		void setPolicyQualifiersRejected(jboolean arg0);
+		void setRevocationEnabled(jboolean arg0);
 		void setSigProvider(jstring arg0);
 		void setSigProvider(const QString &arg0);
-		QAndroidJniObject getTargetCertConstraints();
 		void setTargetCertConstraints(__jni_impl::__JniBaseClass arg0);
+		void setTrustAnchors(__jni_impl::__JniBaseClass arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security::cert
 
-#include "../../util/Date.hpp"
 #include "../KeyStore.hpp"
 #include "CertStore.hpp"
 #include "PKIXCertPathChecker.hpp"
+#include "../../util/Date.hpp"
 
 namespace __jni_impl::java::security::cert
 {
 	// Fields
 	
 	// Constructors
-	void PKIXParameters::__constructor(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.cert.PKIXParameters",
-			"(Ljava/util/Set;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void PKIXParameters::__constructor(__jni_impl::java::security::KeyStore arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -92,72 +84,21 @@ namespace __jni_impl::java::security::cert
 			arg0.__jniObject().object()
 		);
 	}
+	void PKIXParameters::__constructor(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.cert.PKIXParameters",
+			"(Ljava/util/Set;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	
 	// Methods
-	jstring PKIXParameters::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jobject PKIXParameters::clone()
-	{
-		return __thiz.callObjectMethod(
-			"clone",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	QAndroidJniObject PKIXParameters::getDate()
-	{
-		return __thiz.callObjectMethod(
-			"getDate",
-			"()Ljava/util/Date;"
-		);
-	}
-	void PKIXParameters::setDate(__jni_impl::java::util::Date arg0)
+	void PKIXParameters::addCertPathChecker(__jni_impl::java::security::cert::PKIXCertPathChecker arg0)
 	{
 		__thiz.callMethod<void>(
-			"setDate",
-			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void PKIXParameters::setTrustAnchors(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTrustAnchors",
-			"(Ljava/util/Set;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject PKIXParameters::getTrustAnchors()
-	{
-		return __thiz.callObjectMethod(
-			"getTrustAnchors",
-			"()Ljava/util/Set;"
-		);
-	}
-	QAndroidJniObject PKIXParameters::getInitialPolicies()
-	{
-		return __thiz.callObjectMethod(
-			"getInitialPolicies",
-			"()Ljava/util/Set;"
-		);
-	}
-	void PKIXParameters::setInitialPolicies(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setInitialPolicies",
-			"(Ljava/util/Set;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void PKIXParameters::setCertStores(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCertStores",
-			"(Ljava/util/List;)V",
+			"addCertPathChecker",
+			"(Ljava/security/cert/PKIXCertPathChecker;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -169,6 +110,20 @@ namespace __jni_impl::java::security::cert
 			arg0.__jniObject().object()
 		);
 	}
+	jobject PKIXParameters::clone()
+	{
+		return __thiz.callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	QAndroidJniObject PKIXParameters::getCertPathCheckers()
+	{
+		return __thiz.callObjectMethod(
+			"getCertPathCheckers",
+			"()Ljava/util/List;"
+		);
+	}
 	QAndroidJniObject PKIXParameters::getCertStores()
 	{
 		return __thiz.callObjectMethod(
@@ -176,27 +131,53 @@ namespace __jni_impl::java::security::cert
 			"()Ljava/util/List;"
 		);
 	}
-	void PKIXParameters::setRevocationEnabled(jboolean arg0)
+	QAndroidJniObject PKIXParameters::getDate()
 	{
-		__thiz.callMethod<void>(
-			"setRevocationEnabled",
-			"(Z)V",
-			arg0
+		return __thiz.callObjectMethod(
+			"getDate",
+			"()Ljava/util/Date;"
 		);
 	}
-	jboolean PKIXParameters::isRevocationEnabled()
+	QAndroidJniObject PKIXParameters::getInitialPolicies()
+	{
+		return __thiz.callObjectMethod(
+			"getInitialPolicies",
+			"()Ljava/util/Set;"
+		);
+	}
+	jboolean PKIXParameters::getPolicyQualifiersRejected()
 	{
 		return __thiz.callMethod<jboolean>(
-			"isRevocationEnabled",
+			"getPolicyQualifiersRejected",
 			"()Z"
 		);
 	}
-	void PKIXParameters::setExplicitPolicyRequired(jboolean arg0)
+	jstring PKIXParameters::getSigProvider()
 	{
-		__thiz.callMethod<void>(
-			"setExplicitPolicyRequired",
-			"(Z)V",
-			arg0
+		return __thiz.callObjectMethod(
+			"getSigProvider",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject PKIXParameters::getTargetCertConstraints()
+	{
+		return __thiz.callObjectMethod(
+			"getTargetCertConstraints",
+			"()Ljava/security/cert/CertSelector;"
+		);
+	}
+	QAndroidJniObject PKIXParameters::getTrustAnchors()
+	{
+		return __thiz.callObjectMethod(
+			"getTrustAnchors",
+			"()Ljava/util/Set;"
+		);
+	}
+	jboolean PKIXParameters::isAnyPolicyInhibited()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAnyPolicyInhibited",
+			"()Z"
 		);
 	}
 	jboolean PKIXParameters::isExplicitPolicyRequired()
@@ -206,18 +187,17 @@ namespace __jni_impl::java::security::cert
 			"()Z"
 		);
 	}
-	void PKIXParameters::setPolicyMappingInhibited(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPolicyMappingInhibited",
-			"(Z)V",
-			arg0
-		);
-	}
 	jboolean PKIXParameters::isPolicyMappingInhibited()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPolicyMappingInhibited",
+			"()Z"
+		);
+	}
+	jboolean PKIXParameters::isRevocationEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isRevocationEnabled",
 			"()Z"
 		);
 	}
@@ -229,11 +209,52 @@ namespace __jni_impl::java::security::cert
 			arg0
 		);
 	}
-	jboolean PKIXParameters::isAnyPolicyInhibited()
+	void PKIXParameters::setCertPathCheckers(__jni_impl::__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isAnyPolicyInhibited",
-			"()Z"
+		__thiz.callMethod<void>(
+			"setCertPathCheckers",
+			"(Ljava/util/List;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void PKIXParameters::setCertStores(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCertStores",
+			"(Ljava/util/List;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void PKIXParameters::setDate(__jni_impl::java::util::Date arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDate",
+			"(Ljava/util/Date;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void PKIXParameters::setExplicitPolicyRequired(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setExplicitPolicyRequired",
+			"(Z)V",
+			arg0
+		);
+	}
+	void PKIXParameters::setInitialPolicies(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setInitialPolicies",
+			"(Ljava/util/Set;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void PKIXParameters::setPolicyMappingInhibited(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPolicyMappingInhibited",
+			"(Z)V",
+			arg0
 		);
 	}
 	void PKIXParameters::setPolicyQualifiersRejected(jboolean arg0)
@@ -244,42 +265,13 @@ namespace __jni_impl::java::security::cert
 			arg0
 		);
 	}
-	jboolean PKIXParameters::getPolicyQualifiersRejected()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getPolicyQualifiersRejected",
-			"()Z"
-		);
-	}
-	void PKIXParameters::setCertPathCheckers(__jni_impl::__JniBaseClass arg0)
+	void PKIXParameters::setRevocationEnabled(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
-			"setCertPathCheckers",
-			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			"setRevocationEnabled",
+			"(Z)V",
+			arg0
 		);
-	}
-	QAndroidJniObject PKIXParameters::getCertPathCheckers()
-	{
-		return __thiz.callObjectMethod(
-			"getCertPathCheckers",
-			"()Ljava/util/List;"
-		);
-	}
-	void PKIXParameters::addCertPathChecker(__jni_impl::java::security::cert::PKIXCertPathChecker arg0)
-	{
-		__thiz.callMethod<void>(
-			"addCertPathChecker",
-			"(Ljava/security/cert/PKIXCertPathChecker;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jstring PKIXParameters::getSigProvider()
-	{
-		return __thiz.callObjectMethod(
-			"getSigProvider",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	void PKIXParameters::setSigProvider(jstring arg0)
 	{
@@ -297,13 +289,6 @@ namespace __jni_impl::java::security::cert
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	QAndroidJniObject PKIXParameters::getTargetCertConstraints()
-	{
-		return __thiz.callObjectMethod(
-			"getTargetCertConstraints",
-			"()Ljava/security/cert/CertSelector;"
-		);
-	}
 	void PKIXParameters::setTargetCertConstraints(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -311,6 +296,21 @@ namespace __jni_impl::java::security::cert
 			"(Ljava/security/cert/CertSelector;)V",
 			arg0.__jniObject().object()
 		);
+	}
+	void PKIXParameters::setTrustAnchors(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTrustAnchors",
+			"(Ljava/util/Set;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jstring PKIXParameters::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security::cert
 
@@ -320,12 +320,12 @@ namespace java::security::cert
 	{
 	public:
 		PKIXParameters(QAndroidJniObject obj) { __thiz = obj; }
-		PKIXParameters(__jni_impl::__JniBaseClass arg0)
+		PKIXParameters(__jni_impl::java::security::KeyStore arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		PKIXParameters(__jni_impl::java::security::KeyStore arg0)
+		PKIXParameters(__jni_impl::__JniBaseClass arg0)
 		{
 			__constructor(
 				arg0);

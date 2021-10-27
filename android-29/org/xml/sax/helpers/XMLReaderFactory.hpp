@@ -21,9 +21,9 @@ namespace __jni_impl::org::xml::sax::helpers
 		void __constructor();
 		
 		// Methods
+		static QAndroidJniObject createXMLReader();
 		static QAndroidJniObject createXMLReader(jstring arg0);
 		static QAndroidJniObject createXMLReader(const QString &arg0);
-		static QAndroidJniObject createXMLReader();
 	};
 } // namespace __jni_impl::org::xml::sax::helpers
 
@@ -42,6 +42,14 @@ namespace __jni_impl::org::xml::sax::helpers
 	}
 	
 	// Methods
+	QAndroidJniObject XMLReaderFactory::createXMLReader()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"org.xml.sax.helpers.XMLReaderFactory",
+			"createXMLReader",
+			"()Lorg/xml/sax/XMLReader;"
+		);
+	}
 	QAndroidJniObject XMLReaderFactory::createXMLReader(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -58,14 +66,6 @@ namespace __jni_impl::org::xml::sax::helpers
 			"createXMLReader",
 			"(Ljava/lang/String;)Lorg/xml/sax/XMLReader;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject XMLReaderFactory::createXMLReader()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"org.xml.sax.helpers.XMLReaderFactory",
-			"createXMLReader",
-			"()Lorg/xml/sax/XMLReader;"
 		);
 	}
 } // namespace __jni_impl::org::xml::sax::helpers

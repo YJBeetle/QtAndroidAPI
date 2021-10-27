@@ -9,17 +9,17 @@ namespace __jni_impl::android::net::wifi::aware
 {
 	class AttachCallback;
 }
-namespace __jni_impl::android::os
+namespace __jni_impl::android::net::wifi::aware
 {
-	class Handler;
+	class Characteristics;
 }
 namespace __jni_impl::android::net::wifi::aware
 {
 	class IdentityChangedListener;
 }
-namespace __jni_impl::android::net::wifi::aware
+namespace __jni_impl::android::os
 {
-	class Characteristics;
+	class Handler;
 }
 
 namespace __jni_impl::android::net::wifi::aware
@@ -44,9 +44,9 @@ namespace __jni_impl::android::net::wifi::aware
 } // namespace __jni_impl::android::net::wifi::aware
 
 #include "AttachCallback.hpp"
-#include "../../../os/Handler.hpp"
-#include "IdentityChangedListener.hpp"
 #include "Characteristics.hpp"
+#include "IdentityChangedListener.hpp"
+#include "../../../os/Handler.hpp"
 
 namespace __jni_impl::android::net::wifi::aware
 {

@@ -6,10 +6,6 @@
 #include "../../__JniBaseClass.hpp"
 #include "Settings_NameValueTable.hpp"
 
-namespace __jni_impl::android::net
-{
-	class Uri;
-}
 namespace __jni_impl::android::content
 {
 	class ContentResolver;
@@ -21,6 +17,10 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::content::res
 {
 	class Configuration;
+}
+namespace __jni_impl::android::net
+{
+	class Uri;
 }
 
 namespace __jni_impl::android::provider
@@ -135,42 +135,42 @@ namespace __jni_impl::android::provider
 		void __constructor();
 		
 		// Methods
-		static jint getInt(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jint arg2);
-		static jint getInt(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jint arg2);
-		static jint getInt(__jni_impl::android::content::ContentResolver arg0, jstring arg1);
-		static jint getInt(__jni_impl::android::content::ContentResolver arg0, const QString &arg1);
-		static jboolean putInt(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jint arg2);
-		static jboolean putInt(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jint arg2);
-		static jlong getLong(__jni_impl::android::content::ContentResolver arg0, jstring arg1);
-		static jlong getLong(__jni_impl::android::content::ContentResolver arg0, const QString &arg1);
-		static jlong getLong(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jlong arg2);
-		static jlong getLong(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jlong arg2);
-		static jboolean putLong(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jlong arg2);
-		static jboolean putLong(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jlong arg2);
+		static jboolean canWrite(__jni_impl::android::content::Context arg0);
+		static void getConfiguration(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::content::res::Configuration arg1);
 		static jfloat getFloat(__jni_impl::android::content::ContentResolver arg0, jstring arg1);
 		static jfloat getFloat(__jni_impl::android::content::ContentResolver arg0, const QString &arg1);
 		static jfloat getFloat(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jfloat arg2);
 		static jfloat getFloat(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jfloat arg2);
-		static jboolean putFloat(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jfloat arg2);
-		static jboolean putFloat(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jfloat arg2);
+		static jint getInt(__jni_impl::android::content::ContentResolver arg0, jstring arg1);
+		static jint getInt(__jni_impl::android::content::ContentResolver arg0, const QString &arg1);
+		static jint getInt(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jint arg2);
+		static jint getInt(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jint arg2);
+		static jlong getLong(__jni_impl::android::content::ContentResolver arg0, jstring arg1);
+		static jlong getLong(__jni_impl::android::content::ContentResolver arg0, const QString &arg1);
+		static jlong getLong(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jlong arg2);
+		static jlong getLong(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jlong arg2);
+		static jboolean getShowGTalkServiceStatus(__jni_impl::android::content::ContentResolver arg0);
 		static jstring getString(__jni_impl::android::content::ContentResolver arg0, jstring arg1);
 		static jstring getString(__jni_impl::android::content::ContentResolver arg0, const QString &arg1);
-		static jboolean canWrite(__jni_impl::android::content::Context arg0);
-		static void getConfiguration(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::content::res::Configuration arg1);
-		static jboolean putString(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jstring arg2);
-		static jboolean putString(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, const QString &arg2);
 		static QAndroidJniObject getUriFor(jstring arg0);
 		static QAndroidJniObject getUriFor(const QString &arg0);
 		static jboolean putConfiguration(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::content::res::Configuration arg1);
-		static jboolean getShowGTalkServiceStatus(__jni_impl::android::content::ContentResolver arg0);
+		static jboolean putFloat(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jfloat arg2);
+		static jboolean putFloat(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jfloat arg2);
+		static jboolean putInt(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jint arg2);
+		static jboolean putInt(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jint arg2);
+		static jboolean putLong(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jlong arg2);
+		static jboolean putLong(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jlong arg2);
+		static jboolean putString(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jstring arg2);
+		static jboolean putString(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, const QString &arg2);
 		static void setShowGTalkServiceStatus(__jni_impl::android::content::ContentResolver arg0, jboolean arg1);
 	};
 } // namespace __jni_impl::android::provider
 
-#include "../net/Uri.hpp"
 #include "../content/ContentResolver.hpp"
 #include "../content/Context.hpp"
 #include "../content/res/Configuration.hpp"
+#include "../net/Uri.hpp"
 
 namespace __jni_impl::android::provider
 {
@@ -989,23 +989,62 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	jint Settings_System::getInt(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jint arg2)
+	jboolean Settings_System::canWrite(__jni_impl::android::content::Context arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.provider.Settings$System",
-			"getInt",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;I)I",
+			"canWrite",
+			"(Landroid/content/Context;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	void Settings_System::getConfiguration(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::content::res::Configuration arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.provider.Settings$System",
+			"getConfiguration",
+			"(Landroid/content/ContentResolver;Landroid/content/res/Configuration;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	jfloat Settings_System::getFloat(__jni_impl::android::content::ContentResolver arg0, jstring arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jfloat>(
+			"android.provider.Settings$System",
+			"getFloat",
+			"(Landroid/content/ContentResolver;Ljava/lang/String;)F",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jfloat Settings_System::getFloat(__jni_impl::android::content::ContentResolver arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jfloat>(
+			"android.provider.Settings$System",
+			"getFloat",
+			"(Landroid/content/ContentResolver;Ljava/lang/String;)F",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	jfloat Settings_System::getFloat(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jfloat arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jfloat>(
+			"android.provider.Settings$System",
+			"getFloat",
+			"(Landroid/content/ContentResolver;Ljava/lang/String;F)F",
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
 		);
 	}
-	jint Settings_System::getInt(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jint arg2)
+	jfloat Settings_System::getFloat(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jfloat arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return QAndroidJniObject::callStaticMethod<jfloat>(
 			"android.provider.Settings$System",
-			"getInt",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;I)I",
+			"getFloat",
+			"(Landroid/content/ContentResolver;Ljava/lang/String;F)F",
 			arg0.__jniObject().object(),
 			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
@@ -1031,23 +1070,23 @@ namespace __jni_impl::android::provider
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	jboolean Settings_System::putInt(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jint arg2)
+	jint Settings_System::getInt(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.provider.Settings$System",
-			"putInt",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;I)Z",
+			"getInt",
+			"(Landroid/content/ContentResolver;Ljava/lang/String;I)I",
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
 		);
 	}
-	jboolean Settings_System::putInt(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jint arg2)
+	jint Settings_System::getInt(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jint arg2)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.provider.Settings$System",
-			"putInt",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;I)Z",
+			"getInt",
+			"(Landroid/content/ContentResolver;Ljava/lang/String;I)I",
 			arg0.__jniObject().object(),
 			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
@@ -1095,90 +1134,13 @@ namespace __jni_impl::android::provider
 			arg2
 		);
 	}
-	jboolean Settings_System::putLong(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jlong arg2)
+	jboolean Settings_System::getShowGTalkServiceStatus(__jni_impl::android::content::ContentResolver arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.provider.Settings$System",
-			"putLong",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;J)Z",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		);
-	}
-	jboolean Settings_System::putLong(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jlong arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.provider.Settings$System",
-			"putLong",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;J)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
-	jfloat Settings_System::getFloat(__jni_impl::android::content::ContentResolver arg0, jstring arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
-			"android.provider.Settings$System",
-			"getFloat",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;)F",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jfloat Settings_System::getFloat(__jni_impl::android::content::ContentResolver arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
-			"android.provider.Settings$System",
-			"getFloat",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;)F",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	jfloat Settings_System::getFloat(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jfloat arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
-			"android.provider.Settings$System",
-			"getFloat",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;F)F",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		);
-	}
-	jfloat Settings_System::getFloat(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jfloat arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
-			"android.provider.Settings$System",
-			"getFloat",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;F)F",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
-	jboolean Settings_System::putFloat(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jfloat arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.provider.Settings$System",
-			"putFloat",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;F)Z",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		);
-	}
-	jboolean Settings_System::putFloat(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jfloat arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.provider.Settings$System",
-			"putFloat",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;F)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
+			"getShowGTalkServiceStatus",
+			"(Landroid/content/ContentResolver;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 	jstring Settings_System::getString(__jni_impl::android::content::ContentResolver arg0, jstring arg1)
@@ -1200,47 +1162,6 @@ namespace __jni_impl::android::provider
 			arg0.__jniObject().object(),
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
-	}
-	jboolean Settings_System::canWrite(__jni_impl::android::content::Context arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.provider.Settings$System",
-			"canWrite",
-			"(Landroid/content/Context;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	void Settings_System::getConfiguration(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::content::res::Configuration arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.provider.Settings$System",
-			"getConfiguration",
-			"(Landroid/content/ContentResolver;Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean Settings_System::putString(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jstring arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.provider.Settings$System",
-			"putString",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		);
-	}
-	jboolean Settings_System::putString(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.provider.Settings$System",
-			"putString",
-			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
 	}
 	QAndroidJniObject Settings_System::getUriFor(jstring arg0)
 	{
@@ -1270,13 +1191,92 @@ namespace __jni_impl::android::provider
 			arg1.__jniObject().object()
 		);
 	}
-	jboolean Settings_System::getShowGTalkServiceStatus(__jni_impl::android::content::ContentResolver arg0)
+	jboolean Settings_System::putFloat(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jfloat arg2)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.provider.Settings$System",
-			"getShowGTalkServiceStatus",
-			"(Landroid/content/ContentResolver;)Z",
-			arg0.__jniObject().object()
+			"putFloat",
+			"(Landroid/content/ContentResolver;Ljava/lang/String;F)Z",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
+		);
+	}
+	jboolean Settings_System::putFloat(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jfloat arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.provider.Settings$System",
+			"putFloat",
+			"(Landroid/content/ContentResolver;Ljava/lang/String;F)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
+	}
+	jboolean Settings_System::putInt(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.provider.Settings$System",
+			"putInt",
+			"(Landroid/content/ContentResolver;Ljava/lang/String;I)Z",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
+		);
+	}
+	jboolean Settings_System::putInt(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.provider.Settings$System",
+			"putInt",
+			"(Landroid/content/ContentResolver;Ljava/lang/String;I)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
+	}
+	jboolean Settings_System::putLong(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jlong arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.provider.Settings$System",
+			"putLong",
+			"(Landroid/content/ContentResolver;Ljava/lang/String;J)Z",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
+		);
+	}
+	jboolean Settings_System::putLong(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, jlong arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.provider.Settings$System",
+			"putLong",
+			"(Landroid/content/ContentResolver;Ljava/lang/String;J)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
+	}
+	jboolean Settings_System::putString(__jni_impl::android::content::ContentResolver arg0, jstring arg1, jstring arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.provider.Settings$System",
+			"putString",
+			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
+		);
+	}
+	jboolean Settings_System::putString(__jni_impl::android::content::ContentResolver arg0, const QString &arg1, const QString &arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.provider.Settings$System",
+			"putString",
+			"(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	void Settings_System::setShowGTalkServiceStatus(__jni_impl::android::content::ContentResolver arg0, jboolean arg1)

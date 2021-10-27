@@ -13,19 +13,19 @@ namespace __jni_impl::android::webkit
 	{
 	public:
 		// Fields
-		static QAndroidJniObject TIP();
-		static QAndroidJniObject LOG();
-		static QAndroidJniObject WARNING();
-		static QAndroidJniObject ERROR();
 		static QAndroidJniObject DEBUG();
+		static QAndroidJniObject ERROR();
+		static QAndroidJniObject LOG();
+		static QAndroidJniObject TIP();
+		static QAndroidJniObject WARNING();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -33,27 +33,11 @@ namespace __jni_impl::android::webkit
 namespace __jni_impl::android::webkit
 {
 	// Fields
-	QAndroidJniObject ConsoleMessage_MessageLevel::TIP()
+	QAndroidJniObject ConsoleMessage_MessageLevel::DEBUG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.ConsoleMessage$MessageLevel",
-			"TIP",
-			"Landroid/webkit/ConsoleMessage$MessageLevel;"
-		);
-	}
-	QAndroidJniObject ConsoleMessage_MessageLevel::LOG()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.webkit.ConsoleMessage$MessageLevel",
-			"LOG",
-			"Landroid/webkit/ConsoleMessage$MessageLevel;"
-		);
-	}
-	QAndroidJniObject ConsoleMessage_MessageLevel::WARNING()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.webkit.ConsoleMessage$MessageLevel",
-			"WARNING",
+			"DEBUG",
 			"Landroid/webkit/ConsoleMessage$MessageLevel;"
 		);
 	}
@@ -65,11 +49,27 @@ namespace __jni_impl::android::webkit
 			"Landroid/webkit/ConsoleMessage$MessageLevel;"
 		);
 	}
-	QAndroidJniObject ConsoleMessage_MessageLevel::DEBUG()
+	QAndroidJniObject ConsoleMessage_MessageLevel::LOG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.ConsoleMessage$MessageLevel",
-			"DEBUG",
+			"LOG",
+			"Landroid/webkit/ConsoleMessage$MessageLevel;"
+		);
+	}
+	QAndroidJniObject ConsoleMessage_MessageLevel::TIP()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.webkit.ConsoleMessage$MessageLevel",
+			"TIP",
+			"Landroid/webkit/ConsoleMessage$MessageLevel;"
+		);
+	}
+	QAndroidJniObject ConsoleMessage_MessageLevel::WARNING()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.webkit.ConsoleMessage$MessageLevel",
+			"WARNING",
 			"Landroid/webkit/ConsoleMessage$MessageLevel;"
 		);
 	}
@@ -83,14 +83,6 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	jarray ConsoleMessage_MessageLevel::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.webkit.ConsoleMessage$MessageLevel",
-			"values",
-			"()[Landroid/webkit/ConsoleMessage$MessageLevel;"
-		).object<jarray>();
-	}
 	QAndroidJniObject ConsoleMessage_MessageLevel::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -108,6 +100,14 @@ namespace __jni_impl::android::webkit
 			"(Ljava/lang/String;)Landroid/webkit/ConsoleMessage$MessageLevel;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray ConsoleMessage_MessageLevel::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.webkit.ConsoleMessage$MessageLevel",
+			"values",
+			"()[Landroid/webkit/ConsoleMessage$MessageLevel;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::webkit
 

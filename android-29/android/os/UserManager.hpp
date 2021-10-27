@@ -5,21 +5,21 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class UserHandle;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 namespace __jni_impl::android::content
 {
 	class Intent;
 }
 namespace __jni_impl::android::os
 {
+	class Bundle;
+}
+namespace __jni_impl::android::os
+{
 	class PersistableBundle;
+}
+namespace __jni_impl::android::os
+{
+	class UserHandle;
 }
 
 namespace __jni_impl::android::os
@@ -98,43 +98,43 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		static jboolean supportsMultipleUsers();
-		jstring getUserName();
-		jboolean isUserAGoat();
-		jboolean isSystemUser();
-		jboolean isDemoUser();
-		jboolean isUserRunning(__jni_impl::android::os::UserHandle arg0);
-		jboolean isUserRunningOrStopping(__jni_impl::android::os::UserHandle arg0);
-		jboolean isUserUnlocked(__jni_impl::android::os::UserHandle arg0);
-		jboolean isUserUnlocked();
-		void setUserRestrictions(__jni_impl::android::os::Bundle arg0, __jni_impl::android::os::UserHandle arg1);
-		void setUserRestrictions(__jni_impl::android::os::Bundle arg0);
-		void setUserRestriction(jstring arg0, jboolean arg1);
-		void setUserRestriction(const QString &arg0, jboolean arg1);
-		jboolean hasUserRestriction(jstring arg0);
-		jboolean hasUserRestriction(const QString &arg0);
-		jlong getSerialNumberForUser(__jni_impl::android::os::UserHandle arg0);
-		QAndroidJniObject getUserForSerialNumber(jlong arg0);
 		static QAndroidJniObject createUserCreationIntent(jstring arg0, jstring arg1, jstring arg2, __jni_impl::android::os::PersistableBundle arg3);
 		static QAndroidJniObject createUserCreationIntent(const QString &arg0, const QString &arg1, const QString &arg2, __jni_impl::android::os::PersistableBundle arg3);
-		jint getUserCount();
-		QAndroidJniObject getUserProfiles();
-		jboolean requestQuietModeEnabled(jboolean arg0, __jni_impl::android::os::UserHandle arg1);
-		jboolean isQuietModeEnabled(__jni_impl::android::os::UserHandle arg0);
-		jboolean setRestrictionsChallenge(jstring arg0);
-		jboolean setRestrictionsChallenge(const QString &arg0);
-		jlong getUserCreationTime(__jni_impl::android::os::UserHandle arg0);
+		static jboolean supportsMultipleUsers();
 		QAndroidJniObject getApplicationRestrictions(jstring arg0);
 		QAndroidJniObject getApplicationRestrictions(const QString &arg0);
-		QAndroidJniObject getUserRestrictions(__jni_impl::android::os::UserHandle arg0);
+		jlong getSerialNumberForUser(__jni_impl::android::os::UserHandle arg0);
+		jint getUserCount();
+		jlong getUserCreationTime(__jni_impl::android::os::UserHandle arg0);
+		QAndroidJniObject getUserForSerialNumber(jlong arg0);
+		jstring getUserName();
+		QAndroidJniObject getUserProfiles();
 		QAndroidJniObject getUserRestrictions();
+		QAndroidJniObject getUserRestrictions(__jni_impl::android::os::UserHandle arg0);
+		jboolean hasUserRestriction(jstring arg0);
+		jboolean hasUserRestriction(const QString &arg0);
+		jboolean isDemoUser();
+		jboolean isQuietModeEnabled(__jni_impl::android::os::UserHandle arg0);
+		jboolean isSystemUser();
+		jboolean isUserAGoat();
+		jboolean isUserRunning(__jni_impl::android::os::UserHandle arg0);
+		jboolean isUserRunningOrStopping(__jni_impl::android::os::UserHandle arg0);
+		jboolean isUserUnlocked();
+		jboolean isUserUnlocked(__jni_impl::android::os::UserHandle arg0);
+		jboolean requestQuietModeEnabled(jboolean arg0, __jni_impl::android::os::UserHandle arg1);
+		jboolean setRestrictionsChallenge(jstring arg0);
+		jboolean setRestrictionsChallenge(const QString &arg0);
+		void setUserRestriction(jstring arg0, jboolean arg1);
+		void setUserRestriction(const QString &arg0, jboolean arg1);
+		void setUserRestrictions(__jni_impl::android::os::Bundle arg0);
+		void setUserRestrictions(__jni_impl::android::os::Bundle arg0, __jni_impl::android::os::UserHandle arg1);
 	};
 } // namespace __jni_impl::android::os
 
-#include "UserHandle.hpp"
-#include "Bundle.hpp"
 #include "../content/Intent.hpp"
+#include "Bundle.hpp"
 #include "PersistableBundle.hpp"
+#include "UserHandle.hpp"
 
 namespace __jni_impl::android::os
 {
@@ -660,140 +660,6 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	jboolean UserManager::supportsMultipleUsers()
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.os.UserManager",
-			"supportsMultipleUsers",
-			"()Z"
-		);
-	}
-	jstring UserManager::getUserName()
-	{
-		return __thiz.callObjectMethod(
-			"getUserName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jboolean UserManager::isUserAGoat()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isUserAGoat",
-			"()Z"
-		);
-	}
-	jboolean UserManager::isSystemUser()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSystemUser",
-			"()Z"
-		);
-	}
-	jboolean UserManager::isDemoUser()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isDemoUser",
-			"()Z"
-		);
-	}
-	jboolean UserManager::isUserRunning(__jni_impl::android::os::UserHandle arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isUserRunning",
-			"(Landroid/os/UserHandle;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean UserManager::isUserRunningOrStopping(__jni_impl::android::os::UserHandle arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isUserRunningOrStopping",
-			"(Landroid/os/UserHandle;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean UserManager::isUserUnlocked(__jni_impl::android::os::UserHandle arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isUserUnlocked",
-			"(Landroid/os/UserHandle;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean UserManager::isUserUnlocked()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isUserUnlocked",
-			"()Z"
-		);
-	}
-	void UserManager::setUserRestrictions(__jni_impl::android::os::Bundle arg0, __jni_impl::android::os::UserHandle arg1)
-	{
-		__thiz.callMethod<void>(
-			"setUserRestrictions",
-			"(Landroid/os/Bundle;Landroid/os/UserHandle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void UserManager::setUserRestrictions(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"setUserRestrictions",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void UserManager::setUserRestriction(jstring arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setUserRestriction",
-			"(Ljava/lang/String;Z)V",
-			arg0,
-			arg1
-		);
-	}
-	void UserManager::setUserRestriction(const QString &arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setUserRestriction",
-			"(Ljava/lang/String;Z)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	jboolean UserManager::hasUserRestriction(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasUserRestriction",
-			"(Ljava/lang/String;)Z",
-			arg0
-		);
-	}
-	jboolean UserManager::hasUserRestriction(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasUserRestriction",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jlong UserManager::getSerialNumberForUser(__jni_impl::android::os::UserHandle arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"getSerialNumberForUser",
-			"(Landroid/os/UserHandle;)J",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject UserManager::getUserForSerialNumber(jlong arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getUserForSerialNumber",
-			"(J)Landroid/os/UserHandle;",
-			arg0
-		);
-	}
 	QAndroidJniObject UserManager::createUserCreationIntent(jstring arg0, jstring arg1, jstring arg2, __jni_impl::android::os::PersistableBundle arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -818,59 +684,12 @@ namespace __jni_impl::android::os
 			arg3.__jniObject().object()
 		);
 	}
-	jint UserManager::getUserCount()
+	jboolean UserManager::supportsMultipleUsers()
 	{
-		return __thiz.callMethod<jint>(
-			"getUserCount",
-			"()I"
-		);
-	}
-	QAndroidJniObject UserManager::getUserProfiles()
-	{
-		return __thiz.callObjectMethod(
-			"getUserProfiles",
-			"()Ljava/util/List;"
-		);
-	}
-	jboolean UserManager::requestQuietModeEnabled(jboolean arg0, __jni_impl::android::os::UserHandle arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"requestQuietModeEnabled",
-			"(ZLandroid/os/UserHandle;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean UserManager::isQuietModeEnabled(__jni_impl::android::os::UserHandle arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isQuietModeEnabled",
-			"(Landroid/os/UserHandle;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean UserManager::setRestrictionsChallenge(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setRestrictionsChallenge",
-			"(Ljava/lang/String;)Z",
-			arg0
-		);
-	}
-	jboolean UserManager::setRestrictionsChallenge(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setRestrictionsChallenge",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jlong UserManager::getUserCreationTime(__jni_impl::android::os::UserHandle arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"getUserCreationTime",
-			"(Landroid/os/UserHandle;)J",
-			arg0.__jniObject().object()
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.os.UserManager",
+			"supportsMultipleUsers",
+			"()Z"
 		);
 	}
 	QAndroidJniObject UserManager::getApplicationRestrictions(jstring arg0)
@@ -889,6 +708,58 @@ namespace __jni_impl::android::os
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
+	jlong UserManager::getSerialNumberForUser(__jni_impl::android::os::UserHandle arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"getSerialNumberForUser",
+			"(Landroid/os/UserHandle;)J",
+			arg0.__jniObject().object()
+		);
+	}
+	jint UserManager::getUserCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getUserCount",
+			"()I"
+		);
+	}
+	jlong UserManager::getUserCreationTime(__jni_impl::android::os::UserHandle arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"getUserCreationTime",
+			"(Landroid/os/UserHandle;)J",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject UserManager::getUserForSerialNumber(jlong arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getUserForSerialNumber",
+			"(J)Landroid/os/UserHandle;",
+			arg0
+		);
+	}
+	jstring UserManager::getUserName()
+	{
+		return __thiz.callObjectMethod(
+			"getUserName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject UserManager::getUserProfiles()
+	{
+		return __thiz.callObjectMethod(
+			"getUserProfiles",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject UserManager::getUserRestrictions()
+	{
+		return __thiz.callObjectMethod(
+			"getUserRestrictions",
+			"()Landroid/os/Bundle;"
+		);
+	}
 	QAndroidJniObject UserManager::getUserRestrictions(__jni_impl::android::os::UserHandle arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -897,11 +768,140 @@ namespace __jni_impl::android::os
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject UserManager::getUserRestrictions()
+	jboolean UserManager::hasUserRestriction(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getUserRestrictions",
-			"()Landroid/os/Bundle;"
+		return __thiz.callMethod<jboolean>(
+			"hasUserRestriction",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jboolean UserManager::hasUserRestriction(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasUserRestriction",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jboolean UserManager::isDemoUser()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isDemoUser",
+			"()Z"
+		);
+	}
+	jboolean UserManager::isQuietModeEnabled(__jni_impl::android::os::UserHandle arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isQuietModeEnabled",
+			"(Landroid/os/UserHandle;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean UserManager::isSystemUser()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSystemUser",
+			"()Z"
+		);
+	}
+	jboolean UserManager::isUserAGoat()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isUserAGoat",
+			"()Z"
+		);
+	}
+	jboolean UserManager::isUserRunning(__jni_impl::android::os::UserHandle arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isUserRunning",
+			"(Landroid/os/UserHandle;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean UserManager::isUserRunningOrStopping(__jni_impl::android::os::UserHandle arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isUserRunningOrStopping",
+			"(Landroid/os/UserHandle;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean UserManager::isUserUnlocked()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isUserUnlocked",
+			"()Z"
+		);
+	}
+	jboolean UserManager::isUserUnlocked(__jni_impl::android::os::UserHandle arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isUserUnlocked",
+			"(Landroid/os/UserHandle;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean UserManager::requestQuietModeEnabled(jboolean arg0, __jni_impl::android::os::UserHandle arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"requestQuietModeEnabled",
+			"(ZLandroid/os/UserHandle;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean UserManager::setRestrictionsChallenge(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setRestrictionsChallenge",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jboolean UserManager::setRestrictionsChallenge(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setRestrictionsChallenge",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void UserManager::setUserRestriction(jstring arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setUserRestriction",
+			"(Ljava/lang/String;Z)V",
+			arg0,
+			arg1
+		);
+	}
+	void UserManager::setUserRestriction(const QString &arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setUserRestriction",
+			"(Ljava/lang/String;Z)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	void UserManager::setUserRestrictions(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"setUserRestrictions",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void UserManager::setUserRestrictions(__jni_impl::android::os::Bundle arg0, __jni_impl::android::os::UserHandle arg1)
+	{
+		__thiz.callMethod<void>(
+			"setUserRestrictions",
+			"(Landroid/os/Bundle;Landroid/os/UserHandle;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::os

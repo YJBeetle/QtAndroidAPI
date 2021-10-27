@@ -11,19 +11,19 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::android::renderscript
 {
-	class RenderScript_Priority;
-}
-namespace __jni_impl::android::renderscript
-{
 	class RenderScript_ContextType;
 }
 namespace __jni_impl::android::renderscript
 {
-	class RenderScript_RSMessageHandler;
+	class RenderScript_Priority;
 }
 namespace __jni_impl::android::renderscript
 {
 	class RenderScript_RSErrorHandler;
+}
+namespace __jni_impl::android::renderscript
+{
+	class RenderScript_RSMessageHandler;
 }
 
 namespace __jni_impl::android::renderscript
@@ -40,30 +40,30 @@ namespace __jni_impl::android::renderscript
 		void __constructor();
 		
 		// Methods
-		void setPriority(__jni_impl::android::renderscript::RenderScript_Priority arg0);
-		void destroy();
 		static QAndroidJniObject create(__jni_impl::android::content::Context arg0);
 		static QAndroidJniObject create(__jni_impl::android::content::Context arg0, __jni_impl::android::renderscript::RenderScript_ContextType arg1);
 		static QAndroidJniObject create(__jni_impl::android::content::Context arg0, __jni_impl::android::renderscript::RenderScript_ContextType arg1, jint arg2);
-		void finish();
-		static jlong getMinorVersion();
-		void setMessageHandler(__jni_impl::android::renderscript::RenderScript_RSMessageHandler arg0);
-		QAndroidJniObject getMessageHandler();
-		void setErrorHandler(__jni_impl::android::renderscript::RenderScript_RSErrorHandler arg0);
-		QAndroidJniObject getErrorHandler();
-		static void releaseAllContexts();
 		static QAndroidJniObject createMultiContext(__jni_impl::android::content::Context arg0, __jni_impl::android::renderscript::RenderScript_ContextType arg1, jint arg2, jint arg3);
+		static jlong getMinorVersion();
+		static void releaseAllContexts();
 		void contextDump();
+		void destroy();
+		void finish();
 		QAndroidJniObject getApplicationContext();
+		QAndroidJniObject getErrorHandler();
+		QAndroidJniObject getMessageHandler();
 		void sendMessage(jint arg0, jintArray arg1);
+		void setErrorHandler(__jni_impl::android::renderscript::RenderScript_RSErrorHandler arg0);
+		void setMessageHandler(__jni_impl::android::renderscript::RenderScript_RSMessageHandler arg0);
+		void setPriority(__jni_impl::android::renderscript::RenderScript_Priority arg0);
 	};
 } // namespace __jni_impl::android::renderscript
 
 #include "../content/Context.hpp"
-#include "RenderScript_Priority.hpp"
 #include "RenderScript_ContextType.hpp"
-#include "RenderScript_RSMessageHandler.hpp"
+#include "RenderScript_Priority.hpp"
 #include "RenderScript_RSErrorHandler.hpp"
+#include "RenderScript_RSMessageHandler.hpp"
 
 namespace __jni_impl::android::renderscript
 {
@@ -99,21 +99,6 @@ namespace __jni_impl::android::renderscript
 	}
 	
 	// Methods
-	void RenderScript::setPriority(__jni_impl::android::renderscript::RenderScript_Priority arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPriority",
-			"(Landroid/renderscript/RenderScript$Priority;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void RenderScript::destroy()
-	{
-		__thiz.callMethod<void>(
-			"destroy",
-			"()V"
-		);
-	}
 	QAndroidJniObject RenderScript::create(__jni_impl::android::content::Context arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -144,59 +129,6 @@ namespace __jni_impl::android::renderscript
 			arg2
 		);
 	}
-	void RenderScript::finish()
-	{
-		__thiz.callMethod<void>(
-			"finish",
-			"()V"
-		);
-	}
-	jlong RenderScript::getMinorVersion()
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.renderscript.RenderScript",
-			"getMinorVersion",
-			"()J"
-		);
-	}
-	void RenderScript::setMessageHandler(__jni_impl::android::renderscript::RenderScript_RSMessageHandler arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMessageHandler",
-			"(Landroid/renderscript/RenderScript$RSMessageHandler;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject RenderScript::getMessageHandler()
-	{
-		return __thiz.callObjectMethod(
-			"getMessageHandler",
-			"()Landroid/renderscript/RenderScript$RSMessageHandler;"
-		);
-	}
-	void RenderScript::setErrorHandler(__jni_impl::android::renderscript::RenderScript_RSErrorHandler arg0)
-	{
-		__thiz.callMethod<void>(
-			"setErrorHandler",
-			"(Landroid/renderscript/RenderScript$RSErrorHandler;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject RenderScript::getErrorHandler()
-	{
-		return __thiz.callObjectMethod(
-			"getErrorHandler",
-			"()Landroid/renderscript/RenderScript$RSErrorHandler;"
-		);
-	}
-	void RenderScript::releaseAllContexts()
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.renderscript.RenderScript",
-			"releaseAllContexts",
-			"()V"
-		);
-	}
 	QAndroidJniObject RenderScript::createMultiContext(__jni_impl::android::content::Context arg0, __jni_impl::android::renderscript::RenderScript_ContextType arg1, jint arg2, jint arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -209,10 +141,40 @@ namespace __jni_impl::android::renderscript
 			arg3
 		);
 	}
+	jlong RenderScript::getMinorVersion()
+	{
+		return QAndroidJniObject::callStaticMethod<jlong>(
+			"android.renderscript.RenderScript",
+			"getMinorVersion",
+			"()J"
+		);
+	}
+	void RenderScript::releaseAllContexts()
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.renderscript.RenderScript",
+			"releaseAllContexts",
+			"()V"
+		);
+	}
 	void RenderScript::contextDump()
 	{
 		__thiz.callMethod<void>(
 			"contextDump",
+			"()V"
+		);
+	}
+	void RenderScript::destroy()
+	{
+		__thiz.callMethod<void>(
+			"destroy",
+			"()V"
+		);
+	}
+	void RenderScript::finish()
+	{
+		__thiz.callMethod<void>(
+			"finish",
 			"()V"
 		);
 	}
@@ -223,6 +185,20 @@ namespace __jni_impl::android::renderscript
 			"()Landroid/content/Context;"
 		);
 	}
+	QAndroidJniObject RenderScript::getErrorHandler()
+	{
+		return __thiz.callObjectMethod(
+			"getErrorHandler",
+			"()Landroid/renderscript/RenderScript$RSErrorHandler;"
+		);
+	}
+	QAndroidJniObject RenderScript::getMessageHandler()
+	{
+		return __thiz.callObjectMethod(
+			"getMessageHandler",
+			"()Landroid/renderscript/RenderScript$RSMessageHandler;"
+		);
+	}
 	void RenderScript::sendMessage(jint arg0, jintArray arg1)
 	{
 		__thiz.callMethod<void>(
@@ -230,6 +206,30 @@ namespace __jni_impl::android::renderscript
 			"(I[I)V",
 			arg0,
 			arg1
+		);
+	}
+	void RenderScript::setErrorHandler(__jni_impl::android::renderscript::RenderScript_RSErrorHandler arg0)
+	{
+		__thiz.callMethod<void>(
+			"setErrorHandler",
+			"(Landroid/renderscript/RenderScript$RSErrorHandler;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void RenderScript::setMessageHandler(__jni_impl::android::renderscript::RenderScript_RSMessageHandler arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMessageHandler",
+			"(Landroid/renderscript/RenderScript$RSMessageHandler;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void RenderScript::setPriority(__jni_impl::android::renderscript::RenderScript_Priority arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPriority",
+			"(Landroid/renderscript/RenderScript$Priority;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::renderscript

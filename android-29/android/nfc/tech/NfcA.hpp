@@ -22,16 +22,16 @@ namespace __jni_impl::android::nfc::tech
 		
 		// Methods
 		static QAndroidJniObject get(__jni_impl::android::nfc::Tag arg0);
-		void connect();
 		void close();
-		QAndroidJniObject getTag();
-		jbyteArray transceive(jbyteArray arg0);
+		void connect();
+		jbyteArray getAtqa();
 		jint getMaxTransceiveLength();
-		void setTimeout(jint arg0);
+		jshort getSak();
+		QAndroidJniObject getTag();
 		jint getTimeout();
 		jboolean isConnected();
-		jbyteArray getAtqa();
-		jshort getSak();
+		void setTimeout(jint arg0);
+		jbyteArray transceive(jbyteArray arg0);
 	};
 } // namespace __jni_impl::android::nfc::tech
 
@@ -59,13 +59,6 @@ namespace __jni_impl::android::nfc::tech
 			arg0.__jniObject().object()
 		);
 	}
-	void NfcA::connect()
-	{
-		__thiz.callMethod<void>(
-			"connect",
-			"()V"
-		);
-	}
 	void NfcA::close()
 	{
 		__thiz.callMethod<void>(
@@ -73,19 +66,18 @@ namespace __jni_impl::android::nfc::tech
 			"()V"
 		);
 	}
-	QAndroidJniObject NfcA::getTag()
+	void NfcA::connect()
 	{
-		return __thiz.callObjectMethod(
-			"getTag",
-			"()Landroid/nfc/Tag;"
+		__thiz.callMethod<void>(
+			"connect",
+			"()V"
 		);
 	}
-	jbyteArray NfcA::transceive(jbyteArray arg0)
+	jbyteArray NfcA::getAtqa()
 	{
 		return __thiz.callObjectMethod(
-			"transceive",
-			"([B)[B",
-			arg0
+			"getAtqa",
+			"()[B"
 		).object<jbyteArray>();
 	}
 	jint NfcA::getMaxTransceiveLength()
@@ -95,12 +87,18 @@ namespace __jni_impl::android::nfc::tech
 			"()I"
 		);
 	}
-	void NfcA::setTimeout(jint arg0)
+	jshort NfcA::getSak()
 	{
-		__thiz.callMethod<void>(
-			"setTimeout",
-			"(I)V",
-			arg0
+		return __thiz.callMethod<jshort>(
+			"getSak",
+			"()S"
+		);
+	}
+	QAndroidJniObject NfcA::getTag()
+	{
+		return __thiz.callObjectMethod(
+			"getTag",
+			"()Landroid/nfc/Tag;"
 		);
 	}
 	jint NfcA::getTimeout()
@@ -117,19 +115,21 @@ namespace __jni_impl::android::nfc::tech
 			"()Z"
 		);
 	}
-	jbyteArray NfcA::getAtqa()
+	void NfcA::setTimeout(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTimeout",
+			"(I)V",
+			arg0
+		);
+	}
+	jbyteArray NfcA::transceive(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getAtqa",
-			"()[B"
+			"transceive",
+			"([B)[B",
+			arg0
 		).object<jbyteArray>();
-	}
-	jshort NfcA::getSak()
-	{
-		return __thiz.callMethod<jshort>(
-			"getSak",
-			"()S"
-		);
 	}
 } // namespace __jni_impl::android::nfc::tech
 

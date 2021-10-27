@@ -33,9 +33,9 @@ namespace __jni_impl::android::renderscript
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getType();
-		QAndroidJniObject getElement();
 		QAndroidJniObject getAllocation();
+		QAndroidJniObject getElement();
+		QAndroidJniObject getType();
 		void updateAllocation();
 	};
 } // namespace __jni_impl::android::renderscript
@@ -58,11 +58,11 @@ namespace __jni_impl::android::renderscript
 	}
 	
 	// Methods
-	QAndroidJniObject Script_FieldBase::getType()
+	QAndroidJniObject Script_FieldBase::getAllocation()
 	{
 		return __thiz.callObjectMethod(
-			"getType",
-			"()Landroid/renderscript/Type;"
+			"getAllocation",
+			"()Landroid/renderscript/Allocation;"
 		);
 	}
 	QAndroidJniObject Script_FieldBase::getElement()
@@ -72,11 +72,11 @@ namespace __jni_impl::android::renderscript
 			"()Landroid/renderscript/Element;"
 		);
 	}
-	QAndroidJniObject Script_FieldBase::getAllocation()
+	QAndroidJniObject Script_FieldBase::getType()
 	{
 		return __thiz.callObjectMethod(
-			"getAllocation",
-			"()Landroid/renderscript/Allocation;"
+			"getType",
+			"()Landroid/renderscript/Type;"
 		);
 	}
 	void Script_FieldBase::updateAllocation()

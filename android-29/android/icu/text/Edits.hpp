@@ -21,17 +21,17 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		void reset();
-		void addUnchanged(jint arg0);
 		void addReplace(jint arg0, jint arg1);
-		jint lengthDelta();
-		jboolean hasChanges();
-		jint numberOfChanges();
+		void addUnchanged(jint arg0);
 		QAndroidJniObject getCoarseChangesIterator();
 		QAndroidJniObject getCoarseIterator();
 		QAndroidJniObject getFineChangesIterator();
 		QAndroidJniObject getFineIterator();
+		jboolean hasChanges();
+		jint lengthDelta();
 		QAndroidJniObject mergeAndAppend(__jni_impl::android::icu::text::Edits arg0, __jni_impl::android::icu::text::Edits arg1);
+		jint numberOfChanges();
+		void reset();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -51,21 +51,6 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	void Edits::reset()
-	{
-		__thiz.callMethod<void>(
-			"reset",
-			"()V"
-		);
-	}
-	void Edits::addUnchanged(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"addUnchanged",
-			"(I)V",
-			arg0
-		);
-	}
 	void Edits::addReplace(jint arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -75,25 +60,12 @@ namespace __jni_impl::android::icu::text
 			arg1
 		);
 	}
-	jint Edits::lengthDelta()
+	void Edits::addUnchanged(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"lengthDelta",
-			"()I"
-		);
-	}
-	jboolean Edits::hasChanges()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasChanges",
-			"()Z"
-		);
-	}
-	jint Edits::numberOfChanges()
-	{
-		return __thiz.callMethod<jint>(
-			"numberOfChanges",
-			"()I"
+		__thiz.callMethod<void>(
+			"addUnchanged",
+			"(I)V",
+			arg0
 		);
 	}
 	QAndroidJniObject Edits::getCoarseChangesIterator()
@@ -124,6 +96,20 @@ namespace __jni_impl::android::icu::text
 			"()Landroid/icu/text/Edits$Iterator;"
 		);
 	}
+	jboolean Edits::hasChanges()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasChanges",
+			"()Z"
+		);
+	}
+	jint Edits::lengthDelta()
+	{
+		return __thiz.callMethod<jint>(
+			"lengthDelta",
+			"()I"
+		);
+	}
 	QAndroidJniObject Edits::mergeAndAppend(__jni_impl::android::icu::text::Edits arg0, __jni_impl::android::icu::text::Edits arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -131,6 +117,20 @@ namespace __jni_impl::android::icu::text
 			"(Landroid/icu/text/Edits;Landroid/icu/text/Edits;)Landroid/icu/text/Edits;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
+		);
+	}
+	jint Edits::numberOfChanges()
+	{
+		return __thiz.callMethod<jint>(
+			"numberOfChanges",
+			"()I"
+		);
+	}
+	void Edits::reset()
+	{
+		__thiz.callMethod<void>(
+			"reset",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::icu::text

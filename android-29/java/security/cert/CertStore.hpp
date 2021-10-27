@@ -5,17 +5,17 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::security::cert
+namespace __jni_impl::java::security
 {
-	class CertStoreSpi;
+	class NoSuchAlgorithmException;
 }
 namespace __jni_impl::java::security
 {
 	class Provider;
 }
-namespace __jni_impl::java::security
+namespace __jni_impl::java::security::cert
 {
-	class NoSuchAlgorithmException;
+	class CertStoreSpi;
 }
 
 namespace __jni_impl::java::security::cert
@@ -29,24 +29,24 @@ namespace __jni_impl::java::security::cert
 		void __constructor();
 		
 		// Methods
+		static jstring getDefaultType();
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::__JniBaseClass arg1, jstring arg2);
 		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2);
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::Provider arg2);
 		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::Provider arg2);
-		QAndroidJniObject getCertificates(__jni_impl::__JniBaseClass arg0);
-		jstring getType();
-		QAndroidJniObject getProvider();
 		QAndroidJniObject getCRLs(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getCertStoreParameters();
-		static jstring getDefaultType();
+		QAndroidJniObject getCertificates(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getProvider();
+		jstring getType();
 	};
 } // namespace __jni_impl::java::security::cert
 
-#include "CertStoreSpi.hpp"
-#include "../Provider.hpp"
 #include "../NoSuchAlgorithmException.hpp"
+#include "../Provider.hpp"
+#include "CertStoreSpi.hpp"
 
 namespace __jni_impl::java::security::cert
 {
@@ -61,6 +61,14 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
+	jstring CertStore::getDefaultType()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.cert.CertStore",
+			"getDefaultType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	QAndroidJniObject CertStore::getInstance(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -125,28 +133,6 @@ namespace __jni_impl::java::security::cert
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject CertStore::getCertificates(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getCertificates",
-			"(Ljava/security/cert/CertSelector;)Ljava/util/Collection;",
-			arg0.__jniObject().object()
-		);
-	}
-	jstring CertStore::getType()
-	{
-		return __thiz.callObjectMethod(
-			"getType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject CertStore::getProvider()
-	{
-		return __thiz.callObjectMethod(
-			"getProvider",
-			"()Ljava/security/Provider;"
-		);
-	}
 	QAndroidJniObject CertStore::getCRLs(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -162,11 +148,25 @@ namespace __jni_impl::java::security::cert
 			"()Ljava/security/cert/CertStoreParameters;"
 		);
 	}
-	jstring CertStore::getDefaultType()
+	QAndroidJniObject CertStore::getCertificates(__jni_impl::__JniBaseClass arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.cert.CertStore",
-			"getDefaultType",
+		return __thiz.callObjectMethod(
+			"getCertificates",
+			"(Ljava/security/cert/CertSelector;)Ljava/util/Collection;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject CertStore::getProvider()
+	{
+		return __thiz.callObjectMethod(
+			"getProvider",
+			"()Ljava/security/Provider;"
+		);
+	}
+	jstring CertStore::getType()
+	{
+		return __thiz.callObjectMethod(
+			"getType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

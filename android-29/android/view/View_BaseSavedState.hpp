@@ -24,9 +24,9 @@ namespace __jni_impl::android::view
 		static QAndroidJniObject CREATOR();
 		
 		// Constructors
+		void __constructor(__jni_impl::android::os::Parcel arg0);
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		void __constructor(__jni_impl::android::os::Parcel arg0, __jni_impl::java::lang::ClassLoader arg1);
-		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
@@ -49,6 +49,14 @@ namespace __jni_impl::android::view
 	}
 	
 	// Constructors
+	void View_BaseSavedState::__constructor(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.View$BaseSavedState",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void View_BaseSavedState::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -64,14 +72,6 @@ namespace __jni_impl::android::view
 			"(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	void View_BaseSavedState::__constructor(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.View$BaseSavedState",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	
@@ -93,6 +93,11 @@ namespace android::view
 	{
 	public:
 		View_BaseSavedState(QAndroidJniObject obj) { __thiz = obj; }
+		View_BaseSavedState(__jni_impl::android::os::Parcel arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		View_BaseSavedState(__jni_impl::__JniBaseClass arg0)
 		{
 			__constructor(
@@ -103,11 +108,6 @@ namespace android::view
 			__constructor(
 				arg0,
 				arg1);
-		}
-		View_BaseSavedState(__jni_impl::android::os::Parcel arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::view

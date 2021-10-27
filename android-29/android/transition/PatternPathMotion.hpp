@@ -6,13 +6,13 @@
 #include "../../__JniBaseClass.hpp"
 #include "PathMotion.hpp"
 
-namespace __jni_impl::android::graphics
-{
-	class Path;
-}
 namespace __jni_impl::android::content
 {
 	class Context;
+}
+namespace __jni_impl::android::graphics
+{
+	class Path;
 }
 
 namespace __jni_impl::android::transition
@@ -23,9 +23,9 @@ namespace __jni_impl::android::transition
 		// Fields
 		
 		// Constructors
+		void __constructor();
 		void __constructor(__jni_impl::android::graphics::Path arg0);
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
-		void __constructor();
 		
 		// Methods
 		QAndroidJniObject getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
@@ -34,14 +34,21 @@ namespace __jni_impl::android::transition
 	};
 } // namespace __jni_impl::android::transition
 
-#include "../graphics/Path.hpp"
 #include "../content/Context.hpp"
+#include "../graphics/Path.hpp"
 
 namespace __jni_impl::android::transition
 {
 	// Fields
 	
 	// Constructors
+	void PatternPathMotion::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.transition.PatternPathMotion",
+			"()V"
+		);
+	}
 	void PatternPathMotion::__constructor(__jni_impl::android::graphics::Path arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -57,13 +64,6 @@ namespace __jni_impl::android::transition
 			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	void PatternPathMotion::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.transition.PatternPathMotion",
-			"()V"
 		);
 	}
 	
@@ -102,6 +102,10 @@ namespace android::transition
 	{
 	public:
 		PatternPathMotion(QAndroidJniObject obj) { __thiz = obj; }
+		PatternPathMotion()
+		{
+			__constructor();
+		}
 		PatternPathMotion(__jni_impl::android::graphics::Path arg0)
 		{
 			__constructor(
@@ -112,10 +116,6 @@ namespace android::transition
 			__constructor(
 				arg0,
 				arg1);
-		}
-		PatternPathMotion()
-		{
-			__constructor();
 		}
 	};
 } // namespace android::transition

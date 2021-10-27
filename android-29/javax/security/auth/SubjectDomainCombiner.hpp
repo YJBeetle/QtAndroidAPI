@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::javax::security::auth
-{
-	class Subject;
-}
 namespace __jni_impl::java::security
 {
 	class ProtectionDomain;
+}
+namespace __jni_impl::javax::security::auth
+{
+	class Subject;
 }
 
 namespace __jni_impl::javax::security::auth
@@ -30,8 +30,8 @@ namespace __jni_impl::javax::security::auth
 	};
 } // namespace __jni_impl::javax::security::auth
 
-#include "Subject.hpp"
 #include "../../../java/security/ProtectionDomain.hpp"
+#include "Subject.hpp"
 
 namespace __jni_impl::javax::security::auth
 {

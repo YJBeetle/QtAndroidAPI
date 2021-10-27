@@ -6,17 +6,17 @@
 #include "../../../__JniBaseClass.hpp"
 #include "CaseMap.hpp"
 
-namespace __jni_impl::java::util
+namespace __jni_impl::android::icu::text
 {
-	class Locale;
+	class CaseMap;
 }
 namespace __jni_impl::android::icu::text
 {
 	class Edits;
 }
-namespace __jni_impl::android::icu::text
+namespace __jni_impl::java::util
 {
-	class CaseMap;
+	class Locale;
 }
 
 namespace __jni_impl::android::icu::text
@@ -38,9 +38,9 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "../../../java/util/Locale.hpp"
-#include "Edits.hpp"
 #include "CaseMap.hpp"
+#include "Edits.hpp"
+#include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::icu::text
 {

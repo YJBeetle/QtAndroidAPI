@@ -35,20 +35,20 @@ namespace __jni_impl::android::graphics::drawable
 		void __constructor();
 		
 		// Methods
-		void run();
+		void addFrame(__jni_impl::android::graphics::drawable::Drawable arg0, jint arg1);
+		jint getDuration(jint arg0);
+		QAndroidJniObject getFrame(jint arg0);
+		jint getNumberOfFrames();
 		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
+		jboolean isOneShot();
+		jboolean isRunning();
+		QAndroidJniObject mutate();
+		void run();
+		void setOneShot(jboolean arg0);
+		jboolean setVisible(jboolean arg0, jboolean arg1);
 		void start();
 		void stop();
-		jint getDuration(jint arg0);
-		jboolean isRunning();
-		jboolean setVisible(jboolean arg0, jboolean arg1);
 		void unscheduleSelf(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject mutate();
-		jint getNumberOfFrames();
-		QAndroidJniObject getFrame(jint arg0);
-		jboolean isOneShot();
-		void setOneShot(jboolean arg0);
-		void addFrame(__jni_impl::android::graphics::drawable::Drawable arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
@@ -71,11 +71,36 @@ namespace __jni_impl::android::graphics::drawable
 	}
 	
 	// Methods
-	void AnimationDrawable::run()
+	void AnimationDrawable::addFrame(__jni_impl::android::graphics::drawable::Drawable arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
-			"run",
-			"()V"
+			"addFrame",
+			"(Landroid/graphics/drawable/Drawable;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jint AnimationDrawable::getDuration(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getDuration",
+			"(I)I",
+			arg0
+		);
+	}
+	QAndroidJniObject AnimationDrawable::getFrame(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getFrame",
+			"(I)Landroid/graphics/drawable/Drawable;",
+			arg0
+		);
+	}
+	jint AnimationDrawable::getNumberOfFrames()
+	{
+		return __thiz.callMethod<jint>(
+			"getNumberOfFrames",
+			"()I"
 		);
 	}
 	void AnimationDrawable::inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3)
@@ -87,6 +112,51 @@ namespace __jni_impl::android::graphics::drawable
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
+		);
+	}
+	jboolean AnimationDrawable::isOneShot()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isOneShot",
+			"()Z"
+		);
+	}
+	jboolean AnimationDrawable::isRunning()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isRunning",
+			"()Z"
+		);
+	}
+	QAndroidJniObject AnimationDrawable::mutate()
+	{
+		return __thiz.callObjectMethod(
+			"mutate",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
+	}
+	void AnimationDrawable::run()
+	{
+		__thiz.callMethod<void>(
+			"run",
+			"()V"
+		);
+	}
+	void AnimationDrawable::setOneShot(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOneShot",
+			"(Z)V",
+			arg0
+		);
+	}
+	jboolean AnimationDrawable::setVisible(jboolean arg0, jboolean arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setVisible",
+			"(ZZ)Z",
+			arg0,
+			arg1
 		);
 	}
 	void AnimationDrawable::start()
@@ -103,82 +173,12 @@ namespace __jni_impl::android::graphics::drawable
 			"()V"
 		);
 	}
-	jint AnimationDrawable::getDuration(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getDuration",
-			"(I)I",
-			arg0
-		);
-	}
-	jboolean AnimationDrawable::isRunning()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isRunning",
-			"()Z"
-		);
-	}
-	jboolean AnimationDrawable::setVisible(jboolean arg0, jboolean arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setVisible",
-			"(ZZ)Z",
-			arg0,
-			arg1
-		);
-	}
 	void AnimationDrawable::unscheduleSelf(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"unscheduleSelf",
 			"(Ljava/lang/Runnable;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject AnimationDrawable::mutate()
-	{
-		return __thiz.callObjectMethod(
-			"mutate",
-			"()Landroid/graphics/drawable/Drawable;"
-		);
-	}
-	jint AnimationDrawable::getNumberOfFrames()
-	{
-		return __thiz.callMethod<jint>(
-			"getNumberOfFrames",
-			"()I"
-		);
-	}
-	QAndroidJniObject AnimationDrawable::getFrame(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getFrame",
-			"(I)Landroid/graphics/drawable/Drawable;",
-			arg0
-		);
-	}
-	jboolean AnimationDrawable::isOneShot()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isOneShot",
-			"()Z"
-		);
-	}
-	void AnimationDrawable::setOneShot(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOneShot",
-			"(Z)V",
-			arg0
-		);
-	}
-	void AnimationDrawable::addFrame(__jni_impl::android::graphics::drawable::Drawable arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"addFrame",
-			"(Landroid/graphics/drawable/Drawable;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 } // namespace __jni_impl::android::graphics::drawable

@@ -5,17 +5,17 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view::accessibility
+namespace __jni_impl::android::graphics
 {
-	class AccessibilityNodeInfo;
+	class Rect;
 }
 namespace __jni_impl::android::os
 {
 	class Parcel;
 }
-namespace __jni_impl::android::graphics
+namespace __jni_impl::android::view::accessibility
 {
-	class Rect;
+	class AccessibilityNodeInfo;
 }
 
 namespace __jni_impl::android::view::accessibility
@@ -35,34 +35,34 @@ namespace __jni_impl::android::view::accessibility
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		QAndroidJniObject getParent();
-		jint getId();
-		jint getLayer();
-		QAndroidJniObject getRoot();
-		jint getType();
-		jboolean isActive();
-		jint getChildCount();
-		jboolean isFocused();
-		jboolean isAccessibilityFocused();
 		static QAndroidJniObject obtain();
 		static QAndroidJniObject obtain(__jni_impl::android::view::accessibility::AccessibilityWindowInfo arg0);
-		void recycle();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jboolean equals(jobject arg0);
 		QAndroidJniObject getAnchor();
 		void getBoundsInScreen(__jni_impl::android::graphics::Rect arg0);
-		jboolean isInPictureInPictureMode();
-		jstring getTitle();
 		QAndroidJniObject getChild(jint arg0);
+		jint getChildCount();
+		jint getId();
+		jint getLayer();
+		QAndroidJniObject getParent();
+		QAndroidJniObject getRoot();
+		jstring getTitle();
+		jint getType();
+		jint hashCode();
+		jboolean isAccessibilityFocused();
+		jboolean isActive();
+		jboolean isFocused();
+		jboolean isInPictureInPictureMode();
+		void recycle();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::accessibility
 
-#include "AccessibilityNodeInfo.hpp"
-#include "../../os/Parcel.hpp"
 #include "../../graphics/Rect.hpp"
+#include "../../os/Parcel.hpp"
+#include "AccessibilityNodeInfo.hpp"
 
 namespace __jni_impl::android::view::accessibility
 {
@@ -120,91 +120,6 @@ namespace __jni_impl::android::view::accessibility
 	}
 	
 	// Methods
-	jboolean AccessibilityWindowInfo::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring AccessibilityWindowInfo::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint AccessibilityWindowInfo::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	QAndroidJniObject AccessibilityWindowInfo::getParent()
-	{
-		return __thiz.callObjectMethod(
-			"getParent",
-			"()Landroid/view/accessibility/AccessibilityWindowInfo;"
-		);
-	}
-	jint AccessibilityWindowInfo::getId()
-	{
-		return __thiz.callMethod<jint>(
-			"getId",
-			"()I"
-		);
-	}
-	jint AccessibilityWindowInfo::getLayer()
-	{
-		return __thiz.callMethod<jint>(
-			"getLayer",
-			"()I"
-		);
-	}
-	QAndroidJniObject AccessibilityWindowInfo::getRoot()
-	{
-		return __thiz.callObjectMethod(
-			"getRoot",
-			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
-		);
-	}
-	jint AccessibilityWindowInfo::getType()
-	{
-		return __thiz.callMethod<jint>(
-			"getType",
-			"()I"
-		);
-	}
-	jboolean AccessibilityWindowInfo::isActive()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isActive",
-			"()Z"
-		);
-	}
-	jint AccessibilityWindowInfo::getChildCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getChildCount",
-			"()I"
-		);
-	}
-	jboolean AccessibilityWindowInfo::isFocused()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFocused",
-			"()Z"
-		);
-	}
-	jboolean AccessibilityWindowInfo::isAccessibilityFocused()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAccessibilityFocused",
-			"()Z"
-		);
-	}
 	QAndroidJniObject AccessibilityWindowInfo::obtain()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -222,13 +137,6 @@ namespace __jni_impl::android::view::accessibility
 			arg0.__jniObject().object()
 		);
 	}
-	void AccessibilityWindowInfo::recycle()
-	{
-		__thiz.callMethod<void>(
-			"recycle",
-			"()V"
-		);
-	}
 	jint AccessibilityWindowInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -236,13 +144,12 @@ namespace __jni_impl::android::view::accessibility
 			"()I"
 		);
 	}
-	void AccessibilityWindowInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jboolean AccessibilityWindowInfo::equals(jobject arg0)
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 	QAndroidJniObject AccessibilityWindowInfo::getAnchor()
@@ -260,11 +167,47 @@ namespace __jni_impl::android::view::accessibility
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean AccessibilityWindowInfo::isInPictureInPictureMode()
+	QAndroidJniObject AccessibilityWindowInfo::getChild(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isInPictureInPictureMode",
-			"()Z"
+		return __thiz.callObjectMethod(
+			"getChild",
+			"(I)Landroid/view/accessibility/AccessibilityWindowInfo;",
+			arg0
+		);
+	}
+	jint AccessibilityWindowInfo::getChildCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getChildCount",
+			"()I"
+		);
+	}
+	jint AccessibilityWindowInfo::getId()
+	{
+		return __thiz.callMethod<jint>(
+			"getId",
+			"()I"
+		);
+	}
+	jint AccessibilityWindowInfo::getLayer()
+	{
+		return __thiz.callMethod<jint>(
+			"getLayer",
+			"()I"
+		);
+	}
+	QAndroidJniObject AccessibilityWindowInfo::getParent()
+	{
+		return __thiz.callObjectMethod(
+			"getParent",
+			"()Landroid/view/accessibility/AccessibilityWindowInfo;"
+		);
+	}
+	QAndroidJniObject AccessibilityWindowInfo::getRoot()
+	{
+		return __thiz.callObjectMethod(
+			"getRoot",
+			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
 	jstring AccessibilityWindowInfo::getTitle()
@@ -274,12 +217,69 @@ namespace __jni_impl::android::view::accessibility
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	QAndroidJniObject AccessibilityWindowInfo::getChild(jint arg0)
+	jint AccessibilityWindowInfo::getType()
+	{
+		return __thiz.callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
+	jint AccessibilityWindowInfo::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jboolean AccessibilityWindowInfo::isAccessibilityFocused()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAccessibilityFocused",
+			"()Z"
+		);
+	}
+	jboolean AccessibilityWindowInfo::isActive()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isActive",
+			"()Z"
+		);
+	}
+	jboolean AccessibilityWindowInfo::isFocused()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFocused",
+			"()Z"
+		);
+	}
+	jboolean AccessibilityWindowInfo::isInPictureInPictureMode()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isInPictureInPictureMode",
+			"()Z"
+		);
+	}
+	void AccessibilityWindowInfo::recycle()
+	{
+		__thiz.callMethod<void>(
+			"recycle",
+			"()V"
+		);
+	}
+	jstring AccessibilityWindowInfo::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getChild",
-			"(I)Landroid/view/accessibility/AccessibilityWindowInfo;",
-			arg0
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void AccessibilityWindowInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::view::accessibility

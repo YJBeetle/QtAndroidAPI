@@ -6,13 +6,13 @@
 #include "../../__JniBaseClass.hpp"
 #include "../view/ViewGroup_LayoutParams.hpp"
 
-namespace __jni_impl::android::view
-{
-	class ViewGroup_LayoutParams;
-}
 namespace __jni_impl::android::content
 {
 	class Context;
+}
+namespace __jni_impl::android::view
+{
+	class ViewGroup_LayoutParams;
 }
 
 namespace __jni_impl::android::widget
@@ -35,8 +35,8 @@ namespace __jni_impl::android::widget
 	};
 } // namespace __jni_impl::android::widget
 
-#include "../view/ViewGroup_LayoutParams.hpp"
 #include "../content/Context.hpp"
+#include "../view/ViewGroup_LayoutParams.hpp"
 
 namespace __jni_impl::android::widget
 {

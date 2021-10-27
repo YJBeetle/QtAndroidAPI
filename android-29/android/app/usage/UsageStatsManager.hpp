@@ -30,15 +30,15 @@ namespace __jni_impl::android::app::usage
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject queryUsageStats(jint arg0, jlong arg1, jlong arg2);
+		jint getAppStandbyBucket();
+		jboolean isAppInactive(jstring arg0);
+		jboolean isAppInactive(const QString &arg0);
+		QAndroidJniObject queryAndAggregateUsageStats(jlong arg0, jlong arg1);
 		QAndroidJniObject queryConfigurations(jint arg0, jlong arg1, jlong arg2);
 		QAndroidJniObject queryEventStats(jint arg0, jlong arg1, jlong arg2);
 		QAndroidJniObject queryEvents(jlong arg0, jlong arg1);
 		QAndroidJniObject queryEventsForSelf(jlong arg0, jlong arg1);
-		QAndroidJniObject queryAndAggregateUsageStats(jlong arg0, jlong arg1);
-		jboolean isAppInactive(jstring arg0);
-		jboolean isAppInactive(const QString &arg0);
-		jint getAppStandbyBucket();
+		QAndroidJniObject queryUsageStats(jint arg0, jlong arg1, jlong arg2);
 	};
 } // namespace __jni_impl::android::app::usage
 
@@ -120,14 +120,36 @@ namespace __jni_impl::android::app::usage
 	}
 	
 	// Methods
-	QAndroidJniObject UsageStatsManager::queryUsageStats(jint arg0, jlong arg1, jlong arg2)
+	jint UsageStatsManager::getAppStandbyBucket()
+	{
+		return __thiz.callMethod<jint>(
+			"getAppStandbyBucket",
+			"()I"
+		);
+	}
+	jboolean UsageStatsManager::isAppInactive(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAppInactive",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jboolean UsageStatsManager::isAppInactive(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAppInactive",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject UsageStatsManager::queryAndAggregateUsageStats(jlong arg0, jlong arg1)
 	{
 		return __thiz.callObjectMethod(
-			"queryUsageStats",
-			"(IJJ)Ljava/util/List;",
+			"queryAndAggregateUsageStats",
+			"(JJ)Ljava/util/Map;",
 			arg0,
-			arg1,
-			arg2
+			arg1
 		);
 	}
 	QAndroidJniObject UsageStatsManager::queryConfigurations(jint arg0, jlong arg1, jlong arg2)
@@ -168,36 +190,14 @@ namespace __jni_impl::android::app::usage
 			arg1
 		);
 	}
-	QAndroidJniObject UsageStatsManager::queryAndAggregateUsageStats(jlong arg0, jlong arg1)
+	QAndroidJniObject UsageStatsManager::queryUsageStats(jint arg0, jlong arg1, jlong arg2)
 	{
 		return __thiz.callObjectMethod(
-			"queryAndAggregateUsageStats",
-			"(JJ)Ljava/util/Map;",
+			"queryUsageStats",
+			"(IJJ)Ljava/util/List;",
 			arg0,
-			arg1
-		);
-	}
-	jboolean UsageStatsManager::isAppInactive(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAppInactive",
-			"(Ljava/lang/String;)Z",
-			arg0
-		);
-	}
-	jboolean UsageStatsManager::isAppInactive(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAppInactive",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jint UsageStatsManager::getAppStandbyBucket()
-	{
-		return __thiz.callMethod<jint>(
-			"getAppStandbyBucket",
-			"()I"
+			arg1,
+			arg2
 		);
 	}
 } // namespace __jni_impl::android::app::usage

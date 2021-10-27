@@ -26,15 +26,15 @@ namespace __jni_impl::android::print
 		void __constructor();
 		
 		// Methods
-		jstring getName();
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jlong getDataSize();
-		jint getContentType();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jboolean equals(jobject arg0);
+		jint getContentType();
+		jlong getDataSize();
+		jstring getName();
 		jint getPageCount();
+		jint hashCode();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::print
 
@@ -89,12 +89,12 @@ namespace __jni_impl::android::print
 	}
 	
 	// Methods
-	jstring PrintDocumentInfo::getName()
+	jint PrintDocumentInfo::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
 	jboolean PrintDocumentInfo::equals(jobject arg0)
 	{
@@ -104,17 +104,10 @@ namespace __jni_impl::android::print
 			arg0
 		);
 	}
-	jstring PrintDocumentInfo::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint PrintDocumentInfo::hashCode()
+	jint PrintDocumentInfo::getContentType()
 	{
 		return __thiz.callMethod<jint>(
-			"hashCode",
+			"getContentType",
 			"()I"
 		);
 	}
@@ -125,19 +118,33 @@ namespace __jni_impl::android::print
 			"()J"
 		);
 	}
-	jint PrintDocumentInfo::getContentType()
+	jstring PrintDocumentInfo::getName()
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint PrintDocumentInfo::getPageCount()
 	{
 		return __thiz.callMethod<jint>(
-			"getContentType",
+			"getPageCount",
 			"()I"
 		);
 	}
-	jint PrintDocumentInfo::describeContents()
+	jint PrintDocumentInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
 		);
+	}
+	jstring PrintDocumentInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void PrintDocumentInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -146,13 +153,6 @@ namespace __jni_impl::android::print
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint PrintDocumentInfo::getPageCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getPageCount",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::print

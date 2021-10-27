@@ -15,8 +15,8 @@ namespace __jni_impl::java::io
 	{
 	public:
 		// Fields
-		jint length();
 		jboolean eof();
+		jint length();
 		
 		// Constructors
 		void __constructor();
@@ -29,16 +29,16 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	// Fields
-	jint OptionalDataException::length()
-	{
-		return __thiz.getField<jint>(
-			"length"
-		);
-	}
 	jboolean OptionalDataException::eof()
 	{
 		return __thiz.getField<jboolean>(
 			"eof"
+		);
+	}
+	jint OptionalDataException::length()
+	{
+		return __thiz.getField<jint>(
+			"length"
 		);
 	}
 	

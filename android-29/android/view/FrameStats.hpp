@@ -18,11 +18,11 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		jlong getRefreshPeriodNano();
-		jint getFrameCount();
-		jlong getStartTimeNano();
 		jlong getEndTimeNano();
+		jint getFrameCount();
 		jlong getFramePresentedTimeNano(jint arg0);
+		jlong getRefreshPeriodNano();
+		jlong getStartTimeNano();
 	};
 } // namespace __jni_impl::android::view
 
@@ -48,10 +48,10 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jlong FrameStats::getRefreshPeriodNano()
+	jlong FrameStats::getEndTimeNano()
 	{
 		return __thiz.callMethod<jlong>(
-			"getRefreshPeriodNano",
+			"getEndTimeNano",
 			"()J"
 		);
 	}
@@ -62,26 +62,26 @@ namespace __jni_impl::android::view
 			"()I"
 		);
 	}
-	jlong FrameStats::getStartTimeNano()
-	{
-		return __thiz.callMethod<jlong>(
-			"getStartTimeNano",
-			"()J"
-		);
-	}
-	jlong FrameStats::getEndTimeNano()
-	{
-		return __thiz.callMethod<jlong>(
-			"getEndTimeNano",
-			"()J"
-		);
-	}
 	jlong FrameStats::getFramePresentedTimeNano(jint arg0)
 	{
 		return __thiz.callMethod<jlong>(
 			"getFramePresentedTimeNano",
 			"(I)J",
 			arg0
+		);
+	}
+	jlong FrameStats::getRefreshPeriodNano()
+	{
+		return __thiz.callMethod<jlong>(
+			"getRefreshPeriodNano",
+			"()J"
+		);
+	}
+	jlong FrameStats::getStartTimeNano()
+	{
+		return __thiz.callMethod<jlong>(
+			"getStartTimeNano",
+			"()J"
 		);
 	}
 } // namespace __jni_impl::android::view

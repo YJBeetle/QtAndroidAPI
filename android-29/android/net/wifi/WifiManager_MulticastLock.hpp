@@ -21,11 +21,11 @@ namespace __jni_impl::android::net::wifi
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		void release();
 		void acquire();
-		void setReferenceCounted(jboolean arg0);
 		jboolean isHeld();
+		void release();
+		void setReferenceCounted(jboolean arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::android::net::wifi
 
@@ -44,24 +44,24 @@ namespace __jni_impl::android::net::wifi
 	}
 	
 	// Methods
-	jstring WifiManager_MulticastLock::toString()
+	void WifiManager_MulticastLock::acquire()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"acquire",
+			"()V"
+		);
+	}
+	jboolean WifiManager_MulticastLock::isHeld()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isHeld",
+			"()Z"
+		);
 	}
 	void WifiManager_MulticastLock::release()
 	{
 		__thiz.callMethod<void>(
 			"release",
-			"()V"
-		);
-	}
-	void WifiManager_MulticastLock::acquire()
-	{
-		__thiz.callMethod<void>(
-			"acquire",
 			"()V"
 		);
 	}
@@ -73,12 +73,12 @@ namespace __jni_impl::android::net::wifi
 			arg0
 		);
 	}
-	jboolean WifiManager_MulticastLock::isHeld()
+	jstring WifiManager_MulticastLock::toString()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isHeld",
-			"()Z"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::net::wifi
 

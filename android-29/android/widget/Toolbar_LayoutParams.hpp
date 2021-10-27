@@ -12,17 +12,17 @@ namespace __jni_impl::android::app
 {
 	class ActionBar_LayoutParams;
 }
-namespace __jni_impl::android::view
+namespace __jni_impl::android::content
 {
-	class ViewGroup_MarginLayoutParams;
+	class Context;
 }
 namespace __jni_impl::android::view
 {
 	class ViewGroup_LayoutParams;
 }
-namespace __jni_impl::android::content
+namespace __jni_impl::android::view
 {
-	class Context;
+	class ViewGroup_MarginLayoutParams;
 }
 
 namespace __jni_impl::android::widget
@@ -33,42 +33,42 @@ namespace __jni_impl::android::widget
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::android::widget::Toolbar_LayoutParams arg0);
 		void __constructor(__jni_impl::android::app::ActionBar_LayoutParams arg0);
-		void __constructor(__jni_impl::android::view::ViewGroup_MarginLayoutParams arg0);
 		void __constructor(__jni_impl::android::view::ViewGroup_LayoutParams arg0);
+		void __constructor(__jni_impl::android::view::ViewGroup_MarginLayoutParams arg0);
+		void __constructor(__jni_impl::android::widget::Toolbar_LayoutParams arg0);
+		void __constructor(jint arg0);
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(jint arg0, jint arg1);
 		void __constructor(jint arg0, jint arg1, jint arg2);
-		void __constructor(jint arg0);
 		
 		// Methods
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../app/ActionBar_LayoutParams.hpp"
-#include "../view/ViewGroup_MarginLayoutParams.hpp"
-#include "../view/ViewGroup_LayoutParams.hpp"
 #include "../content/Context.hpp"
+#include "../view/ViewGroup_LayoutParams.hpp"
+#include "../view/ViewGroup_MarginLayoutParams.hpp"
 
 namespace __jni_impl::android::widget
 {
 	// Fields
 	
 	// Constructors
-	void Toolbar_LayoutParams::__constructor(__jni_impl::android::widget::Toolbar_LayoutParams arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.widget.Toolbar$LayoutParams",
-			"(Landroid/widget/Toolbar$LayoutParams;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void Toolbar_LayoutParams::__constructor(__jni_impl::android::app::ActionBar_LayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Toolbar$LayoutParams",
 			"(Landroid/app/ActionBar$LayoutParams;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Toolbar_LayoutParams::__constructor(__jni_impl::android::view::ViewGroup_LayoutParams arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.widget.Toolbar$LayoutParams",
+			"(Landroid/view/ViewGroup$LayoutParams;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -80,12 +80,20 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	void Toolbar_LayoutParams::__constructor(__jni_impl::android::view::ViewGroup_LayoutParams arg0)
+	void Toolbar_LayoutParams::__constructor(__jni_impl::android::widget::Toolbar_LayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.Toolbar$LayoutParams",
-			"(Landroid/view/ViewGroup$LayoutParams;)V",
+			"(Landroid/widget/Toolbar$LayoutParams;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void Toolbar_LayoutParams::__constructor(jint arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.widget.Toolbar$LayoutParams",
+			"(I)V",
+			arg0
 		);
 	}
 	void Toolbar_LayoutParams::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
@@ -116,14 +124,6 @@ namespace __jni_impl::android::widget
 			arg2
 		);
 	}
-	void Toolbar_LayoutParams::__constructor(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.widget.Toolbar$LayoutParams",
-			"(I)V",
-			arg0
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::android::widget
@@ -134,12 +134,12 @@ namespace android::widget
 	{
 	public:
 		Toolbar_LayoutParams(QAndroidJniObject obj) { __thiz = obj; }
-		Toolbar_LayoutParams(__jni_impl::android::widget::Toolbar_LayoutParams arg0)
+		Toolbar_LayoutParams(__jni_impl::android::app::ActionBar_LayoutParams arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		Toolbar_LayoutParams(__jni_impl::android::app::ActionBar_LayoutParams arg0)
+		Toolbar_LayoutParams(__jni_impl::android::view::ViewGroup_LayoutParams arg0)
 		{
 			__constructor(
 				arg0);
@@ -149,7 +149,12 @@ namespace android::widget
 			__constructor(
 				arg0);
 		}
-		Toolbar_LayoutParams(__jni_impl::android::view::ViewGroup_LayoutParams arg0)
+		Toolbar_LayoutParams(__jni_impl::android::widget::Toolbar_LayoutParams arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		Toolbar_LayoutParams(jint arg0)
 		{
 			__constructor(
 				arg0);
@@ -172,11 +177,6 @@ namespace android::widget
 				arg0,
 				arg1,
 				arg2);
-		}
-		Toolbar_LayoutParams(jint arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::widget

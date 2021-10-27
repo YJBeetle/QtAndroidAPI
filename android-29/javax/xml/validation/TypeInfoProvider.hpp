@@ -17,8 +17,8 @@ namespace __jni_impl::javax::xml::validation
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getElementTypeInfo();
 		QAndroidJniObject getAttributeTypeInfo(jint arg0);
+		QAndroidJniObject getElementTypeInfo();
 		jboolean isIdAttribute(jint arg0);
 		jboolean isSpecified(jint arg0);
 	};
@@ -38,19 +38,19 @@ namespace __jni_impl::javax::xml::validation
 	}
 	
 	// Methods
-	QAndroidJniObject TypeInfoProvider::getElementTypeInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getElementTypeInfo",
-			"()Lorg/w3c/dom/TypeInfo;"
-		);
-	}
 	QAndroidJniObject TypeInfoProvider::getAttributeTypeInfo(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAttributeTypeInfo",
 			"(I)Lorg/w3c/dom/TypeInfo;",
 			arg0
+		);
+	}
+	QAndroidJniObject TypeInfoProvider::getElementTypeInfo()
+	{
+		return __thiz.callObjectMethod(
+			"getElementTypeInfo",
+			"()Lorg/w3c/dom/TypeInfo;"
 		);
 	}
 	jboolean TypeInfoProvider::isIdAttribute(jint arg0)

@@ -26,8 +26,8 @@ namespace __jni_impl::android::preference
 		// Constructors
 		void __constructor(__jni_impl::android::content::Context arg0);
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
 	};
@@ -58,6 +58,16 @@ namespace __jni_impl::android::preference
 			arg1.__jniObject().object()
 		);
 	}
+	void CheckBoxPreference::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.preference.CheckBoxPreference",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
 	void CheckBoxPreference::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
@@ -67,16 +77,6 @@ namespace __jni_impl::android::preference
 			arg1.__jniObject().object(),
 			arg2,
 			arg3
-		);
-	}
-	void CheckBoxPreference::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.preference.CheckBoxPreference",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
 		);
 	}
 	
@@ -100,6 +100,13 @@ namespace android::preference
 				arg0,
 				arg1);
 		}
+		CheckBoxPreference(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
+		{
+			__constructor(
+				arg0,
+				arg1,
+				arg2);
+		}
 		CheckBoxPreference(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 		{
 			__constructor(
@@ -107,13 +114,6 @@ namespace android::preference
 				arg1,
 				arg2,
 				arg3);
-		}
-		CheckBoxPreference(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
 		}
 	};
 } // namespace android::preference

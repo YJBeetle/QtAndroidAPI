@@ -21,12 +21,12 @@ namespace __jni_impl::android::media::tv
 		void __constructor();
 		
 		// Methods
-		void onInputStateChanged(jstring arg0, jint arg1);
-		void onInputStateChanged(const QString &arg0, jint arg1);
 		void onInputAdded(jstring arg0);
 		void onInputAdded(const QString &arg0);
 		void onInputRemoved(jstring arg0);
 		void onInputRemoved(const QString &arg0);
+		void onInputStateChanged(jstring arg0, jint arg1);
+		void onInputStateChanged(const QString &arg0, jint arg1);
 		void onInputUpdated(jstring arg0);
 		void onInputUpdated(const QString &arg0);
 		void onTvInputInfoUpdated(__jni_impl::android::media::tv::TvInputInfo arg0);
@@ -49,24 +49,6 @@ namespace __jni_impl::android::media::tv
 	}
 	
 	// Methods
-	void TvInputManager_TvInputCallback::onInputStateChanged(jstring arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"onInputStateChanged",
-			"(Ljava/lang/String;I)V",
-			arg0,
-			arg1
-		);
-	}
-	void TvInputManager_TvInputCallback::onInputStateChanged(const QString &arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"onInputStateChanged",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	void TvInputManager_TvInputCallback::onInputAdded(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -97,6 +79,24 @@ namespace __jni_impl::android::media::tv
 			"onInputRemoved",
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void TvInputManager_TvInputCallback::onInputStateChanged(jstring arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"onInputStateChanged",
+			"(Ljava/lang/String;I)V",
+			arg0,
+			arg1
+		);
+	}
+	void TvInputManager_TvInputCallback::onInputStateChanged(const QString &arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"onInputStateChanged",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
 		);
 	}
 	void TvInputManager_TvInputCallback::onInputUpdated(jstring arg0)

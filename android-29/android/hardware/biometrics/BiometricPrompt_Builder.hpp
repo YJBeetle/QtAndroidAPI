@@ -26,14 +26,14 @@ namespace __jni_impl::android::hardware::biometrics
 		
 		// Methods
 		QAndroidJniObject build();
+		QAndroidJniObject setConfirmationRequired(jboolean arg0);
+		QAndroidJniObject setDescription(jstring arg0);
+		QAndroidJniObject setDescription(const QString &arg0);
+		QAndroidJniObject setDeviceCredentialAllowed(jboolean arg0);
 		QAndroidJniObject setNegativeButton(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 		QAndroidJniObject setNegativeButton(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 		QAndroidJniObject setSubtitle(jstring arg0);
 		QAndroidJniObject setSubtitle(const QString &arg0);
-		QAndroidJniObject setDeviceCredentialAllowed(jboolean arg0);
-		QAndroidJniObject setDescription(jstring arg0);
-		QAndroidJniObject setDescription(const QString &arg0);
-		QAndroidJniObject setConfirmationRequired(jboolean arg0);
 		QAndroidJniObject setTitle(jstring arg0);
 		QAndroidJniObject setTitle(const QString &arg0);
 	};
@@ -62,6 +62,38 @@ namespace __jni_impl::android::hardware::biometrics
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/hardware/biometrics/BiometricPrompt;"
+		);
+	}
+	QAndroidJniObject BiometricPrompt_Builder::setConfirmationRequired(jboolean arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setConfirmationRequired",
+			"(Z)Landroid/hardware/biometrics/BiometricPrompt$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject BiometricPrompt_Builder::setDescription(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setDescription",
+			"(Ljava/lang/CharSequence;)Landroid/hardware/biometrics/BiometricPrompt$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject BiometricPrompt_Builder::setDescription(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setDescription",
+			"(Ljava/lang/CharSequence;)Landroid/hardware/biometrics/BiometricPrompt$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject BiometricPrompt_Builder::setDeviceCredentialAllowed(jboolean arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setDeviceCredentialAllowed",
+			"(Z)Landroid/hardware/biometrics/BiometricPrompt$Builder;",
+			arg0
 		);
 	}
 	QAndroidJniObject BiometricPrompt_Builder::setNegativeButton(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
@@ -98,38 +130,6 @@ namespace __jni_impl::android::hardware::biometrics
 			"setSubtitle",
 			"(Ljava/lang/CharSequence;)Landroid/hardware/biometrics/BiometricPrompt$Builder;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject BiometricPrompt_Builder::setDeviceCredentialAllowed(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDeviceCredentialAllowed",
-			"(Z)Landroid/hardware/biometrics/BiometricPrompt$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject BiometricPrompt_Builder::setDescription(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDescription",
-			"(Ljava/lang/CharSequence;)Landroid/hardware/biometrics/BiometricPrompt$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject BiometricPrompt_Builder::setDescription(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDescription",
-			"(Ljava/lang/CharSequence;)Landroid/hardware/biometrics/BiometricPrompt$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject BiometricPrompt_Builder::setConfirmationRequired(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setConfirmationRequired",
-			"(Z)Landroid/hardware/biometrics/BiometricPrompt$Builder;",
-			arg0
 		);
 	}
 	QAndroidJniObject BiometricPrompt_Builder::setTitle(jstring arg0)

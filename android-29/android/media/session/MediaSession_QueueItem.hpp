@@ -27,11 +27,11 @@ namespace __jni_impl::android::media::session
 		void __constructor(__jni_impl::android::media::MediaDescription arg0, jlong arg1);
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jstring toString();
 		QAndroidJniObject getDescription();
 		jlong getQueueId();
-		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media::session
@@ -70,6 +70,13 @@ namespace __jni_impl::android::media::session
 	}
 	
 	// Methods
+	jint MediaSession_QueueItem::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean MediaSession_QueueItem::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -77,13 +84,6 @@ namespace __jni_impl::android::media::session
 			"(Ljava/lang/Object;)Z",
 			arg0
 		);
-	}
-	jstring MediaSession_QueueItem::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	QAndroidJniObject MediaSession_QueueItem::getDescription()
 	{
@@ -99,12 +99,12 @@ namespace __jni_impl::android::media::session
 			"()J"
 		);
 	}
-	jint MediaSession_QueueItem::describeContents()
+	jstring MediaSession_QueueItem::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void MediaSession_QueueItem::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

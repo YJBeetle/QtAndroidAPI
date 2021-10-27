@@ -22,8 +22,8 @@ namespace __jni_impl::android::service::autofill
 		void __constructor(jarray arg0);
 		
 		// Methods
-		jstring toString();
 		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::service::autofill
@@ -53,19 +53,19 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	jstring LuhnChecksumValidator::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint LuhnChecksumValidator::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
+	}
+	jstring LuhnChecksumValidator::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void LuhnChecksumValidator::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

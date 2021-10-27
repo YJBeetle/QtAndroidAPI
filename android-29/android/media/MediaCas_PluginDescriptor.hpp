@@ -18,8 +18,8 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		jstring getName();
-		jstring toString();
 		jint getSystemId();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::media
 
@@ -44,19 +44,19 @@ namespace __jni_impl::android::media
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jstring MediaCas_PluginDescriptor::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint MediaCas_PluginDescriptor::getSystemId()
 	{
 		return __thiz.callMethod<jint>(
 			"getSystemId",
 			"()I"
 		);
+	}
+	jstring MediaCas_PluginDescriptor::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media
 

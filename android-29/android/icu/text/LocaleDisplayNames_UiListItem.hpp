@@ -26,10 +26,10 @@ namespace __jni_impl::android::icu::text
 		void __constructor(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::android::icu::util::ULocale arg1, const QString &arg2, const QString &arg3);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		static QAndroidJniObject getComparator(__jni_impl::__JniBaseClass arg0, jboolean arg1);
+		jboolean equals(jobject arg0);
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -92,28 +92,6 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jboolean LocaleDisplayNames_UiListItem::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring LocaleDisplayNames_UiListItem::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint LocaleDisplayNames_UiListItem::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	QAndroidJniObject LocaleDisplayNames_UiListItem::getComparator(__jni_impl::__JniBaseClass arg0, jboolean arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -123,6 +101,28 @@ namespace __jni_impl::android::icu::text
 			arg0.__jniObject().object(),
 			arg1
 		);
+	}
+	jboolean LocaleDisplayNames_UiListItem::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jint LocaleDisplayNames_UiListItem::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring LocaleDisplayNames_UiListItem::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::text
 

@@ -5,22 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view
-{
-	class KeyEvent;
-}
-namespace __jni_impl::android::media
-{
-	class AudioFormat;
-}
-namespace __jni_impl::android::media
-{
-	class AudioAttributes;
-}
-namespace __jni_impl::android::media
-{
-	class AudioFocusRequest;
-}
 namespace __jni_impl::android::app
 {
 	class PendingIntent;
@@ -31,19 +15,23 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::android::media
 {
-	class RemoteControlClient;
+	class AudioAttributes;
 }
 namespace __jni_impl::android::media
 {
-	class RemoteController;
+	class AudioDeviceCallback;
+}
+namespace __jni_impl::android::media
+{
+	class AudioFocusRequest;
+}
+namespace __jni_impl::android::media
+{
+	class AudioFormat;
 }
 namespace __jni_impl::android::media
 {
 	class AudioManager_AudioPlaybackCallback;
-}
-namespace __jni_impl::android::os
-{
-	class Handler;
 }
 namespace __jni_impl::android::media
 {
@@ -51,7 +39,19 @@ namespace __jni_impl::android::media
 }
 namespace __jni_impl::android::media
 {
-	class AudioDeviceCallback;
+	class RemoteControlClient;
+}
+namespace __jni_impl::android::media
+{
+	class RemoteController;
+}
+namespace __jni_impl::android::os
+{
+	class Handler;
+}
+namespace __jni_impl::android::view
+{
+	class KeyEvent;
 }
 
 namespace __jni_impl::android::media
@@ -160,94 +160,94 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jstring getProperty(jstring arg0);
-		jstring getProperty(const QString &arg0);
-		jstring getParameters(jstring arg0);
-		jstring getParameters(const QString &arg0);
-		void setParameters(jstring arg0);
-		void setParameters(const QString &arg0);
-		jint getAllowedCapturePolicy();
-		void adjustVolume(jint arg0, jint arg1);
-		jint getMode();
-		void playSoundEffect(jint arg0);
-		void playSoundEffect(jint arg0, jfloat arg1);
-		void setMode(jint arg0);
-		jboolean shouldVibrate(jint arg0);
-		void dispatchMediaKeyEvent(__jni_impl::android::view::KeyEvent arg0);
-		jboolean isVolumeFixed();
+		static jboolean isHapticPlaybackSupported();
+		static jboolean isOffloadedPlaybackSupported(__jni_impl::android::media::AudioFormat arg0, __jni_impl::android::media::AudioAttributes arg1);
+		jint abandonAudioFocus(__jni_impl::__JniBaseClass arg0);
+		jint abandonAudioFocusRequest(__jni_impl::android::media::AudioFocusRequest arg0);
 		void adjustStreamVolume(jint arg0, jint arg1, jint arg2);
 		void adjustSuggestedStreamVolume(jint arg0, jint arg1, jint arg2);
+		void adjustVolume(jint arg0, jint arg1);
+		void dispatchMediaKeyEvent(__jni_impl::android::view::KeyEvent arg0);
+		jint generateAudioSessionId();
+		QAndroidJniObject getActivePlaybackConfigurations();
+		QAndroidJniObject getActiveRecordingConfigurations();
+		jint getAllowedCapturePolicy();
+		jarray getDevices(jint arg0);
+		QAndroidJniObject getMicrophones();
+		jint getMode();
+		jstring getParameters(jstring arg0);
+		jstring getParameters(const QString &arg0);
+		jstring getProperty(jstring arg0);
+		jstring getProperty(const QString &arg0);
 		jint getRingerMode();
+		jint getRouting(jint arg0);
 		jint getStreamMaxVolume(jint arg0);
 		jint getStreamMinVolume(jint arg0);
 		jint getStreamVolume(jint arg0);
 		jfloat getStreamVolumeDb(jint arg0, jint arg1, jint arg2);
-		void setRingerMode(jint arg0);
-		void setStreamVolume(jint arg0, jint arg1, jint arg2);
-		void setStreamSolo(jint arg0, jboolean arg1);
-		void setStreamMute(jint arg0, jboolean arg1);
-		jboolean isStreamMute(jint arg0);
 		jint getVibrateSetting(jint arg0);
-		void setVibrateSetting(jint arg0, jint arg1);
-		void setSpeakerphoneOn(jboolean arg0);
-		jboolean isSpeakerphoneOn();
-		void setAllowedCapturePolicy(jint arg0);
-		static jboolean isOffloadedPlaybackSupported(__jni_impl::android::media::AudioFormat arg0, __jni_impl::android::media::AudioAttributes arg1);
-		jboolean isBluetoothScoAvailableOffCall();
-		void startBluetoothSco();
-		void stopBluetoothSco();
-		void setBluetoothScoOn(jboolean arg0);
-		jboolean isBluetoothScoOn();
-		void setBluetoothA2dpOn(jboolean arg0);
 		jboolean isBluetoothA2dpOn();
-		void setWiredHeadsetOn(jboolean arg0);
-		jboolean isWiredHeadsetOn();
-		void setMicrophoneMute(jboolean arg0);
+		jboolean isBluetoothScoAvailableOffCall();
+		jboolean isBluetoothScoOn();
 		jboolean isMicrophoneMute();
-		void setRouting(jint arg0, jint arg1, jint arg2);
-		jint getRouting(jint arg0);
 		jboolean isMusicActive();
-		jint generateAudioSessionId();
+		jboolean isSpeakerphoneOn();
+		jboolean isStreamMute(jint arg0);
+		jboolean isVolumeFixed();
+		jboolean isWiredHeadsetOn();
 		void loadSoundEffects();
-		void unloadSoundEffects();
-		jint requestAudioFocus(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2);
-		jint requestAudioFocus(__jni_impl::android::media::AudioFocusRequest arg0);
-		jint abandonAudioFocusRequest(__jni_impl::android::media::AudioFocusRequest arg0);
-		jint abandonAudioFocus(__jni_impl::__JniBaseClass arg0);
+		void playSoundEffect(jint arg0);
+		void playSoundEffect(jint arg0, jfloat arg1);
+		void registerAudioDeviceCallback(__jni_impl::android::media::AudioDeviceCallback arg0, __jni_impl::android::os::Handler arg1);
+		void registerAudioPlaybackCallback(__jni_impl::android::media::AudioManager_AudioPlaybackCallback arg0, __jni_impl::android::os::Handler arg1);
+		void registerAudioRecordingCallback(__jni_impl::android::media::AudioManager_AudioRecordingCallback arg0, __jni_impl::android::os::Handler arg1);
 		void registerMediaButtonEventReceiver(__jni_impl::android::app::PendingIntent arg0);
 		void registerMediaButtonEventReceiver(__jni_impl::android::content::ComponentName arg0);
-		void unregisterMediaButtonEventReceiver(__jni_impl::android::content::ComponentName arg0);
-		void unregisterMediaButtonEventReceiver(__jni_impl::android::app::PendingIntent arg0);
 		void registerRemoteControlClient(__jni_impl::android::media::RemoteControlClient arg0);
-		void unregisterRemoteControlClient(__jni_impl::android::media::RemoteControlClient arg0);
 		jboolean registerRemoteController(__jni_impl::android::media::RemoteController arg0);
-		void unregisterRemoteController(__jni_impl::android::media::RemoteController arg0);
-		void registerAudioPlaybackCallback(__jni_impl::android::media::AudioManager_AudioPlaybackCallback arg0, __jni_impl::android::os::Handler arg1);
-		void unregisterAudioPlaybackCallback(__jni_impl::android::media::AudioManager_AudioPlaybackCallback arg0);
-		QAndroidJniObject getActivePlaybackConfigurations();
-		void registerAudioRecordingCallback(__jni_impl::android::media::AudioManager_AudioRecordingCallback arg0, __jni_impl::android::os::Handler arg1);
-		void unregisterAudioRecordingCallback(__jni_impl::android::media::AudioManager_AudioRecordingCallback arg0);
-		QAndroidJniObject getActiveRecordingConfigurations();
-		jarray getDevices(jint arg0);
-		void registerAudioDeviceCallback(__jni_impl::android::media::AudioDeviceCallback arg0, __jni_impl::android::os::Handler arg1);
+		jint requestAudioFocus(__jni_impl::android::media::AudioFocusRequest arg0);
+		jint requestAudioFocus(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2);
+		void setAllowedCapturePolicy(jint arg0);
+		void setBluetoothA2dpOn(jboolean arg0);
+		void setBluetoothScoOn(jboolean arg0);
+		void setMicrophoneMute(jboolean arg0);
+		void setMode(jint arg0);
+		void setParameters(jstring arg0);
+		void setParameters(const QString &arg0);
+		void setRingerMode(jint arg0);
+		void setRouting(jint arg0, jint arg1, jint arg2);
+		void setSpeakerphoneOn(jboolean arg0);
+		void setStreamMute(jint arg0, jboolean arg1);
+		void setStreamSolo(jint arg0, jboolean arg1);
+		void setStreamVolume(jint arg0, jint arg1, jint arg2);
+		void setVibrateSetting(jint arg0, jint arg1);
+		void setWiredHeadsetOn(jboolean arg0);
+		jboolean shouldVibrate(jint arg0);
+		void startBluetoothSco();
+		void stopBluetoothSco();
+		void unloadSoundEffects();
 		void unregisterAudioDeviceCallback(__jni_impl::android::media::AudioDeviceCallback arg0);
-		QAndroidJniObject getMicrophones();
-		static jboolean isHapticPlaybackSupported();
+		void unregisterAudioPlaybackCallback(__jni_impl::android::media::AudioManager_AudioPlaybackCallback arg0);
+		void unregisterAudioRecordingCallback(__jni_impl::android::media::AudioManager_AudioRecordingCallback arg0);
+		void unregisterMediaButtonEventReceiver(__jni_impl::android::app::PendingIntent arg0);
+		void unregisterMediaButtonEventReceiver(__jni_impl::android::content::ComponentName arg0);
+		void unregisterRemoteControlClient(__jni_impl::android::media::RemoteControlClient arg0);
+		void unregisterRemoteController(__jni_impl::android::media::RemoteController arg0);
 	};
 } // namespace __jni_impl::android::media
 
-#include "../view/KeyEvent.hpp"
-#include "AudioFormat.hpp"
-#include "AudioAttributes.hpp"
-#include "AudioFocusRequest.hpp"
 #include "../app/PendingIntent.hpp"
 #include "../content/ComponentName.hpp"
+#include "AudioAttributes.hpp"
+#include "AudioDeviceCallback.hpp"
+#include "AudioFocusRequest.hpp"
+#include "AudioFormat.hpp"
+#include "AudioManager_AudioPlaybackCallback.hpp"
+#include "AudioManager_AudioRecordingCallback.hpp"
 #include "RemoteControlClient.hpp"
 #include "RemoteController.hpp"
-#include "AudioManager_AudioPlaybackCallback.hpp"
 #include "../os/Handler.hpp"
-#include "AudioManager_AudioRecordingCallback.hpp"
-#include "AudioDeviceCallback.hpp"
+#include "../view/KeyEvent.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -949,123 +949,38 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jstring AudioManager::getProperty(jstring arg0)
+	jboolean AudioManager::isHapticPlaybackSupported()
 	{
-		return __thiz.callObjectMethod(
-			"getProperty",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jstring AudioManager::getProperty(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getProperty",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
-	jstring AudioManager::getParameters(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getParameters",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jstring AudioManager::getParameters(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getParameters",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
-	void AudioManager::setParameters(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setParameters",
-			"(Ljava/lang/String;)V",
-			arg0
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.media.AudioManager",
+			"isHapticPlaybackSupported",
+			"()Z"
 		);
 	}
-	void AudioManager::setParameters(const QString &arg0)
+	jboolean AudioManager::isOffloadedPlaybackSupported(__jni_impl::android::media::AudioFormat arg0, __jni_impl::android::media::AudioAttributes arg1)
 	{
-		__thiz.callMethod<void>(
-			"setParameters",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.media.AudioManager",
+			"isOffloadedPlaybackSupported",
+			"(Landroid/media/AudioFormat;Landroid/media/AudioAttributes;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
-	jint AudioManager::getAllowedCapturePolicy()
+	jint AudioManager::abandonAudioFocus(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jint>(
-			"getAllowedCapturePolicy",
-			"()I"
-		);
-	}
-	void AudioManager::adjustVolume(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"adjustVolume",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	jint AudioManager::getMode()
-	{
-		return __thiz.callMethod<jint>(
-			"getMode",
-			"()I"
-		);
-	}
-	void AudioManager::playSoundEffect(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"playSoundEffect",
-			"(I)V",
-			arg0
-		);
-	}
-	void AudioManager::playSoundEffect(jint arg0, jfloat arg1)
-	{
-		__thiz.callMethod<void>(
-			"playSoundEffect",
-			"(IF)V",
-			arg0,
-			arg1
-		);
-	}
-	void AudioManager::setMode(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMode",
-			"(I)V",
-			arg0
-		);
-	}
-	jboolean AudioManager::shouldVibrate(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"shouldVibrate",
-			"(I)Z",
-			arg0
-		);
-	}
-	void AudioManager::dispatchMediaKeyEvent(__jni_impl::android::view::KeyEvent arg0)
-	{
-		__thiz.callMethod<void>(
-			"dispatchMediaKeyEvent",
-			"(Landroid/view/KeyEvent;)V",
+			"abandonAudioFocus",
+			"(Landroid/media/AudioManager$OnAudioFocusChangeListener;)I",
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean AudioManager::isVolumeFixed()
+	jint AudioManager::abandonAudioFocusRequest(__jni_impl::android::media::AudioFocusRequest arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isVolumeFixed",
-			"()Z"
+		return __thiz.callMethod<jint>(
+			"abandonAudioFocusRequest",
+			"(Landroid/media/AudioFocusRequest;)I",
+			arg0.__jniObject().object()
 		);
 	}
 	void AudioManager::adjustStreamVolume(jint arg0, jint arg1, jint arg2)
@@ -1088,11 +1003,118 @@ namespace __jni_impl::android::media
 			arg2
 		);
 	}
+	void AudioManager::adjustVolume(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"adjustVolume",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void AudioManager::dispatchMediaKeyEvent(__jni_impl::android::view::KeyEvent arg0)
+	{
+		__thiz.callMethod<void>(
+			"dispatchMediaKeyEvent",
+			"(Landroid/view/KeyEvent;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint AudioManager::generateAudioSessionId()
+	{
+		return __thiz.callMethod<jint>(
+			"generateAudioSessionId",
+			"()I"
+		);
+	}
+	QAndroidJniObject AudioManager::getActivePlaybackConfigurations()
+	{
+		return __thiz.callObjectMethod(
+			"getActivePlaybackConfigurations",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject AudioManager::getActiveRecordingConfigurations()
+	{
+		return __thiz.callObjectMethod(
+			"getActiveRecordingConfigurations",
+			"()Ljava/util/List;"
+		);
+	}
+	jint AudioManager::getAllowedCapturePolicy()
+	{
+		return __thiz.callMethod<jint>(
+			"getAllowedCapturePolicy",
+			"()I"
+		);
+	}
+	jarray AudioManager::getDevices(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDevices",
+			"(I)[Landroid/media/AudioDeviceInfo;",
+			arg0
+		).object<jarray>();
+	}
+	QAndroidJniObject AudioManager::getMicrophones()
+	{
+		return __thiz.callObjectMethod(
+			"getMicrophones",
+			"()Ljava/util/List;"
+		);
+	}
+	jint AudioManager::getMode()
+	{
+		return __thiz.callMethod<jint>(
+			"getMode",
+			"()I"
+		);
+	}
+	jstring AudioManager::getParameters(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getParameters",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring AudioManager::getParameters(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getParameters",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
+	jstring AudioManager::getProperty(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getProperty",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring AudioManager::getProperty(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getProperty",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
 	jint AudioManager::getRingerMode()
 	{
 		return __thiz.callMethod<jint>(
 			"getRingerMode",
 			"()I"
+		);
+	}
+	jint AudioManager::getRouting(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getRouting",
+			"(I)I",
+			arg0
 		);
 	}
 	jint AudioManager::getStreamMaxVolume(jint arg0)
@@ -1129,141 +1151,11 @@ namespace __jni_impl::android::media
 			arg2
 		);
 	}
-	void AudioManager::setRingerMode(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRingerMode",
-			"(I)V",
-			arg0
-		);
-	}
-	void AudioManager::setStreamVolume(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"setStreamVolume",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void AudioManager::setStreamSolo(jint arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setStreamSolo",
-			"(IZ)V",
-			arg0,
-			arg1
-		);
-	}
-	void AudioManager::setStreamMute(jint arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"setStreamMute",
-			"(IZ)V",
-			arg0,
-			arg1
-		);
-	}
-	jboolean AudioManager::isStreamMute(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isStreamMute",
-			"(I)Z",
-			arg0
-		);
-	}
 	jint AudioManager::getVibrateSetting(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getVibrateSetting",
 			"(I)I",
-			arg0
-		);
-	}
-	void AudioManager::setVibrateSetting(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setVibrateSetting",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void AudioManager::setSpeakerphoneOn(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSpeakerphoneOn",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean AudioManager::isSpeakerphoneOn()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSpeakerphoneOn",
-			"()Z"
-		);
-	}
-	void AudioManager::setAllowedCapturePolicy(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAllowedCapturePolicy",
-			"(I)V",
-			arg0
-		);
-	}
-	jboolean AudioManager::isOffloadedPlaybackSupported(__jni_impl::android::media::AudioFormat arg0, __jni_impl::android::media::AudioAttributes arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.media.AudioManager",
-			"isOffloadedPlaybackSupported",
-			"(Landroid/media/AudioFormat;Landroid/media/AudioAttributes;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean AudioManager::isBluetoothScoAvailableOffCall()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isBluetoothScoAvailableOffCall",
-			"()Z"
-		);
-	}
-	void AudioManager::startBluetoothSco()
-	{
-		__thiz.callMethod<void>(
-			"startBluetoothSco",
-			"()V"
-		);
-	}
-	void AudioManager::stopBluetoothSco()
-	{
-		__thiz.callMethod<void>(
-			"stopBluetoothSco",
-			"()V"
-		);
-	}
-	void AudioManager::setBluetoothScoOn(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setBluetoothScoOn",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean AudioManager::isBluetoothScoOn()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isBluetoothScoOn",
-			"()Z"
-		);
-	}
-	void AudioManager::setBluetoothA2dpOn(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setBluetoothA2dpOn",
-			"(Z)V",
 			arg0
 		);
 	}
@@ -1274,27 +1166,18 @@ namespace __jni_impl::android::media
 			"()Z"
 		);
 	}
-	void AudioManager::setWiredHeadsetOn(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setWiredHeadsetOn",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean AudioManager::isWiredHeadsetOn()
+	jboolean AudioManager::isBluetoothScoAvailableOffCall()
 	{
 		return __thiz.callMethod<jboolean>(
-			"isWiredHeadsetOn",
+			"isBluetoothScoAvailableOffCall",
 			"()Z"
 		);
 	}
-	void AudioManager::setMicrophoneMute(jboolean arg0)
+	jboolean AudioManager::isBluetoothScoOn()
 	{
-		__thiz.callMethod<void>(
-			"setMicrophoneMute",
-			"(Z)V",
-			arg0
+		return __thiz.callMethod<jboolean>(
+			"isBluetoothScoOn",
+			"()Z"
 		);
 	}
 	jboolean AudioManager::isMicrophoneMute()
@@ -1304,24 +1187,6 @@ namespace __jni_impl::android::media
 			"()Z"
 		);
 	}
-	void AudioManager::setRouting(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"setRouting",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jint AudioManager::getRouting(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getRouting",
-			"(I)I",
-			arg0
-		);
-	}
 	jboolean AudioManager::isMusicActive()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -1329,11 +1194,33 @@ namespace __jni_impl::android::media
 			"()Z"
 		);
 	}
-	jint AudioManager::generateAudioSessionId()
+	jboolean AudioManager::isSpeakerphoneOn()
 	{
-		return __thiz.callMethod<jint>(
-			"generateAudioSessionId",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"isSpeakerphoneOn",
+			"()Z"
+		);
+	}
+	jboolean AudioManager::isStreamMute(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isStreamMute",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean AudioManager::isVolumeFixed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isVolumeFixed",
+			"()Z"
+		);
+	}
+	jboolean AudioManager::isWiredHeadsetOn()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isWiredHeadsetOn",
+			"()Z"
 		);
 	}
 	void AudioManager::loadSoundEffects()
@@ -1343,45 +1230,48 @@ namespace __jni_impl::android::media
 			"()V"
 		);
 	}
-	void AudioManager::unloadSoundEffects()
+	void AudioManager::playSoundEffect(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"unloadSoundEffects",
-			"()V"
+			"playSoundEffect",
+			"(I)V",
+			arg0
 		);
 	}
-	jint AudioManager::requestAudioFocus(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2)
+	void AudioManager::playSoundEffect(jint arg0, jfloat arg1)
 	{
-		return __thiz.callMethod<jint>(
-			"requestAudioFocus",
-			"(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I",
+		__thiz.callMethod<void>(
+			"playSoundEffect",
+			"(IF)V",
+			arg0,
+			arg1
+		);
+	}
+	void AudioManager::registerAudioDeviceCallback(__jni_impl::android::media::AudioDeviceCallback arg0, __jni_impl::android::os::Handler arg1)
+	{
+		__thiz.callMethod<void>(
+			"registerAudioDeviceCallback",
+			"(Landroid/media/AudioDeviceCallback;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
-			arg1,
-			arg2
+			arg1.__jniObject().object()
 		);
 	}
-	jint AudioManager::requestAudioFocus(__jni_impl::android::media::AudioFocusRequest arg0)
+	void AudioManager::registerAudioPlaybackCallback(__jni_impl::android::media::AudioManager_AudioPlaybackCallback arg0, __jni_impl::android::os::Handler arg1)
 	{
-		return __thiz.callMethod<jint>(
-			"requestAudioFocus",
-			"(Landroid/media/AudioFocusRequest;)I",
-			arg0.__jniObject().object()
+		__thiz.callMethod<void>(
+			"registerAudioPlaybackCallback",
+			"(Landroid/media/AudioManager$AudioPlaybackCallback;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
-	jint AudioManager::abandonAudioFocusRequest(__jni_impl::android::media::AudioFocusRequest arg0)
+	void AudioManager::registerAudioRecordingCallback(__jni_impl::android::media::AudioManager_AudioRecordingCallback arg0, __jni_impl::android::os::Handler arg1)
 	{
-		return __thiz.callMethod<jint>(
-			"abandonAudioFocusRequest",
-			"(Landroid/media/AudioFocusRequest;)I",
-			arg0.__jniObject().object()
-		);
-	}
-	jint AudioManager::abandonAudioFocus(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"abandonAudioFocus",
-			"(Landroid/media/AudioManager$OnAudioFocusChangeListener;)I",
-			arg0.__jniObject().object()
+		__thiz.callMethod<void>(
+			"registerAudioRecordingCallback",
+			"(Landroid/media/AudioManager$AudioRecordingCallback;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	void AudioManager::registerMediaButtonEventReceiver(__jni_impl::android::app::PendingIntent arg0)
@@ -1400,34 +1290,10 @@ namespace __jni_impl::android::media
 			arg0.__jniObject().object()
 		);
 	}
-	void AudioManager::unregisterMediaButtonEventReceiver(__jni_impl::android::content::ComponentName arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterMediaButtonEventReceiver",
-			"(Landroid/content/ComponentName;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void AudioManager::unregisterMediaButtonEventReceiver(__jni_impl::android::app::PendingIntent arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterMediaButtonEventReceiver",
-			"(Landroid/app/PendingIntent;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void AudioManager::registerRemoteControlClient(__jni_impl::android::media::RemoteControlClient arg0)
 	{
 		__thiz.callMethod<void>(
 			"registerRemoteControlClient",
-			"(Landroid/media/RemoteControlClient;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void AudioManager::unregisterRemoteControlClient(__jni_impl::android::media::RemoteControlClient arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterRemoteControlClient",
 			"(Landroid/media/RemoteControlClient;)V",
 			arg0.__jniObject().object()
 		);
@@ -1440,77 +1306,178 @@ namespace __jni_impl::android::media
 			arg0.__jniObject().object()
 		);
 	}
-	void AudioManager::unregisterRemoteController(__jni_impl::android::media::RemoteController arg0)
+	jint AudioManager::requestAudioFocus(__jni_impl::android::media::AudioFocusRequest arg0)
 	{
-		__thiz.callMethod<void>(
-			"unregisterRemoteController",
-			"(Landroid/media/RemoteController;)V",
+		return __thiz.callMethod<jint>(
+			"requestAudioFocus",
+			"(Landroid/media/AudioFocusRequest;)I",
 			arg0.__jniObject().object()
 		);
 	}
-	void AudioManager::registerAudioPlaybackCallback(__jni_impl::android::media::AudioManager_AudioPlaybackCallback arg0, __jni_impl::android::os::Handler arg1)
+	jint AudioManager::requestAudioFocus(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
-			"registerAudioPlaybackCallback",
-			"(Landroid/media/AudioManager$AudioPlaybackCallback;Landroid/os/Handler;)V",
+		return __thiz.callMethod<jint>(
+			"requestAudioFocus",
+			"(Landroid/media/AudioManager$OnAudioFocusChangeListener;II)I",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg1,
+			arg2
 		);
 	}
-	void AudioManager::unregisterAudioPlaybackCallback(__jni_impl::android::media::AudioManager_AudioPlaybackCallback arg0)
+	void AudioManager::setAllowedCapturePolicy(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"unregisterAudioPlaybackCallback",
-			"(Landroid/media/AudioManager$AudioPlaybackCallback;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject AudioManager::getActivePlaybackConfigurations()
-	{
-		return __thiz.callObjectMethod(
-			"getActivePlaybackConfigurations",
-			"()Ljava/util/List;"
-		);
-	}
-	void AudioManager::registerAudioRecordingCallback(__jni_impl::android::media::AudioManager_AudioRecordingCallback arg0, __jni_impl::android::os::Handler arg1)
-	{
-		__thiz.callMethod<void>(
-			"registerAudioRecordingCallback",
-			"(Landroid/media/AudioManager$AudioRecordingCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void AudioManager::unregisterAudioRecordingCallback(__jni_impl::android::media::AudioManager_AudioRecordingCallback arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterAudioRecordingCallback",
-			"(Landroid/media/AudioManager$AudioRecordingCallback;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject AudioManager::getActiveRecordingConfigurations()
-	{
-		return __thiz.callObjectMethod(
-			"getActiveRecordingConfigurations",
-			"()Ljava/util/List;"
-		);
-	}
-	jarray AudioManager::getDevices(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDevices",
-			"(I)[Landroid/media/AudioDeviceInfo;",
+			"setAllowedCapturePolicy",
+			"(I)V",
 			arg0
-		).object<jarray>();
+		);
 	}
-	void AudioManager::registerAudioDeviceCallback(__jni_impl::android::media::AudioDeviceCallback arg0, __jni_impl::android::os::Handler arg1)
+	void AudioManager::setBluetoothA2dpOn(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
-			"registerAudioDeviceCallback",
-			"(Landroid/media/AudioDeviceCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			"setBluetoothA2dpOn",
+			"(Z)V",
+			arg0
+		);
+	}
+	void AudioManager::setBluetoothScoOn(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setBluetoothScoOn",
+			"(Z)V",
+			arg0
+		);
+	}
+	void AudioManager::setMicrophoneMute(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMicrophoneMute",
+			"(Z)V",
+			arg0
+		);
+	}
+	void AudioManager::setMode(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMode",
+			"(I)V",
+			arg0
+		);
+	}
+	void AudioManager::setParameters(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setParameters",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void AudioManager::setParameters(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setParameters",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void AudioManager::setRingerMode(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRingerMode",
+			"(I)V",
+			arg0
+		);
+	}
+	void AudioManager::setRouting(jint arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"setRouting",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void AudioManager::setSpeakerphoneOn(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSpeakerphoneOn",
+			"(Z)V",
+			arg0
+		);
+	}
+	void AudioManager::setStreamMute(jint arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setStreamMute",
+			"(IZ)V",
+			arg0,
+			arg1
+		);
+	}
+	void AudioManager::setStreamSolo(jint arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"setStreamSolo",
+			"(IZ)V",
+			arg0,
+			arg1
+		);
+	}
+	void AudioManager::setStreamVolume(jint arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"setStreamVolume",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void AudioManager::setVibrateSetting(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setVibrateSetting",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void AudioManager::setWiredHeadsetOn(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setWiredHeadsetOn",
+			"(Z)V",
+			arg0
+		);
+	}
+	jboolean AudioManager::shouldVibrate(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"shouldVibrate",
+			"(I)Z",
+			arg0
+		);
+	}
+	void AudioManager::startBluetoothSco()
+	{
+		__thiz.callMethod<void>(
+			"startBluetoothSco",
+			"()V"
+		);
+	}
+	void AudioManager::stopBluetoothSco()
+	{
+		__thiz.callMethod<void>(
+			"stopBluetoothSco",
+			"()V"
+		);
+	}
+	void AudioManager::unloadSoundEffects()
+	{
+		__thiz.callMethod<void>(
+			"unloadSoundEffects",
+			"()V"
 		);
 	}
 	void AudioManager::unregisterAudioDeviceCallback(__jni_impl::android::media::AudioDeviceCallback arg0)
@@ -1521,19 +1488,52 @@ namespace __jni_impl::android::media
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject AudioManager::getMicrophones()
+	void AudioManager::unregisterAudioPlaybackCallback(__jni_impl::android::media::AudioManager_AudioPlaybackCallback arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getMicrophones",
-			"()Ljava/util/List;"
+		__thiz.callMethod<void>(
+			"unregisterAudioPlaybackCallback",
+			"(Landroid/media/AudioManager$AudioPlaybackCallback;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	jboolean AudioManager::isHapticPlaybackSupported()
+	void AudioManager::unregisterAudioRecordingCallback(__jni_impl::android::media::AudioManager_AudioRecordingCallback arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.media.AudioManager",
-			"isHapticPlaybackSupported",
-			"()Z"
+		__thiz.callMethod<void>(
+			"unregisterAudioRecordingCallback",
+			"(Landroid/media/AudioManager$AudioRecordingCallback;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AudioManager::unregisterMediaButtonEventReceiver(__jni_impl::android::app::PendingIntent arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterMediaButtonEventReceiver",
+			"(Landroid/app/PendingIntent;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AudioManager::unregisterMediaButtonEventReceiver(__jni_impl::android::content::ComponentName arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterMediaButtonEventReceiver",
+			"(Landroid/content/ComponentName;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AudioManager::unregisterRemoteControlClient(__jni_impl::android::media::RemoteControlClient arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterRemoteControlClient",
+			"(Landroid/media/RemoteControlClient;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AudioManager::unregisterRemoteController(__jni_impl::android::media::RemoteController arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterRemoteController",
+			"(Landroid/media/RemoteController;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::media

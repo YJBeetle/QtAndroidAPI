@@ -50,10 +50,10 @@ namespace __jni_impl::android::util
 		// Methods
 		jboolean equals(__jni_impl::android::util::DisplayMetrics arg0);
 		jboolean equals(jobject arg0);
-		jstring toString();
 		jint hashCode();
 		void setTo(__jni_impl::android::util::DisplayMetrics arg0);
 		void setToDefaults();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::util
 
@@ -298,13 +298,6 @@ namespace __jni_impl::android::util
 			arg0
 		);
 	}
-	jstring DisplayMetrics::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint DisplayMetrics::hashCode()
 	{
 		return __thiz.callMethod<jint>(
@@ -326,6 +319,13 @@ namespace __jni_impl::android::util
 			"setToDefaults",
 			"()V"
 		);
+	}
+	jstring DisplayMetrics::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::util
 

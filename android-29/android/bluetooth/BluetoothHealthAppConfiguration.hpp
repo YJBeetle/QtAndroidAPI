@@ -22,10 +22,10 @@ namespace __jni_impl::android::bluetooth
 		void __constructor();
 		
 		// Methods
-		jstring getName();
-		jint getDataType();
-		jint getRole();
 		jint describeContents();
+		jint getDataType();
+		jstring getName();
+		jint getRole();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::bluetooth
@@ -53,12 +53,12 @@ namespace __jni_impl::android::bluetooth
 	}
 	
 	// Methods
-	jstring BluetoothHealthAppConfiguration::getName()
+	jint BluetoothHealthAppConfiguration::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
 	jint BluetoothHealthAppConfiguration::getDataType()
 	{
@@ -67,17 +67,17 @@ namespace __jni_impl::android::bluetooth
 			"()I"
 		);
 	}
+	jstring BluetoothHealthAppConfiguration::getName()
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jint BluetoothHealthAppConfiguration::getRole()
 	{
 		return __thiz.callMethod<jint>(
 			"getRole",
-			"()I"
-		);
-	}
-	jint BluetoothHealthAppConfiguration::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
 			"()I"
 		);
 	}

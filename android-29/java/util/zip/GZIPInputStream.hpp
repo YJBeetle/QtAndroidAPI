@@ -8,13 +8,13 @@
 #include "../../io/FilterInputStream.hpp"
 #include "InflaterInputStream.hpp"
 
-namespace __jni_impl::java::util::zip
-{
-	class CRC32;
-}
 namespace __jni_impl::java::io
 {
 	class InputStream;
+}
+namespace __jni_impl::java::util::zip
+{
+	class CRC32;
 }
 
 namespace __jni_impl::java::util::zip
@@ -30,13 +30,13 @@ namespace __jni_impl::java::util::zip
 		void __constructor(__jni_impl::java::io::InputStream arg0, jint arg1);
 		
 		// Methods
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
 		void close();
+		jint read(jbyteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::java::util::zip
 
-#include "CRC32.hpp"
 #include "../../io/InputStream.hpp"
+#include "CRC32.hpp"
 
 namespace __jni_impl::java::util::zip
 {
@@ -69,6 +69,13 @@ namespace __jni_impl::java::util::zip
 	}
 	
 	// Methods
+	void GZIPInputStream::close()
+	{
+		__thiz.callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
 	jint GZIPInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		return __thiz.callMethod<jint>(
@@ -77,13 +84,6 @@ namespace __jni_impl::java::util::zip
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	void GZIPInputStream::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::java::util::zip

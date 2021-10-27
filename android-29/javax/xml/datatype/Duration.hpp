@@ -5,17 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::math
-{
-	class BigDecimal;
-}
 namespace __jni_impl::java::lang
 {
 	class Number;
 }
-namespace __jni_impl::javax::xml::datatype
+namespace __jni_impl::java::math
 {
-	class DatatypeConstants_Field;
+	class BigDecimal;
 }
 namespace __jni_impl::java::util
 {
@@ -24,6 +20,10 @@ namespace __jni_impl::java::util
 namespace __jni_impl::java::util
 {
 	class Date;
+}
+namespace __jni_impl::javax::xml::datatype
+{
+	class DatatypeConstants_Field;
 }
 namespace __jni_impl::javax::xml::namespace
 {
@@ -42,39 +42,39 @@ namespace __jni_impl::javax::xml::datatype
 		
 		// Methods
 		QAndroidJniObject add(__jni_impl::javax::xml::datatype::Duration arg0);
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint compare(__jni_impl::javax::xml::datatype::Duration arg0);
-		QAndroidJniObject getField(__jni_impl::javax::xml::datatype::DatatypeConstants_Field arg0);
-		jboolean isSet(__jni_impl::javax::xml::datatype::DatatypeConstants_Field arg0);
-		QAndroidJniObject multiply(jint arg0);
-		QAndroidJniObject multiply(__jni_impl::java::math::BigDecimal arg0);
-		jint getSeconds();
 		void addTo(__jni_impl::java::util::Calendar arg0);
 		void addTo(__jni_impl::java::util::Date arg0);
-		QAndroidJniObject subtract(__jni_impl::javax::xml::datatype::Duration arg0);
-		jlong getTimeInMillis(__jni_impl::java::util::Date arg0);
-		jlong getTimeInMillis(__jni_impl::java::util::Calendar arg0);
-		jint getYears();
-		jint getMonths();
+		jint compare(__jni_impl::javax::xml::datatype::Duration arg0);
+		jboolean equals(jobject arg0);
 		jint getDays();
+		QAndroidJniObject getField(__jni_impl::javax::xml::datatype::DatatypeConstants_Field arg0);
 		jint getHours();
 		jint getMinutes();
-		QAndroidJniObject negate();
+		jint getMonths();
+		jint getSeconds();
 		jint getSign();
+		jlong getTimeInMillis(__jni_impl::java::util::Calendar arg0);
+		jlong getTimeInMillis(__jni_impl::java::util::Date arg0);
 		QAndroidJniObject getXMLSchemaType();
-		QAndroidJniObject normalizeWith(__jni_impl::java::util::Calendar arg0);
+		jint getYears();
+		jint hashCode();
 		jboolean isLongerThan(__jni_impl::javax::xml::datatype::Duration arg0);
+		jboolean isSet(__jni_impl::javax::xml::datatype::DatatypeConstants_Field arg0);
 		jboolean isShorterThan(__jni_impl::javax::xml::datatype::Duration arg0);
+		QAndroidJniObject multiply(jint arg0);
+		QAndroidJniObject multiply(__jni_impl::java::math::BigDecimal arg0);
+		QAndroidJniObject negate();
+		QAndroidJniObject normalizeWith(__jni_impl::java::util::Calendar arg0);
+		QAndroidJniObject subtract(__jni_impl::javax::xml::datatype::Duration arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::javax::xml::datatype
 
-#include "../../../java/math/BigDecimal.hpp"
 #include "../../../java/lang/Number.hpp"
-#include "DatatypeConstants_Field.hpp"
+#include "../../../java/math/BigDecimal.hpp"
 #include "../../../java/util/Calendar.hpp"
 #include "../../../java/util/Date.hpp"
+#include "DatatypeConstants_Field.hpp"
 #include "../namespace/QName.hpp"
 
 namespace __jni_impl::javax::xml::datatype
@@ -99,26 +99,20 @@ namespace __jni_impl::javax::xml::datatype
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean Duration::equals(jobject arg0)
+	void Duration::addTo(__jni_impl::java::util::Calendar arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
+		__thiz.callMethod<void>(
+			"addTo",
+			"(Ljava/util/Calendar;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	jstring Duration::toString()
+	void Duration::addTo(__jni_impl::java::util::Date arg0)
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint Duration::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+		__thiz.callMethod<void>(
+			"addTo",
+			"(Ljava/util/Date;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	jint Duration::compare(__jni_impl::javax::xml::datatype::Duration arg0)
@@ -129,6 +123,21 @@ namespace __jni_impl::javax::xml::datatype
 			arg0.__jniObject().object()
 		);
 	}
+	jboolean Duration::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jint Duration::getDays()
+	{
+		return __thiz.callMethod<jint>(
+			"getDays",
+			"()I"
+		);
+	}
 	QAndroidJniObject Duration::getField(__jni_impl::javax::xml::datatype::DatatypeConstants_Field arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -137,11 +146,99 @@ namespace __jni_impl::javax::xml::datatype
 			arg0.__jniObject().object()
 		);
 	}
+	jint Duration::getHours()
+	{
+		return __thiz.callMethod<jint>(
+			"getHours",
+			"()I"
+		);
+	}
+	jint Duration::getMinutes()
+	{
+		return __thiz.callMethod<jint>(
+			"getMinutes",
+			"()I"
+		);
+	}
+	jint Duration::getMonths()
+	{
+		return __thiz.callMethod<jint>(
+			"getMonths",
+			"()I"
+		);
+	}
+	jint Duration::getSeconds()
+	{
+		return __thiz.callMethod<jint>(
+			"getSeconds",
+			"()I"
+		);
+	}
+	jint Duration::getSign()
+	{
+		return __thiz.callMethod<jint>(
+			"getSign",
+			"()I"
+		);
+	}
+	jlong Duration::getTimeInMillis(__jni_impl::java::util::Calendar arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimeInMillis",
+			"(Ljava/util/Calendar;)J",
+			arg0.__jniObject().object()
+		);
+	}
+	jlong Duration::getTimeInMillis(__jni_impl::java::util::Date arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimeInMillis",
+			"(Ljava/util/Date;)J",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Duration::getXMLSchemaType()
+	{
+		return __thiz.callObjectMethod(
+			"getXMLSchemaType",
+			"()Ljavax/xml/namespace/QName;"
+		);
+	}
+	jint Duration::getYears()
+	{
+		return __thiz.callMethod<jint>(
+			"getYears",
+			"()I"
+		);
+	}
+	jint Duration::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jboolean Duration::isLongerThan(__jni_impl::javax::xml::datatype::Duration arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLongerThan",
+			"(Ljavax/xml/datatype/Duration;)Z",
+			arg0.__jniObject().object()
+		);
+	}
 	jboolean Duration::isSet(__jni_impl::javax::xml::datatype::DatatypeConstants_Field arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isSet",
 			"(Ljavax/xml/datatype/DatatypeConstants$Field;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean Duration::isShorterThan(__jni_impl::javax::xml::datatype::Duration arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isShorterThan",
+			"(Ljavax/xml/datatype/Duration;)Z",
 			arg0.__jniObject().object()
 		);
 	}
@@ -161,26 +258,18 @@ namespace __jni_impl::javax::xml::datatype
 			arg0.__jniObject().object()
 		);
 	}
-	jint Duration::getSeconds()
+	QAndroidJniObject Duration::negate()
 	{
-		return __thiz.callMethod<jint>(
-			"getSeconds",
-			"()I"
+		return __thiz.callObjectMethod(
+			"negate",
+			"()Ljavax/xml/datatype/Duration;"
 		);
 	}
-	void Duration::addTo(__jni_impl::java::util::Calendar arg0)
+	QAndroidJniObject Duration::normalizeWith(__jni_impl::java::util::Calendar arg0)
 	{
-		__thiz.callMethod<void>(
-			"addTo",
-			"(Ljava/util/Calendar;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Duration::addTo(__jni_impl::java::util::Date arg0)
-	{
-		__thiz.callMethod<void>(
-			"addTo",
-			"(Ljava/util/Date;)V",
+		return __thiz.callObjectMethod(
+			"normalizeWith",
+			"(Ljava/util/Calendar;)Ljavax/xml/datatype/Duration;",
 			arg0.__jniObject().object()
 		);
 	}
@@ -192,101 +281,12 @@ namespace __jni_impl::javax::xml::datatype
 			arg0.__jniObject().object()
 		);
 	}
-	jlong Duration::getTimeInMillis(__jni_impl::java::util::Date arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimeInMillis",
-			"(Ljava/util/Date;)J",
-			arg0.__jniObject().object()
-		);
-	}
-	jlong Duration::getTimeInMillis(__jni_impl::java::util::Calendar arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimeInMillis",
-			"(Ljava/util/Calendar;)J",
-			arg0.__jniObject().object()
-		);
-	}
-	jint Duration::getYears()
-	{
-		return __thiz.callMethod<jint>(
-			"getYears",
-			"()I"
-		);
-	}
-	jint Duration::getMonths()
-	{
-		return __thiz.callMethod<jint>(
-			"getMonths",
-			"()I"
-		);
-	}
-	jint Duration::getDays()
-	{
-		return __thiz.callMethod<jint>(
-			"getDays",
-			"()I"
-		);
-	}
-	jint Duration::getHours()
-	{
-		return __thiz.callMethod<jint>(
-			"getHours",
-			"()I"
-		);
-	}
-	jint Duration::getMinutes()
-	{
-		return __thiz.callMethod<jint>(
-			"getMinutes",
-			"()I"
-		);
-	}
-	QAndroidJniObject Duration::negate()
+	jstring Duration::toString()
 	{
 		return __thiz.callObjectMethod(
-			"negate",
-			"()Ljavax/xml/datatype/Duration;"
-		);
-	}
-	jint Duration::getSign()
-	{
-		return __thiz.callMethod<jint>(
-			"getSign",
-			"()I"
-		);
-	}
-	QAndroidJniObject Duration::getXMLSchemaType()
-	{
-		return __thiz.callObjectMethod(
-			"getXMLSchemaType",
-			"()Ljavax/xml/namespace/QName;"
-		);
-	}
-	QAndroidJniObject Duration::normalizeWith(__jni_impl::java::util::Calendar arg0)
-	{
-		return __thiz.callObjectMethod(
-			"normalizeWith",
-			"(Ljava/util/Calendar;)Ljavax/xml/datatype/Duration;",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean Duration::isLongerThan(__jni_impl::javax::xml::datatype::Duration arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isLongerThan",
-			"(Ljavax/xml/datatype/Duration;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean Duration::isShorterThan(__jni_impl::javax::xml::datatype::Duration arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isShorterThan",
-			"(Ljavax/xml/datatype/Duration;)Z",
-			arg0.__jniObject().object()
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::xml::datatype
 

@@ -19,16 +19,16 @@ namespace __jni_impl::android::view::inputmethod
 		static QAndroidJniObject CREATOR();
 		
 		// Constructors
-		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::inputmethod::InputBinding arg1);
+		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jstring toString();
-		jint getPid();
+		jint describeContents();
 		QAndroidJniObject getConnection();
 		QAndroidJniObject getConnectionToken();
+		jint getPid();
 		jint getUid();
-		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::inputmethod
@@ -48,6 +48,15 @@ namespace __jni_impl::android::view::inputmethod
 	}
 	
 	// Constructors
+	void InputBinding::__constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::inputmethod::InputBinding arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.inputmethod.InputBinding",
+			"(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/InputBinding;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
 	void InputBinding::__constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
@@ -59,28 +68,12 @@ namespace __jni_impl::android::view::inputmethod
 			arg3
 		);
 	}
-	void InputBinding::__constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::inputmethod::InputBinding arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.inputmethod.InputBinding",
-			"(Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/InputBinding;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
 	
 	// Methods
-	jstring InputBinding::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint InputBinding::getPid()
+	jint InputBinding::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getPid",
+			"describeContents",
 			"()I"
 		);
 	}
@@ -98,6 +91,13 @@ namespace __jni_impl::android::view::inputmethod
 			"()Landroid/os/IBinder;"
 		);
 	}
+	jint InputBinding::getPid()
+	{
+		return __thiz.callMethod<jint>(
+			"getPid",
+			"()I"
+		);
+	}
 	jint InputBinding::getUid()
 	{
 		return __thiz.callMethod<jint>(
@@ -105,12 +105,12 @@ namespace __jni_impl::android::view::inputmethod
 			"()I"
 		);
 	}
-	jint InputBinding::describeContents()
+	jstring InputBinding::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void InputBinding::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -129,6 +129,12 @@ namespace android::view::inputmethod
 	{
 	public:
 		InputBinding(QAndroidJniObject obj) { __thiz = obj; }
+		InputBinding(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::inputmethod::InputBinding arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
+		}
 		InputBinding(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 		{
 			__constructor(
@@ -136,12 +142,6 @@ namespace android::view::inputmethod
 				arg1,
 				arg2,
 				arg3);
-		}
-		InputBinding(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::inputmethod::InputBinding arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
 		}
 	};
 } // namespace android::view::inputmethod

@@ -24,28 +24,28 @@ namespace __jni_impl::javax::security::auth::x500
 	{
 	public:
 		// Fields
+		static jstring CANONICAL();
 		static jstring RFC1779();
 		static jstring RFC2253();
-		static jstring CANONICAL();
 		
 		// Constructors
+		void __constructor(jbyteArray arg0);
 		void __constructor(__jni_impl::java::io::InputStream arg0);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
 		void __constructor(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1);
-		void __constructor(jbyteArray arg0);
 		
 		// Methods
+		jboolean equals(jobject arg0);
+		jbyteArray getEncoded();
 		jstring getName();
 		jstring getName(jstring arg0);
 		jstring getName(const QString &arg0);
 		jstring getName(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		jstring getName(const QString &arg0, __jni_impl::__JniBaseClass arg1);
-		jboolean equals(jobject arg0);
-		jstring toString();
 		jint hashCode();
-		jbyteArray getEncoded();
+		jstring toString();
 	};
 } // namespace __jni_impl::javax::security::auth::x500
 
@@ -56,6 +56,14 @@ namespace __jni_impl::javax::security::auth::x500
 namespace __jni_impl::javax::security::auth::x500
 {
 	// Fields
+	jstring X500Principal::CANONICAL()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.security.auth.x500.X500Principal",
+			"CANONICAL",
+			"Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jstring X500Principal::RFC1779()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -72,16 +80,16 @@ namespace __jni_impl::javax::security::auth::x500
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jstring X500Principal::CANONICAL()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.security.auth.x500.X500Principal",
-			"CANONICAL",
-			"Ljava/lang/String;"
-		).object<jstring>();
-	}
 	
 	// Constructors
+	void X500Principal::__constructor(jbyteArray arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.security.auth.x500.X500Principal",
+			"([B)V",
+			arg0
+		);
+	}
 	void X500Principal::__constructor(__jni_impl::java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -124,16 +132,23 @@ namespace __jni_impl::javax::security::auth::x500
 			arg1.__jniObject().object()
 		);
 	}
-	void X500Principal::__constructor(jbyteArray arg0)
+	
+	// Methods
+	jboolean X500Principal::equals(jobject arg0)
 	{
-		__thiz = QAndroidJniObject(
-			"javax.security.auth.x500.X500Principal",
-			"([B)V",
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
 			arg0
 		);
 	}
-	
-	// Methods
+	jbyteArray X500Principal::getEncoded()
+	{
+		return __thiz.callObjectMethod(
+			"getEncoded",
+			"()[B"
+		).object<jbyteArray>();
+	}
 	jstring X500Principal::getName()
 	{
 		return __thiz.callObjectMethod(
@@ -175,12 +190,11 @@ namespace __jni_impl::javax::security::auth::x500
 			arg1.__jniObject().object()
 		).object<jstring>();
 	}
-	jboolean X500Principal::equals(jobject arg0)
+	jint X500Principal::hashCode()
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
 	}
 	jstring X500Principal::toString()
@@ -190,20 +204,6 @@ namespace __jni_impl::javax::security::auth::x500
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint X500Principal::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jbyteArray X500Principal::getEncoded()
-	{
-		return __thiz.callObjectMethod(
-			"getEncoded",
-			"()[B"
-		).object<jbyteArray>();
-	}
 } // namespace __jni_impl::javax::security::auth::x500
 
 namespace javax::security::auth::x500
@@ -212,6 +212,11 @@ namespace javax::security::auth::x500
 	{
 	public:
 		X500Principal(QAndroidJniObject obj) { __thiz = obj; }
+		X500Principal(jbyteArray arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		X500Principal(__jni_impl::java::io::InputStream arg0)
 		{
 			__constructor(
@@ -227,11 +232,6 @@ namespace javax::security::auth::x500
 			__constructor(
 				arg0,
 				arg1);
-		}
-		X500Principal(jbyteArray arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace javax::security::auth::x500

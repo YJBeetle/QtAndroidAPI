@@ -12,6 +12,10 @@ namespace __jni_impl::android::content
 {
 	class ComponentName;
 }
+namespace __jni_impl::android::content
+{
+	class Intent;
+}
 namespace __jni_impl::android::net
 {
 	class Uri;
@@ -19,10 +23,6 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::service::notification
 {
 	class Condition;
-}
-namespace __jni_impl::android::content
-{
-	class Intent;
 }
 
 namespace __jni_impl::android::service::notification
@@ -41,22 +41,22 @@ namespace __jni_impl::android::service::notification
 		void __constructor();
 		
 		// Methods
-		void onConnected();
 		static void requestRebind(__jni_impl::android::content::ComponentName arg0);
-		void requestUnbind();
-		void onRequestConditions(jint arg0);
-		void onSubscribe(__jni_impl::android::net::Uri arg0);
-		void onUnsubscribe(__jni_impl::android::net::Uri arg0);
 		void notifyCondition(__jni_impl::android::service::notification::Condition arg0);
 		void notifyConditions(jarray arg0);
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		void onConnected();
+		void onRequestConditions(jint arg0);
+		void onSubscribe(__jni_impl::android::net::Uri arg0);
+		void onUnsubscribe(__jni_impl::android::net::Uri arg0);
+		void requestUnbind();
 	};
 } // namespace __jni_impl::android::service::notification
 
 #include "../../content/ComponentName.hpp"
+#include "../../content/Intent.hpp"
 #include "../../net/Uri.hpp"
 #include "Condition.hpp"
-#include "../../content/Intent.hpp"
 
 namespace __jni_impl::android::service::notification
 {
@@ -112,13 +112,6 @@ namespace __jni_impl::android::service::notification
 	}
 	
 	// Methods
-	void ConditionProviderService::onConnected()
-	{
-		__thiz.callMethod<void>(
-			"onConnected",
-			"()V"
-		);
-	}
 	void ConditionProviderService::requestRebind(__jni_impl::android::content::ComponentName arg0)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -128,10 +121,34 @@ namespace __jni_impl::android::service::notification
 			arg0.__jniObject().object()
 		);
 	}
-	void ConditionProviderService::requestUnbind()
+	void ConditionProviderService::notifyCondition(__jni_impl::android::service::notification::Condition arg0)
 	{
 		__thiz.callMethod<void>(
-			"requestUnbind",
+			"notifyCondition",
+			"(Landroid/service/notification/Condition;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ConditionProviderService::notifyConditions(jarray arg0)
+	{
+		__thiz.callMethod<void>(
+			"notifyConditions",
+			"([Landroid/service/notification/Condition;)V",
+			arg0
+		);
+	}
+	QAndroidJniObject ConditionProviderService::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
+		);
+	}
+	void ConditionProviderService::onConnected()
+	{
+		__thiz.callMethod<void>(
+			"onConnected",
 			"()V"
 		);
 	}
@@ -159,28 +176,11 @@ namespace __jni_impl::android::service::notification
 			arg0.__jniObject().object()
 		);
 	}
-	void ConditionProviderService::notifyCondition(__jni_impl::android::service::notification::Condition arg0)
+	void ConditionProviderService::requestUnbind()
 	{
 		__thiz.callMethod<void>(
-			"notifyCondition",
-			"(Landroid/service/notification/Condition;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ConditionProviderService::notifyConditions(jarray arg0)
-	{
-		__thiz.callMethod<void>(
-			"notifyConditions",
-			"([Landroid/service/notification/Condition;)V",
-			arg0
-		);
-	}
-	QAndroidJniObject ConditionProviderService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			"requestUnbind",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::service::notification

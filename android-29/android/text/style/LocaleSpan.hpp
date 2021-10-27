@@ -9,19 +9,19 @@
 
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class LocaleList;
 }
 namespace __jni_impl::android::os
 {
-	class LocaleList;
-}
-namespace __jni_impl::java::util
-{
-	class Locale;
+	class Parcel;
 }
 namespace __jni_impl::android::text
 {
 	class TextPaint;
+}
+namespace __jni_impl::java::util
+{
+	class Locale;
 }
 
 namespace __jni_impl::android::text::style
@@ -32,44 +32,44 @@ namespace __jni_impl::android::text::style
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::android::os::Parcel arg0);
 		void __constructor(__jni_impl::android::os::LocaleList arg0);
+		void __constructor(__jni_impl::android::os::Parcel arg0);
 		void __constructor(__jni_impl::java::util::Locale arg0);
 		
 		// Methods
+		jint describeContents();
 		QAndroidJniObject getLocale();
 		QAndroidJniObject getLocales();
-		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
 		jint getSpanTypeId();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
 		void updateMeasureState(__jni_impl::android::text::TextPaint arg0);
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::text::style
 
-#include "../../os/Parcel.hpp"
 #include "../../os/LocaleList.hpp"
-#include "../../../java/util/Locale.hpp"
+#include "../../os/Parcel.hpp"
 #include "../TextPaint.hpp"
+#include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::text::style
 {
 	// Fields
 	
 	// Constructors
-	void LocaleSpan::__constructor(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.style.LocaleSpan",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void LocaleSpan::__constructor(__jni_impl::android::os::LocaleList arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.style.LocaleSpan",
 			"(Landroid/os/LocaleList;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void LocaleSpan::__constructor(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.style.LocaleSpan",
+			"(Landroid/os/Parcel;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -83,6 +83,13 @@ namespace __jni_impl::android::text::style
 	}
 	
 	// Methods
+	jint LocaleSpan::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	QAndroidJniObject LocaleSpan::getLocale()
 	{
 		return __thiz.callObjectMethod(
@@ -97,6 +104,13 @@ namespace __jni_impl::android::text::style
 			"()Landroid/os/LocaleList;"
 		);
 	}
+	jint LocaleSpan::getSpanTypeId()
+	{
+		return __thiz.callMethod<jint>(
+			"getSpanTypeId",
+			"()I"
+		);
+	}
 	void LocaleSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -105,18 +119,12 @@ namespace __jni_impl::android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	jint LocaleSpan::getSpanTypeId()
+	void LocaleSpan::updateMeasureState(__jni_impl::android::text::TextPaint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getSpanTypeId",
-			"()I"
-		);
-	}
-	jint LocaleSpan::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		__thiz.callMethod<void>(
+			"updateMeasureState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void LocaleSpan::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
@@ -128,14 +136,6 @@ namespace __jni_impl::android::text::style
 			arg1
 		);
 	}
-	void LocaleSpan::updateMeasureState(__jni_impl::android::text::TextPaint arg0)
-	{
-		__thiz.callMethod<void>(
-			"updateMeasureState",
-			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
-		);
-	}
 } // namespace __jni_impl::android::text::style
 
 namespace android::text::style
@@ -144,12 +144,12 @@ namespace android::text::style
 	{
 	public:
 		LocaleSpan(QAndroidJniObject obj) { __thiz = obj; }
-		LocaleSpan(__jni_impl::android::os::Parcel arg0)
+		LocaleSpan(__jni_impl::android::os::LocaleList arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		LocaleSpan(__jni_impl::android::os::LocaleList arg0)
+		LocaleSpan(__jni_impl::android::os::Parcel arg0)
 		{
 			__constructor(
 				arg0);

@@ -7,19 +7,19 @@
 
 namespace __jni_impl::java::net
 {
-	class URL;
-}
-namespace __jni_impl::java::net
-{
 	class InetAddress;
 }
 namespace __jni_impl::java::net
 {
-	class URLConnection;
+	class Proxy;
 }
 namespace __jni_impl::java::net
 {
-	class Proxy;
+	class URL;
+}
+namespace __jni_impl::java::net
+{
+	class URLConnection;
 }
 
 namespace __jni_impl::java::net
@@ -36,10 +36,10 @@ namespace __jni_impl::java::net
 	};
 } // namespace __jni_impl::java::net
 
-#include "URL.hpp"
 #include "InetAddress.hpp"
-#include "URLConnection.hpp"
 #include "Proxy.hpp"
+#include "URL.hpp"
+#include "URLConnection.hpp"
 
 namespace __jni_impl::java::net
 {

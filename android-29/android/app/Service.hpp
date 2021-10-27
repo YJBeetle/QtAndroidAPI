@@ -7,9 +7,21 @@
 #include "../content/Context.hpp"
 #include "../content/ContextWrapper.hpp"
 
+namespace __jni_impl::android::app
+{
+	class Application;
+}
+namespace __jni_impl::android::app
+{
+	class Notification;
+}
 namespace __jni_impl::android::content
 {
 	class Intent;
+}
+namespace __jni_impl::android::content::res
+{
+	class Configuration;
 }
 namespace __jni_impl::java::io
 {
@@ -18,18 +30,6 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class PrintWriter;
-}
-namespace __jni_impl::android::app
-{
-	class Application;
-}
-namespace __jni_impl::android::content::res
-{
-	class Configuration;
-}
-namespace __jni_impl::android::app
-{
-	class Notification;
 }
 
 namespace __jni_impl::android::app
@@ -52,35 +52,35 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		void onStart(__jni_impl::android::content::Intent arg0, jint arg1);
 		QAndroidJniObject getApplication();
+		jint getForegroundServiceType();
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		void onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
 		void onCreate();
 		void onDestroy();
-		void onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
 		void onLowMemory();
-		void onTrimMemory(jint arg0);
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
-		jint onStartCommand(__jni_impl::android::content::Intent arg0, jint arg1, jint arg2);
-		jboolean onUnbind(__jni_impl::android::content::Intent arg0);
 		void onRebind(__jni_impl::android::content::Intent arg0);
+		void onStart(__jni_impl::android::content::Intent arg0, jint arg1);
+		jint onStartCommand(__jni_impl::android::content::Intent arg0, jint arg1, jint arg2);
 		void onTaskRemoved(__jni_impl::android::content::Intent arg0);
+		void onTrimMemory(jint arg0);
+		jboolean onUnbind(__jni_impl::android::content::Intent arg0);
+		void startForeground(jint arg0, __jni_impl::android::app::Notification arg1);
+		void startForeground(jint arg0, __jni_impl::android::app::Notification arg1, jint arg2);
+		void stopForeground(jboolean arg0);
+		void stopForeground(jint arg0);
 		void stopSelf();
 		void stopSelf(jint arg0);
 		jboolean stopSelfResult(jint arg0);
-		void startForeground(jint arg0, __jni_impl::android::app::Notification arg1, jint arg2);
-		void startForeground(jint arg0, __jni_impl::android::app::Notification arg1);
-		void stopForeground(jboolean arg0);
-		void stopForeground(jint arg0);
-		jint getForegroundServiceType();
 	};
 } // namespace __jni_impl::android::app
 
+#include "Application.hpp"
+#include "Notification.hpp"
 #include "../content/Intent.hpp"
+#include "../content/res/Configuration.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
-#include "Application.hpp"
-#include "../content/res/Configuration.hpp"
-#include "Notification.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -159,20 +159,34 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void Service::onStart(__jni_impl::android::content::Intent arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"onStart",
-			"(Landroid/content/Intent;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	QAndroidJniObject Service::getApplication()
 	{
 		return __thiz.callObjectMethod(
 			"getApplication",
 			"()Landroid/app/Application;"
+		);
+	}
+	jint Service::getForegroundServiceType()
+	{
+		return __thiz.callMethod<jint>(
+			"getForegroundServiceType",
+			"()I"
+		);
+	}
+	QAndroidJniObject Service::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
+		);
+	}
+	void Service::onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0)
+	{
+		__thiz.callMethod<void>(
+			"onConfigurationChanged",
+			"(Landroid/content/res/Configuration;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void Service::onCreate()
@@ -189,14 +203,6 @@ namespace __jni_impl::android::app
 			"()V"
 		);
 	}
-	void Service::onConfigurationChanged(__jni_impl::android::content::res::Configuration arg0)
-	{
-		__thiz.callMethod<void>(
-			"onConfigurationChanged",
-			"(Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void Service::onLowMemory()
 	{
 		__thiz.callMethod<void>(
@@ -204,20 +210,21 @@ namespace __jni_impl::android::app
 			"()V"
 		);
 	}
-	void Service::onTrimMemory(jint arg0)
+	void Service::onRebind(__jni_impl::android::content::Intent arg0)
 	{
 		__thiz.callMethod<void>(
-			"onTrimMemory",
-			"(I)V",
-			arg0
+			"onRebind",
+			"(Landroid/content/Intent;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Service::onBind(__jni_impl::android::content::Intent arg0)
+	void Service::onStart(__jni_impl::android::content::Intent arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+		__thiz.callMethod<void>(
+			"onStart",
+			"(Landroid/content/Intent;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 	jint Service::onStartCommand(__jni_impl::android::content::Intent arg0, jint arg1, jint arg2)
@@ -230,6 +237,22 @@ namespace __jni_impl::android::app
 			arg2
 		);
 	}
+	void Service::onTaskRemoved(__jni_impl::android::content::Intent arg0)
+	{
+		__thiz.callMethod<void>(
+			"onTaskRemoved",
+			"(Landroid/content/Intent;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Service::onTrimMemory(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"onTrimMemory",
+			"(I)V",
+			arg0
+		);
+	}
 	jboolean Service::onUnbind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -238,20 +261,39 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object()
 		);
 	}
-	void Service::onRebind(__jni_impl::android::content::Intent arg0)
+	void Service::startForeground(jint arg0, __jni_impl::android::app::Notification arg1)
 	{
 		__thiz.callMethod<void>(
-			"onRebind",
-			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object()
+			"startForeground",
+			"(ILandroid/app/Notification;)V",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
-	void Service::onTaskRemoved(__jni_impl::android::content::Intent arg0)
+	void Service::startForeground(jint arg0, __jni_impl::android::app::Notification arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
-			"onTaskRemoved",
-			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object()
+			"startForeground",
+			"(ILandroid/app/Notification;I)V",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
+	void Service::stopForeground(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"stopForeground",
+			"(Z)V",
+			arg0
+		);
+	}
+	void Service::stopForeground(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"stopForeground",
+			"(I)V",
+			arg0
 		);
 	}
 	void Service::stopSelf()
@@ -275,48 +317,6 @@ namespace __jni_impl::android::app
 			"stopSelfResult",
 			"(I)Z",
 			arg0
-		);
-	}
-	void Service::startForeground(jint arg0, __jni_impl::android::app::Notification arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"startForeground",
-			"(ILandroid/app/Notification;I)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	void Service::startForeground(jint arg0, __jni_impl::android::app::Notification arg1)
-	{
-		__thiz.callMethod<void>(
-			"startForeground",
-			"(ILandroid/app/Notification;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void Service::stopForeground(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"stopForeground",
-			"(Z)V",
-			arg0
-		);
-	}
-	void Service::stopForeground(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"stopForeground",
-			"(I)V",
-			arg0
-		);
-	}
-	jint Service::getForegroundServiceType()
-	{
-		return __thiz.callMethod<jint>(
-			"getForegroundServiceType",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::app

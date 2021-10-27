@@ -7,13 +7,13 @@
 #include "../../text/style/CharacterStyle.hpp"
 #include "../../text/style/ClickableSpan.hpp"
 
-namespace __jni_impl::android::view::textclassifier
-{
-	class TextLinks_TextLink;
-}
 namespace __jni_impl::android::view
 {
 	class View;
+}
+namespace __jni_impl::android::view::textclassifier
+{
+	class TextLinks_TextLink;
 }
 
 namespace __jni_impl::android::view::textclassifier
@@ -32,8 +32,8 @@ namespace __jni_impl::android::view::textclassifier
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
-#include "TextLinks_TextLink.hpp"
 #include "../View.hpp"
+#include "TextLinks_TextLink.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {

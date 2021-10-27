@@ -45,43 +45,43 @@ namespace __jni_impl::android::text::format
 		jint yearDay();
 		
 		// Constructors
-		void __constructor(__jni_impl::android::text::format::Time arg0);
 		void __constructor();
+		void __constructor(__jni_impl::android::text::format::Time arg0);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
 		
 		// Methods
-		jstring toString();
+		static jint compare(__jni_impl::android::text::format::Time arg0, __jni_impl::android::text::format::Time arg1);
+		static jstring getCurrentTimezone();
+		static jint getJulianDay(jlong arg0, jlong arg1);
+		static jint getJulianMondayFromWeeksSinceEpoch(jint arg0);
+		static jint getWeeksSinceEpochFromJulianDay(jint arg0, jint arg1);
+		static jboolean isEpoch(__jni_impl::android::text::format::Time arg0);
+		jboolean after(__jni_impl::android::text::format::Time arg0);
+		jboolean before(__jni_impl::android::text::format::Time arg0);
 		void clear(jstring arg0);
 		void clear(const QString &arg0);
-		static jint compare(__jni_impl::android::text::format::Time arg0, __jni_impl::android::text::format::Time arg1);
 		jstring format(jstring arg0);
 		jstring format(const QString &arg0);
-		void set(jlong arg0);
-		void set(jint arg0, jint arg1, jint arg2);
-		void set(__jni_impl::android::text::format::Time arg0);
-		void set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
-		jlong toMillis(jboolean arg0);
-		jlong normalize(jboolean arg0);
-		jboolean before(__jni_impl::android::text::format::Time arg0);
-		jboolean after(__jni_impl::android::text::format::Time arg0);
-		jboolean parse(jstring arg0);
-		jboolean parse(const QString &arg0);
-		jint getActualMaximum(jint arg0);
-		jint getWeekNumber();
-		void switchTimezone(jstring arg0);
-		void switchTimezone(const QString &arg0);
-		jboolean parse3339(jstring arg0);
-		jboolean parse3339(const QString &arg0);
-		static jstring getCurrentTimezone();
-		void setToNow();
 		jstring format2445();
 		jstring format3339(jboolean arg0);
-		static jboolean isEpoch(__jni_impl::android::text::format::Time arg0);
-		static jint getJulianDay(jlong arg0, jlong arg1);
+		jint getActualMaximum(jint arg0);
+		jint getWeekNumber();
+		jlong normalize(jboolean arg0);
+		jboolean parse(jstring arg0);
+		jboolean parse(const QString &arg0);
+		jboolean parse3339(jstring arg0);
+		jboolean parse3339(const QString &arg0);
+		void set(__jni_impl::android::text::format::Time arg0);
+		void set(jlong arg0);
+		void set(jint arg0, jint arg1, jint arg2);
+		void set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		jlong setJulianDay(jint arg0);
-		static jint getWeeksSinceEpochFromJulianDay(jint arg0, jint arg1);
-		static jint getJulianMondayFromWeeksSinceEpoch(jint arg0);
+		void setToNow();
+		void switchTimezone(jstring arg0);
+		void switchTimezone(const QString &arg0);
+		jlong toMillis(jboolean arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::android::text::format
 
@@ -298,19 +298,19 @@ namespace __jni_impl::android::text::format
 	}
 	
 	// Constructors
+	void Time::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.format.Time",
+			"()V"
+		);
+	}
 	void Time::__constructor(__jni_impl::android::text::format::Time arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.text.format.Time",
 			"(Landroid/text/format/Time;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	void Time::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.format.Time",
-			"()V"
 		);
 	}
 	void Time::__constructor(jstring arg0)
@@ -331,12 +331,77 @@ namespace __jni_impl::android::text::format
 	}
 	
 	// Methods
-	jstring Time::toString()
+	jint Time::compare(__jni_impl::android::text::format::Time arg0, __jni_impl::android::text::format::Time arg1)
 	{
-		return __thiz.callObjectMethod(
-			"toString",
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.text.format.Time",
+			"compare",
+			"(Landroid/text/format/Time;Landroid/text/format/Time;)I",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	jstring Time::getCurrentTimezone()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.format.Time",
+			"getCurrentTimezone",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jint Time::getJulianDay(jlong arg0, jlong arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.text.format.Time",
+			"getJulianDay",
+			"(JJ)I",
+			arg0,
+			arg1
+		);
+	}
+	jint Time::getJulianMondayFromWeeksSinceEpoch(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.text.format.Time",
+			"getJulianMondayFromWeeksSinceEpoch",
+			"(I)I",
+			arg0
+		);
+	}
+	jint Time::getWeeksSinceEpochFromJulianDay(jint arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.text.format.Time",
+			"getWeeksSinceEpochFromJulianDay",
+			"(II)I",
+			arg0,
+			arg1
+		);
+	}
+	jboolean Time::isEpoch(__jni_impl::android::text::format::Time arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.text.format.Time",
+			"isEpoch",
+			"(Landroid/text/format/Time;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean Time::after(__jni_impl::android::text::format::Time arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"after",
+			"(Landroid/text/format/Time;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean Time::before(__jni_impl::android::text::format::Time arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"before",
+			"(Landroid/text/format/Time;)Z",
+			arg0.__jniObject().object()
+		);
 	}
 	void Time::clear(jstring arg0)
 	{
@@ -352,16 +417,6 @@ namespace __jni_impl::android::text::format
 			"clear",
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jint Time::compare(__jni_impl::android::text::format::Time arg0, __jni_impl::android::text::format::Time arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.text.format.Time",
-			"compare",
-			"(Landroid/text/format/Time;Landroid/text/format/Time;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
 		);
 	}
 	jstring Time::format(jstring arg0)
@@ -380,92 +435,20 @@ namespace __jni_impl::android::text::format
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
-	void Time::set(jlong arg0)
+	jstring Time::format2445()
 	{
-		__thiz.callMethod<void>(
-			"set",
-			"(J)V",
+		return __thiz.callObjectMethod(
+			"format2445",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring Time::format3339(jboolean arg0)
+	{
+		return __thiz.callObjectMethod(
+			"format3339",
+			"(Z)Ljava/lang/String;",
 			arg0
-		);
-	}
-	void Time::set(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"set",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void Time::set(__jni_impl::android::text::format::Time arg0)
-	{
-		__thiz.callMethod<void>(
-			"set",
-			"(Landroid/text/format/Time;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Time::set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
-	{
-		__thiz.callMethod<void>(
-			"set",
-			"(IIIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5
-		);
-	}
-	jlong Time::toMillis(jboolean arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"toMillis",
-			"(Z)J",
-			arg0
-		);
-	}
-	jlong Time::normalize(jboolean arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"normalize",
-			"(Z)J",
-			arg0
-		);
-	}
-	jboolean Time::before(__jni_impl::android::text::format::Time arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"before",
-			"(Landroid/text/format/Time;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean Time::after(__jni_impl::android::text::format::Time arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"after",
-			"(Landroid/text/format/Time;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean Time::parse(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"parse",
-			"(Ljava/lang/String;)Z",
-			arg0
-		);
-	}
-	jboolean Time::parse(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"parse",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
+		).object<jstring>();
 	}
 	jint Time::getActualMaximum(jint arg0)
 	{
@@ -482,19 +465,27 @@ namespace __jni_impl::android::text::format
 			"()I"
 		);
 	}
-	void Time::switchTimezone(jstring arg0)
+	jlong Time::normalize(jboolean arg0)
 	{
-		__thiz.callMethod<void>(
-			"switchTimezone",
-			"(Ljava/lang/String;)V",
+		return __thiz.callMethod<jlong>(
+			"normalize",
+			"(Z)J",
 			arg0
 		);
 	}
-	void Time::switchTimezone(const QString &arg0)
+	jboolean Time::parse(jstring arg0)
 	{
-		__thiz.callMethod<void>(
-			"switchTimezone",
-			"(Ljava/lang/String;)V",
+		return __thiz.callMethod<jboolean>(
+			"parse",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jboolean Time::parse(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"parse",
+			"(Ljava/lang/String;)Z",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
@@ -514,53 +505,43 @@ namespace __jni_impl::android::text::format
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jstring Time::getCurrentTimezone()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.format.Time",
-			"getCurrentTimezone",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void Time::setToNow()
+	void Time::set(__jni_impl::android::text::format::Time arg0)
 	{
 		__thiz.callMethod<void>(
-			"setToNow",
-			"()V"
-		);
-	}
-	jstring Time::format2445()
-	{
-		return __thiz.callObjectMethod(
-			"format2445",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring Time::format3339(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"format3339",
-			"(Z)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jboolean Time::isEpoch(__jni_impl::android::text::format::Time arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.text.format.Time",
-			"isEpoch",
-			"(Landroid/text/format/Time;)Z",
+			"set",
+			"(Landroid/text/format/Time;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	jint Time::getJulianDay(jlong arg0, jlong arg1)
+	void Time::set(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.text.format.Time",
-			"getJulianDay",
-			"(JJ)I",
+		__thiz.callMethod<void>(
+			"set",
+			"(J)V",
+			arg0
+		);
+	}
+	void Time::set(jint arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"set",
+			"(III)V",
 			arg0,
-			arg1
+			arg1,
+			arg2
+		);
+	}
+	void Time::set(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	{
+		__thiz.callMethod<void>(
+			"set",
+			"(IIIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5
 		);
 	}
 	jlong Time::setJulianDay(jint arg0)
@@ -571,24 +552,43 @@ namespace __jni_impl::android::text::format
 			arg0
 		);
 	}
-	jint Time::getWeeksSinceEpochFromJulianDay(jint arg0, jint arg1)
+	void Time::setToNow()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.text.format.Time",
-			"getWeeksSinceEpochFromJulianDay",
-			"(II)I",
-			arg0,
-			arg1
+		__thiz.callMethod<void>(
+			"setToNow",
+			"()V"
 		);
 	}
-	jint Time::getJulianMondayFromWeeksSinceEpoch(jint arg0)
+	void Time::switchTimezone(jstring arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.text.format.Time",
-			"getJulianMondayFromWeeksSinceEpoch",
-			"(I)I",
+		__thiz.callMethod<void>(
+			"switchTimezone",
+			"(Ljava/lang/String;)V",
 			arg0
 		);
+	}
+	void Time::switchTimezone(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"switchTimezone",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jlong Time::toMillis(jboolean arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"toMillis",
+			"(Z)J",
+			arg0
+		);
+	}
+	jstring Time::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::text::format
 
@@ -598,14 +598,14 @@ namespace android::text::format
 	{
 	public:
 		Time(QAndroidJniObject obj) { __thiz = obj; }
+		Time()
+		{
+			__constructor();
+		}
 		Time(__jni_impl::android::text::format::Time arg0)
 		{
 			__constructor(
 				arg0);
-		}
-		Time()
-		{
-			__constructor();
 		}
 		Time(jstring arg0)
 		{

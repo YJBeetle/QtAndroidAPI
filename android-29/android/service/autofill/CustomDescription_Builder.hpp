@@ -5,17 +5,17 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::widget
+namespace __jni_impl::android::service::autofill
 {
-	class RemoteViews;
+	class BatchUpdates;
 }
 namespace __jni_impl::android::service::autofill
 {
 	class CustomDescription;
 }
-namespace __jni_impl::android::service::autofill
+namespace __jni_impl::android::widget
 {
-	class BatchUpdates;
+	class RemoteViews;
 }
 
 namespace __jni_impl::android::service::autofill
@@ -29,16 +29,16 @@ namespace __jni_impl::android::service::autofill
 		void __constructor(__jni_impl::android::widget::RemoteViews arg0);
 		
 		// Methods
-		QAndroidJniObject build();
 		QAndroidJniObject addChild(jint arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject batchUpdate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::service::autofill::BatchUpdates arg1);
 		QAndroidJniObject addOnClickAction(jint arg0, __jni_impl::__JniBaseClass arg1);
+		QAndroidJniObject batchUpdate(__jni_impl::__JniBaseClass arg0, __jni_impl::android::service::autofill::BatchUpdates arg1);
+		QAndroidJniObject build();
 	};
 } // namespace __jni_impl::android::service::autofill
 
-#include "../../widget/RemoteViews.hpp"
-#include "CustomDescription.hpp"
 #include "BatchUpdates.hpp"
+#include "CustomDescription.hpp"
+#include "../../widget/RemoteViews.hpp"
 
 namespace __jni_impl::android::service::autofill
 {
@@ -55,18 +55,20 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	QAndroidJniObject CustomDescription_Builder::build()
-	{
-		return __thiz.callObjectMethod(
-			"build",
-			"()Landroid/service/autofill/CustomDescription;"
-		);
-	}
 	QAndroidJniObject CustomDescription_Builder::addChild(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
 			"addChild",
 			"(ILandroid/service/autofill/Transformation;)Landroid/service/autofill/CustomDescription$Builder;",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject CustomDescription_Builder::addOnClickAction(jint arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return __thiz.callObjectMethod(
+			"addOnClickAction",
+			"(ILandroid/service/autofill/OnClickAction;)Landroid/service/autofill/CustomDescription$Builder;",
 			arg0,
 			arg1.__jniObject().object()
 		);
@@ -80,13 +82,11 @@ namespace __jni_impl::android::service::autofill
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject CustomDescription_Builder::addOnClickAction(jint arg0, __jni_impl::__JniBaseClass arg1)
+	QAndroidJniObject CustomDescription_Builder::build()
 	{
 		return __thiz.callObjectMethod(
-			"addOnClickAction",
-			"(ILandroid/service/autofill/OnClickAction;)Landroid/service/autofill/CustomDescription$Builder;",
-			arg0,
-			arg1.__jniObject().object()
+			"build",
+			"()Landroid/service/autofill/CustomDescription;"
 		);
 	}
 } // namespace __jni_impl::android::service::autofill

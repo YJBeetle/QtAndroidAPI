@@ -5,10 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view::textclassifier
-{
-	class TextSelection_Request;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::os
 {
 	class LocaleList;
+}
+namespace __jni_impl::android::view::textclassifier
+{
+	class TextSelection_Request;
 }
 
 namespace __jni_impl::android::view::textclassifier
@@ -31,14 +31,14 @@ namespace __jni_impl::android::view::textclassifier
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject setDefaultLocales(__jni_impl::android::os::LocaleList arg0);
+		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
-#include "TextSelection_Request.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/LocaleList.hpp"
+#include "TextSelection_Request.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {
@@ -74,19 +74,19 @@ namespace __jni_impl::android::view::textclassifier
 			"()Landroid/view/textclassifier/TextSelection$Request;"
 		);
 	}
-	QAndroidJniObject TextSelection_Request_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setExtras",
-			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextSelection$Request$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject TextSelection_Request_Builder::setDefaultLocales(__jni_impl::android::os::LocaleList arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setDefaultLocales",
 			"(Landroid/os/LocaleList;)Landroid/view/textclassifier/TextSelection$Request$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TextSelection_Request_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setExtras",
+			"(Landroid/os/Bundle;)Landroid/view/textclassifier/TextSelection$Request$Builder;",
 			arg0.__jniObject().object()
 		);
 	}

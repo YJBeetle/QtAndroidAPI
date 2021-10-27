@@ -17,12 +17,12 @@ namespace __jni_impl::java::security
 		// Fields
 		
 		// Constructors
+		void __constructor();
+		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
 		void __constructor(const QString &arg0, jthrowable arg1);
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
-		void __constructor();
 		
 		// Methods
 	};
@@ -34,6 +34,29 @@ namespace __jni_impl::java::security
 	// Fields
 	
 	// Constructors
+	void KeyManagementException::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.KeyManagementException",
+			"()V"
+		);
+	}
+	void KeyManagementException::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.KeyManagementException",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void KeyManagementException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.KeyManagementException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void KeyManagementException::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -60,29 +83,6 @@ namespace __jni_impl::java::security
 			arg1
 		);
 	}
-	void KeyManagementException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.KeyManagementException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void KeyManagementException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.KeyManagementException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void KeyManagementException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.KeyManagementException",
-			"()V"
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::java::security
@@ -93,6 +93,15 @@ namespace java::security
 	{
 	public:
 		KeyManagementException(QAndroidJniObject obj) { __thiz = obj; }
+		KeyManagementException()
+		{
+			__constructor();
+		}
+		KeyManagementException(jstring arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		KeyManagementException(jthrowable arg0)
 		{
 			__constructor(
@@ -103,15 +112,6 @@ namespace java::security
 			__constructor(
 				arg0,
 				arg1);
-		}
-		KeyManagementException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		KeyManagementException()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::security

@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::graphics::text
-{
-	class MeasuredText;
-}
 namespace __jni_impl::android::graphics
 {
 	class Paint;
+}
+namespace __jni_impl::android::graphics::text
+{
+	class MeasuredText;
 }
 
 namespace __jni_impl::android::graphics::text
@@ -26,16 +26,16 @@ namespace __jni_impl::android::graphics::text
 		void __constructor(__jni_impl::android::graphics::text::MeasuredText arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject appendStyleRun(__jni_impl::android::graphics::Paint arg0, jint arg1, jboolean arg2);
 		QAndroidJniObject appendReplacementRun(__jni_impl::android::graphics::Paint arg0, jint arg1, jfloat arg2);
+		QAndroidJniObject appendStyleRun(__jni_impl::android::graphics::Paint arg0, jint arg1, jboolean arg2);
+		QAndroidJniObject build();
 		QAndroidJniObject setComputeHyphenation(jboolean arg0);
 		QAndroidJniObject setComputeLayout(jboolean arg0);
 	};
 } // namespace __jni_impl::android::graphics::text
 
-#include "MeasuredText.hpp"
 #include "../Paint.hpp"
+#include "MeasuredText.hpp"
 
 namespace __jni_impl::android::graphics::text
 {
@@ -60,11 +60,14 @@ namespace __jni_impl::android::graphics::text
 	}
 	
 	// Methods
-	QAndroidJniObject MeasuredText_Builder::build()
+	QAndroidJniObject MeasuredText_Builder::appendReplacementRun(__jni_impl::android::graphics::Paint arg0, jint arg1, jfloat arg2)
 	{
 		return __thiz.callObjectMethod(
-			"build",
-			"()Landroid/graphics/text/MeasuredText;"
+			"appendReplacementRun",
+			"(Landroid/graphics/Paint;IF)Landroid/graphics/text/MeasuredText$Builder;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
 		);
 	}
 	QAndroidJniObject MeasuredText_Builder::appendStyleRun(__jni_impl::android::graphics::Paint arg0, jint arg1, jboolean arg2)
@@ -77,14 +80,11 @@ namespace __jni_impl::android::graphics::text
 			arg2
 		);
 	}
-	QAndroidJniObject MeasuredText_Builder::appendReplacementRun(__jni_impl::android::graphics::Paint arg0, jint arg1, jfloat arg2)
+	QAndroidJniObject MeasuredText_Builder::build()
 	{
 		return __thiz.callObjectMethod(
-			"appendReplacementRun",
-			"(Landroid/graphics/Paint;IF)Landroid/graphics/text/MeasuredText$Builder;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
+			"build",
+			"()Landroid/graphics/text/MeasuredText;"
 		);
 	}
 	QAndroidJniObject MeasuredText_Builder::setComputeHyphenation(jboolean arg0)

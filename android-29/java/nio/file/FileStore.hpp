@@ -17,19 +17,19 @@ namespace __jni_impl::java::nio::file
 		void __constructor();
 		
 		// Methods
-		jstring name();
-		jstring type();
-		jboolean isReadOnly();
 		jobject getAttribute(jstring arg0);
 		jobject getAttribute(const QString &arg0);
-		jlong getTotalSpace();
-		jlong getUsableSpace();
 		jlong getBlockSize();
+		QAndroidJniObject getFileStoreAttributeView(jclass arg0);
+		jlong getTotalSpace();
 		jlong getUnallocatedSpace();
+		jlong getUsableSpace();
+		jboolean isReadOnly();
+		jstring name();
 		jboolean supportsFileAttributeView(jclass arg0);
 		jboolean supportsFileAttributeView(jstring arg0);
 		jboolean supportsFileAttributeView(const QString &arg0);
-		QAndroidJniObject getFileStoreAttributeView(jclass arg0);
+		jstring type();
 	};
 } // namespace __jni_impl::java::nio::file
 
@@ -47,27 +47,6 @@ namespace __jni_impl::java::nio::file
 	}
 	
 	// Methods
-	jstring FileStore::name()
-	{
-		return __thiz.callObjectMethod(
-			"name",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring FileStore::type()
-	{
-		return __thiz.callObjectMethod(
-			"type",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jboolean FileStore::isReadOnly()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isReadOnly",
-			"()Z"
-		);
-	}
 	jobject FileStore::getAttribute(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -84,10 +63,32 @@ namespace __jni_impl::java::nio::file
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
+	jlong FileStore::getBlockSize()
+	{
+		return __thiz.callMethod<jlong>(
+			"getBlockSize",
+			"()J"
+		);
+	}
+	QAndroidJniObject FileStore::getFileStoreAttributeView(jclass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getFileStoreAttributeView",
+			"(Ljava/lang/Class;)Ljava/nio/file/attribute/FileStoreAttributeView;",
+			arg0
+		);
+	}
 	jlong FileStore::getTotalSpace()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTotalSpace",
+			"()J"
+		);
+	}
+	jlong FileStore::getUnallocatedSpace()
+	{
+		return __thiz.callMethod<jlong>(
+			"getUnallocatedSpace",
 			"()J"
 		);
 	}
@@ -98,19 +99,19 @@ namespace __jni_impl::java::nio::file
 			"()J"
 		);
 	}
-	jlong FileStore::getBlockSize()
+	jboolean FileStore::isReadOnly()
 	{
-		return __thiz.callMethod<jlong>(
-			"getBlockSize",
-			"()J"
+		return __thiz.callMethod<jboolean>(
+			"isReadOnly",
+			"()Z"
 		);
 	}
-	jlong FileStore::getUnallocatedSpace()
+	jstring FileStore::name()
 	{
-		return __thiz.callMethod<jlong>(
-			"getUnallocatedSpace",
-			"()J"
-		);
+		return __thiz.callObjectMethod(
+			"name",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean FileStore::supportsFileAttributeView(jclass arg0)
 	{
@@ -136,13 +137,12 @@ namespace __jni_impl::java::nio::file
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	QAndroidJniObject FileStore::getFileStoreAttributeView(jclass arg0)
+	jstring FileStore::type()
 	{
 		return __thiz.callObjectMethod(
-			"getFileStoreAttributeView",
-			"(Ljava/lang/Class;)Ljava/nio/file/attribute/FileStoreAttributeView;",
-			arg0
-		);
+			"type",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::nio::file
 

@@ -23,22 +23,22 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 		void __constructor(__jni_impl::android::net::wifi::hotspot2::pps::Credential_UserCredential arg0);
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jstring toString();
+		jint getEapType();
+		jstring getNonEapInnerMethod();
+		jstring getPassword();
+		jstring getUsername();
 		jint hashCode();
 		void setEapType(jint arg0);
-		jstring getUsername();
-		jint getEapType();
 		void setNonEapInnerMethod(jstring arg0);
 		void setNonEapInnerMethod(const QString &arg0);
-		jstring getNonEapInnerMethod();
-		void setUsername(jstring arg0);
-		void setUsername(const QString &arg0);
 		void setPassword(jstring arg0);
 		void setPassword(const QString &arg0);
-		jint describeContents();
+		void setUsername(jstring arg0);
+		void setUsername(const QString &arg0);
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jstring getPassword();
 	};
 } // namespace __jni_impl::android::net::wifi::hotspot2::pps
 
@@ -74,6 +74,13 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 	}
 	
 	// Methods
+	jint Credential_UserCredential::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean Credential_UserCredential::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -82,10 +89,31 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 			arg0
 		);
 	}
-	jstring Credential_UserCredential::toString()
+	jint Credential_UserCredential::getEapType()
+	{
+		return __thiz.callMethod<jint>(
+			"getEapType",
+			"()I"
+		);
+	}
+	jstring Credential_UserCredential::getNonEapInnerMethod()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
+			"getNonEapInnerMethod",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring Credential_UserCredential::getPassword()
+	{
+		return __thiz.callObjectMethod(
+			"getPassword",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring Credential_UserCredential::getUsername()
+	{
+		return __thiz.callObjectMethod(
+			"getUsername",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -104,20 +132,6 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 			arg0
 		);
 	}
-	jstring Credential_UserCredential::getUsername()
-	{
-		return __thiz.callObjectMethod(
-			"getUsername",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint Credential_UserCredential::getEapType()
-	{
-		return __thiz.callMethod<jint>(
-			"getEapType",
-			"()I"
-		);
-	}
 	void Credential_UserCredential::setNonEapInnerMethod(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -130,29 +144,6 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 	{
 		__thiz.callMethod<void>(
 			"setNonEapInnerMethod",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring Credential_UserCredential::getNonEapInnerMethod()
-	{
-		return __thiz.callObjectMethod(
-			"getNonEapInnerMethod",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void Credential_UserCredential::setUsername(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setUsername",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void Credential_UserCredential::setUsername(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setUsername",
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
@@ -173,12 +164,28 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jint Credential_UserCredential::describeContents()
+	void Credential_UserCredential::setUsername(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		__thiz.callMethod<void>(
+			"setUsername",
+			"(Ljava/lang/String;)V",
+			arg0
 		);
+	}
+	void Credential_UserCredential::setUsername(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setUsername",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jstring Credential_UserCredential::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Credential_UserCredential::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -188,13 +195,6 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jstring Credential_UserCredential::getPassword()
-	{
-		return __thiz.callObjectMethod(
-			"getPassword",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::net::wifi::hotspot2::pps
 

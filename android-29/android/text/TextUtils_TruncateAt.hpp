@@ -13,18 +13,18 @@ namespace __jni_impl::android::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject START();
-		static QAndroidJniObject MIDDLE();
 		static QAndroidJniObject END();
 		static QAndroidJniObject MARQUEE();
+		static QAndroidJniObject MIDDLE();
+		static QAndroidJniObject START();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::text
 
@@ -32,22 +32,6 @@ namespace __jni_impl::android::text
 namespace __jni_impl::android::text
 {
 	// Fields
-	QAndroidJniObject TextUtils_TruncateAt::START()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.text.TextUtils$TruncateAt",
-			"START",
-			"Landroid/text/TextUtils$TruncateAt;"
-		);
-	}
-	QAndroidJniObject TextUtils_TruncateAt::MIDDLE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.text.TextUtils$TruncateAt",
-			"MIDDLE",
-			"Landroid/text/TextUtils$TruncateAt;"
-		);
-	}
 	QAndroidJniObject TextUtils_TruncateAt::END()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -64,6 +48,22 @@ namespace __jni_impl::android::text
 			"Landroid/text/TextUtils$TruncateAt;"
 		);
 	}
+	QAndroidJniObject TextUtils_TruncateAt::MIDDLE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.text.TextUtils$TruncateAt",
+			"MIDDLE",
+			"Landroid/text/TextUtils$TruncateAt;"
+		);
+	}
+	QAndroidJniObject TextUtils_TruncateAt::START()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.text.TextUtils$TruncateAt",
+			"START",
+			"Landroid/text/TextUtils$TruncateAt;"
+		);
+	}
 	
 	// Constructors
 	void TextUtils_TruncateAt::__constructor()
@@ -74,14 +74,6 @@ namespace __jni_impl::android::text
 	}
 	
 	// Methods
-	jarray TextUtils_TruncateAt::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.TextUtils$TruncateAt",
-			"values",
-			"()[Landroid/text/TextUtils$TruncateAt;"
-		).object<jarray>();
-	}
 	QAndroidJniObject TextUtils_TruncateAt::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -99,6 +91,14 @@ namespace __jni_impl::android::text
 			"(Ljava/lang/String;)Landroid/text/TextUtils$TruncateAt;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray TextUtils_TruncateAt::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.TextUtils$TruncateAt",
+			"values",
+			"()[Landroid/text/TextUtils$TruncateAt;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::text
 

@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::app
 {
-	class RemoteInput;
+	class PendingIntent;
 }
 namespace __jni_impl::android::app
 {
-	class PendingIntent;
+	class RemoteInput;
 }
 
 namespace __jni_impl::android::app
@@ -25,18 +25,18 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
+		jlong getLatestTimestamp();
 		jarray getMessages();
+		jstring getParticipant();
+		jarray getParticipants();
+		QAndroidJniObject getReadPendingIntent();
 		QAndroidJniObject getRemoteInput();
 		QAndroidJniObject getReplyPendingIntent();
-		QAndroidJniObject getReadPendingIntent();
-		jarray getParticipants();
-		jstring getParticipant();
-		jlong getLatestTimestamp();
 	};
 } // namespace __jni_impl::android::app
 
-#include "RemoteInput.hpp"
 #include "PendingIntent.hpp"
+#include "RemoteInput.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -51,12 +51,40 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
+	jlong Notification_CarExtender_UnreadConversation::getLatestTimestamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getLatestTimestamp",
+			"()J"
+		);
+	}
 	jarray Notification_CarExtender_UnreadConversation::getMessages()
 	{
 		return __thiz.callObjectMethod(
 			"getMessages",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
+	}
+	jstring Notification_CarExtender_UnreadConversation::getParticipant()
+	{
+		return __thiz.callObjectMethod(
+			"getParticipant",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jarray Notification_CarExtender_UnreadConversation::getParticipants()
+	{
+		return __thiz.callObjectMethod(
+			"getParticipants",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	QAndroidJniObject Notification_CarExtender_UnreadConversation::getReadPendingIntent()
+	{
+		return __thiz.callObjectMethod(
+			"getReadPendingIntent",
+			"()Landroid/app/PendingIntent;"
+		);
 	}
 	QAndroidJniObject Notification_CarExtender_UnreadConversation::getRemoteInput()
 	{
@@ -70,34 +98,6 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"getReplyPendingIntent",
 			"()Landroid/app/PendingIntent;"
-		);
-	}
-	QAndroidJniObject Notification_CarExtender_UnreadConversation::getReadPendingIntent()
-	{
-		return __thiz.callObjectMethod(
-			"getReadPendingIntent",
-			"()Landroid/app/PendingIntent;"
-		);
-	}
-	jarray Notification_CarExtender_UnreadConversation::getParticipants()
-	{
-		return __thiz.callObjectMethod(
-			"getParticipants",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	jstring Notification_CarExtender_UnreadConversation::getParticipant()
-	{
-		return __thiz.callObjectMethod(
-			"getParticipant",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jlong Notification_CarExtender_UnreadConversation::getLatestTimestamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getLatestTimestamp",
-			"()J"
 		);
 	}
 } // namespace __jni_impl::android::app

@@ -29,31 +29,31 @@ namespace __jni_impl::android::content
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		jstring toString();
-		QAndroidJniObject getContext();
-		jint getId();
-		void reset();
-		void stopLoading();
-		void deliverResult(jobject arg0);
-		void deliverCancellation();
-		void registerOnLoadCanceledListener(__jni_impl::__JniBaseClass arg0);
-		void unregisterOnLoadCanceledListener(__jni_impl::__JniBaseClass arg0);
-		jboolean isAbandoned();
-		jboolean isReset();
-		void startLoading();
-		jboolean cancelLoad();
-		void forceLoad();
 		void abandon();
-		jboolean takeContentChanged();
+		jboolean cancelLoad();
 		void commitContentChanged();
-		void rollbackContentChanged();
 		jstring dataToString(jobject arg0);
-		jboolean isStarted();
-		void registerListener(jint arg0, __jni_impl::__JniBaseClass arg1);
-		void unregisterListener(__jni_impl::__JniBaseClass arg0);
+		void deliverCancellation();
+		void deliverResult(jobject arg0);
 		void dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
 		void dump(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
+		void forceLoad();
+		QAndroidJniObject getContext();
+		jint getId();
+		jboolean isAbandoned();
+		jboolean isReset();
+		jboolean isStarted();
 		void onContentChanged();
+		void registerListener(jint arg0, __jni_impl::__JniBaseClass arg1);
+		void registerOnLoadCanceledListener(__jni_impl::__JniBaseClass arg0);
+		void reset();
+		void rollbackContentChanged();
+		void startLoading();
+		void stopLoading();
+		jboolean takeContentChanged();
+		jstring toString();
+		void unregisterListener(__jni_impl::__JniBaseClass arg0);
+		void unregisterOnLoadCanceledListener(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::content
 
@@ -76,90 +76,10 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
-	jstring Loader::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject Loader::getContext()
-	{
-		return __thiz.callObjectMethod(
-			"getContext",
-			"()Landroid/content/Context;"
-		);
-	}
-	jint Loader::getId()
-	{
-		return __thiz.callMethod<jint>(
-			"getId",
-			"()I"
-		);
-	}
-	void Loader::reset()
+	void Loader::abandon()
 	{
 		__thiz.callMethod<void>(
-			"reset",
-			"()V"
-		);
-	}
-	void Loader::stopLoading()
-	{
-		__thiz.callMethod<void>(
-			"stopLoading",
-			"()V"
-		);
-	}
-	void Loader::deliverResult(jobject arg0)
-	{
-		__thiz.callMethod<void>(
-			"deliverResult",
-			"(Ljava/lang/Object;)V",
-			arg0
-		);
-	}
-	void Loader::deliverCancellation()
-	{
-		__thiz.callMethod<void>(
-			"deliverCancellation",
-			"()V"
-		);
-	}
-	void Loader::registerOnLoadCanceledListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"registerOnLoadCanceledListener",
-			"(Landroid/content/Loader$OnLoadCanceledListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Loader::unregisterOnLoadCanceledListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterOnLoadCanceledListener",
-			"(Landroid/content/Loader$OnLoadCanceledListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean Loader::isAbandoned()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAbandoned",
-			"()Z"
-		);
-	}
-	jboolean Loader::isReset()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isReset",
-			"()Z"
-		);
-	}
-	void Loader::startLoading()
-	{
-		__thiz.callMethod<void>(
-			"startLoading",
+			"abandon",
 			"()V"
 		);
 	}
@@ -170,38 +90,10 @@ namespace __jni_impl::android::content
 			"()Z"
 		);
 	}
-	void Loader::forceLoad()
-	{
-		__thiz.callMethod<void>(
-			"forceLoad",
-			"()V"
-		);
-	}
-	void Loader::abandon()
-	{
-		__thiz.callMethod<void>(
-			"abandon",
-			"()V"
-		);
-	}
-	jboolean Loader::takeContentChanged()
-	{
-		return __thiz.callMethod<jboolean>(
-			"takeContentChanged",
-			"()Z"
-		);
-	}
 	void Loader::commitContentChanged()
 	{
 		__thiz.callMethod<void>(
 			"commitContentChanged",
-			"()V"
-		);
-	}
-	void Loader::rollbackContentChanged()
-	{
-		__thiz.callMethod<void>(
-			"rollbackContentChanged",
 			"()V"
 		);
 	}
@@ -213,28 +105,19 @@ namespace __jni_impl::android::content
 			arg0
 		).object<jstring>();
 	}
-	jboolean Loader::isStarted()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isStarted",
-			"()Z"
-		);
-	}
-	void Loader::registerListener(jint arg0, __jni_impl::__JniBaseClass arg1)
+	void Loader::deliverCancellation()
 	{
 		__thiz.callMethod<void>(
-			"registerListener",
-			"(ILandroid/content/Loader$OnLoadCompleteListener;)V",
-			arg0,
-			arg1.__jniObject().object()
+			"deliverCancellation",
+			"()V"
 		);
 	}
-	void Loader::unregisterListener(__jni_impl::__JniBaseClass arg0)
+	void Loader::deliverResult(jobject arg0)
 	{
 		__thiz.callMethod<void>(
-			"unregisterListener",
-			"(Landroid/content/Loader$OnLoadCompleteListener;)V",
-			arg0.__jniObject().object()
+			"deliverResult",
+			"(Ljava/lang/Object;)V",
+			arg0
 		);
 	}
 	void Loader::dump(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
@@ -259,11 +142,128 @@ namespace __jni_impl::android::content
 			arg3
 		);
 	}
+	void Loader::forceLoad()
+	{
+		__thiz.callMethod<void>(
+			"forceLoad",
+			"()V"
+		);
+	}
+	QAndroidJniObject Loader::getContext()
+	{
+		return __thiz.callObjectMethod(
+			"getContext",
+			"()Landroid/content/Context;"
+		);
+	}
+	jint Loader::getId()
+	{
+		return __thiz.callMethod<jint>(
+			"getId",
+			"()I"
+		);
+	}
+	jboolean Loader::isAbandoned()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAbandoned",
+			"()Z"
+		);
+	}
+	jboolean Loader::isReset()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isReset",
+			"()Z"
+		);
+	}
+	jboolean Loader::isStarted()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isStarted",
+			"()Z"
+		);
+	}
 	void Loader::onContentChanged()
 	{
 		__thiz.callMethod<void>(
 			"onContentChanged",
 			"()V"
+		);
+	}
+	void Loader::registerListener(jint arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"registerListener",
+			"(ILandroid/content/Loader$OnLoadCompleteListener;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void Loader::registerOnLoadCanceledListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"registerOnLoadCanceledListener",
+			"(Landroid/content/Loader$OnLoadCanceledListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Loader::reset()
+	{
+		__thiz.callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
+	void Loader::rollbackContentChanged()
+	{
+		__thiz.callMethod<void>(
+			"rollbackContentChanged",
+			"()V"
+		);
+	}
+	void Loader::startLoading()
+	{
+		__thiz.callMethod<void>(
+			"startLoading",
+			"()V"
+		);
+	}
+	void Loader::stopLoading()
+	{
+		__thiz.callMethod<void>(
+			"stopLoading",
+			"()V"
+		);
+	}
+	jboolean Loader::takeContentChanged()
+	{
+		return __thiz.callMethod<jboolean>(
+			"takeContentChanged",
+			"()Z"
+		);
+	}
+	jstring Loader::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void Loader::unregisterListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterListener",
+			"(Landroid/content/Loader$OnLoadCompleteListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Loader::unregisterOnLoadCanceledListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterOnLoadCanceledListener",
+			"(Landroid/content/Loader$OnLoadCanceledListener;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::content

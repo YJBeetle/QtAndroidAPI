@@ -5,17 +5,17 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view::textclassifier
+namespace __jni_impl::android::icu::util
 {
-	class TextLanguage;
+	class ULocale;
 }
 namespace __jni_impl::android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::android::icu::util
+namespace __jni_impl::android::view::textclassifier
 {
-	class ULocale;
+	class TextLanguage;
 }
 
 namespace __jni_impl::android::view::textclassifier
@@ -30,16 +30,16 @@ namespace __jni_impl::android::view::textclassifier
 		
 		// Methods
 		QAndroidJniObject build();
+		QAndroidJniObject putLocale(__jni_impl::android::icu::util::ULocale arg0, jfloat arg1);
 		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject setId(jstring arg0);
 		QAndroidJniObject setId(const QString &arg0);
-		QAndroidJniObject putLocale(__jni_impl::android::icu::util::ULocale arg0, jfloat arg1);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
-#include "TextLanguage.hpp"
-#include "../../os/Bundle.hpp"
 #include "../../icu/util/ULocale.hpp"
+#include "../../os/Bundle.hpp"
+#include "TextLanguage.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {
@@ -60,6 +60,15 @@ namespace __jni_impl::android::view::textclassifier
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/view/textclassifier/TextLanguage;"
+		);
+	}
+	QAndroidJniObject TextLanguage_Builder::putLocale(__jni_impl::android::icu::util::ULocale arg0, jfloat arg1)
+	{
+		return __thiz.callObjectMethod(
+			"putLocale",
+			"(Landroid/icu/util/ULocale;F)Landroid/view/textclassifier/TextLanguage$Builder;",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 	QAndroidJniObject TextLanguage_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
@@ -84,15 +93,6 @@ namespace __jni_impl::android::view::textclassifier
 			"setId",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextLanguage$Builder;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject TextLanguage_Builder::putLocale(__jni_impl::android::icu::util::ULocale arg0, jfloat arg1)
-	{
-		return __thiz.callObjectMethod(
-			"putLocale",
-			"(Landroid/icu/util/ULocale;F)Landroid/view/textclassifier/TextLanguage$Builder;",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 } // namespace __jni_impl::android::view::textclassifier

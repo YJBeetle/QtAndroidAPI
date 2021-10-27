@@ -11,11 +11,11 @@ namespace __jni_impl::android::view::textservice
 }
 namespace __jni_impl::android::view::textservice
 {
-	class TextServicesManager;
+	class TextInfo;
 }
 namespace __jni_impl::android::view::textservice
 {
-	class TextInfo;
+	class TextServicesManager;
 }
 
 namespace __jni_impl::android::view::textservice
@@ -30,19 +30,19 @@ namespace __jni_impl::android::view::textservice
 		void __constructor();
 		
 		// Methods
-		void close();
 		void cancel();
+		void close();
+		void getSentenceSuggestions(jarray arg0, jint arg1);
+		QAndroidJniObject getSpellChecker();
 		void getSuggestions(__jni_impl::android::view::textservice::TextInfo arg0, jint arg1);
 		void getSuggestions(jarray arg0, jint arg1, jboolean arg2);
-		QAndroidJniObject getSpellChecker();
-		void getSentenceSuggestions(jarray arg0, jint arg1);
 		jboolean isSessionDisconnected();
 	};
 } // namespace __jni_impl::android::view::textservice
 
 #include "SpellCheckerInfo.hpp"
-#include "TextServicesManager.hpp"
 #include "TextInfo.hpp"
+#include "TextServicesManager.hpp"
 
 namespace __jni_impl::android::view::textservice
 {
@@ -65,6 +65,13 @@ namespace __jni_impl::android::view::textservice
 	}
 	
 	// Methods
+	void SpellCheckerSession::cancel()
+	{
+		__thiz.callMethod<void>(
+			"cancel",
+			"()V"
+		);
+	}
 	void SpellCheckerSession::close()
 	{
 		__thiz.callMethod<void>(
@@ -72,11 +79,20 @@ namespace __jni_impl::android::view::textservice
 			"()V"
 		);
 	}
-	void SpellCheckerSession::cancel()
+	void SpellCheckerSession::getSentenceSuggestions(jarray arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
-			"cancel",
-			"()V"
+			"getSentenceSuggestions",
+			"([Landroid/view/textservice/TextInfo;I)V",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject SpellCheckerSession::getSpellChecker()
+	{
+		return __thiz.callObjectMethod(
+			"getSpellChecker",
+			"()Landroid/view/textservice/SpellCheckerInfo;"
 		);
 	}
 	void SpellCheckerSession::getSuggestions(__jni_impl::android::view::textservice::TextInfo arg0, jint arg1)
@@ -96,22 +112,6 @@ namespace __jni_impl::android::view::textservice
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	QAndroidJniObject SpellCheckerSession::getSpellChecker()
-	{
-		return __thiz.callObjectMethod(
-			"getSpellChecker",
-			"()Landroid/view/textservice/SpellCheckerInfo;"
-		);
-	}
-	void SpellCheckerSession::getSentenceSuggestions(jarray arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"getSentenceSuggestions",
-			"([Landroid/view/textservice/TextInfo;I)V",
-			arg0,
-			arg1
 		);
 	}
 	jboolean SpellCheckerSession::isSessionDisconnected()

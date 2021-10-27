@@ -22,10 +22,10 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jboolean isTransient();
 		jstring getDiagnosticInfo();
 		jint getErrorCode();
 		jboolean isRecoverable();
+		jboolean isTransient();
 	};
 } // namespace __jni_impl::android::media
 
@@ -57,13 +57,6 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jboolean MediaCodec_CodecException::isTransient()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isTransient",
-			"()Z"
-		);
-	}
 	jstring MediaCodec_CodecException::getDiagnosticInfo()
 	{
 		return __thiz.callObjectMethod(
@@ -82,6 +75,13 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRecoverable",
+			"()Z"
+		);
+	}
+	jboolean MediaCodec_CodecException::isTransient()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isTransient",
 			"()Z"
 		);
 	}

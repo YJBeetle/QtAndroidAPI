@@ -5,10 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::graphics::drawable
-{
-	class Drawable;
-}
 namespace __jni_impl::android::content::res
 {
 	class Resources;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::content::res
 namespace __jni_impl::android::content::res
 {
 	class Resources_Theme;
+}
+namespace __jni_impl::android::graphics::drawable
+{
+	class Drawable;
 }
 
 namespace __jni_impl::android::graphics::drawable
@@ -29,17 +29,17 @@ namespace __jni_impl::android::graphics::drawable
 		void __constructor();
 		
 		// Methods
-		jint getChangingConfigurations();
 		jboolean canApplyTheme();
-		QAndroidJniObject newDrawable(__jni_impl::android::content::res::Resources arg0);
+		jint getChangingConfigurations();
 		QAndroidJniObject newDrawable();
+		QAndroidJniObject newDrawable(__jni_impl::android::content::res::Resources arg0);
 		QAndroidJniObject newDrawable(__jni_impl::android::content::res::Resources arg0, __jni_impl::android::content::res::Resources_Theme arg1);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
-#include "Drawable.hpp"
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
+#include "Drawable.hpp"
 
 namespace __jni_impl::android::graphics::drawable
 {
@@ -55,6 +55,13 @@ namespace __jni_impl::android::graphics::drawable
 	}
 	
 	// Methods
+	jboolean Drawable_ConstantState::canApplyTheme()
+	{
+		return __thiz.callMethod<jboolean>(
+			"canApplyTheme",
+			"()Z"
+		);
+	}
 	jint Drawable_ConstantState::getChangingConfigurations()
 	{
 		return __thiz.callMethod<jint>(
@@ -62,11 +69,11 @@ namespace __jni_impl::android::graphics::drawable
 			"()I"
 		);
 	}
-	jboolean Drawable_ConstantState::canApplyTheme()
+	QAndroidJniObject Drawable_ConstantState::newDrawable()
 	{
-		return __thiz.callMethod<jboolean>(
-			"canApplyTheme",
-			"()Z"
+		return __thiz.callObjectMethod(
+			"newDrawable",
+			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	QAndroidJniObject Drawable_ConstantState::newDrawable(__jni_impl::android::content::res::Resources arg0)
@@ -75,13 +82,6 @@ namespace __jni_impl::android::graphics::drawable
 			"newDrawable",
 			"(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Drawable_ConstantState::newDrawable()
-	{
-		return __thiz.callObjectMethod(
-			"newDrawable",
-			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
 	QAndroidJniObject Drawable_ConstantState::newDrawable(__jni_impl::android::content::res::Resources arg0, __jni_impl::android::content::res::Resources_Theme arg1)

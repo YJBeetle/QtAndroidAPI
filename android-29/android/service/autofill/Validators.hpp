@@ -17,9 +17,9 @@ namespace __jni_impl::android::service::autofill
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject _or(jarray arg0);
 		static QAndroidJniObject _and(jarray arg0);
 		static QAndroidJniObject _not(__jni_impl::__JniBaseClass arg0);
+		static QAndroidJniObject _or(jarray arg0);
 	};
 } // namespace __jni_impl::android::service::autofill
 
@@ -37,15 +37,6 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	QAndroidJniObject Validators::_or(jarray arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.service.autofill.Validators",
-			"or",
-			"([Landroid/service/autofill/Validator;)Landroid/service/autofill/Validator;",
-			arg0
-		);
-	}
 	QAndroidJniObject Validators::_and(jarray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -62,6 +53,15 @@ namespace __jni_impl::android::service::autofill
 			"not",
 			"(Landroid/service/autofill/Validator;)Landroid/service/autofill/Validator;",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Validators::_or(jarray arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.service.autofill.Validators",
+			"or",
+			"([Landroid/service/autofill/Validator;)Landroid/service/autofill/Validator;",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::service::autofill

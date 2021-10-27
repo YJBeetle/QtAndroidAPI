@@ -7,15 +7,15 @@
 
 namespace __jni_impl::android::hardware::fingerprint
 {
+	class FingerprintManager_AuthenticationCallback;
+}
+namespace __jni_impl::android::hardware::fingerprint
+{
 	class FingerprintManager_CryptoObject;
 }
 namespace __jni_impl::android::os
 {
 	class CancellationSignal;
-}
-namespace __jni_impl::android::hardware::fingerprint
-{
-	class FingerprintManager_AuthenticationCallback;
 }
 namespace __jni_impl::android::os
 {
@@ -50,15 +50,15 @@ namespace __jni_impl::android::hardware::fingerprint
 		void __constructor();
 		
 		// Methods
+		void authenticate(__jni_impl::android::hardware::fingerprint::FingerprintManager_CryptoObject arg0, __jni_impl::android::os::CancellationSignal arg1, jint arg2, __jni_impl::android::hardware::fingerprint::FingerprintManager_AuthenticationCallback arg3, __jni_impl::android::os::Handler arg4);
 		jboolean hasEnrolledFingerprints();
 		jboolean isHardwareDetected();
-		void authenticate(__jni_impl::android::hardware::fingerprint::FingerprintManager_CryptoObject arg0, __jni_impl::android::os::CancellationSignal arg1, jint arg2, __jni_impl::android::hardware::fingerprint::FingerprintManager_AuthenticationCallback arg3, __jni_impl::android::os::Handler arg4);
 	};
 } // namespace __jni_impl::android::hardware::fingerprint
 
+#include "FingerprintManager_AuthenticationCallback.hpp"
 #include "FingerprintManager_CryptoObject.hpp"
 #include "../../os/CancellationSignal.hpp"
-#include "FingerprintManager_AuthenticationCallback.hpp"
 #include "../../os/Handler.hpp"
 
 namespace __jni_impl::android::hardware::fingerprint
@@ -193,6 +193,18 @@ namespace __jni_impl::android::hardware::fingerprint
 	}
 	
 	// Methods
+	void FingerprintManager::authenticate(__jni_impl::android::hardware::fingerprint::FingerprintManager_CryptoObject arg0, __jni_impl::android::os::CancellationSignal arg1, jint arg2, __jni_impl::android::hardware::fingerprint::FingerprintManager_AuthenticationCallback arg3, __jni_impl::android::os::Handler arg4)
+	{
+		__thiz.callMethod<void>(
+			"authenticate",
+			"(Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;Landroid/os/CancellationSignal;ILandroid/hardware/fingerprint/FingerprintManager$AuthenticationCallback;Landroid/os/Handler;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object(),
+			arg4.__jniObject().object()
+		);
+	}
 	jboolean FingerprintManager::hasEnrolledFingerprints()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -205,18 +217,6 @@ namespace __jni_impl::android::hardware::fingerprint
 		return __thiz.callMethod<jboolean>(
 			"isHardwareDetected",
 			"()Z"
-		);
-	}
-	void FingerprintManager::authenticate(__jni_impl::android::hardware::fingerprint::FingerprintManager_CryptoObject arg0, __jni_impl::android::os::CancellationSignal arg1, jint arg2, __jni_impl::android::hardware::fingerprint::FingerprintManager_AuthenticationCallback arg3, __jni_impl::android::os::Handler arg4)
-	{
-		__thiz.callMethod<void>(
-			"authenticate",
-			"(Landroid/hardware/fingerprint/FingerprintManager$CryptoObject;Landroid/os/CancellationSignal;ILandroid/hardware/fingerprint/FingerprintManager$AuthenticationCallback;Landroid/os/Handler;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::hardware::fingerprint

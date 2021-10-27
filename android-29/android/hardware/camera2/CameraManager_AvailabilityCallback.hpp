@@ -17,11 +17,11 @@ namespace __jni_impl::android::hardware::camera2
 		void __constructor();
 		
 		// Methods
+		void onCameraAccessPrioritiesChanged();
 		void onCameraAvailable(jstring arg0);
 		void onCameraAvailable(const QString &arg0);
 		void onCameraUnavailable(jstring arg0);
 		void onCameraUnavailable(const QString &arg0);
-		void onCameraAccessPrioritiesChanged();
 	};
 } // namespace __jni_impl::android::hardware::camera2
 
@@ -40,6 +40,13 @@ namespace __jni_impl::android::hardware::camera2
 	}
 	
 	// Methods
+	void CameraManager_AvailabilityCallback::onCameraAccessPrioritiesChanged()
+	{
+		__thiz.callMethod<void>(
+			"onCameraAccessPrioritiesChanged",
+			"()V"
+		);
+	}
 	void CameraManager_AvailabilityCallback::onCameraAvailable(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -70,13 +77,6 @@ namespace __jni_impl::android::hardware::camera2
 			"onCameraUnavailable",
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void CameraManager_AvailabilityCallback::onCameraAccessPrioritiesChanged()
-	{
-		__thiz.callMethod<void>(
-			"onCameraAccessPrioritiesChanged",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::android::hardware::camera2

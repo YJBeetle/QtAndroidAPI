@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::graphics
 {
-	class Region;
+	class Rect;
 }
 namespace __jni_impl::android::graphics
 {
-	class Rect;
+	class Region;
 }
 
 namespace __jni_impl::android::graphics
@@ -29,8 +29,8 @@ namespace __jni_impl::android::graphics
 	};
 } // namespace __jni_impl::android::graphics
 
-#include "Region.hpp"
 #include "Rect.hpp"
+#include "Region.hpp"
 
 namespace __jni_impl::android::graphics
 {

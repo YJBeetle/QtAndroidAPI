@@ -5,10 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::javax::security::auth::x500
-{
-	class X500Principal;
-}
 namespace __jni_impl::java::math
 {
 	class BigInteger;
@@ -16,6 +12,10 @@ namespace __jni_impl::java::math
 namespace __jni_impl::java::util
 {
 	class Date;
+}
+namespace __jni_impl::javax::security::auth::x500
+{
+	class X500Principal;
 }
 
 namespace __jni_impl::android::security::keystore
@@ -30,37 +30,37 @@ namespace __jni_impl::android::security::keystore
 		
 		// Methods
 		QAndroidJniObject getAlgorithmParameterSpec();
-		QAndroidJniObject getCertificateSubject();
-		jint getKeySize();
-		jboolean isStrongBoxBacked();
-		jstring getKeystoreAlias();
-		QAndroidJniObject getCertificateSerialNumber();
-		QAndroidJniObject getCertificateNotBefore();
+		jbyteArray getAttestationChallenge();
+		jarray getBlockModes();
 		QAndroidJniObject getCertificateNotAfter();
-		QAndroidJniObject getKeyValidityStart();
+		QAndroidJniObject getCertificateNotBefore();
+		QAndroidJniObject getCertificateSerialNumber();
+		QAndroidJniObject getCertificateSubject();
+		jarray getDigests();
+		jarray getEncryptionPaddings();
+		jint getKeySize();
 		QAndroidJniObject getKeyValidityForConsumptionEnd();
 		QAndroidJniObject getKeyValidityForOriginationEnd();
+		QAndroidJniObject getKeyValidityStart();
+		jstring getKeystoreAlias();
 		jint getPurposes();
-		jarray getDigests();
-		jboolean isDigestsSpecified();
-		jarray getEncryptionPaddings();
 		jarray getSignaturePaddings();
-		jarray getBlockModes();
-		jboolean isRandomizedEncryptionRequired();
-		jboolean isUserAuthenticationRequired();
-		jboolean isUserConfirmationRequired();
 		jint getUserAuthenticationValidityDurationSeconds();
-		jboolean isUserPresenceRequired();
-		jbyteArray getAttestationChallenge();
-		jboolean isUserAuthenticationValidWhileOnBody();
+		jboolean isDigestsSpecified();
 		jboolean isInvalidatedByBiometricEnrollment();
+		jboolean isRandomizedEncryptionRequired();
+		jboolean isStrongBoxBacked();
 		jboolean isUnlockedDeviceRequired();
+		jboolean isUserAuthenticationRequired();
+		jboolean isUserAuthenticationValidWhileOnBody();
+		jboolean isUserConfirmationRequired();
+		jboolean isUserPresenceRequired();
 	};
 } // namespace __jni_impl::android::security::keystore
 
-#include "../../../javax/security/auth/x500/X500Principal.hpp"
 #include "../../../java/math/BigInteger.hpp"
 #include "../../../java/util/Date.hpp"
+#include "../../../javax/security/auth/x500/X500Principal.hpp"
 
 namespace __jni_impl::android::security::keystore
 {
@@ -82,39 +82,25 @@ namespace __jni_impl::android::security::keystore
 			"()Ljava/security/spec/AlgorithmParameterSpec;"
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec::getCertificateSubject()
+	jbyteArray KeyGenParameterSpec::getAttestationChallenge()
 	{
 		return __thiz.callObjectMethod(
-			"getCertificateSubject",
-			"()Ljavax/security/auth/x500/X500Principal;"
-		);
+			"getAttestationChallenge",
+			"()[B"
+		).object<jbyteArray>();
 	}
-	jint KeyGenParameterSpec::getKeySize()
-	{
-		return __thiz.callMethod<jint>(
-			"getKeySize",
-			"()I"
-		);
-	}
-	jboolean KeyGenParameterSpec::isStrongBoxBacked()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isStrongBoxBacked",
-			"()Z"
-		);
-	}
-	jstring KeyGenParameterSpec::getKeystoreAlias()
+	jarray KeyGenParameterSpec::getBlockModes()
 	{
 		return __thiz.callObjectMethod(
-			"getKeystoreAlias",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getBlockModes",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	QAndroidJniObject KeyGenParameterSpec::getCertificateSerialNumber()
+	QAndroidJniObject KeyGenParameterSpec::getCertificateNotAfter()
 	{
 		return __thiz.callObjectMethod(
-			"getCertificateSerialNumber",
-			"()Ljava/math/BigInteger;"
+			"getCertificateNotAfter",
+			"()Ljava/util/Date;"
 		);
 	}
 	QAndroidJniObject KeyGenParameterSpec::getCertificateNotBefore()
@@ -124,18 +110,39 @@ namespace __jni_impl::android::security::keystore
 			"()Ljava/util/Date;"
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec::getCertificateNotAfter()
+	QAndroidJniObject KeyGenParameterSpec::getCertificateSerialNumber()
 	{
 		return __thiz.callObjectMethod(
-			"getCertificateNotAfter",
-			"()Ljava/util/Date;"
+			"getCertificateSerialNumber",
+			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject KeyGenParameterSpec::getKeyValidityStart()
+	QAndroidJniObject KeyGenParameterSpec::getCertificateSubject()
 	{
 		return __thiz.callObjectMethod(
-			"getKeyValidityStart",
-			"()Ljava/util/Date;"
+			"getCertificateSubject",
+			"()Ljavax/security/auth/x500/X500Principal;"
+		);
+	}
+	jarray KeyGenParameterSpec::getDigests()
+	{
+		return __thiz.callObjectMethod(
+			"getDigests",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	jarray KeyGenParameterSpec::getEncryptionPaddings()
+	{
+		return __thiz.callObjectMethod(
+			"getEncryptionPaddings",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	jint KeyGenParameterSpec::getKeySize()
+	{
+		return __thiz.callMethod<jint>(
+			"getKeySize",
+			"()I"
 		);
 	}
 	QAndroidJniObject KeyGenParameterSpec::getKeyValidityForConsumptionEnd()
@@ -152,33 +159,26 @@ namespace __jni_impl::android::security::keystore
 			"()Ljava/util/Date;"
 		);
 	}
+	QAndroidJniObject KeyGenParameterSpec::getKeyValidityStart()
+	{
+		return __thiz.callObjectMethod(
+			"getKeyValidityStart",
+			"()Ljava/util/Date;"
+		);
+	}
+	jstring KeyGenParameterSpec::getKeystoreAlias()
+	{
+		return __thiz.callObjectMethod(
+			"getKeystoreAlias",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jint KeyGenParameterSpec::getPurposes()
 	{
 		return __thiz.callMethod<jint>(
 			"getPurposes",
 			"()I"
 		);
-	}
-	jarray KeyGenParameterSpec::getDigests()
-	{
-		return __thiz.callObjectMethod(
-			"getDigests",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	jboolean KeyGenParameterSpec::isDigestsSpecified()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isDigestsSpecified",
-			"()Z"
-		);
-	}
-	jarray KeyGenParameterSpec::getEncryptionPaddings()
-	{
-		return __thiz.callObjectMethod(
-			"getEncryptionPaddings",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
 	}
 	jarray KeyGenParameterSpec::getSignaturePaddings()
 	{
@@ -187,34 +187,6 @@ namespace __jni_impl::android::security::keystore
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	jarray KeyGenParameterSpec::getBlockModes()
-	{
-		return __thiz.callObjectMethod(
-			"getBlockModes",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	jboolean KeyGenParameterSpec::isRandomizedEncryptionRequired()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isRandomizedEncryptionRequired",
-			"()Z"
-		);
-	}
-	jboolean KeyGenParameterSpec::isUserAuthenticationRequired()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isUserAuthenticationRequired",
-			"()Z"
-		);
-	}
-	jboolean KeyGenParameterSpec::isUserConfirmationRequired()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isUserConfirmationRequired",
-			"()Z"
-		);
-	}
 	jint KeyGenParameterSpec::getUserAuthenticationValidityDurationSeconds()
 	{
 		return __thiz.callMethod<jint>(
@@ -222,24 +194,10 @@ namespace __jni_impl::android::security::keystore
 			"()I"
 		);
 	}
-	jboolean KeyGenParameterSpec::isUserPresenceRequired()
+	jboolean KeyGenParameterSpec::isDigestsSpecified()
 	{
 		return __thiz.callMethod<jboolean>(
-			"isUserPresenceRequired",
-			"()Z"
-		);
-	}
-	jbyteArray KeyGenParameterSpec::getAttestationChallenge()
-	{
-		return __thiz.callObjectMethod(
-			"getAttestationChallenge",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	jboolean KeyGenParameterSpec::isUserAuthenticationValidWhileOnBody()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isUserAuthenticationValidWhileOnBody",
+			"isDigestsSpecified",
 			"()Z"
 		);
 	}
@@ -250,10 +208,52 @@ namespace __jni_impl::android::security::keystore
 			"()Z"
 		);
 	}
+	jboolean KeyGenParameterSpec::isRandomizedEncryptionRequired()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isRandomizedEncryptionRequired",
+			"()Z"
+		);
+	}
+	jboolean KeyGenParameterSpec::isStrongBoxBacked()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isStrongBoxBacked",
+			"()Z"
+		);
+	}
 	jboolean KeyGenParameterSpec::isUnlockedDeviceRequired()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isUnlockedDeviceRequired",
+			"()Z"
+		);
+	}
+	jboolean KeyGenParameterSpec::isUserAuthenticationRequired()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isUserAuthenticationRequired",
+			"()Z"
+		);
+	}
+	jboolean KeyGenParameterSpec::isUserAuthenticationValidWhileOnBody()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isUserAuthenticationValidWhileOnBody",
+			"()Z"
+		);
+	}
+	jboolean KeyGenParameterSpec::isUserConfirmationRequired()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isUserConfirmationRequired",
+			"()Z"
+		);
+	}
+	jboolean KeyGenParameterSpec::isUserPresenceRequired()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isUserPresenceRequired",
 			"()Z"
 		);
 	}

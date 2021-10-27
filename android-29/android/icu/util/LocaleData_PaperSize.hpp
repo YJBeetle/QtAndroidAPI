@@ -17,8 +17,8 @@ namespace __jni_impl::android::icu::util
 		void __constructor();
 		
 		// Methods
-		jint getWidth();
 		jint getHeight();
+		jint getWidth();
 	};
 } // namespace __jni_impl::android::icu::util
 
@@ -36,17 +36,17 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Methods
-	jint LocaleData_PaperSize::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I"
-		);
-	}
 	jint LocaleData_PaperSize::getHeight()
 	{
 		return __thiz.callMethod<jint>(
 			"getHeight",
+			"()I"
+		);
+	}
+	jint LocaleData_PaperSize::getWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getWidth",
 			"()I"
 		);
 	}

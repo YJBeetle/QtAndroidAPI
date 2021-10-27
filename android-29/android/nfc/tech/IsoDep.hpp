@@ -22,17 +22,17 @@ namespace __jni_impl::android::nfc::tech
 		
 		// Methods
 		static QAndroidJniObject get(__jni_impl::android::nfc::Tag arg0);
-		void connect();
 		void close();
-		QAndroidJniObject getTag();
-		jbyteArray getHistoricalBytes();
+		void connect();
 		jbyteArray getHiLayerResponse();
-		jboolean isExtendedLengthApduSupported();
-		jbyteArray transceive(jbyteArray arg0);
+		jbyteArray getHistoricalBytes();
 		jint getMaxTransceiveLength();
-		void setTimeout(jint arg0);
+		QAndroidJniObject getTag();
 		jint getTimeout();
 		jboolean isConnected();
+		jboolean isExtendedLengthApduSupported();
+		void setTimeout(jint arg0);
+		jbyteArray transceive(jbyteArray arg0);
 	};
 } // namespace __jni_impl::android::nfc::tech
 
@@ -60,13 +60,6 @@ namespace __jni_impl::android::nfc::tech
 			arg0.__jniObject().object()
 		);
 	}
-	void IsoDep::connect()
-	{
-		__thiz.callMethod<void>(
-			"connect",
-			"()V"
-		);
-	}
 	void IsoDep::close()
 	{
 		__thiz.callMethod<void>(
@@ -74,19 +67,12 @@ namespace __jni_impl::android::nfc::tech
 			"()V"
 		);
 	}
-	QAndroidJniObject IsoDep::getTag()
+	void IsoDep::connect()
 	{
-		return __thiz.callObjectMethod(
-			"getTag",
-			"()Landroid/nfc/Tag;"
+		__thiz.callMethod<void>(
+			"connect",
+			"()V"
 		);
-	}
-	jbyteArray IsoDep::getHistoricalBytes()
-	{
-		return __thiz.callObjectMethod(
-			"getHistoricalBytes",
-			"()[B"
-		).object<jbyteArray>();
 	}
 	jbyteArray IsoDep::getHiLayerResponse()
 	{
@@ -95,19 +81,11 @@ namespace __jni_impl::android::nfc::tech
 			"()[B"
 		).object<jbyteArray>();
 	}
-	jboolean IsoDep::isExtendedLengthApduSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isExtendedLengthApduSupported",
-			"()Z"
-		);
-	}
-	jbyteArray IsoDep::transceive(jbyteArray arg0)
+	jbyteArray IsoDep::getHistoricalBytes()
 	{
 		return __thiz.callObjectMethod(
-			"transceive",
-			"([B)[B",
-			arg0
+			"getHistoricalBytes",
+			"()[B"
 		).object<jbyteArray>();
 	}
 	jint IsoDep::getMaxTransceiveLength()
@@ -117,12 +95,11 @@ namespace __jni_impl::android::nfc::tech
 			"()I"
 		);
 	}
-	void IsoDep::setTimeout(jint arg0)
+	QAndroidJniObject IsoDep::getTag()
 	{
-		__thiz.callMethod<void>(
-			"setTimeout",
-			"(I)V",
-			arg0
+		return __thiz.callObjectMethod(
+			"getTag",
+			"()Landroid/nfc/Tag;"
 		);
 	}
 	jint IsoDep::getTimeout()
@@ -138,6 +115,29 @@ namespace __jni_impl::android::nfc::tech
 			"isConnected",
 			"()Z"
 		);
+	}
+	jboolean IsoDep::isExtendedLengthApduSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isExtendedLengthApduSupported",
+			"()Z"
+		);
+	}
+	void IsoDep::setTimeout(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTimeout",
+			"(I)V",
+			arg0
+		);
+	}
+	jbyteArray IsoDep::transceive(jbyteArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"transceive",
+			"([B)[B",
+			arg0
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::nfc::tech
 

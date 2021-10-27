@@ -18,8 +18,8 @@ namespace __jni_impl::android::animation
 		void __constructor(jintArray arg0);
 		
 		// Methods
-		jobject evaluate(jfloat arg0, jobject arg1, jobject arg2);
 		jintArray evaluate(jfloat arg0, jintArray arg1, jintArray arg2);
+		jobject evaluate(jfloat arg0, jobject arg1, jobject arg2);
 	};
 } // namespace __jni_impl::android::animation
 
@@ -46,16 +46,6 @@ namespace __jni_impl::android::animation
 	}
 	
 	// Methods
-	jobject IntArrayEvaluator::evaluate(jfloat arg0, jobject arg1, jobject arg2)
-	{
-		return __thiz.callObjectMethod(
-			"evaluate",
-			"(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1,
-			arg2
-		).object<jobject>();
-	}
 	jintArray IntArrayEvaluator::evaluate(jfloat arg0, jintArray arg1, jintArray arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -65,6 +55,16 @@ namespace __jni_impl::android::animation
 			arg1,
 			arg2
 		).object<jintArray>();
+	}
+	jobject IntArrayEvaluator::evaluate(jfloat arg0, jobject arg1, jobject arg2)
+	{
+		return __thiz.callObjectMethod(
+			"evaluate",
+			"(FLjava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0,
+			arg1,
+			arg2
+		).object<jobject>();
 	}
 } // namespace __jni_impl::android::animation
 

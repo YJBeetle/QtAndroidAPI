@@ -9,13 +9,13 @@ namespace __jni_impl::android::media
 {
 	class MediaCas_Session;
 }
-namespace __jni_impl::java::nio
-{
-	class ByteBuffer;
-}
 namespace __jni_impl::android::media
 {
 	class MediaCodec_CryptoInfo;
+}
+namespace __jni_impl::java::nio
+{
+	class ByteBuffer;
 }
 
 namespace __jni_impl::android::media
@@ -35,16 +35,16 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		void close();
+		jint descramble(__jni_impl::java::nio::ByteBuffer arg0, __jni_impl::java::nio::ByteBuffer arg1, __jni_impl::android::media::MediaCodec_CryptoInfo arg2);
 		jboolean requiresSecureDecoderComponent(jstring arg0);
 		jboolean requiresSecureDecoderComponent(const QString &arg0);
 		void setMediaCasSession(__jni_impl::android::media::MediaCas_Session arg0);
-		jint descramble(__jni_impl::java::nio::ByteBuffer arg0, __jni_impl::java::nio::ByteBuffer arg1, __jni_impl::android::media::MediaCodec_CryptoInfo arg2);
 	};
 } // namespace __jni_impl::android::media
 
 #include "MediaCas_Session.hpp"
-#include "../../java/nio/ByteBuffer.hpp"
 #include "MediaCodec_CryptoInfo.hpp"
+#include "../../java/nio/ByteBuffer.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -103,6 +103,16 @@ namespace __jni_impl::android::media
 			"()V"
 		);
 	}
+	jint MediaDescrambler::descramble(__jni_impl::java::nio::ByteBuffer arg0, __jni_impl::java::nio::ByteBuffer arg1, __jni_impl::android::media::MediaCodec_CryptoInfo arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"descramble",
+			"(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$CryptoInfo;)I",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
 	jboolean MediaDescrambler::requiresSecureDecoderComponent(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -125,16 +135,6 @@ namespace __jni_impl::android::media
 			"setMediaCasSession",
 			"(Landroid/media/MediaCas$Session;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	jint MediaDescrambler::descramble(__jni_impl::java::nio::ByteBuffer arg0, __jni_impl::java::nio::ByteBuffer arg1, __jni_impl::android::media::MediaCodec_CryptoInfo arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"descramble",
-			"(Ljava/nio/ByteBuffer;Ljava/nio/ByteBuffer;Landroid/media/MediaCodec$CryptoInfo;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::media

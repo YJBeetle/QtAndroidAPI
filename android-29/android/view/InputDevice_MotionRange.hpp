@@ -17,15 +17,15 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		jint getSource();
-		jboolean isFromSource(jint arg0);
-		jfloat getResolution();
 		jint getAxis();
-		jfloat getMin();
-		jfloat getRange();
 		jfloat getFlat();
 		jfloat getFuzz();
 		jfloat getMax();
+		jfloat getMin();
+		jfloat getRange();
+		jfloat getResolution();
+		jint getSource();
+		jboolean isFromSource(jint arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -43,47 +43,11 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jint InputDevice_MotionRange::getSource()
-	{
-		return __thiz.callMethod<jint>(
-			"getSource",
-			"()I"
-		);
-	}
-	jboolean InputDevice_MotionRange::isFromSource(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFromSource",
-			"(I)Z",
-			arg0
-		);
-	}
-	jfloat InputDevice_MotionRange::getResolution()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getResolution",
-			"()F"
-		);
-	}
 	jint InputDevice_MotionRange::getAxis()
 	{
 		return __thiz.callMethod<jint>(
 			"getAxis",
 			"()I"
-		);
-	}
-	jfloat InputDevice_MotionRange::getMin()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getMin",
-			"()F"
-		);
-	}
-	jfloat InputDevice_MotionRange::getRange()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getRange",
-			"()F"
 		);
 	}
 	jfloat InputDevice_MotionRange::getFlat()
@@ -105,6 +69,42 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jfloat>(
 			"getMax",
 			"()F"
+		);
+	}
+	jfloat InputDevice_MotionRange::getMin()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getMin",
+			"()F"
+		);
+	}
+	jfloat InputDevice_MotionRange::getRange()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getRange",
+			"()F"
+		);
+	}
+	jfloat InputDevice_MotionRange::getResolution()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getResolution",
+			"()F"
+		);
+	}
+	jint InputDevice_MotionRange::getSource()
+	{
+		return __thiz.callMethod<jint>(
+			"getSource",
+			"()I"
+		);
+	}
+	jboolean InputDevice_MotionRange::isFromSource(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFromSource",
+			"(I)Z",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::view

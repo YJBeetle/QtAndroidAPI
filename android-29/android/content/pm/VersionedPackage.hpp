@@ -25,12 +25,12 @@ namespace __jni_impl::android::content::pm
 		void __constructor(const QString &arg0, jlong arg1);
 		
 		// Methods
-		jstring toString();
-		jstring getPackageName();
-		jlong getLongVersionCode();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jlong getLongVersionCode();
+		jstring getPackageName();
 		jint getVersionCode();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -87,19 +87,12 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	jstring VersionedPackage::toString()
+	jint VersionedPackage::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring VersionedPackage::getPackageName()
-	{
-		return __thiz.callObjectMethod(
-			"getPackageName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
 	jlong VersionedPackage::getLongVersionCode()
 	{
@@ -108,12 +101,26 @@ namespace __jni_impl::android::content::pm
 			"()J"
 		);
 	}
-	jint VersionedPackage::describeContents()
+	jstring VersionedPackage::getPackageName()
+	{
+		return __thiz.callObjectMethod(
+			"getPackageName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint VersionedPackage::getVersionCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getVersionCode",
 			"()I"
 		);
+	}
+	jstring VersionedPackage::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void VersionedPackage::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -122,13 +129,6 @@ namespace __jni_impl::android::content::pm
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint VersionedPackage::getVersionCode()
-	{
-		return __thiz.callMethod<jint>(
-			"getVersionCode",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::content::pm

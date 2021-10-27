@@ -7,15 +7,15 @@
 
 namespace __jni_impl::android::print
 {
+	class PrintJobId;
+}
+namespace __jni_impl::android::print
+{
 	class PrintJobInfo;
 }
 namespace __jni_impl::android::print
 {
 	class PrintManager;
-}
-namespace __jni_impl::android::print
-{
-	class PrintJobId;
 }
 
 namespace __jni_impl::android::print
@@ -29,24 +29,24 @@ namespace __jni_impl::android::print
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		QAndroidJniObject getId();
-		jboolean isQueued();
 		void cancel();
+		jboolean equals(jobject arg0);
+		QAndroidJniObject getId();
+		QAndroidJniObject getInfo();
+		jint hashCode();
+		jboolean isBlocked();
 		jboolean isCancelled();
 		jboolean isCompleted();
-		jboolean isStarted();
-		jboolean isBlocked();
-		QAndroidJniObject getInfo();
 		jboolean isFailed();
+		jboolean isQueued();
+		jboolean isStarted();
 		void restart();
 	};
 } // namespace __jni_impl::android::print
 
+#include "PrintJobId.hpp"
 #include "PrintJobInfo.hpp"
 #include "PrintManager.hpp"
-#include "PrintJobId.hpp"
 
 namespace __jni_impl::android::print
 {
@@ -61,19 +61,19 @@ namespace __jni_impl::android::print
 	}
 	
 	// Methods
+	void PrintJob::cancel()
+	{
+		__thiz.callMethod<void>(
+			"cancel",
+			"()V"
+		);
+	}
 	jboolean PrintJob::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
-		);
-	}
-	jint PrintJob::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
 		);
 	}
 	QAndroidJniObject PrintJob::getId()
@@ -83,18 +83,25 @@ namespace __jni_impl::android::print
 			"()Landroid/print/PrintJobId;"
 		);
 	}
-	jboolean PrintJob::isQueued()
+	QAndroidJniObject PrintJob::getInfo()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isQueued",
-			"()Z"
+		return __thiz.callObjectMethod(
+			"getInfo",
+			"()Landroid/print/PrintJobInfo;"
 		);
 	}
-	void PrintJob::cancel()
+	jint PrintJob::hashCode()
 	{
-		__thiz.callMethod<void>(
-			"cancel",
-			"()V"
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jboolean PrintJob::isBlocked()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isBlocked",
+			"()Z"
 		);
 	}
 	jboolean PrintJob::isCancelled()
@@ -111,31 +118,24 @@ namespace __jni_impl::android::print
 			"()Z"
 		);
 	}
-	jboolean PrintJob::isStarted()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isStarted",
-			"()Z"
-		);
-	}
-	jboolean PrintJob::isBlocked()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isBlocked",
-			"()Z"
-		);
-	}
-	QAndroidJniObject PrintJob::getInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getInfo",
-			"()Landroid/print/PrintJobInfo;"
-		);
-	}
 	jboolean PrintJob::isFailed()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFailed",
+			"()Z"
+		);
+	}
+	jboolean PrintJob::isQueued()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isQueued",
+			"()Z"
+		);
+	}
+	jboolean PrintJob::isStarted()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isStarted",
 			"()Z"
 		);
 	}

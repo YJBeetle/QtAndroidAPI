@@ -23,10 +23,10 @@ namespace __jni_impl::java::util
 		QAndroidJniObject add(jstring arg0);
 		QAndroidJniObject add(const QString &arg0);
 		jint length();
-		jstring toString();
 		QAndroidJniObject merge(__jni_impl::java::util::StringJoiner arg0);
 		QAndroidJniObject setEmptyValue(jstring arg0);
 		QAndroidJniObject setEmptyValue(const QString &arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::java::util
 
@@ -97,13 +97,6 @@ namespace __jni_impl::java::util
 			"()I"
 		);
 	}
-	jstring StringJoiner::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject StringJoiner::merge(__jni_impl::java::util::StringJoiner arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -127,6 +120,13 @@ namespace __jni_impl::java::util
 			"(Ljava/lang/CharSequence;)Ljava/util/StringJoiner;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jstring StringJoiner::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util
 

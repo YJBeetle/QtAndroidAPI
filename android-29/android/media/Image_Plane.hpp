@@ -22,8 +22,8 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		QAndroidJniObject getBuffer();
-		jint getRowStride();
 		jint getPixelStride();
+		jint getRowStride();
 	};
 } // namespace __jni_impl::android::media
 
@@ -49,17 +49,17 @@ namespace __jni_impl::android::media
 			"()Ljava/nio/ByteBuffer;"
 		);
 	}
-	jint Image_Plane::getRowStride()
-	{
-		return __thiz.callMethod<jint>(
-			"getRowStride",
-			"()I"
-		);
-	}
 	jint Image_Plane::getPixelStride()
 	{
 		return __thiz.callMethod<jint>(
 			"getPixelStride",
+			"()I"
+		);
+	}
+	jint Image_Plane::getRowStride()
+	{
+		return __thiz.callMethod<jint>(
+			"getRowStride",
 			"()I"
 		);
 	}

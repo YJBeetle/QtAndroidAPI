@@ -29,14 +29,14 @@ namespace __jni_impl::android::transition
 		void __constructor();
 		
 		// Methods
-		void setTransition(__jni_impl::android::transition::Scene arg0, __jni_impl::android::transition::Scene arg1, __jni_impl::android::transition::Transition arg2);
-		void setTransition(__jni_impl::android::transition::Scene arg0, __jni_impl::android::transition::Transition arg1);
-		void transitionTo(__jni_impl::android::transition::Scene arg0);
-		static void go(__jni_impl::android::transition::Scene arg0, __jni_impl::android::transition::Transition arg1);
-		static void go(__jni_impl::android::transition::Scene arg0);
-		static void beginDelayedTransition(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::Transition arg1);
 		static void beginDelayedTransition(__jni_impl::android::view::ViewGroup arg0);
+		static void beginDelayedTransition(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::Transition arg1);
 		static void endTransitions(__jni_impl::android::view::ViewGroup arg0);
+		static void go(__jni_impl::android::transition::Scene arg0);
+		static void go(__jni_impl::android::transition::Scene arg0, __jni_impl::android::transition::Transition arg1);
+		void setTransition(__jni_impl::android::transition::Scene arg0, __jni_impl::android::transition::Transition arg1);
+		void setTransition(__jni_impl::android::transition::Scene arg0, __jni_impl::android::transition::Scene arg1, __jni_impl::android::transition::Transition arg2);
+		void transitionTo(__jni_impl::android::transition::Scene arg0);
 	};
 } // namespace __jni_impl::android::transition
 
@@ -58,29 +58,39 @@ namespace __jni_impl::android::transition
 	}
 	
 	// Methods
-	void TransitionManager::setTransition(__jni_impl::android::transition::Scene arg0, __jni_impl::android::transition::Scene arg1, __jni_impl::android::transition::Transition arg2)
+	void TransitionManager::beginDelayedTransition(__jni_impl::android::view::ViewGroup arg0)
 	{
-		__thiz.callMethod<void>(
-			"setTransition",
-			"(Landroid/transition/Scene;Landroid/transition/Scene;Landroid/transition/Transition;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.transition.TransitionManager",
+			"beginDelayedTransition",
+			"(Landroid/view/ViewGroup;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	void TransitionManager::setTransition(__jni_impl::android::transition::Scene arg0, __jni_impl::android::transition::Transition arg1)
+	void TransitionManager::beginDelayedTransition(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::Transition arg1)
 	{
-		__thiz.callMethod<void>(
-			"setTransition",
-			"(Landroid/transition/Scene;Landroid/transition/Transition;)V",
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.transition.TransitionManager",
+			"beginDelayedTransition",
+			"(Landroid/view/ViewGroup;Landroid/transition/Transition;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
 		);
 	}
-	void TransitionManager::transitionTo(__jni_impl::android::transition::Scene arg0)
+	void TransitionManager::endTransitions(__jni_impl::android::view::ViewGroup arg0)
 	{
-		__thiz.callMethod<void>(
-			"transitionTo",
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.transition.TransitionManager",
+			"endTransitions",
+			"(Landroid/view/ViewGroup;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void TransitionManager::go(__jni_impl::android::transition::Scene arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.transition.TransitionManager",
+			"go",
 			"(Landroid/transition/Scene;)V",
 			arg0.__jniObject().object()
 		);
@@ -95,40 +105,30 @@ namespace __jni_impl::android::transition
 			arg1.__jniObject().object()
 		);
 	}
-	void TransitionManager::go(__jni_impl::android::transition::Scene arg0)
+	void TransitionManager::setTransition(__jni_impl::android::transition::Scene arg0, __jni_impl::android::transition::Transition arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.transition.TransitionManager",
-			"go",
-			"(Landroid/transition/Scene;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void TransitionManager::beginDelayedTransition(__jni_impl::android::view::ViewGroup arg0, __jni_impl::android::transition::Transition arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.transition.TransitionManager",
-			"beginDelayedTransition",
-			"(Landroid/view/ViewGroup;Landroid/transition/Transition;)V",
+		__thiz.callMethod<void>(
+			"setTransition",
+			"(Landroid/transition/Scene;Landroid/transition/Transition;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
 		);
 	}
-	void TransitionManager::beginDelayedTransition(__jni_impl::android::view::ViewGroup arg0)
+	void TransitionManager::setTransition(__jni_impl::android::transition::Scene arg0, __jni_impl::android::transition::Scene arg1, __jni_impl::android::transition::Transition arg2)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.transition.TransitionManager",
-			"beginDelayedTransition",
-			"(Landroid/view/ViewGroup;)V",
-			arg0.__jniObject().object()
+		__thiz.callMethod<void>(
+			"setTransition",
+			"(Landroid/transition/Scene;Landroid/transition/Scene;Landroid/transition/Transition;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
-	void TransitionManager::endTransitions(__jni_impl::android::view::ViewGroup arg0)
+	void TransitionManager::transitionTo(__jni_impl::android::transition::Scene arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.transition.TransitionManager",
-			"endTransitions",
-			"(Landroid/view/ViewGroup;)V",
+		__thiz.callMethod<void>(
+			"transitionTo",
+			"(Landroid/transition/Scene;)V",
 			arg0.__jniObject().object()
 		);
 	}

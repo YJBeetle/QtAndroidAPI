@@ -33,15 +33,15 @@ namespace __jni_impl::android::net::wifi::p2p
 		void __constructor(__jni_impl::android::net::wifi::p2p::WifiP2pDevice arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jboolean wpsPbcSupported();
-		jboolean wpsKeypadSupported();
-		jboolean wpsDisplaySupported();
-		jboolean isServiceDiscoveryCapable();
-		jboolean isGroupOwner();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		jint hashCode();
+		jboolean isGroupOwner();
+		jboolean isServiceDiscoveryCapable();
+		jstring toString();
+		jboolean wpsDisplaySupported();
+		jboolean wpsKeypadSupported();
+		jboolean wpsPbcSupported();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi::p2p
@@ -147,6 +147,13 @@ namespace __jni_impl::android::net::wifi::p2p
 	}
 	
 	// Methods
+	jint WifiP2pDevice::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean WifiP2pDevice::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -155,13 +162,6 @@ namespace __jni_impl::android::net::wifi::p2p
 			arg0
 		);
 	}
-	jstring WifiP2pDevice::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint WifiP2pDevice::hashCode()
 	{
 		return __thiz.callMethod<jint>(
@@ -169,24 +169,10 @@ namespace __jni_impl::android::net::wifi::p2p
 			"()I"
 		);
 	}
-	jboolean WifiP2pDevice::wpsPbcSupported()
+	jboolean WifiP2pDevice::isGroupOwner()
 	{
 		return __thiz.callMethod<jboolean>(
-			"wpsPbcSupported",
-			"()Z"
-		);
-	}
-	jboolean WifiP2pDevice::wpsKeypadSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"wpsKeypadSupported",
-			"()Z"
-		);
-	}
-	jboolean WifiP2pDevice::wpsDisplaySupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"wpsDisplaySupported",
+			"isGroupOwner",
 			"()Z"
 		);
 	}
@@ -197,18 +183,32 @@ namespace __jni_impl::android::net::wifi::p2p
 			"()Z"
 		);
 	}
-	jboolean WifiP2pDevice::isGroupOwner()
+	jstring WifiP2pDevice::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jboolean WifiP2pDevice::wpsDisplaySupported()
 	{
 		return __thiz.callMethod<jboolean>(
-			"isGroupOwner",
+			"wpsDisplaySupported",
 			"()Z"
 		);
 	}
-	jint WifiP2pDevice::describeContents()
+	jboolean WifiP2pDevice::wpsKeypadSupported()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"wpsKeypadSupported",
+			"()Z"
+		);
+	}
+	jboolean WifiP2pDevice::wpsPbcSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"wpsPbcSupported",
+			"()Z"
 		);
 	}
 	void WifiP2pDevice::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

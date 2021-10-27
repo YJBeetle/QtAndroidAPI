@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::media::projection
-{
-	class MediaProjection;
-}
 namespace __jni_impl::android::media
 {
 	class AudioPlaybackCaptureConfiguration;
+}
+namespace __jni_impl::android::media::projection
+{
+	class MediaProjection;
 }
 
 namespace __jni_impl::android::media
@@ -25,16 +25,16 @@ namespace __jni_impl::android::media
 		void __constructor(__jni_impl::android::media::projection::MediaProjection arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject addMatchingUsage(jint arg0);
 		QAndroidJniObject addMatchingUid(jint arg0);
-		QAndroidJniObject excludeUsage(jint arg0);
+		QAndroidJniObject addMatchingUsage(jint arg0);
+		QAndroidJniObject build();
 		QAndroidJniObject excludeUid(jint arg0);
+		QAndroidJniObject excludeUsage(jint arg0);
 	};
 } // namespace __jni_impl::android::media
 
-#include "projection/MediaProjection.hpp"
 #include "AudioPlaybackCaptureConfiguration.hpp"
+#include "projection/MediaProjection.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -51,11 +51,12 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject AudioPlaybackCaptureConfiguration_Builder::build()
+	QAndroidJniObject AudioPlaybackCaptureConfiguration_Builder::addMatchingUid(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"build",
-			"()Landroid/media/AudioPlaybackCaptureConfiguration;"
+			"addMatchingUid",
+			"(I)Landroid/media/AudioPlaybackCaptureConfiguration$Builder;",
+			arg0
 		);
 	}
 	QAndroidJniObject AudioPlaybackCaptureConfiguration_Builder::addMatchingUsage(jint arg0)
@@ -66,10 +67,17 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	QAndroidJniObject AudioPlaybackCaptureConfiguration_Builder::addMatchingUid(jint arg0)
+	QAndroidJniObject AudioPlaybackCaptureConfiguration_Builder::build()
 	{
 		return __thiz.callObjectMethod(
-			"addMatchingUid",
+			"build",
+			"()Landroid/media/AudioPlaybackCaptureConfiguration;"
+		);
+	}
+	QAndroidJniObject AudioPlaybackCaptureConfiguration_Builder::excludeUid(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"excludeUid",
 			"(I)Landroid/media/AudioPlaybackCaptureConfiguration$Builder;",
 			arg0
 		);
@@ -78,14 +86,6 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callObjectMethod(
 			"excludeUsage",
-			"(I)Landroid/media/AudioPlaybackCaptureConfiguration$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject AudioPlaybackCaptureConfiguration_Builder::excludeUid(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"excludeUid",
 			"(I)Landroid/media/AudioPlaybackCaptureConfiguration$Builder;",
 			arg0
 		);

@@ -22,10 +22,10 @@ namespace __jni_impl::java::nio::file
 		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2);
 		
 		// Methods
-		jstring getMessage();
 		jstring getFile();
-		jstring getReason();
+		jstring getMessage();
 		jstring getOtherFile();
+		jstring getReason();
 	};
 } // namespace __jni_impl::java::nio::file
 
@@ -73,13 +73,6 @@ namespace __jni_impl::java::nio::file
 	}
 	
 	// Methods
-	jstring FileSystemException::getMessage()
-	{
-		return __thiz.callObjectMethod(
-			"getMessage",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jstring FileSystemException::getFile()
 	{
 		return __thiz.callObjectMethod(
@@ -87,10 +80,10 @@ namespace __jni_impl::java::nio::file
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jstring FileSystemException::getReason()
+	jstring FileSystemException::getMessage()
 	{
 		return __thiz.callObjectMethod(
-			"getReason",
+			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -98,6 +91,13 @@ namespace __jni_impl::java::nio::file
 	{
 		return __thiz.callObjectMethod(
 			"getOtherFile",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring FileSystemException::getReason()
+	{
+		return __thiz.callObjectMethod(
+			"getReason",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

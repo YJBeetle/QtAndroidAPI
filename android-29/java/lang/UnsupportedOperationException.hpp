@@ -16,12 +16,12 @@ namespace __jni_impl::java::lang
 		// Fields
 		
 		// Constructors
+		void __constructor();
+		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
 		void __constructor(const QString &arg0, jthrowable arg1);
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
-		void __constructor();
 		
 		// Methods
 	};
@@ -33,6 +33,29 @@ namespace __jni_impl::java::lang
 	// Fields
 	
 	// Constructors
+	void UnsupportedOperationException::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.UnsupportedOperationException",
+			"()V"
+		);
+	}
+	void UnsupportedOperationException::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.UnsupportedOperationException",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void UnsupportedOperationException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.UnsupportedOperationException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void UnsupportedOperationException::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -59,29 +82,6 @@ namespace __jni_impl::java::lang
 			arg1
 		);
 	}
-	void UnsupportedOperationException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.UnsupportedOperationException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void UnsupportedOperationException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.UnsupportedOperationException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void UnsupportedOperationException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.UnsupportedOperationException",
-			"()V"
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::java::lang
@@ -92,6 +92,15 @@ namespace java::lang
 	{
 	public:
 		UnsupportedOperationException(QAndroidJniObject obj) { __thiz = obj; }
+		UnsupportedOperationException()
+		{
+			__constructor();
+		}
+		UnsupportedOperationException(jstring arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		UnsupportedOperationException(jthrowable arg0)
 		{
 			__constructor(
@@ -102,15 +111,6 @@ namespace java::lang
 			__constructor(
 				arg0,
 				arg1);
-		}
-		UnsupportedOperationException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		UnsupportedOperationException()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::lang

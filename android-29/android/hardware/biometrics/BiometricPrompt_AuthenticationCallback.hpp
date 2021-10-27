@@ -23,10 +23,10 @@ namespace __jni_impl::android::hardware::biometrics
 		// Methods
 		void onAuthenticationError(jint arg0, jstring arg1);
 		void onAuthenticationError(jint arg0, const QString &arg1);
+		void onAuthenticationFailed();
 		void onAuthenticationHelp(jint arg0, jstring arg1);
 		void onAuthenticationHelp(jint arg0, const QString &arg1);
 		void onAuthenticationSucceeded(__jni_impl::android::hardware::biometrics::BiometricPrompt_AuthenticationResult arg0);
-		void onAuthenticationFailed();
 	};
 } // namespace __jni_impl::android::hardware::biometrics
 
@@ -64,6 +64,13 @@ namespace __jni_impl::android::hardware::biometrics
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
+	void BiometricPrompt_AuthenticationCallback::onAuthenticationFailed()
+	{
+		__thiz.callMethod<void>(
+			"onAuthenticationFailed",
+			"()V"
+		);
+	}
 	void BiometricPrompt_AuthenticationCallback::onAuthenticationHelp(jint arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -88,13 +95,6 @@ namespace __jni_impl::android::hardware::biometrics
 			"onAuthenticationSucceeded",
 			"(Landroid/hardware/biometrics/BiometricPrompt$AuthenticationResult;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	void BiometricPrompt_AuthenticationCallback::onAuthenticationFailed()
-	{
-		__thiz.callMethod<void>(
-			"onAuthenticationFailed",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::android::hardware::biometrics

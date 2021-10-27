@@ -24,30 +24,30 @@ namespace __jni_impl::java::util
 		// Fields
 		
 		// Constructors
-		void __constructor(jint arg0, __jni_impl::__JniBaseClass arg1);
-		void __constructor(__jni_impl::__JniBaseClass arg0);
-		void __constructor(__jni_impl::java::util::PriorityQueue arg0);
 		void __constructor();
 		void __constructor(jint arg0);
+		void __constructor(__jni_impl::__JniBaseClass arg0);
+		void __constructor(__jni_impl::java::util::PriorityQueue arg0);
+		void __constructor(jint arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
 		jboolean add(jobject arg0);
-		jboolean remove(jobject arg0);
 		void clear();
-		jint size();
-		jobjectArray toArray();
-		jobjectArray toArray(jobjectArray arg0);
-		QAndroidJniObject iterator();
-		jboolean contains(jobject arg0);
-		QAndroidJniObject spliterator();
-		void forEach(__jni_impl::__JniBaseClass arg0);
-		jobject poll();
-		jobject peek();
 		QAndroidJniObject comparator();
-		jboolean retainAll(__jni_impl::__JniBaseClass arg0);
+		jboolean contains(jobject arg0);
+		void forEach(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject iterator();
+		jboolean offer(jobject arg0);
+		jobject peek();
+		jobject poll();
+		jboolean remove(jobject arg0);
 		jboolean removeAll(__jni_impl::__JniBaseClass arg0);
 		jboolean removeIf(__jni_impl::__JniBaseClass arg0);
-		jboolean offer(jobject arg0);
+		jboolean retainAll(__jni_impl::__JniBaseClass arg0);
+		jint size();
+		QAndroidJniObject spliterator();
+		jobjectArray toArray();
+		jobjectArray toArray(jobjectArray arg0);
 	};
 } // namespace __jni_impl::java::util
 
@@ -59,13 +59,19 @@ namespace __jni_impl::java::util
 	// Fields
 	
 	// Constructors
-	void PriorityQueue::__constructor(jint arg0, __jni_impl::__JniBaseClass arg1)
+	void PriorityQueue::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.PriorityQueue",
-			"(ILjava/util/Comparator;)V",
-			arg0,
-			arg1.__jniObject().object()
+			"()V"
+		);
+	}
+	void PriorityQueue::__constructor(jint arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.PriorityQueue",
+			"(I)V",
+			arg0
 		);
 	}
 	void PriorityQueue::__constructor(__jni_impl::__JniBaseClass arg0)
@@ -84,19 +90,13 @@ namespace __jni_impl::java::util
 			arg0.__jniObject().object()
 		);
 	}
-	void PriorityQueue::__constructor()
+	void PriorityQueue::__constructor(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.PriorityQueue",
-			"()V"
-		);
-	}
-	void PriorityQueue::__constructor(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.PriorityQueue",
-			"(I)V",
-			arg0
+			"(ILjava/util/Comparator;)V",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
 	
@@ -109,14 +109,6 @@ namespace __jni_impl::java::util
 			arg0
 		);
 	}
-	jboolean PriorityQueue::remove(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"remove",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
 	void PriorityQueue::clear()
 	{
 		__thiz.callMethod<void>(
@@ -124,33 +116,11 @@ namespace __jni_impl::java::util
 			"()V"
 		);
 	}
-	jint PriorityQueue::size()
-	{
-		return __thiz.callMethod<jint>(
-			"size",
-			"()I"
-		);
-	}
-	jobjectArray PriorityQueue::toArray()
+	QAndroidJniObject PriorityQueue::comparator()
 	{
 		return __thiz.callObjectMethod(
-			"toArray",
-			"()[Ljava/lang/Object;"
-		).object<jobjectArray>();
-	}
-	jobjectArray PriorityQueue::toArray(jobjectArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"toArray",
-			"([Ljava/lang/Object;)[Ljava/lang/Object;",
-			arg0
-		).object<jobjectArray>();
-	}
-	QAndroidJniObject PriorityQueue::iterator()
-	{
-		return __thiz.callObjectMethod(
-			"iterator",
-			"()Ljava/util/Iterator;"
+			"comparator",
+			"()Ljava/util/Comparator;"
 		);
 	}
 	jboolean PriorityQueue::contains(jobject arg0)
@@ -161,13 +131,6 @@ namespace __jni_impl::java::util
 			arg0
 		);
 	}
-	QAndroidJniObject PriorityQueue::spliterator()
-	{
-		return __thiz.callObjectMethod(
-			"spliterator",
-			"()Ljava/util/Spliterator;"
-		);
-	}
 	void PriorityQueue::forEach(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -176,12 +139,20 @@ namespace __jni_impl::java::util
 			arg0.__jniObject().object()
 		);
 	}
-	jobject PriorityQueue::poll()
+	QAndroidJniObject PriorityQueue::iterator()
 	{
 		return __thiz.callObjectMethod(
-			"poll",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
+			"iterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	jboolean PriorityQueue::offer(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"offer",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
 	}
 	jobject PriorityQueue::peek()
 	{
@@ -190,19 +161,19 @@ namespace __jni_impl::java::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject PriorityQueue::comparator()
+	jobject PriorityQueue::poll()
 	{
 		return __thiz.callObjectMethod(
-			"comparator",
-			"()Ljava/util/Comparator;"
-		);
+			"poll",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	jboolean PriorityQueue::retainAll(__jni_impl::__JniBaseClass arg0)
+	jboolean PriorityQueue::remove(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"retainAll",
-			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
+			"remove",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 	jboolean PriorityQueue::removeAll(__jni_impl::__JniBaseClass arg0)
@@ -221,13 +192,42 @@ namespace __jni_impl::java::util
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean PriorityQueue::offer(jobject arg0)
+	jboolean PriorityQueue::retainAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"offer",
-			"(Ljava/lang/Object;)Z",
-			arg0
+			"retainAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.__jniObject().object()
 		);
+	}
+	jint PriorityQueue::size()
+	{
+		return __thiz.callMethod<jint>(
+			"size",
+			"()I"
+		);
+	}
+	QAndroidJniObject PriorityQueue::spliterator()
+	{
+		return __thiz.callObjectMethod(
+			"spliterator",
+			"()Ljava/util/Spliterator;"
+		);
+	}
+	jobjectArray PriorityQueue::toArray()
+	{
+		return __thiz.callObjectMethod(
+			"toArray",
+			"()[Ljava/lang/Object;"
+		).object<jobjectArray>();
+	}
+	jobjectArray PriorityQueue::toArray(jobjectArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"toArray",
+			"([Ljava/lang/Object;)[Ljava/lang/Object;",
+			arg0
+		).object<jobjectArray>();
 	}
 } // namespace __jni_impl::java::util
 
@@ -237,11 +237,14 @@ namespace java::util
 	{
 	public:
 		PriorityQueue(QAndroidJniObject obj) { __thiz = obj; }
-		PriorityQueue(jint arg0, __jni_impl::__JniBaseClass arg1)
+		PriorityQueue()
+		{
+			__constructor();
+		}
+		PriorityQueue(jint arg0)
 		{
 			__constructor(
-				arg0,
-				arg1);
+				arg0);
 		}
 		PriorityQueue(__jni_impl::__JniBaseClass arg0)
 		{
@@ -253,14 +256,11 @@ namespace java::util
 			__constructor(
 				arg0);
 		}
-		PriorityQueue()
-		{
-			__constructor();
-		}
-		PriorityQueue(jint arg0)
+		PriorityQueue(jint arg0, __jni_impl::__JniBaseClass arg1)
 		{
 			__constructor(
-				arg0);
+				arg0,
+				arg1);
 		}
 	};
 } // namespace java::util

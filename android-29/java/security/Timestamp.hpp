@@ -5,17 +5,17 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util
+namespace __jni_impl::java::io
 {
-	class Date;
+	class ObjectInputStream;
 }
 namespace __jni_impl::java::security::cert
 {
 	class CertPath;
 }
-namespace __jni_impl::java::io
+namespace __jni_impl::java::util
 {
-	class ObjectInputStream;
+	class Date;
 }
 
 namespace __jni_impl::java::security
@@ -30,16 +30,16 @@ namespace __jni_impl::java::security
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		QAndroidJniObject getSignerCertPath();
 		QAndroidJniObject getTimestamp();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security
 
-#include "../util/Date.hpp"
-#include "cert/CertPath.hpp"
 #include "../io/ObjectInputStream.hpp"
+#include "cert/CertPath.hpp"
+#include "../util/Date.hpp"
 
 namespace __jni_impl::java::security
 {
@@ -65,20 +65,6 @@ namespace __jni_impl::java::security
 			arg0
 		);
 	}
-	jstring Timestamp::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint Timestamp::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	QAndroidJniObject Timestamp::getSignerCertPath()
 	{
 		return __thiz.callObjectMethod(
@@ -92,6 +78,20 @@ namespace __jni_impl::java::security
 			"getTimestamp",
 			"()Ljava/util/Date;"
 		);
+	}
+	jint Timestamp::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring Timestamp::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security
 

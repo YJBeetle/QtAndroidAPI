@@ -11,15 +11,15 @@ namespace __jni_impl::android::print
 }
 namespace __jni_impl::android::print
 {
+	class PrintAttributes_Margins;
+}
+namespace __jni_impl::android::print
+{
 	class PrintAttributes_MediaSize;
 }
 namespace __jni_impl::android::print
 {
 	class PrintAttributes_Resolution;
-}
-namespace __jni_impl::android::print
-{
-	class PrintAttributes_Margins;
 }
 
 namespace __jni_impl::android::print
@@ -35,17 +35,17 @@ namespace __jni_impl::android::print
 		// Methods
 		QAndroidJniObject build();
 		QAndroidJniObject setColorMode(jint arg0);
-		QAndroidJniObject setMediaSize(__jni_impl::android::print::PrintAttributes_MediaSize arg0);
-		QAndroidJniObject setResolution(__jni_impl::android::print::PrintAttributes_Resolution arg0);
 		QAndroidJniObject setDuplexMode(jint arg0);
+		QAndroidJniObject setMediaSize(__jni_impl::android::print::PrintAttributes_MediaSize arg0);
 		QAndroidJniObject setMinMargins(__jni_impl::android::print::PrintAttributes_Margins arg0);
+		QAndroidJniObject setResolution(__jni_impl::android::print::PrintAttributes_Resolution arg0);
 	};
 } // namespace __jni_impl::android::print
 
 #include "PrintAttributes.hpp"
+#include "PrintAttributes_Margins.hpp"
 #include "PrintAttributes_MediaSize.hpp"
 #include "PrintAttributes_Resolution.hpp"
-#include "PrintAttributes_Margins.hpp"
 
 namespace __jni_impl::android::print
 {
@@ -76,22 +76,6 @@ namespace __jni_impl::android::print
 			arg0
 		);
 	}
-	QAndroidJniObject PrintAttributes_Builder::setMediaSize(__jni_impl::android::print::PrintAttributes_MediaSize arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setMediaSize",
-			"(Landroid/print/PrintAttributes$MediaSize;)Landroid/print/PrintAttributes$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject PrintAttributes_Builder::setResolution(__jni_impl::android::print::PrintAttributes_Resolution arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setResolution",
-			"(Landroid/print/PrintAttributes$Resolution;)Landroid/print/PrintAttributes$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject PrintAttributes_Builder::setDuplexMode(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -100,11 +84,27 @@ namespace __jni_impl::android::print
 			arg0
 		);
 	}
+	QAndroidJniObject PrintAttributes_Builder::setMediaSize(__jni_impl::android::print::PrintAttributes_MediaSize arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setMediaSize",
+			"(Landroid/print/PrintAttributes$MediaSize;)Landroid/print/PrintAttributes$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject PrintAttributes_Builder::setMinMargins(__jni_impl::android::print::PrintAttributes_Margins arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setMinMargins",
 			"(Landroid/print/PrintAttributes$Margins;)Landroid/print/PrintAttributes$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject PrintAttributes_Builder::setResolution(__jni_impl::android::print::PrintAttributes_Resolution arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setResolution",
+			"(Landroid/print/PrintAttributes$Resolution;)Landroid/print/PrintAttributes$Builder;",
 			arg0.__jniObject().object()
 		);
 	}

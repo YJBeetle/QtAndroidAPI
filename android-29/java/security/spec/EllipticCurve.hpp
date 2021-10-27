@@ -18,16 +18,16 @@ namespace __jni_impl::java::security::spec
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2, jbyteArray arg3);
 		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2);
+		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2, jbyteArray arg3);
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jint hashCode();
-		QAndroidJniObject getField();
-		jbyteArray getSeed();
 		QAndroidJniObject getA();
 		QAndroidJniObject getB();
+		QAndroidJniObject getField();
+		jbyteArray getSeed();
+		jint hashCode();
 	};
 } // namespace __jni_impl::java::security::spec
 
@@ -38,6 +38,16 @@ namespace __jni_impl::java::security::spec
 	// Fields
 	
 	// Constructors
+	void EllipticCurve::__constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.spec.EllipticCurve",
+			"(Ljava/security/spec/ECField;Ljava/math/BigInteger;Ljava/math/BigInteger;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
 	void EllipticCurve::__constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2, jbyteArray arg3)
 	{
 		__thiz = QAndroidJniObject(
@@ -47,16 +57,6 @@ namespace __jni_impl::java::security::spec
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3
-		);
-	}
-	void EllipticCurve::__constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.spec.EllipticCurve",
-			"(Ljava/security/spec/ECField;Ljava/math/BigInteger;Ljava/math/BigInteger;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
 		);
 	}
 	
@@ -69,11 +69,18 @@ namespace __jni_impl::java::security::spec
 			arg0
 		);
 	}
-	jint EllipticCurve::hashCode()
+	QAndroidJniObject EllipticCurve::getA()
 	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+		return __thiz.callObjectMethod(
+			"getA",
+			"()Ljava/math/BigInteger;"
+		);
+	}
+	QAndroidJniObject EllipticCurve::getB()
+	{
+		return __thiz.callObjectMethod(
+			"getB",
+			"()Ljava/math/BigInteger;"
 		);
 	}
 	QAndroidJniObject EllipticCurve::getField()
@@ -90,18 +97,11 @@ namespace __jni_impl::java::security::spec
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject EllipticCurve::getA()
+	jint EllipticCurve::hashCode()
 	{
-		return __thiz.callObjectMethod(
-			"getA",
-			"()Ljava/math/BigInteger;"
-		);
-	}
-	QAndroidJniObject EllipticCurve::getB()
-	{
-		return __thiz.callObjectMethod(
-			"getB",
-			"()Ljava/math/BigInteger;"
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::java::security::spec
@@ -112,6 +112,13 @@ namespace java::security::spec
 	{
 	public:
 		EllipticCurve(QAndroidJniObject obj) { __thiz = obj; }
+		EllipticCurve(__jni_impl::__JniBaseClass arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2)
+		{
+			__constructor(
+				arg0,
+				arg1,
+				arg2);
+		}
 		EllipticCurve(__jni_impl::__JniBaseClass arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2, jbyteArray arg3)
 		{
 			__constructor(
@@ -119,13 +126,6 @@ namespace java::security::spec
 				arg1,
 				arg2,
 				arg3);
-		}
-		EllipticCurve(__jni_impl::__JniBaseClass arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
 		}
 	};
 } // namespace java::security::spec

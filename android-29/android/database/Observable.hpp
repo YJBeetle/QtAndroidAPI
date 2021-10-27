@@ -22,8 +22,8 @@ namespace __jni_impl::android::database
 		
 		// Methods
 		void registerObserver(jobject arg0);
-		void unregisterObserver(jobject arg0);
 		void unregisterAll();
+		void unregisterObserver(jobject arg0);
 	};
 } // namespace __jni_impl::android::database
 
@@ -51,19 +51,19 @@ namespace __jni_impl::android::database
 			arg0
 		);
 	}
+	void Observable::unregisterAll()
+	{
+		__thiz.callMethod<void>(
+			"unregisterAll",
+			"()V"
+		);
+	}
 	void Observable::unregisterObserver(jobject arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterObserver",
 			"(Ljava/lang/Object;)V",
 			arg0
-		);
-	}
-	void Observable::unregisterAll()
-	{
-		__thiz.callMethod<void>(
-			"unregisterAll",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::android::database

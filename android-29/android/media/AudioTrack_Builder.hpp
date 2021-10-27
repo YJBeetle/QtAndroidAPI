@@ -7,15 +7,15 @@
 
 namespace __jni_impl::android::media
 {
-	class AudioTrack;
-}
-namespace __jni_impl::android::media
-{
 	class AudioAttributes;
 }
 namespace __jni_impl::android::media
 {
 	class AudioFormat;
+}
+namespace __jni_impl::android::media
+{
+	class AudioTrack;
 }
 
 namespace __jni_impl::android::media
@@ -33,16 +33,16 @@ namespace __jni_impl::android::media
 		QAndroidJniObject setAudioAttributes(__jni_impl::android::media::AudioAttributes arg0);
 		QAndroidJniObject setAudioFormat(__jni_impl::android::media::AudioFormat arg0);
 		QAndroidJniObject setBufferSizeInBytes(jint arg0);
-		QAndroidJniObject setTransferMode(jint arg0);
 		QAndroidJniObject setOffloadedPlayback(jboolean arg0);
-		QAndroidJniObject setSessionId(jint arg0);
 		QAndroidJniObject setPerformanceMode(jint arg0);
+		QAndroidJniObject setSessionId(jint arg0);
+		QAndroidJniObject setTransferMode(jint arg0);
 	};
 } // namespace __jni_impl::android::media
 
-#include "AudioTrack.hpp"
 #include "AudioAttributes.hpp"
 #include "AudioFormat.hpp"
+#include "AudioTrack.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -89,19 +89,19 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	QAndroidJniObject AudioTrack_Builder::setTransferMode(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setTransferMode",
-			"(I)Landroid/media/AudioTrack$Builder;",
-			arg0
-		);
-	}
 	QAndroidJniObject AudioTrack_Builder::setOffloadedPlayback(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setOffloadedPlayback",
 			"(Z)Landroid/media/AudioTrack$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject AudioTrack_Builder::setPerformanceMode(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setPerformanceMode",
+			"(I)Landroid/media/AudioTrack$Builder;",
 			arg0
 		);
 	}
@@ -113,10 +113,10 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	QAndroidJniObject AudioTrack_Builder::setPerformanceMode(jint arg0)
+	QAndroidJniObject AudioTrack_Builder::setTransferMode(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setPerformanceMode",
+			"setTransferMode",
 			"(I)Landroid/media/AudioTrack$Builder;",
 			arg0
 		);

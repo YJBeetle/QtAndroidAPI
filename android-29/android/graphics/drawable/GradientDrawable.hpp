@@ -6,9 +6,9 @@
 #include "../../../__JniBaseClass.hpp"
 #include "Drawable.hpp"
 
-namespace __jni_impl::android::graphics::drawable
+namespace __jni_impl::android::content::res
 {
-	class GradientDrawable_Orientation;
+	class ColorStateList;
 }
 namespace __jni_impl::android::content::res
 {
@@ -18,13 +18,9 @@ namespace __jni_impl::android::content::res
 {
 	class Resources_Theme;
 }
-namespace __jni_impl::android::content::res
-{
-	class ColorStateList;
-}
 namespace __jni_impl::android::graphics
 {
-	class ColorFilter;
+	class BlendMode;
 }
 namespace __jni_impl::android::graphics
 {
@@ -32,11 +28,7 @@ namespace __jni_impl::android::graphics
 }
 namespace __jni_impl::android::graphics
 {
-	class BlendMode;
-}
-namespace __jni_impl::android::graphics
-{
-	class Rect;
+	class ColorFilter;
 }
 namespace __jni_impl::android::graphics
 {
@@ -46,6 +38,10 @@ namespace __jni_impl::android::graphics
 {
 	class Outline;
 }
+namespace __jni_impl::android::graphics
+{
+	class Rect;
+}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
@@ -53,6 +49,10 @@ namespace __jni_impl::android::graphics::drawable
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable_ConstantState;
+}
+namespace __jni_impl::android::graphics::drawable
+{
+	class GradientDrawable_Orientation;
 }
 
 namespace __jni_impl::android::graphics::drawable
@@ -74,79 +74,79 @@ namespace __jni_impl::android::graphics::drawable
 		void __constructor(__jni_impl::android::graphics::drawable::GradientDrawable_Orientation arg0, jintArray arg1);
 		
 		// Methods
-		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
-		void setSize(jint arg0, jint arg1);
-		void setColor(__jni_impl::android::content::res::ColorStateList arg0);
-		void setColor(jint arg0);
-		void setDither(jboolean arg0);
-		QAndroidJniObject getColorFilter();
-		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
-		void setAlpha(jint arg0);
-		jint getAlpha();
-		void draw(__jni_impl::android::graphics::Canvas arg0);
-		void setPadding(jint arg0, jint arg1, jint arg2, jint arg3);
-		void setTintList(__jni_impl::android::content::res::ColorStateList arg0);
-		void setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0);
-		jfloatArray getCornerRadii();
-		jfloat getCornerRadius();
-		void setStroke(jint arg0, jint arg1);
-		void setStroke(jint arg0, __jni_impl::android::content::res::ColorStateList arg1);
-		void setStroke(jint arg0, jint arg1, jfloat arg2, jfloat arg3);
-		void setStroke(jint arg0, __jni_impl::android::content::res::ColorStateList arg1, jfloat arg2, jfloat arg3);
-		void setGradientType(jint arg0);
-		jint getGradientType();
-		void setGradientCenter(jfloat arg0, jfloat arg1);
-		jfloat getGradientCenterX();
-		jfloat getGradientCenterY();
-		void setGradientRadius(jfloat arg0);
-		jfloat getGradientRadius();
-		void setUseLevel(jboolean arg0);
-		jboolean getUseLevel();
-		void setColors(jintArray arg0, jfloatArray arg1);
-		void setColors(jintArray arg0);
-		jintArray getColors();
-		void setInnerRadiusRatio(jfloat arg0);
-		jfloat getInnerRadiusRatio();
-		void setInnerRadius(jint arg0);
-		jint getInnerRadius();
-		void setThicknessRatio(jfloat arg0);
-		jfloat getThicknessRatio();
-		void setThickness(jint arg0);
-		jint getThickness();
-		QAndroidJniObject getOrientation();
-		void setOrientation(__jni_impl::android::graphics::drawable::GradientDrawable_Orientation arg0);
-		QAndroidJniObject getColor();
-		jint getChangingConfigurations();
-		jboolean isStateful();
 		void applyTheme(__jni_impl::android::content::res::Resources_Theme arg0);
 		jboolean canApplyTheme();
-		jint getOpacity();
-		jint getIntrinsicWidth();
-		jint getIntrinsicHeight();
-		jboolean getPadding(__jni_impl::android::graphics::Rect arg0);
-		QAndroidJniObject getOpticalInsets();
-		void getOutline(__jni_impl::android::graphics::Outline arg0);
-		QAndroidJniObject mutate();
+		void draw(__jni_impl::android::graphics::Canvas arg0);
+		jint getAlpha();
+		jint getChangingConfigurations();
+		QAndroidJniObject getColor();
+		QAndroidJniObject getColorFilter();
+		jintArray getColors();
 		QAndroidJniObject getConstantState();
-		void setCornerRadius(jfloat arg0);
-		void setCornerRadii(jfloatArray arg0);
+		jfloatArray getCornerRadii();
+		jfloat getCornerRadius();
+		jfloat getGradientCenterX();
+		jfloat getGradientCenterY();
+		jfloat getGradientRadius();
+		jint getGradientType();
+		jint getInnerRadius();
+		jfloat getInnerRadiusRatio();
+		jint getIntrinsicHeight();
+		jint getIntrinsicWidth();
+		jint getOpacity();
+		QAndroidJniObject getOpticalInsets();
+		QAndroidJniObject getOrientation();
+		void getOutline(__jni_impl::android::graphics::Outline arg0);
+		jboolean getPadding(__jni_impl::android::graphics::Rect arg0);
 		jint getShape();
+		jint getThickness();
+		jfloat getThicknessRatio();
+		jboolean getUseLevel();
+		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
+		jboolean isStateful();
+		QAndroidJniObject mutate();
+		void setAlpha(jint arg0);
+		void setColor(__jni_impl::android::content::res::ColorStateList arg0);
+		void setColor(jint arg0);
+		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
+		void setColors(jintArray arg0);
+		void setColors(jintArray arg0, jfloatArray arg1);
+		void setCornerRadii(jfloatArray arg0);
+		void setCornerRadius(jfloat arg0);
+		void setDither(jboolean arg0);
+		void setGradientCenter(jfloat arg0, jfloat arg1);
+		void setGradientRadius(jfloat arg0);
+		void setGradientType(jint arg0);
+		void setInnerRadius(jint arg0);
+		void setInnerRadiusRatio(jfloat arg0);
+		void setOrientation(__jni_impl::android::graphics::drawable::GradientDrawable_Orientation arg0);
+		void setPadding(jint arg0, jint arg1, jint arg2, jint arg3);
 		void setShape(jint arg0);
+		void setSize(jint arg0, jint arg1);
+		void setStroke(jint arg0, __jni_impl::android::content::res::ColorStateList arg1);
+		void setStroke(jint arg0, jint arg1);
+		void setStroke(jint arg0, __jni_impl::android::content::res::ColorStateList arg1, jfloat arg2, jfloat arg3);
+		void setStroke(jint arg0, jint arg1, jfloat arg2, jfloat arg3);
+		void setThickness(jint arg0);
+		void setThicknessRatio(jfloat arg0);
+		void setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0);
+		void setTintList(__jni_impl::android::content::res::ColorStateList arg0);
+		void setUseLevel(jboolean arg0);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
-#include "GradientDrawable_Orientation.hpp"
+#include "../../content/res/ColorStateList.hpp"
 #include "../../content/res/Resources.hpp"
 #include "../../content/res/Resources_Theme.hpp"
-#include "../../content/res/ColorStateList.hpp"
-#include "../ColorFilter.hpp"
-#include "../Canvas.hpp"
 #include "../BlendMode.hpp"
-#include "../Rect.hpp"
+#include "../Canvas.hpp"
+#include "../ColorFilter.hpp"
 #include "../Insets.hpp"
 #include "../Outline.hpp"
+#include "../Rect.hpp"
 #include "Drawable.hpp"
 #include "Drawable_ConstantState.hpp"
+#include "GradientDrawable_Orientation.hpp"
 
 namespace __jni_impl::android::graphics::drawable
 {
@@ -220,6 +220,206 @@ namespace __jni_impl::android::graphics::drawable
 	}
 	
 	// Methods
+	void GradientDrawable::applyTheme(__jni_impl::android::content::res::Resources_Theme arg0)
+	{
+		__thiz.callMethod<void>(
+			"applyTheme",
+			"(Landroid/content/res/Resources$Theme;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean GradientDrawable::canApplyTheme()
+	{
+		return __thiz.callMethod<jboolean>(
+			"canApplyTheme",
+			"()Z"
+		);
+	}
+	void GradientDrawable::draw(__jni_impl::android::graphics::Canvas arg0)
+	{
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint GradientDrawable::getAlpha()
+	{
+		return __thiz.callMethod<jint>(
+			"getAlpha",
+			"()I"
+		);
+	}
+	jint GradientDrawable::getChangingConfigurations()
+	{
+		return __thiz.callMethod<jint>(
+			"getChangingConfigurations",
+			"()I"
+		);
+	}
+	QAndroidJniObject GradientDrawable::getColor()
+	{
+		return __thiz.callObjectMethod(
+			"getColor",
+			"()Landroid/content/res/ColorStateList;"
+		);
+	}
+	QAndroidJniObject GradientDrawable::getColorFilter()
+	{
+		return __thiz.callObjectMethod(
+			"getColorFilter",
+			"()Landroid/graphics/ColorFilter;"
+		);
+	}
+	jintArray GradientDrawable::getColors()
+	{
+		return __thiz.callObjectMethod(
+			"getColors",
+			"()[I"
+		).object<jintArray>();
+	}
+	QAndroidJniObject GradientDrawable::getConstantState()
+	{
+		return __thiz.callObjectMethod(
+			"getConstantState",
+			"()Landroid/graphics/drawable/Drawable$ConstantState;"
+		);
+	}
+	jfloatArray GradientDrawable::getCornerRadii()
+	{
+		return __thiz.callObjectMethod(
+			"getCornerRadii",
+			"()[F"
+		).object<jfloatArray>();
+	}
+	jfloat GradientDrawable::getCornerRadius()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getCornerRadius",
+			"()F"
+		);
+	}
+	jfloat GradientDrawable::getGradientCenterX()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getGradientCenterX",
+			"()F"
+		);
+	}
+	jfloat GradientDrawable::getGradientCenterY()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getGradientCenterY",
+			"()F"
+		);
+	}
+	jfloat GradientDrawable::getGradientRadius()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getGradientRadius",
+			"()F"
+		);
+	}
+	jint GradientDrawable::getGradientType()
+	{
+		return __thiz.callMethod<jint>(
+			"getGradientType",
+			"()I"
+		);
+	}
+	jint GradientDrawable::getInnerRadius()
+	{
+		return __thiz.callMethod<jint>(
+			"getInnerRadius",
+			"()I"
+		);
+	}
+	jfloat GradientDrawable::getInnerRadiusRatio()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getInnerRadiusRatio",
+			"()F"
+		);
+	}
+	jint GradientDrawable::getIntrinsicHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getIntrinsicHeight",
+			"()I"
+		);
+	}
+	jint GradientDrawable::getIntrinsicWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getIntrinsicWidth",
+			"()I"
+		);
+	}
+	jint GradientDrawable::getOpacity()
+	{
+		return __thiz.callMethod<jint>(
+			"getOpacity",
+			"()I"
+		);
+	}
+	QAndroidJniObject GradientDrawable::getOpticalInsets()
+	{
+		return __thiz.callObjectMethod(
+			"getOpticalInsets",
+			"()Landroid/graphics/Insets;"
+		);
+	}
+	QAndroidJniObject GradientDrawable::getOrientation()
+	{
+		return __thiz.callObjectMethod(
+			"getOrientation",
+			"()Landroid/graphics/drawable/GradientDrawable$Orientation;"
+		);
+	}
+	void GradientDrawable::getOutline(__jni_impl::android::graphics::Outline arg0)
+	{
+		__thiz.callMethod<void>(
+			"getOutline",
+			"(Landroid/graphics/Outline;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean GradientDrawable::getPadding(__jni_impl::android::graphics::Rect arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"getPadding",
+			"(Landroid/graphics/Rect;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jint GradientDrawable::getShape()
+	{
+		return __thiz.callMethod<jint>(
+			"getShape",
+			"()I"
+		);
+	}
+	jint GradientDrawable::getThickness()
+	{
+		return __thiz.callMethod<jint>(
+			"getThickness",
+			"()I"
+		);
+	}
+	jfloat GradientDrawable::getThicknessRatio()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getThicknessRatio",
+			"()F"
+		);
+	}
+	jboolean GradientDrawable::getUseLevel()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getUseLevel",
+			"()Z"
+		);
+	}
 	void GradientDrawable::inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3)
 	{
 		__thiz.callMethod<void>(
@@ -231,13 +431,26 @@ namespace __jni_impl::android::graphics::drawable
 			arg3.__jniObject().object()
 		);
 	}
-	void GradientDrawable::setSize(jint arg0, jint arg1)
+	jboolean GradientDrawable::isStateful()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isStateful",
+			"()Z"
+		);
+	}
+	QAndroidJniObject GradientDrawable::mutate()
+	{
+		return __thiz.callObjectMethod(
+			"mutate",
+			"()Landroid/graphics/drawable/Drawable;"
+		);
+	}
+	void GradientDrawable::setAlpha(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setSize",
-			"(II)V",
-			arg0,
-			arg1
+			"setAlpha",
+			"(I)V",
+			arg0
 		);
 	}
 	void GradientDrawable::setColor(__jni_impl::android::content::res::ColorStateList arg0)
@@ -256,21 +469,6 @@ namespace __jni_impl::android::graphics::drawable
 			arg0
 		);
 	}
-	void GradientDrawable::setDither(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDither",
-			"(Z)V",
-			arg0
-		);
-	}
-	QAndroidJniObject GradientDrawable::getColorFilter()
-	{
-		return __thiz.callObjectMethod(
-			"getColorFilter",
-			"()Landroid/graphics/ColorFilter;"
-		);
-	}
 	void GradientDrawable::setColorFilter(__jni_impl::android::graphics::ColorFilter arg0)
 	{
 		__thiz.callMethod<void>(
@@ -279,26 +477,93 @@ namespace __jni_impl::android::graphics::drawable
 			arg0.__jniObject().object()
 		);
 	}
-	void GradientDrawable::setAlpha(jint arg0)
+	void GradientDrawable::setColors(jintArray arg0)
 	{
 		__thiz.callMethod<void>(
-			"setAlpha",
+			"setColors",
+			"([I)V",
+			arg0
+		);
+	}
+	void GradientDrawable::setColors(jintArray arg0, jfloatArray arg1)
+	{
+		__thiz.callMethod<void>(
+			"setColors",
+			"([I[F)V",
+			arg0,
+			arg1
+		);
+	}
+	void GradientDrawable::setCornerRadii(jfloatArray arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCornerRadii",
+			"([F)V",
+			arg0
+		);
+	}
+	void GradientDrawable::setCornerRadius(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCornerRadius",
+			"(F)V",
+			arg0
+		);
+	}
+	void GradientDrawable::setDither(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDither",
+			"(Z)V",
+			arg0
+		);
+	}
+	void GradientDrawable::setGradientCenter(jfloat arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"setGradientCenter",
+			"(FF)V",
+			arg0,
+			arg1
+		);
+	}
+	void GradientDrawable::setGradientRadius(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGradientRadius",
+			"(F)V",
+			arg0
+		);
+	}
+	void GradientDrawable::setGradientType(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGradientType",
 			"(I)V",
 			arg0
 		);
 	}
-	jint GradientDrawable::getAlpha()
-	{
-		return __thiz.callMethod<jint>(
-			"getAlpha",
-			"()I"
-		);
-	}
-	void GradientDrawable::draw(__jni_impl::android::graphics::Canvas arg0)
+	void GradientDrawable::setInnerRadius(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;)V",
+			"setInnerRadius",
+			"(I)V",
+			arg0
+		);
+	}
+	void GradientDrawable::setInnerRadiusRatio(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setInnerRadiusRatio",
+			"(F)V",
+			arg0
+		);
+	}
+	void GradientDrawable::setOrientation(__jni_impl::android::graphics::drawable::GradientDrawable_Orientation arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOrientation",
+			"(Landroid/graphics/drawable/GradientDrawable$Orientation;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -313,40 +578,18 @@ namespace __jni_impl::android::graphics::drawable
 			arg3
 		);
 	}
-	void GradientDrawable::setTintList(__jni_impl::android::content::res::ColorStateList arg0)
+	void GradientDrawable::setShape(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setTintList",
-			"(Landroid/content/res/ColorStateList;)V",
-			arg0.__jniObject().object()
+			"setShape",
+			"(I)V",
+			arg0
 		);
 	}
-	void GradientDrawable::setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
+	void GradientDrawable::setSize(jint arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
-			"setTintBlendMode",
-			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jfloatArray GradientDrawable::getCornerRadii()
-	{
-		return __thiz.callObjectMethod(
-			"getCornerRadii",
-			"()[F"
-		).object<jfloatArray>();
-	}
-	jfloat GradientDrawable::getCornerRadius()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getCornerRadius",
-			"()F"
-		);
-	}
-	void GradientDrawable::setStroke(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setStroke",
+			"setSize",
 			"(II)V",
 			arg0,
 			arg1
@@ -361,15 +604,13 @@ namespace __jni_impl::android::graphics::drawable
 			arg1.__jniObject().object()
 		);
 	}
-	void GradientDrawable::setStroke(jint arg0, jint arg1, jfloat arg2, jfloat arg3)
+	void GradientDrawable::setStroke(jint arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
 			"setStroke",
-			"(IIFF)V",
+			"(II)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3
+			arg1
 		);
 	}
 	void GradientDrawable::setStroke(jint arg0, __jni_impl::android::content::res::ColorStateList arg1, jfloat arg2, jfloat arg3)
@@ -383,141 +624,15 @@ namespace __jni_impl::android::graphics::drawable
 			arg3
 		);
 	}
-	void GradientDrawable::setGradientType(jint arg0)
+	void GradientDrawable::setStroke(jint arg0, jint arg1, jfloat arg2, jfloat arg3)
 	{
 		__thiz.callMethod<void>(
-			"setGradientType",
-			"(I)V",
-			arg0
-		);
-	}
-	jint GradientDrawable::getGradientType()
-	{
-		return __thiz.callMethod<jint>(
-			"getGradientType",
-			"()I"
-		);
-	}
-	void GradientDrawable::setGradientCenter(jfloat arg0, jfloat arg1)
-	{
-		__thiz.callMethod<void>(
-			"setGradientCenter",
-			"(FF)V",
+			"setStroke",
+			"(IIFF)V",
 			arg0,
-			arg1
-		);
-	}
-	jfloat GradientDrawable::getGradientCenterX()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getGradientCenterX",
-			"()F"
-		);
-	}
-	jfloat GradientDrawable::getGradientCenterY()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getGradientCenterY",
-			"()F"
-		);
-	}
-	void GradientDrawable::setGradientRadius(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGradientRadius",
-			"(F)V",
-			arg0
-		);
-	}
-	jfloat GradientDrawable::getGradientRadius()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getGradientRadius",
-			"()F"
-		);
-	}
-	void GradientDrawable::setUseLevel(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setUseLevel",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean GradientDrawable::getUseLevel()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getUseLevel",
-			"()Z"
-		);
-	}
-	void GradientDrawable::setColors(jintArray arg0, jfloatArray arg1)
-	{
-		__thiz.callMethod<void>(
-			"setColors",
-			"([I[F)V",
-			arg0,
-			arg1
-		);
-	}
-	void GradientDrawable::setColors(jintArray arg0)
-	{
-		__thiz.callMethod<void>(
-			"setColors",
-			"([I)V",
-			arg0
-		);
-	}
-	jintArray GradientDrawable::getColors()
-	{
-		return __thiz.callObjectMethod(
-			"getColors",
-			"()[I"
-		).object<jintArray>();
-	}
-	void GradientDrawable::setInnerRadiusRatio(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setInnerRadiusRatio",
-			"(F)V",
-			arg0
-		);
-	}
-	jfloat GradientDrawable::getInnerRadiusRatio()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getInnerRadiusRatio",
-			"()F"
-		);
-	}
-	void GradientDrawable::setInnerRadius(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setInnerRadius",
-			"(I)V",
-			arg0
-		);
-	}
-	jint GradientDrawable::getInnerRadius()
-	{
-		return __thiz.callMethod<jint>(
-			"getInnerRadius",
-			"()I"
-		);
-	}
-	void GradientDrawable::setThicknessRatio(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setThicknessRatio",
-			"(F)V",
-			arg0
-		);
-	}
-	jfloat GradientDrawable::getThicknessRatio()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getThicknessRatio",
-			"()F"
+			arg1,
+			arg2,
+			arg3
 		);
 	}
 	void GradientDrawable::setThickness(jint arg0)
@@ -528,150 +643,35 @@ namespace __jni_impl::android::graphics::drawable
 			arg0
 		);
 	}
-	jint GradientDrawable::getThickness()
-	{
-		return __thiz.callMethod<jint>(
-			"getThickness",
-			"()I"
-		);
-	}
-	QAndroidJniObject GradientDrawable::getOrientation()
-	{
-		return __thiz.callObjectMethod(
-			"getOrientation",
-			"()Landroid/graphics/drawable/GradientDrawable$Orientation;"
-		);
-	}
-	void GradientDrawable::setOrientation(__jni_impl::android::graphics::drawable::GradientDrawable_Orientation arg0)
+	void GradientDrawable::setThicknessRatio(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
-			"setOrientation",
-			"(Landroid/graphics/drawable/GradientDrawable$Orientation;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject GradientDrawable::getColor()
-	{
-		return __thiz.callObjectMethod(
-			"getColor",
-			"()Landroid/content/res/ColorStateList;"
-		);
-	}
-	jint GradientDrawable::getChangingConfigurations()
-	{
-		return __thiz.callMethod<jint>(
-			"getChangingConfigurations",
-			"()I"
-		);
-	}
-	jboolean GradientDrawable::isStateful()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isStateful",
-			"()Z"
-		);
-	}
-	void GradientDrawable::applyTheme(__jni_impl::android::content::res::Resources_Theme arg0)
-	{
-		__thiz.callMethod<void>(
-			"applyTheme",
-			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean GradientDrawable::canApplyTheme()
-	{
-		return __thiz.callMethod<jboolean>(
-			"canApplyTheme",
-			"()Z"
-		);
-	}
-	jint GradientDrawable::getOpacity()
-	{
-		return __thiz.callMethod<jint>(
-			"getOpacity",
-			"()I"
-		);
-	}
-	jint GradientDrawable::getIntrinsicWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getIntrinsicWidth",
-			"()I"
-		);
-	}
-	jint GradientDrawable::getIntrinsicHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getIntrinsicHeight",
-			"()I"
-		);
-	}
-	jboolean GradientDrawable::getPadding(__jni_impl::android::graphics::Rect arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"getPadding",
-			"(Landroid/graphics/Rect;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject GradientDrawable::getOpticalInsets()
-	{
-		return __thiz.callObjectMethod(
-			"getOpticalInsets",
-			"()Landroid/graphics/Insets;"
-		);
-	}
-	void GradientDrawable::getOutline(__jni_impl::android::graphics::Outline arg0)
-	{
-		__thiz.callMethod<void>(
-			"getOutline",
-			"(Landroid/graphics/Outline;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject GradientDrawable::mutate()
-	{
-		return __thiz.callObjectMethod(
-			"mutate",
-			"()Landroid/graphics/drawable/Drawable;"
-		);
-	}
-	QAndroidJniObject GradientDrawable::getConstantState()
-	{
-		return __thiz.callObjectMethod(
-			"getConstantState",
-			"()Landroid/graphics/drawable/Drawable$ConstantState;"
-		);
-	}
-	void GradientDrawable::setCornerRadius(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCornerRadius",
+			"setThicknessRatio",
 			"(F)V",
 			arg0
 		);
 	}
-	void GradientDrawable::setCornerRadii(jfloatArray arg0)
+	void GradientDrawable::setTintBlendMode(__jni_impl::android::graphics::BlendMode arg0)
 	{
 		__thiz.callMethod<void>(
-			"setCornerRadii",
-			"([F)V",
-			arg0
+			"setTintBlendMode",
+			"(Landroid/graphics/BlendMode;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	jint GradientDrawable::getShape()
-	{
-		return __thiz.callMethod<jint>(
-			"getShape",
-			"()I"
-		);
-	}
-	void GradientDrawable::setShape(jint arg0)
+	void GradientDrawable::setTintList(__jni_impl::android::content::res::ColorStateList arg0)
 	{
 		__thiz.callMethod<void>(
-			"setShape",
-			"(I)V",
+			"setTintList",
+			"(Landroid/content/res/ColorStateList;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void GradientDrawable::setUseLevel(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setUseLevel",
+			"(Z)V",
 			arg0
 		);
 	}

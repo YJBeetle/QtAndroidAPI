@@ -15,14 +15,15 @@ namespace __jni_impl::java::net
 		// Fields
 		static QAndroidJniObject INET();
 		static QAndroidJniObject INET6();
+		static QAndroidJniObject UNIX();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::net
 
@@ -46,6 +47,14 @@ namespace __jni_impl::java::net
 			"Ljava/net/StandardProtocolFamily;"
 		);
 	}
+	QAndroidJniObject StandardProtocolFamily::UNIX()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.net.StandardProtocolFamily",
+			"UNIX",
+			"Ljava/net/StandardProtocolFamily;"
+		);
+	}
 	
 	// Constructors
 	void StandardProtocolFamily::__constructor()
@@ -56,14 +65,6 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
-	jarray StandardProtocolFamily::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.net.StandardProtocolFamily",
-			"values",
-			"()[Ljava/net/StandardProtocolFamily;"
-		).object<jarray>();
-	}
 	QAndroidJniObject StandardProtocolFamily::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -81,6 +82,14 @@ namespace __jni_impl::java::net
 			"(Ljava/lang/String;)Ljava/net/StandardProtocolFamily;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray StandardProtocolFamily::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.net.StandardProtocolFamily",
+			"values",
+			"()[Ljava/net/StandardProtocolFamily;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::net
 

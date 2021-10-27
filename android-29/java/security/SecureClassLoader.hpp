@@ -10,21 +10,21 @@ namespace __jni_impl::java::lang
 {
 	class ClassLoader;
 }
-namespace __jni_impl::java::security
-{
-	class ProtectionDomain;
-}
-namespace __jni_impl::java::security
-{
-	class CodeSource;
-}
 namespace __jni_impl::java::nio
 {
 	class ByteBuffer;
 }
 namespace __jni_impl::java::security
 {
+	class CodeSource;
+}
+namespace __jni_impl::java::security
+{
 	class PermissionCollection;
+}
+namespace __jni_impl::java::security
+{
+	class ProtectionDomain;
 }
 
 namespace __jni_impl::java::security
@@ -42,10 +42,10 @@ namespace __jni_impl::java::security
 } // namespace __jni_impl::java::security
 
 #include "../lang/ClassLoader.hpp"
-#include "ProtectionDomain.hpp"
-#include "CodeSource.hpp"
 #include "../nio/ByteBuffer.hpp"
+#include "CodeSource.hpp"
 #include "PermissionCollection.hpp"
+#include "ProtectionDomain.hpp"
 
 namespace __jni_impl::java::security
 {

@@ -13,19 +13,19 @@ namespace __jni_impl::android::telephony
 	{
 	public:
 		// Fields
-		static QAndroidJniObject UNKNOWN();
 		static QAndroidJniObject CLASS_0();
 		static QAndroidJniObject CLASS_1();
 		static QAndroidJniObject CLASS_2();
 		static QAndroidJniObject CLASS_3();
+		static QAndroidJniObject UNKNOWN();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -33,14 +33,6 @@ namespace __jni_impl::android::telephony
 namespace __jni_impl::android::telephony
 {
 	// Fields
-	QAndroidJniObject SmsMessage_MessageClass::UNKNOWN()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.telephony.SmsMessage$MessageClass",
-			"UNKNOWN",
-			"Landroid/telephony/SmsMessage$MessageClass;"
-		);
-	}
 	QAndroidJniObject SmsMessage_MessageClass::CLASS_0()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -73,6 +65,14 @@ namespace __jni_impl::android::telephony
 			"Landroid/telephony/SmsMessage$MessageClass;"
 		);
 	}
+	QAndroidJniObject SmsMessage_MessageClass::UNKNOWN()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.telephony.SmsMessage$MessageClass",
+			"UNKNOWN",
+			"Landroid/telephony/SmsMessage$MessageClass;"
+		);
+	}
 	
 	// Constructors
 	void SmsMessage_MessageClass::__constructor()
@@ -83,14 +83,6 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
-	jarray SmsMessage_MessageClass::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telephony.SmsMessage$MessageClass",
-			"values",
-			"()[Landroid/telephony/SmsMessage$MessageClass;"
-		).object<jarray>();
-	}
 	QAndroidJniObject SmsMessage_MessageClass::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -108,6 +100,14 @@ namespace __jni_impl::android::telephony
 			"(Ljava/lang/String;)Landroid/telephony/SmsMessage$MessageClass;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray SmsMessage_MessageClass::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telephony.SmsMessage$MessageClass",
+			"values",
+			"()[Landroid/telephony/SmsMessage$MessageClass;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::telephony
 

@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::graphics::pdf
-{
-	class PdfDocument_PageInfo;
-}
 namespace __jni_impl::android::graphics
 {
 	class Rect;
+}
+namespace __jni_impl::android::graphics::pdf
+{
+	class PdfDocument_PageInfo;
 }
 
 namespace __jni_impl::android::graphics::pdf
@@ -30,8 +30,8 @@ namespace __jni_impl::android::graphics::pdf
 	};
 } // namespace __jni_impl::android::graphics::pdf
 
-#include "PdfDocument_PageInfo.hpp"
 #include "../Rect.hpp"
+#include "PdfDocument_PageInfo.hpp"
 
 namespace __jni_impl::android::graphics::pdf
 {

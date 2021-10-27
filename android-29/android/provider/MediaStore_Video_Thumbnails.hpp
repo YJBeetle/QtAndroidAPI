@@ -5,10 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net
-{
-	class Uri;
-}
 namespace __jni_impl::android::content
 {
 	class ContentResolver;
@@ -20,6 +16,10 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::graphics
 {
 	class BitmapFactory_Options;
+}
+namespace __jni_impl::android::net
+{
+	class Uri;
 }
 
 namespace __jni_impl::android::provider
@@ -44,19 +44,19 @@ namespace __jni_impl::android::provider
 		void __constructor();
 		
 		// Methods
+		static void cancelThumbnailRequest(__jni_impl::android::content::ContentResolver arg0, jlong arg1);
+		static void cancelThumbnailRequest(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jlong arg2);
 		static QAndroidJniObject getContentUri(jstring arg0);
 		static QAndroidJniObject getContentUri(const QString &arg0);
-		static void cancelThumbnailRequest(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jlong arg2);
-		static void cancelThumbnailRequest(__jni_impl::android::content::ContentResolver arg0, jlong arg1);
 		static QAndroidJniObject getThumbnail(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jint arg2, __jni_impl::android::graphics::BitmapFactory_Options arg3);
 		static QAndroidJniObject getThumbnail(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jlong arg2, jint arg3, __jni_impl::android::graphics::BitmapFactory_Options arg4);
 	};
 } // namespace __jni_impl::android::provider
 
-#include "../net/Uri.hpp"
 #include "../content/ContentResolver.hpp"
 #include "../graphics/Bitmap.hpp"
 #include "../graphics/BitmapFactory_Options.hpp"
+#include "../net/Uri.hpp"
 
 namespace __jni_impl::android::provider
 {
@@ -157,6 +157,27 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
+	void MediaStore_Video_Thumbnails::cancelThumbnailRequest(__jni_impl::android::content::ContentResolver arg0, jlong arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"cancelThumbnailRequest",
+			"(Landroid/content/ContentResolver;J)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void MediaStore_Video_Thumbnails::cancelThumbnailRequest(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jlong arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.provider.MediaStore$Video$Thumbnails",
+			"cancelThumbnailRequest",
+			"(Landroid/content/ContentResolver;JJ)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
+		);
+	}
 	QAndroidJniObject MediaStore_Video_Thumbnails::getContentUri(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -173,27 +194,6 @@ namespace __jni_impl::android::provider
 			"getContentUri",
 			"(Ljava/lang/String;)Landroid/net/Uri;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void MediaStore_Video_Thumbnails::cancelThumbnailRequest(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jlong arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.provider.MediaStore$Video$Thumbnails",
-			"cancelThumbnailRequest",
-			"(Landroid/content/ContentResolver;JJ)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		);
-	}
-	void MediaStore_Video_Thumbnails::cancelThumbnailRequest(__jni_impl::android::content::ContentResolver arg0, jlong arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.provider.MediaStore$Video$Thumbnails",
-			"cancelThumbnailRequest",
-			"(Landroid/content/ContentResolver;J)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 	QAndroidJniObject MediaStore_Video_Thumbnails::getThumbnail(__jni_impl::android::content::ContentResolver arg0, jlong arg1, jint arg2, __jni_impl::android::graphics::BitmapFactory_Options arg3)

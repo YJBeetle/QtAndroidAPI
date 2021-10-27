@@ -7,11 +7,11 @@
 
 namespace __jni_impl::java::nio::file::attribute
 {
-	class AclEntryType;
+	class AclEntry;
 }
 namespace __jni_impl::java::nio::file::attribute
 {
-	class AclEntry;
+	class AclEntryType;
 }
 
 namespace __jni_impl::java::nio::file::attribute
@@ -26,17 +26,17 @@ namespace __jni_impl::java::nio::file::attribute
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setPermissions(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject setPermissions(jarray arg0);
-		QAndroidJniObject setPrincipal(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject setType(__jni_impl::java::nio::file::attribute::AclEntryType arg0);
 		QAndroidJniObject setFlags(jarray arg0);
 		QAndroidJniObject setFlags(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject setPermissions(jarray arg0);
+		QAndroidJniObject setPermissions(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject setPrincipal(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject setType(__jni_impl::java::nio::file::attribute::AclEntryType arg0);
 	};
 } // namespace __jni_impl::java::nio::file::attribute
 
-#include "AclEntryType.hpp"
 #include "AclEntry.hpp"
+#include "AclEntryType.hpp"
 
 namespace __jni_impl::java::nio::file::attribute
 {
@@ -58,10 +58,18 @@ namespace __jni_impl::java::nio::file::attribute
 			"()Ljava/nio/file/attribute/AclEntry;"
 		);
 	}
-	QAndroidJniObject AclEntry_Builder::setPermissions(__jni_impl::__JniBaseClass arg0)
+	QAndroidJniObject AclEntry_Builder::setFlags(jarray arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setPermissions",
+			"setFlags",
+			"([Ljava/nio/file/attribute/AclEntryFlag;)Ljava/nio/file/attribute/AclEntry$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject AclEntry_Builder::setFlags(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setFlags",
 			"(Ljava/util/Set;)Ljava/nio/file/attribute/AclEntry$Builder;",
 			arg0.__jniObject().object()
 		);
@@ -72,6 +80,14 @@ namespace __jni_impl::java::nio::file::attribute
 			"setPermissions",
 			"([Ljava/nio/file/attribute/AclEntryPermission;)Ljava/nio/file/attribute/AclEntry$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject AclEntry_Builder::setPermissions(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setPermissions",
+			"(Ljava/util/Set;)Ljava/nio/file/attribute/AclEntry$Builder;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject AclEntry_Builder::setPrincipal(__jni_impl::__JniBaseClass arg0)
@@ -87,22 +103,6 @@ namespace __jni_impl::java::nio::file::attribute
 		return __thiz.callObjectMethod(
 			"setType",
 			"(Ljava/nio/file/attribute/AclEntryType;)Ljava/nio/file/attribute/AclEntry$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject AclEntry_Builder::setFlags(jarray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setFlags",
-			"([Ljava/nio/file/attribute/AclEntryFlag;)Ljava/nio/file/attribute/AclEntry$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject AclEntry_Builder::setFlags(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setFlags",
-			"(Ljava/util/Set;)Ljava/nio/file/attribute/AclEntry$Builder;",
 			arg0.__jniObject().object()
 		);
 	}

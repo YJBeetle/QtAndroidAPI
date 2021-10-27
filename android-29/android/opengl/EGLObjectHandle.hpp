@@ -17,9 +17,9 @@ namespace __jni_impl::android::opengl
 		void __constructor();
 		
 		// Methods
-		jint hashCode();
 		jint getHandle();
 		jlong getNativeHandle();
+		jint hashCode();
 	};
 } // namespace __jni_impl::android::opengl
 
@@ -37,13 +37,6 @@ namespace __jni_impl::android::opengl
 	}
 	
 	// Methods
-	jint EGLObjectHandle::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	jint EGLObjectHandle::getHandle()
 	{
 		return __thiz.callMethod<jint>(
@@ -56,6 +49,13 @@ namespace __jni_impl::android::opengl
 		return __thiz.callMethod<jlong>(
 			"getNativeHandle",
 			"()J"
+		);
+	}
+	jint EGLObjectHandle::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::opengl

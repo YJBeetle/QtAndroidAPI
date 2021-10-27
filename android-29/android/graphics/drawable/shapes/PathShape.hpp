@@ -8,19 +8,19 @@
 
 namespace __jni_impl::android::graphics
 {
-	class Path;
-}
-namespace __jni_impl::android::graphics::drawable::shapes
-{
-	class Shape;
-}
-namespace __jni_impl::android::graphics
-{
 	class Canvas;
 }
 namespace __jni_impl::android::graphics
 {
 	class Paint;
+}
+namespace __jni_impl::android::graphics
+{
+	class Path;
+}
+namespace __jni_impl::android::graphics::drawable::shapes
+{
+	class Shape;
 }
 
 namespace __jni_impl::android::graphics::drawable::shapes
@@ -34,17 +34,17 @@ namespace __jni_impl::android::graphics::drawable::shapes
 		void __constructor(__jni_impl::android::graphics::Path arg0, jfloat arg1, jfloat arg2);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
 		QAndroidJniObject clone();
 		void draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1);
+		jboolean equals(jobject arg0);
+		jint hashCode();
 	};
 } // namespace __jni_impl::android::graphics::drawable::shapes
 
-#include "../../Path.hpp"
-#include "Shape.hpp"
 #include "../../Canvas.hpp"
 #include "../../Paint.hpp"
+#include "../../Path.hpp"
+#include "Shape.hpp"
 
 namespace __jni_impl::android::graphics::drawable::shapes
 {
@@ -63,21 +63,6 @@ namespace __jni_impl::android::graphics::drawable::shapes
 	}
 	
 	// Methods
-	jboolean PathShape::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jint PathShape::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	QAndroidJniObject PathShape::clone()
 	{
 		return __thiz.callObjectMethod(
@@ -92,6 +77,21 @@ namespace __jni_impl::android::graphics::drawable::shapes
 			"(Landroid/graphics/Canvas;Landroid/graphics/Paint;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
+		);
+	}
+	jboolean PathShape::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jint PathShape::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::graphics::drawable::shapes

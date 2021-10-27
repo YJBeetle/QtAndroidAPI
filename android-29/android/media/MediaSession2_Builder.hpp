@@ -5,6 +5,10 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::app
+{
+	class PendingIntent;
+}
 namespace __jni_impl::android::content
 {
 	class Context;
@@ -13,17 +17,13 @@ namespace __jni_impl::android::media
 {
 	class MediaSession2;
 }
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 namespace __jni_impl::android::media
 {
 	class MediaSession2_SessionCallback;
 }
-namespace __jni_impl::android::app
+namespace __jni_impl::android::os
 {
-	class PendingIntent;
+	class Bundle;
 }
 
 namespace __jni_impl::android::media
@@ -41,16 +41,16 @@ namespace __jni_impl::android::media
 		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject setId(jstring arg0);
 		QAndroidJniObject setId(const QString &arg0);
-		QAndroidJniObject setSessionCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::media::MediaSession2_SessionCallback arg1);
 		QAndroidJniObject setSessionActivity(__jni_impl::android::app::PendingIntent arg0);
+		QAndroidJniObject setSessionCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::media::MediaSession2_SessionCallback arg1);
 	};
 } // namespace __jni_impl::android::media
 
+#include "../app/PendingIntent.hpp"
 #include "../content/Context.hpp"
 #include "MediaSession2.hpp"
-#include "../os/Bundle.hpp"
 #include "MediaSession2_SessionCallback.hpp"
-#include "../app/PendingIntent.hpp"
+#include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -98,6 +98,14 @@ namespace __jni_impl::android::media
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
+	QAndroidJniObject MediaSession2_Builder::setSessionActivity(__jni_impl::android::app::PendingIntent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setSessionActivity",
+			"(Landroid/app/PendingIntent;)Landroid/media/MediaSession2$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject MediaSession2_Builder::setSessionCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::media::MediaSession2_SessionCallback arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -105,14 +113,6 @@ namespace __jni_impl::android::media
 			"(Ljava/util/concurrent/Executor;Landroid/media/MediaSession2$SessionCallback;)Landroid/media/MediaSession2$Builder;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject MediaSession2_Builder::setSessionActivity(__jni_impl::android::app::PendingIntent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSessionActivity",
-			"(Landroid/app/PendingIntent;)Landroid/media/MediaSession2$Builder;",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::media

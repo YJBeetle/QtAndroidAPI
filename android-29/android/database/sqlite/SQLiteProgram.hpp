@@ -26,15 +26,15 @@ namespace __jni_impl::android::database::sqlite
 		void __constructor();
 		
 		// Methods
-		jint getUniqueId();
-		void bindLong(jint arg0, jlong arg1);
+		void bindAllArgsAsStrings(jarray arg0);
+		void bindBlob(jint arg0, jbyteArray arg1);
 		void bindDouble(jint arg0, jdouble arg1);
+		void bindLong(jint arg0, jlong arg1);
+		void bindNull(jint arg0);
 		void bindString(jint arg0, jstring arg1);
 		void bindString(jint arg0, const QString &arg1);
-		void bindBlob(jint arg0, jbyteArray arg1);
 		void clearBindings();
-		void bindAllArgsAsStrings(jarray arg0);
-		void bindNull(jint arg0);
+		jint getUniqueId();
 	};
 } // namespace __jni_impl::android::database::sqlite
 
@@ -54,18 +54,19 @@ namespace __jni_impl::android::database::sqlite
 	}
 	
 	// Methods
-	jint SQLiteProgram::getUniqueId()
-	{
-		return __thiz.callMethod<jint>(
-			"getUniqueId",
-			"()I"
-		);
-	}
-	void SQLiteProgram::bindLong(jint arg0, jlong arg1)
+	void SQLiteProgram::bindAllArgsAsStrings(jarray arg0)
 	{
 		__thiz.callMethod<void>(
-			"bindLong",
-			"(IJ)V",
+			"bindAllArgsAsStrings",
+			"([Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void SQLiteProgram::bindBlob(jint arg0, jbyteArray arg1)
+	{
+		__thiz.callMethod<void>(
+			"bindBlob",
+			"(I[B)V",
 			arg0,
 			arg1
 		);
@@ -77,6 +78,23 @@ namespace __jni_impl::android::database::sqlite
 			"(ID)V",
 			arg0,
 			arg1
+		);
+	}
+	void SQLiteProgram::bindLong(jint arg0, jlong arg1)
+	{
+		__thiz.callMethod<void>(
+			"bindLong",
+			"(IJ)V",
+			arg0,
+			arg1
+		);
+	}
+	void SQLiteProgram::bindNull(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"bindNull",
+			"(I)V",
+			arg0
 		);
 	}
 	void SQLiteProgram::bindString(jint arg0, jstring arg1)
@@ -97,15 +115,6 @@ namespace __jni_impl::android::database::sqlite
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	void SQLiteProgram::bindBlob(jint arg0, jbyteArray arg1)
-	{
-		__thiz.callMethod<void>(
-			"bindBlob",
-			"(I[B)V",
-			arg0,
-			arg1
-		);
-	}
 	void SQLiteProgram::clearBindings()
 	{
 		__thiz.callMethod<void>(
@@ -113,20 +122,11 @@ namespace __jni_impl::android::database::sqlite
 			"()V"
 		);
 	}
-	void SQLiteProgram::bindAllArgsAsStrings(jarray arg0)
+	jint SQLiteProgram::getUniqueId()
 	{
-		__thiz.callMethod<void>(
-			"bindAllArgsAsStrings",
-			"([Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void SQLiteProgram::bindNull(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"bindNull",
-			"(I)V",
-			arg0
+		return __thiz.callMethod<jint>(
+			"getUniqueId",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::database::sqlite

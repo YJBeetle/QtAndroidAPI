@@ -5,9 +5,21 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::app
+{
+	class Activity;
+}
+namespace __jni_impl::android::app
+{
+	class PendingIntent;
+}
 namespace __jni_impl::android::content
 {
 	class Context;
+}
+namespace __jni_impl::android::nfc
+{
+	class NdefMessage;
 }
 namespace __jni_impl::android::nfc
 {
@@ -15,23 +27,11 @@ namespace __jni_impl::android::nfc
 }
 namespace __jni_impl::android::os
 {
-	class Handler;
-}
-namespace __jni_impl::android::app
-{
-	class Activity;
-}
-namespace __jni_impl::android::nfc
-{
-	class NdefMessage;
-}
-namespace __jni_impl::android::app
-{
-	class PendingIntent;
+	class Bundle;
 }
 namespace __jni_impl::android::os
 {
-	class Bundle;
+	class Handler;
 }
 
 namespace __jni_impl::android::nfc
@@ -69,34 +69,34 @@ namespace __jni_impl::android::nfc
 		void __constructor();
 		
 		// Methods
-		jboolean ignore(__jni_impl::android::nfc::Tag arg0, jint arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Handler arg3);
-		jboolean isEnabled();
 		static QAndroidJniObject getDefaultAdapter(__jni_impl::android::content::Context arg0);
+		void disableForegroundDispatch(__jni_impl::android::app::Activity arg0);
+		void disableForegroundNdefPush(__jni_impl::android::app::Activity arg0);
+		void disableReaderMode(__jni_impl::android::app::Activity arg0);
+		void enableForegroundDispatch(__jni_impl::android::app::Activity arg0, __jni_impl::android::app::PendingIntent arg1, jarray arg2, jarray arg3);
+		void enableForegroundNdefPush(__jni_impl::android::app::Activity arg0, __jni_impl::android::nfc::NdefMessage arg1);
+		void enableReaderMode(__jni_impl::android::app::Activity arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::os::Bundle arg3);
+		jboolean ignore(__jni_impl::android::nfc::Tag arg0, jint arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Handler arg3);
+		jboolean invokeBeam(__jni_impl::android::app::Activity arg0);
+		jboolean isEnabled();
+		jboolean isNdefPushEnabled();
+		jboolean isSecureNfcEnabled();
+		jboolean isSecureNfcSupported();
 		void setBeamPushUris(jarray arg0, __jni_impl::android::app::Activity arg1);
 		void setBeamPushUrisCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::app::Activity arg1);
 		void setNdefPushMessage(__jni_impl::android::nfc::NdefMessage arg0, __jni_impl::android::app::Activity arg1, jarray arg2);
 		void setNdefPushMessageCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::app::Activity arg1, jarray arg2);
 		void setOnNdefPushCompleteCallback(__jni_impl::__JniBaseClass arg0, __jni_impl::android::app::Activity arg1, jarray arg2);
-		void enableForegroundDispatch(__jni_impl::android::app::Activity arg0, __jni_impl::android::app::PendingIntent arg1, jarray arg2, jarray arg3);
-		void disableForegroundDispatch(__jni_impl::android::app::Activity arg0);
-		void enableReaderMode(__jni_impl::android::app::Activity arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::os::Bundle arg3);
-		void disableReaderMode(__jni_impl::android::app::Activity arg0);
-		jboolean invokeBeam(__jni_impl::android::app::Activity arg0);
-		void enableForegroundNdefPush(__jni_impl::android::app::Activity arg0, __jni_impl::android::nfc::NdefMessage arg1);
-		void disableForegroundNdefPush(__jni_impl::android::app::Activity arg0);
-		jboolean isSecureNfcSupported();
-		jboolean isSecureNfcEnabled();
-		jboolean isNdefPushEnabled();
 	};
 } // namespace __jni_impl::android::nfc
 
-#include "../content/Context.hpp"
-#include "Tag.hpp"
-#include "../os/Handler.hpp"
 #include "../app/Activity.hpp"
-#include "NdefMessage.hpp"
 #include "../app/PendingIntent.hpp"
+#include "../content/Context.hpp"
+#include "NdefMessage.hpp"
+#include "Tag.hpp"
 #include "../os/Bundle.hpp"
+#include "../os/Handler.hpp"
 
 namespace __jni_impl::android::nfc
 {
@@ -292,6 +292,70 @@ namespace __jni_impl::android::nfc
 	}
 	
 	// Methods
+	QAndroidJniObject NfcAdapter::getDefaultAdapter(__jni_impl::android::content::Context arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.nfc.NfcAdapter",
+			"getDefaultAdapter",
+			"(Landroid/content/Context;)Landroid/nfc/NfcAdapter;",
+			arg0.__jniObject().object()
+		);
+	}
+	void NfcAdapter::disableForegroundDispatch(__jni_impl::android::app::Activity arg0)
+	{
+		__thiz.callMethod<void>(
+			"disableForegroundDispatch",
+			"(Landroid/app/Activity;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void NfcAdapter::disableForegroundNdefPush(__jni_impl::android::app::Activity arg0)
+	{
+		__thiz.callMethod<void>(
+			"disableForegroundNdefPush",
+			"(Landroid/app/Activity;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void NfcAdapter::disableReaderMode(__jni_impl::android::app::Activity arg0)
+	{
+		__thiz.callMethod<void>(
+			"disableReaderMode",
+			"(Landroid/app/Activity;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void NfcAdapter::enableForegroundDispatch(__jni_impl::android::app::Activity arg0, __jni_impl::android::app::PendingIntent arg1, jarray arg2, jarray arg3)
+	{
+		__thiz.callMethod<void>(
+			"enableForegroundDispatch",
+			"(Landroid/app/Activity;Landroid/app/PendingIntent;[Landroid/content/IntentFilter;[[Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3
+		);
+	}
+	void NfcAdapter::enableForegroundNdefPush(__jni_impl::android::app::Activity arg0, __jni_impl::android::nfc::NdefMessage arg1)
+	{
+		__thiz.callMethod<void>(
+			"enableForegroundNdefPush",
+			"(Landroid/app/Activity;Landroid/nfc/NdefMessage;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void NfcAdapter::enableReaderMode(__jni_impl::android::app::Activity arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::os::Bundle arg3)
+	{
+		__thiz.callMethod<void>(
+			"enableReaderMode",
+			"(Landroid/app/Activity;Landroid/nfc/NfcAdapter$ReaderCallback;ILandroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3.__jniObject().object()
+		);
+	}
 	jboolean NfcAdapter::ignore(__jni_impl::android::nfc::Tag arg0, jint arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::os::Handler arg3)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -303,6 +367,14 @@ namespace __jni_impl::android::nfc
 			arg3.__jniObject().object()
 		);
 	}
+	jboolean NfcAdapter::invokeBeam(__jni_impl::android::app::Activity arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"invokeBeam",
+			"(Landroid/app/Activity;)Z",
+			arg0.__jniObject().object()
+		);
+	}
 	jboolean NfcAdapter::isEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -310,13 +382,25 @@ namespace __jni_impl::android::nfc
 			"()Z"
 		);
 	}
-	QAndroidJniObject NfcAdapter::getDefaultAdapter(__jni_impl::android::content::Context arg0)
+	jboolean NfcAdapter::isNdefPushEnabled()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.nfc.NfcAdapter",
-			"getDefaultAdapter",
-			"(Landroid/content/Context;)Landroid/nfc/NfcAdapter;",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jboolean>(
+			"isNdefPushEnabled",
+			"()Z"
+		);
+	}
+	jboolean NfcAdapter::isSecureNfcEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSecureNfcEnabled",
+			"()Z"
+		);
+	}
+	jboolean NfcAdapter::isSecureNfcSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSecureNfcSupported",
+			"()Z"
 		);
 	}
 	void NfcAdapter::setBeamPushUris(jarray arg0, __jni_impl::android::app::Activity arg1)
@@ -365,90 +449,6 @@ namespace __jni_impl::android::nfc
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2
-		);
-	}
-	void NfcAdapter::enableForegroundDispatch(__jni_impl::android::app::Activity arg0, __jni_impl::android::app::PendingIntent arg1, jarray arg2, jarray arg3)
-	{
-		__thiz.callMethod<void>(
-			"enableForegroundDispatch",
-			"(Landroid/app/Activity;Landroid/app/PendingIntent;[Landroid/content/IntentFilter;[[Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3
-		);
-	}
-	void NfcAdapter::disableForegroundDispatch(__jni_impl::android::app::Activity arg0)
-	{
-		__thiz.callMethod<void>(
-			"disableForegroundDispatch",
-			"(Landroid/app/Activity;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void NfcAdapter::enableReaderMode(__jni_impl::android::app::Activity arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::os::Bundle arg3)
-	{
-		__thiz.callMethod<void>(
-			"enableReaderMode",
-			"(Landroid/app/Activity;Landroid/nfc/NfcAdapter$ReaderCallback;ILandroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	void NfcAdapter::disableReaderMode(__jni_impl::android::app::Activity arg0)
-	{
-		__thiz.callMethod<void>(
-			"disableReaderMode",
-			"(Landroid/app/Activity;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean NfcAdapter::invokeBeam(__jni_impl::android::app::Activity arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"invokeBeam",
-			"(Landroid/app/Activity;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	void NfcAdapter::enableForegroundNdefPush(__jni_impl::android::app::Activity arg0, __jni_impl::android::nfc::NdefMessage arg1)
-	{
-		__thiz.callMethod<void>(
-			"enableForegroundNdefPush",
-			"(Landroid/app/Activity;Landroid/nfc/NdefMessage;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void NfcAdapter::disableForegroundNdefPush(__jni_impl::android::app::Activity arg0)
-	{
-		__thiz.callMethod<void>(
-			"disableForegroundNdefPush",
-			"(Landroid/app/Activity;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean NfcAdapter::isSecureNfcSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSecureNfcSupported",
-			"()Z"
-		);
-	}
-	jboolean NfcAdapter::isSecureNfcEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSecureNfcEnabled",
-			"()Z"
-		);
-	}
-	jboolean NfcAdapter::isNdefPushEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isNdefPushEnabled",
-			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::nfc

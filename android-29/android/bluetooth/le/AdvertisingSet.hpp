@@ -31,11 +31,11 @@ namespace __jni_impl::android::bluetooth::le
 		// Methods
 		void enableAdvertising(jboolean arg0, jint arg1, jint arg2);
 		void setAdvertisingData(__jni_impl::android::bluetooth::le::AdvertiseData arg0);
-		void setScanResponseData(__jni_impl::android::bluetooth::le::AdvertiseData arg0);
 		void setAdvertisingParameters(__jni_impl::android::bluetooth::le::AdvertisingSetParameters arg0);
-		void setPeriodicAdvertisingParameters(__jni_impl::android::bluetooth::le::PeriodicAdvertisingParameters arg0);
 		void setPeriodicAdvertisingData(__jni_impl::android::bluetooth::le::AdvertiseData arg0);
 		void setPeriodicAdvertisingEnabled(jboolean arg0);
+		void setPeriodicAdvertisingParameters(__jni_impl::android::bluetooth::le::PeriodicAdvertisingParameters arg0);
+		void setScanResponseData(__jni_impl::android::bluetooth::le::AdvertiseData arg0);
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
@@ -74,27 +74,11 @@ namespace __jni_impl::android::bluetooth::le
 			arg0.__jniObject().object()
 		);
 	}
-	void AdvertisingSet::setScanResponseData(__jni_impl::android::bluetooth::le::AdvertiseData arg0)
-	{
-		__thiz.callMethod<void>(
-			"setScanResponseData",
-			"(Landroid/bluetooth/le/AdvertiseData;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void AdvertisingSet::setAdvertisingParameters(__jni_impl::android::bluetooth::le::AdvertisingSetParameters arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAdvertisingParameters",
 			"(Landroid/bluetooth/le/AdvertisingSetParameters;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void AdvertisingSet::setPeriodicAdvertisingParameters(__jni_impl::android::bluetooth::le::PeriodicAdvertisingParameters arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPeriodicAdvertisingParameters",
-			"(Landroid/bluetooth/le/PeriodicAdvertisingParameters;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -112,6 +96,22 @@ namespace __jni_impl::android::bluetooth::le
 			"setPeriodicAdvertisingEnabled",
 			"(Z)V",
 			arg0
+		);
+	}
+	void AdvertisingSet::setPeriodicAdvertisingParameters(__jni_impl::android::bluetooth::le::PeriodicAdvertisingParameters arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPeriodicAdvertisingParameters",
+			"(Landroid/bluetooth/le/PeriodicAdvertisingParameters;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AdvertisingSet::setScanResponseData(__jni_impl::android::bluetooth::le::AdvertiseData arg0)
+	{
+		__thiz.callMethod<void>(
+			"setScanResponseData",
+			"(Landroid/bluetooth/le/AdvertiseData;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::bluetooth::le

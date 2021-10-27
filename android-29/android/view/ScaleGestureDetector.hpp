@@ -30,23 +30,23 @@ namespace __jni_impl::android::view
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Handler arg2);
 		
 		// Methods
-		jlong getEventTime();
-		jboolean isQuickScaleEnabled();
-		void setStylusScaleEnabled(jboolean arg0);
-		jboolean isStylusScaleEnabled();
-		jboolean isInProgress();
-		jfloat getFocusX();
-		jfloat getFocusY();
-		void setQuickScaleEnabled(jboolean arg0);
 		jfloat getCurrentSpan();
 		jfloat getCurrentSpanX();
 		jfloat getCurrentSpanY();
+		jlong getEventTime();
+		jfloat getFocusX();
+		jfloat getFocusY();
 		jfloat getPreviousSpan();
 		jfloat getPreviousSpanX();
 		jfloat getPreviousSpanY();
-		jlong getTimeDelta();
 		jfloat getScaleFactor();
+		jlong getTimeDelta();
+		jboolean isInProgress();
+		jboolean isQuickScaleEnabled();
+		jboolean isStylusScaleEnabled();
 		jboolean onTouchEvent(__jni_impl::android::view::MotionEvent arg0);
+		void setQuickScaleEnabled(jboolean arg0);
+		void setStylusScaleEnabled(jboolean arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -80,64 +80,6 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jlong ScaleGestureDetector::getEventTime()
-	{
-		return __thiz.callMethod<jlong>(
-			"getEventTime",
-			"()J"
-		);
-	}
-	jboolean ScaleGestureDetector::isQuickScaleEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isQuickScaleEnabled",
-			"()Z"
-		);
-	}
-	void ScaleGestureDetector::setStylusScaleEnabled(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStylusScaleEnabled",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean ScaleGestureDetector::isStylusScaleEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isStylusScaleEnabled",
-			"()Z"
-		);
-	}
-	jboolean ScaleGestureDetector::isInProgress()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isInProgress",
-			"()Z"
-		);
-	}
-	jfloat ScaleGestureDetector::getFocusX()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getFocusX",
-			"()F"
-		);
-	}
-	jfloat ScaleGestureDetector::getFocusY()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getFocusY",
-			"()F"
-		);
-	}
-	void ScaleGestureDetector::setQuickScaleEnabled(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setQuickScaleEnabled",
-			"(Z)V",
-			arg0
-		);
-	}
 	jfloat ScaleGestureDetector::getCurrentSpan()
 	{
 		return __thiz.callMethod<jfloat>(
@@ -156,6 +98,27 @@ namespace __jni_impl::android::view
 	{
 		return __thiz.callMethod<jfloat>(
 			"getCurrentSpanY",
+			"()F"
+		);
+	}
+	jlong ScaleGestureDetector::getEventTime()
+	{
+		return __thiz.callMethod<jlong>(
+			"getEventTime",
+			"()J"
+		);
+	}
+	jfloat ScaleGestureDetector::getFocusX()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getFocusX",
+			"()F"
+		);
+	}
+	jfloat ScaleGestureDetector::getFocusY()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getFocusY",
 			"()F"
 		);
 	}
@@ -180,6 +143,13 @@ namespace __jni_impl::android::view
 			"()F"
 		);
 	}
+	jfloat ScaleGestureDetector::getScaleFactor()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getScaleFactor",
+			"()F"
+		);
+	}
 	jlong ScaleGestureDetector::getTimeDelta()
 	{
 		return __thiz.callMethod<jlong>(
@@ -187,11 +157,25 @@ namespace __jni_impl::android::view
 			"()J"
 		);
 	}
-	jfloat ScaleGestureDetector::getScaleFactor()
+	jboolean ScaleGestureDetector::isInProgress()
 	{
-		return __thiz.callMethod<jfloat>(
-			"getScaleFactor",
-			"()F"
+		return __thiz.callMethod<jboolean>(
+			"isInProgress",
+			"()Z"
+		);
+	}
+	jboolean ScaleGestureDetector::isQuickScaleEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isQuickScaleEnabled",
+			"()Z"
+		);
+	}
+	jboolean ScaleGestureDetector::isStylusScaleEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isStylusScaleEnabled",
+			"()Z"
 		);
 	}
 	jboolean ScaleGestureDetector::onTouchEvent(__jni_impl::android::view::MotionEvent arg0)
@@ -200,6 +184,22 @@ namespace __jni_impl::android::view
 			"onTouchEvent",
 			"(Landroid/view/MotionEvent;)Z",
 			arg0.__jniObject().object()
+		);
+	}
+	void ScaleGestureDetector::setQuickScaleEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setQuickScaleEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	void ScaleGestureDetector::setStylusScaleEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setStylusScaleEnabled",
+			"(Z)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::view

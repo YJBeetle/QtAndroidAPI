@@ -14,11 +14,11 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::android::content
 {
-	class IntentFilter;
+	class Intent;
 }
 namespace __jni_impl::android::content
 {
-	class Intent;
+	class IntentFilter;
 }
 
 namespace __jni_impl::android::service::chooser
@@ -35,14 +35,14 @@ namespace __jni_impl::android::service::chooser
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject onGetChooserTargets(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::content::IntentFilter arg1);
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		QAndroidJniObject onGetChooserTargets(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::content::IntentFilter arg1);
 	};
 } // namespace __jni_impl::android::service::chooser
 
 #include "../../content/ComponentName.hpp"
-#include "../../content/IntentFilter.hpp"
 #include "../../content/Intent.hpp"
+#include "../../content/IntentFilter.hpp"
 
 namespace __jni_impl::android::service::chooser
 {
@@ -82,6 +82,14 @@ namespace __jni_impl::android::service::chooser
 	}
 	
 	// Methods
+	QAndroidJniObject ChooserTargetService::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject ChooserTargetService::onGetChooserTargets(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::content::IntentFilter arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -89,14 +97,6 @@ namespace __jni_impl::android::service::chooser
 			"(Landroid/content/ComponentName;Landroid/content/IntentFilter;)Ljava/util/List;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ChooserTargetService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::service::chooser

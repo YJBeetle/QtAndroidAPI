@@ -5,21 +5,21 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::java::io
+{
+	class IOException;
+}
 namespace __jni_impl::java::net
 {
 	class InetSocketAddress;
 }
 namespace __jni_impl::java::net
 {
-	class URI;
+	class SocketAddress;
 }
 namespace __jni_impl::java::net
 {
-	class SocketAddress;
-}
-namespace __jni_impl::java::io
-{
-	class IOException;
+	class URI;
 }
 
 namespace __jni_impl::java::net
@@ -41,10 +41,10 @@ namespace __jni_impl::java::net
 	};
 } // namespace __jni_impl::java::net
 
-#include "InetSocketAddress.hpp"
-#include "URI.hpp"
-#include "SocketAddress.hpp"
 #include "../io/IOException.hpp"
+#include "InetSocketAddress.hpp"
+#include "SocketAddress.hpp"
+#include "URI.hpp"
 
 namespace __jni_impl::java::net
 {

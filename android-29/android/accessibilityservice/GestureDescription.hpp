@@ -21,10 +21,10 @@ namespace __jni_impl::android::accessibilityservice
 		void __constructor();
 		
 		// Methods
-		static jint getMaxStrokeCount();
 		static jlong getMaxGestureDuration();
-		jint getStrokeCount();
+		static jint getMaxStrokeCount();
 		QAndroidJniObject getStroke(jint arg0);
+		jint getStrokeCount();
 	};
 } // namespace __jni_impl::android::accessibilityservice
 
@@ -43,14 +43,6 @@ namespace __jni_impl::android::accessibilityservice
 	}
 	
 	// Methods
-	jint GestureDescription::getMaxStrokeCount()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.accessibilityservice.GestureDescription",
-			"getMaxStrokeCount",
-			"()I"
-		);
-	}
 	jlong GestureDescription::getMaxGestureDuration()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
@@ -59,10 +51,11 @@ namespace __jni_impl::android::accessibilityservice
 			"()J"
 		);
 	}
-	jint GestureDescription::getStrokeCount()
+	jint GestureDescription::getMaxStrokeCount()
 	{
-		return __thiz.callMethod<jint>(
-			"getStrokeCount",
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.accessibilityservice.GestureDescription",
+			"getMaxStrokeCount",
 			"()I"
 		);
 	}
@@ -72,6 +65,13 @@ namespace __jni_impl::android::accessibilityservice
 			"getStroke",
 			"(I)Landroid/accessibilityservice/GestureDescription$StrokeDescription;",
 			arg0
+		);
+	}
+	jint GestureDescription::getStrokeCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getStrokeCount",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::accessibilityservice

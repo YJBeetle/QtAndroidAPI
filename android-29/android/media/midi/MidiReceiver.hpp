@@ -19,11 +19,11 @@ namespace __jni_impl::android::media::midi
 		
 		// Methods
 		void flush();
-		void send(jbyteArray arg0, jint arg1, jint arg2, jlong arg3);
-		void send(jbyteArray arg0, jint arg1, jint arg2);
-		void onSend(jbyteArray arg0, jint arg1, jint arg2, jlong arg3);
-		void onFlush();
 		jint getMaxMessageSize();
+		void onFlush();
+		void onSend(jbyteArray arg0, jint arg1, jint arg2, jlong arg3);
+		void send(jbyteArray arg0, jint arg1, jint arg2);
+		void send(jbyteArray arg0, jint arg1, jint arg2, jlong arg3);
 	};
 } // namespace __jni_impl::android::media::midi
 
@@ -57,10 +57,24 @@ namespace __jni_impl::android::media::midi
 			"()V"
 		);
 	}
-	void MidiReceiver::send(jbyteArray arg0, jint arg1, jint arg2, jlong arg3)
+	jint MidiReceiver::getMaxMessageSize()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxMessageSize",
+			"()I"
+		);
+	}
+	void MidiReceiver::onFlush()
 	{
 		__thiz.callMethod<void>(
-			"send",
+			"onFlush",
+			"()V"
+		);
+	}
+	void MidiReceiver::onSend(jbyteArray arg0, jint arg1, jint arg2, jlong arg3)
+	{
+		__thiz.callMethod<void>(
+			"onSend",
 			"([BIIJ)V",
 			arg0,
 			arg1,
@@ -78,29 +92,15 @@ namespace __jni_impl::android::media::midi
 			arg2
 		);
 	}
-	void MidiReceiver::onSend(jbyteArray arg0, jint arg1, jint arg2, jlong arg3)
+	void MidiReceiver::send(jbyteArray arg0, jint arg1, jint arg2, jlong arg3)
 	{
 		__thiz.callMethod<void>(
-			"onSend",
+			"send",
 			"([BIIJ)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	void MidiReceiver::onFlush()
-	{
-		__thiz.callMethod<void>(
-			"onFlush",
-			"()V"
-		);
-	}
-	jint MidiReceiver::getMaxMessageSize()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxMessageSize",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::media::midi

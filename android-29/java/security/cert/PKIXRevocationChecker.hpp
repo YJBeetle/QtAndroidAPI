@@ -27,16 +27,16 @@ namespace __jni_impl::java::security::cert
 		
 		// Methods
 		QAndroidJniObject clone();
+		QAndroidJniObject getOcspExtensions();
+		QAndroidJniObject getOcspResponder();
+		QAndroidJniObject getOcspResponderCert();
+		QAndroidJniObject getOcspResponses();
 		QAndroidJniObject getOptions();
 		QAndroidJniObject getSoftFailExceptions();
-		void setOcspResponder(__jni_impl::java::net::URI arg0);
-		QAndroidJniObject getOcspResponder();
-		void setOcspResponderCert(__jni_impl::java::security::cert::X509Certificate arg0);
-		QAndroidJniObject getOcspResponderCert();
 		void setOcspExtensions(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getOcspExtensions();
+		void setOcspResponder(__jni_impl::java::net::URI arg0);
+		void setOcspResponderCert(__jni_impl::java::security::cert::X509Certificate arg0);
 		void setOcspResponses(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getOcspResponses();
 		void setOptions(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::java::security::cert
@@ -64,6 +64,34 @@ namespace __jni_impl::java::security::cert
 			"()Ljava/security/cert/PKIXRevocationChecker;"
 		);
 	}
+	QAndroidJniObject PKIXRevocationChecker::getOcspExtensions()
+	{
+		return __thiz.callObjectMethod(
+			"getOcspExtensions",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject PKIXRevocationChecker::getOcspResponder()
+	{
+		return __thiz.callObjectMethod(
+			"getOcspResponder",
+			"()Ljava/net/URI;"
+		);
+	}
+	QAndroidJniObject PKIXRevocationChecker::getOcspResponderCert()
+	{
+		return __thiz.callObjectMethod(
+			"getOcspResponderCert",
+			"()Ljava/security/cert/X509Certificate;"
+		);
+	}
+	QAndroidJniObject PKIXRevocationChecker::getOcspResponses()
+	{
+		return __thiz.callObjectMethod(
+			"getOcspResponses",
+			"()Ljava/util/Map;"
+		);
+	}
 	QAndroidJniObject PKIXRevocationChecker::getOptions()
 	{
 		return __thiz.callObjectMethod(
@@ -78,19 +106,20 @@ namespace __jni_impl::java::security::cert
 			"()Ljava/util/List;"
 		);
 	}
+	void PKIXRevocationChecker::setOcspExtensions(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOcspExtensions",
+			"(Ljava/util/List;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void PKIXRevocationChecker::setOcspResponder(__jni_impl::java::net::URI arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOcspResponder",
 			"(Ljava/net/URI;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject PKIXRevocationChecker::getOcspResponder()
-	{
-		return __thiz.callObjectMethod(
-			"getOcspResponder",
-			"()Ljava/net/URI;"
 		);
 	}
 	void PKIXRevocationChecker::setOcspResponderCert(__jni_impl::java::security::cert::X509Certificate arg0)
@@ -101,41 +130,12 @@ namespace __jni_impl::java::security::cert
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject PKIXRevocationChecker::getOcspResponderCert()
-	{
-		return __thiz.callObjectMethod(
-			"getOcspResponderCert",
-			"()Ljava/security/cert/X509Certificate;"
-		);
-	}
-	void PKIXRevocationChecker::setOcspExtensions(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOcspExtensions",
-			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject PKIXRevocationChecker::getOcspExtensions()
-	{
-		return __thiz.callObjectMethod(
-			"getOcspExtensions",
-			"()Ljava/util/List;"
-		);
-	}
 	void PKIXRevocationChecker::setOcspResponses(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setOcspResponses",
 			"(Ljava/util/Map;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject PKIXRevocationChecker::getOcspResponses()
-	{
-		return __thiz.callObjectMethod(
-			"getOcspResponses",
-			"()Ljava/util/Map;"
 		);
 	}
 	void PKIXRevocationChecker::setOptions(__jni_impl::__JniBaseClass arg0)

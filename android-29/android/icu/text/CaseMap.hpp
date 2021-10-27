@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::icu::text
 {
-	class CaseMap_Lower;
+	class CaseMap_Fold;
 }
 namespace __jni_impl::android::icu::text
 {
-	class CaseMap_Upper;
+	class CaseMap_Lower;
 }
 namespace __jni_impl::android::icu::text
 {
@@ -19,7 +19,7 @@ namespace __jni_impl::android::icu::text
 }
 namespace __jni_impl::android::icu::text
 {
-	class CaseMap_Fold;
+	class CaseMap_Upper;
 }
 
 namespace __jni_impl::android::icu::text
@@ -33,18 +33,18 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
+		static QAndroidJniObject fold();
 		static QAndroidJniObject toLower();
+		static QAndroidJniObject toTitle();
 		static QAndroidJniObject toUpper();
 		QAndroidJniObject omitUnchangedText();
-		static QAndroidJniObject toTitle();
-		static QAndroidJniObject fold();
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "CaseMap_Lower.hpp"
-#include "CaseMap_Upper.hpp"
-#include "CaseMap_Title.hpp"
 #include "CaseMap_Fold.hpp"
+#include "CaseMap_Lower.hpp"
+#include "CaseMap_Title.hpp"
+#include "CaseMap_Upper.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -59,12 +59,28 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
+	QAndroidJniObject CaseMap::fold()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.CaseMap",
+			"fold",
+			"()Landroid/icu/text/CaseMap$Fold;"
+		);
+	}
 	QAndroidJniObject CaseMap::toLower()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.text.CaseMap",
 			"toLower",
 			"()Landroid/icu/text/CaseMap$Lower;"
+		);
+	}
+	QAndroidJniObject CaseMap::toTitle()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.CaseMap",
+			"toTitle",
+			"()Landroid/icu/text/CaseMap$Title;"
 		);
 	}
 	QAndroidJniObject CaseMap::toUpper()
@@ -80,22 +96,6 @@ namespace __jni_impl::android::icu::text
 		return __thiz.callObjectMethod(
 			"omitUnchangedText",
 			"()Landroid/icu/text/CaseMap;"
-		);
-	}
-	QAndroidJniObject CaseMap::toTitle()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.CaseMap",
-			"toTitle",
-			"()Landroid/icu/text/CaseMap$Title;"
-		);
-	}
-	QAndroidJniObject CaseMap::fold()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.CaseMap",
-			"fold",
-			"()Landroid/icu/text/CaseMap$Fold;"
 		);
 	}
 } // namespace __jni_impl::android::icu::text

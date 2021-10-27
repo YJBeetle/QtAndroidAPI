@@ -17,14 +17,14 @@ namespace __jni_impl::android::text::util
 		void __constructor();
 		
 		// Methods
-		jint findTokenStart(jstring arg0, jint arg1);
-		jint findTokenStart(const QString &arg0, jint arg1);
 		static jarray tokenize(jstring arg0);
 		static jarray tokenize(const QString &arg0);
 		static void tokenize(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		static void tokenize(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		jint findTokenEnd(jstring arg0, jint arg1);
 		jint findTokenEnd(const QString &arg0, jint arg1);
+		jint findTokenStart(jstring arg0, jint arg1);
+		jint findTokenStart(const QString &arg0, jint arg1);
 		jstring terminateToken(jstring arg0);
 		jstring terminateToken(const QString &arg0);
 	};
@@ -45,24 +45,6 @@ namespace __jni_impl::android::text::util
 	}
 	
 	// Methods
-	jint Rfc822Tokenizer::findTokenStart(jstring arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"findTokenStart",
-			"(Ljava/lang/CharSequence;I)I",
-			arg0,
-			arg1
-		);
-	}
-	jint Rfc822Tokenizer::findTokenStart(const QString &arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"findTokenStart",
-			"(Ljava/lang/CharSequence;I)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	jarray Rfc822Tokenizer::tokenize(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -114,6 +96,24 @@ namespace __jni_impl::android::text::util
 	{
 		return __thiz.callMethod<jint>(
 			"findTokenEnd",
+			"(Ljava/lang/CharSequence;I)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	jint Rfc822Tokenizer::findTokenStart(jstring arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"findTokenStart",
+			"(Ljava/lang/CharSequence;I)I",
+			arg0,
+			arg1
+		);
+	}
+	jint Rfc822Tokenizer::findTokenStart(const QString &arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"findTokenStart",
 			"(Ljava/lang/CharSequence;I)I",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1

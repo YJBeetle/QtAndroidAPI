@@ -25,21 +25,21 @@ namespace __jni_impl::java::nio::channels
 		void __constructor();
 		
 		// Methods
+		static QAndroidJniObject open(__jni_impl::__JniBaseClass arg0, jarray arg1);
+		static QAndroidJniObject open(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, jarray arg3);
+		void force(jboolean arg0);
+		QAndroidJniObject lock();
 		QAndroidJniObject lock(jlong arg0, jlong arg1, jboolean arg2);
 		void lock(jobject arg0, __jni_impl::__JniBaseClass arg1);
 		void lock(jlong arg0, jlong arg1, jboolean arg2, jobject arg3, __jni_impl::__JniBaseClass arg4);
-		QAndroidJniObject lock();
-		jlong size();
-		QAndroidJniObject write(__jni_impl::java::nio::ByteBuffer arg0, jlong arg1);
-		void write(__jni_impl::java::nio::ByteBuffer arg0, jlong arg1, jobject arg2, __jni_impl::__JniBaseClass arg3);
 		QAndroidJniObject read(__jni_impl::java::nio::ByteBuffer arg0, jlong arg1);
 		void read(__jni_impl::java::nio::ByteBuffer arg0, jlong arg1, jobject arg2, __jni_impl::__JniBaseClass arg3);
-		static QAndroidJniObject open(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, jarray arg3);
-		static QAndroidJniObject open(__jni_impl::__JniBaseClass arg0, jarray arg1);
+		jlong size();
+		QAndroidJniObject truncate(jlong arg0);
 		QAndroidJniObject tryLock();
 		QAndroidJniObject tryLock(jlong arg0, jlong arg1, jboolean arg2);
-		void force(jboolean arg0);
-		QAndroidJniObject truncate(jlong arg0);
+		QAndroidJniObject write(__jni_impl::java::nio::ByteBuffer arg0, jlong arg1);
+		void write(__jni_impl::java::nio::ByteBuffer arg0, jlong arg1, jobject arg2, __jni_impl::__JniBaseClass arg3);
 	};
 } // namespace __jni_impl::java::nio::channels
 
@@ -59,6 +59,43 @@ namespace __jni_impl::java::nio::channels
 	}
 	
 	// Methods
+	QAndroidJniObject AsynchronousFileChannel::open(__jni_impl::__JniBaseClass arg0, jarray arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.channels.AsynchronousFileChannel",
+			"open",
+			"(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/nio/channels/AsynchronousFileChannel;",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	QAndroidJniObject AsynchronousFileChannel::open(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, jarray arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.channels.AsynchronousFileChannel",
+			"open",
+			"(Ljava/nio/file/Path;Ljava/util/Set;Ljava/util/concurrent/ExecutorService;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/channels/AsynchronousFileChannel;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3
+		);
+	}
+	void AsynchronousFileChannel::force(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"force",
+			"(Z)V",
+			arg0
+		);
+	}
+	QAndroidJniObject AsynchronousFileChannel::lock()
+	{
+		return __thiz.callObjectMethod(
+			"lock",
+			"()Ljava/util/concurrent/Future;"
+		);
+	}
 	QAndroidJniObject AsynchronousFileChannel::lock(jlong arg0, jlong arg1, jboolean arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -90,40 +127,6 @@ namespace __jni_impl::java::nio::channels
 			arg4.__jniObject().object()
 		);
 	}
-	QAndroidJniObject AsynchronousFileChannel::lock()
-	{
-		return __thiz.callObjectMethod(
-			"lock",
-			"()Ljava/util/concurrent/Future;"
-		);
-	}
-	jlong AsynchronousFileChannel::size()
-	{
-		return __thiz.callMethod<jlong>(
-			"size",
-			"()J"
-		);
-	}
-	QAndroidJniObject AsynchronousFileChannel::write(__jni_impl::java::nio::ByteBuffer arg0, jlong arg1)
-	{
-		return __thiz.callObjectMethod(
-			"write",
-			"(Ljava/nio/ByteBuffer;J)Ljava/util/concurrent/Future;",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void AsynchronousFileChannel::write(__jni_impl::java::nio::ByteBuffer arg0, jlong arg1, jobject arg2, __jni_impl::__JniBaseClass arg3)
-	{
-		__thiz.callMethod<void>(
-			"write",
-			"(Ljava/nio/ByteBuffer;JLjava/lang/Object;Ljava/nio/channels/CompletionHandler;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
 	QAndroidJniObject AsynchronousFileChannel::read(__jni_impl::java::nio::ByteBuffer arg0, jlong arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -144,26 +147,19 @@ namespace __jni_impl::java::nio::channels
 			arg3.__jniObject().object()
 		);
 	}
-	QAndroidJniObject AsynchronousFileChannel::open(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, jarray arg3)
+	jlong AsynchronousFileChannel::size()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.channels.AsynchronousFileChannel",
-			"open",
-			"(Ljava/nio/file/Path;Ljava/util/Set;Ljava/util/concurrent/ExecutorService;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/channels/AsynchronousFileChannel;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3
+		return __thiz.callMethod<jlong>(
+			"size",
+			"()J"
 		);
 	}
-	QAndroidJniObject AsynchronousFileChannel::open(__jni_impl::__JniBaseClass arg0, jarray arg1)
+	QAndroidJniObject AsynchronousFileChannel::truncate(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.channels.AsynchronousFileChannel",
-			"open",
-			"(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/nio/channels/AsynchronousFileChannel;",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callObjectMethod(
+			"truncate",
+			"(J)Ljava/nio/channels/AsynchronousFileChannel;",
+			arg0
 		);
 	}
 	QAndroidJniObject AsynchronousFileChannel::tryLock()
@@ -183,20 +179,24 @@ namespace __jni_impl::java::nio::channels
 			arg2
 		);
 	}
-	void AsynchronousFileChannel::force(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"force",
-			"(Z)V",
-			arg0
-		);
-	}
-	QAndroidJniObject AsynchronousFileChannel::truncate(jlong arg0)
+	QAndroidJniObject AsynchronousFileChannel::write(__jni_impl::java::nio::ByteBuffer arg0, jlong arg1)
 	{
 		return __thiz.callObjectMethod(
-			"truncate",
-			"(J)Ljava/nio/channels/AsynchronousFileChannel;",
-			arg0
+			"write",
+			"(Ljava/nio/ByteBuffer;J)Ljava/util/concurrent/Future;",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void AsynchronousFileChannel::write(__jni_impl::java::nio::ByteBuffer arg0, jlong arg1, jobject arg2, __jni_impl::__JniBaseClass arg3)
+	{
+		__thiz.callMethod<void>(
+			"write",
+			"(Ljava/nio/ByteBuffer;JLjava/lang/Object;Ljava/nio/channels/CompletionHandler;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::java::nio::channels

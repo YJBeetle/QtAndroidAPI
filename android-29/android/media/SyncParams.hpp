@@ -25,14 +25,14 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		QAndroidJniObject allowDefaults();
-		QAndroidJniObject setAudioAdjustMode(jint arg0);
 		jint getAudioAdjustMode();
-		QAndroidJniObject setSyncSource(jint arg0);
-		jint getSyncSource();
-		QAndroidJniObject setTolerance(jfloat arg0);
-		jfloat getTolerance();
-		QAndroidJniObject setFrameRate(jfloat arg0);
 		jfloat getFrameRate();
+		jint getSyncSource();
+		jfloat getTolerance();
+		QAndroidJniObject setAudioAdjustMode(jint arg0);
+		QAndroidJniObject setFrameRate(jfloat arg0);
+		QAndroidJniObject setSyncSource(jint arg0);
+		QAndroidJniObject setTolerance(jfloat arg0);
 	};
 } // namespace __jni_impl::android::media
 
@@ -107,14 +107,6 @@ namespace __jni_impl::android::media
 			"()Landroid/media/SyncParams;"
 		);
 	}
-	QAndroidJniObject SyncParams::setAudioAdjustMode(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setAudioAdjustMode",
-			"(I)Landroid/media/SyncParams;",
-			arg0
-		);
-	}
 	jint SyncParams::getAudioAdjustMode()
 	{
 		return __thiz.callMethod<jint>(
@@ -122,12 +114,11 @@ namespace __jni_impl::android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject SyncParams::setSyncSource(jint arg0)
+	jfloat SyncParams::getFrameRate()
 	{
-		return __thiz.callObjectMethod(
-			"setSyncSource",
-			"(I)Landroid/media/SyncParams;",
-			arg0
+		return __thiz.callMethod<jfloat>(
+			"getFrameRate",
+			"()F"
 		);
 	}
 	jint SyncParams::getSyncSource()
@@ -137,19 +128,19 @@ namespace __jni_impl::android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject SyncParams::setTolerance(jfloat arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setTolerance",
-			"(F)Landroid/media/SyncParams;",
-			arg0
-		);
-	}
 	jfloat SyncParams::getTolerance()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getTolerance",
 			"()F"
+		);
+	}
+	QAndroidJniObject SyncParams::setAudioAdjustMode(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setAudioAdjustMode",
+			"(I)Landroid/media/SyncParams;",
+			arg0
 		);
 	}
 	QAndroidJniObject SyncParams::setFrameRate(jfloat arg0)
@@ -160,11 +151,20 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	jfloat SyncParams::getFrameRate()
+	QAndroidJniObject SyncParams::setSyncSource(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
-			"getFrameRate",
-			"()F"
+		return __thiz.callObjectMethod(
+			"setSyncSource",
+			"(I)Landroid/media/SyncParams;",
+			arg0
+		);
+	}
+	QAndroidJniObject SyncParams::setTolerance(jfloat arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setTolerance",
+			"(F)Landroid/media/SyncParams;",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::media

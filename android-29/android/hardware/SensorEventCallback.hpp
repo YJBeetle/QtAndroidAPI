@@ -7,15 +7,15 @@
 
 namespace __jni_impl::android::hardware
 {
-	class SensorEvent;
-}
-namespace __jni_impl::android::hardware
-{
 	class Sensor;
 }
 namespace __jni_impl::android::hardware
 {
 	class SensorAdditionalInfo;
+}
+namespace __jni_impl::android::hardware
+{
+	class SensorEvent;
 }
 
 namespace __jni_impl::android::hardware
@@ -29,16 +29,16 @@ namespace __jni_impl::android::hardware
 		void __constructor();
 		
 		// Methods
-		void onSensorChanged(__jni_impl::android::hardware::SensorEvent arg0);
 		void onAccuracyChanged(__jni_impl::android::hardware::Sensor arg0, jint arg1);
 		void onFlushCompleted(__jni_impl::android::hardware::Sensor arg0);
 		void onSensorAdditionalInfo(__jni_impl::android::hardware::SensorAdditionalInfo arg0);
+		void onSensorChanged(__jni_impl::android::hardware::SensorEvent arg0);
 	};
 } // namespace __jni_impl::android::hardware
 
-#include "SensorEvent.hpp"
 #include "Sensor.hpp"
 #include "SensorAdditionalInfo.hpp"
+#include "SensorEvent.hpp"
 
 namespace __jni_impl::android::hardware
 {
@@ -54,14 +54,6 @@ namespace __jni_impl::android::hardware
 	}
 	
 	// Methods
-	void SensorEventCallback::onSensorChanged(__jni_impl::android::hardware::SensorEvent arg0)
-	{
-		__thiz.callMethod<void>(
-			"onSensorChanged",
-			"(Landroid/hardware/SensorEvent;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void SensorEventCallback::onAccuracyChanged(__jni_impl::android::hardware::Sensor arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -84,6 +76,14 @@ namespace __jni_impl::android::hardware
 		__thiz.callMethod<void>(
 			"onSensorAdditionalInfo",
 			"(Landroid/hardware/SensorAdditionalInfo;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void SensorEventCallback::onSensorChanged(__jni_impl::android::hardware::SensorEvent arg0)
+	{
+		__thiz.callMethod<void>(
+			"onSensorChanged",
+			"(Landroid/hardware/SensorEvent;)V",
 			arg0.__jniObject().object()
 		);
 	}

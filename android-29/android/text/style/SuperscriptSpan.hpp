@@ -28,11 +28,11 @@ namespace __jni_impl::android::text::style
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
-		jint getSpanTypeId();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getSpanTypeId();
+		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
 		void updateMeasureState(__jni_impl::android::text::TextPaint arg0);
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -61,12 +61,11 @@ namespace __jni_impl::android::text::style
 	}
 	
 	// Methods
-	void SuperscriptSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
+	jint SuperscriptSpan::describeContents()
 	{
-		__thiz.callMethod<void>(
-			"updateDrawState",
-			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
 		);
 	}
 	jint SuperscriptSpan::getSpanTypeId()
@@ -76,11 +75,20 @@ namespace __jni_impl::android::text::style
 			"()I"
 		);
 	}
-	jint SuperscriptSpan::describeContents()
+	void SuperscriptSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		__thiz.callMethod<void>(
+			"updateDrawState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void SuperscriptSpan::updateMeasureState(__jni_impl::android::text::TextPaint arg0)
+	{
+		__thiz.callMethod<void>(
+			"updateMeasureState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void SuperscriptSpan::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
@@ -90,14 +98,6 @@ namespace __jni_impl::android::text::style
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void SuperscriptSpan::updateMeasureState(__jni_impl::android::text::TextPaint arg0)
-	{
-		__thiz.callMethod<void>(
-			"updateMeasureState",
-			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::text::style

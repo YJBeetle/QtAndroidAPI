@@ -17,11 +17,11 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		void clear(jstring arg0);
-		void clear(const QString &arg0);
 		static QAndroidJniObject getInstance();
 		void allow(jstring arg0);
 		void allow(const QString &arg0);
+		void clear(jstring arg0);
+		void clear(const QString &arg0);
 		void clearAll();
 		void getAllowed(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		void getAllowed(const QString &arg0, __jni_impl::__JniBaseClass arg1);
@@ -43,22 +43,6 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	void GeolocationPermissions::clear(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"clear",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void GeolocationPermissions::clear(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"clear",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject GeolocationPermissions::getInstance()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -79,6 +63,22 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz.callMethod<void>(
 			"allow",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void GeolocationPermissions::clear(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"clear",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void GeolocationPermissions::clear(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"clear",
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);

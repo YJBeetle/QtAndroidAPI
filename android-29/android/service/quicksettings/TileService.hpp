@@ -14,11 +14,7 @@ namespace __jni_impl::android::app
 }
 namespace __jni_impl::android::content
 {
-	class Intent;
-}
-namespace __jni_impl::android::service::quicksettings
-{
-	class Tile;
+	class ComponentName;
 }
 namespace __jni_impl::android::content
 {
@@ -26,7 +22,11 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::android::content
 {
-	class ComponentName;
+	class Intent;
+}
+namespace __jni_impl::android::service::quicksettings
+{
+	class Tile;
 }
 
 namespace __jni_impl::android::service::quicksettings
@@ -43,28 +43,28 @@ namespace __jni_impl::android::service::quicksettings
 		void __constructor();
 		
 		// Methods
+		static void requestListeningState(__jni_impl::android::content::Context arg0, __jni_impl::android::content::ComponentName arg1);
+		QAndroidJniObject getQsTile();
 		jboolean isLocked();
-		void onStartListening();
-		void onStopListening();
+		jboolean isSecure();
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		void onClick();
 		void onDestroy();
-		void showDialog(__jni_impl::android::app::Dialog arg0);
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		void onStartListening();
+		void onStopListening();
 		void onTileAdded();
 		void onTileRemoved();
-		void unlockAndRun(__jni_impl::__JniBaseClass arg0);
-		jboolean isSecure();
+		void showDialog(__jni_impl::android::app::Dialog arg0);
 		void startActivityAndCollapse(__jni_impl::android::content::Intent arg0);
-		QAndroidJniObject getQsTile();
-		static void requestListeningState(__jni_impl::android::content::Context arg0, __jni_impl::android::content::ComponentName arg1);
+		void unlockAndRun(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::service::quicksettings
 
 #include "../../app/Dialog.hpp"
+#include "../../content/ComponentName.hpp"
+#include "../../content/Context.hpp"
 #include "../../content/Intent.hpp"
 #include "Tile.hpp"
-#include "../../content/Context.hpp"
-#include "../../content/ComponentName.hpp"
 
 namespace __jni_impl::android::service::quicksettings
 {
@@ -104,6 +104,23 @@ namespace __jni_impl::android::service::quicksettings
 	}
 	
 	// Methods
+	void TileService::requestListeningState(__jni_impl::android::content::Context arg0, __jni_impl::android::content::ComponentName arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.service.quicksettings.TileService",
+			"requestListeningState",
+			"(Landroid/content/Context;Landroid/content/ComponentName;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TileService::getQsTile()
+	{
+		return __thiz.callObjectMethod(
+			"getQsTile",
+			"()Landroid/service/quicksettings/Tile;"
+		);
+	}
 	jboolean TileService::isLocked()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -111,18 +128,19 @@ namespace __jni_impl::android::service::quicksettings
 			"()Z"
 		);
 	}
-	void TileService::onStartListening()
+	jboolean TileService::isSecure()
 	{
-		__thiz.callMethod<void>(
-			"onStartListening",
-			"()V"
+		return __thiz.callMethod<jboolean>(
+			"isSecure",
+			"()Z"
 		);
 	}
-	void TileService::onStopListening()
+	QAndroidJniObject TileService::onBind(__jni_impl::android::content::Intent arg0)
 	{
-		__thiz.callMethod<void>(
-			"onStopListening",
-			"()V"
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
 		);
 	}
 	void TileService::onClick()
@@ -139,20 +157,18 @@ namespace __jni_impl::android::service::quicksettings
 			"()V"
 		);
 	}
-	void TileService::showDialog(__jni_impl::android::app::Dialog arg0)
+	void TileService::onStartListening()
 	{
 		__thiz.callMethod<void>(
-			"showDialog",
-			"(Landroid/app/Dialog;)V",
-			arg0.__jniObject().object()
+			"onStartListening",
+			"()V"
 		);
 	}
-	QAndroidJniObject TileService::onBind(__jni_impl::android::content::Intent arg0)
+	void TileService::onStopListening()
 	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+		__thiz.callMethod<void>(
+			"onStopListening",
+			"()V"
 		);
 	}
 	void TileService::onTileAdded()
@@ -169,19 +185,12 @@ namespace __jni_impl::android::service::quicksettings
 			"()V"
 		);
 	}
-	void TileService::unlockAndRun(__jni_impl::__JniBaseClass arg0)
+	void TileService::showDialog(__jni_impl::android::app::Dialog arg0)
 	{
 		__thiz.callMethod<void>(
-			"unlockAndRun",
-			"(Ljava/lang/Runnable;)V",
+			"showDialog",
+			"(Landroid/app/Dialog;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	jboolean TileService::isSecure()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSecure",
-			"()Z"
 		);
 	}
 	void TileService::startActivityAndCollapse(__jni_impl::android::content::Intent arg0)
@@ -192,21 +201,12 @@ namespace __jni_impl::android::service::quicksettings
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject TileService::getQsTile()
+	void TileService::unlockAndRun(__jni_impl::__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getQsTile",
-			"()Landroid/service/quicksettings/Tile;"
-		);
-	}
-	void TileService::requestListeningState(__jni_impl::android::content::Context arg0, __jni_impl::android::content::ComponentName arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.service.quicksettings.TileService",
-			"requestListeningState",
-			"(Landroid/content/Context;Landroid/content/ComponentName;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+		__thiz.callMethod<void>(
+			"unlockAndRun",
+			"(Ljava/lang/Runnable;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::service::quicksettings

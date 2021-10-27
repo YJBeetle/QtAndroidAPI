@@ -18,12 +18,12 @@ namespace __jni_impl::android::util
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jint hashCode();
-		jint getThreadId();
-		jint getTag();
-		jlong getTimeNanos();
-		jint getProcessId();
 		jobject getData();
+		jint getProcessId();
+		jint getTag();
+		jint getThreadId();
+		jlong getTimeNanos();
+		jint hashCode();
 	};
 } // namespace __jni_impl::android::util
 
@@ -49,17 +49,17 @@ namespace __jni_impl::android::util
 			arg0
 		);
 	}
-	jint EventLog_Event::hashCode()
+	jobject EventLog_Event::getData()
 	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"getData",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	jint EventLog_Event::getThreadId()
+	jint EventLog_Event::getProcessId()
 	{
 		return __thiz.callMethod<jint>(
-			"getThreadId",
+			"getProcessId",
 			"()I"
 		);
 	}
@@ -70,6 +70,13 @@ namespace __jni_impl::android::util
 			"()I"
 		);
 	}
+	jint EventLog_Event::getThreadId()
+	{
+		return __thiz.callMethod<jint>(
+			"getThreadId",
+			"()I"
+		);
+	}
 	jlong EventLog_Event::getTimeNanos()
 	{
 		return __thiz.callMethod<jlong>(
@@ -77,19 +84,12 @@ namespace __jni_impl::android::util
 			"()J"
 		);
 	}
-	jint EventLog_Event::getProcessId()
+	jint EventLog_Event::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"getProcessId",
+			"hashCode",
 			"()I"
 		);
-	}
-	jobject EventLog_Event::getData()
-	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
 	}
 } // namespace __jni_impl::android::util
 

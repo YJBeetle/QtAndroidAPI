@@ -5,10 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::graphics
 {
 	class Canvas;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::graphics
 {
 	class Paint;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::text::style
@@ -26,36 +26,28 @@ namespace __jni_impl::android::text::style
 		// Fields
 		
 		// Constructors
-		void __constructor(jint arg0);
 		void __constructor(__jni_impl::android::os::Parcel arg0);
+		void __constructor(jint arg0);
 		
 		// Methods
+		jint describeContents();
 		void drawBackground(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jstring arg7, jint arg8, jint arg9, jint arg10);
 		void drawBackground(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, const QString &arg7, jint arg8, jint arg9, jint arg10);
-		jint getSpanTypeId();
 		jint getColor();
-		jint describeContents();
+		jint getSpanTypeId();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::text::style
 
-#include "../../os/Parcel.hpp"
 #include "../../graphics/Canvas.hpp"
 #include "../../graphics/Paint.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::text::style
 {
 	// Fields
 	
 	// Constructors
-	void LineBackgroundSpan_Standard::__constructor(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.style.LineBackgroundSpan$Standard",
-			"(I)V",
-			arg0
-		);
-	}
 	void LineBackgroundSpan_Standard::__constructor(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -64,8 +56,23 @@ namespace __jni_impl::android::text::style
 			arg0.__jniObject().object()
 		);
 	}
+	void LineBackgroundSpan_Standard::__constructor(jint arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.style.LineBackgroundSpan$Standard",
+			"(I)V",
+			arg0
+		);
+	}
 	
 	// Methods
+	jint LineBackgroundSpan_Standard::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	void LineBackgroundSpan_Standard::drawBackground(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jstring arg7, jint arg8, jint arg9, jint arg10)
 	{
 		__thiz.callMethod<void>(
@@ -102,13 +109,6 @@ namespace __jni_impl::android::text::style
 			arg10
 		);
 	}
-	jint LineBackgroundSpan_Standard::getSpanTypeId()
-	{
-		return __thiz.callMethod<jint>(
-			"getSpanTypeId",
-			"()I"
-		);
-	}
 	jint LineBackgroundSpan_Standard::getColor()
 	{
 		return __thiz.callMethod<jint>(
@@ -116,10 +116,10 @@ namespace __jni_impl::android::text::style
 			"()I"
 		);
 	}
-	jint LineBackgroundSpan_Standard::describeContents()
+	jint LineBackgroundSpan_Standard::getSpanTypeId()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getSpanTypeId",
 			"()I"
 		);
 	}
@@ -140,12 +140,12 @@ namespace android::text::style
 	{
 	public:
 		LineBackgroundSpan_Standard(QAndroidJniObject obj) { __thiz = obj; }
-		LineBackgroundSpan_Standard(jint arg0)
+		LineBackgroundSpan_Standard(__jni_impl::android::os::Parcel arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		LineBackgroundSpan_Standard(__jni_impl::android::os::Parcel arg0)
+		LineBackgroundSpan_Standard(jint arg0)
 		{
 			__constructor(
 				arg0);

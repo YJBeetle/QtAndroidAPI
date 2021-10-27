@@ -8,17 +8,9 @@
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
-namespace __jni_impl::android::service::media
+namespace __jni_impl::android::content
 {
-	class MediaBrowserService_BrowserRoot;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
-namespace __jni_impl::android::service::media
-{
-	class MediaBrowserService_Result;
+	class Intent;
 }
 namespace __jni_impl::android::media::session
 {
@@ -28,6 +20,18 @@ namespace __jni_impl::android::media::session
 {
 	class MediaSessionManager_RemoteUserInfo;
 }
+namespace __jni_impl::android::os
+{
+	class Bundle;
+}
+namespace __jni_impl::android::service::media
+{
+	class MediaBrowserService_BrowserRoot;
+}
+namespace __jni_impl::android::service::media
+{
+	class MediaBrowserService_Result;
+}
 namespace __jni_impl::java::io
 {
 	class FileDescriptor;
@@ -35,10 +39,6 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class PrintWriter;
-}
-namespace __jni_impl::android::content
-{
-	class Intent;
 }
 
 namespace __jni_impl::android::service::media
@@ -53,6 +53,16 @@ namespace __jni_impl::android::service::media
 		void __constructor();
 		
 		// Methods
+		void dump(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::io::PrintWriter arg1, jarray arg2);
+		QAndroidJniObject getBrowserRootHints();
+		QAndroidJniObject getCurrentBrowserInfo();
+		QAndroidJniObject getSessionToken();
+		void notifyChildrenChanged(jstring arg0);
+		void notifyChildrenChanged(const QString &arg0);
+		void notifyChildrenChanged(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void notifyChildrenChanged(const QString &arg0, __jni_impl::android::os::Bundle arg1);
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		void onCreate();
 		QAndroidJniObject onGetRoot(jstring arg0, jint arg1, __jni_impl::android::os::Bundle arg2);
 		QAndroidJniObject onGetRoot(const QString &arg0, jint arg1, __jni_impl::android::os::Bundle arg2);
 		void onLoadChildren(jstring arg0, __jni_impl::android::service::media::MediaBrowserService_Result arg1);
@@ -62,27 +72,17 @@ namespace __jni_impl::android::service::media
 		void onLoadItem(jstring arg0, __jni_impl::android::service::media::MediaBrowserService_Result arg1);
 		void onLoadItem(const QString &arg0, __jni_impl::android::service::media::MediaBrowserService_Result arg1);
 		void setSessionToken(__jni_impl::android::media::session::MediaSession_Token arg0);
-		QAndroidJniObject getSessionToken();
-		QAndroidJniObject getBrowserRootHints();
-		QAndroidJniObject getCurrentBrowserInfo();
-		void notifyChildrenChanged(jstring arg0);
-		void notifyChildrenChanged(const QString &arg0);
-		void notifyChildrenChanged(jstring arg0, __jni_impl::android::os::Bundle arg1);
-		void notifyChildrenChanged(const QString &arg0, __jni_impl::android::os::Bundle arg1);
-		void dump(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::io::PrintWriter arg1, jarray arg2);
-		void onCreate();
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 	};
 } // namespace __jni_impl::android::service::media
 
-#include "MediaBrowserService_BrowserRoot.hpp"
-#include "../../os/Bundle.hpp"
-#include "MediaBrowserService_Result.hpp"
+#include "../../content/Intent.hpp"
 #include "../../media/session/MediaSession_Token.hpp"
 #include "../../media/session/MediaSessionManager_RemoteUserInfo.hpp"
+#include "../../os/Bundle.hpp"
+#include "MediaBrowserService_BrowserRoot.hpp"
+#include "MediaBrowserService_Result.hpp"
 #include "../../../java/io/FileDescriptor.hpp"
 #include "../../../java/io/PrintWriter.hpp"
-#include "../../content/Intent.hpp"
 
 namespace __jni_impl::android::service::media
 {
@@ -106,6 +106,86 @@ namespace __jni_impl::android::service::media
 	}
 	
 	// Methods
+	void MediaBrowserService::dump(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::io::PrintWriter arg1, jarray arg2)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
+	QAndroidJniObject MediaBrowserService::getBrowserRootHints()
+	{
+		return __thiz.callObjectMethod(
+			"getBrowserRootHints",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	QAndroidJniObject MediaBrowserService::getCurrentBrowserInfo()
+	{
+		return __thiz.callObjectMethod(
+			"getCurrentBrowserInfo",
+			"()Landroid/media/session/MediaSessionManager$RemoteUserInfo;"
+		);
+	}
+	QAndroidJniObject MediaBrowserService::getSessionToken()
+	{
+		return __thiz.callObjectMethod(
+			"getSessionToken",
+			"()Landroid/media/session/MediaSession$Token;"
+		);
+	}
+	void MediaBrowserService::notifyChildrenChanged(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"notifyChildrenChanged",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void MediaBrowserService::notifyChildrenChanged(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"notifyChildrenChanged",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void MediaBrowserService::notifyChildrenChanged(jstring arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"notifyChildrenChanged",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaBrowserService::notifyChildrenChanged(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"notifyChildrenChanged",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject MediaBrowserService::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
+		);
+	}
+	void MediaBrowserService::onCreate()
+	{
+		__thiz.callMethod<void>(
+			"onCreate",
+			"()V"
+		);
+	}
 	QAndroidJniObject MediaBrowserService::onGetRoot(jstring arg0, jint arg1, __jni_impl::android::os::Bundle arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -187,86 +267,6 @@ namespace __jni_impl::android::service::media
 		__thiz.callMethod<void>(
 			"setSessionToken",
 			"(Landroid/media/session/MediaSession$Token;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject MediaBrowserService::getSessionToken()
-	{
-		return __thiz.callObjectMethod(
-			"getSessionToken",
-			"()Landroid/media/session/MediaSession$Token;"
-		);
-	}
-	QAndroidJniObject MediaBrowserService::getBrowserRootHints()
-	{
-		return __thiz.callObjectMethod(
-			"getBrowserRootHints",
-			"()Landroid/os/Bundle;"
-		);
-	}
-	QAndroidJniObject MediaBrowserService::getCurrentBrowserInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getCurrentBrowserInfo",
-			"()Landroid/media/session/MediaSessionManager$RemoteUserInfo;"
-		);
-	}
-	void MediaBrowserService::notifyChildrenChanged(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"notifyChildrenChanged",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void MediaBrowserService::notifyChildrenChanged(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"notifyChildrenChanged",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void MediaBrowserService::notifyChildrenChanged(jstring arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"notifyChildrenChanged",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaBrowserService::notifyChildrenChanged(const QString &arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"notifyChildrenChanged",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaBrowserService::dump(__jni_impl::java::io::FileDescriptor arg0, __jni_impl::java::io::PrintWriter arg1, jarray arg2)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	void MediaBrowserService::onCreate()
-	{
-		__thiz.callMethod<void>(
-			"onCreate",
-			"()V"
-		);
-	}
-	QAndroidJniObject MediaBrowserService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
 			arg0.__jniObject().object()
 		);
 	}

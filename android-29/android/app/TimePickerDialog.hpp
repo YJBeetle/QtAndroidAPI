@@ -32,12 +32,12 @@ namespace __jni_impl::android::app
 		void __constructor(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::__JniBaseClass arg2, jint arg3, jint arg4, jboolean arg5);
 		
 		// Methods
-		void updateTime(jint arg0, jint arg1);
-		void show();
 		void onClick(__jni_impl::__JniBaseClass arg0, jint arg1);
 		void onRestoreInstanceState(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject onSaveInstanceState();
 		void onTimeChanged(__jni_impl::android::widget::TimePicker arg0, jint arg1, jint arg2);
+		void show();
+		void updateTime(jint arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -77,22 +77,6 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void TimePickerDialog::updateTime(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"updateTime",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void TimePickerDialog::show()
-	{
-		__thiz.callMethod<void>(
-			"show",
-			"()V"
-		);
-	}
 	void TimePickerDialog::onClick(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -125,6 +109,22 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
+		);
+	}
+	void TimePickerDialog::show()
+	{
+		__thiz.callMethod<void>(
+			"show",
+			"()V"
+		);
+	}
+	void TimePickerDialog::updateTime(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"updateTime",
+			"(II)V",
+			arg0,
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::app

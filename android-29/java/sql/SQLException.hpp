@@ -19,27 +19,27 @@ namespace __jni_impl::java::sql
 		// Fields
 		
 		// Constructors
+		void __constructor();
+		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jthrowable arg0);
+		void __constructor(jstring arg0, jstring arg1);
+		void __constructor(const QString &arg0, const QString &arg1);
 		void __constructor(jstring arg0, jthrowable arg1);
 		void __constructor(const QString &arg0, jthrowable arg1);
+		void __constructor(jstring arg0, jstring arg1, jint arg2);
+		void __constructor(const QString &arg0, const QString &arg1, jint arg2);
 		void __constructor(jstring arg0, jstring arg1, jthrowable arg2);
 		void __constructor(const QString &arg0, const QString &arg1, jthrowable arg2);
 		void __constructor(jstring arg0, jstring arg1, jint arg2, jthrowable arg3);
 		void __constructor(const QString &arg0, const QString &arg1, jint arg2, jthrowable arg3);
-		void __constructor(jstring arg0, jstring arg1, jint arg2);
-		void __constructor(const QString &arg0, const QString &arg1, jint arg2);
-		void __constructor(jstring arg0, jstring arg1);
-		void __constructor(const QString &arg0, const QString &arg1);
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
-		void __constructor();
 		
 		// Methods
-		QAndroidJniObject iterator();
-		jstring getSQLState();
-		QAndroidJniObject getNextException();
-		void setNextException(__jni_impl::java::sql::SQLException arg0);
 		jint getErrorCode();
+		QAndroidJniObject getNextException();
+		jstring getSQLState();
+		QAndroidJniObject iterator();
+		void setNextException(__jni_impl::java::sql::SQLException arg0);
 	};
 } // namespace __jni_impl::java::sql
 
@@ -50,12 +50,53 @@ namespace __jni_impl::java::sql
 	// Fields
 	
 	// Constructors
+	void SQLException::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.SQLException",
+			"()V"
+		);
+	}
+	void SQLException::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.SQLException",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void SQLException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.SQLException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void SQLException::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.sql.SQLException",
 			"(Ljava/lang/Throwable;)V",
 			arg0
+		);
+	}
+	void SQLException::__constructor(jstring arg0, jstring arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.SQLException",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1
+		);
+	}
+	void SQLException::__constructor(const QString &arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.SQLException",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void SQLException::__constructor(jstring arg0, jthrowable arg1)
@@ -74,6 +115,26 @@ namespace __jni_impl::java::sql
 			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
+		);
+	}
+	void SQLException::__constructor(jstring arg0, jstring arg1, jint arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.SQLException",
+			"(Ljava/lang/String;Ljava/lang/String;I)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void SQLException::__constructor(const QString &arg0, const QString &arg1, jint arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.SQLException",
+			"(Ljava/lang/String;Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
 		);
 	}
 	void SQLException::__constructor(jstring arg0, jstring arg1, jthrowable arg2)
@@ -118,74 +179,20 @@ namespace __jni_impl::java::sql
 			arg3
 		);
 	}
-	void SQLException::__constructor(jstring arg0, jstring arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.SQLException",
-			"(Ljava/lang/String;Ljava/lang/String;I)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void SQLException::__constructor(const QString &arg0, const QString &arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.SQLException",
-			"(Ljava/lang/String;Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
-	void SQLException::__constructor(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.SQLException",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
-		);
-	}
-	void SQLException::__constructor(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.SQLException",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	void SQLException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.SQLException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void SQLException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.SQLException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void SQLException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.SQLException",
-			"()V"
-		);
-	}
 	
 	// Methods
-	QAndroidJniObject SQLException::iterator()
+	jint SQLException::getErrorCode()
+	{
+		return __thiz.callMethod<jint>(
+			"getErrorCode",
+			"()I"
+		);
+	}
+	QAndroidJniObject SQLException::getNextException()
 	{
 		return __thiz.callObjectMethod(
-			"iterator",
-			"()Ljava/util/Iterator;"
+			"getNextException",
+			"()Ljava/sql/SQLException;"
 		);
 	}
 	jstring SQLException::getSQLState()
@@ -195,11 +202,11 @@ namespace __jni_impl::java::sql
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SQLException::getNextException()
+	QAndroidJniObject SQLException::iterator()
 	{
 		return __thiz.callObjectMethod(
-			"getNextException",
-			"()Ljava/sql/SQLException;"
+			"iterator",
+			"()Ljava/util/Iterator;"
 		);
 	}
 	void SQLException::setNextException(__jni_impl::java::sql::SQLException arg0)
@@ -210,13 +217,6 @@ namespace __jni_impl::java::sql
 			arg0.__jniObject().object()
 		);
 	}
-	jint SQLException::getErrorCode()
-	{
-		return __thiz.callMethod<jint>(
-			"getErrorCode",
-			"()I"
-		);
-	}
 } // namespace __jni_impl::java::sql
 
 namespace java::sql
@@ -225,16 +225,38 @@ namespace java::sql
 	{
 	public:
 		SQLException(QAndroidJniObject obj) { __thiz = obj; }
+		SQLException()
+		{
+			__constructor();
+		}
+		SQLException(jstring arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		SQLException(jthrowable arg0)
 		{
 			__constructor(
 				arg0);
+		}
+		SQLException(jstring arg0, jstring arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
 		}
 		SQLException(jstring arg0, jthrowable arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
+		}
+		SQLException(jstring arg0, jstring arg1, jint arg2)
+		{
+			__constructor(
+				arg0,
+				arg1,
+				arg2);
 		}
 		SQLException(jstring arg0, jstring arg1, jthrowable arg2)
 		{
@@ -250,28 +272,6 @@ namespace java::sql
 				arg1,
 				arg2,
 				arg3);
-		}
-		SQLException(jstring arg0, jstring arg1, jint arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
-		}
-		SQLException(jstring arg0, jstring arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
-		SQLException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		SQLException()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::sql

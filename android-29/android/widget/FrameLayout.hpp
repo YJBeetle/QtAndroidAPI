@@ -28,19 +28,19 @@ namespace __jni_impl::android::widget
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(__jni_impl::android::content::Context arg0);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jstring getAccessibilityClassName();
 		QAndroidJniObject generateLayoutParams(__jni_impl::__JniBaseClass arg0);
-		jboolean shouldDelayChildPressedState();
-		void setForegroundGravity(jint arg0);
-		void setMeasureAllChildren(jboolean arg0);
+		jstring getAccessibilityClassName();
 		jboolean getConsiderGoneChildrenWhenMeasuring();
 		jboolean getMeasureAllChildren();
+		void setForegroundGravity(jint arg0);
+		void setMeasureAllChildren(jboolean arg0);
+		jboolean shouldDelayChildPressedState();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -53,15 +53,21 @@ namespace __jni_impl::android::widget
 	// Fields
 	
 	// Constructors
-	void FrameLayout::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
+	void FrameLayout::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.FrameLayout",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
+			"(Landroid/content/Context;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void FrameLayout::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.widget.FrameLayout",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3
+			arg1.__jniObject().object()
 		);
 	}
 	void FrameLayout::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
@@ -74,32 +80,19 @@ namespace __jni_impl::android::widget
 			arg2
 		);
 	}
-	void FrameLayout::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+	void FrameLayout::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.FrameLayout",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void FrameLayout::__constructor(__jni_impl::android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.widget.FrameLayout",
-			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
+			arg1.__jniObject().object(),
+			arg2,
+			arg3
 		);
 	}
 	
 	// Methods
-	jstring FrameLayout::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
 	QAndroidJniObject FrameLayout::generateLayoutParams(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -108,10 +101,24 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean FrameLayout::shouldDelayChildPressedState()
+	jstring FrameLayout::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jboolean FrameLayout::getConsiderGoneChildrenWhenMeasuring()
 	{
 		return __thiz.callMethod<jboolean>(
-			"shouldDelayChildPressedState",
+			"getConsiderGoneChildrenWhenMeasuring",
+			"()Z"
+		);
+	}
+	jboolean FrameLayout::getMeasureAllChildren()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getMeasureAllChildren",
 			"()Z"
 		);
 	}
@@ -131,17 +138,10 @@ namespace __jni_impl::android::widget
 			arg0
 		);
 	}
-	jboolean FrameLayout::getConsiderGoneChildrenWhenMeasuring()
+	jboolean FrameLayout::shouldDelayChildPressedState()
 	{
 		return __thiz.callMethod<jboolean>(
-			"getConsiderGoneChildrenWhenMeasuring",
-			"()Z"
-		);
-	}
-	jboolean FrameLayout::getMeasureAllChildren()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getMeasureAllChildren",
+			"shouldDelayChildPressedState",
 			"()Z"
 		);
 	}
@@ -153,13 +153,16 @@ namespace android::widget
 	{
 	public:
 		FrameLayout(QAndroidJniObject obj) { __thiz = obj; }
-		FrameLayout(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
+		FrameLayout(__jni_impl::android::content::Context arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		FrameLayout(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 		{
 			__constructor(
 				arg0,
-				arg1,
-				arg2,
-				arg3);
+				arg1);
 		}
 		FrameLayout(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 		{
@@ -168,16 +171,13 @@ namespace android::widget
 				arg1,
 				arg2);
 		}
-		FrameLayout(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+		FrameLayout(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 		{
 			__constructor(
 				arg0,
-				arg1);
-		}
-		FrameLayout(__jni_impl::android::content::Context arg0)
-		{
-			__constructor(
-				arg0);
+				arg1,
+				arg2,
+				arg3);
 		}
 	};
 } // namespace android::widget

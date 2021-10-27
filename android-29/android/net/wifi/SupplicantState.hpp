@@ -17,30 +17,30 @@ namespace __jni_impl::android::net::wifi
 	{
 	public:
 		// Fields
-		static QAndroidJniObject DISCONNECTED();
-		static QAndroidJniObject INTERFACE_DISABLED();
-		static QAndroidJniObject INACTIVE();
-		static QAndroidJniObject SCANNING();
-		static QAndroidJniObject AUTHENTICATING();
-		static QAndroidJniObject ASSOCIATING();
 		static QAndroidJniObject ASSOCIATED();
+		static QAndroidJniObject ASSOCIATING();
+		static QAndroidJniObject AUTHENTICATING();
+		static QAndroidJniObject COMPLETED();
+		static QAndroidJniObject DISCONNECTED();
+		static QAndroidJniObject DORMANT();
 		static QAndroidJniObject FOUR_WAY_HANDSHAKE();
 		static QAndroidJniObject GROUP_HANDSHAKE();
-		static QAndroidJniObject COMPLETED();
-		static QAndroidJniObject DORMANT();
-		static QAndroidJniObject UNINITIALIZED();
+		static QAndroidJniObject INACTIVE();
+		static QAndroidJniObject INTERFACE_DISABLED();
 		static QAndroidJniObject INVALID();
+		static QAndroidJniObject SCANNING();
+		static QAndroidJniObject UNINITIALIZED();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
+		static jboolean isValidState(__jni_impl::android::net::wifi::SupplicantState arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		static jboolean isValidState(__jni_impl::android::net::wifi::SupplicantState arg0);
 	};
 } // namespace __jni_impl::android::net::wifi
 
@@ -49,43 +49,11 @@ namespace __jni_impl::android::net::wifi
 namespace __jni_impl::android::net::wifi
 {
 	// Fields
-	QAndroidJniObject SupplicantState::DISCONNECTED()
+	QAndroidJniObject SupplicantState::ASSOCIATED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.SupplicantState",
-			"DISCONNECTED",
-			"Landroid/net/wifi/SupplicantState;"
-		);
-	}
-	QAndroidJniObject SupplicantState::INTERFACE_DISABLED()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.net.wifi.SupplicantState",
-			"INTERFACE_DISABLED",
-			"Landroid/net/wifi/SupplicantState;"
-		);
-	}
-	QAndroidJniObject SupplicantState::INACTIVE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.net.wifi.SupplicantState",
-			"INACTIVE",
-			"Landroid/net/wifi/SupplicantState;"
-		);
-	}
-	QAndroidJniObject SupplicantState::SCANNING()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.net.wifi.SupplicantState",
-			"SCANNING",
-			"Landroid/net/wifi/SupplicantState;"
-		);
-	}
-	QAndroidJniObject SupplicantState::AUTHENTICATING()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.net.wifi.SupplicantState",
-			"AUTHENTICATING",
+			"ASSOCIATED",
 			"Landroid/net/wifi/SupplicantState;"
 		);
 	}
@@ -97,11 +65,35 @@ namespace __jni_impl::android::net::wifi
 			"Landroid/net/wifi/SupplicantState;"
 		);
 	}
-	QAndroidJniObject SupplicantState::ASSOCIATED()
+	QAndroidJniObject SupplicantState::AUTHENTICATING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.SupplicantState",
-			"ASSOCIATED",
+			"AUTHENTICATING",
+			"Landroid/net/wifi/SupplicantState;"
+		);
+	}
+	QAndroidJniObject SupplicantState::COMPLETED()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.net.wifi.SupplicantState",
+			"COMPLETED",
+			"Landroid/net/wifi/SupplicantState;"
+		);
+	}
+	QAndroidJniObject SupplicantState::DISCONNECTED()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.net.wifi.SupplicantState",
+			"DISCONNECTED",
+			"Landroid/net/wifi/SupplicantState;"
+		);
+	}
+	QAndroidJniObject SupplicantState::DORMANT()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.net.wifi.SupplicantState",
+			"DORMANT",
 			"Landroid/net/wifi/SupplicantState;"
 		);
 	}
@@ -121,27 +113,19 @@ namespace __jni_impl::android::net::wifi
 			"Landroid/net/wifi/SupplicantState;"
 		);
 	}
-	QAndroidJniObject SupplicantState::COMPLETED()
+	QAndroidJniObject SupplicantState::INACTIVE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.SupplicantState",
-			"COMPLETED",
+			"INACTIVE",
 			"Landroid/net/wifi/SupplicantState;"
 		);
 	}
-	QAndroidJniObject SupplicantState::DORMANT()
+	QAndroidJniObject SupplicantState::INTERFACE_DISABLED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.SupplicantState",
-			"DORMANT",
-			"Landroid/net/wifi/SupplicantState;"
-		);
-	}
-	QAndroidJniObject SupplicantState::UNINITIALIZED()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.net.wifi.SupplicantState",
-			"UNINITIALIZED",
+			"INTERFACE_DISABLED",
 			"Landroid/net/wifi/SupplicantState;"
 		);
 	}
@@ -150,6 +134,22 @@ namespace __jni_impl::android::net::wifi
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.wifi.SupplicantState",
 			"INVALID",
+			"Landroid/net/wifi/SupplicantState;"
+		);
+	}
+	QAndroidJniObject SupplicantState::SCANNING()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.net.wifi.SupplicantState",
+			"SCANNING",
+			"Landroid/net/wifi/SupplicantState;"
+		);
+	}
+	QAndroidJniObject SupplicantState::UNINITIALIZED()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.net.wifi.SupplicantState",
+			"UNINITIALIZED",
 			"Landroid/net/wifi/SupplicantState;"
 		);
 	}
@@ -163,13 +163,14 @@ namespace __jni_impl::android::net::wifi
 	}
 	
 	// Methods
-	jarray SupplicantState::values()
+	jboolean SupplicantState::isValidState(__jni_impl::android::net::wifi::SupplicantState arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.net.wifi.SupplicantState",
-			"values",
-			"()[Landroid/net/wifi/SupplicantState;"
-		).object<jarray>();
+			"isValidState",
+			"(Landroid/net/wifi/SupplicantState;)Z",
+			arg0.__jniObject().object()
+		);
 	}
 	QAndroidJniObject SupplicantState::valueOf(jstring arg0)
 	{
@@ -189,6 +190,14 @@ namespace __jni_impl::android::net::wifi
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
+	jarray SupplicantState::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.net.wifi.SupplicantState",
+			"values",
+			"()[Landroid/net/wifi/SupplicantState;"
+		).object<jarray>();
+	}
 	jint SupplicantState::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -203,15 +212,6 @@ namespace __jni_impl::android::net::wifi
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean SupplicantState::isValidState(__jni_impl::android::net::wifi::SupplicantState arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.net.wifi.SupplicantState",
-			"isValidState",
-			"(Landroid/net/wifi/SupplicantState;)Z",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::net::wifi

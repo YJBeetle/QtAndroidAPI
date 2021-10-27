@@ -14,16 +14,16 @@ namespace __jni_impl::android::graphics
 	public:
 		// Fields
 		static QAndroidJniObject TRIANGLES();
-		static QAndroidJniObject TRIANGLE_STRIP();
 		static QAndroidJniObject TRIANGLE_FAN();
+		static QAndroidJniObject TRIANGLE_STRIP();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -39,19 +39,19 @@ namespace __jni_impl::android::graphics
 			"Landroid/graphics/Canvas$VertexMode;"
 		);
 	}
-	QAndroidJniObject Canvas_VertexMode::TRIANGLE_STRIP()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.graphics.Canvas$VertexMode",
-			"TRIANGLE_STRIP",
-			"Landroid/graphics/Canvas$VertexMode;"
-		);
-	}
 	QAndroidJniObject Canvas_VertexMode::TRIANGLE_FAN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Canvas$VertexMode",
 			"TRIANGLE_FAN",
+			"Landroid/graphics/Canvas$VertexMode;"
+		);
+	}
+	QAndroidJniObject Canvas_VertexMode::TRIANGLE_STRIP()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.graphics.Canvas$VertexMode",
+			"TRIANGLE_STRIP",
 			"Landroid/graphics/Canvas$VertexMode;"
 		);
 	}
@@ -65,14 +65,6 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	jarray Canvas_VertexMode::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Canvas$VertexMode",
-			"values",
-			"()[Landroid/graphics/Canvas$VertexMode;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Canvas_VertexMode::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::android::graphics
 			"(Ljava/lang/String;)Landroid/graphics/Canvas$VertexMode;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Canvas_VertexMode::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Canvas$VertexMode",
+			"values",
+			"()[Landroid/graphics/Canvas$VertexMode;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::graphics
 

@@ -39,8 +39,8 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		static void getPixelFormatInfo(jint arg0, __jni_impl::android::graphics::PixelFormat arg1);
 		static jboolean formatHasAlpha(jint arg0);
+		static void getPixelFormatInfo(jint arg0, __jni_impl::android::graphics::PixelFormat arg1);
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -211,6 +211,15 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
+	jboolean PixelFormat::formatHasAlpha(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.graphics.PixelFormat",
+			"formatHasAlpha",
+			"(I)Z",
+			arg0
+		);
+	}
 	void PixelFormat::getPixelFormatInfo(jint arg0, __jni_impl::android::graphics::PixelFormat arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -219,15 +228,6 @@ namespace __jni_impl::android::graphics
 			"(ILandroid/graphics/PixelFormat;)V",
 			arg0,
 			arg1.__jniObject().object()
-		);
-	}
-	jboolean PixelFormat::formatHasAlpha(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.graphics.PixelFormat",
-			"formatHasAlpha",
-			"(I)Z",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::graphics

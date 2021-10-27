@@ -17,9 +17,9 @@ namespace __jni_impl::java::net
 		// Fields
 		
 		// Constructors
+		void __constructor();
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor();
 		
 		// Methods
 	};
@@ -31,6 +31,13 @@ namespace __jni_impl::java::net
 	// Fields
 	
 	// Constructors
+	void ConnectException::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.ConnectException",
+			"()V"
+		);
+	}
 	void ConnectException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -47,13 +54,6 @@ namespace __jni_impl::java::net
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void ConnectException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.ConnectException",
-			"()V"
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::java::net
@@ -64,14 +64,14 @@ namespace java::net
 	{
 	public:
 		ConnectException(QAndroidJniObject obj) { __thiz = obj; }
+		ConnectException()
+		{
+			__constructor();
+		}
 		ConnectException(jstring arg0)
 		{
 			__constructor(
 				arg0);
-		}
-		ConnectException()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::net

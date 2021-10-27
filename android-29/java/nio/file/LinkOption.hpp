@@ -19,9 +19,9 @@ namespace __jni_impl::java::nio::file
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::nio::file
 
@@ -47,14 +47,6 @@ namespace __jni_impl::java::nio::file
 	}
 	
 	// Methods
-	jarray LinkOption::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.LinkOption",
-			"values",
-			"()[Ljava/nio/file/LinkOption;"
-		).object<jarray>();
-	}
 	QAndroidJniObject LinkOption::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -72,6 +64,14 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/lang/String;)Ljava/nio/file/LinkOption;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray LinkOption::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.file.LinkOption",
+			"values",
+			"()[Ljava/nio/file/LinkOption;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::nio::file
 

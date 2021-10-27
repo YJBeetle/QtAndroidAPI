@@ -24,8 +24,8 @@ namespace __jni_impl::android::icu::util
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
 		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::icu::util
 
@@ -94,19 +94,19 @@ namespace __jni_impl::android::icu::util
 			arg0
 		);
 	}
-	jstring Calendar_WeekData::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint Calendar_WeekData::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
+	}
+	jstring Calendar_WeekData::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::util
 

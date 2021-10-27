@@ -31,13 +31,13 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		void setShareHistoryFileName(jstring arg0);
-		void setShareHistoryFileName(const QString &arg0);
-		void setOnShareTargetSelectedListener(__jni_impl::__JniBaseClass arg0);
-		void setShareIntent(__jni_impl::android::content::Intent arg0);
 		jboolean hasSubMenu();
 		QAndroidJniObject onCreateActionView();
 		void onPrepareSubMenu(__jni_impl::__JniBaseClass arg0);
+		void setOnShareTargetSelectedListener(__jni_impl::__JniBaseClass arg0);
+		void setShareHistoryFileName(jstring arg0);
+		void setShareHistoryFileName(const QString &arg0);
+		void setShareIntent(__jni_impl::android::content::Intent arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -68,38 +68,6 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	void ShareActionProvider::setShareHistoryFileName(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setShareHistoryFileName",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void ShareActionProvider::setShareHistoryFileName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setShareHistoryFileName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void ShareActionProvider::setOnShareTargetSelectedListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnShareTargetSelectedListener",
-			"(Landroid/widget/ShareActionProvider$OnShareTargetSelectedListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ShareActionProvider::setShareIntent(__jni_impl::android::content::Intent arg0)
-	{
-		__thiz.callMethod<void>(
-			"setShareIntent",
-			"(Landroid/content/Intent;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	jboolean ShareActionProvider::hasSubMenu()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -119,6 +87,38 @@ namespace __jni_impl::android::widget
 		__thiz.callMethod<void>(
 			"onPrepareSubMenu",
 			"(Landroid/view/SubMenu;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ShareActionProvider::setOnShareTargetSelectedListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnShareTargetSelectedListener",
+			"(Landroid/widget/ShareActionProvider$OnShareTargetSelectedListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ShareActionProvider::setShareHistoryFileName(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setShareHistoryFileName",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void ShareActionProvider::setShareHistoryFileName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setShareHistoryFileName",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void ShareActionProvider::setShareIntent(__jni_impl::android::content::Intent arg0)
+	{
+		__thiz.callMethod<void>(
+			"setShareIntent",
+			"(Landroid/content/Intent;)V",
 			arg0.__jniObject().object()
 		);
 	}

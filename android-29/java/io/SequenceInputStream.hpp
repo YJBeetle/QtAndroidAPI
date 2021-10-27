@@ -23,10 +23,10 @@ namespace __jni_impl::java::io
 		void __constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::io::InputStream arg1);
 		
 		// Methods
+		jint available();
+		void close();
 		jint read();
 		jint read(jbyteArray arg0, jint arg1, jint arg2);
-		void close();
-		jint available();
 	};
 } // namespace __jni_impl::java::io
 
@@ -56,6 +56,20 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
+	jint SequenceInputStream::available()
+	{
+		return __thiz.callMethod<jint>(
+			"available",
+			"()I"
+		);
+	}
+	void SequenceInputStream::close()
+	{
+		__thiz.callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
 	jint SequenceInputStream::read()
 	{
 		return __thiz.callMethod<jint>(
@@ -71,20 +85,6 @@ namespace __jni_impl::java::io
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	void SequenceInputStream::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
-	}
-	jint SequenceInputStream::available()
-	{
-		return __thiz.callMethod<jint>(
-			"available",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::java::io

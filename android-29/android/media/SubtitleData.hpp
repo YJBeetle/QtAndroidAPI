@@ -17,10 +17,10 @@ namespace __jni_impl::android::media
 		void __constructor(jint arg0, jlong arg1, jlong arg2, jbyteArray arg3);
 		
 		// Methods
-		jint getTrackIndex();
-		jlong getStartTimeUs();
-		jlong getDurationUs();
 		jbyteArray getData();
+		jlong getDurationUs();
+		jlong getStartTimeUs();
+		jint getTrackIndex();
 	};
 } // namespace __jni_impl::android::media
 
@@ -43,11 +43,18 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jint SubtitleData::getTrackIndex()
+	jbyteArray SubtitleData::getData()
 	{
-		return __thiz.callMethod<jint>(
-			"getTrackIndex",
-			"()I"
+		return __thiz.callObjectMethod(
+			"getData",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jlong SubtitleData::getDurationUs()
+	{
+		return __thiz.callMethod<jlong>(
+			"getDurationUs",
+			"()J"
 		);
 	}
 	jlong SubtitleData::getStartTimeUs()
@@ -57,19 +64,12 @@ namespace __jni_impl::android::media
 			"()J"
 		);
 	}
-	jlong SubtitleData::getDurationUs()
+	jint SubtitleData::getTrackIndex()
 	{
-		return __thiz.callMethod<jlong>(
-			"getDurationUs",
-			"()J"
+		return __thiz.callMethod<jint>(
+			"getTrackIndex",
+			"()I"
 		);
-	}
-	jbyteArray SubtitleData::getData()
-	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()[B"
-		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::media
 

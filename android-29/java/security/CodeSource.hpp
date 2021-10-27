@@ -5,18 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::net
-{
-	class URL;
-}
-namespace __jni_impl::java::net
-{
-	class SocketPermission;
-}
-namespace __jni_impl::java::security::cert
-{
-	class CertificateFactory;
-}
 namespace __jni_impl::java::io
 {
 	class ObjectInputStream;
@@ -24,6 +12,18 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class ObjectOutputStream;
+}
+namespace __jni_impl::java::net
+{
+	class SocketPermission;
+}
+namespace __jni_impl::java::net
+{
+	class URL;
+}
+namespace __jni_impl::java::security::cert
+{
+	class CertificateFactory;
 }
 
 namespace __jni_impl::java::security
@@ -38,20 +38,20 @@ namespace __jni_impl::java::security
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		QAndroidJniObject getLocation();
 		jarray getCertificates();
-		jboolean implies(__jni_impl::java::security::CodeSource arg0);
 		jarray getCodeSigners();
+		QAndroidJniObject getLocation();
+		jint hashCode();
+		jboolean implies(__jni_impl::java::security::CodeSource arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security
 
-#include "../net/URL.hpp"
-#include "../net/SocketPermission.hpp"
-#include "cert/CertificateFactory.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../net/SocketPermission.hpp"
+#include "../net/URL.hpp"
+#include "cert/CertificateFactory.hpp"
 
 namespace __jni_impl::java::security
 {
@@ -62,7 +62,7 @@ namespace __jni_impl::java::security
 	{
 		__thiz = QAndroidJniObject(
 			"java.security.CodeSource",
-			"(Ljava/net/URL;[Ljava/security/cert/Certificate;)V",
+			"(Ljava/net/URL;[Ljava/security/CodeSigner;)V",
 			arg0.__jniObject().object(),
 			arg1
 		);
@@ -77,19 +77,19 @@ namespace __jni_impl::java::security
 			arg0
 		);
 	}
-	jstring CodeSource::toString()
+	jarray CodeSource::getCertificates()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getCertificates",
+			"()[Ljava/security/cert/Certificate;"
+		).object<jarray>();
 	}
-	jint CodeSource::hashCode()
+	jarray CodeSource::getCodeSigners()
 	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"getCodeSigners",
+			"()[Ljava/security/CodeSigner;"
+		).object<jarray>();
 	}
 	QAndroidJniObject CodeSource::getLocation()
 	{
@@ -98,12 +98,12 @@ namespace __jni_impl::java::security
 			"()Ljava/net/URL;"
 		);
 	}
-	jarray CodeSource::getCertificates()
+	jint CodeSource::hashCode()
 	{
-		return __thiz.callObjectMethod(
-			"getCertificates",
-			"()[Ljava/security/cert/Certificate;"
-		).object<jarray>();
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
 	}
 	jboolean CodeSource::implies(__jni_impl::java::security::CodeSource arg0)
 	{
@@ -113,12 +113,12 @@ namespace __jni_impl::java::security
 			arg0.__jniObject().object()
 		);
 	}
-	jarray CodeSource::getCodeSigners()
+	jstring CodeSource::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getCodeSigners",
-			"()[Ljava/security/CodeSigner;"
-		).object<jarray>();
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security
 

@@ -6,13 +6,13 @@
 #include "../../../__JniBaseClass.hpp"
 #include "TextClassifierEvent.hpp"
 
-namespace __jni_impl::android::view::textclassifier
-{
-	class TextClassifierEvent_TextSelectionEvent_Builder;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::view::textclassifier
+{
+	class TextClassifierEvent_TextSelectionEvent_Builder;
 }
 
 namespace __jni_impl::android::view::textclassifier
@@ -27,16 +27,16 @@ namespace __jni_impl::android::view::textclassifier
 		void __constructor();
 		
 		// Methods
-		jint getRelativeWordStartIndex();
-		jint getRelativeWordEndIndex();
-		jint getRelativeSuggestedWordStartIndex();
 		jint getRelativeSuggestedWordEndIndex();
+		jint getRelativeSuggestedWordStartIndex();
+		jint getRelativeWordEndIndex();
+		jint getRelativeWordStartIndex();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
-#include "TextClassifierEvent_TextSelectionEvent_Builder.hpp"
 #include "../../os/Parcel.hpp"
+#include "TextClassifierEvent_TextSelectionEvent_Builder.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {
@@ -59,17 +59,10 @@ namespace __jni_impl::android::view::textclassifier
 	}
 	
 	// Methods
-	jint TextClassifierEvent_TextSelectionEvent::getRelativeWordStartIndex()
+	jint TextClassifierEvent_TextSelectionEvent::getRelativeSuggestedWordEndIndex()
 	{
 		return __thiz.callMethod<jint>(
-			"getRelativeWordStartIndex",
-			"()I"
-		);
-	}
-	jint TextClassifierEvent_TextSelectionEvent::getRelativeWordEndIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getRelativeWordEndIndex",
+			"getRelativeSuggestedWordEndIndex",
 			"()I"
 		);
 	}
@@ -80,10 +73,17 @@ namespace __jni_impl::android::view::textclassifier
 			"()I"
 		);
 	}
-	jint TextClassifierEvent_TextSelectionEvent::getRelativeSuggestedWordEndIndex()
+	jint TextClassifierEvent_TextSelectionEvent::getRelativeWordEndIndex()
 	{
 		return __thiz.callMethod<jint>(
-			"getRelativeSuggestedWordEndIndex",
+			"getRelativeWordEndIndex",
+			"()I"
+		);
+	}
+	jint TextClassifierEvent_TextSelectionEvent::getRelativeWordStartIndex()
+	{
+		return __thiz.callMethod<jint>(
+			"getRelativeWordStartIndex",
 			"()I"
 		);
 	}

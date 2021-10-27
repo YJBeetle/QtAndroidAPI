@@ -18,10 +18,10 @@ namespace __jni_impl::android::net
 		// Fields
 		
 		// Constructors
-		void __constructor(jstring arg0, __jni_impl::android::net::LocalSocketAddress_Namespace arg1);
-		void __constructor(const QString &arg0, __jni_impl::android::net::LocalSocketAddress_Namespace arg1);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
+		void __constructor(jstring arg0, __jni_impl::android::net::LocalSocketAddress_Namespace arg1);
+		void __constructor(const QString &arg0, __jni_impl::android::net::LocalSocketAddress_Namespace arg1);
 		
 		// Methods
 		jstring getName();
@@ -36,6 +36,22 @@ namespace __jni_impl::android::net
 	// Fields
 	
 	// Constructors
+	void LocalSocketAddress::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.net.LocalSocketAddress",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void LocalSocketAddress::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.net.LocalSocketAddress",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void LocalSocketAddress::__constructor(jstring arg0, __jni_impl::android::net::LocalSocketAddress_Namespace arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -52,22 +68,6 @@ namespace __jni_impl::android::net
 			"(Ljava/lang/String;Landroid/net/LocalSocketAddress$Namespace;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
-		);
-	}
-	void LocalSocketAddress::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.net.LocalSocketAddress",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void LocalSocketAddress::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.net.LocalSocketAddress",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	
@@ -94,16 +94,16 @@ namespace android::net
 	{
 	public:
 		LocalSocketAddress(QAndroidJniObject obj) { __thiz = obj; }
+		LocalSocketAddress(jstring arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		LocalSocketAddress(jstring arg0, __jni_impl::android::net::LocalSocketAddress_Namespace arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
-		}
-		LocalSocketAddress(jstring arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::net

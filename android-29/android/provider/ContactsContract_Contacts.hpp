@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net
-{
-	class Uri;
-}
 namespace __jni_impl::android::content
 {
 	class ContentResolver;
+}
+namespace __jni_impl::android::net
+{
+	class Uri;
 }
 namespace __jni_impl::java::io
 {
@@ -49,16 +49,16 @@ namespace __jni_impl::android::provider
 		static QAndroidJniObject getLookupUri(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1);
 		static QAndroidJniObject getLookupUri(jlong arg0, jstring arg1);
 		static QAndroidJniObject getLookupUri(jlong arg0, const QString &arg1);
+		static jboolean isEnterpriseContactId(jlong arg0);
 		static QAndroidJniObject lookupContact(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1);
 		static void markAsContacted(__jni_impl::android::content::ContentResolver arg0, jlong arg1);
-		static jboolean isEnterpriseContactId(jlong arg0);
 		static QAndroidJniObject openContactPhotoInputStream(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1);
 		static QAndroidJniObject openContactPhotoInputStream(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1, jboolean arg2);
 	};
 } // namespace __jni_impl::android::provider
 
-#include "../net/Uri.hpp"
 #include "../content/ContentResolver.hpp"
+#include "../net/Uri.hpp"
 #include "../../java/io/InputStream.hpp"
 
 namespace __jni_impl::android::provider
@@ -240,6 +240,15 @@ namespace __jni_impl::android::provider
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
+	jboolean ContactsContract_Contacts::isEnterpriseContactId(jlong arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.provider.ContactsContract$Contacts",
+			"isEnterpriseContactId",
+			"(J)Z",
+			arg0
+		);
+	}
 	QAndroidJniObject ContactsContract_Contacts::lookupContact(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -258,15 +267,6 @@ namespace __jni_impl::android::provider
 			"(Landroid/content/ContentResolver;J)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean ContactsContract_Contacts::isEnterpriseContactId(jlong arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.provider.ContactsContract$Contacts",
-			"isEnterpriseContactId",
-			"(J)Z",
-			arg0
 		);
 	}
 	QAndroidJniObject ContactsContract_Contacts::openContactPhotoInputStream(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1)

@@ -5,10 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::lang
-{
-	class Integer;
-}
 namespace __jni_impl::android::net
 {
 	class Uri;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::java::lang
+{
+	class Integer;
 }
 
 namespace __jni_impl::android::content
@@ -29,20 +29,20 @@ namespace __jni_impl::android::content
 		QAndroidJniObject uri();
 		
 		// Constructors
+		void __constructor(__jni_impl::android::net::Uri arg0);
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		void __constructor(jint arg0);
-		void __constructor(__jni_impl::android::net::Uri arg0);
 		
 		// Methods
-		jstring toString();
 		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content
 
-#include "../../java/lang/Integer.hpp"
 #include "../net/Uri.hpp"
 #include "../os/Parcel.hpp"
+#include "../../java/lang/Integer.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -71,6 +71,14 @@ namespace __jni_impl::android::content
 	}
 	
 	// Constructors
+	void ContentProviderResult::__constructor(__jni_impl::android::net::Uri arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.ContentProviderResult",
+			"(Landroid/net/Uri;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void ContentProviderResult::__constructor(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -87,29 +95,21 @@ namespace __jni_impl::android::content
 			arg0
 		);
 	}
-	void ContentProviderResult::__constructor(__jni_impl::android::net::Uri arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.ContentProviderResult",
-			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	
 	// Methods
-	jstring ContentProviderResult::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint ContentProviderResult::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
+	}
+	jstring ContentProviderResult::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void ContentProviderResult::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -128,17 +128,17 @@ namespace android::content
 	{
 	public:
 		ContentProviderResult(QAndroidJniObject obj) { __thiz = obj; }
+		ContentProviderResult(__jni_impl::android::net::Uri arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		ContentProviderResult(__jni_impl::android::os::Parcel arg0)
 		{
 			__constructor(
 				arg0);
 		}
 		ContentProviderResult(jint arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		ContentProviderResult(__jni_impl::android::net::Uri arg0)
 		{
 			__constructor(
 				arg0);

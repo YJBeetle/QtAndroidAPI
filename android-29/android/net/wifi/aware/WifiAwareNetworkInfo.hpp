@@ -5,13 +5,13 @@
 
 #include "../../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::net
-{
-	class Inet6Address;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::java::net
+{
+	class Inet6Address;
 }
 
 namespace __jni_impl::android::net::wifi::aware
@@ -26,19 +26,19 @@ namespace __jni_impl::android::net::wifi::aware
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint getPort();
-		QAndroidJniObject getPeerIpv6Addr();
-		jint getTransportProtocol();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		QAndroidJniObject getPeerIpv6Addr();
+		jint getPort();
+		jint getTransportProtocol();
+		jint hashCode();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi::aware
 
-#include "../../../../java/net/Inet6Address.hpp"
 #include "../../../os/Parcel.hpp"
+#include "../../../../java/net/Inet6Address.hpp"
 
 namespace __jni_impl::android::net::wifi::aware
 {
@@ -61,33 +61,19 @@ namespace __jni_impl::android::net::wifi::aware
 	}
 	
 	// Methods
+	jint WifiAwareNetworkInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean WifiAwareNetworkInfo::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
-		);
-	}
-	jstring WifiAwareNetworkInfo::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint WifiAwareNetworkInfo::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jint WifiAwareNetworkInfo::getPort()
-	{
-		return __thiz.callMethod<jint>(
-			"getPort",
-			"()I"
 		);
 	}
 	QAndroidJniObject WifiAwareNetworkInfo::getPeerIpv6Addr()
@@ -97,6 +83,13 @@ namespace __jni_impl::android::net::wifi::aware
 			"()Ljava/net/Inet6Address;"
 		);
 	}
+	jint WifiAwareNetworkInfo::getPort()
+	{
+		return __thiz.callMethod<jint>(
+			"getPort",
+			"()I"
+		);
+	}
 	jint WifiAwareNetworkInfo::getTransportProtocol()
 	{
 		return __thiz.callMethod<jint>(
@@ -104,12 +97,19 @@ namespace __jni_impl::android::net::wifi::aware
 			"()I"
 		);
 	}
-	jint WifiAwareNetworkInfo::describeContents()
+	jint WifiAwareNetworkInfo::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
 		);
+	}
+	jstring WifiAwareNetworkInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void WifiAwareNetworkInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

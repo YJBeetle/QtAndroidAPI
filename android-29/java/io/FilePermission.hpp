@@ -6,10 +6,6 @@
 #include "../../__JniBaseClass.hpp"
 #include "../security/Permission.hpp"
 
-namespace __jni_impl::java::nio::file
-{
-	class FileSystem;
-}
 namespace __jni_impl::java::io
 {
 	class ObjectInputStream;
@@ -17,6 +13,10 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class ObjectOutputStream;
+}
+namespace __jni_impl::java::nio::file
+{
+	class FileSystem;
 }
 namespace __jni_impl::java::security
 {
@@ -40,16 +40,16 @@ namespace __jni_impl::java::io
 		
 		// Methods
 		jboolean equals(jobject arg0);
+		jstring getActions();
 		jint hashCode();
 		jboolean implies(__jni_impl::java::security::Permission arg0);
-		jstring getActions();
 		QAndroidJniObject newPermissionCollection();
 	};
 } // namespace __jni_impl::java::io
 
-#include "../nio/file/FileSystem.hpp"
 #include "ObjectInputStream.hpp"
 #include "ObjectOutputStream.hpp"
+#include "../nio/file/FileSystem.hpp"
 #include "../security/Permission.hpp"
 #include "../security/PermissionCollection.hpp"
 
@@ -86,6 +86,13 @@ namespace __jni_impl::java::io
 			arg0
 		);
 	}
+	jstring FilePermission::getActions()
+	{
+		return __thiz.callObjectMethod(
+			"getActions",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jint FilePermission::hashCode()
 	{
 		return __thiz.callMethod<jint>(
@@ -100,13 +107,6 @@ namespace __jni_impl::java::io
 			"(Ljava/security/Permission;)Z",
 			arg0.__jniObject().object()
 		);
-	}
-	jstring FilePermission::getActions()
-	{
-		return __thiz.callObjectMethod(
-			"getActions",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	QAndroidJniObject FilePermission::newPermissionCollection()
 	{

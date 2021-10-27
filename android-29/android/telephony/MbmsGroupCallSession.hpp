@@ -25,9 +25,9 @@ namespace __jni_impl::android::telephony
 		void __constructor();
 		
 		// Methods
-		void close();
 		static QAndroidJniObject create(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 		static QAndroidJniObject create(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3);
+		void close();
 		QAndroidJniObject startGroupCall(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::__JniBaseClass arg4);
 	};
 } // namespace __jni_impl::android::telephony
@@ -48,13 +48,6 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
-	void MbmsGroupCallSession::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
-	}
 	QAndroidJniObject MbmsGroupCallSession::create(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -76,6 +69,13 @@ namespace __jni_impl::android::telephony
 			arg1,
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
+		);
+	}
+	void MbmsGroupCallSession::close()
+	{
+		__thiz.callMethod<void>(
+			"close",
+			"()V"
 		);
 	}
 	QAndroidJniObject MbmsGroupCallSession::startGroupCall(jlong arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::__JniBaseClass arg4)

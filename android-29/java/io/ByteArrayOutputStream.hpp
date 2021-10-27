@@ -6,13 +6,13 @@
 #include "../../__JniBaseClass.hpp"
 #include "OutputStream.hpp"
 
-namespace __jni_impl::java::nio::charset
-{
-	class Charset;
-}
 namespace __jni_impl::java::io
 {
 	class OutputStream;
+}
+namespace __jni_impl::java::nio::charset
+{
+	class Charset;
 }
 
 namespace __jni_impl::java::io
@@ -27,24 +27,24 @@ namespace __jni_impl::java::io
 		void __constructor(jint arg0);
 		
 		// Methods
+		void close();
+		void reset();
+		jint size();
+		jbyteArray toByteArray();
+		jstring toString();
+		jstring toString(jint arg0);
 		jstring toString(jstring arg0);
 		jstring toString(const QString &arg0);
 		jstring toString(__jni_impl::java::nio::charset::Charset arg0);
-		jstring toString();
-		jstring toString(jint arg0);
-		jint size();
 		void write(jint arg0);
 		void write(jbyteArray arg0, jint arg1, jint arg2);
-		void close();
-		jbyteArray toByteArray();
-		void reset();
 		void writeBytes(jbyteArray arg0);
 		void writeTo(__jni_impl::java::io::OutputStream arg0);
 	};
 } // namespace __jni_impl::java::io
 
-#include "../nio/charset/Charset.hpp"
 #include "OutputStream.hpp"
+#include "../nio/charset/Charset.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -68,6 +68,49 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
+	void ByteArrayOutputStream::close()
+	{
+		__thiz.callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	void ByteArrayOutputStream::reset()
+	{
+		__thiz.callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
+	jint ByteArrayOutputStream::size()
+	{
+		return __thiz.callMethod<jint>(
+			"size",
+			"()I"
+		);
+	}
+	jbyteArray ByteArrayOutputStream::toByteArray()
+	{
+		return __thiz.callObjectMethod(
+			"toByteArray",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jstring ByteArrayOutputStream::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring ByteArrayOutputStream::toString(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
 	jstring ByteArrayOutputStream::toString(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -92,28 +135,6 @@ namespace __jni_impl::java::io
 			arg0.__jniObject().object()
 		).object<jstring>();
 	}
-	jstring ByteArrayOutputStream::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring ByteArrayOutputStream::toString(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jint ByteArrayOutputStream::size()
-	{
-		return __thiz.callMethod<jint>(
-			"size",
-			"()I"
-		);
-	}
 	void ByteArrayOutputStream::write(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -130,27 +151,6 @@ namespace __jni_impl::java::io
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	void ByteArrayOutputStream::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
-	}
-	jbyteArray ByteArrayOutputStream::toByteArray()
-	{
-		return __thiz.callObjectMethod(
-			"toByteArray",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	void ByteArrayOutputStream::reset()
-	{
-		__thiz.callMethod<void>(
-			"reset",
-			"()V"
 		);
 	}
 	void ByteArrayOutputStream::writeBytes(jbyteArray arg0)

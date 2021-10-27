@@ -18,19 +18,19 @@ namespace __jni_impl::android::os
 		void __constructor(const QString &arg0);
 		
 		// Methods
-		void restat(jstring arg0);
-		void restat(const QString &arg0);
-		jlong getBlockSizeLong();
-		jlong getBlockCountLong();
-		jint getFreeBlocks();
-		jlong getFreeBlocksLong();
 		jint getAvailableBlocks();
 		jlong getAvailableBlocksLong();
 		jlong getAvailableBytes();
-		jint getBlockSize();
 		jint getBlockCount();
-		jlong getTotalBytes();
+		jlong getBlockCountLong();
+		jint getBlockSize();
+		jlong getBlockSizeLong();
+		jint getFreeBlocks();
+		jlong getFreeBlocksLong();
 		jlong getFreeBytes();
+		jlong getTotalBytes();
+		void restat(jstring arg0);
+		void restat(const QString &arg0);
 	};
 } // namespace __jni_impl::android::os
 
@@ -58,50 +58,6 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	void StatFs::restat(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"restat",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void StatFs::restat(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"restat",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jlong StatFs::getBlockSizeLong()
-	{
-		return __thiz.callMethod<jlong>(
-			"getBlockSizeLong",
-			"()J"
-		);
-	}
-	jlong StatFs::getBlockCountLong()
-	{
-		return __thiz.callMethod<jlong>(
-			"getBlockCountLong",
-			"()J"
-		);
-	}
-	jint StatFs::getFreeBlocks()
-	{
-		return __thiz.callMethod<jint>(
-			"getFreeBlocks",
-			"()I"
-		);
-	}
-	jlong StatFs::getFreeBlocksLong()
-	{
-		return __thiz.callMethod<jlong>(
-			"getFreeBlocksLong",
-			"()J"
-		);
-	}
 	jint StatFs::getAvailableBlocks()
 	{
 		return __thiz.callMethod<jint>(
@@ -123,6 +79,20 @@ namespace __jni_impl::android::os
 			"()J"
 		);
 	}
+	jint StatFs::getBlockCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getBlockCount",
+			"()I"
+		);
+	}
+	jlong StatFs::getBlockCountLong()
+	{
+		return __thiz.callMethod<jlong>(
+			"getBlockCountLong",
+			"()J"
+		);
+	}
 	jint StatFs::getBlockSize()
 	{
 		return __thiz.callMethod<jint>(
@@ -130,11 +100,32 @@ namespace __jni_impl::android::os
 			"()I"
 		);
 	}
-	jint StatFs::getBlockCount()
+	jlong StatFs::getBlockSizeLong()
+	{
+		return __thiz.callMethod<jlong>(
+			"getBlockSizeLong",
+			"()J"
+		);
+	}
+	jint StatFs::getFreeBlocks()
 	{
 		return __thiz.callMethod<jint>(
-			"getBlockCount",
+			"getFreeBlocks",
 			"()I"
+		);
+	}
+	jlong StatFs::getFreeBlocksLong()
+	{
+		return __thiz.callMethod<jlong>(
+			"getFreeBlocksLong",
+			"()J"
+		);
+	}
+	jlong StatFs::getFreeBytes()
+	{
+		return __thiz.callMethod<jlong>(
+			"getFreeBytes",
+			"()J"
 		);
 	}
 	jlong StatFs::getTotalBytes()
@@ -144,11 +135,20 @@ namespace __jni_impl::android::os
 			"()J"
 		);
 	}
-	jlong StatFs::getFreeBytes()
+	void StatFs::restat(jstring arg0)
 	{
-		return __thiz.callMethod<jlong>(
-			"getFreeBytes",
-			"()J"
+		__thiz.callMethod<void>(
+			"restat",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void StatFs::restat(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"restat",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::os

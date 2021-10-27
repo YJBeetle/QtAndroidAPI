@@ -31,14 +31,14 @@ namespace __jni_impl::android::os
 		static jint OPEN();
 		
 		// Constructors
-		void __constructor(__jni_impl::__JniBaseClass arg0, jint arg1);
+		void __constructor(__jni_impl::java::io::File arg0);
+		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
+		void __constructor(__jni_impl::__JniBaseClass arg0);
 		void __constructor(__jni_impl::java::io::File arg0, jint arg1);
 		void __constructor(jstring arg0, jint arg1);
 		void __constructor(const QString &arg0, jint arg1);
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
-		void __constructor(__jni_impl::java::io::File arg0);
-		void __constructor(__jni_impl::__JniBaseClass arg0);
+		void __constructor(__jni_impl::__JniBaseClass arg0, jint arg1);
 		
 		// Methods
 		void onEvent(jint arg0, jstring arg1);
@@ -146,13 +146,36 @@ namespace __jni_impl::android::os
 	}
 	
 	// Constructors
-	void FileObserver::__constructor(__jni_impl::__JniBaseClass arg0, jint arg1)
+	void FileObserver::__constructor(__jni_impl::java::io::File arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.FileObserver",
-			"(Ljava/util/List;I)V",
-			arg0.__jniObject().object(),
-			arg1
+			"(Ljava/io/File;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void FileObserver::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.os.FileObserver",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void FileObserver::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.os.FileObserver",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void FileObserver::__constructor(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.os.FileObserver",
+			"(Ljava/util/List;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void FileObserver::__constructor(__jni_impl::java::io::File arg0, jint arg1)
@@ -182,36 +205,13 @@ namespace __jni_impl::android::os
 			arg1
 		);
 	}
-	void FileObserver::__constructor(jstring arg0)
+	void FileObserver::__constructor(__jni_impl::__JniBaseClass arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.os.FileObserver",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void FileObserver::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.FileObserver",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void FileObserver::__constructor(__jni_impl::java::io::File arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.FileObserver",
-			"(Ljava/io/File;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void FileObserver::__constructor(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.FileObserver",
-			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
+			"(Ljava/util/List;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 	
@@ -256,11 +256,20 @@ namespace android::os
 	{
 	public:
 		FileObserver(QAndroidJniObject obj) { __thiz = obj; }
-		FileObserver(__jni_impl::__JniBaseClass arg0, jint arg1)
+		FileObserver(__jni_impl::java::io::File arg0)
 		{
 			__constructor(
-				arg0,
-				arg1);
+				arg0);
+		}
+		FileObserver(jstring arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		FileObserver(__jni_impl::__JniBaseClass arg0)
+		{
+			__constructor(
+				arg0);
 		}
 		FileObserver(__jni_impl::java::io::File arg0, jint arg1)
 		{
@@ -274,20 +283,11 @@ namespace android::os
 				arg0,
 				arg1);
 		}
-		FileObserver(jstring arg0)
+		FileObserver(__jni_impl::__JniBaseClass arg0, jint arg1)
 		{
 			__constructor(
-				arg0);
-		}
-		FileObserver(__jni_impl::java::io::File arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		FileObserver(__jni_impl::__JniBaseClass arg0)
-		{
-			__constructor(
-				arg0);
+				arg0,
+				arg1);
 		}
 	};
 } // namespace android::os

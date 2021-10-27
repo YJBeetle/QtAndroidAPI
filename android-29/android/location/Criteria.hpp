@@ -32,29 +32,29 @@ namespace __jni_impl::android::location
 		void __constructor(__jni_impl::android::location::Criteria arg0);
 		
 		// Methods
-		jstring toString();
-		jint getAccuracy();
-		void setAccuracy(jint arg0);
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getPowerRequirement();
-		void setHorizontalAccuracy(jint arg0);
-		jint getHorizontalAccuracy();
-		void setVerticalAccuracy(jint arg0);
-		jint getVerticalAccuracy();
-		void setSpeedAccuracy(jint arg0);
-		jint getSpeedAccuracy();
-		void setBearingAccuracy(jint arg0);
+		jint getAccuracy();
 		jint getBearingAccuracy();
-		void setPowerRequirement(jint arg0);
-		void setCostAllowed(jboolean arg0);
-		jboolean isCostAllowed();
-		void setAltitudeRequired(jboolean arg0);
+		jint getHorizontalAccuracy();
+		jint getPowerRequirement();
+		jint getSpeedAccuracy();
+		jint getVerticalAccuracy();
 		jboolean isAltitudeRequired();
-		void setSpeedRequired(jboolean arg0);
-		jboolean isSpeedRequired();
-		void setBearingRequired(jboolean arg0);
 		jboolean isBearingRequired();
+		jboolean isCostAllowed();
+		jboolean isSpeedRequired();
+		void setAccuracy(jint arg0);
+		void setAltitudeRequired(jboolean arg0);
+		void setBearingAccuracy(jint arg0);
+		void setBearingRequired(jboolean arg0);
+		void setCostAllowed(jboolean arg0);
+		void setHorizontalAccuracy(jint arg0);
+		void setPowerRequirement(jint arg0);
+		void setSpeedAccuracy(jint arg0);
+		void setSpeedRequired(jboolean arg0);
+		void setVerticalAccuracy(jint arg0);
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::location
 
@@ -153,18 +153,81 @@ namespace __jni_impl::android::location
 	}
 	
 	// Methods
-	jstring Criteria::toString()
+	jint Criteria::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
 	jint Criteria::getAccuracy()
 	{
 		return __thiz.callMethod<jint>(
 			"getAccuracy",
 			"()I"
+		);
+	}
+	jint Criteria::getBearingAccuracy()
+	{
+		return __thiz.callMethod<jint>(
+			"getBearingAccuracy",
+			"()I"
+		);
+	}
+	jint Criteria::getHorizontalAccuracy()
+	{
+		return __thiz.callMethod<jint>(
+			"getHorizontalAccuracy",
+			"()I"
+		);
+	}
+	jint Criteria::getPowerRequirement()
+	{
+		return __thiz.callMethod<jint>(
+			"getPowerRequirement",
+			"()I"
+		);
+	}
+	jint Criteria::getSpeedAccuracy()
+	{
+		return __thiz.callMethod<jint>(
+			"getSpeedAccuracy",
+			"()I"
+		);
+	}
+	jint Criteria::getVerticalAccuracy()
+	{
+		return __thiz.callMethod<jint>(
+			"getVerticalAccuracy",
+			"()I"
+		);
+	}
+	jboolean Criteria::isAltitudeRequired()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAltitudeRequired",
+			"()Z"
+		);
+	}
+	jboolean Criteria::isBearingRequired()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isBearingRequired",
+			"()Z"
+		);
+	}
+	jboolean Criteria::isCostAllowed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isCostAllowed",
+			"()Z"
+		);
+	}
+	jboolean Criteria::isSpeedRequired()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSpeedRequired",
+			"()Z"
 		);
 	}
 	void Criteria::setAccuracy(jint arg0)
@@ -175,72 +238,12 @@ namespace __jni_impl::android::location
 			arg0
 		);
 	}
-	jint Criteria::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void Criteria::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	void Criteria::setAltitudeRequired(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jint Criteria::getPowerRequirement()
-	{
-		return __thiz.callMethod<jint>(
-			"getPowerRequirement",
-			"()I"
-		);
-	}
-	void Criteria::setHorizontalAccuracy(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setHorizontalAccuracy",
-			"(I)V",
+			"setAltitudeRequired",
+			"(Z)V",
 			arg0
-		);
-	}
-	jint Criteria::getHorizontalAccuracy()
-	{
-		return __thiz.callMethod<jint>(
-			"getHorizontalAccuracy",
-			"()I"
-		);
-	}
-	void Criteria::setVerticalAccuracy(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setVerticalAccuracy",
-			"(I)V",
-			arg0
-		);
-	}
-	jint Criteria::getVerticalAccuracy()
-	{
-		return __thiz.callMethod<jint>(
-			"getVerticalAccuracy",
-			"()I"
-		);
-	}
-	void Criteria::setSpeedAccuracy(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSpeedAccuracy",
-			"(I)V",
-			arg0
-		);
-	}
-	jint Criteria::getSpeedAccuracy()
-	{
-		return __thiz.callMethod<jint>(
-			"getSpeedAccuracy",
-			"()I"
 		);
 	}
 	void Criteria::setBearingAccuracy(jint arg0)
@@ -251,18 +254,11 @@ namespace __jni_impl::android::location
 			arg0
 		);
 	}
-	jint Criteria::getBearingAccuracy()
-	{
-		return __thiz.callMethod<jint>(
-			"getBearingAccuracy",
-			"()I"
-		);
-	}
-	void Criteria::setPowerRequirement(jint arg0)
+	void Criteria::setBearingRequired(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
-			"setPowerRequirement",
-			"(I)V",
+			"setBearingRequired",
+			"(Z)V",
 			arg0
 		);
 	}
@@ -274,26 +270,28 @@ namespace __jni_impl::android::location
 			arg0
 		);
 	}
-	jboolean Criteria::isCostAllowed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isCostAllowed",
-			"()Z"
-		);
-	}
-	void Criteria::setAltitudeRequired(jboolean arg0)
+	void Criteria::setHorizontalAccuracy(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setAltitudeRequired",
-			"(Z)V",
+			"setHorizontalAccuracy",
+			"(I)V",
 			arg0
 		);
 	}
-	jboolean Criteria::isAltitudeRequired()
+	void Criteria::setPowerRequirement(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isAltitudeRequired",
-			"()Z"
+		__thiz.callMethod<void>(
+			"setPowerRequirement",
+			"(I)V",
+			arg0
+		);
+	}
+	void Criteria::setSpeedAccuracy(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSpeedAccuracy",
+			"(I)V",
+			arg0
 		);
 	}
 	void Criteria::setSpeedRequired(jboolean arg0)
@@ -304,26 +302,28 @@ namespace __jni_impl::android::location
 			arg0
 		);
 	}
-	jboolean Criteria::isSpeedRequired()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSpeedRequired",
-			"()Z"
-		);
-	}
-	void Criteria::setBearingRequired(jboolean arg0)
+	void Criteria::setVerticalAccuracy(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setBearingRequired",
-			"(Z)V",
+			"setVerticalAccuracy",
+			"(I)V",
 			arg0
 		);
 	}
-	jboolean Criteria::isBearingRequired()
+	jstring Criteria::toString()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isBearingRequired",
-			"()Z"
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void Criteria::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::location

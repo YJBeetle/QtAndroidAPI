@@ -14,15 +14,15 @@ namespace __jni_impl::javax::crypto::spec
 		// Fields
 		
 		// Constructors
-		void __constructor(jint arg0, jbyteArray arg1, jint arg2);
-		void __constructor(jint arg0, jbyteArray arg1);
 		void __constructor(jint arg0);
+		void __constructor(jint arg0, jbyteArray arg1);
+		void __constructor(jint arg0, jbyteArray arg1, jint arg2);
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jint hashCode();
-		jbyteArray getIV();
 		jint getEffectiveKeyBits();
+		jbyteArray getIV();
+		jint hashCode();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -32,14 +32,12 @@ namespace __jni_impl::javax::crypto::spec
 	// Fields
 	
 	// Constructors
-	void RC2ParameterSpec::__constructor(jint arg0, jbyteArray arg1, jint arg2)
+	void RC2ParameterSpec::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.RC2ParameterSpec",
-			"(I[BI)V",
-			arg0,
-			arg1,
-			arg2
+			"(I)V",
+			arg0
 		);
 	}
 	void RC2ParameterSpec::__constructor(jint arg0, jbyteArray arg1)
@@ -51,12 +49,14 @@ namespace __jni_impl::javax::crypto::spec
 			arg1
 		);
 	}
-	void RC2ParameterSpec::__constructor(jint arg0)
+	void RC2ParameterSpec::__constructor(jint arg0, jbyteArray arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.RC2ParameterSpec",
-			"(I)V",
-			arg0
+			"(I[BI)V",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 	
@@ -69,10 +69,10 @@ namespace __jni_impl::javax::crypto::spec
 			arg0
 		);
 	}
-	jint RC2ParameterSpec::hashCode()
+	jint RC2ParameterSpec::getEffectiveKeyBits()
 	{
 		return __thiz.callMethod<jint>(
-			"hashCode",
+			"getEffectiveKeyBits",
 			"()I"
 		);
 	}
@@ -83,10 +83,10 @@ namespace __jni_impl::javax::crypto::spec
 			"()[B"
 		).object<jbyteArray>();
 	}
-	jint RC2ParameterSpec::getEffectiveKeyBits()
+	jint RC2ParameterSpec::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"getEffectiveKeyBits",
+			"hashCode",
 			"()I"
 		);
 	}
@@ -98,12 +98,10 @@ namespace javax::crypto::spec
 	{
 	public:
 		RC2ParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
-		RC2ParameterSpec(jint arg0, jbyteArray arg1, jint arg2)
+		RC2ParameterSpec(jint arg0)
 		{
 			__constructor(
-				arg0,
-				arg1,
-				arg2);
+				arg0);
 		}
 		RC2ParameterSpec(jint arg0, jbyteArray arg1)
 		{
@@ -111,10 +109,12 @@ namespace javax::crypto::spec
 				arg0,
 				arg1);
 		}
-		RC2ParameterSpec(jint arg0)
+		RC2ParameterSpec(jint arg0, jbyteArray arg1, jint arg2)
 		{
 			__constructor(
-				arg0);
+				arg0,
+				arg1,
+				arg2);
 		}
 	};
 } // namespace javax::crypto::spec

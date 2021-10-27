@@ -21,9 +21,9 @@ namespace __jni_impl::java::util::regex
 		void __constructor(const QString &arg0, const QString &arg1, jint arg2);
 		
 		// Methods
-		jstring getMessage();
-		jint getIndex();
 		jstring getDescription();
+		jint getIndex();
+		jstring getMessage();
 		jstring getPattern();
 	};
 } // namespace __jni_impl::java::util::regex
@@ -56,10 +56,10 @@ namespace __jni_impl::java::util::regex
 	}
 	
 	// Methods
-	jstring PatternSyntaxException::getMessage()
+	jstring PatternSyntaxException::getDescription()
 	{
 		return __thiz.callObjectMethod(
-			"getMessage",
+			"getDescription",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -70,10 +70,10 @@ namespace __jni_impl::java::util::regex
 			"()I"
 		);
 	}
-	jstring PatternSyntaxException::getDescription()
+	jstring PatternSyntaxException::getMessage()
 	{
 		return __thiz.callObjectMethod(
-			"getDescription",
+			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

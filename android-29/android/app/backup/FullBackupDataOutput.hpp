@@ -17,8 +17,8 @@ namespace __jni_impl::android::app::backup
 		void __constructor();
 		
 		// Methods
-		jint getTransportFlags();
 		jlong getQuota();
+		jint getTransportFlags();
 	};
 } // namespace __jni_impl::android::app::backup
 
@@ -36,18 +36,18 @@ namespace __jni_impl::android::app::backup
 	}
 	
 	// Methods
-	jint FullBackupDataOutput::getTransportFlags()
-	{
-		return __thiz.callMethod<jint>(
-			"getTransportFlags",
-			"()I"
-		);
-	}
 	jlong FullBackupDataOutput::getQuota()
 	{
 		return __thiz.callMethod<jlong>(
 			"getQuota",
 			"()J"
+		);
+	}
+	jint FullBackupDataOutput::getTransportFlags()
+	{
+		return __thiz.callMethod<jint>(
+			"getTransportFlags",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::app::backup

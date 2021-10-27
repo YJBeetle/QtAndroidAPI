@@ -9,17 +9,9 @@ namespace __jni_impl::java::io
 {
 	class ObjectInputStream;
 }
-namespace __jni_impl::java::time::temporal
-{
-	class ValueRange;
-}
 namespace __jni_impl::java::time
 {
-	class ZonedDateTime;
-}
-namespace __jni_impl::java::time
-{
-	class ZoneId;
+	class Clock;
 }
 namespace __jni_impl::java::time
 {
@@ -27,11 +19,19 @@ namespace __jni_impl::java::time
 }
 namespace __jni_impl::java::time
 {
+	class ZoneId;
+}
+namespace __jni_impl::java::time
+{
 	class ZoneOffset;
 }
 namespace __jni_impl::java::time
 {
-	class Clock;
+	class ZonedDateTime;
+}
+namespace __jni_impl::java::time::temporal
+{
+	class ValueRange;
 }
 
 namespace __jni_impl::java::time
@@ -41,63 +41,63 @@ namespace __jni_impl::java::time
 	public:
 		// Fields
 		static QAndroidJniObject EPOCH();
-		static QAndroidJniObject MIN();
 		static QAndroidJniObject MAX();
+		static QAndroidJniObject MIN();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		jint get(__jni_impl::__JniBaseClass arg0);
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint compareTo(__jni_impl::java::time::Instant arg0);
-		jint compareTo(jobject arg0);
-		jlong getLong(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject from(__jni_impl::__JniBaseClass arg0);
-		jobject query(__jni_impl::__JniBaseClass arg0);
-		jboolean isSupported(__jni_impl::__JniBaseClass arg0);
-		static QAndroidJniObject parse(jstring arg0);
-		static QAndroidJniObject parse(const QString &arg0);
-		QAndroidJniObject range(__jni_impl::__JniBaseClass arg0);
-		jint getNano();
-		jlong getEpochSecond();
-		static QAndroidJniObject ofEpochSecond(jlong arg0);
-		static QAndroidJniObject ofEpochSecond(jlong arg0, jlong arg1);
-		static QAndroidJniObject ofEpochMilli(jlong arg0);
-		QAndroidJniObject adjustInto(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject plus(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject plus(jlong arg0, __jni_impl::__JniBaseClass arg1);
-		jlong until(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject plusNanos(jlong arg0);
-		QAndroidJniObject plusSeconds(jlong arg0);
-		QAndroidJniObject plusMillis(jlong arg0);
-		QAndroidJniObject minus(jlong arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject minus(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject minusSeconds(jlong arg0);
-		QAndroidJniObject minusMillis(jlong arg0);
-		QAndroidJniObject minusNanos(jlong arg0);
-		QAndroidJniObject truncatedTo(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject with(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject with(__jni_impl::__JniBaseClass arg0, jlong arg1);
-		jboolean isAfter(__jni_impl::java::time::Instant arg0);
-		jboolean isBefore(__jni_impl::java::time::Instant arg0);
-		QAndroidJniObject atZone(__jni_impl::java::time::ZoneId arg0);
-		QAndroidJniObject atOffset(__jni_impl::java::time::ZoneOffset arg0);
-		jlong toEpochMilli();
 		static QAndroidJniObject now();
 		static QAndroidJniObject now(__jni_impl::java::time::Clock arg0);
+		static QAndroidJniObject ofEpochMilli(jlong arg0);
+		static QAndroidJniObject ofEpochSecond(jlong arg0);
+		static QAndroidJniObject ofEpochSecond(jlong arg0, jlong arg1);
+		static QAndroidJniObject parse(jstring arg0);
+		static QAndroidJniObject parse(const QString &arg0);
+		QAndroidJniObject adjustInto(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject atOffset(__jni_impl::java::time::ZoneOffset arg0);
+		QAndroidJniObject atZone(__jni_impl::java::time::ZoneId arg0);
+		jint compareTo(jobject arg0);
+		jint compareTo(__jni_impl::java::time::Instant arg0);
+		jboolean equals(jobject arg0);
+		jint get(__jni_impl::__JniBaseClass arg0);
+		jlong getEpochSecond();
+		jlong getLong(__jni_impl::__JniBaseClass arg0);
+		jint getNano();
+		jint hashCode();
+		jboolean isAfter(__jni_impl::java::time::Instant arg0);
+		jboolean isBefore(__jni_impl::java::time::Instant arg0);
+		jboolean isSupported(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject minus(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject minus(jlong arg0, __jni_impl::__JniBaseClass arg1);
+		QAndroidJniObject minusMillis(jlong arg0);
+		QAndroidJniObject minusNanos(jlong arg0);
+		QAndroidJniObject minusSeconds(jlong arg0);
+		QAndroidJniObject plus(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject plus(jlong arg0, __jni_impl::__JniBaseClass arg1);
+		QAndroidJniObject plusMillis(jlong arg0);
+		QAndroidJniObject plusNanos(jlong arg0);
+		QAndroidJniObject plusSeconds(jlong arg0);
+		jobject query(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject range(__jni_impl::__JniBaseClass arg0);
+		jlong toEpochMilli();
+		jstring toString();
+		QAndroidJniObject truncatedTo(__jni_impl::__JniBaseClass arg0);
+		jlong until(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		QAndroidJniObject with(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject with(__jni_impl::__JniBaseClass arg0, jlong arg1);
 	};
 } // namespace __jni_impl::java::time
 
 #include "../io/ObjectInputStream.hpp"
-#include "temporal/ValueRange.hpp"
-#include "ZonedDateTime.hpp"
-#include "ZoneId.hpp"
-#include "OffsetDateTime.hpp"
-#include "ZoneOffset.hpp"
 #include "Clock.hpp"
+#include "OffsetDateTime.hpp"
+#include "ZoneId.hpp"
+#include "ZoneOffset.hpp"
+#include "ZonedDateTime.hpp"
+#include "temporal/ValueRange.hpp"
 
 namespace __jni_impl::java::time
 {
@@ -110,19 +110,19 @@ namespace __jni_impl::java::time
 			"Ljava/time/Instant;"
 		);
 	}
-	QAndroidJniObject Instant::MIN()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.time.Instant",
-			"MIN",
-			"Ljava/time/Instant;"
-		);
-	}
 	QAndroidJniObject Instant::MAX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.Instant",
 			"MAX",
+			"Ljava/time/Instant;"
+		);
+	}
+	QAndroidJniObject Instant::MIN()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.time.Instant",
+			"MIN",
 			"Ljava/time/Instant;"
 		);
 	}
@@ -136,60 +136,6 @@ namespace __jni_impl::java::time
 	}
 	
 	// Methods
-	jint Instant::get(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"get",
-			"(Ljava/time/temporal/TemporalField;)I",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean Instant::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring Instant::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint Instant::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jint Instant::compareTo(__jni_impl::java::time::Instant arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"compareTo",
-			"(Ljava/time/Instant;)I",
-			arg0.__jniObject().object()
-		);
-	}
-	jint Instant::compareTo(jobject arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"compareTo",
-			"(Ljava/lang/Object;)I",
-			arg0
-		);
-	}
-	jlong Instant::getLong(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"getLong",
-			"(Ljava/time/temporal/TemporalField;)J",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject Instant::from(__jni_impl::__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -199,60 +145,30 @@ namespace __jni_impl::java::time
 			arg0.__jniObject().object()
 		);
 	}
-	jobject Instant::query(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"query",
-			"(Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
-			arg0.__jniObject().object()
-		).object<jobject>();
-	}
-	jboolean Instant::isSupported(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSupported",
-			"(Ljava/time/temporal/TemporalField;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Instant::parse(jstring arg0)
+	QAndroidJniObject Instant::now()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Instant",
-			"parse",
-			"(Ljava/lang/CharSequence;)Ljava/time/Instant;",
+			"now",
+			"()Ljava/time/Instant;"
+		);
+	}
+	QAndroidJniObject Instant::now(__jni_impl::java::time::Clock arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.Instant",
+			"now",
+			"(Ljava/time/Clock;)Ljava/time/Instant;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Instant::ofEpochMilli(jlong arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.Instant",
+			"ofEpochMilli",
+			"(J)Ljava/time/Instant;",
 			arg0
-		);
-	}
-	QAndroidJniObject Instant::parse(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.Instant",
-			"parse",
-			"(Ljava/lang/CharSequence;)Ljava/time/Instant;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject Instant::range(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"range",
-			"(Ljava/time/temporal/TemporalField;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object()
-		);
-	}
-	jint Instant::getNano()
-	{
-		return __thiz.callMethod<jint>(
-			"getNano",
-			"()I"
-		);
-	}
-	jlong Instant::getEpochSecond()
-	{
-		return __thiz.callMethod<jlong>(
-			"getEpochSecond",
-			"()J"
 		);
 	}
 	QAndroidJniObject Instant::ofEpochSecond(jlong arg0)
@@ -274,13 +190,22 @@ namespace __jni_impl::java::time
 			arg1
 		);
 	}
-	QAndroidJniObject Instant::ofEpochMilli(jlong arg0)
+	QAndroidJniObject Instant::parse(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.Instant",
-			"ofEpochMilli",
-			"(J)Ljava/time/Instant;",
+			"parse",
+			"(Ljava/lang/CharSequence;)Ljava/time/Instant;",
 			arg0
+		);
+	}
+	QAndroidJniObject Instant::parse(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.Instant",
+			"parse",
+			"(Ljava/lang/CharSequence;)Ljava/time/Instant;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Instant::adjustInto(__jni_impl::__JniBaseClass arg0)
@@ -289,6 +214,148 @@ namespace __jni_impl::java::time
 			"adjustInto",
 			"(Ljava/time/temporal/Temporal;)Ljava/time/temporal/Temporal;",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Instant::atOffset(__jni_impl::java::time::ZoneOffset arg0)
+	{
+		return __thiz.callObjectMethod(
+			"atOffset",
+			"(Ljava/time/ZoneOffset;)Ljava/time/OffsetDateTime;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Instant::atZone(__jni_impl::java::time::ZoneId arg0)
+	{
+		return __thiz.callObjectMethod(
+			"atZone",
+			"(Ljava/time/ZoneId;)Ljava/time/ZonedDateTime;",
+			arg0.__jniObject().object()
+		);
+	}
+	jint Instant::compareTo(jobject arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"compareTo",
+			"(Ljava/lang/Object;)I",
+			arg0
+		);
+	}
+	jint Instant::compareTo(__jni_impl::java::time::Instant arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"compareTo",
+			"(Ljava/time/Instant;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean Instant::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jint Instant::get(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"get",
+			"(Ljava/time/temporal/TemporalField;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	jlong Instant::getEpochSecond()
+	{
+		return __thiz.callMethod<jlong>(
+			"getEpochSecond",
+			"()J"
+		);
+	}
+	jlong Instant::getLong(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"getLong",
+			"(Ljava/time/temporal/TemporalField;)J",
+			arg0.__jniObject().object()
+		);
+	}
+	jint Instant::getNano()
+	{
+		return __thiz.callMethod<jint>(
+			"getNano",
+			"()I"
+		);
+	}
+	jint Instant::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jboolean Instant::isAfter(__jni_impl::java::time::Instant arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAfter",
+			"(Ljava/time/Instant;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean Instant::isBefore(__jni_impl::java::time::Instant arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isBefore",
+			"(Ljava/time/Instant;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean Instant::isSupported(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSupported",
+			"(Ljava/time/temporal/TemporalField;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Instant::minus(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"minus",
+			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/Instant;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Instant::minus(jlong arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return __thiz.callObjectMethod(
+			"minus",
+			"(JLjava/time/temporal/TemporalUnit;)Ljava/time/Instant;",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Instant::minusMillis(jlong arg0)
+	{
+		return __thiz.callObjectMethod(
+			"minusMillis",
+			"(J)Ljava/time/Instant;",
+			arg0
+		);
+	}
+	QAndroidJniObject Instant::minusNanos(jlong arg0)
+	{
+		return __thiz.callObjectMethod(
+			"minusNanos",
+			"(J)Ljava/time/Instant;",
+			arg0
+		);
+	}
+	QAndroidJniObject Instant::minusSeconds(jlong arg0)
+	{
+		return __thiz.callObjectMethod(
+			"minusSeconds",
+			"(J)Ljava/time/Instant;",
+			arg0
 		);
 	}
 	QAndroidJniObject Instant::plus(__jni_impl::__JniBaseClass arg0)
@@ -308,13 +375,12 @@ namespace __jni_impl::java::time
 			arg1.__jniObject().object()
 		);
 	}
-	jlong Instant::until(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
+	QAndroidJniObject Instant::plusMillis(jlong arg0)
 	{
-		return __thiz.callMethod<jlong>(
-			"until",
-			"(Ljava/time/temporal/Temporal;Ljava/time/temporal/TemporalUnit;)J",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"plusMillis",
+			"(J)Ljava/time/Instant;",
+			arg0
 		);
 	}
 	QAndroidJniObject Instant::plusNanos(jlong arg0)
@@ -333,54 +399,35 @@ namespace __jni_impl::java::time
 			arg0
 		);
 	}
-	QAndroidJniObject Instant::plusMillis(jlong arg0)
+	jobject Instant::query(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
-			"plusMillis",
-			"(J)Ljava/time/Instant;",
-			arg0
-		);
+			"query",
+			"(Ljava/time/temporal/TemporalQuery;)Ljava/lang/Object;",
+			arg0.__jniObject().object()
+		).object<jobject>();
 	}
-	QAndroidJniObject Instant::minus(jlong arg0, __jni_impl::__JniBaseClass arg1)
+	QAndroidJniObject Instant::range(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
-			"minus",
-			"(JLjava/time/temporal/TemporalUnit;)Ljava/time/Instant;",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Instant::minus(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"minus",
-			"(Ljava/time/temporal/TemporalAmount;)Ljava/time/Instant;",
+			"range",
+			"(Ljava/time/temporal/TemporalField;)Ljava/time/temporal/ValueRange;",
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Instant::minusSeconds(jlong arg0)
+	jlong Instant::toEpochMilli()
 	{
-		return __thiz.callObjectMethod(
-			"minusSeconds",
-			"(J)Ljava/time/Instant;",
-			arg0
+		return __thiz.callMethod<jlong>(
+			"toEpochMilli",
+			"()J"
 		);
 	}
-	QAndroidJniObject Instant::minusMillis(jlong arg0)
+	jstring Instant::toString()
 	{
 		return __thiz.callObjectMethod(
-			"minusMillis",
-			"(J)Ljava/time/Instant;",
-			arg0
-		);
-	}
-	QAndroidJniObject Instant::minusNanos(jlong arg0)
-	{
-		return __thiz.callObjectMethod(
-			"minusNanos",
-			"(J)Ljava/time/Instant;",
-			arg0
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Instant::truncatedTo(__jni_impl::__JniBaseClass arg0)
 	{
@@ -388,6 +435,15 @@ namespace __jni_impl::java::time
 			"truncatedTo",
 			"(Ljava/time/temporal/TemporalUnit;)Ljava/time/Instant;",
 			arg0.__jniObject().object()
+		);
+	}
+	jlong Instant::until(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return __thiz.callMethod<jlong>(
+			"until",
+			"(Ljava/time/temporal/Temporal;Ljava/time/temporal/TemporalUnit;)J",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	QAndroidJniObject Instant::with(__jni_impl::__JniBaseClass arg0)
@@ -405,62 +461,6 @@ namespace __jni_impl::java::time
 			"(Ljava/time/temporal/TemporalField;J)Ljava/time/Instant;",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean Instant::isAfter(__jni_impl::java::time::Instant arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAfter",
-			"(Ljava/time/Instant;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean Instant::isBefore(__jni_impl::java::time::Instant arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isBefore",
-			"(Ljava/time/Instant;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Instant::atZone(__jni_impl::java::time::ZoneId arg0)
-	{
-		return __thiz.callObjectMethod(
-			"atZone",
-			"(Ljava/time/ZoneId;)Ljava/time/ZonedDateTime;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Instant::atOffset(__jni_impl::java::time::ZoneOffset arg0)
-	{
-		return __thiz.callObjectMethod(
-			"atOffset",
-			"(Ljava/time/ZoneOffset;)Ljava/time/OffsetDateTime;",
-			arg0.__jniObject().object()
-		);
-	}
-	jlong Instant::toEpochMilli()
-	{
-		return __thiz.callMethod<jlong>(
-			"toEpochMilli",
-			"()J"
-		);
-	}
-	QAndroidJniObject Instant::now()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.Instant",
-			"now",
-			"()Ljava/time/Instant;"
-		);
-	}
-	QAndroidJniObject Instant::now(__jni_impl::java::time::Clock arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.Instant",
-			"now",
-			"(Ljava/time/Clock;)Ljava/time/Instant;",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::java::time

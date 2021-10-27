@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::javax::security::auth::x500
-{
-	class X500Principal;
-}
 namespace __jni_impl::java::security::cert
 {
 	class X509Certificate;
+}
+namespace __jni_impl::javax::security::auth::x500
+{
+	class X500Principal;
 }
 
 namespace __jni_impl::java::security::cert
@@ -22,29 +22,38 @@ namespace __jni_impl::java::security::cert
 		// Fields
 		
 		// Constructors
+		void __constructor(__jni_impl::java::security::cert::X509Certificate arg0, jbyteArray arg1);
 		void __constructor(jstring arg0, __jni_impl::__JniBaseClass arg1, jbyteArray arg2);
 		void __constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1, jbyteArray arg2);
 		void __constructor(__jni_impl::javax::security::auth::x500::X500Principal arg0, __jni_impl::__JniBaseClass arg1, jbyteArray arg2);
-		void __constructor(__jni_impl::java::security::cert::X509Certificate arg0, jbyteArray arg1);
 		
 		// Methods
-		jstring toString();
-		QAndroidJniObject getTrustedCert();
 		QAndroidJniObject getCA();
 		jstring getCAName();
 		QAndroidJniObject getCAPublicKey();
 		jbyteArray getNameConstraints();
+		QAndroidJniObject getTrustedCert();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security::cert
 
-#include "../../../javax/security/auth/x500/X500Principal.hpp"
 #include "X509Certificate.hpp"
+#include "../../../javax/security/auth/x500/X500Principal.hpp"
 
 namespace __jni_impl::java::security::cert
 {
 	// Fields
 	
 	// Constructors
+	void TrustAnchor::__constructor(__jni_impl::java::security::cert::X509Certificate arg0, jbyteArray arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.cert.TrustAnchor",
+			"(Ljava/security/cert/X509Certificate;[B)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
 	void TrustAnchor::__constructor(jstring arg0, __jni_impl::__JniBaseClass arg1, jbyteArray arg2)
 	{
 		__thiz = QAndroidJniObject(
@@ -75,31 +84,8 @@ namespace __jni_impl::java::security::cert
 			arg2
 		);
 	}
-	void TrustAnchor::__constructor(__jni_impl::java::security::cert::X509Certificate arg0, jbyteArray arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.cert.TrustAnchor",
-			"(Ljava/security/cert/X509Certificate;[B)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	
 	// Methods
-	jstring TrustAnchor::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject TrustAnchor::getTrustedCert()
-	{
-		return __thiz.callObjectMethod(
-			"getTrustedCert",
-			"()Ljava/security/cert/X509Certificate;"
-		);
-	}
 	QAndroidJniObject TrustAnchor::getCA()
 	{
 		return __thiz.callObjectMethod(
@@ -128,6 +114,20 @@ namespace __jni_impl::java::security::cert
 			"()[B"
 		).object<jbyteArray>();
 	}
+	QAndroidJniObject TrustAnchor::getTrustedCert()
+	{
+		return __thiz.callObjectMethod(
+			"getTrustedCert",
+			"()Ljava/security/cert/X509Certificate;"
+		);
+	}
+	jstring TrustAnchor::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 } // namespace __jni_impl::java::security::cert
 
 namespace java::security::cert
@@ -136,6 +136,12 @@ namespace java::security::cert
 	{
 	public:
 		TrustAnchor(QAndroidJniObject obj) { __thiz = obj; }
+		TrustAnchor(__jni_impl::java::security::cert::X509Certificate arg0, jbyteArray arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
+		}
 		TrustAnchor(jstring arg0, __jni_impl::__JniBaseClass arg1, jbyteArray arg2)
 		{
 			__constructor(
@@ -149,12 +155,6 @@ namespace java::security::cert
 				arg0,
 				arg1,
 				arg2);
-		}
-		TrustAnchor(__jni_impl::java::security::cert::X509Certificate arg0, jbyteArray arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
 		}
 	};
 } // namespace java::security::cert

@@ -23,46 +23,46 @@ namespace __jni_impl::android::graphics
 		jint top();
 		
 		// Constructors
+		void __constructor();
 		void __constructor(__jni_impl::android::graphics::Rect arg0);
 		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3);
-		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jboolean isEmpty();
-		void offset(jint arg0, jint arg1);
-		jboolean contains(jint arg0, jint arg1);
-		jboolean contains(__jni_impl::android::graphics::Rect arg0);
-		jboolean contains(jint arg0, jint arg1, jint arg2, jint arg3);
-		void set(__jni_impl::android::graphics::Rect arg0);
-		void set(jint arg0, jint arg1, jint arg2, jint arg3);
-		jstring toShortString();
-		void sort();
-		jint width();
-		void _union(jint arg0, jint arg1);
-		void _union(jint arg0, jint arg1, jint arg2, jint arg3);
-		void _union(__jni_impl::android::graphics::Rect arg0);
-		jint centerX();
-		jint centerY();
-		jfloat exactCenterX();
-		jfloat exactCenterY();
-		void setEmpty();
-		void offsetTo(jint arg0, jint arg1);
-		void inset(jint arg0, jint arg1);
-		jboolean setIntersect(__jni_impl::android::graphics::Rect arg0, __jni_impl::android::graphics::Rect arg1);
 		static jboolean intersects(__jni_impl::android::graphics::Rect arg0, __jni_impl::android::graphics::Rect arg1);
-		jboolean intersects(jint arg0, jint arg1, jint arg2, jint arg3);
-		jint height();
-		jboolean intersect(__jni_impl::android::graphics::Rect arg0);
-		jboolean intersect(jint arg0, jint arg1, jint arg2, jint arg3);
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jstring flattenToString();
 		static QAndroidJniObject unflattenFromString(jstring arg0);
 		static QAndroidJniObject unflattenFromString(const QString &arg0);
+		jint centerX();
+		jint centerY();
+		jboolean contains(__jni_impl::android::graphics::Rect arg0);
+		jboolean contains(jint arg0, jint arg1);
+		jboolean contains(jint arg0, jint arg1, jint arg2, jint arg3);
+		jint describeContents();
+		jboolean equals(jobject arg0);
+		jfloat exactCenterX();
+		jfloat exactCenterY();
+		jstring flattenToString();
+		jint hashCode();
+		jint height();
+		void inset(jint arg0, jint arg1);
+		jboolean intersect(__jni_impl::android::graphics::Rect arg0);
+		jboolean intersect(jint arg0, jint arg1, jint arg2, jint arg3);
+		jboolean intersects(jint arg0, jint arg1, jint arg2, jint arg3);
+		jboolean isEmpty();
+		void offset(jint arg0, jint arg1);
+		void offsetTo(jint arg0, jint arg1);
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
+		void set(__jni_impl::android::graphics::Rect arg0);
+		void set(jint arg0, jint arg1, jint arg2, jint arg3);
+		void setEmpty();
+		jboolean setIntersect(__jni_impl::android::graphics::Rect arg0, __jni_impl::android::graphics::Rect arg1);
+		void sort();
+		jstring toShortString();
+		jstring toString();
+		void _union(__jni_impl::android::graphics::Rect arg0);
+		void _union(jint arg0, jint arg1);
+		void _union(jint arg0, jint arg1, jint arg2, jint arg3);
+		jint width();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -105,6 +105,13 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Constructors
+	void Rect::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.graphics.Rect",
+			"()V"
+		);
+	}
 	void Rect::__constructor(__jni_impl::android::graphics::Rect arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -124,15 +131,85 @@ namespace __jni_impl::android::graphics
 			arg3
 		);
 	}
-	void Rect::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.Rect",
-			"()V"
-		);
-	}
 	
 	// Methods
+	jboolean Rect::intersects(__jni_impl::android::graphics::Rect arg0, __jni_impl::android::graphics::Rect arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.graphics.Rect",
+			"intersects",
+			"(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Rect::unflattenFromString(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Rect",
+			"unflattenFromString",
+			"(Ljava/lang/String;)Landroid/graphics/Rect;",
+			arg0
+		);
+	}
+	QAndroidJniObject Rect::unflattenFromString(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Rect",
+			"unflattenFromString",
+			"(Ljava/lang/String;)Landroid/graphics/Rect;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jint Rect::centerX()
+	{
+		return __thiz.callMethod<jint>(
+			"centerX",
+			"()I"
+		);
+	}
+	jint Rect::centerY()
+	{
+		return __thiz.callMethod<jint>(
+			"centerY",
+			"()I"
+		);
+	}
+	jboolean Rect::contains(__jni_impl::android::graphics::Rect arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"contains",
+			"(Landroid/graphics/Rect;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean Rect::contains(jint arg0, jint arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"contains",
+			"(II)Z",
+			arg0,
+			arg1
+		);
+	}
+	jboolean Rect::contains(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		return __thiz.callMethod<jboolean>(
+			"contains",
+			"(IIII)Z",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	jint Rect::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean Rect::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -141,10 +218,24 @@ namespace __jni_impl::android::graphics
 			arg0
 		);
 	}
-	jstring Rect::toString()
+	jfloat Rect::exactCenterX()
+	{
+		return __thiz.callMethod<jfloat>(
+			"exactCenterX",
+			"()F"
+		);
+	}
+	jfloat Rect::exactCenterY()
+	{
+		return __thiz.callMethod<jfloat>(
+			"exactCenterY",
+			"()F"
+		);
+	}
+	jstring Rect::flattenToString()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
+			"flattenToString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -153,6 +244,52 @@ namespace __jni_impl::android::graphics
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I"
+		);
+	}
+	jint Rect::height()
+	{
+		return __thiz.callMethod<jint>(
+			"height",
+			"()I"
+		);
+	}
+	void Rect::inset(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"inset",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	jboolean Rect::intersect(__jni_impl::android::graphics::Rect arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"intersect",
+			"(Landroid/graphics/Rect;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean Rect::intersect(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		return __thiz.callMethod<jboolean>(
+			"intersect",
+			"(IIII)Z",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	jboolean Rect::intersects(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		return __thiz.callMethod<jboolean>(
+			"intersects",
+			"(IIII)Z",
+			arg0,
+			arg1,
+			arg2,
+			arg3
 		);
 	}
 	jboolean Rect::isEmpty()
@@ -171,32 +308,21 @@ namespace __jni_impl::android::graphics
 			arg1
 		);
 	}
-	jboolean Rect::contains(jint arg0, jint arg1)
+	void Rect::offsetTo(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"contains",
-			"(II)Z",
+		__thiz.callMethod<void>(
+			"offsetTo",
+			"(II)V",
 			arg0,
 			arg1
 		);
 	}
-	jboolean Rect::contains(__jni_impl::android::graphics::Rect arg0)
+	void Rect::readFromParcel(__jni_impl::android::os::Parcel arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"contains",
-			"(Landroid/graphics/Rect;)Z",
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	jboolean Rect::contains(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		return __thiz.callMethod<jboolean>(
-			"contains",
-			"(IIII)Z",
-			arg0,
-			arg1,
-			arg2,
-			arg3
 		);
 	}
 	void Rect::set(__jni_impl::android::graphics::Rect arg0)
@@ -218,12 +344,21 @@ namespace __jni_impl::android::graphics
 			arg3
 		);
 	}
-	jstring Rect::toShortString()
+	void Rect::setEmpty()
 	{
-		return __thiz.callObjectMethod(
-			"toShortString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"setEmpty",
+			"()V"
+		);
+	}
+	jboolean Rect::setIntersect(__jni_impl::android::graphics::Rect arg0, __jni_impl::android::graphics::Rect arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"setIntersect",
+			"(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
 	}
 	void Rect::sort()
 	{
@@ -232,11 +367,26 @@ namespace __jni_impl::android::graphics
 			"()V"
 		);
 	}
-	jint Rect::width()
+	jstring Rect::toShortString()
 	{
-		return __thiz.callMethod<jint>(
-			"width",
-			"()I"
+		return __thiz.callObjectMethod(
+			"toShortString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring Rect::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void Rect::_union(__jni_impl::android::graphics::Rect arg0)
+	{
+		__thiz.callMethod<void>(
+			"union",
+			"(Landroid/graphics/Rect;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void Rect::_union(jint arg0, jint arg1)
@@ -259,135 +409,10 @@ namespace __jni_impl::android::graphics
 			arg3
 		);
 	}
-	void Rect::_union(__jni_impl::android::graphics::Rect arg0)
-	{
-		__thiz.callMethod<void>(
-			"union",
-			"(Landroid/graphics/Rect;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jint Rect::centerX()
+	jint Rect::width()
 	{
 		return __thiz.callMethod<jint>(
-			"centerX",
-			"()I"
-		);
-	}
-	jint Rect::centerY()
-	{
-		return __thiz.callMethod<jint>(
-			"centerY",
-			"()I"
-		);
-	}
-	jfloat Rect::exactCenterX()
-	{
-		return __thiz.callMethod<jfloat>(
-			"exactCenterX",
-			"()F"
-		);
-	}
-	jfloat Rect::exactCenterY()
-	{
-		return __thiz.callMethod<jfloat>(
-			"exactCenterY",
-			"()F"
-		);
-	}
-	void Rect::setEmpty()
-	{
-		__thiz.callMethod<void>(
-			"setEmpty",
-			"()V"
-		);
-	}
-	void Rect::offsetTo(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"offsetTo",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void Rect::inset(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"inset",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	jboolean Rect::setIntersect(__jni_impl::android::graphics::Rect arg0, __jni_impl::android::graphics::Rect arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"setIntersect",
-			"(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean Rect::intersects(__jni_impl::android::graphics::Rect arg0, __jni_impl::android::graphics::Rect arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.graphics.Rect",
-			"intersects",
-			"(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean Rect::intersects(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		return __thiz.callMethod<jboolean>(
-			"intersects",
-			"(IIII)Z",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	jint Rect::height()
-	{
-		return __thiz.callMethod<jint>(
-			"height",
-			"()I"
-		);
-	}
-	jboolean Rect::intersect(__jni_impl::android::graphics::Rect arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"intersect",
-			"(Landroid/graphics/Rect;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean Rect::intersect(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		return __thiz.callMethod<jboolean>(
-			"intersect",
-			"(IIII)Z",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void Rect::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jint Rect::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
+			"width",
 			"()I"
 		);
 	}
@@ -400,31 +425,6 @@ namespace __jni_impl::android::graphics
 			arg1
 		);
 	}
-	jstring Rect::flattenToString()
-	{
-		return __thiz.callObjectMethod(
-			"flattenToString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject Rect::unflattenFromString(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Rect",
-			"unflattenFromString",
-			"(Ljava/lang/String;)Landroid/graphics/Rect;",
-			arg0
-		);
-	}
-	QAndroidJniObject Rect::unflattenFromString(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Rect",
-			"unflattenFromString",
-			"(Ljava/lang/String;)Landroid/graphics/Rect;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 } // namespace __jni_impl::android::graphics
 
 namespace android::graphics
@@ -433,6 +433,10 @@ namespace android::graphics
 	{
 	public:
 		Rect(QAndroidJniObject obj) { __thiz = obj; }
+		Rect()
+		{
+			__constructor();
+		}
 		Rect(__jni_impl::android::graphics::Rect arg0)
 		{
 			__constructor(
@@ -445,10 +449,6 @@ namespace android::graphics
 				arg1,
 				arg2,
 				arg3);
-		}
-		Rect()
-		{
-			__constructor();
 		}
 	};
 } // namespace android::graphics

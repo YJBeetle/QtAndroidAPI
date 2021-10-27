@@ -13,21 +13,21 @@ namespace __jni_impl::android::content
 {
 	class Intent;
 }
+namespace __jni_impl::android::content
+{
+	class IntentFilter_AuthorityEntry;
+}
 namespace __jni_impl::android::net
 {
 	class Uri;
 }
 namespace __jni_impl::android::os
 {
-	class PatternMatcher;
-}
-namespace __jni_impl::android::content
-{
-	class IntentFilter_AuthorityEntry;
+	class Parcel;
 }
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class PatternMatcher;
 }
 
 namespace __jni_impl::android::content
@@ -55,91 +55,91 @@ namespace __jni_impl::android::content
 		static jint SYSTEM_LOW_PRIORITY();
 		
 		// Constructors
+		void __constructor();
 		void __constructor(__jni_impl::android::content::IntentFilter arg0);
-		void __constructor(jstring arg0, jstring arg1);
-		void __constructor(const QString &arg0, const QString &arg1);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor();
+		void __constructor(jstring arg0, jstring arg1);
+		void __constructor(const QString &arg0, const QString &arg1);
 		
 		// Methods
+		static QAndroidJniObject create(jstring arg0, jstring arg1);
+		static QAndroidJniObject create(const QString &arg0, const QString &arg1);
+		QAndroidJniObject actionsIterator();
+		void addAction(jstring arg0);
+		void addAction(const QString &arg0);
+		void addCategory(jstring arg0);
+		void addCategory(const QString &arg0);
+		void addDataAuthority(jstring arg0, jstring arg1);
+		void addDataAuthority(const QString &arg0, const QString &arg1);
+		void addDataPath(jstring arg0, jint arg1);
+		void addDataPath(const QString &arg0, jint arg1);
+		void addDataScheme(jstring arg0);
+		void addDataScheme(const QString &arg0);
+		void addDataSchemeSpecificPart(jstring arg0, jint arg1);
+		void addDataSchemeSpecificPart(const QString &arg0, jint arg1);
+		void addDataType(jstring arg0);
+		void addDataType(const QString &arg0);
+		QAndroidJniObject authoritiesIterator();
+		QAndroidJniObject categoriesIterator();
+		jint countActions();
+		jint countCategories();
+		jint countDataAuthorities();
+		jint countDataPaths();
+		jint countDataSchemeSpecificParts();
+		jint countDataSchemes();
+		jint countDataTypes();
+		jint describeContents();
+		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		void dump(__jni_impl::__JniBaseClass arg0, const QString &arg1);
+		jstring getAction(jint arg0);
+		jstring getCategory(jint arg0);
+		QAndroidJniObject getDataAuthority(jint arg0);
+		QAndroidJniObject getDataPath(jint arg0);
+		jstring getDataScheme(jint arg0);
+		QAndroidJniObject getDataSchemeSpecificPart(jint arg0);
+		jstring getDataType(jint arg0);
+		jint getPriority();
+		jboolean hasAction(jstring arg0);
+		jboolean hasAction(const QString &arg0);
+		jboolean hasCategory(jstring arg0);
+		jboolean hasCategory(const QString &arg0);
+		jboolean hasDataAuthority(__jni_impl::android::net::Uri arg0);
+		jboolean hasDataPath(jstring arg0);
+		jboolean hasDataPath(const QString &arg0);
+		jboolean hasDataScheme(jstring arg0);
+		jboolean hasDataScheme(const QString &arg0);
+		jboolean hasDataSchemeSpecificPart(jstring arg0);
+		jboolean hasDataSchemeSpecificPart(const QString &arg0);
+		jboolean hasDataType(jstring arg0);
+		jboolean hasDataType(const QString &arg0);
 		jint match(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::content::Intent arg1, jboolean arg2, jstring arg3);
 		jint match(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::content::Intent arg1, jboolean arg2, const QString &arg3);
 		jint match(jstring arg0, jstring arg1, jstring arg2, __jni_impl::android::net::Uri arg3, __jni_impl::__JniBaseClass arg4, jstring arg5);
 		jint match(const QString &arg0, const QString &arg1, const QString &arg2, __jni_impl::android::net::Uri arg3, __jni_impl::__JniBaseClass arg4, const QString &arg5);
-		void setPriority(jint arg0);
-		jint getPriority();
-		static QAndroidJniObject create(jstring arg0, jstring arg1);
-		static QAndroidJniObject create(const QString &arg0, const QString &arg1);
-		void addAction(jstring arg0);
-		void addAction(const QString &arg0);
-		jint countActions();
-		jstring getAction(jint arg0);
-		jboolean hasAction(jstring arg0);
-		jboolean hasAction(const QString &arg0);
 		jboolean matchAction(jstring arg0);
 		jboolean matchAction(const QString &arg0);
-		QAndroidJniObject actionsIterator();
-		void addDataType(jstring arg0);
-		void addDataType(const QString &arg0);
-		jboolean hasDataType(jstring arg0);
-		jboolean hasDataType(const QString &arg0);
-		jint countDataTypes();
-		jstring getDataType(jint arg0);
-		QAndroidJniObject typesIterator();
-		void addDataScheme(jstring arg0);
-		void addDataScheme(const QString &arg0);
-		jint countDataSchemes();
-		jstring getDataScheme(jint arg0);
-		jboolean hasDataScheme(jstring arg0);
-		jboolean hasDataScheme(const QString &arg0);
-		QAndroidJniObject schemesIterator();
-		void addDataSchemeSpecificPart(jstring arg0, jint arg1);
-		void addDataSchemeSpecificPart(const QString &arg0, jint arg1);
-		jint countDataSchemeSpecificParts();
-		QAndroidJniObject getDataSchemeSpecificPart(jint arg0);
-		jboolean hasDataSchemeSpecificPart(jstring arg0);
-		jboolean hasDataSchemeSpecificPart(const QString &arg0);
-		QAndroidJniObject schemeSpecificPartsIterator();
-		void addDataAuthority(jstring arg0, jstring arg1);
-		void addDataAuthority(const QString &arg0, const QString &arg1);
-		jint countDataAuthorities();
-		QAndroidJniObject getDataAuthority(jint arg0);
-		jboolean hasDataAuthority(__jni_impl::android::net::Uri arg0);
-		QAndroidJniObject authoritiesIterator();
-		void addDataPath(jstring arg0, jint arg1);
-		void addDataPath(const QString &arg0, jint arg1);
-		jint countDataPaths();
-		QAndroidJniObject getDataPath(jint arg0);
-		jboolean hasDataPath(jstring arg0);
-		jboolean hasDataPath(const QString &arg0);
-		QAndroidJniObject pathsIterator();
-		jint matchDataAuthority(__jni_impl::android::net::Uri arg0);
+		jstring matchCategories(__jni_impl::__JniBaseClass arg0);
 		jint matchData(jstring arg0, jstring arg1, __jni_impl::android::net::Uri arg2);
 		jint matchData(const QString &arg0, const QString &arg1, __jni_impl::android::net::Uri arg2);
-		void addCategory(jstring arg0);
-		void addCategory(const QString &arg0);
-		jint countCategories();
-		jstring getCategory(jint arg0);
-		jboolean hasCategory(jstring arg0);
-		jboolean hasCategory(const QString &arg0);
-		QAndroidJniObject categoriesIterator();
-		jstring matchCategories(__jni_impl::__JniBaseClass arg0);
-		void writeToXml(__jni_impl::__JniBaseClass arg0);
+		jint matchDataAuthority(__jni_impl::android::net::Uri arg0);
+		QAndroidJniObject pathsIterator();
 		void readFromXml(__jni_impl::__JniBaseClass arg0);
-		jint describeContents();
+		QAndroidJniObject schemeSpecificPartsIterator();
+		QAndroidJniObject schemesIterator();
+		void setPriority(jint arg0);
+		QAndroidJniObject typesIterator();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
-		void dump(__jni_impl::__JniBaseClass arg0, const QString &arg1);
+		void writeToXml(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::content
 
 #include "ContentResolver.hpp"
 #include "Intent.hpp"
-#include "../net/Uri.hpp"
-#include "../os/PatternMatcher.hpp"
 #include "IntentFilter_AuthorityEntry.hpp"
+#include "../net/Uri.hpp"
 #include "../os/Parcel.hpp"
+#include "../os/PatternMatcher.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -266,12 +266,35 @@ namespace __jni_impl::android::content
 	}
 	
 	// Constructors
+	void IntentFilter::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.IntentFilter",
+			"()V"
+		);
+	}
 	void IntentFilter::__constructor(__jni_impl::android::content::IntentFilter arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.content.IntentFilter",
 			"(Landroid/content/IntentFilter;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void IntentFilter::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.IntentFilter",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void IntentFilter::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.IntentFilter",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void IntentFilter::__constructor(jstring arg0, jstring arg1)
@@ -292,31 +315,408 @@ namespace __jni_impl::android::content
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	void IntentFilter::__constructor(jstring arg0)
+	
+	// Methods
+	QAndroidJniObject IntentFilter::create(jstring arg0, jstring arg1)
 	{
-		__thiz = QAndroidJniObject(
+		return QAndroidJniObject::callStaticObjectMethod(
 			"android.content.IntentFilter",
+			"create",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/IntentFilter;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject IntentFilter::create(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.IntentFilter",
+			"create",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/IntentFilter;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	QAndroidJniObject IntentFilter::actionsIterator()
+	{
+		return __thiz.callObjectMethod(
+			"actionsIterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	void IntentFilter::addAction(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"addAction",
 			"(Ljava/lang/String;)V",
 			arg0
 		);
 	}
-	void IntentFilter::__constructor(const QString &arg0)
+	void IntentFilter::addAction(const QString &arg0)
 	{
-		__thiz = QAndroidJniObject(
-			"android.content.IntentFilter",
+		__thiz.callMethod<void>(
+			"addAction",
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void IntentFilter::__constructor()
+	void IntentFilter::addCategory(jstring arg0)
 	{
-		__thiz = QAndroidJniObject(
-			"android.content.IntentFilter",
-			"()V"
+		__thiz.callMethod<void>(
+			"addCategory",
+			"(Ljava/lang/String;)V",
+			arg0
 		);
 	}
-	
-	// Methods
+	void IntentFilter::addCategory(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"addCategory",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void IntentFilter::addDataAuthority(jstring arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"addDataAuthority",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1
+		);
+	}
+	void IntentFilter::addDataAuthority(const QString &arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"addDataAuthority",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	void IntentFilter::addDataPath(jstring arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"addDataPath",
+			"(Ljava/lang/String;I)V",
+			arg0,
+			arg1
+		);
+	}
+	void IntentFilter::addDataPath(const QString &arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"addDataPath",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	void IntentFilter::addDataScheme(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"addDataScheme",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void IntentFilter::addDataScheme(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"addDataScheme",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void IntentFilter::addDataSchemeSpecificPart(jstring arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"addDataSchemeSpecificPart",
+			"(Ljava/lang/String;I)V",
+			arg0,
+			arg1
+		);
+	}
+	void IntentFilter::addDataSchemeSpecificPart(const QString &arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"addDataSchemeSpecificPart",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	void IntentFilter::addDataType(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"addDataType",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void IntentFilter::addDataType(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"addDataType",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject IntentFilter::authoritiesIterator()
+	{
+		return __thiz.callObjectMethod(
+			"authoritiesIterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	QAndroidJniObject IntentFilter::categoriesIterator()
+	{
+		return __thiz.callObjectMethod(
+			"categoriesIterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	jint IntentFilter::countActions()
+	{
+		return __thiz.callMethod<jint>(
+			"countActions",
+			"()I"
+		);
+	}
+	jint IntentFilter::countCategories()
+	{
+		return __thiz.callMethod<jint>(
+			"countCategories",
+			"()I"
+		);
+	}
+	jint IntentFilter::countDataAuthorities()
+	{
+		return __thiz.callMethod<jint>(
+			"countDataAuthorities",
+			"()I"
+		);
+	}
+	jint IntentFilter::countDataPaths()
+	{
+		return __thiz.callMethod<jint>(
+			"countDataPaths",
+			"()I"
+		);
+	}
+	jint IntentFilter::countDataSchemeSpecificParts()
+	{
+		return __thiz.callMethod<jint>(
+			"countDataSchemeSpecificParts",
+			"()I"
+		);
+	}
+	jint IntentFilter::countDataSchemes()
+	{
+		return __thiz.callMethod<jint>(
+			"countDataSchemes",
+			"()I"
+		);
+	}
+	jint IntentFilter::countDataTypes()
+	{
+		return __thiz.callMethod<jint>(
+			"countDataTypes",
+			"()I"
+		);
+	}
+	jint IntentFilter::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	void IntentFilter::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void IntentFilter::dump(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"dump",
+			"(Landroid/util/Printer;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	jstring IntentFilter::getAction(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAction",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring IntentFilter::getCategory(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getCategory",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	QAndroidJniObject IntentFilter::getDataAuthority(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDataAuthority",
+			"(I)Landroid/content/IntentFilter$AuthorityEntry;",
+			arg0
+		);
+	}
+	QAndroidJniObject IntentFilter::getDataPath(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDataPath",
+			"(I)Landroid/os/PatternMatcher;",
+			arg0
+		);
+	}
+	jstring IntentFilter::getDataScheme(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDataScheme",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	QAndroidJniObject IntentFilter::getDataSchemeSpecificPart(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDataSchemeSpecificPart",
+			"(I)Landroid/os/PatternMatcher;",
+			arg0
+		);
+	}
+	jstring IntentFilter::getDataType(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDataType",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jint IntentFilter::getPriority()
+	{
+		return __thiz.callMethod<jint>(
+			"getPriority",
+			"()I"
+		);
+	}
+	jboolean IntentFilter::hasAction(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasAction",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jboolean IntentFilter::hasAction(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasAction",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jboolean IntentFilter::hasCategory(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasCategory",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jboolean IntentFilter::hasCategory(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasCategory",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jboolean IntentFilter::hasDataAuthority(__jni_impl::android::net::Uri arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasDataAuthority",
+			"(Landroid/net/Uri;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean IntentFilter::hasDataPath(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasDataPath",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jboolean IntentFilter::hasDataPath(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasDataPath",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jboolean IntentFilter::hasDataScheme(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasDataScheme",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jboolean IntentFilter::hasDataScheme(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasDataScheme",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jboolean IntentFilter::hasDataSchemeSpecificPart(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasDataSchemeSpecificPart",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jboolean IntentFilter::hasDataSchemeSpecificPart(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasDataSchemeSpecificPart",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jboolean IntentFilter::hasDataType(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasDataType",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jboolean IntentFilter::hasDataType(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasDataType",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jint IntentFilter::match(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::content::Intent arg1, jboolean arg2, jstring arg3)
 	{
 		return __thiz.callMethod<jint>(
@@ -365,88 +765,6 @@ namespace __jni_impl::android::content
 			QAndroidJniObject::fromString(arg5).object<jstring>()
 		);
 	}
-	void IntentFilter::setPriority(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPriority",
-			"(I)V",
-			arg0
-		);
-	}
-	jint IntentFilter::getPriority()
-	{
-		return __thiz.callMethod<jint>(
-			"getPriority",
-			"()I"
-		);
-	}
-	QAndroidJniObject IntentFilter::create(jstring arg0, jstring arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.IntentFilter",
-			"create",
-			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/IntentFilter;",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject IntentFilter::create(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.IntentFilter",
-			"create",
-			"(Ljava/lang/String;Ljava/lang/String;)Landroid/content/IntentFilter;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	void IntentFilter::addAction(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"addAction",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void IntentFilter::addAction(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"addAction",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jint IntentFilter::countActions()
-	{
-		return __thiz.callMethod<jint>(
-			"countActions",
-			"()I"
-		);
-	}
-	jstring IntentFilter::getAction(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAction",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jboolean IntentFilter::hasAction(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasAction",
-			"(Ljava/lang/String;)Z",
-			arg0
-		);
-	}
-	jboolean IntentFilter::hasAction(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasAction",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	jboolean IntentFilter::matchAction(jstring arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -463,288 +781,13 @@ namespace __jni_impl::android::content
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	QAndroidJniObject IntentFilter::actionsIterator()
+	jstring IntentFilter::matchCategories(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
-			"actionsIterator",
-			"()Ljava/util/Iterator;"
-		);
-	}
-	void IntentFilter::addDataType(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"addDataType",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void IntentFilter::addDataType(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"addDataType",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jboolean IntentFilter::hasDataType(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasDataType",
-			"(Ljava/lang/String;)Z",
-			arg0
-		);
-	}
-	jboolean IntentFilter::hasDataType(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasDataType",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jint IntentFilter::countDataTypes()
-	{
-		return __thiz.callMethod<jint>(
-			"countDataTypes",
-			"()I"
-		);
-	}
-	jstring IntentFilter::getDataType(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDataType",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	QAndroidJniObject IntentFilter::typesIterator()
-	{
-		return __thiz.callObjectMethod(
-			"typesIterator",
-			"()Ljava/util/Iterator;"
-		);
-	}
-	void IntentFilter::addDataScheme(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"addDataScheme",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void IntentFilter::addDataScheme(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"addDataScheme",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jint IntentFilter::countDataSchemes()
-	{
-		return __thiz.callMethod<jint>(
-			"countDataSchemes",
-			"()I"
-		);
-	}
-	jstring IntentFilter::getDataScheme(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDataScheme",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jboolean IntentFilter::hasDataScheme(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasDataScheme",
-			"(Ljava/lang/String;)Z",
-			arg0
-		);
-	}
-	jboolean IntentFilter::hasDataScheme(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasDataScheme",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject IntentFilter::schemesIterator()
-	{
-		return __thiz.callObjectMethod(
-			"schemesIterator",
-			"()Ljava/util/Iterator;"
-		);
-	}
-	void IntentFilter::addDataSchemeSpecificPart(jstring arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"addDataSchemeSpecificPart",
-			"(Ljava/lang/String;I)V",
-			arg0,
-			arg1
-		);
-	}
-	void IntentFilter::addDataSchemeSpecificPart(const QString &arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"addDataSchemeSpecificPart",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	jint IntentFilter::countDataSchemeSpecificParts()
-	{
-		return __thiz.callMethod<jint>(
-			"countDataSchemeSpecificParts",
-			"()I"
-		);
-	}
-	QAndroidJniObject IntentFilter::getDataSchemeSpecificPart(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDataSchemeSpecificPart",
-			"(I)Landroid/os/PatternMatcher;",
-			arg0
-		);
-	}
-	jboolean IntentFilter::hasDataSchemeSpecificPart(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasDataSchemeSpecificPart",
-			"(Ljava/lang/String;)Z",
-			arg0
-		);
-	}
-	jboolean IntentFilter::hasDataSchemeSpecificPart(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasDataSchemeSpecificPart",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject IntentFilter::schemeSpecificPartsIterator()
-	{
-		return __thiz.callObjectMethod(
-			"schemeSpecificPartsIterator",
-			"()Ljava/util/Iterator;"
-		);
-	}
-	void IntentFilter::addDataAuthority(jstring arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"addDataAuthority",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
-		);
-	}
-	void IntentFilter::addDataAuthority(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"addDataAuthority",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	jint IntentFilter::countDataAuthorities()
-	{
-		return __thiz.callMethod<jint>(
-			"countDataAuthorities",
-			"()I"
-		);
-	}
-	QAndroidJniObject IntentFilter::getDataAuthority(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDataAuthority",
-			"(I)Landroid/content/IntentFilter$AuthorityEntry;",
-			arg0
-		);
-	}
-	jboolean IntentFilter::hasDataAuthority(__jni_impl::android::net::Uri arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasDataAuthority",
-			"(Landroid/net/Uri;)Z",
+			"matchCategories",
+			"(Ljava/util/Set;)Ljava/lang/String;",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject IntentFilter::authoritiesIterator()
-	{
-		return __thiz.callObjectMethod(
-			"authoritiesIterator",
-			"()Ljava/util/Iterator;"
-		);
-	}
-	void IntentFilter::addDataPath(jstring arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"addDataPath",
-			"(Ljava/lang/String;I)V",
-			arg0,
-			arg1
-		);
-	}
-	void IntentFilter::addDataPath(const QString &arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"addDataPath",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	jint IntentFilter::countDataPaths()
-	{
-		return __thiz.callMethod<jint>(
-			"countDataPaths",
-			"()I"
-		);
-	}
-	QAndroidJniObject IntentFilter::getDataPath(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDataPath",
-			"(I)Landroid/os/PatternMatcher;",
-			arg0
-		);
-	}
-	jboolean IntentFilter::hasDataPath(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasDataPath",
-			"(Ljava/lang/String;)Z",
-			arg0
-		);
-	}
-	jboolean IntentFilter::hasDataPath(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasDataPath",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject IntentFilter::pathsIterator()
-	{
-		return __thiz.callObjectMethod(
-			"pathsIterator",
-			"()Ljava/util/Iterator;"
-		);
-	}
-	jint IntentFilter::matchDataAuthority(__jni_impl::android::net::Uri arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"matchDataAuthority",
-			"(Landroid/net/Uri;)I",
-			arg0.__jniObject().object()
-		);
+		).object<jstring>();
 	}
 	jint IntentFilter::matchData(jstring arg0, jstring arg1, __jni_impl::android::net::Uri arg2)
 	{
@@ -766,74 +809,19 @@ namespace __jni_impl::android::content
 			arg2.__jniObject().object()
 		);
 	}
-	void IntentFilter::addCategory(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"addCategory",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void IntentFilter::addCategory(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"addCategory",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jint IntentFilter::countCategories()
+	jint IntentFilter::matchDataAuthority(__jni_impl::android::net::Uri arg0)
 	{
 		return __thiz.callMethod<jint>(
-			"countCategories",
-			"()I"
+			"matchDataAuthority",
+			"(Landroid/net/Uri;)I",
+			arg0.__jniObject().object()
 		);
 	}
-	jstring IntentFilter::getCategory(jint arg0)
+	QAndroidJniObject IntentFilter::pathsIterator()
 	{
 		return __thiz.callObjectMethod(
-			"getCategory",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jboolean IntentFilter::hasCategory(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasCategory",
-			"(Ljava/lang/String;)Z",
-			arg0
-		);
-	}
-	jboolean IntentFilter::hasCategory(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasCategory",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject IntentFilter::categoriesIterator()
-	{
-		return __thiz.callObjectMethod(
-			"categoriesIterator",
+			"pathsIterator",
 			"()Ljava/util/Iterator;"
-		);
-	}
-	jstring IntentFilter::matchCategories(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"matchCategories",
-			"(Ljava/util/Set;)Ljava/lang/String;",
-			arg0.__jniObject().object()
-		).object<jstring>();
-	}
-	void IntentFilter::writeToXml(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"writeToXml",
-			"(Lorg/xmlpull/v1/XmlSerializer;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	void IntentFilter::readFromXml(__jni_impl::__JniBaseClass arg0)
@@ -844,11 +832,33 @@ namespace __jni_impl::android::content
 			arg0.__jniObject().object()
 		);
 	}
-	jint IntentFilter::describeContents()
+	QAndroidJniObject IntentFilter::schemeSpecificPartsIterator()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		return __thiz.callObjectMethod(
+			"schemeSpecificPartsIterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	QAndroidJniObject IntentFilter::schemesIterator()
+	{
+		return __thiz.callObjectMethod(
+			"schemesIterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	void IntentFilter::setPriority(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPriority",
+			"(I)V",
+			arg0
+		);
+	}
+	QAndroidJniObject IntentFilter::typesIterator()
+	{
+		return __thiz.callObjectMethod(
+			"typesIterator",
+			"()Ljava/util/Iterator;"
 		);
 	}
 	void IntentFilter::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
@@ -860,22 +870,12 @@ namespace __jni_impl::android::content
 			arg1
 		);
 	}
-	void IntentFilter::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
+	void IntentFilter::writeToXml(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void IntentFilter::dump(__jni_impl::__JniBaseClass arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"dump",
-			"(Landroid/util/Printer;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
+			"writeToXml",
+			"(Lorg/xmlpull/v1/XmlSerializer;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::content
@@ -886,7 +886,16 @@ namespace android::content
 	{
 	public:
 		IntentFilter(QAndroidJniObject obj) { __thiz = obj; }
+		IntentFilter()
+		{
+			__constructor();
+		}
 		IntentFilter(__jni_impl::android::content::IntentFilter arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		IntentFilter(jstring arg0)
 		{
 			__constructor(
 				arg0);
@@ -896,15 +905,6 @@ namespace android::content
 			__constructor(
 				arg0,
 				arg1);
-		}
-		IntentFilter(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		IntentFilter()
-		{
-			__constructor();
 		}
 	};
 } // namespace android::content

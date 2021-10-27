@@ -21,25 +21,25 @@ namespace __jni_impl::java::lang::reflect
 		void __constructor();
 		
 		// Methods
-		jstring getName();
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint getModifiers();
-		jboolean isSynthetic();
-		QAndroidJniObject getAnnotation(jclass arg0);
-		jarray getAnnotationsByType(jclass arg0);
-		jarray getAnnotations();
-		QAndroidJniObject getDeclaredAnnotation(jclass arg0);
-		jarray getDeclaredAnnotationsByType(jclass arg0);
-		jarray getDeclaredAnnotations();
-		jclass getType();
 		QAndroidJniObject getAnnotatedType();
-		QAndroidJniObject getParameterizedType();
-		jboolean isVarArgs();
-		jboolean isNamePresent();
+		QAndroidJniObject getAnnotation(jclass arg0);
+		jarray getAnnotations();
+		jarray getAnnotationsByType(jclass arg0);
+		QAndroidJniObject getDeclaredAnnotation(jclass arg0);
+		jarray getDeclaredAnnotations();
+		jarray getDeclaredAnnotationsByType(jclass arg0);
 		QAndroidJniObject getDeclaringExecutable();
+		jint getModifiers();
+		jstring getName();
+		QAndroidJniObject getParameterizedType();
+		jclass getType();
+		jint hashCode();
 		jboolean isImplicit();
+		jboolean isNamePresent();
+		jboolean isSynthetic();
+		jboolean isVarArgs();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::lang::reflect
 
@@ -58,13 +58,6 @@ namespace __jni_impl::java::lang::reflect
 	}
 	
 	// Methods
-	jstring Parameter::getName()
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jboolean Parameter::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -73,32 +66,11 @@ namespace __jni_impl::java::lang::reflect
 			arg0
 		);
 	}
-	jstring Parameter::toString()
+	QAndroidJniObject Parameter::getAnnotatedType()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint Parameter::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jint Parameter::getModifiers()
-	{
-		return __thiz.callMethod<jint>(
-			"getModifiers",
-			"()I"
-		);
-	}
-	jboolean Parameter::isSynthetic()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSynthetic",
-			"()Z"
+			"getAnnotatedType",
+			"()Ljava/lang/reflect/AnnotatedType;"
 		);
 	}
 	QAndroidJniObject Parameter::getAnnotation(jclass arg0)
@@ -109,19 +81,19 @@ namespace __jni_impl::java::lang::reflect
 			arg0
 		);
 	}
+	jarray Parameter::getAnnotations()
+	{
+		return __thiz.callObjectMethod(
+			"getAnnotations",
+			"()[Ljava/lang/annotation/Annotation;"
+		).object<jarray>();
+	}
 	jarray Parameter::getAnnotationsByType(jclass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAnnotationsByType",
 			"(Ljava/lang/Class;)[Ljava/lang/annotation/Annotation;",
 			arg0
-		).object<jarray>();
-	}
-	jarray Parameter::getAnnotations()
-	{
-		return __thiz.callObjectMethod(
-			"getAnnotations",
-			"()[Ljava/lang/annotation/Annotation;"
 		).object<jarray>();
 	}
 	QAndroidJniObject Parameter::getDeclaredAnnotation(jclass arg0)
@@ -132,6 +104,13 @@ namespace __jni_impl::java::lang::reflect
 			arg0
 		);
 	}
+	jarray Parameter::getDeclaredAnnotations()
+	{
+		return __thiz.callObjectMethod(
+			"getDeclaredAnnotations",
+			"()[Ljava/lang/annotation/Annotation;"
+		).object<jarray>();
+	}
 	jarray Parameter::getDeclaredAnnotationsByType(jclass arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -140,26 +119,26 @@ namespace __jni_impl::java::lang::reflect
 			arg0
 		).object<jarray>();
 	}
-	jarray Parameter::getDeclaredAnnotations()
+	QAndroidJniObject Parameter::getDeclaringExecutable()
 	{
 		return __thiz.callObjectMethod(
-			"getDeclaredAnnotations",
-			"()[Ljava/lang/annotation/Annotation;"
-		).object<jarray>();
-	}
-	jclass Parameter::getType()
-	{
-		return __thiz.callObjectMethod(
-			"getType",
-			"()Ljava/lang/Class;"
-		).object<jclass>();
-	}
-	QAndroidJniObject Parameter::getAnnotatedType()
-	{
-		return __thiz.callObjectMethod(
-			"getAnnotatedType",
-			"()Ljava/lang/reflect/AnnotatedType;"
+			"getDeclaringExecutable",
+			"()Ljava/lang/reflect/Executable;"
 		);
+	}
+	jint Parameter::getModifiers()
+	{
+		return __thiz.callMethod<jint>(
+			"getModifiers",
+			"()I"
+		);
+	}
+	jstring Parameter::getName()
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Parameter::getParameterizedType()
 	{
@@ -168,10 +147,24 @@ namespace __jni_impl::java::lang::reflect
 			"()Ljava/lang/reflect/Type;"
 		);
 	}
-	jboolean Parameter::isVarArgs()
+	jclass Parameter::getType()
+	{
+		return __thiz.callObjectMethod(
+			"getType",
+			"()Ljava/lang/Class;"
+		).object<jclass>();
+	}
+	jint Parameter::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jboolean Parameter::isImplicit()
 	{
 		return __thiz.callMethod<jboolean>(
-			"isVarArgs",
+			"isImplicit",
 			"()Z"
 		);
 	}
@@ -182,19 +175,26 @@ namespace __jni_impl::java::lang::reflect
 			"()Z"
 		);
 	}
-	QAndroidJniObject Parameter::getDeclaringExecutable()
-	{
-		return __thiz.callObjectMethod(
-			"getDeclaringExecutable",
-			"()Ljava/lang/reflect/Executable;"
-		);
-	}
-	jboolean Parameter::isImplicit()
+	jboolean Parameter::isSynthetic()
 	{
 		return __thiz.callMethod<jboolean>(
-			"isImplicit",
+			"isSynthetic",
 			"()Z"
 		);
+	}
+	jboolean Parameter::isVarArgs()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isVarArgs",
+			"()Z"
+		);
+	}
+	jstring Parameter::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::lang::reflect
 

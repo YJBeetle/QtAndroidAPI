@@ -33,20 +33,20 @@ namespace __jni_impl::android::content::pm
 		void __constructor(jint arg0);
 		
 		// Methods
-		void setSize(jlong arg0);
-		void setInstallLocation(jint arg0);
-		void setAppPackageName(jstring arg0);
-		void setAppPackageName(const QString &arg0);
+		jint describeContents();
 		void setAppIcon(__jni_impl::android::graphics::Bitmap arg0);
 		void setAppLabel(jstring arg0);
 		void setAppLabel(const QString &arg0);
-		void setOriginatingUri(__jni_impl::android::net::Uri arg0);
-		void setOriginatingUid(jint arg0);
-		void setReferrerUri(__jni_impl::android::net::Uri arg0);
-		void setWhitelistedRestrictedPermissions(__jni_impl::__JniBaseClass arg0);
+		void setAppPackageName(jstring arg0);
+		void setAppPackageName(const QString &arg0);
+		void setInstallLocation(jint arg0);
 		void setInstallReason(jint arg0);
 		void setMultiPackage();
-		jint describeContents();
+		void setOriginatingUid(jint arg0);
+		void setOriginatingUri(__jni_impl::android::net::Uri arg0);
+		void setReferrerUri(__jni_impl::android::net::Uri arg0);
+		void setSize(jlong arg0);
+		void setWhitelistedRestrictedPermissions(__jni_impl::__JniBaseClass arg0);
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::pm
@@ -100,36 +100,11 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	void PackageInstaller_SessionParams::setSize(jlong arg0)
+	jint PackageInstaller_SessionParams::describeContents()
 	{
-		__thiz.callMethod<void>(
-			"setSize",
-			"(J)V",
-			arg0
-		);
-	}
-	void PackageInstaller_SessionParams::setInstallLocation(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setInstallLocation",
-			"(I)V",
-			arg0
-		);
-	}
-	void PackageInstaller_SessionParams::setAppPackageName(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAppPackageName",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void PackageInstaller_SessionParams::setAppPackageName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAppPackageName",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
 		);
 	}
 	void PackageInstaller_SessionParams::setAppIcon(__jni_impl::android::graphics::Bitmap arg0)
@@ -156,36 +131,28 @@ namespace __jni_impl::android::content::pm
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void PackageInstaller_SessionParams::setOriginatingUri(__jni_impl::android::net::Uri arg0)
+	void PackageInstaller_SessionParams::setAppPackageName(jstring arg0)
 	{
 		__thiz.callMethod<void>(
-			"setOriginatingUri",
-			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void PackageInstaller_SessionParams::setOriginatingUid(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOriginatingUid",
-			"(I)V",
+			"setAppPackageName",
+			"(Ljava/lang/String;)V",
 			arg0
 		);
 	}
-	void PackageInstaller_SessionParams::setReferrerUri(__jni_impl::android::net::Uri arg0)
+	void PackageInstaller_SessionParams::setAppPackageName(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"setReferrerUri",
-			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object()
+			"setAppPackageName",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void PackageInstaller_SessionParams::setWhitelistedRestrictedPermissions(__jni_impl::__JniBaseClass arg0)
+	void PackageInstaller_SessionParams::setInstallLocation(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setWhitelistedRestrictedPermissions",
-			"(Ljava/util/Set;)V",
-			arg0.__jniObject().object()
+			"setInstallLocation",
+			"(I)V",
+			arg0
 		);
 	}
 	void PackageInstaller_SessionParams::setInstallReason(jint arg0)
@@ -203,11 +170,44 @@ namespace __jni_impl::android::content::pm
 			"()V"
 		);
 	}
-	jint PackageInstaller_SessionParams::describeContents()
+	void PackageInstaller_SessionParams::setOriginatingUid(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		__thiz.callMethod<void>(
+			"setOriginatingUid",
+			"(I)V",
+			arg0
+		);
+	}
+	void PackageInstaller_SessionParams::setOriginatingUri(__jni_impl::android::net::Uri arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOriginatingUri",
+			"(Landroid/net/Uri;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void PackageInstaller_SessionParams::setReferrerUri(__jni_impl::android::net::Uri arg0)
+	{
+		__thiz.callMethod<void>(
+			"setReferrerUri",
+			"(Landroid/net/Uri;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void PackageInstaller_SessionParams::setSize(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSize",
+			"(J)V",
+			arg0
+		);
+	}
+	void PackageInstaller_SessionParams::setWhitelistedRestrictedPermissions(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setWhitelistedRestrictedPermissions",
+			"(Ljava/util/Set;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void PackageInstaller_SessionParams::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

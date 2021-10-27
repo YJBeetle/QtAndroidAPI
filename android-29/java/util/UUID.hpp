@@ -17,22 +17,22 @@ namespace __jni_impl::java::util
 		void __constructor(jlong arg0, jlong arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint version();
-		jint hashCode();
-		jint compareTo(jobject arg0);
-		jint compareTo(__jni_impl::java::util::UUID arg0);
-		jlong timestamp();
-		jlong node();
-		jint variant();
-		static QAndroidJniObject randomUUID();
-		static QAndroidJniObject nameUUIDFromBytes(jbyteArray arg0);
-		jlong getLeastSignificantBits();
-		jlong getMostSignificantBits();
-		jint clockSequence();
 		static QAndroidJniObject fromString(jstring arg0);
 		static QAndroidJniObject fromString(const QString &arg0);
+		static QAndroidJniObject nameUUIDFromBytes(jbyteArray arg0);
+		static QAndroidJniObject randomUUID();
+		jint clockSequence();
+		jint compareTo(jobject arg0);
+		jint compareTo(__jni_impl::java::util::UUID arg0);
+		jboolean equals(jobject arg0);
+		jlong getLeastSignificantBits();
+		jlong getMostSignificantBits();
+		jint hashCode();
+		jlong node();
+		jlong timestamp();
+		jstring toString();
+		jint variant();
+		jint version();
 	};
 } // namespace __jni_impl::java::util
 
@@ -53,32 +53,45 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	jboolean UUID::equals(jobject arg0)
+	QAndroidJniObject UUID::fromString(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.UUID",
+			"fromString",
+			"(Ljava/lang/String;)Ljava/util/UUID;",
 			arg0
 		);
 	}
-	jstring UUID::toString()
+	QAndroidJniObject UUID::fromString(const QString &arg0)
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint UUID::version()
-	{
-		return __thiz.callMethod<jint>(
-			"version",
-			"()I"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.UUID",
+			"fromString",
+			"(Ljava/lang/String;)Ljava/util/UUID;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jint UUID::hashCode()
+	QAndroidJniObject UUID::nameUUIDFromBytes(jbyteArray arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.UUID",
+			"nameUUIDFromBytes",
+			"([B)Ljava/util/UUID;",
+			arg0
+		);
+	}
+	QAndroidJniObject UUID::randomUUID()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.UUID",
+			"randomUUID",
+			"()Ljava/util/UUID;"
+		);
+	}
+	jint UUID::clockSequence()
 	{
 		return __thiz.callMethod<jint>(
-			"hashCode",
+			"clockSequence",
 			"()I"
 		);
 	}
@@ -98,41 +111,11 @@ namespace __jni_impl::java::util
 			arg0.__jniObject().object()
 		);
 	}
-	jlong UUID::timestamp()
+	jboolean UUID::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jlong>(
-			"timestamp",
-			"()J"
-		);
-	}
-	jlong UUID::node()
-	{
-		return __thiz.callMethod<jlong>(
-			"node",
-			"()J"
-		);
-	}
-	jint UUID::variant()
-	{
-		return __thiz.callMethod<jint>(
-			"variant",
-			"()I"
-		);
-	}
-	QAndroidJniObject UUID::randomUUID()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.UUID",
-			"randomUUID",
-			"()Ljava/util/UUID;"
-		);
-	}
-	QAndroidJniObject UUID::nameUUIDFromBytes(jbyteArray arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.UUID",
-			"nameUUIDFromBytes",
-			"([B)Ljava/util/UUID;",
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
 			arg0
 		);
 	}
@@ -150,29 +133,46 @@ namespace __jni_impl::java::util
 			"()J"
 		);
 	}
-	jint UUID::clockSequence()
+	jint UUID::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"clockSequence",
+			"hashCode",
 			"()I"
 		);
 	}
-	QAndroidJniObject UUID::fromString(jstring arg0)
+	jlong UUID::node()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.UUID",
-			"fromString",
-			"(Ljava/lang/String;)Ljava/util/UUID;",
-			arg0
+		return __thiz.callMethod<jlong>(
+			"node",
+			"()J"
 		);
 	}
-	QAndroidJniObject UUID::fromString(const QString &arg0)
+	jlong UUID::timestamp()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.UUID",
-			"fromString",
-			"(Ljava/lang/String;)Ljava/util/UUID;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+		return __thiz.callMethod<jlong>(
+			"timestamp",
+			"()J"
+		);
+	}
+	jstring UUID::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint UUID::variant()
+	{
+		return __thiz.callMethod<jint>(
+			"variant",
+			"()I"
+		);
+	}
+	jint UUID::version()
+	{
+		return __thiz.callMethod<jint>(
+			"version",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::java::util

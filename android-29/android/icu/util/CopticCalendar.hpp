@@ -10,10 +10,6 @@ namespace __jni_impl::android::icu::util
 {
 	class TimeZone;
 }
-namespace __jni_impl::java::util
-{
-	class Locale;
-}
 namespace __jni_impl::android::icu::util
 {
 	class ULocale;
@@ -21,6 +17,10 @@ namespace __jni_impl::android::icu::util
 namespace __jni_impl::java::util
 {
 	class Date;
+}
+namespace __jni_impl::java::util
+{
+	class Locale;
 }
 
 namespace __jni_impl::android::icu::util
@@ -44,15 +44,15 @@ namespace __jni_impl::android::icu::util
 		static jint TOUT();
 		
 		// Constructors
-		void __constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1);
-		void __constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1);
-		void __constructor(jint arg0, jint arg1, jint arg2);
-		void __constructor(__jni_impl::java::util::Date arg0);
-		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		void __constructor();
 		void __constructor(__jni_impl::android::icu::util::TimeZone arg0);
-		void __constructor(__jni_impl::java::util::Locale arg0);
 		void __constructor(__jni_impl::android::icu::util::ULocale arg0);
+		void __constructor(__jni_impl::java::util::Date arg0);
+		void __constructor(__jni_impl::java::util::Locale arg0);
+		void __constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1);
+		void __constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1);
+		void __constructor(jint arg0, jint arg1, jint arg2);
+		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
 		jstring getType();
@@ -60,9 +60,9 @@ namespace __jni_impl::android::icu::util
 } // namespace __jni_impl::android::icu::util
 
 #include "TimeZone.hpp"
-#include "../../../java/util/Locale.hpp"
 #include "ULocale.hpp"
 #include "../../../java/util/Date.hpp"
+#include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::icu::util
 {
@@ -160,55 +160,6 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Constructors
-	void CopticCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.CopticCalendar",
-			"(Landroid/icu/util/TimeZone;Ljava/util/Locale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void CopticCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.CopticCalendar",
-			"(Landroid/icu/util/TimeZone;Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void CopticCalendar::__constructor(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.CopticCalendar",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void CopticCalendar::__constructor(__jni_impl::java::util::Date arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.CopticCalendar",
-			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void CopticCalendar::__constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.CopticCalendar",
-			"(IIIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5
-		);
-	}
 	void CopticCalendar::__constructor()
 	{
 		__thiz = QAndroidJniObject(
@@ -224,6 +175,22 @@ namespace __jni_impl::android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
+	void CopticCalendar::__constructor(__jni_impl::android::icu::util::ULocale arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.CopticCalendar",
+			"(Landroid/icu/util/ULocale;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void CopticCalendar::__constructor(__jni_impl::java::util::Date arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.CopticCalendar",
+			"(Ljava/util/Date;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void CopticCalendar::__constructor(__jni_impl::java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -232,12 +199,45 @@ namespace __jni_impl::android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	void CopticCalendar::__constructor(__jni_impl::android::icu::util::ULocale arg0)
+	void CopticCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.CopticCalendar",
-			"(Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object()
+			"(Landroid/icu/util/TimeZone;Landroid/icu/util/ULocale;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void CopticCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.CopticCalendar",
+			"(Landroid/icu/util/TimeZone;Ljava/util/Locale;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void CopticCalendar::__constructor(jint arg0, jint arg1, jint arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.CopticCalendar",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void CopticCalendar::__constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.CopticCalendar",
+			"(IIIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5
 		);
 	}
 	
@@ -257,13 +257,37 @@ namespace android::icu::util
 	{
 	public:
 		CopticCalendar(QAndroidJniObject obj) { __thiz = obj; }
-		CopticCalendar(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
+		CopticCalendar()
+		{
+			__constructor();
+		}
+		CopticCalendar(__jni_impl::android::icu::util::TimeZone arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		CopticCalendar(__jni_impl::android::icu::util::ULocale arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		CopticCalendar(__jni_impl::java::util::Date arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		CopticCalendar(__jni_impl::java::util::Locale arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		CopticCalendar(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
 		}
-		CopticCalendar(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1)
+		CopticCalendar(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
 		{
 			__constructor(
 				arg0,
@@ -276,11 +300,6 @@ namespace android::icu::util
 				arg1,
 				arg2);
 		}
-		CopticCalendar(__jni_impl::java::util::Date arg0)
-		{
-			__constructor(
-				arg0);
-		}
 		CopticCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 		{
 			__constructor(
@@ -290,25 +309,6 @@ namespace android::icu::util
 				arg3,
 				arg4,
 				arg5);
-		}
-		CopticCalendar()
-		{
-			__constructor();
-		}
-		CopticCalendar(__jni_impl::android::icu::util::TimeZone arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		CopticCalendar(__jni_impl::java::util::Locale arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		CopticCalendar(__jni_impl::android::icu::util::ULocale arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::icu::util

@@ -21,10 +21,10 @@ namespace __jni_impl::android::service::autofill
 		void __constructor();
 		
 		// Methods
-		void onSuccess(__jni_impl::android::content::IntentSender arg0);
-		void onSuccess();
 		void onFailure(jstring arg0);
 		void onFailure(const QString &arg0);
+		void onSuccess();
+		void onSuccess(__jni_impl::android::content::IntentSender arg0);
 	};
 } // namespace __jni_impl::android::service::autofill
 
@@ -43,21 +43,6 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	void SaveCallback::onSuccess(__jni_impl::android::content::IntentSender arg0)
-	{
-		__thiz.callMethod<void>(
-			"onSuccess",
-			"(Landroid/content/IntentSender;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void SaveCallback::onSuccess()
-	{
-		__thiz.callMethod<void>(
-			"onSuccess",
-			"()V"
-		);
-	}
 	void SaveCallback::onFailure(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -72,6 +57,21 @@ namespace __jni_impl::android::service::autofill
 			"onFailure",
 			"(Ljava/lang/CharSequence;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void SaveCallback::onSuccess()
+	{
+		__thiz.callMethod<void>(
+			"onSuccess",
+			"()V"
+		);
+	}
+	void SaveCallback::onSuccess(__jni_impl::android::content::IntentSender arg0)
+	{
+		__thiz.callMethod<void>(
+			"onSuccess",
+			"(Landroid/content/IntentSender;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::service::autofill

@@ -6,14 +6,6 @@
 #include "../../../__JniBaseClass.hpp"
 #include "Formatter.hpp"
 
-namespace __jni_impl::java::util::logging
-{
-	class LogManager;
-}
-namespace __jni_impl::java::util::logging
-{
-	class LogRecord;
-}
 namespace __jni_impl::java::lang
 {
 	class StringBuilder;
@@ -21,6 +13,14 @@ namespace __jni_impl::java::lang
 namespace __jni_impl::java::util::logging
 {
 	class Handler;
+}
+namespace __jni_impl::java::util::logging
+{
+	class LogManager;
+}
+namespace __jni_impl::java::util::logging
+{
+	class LogRecord;
 }
 
 namespace __jni_impl::java::util::logging
@@ -40,10 +40,10 @@ namespace __jni_impl::java::util::logging
 	};
 } // namespace __jni_impl::java::util::logging
 
-#include "LogManager.hpp"
-#include "LogRecord.hpp"
 #include "../../lang/StringBuilder.hpp"
 #include "Handler.hpp"
+#include "LogManager.hpp"
+#include "LogRecord.hpp"
 
 namespace __jni_impl::java::util::logging
 {

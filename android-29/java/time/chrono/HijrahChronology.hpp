@@ -8,19 +8,15 @@
 
 namespace __jni_impl::java::io
 {
+	class InputStream;
+}
+namespace __jni_impl::java::io
+{
 	class ObjectInputStream;
 }
-namespace __jni_impl::java::time::temporal
+namespace __jni_impl::java::lang
 {
-	class ValueRange;
-}
-namespace __jni_impl::java::time::temporal
-{
-	class ChronoField;
-}
-namespace __jni_impl::java::time::chrono
-{
-	class HijrahDate;
+	class Void;
 }
 namespace __jni_impl::java::time
 {
@@ -28,27 +24,35 @@ namespace __jni_impl::java::time
 }
 namespace __jni_impl::java::time
 {
+	class Instant;
+}
+namespace __jni_impl::java::time
+{
 	class ZoneId;
 }
-namespace __jni_impl::java::time::format
+namespace __jni_impl::java::time::chrono
 {
-	class ResolverStyle;
+	class HijrahDate;
 }
 namespace __jni_impl::java::time::chrono
 {
 	class HijrahEra;
 }
-namespace __jni_impl::java::time
+namespace __jni_impl::java::time::format
 {
-	class Instant;
+	class ResolverStyle;
+}
+namespace __jni_impl::java::time::temporal
+{
+	class ChronoField;
+}
+namespace __jni_impl::java::time::temporal
+{
+	class ValueRange;
 }
 namespace __jni_impl::java::util
 {
 	class Properties;
-}
-namespace __jni_impl::java::io
-{
-	class InputStream;
 }
 
 namespace __jni_impl::java::time::chrono
@@ -63,40 +67,41 @@ namespace __jni_impl::java::time::chrono
 		void __constructor();
 		
 		// Methods
-		jstring getId();
-		QAndroidJniObject range(__jni_impl::java::time::temporal::ChronoField arg0);
-		jstring getCalendarType();
-		jboolean isLeapYear(jlong arg0);
-		QAndroidJniObject date(jint arg0, jint arg1, jint arg2);
 		QAndroidJniObject date(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject date(jint arg0, jint arg1, jint arg2);
 		QAndroidJniObject date(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2, jint arg3);
 		QAndroidJniObject dateEpochDay(jlong arg0);
-		jint prolepticYear(__jni_impl::__JniBaseClass arg0, jint arg1);
-		QAndroidJniObject dateYearDay(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2);
-		QAndroidJniObject dateYearDay(jint arg0, jint arg1);
 		QAndroidJniObject dateNow();
 		QAndroidJniObject dateNow(__jni_impl::java::time::Clock arg0);
 		QAndroidJniObject dateNow(__jni_impl::java::time::ZoneId arg0);
-		QAndroidJniObject resolveDate(__jni_impl::__JniBaseClass arg0, __jni_impl::java::time::format::ResolverStyle arg1);
+		QAndroidJniObject dateYearDay(jint arg0, jint arg1);
+		QAndroidJniObject dateYearDay(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2);
 		QAndroidJniObject eraOf(jint arg0);
+		QAndroidJniObject eras();
+		jstring getCalendarType();
+		jstring getId();
+		jboolean isLeapYear(jlong arg0);
+		QAndroidJniObject localDateTime(__jni_impl::__JniBaseClass arg0);
+		jint prolepticYear(__jni_impl::__JniBaseClass arg0, jint arg1);
+		QAndroidJniObject range(__jni_impl::java::time::temporal::ChronoField arg0);
+		QAndroidJniObject resolveDate(__jni_impl::__JniBaseClass arg0, __jni_impl::java::time::format::ResolverStyle arg1);
 		QAndroidJniObject zonedDateTime(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject zonedDateTime(__jni_impl::java::time::Instant arg0, __jni_impl::java::time::ZoneId arg1);
-		QAndroidJniObject localDateTime(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject eras();
 	};
 } // namespace __jni_impl::java::time::chrono
 
-#include "../../io/ObjectInputStream.hpp"
-#include "../temporal/ValueRange.hpp"
-#include "../temporal/ChronoField.hpp"
-#include "HijrahDate.hpp"
-#include "../Clock.hpp"
-#include "../ZoneId.hpp"
-#include "../format/ResolverStyle.hpp"
-#include "HijrahEra.hpp"
-#include "../Instant.hpp"
-#include "../../util/Properties.hpp"
 #include "../../io/InputStream.hpp"
+#include "../../io/ObjectInputStream.hpp"
+#include "../../lang/Void.hpp"
+#include "../Clock.hpp"
+#include "../Instant.hpp"
+#include "../ZoneId.hpp"
+#include "HijrahDate.hpp"
+#include "HijrahEra.hpp"
+#include "../format/ResolverStyle.hpp"
+#include "../temporal/ChronoField.hpp"
+#include "../temporal/ValueRange.hpp"
+#include "../../util/Properties.hpp"
 
 namespace __jni_impl::java::time::chrono
 {
@@ -119,34 +124,12 @@ namespace __jni_impl::java::time::chrono
 	}
 	
 	// Methods
-	jstring HijrahChronology::getId()
+	QAndroidJniObject HijrahChronology::date(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getId",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject HijrahChronology::range(__jni_impl::java::time::temporal::ChronoField arg0)
-	{
-		return __thiz.callObjectMethod(
-			"range",
-			"(Ljava/time/temporal/ChronoField;)Ljava/time/temporal/ValueRange;",
+			"date",
+			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/HijrahDate;",
 			arg0.__jniObject().object()
-		);
-	}
-	jstring HijrahChronology::getCalendarType()
-	{
-		return __thiz.callObjectMethod(
-			"getCalendarType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jboolean HijrahChronology::isLeapYear(jlong arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isLeapYear",
-			"(J)Z",
-			arg0
 		);
 	}
 	QAndroidJniObject HijrahChronology::date(jint arg0, jint arg1, jint arg2)
@@ -157,14 +140,6 @@ namespace __jni_impl::java::time::chrono
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	QAndroidJniObject HijrahChronology::date(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"date",
-			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/HijrahDate;",
-			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject HijrahChronology::date(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2, jint arg3)
@@ -184,34 +159,6 @@ namespace __jni_impl::java::time::chrono
 			"dateEpochDay",
 			"(J)Ljava/time/chrono/HijrahDate;",
 			arg0
-		);
-	}
-	jint HijrahChronology::prolepticYear(__jni_impl::__JniBaseClass arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"prolepticYear",
-			"(Ljava/time/chrono/Era;I)I",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject HijrahChronology::dateYearDay(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callObjectMethod(
-			"dateYearDay",
-			"(Ljava/time/chrono/Era;II)Ljava/time/chrono/HijrahDate;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject HijrahChronology::dateYearDay(jint arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"dateYearDay",
-			"(II)Ljava/time/chrono/HijrahDate;",
-			arg0,
-			arg1
 		);
 	}
 	QAndroidJniObject HijrahChronology::dateNow()
@@ -237,13 +184,23 @@ namespace __jni_impl::java::time::chrono
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject HijrahChronology::resolveDate(__jni_impl::__JniBaseClass arg0, __jni_impl::java::time::format::ResolverStyle arg1)
+	QAndroidJniObject HijrahChronology::dateYearDay(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
-			"resolveDate",
-			"(Ljava/util/Map;Ljava/time/format/ResolverStyle;)Ljava/time/chrono/HijrahDate;",
+			"dateYearDay",
+			"(II)Ljava/time/chrono/HijrahDate;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject HijrahChronology::dateYearDay(__jni_impl::__JniBaseClass arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callObjectMethod(
+			"dateYearDay",
+			"(Ljava/time/chrono/Era;II)Ljava/time/chrono/HijrahDate;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg1,
+			arg2
 		);
 	}
 	QAndroidJniObject HijrahChronology::eraOf(jint arg0)
@@ -252,6 +209,69 @@ namespace __jni_impl::java::time::chrono
 			"eraOf",
 			"(I)Ljava/time/chrono/HijrahEra;",
 			arg0
+		);
+	}
+	QAndroidJniObject HijrahChronology::eras()
+	{
+		return __thiz.callObjectMethod(
+			"eras",
+			"()Ljava/util/List;"
+		);
+	}
+	jstring HijrahChronology::getCalendarType()
+	{
+		return __thiz.callObjectMethod(
+			"getCalendarType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring HijrahChronology::getId()
+	{
+		return __thiz.callObjectMethod(
+			"getId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jboolean HijrahChronology::isLeapYear(jlong arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLeapYear",
+			"(J)Z",
+			arg0
+		);
+	}
+	QAndroidJniObject HijrahChronology::localDateTime(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"localDateTime",
+			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/ChronoLocalDateTime;",
+			arg0.__jniObject().object()
+		);
+	}
+	jint HijrahChronology::prolepticYear(__jni_impl::__JniBaseClass arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"prolepticYear",
+			"(Ljava/time/chrono/Era;I)I",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	QAndroidJniObject HijrahChronology::range(__jni_impl::java::time::temporal::ChronoField arg0)
+	{
+		return __thiz.callObjectMethod(
+			"range",
+			"(Ljava/time/temporal/ChronoField;)Ljava/time/temporal/ValueRange;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject HijrahChronology::resolveDate(__jni_impl::__JniBaseClass arg0, __jni_impl::java::time::format::ResolverStyle arg1)
+	{
+		return __thiz.callObjectMethod(
+			"resolveDate",
+			"(Ljava/util/Map;Ljava/time/format/ResolverStyle;)Ljava/time/chrono/HijrahDate;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	QAndroidJniObject HijrahChronology::zonedDateTime(__jni_impl::__JniBaseClass arg0)
@@ -269,21 +289,6 @@ namespace __jni_impl::java::time::chrono
 			"(Ljava/time/Instant;Ljava/time/ZoneId;)Ljava/time/chrono/ChronoZonedDateTime;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject HijrahChronology::localDateTime(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"localDateTime",
-			"(Ljava/time/temporal/TemporalAccessor;)Ljava/time/chrono/ChronoLocalDateTime;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject HijrahChronology::eras()
-	{
-		return __thiz.callObjectMethod(
-			"eras",
-			"()Ljava/util/List;"
 		);
 	}
 } // namespace __jni_impl::java::time::chrono

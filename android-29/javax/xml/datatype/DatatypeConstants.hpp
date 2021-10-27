@@ -20,42 +20,42 @@ namespace __jni_impl::javax::xml::datatype
 	{
 	public:
 		// Fields
-		static jint JANUARY();
-		static jint FEBRUARY();
-		static jint MARCH();
 		static jint APRIL();
-		static jint MAY();
-		static jint JUNE();
-		static jint JULY();
 		static jint AUGUST();
-		static jint SEPTEMBER();
-		static jint OCTOBER();
-		static jint NOVEMBER();
-		static jint DECEMBER();
-		static jint LESSER();
-		static jint EQUAL();
-		static jint GREATER();
-		static jint INDETERMINATE();
-		static jint FIELD_UNDEFINED();
-		static QAndroidJniObject YEARS();
-		static QAndroidJniObject MONTHS();
-		static QAndroidJniObject DAYS();
-		static QAndroidJniObject HOURS();
-		static QAndroidJniObject MINUTES();
-		static QAndroidJniObject SECONDS();
-		static QAndroidJniObject DATETIME();
-		static QAndroidJniObject TIME();
 		static QAndroidJniObject DATE();
-		static QAndroidJniObject GYEARMONTH();
-		static QAndroidJniObject GMONTHDAY();
-		static QAndroidJniObject GYEAR();
-		static QAndroidJniObject GMONTH();
-		static QAndroidJniObject GDAY();
+		static QAndroidJniObject DATETIME();
+		static QAndroidJniObject DAYS();
+		static jint DECEMBER();
 		static QAndroidJniObject DURATION();
 		static QAndroidJniObject DURATION_DAYTIME();
 		static QAndroidJniObject DURATION_YEARMONTH();
+		static jint EQUAL();
+		static jint FEBRUARY();
+		static jint FIELD_UNDEFINED();
+		static QAndroidJniObject GDAY();
+		static QAndroidJniObject GMONTH();
+		static QAndroidJniObject GMONTHDAY();
+		static jint GREATER();
+		static QAndroidJniObject GYEAR();
+		static QAndroidJniObject GYEARMONTH();
+		static QAndroidJniObject HOURS();
+		static jint INDETERMINATE();
+		static jint JANUARY();
+		static jint JULY();
+		static jint JUNE();
+		static jint LESSER();
+		static jint MARCH();
 		static jint MAX_TIMEZONE_OFFSET();
+		static jint MAY();
+		static QAndroidJniObject MINUTES();
 		static jint MIN_TIMEZONE_OFFSET();
+		static QAndroidJniObject MONTHS();
+		static jint NOVEMBER();
+		static jint OCTOBER();
+		static QAndroidJniObject SECONDS();
+		static jint SEPTEMBER();
+		static QAndroidJniObject TIME();
+		static QAndroidJniObject YEARS();
 		
 		// Constructors
 		void __constructor();
@@ -70,27 +70,6 @@ namespace __jni_impl::javax::xml::datatype
 namespace __jni_impl::javax::xml::datatype
 {
 	// Fields
-	jint DatatypeConstants::JANUARY()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"javax.xml.datatype.DatatypeConstants",
-			"JANUARY"
-		);
-	}
-	jint DatatypeConstants::FEBRUARY()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"javax.xml.datatype.DatatypeConstants",
-			"FEBRUARY"
-		);
-	}
-	jint DatatypeConstants::MARCH()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"javax.xml.datatype.DatatypeConstants",
-			"MARCH"
-		);
-	}
 	jint DatatypeConstants::APRIL()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
@@ -98,159 +77,11 @@ namespace __jni_impl::javax::xml::datatype
 			"APRIL"
 		);
 	}
-	jint DatatypeConstants::MAY()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"javax.xml.datatype.DatatypeConstants",
-			"MAY"
-		);
-	}
-	jint DatatypeConstants::JUNE()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"javax.xml.datatype.DatatypeConstants",
-			"JUNE"
-		);
-	}
-	jint DatatypeConstants::JULY()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"javax.xml.datatype.DatatypeConstants",
-			"JULY"
-		);
-	}
 	jint DatatypeConstants::AUGUST()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"javax.xml.datatype.DatatypeConstants",
 			"AUGUST"
-		);
-	}
-	jint DatatypeConstants::SEPTEMBER()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"javax.xml.datatype.DatatypeConstants",
-			"SEPTEMBER"
-		);
-	}
-	jint DatatypeConstants::OCTOBER()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"javax.xml.datatype.DatatypeConstants",
-			"OCTOBER"
-		);
-	}
-	jint DatatypeConstants::NOVEMBER()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"javax.xml.datatype.DatatypeConstants",
-			"NOVEMBER"
-		);
-	}
-	jint DatatypeConstants::DECEMBER()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"javax.xml.datatype.DatatypeConstants",
-			"DECEMBER"
-		);
-	}
-	jint DatatypeConstants::LESSER()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"javax.xml.datatype.DatatypeConstants",
-			"LESSER"
-		);
-	}
-	jint DatatypeConstants::EQUAL()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"javax.xml.datatype.DatatypeConstants",
-			"EQUAL"
-		);
-	}
-	jint DatatypeConstants::GREATER()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"javax.xml.datatype.DatatypeConstants",
-			"GREATER"
-		);
-	}
-	jint DatatypeConstants::INDETERMINATE()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"javax.xml.datatype.DatatypeConstants",
-			"INDETERMINATE"
-		);
-	}
-	jint DatatypeConstants::FIELD_UNDEFINED()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"javax.xml.datatype.DatatypeConstants",
-			"FIELD_UNDEFINED"
-		);
-	}
-	QAndroidJniObject DatatypeConstants::YEARS()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.xml.datatype.DatatypeConstants",
-			"YEARS",
-			"Ljavax/xml/datatype/DatatypeConstants$Field;"
-		);
-	}
-	QAndroidJniObject DatatypeConstants::MONTHS()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.xml.datatype.DatatypeConstants",
-			"MONTHS",
-			"Ljavax/xml/datatype/DatatypeConstants$Field;"
-		);
-	}
-	QAndroidJniObject DatatypeConstants::DAYS()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.xml.datatype.DatatypeConstants",
-			"DAYS",
-			"Ljavax/xml/datatype/DatatypeConstants$Field;"
-		);
-	}
-	QAndroidJniObject DatatypeConstants::HOURS()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.xml.datatype.DatatypeConstants",
-			"HOURS",
-			"Ljavax/xml/datatype/DatatypeConstants$Field;"
-		);
-	}
-	QAndroidJniObject DatatypeConstants::MINUTES()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.xml.datatype.DatatypeConstants",
-			"MINUTES",
-			"Ljavax/xml/datatype/DatatypeConstants$Field;"
-		);
-	}
-	QAndroidJniObject DatatypeConstants::SECONDS()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.xml.datatype.DatatypeConstants",
-			"SECONDS",
-			"Ljavax/xml/datatype/DatatypeConstants$Field;"
-		);
-	}
-	QAndroidJniObject DatatypeConstants::DATETIME()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.xml.datatype.DatatypeConstants",
-			"DATETIME",
-			"Ljavax/xml/namespace/QName;"
-		);
-	}
-	QAndroidJniObject DatatypeConstants::TIME()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.xml.datatype.DatatypeConstants",
-			"TIME",
-			"Ljavax/xml/namespace/QName;"
 		);
 	}
 	QAndroidJniObject DatatypeConstants::DATE()
@@ -261,44 +92,27 @@ namespace __jni_impl::javax::xml::datatype
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::GYEARMONTH()
+	QAndroidJniObject DatatypeConstants::DATETIME()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
-			"GYEARMONTH",
+			"DATETIME",
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::GMONTHDAY()
+	QAndroidJniObject DatatypeConstants::DAYS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"javax.xml.datatype.DatatypeConstants",
-			"GMONTHDAY",
-			"Ljavax/xml/namespace/QName;"
+			"DAYS",
+			"Ljavax/xml/datatype/DatatypeConstants$Field;"
 		);
 	}
-	QAndroidJniObject DatatypeConstants::GYEAR()
+	jint DatatypeConstants::DECEMBER()
 	{
-		return QAndroidJniObject::getStaticObjectField(
+		return QAndroidJniObject::getStaticField<jint>(
 			"javax.xml.datatype.DatatypeConstants",
-			"GYEAR",
-			"Ljavax/xml/namespace/QName;"
-		);
-	}
-	QAndroidJniObject DatatypeConstants::GMONTH()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.xml.datatype.DatatypeConstants",
-			"GMONTH",
-			"Ljavax/xml/namespace/QName;"
-		);
-	}
-	QAndroidJniObject DatatypeConstants::GDAY()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.xml.datatype.DatatypeConstants",
-			"GDAY",
-			"Ljavax/xml/namespace/QName;"
+			"DECEMBER"
 		);
 	}
 	QAndroidJniObject DatatypeConstants::DURATION()
@@ -325,6 +139,124 @@ namespace __jni_impl::javax::xml::datatype
 			"Ljavax/xml/namespace/QName;"
 		);
 	}
+	jint DatatypeConstants::EQUAL()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"EQUAL"
+		);
+	}
+	jint DatatypeConstants::FEBRUARY()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"FEBRUARY"
+		);
+	}
+	jint DatatypeConstants::FIELD_UNDEFINED()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"FIELD_UNDEFINED"
+		);
+	}
+	QAndroidJniObject DatatypeConstants::GDAY()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"GDAY",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	QAndroidJniObject DatatypeConstants::GMONTH()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"GMONTH",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	QAndroidJniObject DatatypeConstants::GMONTHDAY()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"GMONTHDAY",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	jint DatatypeConstants::GREATER()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"GREATER"
+		);
+	}
+	QAndroidJniObject DatatypeConstants::GYEAR()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"GYEAR",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	QAndroidJniObject DatatypeConstants::GYEARMONTH()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"GYEARMONTH",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	QAndroidJniObject DatatypeConstants::HOURS()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"HOURS",
+			"Ljavax/xml/datatype/DatatypeConstants$Field;"
+		);
+	}
+	jint DatatypeConstants::INDETERMINATE()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"INDETERMINATE"
+		);
+	}
+	jint DatatypeConstants::JANUARY()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"JANUARY"
+		);
+	}
+	jint DatatypeConstants::JULY()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"JULY"
+		);
+	}
+	jint DatatypeConstants::JUNE()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"JUNE"
+		);
+	}
+	jint DatatypeConstants::LESSER()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"LESSER"
+		);
+	}
+	jint DatatypeConstants::MARCH()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"MARCH"
+		);
+	}
 	jint DatatypeConstants::MAX_TIMEZONE_OFFSET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
@@ -332,11 +264,79 @@ namespace __jni_impl::javax::xml::datatype
 			"MAX_TIMEZONE_OFFSET"
 		);
 	}
+	jint DatatypeConstants::MAY()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"MAY"
+		);
+	}
+	QAndroidJniObject DatatypeConstants::MINUTES()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"MINUTES",
+			"Ljavax/xml/datatype/DatatypeConstants$Field;"
+		);
+	}
 	jint DatatypeConstants::MIN_TIMEZONE_OFFSET()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"javax.xml.datatype.DatatypeConstants",
 			"MIN_TIMEZONE_OFFSET"
+		);
+	}
+	QAndroidJniObject DatatypeConstants::MONTHS()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"MONTHS",
+			"Ljavax/xml/datatype/DatatypeConstants$Field;"
+		);
+	}
+	jint DatatypeConstants::NOVEMBER()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"NOVEMBER"
+		);
+	}
+	jint DatatypeConstants::OCTOBER()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"OCTOBER"
+		);
+	}
+	QAndroidJniObject DatatypeConstants::SECONDS()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"SECONDS",
+			"Ljavax/xml/datatype/DatatypeConstants$Field;"
+		);
+	}
+	jint DatatypeConstants::SEPTEMBER()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"javax.xml.datatype.DatatypeConstants",
+			"SEPTEMBER"
+		);
+	}
+	QAndroidJniObject DatatypeConstants::TIME()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"TIME",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	QAndroidJniObject DatatypeConstants::YEARS()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.xml.datatype.DatatypeConstants",
+			"YEARS",
+			"Ljavax/xml/datatype/DatatypeConstants$Field;"
 		);
 	}
 	

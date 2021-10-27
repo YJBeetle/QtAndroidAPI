@@ -13,17 +13,17 @@ namespace __jni_impl::android::webkit
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NORMAL();
 		static QAndroidJniObject HIGH();
 		static QAndroidJniObject LOW();
+		static QAndroidJniObject NORMAL();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -31,14 +31,6 @@ namespace __jni_impl::android::webkit
 namespace __jni_impl::android::webkit
 {
 	// Fields
-	QAndroidJniObject WebSettings_RenderPriority::NORMAL()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.webkit.WebSettings$RenderPriority",
-			"NORMAL",
-			"Landroid/webkit/WebSettings$RenderPriority;"
-		);
-	}
 	QAndroidJniObject WebSettings_RenderPriority::HIGH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -55,6 +47,14 @@ namespace __jni_impl::android::webkit
 			"Landroid/webkit/WebSettings$RenderPriority;"
 		);
 	}
+	QAndroidJniObject WebSettings_RenderPriority::NORMAL()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.webkit.WebSettings$RenderPriority",
+			"NORMAL",
+			"Landroid/webkit/WebSettings$RenderPriority;"
+		);
+	}
 	
 	// Constructors
 	void WebSettings_RenderPriority::__constructor()
@@ -65,14 +65,6 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	jarray WebSettings_RenderPriority::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.webkit.WebSettings$RenderPriority",
-			"values",
-			"()[Landroid/webkit/WebSettings$RenderPriority;"
-		).object<jarray>();
-	}
 	QAndroidJniObject WebSettings_RenderPriority::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::android::webkit
 			"(Ljava/lang/String;)Landroid/webkit/WebSettings$RenderPriority;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray WebSettings_RenderPriority::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.webkit.WebSettings$RenderPriority",
+			"values",
+			"()[Landroid/webkit/WebSettings$RenderPriority;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::webkit
 

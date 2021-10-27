@@ -33,18 +33,18 @@ namespace __jni_impl::android::app::usage
 		void __constructor();
 		
 		// Methods
-		jint getState();
-		jint getTag();
-		jint getUid();
+		jint getDefaultNetworkStatus();
+		jlong getEndTimeStamp();
 		jint getMetered();
 		jint getRoaming();
-		jint getDefaultNetworkStatus();
-		jlong getStartTimeStamp();
-		jlong getEndTimeStamp();
 		jlong getRxBytes();
-		jlong getTxBytes();
 		jlong getRxPackets();
+		jlong getStartTimeStamp();
+		jint getState();
+		jint getTag();
+		jlong getTxBytes();
 		jlong getTxPackets();
+		jint getUid();
 	};
 } // namespace __jni_impl::android::app::usage
 
@@ -175,25 +175,18 @@ namespace __jni_impl::android::app::usage
 	}
 	
 	// Methods
-	jint NetworkStats_Bucket::getState()
+	jint NetworkStats_Bucket::getDefaultNetworkStatus()
 	{
 		return __thiz.callMethod<jint>(
-			"getState",
+			"getDefaultNetworkStatus",
 			"()I"
 		);
 	}
-	jint NetworkStats_Bucket::getTag()
+	jlong NetworkStats_Bucket::getEndTimeStamp()
 	{
-		return __thiz.callMethod<jint>(
-			"getTag",
-			"()I"
-		);
-	}
-	jint NetworkStats_Bucket::getUid()
-	{
-		return __thiz.callMethod<jint>(
-			"getUid",
-			"()I"
+		return __thiz.callMethod<jlong>(
+			"getEndTimeStamp",
+			"()J"
 		);
 	}
 	jint NetworkStats_Bucket::getMetered()
@@ -210,38 +203,10 @@ namespace __jni_impl::android::app::usage
 			"()I"
 		);
 	}
-	jint NetworkStats_Bucket::getDefaultNetworkStatus()
-	{
-		return __thiz.callMethod<jint>(
-			"getDefaultNetworkStatus",
-			"()I"
-		);
-	}
-	jlong NetworkStats_Bucket::getStartTimeStamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getStartTimeStamp",
-			"()J"
-		);
-	}
-	jlong NetworkStats_Bucket::getEndTimeStamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getEndTimeStamp",
-			"()J"
-		);
-	}
 	jlong NetworkStats_Bucket::getRxBytes()
 	{
 		return __thiz.callMethod<jlong>(
 			"getRxBytes",
-			"()J"
-		);
-	}
-	jlong NetworkStats_Bucket::getTxBytes()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTxBytes",
 			"()J"
 		);
 	}
@@ -252,11 +217,46 @@ namespace __jni_impl::android::app::usage
 			"()J"
 		);
 	}
+	jlong NetworkStats_Bucket::getStartTimeStamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getStartTimeStamp",
+			"()J"
+		);
+	}
+	jint NetworkStats_Bucket::getState()
+	{
+		return __thiz.callMethod<jint>(
+			"getState",
+			"()I"
+		);
+	}
+	jint NetworkStats_Bucket::getTag()
+	{
+		return __thiz.callMethod<jint>(
+			"getTag",
+			"()I"
+		);
+	}
+	jlong NetworkStats_Bucket::getTxBytes()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTxBytes",
+			"()J"
+		);
+	}
 	jlong NetworkStats_Bucket::getTxPackets()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTxPackets",
 			"()J"
+		);
+	}
+	jint NetworkStats_Bucket::getUid()
+	{
+		return __thiz.callMethod<jint>(
+			"getUid",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::app::usage

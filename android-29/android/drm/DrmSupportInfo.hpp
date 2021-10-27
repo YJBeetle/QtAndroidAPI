@@ -17,18 +17,18 @@ namespace __jni_impl::android::drm
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		jstring getDescription();
-		void setDescription(jstring arg0);
-		void setDescription(const QString &arg0);
-		void addMimeType(jstring arg0);
-		void addMimeType(const QString &arg0);
 		void addFileSuffix(jstring arg0);
 		void addFileSuffix(const QString &arg0);
-		QAndroidJniObject getMimeTypeIterator();
-		QAndroidJniObject getFileSuffixIterator();
+		void addMimeType(jstring arg0);
+		void addMimeType(const QString &arg0);
+		jboolean equals(jobject arg0);
 		jstring getDescriprition();
+		jstring getDescription();
+		QAndroidJniObject getFileSuffixIterator();
+		QAndroidJniObject getMimeTypeIterator();
+		jint hashCode();
+		void setDescription(jstring arg0);
+		void setDescription(const QString &arg0);
 	};
 } // namespace __jni_impl::android::drm
 
@@ -47,40 +47,18 @@ namespace __jni_impl::android::drm
 	}
 	
 	// Methods
-	jboolean DrmSupportInfo::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jint DrmSupportInfo::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jstring DrmSupportInfo::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void DrmSupportInfo::setDescription(jstring arg0)
+	void DrmSupportInfo::addFileSuffix(jstring arg0)
 	{
 		__thiz.callMethod<void>(
-			"setDescription",
+			"addFileSuffix",
 			"(Ljava/lang/String;)V",
 			arg0
 		);
 	}
-	void DrmSupportInfo::setDescription(const QString &arg0)
+	void DrmSupportInfo::addFileSuffix(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"setDescription",
+			"addFileSuffix",
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
@@ -101,20 +79,33 @@ namespace __jni_impl::android::drm
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void DrmSupportInfo::addFileSuffix(jstring arg0)
+	jboolean DrmSupportInfo::equals(jobject arg0)
 	{
-		__thiz.callMethod<void>(
-			"addFileSuffix",
-			"(Ljava/lang/String;)V",
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
 			arg0
 		);
 	}
-	void DrmSupportInfo::addFileSuffix(const QString &arg0)
+	jstring DrmSupportInfo::getDescriprition()
 	{
-		__thiz.callMethod<void>(
-			"addFileSuffix",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+		return __thiz.callObjectMethod(
+			"getDescriprition",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring DrmSupportInfo::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject DrmSupportInfo::getFileSuffixIterator()
+	{
+		return __thiz.callObjectMethod(
+			"getFileSuffixIterator",
+			"()Ljava/util/Iterator;"
 		);
 	}
 	QAndroidJniObject DrmSupportInfo::getMimeTypeIterator()
@@ -124,19 +115,28 @@ namespace __jni_impl::android::drm
 			"()Ljava/util/Iterator;"
 		);
 	}
-	QAndroidJniObject DrmSupportInfo::getFileSuffixIterator()
+	jint DrmSupportInfo::hashCode()
 	{
-		return __thiz.callObjectMethod(
-			"getFileSuffixIterator",
-			"()Ljava/util/Iterator;"
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
 	}
-	jstring DrmSupportInfo::getDescriprition()
+	void DrmSupportInfo::setDescription(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getDescriprition",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"setDescription",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void DrmSupportInfo::setDescription(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDescription",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
 	}
 } // namespace __jni_impl::android::drm
 

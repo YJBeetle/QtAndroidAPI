@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::util
-{
-	class SparseArray;
-}
 namespace __jni_impl::android::os
 {
 	class ParcelUuid;
+}
+namespace __jni_impl::android::util
+{
+	class SparseArray;
 }
 
 namespace __jni_impl::android::bluetooth::le
@@ -25,22 +25,22 @@ namespace __jni_impl::android::bluetooth::le
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		jbyteArray getBytes();
-		QAndroidJniObject getServiceUuids();
-		QAndroidJniObject getManufacturerSpecificData();
-		jbyteArray getManufacturerSpecificData(jint arg0);
-		jint getTxPowerLevel();
 		jint getAdvertiseFlags();
-		QAndroidJniObject getServiceSolicitationUuids();
+		jbyteArray getBytes();
 		jstring getDeviceName();
-		QAndroidJniObject getServiceData();
+		jbyteArray getManufacturerSpecificData(jint arg0);
+		QAndroidJniObject getManufacturerSpecificData();
 		jbyteArray getServiceData(__jni_impl::android::os::ParcelUuid arg0);
+		QAndroidJniObject getServiceData();
+		QAndroidJniObject getServiceSolicitationUuids();
+		QAndroidJniObject getServiceUuids();
+		jint getTxPowerLevel();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
-#include "../../util/SparseArray.hpp"
 #include "../../os/ParcelUuid.hpp"
+#include "../../util/SparseArray.hpp"
 
 namespace __jni_impl::android::bluetooth::le
 {
@@ -55,12 +55,12 @@ namespace __jni_impl::android::bluetooth::le
 	}
 	
 	// Methods
-	jstring ScanRecord::toString()
+	jint ScanRecord::getAdvertiseFlags()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"getAdvertiseFlags",
+			"()I"
+		);
 	}
 	jbyteArray ScanRecord::getBytes()
 	{
@@ -69,19 +69,12 @@ namespace __jni_impl::android::bluetooth::le
 			"()[B"
 		).object<jbyteArray>();
 	}
-	QAndroidJniObject ScanRecord::getServiceUuids()
+	jstring ScanRecord::getDeviceName()
 	{
 		return __thiz.callObjectMethod(
-			"getServiceUuids",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject ScanRecord::getManufacturerSpecificData()
-	{
-		return __thiz.callObjectMethod(
-			"getManufacturerSpecificData",
-			"()Landroid/util/SparseArray;"
-		);
+			"getDeviceName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jbyteArray ScanRecord::getManufacturerSpecificData(jint arg0)
 	{
@@ -91,39 +84,11 @@ namespace __jni_impl::android::bluetooth::le
 			arg0
 		).object<jbyteArray>();
 	}
-	jint ScanRecord::getTxPowerLevel()
-	{
-		return __thiz.callMethod<jint>(
-			"getTxPowerLevel",
-			"()I"
-		);
-	}
-	jint ScanRecord::getAdvertiseFlags()
-	{
-		return __thiz.callMethod<jint>(
-			"getAdvertiseFlags",
-			"()I"
-		);
-	}
-	QAndroidJniObject ScanRecord::getServiceSolicitationUuids()
+	QAndroidJniObject ScanRecord::getManufacturerSpecificData()
 	{
 		return __thiz.callObjectMethod(
-			"getServiceSolicitationUuids",
-			"()Ljava/util/List;"
-		);
-	}
-	jstring ScanRecord::getDeviceName()
-	{
-		return __thiz.callObjectMethod(
-			"getDeviceName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject ScanRecord::getServiceData()
-	{
-		return __thiz.callObjectMethod(
-			"getServiceData",
-			"()Ljava/util/Map;"
+			"getManufacturerSpecificData",
+			"()Landroid/util/SparseArray;"
 		);
 	}
 	jbyteArray ScanRecord::getServiceData(__jni_impl::android::os::ParcelUuid arg0)
@@ -133,6 +98,41 @@ namespace __jni_impl::android::bluetooth::le
 			"(Landroid/os/ParcelUuid;)[B",
 			arg0.__jniObject().object()
 		).object<jbyteArray>();
+	}
+	QAndroidJniObject ScanRecord::getServiceData()
+	{
+		return __thiz.callObjectMethod(
+			"getServiceData",
+			"()Ljava/util/Map;"
+		);
+	}
+	QAndroidJniObject ScanRecord::getServiceSolicitationUuids()
+	{
+		return __thiz.callObjectMethod(
+			"getServiceSolicitationUuids",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject ScanRecord::getServiceUuids()
+	{
+		return __thiz.callObjectMethod(
+			"getServiceUuids",
+			"()Ljava/util/List;"
+		);
+	}
+	jint ScanRecord::getTxPowerLevel()
+	{
+		return __thiz.callMethod<jint>(
+			"getTxPowerLevel",
+			"()I"
+		);
+	}
+	jstring ScanRecord::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::bluetooth::le
 

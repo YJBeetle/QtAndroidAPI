@@ -14,18 +14,18 @@ namespace __jni_impl::java::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject INTEGER();
-		static QAndroidJniObject FRACTION();
-		static QAndroidJniObject EXPONENT();
+		static QAndroidJniObject CURRENCY();
 		static QAndroidJniObject DECIMAL_SEPARATOR();
-		static QAndroidJniObject SIGN();
-		static QAndroidJniObject GROUPING_SEPARATOR();
+		static QAndroidJniObject EXPONENT();
+		static QAndroidJniObject EXPONENT_SIGN();
 		static QAndroidJniObject EXPONENT_SYMBOL();
+		static QAndroidJniObject FRACTION();
+		static QAndroidJniObject GROUPING_SEPARATOR();
+		static QAndroidJniObject INTEGER();
 		static QAndroidJniObject PERCENT();
 		static QAndroidJniObject PERMILLE();
-		static QAndroidJniObject CURRENCY();
-		static QAndroidJniObject EXPONENT_SIGN();
 		static QAndroidJniObject PREFIX();
+		static QAndroidJniObject SIGN();
 		static QAndroidJniObject SUFFIX();
 		
 		// Constructors
@@ -39,27 +39,11 @@ namespace __jni_impl::java::text
 namespace __jni_impl::java::text
 {
 	// Fields
-	QAndroidJniObject NumberFormat_Field::INTEGER()
+	QAndroidJniObject NumberFormat_Field::CURRENCY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.NumberFormat$Field",
-			"INTEGER",
-			"Ljava/text/NumberFormat$Field;"
-		);
-	}
-	QAndroidJniObject NumberFormat_Field::FRACTION()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.text.NumberFormat$Field",
-			"FRACTION",
-			"Ljava/text/NumberFormat$Field;"
-		);
-	}
-	QAndroidJniObject NumberFormat_Field::EXPONENT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.text.NumberFormat$Field",
-			"EXPONENT",
+			"CURRENCY",
 			"Ljava/text/NumberFormat$Field;"
 		);
 	}
@@ -71,11 +55,35 @@ namespace __jni_impl::java::text
 			"Ljava/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::SIGN()
+	QAndroidJniObject NumberFormat_Field::EXPONENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.NumberFormat$Field",
-			"SIGN",
+			"EXPONENT",
+			"Ljava/text/NumberFormat$Field;"
+		);
+	}
+	QAndroidJniObject NumberFormat_Field::EXPONENT_SIGN()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.text.NumberFormat$Field",
+			"EXPONENT_SIGN",
+			"Ljava/text/NumberFormat$Field;"
+		);
+	}
+	QAndroidJniObject NumberFormat_Field::EXPONENT_SYMBOL()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.text.NumberFormat$Field",
+			"EXPONENT_SYMBOL",
+			"Ljava/text/NumberFormat$Field;"
+		);
+	}
+	QAndroidJniObject NumberFormat_Field::FRACTION()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.text.NumberFormat$Field",
+			"FRACTION",
 			"Ljava/text/NumberFormat$Field;"
 		);
 	}
@@ -87,11 +95,11 @@ namespace __jni_impl::java::text
 			"Ljava/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::EXPONENT_SYMBOL()
+	QAndroidJniObject NumberFormat_Field::INTEGER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.NumberFormat$Field",
-			"EXPONENT_SYMBOL",
+			"INTEGER",
 			"Ljava/text/NumberFormat$Field;"
 		);
 	}
@@ -111,27 +119,19 @@ namespace __jni_impl::java::text
 			"Ljava/text/NumberFormat$Field;"
 		);
 	}
-	QAndroidJniObject NumberFormat_Field::CURRENCY()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.text.NumberFormat$Field",
-			"CURRENCY",
-			"Ljava/text/NumberFormat$Field;"
-		);
-	}
-	QAndroidJniObject NumberFormat_Field::EXPONENT_SIGN()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.text.NumberFormat$Field",
-			"EXPONENT_SIGN",
-			"Ljava/text/NumberFormat$Field;"
-		);
-	}
 	QAndroidJniObject NumberFormat_Field::PREFIX()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.NumberFormat$Field",
 			"PREFIX",
+			"Ljava/text/NumberFormat$Field;"
+		);
+	}
+	QAndroidJniObject NumberFormat_Field::SIGN()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.text.NumberFormat$Field",
+			"SIGN",
 			"Ljava/text/NumberFormat$Field;"
 		);
 	}

@@ -7,27 +7,43 @@
 
 namespace __jni_impl::android::app
 {
-	class FragmentHostCallback;
-}
-namespace __jni_impl::android::content::res
-{
-	class Configuration;
+	class Fragment;
 }
 namespace __jni_impl::android::app
 {
-	class Fragment;
+	class FragmentHostCallback;
+}
+namespace __jni_impl::android::app
+{
+	class FragmentManager;
 }
 namespace __jni_impl::android::app
 {
 	class FragmentManagerNonConfig;
 }
-namespace __jni_impl::android::view
+namespace __jni_impl::android::app
 {
-	class MenuInflater;
+	class LoaderManager;
+}
+namespace __jni_impl::android::content
+{
+	class Context;
+}
+namespace __jni_impl::android::content::res
+{
+	class Configuration;
 }
 namespace __jni_impl::android::util
 {
 	class ArrayMap;
+}
+namespace __jni_impl::android::view
+{
+	class MenuInflater;
+}
+namespace __jni_impl::android::view
+{
+	class View;
 }
 namespace __jni_impl::java::io
 {
@@ -36,22 +52,6 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class PrintWriter;
-}
-namespace __jni_impl::android::app
-{
-	class LoaderManager;
-}
-namespace __jni_impl::android::app
-{
-	class FragmentManager;
-}
-namespace __jni_impl::android::view
-{
-	class View;
-}
-namespace __jni_impl::android::content
-{
-	class Context;
 }
 
 namespace __jni_impl::android::app
@@ -65,64 +65,64 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		void dispatchConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
 		static QAndroidJniObject createController(__jni_impl::android::app::FragmentHostCallback arg0);
-		QAndroidJniObject findFragmentByWho(jstring arg0);
-		QAndroidJniObject findFragmentByWho(const QString &arg0);
 		void attachHost(__jni_impl::android::app::Fragment arg0);
-		void noteStateNotSaved();
-		QAndroidJniObject saveAllState();
-		void restoreAllState(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
-		void restoreAllState(__jni_impl::__JniBaseClass arg0, __jni_impl::android::app::FragmentManagerNonConfig arg1);
-		QAndroidJniObject retainNonConfig();
-		QAndroidJniObject retainNestedNonConfig();
 		void dispatchActivityCreated();
-		void dispatchStart();
+		void dispatchConfigurationChanged(__jni_impl::android::content::res::Configuration arg0);
+		jboolean dispatchContextItemSelected(__jni_impl::__JniBaseClass arg0);
+		void dispatchCreate();
+		jboolean dispatchCreateOptionsMenu(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::MenuInflater arg1);
+		void dispatchDestroy();
 		void dispatchDestroyView();
-		void dispatchMultiWindowModeChanged(jboolean arg0, __jni_impl::android::content::res::Configuration arg1);
+		void dispatchLowMemory();
 		void dispatchMultiWindowModeChanged(jboolean arg0);
+		void dispatchMultiWindowModeChanged(jboolean arg0, __jni_impl::android::content::res::Configuration arg1);
+		jboolean dispatchOptionsItemSelected(__jni_impl::__JniBaseClass arg0);
+		void dispatchOptionsMenuClosed(__jni_impl::__JniBaseClass arg0);
+		void dispatchPause();
 		void dispatchPictureInPictureModeChanged(jboolean arg0);
 		void dispatchPictureInPictureModeChanged(jboolean arg0, __jni_impl::android::content::res::Configuration arg1);
-		void dispatchLowMemory();
-		void dispatchTrimMemory(jint arg0);
-		jboolean dispatchCreateOptionsMenu(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::MenuInflater arg1);
 		jboolean dispatchPrepareOptionsMenu(__jni_impl::__JniBaseClass arg0);
-		jboolean dispatchOptionsItemSelected(__jni_impl::__JniBaseClass arg0);
-		jboolean dispatchContextItemSelected(__jni_impl::__JniBaseClass arg0);
-		void dispatchOptionsMenuClosed(__jni_impl::__JniBaseClass arg0);
-		jboolean execPendingActions();
+		void dispatchResume();
+		void dispatchStart();
+		void dispatchStop();
+		void dispatchTrimMemory(jint arg0);
+		void doLoaderDestroy();
 		void doLoaderStart();
 		void doLoaderStop(jboolean arg0);
-		void doLoaderDestroy();
-		void reportLoaderStart();
-		QAndroidJniObject retainLoaderNonConfig();
-		void restoreLoaderNonConfig(__jni_impl::android::util::ArrayMap arg0);
 		void dumpLoaders(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
 		void dumpLoaders(const QString &arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3);
-		QAndroidJniObject getLoaderManager();
+		jboolean execPendingActions();
+		QAndroidJniObject findFragmentByWho(jstring arg0);
+		QAndroidJniObject findFragmentByWho(const QString &arg0);
 		QAndroidJniObject getFragmentManager();
+		QAndroidJniObject getLoaderManager();
+		void noteStateNotSaved();
 		QAndroidJniObject onCreateView(__jni_impl::android::view::View arg0, jstring arg1, __jni_impl::android::content::Context arg2, __jni_impl::__JniBaseClass arg3);
 		QAndroidJniObject onCreateView(__jni_impl::android::view::View arg0, const QString &arg1, __jni_impl::android::content::Context arg2, __jni_impl::__JniBaseClass arg3);
-		void dispatchCreate();
-		void dispatchResume();
-		void dispatchPause();
-		void dispatchStop();
-		void dispatchDestroy();
+		void reportLoaderStart();
+		void restoreAllState(__jni_impl::__JniBaseClass arg0, __jni_impl::android::app::FragmentManagerNonConfig arg1);
+		void restoreAllState(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		void restoreLoaderNonConfig(__jni_impl::android::util::ArrayMap arg0);
+		QAndroidJniObject retainLoaderNonConfig();
+		QAndroidJniObject retainNestedNonConfig();
+		QAndroidJniObject retainNonConfig();
+		QAndroidJniObject saveAllState();
 	};
 } // namespace __jni_impl::android::app
 
-#include "FragmentHostCallback.hpp"
-#include "../content/res/Configuration.hpp"
 #include "Fragment.hpp"
+#include "FragmentHostCallback.hpp"
+#include "FragmentManager.hpp"
 #include "FragmentManagerNonConfig.hpp"
-#include "../view/MenuInflater.hpp"
+#include "LoaderManager.hpp"
+#include "../content/Context.hpp"
+#include "../content/res/Configuration.hpp"
 #include "../util/ArrayMap.hpp"
+#include "../view/MenuInflater.hpp"
+#include "../view/View.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
-#include "LoaderManager.hpp"
-#include "FragmentManager.hpp"
-#include "../view/View.hpp"
-#include "../content/Context.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -137,14 +137,6 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	void FragmentController::dispatchConfigurationChanged(__jni_impl::android::content::res::Configuration arg0)
-	{
-		__thiz.callMethod<void>(
-			"dispatchConfigurationChanged",
-			"(Landroid/content/res/Configuration;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject FragmentController::createController(__jni_impl::android::app::FragmentHostCallback arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -152,22 +144,6 @@ namespace __jni_impl::android::app
 			"createController",
 			"(Landroid/app/FragmentHostCallback;)Landroid/app/FragmentController;",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject FragmentController::findFragmentByWho(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findFragmentByWho",
-			"(Ljava/lang/String;)Landroid/app/Fragment;",
-			arg0
-		);
-	}
-	QAndroidJniObject FragmentController::findFragmentByWho(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findFragmentByWho",
-			"(Ljava/lang/String;)Landroid/app/Fragment;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void FragmentController::attachHost(__jni_impl::android::app::Fragment arg0)
@@ -178,52 +154,6 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object()
 		);
 	}
-	void FragmentController::noteStateNotSaved()
-	{
-		__thiz.callMethod<void>(
-			"noteStateNotSaved",
-			"()V"
-		);
-	}
-	QAndroidJniObject FragmentController::saveAllState()
-	{
-		return __thiz.callObjectMethod(
-			"saveAllState",
-			"()Landroid/os/Parcelable;"
-		);
-	}
-	void FragmentController::restoreAllState(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"restoreAllState",
-			"(Landroid/os/Parcelable;Ljava/util/List;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void FragmentController::restoreAllState(__jni_impl::__JniBaseClass arg0, __jni_impl::android::app::FragmentManagerNonConfig arg1)
-	{
-		__thiz.callMethod<void>(
-			"restoreAllState",
-			"(Landroid/os/Parcelable;Landroid/app/FragmentManagerNonConfig;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject FragmentController::retainNonConfig()
-	{
-		return __thiz.callObjectMethod(
-			"retainNonConfig",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject FragmentController::retainNestedNonConfig()
-	{
-		return __thiz.callObjectMethod(
-			"retainNestedNonConfig",
-			"()Landroid/app/FragmentManagerNonConfig;"
-		);
-	}
 	void FragmentController::dispatchActivityCreated()
 	{
 		__thiz.callMethod<void>(
@@ -231,10 +161,42 @@ namespace __jni_impl::android::app
 			"()V"
 		);
 	}
-	void FragmentController::dispatchStart()
+	void FragmentController::dispatchConfigurationChanged(__jni_impl::android::content::res::Configuration arg0)
 	{
 		__thiz.callMethod<void>(
-			"dispatchStart",
+			"dispatchConfigurationChanged",
+			"(Landroid/content/res/Configuration;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean FragmentController::dispatchContextItemSelected(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchContextItemSelected",
+			"(Landroid/view/MenuItem;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	void FragmentController::dispatchCreate()
+	{
+		__thiz.callMethod<void>(
+			"dispatchCreate",
+			"()V"
+		);
+	}
+	jboolean FragmentController::dispatchCreateOptionsMenu(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::MenuInflater arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchCreateOptionsMenu",
+			"(Landroid/view/Menu;Landroid/view/MenuInflater;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void FragmentController::dispatchDestroy()
+	{
+		__thiz.callMethod<void>(
+			"dispatchDestroy",
 			"()V"
 		);
 	}
@@ -243,6 +205,21 @@ namespace __jni_impl::android::app
 		__thiz.callMethod<void>(
 			"dispatchDestroyView",
 			"()V"
+		);
+	}
+	void FragmentController::dispatchLowMemory()
+	{
+		__thiz.callMethod<void>(
+			"dispatchLowMemory",
+			"()V"
+		);
+	}
+	void FragmentController::dispatchMultiWindowModeChanged(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"dispatchMultiWindowModeChanged",
+			"(Z)V",
+			arg0
 		);
 	}
 	void FragmentController::dispatchMultiWindowModeChanged(jboolean arg0, __jni_impl::android::content::res::Configuration arg1)
@@ -254,12 +231,27 @@ namespace __jni_impl::android::app
 			arg1.__jniObject().object()
 		);
 	}
-	void FragmentController::dispatchMultiWindowModeChanged(jboolean arg0)
+	jboolean FragmentController::dispatchOptionsItemSelected(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchOptionsItemSelected",
+			"(Landroid/view/MenuItem;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	void FragmentController::dispatchOptionsMenuClosed(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"dispatchMultiWindowModeChanged",
-			"(Z)V",
-			arg0
+			"dispatchOptionsMenuClosed",
+			"(Landroid/view/Menu;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void FragmentController::dispatchPause()
+	{
+		__thiz.callMethod<void>(
+			"dispatchPause",
+			"()V"
 		);
 	}
 	void FragmentController::dispatchPictureInPictureModeChanged(jboolean arg0)
@@ -279,10 +271,32 @@ namespace __jni_impl::android::app
 			arg1.__jniObject().object()
 		);
 	}
-	void FragmentController::dispatchLowMemory()
+	jboolean FragmentController::dispatchPrepareOptionsMenu(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"dispatchPrepareOptionsMenu",
+			"(Landroid/view/Menu;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	void FragmentController::dispatchResume()
 	{
 		__thiz.callMethod<void>(
-			"dispatchLowMemory",
+			"dispatchResume",
+			"()V"
+		);
+	}
+	void FragmentController::dispatchStart()
+	{
+		__thiz.callMethod<void>(
+			"dispatchStart",
+			"()V"
+		);
+	}
+	void FragmentController::dispatchStop()
+	{
+		__thiz.callMethod<void>(
+			"dispatchStop",
 			"()V"
 		);
 	}
@@ -294,52 +308,11 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
-	jboolean FragmentController::dispatchCreateOptionsMenu(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::MenuInflater arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchCreateOptionsMenu",
-			"(Landroid/view/Menu;Landroid/view/MenuInflater;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean FragmentController::dispatchPrepareOptionsMenu(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchPrepareOptionsMenu",
-			"(Landroid/view/Menu;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean FragmentController::dispatchOptionsItemSelected(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchOptionsItemSelected",
-			"(Landroid/view/MenuItem;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean FragmentController::dispatchContextItemSelected(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"dispatchContextItemSelected",
-			"(Landroid/view/MenuItem;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	void FragmentController::dispatchOptionsMenuClosed(__jni_impl::__JniBaseClass arg0)
+	void FragmentController::doLoaderDestroy()
 	{
 		__thiz.callMethod<void>(
-			"dispatchOptionsMenuClosed",
-			"(Landroid/view/Menu;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean FragmentController::execPendingActions()
-	{
-		return __thiz.callMethod<jboolean>(
-			"execPendingActions",
-			"()Z"
+			"doLoaderDestroy",
+			"()V"
 		);
 	}
 	void FragmentController::doLoaderStart()
@@ -355,35 +328,6 @@ namespace __jni_impl::android::app
 			"doLoaderStop",
 			"(Z)V",
 			arg0
-		);
-	}
-	void FragmentController::doLoaderDestroy()
-	{
-		__thiz.callMethod<void>(
-			"doLoaderDestroy",
-			"()V"
-		);
-	}
-	void FragmentController::reportLoaderStart()
-	{
-		__thiz.callMethod<void>(
-			"reportLoaderStart",
-			"()V"
-		);
-	}
-	QAndroidJniObject FragmentController::retainLoaderNonConfig()
-	{
-		return __thiz.callObjectMethod(
-			"retainLoaderNonConfig",
-			"()Landroid/util/ArrayMap;"
-		);
-	}
-	void FragmentController::restoreLoaderNonConfig(__jni_impl::android::util::ArrayMap arg0)
-	{
-		__thiz.callMethod<void>(
-			"restoreLoaderNonConfig",
-			"(Landroid/util/ArrayMap;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	void FragmentController::dumpLoaders(jstring arg0, __jni_impl::java::io::FileDescriptor arg1, __jni_impl::java::io::PrintWriter arg2, jarray arg3)
@@ -408,11 +352,27 @@ namespace __jni_impl::android::app
 			arg3
 		);
 	}
-	QAndroidJniObject FragmentController::getLoaderManager()
+	jboolean FragmentController::execPendingActions()
+	{
+		return __thiz.callMethod<jboolean>(
+			"execPendingActions",
+			"()Z"
+		);
+	}
+	QAndroidJniObject FragmentController::findFragmentByWho(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getLoaderManager",
-			"()Landroid/app/LoaderManager;"
+			"findFragmentByWho",
+			"(Ljava/lang/String;)Landroid/app/Fragment;",
+			arg0
+		);
+	}
+	QAndroidJniObject FragmentController::findFragmentByWho(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"findFragmentByWho",
+			"(Ljava/lang/String;)Landroid/app/Fragment;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject FragmentController::getFragmentManager()
@@ -420,6 +380,20 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"getFragmentManager",
 			"()Landroid/app/FragmentManager;"
+		);
+	}
+	QAndroidJniObject FragmentController::getLoaderManager()
+	{
+		return __thiz.callObjectMethod(
+			"getLoaderManager",
+			"()Landroid/app/LoaderManager;"
+		);
+	}
+	void FragmentController::noteStateNotSaved()
+	{
+		__thiz.callMethod<void>(
+			"noteStateNotSaved",
+			"()V"
 		);
 	}
 	QAndroidJniObject FragmentController::onCreateView(__jni_impl::android::view::View arg0, jstring arg1, __jni_impl::android::content::Context arg2, __jni_impl::__JniBaseClass arg3)
@@ -444,39 +418,65 @@ namespace __jni_impl::android::app
 			arg3.__jniObject().object()
 		);
 	}
-	void FragmentController::dispatchCreate()
+	void FragmentController::reportLoaderStart()
 	{
 		__thiz.callMethod<void>(
-			"dispatchCreate",
+			"reportLoaderStart",
 			"()V"
 		);
 	}
-	void FragmentController::dispatchResume()
+	void FragmentController::restoreAllState(__jni_impl::__JniBaseClass arg0, __jni_impl::android::app::FragmentManagerNonConfig arg1)
 	{
 		__thiz.callMethod<void>(
-			"dispatchResume",
-			"()V"
+			"restoreAllState",
+			"(Landroid/os/Parcelable;Landroid/app/FragmentManagerNonConfig;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
-	void FragmentController::dispatchPause()
+	void FragmentController::restoreAllState(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
-			"dispatchPause",
-			"()V"
+			"restoreAllState",
+			"(Landroid/os/Parcelable;Ljava/util/List;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
-	void FragmentController::dispatchStop()
+	void FragmentController::restoreLoaderNonConfig(__jni_impl::android::util::ArrayMap arg0)
 	{
 		__thiz.callMethod<void>(
-			"dispatchStop",
-			"()V"
+			"restoreLoaderNonConfig",
+			"(Landroid/util/ArrayMap;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	void FragmentController::dispatchDestroy()
+	QAndroidJniObject FragmentController::retainLoaderNonConfig()
 	{
-		__thiz.callMethod<void>(
-			"dispatchDestroy",
-			"()V"
+		return __thiz.callObjectMethod(
+			"retainLoaderNonConfig",
+			"()Landroid/util/ArrayMap;"
+		);
+	}
+	QAndroidJniObject FragmentController::retainNestedNonConfig()
+	{
+		return __thiz.callObjectMethod(
+			"retainNestedNonConfig",
+			"()Landroid/app/FragmentManagerNonConfig;"
+		);
+	}
+	QAndroidJniObject FragmentController::retainNonConfig()
+	{
+		return __thiz.callObjectMethod(
+			"retainNonConfig",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject FragmentController::saveAllState()
+	{
+		return __thiz.callObjectMethod(
+			"saveAllState",
+			"()Landroid/os/Parcelable;"
 		);
 	}
 } // namespace __jni_impl::android::app

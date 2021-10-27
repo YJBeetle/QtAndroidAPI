@@ -35,12 +35,12 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		void setText(jstring arg0);
-		void setText(const QString &arg0);
-		jstring getAccessibilityClassName();
 		void addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2);
+		jstring getAccessibilityClassName();
 		void setCurrentText(jstring arg0);
 		void setCurrentText(const QString &arg0);
+		void setText(jstring arg0);
+		void setText(const QString &arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -72,29 +72,6 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	void TextSwitcher::setText(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setText",
-			"(Ljava/lang/CharSequence;)V",
-			arg0
-		);
-	}
-	void TextSwitcher::setText(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setText",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring TextSwitcher::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
 	void TextSwitcher::addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2)
 	{
 		__thiz.callMethod<void>(
@@ -104,6 +81,13 @@ namespace __jni_impl::android::widget
 			arg1,
 			arg2.__jniObject().object()
 		);
+	}
+	jstring TextSwitcher::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void TextSwitcher::setCurrentText(jstring arg0)
 	{
@@ -117,6 +101,22 @@ namespace __jni_impl::android::widget
 	{
 		__thiz.callMethod<void>(
 			"setCurrentText",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void TextSwitcher::setText(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setText",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void TextSwitcher::setText(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setText",
 			"(Ljava/lang/CharSequence;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);

@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::webkit
 {
-	class WebMessagePort;
+	class WebMessage;
 }
 namespace __jni_impl::android::webkit
 {
-	class WebMessage;
+	class WebMessagePort;
 }
 
 namespace __jni_impl::android::webkit
@@ -29,8 +29,8 @@ namespace __jni_impl::android::webkit
 	};
 } // namespace __jni_impl::android::webkit
 
-#include "WebMessagePort.hpp"
 #include "WebMessage.hpp"
+#include "WebMessagePort.hpp"
 
 namespace __jni_impl::android::webkit
 {

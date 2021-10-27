@@ -21,13 +21,13 @@ namespace __jni_impl::android::webkit
 		void close();
 		void open(jstring arg0);
 		void open(const QString &arg0);
+		void releaseIconForPageUrl(jstring arg0);
+		void releaseIconForPageUrl(const QString &arg0);
 		void removeAllIcons();
 		void requestIconForPageUrl(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		void requestIconForPageUrl(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		void retainIconForPageUrl(jstring arg0);
 		void retainIconForPageUrl(const QString &arg0);
-		void releaseIconForPageUrl(jstring arg0);
-		void releaseIconForPageUrl(const QString &arg0);
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -77,6 +77,22 @@ namespace __jni_impl::android::webkit
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
+	void WebIconDatabase::releaseIconForPageUrl(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"releaseIconForPageUrl",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void WebIconDatabase::releaseIconForPageUrl(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"releaseIconForPageUrl",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void WebIconDatabase::removeAllIcons()
 	{
 		__thiz.callMethod<void>(
@@ -114,22 +130,6 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz.callMethod<void>(
 			"retainIconForPageUrl",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void WebIconDatabase::releaseIconForPageUrl(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"releaseIconForPageUrl",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void WebIconDatabase::releaseIconForPageUrl(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"releaseIconForPageUrl",
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);

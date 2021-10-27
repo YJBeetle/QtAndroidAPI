@@ -18,15 +18,15 @@ namespace __jni_impl::android::text
 		// Fields
 		
 		// Constructors
+		void __constructor(__jni_impl::android::os::Parcel arg0);
 		void __constructor(jstring arg0, jstring arg1);
 		void __constructor(const QString &arg0, const QString &arg1);
-		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		jstring getValue();
+		jint describeContents();
 		jstring getKey();
 		jint getSpanTypeId();
-		jint describeContents();
+		jstring getValue();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::text
@@ -38,6 +38,14 @@ namespace __jni_impl::android::text
 	// Fields
 	
 	// Constructors
+	void Annotation::__constructor(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.Annotation",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void Annotation::__constructor(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -56,22 +64,14 @@ namespace __jni_impl::android::text
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	void Annotation::__constructor(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.Annotation",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	
 	// Methods
-	jstring Annotation::getValue()
+	jint Annotation::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"getValue",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
 	jstring Annotation::getKey()
 	{
@@ -87,12 +87,12 @@ namespace __jni_impl::android::text
 			"()I"
 		);
 	}
-	jint Annotation::describeContents()
+	jstring Annotation::getValue()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"getValue",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Annotation::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -111,16 +111,16 @@ namespace android::text
 	{
 	public:
 		Annotation(QAndroidJniObject obj) { __thiz = obj; }
+		Annotation(__jni_impl::android::os::Parcel arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		Annotation(jstring arg0, jstring arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
-		}
-		Annotation(__jni_impl::android::os::Parcel arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::text

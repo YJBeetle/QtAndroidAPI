@@ -26,14 +26,14 @@ namespace __jni_impl::android::app::usage
 		void __constructor(__jni_impl::android::app::usage::ConfigurationStats arg0);
 		
 		// Methods
-		QAndroidJniObject getConfiguration();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jlong getLastTimeStamp();
+		jint getActivationCount();
+		QAndroidJniObject getConfiguration();
 		jlong getFirstTimeStamp();
 		jlong getLastTimeActive();
+		jlong getLastTimeStamp();
 		jlong getTotalTimeActive();
-		jint getActivationCount();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::usage
 
@@ -63,13 +63,6 @@ namespace __jni_impl::android::app::usage
 	}
 	
 	// Methods
-	QAndroidJniObject ConfigurationStats::getConfiguration()
-	{
-		return __thiz.callObjectMethod(
-			"getConfiguration",
-			"()Landroid/content/res/Configuration;"
-		);
-	}
 	jint ConfigurationStats::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -77,20 +70,18 @@ namespace __jni_impl::android::app::usage
 			"()I"
 		);
 	}
-	void ConfigurationStats::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jint ConfigurationStats::getActivationCount()
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callMethod<jint>(
+			"getActivationCount",
+			"()I"
 		);
 	}
-	jlong ConfigurationStats::getLastTimeStamp()
+	QAndroidJniObject ConfigurationStats::getConfiguration()
 	{
-		return __thiz.callMethod<jlong>(
-			"getLastTimeStamp",
-			"()J"
+		return __thiz.callObjectMethod(
+			"getConfiguration",
+			"()Landroid/content/res/Configuration;"
 		);
 	}
 	jlong ConfigurationStats::getFirstTimeStamp()
@@ -107,6 +98,13 @@ namespace __jni_impl::android::app::usage
 			"()J"
 		);
 	}
+	jlong ConfigurationStats::getLastTimeStamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getLastTimeStamp",
+			"()J"
+		);
+	}
 	jlong ConfigurationStats::getTotalTimeActive()
 	{
 		return __thiz.callMethod<jlong>(
@@ -114,11 +112,13 @@ namespace __jni_impl::android::app::usage
 			"()J"
 		);
 	}
-	jint ConfigurationStats::getActivationCount()
+	void ConfigurationStats::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
-			"getActivationCount",
-			"()I"
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::app::usage

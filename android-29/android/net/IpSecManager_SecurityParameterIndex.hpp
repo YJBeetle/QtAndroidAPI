@@ -17,9 +17,9 @@ namespace __jni_impl::android::net
 		void __constructor();
 		
 		// Methods
-		jstring toString();
 		void close();
 		jint getSpi();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::net
 
@@ -37,13 +37,6 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	jstring IpSecManager_SecurityParameterIndex::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	void IpSecManager_SecurityParameterIndex::close()
 	{
 		__thiz.callMethod<void>(
@@ -57,6 +50,13 @@ namespace __jni_impl::android::net
 			"getSpi",
 			"()I"
 		);
+	}
+	jstring IpSecManager_SecurityParameterIndex::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::net
 

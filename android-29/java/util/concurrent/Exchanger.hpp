@@ -21,8 +21,8 @@ namespace __jni_impl::java::util::concurrent
 		void __constructor();
 		
 		// Methods
-		jobject exchange(jobject arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2);
 		jobject exchange(jobject arg0);
+		jobject exchange(jobject arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2);
 	};
 } // namespace __jni_impl::java::util::concurrent
 
@@ -42,6 +42,14 @@ namespace __jni_impl::java::util::concurrent
 	}
 	
 	// Methods
+	jobject Exchanger::exchange(jobject arg0)
+	{
+		return __thiz.callObjectMethod(
+			"exchange",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0
+		).object<jobject>();
+	}
 	jobject Exchanger::exchange(jobject arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -50,14 +58,6 @@ namespace __jni_impl::java::util::concurrent
 			arg0,
 			arg1,
 			arg2.__jniObject().object()
-		).object<jobject>();
-	}
-	jobject Exchanger::exchange(jobject arg0)
-	{
-		return __thiz.callObjectMethod(
-			"exchange",
-			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
 		).object<jobject>();
 	}
 } // namespace __jni_impl::java::util::concurrent

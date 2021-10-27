@@ -6,9 +6,9 @@
 #include "../../../__JniBaseClass.hpp"
 #include "Calendar.hpp"
 
-namespace __jni_impl::java::util
+namespace __jni_impl::android::icu::text
 {
-	class Locale;
+	class DateFormat;
 }
 namespace __jni_impl::android::icu::util
 {
@@ -22,9 +22,9 @@ namespace __jni_impl::java::util
 {
 	class Date;
 }
-namespace __jni_impl::android::icu::text
+namespace __jni_impl::java::util
 {
-	class DateFormat;
+	class Locale;
 }
 
 namespace __jni_impl::android::icu::util
@@ -35,17 +35,17 @@ namespace __jni_impl::android::icu::util
 		// Fields
 		
 		// Constructors
-		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
-		void __constructor(__jni_impl::java::util::Locale arg0);
-		void __constructor(__jni_impl::android::icu::util::TimeZone arg0);
-		void __constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1);
-		void __constructor(__jni_impl::android::icu::util::ULocale arg0);
-		void __constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1);
 		void __constructor();
+		void __constructor(__jni_impl::android::icu::util::TimeZone arg0);
+		void __constructor(__jni_impl::android::icu::util::ULocale arg0);
 		void __constructor(__jni_impl::java::util::Date arg0);
+		void __constructor(__jni_impl::java::util::Locale arg0);
+		void __constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1);
+		void __constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1);
 		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3);
-		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
 		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
+		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
 		
 		// Methods
 		void add(jint arg0, jint arg1);
@@ -54,38 +54,22 @@ namespace __jni_impl::android::icu::util
 	};
 } // namespace __jni_impl::android::icu::util
 
-#include "../../../java/util/Locale.hpp"
+#include "../text/DateFormat.hpp"
 #include "TimeZone.hpp"
 #include "ULocale.hpp"
 #include "../../../java/util/Date.hpp"
-#include "../text/DateFormat.hpp"
+#include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::icu::util
 {
 	// Fields
 	
 	// Constructors
-	void ChineseCalendar::__constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
+	void ChineseCalendar::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.ChineseCalendar",
-			"(IIIIIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7
-		);
-	}
-	void ChineseCalendar::__constructor(__jni_impl::java::util::Locale arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.ChineseCalendar",
-			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
+			"()V"
 		);
 	}
 	void ChineseCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0)
@@ -96,20 +80,27 @@ namespace __jni_impl::android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	void ChineseCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.ChineseCalendar",
-			"(Landroid/icu/util/TimeZone;Ljava/util/Locale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
 	void ChineseCalendar::__constructor(__jni_impl::android::icu::util::ULocale arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.ChineseCalendar",
 			"(Landroid/icu/util/ULocale;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ChineseCalendar::__constructor(__jni_impl::java::util::Date arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.ChineseCalendar",
+			"(Ljava/util/Date;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ChineseCalendar::__constructor(__jni_impl::java::util::Locale arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.ChineseCalendar",
+			"(Ljava/util/Locale;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -122,19 +113,13 @@ namespace __jni_impl::android::icu::util
 			arg1.__jniObject().object()
 		);
 	}
-	void ChineseCalendar::__constructor()
+	void ChineseCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.ChineseCalendar",
-			"()V"
-		);
-	}
-	void ChineseCalendar::__constructor(__jni_impl::java::util::Date arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.ChineseCalendar",
-			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object()
+			"(Landroid/icu/util/TimeZone;Ljava/util/Locale;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	void ChineseCalendar::__constructor(jint arg0, jint arg1, jint arg2, jint arg3)
@@ -146,6 +131,18 @@ namespace __jni_impl::android::icu::util
 			arg1,
 			arg2,
 			arg3
+		);
+	}
+	void ChineseCalendar::__constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.ChineseCalendar",
+			"(IIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
 		);
 	}
 	void ChineseCalendar::__constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
@@ -162,16 +159,19 @@ namespace __jni_impl::android::icu::util
 			arg6
 		);
 	}
-	void ChineseCalendar::__constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void ChineseCalendar::__constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.ChineseCalendar",
-			"(IIIII)V",
+			"(IIIIIIII)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4
+			arg4,
+			arg5,
+			arg6,
+			arg7
 		);
 	}
 	
@@ -209,35 +209,26 @@ namespace android::icu::util
 	{
 	public:
 		ChineseCalendar(QAndroidJniObject obj) { __thiz = obj; }
-		ChineseCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
+		ChineseCalendar()
 		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2,
-				arg3,
-				arg4,
-				arg5,
-				arg6,
-				arg7);
-		}
-		ChineseCalendar(__jni_impl::java::util::Locale arg0)
-		{
-			__constructor(
-				arg0);
+			__constructor();
 		}
 		ChineseCalendar(__jni_impl::android::icu::util::TimeZone arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		ChineseCalendar(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
+		ChineseCalendar(__jni_impl::android::icu::util::ULocale arg0)
 		{
 			__constructor(
-				arg0,
-				arg1);
+				arg0);
 		}
-		ChineseCalendar(__jni_impl::android::icu::util::ULocale arg0)
+		ChineseCalendar(__jni_impl::java::util::Date arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		ChineseCalendar(__jni_impl::java::util::Locale arg0)
 		{
 			__constructor(
 				arg0);
@@ -248,14 +239,11 @@ namespace android::icu::util
 				arg0,
 				arg1);
 		}
-		ChineseCalendar()
-		{
-			__constructor();
-		}
-		ChineseCalendar(__jni_impl::java::util::Date arg0)
+		ChineseCalendar(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
 		{
 			__constructor(
-				arg0);
+				arg0,
+				arg1);
 		}
 		ChineseCalendar(jint arg0, jint arg1, jint arg2, jint arg3)
 		{
@@ -264,6 +252,15 @@ namespace android::icu::util
 				arg1,
 				arg2,
 				arg3);
+		}
+		ChineseCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+		{
+			__constructor(
+				arg0,
+				arg1,
+				arg2,
+				arg3,
+				arg4);
 		}
 		ChineseCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
 		{
@@ -276,14 +273,17 @@ namespace android::icu::util
 				arg5,
 				arg6);
 		}
-		ChineseCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+		ChineseCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
 		{
 			__constructor(
 				arg0,
 				arg1,
 				arg2,
 				arg3,
-				arg4);
+				arg4,
+				arg5,
+				arg6,
+				arg7);
 		}
 	};
 } // namespace android::icu::util

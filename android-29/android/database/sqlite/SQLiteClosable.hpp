@@ -17,8 +17,8 @@ namespace __jni_impl::android::database::sqlite
 		void __constructor();
 		
 		// Methods
-		void close();
 		void acquireReference();
+		void close();
 		void releaseReference();
 		void releaseReferenceFromContainer();
 	};
@@ -39,17 +39,17 @@ namespace __jni_impl::android::database::sqlite
 	}
 	
 	// Methods
-	void SQLiteClosable::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
-	}
 	void SQLiteClosable::acquireReference()
 	{
 		__thiz.callMethod<void>(
 			"acquireReference",
+			"()V"
+		);
+	}
+	void SQLiteClosable::close()
+	{
+		__thiz.callMethod<void>(
+			"close",
 			"()V"
 		);
 	}

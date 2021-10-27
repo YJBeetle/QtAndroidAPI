@@ -20,8 +20,8 @@ namespace __jni_impl::java::nio::charset
 		void __constructor(jint arg0);
 		
 		// Methods
-		jstring getMessage();
 		jint getInputLength();
+		jstring getMessage();
 	};
 } // namespace __jni_impl::java::nio::charset
 
@@ -41,19 +41,19 @@ namespace __jni_impl::java::nio::charset
 	}
 	
 	// Methods
-	jstring UnmappableCharacterException::getMessage()
-	{
-		return __thiz.callObjectMethod(
-			"getMessage",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint UnmappableCharacterException::getInputLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getInputLength",
 			"()I"
 		);
+	}
+	jstring UnmappableCharacterException::getMessage()
+	{
+		return __thiz.callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::nio::charset
 

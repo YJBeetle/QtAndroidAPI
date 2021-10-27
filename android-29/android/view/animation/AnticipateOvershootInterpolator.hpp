@@ -19,10 +19,10 @@ namespace __jni_impl::android::view::animation
 		// Fields
 		
 		// Constructors
+		void __constructor();
+		void __constructor(jfloat arg0);
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(jfloat arg0, jfloat arg1);
-		void __constructor(jfloat arg0);
-		void __constructor();
 		
 		// Methods
 		jfloat getInterpolation(jfloat arg0);
@@ -36,6 +36,21 @@ namespace __jni_impl::android::view::animation
 	// Fields
 	
 	// Constructors
+	void AnticipateOvershootInterpolator::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.animation.AnticipateOvershootInterpolator",
+			"()V"
+		);
+	}
+	void AnticipateOvershootInterpolator::__constructor(jfloat arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.animation.AnticipateOvershootInterpolator",
+			"(F)V",
+			arg0
+		);
+	}
 	void AnticipateOvershootInterpolator::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -52,21 +67,6 @@ namespace __jni_impl::android::view::animation
 			"(FF)V",
 			arg0,
 			arg1
-		);
-	}
-	void AnticipateOvershootInterpolator::__constructor(jfloat arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.animation.AnticipateOvershootInterpolator",
-			"(F)V",
-			arg0
-		);
-	}
-	void AnticipateOvershootInterpolator::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.animation.AnticipateOvershootInterpolator",
-			"()V"
 		);
 	}
 	
@@ -87,6 +87,15 @@ namespace android::view::animation
 	{
 	public:
 		AnticipateOvershootInterpolator(QAndroidJniObject obj) { __thiz = obj; }
+		AnticipateOvershootInterpolator()
+		{
+			__constructor();
+		}
+		AnticipateOvershootInterpolator(jfloat arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		AnticipateOvershootInterpolator(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 		{
 			__constructor(
@@ -98,15 +107,6 @@ namespace android::view::animation
 			__constructor(
 				arg0,
 				arg1);
-		}
-		AnticipateOvershootInterpolator(jfloat arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		AnticipateOvershootInterpolator()
-		{
-			__constructor();
 		}
 	};
 } // namespace android::view::animation

@@ -22,9 +22,9 @@ namespace __jni_impl::android::media::session
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media::session
@@ -52,6 +52,13 @@ namespace __jni_impl::android::media::session
 	}
 	
 	// Methods
+	jint MediaSession_Token::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean MediaSession_Token::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -64,13 +71,6 @@ namespace __jni_impl::android::media::session
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I"
-		);
-	}
-	jint MediaSession_Token::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
 			"()I"
 		);
 	}

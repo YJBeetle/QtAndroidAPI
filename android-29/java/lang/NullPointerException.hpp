@@ -21,6 +21,8 @@ namespace __jni_impl::java::lang
 		void __constructor(const QString &arg0);
 		
 		// Methods
+		jthrowable fillInStackTrace();
+		jstring getMessage();
 	};
 } // namespace __jni_impl::java::lang
 
@@ -55,6 +57,20 @@ namespace __jni_impl::java::lang
 	}
 	
 	// Methods
+	jthrowable NullPointerException::fillInStackTrace()
+	{
+		return __thiz.callObjectMethod(
+			"fillInStackTrace",
+			"()Ljava/lang/Throwable;"
+		).object<jthrowable>();
+	}
+	jstring NullPointerException::getMessage()
+	{
+		return __thiz.callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 } // namespace __jni_impl::java::lang
 
 namespace java::lang

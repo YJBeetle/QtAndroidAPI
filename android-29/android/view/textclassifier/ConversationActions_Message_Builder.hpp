@@ -9,13 +9,13 @@ namespace __jni_impl::android::app
 {
 	class Person;
 }
-namespace __jni_impl::android::view::textclassifier
-{
-	class ConversationActions_Message;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::view::textclassifier
+{
+	class ConversationActions_Message;
 }
 namespace __jni_impl::java::time
 {
@@ -34,16 +34,16 @@ namespace __jni_impl::android::view::textclassifier
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setText(jstring arg0);
-		QAndroidJniObject setText(const QString &arg0);
 		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject setReferenceTime(__jni_impl::java::time::ZonedDateTime arg0);
+		QAndroidJniObject setText(jstring arg0);
+		QAndroidJniObject setText(const QString &arg0);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
 #include "../../app/Person.hpp"
-#include "ConversationActions_Message.hpp"
 #include "../../os/Bundle.hpp"
+#include "ConversationActions_Message.hpp"
 #include "../../../java/time/ZonedDateTime.hpp"
 
 namespace __jni_impl::android::view::textclassifier
@@ -68,22 +68,6 @@ namespace __jni_impl::android::view::textclassifier
 			"()Landroid/view/textclassifier/ConversationActions$Message;"
 		);
 	}
-	QAndroidJniObject ConversationActions_Message_Builder::setText(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setText",
-			"(Ljava/lang/CharSequence;)Landroid/view/textclassifier/ConversationActions$Message$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject ConversationActions_Message_Builder::setText(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setText",
-			"(Ljava/lang/CharSequence;)Landroid/view/textclassifier/ConversationActions$Message$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject ConversationActions_Message_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -98,6 +82,22 @@ namespace __jni_impl::android::view::textclassifier
 			"setReferenceTime",
 			"(Ljava/time/ZonedDateTime;)Landroid/view/textclassifier/ConversationActions$Message$Builder;",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ConversationActions_Message_Builder::setText(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setText",
+			"(Ljava/lang/CharSequence;)Landroid/view/textclassifier/ConversationActions$Message$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject ConversationActions_Message_Builder::setText(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setText",
+			"(Ljava/lang/CharSequence;)Landroid/view/textclassifier/ConversationActions$Message$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::view::textclassifier

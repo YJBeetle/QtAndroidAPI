@@ -15,18 +15,18 @@ namespace __jni_impl::android::graphics
 		// Fields
 		static QAndroidJniObject DIFFERENCE();
 		static QAndroidJniObject INTERSECT();
+		static QAndroidJniObject REPLACE();
+		static QAndroidJniObject REVERSE_DIFFERENCE();
 		static QAndroidJniObject UNION();
 		static QAndroidJniObject XOR();
-		static QAndroidJniObject REVERSE_DIFFERENCE();
-		static QAndroidJniObject REPLACE();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -50,6 +50,22 @@ namespace __jni_impl::android::graphics
 			"Landroid/graphics/Region$Op;"
 		);
 	}
+	QAndroidJniObject Region_Op::REPLACE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.graphics.Region$Op",
+			"REPLACE",
+			"Landroid/graphics/Region$Op;"
+		);
+	}
+	QAndroidJniObject Region_Op::REVERSE_DIFFERENCE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.graphics.Region$Op",
+			"REVERSE_DIFFERENCE",
+			"Landroid/graphics/Region$Op;"
+		);
+	}
 	QAndroidJniObject Region_Op::UNION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -66,22 +82,6 @@ namespace __jni_impl::android::graphics
 			"Landroid/graphics/Region$Op;"
 		);
 	}
-	QAndroidJniObject Region_Op::REVERSE_DIFFERENCE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.graphics.Region$Op",
-			"REVERSE_DIFFERENCE",
-			"Landroid/graphics/Region$Op;"
-		);
-	}
-	QAndroidJniObject Region_Op::REPLACE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.graphics.Region$Op",
-			"REPLACE",
-			"Landroid/graphics/Region$Op;"
-		);
-	}
 	
 	// Constructors
 	void Region_Op::__constructor()
@@ -92,14 +92,6 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	jarray Region_Op::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Region$Op",
-			"values",
-			"()[Landroid/graphics/Region$Op;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Region_Op::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -117,6 +109,14 @@ namespace __jni_impl::android::graphics
 			"(Ljava/lang/String;)Landroid/graphics/Region$Op;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Region_Op::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Region$Op",
+			"values",
+			"()[Landroid/graphics/Region$Op;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::graphics
 

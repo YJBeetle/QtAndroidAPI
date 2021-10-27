@@ -18,10 +18,10 @@ namespace __jni_impl::javax::net::ssl
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint getType();
 		jbyteArray getEncoded();
+		jint getType();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::javax::net::ssl
 
@@ -47,19 +47,12 @@ namespace __jni_impl::javax::net::ssl
 			arg0
 		);
 	}
-	jstring SNIServerName::toString()
+	jbyteArray SNIServerName::getEncoded()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint SNIServerName::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
+			"getEncoded",
+			"()[B"
+		).object<jbyteArray>();
 	}
 	jint SNIServerName::getType()
 	{
@@ -68,12 +61,19 @@ namespace __jni_impl::javax::net::ssl
 			"()I"
 		);
 	}
-	jbyteArray SNIServerName::getEncoded()
+	jint SNIServerName::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring SNIServerName::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getEncoded",
-			"()[B"
-		).object<jbyteArray>();
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::net::ssl
 

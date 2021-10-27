@@ -105,16 +105,16 @@ namespace __jni_impl::android::print
 		void __constructor(const QString &arg0, const QString &arg1, jint arg2, jint arg3);
 		
 		// Methods
+		QAndroidJniObject asLandscape();
+		QAndroidJniObject asPortrait();
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
+		jint getHeightMils();
 		jstring getId();
 		jstring getLabel(__jni_impl::android::content::pm::PackageManager arg0);
 		jint getWidthMils();
-		jint getHeightMils();
+		jint hashCode();
 		jboolean isPortrait();
-		QAndroidJniObject asPortrait();
-		QAndroidJniObject asLandscape();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::print
 
@@ -813,6 +813,20 @@ namespace __jni_impl::android::print
 	}
 	
 	// Methods
+	QAndroidJniObject PrintAttributes_MediaSize::asLandscape()
+	{
+		return __thiz.callObjectMethod(
+			"asLandscape",
+			"()Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
+	QAndroidJniObject PrintAttributes_MediaSize::asPortrait()
+	{
+		return __thiz.callObjectMethod(
+			"asPortrait",
+			"()Landroid/print/PrintAttributes$MediaSize;"
+		);
+	}
 	jboolean PrintAttributes_MediaSize::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -821,17 +835,10 @@ namespace __jni_impl::android::print
 			arg0
 		);
 	}
-	jstring PrintAttributes_MediaSize::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint PrintAttributes_MediaSize::hashCode()
+	jint PrintAttributes_MediaSize::getHeightMils()
 	{
 		return __thiz.callMethod<jint>(
-			"hashCode",
+			"getHeightMils",
 			"()I"
 		);
 	}
@@ -857,10 +864,10 @@ namespace __jni_impl::android::print
 			"()I"
 		);
 	}
-	jint PrintAttributes_MediaSize::getHeightMils()
+	jint PrintAttributes_MediaSize::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"getHeightMils",
+			"hashCode",
 			"()I"
 		);
 	}
@@ -871,19 +878,12 @@ namespace __jni_impl::android::print
 			"()Z"
 		);
 	}
-	QAndroidJniObject PrintAttributes_MediaSize::asPortrait()
+	jstring PrintAttributes_MediaSize::toString()
 	{
 		return __thiz.callObjectMethod(
-			"asPortrait",
-			"()Landroid/print/PrintAttributes$MediaSize;"
-		);
-	}
-	QAndroidJniObject PrintAttributes_MediaSize::asLandscape()
-	{
-		return __thiz.callObjectMethod(
-			"asLandscape",
-			"()Landroid/print/PrintAttributes$MediaSize;"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::print
 

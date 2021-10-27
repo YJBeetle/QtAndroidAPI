@@ -37,20 +37,20 @@ namespace __jni_impl::android::icu::util
 		static jint TAISHO();
 		
 		// Constructors
-		void __constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1);
-		void __constructor(__jni_impl::java::util::Date arg0);
-		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3);
-		void __constructor(jint arg0, jint arg1, jint arg2);
-		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		void __constructor();
 		void __constructor(__jni_impl::android::icu::util::TimeZone arg0);
-		void __constructor(__jni_impl::java::util::Locale arg0);
 		void __constructor(__jni_impl::android::icu::util::ULocale arg0);
+		void __constructor(__jni_impl::java::util::Date arg0);
+		void __constructor(__jni_impl::java::util::Locale arg0);
+		void __constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1);
 		void __constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1);
+		void __constructor(jint arg0, jint arg1, jint arg2);
+		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3);
+		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		
 		// Methods
-		jstring getType();
 		jint getActualMaximum(jint arg0);
+		jstring getType();
 	};
 } // namespace __jni_impl::android::icu::util
 
@@ -99,57 +99,6 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Constructors
-	void JapaneseCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.JapaneseCalendar",
-			"(Landroid/icu/util/TimeZone;Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void JapaneseCalendar::__constructor(__jni_impl::java::util::Date arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.JapaneseCalendar",
-			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void JapaneseCalendar::__constructor(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.JapaneseCalendar",
-			"(IIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void JapaneseCalendar::__constructor(jint arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.JapaneseCalendar",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void JapaneseCalendar::__constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.JapaneseCalendar",
-			"(IIIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5
-		);
-	}
 	void JapaneseCalendar::__constructor()
 	{
 		__thiz = QAndroidJniObject(
@@ -165,6 +114,22 @@ namespace __jni_impl::android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
+	void JapaneseCalendar::__constructor(__jni_impl::android::icu::util::ULocale arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.JapaneseCalendar",
+			"(Landroid/icu/util/ULocale;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void JapaneseCalendar::__constructor(__jni_impl::java::util::Date arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.JapaneseCalendar",
+			"(Ljava/util/Date;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void JapaneseCalendar::__constructor(__jni_impl::java::util::Locale arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -173,12 +138,13 @@ namespace __jni_impl::android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	void JapaneseCalendar::__constructor(__jni_impl::android::icu::util::ULocale arg0)
+	void JapaneseCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.JapaneseCalendar",
-			"(Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object()
+			"(Landroid/icu/util/TimeZone;Landroid/icu/util/ULocale;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	void JapaneseCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
@@ -190,15 +156,42 @@ namespace __jni_impl::android::icu::util
 			arg1.__jniObject().object()
 		);
 	}
+	void JapaneseCalendar::__constructor(jint arg0, jint arg1, jint arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.JapaneseCalendar",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void JapaneseCalendar::__constructor(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.JapaneseCalendar",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void JapaneseCalendar::__constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.JapaneseCalendar",
+			"(IIIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5
+		);
+	}
 	
 	// Methods
-	jstring JapaneseCalendar::getType()
-	{
-		return __thiz.callObjectMethod(
-			"getType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint JapaneseCalendar::getActualMaximum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -206,6 +199,13 @@ namespace __jni_impl::android::icu::util
 			"(I)I",
 			arg0
 		);
+	}
+	jstring JapaneseCalendar::getType()
+	{
+		return __thiz.callObjectMethod(
+			"getType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::util
 
@@ -215,16 +215,48 @@ namespace android::icu::util
 	{
 	public:
 		JapaneseCalendar(QAndroidJniObject obj) { __thiz = obj; }
+		JapaneseCalendar()
+		{
+			__constructor();
+		}
+		JapaneseCalendar(__jni_impl::android::icu::util::TimeZone arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		JapaneseCalendar(__jni_impl::android::icu::util::ULocale arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		JapaneseCalendar(__jni_impl::java::util::Date arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		JapaneseCalendar(__jni_impl::java::util::Locale arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		JapaneseCalendar(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
 		}
-		JapaneseCalendar(__jni_impl::java::util::Date arg0)
+		JapaneseCalendar(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
 		{
 			__constructor(
-				arg0);
+				arg0,
+				arg1);
+		}
+		JapaneseCalendar(jint arg0, jint arg1, jint arg2)
+		{
+			__constructor(
+				arg0,
+				arg1,
+				arg2);
 		}
 		JapaneseCalendar(jint arg0, jint arg1, jint arg2, jint arg3)
 		{
@@ -233,13 +265,6 @@ namespace android::icu::util
 				arg1,
 				arg2,
 				arg3);
-		}
-		JapaneseCalendar(jint arg0, jint arg1, jint arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
 		}
 		JapaneseCalendar(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 		{
@@ -250,31 +275,6 @@ namespace android::icu::util
 				arg3,
 				arg4,
 				arg5);
-		}
-		JapaneseCalendar()
-		{
-			__constructor();
-		}
-		JapaneseCalendar(__jni_impl::android::icu::util::TimeZone arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		JapaneseCalendar(__jni_impl::java::util::Locale arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		JapaneseCalendar(__jni_impl::android::icu::util::ULocale arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		JapaneseCalendar(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
 		}
 	};
 } // namespace android::icu::util

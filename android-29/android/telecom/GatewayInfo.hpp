@@ -27,12 +27,12 @@ namespace __jni_impl::android::telecom
 		void __constructor(const QString &arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::net::Uri arg2);
 		
 		// Methods
-		jboolean isEmpty();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jstring getGatewayProviderPackageName();
 		QAndroidJniObject getGatewayAddress();
+		jstring getGatewayProviderPackageName();
 		QAndroidJniObject getOriginalAddress();
+		jboolean isEmpty();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telecom
 
@@ -74,13 +74,6 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
-	jboolean GatewayInfo::isEmpty()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEmpty",
-			"()Z"
-		);
-	}
 	jint GatewayInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -88,13 +81,11 @@ namespace __jni_impl::android::telecom
 			"()I"
 		);
 	}
-	void GatewayInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	QAndroidJniObject GatewayInfo::getGatewayAddress()
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callObjectMethod(
+			"getGatewayAddress",
+			"()Landroid/net/Uri;"
 		);
 	}
 	jstring GatewayInfo::getGatewayProviderPackageName()
@@ -104,18 +95,27 @@ namespace __jni_impl::android::telecom
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject GatewayInfo::getGatewayAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getGatewayAddress",
-			"()Landroid/net/Uri;"
-		);
-	}
 	QAndroidJniObject GatewayInfo::getOriginalAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getOriginalAddress",
 			"()Landroid/net/Uri;"
+		);
+	}
+	jboolean GatewayInfo::isEmpty()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEmpty",
+			"()Z"
+		);
+	}
+	void GatewayInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::telecom

@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view::textservice
-{
-	class SpellCheckerSession;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::view::textservice
+{
+	class SpellCheckerSession;
 }
 namespace __jni_impl::java::util
 {
@@ -33,8 +33,8 @@ namespace __jni_impl::android::view::textservice
 	};
 } // namespace __jni_impl::android::view::textservice
 
-#include "SpellCheckerSession.hpp"
 #include "../../os/Bundle.hpp"
+#include "SpellCheckerSession.hpp"
 #include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::view::textservice

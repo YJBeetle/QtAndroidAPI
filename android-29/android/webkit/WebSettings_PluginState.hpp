@@ -13,17 +13,17 @@ namespace __jni_impl::android::webkit
 	{
 	public:
 		// Fields
+		static QAndroidJniObject OFF();
 		static QAndroidJniObject ON();
 		static QAndroidJniObject ON_DEMAND();
-		static QAndroidJniObject OFF();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -31,6 +31,14 @@ namespace __jni_impl::android::webkit
 namespace __jni_impl::android::webkit
 {
 	// Fields
+	QAndroidJniObject WebSettings_PluginState::OFF()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.webkit.WebSettings$PluginState",
+			"OFF",
+			"Landroid/webkit/WebSettings$PluginState;"
+		);
+	}
 	QAndroidJniObject WebSettings_PluginState::ON()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -47,14 +55,6 @@ namespace __jni_impl::android::webkit
 			"Landroid/webkit/WebSettings$PluginState;"
 		);
 	}
-	QAndroidJniObject WebSettings_PluginState::OFF()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.webkit.WebSettings$PluginState",
-			"OFF",
-			"Landroid/webkit/WebSettings$PluginState;"
-		);
-	}
 	
 	// Constructors
 	void WebSettings_PluginState::__constructor()
@@ -65,14 +65,6 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	jarray WebSettings_PluginState::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.webkit.WebSettings$PluginState",
-			"values",
-			"()[Landroid/webkit/WebSettings$PluginState;"
-		).object<jarray>();
-	}
 	QAndroidJniObject WebSettings_PluginState::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::android::webkit
 			"(Ljava/lang/String;)Landroid/webkit/WebSettings$PluginState;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray WebSettings_PluginState::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.webkit.WebSettings$PluginState",
+			"values",
+			"()[Landroid/webkit/WebSettings$PluginState;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::webkit
 

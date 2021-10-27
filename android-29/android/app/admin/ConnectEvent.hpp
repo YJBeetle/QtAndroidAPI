@@ -27,10 +27,10 @@ namespace __jni_impl::android::app::admin
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		jint getPort();
-		QAndroidJniObject getInetAddress();
 		jint describeContents();
+		QAndroidJniObject getInetAddress();
+		jint getPort();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::admin
@@ -59,17 +59,10 @@ namespace __jni_impl::android::app::admin
 	}
 	
 	// Methods
-	jstring ConnectEvent::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint ConnectEvent::getPort()
+	jint ConnectEvent::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getPort",
+			"describeContents",
 			"()I"
 		);
 	}
@@ -80,12 +73,19 @@ namespace __jni_impl::android::app::admin
 			"()Ljava/net/InetAddress;"
 		);
 	}
-	jint ConnectEvent::describeContents()
+	jint ConnectEvent::getPort()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getPort",
 			"()I"
 		);
+	}
+	jstring ConnectEvent::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void ConnectEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

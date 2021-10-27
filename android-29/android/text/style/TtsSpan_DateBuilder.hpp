@@ -24,10 +24,10 @@ namespace __jni_impl::android::text::style
 		void __constructor(__jni_impl::java::lang::Integer arg0, __jni_impl::java::lang::Integer arg1, __jni_impl::java::lang::Integer arg2, __jni_impl::java::lang::Integer arg3);
 		
 		// Methods
-		QAndroidJniObject setMonth(jint arg0);
-		QAndroidJniObject setYear(jint arg0);
-		QAndroidJniObject setWeekday(jint arg0);
 		QAndroidJniObject setDay(jint arg0);
+		QAndroidJniObject setMonth(jint arg0);
+		QAndroidJniObject setWeekday(jint arg0);
+		QAndroidJniObject setYear(jint arg0);
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -58,18 +58,18 @@ namespace __jni_impl::android::text::style
 	}
 	
 	// Methods
-	QAndroidJniObject TtsSpan_DateBuilder::setMonth(jint arg0)
+	QAndroidJniObject TtsSpan_DateBuilder::setDay(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setMonth",
+			"setDay",
 			"(I)Landroid/text/style/TtsSpan$DateBuilder;",
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_DateBuilder::setYear(jint arg0)
+	QAndroidJniObject TtsSpan_DateBuilder::setMonth(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setYear",
+			"setMonth",
 			"(I)Landroid/text/style/TtsSpan$DateBuilder;",
 			arg0
 		);
@@ -82,10 +82,10 @@ namespace __jni_impl::android::text::style
 			arg0
 		);
 	}
-	QAndroidJniObject TtsSpan_DateBuilder::setDay(jint arg0)
+	QAndroidJniObject TtsSpan_DateBuilder::setYear(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setDay",
+			"setYear",
 			"(I)Landroid/text/style/TtsSpan$DateBuilder;",
 			arg0
 		);

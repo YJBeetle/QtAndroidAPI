@@ -7,23 +7,23 @@
 
 namespace __jni_impl::java::lang
 {
-	class ThreadGroup;
+	class ClassLoader;
 }
 namespace __jni_impl::java::lang
 {
-	class ClassLoader;
+	class Thread_State;
 }
-namespace __jni_impl::java::security
+namespace __jni_impl::java::lang
 {
-	class AccessControlContext;
+	class ThreadGroup;
 }
 namespace __jni_impl::java::lang::ref
 {
 	class ReferenceQueue;
 }
-namespace __jni_impl::java::lang
+namespace __jni_impl::java::security
 {
-	class Thread_State;
+	class AccessControlContext;
 }
 
 namespace __jni_impl::java::lang
@@ -32,82 +32,89 @@ namespace __jni_impl::java::lang
 	{
 	public:
 		// Fields
+		static jint MAX_PRIORITY();
 		static jint MIN_PRIORITY();
 		static jint NORM_PRIORITY();
-		static jint MAX_PRIORITY();
 		
 		// Constructors
-		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1);
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
 		void __constructor();
 		void __constructor(__jni_impl::__JniBaseClass arg0);
-		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, jlong arg3, jboolean arg4);
-		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2, jlong arg3, jboolean arg4);
-		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, jlong arg3);
-		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2, jlong arg3);
-		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2);
-		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2);
+		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		void __constructor(__jni_impl::__JniBaseClass arg0, const QString &arg1);
+		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, jstring arg1);
 		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, const QString &arg1);
+		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2);
+		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2);
+		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, jlong arg3);
+		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2, jlong arg3);
+		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, jlong arg3, jboolean arg4);
+		void __constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2, jlong arg3, jboolean arg4);
 		
 		// Methods
-		jstring getName();
-		void run();
-		jstring toString();
-		jboolean isInterrupted();
+		static jint activeCount();
 		static QAndroidJniObject currentThread();
-		static void onSpinWait();
-		void join(jlong arg0, jint arg1);
-		void join(jlong arg0);
-		void join();
-		QAndroidJniObject getThreadGroup();
-		void setContextClassLoader(__jni_impl::java::lang::ClassLoader arg0);
-		static jboolean holdsLock(jobject arg0);
-		jarray getStackTrace();
-		void checkAccess();
 		static void dumpStack();
-		void setPriority(jint arg0);
-		void setDaemon(jboolean arg0);
-		void start();
+		static jint enumerate(jarray arg0);
+		static QAndroidJniObject getAllStackTraces();
+		static QAndroidJniObject getDefaultUncaughtExceptionHandler();
+		static jboolean holdsLock(jobject arg0);
+		static jboolean interrupted();
+		static void onSpinWait();
+		static void setDefaultUncaughtExceptionHandler(__jni_impl::__JniBaseClass arg0);
 		static void sleep(jlong arg0);
 		static void sleep(jlong arg0, jint arg1);
-		jboolean isDaemon();
-		jint getPriority();
-		QAndroidJniObject getContextClassLoader();
-		void resume();
-		void interrupt();
-		static jint activeCount();
-		static jint enumerate(jarray arg0);
-		jboolean isAlive();
-		static void setDefaultUncaughtExceptionHandler(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getUncaughtExceptionHandler();
 		static void yield();
-		void stop();
-		static jboolean interrupted();
-		void suspend();
+		void checkAccess();
+		jint countStackFrames();
+		QAndroidJniObject getContextClassLoader();
+		jlong getId();
+		jstring getName();
+		jint getPriority();
+		jarray getStackTrace();
+		QAndroidJniObject getState();
+		QAndroidJniObject getThreadGroup();
+		QAndroidJniObject getUncaughtExceptionHandler();
+		void interrupt();
+		jboolean isAlive();
+		jboolean isDaemon();
+		jboolean isInterrupted();
+		void join();
+		void join(jlong arg0);
+		void join(jlong arg0, jint arg1);
+		void resume();
+		void run();
+		void setContextClassLoader(__jni_impl::java::lang::ClassLoader arg0);
+		void setDaemon(jboolean arg0);
 		void setName(jstring arg0);
 		void setName(const QString &arg0);
-		jint countStackFrames();
-		static QAndroidJniObject getAllStackTraces();
-		jlong getId();
-		QAndroidJniObject getState();
-		static QAndroidJniObject getDefaultUncaughtExceptionHandler();
+		void setPriority(jint arg0);
 		void setUncaughtExceptionHandler(__jni_impl::__JniBaseClass arg0);
+		void start();
+		void stop();
+		void suspend();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::lang
 
-#include "ThreadGroup.hpp"
 #include "ClassLoader.hpp"
-#include "../security/AccessControlContext.hpp"
-#include "ref/ReferenceQueue.hpp"
 #include "Thread_State.hpp"
+#include "ThreadGroup.hpp"
+#include "ref/ReferenceQueue.hpp"
+#include "../security/AccessControlContext.hpp"
 
 namespace __jni_impl::java::lang
 {
 	// Fields
+	jint Thread::MAX_PRIORITY()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"java.lang.Thread",
+			"MAX_PRIORITY"
+		);
+	}
 	jint Thread::MIN_PRIORITY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
@@ -122,22 +129,21 @@ namespace __jni_impl::java::lang
 			"NORM_PRIORITY"
 		);
 	}
-	jint Thread::MAX_PRIORITY()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"java.lang.Thread",
-			"MAX_PRIORITY"
-		);
-	}
 	
 	// Constructors
-	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1)
+	void Thread::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Thread",
-			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			"()V"
+		);
+	}
+	void Thread::__constructor(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.Thread",
+			"(Ljava/lang/Runnable;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void Thread::__constructor(jstring arg0)
@@ -156,19 +162,91 @@ namespace __jni_impl::java::lang
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void Thread::__constructor()
+	void Thread::__constructor(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Thread",
-			"()V"
+			"(Ljava/lang/Runnable;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
-	void Thread::__constructor(__jni_impl::__JniBaseClass arg0)
+	void Thread::__constructor(__jni_impl::__JniBaseClass arg0, const QString &arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.Thread",
-			"(Ljava/lang/Runnable;)V",
-			arg0.__jniObject().object()
+			"(Ljava/lang/Runnable;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.Thread",
+			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, jstring arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.Thread",
+			"(Ljava/lang/ThreadGroup;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.Thread",
+			"(Ljava/lang/ThreadGroup;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.Thread",
+			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
+	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.Thread",
+			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		);
+	}
+	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, jlong arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.Thread",
+			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3
+		);
+	}
+	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2, jlong arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.Thread",
+			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3
 		);
 	}
 	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, jlong arg3, jboolean arg4)
@@ -195,112 +273,14 @@ namespace __jni_impl::java::lang
 			arg4
 		);
 	}
-	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, jlong arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Thread",
-			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3
-		);
-	}
-	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2, jlong arg3)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Thread",
-			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3
-		);
-	}
-	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Thread",
-			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
-	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Thread",
-			"(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
-	}
-	void Thread::__constructor(__jni_impl::__JniBaseClass arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Thread",
-			"(Ljava/lang/Runnable;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void Thread::__constructor(__jni_impl::__JniBaseClass arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Thread",
-			"(Ljava/lang/Runnable;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Thread",
-			"(Ljava/lang/ThreadGroup;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void Thread::__constructor(__jni_impl::java::lang::ThreadGroup arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.Thread",
-			"(Ljava/lang/ThreadGroup;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	
 	// Methods
-	jstring Thread::getName()
+	jint Thread::activeCount()
 	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void Thread::run()
-	{
-		__thiz.callMethod<void>(
-			"run",
-			"()V"
-		);
-	}
-	jstring Thread::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jboolean Thread::isInterrupted()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isInterrupted",
-			"()Z"
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"java.lang.Thread",
+			"activeCount",
+			"()I"
 		);
 	}
 	QAndroidJniObject Thread::currentThread()
@@ -311,51 +291,37 @@ namespace __jni_impl::java::lang
 			"()Ljava/lang/Thread;"
 		);
 	}
-	void Thread::onSpinWait()
+	void Thread::dumpStack()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"java.lang.Thread",
-			"onSpinWait",
+			"dumpStack",
 			"()V"
 		);
 	}
-	void Thread::join(jlong arg0, jint arg1)
+	jint Thread::enumerate(jarray arg0)
 	{
-		__thiz.callMethod<void>(
-			"join",
-			"(JI)V",
-			arg0,
-			arg1
-		);
-	}
-	void Thread::join(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"join",
-			"(J)V",
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"java.lang.Thread",
+			"enumerate",
+			"([Ljava/lang/Thread;)I",
 			arg0
 		);
 	}
-	void Thread::join()
+	QAndroidJniObject Thread::getAllStackTraces()
 	{
-		__thiz.callMethod<void>(
-			"join",
-			"()V"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.lang.Thread",
+			"getAllStackTraces",
+			"()Ljava/util/Map;"
 		);
 	}
-	QAndroidJniObject Thread::getThreadGroup()
+	QAndroidJniObject Thread::getDefaultUncaughtExceptionHandler()
 	{
-		return __thiz.callObjectMethod(
-			"getThreadGroup",
-			"()Ljava/lang/ThreadGroup;"
-		);
-	}
-	void Thread::setContextClassLoader(__jni_impl::java::lang::ClassLoader arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContextClassLoader",
-			"(Ljava/lang/ClassLoader;)V",
-			arg0.__jniObject().object()
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.lang.Thread",
+			"getDefaultUncaughtExceptionHandler",
+			"()Ljava/lang/Thread$UncaughtExceptionHandler;"
 		);
 	}
 	jboolean Thread::holdsLock(jobject arg0)
@@ -367,49 +333,29 @@ namespace __jni_impl::java::lang
 			arg0
 		);
 	}
-	jarray Thread::getStackTrace()
+	jboolean Thread::interrupted()
 	{
-		return __thiz.callObjectMethod(
-			"getStackTrace",
-			"()[Ljava/lang/StackTraceElement;"
-		).object<jarray>();
-	}
-	void Thread::checkAccess()
-	{
-		__thiz.callMethod<void>(
-			"checkAccess",
-			"()V"
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"java.lang.Thread",
+			"interrupted",
+			"()Z"
 		);
 	}
-	void Thread::dumpStack()
+	void Thread::onSpinWait()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"java.lang.Thread",
-			"dumpStack",
+			"onSpinWait",
 			"()V"
 		);
 	}
-	void Thread::setPriority(jint arg0)
+	void Thread::setDefaultUncaughtExceptionHandler(__jni_impl::__JniBaseClass arg0)
 	{
-		__thiz.callMethod<void>(
-			"setPriority",
-			"(I)V",
-			arg0
-		);
-	}
-	void Thread::setDaemon(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDaemon",
-			"(Z)V",
-			arg0
-		);
-	}
-	void Thread::start()
-	{
-		__thiz.callMethod<void>(
-			"start",
-			"()V"
+		QAndroidJniObject::callStaticMethod<void>(
+			"java.lang.Thread",
+			"setDefaultUncaughtExceptionHandler",
+			"(Ljava/lang/Thread$UncaughtExceptionHandler;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void Thread::sleep(jlong arg0)
@@ -431,17 +377,25 @@ namespace __jni_impl::java::lang
 			arg1
 		);
 	}
-	jboolean Thread::isDaemon()
+	void Thread::yield()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isDaemon",
-			"()Z"
+		QAndroidJniObject::callStaticMethod<void>(
+			"java.lang.Thread",
+			"yield",
+			"()V"
 		);
 	}
-	jint Thread::getPriority()
+	void Thread::checkAccess()
+	{
+		__thiz.callMethod<void>(
+			"checkAccess",
+			"()V"
+		);
+	}
+	jint Thread::countStackFrames()
 	{
 		return __thiz.callMethod<jint>(
-			"getPriority",
+			"countStackFrames",
 			"()I"
 		);
 	}
@@ -452,51 +406,46 @@ namespace __jni_impl::java::lang
 			"()Ljava/lang/ClassLoader;"
 		);
 	}
-	void Thread::resume()
+	jlong Thread::getId()
 	{
-		__thiz.callMethod<void>(
-			"resume",
-			"()V"
+		return __thiz.callMethod<jlong>(
+			"getId",
+			"()J"
 		);
 	}
-	void Thread::interrupt()
+	jstring Thread::getName()
 	{
-		__thiz.callMethod<void>(
-			"interrupt",
-			"()V"
-		);
+		return __thiz.callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	jint Thread::activeCount()
+	jint Thread::getPriority()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"java.lang.Thread",
-			"activeCount",
+		return __thiz.callMethod<jint>(
+			"getPriority",
 			"()I"
 		);
 	}
-	jint Thread::enumerate(jarray arg0)
+	jarray Thread::getStackTrace()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"java.lang.Thread",
-			"enumerate",
-			"([Ljava/lang/Thread;)I",
-			arg0
+		return __thiz.callObjectMethod(
+			"getStackTrace",
+			"()[Ljava/lang/StackTraceElement;"
+		).object<jarray>();
+	}
+	QAndroidJniObject Thread::getState()
+	{
+		return __thiz.callObjectMethod(
+			"getState",
+			"()Ljava/lang/Thread$State;"
 		);
 	}
-	jboolean Thread::isAlive()
+	QAndroidJniObject Thread::getThreadGroup()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isAlive",
-			"()Z"
-		);
-	}
-	void Thread::setDefaultUncaughtExceptionHandler(__jni_impl::__JniBaseClass arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"java.lang.Thread",
-			"setDefaultUncaughtExceptionHandler",
-			"(Ljava/lang/Thread$UncaughtExceptionHandler;)V",
-			arg0.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"getThreadGroup",
+			"()Ljava/lang/ThreadGroup;"
 		);
 	}
 	QAndroidJniObject Thread::getUncaughtExceptionHandler()
@@ -506,34 +455,86 @@ namespace __jni_impl::java::lang
 			"()Ljava/lang/Thread$UncaughtExceptionHandler;"
 		);
 	}
-	void Thread::yield()
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"java.lang.Thread",
-			"yield",
-			"()V"
-		);
-	}
-	void Thread::stop()
+	void Thread::interrupt()
 	{
 		__thiz.callMethod<void>(
-			"stop",
+			"interrupt",
 			"()V"
 		);
 	}
-	jboolean Thread::interrupted()
+	jboolean Thread::isAlive()
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"java.lang.Thread",
-			"interrupted",
+		return __thiz.callMethod<jboolean>(
+			"isAlive",
 			"()Z"
 		);
 	}
-	void Thread::suspend()
+	jboolean Thread::isDaemon()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isDaemon",
+			"()Z"
+		);
+	}
+	jboolean Thread::isInterrupted()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isInterrupted",
+			"()Z"
+		);
+	}
+	void Thread::join()
 	{
 		__thiz.callMethod<void>(
-			"suspend",
+			"join",
 			"()V"
+		);
+	}
+	void Thread::join(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"join",
+			"(J)V",
+			arg0
+		);
+	}
+	void Thread::join(jlong arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"join",
+			"(JI)V",
+			arg0,
+			arg1
+		);
+	}
+	void Thread::resume()
+	{
+		__thiz.callMethod<void>(
+			"resume",
+			"()V"
+		);
+	}
+	void Thread::run()
+	{
+		__thiz.callMethod<void>(
+			"run",
+			"()V"
+		);
+	}
+	void Thread::setContextClassLoader(__jni_impl::java::lang::ClassLoader arg0)
+	{
+		__thiz.callMethod<void>(
+			"setContextClassLoader",
+			"(Ljava/lang/ClassLoader;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Thread::setDaemon(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDaemon",
+			"(Z)V",
+			arg0
 		);
 	}
 	void Thread::setName(jstring arg0)
@@ -552,41 +553,12 @@ namespace __jni_impl::java::lang
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jint Thread::countStackFrames()
+	void Thread::setPriority(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"countStackFrames",
-			"()I"
-		);
-	}
-	QAndroidJniObject Thread::getAllStackTraces()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Thread",
-			"getAllStackTraces",
-			"()Ljava/util/Map;"
-		);
-	}
-	jlong Thread::getId()
-	{
-		return __thiz.callMethod<jlong>(
-			"getId",
-			"()J"
-		);
-	}
-	QAndroidJniObject Thread::getState()
-	{
-		return __thiz.callObjectMethod(
-			"getState",
-			"()Ljava/lang/Thread$State;"
-		);
-	}
-	QAndroidJniObject Thread::getDefaultUncaughtExceptionHandler()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Thread",
-			"getDefaultUncaughtExceptionHandler",
-			"()Ljava/lang/Thread$UncaughtExceptionHandler;"
+		__thiz.callMethod<void>(
+			"setPriority",
+			"(I)V",
+			arg0
 		);
 	}
 	void Thread::setUncaughtExceptionHandler(__jni_impl::__JniBaseClass arg0)
@@ -597,6 +569,34 @@ namespace __jni_impl::java::lang
 			arg0.__jniObject().object()
 		);
 	}
+	void Thread::start()
+	{
+		__thiz.callMethod<void>(
+			"start",
+			"()V"
+		);
+	}
+	void Thread::stop()
+	{
+		__thiz.callMethod<void>(
+			"stop",
+			"()V"
+		);
+	}
+	void Thread::suspend()
+	{
+		__thiz.callMethod<void>(
+			"suspend",
+			"()V"
+		);
+	}
+	jstring Thread::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 } // namespace __jni_impl::java::lang
 
 namespace java::lang
@@ -605,17 +605,6 @@ namespace java::lang
 	{
 	public:
 		Thread(QAndroidJniObject obj) { __thiz = obj; }
-		Thread(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
-		Thread(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
 		Thread()
 		{
 			__constructor();
@@ -625,31 +614,18 @@ namespace java::lang
 			__constructor(
 				arg0);
 		}
-		Thread(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, jlong arg3, jboolean arg4)
+		Thread(jstring arg0)
 		{
 			__constructor(
-				arg0,
-				arg1,
-				arg2,
-				arg3,
-				arg4);
-		}
-		Thread(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, jlong arg3)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2,
-				arg3);
-		}
-		Thread(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
+				arg0);
 		}
 		Thread(__jni_impl::__JniBaseClass arg0, jstring arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
+		}
+		Thread(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1)
 		{
 			__constructor(
 				arg0,
@@ -660,6 +636,30 @@ namespace java::lang
 			__constructor(
 				arg0,
 				arg1);
+		}
+		Thread(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2)
+		{
+			__constructor(
+				arg0,
+				arg1,
+				arg2);
+		}
+		Thread(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, jlong arg3)
+		{
+			__constructor(
+				arg0,
+				arg1,
+				arg2,
+				arg3);
+		}
+		Thread(__jni_impl::java::lang::ThreadGroup arg0, __jni_impl::__JniBaseClass arg1, jstring arg2, jlong arg3, jboolean arg4)
+		{
+			__constructor(
+				arg0,
+				arg1,
+				arg2,
+				arg3,
+				arg4);
 		}
 	};
 } // namespace java::lang

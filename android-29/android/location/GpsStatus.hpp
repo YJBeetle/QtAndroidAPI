@@ -21,9 +21,9 @@ namespace __jni_impl::android::location
 		void __constructor();
 		
 		// Methods
-		jint getTimeToFirstFix();
-		QAndroidJniObject getSatellites();
 		jint getMaxSatellites();
+		QAndroidJniObject getSatellites();
+		jint getTimeToFirstFix();
 	};
 } // namespace __jni_impl::android::location
 
@@ -69,10 +69,10 @@ namespace __jni_impl::android::location
 	}
 	
 	// Methods
-	jint GpsStatus::getTimeToFirstFix()
+	jint GpsStatus::getMaxSatellites()
 	{
 		return __thiz.callMethod<jint>(
-			"getTimeToFirstFix",
+			"getMaxSatellites",
 			"()I"
 		);
 	}
@@ -83,10 +83,10 @@ namespace __jni_impl::android::location
 			"()Ljava/lang/Iterable;"
 		);
 	}
-	jint GpsStatus::getMaxSatellites()
+	jint GpsStatus::getTimeToFirstFix()
 	{
 		return __thiz.callMethod<jint>(
-			"getMaxSatellites",
+			"getTimeToFirstFix",
 			"()I"
 		);
 	}

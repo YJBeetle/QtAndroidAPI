@@ -9,6 +9,18 @@
 
 namespace __jni_impl::android::graphics
 {
+	class Canvas;
+}
+namespace __jni_impl::android::graphics
+{
+	class Outline;
+}
+namespace __jni_impl::android::graphics
+{
+	class Paint;
+}
+namespace __jni_impl::android::graphics
+{
 	class RectF;
 }
 namespace __jni_impl::android::graphics::drawable::shapes
@@ -18,18 +30,6 @@ namespace __jni_impl::android::graphics::drawable::shapes
 namespace __jni_impl::android::graphics::drawable::shapes
 {
 	class Shape;
-}
-namespace __jni_impl::android::graphics
-{
-	class Canvas;
-}
-namespace __jni_impl::android::graphics
-{
-	class Paint;
-}
-namespace __jni_impl::android::graphics
-{
-	class Outline;
 }
 
 namespace __jni_impl::android::graphics::drawable::shapes
@@ -43,20 +43,20 @@ namespace __jni_impl::android::graphics::drawable::shapes
 		void __constructor(jfloatArray arg0, __jni_impl::android::graphics::RectF arg1, jfloatArray arg2);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
 		QAndroidJniObject clone();
 		void draw(__jni_impl::android::graphics::Canvas arg0, __jni_impl::android::graphics::Paint arg1);
+		jboolean equals(jobject arg0);
 		void getOutline(__jni_impl::android::graphics::Outline arg0);
+		jint hashCode();
 	};
 } // namespace __jni_impl::android::graphics::drawable::shapes
 
+#include "../../Canvas.hpp"
+#include "../../Outline.hpp"
+#include "../../Paint.hpp"
 #include "../../RectF.hpp"
 #include "RectShape.hpp"
 #include "Shape.hpp"
-#include "../../Canvas.hpp"
-#include "../../Paint.hpp"
-#include "../../Outline.hpp"
 
 namespace __jni_impl::android::graphics::drawable::shapes
 {
@@ -75,21 +75,6 @@ namespace __jni_impl::android::graphics::drawable::shapes
 	}
 	
 	// Methods
-	jboolean RoundRectShape::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jint RoundRectShape::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	QAndroidJniObject RoundRectShape::clone()
 	{
 		return __thiz.callObjectMethod(
@@ -106,12 +91,27 @@ namespace __jni_impl::android::graphics::drawable::shapes
 			arg1.__jniObject().object()
 		);
 	}
+	jboolean RoundRectShape::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
 	void RoundRectShape::getOutline(__jni_impl::android::graphics::Outline arg0)
 	{
 		__thiz.callMethod<void>(
 			"getOutline",
 			"(Landroid/graphics/Outline;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	jint RoundRectShape::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::graphics::drawable::shapes

@@ -31,17 +31,17 @@ namespace __jni_impl::java::text
 		void __constructor(const QString &arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
 		jobject clone();
 		jint compare(jstring arg0, jstring arg1);
 		jint compare(const QString &arg0, const QString &arg1);
-		jstring getRules();
+		jboolean equals(jobject arg0);
 		QAndroidJniObject getCollationElementIterator(jstring arg0);
 		QAndroidJniObject getCollationElementIterator(const QString &arg0);
 		QAndroidJniObject getCollationElementIterator(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getCollationKey(jstring arg0);
 		QAndroidJniObject getCollationKey(const QString &arg0);
+		jstring getRules();
+		jint hashCode();
 	};
 } // namespace __jni_impl::java::text
 
@@ -72,21 +72,6 @@ namespace __jni_impl::java::text
 	}
 	
 	// Methods
-	jboolean RuleBasedCollator::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jint RuleBasedCollator::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	jobject RuleBasedCollator::clone()
 	{
 		return __thiz.callObjectMethod(
@@ -112,12 +97,13 @@ namespace __jni_impl::java::text
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	jstring RuleBasedCollator::getRules()
+	jboolean RuleBasedCollator::equals(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getRules",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
 	}
 	QAndroidJniObject RuleBasedCollator::getCollationElementIterator(jstring arg0)
 	{
@@ -157,6 +143,20 @@ namespace __jni_impl::java::text
 			"getCollationKey",
 			"(Ljava/lang/String;)Ljava/text/CollationKey;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jstring RuleBasedCollator::getRules()
+	{
+		return __thiz.callObjectMethod(
+			"getRules",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint RuleBasedCollator::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::java::text

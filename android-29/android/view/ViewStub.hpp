@@ -10,10 +10,6 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::view
-{
-	class View;
-}
 namespace __jni_impl::android::graphics
 {
 	class Canvas;
@@ -21,6 +17,10 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::view
 {
 	class LayoutInflater;
+}
+namespace __jni_impl::android::view
+{
+	class View;
 }
 
 namespace __jni_impl::android::view
@@ -31,55 +31,42 @@ namespace __jni_impl::android::view
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
+		void __constructor(__jni_impl::android::content::Context arg0);
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(__jni_impl::android::content::Context arg0, jint arg1);
-		void __constructor(__jni_impl::android::content::Context arg0);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		QAndroidJniObject inflate();
-		void setVisibility(jint arg0);
 		void draw(__jni_impl::android::graphics::Canvas arg0);
-		void setLayoutResource(jint arg0);
-		jint getLayoutResource();
 		jint getInflatedId();
+		QAndroidJniObject getLayoutInflater();
+		jint getLayoutResource();
+		QAndroidJniObject inflate();
 		void setInflatedId(jint arg0);
 		void setLayoutInflater(__jni_impl::android::view::LayoutInflater arg0);
+		void setLayoutResource(jint arg0);
 		void setOnInflateListener(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getLayoutInflater();
+		void setVisibility(jint arg0);
 	};
 } // namespace __jni_impl::android::view
 
 #include "../content/Context.hpp"
-#include "View.hpp"
 #include "../graphics/Canvas.hpp"
 #include "LayoutInflater.hpp"
+#include "View.hpp"
 
 namespace __jni_impl::android::view
 {
 	// Fields
 	
 	// Constructors
-	void ViewStub::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
+	void ViewStub::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewStub",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3
-		);
-	}
-	void ViewStub::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.ViewStub",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
+			"(Landroid/content/Context;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void ViewStub::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
@@ -100,31 +87,29 @@ namespace __jni_impl::android::view
 			arg1
 		);
 	}
-	void ViewStub::__constructor(__jni_impl::android::content::Context arg0)
+	void ViewStub::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.ViewStub",
-			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
+			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
+	void ViewStub::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.ViewStub",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3
 		);
 	}
 	
 	// Methods
-	QAndroidJniObject ViewStub::inflate()
-	{
-		return __thiz.callObjectMethod(
-			"inflate",
-			"()Landroid/view/View;"
-		);
-	}
-	void ViewStub::setVisibility(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setVisibility",
-			"(I)V",
-			arg0
-		);
-	}
 	void ViewStub::draw(__jni_impl::android::graphics::Canvas arg0)
 	{
 		__thiz.callMethod<void>(
@@ -133,12 +118,18 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
-	void ViewStub::setLayoutResource(jint arg0)
+	jint ViewStub::getInflatedId()
 	{
-		__thiz.callMethod<void>(
-			"setLayoutResource",
-			"(I)V",
-			arg0
+		return __thiz.callMethod<jint>(
+			"getInflatedId",
+			"()I"
+		);
+	}
+	QAndroidJniObject ViewStub::getLayoutInflater()
+	{
+		return __thiz.callObjectMethod(
+			"getLayoutInflater",
+			"()Landroid/view/LayoutInflater;"
 		);
 	}
 	jint ViewStub::getLayoutResource()
@@ -148,11 +139,11 @@ namespace __jni_impl::android::view
 			"()I"
 		);
 	}
-	jint ViewStub::getInflatedId()
+	QAndroidJniObject ViewStub::inflate()
 	{
-		return __thiz.callMethod<jint>(
-			"getInflatedId",
-			"()I"
+		return __thiz.callObjectMethod(
+			"inflate",
+			"()Landroid/view/View;"
 		);
 	}
 	void ViewStub::setInflatedId(jint arg0)
@@ -171,6 +162,14 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
+	void ViewStub::setLayoutResource(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLayoutResource",
+			"(I)V",
+			arg0
+		);
+	}
 	void ViewStub::setOnInflateListener(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
@@ -179,11 +178,12 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ViewStub::getLayoutInflater()
+	void ViewStub::setVisibility(jint arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getLayoutInflater",
-			"()Landroid/view/LayoutInflater;"
+		__thiz.callMethod<void>(
+			"setVisibility",
+			"(I)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::view
@@ -194,20 +194,10 @@ namespace android::view
 	{
 	public:
 		ViewStub(QAndroidJniObject obj) { __thiz = obj; }
-		ViewStub(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
+		ViewStub(__jni_impl::android::content::Context arg0)
 		{
 			__constructor(
-				arg0,
-				arg1,
-				arg2,
-				arg3);
-		}
-		ViewStub(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
+				arg0);
 		}
 		ViewStub(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 		{
@@ -221,10 +211,20 @@ namespace android::view
 				arg0,
 				arg1);
 		}
-		ViewStub(__jni_impl::android::content::Context arg0)
+		ViewStub(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 		{
 			__constructor(
-				arg0);
+				arg0,
+				arg1,
+				arg2);
+		}
+		ViewStub(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
+		{
+			__constructor(
+				arg0,
+				arg1,
+				arg2,
+				arg3);
 		}
 	};
 } // namespace android::view

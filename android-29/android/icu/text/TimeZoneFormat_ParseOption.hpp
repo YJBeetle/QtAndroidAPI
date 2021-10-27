@@ -20,9 +20,9 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -56,14 +56,6 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jarray TimeZoneFormat_ParseOption::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.TimeZoneFormat$ParseOption",
-			"values",
-			"()[Landroid/icu/text/TimeZoneFormat$ParseOption;"
-		).object<jarray>();
-	}
 	QAndroidJniObject TimeZoneFormat_ParseOption::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -81,6 +73,14 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat$ParseOption;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray TimeZoneFormat_ParseOption::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.TimeZoneFormat$ParseOption",
+			"values",
+			"()[Landroid/icu/text/TimeZoneFormat$ParseOption;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::icu::text
 

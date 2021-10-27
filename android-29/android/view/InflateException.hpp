@@ -16,12 +16,12 @@ namespace __jni_impl::android::view
 		// Fields
 		
 		// Constructors
-		void __constructor(jthrowable arg0);
+		void __constructor();
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
+		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
 		void __constructor(const QString &arg0, jthrowable arg1);
-		void __constructor();
 		
 		// Methods
 	};
@@ -33,12 +33,11 @@ namespace __jni_impl::android::view
 	// Fields
 	
 	// Constructors
-	void InflateException::__constructor(jthrowable arg0)
+	void InflateException::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.InflateException",
-			"(Ljava/lang/Throwable;)V",
-			arg0
+			"()V"
 		);
 	}
 	void InflateException::__constructor(jstring arg0)
@@ -55,6 +54,14 @@ namespace __jni_impl::android::view
 			"android.view.InflateException",
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void InflateException::__constructor(jthrowable arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.InflateException",
+			"(Ljava/lang/Throwable;)V",
+			arg0
 		);
 	}
 	void InflateException::__constructor(jstring arg0, jthrowable arg1)
@@ -75,13 +82,6 @@ namespace __jni_impl::android::view
 			arg1
 		);
 	}
-	void InflateException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.InflateException",
-			"()V"
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::android::view
@@ -92,12 +92,16 @@ namespace android::view
 	{
 	public:
 		InflateException(QAndroidJniObject obj) { __thiz = obj; }
-		InflateException(jthrowable arg0)
+		InflateException()
+		{
+			__constructor();
+		}
+		InflateException(jstring arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		InflateException(jstring arg0)
+		InflateException(jthrowable arg0)
 		{
 			__constructor(
 				arg0);
@@ -107,10 +111,6 @@ namespace android::view
 			__constructor(
 				arg0,
 				arg1);
-		}
-		InflateException()
-		{
-			__constructor();
 		}
 	};
 } // namespace android::view

@@ -20,9 +20,9 @@ namespace __jni_impl::java::util
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::util
 
@@ -56,14 +56,6 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	jarray Locale_Category::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Locale$Category",
-			"values",
-			"()[Ljava/util/Locale$Category;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Locale_Category::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -81,6 +73,14 @@ namespace __jni_impl::java::util
 			"(Ljava/lang/String;)Ljava/util/Locale$Category;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Locale_Category::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.Locale$Category",
+			"values",
+			"()[Ljava/util/Locale$Category;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::util
 

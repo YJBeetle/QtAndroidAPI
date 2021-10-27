@@ -5,10 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view::textclassifier
-{
-	class TextClassifier_EntityConfig;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::view::textclassifier
+{
+	class TextClassifier_EntityConfig;
 }
 
 namespace __jni_impl::android::view::textclassifier
@@ -32,20 +32,20 @@ namespace __jni_impl::android::view::textclassifier
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getHints();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getExtras();
-		QAndroidJniObject getTypeConfig();
-		QAndroidJniObject getConversation();
-		jint getMaxSuggestions();
 		jstring getCallingPackageName();
+		QAndroidJniObject getConversation();
+		QAndroidJniObject getExtras();
+		QAndroidJniObject getHints();
+		jint getMaxSuggestions();
+		QAndroidJniObject getTypeConfig();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
-#include "TextClassifier_EntityConfig.hpp"
 #include "../../os/Bundle.hpp"
 #include "../../os/Parcel.hpp"
+#include "TextClassifier_EntityConfig.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {
@@ -84,13 +84,6 @@ namespace __jni_impl::android::view::textclassifier
 	}
 	
 	// Methods
-	QAndroidJniObject ConversationActions_Request::getHints()
-	{
-		return __thiz.callObjectMethod(
-			"getHints",
-			"()Ljava/util/List;"
-		);
-	}
 	jint ConversationActions_Request::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -98,13 +91,18 @@ namespace __jni_impl::android::view::textclassifier
 			"()I"
 		);
 	}
-	void ConversationActions_Request::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jstring ConversationActions_Request::getCallingPackageName()
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callObjectMethod(
+			"getCallingPackageName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject ConversationActions_Request::getConversation()
+	{
+		return __thiz.callObjectMethod(
+			"getConversation",
+			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject ConversationActions_Request::getExtras()
@@ -114,17 +112,10 @@ namespace __jni_impl::android::view::textclassifier
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject ConversationActions_Request::getTypeConfig()
+	QAndroidJniObject ConversationActions_Request::getHints()
 	{
 		return __thiz.callObjectMethod(
-			"getTypeConfig",
-			"()Landroid/view/textclassifier/TextClassifier$EntityConfig;"
-		);
-	}
-	QAndroidJniObject ConversationActions_Request::getConversation()
-	{
-		return __thiz.callObjectMethod(
-			"getConversation",
+			"getHints",
 			"()Ljava/util/List;"
 		);
 	}
@@ -135,12 +126,21 @@ namespace __jni_impl::android::view::textclassifier
 			"()I"
 		);
 	}
-	jstring ConversationActions_Request::getCallingPackageName()
+	QAndroidJniObject ConversationActions_Request::getTypeConfig()
 	{
 		return __thiz.callObjectMethod(
-			"getCallingPackageName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getTypeConfig",
+			"()Landroid/view/textclassifier/TextClassifier$EntityConfig;"
+		);
+	}
+	void ConversationActions_Request::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::nio::file::spi
-{
-	class FileSystemProvider;
-}
 namespace __jni_impl::java::nio::file::attribute
 {
 	class UserPrincipalLookupService;
+}
+namespace __jni_impl::java::nio::file::spi
+{
+	class FileSystemProvider;
 }
 
 namespace __jni_impl::java::nio::file
@@ -25,25 +25,25 @@ namespace __jni_impl::java::nio::file
 		void __constructor();
 		
 		// Methods
-		jboolean isOpen();
-		QAndroidJniObject provider();
 		void close();
+		QAndroidJniObject getFileStores();
 		QAndroidJniObject getPath(jstring arg0, jarray arg1);
 		QAndroidJniObject getPath(const QString &arg0, jarray arg1);
-		jboolean isReadOnly();
-		QAndroidJniObject supportedFileAttributeViews();
-		QAndroidJniObject newWatchService();
-		QAndroidJniObject getRootDirectories();
-		QAndroidJniObject getFileStores();
 		QAndroidJniObject getPathMatcher(jstring arg0);
 		QAndroidJniObject getPathMatcher(const QString &arg0);
-		QAndroidJniObject getUserPrincipalLookupService();
+		QAndroidJniObject getRootDirectories();
 		jstring getSeparator();
+		QAndroidJniObject getUserPrincipalLookupService();
+		jboolean isOpen();
+		jboolean isReadOnly();
+		QAndroidJniObject newWatchService();
+		QAndroidJniObject provider();
+		QAndroidJniObject supportedFileAttributeViews();
 	};
 } // namespace __jni_impl::java::nio::file
 
-#include "spi/FileSystemProvider.hpp"
 #include "attribute/UserPrincipalLookupService.hpp"
+#include "spi/FileSystemProvider.hpp"
 
 namespace __jni_impl::java::nio::file
 {
@@ -58,25 +58,18 @@ namespace __jni_impl::java::nio::file
 	}
 	
 	// Methods
-	jboolean FileSystem::isOpen()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isOpen",
-			"()Z"
-		);
-	}
-	QAndroidJniObject FileSystem::provider()
-	{
-		return __thiz.callObjectMethod(
-			"provider",
-			"()Ljava/nio/file/spi/FileSystemProvider;"
-		);
-	}
 	void FileSystem::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
 			"()V"
+		);
+	}
+	QAndroidJniObject FileSystem::getFileStores()
+	{
+		return __thiz.callObjectMethod(
+			"getFileStores",
+			"()Ljava/lang/Iterable;"
 		);
 	}
 	QAndroidJniObject FileSystem::getPath(jstring arg0, jarray arg1)
@@ -97,41 +90,6 @@ namespace __jni_impl::java::nio::file
 			arg1
 		);
 	}
-	jboolean FileSystem::isReadOnly()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isReadOnly",
-			"()Z"
-		);
-	}
-	QAndroidJniObject FileSystem::supportedFileAttributeViews()
-	{
-		return __thiz.callObjectMethod(
-			"supportedFileAttributeViews",
-			"()Ljava/util/Set;"
-		);
-	}
-	QAndroidJniObject FileSystem::newWatchService()
-	{
-		return __thiz.callObjectMethod(
-			"newWatchService",
-			"()Ljava/nio/file/WatchService;"
-		);
-	}
-	QAndroidJniObject FileSystem::getRootDirectories()
-	{
-		return __thiz.callObjectMethod(
-			"getRootDirectories",
-			"()Ljava/lang/Iterable;"
-		);
-	}
-	QAndroidJniObject FileSystem::getFileStores()
-	{
-		return __thiz.callObjectMethod(
-			"getFileStores",
-			"()Ljava/lang/Iterable;"
-		);
-	}
 	QAndroidJniObject FileSystem::getPathMatcher(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -148,11 +106,11 @@ namespace __jni_impl::java::nio::file
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	QAndroidJniObject FileSystem::getUserPrincipalLookupService()
+	QAndroidJniObject FileSystem::getRootDirectories()
 	{
 		return __thiz.callObjectMethod(
-			"getUserPrincipalLookupService",
-			"()Ljava/nio/file/attribute/UserPrincipalLookupService;"
+			"getRootDirectories",
+			"()Ljava/lang/Iterable;"
 		);
 	}
 	jstring FileSystem::getSeparator()
@@ -161,6 +119,48 @@ namespace __jni_impl::java::nio::file
 			"getSeparator",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	QAndroidJniObject FileSystem::getUserPrincipalLookupService()
+	{
+		return __thiz.callObjectMethod(
+			"getUserPrincipalLookupService",
+			"()Ljava/nio/file/attribute/UserPrincipalLookupService;"
+		);
+	}
+	jboolean FileSystem::isOpen()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isOpen",
+			"()Z"
+		);
+	}
+	jboolean FileSystem::isReadOnly()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isReadOnly",
+			"()Z"
+		);
+	}
+	QAndroidJniObject FileSystem::newWatchService()
+	{
+		return __thiz.callObjectMethod(
+			"newWatchService",
+			"()Ljava/nio/file/WatchService;"
+		);
+	}
+	QAndroidJniObject FileSystem::provider()
+	{
+		return __thiz.callObjectMethod(
+			"provider",
+			"()Ljava/nio/file/spi/FileSystemProvider;"
+		);
+	}
+	QAndroidJniObject FileSystem::supportedFileAttributeViews()
+	{
+		return __thiz.callObjectMethod(
+			"supportedFileAttributeViews",
+			"()Ljava/util/Set;"
+		);
 	}
 } // namespace __jni_impl::java::nio::file
 

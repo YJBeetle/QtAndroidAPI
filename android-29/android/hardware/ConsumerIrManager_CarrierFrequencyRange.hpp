@@ -21,8 +21,8 @@ namespace __jni_impl::android::hardware
 		void __constructor(__jni_impl::android::hardware::ConsumerIrManager arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jint getMinFrequency();
 		jint getMaxFrequency();
+		jint getMinFrequency();
 	};
 } // namespace __jni_impl::android::hardware
 
@@ -45,17 +45,17 @@ namespace __jni_impl::android::hardware
 	}
 	
 	// Methods
-	jint ConsumerIrManager_CarrierFrequencyRange::getMinFrequency()
-	{
-		return __thiz.callMethod<jint>(
-			"getMinFrequency",
-			"()I"
-		);
-	}
 	jint ConsumerIrManager_CarrierFrequencyRange::getMaxFrequency()
 	{
 		return __thiz.callMethod<jint>(
 			"getMaxFrequency",
+			"()I"
+		);
+	}
+	jint ConsumerIrManager_CarrierFrequencyRange::getMinFrequency()
+	{
+		return __thiz.callMethod<jint>(
+			"getMinFrequency",
 			"()I"
 		);
 	}

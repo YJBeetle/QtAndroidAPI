@@ -22,9 +22,9 @@ namespace __jni_impl::android::content
 		void __constructor(jint arg0);
 		
 		// Methods
-		jint match(__jni_impl::android::net::Uri arg0);
 		void addURI(jstring arg0, jstring arg1, jint arg2);
 		void addURI(const QString &arg0, const QString &arg1, jint arg2);
+		jint match(__jni_impl::android::net::Uri arg0);
 	};
 } // namespace __jni_impl::android::content
 
@@ -52,14 +52,6 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
-	jint UriMatcher::match(__jni_impl::android::net::Uri arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"match",
-			"(Landroid/net/Uri;)I",
-			arg0.__jniObject().object()
-		);
-	}
 	void UriMatcher::addURI(jstring arg0, jstring arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
@@ -78,6 +70,14 @@ namespace __jni_impl::android::content
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
+		);
+	}
+	jint UriMatcher::match(__jni_impl::android::net::Uri arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"match",
+			"(Landroid/net/Uri;)I",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::content

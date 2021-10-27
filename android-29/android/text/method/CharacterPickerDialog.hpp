@@ -10,6 +10,10 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
+namespace __jni_impl::android::os
+{
+	class Bundle;
+}
 namespace __jni_impl::android::view
 {
 	class View;
@@ -17,10 +21,6 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::widget
 {
 	class AdapterView;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
 }
 
 namespace __jni_impl::android::text::method
@@ -35,15 +35,15 @@ namespace __jni_impl::android::text::method
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::view::View arg1, __jni_impl::__JniBaseClass arg2, const QString &arg3, jboolean arg4);
 		
 		// Methods
-		void onItemClick(__jni_impl::android::widget::AdapterView arg0, __jni_impl::android::view::View arg1, jint arg2, jlong arg3);
 		void onClick(__jni_impl::android::view::View arg0);
+		void onItemClick(__jni_impl::android::widget::AdapterView arg0, __jni_impl::android::view::View arg1, jint arg2, jlong arg3);
 	};
 } // namespace __jni_impl::android::text::method
 
 #include "../../content/Context.hpp"
+#include "../../os/Bundle.hpp"
 #include "../../view/View.hpp"
 #include "../../widget/AdapterView.hpp"
-#include "../../os/Bundle.hpp"
 
 namespace __jni_impl::android::text::method
 {
@@ -76,6 +76,14 @@ namespace __jni_impl::android::text::method
 	}
 	
 	// Methods
+	void CharacterPickerDialog::onClick(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"onClick",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void CharacterPickerDialog::onItemClick(__jni_impl::android::widget::AdapterView arg0, __jni_impl::android::view::View arg1, jint arg2, jlong arg3)
 	{
 		__thiz.callMethod<void>(
@@ -85,14 +93,6 @@ namespace __jni_impl::android::text::method
 			arg1.__jniObject().object(),
 			arg2,
 			arg3
-		);
-	}
-	void CharacterPickerDialog::onClick(__jni_impl::android::view::View arg0)
-	{
-		__thiz.callMethod<void>(
-			"onClick",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::text::method

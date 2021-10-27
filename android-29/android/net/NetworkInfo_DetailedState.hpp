@@ -13,27 +13,27 @@ namespace __jni_impl::android::net
 	{
 	public:
 		// Fields
-		static QAndroidJniObject IDLE();
-		static QAndroidJniObject SCANNING();
-		static QAndroidJniObject CONNECTING();
 		static QAndroidJniObject AUTHENTICATING();
-		static QAndroidJniObject OBTAINING_IPADDR();
-		static QAndroidJniObject CONNECTED();
-		static QAndroidJniObject SUSPENDED();
-		static QAndroidJniObject DISCONNECTING();
-		static QAndroidJniObject DISCONNECTED();
-		static QAndroidJniObject FAILED();
 		static QAndroidJniObject BLOCKED();
-		static QAndroidJniObject VERIFYING_POOR_LINK();
 		static QAndroidJniObject CAPTIVE_PORTAL_CHECK();
+		static QAndroidJniObject CONNECTED();
+		static QAndroidJniObject CONNECTING();
+		static QAndroidJniObject DISCONNECTED();
+		static QAndroidJniObject DISCONNECTING();
+		static QAndroidJniObject FAILED();
+		static QAndroidJniObject IDLE();
+		static QAndroidJniObject OBTAINING_IPADDR();
+		static QAndroidJniObject SCANNING();
+		static QAndroidJniObject SUSPENDED();
+		static QAndroidJniObject VERIFYING_POOR_LINK();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::net
 
@@ -41,83 +41,11 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::net
 {
 	// Fields
-	QAndroidJniObject NetworkInfo_DetailedState::IDLE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.net.NetworkInfo$DetailedState",
-			"IDLE",
-			"Landroid/net/NetworkInfo$DetailedState;"
-		);
-	}
-	QAndroidJniObject NetworkInfo_DetailedState::SCANNING()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.net.NetworkInfo$DetailedState",
-			"SCANNING",
-			"Landroid/net/NetworkInfo$DetailedState;"
-		);
-	}
-	QAndroidJniObject NetworkInfo_DetailedState::CONNECTING()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.net.NetworkInfo$DetailedState",
-			"CONNECTING",
-			"Landroid/net/NetworkInfo$DetailedState;"
-		);
-	}
 	QAndroidJniObject NetworkInfo_DetailedState::AUTHENTICATING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.NetworkInfo$DetailedState",
 			"AUTHENTICATING",
-			"Landroid/net/NetworkInfo$DetailedState;"
-		);
-	}
-	QAndroidJniObject NetworkInfo_DetailedState::OBTAINING_IPADDR()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.net.NetworkInfo$DetailedState",
-			"OBTAINING_IPADDR",
-			"Landroid/net/NetworkInfo$DetailedState;"
-		);
-	}
-	QAndroidJniObject NetworkInfo_DetailedState::CONNECTED()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.net.NetworkInfo$DetailedState",
-			"CONNECTED",
-			"Landroid/net/NetworkInfo$DetailedState;"
-		);
-	}
-	QAndroidJniObject NetworkInfo_DetailedState::SUSPENDED()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.net.NetworkInfo$DetailedState",
-			"SUSPENDED",
-			"Landroid/net/NetworkInfo$DetailedState;"
-		);
-	}
-	QAndroidJniObject NetworkInfo_DetailedState::DISCONNECTING()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.net.NetworkInfo$DetailedState",
-			"DISCONNECTING",
-			"Landroid/net/NetworkInfo$DetailedState;"
-		);
-	}
-	QAndroidJniObject NetworkInfo_DetailedState::DISCONNECTED()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.net.NetworkInfo$DetailedState",
-			"DISCONNECTED",
-			"Landroid/net/NetworkInfo$DetailedState;"
-		);
-	}
-	QAndroidJniObject NetworkInfo_DetailedState::FAILED()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.net.NetworkInfo$DetailedState",
-			"FAILED",
 			"Landroid/net/NetworkInfo$DetailedState;"
 		);
 	}
@@ -129,19 +57,91 @@ namespace __jni_impl::android::net
 			"Landroid/net/NetworkInfo$DetailedState;"
 		);
 	}
-	QAndroidJniObject NetworkInfo_DetailedState::VERIFYING_POOR_LINK()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.net.NetworkInfo$DetailedState",
-			"VERIFYING_POOR_LINK",
-			"Landroid/net/NetworkInfo$DetailedState;"
-		);
-	}
 	QAndroidJniObject NetworkInfo_DetailedState::CAPTIVE_PORTAL_CHECK()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.net.NetworkInfo$DetailedState",
 			"CAPTIVE_PORTAL_CHECK",
+			"Landroid/net/NetworkInfo$DetailedState;"
+		);
+	}
+	QAndroidJniObject NetworkInfo_DetailedState::CONNECTED()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.net.NetworkInfo$DetailedState",
+			"CONNECTED",
+			"Landroid/net/NetworkInfo$DetailedState;"
+		);
+	}
+	QAndroidJniObject NetworkInfo_DetailedState::CONNECTING()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.net.NetworkInfo$DetailedState",
+			"CONNECTING",
+			"Landroid/net/NetworkInfo$DetailedState;"
+		);
+	}
+	QAndroidJniObject NetworkInfo_DetailedState::DISCONNECTED()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.net.NetworkInfo$DetailedState",
+			"DISCONNECTED",
+			"Landroid/net/NetworkInfo$DetailedState;"
+		);
+	}
+	QAndroidJniObject NetworkInfo_DetailedState::DISCONNECTING()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.net.NetworkInfo$DetailedState",
+			"DISCONNECTING",
+			"Landroid/net/NetworkInfo$DetailedState;"
+		);
+	}
+	QAndroidJniObject NetworkInfo_DetailedState::FAILED()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.net.NetworkInfo$DetailedState",
+			"FAILED",
+			"Landroid/net/NetworkInfo$DetailedState;"
+		);
+	}
+	QAndroidJniObject NetworkInfo_DetailedState::IDLE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.net.NetworkInfo$DetailedState",
+			"IDLE",
+			"Landroid/net/NetworkInfo$DetailedState;"
+		);
+	}
+	QAndroidJniObject NetworkInfo_DetailedState::OBTAINING_IPADDR()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.net.NetworkInfo$DetailedState",
+			"OBTAINING_IPADDR",
+			"Landroid/net/NetworkInfo$DetailedState;"
+		);
+	}
+	QAndroidJniObject NetworkInfo_DetailedState::SCANNING()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.net.NetworkInfo$DetailedState",
+			"SCANNING",
+			"Landroid/net/NetworkInfo$DetailedState;"
+		);
+	}
+	QAndroidJniObject NetworkInfo_DetailedState::SUSPENDED()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.net.NetworkInfo$DetailedState",
+			"SUSPENDED",
+			"Landroid/net/NetworkInfo$DetailedState;"
+		);
+	}
+	QAndroidJniObject NetworkInfo_DetailedState::VERIFYING_POOR_LINK()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.net.NetworkInfo$DetailedState",
+			"VERIFYING_POOR_LINK",
 			"Landroid/net/NetworkInfo$DetailedState;"
 		);
 	}
@@ -155,14 +155,6 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	jarray NetworkInfo_DetailedState::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.NetworkInfo$DetailedState",
-			"values",
-			"()[Landroid/net/NetworkInfo$DetailedState;"
-		).object<jarray>();
-	}
 	QAndroidJniObject NetworkInfo_DetailedState::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -180,6 +172,14 @@ namespace __jni_impl::android::net
 			"(Ljava/lang/String;)Landroid/net/NetworkInfo$DetailedState;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray NetworkInfo_DetailedState::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.net.NetworkInfo$DetailedState",
+			"values",
+			"()[Landroid/net/NetworkInfo$DetailedState;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::net
 

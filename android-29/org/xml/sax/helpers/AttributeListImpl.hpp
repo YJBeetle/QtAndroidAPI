@@ -18,17 +18,17 @@ namespace __jni_impl::org::xml::sax::helpers
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		
 		// Methods
-		jstring getName(jint arg0);
-		jint getLength();
+		void addAttribute(jstring arg0, jstring arg1, jstring arg2);
+		void addAttribute(const QString &arg0, const QString &arg1, const QString &arg2);
 		void clear();
-		jstring getValue(jint arg0);
-		jstring getValue(jstring arg0);
-		jstring getValue(const QString &arg0);
+		jint getLength();
+		jstring getName(jint arg0);
 		jstring getType(jint arg0);
 		jstring getType(jstring arg0);
 		jstring getType(const QString &arg0);
-		void addAttribute(jstring arg0, jstring arg1, jstring arg2);
-		void addAttribute(const QString &arg0, const QString &arg1, const QString &arg2);
+		jstring getValue(jint arg0);
+		jstring getValue(jstring arg0);
+		jstring getValue(const QString &arg0);
 		void removeAttribute(jstring arg0);
 		void removeAttribute(const QString &arg0);
 		void setAttributeList(__jni_impl::__JniBaseClass arg0);
@@ -58,19 +58,24 @@ namespace __jni_impl::org::xml::sax::helpers
 	}
 	
 	// Methods
-	jstring AttributeListImpl::getName(jint arg0)
+	void AttributeListImpl::addAttribute(jstring arg0, jstring arg1, jstring arg2)
 	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"addAttribute",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1,
+			arg2
+		);
 	}
-	jint AttributeListImpl::getLength()
+	void AttributeListImpl::addAttribute(const QString &arg0, const QString &arg1, const QString &arg2)
 	{
-		return __thiz.callMethod<jint>(
-			"getLength",
-			"()I"
+		__thiz.callMethod<void>(
+			"addAttribute",
+			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
 	void AttributeListImpl::clear()
@@ -80,28 +85,19 @@ namespace __jni_impl::org::xml::sax::helpers
 			"()V"
 		);
 	}
-	jstring AttributeListImpl::getValue(jint arg0)
+	jint AttributeListImpl::getLength()
+	{
+		return __thiz.callMethod<jint>(
+			"getLength",
+			"()I"
+		);
+	}
+	jstring AttributeListImpl::getName(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getValue",
+			"getName",
 			"(I)Ljava/lang/String;",
 			arg0
-		).object<jstring>();
-	}
-	jstring AttributeListImpl::getValue(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getValue",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jstring AttributeListImpl::getValue(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getValue",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
 	jstring AttributeListImpl::getType(jint arg0)
@@ -128,25 +124,29 @@ namespace __jni_impl::org::xml::sax::helpers
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
-	void AttributeListImpl::addAttribute(jstring arg0, jstring arg1, jstring arg2)
+	jstring AttributeListImpl::getValue(jint arg0)
 	{
-		__thiz.callMethod<void>(
-			"addAttribute",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2
-		);
+		return __thiz.callObjectMethod(
+			"getValue",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
 	}
-	void AttributeListImpl::addAttribute(const QString &arg0, const QString &arg1, const QString &arg2)
+	jstring AttributeListImpl::getValue(jstring arg0)
 	{
-		__thiz.callMethod<void>(
-			"addAttribute",
-			"(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>()
-		);
+		return __thiz.callObjectMethod(
+			"getValue",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring AttributeListImpl::getValue(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getValue",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
 	}
 	void AttributeListImpl::removeAttribute(jstring arg0)
 	{

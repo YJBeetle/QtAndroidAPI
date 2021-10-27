@@ -22,8 +22,8 @@ namespace __jni_impl::java::util
 		void __constructor(const QString &arg0);
 		
 		// Methods
-		jstring getMessage();
 		jstring getFormatSpecifier();
+		jstring getMessage();
 	};
 } // namespace __jni_impl::java::util
 
@@ -51,17 +51,17 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	jstring MissingFormatWidthException::getMessage()
-	{
-		return __thiz.callObjectMethod(
-			"getMessage",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jstring MissingFormatWidthException::getFormatSpecifier()
 	{
 		return __thiz.callObjectMethod(
 			"getFormatSpecifier",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring MissingFormatWidthException::getMessage()
+	{
+		return __thiz.callObjectMethod(
+			"getMessage",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

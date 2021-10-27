@@ -15,13 +15,13 @@ namespace __jni_impl::android::media::audiofx
 		// Fields
 		
 		// Constructors
-		void __constructor(jboolean arg0, jfloat arg1, jfloat arg2);
 		void __constructor(__jni_impl::android::media::audiofx::DynamicsProcessing_EqBand arg0);
+		void __constructor(jboolean arg0, jfloat arg1, jfloat arg2);
 		
 		// Methods
-		jstring toString();
 		jfloat getGain();
 		void setGain(jfloat arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::android::media::audiofx
 
@@ -31,6 +31,14 @@ namespace __jni_impl::android::media::audiofx
 	// Fields
 	
 	// Constructors
+	void DynamicsProcessing_EqBand::__constructor(__jni_impl::android::media::audiofx::DynamicsProcessing_EqBand arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.media.audiofx.DynamicsProcessing$EqBand",
+			"(Landroid/media/audiofx/DynamicsProcessing$EqBand;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void DynamicsProcessing_EqBand::__constructor(jboolean arg0, jfloat arg1, jfloat arg2)
 	{
 		__thiz = QAndroidJniObject(
@@ -41,23 +49,8 @@ namespace __jni_impl::android::media::audiofx
 			arg2
 		);
 	}
-	void DynamicsProcessing_EqBand::__constructor(__jni_impl::android::media::audiofx::DynamicsProcessing_EqBand arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.media.audiofx.DynamicsProcessing$EqBand",
-			"(Landroid/media/audiofx/DynamicsProcessing$EqBand;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	
 	// Methods
-	jstring DynamicsProcessing_EqBand::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jfloat DynamicsProcessing_EqBand::getGain()
 	{
 		return __thiz.callMethod<jfloat>(
@@ -73,6 +66,13 @@ namespace __jni_impl::android::media::audiofx
 			arg0
 		);
 	}
+	jstring DynamicsProcessing_EqBand::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 } // namespace __jni_impl::android::media::audiofx
 
 namespace android::media::audiofx
@@ -81,17 +81,17 @@ namespace android::media::audiofx
 	{
 	public:
 		DynamicsProcessing_EqBand(QAndroidJniObject obj) { __thiz = obj; }
+		DynamicsProcessing_EqBand(__jni_impl::android::media::audiofx::DynamicsProcessing_EqBand arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		DynamicsProcessing_EqBand(jboolean arg0, jfloat arg1, jfloat arg2)
 		{
 			__constructor(
 				arg0,
 				arg1,
 				arg2);
-		}
-		DynamicsProcessing_EqBand(__jni_impl::android::media::audiofx::DynamicsProcessing_EqBand arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::media::audiofx

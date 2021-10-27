@@ -17,8 +17,8 @@ namespace __jni_impl::javax::crypto::spec
 		void __constructor(jint arg0, jint arg1);
 		
 		// Methods
-		jint getPrimeSize();
 		jint getExponentSize();
+		jint getPrimeSize();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -39,17 +39,17 @@ namespace __jni_impl::javax::crypto::spec
 	}
 	
 	// Methods
-	jint DHGenParameterSpec::getPrimeSize()
-	{
-		return __thiz.callMethod<jint>(
-			"getPrimeSize",
-			"()I"
-		);
-	}
 	jint DHGenParameterSpec::getExponentSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getExponentSize",
+			"()I"
+		);
+	}
+	jint DHGenParameterSpec::getPrimeSize()
+	{
+		return __thiz.callMethod<jint>(
+			"getPrimeSize",
 			"()I"
 		);
 	}

@@ -19,11 +19,11 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
 		jlong getAnchorMediaTimeUs();
-		jlong getAnchorSytemNanoTime();
 		jlong getAnchorSystemNanoTime();
+		jlong getAnchorSytemNanoTime();
 		jfloat getMediaClockRate();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::media
 
@@ -61,24 +61,10 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	jstring MediaTimestamp::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jlong MediaTimestamp::getAnchorMediaTimeUs()
 	{
 		return __thiz.callMethod<jlong>(
 			"getAnchorMediaTimeUs",
-			"()J"
-		);
-	}
-	jlong MediaTimestamp::getAnchorSytemNanoTime()
-	{
-		return __thiz.callMethod<jlong>(
-			"getAnchorSytemNanoTime",
 			"()J"
 		);
 	}
@@ -89,12 +75,26 @@ namespace __jni_impl::android::media
 			"()J"
 		);
 	}
+	jlong MediaTimestamp::getAnchorSytemNanoTime()
+	{
+		return __thiz.callMethod<jlong>(
+			"getAnchorSytemNanoTime",
+			"()J"
+		);
+	}
 	jfloat MediaTimestamp::getMediaClockRate()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getMediaClockRate",
 			"()F"
 		);
+	}
+	jstring MediaTimestamp::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media
 

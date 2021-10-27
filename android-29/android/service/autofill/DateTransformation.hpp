@@ -5,10 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view::autofill
-{
-	class AutofillId;
-}
 namespace __jni_impl::android::icu::text
 {
 	class DateFormat;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::icu::text
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::view::autofill
+{
+	class AutofillId;
 }
 
 namespace __jni_impl::android::service::autofill
@@ -30,15 +30,15 @@ namespace __jni_impl::android::service::autofill
 		void __constructor(__jni_impl::android::view::autofill::AutofillId arg0, __jni_impl::android::icu::text::DateFormat arg1);
 		
 		// Methods
-		jstring toString();
 		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::service::autofill
 
-#include "../../view/autofill/AutofillId.hpp"
 #include "../../icu/text/DateFormat.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../view/autofill/AutofillId.hpp"
 
 namespace __jni_impl::android::service::autofill
 {
@@ -64,19 +64,19 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	jstring DateTransformation::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint DateTransformation::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
+	}
+	jstring DateTransformation::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void DateTransformation::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

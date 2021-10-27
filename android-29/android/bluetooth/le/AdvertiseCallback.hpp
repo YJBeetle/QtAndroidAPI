@@ -26,8 +26,8 @@ namespace __jni_impl::android::bluetooth::le
 		void __constructor();
 		
 		// Methods
-		void onStartSuccess(__jni_impl::android::bluetooth::le::AdvertiseSettings arg0);
 		void onStartFailure(jint arg0);
+		void onStartSuccess(__jni_impl::android::bluetooth::le::AdvertiseSettings arg0);
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
@@ -82,20 +82,20 @@ namespace __jni_impl::android::bluetooth::le
 	}
 	
 	// Methods
-	void AdvertiseCallback::onStartSuccess(__jni_impl::android::bluetooth::le::AdvertiseSettings arg0)
-	{
-		__thiz.callMethod<void>(
-			"onStartSuccess",
-			"(Landroid/bluetooth/le/AdvertiseSettings;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void AdvertiseCallback::onStartFailure(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onStartFailure",
 			"(I)V",
 			arg0
+		);
+	}
+	void AdvertiseCallback::onStartSuccess(__jni_impl::android::bluetooth::le::AdvertiseSettings arg0)
+	{
+		__thiz.callMethod<void>(
+			"onStartSuccess",
+			"(Landroid/bluetooth/le/AdvertiseSettings;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::bluetooth::le

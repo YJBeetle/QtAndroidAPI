@@ -13,18 +13,18 @@ namespace __jni_impl::java::security::cert
 	{
 	public:
 		// Fields
+		static QAndroidJniObject NO_FALLBACK();
 		static QAndroidJniObject ONLY_END_ENTITY();
 		static QAndroidJniObject PREFER_CRLS();
-		static QAndroidJniObject NO_FALLBACK();
 		static QAndroidJniObject SOFT_FAIL();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -32,6 +32,14 @@ namespace __jni_impl::java::security::cert
 namespace __jni_impl::java::security::cert
 {
 	// Fields
+	QAndroidJniObject PKIXRevocationChecker_Option::NO_FALLBACK()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.security.cert.PKIXRevocationChecker$Option",
+			"NO_FALLBACK",
+			"Ljava/security/cert/PKIXRevocationChecker$Option;"
+		);
+	}
 	QAndroidJniObject PKIXRevocationChecker_Option::ONLY_END_ENTITY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -45,14 +53,6 @@ namespace __jni_impl::java::security::cert
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.PKIXRevocationChecker$Option",
 			"PREFER_CRLS",
-			"Ljava/security/cert/PKIXRevocationChecker$Option;"
-		);
-	}
-	QAndroidJniObject PKIXRevocationChecker_Option::NO_FALLBACK()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.security.cert.PKIXRevocationChecker$Option",
-			"NO_FALLBACK",
 			"Ljava/security/cert/PKIXRevocationChecker$Option;"
 		);
 	}
@@ -74,14 +74,6 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	jarray PKIXRevocationChecker_Option::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.cert.PKIXRevocationChecker$Option",
-			"values",
-			"()[Ljava/security/cert/PKIXRevocationChecker$Option;"
-		).object<jarray>();
-	}
 	QAndroidJniObject PKIXRevocationChecker_Option::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -99,6 +91,14 @@ namespace __jni_impl::java::security::cert
 			"(Ljava/lang/String;)Ljava/security/cert/PKIXRevocationChecker$Option;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray PKIXRevocationChecker_Option::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.cert.PKIXRevocationChecker$Option",
+			"values",
+			"()[Ljava/security/cert/PKIXRevocationChecker$Option;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::security::cert
 

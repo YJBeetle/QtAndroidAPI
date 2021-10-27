@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::net
 {
 	class Uri;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::telephony::mbms
@@ -26,22 +26,22 @@ namespace __jni_impl::android::telephony::mbms
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		jbyteArray toByteArray();
-		jstring getFileServiceId();
-		QAndroidJniObject getSourceUri();
-		QAndroidJniObject getDestinationUri();
 		static jint getMaxAppIntentSize();
 		static jint getMaxDestinationUriSize();
-		jint getSubscriptionId();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		QAndroidJniObject getDestinationUri();
+		jstring getFileServiceId();
+		QAndroidJniObject getSourceUri();
+		jint getSubscriptionId();
+		jint hashCode();
+		jbyteArray toByteArray();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony::mbms
 
-#include "../../os/Parcel.hpp"
 #include "../../net/Uri.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::telephony::mbms
 {
@@ -64,49 +64,6 @@ namespace __jni_impl::android::telephony::mbms
 	}
 	
 	// Methods
-	jboolean DownloadRequest::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jint DownloadRequest::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jbyteArray DownloadRequest::toByteArray()
-	{
-		return __thiz.callObjectMethod(
-			"toByteArray",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	jstring DownloadRequest::getFileServiceId()
-	{
-		return __thiz.callObjectMethod(
-			"getFileServiceId",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject DownloadRequest::getSourceUri()
-	{
-		return __thiz.callObjectMethod(
-			"getSourceUri",
-			"()Landroid/net/Uri;"
-		);
-	}
-	QAndroidJniObject DownloadRequest::getDestinationUri()
-	{
-		return __thiz.callObjectMethod(
-			"getDestinationUri",
-			"()Landroid/net/Uri;"
-		);
-	}
 	jint DownloadRequest::getMaxAppIntentSize()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -123,6 +80,42 @@ namespace __jni_impl::android::telephony::mbms
 			"()I"
 		);
 	}
+	jint DownloadRequest::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	jboolean DownloadRequest::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	QAndroidJniObject DownloadRequest::getDestinationUri()
+	{
+		return __thiz.callObjectMethod(
+			"getDestinationUri",
+			"()Landroid/net/Uri;"
+		);
+	}
+	jstring DownloadRequest::getFileServiceId()
+	{
+		return __thiz.callObjectMethod(
+			"getFileServiceId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject DownloadRequest::getSourceUri()
+	{
+		return __thiz.callObjectMethod(
+			"getSourceUri",
+			"()Landroid/net/Uri;"
+		);
+	}
 	jint DownloadRequest::getSubscriptionId()
 	{
 		return __thiz.callMethod<jint>(
@@ -130,12 +123,19 @@ namespace __jni_impl::android::telephony::mbms
 			"()I"
 		);
 	}
-	jint DownloadRequest::describeContents()
+	jint DownloadRequest::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
 		);
+	}
+	jbyteArray DownloadRequest::toByteArray()
+	{
+		return __thiz.callObjectMethod(
+			"toByteArray",
+			"()[B"
+		).object<jbyteArray>();
 	}
 	void DownloadRequest::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

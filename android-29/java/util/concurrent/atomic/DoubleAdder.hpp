@@ -22,14 +22,14 @@ namespace __jni_impl::java::util::concurrent::atomic
 		
 		// Methods
 		void add(jdouble arg0);
-		jstring toString();
+		jdouble doubleValue();
+		jfloat floatValue();
 		jint intValue();
 		jlong longValue();
-		jfloat floatValue();
-		jdouble doubleValue();
 		void reset();
 		jdouble sum();
 		jdouble sumThenReset();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::util::concurrent::atomic
 
@@ -57,12 +57,19 @@ namespace __jni_impl::java::util::concurrent::atomic
 			arg0
 		);
 	}
-	jstring DoubleAdder::toString()
+	jdouble DoubleAdder::doubleValue()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jdouble>(
+			"doubleValue",
+			"()D"
+		);
+	}
+	jfloat DoubleAdder::floatValue()
+	{
+		return __thiz.callMethod<jfloat>(
+			"floatValue",
+			"()F"
+		);
 	}
 	jint DoubleAdder::intValue()
 	{
@@ -76,20 +83,6 @@ namespace __jni_impl::java::util::concurrent::atomic
 		return __thiz.callMethod<jlong>(
 			"longValue",
 			"()J"
-		);
-	}
-	jfloat DoubleAdder::floatValue()
-	{
-		return __thiz.callMethod<jfloat>(
-			"floatValue",
-			"()F"
-		);
-	}
-	jdouble DoubleAdder::doubleValue()
-	{
-		return __thiz.callMethod<jdouble>(
-			"doubleValue",
-			"()D"
 		);
 	}
 	void DoubleAdder::reset()
@@ -112,6 +105,13 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"sumThenReset",
 			"()D"
 		);
+	}
+	jstring DoubleAdder::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util::concurrent::atomic
 

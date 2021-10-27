@@ -8,14 +8,6 @@
 #include "../view/ViewGroup_MarginLayoutParams.hpp"
 #include "LinearLayout_LayoutParams.hpp"
 
-namespace __jni_impl::android::view
-{
-	class ViewGroup_LayoutParams;
-}
-namespace __jni_impl::android::view
-{
-	class ViewGroup_MarginLayoutParams;
-}
 namespace __jni_impl::android::content
 {
 	class Context;
@@ -23,6 +15,14 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::content::res
 {
 	class TypedArray;
+}
+namespace __jni_impl::android::view
+{
+	class ViewGroup_LayoutParams;
+}
+namespace __jni_impl::android::view
+{
+	class ViewGroup_MarginLayoutParams;
 }
 
 namespace __jni_impl::android::widget
@@ -36,9 +36,9 @@ namespace __jni_impl::android::widget
 		
 		// Constructors
 		void __constructor();
-		void __constructor(jint arg0);
 		void __constructor(__jni_impl::android::view::ViewGroup_LayoutParams arg0);
 		void __constructor(__jni_impl::android::view::ViewGroup_MarginLayoutParams arg0);
+		void __constructor(jint arg0);
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(jint arg0, jint arg1);
 		void __constructor(jint arg0, jint arg1, jfloat arg2);
@@ -47,10 +47,10 @@ namespace __jni_impl::android::widget
 	};
 } // namespace __jni_impl::android::widget
 
-#include "../view/ViewGroup_LayoutParams.hpp"
-#include "../view/ViewGroup_MarginLayoutParams.hpp"
 #include "../content/Context.hpp"
 #include "../content/res/TypedArray.hpp"
+#include "../view/ViewGroup_LayoutParams.hpp"
+#include "../view/ViewGroup_MarginLayoutParams.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -76,14 +76,6 @@ namespace __jni_impl::android::widget
 			"()V"
 		);
 	}
-	void TableRow_LayoutParams::__constructor(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.widget.TableRow$LayoutParams",
-			"(I)V",
-			arg0
-		);
-	}
 	void TableRow_LayoutParams::__constructor(__jni_impl::android::view::ViewGroup_LayoutParams arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -98,6 +90,14 @@ namespace __jni_impl::android::widget
 			"android.widget.TableRow$LayoutParams",
 			"(Landroid/view/ViewGroup$MarginLayoutParams;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void TableRow_LayoutParams::__constructor(jint arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.widget.TableRow$LayoutParams",
+			"(I)V",
+			arg0
 		);
 	}
 	void TableRow_LayoutParams::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
@@ -142,17 +142,17 @@ namespace android::widget
 		{
 			__constructor();
 		}
-		TableRow_LayoutParams(jint arg0)
-		{
-			__constructor(
-				arg0);
-		}
 		TableRow_LayoutParams(__jni_impl::android::view::ViewGroup_LayoutParams arg0)
 		{
 			__constructor(
 				arg0);
 		}
 		TableRow_LayoutParams(__jni_impl::android::view::ViewGroup_MarginLayoutParams arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		TableRow_LayoutParams(jint arg0)
 		{
 			__constructor(
 				arg0);

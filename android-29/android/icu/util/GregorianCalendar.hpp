@@ -8,11 +8,11 @@
 
 namespace __jni_impl::android::icu::util
 {
-	class TimeZone;
+	class Calendar;
 }
-namespace __jni_impl::java::util
+namespace __jni_impl::android::icu::util
 {
-	class Locale;
+	class TimeZone;
 }
 namespace __jni_impl::android::icu::util
 {
@@ -22,9 +22,9 @@ namespace __jni_impl::java::util
 {
 	class Date;
 }
-namespace __jni_impl::android::icu::util
+namespace __jni_impl::java::util
 {
-	class Calendar;
+	class Locale;
 }
 
 namespace __jni_impl::android::icu::util
@@ -37,34 +37,34 @@ namespace __jni_impl::android::icu::util
 		static jint BC();
 		
 		// Constructors
-		void __constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1);
+		void __constructor();
+		void __constructor(__jni_impl::android::icu::util::TimeZone arg0);
+		void __constructor(__jni_impl::android::icu::util::ULocale arg0);
+		void __constructor(__jni_impl::java::util::Locale arg0);
 		void __constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1);
+		void __constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1);
 		void __constructor(jint arg0, jint arg1, jint arg2);
 		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		void __constructor(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
-		void __constructor();
-		void __constructor(__jni_impl::android::icu::util::TimeZone arg0);
-		void __constructor(__jni_impl::java::util::Locale arg0);
-		void __constructor(__jni_impl::android::icu::util::ULocale arg0);
 		
 		// Methods
-		jint hashCode();
-		jstring getType();
-		void roll(jint arg0, jint arg1);
-		jint getActualMinimum(jint arg0);
 		jint getActualMaximum(jint arg0);
-		void setGregorianChange(__jni_impl::java::util::Date arg0);
+		jint getActualMinimum(jint arg0);
 		QAndroidJniObject getGregorianChange();
-		jboolean isLeapYear(jint arg0);
+		jstring getType();
+		jint hashCode();
 		jboolean isEquivalentTo(__jni_impl::android::icu::util::Calendar arg0);
+		jboolean isLeapYear(jint arg0);
+		void roll(jint arg0, jint arg1);
+		void setGregorianChange(__jni_impl::java::util::Date arg0);
 	};
 } // namespace __jni_impl::android::icu::util
 
+#include "Calendar.hpp"
 #include "TimeZone.hpp"
-#include "../../../java/util/Locale.hpp"
 #include "ULocale.hpp"
 #include "../../../java/util/Date.hpp"
-#include "Calendar.hpp"
+#include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::icu::util
 {
@@ -85,13 +85,35 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Constructors
-	void GregorianCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
+	void GregorianCalendar::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.util.GregorianCalendar",
-			"(Landroid/icu/util/TimeZone;Ljava/util/Locale;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			"()V"
+		);
+	}
+	void GregorianCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.GregorianCalendar",
+			"(Landroid/icu/util/TimeZone;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void GregorianCalendar::__constructor(__jni_impl::android::icu::util::ULocale arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.GregorianCalendar",
+			"(Landroid/icu/util/ULocale;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void GregorianCalendar::__constructor(__jni_impl::java::util::Locale arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.GregorianCalendar",
+			"(Ljava/util/Locale;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void GregorianCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1)
@@ -99,6 +121,15 @@ namespace __jni_impl::android::icu::util
 		__thiz = QAndroidJniObject(
 			"android.icu.util.GregorianCalendar",
 			"(Landroid/icu/util/TimeZone;Landroid/icu/util/ULocale;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void GregorianCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.util.GregorianCalendar",
+			"(Landroid/icu/util/TimeZone;Ljava/util/Locale;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
 		);
@@ -138,60 +169,14 @@ namespace __jni_impl::android::icu::util
 			arg5
 		);
 	}
-	void GregorianCalendar::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.GregorianCalendar",
-			"()V"
-		);
-	}
-	void GregorianCalendar::__constructor(__jni_impl::android::icu::util::TimeZone arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.GregorianCalendar",
-			"(Landroid/icu/util/TimeZone;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void GregorianCalendar::__constructor(__jni_impl::java::util::Locale arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.GregorianCalendar",
-			"(Ljava/util/Locale;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void GregorianCalendar::__constructor(__jni_impl::android::icu::util::ULocale arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.util.GregorianCalendar",
-			"(Landroid/icu/util/ULocale;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	
 	// Methods
-	jint GregorianCalendar::hashCode()
+	jint GregorianCalendar::getActualMaximum(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jstring GregorianCalendar::getType()
-	{
-		return __thiz.callObjectMethod(
-			"getType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void GregorianCalendar::roll(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"roll",
-			"(II)V",
-			arg0,
-			arg1
+			"getActualMaximum",
+			"(I)I",
+			arg0
 		);
 	}
 	jint GregorianCalendar::getActualMinimum(jint arg0)
@@ -202,27 +187,33 @@ namespace __jni_impl::android::icu::util
 			arg0
 		);
 	}
-	jint GregorianCalendar::getActualMaximum(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getActualMaximum",
-			"(I)I",
-			arg0
-		);
-	}
-	void GregorianCalendar::setGregorianChange(__jni_impl::java::util::Date arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGregorianChange",
-			"(Ljava/util/Date;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject GregorianCalendar::getGregorianChange()
 	{
 		return __thiz.callObjectMethod(
 			"getGregorianChange",
 			"()Ljava/util/Date;"
+		);
+	}
+	jstring GregorianCalendar::getType()
+	{
+		return __thiz.callObjectMethod(
+			"getType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint GregorianCalendar::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jboolean GregorianCalendar::isEquivalentTo(__jni_impl::android::icu::util::Calendar arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEquivalentTo",
+			"(Landroid/icu/util/Calendar;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 	jboolean GregorianCalendar::isLeapYear(jint arg0)
@@ -233,11 +224,20 @@ namespace __jni_impl::android::icu::util
 			arg0
 		);
 	}
-	jboolean GregorianCalendar::isEquivalentTo(__jni_impl::android::icu::util::Calendar arg0)
+	void GregorianCalendar::roll(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isEquivalentTo",
-			"(Landroid/icu/util/Calendar;)Z",
+		__thiz.callMethod<void>(
+			"roll",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void GregorianCalendar::setGregorianChange(__jni_impl::java::util::Date arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGregorianChange",
+			"(Ljava/util/Date;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -249,13 +249,32 @@ namespace android::icu::util
 	{
 	public:
 		GregorianCalendar(QAndroidJniObject obj) { __thiz = obj; }
-		GregorianCalendar(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
+		GregorianCalendar()
+		{
+			__constructor();
+		}
+		GregorianCalendar(__jni_impl::android::icu::util::TimeZone arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		GregorianCalendar(__jni_impl::android::icu::util::ULocale arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		GregorianCalendar(__jni_impl::java::util::Locale arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		GregorianCalendar(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
 		}
-		GregorianCalendar(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::android::icu::util::ULocale arg1)
+		GregorianCalendar(__jni_impl::android::icu::util::TimeZone arg0, __jni_impl::java::util::Locale arg1)
 		{
 			__constructor(
 				arg0,
@@ -286,25 +305,6 @@ namespace android::icu::util
 				arg3,
 				arg4,
 				arg5);
-		}
-		GregorianCalendar()
-		{
-			__constructor();
-		}
-		GregorianCalendar(__jni_impl::android::icu::util::TimeZone arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		GregorianCalendar(__jni_impl::java::util::Locale arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		GregorianCalendar(__jni_impl::android::icu::util::ULocale arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::icu::util

@@ -27,9 +27,9 @@ namespace __jni_impl::android::media::tv
 		
 		// Methods
 		jstring getHardwareInputId();
-		jboolean onSetSurface(__jni_impl::android::view::Surface arg0);
 		void onHardwareVideoAvailable();
 		void onHardwareVideoUnavailable(jint arg0);
+		jboolean onSetSurface(__jni_impl::android::view::Surface arg0);
 	};
 } // namespace __jni_impl::android::media::tv
 
@@ -58,14 +58,6 @@ namespace __jni_impl::android::media::tv
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jboolean TvInputService_HardwareSession::onSetSurface(__jni_impl::android::view::Surface arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onSetSurface",
-			"(Landroid/view/Surface;)Z",
-			arg0.__jniObject().object()
-		);
-	}
 	void TvInputService_HardwareSession::onHardwareVideoAvailable()
 	{
 		__thiz.callMethod<void>(
@@ -79,6 +71,14 @@ namespace __jni_impl::android::media::tv
 			"onHardwareVideoUnavailable",
 			"(I)V",
 			arg0
+		);
+	}
+	jboolean TvInputService_HardwareSession::onSetSurface(__jni_impl::android::view::Surface arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onSetSurface",
+			"(Landroid/view/Surface;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::media::tv

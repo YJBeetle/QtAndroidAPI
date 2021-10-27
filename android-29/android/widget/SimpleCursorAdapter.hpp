@@ -38,19 +38,19 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		void bindView(__jni_impl::android::view::View arg0, __jni_impl::android::content::Context arg1, __jni_impl::__JniBaseClass arg2);
-		QAndroidJniObject swapCursor(__jni_impl::__JniBaseClass arg0);
-		jint getStringConversionColumn();
-		void setStringConversionColumn(jint arg0);
-		QAndroidJniObject getCursorToStringConverter();
-		void setCursorToStringConverter(__jni_impl::__JniBaseClass arg0);
 		void changeCursorAndColumns(__jni_impl::__JniBaseClass arg0, jarray arg1, jintArray arg2);
 		jstring convertToString(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getCursorToStringConverter();
+		jint getStringConversionColumn();
 		QAndroidJniObject getViewBinder();
+		void setCursorToStringConverter(__jni_impl::__JniBaseClass arg0);
+		void setStringConversionColumn(jint arg0);
 		void setViewBinder(__jni_impl::__JniBaseClass arg0);
 		void setViewImage(__jni_impl::android::widget::ImageView arg0, jstring arg1);
 		void setViewImage(__jni_impl::android::widget::ImageView arg0, const QString &arg1);
 		void setViewText(__jni_impl::android::widget::TextView arg0, jstring arg1);
 		void setViewText(__jni_impl::android::widget::TextView arg0, const QString &arg1);
+		QAndroidJniObject swapCursor(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -101,44 +101,6 @@ namespace __jni_impl::android::widget
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject SimpleCursorAdapter::swapCursor(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"swapCursor",
-			"(Landroid/database/Cursor;)Landroid/database/Cursor;",
-			arg0.__jniObject().object()
-		);
-	}
-	jint SimpleCursorAdapter::getStringConversionColumn()
-	{
-		return __thiz.callMethod<jint>(
-			"getStringConversionColumn",
-			"()I"
-		);
-	}
-	void SimpleCursorAdapter::setStringConversionColumn(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStringConversionColumn",
-			"(I)V",
-			arg0
-		);
-	}
-	QAndroidJniObject SimpleCursorAdapter::getCursorToStringConverter()
-	{
-		return __thiz.callObjectMethod(
-			"getCursorToStringConverter",
-			"()Landroid/widget/SimpleCursorAdapter$CursorToStringConverter;"
-		);
-	}
-	void SimpleCursorAdapter::setCursorToStringConverter(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCursorToStringConverter",
-			"(Landroid/widget/SimpleCursorAdapter$CursorToStringConverter;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void SimpleCursorAdapter::changeCursorAndColumns(__jni_impl::__JniBaseClass arg0, jarray arg1, jintArray arg2)
 	{
 		__thiz.callMethod<void>(
@@ -157,11 +119,41 @@ namespace __jni_impl::android::widget
 			arg0.__jniObject().object()
 		).object<jstring>();
 	}
+	QAndroidJniObject SimpleCursorAdapter::getCursorToStringConverter()
+	{
+		return __thiz.callObjectMethod(
+			"getCursorToStringConverter",
+			"()Landroid/widget/SimpleCursorAdapter$CursorToStringConverter;"
+		);
+	}
+	jint SimpleCursorAdapter::getStringConversionColumn()
+	{
+		return __thiz.callMethod<jint>(
+			"getStringConversionColumn",
+			"()I"
+		);
+	}
 	QAndroidJniObject SimpleCursorAdapter::getViewBinder()
 	{
 		return __thiz.callObjectMethod(
 			"getViewBinder",
 			"()Landroid/widget/SimpleCursorAdapter$ViewBinder;"
+		);
+	}
+	void SimpleCursorAdapter::setCursorToStringConverter(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCursorToStringConverter",
+			"(Landroid/widget/SimpleCursorAdapter$CursorToStringConverter;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void SimpleCursorAdapter::setStringConversionColumn(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setStringConversionColumn",
+			"(I)V",
+			arg0
 		);
 	}
 	void SimpleCursorAdapter::setViewBinder(__jni_impl::__JniBaseClass arg0)
@@ -206,6 +198,14 @@ namespace __jni_impl::android::widget
 			"(Landroid/widget/TextView;Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	QAndroidJniObject SimpleCursorAdapter::swapCursor(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"swapCursor",
+			"(Landroid/database/Cursor;)Landroid/database/Cursor;",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::widget

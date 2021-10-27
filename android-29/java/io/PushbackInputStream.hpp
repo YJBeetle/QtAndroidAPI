@@ -24,14 +24,14 @@ namespace __jni_impl::java::io
 		void __constructor(__jni_impl::java::io::InputStream arg0, jint arg1);
 		
 		// Methods
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
-		jint read();
+		jint available();
 		void close();
 		void mark(jint arg0);
-		jlong skip(jlong arg0);
-		jint available();
 		jboolean markSupported();
+		jint read();
+		jint read(jbyteArray arg0, jint arg1, jint arg2);
 		void reset();
+		jlong skip(jlong arg0);
 		void unread(jbyteArray arg0);
 		void unread(jint arg0);
 		void unread(jbyteArray arg0, jint arg1, jint arg2);
@@ -64,20 +64,10 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	jint PushbackInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint PushbackInputStream::available()
 	{
 		return __thiz.callMethod<jint>(
-			"read",
-			"([BII)I",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jint PushbackInputStream::read()
-	{
-		return __thiz.callMethod<jint>(
-			"read",
+			"available",
 			"()I"
 		);
 	}
@@ -96,21 +86,6 @@ namespace __jni_impl::java::io
 			arg0
 		);
 	}
-	jlong PushbackInputStream::skip(jlong arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"skip",
-			"(J)J",
-			arg0
-		);
-	}
-	jint PushbackInputStream::available()
-	{
-		return __thiz.callMethod<jint>(
-			"available",
-			"()I"
-		);
-	}
 	jboolean PushbackInputStream::markSupported()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -118,11 +93,36 @@ namespace __jni_impl::java::io
 			"()Z"
 		);
 	}
+	jint PushbackInputStream::read()
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
+	jint PushbackInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"([BII)I",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
 	void PushbackInputStream::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
 			"()V"
+		);
+	}
+	jlong PushbackInputStream::skip(jlong arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"skip",
+			"(J)J",
+			arg0
 		);
 	}
 	void PushbackInputStream::unread(jbyteArray arg0)

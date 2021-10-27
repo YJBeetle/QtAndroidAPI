@@ -5,6 +5,10 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::java::io
+{
+	class DataInputStream;
+}
 namespace __jni_impl::java::util
 {
 	class HashSet;
@@ -13,9 +17,9 @@ namespace __jni_impl::java::util
 {
 	class Locale;
 }
-namespace __jni_impl::java::io
+namespace __jni_impl::java::util
 {
-	class DataInputStream;
+	class Optional;
 }
 namespace __jni_impl::java::util
 {
@@ -24,10 +28,6 @@ namespace __jni_impl::java::util
 namespace __jni_impl::java::util::regex
 {
 	class Pattern;
-}
-namespace __jni_impl::java::util
-{
-	class Optional;
 }
 
 namespace __jni_impl::java::util
@@ -41,28 +41,28 @@ namespace __jni_impl::java::util
 		void __constructor();
 		
 		// Methods
-		jstring toString();
+		static QAndroidJniObject getAvailableCurrencies();
 		static QAndroidJniObject getInstance(jstring arg0);
 		static QAndroidJniObject getInstance(const QString &arg0);
 		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
-		jstring getDisplayName(__jni_impl::java::util::Locale arg0);
-		jstring getDisplayName();
-		jint getDefaultFractionDigits();
 		jstring getCurrencyCode();
-		jstring getSymbol();
-		jstring getSymbol(__jni_impl::java::util::Locale arg0);
-		static QAndroidJniObject getAvailableCurrencies();
+		jint getDefaultFractionDigits();
+		jstring getDisplayName();
+		jstring getDisplayName(__jni_impl::java::util::Locale arg0);
 		jint getNumericCode();
 		jstring getNumericCodeAsString();
+		jstring getSymbol();
+		jstring getSymbol(__jni_impl::java::util::Locale arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::java::util
 
+#include "../io/DataInputStream.hpp"
 #include "HashSet.hpp"
 #include "Locale.hpp"
-#include "../io/DataInputStream.hpp"
+#include "Optional.hpp"
 #include "Properties.hpp"
 #include "regex/Pattern.hpp"
-#include "Optional.hpp"
 
 namespace __jni_impl::java::util
 {
@@ -77,12 +77,13 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	jstring Currency::toString()
+	QAndroidJniObject Currency::getAvailableCurrencies()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.Currency",
+			"getAvailableCurrencies",
+			"()Ljava/util/Set;"
+		);
 	}
 	QAndroidJniObject Currency::getInstance(jstring arg0)
 	{
@@ -111,18 +112,10 @@ namespace __jni_impl::java::util
 			arg0.__jniObject().object()
 		);
 	}
-	jstring Currency::getDisplayName(__jni_impl::java::util::Locale arg0)
+	jstring Currency::getCurrencyCode()
 	{
 		return __thiz.callObjectMethod(
-			"getDisplayName",
-			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
-		).object<jstring>();
-	}
-	jstring Currency::getDisplayName()
-	{
-		return __thiz.callObjectMethod(
-			"getDisplayName",
+			"getCurrencyCode",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -133,10 +126,32 @@ namespace __jni_impl::java::util
 			"()I"
 		);
 	}
-	jstring Currency::getCurrencyCode()
+	jstring Currency::getDisplayName()
 	{
 		return __thiz.callObjectMethod(
-			"getCurrencyCode",
+			"getDisplayName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring Currency::getDisplayName(__jni_impl::java::util::Locale arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDisplayName",
+			"(Ljava/util/Locale;)Ljava/lang/String;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	jint Currency::getNumericCode()
+	{
+		return __thiz.callMethod<jint>(
+			"getNumericCode",
+			"()I"
+		);
+	}
+	jstring Currency::getNumericCodeAsString()
+	{
+		return __thiz.callObjectMethod(
+			"getNumericCodeAsString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -155,25 +170,10 @@ namespace __jni_impl::java::util
 			arg0.__jniObject().object()
 		).object<jstring>();
 	}
-	QAndroidJniObject Currency::getAvailableCurrencies()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Currency",
-			"getAvailableCurrencies",
-			"()Ljava/util/Set;"
-		);
-	}
-	jint Currency::getNumericCode()
-	{
-		return __thiz.callMethod<jint>(
-			"getNumericCode",
-			"()I"
-		);
-	}
-	jstring Currency::getNumericCodeAsString()
+	jstring Currency::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getNumericCodeAsString",
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

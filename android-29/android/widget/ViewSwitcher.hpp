@@ -34,11 +34,11 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		void setFactory(__jni_impl::__JniBaseClass arg0);
-		void reset();
-		jstring getAccessibilityClassName();
 		void addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2);
+		jstring getAccessibilityClassName();
 		QAndroidJniObject getNextView();
+		void reset();
+		void setFactory(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -70,28 +70,6 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	void ViewSwitcher::setFactory(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFactory",
-			"(Landroid/widget/ViewSwitcher$ViewFactory;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ViewSwitcher::reset()
-	{
-		__thiz.callMethod<void>(
-			"reset",
-			"()V"
-		);
-	}
-	jstring ViewSwitcher::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
 	void ViewSwitcher::addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2)
 	{
 		__thiz.callMethod<void>(
@@ -102,11 +80,33 @@ namespace __jni_impl::android::widget
 			arg2.__jniObject().object()
 		);
 	}
+	jstring ViewSwitcher::getAccessibilityClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
 	QAndroidJniObject ViewSwitcher::getNextView()
 	{
 		return __thiz.callObjectMethod(
 			"getNextView",
 			"()Landroid/view/View;"
+		);
+	}
+	void ViewSwitcher::reset()
+	{
+		__thiz.callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
+	void ViewSwitcher::setFactory(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFactory",
+			"(Landroid/widget/ViewSwitcher$ViewFactory;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::widget

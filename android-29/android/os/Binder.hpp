@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::os
 {
-	class UserHandle;
+	class Parcel;
 }
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class UserHandle;
 }
 namespace __jni_impl::java::io
 {
@@ -35,35 +35,35 @@ namespace __jni_impl::android::os
 		void __constructor(const QString &arg0);
 		
 		// Methods
-		static jint getCallingUid();
 		static jlong clearCallingIdentity();
-		static void restoreCallingIdentity(jlong arg0);
-		static QAndroidJniObject getCallingUserHandle();
-		static jlong setCallingWorkSourceUid(jint arg0);
-		static jint getCallingWorkSourceUid();
 		static jlong clearCallingWorkSource();
-		static void restoreCallingWorkSource(jlong arg0);
 		static void flushPendingCommands();
+		static jint getCallingPid();
+		static jint getCallingUid();
+		static jint getCallingUidOrThrow();
+		static QAndroidJniObject getCallingUserHandle();
+		static jint getCallingWorkSourceUid();
 		static void joinThreadPool();
+		static void restoreCallingIdentity(jlong arg0);
+		static void restoreCallingWorkSource(jlong arg0);
+		static jlong setCallingWorkSourceUid(jint arg0);
 		void attachInterface(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		void attachInterface(__jni_impl::__JniBaseClass arg0, const QString &arg1);
-		static jint getCallingPid();
-		static jint getCallingUidOrThrow();
 		void dump(__jni_impl::java::io::FileDescriptor arg0, jarray arg1);
+		void dumpAsync(__jni_impl::java::io::FileDescriptor arg0, jarray arg1);
 		jstring getInterfaceDescriptor();
-		jboolean pingBinder();
 		jboolean isBinderAlive();
+		void linkToDeath(__jni_impl::__JniBaseClass arg0, jint arg1);
+		jboolean pingBinder();
 		QAndroidJniObject queryLocalInterface(jstring arg0);
 		QAndroidJniObject queryLocalInterface(const QString &arg0);
-		void dumpAsync(__jni_impl::java::io::FileDescriptor arg0, jarray arg1);
 		jboolean transact(jint arg0, __jni_impl::android::os::Parcel arg1, __jni_impl::android::os::Parcel arg2, jint arg3);
-		void linkToDeath(__jni_impl::__JniBaseClass arg0, jint arg1);
 		jboolean unlinkToDeath(__jni_impl::__JniBaseClass arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::os
 
-#include "UserHandle.hpp"
 #include "Parcel.hpp"
+#include "UserHandle.hpp"
 #include "../../java/io/FileDescriptor.hpp"
 #include "../../java/io/PrintWriter.hpp"
 
@@ -97,6 +97,38 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
+	jlong Binder::clearCallingIdentity()
+	{
+		return QAndroidJniObject::callStaticMethod<jlong>(
+			"android.os.Binder",
+			"clearCallingIdentity",
+			"()J"
+		);
+	}
+	jlong Binder::clearCallingWorkSource()
+	{
+		return QAndroidJniObject::callStaticMethod<jlong>(
+			"android.os.Binder",
+			"clearCallingWorkSource",
+			"()J"
+		);
+	}
+	void Binder::flushPendingCommands()
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Binder",
+			"flushPendingCommands",
+			"()V"
+		);
+	}
+	jint Binder::getCallingPid()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.os.Binder",
+			"getCallingPid",
+			"()I"
+		);
+	}
 	jint Binder::getCallingUid()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -105,12 +137,36 @@ namespace __jni_impl::android::os
 			"()I"
 		);
 	}
-	jlong Binder::clearCallingIdentity()
+	jint Binder::getCallingUidOrThrow()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
+		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.os.Binder",
-			"clearCallingIdentity",
-			"()J"
+			"getCallingUidOrThrow",
+			"()I"
+		);
+	}
+	QAndroidJniObject Binder::getCallingUserHandle()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.Binder",
+			"getCallingUserHandle",
+			"()Landroid/os/UserHandle;"
+		);
+	}
+	jint Binder::getCallingWorkSourceUid()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.os.Binder",
+			"getCallingWorkSourceUid",
+			"()I"
+		);
+	}
+	void Binder::joinThreadPool()
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Binder",
+			"joinThreadPool",
+			"()V"
 		);
 	}
 	void Binder::restoreCallingIdentity(jlong arg0)
@@ -122,39 +178,6 @@ namespace __jni_impl::android::os
 			arg0
 		);
 	}
-	QAndroidJniObject Binder::getCallingUserHandle()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.Binder",
-			"getCallingUserHandle",
-			"()Landroid/os/UserHandle;"
-		);
-	}
-	jlong Binder::setCallingWorkSourceUid(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.os.Binder",
-			"setCallingWorkSourceUid",
-			"(I)J",
-			arg0
-		);
-	}
-	jint Binder::getCallingWorkSourceUid()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.os.Binder",
-			"getCallingWorkSourceUid",
-			"()I"
-		);
-	}
-	jlong Binder::clearCallingWorkSource()
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.os.Binder",
-			"clearCallingWorkSource",
-			"()J"
-		);
-	}
 	void Binder::restoreCallingWorkSource(jlong arg0)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -164,20 +187,13 @@ namespace __jni_impl::android::os
 			arg0
 		);
 	}
-	void Binder::flushPendingCommands()
+	jlong Binder::setCallingWorkSourceUid(jint arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.os.Binder",
-			"flushPendingCommands",
-			"()V"
-		);
-	}
-	void Binder::joinThreadPool()
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.Binder",
-			"joinThreadPool",
-			"()V"
+			"setCallingWorkSourceUid",
+			"(I)J",
+			arg0
 		);
 	}
 	void Binder::attachInterface(__jni_impl::__JniBaseClass arg0, jstring arg1)
@@ -198,26 +214,19 @@ namespace __jni_impl::android::os
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	jint Binder::getCallingPid()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.os.Binder",
-			"getCallingPid",
-			"()I"
-		);
-	}
-	jint Binder::getCallingUidOrThrow()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.os.Binder",
-			"getCallingUidOrThrow",
-			"()I"
-		);
-	}
 	void Binder::dump(__jni_impl::java::io::FileDescriptor arg0, jarray arg1)
 	{
 		__thiz.callMethod<void>(
 			"dump",
+			"(Ljava/io/FileDescriptor;[Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void Binder::dumpAsync(__jni_impl::java::io::FileDescriptor arg0, jarray arg1)
+	{
+		__thiz.callMethod<void>(
+			"dumpAsync",
 			"(Ljava/io/FileDescriptor;[Ljava/lang/String;)V",
 			arg0.__jniObject().object(),
 			arg1
@@ -230,17 +239,26 @@ namespace __jni_impl::android::os
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jboolean Binder::pingBinder()
-	{
-		return __thiz.callMethod<jboolean>(
-			"pingBinder",
-			"()Z"
-		);
-	}
 	jboolean Binder::isBinderAlive()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isBinderAlive",
+			"()Z"
+		);
+	}
+	void Binder::linkToDeath(__jni_impl::__JniBaseClass arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"linkToDeath",
+			"(Landroid/os/IBinder$DeathRecipient;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jboolean Binder::pingBinder()
+	{
+		return __thiz.callMethod<jboolean>(
+			"pingBinder",
 			"()Z"
 		);
 	}
@@ -260,15 +278,6 @@ namespace __jni_impl::android::os
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void Binder::dumpAsync(__jni_impl::java::io::FileDescriptor arg0, jarray arg1)
-	{
-		__thiz.callMethod<void>(
-			"dumpAsync",
-			"(Ljava/io/FileDescriptor;[Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	jboolean Binder::transact(jint arg0, __jni_impl::android::os::Parcel arg1, __jni_impl::android::os::Parcel arg2, jint arg3)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -278,15 +287,6 @@ namespace __jni_impl::android::os
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3
-		);
-	}
-	void Binder::linkToDeath(__jni_impl::__JniBaseClass arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"linkToDeath",
-			"(Landroid/os/IBinder$DeathRecipient;I)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 	jboolean Binder::unlinkToDeath(__jni_impl::__JniBaseClass arg0, jint arg1)

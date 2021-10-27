@@ -8,18 +8,6 @@
 #include "../../io/FilterOutputStream.hpp"
 #include "DeflaterOutputStream.hpp"
 
-namespace __jni_impl::java::util
-{
-	class Vector;
-}
-namespace __jni_impl::java::util
-{
-	class HashSet;
-}
-namespace __jni_impl::java::util::zip
-{
-	class CRC32;
-}
 namespace __jni_impl::java::io
 {
 	class OutputStream;
@@ -27,6 +15,18 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::nio::charset
 {
 	class Charset;
+}
+namespace __jni_impl::java::util
+{
+	class HashSet;
+}
+namespace __jni_impl::java::util
+{
+	class Vector;
+}
+namespace __jni_impl::java::util::zip
+{
+	class CRC32;
 }
 namespace __jni_impl::java::util::zip
 {
@@ -39,43 +39,36 @@ namespace __jni_impl::java::util::zip
 	{
 	public:
 		// Fields
-		static jint STORED();
 		static jint DEFLATED();
+		static jint STORED();
 		
 		// Constructors
-		void __constructor(__jni_impl::java::io::OutputStream arg0, __jni_impl::java::nio::charset::Charset arg1);
 		void __constructor(__jni_impl::java::io::OutputStream arg0);
+		void __constructor(__jni_impl::java::io::OutputStream arg0, __jni_impl::java::nio::charset::Charset arg1);
 		
 		// Methods
-		void write(jbyteArray arg0, jint arg1, jint arg2);
 		void close();
-		void setMethod(jint arg0);
+		void closeEntry();
+		void finish();
+		void putNextEntry(__jni_impl::java::util::zip::ZipEntry arg0);
 		void setComment(jstring arg0);
 		void setComment(const QString &arg0);
 		void setLevel(jint arg0);
-		void finish();
-		void closeEntry();
-		void putNextEntry(__jni_impl::java::util::zip::ZipEntry arg0);
+		void setMethod(jint arg0);
+		void write(jbyteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::java::util::zip
 
-#include "../Vector.hpp"
-#include "../HashSet.hpp"
-#include "CRC32.hpp"
 #include "../../io/OutputStream.hpp"
 #include "../../nio/charset/Charset.hpp"
+#include "../HashSet.hpp"
+#include "../Vector.hpp"
+#include "CRC32.hpp"
 #include "ZipEntry.hpp"
 
 namespace __jni_impl::java::util::zip
 {
 	// Fields
-	jint ZipOutputStream::STORED()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"java.util.zip.ZipOutputStream",
-			"STORED"
-		);
-	}
 	jint ZipOutputStream::DEFLATED()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
@@ -83,8 +76,23 @@ namespace __jni_impl::java::util::zip
 			"DEFLATED"
 		);
 	}
+	jint ZipOutputStream::STORED()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"java.util.zip.ZipOutputStream",
+			"STORED"
+		);
+	}
 	
 	// Constructors
+	void ZipOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.zip.ZipOutputStream",
+			"(Ljava/io/OutputStream;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void ZipOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0, __jni_impl::java::nio::charset::Charset arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -94,26 +102,8 @@ namespace __jni_impl::java::util::zip
 			arg1.__jniObject().object()
 		);
 	}
-	void ZipOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.zip.ZipOutputStream",
-			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	
 	// Methods
-	void ZipOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"write",
-			"([BII)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
 	void ZipOutputStream::close()
 	{
 		__thiz.callMethod<void>(
@@ -121,12 +111,26 @@ namespace __jni_impl::java::util::zip
 			"()V"
 		);
 	}
-	void ZipOutputStream::setMethod(jint arg0)
+	void ZipOutputStream::closeEntry()
 	{
 		__thiz.callMethod<void>(
-			"setMethod",
-			"(I)V",
-			arg0
+			"closeEntry",
+			"()V"
+		);
+	}
+	void ZipOutputStream::finish()
+	{
+		__thiz.callMethod<void>(
+			"finish",
+			"()V"
+		);
+	}
+	void ZipOutputStream::putNextEntry(__jni_impl::java::util::zip::ZipEntry arg0)
+	{
+		__thiz.callMethod<void>(
+			"putNextEntry",
+			"(Ljava/util/zip/ZipEntry;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void ZipOutputStream::setComment(jstring arg0)
@@ -153,26 +157,22 @@ namespace __jni_impl::java::util::zip
 			arg0
 		);
 	}
-	void ZipOutputStream::finish()
+	void ZipOutputStream::setMethod(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"finish",
-			"()V"
+			"setMethod",
+			"(I)V",
+			arg0
 		);
 	}
-	void ZipOutputStream::closeEntry()
+	void ZipOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
-			"closeEntry",
-			"()V"
-		);
-	}
-	void ZipOutputStream::putNextEntry(__jni_impl::java::util::zip::ZipEntry arg0)
-	{
-		__thiz.callMethod<void>(
-			"putNextEntry",
-			"(Ljava/util/zip/ZipEntry;)V",
-			arg0.__jniObject().object()
+			"write",
+			"([BII)V",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 } // namespace __jni_impl::java::util::zip
@@ -183,16 +183,16 @@ namespace java::util::zip
 	{
 	public:
 		ZipOutputStream(QAndroidJniObject obj) { __thiz = obj; }
+		ZipOutputStream(__jni_impl::java::io::OutputStream arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		ZipOutputStream(__jni_impl::java::io::OutputStream arg0, __jni_impl::java::nio::charset::Charset arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
-		}
-		ZipOutputStream(__jni_impl::java::io::OutputStream arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace java::util::zip

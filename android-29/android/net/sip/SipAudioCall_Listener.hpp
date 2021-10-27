@@ -25,17 +25,17 @@ namespace __jni_impl::android::net::sip
 		void __constructor();
 		
 		// Methods
+		void onCallBusy(__jni_impl::android::net::sip::SipAudioCall arg0);
+		void onCallEnded(__jni_impl::android::net::sip::SipAudioCall arg0);
+		void onCallEstablished(__jni_impl::android::net::sip::SipAudioCall arg0);
+		void onCallHeld(__jni_impl::android::net::sip::SipAudioCall arg0);
+		void onCalling(__jni_impl::android::net::sip::SipAudioCall arg0);
+		void onChanged(__jni_impl::android::net::sip::SipAudioCall arg0);
 		void onError(__jni_impl::android::net::sip::SipAudioCall arg0, jint arg1, jstring arg2);
 		void onError(__jni_impl::android::net::sip::SipAudioCall arg0, jint arg1, const QString &arg2);
 		void onReadyToCall(__jni_impl::android::net::sip::SipAudioCall arg0);
-		void onCallHeld(__jni_impl::android::net::sip::SipAudioCall arg0);
-		void onRingingBack(__jni_impl::android::net::sip::SipAudioCall arg0);
-		void onCalling(__jni_impl::android::net::sip::SipAudioCall arg0);
 		void onRinging(__jni_impl::android::net::sip::SipAudioCall arg0, __jni_impl::android::net::sip::SipProfile arg1);
-		void onCallEstablished(__jni_impl::android::net::sip::SipAudioCall arg0);
-		void onCallEnded(__jni_impl::android::net::sip::SipAudioCall arg0);
-		void onCallBusy(__jni_impl::android::net::sip::SipAudioCall arg0);
-		void onChanged(__jni_impl::android::net::sip::SipAudioCall arg0);
+		void onRingingBack(__jni_impl::android::net::sip::SipAudioCall arg0);
 	};
 } // namespace __jni_impl::android::net::sip
 
@@ -56,6 +56,54 @@ namespace __jni_impl::android::net::sip
 	}
 	
 	// Methods
+	void SipAudioCall_Listener::onCallBusy(__jni_impl::android::net::sip::SipAudioCall arg0)
+	{
+		__thiz.callMethod<void>(
+			"onCallBusy",
+			"(Landroid/net/sip/SipAudioCall;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void SipAudioCall_Listener::onCallEnded(__jni_impl::android::net::sip::SipAudioCall arg0)
+	{
+		__thiz.callMethod<void>(
+			"onCallEnded",
+			"(Landroid/net/sip/SipAudioCall;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void SipAudioCall_Listener::onCallEstablished(__jni_impl::android::net::sip::SipAudioCall arg0)
+	{
+		__thiz.callMethod<void>(
+			"onCallEstablished",
+			"(Landroid/net/sip/SipAudioCall;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void SipAudioCall_Listener::onCallHeld(__jni_impl::android::net::sip::SipAudioCall arg0)
+	{
+		__thiz.callMethod<void>(
+			"onCallHeld",
+			"(Landroid/net/sip/SipAudioCall;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void SipAudioCall_Listener::onCalling(__jni_impl::android::net::sip::SipAudioCall arg0)
+	{
+		__thiz.callMethod<void>(
+			"onCalling",
+			"(Landroid/net/sip/SipAudioCall;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void SipAudioCall_Listener::onChanged(__jni_impl::android::net::sip::SipAudioCall arg0)
+	{
+		__thiz.callMethod<void>(
+			"onChanged",
+			"(Landroid/net/sip/SipAudioCall;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void SipAudioCall_Listener::onError(__jni_impl::android::net::sip::SipAudioCall arg0, jint arg1, jstring arg2)
 	{
 		__thiz.callMethod<void>(
@@ -84,30 +132,6 @@ namespace __jni_impl::android::net::sip
 			arg0.__jniObject().object()
 		);
 	}
-	void SipAudioCall_Listener::onCallHeld(__jni_impl::android::net::sip::SipAudioCall arg0)
-	{
-		__thiz.callMethod<void>(
-			"onCallHeld",
-			"(Landroid/net/sip/SipAudioCall;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void SipAudioCall_Listener::onRingingBack(__jni_impl::android::net::sip::SipAudioCall arg0)
-	{
-		__thiz.callMethod<void>(
-			"onRingingBack",
-			"(Landroid/net/sip/SipAudioCall;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void SipAudioCall_Listener::onCalling(__jni_impl::android::net::sip::SipAudioCall arg0)
-	{
-		__thiz.callMethod<void>(
-			"onCalling",
-			"(Landroid/net/sip/SipAudioCall;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void SipAudioCall_Listener::onRinging(__jni_impl::android::net::sip::SipAudioCall arg0, __jni_impl::android::net::sip::SipProfile arg1)
 	{
 		__thiz.callMethod<void>(
@@ -117,34 +141,10 @@ namespace __jni_impl::android::net::sip
 			arg1.__jniObject().object()
 		);
 	}
-	void SipAudioCall_Listener::onCallEstablished(__jni_impl::android::net::sip::SipAudioCall arg0)
+	void SipAudioCall_Listener::onRingingBack(__jni_impl::android::net::sip::SipAudioCall arg0)
 	{
 		__thiz.callMethod<void>(
-			"onCallEstablished",
-			"(Landroid/net/sip/SipAudioCall;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void SipAudioCall_Listener::onCallEnded(__jni_impl::android::net::sip::SipAudioCall arg0)
-	{
-		__thiz.callMethod<void>(
-			"onCallEnded",
-			"(Landroid/net/sip/SipAudioCall;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void SipAudioCall_Listener::onCallBusy(__jni_impl::android::net::sip::SipAudioCall arg0)
-	{
-		__thiz.callMethod<void>(
-			"onCallBusy",
-			"(Landroid/net/sip/SipAudioCall;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void SipAudioCall_Listener::onChanged(__jni_impl::android::net::sip::SipAudioCall arg0)
-	{
-		__thiz.callMethod<void>(
-			"onChanged",
+			"onRingingBack",
 			"(Landroid/net/sip/SipAudioCall;)V",
 			arg0.__jniObject().object()
 		);

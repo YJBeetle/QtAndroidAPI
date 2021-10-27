@@ -14,16 +14,16 @@ namespace __jni_impl::android::graphics
 	public:
 		// Fields
 		static QAndroidJniObject BRADFORD();
-		static QAndroidJniObject VON_KRIES();
 		static QAndroidJniObject CIECAT02();
+		static QAndroidJniObject VON_KRIES();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -39,19 +39,19 @@ namespace __jni_impl::android::graphics
 			"Landroid/graphics/ColorSpace$Adaptation;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Adaptation::VON_KRIES()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.graphics.ColorSpace$Adaptation",
-			"VON_KRIES",
-			"Landroid/graphics/ColorSpace$Adaptation;"
-		);
-	}
 	QAndroidJniObject ColorSpace_Adaptation::CIECAT02()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.ColorSpace$Adaptation",
 			"CIECAT02",
+			"Landroid/graphics/ColorSpace$Adaptation;"
+		);
+	}
+	QAndroidJniObject ColorSpace_Adaptation::VON_KRIES()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.graphics.ColorSpace$Adaptation",
+			"VON_KRIES",
 			"Landroid/graphics/ColorSpace$Adaptation;"
 		);
 	}
@@ -65,14 +65,6 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	jarray ColorSpace_Adaptation::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.ColorSpace$Adaptation",
-			"values",
-			"()[Landroid/graphics/ColorSpace$Adaptation;"
-		).object<jarray>();
-	}
 	QAndroidJniObject ColorSpace_Adaptation::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::android::graphics
 			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$Adaptation;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray ColorSpace_Adaptation::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.ColorSpace$Adaptation",
+			"values",
+			"()[Landroid/graphics/ColorSpace$Adaptation;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::graphics
 

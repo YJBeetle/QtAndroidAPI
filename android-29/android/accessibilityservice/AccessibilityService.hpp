@@ -8,17 +8,25 @@
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
-namespace __jni_impl::android::view::accessibility
+namespace __jni_impl::android::accessibilityservice
 {
-	class AccessibilityNodeInfo;
+	class AccessibilityButtonController;
 }
-namespace __jni_impl::android::view
+namespace __jni_impl::android::accessibilityservice
 {
-	class KeyEvent;
+	class AccessibilityService_GestureResultCallback;
 }
 namespace __jni_impl::android::accessibilityservice
 {
 	class AccessibilityService_MagnificationController;
+}
+namespace __jni_impl::android::accessibilityservice
+{
+	class AccessibilityService_SoftKeyboardController;
+}
+namespace __jni_impl::android::accessibilityservice
+{
+	class AccessibilityServiceInfo;
 }
 namespace __jni_impl::android::accessibilityservice
 {
@@ -28,33 +36,25 @@ namespace __jni_impl::android::accessibilityservice
 {
 	class GestureDescription;
 }
-namespace __jni_impl::android::accessibilityservice
+namespace __jni_impl::android::content
 {
-	class AccessibilityService_GestureResultCallback;
+	class Intent;
 }
 namespace __jni_impl::android::os
 {
 	class Handler;
 }
-namespace __jni_impl::android::accessibilityservice
+namespace __jni_impl::android::view
 {
-	class AccessibilityService_SoftKeyboardController;
-}
-namespace __jni_impl::android::accessibilityservice
-{
-	class AccessibilityButtonController;
-}
-namespace __jni_impl::android::accessibilityservice
-{
-	class AccessibilityServiceInfo;
+	class KeyEvent;
 }
 namespace __jni_impl::android::view::accessibility
 {
 	class AccessibilityEvent;
 }
-namespace __jni_impl::android::content
+namespace __jni_impl::android::view::accessibility
 {
-	class Intent;
+	class AccessibilityNodeInfo;
 }
 
 namespace __jni_impl::android::accessibilityservice
@@ -98,38 +98,38 @@ namespace __jni_impl::android::accessibilityservice
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject findFocus(jint arg0);
-		void onInterrupt();
 		void disableSelf();
-		QAndroidJniObject getMagnificationController();
-		QAndroidJniObject getFingerprintGestureController();
 		jboolean dispatchGesture(__jni_impl::android::accessibilityservice::GestureDescription arg0, __jni_impl::android::accessibilityservice::AccessibilityService_GestureResultCallback arg1, __jni_impl::android::os::Handler arg2);
-		QAndroidJniObject getSoftKeyboardController();
+		QAndroidJniObject findFocus(jint arg0);
 		QAndroidJniObject getAccessibilityButtonController();
+		QAndroidJniObject getFingerprintGestureController();
+		QAndroidJniObject getMagnificationController();
+		QAndroidJniObject getRootInActiveWindow();
+		QAndroidJniObject getServiceInfo();
+		QAndroidJniObject getSoftKeyboardController();
 		jobject getSystemService(jstring arg0);
 		jobject getSystemService(const QString &arg0);
-		jboolean performGlobalAction(jint arg0);
-		void setServiceInfo(__jni_impl::android::accessibilityservice::AccessibilityServiceInfo arg0);
 		QAndroidJniObject getWindows();
-		QAndroidJniObject getRootInActiveWindow();
 		void onAccessibilityEvent(__jni_impl::android::view::accessibility::AccessibilityEvent arg0);
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
-		QAndroidJniObject getServiceInfo();
+		void onInterrupt();
+		jboolean performGlobalAction(jint arg0);
+		void setServiceInfo(__jni_impl::android::accessibilityservice::AccessibilityServiceInfo arg0);
 	};
 } // namespace __jni_impl::android::accessibilityservice
 
-#include "../view/accessibility/AccessibilityNodeInfo.hpp"
-#include "../view/KeyEvent.hpp"
+#include "AccessibilityButtonController.hpp"
+#include "AccessibilityService_GestureResultCallback.hpp"
 #include "AccessibilityService_MagnificationController.hpp"
+#include "AccessibilityService_SoftKeyboardController.hpp"
+#include "AccessibilityServiceInfo.hpp"
 #include "FingerprintGestureController.hpp"
 #include "GestureDescription.hpp"
-#include "AccessibilityService_GestureResultCallback.hpp"
-#include "../os/Handler.hpp"
-#include "AccessibilityService_SoftKeyboardController.hpp"
-#include "AccessibilityButtonController.hpp"
-#include "AccessibilityServiceInfo.hpp"
-#include "../view/accessibility/AccessibilityEvent.hpp"
 #include "../content/Intent.hpp"
+#include "../os/Handler.hpp"
+#include "../view/KeyEvent.hpp"
+#include "../view/accessibility/AccessibilityEvent.hpp"
+#include "../view/accessibility/AccessibilityNodeInfo.hpp"
 
 namespace __jni_impl::android::accessibilityservice
 {
@@ -357,40 +357,11 @@ namespace __jni_impl::android::accessibilityservice
 	}
 	
 	// Methods
-	QAndroidJniObject AccessibilityService::findFocus(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"findFocus",
-			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
-			arg0
-		);
-	}
-	void AccessibilityService::onInterrupt()
-	{
-		__thiz.callMethod<void>(
-			"onInterrupt",
-			"()V"
-		);
-	}
 	void AccessibilityService::disableSelf()
 	{
 		__thiz.callMethod<void>(
 			"disableSelf",
 			"()V"
-		);
-	}
-	QAndroidJniObject AccessibilityService::getMagnificationController()
-	{
-		return __thiz.callObjectMethod(
-			"getMagnificationController",
-			"()Landroid/accessibilityservice/AccessibilityService$MagnificationController;"
-		);
-	}
-	QAndroidJniObject AccessibilityService::getFingerprintGestureController()
-	{
-		return __thiz.callObjectMethod(
-			"getFingerprintGestureController",
-			"()Landroid/accessibilityservice/FingerprintGestureController;"
 		);
 	}
 	jboolean AccessibilityService::dispatchGesture(__jni_impl::android::accessibilityservice::GestureDescription arg0, __jni_impl::android::accessibilityservice::AccessibilityService_GestureResultCallback arg1, __jni_impl::android::os::Handler arg2)
@@ -403,11 +374,12 @@ namespace __jni_impl::android::accessibilityservice
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject AccessibilityService::getSoftKeyboardController()
+	QAndroidJniObject AccessibilityService::findFocus(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getSoftKeyboardController",
-			"()Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController;"
+			"findFocus",
+			"(I)Landroid/view/accessibility/AccessibilityNodeInfo;",
+			arg0
 		);
 	}
 	QAndroidJniObject AccessibilityService::getAccessibilityButtonController()
@@ -415,6 +387,41 @@ namespace __jni_impl::android::accessibilityservice
 		return __thiz.callObjectMethod(
 			"getAccessibilityButtonController",
 			"()Landroid/accessibilityservice/AccessibilityButtonController;"
+		);
+	}
+	QAndroidJniObject AccessibilityService::getFingerprintGestureController()
+	{
+		return __thiz.callObjectMethod(
+			"getFingerprintGestureController",
+			"()Landroid/accessibilityservice/FingerprintGestureController;"
+		);
+	}
+	QAndroidJniObject AccessibilityService::getMagnificationController()
+	{
+		return __thiz.callObjectMethod(
+			"getMagnificationController",
+			"()Landroid/accessibilityservice/AccessibilityService$MagnificationController;"
+		);
+	}
+	QAndroidJniObject AccessibilityService::getRootInActiveWindow()
+	{
+		return __thiz.callObjectMethod(
+			"getRootInActiveWindow",
+			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
+		);
+	}
+	QAndroidJniObject AccessibilityService::getServiceInfo()
+	{
+		return __thiz.callObjectMethod(
+			"getServiceInfo",
+			"()Landroid/accessibilityservice/AccessibilityServiceInfo;"
+		);
+	}
+	QAndroidJniObject AccessibilityService::getSoftKeyboardController()
+	{
+		return __thiz.callObjectMethod(
+			"getSoftKeyboardController",
+			"()Landroid/accessibilityservice/AccessibilityService$SoftKeyboardController;"
 		);
 	}
 	jobject AccessibilityService::getSystemService(jstring arg0)
@@ -433,34 +440,11 @@ namespace __jni_impl::android::accessibilityservice
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
 	}
-	jboolean AccessibilityService::performGlobalAction(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"performGlobalAction",
-			"(I)Z",
-			arg0
-		);
-	}
-	void AccessibilityService::setServiceInfo(__jni_impl::android::accessibilityservice::AccessibilityServiceInfo arg0)
-	{
-		__thiz.callMethod<void>(
-			"setServiceInfo",
-			"(Landroid/accessibilityservice/AccessibilityServiceInfo;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject AccessibilityService::getWindows()
 	{
 		return __thiz.callObjectMethod(
 			"getWindows",
 			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject AccessibilityService::getRootInActiveWindow()
-	{
-		return __thiz.callObjectMethod(
-			"getRootInActiveWindow",
-			"()Landroid/view/accessibility/AccessibilityNodeInfo;"
 		);
 	}
 	void AccessibilityService::onAccessibilityEvent(__jni_impl::android::view::accessibility::AccessibilityEvent arg0)
@@ -479,11 +463,27 @@ namespace __jni_impl::android::accessibilityservice
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject AccessibilityService::getServiceInfo()
+	void AccessibilityService::onInterrupt()
 	{
-		return __thiz.callObjectMethod(
-			"getServiceInfo",
-			"()Landroid/accessibilityservice/AccessibilityServiceInfo;"
+		__thiz.callMethod<void>(
+			"onInterrupt",
+			"()V"
+		);
+	}
+	jboolean AccessibilityService::performGlobalAction(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"performGlobalAction",
+			"(I)Z",
+			arg0
+		);
+	}
+	void AccessibilityService::setServiceInfo(__jni_impl::android::accessibilityservice::AccessibilityServiceInfo arg0)
+	{
+		__thiz.callMethod<void>(
+			"setServiceInfo",
+			"(Landroid/accessibilityservice/AccessibilityServiceInfo;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::accessibilityservice

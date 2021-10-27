@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::content
 {
-	class Context;
+	class ComponentName;
 }
 namespace __jni_impl::android::content
 {
-	class ComponentName;
+	class Context;
 }
 namespace __jni_impl::android::media::tv
 {
@@ -34,14 +34,14 @@ namespace __jni_impl::android::media::tv
 		
 		// Methods
 		QAndroidJniObject build();
+		QAndroidJniObject setCanRecord(jboolean arg0);
 		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject setTunerCount(jint arg0);
-		QAndroidJniObject setCanRecord(jboolean arg0);
 	};
 } // namespace __jni_impl::android::media::tv
 
-#include "../../content/Context.hpp"
 #include "../../content/ComponentName.hpp"
+#include "../../content/Context.hpp"
 #include "TvInputInfo.hpp"
 #include "../../os/Bundle.hpp"
 
@@ -68,6 +68,14 @@ namespace __jni_impl::android::media::tv
 			"()Landroid/media/tv/TvInputInfo;"
 		);
 	}
+	QAndroidJniObject TvInputInfo_Builder::setCanRecord(jboolean arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setCanRecord",
+			"(Z)Landroid/media/tv/TvInputInfo$Builder;",
+			arg0
+		);
+	}
 	QAndroidJniObject TvInputInfo_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -81,14 +89,6 @@ namespace __jni_impl::android::media::tv
 		return __thiz.callObjectMethod(
 			"setTunerCount",
 			"(I)Landroid/media/tv/TvInputInfo$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject TvInputInfo_Builder::setCanRecord(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setCanRecord",
-			"(Z)Landroid/media/tv/TvInputInfo$Builder;",
 			arg0
 		);
 	}

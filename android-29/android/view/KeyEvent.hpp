@@ -6,9 +6,9 @@
 #include "../../__JniBaseClass.hpp"
 #include "InputEvent.hpp"
 
-namespace __jni_impl::android::view
+namespace __jni_impl::android::os
 {
-	class KeyEvent_DispatcherState;
+	class Parcel;
 }
 namespace __jni_impl::android::view
 {
@@ -18,9 +18,9 @@ namespace __jni_impl::android::view
 {
 	class KeyCharacterMap_KeyData;
 }
-namespace __jni_impl::android::os
+namespace __jni_impl::android::view
 {
-	class Parcel;
+	class KeyEvent_DispatcherState;
 }
 
 namespace __jni_impl::android::view
@@ -357,82 +357,82 @@ namespace __jni_impl::android::view
 		static jint META_SYM_ON();
 		
 		// Constructors
-		void __constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8);
-		void __constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
+		void __constructor(__jni_impl::android::view::KeyEvent arg0);
+		void __constructor(jint arg0, jint arg1);
+		void __constructor(__jni_impl::android::view::KeyEvent arg0, jlong arg1, jint arg2);
 		void __constructor(jlong arg0, jstring arg1, jint arg2, jint arg3);
 		void __constructor(jlong arg0, const QString &arg1, jint arg2, jint arg3);
-		void __constructor(__jni_impl::android::view::KeyEvent arg0);
-		void __constructor(__jni_impl::android::view::KeyEvent arg0, jlong arg1, jint arg2);
-		void __constructor(jint arg0, jint arg1);
 		void __constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4);
 		void __constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5);
 		void __constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
+		void __constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8);
+		void __constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
 		
 		// Methods
-		jboolean dispatch(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::KeyEvent_DispatcherState arg1, jobject arg2);
-		jboolean dispatch(__jni_impl::__JniBaseClass arg0);
-		jstring toString();
-		jint getModifiers();
-		jboolean isSystem();
-		jint getSource();
-		jint getFlags();
-		jchar getNumber();
-		static jint getMaxKeyCode();
-		static jint getDeadChar(jint arg0, jint arg1);
-		static QAndroidJniObject changeTimeRepeat(__jni_impl::android::view::KeyEvent arg0, jlong arg1, jint arg2);
-		static QAndroidJniObject changeTimeRepeat(__jni_impl::android::view::KeyEvent arg0, jlong arg1, jint arg2, jint arg3);
 		static QAndroidJniObject changeAction(__jni_impl::android::view::KeyEvent arg0, jint arg1);
 		static QAndroidJniObject changeFlags(__jni_impl::android::view::KeyEvent arg0, jint arg1);
-		static jboolean isGamepadButton(jint arg0);
-		jint getDeviceId();
-		void setSource(jint arg0);
-		jint getMetaState();
+		static QAndroidJniObject changeTimeRepeat(__jni_impl::android::view::KeyEvent arg0, jlong arg1, jint arg2);
+		static QAndroidJniObject changeTimeRepeat(__jni_impl::android::view::KeyEvent arg0, jlong arg1, jint arg2, jint arg3);
+		static jint getDeadChar(jint arg0, jint arg1);
+		static jint getMaxKeyCode();
 		static jint getModifierMetaStateMask();
+		static jboolean isGamepadButton(jint arg0);
 		static jboolean isModifierKey(jint arg0);
-		static jint normalizeMetaState(jint arg0);
-		static jboolean metaStateHasNoModifiers(jint arg0);
+		static jint keyCodeFromString(jstring arg0);
+		static jint keyCodeFromString(const QString &arg0);
+		static jstring keyCodeToString(jint arg0);
 		static jboolean metaStateHasModifiers(jint arg0, jint arg1);
-		jboolean hasNoModifiers();
-		jboolean hasModifiers(jint arg0);
-		jboolean isAltPressed();
-		jboolean isShiftPressed();
-		jboolean isSymPressed();
-		jboolean isCtrlPressed();
-		jboolean isMetaPressed();
-		jboolean isFunctionPressed();
-		jboolean isCapsLockOn();
-		jboolean isNumLockOn();
-		jboolean isScrollLockOn();
-		void startTracking();
-		jboolean isTracking();
-		jboolean isLongPress();
-		jint getKeyCode();
+		static jboolean metaStateHasNoModifiers(jint arg0);
+		static jint normalizeMetaState(jint arg0);
+		jboolean dispatch(__jni_impl::__JniBaseClass arg0);
+		jboolean dispatch(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::KeyEvent_DispatcherState arg1, jobject arg2);
+		jint getAction();
 		jstring getCharacters();
-		jint getScanCode();
-		jint getRepeatCount();
+		jint getDeviceId();
+		jchar getDisplayLabel();
 		jlong getDownTime();
 		jlong getEventTime();
+		jint getFlags();
 		QAndroidJniObject getKeyCharacterMap();
-		jchar getDisplayLabel();
-		jint getUnicodeChar(jint arg0);
-		jint getUnicodeChar();
+		jint getKeyCode();
 		jboolean getKeyData(__jni_impl::android::view::KeyCharacterMap_KeyData arg0);
 		jchar getMatch(jcharArray arg0);
 		jchar getMatch(jcharArray arg0, jint arg1);
-		jboolean isPrintingKey();
-		static jstring keyCodeToString(jint arg0);
-		static jint keyCodeFromString(jstring arg0);
-		static jint keyCodeFromString(const QString &arg0);
-		jint getAction();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getMetaState();
+		jint getModifiers();
+		jchar getNumber();
+		jint getRepeatCount();
+		jint getScanCode();
+		jint getSource();
+		jint getUnicodeChar();
+		jint getUnicodeChar(jint arg0);
+		jboolean hasModifiers(jint arg0);
+		jboolean hasNoModifiers();
+		jboolean isAltPressed();
 		jboolean isCanceled();
+		jboolean isCapsLockOn();
+		jboolean isCtrlPressed();
+		jboolean isFunctionPressed();
+		jboolean isLongPress();
+		jboolean isMetaPressed();
+		jboolean isNumLockOn();
+		jboolean isPrintingKey();
+		jboolean isScrollLockOn();
+		jboolean isShiftPressed();
+		jboolean isSymPressed();
+		jboolean isSystem();
+		jboolean isTracking();
+		void setSource(jint arg0);
+		void startTracking();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
 
-#include "KeyEvent_DispatcherState.hpp"
+#include "../os/Parcel.hpp"
 #include "KeyCharacterMap.hpp"
 #include "KeyCharacterMap_KeyData.hpp"
-#include "../os/Parcel.hpp"
+#include "KeyEvent_DispatcherState.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -2722,37 +2722,31 @@ namespace __jni_impl::android::view
 	}
 	
 	// Constructors
-	void KeyEvent::__constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8)
+	void KeyEvent::__constructor(__jni_impl::android::view::KeyEvent arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.KeyEvent",
-			"(JJIIIIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8
+			"(Landroid/view/KeyEvent;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	void KeyEvent::__constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
+	void KeyEvent::__constructor(jint arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.KeyEvent",
-			"(JJIIIIIIII)V",
+			"(II)V",
 			arg0,
+			arg1
+		);
+	}
+	void KeyEvent::__constructor(__jni_impl::android::view::KeyEvent arg0, jlong arg1, jint arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.KeyEvent",
+			"(Landroid/view/KeyEvent;JI)V",
+			arg0.__jniObject().object(),
 			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8,
-			arg9
+			arg2
 		);
 	}
 	void KeyEvent::__constructor(jlong arg0, jstring arg1, jint arg2, jint arg3)
@@ -2775,33 +2769,6 @@ namespace __jni_impl::android::view
 			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2,
 			arg3
-		);
-	}
-	void KeyEvent::__constructor(__jni_impl::android::view::KeyEvent arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.KeyEvent",
-			"(Landroid/view/KeyEvent;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void KeyEvent::__constructor(__jni_impl::android::view::KeyEvent arg0, jlong arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.KeyEvent",
-			"(Landroid/view/KeyEvent;JI)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		);
-	}
-	void KeyEvent::__constructor(jint arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.KeyEvent",
-			"(II)V",
-			arg0,
-			arg1
 		);
 	}
 	void KeyEvent::__constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4)
@@ -2844,83 +2811,58 @@ namespace __jni_impl::android::view
 			arg7
 		);
 	}
+	void KeyEvent::__constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.KeyEvent",
+			"(JJIIIIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8
+		);
+	}
+	void KeyEvent::__constructor(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.KeyEvent",
+			"(JJIIIIIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9
+		);
+	}
 	
 	// Methods
-	jboolean KeyEvent::dispatch(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::KeyEvent_DispatcherState arg1, jobject arg2)
+	QAndroidJniObject KeyEvent::changeAction(__jni_impl::android::view::KeyEvent arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"dispatch",
-			"(Landroid/view/KeyEvent$Callback;Landroid/view/KeyEvent$DispatcherState;Ljava/lang/Object;)Z",
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.KeyEvent",
+			"changeAction",
+			"(Landroid/view/KeyEvent;I)Landroid/view/KeyEvent;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
+			arg1
 		);
 	}
-	jboolean KeyEvent::dispatch(__jni_impl::__JniBaseClass arg0)
+	QAndroidJniObject KeyEvent::changeFlags(__jni_impl::android::view::KeyEvent arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"dispatch",
-			"(Landroid/view/KeyEvent$Callback;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jstring KeyEvent::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint KeyEvent::getModifiers()
-	{
-		return __thiz.callMethod<jint>(
-			"getModifiers",
-			"()I"
-		);
-	}
-	jboolean KeyEvent::isSystem()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSystem",
-			"()Z"
-		);
-	}
-	jint KeyEvent::getSource()
-	{
-		return __thiz.callMethod<jint>(
-			"getSource",
-			"()I"
-		);
-	}
-	jint KeyEvent::getFlags()
-	{
-		return __thiz.callMethod<jint>(
-			"getFlags",
-			"()I"
-		);
-	}
-	jchar KeyEvent::getNumber()
-	{
-		return __thiz.callMethod<jchar>(
-			"getNumber",
-			"()C"
-		);
-	}
-	jint KeyEvent::getMaxKeyCode()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return QAndroidJniObject::callStaticObjectMethod(
 			"android.view.KeyEvent",
-			"getMaxKeyCode",
-			"()I"
-		);
-	}
-	jint KeyEvent::getDeadChar(jint arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.KeyEvent",
-			"getDeadChar",
-			"(II)I",
-			arg0,
+			"changeFlags",
+			"(Landroid/view/KeyEvent;I)Landroid/view/KeyEvent;",
+			arg0.__jniObject().object(),
 			arg1
 		);
 	}
@@ -2947,54 +2889,21 @@ namespace __jni_impl::android::view
 			arg3
 		);
 	}
-	QAndroidJniObject KeyEvent::changeAction(__jni_impl::android::view::KeyEvent arg0, jint arg1)
+	jint KeyEvent::getDeadChar(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.KeyEvent",
-			"changeAction",
-			"(Landroid/view/KeyEvent;I)Landroid/view/KeyEvent;",
-			arg0.__jniObject().object(),
+			"getDeadChar",
+			"(II)I",
+			arg0,
 			arg1
 		);
 	}
-	QAndroidJniObject KeyEvent::changeFlags(__jni_impl::android::view::KeyEvent arg0, jint arg1)
+	jint KeyEvent::getMaxKeyCode()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.KeyEvent",
-			"changeFlags",
-			"(Landroid/view/KeyEvent;I)Landroid/view/KeyEvent;",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jboolean KeyEvent::isGamepadButton(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.view.KeyEvent",
-			"isGamepadButton",
-			"(I)Z",
-			arg0
-		);
-	}
-	jint KeyEvent::getDeviceId()
-	{
-		return __thiz.callMethod<jint>(
-			"getDeviceId",
-			"()I"
-		);
-	}
-	void KeyEvent::setSource(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSource",
-			"(I)V",
-			arg0
-		);
-	}
-	jint KeyEvent::getMetaState()
-	{
-		return __thiz.callMethod<jint>(
-			"getMetaState",
+			"getMaxKeyCode",
 			"()I"
 		);
 	}
@@ -3006,11 +2915,66 @@ namespace __jni_impl::android::view
 			"()I"
 		);
 	}
+	jboolean KeyEvent::isGamepadButton(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.view.KeyEvent",
+			"isGamepadButton",
+			"(I)Z",
+			arg0
+		);
+	}
 	jboolean KeyEvent::isModifierKey(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.view.KeyEvent",
 			"isModifierKey",
+			"(I)Z",
+			arg0
+		);
+	}
+	jint KeyEvent::keyCodeFromString(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.KeyEvent",
+			"keyCodeFromString",
+			"(Ljava/lang/String;)I",
+			arg0
+		);
+	}
+	jint KeyEvent::keyCodeFromString(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.KeyEvent",
+			"keyCodeFromString",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jstring KeyEvent::keyCodeToString(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.KeyEvent",
+			"keyCodeToString",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jboolean KeyEvent::metaStateHasModifiers(jint arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.view.KeyEvent",
+			"metaStateHasModifiers",
+			"(II)Z",
+			arg0,
+			arg1
+		);
+	}
+	jboolean KeyEvent::metaStateHasNoModifiers(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.view.KeyEvent",
+			"metaStateHasNoModifiers",
 			"(I)Z",
 			arg0
 		);
@@ -3024,128 +2988,28 @@ namespace __jni_impl::android::view
 			arg0
 		);
 	}
-	jboolean KeyEvent::metaStateHasNoModifiers(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.view.KeyEvent",
-			"metaStateHasNoModifiers",
-			"(I)Z",
-			arg0
-		);
-	}
-	jboolean KeyEvent::metaStateHasModifiers(jint arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.view.KeyEvent",
-			"metaStateHasModifiers",
-			"(II)Z",
-			arg0,
-			arg1
-		);
-	}
-	jboolean KeyEvent::hasNoModifiers()
+	jboolean KeyEvent::dispatch(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"hasNoModifiers",
-			"()Z"
+			"dispatch",
+			"(Landroid/view/KeyEvent$Callback;)Z",
+			arg0.__jniObject().object()
 		);
 	}
-	jboolean KeyEvent::hasModifiers(jint arg0)
+	jboolean KeyEvent::dispatch(__jni_impl::__JniBaseClass arg0, __jni_impl::android::view::KeyEvent_DispatcherState arg1, jobject arg2)
 	{
 		return __thiz.callMethod<jboolean>(
-			"hasModifiers",
-			"(I)Z",
-			arg0
+			"dispatch",
+			"(Landroid/view/KeyEvent$Callback;Landroid/view/KeyEvent$DispatcherState;Ljava/lang/Object;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
 		);
 	}
-	jboolean KeyEvent::isAltPressed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAltPressed",
-			"()Z"
-		);
-	}
-	jboolean KeyEvent::isShiftPressed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isShiftPressed",
-			"()Z"
-		);
-	}
-	jboolean KeyEvent::isSymPressed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSymPressed",
-			"()Z"
-		);
-	}
-	jboolean KeyEvent::isCtrlPressed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isCtrlPressed",
-			"()Z"
-		);
-	}
-	jboolean KeyEvent::isMetaPressed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isMetaPressed",
-			"()Z"
-		);
-	}
-	jboolean KeyEvent::isFunctionPressed()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFunctionPressed",
-			"()Z"
-		);
-	}
-	jboolean KeyEvent::isCapsLockOn()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isCapsLockOn",
-			"()Z"
-		);
-	}
-	jboolean KeyEvent::isNumLockOn()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isNumLockOn",
-			"()Z"
-		);
-	}
-	jboolean KeyEvent::isScrollLockOn()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isScrollLockOn",
-			"()Z"
-		);
-	}
-	void KeyEvent::startTracking()
-	{
-		__thiz.callMethod<void>(
-			"startTracking",
-			"()V"
-		);
-	}
-	jboolean KeyEvent::isTracking()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isTracking",
-			"()Z"
-		);
-	}
-	jboolean KeyEvent::isLongPress()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isLongPress",
-			"()Z"
-		);
-	}
-	jint KeyEvent::getKeyCode()
+	jint KeyEvent::getAction()
 	{
 		return __thiz.callMethod<jint>(
-			"getKeyCode",
+			"getAction",
 			"()I"
 		);
 	}
@@ -3156,18 +3020,18 @@ namespace __jni_impl::android::view
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint KeyEvent::getScanCode()
+	jint KeyEvent::getDeviceId()
 	{
 		return __thiz.callMethod<jint>(
-			"getScanCode",
+			"getDeviceId",
 			"()I"
 		);
 	}
-	jint KeyEvent::getRepeatCount()
+	jchar KeyEvent::getDisplayLabel()
 	{
-		return __thiz.callMethod<jint>(
-			"getRepeatCount",
-			"()I"
+		return __thiz.callMethod<jchar>(
+			"getDisplayLabel",
+			"()C"
 		);
 	}
 	jlong KeyEvent::getDownTime()
@@ -3184,6 +3048,13 @@ namespace __jni_impl::android::view
 			"()J"
 		);
 	}
+	jint KeyEvent::getFlags()
+	{
+		return __thiz.callMethod<jint>(
+			"getFlags",
+			"()I"
+		);
+	}
 	QAndroidJniObject KeyEvent::getKeyCharacterMap()
 	{
 		return __thiz.callObjectMethod(
@@ -3191,25 +3062,10 @@ namespace __jni_impl::android::view
 			"()Landroid/view/KeyCharacterMap;"
 		);
 	}
-	jchar KeyEvent::getDisplayLabel()
-	{
-		return __thiz.callMethod<jchar>(
-			"getDisplayLabel",
-			"()C"
-		);
-	}
-	jint KeyEvent::getUnicodeChar(jint arg0)
+	jint KeyEvent::getKeyCode()
 	{
 		return __thiz.callMethod<jint>(
-			"getUnicodeChar",
-			"(I)I",
-			arg0
-		);
-	}
-	jint KeyEvent::getUnicodeChar()
-	{
-		return __thiz.callMethod<jint>(
-			"getUnicodeChar",
+			"getKeyCode",
 			"()I"
 		);
 	}
@@ -3238,6 +3094,134 @@ namespace __jni_impl::android::view
 			arg1
 		);
 	}
+	jint KeyEvent::getMetaState()
+	{
+		return __thiz.callMethod<jint>(
+			"getMetaState",
+			"()I"
+		);
+	}
+	jint KeyEvent::getModifiers()
+	{
+		return __thiz.callMethod<jint>(
+			"getModifiers",
+			"()I"
+		);
+	}
+	jchar KeyEvent::getNumber()
+	{
+		return __thiz.callMethod<jchar>(
+			"getNumber",
+			"()C"
+		);
+	}
+	jint KeyEvent::getRepeatCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getRepeatCount",
+			"()I"
+		);
+	}
+	jint KeyEvent::getScanCode()
+	{
+		return __thiz.callMethod<jint>(
+			"getScanCode",
+			"()I"
+		);
+	}
+	jint KeyEvent::getSource()
+	{
+		return __thiz.callMethod<jint>(
+			"getSource",
+			"()I"
+		);
+	}
+	jint KeyEvent::getUnicodeChar()
+	{
+		return __thiz.callMethod<jint>(
+			"getUnicodeChar",
+			"()I"
+		);
+	}
+	jint KeyEvent::getUnicodeChar(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getUnicodeChar",
+			"(I)I",
+			arg0
+		);
+	}
+	jboolean KeyEvent::hasModifiers(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasModifiers",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean KeyEvent::hasNoModifiers()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasNoModifiers",
+			"()Z"
+		);
+	}
+	jboolean KeyEvent::isAltPressed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAltPressed",
+			"()Z"
+		);
+	}
+	jboolean KeyEvent::isCanceled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isCanceled",
+			"()Z"
+		);
+	}
+	jboolean KeyEvent::isCapsLockOn()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isCapsLockOn",
+			"()Z"
+		);
+	}
+	jboolean KeyEvent::isCtrlPressed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isCtrlPressed",
+			"()Z"
+		);
+	}
+	jboolean KeyEvent::isFunctionPressed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFunctionPressed",
+			"()Z"
+		);
+	}
+	jboolean KeyEvent::isLongPress()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLongPress",
+			"()Z"
+		);
+	}
+	jboolean KeyEvent::isMetaPressed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isMetaPressed",
+			"()Z"
+		);
+	}
+	jboolean KeyEvent::isNumLockOn()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isNumLockOn",
+			"()Z"
+		);
+	}
 	jboolean KeyEvent::isPrintingKey()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -3245,39 +3229,62 @@ namespace __jni_impl::android::view
 			"()Z"
 		);
 	}
-	jstring KeyEvent::keyCodeToString(jint arg0)
+	jboolean KeyEvent::isScrollLockOn()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.KeyEvent",
-			"keyCodeToString",
-			"(I)Ljava/lang/String;",
+		return __thiz.callMethod<jboolean>(
+			"isScrollLockOn",
+			"()Z"
+		);
+	}
+	jboolean KeyEvent::isShiftPressed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isShiftPressed",
+			"()Z"
+		);
+	}
+	jboolean KeyEvent::isSymPressed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSymPressed",
+			"()Z"
+		);
+	}
+	jboolean KeyEvent::isSystem()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSystem",
+			"()Z"
+		);
+	}
+	jboolean KeyEvent::isTracking()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isTracking",
+			"()Z"
+		);
+	}
+	void KeyEvent::setSource(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSource",
+			"(I)V",
 			arg0
+		);
+	}
+	void KeyEvent::startTracking()
+	{
+		__thiz.callMethod<void>(
+			"startTracking",
+			"()V"
+		);
+	}
+	jstring KeyEvent::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jint KeyEvent::keyCodeFromString(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.KeyEvent",
-			"keyCodeFromString",
-			"(Ljava/lang/String;)I",
-			arg0
-		);
-	}
-	jint KeyEvent::keyCodeFromString(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.KeyEvent",
-			"keyCodeFromString",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jint KeyEvent::getAction()
-	{
-		return __thiz.callMethod<jint>(
-			"getAction",
-			"()I"
-		);
 	}
 	void KeyEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -3288,13 +3295,6 @@ namespace __jni_impl::android::view
 			arg1
 		);
 	}
-	jboolean KeyEvent::isCanceled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isCanceled",
-			"()Z"
-		);
-	}
 } // namespace __jni_impl::android::view
 
 namespace android::view
@@ -3303,45 +3303,16 @@ namespace android::view
 	{
 	public:
 		KeyEvent(QAndroidJniObject obj) { __thiz = obj; }
-		KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2,
-				arg3,
-				arg4,
-				arg5,
-				arg6,
-				arg7,
-				arg8);
-		}
-		KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2,
-				arg3,
-				arg4,
-				arg5,
-				arg6,
-				arg7,
-				arg8,
-				arg9);
-		}
-		KeyEvent(jlong arg0, jstring arg1, jint arg2, jint arg3)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2,
-				arg3);
-		}
 		KeyEvent(__jni_impl::android::view::KeyEvent arg0)
 		{
 			__constructor(
 				arg0);
+		}
+		KeyEvent(jint arg0, jint arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
 		}
 		KeyEvent(__jni_impl::android::view::KeyEvent arg0, jlong arg1, jint arg2)
 		{
@@ -3350,11 +3321,13 @@ namespace android::view
 				arg1,
 				arg2);
 		}
-		KeyEvent(jint arg0, jint arg1)
+		KeyEvent(jlong arg0, jstring arg1, jint arg2, jint arg3)
 		{
 			__constructor(
 				arg0,
-				arg1);
+				arg1,
+				arg2,
+				arg3);
 		}
 		KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4)
 		{
@@ -3386,6 +3359,33 @@ namespace android::view
 				arg5,
 				arg6,
 				arg7);
+		}
+		KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8)
+		{
+			__constructor(
+				arg0,
+				arg1,
+				arg2,
+				arg3,
+				arg4,
+				arg5,
+				arg6,
+				arg7,
+				arg8);
+		}
+		KeyEvent(jlong arg0, jlong arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
+		{
+			__constructor(
+				arg0,
+				arg1,
+				arg2,
+				arg3,
+				arg4,
+				arg5,
+				arg6,
+				arg7,
+				arg8,
+				arg9);
 		}
 	};
 } // namespace android::view

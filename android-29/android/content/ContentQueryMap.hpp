@@ -6,13 +6,13 @@
 #include "../../__JniBaseClass.hpp"
 #include "../../java/util/Observable.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Handler;
-}
 namespace __jni_impl::android::content
 {
 	class ContentValues;
+}
+namespace __jni_impl::android::os
+{
+	class Handler;
 }
 
 namespace __jni_impl::android::content
@@ -28,16 +28,16 @@ namespace __jni_impl::android::content
 		
 		// Methods
 		void close();
+		QAndroidJniObject getRows();
 		QAndroidJniObject getValues(jstring arg0);
 		QAndroidJniObject getValues(const QString &arg0);
-		void setKeepUpdated(jboolean arg0);
-		QAndroidJniObject getRows();
 		void requery();
+		void setKeepUpdated(jboolean arg0);
 	};
 } // namespace __jni_impl::android::content
 
-#include "../os/Handler.hpp"
 #include "ContentValues.hpp"
+#include "../os/Handler.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -75,6 +75,13 @@ namespace __jni_impl::android::content
 			"()V"
 		);
 	}
+	QAndroidJniObject ContentQueryMap::getRows()
+	{
+		return __thiz.callObjectMethod(
+			"getRows",
+			"()Ljava/util/Map;"
+		);
+	}
 	QAndroidJniObject ContentQueryMap::getValues(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -91,26 +98,19 @@ namespace __jni_impl::android::content
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
+	void ContentQueryMap::requery()
+	{
+		__thiz.callMethod<void>(
+			"requery",
+			"()V"
+		);
+	}
 	void ContentQueryMap::setKeepUpdated(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
 			"setKeepUpdated",
 			"(Z)V",
 			arg0
-		);
-	}
-	QAndroidJniObject ContentQueryMap::getRows()
-	{
-		return __thiz.callObjectMethod(
-			"getRows",
-			"()Ljava/util/Map;"
-		);
-	}
-	void ContentQueryMap::requery()
-	{
-		__thiz.callMethod<void>(
-			"requery",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::android::content

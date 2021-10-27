@@ -21,8 +21,8 @@ namespace __jni_impl::java::nio::channels::spi
 		void __constructor();
 		
 		// Methods
-		jboolean isOpen();
 		void close();
+		jboolean isOpen();
 	};
 } // namespace __jni_impl::java::nio::channels::spi
 
@@ -41,18 +41,18 @@ namespace __jni_impl::java::nio::channels::spi
 	}
 	
 	// Methods
-	jboolean AbstractInterruptibleChannel::isOpen()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isOpen",
-			"()Z"
-		);
-	}
 	void AbstractInterruptibleChannel::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
 			"()V"
+		);
+	}
+	jboolean AbstractInterruptibleChannel::isOpen()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isOpen",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::java::nio::channels::spi

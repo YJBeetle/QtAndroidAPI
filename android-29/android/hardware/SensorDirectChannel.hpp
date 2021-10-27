@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::hardware
 {
-	class SensorManager;
+	class Sensor;
 }
 namespace __jni_impl::android::hardware
 {
-	class Sensor;
+	class SensorManager;
 }
 
 namespace __jni_impl::android::hardware
@@ -31,14 +31,14 @@ namespace __jni_impl::android::hardware
 		void __constructor();
 		
 		// Methods
-		jboolean isOpen();
 		void close();
 		jint configure(__jni_impl::android::hardware::Sensor arg0, jint arg1);
+		jboolean isOpen();
 	};
 } // namespace __jni_impl::android::hardware
 
-#include "SensorManager.hpp"
 #include "Sensor.hpp"
+#include "SensorManager.hpp"
 
 namespace __jni_impl::android::hardware
 {
@@ -95,13 +95,6 @@ namespace __jni_impl::android::hardware
 	}
 	
 	// Methods
-	jboolean SensorDirectChannel::isOpen()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isOpen",
-			"()Z"
-		);
-	}
 	void SensorDirectChannel::close()
 	{
 		__thiz.callMethod<void>(
@@ -116,6 +109,13 @@ namespace __jni_impl::android::hardware
 			"(Landroid/hardware/Sensor;I)I",
 			arg0.__jniObject().object(),
 			arg1
+		);
+	}
+	jboolean SensorDirectChannel::isOpen()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isOpen",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::hardware

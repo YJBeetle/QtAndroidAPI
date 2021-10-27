@@ -27,13 +27,13 @@ namespace __jni_impl::android::transition
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		QAndroidJniObject getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		void setMinimumHorizontalAngle(jfloat arg0);
-		jfloat getMinimumHorizontalAngle();
-		void setMinimumVerticalAngle(jfloat arg0);
-		jfloat getMinimumVerticalAngle();
-		void setMaximumAngle(jfloat arg0);
 		jfloat getMaximumAngle();
+		jfloat getMinimumHorizontalAngle();
+		jfloat getMinimumVerticalAngle();
+		QAndroidJniObject getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
+		void setMaximumAngle(jfloat arg0);
+		void setMinimumHorizontalAngle(jfloat arg0);
+		void setMinimumVerticalAngle(jfloat arg0);
 	};
 } // namespace __jni_impl::android::transition
 
@@ -63,6 +63,27 @@ namespace __jni_impl::android::transition
 	}
 	
 	// Methods
+	jfloat ArcMotion::getMaximumAngle()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getMaximumAngle",
+			"()F"
+		);
+	}
+	jfloat ArcMotion::getMinimumHorizontalAngle()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getMinimumHorizontalAngle",
+			"()F"
+		);
+	}
+	jfloat ArcMotion::getMinimumVerticalAngle()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getMinimumVerticalAngle",
+			"()F"
+		);
+	}
 	QAndroidJniObject ArcMotion::getPath(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 	{
 		return __thiz.callObjectMethod(
@@ -74,36 +95,6 @@ namespace __jni_impl::android::transition
 			arg3
 		);
 	}
-	void ArcMotion::setMinimumHorizontalAngle(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMinimumHorizontalAngle",
-			"(F)V",
-			arg0
-		);
-	}
-	jfloat ArcMotion::getMinimumHorizontalAngle()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getMinimumHorizontalAngle",
-			"()F"
-		);
-	}
-	void ArcMotion::setMinimumVerticalAngle(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMinimumVerticalAngle",
-			"(F)V",
-			arg0
-		);
-	}
-	jfloat ArcMotion::getMinimumVerticalAngle()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getMinimumVerticalAngle",
-			"()F"
-		);
-	}
 	void ArcMotion::setMaximumAngle(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
@@ -112,11 +103,20 @@ namespace __jni_impl::android::transition
 			arg0
 		);
 	}
-	jfloat ArcMotion::getMaximumAngle()
+	void ArcMotion::setMinimumHorizontalAngle(jfloat arg0)
 	{
-		return __thiz.callMethod<jfloat>(
-			"getMaximumAngle",
-			"()F"
+		__thiz.callMethod<void>(
+			"setMinimumHorizontalAngle",
+			"(F)V",
+			arg0
+		);
+	}
+	void ArcMotion::setMinimumVerticalAngle(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMinimumVerticalAngle",
+			"(F)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::transition

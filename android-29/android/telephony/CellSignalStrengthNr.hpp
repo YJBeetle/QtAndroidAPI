@@ -23,20 +23,20 @@ namespace __jni_impl::android::telephony
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint getLevel();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jboolean equals(jobject arg0);
 		jint getAsuLevel();
-		jint getDbm();
-		jint getSsRsrp();
-		jint getSsRsrq();
-		jint getSsSinr();
 		jint getCsiRsrp();
 		jint getCsiRsrq();
 		jint getCsiSinr();
+		jint getDbm();
+		jint getLevel();
+		jint getSsRsrp();
+		jint getSsRsrq();
+		jint getSsSinr();
+		jint hashCode();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -63,35 +63,6 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
-	jboolean CellSignalStrengthNr::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring CellSignalStrengthNr::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint CellSignalStrengthNr::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jint CellSignalStrengthNr::getLevel()
-	{
-		return __thiz.callMethod<jint>(
-			"getLevel",
-			"()I"
-		);
-	}
 	jint CellSignalStrengthNr::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -99,13 +70,12 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
-	void CellSignalStrengthNr::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jboolean CellSignalStrengthNr::equals(jobject arg0)
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 	jint CellSignalStrengthNr::getAsuLevel()
@@ -115,10 +85,38 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
+	jint CellSignalStrengthNr::getCsiRsrp()
+	{
+		return __thiz.callMethod<jint>(
+			"getCsiRsrp",
+			"()I"
+		);
+	}
+	jint CellSignalStrengthNr::getCsiRsrq()
+	{
+		return __thiz.callMethod<jint>(
+			"getCsiRsrq",
+			"()I"
+		);
+	}
+	jint CellSignalStrengthNr::getCsiSinr()
+	{
+		return __thiz.callMethod<jint>(
+			"getCsiSinr",
+			"()I"
+		);
+	}
 	jint CellSignalStrengthNr::getDbm()
 	{
 		return __thiz.callMethod<jint>(
 			"getDbm",
+			"()I"
+		);
+	}
+	jint CellSignalStrengthNr::getLevel()
+	{
+		return __thiz.callMethod<jint>(
+			"getLevel",
 			"()I"
 		);
 	}
@@ -143,25 +141,27 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
-	jint CellSignalStrengthNr::getCsiRsrp()
+	jint CellSignalStrengthNr::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"getCsiRsrp",
+			"hashCode",
 			"()I"
 		);
 	}
-	jint CellSignalStrengthNr::getCsiRsrq()
+	jstring CellSignalStrengthNr::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"getCsiRsrq",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	jint CellSignalStrengthNr::getCsiSinr()
+	void CellSignalStrengthNr::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
-			"getCsiSinr",
-			"()I"
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::telephony

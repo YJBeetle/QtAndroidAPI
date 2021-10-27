@@ -22,15 +22,15 @@ namespace __jni_impl::android::app::admin
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		jlong getId();
-		jint getTag();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jlong getTimeNanos();
-		jint getLogLevel();
+		jboolean equals(jobject arg0);
 		jobject getData();
+		jlong getId();
+		jint getLogLevel();
+		jint getTag();
+		jlong getTimeNanos();
+		jint hashCode();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::admin
 
@@ -57,6 +57,13 @@ namespace __jni_impl::android::app::admin
 	}
 	
 	// Methods
+	jint SecurityLog_SecurityEvent::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean SecurityLog_SecurityEvent::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -65,18 +72,25 @@ namespace __jni_impl::android::app::admin
 			arg0
 		);
 	}
-	jint SecurityLog_SecurityEvent::hashCode()
+	jobject SecurityLog_SecurityEvent::getData()
 	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"getData",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jlong SecurityLog_SecurityEvent::getId()
 	{
 		return __thiz.callMethod<jlong>(
 			"getId",
 			"()J"
+		);
+	}
+	jint SecurityLog_SecurityEvent::getLogLevel()
+	{
+		return __thiz.callMethod<jint>(
+			"getLogLevel",
+			"()I"
 		);
 	}
 	jint SecurityLog_SecurityEvent::getTag()
@@ -86,10 +100,17 @@ namespace __jni_impl::android::app::admin
 			"()I"
 		);
 	}
-	jint SecurityLog_SecurityEvent::describeContents()
+	jlong SecurityLog_SecurityEvent::getTimeNanos()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimeNanos",
+			"()J"
+		);
+	}
+	jint SecurityLog_SecurityEvent::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
 		);
 	}
@@ -101,27 +122,6 @@ namespace __jni_impl::android::app::admin
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jlong SecurityLog_SecurityEvent::getTimeNanos()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimeNanos",
-			"()J"
-		);
-	}
-	jint SecurityLog_SecurityEvent::getLogLevel()
-	{
-		return __thiz.callMethod<jint>(
-			"getLogLevel",
-			"()I"
-		);
-	}
-	jobject SecurityLog_SecurityEvent::getData()
-	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
 	}
 } // namespace __jni_impl::android::app::admin
 

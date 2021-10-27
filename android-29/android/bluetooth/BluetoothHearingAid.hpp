@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
-{
-	class Context;
-}
 namespace __jni_impl::android::bluetooth
 {
 	class BluetoothDevice;
+}
+namespace __jni_impl::android::content
+{
+	class Context;
 }
 
 namespace __jni_impl::android::bluetooth
@@ -26,14 +26,14 @@ namespace __jni_impl::android::bluetooth
 		void __constructor();
 		
 		// Methods
-		jint getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 		QAndroidJniObject getConnectedDevices();
+		jint getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 		QAndroidJniObject getDevicesMatchingConnectionStates(jintArray arg0);
 	};
 } // namespace __jni_impl::android::bluetooth
 
-#include "../content/Context.hpp"
 #include "BluetoothDevice.hpp"
+#include "../content/Context.hpp"
 
 namespace __jni_impl::android::bluetooth
 {
@@ -56,19 +56,19 @@ namespace __jni_impl::android::bluetooth
 	}
 	
 	// Methods
+	QAndroidJniObject BluetoothHearingAid::getConnectedDevices()
+	{
+		return __thiz.callObjectMethod(
+			"getConnectedDevices",
+			"()Ljava/util/List;"
+		);
+	}
 	jint BluetoothHearingAid::getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getConnectionState",
 			"(Landroid/bluetooth/BluetoothDevice;)I",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject BluetoothHearingAid::getConnectedDevices()
-	{
-		return __thiz.callObjectMethod(
-			"getConnectedDevices",
-			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject BluetoothHearingAid::getDevicesMatchingConnectionStates(jintArray arg0)

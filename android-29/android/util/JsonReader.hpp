@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::io
-{
-	class Reader;
-}
 namespace __jni_impl::android::util
 {
 	class JsonToken;
+}
+namespace __jni_impl::java::io
+{
+	class Reader;
 }
 
 namespace __jni_impl::android::util
@@ -25,29 +25,29 @@ namespace __jni_impl::android::util
 		void __constructor(__jni_impl::java::io::Reader arg0);
 		
 		// Methods
-		jstring toString();
-		jboolean hasNext();
+		void beginArray();
+		void beginObject();
 		void close();
-		QAndroidJniObject peek();
+		void endArray();
+		void endObject();
+		jboolean hasNext();
+		jboolean isLenient();
+		jboolean nextBoolean();
 		jdouble nextDouble();
 		jint nextInt();
 		jlong nextLong();
-		jboolean nextBoolean();
-		void setLenient(jboolean arg0);
-		jboolean isLenient();
-		void nextNull();
-		void skipValue();
 		jstring nextName();
+		void nextNull();
 		jstring nextString();
-		void beginArray();
-		void endArray();
-		void beginObject();
-		void endObject();
+		QAndroidJniObject peek();
+		void setLenient(jboolean arg0);
+		void skipValue();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::util
 
-#include "../../java/io/Reader.hpp"
 #include "JsonToken.hpp"
+#include "../../java/io/Reader.hpp"
 
 namespace __jni_impl::android::util
 {
@@ -64,18 +64,18 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
-	jstring JsonReader::toString()
+	void JsonReader::beginArray()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"beginArray",
+			"()V"
+		);
 	}
-	jboolean JsonReader::hasNext()
+	void JsonReader::beginObject()
 	{
-		return __thiz.callMethod<jboolean>(
-			"hasNext",
-			"()Z"
+		__thiz.callMethod<void>(
+			"beginObject",
+			"()V"
 		);
 	}
 	void JsonReader::close()
@@ -85,11 +85,39 @@ namespace __jni_impl::android::util
 			"()V"
 		);
 	}
-	QAndroidJniObject JsonReader::peek()
+	void JsonReader::endArray()
 	{
-		return __thiz.callObjectMethod(
-			"peek",
-			"()Landroid/util/JsonToken;"
+		__thiz.callMethod<void>(
+			"endArray",
+			"()V"
+		);
+	}
+	void JsonReader::endObject()
+	{
+		__thiz.callMethod<void>(
+			"endObject",
+			"()V"
+		);
+	}
+	jboolean JsonReader::hasNext()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasNext",
+			"()Z"
+		);
+	}
+	jboolean JsonReader::isLenient()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLenient",
+			"()Z"
+		);
+	}
+	jboolean JsonReader::nextBoolean()
+	{
+		return __thiz.callMethod<jboolean>(
+			"nextBoolean",
+			"()Z"
 		);
 	}
 	jdouble JsonReader::nextDouble()
@@ -113,11 +141,32 @@ namespace __jni_impl::android::util
 			"()J"
 		);
 	}
-	jboolean JsonReader::nextBoolean()
+	jstring JsonReader::nextName()
 	{
-		return __thiz.callMethod<jboolean>(
-			"nextBoolean",
-			"()Z"
+		return __thiz.callObjectMethod(
+			"nextName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void JsonReader::nextNull()
+	{
+		__thiz.callMethod<void>(
+			"nextNull",
+			"()V"
+		);
+	}
+	jstring JsonReader::nextString()
+	{
+		return __thiz.callObjectMethod(
+			"nextString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject JsonReader::peek()
+	{
+		return __thiz.callObjectMethod(
+			"peek",
+			"()Landroid/util/JsonToken;"
 		);
 	}
 	void JsonReader::setLenient(jboolean arg0)
@@ -128,20 +177,6 @@ namespace __jni_impl::android::util
 			arg0
 		);
 	}
-	jboolean JsonReader::isLenient()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isLenient",
-			"()Z"
-		);
-	}
-	void JsonReader::nextNull()
-	{
-		__thiz.callMethod<void>(
-			"nextNull",
-			"()V"
-		);
-	}
 	void JsonReader::skipValue()
 	{
 		__thiz.callMethod<void>(
@@ -149,47 +184,12 @@ namespace __jni_impl::android::util
 			"()V"
 		);
 	}
-	jstring JsonReader::nextName()
+	jstring JsonReader::toString()
 	{
 		return __thiz.callObjectMethod(
-			"nextName",
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jstring JsonReader::nextString()
-	{
-		return __thiz.callObjectMethod(
-			"nextString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void JsonReader::beginArray()
-	{
-		__thiz.callMethod<void>(
-			"beginArray",
-			"()V"
-		);
-	}
-	void JsonReader::endArray()
-	{
-		__thiz.callMethod<void>(
-			"endArray",
-			"()V"
-		);
-	}
-	void JsonReader::beginObject()
-	{
-		__thiz.callMethod<void>(
-			"beginObject",
-			"()V"
-		);
-	}
-	void JsonReader::endObject()
-	{
-		__thiz.callMethod<void>(
-			"endObject",
-			"()V"
-		);
 	}
 } // namespace __jni_impl::android::util
 

@@ -27,13 +27,13 @@ namespace __jni_impl::android::database::sqlite
 		void __constructor();
 		
 		// Methods
-		jstring toString();
 		void execute();
 		jlong executeInsert();
 		jint executeUpdateDelete();
+		QAndroidJniObject simpleQueryForBlobFileDescriptor();
 		jlong simpleQueryForLong();
 		jstring simpleQueryForString();
-		QAndroidJniObject simpleQueryForBlobFileDescriptor();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::database::sqlite
 
@@ -53,13 +53,6 @@ namespace __jni_impl::android::database::sqlite
 	}
 	
 	// Methods
-	jstring SQLiteStatement::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	void SQLiteStatement::execute()
 	{
 		__thiz.callMethod<void>(
@@ -81,6 +74,13 @@ namespace __jni_impl::android::database::sqlite
 			"()I"
 		);
 	}
+	QAndroidJniObject SQLiteStatement::simpleQueryForBlobFileDescriptor()
+	{
+		return __thiz.callObjectMethod(
+			"simpleQueryForBlobFileDescriptor",
+			"()Landroid/os/ParcelFileDescriptor;"
+		);
+	}
 	jlong SQLiteStatement::simpleQueryForLong()
 	{
 		return __thiz.callMethod<jlong>(
@@ -95,12 +95,12 @@ namespace __jni_impl::android::database::sqlite
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SQLiteStatement::simpleQueryForBlobFileDescriptor()
+	jstring SQLiteStatement::toString()
 	{
 		return __thiz.callObjectMethod(
-			"simpleQueryForBlobFileDescriptor",
-			"()Landroid/os/ParcelFileDescriptor;"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::database::sqlite
 

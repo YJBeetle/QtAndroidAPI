@@ -21,9 +21,9 @@ namespace __jni_impl::android::companion
 		void __constructor();
 		
 		// Methods
+		QAndroidJniObject addDeviceFilter(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject build();
 		QAndroidJniObject setSingleDevice(jboolean arg0);
-		QAndroidJniObject addDeviceFilter(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::companion
 
@@ -43,6 +43,14 @@ namespace __jni_impl::android::companion
 	}
 	
 	// Methods
+	QAndroidJniObject AssociationRequest_Builder::addDeviceFilter(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"addDeviceFilter",
+			"(Landroid/companion/DeviceFilter;)Landroid/companion/AssociationRequest$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject AssociationRequest_Builder::build()
 	{
 		return __thiz.callObjectMethod(
@@ -56,14 +64,6 @@ namespace __jni_impl::android::companion
 			"setSingleDevice",
 			"(Z)Landroid/companion/AssociationRequest$Builder;",
 			arg0
-		);
-	}
-	QAndroidJniObject AssociationRequest_Builder::addDeviceFilter(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addDeviceFilter",
-			"(Landroid/companion/DeviceFilter;)Landroid/companion/AssociationRequest$Builder;",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::companion

@@ -22,48 +22,48 @@ namespace __jni_impl::org::xmlpull::v1::sax2
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		
 		// Methods
-		jobject getProperty(jstring arg0);
-		jobject getProperty(const QString &arg0);
-		jint getLength();
-		jstring getValue(jint arg0);
-		jstring getValue(jstring arg0, jstring arg1);
-		jstring getValue(const QString &arg0, const QString &arg1);
-		jstring getValue(jstring arg0);
-		jstring getValue(const QString &arg0);
-		void setProperty(jstring arg0, jobject arg1);
-		void setProperty(const QString &arg0, jobject arg1);
-		jstring getType(jstring arg0, jstring arg1);
-		jstring getType(const QString &arg0, const QString &arg1);
-		jstring getType(jstring arg0);
-		jstring getType(const QString &arg0);
-		jstring getType(jint arg0);
-		jint getLineNumber();
+		jint getColumnNumber();
+		QAndroidJniObject getContentHandler();
+		QAndroidJniObject getDTDHandler();
+		QAndroidJniObject getEntityResolver();
+		QAndroidJniObject getErrorHandler();
+		jboolean getFeature(jstring arg0);
+		jboolean getFeature(const QString &arg0);
 		jint getIndex(jstring arg0);
 		jint getIndex(const QString &arg0);
 		jint getIndex(jstring arg0, jstring arg1);
 		jint getIndex(const QString &arg0, const QString &arg1);
+		jint getLength();
+		jint getLineNumber();
+		jstring getLocalName(jint arg0);
+		jobject getProperty(jstring arg0);
+		jobject getProperty(const QString &arg0);
+		jstring getPublicId();
+		jstring getQName(jint arg0);
+		jstring getSystemId();
+		jstring getType(jint arg0);
+		jstring getType(jstring arg0);
+		jstring getType(const QString &arg0);
+		jstring getType(jstring arg0, jstring arg1);
+		jstring getType(const QString &arg0, const QString &arg1);
+		jstring getURI(jint arg0);
+		jstring getValue(jint arg0);
+		jstring getValue(jstring arg0);
+		jstring getValue(const QString &arg0);
+		jstring getValue(jstring arg0, jstring arg1);
+		jstring getValue(const QString &arg0, const QString &arg1);
 		void parse(jstring arg0);
 		void parse(const QString &arg0);
 		void parse(__jni_impl::org::xml::sax::InputSource arg0);
-		jstring getURI(jint arg0);
-		jstring getQName(jint arg0);
 		void parseSubTree(__jni_impl::__JniBaseClass arg0);
-		jstring getSystemId();
-		QAndroidJniObject getContentHandler();
-		void setErrorHandler(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getErrorHandler();
-		jint getColumnNumber();
-		jstring getPublicId();
-		void setEntityResolver(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getEntityResolver();
-		void setDTDHandler(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getDTDHandler();
 		void setContentHandler(__jni_impl::__JniBaseClass arg0);
-		jstring getLocalName(jint arg0);
+		void setDTDHandler(__jni_impl::__JniBaseClass arg0);
+		void setEntityResolver(__jni_impl::__JniBaseClass arg0);
+		void setErrorHandler(__jni_impl::__JniBaseClass arg0);
 		void setFeature(jstring arg0, jboolean arg1);
 		void setFeature(const QString &arg0, jboolean arg1);
-		jboolean getFeature(jstring arg0);
-		jboolean getFeature(const QString &arg0);
+		void setProperty(jstring arg0, jobject arg1);
+		void setProperty(const QString &arg0, jobject arg1);
 	};
 } // namespace __jni_impl::org::xmlpull::v1::sax2
 
@@ -91,136 +91,55 @@ namespace __jni_impl::org::xmlpull::v1::sax2
 	}
 	
 	// Methods
-	jobject Driver::getProperty(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getProperty",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
-	}
-	jobject Driver::getProperty(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getProperty",
-			"(Ljava/lang/String;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jobject>();
-	}
-	jint Driver::getLength()
+	jint Driver::getColumnNumber()
 	{
 		return __thiz.callMethod<jint>(
-			"getLength",
+			"getColumnNumber",
 			"()I"
 		);
 	}
-	jstring Driver::getValue(jint arg0)
+	QAndroidJniObject Driver::getContentHandler()
 	{
 		return __thiz.callObjectMethod(
-			"getValue",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jstring Driver::getValue(jstring arg0, jstring arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getValue",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
-	}
-	jstring Driver::getValue(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getValue",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		).object<jstring>();
-	}
-	jstring Driver::getValue(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getValue",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jstring Driver::getValue(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getValue",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
-	void Driver::setProperty(jstring arg0, jobject arg1)
-	{
-		__thiz.callMethod<void>(
-			"setProperty",
-			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			arg0,
-			arg1
+			"getContentHandler",
+			"()Lorg/xml/sax/ContentHandler;"
 		);
 	}
-	void Driver::setProperty(const QString &arg0, jobject arg1)
+	QAndroidJniObject Driver::getDTDHandler()
 	{
-		__thiz.callMethod<void>(
-			"setProperty",
-			"(Ljava/lang/String;Ljava/lang/Object;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
+		return __thiz.callObjectMethod(
+			"getDTDHandler",
+			"()Lorg/xml/sax/DTDHandler;"
 		);
 	}
-	jstring Driver::getType(jstring arg0, jstring arg1)
+	QAndroidJniObject Driver::getEntityResolver()
 	{
 		return __thiz.callObjectMethod(
-			"getType",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
+			"getEntityResolver",
+			"()Lorg/xml/sax/EntityResolver;"
+		);
 	}
-	jstring Driver::getType(const QString &arg0, const QString &arg1)
+	QAndroidJniObject Driver::getErrorHandler()
 	{
 		return __thiz.callObjectMethod(
-			"getType",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		).object<jstring>();
+			"getErrorHandler",
+			"()Lorg/xml/sax/ErrorHandler;"
+		);
 	}
-	jstring Driver::getType(jstring arg0)
+	jboolean Driver::getFeature(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getType",
-			"(Ljava/lang/String;)Ljava/lang/String;",
+		return __thiz.callMethod<jboolean>(
+			"getFeature",
+			"(Ljava/lang/String;)Z",
 			arg0
-		).object<jstring>();
+		);
 	}
-	jstring Driver::getType(const QString &arg0)
+	jboolean Driver::getFeature(const QString &arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getType",
-			"(Ljava/lang/String;)Ljava/lang/String;",
+		return __thiz.callMethod<jboolean>(
+			"getFeature",
+			"(Ljava/lang/String;)Z",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
-	jstring Driver::getType(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getType",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jint Driver::getLineNumber()
-	{
-		return __thiz.callMethod<jint>(
-			"getLineNumber",
-			"()I"
 		);
 	}
 	jint Driver::getIndex(jstring arg0)
@@ -257,6 +176,158 @@ namespace __jni_impl::org::xmlpull::v1::sax2
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
+	jint Driver::getLength()
+	{
+		return __thiz.callMethod<jint>(
+			"getLength",
+			"()I"
+		);
+	}
+	jint Driver::getLineNumber()
+	{
+		return __thiz.callMethod<jint>(
+			"getLineNumber",
+			"()I"
+		);
+	}
+	jstring Driver::getLocalName(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getLocalName",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jobject Driver::getProperty(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getProperty",
+			"(Ljava/lang/String;)Ljava/lang/Object;",
+			arg0
+		).object<jobject>();
+	}
+	jobject Driver::getProperty(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getProperty",
+			"(Ljava/lang/String;)Ljava/lang/Object;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jobject>();
+	}
+	jstring Driver::getPublicId()
+	{
+		return __thiz.callObjectMethod(
+			"getPublicId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring Driver::getQName(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getQName",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring Driver::getSystemId()
+	{
+		return __thiz.callObjectMethod(
+			"getSystemId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring Driver::getType(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getType",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring Driver::getType(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getType",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring Driver::getType(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getType",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
+	jstring Driver::getType(jstring arg0, jstring arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getType",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			arg0,
+			arg1
+		).object<jstring>();
+	}
+	jstring Driver::getType(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getType",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		).object<jstring>();
+	}
+	jstring Driver::getURI(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getURI",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring Driver::getValue(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getValue",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring Driver::getValue(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getValue",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring Driver::getValue(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getValue",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
+	jstring Driver::getValue(jstring arg0, jstring arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getValue",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			arg0,
+			arg1
+		).object<jstring>();
+	}
+	jstring Driver::getValue(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getValue",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		).object<jstring>();
+	}
 	void Driver::parse(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -281,101 +352,12 @@ namespace __jni_impl::org::xmlpull::v1::sax2
 			arg0.__jniObject().object()
 		);
 	}
-	jstring Driver::getURI(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getURI",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jstring Driver::getQName(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getQName",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
 	void Driver::parseSubTree(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"parseSubTree",
 			"(Lorg/xmlpull/v1/XmlPullParser;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	jstring Driver::getSystemId()
-	{
-		return __thiz.callObjectMethod(
-			"getSystemId",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject Driver::getContentHandler()
-	{
-		return __thiz.callObjectMethod(
-			"getContentHandler",
-			"()Lorg/xml/sax/ContentHandler;"
-		);
-	}
-	void Driver::setErrorHandler(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setErrorHandler",
-			"(Lorg/xml/sax/ErrorHandler;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Driver::getErrorHandler()
-	{
-		return __thiz.callObjectMethod(
-			"getErrorHandler",
-			"()Lorg/xml/sax/ErrorHandler;"
-		);
-	}
-	jint Driver::getColumnNumber()
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnNumber",
-			"()I"
-		);
-	}
-	jstring Driver::getPublicId()
-	{
-		return __thiz.callObjectMethod(
-			"getPublicId",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void Driver::setEntityResolver(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEntityResolver",
-			"(Lorg/xml/sax/EntityResolver;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Driver::getEntityResolver()
-	{
-		return __thiz.callObjectMethod(
-			"getEntityResolver",
-			"()Lorg/xml/sax/EntityResolver;"
-		);
-	}
-	void Driver::setDTDHandler(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDTDHandler",
-			"(Lorg/xml/sax/DTDHandler;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Driver::getDTDHandler()
-	{
-		return __thiz.callObjectMethod(
-			"getDTDHandler",
-			"()Lorg/xml/sax/DTDHandler;"
 		);
 	}
 	void Driver::setContentHandler(__jni_impl::__JniBaseClass arg0)
@@ -386,13 +368,29 @@ namespace __jni_impl::org::xmlpull::v1::sax2
 			arg0.__jniObject().object()
 		);
 	}
-	jstring Driver::getLocalName(jint arg0)
+	void Driver::setDTDHandler(__jni_impl::__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getLocalName",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"setDTDHandler",
+			"(Lorg/xml/sax/DTDHandler;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Driver::setEntityResolver(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEntityResolver",
+			"(Lorg/xml/sax/EntityResolver;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Driver::setErrorHandler(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setErrorHandler",
+			"(Lorg/xml/sax/ErrorHandler;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	void Driver::setFeature(jstring arg0, jboolean arg1)
 	{
@@ -412,20 +410,22 @@ namespace __jni_impl::org::xmlpull::v1::sax2
 			arg1
 		);
 	}
-	jboolean Driver::getFeature(jstring arg0)
+	void Driver::setProperty(jstring arg0, jobject arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"getFeature",
-			"(Ljava/lang/String;)Z",
-			arg0
+		__thiz.callMethod<void>(
+			"setProperty",
+			"(Ljava/lang/String;Ljava/lang/Object;)V",
+			arg0,
+			arg1
 		);
 	}
-	jboolean Driver::getFeature(const QString &arg0)
+	void Driver::setProperty(const QString &arg0, jobject arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"getFeature",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+		__thiz.callMethod<void>(
+			"setProperty",
+			"(Ljava/lang/String;Ljava/lang/Object;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::org::xmlpull::v1::sax2

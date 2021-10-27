@@ -7,15 +7,15 @@
 
 namespace __jni_impl::android::graphics::text
 {
+	class LineBreaker_ParagraphConstraints;
+}
+namespace __jni_impl::android::graphics::text
+{
 	class LineBreaker_Result;
 }
 namespace __jni_impl::android::graphics::text
 {
 	class MeasuredText;
-}
-namespace __jni_impl::android::graphics::text
-{
-	class LineBreaker_ParagraphConstraints;
 }
 
 namespace __jni_impl::android::graphics::text
@@ -41,9 +41,9 @@ namespace __jni_impl::android::graphics::text
 	};
 } // namespace __jni_impl::android::graphics::text
 
+#include "LineBreaker_ParagraphConstraints.hpp"
 #include "LineBreaker_Result.hpp"
 #include "MeasuredText.hpp"
-#include "LineBreaker_ParagraphConstraints.hpp"
 
 namespace __jni_impl::android::graphics::text
 {

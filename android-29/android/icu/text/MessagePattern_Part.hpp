@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::icu::text
 {
-	class MessagePattern_Part_Type;
+	class MessagePattern_ArgType;
 }
 namespace __jni_impl::android::icu::text
 {
-	class MessagePattern_ArgType;
+	class MessagePattern_Part_Type;
 }
 
 namespace __jni_impl::android::icu::text
@@ -26,19 +26,19 @@ namespace __jni_impl::android::icu::text
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint getLength();
-		jint getValue();
-		QAndroidJniObject getType();
-		jint getIndex();
-		jint getLimit();
 		QAndroidJniObject getArgType();
+		jint getIndex();
+		jint getLength();
+		jint getLimit();
+		QAndroidJniObject getType();
+		jint getValue();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "MessagePattern_Part_Type.hpp"
 #include "MessagePattern_ArgType.hpp"
+#include "MessagePattern_Part_Type.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -61,17 +61,17 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
-	jstring MessagePattern_Part::toString()
+	QAndroidJniObject MessagePattern_Part::getArgType()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getArgType",
+			"()Landroid/icu/text/MessagePattern$ArgType;"
+		);
 	}
-	jint MessagePattern_Part::hashCode()
+	jint MessagePattern_Part::getIndex()
 	{
 		return __thiz.callMethod<jint>(
-			"hashCode",
+			"getIndex",
 			"()I"
 		);
 	}
@@ -82,10 +82,10 @@ namespace __jni_impl::android::icu::text
 			"()I"
 		);
 	}
-	jint MessagePattern_Part::getValue()
+	jint MessagePattern_Part::getLimit()
 	{
 		return __thiz.callMethod<jint>(
-			"getValue",
+			"getLimit",
 			"()I"
 		);
 	}
@@ -96,26 +96,26 @@ namespace __jni_impl::android::icu::text
 			"()Landroid/icu/text/MessagePattern$Part$Type;"
 		);
 	}
-	jint MessagePattern_Part::getIndex()
+	jint MessagePattern_Part::getValue()
 	{
 		return __thiz.callMethod<jint>(
-			"getIndex",
+			"getValue",
 			"()I"
 		);
 	}
-	jint MessagePattern_Part::getLimit()
+	jint MessagePattern_Part::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"getLimit",
+			"hashCode",
 			"()I"
 		);
 	}
-	QAndroidJniObject MessagePattern_Part::getArgType()
+	jstring MessagePattern_Part::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getArgType",
-			"()Landroid/icu/text/MessagePattern$ArgType;"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::text
 

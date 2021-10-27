@@ -7,15 +7,11 @@
 
 namespace __jni_impl::android::icu::util
 {
-	class ULocale;
-}
-namespace __jni_impl::java::util
-{
-	class Locale;
+	class TimeZone_SystemTimeZoneType;
 }
 namespace __jni_impl::android::icu::util
 {
-	class TimeZone_SystemTimeZoneType;
+	class ULocale;
 }
 namespace __jni_impl::java::lang
 {
@@ -24,6 +20,10 @@ namespace __jni_impl::java::lang
 namespace __jni_impl::java::util
 {
 	class Date;
+}
+namespace __jni_impl::java::util
+{
+	class Locale;
 }
 
 namespace __jni_impl::android::icu::util
@@ -50,67 +50,67 @@ namespace __jni_impl::android::icu::util
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		jobject clone();
+		static jint countEquivalentIDs(jstring arg0);
+		static jint countEquivalentIDs(const QString &arg0);
+		static jarray getAvailableIDs();
+		static jarray getAvailableIDs(jint arg0);
+		static jarray getAvailableIDs(jstring arg0);
+		static jarray getAvailableIDs(const QString &arg0);
+		static QAndroidJniObject getAvailableIDs(__jni_impl::android::icu::util::TimeZone_SystemTimeZoneType arg0, jstring arg1, __jni_impl::java::lang::Integer arg2);
+		static QAndroidJniObject getAvailableIDs(__jni_impl::android::icu::util::TimeZone_SystemTimeZoneType arg0, const QString &arg1, __jni_impl::java::lang::Integer arg2);
+		static jstring getCanonicalID(jstring arg0);
+		static jstring getCanonicalID(const QString &arg0);
+		static jstring getCanonicalID(jstring arg0, jbooleanArray arg1);
+		static jstring getCanonicalID(const QString &arg0, jbooleanArray arg1);
 		static QAndroidJniObject getDefault();
-		jboolean isFrozen();
-		QAndroidJniObject freeze();
-		jint getOffset(jlong arg0);
-		jint getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
-		void getOffset(jlong arg0, jboolean arg1, jintArray arg2);
+		static jstring getEquivalentID(jstring arg0, jint arg1);
+		static jstring getEquivalentID(const QString &arg0, jint arg1);
+		static QAndroidJniObject getFrozenTimeZone(jstring arg0);
+		static QAndroidJniObject getFrozenTimeZone(const QString &arg0);
+		static jstring getIDForWindowsID(jstring arg0, jstring arg1);
+		static jstring getIDForWindowsID(const QString &arg0, const QString &arg1);
 		static jstring getRegion(jstring arg0);
 		static jstring getRegion(const QString &arg0);
-		jstring getID();
-		jstring getDisplayName();
-		jstring getDisplayName(jboolean arg0, jint arg1, __jni_impl::android::icu::util::ULocale arg2);
-		jstring getDisplayName(jboolean arg0, jint arg1);
-		jstring getDisplayName(jboolean arg0, jint arg1, __jni_impl::java::util::Locale arg2);
-		jstring getDisplayName(__jni_impl::android::icu::util::ULocale arg0);
-		jstring getDisplayName(__jni_impl::java::util::Locale arg0);
-		jint getDSTSavings();
-		jboolean hasSameRules(__jni_impl::android::icu::util::TimeZone arg0);
+		static jstring getTZDataVersion();
 		static QAndroidJniObject getTimeZone(jstring arg0);
 		static QAndroidJniObject getTimeZone(const QString &arg0);
 		static QAndroidJniObject getTimeZone(jstring arg0, jint arg1);
 		static QAndroidJniObject getTimeZone(const QString &arg0, jint arg1);
-		static jarray getAvailableIDs(jint arg0);
-		static QAndroidJniObject getAvailableIDs(__jni_impl::android::icu::util::TimeZone_SystemTimeZoneType arg0, jstring arg1, __jni_impl::java::lang::Integer arg2);
-		static QAndroidJniObject getAvailableIDs(__jni_impl::android::icu::util::TimeZone_SystemTimeZoneType arg0, const QString &arg1, __jni_impl::java::lang::Integer arg2);
-		static jarray getAvailableIDs();
-		static jarray getAvailableIDs(jstring arg0);
-		static jarray getAvailableIDs(const QString &arg0);
+		static jstring getWindowsID(jstring arg0);
+		static jstring getWindowsID(const QString &arg0);
+		jobject clone();
+		QAndroidJniObject cloneAsThawed();
+		jboolean equals(jobject arg0);
+		QAndroidJniObject freeze();
+		jint getDSTSavings();
+		jstring getDisplayName();
+		jstring getDisplayName(__jni_impl::android::icu::util::ULocale arg0);
+		jstring getDisplayName(__jni_impl::java::util::Locale arg0);
+		jstring getDisplayName(jboolean arg0, jint arg1);
+		jstring getDisplayName(jboolean arg0, jint arg1, __jni_impl::android::icu::util::ULocale arg2);
+		jstring getDisplayName(jboolean arg0, jint arg1, __jni_impl::java::util::Locale arg2);
+		jstring getID();
+		jint getOffset(jlong arg0);
+		jint getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
+		void getOffset(jlong arg0, jboolean arg1, jintArray arg2);
 		jint getRawOffset();
+		jboolean hasSameRules(__jni_impl::android::icu::util::TimeZone arg0);
+		jint hashCode();
 		jboolean inDaylightTime(__jni_impl::java::util::Date arg0);
-		jboolean useDaylightTime();
+		jboolean isFrozen();
+		jboolean observesDaylightTime();
 		void setID(jstring arg0);
 		void setID(const QString &arg0);
 		void setRawOffset(jint arg0);
-		jboolean observesDaylightTime();
-		QAndroidJniObject cloneAsThawed();
-		static QAndroidJniObject getFrozenTimeZone(jstring arg0);
-		static QAndroidJniObject getFrozenTimeZone(const QString &arg0);
-		static jint countEquivalentIDs(jstring arg0);
-		static jint countEquivalentIDs(const QString &arg0);
-		static jstring getEquivalentID(jstring arg0, jint arg1);
-		static jstring getEquivalentID(const QString &arg0, jint arg1);
-		static jstring getTZDataVersion();
-		static jstring getCanonicalID(jstring arg0, jbooleanArray arg1);
-		static jstring getCanonicalID(const QString &arg0, jbooleanArray arg1);
-		static jstring getCanonicalID(jstring arg0);
-		static jstring getCanonicalID(const QString &arg0);
-		static jstring getWindowsID(jstring arg0);
-		static jstring getWindowsID(const QString &arg0);
-		static jstring getIDForWindowsID(jstring arg0, jstring arg1);
-		static jstring getIDForWindowsID(const QString &arg0, const QString &arg1);
+		jboolean useDaylightTime();
 	};
 } // namespace __jni_impl::android::icu::util
 
-#include "ULocale.hpp"
-#include "../../../java/util/Locale.hpp"
 #include "TimeZone_SystemTimeZoneType.hpp"
+#include "ULocale.hpp"
 #include "../../../java/lang/Integer.hpp"
 #include "../../../java/util/Date.hpp"
+#include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::icu::util
 {
@@ -220,27 +220,118 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Methods
-	jboolean TimeZone::equals(jobject arg0)
+	jint TimeZone::countEquivalentIDs(jstring arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.icu.util.TimeZone",
+			"countEquivalentIDs",
+			"(Ljava/lang/String;)I",
 			arg0
 		);
 	}
-	jint TimeZone::hashCode()
+	jint TimeZone::countEquivalentIDs(const QString &arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.icu.util.TimeZone",
+			"countEquivalentIDs",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jobject TimeZone::clone()
+	jarray TimeZone::getAvailableIDs()
 	{
-		return __thiz.callObjectMethod(
-			"clone",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.TimeZone",
+			"getAvailableIDs",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	jarray TimeZone::getAvailableIDs(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.TimeZone",
+			"getAvailableIDs",
+			"(I)[Ljava/lang/String;",
+			arg0
+		).object<jarray>();
+	}
+	jarray TimeZone::getAvailableIDs(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.TimeZone",
+			"getAvailableIDs",
+			"(Ljava/lang/String;)[Ljava/lang/String;",
+			arg0
+		).object<jarray>();
+	}
+	jarray TimeZone::getAvailableIDs(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.TimeZone",
+			"getAvailableIDs",
+			"(Ljava/lang/String;)[Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jarray>();
+	}
+	QAndroidJniObject TimeZone::getAvailableIDs(__jni_impl::android::icu::util::TimeZone_SystemTimeZoneType arg0, jstring arg1, __jni_impl::java::lang::Integer arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.TimeZone",
+			"getAvailableIDs",
+			"(Landroid/icu/util/TimeZone$SystemTimeZoneType;Ljava/lang/String;Ljava/lang/Integer;)Ljava/util/Set;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TimeZone::getAvailableIDs(__jni_impl::android::icu::util::TimeZone_SystemTimeZoneType arg0, const QString &arg1, __jni_impl::java::lang::Integer arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.TimeZone",
+			"getAvailableIDs",
+			"(Landroid/icu/util/TimeZone$SystemTimeZoneType;Ljava/lang/String;Ljava/lang/Integer;)Ljava/util/Set;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
+	}
+	jstring TimeZone::getCanonicalID(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.TimeZone",
+			"getCanonicalID",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring TimeZone::getCanonicalID(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.TimeZone",
+			"getCanonicalID",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
+	jstring TimeZone::getCanonicalID(jstring arg0, jbooleanArray arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.TimeZone",
+			"getCanonicalID",
+			"(Ljava/lang/String;[Z)Ljava/lang/String;",
+			arg0,
+			arg1
+		).object<jstring>();
+	}
+	jstring TimeZone::getCanonicalID(const QString &arg0, jbooleanArray arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.TimeZone",
+			"getCanonicalID",
+			"(Ljava/lang/String;[Z)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		).object<jstring>();
 	}
 	QAndroidJniObject TimeZone::getDefault()
 	{
@@ -250,50 +341,63 @@ namespace __jni_impl::android::icu::util
 			"()Landroid/icu/util/TimeZone;"
 		);
 	}
-	jboolean TimeZone::isFrozen()
+	jstring TimeZone::getEquivalentID(jstring arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isFrozen",
-			"()Z"
-		);
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.TimeZone",
+			"getEquivalentID",
+			"(Ljava/lang/String;I)Ljava/lang/String;",
+			arg0,
+			arg1
+		).object<jstring>();
 	}
-	QAndroidJniObject TimeZone::freeze()
+	jstring TimeZone::getEquivalentID(const QString &arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
-			"freeze",
-			"()Landroid/icu/util/TimeZone;"
-		);
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.TimeZone",
+			"getEquivalentID",
+			"(Ljava/lang/String;I)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		).object<jstring>();
 	}
-	jint TimeZone::getOffset(jlong arg0)
+	QAndroidJniObject TimeZone::getFrozenTimeZone(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getOffset",
-			"(J)I",
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.TimeZone",
+			"getFrozenTimeZone",
+			"(Ljava/lang/String;)Landroid/icu/util/TimeZone;",
 			arg0
 		);
 	}
-	jint TimeZone::getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	QAndroidJniObject TimeZone::getFrozenTimeZone(const QString &arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getOffset",
-			"(IIIIII)I",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.TimeZone",
+			"getFrozenTimeZone",
+			"(Ljava/lang/String;)Landroid/icu/util/TimeZone;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void TimeZone::getOffset(jlong arg0, jboolean arg1, jintArray arg2)
+	jstring TimeZone::getIDForWindowsID(jstring arg0, jstring arg1)
 	{
-		__thiz.callMethod<void>(
-			"getOffset",
-			"(JZ[I)V",
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.TimeZone",
+			"getIDForWindowsID",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
 			arg0,
-			arg1,
-			arg2
-		);
+			arg1
+		).object<jstring>();
+	}
+	jstring TimeZone::getIDForWindowsID(const QString &arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.TimeZone",
+			"getIDForWindowsID",
+			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		).object<jstring>();
 	}
 	jstring TimeZone::getRegion(jstring arg0)
 	{
@@ -313,79 +417,13 @@ namespace __jni_impl::android::icu::util
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
-	jstring TimeZone::getID()
+	jstring TimeZone::getTZDataVersion()
 	{
-		return __thiz.callObjectMethod(
-			"getID",
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.TimeZone",
+			"getTZDataVersion",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jstring TimeZone::getDisplayName()
-	{
-		return __thiz.callObjectMethod(
-			"getDisplayName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring TimeZone::getDisplayName(jboolean arg0, jint arg1, __jni_impl::android::icu::util::ULocale arg2)
-	{
-		return __thiz.callObjectMethod(
-			"getDisplayName",
-			"(ZILandroid/icu/util/ULocale;)Ljava/lang/String;",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		).object<jstring>();
-	}
-	jstring TimeZone::getDisplayName(jboolean arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getDisplayName",
-			"(ZI)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
-	}
-	jstring TimeZone::getDisplayName(jboolean arg0, jint arg1, __jni_impl::java::util::Locale arg2)
-	{
-		return __thiz.callObjectMethod(
-			"getDisplayName",
-			"(ZILjava/util/Locale;)Ljava/lang/String;",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		).object<jstring>();
-	}
-	jstring TimeZone::getDisplayName(__jni_impl::android::icu::util::ULocale arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDisplayName",
-			"(Landroid/icu/util/ULocale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
-		).object<jstring>();
-	}
-	jstring TimeZone::getDisplayName(__jni_impl::java::util::Locale arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDisplayName",
-			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
-		).object<jstring>();
-	}
-	jint TimeZone::getDSTSavings()
-	{
-		return __thiz.callMethod<jint>(
-			"getDSTSavings",
-			"()I"
-		);
-	}
-	jboolean TimeZone::hasSameRules(__jni_impl::android::icu::util::TimeZone arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasSameRules",
-			"(Landroid/icu/util/TimeZone;)Z",
-			arg0.__jniObject().object()
-		);
 	}
 	QAndroidJniObject TimeZone::getTimeZone(jstring arg0)
 	{
@@ -425,67 +463,169 @@ namespace __jni_impl::android::icu::util
 			arg1
 		);
 	}
-	jarray TimeZone::getAvailableIDs(jint arg0)
+	jstring TimeZone::getWindowsID(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.TimeZone",
-			"getAvailableIDs",
-			"(I)[Ljava/lang/String;",
+			"getWindowsID",
+			"(Ljava/lang/String;)Ljava/lang/String;",
 			arg0
-		).object<jarray>();
+		).object<jstring>();
 	}
-	QAndroidJniObject TimeZone::getAvailableIDs(__jni_impl::android::icu::util::TimeZone_SystemTimeZoneType arg0, jstring arg1, __jni_impl::java::lang::Integer arg2)
+	jstring TimeZone::getWindowsID(const QString &arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.TimeZone",
-			"getAvailableIDs",
-			"(Landroid/icu/util/TimeZone$SystemTimeZoneType;Ljava/lang/String;Ljava/lang/Integer;)Ljava/util/Set;",
-			arg0.__jniObject().object(),
+			"getWindowsID",
+			"(Ljava/lang/String;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
+	jobject TimeZone::clone()
+	{
+		return __thiz.callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	QAndroidJniObject TimeZone::cloneAsThawed()
+	{
+		return __thiz.callObjectMethod(
+			"cloneAsThawed",
+			"()Landroid/icu/util/TimeZone;"
+		);
+	}
+	jboolean TimeZone::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	QAndroidJniObject TimeZone::freeze()
+	{
+		return __thiz.callObjectMethod(
+			"freeze",
+			"()Landroid/icu/util/TimeZone;"
+		);
+	}
+	jint TimeZone::getDSTSavings()
+	{
+		return __thiz.callMethod<jint>(
+			"getDSTSavings",
+			"()I"
+		);
+	}
+	jstring TimeZone::getDisplayName()
+	{
+		return __thiz.callObjectMethod(
+			"getDisplayName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring TimeZone::getDisplayName(__jni_impl::android::icu::util::ULocale arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDisplayName",
+			"(Landroid/icu/util/ULocale;)Ljava/lang/String;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring TimeZone::getDisplayName(__jni_impl::java::util::Locale arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDisplayName",
+			"(Ljava/util/Locale;)Ljava/lang/String;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring TimeZone::getDisplayName(jboolean arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getDisplayName",
+			"(ZI)Ljava/lang/String;",
+			arg0,
+			arg1
+		).object<jstring>();
+	}
+	jstring TimeZone::getDisplayName(jboolean arg0, jint arg1, __jni_impl::android::icu::util::ULocale arg2)
+	{
+		return __thiz.callObjectMethod(
+			"getDisplayName",
+			"(ZILandroid/icu/util/ULocale;)Ljava/lang/String;",
+			arg0,
 			arg1,
 			arg2.__jniObject().object()
-		);
+		).object<jstring>();
 	}
-	QAndroidJniObject TimeZone::getAvailableIDs(__jni_impl::android::icu::util::TimeZone_SystemTimeZoneType arg0, const QString &arg1, __jni_impl::java::lang::Integer arg2)
+	jstring TimeZone::getDisplayName(jboolean arg0, jint arg1, __jni_impl::java::util::Locale arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.TimeZone",
-			"getAvailableIDs",
-			"(Landroid/icu/util/TimeZone$SystemTimeZoneType;Ljava/lang/String;Ljava/lang/Integer;)Ljava/util/Set;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
+		return __thiz.callObjectMethod(
+			"getDisplayName",
+			"(ZILjava/util/Locale;)Ljava/lang/String;",
+			arg0,
+			arg1,
 			arg2.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring TimeZone::getID()
+	{
+		return __thiz.callObjectMethod(
+			"getID",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint TimeZone::getOffset(jlong arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getOffset",
+			"(J)I",
+			arg0
 		);
 	}
-	jarray TimeZone::getAvailableIDs()
+	jint TimeZone::getOffset(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.TimeZone",
-			"getAvailableIDs",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
+		return __thiz.callMethod<jint>(
+			"getOffset",
+			"(IIIIII)I",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5
+		);
 	}
-	jarray TimeZone::getAvailableIDs(jstring arg0)
+	void TimeZone::getOffset(jlong arg0, jboolean arg1, jintArray arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.TimeZone",
-			"getAvailableIDs",
-			"(Ljava/lang/String;)[Ljava/lang/String;",
-			arg0
-		).object<jarray>();
-	}
-	jarray TimeZone::getAvailableIDs(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.TimeZone",
-			"getAvailableIDs",
-			"(Ljava/lang/String;)[Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jarray>();
+		__thiz.callMethod<void>(
+			"getOffset",
+			"(JZ[I)V",
+			arg0,
+			arg1,
+			arg2
+		);
 	}
 	jint TimeZone::getRawOffset()
 	{
 		return __thiz.callMethod<jint>(
 			"getRawOffset",
+			"()I"
+		);
+	}
+	jboolean TimeZone::hasSameRules(__jni_impl::android::icu::util::TimeZone arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasSameRules",
+			"(Landroid/icu/util/TimeZone;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jint TimeZone::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
 			"()I"
 		);
 	}
@@ -497,10 +637,17 @@ namespace __jni_impl::android::icu::util
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean TimeZone::useDaylightTime()
+	jboolean TimeZone::isFrozen()
 	{
 		return __thiz.callMethod<jboolean>(
-			"useDaylightTime",
+			"isFrozen",
+			"()Z"
+		);
+	}
+	jboolean TimeZone::observesDaylightTime()
+	{
+		return __thiz.callMethod<jboolean>(
+			"observesDaylightTime",
 			"()Z"
 		);
 	}
@@ -528,159 +675,12 @@ namespace __jni_impl::android::icu::util
 			arg0
 		);
 	}
-	jboolean TimeZone::observesDaylightTime()
+	jboolean TimeZone::useDaylightTime()
 	{
 		return __thiz.callMethod<jboolean>(
-			"observesDaylightTime",
+			"useDaylightTime",
 			"()Z"
 		);
-	}
-	QAndroidJniObject TimeZone::cloneAsThawed()
-	{
-		return __thiz.callObjectMethod(
-			"cloneAsThawed",
-			"()Landroid/icu/util/TimeZone;"
-		);
-	}
-	QAndroidJniObject TimeZone::getFrozenTimeZone(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.TimeZone",
-			"getFrozenTimeZone",
-			"(Ljava/lang/String;)Landroid/icu/util/TimeZone;",
-			arg0
-		);
-	}
-	QAndroidJniObject TimeZone::getFrozenTimeZone(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.TimeZone",
-			"getFrozenTimeZone",
-			"(Ljava/lang/String;)Landroid/icu/util/TimeZone;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jint TimeZone::countEquivalentIDs(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.icu.util.TimeZone",
-			"countEquivalentIDs",
-			"(Ljava/lang/String;)I",
-			arg0
-		);
-	}
-	jint TimeZone::countEquivalentIDs(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.icu.util.TimeZone",
-			"countEquivalentIDs",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring TimeZone::getEquivalentID(jstring arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.TimeZone",
-			"getEquivalentID",
-			"(Ljava/lang/String;I)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
-	}
-	jstring TimeZone::getEquivalentID(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.TimeZone",
-			"getEquivalentID",
-			"(Ljava/lang/String;I)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		).object<jstring>();
-	}
-	jstring TimeZone::getTZDataVersion()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.TimeZone",
-			"getTZDataVersion",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring TimeZone::getCanonicalID(jstring arg0, jbooleanArray arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.TimeZone",
-			"getCanonicalID",
-			"(Ljava/lang/String;[Z)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
-	}
-	jstring TimeZone::getCanonicalID(const QString &arg0, jbooleanArray arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.TimeZone",
-			"getCanonicalID",
-			"(Ljava/lang/String;[Z)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		).object<jstring>();
-	}
-	jstring TimeZone::getCanonicalID(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.TimeZone",
-			"getCanonicalID",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jstring TimeZone::getCanonicalID(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.TimeZone",
-			"getCanonicalID",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
-	jstring TimeZone::getWindowsID(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.TimeZone",
-			"getWindowsID",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jstring TimeZone::getWindowsID(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.TimeZone",
-			"getWindowsID",
-			"(Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
-	jstring TimeZone::getIDForWindowsID(jstring arg0, jstring arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.TimeZone",
-			"getIDForWindowsID",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
-	}
-	jstring TimeZone::getIDForWindowsID(const QString &arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.TimeZone",
-			"getIDForWindowsID",
-			"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::util
 

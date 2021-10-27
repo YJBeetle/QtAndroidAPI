@@ -17,9 +17,9 @@ namespace __jni_impl::java::util
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::__JniBaseClass arg0);
 		void __constructor();
 		void __constructor(jint arg0);
+		void __constructor(__jni_impl::__JniBaseClass arg0);
 		void __constructor(jint arg0, jfloat arg1);
 		
 		// Methods
@@ -33,14 +33,6 @@ namespace __jni_impl::java::util
 	// Fields
 	
 	// Constructors
-	void LinkedHashSet::__constructor(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.LinkedHashSet",
-			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void LinkedHashSet::__constructor()
 	{
 		__thiz = QAndroidJniObject(
@@ -54,6 +46,14 @@ namespace __jni_impl::java::util
 			"java.util.LinkedHashSet",
 			"(I)V",
 			arg0
+		);
+	}
+	void LinkedHashSet::__constructor(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.LinkedHashSet",
+			"(Ljava/util/Collection;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void LinkedHashSet::__constructor(jint arg0, jfloat arg1)
@@ -82,16 +82,16 @@ namespace java::util
 	{
 	public:
 		LinkedHashSet(QAndroidJniObject obj) { __thiz = obj; }
-		LinkedHashSet(__jni_impl::__JniBaseClass arg0)
-		{
-			__constructor(
-				arg0);
-		}
 		LinkedHashSet()
 		{
 			__constructor();
 		}
 		LinkedHashSet(jint arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		LinkedHashSet(__jni_impl::__JniBaseClass arg0)
 		{
 			__constructor(
 				arg0);

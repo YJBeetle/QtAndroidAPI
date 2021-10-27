@@ -21,10 +21,10 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		jint getSize();
-		QAndroidJniObject getCurrentItem();
 		jint getCurrentIndex();
+		QAndroidJniObject getCurrentItem();
 		QAndroidJniObject getItemAtIndex(jint arg0);
+		jint getSize();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -44,10 +44,10 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	jint WebBackForwardList::getSize()
+	jint WebBackForwardList::getCurrentIndex()
 	{
 		return __thiz.callMethod<jint>(
-			"getSize",
+			"getCurrentIndex",
 			"()I"
 		);
 	}
@@ -58,19 +58,19 @@ namespace __jni_impl::android::webkit
 			"()Landroid/webkit/WebHistoryItem;"
 		);
 	}
-	jint WebBackForwardList::getCurrentIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getCurrentIndex",
-			"()I"
-		);
-	}
 	QAndroidJniObject WebBackForwardList::getItemAtIndex(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getItemAtIndex",
 			"(I)Landroid/webkit/WebHistoryItem;",
 			arg0
+		);
+	}
+	jint WebBackForwardList::getSize()
+	{
+		return __thiz.callMethod<jint>(
+			"getSize",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::webkit

@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
-{
-	class Context;
-}
 namespace __jni_impl::android::app::backup
 {
 	class RestoreObserver;
+}
+namespace __jni_impl::android::content
+{
+	class Context;
 }
 namespace __jni_impl::android::os
 {
@@ -32,13 +32,13 @@ namespace __jni_impl::android::app::backup
 		static void dataChanged(jstring arg0);
 		static void dataChanged(const QString &arg0);
 		void dataChanged();
-		jint requestRestore(__jni_impl::android::app::backup::RestoreObserver arg0);
 		QAndroidJniObject getUserForAncestralSerialNumber(jlong arg0);
+		jint requestRestore(__jni_impl::android::app::backup::RestoreObserver arg0);
 	};
 } // namespace __jni_impl::android::app::backup
 
-#include "../../content/Context.hpp"
 #include "RestoreObserver.hpp"
+#include "../../content/Context.hpp"
 #include "../../os/UserHandle.hpp"
 
 namespace __jni_impl::android::app::backup
@@ -81,20 +81,20 @@ namespace __jni_impl::android::app::backup
 			"()V"
 		);
 	}
-	jint BackupManager::requestRestore(__jni_impl::android::app::backup::RestoreObserver arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"requestRestore",
-			"(Landroid/app/backup/RestoreObserver;)I",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject BackupManager::getUserForAncestralSerialNumber(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getUserForAncestralSerialNumber",
 			"(J)Landroid/os/UserHandle;",
 			arg0
+		);
+	}
+	jint BackupManager::requestRestore(__jni_impl::android::app::backup::RestoreObserver arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"requestRestore",
+			"(Landroid/app/backup/RestoreObserver;)I",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::app::backup

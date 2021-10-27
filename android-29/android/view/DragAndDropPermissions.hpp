@@ -22,8 +22,8 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		void release();
 		jint describeContents();
+		void release();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
@@ -51,18 +51,18 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	void DragAndDropPermissions::release()
-	{
-		__thiz.callMethod<void>(
-			"release",
-			"()V"
-		);
-	}
 	jint DragAndDropPermissions::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
+		);
+	}
+	void DragAndDropPermissions::release()
+	{
+		__thiz.callMethod<void>(
+			"release",
+			"()V"
 		);
 	}
 	void DragAndDropPermissions::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

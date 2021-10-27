@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::security
-{
-	class Signature;
-}
 namespace __jni_impl::java::io
 {
 	class ObjectInputStream;
+}
+namespace __jni_impl::java::security
+{
+	class Signature;
 }
 
 namespace __jni_impl::java::security
@@ -25,15 +25,15 @@ namespace __jni_impl::java::security
 		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::Signature arg2);
 		
 		// Methods
-		jbyteArray getSignature();
-		jobject getObject();
-		jboolean verify(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::Signature arg1);
 		jstring getAlgorithm();
+		jobject getObject();
+		jbyteArray getSignature();
+		jboolean verify(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::Signature arg1);
 	};
 } // namespace __jni_impl::java::security
 
-#include "Signature.hpp"
 #include "../io/ObjectInputStream.hpp"
+#include "Signature.hpp"
 
 namespace __jni_impl::java::security
 {
@@ -52,12 +52,12 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	jbyteArray SignedObject::getSignature()
+	jstring SignedObject::getAlgorithm()
 	{
 		return __thiz.callObjectMethod(
-			"getSignature",
-			"()[B"
-		).object<jbyteArray>();
+			"getAlgorithm",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jobject SignedObject::getObject()
 	{
@@ -65,6 +65,13 @@ namespace __jni_impl::java::security
 			"getObject",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
+	}
+	jbyteArray SignedObject::getSignature()
+	{
+		return __thiz.callObjectMethod(
+			"getSignature",
+			"()[B"
+		).object<jbyteArray>();
 	}
 	jboolean SignedObject::verify(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::Signature arg1)
 	{
@@ -74,13 +81,6 @@ namespace __jni_impl::java::security
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
 		);
-	}
-	jstring SignedObject::getAlgorithm()
-	{
-		return __thiz.callObjectMethod(
-			"getAlgorithm",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security
 

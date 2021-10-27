@@ -24,12 +24,12 @@ namespace __jni_impl::java::security::spec
 		
 		// Methods
 		QAndroidJniObject getCrtCoefficient();
-		QAndroidJniObject getPublicExponent();
-		QAndroidJniObject getPrimeP();
-		QAndroidJniObject getPrimeQ();
+		jarray getOtherPrimeInfo();
 		QAndroidJniObject getPrimeExponentP();
 		QAndroidJniObject getPrimeExponentQ();
-		jarray getOtherPrimeInfo();
+		QAndroidJniObject getPrimeP();
+		QAndroidJniObject getPrimeQ();
+		QAndroidJniObject getPublicExponent();
 	};
 } // namespace __jni_impl::java::security::spec
 
@@ -82,10 +82,24 @@ namespace __jni_impl::java::security::spec
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject RSAMultiPrimePrivateCrtKeySpec::getPublicExponent()
+	jarray RSAMultiPrimePrivateCrtKeySpec::getOtherPrimeInfo()
 	{
 		return __thiz.callObjectMethod(
-			"getPublicExponent",
+			"getOtherPrimeInfo",
+			"()[Ljava/security/spec/RSAOtherPrimeInfo;"
+		).object<jarray>();
+	}
+	QAndroidJniObject RSAMultiPrimePrivateCrtKeySpec::getPrimeExponentP()
+	{
+		return __thiz.callObjectMethod(
+			"getPrimeExponentP",
+			"()Ljava/math/BigInteger;"
+		);
+	}
+	QAndroidJniObject RSAMultiPrimePrivateCrtKeySpec::getPrimeExponentQ()
+	{
+		return __thiz.callObjectMethod(
+			"getPrimeExponentQ",
 			"()Ljava/math/BigInteger;"
 		);
 	}
@@ -103,26 +117,12 @@ namespace __jni_impl::java::security::spec
 			"()Ljava/math/BigInteger;"
 		);
 	}
-	QAndroidJniObject RSAMultiPrimePrivateCrtKeySpec::getPrimeExponentP()
+	QAndroidJniObject RSAMultiPrimePrivateCrtKeySpec::getPublicExponent()
 	{
 		return __thiz.callObjectMethod(
-			"getPrimeExponentP",
+			"getPublicExponent",
 			"()Ljava/math/BigInteger;"
 		);
-	}
-	QAndroidJniObject RSAMultiPrimePrivateCrtKeySpec::getPrimeExponentQ()
-	{
-		return __thiz.callObjectMethod(
-			"getPrimeExponentQ",
-			"()Ljava/math/BigInteger;"
-		);
-	}
-	jarray RSAMultiPrimePrivateCrtKeySpec::getOtherPrimeInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getOtherPrimeInfo",
-			"()[Ljava/security/spec/RSAOtherPrimeInfo;"
-		).object<jarray>();
 	}
 } // namespace __jni_impl::java::security::spec
 

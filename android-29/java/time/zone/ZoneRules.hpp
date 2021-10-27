@@ -5,13 +5,17 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::time
-{
-	class ZoneOffset;
-}
 namespace __jni_impl::java::io
 {
 	class ObjectInputStream;
+}
+namespace __jni_impl::java::time
+{
+	class Duration;
+}
+namespace __jni_impl::java::time
+{
+	class Instant;
 }
 namespace __jni_impl::java::time
 {
@@ -19,15 +23,11 @@ namespace __jni_impl::java::time
 }
 namespace __jni_impl::java::time
 {
-	class Instant;
+	class ZoneOffset;
 }
 namespace __jni_impl::java::time::zone
 {
 	class ZoneOffsetTransition;
-}
-namespace __jni_impl::java::time
-{
-	class Duration;
 }
 
 namespace __jni_impl::java::time::zone
@@ -41,33 +41,33 @@ namespace __jni_impl::java::time::zone
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		static QAndroidJniObject of(__jni_impl::java::time::ZoneOffset arg0, __jni_impl::java::time::ZoneOffset arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::__JniBaseClass arg4);
 		static QAndroidJniObject of(__jni_impl::java::time::ZoneOffset arg0);
-		QAndroidJniObject getOffset(__jni_impl::java::time::LocalDateTime arg0);
+		static QAndroidJniObject of(__jni_impl::java::time::ZoneOffset arg0, __jni_impl::java::time::ZoneOffset arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::__JniBaseClass arg4);
+		jboolean equals(jobject arg0);
+		QAndroidJniObject getDaylightSavings(__jni_impl::java::time::Instant arg0);
 		QAndroidJniObject getOffset(__jni_impl::java::time::Instant arg0);
-		jboolean isFixedOffset();
-		QAndroidJniObject getValidOffsets(__jni_impl::java::time::LocalDateTime arg0);
+		QAndroidJniObject getOffset(__jni_impl::java::time::LocalDateTime arg0);
 		QAndroidJniObject getStandardOffset(__jni_impl::java::time::Instant arg0);
 		QAndroidJniObject getTransition(__jni_impl::java::time::LocalDateTime arg0);
-		QAndroidJniObject getDaylightSavings(__jni_impl::java::time::Instant arg0);
+		QAndroidJniObject getTransitionRules();
+		QAndroidJniObject getTransitions();
+		QAndroidJniObject getValidOffsets(__jni_impl::java::time::LocalDateTime arg0);
+		jint hashCode();
 		jboolean isDaylightSavings(__jni_impl::java::time::Instant arg0);
+		jboolean isFixedOffset();
 		jboolean isValidOffset(__jni_impl::java::time::LocalDateTime arg0, __jni_impl::java::time::ZoneOffset arg1);
 		QAndroidJniObject nextTransition(__jni_impl::java::time::Instant arg0);
 		QAndroidJniObject previousTransition(__jni_impl::java::time::Instant arg0);
-		QAndroidJniObject getTransitions();
-		QAndroidJniObject getTransitionRules();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::time::zone
 
-#include "../ZoneOffset.hpp"
 #include "../../io/ObjectInputStream.hpp"
-#include "../LocalDateTime.hpp"
-#include "../Instant.hpp"
-#include "ZoneOffsetTransition.hpp"
 #include "../Duration.hpp"
+#include "../Instant.hpp"
+#include "../LocalDateTime.hpp"
+#include "../ZoneOffset.hpp"
+#include "ZoneOffsetTransition.hpp"
 
 namespace __jni_impl::java::time::zone
 {
@@ -82,26 +82,13 @@ namespace __jni_impl::java::time::zone
 	}
 	
 	// Methods
-	jboolean ZoneRules::equals(jobject arg0)
+	QAndroidJniObject ZoneRules::of(__jni_impl::java::time::ZoneOffset arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring ZoneRules::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint ZoneRules::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.zone.ZoneRules",
+			"of",
+			"(Ljava/time/ZoneOffset;)Ljava/time/zone/ZoneRules;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject ZoneRules::of(__jni_impl::java::time::ZoneOffset arg0, __jni_impl::java::time::ZoneOffset arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3, __jni_impl::__JniBaseClass arg4)
@@ -117,20 +104,19 @@ namespace __jni_impl::java::time::zone
 			arg4.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ZoneRules::of(__jni_impl::java::time::ZoneOffset arg0)
+	jboolean ZoneRules::equals(jobject arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.zone.ZoneRules",
-			"of",
-			"(Ljava/time/ZoneOffset;)Ljava/time/zone/ZoneRules;",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
-	QAndroidJniObject ZoneRules::getOffset(__jni_impl::java::time::LocalDateTime arg0)
+	QAndroidJniObject ZoneRules::getDaylightSavings(__jni_impl::java::time::Instant arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getOffset",
-			"(Ljava/time/LocalDateTime;)Ljava/time/ZoneOffset;",
+			"getDaylightSavings",
+			"(Ljava/time/Instant;)Ljava/time/Duration;",
 			arg0.__jniObject().object()
 		);
 	}
@@ -142,18 +128,11 @@ namespace __jni_impl::java::time::zone
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean ZoneRules::isFixedOffset()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFixedOffset",
-			"()Z"
-		);
-	}
-	QAndroidJniObject ZoneRules::getValidOffsets(__jni_impl::java::time::LocalDateTime arg0)
+	QAndroidJniObject ZoneRules::getOffset(__jni_impl::java::time::LocalDateTime arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getValidOffsets",
-			"(Ljava/time/LocalDateTime;)Ljava/util/List;",
+			"getOffset",
+			"(Ljava/time/LocalDateTime;)Ljava/time/ZoneOffset;",
 			arg0.__jniObject().object()
 		);
 	}
@@ -173,12 +152,33 @@ namespace __jni_impl::java::time::zone
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ZoneRules::getDaylightSavings(__jni_impl::java::time::Instant arg0)
+	QAndroidJniObject ZoneRules::getTransitionRules()
 	{
 		return __thiz.callObjectMethod(
-			"getDaylightSavings",
-			"(Ljava/time/Instant;)Ljava/time/Duration;",
+			"getTransitionRules",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject ZoneRules::getTransitions()
+	{
+		return __thiz.callObjectMethod(
+			"getTransitions",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject ZoneRules::getValidOffsets(__jni_impl::java::time::LocalDateTime arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getValidOffsets",
+			"(Ljava/time/LocalDateTime;)Ljava/util/List;",
 			arg0.__jniObject().object()
+		);
+	}
+	jint ZoneRules::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
 	}
 	jboolean ZoneRules::isDaylightSavings(__jni_impl::java::time::Instant arg0)
@@ -187,6 +187,13 @@ namespace __jni_impl::java::time::zone
 			"isDaylightSavings",
 			"(Ljava/time/Instant;)Z",
 			arg0.__jniObject().object()
+		);
+	}
+	jboolean ZoneRules::isFixedOffset()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFixedOffset",
+			"()Z"
 		);
 	}
 	jboolean ZoneRules::isValidOffset(__jni_impl::java::time::LocalDateTime arg0, __jni_impl::java::time::ZoneOffset arg1)
@@ -214,19 +221,12 @@ namespace __jni_impl::java::time::zone
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ZoneRules::getTransitions()
+	jstring ZoneRules::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getTransitions",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject ZoneRules::getTransitionRules()
-	{
-		return __thiz.callObjectMethod(
-			"getTransitionRules",
-			"()Ljava/util/List;"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::time::zone
 

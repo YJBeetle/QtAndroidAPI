@@ -44,26 +44,26 @@ namespace __jni_impl::android::os
 		
 		// Methods
 		static jlong getElapsedCpuTime();
+		static jintArray getExclusiveCores();
+		static jint getGidForName(jstring arg0);
+		static jint getGidForName(const QString &arg0);
 		static jlong getStartElapsedRealtime();
 		static jlong getStartUptimeMillis();
+		static jint getThreadPriority(jint arg0);
+		static jint getUidForName(jstring arg0);
+		static jint getUidForName(const QString &arg0);
 		static jboolean is64Bit();
+		static jboolean isApplicationUid(jint arg0);
+		static jboolean isIsolated();
+		static void killProcess(jint arg0);
 		static jint myPid();
 		static jint myTid();
 		static jint myUid();
 		static QAndroidJniObject myUserHandle();
-		static jboolean isApplicationUid(jint arg0);
-		static jboolean isIsolated();
-		static jint getUidForName(jstring arg0);
-		static jint getUidForName(const QString &arg0);
-		static jint getGidForName(jstring arg0);
-		static jint getGidForName(const QString &arg0);
+		static void sendSignal(jint arg0, jint arg1);
 		static void setThreadPriority(jint arg0);
 		static void setThreadPriority(jint arg0, jint arg1);
-		static jintArray getExclusiveCores();
-		static jint getThreadPriority(jint arg0);
 		static jboolean supportsProcesses();
-		static void killProcess(jint arg0);
-		static void sendSignal(jint arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::os
 
@@ -245,6 +245,32 @@ namespace __jni_impl::android::os
 			"()J"
 		);
 	}
+	jintArray Process::getExclusiveCores()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.Process",
+			"getExclusiveCores",
+			"()[I"
+		).object<jintArray>();
+	}
+	jint Process::getGidForName(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.os.Process",
+			"getGidForName",
+			"(Ljava/lang/String;)I",
+			arg0
+		);
+	}
+	jint Process::getGidForName(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.os.Process",
+			"getGidForName",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jlong Process::getStartElapsedRealtime()
 	{
 		return QAndroidJniObject::callStaticMethod<jlong>(
@@ -261,12 +287,65 @@ namespace __jni_impl::android::os
 			"()J"
 		);
 	}
+	jint Process::getThreadPriority(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.os.Process",
+			"getThreadPriority",
+			"(I)I",
+			arg0
+		);
+	}
+	jint Process::getUidForName(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.os.Process",
+			"getUidForName",
+			"(Ljava/lang/String;)I",
+			arg0
+		);
+	}
+	jint Process::getUidForName(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.os.Process",
+			"getUidForName",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	jboolean Process::is64Bit()
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.os.Process",
 			"is64Bit",
 			"()Z"
+		);
+	}
+	jboolean Process::isApplicationUid(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.os.Process",
+			"isApplicationUid",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean Process::isIsolated()
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.os.Process",
+			"isIsolated",
+			"()Z"
+		);
+	}
+	void Process::killProcess(jint arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.os.Process",
+			"killProcess",
+			"(I)V",
+			arg0
 		);
 	}
 	jint Process::myPid()
@@ -301,57 +380,14 @@ namespace __jni_impl::android::os
 			"()Landroid/os/UserHandle;"
 		);
 	}
-	jboolean Process::isApplicationUid(jint arg0)
+	void Process::sendSignal(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		QAndroidJniObject::callStaticMethod<void>(
 			"android.os.Process",
-			"isApplicationUid",
-			"(I)Z",
-			arg0
-		);
-	}
-	jboolean Process::isIsolated()
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.os.Process",
-			"isIsolated",
-			"()Z"
-		);
-	}
-	jint Process::getUidForName(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.os.Process",
-			"getUidForName",
-			"(Ljava/lang/String;)I",
-			arg0
-		);
-	}
-	jint Process::getUidForName(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.os.Process",
-			"getUidForName",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jint Process::getGidForName(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.os.Process",
-			"getGidForName",
-			"(Ljava/lang/String;)I",
-			arg0
-		);
-	}
-	jint Process::getGidForName(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.os.Process",
-			"getGidForName",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+			"sendSignal",
+			"(II)V",
+			arg0,
+			arg1
 		);
 	}
 	void Process::setThreadPriority(jint arg0)
@@ -373,48 +409,12 @@ namespace __jni_impl::android::os
 			arg1
 		);
 	}
-	jintArray Process::getExclusiveCores()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.Process",
-			"getExclusiveCores",
-			"()[I"
-		).object<jintArray>();
-	}
-	jint Process::getThreadPriority(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.os.Process",
-			"getThreadPriority",
-			"(I)I",
-			arg0
-		);
-	}
 	jboolean Process::supportsProcesses()
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.os.Process",
 			"supportsProcesses",
 			"()Z"
-		);
-	}
-	void Process::killProcess(jint arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.Process",
-			"killProcess",
-			"(I)V",
-			arg0
-		);
-	}
-	void Process::sendSignal(jint arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.os.Process",
-			"sendSignal",
-			"(II)V",
-			arg0,
-			arg1
 		);
 	}
 } // namespace __jni_impl::android::os

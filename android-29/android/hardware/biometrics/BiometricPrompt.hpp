@@ -7,15 +7,15 @@
 
 namespace __jni_impl::android::hardware::biometrics
 {
+	class BiometricPrompt_AuthenticationCallback;
+}
+namespace __jni_impl::android::hardware::biometrics
+{
 	class BiometricPrompt_CryptoObject;
 }
 namespace __jni_impl::android::os
 {
 	class CancellationSignal;
-}
-namespace __jni_impl::android::hardware::biometrics
-{
-	class BiometricPrompt_AuthenticationCallback;
 }
 
 namespace __jni_impl::android::hardware::biometrics
@@ -47,14 +47,14 @@ namespace __jni_impl::android::hardware::biometrics
 		void __constructor();
 		
 		// Methods
-		void authenticate(__jni_impl::android::hardware::biometrics::BiometricPrompt_CryptoObject arg0, __jni_impl::android::os::CancellationSignal arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg3);
 		void authenticate(__jni_impl::android::os::CancellationSignal arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg2);
+		void authenticate(__jni_impl::android::hardware::biometrics::BiometricPrompt_CryptoObject arg0, __jni_impl::android::os::CancellationSignal arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg3);
 	};
 } // namespace __jni_impl::android::hardware::biometrics
 
+#include "BiometricPrompt_AuthenticationCallback.hpp"
 #include "BiometricPrompt_CryptoObject.hpp"
 #include "../../os/CancellationSignal.hpp"
-#include "BiometricPrompt_AuthenticationCallback.hpp"
 
 namespace __jni_impl::android::hardware::biometrics
 {
@@ -195,6 +195,16 @@ namespace __jni_impl::android::hardware::biometrics
 	}
 	
 	// Methods
+	void BiometricPrompt::authenticate(__jni_impl::android::os::CancellationSignal arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg2)
+	{
+		__thiz.callMethod<void>(
+			"authenticate",
+			"(Landroid/os/CancellationSignal;Ljava/util/concurrent/Executor;Landroid/hardware/biometrics/BiometricPrompt$AuthenticationCallback;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
 	void BiometricPrompt::authenticate(__jni_impl::android::hardware::biometrics::BiometricPrompt_CryptoObject arg0, __jni_impl::android::os::CancellationSignal arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg3)
 	{
 		__thiz.callMethod<void>(
@@ -204,16 +214,6 @@ namespace __jni_impl::android::hardware::biometrics
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
-		);
-	}
-	void BiometricPrompt::authenticate(__jni_impl::android::os::CancellationSignal arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::biometrics::BiometricPrompt_AuthenticationCallback arg2)
-	{
-		__thiz.callMethod<void>(
-			"authenticate",
-			"(Landroid/os/CancellationSignal;Ljava/util/concurrent/Executor;Landroid/hardware/biometrics/BiometricPrompt$AuthenticationCallback;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::hardware::biometrics

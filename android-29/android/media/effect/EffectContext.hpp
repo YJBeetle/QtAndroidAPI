@@ -21,9 +21,9 @@ namespace __jni_impl::android::media::effect
 		void __constructor();
 		
 		// Methods
+		static QAndroidJniObject createWithCurrentGlContext();
 		QAndroidJniObject getFactory();
 		void release();
-		static QAndroidJniObject createWithCurrentGlContext();
 	};
 } // namespace __jni_impl::android::media::effect
 
@@ -42,6 +42,14 @@ namespace __jni_impl::android::media::effect
 	}
 	
 	// Methods
+	QAndroidJniObject EffectContext::createWithCurrentGlContext()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.media.effect.EffectContext",
+			"createWithCurrentGlContext",
+			"()Landroid/media/effect/EffectContext;"
+		);
+	}
 	QAndroidJniObject EffectContext::getFactory()
 	{
 		return __thiz.callObjectMethod(
@@ -54,14 +62,6 @@ namespace __jni_impl::android::media::effect
 		__thiz.callMethod<void>(
 			"release",
 			"()V"
-		);
-	}
-	QAndroidJniObject EffectContext::createWithCurrentGlContext()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.media.effect.EffectContext",
-			"createWithCurrentGlContext",
-			"()Landroid/media/effect/EffectContext;"
 		);
 	}
 } // namespace __jni_impl::android::media::effect

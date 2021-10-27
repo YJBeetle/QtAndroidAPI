@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::renderscript
 {
-	class ScriptGroup_Closure;
+	class Script_FieldID;
 }
 namespace __jni_impl::android::renderscript
 {
-	class Script_FieldID;
+	class ScriptGroup_Closure;
 }
 
 namespace __jni_impl::android::renderscript
@@ -28,8 +28,8 @@ namespace __jni_impl::android::renderscript
 	};
 } // namespace __jni_impl::android::renderscript
 
-#include "ScriptGroup_Closure.hpp"
 #include "Script_FieldID.hpp"
+#include "ScriptGroup_Closure.hpp"
 
 namespace __jni_impl::android::renderscript
 {

@@ -7,19 +7,19 @@
 
 namespace __jni_impl::java::security
 {
-	class Provider;
-}
-namespace __jni_impl::java::security
-{
 	class AlgorithmParameterGeneratorSpi;
 }
 namespace __jni_impl::java::security
 {
-	class SecureRandom;
+	class AlgorithmParameters;
 }
 namespace __jni_impl::java::security
 {
-	class AlgorithmParameters;
+	class Provider;
+}
+namespace __jni_impl::java::security
+{
+	class SecureRandom;
 }
 
 namespace __jni_impl::java::security
@@ -33,26 +33,26 @@ namespace __jni_impl::java::security
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::java::security::Provider arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1);
-		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
-		static QAndroidJniObject getInstance(const QString &arg0, const QString &arg1);
 		static QAndroidJniObject getInstance(jstring arg0);
 		static QAndroidJniObject getInstance(const QString &arg0);
-		void init(jint arg0, __jni_impl::java::security::SecureRandom arg1);
+		static QAndroidJniObject getInstance(jstring arg0, jstring arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, const QString &arg1);
+		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::java::security::Provider arg1);
+		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1);
+		QAndroidJniObject generateParameters();
+		jstring getAlgorithm();
+		QAndroidJniObject getProvider();
 		void init(jint arg0);
 		void init(__jni_impl::__JniBaseClass arg0);
+		void init(jint arg0, __jni_impl::java::security::SecureRandom arg1);
 		void init(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::SecureRandom arg1);
-		QAndroidJniObject getProvider();
-		jstring getAlgorithm();
-		QAndroidJniObject generateParameters();
 	};
 } // namespace __jni_impl::java::security
 
-#include "Provider.hpp"
 #include "AlgorithmParameterGeneratorSpi.hpp"
-#include "SecureRandom.hpp"
 #include "AlgorithmParameters.hpp"
+#include "Provider.hpp"
+#include "SecureRandom.hpp"
 
 namespace __jni_impl::java::security
 {
@@ -67,24 +67,22 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	QAndroidJniObject AlgorithmParameterGenerator::getInstance(jstring arg0, __jni_impl::java::security::Provider arg1)
+	QAndroidJniObject AlgorithmParameterGenerator::getInstance(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.AlgorithmParameterGenerator",
 			"getInstance",
-			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/AlgorithmParameterGenerator;",
-			arg0,
-			arg1.__jniObject().object()
+			"(Ljava/lang/String;)Ljava/security/AlgorithmParameterGenerator;",
+			arg0
 		);
 	}
-	QAndroidJniObject AlgorithmParameterGenerator::getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1)
+	QAndroidJniObject AlgorithmParameterGenerator::getInstance(const QString &arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.AlgorithmParameterGenerator",
 			"getInstance",
-			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/AlgorithmParameterGenerator;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
+			"(Ljava/lang/String;)Ljava/security/AlgorithmParameterGenerator;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject AlgorithmParameterGenerator::getInstance(jstring arg0, jstring arg1)
@@ -107,31 +105,45 @@ namespace __jni_impl::java::security
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	QAndroidJniObject AlgorithmParameterGenerator::getInstance(jstring arg0)
+	QAndroidJniObject AlgorithmParameterGenerator::getInstance(jstring arg0, __jni_impl::java::security::Provider arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.security.AlgorithmParameterGenerator",
 			"getInstance",
-			"(Ljava/lang/String;)Ljava/security/AlgorithmParameterGenerator;",
-			arg0
-		);
-	}
-	QAndroidJniObject AlgorithmParameterGenerator::getInstance(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.AlgorithmParameterGenerator",
-			"getInstance",
-			"(Ljava/lang/String;)Ljava/security/AlgorithmParameterGenerator;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void AlgorithmParameterGenerator::init(jint arg0, __jni_impl::java::security::SecureRandom arg1)
-	{
-		__thiz.callMethod<void>(
-			"init",
-			"(ILjava/security/SecureRandom;)V",
+			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/AlgorithmParameterGenerator;",
 			arg0,
 			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject AlgorithmParameterGenerator::getInstance(const QString &arg0, __jni_impl::java::security::Provider arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.AlgorithmParameterGenerator",
+			"getInstance",
+			"(Ljava/lang/String;Ljava/security/Provider;)Ljava/security/AlgorithmParameterGenerator;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject AlgorithmParameterGenerator::generateParameters()
+	{
+		return __thiz.callObjectMethod(
+			"generateParameters",
+			"()Ljava/security/AlgorithmParameters;"
+		);
+	}
+	jstring AlgorithmParameterGenerator::getAlgorithm()
+	{
+		return __thiz.callObjectMethod(
+			"getAlgorithm",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject AlgorithmParameterGenerator::getProvider()
+	{
+		return __thiz.callObjectMethod(
+			"getProvider",
+			"()Ljava/security/Provider;"
 		);
 	}
 	void AlgorithmParameterGenerator::init(jint arg0)
@@ -150,6 +162,15 @@ namespace __jni_impl::java::security
 			arg0.__jniObject().object()
 		);
 	}
+	void AlgorithmParameterGenerator::init(jint arg0, __jni_impl::java::security::SecureRandom arg1)
+	{
+		__thiz.callMethod<void>(
+			"init",
+			"(ILjava/security/SecureRandom;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
 	void AlgorithmParameterGenerator::init(__jni_impl::__JniBaseClass arg0, __jni_impl::java::security::SecureRandom arg1)
 	{
 		__thiz.callMethod<void>(
@@ -157,27 +178,6 @@ namespace __jni_impl::java::security
 			"(Ljava/security/spec/AlgorithmParameterSpec;Ljava/security/SecureRandom;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject AlgorithmParameterGenerator::getProvider()
-	{
-		return __thiz.callObjectMethod(
-			"getProvider",
-			"()Ljava/security/Provider;"
-		);
-	}
-	jstring AlgorithmParameterGenerator::getAlgorithm()
-	{
-		return __thiz.callObjectMethod(
-			"getAlgorithm",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject AlgorithmParameterGenerator::generateParameters()
-	{
-		return __thiz.callObjectMethod(
-			"generateParameters",
-			"()Ljava/security/AlgorithmParameters;"
 		);
 	}
 } // namespace __jni_impl::java::security

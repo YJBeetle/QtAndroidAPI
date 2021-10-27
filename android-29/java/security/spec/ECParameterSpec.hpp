@@ -5,17 +5,17 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::security::spec
+namespace __jni_impl::java::math
 {
-	class EllipticCurve;
+	class BigInteger;
 }
 namespace __jni_impl::java::security::spec
 {
 	class ECPoint;
 }
-namespace __jni_impl::java::math
+namespace __jni_impl::java::security::spec
 {
-	class BigInteger;
+	class EllipticCurve;
 }
 
 namespace __jni_impl::java::security::spec
@@ -29,16 +29,16 @@ namespace __jni_impl::java::security::spec
 		void __constructor(__jni_impl::java::security::spec::EllipticCurve arg0, __jni_impl::java::security::spec::ECPoint arg1, __jni_impl::java::math::BigInteger arg2, jint arg3);
 		
 		// Methods
+		jint getCofactor();
 		QAndroidJniObject getCurve();
 		QAndroidJniObject getGenerator();
-		jint getCofactor();
 		QAndroidJniObject getOrder();
 	};
 } // namespace __jni_impl::java::security::spec
 
-#include "EllipticCurve.hpp"
-#include "ECPoint.hpp"
 #include "../../math/BigInteger.hpp"
+#include "ECPoint.hpp"
+#include "EllipticCurve.hpp"
 
 namespace __jni_impl::java::security::spec
 {
@@ -58,6 +58,13 @@ namespace __jni_impl::java::security::spec
 	}
 	
 	// Methods
+	jint ECParameterSpec::getCofactor()
+	{
+		return __thiz.callMethod<jint>(
+			"getCofactor",
+			"()I"
+		);
+	}
 	QAndroidJniObject ECParameterSpec::getCurve()
 	{
 		return __thiz.callObjectMethod(
@@ -70,13 +77,6 @@ namespace __jni_impl::java::security::spec
 		return __thiz.callObjectMethod(
 			"getGenerator",
 			"()Ljava/security/spec/ECPoint;"
-		);
-	}
-	jint ECParameterSpec::getCofactor()
-	{
-		return __thiz.callMethod<jint>(
-			"getCofactor",
-			"()I"
 		);
 	}
 	QAndroidJniObject ECParameterSpec::getOrder()

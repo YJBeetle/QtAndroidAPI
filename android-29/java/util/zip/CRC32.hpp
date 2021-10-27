@@ -21,11 +21,11 @@ namespace __jni_impl::java::util::zip
 		void __constructor();
 		
 		// Methods
+		jlong getValue();
+		void reset();
 		void update(jint arg0);
 		void update(__jni_impl::java::nio::ByteBuffer arg0);
 		void update(jbyteArray arg0, jint arg1, jint arg2);
-		jlong getValue();
-		void reset();
 	};
 } // namespace __jni_impl::java::util::zip
 
@@ -45,6 +45,20 @@ namespace __jni_impl::java::util::zip
 	}
 	
 	// Methods
+	jlong CRC32::getValue()
+	{
+		return __thiz.callMethod<jlong>(
+			"getValue",
+			"()J"
+		);
+	}
+	void CRC32::reset()
+	{
+		__thiz.callMethod<void>(
+			"reset",
+			"()V"
+		);
+	}
 	void CRC32::update(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -69,20 +83,6 @@ namespace __jni_impl::java::util::zip
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	jlong CRC32::getValue()
-	{
-		return __thiz.callMethod<jlong>(
-			"getValue",
-			"()J"
-		);
-	}
-	void CRC32::reset()
-	{
-		__thiz.callMethod<void>(
-			"reset",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::java::util::zip

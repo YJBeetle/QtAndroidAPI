@@ -29,10 +29,10 @@ namespace __jni_impl::android::content::pm
 		void __constructor(__jni_impl::android::content::pm::FeatureInfo arg0);
 		
 		// Methods
-		jstring toString();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jstring getGlEsVersion();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -107,19 +107,26 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
-	jstring FeatureInfo::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint FeatureInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
+	}
+	jstring FeatureInfo::getGlEsVersion()
+	{
+		return __thiz.callObjectMethod(
+			"getGlEsVersion",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring FeatureInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void FeatureInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -129,13 +136,6 @@ namespace __jni_impl::android::content::pm
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jstring FeatureInfo::getGlEsVersion()
-	{
-		return __thiz.callObjectMethod(
-			"getGlEsVersion",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::content::pm
 

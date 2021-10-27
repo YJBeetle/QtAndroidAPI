@@ -8,11 +8,11 @@
 
 namespace __jni_impl::java::net
 {
-	class URI;
+	class HttpCookie;
 }
 namespace __jni_impl::java::net
 {
-	class HttpCookie;
+	class URI;
 }
 
 namespace __jni_impl::java::net
@@ -28,14 +28,14 @@ namespace __jni_impl::java::net
 		
 		// Methods
 		QAndroidJniObject get(__jni_impl::java::net::URI arg0, __jni_impl::__JniBaseClass arg1);
+		QAndroidJniObject getCookieStore();
 		void put(__jni_impl::java::net::URI arg0, __jni_impl::__JniBaseClass arg1);
 		void setCookiePolicy(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getCookieStore();
 	};
 } // namespace __jni_impl::java::net
 
-#include "URI.hpp"
 #include "HttpCookie.hpp"
+#include "URI.hpp"
 
 namespace __jni_impl::java::net
 {
@@ -69,6 +69,13 @@ namespace __jni_impl::java::net
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject CookieManager::getCookieStore()
+	{
+		return __thiz.callObjectMethod(
+			"getCookieStore",
+			"()Ljava/net/CookieStore;"
+		);
+	}
 	void CookieManager::put(__jni_impl::java::net::URI arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
@@ -84,13 +91,6 @@ namespace __jni_impl::java::net
 			"setCookiePolicy",
 			"(Ljava/net/CookiePolicy;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject CookieManager::getCookieStore()
-	{
-		return __thiz.callObjectMethod(
-			"getCookieStore",
-			"()Ljava/net/CookieStore;"
 		);
 	}
 } // namespace __jni_impl::java::net

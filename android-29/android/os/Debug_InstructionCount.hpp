@@ -18,8 +18,8 @@ namespace __jni_impl::android::os
 		
 		// Methods
 		jboolean collect();
-		jint globalTotal();
 		jint globalMethodInvocations();
+		jint globalTotal();
 		jboolean resetAndStart();
 	};
 } // namespace __jni_impl::android::os
@@ -46,17 +46,17 @@ namespace __jni_impl::android::os
 			"()Z"
 		);
 	}
-	jint Debug_InstructionCount::globalTotal()
-	{
-		return __thiz.callMethod<jint>(
-			"globalTotal",
-			"()I"
-		);
-	}
 	jint Debug_InstructionCount::globalMethodInvocations()
 	{
 		return __thiz.callMethod<jint>(
 			"globalMethodInvocations",
+			"()I"
+		);
+	}
+	jint Debug_InstructionCount::globalTotal()
+	{
+		return __thiz.callMethod<jint>(
+			"globalTotal",
 			"()I"
 		);
 	}

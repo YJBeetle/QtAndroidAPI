@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::content
 {
-	class Context;
+	class ContentResolver;
 }
 namespace __jni_impl::android::content
 {
-	class ContentResolver;
+	class Context;
 }
 
 namespace __jni_impl::android::provider
@@ -32,14 +32,14 @@ namespace __jni_impl::android::provider
 		void __constructor(__jni_impl::android::content::Context arg0, const QString &arg1, jint arg2);
 		
 		// Methods
+		void clearHistory();
 		void saveRecentQuery(jstring arg0, jstring arg1);
 		void saveRecentQuery(const QString &arg0, const QString &arg1);
-		void clearHistory();
 	};
 } // namespace __jni_impl::android::provider
 
-#include "../content/Context.hpp"
 #include "../content/ContentResolver.hpp"
+#include "../content/Context.hpp"
 
 namespace __jni_impl::android::provider
 {
@@ -112,6 +112,13 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
+	void SearchRecentSuggestions::clearHistory()
+	{
+		__thiz.callMethod<void>(
+			"clearHistory",
+			"()V"
+		);
+	}
 	void SearchRecentSuggestions::saveRecentQuery(jstring arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -128,13 +135,6 @@ namespace __jni_impl::android::provider
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	void SearchRecentSuggestions::clearHistory()
-	{
-		__thiz.callMethod<void>(
-			"clearHistory",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::android::provider

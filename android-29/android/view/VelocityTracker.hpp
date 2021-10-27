@@ -21,16 +21,16 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		void clear();
 		static QAndroidJniObject obtain();
-		void recycle();
 		void addMovement(__jni_impl::android::view::MotionEvent arg0);
-		void computeCurrentVelocity(jint arg0, jfloat arg1);
+		void clear();
 		void computeCurrentVelocity(jint arg0);
-		jfloat getXVelocity(jint arg0);
+		void computeCurrentVelocity(jint arg0, jfloat arg1);
 		jfloat getXVelocity();
-		jfloat getYVelocity(jint arg0);
+		jfloat getXVelocity(jint arg0);
 		jfloat getYVelocity();
+		jfloat getYVelocity(jint arg0);
+		void recycle();
 	};
 } // namespace __jni_impl::android::view
 
@@ -49,13 +49,6 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	void VelocityTracker::clear()
-	{
-		__thiz.callMethod<void>(
-			"clear",
-			"()V"
-		);
-	}
 	QAndroidJniObject VelocityTracker::obtain()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -64,19 +57,27 @@ namespace __jni_impl::android::view
 			"()Landroid/view/VelocityTracker;"
 		);
 	}
-	void VelocityTracker::recycle()
-	{
-		__thiz.callMethod<void>(
-			"recycle",
-			"()V"
-		);
-	}
 	void VelocityTracker::addMovement(__jni_impl::android::view::MotionEvent arg0)
 	{
 		__thiz.callMethod<void>(
 			"addMovement",
 			"(Landroid/view/MotionEvent;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void VelocityTracker::clear()
+	{
+		__thiz.callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	void VelocityTracker::computeCurrentVelocity(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"computeCurrentVelocity",
+			"(I)V",
+			arg0
 		);
 	}
 	void VelocityTracker::computeCurrentVelocity(jint arg0, jfloat arg1)
@@ -88,12 +89,11 @@ namespace __jni_impl::android::view
 			arg1
 		);
 	}
-	void VelocityTracker::computeCurrentVelocity(jint arg0)
+	jfloat VelocityTracker::getXVelocity()
 	{
-		__thiz.callMethod<void>(
-			"computeCurrentVelocity",
-			"(I)V",
-			arg0
+		return __thiz.callMethod<jfloat>(
+			"getXVelocity",
+			"()F"
 		);
 	}
 	jfloat VelocityTracker::getXVelocity(jint arg0)
@@ -104,10 +104,10 @@ namespace __jni_impl::android::view
 			arg0
 		);
 	}
-	jfloat VelocityTracker::getXVelocity()
+	jfloat VelocityTracker::getYVelocity()
 	{
 		return __thiz.callMethod<jfloat>(
-			"getXVelocity",
+			"getYVelocity",
 			"()F"
 		);
 	}
@@ -119,11 +119,11 @@ namespace __jni_impl::android::view
 			arg0
 		);
 	}
-	jfloat VelocityTracker::getYVelocity()
+	void VelocityTracker::recycle()
 	{
-		return __thiz.callMethod<jfloat>(
-			"getYVelocity",
-			"()F"
+		__thiz.callMethod<void>(
+			"recycle",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::view

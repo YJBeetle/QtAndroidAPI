@@ -23,13 +23,13 @@ namespace __jni_impl::android::bluetooth
 		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2, jbyte arg3, jbyteArray arg4);
 		
 		// Methods
+		jint describeContents();
+		jstring getDescription();
+		jbyteArray getDescriptors();
 		jstring getName();
 		jstring getProvider();
 		jbyte getSubclass();
-		jstring getDescription();
-		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jbyteArray getDescriptors();
 	};
 } // namespace __jni_impl::android::bluetooth
 
@@ -74,6 +74,27 @@ namespace __jni_impl::android::bluetooth
 	}
 	
 	// Methods
+	jint BluetoothHidDeviceAppSdpSettings::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	jstring BluetoothHidDeviceAppSdpSettings::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jbyteArray BluetoothHidDeviceAppSdpSettings::getDescriptors()
+	{
+		return __thiz.callObjectMethod(
+			"getDescriptors",
+			"()[B"
+		).object<jbyteArray>();
+	}
 	jstring BluetoothHidDeviceAppSdpSettings::getName()
 	{
 		return __thiz.callObjectMethod(
@@ -95,20 +116,6 @@ namespace __jni_impl::android::bluetooth
 			"()B"
 		);
 	}
-	jstring BluetoothHidDeviceAppSdpSettings::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint BluetoothHidDeviceAppSdpSettings::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
 	void BluetoothHidDeviceAppSdpSettings::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -117,13 +124,6 @@ namespace __jni_impl::android::bluetooth
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jbyteArray BluetoothHidDeviceAppSdpSettings::getDescriptors()
-	{
-		return __thiz.callObjectMethod(
-			"getDescriptors",
-			"()[B"
-		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::bluetooth
 

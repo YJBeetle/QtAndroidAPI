@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::graphics
 {
-	class Rect;
+	class Point;
 }
 namespace __jni_impl::android::graphics
 {
-	class Point;
+	class Rect;
 }
 
 namespace __jni_impl::android::hardware::camera2::params
@@ -28,18 +28,18 @@ namespace __jni_impl::android::hardware::camera2::params
 		void __constructor();
 		
 		// Methods
-		jstring toString();
 		QAndroidJniObject getBounds();
 		jint getId();
-		jint getScore();
 		QAndroidJniObject getLeftEyePosition();
-		QAndroidJniObject getRightEyePosition();
 		QAndroidJniObject getMouthPosition();
+		QAndroidJniObject getRightEyePosition();
+		jint getScore();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
-#include "../../../graphics/Rect.hpp"
 #include "../../../graphics/Point.hpp"
+#include "../../../graphics/Rect.hpp"
 
 namespace __jni_impl::android::hardware::camera2::params
 {
@@ -75,13 +75,6 @@ namespace __jni_impl::android::hardware::camera2::params
 	}
 	
 	// Methods
-	jstring Face::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject Face::getBounds()
 	{
 		return __thiz.callObjectMethod(
@@ -96,17 +89,17 @@ namespace __jni_impl::android::hardware::camera2::params
 			"()I"
 		);
 	}
-	jint Face::getScore()
-	{
-		return __thiz.callMethod<jint>(
-			"getScore",
-			"()I"
-		);
-	}
 	QAndroidJniObject Face::getLeftEyePosition()
 	{
 		return __thiz.callObjectMethod(
 			"getLeftEyePosition",
+			"()Landroid/graphics/Point;"
+		);
+	}
+	QAndroidJniObject Face::getMouthPosition()
+	{
+		return __thiz.callObjectMethod(
+			"getMouthPosition",
 			"()Landroid/graphics/Point;"
 		);
 	}
@@ -117,12 +110,19 @@ namespace __jni_impl::android::hardware::camera2::params
 			"()Landroid/graphics/Point;"
 		);
 	}
-	QAndroidJniObject Face::getMouthPosition()
+	jint Face::getScore()
+	{
+		return __thiz.callMethod<jint>(
+			"getScore",
+			"()I"
+		);
+	}
+	jstring Face::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getMouthPosition",
-			"()Landroid/graphics/Point;"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::hardware::camera2::params
 

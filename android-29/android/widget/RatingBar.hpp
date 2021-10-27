@@ -23,22 +23,22 @@ namespace __jni_impl::android::widget
 		// Constructors
 		void __constructor(__jni_impl::android::content::Context arg0);
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
 		jstring getAccessibilityClassName();
-		void setMax(jint arg0);
-		jfloat getRating();
-		void setRating(jfloat arg0);
-		QAndroidJniObject getOnRatingBarChangeListener();
-		void setOnRatingBarChangeListener(__jni_impl::__JniBaseClass arg0);
-		void setIsIndicator(jboolean arg0);
-		void setNumStars(jint arg0);
 		jint getNumStars();
-		void setStepSize(jfloat arg0);
+		QAndroidJniObject getOnRatingBarChangeListener();
+		jfloat getRating();
 		jfloat getStepSize();
 		jboolean isIndicator();
+		void setIsIndicator(jboolean arg0);
+		void setMax(jint arg0);
+		void setNumStars(jint arg0);
+		void setOnRatingBarChangeListener(__jni_impl::__JniBaseClass arg0);
+		void setRating(jfloat arg0);
+		void setStepSize(jfloat arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -66,6 +66,16 @@ namespace __jni_impl::android::widget
 			arg1.__jniObject().object()
 		);
 	}
+	void RatingBar::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
+	{
+		__thiz = QAndroidJniObject(
+			"android.widget.RatingBar",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
 	void RatingBar::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
@@ -77,16 +87,6 @@ namespace __jni_impl::android::widget
 			arg3
 		);
 	}
-	void RatingBar::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.widget.RatingBar",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
 	
 	// Methods
 	jstring RatingBar::getAccessibilityClassName()
@@ -96,27 +96,11 @@ namespace __jni_impl::android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	void RatingBar::setMax(jint arg0)
+	jint RatingBar::getNumStars()
 	{
-		__thiz.callMethod<void>(
-			"setMax",
-			"(I)V",
-			arg0
-		);
-	}
-	jfloat RatingBar::getRating()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getRating",
-			"()F"
-		);
-	}
-	void RatingBar::setRating(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRating",
-			"(F)V",
-			arg0
+		return __thiz.callMethod<jint>(
+			"getNumStars",
+			"()I"
 		);
 	}
 	QAndroidJniObject RatingBar::getOnRatingBarChangeListener()
@@ -126,43 +110,11 @@ namespace __jni_impl::android::widget
 			"()Landroid/widget/RatingBar$OnRatingBarChangeListener;"
 		);
 	}
-	void RatingBar::setOnRatingBarChangeListener(__jni_impl::__JniBaseClass arg0)
+	jfloat RatingBar::getRating()
 	{
-		__thiz.callMethod<void>(
-			"setOnRatingBarChangeListener",
-			"(Landroid/widget/RatingBar$OnRatingBarChangeListener;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void RatingBar::setIsIndicator(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setIsIndicator",
-			"(Z)V",
-			arg0
-		);
-	}
-	void RatingBar::setNumStars(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setNumStars",
-			"(I)V",
-			arg0
-		);
-	}
-	jint RatingBar::getNumStars()
-	{
-		return __thiz.callMethod<jint>(
-			"getNumStars",
-			"()I"
-		);
-	}
-	void RatingBar::setStepSize(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStepSize",
-			"(F)V",
-			arg0
+		return __thiz.callMethod<jfloat>(
+			"getRating",
+			"()F"
 		);
 	}
 	jfloat RatingBar::getStepSize()
@@ -177,6 +129,54 @@ namespace __jni_impl::android::widget
 		return __thiz.callMethod<jboolean>(
 			"isIndicator",
 			"()Z"
+		);
+	}
+	void RatingBar::setIsIndicator(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setIsIndicator",
+			"(Z)V",
+			arg0
+		);
+	}
+	void RatingBar::setMax(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMax",
+			"(I)V",
+			arg0
+		);
+	}
+	void RatingBar::setNumStars(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setNumStars",
+			"(I)V",
+			arg0
+		);
+	}
+	void RatingBar::setOnRatingBarChangeListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnRatingBarChangeListener",
+			"(Landroid/widget/RatingBar$OnRatingBarChangeListener;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void RatingBar::setRating(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRating",
+			"(F)V",
+			arg0
+		);
+	}
+	void RatingBar::setStepSize(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setStepSize",
+			"(F)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::widget
@@ -198,6 +198,13 @@ namespace android::widget
 				arg0,
 				arg1);
 		}
+		RatingBar(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
+		{
+			__constructor(
+				arg0,
+				arg1,
+				arg2);
+		}
 		RatingBar(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 		{
 			__constructor(
@@ -205,13 +212,6 @@ namespace android::widget
 				arg1,
 				arg2,
 				arg3);
-		}
-		RatingBar(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
 		}
 	};
 } // namespace android::widget

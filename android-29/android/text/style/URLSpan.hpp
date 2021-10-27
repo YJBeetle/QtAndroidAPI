@@ -24,15 +24,15 @@ namespace __jni_impl::android::text::style
 		// Fields
 		
 		// Constructors
+		void __constructor(__jni_impl::android::os::Parcel arg0);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		jstring getURL();
-		jint getSpanTypeId();
-		void onClick(__jni_impl::android::view::View arg0);
 		jint describeContents();
+		jint getSpanTypeId();
+		jstring getURL();
+		void onClick(__jni_impl::android::view::View arg0);
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::text::style
@@ -45,6 +45,14 @@ namespace __jni_impl::android::text::style
 	// Fields
 	
 	// Constructors
+	void URLSpan::__constructor(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.style.URLSpan",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void URLSpan::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -61,22 +69,14 @@ namespace __jni_impl::android::text::style
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void URLSpan::__constructor(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.style.URLSpan",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	
 	// Methods
-	jstring URLSpan::getURL()
+	jint URLSpan::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"getURL",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
 	jint URLSpan::getSpanTypeId()
 	{
@@ -85,19 +85,19 @@ namespace __jni_impl::android::text::style
 			"()I"
 		);
 	}
+	jstring URLSpan::getURL()
+	{
+		return __thiz.callObjectMethod(
+			"getURL",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	void URLSpan::onClick(__jni_impl::android::view::View arg0)
 	{
 		__thiz.callMethod<void>(
 			"onClick",
 			"(Landroid/view/View;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	jint URLSpan::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
 		);
 	}
 	void URLSpan::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
@@ -117,12 +117,12 @@ namespace android::text::style
 	{
 	public:
 		URLSpan(QAndroidJniObject obj) { __thiz = obj; }
-		URLSpan(jstring arg0)
+		URLSpan(__jni_impl::android::os::Parcel arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		URLSpan(__jni_impl::android::os::Parcel arg0)
+		URLSpan(jstring arg0)
 		{
 			__constructor(
 				arg0);

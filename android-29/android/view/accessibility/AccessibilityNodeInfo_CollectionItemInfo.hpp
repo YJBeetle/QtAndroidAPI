@@ -17,14 +17,14 @@ namespace __jni_impl::android::view::accessibility
 		void __constructor();
 		
 		// Methods
-		jboolean isHeading();
-		jboolean isSelected();
 		static QAndroidJniObject obtain(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4);
 		static QAndroidJniObject obtain(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4, jboolean arg5);
 		jint getColumnIndex();
-		jint getRowIndex();
 		jint getColumnSpan();
+		jint getRowIndex();
 		jint getRowSpan();
+		jboolean isHeading();
+		jboolean isSelected();
 	};
 } // namespace __jni_impl::android::view::accessibility
 
@@ -42,20 +42,6 @@ namespace __jni_impl::android::view::accessibility
 	}
 	
 	// Methods
-	jboolean AccessibilityNodeInfo_CollectionItemInfo::isHeading()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isHeading",
-			"()Z"
-		);
-	}
-	jboolean AccessibilityNodeInfo_CollectionItemInfo::isSelected()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSelected",
-			"()Z"
-		);
-	}
 	QAndroidJniObject AccessibilityNodeInfo_CollectionItemInfo::obtain(jint arg0, jint arg1, jint arg2, jint arg3, jboolean arg4)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,17 +76,17 @@ namespace __jni_impl::android::view::accessibility
 			"()I"
 		);
 	}
-	jint AccessibilityNodeInfo_CollectionItemInfo::getRowIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getRowIndex",
-			"()I"
-		);
-	}
 	jint AccessibilityNodeInfo_CollectionItemInfo::getColumnSpan()
 	{
 		return __thiz.callMethod<jint>(
 			"getColumnSpan",
+			"()I"
+		);
+	}
+	jint AccessibilityNodeInfo_CollectionItemInfo::getRowIndex()
+	{
+		return __thiz.callMethod<jint>(
+			"getRowIndex",
 			"()I"
 		);
 	}
@@ -109,6 +95,20 @@ namespace __jni_impl::android::view::accessibility
 		return __thiz.callMethod<jint>(
 			"getRowSpan",
 			"()I"
+		);
+	}
+	jboolean AccessibilityNodeInfo_CollectionItemInfo::isHeading()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isHeading",
+			"()Z"
+		);
+	}
+	jboolean AccessibilityNodeInfo_CollectionItemInfo::isSelected()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSelected",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::view::accessibility

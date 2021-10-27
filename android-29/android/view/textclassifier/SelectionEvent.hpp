@@ -11,15 +11,15 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::android::view::textclassifier
 {
-	class TextSelection;
-}
-namespace __jni_impl::android::view::textclassifier
-{
 	class TextClassification;
 }
 namespace __jni_impl::android::view::textclassifier
 {
 	class TextClassificationSessionId;
+}
+namespace __jni_impl::android::view::textclassifier
+{
+	class TextSelection;
 }
 
 namespace __jni_impl::android::view::textclassifier
@@ -53,41 +53,41 @@ namespace __jni_impl::android::view::textclassifier
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jstring getPackageName();
-		jlong getEventTime();
-		jint getEventType();
-		jint getEnd();
-		jint getStart();
-		jstring getResultId();
-		jint getEventIndex();
-		static QAndroidJniObject createSelectionStartedEvent(jint arg0, jint arg1);
-		static QAndroidJniObject createSelectionModifiedEvent(jint arg0, jint arg1, __jni_impl::android::view::textclassifier::TextSelection arg2);
-		static QAndroidJniObject createSelectionModifiedEvent(jint arg0, jint arg1, __jni_impl::android::view::textclassifier::TextClassification arg2);
-		static QAndroidJniObject createSelectionModifiedEvent(jint arg0, jint arg1);
 		static QAndroidJniObject createSelectionActionEvent(jint arg0, jint arg1, jint arg2);
 		static QAndroidJniObject createSelectionActionEvent(jint arg0, jint arg1, jint arg2, __jni_impl::android::view::textclassifier::TextClassification arg3);
-		jstring getEntityType();
-		jstring getWidgetType();
-		jstring getWidgetVersion();
-		jint getInvocationMethod();
-		jlong getDurationSinceSessionStart();
-		jlong getDurationSincePreviousEvent();
-		jint getSmartStart();
-		jint getSmartEnd();
+		static QAndroidJniObject createSelectionModifiedEvent(jint arg0, jint arg1);
+		static QAndroidJniObject createSelectionModifiedEvent(jint arg0, jint arg1, __jni_impl::android::view::textclassifier::TextClassification arg2);
+		static QAndroidJniObject createSelectionModifiedEvent(jint arg0, jint arg1, __jni_impl::android::view::textclassifier::TextSelection arg2);
+		static QAndroidJniObject createSelectionStartedEvent(jint arg0, jint arg1);
 		static jboolean isTerminal(jint arg0);
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jboolean equals(jobject arg0);
+		jlong getDurationSincePreviousEvent();
+		jlong getDurationSinceSessionStart();
+		jint getEnd();
+		jstring getEntityType();
+		jint getEventIndex();
+		jlong getEventTime();
+		jint getEventType();
+		jint getInvocationMethod();
+		jstring getPackageName();
+		jstring getResultId();
 		QAndroidJniObject getSessionId();
+		jint getSmartEnd();
+		jint getSmartStart();
+		jint getStart();
+		jstring getWidgetType();
+		jstring getWidgetVersion();
+		jint hashCode();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
 #include "../../os/Parcel.hpp"
-#include "TextSelection.hpp"
 #include "TextClassification.hpp"
 #include "TextClassificationSessionId.hpp"
+#include "TextSelection.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {
@@ -243,119 +243,6 @@ namespace __jni_impl::android::view::textclassifier
 	}
 	
 	// Methods
-	jboolean SelectionEvent::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring SelectionEvent::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint SelectionEvent::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jstring SelectionEvent::getPackageName()
-	{
-		return __thiz.callObjectMethod(
-			"getPackageName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jlong SelectionEvent::getEventTime()
-	{
-		return __thiz.callMethod<jlong>(
-			"getEventTime",
-			"()J"
-		);
-	}
-	jint SelectionEvent::getEventType()
-	{
-		return __thiz.callMethod<jint>(
-			"getEventType",
-			"()I"
-		);
-	}
-	jint SelectionEvent::getEnd()
-	{
-		return __thiz.callMethod<jint>(
-			"getEnd",
-			"()I"
-		);
-	}
-	jint SelectionEvent::getStart()
-	{
-		return __thiz.callMethod<jint>(
-			"getStart",
-			"()I"
-		);
-	}
-	jstring SelectionEvent::getResultId()
-	{
-		return __thiz.callObjectMethod(
-			"getResultId",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint SelectionEvent::getEventIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getEventIndex",
-			"()I"
-		);
-	}
-	QAndroidJniObject SelectionEvent::createSelectionStartedEvent(jint arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.textclassifier.SelectionEvent",
-			"createSelectionStartedEvent",
-			"(II)Landroid/view/textclassifier/SelectionEvent;",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject SelectionEvent::createSelectionModifiedEvent(jint arg0, jint arg1, __jni_impl::android::view::textclassifier::TextSelection arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.textclassifier.SelectionEvent",
-			"createSelectionModifiedEvent",
-			"(IILandroid/view/textclassifier/TextSelection;)Landroid/view/textclassifier/SelectionEvent;",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject SelectionEvent::createSelectionModifiedEvent(jint arg0, jint arg1, __jni_impl::android::view::textclassifier::TextClassification arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.textclassifier.SelectionEvent",
-			"createSelectionModifiedEvent",
-			"(IILandroid/view/textclassifier/TextClassification;)Landroid/view/textclassifier/SelectionEvent;",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject SelectionEvent::createSelectionModifiedEvent(jint arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.textclassifier.SelectionEvent",
-			"createSelectionModifiedEvent",
-			"(II)Landroid/view/textclassifier/SelectionEvent;",
-			arg0,
-			arg1
-		);
-	}
 	QAndroidJniObject SelectionEvent::createSelectionActionEvent(jint arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -379,60 +266,46 @@ namespace __jni_impl::android::view::textclassifier
 			arg3.__jniObject().object()
 		);
 	}
-	jstring SelectionEvent::getEntityType()
+	QAndroidJniObject SelectionEvent::createSelectionModifiedEvent(jint arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
-			"getEntityType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring SelectionEvent::getWidgetType()
-	{
-		return __thiz.callObjectMethod(
-			"getWidgetType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring SelectionEvent::getWidgetVersion()
-	{
-		return __thiz.callObjectMethod(
-			"getWidgetVersion",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint SelectionEvent::getInvocationMethod()
-	{
-		return __thiz.callMethod<jint>(
-			"getInvocationMethod",
-			"()I"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.textclassifier.SelectionEvent",
+			"createSelectionModifiedEvent",
+			"(II)Landroid/view/textclassifier/SelectionEvent;",
+			arg0,
+			arg1
 		);
 	}
-	jlong SelectionEvent::getDurationSinceSessionStart()
+	QAndroidJniObject SelectionEvent::createSelectionModifiedEvent(jint arg0, jint arg1, __jni_impl::android::view::textclassifier::TextClassification arg2)
 	{
-		return __thiz.callMethod<jlong>(
-			"getDurationSinceSessionStart",
-			"()J"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.textclassifier.SelectionEvent",
+			"createSelectionModifiedEvent",
+			"(IILandroid/view/textclassifier/TextClassification;)Landroid/view/textclassifier/SelectionEvent;",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
 		);
 	}
-	jlong SelectionEvent::getDurationSincePreviousEvent()
+	QAndroidJniObject SelectionEvent::createSelectionModifiedEvent(jint arg0, jint arg1, __jni_impl::android::view::textclassifier::TextSelection arg2)
 	{
-		return __thiz.callMethod<jlong>(
-			"getDurationSincePreviousEvent",
-			"()J"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.textclassifier.SelectionEvent",
+			"createSelectionModifiedEvent",
+			"(IILandroid/view/textclassifier/TextSelection;)Landroid/view/textclassifier/SelectionEvent;",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
 		);
 	}
-	jint SelectionEvent::getSmartStart()
+	QAndroidJniObject SelectionEvent::createSelectionStartedEvent(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
-			"getSmartStart",
-			"()I"
-		);
-	}
-	jint SelectionEvent::getSmartEnd()
-	{
-		return __thiz.callMethod<jint>(
-			"getSmartEnd",
-			"()I"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.textclassifier.SelectionEvent",
+			"createSelectionStartedEvent",
+			"(II)Landroid/view/textclassifier/SelectionEvent;",
+			arg0,
+			arg1
 		);
 	}
 	jboolean SelectionEvent::isTerminal(jint arg0)
@@ -451,6 +324,140 @@ namespace __jni_impl::android::view::textclassifier
 			"()I"
 		);
 	}
+	jboolean SelectionEvent::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jlong SelectionEvent::getDurationSincePreviousEvent()
+	{
+		return __thiz.callMethod<jlong>(
+			"getDurationSincePreviousEvent",
+			"()J"
+		);
+	}
+	jlong SelectionEvent::getDurationSinceSessionStart()
+	{
+		return __thiz.callMethod<jlong>(
+			"getDurationSinceSessionStart",
+			"()J"
+		);
+	}
+	jint SelectionEvent::getEnd()
+	{
+		return __thiz.callMethod<jint>(
+			"getEnd",
+			"()I"
+		);
+	}
+	jstring SelectionEvent::getEntityType()
+	{
+		return __thiz.callObjectMethod(
+			"getEntityType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint SelectionEvent::getEventIndex()
+	{
+		return __thiz.callMethod<jint>(
+			"getEventIndex",
+			"()I"
+		);
+	}
+	jlong SelectionEvent::getEventTime()
+	{
+		return __thiz.callMethod<jlong>(
+			"getEventTime",
+			"()J"
+		);
+	}
+	jint SelectionEvent::getEventType()
+	{
+		return __thiz.callMethod<jint>(
+			"getEventType",
+			"()I"
+		);
+	}
+	jint SelectionEvent::getInvocationMethod()
+	{
+		return __thiz.callMethod<jint>(
+			"getInvocationMethod",
+			"()I"
+		);
+	}
+	jstring SelectionEvent::getPackageName()
+	{
+		return __thiz.callObjectMethod(
+			"getPackageName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring SelectionEvent::getResultId()
+	{
+		return __thiz.callObjectMethod(
+			"getResultId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject SelectionEvent::getSessionId()
+	{
+		return __thiz.callObjectMethod(
+			"getSessionId",
+			"()Landroid/view/textclassifier/TextClassificationSessionId;"
+		);
+	}
+	jint SelectionEvent::getSmartEnd()
+	{
+		return __thiz.callMethod<jint>(
+			"getSmartEnd",
+			"()I"
+		);
+	}
+	jint SelectionEvent::getSmartStart()
+	{
+		return __thiz.callMethod<jint>(
+			"getSmartStart",
+			"()I"
+		);
+	}
+	jint SelectionEvent::getStart()
+	{
+		return __thiz.callMethod<jint>(
+			"getStart",
+			"()I"
+		);
+	}
+	jstring SelectionEvent::getWidgetType()
+	{
+		return __thiz.callObjectMethod(
+			"getWidgetType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring SelectionEvent::getWidgetVersion()
+	{
+		return __thiz.callObjectMethod(
+			"getWidgetVersion",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint SelectionEvent::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring SelectionEvent::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	void SelectionEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -458,13 +465,6 @@ namespace __jni_impl::android::view::textclassifier
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject SelectionEvent::getSessionId()
-	{
-		return __thiz.callObjectMethod(
-			"getSessionId",
-			"()Landroid/view/textclassifier/TextClassificationSessionId;"
 		);
 	}
 } // namespace __jni_impl::android::view::textclassifier

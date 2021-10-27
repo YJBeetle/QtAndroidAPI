@@ -8,11 +8,11 @@
 
 namespace __jni_impl::java::time
 {
-	class LocalDate;
+	class Instant;
 }
 namespace __jni_impl::java::time
 {
-	class Instant;
+	class LocalDate;
 }
 
 namespace __jni_impl::java::sql
@@ -23,34 +23,42 @@ namespace __jni_impl::java::sql
 		// Fields
 		
 		// Constructors
-		void __constructor(jint arg0, jint arg1, jint arg2);
 		void __constructor(jlong arg0);
+		void __constructor(jint arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jstring toString();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
 		static QAndroidJniObject valueOf(__jni_impl::java::time::LocalDate arg0);
-		jint getSeconds();
-		QAndroidJniObject toInstant();
-		void setTime(jlong arg0);
-		QAndroidJniObject toLocalDate();
-		void setHours(jint arg0);
 		jint getHours();
 		jint getMinutes();
+		jint getSeconds();
+		void setHours(jint arg0);
 		void setMinutes(jint arg0);
 		void setSeconds(jint arg0);
+		void setTime(jlong arg0);
+		QAndroidJniObject toInstant();
+		QAndroidJniObject toLocalDate();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::sql
 
-#include "../time/LocalDate.hpp"
 #include "../time/Instant.hpp"
+#include "../time/LocalDate.hpp"
 
 namespace __jni_impl::java::sql
 {
 	// Fields
 	
 	// Constructors
+	void Date::__constructor(jlong arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.sql.Date",
+			"(J)V",
+			arg0
+		);
+	}
 	void Date::__constructor(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
@@ -61,23 +69,8 @@ namespace __jni_impl::java::sql
 			arg2
 		);
 	}
-	void Date::__constructor(jlong arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.sql.Date",
-			"(J)V",
-			arg0
-		);
-	}
 	
 	// Methods
-	jstring Date::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject Date::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -105,43 +98,6 @@ namespace __jni_impl::java::sql
 			arg0.__jniObject().object()
 		);
 	}
-	jint Date::getSeconds()
-	{
-		return __thiz.callMethod<jint>(
-			"getSeconds",
-			"()I"
-		);
-	}
-	QAndroidJniObject Date::toInstant()
-	{
-		return __thiz.callObjectMethod(
-			"toInstant",
-			"()Ljava/time/Instant;"
-		);
-	}
-	void Date::setTime(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTime",
-			"(J)V",
-			arg0
-		);
-	}
-	QAndroidJniObject Date::toLocalDate()
-	{
-		return __thiz.callObjectMethod(
-			"toLocalDate",
-			"()Ljava/time/LocalDate;"
-		);
-	}
-	void Date::setHours(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setHours",
-			"(I)V",
-			arg0
-		);
-	}
 	jint Date::getHours()
 	{
 		return __thiz.callMethod<jint>(
@@ -154,6 +110,21 @@ namespace __jni_impl::java::sql
 		return __thiz.callMethod<jint>(
 			"getMinutes",
 			"()I"
+		);
+	}
+	jint Date::getSeconds()
+	{
+		return __thiz.callMethod<jint>(
+			"getSeconds",
+			"()I"
+		);
+	}
+	void Date::setHours(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setHours",
+			"(I)V",
+			arg0
 		);
 	}
 	void Date::setMinutes(jint arg0)
@@ -172,6 +143,35 @@ namespace __jni_impl::java::sql
 			arg0
 		);
 	}
+	void Date::setTime(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTime",
+			"(J)V",
+			arg0
+		);
+	}
+	QAndroidJniObject Date::toInstant()
+	{
+		return __thiz.callObjectMethod(
+			"toInstant",
+			"()Ljava/time/Instant;"
+		);
+	}
+	QAndroidJniObject Date::toLocalDate()
+	{
+		return __thiz.callObjectMethod(
+			"toLocalDate",
+			"()Ljava/time/LocalDate;"
+		);
+	}
+	jstring Date::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 } // namespace __jni_impl::java::sql
 
 namespace java::sql
@@ -180,17 +180,17 @@ namespace java::sql
 	{
 	public:
 		Date(QAndroidJniObject obj) { __thiz = obj; }
+		Date(jlong arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		Date(jint arg0, jint arg1, jint arg2)
 		{
 			__constructor(
 				arg0,
 				arg1,
 				arg2);
-		}
-		Date(jlong arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace java::sql

@@ -39,21 +39,21 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jint getLocation();
-		jint getId();
-		jint getType();
 		jstring getAddress();
-		jint getDirectionality();
-		jstring getDescription();
-		QAndroidJniObject getOrientation();
-		jint getIndexInTheGroup();
-		QAndroidJniObject getFrequencyResponse();
 		QAndroidJniObject getChannelMapping();
-		jfloat getSensitivity();
+		jstring getDescription();
+		jint getDirectionality();
+		QAndroidJniObject getFrequencyResponse();
+		jint getGroup();
+		jint getId();
+		jint getIndexInTheGroup();
+		jint getLocation();
 		jfloat getMaxSpl();
 		jfloat getMinSpl();
-		jint getGroup();
+		QAndroidJniObject getOrientation();
 		QAndroidJniObject getPosition();
+		jfloat getSensitivity();
+		jint getType();
 	};
 } // namespace __jni_impl::android::media
 
@@ -200,31 +200,24 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jint MicrophoneInfo::getLocation()
-	{
-		return __thiz.callMethod<jint>(
-			"getLocation",
-			"()I"
-		);
-	}
-	jint MicrophoneInfo::getId()
-	{
-		return __thiz.callMethod<jint>(
-			"getId",
-			"()I"
-		);
-	}
-	jint MicrophoneInfo::getType()
-	{
-		return __thiz.callMethod<jint>(
-			"getType",
-			"()I"
-		);
-	}
 	jstring MicrophoneInfo::getAddress()
 	{
 		return __thiz.callObjectMethod(
 			"getAddress",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject MicrophoneInfo::getChannelMapping()
+	{
+		return __thiz.callObjectMethod(
+			"getChannelMapping",
+			"()Ljava/util/List;"
+		);
+	}
+	jstring MicrophoneInfo::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -235,18 +228,25 @@ namespace __jni_impl::android::media
 			"()I"
 		);
 	}
-	jstring MicrophoneInfo::getDescription()
+	QAndroidJniObject MicrophoneInfo::getFrequencyResponse()
 	{
 		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getFrequencyResponse",
+			"()Ljava/util/List;"
+		);
 	}
-	QAndroidJniObject MicrophoneInfo::getOrientation()
+	jint MicrophoneInfo::getGroup()
 	{
-		return __thiz.callObjectMethod(
-			"getOrientation",
-			"()Landroid/media/MicrophoneInfo$Coordinate3F;"
+		return __thiz.callMethod<jint>(
+			"getGroup",
+			"()I"
+		);
+	}
+	jint MicrophoneInfo::getId()
+	{
+		return __thiz.callMethod<jint>(
+			"getId",
+			"()I"
 		);
 	}
 	jint MicrophoneInfo::getIndexInTheGroup()
@@ -256,25 +256,11 @@ namespace __jni_impl::android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject MicrophoneInfo::getFrequencyResponse()
+	jint MicrophoneInfo::getLocation()
 	{
-		return __thiz.callObjectMethod(
-			"getFrequencyResponse",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject MicrophoneInfo::getChannelMapping()
-	{
-		return __thiz.callObjectMethod(
-			"getChannelMapping",
-			"()Ljava/util/List;"
-		);
-	}
-	jfloat MicrophoneInfo::getSensitivity()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getSensitivity",
-			"()F"
+		return __thiz.callMethod<jint>(
+			"getLocation",
+			"()I"
 		);
 	}
 	jfloat MicrophoneInfo::getMaxSpl()
@@ -291,11 +277,11 @@ namespace __jni_impl::android::media
 			"()F"
 		);
 	}
-	jint MicrophoneInfo::getGroup()
+	QAndroidJniObject MicrophoneInfo::getOrientation()
 	{
-		return __thiz.callMethod<jint>(
-			"getGroup",
-			"()I"
+		return __thiz.callObjectMethod(
+			"getOrientation",
+			"()Landroid/media/MicrophoneInfo$Coordinate3F;"
 		);
 	}
 	QAndroidJniObject MicrophoneInfo::getPosition()
@@ -303,6 +289,20 @@ namespace __jni_impl::android::media
 		return __thiz.callObjectMethod(
 			"getPosition",
 			"()Landroid/media/MicrophoneInfo$Coordinate3F;"
+		);
+	}
+	jfloat MicrophoneInfo::getSensitivity()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getSensitivity",
+			"()F"
+		);
+	}
+	jint MicrophoneInfo::getType()
+	{
+		return __thiz.callMethod<jint>(
+			"getType",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::media

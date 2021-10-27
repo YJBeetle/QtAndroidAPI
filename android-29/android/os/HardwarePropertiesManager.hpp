@@ -26,8 +26,8 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		jfloatArray getDeviceTemperatures(jint arg0, jint arg1);
 		jarray getCpuUsages();
+		jfloatArray getDeviceTemperatures(jint arg0, jint arg1);
 		jfloatArray getFanSpeeds();
 	};
 } // namespace __jni_impl::android::os
@@ -109,6 +109,13 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
+	jarray HardwarePropertiesManager::getCpuUsages()
+	{
+		return __thiz.callObjectMethod(
+			"getCpuUsages",
+			"()[Landroid/os/CpuUsageInfo;"
+		).object<jarray>();
+	}
 	jfloatArray HardwarePropertiesManager::getDeviceTemperatures(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -117,13 +124,6 @@ namespace __jni_impl::android::os
 			arg0,
 			arg1
 		).object<jfloatArray>();
-	}
-	jarray HardwarePropertiesManager::getCpuUsages()
-	{
-		return __thiz.callObjectMethod(
-			"getCpuUsages",
-			"()[Landroid/os/CpuUsageInfo;"
-		).object<jarray>();
 	}
 	jfloatArray HardwarePropertiesManager::getFanSpeeds()
 	{

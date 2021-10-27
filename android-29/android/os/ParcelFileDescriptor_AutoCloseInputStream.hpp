@@ -23,10 +23,10 @@ namespace __jni_impl::android::os
 		void __constructor(__jni_impl::android::os::ParcelFileDescriptor arg0);
 		
 		// Methods
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
-		jint read(jbyteArray arg0);
-		jint read();
 		void close();
+		jint read();
+		jint read(jbyteArray arg0);
+		jint read(jbyteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::android::os
 
@@ -47,14 +47,18 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	jint ParcelFileDescriptor_AutoCloseInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	void ParcelFileDescriptor_AutoCloseInputStream::close()
+	{
+		__thiz.callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	jint ParcelFileDescriptor_AutoCloseInputStream::read()
 	{
 		return __thiz.callMethod<jint>(
 			"read",
-			"([BII)I",
-			arg0,
-			arg1,
-			arg2
+			"()I"
 		);
 	}
 	jint ParcelFileDescriptor_AutoCloseInputStream::read(jbyteArray arg0)
@@ -65,18 +69,14 @@ namespace __jni_impl::android::os
 			arg0
 		);
 	}
-	jint ParcelFileDescriptor_AutoCloseInputStream::read()
+	jint ParcelFileDescriptor_AutoCloseInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
 	{
 		return __thiz.callMethod<jint>(
 			"read",
-			"()I"
-		);
-	}
-	void ParcelFileDescriptor_AutoCloseInputStream::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
+			"([BII)I",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 } // namespace __jni_impl::android::os

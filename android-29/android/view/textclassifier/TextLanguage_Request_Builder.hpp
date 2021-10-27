@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view::textclassifier
-{
-	class TextLanguage_Request;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::view::textclassifier
+{
+	class TextLanguage_Request;
 }
 
 namespace __jni_impl::android::view::textclassifier
@@ -31,8 +31,8 @@ namespace __jni_impl::android::view::textclassifier
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
-#include "TextLanguage_Request.hpp"
 #include "../../os/Bundle.hpp"
+#include "TextLanguage_Request.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {

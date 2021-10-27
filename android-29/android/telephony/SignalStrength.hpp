@@ -22,21 +22,21 @@ namespace __jni_impl::android::telephony
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint getLevel();
-		QAndroidJniObject getCellSignalStrengths(jclass arg0);
-		QAndroidJniObject getCellSignalStrengths();
-		jint getGsmSignalStrength();
-		jint getGsmBitErrorRate();
 		jint getCdmaDbm();
 		jint getCdmaEcio();
+		QAndroidJniObject getCellSignalStrengths();
+		QAndroidJniObject getCellSignalStrengths(jclass arg0);
 		jint getEvdoDbm();
 		jint getEvdoEcio();
 		jint getEvdoSnr();
+		jint getGsmBitErrorRate();
+		jint getGsmSignalStrength();
+		jint getLevel();
+		jint hashCode();
 		jboolean isGsm();
-		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony
@@ -63,62 +63,19 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
+	jint SignalStrength::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean SignalStrength::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
-		);
-	}
-	jstring SignalStrength::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint SignalStrength::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jint SignalStrength::getLevel()
-	{
-		return __thiz.callMethod<jint>(
-			"getLevel",
-			"()I"
-		);
-	}
-	QAndroidJniObject SignalStrength::getCellSignalStrengths(jclass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getCellSignalStrengths",
-			"(Ljava/lang/Class;)Ljava/util/List;",
-			arg0
-		);
-	}
-	QAndroidJniObject SignalStrength::getCellSignalStrengths()
-	{
-		return __thiz.callObjectMethod(
-			"getCellSignalStrengths",
-			"()Ljava/util/List;"
-		);
-	}
-	jint SignalStrength::getGsmSignalStrength()
-	{
-		return __thiz.callMethod<jint>(
-			"getGsmSignalStrength",
-			"()I"
-		);
-	}
-	jint SignalStrength::getGsmBitErrorRate()
-	{
-		return __thiz.callMethod<jint>(
-			"getGsmBitErrorRate",
-			"()I"
 		);
 	}
 	jint SignalStrength::getCdmaDbm()
@@ -133,6 +90,21 @@ namespace __jni_impl::android::telephony
 		return __thiz.callMethod<jint>(
 			"getCdmaEcio",
 			"()I"
+		);
+	}
+	QAndroidJniObject SignalStrength::getCellSignalStrengths()
+	{
+		return __thiz.callObjectMethod(
+			"getCellSignalStrengths",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject SignalStrength::getCellSignalStrengths(jclass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getCellSignalStrengths",
+			"(Ljava/lang/Class;)Ljava/util/List;",
+			arg0
 		);
 	}
 	jint SignalStrength::getEvdoDbm()
@@ -156,6 +128,34 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
+	jint SignalStrength::getGsmBitErrorRate()
+	{
+		return __thiz.callMethod<jint>(
+			"getGsmBitErrorRate",
+			"()I"
+		);
+	}
+	jint SignalStrength::getGsmSignalStrength()
+	{
+		return __thiz.callMethod<jint>(
+			"getGsmSignalStrength",
+			"()I"
+		);
+	}
+	jint SignalStrength::getLevel()
+	{
+		return __thiz.callMethod<jint>(
+			"getLevel",
+			"()I"
+		);
+	}
+	jint SignalStrength::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 	jboolean SignalStrength::isGsm()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -163,12 +163,12 @@ namespace __jni_impl::android::telephony
 			"()Z"
 		);
 	}
-	jint SignalStrength::describeContents()
+	jstring SignalStrength::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void SignalStrength::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

@@ -14,17 +14,17 @@ namespace __jni_impl::java::nio::file
 	public:
 		// Fields
 		static QAndroidJniObject CONTINUE();
-		static QAndroidJniObject TERMINATE();
-		static QAndroidJniObject SKIP_SUBTREE();
 		static QAndroidJniObject SKIP_SIBLINGS();
+		static QAndroidJniObject SKIP_SUBTREE();
+		static QAndroidJniObject TERMINATE();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::nio::file
 
@@ -40,11 +40,11 @@ namespace __jni_impl::java::nio::file
 			"Ljava/nio/file/FileVisitResult;"
 		);
 	}
-	QAndroidJniObject FileVisitResult::TERMINATE()
+	QAndroidJniObject FileVisitResult::SKIP_SIBLINGS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.FileVisitResult",
-			"TERMINATE",
+			"SKIP_SIBLINGS",
 			"Ljava/nio/file/FileVisitResult;"
 		);
 	}
@@ -56,11 +56,11 @@ namespace __jni_impl::java::nio::file
 			"Ljava/nio/file/FileVisitResult;"
 		);
 	}
-	QAndroidJniObject FileVisitResult::SKIP_SIBLINGS()
+	QAndroidJniObject FileVisitResult::TERMINATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.FileVisitResult",
-			"SKIP_SIBLINGS",
+			"TERMINATE",
 			"Ljava/nio/file/FileVisitResult;"
 		);
 	}
@@ -74,14 +74,6 @@ namespace __jni_impl::java::nio::file
 	}
 	
 	// Methods
-	jarray FileVisitResult::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.FileVisitResult",
-			"values",
-			"()[Ljava/nio/file/FileVisitResult;"
-		).object<jarray>();
-	}
 	QAndroidJniObject FileVisitResult::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -99,6 +91,14 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/lang/String;)Ljava/nio/file/FileVisitResult;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray FileVisitResult::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.file.FileVisitResult",
+			"values",
+			"()[Ljava/nio/file/FileVisitResult;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::nio::file
 

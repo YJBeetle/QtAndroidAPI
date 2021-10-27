@@ -9,10 +9,6 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::java::util
-{
-	class Locale;
-}
 namespace __jni_impl::android::view::accessibility
 {
 	class CaptioningManager_CaptionStyle;
@@ -20,6 +16,10 @@ namespace __jni_impl::android::view::accessibility
 namespace __jni_impl::android::view::accessibility
 {
 	class CaptioningManager_CaptioningChangeListener;
+}
+namespace __jni_impl::java::util
+{
+	class Locale;
 }
 
 namespace __jni_impl::android::view::accessibility
@@ -33,19 +33,19 @@ namespace __jni_impl::android::view::accessibility
 		void __constructor();
 		
 		// Methods
-		jboolean isEnabled();
-		QAndroidJniObject getLocale();
-		jfloat getFontScale();
-		QAndroidJniObject getUserStyle();
 		void addCaptioningChangeListener(__jni_impl::android::view::accessibility::CaptioningManager_CaptioningChangeListener arg0);
+		jfloat getFontScale();
+		QAndroidJniObject getLocale();
+		QAndroidJniObject getUserStyle();
+		jboolean isEnabled();
 		void removeCaptioningChangeListener(__jni_impl::android::view::accessibility::CaptioningManager_CaptioningChangeListener arg0);
 	};
 } // namespace __jni_impl::android::view::accessibility
 
 #include "../../content/Context.hpp"
-#include "../../../java/util/Locale.hpp"
 #include "CaptioningManager_CaptionStyle.hpp"
 #include "CaptioningManager_CaptioningChangeListener.hpp"
+#include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::view::accessibility
 {
@@ -60,18 +60,12 @@ namespace __jni_impl::android::view::accessibility
 	}
 	
 	// Methods
-	jboolean CaptioningManager::isEnabled()
+	void CaptioningManager::addCaptioningChangeListener(__jni_impl::android::view::accessibility::CaptioningManager_CaptioningChangeListener arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isEnabled",
-			"()Z"
-		);
-	}
-	QAndroidJniObject CaptioningManager::getLocale()
-	{
-		return __thiz.callObjectMethod(
-			"getLocale",
-			"()Ljava/util/Locale;"
+		__thiz.callMethod<void>(
+			"addCaptioningChangeListener",
+			"(Landroid/view/accessibility/CaptioningManager$CaptioningChangeListener;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	jfloat CaptioningManager::getFontScale()
@@ -81,6 +75,13 @@ namespace __jni_impl::android::view::accessibility
 			"()F"
 		);
 	}
+	QAndroidJniObject CaptioningManager::getLocale()
+	{
+		return __thiz.callObjectMethod(
+			"getLocale",
+			"()Ljava/util/Locale;"
+		);
+	}
 	QAndroidJniObject CaptioningManager::getUserStyle()
 	{
 		return __thiz.callObjectMethod(
@@ -88,12 +89,11 @@ namespace __jni_impl::android::view::accessibility
 			"()Landroid/view/accessibility/CaptioningManager$CaptionStyle;"
 		);
 	}
-	void CaptioningManager::addCaptioningChangeListener(__jni_impl::android::view::accessibility::CaptioningManager_CaptioningChangeListener arg0)
+	jboolean CaptioningManager::isEnabled()
 	{
-		__thiz.callMethod<void>(
-			"addCaptioningChangeListener",
-			"(Landroid/view/accessibility/CaptioningManager$CaptioningChangeListener;)V",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jboolean>(
+			"isEnabled",
+			"()Z"
 		);
 	}
 	void CaptioningManager::removeCaptioningChangeListener(__jni_impl::android::view::accessibility::CaptioningManager_CaptioningChangeListener arg0)

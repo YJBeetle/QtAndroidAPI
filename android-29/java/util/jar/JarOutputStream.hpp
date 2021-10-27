@@ -30,8 +30,8 @@ namespace __jni_impl::java::util::jar
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::java::io::OutputStream arg0, __jni_impl::java::util::jar::Manifest arg1);
 		void __constructor(__jni_impl::java::io::OutputStream arg0);
+		void __constructor(__jni_impl::java::io::OutputStream arg0, __jni_impl::java::util::jar::Manifest arg1);
 		
 		// Methods
 		void putNextEntry(__jni_impl::java::util::zip::ZipEntry arg0);
@@ -47,6 +47,14 @@ namespace __jni_impl::java::util::jar
 	// Fields
 	
 	// Constructors
+	void JarOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.jar.JarOutputStream",
+			"(Ljava/io/OutputStream;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void JarOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0, __jni_impl::java::util::jar::Manifest arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -54,14 +62,6 @@ namespace __jni_impl::java::util::jar
 			"(Ljava/io/OutputStream;Ljava/util/jar/Manifest;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	void JarOutputStream::__constructor(__jni_impl::java::io::OutputStream arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.jar.JarOutputStream",
-			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	
@@ -82,16 +82,16 @@ namespace java::util::jar
 	{
 	public:
 		JarOutputStream(QAndroidJniObject obj) { __thiz = obj; }
+		JarOutputStream(__jni_impl::java::io::OutputStream arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		JarOutputStream(__jni_impl::java::io::OutputStream arg0, __jni_impl::java::util::jar::Manifest arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
-		}
-		JarOutputStream(__jni_impl::java::io::OutputStream arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace java::util::jar

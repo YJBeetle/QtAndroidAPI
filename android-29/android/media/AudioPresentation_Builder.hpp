@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::media
-{
-	class AudioPresentation;
-}
 namespace __jni_impl::android::icu::util
 {
 	class ULocale;
+}
+namespace __jni_impl::android::media
+{
+	class AudioPresentation;
 }
 
 namespace __jni_impl::android::media
@@ -26,18 +26,18 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setLocale(__jni_impl::android::icu::util::ULocale arg0);
-		QAndroidJniObject setLabels(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject setHasAudioDescription(jboolean arg0);
-		QAndroidJniObject setProgramId(jint arg0);
-		QAndroidJniObject setMasteringIndication(jint arg0);
-		QAndroidJniObject setHasSpokenSubtitles(jboolean arg0);
 		QAndroidJniObject setHasDialogueEnhancement(jboolean arg0);
+		QAndroidJniObject setHasSpokenSubtitles(jboolean arg0);
+		QAndroidJniObject setLabels(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject setLocale(__jni_impl::android::icu::util::ULocale arg0);
+		QAndroidJniObject setMasteringIndication(jint arg0);
+		QAndroidJniObject setProgramId(jint arg0);
 	};
 } // namespace __jni_impl::android::media
 
-#include "AudioPresentation.hpp"
 #include "../icu/util/ULocale.hpp"
+#include "AudioPresentation.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -61,22 +61,6 @@ namespace __jni_impl::android::media
 			"()Landroid/media/AudioPresentation;"
 		);
 	}
-	QAndroidJniObject AudioPresentation_Builder::setLocale(__jni_impl::android::icu::util::ULocale arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setLocale",
-			"(Landroid/icu/util/ULocale;)Landroid/media/AudioPresentation$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject AudioPresentation_Builder::setLabels(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setLabels",
-			"(Ljava/util/Map;)Landroid/media/AudioPresentation$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject AudioPresentation_Builder::setHasAudioDescription(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -85,19 +69,11 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	QAndroidJniObject AudioPresentation_Builder::setProgramId(jint arg0)
+	QAndroidJniObject AudioPresentation_Builder::setHasDialogueEnhancement(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setProgramId",
-			"(I)Landroid/media/AudioPresentation$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject AudioPresentation_Builder::setMasteringIndication(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setMasteringIndication",
-			"(I)Landroid/media/AudioPresentation$Builder;",
+			"setHasDialogueEnhancement",
+			"(Z)Landroid/media/AudioPresentation$Builder;",
 			arg0
 		);
 	}
@@ -109,11 +85,35 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	QAndroidJniObject AudioPresentation_Builder::setHasDialogueEnhancement(jboolean arg0)
+	QAndroidJniObject AudioPresentation_Builder::setLabels(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setHasDialogueEnhancement",
-			"(Z)Landroid/media/AudioPresentation$Builder;",
+			"setLabels",
+			"(Ljava/util/Map;)Landroid/media/AudioPresentation$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject AudioPresentation_Builder::setLocale(__jni_impl::android::icu::util::ULocale arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setLocale",
+			"(Landroid/icu/util/ULocale;)Landroid/media/AudioPresentation$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject AudioPresentation_Builder::setMasteringIndication(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setMasteringIndication",
+			"(I)Landroid/media/AudioPresentation$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject AudioPresentation_Builder::setProgramId(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setProgramId",
+			"(I)Landroid/media/AudioPresentation$Builder;",
 			arg0
 		);
 	}

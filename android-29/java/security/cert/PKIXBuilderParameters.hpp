@@ -19,13 +19,13 @@ namespace __jni_impl::java::security::cert
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(__jni_impl::java::security::KeyStore arg0, __jni_impl::__JniBaseClass arg1);
+		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		jstring toString();
-		void setMaxPathLength(jint arg0);
 		jint getMaxPathLength();
+		void setMaxPathLength(jint arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -36,15 +36,6 @@ namespace __jni_impl::java::security::cert
 	// Fields
 	
 	// Constructors
-	void PKIXBuilderParameters::__constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.cert.PKIXBuilderParameters",
-			"(Ljava/util/Set;Ljava/security/cert/CertSelector;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
 	void PKIXBuilderParameters::__constructor(__jni_impl::java::security::KeyStore arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -54,14 +45,23 @@ namespace __jni_impl::java::security::cert
 			arg1.__jniObject().object()
 		);
 	}
+	void PKIXBuilderParameters::__constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.cert.PKIXBuilderParameters",
+			"(Ljava/util/Set;Ljava/security/cert/CertSelector;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
 	
 	// Methods
-	jstring PKIXBuilderParameters::toString()
+	jint PKIXBuilderParameters::getMaxPathLength()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"getMaxPathLength",
+			"()I"
+		);
 	}
 	void PKIXBuilderParameters::setMaxPathLength(jint arg0)
 	{
@@ -71,12 +71,12 @@ namespace __jni_impl::java::security::cert
 			arg0
 		);
 	}
-	jint PKIXBuilderParameters::getMaxPathLength()
+	jstring PKIXBuilderParameters::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"getMaxPathLength",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security::cert
 
@@ -86,13 +86,13 @@ namespace java::security::cert
 	{
 	public:
 		PKIXBuilderParameters(QAndroidJniObject obj) { __thiz = obj; }
-		PKIXBuilderParameters(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
+		PKIXBuilderParameters(__jni_impl::java::security::KeyStore arg0, __jni_impl::__JniBaseClass arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
 		}
-		PKIXBuilderParameters(__jni_impl::java::security::KeyStore arg0, __jni_impl::__JniBaseClass arg1)
+		PKIXBuilderParameters(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 		{
 			__constructor(
 				arg0,

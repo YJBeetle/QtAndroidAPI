@@ -5,9 +5,9 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
+namespace __jni_impl::android::app
 {
-	class Context;
+	class Activity;
 }
 namespace __jni_impl::android::appwidget
 {
@@ -17,9 +17,9 @@ namespace __jni_impl::android::appwidget
 {
 	class AppWidgetProviderInfo;
 }
-namespace __jni_impl::android::app
+namespace __jni_impl::android::content
 {
-	class Activity;
+	class Context;
 }
 namespace __jni_impl::android::os
 {
@@ -37,22 +37,22 @@ namespace __jni_impl::android::appwidget
 		void __constructor(__jni_impl::android::content::Context arg0, jint arg1);
 		
 		// Methods
-		jintArray getAppWidgetIds();
-		void startListening();
-		void stopListening();
-		QAndroidJniObject createView(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::appwidget::AppWidgetProviderInfo arg2);
+		static void deleteAllHosts();
 		jint allocateAppWidgetId();
-		void startAppWidgetConfigureActivityForResult(__jni_impl::android::app::Activity arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::os::Bundle arg4);
+		QAndroidJniObject createView(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::appwidget::AppWidgetProviderInfo arg2);
 		void deleteAppWidgetId(jint arg0);
 		void deleteHost();
-		static void deleteAllHosts();
+		jintArray getAppWidgetIds();
+		void startAppWidgetConfigureActivityForResult(__jni_impl::android::app::Activity arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::os::Bundle arg4);
+		void startListening();
+		void stopListening();
 	};
 } // namespace __jni_impl::android::appwidget
 
-#include "../content/Context.hpp"
+#include "../app/Activity.hpp"
 #include "AppWidgetHostView.hpp"
 #include "AppWidgetProviderInfo.hpp"
-#include "../app/Activity.hpp"
+#include "../content/Context.hpp"
 #include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::appwidget
@@ -71,25 +71,19 @@ namespace __jni_impl::android::appwidget
 	}
 	
 	// Methods
-	jintArray AppWidgetHost::getAppWidgetIds()
+	void AppWidgetHost::deleteAllHosts()
 	{
-		return __thiz.callObjectMethod(
-			"getAppWidgetIds",
-			"()[I"
-		).object<jintArray>();
-	}
-	void AppWidgetHost::startListening()
-	{
-		__thiz.callMethod<void>(
-			"startListening",
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.appwidget.AppWidgetHost",
+			"deleteAllHosts",
 			"()V"
 		);
 	}
-	void AppWidgetHost::stopListening()
+	jint AppWidgetHost::allocateAppWidgetId()
 	{
-		__thiz.callMethod<void>(
-			"stopListening",
-			"()V"
+		return __thiz.callMethod<jint>(
+			"allocateAppWidgetId",
+			"()I"
 		);
 	}
 	QAndroidJniObject AppWidgetHost::createView(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::android::appwidget::AppWidgetProviderInfo arg2)
@@ -100,25 +94,6 @@ namespace __jni_impl::android::appwidget
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object()
-		);
-	}
-	jint AppWidgetHost::allocateAppWidgetId()
-	{
-		return __thiz.callMethod<jint>(
-			"allocateAppWidgetId",
-			"()I"
-		);
-	}
-	void AppWidgetHost::startAppWidgetConfigureActivityForResult(__jni_impl::android::app::Activity arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::os::Bundle arg4)
-	{
-		__thiz.callMethod<void>(
-			"startAppWidgetConfigureActivityForResult",
-			"(Landroid/app/Activity;IIILandroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4.__jniObject().object()
 		);
 	}
 	void AppWidgetHost::deleteAppWidgetId(jint arg0)
@@ -136,11 +111,36 @@ namespace __jni_impl::android::appwidget
 			"()V"
 		);
 	}
-	void AppWidgetHost::deleteAllHosts()
+	jintArray AppWidgetHost::getAppWidgetIds()
 	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.appwidget.AppWidgetHost",
-			"deleteAllHosts",
+		return __thiz.callObjectMethod(
+			"getAppWidgetIds",
+			"()[I"
+		).object<jintArray>();
+	}
+	void AppWidgetHost::startAppWidgetConfigureActivityForResult(__jni_impl::android::app::Activity arg0, jint arg1, jint arg2, jint arg3, __jni_impl::android::os::Bundle arg4)
+	{
+		__thiz.callMethod<void>(
+			"startAppWidgetConfigureActivityForResult",
+			"(Landroid/app/Activity;IIILandroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3,
+			arg4.__jniObject().object()
+		);
+	}
+	void AppWidgetHost::startListening()
+	{
+		__thiz.callMethod<void>(
+			"startListening",
+			"()V"
+		);
+	}
+	void AppWidgetHost::stopListening()
+	{
+		__thiz.callMethod<void>(
+			"stopListening",
 			"()V"
 		);
 	}

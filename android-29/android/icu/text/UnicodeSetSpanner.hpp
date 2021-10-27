@@ -11,15 +11,15 @@ namespace __jni_impl::android::icu::text
 }
 namespace __jni_impl::android::icu::text
 {
-	class UnicodeSetSpanner_TrimOption;
-}
-namespace __jni_impl::android::icu::text
-{
 	class UnicodeSet_SpanCondition;
 }
 namespace __jni_impl::android::icu::text
 {
 	class UnicodeSetSpanner_CountMethod;
+}
+namespace __jni_impl::android::icu::text
+{
+	class UnicodeSetSpanner_TrimOption;
 }
 
 namespace __jni_impl::android::icu::text
@@ -33,38 +33,38 @@ namespace __jni_impl::android::icu::text
 		void __constructor(__jni_impl::android::icu::text::UnicodeSet arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		jstring trim(jstring arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_TrimOption arg1);
-		jstring trim(const QString &arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_TrimOption arg1);
-		jstring trim(jstring arg0);
-		jstring trim(const QString &arg0);
-		jstring trim(jstring arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_TrimOption arg1, __jni_impl::android::icu::text::UnicodeSet_SpanCondition arg2);
-		jstring trim(const QString &arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_TrimOption arg1, __jni_impl::android::icu::text::UnicodeSet_SpanCondition arg2);
-		QAndroidJniObject getUnicodeSet();
 		jint countIn(jstring arg0);
 		jint countIn(const QString &arg0);
-		jint countIn(jstring arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_CountMethod arg1, __jni_impl::android::icu::text::UnicodeSet_SpanCondition arg2);
-		jint countIn(const QString &arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_CountMethod arg1, __jni_impl::android::icu::text::UnicodeSet_SpanCondition arg2);
 		jint countIn(jstring arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_CountMethod arg1);
 		jint countIn(const QString &arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_CountMethod arg1);
+		jint countIn(jstring arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_CountMethod arg1, __jni_impl::android::icu::text::UnicodeSet_SpanCondition arg2);
+		jint countIn(const QString &arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_CountMethod arg1, __jni_impl::android::icu::text::UnicodeSet_SpanCondition arg2);
 		jstring deleteFrom(jstring arg0);
 		jstring deleteFrom(const QString &arg0);
 		jstring deleteFrom(jstring arg0, __jni_impl::android::icu::text::UnicodeSet_SpanCondition arg1);
 		jstring deleteFrom(const QString &arg0, __jni_impl::android::icu::text::UnicodeSet_SpanCondition arg1);
+		jboolean equals(jobject arg0);
+		QAndroidJniObject getUnicodeSet();
+		jint hashCode();
+		jstring replaceFrom(jstring arg0, jstring arg1);
+		jstring replaceFrom(const QString &arg0, const QString &arg1);
 		jstring replaceFrom(jstring arg0, jstring arg1, __jni_impl::android::icu::text::UnicodeSetSpanner_CountMethod arg2);
 		jstring replaceFrom(const QString &arg0, const QString &arg1, __jni_impl::android::icu::text::UnicodeSetSpanner_CountMethod arg2);
 		jstring replaceFrom(jstring arg0, jstring arg1, __jni_impl::android::icu::text::UnicodeSetSpanner_CountMethod arg2, __jni_impl::android::icu::text::UnicodeSet_SpanCondition arg3);
 		jstring replaceFrom(const QString &arg0, const QString &arg1, __jni_impl::android::icu::text::UnicodeSetSpanner_CountMethod arg2, __jni_impl::android::icu::text::UnicodeSet_SpanCondition arg3);
-		jstring replaceFrom(jstring arg0, jstring arg1);
-		jstring replaceFrom(const QString &arg0, const QString &arg1);
+		jstring trim(jstring arg0);
+		jstring trim(const QString &arg0);
+		jstring trim(jstring arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_TrimOption arg1);
+		jstring trim(const QString &arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_TrimOption arg1);
+		jstring trim(jstring arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_TrimOption arg1, __jni_impl::android::icu::text::UnicodeSet_SpanCondition arg2);
+		jstring trim(const QString &arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_TrimOption arg1, __jni_impl::android::icu::text::UnicodeSet_SpanCondition arg2);
 	};
 } // namespace __jni_impl::android::icu::text
 
 #include "UnicodeSet.hpp"
-#include "UnicodeSetSpanner_TrimOption.hpp"
 #include "UnicodeSet_SpanCondition.hpp"
 #include "UnicodeSetSpanner_CountMethod.hpp"
+#include "UnicodeSetSpanner_TrimOption.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -81,82 +81,6 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jboolean UnicodeSetSpanner::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jint UnicodeSetSpanner::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jstring UnicodeSetSpanner::trim(jstring arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_TrimOption arg1)
-	{
-		return __thiz.callObjectMethod(
-			"trim",
-			"(Ljava/lang/CharSequence;Landroid/icu/text/UnicodeSetSpanner$TrimOption;)Ljava/lang/CharSequence;",
-			arg0,
-			arg1.__jniObject().object()
-		).object<jstring>();
-	}
-	jstring UnicodeSetSpanner::trim(const QString &arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_TrimOption arg1)
-	{
-		return __thiz.callObjectMethod(
-			"trim",
-			"(Ljava/lang/CharSequence;Landroid/icu/text/UnicodeSetSpanner$TrimOption;)Ljava/lang/CharSequence;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		).object<jstring>();
-	}
-	jstring UnicodeSetSpanner::trim(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"trim",
-			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0
-		).object<jstring>();
-	}
-	jstring UnicodeSetSpanner::trim(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"trim",
-			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		).object<jstring>();
-	}
-	jstring UnicodeSetSpanner::trim(jstring arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_TrimOption arg1, __jni_impl::android::icu::text::UnicodeSet_SpanCondition arg2)
-	{
-		return __thiz.callObjectMethod(
-			"trim",
-			"(Ljava/lang/CharSequence;Landroid/icu/text/UnicodeSetSpanner$TrimOption;Landroid/icu/text/UnicodeSet$SpanCondition;)Ljava/lang/CharSequence;",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		).object<jstring>();
-	}
-	jstring UnicodeSetSpanner::trim(const QString &arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_TrimOption arg1, __jni_impl::android::icu::text::UnicodeSet_SpanCondition arg2)
-	{
-		return __thiz.callObjectMethod(
-			"trim",
-			"(Ljava/lang/CharSequence;Landroid/icu/text/UnicodeSetSpanner$TrimOption;Landroid/icu/text/UnicodeSet$SpanCondition;)Ljava/lang/CharSequence;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		).object<jstring>();
-	}
-	QAndroidJniObject UnicodeSetSpanner::getUnicodeSet()
-	{
-		return __thiz.callObjectMethod(
-			"getUnicodeSet",
-			"()Landroid/icu/text/UnicodeSet;"
-		);
-	}
 	jint UnicodeSetSpanner::countIn(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -171,6 +95,24 @@ namespace __jni_impl::android::icu::text
 			"countIn",
 			"(Ljava/lang/CharSequence;)I",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jint UnicodeSetSpanner::countIn(jstring arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_CountMethod arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"countIn",
+			"(Ljava/lang/CharSequence;Landroid/icu/text/UnicodeSetSpanner$CountMethod;)I",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	jint UnicodeSetSpanner::countIn(const QString &arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_CountMethod arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"countIn",
+			"(Ljava/lang/CharSequence;Landroid/icu/text/UnicodeSetSpanner$CountMethod;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
 		);
 	}
 	jint UnicodeSetSpanner::countIn(jstring arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_CountMethod arg1, __jni_impl::android::icu::text::UnicodeSet_SpanCondition arg2)
@@ -191,24 +133,6 @@ namespace __jni_impl::android::icu::text
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
-		);
-	}
-	jint UnicodeSetSpanner::countIn(jstring arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_CountMethod arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"countIn",
-			"(Ljava/lang/CharSequence;Landroid/icu/text/UnicodeSetSpanner$CountMethod;)I",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jint UnicodeSetSpanner::countIn(const QString &arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_CountMethod arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"countIn",
-			"(Ljava/lang/CharSequence;Landroid/icu/text/UnicodeSetSpanner$CountMethod;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
 		);
 	}
 	jstring UnicodeSetSpanner::deleteFrom(jstring arg0)
@@ -243,6 +167,46 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/CharSequence;Landroid/icu/text/UnicodeSet$SpanCondition;)Ljava/lang/String;",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
+		).object<jstring>();
+	}
+	jboolean UnicodeSetSpanner::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	QAndroidJniObject UnicodeSetSpanner::getUnicodeSet()
+	{
+		return __thiz.callObjectMethod(
+			"getUnicodeSet",
+			"()Landroid/icu/text/UnicodeSet;"
+		);
+	}
+	jint UnicodeSetSpanner::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring UnicodeSetSpanner::replaceFrom(jstring arg0, jstring arg1)
+	{
+		return __thiz.callObjectMethod(
+			"replaceFrom",
+			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;",
+			arg0,
+			arg1
+		).object<jstring>();
+	}
+	jstring UnicodeSetSpanner::replaceFrom(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"replaceFrom",
+			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		).object<jstring>();
 	}
 	jstring UnicodeSetSpanner::replaceFrom(jstring arg0, jstring arg1, __jni_impl::android::icu::text::UnicodeSetSpanner_CountMethod arg2)
@@ -287,22 +251,58 @@ namespace __jni_impl::android::icu::text
 			arg3.__jniObject().object()
 		).object<jstring>();
 	}
-	jstring UnicodeSetSpanner::replaceFrom(jstring arg0, jstring arg1)
+	jstring UnicodeSetSpanner::trim(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
-			"replaceFrom",
-			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;",
-			arg0,
-			arg1
+			"trim",
+			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
+			arg0
 		).object<jstring>();
 	}
-	jstring UnicodeSetSpanner::replaceFrom(const QString &arg0, const QString &arg1)
+	jstring UnicodeSetSpanner::trim(const QString &arg0)
 	{
 		return __thiz.callObjectMethod(
-			"replaceFrom",
-			"(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;",
+			"trim",
+			"(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		).object<jstring>();
+	}
+	jstring UnicodeSetSpanner::trim(jstring arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_TrimOption arg1)
+	{
+		return __thiz.callObjectMethod(
+			"trim",
+			"(Ljava/lang/CharSequence;Landroid/icu/text/UnicodeSetSpanner$TrimOption;)Ljava/lang/CharSequence;",
+			arg0,
+			arg1.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring UnicodeSetSpanner::trim(const QString &arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_TrimOption arg1)
+	{
+		return __thiz.callObjectMethod(
+			"trim",
+			"(Ljava/lang/CharSequence;Landroid/icu/text/UnicodeSetSpanner$TrimOption;)Ljava/lang/CharSequence;",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
+			arg1.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring UnicodeSetSpanner::trim(jstring arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_TrimOption arg1, __jni_impl::android::icu::text::UnicodeSet_SpanCondition arg2)
+	{
+		return __thiz.callObjectMethod(
+			"trim",
+			"(Ljava/lang/CharSequence;Landroid/icu/text/UnicodeSetSpanner$TrimOption;Landroid/icu/text/UnicodeSet$SpanCondition;)Ljava/lang/CharSequence;",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring UnicodeSetSpanner::trim(const QString &arg0, __jni_impl::android::icu::text::UnicodeSetSpanner_TrimOption arg1, __jni_impl::android::icu::text::UnicodeSet_SpanCondition arg2)
+	{
+		return __thiz.callObjectMethod(
+			"trim",
+			"(Ljava/lang/CharSequence;Landroid/icu/text/UnicodeSetSpanner$TrimOption;Landroid/icu/text/UnicodeSet$SpanCondition;)Ljava/lang/CharSequence;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::text

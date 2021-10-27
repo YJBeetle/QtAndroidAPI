@@ -23,10 +23,10 @@ namespace __jni_impl::android::telephony
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jint hashCode();
-		jint getLevel();
 		jint getAsuLevel();
 		jint getDbm();
+		jint getLevel();
+		jint hashCode();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -87,20 +87,6 @@ namespace __jni_impl::android::telephony
 			arg0
 		);
 	}
-	jint CellSignalStrength::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jint CellSignalStrength::getLevel()
-	{
-		return __thiz.callMethod<jint>(
-			"getLevel",
-			"()I"
-		);
-	}
 	jint CellSignalStrength::getAsuLevel()
 	{
 		return __thiz.callMethod<jint>(
@@ -112,6 +98,20 @@ namespace __jni_impl::android::telephony
 	{
 		return __thiz.callMethod<jint>(
 			"getDbm",
+			"()I"
+		);
+	}
+	jint CellSignalStrength::getLevel()
+	{
+		return __thiz.callMethod<jint>(
+			"getLevel",
+			"()I"
+		);
+	}
+	jint CellSignalStrength::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
 			"()I"
 		);
 	}

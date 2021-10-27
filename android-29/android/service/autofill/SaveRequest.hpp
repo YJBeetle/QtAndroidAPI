@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class Bundle;
 }
 namespace __jni_impl::android::os
 {
-	class Bundle;
+	class Parcel;
 }
 
 namespace __jni_impl::android::service::autofill
@@ -26,16 +26,16 @@ namespace __jni_impl::android::service::autofill
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getFillContexts();
-		QAndroidJniObject getDatasetIds();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getClientState();
+		QAndroidJniObject getDatasetIds();
+		QAndroidJniObject getFillContexts();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::service::autofill
 
-#include "../../os/Parcel.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::service::autofill
 {
@@ -58,11 +58,18 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	QAndroidJniObject SaveRequest::getFillContexts()
+	jint SaveRequest::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	QAndroidJniObject SaveRequest::getClientState()
 	{
 		return __thiz.callObjectMethod(
-			"getFillContexts",
-			"()Ljava/util/List;"
+			"getClientState",
+			"()Landroid/os/Bundle;"
 		);
 	}
 	QAndroidJniObject SaveRequest::getDatasetIds()
@@ -72,11 +79,11 @@ namespace __jni_impl::android::service::autofill
 			"()Ljava/util/List;"
 		);
 	}
-	jint SaveRequest::describeContents()
+	QAndroidJniObject SaveRequest::getFillContexts()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		return __thiz.callObjectMethod(
+			"getFillContexts",
+			"()Ljava/util/List;"
 		);
 	}
 	void SaveRequest::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
@@ -86,13 +93,6 @@ namespace __jni_impl::android::service::autofill
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject SaveRequest::getClientState()
-	{
-		return __thiz.callObjectMethod(
-			"getClientState",
-			"()Landroid/os/Bundle;"
 		);
 	}
 } // namespace __jni_impl::android::service::autofill

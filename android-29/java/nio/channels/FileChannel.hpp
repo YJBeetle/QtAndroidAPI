@@ -6,9 +6,9 @@
 #include "../../../__JniBaseClass.hpp"
 #include "spi/AbstractInterruptibleChannel.hpp"
 
-namespace __jni_impl::java::nio::channels
+namespace __jni_impl::java::nio
 {
-	class FileLock;
+	class ByteBuffer;
 }
 namespace __jni_impl::java::nio
 {
@@ -18,9 +18,9 @@ namespace __jni_impl::java::nio::channels
 {
 	class FileChannel_MapMode;
 }
-namespace __jni_impl::java::nio
+namespace __jni_impl::java::nio::channels
 {
-	class ByteBuffer;
+	class FileLock;
 }
 
 namespace __jni_impl::java::nio::channels
@@ -34,35 +34,35 @@ namespace __jni_impl::java::nio::channels
 		void __constructor();
 		
 		// Methods
+		static QAndroidJniObject open(__jni_impl::__JniBaseClass arg0, jarray arg1);
+		static QAndroidJniObject open(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jarray arg2);
+		void force(jboolean arg0);
 		QAndroidJniObject lock();
 		QAndroidJniObject lock(jlong arg0, jlong arg1, jboolean arg2);
-		jlong size();
 		QAndroidJniObject map(__jni_impl::java::nio::channels::FileChannel_MapMode arg0, jlong arg1, jlong arg2);
 		QAndroidJniObject position(jlong arg0);
 		jlong position();
-		jint write(__jni_impl::java::nio::ByteBuffer arg0, jlong arg1);
-		jint write(__jni_impl::java::nio::ByteBuffer arg0);
-		jlong write(jarray arg0, jint arg1, jint arg2);
-		jlong write(jarray arg0);
 		jint read(__jni_impl::java::nio::ByteBuffer arg0);
 		jint read(__jni_impl::java::nio::ByteBuffer arg0, jlong arg1);
 		jlong read(jarray arg0);
 		jlong read(jarray arg0, jint arg1, jint arg2);
-		static QAndroidJniObject open(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jarray arg2);
-		static QAndroidJniObject open(__jni_impl::__JniBaseClass arg0, jarray arg1);
-		jlong transferTo(jlong arg0, jlong arg1, __jni_impl::__JniBaseClass arg2);
-		QAndroidJniObject tryLock(jlong arg0, jlong arg1, jboolean arg2);
-		QAndroidJniObject tryLock();
-		void force(jboolean arg0);
-		QAndroidJniObject truncate(jlong arg0);
+		jlong size();
 		jlong transferFrom(__jni_impl::__JniBaseClass arg0, jlong arg1, jlong arg2);
+		jlong transferTo(jlong arg0, jlong arg1, __jni_impl::__JniBaseClass arg2);
+		QAndroidJniObject truncate(jlong arg0);
+		QAndroidJniObject tryLock();
+		QAndroidJniObject tryLock(jlong arg0, jlong arg1, jboolean arg2);
+		jint write(__jni_impl::java::nio::ByteBuffer arg0);
+		jint write(__jni_impl::java::nio::ByteBuffer arg0, jlong arg1);
+		jlong write(jarray arg0);
+		jlong write(jarray arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::java::nio::channels
 
-#include "FileLock.hpp"
+#include "../ByteBuffer.hpp"
 #include "../MappedByteBuffer.hpp"
 #include "FileChannel_MapMode.hpp"
-#include "../ByteBuffer.hpp"
+#include "FileLock.hpp"
 
 namespace __jni_impl::java::nio::channels
 {
@@ -77,6 +77,35 @@ namespace __jni_impl::java::nio::channels
 	}
 	
 	// Methods
+	QAndroidJniObject FileChannel::open(__jni_impl::__JniBaseClass arg0, jarray arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.channels.FileChannel",
+			"open",
+			"(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/nio/channels/FileChannel;",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	QAndroidJniObject FileChannel::open(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jarray arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.channels.FileChannel",
+			"open",
+			"(Ljava/nio/file/Path;Ljava/util/Set;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/channels/FileChannel;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
+		);
+	}
+	void FileChannel::force(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"force",
+			"(Z)V",
+			arg0
+		);
+	}
 	QAndroidJniObject FileChannel::lock()
 	{
 		return __thiz.callObjectMethod(
@@ -92,13 +121,6 @@ namespace __jni_impl::java::nio::channels
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	jlong FileChannel::size()
-	{
-		return __thiz.callMethod<jlong>(
-			"size",
-			"()J"
 		);
 	}
 	QAndroidJniObject FileChannel::map(__jni_impl::java::nio::channels::FileChannel_MapMode arg0, jlong arg1, jlong arg2)
@@ -124,41 +146,6 @@ namespace __jni_impl::java::nio::channels
 		return __thiz.callMethod<jlong>(
 			"position",
 			"()J"
-		);
-	}
-	jint FileChannel::write(__jni_impl::java::nio::ByteBuffer arg0, jlong arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"write",
-			"(Ljava/nio/ByteBuffer;J)I",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jint FileChannel::write(__jni_impl::java::nio::ByteBuffer arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"write",
-			"(Ljava/nio/ByteBuffer;)I",
-			arg0.__jniObject().object()
-		);
-	}
-	jlong FileChannel::write(jarray arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callMethod<jlong>(
-			"write",
-			"([Ljava/nio/ByteBuffer;II)J",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jlong FileChannel::write(jarray arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"write",
-			"([Ljava/nio/ByteBuffer;)J",
-			arg0
 		);
 	}
 	jint FileChannel::read(__jni_impl::java::nio::ByteBuffer arg0)
@@ -196,25 +183,21 @@ namespace __jni_impl::java::nio::channels
 			arg2
 		);
 	}
-	QAndroidJniObject FileChannel::open(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, jarray arg2)
+	jlong FileChannel::size()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.channels.FileChannel",
-			"open",
-			"(Ljava/nio/file/Path;Ljava/util/Set;[Ljava/nio/file/attribute/FileAttribute;)Ljava/nio/channels/FileChannel;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
+		return __thiz.callMethod<jlong>(
+			"size",
+			"()J"
 		);
 	}
-	QAndroidJniObject FileChannel::open(__jni_impl::__JniBaseClass arg0, jarray arg1)
+	jlong FileChannel::transferFrom(__jni_impl::__JniBaseClass arg0, jlong arg1, jlong arg2)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.channels.FileChannel",
-			"open",
-			"(Ljava/nio/file/Path;[Ljava/nio/file/OpenOption;)Ljava/nio/channels/FileChannel;",
+		return __thiz.callMethod<jlong>(
+			"transferFrom",
+			"(Ljava/nio/channels/ReadableByteChannel;JJ)J",
 			arg0.__jniObject().object(),
-			arg1
+			arg1,
+			arg2
 		);
 	}
 	jlong FileChannel::transferTo(jlong arg0, jlong arg1, __jni_impl::__JniBaseClass arg2)
@@ -227,6 +210,21 @@ namespace __jni_impl::java::nio::channels
 			arg2.__jniObject().object()
 		);
 	}
+	QAndroidJniObject FileChannel::truncate(jlong arg0)
+	{
+		return __thiz.callObjectMethod(
+			"truncate",
+			"(J)Ljava/nio/channels/FileChannel;",
+			arg0
+		);
+	}
+	QAndroidJniObject FileChannel::tryLock()
+	{
+		return __thiz.callObjectMethod(
+			"tryLock",
+			"()Ljava/nio/channels/FileLock;"
+		);
+	}
 	QAndroidJniObject FileChannel::tryLock(jlong arg0, jlong arg1, jboolean arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -237,35 +235,37 @@ namespace __jni_impl::java::nio::channels
 			arg2
 		);
 	}
-	QAndroidJniObject FileChannel::tryLock()
+	jint FileChannel::write(__jni_impl::java::nio::ByteBuffer arg0)
 	{
-		return __thiz.callObjectMethod(
-			"tryLock",
-			"()Ljava/nio/channels/FileLock;"
+		return __thiz.callMethod<jint>(
+			"write",
+			"(Ljava/nio/ByteBuffer;)I",
+			arg0.__jniObject().object()
 		);
 	}
-	void FileChannel::force(jboolean arg0)
+	jint FileChannel::write(__jni_impl::java::nio::ByteBuffer arg0, jlong arg1)
 	{
-		__thiz.callMethod<void>(
-			"force",
-			"(Z)V",
-			arg0
+		return __thiz.callMethod<jint>(
+			"write",
+			"(Ljava/nio/ByteBuffer;J)I",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
-	QAndroidJniObject FileChannel::truncate(jlong arg0)
-	{
-		return __thiz.callObjectMethod(
-			"truncate",
-			"(J)Ljava/nio/channels/FileChannel;",
-			arg0
-		);
-	}
-	jlong FileChannel::transferFrom(__jni_impl::__JniBaseClass arg0, jlong arg1, jlong arg2)
+	jlong FileChannel::write(jarray arg0)
 	{
 		return __thiz.callMethod<jlong>(
-			"transferFrom",
-			"(Ljava/nio/channels/ReadableByteChannel;JJ)J",
-			arg0.__jniObject().object(),
+			"write",
+			"([Ljava/nio/ByteBuffer;)J",
+			arg0
+		);
+	}
+	jlong FileChannel::write(jarray arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callMethod<jlong>(
+			"write",
+			"([Ljava/nio/ByteBuffer;II)J",
+			arg0,
 			arg1,
 			arg2
 		);

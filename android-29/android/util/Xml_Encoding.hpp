@@ -13,18 +13,18 @@ namespace __jni_impl::android::util
 	{
 	public:
 		// Fields
-		static QAndroidJniObject US_ASCII();
-		static QAndroidJniObject UTF_8();
-		static QAndroidJniObject UTF_16();
 		static QAndroidJniObject ISO_8859_1();
+		static QAndroidJniObject US_ASCII();
+		static QAndroidJniObject UTF_16();
+		static QAndroidJniObject UTF_8();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::util
 
@@ -32,19 +32,19 @@ namespace __jni_impl::android::util
 namespace __jni_impl::android::util
 {
 	// Fields
+	QAndroidJniObject Xml_Encoding::ISO_8859_1()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.util.Xml$Encoding",
+			"ISO_8859_1",
+			"Landroid/util/Xml$Encoding;"
+		);
+	}
 	QAndroidJniObject Xml_Encoding::US_ASCII()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Xml$Encoding",
 			"US_ASCII",
-			"Landroid/util/Xml$Encoding;"
-		);
-	}
-	QAndroidJniObject Xml_Encoding::UTF_8()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.util.Xml$Encoding",
-			"UTF_8",
 			"Landroid/util/Xml$Encoding;"
 		);
 	}
@@ -56,11 +56,11 @@ namespace __jni_impl::android::util
 			"Landroid/util/Xml$Encoding;"
 		);
 	}
-	QAndroidJniObject Xml_Encoding::ISO_8859_1()
+	QAndroidJniObject Xml_Encoding::UTF_8()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.util.Xml$Encoding",
-			"ISO_8859_1",
+			"UTF_8",
 			"Landroid/util/Xml$Encoding;"
 		);
 	}
@@ -74,14 +74,6 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
-	jarray Xml_Encoding::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.util.Xml$Encoding",
-			"values",
-			"()[Landroid/util/Xml$Encoding;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Xml_Encoding::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -99,6 +91,14 @@ namespace __jni_impl::android::util
 			"(Ljava/lang/String;)Landroid/util/Xml$Encoding;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Xml_Encoding::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.util.Xml$Encoding",
+			"values",
+			"()[Landroid/util/Xml$Encoding;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::util
 

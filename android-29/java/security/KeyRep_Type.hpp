@@ -13,17 +13,17 @@ namespace __jni_impl::java::security
 	{
 	public:
 		// Fields
-		static QAndroidJniObject SECRET();
-		static QAndroidJniObject PUBLIC();
 		static QAndroidJniObject PRIVATE();
+		static QAndroidJniObject PUBLIC();
+		static QAndroidJniObject SECRET();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::security
 
@@ -31,11 +31,11 @@ namespace __jni_impl::java::security
 namespace __jni_impl::java::security
 {
 	// Fields
-	QAndroidJniObject KeyRep_Type::SECRET()
+	QAndroidJniObject KeyRep_Type::PRIVATE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.KeyRep$Type",
-			"SECRET",
+			"PRIVATE",
 			"Ljava/security/KeyRep$Type;"
 		);
 	}
@@ -47,11 +47,11 @@ namespace __jni_impl::java::security
 			"Ljava/security/KeyRep$Type;"
 		);
 	}
-	QAndroidJniObject KeyRep_Type::PRIVATE()
+	QAndroidJniObject KeyRep_Type::SECRET()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.KeyRep$Type",
-			"PRIVATE",
+			"SECRET",
 			"Ljava/security/KeyRep$Type;"
 		);
 	}
@@ -65,14 +65,6 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	jarray KeyRep_Type::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.KeyRep$Type",
-			"values",
-			"()[Ljava/security/KeyRep$Type;"
-		).object<jarray>();
-	}
 	QAndroidJniObject KeyRep_Type::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::java::security
 			"(Ljava/lang/String;)Ljava/security/KeyRep$Type;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray KeyRep_Type::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.KeyRep$Type",
+			"values",
+			"()[Ljava/security/KeyRep$Type;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::security
 

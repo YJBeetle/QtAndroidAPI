@@ -5,18 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
-namespace __jni_impl::android::content::pm
-{
-	class ShortcutInfo;
-}
 namespace __jni_impl::android::appwidget
 {
 	class AppWidgetProviderInfo;
@@ -24,6 +12,18 @@ namespace __jni_impl::android::appwidget
 namespace __jni_impl::android::content
 {
 	class Context;
+}
+namespace __jni_impl::android::content::pm
+{
+	class ShortcutInfo;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::content::pm
@@ -40,23 +40,23 @@ namespace __jni_impl::android::content::pm
 		void __constructor();
 		
 		// Methods
-		jboolean accept(__jni_impl::android::os::Bundle arg0);
 		jboolean accept();
-		jboolean isValid();
+		jboolean accept(__jni_impl::android::os::Bundle arg0);
+		jint describeContents();
+		QAndroidJniObject getAppWidgetProviderInfo(__jni_impl::android::content::Context arg0);
+		QAndroidJniObject getExtras();
 		jint getRequestType();
 		QAndroidJniObject getShortcutInfo();
-		QAndroidJniObject getAppWidgetProviderInfo(__jni_impl::android::content::Context arg0);
-		jint describeContents();
+		jboolean isValid();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getExtras();
 	};
 } // namespace __jni_impl::android::content::pm
 
-#include "../../os/Parcel.hpp"
-#include "../../os/Bundle.hpp"
-#include "ShortcutInfo.hpp"
 #include "../../appwidget/AppWidgetProviderInfo.hpp"
 #include "../Context.hpp"
+#include "ShortcutInfo.hpp"
+#include "../../os/Bundle.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::content::pm
 {
@@ -93,6 +93,13 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
+	jboolean LauncherApps_PinItemRequest::accept()
+	{
+		return __thiz.callMethod<jboolean>(
+			"accept",
+			"()Z"
+		);
+	}
 	jboolean LauncherApps_PinItemRequest::accept(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -101,18 +108,26 @@ namespace __jni_impl::android::content::pm
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean LauncherApps_PinItemRequest::accept()
+	jint LauncherApps_PinItemRequest::describeContents()
 	{
-		return __thiz.callMethod<jboolean>(
-			"accept",
-			"()Z"
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
 		);
 	}
-	jboolean LauncherApps_PinItemRequest::isValid()
+	QAndroidJniObject LauncherApps_PinItemRequest::getAppWidgetProviderInfo(__jni_impl::android::content::Context arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isValid",
-			"()Z"
+		return __thiz.callObjectMethod(
+			"getAppWidgetProviderInfo",
+			"(Landroid/content/Context;)Landroid/appwidget/AppWidgetProviderInfo;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject LauncherApps_PinItemRequest::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
 		);
 	}
 	jint LauncherApps_PinItemRequest::getRequestType()
@@ -129,19 +144,11 @@ namespace __jni_impl::android::content::pm
 			"()Landroid/content/pm/ShortcutInfo;"
 		);
 	}
-	QAndroidJniObject LauncherApps_PinItemRequest::getAppWidgetProviderInfo(__jni_impl::android::content::Context arg0)
+	jboolean LauncherApps_PinItemRequest::isValid()
 	{
-		return __thiz.callObjectMethod(
-			"getAppWidgetProviderInfo",
-			"(Landroid/content/Context;)Landroid/appwidget/AppWidgetProviderInfo;",
-			arg0.__jniObject().object()
-		);
-	}
-	jint LauncherApps_PinItemRequest::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"isValid",
+			"()Z"
 		);
 	}
 	void LauncherApps_PinItemRequest::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
@@ -151,13 +158,6 @@ namespace __jni_impl::android::content::pm
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject LauncherApps_PinItemRequest::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
 		);
 	}
 } // namespace __jni_impl::android::content::pm

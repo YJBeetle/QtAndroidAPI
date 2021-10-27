@@ -22,8 +22,8 @@ namespace __jni_impl::android::telephony
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jint hashCode();
 		void finish();
+		jint hashCode();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -50,18 +50,18 @@ namespace __jni_impl::android::telephony
 			arg0
 		);
 	}
-	jint VisualVoicemailService_VisualVoicemailTask::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	void VisualVoicemailService_VisualVoicemailTask::finish()
 	{
 		__thiz.callMethod<void>(
 			"finish",
 			"()V"
+		);
+	}
+	jint VisualVoicemailService_VisualVoicemailTask::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::telephony

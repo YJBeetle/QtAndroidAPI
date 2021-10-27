@@ -25,8 +25,8 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		QAndroidJniObject getComplexityRange();
-		jboolean isBitrateModeSupported(jint arg0);
 		QAndroidJniObject getQualityRange();
+		jboolean isBitrateModeSupported(jint arg0);
 	};
 } // namespace __jni_impl::android::media
 
@@ -73,19 +73,19 @@ namespace __jni_impl::android::media
 			"()Landroid/util/Range;"
 		);
 	}
+	QAndroidJniObject MediaCodecInfo_EncoderCapabilities::getQualityRange()
+	{
+		return __thiz.callObjectMethod(
+			"getQualityRange",
+			"()Landroid/util/Range;"
+		);
+	}
 	jboolean MediaCodecInfo_EncoderCapabilities::isBitrateModeSupported(jint arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"isBitrateModeSupported",
 			"(I)Z",
 			arg0
-		);
-	}
-	QAndroidJniObject MediaCodecInfo_EncoderCapabilities::getQualityRange()
-	{
-		return __thiz.callObjectMethod(
-			"getQualityRange",
-			"()Landroid/util/Range;"
 		);
 	}
 } // namespace __jni_impl::android::media

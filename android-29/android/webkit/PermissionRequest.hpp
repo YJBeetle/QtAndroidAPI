@@ -25,10 +25,10 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		jarray getResources();
 		void deny();
-		void grant(jarray arg0);
 		QAndroidJniObject getOrigin();
+		jarray getResources();
+		void grant(jarray arg0);
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -80,13 +80,6 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	jarray PermissionRequest::getResources()
-	{
-		return __thiz.callObjectMethod(
-			"getResources",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
 	void PermissionRequest::deny()
 	{
 		__thiz.callMethod<void>(
@@ -94,19 +87,26 @@ namespace __jni_impl::android::webkit
 			"()V"
 		);
 	}
+	QAndroidJniObject PermissionRequest::getOrigin()
+	{
+		return __thiz.callObjectMethod(
+			"getOrigin",
+			"()Landroid/net/Uri;"
+		);
+	}
+	jarray PermissionRequest::getResources()
+	{
+		return __thiz.callObjectMethod(
+			"getResources",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
 	void PermissionRequest::grant(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"grant",
 			"([Ljava/lang/String;)V",
 			arg0
-		);
-	}
-	QAndroidJniObject PermissionRequest::getOrigin()
-	{
-		return __thiz.callObjectMethod(
-			"getOrigin",
-			"()Landroid/net/Uri;"
 		);
 	}
 } // namespace __jni_impl::android::webkit

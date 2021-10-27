@@ -22,15 +22,15 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jfloat getRefreshRate();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getPhysicalWidth();
+		jboolean equals(jobject arg0);
 		jint getModeId();
 		jint getPhysicalHeight();
+		jint getPhysicalWidth();
+		jfloat getRefreshRate();
+		jint hashCode();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
 
@@ -57,35 +57,6 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jboolean Display_Mode::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring Display_Mode::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint Display_Mode::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jfloat Display_Mode::getRefreshRate()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getRefreshRate",
-			"()F"
-		);
-	}
 	jint Display_Mode::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -93,20 +64,12 @@ namespace __jni_impl::android::view
 			"()I"
 		);
 	}
-	void Display_Mode::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jboolean Display_Mode::equals(jobject arg0)
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jint Display_Mode::getPhysicalWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getPhysicalWidth",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 	jint Display_Mode::getModeId()
@@ -121,6 +84,43 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jint>(
 			"getPhysicalHeight",
 			"()I"
+		);
+	}
+	jint Display_Mode::getPhysicalWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getPhysicalWidth",
+			"()I"
+		);
+	}
+	jfloat Display_Mode::getRefreshRate()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getRefreshRate",
+			"()F"
+		);
+	}
+	jint Display_Mode::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring Display_Mode::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void Display_Mode::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::view

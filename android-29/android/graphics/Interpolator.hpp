@@ -22,10 +22,10 @@ namespace __jni_impl::android::graphics
 		void __constructor(jint arg0, jint arg1);
 		
 		// Methods
-		void reset(jint arg0, jint arg1);
-		void reset(jint arg0);
 		jint getKeyFrameCount();
 		jint getValueCount();
+		void reset(jint arg0);
+		void reset(jint arg0, jint arg1);
 		void setKeyFrame(jint arg0, jint arg1, jfloatArray arg2);
 		void setKeyFrame(jint arg0, jint arg1, jfloatArray arg2, jfloatArray arg3);
 		void setRepeatMirror(jfloat arg0, jboolean arg1);
@@ -60,23 +60,6 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	void Interpolator::reset(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"reset",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void Interpolator::reset(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"reset",
-			"(I)V",
-			arg0
-		);
-	}
 	jint Interpolator::getKeyFrameCount()
 	{
 		return __thiz.callMethod<jint>(
@@ -89,6 +72,23 @@ namespace __jni_impl::android::graphics
 		return __thiz.callMethod<jint>(
 			"getValueCount",
 			"()I"
+		);
+	}
+	void Interpolator::reset(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"reset",
+			"(I)V",
+			arg0
+		);
+	}
+	void Interpolator::reset(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"reset",
+			"(II)V",
+			arg0,
+			arg1
 		);
 	}
 	void Interpolator::setKeyFrame(jint arg0, jint arg1, jfloatArray arg2)

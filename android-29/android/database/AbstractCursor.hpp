@@ -9,14 +9,6 @@ namespace __jni_impl::android::content
 {
 	class ContentResolver;
 }
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
-namespace __jni_impl::android::database
-{
-	class CursorWindow;
-}
 namespace __jni_impl::android::database
 {
 	class CharArrayBuffer;
@@ -27,11 +19,19 @@ namespace __jni_impl::android::database
 }
 namespace __jni_impl::android::database
 {
+	class CursorWindow;
+}
+namespace __jni_impl::android::database
+{
 	class DataSetObserver;
 }
 namespace __jni_impl::android::net
 {
 	class Uri;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 
 namespace __jni_impl::android::database
@@ -45,64 +45,64 @@ namespace __jni_impl::android::database
 		void __constructor();
 		
 		// Methods
-		jshort getShort(jint arg0);
-		jint getInt(jint arg0);
-		jlong getLong(jint arg0);
-		jfloat getFloat(jint arg0);
-		jdouble getDouble(jint arg0);
 		void close();
-		jint getType(jint arg0);
-		jboolean isNull(jint arg0);
-		jint getCount();
-		jstring getString(jint arg0);
-		jboolean move(jint arg0);
-		void setExtras(__jni_impl::android::os::Bundle arg0);
-		jboolean isClosed();
-		QAndroidJniObject getWindow();
-		QAndroidJniObject getExtras();
-		jint getColumnIndex(jstring arg0);
-		jint getColumnIndex(const QString &arg0);
-		jarray getColumnNames();
+		void copyStringToBuffer(jint arg0, __jni_impl::android::database::CharArrayBuffer arg1);
+		void deactivate();
+		void fillWindow(jint arg0, __jni_impl::android::database::CursorWindow arg1);
 		jbyteArray getBlob(jint arg0);
 		jint getColumnCount();
-		void deactivate();
-		jboolean requery();
-		jboolean onMove(jint arg0, jint arg1);
-		void copyStringToBuffer(jint arg0, __jni_impl::android::database::CharArrayBuffer arg1);
-		jint getPosition();
-		jboolean moveToPosition(jint arg0);
-		void fillWindow(jint arg0, __jni_impl::android::database::CursorWindow arg1);
-		jboolean moveToFirst();
-		jboolean moveToLast();
-		jboolean moveToNext();
-		jboolean moveToPrevious();
-		jboolean isFirst();
-		jboolean isLast();
-		jboolean isBeforeFirst();
-		jboolean isAfterLast();
+		jint getColumnIndex(jstring arg0);
+		jint getColumnIndex(const QString &arg0);
 		jint getColumnIndexOrThrow(jstring arg0);
 		jint getColumnIndexOrThrow(const QString &arg0);
 		jstring getColumnName(jint arg0);
-		void registerContentObserver(__jni_impl::android::database::ContentObserver arg0);
-		void unregisterContentObserver(__jni_impl::android::database::ContentObserver arg0);
-		void registerDataSetObserver(__jni_impl::android::database::DataSetObserver arg0);
-		void unregisterDataSetObserver(__jni_impl::android::database::DataSetObserver arg0);
-		void setNotificationUri(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1);
-		void setNotificationUris(__jni_impl::android::content::ContentResolver arg0, __jni_impl::__JniBaseClass arg1);
+		jarray getColumnNames();
+		jint getCount();
+		jdouble getDouble(jint arg0);
+		QAndroidJniObject getExtras();
+		jfloat getFloat(jint arg0);
+		jint getInt(jint arg0);
+		jlong getLong(jint arg0);
 		QAndroidJniObject getNotificationUri();
 		QAndroidJniObject getNotificationUris();
+		jint getPosition();
+		jshort getShort(jint arg0);
+		jstring getString(jint arg0);
+		jint getType(jint arg0);
 		jboolean getWantsAllOnMoveCalls();
+		QAndroidJniObject getWindow();
+		jboolean isAfterLast();
+		jboolean isBeforeFirst();
+		jboolean isClosed();
+		jboolean isFirst();
+		jboolean isLast();
+		jboolean isNull(jint arg0);
+		jboolean move(jint arg0);
+		jboolean moveToFirst();
+		jboolean moveToLast();
+		jboolean moveToNext();
+		jboolean moveToPosition(jint arg0);
+		jboolean moveToPrevious();
+		jboolean onMove(jint arg0, jint arg1);
+		void registerContentObserver(__jni_impl::android::database::ContentObserver arg0);
+		void registerDataSetObserver(__jni_impl::android::database::DataSetObserver arg0);
+		jboolean requery();
 		QAndroidJniObject respond(__jni_impl::android::os::Bundle arg0);
+		void setExtras(__jni_impl::android::os::Bundle arg0);
+		void setNotificationUri(__jni_impl::android::content::ContentResolver arg0, __jni_impl::android::net::Uri arg1);
+		void setNotificationUris(__jni_impl::android::content::ContentResolver arg0, __jni_impl::__JniBaseClass arg1);
+		void unregisterContentObserver(__jni_impl::android::database::ContentObserver arg0);
+		void unregisterDataSetObserver(__jni_impl::android::database::DataSetObserver arg0);
 	};
 } // namespace __jni_impl::android::database
 
 #include "../content/ContentResolver.hpp"
-#include "../os/Bundle.hpp"
-#include "CursorWindow.hpp"
 #include "CharArrayBuffer.hpp"
 #include "ContentObserver.hpp"
+#include "CursorWindow.hpp"
 #include "DataSetObserver.hpp"
 #include "../net/Uri.hpp"
+#include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::database
 {
@@ -118,46 +118,6 @@ namespace __jni_impl::android::database
 	}
 	
 	// Methods
-	jshort AbstractCursor::getShort(jint arg0)
-	{
-		return __thiz.callMethod<jshort>(
-			"getShort",
-			"(I)S",
-			arg0
-		);
-	}
-	jint AbstractCursor::getInt(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getInt",
-			"(I)I",
-			arg0
-		);
-	}
-	jlong AbstractCursor::getLong(jint arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"getLong",
-			"(I)J",
-			arg0
-		);
-	}
-	jfloat AbstractCursor::getFloat(jint arg0)
-	{
-		return __thiz.callMethod<jfloat>(
-			"getFloat",
-			"(I)F",
-			arg0
-		);
-	}
-	jdouble AbstractCursor::getDouble(jint arg0)
-	{
-		return __thiz.callMethod<jdouble>(
-			"getDouble",
-			"(I)D",
-			arg0
-		);
-	}
 	void AbstractCursor::close()
 	{
 		__thiz.callMethod<void>(
@@ -165,96 +125,30 @@ namespace __jni_impl::android::database
 			"()V"
 		);
 	}
-	jint AbstractCursor::getType(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getType",
-			"(I)I",
-			arg0
-		);
-	}
-	jboolean AbstractCursor::isNull(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isNull",
-			"(I)Z",
-			arg0
-		);
-	}
-	jint AbstractCursor::getCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getCount",
-			"()I"
-		);
-	}
-	jstring AbstractCursor::getString(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getString",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jboolean AbstractCursor::move(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"move",
-			"(I)Z",
-			arg0
-		);
-	}
-	void AbstractCursor::setExtras(__jni_impl::android::os::Bundle arg0)
+	void AbstractCursor::copyStringToBuffer(jint arg0, __jni_impl::android::database::CharArrayBuffer arg1)
 	{
 		__thiz.callMethod<void>(
-			"setExtras",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			"copyStringToBuffer",
+			"(ILandroid/database/CharArrayBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
-	jboolean AbstractCursor::isClosed()
+	void AbstractCursor::deactivate()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isClosed",
-			"()Z"
+		__thiz.callMethod<void>(
+			"deactivate",
+			"()V"
 		);
 	}
-	QAndroidJniObject AbstractCursor::getWindow()
+	void AbstractCursor::fillWindow(jint arg0, __jni_impl::android::database::CursorWindow arg1)
 	{
-		return __thiz.callObjectMethod(
-			"getWindow",
-			"()Landroid/database/CursorWindow;"
+		__thiz.callMethod<void>(
+			"fillWindow",
+			"(ILandroid/database/CursorWindow;)V",
+			arg0,
+			arg1.__jniObject().object()
 		);
-	}
-	QAndroidJniObject AbstractCursor::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
-		);
-	}
-	jint AbstractCursor::getColumnIndex(jstring arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnIndex",
-			"(Ljava/lang/String;)I",
-			arg0
-		);
-	}
-	jint AbstractCursor::getColumnIndex(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnIndex",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jarray AbstractCursor::getColumnNames()
-	{
-		return __thiz.callObjectMethod(
-			"getColumnNames",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
 	}
 	jbyteArray AbstractCursor::getBlob(jint arg0)
 	{
@@ -271,116 +165,20 @@ namespace __jni_impl::android::database
 			"()I"
 		);
 	}
-	void AbstractCursor::deactivate()
-	{
-		__thiz.callMethod<void>(
-			"deactivate",
-			"()V"
-		);
-	}
-	jboolean AbstractCursor::requery()
-	{
-		return __thiz.callMethod<jboolean>(
-			"requery",
-			"()Z"
-		);
-	}
-	jboolean AbstractCursor::onMove(jint arg0, jint arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onMove",
-			"(II)Z",
-			arg0,
-			arg1
-		);
-	}
-	void AbstractCursor::copyStringToBuffer(jint arg0, __jni_impl::android::database::CharArrayBuffer arg1)
-	{
-		__thiz.callMethod<void>(
-			"copyStringToBuffer",
-			"(ILandroid/database/CharArrayBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jint AbstractCursor::getPosition()
+	jint AbstractCursor::getColumnIndex(jstring arg0)
 	{
 		return __thiz.callMethod<jint>(
-			"getPosition",
-			"()I"
-		);
-	}
-	jboolean AbstractCursor::moveToPosition(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"moveToPosition",
-			"(I)Z",
+			"getColumnIndex",
+			"(Ljava/lang/String;)I",
 			arg0
 		);
 	}
-	void AbstractCursor::fillWindow(jint arg0, __jni_impl::android::database::CursorWindow arg1)
+	jint AbstractCursor::getColumnIndex(const QString &arg0)
 	{
-		__thiz.callMethod<void>(
-			"fillWindow",
-			"(ILandroid/database/CursorWindow;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean AbstractCursor::moveToFirst()
-	{
-		return __thiz.callMethod<jboolean>(
-			"moveToFirst",
-			"()Z"
-		);
-	}
-	jboolean AbstractCursor::moveToLast()
-	{
-		return __thiz.callMethod<jboolean>(
-			"moveToLast",
-			"()Z"
-		);
-	}
-	jboolean AbstractCursor::moveToNext()
-	{
-		return __thiz.callMethod<jboolean>(
-			"moveToNext",
-			"()Z"
-		);
-	}
-	jboolean AbstractCursor::moveToPrevious()
-	{
-		return __thiz.callMethod<jboolean>(
-			"moveToPrevious",
-			"()Z"
-		);
-	}
-	jboolean AbstractCursor::isFirst()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFirst",
-			"()Z"
-		);
-	}
-	jboolean AbstractCursor::isLast()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isLast",
-			"()Z"
-		);
-	}
-	jboolean AbstractCursor::isBeforeFirst()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isBeforeFirst",
-			"()Z"
-		);
-	}
-	jboolean AbstractCursor::isAfterLast()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAfterLast",
-			"()Z"
+		return __thiz.callMethod<jint>(
+			"getColumnIndex",
+			"(Ljava/lang/String;)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jint AbstractCursor::getColumnIndexOrThrow(jstring arg0)
@@ -407,18 +205,218 @@ namespace __jni_impl::android::database
 			arg0
 		).object<jstring>();
 	}
+	jarray AbstractCursor::getColumnNames()
+	{
+		return __thiz.callObjectMethod(
+			"getColumnNames",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	jint AbstractCursor::getCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getCount",
+			"()I"
+		);
+	}
+	jdouble AbstractCursor::getDouble(jint arg0)
+	{
+		return __thiz.callMethod<jdouble>(
+			"getDouble",
+			"(I)D",
+			arg0
+		);
+	}
+	QAndroidJniObject AbstractCursor::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	jfloat AbstractCursor::getFloat(jint arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getFloat",
+			"(I)F",
+			arg0
+		);
+	}
+	jint AbstractCursor::getInt(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getInt",
+			"(I)I",
+			arg0
+		);
+	}
+	jlong AbstractCursor::getLong(jint arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"getLong",
+			"(I)J",
+			arg0
+		);
+	}
+	QAndroidJniObject AbstractCursor::getNotificationUri()
+	{
+		return __thiz.callObjectMethod(
+			"getNotificationUri",
+			"()Landroid/net/Uri;"
+		);
+	}
+	QAndroidJniObject AbstractCursor::getNotificationUris()
+	{
+		return __thiz.callObjectMethod(
+			"getNotificationUris",
+			"()Ljava/util/List;"
+		);
+	}
+	jint AbstractCursor::getPosition()
+	{
+		return __thiz.callMethod<jint>(
+			"getPosition",
+			"()I"
+		);
+	}
+	jshort AbstractCursor::getShort(jint arg0)
+	{
+		return __thiz.callMethod<jshort>(
+			"getShort",
+			"(I)S",
+			arg0
+		);
+	}
+	jstring AbstractCursor::getString(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getString",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jint AbstractCursor::getType(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getType",
+			"(I)I",
+			arg0
+		);
+	}
+	jboolean AbstractCursor::getWantsAllOnMoveCalls()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getWantsAllOnMoveCalls",
+			"()Z"
+		);
+	}
+	QAndroidJniObject AbstractCursor::getWindow()
+	{
+		return __thiz.callObjectMethod(
+			"getWindow",
+			"()Landroid/database/CursorWindow;"
+		);
+	}
+	jboolean AbstractCursor::isAfterLast()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAfterLast",
+			"()Z"
+		);
+	}
+	jboolean AbstractCursor::isBeforeFirst()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isBeforeFirst",
+			"()Z"
+		);
+	}
+	jboolean AbstractCursor::isClosed()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isClosed",
+			"()Z"
+		);
+	}
+	jboolean AbstractCursor::isFirst()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFirst",
+			"()Z"
+		);
+	}
+	jboolean AbstractCursor::isLast()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLast",
+			"()Z"
+		);
+	}
+	jboolean AbstractCursor::isNull(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isNull",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean AbstractCursor::move(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"move",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean AbstractCursor::moveToFirst()
+	{
+		return __thiz.callMethod<jboolean>(
+			"moveToFirst",
+			"()Z"
+		);
+	}
+	jboolean AbstractCursor::moveToLast()
+	{
+		return __thiz.callMethod<jboolean>(
+			"moveToLast",
+			"()Z"
+		);
+	}
+	jboolean AbstractCursor::moveToNext()
+	{
+		return __thiz.callMethod<jboolean>(
+			"moveToNext",
+			"()Z"
+		);
+	}
+	jboolean AbstractCursor::moveToPosition(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"moveToPosition",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean AbstractCursor::moveToPrevious()
+	{
+		return __thiz.callMethod<jboolean>(
+			"moveToPrevious",
+			"()Z"
+		);
+	}
+	jboolean AbstractCursor::onMove(jint arg0, jint arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onMove",
+			"(II)Z",
+			arg0,
+			arg1
+		);
+	}
 	void AbstractCursor::registerContentObserver(__jni_impl::android::database::ContentObserver arg0)
 	{
 		__thiz.callMethod<void>(
 			"registerContentObserver",
-			"(Landroid/database/ContentObserver;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void AbstractCursor::unregisterContentObserver(__jni_impl::android::database::ContentObserver arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterContentObserver",
 			"(Landroid/database/ContentObserver;)V",
 			arg0.__jniObject().object()
 		);
@@ -431,11 +429,26 @@ namespace __jni_impl::android::database
 			arg0.__jniObject().object()
 		);
 	}
-	void AbstractCursor::unregisterDataSetObserver(__jni_impl::android::database::DataSetObserver arg0)
+	jboolean AbstractCursor::requery()
+	{
+		return __thiz.callMethod<jboolean>(
+			"requery",
+			"()Z"
+		);
+	}
+	QAndroidJniObject AbstractCursor::respond(__jni_impl::android::os::Bundle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"respond",
+			"(Landroid/os/Bundle;)Landroid/os/Bundle;",
+			arg0.__jniObject().object()
+		);
+	}
+	void AbstractCursor::setExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
-			"unregisterDataSetObserver",
-			"(Landroid/database/DataSetObserver;)V",
+			"setExtras",
+			"(Landroid/os/Bundle;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -457,32 +470,19 @@ namespace __jni_impl::android::database
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject AbstractCursor::getNotificationUri()
+	void AbstractCursor::unregisterContentObserver(__jni_impl::android::database::ContentObserver arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getNotificationUri",
-			"()Landroid/net/Uri;"
+		__thiz.callMethod<void>(
+			"unregisterContentObserver",
+			"(Landroid/database/ContentObserver;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject AbstractCursor::getNotificationUris()
+	void AbstractCursor::unregisterDataSetObserver(__jni_impl::android::database::DataSetObserver arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getNotificationUris",
-			"()Ljava/util/List;"
-		);
-	}
-	jboolean AbstractCursor::getWantsAllOnMoveCalls()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getWantsAllOnMoveCalls",
-			"()Z"
-		);
-	}
-	QAndroidJniObject AbstractCursor::respond(__jni_impl::android::os::Bundle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"respond",
-			"(Landroid/os/Bundle;)Landroid/os/Bundle;",
+		__thiz.callMethod<void>(
+			"unregisterDataSetObserver",
+			"(Landroid/database/DataSetObserver;)V",
 			arg0.__jniObject().object()
 		);
 	}

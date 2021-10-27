@@ -22,24 +22,24 @@ namespace __jni_impl::android::mtp
 		void __constructor(__jni_impl::android::mtp::MtpObjectInfo arg0);
 		
 		// Methods
-		QAndroidJniObject setName(jstring arg0);
-		QAndroidJniObject setName(const QString &arg0);
 		QAndroidJniObject build();
-		QAndroidJniObject setParent(jint arg0);
-		QAndroidJniObject setCompressedSize(jlong arg0);
-		QAndroidJniObject setFormat(jint arg0);
-		QAndroidJniObject setSequenceNumber(jlong arg0);
-		QAndroidJniObject setObjectHandle(jint arg0);
 		QAndroidJniObject setAssociationDesc(jint arg0);
 		QAndroidJniObject setAssociationType(jint arg0);
+		QAndroidJniObject setCompressedSize(jlong arg0);
 		QAndroidJniObject setDateCreated(jlong arg0);
 		QAndroidJniObject setDateModified(jlong arg0);
+		QAndroidJniObject setFormat(jint arg0);
 		QAndroidJniObject setImagePixDepth(jlong arg0);
 		QAndroidJniObject setImagePixHeight(jlong arg0);
 		QAndroidJniObject setImagePixWidth(jlong arg0);
 		QAndroidJniObject setKeywords(jstring arg0);
 		QAndroidJniObject setKeywords(const QString &arg0);
+		QAndroidJniObject setName(jstring arg0);
+		QAndroidJniObject setName(const QString &arg0);
+		QAndroidJniObject setObjectHandle(jint arg0);
+		QAndroidJniObject setParent(jint arg0);
 		QAndroidJniObject setProtectionStatus(jint arg0);
+		QAndroidJniObject setSequenceNumber(jlong arg0);
 		QAndroidJniObject setStorageId(jint arg0);
 		QAndroidJniObject setThumbCompressedSize(jlong arg0);
 		QAndroidJniObject setThumbFormat(jint arg0);
@@ -72,67 +72,11 @@ namespace __jni_impl::android::mtp
 	}
 	
 	// Methods
-	QAndroidJniObject MtpObjectInfo_Builder::setName(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setName",
-			"(Ljava/lang/String;)Landroid/mtp/MtpObjectInfo$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject MtpObjectInfo_Builder::setName(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setName",
-			"(Ljava/lang/String;)Landroid/mtp/MtpObjectInfo$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
 	QAndroidJniObject MtpObjectInfo_Builder::build()
 	{
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/mtp/MtpObjectInfo;"
-		);
-	}
-	QAndroidJniObject MtpObjectInfo_Builder::setParent(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setParent",
-			"(I)Landroid/mtp/MtpObjectInfo$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject MtpObjectInfo_Builder::setCompressedSize(jlong arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setCompressedSize",
-			"(J)Landroid/mtp/MtpObjectInfo$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject MtpObjectInfo_Builder::setFormat(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setFormat",
-			"(I)Landroid/mtp/MtpObjectInfo$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject MtpObjectInfo_Builder::setSequenceNumber(jlong arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSequenceNumber",
-			"(J)Landroid/mtp/MtpObjectInfo$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject MtpObjectInfo_Builder::setObjectHandle(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setObjectHandle",
-			"(I)Landroid/mtp/MtpObjectInfo$Builder;",
-			arg0
 		);
 	}
 	QAndroidJniObject MtpObjectInfo_Builder::setAssociationDesc(jint arg0)
@@ -151,6 +95,14 @@ namespace __jni_impl::android::mtp
 			arg0
 		);
 	}
+	QAndroidJniObject MtpObjectInfo_Builder::setCompressedSize(jlong arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setCompressedSize",
+			"(J)Landroid/mtp/MtpObjectInfo$Builder;",
+			arg0
+		);
+	}
 	QAndroidJniObject MtpObjectInfo_Builder::setDateCreated(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -164,6 +116,14 @@ namespace __jni_impl::android::mtp
 		return __thiz.callObjectMethod(
 			"setDateModified",
 			"(J)Landroid/mtp/MtpObjectInfo$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject MtpObjectInfo_Builder::setFormat(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setFormat",
+			"(I)Landroid/mtp/MtpObjectInfo$Builder;",
 			arg0
 		);
 	}
@@ -207,11 +167,51 @@ namespace __jni_impl::android::mtp
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
+	QAndroidJniObject MtpObjectInfo_Builder::setName(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setName",
+			"(Ljava/lang/String;)Landroid/mtp/MtpObjectInfo$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject MtpObjectInfo_Builder::setName(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setName",
+			"(Ljava/lang/String;)Landroid/mtp/MtpObjectInfo$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject MtpObjectInfo_Builder::setObjectHandle(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setObjectHandle",
+			"(I)Landroid/mtp/MtpObjectInfo$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject MtpObjectInfo_Builder::setParent(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setParent",
+			"(I)Landroid/mtp/MtpObjectInfo$Builder;",
+			arg0
+		);
+	}
 	QAndroidJniObject MtpObjectInfo_Builder::setProtectionStatus(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setProtectionStatus",
 			"(I)Landroid/mtp/MtpObjectInfo$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject MtpObjectInfo_Builder::setSequenceNumber(jlong arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setSequenceNumber",
+			"(J)Landroid/mtp/MtpObjectInfo$Builder;",
 			arg0
 		);
 	}

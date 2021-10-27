@@ -13,10 +13,6 @@ namespace __jni_impl::android::media::tv
 {
 	class TvRecordingClient_RecordingCallback;
 }
-namespace __jni_impl::android::os
-{
-	class Handler;
-}
 namespace __jni_impl::android::net
 {
 	class Uri;
@@ -24,6 +20,10 @@ namespace __jni_impl::android::net
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::os
+{
+	class Handler;
 }
 
 namespace __jni_impl::android::media::tv
@@ -39,22 +39,22 @@ namespace __jni_impl::android::media::tv
 		
 		// Methods
 		void release();
-		void startRecording(__jni_impl::android::net::Uri arg0);
-		void tune(jstring arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::os::Bundle arg2);
-		void tune(const QString &arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::os::Bundle arg2);
-		void tune(jstring arg0, __jni_impl::android::net::Uri arg1);
-		void tune(const QString &arg0, __jni_impl::android::net::Uri arg1);
 		void sendAppPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1);
 		void sendAppPrivateCommand(const QString &arg0, __jni_impl::android::os::Bundle arg1);
+		void startRecording(__jni_impl::android::net::Uri arg0);
 		void stopRecording();
+		void tune(jstring arg0, __jni_impl::android::net::Uri arg1);
+		void tune(const QString &arg0, __jni_impl::android::net::Uri arg1);
+		void tune(jstring arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::os::Bundle arg2);
+		void tune(const QString &arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::os::Bundle arg2);
 	};
 } // namespace __jni_impl::android::media::tv
 
 #include "../../content/Context.hpp"
 #include "TvRecordingClient_RecordingCallback.hpp"
-#include "../../os/Handler.hpp"
 #include "../../net/Uri.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../os/Handler.hpp"
 
 namespace __jni_impl::android::media::tv
 {
@@ -92,6 +92,24 @@ namespace __jni_impl::android::media::tv
 			"()V"
 		);
 	}
+	void TvRecordingClient::sendAppPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"sendAppPrivateCommand",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void TvRecordingClient::sendAppPrivateCommand(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"sendAppPrivateCommand",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	void TvRecordingClient::startRecording(__jni_impl::android::net::Uri arg0)
 	{
 		__thiz.callMethod<void>(
@@ -100,24 +118,11 @@ namespace __jni_impl::android::media::tv
 			arg0.__jniObject().object()
 		);
 	}
-	void TvRecordingClient::tune(jstring arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::os::Bundle arg2)
+	void TvRecordingClient::stopRecording()
 	{
 		__thiz.callMethod<void>(
-			"tune",
-			"(Ljava/lang/String;Landroid/net/Uri;Landroid/os/Bundle;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void TvRecordingClient::tune(const QString &arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::os::Bundle arg2)
-	{
-		__thiz.callMethod<void>(
-			"tune",
-			"(Ljava/lang/String;Landroid/net/Uri;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			"stopRecording",
+			"()V"
 		);
 	}
 	void TvRecordingClient::tune(jstring arg0, __jni_impl::android::net::Uri arg1)
@@ -138,29 +143,24 @@ namespace __jni_impl::android::media::tv
 			arg1.__jniObject().object()
 		);
 	}
-	void TvRecordingClient::sendAppPrivateCommand(jstring arg0, __jni_impl::android::os::Bundle arg1)
+	void TvRecordingClient::tune(jstring arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::os::Bundle arg2)
 	{
 		__thiz.callMethod<void>(
-			"sendAppPrivateCommand",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			"tune",
+			"(Ljava/lang/String;Landroid/net/Uri;Landroid/os/Bundle;)V",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
-	void TvRecordingClient::sendAppPrivateCommand(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	void TvRecordingClient::tune(const QString &arg0, __jni_impl::android::net::Uri arg1, __jni_impl::android::os::Bundle arg2)
 	{
 		__thiz.callMethod<void>(
-			"sendAppPrivateCommand",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			"tune",
+			"(Ljava/lang/String;Landroid/net/Uri;Landroid/os/Bundle;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-	void TvRecordingClient::stopRecording()
-	{
-		__thiz.callMethod<void>(
-			"stopRecording",
-			"()V"
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::media::tv

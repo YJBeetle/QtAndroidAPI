@@ -29,14 +29,14 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		jobject clone();
-		static jint compare(jint arg0, jint arg1, jint arg2);
 		static jint compare(jcharArray arg0, jcharArray arg1, jint arg2);
+		static jint compare(jint arg0, jint arg1, jint arg2);
 		static jint compare(jint arg0, jstring arg1, jint arg2);
 		static jint compare(jint arg0, const QString &arg1, jint arg2);
 		static jint compare(jstring arg0, jstring arg1, jint arg2);
 		static jint compare(const QString &arg0, const QString &arg1, jint arg2);
 		static jint compare(jcharArray arg0, jint arg1, jint arg2, jcharArray arg3, jint arg4, jint arg5, jint arg6);
+		jobject clone();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -114,12 +114,16 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jobject Normalizer::clone()
+	jint Normalizer::compare(jcharArray arg0, jcharArray arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
-			"clone",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.icu.text.Normalizer",
+			"compare",
+			"([C[CI)I",
+			arg0,
+			arg1,
+			arg2
+		);
 	}
 	jint Normalizer::compare(jint arg0, jint arg1, jint arg2)
 	{
@@ -127,17 +131,6 @@ namespace __jni_impl::android::icu::text
 			"android.icu.text.Normalizer",
 			"compare",
 			"(III)I",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jint Normalizer::compare(jcharArray arg0, jcharArray arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.icu.text.Normalizer",
-			"compare",
-			"([C[CI)I",
 			arg0,
 			arg1,
 			arg2
@@ -201,6 +194,13 @@ namespace __jni_impl::android::icu::text
 			arg5,
 			arg6
 		);
+	}
+	jobject Normalizer::clone()
+	{
+		return __thiz.callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 } // namespace __jni_impl::android::icu::text
 

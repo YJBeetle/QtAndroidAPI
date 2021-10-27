@@ -21,12 +21,12 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		void reset(jobject arg0);
-		void reset();
-		void startTracking(__jni_impl::android::view::KeyEvent arg0, jobject arg1);
+		void handleUpEvent(__jni_impl::android::view::KeyEvent arg0);
 		jboolean isTracking(__jni_impl::android::view::KeyEvent arg0);
 		void performedLongPress(__jni_impl::android::view::KeyEvent arg0);
-		void handleUpEvent(__jni_impl::android::view::KeyEvent arg0);
+		void reset();
+		void reset(jobject arg0);
+		void startTracking(__jni_impl::android::view::KeyEvent arg0, jobject arg1);
 	};
 } // namespace __jni_impl::android::view
 
@@ -46,28 +46,12 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	void KeyEvent_DispatcherState::reset(jobject arg0)
+	void KeyEvent_DispatcherState::handleUpEvent(__jni_impl::android::view::KeyEvent arg0)
 	{
 		__thiz.callMethod<void>(
-			"reset",
-			"(Ljava/lang/Object;)V",
-			arg0
-		);
-	}
-	void KeyEvent_DispatcherState::reset()
-	{
-		__thiz.callMethod<void>(
-			"reset",
-			"()V"
-		);
-	}
-	void KeyEvent_DispatcherState::startTracking(__jni_impl::android::view::KeyEvent arg0, jobject arg1)
-	{
-		__thiz.callMethod<void>(
-			"startTracking",
-			"(Landroid/view/KeyEvent;Ljava/lang/Object;)V",
-			arg0.__jniObject().object(),
-			arg1
+			"handleUpEvent",
+			"(Landroid/view/KeyEvent;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	jboolean KeyEvent_DispatcherState::isTracking(__jni_impl::android::view::KeyEvent arg0)
@@ -86,12 +70,28 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
-	void KeyEvent_DispatcherState::handleUpEvent(__jni_impl::android::view::KeyEvent arg0)
+	void KeyEvent_DispatcherState::reset()
 	{
 		__thiz.callMethod<void>(
-			"handleUpEvent",
-			"(Landroid/view/KeyEvent;)V",
-			arg0.__jniObject().object()
+			"reset",
+			"()V"
+		);
+	}
+	void KeyEvent_DispatcherState::reset(jobject arg0)
+	{
+		__thiz.callMethod<void>(
+			"reset",
+			"(Ljava/lang/Object;)V",
+			arg0
+		);
+	}
+	void KeyEvent_DispatcherState::startTracking(__jni_impl::android::view::KeyEvent arg0, jobject arg1)
+	{
+		__thiz.callMethod<void>(
+			"startTracking",
+			"(Landroid/view/KeyEvent;Ljava/lang/Object;)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::view

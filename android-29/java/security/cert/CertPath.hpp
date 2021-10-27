@@ -18,14 +18,14 @@ namespace __jni_impl::java::security::cert
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		QAndroidJniObject getCertificates();
-		jstring getType();
+		jbyteArray getEncoded();
 		jbyteArray getEncoded(jstring arg0);
 		jbyteArray getEncoded(const QString &arg0);
-		jbyteArray getEncoded();
 		QAndroidJniObject getEncodings();
+		jstring getType();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -51,20 +51,6 @@ namespace __jni_impl::java::security::cert
 			arg0
 		);
 	}
-	jstring CertPath::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint CertPath::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	QAndroidJniObject CertPath::getCertificates()
 	{
 		return __thiz.callObjectMethod(
@@ -72,12 +58,12 @@ namespace __jni_impl::java::security::cert
 			"()Ljava/util/List;"
 		);
 	}
-	jstring CertPath::getType()
+	jbyteArray CertPath::getEncoded()
 	{
 		return __thiz.callObjectMethod(
-			"getType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getEncoded",
+			"()[B"
+		).object<jbyteArray>();
 	}
 	jbyteArray CertPath::getEncoded(jstring arg0)
 	{
@@ -95,19 +81,33 @@ namespace __jni_impl::java::security::cert
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jbyteArray>();
 	}
-	jbyteArray CertPath::getEncoded()
-	{
-		return __thiz.callObjectMethod(
-			"getEncoded",
-			"()[B"
-		).object<jbyteArray>();
-	}
 	QAndroidJniObject CertPath::getEncodings()
 	{
 		return __thiz.callObjectMethod(
 			"getEncodings",
 			"()Ljava/util/Iterator;"
 		);
+	}
+	jstring CertPath::getType()
+	{
+		return __thiz.callObjectMethod(
+			"getType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint CertPath::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring CertPath::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security::cert
 

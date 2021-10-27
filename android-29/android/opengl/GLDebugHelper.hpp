@@ -78,7 +78,7 @@ namespace __jni_impl::android::opengl
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.GLDebugHelper",
 			"wrap",
-			"(Ljavax/microedition/khronos/opengles/GL;ILjava/io/Writer;)Ljavax/microedition/khronos/opengles/GL;",
+			"(Ljavax/microedition/khronos/egl/EGL;ILjava/io/Writer;)Ljavax/microedition/khronos/egl/EGL;",
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object()

@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::lang
-{
-	class Number;
-}
 namespace __jni_impl::android::icu::util
 {
 	class MeasureUnit;
+}
+namespace __jni_impl::java::lang
+{
+	class Number;
 }
 
 namespace __jni_impl::android::icu::util
@@ -26,15 +26,15 @@ namespace __jni_impl::android::icu::util
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		QAndroidJniObject getNumber();
 		QAndroidJniObject getUnit();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::icu::util
 
-#include "../../../java/lang/Number.hpp"
 #include "MeasureUnit.hpp"
+#include "../../../java/lang/Number.hpp"
 
 namespace __jni_impl::android::icu::util
 {
@@ -60,20 +60,6 @@ namespace __jni_impl::android::icu::util
 			arg0
 		);
 	}
-	jstring Measure::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint Measure::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	QAndroidJniObject Measure::getNumber()
 	{
 		return __thiz.callObjectMethod(
@@ -87,6 +73,20 @@ namespace __jni_impl::android::icu::util
 			"getUnit",
 			"()Landroid/icu/util/MeasureUnit;"
 		);
+	}
+	jint Measure::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring Measure::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::util
 

@@ -17,10 +17,10 @@ namespace __jni_impl::android::text
 		void __constructor();
 		
 		// Methods
-		void setText(jstring arg0);
-		void setText(const QString &arg0);
 		jstring getText();
 		jboolean hasText();
+		void setText(jstring arg0);
+		void setText(const QString &arg0);
 	};
 } // namespace __jni_impl::android::text
 
@@ -39,6 +39,20 @@ namespace __jni_impl::android::text
 	}
 	
 	// Methods
+	jstring ClipboardManager::getText()
+	{
+		return __thiz.callObjectMethod(
+			"getText",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jboolean ClipboardManager::hasText()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasText",
+			"()Z"
+		);
+	}
 	void ClipboardManager::setText(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -53,20 +67,6 @@ namespace __jni_impl::android::text
 			"setText",
 			"(Ljava/lang/CharSequence;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring ClipboardManager::getText()
-	{
-		return __thiz.callObjectMethod(
-			"getText",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	jboolean ClipboardManager::hasText()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasText",
-			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::text

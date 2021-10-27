@@ -32,15 +32,15 @@ namespace __jni_impl::android::graphics
 		
 		// Methods
 		static QAndroidJniObject add(__jni_impl::android::graphics::Insets arg0, __jni_impl::android::graphics::Insets arg1);
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		static QAndroidJniObject min(__jni_impl::android::graphics::Insets arg0, __jni_impl::android::graphics::Insets arg1);
 		static QAndroidJniObject max(__jni_impl::android::graphics::Insets arg0, __jni_impl::android::graphics::Insets arg1);
+		static QAndroidJniObject min(__jni_impl::android::graphics::Insets arg0, __jni_impl::android::graphics::Insets arg1);
 		static QAndroidJniObject of(__jni_impl::android::graphics::Rect arg0);
 		static QAndroidJniObject of(jint arg0, jint arg1, jint arg2, jint arg3);
 		static QAndroidJniObject subtract(__jni_impl::android::graphics::Insets arg0, __jni_impl::android::graphics::Insets arg1);
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		jint hashCode();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::graphics
@@ -111,26 +111,14 @@ namespace __jni_impl::android::graphics
 			arg1.__jniObject().object()
 		);
 	}
-	jboolean Insets::equals(jobject arg0)
+	QAndroidJniObject Insets::max(__jni_impl::android::graphics::Insets arg0, __jni_impl::android::graphics::Insets arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring Insets::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint Insets::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Insets",
+			"max",
+			"(Landroid/graphics/Insets;Landroid/graphics/Insets;)Landroid/graphics/Insets;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	QAndroidJniObject Insets::min(__jni_impl::android::graphics::Insets arg0, __jni_impl::android::graphics::Insets arg1)
@@ -138,16 +126,6 @@ namespace __jni_impl::android::graphics
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.graphics.Insets",
 			"min",
-			"(Landroid/graphics/Insets;Landroid/graphics/Insets;)Landroid/graphics/Insets;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Insets::max(__jni_impl::android::graphics::Insets arg0, __jni_impl::android::graphics::Insets arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Insets",
-			"max",
 			"(Landroid/graphics/Insets;Landroid/graphics/Insets;)Landroid/graphics/Insets;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
@@ -190,6 +168,28 @@ namespace __jni_impl::android::graphics
 			"describeContents",
 			"()I"
 		);
+	}
+	jboolean Insets::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jint Insets::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring Insets::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Insets::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

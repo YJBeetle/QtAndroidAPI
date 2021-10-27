@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::service::notification
-{
-	class NotificationListenerService_Ranking;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::service::notification
+{
+	class NotificationListenerService_Ranking;
 }
 
 namespace __jni_impl::android::service::notification
@@ -26,17 +26,17 @@ namespace __jni_impl::android::service::notification
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
 		jarray getOrderedKeys();
 		jboolean getRanking(jstring arg0, __jni_impl::android::service::notification::NotificationListenerService_Ranking arg1);
 		jboolean getRanking(const QString &arg0, __jni_impl::android::service::notification::NotificationListenerService_Ranking arg1);
-		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::service::notification
 
-#include "NotificationListenerService_Ranking.hpp"
 #include "../../os/Parcel.hpp"
+#include "NotificationListenerService_Ranking.hpp"
 
 namespace __jni_impl::android::service::notification
 {
@@ -59,6 +59,13 @@ namespace __jni_impl::android::service::notification
 	}
 	
 	// Methods
+	jint NotificationListenerService_RankingMap::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean NotificationListenerService_RankingMap::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -90,13 +97,6 @@ namespace __jni_impl::android::service::notification
 			"(Ljava/lang/String;Landroid/service/notification/NotificationListenerService$Ranking;)Z",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
-		);
-	}
-	jint NotificationListenerService_RankingMap::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
 		);
 	}
 	void NotificationListenerService_RankingMap::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

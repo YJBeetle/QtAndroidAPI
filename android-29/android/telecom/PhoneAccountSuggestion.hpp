@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::telecom
-{
-	class PhoneAccountHandle;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::telecom
+{
+	class PhoneAccountHandle;
 }
 
 namespace __jni_impl::android::telecom
@@ -31,18 +31,18 @@ namespace __jni_impl::android::telecom
 		void __constructor(__jni_impl::android::telecom::PhoneAccountHandle arg0, jint arg1, jboolean arg2);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		QAndroidJniObject getPhoneAccountHandle();
-		jboolean shouldAutoSelect();
-		jint getReason();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		QAndroidJniObject getPhoneAccountHandle();
+		jint getReason();
+		jint hashCode();
+		jboolean shouldAutoSelect();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telecom
 
-#include "PhoneAccountHandle.hpp"
 #include "../os/Parcel.hpp"
+#include "PhoneAccountHandle.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -104,19 +104,19 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
+	jint PhoneAccountSuggestion::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean PhoneAccountSuggestion::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
-		);
-	}
-	jint PhoneAccountSuggestion::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
 		);
 	}
 	QAndroidJniObject PhoneAccountSuggestion::getPhoneAccountHandle()
@@ -126,13 +126,6 @@ namespace __jni_impl::android::telecom
 			"()Landroid/telecom/PhoneAccountHandle;"
 		);
 	}
-	jboolean PhoneAccountSuggestion::shouldAutoSelect()
-	{
-		return __thiz.callMethod<jboolean>(
-			"shouldAutoSelect",
-			"()Z"
-		);
-	}
 	jint PhoneAccountSuggestion::getReason()
 	{
 		return __thiz.callMethod<jint>(
@@ -140,11 +133,18 @@ namespace __jni_impl::android::telecom
 			"()I"
 		);
 	}
-	jint PhoneAccountSuggestion::describeContents()
+	jint PhoneAccountSuggestion::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
+		);
+	}
+	jboolean PhoneAccountSuggestion::shouldAutoSelect()
+	{
+		return __thiz.callMethod<jboolean>(
+			"shouldAutoSelect",
+			"()Z"
 		);
 	}
 	void PhoneAccountSuggestion::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

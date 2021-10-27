@@ -22,9 +22,9 @@ namespace __jni_impl::javax::crypto::spec
 		void __constructor(__jni_impl::java::math::BigInteger arg0, __jni_impl::java::math::BigInteger arg1, jint arg2);
 		
 		// Methods
-		QAndroidJniObject getP();
 		QAndroidJniObject getG();
 		jint getL();
+		QAndroidJniObject getP();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -56,13 +56,6 @@ namespace __jni_impl::javax::crypto::spec
 	}
 	
 	// Methods
-	QAndroidJniObject DHParameterSpec::getP()
-	{
-		return __thiz.callObjectMethod(
-			"getP",
-			"()Ljava/math/BigInteger;"
-		);
-	}
 	QAndroidJniObject DHParameterSpec::getG()
 	{
 		return __thiz.callObjectMethod(
@@ -75,6 +68,13 @@ namespace __jni_impl::javax::crypto::spec
 		return __thiz.callMethod<jint>(
 			"getL",
 			"()I"
+		);
+	}
+	QAndroidJniObject DHParameterSpec::getP()
+	{
+		return __thiz.callObjectMethod(
+			"getP",
+			"()Ljava/math/BigInteger;"
 		);
 	}
 } // namespace __jni_impl::javax::crypto::spec

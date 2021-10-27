@@ -5,17 +5,17 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::time
+namespace __jni_impl::android::telephony
 {
-	class ZonedDateTime;
+	class SubscriptionPlan;
 }
 namespace __jni_impl::java::time
 {
 	class Period;
 }
-namespace __jni_impl::android::telephony
+namespace __jni_impl::java::time
 {
-	class SubscriptionPlan;
+	class ZonedDateTime;
 }
 
 namespace __jni_impl::android::telephony
@@ -29,9 +29,9 @@ namespace __jni_impl::android::telephony
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject build();
 		static QAndroidJniObject createNonrecurring(__jni_impl::java::time::ZonedDateTime arg0, __jni_impl::java::time::ZonedDateTime arg1);
 		static QAndroidJniObject createRecurring(__jni_impl::java::time::ZonedDateTime arg0, __jni_impl::java::time::Period arg1);
+		QAndroidJniObject build();
 		QAndroidJniObject setDataLimit(jlong arg0, jint arg1);
 		QAndroidJniObject setDataUsage(jlong arg0, jlong arg1);
 		QAndroidJniObject setSummary(jstring arg0);
@@ -41,9 +41,9 @@ namespace __jni_impl::android::telephony
 	};
 } // namespace __jni_impl::android::telephony
 
-#include "../../java/time/ZonedDateTime.hpp"
-#include "../../java/time/Period.hpp"
 #include "SubscriptionPlan.hpp"
+#include "../../java/time/Period.hpp"
+#include "../../java/time/ZonedDateTime.hpp"
 
 namespace __jni_impl::android::telephony
 {
@@ -58,13 +58,6 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
-	QAndroidJniObject SubscriptionPlan_Builder::build()
-	{
-		return __thiz.callObjectMethod(
-			"build",
-			"()Landroid/telephony/SubscriptionPlan;"
-		);
-	}
 	QAndroidJniObject SubscriptionPlan_Builder::createNonrecurring(__jni_impl::java::time::ZonedDateTime arg0, __jni_impl::java::time::ZonedDateTime arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -83,6 +76,13 @@ namespace __jni_impl::android::telephony
 			"(Ljava/time/ZonedDateTime;Ljava/time/Period;)Landroid/telephony/SubscriptionPlan$Builder;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SubscriptionPlan_Builder::build()
+	{
+		return __thiz.callObjectMethod(
+			"build",
+			"()Landroid/telephony/SubscriptionPlan;"
 		);
 	}
 	QAndroidJniObject SubscriptionPlan_Builder::setDataLimit(jlong arg0, jint arg1)

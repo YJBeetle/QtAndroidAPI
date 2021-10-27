@@ -32,12 +32,12 @@ namespace __jni_impl::android::net
 		void __constructor(const QString &arg0, jbyteArray arg1, jint arg2);
 		
 		// Methods
-		jstring getName();
-		jstring toString();
-		jbyteArray getKey();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jbyteArray getKey();
+		jstring getName();
 		jint getTruncationLengthBits();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net
 
@@ -152,19 +152,12 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	jstring IpSecAlgorithm::getName()
+	jint IpSecAlgorithm::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring IpSecAlgorithm::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
 	jbyteArray IpSecAlgorithm::getKey()
 	{
@@ -173,12 +166,26 @@ namespace __jni_impl::android::net
 			"()[B"
 		).object<jbyteArray>();
 	}
-	jint IpSecAlgorithm::describeContents()
+	jstring IpSecAlgorithm::getName()
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint IpSecAlgorithm::getTruncationLengthBits()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getTruncationLengthBits",
 			"()I"
 		);
+	}
+	jstring IpSecAlgorithm::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void IpSecAlgorithm::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -187,13 +194,6 @@ namespace __jni_impl::android::net
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint IpSecAlgorithm::getTruncationLengthBits()
-	{
-		return __thiz.callMethod<jint>(
-			"getTruncationLengthBits",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::net

@@ -23,14 +23,14 @@ namespace __jni_impl::android::app::usage
 		
 		// Methods
 		void add(__jni_impl::android::app::usage::EventStats arg0);
+		jint describeContents();
 		jint getCount();
 		jint getEventType();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jlong getLastTimeStamp();
 		jlong getFirstTimeStamp();
 		jlong getLastEventTime();
+		jlong getLastTimeStamp();
 		jlong getTotalTime();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::usage
 
@@ -67,6 +67,13 @@ namespace __jni_impl::android::app::usage
 			arg0.__jniObject().object()
 		);
 	}
+	jint EventStats::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jint EventStats::getCount()
 	{
 		return __thiz.callMethod<jint>(
@@ -79,29 +86,6 @@ namespace __jni_impl::android::app::usage
 		return __thiz.callMethod<jint>(
 			"getEventType",
 			"()I"
-		);
-	}
-	jint EventStats::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void EventStats::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jlong EventStats::getLastTimeStamp()
-	{
-		return __thiz.callMethod<jlong>(
-			"getLastTimeStamp",
-			"()J"
 		);
 	}
 	jlong EventStats::getFirstTimeStamp()
@@ -118,11 +102,27 @@ namespace __jni_impl::android::app::usage
 			"()J"
 		);
 	}
+	jlong EventStats::getLastTimeStamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getLastTimeStamp",
+			"()J"
+		);
+	}
 	jlong EventStats::getTotalTime()
 	{
 		return __thiz.callMethod<jlong>(
 			"getTotalTime",
 			"()J"
+		);
+	}
+	void EventStats::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::app::usage

@@ -8,7 +8,7 @@
 
 namespace __jni_impl::android::graphics
 {
-	class Picture;
+	class Canvas;
 }
 namespace __jni_impl::android::graphics
 {
@@ -16,7 +16,7 @@ namespace __jni_impl::android::graphics
 }
 namespace __jni_impl::android::graphics
 {
-	class Canvas;
+	class Picture;
 }
 
 namespace __jni_impl::android::graphics::drawable
@@ -30,20 +30,20 @@ namespace __jni_impl::android::graphics::drawable
 		void __constructor(__jni_impl::android::graphics::Picture arg0);
 		
 		// Methods
-		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
-		void setAlpha(jint arg0);
 		void draw(__jni_impl::android::graphics::Canvas arg0);
-		QAndroidJniObject getPicture();
-		void setPicture(__jni_impl::android::graphics::Picture arg0);
-		jint getOpacity();
-		jint getIntrinsicWidth();
 		jint getIntrinsicHeight();
+		jint getIntrinsicWidth();
+		jint getOpacity();
+		QAndroidJniObject getPicture();
+		void setAlpha(jint arg0);
+		void setColorFilter(__jni_impl::android::graphics::ColorFilter arg0);
+		void setPicture(__jni_impl::android::graphics::Picture arg0);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
-#include "../Picture.hpp"
-#include "../ColorFilter.hpp"
 #include "../Canvas.hpp"
+#include "../ColorFilter.hpp"
+#include "../Picture.hpp"
 
 namespace __jni_impl::android::graphics::drawable
 {
@@ -60,22 +60,6 @@ namespace __jni_impl::android::graphics::drawable
 	}
 	
 	// Methods
-	void PictureDrawable::setColorFilter(__jni_impl::android::graphics::ColorFilter arg0)
-	{
-		__thiz.callMethod<void>(
-			"setColorFilter",
-			"(Landroid/graphics/ColorFilter;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void PictureDrawable::setAlpha(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAlpha",
-			"(I)V",
-			arg0
-		);
-	}
 	void PictureDrawable::draw(__jni_impl::android::graphics::Canvas arg0)
 	{
 		__thiz.callMethod<void>(
@@ -84,25 +68,10 @@ namespace __jni_impl::android::graphics::drawable
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject PictureDrawable::getPicture()
-	{
-		return __thiz.callObjectMethod(
-			"getPicture",
-			"()Landroid/graphics/Picture;"
-		);
-	}
-	void PictureDrawable::setPicture(__jni_impl::android::graphics::Picture arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPicture",
-			"(Landroid/graphics/Picture;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jint PictureDrawable::getOpacity()
+	jint PictureDrawable::getIntrinsicHeight()
 	{
 		return __thiz.callMethod<jint>(
-			"getOpacity",
+			"getIntrinsicHeight",
 			"()I"
 		);
 	}
@@ -113,11 +82,42 @@ namespace __jni_impl::android::graphics::drawable
 			"()I"
 		);
 	}
-	jint PictureDrawable::getIntrinsicHeight()
+	jint PictureDrawable::getOpacity()
 	{
 		return __thiz.callMethod<jint>(
-			"getIntrinsicHeight",
+			"getOpacity",
 			"()I"
+		);
+	}
+	QAndroidJniObject PictureDrawable::getPicture()
+	{
+		return __thiz.callObjectMethod(
+			"getPicture",
+			"()Landroid/graphics/Picture;"
+		);
+	}
+	void PictureDrawable::setAlpha(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAlpha",
+			"(I)V",
+			arg0
+		);
+	}
+	void PictureDrawable::setColorFilter(__jni_impl::android::graphics::ColorFilter arg0)
+	{
+		__thiz.callMethod<void>(
+			"setColorFilter",
+			"(Landroid/graphics/ColorFilter;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void PictureDrawable::setPicture(__jni_impl::android::graphics::Picture arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPicture",
+			"(Landroid/graphics/Picture;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::graphics::drawable

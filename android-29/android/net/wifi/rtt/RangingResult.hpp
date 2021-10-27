@@ -9,13 +9,13 @@ namespace __jni_impl::android::net
 {
 	class MacAddress;
 }
-namespace __jni_impl::android::net::wifi::rtt
-{
-	class ResponderLocation;
-}
 namespace __jni_impl::android::net::wifi::aware
 {
 	class PeerHandle;
+}
+namespace __jni_impl::android::net::wifi::rtt
+{
+	class ResponderLocation;
 }
 namespace __jni_impl::android::os
 {
@@ -37,27 +37,27 @@ namespace __jni_impl::android::net::wifi::rtt
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint getStatus();
-		jint getRssi();
-		QAndroidJniObject getPeerHandle();
 		jint getDistanceMm();
 		jint getDistanceStdDevMm();
+		QAndroidJniObject getMacAddress();
 		jint getNumAttemptedMeasurements();
 		jint getNumSuccessfulMeasurements();
-		QAndroidJniObject getUnverifiedResponderLocation();
+		QAndroidJniObject getPeerHandle();
 		jlong getRangingTimestampMillis();
-		jint describeContents();
+		jint getRssi();
+		jint getStatus();
+		QAndroidJniObject getUnverifiedResponderLocation();
+		jint hashCode();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getMacAddress();
 	};
 } // namespace __jni_impl::android::net::wifi::rtt
 
 #include "../../MacAddress.hpp"
-#include "ResponderLocation.hpp"
 #include "../aware/PeerHandle.hpp"
+#include "ResponderLocation.hpp"
 #include "../../../os/Parcel.hpp"
 
 namespace __jni_impl::android::net::wifi::rtt
@@ -102,47 +102,19 @@ namespace __jni_impl::android::net::wifi::rtt
 	}
 	
 	// Methods
+	jint RangingResult::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean RangingResult::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
-		);
-	}
-	jstring RangingResult::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint RangingResult::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jint RangingResult::getStatus()
-	{
-		return __thiz.callMethod<jint>(
-			"getStatus",
-			"()I"
-		);
-	}
-	jint RangingResult::getRssi()
-	{
-		return __thiz.callMethod<jint>(
-			"getRssi",
-			"()I"
-		);
-	}
-	QAndroidJniObject RangingResult::getPeerHandle()
-	{
-		return __thiz.callObjectMethod(
-			"getPeerHandle",
-			"()Landroid/net/wifi/aware/PeerHandle;"
 		);
 	}
 	jint RangingResult::getDistanceMm()
@@ -159,6 +131,13 @@ namespace __jni_impl::android::net::wifi::rtt
 			"()I"
 		);
 	}
+	QAndroidJniObject RangingResult::getMacAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getMacAddress",
+			"()Landroid/net/MacAddress;"
+		);
+	}
 	jint RangingResult::getNumAttemptedMeasurements()
 	{
 		return __thiz.callMethod<jint>(
@@ -173,11 +152,11 @@ namespace __jni_impl::android::net::wifi::rtt
 			"()I"
 		);
 	}
-	QAndroidJniObject RangingResult::getUnverifiedResponderLocation()
+	QAndroidJniObject RangingResult::getPeerHandle()
 	{
 		return __thiz.callObjectMethod(
-			"getUnverifiedResponderLocation",
-			"()Landroid/net/wifi/rtt/ResponderLocation;"
+			"getPeerHandle",
+			"()Landroid/net/wifi/aware/PeerHandle;"
 		);
 	}
 	jlong RangingResult::getRangingTimestampMillis()
@@ -187,12 +166,40 @@ namespace __jni_impl::android::net::wifi::rtt
 			"()J"
 		);
 	}
-	jint RangingResult::describeContents()
+	jint RangingResult::getRssi()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getRssi",
 			"()I"
 		);
+	}
+	jint RangingResult::getStatus()
+	{
+		return __thiz.callMethod<jint>(
+			"getStatus",
+			"()I"
+		);
+	}
+	QAndroidJniObject RangingResult::getUnverifiedResponderLocation()
+	{
+		return __thiz.callObjectMethod(
+			"getUnverifiedResponderLocation",
+			"()Landroid/net/wifi/rtt/ResponderLocation;"
+		);
+	}
+	jint RangingResult::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring RangingResult::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void RangingResult::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -201,13 +208,6 @@ namespace __jni_impl::android::net::wifi::rtt
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject RangingResult::getMacAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getMacAddress",
-			"()Landroid/net/MacAddress;"
 		);
 	}
 } // namespace __jni_impl::android::net::wifi::rtt

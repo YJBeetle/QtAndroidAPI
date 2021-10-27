@@ -5,6 +5,10 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::content
+{
+	class Context;
+}
 namespace __jni_impl::android::content::res
 {
 	class Resources;
@@ -12,10 +16,6 @@ namespace __jni_impl::android::content::res
 namespace __jni_impl::android::graphics
 {
 	class Bitmap;
-}
-namespace __jni_impl::android::content
-{
-	class Context;
 }
 namespace __jni_impl::android::os
 {
@@ -57,18 +57,18 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		static QAndroidJniObject load(__jni_impl::android::content::res::Resources arg0, jint arg1);
 		static QAndroidJniObject create(__jni_impl::android::graphics::Bitmap arg0, jfloat arg1, jfloat arg2);
 		static QAndroidJniObject getSystemIcon(__jni_impl::android::content::Context arg0, jint arg1);
+		static QAndroidJniObject load(__jni_impl::android::content::res::Resources arg0, jint arg1);
 		jint describeContents();
+		jboolean equals(jobject arg0);
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
 
+#include "../content/Context.hpp"
 #include "../content/res/Resources.hpp"
 #include "../graphics/Bitmap.hpp"
-#include "../content/Context.hpp"
 #include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::view
@@ -253,24 +253,6 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jboolean PointerIcon::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	QAndroidJniObject PointerIcon::load(__jni_impl::android::content::res::Resources arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.PointerIcon",
-			"load",
-			"(Landroid/content/res/Resources;I)Landroid/view/PointerIcon;",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	QAndroidJniObject PointerIcon::create(__jni_impl::android::graphics::Bitmap arg0, jfloat arg1, jfloat arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -292,11 +274,29 @@ namespace __jni_impl::android::view
 			arg1
 		);
 	}
+	QAndroidJniObject PointerIcon::load(__jni_impl::android::content::res::Resources arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.PointerIcon",
+			"load",
+			"(Landroid/content/res/Resources;I)Landroid/view/PointerIcon;",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
 	jint PointerIcon::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
+		);
+	}
+	jboolean PointerIcon::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 	void PointerIcon::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

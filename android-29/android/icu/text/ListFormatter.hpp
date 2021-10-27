@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util
-{
-	class Locale;
-}
 namespace __jni_impl::android::icu::util
 {
 	class ULocale;
+}
+namespace __jni_impl::java::util
+{
+	class Locale;
 }
 
 namespace __jni_impl::android::icu::text
@@ -25,17 +25,17 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
+		static QAndroidJniObject getInstance();
+		static QAndroidJniObject getInstance(__jni_impl::android::icu::util::ULocale arg0);
+		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
 		jstring format(jobjectArray arg0);
 		jstring format(__jni_impl::__JniBaseClass arg0);
-		static QAndroidJniObject getInstance();
-		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
-		static QAndroidJniObject getInstance(__jni_impl::android::icu::util::ULocale arg0);
 		jstring getPatternForNumItems(jint arg0);
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "../../../java/util/Locale.hpp"
 #include "../util/ULocale.hpp"
+#include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -50,6 +50,32 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
+	QAndroidJniObject ListFormatter::getInstance()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.ListFormatter",
+			"getInstance",
+			"()Landroid/icu/text/ListFormatter;"
+		);
+	}
+	QAndroidJniObject ListFormatter::getInstance(__jni_impl::android::icu::util::ULocale arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.ListFormatter",
+			"getInstance",
+			"(Landroid/icu/util/ULocale;)Landroid/icu/text/ListFormatter;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ListFormatter::getInstance(__jni_impl::java::util::Locale arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.ListFormatter",
+			"getInstance",
+			"(Ljava/util/Locale;)Landroid/icu/text/ListFormatter;",
+			arg0.__jniObject().object()
+		);
+	}
 	jstring ListFormatter::format(jobjectArray arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -65,32 +91,6 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/util/Collection;)Ljava/lang/String;",
 			arg0.__jniObject().object()
 		).object<jstring>();
-	}
-	QAndroidJniObject ListFormatter::getInstance()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.ListFormatter",
-			"getInstance",
-			"()Landroid/icu/text/ListFormatter;"
-		);
-	}
-	QAndroidJniObject ListFormatter::getInstance(__jni_impl::java::util::Locale arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.ListFormatter",
-			"getInstance",
-			"(Ljava/util/Locale;)Landroid/icu/text/ListFormatter;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ListFormatter::getInstance(__jni_impl::android::icu::util::ULocale arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.ListFormatter",
-			"getInstance",
-			"(Landroid/icu/util/ULocale;)Landroid/icu/text/ListFormatter;",
-			arg0.__jniObject().object()
-		);
 	}
 	jstring ListFormatter::getPatternForNumItems(jint arg0)
 	{

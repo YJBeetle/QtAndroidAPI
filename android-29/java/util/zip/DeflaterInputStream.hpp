@@ -7,13 +7,13 @@
 #include "../../io/InputStream.hpp"
 #include "../../io/FilterInputStream.hpp"
 
-namespace __jni_impl::java::util::zip
-{
-	class Deflater;
-}
 namespace __jni_impl::java::io
 {
 	class InputStream;
+}
+namespace __jni_impl::java::util::zip
+{
+	class Deflater;
 }
 
 namespace __jni_impl::java::util::zip
@@ -24,40 +24,30 @@ namespace __jni_impl::java::util::zip
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::util::zip::Deflater arg1, jint arg2);
 		void __constructor(__jni_impl::java::io::InputStream arg0);
 		void __constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::util::zip::Deflater arg1);
+		void __constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::util::zip::Deflater arg1, jint arg2);
 		
 		// Methods
-		jint read();
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
+		jint available();
 		void close();
 		void mark(jint arg0);
-		jlong skip(jlong arg0);
-		jint available();
 		jboolean markSupported();
+		jint read();
+		jint read(jbyteArray arg0, jint arg1, jint arg2);
 		void reset();
+		jlong skip(jlong arg0);
 	};
 } // namespace __jni_impl::java::util::zip
 
-#include "Deflater.hpp"
 #include "../../io/InputStream.hpp"
+#include "Deflater.hpp"
 
 namespace __jni_impl::java::util::zip
 {
 	// Fields
 	
 	// Constructors
-	void DeflaterInputStream::__constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::util::zip::Deflater arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.zip.DeflaterInputStream",
-			"(Ljava/io/InputStream;Ljava/util/zip/Deflater;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
-		);
-	}
 	void DeflaterInputStream::__constructor(__jni_impl::java::io::InputStream arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -75,23 +65,23 @@ namespace __jni_impl::java::util::zip
 			arg1.__jniObject().object()
 		);
 	}
-	
-	// Methods
-	jint DeflaterInputStream::read()
+	void DeflaterInputStream::__constructor(__jni_impl::java::io::InputStream arg0, __jni_impl::java::util::zip::Deflater arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
-			"read",
-			"()I"
+		__thiz = QAndroidJniObject(
+			"java.util.zip.DeflaterInputStream",
+			"(Ljava/io/InputStream;Ljava/util/zip/Deflater;I)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
 		);
 	}
-	jint DeflaterInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	
+	// Methods
+	jint DeflaterInputStream::available()
 	{
 		return __thiz.callMethod<jint>(
-			"read",
-			"([BII)I",
-			arg0,
-			arg1,
-			arg2
+			"available",
+			"()I"
 		);
 	}
 	void DeflaterInputStream::close()
@@ -109,21 +99,6 @@ namespace __jni_impl::java::util::zip
 			arg0
 		);
 	}
-	jlong DeflaterInputStream::skip(jlong arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"skip",
-			"(J)J",
-			arg0
-		);
-	}
-	jint DeflaterInputStream::available()
-	{
-		return __thiz.callMethod<jint>(
-			"available",
-			"()I"
-		);
-	}
 	jboolean DeflaterInputStream::markSupported()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -131,11 +106,36 @@ namespace __jni_impl::java::util::zip
 			"()Z"
 		);
 	}
+	jint DeflaterInputStream::read()
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
+	jint DeflaterInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"([BII)I",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
 	void DeflaterInputStream::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
 			"()V"
+		);
+	}
+	jlong DeflaterInputStream::skip(jlong arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"skip",
+			"(J)J",
+			arg0
 		);
 	}
 } // namespace __jni_impl::java::util::zip
@@ -146,13 +146,6 @@ namespace java::util::zip
 	{
 	public:
 		DeflaterInputStream(QAndroidJniObject obj) { __thiz = obj; }
-		DeflaterInputStream(__jni_impl::java::io::InputStream arg0, __jni_impl::java::util::zip::Deflater arg1, jint arg2)
-		{
-			__constructor(
-				arg0,
-				arg1,
-				arg2);
-		}
 		DeflaterInputStream(__jni_impl::java::io::InputStream arg0)
 		{
 			__constructor(
@@ -163,6 +156,13 @@ namespace java::util::zip
 			__constructor(
 				arg0,
 				arg1);
+		}
+		DeflaterInputStream(__jni_impl::java::io::InputStream arg0, __jni_impl::java::util::zip::Deflater arg1, jint arg2)
+		{
+			__constructor(
+				arg0,
+				arg1,
+				arg2);
 		}
 	};
 } // namespace java::util::zip

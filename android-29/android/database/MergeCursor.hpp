@@ -26,24 +26,24 @@ namespace __jni_impl::android::database
 		void __constructor(jarray arg0);
 		
 		// Methods
-		jshort getShort(jint arg0);
+		void close();
+		void deactivate();
+		jbyteArray getBlob(jint arg0);
+		jarray getColumnNames();
+		jint getCount();
+		jdouble getDouble(jint arg0);
+		jfloat getFloat(jint arg0);
 		jint getInt(jint arg0);
 		jlong getLong(jint arg0);
-		jfloat getFloat(jint arg0);
-		jdouble getDouble(jint arg0);
-		void close();
+		jshort getShort(jint arg0);
+		jstring getString(jint arg0);
 		jint getType(jint arg0);
 		jboolean isNull(jint arg0);
-		jint getCount();
-		jstring getString(jint arg0);
-		jarray getColumnNames();
-		jbyteArray getBlob(jint arg0);
-		void deactivate();
-		jboolean requery();
 		jboolean onMove(jint arg0, jint arg1);
 		void registerContentObserver(__jni_impl::android::database::ContentObserver arg0);
-		void unregisterContentObserver(__jni_impl::android::database::ContentObserver arg0);
 		void registerDataSetObserver(__jni_impl::android::database::DataSetObserver arg0);
+		jboolean requery();
+		void unregisterContentObserver(__jni_impl::android::database::ContentObserver arg0);
 		void unregisterDataSetObserver(__jni_impl::android::database::DataSetObserver arg0);
 	};
 } // namespace __jni_impl::android::database
@@ -66,11 +66,55 @@ namespace __jni_impl::android::database
 	}
 	
 	// Methods
-	jshort MergeCursor::getShort(jint arg0)
+	void MergeCursor::close()
 	{
-		return __thiz.callMethod<jshort>(
-			"getShort",
-			"(I)S",
+		__thiz.callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	void MergeCursor::deactivate()
+	{
+		__thiz.callMethod<void>(
+			"deactivate",
+			"()V"
+		);
+	}
+	jbyteArray MergeCursor::getBlob(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getBlob",
+			"(I)[B",
+			arg0
+		).object<jbyteArray>();
+	}
+	jarray MergeCursor::getColumnNames()
+	{
+		return __thiz.callObjectMethod(
+			"getColumnNames",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	jint MergeCursor::getCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getCount",
+			"()I"
+		);
+	}
+	jdouble MergeCursor::getDouble(jint arg0)
+	{
+		return __thiz.callMethod<jdouble>(
+			"getDouble",
+			"(I)D",
+			arg0
+		);
+	}
+	jfloat MergeCursor::getFloat(jint arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getFloat",
+			"(I)F",
 			arg0
 		);
 	}
@@ -90,28 +134,21 @@ namespace __jni_impl::android::database
 			arg0
 		);
 	}
-	jfloat MergeCursor::getFloat(jint arg0)
+	jshort MergeCursor::getShort(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
-			"getFloat",
-			"(I)F",
+		return __thiz.callMethod<jshort>(
+			"getShort",
+			"(I)S",
 			arg0
 		);
 	}
-	jdouble MergeCursor::getDouble(jint arg0)
+	jstring MergeCursor::getString(jint arg0)
 	{
-		return __thiz.callMethod<jdouble>(
-			"getDouble",
-			"(I)D",
+		return __thiz.callObjectMethod(
+			"getString",
+			"(I)Ljava/lang/String;",
 			arg0
-		);
-	}
-	void MergeCursor::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
+		).object<jstring>();
 	}
 	jint MergeCursor::getType(jint arg0)
 	{
@@ -127,50 +164,6 @@ namespace __jni_impl::android::database
 			"isNull",
 			"(I)Z",
 			arg0
-		);
-	}
-	jint MergeCursor::getCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getCount",
-			"()I"
-		);
-	}
-	jstring MergeCursor::getString(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getString",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jarray MergeCursor::getColumnNames()
-	{
-		return __thiz.callObjectMethod(
-			"getColumnNames",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	jbyteArray MergeCursor::getBlob(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getBlob",
-			"(I)[B",
-			arg0
-		).object<jbyteArray>();
-	}
-	void MergeCursor::deactivate()
-	{
-		__thiz.callMethod<void>(
-			"deactivate",
-			"()V"
-		);
-	}
-	jboolean MergeCursor::requery()
-	{
-		return __thiz.callMethod<jboolean>(
-			"requery",
-			"()Z"
 		);
 	}
 	jboolean MergeCursor::onMove(jint arg0, jint arg1)
@@ -190,19 +183,26 @@ namespace __jni_impl::android::database
 			arg0.__jniObject().object()
 		);
 	}
-	void MergeCursor::unregisterContentObserver(__jni_impl::android::database::ContentObserver arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterContentObserver",
-			"(Landroid/database/ContentObserver;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void MergeCursor::registerDataSetObserver(__jni_impl::android::database::DataSetObserver arg0)
 	{
 		__thiz.callMethod<void>(
 			"registerDataSetObserver",
 			"(Landroid/database/DataSetObserver;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean MergeCursor::requery()
+	{
+		return __thiz.callMethod<jboolean>(
+			"requery",
+			"()Z"
+		);
+	}
+	void MergeCursor::unregisterContentObserver(__jni_impl::android::database::ContentObserver arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterContentObserver",
+			"(Landroid/database/ContentObserver;)V",
 			arg0.__jniObject().object()
 		);
 	}

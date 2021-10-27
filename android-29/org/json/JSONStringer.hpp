@@ -17,17 +17,17 @@ namespace __jni_impl::org::json
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject value(jobject arg0);
-		QAndroidJniObject value(jboolean arg0);
-		QAndroidJniObject value(jdouble arg0);
-		QAndroidJniObject value(jlong arg0);
-		jstring toString();
 		QAndroidJniObject array();
+		QAndroidJniObject endArray();
+		QAndroidJniObject endObject();
 		QAndroidJniObject key(jstring arg0);
 		QAndroidJniObject key(const QString &arg0);
 		QAndroidJniObject object();
-		QAndroidJniObject endArray();
-		QAndroidJniObject endObject();
+		jstring toString();
+		QAndroidJniObject value(jboolean arg0);
+		QAndroidJniObject value(jdouble arg0);
+		QAndroidJniObject value(jobject arg0);
+		QAndroidJniObject value(jlong arg0);
 	};
 } // namespace __jni_impl::org::json
 
@@ -46,49 +46,24 @@ namespace __jni_impl::org::json
 	}
 	
 	// Methods
-	QAndroidJniObject JSONStringer::value(jobject arg0)
-	{
-		return __thiz.callObjectMethod(
-			"value",
-			"(Ljava/lang/Object;)Lorg/json/JSONStringer;",
-			arg0
-		);
-	}
-	QAndroidJniObject JSONStringer::value(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"value",
-			"(Z)Lorg/json/JSONStringer;",
-			arg0
-		);
-	}
-	QAndroidJniObject JSONStringer::value(jdouble arg0)
-	{
-		return __thiz.callObjectMethod(
-			"value",
-			"(D)Lorg/json/JSONStringer;",
-			arg0
-		);
-	}
-	QAndroidJniObject JSONStringer::value(jlong arg0)
-	{
-		return __thiz.callObjectMethod(
-			"value",
-			"(J)Lorg/json/JSONStringer;",
-			arg0
-		);
-	}
-	jstring JSONStringer::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject JSONStringer::array()
 	{
 		return __thiz.callObjectMethod(
 			"array",
+			"()Lorg/json/JSONStringer;"
+		);
+	}
+	QAndroidJniObject JSONStringer::endArray()
+	{
+		return __thiz.callObjectMethod(
+			"endArray",
+			"()Lorg/json/JSONStringer;"
+		);
+	}
+	QAndroidJniObject JSONStringer::endObject()
+	{
+		return __thiz.callObjectMethod(
+			"endObject",
 			"()Lorg/json/JSONStringer;"
 		);
 	}
@@ -115,18 +90,43 @@ namespace __jni_impl::org::json
 			"()Lorg/json/JSONStringer;"
 		);
 	}
-	QAndroidJniObject JSONStringer::endArray()
+	jstring JSONStringer::toString()
 	{
 		return __thiz.callObjectMethod(
-			"endArray",
-			"()Lorg/json/JSONStringer;"
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject JSONStringer::value(jboolean arg0)
+	{
+		return __thiz.callObjectMethod(
+			"value",
+			"(Z)Lorg/json/JSONStringer;",
+			arg0
 		);
 	}
-	QAndroidJniObject JSONStringer::endObject()
+	QAndroidJniObject JSONStringer::value(jdouble arg0)
 	{
 		return __thiz.callObjectMethod(
-			"endObject",
-			"()Lorg/json/JSONStringer;"
+			"value",
+			"(D)Lorg/json/JSONStringer;",
+			arg0
+		);
+	}
+	QAndroidJniObject JSONStringer::value(jobject arg0)
+	{
+		return __thiz.callObjectMethod(
+			"value",
+			"(Ljava/lang/Object;)Lorg/json/JSONStringer;",
+			arg0
+		);
+	}
+	QAndroidJniObject JSONStringer::value(jlong arg0)
+	{
+		return __thiz.callObjectMethod(
+			"value",
+			"(J)Lorg/json/JSONStringer;",
+			arg0
 		);
 	}
 } // namespace __jni_impl::org::json

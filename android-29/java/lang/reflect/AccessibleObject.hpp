@@ -17,18 +17,18 @@ namespace __jni_impl::java::lang::reflect
 		void __constructor();
 		
 		// Methods
-		jboolean isAnnotationPresent(jclass arg0);
-		QAndroidJniObject getAnnotation(jclass arg0);
-		jarray getAnnotationsByType(jclass arg0);
-		jarray getAnnotations();
-		QAndroidJniObject getDeclaredAnnotation(jclass arg0);
-		jarray getDeclaredAnnotationsByType(jclass arg0);
-		jarray getDeclaredAnnotations();
-		void setAccessible(jboolean arg0);
 		static void setAccessible(jarray arg0, jboolean arg1);
-		jboolean trySetAccessible();
-		jboolean isAccessible();
 		jboolean canAccess(jobject arg0);
+		QAndroidJniObject getAnnotation(jclass arg0);
+		jarray getAnnotations();
+		jarray getAnnotationsByType(jclass arg0);
+		QAndroidJniObject getDeclaredAnnotation(jclass arg0);
+		jarray getDeclaredAnnotations();
+		jarray getDeclaredAnnotationsByType(jclass arg0);
+		jboolean isAccessible();
+		jboolean isAnnotationPresent(jclass arg0);
+		void setAccessible(jboolean arg0);
+		jboolean trySetAccessible();
 	};
 } // namespace __jni_impl::java::lang::reflect
 
@@ -46,11 +46,21 @@ namespace __jni_impl::java::lang::reflect
 	}
 	
 	// Methods
-	jboolean AccessibleObject::isAnnotationPresent(jclass arg0)
+	void AccessibleObject::setAccessible(jarray arg0, jboolean arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"java.lang.reflect.AccessibleObject",
+			"setAccessible",
+			"([Ljava/lang/reflect/AccessibleObject;Z)V",
+			arg0,
+			arg1
+		);
+	}
+	jboolean AccessibleObject::canAccess(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"isAnnotationPresent",
-			"(Ljava/lang/Class;)Z",
+			"canAccess",
+			"(Ljava/lang/Object;)Z",
 			arg0
 		);
 	}
@@ -62,19 +72,19 @@ namespace __jni_impl::java::lang::reflect
 			arg0
 		);
 	}
+	jarray AccessibleObject::getAnnotations()
+	{
+		return __thiz.callObjectMethod(
+			"getAnnotations",
+			"()[Ljava/lang/annotation/Annotation;"
+		).object<jarray>();
+	}
 	jarray AccessibleObject::getAnnotationsByType(jclass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getAnnotationsByType",
 			"(Ljava/lang/Class;)[Ljava/lang/annotation/Annotation;",
 			arg0
-		).object<jarray>();
-	}
-	jarray AccessibleObject::getAnnotations()
-	{
-		return __thiz.callObjectMethod(
-			"getAnnotations",
-			"()[Ljava/lang/annotation/Annotation;"
 		).object<jarray>();
 	}
 	QAndroidJniObject AccessibleObject::getDeclaredAnnotation(jclass arg0)
@@ -85,6 +95,13 @@ namespace __jni_impl::java::lang::reflect
 			arg0
 		);
 	}
+	jarray AccessibleObject::getDeclaredAnnotations()
+	{
+		return __thiz.callObjectMethod(
+			"getDeclaredAnnotations",
+			"()[Ljava/lang/annotation/Annotation;"
+		).object<jarray>();
+	}
 	jarray AccessibleObject::getDeclaredAnnotationsByType(jclass arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -93,12 +110,20 @@ namespace __jni_impl::java::lang::reflect
 			arg0
 		).object<jarray>();
 	}
-	jarray AccessibleObject::getDeclaredAnnotations()
+	jboolean AccessibleObject::isAccessible()
 	{
-		return __thiz.callObjectMethod(
-			"getDeclaredAnnotations",
-			"()[Ljava/lang/annotation/Annotation;"
-		).object<jarray>();
+		return __thiz.callMethod<jboolean>(
+			"isAccessible",
+			"()Z"
+		);
+	}
+	jboolean AccessibleObject::isAnnotationPresent(jclass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAnnotationPresent",
+			"(Ljava/lang/Class;)Z",
+			arg0
+		);
 	}
 	void AccessibleObject::setAccessible(jboolean arg0)
 	{
@@ -108,36 +133,11 @@ namespace __jni_impl::java::lang::reflect
 			arg0
 		);
 	}
-	void AccessibleObject::setAccessible(jarray arg0, jboolean arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"java.lang.reflect.AccessibleObject",
-			"setAccessible",
-			"([Ljava/lang/reflect/AccessibleObject;Z)V",
-			arg0,
-			arg1
-		);
-	}
 	jboolean AccessibleObject::trySetAccessible()
 	{
 		return __thiz.callMethod<jboolean>(
 			"trySetAccessible",
 			"()Z"
-		);
-	}
-	jboolean AccessibleObject::isAccessible()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAccessible",
-			"()Z"
-		);
-	}
-	jboolean AccessibleObject::canAccess(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"canAccess",
-			"(Ljava/lang/Object;)Z",
-			arg0
 		);
 	}
 } // namespace __jni_impl::java::lang::reflect

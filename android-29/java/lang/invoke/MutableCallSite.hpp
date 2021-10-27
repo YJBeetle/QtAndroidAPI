@@ -6,17 +6,17 @@
 #include "../../../__JniBaseClass.hpp"
 #include "CallSite.hpp"
 
-namespace __jni_impl::java::util::concurrent::atomic
+namespace __jni_impl::java::lang::invoke
 {
-	class AtomicInteger;
+	class MethodHandle;
 }
 namespace __jni_impl::java::lang::invoke
 {
 	class MethodType;
 }
-namespace __jni_impl::java::lang::invoke
+namespace __jni_impl::java::util::concurrent::atomic
 {
-	class MethodHandle;
+	class AtomicInteger;
 }
 
 namespace __jni_impl::java::lang::invoke
@@ -27,34 +27,26 @@ namespace __jni_impl::java::lang::invoke
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::java::lang::invoke::MethodType arg0);
 		void __constructor(__jni_impl::java::lang::invoke::MethodHandle arg0);
+		void __constructor(__jni_impl::java::lang::invoke::MethodType arg0);
 		
 		// Methods
+		static void syncAll(jarray arg0);
 		QAndroidJniObject dynamicInvoker();
 		QAndroidJniObject getTarget();
 		void setTarget(__jni_impl::java::lang::invoke::MethodHandle arg0);
-		static void syncAll(jarray arg0);
 	};
 } // namespace __jni_impl::java::lang::invoke
 
-#include "../../util/concurrent/atomic/AtomicInteger.hpp"
-#include "MethodType.hpp"
 #include "MethodHandle.hpp"
+#include "MethodType.hpp"
+#include "../../util/concurrent/atomic/AtomicInteger.hpp"
 
 namespace __jni_impl::java::lang::invoke
 {
 	// Fields
 	
 	// Constructors
-	void MutableCallSite::__constructor(__jni_impl::java::lang::invoke::MethodType arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.invoke.MutableCallSite",
-			"(Ljava/lang/invoke/MethodType;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void MutableCallSite::__constructor(__jni_impl::java::lang::invoke::MethodHandle arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -63,8 +55,25 @@ namespace __jni_impl::java::lang::invoke
 			arg0.__jniObject().object()
 		);
 	}
+	void MutableCallSite::__constructor(__jni_impl::java::lang::invoke::MethodType arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.invoke.MutableCallSite",
+			"(Ljava/lang/invoke/MethodType;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	
 	// Methods
+	void MutableCallSite::syncAll(jarray arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"java.lang.invoke.MutableCallSite",
+			"syncAll",
+			"([Ljava/lang/invoke/MutableCallSite;)V",
+			arg0
+		);
+	}
 	QAndroidJniObject MutableCallSite::dynamicInvoker()
 	{
 		return __thiz.callObjectMethod(
@@ -87,15 +96,6 @@ namespace __jni_impl::java::lang::invoke
 			arg0.__jniObject().object()
 		);
 	}
-	void MutableCallSite::syncAll(jarray arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"java.lang.invoke.MutableCallSite",
-			"syncAll",
-			"([Ljava/lang/invoke/MutableCallSite;)V",
-			arg0
-		);
-	}
 } // namespace __jni_impl::java::lang::invoke
 
 namespace java::lang::invoke
@@ -104,12 +104,12 @@ namespace java::lang::invoke
 	{
 	public:
 		MutableCallSite(QAndroidJniObject obj) { __thiz = obj; }
-		MutableCallSite(__jni_impl::java::lang::invoke::MethodType arg0)
+		MutableCallSite(__jni_impl::java::lang::invoke::MethodHandle arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		MutableCallSite(__jni_impl::java::lang::invoke::MethodHandle arg0)
+		MutableCallSite(__jni_impl::java::lang::invoke::MethodType arg0)
 		{
 			__constructor(
 				arg0);

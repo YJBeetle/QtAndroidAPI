@@ -23,16 +23,16 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 		void __constructor(__jni_impl::android::net::wifi::hotspot2::pps::Credential_SimCredential arg0);
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jstring toString();
+		jint getEapType();
+		jstring getImsi();
 		jint hashCode();
 		void setEapType(jint arg0);
-		jint getEapType();
 		void setImsi(jstring arg0);
 		void setImsi(const QString &arg0);
-		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jstring getImsi();
 	};
 } // namespace __jni_impl::android::net::wifi::hotspot2::pps
 
@@ -68,6 +68,13 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 	}
 	
 	// Methods
+	jint Credential_SimCredential::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean Credential_SimCredential::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -76,10 +83,17 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 			arg0
 		);
 	}
-	jstring Credential_SimCredential::toString()
+	jint Credential_SimCredential::getEapType()
+	{
+		return __thiz.callMethod<jint>(
+			"getEapType",
+			"()I"
+		);
+	}
+	jstring Credential_SimCredential::getImsi()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
+			"getImsi",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -98,13 +112,6 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 			arg0
 		);
 	}
-	jint Credential_SimCredential::getEapType()
-	{
-		return __thiz.callMethod<jint>(
-			"getEapType",
-			"()I"
-		);
-	}
 	void Credential_SimCredential::setImsi(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -121,12 +128,12 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jint Credential_SimCredential::describeContents()
+	jstring Credential_SimCredential::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Credential_SimCredential::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -136,13 +143,6 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jstring Credential_SimCredential::getImsi()
-	{
-		return __thiz.callObjectMethod(
-			"getImsi",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::net::wifi::hotspot2::pps
 

@@ -32,16 +32,16 @@ namespace __jni_impl::android::widget
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::__JniBaseClass arg2, jint arg3);
-		void __constructor(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::__JniBaseClass arg2, jboolean arg3);
 		void __constructor(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
+		void __constructor(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::__JniBaseClass arg2, jboolean arg3);
+		void __constructor(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::__JniBaseClass arg2, jint arg3);
 		
 		// Methods
-		void setDropDownViewTheme(__jni_impl::android::content::res::Resources_Theme arg0);
-		QAndroidJniObject newView(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::ViewGroup arg2);
 		QAndroidJniObject newDropDownView(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::ViewGroup arg2);
-		void setViewResource(jint arg0);
+		QAndroidJniObject newView(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::ViewGroup arg2);
 		void setDropDownViewResource(jint arg0);
+		void setDropDownViewTheme(__jni_impl::android::content::res::Resources_Theme arg0);
+		void setViewResource(jint arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -55,15 +55,14 @@ namespace __jni_impl::android::widget
 	// Fields
 	
 	// Constructors
-	void ResourceCursorAdapter::__constructor(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::__JniBaseClass arg2, jint arg3)
+	void ResourceCursorAdapter::__constructor(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ResourceCursorAdapter",
-			"(Landroid/content/Context;ILandroid/database/Cursor;I)V",
+			"(Landroid/content/Context;ILandroid/database/Cursor;)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object(),
-			arg3
+			arg2.__jniObject().object()
 		);
 	}
 	void ResourceCursorAdapter::__constructor(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::__JniBaseClass arg2, jboolean arg3)
@@ -77,24 +76,27 @@ namespace __jni_impl::android::widget
 			arg3
 		);
 	}
-	void ResourceCursorAdapter::__constructor(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
+	void ResourceCursorAdapter::__constructor(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::__JniBaseClass arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.ResourceCursorAdapter",
-			"(Landroid/content/Context;ILandroid/database/Cursor;)V",
+			"(Landroid/content/Context;ILandroid/database/Cursor;I)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2.__jniObject().object(),
+			arg3
 		);
 	}
 	
 	// Methods
-	void ResourceCursorAdapter::setDropDownViewTheme(__jni_impl::android::content::res::Resources_Theme arg0)
+	QAndroidJniObject ResourceCursorAdapter::newDropDownView(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::ViewGroup arg2)
 	{
-		__thiz.callMethod<void>(
-			"setDropDownViewTheme",
-			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"newDropDownView",
+			"(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
 	QAndroidJniObject ResourceCursorAdapter::newView(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::ViewGroup arg2)
@@ -107,28 +109,26 @@ namespace __jni_impl::android::widget
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ResourceCursorAdapter::newDropDownView(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::ViewGroup arg2)
+	void ResourceCursorAdapter::setDropDownViewResource(jint arg0)
 	{
-		return __thiz.callObjectMethod(
-			"newDropDownView",
-			"(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+		__thiz.callMethod<void>(
+			"setDropDownViewResource",
+			"(I)V",
+			arg0
+		);
+	}
+	void ResourceCursorAdapter::setDropDownViewTheme(__jni_impl::android::content::res::Resources_Theme arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDropDownViewTheme",
+			"(Landroid/content/res/Resources$Theme;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void ResourceCursorAdapter::setViewResource(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setViewResource",
-			"(I)V",
-			arg0
-		);
-	}
-	void ResourceCursorAdapter::setDropDownViewResource(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDropDownViewResource",
 			"(I)V",
 			arg0
 		);
@@ -141,13 +141,12 @@ namespace android::widget
 	{
 	public:
 		ResourceCursorAdapter(QAndroidJniObject obj) { __thiz = obj; }
-		ResourceCursorAdapter(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::__JniBaseClass arg2, jint arg3)
+		ResourceCursorAdapter(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
 		{
 			__constructor(
 				arg0,
 				arg1,
-				arg2,
-				arg3);
+				arg2);
 		}
 		ResourceCursorAdapter(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::__JniBaseClass arg2, jboolean arg3)
 		{
@@ -157,12 +156,13 @@ namespace android::widget
 				arg2,
 				arg3);
 		}
-		ResourceCursorAdapter(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
+		ResourceCursorAdapter(__jni_impl::android::content::Context arg0, jint arg1, __jni_impl::__JniBaseClass arg2, jint arg3)
 		{
 			__constructor(
 				arg0,
 				arg1,
-				arg2);
+				arg2,
+				arg3);
 		}
 	};
 } // namespace android::widget

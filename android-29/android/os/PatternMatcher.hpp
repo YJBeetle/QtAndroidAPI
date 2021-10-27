@@ -23,17 +23,17 @@ namespace __jni_impl::android::os
 		static jint PATTERN_SIMPLE_GLOB();
 		
 		// Constructors
+		void __constructor(__jni_impl::android::os::Parcel arg0);
 		void __constructor(jstring arg0, jint arg1);
 		void __constructor(const QString &arg0, jint arg1);
-		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		jstring toString();
+		jint describeContents();
+		jstring getPath();
+		jint getType();
 		jboolean match(jstring arg0);
 		jboolean match(const QString &arg0);
-		jint getType();
-		jstring getPath();
-		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::os
@@ -81,6 +81,14 @@ namespace __jni_impl::android::os
 	}
 	
 	// Constructors
+	void PatternMatcher::__constructor(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.os.PatternMatcher",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void PatternMatcher::__constructor(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -99,22 +107,28 @@ namespace __jni_impl::android::os
 			arg1
 		);
 	}
-	void PatternMatcher::__constructor(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.PatternMatcher",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	
 	// Methods
-	jstring PatternMatcher::toString()
+	jint PatternMatcher::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	jstring PatternMatcher::getPath()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
+			"getPath",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jint PatternMatcher::getType()
+	{
+		return __thiz.callMethod<jint>(
+			"getType",
+			"()I"
+		);
 	}
 	jboolean PatternMatcher::match(jstring arg0)
 	{
@@ -132,26 +146,12 @@ namespace __jni_impl::android::os
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jint PatternMatcher::getType()
-	{
-		return __thiz.callMethod<jint>(
-			"getType",
-			"()I"
-		);
-	}
-	jstring PatternMatcher::getPath()
+	jstring PatternMatcher::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getPath",
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jint PatternMatcher::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
 	}
 	void PatternMatcher::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -170,16 +170,16 @@ namespace android::os
 	{
 	public:
 		PatternMatcher(QAndroidJniObject obj) { __thiz = obj; }
+		PatternMatcher(__jni_impl::android::os::Parcel arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		PatternMatcher(jstring arg0, jint arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
-		}
-		PatternMatcher(__jni_impl::android::os::Parcel arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::os

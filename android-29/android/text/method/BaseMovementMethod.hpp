@@ -5,10 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::widget
-{
-	class TextView;
-}
 namespace __jni_impl::android::view
 {
 	class KeyEvent;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::view
 {
 	class MotionEvent;
+}
+namespace __jni_impl::android::widget
+{
+	class TextView;
 }
 
 namespace __jni_impl::android::text::method
@@ -29,21 +29,21 @@ namespace __jni_impl::android::text::method
 		void __constructor();
 		
 		// Methods
-		void initialize(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1);
 		jboolean canSelectArbitrarily();
-		jboolean onKeyOther(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::KeyEvent arg2);
-		void onTakeFocus(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
+		void initialize(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1);
+		jboolean onGenericMotionEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2);
 		jboolean onKeyDown(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
+		jboolean onKeyOther(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::KeyEvent arg2);
 		jboolean onKeyUp(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3);
+		void onTakeFocus(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
 		jboolean onTouchEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2);
 		jboolean onTrackballEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2);
-		jboolean onGenericMotionEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2);
 	};
 } // namespace __jni_impl::android::text::method
 
-#include "../../widget/TextView.hpp"
 #include "../../view/KeyEvent.hpp"
 #include "../../view/MotionEvent.hpp"
+#include "../../widget/TextView.hpp"
 
 namespace __jni_impl::android::text::method
 {
@@ -59,6 +59,13 @@ namespace __jni_impl::android::text::method
 	}
 	
 	// Methods
+	jboolean BaseMovementMethod::canSelectArbitrarily()
+	{
+		return __thiz.callMethod<jboolean>(
+			"canSelectArbitrarily",
+			"()Z"
+		);
+	}
 	void BaseMovementMethod::initialize(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
@@ -68,31 +75,14 @@ namespace __jni_impl::android::text::method
 			arg1.__jniObject().object()
 		);
 	}
-	jboolean BaseMovementMethod::canSelectArbitrarily()
+	jboolean BaseMovementMethod::onGenericMotionEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2)
 	{
 		return __thiz.callMethod<jboolean>(
-			"canSelectArbitrarily",
-			"()Z"
-		);
-	}
-	jboolean BaseMovementMethod::onKeyOther(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::KeyEvent arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onKeyOther",
-			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/KeyEvent;)Z",
+			"onGenericMotionEvent",
+			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
-		);
-	}
-	void BaseMovementMethod::onTakeFocus(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"onTakeFocus",
-			"(Landroid/widget/TextView;Landroid/text/Spannable;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
 		);
 	}
 	jboolean BaseMovementMethod::onKeyDown(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3)
@@ -106,6 +96,16 @@ namespace __jni_impl::android::text::method
 			arg3.__jniObject().object()
 		);
 	}
+	jboolean BaseMovementMethod::onKeyOther(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::KeyEvent arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onKeyOther",
+			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/KeyEvent;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
 	jboolean BaseMovementMethod::onKeyUp(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2, __jni_impl::android::view::KeyEvent arg3)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -115,6 +115,16 @@ namespace __jni_impl::android::text::method
 			arg1.__jniObject().object(),
 			arg2,
 			arg3.__jniObject().object()
+		);
+	}
+	void BaseMovementMethod::onTakeFocus(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"onTakeFocus",
+			"(Landroid/widget/TextView;Landroid/text/Spannable;I)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
 		);
 	}
 	jboolean BaseMovementMethod::onTouchEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2)
@@ -131,16 +141,6 @@ namespace __jni_impl::android::text::method
 	{
 		return __thiz.callMethod<jboolean>(
 			"onTrackballEvent",
-			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	jboolean BaseMovementMethod::onGenericMotionEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onGenericMotionEvent",
 			"(Landroid/widget/TextView;Landroid/text/Spannable;Landroid/view/MotionEvent;)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),

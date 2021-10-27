@@ -21,10 +21,10 @@ namespace __jni_impl::java::security::cert
 		void __constructor(const QString &arg0, jint arg1);
 		
 		// Methods
-		jstring toString();
 		jobject clone();
 		jint getPort();
 		jstring getServerName();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -77,13 +77,6 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	jstring LDAPCertStoreParameters::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jobject LDAPCertStoreParameters::clone()
 	{
 		return __thiz.callObjectMethod(
@@ -102,6 +95,13 @@ namespace __jni_impl::java::security::cert
 	{
 		return __thiz.callObjectMethod(
 			"getServerName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring LDAPCertStoreParameters::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

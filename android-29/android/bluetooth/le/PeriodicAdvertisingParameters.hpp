@@ -22,9 +22,9 @@ namespace __jni_impl::android::bluetooth::le
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
 		jboolean getIncludeTxPower();
 		jint getInterval();
-		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::bluetooth::le
@@ -52,6 +52,13 @@ namespace __jni_impl::android::bluetooth::le
 	}
 	
 	// Methods
+	jint PeriodicAdvertisingParameters::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean PeriodicAdvertisingParameters::getIncludeTxPower()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -63,13 +70,6 @@ namespace __jni_impl::android::bluetooth::le
 	{
 		return __thiz.callMethod<jint>(
 			"getInterval",
-			"()I"
-		);
-	}
-	jint PeriodicAdvertisingParameters::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
 			"()I"
 		);
 	}

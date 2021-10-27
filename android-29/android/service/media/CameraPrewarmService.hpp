@@ -24,9 +24,9 @@ namespace __jni_impl::android::service::media
 		void __constructor();
 		
 		// Methods
-		void onPrewarm();
-		void onCooldown(jboolean arg0);
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		void onCooldown(jboolean arg0);
+		void onPrewarm();
 		jboolean onUnbind(__jni_impl::android::content::Intent arg0);
 	};
 } // namespace __jni_impl::android::service::media
@@ -47,11 +47,12 @@ namespace __jni_impl::android::service::media
 	}
 	
 	// Methods
-	void CameraPrewarmService::onPrewarm()
+	QAndroidJniObject CameraPrewarmService::onBind(__jni_impl::android::content::Intent arg0)
 	{
-		__thiz.callMethod<void>(
-			"onPrewarm",
-			"()V"
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
 		);
 	}
 	void CameraPrewarmService::onCooldown(jboolean arg0)
@@ -62,12 +63,11 @@ namespace __jni_impl::android::service::media
 			arg0
 		);
 	}
-	QAndroidJniObject CameraPrewarmService::onBind(__jni_impl::android::content::Intent arg0)
+	void CameraPrewarmService::onPrewarm()
 	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+		__thiz.callMethod<void>(
+			"onPrewarm",
+			"()V"
 		);
 	}
 	jboolean CameraPrewarmService::onUnbind(__jni_impl::android::content::Intent arg0)

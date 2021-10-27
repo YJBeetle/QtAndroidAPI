@@ -7,13 +7,13 @@
 #include "BaseObj.hpp"
 #include "Script.hpp"
 
-namespace __jni_impl::android::renderscript
-{
-	class RenderScript;
-}
 namespace __jni_impl::android::content::res
 {
 	class Resources;
+}
+namespace __jni_impl::android::renderscript
+{
+	class RenderScript;
 }
 
 namespace __jni_impl::android::renderscript
@@ -30,8 +30,8 @@ namespace __jni_impl::android::renderscript
 	};
 } // namespace __jni_impl::android::renderscript
 
-#include "RenderScript.hpp"
 #include "../content/res/Resources.hpp"
+#include "RenderScript.hpp"
 
 namespace __jni_impl::android::renderscript
 {

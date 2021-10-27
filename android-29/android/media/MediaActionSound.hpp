@@ -22,8 +22,8 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		void load(jint arg0);
-		void release();
 		void play(jint arg0);
+		void release();
 	};
 } // namespace __jni_impl::android::media
 
@@ -78,19 +78,19 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	void MediaActionSound::release()
-	{
-		__thiz.callMethod<void>(
-			"release",
-			"()V"
-		);
-	}
 	void MediaActionSound::play(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"play",
 			"(I)V",
 			arg0
+		);
+	}
+	void MediaActionSound::release()
+	{
+		__thiz.callMethod<void>(
+			"release",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::media

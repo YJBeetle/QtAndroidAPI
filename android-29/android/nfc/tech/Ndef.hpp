@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::nfc
 {
-	class Tag;
+	class NdefMessage;
 }
 namespace __jni_impl::android::nfc
 {
-	class NdefMessage;
+	class Tag;
 }
 
 namespace __jni_impl::android::nfc::tech
@@ -31,23 +31,23 @@ namespace __jni_impl::android::nfc::tech
 		
 		// Methods
 		static QAndroidJniObject get(__jni_impl::android::nfc::Tag arg0);
-		void connect();
+		jboolean canMakeReadOnly();
 		void close();
-		jstring getType();
-		jboolean isWritable();
-		QAndroidJniObject getTag();
+		void connect();
 		QAndroidJniObject getCachedNdefMessage();
 		jint getMaxSize();
 		QAndroidJniObject getNdefMessage();
-		void writeNdefMessage(__jni_impl::android::nfc::NdefMessage arg0);
-		jboolean canMakeReadOnly();
-		jboolean makeReadOnly();
+		QAndroidJniObject getTag();
+		jstring getType();
 		jboolean isConnected();
+		jboolean isWritable();
+		jboolean makeReadOnly();
+		void writeNdefMessage(__jni_impl::android::nfc::NdefMessage arg0);
 	};
 } // namespace __jni_impl::android::nfc::tech
 
-#include "../Tag.hpp"
 #include "../NdefMessage.hpp"
+#include "../Tag.hpp"
 
 namespace __jni_impl::android::nfc::tech
 {
@@ -111,11 +111,11 @@ namespace __jni_impl::android::nfc::tech
 			arg0.__jniObject().object()
 		);
 	}
-	void Ndef::connect()
+	jboolean Ndef::canMakeReadOnly()
 	{
-		__thiz.callMethod<void>(
-			"connect",
-			"()V"
+		return __thiz.callMethod<jboolean>(
+			"canMakeReadOnly",
+			"()Z"
 		);
 	}
 	void Ndef::close()
@@ -125,25 +125,11 @@ namespace __jni_impl::android::nfc::tech
 			"()V"
 		);
 	}
-	jstring Ndef::getType()
+	void Ndef::connect()
 	{
-		return __thiz.callObjectMethod(
-			"getType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jboolean Ndef::isWritable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isWritable",
-			"()Z"
-		);
-	}
-	QAndroidJniObject Ndef::getTag()
-	{
-		return __thiz.callObjectMethod(
-			"getTag",
-			"()Landroid/nfc/Tag;"
+		__thiz.callMethod<void>(
+			"connect",
+			"()V"
 		);
 	}
 	QAndroidJniObject Ndef::getCachedNdefMessage()
@@ -167,18 +153,31 @@ namespace __jni_impl::android::nfc::tech
 			"()Landroid/nfc/NdefMessage;"
 		);
 	}
-	void Ndef::writeNdefMessage(__jni_impl::android::nfc::NdefMessage arg0)
+	QAndroidJniObject Ndef::getTag()
 	{
-		__thiz.callMethod<void>(
-			"writeNdefMessage",
-			"(Landroid/nfc/NdefMessage;)V",
-			arg0.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"getTag",
+			"()Landroid/nfc/Tag;"
 		);
 	}
-	jboolean Ndef::canMakeReadOnly()
+	jstring Ndef::getType()
+	{
+		return __thiz.callObjectMethod(
+			"getType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jboolean Ndef::isConnected()
 	{
 		return __thiz.callMethod<jboolean>(
-			"canMakeReadOnly",
+			"isConnected",
+			"()Z"
+		);
+	}
+	jboolean Ndef::isWritable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isWritable",
 			"()Z"
 		);
 	}
@@ -189,11 +188,12 @@ namespace __jni_impl::android::nfc::tech
 			"()Z"
 		);
 	}
-	jboolean Ndef::isConnected()
+	void Ndef::writeNdefMessage(__jni_impl::android::nfc::NdefMessage arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isConnected",
-			"()Z"
+		__thiz.callMethod<void>(
+			"writeNdefMessage",
+			"(Landroid/nfc/NdefMessage;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::nfc::tech

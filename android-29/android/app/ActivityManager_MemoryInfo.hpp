@@ -26,8 +26,8 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		jint describeContents();
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
@@ -80,19 +80,19 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
+	jint ActivityManager_MemoryInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	void ActivityManager_MemoryInfo::readFromParcel(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz.callMethod<void>(
 			"readFromParcel",
 			"(Landroid/os/Parcel;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	jint ActivityManager_MemoryInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
 		);
 	}
 	void ActivityManager_MemoryInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

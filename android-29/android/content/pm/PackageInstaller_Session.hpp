@@ -11,11 +11,11 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::java::io
 {
-	class OutputStream;
+	class InputStream;
 }
 namespace __jni_impl::java::io
 {
-	class InputStream;
+	class OutputStream;
 }
 
 namespace __jni_impl::android::content::pm
@@ -29,32 +29,32 @@ namespace __jni_impl::android::content::pm
 		void __constructor();
 		
 		// Methods
-		void close();
-		void transfer(jstring arg0);
-		void transfer(const QString &arg0);
-		void commit(__jni_impl::android::content::IntentSender arg0);
 		void abandon();
-		void setStagingProgress(jfloat arg0);
-		QAndroidJniObject openWrite(jstring arg0, jlong arg1, jlong arg2);
-		QAndroidJniObject openWrite(const QString &arg0, jlong arg1, jlong arg2);
+		void addChildSessionId(jint arg0);
+		void close();
+		void commit(__jni_impl::android::content::IntentSender arg0);
+		void fsync(__jni_impl::java::io::OutputStream arg0);
+		jintArray getChildSessionIds();
 		jarray getNames();
-		QAndroidJniObject openRead(jstring arg0);
-		QAndroidJniObject openRead(const QString &arg0);
-		void removeSplit(jstring arg0);
-		void removeSplit(const QString &arg0);
+		jint getParentSessionId();
 		jboolean isMultiPackage();
 		jboolean isStaged();
-		jint getParentSessionId();
-		jintArray getChildSessionIds();
-		void addChildSessionId(jint arg0);
+		QAndroidJniObject openRead(jstring arg0);
+		QAndroidJniObject openRead(const QString &arg0);
+		QAndroidJniObject openWrite(jstring arg0, jlong arg1, jlong arg2);
+		QAndroidJniObject openWrite(const QString &arg0, jlong arg1, jlong arg2);
 		void removeChildSessionId(jint arg0);
-		void fsync(__jni_impl::java::io::OutputStream arg0);
+		void removeSplit(jstring arg0);
+		void removeSplit(const QString &arg0);
+		void setStagingProgress(jfloat arg0);
+		void transfer(jstring arg0);
+		void transfer(const QString &arg0);
 	};
 } // namespace __jni_impl::android::content::pm
 
 #include "../IntentSender.hpp"
-#include "../../../java/io/OutputStream.hpp"
 #include "../../../java/io/InputStream.hpp"
+#include "../../../java/io/OutputStream.hpp"
 
 namespace __jni_impl::android::content::pm
 {
@@ -69,27 +69,26 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
+	void PackageInstaller_Session::abandon()
+	{
+		__thiz.callMethod<void>(
+			"abandon",
+			"()V"
+		);
+	}
+	void PackageInstaller_Session::addChildSessionId(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"addChildSessionId",
+			"(I)V",
+			arg0
+		);
+	}
 	void PackageInstaller_Session::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
 			"()V"
-		);
-	}
-	void PackageInstaller_Session::transfer(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"transfer",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void PackageInstaller_Session::transfer(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"transfer",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void PackageInstaller_Session::commit(__jni_impl::android::content::IntentSender arg0)
@@ -100,19 +99,63 @@ namespace __jni_impl::android::content::pm
 			arg0.__jniObject().object()
 		);
 	}
-	void PackageInstaller_Session::abandon()
+	void PackageInstaller_Session::fsync(__jni_impl::java::io::OutputStream arg0)
 	{
 		__thiz.callMethod<void>(
-			"abandon",
-			"()V"
+			"fsync",
+			"(Ljava/io/OutputStream;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	void PackageInstaller_Session::setStagingProgress(jfloat arg0)
+	jintArray PackageInstaller_Session::getChildSessionIds()
 	{
-		__thiz.callMethod<void>(
-			"setStagingProgress",
-			"(F)V",
+		return __thiz.callObjectMethod(
+			"getChildSessionIds",
+			"()[I"
+		).object<jintArray>();
+	}
+	jarray PackageInstaller_Session::getNames()
+	{
+		return __thiz.callObjectMethod(
+			"getNames",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	jint PackageInstaller_Session::getParentSessionId()
+	{
+		return __thiz.callMethod<jint>(
+			"getParentSessionId",
+			"()I"
+		);
+	}
+	jboolean PackageInstaller_Session::isMultiPackage()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isMultiPackage",
+			"()Z"
+		);
+	}
+	jboolean PackageInstaller_Session::isStaged()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isStaged",
+			"()Z"
+		);
+	}
+	QAndroidJniObject PackageInstaller_Session::openRead(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"openRead",
+			"(Ljava/lang/String;)Ljava/io/InputStream;",
 			arg0
+		);
+	}
+	QAndroidJniObject PackageInstaller_Session::openRead(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"openRead",
+			"(Ljava/lang/String;)Ljava/io/InputStream;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject PackageInstaller_Session::openWrite(jstring arg0, jlong arg1, jlong arg2)
@@ -135,27 +178,12 @@ namespace __jni_impl::android::content::pm
 			arg2
 		);
 	}
-	jarray PackageInstaller_Session::getNames()
+	void PackageInstaller_Session::removeChildSessionId(jint arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getNames",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	QAndroidJniObject PackageInstaller_Session::openRead(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"openRead",
-			"(Ljava/lang/String;)Ljava/io/InputStream;",
+		__thiz.callMethod<void>(
+			"removeChildSessionId",
+			"(I)V",
 			arg0
-		);
-	}
-	QAndroidJniObject PackageInstaller_Session::openRead(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"openRead",
-			"(Ljava/lang/String;)Ljava/io/InputStream;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void PackageInstaller_Session::removeSplit(jstring arg0)
@@ -174,56 +202,28 @@ namespace __jni_impl::android::content::pm
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jboolean PackageInstaller_Session::isMultiPackage()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isMultiPackage",
-			"()Z"
-		);
-	}
-	jboolean PackageInstaller_Session::isStaged()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isStaged",
-			"()Z"
-		);
-	}
-	jint PackageInstaller_Session::getParentSessionId()
-	{
-		return __thiz.callMethod<jint>(
-			"getParentSessionId",
-			"()I"
-		);
-	}
-	jintArray PackageInstaller_Session::getChildSessionIds()
-	{
-		return __thiz.callObjectMethod(
-			"getChildSessionIds",
-			"()[I"
-		).object<jintArray>();
-	}
-	void PackageInstaller_Session::addChildSessionId(jint arg0)
+	void PackageInstaller_Session::setStagingProgress(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
-			"addChildSessionId",
-			"(I)V",
+			"setStagingProgress",
+			"(F)V",
 			arg0
 		);
 	}
-	void PackageInstaller_Session::removeChildSessionId(jint arg0)
+	void PackageInstaller_Session::transfer(jstring arg0)
 	{
 		__thiz.callMethod<void>(
-			"removeChildSessionId",
-			"(I)V",
+			"transfer",
+			"(Ljava/lang/String;)V",
 			arg0
 		);
 	}
-	void PackageInstaller_Session::fsync(__jni_impl::java::io::OutputStream arg0)
+	void PackageInstaller_Session::transfer(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"fsync",
-			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object()
+			"transfer",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::content::pm

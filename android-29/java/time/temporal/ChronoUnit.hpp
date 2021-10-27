@@ -17,38 +17,38 @@ namespace __jni_impl::java::time::temporal
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NANOS();
-		static QAndroidJniObject MICROS();
-		static QAndroidJniObject MILLIS();
-		static QAndroidJniObject SECONDS();
-		static QAndroidJniObject MINUTES();
-		static QAndroidJniObject HOURS();
-		static QAndroidJniObject HALF_DAYS();
-		static QAndroidJniObject DAYS();
-		static QAndroidJniObject WEEKS();
-		static QAndroidJniObject MONTHS();
-		static QAndroidJniObject YEARS();
-		static QAndroidJniObject DECADES();
 		static QAndroidJniObject CENTURIES();
-		static QAndroidJniObject MILLENNIA();
+		static QAndroidJniObject DAYS();
+		static QAndroidJniObject DECADES();
 		static QAndroidJniObject ERAS();
 		static QAndroidJniObject FOREVER();
+		static QAndroidJniObject HALF_DAYS();
+		static QAndroidJniObject HOURS();
+		static QAndroidJniObject MICROS();
+		static QAndroidJniObject MILLENNIA();
+		static QAndroidJniObject MILLIS();
+		static QAndroidJniObject MINUTES();
+		static QAndroidJniObject MONTHS();
+		static QAndroidJniObject NANOS();
+		static QAndroidJniObject SECONDS();
+		static QAndroidJniObject WEEKS();
+		static QAndroidJniObject YEARS();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
-		jboolean isDateBased();
-		jboolean isTimeBased();
-		jboolean isSupportedBy(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getDuration();
-		jboolean isDurationEstimated();
+		static jarray values();
 		QAndroidJniObject addTo(__jni_impl::__JniBaseClass arg0, jlong arg1);
 		jlong between(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		QAndroidJniObject getDuration();
+		jboolean isDateBased();
+		jboolean isDurationEstimated();
+		jboolean isSupportedBy(__jni_impl::__JniBaseClass arg0);
+		jboolean isTimeBased();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::time::temporal
 
@@ -57,59 +57,11 @@ namespace __jni_impl::java::time::temporal
 namespace __jni_impl::java::time::temporal
 {
 	// Fields
-	QAndroidJniObject ChronoUnit::NANOS()
+	QAndroidJniObject ChronoUnit::CENTURIES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoUnit",
-			"NANOS",
-			"Ljava/time/temporal/ChronoUnit;"
-		);
-	}
-	QAndroidJniObject ChronoUnit::MICROS()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.time.temporal.ChronoUnit",
-			"MICROS",
-			"Ljava/time/temporal/ChronoUnit;"
-		);
-	}
-	QAndroidJniObject ChronoUnit::MILLIS()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.time.temporal.ChronoUnit",
-			"MILLIS",
-			"Ljava/time/temporal/ChronoUnit;"
-		);
-	}
-	QAndroidJniObject ChronoUnit::SECONDS()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.time.temporal.ChronoUnit",
-			"SECONDS",
-			"Ljava/time/temporal/ChronoUnit;"
-		);
-	}
-	QAndroidJniObject ChronoUnit::MINUTES()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.time.temporal.ChronoUnit",
-			"MINUTES",
-			"Ljava/time/temporal/ChronoUnit;"
-		);
-	}
-	QAndroidJniObject ChronoUnit::HOURS()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.time.temporal.ChronoUnit",
-			"HOURS",
-			"Ljava/time/temporal/ChronoUnit;"
-		);
-	}
-	QAndroidJniObject ChronoUnit::HALF_DAYS()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.time.temporal.ChronoUnit",
-			"HALF_DAYS",
+			"CENTURIES",
 			"Ljava/time/temporal/ChronoUnit;"
 		);
 	}
@@ -121,51 +73,11 @@ namespace __jni_impl::java::time::temporal
 			"Ljava/time/temporal/ChronoUnit;"
 		);
 	}
-	QAndroidJniObject ChronoUnit::WEEKS()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.time.temporal.ChronoUnit",
-			"WEEKS",
-			"Ljava/time/temporal/ChronoUnit;"
-		);
-	}
-	QAndroidJniObject ChronoUnit::MONTHS()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.time.temporal.ChronoUnit",
-			"MONTHS",
-			"Ljava/time/temporal/ChronoUnit;"
-		);
-	}
-	QAndroidJniObject ChronoUnit::YEARS()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.time.temporal.ChronoUnit",
-			"YEARS",
-			"Ljava/time/temporal/ChronoUnit;"
-		);
-	}
 	QAndroidJniObject ChronoUnit::DECADES()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.temporal.ChronoUnit",
 			"DECADES",
-			"Ljava/time/temporal/ChronoUnit;"
-		);
-	}
-	QAndroidJniObject ChronoUnit::CENTURIES()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.time.temporal.ChronoUnit",
-			"CENTURIES",
-			"Ljava/time/temporal/ChronoUnit;"
-		);
-	}
-	QAndroidJniObject ChronoUnit::MILLENNIA()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.time.temporal.ChronoUnit",
-			"MILLENNIA",
 			"Ljava/time/temporal/ChronoUnit;"
 		);
 	}
@@ -185,6 +97,94 @@ namespace __jni_impl::java::time::temporal
 			"Ljava/time/temporal/ChronoUnit;"
 		);
 	}
+	QAndroidJniObject ChronoUnit::HALF_DAYS()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.time.temporal.ChronoUnit",
+			"HALF_DAYS",
+			"Ljava/time/temporal/ChronoUnit;"
+		);
+	}
+	QAndroidJniObject ChronoUnit::HOURS()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.time.temporal.ChronoUnit",
+			"HOURS",
+			"Ljava/time/temporal/ChronoUnit;"
+		);
+	}
+	QAndroidJniObject ChronoUnit::MICROS()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.time.temporal.ChronoUnit",
+			"MICROS",
+			"Ljava/time/temporal/ChronoUnit;"
+		);
+	}
+	QAndroidJniObject ChronoUnit::MILLENNIA()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.time.temporal.ChronoUnit",
+			"MILLENNIA",
+			"Ljava/time/temporal/ChronoUnit;"
+		);
+	}
+	QAndroidJniObject ChronoUnit::MILLIS()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.time.temporal.ChronoUnit",
+			"MILLIS",
+			"Ljava/time/temporal/ChronoUnit;"
+		);
+	}
+	QAndroidJniObject ChronoUnit::MINUTES()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.time.temporal.ChronoUnit",
+			"MINUTES",
+			"Ljava/time/temporal/ChronoUnit;"
+		);
+	}
+	QAndroidJniObject ChronoUnit::MONTHS()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.time.temporal.ChronoUnit",
+			"MONTHS",
+			"Ljava/time/temporal/ChronoUnit;"
+		);
+	}
+	QAndroidJniObject ChronoUnit::NANOS()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.time.temporal.ChronoUnit",
+			"NANOS",
+			"Ljava/time/temporal/ChronoUnit;"
+		);
+	}
+	QAndroidJniObject ChronoUnit::SECONDS()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.time.temporal.ChronoUnit",
+			"SECONDS",
+			"Ljava/time/temporal/ChronoUnit;"
+		);
+	}
+	QAndroidJniObject ChronoUnit::WEEKS()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.time.temporal.ChronoUnit",
+			"WEEKS",
+			"Ljava/time/temporal/ChronoUnit;"
+		);
+	}
+	QAndroidJniObject ChronoUnit::YEARS()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.time.temporal.ChronoUnit",
+			"YEARS",
+			"Ljava/time/temporal/ChronoUnit;"
+		);
+	}
 	
 	// Constructors
 	void ChronoUnit::__constructor()
@@ -195,21 +195,6 @@ namespace __jni_impl::java::time::temporal
 	}
 	
 	// Methods
-	jstring ChronoUnit::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jarray ChronoUnit::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.temporal.ChronoUnit",
-			"values",
-			"()[Ljava/time/temporal/ChronoUnit;"
-		).object<jarray>();
-	}
 	QAndroidJniObject ChronoUnit::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -228,41 +213,13 @@ namespace __jni_impl::java::time::temporal
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jboolean ChronoUnit::isDateBased()
+	jarray ChronoUnit::values()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isDateBased",
-			"()Z"
-		);
-	}
-	jboolean ChronoUnit::isTimeBased()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isTimeBased",
-			"()Z"
-		);
-	}
-	jboolean ChronoUnit::isSupportedBy(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isSupportedBy",
-			"(Ljava/time/temporal/Temporal;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ChronoUnit::getDuration()
-	{
-		return __thiz.callObjectMethod(
-			"getDuration",
-			"()Ljava/time/Duration;"
-		);
-	}
-	jboolean ChronoUnit::isDurationEstimated()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isDurationEstimated",
-			"()Z"
-		);
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.temporal.ChronoUnit",
+			"values",
+			"()[Ljava/time/temporal/ChronoUnit;"
+		).object<jarray>();
 	}
 	QAndroidJniObject ChronoUnit::addTo(__jni_impl::__JniBaseClass arg0, jlong arg1)
 	{
@@ -281,6 +238,49 @@ namespace __jni_impl::java::time::temporal
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
 		);
+	}
+	QAndroidJniObject ChronoUnit::getDuration()
+	{
+		return __thiz.callObjectMethod(
+			"getDuration",
+			"()Ljava/time/Duration;"
+		);
+	}
+	jboolean ChronoUnit::isDateBased()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isDateBased",
+			"()Z"
+		);
+	}
+	jboolean ChronoUnit::isDurationEstimated()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isDurationEstimated",
+			"()Z"
+		);
+	}
+	jboolean ChronoUnit::isSupportedBy(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isSupportedBy",
+			"(Ljava/time/temporal/Temporal;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean ChronoUnit::isTimeBased()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isTimeBased",
+			"()Z"
+		);
+	}
+	jstring ChronoUnit::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::time::temporal
 

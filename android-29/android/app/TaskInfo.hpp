@@ -5,6 +5,10 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::app
+{
+	class ActivityManager_TaskDescription;
+}
 namespace __jni_impl::android::content
 {
 	class ComponentName;
@@ -12,10 +16,6 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::content
 {
 	class Intent;
-}
-namespace __jni_impl::android::app
-{
-	class ActivityManager_TaskDescription;
 }
 
 namespace __jni_impl::android::app
@@ -41,9 +41,9 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
+#include "ActivityManager_TaskDescription.hpp"
 #include "../content/ComponentName.hpp"
 #include "../content/Intent.hpp"
-#include "ActivityManager_TaskDescription.hpp"
 
 namespace __jni_impl::android::app
 {

@@ -5,25 +5,29 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::media
+namespace __jni_impl::android::app
 {
-	class AudioAttributes;
-}
-namespace __jni_impl::android::widget
-{
-	class RemoteViews;
+	class Notification_BubbleMetadata;
 }
 namespace __jni_impl::android::app
 {
 	class PendingIntent;
 }
-namespace __jni_impl::android::os
+namespace __jni_impl::android::content
 {
-	class Bundle;
+	class LocusId;
 }
 namespace __jni_impl::android::graphics
 {
 	class Bitmap;
+}
+namespace __jni_impl::android::graphics::drawable
+{
+	class Icon;
+}
+namespace __jni_impl::android::media
+{
+	class AudioAttributes;
 }
 namespace __jni_impl::android::net
 {
@@ -31,19 +35,15 @@ namespace __jni_impl::android::net
 }
 namespace __jni_impl::android::os
 {
+	class Bundle;
+}
+namespace __jni_impl::android::os
+{
 	class Parcel;
 }
-namespace __jni_impl::android::content
+namespace __jni_impl::android::widget
 {
-	class LocusId;
-}
-namespace __jni_impl::android::app
-{
-	class Notification_BubbleMetadata;
-}
-namespace __jni_impl::android::graphics::drawable
-{
-	class Icon;
+	class RemoteViews;
 }
 
 namespace __jni_impl::android::app
@@ -171,42 +171,42 @@ namespace __jni_impl::android::app
 		jlong when();
 		
 		// Constructors
+		void __constructor();
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		void __constructor(jint arg0, jstring arg1, jlong arg2);
 		void __constructor(jint arg0, const QString &arg1, jlong arg2);
-		void __constructor();
 		
 		// Methods
-		jstring toString();
 		QAndroidJniObject clone();
-		jstring getGroup();
-		jstring getSortKey();
-		jstring getChannelId();
-		jlong getTimeoutAfter();
+		jint describeContents();
+		jboolean getAllowSystemGeneratedContextualActions();
 		jint getBadgeIconType();
-		jstring getShortcutId();
+		QAndroidJniObject getBubbleMetadata();
+		jstring getChannelId();
+		jstring getGroup();
+		jint getGroupAlertBehavior();
+		QAndroidJniObject getLargeIcon();
 		QAndroidJniObject getLocusId();
 		jstring getSettingsText();
-		jint getGroupAlertBehavior();
-		QAndroidJniObject getBubbleMetadata();
-		jboolean getAllowSystemGeneratedContextualActions();
+		jstring getShortcutId();
 		QAndroidJniObject getSmallIcon();
-		QAndroidJniObject getLargeIcon();
-		jint describeContents();
+		jstring getSortKey();
+		jlong getTimeoutAfter();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
-#include "../media/AudioAttributes.hpp"
-#include "../widget/RemoteViews.hpp"
-#include "PendingIntent.hpp"
-#include "../os/Bundle.hpp"
-#include "../graphics/Bitmap.hpp"
-#include "../net/Uri.hpp"
-#include "../os/Parcel.hpp"
-#include "../content/LocusId.hpp"
 #include "Notification_BubbleMetadata.hpp"
+#include "PendingIntent.hpp"
+#include "../content/LocusId.hpp"
+#include "../graphics/Bitmap.hpp"
 #include "../graphics/drawable/Icon.hpp"
+#include "../media/AudioAttributes.hpp"
+#include "../net/Uri.hpp"
+#include "../os/Bundle.hpp"
+#include "../os/Parcel.hpp"
+#include "../widget/RemoteViews.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -1076,6 +1076,13 @@ namespace __jni_impl::android::app
 	}
 	
 	// Constructors
+	void Notification::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.Notification",
+			"()V"
+		);
+	}
 	void Notification::__constructor(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -1104,22 +1111,8 @@ namespace __jni_impl::android::app
 			arg2
 		);
 	}
-	void Notification::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.Notification",
-			"()V"
-		);
-	}
 	
 	// Methods
-	jstring Notification::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject Notification::clone()
 	{
 		return __thiz.callObjectMethod(
@@ -1127,32 +1120,18 @@ namespace __jni_impl::android::app
 			"()Landroid/app/Notification;"
 		);
 	}
-	jstring Notification::getGroup()
+	jint Notification::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"getGroup",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
-	jstring Notification::getSortKey()
+	jboolean Notification::getAllowSystemGeneratedContextualActions()
 	{
-		return __thiz.callObjectMethod(
-			"getSortKey",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring Notification::getChannelId()
-	{
-		return __thiz.callObjectMethod(
-			"getChannelId",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jlong Notification::getTimeoutAfter()
-	{
-		return __thiz.callMethod<jlong>(
-			"getTimeoutAfter",
-			"()J"
+		return __thiz.callMethod<jboolean>(
+			"getAllowSystemGeneratedContextualActions",
+			"()Z"
 		);
 	}
 	jint Notification::getBadgeIconType()
@@ -1162,12 +1141,40 @@ namespace __jni_impl::android::app
 			"()I"
 		);
 	}
-	jstring Notification::getShortcutId()
+	QAndroidJniObject Notification::getBubbleMetadata()
 	{
 		return __thiz.callObjectMethod(
-			"getShortcutId",
+			"getBubbleMetadata",
+			"()Landroid/app/Notification$BubbleMetadata;"
+		);
+	}
+	jstring Notification::getChannelId()
+	{
+		return __thiz.callObjectMethod(
+			"getChannelId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jstring Notification::getGroup()
+	{
+		return __thiz.callObjectMethod(
+			"getGroup",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint Notification::getGroupAlertBehavior()
+	{
+		return __thiz.callMethod<jint>(
+			"getGroupAlertBehavior",
+			"()I"
+		);
+	}
+	QAndroidJniObject Notification::getLargeIcon()
+	{
+		return __thiz.callObjectMethod(
+			"getLargeIcon",
+			"()Landroid/graphics/drawable/Icon;"
+		);
 	}
 	QAndroidJniObject Notification::getLocusId()
 	{
@@ -1183,26 +1190,12 @@ namespace __jni_impl::android::app
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	jint Notification::getGroupAlertBehavior()
-	{
-		return __thiz.callMethod<jint>(
-			"getGroupAlertBehavior",
-			"()I"
-		);
-	}
-	QAndroidJniObject Notification::getBubbleMetadata()
+	jstring Notification::getShortcutId()
 	{
 		return __thiz.callObjectMethod(
-			"getBubbleMetadata",
-			"()Landroid/app/Notification$BubbleMetadata;"
-		);
-	}
-	jboolean Notification::getAllowSystemGeneratedContextualActions()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getAllowSystemGeneratedContextualActions",
-			"()Z"
-		);
+			"getShortcutId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject Notification::getSmallIcon()
 	{
@@ -1211,19 +1204,26 @@ namespace __jni_impl::android::app
 			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
-	QAndroidJniObject Notification::getLargeIcon()
+	jstring Notification::getSortKey()
 	{
 		return __thiz.callObjectMethod(
-			"getLargeIcon",
-			"()Landroid/graphics/drawable/Icon;"
+			"getSortKey",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jlong Notification::getTimeoutAfter()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimeoutAfter",
+			"()J"
 		);
 	}
-	jint Notification::describeContents()
+	jstring Notification::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Notification::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -1242,6 +1242,10 @@ namespace android::app
 	{
 	public:
 		Notification(QAndroidJniObject obj) { __thiz = obj; }
+		Notification()
+		{
+			__constructor();
+		}
 		Notification(__jni_impl::android::os::Parcel arg0)
 		{
 			__constructor(
@@ -1253,10 +1257,6 @@ namespace android::app
 				arg0,
 				arg1,
 				arg2);
-		}
-		Notification()
-		{
-			__constructor();
 		}
 	};
 } // namespace android::app

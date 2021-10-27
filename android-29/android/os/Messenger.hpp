@@ -11,11 +11,11 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class Message;
 }
 namespace __jni_impl::android::os
 {
-	class Message;
+	class Parcel;
 }
 
 namespace __jni_impl::android::os
@@ -31,20 +31,20 @@ namespace __jni_impl::android::os
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
 		static QAndroidJniObject readMessengerOrNullFromParcel(__jni_impl::android::os::Parcel arg0);
 		static void writeMessengerOrNullToParcel(__jni_impl::android::os::Messenger arg0, __jni_impl::android::os::Parcel arg1);
-		void send(__jni_impl::android::os::Message arg0);
-		QAndroidJniObject getBinder();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		QAndroidJniObject getBinder();
+		jint hashCode();
+		void send(__jni_impl::android::os::Message arg0);
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::os
 
 #include "Handler.hpp"
-#include "Parcel.hpp"
 #include "Message.hpp"
+#include "Parcel.hpp"
 
 namespace __jni_impl::android::os
 {
@@ -77,21 +77,6 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	jboolean Messenger::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jint Messenger::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	QAndroidJniObject Messenger::readMessengerOrNullFromParcel(__jni_impl::android::os::Parcel arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -111,12 +96,19 @@ namespace __jni_impl::android::os
 			arg1.__jniObject().object()
 		);
 	}
-	void Messenger::send(__jni_impl::android::os::Message arg0)
+	jint Messenger::describeContents()
 	{
-		__thiz.callMethod<void>(
-			"send",
-			"(Landroid/os/Message;)V",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	jboolean Messenger::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 	QAndroidJniObject Messenger::getBinder()
@@ -126,11 +118,19 @@ namespace __jni_impl::android::os
 			"()Landroid/os/IBinder;"
 		);
 	}
-	jint Messenger::describeContents()
+	jint Messenger::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
+		);
+	}
+	void Messenger::send(__jni_impl::android::os::Message arg0)
+	{
+		__thiz.callMethod<void>(
+			"send",
+			"(Landroid/os/Message;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void Messenger::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

@@ -21,11 +21,11 @@ namespace __jni_impl::java::util::zip
 		void __constructor();
 		
 		// Methods
-		void update(jint arg0);
-		void update(jbyteArray arg0, jint arg1, jint arg2);
-		void update(__jni_impl::java::nio::ByteBuffer arg0);
 		jlong getValue();
 		void reset();
+		void update(jint arg0);
+		void update(__jni_impl::java::nio::ByteBuffer arg0);
+		void update(jbyteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::java::util::zip
 
@@ -45,32 +45,6 @@ namespace __jni_impl::java::util::zip
 	}
 	
 	// Methods
-	void Adler32::update(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"update",
-			"(I)V",
-			arg0
-		);
-	}
-	void Adler32::update(jbyteArray arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"update",
-			"([BII)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void Adler32::update(__jni_impl::java::nio::ByteBuffer arg0)
-	{
-		__thiz.callMethod<void>(
-			"update",
-			"(Ljava/nio/ByteBuffer;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	jlong Adler32::getValue()
 	{
 		return __thiz.callMethod<jlong>(
@@ -83,6 +57,32 @@ namespace __jni_impl::java::util::zip
 		__thiz.callMethod<void>(
 			"reset",
 			"()V"
+		);
+	}
+	void Adler32::update(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"update",
+			"(I)V",
+			arg0
+		);
+	}
+	void Adler32::update(__jni_impl::java::nio::ByteBuffer arg0)
+	{
+		__thiz.callMethod<void>(
+			"update",
+			"(Ljava/nio/ByteBuffer;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Adler32::update(jbyteArray arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"update",
+			"([BII)V",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 } // namespace __jni_impl::java::util::zip

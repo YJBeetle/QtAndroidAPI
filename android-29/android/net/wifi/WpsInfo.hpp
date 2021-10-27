@@ -31,8 +31,8 @@ namespace __jni_impl::android::net::wifi
 		void __constructor(__jni_impl::android::net::wifi::WpsInfo arg0);
 		
 		// Methods
-		jstring toString();
 		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi
@@ -124,19 +124,19 @@ namespace __jni_impl::android::net::wifi
 	}
 	
 	// Methods
-	jstring WpsInfo::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint WpsInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
+	}
+	jstring WpsInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void WpsInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

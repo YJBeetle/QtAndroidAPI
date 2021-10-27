@@ -6,13 +6,29 @@
 #include "../../__JniBaseClass.hpp"
 #include "Conferenceable.hpp"
 
+namespace __jni_impl::android::bluetooth
+{
+	class BluetoothDevice;
+}
 namespace __jni_impl::android::net
 {
 	class Uri;
 }
+namespace __jni_impl::android::os
+{
+	class Bundle;
+}
 namespace __jni_impl::android::telecom
 {
 	class CallAudioState;
+}
+namespace __jni_impl::android::telecom
+{
+	class Conference;
+}
+namespace __jni_impl::android::telecom
+{
+	class Connection_RttTextStream;
 }
 namespace __jni_impl::android::telecom
 {
@@ -25,22 +41,6 @@ namespace __jni_impl::android::telecom
 namespace __jni_impl::android::telecom
 {
 	class StatusHints;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
-namespace __jni_impl::android::telecom
-{
-	class Conference;
-}
-namespace __jni_impl::android::bluetooth
-{
-	class BluetoothDevice;
-}
-namespace __jni_impl::android::telecom
-{
-	class Connection_RttTextStream;
 }
 
 namespace __jni_impl::android::telecom
@@ -97,101 +97,101 @@ namespace __jni_impl::android::telecom
 		void __constructor();
 		
 		// Methods
-		jint getState();
+		static jstring capabilitiesToString(jint arg0);
+		static QAndroidJniObject createCanceledConnection();
+		static QAndroidJniObject createFailedConnection(__jni_impl::android::telecom::DisconnectCause arg0);
+		static jstring propertiesToString(jint arg0);
+		static jstring stateToString(jint arg0);
 		void destroy();
 		QAndroidJniObject getAddress();
-		jint getConnectionCapabilities();
-		jint getConnectionProperties();
-		QAndroidJniObject getCallAudioState();
-		QAndroidJniObject getVideoProvider();
-		void onDisconnect();
-		void onSeparate();
-		void onHold();
-		void onUnhold();
-		void onPlayDtmfTone(jchar arg0);
-		void onStopDtmfTone();
-		void onCallAudioStateChanged(__jni_impl::android::telecom::CallAudioState arg0);
-		void setOnHold();
-		void setDialing();
-		void setActive();
-		void setDisconnected(__jni_impl::android::telecom::DisconnectCause arg0);
-		QAndroidJniObject getDisconnectCause();
-		void setConnectionCapabilities(jint arg0);
-		void setConnectionProperties(jint arg0);
-		void setConferenceableConnections(__jni_impl::__JniBaseClass arg0);
-		void setVideoState(jint arg0);
-		void setVideoProvider(__jni_impl::android::telecom::Connection_VideoProvider arg0);
-		void setStatusHints(__jni_impl::android::telecom::StatusHints arg0);
-		QAndroidJniObject getStatusHints();
-		void setExtras(__jni_impl::android::os::Bundle arg0);
-		void removeExtras(__jni_impl::__JniBaseClass arg0);
-		void removeExtras(jarray arg0);
-		void onExtrasChanged(__jni_impl::android::os::Bundle arg0);
-		static jstring capabilitiesToString(jint arg0);
-		static jstring propertiesToString(jint arg0);
 		jint getAddressPresentation();
+		jboolean getAudioModeIsVoip();
+		QAndroidJniObject getCallAudioState();
 		jstring getCallerDisplayName();
 		jint getCallerDisplayNamePresentation();
 		QAndroidJniObject getConference();
-		jboolean isRingbackRequested();
-		jboolean getAudioModeIsVoip();
-		static jstring stateToString(jint arg0);
-		void setAddress(__jni_impl::android::net::Uri arg0, jint arg1);
-		void setCallerDisplayName(jstring arg0, jint arg1);
-		void setCallerDisplayName(const QString &arg0, jint arg1);
-		void setRinging();
-		void setInitializing();
-		void setInitialized();
-		void setPulling();
-		void setPostDialWait(jstring arg0);
-		void setPostDialWait(const QString &arg0);
-		void setNextPostDialChar(jchar arg0);
-		void setRingbackRequested(jboolean arg0);
-		void setAudioModeIsVoip(jboolean arg0);
-		void setConferenceables(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getConferenceables();
-		void setAudioRoute(jint arg0);
-		void requestBluetoothAudio(__jni_impl::android::bluetooth::BluetoothDevice arg0);
-		void sendRttInitiationSuccess();
-		void sendRttInitiationFailure(jint arg0);
-		void sendRttSessionRemotelyTerminated();
-		void sendRemoteRttRequest();
-		void onStateChanged(jint arg0);
+		jint getConnectionCapabilities();
+		jint getConnectionProperties();
+		QAndroidJniObject getDisconnectCause();
+		QAndroidJniObject getExtras();
+		jint getState();
+		QAndroidJniObject getStatusHints();
+		QAndroidJniObject getVideoProvider();
+		void handleRttUpgradeResponse(__jni_impl::android::telecom::Connection_RttTextStream arg0);
+		jboolean isRingbackRequested();
 		void onAbort();
 		void onAnswer();
 		void onAnswer(jint arg0);
+		void onCallAudioStateChanged(__jni_impl::android::telecom::CallAudioState arg0);
+		void onCallEvent(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void onCallEvent(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		void onDeflect(__jni_impl::android::net::Uri arg0);
+		void onDisconnect();
+		void onExtrasChanged(__jni_impl::android::os::Bundle arg0);
+		void onHandoverComplete();
+		void onHold();
+		void onPlayDtmfTone(jchar arg0);
+		void onPostDialContinue(jboolean arg0);
+		void onPullExternalCall();
 		void onReject();
 		void onReject(jstring arg0);
 		void onReject(const QString &arg0);
-		void onSilence();
-		void onPostDialContinue(jboolean arg0);
-		void onPullExternalCall();
-		void onCallEvent(jstring arg0, __jni_impl::android::os::Bundle arg1);
-		void onCallEvent(const QString &arg0, __jni_impl::android::os::Bundle arg1);
-		void onHandoverComplete();
+		void onSeparate();
 		void onShowIncomingCallUi();
+		void onSilence();
 		void onStartRtt(__jni_impl::android::telecom::Connection_RttTextStream arg0);
+		void onStateChanged(jint arg0);
+		void onStopDtmfTone();
 		void onStopRtt();
-		void handleRttUpgradeResponse(__jni_impl::android::telecom::Connection_RttTextStream arg0);
-		static QAndroidJniObject createFailedConnection(__jni_impl::android::telecom::DisconnectCause arg0);
-		static QAndroidJniObject createCanceledConnection();
+		void onUnhold();
+		void putExtras(__jni_impl::android::os::Bundle arg0);
+		void removeExtras(jarray arg0);
+		void removeExtras(__jni_impl::__JniBaseClass arg0);
+		void requestBluetoothAudio(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 		void sendConnectionEvent(jstring arg0, __jni_impl::android::os::Bundle arg1);
 		void sendConnectionEvent(const QString &arg0, __jni_impl::android::os::Bundle arg1);
-		QAndroidJniObject getExtras();
-		void putExtras(__jni_impl::android::os::Bundle arg0);
+		void sendRemoteRttRequest();
+		void sendRttInitiationFailure(jint arg0);
+		void sendRttInitiationSuccess();
+		void sendRttSessionRemotelyTerminated();
+		void setActive();
+		void setAddress(__jni_impl::android::net::Uri arg0, jint arg1);
+		void setAudioModeIsVoip(jboolean arg0);
+		void setAudioRoute(jint arg0);
+		void setCallerDisplayName(jstring arg0, jint arg1);
+		void setCallerDisplayName(const QString &arg0, jint arg1);
+		void setConferenceableConnections(__jni_impl::__JniBaseClass arg0);
+		void setConferenceables(__jni_impl::__JniBaseClass arg0);
+		void setConnectionCapabilities(jint arg0);
+		void setConnectionProperties(jint arg0);
+		void setDialing();
+		void setDisconnected(__jni_impl::android::telecom::DisconnectCause arg0);
+		void setExtras(__jni_impl::android::os::Bundle arg0);
+		void setInitialized();
+		void setInitializing();
+		void setNextPostDialChar(jchar arg0);
+		void setOnHold();
+		void setPostDialWait(jstring arg0);
+		void setPostDialWait(const QString &arg0);
+		void setPulling();
+		void setRingbackRequested(jboolean arg0);
+		void setRinging();
+		void setStatusHints(__jni_impl::android::telecom::StatusHints arg0);
+		void setVideoProvider(__jni_impl::android::telecom::Connection_VideoProvider arg0);
+		void setVideoState(jint arg0);
 	};
 } // namespace __jni_impl::android::telecom
 
+#include "../bluetooth/BluetoothDevice.hpp"
 #include "../net/Uri.hpp"
+#include "../os/Bundle.hpp"
 #include "CallAudioState.hpp"
+#include "Conference.hpp"
+#include "Connection_RttTextStream.hpp"
 #include "Connection_VideoProvider.hpp"
 #include "DisconnectCause.hpp"
 #include "StatusHints.hpp"
-#include "../os/Bundle.hpp"
-#include "Conference.hpp"
-#include "../bluetooth/BluetoothDevice.hpp"
-#include "Connection_RttTextStream.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -518,12 +518,49 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
-	jint Connection::getState()
+	jstring Connection::capabilitiesToString(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getState",
-			"()I"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telecom.Connection",
+			"capabilitiesToString",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	QAndroidJniObject Connection::createCanceledConnection()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telecom.Connection",
+			"createCanceledConnection",
+			"()Landroid/telecom/Connection;"
 		);
+	}
+	QAndroidJniObject Connection::createFailedConnection(__jni_impl::android::telecom::DisconnectCause arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telecom.Connection",
+			"createFailedConnection",
+			"(Landroid/telecom/DisconnectCause;)Landroid/telecom/Connection;",
+			arg0.__jniObject().object()
+		);
+	}
+	jstring Connection::propertiesToString(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telecom.Connection",
+			"propertiesToString",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring Connection::stateToString(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.telecom.Connection",
+			"stateToString",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
 	}
 	void Connection::destroy()
 	{
@@ -539,18 +576,18 @@ namespace __jni_impl::android::telecom
 			"()Landroid/net/Uri;"
 		);
 	}
-	jint Connection::getConnectionCapabilities()
+	jint Connection::getAddressPresentation()
 	{
 		return __thiz.callMethod<jint>(
-			"getConnectionCapabilities",
+			"getAddressPresentation",
 			"()I"
 		);
 	}
-	jint Connection::getConnectionProperties()
+	jboolean Connection::getAudioModeIsVoip()
 	{
-		return __thiz.callMethod<jint>(
-			"getConnectionProperties",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"getAudioModeIsVoip",
+			"()Z"
 		);
 	}
 	QAndroidJniObject Connection::getCallAudioState()
@@ -558,212 +595,6 @@ namespace __jni_impl::android::telecom
 		return __thiz.callObjectMethod(
 			"getCallAudioState",
 			"()Landroid/telecom/CallAudioState;"
-		);
-	}
-	QAndroidJniObject Connection::getVideoProvider()
-	{
-		return __thiz.callObjectMethod(
-			"getVideoProvider",
-			"()Landroid/telecom/Connection$VideoProvider;"
-		);
-	}
-	void Connection::onDisconnect()
-	{
-		__thiz.callMethod<void>(
-			"onDisconnect",
-			"()V"
-		);
-	}
-	void Connection::onSeparate()
-	{
-		__thiz.callMethod<void>(
-			"onSeparate",
-			"()V"
-		);
-	}
-	void Connection::onHold()
-	{
-		__thiz.callMethod<void>(
-			"onHold",
-			"()V"
-		);
-	}
-	void Connection::onUnhold()
-	{
-		__thiz.callMethod<void>(
-			"onUnhold",
-			"()V"
-		);
-	}
-	void Connection::onPlayDtmfTone(jchar arg0)
-	{
-		__thiz.callMethod<void>(
-			"onPlayDtmfTone",
-			"(C)V",
-			arg0
-		);
-	}
-	void Connection::onStopDtmfTone()
-	{
-		__thiz.callMethod<void>(
-			"onStopDtmfTone",
-			"()V"
-		);
-	}
-	void Connection::onCallAudioStateChanged(__jni_impl::android::telecom::CallAudioState arg0)
-	{
-		__thiz.callMethod<void>(
-			"onCallAudioStateChanged",
-			"(Landroid/telecom/CallAudioState;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Connection::setOnHold()
-	{
-		__thiz.callMethod<void>(
-			"setOnHold",
-			"()V"
-		);
-	}
-	void Connection::setDialing()
-	{
-		__thiz.callMethod<void>(
-			"setDialing",
-			"()V"
-		);
-	}
-	void Connection::setActive()
-	{
-		__thiz.callMethod<void>(
-			"setActive",
-			"()V"
-		);
-	}
-	void Connection::setDisconnected(__jni_impl::android::telecom::DisconnectCause arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDisconnected",
-			"(Landroid/telecom/DisconnectCause;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Connection::getDisconnectCause()
-	{
-		return __thiz.callObjectMethod(
-			"getDisconnectCause",
-			"()Landroid/telecom/DisconnectCause;"
-		);
-	}
-	void Connection::setConnectionCapabilities(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setConnectionCapabilities",
-			"(I)V",
-			arg0
-		);
-	}
-	void Connection::setConnectionProperties(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setConnectionProperties",
-			"(I)V",
-			arg0
-		);
-	}
-	void Connection::setConferenceableConnections(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setConferenceableConnections",
-			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Connection::setVideoState(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setVideoState",
-			"(I)V",
-			arg0
-		);
-	}
-	void Connection::setVideoProvider(__jni_impl::android::telecom::Connection_VideoProvider arg0)
-	{
-		__thiz.callMethod<void>(
-			"setVideoProvider",
-			"(Landroid/telecom/Connection$VideoProvider;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Connection::setStatusHints(__jni_impl::android::telecom::StatusHints arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStatusHints",
-			"(Landroid/telecom/StatusHints;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Connection::getStatusHints()
-	{
-		return __thiz.callObjectMethod(
-			"getStatusHints",
-			"()Landroid/telecom/StatusHints;"
-		);
-	}
-	void Connection::setExtras(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"setExtras",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Connection::removeExtras(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeExtras",
-			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Connection::removeExtras(jarray arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeExtras",
-			"([Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void Connection::onExtrasChanged(__jni_impl::android::os::Bundle arg0)
-	{
-		__thiz.callMethod<void>(
-			"onExtrasChanged",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jstring Connection::capabilitiesToString(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telecom.Connection",
-			"capabilitiesToString",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jstring Connection::propertiesToString(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telecom.Connection",
-			"propertiesToString",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jint Connection::getAddressPresentation()
-	{
-		return __thiz.callMethod<jint>(
-			"getAddressPresentation",
-			"()I"
 		);
 	}
 	jstring Connection::getCallerDisplayName()
@@ -787,132 +618,6 @@ namespace __jni_impl::android::telecom
 			"()Landroid/telecom/Conference;"
 		);
 	}
-	jboolean Connection::isRingbackRequested()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isRingbackRequested",
-			"()Z"
-		);
-	}
-	jboolean Connection::getAudioModeIsVoip()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getAudioModeIsVoip",
-			"()Z"
-		);
-	}
-	jstring Connection::stateToString(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telecom.Connection",
-			"stateToString",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	void Connection::setAddress(__jni_impl::android::net::Uri arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setAddress",
-			"(Landroid/net/Uri;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void Connection::setCallerDisplayName(jstring arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setCallerDisplayName",
-			"(Ljava/lang/String;I)V",
-			arg0,
-			arg1
-		);
-	}
-	void Connection::setCallerDisplayName(const QString &arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"setCallerDisplayName",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	void Connection::setRinging()
-	{
-		__thiz.callMethod<void>(
-			"setRinging",
-			"()V"
-		);
-	}
-	void Connection::setInitializing()
-	{
-		__thiz.callMethod<void>(
-			"setInitializing",
-			"()V"
-		);
-	}
-	void Connection::setInitialized()
-	{
-		__thiz.callMethod<void>(
-			"setInitialized",
-			"()V"
-		);
-	}
-	void Connection::setPulling()
-	{
-		__thiz.callMethod<void>(
-			"setPulling",
-			"()V"
-		);
-	}
-	void Connection::setPostDialWait(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPostDialWait",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void Connection::setPostDialWait(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPostDialWait",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void Connection::setNextPostDialChar(jchar arg0)
-	{
-		__thiz.callMethod<void>(
-			"setNextPostDialChar",
-			"(C)V",
-			arg0
-		);
-	}
-	void Connection::setRingbackRequested(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRingbackRequested",
-			"(Z)V",
-			arg0
-		);
-	}
-	void Connection::setAudioModeIsVoip(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAudioModeIsVoip",
-			"(Z)V",
-			arg0
-		);
-	}
-	void Connection::setConferenceables(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setConferenceables",
-			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject Connection::getConferenceables()
 	{
 		return __thiz.callObjectMethod(
@@ -920,57 +625,68 @@ namespace __jni_impl::android::telecom
 			"()Ljava/util/List;"
 		);
 	}
-	void Connection::setAudioRoute(jint arg0)
+	jint Connection::getConnectionCapabilities()
 	{
-		__thiz.callMethod<void>(
-			"setAudioRoute",
-			"(I)V",
-			arg0
+		return __thiz.callMethod<jint>(
+			"getConnectionCapabilities",
+			"()I"
 		);
 	}
-	void Connection::requestBluetoothAudio(__jni_impl::android::bluetooth::BluetoothDevice arg0)
+	jint Connection::getConnectionProperties()
+	{
+		return __thiz.callMethod<jint>(
+			"getConnectionProperties",
+			"()I"
+		);
+	}
+	QAndroidJniObject Connection::getDisconnectCause()
+	{
+		return __thiz.callObjectMethod(
+			"getDisconnectCause",
+			"()Landroid/telecom/DisconnectCause;"
+		);
+	}
+	QAndroidJniObject Connection::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	jint Connection::getState()
+	{
+		return __thiz.callMethod<jint>(
+			"getState",
+			"()I"
+		);
+	}
+	QAndroidJniObject Connection::getStatusHints()
+	{
+		return __thiz.callObjectMethod(
+			"getStatusHints",
+			"()Landroid/telecom/StatusHints;"
+		);
+	}
+	QAndroidJniObject Connection::getVideoProvider()
+	{
+		return __thiz.callObjectMethod(
+			"getVideoProvider",
+			"()Landroid/telecom/Connection$VideoProvider;"
+		);
+	}
+	void Connection::handleRttUpgradeResponse(__jni_impl::android::telecom::Connection_RttTextStream arg0)
 	{
 		__thiz.callMethod<void>(
-			"requestBluetoothAudio",
-			"(Landroid/bluetooth/BluetoothDevice;)V",
+			"handleRttUpgradeResponse",
+			"(Landroid/telecom/Connection$RttTextStream;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	void Connection::sendRttInitiationSuccess()
+	jboolean Connection::isRingbackRequested()
 	{
-		__thiz.callMethod<void>(
-			"sendRttInitiationSuccess",
-			"()V"
-		);
-	}
-	void Connection::sendRttInitiationFailure(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"sendRttInitiationFailure",
-			"(I)V",
-			arg0
-		);
-	}
-	void Connection::sendRttSessionRemotelyTerminated()
-	{
-		__thiz.callMethod<void>(
-			"sendRttSessionRemotelyTerminated",
-			"()V"
-		);
-	}
-	void Connection::sendRemoteRttRequest()
-	{
-		__thiz.callMethod<void>(
-			"sendRemoteRttRequest",
-			"()V"
-		);
-	}
-	void Connection::onStateChanged(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"onStateChanged",
-			"(I)V",
-			arg0
+		return __thiz.callMethod<jboolean>(
+			"isRingbackRequested",
+			"()Z"
 		);
 	}
 	void Connection::onAbort()
@@ -995,12 +711,90 @@ namespace __jni_impl::android::telecom
 			arg0
 		);
 	}
+	void Connection::onCallAudioStateChanged(__jni_impl::android::telecom::CallAudioState arg0)
+	{
+		__thiz.callMethod<void>(
+			"onCallAudioStateChanged",
+			"(Landroid/telecom/CallAudioState;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Connection::onCallEvent(jstring arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"onCallEvent",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void Connection::onCallEvent(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"onCallEvent",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	void Connection::onDeflect(__jni_impl::android::net::Uri arg0)
 	{
 		__thiz.callMethod<void>(
 			"onDeflect",
 			"(Landroid/net/Uri;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void Connection::onDisconnect()
+	{
+		__thiz.callMethod<void>(
+			"onDisconnect",
+			"()V"
+		);
+	}
+	void Connection::onExtrasChanged(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"onExtrasChanged",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Connection::onHandoverComplete()
+	{
+		__thiz.callMethod<void>(
+			"onHandoverComplete",
+			"()V"
+		);
+	}
+	void Connection::onHold()
+	{
+		__thiz.callMethod<void>(
+			"onHold",
+			"()V"
+		);
+	}
+	void Connection::onPlayDtmfTone(jchar arg0)
+	{
+		__thiz.callMethod<void>(
+			"onPlayDtmfTone",
+			"(C)V",
+			arg0
+		);
+	}
+	void Connection::onPostDialContinue(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"onPostDialContinue",
+			"(Z)V",
+			arg0
+		);
+	}
+	void Connection::onPullExternalCall()
+	{
+		__thiz.callMethod<void>(
+			"onPullExternalCall",
+			"()V"
 		);
 	}
 	void Connection::onReject()
@@ -1026,50 +820,10 @@ namespace __jni_impl::android::telecom
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void Connection::onSilence()
+	void Connection::onSeparate()
 	{
 		__thiz.callMethod<void>(
-			"onSilence",
-			"()V"
-		);
-	}
-	void Connection::onPostDialContinue(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"onPostDialContinue",
-			"(Z)V",
-			arg0
-		);
-	}
-	void Connection::onPullExternalCall()
-	{
-		__thiz.callMethod<void>(
-			"onPullExternalCall",
-			"()V"
-		);
-	}
-	void Connection::onCallEvent(jstring arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onCallEvent",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void Connection::onCallEvent(const QString &arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onCallEvent",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
-	void Connection::onHandoverComplete()
-	{
-		__thiz.callMethod<void>(
-			"onHandoverComplete",
+			"onSeparate",
 			"()V"
 		);
 	}
@@ -1077,6 +831,13 @@ namespace __jni_impl::android::telecom
 	{
 		__thiz.callMethod<void>(
 			"onShowIncomingCallUi",
+			"()V"
+		);
+	}
+	void Connection::onSilence()
+	{
+		__thiz.callMethod<void>(
+			"onSilence",
 			"()V"
 		);
 	}
@@ -1088,6 +849,21 @@ namespace __jni_impl::android::telecom
 			arg0.__jniObject().object()
 		);
 	}
+	void Connection::onStateChanged(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"onStateChanged",
+			"(I)V",
+			arg0
+		);
+	}
+	void Connection::onStopDtmfTone()
+	{
+		__thiz.callMethod<void>(
+			"onStopDtmfTone",
+			"()V"
+		);
+	}
 	void Connection::onStopRtt()
 	{
 		__thiz.callMethod<void>(
@@ -1095,29 +871,43 @@ namespace __jni_impl::android::telecom
 			"()V"
 		);
 	}
-	void Connection::handleRttUpgradeResponse(__jni_impl::android::telecom::Connection_RttTextStream arg0)
+	void Connection::onUnhold()
 	{
 		__thiz.callMethod<void>(
-			"handleRttUpgradeResponse",
-			"(Landroid/telecom/Connection$RttTextStream;)V",
+			"onUnhold",
+			"()V"
+		);
+	}
+	void Connection::putExtras(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"putExtras",
+			"(Landroid/os/Bundle;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Connection::createFailedConnection(__jni_impl::android::telecom::DisconnectCause arg0)
+	void Connection::removeExtras(jarray arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telecom.Connection",
-			"createFailedConnection",
-			"(Landroid/telecom/DisconnectCause;)Landroid/telecom/Connection;",
+		__thiz.callMethod<void>(
+			"removeExtras",
+			"([Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void Connection::removeExtras(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeExtras",
+			"(Ljava/util/List;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Connection::createCanceledConnection()
+	void Connection::requestBluetoothAudio(__jni_impl::android::bluetooth::BluetoothDevice arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.telecom.Connection",
-			"createCanceledConnection",
-			"()Landroid/telecom/Connection;"
+		__thiz.callMethod<void>(
+			"requestBluetoothAudio",
+			"(Landroid/bluetooth/BluetoothDevice;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void Connection::sendConnectionEvent(jstring arg0, __jni_impl::android::os::Bundle arg1)
@@ -1138,19 +928,229 @@ namespace __jni_impl::android::telecom
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Connection::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
-		);
-	}
-	void Connection::putExtras(__jni_impl::android::os::Bundle arg0)
+	void Connection::sendRemoteRttRequest()
 	{
 		__thiz.callMethod<void>(
-			"putExtras",
+			"sendRemoteRttRequest",
+			"()V"
+		);
+	}
+	void Connection::sendRttInitiationFailure(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"sendRttInitiationFailure",
+			"(I)V",
+			arg0
+		);
+	}
+	void Connection::sendRttInitiationSuccess()
+	{
+		__thiz.callMethod<void>(
+			"sendRttInitiationSuccess",
+			"()V"
+		);
+	}
+	void Connection::sendRttSessionRemotelyTerminated()
+	{
+		__thiz.callMethod<void>(
+			"sendRttSessionRemotelyTerminated",
+			"()V"
+		);
+	}
+	void Connection::setActive()
+	{
+		__thiz.callMethod<void>(
+			"setActive",
+			"()V"
+		);
+	}
+	void Connection::setAddress(__jni_impl::android::net::Uri arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setAddress",
+			"(Landroid/net/Uri;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void Connection::setAudioModeIsVoip(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAudioModeIsVoip",
+			"(Z)V",
+			arg0
+		);
+	}
+	void Connection::setAudioRoute(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAudioRoute",
+			"(I)V",
+			arg0
+		);
+	}
+	void Connection::setCallerDisplayName(jstring arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setCallerDisplayName",
+			"(Ljava/lang/String;I)V",
+			arg0,
+			arg1
+		);
+	}
+	void Connection::setCallerDisplayName(const QString &arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setCallerDisplayName",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	void Connection::setConferenceableConnections(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setConferenceableConnections",
+			"(Ljava/util/List;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Connection::setConferenceables(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setConferenceables",
+			"(Ljava/util/List;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Connection::setConnectionCapabilities(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setConnectionCapabilities",
+			"(I)V",
+			arg0
+		);
+	}
+	void Connection::setConnectionProperties(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setConnectionProperties",
+			"(I)V",
+			arg0
+		);
+	}
+	void Connection::setDialing()
+	{
+		__thiz.callMethod<void>(
+			"setDialing",
+			"()V"
+		);
+	}
+	void Connection::setDisconnected(__jni_impl::android::telecom::DisconnectCause arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDisconnected",
+			"(Landroid/telecom/DisconnectCause;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Connection::setExtras(__jni_impl::android::os::Bundle arg0)
+	{
+		__thiz.callMethod<void>(
+			"setExtras",
 			"(Landroid/os/Bundle;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void Connection::setInitialized()
+	{
+		__thiz.callMethod<void>(
+			"setInitialized",
+			"()V"
+		);
+	}
+	void Connection::setInitializing()
+	{
+		__thiz.callMethod<void>(
+			"setInitializing",
+			"()V"
+		);
+	}
+	void Connection::setNextPostDialChar(jchar arg0)
+	{
+		__thiz.callMethod<void>(
+			"setNextPostDialChar",
+			"(C)V",
+			arg0
+		);
+	}
+	void Connection::setOnHold()
+	{
+		__thiz.callMethod<void>(
+			"setOnHold",
+			"()V"
+		);
+	}
+	void Connection::setPostDialWait(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPostDialWait",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void Connection::setPostDialWait(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPostDialWait",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void Connection::setPulling()
+	{
+		__thiz.callMethod<void>(
+			"setPulling",
+			"()V"
+		);
+	}
+	void Connection::setRingbackRequested(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRingbackRequested",
+			"(Z)V",
+			arg0
+		);
+	}
+	void Connection::setRinging()
+	{
+		__thiz.callMethod<void>(
+			"setRinging",
+			"()V"
+		);
+	}
+	void Connection::setStatusHints(__jni_impl::android::telecom::StatusHints arg0)
+	{
+		__thiz.callMethod<void>(
+			"setStatusHints",
+			"(Landroid/telecom/StatusHints;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Connection::setVideoProvider(__jni_impl::android::telecom::Connection_VideoProvider arg0)
+	{
+		__thiz.callMethod<void>(
+			"setVideoProvider",
+			"(Landroid/telecom/Connection$VideoProvider;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Connection::setVideoState(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setVideoState",
+			"(I)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::telecom

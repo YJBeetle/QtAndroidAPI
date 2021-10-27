@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::se::omapi
 {
-	class Session;
+	class SEService;
 }
 namespace __jni_impl::android::se::omapi
 {
-	class SEService;
+	class Session;
 }
 
 namespace __jni_impl::android::se::omapi
@@ -25,16 +25,16 @@ namespace __jni_impl::android::se::omapi
 		void __constructor();
 		
 		// Methods
-		jstring getName();
-		QAndroidJniObject openSession();
-		jboolean isSecureElementPresent();
-		QAndroidJniObject getSEService();
 		void closeSessions();
+		jstring getName();
+		QAndroidJniObject getSEService();
+		jboolean isSecureElementPresent();
+		QAndroidJniObject openSession();
 	};
 } // namespace __jni_impl::android::se::omapi
 
-#include "Session.hpp"
 #include "SEService.hpp"
+#include "Session.hpp"
 
 namespace __jni_impl::android::se::omapi
 {
@@ -49,6 +49,13 @@ namespace __jni_impl::android::se::omapi
 	}
 	
 	// Methods
+	void Reader::closeSessions()
+	{
+		__thiz.callMethod<void>(
+			"closeSessions",
+			"()V"
+		);
+	}
 	jstring Reader::getName()
 	{
 		return __thiz.callObjectMethod(
@@ -56,11 +63,11 @@ namespace __jni_impl::android::se::omapi
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject Reader::openSession()
+	QAndroidJniObject Reader::getSEService()
 	{
 		return __thiz.callObjectMethod(
-			"openSession",
-			"()Landroid/se/omapi/Session;"
+			"getSEService",
+			"()Landroid/se/omapi/SEService;"
 		);
 	}
 	jboolean Reader::isSecureElementPresent()
@@ -70,18 +77,11 @@ namespace __jni_impl::android::se::omapi
 			"()Z"
 		);
 	}
-	QAndroidJniObject Reader::getSEService()
+	QAndroidJniObject Reader::openSession()
 	{
 		return __thiz.callObjectMethod(
-			"getSEService",
-			"()Landroid/se/omapi/SEService;"
-		);
-	}
-	void Reader::closeSessions()
-	{
-		__thiz.callMethod<void>(
-			"closeSessions",
-			"()V"
+			"openSession",
+			"()Landroid/se/omapi/Session;"
 		);
 	}
 } // namespace __jni_impl::android::se::omapi

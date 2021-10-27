@@ -27,8 +27,8 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		jint getPredefinedCategories();
 		QAndroidJniObject getCustomIncludedCategories();
+		jint getPredefinedCategories();
 		jint getTracingMode();
 	};
 } // namespace __jni_impl::android::webkit
@@ -117,18 +117,18 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	jint TracingConfig::getPredefinedCategories()
-	{
-		return __thiz.callMethod<jint>(
-			"getPredefinedCategories",
-			"()I"
-		);
-	}
 	QAndroidJniObject TracingConfig::getCustomIncludedCategories()
 	{
 		return __thiz.callObjectMethod(
 			"getCustomIncludedCategories",
 			"()Ljava/util/List;"
+		);
+	}
+	jint TracingConfig::getPredefinedCategories()
+	{
+		return __thiz.callMethod<jint>(
+			"getPredefinedCategories",
+			"()I"
 		);
 	}
 	jint TracingConfig::getTracingMode()

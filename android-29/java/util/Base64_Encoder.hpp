@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::nio
-{
-	class ByteBuffer;
-}
 namespace __jni_impl::java::io
 {
 	class OutputStream;
+}
+namespace __jni_impl::java::nio
+{
+	class ByteBuffer;
 }
 
 namespace __jni_impl::java::util
@@ -25,17 +25,17 @@ namespace __jni_impl::java::util
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject encode(__jni_impl::java::nio::ByteBuffer arg0);
-		jint encode(jbyteArray arg0, jbyteArray arg1);
 		jbyteArray encode(jbyteArray arg0);
-		QAndroidJniObject wrap(__jni_impl::java::io::OutputStream arg0);
+		jint encode(jbyteArray arg0, jbyteArray arg1);
+		QAndroidJniObject encode(__jni_impl::java::nio::ByteBuffer arg0);
 		jstring encodeToString(jbyteArray arg0);
 		QAndroidJniObject withoutPadding();
+		QAndroidJniObject wrap(__jni_impl::java::io::OutputStream arg0);
 	};
 } // namespace __jni_impl::java::util
 
-#include "../nio/ByteBuffer.hpp"
 #include "../io/OutputStream.hpp"
+#include "../nio/ByteBuffer.hpp"
 
 namespace __jni_impl::java::util
 {
@@ -50,13 +50,13 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	QAndroidJniObject Base64_Encoder::encode(__jni_impl::java::nio::ByteBuffer arg0)
+	jbyteArray Base64_Encoder::encode(jbyteArray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"encode",
-			"(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;",
-			arg0.__jniObject().object()
-		);
+			"([B)[B",
+			arg0
+		).object<jbyteArray>();
 	}
 	jint Base64_Encoder::encode(jbyteArray arg0, jbyteArray arg1)
 	{
@@ -67,19 +67,11 @@ namespace __jni_impl::java::util
 			arg1
 		);
 	}
-	jbyteArray Base64_Encoder::encode(jbyteArray arg0)
+	QAndroidJniObject Base64_Encoder::encode(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		return __thiz.callObjectMethod(
 			"encode",
-			"([B)[B",
-			arg0
-		).object<jbyteArray>();
-	}
-	QAndroidJniObject Base64_Encoder::wrap(__jni_impl::java::io::OutputStream arg0)
-	{
-		return __thiz.callObjectMethod(
-			"wrap",
-			"(Ljava/io/OutputStream;)Ljava/io/OutputStream;",
+			"(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;",
 			arg0.__jniObject().object()
 		);
 	}
@@ -96,6 +88,14 @@ namespace __jni_impl::java::util
 		return __thiz.callObjectMethod(
 			"withoutPadding",
 			"()Ljava/util/Base64$Encoder;"
+		);
+	}
+	QAndroidJniObject Base64_Encoder::wrap(__jni_impl::java::io::OutputStream arg0)
+	{
+		return __thiz.callObjectMethod(
+			"wrap",
+			"(Ljava/io/OutputStream;)Ljava/io/OutputStream;",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::java::util

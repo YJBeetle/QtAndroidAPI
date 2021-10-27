@@ -13,17 +13,17 @@ namespace __jni_impl::java::time::format
 	{
 	public:
 		// Fields
-		static QAndroidJniObject STRICT();
-		static QAndroidJniObject SMART();
 		static QAndroidJniObject LENIENT();
+		static QAndroidJniObject SMART();
+		static QAndroidJniObject STRICT();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::time::format
 
@@ -31,11 +31,11 @@ namespace __jni_impl::java::time::format
 namespace __jni_impl::java::time::format
 {
 	// Fields
-	QAndroidJniObject ResolverStyle::STRICT()
+	QAndroidJniObject ResolverStyle::LENIENT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.ResolverStyle",
-			"STRICT",
+			"LENIENT",
 			"Ljava/time/format/ResolverStyle;"
 		);
 	}
@@ -47,11 +47,11 @@ namespace __jni_impl::java::time::format
 			"Ljava/time/format/ResolverStyle;"
 		);
 	}
-	QAndroidJniObject ResolverStyle::LENIENT()
+	QAndroidJniObject ResolverStyle::STRICT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.time.format.ResolverStyle",
-			"LENIENT",
+			"STRICT",
 			"Ljava/time/format/ResolverStyle;"
 		);
 	}
@@ -65,14 +65,6 @@ namespace __jni_impl::java::time::format
 	}
 	
 	// Methods
-	jarray ResolverStyle::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.format.ResolverStyle",
-			"values",
-			"()[Ljava/time/format/ResolverStyle;"
-		).object<jarray>();
-	}
 	QAndroidJniObject ResolverStyle::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::java::time::format
 			"(Ljava/lang/String;)Ljava/time/format/ResolverStyle;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray ResolverStyle::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.format.ResolverStyle",
+			"values",
+			"()[Ljava/time/format/ResolverStyle;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::time::format
 

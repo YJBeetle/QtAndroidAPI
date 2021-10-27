@@ -7,19 +7,19 @@
 
 namespace __jni_impl::android::os
 {
-	class LocaleList;
-}
-namespace __jni_impl::android::view::textclassifier
-{
-	class TextClassifier_EntityConfig;
-}
-namespace __jni_impl::android::os
-{
 	class Bundle;
 }
 namespace __jni_impl::android::os
 {
+	class LocaleList;
+}
+namespace __jni_impl::android::os
+{
 	class Parcel;
+}
+namespace __jni_impl::android::view::textclassifier
+{
+	class TextClassifier_EntityConfig;
 }
 
 namespace __jni_impl::android::view::textclassifier
@@ -34,20 +34,20 @@ namespace __jni_impl::android::view::textclassifier
 		void __constructor();
 		
 		// Methods
-		jstring getText();
-		QAndroidJniObject getEntityConfig();
-		QAndroidJniObject getDefaultLocales();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getExtras();
 		jstring getCallingPackageName();
+		QAndroidJniObject getDefaultLocales();
+		QAndroidJniObject getEntityConfig();
+		QAndroidJniObject getExtras();
+		jstring getText();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
-#include "../../os/LocaleList.hpp"
-#include "TextClassifier_EntityConfig.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../os/LocaleList.hpp"
 #include "../../os/Parcel.hpp"
+#include "TextClassifier_EntityConfig.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {
@@ -70,19 +70,19 @@ namespace __jni_impl::android::view::textclassifier
 	}
 	
 	// Methods
-	jstring TextLinks_Request::getText()
+	jint TextLinks_Request::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"getText",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	QAndroidJniObject TextLinks_Request::getEntityConfig()
-	{
-		return __thiz.callObjectMethod(
-			"getEntityConfig",
-			"()Landroid/view/textclassifier/TextClassifier$EntityConfig;"
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
 		);
+	}
+	jstring TextLinks_Request::getCallingPackageName()
+	{
+		return __thiz.callObjectMethod(
+			"getCallingPackageName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	QAndroidJniObject TextLinks_Request::getDefaultLocales()
 	{
@@ -91,20 +91,11 @@ namespace __jni_impl::android::view::textclassifier
 			"()Landroid/os/LocaleList;"
 		);
 	}
-	jint TextLinks_Request::describeContents()
+	QAndroidJniObject TextLinks_Request::getEntityConfig()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void TextLinks_Request::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callObjectMethod(
+			"getEntityConfig",
+			"()Landroid/view/textclassifier/TextClassifier$EntityConfig;"
 		);
 	}
 	QAndroidJniObject TextLinks_Request::getExtras()
@@ -114,12 +105,21 @@ namespace __jni_impl::android::view::textclassifier
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jstring TextLinks_Request::getCallingPackageName()
+	jstring TextLinks_Request::getText()
 	{
 		return __thiz.callObjectMethod(
-			"getCallingPackageName",
-			"()Ljava/lang/String;"
+			"getText",
+			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
+	}
+	void TextLinks_Request::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

@@ -16,12 +16,12 @@ namespace __jni_impl::java::security
 		// Fields
 		
 		// Constructors
+		void __constructor();
+		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
 		void __constructor(const QString &arg0, jthrowable arg1);
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
-		void __constructor();
 		
 		// Methods
 	};
@@ -33,6 +33,29 @@ namespace __jni_impl::java::security
 	// Fields
 	
 	// Constructors
+	void KeyException::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.KeyException",
+			"()V"
+		);
+	}
+	void KeyException::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.KeyException",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void KeyException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.KeyException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void KeyException::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -59,29 +82,6 @@ namespace __jni_impl::java::security
 			arg1
 		);
 	}
-	void KeyException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.KeyException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void KeyException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.KeyException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void KeyException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.KeyException",
-			"()V"
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::java::security
@@ -92,6 +92,15 @@ namespace java::security
 	{
 	public:
 		KeyException(QAndroidJniObject obj) { __thiz = obj; }
+		KeyException()
+		{
+			__constructor();
+		}
+		KeyException(jstring arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		KeyException(jthrowable arg0)
 		{
 			__constructor(
@@ -102,15 +111,6 @@ namespace java::security
 			__constructor(
 				arg0,
 				arg1);
-		}
-		KeyException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		KeyException()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::security

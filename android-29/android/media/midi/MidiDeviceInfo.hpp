@@ -36,17 +36,17 @@ namespace __jni_impl::android::media::midi
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		QAndroidJniObject getProperties();
 		jint getId();
-		jint getType();
-		jboolean isPrivate();
-		jarray getPorts();
 		jint getInputPortCount();
 		jint getOutputPortCount();
-		jint describeContents();
+		jarray getPorts();
+		QAndroidJniObject getProperties();
+		jint getType();
+		jint hashCode();
+		jboolean isPrivate();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media::midi
@@ -152,6 +152,13 @@ namespace __jni_impl::android::media::midi
 	}
 	
 	// Methods
+	jint MidiDeviceInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean MidiDeviceInfo::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -160,54 +167,12 @@ namespace __jni_impl::android::media::midi
 			arg0
 		);
 	}
-	jstring MidiDeviceInfo::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint MidiDeviceInfo::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	QAndroidJniObject MidiDeviceInfo::getProperties()
-	{
-		return __thiz.callObjectMethod(
-			"getProperties",
-			"()Landroid/os/Bundle;"
-		);
-	}
 	jint MidiDeviceInfo::getId()
 	{
 		return __thiz.callMethod<jint>(
 			"getId",
 			"()I"
 		);
-	}
-	jint MidiDeviceInfo::getType()
-	{
-		return __thiz.callMethod<jint>(
-			"getType",
-			"()I"
-		);
-	}
-	jboolean MidiDeviceInfo::isPrivate()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isPrivate",
-			"()Z"
-		);
-	}
-	jarray MidiDeviceInfo::getPorts()
-	{
-		return __thiz.callObjectMethod(
-			"getPorts",
-			"()[Landroid/media/midi/MidiDeviceInfo$PortInfo;"
-		).object<jarray>();
 	}
 	jint MidiDeviceInfo::getInputPortCount()
 	{
@@ -223,12 +188,47 @@ namespace __jni_impl::android::media::midi
 			"()I"
 		);
 	}
-	jint MidiDeviceInfo::describeContents()
+	jarray MidiDeviceInfo::getPorts()
+	{
+		return __thiz.callObjectMethod(
+			"getPorts",
+			"()[Landroid/media/midi/MidiDeviceInfo$PortInfo;"
+		).object<jarray>();
+	}
+	QAndroidJniObject MidiDeviceInfo::getProperties()
+	{
+		return __thiz.callObjectMethod(
+			"getProperties",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	jint MidiDeviceInfo::getType()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getType",
 			"()I"
 		);
+	}
+	jint MidiDeviceInfo::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jboolean MidiDeviceInfo::isPrivate()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isPrivate",
+			"()Z"
+		);
+	}
+	jstring MidiDeviceInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void MidiDeviceInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

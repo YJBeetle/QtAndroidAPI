@@ -18,8 +18,8 @@ namespace __jni_impl::android::animation
 		void __constructor(jclass arg0, jclass arg1);
 		
 		// Methods
-		QAndroidJniObject invert();
 		jobject convertBack(jobject arg0);
+		QAndroidJniObject invert();
 	};
 } // namespace __jni_impl::android::animation
 
@@ -40,13 +40,6 @@ namespace __jni_impl::android::animation
 	}
 	
 	// Methods
-	QAndroidJniObject BidirectionalTypeConverter::invert()
-	{
-		return __thiz.callObjectMethod(
-			"invert",
-			"()Landroid/animation/BidirectionalTypeConverter;"
-		);
-	}
 	jobject BidirectionalTypeConverter::convertBack(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -54,6 +47,13 @@ namespace __jni_impl::android::animation
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
 		).object<jobject>();
+	}
+	QAndroidJniObject BidirectionalTypeConverter::invert()
+	{
+		return __thiz.callObjectMethod(
+			"invert",
+			"()Landroid/animation/BidirectionalTypeConverter;"
+		);
 	}
 } // namespace __jni_impl::android::animation
 

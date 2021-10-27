@@ -11,6 +11,10 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
+namespace __jni_impl::android::content::res
+{
+	class TypedArray;
+}
 namespace __jni_impl::android::view
 {
 	class View;
@@ -18,10 +22,6 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::widget
 {
 	class EditText;
-}
-namespace __jni_impl::android::content::res
-{
-	class TypedArray;
 }
 
 namespace __jni_impl::android::preference
@@ -38,18 +38,18 @@ namespace __jni_impl::android::preference
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
+		QAndroidJniObject getEditText();
+		jstring getText();
 		void setText(jstring arg0);
 		void setText(const QString &arg0);
-		jstring getText();
-		QAndroidJniObject getEditText();
 		jboolean shouldDisableDependents();
 	};
 } // namespace __jni_impl::android::preference
 
 #include "../content/Context.hpp"
+#include "../content/res/TypedArray.hpp"
 #include "../view/View.hpp"
 #include "../widget/EditText.hpp"
-#include "../content/res/TypedArray.hpp"
 
 namespace __jni_impl::android::preference
 {
@@ -96,6 +96,20 @@ namespace __jni_impl::android::preference
 	}
 	
 	// Methods
+	QAndroidJniObject EditTextPreference::getEditText()
+	{
+		return __thiz.callObjectMethod(
+			"getEditText",
+			"()Landroid/widget/EditText;"
+		);
+	}
+	jstring EditTextPreference::getText()
+	{
+		return __thiz.callObjectMethod(
+			"getText",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	void EditTextPreference::setText(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -110,20 +124,6 @@ namespace __jni_impl::android::preference
 			"setText",
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring EditTextPreference::getText()
-	{
-		return __thiz.callObjectMethod(
-			"getText",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject EditTextPreference::getEditText()
-	{
-		return __thiz.callObjectMethod(
-			"getEditText",
-			"()Landroid/widget/EditText;"
 		);
 	}
 	jboolean EditTextPreference::shouldDisableDependents()

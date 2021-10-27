@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class Bundle;
 }
 namespace __jni_impl::android::os
 {
-	class Bundle;
+	class Parcel;
 }
 
 namespace __jni_impl::android::view::textclassifier
@@ -33,17 +33,17 @@ namespace __jni_impl::android::view::textclassifier
 		void __constructor();
 		
 		// Methods
-		jstring toString();
 		jint apply(__jni_impl::__JniBaseClass arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
-		QAndroidJniObject getLinks();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getExtras();
+		QAndroidJniObject getLinks();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
-#include "../../os/Parcel.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {
@@ -115,13 +115,6 @@ namespace __jni_impl::android::view::textclassifier
 	}
 	
 	// Methods
-	jstring TextLinks::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint TextLinks::apply(__jni_impl::__JniBaseClass arg0, jint arg1, __jni_impl::__JniBaseClass arg2)
 	{
 		return __thiz.callMethod<jint>(
@@ -132,6 +125,20 @@ namespace __jni_impl::android::view::textclassifier
 			arg2.__jniObject().object()
 		);
 	}
+	jint TextLinks::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	QAndroidJniObject TextLinks::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
 	QAndroidJniObject TextLinks::getLinks()
 	{
 		return __thiz.callObjectMethod(
@@ -139,12 +146,12 @@ namespace __jni_impl::android::view::textclassifier
 			"()Ljava/util/Collection;"
 		);
 	}
-	jint TextLinks::describeContents()
+	jstring TextLinks::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void TextLinks::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -153,13 +160,6 @@ namespace __jni_impl::android::view::textclassifier
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject TextLinks::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
 		);
 	}
 } // namespace __jni_impl::android::view::textclassifier

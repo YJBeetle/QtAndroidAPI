@@ -13,25 +13,25 @@ namespace __jni_impl::java::security::cert
 	{
 	public:
 		// Fields
-		static QAndroidJniObject UNSPECIFIED();
-		static QAndroidJniObject KEY_COMPROMISE();
-		static QAndroidJniObject CA_COMPROMISE();
-		static QAndroidJniObject AFFILIATION_CHANGED();
-		static QAndroidJniObject SUPERSEDED();
-		static QAndroidJniObject CESSATION_OF_OPERATION();
-		static QAndroidJniObject CERTIFICATE_HOLD();
-		static QAndroidJniObject UNUSED();
-		static QAndroidJniObject REMOVE_FROM_CRL();
-		static QAndroidJniObject PRIVILEGE_WITHDRAWN();
 		static QAndroidJniObject AA_COMPROMISE();
+		static QAndroidJniObject AFFILIATION_CHANGED();
+		static QAndroidJniObject CA_COMPROMISE();
+		static QAndroidJniObject CERTIFICATE_HOLD();
+		static QAndroidJniObject CESSATION_OF_OPERATION();
+		static QAndroidJniObject KEY_COMPROMISE();
+		static QAndroidJniObject PRIVILEGE_WITHDRAWN();
+		static QAndroidJniObject REMOVE_FROM_CRL();
+		static QAndroidJniObject SUPERSEDED();
+		static QAndroidJniObject UNSPECIFIED();
+		static QAndroidJniObject UNUSED();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -39,27 +39,11 @@ namespace __jni_impl::java::security::cert
 namespace __jni_impl::java::security::cert
 {
 	// Fields
-	QAndroidJniObject CRLReason::UNSPECIFIED()
+	QAndroidJniObject CRLReason::AA_COMPROMISE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.CRLReason",
-			"UNSPECIFIED",
-			"Ljava/security/cert/CRLReason;"
-		);
-	}
-	QAndroidJniObject CRLReason::KEY_COMPROMISE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.security.cert.CRLReason",
-			"KEY_COMPROMISE",
-			"Ljava/security/cert/CRLReason;"
-		);
-	}
-	QAndroidJniObject CRLReason::CA_COMPROMISE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.security.cert.CRLReason",
-			"CA_COMPROMISE",
+			"AA_COMPROMISE",
 			"Ljava/security/cert/CRLReason;"
 		);
 	}
@@ -71,19 +55,11 @@ namespace __jni_impl::java::security::cert
 			"Ljava/security/cert/CRLReason;"
 		);
 	}
-	QAndroidJniObject CRLReason::SUPERSEDED()
+	QAndroidJniObject CRLReason::CA_COMPROMISE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.CRLReason",
-			"SUPERSEDED",
-			"Ljava/security/cert/CRLReason;"
-		);
-	}
-	QAndroidJniObject CRLReason::CESSATION_OF_OPERATION()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.security.cert.CRLReason",
-			"CESSATION_OF_OPERATION",
+			"CA_COMPROMISE",
 			"Ljava/security/cert/CRLReason;"
 		);
 	}
@@ -95,19 +71,19 @@ namespace __jni_impl::java::security::cert
 			"Ljava/security/cert/CRLReason;"
 		);
 	}
-	QAndroidJniObject CRLReason::UNUSED()
+	QAndroidJniObject CRLReason::CESSATION_OF_OPERATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.CRLReason",
-			"UNUSED",
+			"CESSATION_OF_OPERATION",
 			"Ljava/security/cert/CRLReason;"
 		);
 	}
-	QAndroidJniObject CRLReason::REMOVE_FROM_CRL()
+	QAndroidJniObject CRLReason::KEY_COMPROMISE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.CRLReason",
-			"REMOVE_FROM_CRL",
+			"KEY_COMPROMISE",
 			"Ljava/security/cert/CRLReason;"
 		);
 	}
@@ -119,11 +95,35 @@ namespace __jni_impl::java::security::cert
 			"Ljava/security/cert/CRLReason;"
 		);
 	}
-	QAndroidJniObject CRLReason::AA_COMPROMISE()
+	QAndroidJniObject CRLReason::REMOVE_FROM_CRL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.CRLReason",
-			"AA_COMPROMISE",
+			"REMOVE_FROM_CRL",
+			"Ljava/security/cert/CRLReason;"
+		);
+	}
+	QAndroidJniObject CRLReason::SUPERSEDED()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.security.cert.CRLReason",
+			"SUPERSEDED",
+			"Ljava/security/cert/CRLReason;"
+		);
+	}
+	QAndroidJniObject CRLReason::UNSPECIFIED()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.security.cert.CRLReason",
+			"UNSPECIFIED",
+			"Ljava/security/cert/CRLReason;"
+		);
+	}
+	QAndroidJniObject CRLReason::UNUSED()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.security.cert.CRLReason",
+			"UNUSED",
 			"Ljava/security/cert/CRLReason;"
 		);
 	}
@@ -137,14 +137,6 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	jarray CRLReason::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.cert.CRLReason",
-			"values",
-			"()[Ljava/security/cert/CRLReason;"
-		).object<jarray>();
-	}
 	QAndroidJniObject CRLReason::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -162,6 +154,14 @@ namespace __jni_impl::java::security::cert
 			"(Ljava/lang/String;)Ljava/security/cert/CRLReason;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray CRLReason::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.cert.CRLReason",
+			"values",
+			"()[Ljava/security/cert/CRLReason;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::security::cert
 

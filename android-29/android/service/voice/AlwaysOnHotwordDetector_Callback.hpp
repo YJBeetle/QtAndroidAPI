@@ -21,9 +21,9 @@ namespace __jni_impl::android::service::voice
 		void __constructor();
 		
 		// Methods
-		void onError();
 		void onAvailabilityChanged(jint arg0);
 		void onDetected(__jni_impl::android::service::voice::AlwaysOnHotwordDetector_EventPayload arg0);
+		void onError();
 		void onRecognitionPaused();
 		void onRecognitionResumed();
 	};
@@ -45,13 +45,6 @@ namespace __jni_impl::android::service::voice
 	}
 	
 	// Methods
-	void AlwaysOnHotwordDetector_Callback::onError()
-	{
-		__thiz.callMethod<void>(
-			"onError",
-			"()V"
-		);
-	}
 	void AlwaysOnHotwordDetector_Callback::onAvailabilityChanged(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -66,6 +59,13 @@ namespace __jni_impl::android::service::voice
 			"onDetected",
 			"(Landroid/service/voice/AlwaysOnHotwordDetector$EventPayload;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void AlwaysOnHotwordDetector_Callback::onError()
+	{
+		__thiz.callMethod<void>(
+			"onError",
+			"()V"
 		);
 	}
 	void AlwaysOnHotwordDetector_Callback::onRecognitionPaused()

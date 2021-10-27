@@ -25,9 +25,9 @@ namespace __jni_impl::android::net::wifi::p2p::nsd
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi::p2p::nsd
@@ -75,6 +75,13 @@ namespace __jni_impl::android::net::wifi::p2p::nsd
 	}
 	
 	// Methods
+	jint WifiP2pServiceInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean WifiP2pServiceInfo::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -87,13 +94,6 @@ namespace __jni_impl::android::net::wifi::p2p::nsd
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
-			"()I"
-		);
-	}
-	jint WifiP2pServiceInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
 			"()I"
 		);
 	}

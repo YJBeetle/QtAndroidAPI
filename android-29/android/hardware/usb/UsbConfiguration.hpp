@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::hardware::usb
 {
 	class UsbInterface;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::hardware::usb
@@ -26,21 +26,21 @@ namespace __jni_impl::android::hardware::usb
 		void __constructor();
 		
 		// Methods
-		jstring getName();
-		jstring toString();
-		jint getId();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getInterfaceCount();
+		jint getId();
 		QAndroidJniObject getInterface(jint arg0);
-		jboolean isSelfPowered();
-		jboolean isRemoteWakeup();
+		jint getInterfaceCount();
 		jint getMaxPower();
+		jstring getName();
+		jboolean isRemoteWakeup();
+		jboolean isSelfPowered();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::hardware::usb
 
-#include "../../os/Parcel.hpp"
 #include "UsbInterface.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::hardware::usb
 {
@@ -63,27 +63,6 @@ namespace __jni_impl::android::hardware::usb
 	}
 	
 	// Methods
-	jstring UsbConfiguration::getName()
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring UsbConfiguration::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint UsbConfiguration::getId()
-	{
-		return __thiz.callMethod<jint>(
-			"getId",
-			"()I"
-		);
-	}
 	jint UsbConfiguration::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -91,19 +70,10 @@ namespace __jni_impl::android::hardware::usb
 			"()I"
 		);
 	}
-	void UsbConfiguration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jint UsbConfiguration::getInterfaceCount()
+	jint UsbConfiguration::getId()
 	{
 		return __thiz.callMethod<jint>(
-			"getInterfaceCount",
+			"getId",
 			"()I"
 		);
 	}
@@ -115,12 +85,26 @@ namespace __jni_impl::android::hardware::usb
 			arg0
 		);
 	}
-	jboolean UsbConfiguration::isSelfPowered()
+	jint UsbConfiguration::getInterfaceCount()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isSelfPowered",
-			"()Z"
+		return __thiz.callMethod<jint>(
+			"getInterfaceCount",
+			"()I"
 		);
+	}
+	jint UsbConfiguration::getMaxPower()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxPower",
+			"()I"
+		);
+	}
+	jstring UsbConfiguration::getName()
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean UsbConfiguration::isRemoteWakeup()
 	{
@@ -129,11 +113,27 @@ namespace __jni_impl::android::hardware::usb
 			"()Z"
 		);
 	}
-	jint UsbConfiguration::getMaxPower()
+	jboolean UsbConfiguration::isSelfPowered()
 	{
-		return __thiz.callMethod<jint>(
-			"getMaxPower",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"isSelfPowered",
+			"()Z"
+		);
+	}
+	jstring UsbConfiguration::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void UsbConfiguration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::hardware::usb

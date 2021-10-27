@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::io
-{
-	class File;
-}
 namespace __jni_impl::android::content
 {
 	class Context;
+}
+namespace __jni_impl::java::io
+{
+	class File;
 }
 
 namespace __jni_impl::android::net
@@ -22,34 +22,34 @@ namespace __jni_impl::android::net
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::java::io::File arg0);
 		void __constructor(__jni_impl::android::content::Context arg0);
+		void __constructor(__jni_impl::java::io::File arg0);
 		
 		// Methods
 	};
 } // namespace __jni_impl::android::net
 
-#include "../../java/io/File.hpp"
 #include "../content/Context.hpp"
+#include "../../java/io/File.hpp"
 
 namespace __jni_impl::android::net
 {
 	// Fields
 	
 	// Constructors
-	void SSLSessionCache::__constructor(__jni_impl::java::io::File arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.net.SSLSessionCache",
-			"(Ljava/io/File;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void SSLSessionCache::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.net.SSLSessionCache",
 			"(Landroid/content/Context;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void SSLSessionCache::__constructor(__jni_impl::java::io::File arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.net.SSLSessionCache",
+			"(Ljava/io/File;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -63,12 +63,12 @@ namespace android::net
 	{
 	public:
 		SSLSessionCache(QAndroidJniObject obj) { __thiz = obj; }
-		SSLSessionCache(__jni_impl::java::io::File arg0)
+		SSLSessionCache(__jni_impl::android::content::Context arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		SSLSessionCache(__jni_impl::android::content::Context arg0)
+		SSLSessionCache(__jni_impl::java::io::File arg0)
 		{
 			__constructor(
 				arg0);

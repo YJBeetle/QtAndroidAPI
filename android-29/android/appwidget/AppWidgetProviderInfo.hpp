@@ -9,25 +9,25 @@ namespace __jni_impl::android::content
 {
 	class ComponentName;
 }
-namespace __jni_impl::android::os
+namespace __jni_impl::android::content
 {
-	class Parcel;
+	class Context;
+}
+namespace __jni_impl::android::content::pm
+{
+	class PackageManager;
 }
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
 }
-namespace __jni_impl::android::content
+namespace __jni_impl::android::os
 {
-	class Context;
+	class Parcel;
 }
 namespace __jni_impl::android::os
 {
 	class UserHandle;
-}
-namespace __jni_impl::android::content::pm
-{
-	class PackageManager;
 }
 
 namespace __jni_impl::android::appwidget
@@ -68,23 +68,23 @@ namespace __jni_impl::android::appwidget
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		jstring toString();
 		QAndroidJniObject clone();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject loadPreviewImage(__jni_impl::android::content::Context arg0, jint arg1);
 		QAndroidJniObject getProfile();
-		jstring loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
 		QAndroidJniObject loadIcon(__jni_impl::android::content::Context arg0, jint arg1);
+		jstring loadLabel(__jni_impl::android::content::pm::PackageManager arg0);
+		QAndroidJniObject loadPreviewImage(__jni_impl::android::content::Context arg0, jint arg1);
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::appwidget
 
 #include "../content/ComponentName.hpp"
-#include "../os/Parcel.hpp"
-#include "../graphics/drawable/Drawable.hpp"
 #include "../content/Context.hpp"
-#include "../os/UserHandle.hpp"
 #include "../content/pm/PackageManager.hpp"
+#include "../graphics/drawable/Drawable.hpp"
+#include "../os/Parcel.hpp"
+#include "../os/UserHandle.hpp"
 
 namespace __jni_impl::android::appwidget
 {
@@ -278,13 +278,6 @@ namespace __jni_impl::android::appwidget
 	}
 	
 	// Methods
-	jstring AppWidgetProviderInfo::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject AppWidgetProviderInfo::clone()
 	{
 		return __thiz.callObjectMethod(
@@ -299,29 +292,20 @@ namespace __jni_impl::android::appwidget
 			"()I"
 		);
 	}
-	void AppWidgetProviderInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject AppWidgetProviderInfo::loadPreviewImage(__jni_impl::android::content::Context arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"loadPreviewImage",
-			"(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	QAndroidJniObject AppWidgetProviderInfo::getProfile()
 	{
 		return __thiz.callObjectMethod(
 			"getProfile",
 			"()Landroid/os/UserHandle;"
+		);
+	}
+	QAndroidJniObject AppWidgetProviderInfo::loadIcon(__jni_impl::android::content::Context arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"loadIcon",
+			"(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 	jstring AppWidgetProviderInfo::loadLabel(__jni_impl::android::content::pm::PackageManager arg0)
@@ -332,11 +316,27 @@ namespace __jni_impl::android::appwidget
 			arg0.__jniObject().object()
 		).object<jstring>();
 	}
-	QAndroidJniObject AppWidgetProviderInfo::loadIcon(__jni_impl::android::content::Context arg0, jint arg1)
+	QAndroidJniObject AppWidgetProviderInfo::loadPreviewImage(__jni_impl::android::content::Context arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
-			"loadIcon",
+			"loadPreviewImage",
 			"(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jstring AppWidgetProviderInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void AppWidgetProviderInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
 		);

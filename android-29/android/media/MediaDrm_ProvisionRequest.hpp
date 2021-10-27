@@ -17,8 +17,8 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jstring getDefaultUrl();
 		jbyteArray getData();
+		jstring getDefaultUrl();
 	};
 } // namespace __jni_impl::android::media
 
@@ -36,19 +36,19 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jstring MediaDrm_ProvisionRequest::getDefaultUrl()
-	{
-		return __thiz.callObjectMethod(
-			"getDefaultUrl",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jbyteArray MediaDrm_ProvisionRequest::getData()
 	{
 		return __thiz.callObjectMethod(
 			"getData",
 			"()[B"
 		).object<jbyteArray>();
+	}
+	jstring MediaDrm_ProvisionRequest::getDefaultUrl()
+	{
+		return __thiz.callObjectMethod(
+			"getDefaultUrl",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media
 

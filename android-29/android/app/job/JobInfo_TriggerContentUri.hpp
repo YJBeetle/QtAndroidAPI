@@ -27,11 +27,11 @@ namespace __jni_impl::android::app::job
 		void __constructor(__jni_impl::android::net::Uri arg0, jint arg1);
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jint hashCode();
 		jint getFlags();
 		QAndroidJniObject getUri();
-		jint describeContents();
+		jint hashCode();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::job
@@ -70,19 +70,19 @@ namespace __jni_impl::android::app::job
 	}
 	
 	// Methods
+	jint JobInfo_TriggerContentUri::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean JobInfo_TriggerContentUri::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
-		);
-	}
-	jint JobInfo_TriggerContentUri::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
 		);
 	}
 	jint JobInfo_TriggerContentUri::getFlags()
@@ -99,10 +99,10 @@ namespace __jni_impl::android::app::job
 			"()Landroid/net/Uri;"
 		);
 	}
-	jint JobInfo_TriggerContentUri::describeContents()
+	jint JobInfo_TriggerContentUri::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
 		);
 	}

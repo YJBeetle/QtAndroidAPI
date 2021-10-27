@@ -7,11 +7,11 @@
 
 namespace __jni_impl::java::nio::channels
 {
-	class Pipe_SourceChannel;
+	class Pipe_SinkChannel;
 }
 namespace __jni_impl::java::nio::channels
 {
-	class Pipe_SinkChannel;
+	class Pipe_SourceChannel;
 }
 
 namespace __jni_impl::java::nio::channels
@@ -25,14 +25,14 @@ namespace __jni_impl::java::nio::channels
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject source();
 		static QAndroidJniObject open();
 		QAndroidJniObject sink();
+		QAndroidJniObject source();
 	};
 } // namespace __jni_impl::java::nio::channels
 
-#include "Pipe_SourceChannel.hpp"
 #include "Pipe_SinkChannel.hpp"
+#include "Pipe_SourceChannel.hpp"
 
 namespace __jni_impl::java::nio::channels
 {
@@ -47,13 +47,6 @@ namespace __jni_impl::java::nio::channels
 	}
 	
 	// Methods
-	QAndroidJniObject Pipe::source()
-	{
-		return __thiz.callObjectMethod(
-			"source",
-			"()Ljava/nio/channels/Pipe$SourceChannel;"
-		);
-	}
 	QAndroidJniObject Pipe::open()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -67,6 +60,13 @@ namespace __jni_impl::java::nio::channels
 		return __thiz.callObjectMethod(
 			"sink",
 			"()Ljava/nio/channels/Pipe$SinkChannel;"
+		);
+	}
+	QAndroidJniObject Pipe::source()
+	{
+		return __thiz.callObjectMethod(
+			"source",
+			"()Ljava/nio/channels/Pipe$SourceChannel;"
 		);
 	}
 } // namespace __jni_impl::java::nio::channels

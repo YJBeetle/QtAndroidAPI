@@ -24,10 +24,10 @@ namespace __jni_impl::android::net::wifi::aware
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		jint hashCode();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi::aware
@@ -69,6 +69,13 @@ namespace __jni_impl::android::net::wifi::aware
 	}
 	
 	// Methods
+	jint PublishConfig::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean PublishConfig::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -77,13 +84,6 @@ namespace __jni_impl::android::net::wifi::aware
 			arg0
 		);
 	}
-	jstring PublishConfig::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint PublishConfig::hashCode()
 	{
 		return __thiz.callMethod<jint>(
@@ -91,12 +91,12 @@ namespace __jni_impl::android::net::wifi::aware
 			"()I"
 		);
 	}
-	jint PublishConfig::describeContents()
+	jstring PublishConfig::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void PublishConfig::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

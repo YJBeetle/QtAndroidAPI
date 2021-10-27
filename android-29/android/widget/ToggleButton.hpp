@@ -33,15 +33,15 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		jstring getAccessibilityClassName();
+		jfloat getDisabledAlpha();
+		jstring getTextOff();
+		jstring getTextOn();
 		void setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 		void setChecked(jboolean arg0);
-		jstring getTextOn();
-		void setTextOn(jstring arg0);
-		void setTextOn(const QString &arg0);
-		jstring getTextOff();
 		void setTextOff(jstring arg0);
 		void setTextOff(const QString &arg0);
-		jfloat getDisabledAlpha();
+		void setTextOn(jstring arg0);
+		void setTextOn(const QString &arg0);
 	};
 } // namespace __jni_impl::android::widget
 
@@ -100,6 +100,27 @@ namespace __jni_impl::android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
+	jfloat ToggleButton::getDisabledAlpha()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getDisabledAlpha",
+			"()F"
+		);
+	}
+	jstring ToggleButton::getTextOff()
+	{
+		return __thiz.callObjectMethod(
+			"getTextOff",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring ToggleButton::getTextOn()
+	{
+		return __thiz.callObjectMethod(
+			"getTextOn",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
 	void ToggleButton::setBackgroundDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
 	{
 		__thiz.callMethod<void>(
@@ -115,36 +136,6 @@ namespace __jni_impl::android::widget
 			"(Z)V",
 			arg0
 		);
-	}
-	jstring ToggleButton::getTextOn()
-	{
-		return __thiz.callObjectMethod(
-			"getTextOn",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	void ToggleButton::setTextOn(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTextOn",
-			"(Ljava/lang/CharSequence;)V",
-			arg0
-		);
-	}
-	void ToggleButton::setTextOn(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTextOn",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring ToggleButton::getTextOff()
-	{
-		return __thiz.callObjectMethod(
-			"getTextOff",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
 	}
 	void ToggleButton::setTextOff(jstring arg0)
 	{
@@ -162,11 +153,20 @@ namespace __jni_impl::android::widget
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jfloat ToggleButton::getDisabledAlpha()
+	void ToggleButton::setTextOn(jstring arg0)
 	{
-		return __thiz.callMethod<jfloat>(
-			"getDisabledAlpha",
-			"()F"
+		__thiz.callMethod<void>(
+			"setTextOn",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void ToggleButton::setTextOn(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTextOn",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::widget

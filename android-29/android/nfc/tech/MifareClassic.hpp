@@ -34,29 +34,29 @@ namespace __jni_impl::android::nfc::tech
 		
 		// Methods
 		static QAndroidJniObject get(__jni_impl::android::nfc::Tag arg0);
-		void increment(jint arg0, jint arg1);
-		void connect();
-		void close();
-		jint getType();
-		jint getSize();
-		void transfer(jint arg0);
-		QAndroidJniObject getTag();
-		void decrement(jint arg0, jint arg1);
-		jint getSectorCount();
-		jint getBlockCount();
-		jint getBlockCountInSector(jint arg0);
-		jint blockToSector(jint arg0);
-		jint sectorToBlock(jint arg0);
 		jboolean authenticateSectorWithKeyA(jint arg0, jbyteArray arg1);
 		jboolean authenticateSectorWithKeyB(jint arg0, jbyteArray arg1);
-		jbyteArray readBlock(jint arg0);
-		void writeBlock(jint arg0, jbyteArray arg1);
-		void restore(jint arg0);
-		jbyteArray transceive(jbyteArray arg0);
+		jint blockToSector(jint arg0);
+		void close();
+		void connect();
+		void decrement(jint arg0, jint arg1);
+		jint getBlockCount();
+		jint getBlockCountInSector(jint arg0);
 		jint getMaxTransceiveLength();
-		void setTimeout(jint arg0);
+		jint getSectorCount();
+		jint getSize();
+		QAndroidJniObject getTag();
 		jint getTimeout();
+		jint getType();
+		void increment(jint arg0, jint arg1);
 		jboolean isConnected();
+		jbyteArray readBlock(jint arg0);
+		void restore(jint arg0);
+		jint sectorToBlock(jint arg0);
+		void setTimeout(jint arg0);
+		jbyteArray transceive(jbyteArray arg0);
+		void transfer(jint arg0);
+		void writeBlock(jint arg0, jbyteArray arg1);
 	};
 } // namespace __jni_impl::android::nfc::tech
 
@@ -171,105 +171,6 @@ namespace __jni_impl::android::nfc::tech
 			arg0.__jniObject().object()
 		);
 	}
-	void MifareClassic::increment(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"increment",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void MifareClassic::connect()
-	{
-		__thiz.callMethod<void>(
-			"connect",
-			"()V"
-		);
-	}
-	void MifareClassic::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
-	}
-	jint MifareClassic::getType()
-	{
-		return __thiz.callMethod<jint>(
-			"getType",
-			"()I"
-		);
-	}
-	jint MifareClassic::getSize()
-	{
-		return __thiz.callMethod<jint>(
-			"getSize",
-			"()I"
-		);
-	}
-	void MifareClassic::transfer(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"transfer",
-			"(I)V",
-			arg0
-		);
-	}
-	QAndroidJniObject MifareClassic::getTag()
-	{
-		return __thiz.callObjectMethod(
-			"getTag",
-			"()Landroid/nfc/Tag;"
-		);
-	}
-	void MifareClassic::decrement(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"decrement",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	jint MifareClassic::getSectorCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getSectorCount",
-			"()I"
-		);
-	}
-	jint MifareClassic::getBlockCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getBlockCount",
-			"()I"
-		);
-	}
-	jint MifareClassic::getBlockCountInSector(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getBlockCountInSector",
-			"(I)I",
-			arg0
-		);
-	}
-	jint MifareClassic::blockToSector(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"blockToSector",
-			"(I)I",
-			arg0
-		);
-	}
-	jint MifareClassic::sectorToBlock(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"sectorToBlock",
-			"(I)I",
-			arg0
-		);
-	}
 	jboolean MifareClassic::authenticateSectorWithKeyA(jint arg0, jbyteArray arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -288,6 +189,110 @@ namespace __jni_impl::android::nfc::tech
 			arg1
 		);
 	}
+	jint MifareClassic::blockToSector(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"blockToSector",
+			"(I)I",
+			arg0
+		);
+	}
+	void MifareClassic::close()
+	{
+		__thiz.callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	void MifareClassic::connect()
+	{
+		__thiz.callMethod<void>(
+			"connect",
+			"()V"
+		);
+	}
+	void MifareClassic::decrement(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"decrement",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	jint MifareClassic::getBlockCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getBlockCount",
+			"()I"
+		);
+	}
+	jint MifareClassic::getBlockCountInSector(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getBlockCountInSector",
+			"(I)I",
+			arg0
+		);
+	}
+	jint MifareClassic::getMaxTransceiveLength()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxTransceiveLength",
+			"()I"
+		);
+	}
+	jint MifareClassic::getSectorCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getSectorCount",
+			"()I"
+		);
+	}
+	jint MifareClassic::getSize()
+	{
+		return __thiz.callMethod<jint>(
+			"getSize",
+			"()I"
+		);
+	}
+	QAndroidJniObject MifareClassic::getTag()
+	{
+		return __thiz.callObjectMethod(
+			"getTag",
+			"()Landroid/nfc/Tag;"
+		);
+	}
+	jint MifareClassic::getTimeout()
+	{
+		return __thiz.callMethod<jint>(
+			"getTimeout",
+			"()I"
+		);
+	}
+	jint MifareClassic::getType()
+	{
+		return __thiz.callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
+	void MifareClassic::increment(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"increment",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	jboolean MifareClassic::isConnected()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isConnected",
+			"()Z"
+		);
+	}
 	jbyteArray MifareClassic::readBlock(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -296,19 +301,26 @@ namespace __jni_impl::android::nfc::tech
 			arg0
 		).object<jbyteArray>();
 	}
-	void MifareClassic::writeBlock(jint arg0, jbyteArray arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeBlock",
-			"(I[B)V",
-			arg0,
-			arg1
-		);
-	}
 	void MifareClassic::restore(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"restore",
+			"(I)V",
+			arg0
+		);
+	}
+	jint MifareClassic::sectorToBlock(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"sectorToBlock",
+			"(I)I",
+			arg0
+		);
+	}
+	void MifareClassic::setTimeout(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTimeout",
 			"(I)V",
 			arg0
 		);
@@ -321,33 +333,21 @@ namespace __jni_impl::android::nfc::tech
 			arg0
 		).object<jbyteArray>();
 	}
-	jint MifareClassic::getMaxTransceiveLength()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxTransceiveLength",
-			"()I"
-		);
-	}
-	void MifareClassic::setTimeout(jint arg0)
+	void MifareClassic::transfer(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setTimeout",
+			"transfer",
 			"(I)V",
 			arg0
 		);
 	}
-	jint MifareClassic::getTimeout()
+	void MifareClassic::writeBlock(jint arg0, jbyteArray arg1)
 	{
-		return __thiz.callMethod<jint>(
-			"getTimeout",
-			"()I"
-		);
-	}
-	jboolean MifareClassic::isConnected()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isConnected",
-			"()Z"
+		__thiz.callMethod<void>(
+			"writeBlock",
+			"(I[B)V",
+			arg0,
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::nfc::tech

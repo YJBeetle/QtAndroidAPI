@@ -7,13 +7,13 @@
 #include "../view/View.hpp"
 #include "../view/ViewGroup.hpp"
 
-namespace __jni_impl::android::content
-{
-	class Context;
-}
 namespace __jni_impl::android::app
 {
 	class Activity;
+}
+namespace __jni_impl::android::content
+{
+	class Context;
 }
 
 namespace __jni_impl::android::app
@@ -24,15 +24,15 @@ namespace __jni_impl::android::app
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(__jni_impl::android::content::Context arg0);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
 		
 		// Methods
 		void onBackStackChanged();
-		void setOnBreadCrumbClickListener(__jni_impl::__JniBaseClass arg0);
 		void setActivity(__jni_impl::android::app::Activity arg0);
 		void setMaxVisible(jint arg0);
+		void setOnBreadCrumbClickListener(__jni_impl::__JniBaseClass arg0);
 		void setParentTitle(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2);
 		void setParentTitle(const QString &arg0, const QString &arg1, __jni_impl::__JniBaseClass arg2);
 		void setTitle(jstring arg0, jstring arg1);
@@ -40,22 +40,20 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "../content/Context.hpp"
 #include "Activity.hpp"
+#include "../content/Context.hpp"
 
 namespace __jni_impl::android::app
 {
 	// Fields
 	
 	// Constructors
-	void FragmentBreadCrumbs::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
+	void FragmentBreadCrumbs::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.FragmentBreadCrumbs",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2
+			"(Landroid/content/Context;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void FragmentBreadCrumbs::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
@@ -67,12 +65,14 @@ namespace __jni_impl::android::app
 			arg1.__jniObject().object()
 		);
 	}
-	void FragmentBreadCrumbs::__constructor(__jni_impl::android::content::Context arg0)
+	void FragmentBreadCrumbs::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"android.app.FragmentBreadCrumbs",
-			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
+			"(Landroid/content/Context;Landroid/util/AttributeSet;I)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2
 		);
 	}
 	
@@ -82,14 +82,6 @@ namespace __jni_impl::android::app
 		__thiz.callMethod<void>(
 			"onBackStackChanged",
 			"()V"
-		);
-	}
-	void FragmentBreadCrumbs::setOnBreadCrumbClickListener(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOnBreadCrumbClickListener",
-			"(Landroid/app/FragmentBreadCrumbs$OnBreadCrumbClickListener;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	void FragmentBreadCrumbs::setActivity(__jni_impl::android::app::Activity arg0)
@@ -106,6 +98,14 @@ namespace __jni_impl::android::app
 			"setMaxVisible",
 			"(I)V",
 			arg0
+		);
+	}
+	void FragmentBreadCrumbs::setOnBreadCrumbClickListener(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOnBreadCrumbClickListener",
+			"(Landroid/app/FragmentBreadCrumbs$OnBreadCrumbClickListener;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void FragmentBreadCrumbs::setParentTitle(jstring arg0, jstring arg1, __jni_impl::__JniBaseClass arg2)
@@ -154,12 +154,10 @@ namespace android::app
 	{
 	public:
 		FragmentBreadCrumbs(QAndroidJniObject obj) { __thiz = obj; }
-		FragmentBreadCrumbs(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
+		FragmentBreadCrumbs(__jni_impl::android::content::Context arg0)
 		{
 			__constructor(
-				arg0,
-				arg1,
-				arg2);
+				arg0);
 		}
 		FragmentBreadCrumbs(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 		{
@@ -167,10 +165,12 @@ namespace android::app
 				arg0,
 				arg1);
 		}
-		FragmentBreadCrumbs(__jni_impl::android::content::Context arg0)
+		FragmentBreadCrumbs(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 		{
 			__constructor(
-				arg0);
+				arg0,
+				arg1,
+				arg2);
 		}
 	};
 } // namespace android::app

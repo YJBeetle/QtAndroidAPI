@@ -35,16 +35,16 @@ namespace __jni_impl::android::mtp
 		void __constructor();
 		
 		// Methods
+		jint getDevicePropCode();
 		jint getEventCode();
+		jint getObjectFormatCode();
+		jint getObjectHandle();
+		jint getObjectPropCode();
 		jint getParameter1();
 		jint getParameter2();
 		jint getParameter3();
-		jint getDevicePropCode();
-		jint getTransactionId();
-		jint getObjectPropCode();
-		jint getObjectFormatCode();
-		jint getObjectHandle();
 		jint getStorageId();
+		jint getTransactionId();
 	};
 } // namespace __jni_impl::android::mtp
 
@@ -188,10 +188,38 @@ namespace __jni_impl::android::mtp
 	}
 	
 	// Methods
+	jint MtpEvent::getDevicePropCode()
+	{
+		return __thiz.callMethod<jint>(
+			"getDevicePropCode",
+			"()I"
+		);
+	}
 	jint MtpEvent::getEventCode()
 	{
 		return __thiz.callMethod<jint>(
 			"getEventCode",
+			"()I"
+		);
+	}
+	jint MtpEvent::getObjectFormatCode()
+	{
+		return __thiz.callMethod<jint>(
+			"getObjectFormatCode",
+			"()I"
+		);
+	}
+	jint MtpEvent::getObjectHandle()
+	{
+		return __thiz.callMethod<jint>(
+			"getObjectHandle",
+			"()I"
+		);
+	}
+	jint MtpEvent::getObjectPropCode()
+	{
+		return __thiz.callMethod<jint>(
+			"getObjectPropCode",
 			"()I"
 		);
 	}
@@ -216,10 +244,10 @@ namespace __jni_impl::android::mtp
 			"()I"
 		);
 	}
-	jint MtpEvent::getDevicePropCode()
+	jint MtpEvent::getStorageId()
 	{
 		return __thiz.callMethod<jint>(
-			"getDevicePropCode",
+			"getStorageId",
 			"()I"
 		);
 	}
@@ -227,34 +255,6 @@ namespace __jni_impl::android::mtp
 	{
 		return __thiz.callMethod<jint>(
 			"getTransactionId",
-			"()I"
-		);
-	}
-	jint MtpEvent::getObjectPropCode()
-	{
-		return __thiz.callMethod<jint>(
-			"getObjectPropCode",
-			"()I"
-		);
-	}
-	jint MtpEvent::getObjectFormatCode()
-	{
-		return __thiz.callMethod<jint>(
-			"getObjectFormatCode",
-			"()I"
-		);
-	}
-	jint MtpEvent::getObjectHandle()
-	{
-		return __thiz.callMethod<jint>(
-			"getObjectHandle",
-			"()I"
-		);
-	}
-	jint MtpEvent::getStorageId()
-	{
-		return __thiz.callMethod<jint>(
-			"getStorageId",
 			"()I"
 		);
 	}

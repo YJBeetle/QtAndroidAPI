@@ -11,7 +11,7 @@ namespace __jni_impl::android::renderscript
 }
 namespace __jni_impl::android::renderscript
 {
-	class ScriptGroup;
+	class Script_FieldID;
 }
 namespace __jni_impl::android::renderscript
 {
@@ -19,11 +19,11 @@ namespace __jni_impl::android::renderscript
 }
 namespace __jni_impl::android::renderscript
 {
-	class Type;
+	class ScriptGroup;
 }
 namespace __jni_impl::android::renderscript
 {
-	class Script_FieldID;
+	class Type;
 }
 
 namespace __jni_impl::android::renderscript
@@ -37,18 +37,18 @@ namespace __jni_impl::android::renderscript
 		void __constructor(__jni_impl::android::renderscript::RenderScript arg0);
 		
 		// Methods
-		QAndroidJniObject create();
-		QAndroidJniObject addKernel(__jni_impl::android::renderscript::Script_KernelID arg0);
-		QAndroidJniObject addConnection(__jni_impl::android::renderscript::Type arg0, __jni_impl::android::renderscript::Script_KernelID arg1, __jni_impl::android::renderscript::Script_KernelID arg2);
 		QAndroidJniObject addConnection(__jni_impl::android::renderscript::Type arg0, __jni_impl::android::renderscript::Script_KernelID arg1, __jni_impl::android::renderscript::Script_FieldID arg2);
+		QAndroidJniObject addConnection(__jni_impl::android::renderscript::Type arg0, __jni_impl::android::renderscript::Script_KernelID arg1, __jni_impl::android::renderscript::Script_KernelID arg2);
+		QAndroidJniObject addKernel(__jni_impl::android::renderscript::Script_KernelID arg0);
+		QAndroidJniObject create();
 	};
 } // namespace __jni_impl::android::renderscript
 
 #include "RenderScript.hpp"
-#include "ScriptGroup.hpp"
-#include "Script_KernelID.hpp"
-#include "Type.hpp"
 #include "Script_FieldID.hpp"
+#include "Script_KernelID.hpp"
+#include "ScriptGroup.hpp"
+#include "Type.hpp"
 
 namespace __jni_impl::android::renderscript
 {
@@ -65,19 +65,14 @@ namespace __jni_impl::android::renderscript
 	}
 	
 	// Methods
-	QAndroidJniObject ScriptGroup_Builder::create()
+	QAndroidJniObject ScriptGroup_Builder::addConnection(__jni_impl::android::renderscript::Type arg0, __jni_impl::android::renderscript::Script_KernelID arg1, __jni_impl::android::renderscript::Script_FieldID arg2)
 	{
 		return __thiz.callObjectMethod(
-			"create",
-			"()Landroid/renderscript/ScriptGroup;"
-		);
-	}
-	QAndroidJniObject ScriptGroup_Builder::addKernel(__jni_impl::android::renderscript::Script_KernelID arg0)
-	{
-		return __thiz.callObjectMethod(
-			"addKernel",
-			"(Landroid/renderscript/Script$KernelID;)Landroid/renderscript/ScriptGroup$Builder;",
-			arg0.__jniObject().object()
+			"addConnection",
+			"(Landroid/renderscript/Type;Landroid/renderscript/Script$KernelID;Landroid/renderscript/Script$FieldID;)Landroid/renderscript/ScriptGroup$Builder;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
 	QAndroidJniObject ScriptGroup_Builder::addConnection(__jni_impl::android::renderscript::Type arg0, __jni_impl::android::renderscript::Script_KernelID arg1, __jni_impl::android::renderscript::Script_KernelID arg2)
@@ -90,14 +85,19 @@ namespace __jni_impl::android::renderscript
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ScriptGroup_Builder::addConnection(__jni_impl::android::renderscript::Type arg0, __jni_impl::android::renderscript::Script_KernelID arg1, __jni_impl::android::renderscript::Script_FieldID arg2)
+	QAndroidJniObject ScriptGroup_Builder::addKernel(__jni_impl::android::renderscript::Script_KernelID arg0)
 	{
 		return __thiz.callObjectMethod(
-			"addConnection",
-			"(Landroid/renderscript/Type;Landroid/renderscript/Script$KernelID;Landroid/renderscript/Script$FieldID;)Landroid/renderscript/ScriptGroup$Builder;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			"addKernel",
+			"(Landroid/renderscript/Script$KernelID;)Landroid/renderscript/ScriptGroup$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ScriptGroup_Builder::create()
+	{
+		return __thiz.callObjectMethod(
+			"create",
+			"()Landroid/renderscript/ScriptGroup;"
 		);
 	}
 } // namespace __jni_impl::android::renderscript

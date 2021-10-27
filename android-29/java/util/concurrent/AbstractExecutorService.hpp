@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util::concurrent
-{
-	class TimeUnit;
-}
 namespace __jni_impl::java::util
 {
 	class ArrayList;
+}
+namespace __jni_impl::java::util::concurrent
+{
+	class TimeUnit;
 }
 
 namespace __jni_impl::java::util::concurrent
@@ -34,8 +34,8 @@ namespace __jni_impl::java::util::concurrent
 	};
 } // namespace __jni_impl::java::util::concurrent
 
-#include "TimeUnit.hpp"
 #include "../ArrayList.hpp"
+#include "TimeUnit.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {

@@ -5,14 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::nio::charset
-{
-	class Charset;
-}
-namespace __jni_impl::java::nio::charset
-{
-	class CodingErrorAction;
-}
 namespace __jni_impl::java::lang::ref
 {
 	class WeakReference;
@@ -27,7 +19,15 @@ namespace __jni_impl::java::nio
 }
 namespace __jni_impl::java::nio::charset
 {
+	class Charset;
+}
+namespace __jni_impl::java::nio::charset
+{
 	class CoderResult;
+}
+namespace __jni_impl::java::nio::charset
+{
+	class CodingErrorAction;
 }
 
 namespace __jni_impl::java::nio::charset
@@ -41,32 +41,32 @@ namespace __jni_impl::java::nio::charset
 		void __constructor();
 		
 		// Methods
+		jfloat averageBytesPerChar();
+		jboolean canEncode(jchar arg0);
+		jboolean canEncode(jstring arg0);
+		jboolean canEncode(const QString &arg0);
 		QAndroidJniObject charset();
 		QAndroidJniObject encode(__jni_impl::java::nio::CharBuffer arg0);
 		QAndroidJniObject encode(__jni_impl::java::nio::CharBuffer arg0, __jni_impl::java::nio::ByteBuffer arg1, jboolean arg2);
-		jboolean canEncode(jstring arg0);
-		jboolean canEncode(const QString &arg0);
-		jboolean canEncode(jchar arg0);
-		jbyteArray replacement();
 		QAndroidJniObject flush(__jni_impl::java::nio::ByteBuffer arg0);
-		QAndroidJniObject reset();
-		QAndroidJniObject onMalformedInput(__jni_impl::java::nio::charset::CodingErrorAction arg0);
-		QAndroidJniObject onUnmappableCharacter(__jni_impl::java::nio::charset::CodingErrorAction arg0);
 		jboolean isLegalReplacement(jbyteArray arg0);
 		QAndroidJniObject malformedInputAction();
-		QAndroidJniObject unmappableCharacterAction();
-		jfloat averageBytesPerChar();
 		jfloat maxBytesPerChar();
+		QAndroidJniObject onMalformedInput(__jni_impl::java::nio::charset::CodingErrorAction arg0);
+		QAndroidJniObject onUnmappableCharacter(__jni_impl::java::nio::charset::CodingErrorAction arg0);
 		QAndroidJniObject replaceWith(jbyteArray arg0);
+		jbyteArray replacement();
+		QAndroidJniObject reset();
+		QAndroidJniObject unmappableCharacterAction();
 	};
 } // namespace __jni_impl::java::nio::charset
 
-#include "Charset.hpp"
-#include "CodingErrorAction.hpp"
 #include "../../lang/ref/WeakReference.hpp"
 #include "../ByteBuffer.hpp"
 #include "../CharBuffer.hpp"
+#include "Charset.hpp"
 #include "CoderResult.hpp"
+#include "CodingErrorAction.hpp"
 
 namespace __jni_impl::java::nio::charset
 {
@@ -81,6 +81,37 @@ namespace __jni_impl::java::nio::charset
 	}
 	
 	// Methods
+	jfloat CharsetEncoder::averageBytesPerChar()
+	{
+		return __thiz.callMethod<jfloat>(
+			"averageBytesPerChar",
+			"()F"
+		);
+	}
+	jboolean CharsetEncoder::canEncode(jchar arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"canEncode",
+			"(C)Z",
+			arg0
+		);
+	}
+	jboolean CharsetEncoder::canEncode(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"canEncode",
+			"(Ljava/lang/CharSequence;)Z",
+			arg0
+		);
+	}
+	jboolean CharsetEncoder::canEncode(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"canEncode",
+			"(Ljava/lang/CharSequence;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject CharsetEncoder::charset()
 	{
 		return __thiz.callObjectMethod(
@@ -106,65 +137,11 @@ namespace __jni_impl::java::nio::charset
 			arg2
 		);
 	}
-	jboolean CharsetEncoder::canEncode(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"canEncode",
-			"(Ljava/lang/CharSequence;)Z",
-			arg0
-		);
-	}
-	jboolean CharsetEncoder::canEncode(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"canEncode",
-			"(Ljava/lang/CharSequence;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jboolean CharsetEncoder::canEncode(jchar arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"canEncode",
-			"(C)Z",
-			arg0
-		);
-	}
-	jbyteArray CharsetEncoder::replacement()
-	{
-		return __thiz.callObjectMethod(
-			"replacement",
-			"()[B"
-		).object<jbyteArray>();
-	}
 	QAndroidJniObject CharsetEncoder::flush(__jni_impl::java::nio::ByteBuffer arg0)
 	{
 		return __thiz.callObjectMethod(
 			"flush",
 			"(Ljava/nio/ByteBuffer;)Ljava/nio/charset/CoderResult;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject CharsetEncoder::reset()
-	{
-		return __thiz.callObjectMethod(
-			"reset",
-			"()Ljava/nio/charset/CharsetEncoder;"
-		);
-	}
-	QAndroidJniObject CharsetEncoder::onMalformedInput(__jni_impl::java::nio::charset::CodingErrorAction arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onMalformedInput",
-			"(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetEncoder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject CharsetEncoder::onUnmappableCharacter(__jni_impl::java::nio::charset::CodingErrorAction arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onUnmappableCharacter",
-			"(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetEncoder;",
 			arg0.__jniObject().object()
 		);
 	}
@@ -183,25 +160,27 @@ namespace __jni_impl::java::nio::charset
 			"()Ljava/nio/charset/CodingErrorAction;"
 		);
 	}
-	QAndroidJniObject CharsetEncoder::unmappableCharacterAction()
-	{
-		return __thiz.callObjectMethod(
-			"unmappableCharacterAction",
-			"()Ljava/nio/charset/CodingErrorAction;"
-		);
-	}
-	jfloat CharsetEncoder::averageBytesPerChar()
-	{
-		return __thiz.callMethod<jfloat>(
-			"averageBytesPerChar",
-			"()F"
-		);
-	}
 	jfloat CharsetEncoder::maxBytesPerChar()
 	{
 		return __thiz.callMethod<jfloat>(
 			"maxBytesPerChar",
 			"()F"
+		);
+	}
+	QAndroidJniObject CharsetEncoder::onMalformedInput(__jni_impl::java::nio::charset::CodingErrorAction arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onMalformedInput",
+			"(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetEncoder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject CharsetEncoder::onUnmappableCharacter(__jni_impl::java::nio::charset::CodingErrorAction arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onUnmappableCharacter",
+			"(Ljava/nio/charset/CodingErrorAction;)Ljava/nio/charset/CharsetEncoder;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject CharsetEncoder::replaceWith(jbyteArray arg0)
@@ -210,6 +189,27 @@ namespace __jni_impl::java::nio::charset
 			"replaceWith",
 			"([B)Ljava/nio/charset/CharsetEncoder;",
 			arg0
+		);
+	}
+	jbyteArray CharsetEncoder::replacement()
+	{
+		return __thiz.callObjectMethod(
+			"replacement",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	QAndroidJniObject CharsetEncoder::reset()
+	{
+		return __thiz.callObjectMethod(
+			"reset",
+			"()Ljava/nio/charset/CharsetEncoder;"
+		);
+	}
+	QAndroidJniObject CharsetEncoder::unmappableCharacterAction()
+	{
+		return __thiz.callObjectMethod(
+			"unmappableCharacterAction",
+			"()Ljava/nio/charset/CodingErrorAction;"
 		);
 	}
 } // namespace __jni_impl::java::nio::charset

@@ -13,8 +13,8 @@ namespace __jni_impl::android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject PARSE_ALLOW_WHITESPACE();
 		static QAndroidJniObject PARSE_ALLOW_NUMERIC();
+		static QAndroidJniObject PARSE_ALLOW_WHITESPACE();
 		static QAndroidJniObject PARSE_MULTIPLE_PATTERNS_FOR_MATCH();
 		static QAndroidJniObject PARSE_PARTIAL_LITERAL_MATCH();
 		
@@ -22,9 +22,9 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -32,19 +32,19 @@ namespace __jni_impl::android::icu::text
 namespace __jni_impl::android::icu::text
 {
 	// Fields
-	QAndroidJniObject DateFormat_BooleanAttribute::PARSE_ALLOW_WHITESPACE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.DateFormat$BooleanAttribute",
-			"PARSE_ALLOW_WHITESPACE",
-			"Landroid/icu/text/DateFormat$BooleanAttribute;"
-		);
-	}
 	QAndroidJniObject DateFormat_BooleanAttribute::PARSE_ALLOW_NUMERIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.DateFormat$BooleanAttribute",
 			"PARSE_ALLOW_NUMERIC",
+			"Landroid/icu/text/DateFormat$BooleanAttribute;"
+		);
+	}
+	QAndroidJniObject DateFormat_BooleanAttribute::PARSE_ALLOW_WHITESPACE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.DateFormat$BooleanAttribute",
+			"PARSE_ALLOW_WHITESPACE",
 			"Landroid/icu/text/DateFormat$BooleanAttribute;"
 		);
 	}
@@ -74,14 +74,6 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jarray DateFormat_BooleanAttribute::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.DateFormat$BooleanAttribute",
-			"values",
-			"()[Landroid/icu/text/DateFormat$BooleanAttribute;"
-		).object<jarray>();
-	}
 	QAndroidJniObject DateFormat_BooleanAttribute::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -99,6 +91,14 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;)Landroid/icu/text/DateFormat$BooleanAttribute;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray DateFormat_BooleanAttribute::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.DateFormat$BooleanAttribute",
+			"values",
+			"()[Landroid/icu/text/DateFormat$BooleanAttribute;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::icu::text
 

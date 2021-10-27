@@ -36,14 +36,14 @@ namespace __jni_impl::android::graphics::drawable
 		void __constructor();
 		
 		// Methods
-		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
+		void addState(jintArray arg0, __jni_impl::android::graphics::drawable::Drawable arg1, jint arg2);
 		void addTransition(jint arg0, jint arg1, __jni_impl::android::graphics::drawable::Drawable arg2, jboolean arg3);
-		jboolean setVisible(jboolean arg0, jboolean arg1);
+		void applyTheme(__jni_impl::android::content::res::Resources_Theme arg0);
+		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
 		jboolean isStateful();
 		void jumpToCurrentState();
-		void applyTheme(__jni_impl::android::content::res::Resources_Theme arg0);
 		QAndroidJniObject mutate();
-		void addState(jintArray arg0, __jni_impl::android::graphics::drawable::Drawable arg1, jint arg2);
+		jboolean setVisible(jboolean arg0, jboolean arg1);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
@@ -66,15 +66,14 @@ namespace __jni_impl::android::graphics::drawable
 	}
 	
 	// Methods
-	void AnimatedStateListDrawable::inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3)
+	void AnimatedStateListDrawable::addState(jintArray arg0, __jni_impl::android::graphics::drawable::Drawable arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
-			"inflate",
-			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object(),
+			"addState",
+			"([ILandroid/graphics/drawable/Drawable;I)V",
+			arg0,
 			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
+			arg2
 		);
 	}
 	void AnimatedStateListDrawable::addTransition(jint arg0, jint arg1, __jni_impl::android::graphics::drawable::Drawable arg2, jboolean arg3)
@@ -88,13 +87,23 @@ namespace __jni_impl::android::graphics::drawable
 			arg3
 		);
 	}
-	jboolean AnimatedStateListDrawable::setVisible(jboolean arg0, jboolean arg1)
+	void AnimatedStateListDrawable::applyTheme(__jni_impl::android::content::res::Resources_Theme arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"setVisible",
-			"(ZZ)Z",
-			arg0,
-			arg1
+		__thiz.callMethod<void>(
+			"applyTheme",
+			"(Landroid/content/res/Resources$Theme;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AnimatedStateListDrawable::inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3)
+	{
+		__thiz.callMethod<void>(
+			"inflate",
+			"(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object()
 		);
 	}
 	jboolean AnimatedStateListDrawable::isStateful()
@@ -111,14 +120,6 @@ namespace __jni_impl::android::graphics::drawable
 			"()V"
 		);
 	}
-	void AnimatedStateListDrawable::applyTheme(__jni_impl::android::content::res::Resources_Theme arg0)
-	{
-		__thiz.callMethod<void>(
-			"applyTheme",
-			"(Landroid/content/res/Resources$Theme;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject AnimatedStateListDrawable::mutate()
 	{
 		return __thiz.callObjectMethod(
@@ -126,14 +127,13 @@ namespace __jni_impl::android::graphics::drawable
 			"()Landroid/graphics/drawable/Drawable;"
 		);
 	}
-	void AnimatedStateListDrawable::addState(jintArray arg0, __jni_impl::android::graphics::drawable::Drawable arg1, jint arg2)
+	jboolean AnimatedStateListDrawable::setVisible(jboolean arg0, jboolean arg1)
 	{
-		__thiz.callMethod<void>(
-			"addState",
-			"([ILandroid/graphics/drawable/Drawable;I)V",
+		return __thiz.callMethod<jboolean>(
+			"setVisible",
+			"(ZZ)Z",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::graphics::drawable

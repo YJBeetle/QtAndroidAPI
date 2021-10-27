@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view::inputmethod
-{
-	class CursorAnchorInfo;
-}
 namespace __jni_impl::android::graphics
 {
 	class Matrix;
+}
+namespace __jni_impl::android::view::inputmethod
+{
+	class CursorAnchorInfo;
 }
 
 namespace __jni_impl::android::view::inputmethod
@@ -25,19 +25,19 @@ namespace __jni_impl::android::view::inputmethod
 		void __constructor();
 		
 		// Methods
-		void reset();
+		QAndroidJniObject addCharacterBounds(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jint arg5);
 		QAndroidJniObject build();
-		QAndroidJniObject setMatrix(__jni_impl::android::graphics::Matrix arg0);
+		void reset();
 		QAndroidJniObject setComposingText(jint arg0, jstring arg1);
 		QAndroidJniObject setComposingText(jint arg0, const QString &arg1);
 		QAndroidJniObject setInsertionMarkerLocation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jint arg4);
+		QAndroidJniObject setMatrix(__jni_impl::android::graphics::Matrix arg0);
 		QAndroidJniObject setSelectionRange(jint arg0, jint arg1);
-		QAndroidJniObject addCharacterBounds(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jint arg5);
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
-#include "CursorAnchorInfo.hpp"
 #include "../../graphics/Matrix.hpp"
+#include "CursorAnchorInfo.hpp"
 
 namespace __jni_impl::android::view::inputmethod
 {
@@ -53,11 +53,17 @@ namespace __jni_impl::android::view::inputmethod
 	}
 	
 	// Methods
-	void CursorAnchorInfo_Builder::reset()
+	QAndroidJniObject CursorAnchorInfo_Builder::addCharacterBounds(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jint arg5)
 	{
-		__thiz.callMethod<void>(
-			"reset",
-			"()V"
+		return __thiz.callObjectMethod(
+			"addCharacterBounds",
+			"(IFFFFI)Landroid/view/inputmethod/CursorAnchorInfo$Builder;",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5
 		);
 	}
 	QAndroidJniObject CursorAnchorInfo_Builder::build()
@@ -67,12 +73,11 @@ namespace __jni_impl::android::view::inputmethod
 			"()Landroid/view/inputmethod/CursorAnchorInfo;"
 		);
 	}
-	QAndroidJniObject CursorAnchorInfo_Builder::setMatrix(__jni_impl::android::graphics::Matrix arg0)
+	void CursorAnchorInfo_Builder::reset()
 	{
-		return __thiz.callObjectMethod(
-			"setMatrix",
-			"(Landroid/graphics/Matrix;)Landroid/view/inputmethod/CursorAnchorInfo$Builder;",
-			arg0.__jniObject().object()
+		__thiz.callMethod<void>(
+			"reset",
+			"()V"
 		);
 	}
 	QAndroidJniObject CursorAnchorInfo_Builder::setComposingText(jint arg0, jstring arg1)
@@ -105,6 +110,14 @@ namespace __jni_impl::android::view::inputmethod
 			arg4
 		);
 	}
+	QAndroidJniObject CursorAnchorInfo_Builder::setMatrix(__jni_impl::android::graphics::Matrix arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setMatrix",
+			"(Landroid/graphics/Matrix;)Landroid/view/inputmethod/CursorAnchorInfo$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject CursorAnchorInfo_Builder::setSelectionRange(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -112,19 +125,6 @@ namespace __jni_impl::android::view::inputmethod
 			"(II)Landroid/view/inputmethod/CursorAnchorInfo$Builder;",
 			arg0,
 			arg1
-		);
-	}
-	QAndroidJniObject CursorAnchorInfo_Builder::addCharacterBounds(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jint arg5)
-	{
-		return __thiz.callObjectMethod(
-			"addCharacterBounds",
-			"(IFFFFI)Landroid/view/inputmethod/CursorAnchorInfo$Builder;",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5
 		);
 	}
 } // namespace __jni_impl::android::view::inputmethod

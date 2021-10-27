@@ -14,18 +14,18 @@ namespace __jni_impl::java::sql
 	public:
 		// Fields
 		static QAndroidJniObject ROWID_UNSUPPORTED();
+		static QAndroidJniObject ROWID_VALID_FOREVER();
 		static QAndroidJniObject ROWID_VALID_OTHER();
 		static QAndroidJniObject ROWID_VALID_SESSION();
 		static QAndroidJniObject ROWID_VALID_TRANSACTION();
-		static QAndroidJniObject ROWID_VALID_FOREVER();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::sql
 
@@ -38,6 +38,14 @@ namespace __jni_impl::java::sql
 		return QAndroidJniObject::getStaticObjectField(
 			"java.sql.RowIdLifetime",
 			"ROWID_UNSUPPORTED",
+			"Ljava/sql/RowIdLifetime;"
+		);
+	}
+	QAndroidJniObject RowIdLifetime::ROWID_VALID_FOREVER()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.sql.RowIdLifetime",
+			"ROWID_VALID_FOREVER",
 			"Ljava/sql/RowIdLifetime;"
 		);
 	}
@@ -65,14 +73,6 @@ namespace __jni_impl::java::sql
 			"Ljava/sql/RowIdLifetime;"
 		);
 	}
-	QAndroidJniObject RowIdLifetime::ROWID_VALID_FOREVER()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.sql.RowIdLifetime",
-			"ROWID_VALID_FOREVER",
-			"Ljava/sql/RowIdLifetime;"
-		);
-	}
 	
 	// Constructors
 	void RowIdLifetime::__constructor()
@@ -83,14 +83,6 @@ namespace __jni_impl::java::sql
 	}
 	
 	// Methods
-	jarray RowIdLifetime::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.sql.RowIdLifetime",
-			"values",
-			"()[Ljava/sql/RowIdLifetime;"
-		).object<jarray>();
-	}
 	QAndroidJniObject RowIdLifetime::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -108,6 +100,14 @@ namespace __jni_impl::java::sql
 			"(Ljava/lang/String;)Ljava/sql/RowIdLifetime;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray RowIdLifetime::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.sql.RowIdLifetime",
+			"values",
+			"()[Ljava/sql/RowIdLifetime;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::sql
 

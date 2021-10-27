@@ -22,24 +22,24 @@ namespace __jni_impl::android::widget
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(__jni_impl::android::content::Context arg0);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
+		void fyiWillBeAdvancedByHostKThx();
 		jstring getAccessibilityClassName();
+		jint getFlipInterval();
+		jboolean isAutoStart();
+		jboolean isFlipping();
 		void setAdapter(__jni_impl::__JniBaseClass arg0);
+		void setAutoStart(jboolean arg0);
+		void setFlipInterval(jint arg0);
 		void showNext();
 		void showPrevious();
-		void setFlipInterval(jint arg0);
-		jint getFlipInterval();
 		void startFlipping();
 		void stopFlipping();
-		jboolean isFlipping();
-		void setAutoStart(jboolean arg0);
-		jboolean isAutoStart();
-		void fyiWillBeAdvancedByHostKThx();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -50,15 +50,21 @@ namespace __jni_impl::android::widget
 	// Fields
 	
 	// Constructors
-	void AdapterViewFlipper::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
+	void AdapterViewFlipper::__constructor(__jni_impl::android::content::Context arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AdapterViewFlipper",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
+			"(Landroid/content/Context;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AdapterViewFlipper::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.widget.AdapterViewFlipper",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
-			arg3
+			arg1.__jniObject().object()
 		);
 	}
 	void AdapterViewFlipper::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
@@ -71,25 +77,26 @@ namespace __jni_impl::android::widget
 			arg2
 		);
 	}
-	void AdapterViewFlipper::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+	void AdapterViewFlipper::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.widget.AdapterViewFlipper",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;II)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void AdapterViewFlipper::__constructor(__jni_impl::android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.widget.AdapterViewFlipper",
-			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
+			arg1.__jniObject().object(),
+			arg2,
+			arg3
 		);
 	}
 	
 	// Methods
+	void AdapterViewFlipper::fyiWillBeAdvancedByHostKThx()
+	{
+		__thiz.callMethod<void>(
+			"fyiWillBeAdvancedByHostKThx",
+			"()V"
+		);
+	}
 	jstring AdapterViewFlipper::getAccessibilityClassName()
 	{
 		return __thiz.callObjectMethod(
@@ -97,12 +104,49 @@ namespace __jni_impl::android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
+	jint AdapterViewFlipper::getFlipInterval()
+	{
+		return __thiz.callMethod<jint>(
+			"getFlipInterval",
+			"()I"
+		);
+	}
+	jboolean AdapterViewFlipper::isAutoStart()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAutoStart",
+			"()Z"
+		);
+	}
+	jboolean AdapterViewFlipper::isFlipping()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFlipping",
+			"()Z"
+		);
+	}
 	void AdapterViewFlipper::setAdapter(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"setAdapter",
 			"(Landroid/widget/Adapter;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void AdapterViewFlipper::setAutoStart(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAutoStart",
+			"(Z)V",
+			arg0
+		);
+	}
+	void AdapterViewFlipper::setFlipInterval(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFlipInterval",
+			"(I)V",
+			arg0
 		);
 	}
 	void AdapterViewFlipper::showNext()
@@ -119,21 +163,6 @@ namespace __jni_impl::android::widget
 			"()V"
 		);
 	}
-	void AdapterViewFlipper::setFlipInterval(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFlipInterval",
-			"(I)V",
-			arg0
-		);
-	}
-	jint AdapterViewFlipper::getFlipInterval()
-	{
-		return __thiz.callMethod<jint>(
-			"getFlipInterval",
-			"()I"
-		);
-	}
 	void AdapterViewFlipper::startFlipping()
 	{
 		__thiz.callMethod<void>(
@@ -148,35 +177,6 @@ namespace __jni_impl::android::widget
 			"()V"
 		);
 	}
-	jboolean AdapterViewFlipper::isFlipping()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFlipping",
-			"()Z"
-		);
-	}
-	void AdapterViewFlipper::setAutoStart(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAutoStart",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean AdapterViewFlipper::isAutoStart()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAutoStart",
-			"()Z"
-		);
-	}
-	void AdapterViewFlipper::fyiWillBeAdvancedByHostKThx()
-	{
-		__thiz.callMethod<void>(
-			"fyiWillBeAdvancedByHostKThx",
-			"()V"
-		);
-	}
 } // namespace __jni_impl::android::widget
 
 namespace android::widget
@@ -185,13 +185,16 @@ namespace android::widget
 	{
 	public:
 		AdapterViewFlipper(QAndroidJniObject obj) { __thiz = obj; }
-		AdapterViewFlipper(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
+		AdapterViewFlipper(__jni_impl::android::content::Context arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		AdapterViewFlipper(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 		{
 			__constructor(
 				arg0,
-				arg1,
-				arg2,
-				arg3);
+				arg1);
 		}
 		AdapterViewFlipper(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2)
 		{
@@ -200,16 +203,13 @@ namespace android::widget
 				arg1,
 				arg2);
 		}
-		AdapterViewFlipper(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
+		AdapterViewFlipper(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3)
 		{
 			__constructor(
 				arg0,
-				arg1);
-		}
-		AdapterViewFlipper(__jni_impl::android::content::Context arg0)
-		{
-			__constructor(
-				arg0);
+				arg1,
+				arg2,
+				arg3);
 		}
 	};
 } // namespace android::widget

@@ -6,10 +6,6 @@
 #include "../../../__JniBaseClass.hpp"
 #include "../EventObject.hpp"
 
-namespace __jni_impl::java::util::prefs
-{
-	class Preferences;
-}
 namespace __jni_impl::java::io
 {
 	class ObjectInputStream;
@@ -17,6 +13,10 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class ObjectOutputStream;
+}
+namespace __jni_impl::java::util::prefs
+{
+	class Preferences;
 }
 
 namespace __jni_impl::java::util::prefs
@@ -32,14 +32,14 @@ namespace __jni_impl::java::util::prefs
 		
 		// Methods
 		jstring getKey();
-		QAndroidJniObject getNode();
 		jstring getNewValue();
+		QAndroidJniObject getNode();
 	};
 } // namespace __jni_impl::java::util::prefs
 
-#include "Preferences.hpp"
 #include "../../io/ObjectInputStream.hpp"
 #include "../../io/ObjectOutputStream.hpp"
+#include "Preferences.hpp"
 
 namespace __jni_impl::java::util::prefs
 {
@@ -75,19 +75,19 @@ namespace __jni_impl::java::util::prefs
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject PreferenceChangeEvent::getNode()
-	{
-		return __thiz.callObjectMethod(
-			"getNode",
-			"()Ljava/util/prefs/Preferences;"
-		);
-	}
 	jstring PreferenceChangeEvent::getNewValue()
 	{
 		return __thiz.callObjectMethod(
 			"getNewValue",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	QAndroidJniObject PreferenceChangeEvent::getNode()
+	{
+		return __thiz.callObjectMethod(
+			"getNode",
+			"()Ljava/util/prefs/Preferences;"
+		);
 	}
 } // namespace __jni_impl::java::util::prefs
 

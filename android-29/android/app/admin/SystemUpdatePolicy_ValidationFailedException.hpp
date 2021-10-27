@@ -31,8 +31,8 @@ namespace __jni_impl::android::app::admin
 		void __constructor();
 		
 		// Methods
-		jint getErrorCode();
 		jint describeContents();
+		jint getErrorCode();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::admin
@@ -102,17 +102,17 @@ namespace __jni_impl::android::app::admin
 	}
 	
 	// Methods
-	jint SystemUpdatePolicy_ValidationFailedException::getErrorCode()
-	{
-		return __thiz.callMethod<jint>(
-			"getErrorCode",
-			"()I"
-		);
-	}
 	jint SystemUpdatePolicy_ValidationFailedException::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
+			"()I"
+		);
+	}
+	jint SystemUpdatePolicy_ValidationFailedException::getErrorCode()
+	{
+		return __thiz.callMethod<jint>(
+			"getErrorCode",
 			"()I"
 		);
 	}

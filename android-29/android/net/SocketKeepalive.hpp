@@ -27,9 +27,9 @@ namespace __jni_impl::android::net
 		void __constructor();
 		
 		// Methods
+		void close();
 		void start(jint arg0);
 		void stop();
-		void close();
 	};
 } // namespace __jni_impl::android::net
 
@@ -117,6 +117,13 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
+	void SocketKeepalive::close()
+	{
+		__thiz.callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
 	void SocketKeepalive::start(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -129,13 +136,6 @@ namespace __jni_impl::android::net
 	{
 		__thiz.callMethod<void>(
 			"stop",
-			"()V"
-		);
-	}
-	void SocketKeepalive::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
 			"()V"
 		);
 	}

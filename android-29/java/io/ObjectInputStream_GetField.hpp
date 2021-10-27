@@ -21,26 +21,26 @@ namespace __jni_impl::java::io
 		void __constructor();
 		
 		// Methods
-		jlong get(jstring arg0, jlong arg1);
-		jlong get(const QString &arg0, jlong arg1);
-		jint get(jstring arg0, jint arg1);
-		jint get(const QString &arg0, jint arg1);
-		jshort get(jstring arg0, jshort arg1);
-		jshort get(const QString &arg0, jshort arg1);
-		jfloat get(jstring arg0, jfloat arg1);
-		jfloat get(const QString &arg0, jfloat arg1);
-		jdouble get(jstring arg0, jdouble arg1);
-		jdouble get(const QString &arg0, jdouble arg1);
-		jobject get(jstring arg0, jobject arg1);
-		jobject get(const QString &arg0, jobject arg1);
+		jboolean defaulted(jstring arg0);
+		jboolean defaulted(const QString &arg0);
 		jboolean get(jstring arg0, jboolean arg1);
 		jboolean get(const QString &arg0, jboolean arg1);
 		jbyte get(jstring arg0, jbyte arg1);
 		jbyte get(const QString &arg0, jbyte arg1);
 		jchar get(jstring arg0, jchar arg1);
 		jchar get(const QString &arg0, jchar arg1);
-		jboolean defaulted(jstring arg0);
-		jboolean defaulted(const QString &arg0);
+		jdouble get(jstring arg0, jdouble arg1);
+		jdouble get(const QString &arg0, jdouble arg1);
+		jfloat get(jstring arg0, jfloat arg1);
+		jfloat get(const QString &arg0, jfloat arg1);
+		jint get(jstring arg0, jint arg1);
+		jint get(const QString &arg0, jint arg1);
+		jobject get(jstring arg0, jobject arg1);
+		jobject get(const QString &arg0, jobject arg1);
+		jlong get(jstring arg0, jlong arg1);
+		jlong get(const QString &arg0, jlong arg1);
+		jshort get(jstring arg0, jshort arg1);
+		jshort get(const QString &arg0, jshort arg1);
 		QAndroidJniObject getObjectStreamClass();
 	};
 } // namespace __jni_impl::java::io
@@ -61,113 +61,21 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	jlong ObjectInputStream_GetField::get(jstring arg0, jlong arg1)
+	jboolean ObjectInputStream_GetField::defaulted(jstring arg0)
 	{
-		return __thiz.callMethod<jlong>(
-			"get",
-			"(Ljava/lang/String;J)J",
-			arg0,
-			arg1
+		return __thiz.callMethod<jboolean>(
+			"defaulted",
+			"(Ljava/lang/String;)Z",
+			arg0
 		);
 	}
-	jlong ObjectInputStream_GetField::get(const QString &arg0, jlong arg1)
+	jboolean ObjectInputStream_GetField::defaulted(const QString &arg0)
 	{
-		return __thiz.callMethod<jlong>(
-			"get",
-			"(Ljava/lang/String;J)J",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
+		return __thiz.callMethod<jboolean>(
+			"defaulted",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
-	}
-	jint ObjectInputStream_GetField::get(jstring arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"get",
-			"(Ljava/lang/String;I)I",
-			arg0,
-			arg1
-		);
-	}
-	jint ObjectInputStream_GetField::get(const QString &arg0, jint arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"get",
-			"(Ljava/lang/String;I)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	jshort ObjectInputStream_GetField::get(jstring arg0, jshort arg1)
-	{
-		return __thiz.callMethod<jshort>(
-			"get",
-			"(Ljava/lang/String;S)S",
-			arg0,
-			arg1
-		);
-	}
-	jshort ObjectInputStream_GetField::get(const QString &arg0, jshort arg1)
-	{
-		return __thiz.callMethod<jshort>(
-			"get",
-			"(Ljava/lang/String;S)S",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	jfloat ObjectInputStream_GetField::get(jstring arg0, jfloat arg1)
-	{
-		return __thiz.callMethod<jfloat>(
-			"get",
-			"(Ljava/lang/String;F)F",
-			arg0,
-			arg1
-		);
-	}
-	jfloat ObjectInputStream_GetField::get(const QString &arg0, jfloat arg1)
-	{
-		return __thiz.callMethod<jfloat>(
-			"get",
-			"(Ljava/lang/String;F)F",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	jdouble ObjectInputStream_GetField::get(jstring arg0, jdouble arg1)
-	{
-		return __thiz.callMethod<jdouble>(
-			"get",
-			"(Ljava/lang/String;D)D",
-			arg0,
-			arg1
-		);
-	}
-	jdouble ObjectInputStream_GetField::get(const QString &arg0, jdouble arg1)
-	{
-		return __thiz.callMethod<jdouble>(
-			"get",
-			"(Ljava/lang/String;D)D",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	jobject ObjectInputStream_GetField::get(jstring arg0, jobject arg1)
-	{
-		return __thiz.callObjectMethod(
-			"get",
-			"(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
-	}
-	jobject ObjectInputStream_GetField::get(const QString &arg0, jobject arg1)
-	{
-		return __thiz.callObjectMethod(
-			"get",
-			"(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		).object<jobject>();
 	}
 	jboolean ObjectInputStream_GetField::get(jstring arg0, jboolean arg1)
 	{
@@ -223,20 +131,112 @@ namespace __jni_impl::java::io
 			arg1
 		);
 	}
-	jboolean ObjectInputStream_GetField::defaulted(jstring arg0)
+	jdouble ObjectInputStream_GetField::get(jstring arg0, jdouble arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"defaulted",
-			"(Ljava/lang/String;)Z",
-			arg0
+		return __thiz.callMethod<jdouble>(
+			"get",
+			"(Ljava/lang/String;D)D",
+			arg0,
+			arg1
 		);
 	}
-	jboolean ObjectInputStream_GetField::defaulted(const QString &arg0)
+	jdouble ObjectInputStream_GetField::get(const QString &arg0, jdouble arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"defaulted",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+		return __thiz.callMethod<jdouble>(
+			"get",
+			"(Ljava/lang/String;D)D",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	jfloat ObjectInputStream_GetField::get(jstring arg0, jfloat arg1)
+	{
+		return __thiz.callMethod<jfloat>(
+			"get",
+			"(Ljava/lang/String;F)F",
+			arg0,
+			arg1
+		);
+	}
+	jfloat ObjectInputStream_GetField::get(const QString &arg0, jfloat arg1)
+	{
+		return __thiz.callMethod<jfloat>(
+			"get",
+			"(Ljava/lang/String;F)F",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	jint ObjectInputStream_GetField::get(jstring arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"get",
+			"(Ljava/lang/String;I)I",
+			arg0,
+			arg1
+		);
+	}
+	jint ObjectInputStream_GetField::get(const QString &arg0, jint arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"get",
+			"(Ljava/lang/String;I)I",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	jobject ObjectInputStream_GetField::get(jstring arg0, jobject arg1)
+	{
+		return __thiz.callObjectMethod(
+			"get",
+			"(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0,
+			arg1
+		).object<jobject>();
+	}
+	jobject ObjectInputStream_GetField::get(const QString &arg0, jobject arg1)
+	{
+		return __thiz.callObjectMethod(
+			"get",
+			"(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		).object<jobject>();
+	}
+	jlong ObjectInputStream_GetField::get(jstring arg0, jlong arg1)
+	{
+		return __thiz.callMethod<jlong>(
+			"get",
+			"(Ljava/lang/String;J)J",
+			arg0,
+			arg1
+		);
+	}
+	jlong ObjectInputStream_GetField::get(const QString &arg0, jlong arg1)
+	{
+		return __thiz.callMethod<jlong>(
+			"get",
+			"(Ljava/lang/String;J)J",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	jshort ObjectInputStream_GetField::get(jstring arg0, jshort arg1)
+	{
+		return __thiz.callMethod<jshort>(
+			"get",
+			"(Ljava/lang/String;S)S",
+			arg0,
+			arg1
+		);
+	}
+	jshort ObjectInputStream_GetField::get(const QString &arg0, jshort arg1)
+	{
+		return __thiz.callMethod<jshort>(
+			"get",
+			"(Ljava/lang/String;S)S",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
 		);
 	}
 	QAndroidJniObject ObjectInputStream_GetField::getObjectStreamClass()

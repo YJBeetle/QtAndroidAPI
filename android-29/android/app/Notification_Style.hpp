@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::app
 {
-	class Notification_Builder;
+	class Notification;
 }
 namespace __jni_impl::android::app
 {
-	class Notification;
+	class Notification_Builder;
 }
 namespace __jni_impl::android::widget
 {
@@ -34,8 +34,8 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "Notification_Builder.hpp"
 #include "Notification.hpp"
+#include "Notification_Builder.hpp"
 #include "../widget/RemoteViews.hpp"
 
 namespace __jni_impl::android::app

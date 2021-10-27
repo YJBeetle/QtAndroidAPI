@@ -24,10 +24,10 @@ namespace __jni_impl::java::lang
 		// Fields
 		
 		// Constructors
+		void __constructor();
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
 		void __constructor(jthrowable arg0);
-		void __constructor();
 		
 		// Methods
 		jthrowable getException();
@@ -42,6 +42,13 @@ namespace __jni_impl::java::lang
 	// Fields
 	
 	// Constructors
+	void ExceptionInInitializerError::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.ExceptionInInitializerError",
+			"()V"
+		);
+	}
 	void ExceptionInInitializerError::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -66,13 +73,6 @@ namespace __jni_impl::java::lang
 			arg0
 		);
 	}
-	void ExceptionInInitializerError::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.ExceptionInInitializerError",
-			"()V"
-		);
-	}
 	
 	// Methods
 	jthrowable ExceptionInInitializerError::getException()
@@ -90,6 +90,10 @@ namespace java::lang
 	{
 	public:
 		ExceptionInInitializerError(QAndroidJniObject obj) { __thiz = obj; }
+		ExceptionInInitializerError()
+		{
+			__constructor();
+		}
 		ExceptionInInitializerError(jstring arg0)
 		{
 			__constructor(
@@ -99,10 +103,6 @@ namespace java::lang
 		{
 			__constructor(
 				arg0);
-		}
-		ExceptionInInitializerError()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::lang

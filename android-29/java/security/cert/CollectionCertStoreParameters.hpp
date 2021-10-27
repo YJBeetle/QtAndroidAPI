@@ -14,13 +14,13 @@ namespace __jni_impl::java::security::cert
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::__JniBaseClass arg0);
 		void __constructor();
+		void __constructor(__jni_impl::__JniBaseClass arg0);
 		
 		// Methods
-		jstring toString();
 		jobject clone();
 		QAndroidJniObject getCollection();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -30,6 +30,13 @@ namespace __jni_impl::java::security::cert
 	// Fields
 	
 	// Constructors
+	void CollectionCertStoreParameters::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.cert.CollectionCertStoreParameters",
+			"()V"
+		);
+	}
 	void CollectionCertStoreParameters::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -38,22 +45,8 @@ namespace __jni_impl::java::security::cert
 			arg0.__jniObject().object()
 		);
 	}
-	void CollectionCertStoreParameters::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.cert.CollectionCertStoreParameters",
-			"()V"
-		);
-	}
 	
 	// Methods
-	jstring CollectionCertStoreParameters::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jobject CollectionCertStoreParameters::clone()
 	{
 		return __thiz.callObjectMethod(
@@ -68,6 +61,13 @@ namespace __jni_impl::java::security::cert
 			"()Ljava/util/Collection;"
 		);
 	}
+	jstring CollectionCertStoreParameters::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 } // namespace __jni_impl::java::security::cert
 
 namespace java::security::cert
@@ -76,14 +76,14 @@ namespace java::security::cert
 	{
 	public:
 		CollectionCertStoreParameters(QAndroidJniObject obj) { __thiz = obj; }
+		CollectionCertStoreParameters()
+		{
+			__constructor();
+		}
 		CollectionCertStoreParameters(__jni_impl::__JniBaseClass arg0)
 		{
 			__constructor(
 				arg0);
-		}
-		CollectionCertStoreParameters()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::security::cert

@@ -17,15 +17,15 @@ namespace __jni_impl::android::renderscript
 		void __constructor();
 		
 		// Methods
+		jint getXEnd();
+		jint getXStart();
+		jint getYEnd();
+		jint getYStart();
+		jint getZEnd();
+		jint getZStart();
 		QAndroidJniObject setX(jint arg0, jint arg1);
 		QAndroidJniObject setY(jint arg0, jint arg1);
 		QAndroidJniObject setZ(jint arg0, jint arg1);
-		jint getXStart();
-		jint getXEnd();
-		jint getYStart();
-		jint getYEnd();
-		jint getZStart();
-		jint getZEnd();
 	};
 } // namespace __jni_impl::android::renderscript
 
@@ -44,6 +44,48 @@ namespace __jni_impl::android::renderscript
 	}
 	
 	// Methods
+	jint Script_LaunchOptions::getXEnd()
+	{
+		return __thiz.callMethod<jint>(
+			"getXEnd",
+			"()I"
+		);
+	}
+	jint Script_LaunchOptions::getXStart()
+	{
+		return __thiz.callMethod<jint>(
+			"getXStart",
+			"()I"
+		);
+	}
+	jint Script_LaunchOptions::getYEnd()
+	{
+		return __thiz.callMethod<jint>(
+			"getYEnd",
+			"()I"
+		);
+	}
+	jint Script_LaunchOptions::getYStart()
+	{
+		return __thiz.callMethod<jint>(
+			"getYStart",
+			"()I"
+		);
+	}
+	jint Script_LaunchOptions::getZEnd()
+	{
+		return __thiz.callMethod<jint>(
+			"getZEnd",
+			"()I"
+		);
+	}
+	jint Script_LaunchOptions::getZStart()
+	{
+		return __thiz.callMethod<jint>(
+			"getZStart",
+			"()I"
+		);
+	}
 	QAndroidJniObject Script_LaunchOptions::setX(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -69,48 +111,6 @@ namespace __jni_impl::android::renderscript
 			"(II)Landroid/renderscript/Script$LaunchOptions;",
 			arg0,
 			arg1
-		);
-	}
-	jint Script_LaunchOptions::getXStart()
-	{
-		return __thiz.callMethod<jint>(
-			"getXStart",
-			"()I"
-		);
-	}
-	jint Script_LaunchOptions::getXEnd()
-	{
-		return __thiz.callMethod<jint>(
-			"getXEnd",
-			"()I"
-		);
-	}
-	jint Script_LaunchOptions::getYStart()
-	{
-		return __thiz.callMethod<jint>(
-			"getYStart",
-			"()I"
-		);
-	}
-	jint Script_LaunchOptions::getYEnd()
-	{
-		return __thiz.callMethod<jint>(
-			"getYEnd",
-			"()I"
-		);
-	}
-	jint Script_LaunchOptions::getZStart()
-	{
-		return __thiz.callMethod<jint>(
-			"getZStart",
-			"()I"
-		);
-	}
-	jint Script_LaunchOptions::getZEnd()
-	{
-		return __thiz.callMethod<jint>(
-			"getZEnd",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::renderscript

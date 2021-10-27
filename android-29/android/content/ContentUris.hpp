@@ -25,10 +25,10 @@ namespace __jni_impl::android::content
 		void __constructor();
 		
 		// Methods
-		static jlong parseId(__jni_impl::android::net::Uri arg0);
 		static QAndroidJniObject appendId(__jni_impl::android::net::Uri_Builder arg0, jlong arg1);
-		static QAndroidJniObject withAppendedId(__jni_impl::android::net::Uri arg0, jlong arg1);
+		static jlong parseId(__jni_impl::android::net::Uri arg0);
 		static QAndroidJniObject removeId(__jni_impl::android::net::Uri arg0);
+		static QAndroidJniObject withAppendedId(__jni_impl::android::net::Uri arg0, jlong arg1);
 	};
 } // namespace __jni_impl::android::content
 
@@ -49,15 +49,6 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
-	jlong ContentUris::parseId(__jni_impl::android::net::Uri arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.content.ContentUris",
-			"parseId",
-			"(Landroid/net/Uri;)J",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject ContentUris::appendId(__jni_impl::android::net::Uri_Builder arg0, jlong arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -68,14 +59,13 @@ namespace __jni_impl::android::content
 			arg1
 		);
 	}
-	QAndroidJniObject ContentUris::withAppendedId(__jni_impl::android::net::Uri arg0, jlong arg1)
+	jlong ContentUris::parseId(__jni_impl::android::net::Uri arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.content.ContentUris",
-			"withAppendedId",
-			"(Landroid/net/Uri;J)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1
+			"parseId",
+			"(Landroid/net/Uri;)J",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject ContentUris::removeId(__jni_impl::android::net::Uri arg0)
@@ -85,6 +75,16 @@ namespace __jni_impl::android::content
 			"removeId",
 			"(Landroid/net/Uri;)Landroid/net/Uri;",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ContentUris::withAppendedId(__jni_impl::android::net::Uri arg0, jlong arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.ContentUris",
+			"withAppendedId",
+			"(Landroid/net/Uri;J)Landroid/net/Uri;",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::content

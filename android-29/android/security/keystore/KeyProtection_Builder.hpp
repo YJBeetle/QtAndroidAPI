@@ -26,22 +26,22 @@ namespace __jni_impl::android::security::keystore
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setKeyValidityStart(__jni_impl::java::util::Date arg0);
-		QAndroidJniObject setKeyValidityEnd(__jni_impl::java::util::Date arg0);
-		QAndroidJniObject setKeyValidityForOriginationEnd(__jni_impl::java::util::Date arg0);
-		QAndroidJniObject setKeyValidityForConsumptionEnd(__jni_impl::java::util::Date arg0);
+		QAndroidJniObject setBlockModes(jarray arg0);
 		QAndroidJniObject setDigests(jarray arg0);
 		QAndroidJniObject setEncryptionPaddings(jarray arg0);
-		QAndroidJniObject setSignaturePaddings(jarray arg0);
-		QAndroidJniObject setBlockModes(jarray arg0);
-		QAndroidJniObject setRandomizedEncryptionRequired(jboolean arg0);
-		QAndroidJniObject setUserAuthenticationRequired(jboolean arg0);
-		QAndroidJniObject setUserConfirmationRequired(jboolean arg0);
-		QAndroidJniObject setUserAuthenticationValidityDurationSeconds(jint arg0);
-		QAndroidJniObject setUserPresenceRequired(jboolean arg0);
-		QAndroidJniObject setUserAuthenticationValidWhileOnBody(jboolean arg0);
 		QAndroidJniObject setInvalidatedByBiometricEnrollment(jboolean arg0);
+		QAndroidJniObject setKeyValidityEnd(__jni_impl::java::util::Date arg0);
+		QAndroidJniObject setKeyValidityForConsumptionEnd(__jni_impl::java::util::Date arg0);
+		QAndroidJniObject setKeyValidityForOriginationEnd(__jni_impl::java::util::Date arg0);
+		QAndroidJniObject setKeyValidityStart(__jni_impl::java::util::Date arg0);
+		QAndroidJniObject setRandomizedEncryptionRequired(jboolean arg0);
+		QAndroidJniObject setSignaturePaddings(jarray arg0);
 		QAndroidJniObject setUnlockedDeviceRequired(jboolean arg0);
+		QAndroidJniObject setUserAuthenticationRequired(jboolean arg0);
+		QAndroidJniObject setUserAuthenticationValidWhileOnBody(jboolean arg0);
+		QAndroidJniObject setUserAuthenticationValidityDurationSeconds(jint arg0);
+		QAndroidJniObject setUserConfirmationRequired(jboolean arg0);
+		QAndroidJniObject setUserPresenceRequired(jboolean arg0);
 	};
 } // namespace __jni_impl::android::security::keystore
 
@@ -70,36 +70,12 @@ namespace __jni_impl::android::security::keystore
 			"()Landroid/security/keystore/KeyProtection;"
 		);
 	}
-	QAndroidJniObject KeyProtection_Builder::setKeyValidityStart(__jni_impl::java::util::Date arg0)
+	QAndroidJniObject KeyProtection_Builder::setBlockModes(jarray arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setKeyValidityStart",
-			"(Ljava/util/Date;)Landroid/security/keystore/KeyProtection$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject KeyProtection_Builder::setKeyValidityEnd(__jni_impl::java::util::Date arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setKeyValidityEnd",
-			"(Ljava/util/Date;)Landroid/security/keystore/KeyProtection$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject KeyProtection_Builder::setKeyValidityForOriginationEnd(__jni_impl::java::util::Date arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setKeyValidityForOriginationEnd",
-			"(Ljava/util/Date;)Landroid/security/keystore/KeyProtection$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject KeyProtection_Builder::setKeyValidityForConsumptionEnd(__jni_impl::java::util::Date arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setKeyValidityForConsumptionEnd",
-			"(Ljava/util/Date;)Landroid/security/keystore/KeyProtection$Builder;",
-			arg0.__jniObject().object()
+			"setBlockModes",
+			"([Ljava/lang/String;)Landroid/security/keystore/KeyProtection$Builder;",
+			arg0
 		);
 	}
 	QAndroidJniObject KeyProtection_Builder::setDigests(jarray arg0)
@@ -118,6 +94,54 @@ namespace __jni_impl::android::security::keystore
 			arg0
 		);
 	}
+	QAndroidJniObject KeyProtection_Builder::setInvalidatedByBiometricEnrollment(jboolean arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setInvalidatedByBiometricEnrollment",
+			"(Z)Landroid/security/keystore/KeyProtection$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject KeyProtection_Builder::setKeyValidityEnd(__jni_impl::java::util::Date arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setKeyValidityEnd",
+			"(Ljava/util/Date;)Landroid/security/keystore/KeyProtection$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject KeyProtection_Builder::setKeyValidityForConsumptionEnd(__jni_impl::java::util::Date arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setKeyValidityForConsumptionEnd",
+			"(Ljava/util/Date;)Landroid/security/keystore/KeyProtection$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject KeyProtection_Builder::setKeyValidityForOriginationEnd(__jni_impl::java::util::Date arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setKeyValidityForOriginationEnd",
+			"(Ljava/util/Date;)Landroid/security/keystore/KeyProtection$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject KeyProtection_Builder::setKeyValidityStart(__jni_impl::java::util::Date arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setKeyValidityStart",
+			"(Ljava/util/Date;)Landroid/security/keystore/KeyProtection$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject KeyProtection_Builder::setRandomizedEncryptionRequired(jboolean arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setRandomizedEncryptionRequired",
+			"(Z)Landroid/security/keystore/KeyProtection$Builder;",
+			arg0
+		);
+	}
 	QAndroidJniObject KeyProtection_Builder::setSignaturePaddings(jarray arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -126,18 +150,10 @@ namespace __jni_impl::android::security::keystore
 			arg0
 		);
 	}
-	QAndroidJniObject KeyProtection_Builder::setBlockModes(jarray arg0)
+	QAndroidJniObject KeyProtection_Builder::setUnlockedDeviceRequired(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setBlockModes",
-			"([Ljava/lang/String;)Landroid/security/keystore/KeyProtection$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject KeyProtection_Builder::setRandomizedEncryptionRequired(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setRandomizedEncryptionRequired",
+			"setUnlockedDeviceRequired",
 			"(Z)Landroid/security/keystore/KeyProtection$Builder;",
 			arg0
 		);
@@ -150,10 +166,10 @@ namespace __jni_impl::android::security::keystore
 			arg0
 		);
 	}
-	QAndroidJniObject KeyProtection_Builder::setUserConfirmationRequired(jboolean arg0)
+	QAndroidJniObject KeyProtection_Builder::setUserAuthenticationValidWhileOnBody(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setUserConfirmationRequired",
+			"setUserAuthenticationValidWhileOnBody",
 			"(Z)Landroid/security/keystore/KeyProtection$Builder;",
 			arg0
 		);
@@ -166,34 +182,18 @@ namespace __jni_impl::android::security::keystore
 			arg0
 		);
 	}
+	QAndroidJniObject KeyProtection_Builder::setUserConfirmationRequired(jboolean arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setUserConfirmationRequired",
+			"(Z)Landroid/security/keystore/KeyProtection$Builder;",
+			arg0
+		);
+	}
 	QAndroidJniObject KeyProtection_Builder::setUserPresenceRequired(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setUserPresenceRequired",
-			"(Z)Landroid/security/keystore/KeyProtection$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject KeyProtection_Builder::setUserAuthenticationValidWhileOnBody(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setUserAuthenticationValidWhileOnBody",
-			"(Z)Landroid/security/keystore/KeyProtection$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject KeyProtection_Builder::setInvalidatedByBiometricEnrollment(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setInvalidatedByBiometricEnrollment",
-			"(Z)Landroid/security/keystore/KeyProtection$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject KeyProtection_Builder::setUnlockedDeviceRequired(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setUnlockedDeviceRequired",
 			"(Z)Landroid/security/keystore/KeyProtection$Builder;",
 			arg0
 		);

@@ -15,11 +15,11 @@ namespace __jni_impl::android::graphics::drawable
 }
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class Bundle;
 }
 namespace __jni_impl::android::os
 {
-	class Bundle;
+	class Parcel;
 }
 
 namespace __jni_impl::android::app
@@ -50,22 +50,22 @@ namespace __jni_impl::android::app
 		
 		// Methods
 		QAndroidJniObject clone();
-		QAndroidJniObject getIcon();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getExtras();
 		jboolean getAllowGeneratedReplies();
+		jarray getDataOnlyRemoteInputs();
+		QAndroidJniObject getExtras();
+		QAndroidJniObject getIcon();
 		jarray getRemoteInputs();
 		jint getSemanticAction();
 		jboolean isContextual();
-		jarray getDataOnlyRemoteInputs();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
 #include "PendingIntent.hpp"
 #include "../graphics/drawable/Icon.hpp"
-#include "../os/Parcel.hpp"
 #include "../os/Bundle.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -206,13 +206,6 @@ namespace __jni_impl::android::app
 			"()Landroid/app/Notification$Action;"
 		);
 	}
-	QAndroidJniObject Notification_Action::getIcon()
-	{
-		return __thiz.callObjectMethod(
-			"getIcon",
-			"()Landroid/graphics/drawable/Icon;"
-		);
-	}
 	jint Notification_Action::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -220,14 +213,19 @@ namespace __jni_impl::android::app
 			"()I"
 		);
 	}
-	void Notification_Action::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jboolean Notification_Action::getAllowGeneratedReplies()
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callMethod<jboolean>(
+			"getAllowGeneratedReplies",
+			"()Z"
 		);
+	}
+	jarray Notification_Action::getDataOnlyRemoteInputs()
+	{
+		return __thiz.callObjectMethod(
+			"getDataOnlyRemoteInputs",
+			"()[Landroid/app/RemoteInput;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Notification_Action::getExtras()
 	{
@@ -236,11 +234,11 @@ namespace __jni_impl::android::app
 			"()Landroid/os/Bundle;"
 		);
 	}
-	jboolean Notification_Action::getAllowGeneratedReplies()
+	QAndroidJniObject Notification_Action::getIcon()
 	{
-		return __thiz.callMethod<jboolean>(
-			"getAllowGeneratedReplies",
-			"()Z"
+		return __thiz.callObjectMethod(
+			"getIcon",
+			"()Landroid/graphics/drawable/Icon;"
 		);
 	}
 	jarray Notification_Action::getRemoteInputs()
@@ -264,12 +262,14 @@ namespace __jni_impl::android::app
 			"()Z"
 		);
 	}
-	jarray Notification_Action::getDataOnlyRemoteInputs()
+	void Notification_Action::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
-			"getDataOnlyRemoteInputs",
-			"()[Landroid/app/RemoteInput;"
-		).object<jarray>();
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::app
 

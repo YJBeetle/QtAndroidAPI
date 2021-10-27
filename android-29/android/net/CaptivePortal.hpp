@@ -22,9 +22,9 @@ namespace __jni_impl::android::net
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
 		void ignoreNetwork();
 		void reportCaptivePortalDismissed();
-		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net
@@ -52,6 +52,13 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
+	jint CaptivePortal::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	void CaptivePortal::ignoreNetwork()
 	{
 		__thiz.callMethod<void>(
@@ -64,13 +71,6 @@ namespace __jni_impl::android::net
 		__thiz.callMethod<void>(
 			"reportCaptivePortalDismissed",
 			"()V"
-		);
-	}
-	jint CaptivePortal::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
 		);
 	}
 	void CaptivePortal::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

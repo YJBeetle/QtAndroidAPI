@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::nio::file
-{
-	class FileVisitResult;
-}
 namespace __jni_impl::java::io
 {
 	class IOException;
+}
+namespace __jni_impl::java::nio::file
+{
+	class FileVisitResult;
 }
 
 namespace __jni_impl::java::nio::file
@@ -25,15 +25,15 @@ namespace __jni_impl::java::nio::file
 		void __constructor();
 		
 		// Methods
+		QAndroidJniObject postVisitDirectory(jobject arg0, __jni_impl::java::io::IOException arg1);
+		QAndroidJniObject preVisitDirectory(jobject arg0, __jni_impl::__JniBaseClass arg1);
 		QAndroidJniObject visitFile(jobject arg0, __jni_impl::__JniBaseClass arg1);
 		QAndroidJniObject visitFileFailed(jobject arg0, __jni_impl::java::io::IOException arg1);
-		QAndroidJniObject preVisitDirectory(jobject arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject postVisitDirectory(jobject arg0, __jni_impl::java::io::IOException arg1);
 	};
 } // namespace __jni_impl::java::nio::file
 
-#include "FileVisitResult.hpp"
 #include "../../io/IOException.hpp"
+#include "FileVisitResult.hpp"
 
 namespace __jni_impl::java::nio::file
 {
@@ -48,19 +48,10 @@ namespace __jni_impl::java::nio::file
 	}
 	
 	// Methods
-	QAndroidJniObject SimpleFileVisitor::visitFile(jobject arg0, __jni_impl::__JniBaseClass arg1)
+	QAndroidJniObject SimpleFileVisitor::postVisitDirectory(jobject arg0, __jni_impl::java::io::IOException arg1)
 	{
 		return __thiz.callObjectMethod(
-			"visitFile",
-			"(Ljava/lang/Object;Ljava/nio/file/attribute/BasicFileAttributes;)Ljava/nio/file/FileVisitResult;",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject SimpleFileVisitor::visitFileFailed(jobject arg0, __jni_impl::java::io::IOException arg1)
-	{
-		return __thiz.callObjectMethod(
-			"visitFileFailed",
+			"postVisitDirectory",
 			"(Ljava/lang/Object;Ljava/io/IOException;)Ljava/nio/file/FileVisitResult;",
 			arg0,
 			arg1.__jniObject().object()
@@ -75,10 +66,19 @@ namespace __jni_impl::java::nio::file
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject SimpleFileVisitor::postVisitDirectory(jobject arg0, __jni_impl::java::io::IOException arg1)
+	QAndroidJniObject SimpleFileVisitor::visitFile(jobject arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
-			"postVisitDirectory",
+			"visitFile",
+			"(Ljava/lang/Object;Ljava/nio/file/attribute/BasicFileAttributes;)Ljava/nio/file/FileVisitResult;",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SimpleFileVisitor::visitFileFailed(jobject arg0, __jni_impl::java::io::IOException arg1)
+	{
+		return __thiz.callObjectMethod(
+			"visitFileFailed",
 			"(Ljava/lang/Object;Ljava/io/IOException;)Ljava/nio/file/FileVisitResult;",
 			arg0,
 			arg1.__jniObject().object()

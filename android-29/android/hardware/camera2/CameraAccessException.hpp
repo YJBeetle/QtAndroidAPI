@@ -21,12 +21,12 @@ namespace __jni_impl::android::hardware::camera2
 		static jint MAX_CAMERAS_IN_USE();
 		
 		// Constructors
+		void __constructor(jint arg0);
+		void __constructor(jint arg0, jstring arg1);
+		void __constructor(jint arg0, const QString &arg1);
 		void __constructor(jint arg0, jthrowable arg1);
 		void __constructor(jint arg0, jstring arg1, jthrowable arg2);
 		void __constructor(jint arg0, const QString &arg1, jthrowable arg2);
-		void __constructor(jint arg0, jstring arg1);
-		void __constructor(jint arg0, const QString &arg1);
-		void __constructor(jint arg0);
 		
 		// Methods
 		jint getReason();
@@ -74,6 +74,32 @@ namespace __jni_impl::android::hardware::camera2
 	}
 	
 	// Constructors
+	void CameraAccessException::__constructor(jint arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.hardware.camera2.CameraAccessException",
+			"(I)V",
+			arg0
+		);
+	}
+	void CameraAccessException::__constructor(jint arg0, jstring arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.hardware.camera2.CameraAccessException",
+			"(ILjava/lang/String;)V",
+			arg0,
+			arg1
+		);
+	}
+	void CameraAccessException::__constructor(jint arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.hardware.camera2.CameraAccessException",
+			"(ILjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void CameraAccessException::__constructor(jint arg0, jthrowable arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -103,32 +129,6 @@ namespace __jni_impl::android::hardware::camera2
 			arg2
 		);
 	}
-	void CameraAccessException::__constructor(jint arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.hardware.camera2.CameraAccessException",
-			"(ILjava/lang/String;)V",
-			arg0,
-			arg1
-		);
-	}
-	void CameraAccessException::__constructor(jint arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.hardware.camera2.CameraAccessException",
-			"(ILjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	void CameraAccessException::__constructor(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.hardware.camera2.CameraAccessException",
-			"(I)V",
-			arg0
-		);
-	}
 	
 	// Methods
 	jint CameraAccessException::getReason()
@@ -146,6 +146,17 @@ namespace android::hardware::camera2
 	{
 	public:
 		CameraAccessException(QAndroidJniObject obj) { __thiz = obj; }
+		CameraAccessException(jint arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		CameraAccessException(jint arg0, jstring arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
+		}
 		CameraAccessException(jint arg0, jthrowable arg1)
 		{
 			__constructor(
@@ -158,17 +169,6 @@ namespace android::hardware::camera2
 				arg0,
 				arg1,
 				arg2);
-		}
-		CameraAccessException(jint arg0, jstring arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
-		}
-		CameraAccessException(jint arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::hardware::camera2

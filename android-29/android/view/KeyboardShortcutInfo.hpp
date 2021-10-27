@@ -19,17 +19,17 @@ namespace __jni_impl::android::view
 		static QAndroidJniObject CREATOR();
 		
 		// Constructors
-		void __constructor(jstring arg0, jint arg1, jint arg2);
-		void __constructor(const QString &arg0, jint arg1, jint arg2);
 		void __constructor(jstring arg0, jchar arg1, jint arg2);
 		void __constructor(const QString &arg0, jchar arg1, jint arg2);
+		void __constructor(jstring arg0, jint arg1, jint arg2);
+		void __constructor(const QString &arg0, jint arg1, jint arg2);
 		
 		// Methods
-		jint getModifiers();
-		jstring getLabel();
-		jint getKeycode();
-		jchar getBaseCharacter();
 		jint describeContents();
+		jchar getBaseCharacter();
+		jint getKeycode();
+		jstring getLabel();
+		jint getModifiers();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
@@ -49,26 +49,6 @@ namespace __jni_impl::android::view
 	}
 	
 	// Constructors
-	void KeyboardShortcutInfo::__constructor(jstring arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.KeyboardShortcutInfo",
-			"(Ljava/lang/CharSequence;II)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void KeyboardShortcutInfo::__constructor(const QString &arg0, jint arg1, jint arg2)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.KeyboardShortcutInfo",
-			"(Ljava/lang/CharSequence;II)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
 	void KeyboardShortcutInfo::__constructor(jstring arg0, jchar arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
@@ -89,26 +69,32 @@ namespace __jni_impl::android::view
 			arg2
 		);
 	}
-	
-	// Methods
-	jint KeyboardShortcutInfo::getModifiers()
+	void KeyboardShortcutInfo::__constructor(jstring arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
-			"getModifiers",
-			"()I"
+		__thiz = QAndroidJniObject(
+			"android.view.KeyboardShortcutInfo",
+			"(Ljava/lang/CharSequence;II)V",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
-	jstring KeyboardShortcutInfo::getLabel()
+	void KeyboardShortcutInfo::__constructor(const QString &arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
+		__thiz = QAndroidJniObject(
+			"android.view.KeyboardShortcutInfo",
+			"(Ljava/lang/CharSequence;II)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2
+		);
 	}
-	jint KeyboardShortcutInfo::getKeycode()
+	
+	// Methods
+	jint KeyboardShortcutInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getKeycode",
+			"describeContents",
 			"()I"
 		);
 	}
@@ -119,10 +105,24 @@ namespace __jni_impl::android::view
 			"()C"
 		);
 	}
-	jint KeyboardShortcutInfo::describeContents()
+	jint KeyboardShortcutInfo::getKeycode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getKeycode",
+			"()I"
+		);
+	}
+	jstring KeyboardShortcutInfo::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jint KeyboardShortcutInfo::getModifiers()
+	{
+		return __thiz.callMethod<jint>(
+			"getModifiers",
 			"()I"
 		);
 	}
@@ -143,14 +143,14 @@ namespace android::view
 	{
 	public:
 		KeyboardShortcutInfo(QAndroidJniObject obj) { __thiz = obj; }
-		KeyboardShortcutInfo(jstring arg0, jint arg1, jint arg2)
+		KeyboardShortcutInfo(jstring arg0, jchar arg1, jint arg2)
 		{
 			__constructor(
 				arg0,
 				arg1,
 				arg2);
 		}
-		KeyboardShortcutInfo(jstring arg0, jchar arg1, jint arg2)
+		KeyboardShortcutInfo(jstring arg0, jint arg1, jint arg2)
 		{
 			__constructor(
 				arg0,

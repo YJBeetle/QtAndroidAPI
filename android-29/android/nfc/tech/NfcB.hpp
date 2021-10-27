@@ -22,14 +22,14 @@ namespace __jni_impl::android::nfc::tech
 		
 		// Methods
 		static QAndroidJniObject get(__jni_impl::android::nfc::Tag arg0);
-		void connect();
 		void close();
-		QAndroidJniObject getTag();
+		void connect();
 		jbyteArray getApplicationData();
-		jbyteArray getProtocolInfo();
-		jbyteArray transceive(jbyteArray arg0);
 		jint getMaxTransceiveLength();
+		jbyteArray getProtocolInfo();
+		QAndroidJniObject getTag();
 		jboolean isConnected();
+		jbyteArray transceive(jbyteArray arg0);
 	};
 } // namespace __jni_impl::android::nfc::tech
 
@@ -57,13 +57,6 @@ namespace __jni_impl::android::nfc::tech
 			arg0.__jniObject().object()
 		);
 	}
-	void NfcB::connect()
-	{
-		__thiz.callMethod<void>(
-			"connect",
-			"()V"
-		);
-	}
 	void NfcB::close()
 	{
 		__thiz.callMethod<void>(
@@ -71,11 +64,11 @@ namespace __jni_impl::android::nfc::tech
 			"()V"
 		);
 	}
-	QAndroidJniObject NfcB::getTag()
+	void NfcB::connect()
 	{
-		return __thiz.callObjectMethod(
-			"getTag",
-			"()Landroid/nfc/Tag;"
+		__thiz.callMethod<void>(
+			"connect",
+			"()V"
 		);
 	}
 	jbyteArray NfcB::getApplicationData()
@@ -85,6 +78,13 @@ namespace __jni_impl::android::nfc::tech
 			"()[B"
 		).object<jbyteArray>();
 	}
+	jint NfcB::getMaxTransceiveLength()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxTransceiveLength",
+			"()I"
+		);
+	}
 	jbyteArray NfcB::getProtocolInfo()
 	{
 		return __thiz.callObjectMethod(
@@ -92,19 +92,11 @@ namespace __jni_impl::android::nfc::tech
 			"()[B"
 		).object<jbyteArray>();
 	}
-	jbyteArray NfcB::transceive(jbyteArray arg0)
+	QAndroidJniObject NfcB::getTag()
 	{
 		return __thiz.callObjectMethod(
-			"transceive",
-			"([B)[B",
-			arg0
-		).object<jbyteArray>();
-	}
-	jint NfcB::getMaxTransceiveLength()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxTransceiveLength",
-			"()I"
+			"getTag",
+			"()Landroid/nfc/Tag;"
 		);
 	}
 	jboolean NfcB::isConnected()
@@ -113,6 +105,14 @@ namespace __jni_impl::android::nfc::tech
 			"isConnected",
 			"()Z"
 		);
+	}
+	jbyteArray NfcB::transceive(jbyteArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"transceive",
+			"([B)[B",
+			arg0
+		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::nfc::tech
 

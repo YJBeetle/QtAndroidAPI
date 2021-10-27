@@ -35,13 +35,13 @@ namespace __jni_impl::android::bluetooth::le
 		void __constructor();
 		
 		// Methods
-		jint getScanMode();
+		jint describeContents();
 		jint getCallbackType();
-		jint getScanResultType();
 		jboolean getLegacy();
 		jint getPhy();
 		jlong getReportDelayMillis();
-		jint describeContents();
+		jint getScanMode();
+		jint getScanResultType();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::bluetooth::le
@@ -160,10 +160,10 @@ namespace __jni_impl::android::bluetooth::le
 	}
 	
 	// Methods
-	jint ScanSettings::getScanMode()
+	jint ScanSettings::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getScanMode",
+			"describeContents",
 			"()I"
 		);
 	}
@@ -171,13 +171,6 @@ namespace __jni_impl::android::bluetooth::le
 	{
 		return __thiz.callMethod<jint>(
 			"getCallbackType",
-			"()I"
-		);
-	}
-	jint ScanSettings::getScanResultType()
-	{
-		return __thiz.callMethod<jint>(
-			"getScanResultType",
 			"()I"
 		);
 	}
@@ -202,10 +195,17 @@ namespace __jni_impl::android::bluetooth::le
 			"()J"
 		);
 	}
-	jint ScanSettings::describeContents()
+	jint ScanSettings::getScanMode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getScanMode",
+			"()I"
+		);
+	}
+	jint ScanSettings::getScanResultType()
+	{
+		return __thiz.callMethod<jint>(
+			"getScanResultType",
 			"()I"
 		);
 	}

@@ -17,13 +17,13 @@ namespace __jni_impl::java::time::temporal
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject offset();
-		static QAndroidJniObject zoneId();
 		static QAndroidJniObject chronology();
-		static QAndroidJniObject precision();
 		static QAndroidJniObject localDate();
 		static QAndroidJniObject localTime();
+		static QAndroidJniObject offset();
+		static QAndroidJniObject precision();
 		static QAndroidJniObject zone();
+		static QAndroidJniObject zoneId();
 	};
 } // namespace __jni_impl::java::time::temporal
 
@@ -41,35 +41,11 @@ namespace __jni_impl::java::time::temporal
 	}
 	
 	// Methods
-	QAndroidJniObject TemporalQueries::offset()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.temporal.TemporalQueries",
-			"offset",
-			"()Ljava/time/temporal/TemporalQuery;"
-		);
-	}
-	QAndroidJniObject TemporalQueries::zoneId()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.temporal.TemporalQueries",
-			"zoneId",
-			"()Ljava/time/temporal/TemporalQuery;"
-		);
-	}
 	QAndroidJniObject TemporalQueries::chronology()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.TemporalQueries",
 			"chronology",
-			"()Ljava/time/temporal/TemporalQuery;"
-		);
-	}
-	QAndroidJniObject TemporalQueries::precision()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.temporal.TemporalQueries",
-			"precision",
 			"()Ljava/time/temporal/TemporalQuery;"
 		);
 	}
@@ -89,11 +65,35 @@ namespace __jni_impl::java::time::temporal
 			"()Ljava/time/temporal/TemporalQuery;"
 		);
 	}
+	QAndroidJniObject TemporalQueries::offset()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.temporal.TemporalQueries",
+			"offset",
+			"()Ljava/time/temporal/TemporalQuery;"
+		);
+	}
+	QAndroidJniObject TemporalQueries::precision()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.temporal.TemporalQueries",
+			"precision",
+			"()Ljava/time/temporal/TemporalQuery;"
+		);
+	}
 	QAndroidJniObject TemporalQueries::zone()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.temporal.TemporalQueries",
 			"zone",
+			"()Ljava/time/temporal/TemporalQuery;"
+		);
+	}
+	QAndroidJniObject TemporalQueries::zoneId()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.temporal.TemporalQueries",
+			"zoneId",
 			"()Ljava/time/temporal/TemporalQuery;"
 		);
 	}

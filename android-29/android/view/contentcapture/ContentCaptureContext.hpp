@@ -5,21 +5,21 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view::contentcapture
-{
-	class ContentCaptureContext_Builder;
-}
 namespace __jni_impl::android::content
 {
 	class LocusId;
 }
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class Bundle;
 }
 namespace __jni_impl::android::os
 {
-	class Bundle;
+	class Parcel;
+}
+namespace __jni_impl::android::view::contentcapture
+{
+	class ContentCaptureContext_Builder;
 }
 
 namespace __jni_impl::android::view::contentcapture
@@ -34,20 +34,20 @@ namespace __jni_impl::android::view::contentcapture
 		void __constructor();
 		
 		// Methods
-		jstring toString();
 		static QAndroidJniObject forLocusId(jstring arg0);
 		static QAndroidJniObject forLocusId(const QString &arg0);
-		QAndroidJniObject getLocusId();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getExtras();
+		QAndroidJniObject getLocusId();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::contentcapture
 
-#include "ContentCaptureContext_Builder.hpp"
 #include "../../content/LocusId.hpp"
-#include "../../os/Parcel.hpp"
 #include "../../os/Bundle.hpp"
+#include "../../os/Parcel.hpp"
+#include "ContentCaptureContext_Builder.hpp"
 
 namespace __jni_impl::android::view::contentcapture
 {
@@ -70,13 +70,6 @@ namespace __jni_impl::android::view::contentcapture
 	}
 	
 	// Methods
-	jstring ContentCaptureContext::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject ContentCaptureContext::forLocusId(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -95,6 +88,20 @@ namespace __jni_impl::android::view::contentcapture
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
+	jint ContentCaptureContext::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	QAndroidJniObject ContentCaptureContext::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
 	QAndroidJniObject ContentCaptureContext::getLocusId()
 	{
 		return __thiz.callObjectMethod(
@@ -102,12 +109,12 @@ namespace __jni_impl::android::view::contentcapture
 			"()Landroid/content/LocusId;"
 		);
 	}
-	jint ContentCaptureContext::describeContents()
+	jstring ContentCaptureContext::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void ContentCaptureContext::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -116,13 +123,6 @@ namespace __jni_impl::android::view::contentcapture
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject ContentCaptureContext::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
 		);
 	}
 } // namespace __jni_impl::android::view::contentcapture

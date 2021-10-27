@@ -23,10 +23,10 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setEncoding(jint arg0);
 		QAndroidJniObject setChannelIndexMask(jint arg0);
-		QAndroidJniObject setSampleRate(jint arg0);
 		QAndroidJniObject setChannelMask(jint arg0);
+		QAndroidJniObject setEncoding(jint arg0);
+		QAndroidJniObject setSampleRate(jint arg0);
 	};
 } // namespace __jni_impl::android::media
 
@@ -61,14 +61,6 @@ namespace __jni_impl::android::media
 			"()Landroid/media/AudioFormat;"
 		);
 	}
-	QAndroidJniObject AudioFormat_Builder::setEncoding(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setEncoding",
-			"(I)Landroid/media/AudioFormat$Builder;",
-			arg0
-		);
-	}
 	QAndroidJniObject AudioFormat_Builder::setChannelIndexMask(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -77,18 +69,26 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	QAndroidJniObject AudioFormat_Builder::setSampleRate(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSampleRate",
-			"(I)Landroid/media/AudioFormat$Builder;",
-			arg0
-		);
-	}
 	QAndroidJniObject AudioFormat_Builder::setChannelMask(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setChannelMask",
+			"(I)Landroid/media/AudioFormat$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject AudioFormat_Builder::setEncoding(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setEncoding",
+			"(I)Landroid/media/AudioFormat$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject AudioFormat_Builder::setSampleRate(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setSampleRate",
 			"(I)Landroid/media/AudioFormat$Builder;",
 			arg0
 		);

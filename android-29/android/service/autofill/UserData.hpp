@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::service::autofill
-{
-	class UserData_Builder;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::service::autofill
+{
+	class UserData_Builder;
 }
 
 namespace __jni_impl::android::service::autofill
@@ -26,23 +26,23 @@ namespace __jni_impl::android::service::autofill
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		jstring getId();
+		static jint getMaxCategoryCount();
+		static jint getMaxFieldClassificationIdsSize();
 		static jint getMaxUserDataSize();
+		static jint getMaxValueLength();
+		static jint getMinValueLength();
+		jint describeContents();
 		jstring getFieldClassificationAlgorithm();
 		jstring getFieldClassificationAlgorithmForCategory(jstring arg0);
 		jstring getFieldClassificationAlgorithmForCategory(const QString &arg0);
-		static jint getMaxFieldClassificationIdsSize();
-		static jint getMaxCategoryCount();
-		static jint getMinValueLength();
-		static jint getMaxValueLength();
-		jint describeContents();
+		jstring getId();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::service::autofill
 
-#include "UserData_Builder.hpp"
 #include "../../os/Parcel.hpp"
+#include "UserData_Builder.hpp"
 
 namespace __jni_impl::android::service::autofill
 {
@@ -65,25 +65,50 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	jstring UserData::toString()
+	jint UserData::getMaxCategoryCount()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.service.autofill.UserData",
+			"getMaxCategoryCount",
+			"()I"
+		);
 	}
-	jstring UserData::getId()
+	jint UserData::getMaxFieldClassificationIdsSize()
 	{
-		return __thiz.callObjectMethod(
-			"getId",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.service.autofill.UserData",
+			"getMaxFieldClassificationIdsSize",
+			"()I"
+		);
 	}
 	jint UserData::getMaxUserDataSize()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.service.autofill.UserData",
 			"getMaxUserDataSize",
+			"()I"
+		);
+	}
+	jint UserData::getMaxValueLength()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.service.autofill.UserData",
+			"getMaxValueLength",
+			"()I"
+		);
+	}
+	jint UserData::getMinValueLength()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.service.autofill.UserData",
+			"getMinValueLength",
+			"()I"
+		);
+	}
+	jint UserData::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
 			"()I"
 		);
 	}
@@ -110,44 +135,19 @@ namespace __jni_impl::android::service::autofill
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
-	jint UserData::getMaxFieldClassificationIdsSize()
+	jstring UserData::getId()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.service.autofill.UserData",
-			"getMaxFieldClassificationIdsSize",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"getId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	jint UserData::getMaxCategoryCount()
+	jstring UserData::toString()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.service.autofill.UserData",
-			"getMaxCategoryCount",
-			"()I"
-		);
-	}
-	jint UserData::getMinValueLength()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.service.autofill.UserData",
-			"getMinValueLength",
-			"()I"
-		);
-	}
-	jint UserData::getMaxValueLength()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.service.autofill.UserData",
-			"getMaxValueLength",
-			"()I"
-		);
-	}
-	jint UserData::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void UserData::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

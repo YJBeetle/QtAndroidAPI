@@ -48,15 +48,15 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		static void apply(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3, jint arg4, jint arg5, __jni_impl::android::graphics::Rect arg6, jint arg7);
-		static void apply(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3, jint arg4, jint arg5, __jni_impl::android::graphics::Rect arg6);
-		static void apply(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3, __jni_impl::android::graphics::Rect arg4, jint arg5);
 		static void apply(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3, __jni_impl::android::graphics::Rect arg4);
-		static void applyDisplay(jint arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Rect arg2, jint arg3);
+		static void apply(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3, __jni_impl::android::graphics::Rect arg4, jint arg5);
+		static void apply(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3, jint arg4, jint arg5, __jni_impl::android::graphics::Rect arg6);
+		static void apply(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3, jint arg4, jint arg5, __jni_impl::android::graphics::Rect arg6, jint arg7);
 		static void applyDisplay(jint arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Rect arg2);
-		static jboolean isVertical(jint arg0);
-		static jboolean isHorizontal(jint arg0);
+		static void applyDisplay(jint arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Rect arg2, jint arg3);
 		static jint getAbsoluteGravity(jint arg0, jint arg1);
+		static jboolean isHorizontal(jint arg0);
+		static jboolean isVertical(jint arg0);
 	};
 } // namespace __jni_impl::android::view
 
@@ -265,20 +265,31 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	void Gravity::apply(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3, jint arg4, jint arg5, __jni_impl::android::graphics::Rect arg6, jint arg7)
+	void Gravity::apply(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3, __jni_impl::android::graphics::Rect arg4)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.view.Gravity",
 			"apply",
-			"(IIILandroid/graphics/Rect;IILandroid/graphics/Rect;I)V",
+			"(IIILandroid/graphics/Rect;Landroid/graphics/Rect;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),
-			arg4,
-			arg5,
-			arg6.__jniObject().object(),
-			arg7
+			arg4.__jniObject().object()
+		);
+	}
+	void Gravity::apply(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3, __jni_impl::android::graphics::Rect arg4, jint arg5)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.view.Gravity",
+			"apply",
+			"(IIILandroid/graphics/Rect;Landroid/graphics/Rect;I)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object(),
+			arg4.__jniObject().object(),
+			arg5
 		);
 	}
 	void Gravity::apply(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3, jint arg4, jint arg5, __jni_impl::android::graphics::Rect arg6)
@@ -296,31 +307,31 @@ namespace __jni_impl::android::view
 			arg6.__jniObject().object()
 		);
 	}
-	void Gravity::apply(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3, __jni_impl::android::graphics::Rect arg4, jint arg5)
+	void Gravity::apply(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3, jint arg4, jint arg5, __jni_impl::android::graphics::Rect arg6, jint arg7)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.view.Gravity",
 			"apply",
-			"(IIILandroid/graphics/Rect;Landroid/graphics/Rect;I)V",
+			"(IIILandroid/graphics/Rect;IILandroid/graphics/Rect;I)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5
+			arg4,
+			arg5,
+			arg6.__jniObject().object(),
+			arg7
 		);
 	}
-	void Gravity::apply(jint arg0, jint arg1, jint arg2, __jni_impl::android::graphics::Rect arg3, __jni_impl::android::graphics::Rect arg4)
+	void Gravity::applyDisplay(jint arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Rect arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.view.Gravity",
-			"apply",
-			"(IIILandroid/graphics/Rect;Landroid/graphics/Rect;)V",
+			"applyDisplay",
+			"(ILandroid/graphics/Rect;Landroid/graphics/Rect;)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
 	void Gravity::applyDisplay(jint arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Rect arg2, jint arg3)
@@ -335,24 +346,14 @@ namespace __jni_impl::android::view
 			arg3
 		);
 	}
-	void Gravity::applyDisplay(jint arg0, __jni_impl::android::graphics::Rect arg1, __jni_impl::android::graphics::Rect arg2)
+	jint Gravity::getAbsoluteGravity(jint arg0, jint arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.Gravity",
-			"applyDisplay",
-			"(ILandroid/graphics/Rect;Landroid/graphics/Rect;)V",
+			"getAbsoluteGravity",
+			"(II)I",
 			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	jboolean Gravity::isVertical(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.view.Gravity",
-			"isVertical",
-			"(I)Z",
-			arg0
+			arg1
 		);
 	}
 	jboolean Gravity::isHorizontal(jint arg0)
@@ -364,14 +365,13 @@ namespace __jni_impl::android::view
 			arg0
 		);
 	}
-	jint Gravity::getAbsoluteGravity(jint arg0, jint arg1)
+	jboolean Gravity::isVertical(jint arg0)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.view.Gravity",
-			"getAbsoluteGravity",
-			"(II)I",
-			arg0,
-			arg1
+			"isVertical",
+			"(I)Z",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::view

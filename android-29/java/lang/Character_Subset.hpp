@@ -18,8 +18,8 @@ namespace __jni_impl::java::lang
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
 		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::lang
 
@@ -45,19 +45,19 @@ namespace __jni_impl::java::lang
 			arg0
 		);
 	}
-	jstring Character_Subset::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint Character_Subset::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
+	}
+	jstring Character_Subset::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::lang
 

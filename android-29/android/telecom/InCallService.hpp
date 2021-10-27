@@ -8,25 +8,25 @@
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
-namespace __jni_impl::android::telecom
-{
-	class CallAudioState;
-}
 namespace __jni_impl::android::bluetooth
 {
 	class BluetoothDevice;
 }
-namespace __jni_impl::android::telecom
+namespace __jni_impl::android::content
 {
-	class Call;
+	class Intent;
 }
 namespace __jni_impl::android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::android::content
+namespace __jni_impl::android::telecom
 {
-	class Intent;
+	class Call;
+}
+namespace __jni_impl::android::telecom
+{
+	class CallAudioState;
 }
 
 namespace __jni_impl::android::telecom
@@ -41,30 +41,30 @@ namespace __jni_impl::android::telecom
 		void __constructor();
 		
 		// Methods
+		jboolean canAddCall();
 		QAndroidJniObject getCallAudioState();
-		void onCallAudioStateChanged(__jni_impl::android::telecom::CallAudioState arg0);
-		void setAudioRoute(jint arg0);
-		void requestBluetoothAudio(__jni_impl::android::bluetooth::BluetoothDevice arg0);
-		void setMuted(jboolean arg0);
+		QAndroidJniObject getCalls();
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		void onBringToForeground(jboolean arg0);
 		void onCallAdded(__jni_impl::android::telecom::Call arg0);
+		void onCallAudioStateChanged(__jni_impl::android::telecom::CallAudioState arg0);
 		void onCallRemoved(__jni_impl::android::telecom::Call arg0);
 		void onCanAddCallChanged(jboolean arg0);
-		void onSilenceRinger();
-		jboolean canAddCall();
-		void onBringToForeground(jboolean arg0);
-		QAndroidJniObject getCalls();
 		void onConnectionEvent(__jni_impl::android::telecom::Call arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
 		void onConnectionEvent(__jni_impl::android::telecom::Call arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2);
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		void onSilenceRinger();
 		jboolean onUnbind(__jni_impl::android::content::Intent arg0);
+		void requestBluetoothAudio(__jni_impl::android::bluetooth::BluetoothDevice arg0);
+		void setAudioRoute(jint arg0);
+		void setMuted(jboolean arg0);
 	};
 } // namespace __jni_impl::android::telecom
 
-#include "CallAudioState.hpp"
 #include "../bluetooth/BluetoothDevice.hpp"
-#include "Call.hpp"
-#include "../os/Bundle.hpp"
 #include "../content/Intent.hpp"
+#include "../os/Bundle.hpp"
+#include "Call.hpp"
+#include "CallAudioState.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -88,6 +88,13 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
+	jboolean InCallService::canAddCall()
+	{
+		return __thiz.callMethod<jboolean>(
+			"canAddCall",
+			"()Z"
+		);
+	}
 	QAndroidJniObject InCallService::getCallAudioState()
 	{
 		return __thiz.callObjectMethod(
@@ -95,34 +102,25 @@ namespace __jni_impl::android::telecom
 			"()Landroid/telecom/CallAudioState;"
 		);
 	}
-	void InCallService::onCallAudioStateChanged(__jni_impl::android::telecom::CallAudioState arg0)
+	QAndroidJniObject InCallService::getCalls()
 	{
-		__thiz.callMethod<void>(
-			"onCallAudioStateChanged",
-			"(Landroid/telecom/CallAudioState;)V",
+		return __thiz.callObjectMethod(
+			"getCalls",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject InCallService::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
 			arg0.__jniObject().object()
 		);
 	}
-	void InCallService::setAudioRoute(jint arg0)
+	void InCallService::onBringToForeground(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
-			"setAudioRoute",
-			"(I)V",
-			arg0
-		);
-	}
-	void InCallService::requestBluetoothAudio(__jni_impl::android::bluetooth::BluetoothDevice arg0)
-	{
-		__thiz.callMethod<void>(
-			"requestBluetoothAudio",
-			"(Landroid/bluetooth/BluetoothDevice;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void InCallService::setMuted(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMuted",
+			"onBringToForeground",
 			"(Z)V",
 			arg0
 		);
@@ -132,6 +130,14 @@ namespace __jni_impl::android::telecom
 		__thiz.callMethod<void>(
 			"onCallAdded",
 			"(Landroid/telecom/Call;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void InCallService::onCallAudioStateChanged(__jni_impl::android::telecom::CallAudioState arg0)
+	{
+		__thiz.callMethod<void>(
+			"onCallAudioStateChanged",
+			"(Landroid/telecom/CallAudioState;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -149,35 +155,6 @@ namespace __jni_impl::android::telecom
 			"onCanAddCallChanged",
 			"(Z)V",
 			arg0
-		);
-	}
-	void InCallService::onSilenceRinger()
-	{
-		__thiz.callMethod<void>(
-			"onSilenceRinger",
-			"()V"
-		);
-	}
-	jboolean InCallService::canAddCall()
-	{
-		return __thiz.callMethod<jboolean>(
-			"canAddCall",
-			"()Z"
-		);
-	}
-	void InCallService::onBringToForeground(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"onBringToForeground",
-			"(Z)V",
-			arg0
-		);
-	}
-	QAndroidJniObject InCallService::getCalls()
-	{
-		return __thiz.callObjectMethod(
-			"getCalls",
-			"()Ljava/util/List;"
 		);
 	}
 	void InCallService::onConnectionEvent(__jni_impl::android::telecom::Call arg0, jstring arg1, __jni_impl::android::os::Bundle arg2)
@@ -200,12 +177,11 @@ namespace __jni_impl::android::telecom
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject InCallService::onBind(__jni_impl::android::content::Intent arg0)
+	void InCallService::onSilenceRinger()
 	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+		__thiz.callMethod<void>(
+			"onSilenceRinger",
+			"()V"
 		);
 	}
 	jboolean InCallService::onUnbind(__jni_impl::android::content::Intent arg0)
@@ -214,6 +190,30 @@ namespace __jni_impl::android::telecom
 			"onUnbind",
 			"(Landroid/content/Intent;)Z",
 			arg0.__jniObject().object()
+		);
+	}
+	void InCallService::requestBluetoothAudio(__jni_impl::android::bluetooth::BluetoothDevice arg0)
+	{
+		__thiz.callMethod<void>(
+			"requestBluetoothAudio",
+			"(Landroid/bluetooth/BluetoothDevice;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void InCallService::setAudioRoute(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAudioRoute",
+			"(I)V",
+			arg0
+		);
+	}
+	void InCallService::setMuted(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMuted",
+			"(Z)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::telecom

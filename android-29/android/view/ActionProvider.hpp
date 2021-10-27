@@ -25,14 +25,14 @@ namespace __jni_impl::android::view
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		jboolean isVisible();
 		jboolean hasSubMenu();
+		jboolean isVisible();
 		QAndroidJniObject onCreateActionView();
 		QAndroidJniObject onCreateActionView(__jni_impl::__JniBaseClass arg0);
 		jboolean onPerformDefaultAction();
+		void onPrepareSubMenu(__jni_impl::__JniBaseClass arg0);
 		jboolean overridesItemVisibility();
 		void refreshVisibility();
-		void onPrepareSubMenu(__jni_impl::__JniBaseClass arg0);
 		void setVisibilityListener(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::view
@@ -55,17 +55,17 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jboolean ActionProvider::isVisible()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isVisible",
-			"()Z"
-		);
-	}
 	jboolean ActionProvider::hasSubMenu()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasSubMenu",
+			"()Z"
+		);
+	}
+	jboolean ActionProvider::isVisible()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isVisible",
 			"()Z"
 		);
 	}
@@ -91,6 +91,14 @@ namespace __jni_impl::android::view
 			"()Z"
 		);
 	}
+	void ActionProvider::onPrepareSubMenu(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"onPrepareSubMenu",
+			"(Landroid/view/SubMenu;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	jboolean ActionProvider::overridesItemVisibility()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -103,14 +111,6 @@ namespace __jni_impl::android::view
 		__thiz.callMethod<void>(
 			"refreshVisibility",
 			"()V"
-		);
-	}
-	void ActionProvider::onPrepareSubMenu(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"onPrepareSubMenu",
-			"(Landroid/view/SubMenu;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	void ActionProvider::setVisibilityListener(__jni_impl::__JniBaseClass arg0)

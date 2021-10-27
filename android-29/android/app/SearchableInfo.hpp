@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::content
 {
 	class ComponentName;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::app
@@ -26,37 +26,37 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		jint getInputType();
-		jint getImeOptions();
+		jboolean autoUrlDetect();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jstring getSuggestAuthority();
-		jstring getSuggestPackage();
+		jint getHintId();
+		jint getImeOptions();
+		jint getInputType();
 		QAndroidJniObject getSearchActivity();
-		jboolean shouldRewriteQueryFromData();
-		jboolean shouldRewriteQueryFromText();
 		jint getSettingsDescriptionId();
-		jstring getSuggestPath();
-		jstring getSuggestSelection();
+		jstring getSuggestAuthority();
 		jstring getSuggestIntentAction();
 		jstring getSuggestIntentData();
+		jstring getSuggestPackage();
+		jstring getSuggestPath();
+		jstring getSuggestSelection();
 		jint getSuggestThreshold();
-		jint getHintId();
-		jboolean getVoiceSearchEnabled();
-		jboolean getVoiceSearchLaunchWebSearch();
-		jboolean getVoiceSearchLaunchRecognizer();
-		jint getVoiceLanguageModeId();
-		jint getVoicePromptTextId();
 		jint getVoiceLanguageId();
+		jint getVoiceLanguageModeId();
 		jint getVoiceMaxResults();
-		jboolean shouldIncludeInGlobalSearch();
+		jint getVoicePromptTextId();
+		jboolean getVoiceSearchEnabled();
+		jboolean getVoiceSearchLaunchRecognizer();
+		jboolean getVoiceSearchLaunchWebSearch();
 		jboolean queryAfterZeroResults();
-		jboolean autoUrlDetect();
+		jboolean shouldIncludeInGlobalSearch();
+		jboolean shouldRewriteQueryFromData();
+		jboolean shouldRewriteQueryFromText();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
-#include "../os/Parcel.hpp"
 #include "../content/ComponentName.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -79,10 +79,24 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	jint SearchableInfo::getInputType()
+	jboolean SearchableInfo::autoUrlDetect()
+	{
+		return __thiz.callMethod<jboolean>(
+			"autoUrlDetect",
+			"()Z"
+		);
+	}
+	jint SearchableInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getInputType",
+			"describeContents",
+			"()I"
+		);
+	}
+	jint SearchableInfo::getHintId()
+	{
+		return __thiz.callMethod<jint>(
+			"getHintId",
 			"()I"
 		);
 	}
@@ -93,55 +107,18 @@ namespace __jni_impl::android::app
 			"()I"
 		);
 	}
-	jint SearchableInfo::describeContents()
+	jint SearchableInfo::getInputType()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getInputType",
 			"()I"
 		);
-	}
-	void SearchableInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jstring SearchableInfo::getSuggestAuthority()
-	{
-		return __thiz.callObjectMethod(
-			"getSuggestAuthority",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring SearchableInfo::getSuggestPackage()
-	{
-		return __thiz.callObjectMethod(
-			"getSuggestPackage",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	QAndroidJniObject SearchableInfo::getSearchActivity()
 	{
 		return __thiz.callObjectMethod(
 			"getSearchActivity",
 			"()Landroid/content/ComponentName;"
-		);
-	}
-	jboolean SearchableInfo::shouldRewriteQueryFromData()
-	{
-		return __thiz.callMethod<jboolean>(
-			"shouldRewriteQueryFromData",
-			"()Z"
-		);
-	}
-	jboolean SearchableInfo::shouldRewriteQueryFromText()
-	{
-		return __thiz.callMethod<jboolean>(
-			"shouldRewriteQueryFromText",
-			"()Z"
 		);
 	}
 	jint SearchableInfo::getSettingsDescriptionId()
@@ -151,17 +128,10 @@ namespace __jni_impl::android::app
 			"()I"
 		);
 	}
-	jstring SearchableInfo::getSuggestPath()
+	jstring SearchableInfo::getSuggestAuthority()
 	{
 		return __thiz.callObjectMethod(
-			"getSuggestPath",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring SearchableInfo::getSuggestSelection()
-	{
-		return __thiz.callObjectMethod(
-			"getSuggestSelection",
+			"getSuggestAuthority",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -179,52 +149,31 @@ namespace __jni_impl::android::app
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	jstring SearchableInfo::getSuggestPackage()
+	{
+		return __thiz.callObjectMethod(
+			"getSuggestPackage",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring SearchableInfo::getSuggestPath()
+	{
+		return __thiz.callObjectMethod(
+			"getSuggestPath",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring SearchableInfo::getSuggestSelection()
+	{
+		return __thiz.callObjectMethod(
+			"getSuggestSelection",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jint SearchableInfo::getSuggestThreshold()
 	{
 		return __thiz.callMethod<jint>(
 			"getSuggestThreshold",
-			"()I"
-		);
-	}
-	jint SearchableInfo::getHintId()
-	{
-		return __thiz.callMethod<jint>(
-			"getHintId",
-			"()I"
-		);
-	}
-	jboolean SearchableInfo::getVoiceSearchEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getVoiceSearchEnabled",
-			"()Z"
-		);
-	}
-	jboolean SearchableInfo::getVoiceSearchLaunchWebSearch()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getVoiceSearchLaunchWebSearch",
-			"()Z"
-		);
-	}
-	jboolean SearchableInfo::getVoiceSearchLaunchRecognizer()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getVoiceSearchLaunchRecognizer",
-			"()Z"
-		);
-	}
-	jint SearchableInfo::getVoiceLanguageModeId()
-	{
-		return __thiz.callMethod<jint>(
-			"getVoiceLanguageModeId",
-			"()I"
-		);
-	}
-	jint SearchableInfo::getVoicePromptTextId()
-	{
-		return __thiz.callMethod<jint>(
-			"getVoicePromptTextId",
 			"()I"
 		);
 	}
@@ -235,6 +184,13 @@ namespace __jni_impl::android::app
 			"()I"
 		);
 	}
+	jint SearchableInfo::getVoiceLanguageModeId()
+	{
+		return __thiz.callMethod<jint>(
+			"getVoiceLanguageModeId",
+			"()I"
+		);
+	}
 	jint SearchableInfo::getVoiceMaxResults()
 	{
 		return __thiz.callMethod<jint>(
@@ -242,10 +198,31 @@ namespace __jni_impl::android::app
 			"()I"
 		);
 	}
-	jboolean SearchableInfo::shouldIncludeInGlobalSearch()
+	jint SearchableInfo::getVoicePromptTextId()
+	{
+		return __thiz.callMethod<jint>(
+			"getVoicePromptTextId",
+			"()I"
+		);
+	}
+	jboolean SearchableInfo::getVoiceSearchEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
-			"shouldIncludeInGlobalSearch",
+			"getVoiceSearchEnabled",
+			"()Z"
+		);
+	}
+	jboolean SearchableInfo::getVoiceSearchLaunchRecognizer()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getVoiceSearchLaunchRecognizer",
+			"()Z"
+		);
+	}
+	jboolean SearchableInfo::getVoiceSearchLaunchWebSearch()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getVoiceSearchLaunchWebSearch",
 			"()Z"
 		);
 	}
@@ -256,11 +233,34 @@ namespace __jni_impl::android::app
 			"()Z"
 		);
 	}
-	jboolean SearchableInfo::autoUrlDetect()
+	jboolean SearchableInfo::shouldIncludeInGlobalSearch()
 	{
 		return __thiz.callMethod<jboolean>(
-			"autoUrlDetect",
+			"shouldIncludeInGlobalSearch",
 			"()Z"
+		);
+	}
+	jboolean SearchableInfo::shouldRewriteQueryFromData()
+	{
+		return __thiz.callMethod<jboolean>(
+			"shouldRewriteQueryFromData",
+			"()Z"
+		);
+	}
+	jboolean SearchableInfo::shouldRewriteQueryFromText()
+	{
+		return __thiz.callMethod<jboolean>(
+			"shouldRewriteQueryFromText",
+			"()Z"
+		);
+	}
+	void SearchableInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::app

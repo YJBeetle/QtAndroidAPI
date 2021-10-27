@@ -23,12 +23,12 @@ namespace __jni_impl::android::app::admin
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		QAndroidJniObject getInetAddresses();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jstring getHostname();
+		QAndroidJniObject getInetAddresses();
 		jint getTotalResolvedAddressCount();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::admin
 
@@ -55,10 +55,17 @@ namespace __jni_impl::android::app::admin
 	}
 	
 	// Methods
-	jstring DnsEvent::toString()
+	jint DnsEvent::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	jstring DnsEvent::getHostname()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
+			"getHostname",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -69,12 +76,19 @@ namespace __jni_impl::android::app::admin
 			"()Ljava/util/List;"
 		);
 	}
-	jint DnsEvent::describeContents()
+	jint DnsEvent::getTotalResolvedAddressCount()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getTotalResolvedAddressCount",
 			"()I"
 		);
+	}
+	jstring DnsEvent::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void DnsEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -83,20 +97,6 @@ namespace __jni_impl::android::app::admin
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jstring DnsEvent::getHostname()
-	{
-		return __thiz.callObjectMethod(
-			"getHostname",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint DnsEvent::getTotalResolvedAddressCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getTotalResolvedAddressCount",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::app::admin

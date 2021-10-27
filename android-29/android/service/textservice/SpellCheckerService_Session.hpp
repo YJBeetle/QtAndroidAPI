@@ -29,14 +29,14 @@ namespace __jni_impl::android::service::textservice
 		void __constructor();
 		
 		// Methods
-		void onClose();
 		QAndroidJniObject getBundle();
 		jstring getLocale();
 		void onCancel();
+		void onClose();
+		void onCreate();
 		jarray onGetSentenceSuggestionsMultiple(jarray arg0, jint arg1);
 		QAndroidJniObject onGetSuggestions(__jni_impl::android::view::textservice::TextInfo arg0, jint arg1);
 		jarray onGetSuggestionsMultiple(jarray arg0, jint arg1, jboolean arg2);
-		void onCreate();
 	};
 } // namespace __jni_impl::android::service::textservice
 
@@ -58,13 +58,6 @@ namespace __jni_impl::android::service::textservice
 	}
 	
 	// Methods
-	void SpellCheckerService_Session::onClose()
-	{
-		__thiz.callMethod<void>(
-			"onClose",
-			"()V"
-		);
-	}
 	QAndroidJniObject SpellCheckerService_Session::getBundle()
 	{
 		return __thiz.callObjectMethod(
@@ -83,6 +76,20 @@ namespace __jni_impl::android::service::textservice
 	{
 		__thiz.callMethod<void>(
 			"onCancel",
+			"()V"
+		);
+	}
+	void SpellCheckerService_Session::onClose()
+	{
+		__thiz.callMethod<void>(
+			"onClose",
+			"()V"
+		);
+	}
+	void SpellCheckerService_Session::onCreate()
+	{
+		__thiz.callMethod<void>(
+			"onCreate",
 			"()V"
 		);
 	}
@@ -113,13 +120,6 @@ namespace __jni_impl::android::service::textservice
 			arg1,
 			arg2
 		).object<jarray>();
-	}
-	void SpellCheckerService_Session::onCreate()
-	{
-		__thiz.callMethod<void>(
-			"onCreate",
-			"()V"
-		);
 	}
 } // namespace __jni_impl::android::service::textservice
 

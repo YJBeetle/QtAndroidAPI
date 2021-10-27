@@ -14,9 +14,9 @@ namespace __jni_impl::org::w3c::dom::ls
 	{
 	public:
 		// Fields
-		jshort code();
 		static jshort PARSE_ERR();
 		static jshort SERIALIZE_ERR();
+		jshort code();
 		
 		// Constructors
 		void __constructor(jshort arg0, jstring arg1);
@@ -30,12 +30,6 @@ namespace __jni_impl::org::w3c::dom::ls
 namespace __jni_impl::org::w3c::dom::ls
 {
 	// Fields
-	jshort LSException::code()
-	{
-		return __thiz.getField<jshort>(
-			"code"
-		);
-	}
 	jshort LSException::PARSE_ERR()
 	{
 		return QAndroidJniObject::getStaticField<jshort>(
@@ -48,6 +42,12 @@ namespace __jni_impl::org::w3c::dom::ls
 		return QAndroidJniObject::getStaticField<jshort>(
 			"org.w3c.dom.ls.LSException",
 			"SERIALIZE_ERR"
+		);
+	}
+	jshort LSException::code()
+	{
+		return __thiz.getField<jshort>(
+			"code"
 		);
 	}
 	

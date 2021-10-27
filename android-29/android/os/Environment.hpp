@@ -44,21 +44,21 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject getRootDirectory();
 		static QAndroidJniObject getDataDirectory();
+		static QAndroidJniObject getDownloadCacheDirectory();
 		static QAndroidJniObject getExternalStorageDirectory();
 		static QAndroidJniObject getExternalStoragePublicDirectory(jstring arg0);
 		static QAndroidJniObject getExternalStoragePublicDirectory(const QString &arg0);
-		static QAndroidJniObject getDownloadCacheDirectory();
-		static jstring getExternalStorageState(__jni_impl::java::io::File arg0);
 		static jstring getExternalStorageState();
+		static jstring getExternalStorageState(__jni_impl::java::io::File arg0);
+		static QAndroidJniObject getRootDirectory();
 		static jstring getStorageState(__jni_impl::java::io::File arg0);
+		static jboolean isExternalStorageEmulated();
+		static jboolean isExternalStorageEmulated(__jni_impl::java::io::File arg0);
+		static jboolean isExternalStorageLegacy();
+		static jboolean isExternalStorageLegacy(__jni_impl::java::io::File arg0);
 		static jboolean isExternalStorageRemovable();
 		static jboolean isExternalStorageRemovable(__jni_impl::java::io::File arg0);
-		static jboolean isExternalStorageEmulated(__jni_impl::java::io::File arg0);
-		static jboolean isExternalStorageEmulated();
-		static jboolean isExternalStorageLegacy(__jni_impl::java::io::File arg0);
-		static jboolean isExternalStorageLegacy();
 	};
 } // namespace __jni_impl::android::os
 
@@ -262,19 +262,19 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	QAndroidJniObject Environment::getRootDirectory()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.Environment",
-			"getRootDirectory",
-			"()Ljava/io/File;"
-		);
-	}
 	QAndroidJniObject Environment::getDataDirectory()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Environment",
 			"getDataDirectory",
+			"()Ljava/io/File;"
+		);
+	}
+	QAndroidJniObject Environment::getDownloadCacheDirectory()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.Environment",
+			"getDownloadCacheDirectory",
 			"()Ljava/io/File;"
 		);
 	}
@@ -304,13 +304,13 @@ namespace __jni_impl::android::os
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	QAndroidJniObject Environment::getDownloadCacheDirectory()
+	jstring Environment::getExternalStorageState()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Environment",
-			"getDownloadCacheDirectory",
-			"()Ljava/io/File;"
-		);
+			"getExternalStorageState",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jstring Environment::getExternalStorageState(__jni_impl::java::io::File arg0)
 	{
@@ -321,13 +321,13 @@ namespace __jni_impl::android::os
 			arg0.__jniObject().object()
 		).object<jstring>();
 	}
-	jstring Environment::getExternalStorageState()
+	QAndroidJniObject Environment::getRootDirectory()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.Environment",
-			"getExternalStorageState",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getRootDirectory",
+			"()Ljava/io/File;"
+		);
 	}
 	jstring Environment::getStorageState(__jni_impl::java::io::File arg0)
 	{
@@ -337,6 +337,40 @@ namespace __jni_impl::android::os
 			"(Ljava/io/File;)Ljava/lang/String;",
 			arg0.__jniObject().object()
 		).object<jstring>();
+	}
+	jboolean Environment::isExternalStorageEmulated()
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.os.Environment",
+			"isExternalStorageEmulated",
+			"()Z"
+		);
+	}
+	jboolean Environment::isExternalStorageEmulated(__jni_impl::java::io::File arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.os.Environment",
+			"isExternalStorageEmulated",
+			"(Ljava/io/File;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean Environment::isExternalStorageLegacy()
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.os.Environment",
+			"isExternalStorageLegacy",
+			"()Z"
+		);
+	}
+	jboolean Environment::isExternalStorageLegacy(__jni_impl::java::io::File arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.os.Environment",
+			"isExternalStorageLegacy",
+			"(Ljava/io/File;)Z",
+			arg0.__jniObject().object()
+		);
 	}
 	jboolean Environment::isExternalStorageRemovable()
 	{
@@ -353,40 +387,6 @@ namespace __jni_impl::android::os
 			"isExternalStorageRemovable",
 			"(Ljava/io/File;)Z",
 			arg0.__jniObject().object()
-		);
-	}
-	jboolean Environment::isExternalStorageEmulated(__jni_impl::java::io::File arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.os.Environment",
-			"isExternalStorageEmulated",
-			"(Ljava/io/File;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean Environment::isExternalStorageEmulated()
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.os.Environment",
-			"isExternalStorageEmulated",
-			"()Z"
-		);
-	}
-	jboolean Environment::isExternalStorageLegacy(__jni_impl::java::io::File arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.os.Environment",
-			"isExternalStorageLegacy",
-			"(Ljava/io/File;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean Environment::isExternalStorageLegacy()
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.os.Environment",
-			"isExternalStorageLegacy",
-			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::os

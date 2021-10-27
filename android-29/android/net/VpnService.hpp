@@ -10,11 +10,11 @@
 
 namespace __jni_impl::android::content
 {
-	class Intent;
+	class Context;
 }
 namespace __jni_impl::android::content
 {
-	class Context;
+	class Intent;
 }
 namespace __jni_impl::java::net
 {
@@ -39,19 +39,19 @@ namespace __jni_impl::android::net
 		
 		// Methods
 		static QAndroidJniObject prepare(__jni_impl::android::content::Context arg0);
-		jboolean setUnderlyingNetworks(jarray arg0);
+		jboolean isAlwaysOn();
+		jboolean isLockdownEnabled();
+		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		void onRevoke();
 		jboolean protect(jint arg0);
 		jboolean protect(__jni_impl::java::net::DatagramSocket arg0);
 		jboolean protect(__jni_impl::java::net::Socket arg0);
-		jboolean isAlwaysOn();
-		jboolean isLockdownEnabled();
-		void onRevoke();
-		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		jboolean setUnderlyingNetworks(jarray arg0);
 	};
 } // namespace __jni_impl::android::net
 
-#include "../content/Intent.hpp"
 #include "../content/Context.hpp"
+#include "../content/Intent.hpp"
 #include "../../java/net/DatagramSocket.hpp"
 #include "../../java/net/Socket.hpp"
 
@@ -94,12 +94,33 @@ namespace __jni_impl::android::net
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean VpnService::setUnderlyingNetworks(jarray arg0)
+	jboolean VpnService::isAlwaysOn()
 	{
 		return __thiz.callMethod<jboolean>(
-			"setUnderlyingNetworks",
-			"([Landroid/net/Network;)Z",
-			arg0
+			"isAlwaysOn",
+			"()Z"
+		);
+	}
+	jboolean VpnService::isLockdownEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLockdownEnabled",
+			"()Z"
+		);
+	}
+	QAndroidJniObject VpnService::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
+		);
+	}
+	void VpnService::onRevoke()
+	{
+		__thiz.callMethod<void>(
+			"onRevoke",
+			"()V"
 		);
 	}
 	jboolean VpnService::protect(jint arg0)
@@ -126,33 +147,12 @@ namespace __jni_impl::android::net
 			arg0.__jniObject().object()
 		);
 	}
-	jboolean VpnService::isAlwaysOn()
+	jboolean VpnService::setUnderlyingNetworks(jarray arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"isAlwaysOn",
-			"()Z"
-		);
-	}
-	jboolean VpnService::isLockdownEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isLockdownEnabled",
-			"()Z"
-		);
-	}
-	void VpnService::onRevoke()
-	{
-		__thiz.callMethod<void>(
-			"onRevoke",
-			"()V"
-		);
-	}
-	QAndroidJniObject VpnService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
+			"setUnderlyingNetworks",
+			"([Landroid/net/Network;)Z",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::net

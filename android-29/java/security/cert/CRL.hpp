@@ -21,9 +21,9 @@ namespace __jni_impl::java::security::cert
 		void __constructor();
 		
 		// Methods
-		jstring toString();
 		jstring getType();
 		jboolean isRevoked(__jni_impl::java::security::cert::Certificate arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -42,13 +42,6 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	jstring CRL::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jstring CRL::getType()
 	{
 		return __thiz.callObjectMethod(
@@ -63,6 +56,13 @@ namespace __jni_impl::java::security::cert
 			"(Ljava/security/cert/Certificate;)Z",
 			arg0.__jniObject().object()
 		);
+	}
+	jstring CRL::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security::cert
 

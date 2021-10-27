@@ -7,11 +7,11 @@
 
 namespace __jni_impl::java::net
 {
-	class Socket;
+	class InetAddress;
 }
 namespace __jni_impl::java::net
 {
-	class InetAddress;
+	class Socket;
 }
 
 namespace __jni_impl::javax::net
@@ -26,18 +26,18 @@ namespace __jni_impl::javax::net
 		
 		// Methods
 		static QAndroidJniObject getDefault();
+		QAndroidJniObject createSocket();
+		QAndroidJniObject createSocket(jstring arg0, jint arg1);
+		QAndroidJniObject createSocket(const QString &arg0, jint arg1);
 		QAndroidJniObject createSocket(__jni_impl::java::net::InetAddress arg0, jint arg1);
 		QAndroidJniObject createSocket(jstring arg0, jint arg1, __jni_impl::java::net::InetAddress arg2, jint arg3);
 		QAndroidJniObject createSocket(const QString &arg0, jint arg1, __jni_impl::java::net::InetAddress arg2, jint arg3);
 		QAndroidJniObject createSocket(__jni_impl::java::net::InetAddress arg0, jint arg1, __jni_impl::java::net::InetAddress arg2, jint arg3);
-		QAndroidJniObject createSocket(jstring arg0, jint arg1);
-		QAndroidJniObject createSocket(const QString &arg0, jint arg1);
-		QAndroidJniObject createSocket();
 	};
 } // namespace __jni_impl::javax::net
 
-#include "../../java/net/Socket.hpp"
 #include "../../java/net/InetAddress.hpp"
+#include "../../java/net/Socket.hpp"
 
 namespace __jni_impl::javax::net
 {
@@ -58,6 +58,31 @@ namespace __jni_impl::javax::net
 			"javax.net.SocketFactory",
 			"getDefault",
 			"()Ljavax/net/SocketFactory;"
+		);
+	}
+	QAndroidJniObject SocketFactory::createSocket()
+	{
+		return __thiz.callObjectMethod(
+			"createSocket",
+			"()Ljava/net/Socket;"
+		);
+	}
+	QAndroidJniObject SocketFactory::createSocket(jstring arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"createSocket",
+			"(Ljava/lang/String;I)Ljava/net/Socket;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject SocketFactory::createSocket(const QString &arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"createSocket",
+			"(Ljava/lang/String;I)Ljava/net/Socket;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
 		);
 	}
 	QAndroidJniObject SocketFactory::createSocket(__jni_impl::java::net::InetAddress arg0, jint arg1)
@@ -100,31 +125,6 @@ namespace __jni_impl::javax::net
 			arg1,
 			arg2.__jniObject().object(),
 			arg3
-		);
-	}
-	QAndroidJniObject SocketFactory::createSocket(jstring arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"createSocket",
-			"(Ljava/lang/String;I)Ljava/net/Socket;",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject SocketFactory::createSocket(const QString &arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"createSocket",
-			"(Ljava/lang/String;I)Ljava/net/Socket;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	QAndroidJniObject SocketFactory::createSocket()
-	{
-		return __thiz.callObjectMethod(
-			"createSocket",
-			"()Ljava/net/Socket;"
 		);
 	}
 } // namespace __jni_impl::javax::net

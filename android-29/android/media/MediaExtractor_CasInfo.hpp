@@ -21,9 +21,9 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jint getSystemId();
 		jbyteArray getPrivateData();
 		QAndroidJniObject getSession();
+		jint getSystemId();
 	};
 } // namespace __jni_impl::android::media
 
@@ -42,13 +42,6 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jint MediaExtractor_CasInfo::getSystemId()
-	{
-		return __thiz.callMethod<jint>(
-			"getSystemId",
-			"()I"
-		);
-	}
 	jbyteArray MediaExtractor_CasInfo::getPrivateData()
 	{
 		return __thiz.callObjectMethod(
@@ -61,6 +54,13 @@ namespace __jni_impl::android::media
 		return __thiz.callObjectMethod(
 			"getSession",
 			"()Landroid/media/MediaCas$Session;"
+		);
+	}
+	jint MediaExtractor_CasInfo::getSystemId()
+	{
+		return __thiz.callMethod<jint>(
+			"getSystemId",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::media

@@ -35,9 +35,9 @@ namespace __jni_impl::android::content
 		void __constructor(__jni_impl::android::accounts::Account arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2, jlong arg3);
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
 		jstring toString();
-		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content
@@ -110,6 +110,13 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
+	jint PeriodicSync::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean PeriodicSync::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -124,13 +131,6 @@ namespace __jni_impl::android::content
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jint PeriodicSync::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
 	}
 	void PeriodicSync::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

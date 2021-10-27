@@ -17,14 +17,14 @@ namespace __jni_impl::android::graphics::text
 		void __constructor();
 		
 		// Methods
-		jint getLineBreakOffset(jint arg0);
-		jboolean hasLineTab(jint arg0);
-		jint getStartLineHyphenEdit(jint arg0);
 		jint getEndLineHyphenEdit(jint arg0);
+		jfloat getLineAscent(jint arg0);
+		jint getLineBreakOffset(jint arg0);
 		jint getLineCount();
 		jfloat getLineDescent(jint arg0);
 		jfloat getLineWidth(jint arg0);
-		jfloat getLineAscent(jint arg0);
+		jint getStartLineHyphenEdit(jint arg0);
+		jboolean hasLineTab(jint arg0);
 	};
 } // namespace __jni_impl::android::graphics::text
 
@@ -42,34 +42,26 @@ namespace __jni_impl::android::graphics::text
 	}
 	
 	// Methods
-	jint LineBreaker_Result::getLineBreakOffset(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getLineBreakOffset",
-			"(I)I",
-			arg0
-		);
-	}
-	jboolean LineBreaker_Result::hasLineTab(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasLineTab",
-			"(I)Z",
-			arg0
-		);
-	}
-	jint LineBreaker_Result::getStartLineHyphenEdit(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getStartLineHyphenEdit",
-			"(I)I",
-			arg0
-		);
-	}
 	jint LineBreaker_Result::getEndLineHyphenEdit(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getEndLineHyphenEdit",
+			"(I)I",
+			arg0
+		);
+	}
+	jfloat LineBreaker_Result::getLineAscent(jint arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getLineAscent",
+			"(I)F",
+			arg0
+		);
+	}
+	jint LineBreaker_Result::getLineBreakOffset(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getLineBreakOffset",
 			"(I)I",
 			arg0
 		);
@@ -97,11 +89,19 @@ namespace __jni_impl::android::graphics::text
 			arg0
 		);
 	}
-	jfloat LineBreaker_Result::getLineAscent(jint arg0)
+	jint LineBreaker_Result::getStartLineHyphenEdit(jint arg0)
 	{
-		return __thiz.callMethod<jfloat>(
-			"getLineAscent",
-			"(I)F",
+		return __thiz.callMethod<jint>(
+			"getStartLineHyphenEdit",
+			"(I)I",
+			arg0
+		);
+	}
+	jboolean LineBreaker_Result::hasLineTab(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasLineTab",
+			"(I)Z",
 			arg0
 		);
 	}

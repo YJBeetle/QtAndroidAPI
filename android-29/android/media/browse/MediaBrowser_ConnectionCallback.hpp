@@ -18,8 +18,8 @@ namespace __jni_impl::android::media::browse
 		
 		// Methods
 		void onConnected();
-		void onConnectionSuspended();
 		void onConnectionFailed();
+		void onConnectionSuspended();
 	};
 } // namespace __jni_impl::android::media::browse
 
@@ -45,17 +45,17 @@ namespace __jni_impl::android::media::browse
 			"()V"
 		);
 	}
-	void MediaBrowser_ConnectionCallback::onConnectionSuspended()
-	{
-		__thiz.callMethod<void>(
-			"onConnectionSuspended",
-			"()V"
-		);
-	}
 	void MediaBrowser_ConnectionCallback::onConnectionFailed()
 	{
 		__thiz.callMethod<void>(
 			"onConnectionFailed",
+			"()V"
+		);
+	}
+	void MediaBrowser_ConnectionCallback::onConnectionSuspended()
+	{
+		__thiz.callMethod<void>(
+			"onConnectionSuspended",
 			"()V"
 		);
 	}

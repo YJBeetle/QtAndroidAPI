@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class Bundle;
 }
 namespace __jni_impl::android::os
 {
-	class Bundle;
+	class Parcel;
 }
 
 namespace __jni_impl::android::accounts
@@ -26,17 +26,17 @@ namespace __jni_impl::android::accounts
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
+		jint describeContents();
 		void onError(jint arg0, jstring arg1);
 		void onError(jint arg0, const QString &arg1);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void onRequestContinued();
 		void onResult(__jni_impl::android::os::Bundle arg0);
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::accounts
 
-#include "../os/Parcel.hpp"
 #include "../os/Bundle.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::accounts
 {
@@ -61,6 +61,13 @@ namespace __jni_impl::android::accounts
 	}
 	
 	// Methods
+	jint AccountAuthenticatorResponse::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	void AccountAuthenticatorResponse::onError(jint arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -79,22 +86,6 @@ namespace __jni_impl::android::accounts
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	jint AccountAuthenticatorResponse::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void AccountAuthenticatorResponse::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	void AccountAuthenticatorResponse::onRequestContinued()
 	{
 		__thiz.callMethod<void>(
@@ -108,6 +99,15 @@ namespace __jni_impl::android::accounts
 			"onResult",
 			"(Landroid/os/Bundle;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void AccountAuthenticatorResponse::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::accounts

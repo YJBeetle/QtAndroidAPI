@@ -13,17 +13,17 @@ namespace __jni_impl::android::webkit
 	{
 	public:
 		// Fields
+		static QAndroidJniObject CLOSE();
 		static QAndroidJniObject FAR();
 		static QAndroidJniObject MEDIUM();
-		static QAndroidJniObject CLOSE();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -31,6 +31,14 @@ namespace __jni_impl::android::webkit
 namespace __jni_impl::android::webkit
 {
 	// Fields
+	QAndroidJniObject WebSettings_ZoomDensity::CLOSE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.webkit.WebSettings$ZoomDensity",
+			"CLOSE",
+			"Landroid/webkit/WebSettings$ZoomDensity;"
+		);
+	}
 	QAndroidJniObject WebSettings_ZoomDensity::FAR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -47,14 +55,6 @@ namespace __jni_impl::android::webkit
 			"Landroid/webkit/WebSettings$ZoomDensity;"
 		);
 	}
-	QAndroidJniObject WebSettings_ZoomDensity::CLOSE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.webkit.WebSettings$ZoomDensity",
-			"CLOSE",
-			"Landroid/webkit/WebSettings$ZoomDensity;"
-		);
-	}
 	
 	// Constructors
 	void WebSettings_ZoomDensity::__constructor()
@@ -65,14 +65,6 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	jarray WebSettings_ZoomDensity::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.webkit.WebSettings$ZoomDensity",
-			"values",
-			"()[Landroid/webkit/WebSettings$ZoomDensity;"
-		).object<jarray>();
-	}
 	QAndroidJniObject WebSettings_ZoomDensity::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::android::webkit
 			"(Ljava/lang/String;)Landroid/webkit/WebSettings$ZoomDensity;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray WebSettings_ZoomDensity::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.webkit.WebSettings$ZoomDensity",
+			"values",
+			"()[Landroid/webkit/WebSettings$ZoomDensity;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::webkit
 

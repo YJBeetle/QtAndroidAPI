@@ -26,17 +26,17 @@ namespace __jni_impl::android::net
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jbyteArray toByteArray();
-		jint getAddressType();
-		jboolean isLocallyAssigned();
-		jstring toOuiString();
 		static QAndroidJniObject fromBytes(jbyteArray arg0);
 		static QAndroidJniObject fromString(jstring arg0);
 		static QAndroidJniObject fromString(const QString &arg0);
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		jint getAddressType();
+		jint hashCode();
+		jboolean isLocallyAssigned();
+		jbyteArray toByteArray();
+		jstring toOuiString();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net
@@ -93,56 +93,6 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	jboolean MacAddress::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring MacAddress::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint MacAddress::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jbyteArray MacAddress::toByteArray()
-	{
-		return __thiz.callObjectMethod(
-			"toByteArray",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	jint MacAddress::getAddressType()
-	{
-		return __thiz.callMethod<jint>(
-			"getAddressType",
-			"()I"
-		);
-	}
-	jboolean MacAddress::isLocallyAssigned()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isLocallyAssigned",
-			"()Z"
-		);
-	}
-	jstring MacAddress::toOuiString()
-	{
-		return __thiz.callObjectMethod(
-			"toOuiString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject MacAddress::fromBytes(jbyteArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -176,6 +126,56 @@ namespace __jni_impl::android::net
 			"describeContents",
 			"()I"
 		);
+	}
+	jboolean MacAddress::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jint MacAddress::getAddressType()
+	{
+		return __thiz.callMethod<jint>(
+			"getAddressType",
+			"()I"
+		);
+	}
+	jint MacAddress::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jboolean MacAddress::isLocallyAssigned()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLocallyAssigned",
+			"()Z"
+		);
+	}
+	jbyteArray MacAddress::toByteArray()
+	{
+		return __thiz.callObjectMethod(
+			"toByteArray",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jstring MacAddress::toOuiString()
+	{
+		return __thiz.callObjectMethod(
+			"toOuiString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring MacAddress::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void MacAddress::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

@@ -5,10 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util::jar
-{
-	class Attributes;
-}
 namespace __jni_impl::java::io
 {
 	class InputStream;
@@ -21,6 +17,10 @@ namespace __jni_impl::java::lang
 {
 	class StringBuffer;
 }
+namespace __jni_impl::java::util::jar
+{
+	class Attributes;
+}
 
 namespace __jni_impl::java::util::jar
 {
@@ -30,40 +30,39 @@ namespace __jni_impl::java::util::jar
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::java::util::jar::Manifest arg0);
-		void __constructor(__jni_impl::java::io::InputStream arg0);
 		void __constructor();
+		void __constructor(__jni_impl::java::io::InputStream arg0);
+		void __constructor(__jni_impl::java::util::jar::Manifest arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		jobject clone();
 		void clear();
-		void write(__jni_impl::java::io::OutputStream arg0);
-		void read(__jni_impl::java::io::InputStream arg0);
-		QAndroidJniObject getMainAttributes();
-		QAndroidJniObject getEntries();
+		jobject clone();
+		jboolean equals(jobject arg0);
 		QAndroidJniObject getAttributes(jstring arg0);
 		QAndroidJniObject getAttributes(const QString &arg0);
+		QAndroidJniObject getEntries();
+		QAndroidJniObject getMainAttributes();
+		jint hashCode();
+		void read(__jni_impl::java::io::InputStream arg0);
+		void write(__jni_impl::java::io::OutputStream arg0);
 	};
 } // namespace __jni_impl::java::util::jar
 
-#include "Attributes.hpp"
 #include "../../io/InputStream.hpp"
 #include "../../io/OutputStream.hpp"
 #include "../../lang/StringBuffer.hpp"
+#include "Attributes.hpp"
 
 namespace __jni_impl::java::util::jar
 {
 	// Fields
 	
 	// Constructors
-	void Manifest::__constructor(__jni_impl::java::util::jar::Manifest arg0)
+	void Manifest::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.Manifest",
-			"(Ljava/util/jar/Manifest;)V",
-			arg0.__jniObject().object()
+			"()V"
 		);
 	}
 	void Manifest::__constructor(__jni_impl::java::io::InputStream arg0)
@@ -74,28 +73,21 @@ namespace __jni_impl::java::util::jar
 			arg0.__jniObject().object()
 		);
 	}
-	void Manifest::__constructor()
+	void Manifest::__constructor(__jni_impl::java::util::jar::Manifest arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.jar.Manifest",
-			"()V"
+			"(Ljava/util/jar/Manifest;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	
 	// Methods
-	jboolean Manifest::equals(jobject arg0)
+	void Manifest::clear()
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jint Manifest::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+		__thiz.callMethod<void>(
+			"clear",
+			"()V"
 		);
 	}
 	jobject Manifest::clone()
@@ -105,41 +97,12 @@ namespace __jni_impl::java::util::jar
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	void Manifest::clear()
+	jboolean Manifest::equals(jobject arg0)
 	{
-		__thiz.callMethod<void>(
-			"clear",
-			"()V"
-		);
-	}
-	void Manifest::write(__jni_impl::java::io::OutputStream arg0)
-	{
-		__thiz.callMethod<void>(
-			"write",
-			"(Ljava/io/OutputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Manifest::read(__jni_impl::java::io::InputStream arg0)
-	{
-		__thiz.callMethod<void>(
-			"read",
-			"(Ljava/io/InputStream;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Manifest::getMainAttributes()
-	{
-		return __thiz.callObjectMethod(
-			"getMainAttributes",
-			"()Ljava/util/jar/Attributes;"
-		);
-	}
-	QAndroidJniObject Manifest::getEntries()
-	{
-		return __thiz.callObjectMethod(
-			"getEntries",
-			"()Ljava/util/Map;"
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 	QAndroidJniObject Manifest::getAttributes(jstring arg0)
@@ -158,6 +121,43 @@ namespace __jni_impl::java::util::jar
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
+	QAndroidJniObject Manifest::getEntries()
+	{
+		return __thiz.callObjectMethod(
+			"getEntries",
+			"()Ljava/util/Map;"
+		);
+	}
+	QAndroidJniObject Manifest::getMainAttributes()
+	{
+		return __thiz.callObjectMethod(
+			"getMainAttributes",
+			"()Ljava/util/jar/Attributes;"
+		);
+	}
+	jint Manifest::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	void Manifest::read(__jni_impl::java::io::InputStream arg0)
+	{
+		__thiz.callMethod<void>(
+			"read",
+			"(Ljava/io/InputStream;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Manifest::write(__jni_impl::java::io::OutputStream arg0)
+	{
+		__thiz.callMethod<void>(
+			"write",
+			"(Ljava/io/OutputStream;)V",
+			arg0.__jniObject().object()
+		);
+	}
 } // namespace __jni_impl::java::util::jar
 
 namespace java::util::jar
@@ -166,19 +166,19 @@ namespace java::util::jar
 	{
 	public:
 		Manifest(QAndroidJniObject obj) { __thiz = obj; }
-		Manifest(__jni_impl::java::util::jar::Manifest arg0)
+		Manifest()
 		{
-			__constructor(
-				arg0);
+			__constructor();
 		}
 		Manifest(__jni_impl::java::io::InputStream arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		Manifest()
+		Manifest(__jni_impl::java::util::jar::Manifest arg0)
 		{
-			__constructor();
+			__constructor(
+				arg0);
 		}
 	};
 } // namespace java::util::jar

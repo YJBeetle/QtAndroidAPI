@@ -26,22 +26,22 @@ namespace __jni_impl::java::util::concurrent::locks
 		void __constructor(jboolean arg0);
 		
 		// Methods
-		void lock();
-		jstring toString();
-		QAndroidJniObject newCondition();
 		jint getHoldCount();
-		jboolean isLocked();
-		jboolean hasQueuedThreads();
 		jint getQueueLength();
-		jboolean hasWaiters(__jni_impl::__JniBaseClass arg0);
 		jint getWaitQueueLength(__jni_impl::__JniBaseClass arg0);
+		jboolean hasQueuedThread(__jni_impl::java::lang::Thread arg0);
+		jboolean hasQueuedThreads();
+		jboolean hasWaiters(__jni_impl::__JniBaseClass arg0);
+		jboolean isFair();
+		jboolean isHeldByCurrentThread();
+		jboolean isLocked();
+		void lock();
 		void lockInterruptibly();
+		QAndroidJniObject newCondition();
+		jstring toString();
 		jboolean tryLock();
 		jboolean tryLock(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
 		void unlock();
-		jboolean isHeldByCurrentThread();
-		jboolean isFair();
-		jboolean hasQueuedThread(__jni_impl::java::lang::Thread arg0);
 	};
 } // namespace __jni_impl::java::util::concurrent::locks
 
@@ -70,27 +70,6 @@ namespace __jni_impl::java::util::concurrent::locks
 	}
 	
 	// Methods
-	void ReentrantLock::lock()
-	{
-		__thiz.callMethod<void>(
-			"lock",
-			"()V"
-		);
-	}
-	jstring ReentrantLock::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject ReentrantLock::newCondition()
-	{
-		return __thiz.callObjectMethod(
-			"newCondition",
-			"()Ljava/util/concurrent/locks/Condition;"
-		);
-	}
 	jint ReentrantLock::getHoldCount()
 	{
 		return __thiz.callMethod<jint>(
@@ -98,33 +77,11 @@ namespace __jni_impl::java::util::concurrent::locks
 			"()I"
 		);
 	}
-	jboolean ReentrantLock::isLocked()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isLocked",
-			"()Z"
-		);
-	}
-	jboolean ReentrantLock::hasQueuedThreads()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasQueuedThreads",
-			"()Z"
-		);
-	}
 	jint ReentrantLock::getQueueLength()
 	{
 		return __thiz.callMethod<jint>(
 			"getQueueLength",
 			"()I"
-		);
-	}
-	jboolean ReentrantLock::hasWaiters(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasWaiters",
-			"(Ljava/util/concurrent/locks/Condition;)Z",
-			arg0.__jniObject().object()
 		);
 	}
 	jint ReentrantLock::getWaitQueueLength(__jni_impl::__JniBaseClass arg0)
@@ -135,12 +92,77 @@ namespace __jni_impl::java::util::concurrent::locks
 			arg0.__jniObject().object()
 		);
 	}
+	jboolean ReentrantLock::hasQueuedThread(__jni_impl::java::lang::Thread arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasQueuedThread",
+			"(Ljava/lang/Thread;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean ReentrantLock::hasQueuedThreads()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasQueuedThreads",
+			"()Z"
+		);
+	}
+	jboolean ReentrantLock::hasWaiters(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasWaiters",
+			"(Ljava/util/concurrent/locks/Condition;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean ReentrantLock::isFair()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFair",
+			"()Z"
+		);
+	}
+	jboolean ReentrantLock::isHeldByCurrentThread()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isHeldByCurrentThread",
+			"()Z"
+		);
+	}
+	jboolean ReentrantLock::isLocked()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLocked",
+			"()Z"
+		);
+	}
+	void ReentrantLock::lock()
+	{
+		__thiz.callMethod<void>(
+			"lock",
+			"()V"
+		);
+	}
 	void ReentrantLock::lockInterruptibly()
 	{
 		__thiz.callMethod<void>(
 			"lockInterruptibly",
 			"()V"
 		);
+	}
+	QAndroidJniObject ReentrantLock::newCondition()
+	{
+		return __thiz.callObjectMethod(
+			"newCondition",
+			"()Ljava/util/concurrent/locks/Condition;"
+		);
+	}
+	jstring ReentrantLock::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jboolean ReentrantLock::tryLock()
 	{
@@ -163,28 +185,6 @@ namespace __jni_impl::java::util::concurrent::locks
 		__thiz.callMethod<void>(
 			"unlock",
 			"()V"
-		);
-	}
-	jboolean ReentrantLock::isHeldByCurrentThread()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isHeldByCurrentThread",
-			"()Z"
-		);
-	}
-	jboolean ReentrantLock::isFair()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFair",
-			"()Z"
-		);
-	}
-	jboolean ReentrantLock::hasQueuedThread(__jni_impl::java::lang::Thread arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasQueuedThread",
-			"(Ljava/lang/Thread;)Z",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::java::util::concurrent::locks

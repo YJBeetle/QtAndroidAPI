@@ -17,10 +17,10 @@ namespace __jni_impl::android::app::backup
 		void __constructor();
 		
 		// Methods
-		void restoreStarting(jint arg0);
 		void onUpdate(jint arg0, jstring arg1);
 		void onUpdate(jint arg0, const QString &arg1);
 		void restoreFinished(jint arg0);
+		void restoreStarting(jint arg0);
 	};
 } // namespace __jni_impl::android::app::backup
 
@@ -39,14 +39,6 @@ namespace __jni_impl::android::app::backup
 	}
 	
 	// Methods
-	void RestoreObserver::restoreStarting(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"restoreStarting",
-			"(I)V",
-			arg0
-		);
-	}
 	void RestoreObserver::onUpdate(jint arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -69,6 +61,14 @@ namespace __jni_impl::android::app::backup
 	{
 		__thiz.callMethod<void>(
 			"restoreFinished",
+			"(I)V",
+			arg0
+		);
+	}
+	void RestoreObserver::restoreStarting(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"restoreStarting",
 			"(I)V",
 			arg0
 		);

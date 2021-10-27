@@ -9,17 +9,17 @@
 #include "../zip/InflaterInputStream.hpp"
 #include "../zip/ZipInputStream.hpp"
 
-namespace __jni_impl::java::util::jar
+namespace __jni_impl::java::io
 {
-	class Manifest;
+	class InputStream;
 }
 namespace __jni_impl::java::util::jar
 {
 	class JarEntry;
 }
-namespace __jni_impl::java::io
+namespace __jni_impl::java::util::jar
 {
-	class InputStream;
+	class Manifest;
 }
 namespace __jni_impl::java::util::zip
 {
@@ -38,16 +38,16 @@ namespace __jni_impl::java::util::jar
 		void __constructor(__jni_impl::java::io::InputStream arg0, jboolean arg1);
 		
 		// Methods
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
 		QAndroidJniObject getManifest();
 		QAndroidJniObject getNextEntry();
 		QAndroidJniObject getNextJarEntry();
+		jint read(jbyteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::java::util::jar
 
-#include "Manifest.hpp"
-#include "JarEntry.hpp"
 #include "../../io/InputStream.hpp"
+#include "JarEntry.hpp"
+#include "Manifest.hpp"
 #include "../zip/ZipEntry.hpp"
 
 namespace __jni_impl::java::util::jar
@@ -74,16 +74,6 @@ namespace __jni_impl::java::util::jar
 	}
 	
 	// Methods
-	jint JarInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"read",
-			"([BII)I",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
 	QAndroidJniObject JarInputStream::getManifest()
 	{
 		return __thiz.callObjectMethod(
@@ -103,6 +93,16 @@ namespace __jni_impl::java::util::jar
 		return __thiz.callObjectMethod(
 			"getNextJarEntry",
 			"()Ljava/util/jar/JarEntry;"
+		);
+	}
+	jint JarInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"([BII)I",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 } // namespace __jni_impl::java::util::jar

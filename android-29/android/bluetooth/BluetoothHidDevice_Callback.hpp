@@ -24,9 +24,9 @@ namespace __jni_impl::android::bluetooth
 		void onAppStatusChanged(__jni_impl::android::bluetooth::BluetoothDevice arg0, jboolean arg1);
 		void onConnectionStateChanged(__jni_impl::android::bluetooth::BluetoothDevice arg0, jint arg1);
 		void onGetReport(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, jint arg3);
-		void onSetReport(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, jbyteArray arg3);
-		void onSetProtocol(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1);
 		void onInterruptData(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyteArray arg2);
+		void onSetProtocol(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1);
+		void onSetReport(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, jbyteArray arg3);
 		void onVirtualCableUnplug(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 	};
 } // namespace __jni_impl::android::bluetooth
@@ -76,15 +76,14 @@ namespace __jni_impl::android::bluetooth
 			arg3
 		);
 	}
-	void BluetoothHidDevice_Callback::onSetReport(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, jbyteArray arg3)
+	void BluetoothHidDevice_Callback::onInterruptData(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyteArray arg2)
 	{
 		__thiz.callMethod<void>(
-			"onSetReport",
-			"(Landroid/bluetooth/BluetoothDevice;BB[B)V",
+			"onInterruptData",
+			"(Landroid/bluetooth/BluetoothDevice;B[B)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2,
-			arg3
+			arg2
 		);
 	}
 	void BluetoothHidDevice_Callback::onSetProtocol(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1)
@@ -96,14 +95,15 @@ namespace __jni_impl::android::bluetooth
 			arg1
 		);
 	}
-	void BluetoothHidDevice_Callback::onInterruptData(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyteArray arg2)
+	void BluetoothHidDevice_Callback::onSetReport(__jni_impl::android::bluetooth::BluetoothDevice arg0, jbyte arg1, jbyte arg2, jbyteArray arg3)
 	{
 		__thiz.callMethod<void>(
-			"onInterruptData",
-			"(Landroid/bluetooth/BluetoothDevice;B[B)V",
+			"onSetReport",
+			"(Landroid/bluetooth/BluetoothDevice;BB[B)V",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
+			arg2,
+			arg3
 		);
 	}
 	void BluetoothHidDevice_Callback::onVirtualCableUnplug(__jni_impl::android::bluetooth::BluetoothDevice arg0)

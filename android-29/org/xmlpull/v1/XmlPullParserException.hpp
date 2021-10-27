@@ -21,10 +21,10 @@ namespace __jni_impl::org::xmlpull::v1
 		void __constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1, jthrowable arg2);
 		
 		// Methods
-		void printStackTrace();
-		jint getLineNumber();
-		jthrowable getDetail();
 		jint getColumnNumber();
+		jthrowable getDetail();
+		jint getLineNumber();
+		void printStackTrace();
 	};
 } // namespace __jni_impl::org::xmlpull::v1
 
@@ -72,17 +72,10 @@ namespace __jni_impl::org::xmlpull::v1
 	}
 	
 	// Methods
-	void XmlPullParserException::printStackTrace()
-	{
-		__thiz.callMethod<void>(
-			"printStackTrace",
-			"()V"
-		);
-	}
-	jint XmlPullParserException::getLineNumber()
+	jint XmlPullParserException::getColumnNumber()
 	{
 		return __thiz.callMethod<jint>(
-			"getLineNumber",
+			"getColumnNumber",
 			"()I"
 		);
 	}
@@ -93,11 +86,18 @@ namespace __jni_impl::org::xmlpull::v1
 			"()Ljava/lang/Throwable;"
 		).object<jthrowable>();
 	}
-	jint XmlPullParserException::getColumnNumber()
+	jint XmlPullParserException::getLineNumber()
 	{
 		return __thiz.callMethod<jint>(
-			"getColumnNumber",
+			"getLineNumber",
 			"()I"
+		);
+	}
+	void XmlPullParserException::printStackTrace()
+	{
+		__thiz.callMethod<void>(
+			"printStackTrace",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::org::xmlpull::v1

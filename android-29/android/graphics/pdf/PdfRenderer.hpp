@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class ParcelFileDescriptor;
-}
 namespace __jni_impl::android::graphics::pdf
 {
 	class PdfRenderer_Page;
+}
+namespace __jni_impl::android::os
+{
+	class ParcelFileDescriptor;
 }
 
 namespace __jni_impl::android::graphics::pdf
@@ -26,14 +26,14 @@ namespace __jni_impl::android::graphics::pdf
 		
 		// Methods
 		void close();
-		jboolean shouldScaleForPrinting();
-		QAndroidJniObject openPage(jint arg0);
 		jint getPageCount();
+		QAndroidJniObject openPage(jint arg0);
+		jboolean shouldScaleForPrinting();
 	};
 } // namespace __jni_impl::android::graphics::pdf
 
-#include "../../os/ParcelFileDescriptor.hpp"
 #include "PdfRenderer_Page.hpp"
+#include "../../os/ParcelFileDescriptor.hpp"
 
 namespace __jni_impl::android::graphics::pdf
 {
@@ -57,11 +57,11 @@ namespace __jni_impl::android::graphics::pdf
 			"()V"
 		);
 	}
-	jboolean PdfRenderer::shouldScaleForPrinting()
+	jint PdfRenderer::getPageCount()
 	{
-		return __thiz.callMethod<jboolean>(
-			"shouldScaleForPrinting",
-			"()Z"
+		return __thiz.callMethod<jint>(
+			"getPageCount",
+			"()I"
 		);
 	}
 	QAndroidJniObject PdfRenderer::openPage(jint arg0)
@@ -72,11 +72,11 @@ namespace __jni_impl::android::graphics::pdf
 			arg0
 		);
 	}
-	jint PdfRenderer::getPageCount()
+	jboolean PdfRenderer::shouldScaleForPrinting()
 	{
-		return __thiz.callMethod<jint>(
-			"getPageCount",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"shouldScaleForPrinting",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::graphics::pdf

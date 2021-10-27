@@ -25,13 +25,13 @@ namespace __jni_impl::android::view::inputmethod
 		void __constructor(jlong arg0, jint arg1, const QString &arg2, const QString &arg3);
 		
 		// Methods
-		jstring toString();
-		jlong getId();
-		jstring getText();
-		jstring getLabel();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jlong getId();
+		jstring getLabel();
 		jint getPosition();
+		jstring getText();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
@@ -94,18 +94,32 @@ namespace __jni_impl::android::view::inputmethod
 	}
 	
 	// Methods
-	jstring CompletionInfo::toString()
+	jint CompletionInfo::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
 	jlong CompletionInfo::getId()
 	{
 		return __thiz.callMethod<jlong>(
 			"getId",
 			"()J"
+		);
+	}
+	jstring CompletionInfo::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jint CompletionInfo::getPosition()
+	{
+		return __thiz.callMethod<jint>(
+			"getPosition",
+			"()I"
 		);
 	}
 	jstring CompletionInfo::getText()
@@ -115,19 +129,12 @@ namespace __jni_impl::android::view::inputmethod
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	jstring CompletionInfo::getLabel()
+	jstring CompletionInfo::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;"
+			"toString",
+			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jint CompletionInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
 	}
 	void CompletionInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -136,13 +143,6 @@ namespace __jni_impl::android::view::inputmethod
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint CompletionInfo::getPosition()
-	{
-		return __thiz.callMethod<jint>(
-			"getPosition",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::view::inputmethod

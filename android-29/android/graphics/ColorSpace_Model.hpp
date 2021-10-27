@@ -13,18 +13,18 @@ namespace __jni_impl::android::graphics
 	{
 	public:
 		// Fields
+		static QAndroidJniObject CMYK();
+		static QAndroidJniObject LAB();
 		static QAndroidJniObject RGB();
 		static QAndroidJniObject XYZ();
-		static QAndroidJniObject LAB();
-		static QAndroidJniObject CMYK();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 		jint getComponentCount();
 	};
 } // namespace __jni_impl::android::graphics
@@ -33,6 +33,22 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::graphics
 {
 	// Fields
+	QAndroidJniObject ColorSpace_Model::CMYK()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.graphics.ColorSpace$Model",
+			"CMYK",
+			"Landroid/graphics/ColorSpace$Model;"
+		);
+	}
+	QAndroidJniObject ColorSpace_Model::LAB()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.graphics.ColorSpace$Model",
+			"LAB",
+			"Landroid/graphics/ColorSpace$Model;"
+		);
+	}
 	QAndroidJniObject ColorSpace_Model::RGB()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -49,22 +65,6 @@ namespace __jni_impl::android::graphics
 			"Landroid/graphics/ColorSpace$Model;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Model::LAB()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.graphics.ColorSpace$Model",
-			"LAB",
-			"Landroid/graphics/ColorSpace$Model;"
-		);
-	}
-	QAndroidJniObject ColorSpace_Model::CMYK()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.graphics.ColorSpace$Model",
-			"CMYK",
-			"Landroid/graphics/ColorSpace$Model;"
-		);
-	}
 	
 	// Constructors
 	void ColorSpace_Model::__constructor()
@@ -75,14 +75,6 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	jarray ColorSpace_Model::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.ColorSpace$Model",
-			"values",
-			"()[Landroid/graphics/ColorSpace$Model;"
-		).object<jarray>();
-	}
 	QAndroidJniObject ColorSpace_Model::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -100,6 +92,14 @@ namespace __jni_impl::android::graphics
 			"(Ljava/lang/String;)Landroid/graphics/ColorSpace$Model;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray ColorSpace_Model::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.ColorSpace$Model",
+			"values",
+			"()[Landroid/graphics/ColorSpace$Model;"
+		).object<jarray>();
 	}
 	jint ColorSpace_Model::getComponentCount()
 	{

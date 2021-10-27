@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::net::wifi
 {
-	class WifiManager;
+	class WifiConfiguration;
 }
 namespace __jni_impl::android::net::wifi
 {
-	class WifiConfiguration;
+	class WifiManager;
 }
 
 namespace __jni_impl::android::net::wifi
@@ -30,8 +30,8 @@ namespace __jni_impl::android::net::wifi
 	};
 } // namespace __jni_impl::android::net::wifi
 
-#include "WifiManager.hpp"
 #include "WifiConfiguration.hpp"
+#include "WifiManager.hpp"
 
 namespace __jni_impl::android::net::wifi
 {

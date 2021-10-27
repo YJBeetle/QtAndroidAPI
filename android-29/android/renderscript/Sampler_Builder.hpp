@@ -30,11 +30,11 @@ namespace __jni_impl::android::renderscript
 		
 		// Methods
 		QAndroidJniObject create();
-		void setMinification(__jni_impl::android::renderscript::Sampler_Value arg0);
+		void setAnisotropy(jfloat arg0);
 		void setMagnification(__jni_impl::android::renderscript::Sampler_Value arg0);
+		void setMinification(__jni_impl::android::renderscript::Sampler_Value arg0);
 		void setWrapS(__jni_impl::android::renderscript::Sampler_Value arg0);
 		void setWrapT(__jni_impl::android::renderscript::Sampler_Value arg0);
-		void setAnisotropy(jfloat arg0);
 	};
 } // namespace __jni_impl::android::renderscript
 
@@ -64,18 +64,26 @@ namespace __jni_impl::android::renderscript
 			"()Landroid/renderscript/Sampler;"
 		);
 	}
-	void Sampler_Builder::setMinification(__jni_impl::android::renderscript::Sampler_Value arg0)
+	void Sampler_Builder::setAnisotropy(jfloat arg0)
 	{
 		__thiz.callMethod<void>(
-			"setMinification",
-			"(Landroid/renderscript/Sampler$Value;)V",
-			arg0.__jniObject().object()
+			"setAnisotropy",
+			"(F)V",
+			arg0
 		);
 	}
 	void Sampler_Builder::setMagnification(__jni_impl::android::renderscript::Sampler_Value arg0)
 	{
 		__thiz.callMethod<void>(
 			"setMagnification",
+			"(Landroid/renderscript/Sampler$Value;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Sampler_Builder::setMinification(__jni_impl::android::renderscript::Sampler_Value arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMinification",
 			"(Landroid/renderscript/Sampler$Value;)V",
 			arg0.__jniObject().object()
 		);
@@ -94,14 +102,6 @@ namespace __jni_impl::android::renderscript
 			"setWrapT",
 			"(Landroid/renderscript/Sampler$Value;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	void Sampler_Builder::setAnisotropy(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAnisotropy",
-			"(F)V",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::renderscript

@@ -5,6 +5,10 @@
 
 #include "../../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::service::autofill
+{
+	class ImageTransformation;
+}
 namespace __jni_impl::android::view::autofill
 {
 	class AutofillId;
@@ -12,10 +16,6 @@ namespace __jni_impl::android::view::autofill
 namespace __jni_impl::java::util::regex
 {
 	class Pattern;
-}
-namespace __jni_impl::android::service::autofill
-{
-	class ImageTransformation;
 }
 
 namespace __jni_impl::android::service::autofill
@@ -31,16 +31,16 @@ namespace __jni_impl::android::service::autofill
 		void __constructor(__jni_impl::android::view::autofill::AutofillId arg0, __jni_impl::java::util::regex::Pattern arg1, jint arg2, const QString &arg3);
 		
 		// Methods
-		QAndroidJniObject build();
+		QAndroidJniObject addOption(__jni_impl::java::util::regex::Pattern arg0, jint arg1);
 		QAndroidJniObject addOption(__jni_impl::java::util::regex::Pattern arg0, jint arg1, jstring arg2);
 		QAndroidJniObject addOption(__jni_impl::java::util::regex::Pattern arg0, jint arg1, const QString &arg2);
-		QAndroidJniObject addOption(__jni_impl::java::util::regex::Pattern arg0, jint arg1);
+		QAndroidJniObject build();
 	};
 } // namespace __jni_impl::android::service::autofill
 
+#include "ImageTransformation.hpp"
 #include "../../view/autofill/AutofillId.hpp"
 #include "../../../java/util/regex/Pattern.hpp"
-#include "ImageTransformation.hpp"
 
 namespace __jni_impl::android::service::autofill
 {
@@ -81,11 +81,13 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	QAndroidJniObject ImageTransformation_Builder::build()
+	QAndroidJniObject ImageTransformation_Builder::addOption(__jni_impl::java::util::regex::Pattern arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
-			"build",
-			"()Landroid/service/autofill/ImageTransformation;"
+			"addOption",
+			"(Ljava/util/regex/Pattern;I)Landroid/service/autofill/ImageTransformation$Builder;",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 	QAndroidJniObject ImageTransformation_Builder::addOption(__jni_impl::java::util::regex::Pattern arg0, jint arg1, jstring arg2)
@@ -108,13 +110,11 @@ namespace __jni_impl::android::service::autofill
 			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
-	QAndroidJniObject ImageTransformation_Builder::addOption(__jni_impl::java::util::regex::Pattern arg0, jint arg1)
+	QAndroidJniObject ImageTransformation_Builder::build()
 	{
 		return __thiz.callObjectMethod(
-			"addOption",
-			"(Ljava/util/regex/Pattern;I)Landroid/service/autofill/ImageTransformation$Builder;",
-			arg0.__jniObject().object(),
-			arg1
+			"build",
+			"()Landroid/service/autofill/ImageTransformation;"
 		);
 	}
 } // namespace __jni_impl::android::service::autofill

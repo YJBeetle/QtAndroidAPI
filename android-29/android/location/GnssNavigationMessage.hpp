@@ -35,15 +35,15 @@ namespace __jni_impl::android::location
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		jint getType();
-		jint getStatus();
-		jint getSvid();
-		jint getMessageId();
-		jint getSubmessageId();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		jbyteArray getData();
+		jint getMessageId();
+		jint getStatus();
+		jint getSubmessageId();
+		jint getSvid();
+		jint getType();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::location
 
@@ -161,17 +161,24 @@ namespace __jni_impl::android::location
 	}
 	
 	// Methods
-	jstring GnssNavigationMessage::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint GnssNavigationMessage::getType()
+	jint GnssNavigationMessage::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getType",
+			"describeContents",
+			"()I"
+		);
+	}
+	jbyteArray GnssNavigationMessage::getData()
+	{
+		return __thiz.callObjectMethod(
+			"getData",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jint GnssNavigationMessage::getMessageId()
+	{
+		return __thiz.callMethod<jint>(
+			"getMessageId",
 			"()I"
 		);
 	}
@@ -182,20 +189,6 @@ namespace __jni_impl::android::location
 			"()I"
 		);
 	}
-	jint GnssNavigationMessage::getSvid()
-	{
-		return __thiz.callMethod<jint>(
-			"getSvid",
-			"()I"
-		);
-	}
-	jint GnssNavigationMessage::getMessageId()
-	{
-		return __thiz.callMethod<jint>(
-			"getMessageId",
-			"()I"
-		);
-	}
 	jint GnssNavigationMessage::getSubmessageId()
 	{
 		return __thiz.callMethod<jint>(
@@ -203,12 +196,26 @@ namespace __jni_impl::android::location
 			"()I"
 		);
 	}
-	jint GnssNavigationMessage::describeContents()
+	jint GnssNavigationMessage::getSvid()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getSvid",
 			"()I"
 		);
+	}
+	jint GnssNavigationMessage::getType()
+	{
+		return __thiz.callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
+	jstring GnssNavigationMessage::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void GnssNavigationMessage::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -218,13 +225,6 @@ namespace __jni_impl::android::location
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jbyteArray GnssNavigationMessage::getData()
-	{
-		return __thiz.callObjectMethod(
-			"getData",
-			"()[B"
-		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::location
 

@@ -17,13 +17,13 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
+		void cancel();
+		jstring getHost();
+		jarray getKeyTypes();
+		jint getPort();
 		jarray getPrincipals();
 		void ignore();
-		jstring getHost();
-		jint getPort();
-		void cancel();
 		void proceed(__jni_impl::__JniBaseClass arg0, jarray arg1);
-		jarray getKeyTypes();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -42,6 +42,34 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
+	void ClientCertRequest::cancel()
+	{
+		__thiz.callMethod<void>(
+			"cancel",
+			"()V"
+		);
+	}
+	jstring ClientCertRequest::getHost()
+	{
+		return __thiz.callObjectMethod(
+			"getHost",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jarray ClientCertRequest::getKeyTypes()
+	{
+		return __thiz.callObjectMethod(
+			"getKeyTypes",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
+	}
+	jint ClientCertRequest::getPort()
+	{
+		return __thiz.callMethod<jint>(
+			"getPort",
+			"()I"
+		);
+	}
 	jarray ClientCertRequest::getPrincipals()
 	{
 		return __thiz.callObjectMethod(
@@ -56,27 +84,6 @@ namespace __jni_impl::android::webkit
 			"()V"
 		);
 	}
-	jstring ClientCertRequest::getHost()
-	{
-		return __thiz.callObjectMethod(
-			"getHost",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint ClientCertRequest::getPort()
-	{
-		return __thiz.callMethod<jint>(
-			"getPort",
-			"()I"
-		);
-	}
-	void ClientCertRequest::cancel()
-	{
-		__thiz.callMethod<void>(
-			"cancel",
-			"()V"
-		);
-	}
 	void ClientCertRequest::proceed(__jni_impl::__JniBaseClass arg0, jarray arg1)
 	{
 		__thiz.callMethod<void>(
@@ -85,13 +92,6 @@ namespace __jni_impl::android::webkit
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jarray ClientCertRequest::getKeyTypes()
-	{
-		return __thiz.callObjectMethod(
-			"getKeyTypes",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
 	}
 } // namespace __jni_impl::android::webkit
 

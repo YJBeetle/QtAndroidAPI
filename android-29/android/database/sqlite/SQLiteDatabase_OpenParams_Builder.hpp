@@ -22,18 +22,18 @@ namespace __jni_impl::android::database::sqlite
 		void __constructor(__jni_impl::android::database::sqlite::SQLiteDatabase_OpenParams arg0);
 		
 		// Methods
-		QAndroidJniObject build();
-		QAndroidJniObject setLookasideConfig(jint arg0, jint arg1);
-		QAndroidJniObject setOpenFlags(jint arg0);
 		QAndroidJniObject addOpenFlags(jint arg0);
+		QAndroidJniObject build();
 		QAndroidJniObject removeOpenFlags(jint arg0);
+		QAndroidJniObject setCursorFactory(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject setErrorHandler(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject setIdleConnectionTimeout(jlong arg0);
 		QAndroidJniObject setJournalMode(jstring arg0);
 		QAndroidJniObject setJournalMode(const QString &arg0);
+		QAndroidJniObject setLookasideConfig(jint arg0, jint arg1);
+		QAndroidJniObject setOpenFlags(jint arg0);
 		QAndroidJniObject setSynchronousMode(jstring arg0);
 		QAndroidJniObject setSynchronousMode(const QString &arg0);
-		QAndroidJniObject setErrorHandler(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject setCursorFactory(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::database::sqlite
 
@@ -61,30 +61,6 @@ namespace __jni_impl::android::database::sqlite
 	}
 	
 	// Methods
-	QAndroidJniObject SQLiteDatabase_OpenParams_Builder::build()
-	{
-		return __thiz.callObjectMethod(
-			"build",
-			"()Landroid/database/sqlite/SQLiteDatabase$OpenParams;"
-		);
-	}
-	QAndroidJniObject SQLiteDatabase_OpenParams_Builder::setLookasideConfig(jint arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setLookasideConfig",
-			"(II)Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject SQLiteDatabase_OpenParams_Builder::setOpenFlags(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setOpenFlags",
-			"(I)Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;",
-			arg0
-		);
-	}
 	QAndroidJniObject SQLiteDatabase_OpenParams_Builder::addOpenFlags(jint arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -93,12 +69,35 @@ namespace __jni_impl::android::database::sqlite
 			arg0
 		);
 	}
+	QAndroidJniObject SQLiteDatabase_OpenParams_Builder::build()
+	{
+		return __thiz.callObjectMethod(
+			"build",
+			"()Landroid/database/sqlite/SQLiteDatabase$OpenParams;"
+		);
+	}
 	QAndroidJniObject SQLiteDatabase_OpenParams_Builder::removeOpenFlags(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"removeOpenFlags",
 			"(I)Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;",
 			arg0
+		);
+	}
+	QAndroidJniObject SQLiteDatabase_OpenParams_Builder::setCursorFactory(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setCursorFactory",
+			"(Landroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject SQLiteDatabase_OpenParams_Builder::setErrorHandler(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setErrorHandler",
+			"(Landroid/database/DatabaseErrorHandler;)Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject SQLiteDatabase_OpenParams_Builder::setIdleConnectionTimeout(jlong arg0)
@@ -125,6 +124,23 @@ namespace __jni_impl::android::database::sqlite
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
+	QAndroidJniObject SQLiteDatabase_OpenParams_Builder::setLookasideConfig(jint arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"setLookasideConfig",
+			"(II)Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject SQLiteDatabase_OpenParams_Builder::setOpenFlags(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setOpenFlags",
+			"(I)Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;",
+			arg0
+		);
+	}
 	QAndroidJniObject SQLiteDatabase_OpenParams_Builder::setSynchronousMode(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -139,22 +155,6 @@ namespace __jni_impl::android::database::sqlite
 			"setSynchronousMode",
 			"(Ljava/lang/String;)Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject SQLiteDatabase_OpenParams_Builder::setErrorHandler(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setErrorHandler",
-			"(Landroid/database/DatabaseErrorHandler;)Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject SQLiteDatabase_OpenParams_Builder::setCursorFactory(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setCursorFactory",
-			"(Landroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase$OpenParams$Builder;",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::database::sqlite

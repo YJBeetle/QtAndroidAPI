@@ -15,12 +15,12 @@ namespace __jni_impl::android::security
 		// Fields
 		
 		// Constructors
+		void __constructor();
+		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
 		void __constructor(const QString &arg0, jthrowable arg1);
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
-		void __constructor();
 		
 		// Methods
 	};
@@ -32,6 +32,29 @@ namespace __jni_impl::android::security
 	// Fields
 	
 	// Constructors
+	void KeyChainException::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.security.KeyChainException",
+			"()V"
+		);
+	}
+	void KeyChainException::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.security.KeyChainException",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void KeyChainException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.security.KeyChainException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void KeyChainException::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -58,29 +81,6 @@ namespace __jni_impl::android::security
 			arg1
 		);
 	}
-	void KeyChainException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.KeyChainException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void KeyChainException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.KeyChainException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void KeyChainException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.KeyChainException",
-			"()V"
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::android::security
@@ -91,6 +91,15 @@ namespace android::security
 	{
 	public:
 		KeyChainException(QAndroidJniObject obj) { __thiz = obj; }
+		KeyChainException()
+		{
+			__constructor();
+		}
+		KeyChainException(jstring arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		KeyChainException(jthrowable arg0)
 		{
 			__constructor(
@@ -101,15 +110,6 @@ namespace android::security
 			__constructor(
 				arg0,
 				arg1);
-		}
-		KeyChainException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		KeyChainException()
-		{
-			__constructor();
 		}
 	};
 } // namespace android::security

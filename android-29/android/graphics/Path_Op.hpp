@@ -15,17 +15,17 @@ namespace __jni_impl::android::graphics
 		// Fields
 		static QAndroidJniObject DIFFERENCE();
 		static QAndroidJniObject INTERSECT();
+		static QAndroidJniObject REVERSE_DIFFERENCE();
 		static QAndroidJniObject UNION();
 		static QAndroidJniObject XOR();
-		static QAndroidJniObject REVERSE_DIFFERENCE();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -49,6 +49,14 @@ namespace __jni_impl::android::graphics
 			"Landroid/graphics/Path$Op;"
 		);
 	}
+	QAndroidJniObject Path_Op::REVERSE_DIFFERENCE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.graphics.Path$Op",
+			"REVERSE_DIFFERENCE",
+			"Landroid/graphics/Path$Op;"
+		);
+	}
 	QAndroidJniObject Path_Op::UNION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -65,14 +73,6 @@ namespace __jni_impl::android::graphics
 			"Landroid/graphics/Path$Op;"
 		);
 	}
-	QAndroidJniObject Path_Op::REVERSE_DIFFERENCE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.graphics.Path$Op",
-			"REVERSE_DIFFERENCE",
-			"Landroid/graphics/Path$Op;"
-		);
-	}
 	
 	// Constructors
 	void Path_Op::__constructor()
@@ -83,14 +83,6 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	jarray Path_Op::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Path$Op",
-			"values",
-			"()[Landroid/graphics/Path$Op;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Path_Op::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -108,6 +100,14 @@ namespace __jni_impl::android::graphics
 			"(Ljava/lang/String;)Landroid/graphics/Path$Op;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Path_Op::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Path$Op",
+			"values",
+			"()[Landroid/graphics/Path$Op;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::graphics
 

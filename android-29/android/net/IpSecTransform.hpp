@@ -17,8 +17,8 @@ namespace __jni_impl::android::net
 		void __constructor();
 		
 		// Methods
-		jstring toString();
 		void close();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::net
 
@@ -36,19 +36,19 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	jstring IpSecTransform::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	void IpSecTransform::close()
 	{
 		__thiz.callMethod<void>(
 			"close",
 			"()V"
 		);
+	}
+	jstring IpSecTransform::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::net
 

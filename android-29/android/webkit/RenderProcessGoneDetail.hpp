@@ -17,8 +17,8 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		jint rendererPriorityAtExit();
 		jboolean didCrash();
+		jint rendererPriorityAtExit();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -37,18 +37,18 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	jint RenderProcessGoneDetail::rendererPriorityAtExit()
-	{
-		return __thiz.callMethod<jint>(
-			"rendererPriorityAtExit",
-			"()I"
-		);
-	}
 	jboolean RenderProcessGoneDetail::didCrash()
 	{
 		return __thiz.callMethod<jboolean>(
 			"didCrash",
 			"()Z"
+		);
+	}
+	jint RenderProcessGoneDetail::rendererPriorityAtExit()
+	{
+		return __thiz.callMethod<jint>(
+			"rendererPriorityAtExit",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::webkit

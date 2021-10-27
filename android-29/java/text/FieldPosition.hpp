@@ -18,20 +18,20 @@ namespace __jni_impl::java::text
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::java::text::Format_Field arg0, jint arg1);
-		void __constructor(__jni_impl::java::text::Format_Field arg0);
 		void __constructor(jint arg0);
+		void __constructor(__jni_impl::java::text::Format_Field arg0);
+		void __constructor(__jni_impl::java::text::Format_Field arg0, jint arg1);
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint getField();
-		void setBeginIndex(jint arg0);
-		void setEndIndex(jint arg0);
-		QAndroidJniObject getFieldAttribute();
 		jint getBeginIndex();
 		jint getEndIndex();
+		jint getField();
+		QAndroidJniObject getFieldAttribute();
+		jint hashCode();
+		void setBeginIndex(jint arg0);
+		void setEndIndex(jint arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::java::text
 
@@ -42,13 +42,12 @@ namespace __jni_impl::java::text
 	// Fields
 	
 	// Constructors
-	void FieldPosition::__constructor(__jni_impl::java::text::Format_Field arg0, jint arg1)
+	void FieldPosition::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.FieldPosition",
-			"(Ljava/text/Format$Field;I)V",
-			arg0.__jniObject().object(),
-			arg1
+			"(I)V",
+			arg0
 		);
 	}
 	void FieldPosition::__constructor(__jni_impl::java::text::Format_Field arg0)
@@ -59,12 +58,13 @@ namespace __jni_impl::java::text
 			arg0.__jniObject().object()
 		);
 	}
-	void FieldPosition::__constructor(jint arg0)
+	void FieldPosition::__constructor(__jni_impl::java::text::Format_Field arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.text.FieldPosition",
-			"(I)V",
-			arg0
+			"(Ljava/text/Format$Field;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 	
@@ -77,17 +77,17 @@ namespace __jni_impl::java::text
 			arg0
 		);
 	}
-	jstring FieldPosition::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint FieldPosition::hashCode()
+	jint FieldPosition::getBeginIndex()
 	{
 		return __thiz.callMethod<jint>(
-			"hashCode",
+			"getBeginIndex",
+			"()I"
+		);
+	}
+	jint FieldPosition::getEndIndex()
+	{
+		return __thiz.callMethod<jint>(
+			"getEndIndex",
 			"()I"
 		);
 	}
@@ -95,6 +95,20 @@ namespace __jni_impl::java::text
 	{
 		return __thiz.callMethod<jint>(
 			"getField",
+			"()I"
+		);
+	}
+	QAndroidJniObject FieldPosition::getFieldAttribute()
+	{
+		return __thiz.callObjectMethod(
+			"getFieldAttribute",
+			"()Ljava/text/Format$Field;"
+		);
+	}
+	jint FieldPosition::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
 			"()I"
 		);
 	}
@@ -114,26 +128,12 @@ namespace __jni_impl::java::text
 			arg0
 		);
 	}
-	QAndroidJniObject FieldPosition::getFieldAttribute()
+	jstring FieldPosition::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getFieldAttribute",
-			"()Ljava/text/Format$Field;"
-		);
-	}
-	jint FieldPosition::getBeginIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getBeginIndex",
-			"()I"
-		);
-	}
-	jint FieldPosition::getEndIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"getEndIndex",
-			"()I"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::text
 
@@ -143,21 +143,21 @@ namespace java::text
 	{
 	public:
 		FieldPosition(QAndroidJniObject obj) { __thiz = obj; }
-		FieldPosition(__jni_impl::java::text::Format_Field arg0, jint arg1)
+		FieldPosition(jint arg0)
 		{
 			__constructor(
-				arg0,
-				arg1);
+				arg0);
 		}
 		FieldPosition(__jni_impl::java::text::Format_Field arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		FieldPosition(jint arg0)
+		FieldPosition(__jni_impl::java::text::Format_Field arg0, jint arg1)
 		{
 			__constructor(
-				arg0);
+				arg0,
+				arg1);
 		}
 	};
 } // namespace java::text

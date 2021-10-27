@@ -33,17 +33,17 @@ namespace __jni_impl::android::bluetooth::le
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		jint getTxPowerLevel();
-		jboolean isConnectable();
-		jboolean isScannable();
-		jboolean isLegacy();
-		jboolean isAnonymous();
-		jboolean includeTxPower();
+		jint describeContents();
+		jint getInterval();
 		jint getPrimaryPhy();
 		jint getSecondaryPhy();
-		jint getInterval();
-		jint describeContents();
+		jint getTxPowerLevel();
+		jboolean includeTxPower();
+		jboolean isAnonymous();
+		jboolean isConnectable();
+		jboolean isLegacy();
+		jboolean isScannable();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::bluetooth::le
@@ -148,53 +148,18 @@ namespace __jni_impl::android::bluetooth::le
 	}
 	
 	// Methods
-	jstring AdvertisingSetParameters::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint AdvertisingSetParameters::getTxPowerLevel()
+	jint AdvertisingSetParameters::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getTxPowerLevel",
+			"describeContents",
 			"()I"
 		);
 	}
-	jboolean AdvertisingSetParameters::isConnectable()
+	jint AdvertisingSetParameters::getInterval()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isConnectable",
-			"()Z"
-		);
-	}
-	jboolean AdvertisingSetParameters::isScannable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isScannable",
-			"()Z"
-		);
-	}
-	jboolean AdvertisingSetParameters::isLegacy()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isLegacy",
-			"()Z"
-		);
-	}
-	jboolean AdvertisingSetParameters::isAnonymous()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAnonymous",
-			"()Z"
-		);
-	}
-	jboolean AdvertisingSetParameters::includeTxPower()
-	{
-		return __thiz.callMethod<jboolean>(
-			"includeTxPower",
-			"()Z"
+		return __thiz.callMethod<jint>(
+			"getInterval",
+			"()I"
 		);
 	}
 	jint AdvertisingSetParameters::getPrimaryPhy()
@@ -211,19 +176,54 @@ namespace __jni_impl::android::bluetooth::le
 			"()I"
 		);
 	}
-	jint AdvertisingSetParameters::getInterval()
+	jint AdvertisingSetParameters::getTxPowerLevel()
 	{
 		return __thiz.callMethod<jint>(
-			"getInterval",
+			"getTxPowerLevel",
 			"()I"
 		);
 	}
-	jint AdvertisingSetParameters::describeContents()
+	jboolean AdvertisingSetParameters::includeTxPower()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"includeTxPower",
+			"()Z"
 		);
+	}
+	jboolean AdvertisingSetParameters::isAnonymous()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAnonymous",
+			"()Z"
+		);
+	}
+	jboolean AdvertisingSetParameters::isConnectable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isConnectable",
+			"()Z"
+		);
+	}
+	jboolean AdvertisingSetParameters::isLegacy()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLegacy",
+			"()Z"
+		);
+	}
+	jboolean AdvertisingSetParameters::isScannable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isScannable",
+			"()Z"
+		);
+	}
+	jstring AdvertisingSetParameters::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void AdvertisingSetParameters::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

@@ -13,22 +13,22 @@ namespace __jni_impl::java::security::cert
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NAME_CHAINING();
 		static QAndroidJniObject INVALID_KEY_USAGE();
-		static QAndroidJniObject INVALID_POLICY();
-		static QAndroidJniObject NO_TRUST_ANCHOR();
-		static QAndroidJniObject UNRECOGNIZED_CRIT_EXT();
-		static QAndroidJniObject NOT_CA_CERT();
-		static QAndroidJniObject PATH_TOO_LONG();
 		static QAndroidJniObject INVALID_NAME();
+		static QAndroidJniObject INVALID_POLICY();
+		static QAndroidJniObject NAME_CHAINING();
+		static QAndroidJniObject NOT_CA_CERT();
+		static QAndroidJniObject NO_TRUST_ANCHOR();
+		static QAndroidJniObject PATH_TOO_LONG();
+		static QAndroidJniObject UNRECOGNIZED_CRIT_EXT();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -36,19 +36,19 @@ namespace __jni_impl::java::security::cert
 namespace __jni_impl::java::security::cert
 {
 	// Fields
-	QAndroidJniObject PKIXReason::NAME_CHAINING()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.security.cert.PKIXReason",
-			"NAME_CHAINING",
-			"Ljava/security/cert/PKIXReason;"
-		);
-	}
 	QAndroidJniObject PKIXReason::INVALID_KEY_USAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.PKIXReason",
 			"INVALID_KEY_USAGE",
+			"Ljava/security/cert/PKIXReason;"
+		);
+	}
+	QAndroidJniObject PKIXReason::INVALID_NAME()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.security.cert.PKIXReason",
+			"INVALID_NAME",
 			"Ljava/security/cert/PKIXReason;"
 		);
 	}
@@ -60,19 +60,11 @@ namespace __jni_impl::java::security::cert
 			"Ljava/security/cert/PKIXReason;"
 		);
 	}
-	QAndroidJniObject PKIXReason::NO_TRUST_ANCHOR()
+	QAndroidJniObject PKIXReason::NAME_CHAINING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.PKIXReason",
-			"NO_TRUST_ANCHOR",
-			"Ljava/security/cert/PKIXReason;"
-		);
-	}
-	QAndroidJniObject PKIXReason::UNRECOGNIZED_CRIT_EXT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.security.cert.PKIXReason",
-			"UNRECOGNIZED_CRIT_EXT",
+			"NAME_CHAINING",
 			"Ljava/security/cert/PKIXReason;"
 		);
 	}
@@ -84,6 +76,14 @@ namespace __jni_impl::java::security::cert
 			"Ljava/security/cert/PKIXReason;"
 		);
 	}
+	QAndroidJniObject PKIXReason::NO_TRUST_ANCHOR()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.security.cert.PKIXReason",
+			"NO_TRUST_ANCHOR",
+			"Ljava/security/cert/PKIXReason;"
+		);
+	}
 	QAndroidJniObject PKIXReason::PATH_TOO_LONG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -92,11 +92,11 @@ namespace __jni_impl::java::security::cert
 			"Ljava/security/cert/PKIXReason;"
 		);
 	}
-	QAndroidJniObject PKIXReason::INVALID_NAME()
+	QAndroidJniObject PKIXReason::UNRECOGNIZED_CRIT_EXT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.security.cert.PKIXReason",
-			"INVALID_NAME",
+			"UNRECOGNIZED_CRIT_EXT",
 			"Ljava/security/cert/PKIXReason;"
 		);
 	}
@@ -110,14 +110,6 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	jarray PKIXReason::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.cert.PKIXReason",
-			"values",
-			"()[Ljava/security/cert/PKIXReason;"
-		).object<jarray>();
-	}
 	QAndroidJniObject PKIXReason::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -135,6 +127,14 @@ namespace __jni_impl::java::security::cert
 			"(Ljava/lang/String;)Ljava/security/cert/PKIXReason;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray PKIXReason::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.cert.PKIXReason",
+			"values",
+			"()[Ljava/security/cert/PKIXReason;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::security::cert
 

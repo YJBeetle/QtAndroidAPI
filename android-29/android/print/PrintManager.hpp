@@ -7,7 +7,7 @@
 
 namespace __jni_impl::android::print
 {
-	class PrintJob;
+	class PrintAttributes;
 }
 namespace __jni_impl::android::print
 {
@@ -15,7 +15,7 @@ namespace __jni_impl::android::print
 }
 namespace __jni_impl::android::print
 {
-	class PrintAttributes;
+	class PrintJob;
 }
 
 namespace __jni_impl::android::print
@@ -29,15 +29,15 @@ namespace __jni_impl::android::print
 		void __constructor();
 		
 		// Methods
+		QAndroidJniObject getPrintJobs();
 		QAndroidJniObject print(jstring arg0, __jni_impl::android::print::PrintDocumentAdapter arg1, __jni_impl::android::print::PrintAttributes arg2);
 		QAndroidJniObject print(const QString &arg0, __jni_impl::android::print::PrintDocumentAdapter arg1, __jni_impl::android::print::PrintAttributes arg2);
-		QAndroidJniObject getPrintJobs();
 	};
 } // namespace __jni_impl::android::print
 
-#include "PrintJob.hpp"
-#include "PrintDocumentAdapter.hpp"
 #include "PrintAttributes.hpp"
+#include "PrintDocumentAdapter.hpp"
+#include "PrintJob.hpp"
 
 namespace __jni_impl::android::print
 {
@@ -52,6 +52,13 @@ namespace __jni_impl::android::print
 	}
 	
 	// Methods
+	QAndroidJniObject PrintManager::getPrintJobs()
+	{
+		return __thiz.callObjectMethod(
+			"getPrintJobs",
+			"()Ljava/util/List;"
+		);
+	}
 	QAndroidJniObject PrintManager::print(jstring arg0, __jni_impl::android::print::PrintDocumentAdapter arg1, __jni_impl::android::print::PrintAttributes arg2)
 	{
 		return __thiz.callObjectMethod(
@@ -70,13 +77,6 @@ namespace __jni_impl::android::print
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject PrintManager::getPrintJobs()
-	{
-		return __thiz.callObjectMethod(
-			"getPrintJobs",
-			"()Ljava/util/List;"
 		);
 	}
 } // namespace __jni_impl::android::print

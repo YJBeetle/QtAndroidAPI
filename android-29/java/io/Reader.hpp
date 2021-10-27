@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::nio
-{
-	class CharBuffer;
-}
 namespace __jni_impl::java::io
 {
 	class Writer;
+}
+namespace __jni_impl::java::nio
+{
+	class CharBuffer;
 }
 
 namespace __jni_impl::java::io
@@ -25,23 +25,23 @@ namespace __jni_impl::java::io
 		void __constructor();
 		
 		// Methods
-		jint read(jcharArray arg0);
-		jint read(jcharArray arg0, jint arg1, jint arg2);
-		jint read(__jni_impl::java::nio::CharBuffer arg0);
-		jint read();
+		static QAndroidJniObject nullReader();
 		void close();
 		void mark(jint arg0);
-		jlong transferTo(__jni_impl::java::io::Writer arg0);
-		jlong skip(jlong arg0);
 		jboolean markSupported();
-		void reset();
-		static QAndroidJniObject nullReader();
+		jint read();
+		jint read(jcharArray arg0);
+		jint read(__jni_impl::java::nio::CharBuffer arg0);
+		jint read(jcharArray arg0, jint arg1, jint arg2);
 		jboolean ready();
+		void reset();
+		jlong skip(jlong arg0);
+		jlong transferTo(__jni_impl::java::io::Writer arg0);
 	};
 } // namespace __jni_impl::java::io
 
-#include "../nio/CharBuffer.hpp"
 #include "Writer.hpp"
+#include "../nio/CharBuffer.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -56,37 +56,12 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	jint Reader::read(jcharArray arg0)
+	QAndroidJniObject Reader::nullReader()
 	{
-		return __thiz.callMethod<jint>(
-			"read",
-			"([C)I",
-			arg0
-		);
-	}
-	jint Reader::read(jcharArray arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"read",
-			"([CII)I",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jint Reader::read(__jni_impl::java::nio::CharBuffer arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"read",
-			"(Ljava/nio/CharBuffer;)I",
-			arg0.__jniObject().object()
-		);
-	}
-	jint Reader::read()
-	{
-		return __thiz.callMethod<jint>(
-			"read",
-			"()I"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.io.Reader",
+			"nullReader",
+			"()Ljava/io/Reader;"
 		);
 	}
 	void Reader::close()
@@ -104,26 +79,50 @@ namespace __jni_impl::java::io
 			arg0
 		);
 	}
-	jlong Reader::transferTo(__jni_impl::java::io::Writer arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"transferTo",
-			"(Ljava/io/Writer;)J",
-			arg0.__jniObject().object()
-		);
-	}
-	jlong Reader::skip(jlong arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"skip",
-			"(J)J",
-			arg0
-		);
-	}
 	jboolean Reader::markSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"markSupported",
+			"()Z"
+		);
+	}
+	jint Reader::read()
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
+	jint Reader::read(jcharArray arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"([C)I",
+			arg0
+		);
+	}
+	jint Reader::read(__jni_impl::java::nio::CharBuffer arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"(Ljava/nio/CharBuffer;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	jint Reader::read(jcharArray arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"([CII)I",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	jboolean Reader::ready()
+	{
+		return __thiz.callMethod<jboolean>(
+			"ready",
 			"()Z"
 		);
 	}
@@ -134,19 +133,20 @@ namespace __jni_impl::java::io
 			"()V"
 		);
 	}
-	QAndroidJniObject Reader::nullReader()
+	jlong Reader::skip(jlong arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.io.Reader",
-			"nullReader",
-			"()Ljava/io/Reader;"
+		return __thiz.callMethod<jlong>(
+			"skip",
+			"(J)J",
+			arg0
 		);
 	}
-	jboolean Reader::ready()
+	jlong Reader::transferTo(__jni_impl::java::io::Writer arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"ready",
-			"()Z"
+		return __thiz.callMethod<jlong>(
+			"transferTo",
+			"(Ljava/io/Writer;)J",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::java::io

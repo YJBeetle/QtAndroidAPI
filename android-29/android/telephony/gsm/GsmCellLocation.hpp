@@ -24,14 +24,14 @@ namespace __jni_impl::android::telephony::gsm
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		void setStateInvalid();
-		jint getLac();
-		jint getCid();
-		jint getPsc();
-		void setLacAndCid(jint arg0, jint arg1);
 		void fillInNotifierBundle(__jni_impl::android::os::Bundle arg0);
+		jint getCid();
+		jint getLac();
+		jint getPsc();
+		jint hashCode();
+		void setLacAndCid(jint arg0, jint arg1);
+		void setStateInvalid();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::telephony::gsm
 
@@ -67,32 +67,12 @@ namespace __jni_impl::android::telephony::gsm
 			arg0
 		);
 	}
-	jstring GsmCellLocation::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint GsmCellLocation::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	void GsmCellLocation::setStateInvalid()
+	void GsmCellLocation::fillInNotifierBundle(__jni_impl::android::os::Bundle arg0)
 	{
 		__thiz.callMethod<void>(
-			"setStateInvalid",
-			"()V"
-		);
-	}
-	jint GsmCellLocation::getLac()
-	{
-		return __thiz.callMethod<jint>(
-			"getLac",
-			"()I"
+			"fillInNotifierBundle",
+			"(Landroid/os/Bundle;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	jint GsmCellLocation::getCid()
@@ -102,10 +82,24 @@ namespace __jni_impl::android::telephony::gsm
 			"()I"
 		);
 	}
+	jint GsmCellLocation::getLac()
+	{
+		return __thiz.callMethod<jint>(
+			"getLac",
+			"()I"
+		);
+	}
 	jint GsmCellLocation::getPsc()
 	{
 		return __thiz.callMethod<jint>(
 			"getPsc",
+			"()I"
+		);
+	}
+	jint GsmCellLocation::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
 			"()I"
 		);
 	}
@@ -118,13 +112,19 @@ namespace __jni_impl::android::telephony::gsm
 			arg1
 		);
 	}
-	void GsmCellLocation::fillInNotifierBundle(__jni_impl::android::os::Bundle arg0)
+	void GsmCellLocation::setStateInvalid()
 	{
 		__thiz.callMethod<void>(
-			"fillInNotifierBundle",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
+			"setStateInvalid",
+			"()V"
 		);
+	}
+	jstring GsmCellLocation::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::telephony::gsm
 

@@ -23,19 +23,19 @@ namespace __jni_impl::android::telephony::cdma
 		void __constructor(__jni_impl::android::os::Bundle arg0);
 		
 		// Methods
+		static jdouble convertQuartSecToDecDegrees(jint arg0);
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		void setStateInvalid();
 		void fillInNotifierBundle(__jni_impl::android::os::Bundle arg0);
 		jint getBaseStationId();
 		jint getBaseStationLatitude();
 		jint getBaseStationLongitude();
+		jint getNetworkId();
+		jint getSystemId();
+		jint hashCode();
 		void setCellLocationData(jint arg0, jint arg1, jint arg2);
 		void setCellLocationData(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		static jdouble convertQuartSecToDecDegrees(jint arg0);
-		jint getSystemId();
-		jint getNetworkId();
+		void setStateInvalid();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::telephony::cdma
 
@@ -63,33 +63,21 @@ namespace __jni_impl::android::telephony::cdma
 	}
 	
 	// Methods
+	jdouble CdmaCellLocation::convertQuartSecToDecDegrees(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jdouble>(
+			"android.telephony.cdma.CdmaCellLocation",
+			"convertQuartSecToDecDegrees",
+			"(I)D",
+			arg0
+		);
+	}
 	jboolean CdmaCellLocation::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
-		);
-	}
-	jstring CdmaCellLocation::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint CdmaCellLocation::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	void CdmaCellLocation::setStateInvalid()
-	{
-		__thiz.callMethod<void>(
-			"setStateInvalid",
-			"()V"
 		);
 	}
 	void CdmaCellLocation::fillInNotifierBundle(__jni_impl::android::os::Bundle arg0)
@@ -121,6 +109,27 @@ namespace __jni_impl::android::telephony::cdma
 			"()I"
 		);
 	}
+	jint CdmaCellLocation::getNetworkId()
+	{
+		return __thiz.callMethod<jint>(
+			"getNetworkId",
+			"()I"
+		);
+	}
+	jint CdmaCellLocation::getSystemId()
+	{
+		return __thiz.callMethod<jint>(
+			"getSystemId",
+			"()I"
+		);
+	}
+	jint CdmaCellLocation::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 	void CdmaCellLocation::setCellLocationData(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
@@ -143,28 +152,19 @@ namespace __jni_impl::android::telephony::cdma
 			arg4
 		);
 	}
-	jdouble CdmaCellLocation::convertQuartSecToDecDegrees(jint arg0)
+	void CdmaCellLocation::setStateInvalid()
 	{
-		return QAndroidJniObject::callStaticMethod<jdouble>(
-			"android.telephony.cdma.CdmaCellLocation",
-			"convertQuartSecToDecDegrees",
-			"(I)D",
-			arg0
+		__thiz.callMethod<void>(
+			"setStateInvalid",
+			"()V"
 		);
 	}
-	jint CdmaCellLocation::getSystemId()
+	jstring CdmaCellLocation::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"getSystemId",
-			"()I"
-		);
-	}
-	jint CdmaCellLocation::getNetworkId()
-	{
-		return __thiz.callMethod<jint>(
-			"getNetworkId",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::telephony::cdma
 

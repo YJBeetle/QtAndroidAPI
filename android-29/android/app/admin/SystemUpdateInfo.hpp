@@ -25,13 +25,13 @@ namespace __jni_impl::android::app::admin
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jboolean equals(jobject arg0);
 		jlong getReceivedTime();
 		jint getSecurityPatchState();
+		jint hashCode();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::admin
 
@@ -79,28 +79,6 @@ namespace __jni_impl::android::app::admin
 	}
 	
 	// Methods
-	jboolean SystemUpdateInfo::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring SystemUpdateInfo::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint SystemUpdateInfo::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	jint SystemUpdateInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -108,13 +86,12 @@ namespace __jni_impl::android::app::admin
 			"()I"
 		);
 	}
-	void SystemUpdateInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jboolean SystemUpdateInfo::equals(jobject arg0)
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 	jlong SystemUpdateInfo::getReceivedTime()
@@ -129,6 +106,29 @@ namespace __jni_impl::android::app::admin
 		return __thiz.callMethod<jint>(
 			"getSecurityPatchState",
 			"()I"
+		);
+	}
+	jint SystemUpdateInfo::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring SystemUpdateInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void SystemUpdateInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::app::admin

@@ -21,15 +21,15 @@ namespace __jni_impl::java::util::concurrent::atomic
 		void __constructor(__jni_impl::__JniBaseClass arg0, jdouble arg1);
 		
 		// Methods
+		void accumulate(jdouble arg0);
+		jdouble doubleValue();
+		jfloat floatValue();
 		jdouble get();
-		jstring toString();
+		jdouble getThenReset();
 		jint intValue();
 		jlong longValue();
-		jfloat floatValue();
-		jdouble doubleValue();
 		void reset();
-		void accumulate(jdouble arg0);
-		jdouble getThenReset();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::util::concurrent::atomic
 
@@ -51,6 +51,28 @@ namespace __jni_impl::java::util::concurrent::atomic
 	}
 	
 	// Methods
+	void DoubleAccumulator::accumulate(jdouble arg0)
+	{
+		__thiz.callMethod<void>(
+			"accumulate",
+			"(D)V",
+			arg0
+		);
+	}
+	jdouble DoubleAccumulator::doubleValue()
+	{
+		return __thiz.callMethod<jdouble>(
+			"doubleValue",
+			"()D"
+		);
+	}
+	jfloat DoubleAccumulator::floatValue()
+	{
+		return __thiz.callMethod<jfloat>(
+			"floatValue",
+			"()F"
+		);
+	}
 	jdouble DoubleAccumulator::get()
 	{
 		return __thiz.callMethod<jdouble>(
@@ -58,12 +80,12 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"()D"
 		);
 	}
-	jstring DoubleAccumulator::toString()
+	jdouble DoubleAccumulator::getThenReset()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jdouble>(
+			"getThenReset",
+			"()D"
+		);
 	}
 	jint DoubleAccumulator::intValue()
 	{
@@ -79,20 +101,6 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"()J"
 		);
 	}
-	jfloat DoubleAccumulator::floatValue()
-	{
-		return __thiz.callMethod<jfloat>(
-			"floatValue",
-			"()F"
-		);
-	}
-	jdouble DoubleAccumulator::doubleValue()
-	{
-		return __thiz.callMethod<jdouble>(
-			"doubleValue",
-			"()D"
-		);
-	}
 	void DoubleAccumulator::reset()
 	{
 		__thiz.callMethod<void>(
@@ -100,20 +108,12 @@ namespace __jni_impl::java::util::concurrent::atomic
 			"()V"
 		);
 	}
-	void DoubleAccumulator::accumulate(jdouble arg0)
+	jstring DoubleAccumulator::toString()
 	{
-		__thiz.callMethod<void>(
-			"accumulate",
-			"(D)V",
-			arg0
-		);
-	}
-	jdouble DoubleAccumulator::getThenReset()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getThenReset",
-			"()D"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util::concurrent::atomic
 

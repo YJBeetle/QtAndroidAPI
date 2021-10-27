@@ -30,12 +30,12 @@ namespace __jni_impl::android::util
 		
 		// Methods
 		void _delete();
-		jbyteArray readFully();
-		QAndroidJniObject openRead();
-		void finishWrite(__jni_impl::java::io::FileOutputStream arg0);
 		void failWrite(__jni_impl::java::io::FileOutputStream arg0);
-		QAndroidJniObject startWrite();
+		void finishWrite(__jni_impl::java::io::FileOutputStream arg0);
 		QAndroidJniObject getBaseFile();
+		QAndroidJniObject openRead();
+		jbyteArray readFully();
+		QAndroidJniObject startWrite();
 	};
 } // namespace __jni_impl::android::util
 
@@ -65,18 +65,12 @@ namespace __jni_impl::android::util
 			"()V"
 		);
 	}
-	jbyteArray AtomicFile::readFully()
+	void AtomicFile::failWrite(__jni_impl::java::io::FileOutputStream arg0)
 	{
-		return __thiz.callObjectMethod(
-			"readFully",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	QAndroidJniObject AtomicFile::openRead()
-	{
-		return __thiz.callObjectMethod(
-			"openRead",
-			"()Ljava/io/FileInputStream;"
+		__thiz.callMethod<void>(
+			"failWrite",
+			"(Ljava/io/FileOutputStream;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void AtomicFile::finishWrite(__jni_impl::java::io::FileOutputStream arg0)
@@ -87,26 +81,32 @@ namespace __jni_impl::android::util
 			arg0.__jniObject().object()
 		);
 	}
-	void AtomicFile::failWrite(__jni_impl::java::io::FileOutputStream arg0)
+	QAndroidJniObject AtomicFile::getBaseFile()
 	{
-		__thiz.callMethod<void>(
-			"failWrite",
-			"(Ljava/io/FileOutputStream;)V",
-			arg0.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"getBaseFile",
+			"()Ljava/io/File;"
 		);
+	}
+	QAndroidJniObject AtomicFile::openRead()
+	{
+		return __thiz.callObjectMethod(
+			"openRead",
+			"()Ljava/io/FileInputStream;"
+		);
+	}
+	jbyteArray AtomicFile::readFully()
+	{
+		return __thiz.callObjectMethod(
+			"readFully",
+			"()[B"
+		).object<jbyteArray>();
 	}
 	QAndroidJniObject AtomicFile::startWrite()
 	{
 		return __thiz.callObjectMethod(
 			"startWrite",
 			"()Ljava/io/FileOutputStream;"
-		);
-	}
-	QAndroidJniObject AtomicFile::getBaseFile()
-	{
-		return __thiz.callObjectMethod(
-			"getBaseFile",
-			"()Ljava/io/File;"
 		);
 	}
 } // namespace __jni_impl::android::util

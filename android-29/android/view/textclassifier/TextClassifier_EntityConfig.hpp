@@ -23,13 +23,13 @@ namespace __jni_impl::android::view::textclassifier
 		
 		// Methods
 		static QAndroidJniObject create(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
-		QAndroidJniObject getHints();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		static QAndroidJniObject createWithHints(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject createWithExplicitEntityList(__jni_impl::__JniBaseClass arg0);
+		static QAndroidJniObject createWithHints(__jni_impl::__JniBaseClass arg0);
+		jint describeContents();
+		QAndroidJniObject getHints();
 		QAndroidJniObject resolveEntityListModifications(__jni_impl::__JniBaseClass arg0);
 		jboolean shouldIncludeTypesFromTextClassifier();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -67,27 +67,13 @@ namespace __jni_impl::android::view::textclassifier
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject TextClassifier_EntityConfig::getHints()
+	QAndroidJniObject TextClassifier_EntityConfig::createWithExplicitEntityList(__jni_impl::__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getHints",
-			"()Ljava/util/Collection;"
-		);
-	}
-	jint TextClassifier_EntityConfig::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void TextClassifier_EntityConfig::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.textclassifier.TextClassifier$EntityConfig",
+			"createWithExplicitEntityList",
+			"(Ljava/util/Collection;)Landroid/view/textclassifier/TextClassifier$EntityConfig;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject TextClassifier_EntityConfig::createWithHints(__jni_impl::__JniBaseClass arg0)
@@ -99,13 +85,18 @@ namespace __jni_impl::android::view::textclassifier
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject TextClassifier_EntityConfig::createWithExplicitEntityList(__jni_impl::__JniBaseClass arg0)
+	jint TextClassifier_EntityConfig::describeContents()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.textclassifier.TextClassifier$EntityConfig",
-			"createWithExplicitEntityList",
-			"(Ljava/util/Collection;)Landroid/view/textclassifier/TextClassifier$EntityConfig;",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	QAndroidJniObject TextClassifier_EntityConfig::getHints()
+	{
+		return __thiz.callObjectMethod(
+			"getHints",
+			"()Ljava/util/Collection;"
 		);
 	}
 	QAndroidJniObject TextClassifier_EntityConfig::resolveEntityListModifications(__jni_impl::__JniBaseClass arg0)
@@ -121,6 +112,15 @@ namespace __jni_impl::android::view::textclassifier
 		return __thiz.callMethod<jboolean>(
 			"shouldIncludeTypesFromTextClassifier",
 			"()Z"
+		);
+	}
+	void TextClassifier_EntityConfig::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::view::textclassifier

@@ -7,11 +7,11 @@
 
 namespace __jni_impl::java::net
 {
-	class ServerSocket;
+	class InetAddress;
 }
 namespace __jni_impl::java::net
 {
-	class InetAddress;
+	class ServerSocket;
 }
 
 namespace __jni_impl::javax::net
@@ -26,15 +26,15 @@ namespace __jni_impl::javax::net
 		
 		// Methods
 		static QAndroidJniObject getDefault();
+		QAndroidJniObject createServerSocket();
+		QAndroidJniObject createServerSocket(jint arg0);
 		QAndroidJniObject createServerSocket(jint arg0, jint arg1);
 		QAndroidJniObject createServerSocket(jint arg0, jint arg1, __jni_impl::java::net::InetAddress arg2);
-		QAndroidJniObject createServerSocket(jint arg0);
-		QAndroidJniObject createServerSocket();
 	};
 } // namespace __jni_impl::javax::net
 
-#include "../../java/net/ServerSocket.hpp"
 #include "../../java/net/InetAddress.hpp"
+#include "../../java/net/ServerSocket.hpp"
 
 namespace __jni_impl::javax::net
 {
@@ -57,6 +57,21 @@ namespace __jni_impl::javax::net
 			"()Ljavax/net/ServerSocketFactory;"
 		);
 	}
+	QAndroidJniObject ServerSocketFactory::createServerSocket()
+	{
+		return __thiz.callObjectMethod(
+			"createServerSocket",
+			"()Ljava/net/ServerSocket;"
+		);
+	}
+	QAndroidJniObject ServerSocketFactory::createServerSocket(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"createServerSocket",
+			"(I)Ljava/net/ServerSocket;",
+			arg0
+		);
+	}
 	QAndroidJniObject ServerSocketFactory::createServerSocket(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -74,21 +89,6 @@ namespace __jni_impl::javax::net
 			arg0,
 			arg1,
 			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ServerSocketFactory::createServerSocket(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"createServerSocket",
-			"(I)Ljava/net/ServerSocket;",
-			arg0
-		);
-	}
-	QAndroidJniObject ServerSocketFactory::createServerSocket()
-	{
-		return __thiz.callObjectMethod(
-			"createServerSocket",
-			"()Ljava/net/ServerSocket;"
 		);
 	}
 } // namespace __jni_impl::javax::net

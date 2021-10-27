@@ -16,9 +16,9 @@ namespace __jni_impl::java::net
 		// Fields
 		
 		// Constructors
+		void __constructor();
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor();
 		
 		// Methods
 	};
@@ -30,6 +30,13 @@ namespace __jni_impl::java::net
 	// Fields
 	
 	// Constructors
+	void UnknownHostException::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.UnknownHostException",
+			"()V"
+		);
+	}
 	void UnknownHostException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -46,13 +53,6 @@ namespace __jni_impl::java::net
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void UnknownHostException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.UnknownHostException",
-			"()V"
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::java::net
@@ -63,14 +63,14 @@ namespace java::net
 	{
 	public:
 		UnknownHostException(QAndroidJniObject obj) { __thiz = obj; }
+		UnknownHostException()
+		{
+			__constructor();
+		}
 		UnknownHostException(jstring arg0)
 		{
 			__constructor(
 				arg0);
-		}
-		UnknownHostException()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::net

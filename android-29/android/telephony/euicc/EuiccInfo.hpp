@@ -23,8 +23,8 @@ namespace __jni_impl::android::telephony::euicc
 		void __constructor(const QString &arg0);
 		
 		// Methods
-		jstring getOsVersion();
 		jint describeContents();
+		jstring getOsVersion();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony::euicc
@@ -62,19 +62,19 @@ namespace __jni_impl::android::telephony::euicc
 	}
 	
 	// Methods
-	jstring EuiccInfo::getOsVersion()
-	{
-		return __thiz.callObjectMethod(
-			"getOsVersion",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint EuiccInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
+	}
+	jstring EuiccInfo::getOsVersion()
+	{
+		return __thiz.callObjectMethod(
+			"getOsVersion",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void EuiccInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

@@ -17,9 +17,9 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		jlong getUsage();
 		jstring getOrigin();
 		jlong getQuota();
+		jlong getUsage();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -37,13 +37,6 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	jlong WebStorage_Origin::getUsage()
-	{
-		return __thiz.callMethod<jlong>(
-			"getUsage",
-			"()J"
-		);
-	}
 	jstring WebStorage_Origin::getOrigin()
 	{
 		return __thiz.callObjectMethod(
@@ -55,6 +48,13 @@ namespace __jni_impl::android::webkit
 	{
 		return __thiz.callMethod<jlong>(
 			"getQuota",
+			"()J"
+		);
+	}
+	jlong WebStorage_Origin::getUsage()
+	{
+		return __thiz.callMethod<jlong>(
+			"getUsage",
 			"()J"
 		);
 	}

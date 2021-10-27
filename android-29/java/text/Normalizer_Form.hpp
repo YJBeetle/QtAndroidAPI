@@ -13,18 +13,18 @@ namespace __jni_impl::java::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NFD();
 		static QAndroidJniObject NFC();
-		static QAndroidJniObject NFKD();
+		static QAndroidJniObject NFD();
 		static QAndroidJniObject NFKC();
+		static QAndroidJniObject NFKD();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::text
 
@@ -32,14 +32,6 @@ namespace __jni_impl::java::text
 namespace __jni_impl::java::text
 {
 	// Fields
-	QAndroidJniObject Normalizer_Form::NFD()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.text.Normalizer$Form",
-			"NFD",
-			"Ljava/text/Normalizer$Form;"
-		);
-	}
 	QAndroidJniObject Normalizer_Form::NFC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -48,11 +40,11 @@ namespace __jni_impl::java::text
 			"Ljava/text/Normalizer$Form;"
 		);
 	}
-	QAndroidJniObject Normalizer_Form::NFKD()
+	QAndroidJniObject Normalizer_Form::NFD()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.Normalizer$Form",
-			"NFKD",
+			"NFD",
 			"Ljava/text/Normalizer$Form;"
 		);
 	}
@@ -61,6 +53,14 @@ namespace __jni_impl::java::text
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.Normalizer$Form",
 			"NFKC",
+			"Ljava/text/Normalizer$Form;"
+		);
+	}
+	QAndroidJniObject Normalizer_Form::NFKD()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.text.Normalizer$Form",
+			"NFKD",
 			"Ljava/text/Normalizer$Form;"
 		);
 	}
@@ -74,14 +74,6 @@ namespace __jni_impl::java::text
 	}
 	
 	// Methods
-	jarray Normalizer_Form::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.text.Normalizer$Form",
-			"values",
-			"()[Ljava/text/Normalizer$Form;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Normalizer_Form::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -99,6 +91,14 @@ namespace __jni_impl::java::text
 			"(Ljava/lang/String;)Ljava/text/Normalizer$Form;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Normalizer_Form::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.text.Normalizer$Form",
+			"values",
+			"()[Ljava/text/Normalizer$Form;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::text
 

@@ -22,9 +22,9 @@ namespace __jni_impl::java::util
 		// Methods
 		jboolean empty();
 		jobject peek();
-		jint search(jobject arg0);
-		jobject push(jobject arg0);
 		jobject pop();
+		jobject push(jobject arg0);
+		jint search(jobject arg0);
 	};
 } // namespace __jni_impl::java::util
 
@@ -57,13 +57,12 @@ namespace __jni_impl::java::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	jint Stack::search(jobject arg0)
+	jobject Stack::pop()
 	{
-		return __thiz.callMethod<jint>(
-			"search",
-			"(Ljava/lang/Object;)I",
-			arg0
-		);
+		return __thiz.callObjectMethod(
+			"pop",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
 	jobject Stack::push(jobject arg0)
 	{
@@ -73,12 +72,13 @@ namespace __jni_impl::java::util
 			arg0
 		).object<jobject>();
 	}
-	jobject Stack::pop()
+	jint Stack::search(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
-			"pop",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
+		return __thiz.callMethod<jint>(
+			"search",
+			"(Ljava/lang/Object;)I",
+			arg0
+		);
 	}
 } // namespace __jni_impl::java::util
 

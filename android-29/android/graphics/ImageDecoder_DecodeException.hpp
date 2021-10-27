@@ -26,8 +26,8 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getSource();
 		jint getError();
+		QAndroidJniObject getSource();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -67,18 +67,18 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	QAndroidJniObject ImageDecoder_DecodeException::getSource()
-	{
-		return __thiz.callObjectMethod(
-			"getSource",
-			"()Landroid/graphics/ImageDecoder$Source;"
-		);
-	}
 	jint ImageDecoder_DecodeException::getError()
 	{
 		return __thiz.callMethod<jint>(
 			"getError",
 			"()I"
+		);
+	}
+	QAndroidJniObject ImageDecoder_DecodeException::getSource()
+	{
+		return __thiz.callObjectMethod(
+			"getSource",
+			"()Landroid/graphics/ImageDecoder$Source;"
 		);
 	}
 } // namespace __jni_impl::android::graphics

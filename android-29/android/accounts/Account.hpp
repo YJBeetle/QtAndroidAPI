@@ -21,15 +21,15 @@ namespace __jni_impl::android::accounts
 		jstring type();
 		
 		// Constructors
+		void __constructor(__jni_impl::android::os::Parcel arg0);
 		void __constructor(jstring arg0, jstring arg1);
 		void __constructor(const QString &arg0, const QString &arg1);
-		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		jint hashCode();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::accounts
@@ -63,6 +63,14 @@ namespace __jni_impl::android::accounts
 	}
 	
 	// Constructors
+	void Account::__constructor(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.accounts.Account",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void Account::__constructor(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -81,16 +89,15 @@ namespace __jni_impl::android::accounts
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	void Account::__constructor(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.accounts.Account",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	
 	// Methods
+	jint Account::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean Account::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -99,13 +106,6 @@ namespace __jni_impl::android::accounts
 			arg0
 		);
 	}
-	jstring Account::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint Account::hashCode()
 	{
 		return __thiz.callMethod<jint>(
@@ -113,12 +113,12 @@ namespace __jni_impl::android::accounts
 			"()I"
 		);
 	}
-	jint Account::describeContents()
+	jstring Account::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Account::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -137,16 +137,16 @@ namespace android::accounts
 	{
 	public:
 		Account(QAndroidJniObject obj) { __thiz = obj; }
+		Account(__jni_impl::android::os::Parcel arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		Account(jstring arg0, jstring arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
-		}
-		Account(__jni_impl::android::os::Parcel arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::accounts

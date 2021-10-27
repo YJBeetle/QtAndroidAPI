@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::net
-{
-	class InetAddress;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::java::net
+{
+	class InetAddress;
 }
 
 namespace __jni_impl::android::net::nsd
@@ -26,29 +26,29 @@ namespace __jni_impl::android::net::nsd
 		void __constructor();
 		
 		// Methods
-		jstring toString();
+		jint describeContents();
+		QAndroidJniObject getAttributes();
 		QAndroidJniObject getHost();
 		jint getPort();
-		QAndroidJniObject getAttributes();
-		void setAttribute(jstring arg0, jstring arg1);
-		void setAttribute(const QString &arg0, const QString &arg1);
+		jstring getServiceName();
 		jstring getServiceType();
 		void removeAttribute(jstring arg0);
 		void removeAttribute(const QString &arg0);
-		void setServiceType(jstring arg0);
-		void setServiceType(const QString &arg0);
+		void setAttribute(jstring arg0, jstring arg1);
+		void setAttribute(const QString &arg0, const QString &arg1);
 		void setHost(__jni_impl::java::net::InetAddress arg0);
 		void setPort(jint arg0);
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jstring getServiceName();
 		void setServiceName(jstring arg0);
 		void setServiceName(const QString &arg0);
+		void setServiceType(jstring arg0);
+		void setServiceType(const QString &arg0);
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::nsd
 
-#include "../../../java/net/InetAddress.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../../java/net/InetAddress.hpp"
 
 namespace __jni_impl::android::net::nsd
 {
@@ -72,12 +72,19 @@ namespace __jni_impl::android::net::nsd
 	}
 	
 	// Methods
-	jstring NsdServiceInfo::toString()
+	jint NsdServiceInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	QAndroidJniObject NsdServiceInfo::getAttributes()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getAttributes",
+			"()Ljava/util/Map;"
+		);
 	}
 	QAndroidJniObject NsdServiceInfo::getHost()
 	{
@@ -93,30 +100,12 @@ namespace __jni_impl::android::net::nsd
 			"()I"
 		);
 	}
-	QAndroidJniObject NsdServiceInfo::getAttributes()
+	jstring NsdServiceInfo::getServiceName()
 	{
 		return __thiz.callObjectMethod(
-			"getAttributes",
-			"()Ljava/util/Map;"
-		);
-	}
-	void NsdServiceInfo::setAttribute(jstring arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"setAttribute",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
-		);
-	}
-	void NsdServiceInfo::setAttribute(const QString &arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"setAttribute",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
+			"getServiceName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jstring NsdServiceInfo::getServiceType()
 	{
@@ -141,20 +130,22 @@ namespace __jni_impl::android::net::nsd
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void NsdServiceInfo::setServiceType(jstring arg0)
+	void NsdServiceInfo::setAttribute(jstring arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
-			"setServiceType",
-			"(Ljava/lang/String;)V",
-			arg0
+			"setAttribute",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1
 		);
 	}
-	void NsdServiceInfo::setServiceType(const QString &arg0)
+	void NsdServiceInfo::setAttribute(const QString &arg0, const QString &arg1)
 	{
 		__thiz.callMethod<void>(
-			"setServiceType",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+			"setAttribute",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	void NsdServiceInfo::setHost(__jni_impl::java::net::InetAddress arg0)
@@ -173,29 +164,6 @@ namespace __jni_impl::android::net::nsd
 			arg0
 		);
 	}
-	jint NsdServiceInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void NsdServiceInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jstring NsdServiceInfo::getServiceName()
-	{
-		return __thiz.callObjectMethod(
-			"getServiceName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	void NsdServiceInfo::setServiceName(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -210,6 +178,38 @@ namespace __jni_impl::android::net::nsd
 			"setServiceName",
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void NsdServiceInfo::setServiceType(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setServiceType",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void NsdServiceInfo::setServiceType(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setServiceType",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jstring NsdServiceInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void NsdServiceInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::net::nsd

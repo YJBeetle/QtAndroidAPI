@@ -21,14 +21,14 @@ namespace __jni_impl::android::media::browse
 		void __constructor();
 		
 		// Methods
-		void onError(jstring arg0);
-		void onError(const QString &arg0);
-		void onError(jstring arg0, __jni_impl::android::os::Bundle arg1);
-		void onError(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 		void onChildrenLoaded(jstring arg0, __jni_impl::__JniBaseClass arg1);
 		void onChildrenLoaded(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		void onChildrenLoaded(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Bundle arg2);
 		void onChildrenLoaded(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::os::Bundle arg2);
+		void onError(jstring arg0);
+		void onError(const QString &arg0);
+		void onError(jstring arg0, __jni_impl::android::os::Bundle arg1);
+		void onError(const QString &arg0, __jni_impl::android::os::Bundle arg1);
 	};
 } // namespace __jni_impl::android::media::browse
 
@@ -48,40 +48,6 @@ namespace __jni_impl::android::media::browse
 	}
 	
 	// Methods
-	void MediaBrowser_SubscriptionCallback::onError(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"onError",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void MediaBrowser_SubscriptionCallback::onError(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"onError",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void MediaBrowser_SubscriptionCallback::onError(jstring arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onError",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void MediaBrowser_SubscriptionCallback::onError(const QString &arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"onError",
-			"(Ljava/lang/String;Landroid/os/Bundle;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		);
-	}
 	void MediaBrowser_SubscriptionCallback::onChildrenLoaded(jstring arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
@@ -118,6 +84,40 @@ namespace __jni_impl::android::media::browse
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
+		);
+	}
+	void MediaBrowser_SubscriptionCallback::onError(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"onError",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void MediaBrowser_SubscriptionCallback::onError(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"onError",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void MediaBrowser_SubscriptionCallback::onError(jstring arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"onError",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void MediaBrowser_SubscriptionCallback::onError(const QString &arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"onError",
+			"(Ljava/lang/String;Landroid/os/Bundle;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::media::browse

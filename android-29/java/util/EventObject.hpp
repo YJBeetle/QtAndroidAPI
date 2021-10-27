@@ -17,8 +17,8 @@ namespace __jni_impl::java::util
 		void __constructor(jobject arg0);
 		
 		// Methods
-		jstring toString();
 		jobject getSource();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::util
 
@@ -38,19 +38,19 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	jstring EventObject::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jobject EventObject::getSource()
 	{
 		return __thiz.callObjectMethod(
 			"getSource",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
+	}
+	jstring EventObject::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util
 

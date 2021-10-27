@@ -27,13 +27,13 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		jintArray getSupportedHdrTypes();
-		jfloat getDesiredMaxLuminance();
-		jfloat getDesiredMaxAverageLuminance();
-		jfloat getDesiredMinLuminance();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		jfloat getDesiredMaxAverageLuminance();
+		jfloat getDesiredMaxLuminance();
+		jfloat getDesiredMinLuminance();
+		jintArray getSupportedHdrTypes();
+		jint hashCode();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
@@ -96,6 +96,13 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
+	jint Display_HdrCapabilities::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean Display_HdrCapabilities::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -104,31 +111,17 @@ namespace __jni_impl::android::view
 			arg0
 		);
 	}
-	jint Display_HdrCapabilities::hashCode()
+	jfloat Display_HdrCapabilities::getDesiredMaxAverageLuminance()
 	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+		return __thiz.callMethod<jfloat>(
+			"getDesiredMaxAverageLuminance",
+			"()F"
 		);
-	}
-	jintArray Display_HdrCapabilities::getSupportedHdrTypes()
-	{
-		return __thiz.callObjectMethod(
-			"getSupportedHdrTypes",
-			"()[I"
-		).object<jintArray>();
 	}
 	jfloat Display_HdrCapabilities::getDesiredMaxLuminance()
 	{
 		return __thiz.callMethod<jfloat>(
 			"getDesiredMaxLuminance",
-			"()F"
-		);
-	}
-	jfloat Display_HdrCapabilities::getDesiredMaxAverageLuminance()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getDesiredMaxAverageLuminance",
 			"()F"
 		);
 	}
@@ -139,10 +132,17 @@ namespace __jni_impl::android::view
 			"()F"
 		);
 	}
-	jint Display_HdrCapabilities::describeContents()
+	jintArray Display_HdrCapabilities::getSupportedHdrTypes()
+	{
+		return __thiz.callObjectMethod(
+			"getSupportedHdrTypes",
+			"()[I"
+		).object<jintArray>();
+	}
+	jint Display_HdrCapabilities::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
 		);
 	}

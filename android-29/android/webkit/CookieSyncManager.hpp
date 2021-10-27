@@ -21,13 +21,13 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		void run();
-		static QAndroidJniObject getInstance();
-		void sync();
 		static QAndroidJniObject createInstance(__jni_impl::android::content::Context arg0);
+		static QAndroidJniObject getInstance();
 		void resetSync();
-		void stopSync();
+		void run();
 		void startSync();
+		void stopSync();
+		void sync();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -46,11 +46,13 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	void CookieSyncManager::run()
+	QAndroidJniObject CookieSyncManager::createInstance(__jni_impl::android::content::Context arg0)
 	{
-		__thiz.callMethod<void>(
-			"run",
-			"()V"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.webkit.CookieSyncManager",
+			"createInstance",
+			"(Landroid/content/Context;)Landroid/webkit/CookieSyncManager;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject CookieSyncManager::getInstance()
@@ -61,26 +63,24 @@ namespace __jni_impl::android::webkit
 			"()Landroid/webkit/CookieSyncManager;"
 		);
 	}
-	void CookieSyncManager::sync()
-	{
-		__thiz.callMethod<void>(
-			"sync",
-			"()V"
-		);
-	}
-	QAndroidJniObject CookieSyncManager::createInstance(__jni_impl::android::content::Context arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.webkit.CookieSyncManager",
-			"createInstance",
-			"(Landroid/content/Context;)Landroid/webkit/CookieSyncManager;",
-			arg0.__jniObject().object()
-		);
-	}
 	void CookieSyncManager::resetSync()
 	{
 		__thiz.callMethod<void>(
 			"resetSync",
+			"()V"
+		);
+	}
+	void CookieSyncManager::run()
+	{
+		__thiz.callMethod<void>(
+			"run",
+			"()V"
+		);
+	}
+	void CookieSyncManager::startSync()
+	{
+		__thiz.callMethod<void>(
+			"startSync",
 			"()V"
 		);
 	}
@@ -91,10 +91,10 @@ namespace __jni_impl::android::webkit
 			"()V"
 		);
 	}
-	void CookieSyncManager::startSync()
+	void CookieSyncManager::sync()
 	{
 		__thiz.callMethod<void>(
-			"startSync",
+			"sync",
 			"()V"
 		);
 	}

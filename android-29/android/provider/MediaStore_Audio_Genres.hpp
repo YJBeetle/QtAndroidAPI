@@ -26,10 +26,10 @@ namespace __jni_impl::android::provider
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject getContentUriForAudioId(jstring arg0, jint arg1);
-		static QAndroidJniObject getContentUriForAudioId(const QString &arg0, jint arg1);
 		static QAndroidJniObject getContentUri(jstring arg0);
 		static QAndroidJniObject getContentUri(const QString &arg0);
+		static QAndroidJniObject getContentUriForAudioId(jstring arg0, jint arg1);
+		static QAndroidJniObject getContentUriForAudioId(const QString &arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -89,6 +89,24 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
+	QAndroidJniObject MediaStore_Audio_Genres::getContentUri(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.MediaStore$Audio$Genres",
+			"getContentUri",
+			"(Ljava/lang/String;)Landroid/net/Uri;",
+			arg0
+		);
+	}
+	QAndroidJniObject MediaStore_Audio_Genres::getContentUri(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.MediaStore$Audio$Genres",
+			"getContentUri",
+			"(Ljava/lang/String;)Landroid/net/Uri;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	QAndroidJniObject MediaStore_Audio_Genres::getContentUriForAudioId(jstring arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -107,24 +125,6 @@ namespace __jni_impl::android::provider
 			"(Ljava/lang/String;I)Landroid/net/Uri;",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
-		);
-	}
-	QAndroidJniObject MediaStore_Audio_Genres::getContentUri(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.MediaStore$Audio$Genres",
-			"getContentUri",
-			"(Ljava/lang/String;)Landroid/net/Uri;",
-			arg0
-		);
-	}
-	QAndroidJniObject MediaStore_Audio_Genres::getContentUri(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.MediaStore$Audio$Genres",
-			"getContentUri",
-			"(Ljava/lang/String;)Landroid/net/Uri;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::provider

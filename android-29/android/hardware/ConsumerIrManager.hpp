@@ -17,8 +17,8 @@ namespace __jni_impl::android::hardware
 		void __constructor();
 		
 		// Methods
-		jboolean hasIrEmitter();
 		jarray getCarrierFrequencies();
+		jboolean hasIrEmitter();
 		void transmit(jint arg0, jintArray arg1);
 	};
 } // namespace __jni_impl::android::hardware
@@ -37,19 +37,19 @@ namespace __jni_impl::android::hardware
 	}
 	
 	// Methods
-	jboolean ConsumerIrManager::hasIrEmitter()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasIrEmitter",
-			"()Z"
-		);
-	}
 	jarray ConsumerIrManager::getCarrierFrequencies()
 	{
 		return __thiz.callObjectMethod(
 			"getCarrierFrequencies",
 			"()[Landroid/hardware/ConsumerIrManager$CarrierFrequencyRange;"
 		).object<jarray>();
+	}
+	jboolean ConsumerIrManager::hasIrEmitter()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasIrEmitter",
+			"()Z"
+		);
 	}
 	void ConsumerIrManager::transmit(jint arg0, jintArray arg1)
 	{

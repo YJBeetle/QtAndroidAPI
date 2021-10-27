@@ -17,8 +17,8 @@ namespace __jni_impl::java::util
 		void __constructor();
 		
 		// Methods
-		void run();
 		jboolean cancel();
+		void run();
 		jlong scheduledExecutionTime();
 	};
 } // namespace __jni_impl::java::util
@@ -37,18 +37,18 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	void TimerTask::run()
-	{
-		__thiz.callMethod<void>(
-			"run",
-			"()V"
-		);
-	}
 	jboolean TimerTask::cancel()
 	{
 		return __thiz.callMethod<jboolean>(
 			"cancel",
 			"()Z"
+		);
+	}
+	void TimerTask::run()
+	{
+		__thiz.callMethod<void>(
+			"run",
+			"()V"
 		);
 	}
 	jlong TimerTask::scheduledExecutionTime()

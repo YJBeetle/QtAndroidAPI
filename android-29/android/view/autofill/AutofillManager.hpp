@@ -5,9 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view::autofill
+namespace __jni_impl::android::content
 {
-	class AutofillManager_AutofillCallback;
+	class ComponentName;
+}
+namespace __jni_impl::android::graphics
+{
+	class Rect;
 }
 namespace __jni_impl::android::service::autofill
 {
@@ -17,21 +21,17 @@ namespace __jni_impl::android::view
 {
 	class View;
 }
-namespace __jni_impl::android::graphics
+namespace __jni_impl::android::view::autofill
 {
-	class Rect;
+	class AutofillId;
+}
+namespace __jni_impl::android::view::autofill
+{
+	class AutofillManager_AutofillCallback;
 }
 namespace __jni_impl::android::view::autofill
 {
 	class AutofillValue;
-}
-namespace __jni_impl::android::content
-{
-	class ComponentName;
-}
-namespace __jni_impl::android::view::autofill
-{
-	class AutofillId;
 }
 
 namespace __jni_impl::android::view::autofill
@@ -48,44 +48,44 @@ namespace __jni_impl::android::view::autofill
 		void __constructor();
 		
 		// Methods
-		jboolean isEnabled();
 		void cancel();
 		void commit();
-		void registerCallback(__jni_impl::android::view::autofill::AutofillManager_AutofillCallback arg0);
-		void unregisterCallback(__jni_impl::android::view::autofill::AutofillManager_AutofillCallback arg0);
-		void setUserData(__jni_impl::android::service::autofill::UserData arg0);
+		void disableAutofillServices();
+		QAndroidJniObject getAutofillServiceComponentName();
+		QAndroidJniObject getAvailableFieldClassificationAlgorithms();
+		jstring getDefaultFieldClassificationAlgorithm();
+		QAndroidJniObject getNextAutofillId();
 		QAndroidJniObject getUserData();
-		void requestAutofill(__jni_impl::android::view::View arg0);
-		void requestAutofill(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::graphics::Rect arg2);
-		void notifyViewEntered(__jni_impl::android::view::View arg0);
-		void notifyViewEntered(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::graphics::Rect arg2);
-		void notifyViewExited(__jni_impl::android::view::View arg0, jint arg1);
-		void notifyViewExited(__jni_impl::android::view::View arg0);
-		void notifyViewVisibilityChanged(__jni_impl::android::view::View arg0, jint arg1, jboolean arg2);
-		void notifyViewVisibilityChanged(__jni_impl::android::view::View arg0, jboolean arg1);
-		void notifyValueChanged(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::autofill::AutofillValue arg2);
+		jstring getUserDataId();
+		jboolean hasEnabledAutofillServices();
+		jboolean isAutofillSupported();
+		jboolean isEnabled();
+		jboolean isFieldClassificationEnabled();
 		void notifyValueChanged(__jni_impl::android::view::View arg0);
+		void notifyValueChanged(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::autofill::AutofillValue arg2);
 		void notifyViewClicked(__jni_impl::android::view::View arg0);
 		void notifyViewClicked(__jni_impl::android::view::View arg0, jint arg1);
-		void disableAutofillServices();
-		jboolean hasEnabledAutofillServices();
-		QAndroidJniObject getAutofillServiceComponentName();
-		jstring getUserDataId();
-		jboolean isFieldClassificationEnabled();
-		jstring getDefaultFieldClassificationAlgorithm();
-		QAndroidJniObject getAvailableFieldClassificationAlgorithms();
-		jboolean isAutofillSupported();
-		QAndroidJniObject getNextAutofillId();
+		void notifyViewEntered(__jni_impl::android::view::View arg0);
+		void notifyViewEntered(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::graphics::Rect arg2);
+		void notifyViewExited(__jni_impl::android::view::View arg0);
+		void notifyViewExited(__jni_impl::android::view::View arg0, jint arg1);
+		void notifyViewVisibilityChanged(__jni_impl::android::view::View arg0, jboolean arg1);
+		void notifyViewVisibilityChanged(__jni_impl::android::view::View arg0, jint arg1, jboolean arg2);
+		void registerCallback(__jni_impl::android::view::autofill::AutofillManager_AutofillCallback arg0);
+		void requestAutofill(__jni_impl::android::view::View arg0);
+		void requestAutofill(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::graphics::Rect arg2);
+		void setUserData(__jni_impl::android::service::autofill::UserData arg0);
+		void unregisterCallback(__jni_impl::android::view::autofill::AutofillManager_AutofillCallback arg0);
 	};
 } // namespace __jni_impl::android::view::autofill
 
-#include "AutofillManager_AutofillCallback.hpp"
+#include "../../content/ComponentName.hpp"
+#include "../../graphics/Rect.hpp"
 #include "../../service/autofill/UserData.hpp"
 #include "../View.hpp"
-#include "../../graphics/Rect.hpp"
-#include "AutofillValue.hpp"
-#include "../../content/ComponentName.hpp"
 #include "AutofillId.hpp"
+#include "AutofillManager_AutofillCallback.hpp"
+#include "AutofillValue.hpp"
 
 namespace __jni_impl::android::view::autofill
 {
@@ -124,13 +124,6 @@ namespace __jni_impl::android::view::autofill
 	}
 	
 	// Methods
-	jboolean AutofillManager::isEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEnabled",
-			"()Z"
-		);
-	}
 	void AutofillManager::cancel()
 	{
 		__thiz.callMethod<void>(
@@ -145,28 +138,39 @@ namespace __jni_impl::android::view::autofill
 			"()V"
 		);
 	}
-	void AutofillManager::registerCallback(__jni_impl::android::view::autofill::AutofillManager_AutofillCallback arg0)
+	void AutofillManager::disableAutofillServices()
 	{
 		__thiz.callMethod<void>(
-			"registerCallback",
-			"(Landroid/view/autofill/AutofillManager$AutofillCallback;)V",
-			arg0.__jniObject().object()
+			"disableAutofillServices",
+			"()V"
 		);
 	}
-	void AutofillManager::unregisterCallback(__jni_impl::android::view::autofill::AutofillManager_AutofillCallback arg0)
+	QAndroidJniObject AutofillManager::getAutofillServiceComponentName()
 	{
-		__thiz.callMethod<void>(
-			"unregisterCallback",
-			"(Landroid/view/autofill/AutofillManager$AutofillCallback;)V",
-			arg0.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"getAutofillServiceComponentName",
+			"()Landroid/content/ComponentName;"
 		);
 	}
-	void AutofillManager::setUserData(__jni_impl::android::service::autofill::UserData arg0)
+	QAndroidJniObject AutofillManager::getAvailableFieldClassificationAlgorithms()
 	{
-		__thiz.callMethod<void>(
-			"setUserData",
-			"(Landroid/service/autofill/UserData;)V",
-			arg0.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"getAvailableFieldClassificationAlgorithms",
+			"()Ljava/util/List;"
+		);
+	}
+	jstring AutofillManager::getDefaultFieldClassificationAlgorithm()
+	{
+		return __thiz.callObjectMethod(
+			"getDefaultFieldClassificationAlgorithm",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject AutofillManager::getNextAutofillId()
+	{
+		return __thiz.callObjectMethod(
+			"getNextAutofillId",
+			"()Landroid/view/autofill/AutofillId;"
 		);
 	}
 	QAndroidJniObject AutofillManager::getUserData()
@@ -176,22 +180,74 @@ namespace __jni_impl::android::view::autofill
 			"()Landroid/service/autofill/UserData;"
 		);
 	}
-	void AutofillManager::requestAutofill(__jni_impl::android::view::View arg0)
+	jstring AutofillManager::getUserDataId()
+	{
+		return __thiz.callObjectMethod(
+			"getUserDataId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jboolean AutofillManager::hasEnabledAutofillServices()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasEnabledAutofillServices",
+			"()Z"
+		);
+	}
+	jboolean AutofillManager::isAutofillSupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAutofillSupported",
+			"()Z"
+		);
+	}
+	jboolean AutofillManager::isEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEnabled",
+			"()Z"
+		);
+	}
+	jboolean AutofillManager::isFieldClassificationEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isFieldClassificationEnabled",
+			"()Z"
+		);
+	}
+	void AutofillManager::notifyValueChanged(__jni_impl::android::view::View arg0)
 	{
 		__thiz.callMethod<void>(
-			"requestAutofill",
+			"notifyValueChanged",
 			"(Landroid/view/View;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	void AutofillManager::requestAutofill(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::graphics::Rect arg2)
+	void AutofillManager::notifyValueChanged(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::autofill::AutofillValue arg2)
 	{
 		__thiz.callMethod<void>(
-			"requestAutofill",
-			"(Landroid/view/View;ILandroid/graphics/Rect;)V",
+			"notifyValueChanged",
+			"(Landroid/view/View;ILandroid/view/autofill/AutofillValue;)V",
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object()
+		);
+	}
+	void AutofillManager::notifyViewClicked(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"notifyViewClicked",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AutofillManager::notifyViewClicked(__jni_impl::android::view::View arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"notifyViewClicked",
+			"(Landroid/view/View;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 	void AutofillManager::notifyViewEntered(__jni_impl::android::view::View arg0)
@@ -212,6 +268,14 @@ namespace __jni_impl::android::view::autofill
 			arg2.__jniObject().object()
 		);
 	}
+	void AutofillManager::notifyViewExited(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"notifyViewExited",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void AutofillManager::notifyViewExited(__jni_impl::android::view::View arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -221,12 +285,13 @@ namespace __jni_impl::android::view::autofill
 			arg1
 		);
 	}
-	void AutofillManager::notifyViewExited(__jni_impl::android::view::View arg0)
+	void AutofillManager::notifyViewVisibilityChanged(__jni_impl::android::view::View arg0, jboolean arg1)
 	{
 		__thiz.callMethod<void>(
-			"notifyViewExited",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
+			"notifyViewVisibilityChanged",
+			"(Landroid/view/View;Z)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 	void AutofillManager::notifyViewVisibilityChanged(__jni_impl::android::view::View arg0, jint arg1, jboolean arg2)
@@ -239,111 +304,46 @@ namespace __jni_impl::android::view::autofill
 			arg2
 		);
 	}
-	void AutofillManager::notifyViewVisibilityChanged(__jni_impl::android::view::View arg0, jboolean arg1)
+	void AutofillManager::registerCallback(__jni_impl::android::view::autofill::AutofillManager_AutofillCallback arg0)
 	{
 		__thiz.callMethod<void>(
-			"notifyViewVisibilityChanged",
-			"(Landroid/view/View;Z)V",
-			arg0.__jniObject().object(),
-			arg1
+			"registerCallback",
+			"(Landroid/view/autofill/AutofillManager$AutofillCallback;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	void AutofillManager::notifyValueChanged(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::autofill::AutofillValue arg2)
+	void AutofillManager::requestAutofill(__jni_impl::android::view::View arg0)
 	{
 		__thiz.callMethod<void>(
-			"notifyValueChanged",
-			"(Landroid/view/View;ILandroid/view/autofill/AutofillValue;)V",
+			"requestAutofill",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AutofillManager::requestAutofill(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::graphics::Rect arg2)
+	{
+		__thiz.callMethod<void>(
+			"requestAutofill",
+			"(Landroid/view/View;ILandroid/graphics/Rect;)V",
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object()
 		);
 	}
-	void AutofillManager::notifyValueChanged(__jni_impl::android::view::View arg0)
+	void AutofillManager::setUserData(__jni_impl::android::service::autofill::UserData arg0)
 	{
 		__thiz.callMethod<void>(
-			"notifyValueChanged",
-			"(Landroid/view/View;)V",
+			"setUserData",
+			"(Landroid/service/autofill/UserData;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	void AutofillManager::notifyViewClicked(__jni_impl::android::view::View arg0)
+	void AutofillManager::unregisterCallback(__jni_impl::android::view::autofill::AutofillManager_AutofillCallback arg0)
 	{
 		__thiz.callMethod<void>(
-			"notifyViewClicked",
-			"(Landroid/view/View;)V",
+			"unregisterCallback",
+			"(Landroid/view/autofill/AutofillManager$AutofillCallback;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	void AutofillManager::notifyViewClicked(__jni_impl::android::view::View arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"notifyViewClicked",
-			"(Landroid/view/View;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void AutofillManager::disableAutofillServices()
-	{
-		__thiz.callMethod<void>(
-			"disableAutofillServices",
-			"()V"
-		);
-	}
-	jboolean AutofillManager::hasEnabledAutofillServices()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasEnabledAutofillServices",
-			"()Z"
-		);
-	}
-	QAndroidJniObject AutofillManager::getAutofillServiceComponentName()
-	{
-		return __thiz.callObjectMethod(
-			"getAutofillServiceComponentName",
-			"()Landroid/content/ComponentName;"
-		);
-	}
-	jstring AutofillManager::getUserDataId()
-	{
-		return __thiz.callObjectMethod(
-			"getUserDataId",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jboolean AutofillManager::isFieldClassificationEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isFieldClassificationEnabled",
-			"()Z"
-		);
-	}
-	jstring AutofillManager::getDefaultFieldClassificationAlgorithm()
-	{
-		return __thiz.callObjectMethod(
-			"getDefaultFieldClassificationAlgorithm",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject AutofillManager::getAvailableFieldClassificationAlgorithms()
-	{
-		return __thiz.callObjectMethod(
-			"getAvailableFieldClassificationAlgorithms",
-			"()Ljava/util/List;"
-		);
-	}
-	jboolean AutofillManager::isAutofillSupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAutofillSupported",
-			"()Z"
-		);
-	}
-	QAndroidJniObject AutofillManager::getNextAutofillId()
-	{
-		return __thiz.callObjectMethod(
-			"getNextAutofillId",
-			"()Landroid/view/autofill/AutofillId;"
 		);
 	}
 } // namespace __jni_impl::android::view::autofill

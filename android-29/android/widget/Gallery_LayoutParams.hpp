@@ -23,9 +23,9 @@ namespace __jni_impl::android::widget
 		// Fields
 		
 		// Constructors
+		void __constructor(__jni_impl::android::view::ViewGroup_LayoutParams arg0);
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		void __constructor(jint arg0, jint arg1);
-		void __constructor(__jni_impl::android::view::ViewGroup_LayoutParams arg0);
 		
 		// Methods
 	};
@@ -39,6 +39,14 @@ namespace __jni_impl::android::widget
 	// Fields
 	
 	// Constructors
+	void Gallery_LayoutParams::__constructor(__jni_impl::android::view::ViewGroup_LayoutParams arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.widget.Gallery$LayoutParams",
+			"(Landroid/view/ViewGroup$LayoutParams;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void Gallery_LayoutParams::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -57,14 +65,6 @@ namespace __jni_impl::android::widget
 			arg1
 		);
 	}
-	void Gallery_LayoutParams::__constructor(__jni_impl::android::view::ViewGroup_LayoutParams arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.widget.Gallery$LayoutParams",
-			"(Landroid/view/ViewGroup$LayoutParams;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::android::widget
@@ -75,6 +75,11 @@ namespace android::widget
 	{
 	public:
 		Gallery_LayoutParams(QAndroidJniObject obj) { __thiz = obj; }
+		Gallery_LayoutParams(__jni_impl::android::view::ViewGroup_LayoutParams arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		Gallery_LayoutParams(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 		{
 			__constructor(
@@ -86,11 +91,6 @@ namespace android::widget
 			__constructor(
 				arg0,
 				arg1);
-		}
-		Gallery_LayoutParams(__jni_impl::android::view::ViewGroup_LayoutParams arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::widget

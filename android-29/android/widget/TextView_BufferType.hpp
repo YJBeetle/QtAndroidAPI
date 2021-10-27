@@ -13,17 +13,17 @@ namespace __jni_impl::android::widget
 	{
 	public:
 		// Fields
+		static QAndroidJniObject EDITABLE();
 		static QAndroidJniObject NORMAL();
 		static QAndroidJniObject SPANNABLE();
-		static QAndroidJniObject EDITABLE();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -31,6 +31,14 @@ namespace __jni_impl::android::widget
 namespace __jni_impl::android::widget
 {
 	// Fields
+	QAndroidJniObject TextView_BufferType::EDITABLE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.widget.TextView$BufferType",
+			"EDITABLE",
+			"Landroid/widget/TextView$BufferType;"
+		);
+	}
 	QAndroidJniObject TextView_BufferType::NORMAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -47,14 +55,6 @@ namespace __jni_impl::android::widget
 			"Landroid/widget/TextView$BufferType;"
 		);
 	}
-	QAndroidJniObject TextView_BufferType::EDITABLE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.widget.TextView$BufferType",
-			"EDITABLE",
-			"Landroid/widget/TextView$BufferType;"
-		);
-	}
 	
 	// Constructors
 	void TextView_BufferType::__constructor()
@@ -65,14 +65,6 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	jarray TextView_BufferType::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.widget.TextView$BufferType",
-			"values",
-			"()[Landroid/widget/TextView$BufferType;"
-		).object<jarray>();
-	}
 	QAndroidJniObject TextView_BufferType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::android::widget
 			"(Ljava/lang/String;)Landroid/widget/TextView$BufferType;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray TextView_BufferType::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.widget.TextView$BufferType",
+			"values",
+			"()[Landroid/widget/TextView$BufferType;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::widget
 

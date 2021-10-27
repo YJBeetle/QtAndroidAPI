@@ -23,12 +23,12 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		QAndroidJniObject build();
+		QAndroidJniObject setAllowedCapturePolicy(jint arg0);
 		QAndroidJniObject setContentType(jint arg0);
+		QAndroidJniObject setFlags(jint arg0);
+		QAndroidJniObject setHapticChannelsMuted(jboolean arg0);
 		QAndroidJniObject setLegacyStreamType(jint arg0);
 		QAndroidJniObject setUsage(jint arg0);
-		QAndroidJniObject setHapticChannelsMuted(jboolean arg0);
-		QAndroidJniObject setAllowedCapturePolicy(jint arg0);
-		QAndroidJniObject setFlags(jint arg0);
 	};
 } // namespace __jni_impl::android::media
 
@@ -63,11 +63,35 @@ namespace __jni_impl::android::media
 			"()Landroid/media/AudioAttributes;"
 		);
 	}
+	QAndroidJniObject AudioAttributes_Builder::setAllowedCapturePolicy(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setAllowedCapturePolicy",
+			"(I)Landroid/media/AudioAttributes$Builder;",
+			arg0
+		);
+	}
 	QAndroidJniObject AudioAttributes_Builder::setContentType(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setContentType",
 			"(I)Landroid/media/AudioAttributes$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject AudioAttributes_Builder::setFlags(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setFlags",
+			"(I)Landroid/media/AudioAttributes$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject AudioAttributes_Builder::setHapticChannelsMuted(jboolean arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setHapticChannelsMuted",
+			"(Z)Landroid/media/AudioAttributes$Builder;",
 			arg0
 		);
 	}
@@ -83,30 +107,6 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callObjectMethod(
 			"setUsage",
-			"(I)Landroid/media/AudioAttributes$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject AudioAttributes_Builder::setHapticChannelsMuted(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setHapticChannelsMuted",
-			"(Z)Landroid/media/AudioAttributes$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject AudioAttributes_Builder::setAllowedCapturePolicy(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setAllowedCapturePolicy",
-			"(I)Landroid/media/AudioAttributes$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject AudioAttributes_Builder::setFlags(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setFlags",
 			"(I)Landroid/media/AudioAttributes$Builder;",
 			arg0
 		);

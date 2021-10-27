@@ -21,9 +21,9 @@ namespace __jni_impl::android::os
 		// Fields
 		
 		// Constructors
+		void __constructor(__jni_impl::java::lang::Exception arg0);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor(__jni_impl::java::lang::Exception arg0);
 		
 		// Methods
 	};
@@ -36,6 +36,14 @@ namespace __jni_impl::android::os
 	// Fields
 	
 	// Constructors
+	void BadParcelableException::__constructor(__jni_impl::java::lang::Exception arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.os.BadParcelableException",
+			"(Ljava/lang/Exception;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void BadParcelableException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -52,14 +60,6 @@ namespace __jni_impl::android::os
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void BadParcelableException::__constructor(__jni_impl::java::lang::Exception arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.os.BadParcelableException",
-			"(Ljava/lang/Exception;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::android::os
@@ -70,12 +70,12 @@ namespace android::os
 	{
 	public:
 		BadParcelableException(QAndroidJniObject obj) { __thiz = obj; }
-		BadParcelableException(jstring arg0)
+		BadParcelableException(__jni_impl::java::lang::Exception arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		BadParcelableException(__jni_impl::java::lang::Exception arg0)
+		BadParcelableException(jstring arg0)
 		{
 			__constructor(
 				arg0);

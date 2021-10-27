@@ -24,14 +24,14 @@ namespace __jni_impl::android::content::pm
 		void __constructor(const QString &arg0);
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
 		jint hashCode();
-		jcharArray toChars(jcharArray arg0, jintArray arg1);
-		jcharArray toChars();
 		jbyteArray toByteArray();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jcharArray toChars();
+		jcharArray toChars(jcharArray arg0, jintArray arg1);
 		jstring toCharsString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content::pm
 
@@ -76,6 +76,13 @@ namespace __jni_impl::android::content::pm
 	}
 	
 	// Methods
+	jint Signature::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean Signature::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -91,6 +98,20 @@ namespace __jni_impl::android::content::pm
 			"()I"
 		);
 	}
+	jbyteArray Signature::toByteArray()
+	{
+		return __thiz.callObjectMethod(
+			"toByteArray",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jcharArray Signature::toChars()
+	{
+		return __thiz.callObjectMethod(
+			"toChars",
+			"()[C"
+		).object<jcharArray>();
+	}
 	jcharArray Signature::toChars(jcharArray arg0, jintArray arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -100,26 +121,12 @@ namespace __jni_impl::android::content::pm
 			arg1
 		).object<jcharArray>();
 	}
-	jcharArray Signature::toChars()
+	jstring Signature::toCharsString()
 	{
 		return __thiz.callObjectMethod(
-			"toChars",
-			"()[C"
-		).object<jcharArray>();
-	}
-	jbyteArray Signature::toByteArray()
-	{
-		return __thiz.callObjectMethod(
-			"toByteArray",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	jint Signature::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+			"toCharsString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Signature::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -129,13 +136,6 @@ namespace __jni_impl::android::content::pm
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jstring Signature::toCharsString()
-	{
-		return __thiz.callObjectMethod(
-			"toCharsString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::content::pm
 

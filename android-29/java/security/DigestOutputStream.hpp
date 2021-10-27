@@ -7,13 +7,13 @@
 #include "../io/OutputStream.hpp"
 #include "../io/FilterOutputStream.hpp"
 
-namespace __jni_impl::java::security
-{
-	class MessageDigest;
-}
 namespace __jni_impl::java::io
 {
 	class OutputStream;
+}
+namespace __jni_impl::java::security
+{
+	class MessageDigest;
 }
 
 namespace __jni_impl::java::security
@@ -27,17 +27,17 @@ namespace __jni_impl::java::security
 		void __constructor(__jni_impl::java::io::OutputStream arg0, __jni_impl::java::security::MessageDigest arg1);
 		
 		// Methods
+		QAndroidJniObject getMessageDigest();
+		void on(jboolean arg0);
+		void setMessageDigest(__jni_impl::java::security::MessageDigest arg0);
 		jstring toString();
 		void write(jint arg0);
 		void write(jbyteArray arg0, jint arg1, jint arg2);
-		void on(jboolean arg0);
-		void setMessageDigest(__jni_impl::java::security::MessageDigest arg0);
-		QAndroidJniObject getMessageDigest();
 	};
 } // namespace __jni_impl::java::security
 
-#include "MessageDigest.hpp"
 #include "../io/OutputStream.hpp"
+#include "MessageDigest.hpp"
 
 namespace __jni_impl::java::security
 {
@@ -55,6 +55,29 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
+	QAndroidJniObject DigestOutputStream::getMessageDigest()
+	{
+		return __thiz.callObjectMethod(
+			"getMessageDigest",
+			"()Ljava/security/MessageDigest;"
+		);
+	}
+	void DigestOutputStream::on(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"on",
+			"(Z)V",
+			arg0
+		);
+	}
+	void DigestOutputStream::setMessageDigest(__jni_impl::java::security::MessageDigest arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMessageDigest",
+			"(Ljava/security/MessageDigest;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	jstring DigestOutputStream::toString()
 	{
 		return __thiz.callObjectMethod(
@@ -78,29 +101,6 @@ namespace __jni_impl::java::security
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	void DigestOutputStream::on(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"on",
-			"(Z)V",
-			arg0
-		);
-	}
-	void DigestOutputStream::setMessageDigest(__jni_impl::java::security::MessageDigest arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMessageDigest",
-			"(Ljava/security/MessageDigest;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject DigestOutputStream::getMessageDigest()
-	{
-		return __thiz.callObjectMethod(
-			"getMessageDigest",
-			"()Ljava/security/MessageDigest;"
 		);
 	}
 } // namespace __jni_impl::java::security

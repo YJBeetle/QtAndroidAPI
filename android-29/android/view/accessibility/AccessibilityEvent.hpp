@@ -6,13 +6,13 @@
 #include "../../../__JniBaseClass.hpp"
 #include "AccessibilityRecord.hpp"
 
-namespace __jni_impl::android::view::accessibility
-{
-	class AccessibilityRecord;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::view::accessibility
+{
+	class AccessibilityRecord;
 }
 
 namespace __jni_impl::android::view::accessibility
@@ -73,37 +73,37 @@ namespace __jni_impl::android::view::accessibility
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		jstring getPackageName();
-		jlong getEventTime();
-		jint getRecordCount();
-		void appendRecord(__jni_impl::android::view::accessibility::AccessibilityRecord arg0);
-		QAndroidJniObject getRecord(jint arg0);
-		jint getEventType();
-		jint getContentChangeTypes();
-		void setContentChangeTypes(jint arg0);
-		jint getWindowChanges();
-		void setEventType(jint arg0);
-		void setEventTime(jlong arg0);
-		void setPackageName(jstring arg0);
-		void setPackageName(const QString &arg0);
-		void setMovementGranularity(jint arg0);
-		jint getMovementGranularity();
-		void initFromParcel(__jni_impl::android::os::Parcel arg0);
 		static jstring eventTypeToString(jint arg0);
-		jint getAction();
+		static QAndroidJniObject obtain();
 		static QAndroidJniObject obtain(__jni_impl::android::view::accessibility::AccessibilityEvent arg0);
 		static QAndroidJniObject obtain(jint arg0);
-		static QAndroidJniObject obtain();
-		void recycle();
+		void appendRecord(__jni_impl::android::view::accessibility::AccessibilityRecord arg0);
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getAction();
+		jint getContentChangeTypes();
+		jlong getEventTime();
+		jint getEventType();
+		jint getMovementGranularity();
+		jstring getPackageName();
+		QAndroidJniObject getRecord(jint arg0);
+		jint getRecordCount();
+		jint getWindowChanges();
+		void initFromParcel(__jni_impl::android::os::Parcel arg0);
+		void recycle();
 		void setAction(jint arg0);
+		void setContentChangeTypes(jint arg0);
+		void setEventTime(jlong arg0);
+		void setEventType(jint arg0);
+		void setMovementGranularity(jint arg0);
+		void setPackageName(jstring arg0);
+		void setPackageName(const QString &arg0);
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::accessibility
 
-#include "AccessibilityRecord.hpp"
 #include "../../os/Parcel.hpp"
+#include "AccessibilityRecord.hpp"
 
 namespace __jni_impl::android::view::accessibility
 {
@@ -448,134 +448,6 @@ namespace __jni_impl::android::view::accessibility
 	}
 	
 	// Methods
-	jstring AccessibilityEvent::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring AccessibilityEvent::getPackageName()
-	{
-		return __thiz.callObjectMethod(
-			"getPackageName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	jlong AccessibilityEvent::getEventTime()
-	{
-		return __thiz.callMethod<jlong>(
-			"getEventTime",
-			"()J"
-		);
-	}
-	jint AccessibilityEvent::getRecordCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getRecordCount",
-			"()I"
-		);
-	}
-	void AccessibilityEvent::appendRecord(__jni_impl::android::view::accessibility::AccessibilityRecord arg0)
-	{
-		__thiz.callMethod<void>(
-			"appendRecord",
-			"(Landroid/view/accessibility/AccessibilityRecord;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject AccessibilityEvent::getRecord(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getRecord",
-			"(I)Landroid/view/accessibility/AccessibilityRecord;",
-			arg0
-		);
-	}
-	jint AccessibilityEvent::getEventType()
-	{
-		return __thiz.callMethod<jint>(
-			"getEventType",
-			"()I"
-		);
-	}
-	jint AccessibilityEvent::getContentChangeTypes()
-	{
-		return __thiz.callMethod<jint>(
-			"getContentChangeTypes",
-			"()I"
-		);
-	}
-	void AccessibilityEvent::setContentChangeTypes(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setContentChangeTypes",
-			"(I)V",
-			arg0
-		);
-	}
-	jint AccessibilityEvent::getWindowChanges()
-	{
-		return __thiz.callMethod<jint>(
-			"getWindowChanges",
-			"()I"
-		);
-	}
-	void AccessibilityEvent::setEventType(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEventType",
-			"(I)V",
-			arg0
-		);
-	}
-	void AccessibilityEvent::setEventTime(jlong arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEventTime",
-			"(J)V",
-			arg0
-		);
-	}
-	void AccessibilityEvent::setPackageName(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPackageName",
-			"(Ljava/lang/CharSequence;)V",
-			arg0
-		);
-	}
-	void AccessibilityEvent::setPackageName(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setPackageName",
-			"(Ljava/lang/CharSequence;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void AccessibilityEvent::setMovementGranularity(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMovementGranularity",
-			"(I)V",
-			arg0
-		);
-	}
-	jint AccessibilityEvent::getMovementGranularity()
-	{
-		return __thiz.callMethod<jint>(
-			"getMovementGranularity",
-			"()I"
-		);
-	}
-	void AccessibilityEvent::initFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"initFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	jstring AccessibilityEvent::eventTypeToString(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -585,11 +457,12 @@ namespace __jni_impl::android::view::accessibility
 			arg0
 		).object<jstring>();
 	}
-	jint AccessibilityEvent::getAction()
+	QAndroidJniObject AccessibilityEvent::obtain()
 	{
-		return __thiz.callMethod<jint>(
-			"getAction",
-			"()I"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.accessibility.AccessibilityEvent",
+			"obtain",
+			"()Landroid/view/accessibility/AccessibilityEvent;"
 		);
 	}
 	QAndroidJniObject AccessibilityEvent::obtain(__jni_impl::android::view::accessibility::AccessibilityEvent arg0)
@@ -610,19 +483,12 @@ namespace __jni_impl::android::view::accessibility
 			arg0
 		);
 	}
-	QAndroidJniObject AccessibilityEvent::obtain()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.accessibility.AccessibilityEvent",
-			"obtain",
-			"()Landroid/view/accessibility/AccessibilityEvent;"
-		);
-	}
-	void AccessibilityEvent::recycle()
+	void AccessibilityEvent::appendRecord(__jni_impl::android::view::accessibility::AccessibilityRecord arg0)
 	{
 		__thiz.callMethod<void>(
-			"recycle",
-			"()V"
+			"appendRecord",
+			"(Landroid/view/accessibility/AccessibilityRecord;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	jint AccessibilityEvent::describeContents()
@@ -632,13 +498,83 @@ namespace __jni_impl::android::view::accessibility
 			"()I"
 		);
 	}
-	void AccessibilityEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jint AccessibilityEvent::getAction()
+	{
+		return __thiz.callMethod<jint>(
+			"getAction",
+			"()I"
+		);
+	}
+	jint AccessibilityEvent::getContentChangeTypes()
+	{
+		return __thiz.callMethod<jint>(
+			"getContentChangeTypes",
+			"()I"
+		);
+	}
+	jlong AccessibilityEvent::getEventTime()
+	{
+		return __thiz.callMethod<jlong>(
+			"getEventTime",
+			"()J"
+		);
+	}
+	jint AccessibilityEvent::getEventType()
+	{
+		return __thiz.callMethod<jint>(
+			"getEventType",
+			"()I"
+		);
+	}
+	jint AccessibilityEvent::getMovementGranularity()
+	{
+		return __thiz.callMethod<jint>(
+			"getMovementGranularity",
+			"()I"
+		);
+	}
+	jstring AccessibilityEvent::getPackageName()
+	{
+		return __thiz.callObjectMethod(
+			"getPackageName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	QAndroidJniObject AccessibilityEvent::getRecord(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getRecord",
+			"(I)Landroid/view/accessibility/AccessibilityRecord;",
+			arg0
+		);
+	}
+	jint AccessibilityEvent::getRecordCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getRecordCount",
+			"()I"
+		);
+	}
+	jint AccessibilityEvent::getWindowChanges()
+	{
+		return __thiz.callMethod<jint>(
+			"getWindowChanges",
+			"()I"
+		);
+	}
+	void AccessibilityEvent::initFromParcel(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+			"initFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AccessibilityEvent::recycle()
+	{
+		__thiz.callMethod<void>(
+			"recycle",
+			"()V"
 		);
 	}
 	void AccessibilityEvent::setAction(jint arg0)
@@ -647,6 +583,70 @@ namespace __jni_impl::android::view::accessibility
 			"setAction",
 			"(I)V",
 			arg0
+		);
+	}
+	void AccessibilityEvent::setContentChangeTypes(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setContentChangeTypes",
+			"(I)V",
+			arg0
+		);
+	}
+	void AccessibilityEvent::setEventTime(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEventTime",
+			"(J)V",
+			arg0
+		);
+	}
+	void AccessibilityEvent::setEventType(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEventType",
+			"(I)V",
+			arg0
+		);
+	}
+	void AccessibilityEvent::setMovementGranularity(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMovementGranularity",
+			"(I)V",
+			arg0
+		);
+	}
+	void AccessibilityEvent::setPackageName(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPackageName",
+			"(Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void AccessibilityEvent::setPackageName(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPackageName",
+			"(Ljava/lang/CharSequence;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jstring AccessibilityEvent::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void AccessibilityEvent::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::view::accessibility

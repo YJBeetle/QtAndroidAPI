@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::inputmethodservice
-{
-	class Keyboard;
-}
 namespace __jni_impl::android::content::res
 {
 	class Resources;
+}
+namespace __jni_impl::android::inputmethodservice
+{
+	class Keyboard;
 }
 
 namespace __jni_impl::android::inputmethodservice
@@ -35,8 +35,8 @@ namespace __jni_impl::android::inputmethodservice
 	};
 } // namespace __jni_impl::android::inputmethodservice
 
-#include "Keyboard.hpp"
 #include "../content/res/Resources.hpp"
+#include "Keyboard.hpp"
 
 namespace __jni_impl::android::inputmethodservice
 {

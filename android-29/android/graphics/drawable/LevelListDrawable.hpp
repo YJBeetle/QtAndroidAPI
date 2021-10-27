@@ -35,8 +35,8 @@ namespace __jni_impl::android::graphics::drawable
 		void __constructor();
 		
 		// Methods
-		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
 		void addLevel(jint arg0, jint arg1, __jni_impl::android::graphics::drawable::Drawable arg2);
+		void inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3);
 		QAndroidJniObject mutate();
 	};
 } // namespace __jni_impl::android::graphics::drawable
@@ -60,6 +60,16 @@ namespace __jni_impl::android::graphics::drawable
 	}
 	
 	// Methods
+	void LevelListDrawable::addLevel(jint arg0, jint arg1, __jni_impl::android::graphics::drawable::Drawable arg2)
+	{
+		__thiz.callMethod<void>(
+			"addLevel",
+			"(IILandroid/graphics/drawable/Drawable;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
 	void LevelListDrawable::inflate(__jni_impl::android::content::res::Resources arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::android::content::res::Resources_Theme arg3)
 	{
 		__thiz.callMethod<void>(
@@ -69,16 +79,6 @@ namespace __jni_impl::android::graphics::drawable
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
-		);
-	}
-	void LevelListDrawable::addLevel(jint arg0, jint arg1, __jni_impl::android::graphics::drawable::Drawable arg2)
-	{
-		__thiz.callMethod<void>(
-			"addLevel",
-			"(IILandroid/graphics/drawable/Drawable;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
 		);
 	}
 	QAndroidJniObject LevelListDrawable::mutate()

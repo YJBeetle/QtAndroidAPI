@@ -19,15 +19,15 @@ namespace __jni_impl::java::io
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::java::io::PipedReader arg0);
 		void __constructor();
+		void __constructor(__jni_impl::java::io::PipedReader arg0);
 		
 		// Methods
-		void write(jint arg0);
-		void write(jcharArray arg0, jint arg1, jint arg2);
+		void close();
 		void connect(__jni_impl::java::io::PipedReader arg0);
 		void flush();
-		void close();
+		void write(jint arg0);
+		void write(jcharArray arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::java::io
 
@@ -38,6 +38,13 @@ namespace __jni_impl::java::io
 	// Fields
 	
 	// Constructors
+	void PipedWriter::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.PipedWriter",
+			"()V"
+		);
+	}
 	void PipedWriter::__constructor(__jni_impl::java::io::PipedReader arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -46,15 +53,30 @@ namespace __jni_impl::java::io
 			arg0.__jniObject().object()
 		);
 	}
-	void PipedWriter::__constructor()
+	
+	// Methods
+	void PipedWriter::close()
 	{
-		__thiz = QAndroidJniObject(
-			"java.io.PipedWriter",
+		__thiz.callMethod<void>(
+			"close",
 			"()V"
 		);
 	}
-	
-	// Methods
+	void PipedWriter::connect(__jni_impl::java::io::PipedReader arg0)
+	{
+		__thiz.callMethod<void>(
+			"connect",
+			"(Ljava/io/PipedReader;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void PipedWriter::flush()
+	{
+		__thiz.callMethod<void>(
+			"flush",
+			"()V"
+		);
+	}
 	void PipedWriter::write(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -73,28 +95,6 @@ namespace __jni_impl::java::io
 			arg2
 		);
 	}
-	void PipedWriter::connect(__jni_impl::java::io::PipedReader arg0)
-	{
-		__thiz.callMethod<void>(
-			"connect",
-			"(Ljava/io/PipedReader;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void PipedWriter::flush()
-	{
-		__thiz.callMethod<void>(
-			"flush",
-			"()V"
-		);
-	}
-	void PipedWriter::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
-	}
 } // namespace __jni_impl::java::io
 
 namespace java::io
@@ -103,14 +103,14 @@ namespace java::io
 	{
 	public:
 		PipedWriter(QAndroidJniObject obj) { __thiz = obj; }
+		PipedWriter()
+		{
+			__constructor();
+		}
 		PipedWriter(__jni_impl::java::io::PipedReader arg0)
 		{
 			__constructor(
 				arg0);
-		}
-		PipedWriter()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::io

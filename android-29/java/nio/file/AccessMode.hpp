@@ -13,17 +13,17 @@ namespace __jni_impl::java::nio::file
 	{
 	public:
 		// Fields
+		static QAndroidJniObject EXECUTE();
 		static QAndroidJniObject READ();
 		static QAndroidJniObject WRITE();
-		static QAndroidJniObject EXECUTE();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::nio::file
 
@@ -31,6 +31,14 @@ namespace __jni_impl::java::nio::file
 namespace __jni_impl::java::nio::file
 {
 	// Fields
+	QAndroidJniObject AccessMode::EXECUTE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.nio.file.AccessMode",
+			"EXECUTE",
+			"Ljava/nio/file/AccessMode;"
+		);
+	}
 	QAndroidJniObject AccessMode::READ()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -47,14 +55,6 @@ namespace __jni_impl::java::nio::file
 			"Ljava/nio/file/AccessMode;"
 		);
 	}
-	QAndroidJniObject AccessMode::EXECUTE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.nio.file.AccessMode",
-			"EXECUTE",
-			"Ljava/nio/file/AccessMode;"
-		);
-	}
 	
 	// Constructors
 	void AccessMode::__constructor()
@@ -65,14 +65,6 @@ namespace __jni_impl::java::nio::file
 	}
 	
 	// Methods
-	jarray AccessMode::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.AccessMode",
-			"values",
-			"()[Ljava/nio/file/AccessMode;"
-		).object<jarray>();
-	}
 	QAndroidJniObject AccessMode::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::java::nio::file
 			"(Ljava/lang/String;)Ljava/nio/file/AccessMode;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray AccessMode::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.file.AccessMode",
+			"values",
+			"()[Ljava/nio/file/AccessMode;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::nio::file
 

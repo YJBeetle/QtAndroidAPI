@@ -13,17 +13,17 @@ namespace __jni_impl::android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject UNKNOWN();
-		static QAndroidJniObject STANDARD();
 		static QAndroidJniObject DAYLIGHT();
+		static QAndroidJniObject STANDARD();
+		static QAndroidJniObject UNKNOWN();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -31,11 +31,11 @@ namespace __jni_impl::android::icu::text
 namespace __jni_impl::android::icu::text
 {
 	// Fields
-	QAndroidJniObject TimeZoneFormat_TimeType::UNKNOWN()
+	QAndroidJniObject TimeZoneFormat_TimeType::DAYLIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$TimeType",
-			"UNKNOWN",
+			"DAYLIGHT",
 			"Landroid/icu/text/TimeZoneFormat$TimeType;"
 		);
 	}
@@ -47,11 +47,11 @@ namespace __jni_impl::android::icu::text
 			"Landroid/icu/text/TimeZoneFormat$TimeType;"
 		);
 	}
-	QAndroidJniObject TimeZoneFormat_TimeType::DAYLIGHT()
+	QAndroidJniObject TimeZoneFormat_TimeType::UNKNOWN()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneFormat$TimeType",
-			"DAYLIGHT",
+			"UNKNOWN",
 			"Landroid/icu/text/TimeZoneFormat$TimeType;"
 		);
 	}
@@ -65,14 +65,6 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jarray TimeZoneFormat_TimeType::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.TimeZoneFormat$TimeType",
-			"values",
-			"()[Landroid/icu/text/TimeZoneFormat$TimeType;"
-		).object<jarray>();
-	}
 	QAndroidJniObject TimeZoneFormat_TimeType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneFormat$TimeType;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray TimeZoneFormat_TimeType::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.TimeZoneFormat$TimeType",
+			"values",
+			"()[Landroid/icu/text/TimeZoneFormat$TimeType;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::icu::text
 

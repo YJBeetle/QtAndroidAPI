@@ -17,9 +17,9 @@ namespace __jni_impl::android::media
 		void __constructor(jint arg0, jint arg1);
 		
 		// Methods
-		void set(jint arg0, jint arg1);
-		jint getSkipBlocks();
 		jint getEncryptBlocks();
+		jint getSkipBlocks();
+		void set(jint arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
 
@@ -40,13 +40,11 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	void MediaCodec_CryptoInfo_Pattern::set(jint arg0, jint arg1)
+	jint MediaCodec_CryptoInfo_Pattern::getEncryptBlocks()
 	{
-		__thiz.callMethod<void>(
-			"set",
-			"(II)V",
-			arg0,
-			arg1
+		return __thiz.callMethod<jint>(
+			"getEncryptBlocks",
+			"()I"
 		);
 	}
 	jint MediaCodec_CryptoInfo_Pattern::getSkipBlocks()
@@ -56,11 +54,13 @@ namespace __jni_impl::android::media
 			"()I"
 		);
 	}
-	jint MediaCodec_CryptoInfo_Pattern::getEncryptBlocks()
+	void MediaCodec_CryptoInfo_Pattern::set(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jint>(
-			"getEncryptBlocks",
-			"()I"
+		__thiz.callMethod<void>(
+			"set",
+			"(II)V",
+			arg0,
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::media

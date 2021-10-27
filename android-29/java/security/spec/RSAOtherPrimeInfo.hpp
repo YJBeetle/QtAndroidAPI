@@ -21,9 +21,9 @@ namespace __jni_impl::java::security::spec
 		void __constructor(__jni_impl::java::math::BigInteger arg0, __jni_impl::java::math::BigInteger arg1, __jni_impl::java::math::BigInteger arg2);
 		
 		// Methods
+		QAndroidJniObject getCrtCoefficient();
 		QAndroidJniObject getExponent();
 		QAndroidJniObject getPrime();
-		QAndroidJniObject getCrtCoefficient();
 	};
 } // namespace __jni_impl::java::security::spec
 
@@ -46,6 +46,13 @@ namespace __jni_impl::java::security::spec
 	}
 	
 	// Methods
+	QAndroidJniObject RSAOtherPrimeInfo::getCrtCoefficient()
+	{
+		return __thiz.callObjectMethod(
+			"getCrtCoefficient",
+			"()Ljava/math/BigInteger;"
+		);
+	}
 	QAndroidJniObject RSAOtherPrimeInfo::getExponent()
 	{
 		return __thiz.callObjectMethod(
@@ -57,13 +64,6 @@ namespace __jni_impl::java::security::spec
 	{
 		return __thiz.callObjectMethod(
 			"getPrime",
-			"()Ljava/math/BigInteger;"
-		);
-	}
-	QAndroidJniObject RSAOtherPrimeInfo::getCrtCoefficient()
-	{
-		return __thiz.callObjectMethod(
-			"getCrtCoefficient",
 			"()Ljava/math/BigInteger;"
 		);
 	}

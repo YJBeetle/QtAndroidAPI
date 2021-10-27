@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util::concurrent::locks
-{
-	class ReentrantLock;
-}
 namespace __jni_impl::java::util::concurrent
 {
 	class TimeUnit;
+}
+namespace __jni_impl::java::util::concurrent::locks
+{
+	class ReentrantLock;
 }
 
 namespace __jni_impl::java::util::concurrent
@@ -26,17 +26,17 @@ namespace __jni_impl::java::util::concurrent
 		void __constructor(jint arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		void reset();
 		jint await();
 		jint await(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
+		jint getNumberWaiting();
 		jint getParties();
 		jboolean isBroken();
-		jint getNumberWaiting();
+		void reset();
 	};
 } // namespace __jni_impl::java::util::concurrent
 
-#include "locks/ReentrantLock.hpp"
 #include "TimeUnit.hpp"
+#include "locks/ReentrantLock.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {
@@ -62,13 +62,6 @@ namespace __jni_impl::java::util::concurrent
 	}
 	
 	// Methods
-	void CyclicBarrier::reset()
-	{
-		__thiz.callMethod<void>(
-			"reset",
-			"()V"
-		);
-	}
 	jint CyclicBarrier::await()
 	{
 		return __thiz.callMethod<jint>(
@@ -85,6 +78,13 @@ namespace __jni_impl::java::util::concurrent
 			arg1.__jniObject().object()
 		);
 	}
+	jint CyclicBarrier::getNumberWaiting()
+	{
+		return __thiz.callMethod<jint>(
+			"getNumberWaiting",
+			"()I"
+		);
+	}
 	jint CyclicBarrier::getParties()
 	{
 		return __thiz.callMethod<jint>(
@@ -99,11 +99,11 @@ namespace __jni_impl::java::util::concurrent
 			"()Z"
 		);
 	}
-	jint CyclicBarrier::getNumberWaiting()
+	void CyclicBarrier::reset()
 	{
-		return __thiz.callMethod<jint>(
-			"getNumberWaiting",
-			"()I"
+		__thiz.callMethod<void>(
+			"reset",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::java::util::concurrent

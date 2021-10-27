@@ -13,19 +13,19 @@ namespace __jni_impl::java::lang
 	{
 	public:
 		// Fields
-		static QAndroidJniObject PIPE();
+		static QAndroidJniObject APPEND();
 		static QAndroidJniObject INHERIT();
+		static QAndroidJniObject PIPE();
 		static QAndroidJniObject READ();
 		static QAndroidJniObject WRITE();
-		static QAndroidJniObject APPEND();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::lang
 
@@ -33,11 +33,11 @@ namespace __jni_impl::java::lang
 namespace __jni_impl::java::lang
 {
 	// Fields
-	QAndroidJniObject ProcessBuilder_Redirect_Type::PIPE()
+	QAndroidJniObject ProcessBuilder_Redirect_Type::APPEND()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect$Type",
-			"PIPE",
+			"APPEND",
 			"Ljava/lang/ProcessBuilder$Redirect$Type;"
 		);
 	}
@@ -46,6 +46,14 @@ namespace __jni_impl::java::lang
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.ProcessBuilder$Redirect$Type",
 			"INHERIT",
+			"Ljava/lang/ProcessBuilder$Redirect$Type;"
+		);
+	}
+	QAndroidJniObject ProcessBuilder_Redirect_Type::PIPE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.lang.ProcessBuilder$Redirect$Type",
+			"PIPE",
 			"Ljava/lang/ProcessBuilder$Redirect$Type;"
 		);
 	}
@@ -65,14 +73,6 @@ namespace __jni_impl::java::lang
 			"Ljava/lang/ProcessBuilder$Redirect$Type;"
 		);
 	}
-	QAndroidJniObject ProcessBuilder_Redirect_Type::APPEND()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.lang.ProcessBuilder$Redirect$Type",
-			"APPEND",
-			"Ljava/lang/ProcessBuilder$Redirect$Type;"
-		);
-	}
 	
 	// Constructors
 	void ProcessBuilder_Redirect_Type::__constructor()
@@ -83,14 +83,6 @@ namespace __jni_impl::java::lang
 	}
 	
 	// Methods
-	jarray ProcessBuilder_Redirect_Type::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.ProcessBuilder$Redirect$Type",
-			"values",
-			"()[Ljava/lang/ProcessBuilder$Redirect$Type;"
-		).object<jarray>();
-	}
 	QAndroidJniObject ProcessBuilder_Redirect_Type::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -108,6 +100,14 @@ namespace __jni_impl::java::lang
 			"(Ljava/lang/String;)Ljava/lang/ProcessBuilder$Redirect$Type;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray ProcessBuilder_Redirect_Type::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.lang.ProcessBuilder$Redirect$Type",
+			"values",
+			"()[Ljava/lang/ProcessBuilder$Redirect$Type;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::lang
 

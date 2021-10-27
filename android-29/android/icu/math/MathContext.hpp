@@ -26,17 +26,17 @@ namespace __jni_impl::android::icu::math
 		static jint SCIENTIFIC();
 		
 		// Constructors
-		void __constructor(jint arg0, jint arg1, jboolean arg2, jint arg3);
-		void __constructor(jint arg0, jint arg1, jboolean arg2);
-		void __constructor(jint arg0, jint arg1);
 		void __constructor(jint arg0);
+		void __constructor(jint arg0, jint arg1);
+		void __constructor(jint arg0, jint arg1, jboolean arg2);
+		void __constructor(jint arg0, jint arg1, jboolean arg2, jint arg3);
 		
 		// Methods
-		jstring toString();
-		jint getRoundingMode();
 		jint getDigits();
 		jint getForm();
 		jboolean getLostDigits();
+		jint getRoundingMode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::icu::math
 
@@ -131,15 +131,21 @@ namespace __jni_impl::android::icu::math
 	}
 	
 	// Constructors
-	void MathContext::__constructor(jint arg0, jint arg1, jboolean arg2, jint arg3)
+	void MathContext::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.math.MathContext",
-			"(IIZI)V",
+			"(I)V",
+			arg0
+		);
+	}
+	void MathContext::__constructor(jint arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.icu.math.MathContext",
+			"(II)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3
+			arg1
 		);
 	}
 	void MathContext::__constructor(jint arg0, jint arg1, jboolean arg2)
@@ -152,39 +158,19 @@ namespace __jni_impl::android::icu::math
 			arg2
 		);
 	}
-	void MathContext::__constructor(jint arg0, jint arg1)
+	void MathContext::__constructor(jint arg0, jint arg1, jboolean arg2, jint arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.math.MathContext",
-			"(II)V",
+			"(IIZI)V",
 			arg0,
-			arg1
-		);
-	}
-	void MathContext::__constructor(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.icu.math.MathContext",
-			"(I)V",
-			arg0
+			arg1,
+			arg2,
+			arg3
 		);
 	}
 	
 	// Methods
-	jstring MathContext::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint MathContext::getRoundingMode()
-	{
-		return __thiz.callMethod<jint>(
-			"getRoundingMode",
-			"()I"
-		);
-	}
 	jint MathContext::getDigits()
 	{
 		return __thiz.callMethod<jint>(
@@ -206,6 +192,20 @@ namespace __jni_impl::android::icu::math
 			"()Z"
 		);
 	}
+	jint MathContext::getRoundingMode()
+	{
+		return __thiz.callMethod<jint>(
+			"getRoundingMode",
+			"()I"
+		);
+	}
+	jstring MathContext::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 } // namespace __jni_impl::android::icu::math
 
 namespace android::icu::math
@@ -214,13 +214,16 @@ namespace android::icu::math
 	{
 	public:
 		MathContext(QAndroidJniObject obj) { __thiz = obj; }
-		MathContext(jint arg0, jint arg1, jboolean arg2, jint arg3)
+		MathContext(jint arg0)
+		{
+			__constructor(
+				arg0);
+		}
+		MathContext(jint arg0, jint arg1)
 		{
 			__constructor(
 				arg0,
-				arg1,
-				arg2,
-				arg3);
+				arg1);
 		}
 		MathContext(jint arg0, jint arg1, jboolean arg2)
 		{
@@ -229,16 +232,13 @@ namespace android::icu::math
 				arg1,
 				arg2);
 		}
-		MathContext(jint arg0, jint arg1)
+		MathContext(jint arg0, jint arg1, jboolean arg2, jint arg3)
 		{
 			__constructor(
 				arg0,
-				arg1);
-		}
-		MathContext(jint arg0)
-		{
-			__constructor(
-				arg0);
+				arg1,
+				arg2,
+				arg3);
 		}
 	};
 } // namespace android::icu::math

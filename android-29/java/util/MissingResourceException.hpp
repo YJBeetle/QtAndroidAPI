@@ -20,8 +20,8 @@ namespace __jni_impl::java::util
 		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2);
 		
 		// Methods
-		jstring getKey();
 		jstring getClassName();
+		jstring getKey();
 	};
 } // namespace __jni_impl::java::util
 
@@ -53,17 +53,17 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	jstring MissingResourceException::getKey()
-	{
-		return __thiz.callObjectMethod(
-			"getKey",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jstring MissingResourceException::getClassName()
 	{
 		return __thiz.callObjectMethod(
 			"getClassName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring MissingResourceException::getKey()
+	{
+		return __thiz.callObjectMethod(
+			"getKey",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

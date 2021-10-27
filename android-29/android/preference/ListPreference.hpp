@@ -7,6 +7,10 @@
 #include "Preference.hpp"
 #include "DialogPreference.hpp"
 
+namespace __jni_impl::android::app
+{
+	class AlertDialog_Builder;
+}
 namespace __jni_impl::android::content
 {
 	class Context;
@@ -14,10 +18,6 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::content::res
 {
 	class TypedArray;
-}
-namespace __jni_impl::android::app
-{
-	class AlertDialog_Builder;
 }
 
 namespace __jni_impl::android::preference
@@ -34,28 +34,28 @@ namespace __jni_impl::android::preference
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1, jint arg2, jint arg3);
 		
 		// Methods
-		jstring getValue();
-		void setValue(jstring arg0);
-		void setValue(const QString &arg0);
-		jarray getEntries();
-		jstring getEntry();
-		void setEntries(jint arg0);
-		void setEntries(jarray arg0);
-		void setEntryValues(jarray arg0);
-		void setEntryValues(jint arg0);
-		jarray getEntryValues();
-		void setValueIndex(jint arg0);
 		jint findIndexOfValue(jstring arg0);
 		jint findIndexOfValue(const QString &arg0);
+		jarray getEntries();
+		jstring getEntry();
+		jarray getEntryValues();
 		jstring getSummary();
+		jstring getValue();
+		void setEntries(jarray arg0);
+		void setEntries(jint arg0);
+		void setEntryValues(jarray arg0);
+		void setEntryValues(jint arg0);
 		void setSummary(jstring arg0);
 		void setSummary(const QString &arg0);
+		void setValue(jstring arg0);
+		void setValue(const QString &arg0);
+		void setValueIndex(jint arg0);
 	};
 } // namespace __jni_impl::android::preference
 
+#include "../app/AlertDialog_Builder.hpp"
 #include "../content/Context.hpp"
 #include "../content/res/TypedArray.hpp"
-#include "../app/AlertDialog_Builder.hpp"
 
 namespace __jni_impl::android::preference
 {
@@ -102,26 +102,19 @@ namespace __jni_impl::android::preference
 	}
 	
 	// Methods
-	jstring ListPreference::getValue()
+	jint ListPreference::findIndexOfValue(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getValue",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void ListPreference::setValue(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setValue",
-			"(Ljava/lang/String;)V",
+		return __thiz.callMethod<jint>(
+			"findIndexOfValue",
+			"(Ljava/lang/String;)I",
 			arg0
 		);
 	}
-	void ListPreference::setValue(const QString &arg0)
+	jint ListPreference::findIndexOfValue(const QString &arg0)
 	{
-		__thiz.callMethod<void>(
-			"setValue",
-			"(Ljava/lang/String;)V",
+		return __thiz.callMethod<jint>(
+			"findIndexOfValue",
+			"(Ljava/lang/String;)I",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
@@ -139,19 +132,40 @@ namespace __jni_impl::android::preference
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	void ListPreference::setEntries(jint arg0)
+	jarray ListPreference::getEntryValues()
 	{
-		__thiz.callMethod<void>(
-			"setEntries",
-			"(I)V",
-			arg0
-		);
+		return __thiz.callObjectMethod(
+			"getEntryValues",
+			"()[Ljava/lang/CharSequence;"
+		).object<jarray>();
+	}
+	jstring ListPreference::getSummary()
+	{
+		return __thiz.callObjectMethod(
+			"getSummary",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring ListPreference::getValue()
+	{
+		return __thiz.callObjectMethod(
+			"getValue",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void ListPreference::setEntries(jarray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setEntries",
 			"([Ljava/lang/CharSequence;)V",
+			arg0
+		);
+	}
+	void ListPreference::setEntries(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEntries",
+			"(I)V",
 			arg0
 		);
 	}
@@ -171,44 +185,6 @@ namespace __jni_impl::android::preference
 			arg0
 		);
 	}
-	jarray ListPreference::getEntryValues()
-	{
-		return __thiz.callObjectMethod(
-			"getEntryValues",
-			"()[Ljava/lang/CharSequence;"
-		).object<jarray>();
-	}
-	void ListPreference::setValueIndex(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setValueIndex",
-			"(I)V",
-			arg0
-		);
-	}
-	jint ListPreference::findIndexOfValue(jstring arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"findIndexOfValue",
-			"(Ljava/lang/String;)I",
-			arg0
-		);
-	}
-	jint ListPreference::findIndexOfValue(const QString &arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"findIndexOfValue",
-			"(Ljava/lang/String;)I",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring ListPreference::getSummary()
-	{
-		return __thiz.callObjectMethod(
-			"getSummary",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
 	void ListPreference::setSummary(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -223,6 +199,30 @@ namespace __jni_impl::android::preference
 			"setSummary",
 			"(Ljava/lang/CharSequence;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void ListPreference::setValue(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setValue",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void ListPreference::setValue(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setValue",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void ListPreference::setValueIndex(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setValueIndex",
+			"(I)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::preference

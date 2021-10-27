@@ -21,13 +21,13 @@ namespace __jni_impl::java::util
 		void __constructor();
 		
 		// Methods
-		void notifyObservers(jobject arg0);
-		void notifyObservers();
 		void addObserver(__jni_impl::__JniBaseClass arg0);
+		jint countObservers();
 		void deleteObserver(__jni_impl::__JniBaseClass arg0);
 		void deleteObservers();
 		jboolean hasChanged();
-		jint countObservers();
+		void notifyObservers();
+		void notifyObservers(jobject arg0);
 	};
 } // namespace __jni_impl::java::util
 
@@ -47,27 +47,19 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	void Observable::notifyObservers(jobject arg0)
-	{
-		__thiz.callMethod<void>(
-			"notifyObservers",
-			"(Ljava/lang/Object;)V",
-			arg0
-		);
-	}
-	void Observable::notifyObservers()
-	{
-		__thiz.callMethod<void>(
-			"notifyObservers",
-			"()V"
-		);
-	}
 	void Observable::addObserver(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"addObserver",
 			"(Ljava/util/Observer;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	jint Observable::countObservers()
+	{
+		return __thiz.callMethod<jint>(
+			"countObservers",
+			"()I"
 		);
 	}
 	void Observable::deleteObserver(__jni_impl::__JniBaseClass arg0)
@@ -92,11 +84,19 @@ namespace __jni_impl::java::util
 			"()Z"
 		);
 	}
-	jint Observable::countObservers()
+	void Observable::notifyObservers()
 	{
-		return __thiz.callMethod<jint>(
-			"countObservers",
-			"()I"
+		__thiz.callMethod<void>(
+			"notifyObservers",
+			"()V"
+		);
+	}
+	void Observable::notifyObservers(jobject arg0)
+	{
+		__thiz.callMethod<void>(
+			"notifyObservers",
+			"(Ljava/lang/Object;)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::java::util

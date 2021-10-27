@@ -7,15 +7,15 @@
 
 namespace __jni_impl::android::net
 {
+	class LinkProperties;
+}
+namespace __jni_impl::android::net
+{
 	class Network;
 }
 namespace __jni_impl::android::net
 {
 	class NetworkCapabilities;
-}
-namespace __jni_impl::android::net
-{
-	class LinkProperties;
 }
 
 namespace __jni_impl::android::net
@@ -30,18 +30,18 @@ namespace __jni_impl::android::net
 		
 		// Methods
 		void onAvailable(__jni_impl::android::net::Network arg0);
+		void onBlockedStatusChanged(__jni_impl::android::net::Network arg0, jboolean arg1);
+		void onCapabilitiesChanged(__jni_impl::android::net::Network arg0, __jni_impl::android::net::NetworkCapabilities arg1);
+		void onLinkPropertiesChanged(__jni_impl::android::net::Network arg0, __jni_impl::android::net::LinkProperties arg1);
 		void onLosing(__jni_impl::android::net::Network arg0, jint arg1);
 		void onLost(__jni_impl::android::net::Network arg0);
 		void onUnavailable();
-		void onCapabilitiesChanged(__jni_impl::android::net::Network arg0, __jni_impl::android::net::NetworkCapabilities arg1);
-		void onLinkPropertiesChanged(__jni_impl::android::net::Network arg0, __jni_impl::android::net::LinkProperties arg1);
-		void onBlockedStatusChanged(__jni_impl::android::net::Network arg0, jboolean arg1);
 	};
 } // namespace __jni_impl::android::net
 
+#include "LinkProperties.hpp"
 #include "Network.hpp"
 #include "NetworkCapabilities.hpp"
-#include "LinkProperties.hpp"
 
 namespace __jni_impl::android::net
 {
@@ -63,6 +63,33 @@ namespace __jni_impl::android::net
 			"onAvailable",
 			"(Landroid/net/Network;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void ConnectivityManager_NetworkCallback::onBlockedStatusChanged(__jni_impl::android::net::Network arg0, jboolean arg1)
+	{
+		__thiz.callMethod<void>(
+			"onBlockedStatusChanged",
+			"(Landroid/net/Network;Z)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void ConnectivityManager_NetworkCallback::onCapabilitiesChanged(__jni_impl::android::net::Network arg0, __jni_impl::android::net::NetworkCapabilities arg1)
+	{
+		__thiz.callMethod<void>(
+			"onCapabilitiesChanged",
+			"(Landroid/net/Network;Landroid/net/NetworkCapabilities;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void ConnectivityManager_NetworkCallback::onLinkPropertiesChanged(__jni_impl::android::net::Network arg0, __jni_impl::android::net::LinkProperties arg1)
+	{
+		__thiz.callMethod<void>(
+			"onLinkPropertiesChanged",
+			"(Landroid/net/Network;Landroid/net/LinkProperties;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	void ConnectivityManager_NetworkCallback::onLosing(__jni_impl::android::net::Network arg0, jint arg1)
@@ -87,33 +114,6 @@ namespace __jni_impl::android::net
 		__thiz.callMethod<void>(
 			"onUnavailable",
 			"()V"
-		);
-	}
-	void ConnectivityManager_NetworkCallback::onCapabilitiesChanged(__jni_impl::android::net::Network arg0, __jni_impl::android::net::NetworkCapabilities arg1)
-	{
-		__thiz.callMethod<void>(
-			"onCapabilitiesChanged",
-			"(Landroid/net/Network;Landroid/net/NetworkCapabilities;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void ConnectivityManager_NetworkCallback::onLinkPropertiesChanged(__jni_impl::android::net::Network arg0, __jni_impl::android::net::LinkProperties arg1)
-	{
-		__thiz.callMethod<void>(
-			"onLinkPropertiesChanged",
-			"(Landroid/net/Network;Landroid/net/LinkProperties;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void ConnectivityManager_NetworkCallback::onBlockedStatusChanged(__jni_impl::android::net::Network arg0, jboolean arg1)
-	{
-		__thiz.callMethod<void>(
-			"onBlockedStatusChanged",
-			"(Landroid/net/Network;Z)V",
-			arg0.__jniObject().object(),
-			arg1
 		);
 	}
 } // namespace __jni_impl::android::net

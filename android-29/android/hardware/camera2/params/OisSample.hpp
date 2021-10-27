@@ -18,11 +18,11 @@ namespace __jni_impl::android::hardware::camera2::params
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
+		jlong getTimestamp();
 		jfloat getXshift();
 		jfloat getYshift();
-		jlong getTimestamp();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
@@ -52,18 +52,11 @@ namespace __jni_impl::android::hardware::camera2::params
 			arg0
 		);
 	}
-	jstring OisSample::toString()
+	jlong OisSample::getTimestamp()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint OisSample::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+		return __thiz.callMethod<jlong>(
+			"getTimestamp",
+			"()J"
 		);
 	}
 	jfloat OisSample::getXshift()
@@ -80,12 +73,19 @@ namespace __jni_impl::android::hardware::camera2::params
 			"()F"
 		);
 	}
-	jlong OisSample::getTimestamp()
+	jint OisSample::hashCode()
 	{
-		return __thiz.callMethod<jlong>(
-			"getTimestamp",
-			"()J"
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
+	}
+	jstring OisSample::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::hardware::camera2::params
 

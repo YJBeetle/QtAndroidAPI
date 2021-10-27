@@ -21,17 +21,17 @@ namespace __jni_impl::java::time::zone
 	{
 	public:
 		// Fields
+		static QAndroidJniObject STANDARD();
 		static QAndroidJniObject UTC();
 		static QAndroidJniObject WALL();
-		static QAndroidJniObject STANDARD();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 		QAndroidJniObject createDateTime(__jni_impl::java::time::LocalDateTime arg0, __jni_impl::java::time::ZoneOffset arg1, __jni_impl::java::time::ZoneOffset arg2);
 	};
 } // namespace __jni_impl::java::time::zone
@@ -42,6 +42,14 @@ namespace __jni_impl::java::time::zone
 namespace __jni_impl::java::time::zone
 {
 	// Fields
+	QAndroidJniObject ZoneOffsetTransitionRule_TimeDefinition::STANDARD()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.time.zone.ZoneOffsetTransitionRule$TimeDefinition",
+			"STANDARD",
+			"Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;"
+		);
+	}
 	QAndroidJniObject ZoneOffsetTransitionRule_TimeDefinition::UTC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -58,14 +66,6 @@ namespace __jni_impl::java::time::zone
 			"Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;"
 		);
 	}
-	QAndroidJniObject ZoneOffsetTransitionRule_TimeDefinition::STANDARD()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.time.zone.ZoneOffsetTransitionRule$TimeDefinition",
-			"STANDARD",
-			"Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;"
-		);
-	}
 	
 	// Constructors
 	void ZoneOffsetTransitionRule_TimeDefinition::__constructor()
@@ -76,14 +76,6 @@ namespace __jni_impl::java::time::zone
 	}
 	
 	// Methods
-	jarray ZoneOffsetTransitionRule_TimeDefinition::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.time.zone.ZoneOffsetTransitionRule$TimeDefinition",
-			"values",
-			"()[Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;"
-		).object<jarray>();
-	}
 	QAndroidJniObject ZoneOffsetTransitionRule_TimeDefinition::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -101,6 +93,14 @@ namespace __jni_impl::java::time::zone
 			"(Ljava/lang/String;)Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray ZoneOffsetTransitionRule_TimeDefinition::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.time.zone.ZoneOffsetTransitionRule$TimeDefinition",
+			"values",
+			"()[Ljava/time/zone/ZoneOffsetTransitionRule$TimeDefinition;"
+		).object<jarray>();
 	}
 	QAndroidJniObject ZoneOffsetTransitionRule_TimeDefinition::createDateTime(__jni_impl::java::time::LocalDateTime arg0, __jni_impl::java::time::ZoneOffset arg1, __jni_impl::java::time::ZoneOffset arg2)
 	{

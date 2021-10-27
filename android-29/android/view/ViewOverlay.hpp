@@ -9,13 +9,13 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::view
-{
-	class View;
-}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
+}
+namespace __jni_impl::android::view
+{
+	class View;
 }
 
 namespace __jni_impl::android::view
@@ -30,14 +30,14 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		void add(__jni_impl::android::graphics::drawable::Drawable arg0);
-		void remove(__jni_impl::android::graphics::drawable::Drawable arg0);
 		void clear();
+		void remove(__jni_impl::android::graphics::drawable::Drawable arg0);
 	};
 } // namespace __jni_impl::android::view
 
 #include "../content/Context.hpp"
-#include "View.hpp"
 #include "../graphics/drawable/Drawable.hpp"
+#include "View.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -60,19 +60,19 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
+	void ViewOverlay::clear()
+	{
+		__thiz.callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
 	void ViewOverlay::remove(__jni_impl::android::graphics::drawable::Drawable arg0)
 	{
 		__thiz.callMethod<void>(
 			"remove",
 			"(Landroid/graphics/drawable/Drawable;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	void ViewOverlay::clear()
-	{
-		__thiz.callMethod<void>(
-			"clear",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::android::view

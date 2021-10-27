@@ -16,20 +16,20 @@ namespace __jni_impl::javax::xml::namespace
 		// Constructors
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor(jstring arg0, jstring arg1, jstring arg2);
-		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2);
 		void __constructor(jstring arg0, jstring arg1);
 		void __constructor(const QString &arg0, const QString &arg1);
+		void __constructor(jstring arg0, jstring arg1, jstring arg2);
+		void __constructor(const QString &arg0, const QString &arg1, const QString &arg2);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
-		jstring getNamespaceURI();
+		jboolean equals(jobject arg0);
 		jstring getLocalPart();
+		jstring getNamespaceURI();
 		jstring getPrefix();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::javax::xml::namespace
 
@@ -55,6 +55,24 @@ namespace __jni_impl::javax::xml::namespace
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
+	void QName::__constructor(jstring arg0, jstring arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.xml.namespace.QName",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			arg0,
+			arg1
+		);
+	}
+	void QName::__constructor(const QString &arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.xml.namespace.QName",
+			"(Ljava/lang/String;Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void QName::__constructor(jstring arg0, jstring arg1, jstring arg2)
 	{
 		__thiz = QAndroidJniObject(
@@ -75,48 +93,8 @@ namespace __jni_impl::javax::xml::namespace
 			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
-	void QName::__constructor(jstring arg0, jstring arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.namespace.QName",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			arg0,
-			arg1
-		);
-	}
-	void QName::__constructor(const QString &arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.namespace.QName",
-			"(Ljava/lang/String;Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	
 	// Methods
-	jboolean QName::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring QName::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint QName::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	QAndroidJniObject QName::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -135,12 +113,13 @@ namespace __jni_impl::javax::xml::namespace
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jstring QName::getNamespaceURI()
+	jboolean QName::equals(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getNamespaceURI",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
 	}
 	jstring QName::getLocalPart()
 	{
@@ -149,10 +128,31 @@ namespace __jni_impl::javax::xml::namespace
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	jstring QName::getNamespaceURI()
+	{
+		return __thiz.callObjectMethod(
+			"getNamespaceURI",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	jstring QName::getPrefix()
 	{
 		return __thiz.callObjectMethod(
 			"getPrefix",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint QName::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring QName::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -169,18 +169,18 @@ namespace javax::xml::namespace
 			__constructor(
 				arg0);
 		}
+		QName(jstring arg0, jstring arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
+		}
 		QName(jstring arg0, jstring arg1, jstring arg2)
 		{
 			__constructor(
 				arg0,
 				arg1,
 				arg2);
-		}
-		QName(jstring arg0, jstring arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
 		}
 	};
 } // namespace javax::xml::namespace

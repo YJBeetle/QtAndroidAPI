@@ -20,12 +20,12 @@ namespace __jni_impl::javax::xml::transform::sax
 		
 		// Methods
 		QAndroidJniObject getHandler();
+		QAndroidJniObject getLexicalHandler();
 		jstring getSystemId();
-		void setSystemId(jstring arg0);
-		void setSystemId(const QString &arg0);
 		void setHandler(__jni_impl::__JniBaseClass arg0);
 		void setLexicalHandler(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getLexicalHandler();
+		void setSystemId(jstring arg0);
+		void setSystemId(const QString &arg0);
 	};
 } // namespace __jni_impl::javax::xml::transform::sax
 
@@ -67,28 +67,19 @@ namespace __jni_impl::javax::xml::transform::sax
 			"()Lorg/xml/sax/ContentHandler;"
 		);
 	}
+	QAndroidJniObject SAXResult::getLexicalHandler()
+	{
+		return __thiz.callObjectMethod(
+			"getLexicalHandler",
+			"()Lorg/xml/sax/ext/LexicalHandler;"
+		);
+	}
 	jstring SAXResult::getSystemId()
 	{
 		return __thiz.callObjectMethod(
 			"getSystemId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	void SAXResult::setSystemId(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSystemId",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void SAXResult::setSystemId(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSystemId",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
 	}
 	void SAXResult::setHandler(__jni_impl::__JniBaseClass arg0)
 	{
@@ -106,11 +97,20 @@ namespace __jni_impl::javax::xml::transform::sax
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject SAXResult::getLexicalHandler()
+	void SAXResult::setSystemId(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getLexicalHandler",
-			"()Lorg/xml/sax/ext/LexicalHandler;"
+		__thiz.callMethod<void>(
+			"setSystemId",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void SAXResult::setSystemId(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSystemId",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::javax::xml::transform::sax

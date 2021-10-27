@@ -13,16 +13,16 @@ namespace __jni_impl::android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject SHORT();
 		static QAndroidJniObject LONG();
+		static QAndroidJniObject SHORT();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -30,19 +30,19 @@ namespace __jni_impl::android::icu::text
 namespace __jni_impl::android::icu::text
 {
 	// Fields
-	QAndroidJniObject CompactDecimalFormat_CompactStyle::SHORT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.CompactDecimalFormat$CompactStyle",
-			"SHORT",
-			"Landroid/icu/text/CompactDecimalFormat$CompactStyle;"
-		);
-	}
 	QAndroidJniObject CompactDecimalFormat_CompactStyle::LONG()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.CompactDecimalFormat$CompactStyle",
 			"LONG",
+			"Landroid/icu/text/CompactDecimalFormat$CompactStyle;"
+		);
+	}
+	QAndroidJniObject CompactDecimalFormat_CompactStyle::SHORT()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.CompactDecimalFormat$CompactStyle",
+			"SHORT",
 			"Landroid/icu/text/CompactDecimalFormat$CompactStyle;"
 		);
 	}
@@ -56,14 +56,6 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jarray CompactDecimalFormat_CompactStyle::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.CompactDecimalFormat$CompactStyle",
-			"values",
-			"()[Landroid/icu/text/CompactDecimalFormat$CompactStyle;"
-		).object<jarray>();
-	}
 	QAndroidJniObject CompactDecimalFormat_CompactStyle::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -81,6 +73,14 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;)Landroid/icu/text/CompactDecimalFormat$CompactStyle;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray CompactDecimalFormat_CompactStyle::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.CompactDecimalFormat$CompactStyle",
+			"values",
+			"()[Landroid/icu/text/CompactDecimalFormat$CompactStyle;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::icu::text
 

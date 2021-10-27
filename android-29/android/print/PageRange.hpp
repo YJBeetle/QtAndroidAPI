@@ -23,12 +23,12 @@ namespace __jni_impl::android::print
 		void __constructor(jint arg0, jint arg1);
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jint getEnd();
 		jint getStart();
-		jint describeContents();
+		jint hashCode();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::print
@@ -67,26 +67,19 @@ namespace __jni_impl::android::print
 	}
 	
 	// Methods
+	jint PageRange::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean PageRange::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
-		);
-	}
-	jstring PageRange::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint PageRange::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
 		);
 	}
 	jint PageRange::getEnd()
@@ -103,12 +96,19 @@ namespace __jni_impl::android::print
 			"()I"
 		);
 	}
-	jint PageRange::describeContents()
+	jint PageRange::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
 		);
+	}
+	jstring PageRange::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void PageRange::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

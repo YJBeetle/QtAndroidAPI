@@ -22,11 +22,11 @@ namespace __jni_impl::android::accessibilityservice
 		void __constructor(__jni_impl::android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3);
 		
 		// Methods
-		QAndroidJniObject getPath();
-		jlong getDuration();
-		jboolean willContinue();
-		jlong getStartTime();
 		QAndroidJniObject continueStroke(__jni_impl::android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3);
+		jlong getDuration();
+		QAndroidJniObject getPath();
+		jlong getStartTime();
+		jboolean willContinue();
 	};
 } // namespace __jni_impl::android::accessibilityservice
 
@@ -60,34 +60,6 @@ namespace __jni_impl::android::accessibilityservice
 	}
 	
 	// Methods
-	QAndroidJniObject GestureDescription_StrokeDescription::getPath()
-	{
-		return __thiz.callObjectMethod(
-			"getPath",
-			"()Landroid/graphics/Path;"
-		);
-	}
-	jlong GestureDescription_StrokeDescription::getDuration()
-	{
-		return __thiz.callMethod<jlong>(
-			"getDuration",
-			"()J"
-		);
-	}
-	jboolean GestureDescription_StrokeDescription::willContinue()
-	{
-		return __thiz.callMethod<jboolean>(
-			"willContinue",
-			"()Z"
-		);
-	}
-	jlong GestureDescription_StrokeDescription::getStartTime()
-	{
-		return __thiz.callMethod<jlong>(
-			"getStartTime",
-			"()J"
-		);
-	}
 	QAndroidJniObject GestureDescription_StrokeDescription::continueStroke(__jni_impl::android::graphics::Path arg0, jlong arg1, jlong arg2, jboolean arg3)
 	{
 		return __thiz.callObjectMethod(
@@ -97,6 +69,34 @@ namespace __jni_impl::android::accessibilityservice
 			arg1,
 			arg2,
 			arg3
+		);
+	}
+	jlong GestureDescription_StrokeDescription::getDuration()
+	{
+		return __thiz.callMethod<jlong>(
+			"getDuration",
+			"()J"
+		);
+	}
+	QAndroidJniObject GestureDescription_StrokeDescription::getPath()
+	{
+		return __thiz.callObjectMethod(
+			"getPath",
+			"()Landroid/graphics/Path;"
+		);
+	}
+	jlong GestureDescription_StrokeDescription::getStartTime()
+	{
+		return __thiz.callMethod<jlong>(
+			"getStartTime",
+			"()J"
+		);
+	}
+	jboolean GestureDescription_StrokeDescription::willContinue()
+	{
+		return __thiz.callMethod<jboolean>(
+			"willContinue",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::accessibilityservice

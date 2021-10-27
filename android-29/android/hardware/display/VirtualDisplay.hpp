@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::view
 {
-	class Surface;
+	class Display;
 }
 namespace __jni_impl::android::view
 {
-	class Display;
+	class Surface;
 }
 
 namespace __jni_impl::android::hardware::display
@@ -25,17 +25,17 @@ namespace __jni_impl::android::hardware::display
 		void __constructor();
 		
 		// Methods
-		jstring toString();
+		QAndroidJniObject getDisplay();
+		QAndroidJniObject getSurface();
 		void release();
 		void resize(jint arg0, jint arg1, jint arg2);
-		QAndroidJniObject getSurface();
 		void setSurface(__jni_impl::android::view::Surface arg0);
-		QAndroidJniObject getDisplay();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::hardware::display
 
-#include "../../view/Surface.hpp"
 #include "../../view/Display.hpp"
+#include "../../view/Surface.hpp"
 
 namespace __jni_impl::android::hardware::display
 {
@@ -50,12 +50,19 @@ namespace __jni_impl::android::hardware::display
 	}
 	
 	// Methods
-	jstring VirtualDisplay::toString()
+	QAndroidJniObject VirtualDisplay::getDisplay()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getDisplay",
+			"()Landroid/view/Display;"
+		);
+	}
+	QAndroidJniObject VirtualDisplay::getSurface()
+	{
+		return __thiz.callObjectMethod(
+			"getSurface",
+			"()Landroid/view/Surface;"
+		);
 	}
 	void VirtualDisplay::release()
 	{
@@ -74,13 +81,6 @@ namespace __jni_impl::android::hardware::display
 			arg2
 		);
 	}
-	QAndroidJniObject VirtualDisplay::getSurface()
-	{
-		return __thiz.callObjectMethod(
-			"getSurface",
-			"()Landroid/view/Surface;"
-		);
-	}
 	void VirtualDisplay::setSurface(__jni_impl::android::view::Surface arg0)
 	{
 		__thiz.callMethod<void>(
@@ -89,12 +89,12 @@ namespace __jni_impl::android::hardware::display
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject VirtualDisplay::getDisplay()
+	jstring VirtualDisplay::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getDisplay",
-			"()Landroid/view/Display;"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::hardware::display
 

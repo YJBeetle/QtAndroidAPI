@@ -8,6 +8,10 @@
 #include "../../content/ContextWrapper.hpp"
 #include "../../app/Service.hpp"
 
+namespace __jni_impl::android::content
+{
+	class Intent;
+}
 namespace __jni_impl::android::service::wallpaper
 {
 	class WallpaperService_Engine;
@@ -19,10 +23,6 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class PrintWriter;
-}
-namespace __jni_impl::android::content
-{
-	class Intent;
 }
 
 namespace __jni_impl::android::service::wallpaper
@@ -38,17 +38,17 @@ namespace __jni_impl::android::service::wallpaper
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject onCreateEngine();
-		void onCreate();
-		void onDestroy();
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		void onCreate();
+		QAndroidJniObject onCreateEngine();
+		void onDestroy();
 	};
 } // namespace __jni_impl::android::service::wallpaper
 
+#include "../../content/Intent.hpp"
 #include "WallpaperService_Engine.hpp"
 #include "../../../java/io/FileDescriptor.hpp"
 #include "../../../java/io/PrintWriter.hpp"
-#include "../../content/Intent.hpp"
 
 namespace __jni_impl::android::service::wallpaper
 {
@@ -80,11 +80,12 @@ namespace __jni_impl::android::service::wallpaper
 	}
 	
 	// Methods
-	QAndroidJniObject WallpaperService::onCreateEngine()
+	QAndroidJniObject WallpaperService::onBind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
-			"onCreateEngine",
-			"()Landroid/service/wallpaper/WallpaperService$Engine;"
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
 		);
 	}
 	void WallpaperService::onCreate()
@@ -94,19 +95,18 @@ namespace __jni_impl::android::service::wallpaper
 			"()V"
 		);
 	}
+	QAndroidJniObject WallpaperService::onCreateEngine()
+	{
+		return __thiz.callObjectMethod(
+			"onCreateEngine",
+			"()Landroid/service/wallpaper/WallpaperService$Engine;"
+		);
+	}
 	void WallpaperService::onDestroy()
 	{
 		__thiz.callMethod<void>(
 			"onDestroy",
 			"()V"
-		);
-	}
-	QAndroidJniObject WallpaperService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::service::wallpaper

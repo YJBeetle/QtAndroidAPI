@@ -5,10 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::nio::file
-{
-	class FileSystem;
-}
 namespace __jni_impl::java::lang
 {
 	class ClassLoader;
@@ -16,6 +12,10 @@ namespace __jni_impl::java::lang
 namespace __jni_impl::java::net
 {
 	class URI;
+}
+namespace __jni_impl::java::nio::file
+{
+	class FileSystem;
 }
 
 namespace __jni_impl::java::nio::file
@@ -30,19 +30,19 @@ namespace __jni_impl::java::nio::file
 		
 		// Methods
 		static QAndroidJniObject getDefault();
-		static QAndroidJniObject newFileSystem(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
-		static QAndroidJniObject newFileSystem(__jni_impl::__JniBaseClass arg0, __jni_impl::java::lang::ClassLoader arg1);
-		static QAndroidJniObject newFileSystem(__jni_impl::__JniBaseClass arg0);
-		static QAndroidJniObject newFileSystem(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::lang::ClassLoader arg2);
-		static QAndroidJniObject newFileSystem(__jni_impl::java::net::URI arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::lang::ClassLoader arg2);
-		static QAndroidJniObject newFileSystem(__jni_impl::java::net::URI arg0, __jni_impl::__JniBaseClass arg1);
 		static QAndroidJniObject getFileSystem(__jni_impl::java::net::URI arg0);
+		static QAndroidJniObject newFileSystem(__jni_impl::__JniBaseClass arg0);
+		static QAndroidJniObject newFileSystem(__jni_impl::java::net::URI arg0, __jni_impl::__JniBaseClass arg1);
+		static QAndroidJniObject newFileSystem(__jni_impl::__JniBaseClass arg0, __jni_impl::java::lang::ClassLoader arg1);
+		static QAndroidJniObject newFileSystem(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		static QAndroidJniObject newFileSystem(__jni_impl::java::net::URI arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::lang::ClassLoader arg2);
+		static QAndroidJniObject newFileSystem(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::lang::ClassLoader arg2);
 	};
 } // namespace __jni_impl::java::nio::file
 
-#include "FileSystem.hpp"
 #include "../../lang/ClassLoader.hpp"
 #include "../../net/URI.hpp"
+#include "FileSystem.hpp"
 
 namespace __jni_impl::java::nio::file
 {
@@ -65,12 +65,30 @@ namespace __jni_impl::java::nio::file
 			"()Ljava/nio/file/FileSystem;"
 		);
 	}
-	QAndroidJniObject FileSystems::newFileSystem(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
+	QAndroidJniObject FileSystems::getFileSystem(__jni_impl::java::net::URI arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.file.FileSystems",
+			"getFileSystem",
+			"(Ljava/net/URI;)Ljava/nio/file/FileSystem;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject FileSystems::newFileSystem(__jni_impl::__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.FileSystems",
 			"newFileSystem",
-			"(Ljava/nio/file/Path;Ljava/util/Map;)Ljava/nio/file/FileSystem;",
+			"(Ljava/nio/file/Path;)Ljava/nio/file/FileSystem;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject FileSystems::newFileSystem(__jni_impl::java::net::URI arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.file.FileSystems",
+			"newFileSystem",
+			"(Ljava/net/URI;Ljava/util/Map;)Ljava/nio/file/FileSystem;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
 		);
@@ -85,24 +103,14 @@ namespace __jni_impl::java::nio::file
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject FileSystems::newFileSystem(__jni_impl::__JniBaseClass arg0)
+	QAndroidJniObject FileSystems::newFileSystem(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.FileSystems",
 			"newFileSystem",
-			"(Ljava/nio/file/Path;)Ljava/nio/file/FileSystem;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject FileSystems::newFileSystem(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::lang::ClassLoader arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.FileSystems",
-			"newFileSystem",
-			"(Ljava/nio/file/Path;Ljava/util/Map;Ljava/lang/ClassLoader;)Ljava/nio/file/FileSystem;",
+			"(Ljava/nio/file/Path;Ljava/util/Map;)Ljava/nio/file/FileSystem;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			arg1.__jniObject().object()
 		);
 	}
 	QAndroidJniObject FileSystems::newFileSystem(__jni_impl::java::net::URI arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::lang::ClassLoader arg2)
@@ -116,23 +124,15 @@ namespace __jni_impl::java::nio::file
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject FileSystems::newFileSystem(__jni_impl::java::net::URI arg0, __jni_impl::__JniBaseClass arg1)
+	QAndroidJniObject FileSystems::newFileSystem(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::lang::ClassLoader arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.file.FileSystems",
 			"newFileSystem",
-			"(Ljava/net/URI;Ljava/util/Map;)Ljava/nio/file/FileSystem;",
+			"(Ljava/nio/file/Path;Ljava/util/Map;Ljava/lang/ClassLoader;)Ljava/nio/file/FileSystem;",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject FileSystems::getFileSystem(__jni_impl::java::net::URI arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.FileSystems",
-			"getFileSystem",
-			"(Ljava/net/URI;)Ljava/nio/file/FileSystem;",
-			arg0.__jniObject().object()
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::java::nio::file

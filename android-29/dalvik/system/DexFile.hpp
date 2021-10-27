@@ -27,16 +27,16 @@ namespace __jni_impl::dalvik::system
 		void __constructor(const QString &arg0);
 		
 		// Methods
+		static jboolean isDexOptNeeded(jstring arg0);
+		static jboolean isDexOptNeeded(const QString &arg0);
+		static QAndroidJniObject loadDex(jstring arg0, jstring arg1, jint arg2);
+		static QAndroidJniObject loadDex(const QString &arg0, const QString &arg1, jint arg2);
+		void close();
+		QAndroidJniObject entries();
 		jstring getName();
 		jclass loadClass(jstring arg0, __jni_impl::java::lang::ClassLoader arg1);
 		jclass loadClass(const QString &arg0, __jni_impl::java::lang::ClassLoader arg1);
 		jstring toString();
-		void close();
-		QAndroidJniObject entries();
-		static QAndroidJniObject loadDex(jstring arg0, jstring arg1, jint arg2);
-		static QAndroidJniObject loadDex(const QString &arg0, const QString &arg1, jint arg2);
-		static jboolean isDexOptNeeded(jstring arg0);
-		static jboolean isDexOptNeeded(const QString &arg0);
 	};
 } // namespace __jni_impl::dalvik::system
 
@@ -74,6 +74,60 @@ namespace __jni_impl::dalvik::system
 	}
 	
 	// Methods
+	jboolean DexFile::isDexOptNeeded(jstring arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"dalvik.system.DexFile",
+			"isDexOptNeeded",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jboolean DexFile::isDexOptNeeded(const QString &arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"dalvik.system.DexFile",
+			"isDexOptNeeded",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject DexFile::loadDex(jstring arg0, jstring arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"dalvik.system.DexFile",
+			"loadDex",
+			"(Ljava/lang/String;Ljava/lang/String;I)Ldalvik/system/DexFile;",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	QAndroidJniObject DexFile::loadDex(const QString &arg0, const QString &arg1, jint arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"dalvik.system.DexFile",
+			"loadDex",
+			"(Ljava/lang/String;Ljava/lang/String;I)Ldalvik/system/DexFile;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
+	}
+	void DexFile::close()
+	{
+		__thiz.callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	QAndroidJniObject DexFile::entries()
+	{
+		return __thiz.callObjectMethod(
+			"entries",
+			"()Ljava/util/Enumeration;"
+		);
+	}
 	jstring DexFile::getName()
 	{
 		return __thiz.callObjectMethod(
@@ -105,60 +159,6 @@ namespace __jni_impl::dalvik::system
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	void DexFile::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
-	}
-	QAndroidJniObject DexFile::entries()
-	{
-		return __thiz.callObjectMethod(
-			"entries",
-			"()Ljava/util/Enumeration;"
-		);
-	}
-	QAndroidJniObject DexFile::loadDex(jstring arg0, jstring arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"dalvik.system.DexFile",
-			"loadDex",
-			"(Ljava/lang/String;Ljava/lang/String;I)Ldalvik/system/DexFile;",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject DexFile::loadDex(const QString &arg0, const QString &arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"dalvik.system.DexFile",
-			"loadDex",
-			"(Ljava/lang/String;Ljava/lang/String;I)Ldalvik/system/DexFile;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
-	jboolean DexFile::isDexOptNeeded(jstring arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"dalvik.system.DexFile",
-			"isDexOptNeeded",
-			"(Ljava/lang/String;)Z",
-			arg0
-		);
-	}
-	jboolean DexFile::isDexOptNeeded(const QString &arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"dalvik.system.DexFile",
-			"isDexOptNeeded",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
 	}
 } // namespace __jni_impl::dalvik::system
 

@@ -9,13 +9,13 @@ namespace __jni_impl::android::os
 {
 	class Bundle;
 }
-namespace __jni_impl::android::telecom
-{
-	class PhoneAccountHandle;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::telecom
+{
+	class PhoneAccountHandle;
 }
 
 namespace __jni_impl::android::telephony
@@ -30,18 +30,18 @@ namespace __jni_impl::android::telephony
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getFields();
-		QAndroidJniObject getPhoneAccountHandle();
-		jstring getMessageBody();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getFields();
+		jstring getMessageBody();
+		QAndroidJniObject getPhoneAccountHandle();
 		jstring getPrefix();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony
 
 #include "../os/Bundle.hpp"
-#include "../telecom/PhoneAccountHandle.hpp"
 #include "../os/Parcel.hpp"
+#include "../telecom/PhoneAccountHandle.hpp"
 
 namespace __jni_impl::android::telephony
 {
@@ -64,18 +64,18 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
+	jint VisualVoicemailSms::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	QAndroidJniObject VisualVoicemailSms::getFields()
 	{
 		return __thiz.callObjectMethod(
 			"getFields",
 			"()Landroid/os/Bundle;"
-		);
-	}
-	QAndroidJniObject VisualVoicemailSms::getPhoneAccountHandle()
-	{
-		return __thiz.callObjectMethod(
-			"getPhoneAccountHandle",
-			"()Landroid/telecom/PhoneAccountHandle;"
 		);
 	}
 	jstring VisualVoicemailSms::getMessageBody()
@@ -85,12 +85,19 @@ namespace __jni_impl::android::telephony
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint VisualVoicemailSms::describeContents()
+	QAndroidJniObject VisualVoicemailSms::getPhoneAccountHandle()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		return __thiz.callObjectMethod(
+			"getPhoneAccountHandle",
+			"()Landroid/telecom/PhoneAccountHandle;"
 		);
+	}
+	jstring VisualVoicemailSms::getPrefix()
+	{
+		return __thiz.callObjectMethod(
+			"getPrefix",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void VisualVoicemailSms::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -100,13 +107,6 @@ namespace __jni_impl::android::telephony
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jstring VisualVoicemailSms::getPrefix()
-	{
-		return __thiz.callObjectMethod(
-			"getPrefix",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::telephony
 

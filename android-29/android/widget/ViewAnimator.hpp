@@ -37,28 +37,28 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		jstring getAccessibilityClassName();
 		void addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2);
-		void removeView(__jni_impl::android::view::View arg0);
-		void removeViewInLayout(__jni_impl::android::view::View arg0);
-		void removeViewsInLayout(jint arg0, jint arg1);
-		void removeViewAt(jint arg0);
-		void removeViews(jint arg0, jint arg1);
-		void removeAllViews();
+		jstring getAccessibilityClassName();
+		jboolean getAnimateFirstView();
 		jint getBaseline();
+		QAndroidJniObject getCurrentView();
 		jint getDisplayedChild();
 		QAndroidJniObject getInAnimation();
+		QAndroidJniObject getOutAnimation();
+		void removeAllViews();
+		void removeView(__jni_impl::android::view::View arg0);
+		void removeViewAt(jint arg0);
+		void removeViewInLayout(__jni_impl::android::view::View arg0);
+		void removeViews(jint arg0, jint arg1);
+		void removeViewsInLayout(jint arg0, jint arg1);
+		void setAnimateFirstView(jboolean arg0);
+		void setDisplayedChild(jint arg0);
 		void setInAnimation(__jni_impl::android::view::animation::Animation arg0);
 		void setInAnimation(__jni_impl::android::content::Context arg0, jint arg1);
-		QAndroidJniObject getOutAnimation();
 		void setOutAnimation(__jni_impl::android::view::animation::Animation arg0);
 		void setOutAnimation(__jni_impl::android::content::Context arg0, jint arg1);
-		jboolean getAnimateFirstView();
-		void setAnimateFirstView(jboolean arg0);
 		void showNext();
 		void showPrevious();
-		void setDisplayedChild(jint arg0);
-		QAndroidJniObject getCurrentView();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -91,13 +91,6 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	jstring ViewAnimator::getAccessibilityClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getAccessibilityClassName",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
 	void ViewAnimator::addView(__jni_impl::android::view::View arg0, jint arg1, __jni_impl::android::view::ViewGroup_LayoutParams arg2)
 	{
 		__thiz.callMethod<void>(
@@ -108,53 +101,18 @@ namespace __jni_impl::android::widget
 			arg2.__jniObject().object()
 		);
 	}
-	void ViewAnimator::removeView(__jni_impl::android::view::View arg0)
+	jstring ViewAnimator::getAccessibilityClassName()
 	{
-		__thiz.callMethod<void>(
-			"removeView",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
-		);
+		return __thiz.callObjectMethod(
+			"getAccessibilityClassName",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
-	void ViewAnimator::removeViewInLayout(__jni_impl::android::view::View arg0)
+	jboolean ViewAnimator::getAnimateFirstView()
 	{
-		__thiz.callMethod<void>(
-			"removeViewInLayout",
-			"(Landroid/view/View;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ViewAnimator::removeViewsInLayout(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"removeViewsInLayout",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void ViewAnimator::removeViewAt(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeViewAt",
-			"(I)V",
-			arg0
-		);
-	}
-	void ViewAnimator::removeViews(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"removeViews",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void ViewAnimator::removeAllViews()
-	{
-		__thiz.callMethod<void>(
-			"removeAllViews",
-			"()V"
+		return __thiz.callMethod<jboolean>(
+			"getAnimateFirstView",
+			"()Z"
 		);
 	}
 	jint ViewAnimator::getBaseline()
@@ -162,6 +120,13 @@ namespace __jni_impl::android::widget
 		return __thiz.callMethod<jint>(
 			"getBaseline",
 			"()I"
+		);
+	}
+	QAndroidJniObject ViewAnimator::getCurrentView()
+	{
+		return __thiz.callObjectMethod(
+			"getCurrentView",
+			"()Landroid/view/View;"
 		);
 	}
 	jint ViewAnimator::getDisplayedChild()
@@ -176,6 +141,78 @@ namespace __jni_impl::android::widget
 		return __thiz.callObjectMethod(
 			"getInAnimation",
 			"()Landroid/view/animation/Animation;"
+		);
+	}
+	QAndroidJniObject ViewAnimator::getOutAnimation()
+	{
+		return __thiz.callObjectMethod(
+			"getOutAnimation",
+			"()Landroid/view/animation/Animation;"
+		);
+	}
+	void ViewAnimator::removeAllViews()
+	{
+		__thiz.callMethod<void>(
+			"removeAllViews",
+			"()V"
+		);
+	}
+	void ViewAnimator::removeView(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeView",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ViewAnimator::removeViewAt(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeViewAt",
+			"(I)V",
+			arg0
+		);
+	}
+	void ViewAnimator::removeViewInLayout(__jni_impl::android::view::View arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeViewInLayout",
+			"(Landroid/view/View;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ViewAnimator::removeViews(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"removeViews",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void ViewAnimator::removeViewsInLayout(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"removeViewsInLayout",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void ViewAnimator::setAnimateFirstView(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAnimateFirstView",
+			"(Z)V",
+			arg0
+		);
+	}
+	void ViewAnimator::setDisplayedChild(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDisplayedChild",
+			"(I)V",
+			arg0
 		);
 	}
 	void ViewAnimator::setInAnimation(__jni_impl::android::view::animation::Animation arg0)
@@ -195,13 +232,6 @@ namespace __jni_impl::android::widget
 			arg1
 		);
 	}
-	QAndroidJniObject ViewAnimator::getOutAnimation()
-	{
-		return __thiz.callObjectMethod(
-			"getOutAnimation",
-			"()Landroid/view/animation/Animation;"
-		);
-	}
 	void ViewAnimator::setOutAnimation(__jni_impl::android::view::animation::Animation arg0)
 	{
 		__thiz.callMethod<void>(
@@ -219,21 +249,6 @@ namespace __jni_impl::android::widget
 			arg1
 		);
 	}
-	jboolean ViewAnimator::getAnimateFirstView()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getAnimateFirstView",
-			"()Z"
-		);
-	}
-	void ViewAnimator::setAnimateFirstView(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAnimateFirstView",
-			"(Z)V",
-			arg0
-		);
-	}
 	void ViewAnimator::showNext()
 	{
 		__thiz.callMethod<void>(
@@ -246,21 +261,6 @@ namespace __jni_impl::android::widget
 		__thiz.callMethod<void>(
 			"showPrevious",
 			"()V"
-		);
-	}
-	void ViewAnimator::setDisplayedChild(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDisplayedChild",
-			"(I)V",
-			arg0
-		);
-	}
-	QAndroidJniObject ViewAnimator::getCurrentView()
-	{
-		return __thiz.callObjectMethod(
-			"getCurrentView",
-			"()Landroid/view/View;"
 		);
 	}
 } // namespace __jni_impl::android::widget

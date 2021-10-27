@@ -12,7 +12,7 @@ namespace __jni_impl::java::nio
 }
 namespace __jni_impl::java::nio
 {
-	class IntBuffer;
+	class ByteBuffer;
 }
 namespace __jni_impl::java::nio
 {
@@ -20,7 +20,7 @@ namespace __jni_impl::java::nio
 }
 namespace __jni_impl::java::nio
 {
-	class ByteBuffer;
+	class IntBuffer;
 }
 namespace __jni_impl::java::nio
 {
@@ -343,178 +343,178 @@ namespace __jni_impl::android::opengl
 		void __constructor();
 		
 		// Methods
-		static void glReadBuffer(jint arg0);
-		static void glDrawRangeElements(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
-		static void glDrawRangeElements(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::java::nio::Buffer arg5);
-		static void glTexImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
-		static void glTexImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, __jni_impl::java::nio::Buffer arg9);
-		static void glTexSubImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10);
-		static void glTexSubImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, __jni_impl::java::nio::Buffer arg10);
-		static void glCopyTexSubImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8);
-		static void glCompressedTexImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8);
-		static void glCompressedTexImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, __jni_impl::java::nio::Buffer arg8);
-		static void glCompressedTexSubImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10);
-		static void glCompressedTexSubImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, __jni_impl::java::nio::Buffer arg10);
-		static void glGenQueries(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
-		static void glGenQueries(jint arg0, jintArray arg1, jint arg2);
-		static void glDeleteQueries(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
-		static void glDeleteQueries(jint arg0, jintArray arg1, jint arg2);
-		static jboolean glIsQuery(jint arg0);
 		static void glBeginQuery(jint arg0, jint arg1);
-		static void glEndQuery(jint arg0);
-		static void glGetQueryiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glGetQueryiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glGetQueryObjectuiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glGetQueryObjectuiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static jboolean glUnmapBuffer(jint arg0);
-		static QAndroidJniObject glGetBufferPointerv(jint arg0, jint arg1);
-		static void glDrawBuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
-		static void glDrawBuffers(jint arg0, jintArray arg1, jint arg2);
-		static void glUniformMatrix2x3fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3);
-		static void glUniformMatrix2x3fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4);
-		static void glUniformMatrix3x2fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3);
-		static void glUniformMatrix3x2fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4);
-		static void glUniformMatrix2x4fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3);
-		static void glUniformMatrix2x4fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4);
-		static void glUniformMatrix4x2fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3);
-		static void glUniformMatrix4x2fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4);
-		static void glUniformMatrix3x4fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3);
-		static void glUniformMatrix3x4fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4);
-		static void glUniformMatrix4x3fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3);
-		static void glUniformMatrix4x3fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4);
-		static void glBlitFramebuffer(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
-		static void glRenderbufferStorageMultisample(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		static void glFramebufferTextureLayer(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		static QAndroidJniObject glMapBufferRange(jint arg0, jint arg1, jint arg2, jint arg3);
-		static void glFlushMappedBufferRange(jint arg0, jint arg1, jint arg2);
-		static void glBindVertexArray(jint arg0);
-		static void glDeleteVertexArrays(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
-		static void glDeleteVertexArrays(jint arg0, jintArray arg1, jint arg2);
-		static void glGenVertexArrays(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
-		static void glGenVertexArrays(jint arg0, jintArray arg1, jint arg2);
-		static jboolean glIsVertexArray(jint arg0);
-		static void glGetIntegeri_v(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glGetIntegeri_v(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glBeginTransformFeedback(jint arg0);
-		static void glEndTransformFeedback();
-		static void glBindBufferRange(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		static void glBindBufferBase(jint arg0, jint arg1, jint arg2);
-		static void glTransformFeedbackVaryings(jint arg0, jarray arg1, jint arg2);
-		static void glGetTransformFeedbackVarying(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::IntBuffer arg4, __jni_impl::java::nio::IntBuffer arg5, __jni_impl::java::nio::ByteBuffer arg6);
-		static jstring glGetTransformFeedbackVarying(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5);
-		static jstring glGetTransformFeedbackVarying(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3);
-		static void glGetTransformFeedbackVarying(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::IntBuffer arg4, __jni_impl::java::nio::IntBuffer arg5, jbyte arg6);
-		static void glGetTransformFeedbackVarying(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8, jbyteArray arg9, jint arg10);
-		static void glVertexAttribIPointer(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		static void glVertexAttribIPointer(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::java::nio::Buffer arg4);
-		static void glGetVertexAttribIiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glGetVertexAttribIiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glGetVertexAttribIuiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glGetVertexAttribIuiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glVertexAttribI4i(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		static void glVertexAttribI4ui(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		static void glVertexAttribI4iv(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
-		static void glVertexAttribI4iv(jint arg0, jintArray arg1, jint arg2);
-		static void glVertexAttribI4uiv(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
-		static void glVertexAttribI4uiv(jint arg0, jintArray arg1, jint arg2);
-		static void glGetUniformuiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glGetUniformuiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static jint glGetFragDataLocation(jint arg0, jstring arg1);
-		static jint glGetFragDataLocation(jint arg0, const QString &arg1);
-		static void glUniform1ui(jint arg0, jint arg1);
-		static void glUniform2ui(jint arg0, jint arg1, jint arg2);
-		static void glUniform3ui(jint arg0, jint arg1, jint arg2, jint arg3);
-		static void glUniform4ui(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		static void glUniform1uiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glUniform1uiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glUniform2uiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glUniform2uiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glUniform3uiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glUniform3uiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glUniform4uiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glUniform4uiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glBindBufferRange(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		static void glBindSampler(jint arg0, jint arg1);
+		static void glBindTransformFeedback(jint arg0, jint arg1);
+		static void glBindVertexArray(jint arg0);
+		static void glBlitFramebuffer(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
+		static void glClearBufferfi(jint arg0, jint arg1, jfloat arg2, jint arg3);
+		static void glClearBufferfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
+		static void glClearBufferfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
 		static void glClearBufferiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glClearBufferiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glClearBufferuiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glClearBufferuiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glClearBufferfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
-		static void glClearBufferfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
-		static void glClearBufferfi(jint arg0, jint arg1, jfloat arg2, jint arg3);
-		static jstring glGetStringi(jint arg0, jint arg1);
-		static void glCopyBufferSubData(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		static void glGetUniformIndices(jint arg0, jarray arg1, jintArray arg2, jint arg3);
-		static void glGetUniformIndices(jint arg0, jarray arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glGetActiveUniformsiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, jint arg3, __jni_impl::java::nio::IntBuffer arg4);
-		static void glGetActiveUniformsiv(jint arg0, jint arg1, jintArray arg2, jint arg3, jint arg4, jintArray arg5, jint arg6);
-		static jint glGetUniformBlockIndex(jint arg0, jstring arg1);
-		static jint glGetUniformBlockIndex(jint arg0, const QString &arg1);
-		static void glGetActiveUniformBlockiv(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4);
-		static void glGetActiveUniformBlockiv(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3);
-		static void glGetActiveUniformBlockName(jint arg0, jint arg1, __jni_impl::java::nio::Buffer arg2, __jni_impl::java::nio::Buffer arg3);
-		static jstring glGetActiveUniformBlockName(jint arg0, jint arg1);
-		static void glGetActiveUniformBlockName(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jbyteArray arg5, jint arg6);
-		static void glUniformBlockBinding(jint arg0, jint arg1, jint arg2);
-		static void glDrawArraysInstanced(jint arg0, jint arg1, jint arg2, jint arg3);
-		static void glDrawElementsInstanced(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		static void glDrawElementsInstanced(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::Buffer arg3, jint arg4);
-		static jlong glFenceSync(jint arg0, jint arg1);
-		static jboolean glIsSync(jlong arg0);
-		static void glDeleteSync(jlong arg0);
 		static jint glClientWaitSync(jlong arg0, jint arg1, jlong arg2);
-		static void glWaitSync(jlong arg0, jint arg1, jlong arg2);
-		static void glGetInteger64v(jint arg0, __jni_impl::java::nio::LongBuffer arg1);
-		static void glGetInteger64v(jint arg0, jlongArray arg1, jint arg2);
-		static void glGetSynciv(jlong arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::IntBuffer arg4);
-		static void glGetSynciv(jlong arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6);
-		static void glGetInteger64i_v(jint arg0, jint arg1, __jni_impl::java::nio::LongBuffer arg2);
-		static void glGetInteger64i_v(jint arg0, jint arg1, jlongArray arg2, jint arg3);
-		static void glGetBufferParameteri64v(jint arg0, jint arg1, __jni_impl::java::nio::LongBuffer arg2);
-		static void glGetBufferParameteri64v(jint arg0, jint arg1, jlongArray arg2, jint arg3);
-		static void glGenSamplers(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
-		static void glGenSamplers(jint arg0, jintArray arg1, jint arg2);
+		static void glCompressedTexImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8);
+		static void glCompressedTexImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, __jni_impl::java::nio::Buffer arg8);
+		static void glCompressedTexSubImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10);
+		static void glCompressedTexSubImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, __jni_impl::java::nio::Buffer arg10);
+		static void glCopyBufferSubData(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		static void glCopyTexSubImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8);
+		static void glDeleteQueries(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glDeleteQueries(jint arg0, jintArray arg1, jint arg2);
 		static void glDeleteSamplers(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
 		static void glDeleteSamplers(jint arg0, jintArray arg1, jint arg2);
+		static void glDeleteSync(jlong arg0);
+		static void glDeleteTransformFeedbacks(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glDeleteTransformFeedbacks(jint arg0, jintArray arg1, jint arg2);
+		static void glDeleteVertexArrays(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glDeleteVertexArrays(jint arg0, jintArray arg1, jint arg2);
+		static void glDrawArraysInstanced(jint arg0, jint arg1, jint arg2, jint arg3);
+		static void glDrawBuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glDrawBuffers(jint arg0, jintArray arg1, jint arg2);
+		static void glDrawElementsInstanced(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		static void glDrawElementsInstanced(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::Buffer arg3, jint arg4);
+		static void glDrawRangeElements(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
+		static void glDrawRangeElements(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::java::nio::Buffer arg5);
+		static void glEndQuery(jint arg0);
+		static void glEndTransformFeedback();
+		static jlong glFenceSync(jint arg0, jint arg1);
+		static void glFlushMappedBufferRange(jint arg0, jint arg1, jint arg2);
+		static void glFramebufferTextureLayer(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		static void glGenQueries(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glGenQueries(jint arg0, jintArray arg1, jint arg2);
+		static void glGenSamplers(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glGenSamplers(jint arg0, jintArray arg1, jint arg2);
+		static void glGenTransformFeedbacks(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glGenTransformFeedbacks(jint arg0, jintArray arg1, jint arg2);
+		static void glGenVertexArrays(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glGenVertexArrays(jint arg0, jintArray arg1, jint arg2);
+		static jstring glGetActiveUniformBlockName(jint arg0, jint arg1);
+		static void glGetActiveUniformBlockName(jint arg0, jint arg1, __jni_impl::java::nio::Buffer arg2, __jni_impl::java::nio::Buffer arg3);
+		static void glGetActiveUniformBlockName(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jbyteArray arg5, jint arg6);
+		static void glGetActiveUniformBlockiv(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3);
+		static void glGetActiveUniformBlockiv(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4);
+		static void glGetActiveUniformsiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, jint arg3, __jni_impl::java::nio::IntBuffer arg4);
+		static void glGetActiveUniformsiv(jint arg0, jint arg1, jintArray arg2, jint arg3, jint arg4, jintArray arg5, jint arg6);
+		static void glGetBufferParameteri64v(jint arg0, jint arg1, __jni_impl::java::nio::LongBuffer arg2);
+		static void glGetBufferParameteri64v(jint arg0, jint arg1, jlongArray arg2, jint arg3);
+		static QAndroidJniObject glGetBufferPointerv(jint arg0, jint arg1);
+		static jint glGetFragDataLocation(jint arg0, jstring arg1);
+		static jint glGetFragDataLocation(jint arg0, const QString &arg1);
+		static void glGetInteger64i_v(jint arg0, jint arg1, __jni_impl::java::nio::LongBuffer arg2);
+		static void glGetInteger64i_v(jint arg0, jint arg1, jlongArray arg2, jint arg3);
+		static void glGetInteger64v(jint arg0, __jni_impl::java::nio::LongBuffer arg1);
+		static void glGetInteger64v(jint arg0, jlongArray arg1, jint arg2);
+		static void glGetIntegeri_v(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glGetIntegeri_v(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetInternalformativ(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::java::nio::IntBuffer arg4);
+		static void glGetInternalformativ(jint arg0, jint arg1, jint arg2, jint arg3, jintArray arg4, jint arg5);
+		static void glGetProgramBinary(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::Buffer arg4);
+		static void glGetProgramBinary(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5, __jni_impl::java::nio::Buffer arg6);
+		static void glGetQueryObjectuiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glGetQueryObjectuiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetQueryiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glGetQueryiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetSamplerParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
+		static void glGetSamplerParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
+		static void glGetSamplerParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glGetSamplerParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static jstring glGetStringi(jint arg0, jint arg1);
+		static void glGetSynciv(jlong arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::IntBuffer arg4);
+		static void glGetSynciv(jlong arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6);
+		static jstring glGetTransformFeedbackVarying(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3);
+		static jstring glGetTransformFeedbackVarying(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5);
+		static void glGetTransformFeedbackVarying(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::IntBuffer arg4, __jni_impl::java::nio::IntBuffer arg5, jbyte arg6);
+		static void glGetTransformFeedbackVarying(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::IntBuffer arg4, __jni_impl::java::nio::IntBuffer arg5, __jni_impl::java::nio::ByteBuffer arg6);
+		static void glGetTransformFeedbackVarying(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8, jbyteArray arg9, jint arg10);
+		static jint glGetUniformBlockIndex(jint arg0, jstring arg1);
+		static jint glGetUniformBlockIndex(jint arg0, const QString &arg1);
+		static void glGetUniformIndices(jint arg0, jarray arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glGetUniformIndices(jint arg0, jarray arg1, jintArray arg2, jint arg3);
+		static void glGetUniformuiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glGetUniformuiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetVertexAttribIiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glGetVertexAttribIiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetVertexAttribIuiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glGetVertexAttribIuiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glInvalidateFramebuffer(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glInvalidateFramebuffer(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glInvalidateSubFramebuffer(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, jint arg3, jint arg4, jint arg5, jint arg6);
+		static void glInvalidateSubFramebuffer(jint arg0, jint arg1, jintArray arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
+		static jboolean glIsQuery(jint arg0);
 		static jboolean glIsSampler(jint arg0);
-		static void glBindSampler(jint arg0, jint arg1);
-		static void glSamplerParameteri(jint arg0, jint arg1, jint arg2);
-		static void glSamplerParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glSamplerParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static jboolean glIsSync(jlong arg0);
+		static jboolean glIsTransformFeedback(jint arg0);
+		static jboolean glIsVertexArray(jint arg0);
+		static QAndroidJniObject glMapBufferRange(jint arg0, jint arg1, jint arg2, jint arg3);
+		static void glPauseTransformFeedback();
+		static void glProgramBinary(jint arg0, jint arg1, __jni_impl::java::nio::Buffer arg2, jint arg3);
+		static void glProgramParameteri(jint arg0, jint arg1, jint arg2);
+		static void glReadBuffer(jint arg0);
+		static void glReadPixels(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
+		static void glRenderbufferStorageMultisample(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		static void glResumeTransformFeedback();
 		static void glSamplerParameterf(jint arg0, jint arg1, jfloat arg2);
 		static void glSamplerParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
 		static void glSamplerParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
-		static void glGetSamplerParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glGetSamplerParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glGetSamplerParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
-		static void glGetSamplerParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
-		static void glVertexAttribDivisor(jint arg0, jint arg1);
-		static void glBindTransformFeedback(jint arg0, jint arg1);
-		static void glDeleteTransformFeedbacks(jint arg0, jintArray arg1, jint arg2);
-		static void glDeleteTransformFeedbacks(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
-		static void glGenTransformFeedbacks(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
-		static void glGenTransformFeedbacks(jint arg0, jintArray arg1, jint arg2);
-		static jboolean glIsTransformFeedback(jint arg0);
-		static void glPauseTransformFeedback();
-		static void glResumeTransformFeedback();
-		static void glGetProgramBinary(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::Buffer arg4);
-		static void glGetProgramBinary(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5, __jni_impl::java::nio::Buffer arg6);
-		static void glProgramBinary(jint arg0, jint arg1, __jni_impl::java::nio::Buffer arg2, jint arg3);
-		static void glProgramParameteri(jint arg0, jint arg1, jint arg2);
-		static void glInvalidateFramebuffer(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glInvalidateFramebuffer(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glInvalidateSubFramebuffer(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, jint arg3, jint arg4, jint arg5, jint arg6);
-		static void glInvalidateSubFramebuffer(jint arg0, jint arg1, jintArray arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7);
+		static void glSamplerParameteri(jint arg0, jint arg1, jint arg2);
+		static void glSamplerParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glSamplerParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glTexImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9);
+		static void glTexImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, __jni_impl::java::nio::Buffer arg9);
 		static void glTexStorage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
 		static void glTexStorage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5);
-		static void glGetInternalformativ(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::java::nio::IntBuffer arg4);
-		static void glGetInternalformativ(jint arg0, jint arg1, jint arg2, jint arg3, jintArray arg4, jint arg5);
-		static void glReadPixels(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6);
+		static void glTexSubImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10);
+		static void glTexSubImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, __jni_impl::java::nio::Buffer arg10);
+		static void glTransformFeedbackVaryings(jint arg0, jarray arg1, jint arg2);
+		static void glUniform1ui(jint arg0, jint arg1);
+		static void glUniform1uiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glUniform1uiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glUniform2ui(jint arg0, jint arg1, jint arg2);
+		static void glUniform2uiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glUniform2uiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glUniform3ui(jint arg0, jint arg1, jint arg2, jint arg3);
+		static void glUniform3uiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glUniform3uiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glUniform4ui(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		static void glUniform4uiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glUniform4uiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glUniformBlockBinding(jint arg0, jint arg1, jint arg2);
+		static void glUniformMatrix2x3fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3);
+		static void glUniformMatrix2x3fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4);
+		static void glUniformMatrix2x4fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3);
+		static void glUniformMatrix2x4fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4);
+		static void glUniformMatrix3x2fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3);
+		static void glUniformMatrix3x2fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4);
+		static void glUniformMatrix3x4fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3);
+		static void glUniformMatrix3x4fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4);
+		static void glUniformMatrix4x2fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3);
+		static void glUniformMatrix4x2fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4);
+		static void glUniformMatrix4x3fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3);
+		static void glUniformMatrix4x3fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4);
+		static jboolean glUnmapBuffer(jint arg0);
+		static void glVertexAttribDivisor(jint arg0, jint arg1);
+		static void glVertexAttribI4i(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		static void glVertexAttribI4iv(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glVertexAttribI4iv(jint arg0, jintArray arg1, jint arg2);
+		static void glVertexAttribI4ui(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		static void glVertexAttribI4uiv(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glVertexAttribI4uiv(jint arg0, jintArray arg1, jint arg2);
+		static void glVertexAttribIPointer(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		static void glVertexAttribIPointer(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::java::nio::Buffer arg4);
+		static void glWaitSync(jlong arg0, jint arg1, jlong arg2);
 	};
 } // namespace __jni_impl::android::opengl
 
 #include "../../java/nio/Buffer.hpp"
-#include "../../java/nio/IntBuffer.hpp"
-#include "../../java/nio/FloatBuffer.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
+#include "../../java/nio/FloatBuffer.hpp"
+#include "../../java/nio/IntBuffer.hpp"
 #include "../../java/nio/LongBuffer.hpp"
 
 namespace __jni_impl::android::opengl
@@ -2666,48 +2666,83 @@ namespace __jni_impl::android::opengl
 	}
 	
 	// Methods
-	void GLES30::glReadBuffer(jint arg0)
+	void GLES30::glBeginQuery(jint arg0, jint arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glReadBuffer",
+			"glBeginQuery",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void GLES30::glBeginTransformFeedback(jint arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glBeginTransformFeedback",
 			"(I)V",
 			arg0
 		);
 	}
-	void GLES30::glDrawRangeElements(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	void GLES30::glBindBufferBase(jint arg0, jint arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glDrawRangeElements",
-			"(IIIIII)V",
+			"glBindBufferBase",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES30::glBindBufferRange(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glBindBufferRange",
+			"(IIIII)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4,
-			arg5
+			arg4
 		);
 	}
-	void GLES30::glDrawRangeElements(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::java::nio::Buffer arg5)
+	void GLES30::glBindSampler(jint arg0, jint arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glDrawRangeElements",
-			"(IIIIILjava/nio/Buffer;)V",
+			"glBindSampler",
+			"(II)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5.__jniObject().object()
+			arg1
 		);
 	}
-	void GLES30::glTexImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
+	void GLES30::glBindTransformFeedback(jint arg0, jint arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glTexImage3D",
+			"glBindTransformFeedback",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void GLES30::glBindVertexArray(jint arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glBindVertexArray",
+			"(I)V",
+			arg0
+		);
+	}
+	void GLES30::glBlitFramebuffer(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glBlitFramebuffer",
 			"(IIIIIIIIII)V",
 			arg0,
 			arg1,
@@ -2721,77 +2756,96 @@ namespace __jni_impl::android::opengl
 			arg9
 		);
 	}
-	void GLES30::glTexImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, __jni_impl::java::nio::Buffer arg9)
+	void GLES30::glClearBufferfi(jint arg0, jint arg1, jfloat arg2, jint arg3)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glTexImage3D",
-			"(IIIIIIIIILjava/nio/Buffer;)V",
+			"glClearBufferfi",
+			"(IIFI)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8,
-			arg9.__jniObject().object()
+			arg3
 		);
 	}
-	void GLES30::glTexSubImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10)
+	void GLES30::glClearBufferfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glTexSubImage3D",
-			"(IIIIIIIIIII)V",
+			"glClearBufferfv",
+			"(IILjava/nio/FloatBuffer;)V",
 			arg0,
 			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8,
-			arg9,
-			arg10
+			arg2.__jniObject().object()
 		);
 	}
-	void GLES30::glTexSubImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, __jni_impl::java::nio::Buffer arg10)
+	void GLES30::glClearBufferfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glTexSubImage3D",
-			"(IIIIIIIIIILjava/nio/Buffer;)V",
+			"glClearBufferfv",
+			"(II[FI)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8,
-			arg9,
-			arg10.__jniObject().object()
+			arg3
 		);
 	}
-	void GLES30::glCopyTexSubImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8)
+	void GLES30::glClearBufferiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glCopyTexSubImage3D",
-			"(IIIIIIIII)V",
+			"glClearBufferiv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES30::glClearBufferiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glClearBufferiv",
+			"(II[II)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8
+			arg3
+		);
+	}
+	void GLES30::glClearBufferuiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glClearBufferuiv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES30::glClearBufferuiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glClearBufferuiv",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	jint GLES30::glClientWaitSync(jlong arg0, jint arg1, jlong arg2)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.opengl.GLES30",
+			"glClientWaitSync",
+			"(JIJ)I",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 	void GLES30::glCompressedTexImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8)
@@ -2866,25 +2920,34 @@ namespace __jni_impl::android::opengl
 			arg10.__jniObject().object()
 		);
 	}
-	void GLES30::glGenQueries(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	void GLES30::glCopyBufferSubData(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glGenQueries",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void GLES30::glGenQueries(jint arg0, jintArray arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGenQueries",
-			"(I[II)V",
+			"glCopyBufferSubData",
+			"(IIIII)V",
 			arg0,
 			arg1,
-			arg2
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	void GLES30::glCopyTexSubImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glCopyTexSubImage3D",
+			"(IIIIIIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8
 		);
 	}
 	void GLES30::glDeleteQueries(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
@@ -2908,97 +2971,88 @@ namespace __jni_impl::android::opengl
 			arg2
 		);
 	}
-	jboolean GLES30::glIsQuery(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.GLES30",
-			"glIsQuery",
-			"(I)Z",
-			arg0
-		);
-	}
-	void GLES30::glBeginQuery(jint arg0, jint arg1)
+	void GLES30::glDeleteSamplers(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glBeginQuery",
-			"(II)V",
+			"glDeleteSamplers",
+			"(ILjava/nio/IntBuffer;)V",
 			arg0,
-			arg1
+			arg1.__jniObject().object()
 		);
 	}
-	void GLES30::glEndQuery(jint arg0)
+	void GLES30::glDeleteSamplers(jint arg0, jintArray arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glEndQuery",
-			"(I)V",
-			arg0
-		);
-	}
-	void GLES30::glGetQueryiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetQueryiv",
-			"(IILjava/nio/IntBuffer;)V",
+			"glDeleteSamplers",
+			"(I[II)V",
 			arg0,
 			arg1,
-			arg2.__jniObject().object()
+			arg2
 		);
 	}
-	void GLES30::glGetQueryiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES30::glDeleteSync(jlong arg0)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glGetQueryiv",
-			"(II[II)V",
+			"glDeleteSync",
+			"(J)V",
+			arg0
+		);
+	}
+	void GLES30::glDeleteTransformFeedbacks(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glDeleteTransformFeedbacks",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void GLES30::glDeleteTransformFeedbacks(jint arg0, jintArray arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glDeleteTransformFeedbacks",
+			"(I[II)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES30::glDeleteVertexArrays(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glDeleteVertexArrays",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void GLES30::glDeleteVertexArrays(jint arg0, jintArray arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glDeleteVertexArrays",
+			"(I[II)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES30::glDrawArraysInstanced(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glDrawArraysInstanced",
+			"(IIII)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	void GLES30::glGetQueryObjectuiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetQueryObjectuiv",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void GLES30::glGetQueryObjectuiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetQueryObjectuiv",
-			"(II[II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	jboolean GLES30::glUnmapBuffer(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.GLES30",
-			"glUnmapBuffer",
-			"(I)Z",
-			arg0
-		);
-	}
-	QAndroidJniObject GLES30::glGetBufferPointerv(jint arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.opengl.GLES30",
-			"glGetBufferPointerv",
-			"(II)Ljava/nio/Buffer;",
-			arg0,
-			arg1
 		);
 	}
 	void GLES30::glDrawBuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
@@ -3022,185 +3076,96 @@ namespace __jni_impl::android::opengl
 			arg2
 		);
 	}
-	void GLES30::glUniformMatrix2x3fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3)
+	void GLES30::glDrawElementsInstanced(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glUniformMatrix2x3fv",
-			"(IIZLjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	void GLES30::glUniformMatrix2x3fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniformMatrix2x3fv",
-			"(IIZ[FI)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	void GLES30::glUniformMatrix3x2fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniformMatrix3x2fv",
-			"(IIZLjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	void GLES30::glUniformMatrix3x2fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniformMatrix3x2fv",
-			"(IIZ[FI)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	void GLES30::glUniformMatrix2x4fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniformMatrix2x4fv",
-			"(IIZLjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	void GLES30::glUniformMatrix2x4fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniformMatrix2x4fv",
-			"(IIZ[FI)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	void GLES30::glUniformMatrix4x2fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniformMatrix4x2fv",
-			"(IIZLjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	void GLES30::glUniformMatrix4x2fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniformMatrix4x2fv",
-			"(IIZ[FI)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	void GLES30::glUniformMatrix3x4fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniformMatrix3x4fv",
-			"(IIZLjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	void GLES30::glUniformMatrix3x4fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniformMatrix3x4fv",
-			"(IIZ[FI)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	void GLES30::glUniformMatrix4x3fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniformMatrix4x3fv",
-			"(IIZLjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	void GLES30::glUniformMatrix4x3fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniformMatrix4x3fv",
-			"(IIZ[FI)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	void GLES30::glBlitFramebuffer(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glBlitFramebuffer",
-			"(IIIIIIIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8,
-			arg9
-		);
-	}
-	void GLES30::glRenderbufferStorageMultisample(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glRenderbufferStorageMultisample",
+			"glDrawElementsInstanced",
 			"(IIIII)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
 			arg4
+		);
+	}
+	void GLES30::glDrawElementsInstanced(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::Buffer arg3, jint arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glDrawElementsInstanced",
+			"(IIILjava/nio/Buffer;I)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object(),
+			arg4
+		);
+	}
+	void GLES30::glDrawRangeElements(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glDrawRangeElements",
+			"(IIIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5
+		);
+	}
+	void GLES30::glDrawRangeElements(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, __jni_impl::java::nio::Buffer arg5)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glDrawRangeElements",
+			"(IIIIILjava/nio/Buffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5.__jniObject().object()
+		);
+	}
+	void GLES30::glEndQuery(jint arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glEndQuery",
+			"(I)V",
+			arg0
+		);
+	}
+	void GLES30::glEndTransformFeedback()
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glEndTransformFeedback",
+			"()V"
+		);
+	}
+	jlong GLES30::glFenceSync(jint arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jlong>(
+			"android.opengl.GLES30",
+			"glFenceSync",
+			"(II)J",
+			arg0,
+			arg1
+		);
+	}
+	void GLES30::glFlushMappedBufferRange(jint arg0, jint arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glFlushMappedBufferRange",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 	void GLES30::glFramebufferTextureLayer(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
@@ -3216,53 +3181,63 @@ namespace __jni_impl::android::opengl
 			arg4
 		);
 	}
-	QAndroidJniObject GLES30::glMapBufferRange(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.opengl.GLES30",
-			"glMapBufferRange",
-			"(IIII)Ljava/nio/Buffer;",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES30::glFlushMappedBufferRange(jint arg0, jint arg1, jint arg2)
+	void GLES30::glGenQueries(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glFlushMappedBufferRange",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES30::glBindVertexArray(jint arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glBindVertexArray",
-			"(I)V",
-			arg0
-		);
-	}
-	void GLES30::glDeleteVertexArrays(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glDeleteVertexArrays",
+			"glGenQueries",
 			"(ILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1.__jniObject().object()
 		);
 	}
-	void GLES30::glDeleteVertexArrays(jint arg0, jintArray arg1, jint arg2)
+	void GLES30::glGenQueries(jint arg0, jintArray arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glDeleteVertexArrays",
+			"glGenQueries",
+			"(I[II)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES30::glGenSamplers(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGenSamplers",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void GLES30::glGenSamplers(jint arg0, jintArray arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGenSamplers",
+			"(I[II)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES30::glGenTransformFeedbacks(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGenTransformFeedbacks",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void GLES30::glGenTransformFeedbacks(jint arg0, jintArray arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGenTransformFeedbacks",
 			"(I[II)V",
 			arg0,
 			arg1,
@@ -3290,13 +3265,191 @@ namespace __jni_impl::android::opengl
 			arg2
 		);
 	}
-	jboolean GLES30::glIsVertexArray(jint arg0)
+	jstring GLES30::glGetActiveUniformBlockName(jint arg0, jint arg1)
 	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
+		return QAndroidJniObject::callStaticObjectMethod(
 			"android.opengl.GLES30",
-			"glIsVertexArray",
-			"(I)Z",
-			arg0
+			"glGetActiveUniformBlockName",
+			"(II)Ljava/lang/String;",
+			arg0,
+			arg1
+		).object<jstring>();
+	}
+	void GLES30::glGetActiveUniformBlockName(jint arg0, jint arg1, __jni_impl::java::nio::Buffer arg2, __jni_impl::java::nio::Buffer arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetActiveUniformBlockName",
+			"(IILjava/nio/Buffer;Ljava/nio/Buffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object()
+		);
+	}
+	void GLES30::glGetActiveUniformBlockName(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jbyteArray arg5, jint arg6)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetActiveUniformBlockName",
+			"(III[II[BI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6
+		);
+	}
+	void GLES30::glGetActiveUniformBlockiv(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetActiveUniformBlockiv",
+			"(IIILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object()
+		);
+	}
+	void GLES30::glGetActiveUniformBlockiv(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetActiveUniformBlockiv",
+			"(III[II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	void GLES30::glGetActiveUniformsiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, jint arg3, __jni_impl::java::nio::IntBuffer arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetActiveUniformsiv",
+			"(IILjava/nio/IntBuffer;ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object(),
+			arg3,
+			arg4.__jniObject().object()
+		);
+	}
+	void GLES30::glGetActiveUniformsiv(jint arg0, jint arg1, jintArray arg2, jint arg3, jint arg4, jintArray arg5, jint arg6)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetActiveUniformsiv",
+			"(II[III[II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6
+		);
+	}
+	void GLES30::glGetBufferParameteri64v(jint arg0, jint arg1, __jni_impl::java::nio::LongBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetBufferParameteri64v",
+			"(IILjava/nio/LongBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES30::glGetBufferParameteri64v(jint arg0, jint arg1, jlongArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetBufferParameteri64v",
+			"(II[JI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	QAndroidJniObject GLES30::glGetBufferPointerv(jint arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.opengl.GLES30",
+			"glGetBufferPointerv",
+			"(II)Ljava/nio/Buffer;",
+			arg0,
+			arg1
+		);
+	}
+	jint GLES30::glGetFragDataLocation(jint arg0, jstring arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.opengl.GLES30",
+			"glGetFragDataLocation",
+			"(ILjava/lang/String;)I",
+			arg0,
+			arg1
+		);
+	}
+	jint GLES30::glGetFragDataLocation(jint arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.opengl.GLES30",
+			"glGetFragDataLocation",
+			"(ILjava/lang/String;)I",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	void GLES30::glGetInteger64i_v(jint arg0, jint arg1, __jni_impl::java::nio::LongBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetInteger64i_v",
+			"(IILjava/nio/LongBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES30::glGetInteger64i_v(jint arg0, jint arg1, jlongArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetInteger64i_v",
+			"(II[JI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES30::glGetInteger64v(jint arg0, __jni_impl::java::nio::LongBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetInteger64v",
+			"(ILjava/nio/LongBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void GLES30::glGetInteger64v(jint arg0, jlongArray arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetInteger64v",
+			"(I[JI)V",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 	void GLES30::glGetIntegeri_v(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
@@ -3322,72 +3475,202 @@ namespace __jni_impl::android::opengl
 			arg3
 		);
 	}
-	void GLES30::glBeginTransformFeedback(jint arg0)
+	void GLES30::glGetInternalformativ(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::java::nio::IntBuffer arg4)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glBeginTransformFeedback",
-			"(I)V",
-			arg0
-		);
-	}
-	void GLES30::glEndTransformFeedback()
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glEndTransformFeedback",
-			"()V"
-		);
-	}
-	void GLES30::glBindBufferRange(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glBindBufferRange",
-			"(IIIII)V",
+			"glGetInternalformativ",
+			"(IIIILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4
+			arg4.__jniObject().object()
 		);
 	}
-	void GLES30::glBindBufferBase(jint arg0, jint arg1, jint arg2)
+	void GLES30::glGetInternalformativ(jint arg0, jint arg1, jint arg2, jint arg3, jintArray arg4, jint arg5)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glBindBufferBase",
-			"(III)V",
+			"glGetInternalformativ",
+			"(IIII[II)V",
 			arg0,
 			arg1,
-			arg2
+			arg2,
+			arg3,
+			arg4,
+			arg5
 		);
 	}
-	void GLES30::glTransformFeedbackVaryings(jint arg0, jarray arg1, jint arg2)
+	void GLES30::glGetProgramBinary(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::Buffer arg4)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glTransformFeedbackVaryings",
-			"(I[Ljava/lang/String;I)V",
+			"glGetProgramBinary",
+			"(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/Buffer;)V",
 			arg0,
 			arg1,
-			arg2
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object(),
+			arg4.__jniObject().object()
 		);
 	}
-	void GLES30::glGetTransformFeedbackVarying(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::IntBuffer arg4, __jni_impl::java::nio::IntBuffer arg5, __jni_impl::java::nio::ByteBuffer arg6)
+	void GLES30::glGetProgramBinary(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5, __jni_impl::java::nio::Buffer arg6)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glGetTransformFeedbackVarying",
-			"(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)V",
+			"glGetProgramBinary",
+			"(II[II[IILjava/nio/Buffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6.__jniObject().object()
+		);
+	}
+	void GLES30::glGetQueryObjectuiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetQueryObjectuiv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES30::glGetQueryObjectuiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetQueryObjectuiv",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES30::glGetQueryiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetQueryiv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES30::glGetQueryiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetQueryiv",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES30::glGetSamplerParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetSamplerParameterfv",
+			"(IILjava/nio/FloatBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES30::glGetSamplerParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetSamplerParameterfv",
+			"(II[FI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES30::glGetSamplerParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetSamplerParameteriv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES30::glGetSamplerParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetSamplerParameteriv",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	jstring GLES30::glGetStringi(jint arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.opengl.GLES30",
+			"glGetStringi",
+			"(II)Ljava/lang/String;",
+			arg0,
+			arg1
+		).object<jstring>();
+	}
+	void GLES30::glGetSynciv(jlong arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::IntBuffer arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetSynciv",
+			"(JIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3.__jniObject().object(),
-			arg4.__jniObject().object(),
-			arg5.__jniObject().object(),
-			arg6.__jniObject().object()
+			arg4.__jniObject().object()
 		);
+	}
+	void GLES30::glGetSynciv(jlong arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetSynciv",
+			"(JII[II[II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6
+		);
+	}
+	jstring GLES30::glGetTransformFeedbackVarying(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.opengl.GLES30",
+			"glGetTransformFeedbackVarying",
+			"(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String;",
+			arg0,
+			arg1,
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object()
+		).object<jstring>();
 	}
 	jstring GLES30::glGetTransformFeedbackVarying(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5)
 	{
@@ -3403,18 +3686,6 @@ namespace __jni_impl::android::opengl
 			arg5
 		).object<jstring>();
 	}
-	jstring GLES30::glGetTransformFeedbackVarying(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.opengl.GLES30",
-			"glGetTransformFeedbackVarying",
-			"(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)Ljava/lang/String;",
-			arg0,
-			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		).object<jstring>();
-	}
 	void GLES30::glGetTransformFeedbackVarying(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::IntBuffer arg4, __jni_impl::java::nio::IntBuffer arg5, jbyte arg6)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -3428,6 +3699,21 @@ namespace __jni_impl::android::opengl
 			arg4.__jniObject().object(),
 			arg5.__jniObject().object(),
 			arg6
+		);
+	}
+	void GLES30::glGetTransformFeedbackVarying(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::IntBuffer arg4, __jni_impl::java::nio::IntBuffer arg5, __jni_impl::java::nio::ByteBuffer arg6)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetTransformFeedbackVarying",
+			"(IIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/ByteBuffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object(),
+			arg4.__jniObject().object(),
+			arg5.__jniObject().object(),
+			arg6.__jniObject().object()
 		);
 	}
 	void GLES30::glGetTransformFeedbackVarying(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8, jbyteArray arg9, jint arg10)
@@ -3449,30 +3735,70 @@ namespace __jni_impl::android::opengl
 			arg10
 		);
 	}
-	void GLES30::glVertexAttribIPointer(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	jint GLES30::glGetUniformBlockIndex(jint arg0, jstring arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.opengl.GLES30",
-			"glVertexAttribIPointer",
-			"(IIIII)V",
+			"glGetUniformBlockIndex",
+			"(ILjava/lang/String;)I",
 			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
+			arg1
 		);
 	}
-	void GLES30::glVertexAttribIPointer(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::java::nio::Buffer arg4)
+	jint GLES30::glGetUniformBlockIndex(jint arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.opengl.GLES30",
+			"glGetUniformBlockIndex",
+			"(ILjava/lang/String;)I",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	void GLES30::glGetUniformIndices(jint arg0, jarray arg1, __jni_impl::java::nio::IntBuffer arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glVertexAttribIPointer",
-			"(IIIILjava/nio/Buffer;)V",
+			"glGetUniformIndices",
+			"(I[Ljava/lang/String;Ljava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES30::glGetUniformIndices(jint arg0, jarray arg1, jintArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetUniformIndices",
+			"(I[Ljava/lang/String;[II)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3,
-			arg4.__jniObject().object()
+			arg3
+		);
+	}
+	void GLES30::glGetUniformuiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetUniformuiv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES30::glGetUniformuiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glGetUniformuiv",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
 		);
 	}
 	void GLES30::glGetVertexAttribIiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
@@ -3521,90 +3847,22 @@ namespace __jni_impl::android::opengl
 			arg3
 		);
 	}
-	void GLES30::glVertexAttribI4i(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	void GLES30::glInvalidateFramebuffer(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glVertexAttribI4i",
-			"(IIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	void GLES30::glVertexAttribI4ui(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glVertexAttribI4ui",
-			"(IIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	void GLES30::glVertexAttribI4iv(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glVertexAttribI4iv",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void GLES30::glVertexAttribI4iv(jint arg0, jintArray arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glVertexAttribI4iv",
-			"(I[II)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES30::glVertexAttribI4uiv(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glVertexAttribI4uiv",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void GLES30::glVertexAttribI4uiv(jint arg0, jintArray arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glVertexAttribI4uiv",
-			"(I[II)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES30::glGetUniformuiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetUniformuiv",
+			"glInvalidateFramebuffer",
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
 			arg2.__jniObject().object()
 		);
 	}
-	void GLES30::glGetUniformuiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES30::glInvalidateFramebuffer(jint arg0, jint arg1, jintArray arg2, jint arg3)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glGetUniformuiv",
+			"glInvalidateFramebuffer",
 			"(II[II)V",
 			arg0,
 			arg1,
@@ -3612,635 +3870,44 @@ namespace __jni_impl::android::opengl
 			arg3
 		);
 	}
-	jint GLES30::glGetFragDataLocation(jint arg0, jstring arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.GLES30",
-			"glGetFragDataLocation",
-			"(ILjava/lang/String;)I",
-			arg0,
-			arg1
-		);
-	}
-	jint GLES30::glGetFragDataLocation(jint arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.GLES30",
-			"glGetFragDataLocation",
-			"(ILjava/lang/String;)I",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	void GLES30::glUniform1ui(jint arg0, jint arg1)
+	void GLES30::glInvalidateSubFramebuffer(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, jint arg3, jint arg4, jint arg5, jint arg6)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glUniform1ui",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void GLES30::glUniform2ui(jint arg0, jint arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniform2ui",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES30::glUniform3ui(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniform3ui",
-			"(IIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES30::glUniform4ui(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniform4ui",
-			"(IIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	void GLES30::glUniform1uiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniform1uiv",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void GLES30::glUniform1uiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniform1uiv",
-			"(II[II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES30::glUniform2uiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniform2uiv",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void GLES30::glUniform2uiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniform2uiv",
-			"(II[II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES30::glUniform3uiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniform3uiv",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void GLES30::glUniform3uiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniform3uiv",
-			"(II[II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES30::glUniform4uiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniform4uiv",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void GLES30::glUniform4uiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniform4uiv",
-			"(II[II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES30::glClearBufferiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glClearBufferiv",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void GLES30::glClearBufferiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glClearBufferiv",
-			"(II[II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES30::glClearBufferuiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glClearBufferuiv",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void GLES30::glClearBufferuiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glClearBufferuiv",
-			"(II[II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES30::glClearBufferfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glClearBufferfv",
-			"(IILjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void GLES30::glClearBufferfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glClearBufferfv",
-			"(II[FI)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES30::glClearBufferfi(jint arg0, jint arg1, jfloat arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glClearBufferfi",
-			"(IIFI)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	jstring GLES30::glGetStringi(jint arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.opengl.GLES30",
-			"glGetStringi",
-			"(II)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
-	}
-	void GLES30::glCopyBufferSubData(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glCopyBufferSubData",
-			"(IIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	void GLES30::glGetUniformIndices(jint arg0, jarray arg1, jintArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetUniformIndices",
-			"(I[Ljava/lang/String;[II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES30::glGetUniformIndices(jint arg0, jarray arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetUniformIndices",
-			"(I[Ljava/lang/String;Ljava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void GLES30::glGetActiveUniformsiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, jint arg3, __jni_impl::java::nio::IntBuffer arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetActiveUniformsiv",
-			"(IILjava/nio/IntBuffer;ILjava/nio/IntBuffer;)V",
+			"glInvalidateSubFramebuffer",
+			"(IILjava/nio/IntBuffer;IIII)V",
 			arg0,
 			arg1,
 			arg2.__jniObject().object(),
-			arg3,
-			arg4.__jniObject().object()
-		);
-	}
-	void GLES30::glGetActiveUniformsiv(jint arg0, jint arg1, jintArray arg2, jint arg3, jint arg4, jintArray arg5, jint arg6)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetActiveUniformsiv",
-			"(II[III[II)V",
-			arg0,
-			arg1,
-			arg2,
 			arg3,
 			arg4,
 			arg5,
 			arg6
 		);
 	}
-	jint GLES30::glGetUniformBlockIndex(jint arg0, jstring arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.GLES30",
-			"glGetUniformBlockIndex",
-			"(ILjava/lang/String;)I",
-			arg0,
-			arg1
-		);
-	}
-	jint GLES30::glGetUniformBlockIndex(jint arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.GLES30",
-			"glGetUniformBlockIndex",
-			"(ILjava/lang/String;)I",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	void GLES30::glGetActiveUniformBlockiv(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4)
+	void GLES30::glInvalidateSubFramebuffer(jint arg0, jint arg1, jintArray arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glGetActiveUniformBlockiv",
-			"(III[II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	void GLES30::glGetActiveUniformBlockiv(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetActiveUniformBlockiv",
-			"(IIILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
-	void GLES30::glGetActiveUniformBlockName(jint arg0, jint arg1, __jni_impl::java::nio::Buffer arg2, __jni_impl::java::nio::Buffer arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetActiveUniformBlockName",
-			"(IILjava/nio/Buffer;Ljava/nio/Buffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-	jstring GLES30::glGetActiveUniformBlockName(jint arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.opengl.GLES30",
-			"glGetActiveUniformBlockName",
-			"(II)Ljava/lang/String;",
-			arg0,
-			arg1
-		).object<jstring>();
-	}
-	void GLES30::glGetActiveUniformBlockName(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jbyteArray arg5, jint arg6)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetActiveUniformBlockName",
-			"(III[II[BI)V",
+			"glInvalidateSubFramebuffer",
+			"(II[IIIIII)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
 			arg4,
 			arg5,
-			arg6
+			arg6,
+			arg7
 		);
 	}
-	void GLES30::glUniformBlockBinding(jint arg0, jint arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glUniformBlockBinding",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES30::glDrawArraysInstanced(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glDrawArraysInstanced",
-			"(IIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES30::glDrawElementsInstanced(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glDrawElementsInstanced",
-			"(IIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	void GLES30::glDrawElementsInstanced(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::Buffer arg3, jint arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glDrawElementsInstanced",
-			"(IIILjava/nio/Buffer;I)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object(),
-			arg4
-		);
-	}
-	jlong GLES30::glFenceSync(jint arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.opengl.GLES30",
-			"glFenceSync",
-			"(II)J",
-			arg0,
-			arg1
-		);
-	}
-	jboolean GLES30::glIsSync(jlong arg0)
+	jboolean GLES30::glIsQuery(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.opengl.GLES30",
-			"glIsSync",
-			"(J)Z",
+			"glIsQuery",
+			"(I)Z",
 			arg0
-		);
-	}
-	void GLES30::glDeleteSync(jlong arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glDeleteSync",
-			"(J)V",
-			arg0
-		);
-	}
-	jint GLES30::glClientWaitSync(jlong arg0, jint arg1, jlong arg2)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.GLES30",
-			"glClientWaitSync",
-			"(JIJ)I",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES30::glWaitSync(jlong arg0, jint arg1, jlong arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glWaitSync",
-			"(JIJ)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES30::glGetInteger64v(jint arg0, __jni_impl::java::nio::LongBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetInteger64v",
-			"(ILjava/nio/LongBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void GLES30::glGetInteger64v(jint arg0, jlongArray arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetInteger64v",
-			"(I[JI)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES30::glGetSynciv(jlong arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::IntBuffer arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetSynciv",
-			"(JIILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
-		);
-	}
-	void GLES30::glGetSynciv(jlong arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetSynciv",
-			"(JII[II[II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6
-		);
-	}
-	void GLES30::glGetInteger64i_v(jint arg0, jint arg1, __jni_impl::java::nio::LongBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetInteger64i_v",
-			"(IILjava/nio/LongBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void GLES30::glGetInteger64i_v(jint arg0, jint arg1, jlongArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetInteger64i_v",
-			"(II[JI)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES30::glGetBufferParameteri64v(jint arg0, jint arg1, __jni_impl::java::nio::LongBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetBufferParameteri64v",
-			"(IILjava/nio/LongBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void GLES30::glGetBufferParameteri64v(jint arg0, jint arg1, jlongArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetBufferParameteri64v",
-			"(II[JI)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES30::glGenSamplers(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGenSamplers",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void GLES30::glGenSamplers(jint arg0, jintArray arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGenSamplers",
-			"(I[II)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES30::glDeleteSamplers(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glDeleteSamplers",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void GLES30::glDeleteSamplers(jint arg0, jintArray arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glDeleteSamplers",
-			"(I[II)V",
-			arg0,
-			arg1,
-			arg2
 		);
 	}
 	jboolean GLES30::glIsSampler(jint arg0)
@@ -4252,48 +3919,119 @@ namespace __jni_impl::android::opengl
 			arg0
 		);
 	}
-	void GLES30::glBindSampler(jint arg0, jint arg1)
+	jboolean GLES30::glIsSync(jlong arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.opengl.GLES30",
-			"glBindSampler",
-			"(II)V",
-			arg0,
-			arg1
+			"glIsSync",
+			"(J)Z",
+			arg0
 		);
 	}
-	void GLES30::glSamplerParameteri(jint arg0, jint arg1, jint arg2)
+	jboolean GLES30::glIsTransformFeedback(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.GLES30",
+			"glIsTransformFeedback",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean GLES30::glIsVertexArray(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.GLES30",
+			"glIsVertexArray",
+			"(I)Z",
+			arg0
+		);
+	}
+	QAndroidJniObject GLES30::glMapBufferRange(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.opengl.GLES30",
+			"glMapBufferRange",
+			"(IIII)Ljava/nio/Buffer;",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES30::glPauseTransformFeedback()
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glSamplerParameteri",
+			"glPauseTransformFeedback",
+			"()V"
+		);
+	}
+	void GLES30::glProgramBinary(jint arg0, jint arg1, __jni_impl::java::nio::Buffer arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glProgramBinary",
+			"(IILjava/nio/Buffer;I)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object(),
+			arg3
+		);
+	}
+	void GLES30::glProgramParameteri(jint arg0, jint arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glProgramParameteri",
 			"(III)V",
 			arg0,
 			arg1,
 			arg2
 		);
 	}
-	void GLES30::glSamplerParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	void GLES30::glReadBuffer(jint arg0)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glSamplerParameteriv",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
+			"glReadBuffer",
+			"(I)V",
+			arg0
 		);
 	}
-	void GLES30::glSamplerParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES30::glReadPixels(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glSamplerParameteriv",
-			"(II[II)V",
+			"glReadPixels",
+			"(IIIIIII)V",
 			arg0,
 			arg1,
 			arg2,
-			arg3
+			arg3,
+			arg4,
+			arg5,
+			arg6
+		);
+	}
+	void GLES30::glRenderbufferStorageMultisample(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glRenderbufferStorageMultisample",
+			"(IIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	void GLES30::glResumeTransformFeedback()
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glResumeTransformFeedback",
+			"()V"
 		);
 	}
 	void GLES30::glSamplerParameterf(jint arg0, jint arg1, jfloat arg2)
@@ -4330,195 +4068,33 @@ namespace __jni_impl::android::opengl
 			arg3
 		);
 	}
-	void GLES30::glGetSamplerParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	void GLES30::glSamplerParameteri(jint arg0, jint arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glGetSamplerParameteriv",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void GLES30::glGetSamplerParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetSamplerParameteriv",
-			"(II[II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES30::glGetSamplerParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetSamplerParameterfv",
-			"(IILjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void GLES30::glGetSamplerParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetSamplerParameterfv",
-			"(II[FI)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES30::glVertexAttribDivisor(jint arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glVertexAttribDivisor",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void GLES30::glBindTransformFeedback(jint arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glBindTransformFeedback",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void GLES30::glDeleteTransformFeedbacks(jint arg0, jintArray arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glDeleteTransformFeedbacks",
-			"(I[II)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES30::glDeleteTransformFeedbacks(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glDeleteTransformFeedbacks",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void GLES30::glGenTransformFeedbacks(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGenTransformFeedbacks",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void GLES30::glGenTransformFeedbacks(jint arg0, jintArray arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGenTransformFeedbacks",
-			"(I[II)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jboolean GLES30::glIsTransformFeedback(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.GLES30",
-			"glIsTransformFeedback",
-			"(I)Z",
-			arg0
-		);
-	}
-	void GLES30::glPauseTransformFeedback()
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glPauseTransformFeedback",
-			"()V"
-		);
-	}
-	void GLES30::glResumeTransformFeedback()
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glResumeTransformFeedback",
-			"()V"
-		);
-	}
-	void GLES30::glGetProgramBinary(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::Buffer arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetProgramBinary",
-			"(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;Ljava/nio/Buffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object(),
-			arg4.__jniObject().object()
-		);
-	}
-	void GLES30::glGetProgramBinary(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5, __jni_impl::java::nio::Buffer arg6)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glGetProgramBinary",
-			"(II[II[IILjava/nio/Buffer;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6.__jniObject().object()
-		);
-	}
-	void GLES30::glProgramBinary(jint arg0, jint arg1, __jni_impl::java::nio::Buffer arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glProgramBinary",
-			"(IILjava/nio/Buffer;I)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	void GLES30::glProgramParameteri(jint arg0, jint arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glProgramParameteri",
+			"glSamplerParameteri",
 			"(III)V",
 			arg0,
 			arg1,
 			arg2
 		);
 	}
-	void GLES30::glInvalidateFramebuffer(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES30::glSamplerParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glInvalidateFramebuffer",
+			"glSamplerParameteriv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES30::glSamplerParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glSamplerParameteriv",
 			"(II[II)V",
 			arg0,
 			arg1,
@@ -4526,38 +4102,12 @@ namespace __jni_impl::android::opengl
 			arg3
 		);
 	}
-	void GLES30::glInvalidateFramebuffer(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	void GLES30::glTexImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glInvalidateFramebuffer",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void GLES30::glInvalidateSubFramebuffer(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, jint arg3, jint arg4, jint arg5, jint arg6)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glInvalidateSubFramebuffer",
-			"(IILjava/nio/IntBuffer;IIII)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object(),
-			arg3,
-			arg4,
-			arg5,
-			arg6
-		);
-	}
-	void GLES30::glInvalidateSubFramebuffer(jint arg0, jint arg1, jintArray arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glInvalidateSubFramebuffer",
-			"(II[IIIIII)V",
+			"glTexImage3D",
+			"(IIIIIIIIII)V",
 			arg0,
 			arg1,
 			arg2,
@@ -4565,7 +4115,27 @@ namespace __jni_impl::android::opengl
 			arg4,
 			arg5,
 			arg6,
-			arg7
+			arg7,
+			arg8,
+			arg9
+		);
+	}
+	void GLES30::glTexImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, __jni_impl::java::nio::Buffer arg9)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glTexImage3D",
+			"(IIIIIIIIILjava/nio/Buffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9.__jniObject().object()
 		);
 	}
 	void GLES30::glTexStorage2D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
@@ -4595,12 +4165,460 @@ namespace __jni_impl::android::opengl
 			arg5
 		);
 	}
-	void GLES30::glGetInternalformativ(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::java::nio::IntBuffer arg4)
+	void GLES30::glTexSubImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glGetInternalformativ",
-			"(IIIILjava/nio/IntBuffer;)V",
+			"glTexSubImage3D",
+			"(IIIIIIIIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9,
+			arg10
+		);
+	}
+	void GLES30::glTexSubImage3D(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, __jni_impl::java::nio::Buffer arg10)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glTexSubImage3D",
+			"(IIIIIIIIIILjava/nio/Buffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9,
+			arg10.__jniObject().object()
+		);
+	}
+	void GLES30::glTransformFeedbackVaryings(jint arg0, jarray arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glTransformFeedbackVaryings",
+			"(I[Ljava/lang/String;I)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES30::glUniform1ui(jint arg0, jint arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniform1ui",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void GLES30::glUniform1uiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniform1uiv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES30::glUniform1uiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniform1uiv",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES30::glUniform2ui(jint arg0, jint arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniform2ui",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES30::glUniform2uiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniform2uiv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES30::glUniform2uiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniform2uiv",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES30::glUniform3ui(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniform3ui",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES30::glUniform3uiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniform3uiv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES30::glUniform3uiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniform3uiv",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES30::glUniform4ui(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniform4ui",
+			"(IIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	void GLES30::glUniform4uiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniform4uiv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES30::glUniform4uiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniform4uiv",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES30::glUniformBlockBinding(jint arg0, jint arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniformBlockBinding",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES30::glUniformMatrix2x3fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniformMatrix2x3fv",
+			"(IIZLjava/nio/FloatBuffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object()
+		);
+	}
+	void GLES30::glUniformMatrix2x3fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniformMatrix2x3fv",
+			"(IIZ[FI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	void GLES30::glUniformMatrix2x4fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniformMatrix2x4fv",
+			"(IIZLjava/nio/FloatBuffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object()
+		);
+	}
+	void GLES30::glUniformMatrix2x4fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniformMatrix2x4fv",
+			"(IIZ[FI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	void GLES30::glUniformMatrix3x2fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniformMatrix3x2fv",
+			"(IIZLjava/nio/FloatBuffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object()
+		);
+	}
+	void GLES30::glUniformMatrix3x2fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniformMatrix3x2fv",
+			"(IIZ[FI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	void GLES30::glUniformMatrix3x4fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniformMatrix3x4fv",
+			"(IIZLjava/nio/FloatBuffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object()
+		);
+	}
+	void GLES30::glUniformMatrix3x4fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniformMatrix3x4fv",
+			"(IIZ[FI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	void GLES30::glUniformMatrix4x2fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniformMatrix4x2fv",
+			"(IIZLjava/nio/FloatBuffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object()
+		);
+	}
+	void GLES30::glUniformMatrix4x2fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniformMatrix4x2fv",
+			"(IIZ[FI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	void GLES30::glUniformMatrix4x3fv(jint arg0, jint arg1, jboolean arg2, __jni_impl::java::nio::FloatBuffer arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniformMatrix4x3fv",
+			"(IIZLjava/nio/FloatBuffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object()
+		);
+	}
+	void GLES30::glUniformMatrix4x3fv(jint arg0, jint arg1, jboolean arg2, jfloatArray arg3, jint arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glUniformMatrix4x3fv",
+			"(IIZ[FI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	jboolean GLES30::glUnmapBuffer(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.GLES30",
+			"glUnmapBuffer",
+			"(I)Z",
+			arg0
+		);
+	}
+	void GLES30::glVertexAttribDivisor(jint arg0, jint arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glVertexAttribDivisor",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void GLES30::glVertexAttribI4i(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glVertexAttribI4i",
+			"(IIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	void GLES30::glVertexAttribI4iv(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glVertexAttribI4iv",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void GLES30::glVertexAttribI4iv(jint arg0, jintArray arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glVertexAttribI4iv",
+			"(I[II)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES30::glVertexAttribI4ui(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glVertexAttribI4ui",
+			"(IIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	void GLES30::glVertexAttribI4uiv(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glVertexAttribI4uiv",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void GLES30::glVertexAttribI4uiv(jint arg0, jintArray arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glVertexAttribI4uiv",
+			"(I[II)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES30::glVertexAttribIPointer(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glVertexAttribIPointer",
+			"(IIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	void GLES30::glVertexAttribIPointer(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::java::nio::Buffer arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES30",
+			"glVertexAttribIPointer",
+			"(IIIILjava/nio/Buffer;)V",
 			arg0,
 			arg1,
 			arg2,
@@ -4608,33 +4626,15 @@ namespace __jni_impl::android::opengl
 			arg4.__jniObject().object()
 		);
 	}
-	void GLES30::glGetInternalformativ(jint arg0, jint arg1, jint arg2, jint arg3, jintArray arg4, jint arg5)
+	void GLES30::glWaitSync(jlong arg0, jint arg1, jlong arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES30",
-			"glGetInternalformativ",
-			"(IIII[II)V",
+			"glWaitSync",
+			"(JIJ)V",
 			arg0,
 			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5
-		);
-	}
-	void GLES30::glReadPixels(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES30",
-			"glReadPixels",
-			"(IIIIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6
+			arg2
 		);
 	}
 } // namespace __jni_impl::android::opengl

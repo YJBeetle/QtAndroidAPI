@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::util
-{
-	class SparseArray;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::util
+{
+	class SparseArray;
 }
 
 namespace __jni_impl::android::bluetooth::le
@@ -26,21 +26,21 @@ namespace __jni_impl::android::bluetooth::le
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		QAndroidJniObject getServiceUuids();
-		QAndroidJniObject getManufacturerSpecificData();
-		jboolean getIncludeTxPowerLevel();
-		jboolean getIncludeDeviceName();
-		QAndroidJniObject getServiceData();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		jboolean getIncludeDeviceName();
+		jboolean getIncludeTxPowerLevel();
+		QAndroidJniObject getManufacturerSpecificData();
+		QAndroidJniObject getServiceData();
+		QAndroidJniObject getServiceUuids();
+		jint hashCode();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
-#include "../../util/SparseArray.hpp"
 #include "../../os/Parcel.hpp"
+#include "../../util/SparseArray.hpp"
 
 namespace __jni_impl::android::bluetooth::le
 {
@@ -63,47 +63,19 @@ namespace __jni_impl::android::bluetooth::le
 	}
 	
 	// Methods
+	jint AdvertiseData::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean AdvertiseData::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
-		);
-	}
-	jstring AdvertiseData::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint AdvertiseData::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	QAndroidJniObject AdvertiseData::getServiceUuids()
-	{
-		return __thiz.callObjectMethod(
-			"getServiceUuids",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject AdvertiseData::getManufacturerSpecificData()
-	{
-		return __thiz.callObjectMethod(
-			"getManufacturerSpecificData",
-			"()Landroid/util/SparseArray;"
-		);
-	}
-	jboolean AdvertiseData::getIncludeTxPowerLevel()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getIncludeTxPowerLevel",
-			"()Z"
 		);
 	}
 	jboolean AdvertiseData::getIncludeDeviceName()
@@ -113,6 +85,20 @@ namespace __jni_impl::android::bluetooth::le
 			"()Z"
 		);
 	}
+	jboolean AdvertiseData::getIncludeTxPowerLevel()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getIncludeTxPowerLevel",
+			"()Z"
+		);
+	}
+	QAndroidJniObject AdvertiseData::getManufacturerSpecificData()
+	{
+		return __thiz.callObjectMethod(
+			"getManufacturerSpecificData",
+			"()Landroid/util/SparseArray;"
+		);
+	}
 	QAndroidJniObject AdvertiseData::getServiceData()
 	{
 		return __thiz.callObjectMethod(
@@ -120,12 +106,26 @@ namespace __jni_impl::android::bluetooth::le
 			"()Ljava/util/Map;"
 		);
 	}
-	jint AdvertiseData::describeContents()
+	QAndroidJniObject AdvertiseData::getServiceUuids()
+	{
+		return __thiz.callObjectMethod(
+			"getServiceUuids",
+			"()Ljava/util/List;"
+		);
+	}
+	jint AdvertiseData::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
 		);
+	}
+	jstring AdvertiseData::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void AdvertiseData::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

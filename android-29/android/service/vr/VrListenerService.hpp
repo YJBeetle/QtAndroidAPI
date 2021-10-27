@@ -10,15 +10,15 @@
 
 namespace __jni_impl::android::content
 {
-	class Intent;
-}
-namespace __jni_impl::android::content
-{
 	class ComponentName;
 }
 namespace __jni_impl::android::content
 {
 	class Context;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
 }
 
 namespace __jni_impl::android::service::vr
@@ -33,15 +33,15 @@ namespace __jni_impl::android::service::vr
 		void __constructor();
 		
 		// Methods
+		static jboolean isVrModePackageEnabled(__jni_impl::android::content::Context arg0, __jni_impl::android::content::ComponentName arg1);
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 		void onCurrentVrActivityChanged(__jni_impl::android::content::ComponentName arg0);
-		static jboolean isVrModePackageEnabled(__jni_impl::android::content::Context arg0, __jni_impl::android::content::ComponentName arg1);
 	};
 } // namespace __jni_impl::android::service::vr
 
-#include "../../content/Intent.hpp"
 #include "../../content/ComponentName.hpp"
 #include "../../content/Context.hpp"
+#include "../../content/Intent.hpp"
 
 namespace __jni_impl::android::service::vr
 {
@@ -65,6 +65,16 @@ namespace __jni_impl::android::service::vr
 	}
 	
 	// Methods
+	jboolean VrListenerService::isVrModePackageEnabled(__jni_impl::android::content::Context arg0, __jni_impl::android::content::ComponentName arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.service.vr.VrListenerService",
+			"isVrModePackageEnabled",
+			"(Landroid/content/Context;Landroid/content/ComponentName;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject VrListenerService::onBind(__jni_impl::android::content::Intent arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -79,16 +89,6 @@ namespace __jni_impl::android::service::vr
 			"onCurrentVrActivityChanged",
 			"(Landroid/content/ComponentName;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	jboolean VrListenerService::isVrModePackageEnabled(__jni_impl::android::content::Context arg0, __jni_impl::android::content::ComponentName arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.service.vr.VrListenerService",
-			"isVrModePackageEnabled",
-			"(Landroid/content/Context;Landroid/content/ComponentName;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::service::vr

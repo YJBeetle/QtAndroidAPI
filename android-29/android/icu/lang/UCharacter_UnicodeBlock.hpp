@@ -609,8 +609,8 @@ namespace __jni_impl::android::icu::lang
 		// Methods
 		static QAndroidJniObject forName(jstring arg0);
 		static QAndroidJniObject forName(const QString &arg0);
-		static QAndroidJniObject of(jint arg0);
 		static QAndroidJniObject getInstance(jint arg0);
+		static QAndroidJniObject of(jint arg0);
 		jint getID();
 	};
 } // namespace __jni_impl::android::icu::lang
@@ -5065,20 +5065,20 @@ namespace __jni_impl::android::icu::lang
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	QAndroidJniObject UCharacter_UnicodeBlock::of(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.lang.UCharacter$UnicodeBlock",
-			"of",
-			"(I)Landroid/icu/lang/UCharacter$UnicodeBlock;",
-			arg0
-		);
-	}
 	QAndroidJniObject UCharacter_UnicodeBlock::getInstance(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.lang.UCharacter$UnicodeBlock",
 			"getInstance",
+			"(I)Landroid/icu/lang/UCharacter$UnicodeBlock;",
+			arg0
+		);
+	}
+	QAndroidJniObject UCharacter_UnicodeBlock::of(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.lang.UCharacter$UnicodeBlock",
+			"of",
 			"(I)Landroid/icu/lang/UCharacter$UnicodeBlock;",
 			arg0
 		);

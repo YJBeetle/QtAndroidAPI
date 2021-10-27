@@ -51,10 +51,10 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
+		jlong computeChargeTimeRemaining();
 		jint getIntProperty(jint arg0);
 		jlong getLongProperty(jint arg0);
 		jboolean isCharging();
-		jlong computeChargeTimeRemaining();
 	};
 } // namespace __jni_impl::android::os
 
@@ -323,6 +323,13 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
+	jlong BatteryManager::computeChargeTimeRemaining()
+	{
+		return __thiz.callMethod<jlong>(
+			"computeChargeTimeRemaining",
+			"()J"
+		);
+	}
 	jint BatteryManager::getIntProperty(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -344,13 +351,6 @@ namespace __jni_impl::android::os
 		return __thiz.callMethod<jboolean>(
 			"isCharging",
 			"()Z"
-		);
-	}
-	jlong BatteryManager::computeChargeTimeRemaining()
-	{
-		return __thiz.callMethod<jlong>(
-			"computeChargeTimeRemaining",
-			"()J"
 		);
 	}
 } // namespace __jni_impl::android::os

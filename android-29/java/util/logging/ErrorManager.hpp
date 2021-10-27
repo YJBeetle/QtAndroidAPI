@@ -16,12 +16,12 @@ namespace __jni_impl::java::util::logging
 	{
 	public:
 		// Fields
-		static jint GENERIC_FAILURE();
-		static jint WRITE_FAILURE();
-		static jint FLUSH_FAILURE();
 		static jint CLOSE_FAILURE();
-		static jint OPEN_FAILURE();
+		static jint FLUSH_FAILURE();
 		static jint FORMAT_FAILURE();
+		static jint GENERIC_FAILURE();
+		static jint OPEN_FAILURE();
+		static jint WRITE_FAILURE();
 		
 		// Constructors
 		void __constructor();
@@ -37,18 +37,11 @@ namespace __jni_impl::java::util::logging
 namespace __jni_impl::java::util::logging
 {
 	// Fields
-	jint ErrorManager::GENERIC_FAILURE()
+	jint ErrorManager::CLOSE_FAILURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.logging.ErrorManager",
-			"GENERIC_FAILURE"
-		);
-	}
-	jint ErrorManager::WRITE_FAILURE()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"java.util.logging.ErrorManager",
-			"WRITE_FAILURE"
+			"CLOSE_FAILURE"
 		);
 	}
 	jint ErrorManager::FLUSH_FAILURE()
@@ -58,11 +51,18 @@ namespace __jni_impl::java::util::logging
 			"FLUSH_FAILURE"
 		);
 	}
-	jint ErrorManager::CLOSE_FAILURE()
+	jint ErrorManager::FORMAT_FAILURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.logging.ErrorManager",
-			"CLOSE_FAILURE"
+			"FORMAT_FAILURE"
+		);
+	}
+	jint ErrorManager::GENERIC_FAILURE()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"java.util.logging.ErrorManager",
+			"GENERIC_FAILURE"
 		);
 	}
 	jint ErrorManager::OPEN_FAILURE()
@@ -72,11 +72,11 @@ namespace __jni_impl::java::util::logging
 			"OPEN_FAILURE"
 		);
 	}
-	jint ErrorManager::FORMAT_FAILURE()
+	jint ErrorManager::WRITE_FAILURE()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.logging.ErrorManager",
-			"FORMAT_FAILURE"
+			"WRITE_FAILURE"
 		);
 	}
 	

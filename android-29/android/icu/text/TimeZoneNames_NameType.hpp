@@ -13,21 +13,21 @@ namespace __jni_impl::android::icu::text
 	{
 	public:
 		// Fields
+		static QAndroidJniObject EXEMPLAR_LOCATION();
+		static QAndroidJniObject LONG_DAYLIGHT();
 		static QAndroidJniObject LONG_GENERIC();
 		static QAndroidJniObject LONG_STANDARD();
-		static QAndroidJniObject LONG_DAYLIGHT();
+		static QAndroidJniObject SHORT_DAYLIGHT();
 		static QAndroidJniObject SHORT_GENERIC();
 		static QAndroidJniObject SHORT_STANDARD();
-		static QAndroidJniObject SHORT_DAYLIGHT();
-		static QAndroidJniObject EXEMPLAR_LOCATION();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -35,6 +35,22 @@ namespace __jni_impl::android::icu::text
 namespace __jni_impl::android::icu::text
 {
 	// Fields
+	QAndroidJniObject TimeZoneNames_NameType::EXEMPLAR_LOCATION()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.TimeZoneNames$NameType",
+			"EXEMPLAR_LOCATION",
+			"Landroid/icu/text/TimeZoneNames$NameType;"
+		);
+	}
+	QAndroidJniObject TimeZoneNames_NameType::LONG_DAYLIGHT()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.TimeZoneNames$NameType",
+			"LONG_DAYLIGHT",
+			"Landroid/icu/text/TimeZoneNames$NameType;"
+		);
+	}
 	QAndroidJniObject TimeZoneNames_NameType::LONG_GENERIC()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -51,11 +67,11 @@ namespace __jni_impl::android::icu::text
 			"Landroid/icu/text/TimeZoneNames$NameType;"
 		);
 	}
-	QAndroidJniObject TimeZoneNames_NameType::LONG_DAYLIGHT()
+	QAndroidJniObject TimeZoneNames_NameType::SHORT_DAYLIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.TimeZoneNames$NameType",
-			"LONG_DAYLIGHT",
+			"SHORT_DAYLIGHT",
 			"Landroid/icu/text/TimeZoneNames$NameType;"
 		);
 	}
@@ -75,22 +91,6 @@ namespace __jni_impl::android::icu::text
 			"Landroid/icu/text/TimeZoneNames$NameType;"
 		);
 	}
-	QAndroidJniObject TimeZoneNames_NameType::SHORT_DAYLIGHT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.TimeZoneNames$NameType",
-			"SHORT_DAYLIGHT",
-			"Landroid/icu/text/TimeZoneNames$NameType;"
-		);
-	}
-	QAndroidJniObject TimeZoneNames_NameType::EXEMPLAR_LOCATION()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.TimeZoneNames$NameType",
-			"EXEMPLAR_LOCATION",
-			"Landroid/icu/text/TimeZoneNames$NameType;"
-		);
-	}
 	
 	// Constructors
 	void TimeZoneNames_NameType::__constructor()
@@ -101,14 +101,6 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jarray TimeZoneNames_NameType::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.TimeZoneNames$NameType",
-			"values",
-			"()[Landroid/icu/text/TimeZoneNames$NameType;"
-		).object<jarray>();
-	}
 	QAndroidJniObject TimeZoneNames_NameType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -126,6 +118,14 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;)Landroid/icu/text/TimeZoneNames$NameType;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray TimeZoneNames_NameType::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.TimeZoneNames$NameType",
+			"values",
+			"()[Landroid/icu/text/TimeZoneNames$NameType;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::icu::text
 

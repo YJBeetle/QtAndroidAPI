@@ -30,11 +30,11 @@ namespace __jni_impl::android::media::audiofx
 		void __constructor(jint arg0, jint arg1);
 		
 		// Methods
+		jshort getPreset();
 		QAndroidJniObject getProperties();
-		void setProperties(__jni_impl::android::media::audiofx::PresetReverb_Settings arg0);
 		void setParameterListener(__jni_impl::__JniBaseClass arg0);
 		void setPreset(jshort arg0);
-		jshort getPreset();
+		void setProperties(__jni_impl::android::media::audiofx::PresetReverb_Settings arg0);
 	};
 } // namespace __jni_impl::android::media::audiofx
 
@@ -112,19 +112,18 @@ namespace __jni_impl::android::media::audiofx
 	}
 	
 	// Methods
+	jshort PresetReverb::getPreset()
+	{
+		return __thiz.callMethod<jshort>(
+			"getPreset",
+			"()S"
+		);
+	}
 	QAndroidJniObject PresetReverb::getProperties()
 	{
 		return __thiz.callObjectMethod(
 			"getProperties",
 			"()Landroid/media/audiofx/PresetReverb$Settings;"
-		);
-	}
-	void PresetReverb::setProperties(__jni_impl::android::media::audiofx::PresetReverb_Settings arg0)
-	{
-		__thiz.callMethod<void>(
-			"setProperties",
-			"(Landroid/media/audiofx/PresetReverb$Settings;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	void PresetReverb::setParameterListener(__jni_impl::__JniBaseClass arg0)
@@ -143,11 +142,12 @@ namespace __jni_impl::android::media::audiofx
 			arg0
 		);
 	}
-	jshort PresetReverb::getPreset()
+	void PresetReverb::setProperties(__jni_impl::android::media::audiofx::PresetReverb_Settings arg0)
 	{
-		return __thiz.callMethod<jshort>(
-			"getPreset",
-			"()S"
+		__thiz.callMethod<void>(
+			"setProperties",
+			"(Landroid/media/audiofx/PresetReverb$Settings;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::media::audiofx

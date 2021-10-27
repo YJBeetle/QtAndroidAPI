@@ -23,10 +23,10 @@ namespace __jni_impl::android::hardware::fingerprint
 		// Methods
 		void onAuthenticationError(jint arg0, jstring arg1);
 		void onAuthenticationError(jint arg0, const QString &arg1);
+		void onAuthenticationFailed();
 		void onAuthenticationHelp(jint arg0, jstring arg1);
 		void onAuthenticationHelp(jint arg0, const QString &arg1);
 		void onAuthenticationSucceeded(__jni_impl::android::hardware::fingerprint::FingerprintManager_AuthenticationResult arg0);
-		void onAuthenticationFailed();
 	};
 } // namespace __jni_impl::android::hardware::fingerprint
 
@@ -64,6 +64,13 @@ namespace __jni_impl::android::hardware::fingerprint
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
+	void FingerprintManager_AuthenticationCallback::onAuthenticationFailed()
+	{
+		__thiz.callMethod<void>(
+			"onAuthenticationFailed",
+			"()V"
+		);
+	}
 	void FingerprintManager_AuthenticationCallback::onAuthenticationHelp(jint arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -88,13 +95,6 @@ namespace __jni_impl::android::hardware::fingerprint
 			"onAuthenticationSucceeded",
 			"(Landroid/hardware/fingerprint/FingerprintManager$AuthenticationResult;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	void FingerprintManager_AuthenticationCallback::onAuthenticationFailed()
-	{
-		__thiz.callMethod<void>(
-			"onAuthenticationFailed",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::android::hardware::fingerprint

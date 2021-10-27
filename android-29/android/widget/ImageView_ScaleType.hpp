@@ -13,22 +13,22 @@ namespace __jni_impl::android::widget
 	{
 	public:
 		// Fields
-		static QAndroidJniObject MATRIX();
-		static QAndroidJniObject FIT_XY();
-		static QAndroidJniObject FIT_START();
-		static QAndroidJniObject FIT_CENTER();
-		static QAndroidJniObject FIT_END();
 		static QAndroidJniObject CENTER();
 		static QAndroidJniObject CENTER_CROP();
 		static QAndroidJniObject CENTER_INSIDE();
+		static QAndroidJniObject FIT_CENTER();
+		static QAndroidJniObject FIT_END();
+		static QAndroidJniObject FIT_START();
+		static QAndroidJniObject FIT_XY();
+		static QAndroidJniObject MATRIX();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::widget
 
@@ -36,46 +36,6 @@ namespace __jni_impl::android::widget
 namespace __jni_impl::android::widget
 {
 	// Fields
-	QAndroidJniObject ImageView_ScaleType::MATRIX()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.widget.ImageView$ScaleType",
-			"MATRIX",
-			"Landroid/widget/ImageView$ScaleType;"
-		);
-	}
-	QAndroidJniObject ImageView_ScaleType::FIT_XY()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.widget.ImageView$ScaleType",
-			"FIT_XY",
-			"Landroid/widget/ImageView$ScaleType;"
-		);
-	}
-	QAndroidJniObject ImageView_ScaleType::FIT_START()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.widget.ImageView$ScaleType",
-			"FIT_START",
-			"Landroid/widget/ImageView$ScaleType;"
-		);
-	}
-	QAndroidJniObject ImageView_ScaleType::FIT_CENTER()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.widget.ImageView$ScaleType",
-			"FIT_CENTER",
-			"Landroid/widget/ImageView$ScaleType;"
-		);
-	}
-	QAndroidJniObject ImageView_ScaleType::FIT_END()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.widget.ImageView$ScaleType",
-			"FIT_END",
-			"Landroid/widget/ImageView$ScaleType;"
-		);
-	}
 	QAndroidJniObject ImageView_ScaleType::CENTER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -100,6 +60,46 @@ namespace __jni_impl::android::widget
 			"Landroid/widget/ImageView$ScaleType;"
 		);
 	}
+	QAndroidJniObject ImageView_ScaleType::FIT_CENTER()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.widget.ImageView$ScaleType",
+			"FIT_CENTER",
+			"Landroid/widget/ImageView$ScaleType;"
+		);
+	}
+	QAndroidJniObject ImageView_ScaleType::FIT_END()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.widget.ImageView$ScaleType",
+			"FIT_END",
+			"Landroid/widget/ImageView$ScaleType;"
+		);
+	}
+	QAndroidJniObject ImageView_ScaleType::FIT_START()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.widget.ImageView$ScaleType",
+			"FIT_START",
+			"Landroid/widget/ImageView$ScaleType;"
+		);
+	}
+	QAndroidJniObject ImageView_ScaleType::FIT_XY()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.widget.ImageView$ScaleType",
+			"FIT_XY",
+			"Landroid/widget/ImageView$ScaleType;"
+		);
+	}
+	QAndroidJniObject ImageView_ScaleType::MATRIX()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.widget.ImageView$ScaleType",
+			"MATRIX",
+			"Landroid/widget/ImageView$ScaleType;"
+		);
+	}
 	
 	// Constructors
 	void ImageView_ScaleType::__constructor()
@@ -110,14 +110,6 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	jarray ImageView_ScaleType::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.widget.ImageView$ScaleType",
-			"values",
-			"()[Landroid/widget/ImageView$ScaleType;"
-		).object<jarray>();
-	}
 	QAndroidJniObject ImageView_ScaleType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -135,6 +127,14 @@ namespace __jni_impl::android::widget
 			"(Ljava/lang/String;)Landroid/widget/ImageView$ScaleType;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray ImageView_ScaleType::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.widget.ImageView$ScaleType",
+			"values",
+			"()[Landroid/widget/ImageView$ScaleType;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::widget
 

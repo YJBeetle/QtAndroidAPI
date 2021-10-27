@@ -21,9 +21,9 @@ namespace __jni_impl::android::service::autofill
 		void __constructor();
 		
 		// Methods
-		void onSuccess(__jni_impl::android::service::autofill::FillResponse arg0);
 		void onFailure(jstring arg0);
 		void onFailure(const QString &arg0);
+		void onSuccess(__jni_impl::android::service::autofill::FillResponse arg0);
 	};
 } // namespace __jni_impl::android::service::autofill
 
@@ -42,14 +42,6 @@ namespace __jni_impl::android::service::autofill
 	}
 	
 	// Methods
-	void FillCallback::onSuccess(__jni_impl::android::service::autofill::FillResponse arg0)
-	{
-		__thiz.callMethod<void>(
-			"onSuccess",
-			"(Landroid/service/autofill/FillResponse;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void FillCallback::onFailure(jstring arg0)
 	{
 		__thiz.callMethod<void>(
@@ -64,6 +56,14 @@ namespace __jni_impl::android::service::autofill
 			"onFailure",
 			"(Ljava/lang/CharSequence;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void FillCallback::onSuccess(__jni_impl::android::service::autofill::FillResponse arg0)
+	{
+		__thiz.callMethod<void>(
+			"onSuccess",
+			"(Landroid/service/autofill/FillResponse;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::service::autofill

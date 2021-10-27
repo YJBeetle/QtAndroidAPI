@@ -21,9 +21,9 @@ namespace __jni_impl::android::content
 		
 		// Constructors
 		void __constructor();
+		void __constructor(__jni_impl::java::lang::Exception arg0);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor(__jni_impl::java::lang::Exception arg0);
 		
 		// Methods
 	};
@@ -43,6 +43,14 @@ namespace __jni_impl::android::content
 			"()V"
 		);
 	}
+	void IntentSender_SendIntentException::__constructor(__jni_impl::java::lang::Exception arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.content.IntentSender$SendIntentException",
+			"(Ljava/lang/Exception;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void IntentSender_SendIntentException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -59,14 +67,6 @@ namespace __jni_impl::android::content
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void IntentSender_SendIntentException::__constructor(__jni_impl::java::lang::Exception arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.content.IntentSender$SendIntentException",
-			"(Ljava/lang/Exception;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::android::content
@@ -81,12 +81,12 @@ namespace android::content
 		{
 			__constructor();
 		}
-		IntentSender_SendIntentException(jstring arg0)
+		IntentSender_SendIntentException(__jni_impl::java::lang::Exception arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		IntentSender_SendIntentException(__jni_impl::java::lang::Exception arg0)
+		IntentSender_SendIntentException(jstring arg0)
 		{
 			__constructor(
 				arg0);

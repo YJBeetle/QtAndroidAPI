@@ -17,8 +17,8 @@ namespace __jni_impl::java::text
 		void __constructor(jobject arg0);
 		
 		// Methods
-		jstring toString();
 		jobject getValue();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::text
 
@@ -38,19 +38,19 @@ namespace __jni_impl::java::text
 	}
 	
 	// Methods
-	jstring Annotation::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jobject Annotation::getValue()
 	{
 		return __thiz.callObjectMethod(
 			"getValue",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
+	}
+	jstring Annotation::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::text
 

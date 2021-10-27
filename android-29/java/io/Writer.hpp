@@ -17,21 +17,21 @@ namespace __jni_impl::java::io
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject append(jstring arg0, jint arg1, jint arg2);
-		QAndroidJniObject append(const QString &arg0, jint arg1, jint arg2);
+		static QAndroidJniObject nullWriter();
 		QAndroidJniObject append(jchar arg0);
 		QAndroidJniObject append(jstring arg0);
 		QAndroidJniObject append(const QString &arg0);
-		void write(jint arg0);
+		QAndroidJniObject append(jstring arg0, jint arg1, jint arg2);
+		QAndroidJniObject append(const QString &arg0, jint arg1, jint arg2);
+		void close();
+		void flush();
 		void write(jcharArray arg0);
-		void write(jcharArray arg0, jint arg1, jint arg2);
+		void write(jint arg0);
 		void write(jstring arg0);
 		void write(const QString &arg0);
+		void write(jcharArray arg0, jint arg1, jint arg2);
 		void write(jstring arg0, jint arg1, jint arg2);
 		void write(const QString &arg0, jint arg1, jint arg2);
-		void flush();
-		void close();
-		static QAndroidJniObject nullWriter();
 	};
 } // namespace __jni_impl::java::io
 
@@ -49,24 +49,12 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	QAndroidJniObject Writer::append(jstring arg0, jint arg1, jint arg2)
+	QAndroidJniObject Writer::nullWriter()
 	{
-		return __thiz.callObjectMethod(
-			"append",
-			"(Ljava/lang/CharSequence;II)Ljava/io/Writer;",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject Writer::append(const QString &arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callObjectMethod(
-			"append",
-			"(Ljava/lang/CharSequence;II)Ljava/io/Writer;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.io.Writer",
+			"nullWriter",
+			"()Ljava/io/Writer;"
 		);
 	}
 	QAndroidJniObject Writer::append(jchar arg0)
@@ -93,12 +81,38 @@ namespace __jni_impl::java::io
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void Writer::write(jint arg0)
+	QAndroidJniObject Writer::append(jstring arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callObjectMethod(
+			"append",
+			"(Ljava/lang/CharSequence;II)Ljava/io/Writer;",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	QAndroidJniObject Writer::append(const QString &arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callObjectMethod(
+			"append",
+			"(Ljava/lang/CharSequence;II)Ljava/io/Writer;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2
+		);
+	}
+	void Writer::close()
 	{
 		__thiz.callMethod<void>(
-			"write",
-			"(I)V",
-			arg0
+			"close",
+			"()V"
+		);
+	}
+	void Writer::flush()
+	{
+		__thiz.callMethod<void>(
+			"flush",
+			"()V"
 		);
 	}
 	void Writer::write(jcharArray arg0)
@@ -109,14 +123,12 @@ namespace __jni_impl::java::io
 			arg0
 		);
 	}
-	void Writer::write(jcharArray arg0, jint arg1, jint arg2)
+	void Writer::write(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"write",
-			"([CII)V",
-			arg0,
-			arg1,
-			arg2
+			"(I)V",
+			arg0
 		);
 	}
 	void Writer::write(jstring arg0)
@@ -133,6 +145,16 @@ namespace __jni_impl::java::io
 			"write",
 			"(Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void Writer::write(jcharArray arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"write",
+			"([CII)V",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 	void Writer::write(jstring arg0, jint arg1, jint arg2)
@@ -153,28 +175,6 @@ namespace __jni_impl::java::io
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
-		);
-	}
-	void Writer::flush()
-	{
-		__thiz.callMethod<void>(
-			"flush",
-			"()V"
-		);
-	}
-	void Writer::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
-	}
-	QAndroidJniObject Writer::nullWriter()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.io.Writer",
-			"nullWriter",
-			"()Ljava/io/Writer;"
 		);
 	}
 } // namespace __jni_impl::java::io

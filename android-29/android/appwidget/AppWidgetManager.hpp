@@ -5,17 +5,21 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
+namespace __jni_impl::android::app
 {
-	class Context;
+	class PendingIntent;
 }
-namespace __jni_impl::android::widget
+namespace __jni_impl::android::appwidget
 {
-	class RemoteViews;
+	class AppWidgetProviderInfo;
 }
 namespace __jni_impl::android::content
 {
 	class ComponentName;
+}
+namespace __jni_impl::android::content
+{
+	class Context;
 }
 namespace __jni_impl::android::os
 {
@@ -25,13 +29,9 @@ namespace __jni_impl::android::os
 {
 	class UserHandle;
 }
-namespace __jni_impl::android::appwidget
+namespace __jni_impl::android::widget
 {
-	class AppWidgetProviderInfo;
-}
-namespace __jni_impl::android::app
-{
-	class PendingIntent;
+	class RemoteViews;
 }
 
 namespace __jni_impl::android::appwidget
@@ -73,38 +73,38 @@ namespace __jni_impl::android::appwidget
 		
 		// Methods
 		static QAndroidJniObject getInstance(__jni_impl::android::content::Context arg0);
-		void updateAppWidget(jint arg0, __jni_impl::android::widget::RemoteViews arg1);
-		void updateAppWidget(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::widget::RemoteViews arg1);
-		void updateAppWidget(jintArray arg0, __jni_impl::android::widget::RemoteViews arg1);
-		void updateAppWidgetOptions(jint arg0, __jni_impl::android::os::Bundle arg1);
+		jboolean bindAppWidgetIdIfAllowed(jint arg0, __jni_impl::android::content::ComponentName arg1);
+		jboolean bindAppWidgetIdIfAllowed(jint arg0, __jni_impl::android::content::ComponentName arg1, __jni_impl::android::os::Bundle arg2);
+		jboolean bindAppWidgetIdIfAllowed(jint arg0, __jni_impl::android::os::UserHandle arg1, __jni_impl::android::content::ComponentName arg2, __jni_impl::android::os::Bundle arg3);
+		jintArray getAppWidgetIds(__jni_impl::android::content::ComponentName arg0);
+		QAndroidJniObject getAppWidgetInfo(jint arg0);
 		QAndroidJniObject getAppWidgetOptions(jint arg0);
-		void partiallyUpdateAppWidget(jint arg0, __jni_impl::android::widget::RemoteViews arg1);
-		void partiallyUpdateAppWidget(jintArray arg0, __jni_impl::android::widget::RemoteViews arg1);
-		void updateAppWidgetProviderInfo(__jni_impl::android::content::ComponentName arg0, jstring arg1);
-		void updateAppWidgetProviderInfo(__jni_impl::android::content::ComponentName arg0, const QString &arg1);
-		void notifyAppWidgetViewDataChanged(jint arg0, jint arg1);
-		void notifyAppWidgetViewDataChanged(jintArray arg0, jint arg1);
-		QAndroidJniObject getInstalledProvidersForProfile(__jni_impl::android::os::UserHandle arg0);
+		QAndroidJniObject getInstalledProviders();
 		QAndroidJniObject getInstalledProvidersForPackage(jstring arg0, __jni_impl::android::os::UserHandle arg1);
 		QAndroidJniObject getInstalledProvidersForPackage(const QString &arg0, __jni_impl::android::os::UserHandle arg1);
-		QAndroidJniObject getInstalledProviders();
-		QAndroidJniObject getAppWidgetInfo(jint arg0);
-		jboolean bindAppWidgetIdIfAllowed(jint arg0, __jni_impl::android::os::UserHandle arg1, __jni_impl::android::content::ComponentName arg2, __jni_impl::android::os::Bundle arg3);
-		jboolean bindAppWidgetIdIfAllowed(jint arg0, __jni_impl::android::content::ComponentName arg1, __jni_impl::android::os::Bundle arg2);
-		jboolean bindAppWidgetIdIfAllowed(jint arg0, __jni_impl::android::content::ComponentName arg1);
-		jintArray getAppWidgetIds(__jni_impl::android::content::ComponentName arg0);
+		QAndroidJniObject getInstalledProvidersForProfile(__jni_impl::android::os::UserHandle arg0);
 		jboolean isRequestPinAppWidgetSupported();
+		void notifyAppWidgetViewDataChanged(jintArray arg0, jint arg1);
+		void notifyAppWidgetViewDataChanged(jint arg0, jint arg1);
+		void partiallyUpdateAppWidget(jintArray arg0, __jni_impl::android::widget::RemoteViews arg1);
+		void partiallyUpdateAppWidget(jint arg0, __jni_impl::android::widget::RemoteViews arg1);
 		jboolean requestPinAppWidget(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::app::PendingIntent arg2);
+		void updateAppWidget(jintArray arg0, __jni_impl::android::widget::RemoteViews arg1);
+		void updateAppWidget(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::widget::RemoteViews arg1);
+		void updateAppWidget(jint arg0, __jni_impl::android::widget::RemoteViews arg1);
+		void updateAppWidgetOptions(jint arg0, __jni_impl::android::os::Bundle arg1);
+		void updateAppWidgetProviderInfo(__jni_impl::android::content::ComponentName arg0, jstring arg1);
+		void updateAppWidgetProviderInfo(__jni_impl::android::content::ComponentName arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::appwidget
 
-#include "../content/Context.hpp"
-#include "../widget/RemoteViews.hpp"
+#include "../app/PendingIntent.hpp"
+#include "AppWidgetProviderInfo.hpp"
 #include "../content/ComponentName.hpp"
+#include "../content/Context.hpp"
 #include "../os/Bundle.hpp"
 #include "../os/UserHandle.hpp"
-#include "AppWidgetProviderInfo.hpp"
-#include "../app/PendingIntent.hpp"
+#include "../widget/RemoteViews.hpp"
 
 namespace __jni_impl::android::appwidget
 {
@@ -343,40 +343,50 @@ namespace __jni_impl::android::appwidget
 			arg0.__jniObject().object()
 		);
 	}
-	void AppWidgetManager::updateAppWidget(jint arg0, __jni_impl::android::widget::RemoteViews arg1)
+	jboolean AppWidgetManager::bindAppWidgetIdIfAllowed(jint arg0, __jni_impl::android::content::ComponentName arg1)
 	{
-		__thiz.callMethod<void>(
-			"updateAppWidget",
-			"(ILandroid/widget/RemoteViews;)V",
+		return __thiz.callMethod<jboolean>(
+			"bindAppWidgetIdIfAllowed",
+			"(ILandroid/content/ComponentName;)Z",
 			arg0,
 			arg1.__jniObject().object()
 		);
 	}
-	void AppWidgetManager::updateAppWidget(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::widget::RemoteViews arg1)
+	jboolean AppWidgetManager::bindAppWidgetIdIfAllowed(jint arg0, __jni_impl::android::content::ComponentName arg1, __jni_impl::android::os::Bundle arg2)
 	{
-		__thiz.callMethod<void>(
-			"updateAppWidget",
-			"(Landroid/content/ComponentName;Landroid/widget/RemoteViews;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+		return __thiz.callMethod<jboolean>(
+			"bindAppWidgetIdIfAllowed",
+			"(ILandroid/content/ComponentName;Landroid/os/Bundle;)Z",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
-	void AppWidgetManager::updateAppWidget(jintArray arg0, __jni_impl::android::widget::RemoteViews arg1)
+	jboolean AppWidgetManager::bindAppWidgetIdIfAllowed(jint arg0, __jni_impl::android::os::UserHandle arg1, __jni_impl::android::content::ComponentName arg2, __jni_impl::android::os::Bundle arg3)
 	{
-		__thiz.callMethod<void>(
-			"updateAppWidget",
-			"([ILandroid/widget/RemoteViews;)V",
+		return __thiz.callMethod<jboolean>(
+			"bindAppWidgetIdIfAllowed",
+			"(ILandroid/os/UserHandle;Landroid/content/ComponentName;Landroid/os/Bundle;)Z",
 			arg0,
-			arg1.__jniObject().object()
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object()
 		);
 	}
-	void AppWidgetManager::updateAppWidgetOptions(jint arg0, __jni_impl::android::os::Bundle arg1)
+	jintArray AppWidgetManager::getAppWidgetIds(__jni_impl::android::content::ComponentName arg0)
 	{
-		__thiz.callMethod<void>(
-			"updateAppWidgetOptions",
-			"(ILandroid/os/Bundle;)V",
-			arg0,
-			arg1.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"getAppWidgetIds",
+			"(Landroid/content/ComponentName;)[I",
+			arg0.__jniObject().object()
+		).object<jintArray>();
+	}
+	QAndroidJniObject AppWidgetManager::getAppWidgetInfo(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAppWidgetInfo",
+			"(I)Landroid/appwidget/AppWidgetProviderInfo;",
+			arg0
 		);
 	}
 	QAndroidJniObject AppWidgetManager::getAppWidgetOptions(jint arg0)
@@ -387,66 +397,11 @@ namespace __jni_impl::android::appwidget
 			arg0
 		);
 	}
-	void AppWidgetManager::partiallyUpdateAppWidget(jint arg0, __jni_impl::android::widget::RemoteViews arg1)
-	{
-		__thiz.callMethod<void>(
-			"partiallyUpdateAppWidget",
-			"(ILandroid/widget/RemoteViews;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void AppWidgetManager::partiallyUpdateAppWidget(jintArray arg0, __jni_impl::android::widget::RemoteViews arg1)
-	{
-		__thiz.callMethod<void>(
-			"partiallyUpdateAppWidget",
-			"([ILandroid/widget/RemoteViews;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void AppWidgetManager::updateAppWidgetProviderInfo(__jni_impl::android::content::ComponentName arg0, jstring arg1)
-	{
-		__thiz.callMethod<void>(
-			"updateAppWidgetProviderInfo",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void AppWidgetManager::updateAppWidgetProviderInfo(__jni_impl::android::content::ComponentName arg0, const QString &arg1)
-	{
-		__thiz.callMethod<void>(
-			"updateAppWidgetProviderInfo",
-			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	void AppWidgetManager::notifyAppWidgetViewDataChanged(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"notifyAppWidgetViewDataChanged",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void AppWidgetManager::notifyAppWidgetViewDataChanged(jintArray arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"notifyAppWidgetViewDataChanged",
-			"([II)V",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject AppWidgetManager::getInstalledProvidersForProfile(__jni_impl::android::os::UserHandle arg0)
+	QAndroidJniObject AppWidgetManager::getInstalledProviders()
 	{
 		return __thiz.callObjectMethod(
-			"getInstalledProvidersForProfile",
-			"(Landroid/os/UserHandle;)Ljava/util/List;",
-			arg0.__jniObject().object()
+			"getInstalledProviders",
+			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject AppWidgetManager::getInstalledProvidersForPackage(jstring arg0, __jni_impl::android::os::UserHandle arg1)
@@ -467,64 +422,55 @@ namespace __jni_impl::android::appwidget
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject AppWidgetManager::getInstalledProviders()
+	QAndroidJniObject AppWidgetManager::getInstalledProvidersForProfile(__jni_impl::android::os::UserHandle arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getInstalledProviders",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject AppWidgetManager::getAppWidgetInfo(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAppWidgetInfo",
-			"(I)Landroid/appwidget/AppWidgetProviderInfo;",
-			arg0
-		);
-	}
-	jboolean AppWidgetManager::bindAppWidgetIdIfAllowed(jint arg0, __jni_impl::android::os::UserHandle arg1, __jni_impl::android::content::ComponentName arg2, __jni_impl::android::os::Bundle arg3)
-	{
-		return __thiz.callMethod<jboolean>(
-			"bindAppWidgetIdIfAllowed",
-			"(ILandroid/os/UserHandle;Landroid/content/ComponentName;Landroid/os/Bundle;)Z",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
-		);
-	}
-	jboolean AppWidgetManager::bindAppWidgetIdIfAllowed(jint arg0, __jni_impl::android::content::ComponentName arg1, __jni_impl::android::os::Bundle arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"bindAppWidgetIdIfAllowed",
-			"(ILandroid/content/ComponentName;Landroid/os/Bundle;)Z",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	jboolean AppWidgetManager::bindAppWidgetIdIfAllowed(jint arg0, __jni_impl::android::content::ComponentName arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"bindAppWidgetIdIfAllowed",
-			"(ILandroid/content/ComponentName;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jintArray AppWidgetManager::getAppWidgetIds(__jni_impl::android::content::ComponentName arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAppWidgetIds",
-			"(Landroid/content/ComponentName;)[I",
+			"getInstalledProvidersForProfile",
+			"(Landroid/os/UserHandle;)Ljava/util/List;",
 			arg0.__jniObject().object()
-		).object<jintArray>();
+		);
 	}
 	jboolean AppWidgetManager::isRequestPinAppWidgetSupported()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isRequestPinAppWidgetSupported",
 			"()Z"
+		);
+	}
+	void AppWidgetManager::notifyAppWidgetViewDataChanged(jintArray arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"notifyAppWidgetViewDataChanged",
+			"([II)V",
+			arg0,
+			arg1
+		);
+	}
+	void AppWidgetManager::notifyAppWidgetViewDataChanged(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"notifyAppWidgetViewDataChanged",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void AppWidgetManager::partiallyUpdateAppWidget(jintArray arg0, __jni_impl::android::widget::RemoteViews arg1)
+	{
+		__thiz.callMethod<void>(
+			"partiallyUpdateAppWidget",
+			"([ILandroid/widget/RemoteViews;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void AppWidgetManager::partiallyUpdateAppWidget(jint arg0, __jni_impl::android::widget::RemoteViews arg1)
+	{
+		__thiz.callMethod<void>(
+			"partiallyUpdateAppWidget",
+			"(ILandroid/widget/RemoteViews;)V",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
 	jboolean AppWidgetManager::requestPinAppWidget(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::app::PendingIntent arg2)
@@ -535,6 +481,60 @@ namespace __jni_impl::android::appwidget
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
+		);
+	}
+	void AppWidgetManager::updateAppWidget(jintArray arg0, __jni_impl::android::widget::RemoteViews arg1)
+	{
+		__thiz.callMethod<void>(
+			"updateAppWidget",
+			"([ILandroid/widget/RemoteViews;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void AppWidgetManager::updateAppWidget(__jni_impl::android::content::ComponentName arg0, __jni_impl::android::widget::RemoteViews arg1)
+	{
+		__thiz.callMethod<void>(
+			"updateAppWidget",
+			"(Landroid/content/ComponentName;Landroid/widget/RemoteViews;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void AppWidgetManager::updateAppWidget(jint arg0, __jni_impl::android::widget::RemoteViews arg1)
+	{
+		__thiz.callMethod<void>(
+			"updateAppWidget",
+			"(ILandroid/widget/RemoteViews;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void AppWidgetManager::updateAppWidgetOptions(jint arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"updateAppWidgetOptions",
+			"(ILandroid/os/Bundle;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void AppWidgetManager::updateAppWidgetProviderInfo(__jni_impl::android::content::ComponentName arg0, jstring arg1)
+	{
+		__thiz.callMethod<void>(
+			"updateAppWidgetProviderInfo",
+			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void AppWidgetManager::updateAppWidgetProviderInfo(__jni_impl::android::content::ComponentName arg0, const QString &arg1)
+	{
+		__thiz.callMethod<void>(
+			"updateAppWidgetProviderInfo",
+			"(Landroid/content/ComponentName;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::appwidget

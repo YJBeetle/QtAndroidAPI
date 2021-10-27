@@ -12,11 +12,11 @@ namespace __jni_impl::java::sql
 	{
 	public:
 		// Fields
-		jstring name();
+		jarray choices();
 		jstring description();
+		jstring name();
 		jboolean required();
 		jstring value();
-		jarray choices();
 		
 		// Constructors
 		void __constructor(jstring arg0, jstring arg1);
@@ -30,17 +30,24 @@ namespace __jni_impl::java::sql
 namespace __jni_impl::java::sql
 {
 	// Fields
-	jstring DriverPropertyInfo::name()
+	jarray DriverPropertyInfo::choices()
 	{
 		return __thiz.getObjectField(
-			"name",
-			"Ljava/lang/String;"
-		).object<jstring>();
+			"choices",
+			"[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	jstring DriverPropertyInfo::description()
 	{
 		return __thiz.getObjectField(
 			"description",
+			"Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring DriverPropertyInfo::name()
+	{
+		return __thiz.getObjectField(
+			"name",
 			"Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -56,13 +63,6 @@ namespace __jni_impl::java::sql
 			"value",
 			"Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jarray DriverPropertyInfo::choices()
-	{
-		return __thiz.getObjectField(
-			"choices",
-			"[Ljava/lang/String;"
-		).object<jarray>();
 	}
 	
 	// Constructors

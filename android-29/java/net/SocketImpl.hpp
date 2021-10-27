@@ -9,14 +9,6 @@ namespace __jni_impl::java::io
 {
 	class FileDescriptor;
 }
-namespace __jni_impl::java::net
-{
-	class InetAddress;
-}
-namespace __jni_impl::java::net
-{
-	class SocketAddress;
-}
 namespace __jni_impl::java::io
 {
 	class InputStream;
@@ -24,6 +16,14 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class OutputStream;
+}
+namespace __jni_impl::java::net
+{
+	class InetAddress;
+}
+namespace __jni_impl::java::net
+{
+	class SocketAddress;
 }
 
 namespace __jni_impl::java::net
@@ -42,10 +42,10 @@ namespace __jni_impl::java::net
 } // namespace __jni_impl::java::net
 
 #include "../io/FileDescriptor.hpp"
-#include "InetAddress.hpp"
-#include "SocketAddress.hpp"
 #include "../io/InputStream.hpp"
 #include "../io/OutputStream.hpp"
+#include "InetAddress.hpp"
+#include "SocketAddress.hpp"
 
 namespace __jni_impl::java::net
 {

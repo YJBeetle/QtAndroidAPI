@@ -20,9 +20,9 @@ namespace __jni_impl::javax::xml::transform::sax
 		void __constructor();
 		
 		// Methods
+		QAndroidJniObject newTemplatesHandler();
 		QAndroidJniObject newTransformerHandler();
 		QAndroidJniObject newTransformerHandler(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject newTemplatesHandler();
 		QAndroidJniObject newXMLFilter(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::javax::xml::transform::sax
@@ -57,6 +57,13 @@ namespace __jni_impl::javax::xml::transform::sax
 	}
 	
 	// Methods
+	QAndroidJniObject SAXTransformerFactory::newTemplatesHandler()
+	{
+		return __thiz.callObjectMethod(
+			"newTemplatesHandler",
+			"()Ljavax/xml/transform/sax/TemplatesHandler;"
+		);
+	}
 	QAndroidJniObject SAXTransformerFactory::newTransformerHandler()
 	{
 		return __thiz.callObjectMethod(
@@ -68,22 +75,15 @@ namespace __jni_impl::javax::xml::transform::sax
 	{
 		return __thiz.callObjectMethod(
 			"newTransformerHandler",
-			"(Ljavax/xml/transform/Templates;)Ljavax/xml/transform/sax/TransformerHandler;",
+			"(Ljavax/xml/transform/Source;)Ljavax/xml/transform/sax/TransformerHandler;",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject SAXTransformerFactory::newTemplatesHandler()
-	{
-		return __thiz.callObjectMethod(
-			"newTemplatesHandler",
-			"()Ljavax/xml/transform/sax/TemplatesHandler;"
 		);
 	}
 	QAndroidJniObject SAXTransformerFactory::newXMLFilter(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"newXMLFilter",
-			"(Ljavax/xml/transform/Templates;)Lorg/xml/sax/XMLFilter;",
+			"(Ljavax/xml/transform/Source;)Lorg/xml/sax/XMLFilter;",
 			arg0.__jniObject().object()
 		);
 	}

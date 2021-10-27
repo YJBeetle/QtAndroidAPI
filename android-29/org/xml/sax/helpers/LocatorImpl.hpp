@@ -18,16 +18,16 @@ namespace __jni_impl::org::xml::sax::helpers
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		
 		// Methods
-		jint getLineNumber();
-		jstring getSystemId();
-		void setLineNumber(jint arg0);
 		jint getColumnNumber();
-		void setSystemId(jstring arg0);
-		void setSystemId(const QString &arg0);
+		jint getLineNumber();
+		jstring getPublicId();
+		jstring getSystemId();
+		void setColumnNumber(jint arg0);
+		void setLineNumber(jint arg0);
 		void setPublicId(jstring arg0);
 		void setPublicId(const QString &arg0);
-		jstring getPublicId();
-		void setColumnNumber(jint arg0);
+		void setSystemId(jstring arg0);
+		void setSystemId(const QString &arg0);
 	};
 } // namespace __jni_impl::org::xml::sax::helpers
 
@@ -54,12 +54,26 @@ namespace __jni_impl::org::xml::sax::helpers
 	}
 	
 	// Methods
+	jint LocatorImpl::getColumnNumber()
+	{
+		return __thiz.callMethod<jint>(
+			"getColumnNumber",
+			"()I"
+		);
+	}
 	jint LocatorImpl::getLineNumber()
 	{
 		return __thiz.callMethod<jint>(
 			"getLineNumber",
 			"()I"
 		);
+	}
+	jstring LocatorImpl::getPublicId()
+	{
+		return __thiz.callObjectMethod(
+			"getPublicId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jstring LocatorImpl::getSystemId()
 	{
@@ -68,35 +82,20 @@ namespace __jni_impl::org::xml::sax::helpers
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
+	void LocatorImpl::setColumnNumber(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setColumnNumber",
+			"(I)V",
+			arg0
+		);
+	}
 	void LocatorImpl::setLineNumber(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"setLineNumber",
 			"(I)V",
 			arg0
-		);
-	}
-	jint LocatorImpl::getColumnNumber()
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnNumber",
-			"()I"
-		);
-	}
-	void LocatorImpl::setSystemId(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSystemId",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void LocatorImpl::setSystemId(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSystemId",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void LocatorImpl::setPublicId(jstring arg0)
@@ -115,19 +114,20 @@ namespace __jni_impl::org::xml::sax::helpers
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jstring LocatorImpl::getPublicId()
-	{
-		return __thiz.callObjectMethod(
-			"getPublicId",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void LocatorImpl::setColumnNumber(jint arg0)
+	void LocatorImpl::setSystemId(jstring arg0)
 	{
 		__thiz.callMethod<void>(
-			"setColumnNumber",
-			"(I)V",
+			"setSystemId",
+			"(Ljava/lang/String;)V",
 			arg0
+		);
+	}
+	void LocatorImpl::setSystemId(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSystemId",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::org::xml::sax::helpers

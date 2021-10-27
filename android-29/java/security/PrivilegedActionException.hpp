@@ -6,10 +6,6 @@
 #include "../../__JniBaseClass.hpp"
 #include "../lang/Exception.hpp"
 
-namespace __jni_impl::java::lang
-{
-	class Exception;
-}
 namespace __jni_impl::java::io
 {
 	class ObjectInputStream;
@@ -17,6 +13,10 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class ObjectOutputStream;
+}
+namespace __jni_impl::java::lang
+{
+	class Exception;
 }
 
 namespace __jni_impl::java::security
@@ -30,14 +30,14 @@ namespace __jni_impl::java::security
 		void __constructor(__jni_impl::java::lang::Exception arg0);
 		
 		// Methods
-		jstring toString();
 		QAndroidJniObject getException();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security
 
-#include "../lang/Exception.hpp"
 #include "../io/ObjectInputStream.hpp"
 #include "../io/ObjectOutputStream.hpp"
+#include "../lang/Exception.hpp"
 
 namespace __jni_impl::java::security
 {
@@ -54,19 +54,19 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	jstring PrivilegedActionException::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject PrivilegedActionException::getException()
 	{
 		return __thiz.callObjectMethod(
 			"getException",
 			"()Ljava/lang/Exception;"
 		);
+	}
+	jstring PrivilegedActionException::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security
 

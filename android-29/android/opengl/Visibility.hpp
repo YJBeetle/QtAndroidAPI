@@ -17,9 +17,9 @@ namespace __jni_impl::android::opengl
 		void __constructor();
 		
 		// Methods
-		static jint visibilityTest(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jcharArray arg4, jint arg5, jint arg6);
-		static jint frustumCullSpheres(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jint arg4, jintArray arg5, jint arg6, jint arg7);
 		static void computeBoundingSphere(jfloatArray arg0, jint arg1, jint arg2, jfloatArray arg3, jint arg4);
+		static jint frustumCullSpheres(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jint arg4, jintArray arg5, jint arg6, jint arg7);
+		static jint visibilityTest(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jcharArray arg4, jint arg5, jint arg6);
 	};
 } // namespace __jni_impl::android::opengl
 
@@ -38,19 +38,17 @@ namespace __jni_impl::android::opengl
 	}
 	
 	// Methods
-	jint Visibility::visibilityTest(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jcharArray arg4, jint arg5, jint arg6)
+	void Visibility::computeBoundingSphere(jfloatArray arg0, jint arg1, jint arg2, jfloatArray arg3, jint arg4)
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.Visibility",
-			"visibilityTest",
-			"([FI[FI[CII)I",
+			"computeBoundingSphere",
+			"([FII[FI)V",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4,
-			arg5,
-			arg6
+			arg4
 		);
 	}
 	jint Visibility::frustumCullSpheres(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jint arg4, jintArray arg5, jint arg6, jint arg7)
@@ -69,17 +67,19 @@ namespace __jni_impl::android::opengl
 			arg7
 		);
 	}
-	void Visibility::computeBoundingSphere(jfloatArray arg0, jint arg1, jint arg2, jfloatArray arg3, jint arg4)
+	jint Visibility::visibilityTest(jfloatArray arg0, jint arg1, jfloatArray arg2, jint arg3, jcharArray arg4, jint arg5, jint arg6)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.opengl.Visibility",
-			"computeBoundingSphere",
-			"([FII[FI)V",
+			"visibilityTest",
+			"([FI[FI[CII)I",
 			arg0,
 			arg1,
 			arg2,
 			arg3,
-			arg4
+			arg4,
+			arg5,
+			arg6
 		);
 	}
 } // namespace __jni_impl::android::opengl

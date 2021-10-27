@@ -7,6 +7,10 @@
 
 namespace __jni_impl::android::os
 {
+	class Handler;
+}
+namespace __jni_impl::android::os
+{
 	class Looper;
 }
 namespace __jni_impl::android::os
@@ -16,10 +20,6 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::os
 {
 	class MessageQueue;
-}
-namespace __jni_impl::android::os
-{
-	class Handler;
 }
 
 namespace __jni_impl::android::os
@@ -33,20 +33,20 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject next();
 		void execute(__jni_impl::android::os::Message arg0);
-		void release();
-		void recycle(__jni_impl::android::os::Message arg0);
 		QAndroidJniObject getMessageQueue();
 		jboolean hasMessages(__jni_impl::android::os::Handler arg0, jobject arg1, jint arg2);
 		jboolean hasMessages(__jni_impl::android::os::Handler arg0, jobject arg1, __jni_impl::__JniBaseClass arg2);
+		QAndroidJniObject next();
+		void recycle(__jni_impl::android::os::Message arg0);
+		void release();
 	};
 } // namespace __jni_impl::android::os
 
+#include "Handler.hpp"
 #include "Looper.hpp"
 #include "Message.hpp"
 #include "MessageQueue.hpp"
-#include "Handler.hpp"
 
 namespace __jni_impl::android::os
 {
@@ -61,32 +61,10 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	QAndroidJniObject TestLooperManager::next()
-	{
-		return __thiz.callObjectMethod(
-			"next",
-			"()Landroid/os/Message;"
-		);
-	}
 	void TestLooperManager::execute(__jni_impl::android::os::Message arg0)
 	{
 		__thiz.callMethod<void>(
 			"execute",
-			"(Landroid/os/Message;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void TestLooperManager::release()
-	{
-		__thiz.callMethod<void>(
-			"release",
-			"()V"
-		);
-	}
-	void TestLooperManager::recycle(__jni_impl::android::os::Message arg0)
-	{
-		__thiz.callMethod<void>(
-			"recycle",
 			"(Landroid/os/Message;)V",
 			arg0.__jniObject().object()
 		);
@@ -116,6 +94,28 @@ namespace __jni_impl::android::os
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TestLooperManager::next()
+	{
+		return __thiz.callObjectMethod(
+			"next",
+			"()Landroid/os/Message;"
+		);
+	}
+	void TestLooperManager::recycle(__jni_impl::android::os::Message arg0)
+	{
+		__thiz.callMethod<void>(
+			"recycle",
+			"(Landroid/os/Message;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void TestLooperManager::release()
+	{
+		__thiz.callMethod<void>(
+			"release",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::os

@@ -17,12 +17,12 @@ namespace __jni_impl::android::security::keystore
 		// Fields
 		
 		// Constructors
+		void __constructor();
+		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
 		void __constructor(const QString &arg0, jthrowable arg1);
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
-		void __constructor();
 		
 		// Methods
 	};
@@ -34,6 +34,29 @@ namespace __jni_impl::android::security::keystore
 	// Fields
 	
 	// Constructors
+	void StrongBoxUnavailableException::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.security.keystore.StrongBoxUnavailableException",
+			"()V"
+		);
+	}
+	void StrongBoxUnavailableException::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.security.keystore.StrongBoxUnavailableException",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void StrongBoxUnavailableException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.security.keystore.StrongBoxUnavailableException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void StrongBoxUnavailableException::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -60,29 +83,6 @@ namespace __jni_impl::android::security::keystore
 			arg1
 		);
 	}
-	void StrongBoxUnavailableException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.keystore.StrongBoxUnavailableException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void StrongBoxUnavailableException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.keystore.StrongBoxUnavailableException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void StrongBoxUnavailableException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.security.keystore.StrongBoxUnavailableException",
-			"()V"
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::android::security::keystore
@@ -93,6 +93,15 @@ namespace android::security::keystore
 	{
 	public:
 		StrongBoxUnavailableException(QAndroidJniObject obj) { __thiz = obj; }
+		StrongBoxUnavailableException()
+		{
+			__constructor();
+		}
+		StrongBoxUnavailableException(jstring arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		StrongBoxUnavailableException(jthrowable arg0)
 		{
 			__constructor(
@@ -103,15 +112,6 @@ namespace android::security::keystore
 			__constructor(
 				arg0,
 				arg1);
-		}
-		StrongBoxUnavailableException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		StrongBoxUnavailableException()
-		{
-			__constructor();
 		}
 	};
 } // namespace android::security::keystore

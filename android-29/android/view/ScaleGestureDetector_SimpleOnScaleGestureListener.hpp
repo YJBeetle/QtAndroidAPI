@@ -21,8 +21,8 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		jboolean onScaleBegin(__jni_impl::android::view::ScaleGestureDetector arg0);
 		jboolean onScale(__jni_impl::android::view::ScaleGestureDetector arg0);
+		jboolean onScaleBegin(__jni_impl::android::view::ScaleGestureDetector arg0);
 		void onScaleEnd(__jni_impl::android::view::ScaleGestureDetector arg0);
 	};
 } // namespace __jni_impl::android::view
@@ -43,18 +43,18 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jboolean ScaleGestureDetector_SimpleOnScaleGestureListener::onScaleBegin(__jni_impl::android::view::ScaleGestureDetector arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onScaleBegin",
-			"(Landroid/view/ScaleGestureDetector;)Z",
-			arg0.__jniObject().object()
-		);
-	}
 	jboolean ScaleGestureDetector_SimpleOnScaleGestureListener::onScale(__jni_impl::android::view::ScaleGestureDetector arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"onScale",
+			"(Landroid/view/ScaleGestureDetector;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean ScaleGestureDetector_SimpleOnScaleGestureListener::onScaleBegin(__jni_impl::android::view::ScaleGestureDetector arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onScaleBegin",
 			"(Landroid/view/ScaleGestureDetector;)Z",
 			arg0.__jniObject().object()
 		);

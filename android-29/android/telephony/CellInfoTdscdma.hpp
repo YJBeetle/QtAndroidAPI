@@ -31,13 +31,13 @@ namespace __jni_impl::android::telephony
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jboolean equals(jobject arg0);
 		QAndroidJniObject getCellIdentity();
 		QAndroidJniObject getCellSignalStrength();
+		jint hashCode();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -66,28 +66,6 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
-	jboolean CellInfoTdscdma::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring CellInfoTdscdma::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint CellInfoTdscdma::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	jint CellInfoTdscdma::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -95,13 +73,12 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
-	void CellInfoTdscdma::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jboolean CellInfoTdscdma::equals(jobject arg0)
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 	QAndroidJniObject CellInfoTdscdma::getCellIdentity()
@@ -116,6 +93,29 @@ namespace __jni_impl::android::telephony
 		return __thiz.callObjectMethod(
 			"getCellSignalStrength",
 			"()Landroid/telephony/CellSignalStrengthTdscdma;"
+		);
+	}
+	jint CellInfoTdscdma::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring CellInfoTdscdma::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void CellInfoTdscdma::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::telephony

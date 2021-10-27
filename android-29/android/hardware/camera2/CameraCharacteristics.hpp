@@ -114,14 +114,14 @@ namespace __jni_impl::android::hardware::camera2
 		
 		// Methods
 		jobject get(__jni_impl::android::hardware::camera2::CameraCharacteristics_Key arg0);
-		QAndroidJniObject getKeys();
-		QAndroidJniObject getKeysNeedingPermission();
-		QAndroidJniObject getRecommendedStreamConfigurationMap(jint arg0);
-		QAndroidJniObject getAvailableSessionKeys();
-		QAndroidJniObject getAvailablePhysicalCameraRequestKeys();
 		QAndroidJniObject getAvailableCaptureRequestKeys();
 		QAndroidJniObject getAvailableCaptureResultKeys();
+		QAndroidJniObject getAvailablePhysicalCameraRequestKeys();
+		QAndroidJniObject getAvailableSessionKeys();
+		QAndroidJniObject getKeys();
+		QAndroidJniObject getKeysNeedingPermission();
 		QAndroidJniObject getPhysicalCameraIds();
+		QAndroidJniObject getRecommendedStreamConfigurationMap(jint arg0);
 	};
 } // namespace __jni_impl::android::hardware::camera2
 
@@ -845,42 +845,6 @@ namespace __jni_impl::android::hardware::camera2
 			arg0.__jniObject().object()
 		).object<jobject>();
 	}
-	QAndroidJniObject CameraCharacteristics::getKeys()
-	{
-		return __thiz.callObjectMethod(
-			"getKeys",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject CameraCharacteristics::getKeysNeedingPermission()
-	{
-		return __thiz.callObjectMethod(
-			"getKeysNeedingPermission",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject CameraCharacteristics::getRecommendedStreamConfigurationMap(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getRecommendedStreamConfigurationMap",
-			"(I)Landroid/hardware/camera2/params/RecommendedStreamConfigurationMap;",
-			arg0
-		);
-	}
-	QAndroidJniObject CameraCharacteristics::getAvailableSessionKeys()
-	{
-		return __thiz.callObjectMethod(
-			"getAvailableSessionKeys",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject CameraCharacteristics::getAvailablePhysicalCameraRequestKeys()
-	{
-		return __thiz.callObjectMethod(
-			"getAvailablePhysicalCameraRequestKeys",
-			"()Ljava/util/List;"
-		);
-	}
 	QAndroidJniObject CameraCharacteristics::getAvailableCaptureRequestKeys()
 	{
 		return __thiz.callObjectMethod(
@@ -895,11 +859,47 @@ namespace __jni_impl::android::hardware::camera2
 			"()Ljava/util/List;"
 		);
 	}
+	QAndroidJniObject CameraCharacteristics::getAvailablePhysicalCameraRequestKeys()
+	{
+		return __thiz.callObjectMethod(
+			"getAvailablePhysicalCameraRequestKeys",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject CameraCharacteristics::getAvailableSessionKeys()
+	{
+		return __thiz.callObjectMethod(
+			"getAvailableSessionKeys",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject CameraCharacteristics::getKeys()
+	{
+		return __thiz.callObjectMethod(
+			"getKeys",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject CameraCharacteristics::getKeysNeedingPermission()
+	{
+		return __thiz.callObjectMethod(
+			"getKeysNeedingPermission",
+			"()Ljava/util/List;"
+		);
+	}
 	QAndroidJniObject CameraCharacteristics::getPhysicalCameraIds()
 	{
 		return __thiz.callObjectMethod(
 			"getPhysicalCameraIds",
 			"()Ljava/util/Set;"
+		);
+	}
+	QAndroidJniObject CameraCharacteristics::getRecommendedStreamConfigurationMap(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getRecommendedStreamConfigurationMap",
+			"(I)Landroid/hardware/camera2/params/RecommendedStreamConfigurationMap;",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::hardware::camera2

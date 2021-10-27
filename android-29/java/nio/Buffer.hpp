@@ -21,26 +21,26 @@ namespace __jni_impl::java::nio
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject clear();
-		jint limit();
-		QAndroidJniObject limit(jint arg0);
-		jint remaining();
-		jboolean isDirect();
-		jboolean hasArray();
 		jobject array();
-		QAndroidJniObject position(jint arg0);
-		jint position();
 		jint arrayOffset();
 		jint capacity();
-		QAndroidJniObject mark();
-		QAndroidJniObject reset();
+		QAndroidJniObject clear();
+		QAndroidJniObject duplicate();
 		QAndroidJniObject flip();
-		QAndroidJniObject rewind();
+		jboolean hasArray();
 		jboolean hasRemaining();
+		jboolean isDirect();
 		jboolean isReadOnly();
+		jint limit();
+		QAndroidJniObject limit(jint arg0);
+		QAndroidJniObject mark();
+		jint position();
+		QAndroidJniObject position(jint arg0);
+		jint remaining();
+		QAndroidJniObject reset();
+		QAndroidJniObject rewind();
 		QAndroidJniObject slice();
 		QAndroidJniObject slice(jint arg0, jint arg1);
-		QAndroidJniObject duplicate();
 	};
 } // namespace __jni_impl::java::nio
 
@@ -59,11 +59,74 @@ namespace __jni_impl::java::nio
 	}
 	
 	// Methods
+	jobject Buffer::array()
+	{
+		return __thiz.callObjectMethod(
+			"array",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jint Buffer::arrayOffset()
+	{
+		return __thiz.callMethod<jint>(
+			"arrayOffset",
+			"()I"
+		);
+	}
+	jint Buffer::capacity()
+	{
+		return __thiz.callMethod<jint>(
+			"capacity",
+			"()I"
+		);
+	}
 	QAndroidJniObject Buffer::clear()
 	{
 		return __thiz.callObjectMethod(
 			"clear",
 			"()Ljava/nio/Buffer;"
+		);
+	}
+	QAndroidJniObject Buffer::duplicate()
+	{
+		return __thiz.callObjectMethod(
+			"duplicate",
+			"()Ljava/nio/Buffer;"
+		);
+	}
+	QAndroidJniObject Buffer::flip()
+	{
+		return __thiz.callObjectMethod(
+			"flip",
+			"()Ljava/nio/Buffer;"
+		);
+	}
+	jboolean Buffer::hasArray()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasArray",
+			"()Z"
+		);
+	}
+	jboolean Buffer::hasRemaining()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasRemaining",
+			"()Z"
+		);
+	}
+	jboolean Buffer::isDirect()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isDirect",
+			"()Z"
+		);
+	}
+	jboolean Buffer::isReadOnly()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isReadOnly",
+			"()Z"
 		);
 	}
 	jint Buffer::limit()
@@ -81,40 +144,11 @@ namespace __jni_impl::java::nio
 			arg0
 		);
 	}
-	jint Buffer::remaining()
-	{
-		return __thiz.callMethod<jint>(
-			"remaining",
-			"()I"
-		);
-	}
-	jboolean Buffer::isDirect()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isDirect",
-			"()Z"
-		);
-	}
-	jboolean Buffer::hasArray()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasArray",
-			"()Z"
-		);
-	}
-	jobject Buffer::array()
+	QAndroidJniObject Buffer::mark()
 	{
 		return __thiz.callObjectMethod(
-			"array",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	QAndroidJniObject Buffer::position(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"position",
-			"(I)Ljava/nio/Buffer;",
-			arg0
+			"mark",
+			"()Ljava/nio/Buffer;"
 		);
 	}
 	jint Buffer::position()
@@ -124,25 +158,19 @@ namespace __jni_impl::java::nio
 			"()I"
 		);
 	}
-	jint Buffer::arrayOffset()
-	{
-		return __thiz.callMethod<jint>(
-			"arrayOffset",
-			"()I"
-		);
-	}
-	jint Buffer::capacity()
-	{
-		return __thiz.callMethod<jint>(
-			"capacity",
-			"()I"
-		);
-	}
-	QAndroidJniObject Buffer::mark()
+	QAndroidJniObject Buffer::position(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"mark",
-			"()Ljava/nio/Buffer;"
+			"position",
+			"(I)Ljava/nio/Buffer;",
+			arg0
+		);
+	}
+	jint Buffer::remaining()
+	{
+		return __thiz.callMethod<jint>(
+			"remaining",
+			"()I"
 		);
 	}
 	QAndroidJniObject Buffer::reset()
@@ -152,32 +180,11 @@ namespace __jni_impl::java::nio
 			"()Ljava/nio/Buffer;"
 		);
 	}
-	QAndroidJniObject Buffer::flip()
-	{
-		return __thiz.callObjectMethod(
-			"flip",
-			"()Ljava/nio/Buffer;"
-		);
-	}
 	QAndroidJniObject Buffer::rewind()
 	{
 		return __thiz.callObjectMethod(
 			"rewind",
 			"()Ljava/nio/Buffer;"
-		);
-	}
-	jboolean Buffer::hasRemaining()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasRemaining",
-			"()Z"
-		);
-	}
-	jboolean Buffer::isReadOnly()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isReadOnly",
-			"()Z"
 		);
 	}
 	QAndroidJniObject Buffer::slice()
@@ -194,13 +201,6 @@ namespace __jni_impl::java::nio
 			"(II)Ljava/nio/Buffer;",
 			arg0,
 			arg1
-		);
-	}
-	QAndroidJniObject Buffer::duplicate()
-	{
-		return __thiz.callObjectMethod(
-			"duplicate",
-			"()Ljava/nio/Buffer;"
 		);
 	}
 } // namespace __jni_impl::java::nio

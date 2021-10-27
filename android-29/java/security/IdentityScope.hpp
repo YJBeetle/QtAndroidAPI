@@ -25,15 +25,15 @@ namespace __jni_impl::java::security
 		void __constructor(const QString &arg0, __jni_impl::java::security::IdentityScope arg1);
 		
 		// Methods
-		jstring toString();
-		jint size();
-		void addIdentity(__jni_impl::java::security::Identity arg0);
 		static QAndroidJniObject getSystemScope();
-		void removeIdentity(__jni_impl::java::security::Identity arg0);
-		QAndroidJniObject identities();
+		void addIdentity(__jni_impl::java::security::Identity arg0);
 		QAndroidJniObject getIdentity(jstring arg0);
 		QAndroidJniObject getIdentity(const QString &arg0);
 		QAndroidJniObject getIdentity(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject identities();
+		void removeIdentity(__jni_impl::java::security::Identity arg0);
+		jint size();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security
 
@@ -80,28 +80,6 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	jstring IdentityScope::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint IdentityScope::size()
-	{
-		return __thiz.callMethod<jint>(
-			"size",
-			"()I"
-		);
-	}
-	void IdentityScope::addIdentity(__jni_impl::java::security::Identity arg0)
-	{
-		__thiz.callMethod<void>(
-			"addIdentity",
-			"(Ljava/security/Identity;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject IdentityScope::getSystemScope()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -110,19 +88,12 @@ namespace __jni_impl::java::security
 			"()Ljava/security/IdentityScope;"
 		);
 	}
-	void IdentityScope::removeIdentity(__jni_impl::java::security::Identity arg0)
+	void IdentityScope::addIdentity(__jni_impl::java::security::Identity arg0)
 	{
 		__thiz.callMethod<void>(
-			"removeIdentity",
+			"addIdentity",
 			"(Ljava/security/Identity;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject IdentityScope::identities()
-	{
-		return __thiz.callObjectMethod(
-			"identities",
-			"()Ljava/util/Enumeration;"
 		);
 	}
 	QAndroidJniObject IdentityScope::getIdentity(jstring arg0)
@@ -148,6 +119,35 @@ namespace __jni_impl::java::security
 			"(Ljava/security/Principal;)Ljava/security/Identity;",
 			arg0.__jniObject().object()
 		);
+	}
+	QAndroidJniObject IdentityScope::identities()
+	{
+		return __thiz.callObjectMethod(
+			"identities",
+			"()Ljava/util/Enumeration;"
+		);
+	}
+	void IdentityScope::removeIdentity(__jni_impl::java::security::Identity arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeIdentity",
+			"(Ljava/security/Identity;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jint IdentityScope::size()
+	{
+		return __thiz.callMethod<jint>(
+			"size",
+			"()I"
+		);
+	}
+	jstring IdentityScope::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security
 

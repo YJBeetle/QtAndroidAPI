@@ -5,17 +5,9 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
-{
-	class Context;
-}
 namespace __jni_impl::android::accounts
 {
 	class Account;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
 }
 namespace __jni_impl::android::content
 {
@@ -23,7 +15,15 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::android::content
 {
+	class Context;
+}
+namespace __jni_impl::android::content
+{
 	class SyncResult;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 namespace __jni_impl::java::lang
 {
@@ -45,21 +45,21 @@ namespace __jni_impl::android::content
 		// Methods
 		QAndroidJniObject getContext();
 		QAndroidJniObject getSyncAdapterBinder();
-		jboolean onUnsyncableAccount();
 		void onPerformSync(__jni_impl::android::accounts::Account arg0, __jni_impl::android::os::Bundle arg1, jstring arg2, __jni_impl::android::content::ContentProviderClient arg3, __jni_impl::android::content::SyncResult arg4);
 		void onPerformSync(__jni_impl::android::accounts::Account arg0, __jni_impl::android::os::Bundle arg1, const QString &arg2, __jni_impl::android::content::ContentProviderClient arg3, __jni_impl::android::content::SyncResult arg4);
 		void onSecurityException(__jni_impl::android::accounts::Account arg0, __jni_impl::android::os::Bundle arg1, jstring arg2, __jni_impl::android::content::SyncResult arg3);
 		void onSecurityException(__jni_impl::android::accounts::Account arg0, __jni_impl::android::os::Bundle arg1, const QString &arg2, __jni_impl::android::content::SyncResult arg3);
-		void onSyncCanceled(__jni_impl::java::lang::Thread arg0);
 		void onSyncCanceled();
+		void onSyncCanceled(__jni_impl::java::lang::Thread arg0);
+		jboolean onUnsyncableAccount();
 	};
 } // namespace __jni_impl::android::content
 
-#include "Context.hpp"
 #include "../accounts/Account.hpp"
-#include "../os/Bundle.hpp"
 #include "ContentProviderClient.hpp"
+#include "Context.hpp"
 #include "SyncResult.hpp"
+#include "../os/Bundle.hpp"
 #include "../../java/lang/Thread.hpp"
 
 namespace __jni_impl::android::content
@@ -109,13 +109,6 @@ namespace __jni_impl::android::content
 			"()Landroid/os/IBinder;"
 		);
 	}
-	jboolean AbstractThreadedSyncAdapter::onUnsyncableAccount()
-	{
-		return __thiz.callMethod<jboolean>(
-			"onUnsyncableAccount",
-			"()Z"
-		);
-	}
 	void AbstractThreadedSyncAdapter::onPerformSync(__jni_impl::android::accounts::Account arg0, __jni_impl::android::os::Bundle arg1, jstring arg2, __jni_impl::android::content::ContentProviderClient arg3, __jni_impl::android::content::SyncResult arg4)
 	{
 		__thiz.callMethod<void>(
@@ -162,6 +155,13 @@ namespace __jni_impl::android::content
 			arg3.__jniObject().object()
 		);
 	}
+	void AbstractThreadedSyncAdapter::onSyncCanceled()
+	{
+		__thiz.callMethod<void>(
+			"onSyncCanceled",
+			"()V"
+		);
+	}
 	void AbstractThreadedSyncAdapter::onSyncCanceled(__jni_impl::java::lang::Thread arg0)
 	{
 		__thiz.callMethod<void>(
@@ -170,11 +170,11 @@ namespace __jni_impl::android::content
 			arg0.__jniObject().object()
 		);
 	}
-	void AbstractThreadedSyncAdapter::onSyncCanceled()
+	jboolean AbstractThreadedSyncAdapter::onUnsyncableAccount()
 	{
-		__thiz.callMethod<void>(
-			"onSyncCanceled",
-			"()V"
+		return __thiz.callMethod<jboolean>(
+			"onUnsyncableAccount",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::content

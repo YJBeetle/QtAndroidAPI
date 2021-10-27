@@ -17,18 +17,18 @@ namespace __jni_impl::android::icu::text
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		jboolean next();
-		jint newLength();
-		jint oldLength();
-		jint sourceIndex();
-		jboolean findSourceIndex(jint arg0);
-		jboolean findDestinationIndex(jint arg0);
-		jint destinationIndexFromSourceIndex(jint arg0);
-		jint sourceIndexFromDestinationIndex(jint arg0);
-		jboolean hasChange();
-		jint replacementIndex();
 		jint destinationIndex();
+		jint destinationIndexFromSourceIndex(jint arg0);
+		jboolean findDestinationIndex(jint arg0);
+		jboolean findSourceIndex(jint arg0);
+		jboolean hasChange();
+		jint newLength();
+		jboolean next();
+		jint oldLength();
+		jint replacementIndex();
+		jint sourceIndex();
+		jint sourceIndexFromDestinationIndex(jint arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -46,46 +46,18 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jstring Edits_Iterator::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jboolean Edits_Iterator::next()
-	{
-		return __thiz.callMethod<jboolean>(
-			"next",
-			"()Z"
-		);
-	}
-	jint Edits_Iterator::newLength()
+	jint Edits_Iterator::destinationIndex()
 	{
 		return __thiz.callMethod<jint>(
-			"newLength",
+			"destinationIndex",
 			"()I"
 		);
 	}
-	jint Edits_Iterator::oldLength()
+	jint Edits_Iterator::destinationIndexFromSourceIndex(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
-			"oldLength",
-			"()I"
-		);
-	}
-	jint Edits_Iterator::sourceIndex()
-	{
-		return __thiz.callMethod<jint>(
-			"sourceIndex",
-			"()I"
-		);
-	}
-	jboolean Edits_Iterator::findSourceIndex(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"findSourceIndex",
-			"(I)Z",
+			"destinationIndexFromSourceIndex",
+			"(I)I",
 			arg0
 		);
 	}
@@ -97,19 +69,11 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
-	jint Edits_Iterator::destinationIndexFromSourceIndex(jint arg0)
+	jboolean Edits_Iterator::findSourceIndex(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"destinationIndexFromSourceIndex",
-			"(I)I",
-			arg0
-		);
-	}
-	jint Edits_Iterator::sourceIndexFromDestinationIndex(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"sourceIndexFromDestinationIndex",
-			"(I)I",
+		return __thiz.callMethod<jboolean>(
+			"findSourceIndex",
+			"(I)Z",
 			arg0
 		);
 	}
@@ -120,6 +84,27 @@ namespace __jni_impl::android::icu::text
 			"()Z"
 		);
 	}
+	jint Edits_Iterator::newLength()
+	{
+		return __thiz.callMethod<jint>(
+			"newLength",
+			"()I"
+		);
+	}
+	jboolean Edits_Iterator::next()
+	{
+		return __thiz.callMethod<jboolean>(
+			"next",
+			"()Z"
+		);
+	}
+	jint Edits_Iterator::oldLength()
+	{
+		return __thiz.callMethod<jint>(
+			"oldLength",
+			"()I"
+		);
+	}
 	jint Edits_Iterator::replacementIndex()
 	{
 		return __thiz.callMethod<jint>(
@@ -127,12 +112,27 @@ namespace __jni_impl::android::icu::text
 			"()I"
 		);
 	}
-	jint Edits_Iterator::destinationIndex()
+	jint Edits_Iterator::sourceIndex()
 	{
 		return __thiz.callMethod<jint>(
-			"destinationIndex",
+			"sourceIndex",
 			"()I"
 		);
+	}
+	jint Edits_Iterator::sourceIndexFromDestinationIndex(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"sourceIndexFromDestinationIndex",
+			"(I)I",
+			arg0
+		);
+	}
+	jstring Edits_Iterator::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::text
 

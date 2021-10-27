@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::hardware::usb
 {
 	class UsbEndpoint;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::hardware::usb
@@ -26,22 +26,22 @@ namespace __jni_impl::android::hardware::usb
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
+		jint getAlternateSetting();
+		QAndroidJniObject getEndpoint(jint arg0);
+		jint getEndpointCount();
+		jint getId();
+		jint getInterfaceClass();
+		jint getInterfaceProtocol();
+		jint getInterfaceSubclass();
 		jstring getName();
 		jstring toString();
-		jint getId();
-		jint describeContents();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getAlternateSetting();
-		jint getInterfaceClass();
-		jint getInterfaceSubclass();
-		jint getInterfaceProtocol();
-		jint getEndpointCount();
-		QAndroidJniObject getEndpoint(jint arg0);
 	};
 } // namespace __jni_impl::android::hardware::usb
 
-#include "../../os/Parcel.hpp"
 #include "UsbEndpoint.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::hardware::usb
 {
@@ -64,6 +64,63 @@ namespace __jni_impl::android::hardware::usb
 	}
 	
 	// Methods
+	jint UsbInterface::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	jint UsbInterface::getAlternateSetting()
+	{
+		return __thiz.callMethod<jint>(
+			"getAlternateSetting",
+			"()I"
+		);
+	}
+	QAndroidJniObject UsbInterface::getEndpoint(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getEndpoint",
+			"(I)Landroid/hardware/usb/UsbEndpoint;",
+			arg0
+		);
+	}
+	jint UsbInterface::getEndpointCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getEndpointCount",
+			"()I"
+		);
+	}
+	jint UsbInterface::getId()
+	{
+		return __thiz.callMethod<jint>(
+			"getId",
+			"()I"
+		);
+	}
+	jint UsbInterface::getInterfaceClass()
+	{
+		return __thiz.callMethod<jint>(
+			"getInterfaceClass",
+			"()I"
+		);
+	}
+	jint UsbInterface::getInterfaceProtocol()
+	{
+		return __thiz.callMethod<jint>(
+			"getInterfaceProtocol",
+			"()I"
+		);
+	}
+	jint UsbInterface::getInterfaceSubclass()
+	{
+		return __thiz.callMethod<jint>(
+			"getInterfaceSubclass",
+			"()I"
+		);
+	}
 	jstring UsbInterface::getName()
 	{
 		return __thiz.callObjectMethod(
@@ -78,20 +135,6 @@ namespace __jni_impl::android::hardware::usb
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jint UsbInterface::getId()
-	{
-		return __thiz.callMethod<jint>(
-			"getId",
-			"()I"
-		);
-	}
-	jint UsbInterface::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
 	void UsbInterface::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -99,49 +142,6 @@ namespace __jni_impl::android::hardware::usb
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint UsbInterface::getAlternateSetting()
-	{
-		return __thiz.callMethod<jint>(
-			"getAlternateSetting",
-			"()I"
-		);
-	}
-	jint UsbInterface::getInterfaceClass()
-	{
-		return __thiz.callMethod<jint>(
-			"getInterfaceClass",
-			"()I"
-		);
-	}
-	jint UsbInterface::getInterfaceSubclass()
-	{
-		return __thiz.callMethod<jint>(
-			"getInterfaceSubclass",
-			"()I"
-		);
-	}
-	jint UsbInterface::getInterfaceProtocol()
-	{
-		return __thiz.callMethod<jint>(
-			"getInterfaceProtocol",
-			"()I"
-		);
-	}
-	jint UsbInterface::getEndpointCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getEndpointCount",
-			"()I"
-		);
-	}
-	QAndroidJniObject UsbInterface::getEndpoint(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getEndpoint",
-			"(I)Landroid/hardware/usb/UsbEndpoint;",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::hardware::usb

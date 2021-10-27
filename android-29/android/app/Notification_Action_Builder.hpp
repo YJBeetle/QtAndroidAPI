@@ -9,10 +9,6 @@ namespace __jni_impl::android::app
 {
 	class Notification_Action;
 }
-namespace __jni_impl::android::graphics::drawable
-{
-	class Icon;
-}
 namespace __jni_impl::android::app
 {
 	class PendingIntent;
@@ -20,6 +16,10 @@ namespace __jni_impl::android::app
 namespace __jni_impl::android::app
 {
 	class RemoteInput;
+}
+namespace __jni_impl::android::graphics::drawable
+{
+	class Icon;
 }
 namespace __jni_impl::android::os
 {
@@ -41,21 +41,21 @@ namespace __jni_impl::android::app
 		void __constructor(jint arg0, const QString &arg1, __jni_impl::android::app::PendingIntent arg2);
 		
 		// Methods
-		QAndroidJniObject build();
+		QAndroidJniObject addExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject addRemoteInput(__jni_impl::android::app::RemoteInput arg0);
-		QAndroidJniObject setAllowGeneratedReplies(jboolean arg0);
-		QAndroidJniObject setSemanticAction(jint arg0);
-		QAndroidJniObject setContextual(jboolean arg0);
+		QAndroidJniObject build();
 		QAndroidJniObject extend(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject getExtras();
-		QAndroidJniObject addExtras(__jni_impl::android::os::Bundle arg0);
+		QAndroidJniObject setAllowGeneratedReplies(jboolean arg0);
+		QAndroidJniObject setContextual(jboolean arg0);
+		QAndroidJniObject setSemanticAction(jint arg0);
 	};
 } // namespace __jni_impl::android::app
 
 #include "Notification_Action.hpp"
-#include "../graphics/drawable/Icon.hpp"
 #include "PendingIntent.hpp"
 #include "RemoteInput.hpp"
+#include "../graphics/drawable/Icon.hpp"
 #include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::app
@@ -113,11 +113,12 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject Notification_Action_Builder::build()
+	QAndroidJniObject Notification_Action_Builder::addExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
-			"build",
-			"()Landroid/app/Notification$Action;"
+			"addExtras",
+			"(Landroid/os/Bundle;)Landroid/app/Notification$Action$Builder;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject Notification_Action_Builder::addRemoteInput(__jni_impl::android::app::RemoteInput arg0)
@@ -128,28 +129,11 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject Notification_Action_Builder::setAllowGeneratedReplies(jboolean arg0)
+	QAndroidJniObject Notification_Action_Builder::build()
 	{
 		return __thiz.callObjectMethod(
-			"setAllowGeneratedReplies",
-			"(Z)Landroid/app/Notification$Action$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject Notification_Action_Builder::setSemanticAction(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setSemanticAction",
-			"(I)Landroid/app/Notification$Action$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject Notification_Action_Builder::setContextual(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setContextual",
-			"(Z)Landroid/app/Notification$Action$Builder;",
-			arg0
+			"build",
+			"()Landroid/app/Notification$Action;"
 		);
 	}
 	QAndroidJniObject Notification_Action_Builder::extend(__jni_impl::__JniBaseClass arg0)
@@ -167,12 +151,28 @@ namespace __jni_impl::android::app
 			"()Landroid/os/Bundle;"
 		);
 	}
-	QAndroidJniObject Notification_Action_Builder::addExtras(__jni_impl::android::os::Bundle arg0)
+	QAndroidJniObject Notification_Action_Builder::setAllowGeneratedReplies(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
-			"addExtras",
-			"(Landroid/os/Bundle;)Landroid/app/Notification$Action$Builder;",
-			arg0.__jniObject().object()
+			"setAllowGeneratedReplies",
+			"(Z)Landroid/app/Notification$Action$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject Notification_Action_Builder::setContextual(jboolean arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setContextual",
+			"(Z)Landroid/app/Notification$Action$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject Notification_Action_Builder::setSemanticAction(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setSemanticAction",
+			"(I)Landroid/app/Notification$Action$Builder;",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::app

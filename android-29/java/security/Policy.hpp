@@ -7,19 +7,11 @@
 
 namespace __jni_impl::java::security
 {
-	class PermissionCollection;
-}
-namespace __jni_impl::java::util
-{
-	class WeakHashMap;
+	class CodeSource;
 }
 namespace __jni_impl::java::security
 {
-	class Provider;
-}
-namespace __jni_impl::java::security
-{
-	class ProtectionDomain;
+	class NoSuchAlgorithmException;
 }
 namespace __jni_impl::java::security
 {
@@ -27,11 +19,19 @@ namespace __jni_impl::java::security
 }
 namespace __jni_impl::java::security
 {
-	class CodeSource;
+	class PermissionCollection;
 }
 namespace __jni_impl::java::security
 {
-	class NoSuchAlgorithmException;
+	class ProtectionDomain;
+}
+namespace __jni_impl::java::security
+{
+	class Provider;
+}
+namespace __jni_impl::java::util
+{
+	class WeakHashMap;
 }
 
 namespace __jni_impl::java::security
@@ -52,25 +52,25 @@ namespace __jni_impl::java::security
 		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::__JniBaseClass arg1, const QString &arg2);
 		static QAndroidJniObject getInstance(jstring arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::Provider arg2);
 		static QAndroidJniObject getInstance(const QString &arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::java::security::Provider arg2);
-		jboolean implies(__jni_impl::java::security::ProtectionDomain arg0, __jni_impl::java::security::Permission arg1);
-		QAndroidJniObject getPermissions(__jni_impl::java::security::CodeSource arg0);
-		QAndroidJniObject getPermissions(__jni_impl::java::security::ProtectionDomain arg0);
-		jstring getType();
-		QAndroidJniObject getParameters();
-		QAndroidJniObject getProvider();
 		static QAndroidJniObject getPolicy();
 		static void setPolicy(__jni_impl::java::security::Policy arg0);
+		QAndroidJniObject getParameters();
+		QAndroidJniObject getPermissions(__jni_impl::java::security::CodeSource arg0);
+		QAndroidJniObject getPermissions(__jni_impl::java::security::ProtectionDomain arg0);
+		QAndroidJniObject getProvider();
+		jstring getType();
+		jboolean implies(__jni_impl::java::security::ProtectionDomain arg0, __jni_impl::java::security::Permission arg1);
 		void refresh();
 	};
 } // namespace __jni_impl::java::security
 
-#include "PermissionCollection.hpp"
-#include "../util/WeakHashMap.hpp"
-#include "Provider.hpp"
-#include "ProtectionDomain.hpp"
-#include "Permission.hpp"
 #include "CodeSource.hpp"
 #include "NoSuchAlgorithmException.hpp"
+#include "Permission.hpp"
+#include "PermissionCollection.hpp"
+#include "ProtectionDomain.hpp"
+#include "Provider.hpp"
+#include "../util/WeakHashMap.hpp"
 
 namespace __jni_impl::java::security
 {
@@ -158,13 +158,28 @@ namespace __jni_impl::java::security
 			arg2.__jniObject().object()
 		);
 	}
-	jboolean Policy::implies(__jni_impl::java::security::ProtectionDomain arg0, __jni_impl::java::security::Permission arg1)
+	QAndroidJniObject Policy::getPolicy()
 	{
-		return __thiz.callMethod<jboolean>(
-			"implies",
-			"(Ljava/security/ProtectionDomain;Ljava/security/Permission;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.security.Policy",
+			"getPolicy",
+			"()Ljava/security/Policy;"
+		);
+	}
+	void Policy::setPolicy(__jni_impl::java::security::Policy arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"java.security.Policy",
+			"setPolicy",
+			"(Ljava/security/Policy;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Policy::getParameters()
+	{
+		return __thiz.callObjectMethod(
+			"getParameters",
+			"()Ljava/security/Policy$Parameters;"
 		);
 	}
 	QAndroidJniObject Policy::getPermissions(__jni_impl::java::security::CodeSource arg0)
@@ -183,20 +198,6 @@ namespace __jni_impl::java::security
 			arg0.__jniObject().object()
 		);
 	}
-	jstring Policy::getType()
-	{
-		return __thiz.callObjectMethod(
-			"getType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject Policy::getParameters()
-	{
-		return __thiz.callObjectMethod(
-			"getParameters",
-			"()Ljava/security/Policy$Parameters;"
-		);
-	}
 	QAndroidJniObject Policy::getProvider()
 	{
 		return __thiz.callObjectMethod(
@@ -204,21 +205,20 @@ namespace __jni_impl::java::security
 			"()Ljava/security/Provider;"
 		);
 	}
-	QAndroidJniObject Policy::getPolicy()
+	jstring Policy::getType()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.security.Policy",
-			"getPolicy",
-			"()Ljava/security/Policy;"
-		);
+		return __thiz.callObjectMethod(
+			"getType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	void Policy::setPolicy(__jni_impl::java::security::Policy arg0)
+	jboolean Policy::implies(__jni_impl::java::security::ProtectionDomain arg0, __jni_impl::java::security::Permission arg1)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"java.security.Policy",
-			"setPolicy",
-			"(Ljava/security/Policy;)V",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jboolean>(
+			"implies",
+			"(Ljava/security/ProtectionDomain;Ljava/security/Permission;)Z",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
 		);
 	}
 	void Policy::refresh()

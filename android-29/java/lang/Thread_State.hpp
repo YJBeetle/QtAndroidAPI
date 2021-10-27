@@ -13,20 +13,20 @@ namespace __jni_impl::java::lang
 	{
 	public:
 		// Fields
+		static QAndroidJniObject BLOCKED();
 		static QAndroidJniObject NEW();
 		static QAndroidJniObject RUNNABLE();
-		static QAndroidJniObject BLOCKED();
-		static QAndroidJniObject WAITING();
-		static QAndroidJniObject TIMED_WAITING();
 		static QAndroidJniObject TERMINATED();
+		static QAndroidJniObject TIMED_WAITING();
+		static QAndroidJniObject WAITING();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::lang
 
@@ -34,6 +34,14 @@ namespace __jni_impl::java::lang
 namespace __jni_impl::java::lang
 {
 	// Fields
+	QAndroidJniObject Thread_State::BLOCKED()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.lang.Thread$State",
+			"BLOCKED",
+			"Ljava/lang/Thread$State;"
+		);
+	}
 	QAndroidJniObject Thread_State::NEW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -50,19 +58,11 @@ namespace __jni_impl::java::lang
 			"Ljava/lang/Thread$State;"
 		);
 	}
-	QAndroidJniObject Thread_State::BLOCKED()
+	QAndroidJniObject Thread_State::TERMINATED()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Thread$State",
-			"BLOCKED",
-			"Ljava/lang/Thread$State;"
-		);
-	}
-	QAndroidJniObject Thread_State::WAITING()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.lang.Thread$State",
-			"WAITING",
+			"TERMINATED",
 			"Ljava/lang/Thread$State;"
 		);
 	}
@@ -74,11 +74,11 @@ namespace __jni_impl::java::lang
 			"Ljava/lang/Thread$State;"
 		);
 	}
-	QAndroidJniObject Thread_State::TERMINATED()
+	QAndroidJniObject Thread_State::WAITING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.lang.Thread$State",
-			"TERMINATED",
+			"WAITING",
 			"Ljava/lang/Thread$State;"
 		);
 	}
@@ -92,14 +92,6 @@ namespace __jni_impl::java::lang
 	}
 	
 	// Methods
-	jarray Thread_State::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.Thread$State",
-			"values",
-			"()[Ljava/lang/Thread$State;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Thread_State::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -117,6 +109,14 @@ namespace __jni_impl::java::lang
 			"(Ljava/lang/String;)Ljava/lang/Thread$State;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Thread_State::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.lang.Thread$State",
+			"values",
+			"()[Ljava/lang/Thread$State;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::lang
 

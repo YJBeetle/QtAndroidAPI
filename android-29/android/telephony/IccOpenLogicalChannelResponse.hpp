@@ -27,12 +27,12 @@ namespace __jni_impl::android::telephony
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		jint getChannel();
-		jint getStatus();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jint getChannel();
 		jbyteArray getSelectResponse();
+		jint getStatus();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -94,12 +94,12 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
-	jstring IccOpenLogicalChannelResponse::toString()
+	jint IccOpenLogicalChannelResponse::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
 	jint IccOpenLogicalChannelResponse::getChannel()
 	{
@@ -108,6 +108,13 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
+	jbyteArray IccOpenLogicalChannelResponse::getSelectResponse()
+	{
+		return __thiz.callObjectMethod(
+			"getSelectResponse",
+			"()[B"
+		).object<jbyteArray>();
+	}
 	jint IccOpenLogicalChannelResponse::getStatus()
 	{
 		return __thiz.callMethod<jint>(
@@ -115,12 +122,12 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
-	jint IccOpenLogicalChannelResponse::describeContents()
+	jstring IccOpenLogicalChannelResponse::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void IccOpenLogicalChannelResponse::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -130,13 +137,6 @@ namespace __jni_impl::android::telephony
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jbyteArray IccOpenLogicalChannelResponse::getSelectResponse()
-	{
-		return __thiz.callObjectMethod(
-			"getSelectResponse",
-			"()[B"
-		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::android::telephony
 

@@ -13,17 +13,17 @@ namespace __jni_impl::android::os
 	{
 	public:
 		// Fields
+		static QAndroidJniObject FINISHED();
 		static QAndroidJniObject PENDING();
 		static QAndroidJniObject RUNNING();
-		static QAndroidJniObject FINISHED();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::os
 
@@ -31,6 +31,14 @@ namespace __jni_impl::android::os
 namespace __jni_impl::android::os
 {
 	// Fields
+	QAndroidJniObject AsyncTask_Status::FINISHED()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.os.AsyncTask$Status",
+			"FINISHED",
+			"Landroid/os/AsyncTask$Status;"
+		);
+	}
 	QAndroidJniObject AsyncTask_Status::PENDING()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -47,14 +55,6 @@ namespace __jni_impl::android::os
 			"Landroid/os/AsyncTask$Status;"
 		);
 	}
-	QAndroidJniObject AsyncTask_Status::FINISHED()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.os.AsyncTask$Status",
-			"FINISHED",
-			"Landroid/os/AsyncTask$Status;"
-		);
-	}
 	
 	// Constructors
 	void AsyncTask_Status::__constructor()
@@ -65,14 +65,6 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	jarray AsyncTask_Status::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.AsyncTask$Status",
-			"values",
-			"()[Landroid/os/AsyncTask$Status;"
-		).object<jarray>();
-	}
 	QAndroidJniObject AsyncTask_Status::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::android::os
 			"(Ljava/lang/String;)Landroid/os/AsyncTask$Status;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray AsyncTask_Status::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.AsyncTask$Status",
+			"values",
+			"()[Landroid/os/AsyncTask$Status;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::os
 

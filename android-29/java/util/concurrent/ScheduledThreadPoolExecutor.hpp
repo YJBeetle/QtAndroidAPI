@@ -7,13 +7,13 @@
 #include "AbstractExecutorService.hpp"
 #include "ThreadPoolExecutor.hpp"
 
-namespace __jni_impl::java::util::concurrent::atomic
-{
-	class AtomicLong;
-}
 namespace __jni_impl::java::util::concurrent
 {
 	class TimeUnit;
+}
+namespace __jni_impl::java::util::concurrent::atomic
+{
+	class AtomicLong;
 }
 
 namespace __jni_impl::java::util::concurrent
@@ -29,26 +29,26 @@ namespace __jni_impl::java::util::concurrent
 		void __constructor(jint arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 		
 		// Methods
-		void shutdown();
 		void execute(__jni_impl::__JniBaseClass arg0);
+		jboolean getContinueExistingPeriodicTasksAfterShutdownPolicy();
+		jboolean getExecuteExistingDelayedTasksAfterShutdownPolicy();
 		QAndroidJniObject getQueue();
+		jboolean getRemoveOnCancelPolicy();
+		QAndroidJniObject schedule(__jni_impl::__JniBaseClass arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2);
+		QAndroidJniObject scheduleAtFixedRate(__jni_impl::__JniBaseClass arg0, jlong arg1, jlong arg2, __jni_impl::java::util::concurrent::TimeUnit arg3);
+		QAndroidJniObject scheduleWithFixedDelay(__jni_impl::__JniBaseClass arg0, jlong arg1, jlong arg2, __jni_impl::java::util::concurrent::TimeUnit arg3);
+		void setContinueExistingPeriodicTasksAfterShutdownPolicy(jboolean arg0);
+		void setExecuteExistingDelayedTasksAfterShutdownPolicy(jboolean arg0);
+		void setRemoveOnCancelPolicy(jboolean arg0);
+		void shutdown();
 		QAndroidJniObject shutdownNow();
 		QAndroidJniObject submit(__jni_impl::__JniBaseClass arg0);
 		QAndroidJniObject submit(__jni_impl::__JniBaseClass arg0, jobject arg1);
-		QAndroidJniObject scheduleAtFixedRate(__jni_impl::__JniBaseClass arg0, jlong arg1, jlong arg2, __jni_impl::java::util::concurrent::TimeUnit arg3);
-		QAndroidJniObject scheduleWithFixedDelay(__jni_impl::__JniBaseClass arg0, jlong arg1, jlong arg2, __jni_impl::java::util::concurrent::TimeUnit arg3);
-		void setRemoveOnCancelPolicy(jboolean arg0);
-		jboolean getExecuteExistingDelayedTasksAfterShutdownPolicy();
-		jboolean getContinueExistingPeriodicTasksAfterShutdownPolicy();
-		void setContinueExistingPeriodicTasksAfterShutdownPolicy(jboolean arg0);
-		void setExecuteExistingDelayedTasksAfterShutdownPolicy(jboolean arg0);
-		jboolean getRemoveOnCancelPolicy();
-		QAndroidJniObject schedule(__jni_impl::__JniBaseClass arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2);
 	};
 } // namespace __jni_impl::java::util::concurrent
 
-#include "atomic/AtomicLong.hpp"
 #include "TimeUnit.hpp"
+#include "atomic/AtomicLong.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {
@@ -84,19 +84,26 @@ namespace __jni_impl::java::util::concurrent
 	}
 	
 	// Methods
-	void ScheduledThreadPoolExecutor::shutdown()
-	{
-		__thiz.callMethod<void>(
-			"shutdown",
-			"()V"
-		);
-	}
 	void ScheduledThreadPoolExecutor::execute(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"execute",
 			"(Ljava/lang/Runnable;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	jboolean ScheduledThreadPoolExecutor::getContinueExistingPeriodicTasksAfterShutdownPolicy()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getContinueExistingPeriodicTasksAfterShutdownPolicy",
+			"()Z"
+		);
+	}
+	jboolean ScheduledThreadPoolExecutor::getExecuteExistingDelayedTasksAfterShutdownPolicy()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getExecuteExistingDelayedTasksAfterShutdownPolicy",
+			"()Z"
 		);
 	}
 	QAndroidJniObject ScheduledThreadPoolExecutor::getQueue()
@@ -106,28 +113,21 @@ namespace __jni_impl::java::util::concurrent
 			"()Ljava/util/concurrent/BlockingQueue;"
 		);
 	}
-	QAndroidJniObject ScheduledThreadPoolExecutor::shutdownNow()
+	jboolean ScheduledThreadPoolExecutor::getRemoveOnCancelPolicy()
 	{
-		return __thiz.callObjectMethod(
-			"shutdownNow",
-			"()Ljava/util/List;"
+		return __thiz.callMethod<jboolean>(
+			"getRemoveOnCancelPolicy",
+			"()Z"
 		);
 	}
-	QAndroidJniObject ScheduledThreadPoolExecutor::submit(__jni_impl::__JniBaseClass arg0)
+	QAndroidJniObject ScheduledThreadPoolExecutor::schedule(__jni_impl::__JniBaseClass arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2)
 	{
 		return __thiz.callObjectMethod(
-			"submit",
-			"(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ScheduledThreadPoolExecutor::submit(__jni_impl::__JniBaseClass arg0, jobject arg1)
-	{
-		return __thiz.callObjectMethod(
-			"submit",
-			"(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Future;",
+			"schedule",
+			"(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;",
 			arg0.__jniObject().object(),
-			arg1
+			arg1,
+			arg2.__jniObject().object()
 		);
 	}
 	QAndroidJniObject ScheduledThreadPoolExecutor::scheduleAtFixedRate(__jni_impl::__JniBaseClass arg0, jlong arg1, jlong arg2, __jni_impl::java::util::concurrent::TimeUnit arg3)
@@ -152,28 +152,6 @@ namespace __jni_impl::java::util::concurrent
 			arg3.__jniObject().object()
 		);
 	}
-	void ScheduledThreadPoolExecutor::setRemoveOnCancelPolicy(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRemoveOnCancelPolicy",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean ScheduledThreadPoolExecutor::getExecuteExistingDelayedTasksAfterShutdownPolicy()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getExecuteExistingDelayedTasksAfterShutdownPolicy",
-			"()Z"
-		);
-	}
-	jboolean ScheduledThreadPoolExecutor::getContinueExistingPeriodicTasksAfterShutdownPolicy()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getContinueExistingPeriodicTasksAfterShutdownPolicy",
-			"()Z"
-		);
-	}
 	void ScheduledThreadPoolExecutor::setContinueExistingPeriodicTasksAfterShutdownPolicy(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
@@ -190,21 +168,43 @@ namespace __jni_impl::java::util::concurrent
 			arg0
 		);
 	}
-	jboolean ScheduledThreadPoolExecutor::getRemoveOnCancelPolicy()
+	void ScheduledThreadPoolExecutor::setRemoveOnCancelPolicy(jboolean arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"getRemoveOnCancelPolicy",
-			"()Z"
+		__thiz.callMethod<void>(
+			"setRemoveOnCancelPolicy",
+			"(Z)V",
+			arg0
 		);
 	}
-	QAndroidJniObject ScheduledThreadPoolExecutor::schedule(__jni_impl::__JniBaseClass arg0, jlong arg1, __jni_impl::java::util::concurrent::TimeUnit arg2)
+	void ScheduledThreadPoolExecutor::shutdown()
+	{
+		__thiz.callMethod<void>(
+			"shutdown",
+			"()V"
+		);
+	}
+	QAndroidJniObject ScheduledThreadPoolExecutor::shutdownNow()
 	{
 		return __thiz.callObjectMethod(
-			"schedule",
-			"(Ljava/lang/Runnable;JLjava/util/concurrent/TimeUnit;)Ljava/util/concurrent/ScheduledFuture;",
+			"shutdownNow",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject ScheduledThreadPoolExecutor::submit(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"submit",
+			"(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ScheduledThreadPoolExecutor::submit(__jni_impl::__JniBaseClass arg0, jobject arg1)
+	{
+		return __thiz.callObjectMethod(
+			"submit",
+			"(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/Future;",
 			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
+			arg1
 		);
 	}
 } // namespace __jni_impl::java::util::concurrent

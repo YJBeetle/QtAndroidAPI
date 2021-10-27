@@ -6,17 +6,17 @@
 #include "../../../__JniBaseClass.hpp"
 #include "MeasureUnit.hpp"
 
-namespace __jni_impl::java::util
+namespace __jni_impl::android::icu::util
 {
-	class Locale;
+	class Currency_CurrencyUsage;
 }
 namespace __jni_impl::android::icu::util
 {
 	class ULocale;
 }
-namespace __jni_impl::android::icu::util
+namespace __jni_impl::java::util
 {
-	class Currency_CurrencyUsage;
+	class Currency;
 }
 namespace __jni_impl::java::util
 {
@@ -24,7 +24,7 @@ namespace __jni_impl::java::util
 }
 namespace __jni_impl::java::util
 {
-	class Currency;
+	class Locale;
 }
 
 namespace __jni_impl::android::icu::util
@@ -41,47 +41,47 @@ namespace __jni_impl::android::icu::util
 		void __constructor();
 		
 		// Methods
-		jstring getName(__jni_impl::java::util::Locale arg0, jint arg1, jbooleanArray arg2);
-		jstring getName(__jni_impl::java::util::Locale arg0, jint arg1, jstring arg2, jbooleanArray arg3);
-		jstring getName(__jni_impl::java::util::Locale arg0, jint arg1, const QString &arg2, jbooleanArray arg3);
-		jstring getName(__jni_impl::android::icu::util::ULocale arg0, jint arg1, jstring arg2, jbooleanArray arg3);
-		jstring getName(__jni_impl::android::icu::util::ULocale arg0, jint arg1, const QString &arg2, jbooleanArray arg3);
-		jstring getName(__jni_impl::android::icu::util::ULocale arg0, jint arg1, jbooleanArray arg2);
-		jstring toString();
-		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
+		static QAndroidJniObject fromJavaCurrency(__jni_impl::java::util::Currency arg0);
+		static QAndroidJniObject getAvailableCurrencies();
+		static jarray getAvailableCurrencyCodes(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::java::util::Date arg1);
+		static jarray getAvailableCurrencyCodes(__jni_impl::java::util::Locale arg0, __jni_impl::java::util::Date arg1);
+		static jarray getAvailableLocales();
+		static jarray getAvailableULocales();
 		static QAndroidJniObject getInstance(__jni_impl::android::icu::util::ULocale arg0);
 		static QAndroidJniObject getInstance(jstring arg0);
 		static QAndroidJniObject getInstance(const QString &arg0);
-		static jarray getAvailableLocales();
-		jstring getDisplayName();
-		jstring getDisplayName(__jni_impl::java::util::Locale arg0);
-		jint getDefaultFractionDigits();
-		jint getDefaultFractionDigits(__jni_impl::android::icu::util::Currency_CurrencyUsage arg0);
-		jstring getCurrencyCode();
-		jstring getSymbol(__jni_impl::android::icu::util::ULocale arg0);
-		jstring getSymbol(__jni_impl::java::util::Locale arg0);
-		jstring getSymbol();
-		static jarray getAvailableCurrencyCodes(__jni_impl::java::util::Locale arg0, __jni_impl::java::util::Date arg1);
-		static jarray getAvailableCurrencyCodes(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::java::util::Date arg1);
-		static QAndroidJniObject getAvailableCurrencies();
-		static QAndroidJniObject fromJavaCurrency(__jni_impl::java::util::Currency arg0);
-		QAndroidJniObject toJavaCurrency();
-		jint getNumericCode();
-		jdouble getRoundingIncrement();
-		jdouble getRoundingIncrement(__jni_impl::android::icu::util::Currency_CurrencyUsage arg0);
-		static jarray getAvailableULocales();
+		static QAndroidJniObject getInstance(__jni_impl::java::util::Locale arg0);
 		static jarray getKeywordValuesForLocale(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2);
 		static jarray getKeywordValuesForLocale(const QString &arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2);
 		static jboolean isAvailable(jstring arg0, __jni_impl::java::util::Date arg1, __jni_impl::java::util::Date arg2);
 		static jboolean isAvailable(const QString &arg0, __jni_impl::java::util::Date arg1, __jni_impl::java::util::Date arg2);
+		jstring getCurrencyCode();
+		jint getDefaultFractionDigits();
+		jint getDefaultFractionDigits(__jni_impl::android::icu::util::Currency_CurrencyUsage arg0);
+		jstring getDisplayName();
+		jstring getDisplayName(__jni_impl::java::util::Locale arg0);
+		jstring getName(__jni_impl::android::icu::util::ULocale arg0, jint arg1, jbooleanArray arg2);
+		jstring getName(__jni_impl::java::util::Locale arg0, jint arg1, jbooleanArray arg2);
+		jstring getName(__jni_impl::android::icu::util::ULocale arg0, jint arg1, jstring arg2, jbooleanArray arg3);
+		jstring getName(__jni_impl::android::icu::util::ULocale arg0, jint arg1, const QString &arg2, jbooleanArray arg3);
+		jstring getName(__jni_impl::java::util::Locale arg0, jint arg1, jstring arg2, jbooleanArray arg3);
+		jstring getName(__jni_impl::java::util::Locale arg0, jint arg1, const QString &arg2, jbooleanArray arg3);
+		jint getNumericCode();
+		jdouble getRoundingIncrement();
+		jdouble getRoundingIncrement(__jni_impl::android::icu::util::Currency_CurrencyUsage arg0);
+		jstring getSymbol();
+		jstring getSymbol(__jni_impl::android::icu::util::ULocale arg0);
+		jstring getSymbol(__jni_impl::java::util::Locale arg0);
+		QAndroidJniObject toJavaCurrency();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::icu::util
 
-#include "../../../java/util/Locale.hpp"
-#include "ULocale.hpp"
 #include "Currency_CurrencyUsage.hpp"
-#include "../../../java/util/Date.hpp"
+#include "ULocale.hpp"
 #include "../../../java/util/Currency.hpp"
+#include "../../../java/util/Date.hpp"
+#include "../../../java/util/Locale.hpp"
 
 namespace __jni_impl::android::icu::util
 {
@@ -117,85 +117,58 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Methods
-	jstring Currency::getName(__jni_impl::java::util::Locale arg0, jint arg1, jbooleanArray arg2)
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"(Ljava/util/Locale;I[Z)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		).object<jstring>();
-	}
-	jstring Currency::getName(__jni_impl::java::util::Locale arg0, jint arg1, jstring arg2, jbooleanArray arg3)
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"(Ljava/util/Locale;ILjava/lang/String;[Z)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3
-		).object<jstring>();
-	}
-	jstring Currency::getName(__jni_impl::java::util::Locale arg0, jint arg1, const QString &arg2, jbooleanArray arg3)
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"(Ljava/util/Locale;ILjava/lang/String;[Z)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3
-		).object<jstring>();
-	}
-	jstring Currency::getName(__jni_impl::android::icu::util::ULocale arg0, jint arg1, jstring arg2, jbooleanArray arg3)
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"(Landroid/icu/util/ULocale;ILjava/lang/String;[Z)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3
-		).object<jstring>();
-	}
-	jstring Currency::getName(__jni_impl::android::icu::util::ULocale arg0, jint arg1, const QString &arg2, jbooleanArray arg3)
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"(Landroid/icu/util/ULocale;ILjava/lang/String;[Z)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3
-		).object<jstring>();
-	}
-	jstring Currency::getName(__jni_impl::android::icu::util::ULocale arg0, jint arg1, jbooleanArray arg2)
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"(Landroid/icu/util/ULocale;I[Z)Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		).object<jstring>();
-	}
-	jstring Currency::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject Currency::getInstance(__jni_impl::java::util::Locale arg0)
+	QAndroidJniObject Currency::fromJavaCurrency(__jni_impl::java::util::Currency arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.Currency",
-			"getInstance",
-			"(Ljava/util/Locale;)Landroid/icu/util/Currency;",
+			"fromJavaCurrency",
+			"(Ljava/util/Currency;)Landroid/icu/util/Currency;",
 			arg0.__jniObject().object()
 		);
+	}
+	QAndroidJniObject Currency::getAvailableCurrencies()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.Currency",
+			"getAvailableCurrencies",
+			"()Ljava/util/Set;"
+		);
+	}
+	jarray Currency::getAvailableCurrencyCodes(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::java::util::Date arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.Currency",
+			"getAvailableCurrencyCodes",
+			"(Landroid/icu/util/ULocale;Ljava/util/Date;)[Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		).object<jarray>();
+	}
+	jarray Currency::getAvailableCurrencyCodes(__jni_impl::java::util::Locale arg0, __jni_impl::java::util::Date arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.Currency",
+			"getAvailableCurrencyCodes",
+			"(Ljava/util/Locale;Ljava/util/Date;)[Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		).object<jarray>();
+	}
+	jarray Currency::getAvailableLocales()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.Currency",
+			"getAvailableLocales",
+			"()[Ljava/util/Locale;"
+		).object<jarray>();
+	}
+	jarray Currency::getAvailableULocales()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.Currency",
+			"getAvailableULocales",
+			"()[Landroid/icu/util/ULocale;"
+		).object<jarray>();
 	}
 	QAndroidJniObject Currency::getInstance(__jni_impl::android::icu::util::ULocale arg0)
 	{
@@ -224,147 +197,14 @@ namespace __jni_impl::android::icu::util
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jarray Currency::getAvailableLocales()
+	QAndroidJniObject Currency::getInstance(__jni_impl::java::util::Locale arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.Currency",
-			"getAvailableLocales",
-			"()[Ljava/util/Locale;"
-		).object<jarray>();
-	}
-	jstring Currency::getDisplayName()
-	{
-		return __thiz.callObjectMethod(
-			"getDisplayName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring Currency::getDisplayName(__jni_impl::java::util::Locale arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDisplayName",
-			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
-		).object<jstring>();
-	}
-	jint Currency::getDefaultFractionDigits()
-	{
-		return __thiz.callMethod<jint>(
-			"getDefaultFractionDigits",
-			"()I"
-		);
-	}
-	jint Currency::getDefaultFractionDigits(__jni_impl::android::icu::util::Currency_CurrencyUsage arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getDefaultFractionDigits",
-			"(Landroid/icu/util/Currency$CurrencyUsage;)I",
+			"getInstance",
+			"(Ljava/util/Locale;)Landroid/icu/util/Currency;",
 			arg0.__jniObject().object()
 		);
-	}
-	jstring Currency::getCurrencyCode()
-	{
-		return __thiz.callObjectMethod(
-			"getCurrencyCode",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring Currency::getSymbol(__jni_impl::android::icu::util::ULocale arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getSymbol",
-			"(Landroid/icu/util/ULocale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
-		).object<jstring>();
-	}
-	jstring Currency::getSymbol(__jni_impl::java::util::Locale arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getSymbol",
-			"(Ljava/util/Locale;)Ljava/lang/String;",
-			arg0.__jniObject().object()
-		).object<jstring>();
-	}
-	jstring Currency::getSymbol()
-	{
-		return __thiz.callObjectMethod(
-			"getSymbol",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jarray Currency::getAvailableCurrencyCodes(__jni_impl::java::util::Locale arg0, __jni_impl::java::util::Date arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.Currency",
-			"getAvailableCurrencyCodes",
-			"(Ljava/util/Locale;Ljava/util/Date;)[Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		).object<jarray>();
-	}
-	jarray Currency::getAvailableCurrencyCodes(__jni_impl::android::icu::util::ULocale arg0, __jni_impl::java::util::Date arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.Currency",
-			"getAvailableCurrencyCodes",
-			"(Landroid/icu/util/ULocale;Ljava/util/Date;)[Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		).object<jarray>();
-	}
-	QAndroidJniObject Currency::getAvailableCurrencies()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.Currency",
-			"getAvailableCurrencies",
-			"()Ljava/util/Set;"
-		);
-	}
-	QAndroidJniObject Currency::fromJavaCurrency(__jni_impl::java::util::Currency arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.Currency",
-			"fromJavaCurrency",
-			"(Ljava/util/Currency;)Landroid/icu/util/Currency;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Currency::toJavaCurrency()
-	{
-		return __thiz.callObjectMethod(
-			"toJavaCurrency",
-			"()Ljava/util/Currency;"
-		);
-	}
-	jint Currency::getNumericCode()
-	{
-		return __thiz.callMethod<jint>(
-			"getNumericCode",
-			"()I"
-		);
-	}
-	jdouble Currency::getRoundingIncrement()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getRoundingIncrement",
-			"()D"
-		);
-	}
-	jdouble Currency::getRoundingIncrement(__jni_impl::android::icu::util::Currency_CurrencyUsage arg0)
-	{
-		return __thiz.callMethod<jdouble>(
-			"getRoundingIncrement",
-			"(Landroid/icu/util/Currency$CurrencyUsage;)D",
-			arg0.__jniObject().object()
-		);
-	}
-	jarray Currency::getAvailableULocales()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.Currency",
-			"getAvailableULocales",
-			"()[Landroid/icu/util/ULocale;"
-		).object<jarray>();
 	}
 	jarray Currency::getKeywordValuesForLocale(jstring arg0, __jni_impl::android::icu::util::ULocale arg1, jboolean arg2)
 	{
@@ -409,6 +249,166 @@ namespace __jni_impl::android::icu::util
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);
+	}
+	jstring Currency::getCurrencyCode()
+	{
+		return __thiz.callObjectMethod(
+			"getCurrencyCode",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint Currency::getDefaultFractionDigits()
+	{
+		return __thiz.callMethod<jint>(
+			"getDefaultFractionDigits",
+			"()I"
+		);
+	}
+	jint Currency::getDefaultFractionDigits(__jni_impl::android::icu::util::Currency_CurrencyUsage arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getDefaultFractionDigits",
+			"(Landroid/icu/util/Currency$CurrencyUsage;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	jstring Currency::getDisplayName()
+	{
+		return __thiz.callObjectMethod(
+			"getDisplayName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring Currency::getDisplayName(__jni_impl::java::util::Locale arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDisplayName",
+			"(Ljava/util/Locale;)Ljava/lang/String;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring Currency::getName(__jni_impl::android::icu::util::ULocale arg0, jint arg1, jbooleanArray arg2)
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"(Landroid/icu/util/ULocale;I[Z)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
+		).object<jstring>();
+	}
+	jstring Currency::getName(__jni_impl::java::util::Locale arg0, jint arg1, jbooleanArray arg2)
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"(Ljava/util/Locale;I[Z)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
+		).object<jstring>();
+	}
+	jstring Currency::getName(__jni_impl::android::icu::util::ULocale arg0, jint arg1, jstring arg2, jbooleanArray arg3)
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"(Landroid/icu/util/ULocale;ILjava/lang/String;[Z)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3
+		).object<jstring>();
+	}
+	jstring Currency::getName(__jni_impl::android::icu::util::ULocale arg0, jint arg1, const QString &arg2, jbooleanArray arg3)
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"(Landroid/icu/util/ULocale;ILjava/lang/String;[Z)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3
+		).object<jstring>();
+	}
+	jstring Currency::getName(__jni_impl::java::util::Locale arg0, jint arg1, jstring arg2, jbooleanArray arg3)
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"(Ljava/util/Locale;ILjava/lang/String;[Z)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3
+		).object<jstring>();
+	}
+	jstring Currency::getName(__jni_impl::java::util::Locale arg0, jint arg1, const QString &arg2, jbooleanArray arg3)
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"(Ljava/util/Locale;ILjava/lang/String;[Z)Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3
+		).object<jstring>();
+	}
+	jint Currency::getNumericCode()
+	{
+		return __thiz.callMethod<jint>(
+			"getNumericCode",
+			"()I"
+		);
+	}
+	jdouble Currency::getRoundingIncrement()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getRoundingIncrement",
+			"()D"
+		);
+	}
+	jdouble Currency::getRoundingIncrement(__jni_impl::android::icu::util::Currency_CurrencyUsage arg0)
+	{
+		return __thiz.callMethod<jdouble>(
+			"getRoundingIncrement",
+			"(Landroid/icu/util/Currency$CurrencyUsage;)D",
+			arg0.__jniObject().object()
+		);
+	}
+	jstring Currency::getSymbol()
+	{
+		return __thiz.callObjectMethod(
+			"getSymbol",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring Currency::getSymbol(__jni_impl::android::icu::util::ULocale arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getSymbol",
+			"(Landroid/icu/util/ULocale;)Ljava/lang/String;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	jstring Currency::getSymbol(__jni_impl::java::util::Locale arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getSymbol",
+			"(Ljava/util/Locale;)Ljava/lang/String;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	QAndroidJniObject Currency::toJavaCurrency()
+	{
+		return __thiz.callObjectMethod(
+			"toJavaCurrency",
+			"()Ljava/util/Currency;"
+		);
+	}
+	jstring Currency::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::util
 

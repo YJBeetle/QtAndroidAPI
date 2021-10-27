@@ -20,9 +20,9 @@ namespace __jni_impl::android::renderscript
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::renderscript
 
@@ -56,14 +56,6 @@ namespace __jni_impl::android::renderscript
 	}
 	
 	// Methods
-	jarray RenderScript_Priority::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.renderscript.RenderScript$Priority",
-			"values",
-			"()[Landroid/renderscript/RenderScript$Priority;"
-		).object<jarray>();
-	}
 	QAndroidJniObject RenderScript_Priority::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -81,6 +73,14 @@ namespace __jni_impl::android::renderscript
 			"(Ljava/lang/String;)Landroid/renderscript/RenderScript$Priority;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray RenderScript_Priority::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.renderscript.RenderScript$Priority",
+			"values",
+			"()[Landroid/renderscript/RenderScript$Priority;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::renderscript
 

@@ -25,12 +25,12 @@ namespace __jni_impl::android::telecom
 		void __constructor();
 		
 		// Methods
-		void onSessionModifyRequestReceived(__jni_impl::android::telecom::VideoProfile arg0);
-		void onCallSessionEvent(jint arg0);
-		void onSessionModifyResponseReceived(jint arg0, __jni_impl::android::telecom::VideoProfile arg1, __jni_impl::android::telecom::VideoProfile arg2);
-		void onPeerDimensionsChanged(jint arg0, jint arg1);
 		void onCallDataUsageChanged(jlong arg0);
+		void onCallSessionEvent(jint arg0);
 		void onCameraCapabilitiesChanged(__jni_impl::android::telecom::VideoProfile_CameraCapabilities arg0);
+		void onPeerDimensionsChanged(jint arg0, jint arg1);
+		void onSessionModifyRequestReceived(__jni_impl::android::telecom::VideoProfile arg0);
+		void onSessionModifyResponseReceived(jint arg0, __jni_impl::android::telecom::VideoProfile arg1, __jni_impl::android::telecom::VideoProfile arg2);
 		void onVideoQualityChanged(jint arg0);
 	};
 } // namespace __jni_impl::android::telecom
@@ -52,12 +52,12 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
-	void InCallService_VideoCall_Callback::onSessionModifyRequestReceived(__jni_impl::android::telecom::VideoProfile arg0)
+	void InCallService_VideoCall_Callback::onCallDataUsageChanged(jlong arg0)
 	{
 		__thiz.callMethod<void>(
-			"onSessionModifyRequestReceived",
-			"(Landroid/telecom/VideoProfile;)V",
-			arg0.__jniObject().object()
+			"onCallDataUsageChanged",
+			"(J)V",
+			arg0
 		);
 	}
 	void InCallService_VideoCall_Callback::onCallSessionEvent(jint arg0)
@@ -68,14 +68,12 @@ namespace __jni_impl::android::telecom
 			arg0
 		);
 	}
-	void InCallService_VideoCall_Callback::onSessionModifyResponseReceived(jint arg0, __jni_impl::android::telecom::VideoProfile arg1, __jni_impl::android::telecom::VideoProfile arg2)
+	void InCallService_VideoCall_Callback::onCameraCapabilitiesChanged(__jni_impl::android::telecom::VideoProfile_CameraCapabilities arg0)
 	{
 		__thiz.callMethod<void>(
-			"onSessionModifyResponseReceived",
-			"(ILandroid/telecom/VideoProfile;Landroid/telecom/VideoProfile;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			"onCameraCapabilitiesChanged",
+			"(Landroid/telecom/VideoProfile$CameraCapabilities;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void InCallService_VideoCall_Callback::onPeerDimensionsChanged(jint arg0, jint arg1)
@@ -87,20 +85,22 @@ namespace __jni_impl::android::telecom
 			arg1
 		);
 	}
-	void InCallService_VideoCall_Callback::onCallDataUsageChanged(jlong arg0)
+	void InCallService_VideoCall_Callback::onSessionModifyRequestReceived(__jni_impl::android::telecom::VideoProfile arg0)
 	{
 		__thiz.callMethod<void>(
-			"onCallDataUsageChanged",
-			"(J)V",
-			arg0
+			"onSessionModifyRequestReceived",
+			"(Landroid/telecom/VideoProfile;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	void InCallService_VideoCall_Callback::onCameraCapabilitiesChanged(__jni_impl::android::telecom::VideoProfile_CameraCapabilities arg0)
+	void InCallService_VideoCall_Callback::onSessionModifyResponseReceived(jint arg0, __jni_impl::android::telecom::VideoProfile arg1, __jni_impl::android::telecom::VideoProfile arg2)
 	{
 		__thiz.callMethod<void>(
-			"onCameraCapabilitiesChanged",
-			"(Landroid/telecom/VideoProfile$CameraCapabilities;)V",
-			arg0.__jniObject().object()
+			"onSessionModifyResponseReceived",
+			"(ILandroid/telecom/VideoProfile;Landroid/telecom/VideoProfile;)V",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
 	void InCallService_VideoCall_Callback::onVideoQualityChanged(jint arg0)

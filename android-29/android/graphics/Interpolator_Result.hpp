@@ -13,17 +13,17 @@ namespace __jni_impl::android::graphics
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NORMAL();
-		static QAndroidJniObject FREEZE_START();
 		static QAndroidJniObject FREEZE_END();
+		static QAndroidJniObject FREEZE_START();
+		static QAndroidJniObject NORMAL();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -31,11 +31,11 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::graphics
 {
 	// Fields
-	QAndroidJniObject Interpolator_Result::NORMAL()
+	QAndroidJniObject Interpolator_Result::FREEZE_END()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Interpolator$Result",
-			"NORMAL",
+			"FREEZE_END",
 			"Landroid/graphics/Interpolator$Result;"
 		);
 	}
@@ -47,11 +47,11 @@ namespace __jni_impl::android::graphics
 			"Landroid/graphics/Interpolator$Result;"
 		);
 	}
-	QAndroidJniObject Interpolator_Result::FREEZE_END()
+	QAndroidJniObject Interpolator_Result::NORMAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.graphics.Interpolator$Result",
-			"FREEZE_END",
+			"NORMAL",
 			"Landroid/graphics/Interpolator$Result;"
 		);
 	}
@@ -65,14 +65,6 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	jarray Interpolator_Result::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Interpolator$Result",
-			"values",
-			"()[Landroid/graphics/Interpolator$Result;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Interpolator_Result::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::android::graphics
 			"(Ljava/lang/String;)Landroid/graphics/Interpolator$Result;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Interpolator_Result::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Interpolator$Result",
+			"values",
+			"()[Landroid/graphics/Interpolator$Result;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::graphics
 

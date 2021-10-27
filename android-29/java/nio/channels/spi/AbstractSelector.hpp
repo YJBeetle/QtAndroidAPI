@@ -6,14 +6,6 @@
 #include "../../../../__JniBaseClass.hpp"
 #include "../Selector.hpp"
 
-namespace __jni_impl::java::util::concurrent::atomic
-{
-	class AtomicBoolean;
-}
-namespace __jni_impl::java::nio::channels::spi
-{
-	class SelectorProvider;
-}
 namespace __jni_impl::java::nio::channels
 {
 	class SelectionKey;
@@ -25,6 +17,10 @@ namespace __jni_impl::java::nio::channels::spi
 namespace __jni_impl::java::nio::channels::spi
 {
 	class AbstractSelectionKey;
+}
+namespace __jni_impl::java::nio::channels::spi
+{
+	class SelectorProvider;
 }
 
 namespace __jni_impl::java::nio::channels::spi
@@ -38,17 +34,16 @@ namespace __jni_impl::java::nio::channels::spi
 		void __constructor();
 		
 		// Methods
+		void close();
 		jboolean isOpen();
 		QAndroidJniObject provider();
-		void close();
 	};
 } // namespace __jni_impl::java::nio::channels::spi
 
-#include "../../../util/concurrent/atomic/AtomicBoolean.hpp"
-#include "SelectorProvider.hpp"
 #include "../SelectionKey.hpp"
 #include "AbstractSelectableChannel.hpp"
 #include "AbstractSelectionKey.hpp"
+#include "SelectorProvider.hpp"
 
 namespace __jni_impl::java::nio::channels::spi
 {
@@ -63,6 +58,13 @@ namespace __jni_impl::java::nio::channels::spi
 	}
 	
 	// Methods
+	void AbstractSelector::close()
+	{
+		__thiz.callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
 	jboolean AbstractSelector::isOpen()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -75,13 +77,6 @@ namespace __jni_impl::java::nio::channels::spi
 		return __thiz.callObjectMethod(
 			"provider",
 			"()Ljava/nio/channels/spi/SelectorProvider;"
-		);
-	}
-	void AbstractSelector::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::java::nio::channels::spi

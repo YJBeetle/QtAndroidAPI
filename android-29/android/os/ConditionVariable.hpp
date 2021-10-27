@@ -18,10 +18,10 @@ namespace __jni_impl::android::os
 		void __constructor(jboolean arg0);
 		
 		// Methods
+		jboolean block(jlong arg0);
+		void block();
 		void close();
 		void open();
-		void block();
-		jboolean block(jlong arg0);
 	};
 } // namespace __jni_impl::android::os
 
@@ -48,6 +48,21 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
+	jboolean ConditionVariable::block(jlong arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"block",
+			"(J)Z",
+			arg0
+		);
+	}
+	void ConditionVariable::block()
+	{
+		__thiz.callMethod<void>(
+			"block",
+			"()V"
+		);
+	}
 	void ConditionVariable::close()
 	{
 		__thiz.callMethod<void>(
@@ -60,21 +75,6 @@ namespace __jni_impl::android::os
 		__thiz.callMethod<void>(
 			"open",
 			"()V"
-		);
-	}
-	void ConditionVariable::block()
-	{
-		__thiz.callMethod<void>(
-			"block",
-			"()V"
-		);
-	}
-	jboolean ConditionVariable::block(jlong arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"block",
-			"(J)Z",
-			arg0
 		);
 	}
 } // namespace __jni_impl::android::os

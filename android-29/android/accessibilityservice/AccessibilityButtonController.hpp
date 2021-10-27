@@ -26,8 +26,8 @@ namespace __jni_impl::android::accessibilityservice
 		
 		// Methods
 		jboolean isAccessibilityButtonAvailable();
-		void registerAccessibilityButtonCallback(__jni_impl::android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0, __jni_impl::android::os::Handler arg1);
 		void registerAccessibilityButtonCallback(__jni_impl::android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0);
+		void registerAccessibilityButtonCallback(__jni_impl::android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0, __jni_impl::android::os::Handler arg1);
 		void unregisterAccessibilityButtonCallback(__jni_impl::android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0);
 	};
 } // namespace __jni_impl::android::accessibilityservice
@@ -55,6 +55,14 @@ namespace __jni_impl::android::accessibilityservice
 			"()Z"
 		);
 	}
+	void AccessibilityButtonController::registerAccessibilityButtonCallback(__jni_impl::android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0)
+	{
+		__thiz.callMethod<void>(
+			"registerAccessibilityButtonCallback",
+			"(Landroid/accessibilityservice/AccessibilityButtonController$AccessibilityButtonCallback;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void AccessibilityButtonController::registerAccessibilityButtonCallback(__jni_impl::android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0, __jni_impl::android::os::Handler arg1)
 	{
 		__thiz.callMethod<void>(
@@ -62,14 +70,6 @@ namespace __jni_impl::android::accessibilityservice
 			"(Landroid/accessibilityservice/AccessibilityButtonController$AccessibilityButtonCallback;Landroid/os/Handler;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	void AccessibilityButtonController::registerAccessibilityButtonCallback(__jni_impl::android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0)
-	{
-		__thiz.callMethod<void>(
-			"registerAccessibilityButtonCallback",
-			"(Landroid/accessibilityservice/AccessibilityButtonController$AccessibilityButtonCallback;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	void AccessibilityButtonController::unregisterAccessibilityButtonCallback(__jni_impl::android::accessibilityservice::AccessibilityButtonController_AccessibilityButtonCallback arg0)

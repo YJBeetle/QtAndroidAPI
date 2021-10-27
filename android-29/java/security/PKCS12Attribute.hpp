@@ -18,17 +18,17 @@ namespace __jni_impl::java::security
 		// Fields
 		
 		// Constructors
+		void __constructor(jbyteArray arg0);
 		void __constructor(jstring arg0, jstring arg1);
 		void __constructor(const QString &arg0, const QString &arg1);
-		void __constructor(jbyteArray arg0);
 		
 		// Methods
-		jstring getName();
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jstring getValue();
 		jbyteArray getEncoded();
+		jstring getName();
+		jstring getValue();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security
 
@@ -39,6 +39,14 @@ namespace __jni_impl::java::security
 	// Fields
 	
 	// Constructors
+	void PKCS12Attribute::__constructor(jbyteArray arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.security.PKCS12Attribute",
+			"([B)V",
+			arg0
+		);
+	}
 	void PKCS12Attribute::__constructor(jstring arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -57,23 +65,8 @@ namespace __jni_impl::java::security
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	void PKCS12Attribute::__constructor(jbyteArray arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.security.PKCS12Attribute",
-			"([B)V",
-			arg0
-		);
-	}
 	
 	// Methods
-	jstring PKCS12Attribute::getName()
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jboolean PKCS12Attribute::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -82,10 +75,24 @@ namespace __jni_impl::java::security
 			arg0
 		);
 	}
-	jstring PKCS12Attribute::toString()
+	jbyteArray PKCS12Attribute::getEncoded()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
+			"getEncoded",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jstring PKCS12Attribute::getName()
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring PKCS12Attribute::getValue()
+	{
+		return __thiz.callObjectMethod(
+			"getValue",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -96,19 +103,12 @@ namespace __jni_impl::java::security
 			"()I"
 		);
 	}
-	jstring PKCS12Attribute::getValue()
+	jstring PKCS12Attribute::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getValue",
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jbyteArray PKCS12Attribute::getEncoded()
-	{
-		return __thiz.callObjectMethod(
-			"getEncoded",
-			"()[B"
-		).object<jbyteArray>();
 	}
 } // namespace __jni_impl::java::security
 
@@ -118,16 +118,16 @@ namespace java::security
 	{
 	public:
 		PKCS12Attribute(QAndroidJniObject obj) { __thiz = obj; }
+		PKCS12Attribute(jbyteArray arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		PKCS12Attribute(jstring arg0, jstring arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
-		}
-		PKCS12Attribute(jbyteArray arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace java::security

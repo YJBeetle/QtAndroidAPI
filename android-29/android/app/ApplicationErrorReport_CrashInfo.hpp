@@ -25,14 +25,14 @@ namespace __jni_impl::android::app
 		jstring throwMethodName();
 		
 		// Constructors
+		void __constructor();
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		void __constructor(jthrowable arg0);
-		void __constructor();
 		
 		// Methods
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void dump(__jni_impl::__JniBaseClass arg0, jstring arg1);
 		void dump(__jni_impl::__JniBaseClass arg0, const QString &arg1);
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -91,6 +91,13 @@ namespace __jni_impl::android::app
 	}
 	
 	// Constructors
+	void ApplicationErrorReport_CrashInfo::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.app.ApplicationErrorReport$CrashInfo",
+			"()V"
+		);
+	}
 	void ApplicationErrorReport_CrashInfo::__constructor(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -107,24 +114,8 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
-	void ApplicationErrorReport_CrashInfo::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.app.ApplicationErrorReport$CrashInfo",
-			"()V"
-		);
-	}
 	
 	// Methods
-	void ApplicationErrorReport_CrashInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	void ApplicationErrorReport_CrashInfo::dump(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
 		__thiz.callMethod<void>(
@@ -143,6 +134,15 @@ namespace __jni_impl::android::app
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
+	void ApplicationErrorReport_CrashInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
 } // namespace __jni_impl::android::app
 
 namespace android::app
@@ -151,6 +151,10 @@ namespace android::app
 	{
 	public:
 		ApplicationErrorReport_CrashInfo(QAndroidJniObject obj) { __thiz = obj; }
+		ApplicationErrorReport_CrashInfo()
+		{
+			__constructor();
+		}
 		ApplicationErrorReport_CrashInfo(__jni_impl::android::os::Parcel arg0)
 		{
 			__constructor(
@@ -160,10 +164,6 @@ namespace android::app
 		{
 			__constructor(
 				arg0);
-		}
-		ApplicationErrorReport_CrashInfo()
-		{
-			__constructor();
 		}
 	};
 } // namespace android::app

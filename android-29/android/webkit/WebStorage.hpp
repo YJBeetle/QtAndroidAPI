@@ -18,16 +18,16 @@ namespace __jni_impl::android::webkit
 		
 		// Methods
 		static QAndroidJniObject getInstance();
-		void getOrigins(__jni_impl::__JniBaseClass arg0);
-		void getUsageForOrigin(jstring arg0, __jni_impl::__JniBaseClass arg1);
-		void getUsageForOrigin(const QString &arg0, __jni_impl::__JniBaseClass arg1);
-		void getQuotaForOrigin(jstring arg0, __jni_impl::__JniBaseClass arg1);
-		void getQuotaForOrigin(const QString &arg0, __jni_impl::__JniBaseClass arg1);
-		void setQuotaForOrigin(jstring arg0, jlong arg1);
-		void setQuotaForOrigin(const QString &arg0, jlong arg1);
+		void deleteAllData();
 		void deleteOrigin(jstring arg0);
 		void deleteOrigin(const QString &arg0);
-		void deleteAllData();
+		void getOrigins(__jni_impl::__JniBaseClass arg0);
+		void getQuotaForOrigin(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		void getQuotaForOrigin(const QString &arg0, __jni_impl::__JniBaseClass arg1);
+		void getUsageForOrigin(jstring arg0, __jni_impl::__JniBaseClass arg1);
+		void getUsageForOrigin(const QString &arg0, __jni_impl::__JniBaseClass arg1);
+		void setQuotaForOrigin(jstring arg0, jlong arg1);
+		void setQuotaForOrigin(const QString &arg0, jlong arg1);
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -53,30 +53,35 @@ namespace __jni_impl::android::webkit
 			"()Landroid/webkit/WebStorage;"
 		);
 	}
+	void WebStorage::deleteAllData()
+	{
+		__thiz.callMethod<void>(
+			"deleteAllData",
+			"()V"
+		);
+	}
+	void WebStorage::deleteOrigin(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"deleteOrigin",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void WebStorage::deleteOrigin(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"deleteOrigin",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void WebStorage::getOrigins(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
 			"getOrigins",
 			"(Landroid/webkit/ValueCallback;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	void WebStorage::getUsageForOrigin(jstring arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"getUsageForOrigin",
-			"(Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void WebStorage::getUsageForOrigin(const QString &arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"getUsageForOrigin",
-			"(Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
 		);
 	}
 	void WebStorage::getQuotaForOrigin(jstring arg0, __jni_impl::__JniBaseClass arg1)
@@ -92,6 +97,24 @@ namespace __jni_impl::android::webkit
 	{
 		__thiz.callMethod<void>(
 			"getQuotaForOrigin",
+			"(Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
+	void WebStorage::getUsageForOrigin(jstring arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"getUsageForOrigin",
+			"(Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void WebStorage::getUsageForOrigin(const QString &arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"getUsageForOrigin",
 			"(Ljava/lang/String;Landroid/webkit/ValueCallback;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1.__jniObject().object()
@@ -113,29 +136,6 @@ namespace __jni_impl::android::webkit
 			"(Ljava/lang/String;J)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
-		);
-	}
-	void WebStorage::deleteOrigin(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"deleteOrigin",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void WebStorage::deleteOrigin(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"deleteOrigin",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void WebStorage::deleteAllData()
-	{
-		__thiz.callMethod<void>(
-			"deleteAllData",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::android::webkit

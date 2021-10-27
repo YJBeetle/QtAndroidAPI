@@ -5,17 +5,17 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
+namespace __jni_impl::android::content
 {
-	class Handler;
+	class ContentValues;
 }
 namespace __jni_impl::android::net
 {
 	class Uri;
 }
-namespace __jni_impl::android::content
+namespace __jni_impl::android::os
 {
-	class ContentValues;
+	class Handler;
 }
 
 namespace __jni_impl::android::content
@@ -41,9 +41,9 @@ namespace __jni_impl::android::content
 	};
 } // namespace __jni_impl::android::content
 
-#include "../os/Handler.hpp"
-#include "../net/Uri.hpp"
 #include "ContentValues.hpp"
+#include "../net/Uri.hpp"
+#include "../os/Handler.hpp"
 
 namespace __jni_impl::android::content
 {

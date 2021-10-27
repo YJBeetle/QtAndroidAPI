@@ -12,24 +12,24 @@ namespace __jni_impl::java::util::jar
 	{
 	public:
 		// Fields
-		static QAndroidJniObject MANIFEST_VERSION();
-		static QAndroidJniObject SIGNATURE_VERSION();
-		static QAndroidJniObject CONTENT_TYPE();
 		static QAndroidJniObject CLASS_PATH();
-		static QAndroidJniObject MAIN_CLASS();
-		static QAndroidJniObject SEALED();
+		static QAndroidJniObject CONTENT_TYPE();
+		static QAndroidJniObject EXTENSION_INSTALLATION();
 		static QAndroidJniObject EXTENSION_LIST();
 		static QAndroidJniObject EXTENSION_NAME();
-		static QAndroidJniObject EXTENSION_INSTALLATION();
 		static QAndroidJniObject IMPLEMENTATION_TITLE();
-		static QAndroidJniObject IMPLEMENTATION_VERSION();
+		static QAndroidJniObject IMPLEMENTATION_URL();
 		static QAndroidJniObject IMPLEMENTATION_VENDOR();
 		static QAndroidJniObject IMPLEMENTATION_VENDOR_ID();
-		static QAndroidJniObject IMPLEMENTATION_URL();
-		static QAndroidJniObject SPECIFICATION_TITLE();
-		static QAndroidJniObject SPECIFICATION_VERSION();
-		static QAndroidJniObject SPECIFICATION_VENDOR();
+		static QAndroidJniObject IMPLEMENTATION_VERSION();
+		static QAndroidJniObject MAIN_CLASS();
+		static QAndroidJniObject MANIFEST_VERSION();
 		static QAndroidJniObject MULTI_RELEASE();
+		static QAndroidJniObject SEALED();
+		static QAndroidJniObject SIGNATURE_VERSION();
+		static QAndroidJniObject SPECIFICATION_TITLE();
+		static QAndroidJniObject SPECIFICATION_VENDOR();
+		static QAndroidJniObject SPECIFICATION_VERSION();
 		
 		// Constructors
 		void __constructor(jstring arg0);
@@ -37,8 +37,8 @@ namespace __jni_impl::java::util::jar
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
 		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::util::jar
 
@@ -46,19 +46,11 @@ namespace __jni_impl::java::util::jar
 namespace __jni_impl::java::util::jar
 {
 	// Fields
-	QAndroidJniObject Attributes_Name::MANIFEST_VERSION()
+	QAndroidJniObject Attributes_Name::CLASS_PATH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
-			"MANIFEST_VERSION",
-			"Ljava/util/jar/Attributes$Name;"
-		);
-	}
-	QAndroidJniObject Attributes_Name::SIGNATURE_VERSION()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.util.jar.Attributes$Name",
-			"SIGNATURE_VERSION",
+			"CLASS_PATH",
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
@@ -70,27 +62,11 @@ namespace __jni_impl::java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::CLASS_PATH()
+	QAndroidJniObject Attributes_Name::EXTENSION_INSTALLATION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
-			"CLASS_PATH",
-			"Ljava/util/jar/Attributes$Name;"
-		);
-	}
-	QAndroidJniObject Attributes_Name::MAIN_CLASS()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.util.jar.Attributes$Name",
-			"MAIN_CLASS",
-			"Ljava/util/jar/Attributes$Name;"
-		);
-	}
-	QAndroidJniObject Attributes_Name::SEALED()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.util.jar.Attributes$Name",
-			"SEALED",
+			"EXTENSION_INSTALLATION",
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
@@ -110,14 +86,6 @@ namespace __jni_impl::java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::EXTENSION_INSTALLATION()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.util.jar.Attributes$Name",
-			"EXTENSION_INSTALLATION",
-			"Ljava/util/jar/Attributes$Name;"
-		);
-	}
 	QAndroidJniObject Attributes_Name::IMPLEMENTATION_TITLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -126,11 +94,11 @@ namespace __jni_impl::java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::IMPLEMENTATION_VERSION()
+	QAndroidJniObject Attributes_Name::IMPLEMENTATION_URL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
-			"IMPLEMENTATION_VERSION",
+			"IMPLEMENTATION_URL",
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
@@ -150,11 +118,51 @@ namespace __jni_impl::java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::IMPLEMENTATION_URL()
+	QAndroidJniObject Attributes_Name::IMPLEMENTATION_VERSION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
-			"IMPLEMENTATION_URL",
+			"IMPLEMENTATION_VERSION",
+			"Ljava/util/jar/Attributes$Name;"
+		);
+	}
+	QAndroidJniObject Attributes_Name::MAIN_CLASS()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.util.jar.Attributes$Name",
+			"MAIN_CLASS",
+			"Ljava/util/jar/Attributes$Name;"
+		);
+	}
+	QAndroidJniObject Attributes_Name::MANIFEST_VERSION()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.util.jar.Attributes$Name",
+			"MANIFEST_VERSION",
+			"Ljava/util/jar/Attributes$Name;"
+		);
+	}
+	QAndroidJniObject Attributes_Name::MULTI_RELEASE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.util.jar.Attributes$Name",
+			"MULTI_RELEASE",
+			"Ljava/util/jar/Attributes$Name;"
+		);
+	}
+	QAndroidJniObject Attributes_Name::SEALED()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.util.jar.Attributes$Name",
+			"SEALED",
+			"Ljava/util/jar/Attributes$Name;"
+		);
+	}
+	QAndroidJniObject Attributes_Name::SIGNATURE_VERSION()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.util.jar.Attributes$Name",
+			"SIGNATURE_VERSION",
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
@@ -166,14 +174,6 @@ namespace __jni_impl::java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::SPECIFICATION_VERSION()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.util.jar.Attributes$Name",
-			"SPECIFICATION_VERSION",
-			"Ljava/util/jar/Attributes$Name;"
-		);
-	}
 	QAndroidJniObject Attributes_Name::SPECIFICATION_VENDOR()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -182,11 +182,11 @@ namespace __jni_impl::java::util::jar
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
-	QAndroidJniObject Attributes_Name::MULTI_RELEASE()
+	QAndroidJniObject Attributes_Name::SPECIFICATION_VERSION()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.util.jar.Attributes$Name",
-			"MULTI_RELEASE",
+			"SPECIFICATION_VERSION",
 			"Ljava/util/jar/Attributes$Name;"
 		);
 	}
@@ -218,19 +218,19 @@ namespace __jni_impl::java::util::jar
 			arg0
 		);
 	}
-	jstring Attributes_Name::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint Attributes_Name::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
+	}
+	jstring Attributes_Name::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util::jar
 

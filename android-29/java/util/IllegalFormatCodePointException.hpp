@@ -21,8 +21,8 @@ namespace __jni_impl::java::util
 		void __constructor(jint arg0);
 		
 		// Methods
-		jstring getMessage();
 		jint getCodePoint();
+		jstring getMessage();
 	};
 } // namespace __jni_impl::java::util
 
@@ -42,19 +42,19 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	jstring IllegalFormatCodePointException::getMessage()
-	{
-		return __thiz.callObjectMethod(
-			"getMessage",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint IllegalFormatCodePointException::getCodePoint()
 	{
 		return __thiz.callMethod<jint>(
 			"getCodePoint",
 			"()I"
 		);
+	}
+	jstring IllegalFormatCodePointException::getMessage()
+	{
+		return __thiz.callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util
 

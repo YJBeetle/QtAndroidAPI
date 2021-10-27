@@ -8,15 +8,15 @@
 
 namespace __jni_impl::android::icu::text
 {
-	class Collator;
-}
-namespace __jni_impl::android::icu::util
-{
-	class VersionInfo;
+	class CollationElementIterator;
 }
 namespace __jni_impl::android::icu::text
 {
-	class CollationElementIterator;
+	class CollationKey;
+}
+namespace __jni_impl::android::icu::text
+{
+	class Collator;
 }
 namespace __jni_impl::android::icu::text
 {
@@ -26,9 +26,9 @@ namespace __jni_impl::android::icu::text
 {
 	class UnicodeSet;
 }
-namespace __jni_impl::android::icu::text
+namespace __jni_impl::android::icu::util
 {
-	class CollationKey;
+	class VersionInfo;
 }
 
 namespace __jni_impl::android::icu::text
@@ -43,63 +43,63 @@ namespace __jni_impl::android::icu::text
 		void __constructor(const QString &arg0);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
 		jobject clone();
+		QAndroidJniObject cloneAsThawed();
 		jint compare(jstring arg0, jstring arg1);
 		jint compare(const QString &arg0, const QString &arg1);
-		jboolean isFrozen();
+		jboolean equals(jobject arg0);
 		QAndroidJniObject freeze();
-		jstring getRules();
-		jstring getRules(jboolean arg0);
-		QAndroidJniObject getVersion();
-		void setStrength(jint arg0);
-		QAndroidJniObject cloneAsThawed();
+		QAndroidJniObject getCollationElementIterator(__jni_impl::android::icu::text::UCharacterIterator arg0);
 		QAndroidJniObject getCollationElementIterator(jstring arg0);
 		QAndroidJniObject getCollationElementIterator(const QString &arg0);
 		QAndroidJniObject getCollationElementIterator(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getCollationElementIterator(__jni_impl::android::icu::text::UCharacterIterator arg0);
-		void setUpperCaseFirst(jboolean arg0);
-		void setLowerCaseFirst(jboolean arg0);
-		void setCaseFirstDefault();
-		void setAlternateHandlingDefault();
-		void setCaseLevelDefault();
-		void setDecompositionDefault();
-		void setFrenchCollationDefault();
-		void setStrengthDefault();
-		void setNumericCollationDefault();
-		void setFrenchCollation(jboolean arg0);
-		void setAlternateHandlingShifted(jboolean arg0);
-		void setCaseLevel(jboolean arg0);
-		void setDecomposition(jint arg0);
-		QAndroidJniObject setMaxVariable(jint arg0);
-		jint getMaxVariable();
-		void setNumericCollation(jboolean arg0);
-		void setReorderCodes(jintArray arg0);
-		QAndroidJniObject getTailoredSet();
+		QAndroidJniObject getCollationKey(jstring arg0);
+		QAndroidJniObject getCollationKey(const QString &arg0);
 		void getContractionsAndExpansions(__jni_impl::android::icu::text::UnicodeSet arg0, __jni_impl::android::icu::text::UnicodeSet arg1, jboolean arg2);
-		jint getStrength();
 		jint getDecomposition();
-		jboolean isUpperCaseFirst();
-		jboolean isLowerCaseFirst();
+		jint getMaxVariable();
+		jboolean getNumericCollation();
+		jintArray getReorderCodes();
+		jstring getRules();
+		jstring getRules(jboolean arg0);
+		jint getStrength();
+		QAndroidJniObject getTailoredSet();
+		QAndroidJniObject getUCAVersion();
+		jint getVariableTop();
+		QAndroidJniObject getVersion();
+		jint hashCode();
 		jboolean isAlternateHandlingShifted();
 		jboolean isCaseLevel();
 		jboolean isFrenchCollation();
-		jint getVariableTop();
-		jboolean getNumericCollation();
-		jintArray getReorderCodes();
-		QAndroidJniObject getUCAVersion();
-		QAndroidJniObject getCollationKey(jstring arg0);
-		QAndroidJniObject getCollationKey(const QString &arg0);
+		jboolean isFrozen();
+		jboolean isLowerCaseFirst();
+		jboolean isUpperCaseFirst();
+		void setAlternateHandlingDefault();
+		void setAlternateHandlingShifted(jboolean arg0);
+		void setCaseFirstDefault();
+		void setCaseLevel(jboolean arg0);
+		void setCaseLevelDefault();
+		void setDecomposition(jint arg0);
+		void setDecompositionDefault();
+		void setFrenchCollation(jboolean arg0);
+		void setFrenchCollationDefault();
+		void setLowerCaseFirst(jboolean arg0);
+		QAndroidJniObject setMaxVariable(jint arg0);
+		void setNumericCollation(jboolean arg0);
+		void setNumericCollationDefault();
+		void setReorderCodes(jintArray arg0);
+		void setStrength(jint arg0);
+		void setStrengthDefault();
+		void setUpperCaseFirst(jboolean arg0);
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "Collator.hpp"
-#include "../util/VersionInfo.hpp"
 #include "CollationElementIterator.hpp"
+#include "CollationKey.hpp"
+#include "Collator.hpp"
 #include "UCharacterIterator.hpp"
 #include "UnicodeSet.hpp"
-#include "CollationKey.hpp"
+#include "../util/VersionInfo.hpp"
 
 namespace __jni_impl::android::icu::text
 {
@@ -124,27 +124,19 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jboolean RuleBasedCollator::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jint RuleBasedCollator::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	jobject RuleBasedCollator::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
+	}
+	QAndroidJniObject RuleBasedCollator::cloneAsThawed()
+	{
+		return __thiz.callObjectMethod(
+			"cloneAsThawed",
+			"()Landroid/icu/text/RuleBasedCollator;"
+		);
 	}
 	jint RuleBasedCollator::compare(jstring arg0, jstring arg1)
 	{
@@ -164,11 +156,12 @@ namespace __jni_impl::android::icu::text
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	jboolean RuleBasedCollator::isFrozen()
+	jboolean RuleBasedCollator::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"isFrozen",
-			"()Z"
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 	QAndroidJniObject RuleBasedCollator::freeze()
@@ -178,41 +171,12 @@ namespace __jni_impl::android::icu::text
 			"()Landroid/icu/text/Collator;"
 		);
 	}
-	jstring RuleBasedCollator::getRules()
+	QAndroidJniObject RuleBasedCollator::getCollationElementIterator(__jni_impl::android::icu::text::UCharacterIterator arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getRules",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring RuleBasedCollator::getRules(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getRules",
-			"(Z)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	QAndroidJniObject RuleBasedCollator::getVersion()
-	{
-		return __thiz.callObjectMethod(
-			"getVersion",
-			"()Landroid/icu/util/VersionInfo;"
-		);
-	}
-	void RuleBasedCollator::setStrength(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStrength",
-			"(I)V",
-			arg0
-		);
-	}
-	QAndroidJniObject RuleBasedCollator::cloneAsThawed()
-	{
-		return __thiz.callObjectMethod(
-			"cloneAsThawed",
-			"()Landroid/icu/text/RuleBasedCollator;"
+			"getCollationElementIterator",
+			"(Landroid/icu/text/UCharacterIterator;)Landroid/icu/text/CollationElementIterator;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject RuleBasedCollator::getCollationElementIterator(jstring arg0)
@@ -239,147 +203,20 @@ namespace __jni_impl::android::icu::text
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject RuleBasedCollator::getCollationElementIterator(__jni_impl::android::icu::text::UCharacterIterator arg0)
+	QAndroidJniObject RuleBasedCollator::getCollationKey(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getCollationElementIterator",
-			"(Landroid/icu/text/UCharacterIterator;)Landroid/icu/text/CollationElementIterator;",
-			arg0.__jniObject().object()
-		);
-	}
-	void RuleBasedCollator::setUpperCaseFirst(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setUpperCaseFirst",
-			"(Z)V",
+			"getCollationKey",
+			"(Ljava/lang/String;)Landroid/icu/text/CollationKey;",
 			arg0
 		);
 	}
-	void RuleBasedCollator::setLowerCaseFirst(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLowerCaseFirst",
-			"(Z)V",
-			arg0
-		);
-	}
-	void RuleBasedCollator::setCaseFirstDefault()
-	{
-		__thiz.callMethod<void>(
-			"setCaseFirstDefault",
-			"()V"
-		);
-	}
-	void RuleBasedCollator::setAlternateHandlingDefault()
-	{
-		__thiz.callMethod<void>(
-			"setAlternateHandlingDefault",
-			"()V"
-		);
-	}
-	void RuleBasedCollator::setCaseLevelDefault()
-	{
-		__thiz.callMethod<void>(
-			"setCaseLevelDefault",
-			"()V"
-		);
-	}
-	void RuleBasedCollator::setDecompositionDefault()
-	{
-		__thiz.callMethod<void>(
-			"setDecompositionDefault",
-			"()V"
-		);
-	}
-	void RuleBasedCollator::setFrenchCollationDefault()
-	{
-		__thiz.callMethod<void>(
-			"setFrenchCollationDefault",
-			"()V"
-		);
-	}
-	void RuleBasedCollator::setStrengthDefault()
-	{
-		__thiz.callMethod<void>(
-			"setStrengthDefault",
-			"()V"
-		);
-	}
-	void RuleBasedCollator::setNumericCollationDefault()
-	{
-		__thiz.callMethod<void>(
-			"setNumericCollationDefault",
-			"()V"
-		);
-	}
-	void RuleBasedCollator::setFrenchCollation(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFrenchCollation",
-			"(Z)V",
-			arg0
-		);
-	}
-	void RuleBasedCollator::setAlternateHandlingShifted(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAlternateHandlingShifted",
-			"(Z)V",
-			arg0
-		);
-	}
-	void RuleBasedCollator::setCaseLevel(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCaseLevel",
-			"(Z)V",
-			arg0
-		);
-	}
-	void RuleBasedCollator::setDecomposition(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDecomposition",
-			"(I)V",
-			arg0
-		);
-	}
-	QAndroidJniObject RuleBasedCollator::setMaxVariable(jint arg0)
+	QAndroidJniObject RuleBasedCollator::getCollationKey(const QString &arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setMaxVariable",
-			"(I)Landroid/icu/text/RuleBasedCollator;",
-			arg0
-		);
-	}
-	jint RuleBasedCollator::getMaxVariable()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxVariable",
-			"()I"
-		);
-	}
-	void RuleBasedCollator::setNumericCollation(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setNumericCollation",
-			"(Z)V",
-			arg0
-		);
-	}
-	void RuleBasedCollator::setReorderCodes(jintArray arg0)
-	{
-		__thiz.callMethod<void>(
-			"setReorderCodes",
-			"([I)V",
-			arg0
-		);
-	}
-	QAndroidJniObject RuleBasedCollator::getTailoredSet()
-	{
-		return __thiz.callObjectMethod(
-			"getTailoredSet",
-			"()Landroid/icu/text/UnicodeSet;"
+			"getCollationKey",
+			"(Ljava/lang/String;)Landroid/icu/text/CollationKey;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void RuleBasedCollator::getContractionsAndExpansions(__jni_impl::android::icu::text::UnicodeSet arg0, __jni_impl::android::icu::text::UnicodeSet arg1, jboolean arg2)
@@ -392,13 +229,6 @@ namespace __jni_impl::android::icu::text
 			arg2
 		);
 	}
-	jint RuleBasedCollator::getStrength()
-	{
-		return __thiz.callMethod<jint>(
-			"getStrength",
-			"()I"
-		);
-	}
 	jint RuleBasedCollator::getDecomposition()
 	{
 		return __thiz.callMethod<jint>(
@@ -406,18 +236,82 @@ namespace __jni_impl::android::icu::text
 			"()I"
 		);
 	}
-	jboolean RuleBasedCollator::isUpperCaseFirst()
+	jint RuleBasedCollator::getMaxVariable()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxVariable",
+			"()I"
+		);
+	}
+	jboolean RuleBasedCollator::getNumericCollation()
 	{
 		return __thiz.callMethod<jboolean>(
-			"isUpperCaseFirst",
+			"getNumericCollation",
 			"()Z"
 		);
 	}
-	jboolean RuleBasedCollator::isLowerCaseFirst()
+	jintArray RuleBasedCollator::getReorderCodes()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isLowerCaseFirst",
-			"()Z"
+		return __thiz.callObjectMethod(
+			"getReorderCodes",
+			"()[I"
+		).object<jintArray>();
+	}
+	jstring RuleBasedCollator::getRules()
+	{
+		return __thiz.callObjectMethod(
+			"getRules",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring RuleBasedCollator::getRules(jboolean arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getRules",
+			"(Z)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jint RuleBasedCollator::getStrength()
+	{
+		return __thiz.callMethod<jint>(
+			"getStrength",
+			"()I"
+		);
+	}
+	QAndroidJniObject RuleBasedCollator::getTailoredSet()
+	{
+		return __thiz.callObjectMethod(
+			"getTailoredSet",
+			"()Landroid/icu/text/UnicodeSet;"
+		);
+	}
+	QAndroidJniObject RuleBasedCollator::getUCAVersion()
+	{
+		return __thiz.callObjectMethod(
+			"getUCAVersion",
+			"()Landroid/icu/util/VersionInfo;"
+		);
+	}
+	jint RuleBasedCollator::getVariableTop()
+	{
+		return __thiz.callMethod<jint>(
+			"getVariableTop",
+			"()I"
+		);
+	}
+	QAndroidJniObject RuleBasedCollator::getVersion()
+	{
+		return __thiz.callObjectMethod(
+			"getVersion",
+			"()Landroid/icu/util/VersionInfo;"
+		);
+	}
+	jint RuleBasedCollator::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
 	}
 	jboolean RuleBasedCollator::isAlternateHandlingShifted()
@@ -441,48 +335,154 @@ namespace __jni_impl::android::icu::text
 			"()Z"
 		);
 	}
-	jint RuleBasedCollator::getVariableTop()
-	{
-		return __thiz.callMethod<jint>(
-			"getVariableTop",
-			"()I"
-		);
-	}
-	jboolean RuleBasedCollator::getNumericCollation()
+	jboolean RuleBasedCollator::isFrozen()
 	{
 		return __thiz.callMethod<jboolean>(
-			"getNumericCollation",
+			"isFrozen",
 			"()Z"
 		);
 	}
-	jintArray RuleBasedCollator::getReorderCodes()
+	jboolean RuleBasedCollator::isLowerCaseFirst()
 	{
-		return __thiz.callObjectMethod(
-			"getReorderCodes",
-			"()[I"
-		).object<jintArray>();
-	}
-	QAndroidJniObject RuleBasedCollator::getUCAVersion()
-	{
-		return __thiz.callObjectMethod(
-			"getUCAVersion",
-			"()Landroid/icu/util/VersionInfo;"
+		return __thiz.callMethod<jboolean>(
+			"isLowerCaseFirst",
+			"()Z"
 		);
 	}
-	QAndroidJniObject RuleBasedCollator::getCollationKey(jstring arg0)
+	jboolean RuleBasedCollator::isUpperCaseFirst()
 	{
-		return __thiz.callObjectMethod(
-			"getCollationKey",
-			"(Ljava/lang/String;)Landroid/icu/text/CollationKey;",
+		return __thiz.callMethod<jboolean>(
+			"isUpperCaseFirst",
+			"()Z"
+		);
+	}
+	void RuleBasedCollator::setAlternateHandlingDefault()
+	{
+		__thiz.callMethod<void>(
+			"setAlternateHandlingDefault",
+			"()V"
+		);
+	}
+	void RuleBasedCollator::setAlternateHandlingShifted(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAlternateHandlingShifted",
+			"(Z)V",
 			arg0
 		);
 	}
-	QAndroidJniObject RuleBasedCollator::getCollationKey(const QString &arg0)
+	void RuleBasedCollator::setCaseFirstDefault()
+	{
+		__thiz.callMethod<void>(
+			"setCaseFirstDefault",
+			"()V"
+		);
+	}
+	void RuleBasedCollator::setCaseLevel(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCaseLevel",
+			"(Z)V",
+			arg0
+		);
+	}
+	void RuleBasedCollator::setCaseLevelDefault()
+	{
+		__thiz.callMethod<void>(
+			"setCaseLevelDefault",
+			"()V"
+		);
+	}
+	void RuleBasedCollator::setDecomposition(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDecomposition",
+			"(I)V",
+			arg0
+		);
+	}
+	void RuleBasedCollator::setDecompositionDefault()
+	{
+		__thiz.callMethod<void>(
+			"setDecompositionDefault",
+			"()V"
+		);
+	}
+	void RuleBasedCollator::setFrenchCollation(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFrenchCollation",
+			"(Z)V",
+			arg0
+		);
+	}
+	void RuleBasedCollator::setFrenchCollationDefault()
+	{
+		__thiz.callMethod<void>(
+			"setFrenchCollationDefault",
+			"()V"
+		);
+	}
+	void RuleBasedCollator::setLowerCaseFirst(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLowerCaseFirst",
+			"(Z)V",
+			arg0
+		);
+	}
+	QAndroidJniObject RuleBasedCollator::setMaxVariable(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getCollationKey",
-			"(Ljava/lang/String;)Landroid/icu/text/CollationKey;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+			"setMaxVariable",
+			"(I)Landroid/icu/text/RuleBasedCollator;",
+			arg0
+		);
+	}
+	void RuleBasedCollator::setNumericCollation(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setNumericCollation",
+			"(Z)V",
+			arg0
+		);
+	}
+	void RuleBasedCollator::setNumericCollationDefault()
+	{
+		__thiz.callMethod<void>(
+			"setNumericCollationDefault",
+			"()V"
+		);
+	}
+	void RuleBasedCollator::setReorderCodes(jintArray arg0)
+	{
+		__thiz.callMethod<void>(
+			"setReorderCodes",
+			"([I)V",
+			arg0
+		);
+	}
+	void RuleBasedCollator::setStrength(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setStrength",
+			"(I)V",
+			arg0
+		);
+	}
+	void RuleBasedCollator::setStrengthDefault()
+	{
+		__thiz.callMethod<void>(
+			"setStrengthDefault",
+			"()V"
+		);
+	}
+	void RuleBasedCollator::setUpperCaseFirst(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setUpperCaseFirst",
+			"(Z)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::icu::text

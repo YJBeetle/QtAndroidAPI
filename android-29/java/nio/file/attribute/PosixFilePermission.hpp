@@ -13,23 +13,23 @@ namespace __jni_impl::java::nio::file::attribute
 	{
 	public:
 		// Fields
-		static QAndroidJniObject OWNER_READ();
-		static QAndroidJniObject OWNER_WRITE();
-		static QAndroidJniObject OWNER_EXECUTE();
+		static QAndroidJniObject GROUP_EXECUTE();
 		static QAndroidJniObject GROUP_READ();
 		static QAndroidJniObject GROUP_WRITE();
-		static QAndroidJniObject GROUP_EXECUTE();
+		static QAndroidJniObject OTHERS_EXECUTE();
 		static QAndroidJniObject OTHERS_READ();
 		static QAndroidJniObject OTHERS_WRITE();
-		static QAndroidJniObject OTHERS_EXECUTE();
+		static QAndroidJniObject OWNER_EXECUTE();
+		static QAndroidJniObject OWNER_READ();
+		static QAndroidJniObject OWNER_WRITE();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::nio::file::attribute
 
@@ -37,27 +37,11 @@ namespace __jni_impl::java::nio::file::attribute
 namespace __jni_impl::java::nio::file::attribute
 {
 	// Fields
-	QAndroidJniObject PosixFilePermission::OWNER_READ()
+	QAndroidJniObject PosixFilePermission::GROUP_EXECUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.PosixFilePermission",
-			"OWNER_READ",
-			"Ljava/nio/file/attribute/PosixFilePermission;"
-		);
-	}
-	QAndroidJniObject PosixFilePermission::OWNER_WRITE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.nio.file.attribute.PosixFilePermission",
-			"OWNER_WRITE",
-			"Ljava/nio/file/attribute/PosixFilePermission;"
-		);
-	}
-	QAndroidJniObject PosixFilePermission::OWNER_EXECUTE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.nio.file.attribute.PosixFilePermission",
-			"OWNER_EXECUTE",
+			"GROUP_EXECUTE",
 			"Ljava/nio/file/attribute/PosixFilePermission;"
 		);
 	}
@@ -77,11 +61,11 @@ namespace __jni_impl::java::nio::file::attribute
 			"Ljava/nio/file/attribute/PosixFilePermission;"
 		);
 	}
-	QAndroidJniObject PosixFilePermission::GROUP_EXECUTE()
+	QAndroidJniObject PosixFilePermission::OTHERS_EXECUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.PosixFilePermission",
-			"GROUP_EXECUTE",
+			"OTHERS_EXECUTE",
 			"Ljava/nio/file/attribute/PosixFilePermission;"
 		);
 	}
@@ -101,11 +85,27 @@ namespace __jni_impl::java::nio::file::attribute
 			"Ljava/nio/file/attribute/PosixFilePermission;"
 		);
 	}
-	QAndroidJniObject PosixFilePermission::OTHERS_EXECUTE()
+	QAndroidJniObject PosixFilePermission::OWNER_EXECUTE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.PosixFilePermission",
-			"OTHERS_EXECUTE",
+			"OWNER_EXECUTE",
+			"Ljava/nio/file/attribute/PosixFilePermission;"
+		);
+	}
+	QAndroidJniObject PosixFilePermission::OWNER_READ()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.nio.file.attribute.PosixFilePermission",
+			"OWNER_READ",
+			"Ljava/nio/file/attribute/PosixFilePermission;"
+		);
+	}
+	QAndroidJniObject PosixFilePermission::OWNER_WRITE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.nio.file.attribute.PosixFilePermission",
+			"OWNER_WRITE",
 			"Ljava/nio/file/attribute/PosixFilePermission;"
 		);
 	}
@@ -119,14 +119,6 @@ namespace __jni_impl::java::nio::file::attribute
 	}
 	
 	// Methods
-	jarray PosixFilePermission::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.attribute.PosixFilePermission",
-			"values",
-			"()[Ljava/nio/file/attribute/PosixFilePermission;"
-		).object<jarray>();
-	}
 	QAndroidJniObject PosixFilePermission::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -144,6 +136,14 @@ namespace __jni_impl::java::nio::file::attribute
 			"(Ljava/lang/String;)Ljava/nio/file/attribute/PosixFilePermission;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray PosixFilePermission::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.file.attribute.PosixFilePermission",
+			"values",
+			"()[Ljava/nio/file/attribute/PosixFilePermission;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::nio::file::attribute
 

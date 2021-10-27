@@ -27,9 +27,9 @@ namespace __jni_impl::android::text::style
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
-		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
-		jint getSpanTypeId();
 		jint describeContents();
+		jint getSpanTypeId();
+		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::text::style
@@ -59,12 +59,11 @@ namespace __jni_impl::android::text::style
 	}
 	
 	// Methods
-	void StrikethroughSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
+	jint StrikethroughSpan::describeContents()
 	{
-		__thiz.callMethod<void>(
-			"updateDrawState",
-			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
 		);
 	}
 	jint StrikethroughSpan::getSpanTypeId()
@@ -74,11 +73,12 @@ namespace __jni_impl::android::text::style
 			"()I"
 		);
 	}
-	jint StrikethroughSpan::describeContents()
+	void StrikethroughSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		__thiz.callMethod<void>(
+			"updateDrawState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void StrikethroughSpan::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

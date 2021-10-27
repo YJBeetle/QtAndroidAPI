@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::graphics
-{
-	class BlendMode;
-}
 namespace __jni_impl::android::content
 {
 	class Context;
+}
+namespace __jni_impl::android::graphics
+{
+	class BlendMode;
 }
 namespace __jni_impl::android::graphics
 {
@@ -30,24 +30,24 @@ namespace __jni_impl::android::widget
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		void setSize(jint arg0, jint arg1);
-		void setColor(jint arg0);
+		jboolean draw(__jni_impl::android::graphics::Canvas arg0);
 		void finish();
 		QAndroidJniObject getBlendMode();
-		void setBlendMode(__jni_impl::android::graphics::BlendMode arg0);
-		jboolean draw(__jni_impl::android::graphics::Canvas arg0);
-		jint getMaxHeight();
 		jint getColor();
-		void onRelease();
+		jint getMaxHeight();
 		jboolean isFinished();
+		void onAbsorb(jint arg0);
 		void onPull(jfloat arg0);
 		void onPull(jfloat arg0, jfloat arg1);
-		void onAbsorb(jint arg0);
+		void onRelease();
+		void setBlendMode(__jni_impl::android::graphics::BlendMode arg0);
+		void setColor(jint arg0);
+		void setSize(jint arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::widget
 
-#include "../graphics/BlendMode.hpp"
 #include "../content/Context.hpp"
+#include "../graphics/BlendMode.hpp"
 #include "../graphics/Canvas.hpp"
 
 namespace __jni_impl::android::widget
@@ -73,21 +73,12 @@ namespace __jni_impl::android::widget
 	}
 	
 	// Methods
-	void EdgeEffect::setSize(jint arg0, jint arg1)
+	jboolean EdgeEffect::draw(__jni_impl::android::graphics::Canvas arg0)
 	{
-		__thiz.callMethod<void>(
-			"setSize",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void EdgeEffect::setColor(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setColor",
-			"(I)V",
-			arg0
+		return __thiz.callMethod<jboolean>(
+			"draw",
+			"(Landroid/graphics/Canvas;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 	void EdgeEffect::finish()
@@ -104,20 +95,11 @@ namespace __jni_impl::android::widget
 			"()Landroid/graphics/BlendMode;"
 		);
 	}
-	void EdgeEffect::setBlendMode(__jni_impl::android::graphics::BlendMode arg0)
+	jint EdgeEffect::getColor()
 	{
-		__thiz.callMethod<void>(
-			"setBlendMode",
-			"(Landroid/graphics/BlendMode;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean EdgeEffect::draw(__jni_impl::android::graphics::Canvas arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"draw",
-			"(Landroid/graphics/Canvas;)Z",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"getColor",
+			"()I"
 		);
 	}
 	jint EdgeEffect::getMaxHeight()
@@ -127,25 +109,19 @@ namespace __jni_impl::android::widget
 			"()I"
 		);
 	}
-	jint EdgeEffect::getColor()
-	{
-		return __thiz.callMethod<jint>(
-			"getColor",
-			"()I"
-		);
-	}
-	void EdgeEffect::onRelease()
-	{
-		__thiz.callMethod<void>(
-			"onRelease",
-			"()V"
-		);
-	}
 	jboolean EdgeEffect::isFinished()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isFinished",
 			"()Z"
+		);
+	}
+	void EdgeEffect::onAbsorb(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"onAbsorb",
+			"(I)V",
+			arg0
 		);
 	}
 	void EdgeEffect::onPull(jfloat arg0)
@@ -165,12 +141,36 @@ namespace __jni_impl::android::widget
 			arg1
 		);
 	}
-	void EdgeEffect::onAbsorb(jint arg0)
+	void EdgeEffect::onRelease()
 	{
 		__thiz.callMethod<void>(
-			"onAbsorb",
+			"onRelease",
+			"()V"
+		);
+	}
+	void EdgeEffect::setBlendMode(__jni_impl::android::graphics::BlendMode arg0)
+	{
+		__thiz.callMethod<void>(
+			"setBlendMode",
+			"(Landroid/graphics/BlendMode;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void EdgeEffect::setColor(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setColor",
 			"(I)V",
 			arg0
+		);
+	}
+	void EdgeEffect::setSize(jint arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"setSize",
+			"(II)V",
+			arg0,
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::widget

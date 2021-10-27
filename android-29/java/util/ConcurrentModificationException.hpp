@@ -16,12 +16,12 @@ namespace __jni_impl::java::util
 		// Fields
 		
 		// Constructors
-		void __constructor(jstring arg0, jthrowable arg1);
-		void __constructor(const QString &arg0, jthrowable arg1);
-		void __constructor(jthrowable arg0);
+		void __constructor();
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor();
+		void __constructor(jthrowable arg0);
+		void __constructor(jstring arg0, jthrowable arg1);
+		void __constructor(const QString &arg0, jthrowable arg1);
 		
 		// Methods
 	};
@@ -33,30 +33,11 @@ namespace __jni_impl::java::util
 	// Fields
 	
 	// Constructors
-	void ConcurrentModificationException::__constructor(jstring arg0, jthrowable arg1)
+	void ConcurrentModificationException::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.ConcurrentModificationException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			arg0,
-			arg1
-		);
-	}
-	void ConcurrentModificationException::__constructor(const QString &arg0, jthrowable arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.ConcurrentModificationException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
-	void ConcurrentModificationException::__constructor(jthrowable arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.ConcurrentModificationException",
-			"(Ljava/lang/Throwable;)V",
-			arg0
+			"()V"
 		);
 	}
 	void ConcurrentModificationException::__constructor(jstring arg0)
@@ -75,11 +56,30 @@ namespace __jni_impl::java::util
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void ConcurrentModificationException::__constructor()
+	void ConcurrentModificationException::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.ConcurrentModificationException",
-			"()V"
+			"(Ljava/lang/Throwable;)V",
+			arg0
+		);
+	}
+	void ConcurrentModificationException::__constructor(jstring arg0, jthrowable arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.ConcurrentModificationException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			arg0,
+			arg1
+		);
+	}
+	void ConcurrentModificationException::__constructor(const QString &arg0, jthrowable arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.ConcurrentModificationException",
+			"(Ljava/lang/String;Ljava/lang/Throwable;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
 		);
 	}
 	
@@ -92,25 +92,25 @@ namespace java::util
 	{
 	public:
 		ConcurrentModificationException(QAndroidJniObject obj) { __thiz = obj; }
-		ConcurrentModificationException(jstring arg0, jthrowable arg1)
+		ConcurrentModificationException()
 		{
-			__constructor(
-				arg0,
-				arg1);
-		}
-		ConcurrentModificationException(jthrowable arg0)
-		{
-			__constructor(
-				arg0);
+			__constructor();
 		}
 		ConcurrentModificationException(jstring arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		ConcurrentModificationException()
+		ConcurrentModificationException(jthrowable arg0)
 		{
-			__constructor();
+			__constructor(
+				arg0);
+		}
+		ConcurrentModificationException(jstring arg0, jthrowable arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
 		}
 	};
 } // namespace java::util

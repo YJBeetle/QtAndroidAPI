@@ -25,10 +25,10 @@ namespace __jni_impl::android::drm
 		void __constructor();
 		
 		// Methods
-		jstring getMessage();
-		jint getType();
 		jobject getAttribute(jstring arg0);
 		jobject getAttribute(const QString &arg0);
+		jstring getMessage();
+		jint getType();
 		jint getUniqueId();
 	};
 } // namespace __jni_impl::android::drm
@@ -78,20 +78,6 @@ namespace __jni_impl::android::drm
 	}
 	
 	// Methods
-	jstring DrmEvent::getMessage()
-	{
-		return __thiz.callObjectMethod(
-			"getMessage",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint DrmEvent::getType()
-	{
-		return __thiz.callMethod<jint>(
-			"getType",
-			"()I"
-		);
-	}
 	jobject DrmEvent::getAttribute(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -107,6 +93,20 @@ namespace __jni_impl::android::drm
 			"(Ljava/lang/String;)Ljava/lang/Object;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jobject>();
+	}
+	jstring DrmEvent::getMessage()
+	{
+		return __thiz.callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint DrmEvent::getType()
+	{
+		return __thiz.callMethod<jint>(
+			"getType",
+			"()I"
+		);
 	}
 	jint DrmEvent::getUniqueId()
 	{

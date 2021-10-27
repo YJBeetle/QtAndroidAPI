@@ -6,6 +6,10 @@
 #include "../../__JniBaseClass.hpp"
 #include "MediaRouter_RouteInfo.hpp"
 
+namespace __jni_impl::android::graphics::drawable
+{
+	class Drawable;
+}
 namespace __jni_impl::android::media
 {
 	class MediaRouter_RouteCategory;
@@ -13,10 +17,6 @@ namespace __jni_impl::android::media
 namespace __jni_impl::android::media
 {
 	class MediaRouter_RouteInfo;
-}
-namespace __jni_impl::android::graphics::drawable
-{
-	class Drawable;
 }
 
 namespace __jni_impl::android::media
@@ -30,23 +30,23 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		void requestSetVolume(jint arg0);
-		void requestUpdateVolume(jint arg0);
-		void removeRoute(jint arg0);
-		void removeRoute(__jni_impl::android::media::MediaRouter_RouteInfo arg0);
 		void addRoute(__jni_impl::android::media::MediaRouter_RouteInfo arg0);
 		void addRoute(__jni_impl::android::media::MediaRouter_RouteInfo arg0, jint arg1);
-		jint getRouteCount();
 		QAndroidJniObject getRouteAt(jint arg0);
+		jint getRouteCount();
+		void removeRoute(__jni_impl::android::media::MediaRouter_RouteInfo arg0);
+		void removeRoute(jint arg0);
+		void requestSetVolume(jint arg0);
+		void requestUpdateVolume(jint arg0);
 		void setIconDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 		void setIconResource(jint arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::android::media
 
+#include "../graphics/drawable/Drawable.hpp"
 #include "MediaRouter_RouteCategory.hpp"
 #include "MediaRouter_RouteInfo.hpp"
-#include "../graphics/drawable/Drawable.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -61,45 +61,6 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jstring MediaRouter_RouteGroup::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void MediaRouter_RouteGroup::requestSetVolume(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"requestSetVolume",
-			"(I)V",
-			arg0
-		);
-	}
-	void MediaRouter_RouteGroup::requestUpdateVolume(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"requestUpdateVolume",
-			"(I)V",
-			arg0
-		);
-	}
-	void MediaRouter_RouteGroup::removeRoute(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeRoute",
-			"(I)V",
-			arg0
-		);
-	}
-	void MediaRouter_RouteGroup::removeRoute(__jni_impl::android::media::MediaRouter_RouteInfo arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeRoute",
-			"(Landroid/media/MediaRouter$RouteInfo;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void MediaRouter_RouteGroup::addRoute(__jni_impl::android::media::MediaRouter_RouteInfo arg0)
 	{
 		__thiz.callMethod<void>(
@@ -117,6 +78,14 @@ namespace __jni_impl::android::media
 			arg1
 		);
 	}
+	QAndroidJniObject MediaRouter_RouteGroup::getRouteAt(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getRouteAt",
+			"(I)Landroid/media/MediaRouter$RouteInfo;",
+			arg0
+		);
+	}
 	jint MediaRouter_RouteGroup::getRouteCount()
 	{
 		return __thiz.callMethod<jint>(
@@ -124,11 +93,35 @@ namespace __jni_impl::android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject MediaRouter_RouteGroup::getRouteAt(jint arg0)
+	void MediaRouter_RouteGroup::removeRoute(__jni_impl::android::media::MediaRouter_RouteInfo arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getRouteAt",
-			"(I)Landroid/media/MediaRouter$RouteInfo;",
+		__thiz.callMethod<void>(
+			"removeRoute",
+			"(Landroid/media/MediaRouter$RouteInfo;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void MediaRouter_RouteGroup::removeRoute(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"removeRoute",
+			"(I)V",
+			arg0
+		);
+	}
+	void MediaRouter_RouteGroup::requestSetVolume(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"requestSetVolume",
+			"(I)V",
+			arg0
+		);
+	}
+	void MediaRouter_RouteGroup::requestUpdateVolume(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"requestUpdateVolume",
+			"(I)V",
 			arg0
 		);
 	}
@@ -147,6 +140,13 @@ namespace __jni_impl::android::media
 			"(I)V",
 			arg0
 		);
+	}
+	jstring MediaRouter_RouteGroup::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media
 

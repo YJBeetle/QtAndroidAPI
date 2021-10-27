@@ -25,9 +25,9 @@ namespace __jni_impl::android::app::slice
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::android::net::Uri arg1);
 		
 		// Methods
-		void logVisible();
 		void logHidden();
 		void logTouch(jint arg0, __jni_impl::android::net::Uri arg1);
+		void logVisible();
 	};
 } // namespace __jni_impl::android::app::slice
 
@@ -50,13 +50,6 @@ namespace __jni_impl::android::app::slice
 	}
 	
 	// Methods
-	void SliceMetrics::logVisible()
-	{
-		__thiz.callMethod<void>(
-			"logVisible",
-			"()V"
-		);
-	}
 	void SliceMetrics::logHidden()
 	{
 		__thiz.callMethod<void>(
@@ -71,6 +64,13 @@ namespace __jni_impl::android::app::slice
 			"(ILandroid/net/Uri;)V",
 			arg0,
 			arg1.__jniObject().object()
+		);
+	}
+	void SliceMetrics::logVisible()
+	{
+		__thiz.callMethod<void>(
+			"logVisible",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::android::app::slice

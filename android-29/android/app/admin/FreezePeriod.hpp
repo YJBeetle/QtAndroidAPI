@@ -21,9 +21,9 @@ namespace __jni_impl::android::app::admin
 		void __constructor(__jni_impl::java::time::MonthDay arg0, __jni_impl::java::time::MonthDay arg1);
 		
 		// Methods
-		jstring toString();
 		QAndroidJniObject getEnd();
 		QAndroidJniObject getStart();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::app::admin
 
@@ -45,13 +45,6 @@ namespace __jni_impl::android::app::admin
 	}
 	
 	// Methods
-	jstring FreezePeriod::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject FreezePeriod::getEnd()
 	{
 		return __thiz.callObjectMethod(
@@ -65,6 +58,13 @@ namespace __jni_impl::android::app::admin
 			"getStart",
 			"()Ljava/time/MonthDay;"
 		);
+	}
+	jstring FreezePeriod::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::app::admin
 

@@ -21,9 +21,9 @@ namespace __jni_impl::java::lang::ref
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject remove(jlong arg0);
-		QAndroidJniObject remove();
 		QAndroidJniObject poll();
+		QAndroidJniObject remove();
+		QAndroidJniObject remove(jlong arg0);
 	};
 } // namespace __jni_impl::java::lang::ref
 
@@ -43,12 +43,11 @@ namespace __jni_impl::java::lang::ref
 	}
 	
 	// Methods
-	QAndroidJniObject ReferenceQueue::remove(jlong arg0)
+	QAndroidJniObject ReferenceQueue::poll()
 	{
 		return __thiz.callObjectMethod(
-			"remove",
-			"(J)Ljava/lang/ref/Reference;",
-			arg0
+			"poll",
+			"()Ljava/lang/ref/Reference;"
 		);
 	}
 	QAndroidJniObject ReferenceQueue::remove()
@@ -58,11 +57,12 @@ namespace __jni_impl::java::lang::ref
 			"()Ljava/lang/ref/Reference;"
 		);
 	}
-	QAndroidJniObject ReferenceQueue::poll()
+	QAndroidJniObject ReferenceQueue::remove(jlong arg0)
 	{
 		return __thiz.callObjectMethod(
-			"poll",
-			"()Ljava/lang/ref/Reference;"
+			"remove",
+			"(J)Ljava/lang/ref/Reference;",
+			arg0
 		);
 	}
 } // namespace __jni_impl::java::lang::ref

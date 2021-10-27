@@ -25,17 +25,17 @@ namespace __jni_impl::android::text::style
 		
 		// Constructors
 		void __constructor(__jni_impl::android::os::Parcel arg0);
-		void __constructor(jint arg0, jboolean arg1);
 		void __constructor(jint arg0);
+		void __constructor(jint arg0, jboolean arg1);
 		
 		// Methods
-		jint getSize();
-		jboolean getDip();
-		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
-		jint getSpanTypeId();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jboolean getDip();
+		jint getSize();
+		jint getSpanTypeId();
+		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
 		void updateMeasureState(__jni_impl::android::text::TextPaint arg0);
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -55,6 +55,14 @@ namespace __jni_impl::android::text::style
 			arg0.__jniObject().object()
 		);
 	}
+	void AbsoluteSizeSpan::__constructor(jint arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.style.AbsoluteSizeSpan",
+			"(I)V",
+			arg0
+		);
+	}
 	void AbsoluteSizeSpan::__constructor(jint arg0, jboolean arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -64,20 +72,12 @@ namespace __jni_impl::android::text::style
 			arg1
 		);
 	}
-	void AbsoluteSizeSpan::__constructor(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.style.AbsoluteSizeSpan",
-			"(I)V",
-			arg0
-		);
-	}
 	
 	// Methods
-	jint AbsoluteSizeSpan::getSize()
+	jint AbsoluteSizeSpan::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getSize",
+			"describeContents",
 			"()I"
 		);
 	}
@@ -88,12 +88,11 @@ namespace __jni_impl::android::text::style
 			"()Z"
 		);
 	}
-	void AbsoluteSizeSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
+	jint AbsoluteSizeSpan::getSize()
 	{
-		__thiz.callMethod<void>(
-			"updateDrawState",
-			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"getSize",
+			"()I"
 		);
 	}
 	jint AbsoluteSizeSpan::getSpanTypeId()
@@ -103,11 +102,20 @@ namespace __jni_impl::android::text::style
 			"()I"
 		);
 	}
-	jint AbsoluteSizeSpan::describeContents()
+	void AbsoluteSizeSpan::updateDrawState(__jni_impl::android::text::TextPaint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		__thiz.callMethod<void>(
+			"updateDrawState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void AbsoluteSizeSpan::updateMeasureState(__jni_impl::android::text::TextPaint arg0)
+	{
+		__thiz.callMethod<void>(
+			"updateMeasureState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void AbsoluteSizeSpan::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
@@ -117,14 +125,6 @@ namespace __jni_impl::android::text::style
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	void AbsoluteSizeSpan::updateMeasureState(__jni_impl::android::text::TextPaint arg0)
-	{
-		__thiz.callMethod<void>(
-			"updateMeasureState",
-			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::text::style
@@ -140,16 +140,16 @@ namespace android::text::style
 			__constructor(
 				arg0);
 		}
+		AbsoluteSizeSpan(jint arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		AbsoluteSizeSpan(jint arg0, jboolean arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
-		}
-		AbsoluteSizeSpan(jint arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::text::style

@@ -5,21 +5,21 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::telephony::data
+namespace __jni_impl::android::net
 {
-	class ApnSetting_Builder;
+	class Uri;
 }
 namespace __jni_impl::android::os
 {
 	class Parcel;
 }
+namespace __jni_impl::android::telephony::data
+{
+	class ApnSetting_Builder;
+}
 namespace __jni_impl::java::net
 {
 	class InetAddress;
-}
-namespace __jni_impl::android::net
-{
-	class Uri;
 }
 
 namespace __jni_impl::android::telephony::data
@@ -59,38 +59,38 @@ namespace __jni_impl::android::telephony::data
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint getId();
-		jint getProtocol();
-		jboolean isEnabled();
-		jstring getEntryName();
-		jstring getUser();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getCarrierId();
+		jboolean equals(jobject arg0);
 		jstring getApnName();
-		QAndroidJniObject getProxyAddress();
-		jstring getProxyAddressAsString();
-		jint getProxyPort();
-		QAndroidJniObject getMmsc();
+		jint getApnTypeBitmask();
+		jint getAuthType();
+		jint getCarrierId();
+		jstring getEntryName();
+		jint getId();
 		QAndroidJniObject getMmsProxyAddress();
 		jstring getMmsProxyAddressAsString();
 		jint getMmsProxyPort();
-		jstring getPassword();
-		jint getAuthType();
-		jint getApnTypeBitmask();
-		jstring getOperatorNumeric();
-		jint getRoamingProtocol();
-		jint getNetworkTypeBitmask();
+		QAndroidJniObject getMmsc();
 		jint getMvnoType();
+		jint getNetworkTypeBitmask();
+		jstring getOperatorNumeric();
+		jstring getPassword();
+		jint getProtocol();
+		QAndroidJniObject getProxyAddress();
+		jstring getProxyAddressAsString();
+		jint getProxyPort();
+		jint getRoamingProtocol();
+		jstring getUser();
+		jboolean isEnabled();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony::data
 
-#include "ApnSetting_Builder.hpp"
-#include "../../os/Parcel.hpp"
-#include "../../../java/net/InetAddress.hpp"
 #include "../../net/Uri.hpp"
+#include "../../os/Parcel.hpp"
+#include "ApnSetting_Builder.hpp"
+#include "../../../java/net/InetAddress.hpp"
 
 namespace __jni_impl::android::telephony::data
 {
@@ -288,56 +288,6 @@ namespace __jni_impl::android::telephony::data
 	}
 	
 	// Methods
-	jboolean ApnSetting::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring ApnSetting::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint ApnSetting::getId()
-	{
-		return __thiz.callMethod<jint>(
-			"getId",
-			"()I"
-		);
-	}
-	jint ApnSetting::getProtocol()
-	{
-		return __thiz.callMethod<jint>(
-			"getProtocol",
-			"()I"
-		);
-	}
-	jboolean ApnSetting::isEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEnabled",
-			"()Z"
-		);
-	}
-	jstring ApnSetting::getEntryName()
-	{
-		return __thiz.callObjectMethod(
-			"getEntryName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring ApnSetting::getUser()
-	{
-		return __thiz.callObjectMethod(
-			"getUser",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint ApnSetting::describeContents()
 	{
 		return __thiz.callMethod<jint>(
@@ -345,20 +295,12 @@ namespace __jni_impl::android::telephony::data
 			"()I"
 		);
 	}
-	void ApnSetting::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jboolean ApnSetting::equals(jobject arg0)
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jint ApnSetting::getCarrierId()
-	{
-		return __thiz.callMethod<jint>(
-			"getCarrierId",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 	jstring ApnSetting::getApnName()
@@ -368,32 +310,39 @@ namespace __jni_impl::android::telephony::data
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject ApnSetting::getProxyAddress()
-	{
-		return __thiz.callObjectMethod(
-			"getProxyAddress",
-			"()Ljava/net/InetAddress;"
-		);
-	}
-	jstring ApnSetting::getProxyAddressAsString()
-	{
-		return __thiz.callObjectMethod(
-			"getProxyAddressAsString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint ApnSetting::getProxyPort()
+	jint ApnSetting::getApnTypeBitmask()
 	{
 		return __thiz.callMethod<jint>(
-			"getProxyPort",
+			"getApnTypeBitmask",
 			"()I"
 		);
 	}
-	QAndroidJniObject ApnSetting::getMmsc()
+	jint ApnSetting::getAuthType()
+	{
+		return __thiz.callMethod<jint>(
+			"getAuthType",
+			"()I"
+		);
+	}
+	jint ApnSetting::getCarrierId()
+	{
+		return __thiz.callMethod<jint>(
+			"getCarrierId",
+			"()I"
+		);
+	}
+	jstring ApnSetting::getEntryName()
 	{
 		return __thiz.callObjectMethod(
-			"getMmsc",
-			"()Landroid/net/Uri;"
+			"getEntryName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint ApnSetting::getId()
+	{
+		return __thiz.callMethod<jint>(
+			"getId",
+			"()I"
 		);
 	}
 	QAndroidJniObject ApnSetting::getMmsProxyAddress()
@@ -417,38 +366,17 @@ namespace __jni_impl::android::telephony::data
 			"()I"
 		);
 	}
-	jstring ApnSetting::getPassword()
+	QAndroidJniObject ApnSetting::getMmsc()
 	{
 		return __thiz.callObjectMethod(
-			"getPassword",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint ApnSetting::getAuthType()
-	{
-		return __thiz.callMethod<jint>(
-			"getAuthType",
-			"()I"
+			"getMmsc",
+			"()Landroid/net/Uri;"
 		);
 	}
-	jint ApnSetting::getApnTypeBitmask()
+	jint ApnSetting::getMvnoType()
 	{
 		return __thiz.callMethod<jint>(
-			"getApnTypeBitmask",
-			"()I"
-		);
-	}
-	jstring ApnSetting::getOperatorNumeric()
-	{
-		return __thiz.callObjectMethod(
-			"getOperatorNumeric",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint ApnSetting::getRoamingProtocol()
-	{
-		return __thiz.callMethod<jint>(
-			"getRoamingProtocol",
+			"getMvnoType",
 			"()I"
 		);
 	}
@@ -459,11 +387,83 @@ namespace __jni_impl::android::telephony::data
 			"()I"
 		);
 	}
-	jint ApnSetting::getMvnoType()
+	jstring ApnSetting::getOperatorNumeric()
+	{
+		return __thiz.callObjectMethod(
+			"getOperatorNumeric",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring ApnSetting::getPassword()
+	{
+		return __thiz.callObjectMethod(
+			"getPassword",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint ApnSetting::getProtocol()
 	{
 		return __thiz.callMethod<jint>(
-			"getMvnoType",
+			"getProtocol",
 			"()I"
+		);
+	}
+	QAndroidJniObject ApnSetting::getProxyAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getProxyAddress",
+			"()Ljava/net/InetAddress;"
+		);
+	}
+	jstring ApnSetting::getProxyAddressAsString()
+	{
+		return __thiz.callObjectMethod(
+			"getProxyAddressAsString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint ApnSetting::getProxyPort()
+	{
+		return __thiz.callMethod<jint>(
+			"getProxyPort",
+			"()I"
+		);
+	}
+	jint ApnSetting::getRoamingProtocol()
+	{
+		return __thiz.callMethod<jint>(
+			"getRoamingProtocol",
+			"()I"
+		);
+	}
+	jstring ApnSetting::getUser()
+	{
+		return __thiz.callObjectMethod(
+			"getUser",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jboolean ApnSetting::isEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEnabled",
+			"()Z"
+		);
+	}
+	jstring ApnSetting::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void ApnSetting::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::telephony::data

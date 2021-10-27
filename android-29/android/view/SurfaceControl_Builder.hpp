@@ -21,13 +21,13 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
+		QAndroidJniObject build();
+		QAndroidJniObject setBufferSize(jint arg0, jint arg1);
+		QAndroidJniObject setFormat(jint arg0);
 		QAndroidJniObject setName(jstring arg0);
 		QAndroidJniObject setName(const QString &arg0);
 		QAndroidJniObject setOpaque(jboolean arg0);
-		QAndroidJniObject build();
 		QAndroidJniObject setParent(__jni_impl::android::view::SurfaceControl arg0);
-		QAndroidJniObject setFormat(jint arg0);
-		QAndroidJniObject setBufferSize(jint arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
 
@@ -47,6 +47,30 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
+	QAndroidJniObject SurfaceControl_Builder::build()
+	{
+		return __thiz.callObjectMethod(
+			"build",
+			"()Landroid/view/SurfaceControl;"
+		);
+	}
+	QAndroidJniObject SurfaceControl_Builder::setBufferSize(jint arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"setBufferSize",
+			"(II)Landroid/view/SurfaceControl$Builder;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject SurfaceControl_Builder::setFormat(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setFormat",
+			"(I)Landroid/view/SurfaceControl$Builder;",
+			arg0
+		);
+	}
 	QAndroidJniObject SurfaceControl_Builder::setName(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -71,36 +95,12 @@ namespace __jni_impl::android::view
 			arg0
 		);
 	}
-	QAndroidJniObject SurfaceControl_Builder::build()
-	{
-		return __thiz.callObjectMethod(
-			"build",
-			"()Landroid/view/SurfaceControl;"
-		);
-	}
 	QAndroidJniObject SurfaceControl_Builder::setParent(__jni_impl::android::view::SurfaceControl arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setParent",
 			"(Landroid/view/SurfaceControl;)Landroid/view/SurfaceControl$Builder;",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject SurfaceControl_Builder::setFormat(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setFormat",
-			"(I)Landroid/view/SurfaceControl$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject SurfaceControl_Builder::setBufferSize(jint arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setBufferSize",
-			"(II)Landroid/view/SurfaceControl$Builder;",
-			arg0,
-			arg1
 		);
 	}
 } // namespace __jni_impl::android::view

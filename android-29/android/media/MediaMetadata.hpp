@@ -5,9 +5,9 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
+namespace __jni_impl::android::graphics
 {
-	class Bundle;
+	class Bitmap;
 }
 namespace __jni_impl::android::media
 {
@@ -19,11 +19,11 @@ namespace __jni_impl::android::media
 }
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class Bundle;
 }
-namespace __jni_impl::android::graphics
+namespace __jni_impl::android::os
 {
-	class Bitmap;
+	class Parcel;
 }
 
 namespace __jni_impl::android::media
@@ -67,33 +67,33 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		jlong getLong(jstring arg0);
-		jlong getLong(const QString &arg0);
-		jint size();
 		jboolean containsKey(jstring arg0);
 		jboolean containsKey(const QString &arg0);
-		QAndroidJniObject keySet();
+		jint describeContents();
+		jboolean equals(jobject arg0);
+		QAndroidJniObject getBitmap(jstring arg0);
+		QAndroidJniObject getBitmap(const QString &arg0);
+		QAndroidJniObject getDescription();
+		jlong getLong(jstring arg0);
+		jlong getLong(const QString &arg0);
+		QAndroidJniObject getRating(jstring arg0);
+		QAndroidJniObject getRating(const QString &arg0);
 		jstring getString(jstring arg0);
 		jstring getString(const QString &arg0);
 		jstring getText(jstring arg0);
 		jstring getText(const QString &arg0);
-		QAndroidJniObject getDescription();
-		QAndroidJniObject getRating(jstring arg0);
-		QAndroidJniObject getRating(const QString &arg0);
-		jint describeContents();
+		jint hashCode();
+		QAndroidJniObject keySet();
+		jint size();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getBitmap(jstring arg0);
-		QAndroidJniObject getBitmap(const QString &arg0);
 	};
 } // namespace __jni_impl::android::media
 
-#include "../os/Bundle.hpp"
+#include "../graphics/Bitmap.hpp"
 #include "MediaDescription.hpp"
 #include "Rating.hpp"
+#include "../os/Bundle.hpp"
 #include "../os/Parcel.hpp"
-#include "../graphics/Bitmap.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -348,6 +348,29 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	jboolean MediaMetadata::containsKey(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"containsKey",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jboolean MediaMetadata::containsKey(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"containsKey",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jint MediaMetadata::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean MediaMetadata::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -356,11 +379,27 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	jint MediaMetadata::hashCode()
+	QAndroidJniObject MediaMetadata::getBitmap(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+		return __thiz.callObjectMethod(
+			"getBitmap",
+			"(Ljava/lang/String;)Landroid/graphics/Bitmap;",
+			arg0
+		);
+	}
+	QAndroidJniObject MediaMetadata::getBitmap(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getBitmap",
+			"(Ljava/lang/String;)Landroid/graphics/Bitmap;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject MediaMetadata::getDescription()
+	{
+		return __thiz.callObjectMethod(
+			"getDescription",
+			"()Landroid/media/MediaDescription;"
 		);
 	}
 	jlong MediaMetadata::getLong(jstring arg0)
@@ -379,34 +418,20 @@ namespace __jni_impl::android::media
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jint MediaMetadata::size()
+	QAndroidJniObject MediaMetadata::getRating(jstring arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"size",
-			"()I"
-		);
-	}
-	jboolean MediaMetadata::containsKey(jstring arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"containsKey",
-			"(Ljava/lang/String;)Z",
+		return __thiz.callObjectMethod(
+			"getRating",
+			"(Ljava/lang/String;)Landroid/media/Rating;",
 			arg0
 		);
 	}
-	jboolean MediaMetadata::containsKey(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"containsKey",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject MediaMetadata::keySet()
+	QAndroidJniObject MediaMetadata::getRating(const QString &arg0)
 	{
 		return __thiz.callObjectMethod(
-			"keySet",
-			"()Ljava/util/Set;"
+			"getRating",
+			"(Ljava/lang/String;)Landroid/media/Rating;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jstring MediaMetadata::getString(jstring arg0)
@@ -441,33 +466,24 @@ namespace __jni_impl::android::media
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
-	QAndroidJniObject MediaMetadata::getDescription()
-	{
-		return __thiz.callObjectMethod(
-			"getDescription",
-			"()Landroid/media/MediaDescription;"
-		);
-	}
-	QAndroidJniObject MediaMetadata::getRating(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getRating",
-			"(Ljava/lang/String;)Landroid/media/Rating;",
-			arg0
-		);
-	}
-	QAndroidJniObject MediaMetadata::getRating(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getRating",
-			"(Ljava/lang/String;)Landroid/media/Rating;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jint MediaMetadata::describeContents()
+	jint MediaMetadata::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
+			"()I"
+		);
+	}
+	QAndroidJniObject MediaMetadata::keySet()
+	{
+		return __thiz.callObjectMethod(
+			"keySet",
+			"()Ljava/util/Set;"
+		);
+	}
+	jint MediaMetadata::size()
+	{
+		return __thiz.callMethod<jint>(
+			"size",
 			"()I"
 		);
 	}
@@ -478,22 +494,6 @@ namespace __jni_impl::android::media
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject MediaMetadata::getBitmap(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getBitmap",
-			"(Ljava/lang/String;)Landroid/graphics/Bitmap;",
-			arg0
-		);
-	}
-	QAndroidJniObject MediaMetadata::getBitmap(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getBitmap",
-			"(Ljava/lang/String;)Landroid/graphics/Bitmap;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::media

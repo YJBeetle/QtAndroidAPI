@@ -17,10 +17,10 @@ namespace __jni_impl::java::security::cert
 		void __constructor(jbyteArray arg0);
 		
 		// Methods
-		jstring toString();
 		jbyteArray getEncoded();
-		jstring getPolicyQualifierId();
 		jbyteArray getPolicyQualifier();
+		jstring getPolicyQualifierId();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -40,17 +40,17 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	jstring PolicyQualifierInfo::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jbyteArray PolicyQualifierInfo::getEncoded()
 	{
 		return __thiz.callObjectMethod(
 			"getEncoded",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jbyteArray PolicyQualifierInfo::getPolicyQualifier()
+	{
+		return __thiz.callObjectMethod(
+			"getPolicyQualifier",
 			"()[B"
 		).object<jbyteArray>();
 	}
@@ -61,12 +61,12 @@ namespace __jni_impl::java::security::cert
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jbyteArray PolicyQualifierInfo::getPolicyQualifier()
+	jstring PolicyQualifierInfo::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getPolicyQualifier",
-			"()[B"
-		).object<jbyteArray>();
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security::cert
 

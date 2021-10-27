@@ -30,10 +30,10 @@ namespace __jni_impl::android::app
 		void __constructor(jthrowable arg0, const QString &arg1, __jni_impl::android::app::RemoteAction arg2);
 		
 		// Methods
-		QAndroidJniObject getUserAction();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		QAndroidJniObject getUserAction();
 		jstring getUserMessage();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
@@ -75,6 +75,13 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
+	jint RecoverableSecurityException::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	QAndroidJniObject RecoverableSecurityException::getUserAction()
 	{
 		return __thiz.callObjectMethod(
@@ -82,12 +89,12 @@ namespace __jni_impl::android::app
 			"()Landroid/app/RemoteAction;"
 		);
 	}
-	jint RecoverableSecurityException::describeContents()
+	jstring RecoverableSecurityException::getUserMessage()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"getUserMessage",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void RecoverableSecurityException::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -97,13 +104,6 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jstring RecoverableSecurityException::getUserMessage()
-	{
-		return __thiz.callObjectMethod(
-			"getUserMessage",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::app
 

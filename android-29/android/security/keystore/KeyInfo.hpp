@@ -21,25 +21,25 @@ namespace __jni_impl::android::security::keystore
 		void __constructor();
 		
 		// Methods
-		jboolean isInsideSecureHardware();
-		jboolean isUserAuthenticationRequirementEnforcedBySecureHardware();
-		jboolean isTrustedUserPresenceRequired();
-		jint getKeySize();
-		jstring getKeystoreAlias();
-		QAndroidJniObject getKeyValidityStart();
-		QAndroidJniObject getKeyValidityForConsumptionEnd();
-		QAndroidJniObject getKeyValidityForOriginationEnd();
-		jint getPurposes();
+		jarray getBlockModes();
 		jarray getDigests();
 		jarray getEncryptionPaddings();
-		jarray getSignaturePaddings();
-		jarray getBlockModes();
-		jboolean isUserAuthenticationRequired();
-		jboolean isUserConfirmationRequired();
-		jint getUserAuthenticationValidityDurationSeconds();
-		jboolean isUserAuthenticationValidWhileOnBody();
-		jboolean isInvalidatedByBiometricEnrollment();
+		jint getKeySize();
+		QAndroidJniObject getKeyValidityForConsumptionEnd();
+		QAndroidJniObject getKeyValidityForOriginationEnd();
+		QAndroidJniObject getKeyValidityStart();
+		jstring getKeystoreAlias();
 		jint getOrigin();
+		jint getPurposes();
+		jarray getSignaturePaddings();
+		jint getUserAuthenticationValidityDurationSeconds();
+		jboolean isInsideSecureHardware();
+		jboolean isInvalidatedByBiometricEnrollment();
+		jboolean isTrustedUserPresenceRequired();
+		jboolean isUserAuthenticationRequired();
+		jboolean isUserAuthenticationRequirementEnforcedBySecureHardware();
+		jboolean isUserAuthenticationValidWhileOnBody();
+		jboolean isUserConfirmationRequired();
 	};
 } // namespace __jni_impl::android::security::keystore
 
@@ -58,46 +58,32 @@ namespace __jni_impl::android::security::keystore
 	}
 	
 	// Methods
-	jboolean KeyInfo::isInsideSecureHardware()
+	jarray KeyInfo::getBlockModes()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isInsideSecureHardware",
-			"()Z"
-		);
+		return __thiz.callObjectMethod(
+			"getBlockModes",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	jboolean KeyInfo::isUserAuthenticationRequirementEnforcedBySecureHardware()
+	jarray KeyInfo::getDigests()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isUserAuthenticationRequirementEnforcedBySecureHardware",
-			"()Z"
-		);
+		return __thiz.callObjectMethod(
+			"getDigests",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
-	jboolean KeyInfo::isTrustedUserPresenceRequired()
+	jarray KeyInfo::getEncryptionPaddings()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isTrustedUserPresenceRequired",
-			"()Z"
-		);
+		return __thiz.callObjectMethod(
+			"getEncryptionPaddings",
+			"()[Ljava/lang/String;"
+		).object<jarray>();
 	}
 	jint KeyInfo::getKeySize()
 	{
 		return __thiz.callMethod<jint>(
 			"getKeySize",
 			"()I"
-		);
-	}
-	jstring KeyInfo::getKeystoreAlias()
-	{
-		return __thiz.callObjectMethod(
-			"getKeystoreAlias",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject KeyInfo::getKeyValidityStart()
-	{
-		return __thiz.callObjectMethod(
-			"getKeyValidityStart",
-			"()Ljava/util/Date;"
 		);
 	}
 	QAndroidJniObject KeyInfo::getKeyValidityForConsumptionEnd()
@@ -114,26 +100,33 @@ namespace __jni_impl::android::security::keystore
 			"()Ljava/util/Date;"
 		);
 	}
+	QAndroidJniObject KeyInfo::getKeyValidityStart()
+	{
+		return __thiz.callObjectMethod(
+			"getKeyValidityStart",
+			"()Ljava/util/Date;"
+		);
+	}
+	jstring KeyInfo::getKeystoreAlias()
+	{
+		return __thiz.callObjectMethod(
+			"getKeystoreAlias",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint KeyInfo::getOrigin()
+	{
+		return __thiz.callMethod<jint>(
+			"getOrigin",
+			"()I"
+		);
+	}
 	jint KeyInfo::getPurposes()
 	{
 		return __thiz.callMethod<jint>(
 			"getPurposes",
 			"()I"
 		);
-	}
-	jarray KeyInfo::getDigests()
-	{
-		return __thiz.callObjectMethod(
-			"getDigests",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	jarray KeyInfo::getEncryptionPaddings()
-	{
-		return __thiz.callObjectMethod(
-			"getEncryptionPaddings",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
 	}
 	jarray KeyInfo::getSignaturePaddings()
 	{
@@ -142,27 +135,6 @@ namespace __jni_impl::android::security::keystore
 			"()[Ljava/lang/String;"
 		).object<jarray>();
 	}
-	jarray KeyInfo::getBlockModes()
-	{
-		return __thiz.callObjectMethod(
-			"getBlockModes",
-			"()[Ljava/lang/String;"
-		).object<jarray>();
-	}
-	jboolean KeyInfo::isUserAuthenticationRequired()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isUserAuthenticationRequired",
-			"()Z"
-		);
-	}
-	jboolean KeyInfo::isUserConfirmationRequired()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isUserConfirmationRequired",
-			"()Z"
-		);
-	}
 	jint KeyInfo::getUserAuthenticationValidityDurationSeconds()
 	{
 		return __thiz.callMethod<jint>(
@@ -170,10 +142,10 @@ namespace __jni_impl::android::security::keystore
 			"()I"
 		);
 	}
-	jboolean KeyInfo::isUserAuthenticationValidWhileOnBody()
+	jboolean KeyInfo::isInsideSecureHardware()
 	{
 		return __thiz.callMethod<jboolean>(
-			"isUserAuthenticationValidWhileOnBody",
+			"isInsideSecureHardware",
 			"()Z"
 		);
 	}
@@ -184,11 +156,39 @@ namespace __jni_impl::android::security::keystore
 			"()Z"
 		);
 	}
-	jint KeyInfo::getOrigin()
+	jboolean KeyInfo::isTrustedUserPresenceRequired()
 	{
-		return __thiz.callMethod<jint>(
-			"getOrigin",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"isTrustedUserPresenceRequired",
+			"()Z"
+		);
+	}
+	jboolean KeyInfo::isUserAuthenticationRequired()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isUserAuthenticationRequired",
+			"()Z"
+		);
+	}
+	jboolean KeyInfo::isUserAuthenticationRequirementEnforcedBySecureHardware()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isUserAuthenticationRequirementEnforcedBySecureHardware",
+			"()Z"
+		);
+	}
+	jboolean KeyInfo::isUserAuthenticationValidWhileOnBody()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isUserAuthenticationValidWhileOnBody",
+			"()Z"
+		);
+	}
+	jboolean KeyInfo::isUserConfirmationRequired()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isUserConfirmationRequired",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::security::keystore

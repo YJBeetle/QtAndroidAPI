@@ -23,9 +23,9 @@ namespace __jni_impl::android::view
 		void __constructor(__jni_impl::android::content::Context arg0, jint arg1);
 		
 		// Methods
-		void enable();
-		void disable();
 		jboolean canDetectOrientation();
+		void disable();
+		void enable();
 		void onOrientationChanged(jint arg0);
 	};
 } // namespace __jni_impl::android::view
@@ -63,11 +63,11 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	void OrientationEventListener::enable()
+	jboolean OrientationEventListener::canDetectOrientation()
 	{
-		__thiz.callMethod<void>(
-			"enable",
-			"()V"
+		return __thiz.callMethod<jboolean>(
+			"canDetectOrientation",
+			"()Z"
 		);
 	}
 	void OrientationEventListener::disable()
@@ -77,11 +77,11 @@ namespace __jni_impl::android::view
 			"()V"
 		);
 	}
-	jboolean OrientationEventListener::canDetectOrientation()
+	void OrientationEventListener::enable()
 	{
-		return __thiz.callMethod<jboolean>(
-			"canDetectOrientation",
-			"()Z"
+		__thiz.callMethod<void>(
+			"enable",
+			"()V"
 		);
 	}
 	void OrientationEventListener::onOrientationChanged(jint arg0)

@@ -8,11 +8,11 @@
 
 namespace __jni_impl::java::util::logging
 {
-	class Level;
+	class Handler;
 }
 namespace __jni_impl::java::util::logging
 {
-	class Handler;
+	class Level;
 }
 namespace __jni_impl::java::util::logging
 {
@@ -27,22 +27,22 @@ namespace __jni_impl::java::util::logging
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::java::util::logging::Handler arg0, jint arg1, __jni_impl::java::util::logging::Level arg2);
 		void __constructor();
+		void __constructor(__jni_impl::java::util::logging::Handler arg0, jint arg1, __jni_impl::java::util::logging::Level arg2);
 		
 		// Methods
-		void flush();
 		void close();
-		void push();
+		void flush();
+		QAndroidJniObject getPushLevel();
 		jboolean isLoggable(__jni_impl::java::util::logging::LogRecord arg0);
 		void publish(__jni_impl::java::util::logging::LogRecord arg0);
+		void push();
 		void setPushLevel(__jni_impl::java::util::logging::Level arg0);
-		QAndroidJniObject getPushLevel();
 	};
 } // namespace __jni_impl::java::util::logging
 
-#include "Level.hpp"
 #include "Handler.hpp"
+#include "Level.hpp"
 #include "LogRecord.hpp"
 
 namespace __jni_impl::java::util::logging
@@ -50,6 +50,13 @@ namespace __jni_impl::java::util::logging
 	// Fields
 	
 	// Constructors
+	void MemoryHandler::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.logging.MemoryHandler",
+			"()V"
+		);
+	}
 	void MemoryHandler::__constructor(__jni_impl::java::util::logging::Handler arg0, jint arg1, __jni_impl::java::util::logging::Level arg2)
 	{
 		__thiz = QAndroidJniObject(
@@ -60,22 +67,8 @@ namespace __jni_impl::java::util::logging
 			arg2.__jniObject().object()
 		);
 	}
-	void MemoryHandler::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.logging.MemoryHandler",
-			"()V"
-		);
-	}
 	
 	// Methods
-	void MemoryHandler::flush()
-	{
-		__thiz.callMethod<void>(
-			"flush",
-			"()V"
-		);
-	}
 	void MemoryHandler::close()
 	{
 		__thiz.callMethod<void>(
@@ -83,11 +76,18 @@ namespace __jni_impl::java::util::logging
 			"()V"
 		);
 	}
-	void MemoryHandler::push()
+	void MemoryHandler::flush()
 	{
 		__thiz.callMethod<void>(
-			"push",
+			"flush",
 			"()V"
+		);
+	}
+	QAndroidJniObject MemoryHandler::getPushLevel()
+	{
+		return __thiz.callObjectMethod(
+			"getPushLevel",
+			"()Ljava/util/logging/Level;"
 		);
 	}
 	jboolean MemoryHandler::isLoggable(__jni_impl::java::util::logging::LogRecord arg0)
@@ -106,19 +106,19 @@ namespace __jni_impl::java::util::logging
 			arg0.__jniObject().object()
 		);
 	}
+	void MemoryHandler::push()
+	{
+		__thiz.callMethod<void>(
+			"push",
+			"()V"
+		);
+	}
 	void MemoryHandler::setPushLevel(__jni_impl::java::util::logging::Level arg0)
 	{
 		__thiz.callMethod<void>(
 			"setPushLevel",
 			"(Ljava/util/logging/Level;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject MemoryHandler::getPushLevel()
-	{
-		return __thiz.callObjectMethod(
-			"getPushLevel",
-			"()Ljava/util/logging/Level;"
 		);
 	}
 } // namespace __jni_impl::java::util::logging
@@ -129,16 +129,16 @@ namespace java::util::logging
 	{
 	public:
 		MemoryHandler(QAndroidJniObject obj) { __thiz = obj; }
+		MemoryHandler()
+		{
+			__constructor();
+		}
 		MemoryHandler(__jni_impl::java::util::logging::Handler arg0, jint arg1, __jni_impl::java::util::logging::Level arg2)
 		{
 			__constructor(
 				arg0,
 				arg1,
 				arg2);
-		}
-		MemoryHandler()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::util::logging

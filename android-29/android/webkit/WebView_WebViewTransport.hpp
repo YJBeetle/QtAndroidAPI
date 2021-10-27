@@ -21,8 +21,8 @@ namespace __jni_impl::android::webkit
 		void __constructor(__jni_impl::android::webkit::WebView arg0);
 		
 		// Methods
-		void setWebView(__jni_impl::android::webkit::WebView arg0);
 		QAndroidJniObject getWebView();
+		void setWebView(__jni_impl::android::webkit::WebView arg0);
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -43,19 +43,19 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
+	QAndroidJniObject WebView_WebViewTransport::getWebView()
+	{
+		return __thiz.callObjectMethod(
+			"getWebView",
+			"()Landroid/webkit/WebView;"
+		);
+	}
 	void WebView_WebViewTransport::setWebView(__jni_impl::android::webkit::WebView arg0)
 	{
 		__thiz.callMethod<void>(
 			"setWebView",
 			"(Landroid/webkit/WebView;)V",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject WebView_WebViewTransport::getWebView()
-	{
-		return __thiz.callObjectMethod(
-			"getWebView",
-			"()Landroid/webkit/WebView;"
 		);
 	}
 } // namespace __jni_impl::android::webkit

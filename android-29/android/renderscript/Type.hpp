@@ -8,11 +8,11 @@
 
 namespace __jni_impl::android::renderscript
 {
-	class RenderScript;
+	class Element;
 }
 namespace __jni_impl::android::renderscript
 {
-	class Element;
+	class RenderScript;
 }
 
 namespace __jni_impl::android::renderscript
@@ -26,22 +26,22 @@ namespace __jni_impl::android::renderscript
 		void __constructor();
 		
 		// Methods
+		static QAndroidJniObject createX(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1, jint arg2);
+		static QAndroidJniObject createXY(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1, jint arg2, jint arg3);
+		static QAndroidJniObject createXYZ(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1, jint arg2, jint arg3, jint arg4);
 		jint getCount();
 		QAndroidJniObject getElement();
 		jint getX();
 		jint getY();
-		jint getZ();
 		jint getYuv();
-		jboolean hasMipmaps();
+		jint getZ();
 		jboolean hasFaces();
-		static QAndroidJniObject createX(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1, jint arg2);
-		static QAndroidJniObject createXY(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1, jint arg2, jint arg3);
-		static QAndroidJniObject createXYZ(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1, jint arg2, jint arg3, jint arg4);
+		jboolean hasMipmaps();
 	};
 } // namespace __jni_impl::android::renderscript
 
-#include "RenderScript.hpp"
 #include "Element.hpp"
+#include "RenderScript.hpp"
 
 namespace __jni_impl::android::renderscript
 {
@@ -56,62 +56,6 @@ namespace __jni_impl::android::renderscript
 	}
 	
 	// Methods
-	jint Type::getCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getCount",
-			"()I"
-		);
-	}
-	QAndroidJniObject Type::getElement()
-	{
-		return __thiz.callObjectMethod(
-			"getElement",
-			"()Landroid/renderscript/Element;"
-		);
-	}
-	jint Type::getX()
-	{
-		return __thiz.callMethod<jint>(
-			"getX",
-			"()I"
-		);
-	}
-	jint Type::getY()
-	{
-		return __thiz.callMethod<jint>(
-			"getY",
-			"()I"
-		);
-	}
-	jint Type::getZ()
-	{
-		return __thiz.callMethod<jint>(
-			"getZ",
-			"()I"
-		);
-	}
-	jint Type::getYuv()
-	{
-		return __thiz.callMethod<jint>(
-			"getYuv",
-			"()I"
-		);
-	}
-	jboolean Type::hasMipmaps()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasMipmaps",
-			"()Z"
-		);
-	}
-	jboolean Type::hasFaces()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasFaces",
-			"()Z"
-		);
-	}
 	QAndroidJniObject Type::createX(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -146,6 +90,62 @@ namespace __jni_impl::android::renderscript
 			arg2,
 			arg3,
 			arg4
+		);
+	}
+	jint Type::getCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getCount",
+			"()I"
+		);
+	}
+	QAndroidJniObject Type::getElement()
+	{
+		return __thiz.callObjectMethod(
+			"getElement",
+			"()Landroid/renderscript/Element;"
+		);
+	}
+	jint Type::getX()
+	{
+		return __thiz.callMethod<jint>(
+			"getX",
+			"()I"
+		);
+	}
+	jint Type::getY()
+	{
+		return __thiz.callMethod<jint>(
+			"getY",
+			"()I"
+		);
+	}
+	jint Type::getYuv()
+	{
+		return __thiz.callMethod<jint>(
+			"getYuv",
+			"()I"
+		);
+	}
+	jint Type::getZ()
+	{
+		return __thiz.callMethod<jint>(
+			"getZ",
+			"()I"
+		);
+	}
+	jboolean Type::hasFaces()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasFaces",
+			"()Z"
+		);
+	}
+	jboolean Type::hasMipmaps()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasMipmaps",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::renderscript

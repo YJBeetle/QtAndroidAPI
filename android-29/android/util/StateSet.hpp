@@ -19,11 +19,11 @@ namespace __jni_impl::android::util
 		void __constructor();
 		
 		// Methods
-		static jintArray trimStateSet(jintArray arg0, jint arg1);
-		static jboolean isWildCard(jintArray arg0);
-		static jboolean stateSetMatches(jintArray arg0, jint arg1);
-		static jboolean stateSetMatches(jintArray arg0, jintArray arg1);
 		static jstring dump(jintArray arg0);
+		static jboolean isWildCard(jintArray arg0);
+		static jboolean stateSetMatches(jintArray arg0, jintArray arg1);
+		static jboolean stateSetMatches(jintArray arg0, jint arg1);
+		static jintArray trimStateSet(jintArray arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::util
 
@@ -57,15 +57,14 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
-	jintArray StateSet::trimStateSet(jintArray arg0, jint arg1)
+	jstring StateSet::dump(jintArray arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.StateSet",
-			"trimStateSet",
-			"([II)[I",
-			arg0,
-			arg1
-		).object<jintArray>();
+			"dump",
+			"([I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
 	}
 	jboolean StateSet::isWildCard(jintArray arg0)
 	{
@@ -74,16 +73,6 @@ namespace __jni_impl::android::util
 			"isWildCard",
 			"([I)Z",
 			arg0
-		);
-	}
-	jboolean StateSet::stateSetMatches(jintArray arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.util.StateSet",
-			"stateSetMatches",
-			"([II)Z",
-			arg0,
-			arg1
 		);
 	}
 	jboolean StateSet::stateSetMatches(jintArray arg0, jintArray arg1)
@@ -96,14 +85,25 @@ namespace __jni_impl::android::util
 			arg1
 		);
 	}
-	jstring StateSet::dump(jintArray arg0)
+	jboolean StateSet::stateSetMatches(jintArray arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.util.StateSet",
+			"stateSetMatches",
+			"([II)Z",
+			arg0,
+			arg1
+		);
+	}
+	jintArray StateSet::trimStateSet(jintArray arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.util.StateSet",
-			"dump",
-			"([I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
+			"trimStateSet",
+			"([II)[I",
+			arg0,
+			arg1
+		).object<jintArray>();
 	}
 } // namespace __jni_impl::android::util
 

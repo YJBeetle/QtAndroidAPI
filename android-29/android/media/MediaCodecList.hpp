@@ -29,9 +29,9 @@ namespace __jni_impl::android::media
 		// Methods
 		static jint getCodecCount();
 		static QAndroidJniObject getCodecInfoAt(jint arg0);
-		jarray getCodecInfos();
 		jstring findDecoderForFormat(__jni_impl::android::media::MediaFormat arg0);
 		jstring findEncoderForFormat(__jni_impl::android::media::MediaFormat arg0);
+		jarray getCodecInfos();
 	};
 } // namespace __jni_impl::android::media
 
@@ -84,13 +84,6 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	jarray MediaCodecList::getCodecInfos()
-	{
-		return __thiz.callObjectMethod(
-			"getCodecInfos",
-			"()[Landroid/media/MediaCodecInfo;"
-		).object<jarray>();
-	}
 	jstring MediaCodecList::findDecoderForFormat(__jni_impl::android::media::MediaFormat arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -106,6 +99,13 @@ namespace __jni_impl::android::media
 			"(Landroid/media/MediaFormat;)Ljava/lang/String;",
 			arg0.__jniObject().object()
 		).object<jstring>();
+	}
+	jarray MediaCodecList::getCodecInfos()
+	{
+		return __thiz.callObjectMethod(
+			"getCodecInfos",
+			"()[Landroid/media/MediaCodecInfo;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::media
 

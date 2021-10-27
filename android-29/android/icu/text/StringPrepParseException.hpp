@@ -28,18 +28,18 @@ namespace __jni_impl::android::icu::text
 		static jint ZERO_LENGTH_LABEL();
 		
 		// Constructors
-		void __constructor(jstring arg0, jint arg1, jstring arg2, jint arg3, jint arg4);
-		void __constructor(const QString &arg0, jint arg1, const QString &arg2, jint arg3, jint arg4);
-		void __constructor(jstring arg0, jint arg1, jstring arg2, jint arg3);
-		void __constructor(const QString &arg0, jint arg1, const QString &arg2, jint arg3);
 		void __constructor(jstring arg0, jint arg1);
 		void __constructor(const QString &arg0, jint arg1);
+		void __constructor(jstring arg0, jint arg1, jstring arg2, jint arg3);
+		void __constructor(const QString &arg0, jint arg1, const QString &arg2, jint arg3);
+		void __constructor(jstring arg0, jint arg1, jstring arg2, jint arg3, jint arg4);
+		void __constructor(const QString &arg0, jint arg1, const QString &arg2, jint arg3, jint arg4);
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jint getError();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -133,28 +133,22 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Constructors
-	void StringPrepParseException::__constructor(jstring arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
+	void StringPrepParseException::__constructor(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.StringPrepParseException",
-			"(Ljava/lang/String;ILjava/lang/String;II)V",
+			"(Ljava/lang/String;I)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
+			arg1
 		);
 	}
-	void StringPrepParseException::__constructor(const QString &arg0, jint arg1, const QString &arg2, jint arg3, jint arg4)
+	void StringPrepParseException::__constructor(const QString &arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.StringPrepParseException",
-			"(Ljava/lang/String;ILjava/lang/String;II)V",
+			"(Ljava/lang/String;I)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3,
-			arg4
+			arg1
 		);
 	}
 	void StringPrepParseException::__constructor(jstring arg0, jint arg1, jstring arg2, jint arg3)
@@ -179,22 +173,28 @@ namespace __jni_impl::android::icu::text
 			arg3
 		);
 	}
-	void StringPrepParseException::__constructor(jstring arg0, jint arg1)
+	void StringPrepParseException::__constructor(jstring arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.StringPrepParseException",
-			"(Ljava/lang/String;I)V",
+			"(Ljava/lang/String;ILjava/lang/String;II)V",
 			arg0,
-			arg1
+			arg1,
+			arg2,
+			arg3,
+			arg4
 		);
 	}
-	void StringPrepParseException::__constructor(const QString &arg0, jint arg1)
+	void StringPrepParseException::__constructor(const QString &arg0, jint arg1, const QString &arg2, jint arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"android.icu.text.StringPrepParseException",
-			"(Ljava/lang/String;I)V",
+			"(Ljava/lang/String;ILjava/lang/String;II)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3,
+			arg4
 		);
 	}
 	
@@ -207,12 +207,12 @@ namespace __jni_impl::android::icu::text
 			arg0
 		);
 	}
-	jstring StringPrepParseException::toString()
+	jint StringPrepParseException::getError()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"getError",
+			"()I"
+		);
 	}
 	jint StringPrepParseException::hashCode()
 	{
@@ -221,12 +221,12 @@ namespace __jni_impl::android::icu::text
 			"()I"
 		);
 	}
-	jint StringPrepParseException::getError()
+	jstring StringPrepParseException::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"getError",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::text
 
@@ -236,14 +236,11 @@ namespace android::icu::text
 	{
 	public:
 		StringPrepParseException(QAndroidJniObject obj) { __thiz = obj; }
-		StringPrepParseException(jstring arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
+		StringPrepParseException(jstring arg0, jint arg1)
 		{
 			__constructor(
 				arg0,
-				arg1,
-				arg2,
-				arg3,
-				arg4);
+				arg1);
 		}
 		StringPrepParseException(jstring arg0, jint arg1, jstring arg2, jint arg3)
 		{
@@ -253,11 +250,14 @@ namespace android::icu::text
 				arg2,
 				arg3);
 		}
-		StringPrepParseException(jstring arg0, jint arg1)
+		StringPrepParseException(jstring arg0, jint arg1, jstring arg2, jint arg3, jint arg4)
 		{
 			__constructor(
 				arg0,
-				arg1);
+				arg1,
+				arg2,
+				arg3,
+				arg4);
 		}
 	};
 } // namespace android::icu::text

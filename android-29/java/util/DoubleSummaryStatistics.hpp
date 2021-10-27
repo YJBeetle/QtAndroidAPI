@@ -18,14 +18,14 @@ namespace __jni_impl::java::util
 		void __constructor(jlong arg0, jdouble arg1, jdouble arg2, jdouble arg3);
 		
 		// Methods
-		jstring toString();
 		void accept(jdouble arg0);
 		void combine(__jni_impl::java::util::DoubleSummaryStatistics arg0);
-		jlong getCount();
-		jdouble getMin();
-		jdouble getMax();
-		jdouble getSum();
 		jdouble getAverage();
+		jlong getCount();
+		jdouble getMax();
+		jdouble getMin();
+		jdouble getSum();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::util
 
@@ -55,13 +55,6 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	jstring DoubleSummaryStatistics::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	void DoubleSummaryStatistics::accept(jdouble arg0)
 	{
 		__thiz.callMethod<void>(
@@ -78,6 +71,13 @@ namespace __jni_impl::java::util
 			arg0.__jniObject().object()
 		);
 	}
+	jdouble DoubleSummaryStatistics::getAverage()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getAverage",
+			"()D"
+		);
+	}
 	jlong DoubleSummaryStatistics::getCount()
 	{
 		return __thiz.callMethod<jlong>(
@@ -85,17 +85,17 @@ namespace __jni_impl::java::util
 			"()J"
 		);
 	}
-	jdouble DoubleSummaryStatistics::getMin()
-	{
-		return __thiz.callMethod<jdouble>(
-			"getMin",
-			"()D"
-		);
-	}
 	jdouble DoubleSummaryStatistics::getMax()
 	{
 		return __thiz.callMethod<jdouble>(
 			"getMax",
+			"()D"
+		);
+	}
+	jdouble DoubleSummaryStatistics::getMin()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getMin",
 			"()D"
 		);
 	}
@@ -106,12 +106,12 @@ namespace __jni_impl::java::util
 			"()D"
 		);
 	}
-	jdouble DoubleSummaryStatistics::getAverage()
+	jstring DoubleSummaryStatistics::toString()
 	{
-		return __thiz.callMethod<jdouble>(
-			"getAverage",
-			"()D"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util
 

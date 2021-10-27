@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::net
-{
-	class Uri;
-}
 namespace __jni_impl::android::content
 {
 	class Context;
+}
+namespace __jni_impl::android::net
+{
+	class Uri;
 }
 
 namespace __jni_impl::android::provider
@@ -31,15 +31,15 @@ namespace __jni_impl::android::provider
 		void __constructor();
 		
 		// Methods
-		static jstring getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jstring arg2, jarray arg3);
-		static jstring getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, const QString &arg2, jarray arg3);
 		static jstring getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jstring arg2);
 		static jstring getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, const QString &arg2);
+		static jstring getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jstring arg2, jarray arg3);
+		static jstring getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, const QString &arg2, jarray arg3);
 	};
 } // namespace __jni_impl::android::provider
 
-#include "../net/Uri.hpp"
 #include "../content/Context.hpp"
+#include "../net/Uri.hpp"
 
 namespace __jni_impl::android::provider
 {
@@ -102,6 +102,28 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
+	jstring Contacts_Phones::getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jstring arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.Contacts$Phones",
+			"getDisplayLabel",
+			"(Landroid/content/Context;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
+		).object<jstring>();
+	}
+	jstring Contacts_Phones::getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, const QString &arg2)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.provider.Contacts$Phones",
+			"getDisplayLabel",
+			"(Landroid/content/Context;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
+			arg0.__jniObject().object(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>()
+		).object<jstring>();
+	}
 	jstring Contacts_Phones::getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jstring arg2, jarray arg3)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -124,28 +146,6 @@ namespace __jni_impl::android::provider
 			arg1,
 			QAndroidJniObject::fromString(arg2).object<jstring>(),
 			arg3
-		).object<jstring>();
-	}
-	jstring Contacts_Phones::getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, jstring arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Contacts$Phones",
-			"getDisplayLabel",
-			"(Landroid/content/Context;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		).object<jstring>();
-	}
-	jstring Contacts_Phones::getDisplayLabel(__jni_impl::android::content::Context arg0, jint arg1, const QString &arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.provider.Contacts$Phones",
-			"getDisplayLabel",
-			"(Landroid/content/Context;ILjava/lang/CharSequence;)Ljava/lang/CharSequence;",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>()
 		).object<jstring>();
 	}
 } // namespace __jni_impl::android::provider

@@ -22,10 +22,10 @@ namespace __jni_impl::android::view::contentcapture
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		jint hashCode();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::contentcapture
@@ -53,6 +53,13 @@ namespace __jni_impl::android::view::contentcapture
 	}
 	
 	// Methods
+	jint ContentCaptureSessionId::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean ContentCaptureSessionId::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -61,13 +68,6 @@ namespace __jni_impl::android::view::contentcapture
 			arg0
 		);
 	}
-	jstring ContentCaptureSessionId::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint ContentCaptureSessionId::hashCode()
 	{
 		return __thiz.callMethod<jint>(
@@ -75,12 +75,12 @@ namespace __jni_impl::android::view::contentcapture
 			"()I"
 		);
 	}
-	jint ContentCaptureSessionId::describeContents()
+	jstring ContentCaptureSessionId::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void ContentCaptureSessionId::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

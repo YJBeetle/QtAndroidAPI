@@ -7,11 +7,11 @@
 
 namespace __jni_impl::java::util
 {
-	class HashMap;
+	class ArrayList;
 }
 namespace __jni_impl::java::util
 {
-	class ArrayList;
+	class HashMap;
 }
 
 namespace __jni_impl::org::xmlpull::v1
@@ -29,21 +29,21 @@ namespace __jni_impl::org::xmlpull::v1
 		static QAndroidJniObject newInstance();
 		static QAndroidJniObject newInstance(jstring arg0, jclass arg1);
 		static QAndroidJniObject newInstance(const QString &arg0, jclass arg1);
-		QAndroidJniObject newPullParser();
-		QAndroidJniObject newSerializer();
-		void setNamespaceAware(jboolean arg0);
-		void setValidating(jboolean arg0);
-		jboolean isNamespaceAware();
-		jboolean isValidating();
-		void setFeature(jstring arg0, jboolean arg1);
-		void setFeature(const QString &arg0, jboolean arg1);
 		jboolean getFeature(jstring arg0);
 		jboolean getFeature(const QString &arg0);
+		jboolean isNamespaceAware();
+		jboolean isValidating();
+		QAndroidJniObject newPullParser();
+		QAndroidJniObject newSerializer();
+		void setFeature(jstring arg0, jboolean arg1);
+		void setFeature(const QString &arg0, jboolean arg1);
+		void setNamespaceAware(jboolean arg0);
+		void setValidating(jboolean arg0);
 	};
 } // namespace __jni_impl::org::xmlpull::v1
 
-#include "../../../java/util/HashMap.hpp"
 #include "../../../java/util/ArrayList.hpp"
+#include "../../../java/util/HashMap.hpp"
 
 namespace __jni_impl::org::xmlpull::v1
 {
@@ -94,34 +94,20 @@ namespace __jni_impl::org::xmlpull::v1
 			arg1
 		);
 	}
-	QAndroidJniObject XmlPullParserFactory::newPullParser()
+	jboolean XmlPullParserFactory::getFeature(jstring arg0)
 	{
-		return __thiz.callObjectMethod(
-			"newPullParser",
-			"()Lorg/xmlpull/v1/XmlPullParser;"
-		);
-	}
-	QAndroidJniObject XmlPullParserFactory::newSerializer()
-	{
-		return __thiz.callObjectMethod(
-			"newSerializer",
-			"()Lorg/xmlpull/v1/XmlSerializer;"
-		);
-	}
-	void XmlPullParserFactory::setNamespaceAware(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setNamespaceAware",
-			"(Z)V",
+		return __thiz.callMethod<jboolean>(
+			"getFeature",
+			"(Ljava/lang/String;)Z",
 			arg0
 		);
 	}
-	void XmlPullParserFactory::setValidating(jboolean arg0)
+	jboolean XmlPullParserFactory::getFeature(const QString &arg0)
 	{
-		__thiz.callMethod<void>(
-			"setValidating",
-			"(Z)V",
-			arg0
+		return __thiz.callMethod<jboolean>(
+			"getFeature",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	jboolean XmlPullParserFactory::isNamespaceAware()
@@ -136,6 +122,20 @@ namespace __jni_impl::org::xmlpull::v1
 		return __thiz.callMethod<jboolean>(
 			"isValidating",
 			"()Z"
+		);
+	}
+	QAndroidJniObject XmlPullParserFactory::newPullParser()
+	{
+		return __thiz.callObjectMethod(
+			"newPullParser",
+			"()Lorg/xmlpull/v1/XmlPullParser;"
+		);
+	}
+	QAndroidJniObject XmlPullParserFactory::newSerializer()
+	{
+		return __thiz.callObjectMethod(
+			"newSerializer",
+			"()Lorg/xmlpull/v1/XmlSerializer;"
 		);
 	}
 	void XmlPullParserFactory::setFeature(jstring arg0, jboolean arg1)
@@ -156,20 +156,20 @@ namespace __jni_impl::org::xmlpull::v1
 			arg1
 		);
 	}
-	jboolean XmlPullParserFactory::getFeature(jstring arg0)
+	void XmlPullParserFactory::setNamespaceAware(jboolean arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"getFeature",
-			"(Ljava/lang/String;)Z",
+		__thiz.callMethod<void>(
+			"setNamespaceAware",
+			"(Z)V",
 			arg0
 		);
 	}
-	jboolean XmlPullParserFactory::getFeature(const QString &arg0)
+	void XmlPullParserFactory::setValidating(jboolean arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"getFeature",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+		__thiz.callMethod<void>(
+			"setValidating",
+			"(Z)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::org::xmlpull::v1

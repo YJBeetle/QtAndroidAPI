@@ -27,8 +27,8 @@ namespace __jni_impl::android::provider
 		void __constructor();
 		
 		// Methods
-		void onTypefaceRetrieved(__jni_impl::android::graphics::Typeface arg0);
 		void onTypefaceRequestFailed(jint arg0);
+		void onTypefaceRetrieved(__jni_impl::android::graphics::Typeface arg0);
 	};
 } // namespace __jni_impl::android::provider
 
@@ -90,20 +90,20 @@ namespace __jni_impl::android::provider
 	}
 	
 	// Methods
-	void FontsContract_FontRequestCallback::onTypefaceRetrieved(__jni_impl::android::graphics::Typeface arg0)
-	{
-		__thiz.callMethod<void>(
-			"onTypefaceRetrieved",
-			"(Landroid/graphics/Typeface;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void FontsContract_FontRequestCallback::onTypefaceRequestFailed(jint arg0)
 	{
 		__thiz.callMethod<void>(
 			"onTypefaceRequestFailed",
 			"(I)V",
 			arg0
+		);
+	}
+	void FontsContract_FontRequestCallback::onTypefaceRetrieved(__jni_impl::android::graphics::Typeface arg0)
+	{
+		__thiz.callMethod<void>(
+			"onTypefaceRetrieved",
+			"(Landroid/graphics/Typeface;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::provider

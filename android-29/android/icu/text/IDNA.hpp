@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::lang
-{
-	class StringBuilder;
-}
 namespace __jni_impl::android::icu::text
 {
 	class IDNA_Info;
+}
+namespace __jni_impl::java::lang
+{
+	class StringBuilder;
 }
 
 namespace __jni_impl::android::icu::text
@@ -44,8 +44,8 @@ namespace __jni_impl::android::icu::text
 	};
 } // namespace __jni_impl::android::icu::text
 
-#include "../../../java/lang/StringBuilder.hpp"
 #include "IDNA_Info.hpp"
+#include "../../../java/lang/StringBuilder.hpp"
 
 namespace __jni_impl::android::icu::text
 {

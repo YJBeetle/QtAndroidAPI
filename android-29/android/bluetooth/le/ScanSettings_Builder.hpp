@@ -22,13 +22,13 @@ namespace __jni_impl::android::bluetooth::le
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setScanMode(jint arg0);
 		QAndroidJniObject setCallbackType(jint arg0);
-		QAndroidJniObject setReportDelay(jlong arg0);
-		QAndroidJniObject setNumOfMatches(jint arg0);
-		QAndroidJniObject setMatchMode(jint arg0);
 		QAndroidJniObject setLegacy(jboolean arg0);
+		QAndroidJniObject setMatchMode(jint arg0);
+		QAndroidJniObject setNumOfMatches(jint arg0);
 		QAndroidJniObject setPhy(jint arg0);
+		QAndroidJniObject setReportDelay(jlong arg0);
+		QAndroidJniObject setScanMode(jint arg0);
 	};
 } // namespace __jni_impl::android::bluetooth::le
 
@@ -55,42 +55,10 @@ namespace __jni_impl::android::bluetooth::le
 			"()Landroid/bluetooth/le/ScanSettings;"
 		);
 	}
-	QAndroidJniObject ScanSettings_Builder::setScanMode(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setScanMode",
-			"(I)Landroid/bluetooth/le/ScanSettings$Builder;",
-			arg0
-		);
-	}
 	QAndroidJniObject ScanSettings_Builder::setCallbackType(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setCallbackType",
-			"(I)Landroid/bluetooth/le/ScanSettings$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject ScanSettings_Builder::setReportDelay(jlong arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setReportDelay",
-			"(J)Landroid/bluetooth/le/ScanSettings$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject ScanSettings_Builder::setNumOfMatches(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setNumOfMatches",
-			"(I)Landroid/bluetooth/le/ScanSettings$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject ScanSettings_Builder::setMatchMode(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setMatchMode",
 			"(I)Landroid/bluetooth/le/ScanSettings$Builder;",
 			arg0
 		);
@@ -103,10 +71,42 @@ namespace __jni_impl::android::bluetooth::le
 			arg0
 		);
 	}
+	QAndroidJniObject ScanSettings_Builder::setMatchMode(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setMatchMode",
+			"(I)Landroid/bluetooth/le/ScanSettings$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject ScanSettings_Builder::setNumOfMatches(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setNumOfMatches",
+			"(I)Landroid/bluetooth/le/ScanSettings$Builder;",
+			arg0
+		);
+	}
 	QAndroidJniObject ScanSettings_Builder::setPhy(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"setPhy",
+			"(I)Landroid/bluetooth/le/ScanSettings$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject ScanSettings_Builder::setReportDelay(jlong arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setReportDelay",
+			"(J)Landroid/bluetooth/le/ScanSettings$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject ScanSettings_Builder::setScanMode(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setScanMode",
 			"(I)Landroid/bluetooth/le/ScanSettings$Builder;",
 			arg0
 		);

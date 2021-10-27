@@ -24,11 +24,11 @@ namespace __jni_impl::android::graphics::drawable
 		
 		// Methods
 		void draw(__jni_impl::android::graphics::Canvas arg0);
-		void startTransition(jint arg0);
+		jboolean isCrossFadeEnabled();
 		void resetTransition();
 		void reverseTransition(jint arg0);
 		void setCrossFadeEnabled(jboolean arg0);
-		jboolean isCrossFadeEnabled();
+		void startTransition(jint arg0);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
@@ -57,12 +57,11 @@ namespace __jni_impl::android::graphics::drawable
 			arg0.__jniObject().object()
 		);
 	}
-	void TransitionDrawable::startTransition(jint arg0)
+	jboolean TransitionDrawable::isCrossFadeEnabled()
 	{
-		__thiz.callMethod<void>(
-			"startTransition",
-			"(I)V",
-			arg0
+		return __thiz.callMethod<jboolean>(
+			"isCrossFadeEnabled",
+			"()Z"
 		);
 	}
 	void TransitionDrawable::resetTransition()
@@ -88,11 +87,12 @@ namespace __jni_impl::android::graphics::drawable
 			arg0
 		);
 	}
-	jboolean TransitionDrawable::isCrossFadeEnabled()
+	void TransitionDrawable::startTransition(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isCrossFadeEnabled",
-			"()Z"
+		__thiz.callMethod<void>(
+			"startTransition",
+			"(I)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::graphics::drawable

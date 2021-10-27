@@ -20,38 +20,38 @@ namespace __jni_impl::java::util::concurrent
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::__JniBaseClass arg0);
 		void __constructor();
+		void __constructor(__jni_impl::__JniBaseClass arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);
-		jboolean remove(jobject arg0);
-		jboolean equals(jobject arg0);
-		QAndroidJniObject clone();
+		jobject ceiling(jobject arg0);
 		void clear();
-		jboolean isEmpty();
-		jint size();
-		QAndroidJniObject iterator();
-		jboolean contains(jobject arg0);
-		jobject last();
-		QAndroidJniObject spliterator();
-		jobject first();
-		jobject lower(jobject arg0);
+		QAndroidJniObject clone();
 		QAndroidJniObject comparator();
-		jboolean removeAll(__jni_impl::__JniBaseClass arg0);
-		jobject floor(jobject arg0);
-		jobject pollFirst();
-		jobject pollLast();
+		jboolean contains(jobject arg0);
 		QAndroidJniObject descendingIterator();
-		QAndroidJniObject subSet(jobject arg0, jobject arg1);
-		QAndroidJniObject subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3);
+		QAndroidJniObject descendingSet();
+		jboolean equals(jobject arg0);
+		jobject first();
+		jobject floor(jobject arg0);
 		QAndroidJniObject headSet(jobject arg0);
 		QAndroidJniObject headSet(jobject arg0, jboolean arg1);
-		QAndroidJniObject tailSet(jobject arg0, jboolean arg1);
-		QAndroidJniObject tailSet(jobject arg0);
-		jobject ceiling(jobject arg0);
 		jobject higher(jobject arg0);
-		QAndroidJniObject descendingSet();
+		jboolean isEmpty();
+		QAndroidJniObject iterator();
+		jobject last();
+		jobject lower(jobject arg0);
+		jobject pollFirst();
+		jobject pollLast();
+		jboolean remove(jobject arg0);
+		jboolean removeAll(__jni_impl::__JniBaseClass arg0);
+		jint size();
+		QAndroidJniObject spliterator();
+		QAndroidJniObject subSet(jobject arg0, jobject arg1);
+		QAndroidJniObject subSet(jobject arg0, jboolean arg1, jobject arg2, jboolean arg3);
+		QAndroidJniObject tailSet(jobject arg0);
+		QAndroidJniObject tailSet(jobject arg0, jboolean arg1);
 	};
 } // namespace __jni_impl::java::util::concurrent
 
@@ -62,19 +62,19 @@ namespace __jni_impl::java::util::concurrent
 	// Fields
 	
 	// Constructors
-	void ConcurrentSkipListSet::__constructor(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.concurrent.ConcurrentSkipListSet",
-			"(Ljava/util/SortedSet;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void ConcurrentSkipListSet::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.concurrent.ConcurrentSkipListSet",
 			"()V"
+		);
+	}
+	void ConcurrentSkipListSet::__constructor(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.concurrent.ConcurrentSkipListSet",
+			"(Ljava/util/Collection;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	
@@ -87,20 +87,19 @@ namespace __jni_impl::java::util::concurrent
 			arg0
 		);
 	}
-	jboolean ConcurrentSkipListSet::remove(jobject arg0)
+	jobject ConcurrentSkipListSet::ceiling(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"remove",
-			"(Ljava/lang/Object;)Z",
+		return __thiz.callObjectMethod(
+			"ceiling",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
-		);
+		).object<jobject>();
 	}
-	jboolean ConcurrentSkipListSet::equals(jobject arg0)
+	void ConcurrentSkipListSet::clear()
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
+		__thiz.callMethod<void>(
+			"clear",
+			"()V"
 		);
 	}
 	QAndroidJniObject ConcurrentSkipListSet::clone()
@@ -110,32 +109,11 @@ namespace __jni_impl::java::util::concurrent
 			"()Ljava/util/concurrent/ConcurrentSkipListSet;"
 		);
 	}
-	void ConcurrentSkipListSet::clear()
-	{
-		__thiz.callMethod<void>(
-			"clear",
-			"()V"
-		);
-	}
-	jboolean ConcurrentSkipListSet::isEmpty()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEmpty",
-			"()Z"
-		);
-	}
-	jint ConcurrentSkipListSet::size()
-	{
-		return __thiz.callMethod<jint>(
-			"size",
-			"()I"
-		);
-	}
-	QAndroidJniObject ConcurrentSkipListSet::iterator()
+	QAndroidJniObject ConcurrentSkipListSet::comparator()
 	{
 		return __thiz.callObjectMethod(
-			"iterator",
-			"()Ljava/util/Iterator;"
+			"comparator",
+			"()Ljava/util/Comparator;"
 		);
 	}
 	jboolean ConcurrentSkipListSet::contains(jobject arg0)
@@ -146,18 +124,26 @@ namespace __jni_impl::java::util::concurrent
 			arg0
 		);
 	}
-	jobject ConcurrentSkipListSet::last()
+	QAndroidJniObject ConcurrentSkipListSet::descendingIterator()
 	{
 		return __thiz.callObjectMethod(
-			"last",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
+			"descendingIterator",
+			"()Ljava/util/Iterator;"
+		);
 	}
-	QAndroidJniObject ConcurrentSkipListSet::spliterator()
+	QAndroidJniObject ConcurrentSkipListSet::descendingSet()
 	{
 		return __thiz.callObjectMethod(
-			"spliterator",
-			"()Ljava/util/Spliterator;"
+			"descendingSet",
+			"()Ljava/util/NavigableSet;"
+		);
+	}
+	jboolean ConcurrentSkipListSet::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 	jobject ConcurrentSkipListSet::first()
@@ -167,33 +153,64 @@ namespace __jni_impl::java::util::concurrent
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	jobject ConcurrentSkipListSet::lower(jobject arg0)
-	{
-		return __thiz.callObjectMethod(
-			"lower",
-			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
-	}
-	QAndroidJniObject ConcurrentSkipListSet::comparator()
-	{
-		return __thiz.callObjectMethod(
-			"comparator",
-			"()Ljava/util/Comparator;"
-		);
-	}
-	jboolean ConcurrentSkipListSet::removeAll(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"removeAll",
-			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
-		);
-	}
 	jobject ConcurrentSkipListSet::floor(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
 			"floor",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0
+		).object<jobject>();
+	}
+	QAndroidJniObject ConcurrentSkipListSet::headSet(jobject arg0)
+	{
+		return __thiz.callObjectMethod(
+			"headSet",
+			"(Ljava/lang/Object;)Ljava/util/NavigableSet;",
+			arg0
+		);
+	}
+	QAndroidJniObject ConcurrentSkipListSet::headSet(jobject arg0, jboolean arg1)
+	{
+		return __thiz.callObjectMethod(
+			"headSet",
+			"(Ljava/lang/Object;Z)Ljava/util/NavigableSet;",
+			arg0,
+			arg1
+		);
+	}
+	jobject ConcurrentSkipListSet::higher(jobject arg0)
+	{
+		return __thiz.callObjectMethod(
+			"higher",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0
+		).object<jobject>();
+	}
+	jboolean ConcurrentSkipListSet::isEmpty()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEmpty",
+			"()Z"
+		);
+	}
+	QAndroidJniObject ConcurrentSkipListSet::iterator()
+	{
+		return __thiz.callObjectMethod(
+			"iterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	jobject ConcurrentSkipListSet::last()
+	{
+		return __thiz.callObjectMethod(
+			"last",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jobject ConcurrentSkipListSet::lower(jobject arg0)
+	{
+		return __thiz.callObjectMethod(
+			"lower",
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
 		).object<jobject>();
@@ -212,11 +229,34 @@ namespace __jni_impl::java::util::concurrent
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	QAndroidJniObject ConcurrentSkipListSet::descendingIterator()
+	jboolean ConcurrentSkipListSet::remove(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"remove",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jboolean ConcurrentSkipListSet::removeAll(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"removeAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jint ConcurrentSkipListSet::size()
+	{
+		return __thiz.callMethod<jint>(
+			"size",
+			"()I"
+		);
+	}
+	QAndroidJniObject ConcurrentSkipListSet::spliterator()
 	{
 		return __thiz.callObjectMethod(
-			"descendingIterator",
-			"()Ljava/util/Iterator;"
+			"spliterator",
+			"()Ljava/util/Spliterator;"
 		);
 	}
 	QAndroidJniObject ConcurrentSkipListSet::subSet(jobject arg0, jobject arg1)
@@ -239,21 +279,12 @@ namespace __jni_impl::java::util::concurrent
 			arg3
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListSet::headSet(jobject arg0)
+	QAndroidJniObject ConcurrentSkipListSet::tailSet(jobject arg0)
 	{
 		return __thiz.callObjectMethod(
-			"headSet",
+			"tailSet",
 			"(Ljava/lang/Object;)Ljava/util/NavigableSet;",
 			arg0
-		);
-	}
-	QAndroidJniObject ConcurrentSkipListSet::headSet(jobject arg0, jboolean arg1)
-	{
-		return __thiz.callObjectMethod(
-			"headSet",
-			"(Ljava/lang/Object;Z)Ljava/util/NavigableSet;",
-			arg0,
-			arg1
 		);
 	}
 	QAndroidJniObject ConcurrentSkipListSet::tailSet(jobject arg0, jboolean arg1)
@@ -265,37 +296,6 @@ namespace __jni_impl::java::util::concurrent
 			arg1
 		);
 	}
-	QAndroidJniObject ConcurrentSkipListSet::tailSet(jobject arg0)
-	{
-		return __thiz.callObjectMethod(
-			"tailSet",
-			"(Ljava/lang/Object;)Ljava/util/NavigableSet;",
-			arg0
-		);
-	}
-	jobject ConcurrentSkipListSet::ceiling(jobject arg0)
-	{
-		return __thiz.callObjectMethod(
-			"ceiling",
-			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
-	}
-	jobject ConcurrentSkipListSet::higher(jobject arg0)
-	{
-		return __thiz.callObjectMethod(
-			"higher",
-			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
-	}
-	QAndroidJniObject ConcurrentSkipListSet::descendingSet()
-	{
-		return __thiz.callObjectMethod(
-			"descendingSet",
-			"()Ljava/util/NavigableSet;"
-		);
-	}
 } // namespace __jni_impl::java::util::concurrent
 
 namespace java::util::concurrent
@@ -304,14 +304,14 @@ namespace java::util::concurrent
 	{
 	public:
 		ConcurrentSkipListSet(QAndroidJniObject obj) { __thiz = obj; }
+		ConcurrentSkipListSet()
+		{
+			__constructor();
+		}
 		ConcurrentSkipListSet(__jni_impl::__JniBaseClass arg0)
 		{
 			__constructor(
 				arg0);
-		}
-		ConcurrentSkipListSet()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::util::concurrent

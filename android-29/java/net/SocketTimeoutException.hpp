@@ -17,9 +17,9 @@ namespace __jni_impl::java::net
 		// Fields
 		
 		// Constructors
+		void __constructor();
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor();
 		
 		// Methods
 	};
@@ -31,6 +31,13 @@ namespace __jni_impl::java::net
 	// Fields
 	
 	// Constructors
+	void SocketTimeoutException::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.net.SocketTimeoutException",
+			"()V"
+		);
+	}
 	void SocketTimeoutException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -47,13 +54,6 @@ namespace __jni_impl::java::net
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void SocketTimeoutException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.net.SocketTimeoutException",
-			"()V"
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::java::net
@@ -64,14 +64,14 @@ namespace java::net
 	{
 	public:
 		SocketTimeoutException(QAndroidJniObject obj) { __thiz = obj; }
+		SocketTimeoutException()
+		{
+			__constructor();
+		}
 		SocketTimeoutException(jstring arg0)
 		{
 			__constructor(
 				arg0);
-		}
-		SocketTimeoutException()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::net

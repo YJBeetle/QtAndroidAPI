@@ -23,24 +23,24 @@ namespace __jni_impl::java::io
 		void __constructor(__jni_impl::java::io::OutputStream arg0);
 		
 		// Methods
+		void flush();
 		jint size();
 		void write(jint arg0);
 		void write(jbyteArray arg0, jint arg1, jint arg2);
-		void flush();
-		void writeInt(jint arg0);
-		void writeUTF(jstring arg0);
-		void writeUTF(const QString &arg0);
-		void writeFloat(jfloat arg0);
-		void writeBytes(jstring arg0);
-		void writeBytes(const QString &arg0);
-		void writeLong(jlong arg0);
 		void writeBoolean(jboolean arg0);
 		void writeByte(jint arg0);
-		void writeShort(jint arg0);
-		void writeDouble(jdouble arg0);
+		void writeBytes(jstring arg0);
+		void writeBytes(const QString &arg0);
+		void writeChar(jint arg0);
 		void writeChars(jstring arg0);
 		void writeChars(const QString &arg0);
-		void writeChar(jint arg0);
+		void writeDouble(jdouble arg0);
+		void writeFloat(jfloat arg0);
+		void writeInt(jint arg0);
+		void writeLong(jlong arg0);
+		void writeShort(jint arg0);
+		void writeUTF(jstring arg0);
+		void writeUTF(const QString &arg0);
 	};
 } // namespace __jni_impl::java::io
 
@@ -61,6 +61,13 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
+	void DataOutputStream::flush()
+	{
+		__thiz.callMethod<void>(
+			"flush",
+			"()V"
+		);
+	}
 	jint DataOutputStream::size()
 	{
 		return __thiz.callMethod<jint>(
@@ -86,42 +93,19 @@ namespace __jni_impl::java::io
 			arg2
 		);
 	}
-	void DataOutputStream::flush()
+	void DataOutputStream::writeBoolean(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
-			"flush",
-			"()V"
+			"writeBoolean",
+			"(Z)V",
+			arg0
 		);
 	}
-	void DataOutputStream::writeInt(jint arg0)
+	void DataOutputStream::writeByte(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"writeInt",
+			"writeByte",
 			"(I)V",
-			arg0
-		);
-	}
-	void DataOutputStream::writeUTF(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"writeUTF",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void DataOutputStream::writeUTF(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"writeUTF",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void DataOutputStream::writeFloat(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"writeFloat",
-			"(F)V",
 			arg0
 		);
 	}
@@ -141,43 +125,11 @@ namespace __jni_impl::java::io
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void DataOutputStream::writeLong(jlong arg0)
+	void DataOutputStream::writeChar(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"writeLong",
-			"(J)V",
-			arg0
-		);
-	}
-	void DataOutputStream::writeBoolean(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"writeBoolean",
-			"(Z)V",
-			arg0
-		);
-	}
-	void DataOutputStream::writeByte(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"writeByte",
+			"writeChar",
 			"(I)V",
-			arg0
-		);
-	}
-	void DataOutputStream::writeShort(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"writeShort",
-			"(I)V",
-			arg0
-		);
-	}
-	void DataOutputStream::writeDouble(jdouble arg0)
-	{
-		__thiz.callMethod<void>(
-			"writeDouble",
-			"(D)V",
 			arg0
 		);
 	}
@@ -197,12 +149,60 @@ namespace __jni_impl::java::io
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void DataOutputStream::writeChar(jint arg0)
+	void DataOutputStream::writeDouble(jdouble arg0)
 	{
 		__thiz.callMethod<void>(
-			"writeChar",
+			"writeDouble",
+			"(D)V",
+			arg0
+		);
+	}
+	void DataOutputStream::writeFloat(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"writeFloat",
+			"(F)V",
+			arg0
+		);
+	}
+	void DataOutputStream::writeInt(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"writeInt",
 			"(I)V",
 			arg0
+		);
+	}
+	void DataOutputStream::writeLong(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"writeLong",
+			"(J)V",
+			arg0
+		);
+	}
+	void DataOutputStream::writeShort(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"writeShort",
+			"(I)V",
+			arg0
+		);
+	}
+	void DataOutputStream::writeUTF(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"writeUTF",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void DataOutputStream::writeUTF(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"writeUTF",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::java::io

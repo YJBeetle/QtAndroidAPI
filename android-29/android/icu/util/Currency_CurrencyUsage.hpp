@@ -13,16 +13,16 @@ namespace __jni_impl::android::icu::util
 	{
 	public:
 		// Fields
-		static QAndroidJniObject STANDARD();
 		static QAndroidJniObject CASH();
+		static QAndroidJniObject STANDARD();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::icu::util
 
@@ -30,19 +30,19 @@ namespace __jni_impl::android::icu::util
 namespace __jni_impl::android::icu::util
 {
 	// Fields
-	QAndroidJniObject Currency_CurrencyUsage::STANDARD()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.util.Currency$CurrencyUsage",
-			"STANDARD",
-			"Landroid/icu/util/Currency$CurrencyUsage;"
-		);
-	}
 	QAndroidJniObject Currency_CurrencyUsage::CASH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.util.Currency$CurrencyUsage",
 			"CASH",
+			"Landroid/icu/util/Currency$CurrencyUsage;"
+		);
+	}
+	QAndroidJniObject Currency_CurrencyUsage::STANDARD()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.util.Currency$CurrencyUsage",
+			"STANDARD",
 			"Landroid/icu/util/Currency$CurrencyUsage;"
 		);
 	}
@@ -56,14 +56,6 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Methods
-	jarray Currency_CurrencyUsage::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.Currency$CurrencyUsage",
-			"values",
-			"()[Landroid/icu/util/Currency$CurrencyUsage;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Currency_CurrencyUsage::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -81,6 +73,14 @@ namespace __jni_impl::android::icu::util
 			"(Ljava/lang/String;)Landroid/icu/util/Currency$CurrencyUsage;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Currency_CurrencyUsage::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.Currency$CurrencyUsage",
+			"values",
+			"()[Landroid/icu/util/Currency$CurrencyUsage;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::icu::util
 

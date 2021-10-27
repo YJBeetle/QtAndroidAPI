@@ -22,9 +22,9 @@ namespace __jni_impl::android::webkit
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
+		jlong getBoundary(jint arg0);
 		jint getIndex(jlong arg0);
 		jstring getLabel(jint arg0);
-		jlong getBoundary(jint arg0);
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -52,6 +52,14 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
+	jlong DateSorter::getBoundary(jint arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"getBoundary",
+			"(I)J",
+			arg0
+		);
+	}
 	jint DateSorter::getIndex(jlong arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -67,14 +75,6 @@ namespace __jni_impl::android::webkit
 			"(I)Ljava/lang/String;",
 			arg0
 		).object<jstring>();
-	}
-	jlong DateSorter::getBoundary(jint arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"getBoundary",
-			"(I)J",
-			arg0
-		);
 	}
 } // namespace __jni_impl::android::webkit
 

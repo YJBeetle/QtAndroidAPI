@@ -6,13 +6,13 @@
 #include "../../../__JniBaseClass.hpp"
 #include "CharacterStyle.hpp"
 
-namespace __jni_impl::android::text::style
-{
-	class CharacterStyle;
-}
 namespace __jni_impl::android::text
 {
 	class TextPaint;
+}
+namespace __jni_impl::android::text::style
+{
+	class CharacterStyle;
 }
 
 namespace __jni_impl::android::text::style
@@ -31,8 +31,8 @@ namespace __jni_impl::android::text::style
 	};
 } // namespace __jni_impl::android::text::style
 
-#include "CharacterStyle.hpp"
 #include "../TextPaint.hpp"
+#include "CharacterStyle.hpp"
 
 namespace __jni_impl::android::text::style
 {

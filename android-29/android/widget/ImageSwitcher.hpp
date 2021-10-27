@@ -14,13 +14,13 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::net
-{
-	class Uri;
-}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
+}
+namespace __jni_impl::android::net
+{
+	class Uri;
 }
 
 namespace __jni_impl::android::widget
@@ -36,15 +36,15 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		jstring getAccessibilityClassName();
+		void setImageDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 		void setImageResource(jint arg0);
 		void setImageURI(__jni_impl::android::net::Uri arg0);
-		void setImageDrawable(__jni_impl::android::graphics::drawable::Drawable arg0);
 	};
 } // namespace __jni_impl::android::widget
 
 #include "../content/Context.hpp"
-#include "../net/Uri.hpp"
 #include "../graphics/drawable/Drawable.hpp"
+#include "../net/Uri.hpp"
 
 namespace __jni_impl::android::widget
 {
@@ -77,6 +77,14 @@ namespace __jni_impl::android::widget
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
+	void ImageSwitcher::setImageDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
+	{
+		__thiz.callMethod<void>(
+			"setImageDrawable",
+			"(Landroid/graphics/drawable/Drawable;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void ImageSwitcher::setImageResource(jint arg0)
 	{
 		__thiz.callMethod<void>(
@@ -90,14 +98,6 @@ namespace __jni_impl::android::widget
 		__thiz.callMethod<void>(
 			"setImageURI",
 			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ImageSwitcher::setImageDrawable(__jni_impl::android::graphics::drawable::Drawable arg0)
-	{
-		__thiz.callMethod<void>(
-			"setImageDrawable",
-			"(Landroid/graphics/drawable/Drawable;)V",
 			arg0.__jniObject().object()
 		);
 	}

@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::javax::crypto
-{
-	class Cipher;
-}
 namespace __jni_impl::java::io
 {
 	class ObjectInputStream;
+}
+namespace __jni_impl::javax::crypto
+{
+	class Cipher;
 }
 
 namespace __jni_impl::javax::crypto
@@ -25,16 +25,16 @@ namespace __jni_impl::javax::crypto
 		void __constructor(__jni_impl::__JniBaseClass arg0, __jni_impl::javax::crypto::Cipher arg1);
 		
 		// Methods
-		jobject getObject(__jni_impl::__JniBaseClass arg0, jstring arg1);
-		jobject getObject(__jni_impl::__JniBaseClass arg0, const QString &arg1);
+		jstring getAlgorithm();
 		jobject getObject(__jni_impl::__JniBaseClass arg0);
 		jobject getObject(__jni_impl::javax::crypto::Cipher arg0);
-		jstring getAlgorithm();
+		jobject getObject(__jni_impl::__JniBaseClass arg0, jstring arg1);
+		jobject getObject(__jni_impl::__JniBaseClass arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::javax::crypto
 
-#include "Cipher.hpp"
 #include "../../java/io/ObjectInputStream.hpp"
+#include "Cipher.hpp"
 
 namespace __jni_impl::javax::crypto
 {
@@ -52,23 +52,12 @@ namespace __jni_impl::javax::crypto
 	}
 	
 	// Methods
-	jobject SealedObject::getObject(__jni_impl::__JniBaseClass arg0, jstring arg1)
+	jstring SealedObject::getAlgorithm()
 	{
 		return __thiz.callObjectMethod(
-			"getObject",
-			"(Ljava/security/Key;Ljava/lang/String;)Ljava/lang/Object;",
-			arg0.__jniObject().object(),
-			arg1
-		).object<jobject>();
-	}
-	jobject SealedObject::getObject(__jni_impl::__JniBaseClass arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getObject",
-			"(Ljava/security/Key;Ljava/lang/String;)Ljava/lang/Object;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		).object<jobject>();
+			"getAlgorithm",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jobject SealedObject::getObject(__jni_impl::__JniBaseClass arg0)
 	{
@@ -86,12 +75,23 @@ namespace __jni_impl::javax::crypto
 			arg0.__jniObject().object()
 		).object<jobject>();
 	}
-	jstring SealedObject::getAlgorithm()
+	jobject SealedObject::getObject(__jni_impl::__JniBaseClass arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
-			"getAlgorithm",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getObject",
+			"(Ljava/security/Key;Ljava/lang/String;)Ljava/lang/Object;",
+			arg0.__jniObject().object(),
+			arg1
+		).object<jobject>();
+	}
+	jobject SealedObject::getObject(__jni_impl::__JniBaseClass arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getObject",
+			"(Ljava/security/Key;Ljava/lang/String;)Ljava/lang/Object;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		).object<jobject>();
 	}
 } // namespace __jni_impl::javax::crypto
 

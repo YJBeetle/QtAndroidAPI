@@ -18,10 +18,10 @@ namespace __jni_impl::android::security::keystore
 		void __constructor(jbyteArray arg0, const QString &arg1, const QString &arg2, __jni_impl::__JniBaseClass arg3);
 		
 		// Methods
-		jbyteArray getWrappedKeyBytes();
-		jstring getWrappingKeyAlias();
 		QAndroidJniObject getAlgorithmParameterSpec();
 		jstring getTransformation();
+		jbyteArray getWrappedKeyBytes();
+		jstring getWrappingKeyAlias();
 	};
 } // namespace __jni_impl::android::security::keystore
 
@@ -55,20 +55,6 @@ namespace __jni_impl::android::security::keystore
 	}
 	
 	// Methods
-	jbyteArray WrappedKeyEntry::getWrappedKeyBytes()
-	{
-		return __thiz.callObjectMethod(
-			"getWrappedKeyBytes",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	jstring WrappedKeyEntry::getWrappingKeyAlias()
-	{
-		return __thiz.callObjectMethod(
-			"getWrappingKeyAlias",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject WrappedKeyEntry::getAlgorithmParameterSpec()
 	{
 		return __thiz.callObjectMethod(
@@ -80,6 +66,20 @@ namespace __jni_impl::android::security::keystore
 	{
 		return __thiz.callObjectMethod(
 			"getTransformation",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jbyteArray WrappedKeyEntry::getWrappedKeyBytes()
+	{
+		return __thiz.callObjectMethod(
+			"getWrappedKeyBytes",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jstring WrappedKeyEntry::getWrappingKeyAlias()
+	{
+		return __thiz.callObjectMethod(
+			"getWrappingKeyAlias",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

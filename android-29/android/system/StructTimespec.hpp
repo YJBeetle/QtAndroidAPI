@@ -19,11 +19,11 @@ namespace __jni_impl::android::system
 		void __constructor(jlong arg0, jlong arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jint compareTo(__jni_impl::android::system::StructTimespec arg0);
 		jint compareTo(jobject arg0);
+		jboolean equals(jobject arg0);
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::system
 
@@ -56,28 +56,6 @@ namespace __jni_impl::android::system
 	}
 	
 	// Methods
-	jboolean StructTimespec::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring StructTimespec::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint StructTimespec::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	jint StructTimespec::compareTo(__jni_impl::android::system::StructTimespec arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -93,6 +71,28 @@ namespace __jni_impl::android::system
 			"(Ljava/lang/Object;)I",
 			arg0
 		);
+	}
+	jboolean StructTimespec::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jint StructTimespec::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring StructTimespec::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::system
 

@@ -6,10 +6,6 @@
 #include "../../../__JniBaseClass.hpp"
 #include "../../../java/lang/Exception.hpp"
 
-namespace __jni_impl::java::lang
-{
-	class Exception;
-}
 namespace __jni_impl::java::io
 {
 	class ObjectInputStream;
@@ -17,6 +13,10 @@ namespace __jni_impl::java::io
 namespace __jni_impl::java::io
 {
 	class ObjectOutputStream;
+}
+namespace __jni_impl::java::lang
+{
+	class Exception;
 }
 
 namespace __jni_impl::org::xml::sax
@@ -27,46 +27,35 @@ namespace __jni_impl::org::xml::sax
 		// Fields
 		
 		// Constructors
-		void __constructor(jstring arg0, __jni_impl::java::lang::Exception arg1);
-		void __constructor(const QString &arg0, __jni_impl::java::lang::Exception arg1);
+		void __constructor();
 		void __constructor(__jni_impl::java::lang::Exception arg0);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor();
+		void __constructor(jstring arg0, __jni_impl::java::lang::Exception arg1);
+		void __constructor(const QString &arg0, __jni_impl::java::lang::Exception arg1);
 		
 		// Methods
 		jthrowable getCause();
-		jstring toString();
-		jstring getMessage();
 		QAndroidJniObject getException();
+		jstring getMessage();
+		jstring toString();
 	};
 } // namespace __jni_impl::org::xml::sax
 
-#include "../../../java/lang/Exception.hpp"
 #include "../../../java/io/ObjectInputStream.hpp"
 #include "../../../java/io/ObjectOutputStream.hpp"
+#include "../../../java/lang/Exception.hpp"
 
 namespace __jni_impl::org::xml::sax
 {
 	// Fields
 	
 	// Constructors
-	void SAXException::__constructor(jstring arg0, __jni_impl::java::lang::Exception arg1)
+	void SAXException::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.SAXException",
-			"(Ljava/lang/String;Ljava/lang/Exception;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void SAXException::__constructor(const QString &arg0, __jni_impl::java::lang::Exception arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"org.xml.sax.SAXException",
-			"(Ljava/lang/String;Ljava/lang/Exception;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
+			"()V"
 		);
 	}
 	void SAXException::__constructor(__jni_impl::java::lang::Exception arg0)
@@ -93,11 +82,22 @@ namespace __jni_impl::org::xml::sax
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void SAXException::__constructor()
+	void SAXException::__constructor(jstring arg0, __jni_impl::java::lang::Exception arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"org.xml.sax.SAXException",
-			"()V"
+			"(Ljava/lang/String;Ljava/lang/Exception;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void SAXException::__constructor(const QString &arg0, __jni_impl::java::lang::Exception arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"org.xml.sax.SAXException",
+			"(Ljava/lang/String;Ljava/lang/Exception;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
 		);
 	}
 	
@@ -109,12 +109,12 @@ namespace __jni_impl::org::xml::sax
 			"()Ljava/lang/Throwable;"
 		).object<jthrowable>();
 	}
-	jstring SAXException::toString()
+	QAndroidJniObject SAXException::getException()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getException",
+			"()Ljava/lang/Exception;"
+		);
 	}
 	jstring SAXException::getMessage()
 	{
@@ -123,12 +123,12 @@ namespace __jni_impl::org::xml::sax
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject SAXException::getException()
+	jstring SAXException::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getException",
-			"()Ljava/lang/Exception;"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::org::xml::sax
 
@@ -138,11 +138,9 @@ namespace org::xml::sax
 	{
 	public:
 		SAXException(QAndroidJniObject obj) { __thiz = obj; }
-		SAXException(jstring arg0, __jni_impl::java::lang::Exception arg1)
+		SAXException()
 		{
-			__constructor(
-				arg0,
-				arg1);
+			__constructor();
 		}
 		SAXException(__jni_impl::java::lang::Exception arg0)
 		{
@@ -154,9 +152,11 @@ namespace org::xml::sax
 			__constructor(
 				arg0);
 		}
-		SAXException()
+		SAXException(jstring arg0, __jni_impl::java::lang::Exception arg1)
 		{
-			__constructor();
+			__constructor(
+				arg0,
+				arg1);
 		}
 	};
 } // namespace org::xml::sax

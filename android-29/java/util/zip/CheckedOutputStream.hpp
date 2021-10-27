@@ -23,9 +23,9 @@ namespace __jni_impl::java::util::zip
 		void __constructor(__jni_impl::java::io::OutputStream arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		void write(jbyteArray arg0, jint arg1, jint arg2);
-		void write(jint arg0);
 		QAndroidJniObject getChecksum();
+		void write(jint arg0);
+		void write(jbyteArray arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::java::util::zip
 
@@ -47,14 +47,11 @@ namespace __jni_impl::java::util::zip
 	}
 	
 	// Methods
-	void CheckedOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
+	QAndroidJniObject CheckedOutputStream::getChecksum()
 	{
-		__thiz.callMethod<void>(
-			"write",
-			"([BII)V",
-			arg0,
-			arg1,
-			arg2
+		return __thiz.callObjectMethod(
+			"getChecksum",
+			"()Ljava/util/zip/Checksum;"
 		);
 	}
 	void CheckedOutputStream::write(jint arg0)
@@ -65,11 +62,14 @@ namespace __jni_impl::java::util::zip
 			arg0
 		);
 	}
-	QAndroidJniObject CheckedOutputStream::getChecksum()
+	void CheckedOutputStream::write(jbyteArray arg0, jint arg1, jint arg2)
 	{
-		return __thiz.callObjectMethod(
-			"getChecksum",
-			"()Ljava/util/zip/Checksum;"
+		__thiz.callMethod<void>(
+			"write",
+			"([BII)V",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 } // namespace __jni_impl::java::util::zip

@@ -16,8 +16,8 @@ namespace __jni_impl::android::database
 		jint sizeCopied();
 		
 		// Constructors
-		void __constructor(jint arg0);
 		void __constructor(jcharArray arg0);
+		void __constructor(jint arg0);
 		
 		// Methods
 	};
@@ -42,19 +42,19 @@ namespace __jni_impl::android::database
 	}
 	
 	// Constructors
-	void CharArrayBuffer::__constructor(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.database.CharArrayBuffer",
-			"(I)V",
-			arg0
-		);
-	}
 	void CharArrayBuffer::__constructor(jcharArray arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.database.CharArrayBuffer",
 			"([C)V",
+			arg0
+		);
+	}
+	void CharArrayBuffer::__constructor(jint arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.database.CharArrayBuffer",
+			"(I)V",
 			arg0
 		);
 	}
@@ -68,12 +68,12 @@ namespace android::database
 	{
 	public:
 		CharArrayBuffer(QAndroidJniObject obj) { __thiz = obj; }
-		CharArrayBuffer(jint arg0)
+		CharArrayBuffer(jcharArray arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		CharArrayBuffer(jcharArray arg0)
+		CharArrayBuffer(jint arg0)
 		{
 			__constructor(
 				arg0);

@@ -6,10 +6,6 @@
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Thread.hpp"
 
-namespace __jni_impl::java::util::concurrent
-{
-	class ForkJoinPool;
-}
 namespace __jni_impl::java::lang
 {
 	class ClassLoader;
@@ -21,6 +17,10 @@ namespace __jni_impl::java::lang
 namespace __jni_impl::java::security
 {
 	class AccessControlContext;
+}
+namespace __jni_impl::java::util::concurrent
+{
+	class ForkJoinPool;
 }
 
 namespace __jni_impl::java::util::concurrent
@@ -34,16 +34,16 @@ namespace __jni_impl::java::util::concurrent
 		void __constructor();
 		
 		// Methods
-		void run();
-		jint getPoolIndex();
 		QAndroidJniObject getPool();
+		jint getPoolIndex();
+		void run();
 	};
 } // namespace __jni_impl::java::util::concurrent
 
-#include "ForkJoinPool.hpp"
 #include "../../lang/ClassLoader.hpp"
 #include "../../lang/ThreadGroup.hpp"
 #include "../../security/AccessControlContext.hpp"
+#include "ForkJoinPool.hpp"
 
 namespace __jni_impl::java::util::concurrent
 {
@@ -58,11 +58,11 @@ namespace __jni_impl::java::util::concurrent
 	}
 	
 	// Methods
-	void ForkJoinWorkerThread::run()
+	QAndroidJniObject ForkJoinWorkerThread::getPool()
 	{
-		__thiz.callMethod<void>(
-			"run",
-			"()V"
+		return __thiz.callObjectMethod(
+			"getPool",
+			"()Ljava/util/concurrent/ForkJoinPool;"
 		);
 	}
 	jint ForkJoinWorkerThread::getPoolIndex()
@@ -72,11 +72,11 @@ namespace __jni_impl::java::util::concurrent
 			"()I"
 		);
 	}
-	QAndroidJniObject ForkJoinWorkerThread::getPool()
+	void ForkJoinWorkerThread::run()
 	{
-		return __thiz.callObjectMethod(
-			"getPool",
-			"()Ljava/util/concurrent/ForkJoinPool;"
+		__thiz.callMethod<void>(
+			"run",
+			"()V"
 		);
 	}
 } // namespace __jni_impl::java::util::concurrent

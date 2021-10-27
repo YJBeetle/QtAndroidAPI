@@ -21,8 +21,8 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jarray getSupportedSchemes();
 		QAndroidJniObject getPssh();
+		jarray getSupportedSchemes();
 	};
 } // namespace __jni_impl::android::media
 
@@ -41,19 +41,19 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jarray MediaPlayer_DrmInfo::getSupportedSchemes()
-	{
-		return __thiz.callObjectMethod(
-			"getSupportedSchemes",
-			"()[Ljava/util/UUID;"
-		).object<jarray>();
-	}
 	QAndroidJniObject MediaPlayer_DrmInfo::getPssh()
 	{
 		return __thiz.callObjectMethod(
 			"getPssh",
 			"()Ljava/util/Map;"
 		);
+	}
+	jarray MediaPlayer_DrmInfo::getSupportedSchemes()
+	{
+		return __thiz.callObjectMethod(
+			"getSupportedSchemes",
+			"()[Ljava/util/UUID;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::media
 

@@ -12,9 +12,9 @@ namespace __jni_impl::java::util
 	{
 	public:
 		// Fields
+		static jint ALTERNATE();
 		static jint LEFT_JUSTIFY();
 		static jint UPPERCASE();
-		static jint ALTERNATE();
 		
 		// Constructors
 		void __constructor();
@@ -27,6 +27,13 @@ namespace __jni_impl::java::util
 namespace __jni_impl::java::util
 {
 	// Fields
+	jint FormattableFlags::ALTERNATE()
+	{
+		return QAndroidJniObject::getStaticField<jint>(
+			"java.util.FormattableFlags",
+			"ALTERNATE"
+		);
+	}
 	jint FormattableFlags::LEFT_JUSTIFY()
 	{
 		return QAndroidJniObject::getStaticField<jint>(
@@ -39,13 +46,6 @@ namespace __jni_impl::java::util
 		return QAndroidJniObject::getStaticField<jint>(
 			"java.util.FormattableFlags",
 			"UPPERCASE"
-		);
-	}
-	jint FormattableFlags::ALTERNATE()
-	{
-		return QAndroidJniObject::getStaticField<jint>(
-			"java.util.FormattableFlags",
-			"ALTERNATE"
 		);
 	}
 	

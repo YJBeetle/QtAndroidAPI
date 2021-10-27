@@ -18,12 +18,12 @@ namespace __jni_impl::android::hardware
 		
 		// Methods
 		jfloat getDeclination();
-		jfloat getHorizontalStrength();
 		jfloat getFieldStrength();
+		jfloat getHorizontalStrength();
+		jfloat getInclination();
 		jfloat getX();
 		jfloat getY();
 		jfloat getZ();
-		jfloat getInclination();
 	};
 } // namespace __jni_impl::android::hardware
 
@@ -53,6 +53,13 @@ namespace __jni_impl::android::hardware
 			"()F"
 		);
 	}
+	jfloat GeomagneticField::getFieldStrength()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getFieldStrength",
+			"()F"
+		);
+	}
 	jfloat GeomagneticField::getHorizontalStrength()
 	{
 		return __thiz.callMethod<jfloat>(
@@ -60,10 +67,10 @@ namespace __jni_impl::android::hardware
 			"()F"
 		);
 	}
-	jfloat GeomagneticField::getFieldStrength()
+	jfloat GeomagneticField::getInclination()
 	{
 		return __thiz.callMethod<jfloat>(
-			"getFieldStrength",
+			"getInclination",
 			"()F"
 		);
 	}
@@ -85,13 +92,6 @@ namespace __jni_impl::android::hardware
 	{
 		return __thiz.callMethod<jfloat>(
 			"getZ",
-			"()F"
-		);
-	}
-	jfloat GeomagneticField::getInclination()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getInclination",
 			"()F"
 		);
 	}

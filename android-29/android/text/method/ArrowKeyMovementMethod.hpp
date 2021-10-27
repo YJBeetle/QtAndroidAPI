@@ -6,10 +6,6 @@
 #include "../../../__JniBaseClass.hpp"
 #include "BaseMovementMethod.hpp"
 
-namespace __jni_impl::android::widget
-{
-	class TextView;
-}
 namespace __jni_impl::android::view
 {
 	class KeyEvent;
@@ -17,6 +13,10 @@ namespace __jni_impl::android::view
 namespace __jni_impl::android::view
 {
 	class MotionEvent;
+}
+namespace __jni_impl::android::widget
+{
+	class TextView;
 }
 
 namespace __jni_impl::android::text::method
@@ -31,16 +31,16 @@ namespace __jni_impl::android::text::method
 		
 		// Methods
 		static QAndroidJniObject getInstance();
-		void initialize(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1);
 		jboolean canSelectArbitrarily();
+		void initialize(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1);
 		void onTakeFocus(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2);
 		jboolean onTouchEvent(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::view::MotionEvent arg2);
 	};
 } // namespace __jni_impl::android::text::method
 
-#include "../../widget/TextView.hpp"
 #include "../../view/KeyEvent.hpp"
 #include "../../view/MotionEvent.hpp"
+#include "../../widget/TextView.hpp"
 
 namespace __jni_impl::android::text::method
 {
@@ -64,6 +64,13 @@ namespace __jni_impl::android::text::method
 			"()Landroid/text/method/MovementMethod;"
 		);
 	}
+	jboolean ArrowKeyMovementMethod::canSelectArbitrarily()
+	{
+		return __thiz.callMethod<jboolean>(
+			"canSelectArbitrarily",
+			"()Z"
+		);
+	}
 	void ArrowKeyMovementMethod::initialize(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz.callMethod<void>(
@@ -71,13 +78,6 @@ namespace __jni_impl::android::text::method
 			"(Landroid/widget/TextView;Landroid/text/Spannable;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	jboolean ArrowKeyMovementMethod::canSelectArbitrarily()
-	{
-		return __thiz.callMethod<jboolean>(
-			"canSelectArbitrarily",
-			"()Z"
 		);
 	}
 	void ArrowKeyMovementMethod::onTakeFocus(__jni_impl::android::widget::TextView arg0, __jni_impl::__JniBaseClass arg1, jint arg2)

@@ -24,8 +24,8 @@ namespace __jni_impl::android::webkit
 		// Methods
 		jint lineNumber();
 		jstring message();
-		jstring sourceId();
 		QAndroidJniObject messageLevel();
+		jstring sourceId();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -74,19 +74,19 @@ namespace __jni_impl::android::webkit
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jstring ConsoleMessage::sourceId()
-	{
-		return __thiz.callObjectMethod(
-			"sourceId",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject ConsoleMessage::messageLevel()
 	{
 		return __thiz.callObjectMethod(
 			"messageLevel",
 			"()Landroid/webkit/ConsoleMessage$MessageLevel;"
 		);
+	}
+	jstring ConsoleMessage::sourceId()
+	{
+		return __thiz.callObjectMethod(
+			"sourceId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::webkit
 

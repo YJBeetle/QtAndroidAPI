@@ -11,11 +11,11 @@ namespace __jni_impl::android::os
 }
 namespace __jni_impl::android::print
 {
-	class PrinterId;
+	class PrinterCapabilitiesInfo;
 }
 namespace __jni_impl::android::print
 {
-	class PrinterCapabilitiesInfo;
+	class PrinterId;
 }
 
 namespace __jni_impl::android::print
@@ -33,22 +33,22 @@ namespace __jni_impl::android::print
 		void __constructor();
 		
 		// Methods
-		jstring getName();
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		QAndroidJniObject getId();
-		jint getStatus();
-		jstring getDescription();
-		QAndroidJniObject getCapabilities();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		QAndroidJniObject getCapabilities();
+		jstring getDescription();
+		QAndroidJniObject getId();
+		jstring getName();
+		jint getStatus();
+		jint hashCode();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::print
 
 #include "../os/Parcel.hpp"
-#include "PrinterId.hpp"
 #include "PrinterCapabilitiesInfo.hpp"
+#include "PrinterId.hpp"
 
 namespace __jni_impl::android::print
 {
@@ -92,12 +92,12 @@ namespace __jni_impl::android::print
 	}
 	
 	// Methods
-	jstring PrinterInfo::getName()
+	jint PrinterInfo::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
 	}
 	jboolean PrinterInfo::equals(jobject arg0)
 	{
@@ -107,32 +107,11 @@ namespace __jni_impl::android::print
 			arg0
 		);
 	}
-	jstring PrinterInfo::toString()
+	QAndroidJniObject PrinterInfo::getCapabilities()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint PrinterInfo::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	QAndroidJniObject PrinterInfo::getId()
-	{
-		return __thiz.callObjectMethod(
-			"getId",
-			"()Landroid/print/PrinterId;"
-		);
-	}
-	jint PrinterInfo::getStatus()
-	{
-		return __thiz.callMethod<jint>(
-			"getStatus",
-			"()I"
+			"getCapabilities",
+			"()Landroid/print/PrinterCapabilitiesInfo;"
 		);
 	}
 	jstring PrinterInfo::getDescription()
@@ -142,19 +121,40 @@ namespace __jni_impl::android::print
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	QAndroidJniObject PrinterInfo::getCapabilities()
+	QAndroidJniObject PrinterInfo::getId()
 	{
 		return __thiz.callObjectMethod(
-			"getCapabilities",
-			"()Landroid/print/PrinterCapabilitiesInfo;"
+			"getId",
+			"()Landroid/print/PrinterId;"
 		);
 	}
-	jint PrinterInfo::describeContents()
+	jstring PrinterInfo::getName()
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint PrinterInfo::getStatus()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getStatus",
 			"()I"
 		);
+	}
+	jint PrinterInfo::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring PrinterInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void PrinterInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

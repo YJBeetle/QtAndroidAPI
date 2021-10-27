@@ -13,18 +13,18 @@ namespace __jni_impl::android::webkit
 	{
 	public:
 		// Fields
+		static QAndroidJniObject NARROW_COLUMNS();
 		static QAndroidJniObject NORMAL();
 		static QAndroidJniObject SINGLE_COLUMN();
-		static QAndroidJniObject NARROW_COLUMNS();
 		static QAndroidJniObject TEXT_AUTOSIZING();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::webkit
 
@@ -32,6 +32,14 @@ namespace __jni_impl::android::webkit
 namespace __jni_impl::android::webkit
 {
 	// Fields
+	QAndroidJniObject WebSettings_LayoutAlgorithm::NARROW_COLUMNS()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.webkit.WebSettings$LayoutAlgorithm",
+			"NARROW_COLUMNS",
+			"Landroid/webkit/WebSettings$LayoutAlgorithm;"
+		);
+	}
 	QAndroidJniObject WebSettings_LayoutAlgorithm::NORMAL()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -45,14 +53,6 @@ namespace __jni_impl::android::webkit
 		return QAndroidJniObject::getStaticObjectField(
 			"android.webkit.WebSettings$LayoutAlgorithm",
 			"SINGLE_COLUMN",
-			"Landroid/webkit/WebSettings$LayoutAlgorithm;"
-		);
-	}
-	QAndroidJniObject WebSettings_LayoutAlgorithm::NARROW_COLUMNS()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.webkit.WebSettings$LayoutAlgorithm",
-			"NARROW_COLUMNS",
 			"Landroid/webkit/WebSettings$LayoutAlgorithm;"
 		);
 	}
@@ -74,14 +74,6 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	jarray WebSettings_LayoutAlgorithm::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.webkit.WebSettings$LayoutAlgorithm",
-			"values",
-			"()[Landroid/webkit/WebSettings$LayoutAlgorithm;"
-		).object<jarray>();
-	}
 	QAndroidJniObject WebSettings_LayoutAlgorithm::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -99,6 +91,14 @@ namespace __jni_impl::android::webkit
 			"(Ljava/lang/String;)Landroid/webkit/WebSettings$LayoutAlgorithm;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray WebSettings_LayoutAlgorithm::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.webkit.WebSettings$LayoutAlgorithm",
+			"values",
+			"()[Landroid/webkit/WebSettings$LayoutAlgorithm;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::webkit
 

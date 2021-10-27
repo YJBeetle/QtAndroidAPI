@@ -26,10 +26,10 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jint hashCode();
-		QAndroidJniObject getAudioAttributes();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		QAndroidJniObject getAudioAttributes();
+		jint hashCode();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
@@ -58,19 +58,19 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	jint AudioPlaybackConfiguration::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean AudioPlaybackConfiguration::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
-		);
-	}
-	jint AudioPlaybackConfiguration::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
 		);
 	}
 	QAndroidJniObject AudioPlaybackConfiguration::getAudioAttributes()
@@ -80,10 +80,10 @@ namespace __jni_impl::android::media
 			"()Landroid/media/AudioAttributes;"
 		);
 	}
-	jint AudioPlaybackConfiguration::describeContents()
+	jint AudioPlaybackConfiguration::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
 		);
 	}

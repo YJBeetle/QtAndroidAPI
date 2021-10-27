@@ -11,7 +11,7 @@ namespace __jni_impl::java::io
 }
 namespace __jni_impl::java::net
 {
-	class DatagramSocket;
+	class DatagramPacket;
 }
 namespace __jni_impl::java::net
 {
@@ -19,15 +19,11 @@ namespace __jni_impl::java::net
 }
 namespace __jni_impl::java::net
 {
-	class DatagramPacket;
+	class NetworkInterface;
 }
 namespace __jni_impl::java::net
 {
 	class SocketAddress;
-}
-namespace __jni_impl::java::net
-{
-	class NetworkInterface;
 }
 
 namespace __jni_impl::java::net
@@ -45,11 +41,10 @@ namespace __jni_impl::java::net
 } // namespace __jni_impl::java::net
 
 #include "../io/FileDescriptor.hpp"
-#include "DatagramSocket.hpp"
-#include "InetAddress.hpp"
 #include "DatagramPacket.hpp"
-#include "SocketAddress.hpp"
+#include "InetAddress.hpp"
 #include "NetworkInterface.hpp"
+#include "SocketAddress.hpp"
 
 namespace __jni_impl::java::net
 {

@@ -23,8 +23,8 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
-		jstring toString();
 		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
@@ -52,19 +52,19 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
-	jstring WindowAnimationFrameStats::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint WindowAnimationFrameStats::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
+	}
+	jstring WindowAnimationFrameStats::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void WindowAnimationFrameStats::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

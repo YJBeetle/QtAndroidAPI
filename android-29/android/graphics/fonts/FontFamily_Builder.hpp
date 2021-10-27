@@ -25,8 +25,8 @@ namespace __jni_impl::android::graphics::fonts
 		void __constructor(__jni_impl::android::graphics::fonts::Font arg0);
 		
 		// Methods
-		QAndroidJniObject build();
 		QAndroidJniObject addFont(__jni_impl::android::graphics::fonts::Font arg0);
+		QAndroidJniObject build();
 	};
 } // namespace __jni_impl::android::graphics::fonts
 
@@ -48,19 +48,19 @@ namespace __jni_impl::android::graphics::fonts
 	}
 	
 	// Methods
-	QAndroidJniObject FontFamily_Builder::build()
-	{
-		return __thiz.callObjectMethod(
-			"build",
-			"()Landroid/graphics/fonts/FontFamily;"
-		);
-	}
 	QAndroidJniObject FontFamily_Builder::addFont(__jni_impl::android::graphics::fonts::Font arg0)
 	{
 		return __thiz.callObjectMethod(
 			"addFont",
 			"(Landroid/graphics/fonts/Font;)Landroid/graphics/fonts/FontFamily$Builder;",
 			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject FontFamily_Builder::build()
+	{
+		return __thiz.callObjectMethod(
+			"build",
+			"()Landroid/graphics/fonts/FontFamily;"
 		);
 	}
 } // namespace __jni_impl::android::graphics::fonts

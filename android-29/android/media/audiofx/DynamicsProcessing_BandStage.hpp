@@ -18,8 +18,8 @@ namespace __jni_impl::android::media::audiofx
 		void __constructor(jboolean arg0, jboolean arg1, jint arg2);
 		
 		// Methods
-		jstring toString();
 		jint getBandCount();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::media::audiofx
 
@@ -41,19 +41,19 @@ namespace __jni_impl::android::media::audiofx
 	}
 	
 	// Methods
-	jstring DynamicsProcessing_BandStage::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint DynamicsProcessing_BandStage::getBandCount()
 	{
 		return __thiz.callMethod<jint>(
 			"getBandCount",
 			"()I"
 		);
+	}
+	jstring DynamicsProcessing_BandStage::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media::audiofx
 

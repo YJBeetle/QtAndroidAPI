@@ -16,9 +16,9 @@ namespace __jni_impl::java::lang::reflect
 		// Fields
 		
 		// Constructors
+		void __constructor(jthrowable arg0);
 		void __constructor(jthrowable arg0, jstring arg1);
 		void __constructor(jthrowable arg0, const QString &arg1);
-		void __constructor(jthrowable arg0);
 		
 		// Methods
 		jthrowable getCause();
@@ -32,6 +32,14 @@ namespace __jni_impl::java::lang::reflect
 	// Fields
 	
 	// Constructors
+	void InvocationTargetException::__constructor(jthrowable arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.reflect.InvocationTargetException",
+			"(Ljava/lang/Throwable;)V",
+			arg0
+		);
+	}
 	void InvocationTargetException::__constructor(jthrowable arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -48,14 +56,6 @@ namespace __jni_impl::java::lang::reflect
 			"(Ljava/lang/Throwable;Ljava/lang/String;)V",
 			arg0,
 			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	void InvocationTargetException::__constructor(jthrowable arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.reflect.InvocationTargetException",
-			"(Ljava/lang/Throwable;)V",
-			arg0
 		);
 	}
 	
@@ -82,16 +82,16 @@ namespace java::lang::reflect
 	{
 	public:
 		InvocationTargetException(QAndroidJniObject obj) { __thiz = obj; }
+		InvocationTargetException(jthrowable arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		InvocationTargetException(jthrowable arg0, jstring arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
-		}
-		InvocationTargetException(jthrowable arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace java::lang::reflect

@@ -13,18 +13,18 @@ namespace __jni_impl::android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject WIDE();
-		static QAndroidJniObject SHORT();
 		static QAndroidJniObject NARROW();
 		static QAndroidJniObject NUMERIC();
+		static QAndroidJniObject SHORT();
+		static QAndroidJniObject WIDE();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -32,22 +32,6 @@ namespace __jni_impl::android::icu::text
 namespace __jni_impl::android::icu::text
 {
 	// Fields
-	QAndroidJniObject MeasureFormat_FormatWidth::WIDE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.MeasureFormat$FormatWidth",
-			"WIDE",
-			"Landroid/icu/text/MeasureFormat$FormatWidth;"
-		);
-	}
-	QAndroidJniObject MeasureFormat_FormatWidth::SHORT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.MeasureFormat$FormatWidth",
-			"SHORT",
-			"Landroid/icu/text/MeasureFormat$FormatWidth;"
-		);
-	}
 	QAndroidJniObject MeasureFormat_FormatWidth::NARROW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -64,6 +48,22 @@ namespace __jni_impl::android::icu::text
 			"Landroid/icu/text/MeasureFormat$FormatWidth;"
 		);
 	}
+	QAndroidJniObject MeasureFormat_FormatWidth::SHORT()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.MeasureFormat$FormatWidth",
+			"SHORT",
+			"Landroid/icu/text/MeasureFormat$FormatWidth;"
+		);
+	}
+	QAndroidJniObject MeasureFormat_FormatWidth::WIDE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.MeasureFormat$FormatWidth",
+			"WIDE",
+			"Landroid/icu/text/MeasureFormat$FormatWidth;"
+		);
+	}
 	
 	// Constructors
 	void MeasureFormat_FormatWidth::__constructor()
@@ -74,14 +74,6 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jarray MeasureFormat_FormatWidth::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.MeasureFormat$FormatWidth",
-			"values",
-			"()[Landroid/icu/text/MeasureFormat$FormatWidth;"
-		).object<jarray>();
-	}
 	QAndroidJniObject MeasureFormat_FormatWidth::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -99,6 +91,14 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;)Landroid/icu/text/MeasureFormat$FormatWidth;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray MeasureFormat_FormatWidth::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.MeasureFormat$FormatWidth",
+			"values",
+			"()[Landroid/icu/text/MeasureFormat$FormatWidth;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::icu::text
 

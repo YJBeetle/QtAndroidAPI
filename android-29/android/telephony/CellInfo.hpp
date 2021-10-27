@@ -28,14 +28,14 @@ namespace __jni_impl::android::telephony
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jstring toString();
+		jint getCellConnectionStatus();
+		jlong getTimeStamp();
 		jint hashCode();
 		jboolean isRegistered();
-		jlong getTimeStamp();
-		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getCellConnectionStatus();
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -104,6 +104,13 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
+	jint CellInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean CellInfo::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -112,12 +119,19 @@ namespace __jni_impl::android::telephony
 			arg0
 		);
 	}
-	jstring CellInfo::toString()
+	jint CellInfo::getCellConnectionStatus()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"getCellConnectionStatus",
+			"()I"
+		);
+	}
+	jlong CellInfo::getTimeStamp()
+	{
+		return __thiz.callMethod<jlong>(
+			"getTimeStamp",
+			"()J"
+		);
 	}
 	jint CellInfo::hashCode()
 	{
@@ -133,19 +147,12 @@ namespace __jni_impl::android::telephony
 			"()Z"
 		);
 	}
-	jlong CellInfo::getTimeStamp()
+	jstring CellInfo::toString()
 	{
-		return __thiz.callMethod<jlong>(
-			"getTimeStamp",
-			"()J"
-		);
-	}
-	jint CellInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void CellInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -154,13 +161,6 @@ namespace __jni_impl::android::telephony
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint CellInfo::getCellConnectionStatus()
-	{
-		return __thiz.callMethod<jint>(
-			"getCellConnectionStatus",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::telephony

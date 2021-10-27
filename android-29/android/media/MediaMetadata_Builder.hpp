@@ -5,6 +5,10 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::graphics
+{
+	class Bitmap;
+}
 namespace __jni_impl::android::media
 {
 	class MediaMetadata;
@@ -12,10 +16,6 @@ namespace __jni_impl::android::media
 namespace __jni_impl::android::media
 {
 	class Rating;
-}
-namespace __jni_impl::android::graphics
-{
-	class Bitmap;
 }
 
 namespace __jni_impl::android::media
@@ -30,23 +30,23 @@ namespace __jni_impl::android::media
 		void __constructor(__jni_impl::android::media::MediaMetadata arg0);
 		
 		// Methods
-		QAndroidJniObject putLong(jstring arg0, jlong arg1);
-		QAndroidJniObject putLong(const QString &arg0, jlong arg1);
 		QAndroidJniObject build();
-		QAndroidJniObject putText(jstring arg0, jstring arg1);
-		QAndroidJniObject putText(const QString &arg0, const QString &arg1);
-		QAndroidJniObject putRating(jstring arg0, __jni_impl::android::media::Rating arg1);
-		QAndroidJniObject putRating(const QString &arg0, __jni_impl::android::media::Rating arg1);
 		QAndroidJniObject putBitmap(jstring arg0, __jni_impl::android::graphics::Bitmap arg1);
 		QAndroidJniObject putBitmap(const QString &arg0, __jni_impl::android::graphics::Bitmap arg1);
+		QAndroidJniObject putLong(jstring arg0, jlong arg1);
+		QAndroidJniObject putLong(const QString &arg0, jlong arg1);
+		QAndroidJniObject putRating(jstring arg0, __jni_impl::android::media::Rating arg1);
+		QAndroidJniObject putRating(const QString &arg0, __jni_impl::android::media::Rating arg1);
 		QAndroidJniObject putString(jstring arg0, jstring arg1);
 		QAndroidJniObject putString(const QString &arg0, const QString &arg1);
+		QAndroidJniObject putText(jstring arg0, jstring arg1);
+		QAndroidJniObject putText(const QString &arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::media
 
+#include "../graphics/Bitmap.hpp"
 #include "MediaMetadata.hpp"
 #include "Rating.hpp"
-#include "../graphics/Bitmap.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -70,65 +70,11 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	QAndroidJniObject MediaMetadata_Builder::putLong(jstring arg0, jlong arg1)
-	{
-		return __thiz.callObjectMethod(
-			"putLong",
-			"(Ljava/lang/String;J)Landroid/media/MediaMetadata$Builder;",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject MediaMetadata_Builder::putLong(const QString &arg0, jlong arg1)
-	{
-		return __thiz.callObjectMethod(
-			"putLong",
-			"(Ljava/lang/String;J)Landroid/media/MediaMetadata$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject MediaMetadata_Builder::build()
 	{
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/media/MediaMetadata;"
-		);
-	}
-	QAndroidJniObject MediaMetadata_Builder::putText(jstring arg0, jstring arg1)
-	{
-		return __thiz.callObjectMethod(
-			"putText",
-			"(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/media/MediaMetadata$Builder;",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject MediaMetadata_Builder::putText(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"putText",
-			"(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/media/MediaMetadata$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	QAndroidJniObject MediaMetadata_Builder::putRating(jstring arg0, __jni_impl::android::media::Rating arg1)
-	{
-		return __thiz.callObjectMethod(
-			"putRating",
-			"(Ljava/lang/String;Landroid/media/Rating;)Landroid/media/MediaMetadata$Builder;",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject MediaMetadata_Builder::putRating(const QString &arg0, __jni_impl::android::media::Rating arg1)
-	{
-		return __thiz.callObjectMethod(
-			"putRating",
-			"(Ljava/lang/String;Landroid/media/Rating;)Landroid/media/MediaMetadata$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
 		);
 	}
 	QAndroidJniObject MediaMetadata_Builder::putBitmap(jstring arg0, __jni_impl::android::graphics::Bitmap arg1)
@@ -149,6 +95,42 @@ namespace __jni_impl::android::media
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject MediaMetadata_Builder::putLong(jstring arg0, jlong arg1)
+	{
+		return __thiz.callObjectMethod(
+			"putLong",
+			"(Ljava/lang/String;J)Landroid/media/MediaMetadata$Builder;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject MediaMetadata_Builder::putLong(const QString &arg0, jlong arg1)
+	{
+		return __thiz.callObjectMethod(
+			"putLong",
+			"(Ljava/lang/String;J)Landroid/media/MediaMetadata$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
+	QAndroidJniObject MediaMetadata_Builder::putRating(jstring arg0, __jni_impl::android::media::Rating arg1)
+	{
+		return __thiz.callObjectMethod(
+			"putRating",
+			"(Ljava/lang/String;Landroid/media/Rating;)Landroid/media/MediaMetadata$Builder;",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject MediaMetadata_Builder::putRating(const QString &arg0, __jni_impl::android::media::Rating arg1)
+	{
+		return __thiz.callObjectMethod(
+			"putRating",
+			"(Ljava/lang/String;Landroid/media/Rating;)Landroid/media/MediaMetadata$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		);
+	}
 	QAndroidJniObject MediaMetadata_Builder::putString(jstring arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -163,6 +145,24 @@ namespace __jni_impl::android::media
 		return __thiz.callObjectMethod(
 			"putString",
 			"(Ljava/lang/String;Ljava/lang/String;)Landroid/media/MediaMetadata$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	QAndroidJniObject MediaMetadata_Builder::putText(jstring arg0, jstring arg1)
+	{
+		return __thiz.callObjectMethod(
+			"putText",
+			"(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/media/MediaMetadata$Builder;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject MediaMetadata_Builder::putText(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"putText",
+			"(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/media/MediaMetadata$Builder;",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);

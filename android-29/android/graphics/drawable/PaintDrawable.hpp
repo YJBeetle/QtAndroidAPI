@@ -24,8 +24,8 @@ namespace __jni_impl::android::graphics::drawable
 		void __constructor(jint arg0);
 		
 		// Methods
-		void setCornerRadius(jfloat arg0);
 		void setCornerRadii(jfloatArray arg0);
+		void setCornerRadius(jfloat arg0);
 	};
 } // namespace __jni_impl::android::graphics::drawable
 
@@ -53,19 +53,19 @@ namespace __jni_impl::android::graphics::drawable
 	}
 	
 	// Methods
-	void PaintDrawable::setCornerRadius(jfloat arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCornerRadius",
-			"(F)V",
-			arg0
-		);
-	}
 	void PaintDrawable::setCornerRadii(jfloatArray arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCornerRadii",
 			"([F)V",
+			arg0
+		);
+	}
+	void PaintDrawable::setCornerRadius(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCornerRadius",
+			"(F)V",
 			arg0
 		);
 	}

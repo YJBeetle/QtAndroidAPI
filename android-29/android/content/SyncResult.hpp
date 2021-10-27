@@ -36,15 +36,15 @@ namespace __jni_impl::android::content
 		void __constructor();
 		
 		// Methods
-		jstring toString();
 		void clear();
-		jboolean hasError();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jboolean hasError();
 		jboolean hasHardError();
 		jboolean hasSoftError();
 		jboolean madeSomeProgress();
 		jstring toDebugString();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::content
 
@@ -136,25 +136,11 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
-	jstring SyncResult::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	void SyncResult::clear()
 	{
 		__thiz.callMethod<void>(
 			"clear",
 			"()V"
-		);
-	}
-	jboolean SyncResult::hasError()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasError",
-			"()Z"
 		);
 	}
 	jint SyncResult::describeContents()
@@ -164,13 +150,11 @@ namespace __jni_impl::android::content
 			"()I"
 		);
 	}
-	void SyncResult::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jboolean SyncResult::hasError()
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callMethod<jboolean>(
+			"hasError",
+			"()Z"
 		);
 	}
 	jboolean SyncResult::hasHardError()
@@ -200,6 +184,22 @@ namespace __jni_impl::android::content
 			"toDebugString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jstring SyncResult::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void SyncResult::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::content
 

@@ -13,18 +13,18 @@ namespace __jni_impl::android::icu::text
 	{
 	public:
 		// Fields
-		static QAndroidJniObject NOT_CONTAINED();
-		static QAndroidJniObject CONTAINED();
-		static QAndroidJniObject SIMPLE();
 		static QAndroidJniObject CONDITION_COUNT();
+		static QAndroidJniObject CONTAINED();
+		static QAndroidJniObject NOT_CONTAINED();
+		static QAndroidJniObject SIMPLE();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::icu::text
 
@@ -32,11 +32,11 @@ namespace __jni_impl::android::icu::text
 namespace __jni_impl::android::icu::text
 {
 	// Fields
-	QAndroidJniObject UnicodeSet_SpanCondition::NOT_CONTAINED()
+	QAndroidJniObject UnicodeSet_SpanCondition::CONDITION_COUNT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSet$SpanCondition",
-			"NOT_CONTAINED",
+			"CONDITION_COUNT",
 			"Landroid/icu/text/UnicodeSet$SpanCondition;"
 		);
 	}
@@ -48,19 +48,19 @@ namespace __jni_impl::android::icu::text
 			"Landroid/icu/text/UnicodeSet$SpanCondition;"
 		);
 	}
+	QAndroidJniObject UnicodeSet_SpanCondition::NOT_CONTAINED()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.icu.text.UnicodeSet$SpanCondition",
+			"NOT_CONTAINED",
+			"Landroid/icu/text/UnicodeSet$SpanCondition;"
+		);
+	}
 	QAndroidJniObject UnicodeSet_SpanCondition::SIMPLE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.icu.text.UnicodeSet$SpanCondition",
 			"SIMPLE",
-			"Landroid/icu/text/UnicodeSet$SpanCondition;"
-		);
-	}
-	QAndroidJniObject UnicodeSet_SpanCondition::CONDITION_COUNT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.icu.text.UnicodeSet$SpanCondition",
-			"CONDITION_COUNT",
 			"Landroid/icu/text/UnicodeSet$SpanCondition;"
 		);
 	}
@@ -74,14 +74,6 @@ namespace __jni_impl::android::icu::text
 	}
 	
 	// Methods
-	jarray UnicodeSet_SpanCondition::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.text.UnicodeSet$SpanCondition",
-			"values",
-			"()[Landroid/icu/text/UnicodeSet$SpanCondition;"
-		).object<jarray>();
-	}
 	QAndroidJniObject UnicodeSet_SpanCondition::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -99,6 +91,14 @@ namespace __jni_impl::android::icu::text
 			"(Ljava/lang/String;)Landroid/icu/text/UnicodeSet$SpanCondition;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray UnicodeSet_SpanCondition::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.text.UnicodeSet$SpanCondition",
+			"values",
+			"()[Landroid/icu/text/UnicodeSet$SpanCondition;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::icu::text
 

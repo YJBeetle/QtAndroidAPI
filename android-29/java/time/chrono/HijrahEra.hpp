@@ -6,13 +6,13 @@
 #include "../../../__JniBaseClass.hpp"
 #include "../../lang/Enum.hpp"
 
-namespace __jni_impl::java::time::temporal
-{
-	class ValueRange;
-}
 namespace __jni_impl::java::time::format
 {
 	class TextStyle;
+}
+namespace __jni_impl::java::time::temporal
+{
+	class ValueRange;
 }
 namespace __jni_impl::java::util
 {
@@ -31,18 +31,18 @@ namespace __jni_impl::java::time::chrono
 		void __constructor();
 		
 		// Methods
-		static jarray values();
+		static QAndroidJniObject of(jint arg0);
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
-		jint getValue();
-		static QAndroidJniObject of(jint arg0);
-		QAndroidJniObject range(__jni_impl::__JniBaseClass arg0);
+		static jarray values();
 		jstring getDisplayName(__jni_impl::java::time::format::TextStyle arg0, __jni_impl::java::util::Locale arg1);
+		jint getValue();
+		QAndroidJniObject range(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::java::time::chrono
 
-#include "../temporal/ValueRange.hpp"
 #include "../format/TextStyle.hpp"
+#include "../temporal/ValueRange.hpp"
 #include "../../util/Locale.hpp"
 
 namespace __jni_impl::java::time::chrono
@@ -66,13 +66,14 @@ namespace __jni_impl::java::time::chrono
 	}
 	
 	// Methods
-	jarray HijrahEra::values()
+	QAndroidJniObject HijrahEra::of(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.HijrahEra",
-			"values",
-			"()[Ljava/time/chrono/HijrahEra;"
-		).object<jarray>();
+			"of",
+			"(I)Ljava/time/chrono/HijrahEra;",
+			arg0
+		);
 	}
 	QAndroidJniObject HijrahEra::valueOf(jstring arg0)
 	{
@@ -92,29 +93,13 @@ namespace __jni_impl::java::time::chrono
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jint HijrahEra::getValue()
-	{
-		return __thiz.callMethod<jint>(
-			"getValue",
-			"()I"
-		);
-	}
-	QAndroidJniObject HijrahEra::of(jint arg0)
+	jarray HijrahEra::values()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.time.chrono.HijrahEra",
-			"of",
-			"(I)Ljava/time/chrono/HijrahEra;",
-			arg0
-		);
-	}
-	QAndroidJniObject HijrahEra::range(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"range",
-			"(Ljava/time/temporal/TemporalField;)Ljava/time/temporal/ValueRange;",
-			arg0.__jniObject().object()
-		);
+			"values",
+			"()[Ljava/time/chrono/HijrahEra;"
+		).object<jarray>();
 	}
 	jstring HijrahEra::getDisplayName(__jni_impl::java::time::format::TextStyle arg0, __jni_impl::java::util::Locale arg1)
 	{
@@ -124,6 +109,21 @@ namespace __jni_impl::java::time::chrono
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
 		).object<jstring>();
+	}
+	jint HijrahEra::getValue()
+	{
+		return __thiz.callMethod<jint>(
+			"getValue",
+			"()I"
+		);
+	}
+	QAndroidJniObject HijrahEra::range(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"range",
+			"(Ljava/time/temporal/TemporalField;)Ljava/time/temporal/ValueRange;",
+			arg0.__jniObject().object()
+		);
 	}
 } // namespace __jni_impl::java::time::chrono
 

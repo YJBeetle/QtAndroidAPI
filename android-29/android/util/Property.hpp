@@ -18,13 +18,13 @@ namespace __jni_impl::android::util
 		void __constructor(jclass arg0, const QString &arg1);
 		
 		// Methods
-		jstring getName();
-		jobject get(jobject arg0);
 		static QAndroidJniObject of(jclass arg0, jclass arg1, jstring arg2);
 		static QAndroidJniObject of(jclass arg0, jclass arg1, const QString &arg2);
-		void set(jobject arg0, jobject arg1);
+		jobject get(jobject arg0);
+		jstring getName();
 		jclass getType();
 		jboolean isReadOnly();
+		void set(jobject arg0, jobject arg1);
 	};
 } // namespace __jni_impl::android::util
 
@@ -54,21 +54,6 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
-	jstring Property::getName()
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jobject Property::get(jobject arg0)
-	{
-		return __thiz.callObjectMethod(
-			"get",
-			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
-	}
 	QAndroidJniObject Property::of(jclass arg0, jclass arg1, jstring arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -91,14 +76,20 @@ namespace __jni_impl::android::util
 			QAndroidJniObject::fromString(arg2).object<jstring>()
 		);
 	}
-	void Property::set(jobject arg0, jobject arg1)
+	jobject Property::get(jobject arg0)
 	{
-		__thiz.callMethod<void>(
-			"set",
-			"(Ljava/lang/Object;Ljava/lang/Object;)V",
-			arg0,
-			arg1
-		);
+		return __thiz.callObjectMethod(
+			"get",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0
+		).object<jobject>();
+	}
+	jstring Property::getName()
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jclass Property::getType()
 	{
@@ -112,6 +103,15 @@ namespace __jni_impl::android::util
 		return __thiz.callMethod<jboolean>(
 			"isReadOnly",
 			"()Z"
+		);
+	}
+	void Property::set(jobject arg0, jobject arg1)
+	{
+		__thiz.callMethod<void>(
+			"set",
+			"(Ljava/lang/Object;Ljava/lang/Object;)V",
+			arg0,
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::util

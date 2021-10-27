@@ -28,20 +28,20 @@ namespace __jni_impl::java::security
 		void __constructor(const QString &arg0, __jni_impl::java::security::IdentityScope arg1);
 		
 		// Methods
-		jstring getName();
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jstring toString(jboolean arg0);
-		jint hashCode();
-		QAndroidJniObject getPublicKey();
+		void addCertificate(__jni_impl::__JniBaseClass arg0);
 		jarray certificates();
-		void setPublicKey(__jni_impl::__JniBaseClass arg0);
+		jboolean equals(jobject arg0);
+		jstring getInfo();
+		jstring getName();
+		QAndroidJniObject getPublicKey();
+		QAndroidJniObject getScope();
+		jint hashCode();
+		void removeCertificate(__jni_impl::__JniBaseClass arg0);
 		void setInfo(jstring arg0);
 		void setInfo(const QString &arg0);
-		void addCertificate(__jni_impl::__JniBaseClass arg0);
-		void removeCertificate(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject getScope();
-		jstring getInfo();
+		void setPublicKey(__jni_impl::__JniBaseClass arg0);
+		jstring toString();
+		jstring toString(jboolean arg0);
 	};
 } // namespace __jni_impl::java::security
 
@@ -89,48 +89,12 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	jstring Identity::getName()
+	void Identity::addCertificate(__jni_impl::__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jboolean Identity::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring Identity::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring Identity::toString(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"(Z)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
-	jint Identity::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	QAndroidJniObject Identity::getPublicKey()
-	{
-		return __thiz.callObjectMethod(
-			"getPublicKey",
-			"()Ljava/security/PublicKey;"
+		__thiz.callMethod<void>(
+			"addCertificate",
+			"(Ljava/security/Certificate;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	jarray Identity::certificates()
@@ -140,11 +104,54 @@ namespace __jni_impl::java::security
 			"()[Ljava/security/Certificate;"
 		).object<jarray>();
 	}
-	void Identity::setPublicKey(__jni_impl::__JniBaseClass arg0)
+	jboolean Identity::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jstring Identity::getInfo()
+	{
+		return __thiz.callObjectMethod(
+			"getInfo",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring Identity::getName()
+	{
+		return __thiz.callObjectMethod(
+			"getName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject Identity::getPublicKey()
+	{
+		return __thiz.callObjectMethod(
+			"getPublicKey",
+			"()Ljava/security/PublicKey;"
+		);
+	}
+	QAndroidJniObject Identity::getScope()
+	{
+		return __thiz.callObjectMethod(
+			"getScope",
+			"()Ljava/security/IdentityScope;"
+		);
+	}
+	jint Identity::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	void Identity::removeCertificate(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"setPublicKey",
-			"(Ljava/security/PublicKey;)V",
+			"removeCertificate",
+			"(Ljava/security/Certificate;)V",
 			arg0.__jniObject().object()
 		);
 	}
@@ -164,34 +171,27 @@ namespace __jni_impl::java::security
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void Identity::addCertificate(__jni_impl::__JniBaseClass arg0)
+	void Identity::setPublicKey(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"addCertificate",
-			"(Ljava/security/Certificate;)V",
+			"setPublicKey",
+			"(Ljava/security/PublicKey;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	void Identity::removeCertificate(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"removeCertificate",
-			"(Ljava/security/Certificate;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Identity::getScope()
+	jstring Identity::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getScope",
-			"()Ljava/security/IdentityScope;"
-		);
-	}
-	jstring Identity::getInfo()
-	{
-		return __thiz.callObjectMethod(
-			"getInfo",
+			"toString",
 			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring Identity::toString(jboolean arg0)
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"(Z)Ljava/lang/String;",
+			arg0
 		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security

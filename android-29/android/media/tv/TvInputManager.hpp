@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::media::tv
 {
-	class TvInputInfo;
+	class TvContentRating;
 }
 namespace __jni_impl::android::media::tv
 {
-	class TvContentRating;
+	class TvInputInfo;
 }
 namespace __jni_impl::android::media::tv
 {
@@ -55,22 +55,22 @@ namespace __jni_impl::android::media::tv
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getTvInputList();
-		QAndroidJniObject getTvInputInfo(jstring arg0);
-		QAndroidJniObject getTvInputInfo(const QString &arg0);
-		void updateTvInputInfo(__jni_impl::android::media::tv::TvInputInfo arg0);
+		QAndroidJniObject getBlockedRatings();
 		jint getInputState(jstring arg0);
 		jint getInputState(const QString &arg0);
+		QAndroidJniObject getTvInputInfo(jstring arg0);
+		QAndroidJniObject getTvInputInfo(const QString &arg0);
+		QAndroidJniObject getTvInputList();
 		jboolean isParentalControlsEnabled();
 		jboolean isRatingBlocked(__jni_impl::android::media::tv::TvContentRating arg0);
-		QAndroidJniObject getBlockedRatings();
 		void registerCallback(__jni_impl::android::media::tv::TvInputManager_TvInputCallback arg0, __jni_impl::android::os::Handler arg1);
 		void unregisterCallback(__jni_impl::android::media::tv::TvInputManager_TvInputCallback arg0);
+		void updateTvInputInfo(__jni_impl::android::media::tv::TvInputInfo arg0);
 	};
 } // namespace __jni_impl::android::media::tv
 
-#include "TvInputInfo.hpp"
 #include "TvContentRating.hpp"
+#include "TvInputInfo.hpp"
 #include "TvInputManager_TvInputCallback.hpp"
 #include "../../os/Handler.hpp"
 
@@ -247,35 +247,11 @@ namespace __jni_impl::android::media::tv
 	}
 	
 	// Methods
-	QAndroidJniObject TvInputManager::getTvInputList()
+	QAndroidJniObject TvInputManager::getBlockedRatings()
 	{
 		return __thiz.callObjectMethod(
-			"getTvInputList",
+			"getBlockedRatings",
 			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject TvInputManager::getTvInputInfo(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getTvInputInfo",
-			"(Ljava/lang/String;)Landroid/media/tv/TvInputInfo;",
-			arg0
-		);
-	}
-	QAndroidJniObject TvInputManager::getTvInputInfo(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getTvInputInfo",
-			"(Ljava/lang/String;)Landroid/media/tv/TvInputInfo;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void TvInputManager::updateTvInputInfo(__jni_impl::android::media::tv::TvInputInfo arg0)
-	{
-		__thiz.callMethod<void>(
-			"updateTvInputInfo",
-			"(Landroid/media/tv/TvInputInfo;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	jint TvInputManager::getInputState(jstring arg0)
@@ -294,6 +270,29 @@ namespace __jni_impl::android::media::tv
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
+	QAndroidJniObject TvInputManager::getTvInputInfo(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getTvInputInfo",
+			"(Ljava/lang/String;)Landroid/media/tv/TvInputInfo;",
+			arg0
+		);
+	}
+	QAndroidJniObject TvInputManager::getTvInputInfo(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getTvInputInfo",
+			"(Ljava/lang/String;)Landroid/media/tv/TvInputInfo;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject TvInputManager::getTvInputList()
+	{
+		return __thiz.callObjectMethod(
+			"getTvInputList",
+			"()Ljava/util/List;"
+		);
+	}
 	jboolean TvInputManager::isParentalControlsEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -307,13 +306,6 @@ namespace __jni_impl::android::media::tv
 			"isRatingBlocked",
 			"(Landroid/media/tv/TvContentRating;)Z",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject TvInputManager::getBlockedRatings()
-	{
-		return __thiz.callObjectMethod(
-			"getBlockedRatings",
-			"()Ljava/util/List;"
 		);
 	}
 	void TvInputManager::registerCallback(__jni_impl::android::media::tv::TvInputManager_TvInputCallback arg0, __jni_impl::android::os::Handler arg1)
@@ -330,6 +322,14 @@ namespace __jni_impl::android::media::tv
 		__thiz.callMethod<void>(
 			"unregisterCallback",
 			"(Landroid/media/tv/TvInputManager$TvInputCallback;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void TvInputManager::updateTvInputInfo(__jni_impl::android::media::tv::TvInputInfo arg0)
+	{
+		__thiz.callMethod<void>(
+			"updateTvInputInfo",
+			"(Landroid/media/tv/TvInputInfo;)V",
 			arg0.__jniObject().object()
 		);
 	}

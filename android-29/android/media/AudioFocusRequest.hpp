@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Handler;
-}
 namespace __jni_impl::android::media
 {
 	class AudioAttributes;
+}
+namespace __jni_impl::android::os
+{
+	class Handler;
 }
 
 namespace __jni_impl::android::media
@@ -25,15 +25,15 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
+		jboolean acceptsDelayedFocusGain();
 		QAndroidJniObject getAudioAttributes();
 		jint getFocusGain();
 		jboolean willPauseWhenDucked();
-		jboolean acceptsDelayedFocusGain();
 	};
 } // namespace __jni_impl::android::media
 
-#include "../os/Handler.hpp"
 #include "AudioAttributes.hpp"
+#include "../os/Handler.hpp"
 
 namespace __jni_impl::android::media
 {
@@ -48,6 +48,13 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	jboolean AudioFocusRequest::acceptsDelayedFocusGain()
+	{
+		return __thiz.callMethod<jboolean>(
+			"acceptsDelayedFocusGain",
+			"()Z"
+		);
+	}
 	QAndroidJniObject AudioFocusRequest::getAudioAttributes()
 	{
 		return __thiz.callObjectMethod(
@@ -66,13 +73,6 @@ namespace __jni_impl::android::media
 	{
 		return __thiz.callMethod<jboolean>(
 			"willPauseWhenDucked",
-			"()Z"
-		);
-	}
-	jboolean AudioFocusRequest::acceptsDelayedFocusGain()
-	{
-		return __thiz.callMethod<jboolean>(
-			"acceptsDelayedFocusGain",
 			"()Z"
 		);
 	}

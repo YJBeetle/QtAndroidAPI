@@ -22,9 +22,9 @@ namespace __jni_impl::java::sql
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::sql
 
@@ -74,14 +74,6 @@ namespace __jni_impl::java::sql
 	}
 	
 	// Methods
-	jarray ClientInfoStatus::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.sql.ClientInfoStatus",
-			"values",
-			"()[Ljava/sql/ClientInfoStatus;"
-		).object<jarray>();
-	}
 	QAndroidJniObject ClientInfoStatus::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -99,6 +91,14 @@ namespace __jni_impl::java::sql
 			"(Ljava/lang/String;)Ljava/sql/ClientInfoStatus;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray ClientInfoStatus::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.sql.ClientInfoStatus",
+			"values",
+			"()[Ljava/sql/ClientInfoStatus;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::sql
 

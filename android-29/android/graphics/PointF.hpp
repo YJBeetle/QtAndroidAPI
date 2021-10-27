@@ -25,23 +25,23 @@ namespace __jni_impl::android::graphics
 		jfloat y();
 		
 		// Constructors
+		void __constructor();
 		void __constructor(__jni_impl::android::graphics::Point arg0);
 		void __constructor(jfloat arg0, jfloat arg1);
-		void __constructor();
 		
 		// Methods
+		static jfloat length(jfloat arg0, jfloat arg1);
+		jint describeContents();
 		jboolean equals(jobject arg0);
 		jboolean equals(jfloat arg0, jfloat arg1);
-		jfloat length();
-		static jfloat length(jfloat arg0, jfloat arg1);
-		jstring toString();
 		jint hashCode();
+		jfloat length();
+		void negate();
 		void offset(jfloat arg0, jfloat arg1);
+		void readFromParcel(__jni_impl::android::os::Parcel arg0);
 		void set(__jni_impl::android::graphics::PointF arg0);
 		void set(jfloat arg0, jfloat arg1);
-		void negate();
-		void readFromParcel(__jni_impl::android::os::Parcel arg0);
-		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::graphics
@@ -74,6 +74,13 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Constructors
+	void PointF::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.graphics.PointF",
+			"()V"
+		);
+	}
 	void PointF::__constructor(__jni_impl::android::graphics::Point arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -91,15 +98,25 @@ namespace __jni_impl::android::graphics
 			arg1
 		);
 	}
-	void PointF::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.graphics.PointF",
-			"()V"
-		);
-	}
 	
 	// Methods
+	jfloat PointF::length(jfloat arg0, jfloat arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jfloat>(
+			"android.graphics.PointF",
+			"length",
+			"(FF)F",
+			arg0,
+			arg1
+		);
+	}
+	jint PointF::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean PointF::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -117,6 +134,13 @@ namespace __jni_impl::android::graphics
 			arg1
 		);
 	}
+	jint PointF::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
 	jfloat PointF::length()
 	{
 		return __thiz.callMethod<jfloat>(
@@ -124,28 +148,11 @@ namespace __jni_impl::android::graphics
 			"()F"
 		);
 	}
-	jfloat PointF::length(jfloat arg0, jfloat arg1)
+	void PointF::negate()
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
-			"android.graphics.PointF",
-			"length",
-			"(FF)F",
-			arg0,
-			arg1
-		);
-	}
-	jstring PointF::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint PointF::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+		__thiz.callMethod<void>(
+			"negate",
+			"()V"
 		);
 	}
 	void PointF::offset(jfloat arg0, jfloat arg1)
@@ -155,6 +162,14 @@ namespace __jni_impl::android::graphics
 			"(FF)V",
 			arg0,
 			arg1
+		);
+	}
+	void PointF::readFromParcel(__jni_impl::android::os::Parcel arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFromParcel",
+			"(Landroid/os/Parcel;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void PointF::set(__jni_impl::android::graphics::PointF arg0)
@@ -174,27 +189,12 @@ namespace __jni_impl::android::graphics
 			arg1
 		);
 	}
-	void PointF::negate()
+	jstring PointF::toString()
 	{
-		__thiz.callMethod<void>(
-			"negate",
-			"()V"
-		);
-	}
-	void PointF::readFromParcel(__jni_impl::android::os::Parcel arg0)
-	{
-		__thiz.callMethod<void>(
-			"readFromParcel",
-			"(Landroid/os/Parcel;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jint PointF::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void PointF::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -213,6 +213,10 @@ namespace android::graphics
 	{
 	public:
 		PointF(QAndroidJniObject obj) { __thiz = obj; }
+		PointF()
+		{
+			__constructor();
+		}
 		PointF(__jni_impl::android::graphics::Point arg0)
 		{
 			__constructor(
@@ -223,10 +227,6 @@ namespace android::graphics
 			__constructor(
 				arg0,
 				arg1);
-		}
-		PointF()
-		{
-			__constructor();
 		}
 	};
 } // namespace android::graphics

@@ -26,11 +26,11 @@ namespace __jni_impl::android::view::textclassifier
 		void __constructor();
 		
 		// Methods
-		jstring getText();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getExtras();
 		jstring getCallingPackageName();
+		QAndroidJniObject getExtras();
+		jstring getText();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
@@ -58,19 +58,33 @@ namespace __jni_impl::android::view::textclassifier
 	}
 	
 	// Methods
-	jstring TextLanguage_Request::getText()
-	{
-		return __thiz.callObjectMethod(
-			"getText",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
 	jint TextLanguage_Request::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
+	}
+	jstring TextLanguage_Request::getCallingPackageName()
+	{
+		return __thiz.callObjectMethod(
+			"getCallingPackageName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject TextLanguage_Request::getExtras()
+	{
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
+		);
+	}
+	jstring TextLanguage_Request::getText()
+	{
+		return __thiz.callObjectMethod(
+			"getText",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
 	}
 	void TextLanguage_Request::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -80,20 +94,6 @@ namespace __jni_impl::android::view::textclassifier
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	QAndroidJniObject TextLanguage_Request::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
-		);
-	}
-	jstring TextLanguage_Request::getCallingPackageName()
-	{
-		return __thiz.callObjectMethod(
-			"getCallingPackageName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::view::textclassifier
 

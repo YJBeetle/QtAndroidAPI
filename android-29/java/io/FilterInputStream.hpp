@@ -22,15 +22,15 @@ namespace __jni_impl::java::io
 		void __constructor();
 		
 		// Methods
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
-		jint read(jbyteArray arg0);
-		jint read();
+		jint available();
 		void close();
 		void mark(jint arg0);
-		jlong skip(jlong arg0);
-		jint available();
 		jboolean markSupported();
+		jint read();
+		jint read(jbyteArray arg0);
+		jint read(jbyteArray arg0, jint arg1, jint arg2);
 		void reset();
+		jlong skip(jlong arg0);
 	};
 } // namespace __jni_impl::java::io
 
@@ -49,28 +49,10 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	jint FilterInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	jint FilterInputStream::available()
 	{
 		return __thiz.callMethod<jint>(
-			"read",
-			"([BII)I",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jint FilterInputStream::read(jbyteArray arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"read",
-			"([B)I",
-			arg0
-		);
-	}
-	jint FilterInputStream::read()
-	{
-		return __thiz.callMethod<jint>(
-			"read",
+			"available",
 			"()I"
 		);
 	}
@@ -89,21 +71,6 @@ namespace __jni_impl::java::io
 			arg0
 		);
 	}
-	jlong FilterInputStream::skip(jlong arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"skip",
-			"(J)J",
-			arg0
-		);
-	}
-	jint FilterInputStream::available()
-	{
-		return __thiz.callMethod<jint>(
-			"available",
-			"()I"
-		);
-	}
 	jboolean FilterInputStream::markSupported()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -111,11 +78,44 @@ namespace __jni_impl::java::io
 			"()Z"
 		);
 	}
+	jint FilterInputStream::read()
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"()I"
+		);
+	}
+	jint FilterInputStream::read(jbyteArray arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"([B)I",
+			arg0
+		);
+	}
+	jint FilterInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"([BII)I",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
 	void FilterInputStream::reset()
 	{
 		__thiz.callMethod<void>(
 			"reset",
 			"()V"
+		);
+	}
+	jlong FilterInputStream::skip(jlong arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"skip",
+			"(J)J",
+			arg0
 		);
 	}
 } // namespace __jni_impl::java::io

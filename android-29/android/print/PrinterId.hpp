@@ -22,12 +22,12 @@ namespace __jni_impl::android::print
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
+		jboolean equals(jobject arg0);
 		jstring getLocalId();
+		jint hashCode();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::print
 
@@ -54,6 +54,13 @@ namespace __jni_impl::android::print
 	}
 	
 	// Methods
+	jint PrinterId::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean PrinterId::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -62,10 +69,10 @@ namespace __jni_impl::android::print
 			arg0
 		);
 	}
-	jstring PrinterId::toString()
+	jstring PrinterId::getLocalId()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
+			"getLocalId",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -76,12 +83,12 @@ namespace __jni_impl::android::print
 			"()I"
 		);
 	}
-	jint PrinterId::describeContents()
+	jstring PrinterId::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void PrinterId::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -91,13 +98,6 @@ namespace __jni_impl::android::print
 			arg0.__jniObject().object(),
 			arg1
 		);
-	}
-	jstring PrinterId::getLocalId()
-	{
-		return __thiz.callObjectMethod(
-			"getLocalId",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::android::print
 

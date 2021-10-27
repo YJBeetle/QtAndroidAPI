@@ -23,15 +23,15 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 		void __constructor(__jni_impl::android::net::wifi::hotspot2::pps::Credential_CertificateCredential arg0);
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
+		jbyteArray getCertSha256Fingerprint();
 		jstring getCertType();
+		jint hashCode();
+		void setCertSha256Fingerprint(jbyteArray arg0);
 		void setCertType(jstring arg0);
 		void setCertType(const QString &arg0);
-		void setCertSha256Fingerprint(jbyteArray arg0);
-		jbyteArray getCertSha256Fingerprint();
-		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi::hotspot2::pps
@@ -68,6 +68,13 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 	}
 	
 	// Methods
+	jint Credential_CertificateCredential::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean Credential_CertificateCredential::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -76,10 +83,17 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 			arg0
 		);
 	}
-	jstring Credential_CertificateCredential::toString()
+	jbyteArray Credential_CertificateCredential::getCertSha256Fingerprint()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
+			"getCertSha256Fingerprint",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jstring Credential_CertificateCredential::getCertType()
+	{
+		return __thiz.callObjectMethod(
+			"getCertType",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -90,12 +104,13 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 			"()I"
 		);
 	}
-	jstring Credential_CertificateCredential::getCertType()
+	void Credential_CertificateCredential::setCertSha256Fingerprint(jbyteArray arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getCertType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"setCertSha256Fingerprint",
+			"([B)V",
+			arg0
+		);
 	}
 	void Credential_CertificateCredential::setCertType(jstring arg0)
 	{
@@ -113,27 +128,12 @@ namespace __jni_impl::android::net::wifi::hotspot2::pps
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void Credential_CertificateCredential::setCertSha256Fingerprint(jbyteArray arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCertSha256Fingerprint",
-			"([B)V",
-			arg0
-		);
-	}
-	jbyteArray Credential_CertificateCredential::getCertSha256Fingerprint()
+	jstring Credential_CertificateCredential::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getCertSha256Fingerprint",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	jint Credential_CertificateCredential::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Credential_CertificateCredential::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

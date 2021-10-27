@@ -20,9 +20,9 @@ namespace __jni_impl::java::net
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::net
 
@@ -56,14 +56,6 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
-	jarray Authenticator_RequestorType::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.net.Authenticator$RequestorType",
-			"values",
-			"()[Ljava/net/Authenticator$RequestorType;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Authenticator_RequestorType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -81,6 +73,14 @@ namespace __jni_impl::java::net
 			"(Ljava/lang/String;)Ljava/net/Authenticator$RequestorType;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Authenticator_RequestorType::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.net.Authenticator$RequestorType",
+			"values",
+			"()[Ljava/net/Authenticator$RequestorType;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::net
 

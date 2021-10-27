@@ -21,11 +21,11 @@ namespace __jni_impl::android::transition
 		void __constructor();
 		
 		// Methods
-		void onTransitionStart(__jni_impl::android::transition::Transition arg0);
-		void onTransitionEnd(__jni_impl::android::transition::Transition arg0);
 		void onTransitionCancel(__jni_impl::android::transition::Transition arg0);
+		void onTransitionEnd(__jni_impl::android::transition::Transition arg0);
 		void onTransitionPause(__jni_impl::android::transition::Transition arg0);
 		void onTransitionResume(__jni_impl::android::transition::Transition arg0);
+		void onTransitionStart(__jni_impl::android::transition::Transition arg0);
 	};
 } // namespace __jni_impl::android::transition
 
@@ -45,10 +45,10 @@ namespace __jni_impl::android::transition
 	}
 	
 	// Methods
-	void TransitionListenerAdapter::onTransitionStart(__jni_impl::android::transition::Transition arg0)
+	void TransitionListenerAdapter::onTransitionCancel(__jni_impl::android::transition::Transition arg0)
 	{
 		__thiz.callMethod<void>(
-			"onTransitionStart",
+			"onTransitionCancel",
 			"(Landroid/transition/Transition;)V",
 			arg0.__jniObject().object()
 		);
@@ -57,14 +57,6 @@ namespace __jni_impl::android::transition
 	{
 		__thiz.callMethod<void>(
 			"onTransitionEnd",
-			"(Landroid/transition/Transition;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void TransitionListenerAdapter::onTransitionCancel(__jni_impl::android::transition::Transition arg0)
-	{
-		__thiz.callMethod<void>(
-			"onTransitionCancel",
 			"(Landroid/transition/Transition;)V",
 			arg0.__jniObject().object()
 		);
@@ -81,6 +73,14 @@ namespace __jni_impl::android::transition
 	{
 		__thiz.callMethod<void>(
 			"onTransitionResume",
+			"(Landroid/transition/Transition;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void TransitionListenerAdapter::onTransitionStart(__jni_impl::android::transition::Transition arg0)
+	{
+		__thiz.callMethod<void>(
+			"onTransitionStart",
 			"(Landroid/transition/Transition;)V",
 			arg0.__jniObject().object()
 		);

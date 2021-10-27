@@ -5,17 +5,17 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::security
+namespace __jni_impl::java::lang
 {
-	class Provider;
+	class Boolean;
 }
 namespace __jni_impl::java::lang::ref
 {
 	class Reference;
 }
-namespace __jni_impl::java::lang
+namespace __jni_impl::java::security
 {
-	class Boolean;
+	class Provider;
 }
 
 namespace __jni_impl::java::security
@@ -30,21 +30,21 @@ namespace __jni_impl::java::security
 		void __constructor(__jni_impl::java::security::Provider arg0, const QString &arg1, const QString &arg2, const QString &arg3, __jni_impl::__JniBaseClass arg4, __jni_impl::__JniBaseClass arg5);
 		
 		// Methods
-		jstring toString();
-		jobject newInstance(jobject arg0);
-		jstring getType();
-		jstring getClassName();
-		QAndroidJniObject getProvider();
+		jstring getAlgorithm();
 		jstring getAttribute(jstring arg0);
 		jstring getAttribute(const QString &arg0);
+		jstring getClassName();
+		QAndroidJniObject getProvider();
+		jstring getType();
+		jobject newInstance(jobject arg0);
 		jboolean supportsParameter(jobject arg0);
-		jstring getAlgorithm();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security
 
-#include "Provider.hpp"
-#include "../lang/ref/Reference.hpp"
 #include "../lang/Boolean.hpp"
+#include "../lang/ref/Reference.hpp"
+#include "Provider.hpp"
 
 namespace __jni_impl::java::security
 {
@@ -79,41 +79,12 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	jstring Provider_Service::toString()
+	jstring Provider_Service::getAlgorithm()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
+			"getAlgorithm",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jobject Provider_Service::newInstance(jobject arg0)
-	{
-		return __thiz.callObjectMethod(
-			"newInstance",
-			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
-	}
-	jstring Provider_Service::getType()
-	{
-		return __thiz.callObjectMethod(
-			"getType",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring Provider_Service::getClassName()
-	{
-		return __thiz.callObjectMethod(
-			"getClassName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject Provider_Service::getProvider()
-	{
-		return __thiz.callObjectMethod(
-			"getProvider",
-			"()Ljava/security/Provider;"
-		);
 	}
 	jstring Provider_Service::getAttribute(jstring arg0)
 	{
@@ -131,6 +102,35 @@ namespace __jni_impl::java::security
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
+	jstring Provider_Service::getClassName()
+	{
+		return __thiz.callObjectMethod(
+			"getClassName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject Provider_Service::getProvider()
+	{
+		return __thiz.callObjectMethod(
+			"getProvider",
+			"()Ljava/security/Provider;"
+		);
+	}
+	jstring Provider_Service::getType()
+	{
+		return __thiz.callObjectMethod(
+			"getType",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jobject Provider_Service::newInstance(jobject arg0)
+	{
+		return __thiz.callObjectMethod(
+			"newInstance",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0
+		).object<jobject>();
+	}
 	jboolean Provider_Service::supportsParameter(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -139,10 +139,10 @@ namespace __jni_impl::java::security
 			arg0
 		);
 	}
-	jstring Provider_Service::getAlgorithm()
+	jstring Provider_Service::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getAlgorithm",
+			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}

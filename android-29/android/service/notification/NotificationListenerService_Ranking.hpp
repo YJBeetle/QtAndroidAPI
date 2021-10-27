@@ -24,23 +24,23 @@ namespace __jni_impl::android::service::notification
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring getKey();
-		QAndroidJniObject getChannel();
-		jstring getOverrideGroupKey();
-		jint getImportance();
-		jboolean canShowBadge();
 		jboolean canBubble();
-		jint getRank();
-		jboolean isAmbient();
-		jint getSuppressedVisualEffects();
-		jboolean matchesInterruptionFilter();
+		jboolean canShowBadge();
+		jboolean equals(jobject arg0);
+		QAndroidJniObject getChannel();
+		jint getImportance();
 		jstring getImportanceExplanation();
-		jint getUserSentiment();
+		jstring getKey();
+		jlong getLastAudiblyAlertedMillis();
+		jstring getOverrideGroupKey();
+		jint getRank();
 		QAndroidJniObject getSmartActions();
 		QAndroidJniObject getSmartReplies();
+		jint getSuppressedVisualEffects();
+		jint getUserSentiment();
+		jboolean isAmbient();
 		jboolean isSuspended();
-		jlong getLastAudiblyAlertedMillis();
+		jboolean matchesInterruptionFilter();
 	};
 } // namespace __jni_impl::android::service::notification
 
@@ -81,40 +81,11 @@ namespace __jni_impl::android::service::notification
 	}
 	
 	// Methods
-	jboolean NotificationListenerService_Ranking::equals(jobject arg0)
+	jboolean NotificationListenerService_Ranking::canBubble()
 	{
 		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring NotificationListenerService_Ranking::getKey()
-	{
-		return __thiz.callObjectMethod(
-			"getKey",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject NotificationListenerService_Ranking::getChannel()
-	{
-		return __thiz.callObjectMethod(
-			"getChannel",
-			"()Landroid/app/NotificationChannel;"
-		);
-	}
-	jstring NotificationListenerService_Ranking::getOverrideGroupKey()
-	{
-		return __thiz.callObjectMethod(
-			"getOverrideGroupKey",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint NotificationListenerService_Ranking::getImportance()
-	{
-		return __thiz.callMethod<jint>(
-			"getImportance",
-			"()I"
+			"canBubble",
+			"()Z"
 		);
 	}
 	jboolean NotificationListenerService_Ranking::canShowBadge()
@@ -124,39 +95,26 @@ namespace __jni_impl::android::service::notification
 			"()Z"
 		);
 	}
-	jboolean NotificationListenerService_Ranking::canBubble()
+	jboolean NotificationListenerService_Ranking::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"canBubble",
-			"()Z"
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
-	jint NotificationListenerService_Ranking::getRank()
+	QAndroidJniObject NotificationListenerService_Ranking::getChannel()
+	{
+		return __thiz.callObjectMethod(
+			"getChannel",
+			"()Landroid/app/NotificationChannel;"
+		);
+	}
+	jint NotificationListenerService_Ranking::getImportance()
 	{
 		return __thiz.callMethod<jint>(
-			"getRank",
+			"getImportance",
 			"()I"
-		);
-	}
-	jboolean NotificationListenerService_Ranking::isAmbient()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAmbient",
-			"()Z"
-		);
-	}
-	jint NotificationListenerService_Ranking::getSuppressedVisualEffects()
-	{
-		return __thiz.callMethod<jint>(
-			"getSuppressedVisualEffects",
-			"()I"
-		);
-	}
-	jboolean NotificationListenerService_Ranking::matchesInterruptionFilter()
-	{
-		return __thiz.callMethod<jboolean>(
-			"matchesInterruptionFilter",
-			"()Z"
 		);
 	}
 	jstring NotificationListenerService_Ranking::getImportanceExplanation()
@@ -166,10 +124,31 @@ namespace __jni_impl::android::service::notification
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
 	}
-	jint NotificationListenerService_Ranking::getUserSentiment()
+	jstring NotificationListenerService_Ranking::getKey()
+	{
+		return __thiz.callObjectMethod(
+			"getKey",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jlong NotificationListenerService_Ranking::getLastAudiblyAlertedMillis()
+	{
+		return __thiz.callMethod<jlong>(
+			"getLastAudiblyAlertedMillis",
+			"()J"
+		);
+	}
+	jstring NotificationListenerService_Ranking::getOverrideGroupKey()
+	{
+		return __thiz.callObjectMethod(
+			"getOverrideGroupKey",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint NotificationListenerService_Ranking::getRank()
 	{
 		return __thiz.callMethod<jint>(
-			"getUserSentiment",
+			"getRank",
 			"()I"
 		);
 	}
@@ -187,6 +166,27 @@ namespace __jni_impl::android::service::notification
 			"()Ljava/util/List;"
 		);
 	}
+	jint NotificationListenerService_Ranking::getSuppressedVisualEffects()
+	{
+		return __thiz.callMethod<jint>(
+			"getSuppressedVisualEffects",
+			"()I"
+		);
+	}
+	jint NotificationListenerService_Ranking::getUserSentiment()
+	{
+		return __thiz.callMethod<jint>(
+			"getUserSentiment",
+			"()I"
+		);
+	}
+	jboolean NotificationListenerService_Ranking::isAmbient()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAmbient",
+			"()Z"
+		);
+	}
 	jboolean NotificationListenerService_Ranking::isSuspended()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -194,11 +194,11 @@ namespace __jni_impl::android::service::notification
 			"()Z"
 		);
 	}
-	jlong NotificationListenerService_Ranking::getLastAudiblyAlertedMillis()
+	jboolean NotificationListenerService_Ranking::matchesInterruptionFilter()
 	{
-		return __thiz.callMethod<jlong>(
-			"getLastAudiblyAlertedMillis",
-			"()J"
+		return __thiz.callMethod<jboolean>(
+			"matchesInterruptionFilter",
+			"()Z"
 		);
 	}
 } // namespace __jni_impl::android::service::notification

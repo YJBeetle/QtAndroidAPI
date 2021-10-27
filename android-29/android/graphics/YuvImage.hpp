@@ -26,11 +26,11 @@ namespace __jni_impl::android::graphics
 		
 		// Methods
 		jboolean compressToJpeg(__jni_impl::android::graphics::Rect arg0, jint arg1, __jni_impl::java::io::OutputStream arg2);
-		jbyteArray getYuvData();
-		jint getYuvFormat();
+		jint getHeight();
 		jintArray getStrides();
 		jint getWidth();
-		jint getHeight();
+		jbyteArray getYuvData();
+		jint getYuvFormat();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -66,17 +66,10 @@ namespace __jni_impl::android::graphics
 			arg2.__jniObject().object()
 		);
 	}
-	jbyteArray YuvImage::getYuvData()
-	{
-		return __thiz.callObjectMethod(
-			"getYuvData",
-			"()[B"
-		).object<jbyteArray>();
-	}
-	jint YuvImage::getYuvFormat()
+	jint YuvImage::getHeight()
 	{
 		return __thiz.callMethod<jint>(
-			"getYuvFormat",
+			"getHeight",
 			"()I"
 		);
 	}
@@ -94,10 +87,17 @@ namespace __jni_impl::android::graphics
 			"()I"
 		);
 	}
-	jint YuvImage::getHeight()
+	jbyteArray YuvImage::getYuvData()
+	{
+		return __thiz.callObjectMethod(
+			"getYuvData",
+			"()[B"
+		).object<jbyteArray>();
+	}
+	jint YuvImage::getYuvFormat()
 	{
 		return __thiz.callMethod<jint>(
-			"getHeight",
+			"getYuvFormat",
 			"()I"
 		);
 	}

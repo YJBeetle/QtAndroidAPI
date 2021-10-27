@@ -21,8 +21,8 @@ namespace __jni_impl::android::media
 		void __constructor(__jni_impl::java::util::UUID arg0, jbyteArray arg1);
 		
 		// Methods
-		void release();
 		static jboolean isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0);
+		void release();
 		jboolean requiresSecureDecoderComponent(jstring arg0);
 		jboolean requiresSecureDecoderComponent(const QString &arg0);
 		void setMediaDrmSession(jbyteArray arg0);
@@ -47,13 +47,6 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	void MediaCrypto::release()
-	{
-		__thiz.callMethod<void>(
-			"release",
-			"()V"
-		);
-	}
 	jboolean MediaCrypto::isCryptoSchemeSupported(__jni_impl::java::util::UUID arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -61,6 +54,13 @@ namespace __jni_impl::android::media
 			"isCryptoSchemeSupported",
 			"(Ljava/util/UUID;)Z",
 			arg0.__jniObject().object()
+		);
+	}
+	void MediaCrypto::release()
+	{
+		__thiz.callMethod<void>(
+			"release",
+			"()V"
 		);
 	}
 	jboolean MediaCrypto::requiresSecureDecoderComponent(jstring arg0)

@@ -21,11 +21,11 @@ namespace __jni_impl::java::security::cert
 		void __constructor(__jni_impl::java::security::cert::TrustAnchor arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::__JniBaseClass arg2);
 		
 		// Methods
-		jstring toString();
 		jobject clone();
+		QAndroidJniObject getPolicyTree();
 		QAndroidJniObject getPublicKey();
 		QAndroidJniObject getTrustAnchor();
-		QAndroidJniObject getPolicyTree();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security::cert
 
@@ -48,19 +48,19 @@ namespace __jni_impl::java::security::cert
 	}
 	
 	// Methods
-	jstring PKIXCertPathValidatorResult::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jobject PKIXCertPathValidatorResult::clone()
 	{
 		return __thiz.callObjectMethod(
 			"clone",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
+	}
+	QAndroidJniObject PKIXCertPathValidatorResult::getPolicyTree()
+	{
+		return __thiz.callObjectMethod(
+			"getPolicyTree",
+			"()Ljava/security/cert/PolicyNode;"
+		);
 	}
 	QAndroidJniObject PKIXCertPathValidatorResult::getPublicKey()
 	{
@@ -76,12 +76,12 @@ namespace __jni_impl::java::security::cert
 			"()Ljava/security/cert/TrustAnchor;"
 		);
 	}
-	QAndroidJniObject PKIXCertPathValidatorResult::getPolicyTree()
+	jstring PKIXCertPathValidatorResult::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getPolicyTree",
-			"()Ljava/security/cert/PolicyNode;"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security::cert
 

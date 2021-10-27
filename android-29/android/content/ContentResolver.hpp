@@ -5,17 +5,9 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
+namespace __jni_impl::android::accounts
 {
-	class Context;
-}
-namespace __jni_impl::android::net
-{
-	class Uri;
-}
-namespace __jni_impl::android::content
-{
-	class ContentValues;
+	class Account;
 }
 namespace __jni_impl::android::content
 {
@@ -25,17 +17,57 @@ namespace __jni_impl::android::content
 {
 	class ContentProviderClient;
 }
+namespace __jni_impl::android::content
+{
+	class ContentResolver_MimeTypeInfo;
+}
+namespace __jni_impl::android::content
+{
+	class ContentValues;
+}
+namespace __jni_impl::android::content
+{
+	class Context;
+}
+namespace __jni_impl::android::content
+{
+	class SyncInfo;
+}
+namespace __jni_impl::android::content
+{
+	class SyncRequest;
+}
+namespace __jni_impl::android::content::res
+{
+	class AssetFileDescriptor;
+}
+namespace __jni_impl::android::database
+{
+	class ContentObserver;
+}
+namespace __jni_impl::android::graphics
+{
+	class Bitmap;
+}
+namespace __jni_impl::android::net
+{
+	class Uri;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
+}
 namespace __jni_impl::android::os
 {
 	class CancellationSignal;
 }
 namespace __jni_impl::android::os
 {
-	class Bundle;
+	class ParcelFileDescriptor;
 }
-namespace __jni_impl::android::database
+namespace __jni_impl::android::util
 {
-	class ContentObserver;
+	class Size;
 }
 namespace __jni_impl::java::io
 {
@@ -45,41 +77,9 @@ namespace __jni_impl::java::io
 {
 	class OutputStream;
 }
-namespace __jni_impl::android::os
-{
-	class ParcelFileDescriptor;
-}
-namespace __jni_impl::android::content::res
-{
-	class AssetFileDescriptor;
-}
 namespace __jni_impl::java::util
 {
 	class ArrayList;
-}
-namespace __jni_impl::android::accounts
-{
-	class Account;
-}
-namespace __jni_impl::android::content
-{
-	class SyncRequest;
-}
-namespace __jni_impl::android::content
-{
-	class SyncInfo;
-}
-namespace __jni_impl::android::content
-{
-	class ContentResolver_MimeTypeInfo;
-}
-namespace __jni_impl::android::graphics
-{
-	class Bitmap;
-}
-namespace __jni_impl::android::util
-{
-	class Size;
 }
 
 namespace __jni_impl::android::content
@@ -130,127 +130,127 @@ namespace __jni_impl::android::content
 		void __constructor(__jni_impl::android::content::Context arg0);
 		
 		// Methods
-		jint update(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2, jarray arg3);
-		jint update(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1, const QString &arg2, jarray arg3);
-		jint _delete(__jni_impl::android::net::Uri arg0, jstring arg1, jarray arg2);
-		jint _delete(__jni_impl::android::net::Uri arg0, const QString &arg1, jarray arg2);
-		jstring getType(__jni_impl::android::net::Uri arg0);
+		static void addPeriodicSync(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2, jlong arg3);
+		static void addPeriodicSync(__jni_impl::android::accounts::Account arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2, jlong arg3);
+		static jobject addStatusChangeListener(jint arg0, __jni_impl::__JniBaseClass arg1);
+		static void cancelSync(__jni_impl::android::content::SyncRequest arg0);
+		static void cancelSync(__jni_impl::android::accounts::Account arg0, jstring arg1);
+		static void cancelSync(__jni_impl::android::accounts::Account arg0, const QString &arg1);
+		static QAndroidJniObject getCurrentSync();
+		static QAndroidJniObject getCurrentSyncs();
+		static jint getIsSyncable(__jni_impl::android::accounts::Account arg0, jstring arg1);
+		static jint getIsSyncable(__jni_impl::android::accounts::Account arg0, const QString &arg1);
+		static jboolean getMasterSyncAutomatically();
+		static QAndroidJniObject getPeriodicSyncs(__jni_impl::android::accounts::Account arg0, jstring arg1);
+		static QAndroidJniObject getPeriodicSyncs(__jni_impl::android::accounts::Account arg0, const QString &arg1);
+		static jarray getSyncAdapterTypes();
+		static jboolean getSyncAutomatically(__jni_impl::android::accounts::Account arg0, jstring arg1);
+		static jboolean getSyncAutomatically(__jni_impl::android::accounts::Account arg0, const QString &arg1);
+		static jboolean isSyncActive(__jni_impl::android::accounts::Account arg0, jstring arg1);
+		static jboolean isSyncActive(__jni_impl::android::accounts::Account arg0, const QString &arg1);
+		static jboolean isSyncPending(__jni_impl::android::accounts::Account arg0, jstring arg1);
+		static jboolean isSyncPending(__jni_impl::android::accounts::Account arg0, const QString &arg1);
+		static void removePeriodicSync(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
+		static void removePeriodicSync(__jni_impl::android::accounts::Account arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2);
+		static void removeStatusChangeListener(jobject arg0);
+		static void requestSync(__jni_impl::android::content::SyncRequest arg0);
+		static void requestSync(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
+		static void requestSync(__jni_impl::android::accounts::Account arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2);
+		static void setIsSyncable(__jni_impl::android::accounts::Account arg0, jstring arg1, jint arg2);
+		static void setIsSyncable(__jni_impl::android::accounts::Account arg0, const QString &arg1, jint arg2);
+		static void setMasterSyncAutomatically(jboolean arg0);
+		static void setSyncAutomatically(__jni_impl::android::accounts::Account arg0, jstring arg1, jboolean arg2);
+		static void setSyncAutomatically(__jni_impl::android::accounts::Account arg0, const QString &arg1, jboolean arg2);
+		static void validateSyncExtrasBundle(__jni_impl::android::os::Bundle arg0);
 		static QAndroidJniObject wrap(__jni_impl::android::content::ContentProvider arg0);
 		static QAndroidJniObject wrap(__jni_impl::android::content::ContentProviderClient arg0);
-		QAndroidJniObject insert(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1);
-		QAndroidJniObject canonicalize(__jni_impl::android::net::Uri arg0);
-		QAndroidJniObject query(__jni_impl::android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
-		QAndroidJniObject query(__jni_impl::android::net::Uri arg0, jarray arg1, const QString &arg2, jarray arg3, const QString &arg4);
-		QAndroidJniObject query(__jni_impl::android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, __jni_impl::android::os::CancellationSignal arg5);
-		QAndroidJniObject query(__jni_impl::android::net::Uri arg0, jarray arg1, const QString &arg2, jarray arg3, const QString &arg4, __jni_impl::android::os::CancellationSignal arg5);
-		QAndroidJniObject query(__jni_impl::android::net::Uri arg0, jarray arg1, __jni_impl::android::os::Bundle arg2, __jni_impl::android::os::CancellationSignal arg3);
-		QAndroidJniObject call(jstring arg0, jstring arg1, jstring arg2, __jni_impl::android::os::Bundle arg3);
-		QAndroidJniObject call(const QString &arg0, const QString &arg1, const QString &arg2, __jni_impl::android::os::Bundle arg3);
+		QAndroidJniObject acquireContentProviderClient(__jni_impl::android::net::Uri arg0);
+		QAndroidJniObject acquireContentProviderClient(jstring arg0);
+		QAndroidJniObject acquireContentProviderClient(const QString &arg0);
+		QAndroidJniObject acquireUnstableContentProviderClient(__jni_impl::android::net::Uri arg0);
+		QAndroidJniObject acquireUnstableContentProviderClient(jstring arg0);
+		QAndroidJniObject acquireUnstableContentProviderClient(const QString &arg0);
+		jarray applyBatch(jstring arg0, __jni_impl::java::util::ArrayList arg1);
+		jarray applyBatch(const QString &arg0, __jni_impl::java::util::ArrayList arg1);
+		jint bulkInsert(__jni_impl::android::net::Uri arg0, jarray arg1);
 		QAndroidJniObject call(__jni_impl::android::net::Uri arg0, jstring arg1, jstring arg2, __jni_impl::android::os::Bundle arg3);
 		QAndroidJniObject call(__jni_impl::android::net::Uri arg0, const QString &arg1, const QString &arg2, __jni_impl::android::os::Bundle arg3);
+		QAndroidJniObject call(jstring arg0, jstring arg1, jstring arg2, __jni_impl::android::os::Bundle arg3);
+		QAndroidJniObject call(const QString &arg0, const QString &arg1, const QString &arg2, __jni_impl::android::os::Bundle arg3);
+		void cancelSync(__jni_impl::android::net::Uri arg0);
+		QAndroidJniObject canonicalize(__jni_impl::android::net::Uri arg0);
+		jint _delete(__jni_impl::android::net::Uri arg0, jstring arg1, jarray arg2);
+		jint _delete(__jni_impl::android::net::Uri arg0, const QString &arg1, jarray arg2);
+		QAndroidJniObject getOutgoingPersistedUriPermissions();
+		QAndroidJniObject getPersistedUriPermissions();
+		jarray getStreamTypes(__jni_impl::android::net::Uri arg0, jstring arg1);
+		jarray getStreamTypes(__jni_impl::android::net::Uri arg0, const QString &arg1);
+		jstring getType(__jni_impl::android::net::Uri arg0);
+		QAndroidJniObject getTypeInfo(jstring arg0);
+		QAndroidJniObject getTypeInfo(const QString &arg0);
+		QAndroidJniObject insert(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1);
+		QAndroidJniObject loadThumbnail(__jni_impl::android::net::Uri arg0, __jni_impl::android::util::Size arg1, __jni_impl::android::os::CancellationSignal arg2);
 		void notifyChange(__jni_impl::android::net::Uri arg0, __jni_impl::android::database::ContentObserver arg1);
 		void notifyChange(__jni_impl::android::net::Uri arg0, __jni_impl::android::database::ContentObserver arg1, jboolean arg2);
 		void notifyChange(__jni_impl::android::net::Uri arg0, __jni_impl::android::database::ContentObserver arg1, jint arg2);
-		jarray getStreamTypes(__jni_impl::android::net::Uri arg0, jstring arg1);
-		jarray getStreamTypes(__jni_impl::android::net::Uri arg0, const QString &arg1);
-		QAndroidJniObject uncanonicalize(__jni_impl::android::net::Uri arg0);
-		jboolean refresh(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::CancellationSignal arg2);
-		QAndroidJniObject openInputStream(__jni_impl::android::net::Uri arg0);
-		QAndroidJniObject openOutputStream(__jni_impl::android::net::Uri arg0, jstring arg1);
-		QAndroidJniObject openOutputStream(__jni_impl::android::net::Uri arg0, const QString &arg1);
-		QAndroidJniObject openOutputStream(__jni_impl::android::net::Uri arg0);
-		QAndroidJniObject openFile(__jni_impl::android::net::Uri arg0, jstring arg1, __jni_impl::android::os::CancellationSignal arg2);
-		QAndroidJniObject openFile(__jni_impl::android::net::Uri arg0, const QString &arg1, __jni_impl::android::os::CancellationSignal arg2);
-		QAndroidJniObject openFileDescriptor(__jni_impl::android::net::Uri arg0, jstring arg1, __jni_impl::android::os::CancellationSignal arg2);
-		QAndroidJniObject openFileDescriptor(__jni_impl::android::net::Uri arg0, const QString &arg1, __jni_impl::android::os::CancellationSignal arg2);
-		QAndroidJniObject openFileDescriptor(__jni_impl::android::net::Uri arg0, jstring arg1);
-		QAndroidJniObject openFileDescriptor(__jni_impl::android::net::Uri arg0, const QString &arg1);
 		QAndroidJniObject openAssetFile(__jni_impl::android::net::Uri arg0, jstring arg1, __jni_impl::android::os::CancellationSignal arg2);
 		QAndroidJniObject openAssetFile(__jni_impl::android::net::Uri arg0, const QString &arg1, __jni_impl::android::os::CancellationSignal arg2);
-		QAndroidJniObject openAssetFileDescriptor(__jni_impl::android::net::Uri arg0, jstring arg1, __jni_impl::android::os::CancellationSignal arg2);
-		QAndroidJniObject openAssetFileDescriptor(__jni_impl::android::net::Uri arg0, const QString &arg1, __jni_impl::android::os::CancellationSignal arg2);
 		QAndroidJniObject openAssetFileDescriptor(__jni_impl::android::net::Uri arg0, jstring arg1);
 		QAndroidJniObject openAssetFileDescriptor(__jni_impl::android::net::Uri arg0, const QString &arg1);
+		QAndroidJniObject openAssetFileDescriptor(__jni_impl::android::net::Uri arg0, jstring arg1, __jni_impl::android::os::CancellationSignal arg2);
+		QAndroidJniObject openAssetFileDescriptor(__jni_impl::android::net::Uri arg0, const QString &arg1, __jni_impl::android::os::CancellationSignal arg2);
+		QAndroidJniObject openFile(__jni_impl::android::net::Uri arg0, jstring arg1, __jni_impl::android::os::CancellationSignal arg2);
+		QAndroidJniObject openFile(__jni_impl::android::net::Uri arg0, const QString &arg1, __jni_impl::android::os::CancellationSignal arg2);
+		QAndroidJniObject openFileDescriptor(__jni_impl::android::net::Uri arg0, jstring arg1);
+		QAndroidJniObject openFileDescriptor(__jni_impl::android::net::Uri arg0, const QString &arg1);
+		QAndroidJniObject openFileDescriptor(__jni_impl::android::net::Uri arg0, jstring arg1, __jni_impl::android::os::CancellationSignal arg2);
+		QAndroidJniObject openFileDescriptor(__jni_impl::android::net::Uri arg0, const QString &arg1, __jni_impl::android::os::CancellationSignal arg2);
+		QAndroidJniObject openInputStream(__jni_impl::android::net::Uri arg0);
+		QAndroidJniObject openOutputStream(__jni_impl::android::net::Uri arg0);
+		QAndroidJniObject openOutputStream(__jni_impl::android::net::Uri arg0, jstring arg1);
+		QAndroidJniObject openOutputStream(__jni_impl::android::net::Uri arg0, const QString &arg1);
 		QAndroidJniObject openTypedAssetFile(__jni_impl::android::net::Uri arg0, jstring arg1, __jni_impl::android::os::Bundle arg2, __jni_impl::android::os::CancellationSignal arg3);
 		QAndroidJniObject openTypedAssetFile(__jni_impl::android::net::Uri arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2, __jni_impl::android::os::CancellationSignal arg3);
 		QAndroidJniObject openTypedAssetFileDescriptor(__jni_impl::android::net::Uri arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
 		QAndroidJniObject openTypedAssetFileDescriptor(__jni_impl::android::net::Uri arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2);
 		QAndroidJniObject openTypedAssetFileDescriptor(__jni_impl::android::net::Uri arg0, jstring arg1, __jni_impl::android::os::Bundle arg2, __jni_impl::android::os::CancellationSignal arg3);
 		QAndroidJniObject openTypedAssetFileDescriptor(__jni_impl::android::net::Uri arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2, __jni_impl::android::os::CancellationSignal arg3);
-		jarray applyBatch(jstring arg0, __jni_impl::java::util::ArrayList arg1);
-		jarray applyBatch(const QString &arg0, __jni_impl::java::util::ArrayList arg1);
-		jint bulkInsert(__jni_impl::android::net::Uri arg0, jarray arg1);
-		QAndroidJniObject acquireContentProviderClient(jstring arg0);
-		QAndroidJniObject acquireContentProviderClient(const QString &arg0);
-		QAndroidJniObject acquireContentProviderClient(__jni_impl::android::net::Uri arg0);
-		QAndroidJniObject acquireUnstableContentProviderClient(jstring arg0);
-		QAndroidJniObject acquireUnstableContentProviderClient(const QString &arg0);
-		QAndroidJniObject acquireUnstableContentProviderClient(__jni_impl::android::net::Uri arg0);
-		void takePersistableUriPermission(__jni_impl::android::net::Uri arg0, jint arg1);
-		void releasePersistableUriPermission(__jni_impl::android::net::Uri arg0, jint arg1);
-		QAndroidJniObject getPersistedUriPermissions();
-		QAndroidJniObject getOutgoingPersistedUriPermissions();
-		void startSync(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1);
-		static void requestSync(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
-		static void requestSync(__jni_impl::android::accounts::Account arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2);
-		static void requestSync(__jni_impl::android::content::SyncRequest arg0);
-		static void validateSyncExtrasBundle(__jni_impl::android::os::Bundle arg0);
-		void cancelSync(__jni_impl::android::net::Uri arg0);
-		static void cancelSync(__jni_impl::android::accounts::Account arg0, jstring arg1);
-		static void cancelSync(__jni_impl::android::accounts::Account arg0, const QString &arg1);
-		static void cancelSync(__jni_impl::android::content::SyncRequest arg0);
-		static jarray getSyncAdapterTypes();
-		static jboolean getSyncAutomatically(__jni_impl::android::accounts::Account arg0, jstring arg1);
-		static jboolean getSyncAutomatically(__jni_impl::android::accounts::Account arg0, const QString &arg1);
-		static void setSyncAutomatically(__jni_impl::android::accounts::Account arg0, jstring arg1, jboolean arg2);
-		static void setSyncAutomatically(__jni_impl::android::accounts::Account arg0, const QString &arg1, jboolean arg2);
-		static void addPeriodicSync(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2, jlong arg3);
-		static void addPeriodicSync(__jni_impl::android::accounts::Account arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2, jlong arg3);
-		static void removePeriodicSync(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2);
-		static void removePeriodicSync(__jni_impl::android::accounts::Account arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2);
-		static QAndroidJniObject getPeriodicSyncs(__jni_impl::android::accounts::Account arg0, jstring arg1);
-		static QAndroidJniObject getPeriodicSyncs(__jni_impl::android::accounts::Account arg0, const QString &arg1);
-		static jint getIsSyncable(__jni_impl::android::accounts::Account arg0, jstring arg1);
-		static jint getIsSyncable(__jni_impl::android::accounts::Account arg0, const QString &arg1);
-		static void setIsSyncable(__jni_impl::android::accounts::Account arg0, jstring arg1, jint arg2);
-		static void setIsSyncable(__jni_impl::android::accounts::Account arg0, const QString &arg1, jint arg2);
-		static jboolean getMasterSyncAutomatically();
-		static void setMasterSyncAutomatically(jboolean arg0);
-		static jboolean isSyncActive(__jni_impl::android::accounts::Account arg0, jstring arg1);
-		static jboolean isSyncActive(__jni_impl::android::accounts::Account arg0, const QString &arg1);
-		static QAndroidJniObject getCurrentSync();
-		static QAndroidJniObject getCurrentSyncs();
-		static jboolean isSyncPending(__jni_impl::android::accounts::Account arg0, jstring arg1);
-		static jboolean isSyncPending(__jni_impl::android::accounts::Account arg0, const QString &arg1);
-		static jobject addStatusChangeListener(jint arg0, __jni_impl::__JniBaseClass arg1);
-		static void removeStatusChangeListener(jobject arg0);
-		QAndroidJniObject getTypeInfo(jstring arg0);
-		QAndroidJniObject getTypeInfo(const QString &arg0);
-		QAndroidJniObject loadThumbnail(__jni_impl::android::net::Uri arg0, __jni_impl::android::util::Size arg1, __jni_impl::android::os::CancellationSignal arg2);
+		QAndroidJniObject query(__jni_impl::android::net::Uri arg0, jarray arg1, __jni_impl::android::os::Bundle arg2, __jni_impl::android::os::CancellationSignal arg3);
+		QAndroidJniObject query(__jni_impl::android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4);
+		QAndroidJniObject query(__jni_impl::android::net::Uri arg0, jarray arg1, const QString &arg2, jarray arg3, const QString &arg4);
+		QAndroidJniObject query(__jni_impl::android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, __jni_impl::android::os::CancellationSignal arg5);
+		QAndroidJniObject query(__jni_impl::android::net::Uri arg0, jarray arg1, const QString &arg2, jarray arg3, const QString &arg4, __jni_impl::android::os::CancellationSignal arg5);
+		jboolean refresh(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::CancellationSignal arg2);
 		void registerContentObserver(__jni_impl::android::net::Uri arg0, jboolean arg1, __jni_impl::android::database::ContentObserver arg2);
+		void releasePersistableUriPermission(__jni_impl::android::net::Uri arg0, jint arg1);
+		void startSync(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1);
+		void takePersistableUriPermission(__jni_impl::android::net::Uri arg0, jint arg1);
+		QAndroidJniObject uncanonicalize(__jni_impl::android::net::Uri arg0);
 		void unregisterContentObserver(__jni_impl::android::database::ContentObserver arg0);
+		jint update(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2, jarray arg3);
+		jint update(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1, const QString &arg2, jarray arg3);
 	};
 } // namespace __jni_impl::android::content
 
-#include "Context.hpp"
-#include "../net/Uri.hpp"
-#include "ContentValues.hpp"
+#include "../accounts/Account.hpp"
 #include "ContentProvider.hpp"
 #include "ContentProviderClient.hpp"
-#include "../os/CancellationSignal.hpp"
-#include "../os/Bundle.hpp"
+#include "ContentResolver_MimeTypeInfo.hpp"
+#include "ContentValues.hpp"
+#include "Context.hpp"
+#include "SyncInfo.hpp"
+#include "SyncRequest.hpp"
+#include "res/AssetFileDescriptor.hpp"
 #include "../database/ContentObserver.hpp"
+#include "../graphics/Bitmap.hpp"
+#include "../net/Uri.hpp"
+#include "../os/Bundle.hpp"
+#include "../os/CancellationSignal.hpp"
+#include "../os/ParcelFileDescriptor.hpp"
+#include "../util/Size.hpp"
 #include "../../java/io/InputStream.hpp"
 #include "../../java/io/OutputStream.hpp"
-#include "../os/ParcelFileDescriptor.hpp"
-#include "res/AssetFileDescriptor.hpp"
 #include "../../java/util/ArrayList.hpp"
-#include "../accounts/Account.hpp"
-#include "SyncRequest.hpp"
-#include "SyncInfo.hpp"
-#include "ContentResolver_MimeTypeInfo.hpp"
-#include "../graphics/Bitmap.hpp"
-#include "../util/Size.hpp"
 
 namespace __jni_impl::android::content
 {
@@ -556,55 +556,324 @@ namespace __jni_impl::android::content
 	}
 	
 	// Methods
-	jint ContentResolver::update(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2, jarray arg3)
+	void ContentResolver::addPeriodicSync(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2, jlong arg3)
 	{
-		return __thiz.callMethod<jint>(
-			"update",
-			"(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.content.ContentResolver",
+			"addPeriodicSync",
+			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;J)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2,
+			arg1,
+			arg2.__jniObject().object(),
 			arg3
 		);
 	}
-	jint ContentResolver::update(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1, const QString &arg2, jarray arg3)
+	void ContentResolver::addPeriodicSync(__jni_impl::android::accounts::Account arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2, jlong arg3)
 	{
-		return __thiz.callMethod<jint>(
-			"update",
-			"(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.content.ContentResolver",
+			"addPeriodicSync",
+			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;J)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object(),
 			arg3
 		);
 	}
-	jint ContentResolver::_delete(__jni_impl::android::net::Uri arg0, jstring arg1, jarray arg2)
+	jobject ContentResolver::addStatusChangeListener(jint arg0, __jni_impl::__JniBaseClass arg1)
 	{
-		return __thiz.callMethod<jint>(
-			"delete",
-			"(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I",
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.ContentResolver",
+			"addStatusChangeListener",
+			"(ILandroid/content/SyncStatusObserver;)Ljava/lang/Object;",
+			arg0,
+			arg1.__jniObject().object()
+		).object<jobject>();
+	}
+	void ContentResolver::cancelSync(__jni_impl::android::content::SyncRequest arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.content.ContentResolver",
+			"cancelSync",
+			"(Landroid/content/SyncRequest;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ContentResolver::cancelSync(__jni_impl::android::accounts::Account arg0, jstring arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.content.ContentResolver",
+			"cancelSync",
+			"(Landroid/accounts/Account;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void ContentResolver::cancelSync(__jni_impl::android::accounts::Account arg0, const QString &arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.content.ContentResolver",
+			"cancelSync",
+			"(Landroid/accounts/Account;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	QAndroidJniObject ContentResolver::getCurrentSync()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.ContentResolver",
+			"getCurrentSync",
+			"()Landroid/content/SyncInfo;"
+		);
+	}
+	QAndroidJniObject ContentResolver::getCurrentSyncs()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.ContentResolver",
+			"getCurrentSyncs",
+			"()Ljava/util/List;"
+		);
+	}
+	jint ContentResolver::getIsSyncable(__jni_impl::android::accounts::Account arg0, jstring arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.content.ContentResolver",
+			"getIsSyncable",
+			"(Landroid/accounts/Account;Ljava/lang/String;)I",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jint ContentResolver::getIsSyncable(__jni_impl::android::accounts::Account arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.content.ContentResolver",
+			"getIsSyncable",
+			"(Landroid/accounts/Account;Ljava/lang/String;)I",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	jboolean ContentResolver::getMasterSyncAutomatically()
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.content.ContentResolver",
+			"getMasterSyncAutomatically",
+			"()Z"
+		);
+	}
+	QAndroidJniObject ContentResolver::getPeriodicSyncs(__jni_impl::android::accounts::Account arg0, jstring arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.ContentResolver",
+			"getPeriodicSyncs",
+			"(Landroid/accounts/Account;Ljava/lang/String;)Ljava/util/List;",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	QAndroidJniObject ContentResolver::getPeriodicSyncs(__jni_impl::android::accounts::Account arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.ContentResolver",
+			"getPeriodicSyncs",
+			"(Landroid/accounts/Account;Ljava/lang/String;)Ljava/util/List;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	jarray ContentResolver::getSyncAdapterTypes()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.content.ContentResolver",
+			"getSyncAdapterTypes",
+			"()[Landroid/content/SyncAdapterType;"
+		).object<jarray>();
+	}
+	jboolean ContentResolver::getSyncAutomatically(__jni_impl::android::accounts::Account arg0, jstring arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.content.ContentResolver",
+			"getSyncAutomatically",
+			"(Landroid/accounts/Account;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jboolean ContentResolver::getSyncAutomatically(__jni_impl::android::accounts::Account arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.content.ContentResolver",
+			"getSyncAutomatically",
+			"(Landroid/accounts/Account;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	jboolean ContentResolver::isSyncActive(__jni_impl::android::accounts::Account arg0, jstring arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.content.ContentResolver",
+			"isSyncActive",
+			"(Landroid/accounts/Account;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jboolean ContentResolver::isSyncActive(__jni_impl::android::accounts::Account arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.content.ContentResolver",
+			"isSyncActive",
+			"(Landroid/accounts/Account;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	jboolean ContentResolver::isSyncPending(__jni_impl::android::accounts::Account arg0, jstring arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.content.ContentResolver",
+			"isSyncPending",
+			"(Landroid/accounts/Account;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jboolean ContentResolver::isSyncPending(__jni_impl::android::accounts::Account arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.content.ContentResolver",
+			"isSyncPending",
+			"(Landroid/accounts/Account;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	void ContentResolver::removePeriodicSync(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.content.ContentResolver",
+			"removePeriodicSync",
+			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void ContentResolver::removePeriodicSync(__jni_impl::android::accounts::Account arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.content.ContentResolver",
+			"removePeriodicSync",
+			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
+	}
+	void ContentResolver::removeStatusChangeListener(jobject arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.content.ContentResolver",
+			"removeStatusChangeListener",
+			"(Ljava/lang/Object;)V",
+			arg0
+		);
+	}
+	void ContentResolver::requestSync(__jni_impl::android::content::SyncRequest arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.content.ContentResolver",
+			"requestSync",
+			"(Landroid/content/SyncRequest;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ContentResolver::requestSync(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.content.ContentResolver",
+			"requestSync",
+			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void ContentResolver::requestSync(__jni_impl::android::accounts::Account arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.content.ContentResolver",
+			"requestSync",
+			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
+		);
+	}
+	void ContentResolver::setIsSyncable(__jni_impl::android::accounts::Account arg0, jstring arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.content.ContentResolver",
+			"setIsSyncable",
+			"(Landroid/accounts/Account;Ljava/lang/String;I)V",
 			arg0.__jniObject().object(),
 			arg1,
 			arg2
 		);
 	}
-	jint ContentResolver::_delete(__jni_impl::android::net::Uri arg0, const QString &arg1, jarray arg2)
+	void ContentResolver::setIsSyncable(__jni_impl::android::accounts::Account arg0, const QString &arg1, jint arg2)
 	{
-		return __thiz.callMethod<jint>(
-			"delete",
-			"(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I",
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.content.ContentResolver",
+			"setIsSyncable",
+			"(Landroid/accounts/Account;Ljava/lang/String;I)V",
 			arg0.__jniObject().object(),
 			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2
 		);
 	}
-	jstring ContentResolver::getType(__jni_impl::android::net::Uri arg0)
+	void ContentResolver::setMasterSyncAutomatically(jboolean arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getType",
-			"(Landroid/net/Uri;)Ljava/lang/String;",
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.content.ContentResolver",
+			"setMasterSyncAutomatically",
+			"(Z)V",
+			arg0
+		);
+	}
+	void ContentResolver::setSyncAutomatically(__jni_impl::android::accounts::Account arg0, jstring arg1, jboolean arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.content.ContentResolver",
+			"setSyncAutomatically",
+			"(Landroid/accounts/Account;Ljava/lang/String;Z)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
+		);
+	}
+	void ContentResolver::setSyncAutomatically(__jni_impl::android::accounts::Account arg0, const QString &arg1, jboolean arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.content.ContentResolver",
+			"setSyncAutomatically",
+			"(Landroid/accounts/Account;Ljava/lang/String;Z)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2
+		);
+	}
+	void ContentResolver::validateSyncExtrasBundle(__jni_impl::android::os::Bundle arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.content.ContentResolver",
+			"validateSyncExtrasBundle",
+			"(Landroid/os/Bundle;)V",
 			arg0.__jniObject().object()
-		).object<jstring>();
+		);
 	}
 	QAndroidJniObject ContentResolver::wrap(__jni_impl::android::content::ContentProvider arg0)
 	{
@@ -624,81 +893,100 @@ namespace __jni_impl::android::content
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ContentResolver::insert(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1)
+	QAndroidJniObject ContentResolver::acquireContentProviderClient(__jni_impl::android::net::Uri arg0)
 	{
 		return __thiz.callObjectMethod(
-			"insert",
-			"(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ContentResolver::canonicalize(__jni_impl::android::net::Uri arg0)
-	{
-		return __thiz.callObjectMethod(
-			"canonicalize",
-			"(Landroid/net/Uri;)Landroid/net/Uri;",
+			"acquireContentProviderClient",
+			"(Landroid/net/Uri;)Landroid/content/ContentProviderClient;",
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ContentResolver::query(__jni_impl::android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
+	QAndroidJniObject ContentResolver::acquireContentProviderClient(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
-			"query",
-			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
+			"acquireContentProviderClient",
+			"(Ljava/lang/String;)Landroid/content/ContentProviderClient;",
+			arg0
+		);
+	}
+	QAndroidJniObject ContentResolver::acquireContentProviderClient(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"acquireContentProviderClient",
+			"(Ljava/lang/String;)Landroid/content/ContentProviderClient;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject ContentResolver::acquireUnstableContentProviderClient(__jni_impl::android::net::Uri arg0)
+	{
+		return __thiz.callObjectMethod(
+			"acquireUnstableContentProviderClient",
+			"(Landroid/net/Uri;)Landroid/content/ContentProviderClient;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ContentResolver::acquireUnstableContentProviderClient(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"acquireUnstableContentProviderClient",
+			"(Ljava/lang/String;)Landroid/content/ContentProviderClient;",
+			arg0
+		);
+	}
+	QAndroidJniObject ContentResolver::acquireUnstableContentProviderClient(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"acquireUnstableContentProviderClient",
+			"(Ljava/lang/String;)Landroid/content/ContentProviderClient;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jarray ContentResolver::applyBatch(jstring arg0, __jni_impl::java::util::ArrayList arg1)
+	{
+		return __thiz.callObjectMethod(
+			"applyBatch",
+			"(Ljava/lang/String;Ljava/util/ArrayList;)[Landroid/content/ContentProviderResult;",
+			arg0,
+			arg1.__jniObject().object()
+		).object<jarray>();
+	}
+	jarray ContentResolver::applyBatch(const QString &arg0, __jni_impl::java::util::ArrayList arg1)
+	{
+		return __thiz.callObjectMethod(
+			"applyBatch",
+			"(Ljava/lang/String;Ljava/util/ArrayList;)[Landroid/content/ContentProviderResult;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1.__jniObject().object()
+		).object<jarray>();
+	}
+	jint ContentResolver::bulkInsert(__jni_impl::android::net::Uri arg0, jarray arg1)
+	{
+		return __thiz.callMethod<jint>(
+			"bulkInsert",
+			"(Landroid/net/Uri;[Landroid/content/ContentValues;)I",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	QAndroidJniObject ContentResolver::call(__jni_impl::android::net::Uri arg0, jstring arg1, jstring arg2, __jni_impl::android::os::Bundle arg3)
+	{
+		return __thiz.callObjectMethod(
+			"call",
+			"(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;",
 			arg0.__jniObject().object(),
 			arg1,
 			arg2,
-			arg3,
-			arg4
+			arg3.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ContentResolver::query(__jni_impl::android::net::Uri arg0, jarray arg1, const QString &arg2, jarray arg3, const QString &arg4)
+	QAndroidJniObject ContentResolver::call(__jni_impl::android::net::Uri arg0, const QString &arg1, const QString &arg2, __jni_impl::android::os::Bundle arg3)
 	{
 		return __thiz.callObjectMethod(
-			"query",
-			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
+			"call",
+			"(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;",
 			arg0.__jniObject().object(),
-			arg1,
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3,
-			QAndroidJniObject::fromString(arg4).object<jstring>()
-		);
-	}
-	QAndroidJniObject ContentResolver::query(__jni_impl::android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, __jni_impl::android::os::CancellationSignal arg5)
-	{
-		return __thiz.callObjectMethod(
-			"query",
-			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ContentResolver::query(__jni_impl::android::net::Uri arg0, jarray arg1, const QString &arg2, jarray arg3, const QString &arg4, __jni_impl::android::os::CancellationSignal arg5)
-	{
-		return __thiz.callObjectMethod(
-			"query",
-			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
-			arg1,
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3,
-			QAndroidJniObject::fromString(arg4).object<jstring>(),
-			arg5.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ContentResolver::query(__jni_impl::android::net::Uri arg0, jarray arg1, __jni_impl::android::os::Bundle arg2, __jni_impl::android::os::CancellationSignal arg3)
-	{
-		return __thiz.callObjectMethod(
-			"query",
-			"(Landroid/net/Uri;[Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object(),
 			arg3.__jniObject().object()
 		);
 	}
@@ -724,26 +1012,115 @@ namespace __jni_impl::android::content
 			arg3.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ContentResolver::call(__jni_impl::android::net::Uri arg0, jstring arg1, jstring arg2, __jni_impl::android::os::Bundle arg3)
+	void ContentResolver::cancelSync(__jni_impl::android::net::Uri arg0)
 	{
-		return __thiz.callObjectMethod(
-			"call",
-			"(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
+		__thiz.callMethod<void>(
+			"cancelSync",
+			"(Landroid/net/Uri;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ContentResolver::call(__jni_impl::android::net::Uri arg0, const QString &arg1, const QString &arg2, __jni_impl::android::os::Bundle arg3)
+	QAndroidJniObject ContentResolver::canonicalize(__jni_impl::android::net::Uri arg0)
 	{
 		return __thiz.callObjectMethod(
-			"call",
-			"(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Landroid/os/Bundle;",
+			"canonicalize",
+			"(Landroid/net/Uri;)Landroid/net/Uri;",
+			arg0.__jniObject().object()
+		);
+	}
+	jint ContentResolver::_delete(__jni_impl::android::net::Uri arg0, jstring arg1, jarray arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"delete",
+			"(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2
+		);
+	}
+	jint ContentResolver::_delete(__jni_impl::android::net::Uri arg0, const QString &arg1, jarray arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"delete",
+			"(Landroid/net/Uri;Ljava/lang/String;[Ljava/lang/String;)I",
 			arg0.__jniObject().object(),
 			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			QAndroidJniObject::fromString(arg2).object<jstring>(),
-			arg3.__jniObject().object()
+			arg2
+		);
+	}
+	QAndroidJniObject ContentResolver::getOutgoingPersistedUriPermissions()
+	{
+		return __thiz.callObjectMethod(
+			"getOutgoingPersistedUriPermissions",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject ContentResolver::getPersistedUriPermissions()
+	{
+		return __thiz.callObjectMethod(
+			"getPersistedUriPermissions",
+			"()Ljava/util/List;"
+		);
+	}
+	jarray ContentResolver::getStreamTypes(__jni_impl::android::net::Uri arg0, jstring arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getStreamTypes",
+			"(Landroid/net/Uri;Ljava/lang/String;)[Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			arg1
+		).object<jarray>();
+	}
+	jarray ContentResolver::getStreamTypes(__jni_impl::android::net::Uri arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getStreamTypes",
+			"(Landroid/net/Uri;Ljava/lang/String;)[Ljava/lang/String;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		).object<jarray>();
+	}
+	jstring ContentResolver::getType(__jni_impl::android::net::Uri arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getType",
+			"(Landroid/net/Uri;)Ljava/lang/String;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	QAndroidJniObject ContentResolver::getTypeInfo(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getTypeInfo",
+			"(Ljava/lang/String;)Landroid/content/ContentResolver$MimeTypeInfo;",
+			arg0
+		);
+	}
+	QAndroidJniObject ContentResolver::getTypeInfo(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getTypeInfo",
+			"(Ljava/lang/String;)Landroid/content/ContentResolver$MimeTypeInfo;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject ContentResolver::insert(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1)
+	{
+		return __thiz.callObjectMethod(
+			"insert",
+			"(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ContentResolver::loadThumbnail(__jni_impl::android::net::Uri arg0, __jni_impl::android::util::Size arg1, __jni_impl::android::os::CancellationSignal arg2)
+	{
+		return __thiz.callObjectMethod(
+			"loadThumbnail",
+			"(Landroid/net/Uri;Landroid/util/Size;Landroid/os/CancellationSignal;)Landroid/graphics/Bitmap;",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
 	void ContentResolver::notifyChange(__jni_impl::android::net::Uri arg0, __jni_impl::android::database::ContentObserver arg1)
@@ -775,74 +1152,62 @@ namespace __jni_impl::android::content
 			arg2
 		);
 	}
-	jarray ContentResolver::getStreamTypes(__jni_impl::android::net::Uri arg0, jstring arg1)
+	QAndroidJniObject ContentResolver::openAssetFile(__jni_impl::android::net::Uri arg0, jstring arg1, __jni_impl::android::os::CancellationSignal arg2)
 	{
 		return __thiz.callObjectMethod(
-			"getStreamTypes",
-			"(Landroid/net/Uri;Ljava/lang/String;)[Ljava/lang/String;",
+			"openAssetFile",
+			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;",
 			arg0.__jniObject().object(),
-			arg1
-		).object<jarray>();
-	}
-	jarray ContentResolver::getStreamTypes(__jni_impl::android::net::Uri arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getStreamTypes",
-			"(Landroid/net/Uri;Ljava/lang/String;)[Ljava/lang/String;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		).object<jarray>();
-	}
-	QAndroidJniObject ContentResolver::uncanonicalize(__jni_impl::android::net::Uri arg0)
-	{
-		return __thiz.callObjectMethod(
-			"uncanonicalize",
-			"(Landroid/net/Uri;)Landroid/net/Uri;",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean ContentResolver::refresh(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::CancellationSignal arg2)
-	{
-		return __thiz.callMethod<jboolean>(
-			"refresh",
-			"(Landroid/net/Uri;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Z",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
+			arg1,
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ContentResolver::openInputStream(__jni_impl::android::net::Uri arg0)
+	QAndroidJniObject ContentResolver::openAssetFile(__jni_impl::android::net::Uri arg0, const QString &arg1, __jni_impl::android::os::CancellationSignal arg2)
 	{
 		return __thiz.callObjectMethod(
-			"openInputStream",
-			"(Landroid/net/Uri;)Ljava/io/InputStream;",
-			arg0.__jniObject().object()
+			"openAssetFile",
+			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ContentResolver::openOutputStream(__jni_impl::android::net::Uri arg0, jstring arg1)
+	QAndroidJniObject ContentResolver::openAssetFileDescriptor(__jni_impl::android::net::Uri arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
-			"openOutputStream",
-			"(Landroid/net/Uri;Ljava/lang/String;)Ljava/io/OutputStream;",
+			"openAssetFileDescriptor",
+			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
 			arg0.__jniObject().object(),
 			arg1
 		);
 	}
-	QAndroidJniObject ContentResolver::openOutputStream(__jni_impl::android::net::Uri arg0, const QString &arg1)
+	QAndroidJniObject ContentResolver::openAssetFileDescriptor(__jni_impl::android::net::Uri arg0, const QString &arg1)
 	{
 		return __thiz.callObjectMethod(
-			"openOutputStream",
-			"(Landroid/net/Uri;Ljava/lang/String;)Ljava/io/OutputStream;",
+			"openAssetFileDescriptor",
+			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
 			arg0.__jniObject().object(),
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	QAndroidJniObject ContentResolver::openOutputStream(__jni_impl::android::net::Uri arg0)
+	QAndroidJniObject ContentResolver::openAssetFileDescriptor(__jni_impl::android::net::Uri arg0, jstring arg1, __jni_impl::android::os::CancellationSignal arg2)
 	{
 		return __thiz.callObjectMethod(
-			"openOutputStream",
-			"(Landroid/net/Uri;)Ljava/io/OutputStream;",
-			arg0.__jniObject().object()
+			"openAssetFileDescriptor",
+			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ContentResolver::openAssetFileDescriptor(__jni_impl::android::net::Uri arg0, const QString &arg1, __jni_impl::android::os::CancellationSignal arg2)
+	{
+		return __thiz.callObjectMethod(
+			"openAssetFileDescriptor",
+			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
 		);
 	}
 	QAndroidJniObject ContentResolver::openFile(__jni_impl::android::net::Uri arg0, jstring arg1, __jni_impl::android::os::CancellationSignal arg2)
@@ -859,26 +1224,6 @@ namespace __jni_impl::android::content
 	{
 		return __thiz.callObjectMethod(
 			"openFile",
-			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/os/ParcelFileDescriptor;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ContentResolver::openFileDescriptor(__jni_impl::android::net::Uri arg0, jstring arg1, __jni_impl::android::os::CancellationSignal arg2)
-	{
-		return __thiz.callObjectMethod(
-			"openFileDescriptor",
-			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/os/ParcelFileDescriptor;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ContentResolver::openFileDescriptor(__jni_impl::android::net::Uri arg0, const QString &arg1, __jni_impl::android::os::CancellationSignal arg2)
-	{
-		return __thiz.callObjectMethod(
-			"openFileDescriptor",
 			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/os/ParcelFileDescriptor;",
 			arg0.__jniObject().object(),
 			QAndroidJniObject::fromString(arg1).object<jstring>(),
@@ -903,60 +1248,56 @@ namespace __jni_impl::android::content
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
-	QAndroidJniObject ContentResolver::openAssetFile(__jni_impl::android::net::Uri arg0, jstring arg1, __jni_impl::android::os::CancellationSignal arg2)
+	QAndroidJniObject ContentResolver::openFileDescriptor(__jni_impl::android::net::Uri arg0, jstring arg1, __jni_impl::android::os::CancellationSignal arg2)
 	{
 		return __thiz.callObjectMethod(
-			"openAssetFile",
-			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;",
+			"openFileDescriptor",
+			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/os/ParcelFileDescriptor;",
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ContentResolver::openAssetFile(__jni_impl::android::net::Uri arg0, const QString &arg1, __jni_impl::android::os::CancellationSignal arg2)
+	QAndroidJniObject ContentResolver::openFileDescriptor(__jni_impl::android::net::Uri arg0, const QString &arg1, __jni_impl::android::os::CancellationSignal arg2)
 	{
 		return __thiz.callObjectMethod(
-			"openAssetFile",
-			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;",
+			"openFileDescriptor",
+			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/os/ParcelFileDescriptor;",
 			arg0.__jniObject().object(),
 			QAndroidJniObject::fromString(arg1).object<jstring>(),
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ContentResolver::openAssetFileDescriptor(__jni_impl::android::net::Uri arg0, jstring arg1, __jni_impl::android::os::CancellationSignal arg2)
+	QAndroidJniObject ContentResolver::openInputStream(__jni_impl::android::net::Uri arg0)
 	{
 		return __thiz.callObjectMethod(
-			"openAssetFileDescriptor",
-			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
+			"openInputStream",
+			"(Landroid/net/Uri;)Ljava/io/InputStream;",
+			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ContentResolver::openAssetFileDescriptor(__jni_impl::android::net::Uri arg0, const QString &arg1, __jni_impl::android::os::CancellationSignal arg2)
+	QAndroidJniObject ContentResolver::openOutputStream(__jni_impl::android::net::Uri arg0)
 	{
 		return __thiz.callObjectMethod(
-			"openAssetFileDescriptor",
-			"(Landroid/net/Uri;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/content/res/AssetFileDescriptor;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
+			"openOutputStream",
+			"(Landroid/net/Uri;)Ljava/io/OutputStream;",
+			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ContentResolver::openAssetFileDescriptor(__jni_impl::android::net::Uri arg0, jstring arg1)
+	QAndroidJniObject ContentResolver::openOutputStream(__jni_impl::android::net::Uri arg0, jstring arg1)
 	{
 		return __thiz.callObjectMethod(
-			"openAssetFileDescriptor",
-			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
+			"openOutputStream",
+			"(Landroid/net/Uri;Ljava/lang/String;)Ljava/io/OutputStream;",
 			arg0.__jniObject().object(),
 			arg1
 		);
 	}
-	QAndroidJniObject ContentResolver::openAssetFileDescriptor(__jni_impl::android::net::Uri arg0, const QString &arg1)
+	QAndroidJniObject ContentResolver::openOutputStream(__jni_impl::android::net::Uri arg0, const QString &arg1)
 	{
 		return __thiz.callObjectMethod(
-			"openAssetFileDescriptor",
-			"(Landroid/net/Uri;Ljava/lang/String;)Landroid/content/res/AssetFileDescriptor;",
+			"openOutputStream",
+			"(Landroid/net/Uri;Ljava/lang/String;)Ljava/io/OutputStream;",
 			arg0.__jniObject().object(),
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
@@ -1025,470 +1366,72 @@ namespace __jni_impl::android::content
 			arg3.__jniObject().object()
 		);
 	}
-	jarray ContentResolver::applyBatch(jstring arg0, __jni_impl::java::util::ArrayList arg1)
+	QAndroidJniObject ContentResolver::query(__jni_impl::android::net::Uri arg0, jarray arg1, __jni_impl::android::os::Bundle arg2, __jni_impl::android::os::CancellationSignal arg3)
 	{
 		return __thiz.callObjectMethod(
-			"applyBatch",
-			"(Ljava/lang/String;Ljava/util/ArrayList;)[Landroid/content/ContentProviderResult;",
-			arg0,
-			arg1.__jniObject().object()
-		).object<jarray>();
-	}
-	jarray ContentResolver::applyBatch(const QString &arg0, __jni_impl::java::util::ArrayList arg1)
-	{
-		return __thiz.callObjectMethod(
-			"applyBatch",
-			"(Ljava/lang/String;Ljava/util/ArrayList;)[Landroid/content/ContentProviderResult;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1.__jniObject().object()
-		).object<jarray>();
-	}
-	jint ContentResolver::bulkInsert(__jni_impl::android::net::Uri arg0, jarray arg1)
-	{
-		return __thiz.callMethod<jint>(
-			"bulkInsert",
-			"(Landroid/net/Uri;[Landroid/content/ContentValues;)I",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject ContentResolver::acquireContentProviderClient(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"acquireContentProviderClient",
-			"(Ljava/lang/String;)Landroid/content/ContentProviderClient;",
-			arg0
-		);
-	}
-	QAndroidJniObject ContentResolver::acquireContentProviderClient(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"acquireContentProviderClient",
-			"(Ljava/lang/String;)Landroid/content/ContentProviderClient;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject ContentResolver::acquireContentProviderClient(__jni_impl::android::net::Uri arg0)
-	{
-		return __thiz.callObjectMethod(
-			"acquireContentProviderClient",
-			"(Landroid/net/Uri;)Landroid/content/ContentProviderClient;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ContentResolver::acquireUnstableContentProviderClient(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"acquireUnstableContentProviderClient",
-			"(Ljava/lang/String;)Landroid/content/ContentProviderClient;",
-			arg0
-		);
-	}
-	QAndroidJniObject ContentResolver::acquireUnstableContentProviderClient(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"acquireUnstableContentProviderClient",
-			"(Ljava/lang/String;)Landroid/content/ContentProviderClient;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject ContentResolver::acquireUnstableContentProviderClient(__jni_impl::android::net::Uri arg0)
-	{
-		return __thiz.callObjectMethod(
-			"acquireUnstableContentProviderClient",
-			"(Landroid/net/Uri;)Landroid/content/ContentProviderClient;",
-			arg0.__jniObject().object()
-		);
-	}
-	void ContentResolver::takePersistableUriPermission(__jni_impl::android::net::Uri arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"takePersistableUriPermission",
-			"(Landroid/net/Uri;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void ContentResolver::releasePersistableUriPermission(__jni_impl::android::net::Uri arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"releasePersistableUriPermission",
-			"(Landroid/net/Uri;I)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject ContentResolver::getPersistedUriPermissions()
-	{
-		return __thiz.callObjectMethod(
-			"getPersistedUriPermissions",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject ContentResolver::getOutgoingPersistedUriPermissions()
-	{
-		return __thiz.callObjectMethod(
-			"getOutgoingPersistedUriPermissions",
-			"()Ljava/util/List;"
-		);
-	}
-	void ContentResolver::startSync(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"startSync",
-			"(Landroid/net/Uri;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	void ContentResolver::requestSync(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.content.ContentResolver",
-			"requestSync",
-			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void ContentResolver::requestSync(__jni_impl::android::accounts::Account arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.content.ContentResolver",
-			"requestSync",
-			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
-	void ContentResolver::requestSync(__jni_impl::android::content::SyncRequest arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.content.ContentResolver",
-			"requestSync",
-			"(Landroid/content/SyncRequest;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ContentResolver::validateSyncExtrasBundle(__jni_impl::android::os::Bundle arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.content.ContentResolver",
-			"validateSyncExtrasBundle",
-			"(Landroid/os/Bundle;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ContentResolver::cancelSync(__jni_impl::android::net::Uri arg0)
-	{
-		__thiz.callMethod<void>(
-			"cancelSync",
-			"(Landroid/net/Uri;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ContentResolver::cancelSync(__jni_impl::android::accounts::Account arg0, jstring arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.content.ContentResolver",
-			"cancelSync",
-			"(Landroid/accounts/Account;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void ContentResolver::cancelSync(__jni_impl::android::accounts::Account arg0, const QString &arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.content.ContentResolver",
-			"cancelSync",
-			"(Landroid/accounts/Account;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	void ContentResolver::cancelSync(__jni_impl::android::content::SyncRequest arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.content.ContentResolver",
-			"cancelSync",
-			"(Landroid/content/SyncRequest;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jarray ContentResolver::getSyncAdapterTypes()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ContentResolver",
-			"getSyncAdapterTypes",
-			"()[Landroid/content/SyncAdapterType;"
-		).object<jarray>();
-	}
-	jboolean ContentResolver::getSyncAutomatically(__jni_impl::android::accounts::Account arg0, jstring arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.content.ContentResolver",
-			"getSyncAutomatically",
-			"(Landroid/accounts/Account;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jboolean ContentResolver::getSyncAutomatically(__jni_impl::android::accounts::Account arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.content.ContentResolver",
-			"getSyncAutomatically",
-			"(Landroid/accounts/Account;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	void ContentResolver::setSyncAutomatically(__jni_impl::android::accounts::Account arg0, jstring arg1, jboolean arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.content.ContentResolver",
-			"setSyncAutomatically",
-			"(Landroid/accounts/Account;Ljava/lang/String;Z)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		);
-	}
-	void ContentResolver::setSyncAutomatically(__jni_impl::android::accounts::Account arg0, const QString &arg1, jboolean arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.content.ContentResolver",
-			"setSyncAutomatically",
-			"(Landroid/accounts/Account;Ljava/lang/String;Z)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
-	void ContentResolver::addPeriodicSync(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2, jlong arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.content.ContentResolver",
-			"addPeriodicSync",
-			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;J)V",
+			"query",
+			"(Landroid/net/Uri;[Ljava/lang/String;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
 			arg0.__jniObject().object(),
 			arg1,
 			arg2.__jniObject().object(),
-			arg3
+			arg3.__jniObject().object()
 		);
 	}
-	void ContentResolver::addPeriodicSync(__jni_impl::android::accounts::Account arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2, jlong arg3)
+	QAndroidJniObject ContentResolver::query(__jni_impl::android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.content.ContentResolver",
-			"addPeriodicSync",
-			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;J)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object(),
-			arg3
-		);
-	}
-	void ContentResolver::removePeriodicSync(__jni_impl::android::accounts::Account arg0, jstring arg1, __jni_impl::android::os::Bundle arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.content.ContentResolver",
-			"removePeriodicSync",
-			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V",
+		return __thiz.callObjectMethod(
+			"query",
+			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2.__jniObject().object()
+			arg2,
+			arg3,
+			arg4
 		);
 	}
-	void ContentResolver::removePeriodicSync(__jni_impl::android::accounts::Account arg0, const QString &arg1, __jni_impl::android::os::Bundle arg2)
+	QAndroidJniObject ContentResolver::query(__jni_impl::android::net::Uri arg0, jarray arg1, const QString &arg2, jarray arg3, const QString &arg4)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.content.ContentResolver",
-			"removePeriodicSync",
-			"(Landroid/accounts/Account;Ljava/lang/String;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ContentResolver::getPeriodicSyncs(__jni_impl::android::accounts::Account arg0, jstring arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ContentResolver",
-			"getPeriodicSyncs",
-			"(Landroid/accounts/Account;Ljava/lang/String;)Ljava/util/List;",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	QAndroidJniObject ContentResolver::getPeriodicSyncs(__jni_impl::android::accounts::Account arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ContentResolver",
-			"getPeriodicSyncs",
-			"(Landroid/accounts/Account;Ljava/lang/String;)Ljava/util/List;",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	jint ContentResolver::getIsSyncable(__jni_impl::android::accounts::Account arg0, jstring arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.content.ContentResolver",
-			"getIsSyncable",
-			"(Landroid/accounts/Account;Ljava/lang/String;)I",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jint ContentResolver::getIsSyncable(__jni_impl::android::accounts::Account arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.content.ContentResolver",
-			"getIsSyncable",
-			"(Landroid/accounts/Account;Ljava/lang/String;)I",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	void ContentResolver::setIsSyncable(__jni_impl::android::accounts::Account arg0, jstring arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.content.ContentResolver",
-			"setIsSyncable",
-			"(Landroid/accounts/Account;Ljava/lang/String;I)V",
+		return __thiz.callObjectMethod(
+			"query",
+			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;",
 			arg0.__jniObject().object(),
 			arg1,
-			arg2
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3,
+			QAndroidJniObject::fromString(arg4).object<jstring>()
 		);
 	}
-	void ContentResolver::setIsSyncable(__jni_impl::android::accounts::Account arg0, const QString &arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.content.ContentResolver",
-			"setIsSyncable",
-			"(Landroid/accounts/Account;Ljava/lang/String;I)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2
-		);
-	}
-	jboolean ContentResolver::getMasterSyncAutomatically()
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.content.ContentResolver",
-			"getMasterSyncAutomatically",
-			"()Z"
-		);
-	}
-	void ContentResolver::setMasterSyncAutomatically(jboolean arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.content.ContentResolver",
-			"setMasterSyncAutomatically",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean ContentResolver::isSyncActive(__jni_impl::android::accounts::Account arg0, jstring arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.content.ContentResolver",
-			"isSyncActive",
-			"(Landroid/accounts/Account;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jboolean ContentResolver::isSyncActive(__jni_impl::android::accounts::Account arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.content.ContentResolver",
-			"isSyncActive",
-			"(Landroid/accounts/Account;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	QAndroidJniObject ContentResolver::getCurrentSync()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ContentResolver",
-			"getCurrentSync",
-			"()Landroid/content/SyncInfo;"
-		);
-	}
-	QAndroidJniObject ContentResolver::getCurrentSyncs()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ContentResolver",
-			"getCurrentSyncs",
-			"()Ljava/util/List;"
-		);
-	}
-	jboolean ContentResolver::isSyncPending(__jni_impl::android::accounts::Account arg0, jstring arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.content.ContentResolver",
-			"isSyncPending",
-			"(Landroid/accounts/Account;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jboolean ContentResolver::isSyncPending(__jni_impl::android::accounts::Account arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.content.ContentResolver",
-			"isSyncPending",
-			"(Landroid/accounts/Account;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	jobject ContentResolver::addStatusChangeListener(jint arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.content.ContentResolver",
-			"addStatusChangeListener",
-			"(ILandroid/content/SyncStatusObserver;)Ljava/lang/Object;",
-			arg0,
-			arg1.__jniObject().object()
-		).object<jobject>();
-	}
-	void ContentResolver::removeStatusChangeListener(jobject arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.content.ContentResolver",
-			"removeStatusChangeListener",
-			"(Ljava/lang/Object;)V",
-			arg0
-		);
-	}
-	QAndroidJniObject ContentResolver::getTypeInfo(jstring arg0)
+	QAndroidJniObject ContentResolver::query(__jni_impl::android::net::Uri arg0, jarray arg1, jstring arg2, jarray arg3, jstring arg4, __jni_impl::android::os::CancellationSignal arg5)
 	{
 		return __thiz.callObjectMethod(
-			"getTypeInfo",
-			"(Ljava/lang/String;)Landroid/content/ContentResolver$MimeTypeInfo;",
-			arg0
+			"query",
+			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ContentResolver::getTypeInfo(const QString &arg0)
+	QAndroidJniObject ContentResolver::query(__jni_impl::android::net::Uri arg0, jarray arg1, const QString &arg2, jarray arg3, const QString &arg4, __jni_impl::android::os::CancellationSignal arg5)
 	{
 		return __thiz.callObjectMethod(
-			"getTypeInfo",
-			"(Ljava/lang/String;)Landroid/content/ContentResolver$MimeTypeInfo;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+			"query",
+			"(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Landroid/os/CancellationSignal;)Landroid/database/Cursor;",
+			arg0.__jniObject().object(),
+			arg1,
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3,
+			QAndroidJniObject::fromString(arg4).object<jstring>(),
+			arg5.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ContentResolver::loadThumbnail(__jni_impl::android::net::Uri arg0, __jni_impl::android::util::Size arg1, __jni_impl::android::os::CancellationSignal arg2)
+	jboolean ContentResolver::refresh(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1, __jni_impl::android::os::CancellationSignal arg2)
 	{
-		return __thiz.callObjectMethod(
-			"loadThumbnail",
-			"(Landroid/net/Uri;Landroid/util/Size;Landroid/os/CancellationSignal;)Landroid/graphics/Bitmap;",
+		return __thiz.callMethod<jboolean>(
+			"refresh",
+			"(Landroid/net/Uri;Landroid/os/Bundle;Landroid/os/CancellationSignal;)Z",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
@@ -1504,12 +1447,69 @@ namespace __jni_impl::android::content
 			arg2.__jniObject().object()
 		);
 	}
+	void ContentResolver::releasePersistableUriPermission(__jni_impl::android::net::Uri arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"releasePersistableUriPermission",
+			"(Landroid/net/Uri;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void ContentResolver::startSync(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1)
+	{
+		__thiz.callMethod<void>(
+			"startSync",
+			"(Landroid/net/Uri;Landroid/os/Bundle;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void ContentResolver::takePersistableUriPermission(__jni_impl::android::net::Uri arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"takePersistableUriPermission",
+			"(Landroid/net/Uri;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	QAndroidJniObject ContentResolver::uncanonicalize(__jni_impl::android::net::Uri arg0)
+	{
+		return __thiz.callObjectMethod(
+			"uncanonicalize",
+			"(Landroid/net/Uri;)Landroid/net/Uri;",
+			arg0.__jniObject().object()
+		);
+	}
 	void ContentResolver::unregisterContentObserver(__jni_impl::android::database::ContentObserver arg0)
 	{
 		__thiz.callMethod<void>(
 			"unregisterContentObserver",
 			"(Landroid/database/ContentObserver;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	jint ContentResolver::update(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1, jstring arg2, jarray arg3)
+	{
+		return __thiz.callMethod<jint>(
+			"update",
+			"(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2,
+			arg3
+		);
+	}
+	jint ContentResolver::update(__jni_impl::android::net::Uri arg0, __jni_impl::android::content::ContentValues arg1, const QString &arg2, jarray arg3)
+	{
+		return __thiz.callMethod<jint>(
+			"update",
+			"(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			QAndroidJniObject::fromString(arg2).object<jstring>(),
+			arg3
 		);
 	}
 } // namespace __jni_impl::android::content

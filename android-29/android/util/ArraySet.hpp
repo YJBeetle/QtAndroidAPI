@@ -14,34 +14,34 @@ namespace __jni_impl::android::util
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::__JniBaseClass arg0);
+		void __constructor();
 		void __constructor(__jni_impl::android::util::ArraySet arg0);
 		void __constructor(jint arg0);
-		void __constructor();
+		void __constructor(__jni_impl::__JniBaseClass arg0);
 		
 		// Methods
 		jboolean add(jobject arg0);
-		jboolean remove(jobject arg0);
+		jboolean addAll(__jni_impl::__JniBaseClass arg0);
+		void addAll(__jni_impl::android::util::ArraySet arg0);
+		void clear();
+		jboolean contains(jobject arg0);
+		jboolean containsAll(__jni_impl::__JniBaseClass arg0);
+		void ensureCapacity(jint arg0);
 		jboolean equals(jobject arg0);
-		jstring toString();
 		jint hashCode();
 		jint indexOf(jobject arg0);
-		void clear();
 		jboolean isEmpty();
+		QAndroidJniObject iterator();
+		jboolean remove(jobject arg0);
+		jboolean removeAll(__jni_impl::android::util::ArraySet arg0);
+		jboolean removeAll(__jni_impl::__JniBaseClass arg0);
+		jobject removeAt(jint arg0);
+		jboolean removeIf(__jni_impl::__JniBaseClass arg0);
+		jboolean retainAll(__jni_impl::__JniBaseClass arg0);
 		jint size();
 		jobjectArray toArray();
 		jobjectArray toArray(jobjectArray arg0);
-		QAndroidJniObject iterator();
-		jboolean contains(jobject arg0);
-		jboolean addAll(__jni_impl::__JniBaseClass arg0);
-		void addAll(__jni_impl::android::util::ArraySet arg0);
-		void ensureCapacity(jint arg0);
-		jboolean containsAll(__jni_impl::__JniBaseClass arg0);
-		jboolean retainAll(__jni_impl::__JniBaseClass arg0);
-		jboolean removeAll(__jni_impl::__JniBaseClass arg0);
-		jboolean removeAll(__jni_impl::android::util::ArraySet arg0);
-		jboolean removeIf(__jni_impl::__JniBaseClass arg0);
-		jobject removeAt(jint arg0);
+		jstring toString();
 		jobject valueAt(jint arg0);
 	};
 } // namespace __jni_impl::android::util
@@ -52,12 +52,11 @@ namespace __jni_impl::android::util
 	// Fields
 	
 	// Constructors
-	void ArraySet::__constructor(__jni_impl::__JniBaseClass arg0)
+	void ArraySet::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.ArraySet",
-			"(Ljava/util/Collection;)V",
-			arg0.__jniObject().object()
+			"()V"
 		);
 	}
 	void ArraySet::__constructor(__jni_impl::android::util::ArraySet arg0)
@@ -76,11 +75,12 @@ namespace __jni_impl::android::util
 			arg0
 		);
 	}
-	void ArraySet::__constructor()
+	void ArraySet::__constructor(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"android.util.ArraySet",
-			"()V"
+			"(Ljava/util/Collection;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	
@@ -93,11 +93,50 @@ namespace __jni_impl::android::util
 			arg0
 		);
 	}
-	jboolean ArraySet::remove(jobject arg0)
+	jboolean ArraySet::addAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"remove",
+			"addAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	void ArraySet::addAll(__jni_impl::android::util::ArraySet arg0)
+	{
+		__thiz.callMethod<void>(
+			"addAll",
+			"(Landroid/util/ArraySet;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void ArraySet::clear()
+	{
+		__thiz.callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	jboolean ArraySet::contains(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"contains",
 			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jboolean ArraySet::containsAll(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"containsAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	void ArraySet::ensureCapacity(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"ensureCapacity",
+			"(I)V",
 			arg0
 		);
 	}
@@ -108,13 +147,6 @@ namespace __jni_impl::android::util
 			"(Ljava/lang/Object;)Z",
 			arg0
 		);
-	}
-	jstring ArraySet::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	jint ArraySet::hashCode()
 	{
@@ -131,18 +163,66 @@ namespace __jni_impl::android::util
 			arg0
 		);
 	}
-	void ArraySet::clear()
-	{
-		__thiz.callMethod<void>(
-			"clear",
-			"()V"
-		);
-	}
 	jboolean ArraySet::isEmpty()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
+		);
+	}
+	QAndroidJniObject ArraySet::iterator()
+	{
+		return __thiz.callObjectMethod(
+			"iterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	jboolean ArraySet::remove(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"remove",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jboolean ArraySet::removeAll(__jni_impl::android::util::ArraySet arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"removeAll",
+			"(Landroid/util/ArraySet;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean ArraySet::removeAll(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"removeAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jobject ArraySet::removeAt(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"removeAt",
+			"(I)Ljava/lang/Object;",
+			arg0
+		).object<jobject>();
+	}
+	jboolean ArraySet::removeIf(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"removeIf",
+			"(Ljava/util/function/Predicate;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean ArraySet::retainAll(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"retainAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 	jint ArraySet::size()
@@ -167,92 +247,12 @@ namespace __jni_impl::android::util
 			arg0
 		).object<jobjectArray>();
 	}
-	QAndroidJniObject ArraySet::iterator()
+	jstring ArraySet::toString()
 	{
 		return __thiz.callObjectMethod(
-			"iterator",
-			"()Ljava/util/Iterator;"
-		);
-	}
-	jboolean ArraySet::contains(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"contains",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jboolean ArraySet::addAll(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"addAll",
-			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	void ArraySet::addAll(__jni_impl::android::util::ArraySet arg0)
-	{
-		__thiz.callMethod<void>(
-			"addAll",
-			"(Landroid/util/ArraySet;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void ArraySet::ensureCapacity(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"ensureCapacity",
-			"(I)V",
-			arg0
-		);
-	}
-	jboolean ArraySet::containsAll(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"containsAll",
-			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean ArraySet::retainAll(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"retainAll",
-			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean ArraySet::removeAll(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"removeAll",
-			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean ArraySet::removeAll(__jni_impl::android::util::ArraySet arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"removeAll",
-			"(Landroid/util/ArraySet;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean ArraySet::removeIf(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"removeIf",
-			"(Ljava/util/function/Predicate;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jobject ArraySet::removeAt(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"removeAt",
-			"(I)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jobject ArraySet::valueAt(jint arg0)
 	{
@@ -270,10 +270,9 @@ namespace android::util
 	{
 	public:
 		ArraySet(QAndroidJniObject obj) { __thiz = obj; }
-		ArraySet(__jni_impl::__JniBaseClass arg0)
+		ArraySet()
 		{
-			__constructor(
-				arg0);
+			__constructor();
 		}
 		ArraySet(__jni_impl::android::util::ArraySet arg0)
 		{
@@ -285,9 +284,10 @@ namespace android::util
 			__constructor(
 				arg0);
 		}
-		ArraySet()
+		ArraySet(__jni_impl::__JniBaseClass arg0)
 		{
-			__constructor();
+			__constructor(
+				arg0);
 		}
 	};
 } // namespace android::util

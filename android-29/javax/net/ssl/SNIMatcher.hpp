@@ -21,8 +21,8 @@ namespace __jni_impl::javax::net::ssl
 		void __constructor();
 		
 		// Methods
-		jboolean matches(__jni_impl::javax::net::ssl::SNIServerName arg0);
 		jint getType();
+		jboolean matches(__jni_impl::javax::net::ssl::SNIServerName arg0);
 	};
 } // namespace __jni_impl::javax::net::ssl
 
@@ -41,19 +41,19 @@ namespace __jni_impl::javax::net::ssl
 	}
 	
 	// Methods
+	jint SNIMatcher::getType()
+	{
+		return __thiz.callMethod<jint>(
+			"getType",
+			"()I"
+		);
+	}
 	jboolean SNIMatcher::matches(__jni_impl::javax::net::ssl::SNIServerName arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"matches",
 			"(Ljavax/net/ssl/SNIServerName;)Z",
 			arg0.__jniObject().object()
-		);
-	}
-	jint SNIMatcher::getType()
-	{
-		return __thiz.callMethod<jint>(
-			"getType",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::javax::net::ssl

@@ -24,9 +24,9 @@ namespace __jni_impl::android::os
 		
 		// Methods
 		static QAndroidJniObject createOneShot(jlong arg0, jint arg1);
-		static QAndroidJniObject createWaveform(jlongArray arg0, jintArray arg1, jint arg2);
-		static QAndroidJniObject createWaveform(jlongArray arg0, jint arg1);
 		static QAndroidJniObject createPredefined(jint arg0);
+		static QAndroidJniObject createWaveform(jlongArray arg0, jint arg1);
+		static QAndroidJniObject createWaveform(jlongArray arg0, jintArray arg1, jint arg2);
 		jint describeContents();
 	};
 } // namespace __jni_impl::android::os
@@ -98,15 +98,13 @@ namespace __jni_impl::android::os
 			arg1
 		);
 	}
-	QAndroidJniObject VibrationEffect::createWaveform(jlongArray arg0, jintArray arg1, jint arg2)
+	QAndroidJniObject VibrationEffect::createPredefined(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.VibrationEffect",
-			"createWaveform",
-			"([J[II)Landroid/os/VibrationEffect;",
-			arg0,
-			arg1,
-			arg2
+			"createPredefined",
+			"(I)Landroid/os/VibrationEffect;",
+			arg0
 		);
 	}
 	QAndroidJniObject VibrationEffect::createWaveform(jlongArray arg0, jint arg1)
@@ -119,13 +117,15 @@ namespace __jni_impl::android::os
 			arg1
 		);
 	}
-	QAndroidJniObject VibrationEffect::createPredefined(jint arg0)
+	QAndroidJniObject VibrationEffect::createWaveform(jlongArray arg0, jintArray arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.os.VibrationEffect",
-			"createPredefined",
-			"(I)Landroid/os/VibrationEffect;",
-			arg0
+			"createWaveform",
+			"([J[II)Landroid/os/VibrationEffect;",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 	jint VibrationEffect::describeContents()

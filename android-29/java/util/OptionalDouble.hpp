@@ -17,21 +17,21 @@ namespace __jni_impl::java::util
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jboolean isEmpty();
-		QAndroidJniObject stream();
-		static QAndroidJniObject of(jdouble arg0);
 		static QAndroidJniObject empty();
+		static QAndroidJniObject of(jdouble arg0);
+		jboolean equals(jobject arg0);
+		jdouble getAsDouble();
+		jint hashCode();
+		void ifPresent(__jni_impl::__JniBaseClass arg0);
+		void ifPresentOrElse(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		jboolean isEmpty();
 		jboolean isPresent();
 		jdouble orElse(jdouble arg0);
-		jdouble orElseThrow(__jni_impl::__JniBaseClass arg0);
-		jdouble orElseThrow();
-		void ifPresentOrElse(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
 		jdouble orElseGet(__jni_impl::__JniBaseClass arg0);
-		void ifPresent(__jni_impl::__JniBaseClass arg0);
-		jdouble getAsDouble();
+		jdouble orElseThrow();
+		jdouble orElseThrow(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject stream();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::util
 
@@ -49,40 +49,12 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	jboolean OptionalDouble::equals(jobject arg0)
+	QAndroidJniObject OptionalDouble::empty()
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring OptionalDouble::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint OptionalDouble::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jboolean OptionalDouble::isEmpty()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEmpty",
-			"()Z"
-		);
-	}
-	QAndroidJniObject OptionalDouble::stream()
-	{
-		return __thiz.callObjectMethod(
-			"stream",
-			"()Ljava/util/stream/DoubleStream;"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.OptionalDouble",
+			"empty",
+			"()Ljava/util/OptionalDouble;"
 		);
 	}
 	QAndroidJniObject OptionalDouble::of(jdouble arg0)
@@ -94,12 +66,50 @@ namespace __jni_impl::java::util
 			arg0
 		);
 	}
-	QAndroidJniObject OptionalDouble::empty()
+	jboolean OptionalDouble::equals(jobject arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.OptionalDouble",
-			"empty",
-			"()Ljava/util/OptionalDouble;"
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jdouble OptionalDouble::getAsDouble()
+	{
+		return __thiz.callMethod<jdouble>(
+			"getAsDouble",
+			"()D"
+		);
+	}
+	jint OptionalDouble::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	void OptionalDouble::ifPresent(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"ifPresent",
+			"(Ljava/util/function/DoubleConsumer;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void OptionalDouble::ifPresentOrElse(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"ifPresentOrElse",
+			"(Ljava/util/function/DoubleConsumer;Ljava/lang/Runnable;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean OptionalDouble::isEmpty()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEmpty",
+			"()Z"
 		);
 	}
 	jboolean OptionalDouble::isPresent()
@@ -117,11 +127,11 @@ namespace __jni_impl::java::util
 			arg0
 		);
 	}
-	jdouble OptionalDouble::orElseThrow(__jni_impl::__JniBaseClass arg0)
+	jdouble OptionalDouble::orElseGet(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jdouble>(
-			"orElseThrow",
-			"(Ljava/util/function/Supplier;)D",
+			"orElseGet",
+			"(Ljava/util/function/DoubleSupplier;)D",
 			arg0.__jniObject().object()
 		);
 	}
@@ -132,37 +142,27 @@ namespace __jni_impl::java::util
 			"()D"
 		);
 	}
-	void OptionalDouble::ifPresentOrElse(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"ifPresentOrElse",
-			"(Ljava/util/function/DoubleConsumer;Ljava/lang/Runnable;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	jdouble OptionalDouble::orElseGet(__jni_impl::__JniBaseClass arg0)
+	jdouble OptionalDouble::orElseThrow(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jdouble>(
-			"orElseGet",
-			"(Ljava/util/function/DoubleSupplier;)D",
+			"orElseThrow",
+			"(Ljava/util/function/Supplier;)D",
 			arg0.__jniObject().object()
 		);
 	}
-	void OptionalDouble::ifPresent(__jni_impl::__JniBaseClass arg0)
+	QAndroidJniObject OptionalDouble::stream()
 	{
-		__thiz.callMethod<void>(
-			"ifPresent",
-			"(Ljava/util/function/DoubleConsumer;)V",
-			arg0.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"stream",
+			"()Ljava/util/stream/DoubleStream;"
 		);
 	}
-	jdouble OptionalDouble::getAsDouble()
+	jstring OptionalDouble::toString()
 	{
-		return __thiz.callMethod<jdouble>(
-			"getAsDouble",
-			"()D"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util
 

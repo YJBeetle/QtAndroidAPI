@@ -8,6 +8,10 @@
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
+namespace __jni_impl::android::content
+{
+	class Intent;
+}
 namespace __jni_impl::android::telecom
 {
 	class Call_Details;
@@ -15,10 +19,6 @@ namespace __jni_impl::android::telecom
 namespace __jni_impl::android::telecom
 {
 	class CallScreeningService_CallResponse;
-}
-namespace __jni_impl::android::content
-{
-	class Intent;
 }
 
 namespace __jni_impl::android::telecom
@@ -33,16 +33,16 @@ namespace __jni_impl::android::telecom
 		void __constructor();
 		
 		// Methods
-		void onScreenCall(__jni_impl::android::telecom::Call_Details arg0);
-		void respondToCall(__jni_impl::android::telecom::Call_Details arg0, __jni_impl::android::telecom::CallScreeningService_CallResponse arg1);
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
+		void onScreenCall(__jni_impl::android::telecom::Call_Details arg0);
 		jboolean onUnbind(__jni_impl::android::content::Intent arg0);
+		void respondToCall(__jni_impl::android::telecom::Call_Details arg0, __jni_impl::android::telecom::CallScreeningService_CallResponse arg1);
 	};
 } // namespace __jni_impl::android::telecom
 
+#include "../content/Intent.hpp"
 #include "Call_Details.hpp"
 #include "CallScreeningService_CallResponse.hpp"
-#include "../content/Intent.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -66,11 +66,27 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
+	QAndroidJniObject CallScreeningService::onBind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callObjectMethod(
+			"onBind",
+			"(Landroid/content/Intent;)Landroid/os/IBinder;",
+			arg0.__jniObject().object()
+		);
+	}
 	void CallScreeningService::onScreenCall(__jni_impl::android::telecom::Call_Details arg0)
 	{
 		__thiz.callMethod<void>(
 			"onScreenCall",
 			"(Landroid/telecom/Call$Details;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean CallScreeningService::onUnbind(__jni_impl::android::content::Intent arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"onUnbind",
+			"(Landroid/content/Intent;)Z",
 			arg0.__jniObject().object()
 		);
 	}
@@ -81,22 +97,6 @@ namespace __jni_impl::android::telecom
 			"(Landroid/telecom/Call$Details;Landroid/telecom/CallScreeningService$CallResponse;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject CallScreeningService::onBind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"onBind",
-			"(Landroid/content/Intent;)Landroid/os/IBinder;",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean CallScreeningService::onUnbind(__jni_impl::android::content::Intent arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"onUnbind",
-			"(Landroid/content/Intent;)Z",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::telecom

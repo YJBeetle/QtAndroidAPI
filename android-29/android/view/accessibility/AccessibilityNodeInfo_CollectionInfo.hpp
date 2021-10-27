@@ -20,12 +20,12 @@ namespace __jni_impl::android::view::accessibility
 		void __constructor();
 		
 		// Methods
-		jint getRowCount();
-		static QAndroidJniObject obtain(jint arg0, jint arg1, jboolean arg2, jint arg3);
 		static QAndroidJniObject obtain(jint arg0, jint arg1, jboolean arg2);
+		static QAndroidJniObject obtain(jint arg0, jint arg1, jboolean arg2, jint arg3);
+		jint getColumnCount();
+		jint getRowCount();
 		jint getSelectionMode();
 		jboolean isHierarchical();
-		jint getColumnCount();
 	};
 } // namespace __jni_impl::android::view::accessibility
 
@@ -64,11 +64,15 @@ namespace __jni_impl::android::view::accessibility
 	}
 	
 	// Methods
-	jint AccessibilityNodeInfo_CollectionInfo::getRowCount()
+	QAndroidJniObject AccessibilityNodeInfo_CollectionInfo::obtain(jint arg0, jint arg1, jboolean arg2)
 	{
-		return __thiz.callMethod<jint>(
-			"getRowCount",
-			"()I"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.view.accessibility.AccessibilityNodeInfo$CollectionInfo",
+			"obtain",
+			"(IIZ)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 	QAndroidJniObject AccessibilityNodeInfo_CollectionInfo::obtain(jint arg0, jint arg1, jboolean arg2, jint arg3)
@@ -83,15 +87,18 @@ namespace __jni_impl::android::view::accessibility
 			arg3
 		);
 	}
-	QAndroidJniObject AccessibilityNodeInfo_CollectionInfo::obtain(jint arg0, jint arg1, jboolean arg2)
+	jint AccessibilityNodeInfo_CollectionInfo::getColumnCount()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.view.accessibility.AccessibilityNodeInfo$CollectionInfo",
-			"obtain",
-			"(IIZ)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;",
-			arg0,
-			arg1,
-			arg2
+		return __thiz.callMethod<jint>(
+			"getColumnCount",
+			"()I"
+		);
+	}
+	jint AccessibilityNodeInfo_CollectionInfo::getRowCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getRowCount",
+			"()I"
 		);
 	}
 	jint AccessibilityNodeInfo_CollectionInfo::getSelectionMode()
@@ -106,13 +113,6 @@ namespace __jni_impl::android::view::accessibility
 		return __thiz.callMethod<jboolean>(
 			"isHierarchical",
 			"()Z"
-		);
-	}
-	jint AccessibilityNodeInfo_CollectionInfo::getColumnCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getColumnCount",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::view::accessibility

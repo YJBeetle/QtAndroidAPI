@@ -24,16 +24,16 @@ namespace __jni_impl::android::text::style
 		// Fields
 		
 		// Constructors
-		void __constructor(jint arg0);
 		void __constructor(__jni_impl::android::os::Parcel arg0);
+		void __constructor(jint arg0);
 		
 		// Methods
+		jint describeContents();
+		jint getSpanTypeId();
 		jint getStyle();
 		void updateDrawState(__jni_impl::android::text::TextPaint arg0);
-		jint getSpanTypeId();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		void updateMeasureState(__jni_impl::android::text::TextPaint arg0);
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -45,14 +45,6 @@ namespace __jni_impl::android::text::style
 	// Fields
 	
 	// Constructors
-	void StyleSpan::__constructor(jint arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.style.StyleSpan",
-			"(I)V",
-			arg0
-		);
-	}
 	void StyleSpan::__constructor(__jni_impl::android::os::Parcel arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -61,8 +53,30 @@ namespace __jni_impl::android::text::style
 			arg0.__jniObject().object()
 		);
 	}
+	void StyleSpan::__constructor(jint arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.style.StyleSpan",
+			"(I)V",
+			arg0
+		);
+	}
 	
 	// Methods
+	jint StyleSpan::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	jint StyleSpan::getSpanTypeId()
+	{
+		return __thiz.callMethod<jint>(
+			"getSpanTypeId",
+			"()I"
+		);
+	}
 	jint StyleSpan::getStyle()
 	{
 		return __thiz.callMethod<jint>(
@@ -78,18 +92,12 @@ namespace __jni_impl::android::text::style
 			arg0.__jniObject().object()
 		);
 	}
-	jint StyleSpan::getSpanTypeId()
+	void StyleSpan::updateMeasureState(__jni_impl::android::text::TextPaint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getSpanTypeId",
-			"()I"
-		);
-	}
-	jint StyleSpan::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		__thiz.callMethod<void>(
+			"updateMeasureState",
+			"(Landroid/text/TextPaint;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void StyleSpan::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
@@ -101,14 +109,6 @@ namespace __jni_impl::android::text::style
 			arg1
 		);
 	}
-	void StyleSpan::updateMeasureState(__jni_impl::android::text::TextPaint arg0)
-	{
-		__thiz.callMethod<void>(
-			"updateMeasureState",
-			"(Landroid/text/TextPaint;)V",
-			arg0.__jniObject().object()
-		);
-	}
 } // namespace __jni_impl::android::text::style
 
 namespace android::text::style
@@ -117,12 +117,12 @@ namespace android::text::style
 	{
 	public:
 		StyleSpan(QAndroidJniObject obj) { __thiz = obj; }
-		StyleSpan(jint arg0)
+		StyleSpan(__jni_impl::android::os::Parcel arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		StyleSpan(__jni_impl::android::os::Parcel arg0)
+		StyleSpan(jint arg0)
 		{
 			__constructor(
 				arg0);

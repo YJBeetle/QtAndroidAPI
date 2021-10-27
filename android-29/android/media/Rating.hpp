@@ -29,19 +29,19 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jstring toString();
-		static QAndroidJniObject newUnratedRating(jint arg0);
 		static QAndroidJniObject newHeartRating(jboolean arg0);
-		jboolean hasHeart();
-		static QAndroidJniObject newThumbRating(jboolean arg0);
-		static QAndroidJniObject newStarRating(jint arg0, jfloat arg1);
 		static QAndroidJniObject newPercentageRating(jfloat arg0);
-		jboolean isRated();
-		jint getRatingStyle();
-		jboolean isThumbUp();
-		jfloat getStarRating();
-		jfloat getPercentRating();
+		static QAndroidJniObject newStarRating(jint arg0, jfloat arg1);
+		static QAndroidJniObject newThumbRating(jboolean arg0);
+		static QAndroidJniObject newUnratedRating(jint arg0);
 		jint describeContents();
+		jfloat getPercentRating();
+		jint getRatingStyle();
+		jfloat getStarRating();
+		jboolean hasHeart();
+		jboolean isRated();
+		jboolean isThumbUp();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
@@ -118,22 +118,6 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jstring Rating::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject Rating::newUnratedRating(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.media.Rating",
-			"newUnratedRating",
-			"(I)Landroid/media/Rating;",
-			arg0
-		);
-	}
 	QAndroidJniObject Rating::newHeartRating(jboolean arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -143,19 +127,12 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	jboolean Rating::hasHeart()
-	{
-		return __thiz.callMethod<jboolean>(
-			"hasHeart",
-			"()Z"
-		);
-	}
-	QAndroidJniObject Rating::newThumbRating(jboolean arg0)
+	QAndroidJniObject Rating::newPercentageRating(jfloat arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.Rating",
-			"newThumbRating",
-			"(Z)Landroid/media/Rating;",
+			"newPercentageRating",
+			"(F)Landroid/media/Rating;",
 			arg0
 		);
 	}
@@ -169,41 +146,29 @@ namespace __jni_impl::android::media
 			arg1
 		);
 	}
-	QAndroidJniObject Rating::newPercentageRating(jfloat arg0)
+	QAndroidJniObject Rating::newThumbRating(jboolean arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.media.Rating",
-			"newPercentageRating",
-			"(F)Landroid/media/Rating;",
+			"newThumbRating",
+			"(Z)Landroid/media/Rating;",
 			arg0
 		);
 	}
-	jboolean Rating::isRated()
+	QAndroidJniObject Rating::newUnratedRating(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isRated",
-			"()Z"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.media.Rating",
+			"newUnratedRating",
+			"(I)Landroid/media/Rating;",
+			arg0
 		);
 	}
-	jint Rating::getRatingStyle()
+	jint Rating::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getRatingStyle",
+			"describeContents",
 			"()I"
-		);
-	}
-	jboolean Rating::isThumbUp()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isThumbUp",
-			"()Z"
-		);
-	}
-	jfloat Rating::getStarRating()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getStarRating",
-			"()F"
 		);
 	}
 	jfloat Rating::getPercentRating()
@@ -213,12 +178,47 @@ namespace __jni_impl::android::media
 			"()F"
 		);
 	}
-	jint Rating::describeContents()
+	jint Rating::getRatingStyle()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getRatingStyle",
 			"()I"
 		);
+	}
+	jfloat Rating::getStarRating()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getStarRating",
+			"()F"
+		);
+	}
+	jboolean Rating::hasHeart()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasHeart",
+			"()Z"
+		);
+	}
+	jboolean Rating::isRated()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isRated",
+			"()Z"
+		);
+	}
+	jboolean Rating::isThumbUp()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isThumbUp",
+			"()Z"
+		);
+	}
+	jstring Rating::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void Rating::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

@@ -5,13 +5,17 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::io
-{
-	class File;
-}
 namespace __jni_impl::android::os
 {
 	class Handler;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
+}
+namespace __jni_impl::java::io
+{
+	class File;
 }
 namespace __jni_impl::java::io
 {
@@ -19,15 +23,11 @@ namespace __jni_impl::java::io
 }
 namespace __jni_impl::java::net
 {
-	class Socket;
+	class DatagramSocket;
 }
 namespace __jni_impl::java::net
 {
-	class DatagramSocket;
-}
-namespace __jni_impl::android::os
-{
-	class Parcel;
+	class Socket;
 }
 
 namespace __jni_impl::android::os
@@ -50,41 +50,41 @@ namespace __jni_impl::android::os
 		void __constructor(__jni_impl::android::os::ParcelFileDescriptor arg0);
 		
 		// Methods
-		jstring toString();
-		void close();
-		static QAndroidJniObject open(__jni_impl::java::io::File arg0, jint arg1);
-		static QAndroidJniObject open(__jni_impl::java::io::File arg0, jint arg1, __jni_impl::android::os::Handler arg2, __jni_impl::__JniBaseClass arg3);
-		void checkError();
-		static QAndroidJniObject dup(__jni_impl::java::io::FileDescriptor arg0);
-		QAndroidJniObject dup();
-		static QAndroidJniObject fromFd(jint arg0);
 		static QAndroidJniObject adoptFd(jint arg0);
-		static QAndroidJniObject fromSocket(__jni_impl::java::net::Socket arg0);
-		static QAndroidJniObject fromDatagramSocket(__jni_impl::java::net::DatagramSocket arg0);
 		static jarray createPipe();
 		static jarray createReliablePipe();
-		static jarray createSocketPair();
 		static jarray createReliableSocketPair();
+		static jarray createSocketPair();
+		static QAndroidJniObject dup(__jni_impl::java::io::FileDescriptor arg0);
+		static QAndroidJniObject fromDatagramSocket(__jni_impl::java::net::DatagramSocket arg0);
+		static QAndroidJniObject fromFd(jint arg0);
+		static QAndroidJniObject fromSocket(__jni_impl::java::net::Socket arg0);
+		static QAndroidJniObject open(__jni_impl::java::io::File arg0, jint arg1);
+		static QAndroidJniObject open(__jni_impl::java::io::File arg0, jint arg1, __jni_impl::android::os::Handler arg2, __jni_impl::__JniBaseClass arg3);
 		static jint parseMode(jstring arg0);
 		static jint parseMode(const QString &arg0);
-		QAndroidJniObject getFileDescriptor();
-		jlong getStatSize();
-		jint getFd();
-		jint detachFd();
+		jboolean canDetectErrors();
+		void checkError();
+		void close();
 		void closeWithError(jstring arg0);
 		void closeWithError(const QString &arg0);
-		jboolean canDetectErrors();
 		jint describeContents();
+		jint detachFd();
+		QAndroidJniObject dup();
+		jint getFd();
+		QAndroidJniObject getFileDescriptor();
+		jlong getStatSize();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::os
 
-#include "../../java/io/File.hpp"
 #include "Handler.hpp"
-#include "../../java/io/FileDescriptor.hpp"
-#include "../../java/net/Socket.hpp"
-#include "../../java/net/DatagramSocket.hpp"
 #include "Parcel.hpp"
+#include "../../java/io/File.hpp"
+#include "../../java/io/FileDescriptor.hpp"
+#include "../../java/net/DatagramSocket.hpp"
+#include "../../java/net/Socket.hpp"
 
 namespace __jni_impl::android::os
 {
@@ -165,18 +165,81 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	jstring ParcelFileDescriptor::toString()
+	QAndroidJniObject ParcelFileDescriptor::adoptFd(jint arg0)
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.ParcelFileDescriptor",
+			"adoptFd",
+			"(I)Landroid/os/ParcelFileDescriptor;",
+			arg0
+		);
 	}
-	void ParcelFileDescriptor::close()
+	jarray ParcelFileDescriptor::createPipe()
 	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.ParcelFileDescriptor",
+			"createPipe",
+			"()[Landroid/os/ParcelFileDescriptor;"
+		).object<jarray>();
+	}
+	jarray ParcelFileDescriptor::createReliablePipe()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.ParcelFileDescriptor",
+			"createReliablePipe",
+			"()[Landroid/os/ParcelFileDescriptor;"
+		).object<jarray>();
+	}
+	jarray ParcelFileDescriptor::createReliableSocketPair()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.ParcelFileDescriptor",
+			"createReliableSocketPair",
+			"()[Landroid/os/ParcelFileDescriptor;"
+		).object<jarray>();
+	}
+	jarray ParcelFileDescriptor::createSocketPair()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.ParcelFileDescriptor",
+			"createSocketPair",
+			"()[Landroid/os/ParcelFileDescriptor;"
+		).object<jarray>();
+	}
+	QAndroidJniObject ParcelFileDescriptor::dup(__jni_impl::java::io::FileDescriptor arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.ParcelFileDescriptor",
+			"dup",
+			"(Ljava/io/FileDescriptor;)Landroid/os/ParcelFileDescriptor;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ParcelFileDescriptor::fromDatagramSocket(__jni_impl::java::net::DatagramSocket arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.ParcelFileDescriptor",
+			"fromDatagramSocket",
+			"(Ljava/net/DatagramSocket;)Landroid/os/ParcelFileDescriptor;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject ParcelFileDescriptor::fromFd(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.ParcelFileDescriptor",
+			"fromFd",
+			"(I)Landroid/os/ParcelFileDescriptor;",
+			arg0
+		);
+	}
+	QAndroidJniObject ParcelFileDescriptor::fromSocket(__jni_impl::java::net::Socket arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.os.ParcelFileDescriptor",
+			"fromSocket",
+			"(Ljava/net/Socket;)Landroid/os/ParcelFileDescriptor;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject ParcelFileDescriptor::open(__jni_impl::java::io::File arg0, jint arg1)
@@ -201,97 +264,6 @@ namespace __jni_impl::android::os
 			arg3.__jniObject().object()
 		);
 	}
-	void ParcelFileDescriptor::checkError()
-	{
-		__thiz.callMethod<void>(
-			"checkError",
-			"()V"
-		);
-	}
-	QAndroidJniObject ParcelFileDescriptor::dup(__jni_impl::java::io::FileDescriptor arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.ParcelFileDescriptor",
-			"dup",
-			"(Ljava/io/FileDescriptor;)Landroid/os/ParcelFileDescriptor;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ParcelFileDescriptor::dup()
-	{
-		return __thiz.callObjectMethod(
-			"dup",
-			"()Landroid/os/ParcelFileDescriptor;"
-		);
-	}
-	QAndroidJniObject ParcelFileDescriptor::fromFd(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.ParcelFileDescriptor",
-			"fromFd",
-			"(I)Landroid/os/ParcelFileDescriptor;",
-			arg0
-		);
-	}
-	QAndroidJniObject ParcelFileDescriptor::adoptFd(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.ParcelFileDescriptor",
-			"adoptFd",
-			"(I)Landroid/os/ParcelFileDescriptor;",
-			arg0
-		);
-	}
-	QAndroidJniObject ParcelFileDescriptor::fromSocket(__jni_impl::java::net::Socket arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.ParcelFileDescriptor",
-			"fromSocket",
-			"(Ljava/net/Socket;)Landroid/os/ParcelFileDescriptor;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject ParcelFileDescriptor::fromDatagramSocket(__jni_impl::java::net::DatagramSocket arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.ParcelFileDescriptor",
-			"fromDatagramSocket",
-			"(Ljava/net/DatagramSocket;)Landroid/os/ParcelFileDescriptor;",
-			arg0.__jniObject().object()
-		);
-	}
-	jarray ParcelFileDescriptor::createPipe()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.ParcelFileDescriptor",
-			"createPipe",
-			"()[Landroid/os/ParcelFileDescriptor;"
-		).object<jarray>();
-	}
-	jarray ParcelFileDescriptor::createReliablePipe()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.ParcelFileDescriptor",
-			"createReliablePipe",
-			"()[Landroid/os/ParcelFileDescriptor;"
-		).object<jarray>();
-	}
-	jarray ParcelFileDescriptor::createSocketPair()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.ParcelFileDescriptor",
-			"createSocketPair",
-			"()[Landroid/os/ParcelFileDescriptor;"
-		).object<jarray>();
-	}
-	jarray ParcelFileDescriptor::createReliableSocketPair()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.os.ParcelFileDescriptor",
-			"createReliableSocketPair",
-			"()[Landroid/os/ParcelFileDescriptor;"
-		).object<jarray>();
-	}
 	jint ParcelFileDescriptor::parseMode(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
@@ -310,32 +282,25 @@ namespace __jni_impl::android::os
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	QAndroidJniObject ParcelFileDescriptor::getFileDescriptor()
+	jboolean ParcelFileDescriptor::canDetectErrors()
 	{
-		return __thiz.callObjectMethod(
-			"getFileDescriptor",
-			"()Ljava/io/FileDescriptor;"
+		return __thiz.callMethod<jboolean>(
+			"canDetectErrors",
+			"()Z"
 		);
 	}
-	jlong ParcelFileDescriptor::getStatSize()
+	void ParcelFileDescriptor::checkError()
 	{
-		return __thiz.callMethod<jlong>(
-			"getStatSize",
-			"()J"
+		__thiz.callMethod<void>(
+			"checkError",
+			"()V"
 		);
 	}
-	jint ParcelFileDescriptor::getFd()
+	void ParcelFileDescriptor::close()
 	{
-		return __thiz.callMethod<jint>(
-			"getFd",
-			"()I"
-		);
-	}
-	jint ParcelFileDescriptor::detachFd()
-	{
-		return __thiz.callMethod<jint>(
-			"detachFd",
-			"()I"
+		__thiz.callMethod<void>(
+			"close",
+			"()V"
 		);
 	}
 	void ParcelFileDescriptor::closeWithError(jstring arg0)
@@ -354,19 +319,54 @@ namespace __jni_impl::android::os
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jboolean ParcelFileDescriptor::canDetectErrors()
-	{
-		return __thiz.callMethod<jboolean>(
-			"canDetectErrors",
-			"()Z"
-		);
-	}
 	jint ParcelFileDescriptor::describeContents()
 	{
 		return __thiz.callMethod<jint>(
 			"describeContents",
 			"()I"
 		);
+	}
+	jint ParcelFileDescriptor::detachFd()
+	{
+		return __thiz.callMethod<jint>(
+			"detachFd",
+			"()I"
+		);
+	}
+	QAndroidJniObject ParcelFileDescriptor::dup()
+	{
+		return __thiz.callObjectMethod(
+			"dup",
+			"()Landroid/os/ParcelFileDescriptor;"
+		);
+	}
+	jint ParcelFileDescriptor::getFd()
+	{
+		return __thiz.callMethod<jint>(
+			"getFd",
+			"()I"
+		);
+	}
+	QAndroidJniObject ParcelFileDescriptor::getFileDescriptor()
+	{
+		return __thiz.callObjectMethod(
+			"getFileDescriptor",
+			"()Ljava/io/FileDescriptor;"
+		);
+	}
+	jlong ParcelFileDescriptor::getStatSize()
+	{
+		return __thiz.callMethod<jlong>(
+			"getStatSize",
+			"()J"
+		);
+	}
+	jstring ParcelFileDescriptor::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void ParcelFileDescriptor::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

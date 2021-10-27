@@ -9,10 +9,6 @@
 #include "../view/ContextThemeWrapper.hpp"
 #include "Activity.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Bundle;
-}
 namespace __jni_impl::android::app
 {
 	class Activity;
@@ -20,6 +16,10 @@ namespace __jni_impl::android::app
 namespace __jni_impl::android::app
 {
 	class LocalActivityManager;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 
 namespace __jni_impl::android::app
@@ -39,9 +39,9 @@ namespace __jni_impl::android::app
 	};
 } // namespace __jni_impl::android::app
 
-#include "../os/Bundle.hpp"
 #include "Activity.hpp"
 #include "LocalActivityManager.hpp"
+#include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::app
 {

@@ -15,14 +15,14 @@ namespace __jni_impl::java::lang::invoke
 		// Fields
 		
 		// Constructors
-		void __constructor(jstring arg0, jthrowable arg1, jboolean arg2, jboolean arg3);
-		void __constructor(const QString &arg0, jthrowable arg1, jboolean arg2, jboolean arg3);
+		void __constructor();
+		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
 		void __constructor(const QString &arg0, jthrowable arg1);
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
-		void __constructor();
+		void __constructor(jstring arg0, jthrowable arg1, jboolean arg2, jboolean arg3);
+		void __constructor(const QString &arg0, jthrowable arg1, jboolean arg2, jboolean arg3);
 		
 		// Methods
 	};
@@ -34,26 +34,27 @@ namespace __jni_impl::java::lang::invoke
 	// Fields
 	
 	// Constructors
-	void LambdaConversionException::__constructor(jstring arg0, jthrowable arg1, jboolean arg2, jboolean arg3)
+	void LambdaConversionException::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.invoke.LambdaConversionException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;ZZ)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
+			"()V"
 		);
 	}
-	void LambdaConversionException::__constructor(const QString &arg0, jthrowable arg1, jboolean arg2, jboolean arg3)
+	void LambdaConversionException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.invoke.LambdaConversionException",
-			"(Ljava/lang/String;Ljava/lang/Throwable;ZZ)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2,
-			arg3
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void LambdaConversionException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"java.lang.invoke.LambdaConversionException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void LambdaConversionException::__constructor(jthrowable arg0)
@@ -82,27 +83,26 @@ namespace __jni_impl::java::lang::invoke
 			arg1
 		);
 	}
-	void LambdaConversionException::__constructor(jstring arg0)
+	void LambdaConversionException::__constructor(jstring arg0, jthrowable arg1, jboolean arg2, jboolean arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.invoke.LambdaConversionException",
-			"(Ljava/lang/String;)V",
-			arg0
+			"(Ljava/lang/String;Ljava/lang/Throwable;ZZ)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
 		);
 	}
-	void LambdaConversionException::__constructor(const QString &arg0)
+	void LambdaConversionException::__constructor(const QString &arg0, jthrowable arg1, jboolean arg2, jboolean arg3)
 	{
 		__thiz = QAndroidJniObject(
 			"java.lang.invoke.LambdaConversionException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void LambdaConversionException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.lang.invoke.LambdaConversionException",
-			"()V"
+			"(Ljava/lang/String;Ljava/lang/Throwable;ZZ)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2,
+			arg3
 		);
 	}
 	
@@ -115,13 +115,14 @@ namespace java::lang::invoke
 	{
 	public:
 		LambdaConversionException(QAndroidJniObject obj) { __thiz = obj; }
-		LambdaConversionException(jstring arg0, jthrowable arg1, jboolean arg2, jboolean arg3)
+		LambdaConversionException()
+		{
+			__constructor();
+		}
+		LambdaConversionException(jstring arg0)
 		{
 			__constructor(
-				arg0,
-				arg1,
-				arg2,
-				arg3);
+				arg0);
 		}
 		LambdaConversionException(jthrowable arg0)
 		{
@@ -134,14 +135,13 @@ namespace java::lang::invoke
 				arg0,
 				arg1);
 		}
-		LambdaConversionException(jstring arg0)
+		LambdaConversionException(jstring arg0, jthrowable arg1, jboolean arg2, jboolean arg3)
 		{
 			__constructor(
-				arg0);
-		}
-		LambdaConversionException()
-		{
-			__constructor();
+				arg0,
+				arg1,
+				arg2,
+				arg3);
 		}
 	};
 } // namespace java::lang::invoke

@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
-{
-	class ComponentName;
-}
 namespace __jni_impl::android::app::assist
 {
 	class AssistStructure_WindowNode;
+}
+namespace __jni_impl::android::content
+{
+	class ComponentName;
 }
 namespace __jni_impl::android::os
 {
@@ -30,19 +30,19 @@ namespace __jni_impl::android::app::assist
 		void __constructor();
 		
 		// Methods
-		jlong getAcquisitionStartTime();
-		jlong getAcquisitionEndTime();
-		QAndroidJniObject getActivityComponent();
-		jboolean isHomeActivity();
-		jint getWindowNodeCount();
-		QAndroidJniObject getWindowNodeAt(jint arg0);
 		jint describeContents();
+		jlong getAcquisitionEndTime();
+		jlong getAcquisitionStartTime();
+		QAndroidJniObject getActivityComponent();
+		QAndroidJniObject getWindowNodeAt(jint arg0);
+		jint getWindowNodeCount();
+		jboolean isHomeActivity();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::assist
 
-#include "../../content/ComponentName.hpp"
 #include "AssistStructure_WindowNode.hpp"
+#include "../../content/ComponentName.hpp"
 #include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::app::assist
@@ -67,17 +67,24 @@ namespace __jni_impl::android::app::assist
 	}
 	
 	// Methods
-	jlong AssistStructure::getAcquisitionStartTime()
+	jint AssistStructure::describeContents()
 	{
-		return __thiz.callMethod<jlong>(
-			"getAcquisitionStartTime",
-			"()J"
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
 		);
 	}
 	jlong AssistStructure::getAcquisitionEndTime()
 	{
 		return __thiz.callMethod<jlong>(
 			"getAcquisitionEndTime",
+			"()J"
+		);
+	}
+	jlong AssistStructure::getAcquisitionStartTime()
+	{
+		return __thiz.callMethod<jlong>(
+			"getAcquisitionStartTime",
 			"()J"
 		);
 	}
@@ -88,11 +95,12 @@ namespace __jni_impl::android::app::assist
 			"()Landroid/content/ComponentName;"
 		);
 	}
-	jboolean AssistStructure::isHomeActivity()
+	QAndroidJniObject AssistStructure::getWindowNodeAt(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isHomeActivity",
-			"()Z"
+		return __thiz.callObjectMethod(
+			"getWindowNodeAt",
+			"(I)Landroid/app/assist/AssistStructure$WindowNode;",
+			arg0
 		);
 	}
 	jint AssistStructure::getWindowNodeCount()
@@ -102,19 +110,11 @@ namespace __jni_impl::android::app::assist
 			"()I"
 		);
 	}
-	QAndroidJniObject AssistStructure::getWindowNodeAt(jint arg0)
+	jboolean AssistStructure::isHomeActivity()
 	{
-		return __thiz.callObjectMethod(
-			"getWindowNodeAt",
-			"(I)Landroid/app/assist/AssistStructure$WindowNode;",
-			arg0
-		);
-	}
-	jint AssistStructure::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"isHomeActivity",
+			"()Z"
 		);
 	}
 	void AssistStructure::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

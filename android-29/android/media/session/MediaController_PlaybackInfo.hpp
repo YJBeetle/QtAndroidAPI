@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::media
 {
 	class AudioAttributes;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::media::session
@@ -28,19 +28,19 @@ namespace __jni_impl::android::media::session
 		void __constructor();
 		
 		// Methods
-		jstring toString();
+		jint describeContents();
+		QAndroidJniObject getAudioAttributes();
+		jint getCurrentVolume();
+		jint getMaxVolume();
 		jint getPlaybackType();
 		jint getVolumeControl();
-		jint getMaxVolume();
-		jint getCurrentVolume();
-		QAndroidJniObject getAudioAttributes();
-		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media::session
 
-#include "../../os/Parcel.hpp"
 #include "../AudioAttributes.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::media::session
 {
@@ -77,12 +77,33 @@ namespace __jni_impl::android::media::session
 	}
 	
 	// Methods
-	jstring MediaController_PlaybackInfo::toString()
+	jint MediaController_PlaybackInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	QAndroidJniObject MediaController_PlaybackInfo::getAudioAttributes()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getAudioAttributes",
+			"()Landroid/media/AudioAttributes;"
+		);
+	}
+	jint MediaController_PlaybackInfo::getCurrentVolume()
+	{
+		return __thiz.callMethod<jint>(
+			"getCurrentVolume",
+			"()I"
+		);
+	}
+	jint MediaController_PlaybackInfo::getMaxVolume()
+	{
+		return __thiz.callMethod<jint>(
+			"getMaxVolume",
+			"()I"
+		);
 	}
 	jint MediaController_PlaybackInfo::getPlaybackType()
 	{
@@ -98,33 +119,12 @@ namespace __jni_impl::android::media::session
 			"()I"
 		);
 	}
-	jint MediaController_PlaybackInfo::getMaxVolume()
-	{
-		return __thiz.callMethod<jint>(
-			"getMaxVolume",
-			"()I"
-		);
-	}
-	jint MediaController_PlaybackInfo::getCurrentVolume()
-	{
-		return __thiz.callMethod<jint>(
-			"getCurrentVolume",
-			"()I"
-		);
-	}
-	QAndroidJniObject MediaController_PlaybackInfo::getAudioAttributes()
+	jstring MediaController_PlaybackInfo::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getAudioAttributes",
-			"()Landroid/media/AudioAttributes;"
-		);
-	}
-	jint MediaController_PlaybackInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void MediaController_PlaybackInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

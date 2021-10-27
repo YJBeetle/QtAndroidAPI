@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view
-{
-	class WindowId_FocusObserver;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::view
+{
+	class WindowId_FocusObserver;
 }
 
 namespace __jni_impl::android::view
@@ -26,19 +26,19 @@ namespace __jni_impl::android::view
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jstring toString();
 		jint hashCode();
 		jboolean isFocused();
-		void unregisterFocusObserver(__jni_impl::android::view::WindowId_FocusObserver arg0);
 		void registerFocusObserver(__jni_impl::android::view::WindowId_FocusObserver arg0);
-		jint describeContents();
+		jstring toString();
+		void unregisterFocusObserver(__jni_impl::android::view::WindowId_FocusObserver arg0);
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view
 
-#include "WindowId_FocusObserver.hpp"
 #include "../os/Parcel.hpp"
+#include "WindowId_FocusObserver.hpp"
 
 namespace __jni_impl::android::view
 {
@@ -61,6 +61,13 @@ namespace __jni_impl::android::view
 	}
 	
 	// Methods
+	jint WindowId::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean WindowId::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -68,13 +75,6 @@ namespace __jni_impl::android::view
 			"(Ljava/lang/Object;)Z",
 			arg0
 		);
-	}
-	jstring WindowId::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	jint WindowId::hashCode()
 	{
@@ -90,14 +90,6 @@ namespace __jni_impl::android::view
 			"()Z"
 		);
 	}
-	void WindowId::unregisterFocusObserver(__jni_impl::android::view::WindowId_FocusObserver arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterFocusObserver",
-			"(Landroid/view/WindowId$FocusObserver;)V",
-			arg0.__jniObject().object()
-		);
-	}
 	void WindowId::registerFocusObserver(__jni_impl::android::view::WindowId_FocusObserver arg0)
 	{
 		__thiz.callMethod<void>(
@@ -106,11 +98,19 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
-	jint WindowId::describeContents()
+	jstring WindowId::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void WindowId::unregisterFocusObserver(__jni_impl::android::view::WindowId_FocusObserver arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterFocusObserver",
+			"(Landroid/view/WindowId$FocusObserver;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void WindowId::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

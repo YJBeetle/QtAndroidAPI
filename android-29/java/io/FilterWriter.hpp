@@ -22,12 +22,12 @@ namespace __jni_impl::java::io
 		void __constructor();
 		
 		// Methods
+		void close();
+		void flush();
+		void write(jint arg0);
+		void write(jcharArray arg0, jint arg1, jint arg2);
 		void write(jstring arg0, jint arg1, jint arg2);
 		void write(const QString &arg0, jint arg1, jint arg2);
-		void write(jcharArray arg0, jint arg1, jint arg2);
-		void write(jint arg0);
-		void flush();
-		void close();
 	};
 } // namespace __jni_impl::java::io
 
@@ -46,6 +46,38 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
+	void FilterWriter::close()
+	{
+		__thiz.callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	void FilterWriter::flush()
+	{
+		__thiz.callMethod<void>(
+			"flush",
+			"()V"
+		);
+	}
+	void FilterWriter::write(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"write",
+			"(I)V",
+			arg0
+		);
+	}
+	void FilterWriter::write(jcharArray arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"write",
+			"([CII)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
 	void FilterWriter::write(jstring arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
@@ -64,38 +96,6 @@ namespace __jni_impl::java::io
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
-		);
-	}
-	void FilterWriter::write(jcharArray arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"write",
-			"([CII)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void FilterWriter::write(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"write",
-			"(I)V",
-			arg0
-		);
-	}
-	void FilterWriter::flush()
-	{
-		__thiz.callMethod<void>(
-			"flush",
-			"()V"
-		);
-	}
-	void FilterWriter::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::java::io

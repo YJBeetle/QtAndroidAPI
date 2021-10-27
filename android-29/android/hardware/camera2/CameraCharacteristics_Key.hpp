@@ -18,10 +18,10 @@ namespace __jni_impl::android::hardware::camera2
 		void __constructor(const QString &arg0, jclass arg1);
 		
 		// Methods
-		jstring getName();
 		jboolean equals(jobject arg0);
-		jstring toString();
+		jstring getName();
 		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::hardware::camera2
 
@@ -51,13 +51,6 @@ namespace __jni_impl::android::hardware::camera2
 	}
 	
 	// Methods
-	jstring CameraCharacteristics_Key::getName()
-	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jboolean CameraCharacteristics_Key::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -66,10 +59,10 @@ namespace __jni_impl::android::hardware::camera2
 			arg0
 		);
 	}
-	jstring CameraCharacteristics_Key::toString()
+	jstring CameraCharacteristics_Key::getName()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
+			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
@@ -79,6 +72,13 @@ namespace __jni_impl::android::hardware::camera2
 			"hashCode",
 			"()I"
 		);
+	}
+	jstring CameraCharacteristics_Key::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::hardware::camera2
 

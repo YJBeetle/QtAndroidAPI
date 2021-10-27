@@ -17,26 +17,26 @@ namespace __jni_impl::java::util
 		void __constructor();
 		
 		// Methods
-		jobject get();
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jboolean isEmpty();
-		QAndroidJniObject map(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject stream();
-		static QAndroidJniObject of(jobject arg0);
-		QAndroidJniObject filter(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject empty();
-		QAndroidJniObject flatMap(__jni_impl::__JniBaseClass arg0);
-		jboolean isPresent();
-		jobject orElse(jobject arg0);
-		jobject orElseThrow(__jni_impl::__JniBaseClass arg0);
-		jobject orElseThrow();
-		void ifPresentOrElse(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
-		QAndroidJniObject _or(__jni_impl::__JniBaseClass arg0);
-		jobject orElseGet(__jni_impl::__JniBaseClass arg0);
+		static QAndroidJniObject of(jobject arg0);
 		static QAndroidJniObject ofNullable(jobject arg0);
+		jboolean equals(jobject arg0);
+		QAndroidJniObject filter(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject flatMap(__jni_impl::__JniBaseClass arg0);
+		jobject get();
+		jint hashCode();
 		void ifPresent(__jni_impl::__JniBaseClass arg0);
+		void ifPresentOrElse(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1);
+		jboolean isEmpty();
+		jboolean isPresent();
+		QAndroidJniObject map(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject _or(__jni_impl::__JniBaseClass arg0);
+		jobject orElse(jobject arg0);
+		jobject orElseGet(__jni_impl::__JniBaseClass arg0);
+		jobject orElseThrow();
+		jobject orElseThrow(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject stream();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::util
 
@@ -54,55 +54,12 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	jobject Optional::get()
+	QAndroidJniObject Optional::empty()
 	{
-		return __thiz.callObjectMethod(
-			"get",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	jboolean Optional::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring Optional::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint Optional::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jboolean Optional::isEmpty()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEmpty",
-			"()Z"
-		);
-	}
-	QAndroidJniObject Optional::map(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"map",
-			"(Ljava/util/function/Function;)Ljava/util/Optional;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Optional::stream()
-	{
-		return __thiz.callObjectMethod(
-			"stream",
-			"()Ljava/util/stream/Stream;"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.Optional",
+			"empty",
+			"()Ljava/util/Optional;"
 		);
 	}
 	QAndroidJniObject Optional::of(jobject arg0)
@@ -114,20 +71,29 @@ namespace __jni_impl::java::util
 			arg0
 		);
 	}
+	QAndroidJniObject Optional::ofNullable(jobject arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.Optional",
+			"ofNullable",
+			"(Ljava/lang/Object;)Ljava/util/Optional;",
+			arg0
+		);
+	}
+	jboolean Optional::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
 	QAndroidJniObject Optional::filter(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
 			"filter",
 			"(Ljava/util/function/Predicate;)Ljava/util/Optional;",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Optional::empty()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Optional",
-			"empty",
-			"()Ljava/util/Optional;"
 		);
 	}
 	QAndroidJniObject Optional::flatMap(__jni_impl::__JniBaseClass arg0)
@@ -138,11 +104,65 @@ namespace __jni_impl::java::util
 			arg0.__jniObject().object()
 		);
 	}
+	jobject Optional::get()
+	{
+		return __thiz.callObjectMethod(
+			"get",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jint Optional::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	void Optional::ifPresent(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"ifPresent",
+			"(Ljava/util/function/Consumer;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Optional::ifPresentOrElse(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		__thiz.callMethod<void>(
+			"ifPresentOrElse",
+			"(Ljava/util/function/Consumer;Ljava/lang/Runnable;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	jboolean Optional::isEmpty()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEmpty",
+			"()Z"
+		);
+	}
 	jboolean Optional::isPresent()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isPresent",
 			"()Z"
+		);
+	}
+	QAndroidJniObject Optional::map(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"map",
+			"(Ljava/util/function/Function;)Ljava/util/Optional;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Optional::_or(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"or",
+			"(Ljava/util/function/Supplier;)Ljava/util/Optional;",
+			arg0.__jniObject().object()
 		);
 	}
 	jobject Optional::orElse(jobject arg0)
@@ -153,10 +173,10 @@ namespace __jni_impl::java::util
 			arg0
 		).object<jobject>();
 	}
-	jobject Optional::orElseThrow(__jni_impl::__JniBaseClass arg0)
+	jobject Optional::orElseGet(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
-			"orElseThrow",
+			"orElseGet",
 			"(Ljava/util/function/Supplier;)Ljava/lang/Object;",
 			arg0.__jniObject().object()
 		).object<jobject>();
@@ -168,47 +188,27 @@ namespace __jni_impl::java::util
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	void Optional::ifPresentOrElse(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz.callMethod<void>(
-			"ifPresentOrElse",
-			"(Ljava/util/function/Consumer;Ljava/lang/Runnable;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Optional::_or(__jni_impl::__JniBaseClass arg0)
+	jobject Optional::orElseThrow(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callObjectMethod(
-			"or",
-			"(Ljava/util/function/Supplier;)Ljava/util/Optional;",
-			arg0.__jniObject().object()
-		);
-	}
-	jobject Optional::orElseGet(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"orElseGet",
+			"orElseThrow",
 			"(Ljava/util/function/Supplier;)Ljava/lang/Object;",
 			arg0.__jniObject().object()
 		).object<jobject>();
 	}
-	QAndroidJniObject Optional::ofNullable(jobject arg0)
+	QAndroidJniObject Optional::stream()
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Optional",
-			"ofNullable",
-			"(Ljava/lang/Object;)Ljava/util/Optional;",
-			arg0
+		return __thiz.callObjectMethod(
+			"stream",
+			"()Ljava/util/stream/Stream;"
 		);
 	}
-	void Optional::ifPresent(__jni_impl::__JniBaseClass arg0)
+	jstring Optional::toString()
 	{
-		__thiz.callMethod<void>(
-			"ifPresent",
-			"(Ljava/util/function/Consumer;)V",
-			arg0.__jniObject().object()
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util
 

@@ -11,11 +11,11 @@ namespace __jni_impl::android::graphics
 }
 namespace __jni_impl::android::graphics
 {
-	class ColorSpace;
+	class Bitmap_Config;
 }
 namespace __jni_impl::android::graphics
 {
-	class Bitmap_Config;
+	class ColorSpace;
 }
 
 namespace __jni_impl::android::graphics
@@ -56,8 +56,8 @@ namespace __jni_impl::android::graphics
 } // namespace __jni_impl::android::graphics
 
 #include "Bitmap.hpp"
-#include "ColorSpace.hpp"
 #include "Bitmap_Config.hpp"
+#include "ColorSpace.hpp"
 
 namespace __jni_impl::android::graphics
 {

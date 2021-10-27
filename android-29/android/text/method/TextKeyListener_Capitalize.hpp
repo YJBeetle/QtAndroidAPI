@@ -13,18 +13,18 @@ namespace __jni_impl::android::text::method
 	{
 	public:
 		// Fields
+		static QAndroidJniObject CHARACTERS();
 		static QAndroidJniObject NONE();
 		static QAndroidJniObject SENTENCES();
 		static QAndroidJniObject WORDS();
-		static QAndroidJniObject CHARACTERS();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::text::method
 
@@ -32,6 +32,14 @@ namespace __jni_impl::android::text::method
 namespace __jni_impl::android::text::method
 {
 	// Fields
+	QAndroidJniObject TextKeyListener_Capitalize::CHARACTERS()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.text.method.TextKeyListener$Capitalize",
+			"CHARACTERS",
+			"Landroid/text/method/TextKeyListener$Capitalize;"
+		);
+	}
 	QAndroidJniObject TextKeyListener_Capitalize::NONE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -56,14 +64,6 @@ namespace __jni_impl::android::text::method
 			"Landroid/text/method/TextKeyListener$Capitalize;"
 		);
 	}
-	QAndroidJniObject TextKeyListener_Capitalize::CHARACTERS()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.text.method.TextKeyListener$Capitalize",
-			"CHARACTERS",
-			"Landroid/text/method/TextKeyListener$Capitalize;"
-		);
-	}
 	
 	// Constructors
 	void TextKeyListener_Capitalize::__constructor()
@@ -74,14 +74,6 @@ namespace __jni_impl::android::text::method
 	}
 	
 	// Methods
-	jarray TextKeyListener_Capitalize::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.text.method.TextKeyListener$Capitalize",
-			"values",
-			"()[Landroid/text/method/TextKeyListener$Capitalize;"
-		).object<jarray>();
-	}
 	QAndroidJniObject TextKeyListener_Capitalize::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -99,6 +91,14 @@ namespace __jni_impl::android::text::method
 			"(Ljava/lang/String;)Landroid/text/method/TextKeyListener$Capitalize;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray TextKeyListener_Capitalize::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.text.method.TextKeyListener$Capitalize",
+			"values",
+			"()[Landroid/text/method/TextKeyListener$Capitalize;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::text::method
 

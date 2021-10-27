@@ -5,10 +5,6 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::graphics
 {
 	class Matrix;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::graphics
 {
 	class RectF;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::view::inputmethod
@@ -33,29 +33,29 @@ namespace __jni_impl::android::view::inputmethod
 		void __constructor(__jni_impl::android::os::Parcel arg0);
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		QAndroidJniObject getMatrix();
-		jint getSelectionStart();
-		jint getSelectionEnd();
-		jint getComposingTextStart();
+		QAndroidJniObject getCharacterBounds(jint arg0);
+		jint getCharacterBoundsFlags(jint arg0);
 		jstring getComposingText();
+		jint getComposingTextStart();
+		jfloat getInsertionMarkerBaseline();
+		jfloat getInsertionMarkerBottom();
 		jint getInsertionMarkerFlags();
 		jfloat getInsertionMarkerHorizontal();
 		jfloat getInsertionMarkerTop();
-		jfloat getInsertionMarkerBaseline();
-		jfloat getInsertionMarkerBottom();
-		QAndroidJniObject getCharacterBounds(jint arg0);
-		jint getCharacterBoundsFlags(jint arg0);
-		jint describeContents();
+		QAndroidJniObject getMatrix();
+		jint getSelectionEnd();
+		jint getSelectionStart();
+		jint hashCode();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::inputmethod
 
-#include "../../os/Parcel.hpp"
 #include "../../graphics/Matrix.hpp"
 #include "../../graphics/RectF.hpp"
+#include "../../os/Parcel.hpp"
 
 namespace __jni_impl::android::view::inputmethod
 {
@@ -101,6 +101,13 @@ namespace __jni_impl::android::view::inputmethod
 	}
 	
 	// Methods
+	jint CursorAnchorInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean CursorAnchorInfo::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -109,46 +116,20 @@ namespace __jni_impl::android::view::inputmethod
 			arg0
 		);
 	}
-	jstring CursorAnchorInfo::toString()
+	QAndroidJniObject CursorAnchorInfo::getCharacterBounds(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint CursorAnchorInfo::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+			"getCharacterBounds",
+			"(I)Landroid/graphics/RectF;",
+			arg0
 		);
 	}
-	QAndroidJniObject CursorAnchorInfo::getMatrix()
-	{
-		return __thiz.callObjectMethod(
-			"getMatrix",
-			"()Landroid/graphics/Matrix;"
-		);
-	}
-	jint CursorAnchorInfo::getSelectionStart()
+	jint CursorAnchorInfo::getCharacterBoundsFlags(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
-			"getSelectionStart",
-			"()I"
-		);
-	}
-	jint CursorAnchorInfo::getSelectionEnd()
-	{
-		return __thiz.callMethod<jint>(
-			"getSelectionEnd",
-			"()I"
-		);
-	}
-	jint CursorAnchorInfo::getComposingTextStart()
-	{
-		return __thiz.callMethod<jint>(
-			"getComposingTextStart",
-			"()I"
+			"getCharacterBoundsFlags",
+			"(I)I",
+			arg0
 		);
 	}
 	jstring CursorAnchorInfo::getComposingText()
@@ -157,6 +138,27 @@ namespace __jni_impl::android::view::inputmethod
 			"getComposingText",
 			"()Ljava/lang/CharSequence;"
 		).object<jstring>();
+	}
+	jint CursorAnchorInfo::getComposingTextStart()
+	{
+		return __thiz.callMethod<jint>(
+			"getComposingTextStart",
+			"()I"
+		);
+	}
+	jfloat CursorAnchorInfo::getInsertionMarkerBaseline()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getInsertionMarkerBaseline",
+			"()F"
+		);
+	}
+	jfloat CursorAnchorInfo::getInsertionMarkerBottom()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getInsertionMarkerBottom",
+			"()F"
+		);
 	}
 	jint CursorAnchorInfo::getInsertionMarkerFlags()
 	{
@@ -179,42 +181,40 @@ namespace __jni_impl::android::view::inputmethod
 			"()F"
 		);
 	}
-	jfloat CursorAnchorInfo::getInsertionMarkerBaseline()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getInsertionMarkerBaseline",
-			"()F"
-		);
-	}
-	jfloat CursorAnchorInfo::getInsertionMarkerBottom()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getInsertionMarkerBottom",
-			"()F"
-		);
-	}
-	QAndroidJniObject CursorAnchorInfo::getCharacterBounds(jint arg0)
+	QAndroidJniObject CursorAnchorInfo::getMatrix()
 	{
 		return __thiz.callObjectMethod(
-			"getCharacterBounds",
-			"(I)Landroid/graphics/RectF;",
-			arg0
+			"getMatrix",
+			"()Landroid/graphics/Matrix;"
 		);
 	}
-	jint CursorAnchorInfo::getCharacterBoundsFlags(jint arg0)
+	jint CursorAnchorInfo::getSelectionEnd()
 	{
 		return __thiz.callMethod<jint>(
-			"getCharacterBoundsFlags",
-			"(I)I",
-			arg0
-		);
-	}
-	jint CursorAnchorInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
+			"getSelectionEnd",
 			"()I"
 		);
+	}
+	jint CursorAnchorInfo::getSelectionStart()
+	{
+		return __thiz.callMethod<jint>(
+			"getSelectionStart",
+			"()I"
+		);
+	}
+	jint CursorAnchorInfo::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring CursorAnchorInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void CursorAnchorInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

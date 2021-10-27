@@ -11,11 +11,11 @@ namespace __jni_impl::java::nio
 }
 namespace __jni_impl::java::nio
 {
-	class IntBuffer;
+	class FloatBuffer;
 }
 namespace __jni_impl::java::nio
 {
-	class FloatBuffer;
+	class IntBuffer;
 }
 
 namespace __jni_impl::android::opengl
@@ -331,7 +331,6 @@ namespace __jni_impl::android::opengl
 		void __constructor();
 		
 		// Methods
-		static void glReadPixels(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, __jni_impl::java::nio::Buffer arg6);
 		static void glActiveTexture(jint arg0);
 		static void glAttachShader(jint arg0, jint arg1);
 		static void glBindAttribLocation(jint arg0, jint arg1, jstring arg2);
@@ -363,14 +362,14 @@ namespace __jni_impl::android::opengl
 		static void glCullFace(jint arg0);
 		static void glDeleteBuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
 		static void glDeleteBuffers(jint arg0, jintArray arg1, jint arg2);
-		static void glDeleteFramebuffers(jint arg0, jintArray arg1, jint arg2);
 		static void glDeleteFramebuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glDeleteFramebuffers(jint arg0, jintArray arg1, jint arg2);
 		static void glDeleteProgram(jint arg0);
 		static void glDeleteRenderbuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
 		static void glDeleteRenderbuffers(jint arg0, jintArray arg1, jint arg2);
 		static void glDeleteShader(jint arg0);
-		static void glDeleteTextures(jint arg0, jintArray arg1, jint arg2);
 		static void glDeleteTextures(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glDeleteTextures(jint arg0, jintArray arg1, jint arg2);
 		static void glDepthFunc(jint arg0);
 		static void glDepthMask(jboolean arg0);
 		static void glDepthRangef(jfloat arg0, jfloat arg1);
@@ -378,8 +377,8 @@ namespace __jni_impl::android::opengl
 		static void glDisable(jint arg0);
 		static void glDisableVertexAttribArray(jint arg0);
 		static void glDrawArrays(jint arg0, jint arg1, jint arg2);
-		static void glDrawElements(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::Buffer arg3);
 		static void glDrawElements(jint arg0, jint arg1, jint arg2, jint arg3);
+		static void glDrawElements(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::Buffer arg3);
 		static void glEnable(jint arg0);
 		static void glEnableVertexAttribArray(jint arg0);
 		static void glFinish();
@@ -389,61 +388,61 @@ namespace __jni_impl::android::opengl
 		static void glFrontFace(jint arg0);
 		static void glGenBuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
 		static void glGenBuffers(jint arg0, jintArray arg1, jint arg2);
-		static void glGenerateMipmap(jint arg0);
-		static void glGenFramebuffers(jint arg0, jintArray arg1, jint arg2);
 		static void glGenFramebuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glGenFramebuffers(jint arg0, jintArray arg1, jint arg2);
 		static void glGenRenderbuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
 		static void glGenRenderbuffers(jint arg0, jintArray arg1, jint arg2);
-		static void glGenTextures(jint arg0, jintArray arg1, jint arg2);
 		static void glGenTextures(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
-		static void glGetActiveAttrib(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8, jbyteArray arg9, jint arg10);
+		static void glGenTextures(jint arg0, jintArray arg1, jint arg2);
+		static void glGenerateMipmap(jint arg0);
 		static jstring glGetActiveAttrib(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3);
 		static jstring glGetActiveAttrib(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5);
-		static void glGetActiveUniform(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8, jbyteArray arg9, jint arg10);
+		static void glGetActiveAttrib(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8, jbyteArray arg9, jint arg10);
 		static jstring glGetActiveUniform(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3);
 		static jstring glGetActiveUniform(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5);
+		static void glGetActiveUniform(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8, jbyteArray arg9, jint arg10);
 		static void glGetAttachedShaders(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3);
 		static void glGetAttachedShaders(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5);
 		static jint glGetAttribLocation(jint arg0, jstring arg1);
 		static jint glGetAttribLocation(jint arg0, const QString &arg1);
-		static void glGetBooleanv(jint arg0, jbooleanArray arg1, jint arg2);
 		static void glGetBooleanv(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
+		static void glGetBooleanv(jint arg0, jbooleanArray arg1, jint arg2);
 		static void glGetBufferParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetBufferParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static jint glGetError();
 		static void glGetFloatv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1);
 		static void glGetFloatv(jint arg0, jfloatArray arg1, jint arg2);
-		static void glGetFramebufferAttachmentParameteriv(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4);
 		static void glGetFramebufferAttachmentParameteriv(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3);
+		static void glGetFramebufferAttachmentParameteriv(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4);
 		static void glGetIntegerv(jint arg0, __jni_impl::java::nio::IntBuffer arg1);
 		static void glGetIntegerv(jint arg0, jintArray arg1, jint arg2);
+		static jstring glGetProgramInfoLog(jint arg0);
 		static void glGetProgramiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetProgramiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static jstring glGetProgramInfoLog(jint arg0);
 		static void glGetRenderbufferParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetRenderbufferParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glGetShaderiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glGetShaderiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static jstring glGetShaderInfoLog(jint arg0);
-		static void glGetShaderPrecisionFormat(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5);
 		static void glGetShaderPrecisionFormat(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3);
+		static void glGetShaderPrecisionFormat(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5);
 		static jstring glGetShaderSource(jint arg0);
 		static void glGetShaderSource(jint arg0, jint arg1, jintArray arg2, jint arg3, jbyteArray arg4, jint arg5);
+		static void glGetShaderiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glGetShaderiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static jstring glGetString(jint arg0);
 		static void glGetTexParameterfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
 		static void glGetTexParameterfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
 		static void glGetTexParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetTexParameteriv(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static jint glGetUniformLocation(jint arg0, jstring arg1);
+		static jint glGetUniformLocation(jint arg0, const QString &arg1);
 		static void glGetUniformfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
 		static void glGetUniformfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
 		static void glGetUniformiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetUniformiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static jint glGetUniformLocation(jint arg0, jstring arg1);
-		static jint glGetUniformLocation(jint arg0, const QString &arg1);
 		static void glGetVertexAttribfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2);
 		static void glGetVertexAttribfv(jint arg0, jint arg1, jfloatArray arg2, jint arg3);
-		static void glGetVertexAttribiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glGetVertexAttribiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glGetVertexAttribiv(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glHint(jint arg0, jint arg1);
 		static jboolean glIsBuffer(jint arg0);
 		static jboolean glIsEnabled(jint arg0);
@@ -456,6 +455,7 @@ namespace __jni_impl::android::opengl
 		static void glLinkProgram(jint arg0);
 		static void glPixelStorei(jint arg0, jint arg1);
 		static void glPolygonOffset(jfloat arg0, jfloat arg1);
+		static void glReadPixels(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, __jni_impl::java::nio::Buffer arg6);
 		static void glReleaseShaderCompiler();
 		static void glRenderbufferStorage(jint arg0, jint arg1, jint arg2, jint arg3);
 		static void glSampleCoverage(jfloat arg0, jboolean arg1);
@@ -511,26 +511,26 @@ namespace __jni_impl::android::opengl
 		static void glUseProgram(jint arg0);
 		static void glValidateProgram(jint arg0);
 		static void glVertexAttrib1f(jint arg0, jfloat arg1);
-		static void glVertexAttrib1fv(jint arg0, jfloatArray arg1, jint arg2);
 		static void glVertexAttrib1fv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1);
+		static void glVertexAttrib1fv(jint arg0, jfloatArray arg1, jint arg2);
 		static void glVertexAttrib2f(jint arg0, jfloat arg1, jfloat arg2);
-		static void glVertexAttrib2fv(jint arg0, jfloatArray arg1, jint arg2);
 		static void glVertexAttrib2fv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1);
+		static void glVertexAttrib2fv(jint arg0, jfloatArray arg1, jint arg2);
 		static void glVertexAttrib3f(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		static void glVertexAttrib3fv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1);
 		static void glVertexAttrib3fv(jint arg0, jfloatArray arg1, jint arg2);
 		static void glVertexAttrib4f(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4);
-		static void glVertexAttrib4fv(jint arg0, jfloatArray arg1, jint arg2);
 		static void glVertexAttrib4fv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1);
-		static void glVertexAttribPointer(jint arg0, jint arg1, jint arg2, jboolean arg3, jint arg4, __jni_impl::java::nio::Buffer arg5);
+		static void glVertexAttrib4fv(jint arg0, jfloatArray arg1, jint arg2);
 		static void glVertexAttribPointer(jint arg0, jint arg1, jint arg2, jboolean arg3, jint arg4, jint arg5);
+		static void glVertexAttribPointer(jint arg0, jint arg1, jint arg2, jboolean arg3, jint arg4, __jni_impl::java::nio::Buffer arg5);
 		static void glViewport(jint arg0, jint arg1, jint arg2, jint arg3);
 	};
 } // namespace __jni_impl::android::opengl
 
 #include "../../java/nio/Buffer.hpp"
-#include "../../java/nio/IntBuffer.hpp"
 #include "../../java/nio/FloatBuffer.hpp"
+#include "../../java/nio/IntBuffer.hpp"
 
 namespace __jni_impl::android::opengl
 {
@@ -2660,21 +2660,6 @@ namespace __jni_impl::android::opengl
 	}
 	
 	// Methods
-	void GLES20::glReadPixels(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, __jni_impl::java::nio::Buffer arg6)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES20",
-			"glReadPixels",
-			"(IIIIIILjava/nio/Buffer;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6.__jniObject().object()
-		);
-	}
 	void GLES20::glActiveTexture(jint arg0)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -3014,6 +2999,16 @@ namespace __jni_impl::android::opengl
 			arg2
 		);
 	}
+	void GLES20::glDeleteFramebuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES20",
+			"glDeleteFramebuffers",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
 	void GLES20::glDeleteFramebuffers(jint arg0, jintArray arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -3023,16 +3018,6 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	void GLES20::glDeleteFramebuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES20",
-			"glDeleteFramebuffers",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
 		);
 	}
 	void GLES20::glDeleteProgram(jint arg0)
@@ -3074,6 +3059,16 @@ namespace __jni_impl::android::opengl
 			arg0
 		);
 	}
+	void GLES20::glDeleteTextures(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES20",
+			"glDeleteTextures",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
 	void GLES20::glDeleteTextures(jint arg0, jintArray arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -3083,16 +3078,6 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	void GLES20::glDeleteTextures(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES20",
-			"glDeleteTextures",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
 		);
 	}
 	void GLES20::glDepthFunc(jint arg0)
@@ -3162,18 +3147,6 @@ namespace __jni_impl::android::opengl
 			arg2
 		);
 	}
-	void GLES20::glDrawElements(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::Buffer arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES20",
-			"glDrawElements",
-			"(IIILjava/nio/Buffer;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
-		);
-	}
 	void GLES20::glDrawElements(jint arg0, jint arg1, jint arg2, jint arg3)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -3184,6 +3157,18 @@ namespace __jni_impl::android::opengl
 			arg1,
 			arg2,
 			arg3
+		);
+	}
+	void GLES20::glDrawElements(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::Buffer arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES20",
+			"glDrawElements",
+			"(IIILjava/nio/Buffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object()
 		);
 	}
 	void GLES20::glEnable(jint arg0)
@@ -3275,13 +3260,14 @@ namespace __jni_impl::android::opengl
 			arg2
 		);
 	}
-	void GLES20::glGenerateMipmap(jint arg0)
+	void GLES20::glGenFramebuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES20",
-			"glGenerateMipmap",
-			"(I)V",
-			arg0
+			"glGenFramebuffers",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
 		);
 	}
 	void GLES20::glGenFramebuffers(jint arg0, jintArray arg1, jint arg2)
@@ -3293,16 +3279,6 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	void GLES20::glGenFramebuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES20",
-			"glGenFramebuffers",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
 		);
 	}
 	void GLES20::glGenRenderbuffers(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
@@ -3326,6 +3302,16 @@ namespace __jni_impl::android::opengl
 			arg2
 		);
 	}
+	void GLES20::glGenTextures(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES20",
+			"glGenTextures",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
 	void GLES20::glGenTextures(jint arg0, jintArray arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -3337,33 +3323,13 @@ namespace __jni_impl::android::opengl
 			arg2
 		);
 	}
-	void GLES20::glGenTextures(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	void GLES20::glGenerateMipmap(jint arg0)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES20",
-			"glGenTextures",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	void GLES20::glGetActiveAttrib(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8, jbyteArray arg9, jint arg10)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES20",
-			"glGetActiveAttrib",
-			"(III[II[II[II[BI)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8,
-			arg9,
-			arg10
+			"glGenerateMipmap",
+			"(I)V",
+			arg0
 		);
 	}
 	jstring GLES20::glGetActiveAttrib(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3)
@@ -3392,11 +3358,11 @@ namespace __jni_impl::android::opengl
 			arg5
 		).object<jstring>();
 	}
-	void GLES20::glGetActiveUniform(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8, jbyteArray arg9, jint arg10)
+	void GLES20::glGetActiveAttrib(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8, jbyteArray arg9, jint arg10)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES20",
-			"glGetActiveUniform",
+			"glGetActiveAttrib",
 			"(III[II[II[II[BI)V",
 			arg0,
 			arg1,
@@ -3436,6 +3402,25 @@ namespace __jni_impl::android::opengl
 			arg4,
 			arg5
 		).object<jstring>();
+	}
+	void GLES20::glGetActiveUniform(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8, jbyteArray arg9, jint arg10)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES20",
+			"glGetActiveUniform",
+			"(III[II[II[II[BI)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9,
+			arg10
+		);
 	}
 	void GLES20::glGetAttachedShaders(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3)
 	{
@@ -3483,6 +3468,16 @@ namespace __jni_impl::android::opengl
 			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
+	void GLES20::glGetBooleanv(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES20",
+			"glGetBooleanv",
+			"(ILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
 	void GLES20::glGetBooleanv(jint arg0, jbooleanArray arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -3492,16 +3487,6 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	void GLES20::glGetBooleanv(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES20",
-			"glGetBooleanv",
-			"(ILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
 		);
 	}
 	void GLES20::glGetBufferParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
@@ -3556,6 +3541,18 @@ namespace __jni_impl::android::opengl
 			arg2
 		);
 	}
+	void GLES20::glGetFramebufferAttachmentParameteriv(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES20",
+			"glGetFramebufferAttachmentParameteriv",
+			"(IIILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3.__jniObject().object()
+		);
+	}
 	void GLES20::glGetFramebufferAttachmentParameteriv(jint arg0, jint arg1, jint arg2, jintArray arg3, jint arg4)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -3567,18 +3564,6 @@ namespace __jni_impl::android::opengl
 			arg2,
 			arg3,
 			arg4
-		);
-	}
-	void GLES20::glGetFramebufferAttachmentParameteriv(jint arg0, jint arg1, jint arg2, __jni_impl::java::nio::IntBuffer arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES20",
-			"glGetFramebufferAttachmentParameteriv",
-			"(IIILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3.__jniObject().object()
 		);
 	}
 	void GLES20::glGetIntegerv(jint arg0, __jni_impl::java::nio::IntBuffer arg1)
@@ -3601,6 +3586,15 @@ namespace __jni_impl::android::opengl
 			arg1,
 			arg2
 		);
+	}
+	jstring GLES20::glGetProgramInfoLog(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.opengl.GLES20",
+			"glGetProgramInfoLog",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
 	}
 	void GLES20::glGetProgramiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
 	{
@@ -3625,15 +3619,6 @@ namespace __jni_impl::android::opengl
 			arg3
 		);
 	}
-	jstring GLES20::glGetProgramInfoLog(jint arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.opengl.GLES20",
-			"glGetProgramInfoLog",
-			"(I)Ljava/lang/String;",
-			arg0
-		).object<jstring>();
-	}
 	void GLES20::glGetRenderbufferParameteriv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -3657,29 +3642,6 @@ namespace __jni_impl::android::opengl
 			arg3
 		);
 	}
-	void GLES20::glGetShaderiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES20",
-			"glGetShaderiv",
-			"(II[II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES20::glGetShaderiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES20",
-			"glGetShaderiv",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
 	jstring GLES20::glGetShaderInfoLog(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -3688,6 +3650,18 @@ namespace __jni_impl::android::opengl
 			"(I)Ljava/lang/String;",
 			arg0
 		).object<jstring>();
+	}
+	void GLES20::glGetShaderPrecisionFormat(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES20",
+			"glGetShaderPrecisionFormat",
+			"(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object(),
+			arg3.__jniObject().object()
+		);
 	}
 	void GLES20::glGetShaderPrecisionFormat(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5)
 	{
@@ -3701,18 +3675,6 @@ namespace __jni_impl::android::opengl
 			arg3,
 			arg4,
 			arg5
-		);
-	}
-	void GLES20::glGetShaderPrecisionFormat(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES20",
-			"glGetShaderPrecisionFormat",
-			"(IILjava/nio/IntBuffer;Ljava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object(),
-			arg3.__jniObject().object()
 		);
 	}
 	jstring GLES20::glGetShaderSource(jint arg0)
@@ -3736,6 +3698,29 @@ namespace __jni_impl::android::opengl
 			arg3,
 			arg4,
 			arg5
+		);
+	}
+	void GLES20::glGetShaderiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES20",
+			"glGetShaderiv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES20::glGetShaderiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES20",
+			"glGetShaderiv",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
 		);
 	}
 	jstring GLES20::glGetString(jint arg0)
@@ -3793,6 +3778,26 @@ namespace __jni_impl::android::opengl
 			arg3
 		);
 	}
+	jint GLES20::glGetUniformLocation(jint arg0, jstring arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.opengl.GLES20",
+			"glGetUniformLocation",
+			"(ILjava/lang/String;)I",
+			arg0,
+			arg1
+		);
+	}
+	jint GLES20::glGetUniformLocation(jint arg0, const QString &arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.opengl.GLES20",
+			"glGetUniformLocation",
+			"(ILjava/lang/String;)I",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
 	void GLES20::glGetUniformfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -3839,26 +3844,6 @@ namespace __jni_impl::android::opengl
 			arg3
 		);
 	}
-	jint GLES20::glGetUniformLocation(jint arg0, jstring arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.GLES20",
-			"glGetUniformLocation",
-			"(ILjava/lang/String;)I",
-			arg0,
-			arg1
-		);
-	}
-	jint GLES20::glGetUniformLocation(jint arg0, const QString &arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.opengl.GLES20",
-			"glGetUniformLocation",
-			"(ILjava/lang/String;)I",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	void GLES20::glGetVertexAttribfv(jint arg0, jint arg1, __jni_impl::java::nio::FloatBuffer arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -3882,6 +3867,17 @@ namespace __jni_impl::android::opengl
 			arg3
 		);
 	}
+	void GLES20::glGetVertexAttribiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES20",
+			"glGetVertexAttribiv",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
 	void GLES20::glGetVertexAttribiv(jint arg0, jint arg1, jintArray arg2, jint arg3)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -3892,17 +3888,6 @@ namespace __jni_impl::android::opengl
 			arg1,
 			arg2,
 			arg3
-		);
-	}
-	void GLES20::glGetVertexAttribiv(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES20",
-			"glGetVertexAttribiv",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
 		);
 	}
 	void GLES20::glHint(jint arg0, jint arg1)
@@ -4014,6 +3999,21 @@ namespace __jni_impl::android::opengl
 			"(FF)V",
 			arg0,
 			arg1
+		);
+	}
+	void GLES20::glReadPixels(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, __jni_impl::java::nio::Buffer arg6)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES20",
+			"glReadPixels",
+			"(IIIIIILjava/nio/Buffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6.__jniObject().object()
 		);
 	}
 	void GLES20::glReleaseShaderCompiler()
@@ -4651,6 +4651,16 @@ namespace __jni_impl::android::opengl
 			arg1
 		);
 	}
+	void GLES20::glVertexAttrib1fv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES20",
+			"glVertexAttrib1fv",
+			"(ILjava/nio/FloatBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
 	void GLES20::glVertexAttrib1fv(jint arg0, jfloatArray arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -4660,16 +4670,6 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	void GLES20::glVertexAttrib1fv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES20",
-			"glVertexAttrib1fv",
-			"(ILjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
 		);
 	}
 	void GLES20::glVertexAttrib2f(jint arg0, jfloat arg1, jfloat arg2)
@@ -4683,6 +4683,16 @@ namespace __jni_impl::android::opengl
 			arg2
 		);
 	}
+	void GLES20::glVertexAttrib2fv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES20",
+			"glVertexAttrib2fv",
+			"(ILjava/nio/FloatBuffer;)V",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
 	void GLES20::glVertexAttrib2fv(jint arg0, jfloatArray arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -4692,16 +4702,6 @@ namespace __jni_impl::android::opengl
 			arg0,
 			arg1,
 			arg2
-		);
-	}
-	void GLES20::glVertexAttrib2fv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES20",
-			"glVertexAttrib2fv",
-			"(ILjava/nio/FloatBuffer;)V",
-			arg0,
-			arg1.__jniObject().object()
 		);
 	}
 	void GLES20::glVertexAttrib3f(jint arg0, jfloat arg1, jfloat arg2, jfloat arg3)
@@ -4750,17 +4750,6 @@ namespace __jni_impl::android::opengl
 			arg4
 		);
 	}
-	void GLES20::glVertexAttrib4fv(jint arg0, jfloatArray arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES20",
-			"glVertexAttrib4fv",
-			"(I[FI)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
 	void GLES20::glVertexAttrib4fv(jint arg0, __jni_impl::java::nio::FloatBuffer arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -4771,18 +4760,15 @@ namespace __jni_impl::android::opengl
 			arg1.__jniObject().object()
 		);
 	}
-	void GLES20::glVertexAttribPointer(jint arg0, jint arg1, jint arg2, jboolean arg3, jint arg4, __jni_impl::java::nio::Buffer arg5)
+	void GLES20::glVertexAttrib4fv(jint arg0, jfloatArray arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES20",
-			"glVertexAttribPointer",
-			"(IIIZILjava/nio/Buffer;)V",
+			"glVertexAttrib4fv",
+			"(I[FI)V",
 			arg0,
 			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5.__jniObject().object()
+			arg2
 		);
 	}
 	void GLES20::glVertexAttribPointer(jint arg0, jint arg1, jint arg2, jboolean arg3, jint arg4, jint arg5)
@@ -4797,6 +4783,20 @@ namespace __jni_impl::android::opengl
 			arg3,
 			arg4,
 			arg5
+		);
+	}
+	void GLES20::glVertexAttribPointer(jint arg0, jint arg1, jint arg2, jboolean arg3, jint arg4, __jni_impl::java::nio::Buffer arg5)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES20",
+			"glVertexAttribPointer",
+			"(IIIZILjava/nio/Buffer;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5.__jniObject().object()
 		);
 	}
 	void GLES20::glViewport(jint arg0, jint arg1, jint arg2, jint arg3)

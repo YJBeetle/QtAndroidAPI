@@ -5,13 +5,9 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::webkit
+namespace __jni_impl::android::content
 {
-	class WebSettings_TextSize;
-}
-namespace __jni_impl::android::webkit
-{
-	class WebSettings_ZoomDensity;
+	class Context;
 }
 namespace __jni_impl::android::webkit
 {
@@ -21,13 +17,17 @@ namespace __jni_impl::android::webkit
 {
 	class WebSettings_PluginState;
 }
-namespace __jni_impl::android::content
-{
-	class Context;
-}
 namespace __jni_impl::android::webkit
 {
 	class WebSettings_RenderPriority;
+}
+namespace __jni_impl::android::webkit
+{
+	class WebSettings_TextSize;
+}
+namespace __jni_impl::android::webkit
+{
+	class WebSettings_ZoomDensity;
 }
 
 namespace __jni_impl::android::webkit
@@ -56,126 +56,126 @@ namespace __jni_impl::android::webkit
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getTextSize();
-		void setTextSize(__jni_impl::android::webkit::WebSettings_TextSize arg0);
-		void setCacheMode(jint arg0);
-		void setBlockNetworkLoads(jboolean arg0);
-		jboolean getBlockNetworkLoads();
-		jint getCacheMode();
-		void setAllowContentAccess(jboolean arg0);
-		jboolean getAllowContentAccess();
-		void setAllowFileAccess(jboolean arg0);
-		jboolean getAllowFileAccess();
-		jstring getDatabasePath();
-		void setSupportZoom(jboolean arg0);
-		jboolean supportZoom();
-		void setMediaPlaybackRequiresUserGesture(jboolean arg0);
-		jboolean getMediaPlaybackRequiresUserGesture();
-		void setBuiltInZoomControls(jboolean arg0);
-		jboolean getBuiltInZoomControls();
-		void setDisplayZoomControls(jboolean arg0);
-		jboolean getDisplayZoomControls();
-		void setLoadWithOverviewMode(jboolean arg0);
-		jboolean getLoadWithOverviewMode();
-		void setEnableSmoothTransition(jboolean arg0);
+		static jstring getDefaultUserAgent(__jni_impl::android::content::Context arg0);
 		jboolean enableSmoothTransition();
-		void setSaveFormData(jboolean arg0);
-		jboolean getSaveFormData();
-		void setSavePassword(jboolean arg0);
-		jboolean getSavePassword();
-		void setTextZoom(jint arg0);
-		jint getTextZoom();
-		void setDefaultZoom(__jni_impl::android::webkit::WebSettings_ZoomDensity arg0);
-		QAndroidJniObject getDefaultZoom();
-		void setLightTouchEnabled(jboolean arg0);
-		jboolean getLightTouchEnabled();
-		void setUseWideViewPort(jboolean arg0);
-		jboolean getUseWideViewPort();
-		void setSupportMultipleWindows(jboolean arg0);
-		jboolean supportMultipleWindows();
-		void setLayoutAlgorithm(__jni_impl::android::webkit::WebSettings_LayoutAlgorithm arg0);
-		QAndroidJniObject getLayoutAlgorithm();
-		void setStandardFontFamily(jstring arg0);
-		void setStandardFontFamily(const QString &arg0);
-		jstring getStandardFontFamily();
-		void setFixedFontFamily(jstring arg0);
-		void setFixedFontFamily(const QString &arg0);
-		jstring getFixedFontFamily();
-		void setSansSerifFontFamily(jstring arg0);
-		void setSansSerifFontFamily(const QString &arg0);
-		jstring getSansSerifFontFamily();
-		void setSerifFontFamily(jstring arg0);
-		void setSerifFontFamily(const QString &arg0);
-		jstring getSerifFontFamily();
-		void setCursiveFontFamily(jstring arg0);
-		void setCursiveFontFamily(const QString &arg0);
-		jstring getCursiveFontFamily();
-		void setFantasyFontFamily(jstring arg0);
-		void setFantasyFontFamily(const QString &arg0);
-		jstring getFantasyFontFamily();
-		void setMinimumFontSize(jint arg0);
-		jint getMinimumFontSize();
-		void setMinimumLogicalFontSize(jint arg0);
-		jint getMinimumLogicalFontSize();
-		void setDefaultFontSize(jint arg0);
-		jint getDefaultFontSize();
-		void setDefaultFixedFontSize(jint arg0);
-		jint getDefaultFixedFontSize();
-		void setLoadsImagesAutomatically(jboolean arg0);
-		jboolean getLoadsImagesAutomatically();
-		void setBlockNetworkImage(jboolean arg0);
+		jboolean getAllowContentAccess();
+		jboolean getAllowFileAccess();
+		jboolean getAllowFileAccessFromFileURLs();
+		jboolean getAllowUniversalAccessFromFileURLs();
 		jboolean getBlockNetworkImage();
-		void setJavaScriptEnabled(jboolean arg0);
-		void setAllowUniversalAccessFromFileURLs(jboolean arg0);
+		jboolean getBlockNetworkLoads();
+		jboolean getBuiltInZoomControls();
+		jint getCacheMode();
+		jstring getCursiveFontFamily();
+		jboolean getDatabaseEnabled();
+		jstring getDatabasePath();
+		jint getDefaultFixedFontSize();
+		jint getDefaultFontSize();
+		jstring getDefaultTextEncodingName();
+		QAndroidJniObject getDefaultZoom();
+		jint getDisabledActionModeMenuItems();
+		jboolean getDisplayZoomControls();
+		jboolean getDomStorageEnabled();
+		jstring getFantasyFontFamily();
+		jstring getFixedFontFamily();
+		jint getForceDark();
+		jboolean getJavaScriptCanOpenWindowsAutomatically();
+		jboolean getJavaScriptEnabled();
+		QAndroidJniObject getLayoutAlgorithm();
+		jboolean getLightTouchEnabled();
+		jboolean getLoadWithOverviewMode();
+		jboolean getLoadsImagesAutomatically();
+		jboolean getMediaPlaybackRequiresUserGesture();
+		jint getMinimumFontSize();
+		jint getMinimumLogicalFontSize();
+		jint getMixedContentMode();
+		jboolean getOffscreenPreRaster();
+		QAndroidJniObject getPluginState();
+		jboolean getSafeBrowsingEnabled();
+		jstring getSansSerifFontFamily();
+		jboolean getSaveFormData();
+		jboolean getSavePassword();
+		jstring getSerifFontFamily();
+		jstring getStandardFontFamily();
+		QAndroidJniObject getTextSize();
+		jint getTextZoom();
+		jboolean getUseWideViewPort();
+		jstring getUserAgentString();
+		void setAllowContentAccess(jboolean arg0);
+		void setAllowFileAccess(jboolean arg0);
 		void setAllowFileAccessFromFileURLs(jboolean arg0);
-		void setPluginState(__jni_impl::android::webkit::WebSettings_PluginState arg0);
-		void setDatabasePath(jstring arg0);
-		void setDatabasePath(const QString &arg0);
-		void setGeolocationDatabasePath(jstring arg0);
-		void setGeolocationDatabasePath(const QString &arg0);
+		void setAllowUniversalAccessFromFileURLs(jboolean arg0);
 		void setAppCacheEnabled(jboolean arg0);
+		void setAppCacheMaxSize(jlong arg0);
 		void setAppCachePath(jstring arg0);
 		void setAppCachePath(const QString &arg0);
-		void setAppCacheMaxSize(jlong arg0);
+		void setBlockNetworkImage(jboolean arg0);
+		void setBlockNetworkLoads(jboolean arg0);
+		void setBuiltInZoomControls(jboolean arg0);
+		void setCacheMode(jint arg0);
+		void setCursiveFontFamily(jstring arg0);
+		void setCursiveFontFamily(const QString &arg0);
 		void setDatabaseEnabled(jboolean arg0);
-		void setDomStorageEnabled(jboolean arg0);
-		jboolean getDomStorageEnabled();
-		jboolean getDatabaseEnabled();
-		void setGeolocationEnabled(jboolean arg0);
-		jboolean getJavaScriptEnabled();
-		jboolean getAllowUniversalAccessFromFileURLs();
-		jboolean getAllowFileAccessFromFileURLs();
-		QAndroidJniObject getPluginState();
-		void setJavaScriptCanOpenWindowsAutomatically(jboolean arg0);
-		jboolean getJavaScriptCanOpenWindowsAutomatically();
+		void setDatabasePath(jstring arg0);
+		void setDatabasePath(const QString &arg0);
+		void setDefaultFixedFontSize(jint arg0);
+		void setDefaultFontSize(jint arg0);
 		void setDefaultTextEncodingName(jstring arg0);
 		void setDefaultTextEncodingName(const QString &arg0);
-		jstring getDefaultTextEncodingName();
+		void setDefaultZoom(__jni_impl::android::webkit::WebSettings_ZoomDensity arg0);
+		void setDisabledActionModeMenuItems(jint arg0);
+		void setDisplayZoomControls(jboolean arg0);
+		void setDomStorageEnabled(jboolean arg0);
+		void setEnableSmoothTransition(jboolean arg0);
+		void setFantasyFontFamily(jstring arg0);
+		void setFantasyFontFamily(const QString &arg0);
+		void setFixedFontFamily(jstring arg0);
+		void setFixedFontFamily(const QString &arg0);
+		void setForceDark(jint arg0);
+		void setGeolocationDatabasePath(jstring arg0);
+		void setGeolocationDatabasePath(const QString &arg0);
+		void setGeolocationEnabled(jboolean arg0);
+		void setJavaScriptCanOpenWindowsAutomatically(jboolean arg0);
+		void setJavaScriptEnabled(jboolean arg0);
+		void setLayoutAlgorithm(__jni_impl::android::webkit::WebSettings_LayoutAlgorithm arg0);
+		void setLightTouchEnabled(jboolean arg0);
+		void setLoadWithOverviewMode(jboolean arg0);
+		void setLoadsImagesAutomatically(jboolean arg0);
+		void setMediaPlaybackRequiresUserGesture(jboolean arg0);
+		void setMinimumFontSize(jint arg0);
+		void setMinimumLogicalFontSize(jint arg0);
+		void setMixedContentMode(jint arg0);
+		void setNeedInitialFocus(jboolean arg0);
+		void setOffscreenPreRaster(jboolean arg0);
+		void setPluginState(__jni_impl::android::webkit::WebSettings_PluginState arg0);
+		void setRenderPriority(__jni_impl::android::webkit::WebSettings_RenderPriority arg0);
+		void setSafeBrowsingEnabled(jboolean arg0);
+		void setSansSerifFontFamily(jstring arg0);
+		void setSansSerifFontFamily(const QString &arg0);
+		void setSaveFormData(jboolean arg0);
+		void setSavePassword(jboolean arg0);
+		void setSerifFontFamily(jstring arg0);
+		void setSerifFontFamily(const QString &arg0);
+		void setStandardFontFamily(jstring arg0);
+		void setStandardFontFamily(const QString &arg0);
+		void setSupportMultipleWindows(jboolean arg0);
+		void setSupportZoom(jboolean arg0);
+		void setTextSize(__jni_impl::android::webkit::WebSettings_TextSize arg0);
+		void setTextZoom(jint arg0);
+		void setUseWideViewPort(jboolean arg0);
 		void setUserAgentString(jstring arg0);
 		void setUserAgentString(const QString &arg0);
-		jstring getUserAgentString();
-		static jstring getDefaultUserAgent(__jni_impl::android::content::Context arg0);
-		void setNeedInitialFocus(jboolean arg0);
-		void setRenderPriority(__jni_impl::android::webkit::WebSettings_RenderPriority arg0);
-		void setMixedContentMode(jint arg0);
-		jint getMixedContentMode();
-		void setOffscreenPreRaster(jboolean arg0);
-		jboolean getOffscreenPreRaster();
-		void setSafeBrowsingEnabled(jboolean arg0);
-		jboolean getSafeBrowsingEnabled();
-		void setForceDark(jint arg0);
-		jint getForceDark();
-		void setDisabledActionModeMenuItems(jint arg0);
-		jint getDisabledActionModeMenuItems();
+		jboolean supportMultipleWindows();
+		jboolean supportZoom();
 	};
 } // namespace __jni_impl::android::webkit
 
-#include "WebSettings_TextSize.hpp"
-#include "WebSettings_ZoomDensity.hpp"
+#include "../content/Context.hpp"
 #include "WebSettings_LayoutAlgorithm.hpp"
 #include "WebSettings_PluginState.hpp"
-#include "../content/Context.hpp"
 #include "WebSettings_RenderPriority.hpp"
+#include "WebSettings_TextSize.hpp"
+#include "WebSettings_ZoomDensity.hpp"
 
 namespace __jni_impl::android::webkit
 {
@@ -296,41 +296,68 @@ namespace __jni_impl::android::webkit
 	}
 	
 	// Methods
-	QAndroidJniObject WebSettings::getTextSize()
+	jstring WebSettings::getDefaultUserAgent(__jni_impl::android::content::Context arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getTextSize",
-			"()Landroid/webkit/WebSettings$TextSize;"
-		);
-	}
-	void WebSettings::setTextSize(__jni_impl::android::webkit::WebSettings_TextSize arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTextSize",
-			"(Landroid/webkit/WebSettings$TextSize;)V",
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.webkit.WebSettings",
+			"getDefaultUserAgent",
+			"(Landroid/content/Context;)Ljava/lang/String;",
 			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	jboolean WebSettings::enableSmoothTransition()
+	{
+		return __thiz.callMethod<jboolean>(
+			"enableSmoothTransition",
+			"()Z"
 		);
 	}
-	void WebSettings::setCacheMode(jint arg0)
+	jboolean WebSettings::getAllowContentAccess()
 	{
-		__thiz.callMethod<void>(
-			"setCacheMode",
-			"(I)V",
-			arg0
+		return __thiz.callMethod<jboolean>(
+			"getAllowContentAccess",
+			"()Z"
 		);
 	}
-	void WebSettings::setBlockNetworkLoads(jboolean arg0)
+	jboolean WebSettings::getAllowFileAccess()
 	{
-		__thiz.callMethod<void>(
-			"setBlockNetworkLoads",
-			"(Z)V",
-			arg0
+		return __thiz.callMethod<jboolean>(
+			"getAllowFileAccess",
+			"()Z"
+		);
+	}
+	jboolean WebSettings::getAllowFileAccessFromFileURLs()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getAllowFileAccessFromFileURLs",
+			"()Z"
+		);
+	}
+	jboolean WebSettings::getAllowUniversalAccessFromFileURLs()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getAllowUniversalAccessFromFileURLs",
+			"()Z"
+		);
+	}
+	jboolean WebSettings::getBlockNetworkImage()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getBlockNetworkImage",
+			"()Z"
 		);
 	}
 	jboolean WebSettings::getBlockNetworkLoads()
 	{
 		return __thiz.callMethod<jboolean>(
 			"getBlockNetworkLoads",
+			"()Z"
+		);
+	}
+	jboolean WebSettings::getBuiltInZoomControls()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getBuiltInZoomControls",
 			"()Z"
 		);
 	}
@@ -341,33 +368,17 @@ namespace __jni_impl::android::webkit
 			"()I"
 		);
 	}
-	void WebSettings::setAllowContentAccess(jboolean arg0)
+	jstring WebSettings::getCursiveFontFamily()
 	{
-		__thiz.callMethod<void>(
-			"setAllowContentAccess",
-			"(Z)V",
-			arg0
-		);
+		return __thiz.callObjectMethod(
+			"getCursiveFontFamily",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
-	jboolean WebSettings::getAllowContentAccess()
+	jboolean WebSettings::getDatabaseEnabled()
 	{
 		return __thiz.callMethod<jboolean>(
-			"getAllowContentAccess",
-			"()Z"
-		);
-	}
-	void WebSettings::setAllowFileAccess(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setAllowFileAccess",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean WebSettings::getAllowFileAccess()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getAllowFileAccess",
+			"getDatabaseEnabled",
 			"()Z"
 		);
 	}
@@ -378,390 +389,11 @@ namespace __jni_impl::android::webkit
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	void WebSettings::setSupportZoom(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSupportZoom",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean WebSettings::supportZoom()
-	{
-		return __thiz.callMethod<jboolean>(
-			"supportZoom",
-			"()Z"
-		);
-	}
-	void WebSettings::setMediaPlaybackRequiresUserGesture(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMediaPlaybackRequiresUserGesture",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean WebSettings::getMediaPlaybackRequiresUserGesture()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getMediaPlaybackRequiresUserGesture",
-			"()Z"
-		);
-	}
-	void WebSettings::setBuiltInZoomControls(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setBuiltInZoomControls",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean WebSettings::getBuiltInZoomControls()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getBuiltInZoomControls",
-			"()Z"
-		);
-	}
-	void WebSettings::setDisplayZoomControls(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDisplayZoomControls",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean WebSettings::getDisplayZoomControls()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getDisplayZoomControls",
-			"()Z"
-		);
-	}
-	void WebSettings::setLoadWithOverviewMode(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLoadWithOverviewMode",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean WebSettings::getLoadWithOverviewMode()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getLoadWithOverviewMode",
-			"()Z"
-		);
-	}
-	void WebSettings::setEnableSmoothTransition(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setEnableSmoothTransition",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean WebSettings::enableSmoothTransition()
-	{
-		return __thiz.callMethod<jboolean>(
-			"enableSmoothTransition",
-			"()Z"
-		);
-	}
-	void WebSettings::setSaveFormData(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSaveFormData",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean WebSettings::getSaveFormData()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getSaveFormData",
-			"()Z"
-		);
-	}
-	void WebSettings::setSavePassword(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSavePassword",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean WebSettings::getSavePassword()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getSavePassword",
-			"()Z"
-		);
-	}
-	void WebSettings::setTextZoom(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setTextZoom",
-			"(I)V",
-			arg0
-		);
-	}
-	jint WebSettings::getTextZoom()
+	jint WebSettings::getDefaultFixedFontSize()
 	{
 		return __thiz.callMethod<jint>(
-			"getTextZoom",
+			"getDefaultFixedFontSize",
 			"()I"
-		);
-	}
-	void WebSettings::setDefaultZoom(__jni_impl::android::webkit::WebSettings_ZoomDensity arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDefaultZoom",
-			"(Landroid/webkit/WebSettings$ZoomDensity;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject WebSettings::getDefaultZoom()
-	{
-		return __thiz.callObjectMethod(
-			"getDefaultZoom",
-			"()Landroid/webkit/WebSettings$ZoomDensity;"
-		);
-	}
-	void WebSettings::setLightTouchEnabled(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLightTouchEnabled",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean WebSettings::getLightTouchEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getLightTouchEnabled",
-			"()Z"
-		);
-	}
-	void WebSettings::setUseWideViewPort(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setUseWideViewPort",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean WebSettings::getUseWideViewPort()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getUseWideViewPort",
-			"()Z"
-		);
-	}
-	void WebSettings::setSupportMultipleWindows(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSupportMultipleWindows",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean WebSettings::supportMultipleWindows()
-	{
-		return __thiz.callMethod<jboolean>(
-			"supportMultipleWindows",
-			"()Z"
-		);
-	}
-	void WebSettings::setLayoutAlgorithm(__jni_impl::android::webkit::WebSettings_LayoutAlgorithm arg0)
-	{
-		__thiz.callMethod<void>(
-			"setLayoutAlgorithm",
-			"(Landroid/webkit/WebSettings$LayoutAlgorithm;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject WebSettings::getLayoutAlgorithm()
-	{
-		return __thiz.callObjectMethod(
-			"getLayoutAlgorithm",
-			"()Landroid/webkit/WebSettings$LayoutAlgorithm;"
-		);
-	}
-	void WebSettings::setStandardFontFamily(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStandardFontFamily",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void WebSettings::setStandardFontFamily(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setStandardFontFamily",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring WebSettings::getStandardFontFamily()
-	{
-		return __thiz.callObjectMethod(
-			"getStandardFontFamily",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void WebSettings::setFixedFontFamily(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFixedFontFamily",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void WebSettings::setFixedFontFamily(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFixedFontFamily",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring WebSettings::getFixedFontFamily()
-	{
-		return __thiz.callObjectMethod(
-			"getFixedFontFamily",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void WebSettings::setSansSerifFontFamily(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSansSerifFontFamily",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void WebSettings::setSansSerifFontFamily(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSansSerifFontFamily",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring WebSettings::getSansSerifFontFamily()
-	{
-		return __thiz.callObjectMethod(
-			"getSansSerifFontFamily",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void WebSettings::setSerifFontFamily(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSerifFontFamily",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void WebSettings::setSerifFontFamily(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSerifFontFamily",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring WebSettings::getSerifFontFamily()
-	{
-		return __thiz.callObjectMethod(
-			"getSerifFontFamily",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void WebSettings::setCursiveFontFamily(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCursiveFontFamily",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void WebSettings::setCursiveFontFamily(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setCursiveFontFamily",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring WebSettings::getCursiveFontFamily()
-	{
-		return __thiz.callObjectMethod(
-			"getCursiveFontFamily",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void WebSettings::setFantasyFontFamily(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFantasyFontFamily",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void WebSettings::setFantasyFontFamily(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setFantasyFontFamily",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jstring WebSettings::getFantasyFontFamily()
-	{
-		return __thiz.callObjectMethod(
-			"getFantasyFontFamily",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	void WebSettings::setMinimumFontSize(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMinimumFontSize",
-			"(I)V",
-			arg0
-		);
-	}
-	jint WebSettings::getMinimumFontSize()
-	{
-		return __thiz.callMethod<jint>(
-			"getMinimumFontSize",
-			"()I"
-		);
-	}
-	void WebSettings::setMinimumLogicalFontSize(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMinimumLogicalFontSize",
-			"(I)V",
-			arg0
-		);
-	}
-	jint WebSettings::getMinimumLogicalFontSize()
-	{
-		return __thiz.callMethod<jint>(
-			"getMinimumLogicalFontSize",
-			"()I"
-		);
-	}
-	void WebSettings::setDefaultFontSize(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDefaultFontSize",
-			"(I)V",
-			arg0
 		);
 	}
 	jint WebSettings::getDefaultFontSize()
@@ -771,27 +403,95 @@ namespace __jni_impl::android::webkit
 			"()I"
 		);
 	}
-	void WebSettings::setDefaultFixedFontSize(jint arg0)
+	jstring WebSettings::getDefaultTextEncodingName()
 	{
-		__thiz.callMethod<void>(
-			"setDefaultFixedFontSize",
-			"(I)V",
-			arg0
+		return __thiz.callObjectMethod(
+			"getDefaultTextEncodingName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject WebSettings::getDefaultZoom()
+	{
+		return __thiz.callObjectMethod(
+			"getDefaultZoom",
+			"()Landroid/webkit/WebSettings$ZoomDensity;"
 		);
 	}
-	jint WebSettings::getDefaultFixedFontSize()
+	jint WebSettings::getDisabledActionModeMenuItems()
 	{
 		return __thiz.callMethod<jint>(
-			"getDefaultFixedFontSize",
+			"getDisabledActionModeMenuItems",
 			"()I"
 		);
 	}
-	void WebSettings::setLoadsImagesAutomatically(jboolean arg0)
+	jboolean WebSettings::getDisplayZoomControls()
 	{
-		__thiz.callMethod<void>(
-			"setLoadsImagesAutomatically",
-			"(Z)V",
-			arg0
+		return __thiz.callMethod<jboolean>(
+			"getDisplayZoomControls",
+			"()Z"
+		);
+	}
+	jboolean WebSettings::getDomStorageEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getDomStorageEnabled",
+			"()Z"
+		);
+	}
+	jstring WebSettings::getFantasyFontFamily()
+	{
+		return __thiz.callObjectMethod(
+			"getFantasyFontFamily",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring WebSettings::getFixedFontFamily()
+	{
+		return __thiz.callObjectMethod(
+			"getFixedFontFamily",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint WebSettings::getForceDark()
+	{
+		return __thiz.callMethod<jint>(
+			"getForceDark",
+			"()I"
+		);
+	}
+	jboolean WebSettings::getJavaScriptCanOpenWindowsAutomatically()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getJavaScriptCanOpenWindowsAutomatically",
+			"()Z"
+		);
+	}
+	jboolean WebSettings::getJavaScriptEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getJavaScriptEnabled",
+			"()Z"
+		);
+	}
+	QAndroidJniObject WebSettings::getLayoutAlgorithm()
+	{
+		return __thiz.callObjectMethod(
+			"getLayoutAlgorithm",
+			"()Landroid/webkit/WebSettings$LayoutAlgorithm;"
+		);
+	}
+	jboolean WebSettings::getLightTouchEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getLightTouchEnabled",
+			"()Z"
+		);
+	}
+	jboolean WebSettings::getLoadWithOverviewMode()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getLoadWithOverviewMode",
+			"()Z"
 		);
 	}
 	jboolean WebSettings::getLoadsImagesAutomatically()
@@ -801,33 +501,130 @@ namespace __jni_impl::android::webkit
 			"()Z"
 		);
 	}
-	void WebSettings::setBlockNetworkImage(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setBlockNetworkImage",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean WebSettings::getBlockNetworkImage()
+	jboolean WebSettings::getMediaPlaybackRequiresUserGesture()
 	{
 		return __thiz.callMethod<jboolean>(
-			"getBlockNetworkImage",
+			"getMediaPlaybackRequiresUserGesture",
 			"()Z"
 		);
 	}
-	void WebSettings::setJavaScriptEnabled(jboolean arg0)
+	jint WebSettings::getMinimumFontSize()
+	{
+		return __thiz.callMethod<jint>(
+			"getMinimumFontSize",
+			"()I"
+		);
+	}
+	jint WebSettings::getMinimumLogicalFontSize()
+	{
+		return __thiz.callMethod<jint>(
+			"getMinimumLogicalFontSize",
+			"()I"
+		);
+	}
+	jint WebSettings::getMixedContentMode()
+	{
+		return __thiz.callMethod<jint>(
+			"getMixedContentMode",
+			"()I"
+		);
+	}
+	jboolean WebSettings::getOffscreenPreRaster()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getOffscreenPreRaster",
+			"()Z"
+		);
+	}
+	QAndroidJniObject WebSettings::getPluginState()
+	{
+		return __thiz.callObjectMethod(
+			"getPluginState",
+			"()Landroid/webkit/WebSettings$PluginState;"
+		);
+	}
+	jboolean WebSettings::getSafeBrowsingEnabled()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getSafeBrowsingEnabled",
+			"()Z"
+		);
+	}
+	jstring WebSettings::getSansSerifFontFamily()
+	{
+		return __thiz.callObjectMethod(
+			"getSansSerifFontFamily",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jboolean WebSettings::getSaveFormData()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getSaveFormData",
+			"()Z"
+		);
+	}
+	jboolean WebSettings::getSavePassword()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getSavePassword",
+			"()Z"
+		);
+	}
+	jstring WebSettings::getSerifFontFamily()
+	{
+		return __thiz.callObjectMethod(
+			"getSerifFontFamily",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring WebSettings::getStandardFontFamily()
+	{
+		return __thiz.callObjectMethod(
+			"getStandardFontFamily",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject WebSettings::getTextSize()
+	{
+		return __thiz.callObjectMethod(
+			"getTextSize",
+			"()Landroid/webkit/WebSettings$TextSize;"
+		);
+	}
+	jint WebSettings::getTextZoom()
+	{
+		return __thiz.callMethod<jint>(
+			"getTextZoom",
+			"()I"
+		);
+	}
+	jboolean WebSettings::getUseWideViewPort()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getUseWideViewPort",
+			"()Z"
+		);
+	}
+	jstring WebSettings::getUserAgentString()
+	{
+		return __thiz.callObjectMethod(
+			"getUserAgentString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void WebSettings::setAllowContentAccess(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
-			"setJavaScriptEnabled",
+			"setAllowContentAccess",
 			"(Z)V",
 			arg0
 		);
 	}
-	void WebSettings::setAllowUniversalAccessFromFileURLs(jboolean arg0)
+	void WebSettings::setAllowFileAccess(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
-			"setAllowUniversalAccessFromFileURLs",
+			"setAllowFileAccess",
 			"(Z)V",
 			arg0
 		);
@@ -840,44 +637,12 @@ namespace __jni_impl::android::webkit
 			arg0
 		);
 	}
-	void WebSettings::setPluginState(__jni_impl::android::webkit::WebSettings_PluginState arg0)
+	void WebSettings::setAllowUniversalAccessFromFileURLs(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
-			"setPluginState",
-			"(Landroid/webkit/WebSettings$PluginState;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void WebSettings::setDatabasePath(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDatabasePath",
-			"(Ljava/lang/String;)V",
+			"setAllowUniversalAccessFromFileURLs",
+			"(Z)V",
 			arg0
-		);
-	}
-	void WebSettings::setDatabasePath(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDatabasePath",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void WebSettings::setGeolocationDatabasePath(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGeolocationDatabasePath",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void WebSettings::setGeolocationDatabasePath(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"setGeolocationDatabasePath",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void WebSettings::setAppCacheEnabled(jboolean arg0)
@@ -885,6 +650,14 @@ namespace __jni_impl::android::webkit
 		__thiz.callMethod<void>(
 			"setAppCacheEnabled",
 			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setAppCacheMaxSize(jlong arg0)
+	{
+		__thiz.callMethod<void>(
+			"setAppCacheMaxSize",
+			"(J)V",
 			arg0
 		);
 	}
@@ -904,12 +677,52 @@ namespace __jni_impl::android::webkit
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void WebSettings::setAppCacheMaxSize(jlong arg0)
+	void WebSettings::setBlockNetworkImage(jboolean arg0)
 	{
 		__thiz.callMethod<void>(
-			"setAppCacheMaxSize",
-			"(J)V",
+			"setBlockNetworkImage",
+			"(Z)V",
 			arg0
+		);
+	}
+	void WebSettings::setBlockNetworkLoads(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setBlockNetworkLoads",
+			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setBuiltInZoomControls(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setBuiltInZoomControls",
+			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setCacheMode(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCacheMode",
+			"(I)V",
+			arg0
+		);
+	}
+	void WebSettings::setCursiveFontFamily(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCursiveFontFamily",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void WebSettings::setCursiveFontFamily(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setCursiveFontFamily",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	void WebSettings::setDatabaseEnabled(jboolean arg0)
@@ -920,77 +733,36 @@ namespace __jni_impl::android::webkit
 			arg0
 		);
 	}
-	void WebSettings::setDomStorageEnabled(jboolean arg0)
+	void WebSettings::setDatabasePath(jstring arg0)
 	{
 		__thiz.callMethod<void>(
-			"setDomStorageEnabled",
-			"(Z)V",
+			"setDatabasePath",
+			"(Ljava/lang/String;)V",
 			arg0
 		);
 	}
-	jboolean WebSettings::getDomStorageEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getDomStorageEnabled",
-			"()Z"
-		);
-	}
-	jboolean WebSettings::getDatabaseEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getDatabaseEnabled",
-			"()Z"
-		);
-	}
-	void WebSettings::setGeolocationEnabled(jboolean arg0)
+	void WebSettings::setDatabasePath(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"setGeolocationEnabled",
-			"(Z)V",
+			"setDatabasePath",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void WebSettings::setDefaultFixedFontSize(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDefaultFixedFontSize",
+			"(I)V",
 			arg0
 		);
 	}
-	jboolean WebSettings::getJavaScriptEnabled()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getJavaScriptEnabled",
-			"()Z"
-		);
-	}
-	jboolean WebSettings::getAllowUniversalAccessFromFileURLs()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getAllowUniversalAccessFromFileURLs",
-			"()Z"
-		);
-	}
-	jboolean WebSettings::getAllowFileAccessFromFileURLs()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getAllowFileAccessFromFileURLs",
-			"()Z"
-		);
-	}
-	QAndroidJniObject WebSettings::getPluginState()
-	{
-		return __thiz.callObjectMethod(
-			"getPluginState",
-			"()Landroid/webkit/WebSettings$PluginState;"
-		);
-	}
-	void WebSettings::setJavaScriptCanOpenWindowsAutomatically(jboolean arg0)
+	void WebSettings::setDefaultFontSize(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"setJavaScriptCanOpenWindowsAutomatically",
-			"(Z)V",
+			"setDefaultFontSize",
+			"(I)V",
 			arg0
-		);
-	}
-	jboolean WebSettings::getJavaScriptCanOpenWindowsAutomatically()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getJavaScriptCanOpenWindowsAutomatically",
-			"()Z"
 		);
 	}
 	void WebSettings::setDefaultTextEncodingName(jstring arg0)
@@ -1009,12 +781,333 @@ namespace __jni_impl::android::webkit
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jstring WebSettings::getDefaultTextEncodingName()
+	void WebSettings::setDefaultZoom(__jni_impl::android::webkit::WebSettings_ZoomDensity arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getDefaultTextEncodingName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		__thiz.callMethod<void>(
+			"setDefaultZoom",
+			"(Landroid/webkit/WebSettings$ZoomDensity;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void WebSettings::setDisabledActionModeMenuItems(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDisabledActionModeMenuItems",
+			"(I)V",
+			arg0
+		);
+	}
+	void WebSettings::setDisplayZoomControls(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDisplayZoomControls",
+			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setDomStorageEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setDomStorageEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setEnableSmoothTransition(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setEnableSmoothTransition",
+			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setFantasyFontFamily(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFantasyFontFamily",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void WebSettings::setFantasyFontFamily(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFantasyFontFamily",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void WebSettings::setFixedFontFamily(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFixedFontFamily",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void WebSettings::setFixedFontFamily(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setFixedFontFamily",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void WebSettings::setForceDark(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setForceDark",
+			"(I)V",
+			arg0
+		);
+	}
+	void WebSettings::setGeolocationDatabasePath(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGeolocationDatabasePath",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void WebSettings::setGeolocationDatabasePath(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGeolocationDatabasePath",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void WebSettings::setGeolocationEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setGeolocationEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setJavaScriptCanOpenWindowsAutomatically(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setJavaScriptCanOpenWindowsAutomatically",
+			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setJavaScriptEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setJavaScriptEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setLayoutAlgorithm(__jni_impl::android::webkit::WebSettings_LayoutAlgorithm arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLayoutAlgorithm",
+			"(Landroid/webkit/WebSettings$LayoutAlgorithm;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void WebSettings::setLightTouchEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLightTouchEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setLoadWithOverviewMode(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLoadWithOverviewMode",
+			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setLoadsImagesAutomatically(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setLoadsImagesAutomatically",
+			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setMediaPlaybackRequiresUserGesture(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMediaPlaybackRequiresUserGesture",
+			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setMinimumFontSize(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMinimumFontSize",
+			"(I)V",
+			arg0
+		);
+	}
+	void WebSettings::setMinimumLogicalFontSize(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMinimumLogicalFontSize",
+			"(I)V",
+			arg0
+		);
+	}
+	void WebSettings::setMixedContentMode(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setMixedContentMode",
+			"(I)V",
+			arg0
+		);
+	}
+	void WebSettings::setNeedInitialFocus(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setNeedInitialFocus",
+			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setOffscreenPreRaster(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setOffscreenPreRaster",
+			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setPluginState(__jni_impl::android::webkit::WebSettings_PluginState arg0)
+	{
+		__thiz.callMethod<void>(
+			"setPluginState",
+			"(Landroid/webkit/WebSettings$PluginState;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void WebSettings::setRenderPriority(__jni_impl::android::webkit::WebSettings_RenderPriority arg0)
+	{
+		__thiz.callMethod<void>(
+			"setRenderPriority",
+			"(Landroid/webkit/WebSettings$RenderPriority;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void WebSettings::setSafeBrowsingEnabled(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSafeBrowsingEnabled",
+			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setSansSerifFontFamily(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSansSerifFontFamily",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void WebSettings::setSansSerifFontFamily(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSansSerifFontFamily",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void WebSettings::setSaveFormData(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSaveFormData",
+			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setSavePassword(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSavePassword",
+			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setSerifFontFamily(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSerifFontFamily",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void WebSettings::setSerifFontFamily(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSerifFontFamily",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void WebSettings::setStandardFontFamily(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"setStandardFontFamily",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void WebSettings::setStandardFontFamily(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"setStandardFontFamily",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void WebSettings::setSupportMultipleWindows(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSupportMultipleWindows",
+			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setSupportZoom(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setSupportZoom",
+			"(Z)V",
+			arg0
+		);
+	}
+	void WebSettings::setTextSize(__jni_impl::android::webkit::WebSettings_TextSize arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTextSize",
+			"(Landroid/webkit/WebSettings$TextSize;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void WebSettings::setTextZoom(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"setTextZoom",
+			"(I)V",
+			arg0
+		);
+	}
+	void WebSettings::setUseWideViewPort(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"setUseWideViewPort",
+			"(Z)V",
+			arg0
+		);
 	}
 	void WebSettings::setUserAgentString(jstring arg0)
 	{
@@ -1032,111 +1125,18 @@ namespace __jni_impl::android::webkit
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jstring WebSettings::getUserAgentString()
-	{
-		return __thiz.callObjectMethod(
-			"getUserAgentString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring WebSettings::getDefaultUserAgent(__jni_impl::android::content::Context arg0)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.webkit.WebSettings",
-			"getDefaultUserAgent",
-			"(Landroid/content/Context;)Ljava/lang/String;",
-			arg0.__jniObject().object()
-		).object<jstring>();
-	}
-	void WebSettings::setNeedInitialFocus(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setNeedInitialFocus",
-			"(Z)V",
-			arg0
-		);
-	}
-	void WebSettings::setRenderPriority(__jni_impl::android::webkit::WebSettings_RenderPriority arg0)
-	{
-		__thiz.callMethod<void>(
-			"setRenderPriority",
-			"(Landroid/webkit/WebSettings$RenderPriority;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void WebSettings::setMixedContentMode(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setMixedContentMode",
-			"(I)V",
-			arg0
-		);
-	}
-	jint WebSettings::getMixedContentMode()
-	{
-		return __thiz.callMethod<jint>(
-			"getMixedContentMode",
-			"()I"
-		);
-	}
-	void WebSettings::setOffscreenPreRaster(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setOffscreenPreRaster",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean WebSettings::getOffscreenPreRaster()
+	jboolean WebSettings::supportMultipleWindows()
 	{
 		return __thiz.callMethod<jboolean>(
-			"getOffscreenPreRaster",
+			"supportMultipleWindows",
 			"()Z"
 		);
 	}
-	void WebSettings::setSafeBrowsingEnabled(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"setSafeBrowsingEnabled",
-			"(Z)V",
-			arg0
-		);
-	}
-	jboolean WebSettings::getSafeBrowsingEnabled()
+	jboolean WebSettings::supportZoom()
 	{
 		return __thiz.callMethod<jboolean>(
-			"getSafeBrowsingEnabled",
+			"supportZoom",
 			"()Z"
-		);
-	}
-	void WebSettings::setForceDark(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setForceDark",
-			"(I)V",
-			arg0
-		);
-	}
-	jint WebSettings::getForceDark()
-	{
-		return __thiz.callMethod<jint>(
-			"getForceDark",
-			"()I"
-		);
-	}
-	void WebSettings::setDisabledActionModeMenuItems(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"setDisabledActionModeMenuItems",
-			"(I)V",
-			arg0
-		);
-	}
-	jint WebSettings::getDisabledActionModeMenuItems()
-	{
-		return __thiz.callMethod<jint>(
-			"getDisabledActionModeMenuItems",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::webkit

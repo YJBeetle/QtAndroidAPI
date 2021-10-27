@@ -18,12 +18,12 @@ namespace __jni_impl::android::util
 		void __constructor(const QString &arg0, const QString &arg1);
 		
 		// Methods
-		void reset();
-		void reset(jstring arg0, jstring arg1);
-		void reset(const QString &arg0, const QString &arg1);
 		void addSplit(jstring arg0);
 		void addSplit(const QString &arg0);
 		void dumpToLog();
+		void reset();
+		void reset(jstring arg0, jstring arg1);
+		void reset(const QString &arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::util
 
@@ -53,6 +53,29 @@ namespace __jni_impl::android::util
 	}
 	
 	// Methods
+	void TimingLogger::addSplit(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"addSplit",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void TimingLogger::addSplit(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"addSplit",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void TimingLogger::dumpToLog()
+	{
+		__thiz.callMethod<void>(
+			"dumpToLog",
+			"()V"
+		);
+	}
 	void TimingLogger::reset()
 	{
 		__thiz.callMethod<void>(
@@ -76,29 +99,6 @@ namespace __jni_impl::android::util
 			"(Ljava/lang/String;Ljava/lang/String;)V",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	void TimingLogger::addSplit(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"addSplit",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void TimingLogger::addSplit(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"addSplit",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void TimingLogger::dumpToLog()
-	{
-		__thiz.callMethod<void>(
-			"dumpToLog",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::android::util

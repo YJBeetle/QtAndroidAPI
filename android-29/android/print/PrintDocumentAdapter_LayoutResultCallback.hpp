@@ -21,10 +21,10 @@ namespace __jni_impl::android::print
 		void __constructor();
 		
 		// Methods
-		void onLayoutFinished(__jni_impl::android::print::PrintDocumentInfo arg0, jboolean arg1);
+		void onLayoutCancelled();
 		void onLayoutFailed(jstring arg0);
 		void onLayoutFailed(const QString &arg0);
-		void onLayoutCancelled();
+		void onLayoutFinished(__jni_impl::android::print::PrintDocumentInfo arg0, jboolean arg1);
 	};
 } // namespace __jni_impl::android::print
 
@@ -43,13 +43,11 @@ namespace __jni_impl::android::print
 	}
 	
 	// Methods
-	void PrintDocumentAdapter_LayoutResultCallback::onLayoutFinished(__jni_impl::android::print::PrintDocumentInfo arg0, jboolean arg1)
+	void PrintDocumentAdapter_LayoutResultCallback::onLayoutCancelled()
 	{
 		__thiz.callMethod<void>(
-			"onLayoutFinished",
-			"(Landroid/print/PrintDocumentInfo;Z)V",
-			arg0.__jniObject().object(),
-			arg1
+			"onLayoutCancelled",
+			"()V"
 		);
 	}
 	void PrintDocumentAdapter_LayoutResultCallback::onLayoutFailed(jstring arg0)
@@ -68,11 +66,13 @@ namespace __jni_impl::android::print
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void PrintDocumentAdapter_LayoutResultCallback::onLayoutCancelled()
+	void PrintDocumentAdapter_LayoutResultCallback::onLayoutFinished(__jni_impl::android::print::PrintDocumentInfo arg0, jboolean arg1)
 	{
 		__thiz.callMethod<void>(
-			"onLayoutCancelled",
-			"()V"
+			"onLayoutFinished",
+			"(Landroid/print/PrintDocumentInfo;Z)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::print

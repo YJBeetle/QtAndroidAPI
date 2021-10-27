@@ -13,17 +13,17 @@ namespace __jni_impl::android::graphics
 	{
 	public:
 		// Fields
+		static QAndroidJniObject BEVEL();
 		static QAndroidJniObject MITER();
 		static QAndroidJniObject ROUND();
-		static QAndroidJniObject BEVEL();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -31,6 +31,14 @@ namespace __jni_impl::android::graphics
 namespace __jni_impl::android::graphics
 {
 	// Fields
+	QAndroidJniObject Paint_Join::BEVEL()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"android.graphics.Paint$Join",
+			"BEVEL",
+			"Landroid/graphics/Paint$Join;"
+		);
+	}
 	QAndroidJniObject Paint_Join::MITER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -47,14 +55,6 @@ namespace __jni_impl::android::graphics
 			"Landroid/graphics/Paint$Join;"
 		);
 	}
-	QAndroidJniObject Paint_Join::BEVEL()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"android.graphics.Paint$Join",
-			"BEVEL",
-			"Landroid/graphics/Paint$Join;"
-		);
-	}
 	
 	// Constructors
 	void Paint_Join::__constructor()
@@ -65,14 +65,6 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	jarray Paint_Join::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Paint$Join",
-			"values",
-			"()[Landroid/graphics/Paint$Join;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Paint_Join::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::android::graphics
 			"(Ljava/lang/String;)Landroid/graphics/Paint$Join;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Paint_Join::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Paint$Join",
+			"values",
+			"()[Landroid/graphics/Paint$Join;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::graphics
 

@@ -30,15 +30,15 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jlong getDuration();
 		static jint getMaximumCurvePoints();
+		jint describeContents();
+		jboolean equals(jobject arg0);
+		jlong getDuration();
 		jint getInterpolatorType();
 		jfloatArray getTimes();
 		jfloatArray getVolumes();
-		jint describeContents();
+		jint hashCode();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
@@ -126,6 +126,21 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	jint VolumeShaper_Configuration::getMaximumCurvePoints()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.media.VolumeShaper$Configuration",
+			"getMaximumCurvePoints",
+			"()I"
+		);
+	}
+	jint VolumeShaper_Configuration::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean VolumeShaper_Configuration::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -134,33 +149,11 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	jstring VolumeShaper_Configuration::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint VolumeShaper_Configuration::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	jlong VolumeShaper_Configuration::getDuration()
 	{
 		return __thiz.callMethod<jlong>(
 			"getDuration",
 			"()J"
-		);
-	}
-	jint VolumeShaper_Configuration::getMaximumCurvePoints()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.media.VolumeShaper$Configuration",
-			"getMaximumCurvePoints",
-			"()I"
 		);
 	}
 	jint VolumeShaper_Configuration::getInterpolatorType()
@@ -184,12 +177,19 @@ namespace __jni_impl::android::media
 			"()[F"
 		).object<jfloatArray>();
 	}
-	jint VolumeShaper_Configuration::describeContents()
+	jint VolumeShaper_Configuration::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
 		);
+	}
+	jstring VolumeShaper_Configuration::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void VolumeShaper_Configuration::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

@@ -17,19 +17,19 @@ namespace __jni_impl::android::os
 		void __constructor();
 		
 		// Methods
-		jboolean _register(__jni_impl::__JniBaseClass arg0, jobject arg1);
-		jboolean _register(__jni_impl::__JniBaseClass arg0);
-		jboolean unregister(__jni_impl::__JniBaseClass arg0);
-		void onCallbackDied(__jni_impl::__JniBaseClass arg0);
-		void onCallbackDied(__jni_impl::__JniBaseClass arg0, jobject arg1);
 		jint beginBroadcast();
-		QAndroidJniObject getBroadcastItem(jint arg0);
-		jobject getBroadcastCookie(jint arg0);
 		void finishBroadcast();
-		void kill();
+		jobject getBroadcastCookie(jint arg0);
+		QAndroidJniObject getBroadcastItem(jint arg0);
+		jobject getRegisteredCallbackCookie(jint arg0);
 		jint getRegisteredCallbackCount();
 		QAndroidJniObject getRegisteredCallbackItem(jint arg0);
-		jobject getRegisteredCallbackCookie(jint arg0);
+		void kill();
+		void onCallbackDied(__jni_impl::__JniBaseClass arg0);
+		void onCallbackDied(__jni_impl::__JniBaseClass arg0, jobject arg1);
+		jboolean _register(__jni_impl::__JniBaseClass arg0);
+		jboolean _register(__jni_impl::__JniBaseClass arg0, jobject arg1);
+		jboolean unregister(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::os
 
@@ -48,29 +48,64 @@ namespace __jni_impl::android::os
 	}
 	
 	// Methods
-	jboolean RemoteCallbackList::_register(__jni_impl::__JniBaseClass arg0, jobject arg1)
+	jint RemoteCallbackList::beginBroadcast()
 	{
-		return __thiz.callMethod<jboolean>(
-			"register",
-			"(Landroid/os/IInterface;Ljava/lang/Object;)Z",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callMethod<jint>(
+			"beginBroadcast",
+			"()I"
 		);
 	}
-	jboolean RemoteCallbackList::_register(__jni_impl::__JniBaseClass arg0)
+	void RemoteCallbackList::finishBroadcast()
 	{
-		return __thiz.callMethod<jboolean>(
-			"register",
-			"(Landroid/os/IInterface;)Z",
-			arg0.__jniObject().object()
+		__thiz.callMethod<void>(
+			"finishBroadcast",
+			"()V"
 		);
 	}
-	jboolean RemoteCallbackList::unregister(__jni_impl::__JniBaseClass arg0)
+	jobject RemoteCallbackList::getBroadcastCookie(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"unregister",
-			"(Landroid/os/IInterface;)Z",
-			arg0.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"getBroadcastCookie",
+			"(I)Ljava/lang/Object;",
+			arg0
+		).object<jobject>();
+	}
+	QAndroidJniObject RemoteCallbackList::getBroadcastItem(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getBroadcastItem",
+			"(I)Landroid/os/IInterface;",
+			arg0
+		);
+	}
+	jobject RemoteCallbackList::getRegisteredCallbackCookie(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getRegisteredCallbackCookie",
+			"(I)Ljava/lang/Object;",
+			arg0
+		).object<jobject>();
+	}
+	jint RemoteCallbackList::getRegisteredCallbackCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getRegisteredCallbackCount",
+			"()I"
+		);
+	}
+	QAndroidJniObject RemoteCallbackList::getRegisteredCallbackItem(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getRegisteredCallbackItem",
+			"(I)Landroid/os/IInterface;",
+			arg0
+		);
+	}
+	void RemoteCallbackList::kill()
+	{
+		__thiz.callMethod<void>(
+			"kill",
+			"()V"
 		);
 	}
 	void RemoteCallbackList::onCallbackDied(__jni_impl::__JniBaseClass arg0)
@@ -90,65 +125,30 @@ namespace __jni_impl::android::os
 			arg1
 		);
 	}
-	jint RemoteCallbackList::beginBroadcast()
+	jboolean RemoteCallbackList::_register(__jni_impl::__JniBaseClass arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"beginBroadcast",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"register",
+			"(Landroid/os/IInterface;)Z",
+			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject RemoteCallbackList::getBroadcastItem(jint arg0)
+	jboolean RemoteCallbackList::_register(__jni_impl::__JniBaseClass arg0, jobject arg1)
 	{
-		return __thiz.callObjectMethod(
-			"getBroadcastItem",
-			"(I)Landroid/os/IInterface;",
-			arg0
+		return __thiz.callMethod<jboolean>(
+			"register",
+			"(Landroid/os/IInterface;Ljava/lang/Object;)Z",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
-	jobject RemoteCallbackList::getBroadcastCookie(jint arg0)
+	jboolean RemoteCallbackList::unregister(__jni_impl::__JniBaseClass arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getBroadcastCookie",
-			"(I)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
-	}
-	void RemoteCallbackList::finishBroadcast()
-	{
-		__thiz.callMethod<void>(
-			"finishBroadcast",
-			"()V"
+		return __thiz.callMethod<jboolean>(
+			"unregister",
+			"(Landroid/os/IInterface;)Z",
+			arg0.__jniObject().object()
 		);
-	}
-	void RemoteCallbackList::kill()
-	{
-		__thiz.callMethod<void>(
-			"kill",
-			"()V"
-		);
-	}
-	jint RemoteCallbackList::getRegisteredCallbackCount()
-	{
-		return __thiz.callMethod<jint>(
-			"getRegisteredCallbackCount",
-			"()I"
-		);
-	}
-	QAndroidJniObject RemoteCallbackList::getRegisteredCallbackItem(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getRegisteredCallbackItem",
-			"(I)Landroid/os/IInterface;",
-			arg0
-		);
-	}
-	jobject RemoteCallbackList::getRegisteredCallbackCookie(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getRegisteredCallbackCookie",
-			"(I)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
 	}
 } // namespace __jni_impl::android::os
 

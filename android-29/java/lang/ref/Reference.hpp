@@ -21,11 +21,12 @@ namespace __jni_impl::java::lang::ref
 		void __constructor();
 		
 		// Methods
-		jobject get();
-		void clear();
 		static void reachabilityFence(jobject arg0);
+		void clear();
 		jboolean enqueue();
+		jobject get();
 		jboolean isEnqueued();
+		jboolean refersTo(jobject arg0);
 	};
 } // namespace __jni_impl::java::lang::ref
 
@@ -44,20 +45,6 @@ namespace __jni_impl::java::lang::ref
 	}
 	
 	// Methods
-	jobject Reference::get()
-	{
-		return __thiz.callObjectMethod(
-			"get",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	void Reference::clear()
-	{
-		__thiz.callMethod<void>(
-			"clear",
-			"()V"
-		);
-	}
 	void Reference::reachabilityFence(jobject arg0)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -67,6 +54,13 @@ namespace __jni_impl::java::lang::ref
 			arg0
 		);
 	}
+	void Reference::clear()
+	{
+		__thiz.callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
 	jboolean Reference::enqueue()
 	{
 		return __thiz.callMethod<jboolean>(
@@ -74,11 +68,26 @@ namespace __jni_impl::java::lang::ref
 			"()Z"
 		);
 	}
+	jobject Reference::get()
+	{
+		return __thiz.callObjectMethod(
+			"get",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
 	jboolean Reference::isEnqueued()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEnqueued",
 			"()Z"
+		);
+	}
+	jboolean Reference::refersTo(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"refersTo",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 } // namespace __jni_impl::java::lang::ref

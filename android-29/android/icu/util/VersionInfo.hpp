@@ -49,21 +49,21 @@ namespace __jni_impl::android::icu::util
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint compareTo(jobject arg0);
-		jint compareTo(__jni_impl::android::icu::util::VersionInfo arg0);
+		static QAndroidJniObject getInstance(jint arg0);
 		static QAndroidJniObject getInstance(jstring arg0);
 		static QAndroidJniObject getInstance(const QString &arg0);
-		static QAndroidJniObject getInstance(jint arg0, jint arg1, jint arg2);
 		static QAndroidJniObject getInstance(jint arg0, jint arg1);
-		static QAndroidJniObject getInstance(jint arg0);
+		static QAndroidJniObject getInstance(jint arg0, jint arg1, jint arg2);
 		static QAndroidJniObject getInstance(jint arg0, jint arg1, jint arg2, jint arg3);
+		jint compareTo(__jni_impl::android::icu::util::VersionInfo arg0);
+		jint compareTo(jobject arg0);
+		jboolean equals(jobject arg0);
 		jint getMajor();
-		jint getMinor();
-		jint getMilli();
 		jint getMicro();
+		jint getMilli();
+		jint getMinor();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::icu::util
 
@@ -337,42 +337,13 @@ namespace __jni_impl::android::icu::util
 	}
 	
 	// Methods
-	jboolean VersionInfo::equals(jobject arg0)
+	QAndroidJniObject VersionInfo::getInstance(jint arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.icu.util.VersionInfo",
+			"getInstance",
+			"(I)Landroid/icu/util/VersionInfo;",
 			arg0
-		);
-	}
-	jstring VersionInfo::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint VersionInfo::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jint VersionInfo::compareTo(jobject arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"compareTo",
-			"(Ljava/lang/Object;)I",
-			arg0
-		);
-	}
-	jint VersionInfo::compareTo(__jni_impl::android::icu::util::VersionInfo arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"compareTo",
-			"(Landroid/icu/util/VersionInfo;)I",
-			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject VersionInfo::getInstance(jstring arg0)
@@ -393,17 +364,6 @@ namespace __jni_impl::android::icu::util
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	QAndroidJniObject VersionInfo::getInstance(jint arg0, jint arg1, jint arg2)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.icu.util.VersionInfo",
-			"getInstance",
-			"(III)Landroid/icu/util/VersionInfo;",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
 	QAndroidJniObject VersionInfo::getInstance(jint arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -414,13 +374,15 @@ namespace __jni_impl::android::icu::util
 			arg1
 		);
 	}
-	QAndroidJniObject VersionInfo::getInstance(jint arg0)
+	QAndroidJniObject VersionInfo::getInstance(jint arg0, jint arg1, jint arg2)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.icu.util.VersionInfo",
 			"getInstance",
-			"(I)Landroid/icu/util/VersionInfo;",
-			arg0
+			"(III)Landroid/icu/util/VersionInfo;",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 	QAndroidJniObject VersionInfo::getInstance(jint arg0, jint arg1, jint arg2, jint arg3)
@@ -435,6 +397,30 @@ namespace __jni_impl::android::icu::util
 			arg3
 		);
 	}
+	jint VersionInfo::compareTo(__jni_impl::android::icu::util::VersionInfo arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"compareTo",
+			"(Landroid/icu/util/VersionInfo;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	jint VersionInfo::compareTo(jobject arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"compareTo",
+			"(Ljava/lang/Object;)I",
+			arg0
+		);
+	}
+	jboolean VersionInfo::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
 	jint VersionInfo::getMajor()
 	{
 		return __thiz.callMethod<jint>(
@@ -442,10 +428,10 @@ namespace __jni_impl::android::icu::util
 			"()I"
 		);
 	}
-	jint VersionInfo::getMinor()
+	jint VersionInfo::getMicro()
 	{
 		return __thiz.callMethod<jint>(
-			"getMinor",
+			"getMicro",
 			"()I"
 		);
 	}
@@ -456,12 +442,26 @@ namespace __jni_impl::android::icu::util
 			"()I"
 		);
 	}
-	jint VersionInfo::getMicro()
+	jint VersionInfo::getMinor()
 	{
 		return __thiz.callMethod<jint>(
-			"getMicro",
+			"getMinor",
 			"()I"
 		);
+	}
+	jint VersionInfo::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring VersionInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::icu::util
 

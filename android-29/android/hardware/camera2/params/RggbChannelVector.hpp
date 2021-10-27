@@ -22,15 +22,15 @@ namespace __jni_impl::android::hardware::camera2::params
 		void __constructor(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		void copyTo(jfloatArray arg0, jint arg1);
-		jfloat getGreenEven();
-		jfloat getRed();
-		jfloat getGreenOdd();
+		jboolean equals(jobject arg0);
 		jfloat getBlue();
 		jfloat getComponent(jint arg0);
+		jfloat getGreenEven();
+		jfloat getGreenOdd();
+		jfloat getRed();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
@@ -88,28 +88,6 @@ namespace __jni_impl::android::hardware::camera2::params
 	}
 	
 	// Methods
-	jboolean RggbChannelVector::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring RggbChannelVector::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint RggbChannelVector::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
 	void RggbChannelVector::copyTo(jfloatArray arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -119,25 +97,12 @@ namespace __jni_impl::android::hardware::camera2::params
 			arg1
 		);
 	}
-	jfloat RggbChannelVector::getGreenEven()
+	jboolean RggbChannelVector::equals(jobject arg0)
 	{
-		return __thiz.callMethod<jfloat>(
-			"getGreenEven",
-			"()F"
-		);
-	}
-	jfloat RggbChannelVector::getRed()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getRed",
-			"()F"
-		);
-	}
-	jfloat RggbChannelVector::getGreenOdd()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getGreenOdd",
-			"()F"
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 	jfloat RggbChannelVector::getBlue()
@@ -154,6 +119,41 @@ namespace __jni_impl::android::hardware::camera2::params
 			"(I)F",
 			arg0
 		);
+	}
+	jfloat RggbChannelVector::getGreenEven()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getGreenEven",
+			"()F"
+		);
+	}
+	jfloat RggbChannelVector::getGreenOdd()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getGreenOdd",
+			"()F"
+		);
+	}
+	jfloat RggbChannelVector::getRed()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getRed",
+			"()F"
+		);
+	}
+	jint RggbChannelVector::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring RggbChannelVector::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::hardware::camera2::params
 

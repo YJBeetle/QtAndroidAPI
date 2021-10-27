@@ -22,8 +22,8 @@ namespace __jni_impl::android::location
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::java::util::Locale arg1);
 		void __constructor(__jni_impl::android::content::Context arg0);
+		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::java::util::Locale arg1);
 		
 		// Methods
 		static jboolean isPresent();
@@ -43,6 +43,14 @@ namespace __jni_impl::android::location
 	// Fields
 	
 	// Constructors
+	void Geocoder::__constructor(__jni_impl::android::content::Context arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.location.Geocoder",
+			"(Landroid/content/Context;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void Geocoder::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::java::util::Locale arg1)
 	{
 		__thiz = QAndroidJniObject(
@@ -50,14 +58,6 @@ namespace __jni_impl::android::location
 			"(Landroid/content/Context;Ljava/util/Locale;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	void Geocoder::__constructor(__jni_impl::android::content::Context arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.location.Geocoder",
-			"(Landroid/content/Context;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	
@@ -132,16 +132,16 @@ namespace android::location
 	{
 	public:
 		Geocoder(QAndroidJniObject obj) { __thiz = obj; }
+		Geocoder(__jni_impl::android::content::Context arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		Geocoder(__jni_impl::android::content::Context arg0, __jni_impl::java::util::Locale arg1)
 		{
 			__constructor(
 				arg0,
 				arg1);
-		}
-		Geocoder(__jni_impl::android::content::Context arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::location

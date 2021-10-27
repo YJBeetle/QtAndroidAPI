@@ -9,17 +9,17 @@ namespace __jni_impl::android::hardware::camera2::params
 {
 	class StreamConfigurationMap;
 }
-namespace __jni_impl::android::view
+namespace __jni_impl::android::util
 {
-	class Surface;
+	class Range;
 }
 namespace __jni_impl::android::util
 {
 	class Size;
 }
-namespace __jni_impl::android::util
+namespace __jni_impl::android::view
 {
-	class Range;
+	class Surface;
 }
 
 namespace __jni_impl::android::hardware::camera2::params
@@ -40,31 +40,31 @@ namespace __jni_impl::android::hardware::camera2::params
 		void __constructor();
 		
 		// Methods
-		jint getRecommendedUseCase();
-		QAndroidJniObject getOutputFormats();
-		QAndroidJniObject getValidOutputFormatsForInput(jint arg0);
+		QAndroidJniObject getHighResolutionOutputSizes(jint arg0);
+		QAndroidJniObject getHighSpeedVideoFpsRanges();
+		QAndroidJniObject getHighSpeedVideoFpsRangesFor(__jni_impl::android::util::Size arg0);
+		QAndroidJniObject getHighSpeedVideoSizes();
+		QAndroidJniObject getHighSpeedVideoSizesFor(__jni_impl::android::util::Range arg0);
 		QAndroidJniObject getInputFormats();
 		QAndroidJniObject getInputSizes(jint arg0);
-		jboolean isOutputSupportedFor(__jni_impl::android::view::Surface arg0);
-		jboolean isOutputSupportedFor(jint arg0);
-		QAndroidJniObject getOutputSizes(jclass arg0);
-		QAndroidJniObject getOutputSizes(jint arg0);
-		QAndroidJniObject getHighSpeedVideoSizes();
-		QAndroidJniObject getHighSpeedVideoFpsRangesFor(__jni_impl::android::util::Size arg0);
-		QAndroidJniObject getHighSpeedVideoFpsRanges();
-		QAndroidJniObject getHighSpeedVideoSizesFor(__jni_impl::android::util::Range arg0);
-		QAndroidJniObject getHighResolutionOutputSizes(jint arg0);
+		QAndroidJniObject getOutputFormats();
 		jlong getOutputMinFrameDuration(jint arg0, __jni_impl::android::util::Size arg1);
 		jlong getOutputMinFrameDuration(jclass arg0, __jni_impl::android::util::Size arg1);
+		QAndroidJniObject getOutputSizes(jint arg0);
+		QAndroidJniObject getOutputSizes(jclass arg0);
 		jlong getOutputStallDuration(jint arg0, __jni_impl::android::util::Size arg1);
 		jlong getOutputStallDuration(jclass arg0, __jni_impl::android::util::Size arg1);
+		jint getRecommendedUseCase();
+		QAndroidJniObject getValidOutputFormatsForInput(jint arg0);
+		jboolean isOutputSupportedFor(__jni_impl::android::view::Surface arg0);
+		jboolean isOutputSupportedFor(jint arg0);
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
 #include "StreamConfigurationMap.hpp"
-#include "../../../view/Surface.hpp"
-#include "../../../util/Size.hpp"
 #include "../../../util/Range.hpp"
+#include "../../../util/Size.hpp"
+#include "../../../view/Surface.hpp"
 
 namespace __jni_impl::android::hardware::camera2::params
 {
@@ -128,26 +128,42 @@ namespace __jni_impl::android::hardware::camera2::params
 	}
 	
 	// Methods
-	jint RecommendedStreamConfigurationMap::getRecommendedUseCase()
-	{
-		return __thiz.callMethod<jint>(
-			"getRecommendedUseCase",
-			"()I"
-		);
-	}
-	QAndroidJniObject RecommendedStreamConfigurationMap::getOutputFormats()
+	QAndroidJniObject RecommendedStreamConfigurationMap::getHighResolutionOutputSizes(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getOutputFormats",
+			"getHighResolutionOutputSizes",
+			"(I)Ljava/util/Set;",
+			arg0
+		);
+	}
+	QAndroidJniObject RecommendedStreamConfigurationMap::getHighSpeedVideoFpsRanges()
+	{
+		return __thiz.callObjectMethod(
+			"getHighSpeedVideoFpsRanges",
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject RecommendedStreamConfigurationMap::getValidOutputFormatsForInput(jint arg0)
+	QAndroidJniObject RecommendedStreamConfigurationMap::getHighSpeedVideoFpsRangesFor(__jni_impl::android::util::Size arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getValidOutputFormatsForInput",
-			"(I)Ljava/util/Set;",
-			arg0
+			"getHighSpeedVideoFpsRangesFor",
+			"(Landroid/util/Size;)Ljava/util/Set;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject RecommendedStreamConfigurationMap::getHighSpeedVideoSizes()
+	{
+		return __thiz.callObjectMethod(
+			"getHighSpeedVideoSizes",
+			"()Ljava/util/Set;"
+		);
+	}
+	QAndroidJniObject RecommendedStreamConfigurationMap::getHighSpeedVideoSizesFor(__jni_impl::android::util::Range arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getHighSpeedVideoSizesFor",
+			"(Landroid/util/Range;)Ljava/util/Set;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject RecommendedStreamConfigurationMap::getInputFormats()
@@ -165,74 +181,11 @@ namespace __jni_impl::android::hardware::camera2::params
 			arg0
 		);
 	}
-	jboolean RecommendedStreamConfigurationMap::isOutputSupportedFor(__jni_impl::android::view::Surface arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isOutputSupportedFor",
-			"(Landroid/view/Surface;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean RecommendedStreamConfigurationMap::isOutputSupportedFor(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isOutputSupportedFor",
-			"(I)Z",
-			arg0
-		);
-	}
-	QAndroidJniObject RecommendedStreamConfigurationMap::getOutputSizes(jclass arg0)
+	QAndroidJniObject RecommendedStreamConfigurationMap::getOutputFormats()
 	{
 		return __thiz.callObjectMethod(
-			"getOutputSizes",
-			"(Ljava/lang/Class;)Ljava/util/Set;",
-			arg0
-		);
-	}
-	QAndroidJniObject RecommendedStreamConfigurationMap::getOutputSizes(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getOutputSizes",
-			"(I)Ljava/util/Set;",
-			arg0
-		);
-	}
-	QAndroidJniObject RecommendedStreamConfigurationMap::getHighSpeedVideoSizes()
-	{
-		return __thiz.callObjectMethod(
-			"getHighSpeedVideoSizes",
+			"getOutputFormats",
 			"()Ljava/util/Set;"
-		);
-	}
-	QAndroidJniObject RecommendedStreamConfigurationMap::getHighSpeedVideoFpsRangesFor(__jni_impl::android::util::Size arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getHighSpeedVideoFpsRangesFor",
-			"(Landroid/util/Size;)Ljava/util/Set;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject RecommendedStreamConfigurationMap::getHighSpeedVideoFpsRanges()
-	{
-		return __thiz.callObjectMethod(
-			"getHighSpeedVideoFpsRanges",
-			"()Ljava/util/Set;"
-		);
-	}
-	QAndroidJniObject RecommendedStreamConfigurationMap::getHighSpeedVideoSizesFor(__jni_impl::android::util::Range arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getHighSpeedVideoSizesFor",
-			"(Landroid/util/Range;)Ljava/util/Set;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject RecommendedStreamConfigurationMap::getHighResolutionOutputSizes(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getHighResolutionOutputSizes",
-			"(I)Ljava/util/Set;",
-			arg0
 		);
 	}
 	jlong RecommendedStreamConfigurationMap::getOutputMinFrameDuration(jint arg0, __jni_impl::android::util::Size arg1)
@@ -253,6 +206,22 @@ namespace __jni_impl::android::hardware::camera2::params
 			arg1.__jniObject().object()
 		);
 	}
+	QAndroidJniObject RecommendedStreamConfigurationMap::getOutputSizes(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getOutputSizes",
+			"(I)Ljava/util/Set;",
+			arg0
+		);
+	}
+	QAndroidJniObject RecommendedStreamConfigurationMap::getOutputSizes(jclass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getOutputSizes",
+			"(Ljava/lang/Class;)Ljava/util/Set;",
+			arg0
+		);
+	}
 	jlong RecommendedStreamConfigurationMap::getOutputStallDuration(jint arg0, __jni_impl::android::util::Size arg1)
 	{
 		return __thiz.callMethod<jlong>(
@@ -269,6 +238,37 @@ namespace __jni_impl::android::hardware::camera2::params
 			"(Ljava/lang/Class;Landroid/util/Size;)J",
 			arg0,
 			arg1.__jniObject().object()
+		);
+	}
+	jint RecommendedStreamConfigurationMap::getRecommendedUseCase()
+	{
+		return __thiz.callMethod<jint>(
+			"getRecommendedUseCase",
+			"()I"
+		);
+	}
+	QAndroidJniObject RecommendedStreamConfigurationMap::getValidOutputFormatsForInput(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getValidOutputFormatsForInput",
+			"(I)Ljava/util/Set;",
+			arg0
+		);
+	}
+	jboolean RecommendedStreamConfigurationMap::isOutputSupportedFor(__jni_impl::android::view::Surface arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isOutputSupportedFor",
+			"(Landroid/view/Surface;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean RecommendedStreamConfigurationMap::isOutputSupportedFor(jint arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isOutputSupportedFor",
+			"(I)Z",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::hardware::camera2::params

@@ -32,20 +32,20 @@ namespace __jni_impl::android::media::audiofx
 		void __constructor(jint arg0, jint arg1);
 		
 		// Methods
-		QAndroidJniObject getProperties();
-		void setProperties(__jni_impl::android::media::audiofx::Equalizer_Settings arg0);
-		jshort getNumberOfBands();
-		jshortArray getBandLevelRange();
-		void setBandLevel(jshort arg0, jshort arg1);
-		jshort getBandLevel(jshort arg0);
-		jint getCenterFreq(jshort arg0);
+		jshort getBand(jint arg0);
 		jintArray getBandFreqRange(jshort arg0);
+		jshort getBandLevel(jshort arg0);
+		jshortArray getBandLevelRange();
+		jint getCenterFreq(jshort arg0);
 		jshort getCurrentPreset();
-		void usePreset(jshort arg0);
+		jshort getNumberOfBands();
 		jshort getNumberOfPresets();
 		jstring getPresetName(jshort arg0);
-		jshort getBand(jint arg0);
+		QAndroidJniObject getProperties();
+		void setBandLevel(jshort arg0, jshort arg1);
 		void setParameterListener(__jni_impl::__JniBaseClass arg0);
+		void setProperties(__jni_impl::android::media::audiofx::Equalizer_Settings arg0);
+		void usePreset(jshort arg0);
 	};
 } // namespace __jni_impl::android::media::audiofx
 
@@ -137,57 +137,11 @@ namespace __jni_impl::android::media::audiofx
 	}
 	
 	// Methods
-	QAndroidJniObject Equalizer::getProperties()
-	{
-		return __thiz.callObjectMethod(
-			"getProperties",
-			"()Landroid/media/audiofx/Equalizer$Settings;"
-		);
-	}
-	void Equalizer::setProperties(__jni_impl::android::media::audiofx::Equalizer_Settings arg0)
-	{
-		__thiz.callMethod<void>(
-			"setProperties",
-			"(Landroid/media/audiofx/Equalizer$Settings;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jshort Equalizer::getNumberOfBands()
+	jshort Equalizer::getBand(jint arg0)
 	{
 		return __thiz.callMethod<jshort>(
-			"getNumberOfBands",
-			"()S"
-		);
-	}
-	jshortArray Equalizer::getBandLevelRange()
-	{
-		return __thiz.callObjectMethod(
-			"getBandLevelRange",
-			"()[S"
-		).object<jshortArray>();
-	}
-	void Equalizer::setBandLevel(jshort arg0, jshort arg1)
-	{
-		__thiz.callMethod<void>(
-			"setBandLevel",
-			"(SS)V",
-			arg0,
-			arg1
-		);
-	}
-	jshort Equalizer::getBandLevel(jshort arg0)
-	{
-		return __thiz.callMethod<jshort>(
-			"getBandLevel",
-			"(S)S",
-			arg0
-		);
-	}
-	jint Equalizer::getCenterFreq(jshort arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getCenterFreq",
-			"(S)I",
+			"getBand",
+			"(I)S",
 			arg0
 		);
 	}
@@ -199,6 +153,29 @@ namespace __jni_impl::android::media::audiofx
 			arg0
 		).object<jintArray>();
 	}
+	jshort Equalizer::getBandLevel(jshort arg0)
+	{
+		return __thiz.callMethod<jshort>(
+			"getBandLevel",
+			"(S)S",
+			arg0
+		);
+	}
+	jshortArray Equalizer::getBandLevelRange()
+	{
+		return __thiz.callObjectMethod(
+			"getBandLevelRange",
+			"()[S"
+		).object<jshortArray>();
+	}
+	jint Equalizer::getCenterFreq(jshort arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"getCenterFreq",
+			"(S)I",
+			arg0
+		);
+	}
 	jshort Equalizer::getCurrentPreset()
 	{
 		return __thiz.callMethod<jshort>(
@@ -206,12 +183,11 @@ namespace __jni_impl::android::media::audiofx
 			"()S"
 		);
 	}
-	void Equalizer::usePreset(jshort arg0)
+	jshort Equalizer::getNumberOfBands()
 	{
-		__thiz.callMethod<void>(
-			"usePreset",
-			"(S)V",
-			arg0
+		return __thiz.callMethod<jshort>(
+			"getNumberOfBands",
+			"()S"
 		);
 	}
 	jshort Equalizer::getNumberOfPresets()
@@ -229,12 +205,20 @@ namespace __jni_impl::android::media::audiofx
 			arg0
 		).object<jstring>();
 	}
-	jshort Equalizer::getBand(jint arg0)
+	QAndroidJniObject Equalizer::getProperties()
 	{
-		return __thiz.callMethod<jshort>(
-			"getBand",
-			"(I)S",
-			arg0
+		return __thiz.callObjectMethod(
+			"getProperties",
+			"()Landroid/media/audiofx/Equalizer$Settings;"
+		);
+	}
+	void Equalizer::setBandLevel(jshort arg0, jshort arg1)
+	{
+		__thiz.callMethod<void>(
+			"setBandLevel",
+			"(SS)V",
+			arg0,
+			arg1
 		);
 	}
 	void Equalizer::setParameterListener(__jni_impl::__JniBaseClass arg0)
@@ -243,6 +227,22 @@ namespace __jni_impl::android::media::audiofx
 			"setParameterListener",
 			"(Landroid/media/audiofx/Equalizer$OnParameterChangeListener;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void Equalizer::setProperties(__jni_impl::android::media::audiofx::Equalizer_Settings arg0)
+	{
+		__thiz.callMethod<void>(
+			"setProperties",
+			"(Landroid/media/audiofx/Equalizer$Settings;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Equalizer::usePreset(jshort arg0)
+	{
+		__thiz.callMethod<void>(
+			"usePreset",
+			"(S)V",
+			arg0
 		);
 	}
 } // namespace __jni_impl::android::media::audiofx

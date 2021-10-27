@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
 namespace __jni_impl::android::app
 {
 	class PendingIntent;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
 }
 
 namespace __jni_impl::android::widget
@@ -32,8 +32,8 @@ namespace __jni_impl::android::widget
 	};
 } // namespace __jni_impl::android::widget
 
-#include "../content/Intent.hpp"
 #include "../app/PendingIntent.hpp"
+#include "../content/Intent.hpp"
 
 namespace __jni_impl::android::widget
 {

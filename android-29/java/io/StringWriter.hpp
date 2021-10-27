@@ -6,13 +6,13 @@
 #include "../../__JniBaseClass.hpp"
 #include "Writer.hpp"
 
-namespace __jni_impl::java::lang
-{
-	class StringBuffer;
-}
 namespace __jni_impl::java::io
 {
 	class Writer;
+}
+namespace __jni_impl::java::lang
+{
+	class StringBuffer;
 }
 
 namespace __jni_impl::java::io
@@ -27,26 +27,26 @@ namespace __jni_impl::java::io
 		void __constructor(jint arg0);
 		
 		// Methods
-		jstring toString();
-		QAndroidJniObject append(jstring arg0, jint arg1, jint arg2);
-		QAndroidJniObject append(const QString &arg0, jint arg1, jint arg2);
 		QAndroidJniObject append(jchar arg0);
 		QAndroidJniObject append(jstring arg0);
 		QAndroidJniObject append(const QString &arg0);
-		void write(jstring arg0, jint arg1, jint arg2);
-		void write(const QString &arg0, jint arg1, jint arg2);
+		QAndroidJniObject append(jstring arg0, jint arg1, jint arg2);
+		QAndroidJniObject append(const QString &arg0, jint arg1, jint arg2);
+		void close();
+		void flush();
+		QAndroidJniObject getBuffer();
+		jstring toString();
+		void write(jint arg0);
 		void write(jstring arg0);
 		void write(const QString &arg0);
 		void write(jcharArray arg0, jint arg1, jint arg2);
-		void write(jint arg0);
-		void flush();
-		void close();
-		QAndroidJniObject getBuffer();
+		void write(jstring arg0, jint arg1, jint arg2);
+		void write(const QString &arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::java::io
 
-#include "../lang/StringBuffer.hpp"
 #include "Writer.hpp"
+#include "../lang/StringBuffer.hpp"
 
 namespace __jni_impl::java::io
 {
@@ -70,33 +70,6 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	jstring StringWriter::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	QAndroidJniObject StringWriter::append(jstring arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callObjectMethod(
-			"append",
-			"(Ljava/lang/CharSequence;II)Ljava/io/StringWriter;",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	QAndroidJniObject StringWriter::append(const QString &arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callObjectMethod(
-			"append",
-			"(Ljava/lang/CharSequence;II)Ljava/io/StringWriter;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2
-		);
-	}
 	QAndroidJniObject StringWriter::append(jchar arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -121,24 +94,60 @@ namespace __jni_impl::java::io
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void StringWriter::write(jstring arg0, jint arg1, jint arg2)
+	QAndroidJniObject StringWriter::append(jstring arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
-			"write",
-			"(Ljava/lang/String;II)V",
+		return __thiz.callObjectMethod(
+			"append",
+			"(Ljava/lang/CharSequence;II)Ljava/io/StringWriter;",
 			arg0,
 			arg1,
 			arg2
 		);
 	}
-	void StringWriter::write(const QString &arg0, jint arg1, jint arg2)
+	QAndroidJniObject StringWriter::append(const QString &arg0, jint arg1, jint arg2)
 	{
-		__thiz.callMethod<void>(
-			"write",
-			"(Ljava/lang/String;II)V",
+		return __thiz.callObjectMethod(
+			"append",
+			"(Ljava/lang/CharSequence;II)Ljava/io/StringWriter;",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
+		);
+	}
+	void StringWriter::close()
+	{
+		__thiz.callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	void StringWriter::flush()
+	{
+		__thiz.callMethod<void>(
+			"flush",
+			"()V"
+		);
+	}
+	QAndroidJniObject StringWriter::getBuffer()
+	{
+		return __thiz.callObjectMethod(
+			"getBuffer",
+			"()Ljava/lang/StringBuffer;"
+		);
+	}
+	jstring StringWriter::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void StringWriter::write(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"write",
+			"(I)V",
+			arg0
 		);
 	}
 	void StringWriter::write(jstring arg0)
@@ -167,33 +176,24 @@ namespace __jni_impl::java::io
 			arg2
 		);
 	}
-	void StringWriter::write(jint arg0)
+	void StringWriter::write(jstring arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
 			"write",
-			"(I)V",
-			arg0
+			"(Ljava/lang/String;II)V",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
-	void StringWriter::flush()
+	void StringWriter::write(const QString &arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
-			"flush",
-			"()V"
-		);
-	}
-	void StringWriter::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
-		);
-	}
-	QAndroidJniObject StringWriter::getBuffer()
-	{
-		return __thiz.callObjectMethod(
-			"getBuffer",
-			"()Ljava/lang/StringBuffer;"
+			"write",
+			"(Ljava/lang/String;II)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2
 		);
 	}
 } // namespace __jni_impl::java::io

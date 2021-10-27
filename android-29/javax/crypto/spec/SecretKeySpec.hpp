@@ -21,10 +21,10 @@ namespace __jni_impl::javax::crypto::spec
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jint hashCode();
+		jstring getAlgorithm();
 		jbyteArray getEncoded();
 		jstring getFormat();
-		jstring getAlgorithm();
+		jint hashCode();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -84,12 +84,12 @@ namespace __jni_impl::javax::crypto::spec
 			arg0
 		);
 	}
-	jint SecretKeySpec::hashCode()
+	jstring SecretKeySpec::getAlgorithm()
 	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"getAlgorithm",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	jbyteArray SecretKeySpec::getEncoded()
 	{
@@ -105,12 +105,12 @@ namespace __jni_impl::javax::crypto::spec
 			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
-	jstring SecretKeySpec::getAlgorithm()
+	jint SecretKeySpec::hashCode()
 	{
-		return __thiz.callObjectMethod(
-			"getAlgorithm",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
 	}
 } // namespace __jni_impl::javax::crypto::spec
 

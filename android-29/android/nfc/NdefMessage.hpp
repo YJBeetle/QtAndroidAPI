@@ -23,19 +23,19 @@ namespace __jni_impl::android::nfc
 		static QAndroidJniObject CREATOR();
 		
 		// Constructors
+		void __constructor(jbyteArray arg0);
 		void __constructor(jarray arg0);
 		void __constructor(__jni_impl::android::nfc::NdefRecord arg0, jarray arg1);
-		void __constructor(jbyteArray arg0);
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jstring toString();
+		jint getByteArrayLength();
+		jarray getRecords();
 		jint hashCode();
 		jbyteArray toByteArray();
-		jint describeContents();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jarray getRecords();
-		jint getByteArrayLength();
 	};
 } // namespace __jni_impl::android::nfc
 
@@ -55,6 +55,14 @@ namespace __jni_impl::android::nfc
 	}
 	
 	// Constructors
+	void NdefMessage::__constructor(jbyteArray arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.nfc.NdefMessage",
+			"([B)V",
+			arg0
+		);
+	}
 	void NdefMessage::__constructor(jarray arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -72,16 +80,15 @@ namespace __jni_impl::android::nfc
 			arg1
 		);
 	}
-	void NdefMessage::__constructor(jbyteArray arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.nfc.NdefMessage",
-			"([B)V",
-			arg0
-		);
-	}
 	
 	// Methods
+	jint NdefMessage::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean NdefMessage::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -90,12 +97,19 @@ namespace __jni_impl::android::nfc
 			arg0
 		);
 	}
-	jstring NdefMessage::toString()
+	jint NdefMessage::getByteArrayLength()
+	{
+		return __thiz.callMethod<jint>(
+			"getByteArrayLength",
+			"()I"
+		);
+	}
+	jarray NdefMessage::getRecords()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"getRecords",
+			"()[Landroid/nfc/NdefRecord;"
+		).object<jarray>();
 	}
 	jint NdefMessage::hashCode()
 	{
@@ -111,12 +125,12 @@ namespace __jni_impl::android::nfc
 			"()[B"
 		).object<jbyteArray>();
 	}
-	jint NdefMessage::describeContents()
+	jstring NdefMessage::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void NdefMessage::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -127,20 +141,6 @@ namespace __jni_impl::android::nfc
 			arg1
 		);
 	}
-	jarray NdefMessage::getRecords()
-	{
-		return __thiz.callObjectMethod(
-			"getRecords",
-			"()[Landroid/nfc/NdefRecord;"
-		).object<jarray>();
-	}
-	jint NdefMessage::getByteArrayLength()
-	{
-		return __thiz.callMethod<jint>(
-			"getByteArrayLength",
-			"()I"
-		);
-	}
 } // namespace __jni_impl::android::nfc
 
 namespace android::nfc
@@ -149,6 +149,11 @@ namespace android::nfc
 	{
 	public:
 		NdefMessage(QAndroidJniObject obj) { __thiz = obj; }
+		NdefMessage(jbyteArray arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		NdefMessage(jarray arg0)
 		{
 			__constructor(
@@ -159,11 +164,6 @@ namespace android::nfc
 			__constructor(
 				arg0,
 				arg1);
-		}
-		NdefMessage(jbyteArray arg0)
-		{
-			__constructor(
-				arg0);
 		}
 	};
 } // namespace android::nfc

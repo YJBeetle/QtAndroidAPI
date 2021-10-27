@@ -16,15 +16,15 @@ namespace __jni_impl::android::text::style
 		// Fields
 		
 		// Constructors
+		void __constructor();
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
 		void __constructor(jlong arg0);
-		void __constructor();
 		
 		// Methods
-		QAndroidJniObject setNumber(jlong arg0);
 		QAndroidJniObject setNumber(jstring arg0);
 		QAndroidJniObject setNumber(const QString &arg0);
+		QAndroidJniObject setNumber(jlong arg0);
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -34,6 +34,13 @@ namespace __jni_impl::android::text::style
 	// Fields
 	
 	// Constructors
+	void TtsSpan_CardinalBuilder::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.text.style.TtsSpan$CardinalBuilder",
+			"()V"
+		);
+	}
 	void TtsSpan_CardinalBuilder::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -58,23 +65,8 @@ namespace __jni_impl::android::text::style
 			arg0
 		);
 	}
-	void TtsSpan_CardinalBuilder::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.text.style.TtsSpan$CardinalBuilder",
-			"()V"
-		);
-	}
 	
 	// Methods
-	QAndroidJniObject TtsSpan_CardinalBuilder::setNumber(jlong arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setNumber",
-			"(J)Landroid/text/style/TtsSpan$CardinalBuilder;",
-			arg0
-		);
-	}
 	QAndroidJniObject TtsSpan_CardinalBuilder::setNumber(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -91,6 +83,14 @@ namespace __jni_impl::android::text::style
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
+	QAndroidJniObject TtsSpan_CardinalBuilder::setNumber(jlong arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setNumber",
+			"(J)Landroid/text/style/TtsSpan$CardinalBuilder;",
+			arg0
+		);
+	}
 } // namespace __jni_impl::android::text::style
 
 namespace android::text::style
@@ -99,6 +99,10 @@ namespace android::text::style
 	{
 	public:
 		TtsSpan_CardinalBuilder(QAndroidJniObject obj) { __thiz = obj; }
+		TtsSpan_CardinalBuilder()
+		{
+			__constructor();
+		}
 		TtsSpan_CardinalBuilder(jstring arg0)
 		{
 			__constructor(
@@ -108,10 +112,6 @@ namespace android::text::style
 		{
 			__constructor(
 				arg0);
-		}
-		TtsSpan_CardinalBuilder()
-		{
-			__constructor();
 		}
 	};
 } // namespace android::text::style

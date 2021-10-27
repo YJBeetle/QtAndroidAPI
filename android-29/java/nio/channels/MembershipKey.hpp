@@ -25,14 +25,14 @@ namespace __jni_impl::java::nio::channels
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject group();
 		QAndroidJniObject block(__jni_impl::java::net::InetAddress arg0);
 		QAndroidJniObject channel();
 		void drop();
+		QAndroidJniObject group();
 		jboolean isValid();
-		QAndroidJniObject unblock(__jni_impl::java::net::InetAddress arg0);
 		QAndroidJniObject networkInterface();
 		QAndroidJniObject sourceAddress();
+		QAndroidJniObject unblock(__jni_impl::java::net::InetAddress arg0);
 	};
 } // namespace __jni_impl::java::nio::channels
 
@@ -52,13 +52,6 @@ namespace __jni_impl::java::nio::channels
 	}
 	
 	// Methods
-	QAndroidJniObject MembershipKey::group()
-	{
-		return __thiz.callObjectMethod(
-			"group",
-			"()Ljava/net/InetAddress;"
-		);
-	}
 	QAndroidJniObject MembershipKey::block(__jni_impl::java::net::InetAddress arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -81,19 +74,18 @@ namespace __jni_impl::java::nio::channels
 			"()V"
 		);
 	}
+	QAndroidJniObject MembershipKey::group()
+	{
+		return __thiz.callObjectMethod(
+			"group",
+			"()Ljava/net/InetAddress;"
+		);
+	}
 	jboolean MembershipKey::isValid()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isValid",
 			"()Z"
-		);
-	}
-	QAndroidJniObject MembershipKey::unblock(__jni_impl::java::net::InetAddress arg0)
-	{
-		return __thiz.callObjectMethod(
-			"unblock",
-			"(Ljava/net/InetAddress;)Ljava/nio/channels/MembershipKey;",
-			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject MembershipKey::networkInterface()
@@ -108,6 +100,14 @@ namespace __jni_impl::java::nio::channels
 		return __thiz.callObjectMethod(
 			"sourceAddress",
 			"()Ljava/net/InetAddress;"
+		);
+	}
+	QAndroidJniObject MembershipKey::unblock(__jni_impl::java::net::InetAddress arg0)
+	{
+		return __thiz.callObjectMethod(
+			"unblock",
+			"(Ljava/net/InetAddress;)Ljava/nio/channels/MembershipKey;",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::java::nio::channels

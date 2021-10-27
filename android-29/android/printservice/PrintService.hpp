@@ -8,18 +8,6 @@
 #include "../content/ContextWrapper.hpp"
 #include "../app/Service.hpp"
 
-namespace __jni_impl::android::printservice
-{
-	class PrinterDiscoverySession;
-}
-namespace __jni_impl::android::printservice
-{
-	class PrintJob;
-}
-namespace __jni_impl::android::print
-{
-	class PrinterId;
-}
 namespace __jni_impl::android::content
 {
 	class Context;
@@ -27,6 +15,18 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::content
 {
 	class Intent;
+}
+namespace __jni_impl::android::print
+{
+	class PrinterId;
+}
+namespace __jni_impl::android::printservice
+{
+	class PrintJob;
+}
+namespace __jni_impl::android::printservice
+{
+	class PrinterDiscoverySession;
 }
 
 namespace __jni_impl::android::printservice
@@ -47,18 +47,18 @@ namespace __jni_impl::android::printservice
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getActivePrintJobs();
 		QAndroidJniObject generatePrinterId(jstring arg0);
 		QAndroidJniObject generatePrinterId(const QString &arg0);
+		QAndroidJniObject getActivePrintJobs();
 		QAndroidJniObject onBind(__jni_impl::android::content::Intent arg0);
 	};
 } // namespace __jni_impl::android::printservice
 
-#include "PrinterDiscoverySession.hpp"
-#include "PrintJob.hpp"
-#include "../print/PrinterId.hpp"
 #include "../content/Context.hpp"
 #include "../content/Intent.hpp"
+#include "../print/PrinterId.hpp"
+#include "PrintJob.hpp"
+#include "PrinterDiscoverySession.hpp"
 
 namespace __jni_impl::android::printservice
 {
@@ -130,13 +130,6 @@ namespace __jni_impl::android::printservice
 	}
 	
 	// Methods
-	QAndroidJniObject PrintService::getActivePrintJobs()
-	{
-		return __thiz.callObjectMethod(
-			"getActivePrintJobs",
-			"()Ljava/util/List;"
-		);
-	}
 	QAndroidJniObject PrintService::generatePrinterId(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -151,6 +144,13 @@ namespace __jni_impl::android::printservice
 			"generatePrinterId",
 			"(Ljava/lang/String;)Landroid/print/PrinterId;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	QAndroidJniObject PrintService::getActivePrintJobs()
+	{
+		return __thiz.callObjectMethod(
+			"getActivePrintJobs",
+			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject PrintService::onBind(__jni_impl::android::content::Intent arg0)

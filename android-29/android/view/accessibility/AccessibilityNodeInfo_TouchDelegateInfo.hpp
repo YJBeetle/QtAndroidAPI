@@ -9,13 +9,13 @@ namespace __jni_impl::android::graphics
 {
 	class Region;
 }
-namespace __jni_impl::android::view::accessibility
-{
-	class AccessibilityNodeInfo;
-}
 namespace __jni_impl::android::os
 {
 	class Parcel;
+}
+namespace __jni_impl::android::view::accessibility
+{
+	class AccessibilityNodeInfo;
 }
 
 namespace __jni_impl::android::view::accessibility
@@ -30,17 +30,17 @@ namespace __jni_impl::android::view::accessibility
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		
 		// Methods
-		jint getRegionCount();
-		QAndroidJniObject getRegionAt(jint arg0);
-		QAndroidJniObject getTargetForRegion(__jni_impl::android::graphics::Region arg0);
 		jint describeContents();
+		QAndroidJniObject getRegionAt(jint arg0);
+		jint getRegionCount();
+		QAndroidJniObject getTargetForRegion(__jni_impl::android::graphics::Region arg0);
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::view::accessibility
 
 #include "../../graphics/Region.hpp"
-#include "AccessibilityNodeInfo.hpp"
 #include "../../os/Parcel.hpp"
+#include "AccessibilityNodeInfo.hpp"
 
 namespace __jni_impl::android::view::accessibility
 {
@@ -65,10 +65,10 @@ namespace __jni_impl::android::view::accessibility
 	}
 	
 	// Methods
-	jint AccessibilityNodeInfo_TouchDelegateInfo::getRegionCount()
+	jint AccessibilityNodeInfo_TouchDelegateInfo::describeContents()
 	{
 		return __thiz.callMethod<jint>(
-			"getRegionCount",
+			"describeContents",
 			"()I"
 		);
 	}
@@ -80,19 +80,19 @@ namespace __jni_impl::android::view::accessibility
 			arg0
 		);
 	}
+	jint AccessibilityNodeInfo_TouchDelegateInfo::getRegionCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getRegionCount",
+			"()I"
+		);
+	}
 	QAndroidJniObject AccessibilityNodeInfo_TouchDelegateInfo::getTargetForRegion(__jni_impl::android::graphics::Region arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getTargetForRegion",
 			"(Landroid/graphics/Region;)Landroid/view/accessibility/AccessibilityNodeInfo;",
 			arg0.__jniObject().object()
-		);
-	}
-	jint AccessibilityNodeInfo_TouchDelegateInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
 		);
 	}
 	void AccessibilityNodeInfo_TouchDelegateInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)

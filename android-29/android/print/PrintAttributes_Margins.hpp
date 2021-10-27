@@ -19,12 +19,12 @@ namespace __jni_impl::android::print
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint getLeftMils();
-		jint getTopMils();
-		jint getRightMils();
 		jint getBottomMils();
+		jint getLeftMils();
+		jint getRightMils();
+		jint getTopMils();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::print
 
@@ -63,17 +63,10 @@ namespace __jni_impl::android::print
 			arg0
 		);
 	}
-	jstring PrintAttributes_Margins::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint PrintAttributes_Margins::hashCode()
+	jint PrintAttributes_Margins::getBottomMils()
 	{
 		return __thiz.callMethod<jint>(
-			"hashCode",
+			"getBottomMils",
 			"()I"
 		);
 	}
@@ -84,13 +77,6 @@ namespace __jni_impl::android::print
 			"()I"
 		);
 	}
-	jint PrintAttributes_Margins::getTopMils()
-	{
-		return __thiz.callMethod<jint>(
-			"getTopMils",
-			"()I"
-		);
-	}
 	jint PrintAttributes_Margins::getRightMils()
 	{
 		return __thiz.callMethod<jint>(
@@ -98,12 +84,26 @@ namespace __jni_impl::android::print
 			"()I"
 		);
 	}
-	jint PrintAttributes_Margins::getBottomMils()
+	jint PrintAttributes_Margins::getTopMils()
 	{
 		return __thiz.callMethod<jint>(
-			"getBottomMils",
+			"getTopMils",
 			"()I"
 		);
+	}
+	jint PrintAttributes_Margins::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring PrintAttributes_Margins::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::print
 

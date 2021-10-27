@@ -17,9 +17,9 @@ namespace __jni_impl::java::io
 		// Fields
 		
 		// Constructors
+		void __constructor();
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor();
 		
 		// Methods
 	};
@@ -31,6 +31,13 @@ namespace __jni_impl::java::io
 	// Fields
 	
 	// Constructors
+	void NotSerializableException::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.NotSerializableException",
+			"()V"
+		);
+	}
 	void NotSerializableException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -47,13 +54,6 @@ namespace __jni_impl::java::io
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void NotSerializableException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.NotSerializableException",
-			"()V"
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::java::io
@@ -64,14 +64,14 @@ namespace java::io
 	{
 	public:
 		NotSerializableException(QAndroidJniObject obj) { __thiz = obj; }
+		NotSerializableException()
+		{
+			__constructor();
+		}
 		NotSerializableException(jstring arg0)
 		{
 			__constructor(
 				arg0);
-		}
-		NotSerializableException()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::io

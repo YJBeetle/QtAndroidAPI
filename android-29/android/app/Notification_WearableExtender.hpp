@@ -9,9 +9,9 @@ namespace __jni_impl::android::app
 {
 	class Notification;
 }
-namespace __jni_impl::android::graphics
+namespace __jni_impl::android::app
 {
-	class Bitmap;
+	class Notification_Action;
 }
 namespace __jni_impl::android::app
 {
@@ -19,11 +19,11 @@ namespace __jni_impl::android::app
 }
 namespace __jni_impl::android::app
 {
-	class Notification_Action;
-}
-namespace __jni_impl::android::app
-{
 	class PendingIntent;
+}
+namespace __jni_impl::android::graphics
+{
+	class Bitmap;
 }
 
 namespace __jni_impl::android::app
@@ -47,62 +47,62 @@ namespace __jni_impl::android::app
 		void __constructor(__jni_impl::android::app::Notification arg0);
 		
 		// Methods
-		QAndroidJniObject clone();
-		QAndroidJniObject getActions();
-		QAndroidJniObject setBackground(__jni_impl::android::graphics::Bitmap arg0);
-		QAndroidJniObject getBackground();
-		QAndroidJniObject extend(__jni_impl::android::app::Notification_Builder arg0);
-		QAndroidJniObject setGravity(jint arg0);
-		jint getGravity();
 		QAndroidJniObject addAction(__jni_impl::android::app::Notification_Action arg0);
 		QAndroidJniObject addActions(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject clearActions();
-		QAndroidJniObject setDisplayIntent(__jni_impl::android::app::PendingIntent arg0);
-		QAndroidJniObject getDisplayIntent();
 		QAndroidJniObject addPage(__jni_impl::android::app::Notification arg0);
 		QAndroidJniObject addPages(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject clearActions();
 		QAndroidJniObject clearPages();
-		QAndroidJniObject getPages();
-		QAndroidJniObject setContentIcon(jint arg0);
-		jint getContentIcon();
-		QAndroidJniObject setContentIconGravity(jint arg0);
-		jint getContentIconGravity();
-		QAndroidJniObject setContentAction(jint arg0);
+		QAndroidJniObject clone();
+		QAndroidJniObject extend(__jni_impl::android::app::Notification_Builder arg0);
+		QAndroidJniObject getActions();
+		QAndroidJniObject getBackground();
+		jstring getBridgeTag();
 		jint getContentAction();
-		QAndroidJniObject setCustomSizePreset(jint arg0);
-		jint getCustomSizePreset();
-		QAndroidJniObject setCustomContentHeight(jint arg0);
-		jint getCustomContentHeight();
-		QAndroidJniObject setStartScrollBottom(jboolean arg0);
-		jboolean getStartScrollBottom();
-		QAndroidJniObject setContentIntentAvailableOffline(jboolean arg0);
+		jint getContentIcon();
+		jint getContentIconGravity();
 		jboolean getContentIntentAvailableOffline();
-		QAndroidJniObject setHintHideIcon(jboolean arg0);
-		jboolean getHintHideIcon();
-		QAndroidJniObject setHintShowBackgroundOnly(jboolean arg0);
-		jboolean getHintShowBackgroundOnly();
-		QAndroidJniObject setHintAvoidBackgroundClipping(jboolean arg0);
-		jboolean getHintAvoidBackgroundClipping();
-		QAndroidJniObject setHintScreenTimeout(jint arg0);
-		jint getHintScreenTimeout();
-		QAndroidJniObject setHintAmbientBigPicture(jboolean arg0);
-		jboolean getHintAmbientBigPicture();
-		QAndroidJniObject setHintContentIntentLaunchesActivity(jboolean arg0);
-		jboolean getHintContentIntentLaunchesActivity();
-		QAndroidJniObject setDismissalId(jstring arg0);
-		QAndroidJniObject setDismissalId(const QString &arg0);
+		jint getCustomContentHeight();
+		jint getCustomSizePreset();
 		jstring getDismissalId();
+		QAndroidJniObject getDisplayIntent();
+		jint getGravity();
+		jboolean getHintAmbientBigPicture();
+		jboolean getHintAvoidBackgroundClipping();
+		jboolean getHintContentIntentLaunchesActivity();
+		jboolean getHintHideIcon();
+		jint getHintScreenTimeout();
+		jboolean getHintShowBackgroundOnly();
+		QAndroidJniObject getPages();
+		jboolean getStartScrollBottom();
+		QAndroidJniObject setBackground(__jni_impl::android::graphics::Bitmap arg0);
 		QAndroidJniObject setBridgeTag(jstring arg0);
 		QAndroidJniObject setBridgeTag(const QString &arg0);
-		jstring getBridgeTag();
+		QAndroidJniObject setContentAction(jint arg0);
+		QAndroidJniObject setContentIcon(jint arg0);
+		QAndroidJniObject setContentIconGravity(jint arg0);
+		QAndroidJniObject setContentIntentAvailableOffline(jboolean arg0);
+		QAndroidJniObject setCustomContentHeight(jint arg0);
+		QAndroidJniObject setCustomSizePreset(jint arg0);
+		QAndroidJniObject setDismissalId(jstring arg0);
+		QAndroidJniObject setDismissalId(const QString &arg0);
+		QAndroidJniObject setDisplayIntent(__jni_impl::android::app::PendingIntent arg0);
+		QAndroidJniObject setGravity(jint arg0);
+		QAndroidJniObject setHintAmbientBigPicture(jboolean arg0);
+		QAndroidJniObject setHintAvoidBackgroundClipping(jboolean arg0);
+		QAndroidJniObject setHintContentIntentLaunchesActivity(jboolean arg0);
+		QAndroidJniObject setHintHideIcon(jboolean arg0);
+		QAndroidJniObject setHintScreenTimeout(jint arg0);
+		QAndroidJniObject setHintShowBackgroundOnly(jboolean arg0);
+		QAndroidJniObject setStartScrollBottom(jboolean arg0);
 	};
 } // namespace __jni_impl::android::app
 
 #include "Notification.hpp"
-#include "../graphics/Bitmap.hpp"
-#include "Notification_Builder.hpp"
 #include "Notification_Action.hpp"
+#include "Notification_Builder.hpp"
 #include "PendingIntent.hpp"
+#include "../graphics/Bitmap.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -189,58 +189,6 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	QAndroidJniObject Notification_WearableExtender::clone()
-	{
-		return __thiz.callObjectMethod(
-			"clone",
-			"()Landroid/app/Notification$WearableExtender;"
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::getActions()
-	{
-		return __thiz.callObjectMethod(
-			"getActions",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::setBackground(__jni_impl::android::graphics::Bitmap arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setBackground",
-			"(Landroid/graphics/Bitmap;)Landroid/app/Notification$WearableExtender;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::getBackground()
-	{
-		return __thiz.callObjectMethod(
-			"getBackground",
-			"()Landroid/graphics/Bitmap;"
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::extend(__jni_impl::android::app::Notification_Builder arg0)
-	{
-		return __thiz.callObjectMethod(
-			"extend",
-			"(Landroid/app/Notification$Builder;)Landroid/app/Notification$Builder;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::setGravity(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setGravity",
-			"(I)Landroid/app/Notification$WearableExtender;",
-			arg0
-		);
-	}
-	jint Notification_WearableExtender::getGravity()
-	{
-		return __thiz.callMethod<jint>(
-			"getGravity",
-			"()I"
-		);
-	}
 	QAndroidJniObject Notification_WearableExtender::addAction(__jni_impl::android::app::Notification_Action arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -255,28 +203,6 @@ namespace __jni_impl::android::app
 			"addActions",
 			"(Ljava/util/List;)Landroid/app/Notification$WearableExtender;",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::clearActions()
-	{
-		return __thiz.callObjectMethod(
-			"clearActions",
-			"()Landroid/app/Notification$WearableExtender;"
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::setDisplayIntent(__jni_impl::android::app::PendingIntent arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setDisplayIntent",
-			"(Landroid/app/PendingIntent;)Landroid/app/Notification$WearableExtender;",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::getDisplayIntent()
-	{
-		return __thiz.callObjectMethod(
-			"getDisplayIntent",
-			"()Landroid/app/PendingIntent;"
 		);
 	}
 	QAndroidJniObject Notification_WearableExtender::addPage(__jni_impl::android::app::Notification arg0)
@@ -295,6 +221,13 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object()
 		);
 	}
+	QAndroidJniObject Notification_WearableExtender::clearActions()
+	{
+		return __thiz.callObjectMethod(
+			"clearActions",
+			"()Landroid/app/Notification$WearableExtender;"
+		);
+	}
 	QAndroidJniObject Notification_WearableExtender::clearPages()
 	{
 		return __thiz.callObjectMethod(
@@ -302,19 +235,47 @@ namespace __jni_impl::android::app
 			"()Landroid/app/Notification$WearableExtender;"
 		);
 	}
-	QAndroidJniObject Notification_WearableExtender::getPages()
+	QAndroidJniObject Notification_WearableExtender::clone()
 	{
 		return __thiz.callObjectMethod(
-			"getPages",
+			"clone",
+			"()Landroid/app/Notification$WearableExtender;"
+		);
+	}
+	QAndroidJniObject Notification_WearableExtender::extend(__jni_impl::android::app::Notification_Builder arg0)
+	{
+		return __thiz.callObjectMethod(
+			"extend",
+			"(Landroid/app/Notification$Builder;)Landroid/app/Notification$Builder;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Notification_WearableExtender::getActions()
+	{
+		return __thiz.callObjectMethod(
+			"getActions",
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject Notification_WearableExtender::setContentIcon(jint arg0)
+	QAndroidJniObject Notification_WearableExtender::getBackground()
 	{
 		return __thiz.callObjectMethod(
-			"setContentIcon",
-			"(I)Landroid/app/Notification$WearableExtender;",
-			arg0
+			"getBackground",
+			"()Landroid/graphics/Bitmap;"
+		);
+	}
+	jstring Notification_WearableExtender::getBridgeTag()
+	{
+		return __thiz.callObjectMethod(
+			"getBridgeTag",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint Notification_WearableExtender::getContentAction()
+	{
+		return __thiz.callMethod<jint>(
+			"getContentAction",
+			"()I"
 		);
 	}
 	jint Notification_WearableExtender::getContentIcon()
@@ -324,19 +285,133 @@ namespace __jni_impl::android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject Notification_WearableExtender::setContentIconGravity(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setContentIconGravity",
-			"(I)Landroid/app/Notification$WearableExtender;",
-			arg0
-		);
-	}
 	jint Notification_WearableExtender::getContentIconGravity()
 	{
 		return __thiz.callMethod<jint>(
 			"getContentIconGravity",
 			"()I"
+		);
+	}
+	jboolean Notification_WearableExtender::getContentIntentAvailableOffline()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getContentIntentAvailableOffline",
+			"()Z"
+		);
+	}
+	jint Notification_WearableExtender::getCustomContentHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getCustomContentHeight",
+			"()I"
+		);
+	}
+	jint Notification_WearableExtender::getCustomSizePreset()
+	{
+		return __thiz.callMethod<jint>(
+			"getCustomSizePreset",
+			"()I"
+		);
+	}
+	jstring Notification_WearableExtender::getDismissalId()
+	{
+		return __thiz.callObjectMethod(
+			"getDismissalId",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject Notification_WearableExtender::getDisplayIntent()
+	{
+		return __thiz.callObjectMethod(
+			"getDisplayIntent",
+			"()Landroid/app/PendingIntent;"
+		);
+	}
+	jint Notification_WearableExtender::getGravity()
+	{
+		return __thiz.callMethod<jint>(
+			"getGravity",
+			"()I"
+		);
+	}
+	jboolean Notification_WearableExtender::getHintAmbientBigPicture()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getHintAmbientBigPicture",
+			"()Z"
+		);
+	}
+	jboolean Notification_WearableExtender::getHintAvoidBackgroundClipping()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getHintAvoidBackgroundClipping",
+			"()Z"
+		);
+	}
+	jboolean Notification_WearableExtender::getHintContentIntentLaunchesActivity()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getHintContentIntentLaunchesActivity",
+			"()Z"
+		);
+	}
+	jboolean Notification_WearableExtender::getHintHideIcon()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getHintHideIcon",
+			"()Z"
+		);
+	}
+	jint Notification_WearableExtender::getHintScreenTimeout()
+	{
+		return __thiz.callMethod<jint>(
+			"getHintScreenTimeout",
+			"()I"
+		);
+	}
+	jboolean Notification_WearableExtender::getHintShowBackgroundOnly()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getHintShowBackgroundOnly",
+			"()Z"
+		);
+	}
+	QAndroidJniObject Notification_WearableExtender::getPages()
+	{
+		return __thiz.callObjectMethod(
+			"getPages",
+			"()Ljava/util/List;"
+		);
+	}
+	jboolean Notification_WearableExtender::getStartScrollBottom()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getStartScrollBottom",
+			"()Z"
+		);
+	}
+	QAndroidJniObject Notification_WearableExtender::setBackground(__jni_impl::android::graphics::Bitmap arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setBackground",
+			"(Landroid/graphics/Bitmap;)Landroid/app/Notification$WearableExtender;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Notification_WearableExtender::setBridgeTag(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setBridgeTag",
+			"(Ljava/lang/String;)Landroid/app/Notification$WearableExtender;",
+			arg0
+		);
+	}
+	QAndroidJniObject Notification_WearableExtender::setBridgeTag(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setBridgeTag",
+			"(Ljava/lang/String;)Landroid/app/Notification$WearableExtender;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
 	QAndroidJniObject Notification_WearableExtender::setContentAction(jint arg0)
@@ -347,56 +422,20 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
-	jint Notification_WearableExtender::getContentAction()
-	{
-		return __thiz.callMethod<jint>(
-			"getContentAction",
-			"()I"
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::setCustomSizePreset(jint arg0)
+	QAndroidJniObject Notification_WearableExtender::setContentIcon(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setCustomSizePreset",
+			"setContentIcon",
 			"(I)Landroid/app/Notification$WearableExtender;",
 			arg0
 		);
 	}
-	jint Notification_WearableExtender::getCustomSizePreset()
-	{
-		return __thiz.callMethod<jint>(
-			"getCustomSizePreset",
-			"()I"
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::setCustomContentHeight(jint arg0)
+	QAndroidJniObject Notification_WearableExtender::setContentIconGravity(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setCustomContentHeight",
+			"setContentIconGravity",
 			"(I)Landroid/app/Notification$WearableExtender;",
 			arg0
-		);
-	}
-	jint Notification_WearableExtender::getCustomContentHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getCustomContentHeight",
-			"()I"
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::setStartScrollBottom(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setStartScrollBottom",
-			"(Z)Landroid/app/Notification$WearableExtender;",
-			arg0
-		);
-	}
-	jboolean Notification_WearableExtender::getStartScrollBottom()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getStartScrollBottom",
-			"()Z"
 		);
 	}
 	QAndroidJniObject Notification_WearableExtender::setContentIntentAvailableOffline(jboolean arg0)
@@ -407,101 +446,20 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
-	jboolean Notification_WearableExtender::getContentIntentAvailableOffline()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getContentIntentAvailableOffline",
-			"()Z"
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::setHintHideIcon(jboolean arg0)
+	QAndroidJniObject Notification_WearableExtender::setCustomContentHeight(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setHintHideIcon",
-			"(Z)Landroid/app/Notification$WearableExtender;",
-			arg0
-		);
-	}
-	jboolean Notification_WearableExtender::getHintHideIcon()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getHintHideIcon",
-			"()Z"
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::setHintShowBackgroundOnly(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setHintShowBackgroundOnly",
-			"(Z)Landroid/app/Notification$WearableExtender;",
-			arg0
-		);
-	}
-	jboolean Notification_WearableExtender::getHintShowBackgroundOnly()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getHintShowBackgroundOnly",
-			"()Z"
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::setHintAvoidBackgroundClipping(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setHintAvoidBackgroundClipping",
-			"(Z)Landroid/app/Notification$WearableExtender;",
-			arg0
-		);
-	}
-	jboolean Notification_WearableExtender::getHintAvoidBackgroundClipping()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getHintAvoidBackgroundClipping",
-			"()Z"
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::setHintScreenTimeout(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setHintScreenTimeout",
+			"setCustomContentHeight",
 			"(I)Landroid/app/Notification$WearableExtender;",
 			arg0
 		);
 	}
-	jint Notification_WearableExtender::getHintScreenTimeout()
-	{
-		return __thiz.callMethod<jint>(
-			"getHintScreenTimeout",
-			"()I"
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::setHintAmbientBigPicture(jboolean arg0)
+	QAndroidJniObject Notification_WearableExtender::setCustomSizePreset(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setHintAmbientBigPicture",
-			"(Z)Landroid/app/Notification$WearableExtender;",
+			"setCustomSizePreset",
+			"(I)Landroid/app/Notification$WearableExtender;",
 			arg0
-		);
-	}
-	jboolean Notification_WearableExtender::getHintAmbientBigPicture()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getHintAmbientBigPicture",
-			"()Z"
-		);
-	}
-	QAndroidJniObject Notification_WearableExtender::setHintContentIntentLaunchesActivity(jboolean arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setHintContentIntentLaunchesActivity",
-			"(Z)Landroid/app/Notification$WearableExtender;",
-			arg0
-		);
-	}
-	jboolean Notification_WearableExtender::getHintContentIntentLaunchesActivity()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getHintContentIntentLaunchesActivity",
-			"()Z"
 		);
 	}
 	QAndroidJniObject Notification_WearableExtender::setDismissalId(jstring arg0)
@@ -520,35 +478,77 @@ namespace __jni_impl::android::app
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	jstring Notification_WearableExtender::getDismissalId()
+	QAndroidJniObject Notification_WearableExtender::setDisplayIntent(__jni_impl::android::app::PendingIntent arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getDismissalId",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"setDisplayIntent",
+			"(Landroid/app/PendingIntent;)Landroid/app/Notification$WearableExtender;",
+			arg0.__jniObject().object()
+		);
 	}
-	QAndroidJniObject Notification_WearableExtender::setBridgeTag(jstring arg0)
+	QAndroidJniObject Notification_WearableExtender::setGravity(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setBridgeTag",
-			"(Ljava/lang/String;)Landroid/app/Notification$WearableExtender;",
+			"setGravity",
+			"(I)Landroid/app/Notification$WearableExtender;",
 			arg0
 		);
 	}
-	QAndroidJniObject Notification_WearableExtender::setBridgeTag(const QString &arg0)
+	QAndroidJniObject Notification_WearableExtender::setHintAmbientBigPicture(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
-			"setBridgeTag",
-			"(Ljava/lang/String;)Landroid/app/Notification$WearableExtender;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+			"setHintAmbientBigPicture",
+			"(Z)Landroid/app/Notification$WearableExtender;",
+			arg0
 		);
 	}
-	jstring Notification_WearableExtender::getBridgeTag()
+	QAndroidJniObject Notification_WearableExtender::setHintAvoidBackgroundClipping(jboolean arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getBridgeTag",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+			"setHintAvoidBackgroundClipping",
+			"(Z)Landroid/app/Notification$WearableExtender;",
+			arg0
+		);
+	}
+	QAndroidJniObject Notification_WearableExtender::setHintContentIntentLaunchesActivity(jboolean arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setHintContentIntentLaunchesActivity",
+			"(Z)Landroid/app/Notification$WearableExtender;",
+			arg0
+		);
+	}
+	QAndroidJniObject Notification_WearableExtender::setHintHideIcon(jboolean arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setHintHideIcon",
+			"(Z)Landroid/app/Notification$WearableExtender;",
+			arg0
+		);
+	}
+	QAndroidJniObject Notification_WearableExtender::setHintScreenTimeout(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setHintScreenTimeout",
+			"(I)Landroid/app/Notification$WearableExtender;",
+			arg0
+		);
+	}
+	QAndroidJniObject Notification_WearableExtender::setHintShowBackgroundOnly(jboolean arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setHintShowBackgroundOnly",
+			"(Z)Landroid/app/Notification$WearableExtender;",
+			arg0
+		);
+	}
+	QAndroidJniObject Notification_WearableExtender::setStartScrollBottom(jboolean arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setStartScrollBottom",
+			"(Z)Landroid/app/Notification$WearableExtender;",
+			arg0
+		);
 	}
 } // namespace __jni_impl::android::app
 

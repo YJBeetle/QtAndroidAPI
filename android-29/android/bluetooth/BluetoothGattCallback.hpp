@@ -29,18 +29,18 @@ namespace __jni_impl::android::bluetooth
 		void __constructor();
 		
 		// Methods
-		void onPhyUpdate(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2, jint arg3);
-		void onPhyRead(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2, jint arg3);
-		void onConnectionStateChange(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2);
-		void onServicesDiscovered(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1);
+		void onCharacteristicChanged(__jni_impl::android::bluetooth::BluetoothGatt arg0, __jni_impl::android::bluetooth::BluetoothGattCharacteristic arg1);
 		void onCharacteristicRead(__jni_impl::android::bluetooth::BluetoothGatt arg0, __jni_impl::android::bluetooth::BluetoothGattCharacteristic arg1, jint arg2);
 		void onCharacteristicWrite(__jni_impl::android::bluetooth::BluetoothGatt arg0, __jni_impl::android::bluetooth::BluetoothGattCharacteristic arg1, jint arg2);
-		void onCharacteristicChanged(__jni_impl::android::bluetooth::BluetoothGatt arg0, __jni_impl::android::bluetooth::BluetoothGattCharacteristic arg1);
+		void onConnectionStateChange(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2);
 		void onDescriptorRead(__jni_impl::android::bluetooth::BluetoothGatt arg0, __jni_impl::android::bluetooth::BluetoothGattDescriptor arg1, jint arg2);
 		void onDescriptorWrite(__jni_impl::android::bluetooth::BluetoothGatt arg0, __jni_impl::android::bluetooth::BluetoothGattDescriptor arg1, jint arg2);
-		void onReliableWriteCompleted(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1);
-		void onReadRemoteRssi(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2);
 		void onMtuChanged(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2);
+		void onPhyRead(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2, jint arg3);
+		void onPhyUpdate(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2, jint arg3);
+		void onReadRemoteRssi(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2);
+		void onReliableWriteCompleted(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1);
+		void onServicesDiscovered(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::bluetooth
 
@@ -62,45 +62,13 @@ namespace __jni_impl::android::bluetooth
 	}
 	
 	// Methods
-	void BluetoothGattCallback::onPhyUpdate(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2, jint arg3)
+	void BluetoothGattCallback::onCharacteristicChanged(__jni_impl::android::bluetooth::BluetoothGatt arg0, __jni_impl::android::bluetooth::BluetoothGattCharacteristic arg1)
 	{
 		__thiz.callMethod<void>(
-			"onPhyUpdate",
-			"(Landroid/bluetooth/BluetoothGatt;III)V",
+			"onCharacteristicChanged",
+			"(Landroid/bluetooth/BluetoothGatt;Landroid/bluetooth/BluetoothGattCharacteristic;)V",
 			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void BluetoothGattCallback::onPhyRead(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2, jint arg3)
-	{
-		__thiz.callMethod<void>(
-			"onPhyRead",
-			"(Landroid/bluetooth/BluetoothGatt;III)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void BluetoothGattCallback::onConnectionStateChange(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2)
-	{
-		__thiz.callMethod<void>(
-			"onConnectionStateChange",
-			"(Landroid/bluetooth/BluetoothGatt;II)V",
-			arg0.__jniObject().object(),
-			arg1,
-			arg2
-		);
-	}
-	void BluetoothGattCallback::onServicesDiscovered(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"onServicesDiscovered",
-			"(Landroid/bluetooth/BluetoothGatt;I)V",
-			arg0.__jniObject().object(),
-			arg1
+			arg1.__jniObject().object()
 		);
 	}
 	void BluetoothGattCallback::onCharacteristicRead(__jni_impl::android::bluetooth::BluetoothGatt arg0, __jni_impl::android::bluetooth::BluetoothGattCharacteristic arg1, jint arg2)
@@ -123,13 +91,14 @@ namespace __jni_impl::android::bluetooth
 			arg2
 		);
 	}
-	void BluetoothGattCallback::onCharacteristicChanged(__jni_impl::android::bluetooth::BluetoothGatt arg0, __jni_impl::android::bluetooth::BluetoothGattCharacteristic arg1)
+	void BluetoothGattCallback::onConnectionStateChange(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
-			"onCharacteristicChanged",
-			"(Landroid/bluetooth/BluetoothGatt;Landroid/bluetooth/BluetoothGattCharacteristic;)V",
+			"onConnectionStateChange",
+			"(Landroid/bluetooth/BluetoothGatt;II)V",
 			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg1,
+			arg2
 		);
 	}
 	void BluetoothGattCallback::onDescriptorRead(__jni_impl::android::bluetooth::BluetoothGatt arg0, __jni_impl::android::bluetooth::BluetoothGattDescriptor arg1, jint arg2)
@@ -152,13 +121,36 @@ namespace __jni_impl::android::bluetooth
 			arg2
 		);
 	}
-	void BluetoothGattCallback::onReliableWriteCompleted(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1)
+	void BluetoothGattCallback::onMtuChanged(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2)
 	{
 		__thiz.callMethod<void>(
-			"onReliableWriteCompleted",
-			"(Landroid/bluetooth/BluetoothGatt;I)V",
+			"onMtuChanged",
+			"(Landroid/bluetooth/BluetoothGatt;II)V",
 			arg0.__jniObject().object(),
-			arg1
+			arg1,
+			arg2
+		);
+	}
+	void BluetoothGattCallback::onPhyRead(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"onPhyRead",
+			"(Landroid/bluetooth/BluetoothGatt;III)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void BluetoothGattCallback::onPhyUpdate(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2, jint arg3)
+	{
+		__thiz.callMethod<void>(
+			"onPhyUpdate",
+			"(Landroid/bluetooth/BluetoothGatt;III)V",
+			arg0.__jniObject().object(),
+			arg1,
+			arg2,
+			arg3
 		);
 	}
 	void BluetoothGattCallback::onReadRemoteRssi(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2)
@@ -171,14 +163,22 @@ namespace __jni_impl::android::bluetooth
 			arg2
 		);
 	}
-	void BluetoothGattCallback::onMtuChanged(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1, jint arg2)
+	void BluetoothGattCallback::onReliableWriteCompleted(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
-			"onMtuChanged",
-			"(Landroid/bluetooth/BluetoothGatt;II)V",
+			"onReliableWriteCompleted",
+			"(Landroid/bluetooth/BluetoothGatt;I)V",
 			arg0.__jniObject().object(),
-			arg1,
-			arg2
+			arg1
+		);
+	}
+	void BluetoothGattCallback::onServicesDiscovered(__jni_impl::android::bluetooth::BluetoothGatt arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"onServicesDiscovered",
+			"(Landroid/bluetooth/BluetoothGatt;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::bluetooth

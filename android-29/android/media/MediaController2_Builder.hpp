@@ -11,19 +11,19 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::android::media
 {
-	class Session2Token;
-}
-namespace __jni_impl::android::media
-{
 	class MediaController2;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
 }
 namespace __jni_impl::android::media
 {
 	class MediaController2_ControllerCallback;
+}
+namespace __jni_impl::android::media
+{
+	class Session2Token;
+}
+namespace __jni_impl::android::os
+{
+	class Bundle;
 }
 
 namespace __jni_impl::android::media
@@ -44,10 +44,10 @@ namespace __jni_impl::android::media
 } // namespace __jni_impl::android::media
 
 #include "../content/Context.hpp"
-#include "Session2Token.hpp"
 #include "MediaController2.hpp"
-#include "../os/Bundle.hpp"
 #include "MediaController2_ControllerCallback.hpp"
+#include "Session2Token.hpp"
+#include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::media
 {

@@ -21,11 +21,11 @@ namespace __jni_impl::java::util::concurrent
 		void __constructor(jint arg0);
 		
 		// Methods
-		jstring toString();
-		jlong getCount();
 		jboolean await(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1);
 		void await();
 		void countDown();
+		jlong getCount();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::util::concurrent
 
@@ -46,20 +46,6 @@ namespace __jni_impl::java::util::concurrent
 	}
 	
 	// Methods
-	jstring CountDownLatch::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jlong CountDownLatch::getCount()
-	{
-		return __thiz.callMethod<jlong>(
-			"getCount",
-			"()J"
-		);
-	}
 	jboolean CountDownLatch::await(jlong arg0, __jni_impl::java::util::concurrent::TimeUnit arg1)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -82,6 +68,20 @@ namespace __jni_impl::java::util::concurrent
 			"countDown",
 			"()V"
 		);
+	}
+	jlong CountDownLatch::getCount()
+	{
+		return __thiz.callMethod<jlong>(
+			"getCount",
+			"()J"
+		);
+	}
+	jstring CountDownLatch::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util::concurrent
 

@@ -25,8 +25,8 @@ namespace __jni_impl::android::transition
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
 		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::transition
 
@@ -76,19 +76,19 @@ namespace __jni_impl::android::transition
 			arg0
 		);
 	}
-	jstring TransitionValues::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint TransitionValues::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
+	}
+	jstring TransitionValues::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::transition
 

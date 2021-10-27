@@ -27,12 +27,12 @@ namespace __jni_impl::android::hardware::camera2::params
 		void __constructor(jfloatArray arg0, jfloatArray arg1, jfloatArray arg2);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint getPointCount(jint arg0);
-		QAndroidJniObject getPoint(jint arg0, jint arg1);
 		void copyColorCurve(jint arg0, jfloatArray arg1, jint arg2);
+		jboolean equals(jobject arg0);
+		QAndroidJniObject getPoint(jint arg0, jint arg1);
+		jint getPointCount(jint arg0);
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::hardware::camera2::params
 
@@ -97,33 +97,21 @@ namespace __jni_impl::android::hardware::camera2::params
 	}
 	
 	// Methods
+	void TonemapCurve::copyColorCurve(jint arg0, jfloatArray arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"copyColorCurve",
+			"(I[FI)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
 	jboolean TonemapCurve::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring TonemapCurve::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint TonemapCurve::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jint TonemapCurve::getPointCount(jint arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"getPointCount",
-			"(I)I",
 			arg0
 		);
 	}
@@ -136,15 +124,27 @@ namespace __jni_impl::android::hardware::camera2::params
 			arg1
 		);
 	}
-	void TonemapCurve::copyColorCurve(jint arg0, jfloatArray arg1, jint arg2)
+	jint TonemapCurve::getPointCount(jint arg0)
 	{
-		__thiz.callMethod<void>(
-			"copyColorCurve",
-			"(I[FI)V",
-			arg0,
-			arg1,
-			arg2
+		return __thiz.callMethod<jint>(
+			"getPointCount",
+			"(I)I",
+			arg0
 		);
+	}
+	jint TonemapCurve::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring TonemapCurve::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::hardware::camera2::params
 

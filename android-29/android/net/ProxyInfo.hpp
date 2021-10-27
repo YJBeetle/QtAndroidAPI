@@ -26,20 +26,20 @@ namespace __jni_impl::android::net
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jstring getHost();
-		jint getPort();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		static QAndroidJniObject buildDirectProxy(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
-		static QAndroidJniObject buildDirectProxy(const QString &arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
 		static QAndroidJniObject buildDirectProxy(jstring arg0, jint arg1);
 		static QAndroidJniObject buildDirectProxy(const QString &arg0, jint arg1);
+		static QAndroidJniObject buildDirectProxy(jstring arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
+		static QAndroidJniObject buildDirectProxy(const QString &arg0, jint arg1, __jni_impl::__JniBaseClass arg2);
 		static QAndroidJniObject buildPacProxy(__jni_impl::android::net::Uri arg0);
-		QAndroidJniObject getPacFileUrl();
+		jint describeContents();
+		jboolean equals(jobject arg0);
 		jarray getExclusionList();
+		jstring getHost();
+		QAndroidJniObject getPacFileUrl();
+		jint getPort();
+		jint hashCode();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net
 
@@ -67,55 +67,23 @@ namespace __jni_impl::android::net
 	}
 	
 	// Methods
-	jboolean ProxyInfo::equals(jobject arg0)
+	QAndroidJniObject ProxyInfo::buildDirectProxy(jstring arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.net.ProxyInfo",
+			"buildDirectProxy",
+			"(Ljava/lang/String;I)Landroid/net/ProxyInfo;",
+			arg0,
+			arg1
 		);
 	}
-	jstring ProxyInfo::toString()
+	QAndroidJniObject ProxyInfo::buildDirectProxy(const QString &arg0, jint arg1)
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint ProxyInfo::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jstring ProxyInfo::getHost()
-	{
-		return __thiz.callObjectMethod(
-			"getHost",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint ProxyInfo::getPort()
-	{
-		return __thiz.callMethod<jint>(
-			"getPort",
-			"()I"
-		);
-	}
-	jint ProxyInfo::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void ProxyInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.net.ProxyInfo",
+			"buildDirectProxy",
+			"(Ljava/lang/String;I)Landroid/net/ProxyInfo;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
 		);
 	}
@@ -141,26 +109,6 @@ namespace __jni_impl::android::net
 			arg2.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ProxyInfo::buildDirectProxy(jstring arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.ProxyInfo",
-			"buildDirectProxy",
-			"(Ljava/lang/String;I)Landroid/net/ProxyInfo;",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject ProxyInfo::buildDirectProxy(const QString &arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.net.ProxyInfo",
-			"buildDirectProxy",
-			"(Ljava/lang/String;I)Landroid/net/ProxyInfo;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
-		);
-	}
 	QAndroidJniObject ProxyInfo::buildPacProxy(__jni_impl::android::net::Uri arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -170,11 +118,19 @@ namespace __jni_impl::android::net
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ProxyInfo::getPacFileUrl()
+	jint ProxyInfo::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"getPacFileUrl",
-			"()Landroid/net/Uri;"
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	jboolean ProxyInfo::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
 		);
 	}
 	jarray ProxyInfo::getExclusionList()
@@ -183,6 +139,50 @@ namespace __jni_impl::android::net
 			"getExclusionList",
 			"()[Ljava/lang/String;"
 		).object<jarray>();
+	}
+	jstring ProxyInfo::getHost()
+	{
+		return __thiz.callObjectMethod(
+			"getHost",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject ProxyInfo::getPacFileUrl()
+	{
+		return __thiz.callObjectMethod(
+			"getPacFileUrl",
+			"()Landroid/net/Uri;"
+		);
+	}
+	jint ProxyInfo::getPort()
+	{
+		return __thiz.callMethod<jint>(
+			"getPort",
+			"()I"
+		);
+	}
+	jint ProxyInfo::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring ProxyInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void ProxyInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
 	}
 } // namespace __jni_impl::android::net
 

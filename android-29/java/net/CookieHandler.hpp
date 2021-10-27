@@ -21,10 +21,10 @@ namespace __jni_impl::java::net
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject get(__jni_impl::java::net::URI arg0, __jni_impl::__JniBaseClass arg1);
-		void put(__jni_impl::java::net::URI arg0, __jni_impl::__JniBaseClass arg1);
 		static QAndroidJniObject getDefault();
 		static void setDefault(__jni_impl::java::net::CookieHandler arg0);
+		QAndroidJniObject get(__jni_impl::java::net::URI arg0, __jni_impl::__JniBaseClass arg1);
+		void put(__jni_impl::java::net::URI arg0, __jni_impl::__JniBaseClass arg1);
 	};
 } // namespace __jni_impl::java::net
 
@@ -44,6 +44,23 @@ namespace __jni_impl::java::net
 	}
 	
 	// Methods
+	QAndroidJniObject CookieHandler::getDefault()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.net.CookieHandler",
+			"getDefault",
+			"()Ljava/net/CookieHandler;"
+		);
+	}
+	void CookieHandler::setDefault(__jni_impl::java::net::CookieHandler arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"java.net.CookieHandler",
+			"setDefault",
+			"(Ljava/net/CookieHandler;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject CookieHandler::get(__jni_impl::java::net::URI arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -60,23 +77,6 @@ namespace __jni_impl::java::net
 			"(Ljava/net/URI;Ljava/util/Map;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject CookieHandler::getDefault()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.net.CookieHandler",
-			"getDefault",
-			"()Ljava/net/CookieHandler;"
-		);
-	}
-	void CookieHandler::setDefault(__jni_impl::java::net::CookieHandler arg0)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"java.net.CookieHandler",
-			"setDefault",
-			"(Ljava/net/CookieHandler;)V",
-			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::java::net

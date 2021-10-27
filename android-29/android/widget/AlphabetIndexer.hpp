@@ -20,10 +20,10 @@ namespace __jni_impl::android::widget
 		
 		// Methods
 		jint getPositionForSection(jint arg0);
-		jobjectArray getSections();
 		jint getSectionForPosition(jint arg0);
-		void onInvalidated();
+		jobjectArray getSections();
 		void onChanged();
+		void onInvalidated();
 		void setCursor(__jni_impl::__JniBaseClass arg0);
 	};
 } // namespace __jni_impl::android::widget
@@ -64,13 +64,6 @@ namespace __jni_impl::android::widget
 			arg0
 		);
 	}
-	jobjectArray AlphabetIndexer::getSections()
-	{
-		return __thiz.callObjectMethod(
-			"getSections",
-			"()[Ljava/lang/Object;"
-		).object<jobjectArray>();
-	}
 	jint AlphabetIndexer::getSectionForPosition(jint arg0)
 	{
 		return __thiz.callMethod<jint>(
@@ -79,17 +72,24 @@ namespace __jni_impl::android::widget
 			arg0
 		);
 	}
-	void AlphabetIndexer::onInvalidated()
+	jobjectArray AlphabetIndexer::getSections()
 	{
-		__thiz.callMethod<void>(
-			"onInvalidated",
-			"()V"
-		);
+		return __thiz.callObjectMethod(
+			"getSections",
+			"()[Ljava/lang/Object;"
+		).object<jobjectArray>();
 	}
 	void AlphabetIndexer::onChanged()
 	{
 		__thiz.callMethod<void>(
 			"onChanged",
+			"()V"
+		);
+	}
+	void AlphabetIndexer::onInvalidated()
+	{
+		__thiz.callMethod<void>(
+			"onInvalidated",
 			"()V"
 		);
 	}

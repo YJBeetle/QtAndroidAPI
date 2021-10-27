@@ -23,8 +23,8 @@ namespace __jni_impl::java::beans
 		void __constructor(const QString &arg0, __jni_impl::__JniBaseClass arg1);
 		
 		// Methods
-		void propertyChange(__jni_impl::java::beans::PropertyChangeEvent arg0);
 		jstring getPropertyName();
+		void propertyChange(__jni_impl::java::beans::PropertyChangeEvent arg0);
 	};
 } // namespace __jni_impl::java::beans
 
@@ -55,6 +55,13 @@ namespace __jni_impl::java::beans
 	}
 	
 	// Methods
+	jstring PropertyChangeListenerProxy::getPropertyName()
+	{
+		return __thiz.callObjectMethod(
+			"getPropertyName",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	void PropertyChangeListenerProxy::propertyChange(__jni_impl::java::beans::PropertyChangeEvent arg0)
 	{
 		__thiz.callMethod<void>(
@@ -62,13 +69,6 @@ namespace __jni_impl::java::beans
 			"(Ljava/beans/PropertyChangeEvent;)V",
 			arg0.__jniObject().object()
 		);
-	}
-	jstring PropertyChangeListenerProxy::getPropertyName()
-	{
-		return __thiz.callObjectMethod(
-			"getPropertyName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 } // namespace __jni_impl::java::beans
 

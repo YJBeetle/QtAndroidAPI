@@ -27,9 +27,9 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jstring toString();
 		void set(jint arg0, jintArray arg1, jintArray arg2, jbyteArray arg3, jbyteArray arg4, jint arg5);
 		void setPattern(__jni_impl::android::media::MediaCodec_CryptoInfo_Pattern arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::android::media
 
@@ -89,13 +89,6 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
-	jstring MediaCodec_CryptoInfo::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	void MediaCodec_CryptoInfo::set(jint arg0, jintArray arg1, jintArray arg2, jbyteArray arg3, jbyteArray arg4, jint arg5)
 	{
 		__thiz.callMethod<void>(
@@ -116,6 +109,13 @@ namespace __jni_impl::android::media
 			"(Landroid/media/MediaCodec$CryptoInfo$Pattern;)V",
 			arg0.__jniObject().object()
 		);
+	}
+	jstring MediaCodec_CryptoInfo::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media
 

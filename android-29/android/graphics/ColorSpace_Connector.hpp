@@ -25,11 +25,11 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		jfloatArray transform(jfloat arg0, jfloat arg1, jfloat arg2);
-		jfloatArray transform(jfloatArray arg0);
-		QAndroidJniObject getSource();
-		QAndroidJniObject getRenderIntent();
 		QAndroidJniObject getDestination();
+		QAndroidJniObject getRenderIntent();
+		QAndroidJniObject getSource();
+		jfloatArray transform(jfloatArray arg0);
+		jfloatArray transform(jfloat arg0, jfloat arg1, jfloat arg2);
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -49,28 +49,10 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	jfloatArray ColorSpace_Connector::transform(jfloat arg0, jfloat arg1, jfloat arg2)
+	QAndroidJniObject ColorSpace_Connector::getDestination()
 	{
 		return __thiz.callObjectMethod(
-			"transform",
-			"(FFF)[F",
-			arg0,
-			arg1,
-			arg2
-		).object<jfloatArray>();
-	}
-	jfloatArray ColorSpace_Connector::transform(jfloatArray arg0)
-	{
-		return __thiz.callObjectMethod(
-			"transform",
-			"([F)[F",
-			arg0
-		).object<jfloatArray>();
-	}
-	QAndroidJniObject ColorSpace_Connector::getSource()
-	{
-		return __thiz.callObjectMethod(
-			"getSource",
+			"getDestination",
 			"()Landroid/graphics/ColorSpace;"
 		);
 	}
@@ -81,12 +63,30 @@ namespace __jni_impl::android::graphics
 			"()Landroid/graphics/ColorSpace$RenderIntent;"
 		);
 	}
-	QAndroidJniObject ColorSpace_Connector::getDestination()
+	QAndroidJniObject ColorSpace_Connector::getSource()
 	{
 		return __thiz.callObjectMethod(
-			"getDestination",
+			"getSource",
 			"()Landroid/graphics/ColorSpace;"
 		);
+	}
+	jfloatArray ColorSpace_Connector::transform(jfloatArray arg0)
+	{
+		return __thiz.callObjectMethod(
+			"transform",
+			"([F)[F",
+			arg0
+		).object<jfloatArray>();
+	}
+	jfloatArray ColorSpace_Connector::transform(jfloat arg0, jfloat arg1, jfloat arg2)
+	{
+		return __thiz.callObjectMethod(
+			"transform",
+			"(FFF)[F",
+			arg0,
+			arg1,
+			arg2
+		).object<jfloatArray>();
 	}
 } // namespace __jni_impl::android::graphics
 

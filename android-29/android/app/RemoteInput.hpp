@@ -5,10 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::os
-{
-	class Parcel;
-}
 namespace __jni_impl::android::content
 {
 	class Intent;
@@ -16,6 +12,10 @@ namespace __jni_impl::android::content
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::os
+{
+	class Parcel;
 }
 
 namespace __jni_impl::android::app
@@ -37,29 +37,29 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
-		jstring getLabel();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jstring getResultKey();
-		jarray getChoices();
-		QAndroidJniObject getAllowedDataTypes();
-		jboolean isDataOnly();
-		jboolean getAllowFreeFormInput();
-		jint getEditChoicesBeforeSending();
+		static void addDataResultToIntent(__jni_impl::android::app::RemoteInput arg0, __jni_impl::android::content::Intent arg1, __jni_impl::__JniBaseClass arg2);
+		static void addResultsToIntent(jarray arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::Bundle arg2);
 		static QAndroidJniObject getDataResultsFromIntent(__jni_impl::android::content::Intent arg0, jstring arg1);
 		static QAndroidJniObject getDataResultsFromIntent(__jni_impl::android::content::Intent arg0, const QString &arg1);
 		static QAndroidJniObject getResultsFromIntent(__jni_impl::android::content::Intent arg0);
-		static void addResultsToIntent(jarray arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::Bundle arg2);
-		static void addDataResultToIntent(__jni_impl::android::app::RemoteInput arg0, __jni_impl::android::content::Intent arg1, __jni_impl::__JniBaseClass arg2);
-		static void setResultsSource(__jni_impl::android::content::Intent arg0, jint arg1);
 		static jint getResultsSource(__jni_impl::android::content::Intent arg0);
+		static void setResultsSource(__jni_impl::android::content::Intent arg0, jint arg1);
+		jint describeContents();
+		jboolean getAllowFreeFormInput();
+		QAndroidJniObject getAllowedDataTypes();
+		jarray getChoices();
+		jint getEditChoicesBeforeSending();
 		QAndroidJniObject getExtras();
+		jstring getLabel();
+		jstring getResultKey();
+		jboolean isDataOnly();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app
 
-#include "../os/Parcel.hpp"
 #include "../content/Intent.hpp"
 #include "../os/Bundle.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -133,69 +133,26 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
-	jstring RemoteInput::getLabel()
+	void RemoteInput::addDataResultToIntent(__jni_impl::android::app::RemoteInput arg0, __jni_impl::android::content::Intent arg1, __jni_impl::__JniBaseClass arg2)
 	{
-		return __thiz.callObjectMethod(
-			"getLabel",
-			"()Ljava/lang/CharSequence;"
-		).object<jstring>();
-	}
-	jint RemoteInput::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
-	}
-	void RemoteInput::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.app.RemoteInput",
+			"addDataResultToIntent",
+			"(Landroid/app/RemoteInput;Landroid/content/Intent;Ljava/util/Map;)V",
 			arg0.__jniObject().object(),
-			arg1
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
-	jstring RemoteInput::getResultKey()
+	void RemoteInput::addResultsToIntent(jarray arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::Bundle arg2)
 	{
-		return __thiz.callObjectMethod(
-			"getResultKey",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jarray RemoteInput::getChoices()
-	{
-		return __thiz.callObjectMethod(
-			"getChoices",
-			"()[Ljava/lang/CharSequence;"
-		).object<jarray>();
-	}
-	QAndroidJniObject RemoteInput::getAllowedDataTypes()
-	{
-		return __thiz.callObjectMethod(
-			"getAllowedDataTypes",
-			"()Ljava/util/Set;"
-		);
-	}
-	jboolean RemoteInput::isDataOnly()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isDataOnly",
-			"()Z"
-		);
-	}
-	jboolean RemoteInput::getAllowFreeFormInput()
-	{
-		return __thiz.callMethod<jboolean>(
-			"getAllowFreeFormInput",
-			"()Z"
-		);
-	}
-	jint RemoteInput::getEditChoicesBeforeSending()
-	{
-		return __thiz.callMethod<jint>(
-			"getEditChoicesBeforeSending",
-			"()I"
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.app.RemoteInput",
+			"addResultsToIntent",
+			"([Landroid/app/RemoteInput;Landroid/content/Intent;Landroid/os/Bundle;)V",
+			arg0,
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
 		);
 	}
 	QAndroidJniObject RemoteInput::getDataResultsFromIntent(__jni_impl::android::content::Intent arg0, jstring arg1)
@@ -227,26 +184,13 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object()
 		);
 	}
-	void RemoteInput::addResultsToIntent(jarray arg0, __jni_impl::android::content::Intent arg1, __jni_impl::android::os::Bundle arg2)
+	jint RemoteInput::getResultsSource(__jni_impl::android::content::Intent arg0)
 	{
-		QAndroidJniObject::callStaticMethod<void>(
+		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.app.RemoteInput",
-			"addResultsToIntent",
-			"([Landroid/app/RemoteInput;Landroid/content/Intent;Landroid/os/Bundle;)V",
-			arg0,
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void RemoteInput::addDataResultToIntent(__jni_impl::android::app::RemoteInput arg0, __jni_impl::android::content::Intent arg1, __jni_impl::__JniBaseClass arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.app.RemoteInput",
-			"addDataResultToIntent",
-			"(Landroid/app/RemoteInput;Landroid/content/Intent;Ljava/util/Map;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+			"getResultsSource",
+			"(Landroid/content/Intent;)I",
+			arg0.__jniObject().object()
 		);
 	}
 	void RemoteInput::setResultsSource(__jni_impl::android::content::Intent arg0, jint arg1)
@@ -259,13 +203,39 @@ namespace __jni_impl::android::app
 			arg1
 		);
 	}
-	jint RemoteInput::getResultsSource(__jni_impl::android::content::Intent arg0)
+	jint RemoteInput::describeContents()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.app.RemoteInput",
-			"getResultsSource",
-			"(Landroid/content/Intent;)I",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	jboolean RemoteInput::getAllowFreeFormInput()
+	{
+		return __thiz.callMethod<jboolean>(
+			"getAllowFreeFormInput",
+			"()Z"
+		);
+	}
+	QAndroidJniObject RemoteInput::getAllowedDataTypes()
+	{
+		return __thiz.callObjectMethod(
+			"getAllowedDataTypes",
+			"()Ljava/util/Set;"
+		);
+	}
+	jarray RemoteInput::getChoices()
+	{
+		return __thiz.callObjectMethod(
+			"getChoices",
+			"()[Ljava/lang/CharSequence;"
+		).object<jarray>();
+	}
+	jint RemoteInput::getEditChoicesBeforeSending()
+	{
+		return __thiz.callMethod<jint>(
+			"getEditChoicesBeforeSending",
+			"()I"
 		);
 	}
 	QAndroidJniObject RemoteInput::getExtras()
@@ -273,6 +243,36 @@ namespace __jni_impl::android::app
 		return __thiz.callObjectMethod(
 			"getExtras",
 			"()Landroid/os/Bundle;"
+		);
+	}
+	jstring RemoteInput::getLabel()
+	{
+		return __thiz.callObjectMethod(
+			"getLabel",
+			"()Ljava/lang/CharSequence;"
+		).object<jstring>();
+	}
+	jstring RemoteInput::getResultKey()
+	{
+		return __thiz.callObjectMethod(
+			"getResultKey",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jboolean RemoteInput::isDataOnly()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isDataOnly",
+			"()Z"
+		);
+	}
+	void RemoteInput::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::app

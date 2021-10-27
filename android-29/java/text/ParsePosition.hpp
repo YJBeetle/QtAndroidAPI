@@ -18,12 +18,12 @@ namespace __jni_impl::java::text
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint getIndex();
 		jint getErrorIndex();
+		jint getIndex();
+		jint hashCode();
 		void setErrorIndex(jint arg0);
 		void setIndex(jint arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::java::text
 
@@ -51,17 +51,10 @@ namespace __jni_impl::java::text
 			arg0
 		);
 	}
-	jstring ParsePosition::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint ParsePosition::hashCode()
+	jint ParsePosition::getErrorIndex()
 	{
 		return __thiz.callMethod<jint>(
-			"hashCode",
+			"getErrorIndex",
 			"()I"
 		);
 	}
@@ -72,10 +65,10 @@ namespace __jni_impl::java::text
 			"()I"
 		);
 	}
-	jint ParsePosition::getErrorIndex()
+	jint ParsePosition::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"getErrorIndex",
+			"hashCode",
 			"()I"
 		);
 	}
@@ -94,6 +87,13 @@ namespace __jni_impl::java::text
 			"(I)V",
 			arg0
 		);
+	}
+	jstring ParsePosition::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::text
 

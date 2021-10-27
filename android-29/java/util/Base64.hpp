@@ -25,13 +25,13 @@ namespace __jni_impl::java::util
 		void __constructor();
 		
 		// Methods
-		static QAndroidJniObject getMimeDecoder();
-		static QAndroidJniObject getEncoder();
-		static QAndroidJniObject getUrlEncoder();
-		static QAndroidJniObject getMimeEncoder(jint arg0, jbyteArray arg1);
-		static QAndroidJniObject getMimeEncoder();
 		static QAndroidJniObject getDecoder();
+		static QAndroidJniObject getEncoder();
+		static QAndroidJniObject getMimeDecoder();
+		static QAndroidJniObject getMimeEncoder();
+		static QAndroidJniObject getMimeEncoder(jint arg0, jbyteArray arg1);
 		static QAndroidJniObject getUrlDecoder();
+		static QAndroidJniObject getUrlEncoder();
 	};
 } // namespace __jni_impl::java::util
 
@@ -51,11 +51,11 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	QAndroidJniObject Base64::getMimeDecoder()
+	QAndroidJniObject Base64::getDecoder()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Base64",
-			"getMimeDecoder",
+			"getDecoder",
 			"()Ljava/util/Base64$Decoder;"
 		);
 	}
@@ -67,11 +67,19 @@ namespace __jni_impl::java::util
 			"()Ljava/util/Base64$Encoder;"
 		);
 	}
-	QAndroidJniObject Base64::getUrlEncoder()
+	QAndroidJniObject Base64::getMimeDecoder()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Base64",
-			"getUrlEncoder",
+			"getMimeDecoder",
+			"()Ljava/util/Base64$Decoder;"
+		);
+	}
+	QAndroidJniObject Base64::getMimeEncoder()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.Base64",
+			"getMimeEncoder",
 			"()Ljava/util/Base64$Encoder;"
 		);
 	}
@@ -85,28 +93,20 @@ namespace __jni_impl::java::util
 			arg1
 		);
 	}
-	QAndroidJniObject Base64::getMimeEncoder()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Base64",
-			"getMimeEncoder",
-			"()Ljava/util/Base64$Encoder;"
-		);
-	}
-	QAndroidJniObject Base64::getDecoder()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.util.Base64",
-			"getDecoder",
-			"()Ljava/util/Base64$Decoder;"
-		);
-	}
 	QAndroidJniObject Base64::getUrlDecoder()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.util.Base64",
 			"getUrlDecoder",
 			"()Ljava/util/Base64$Decoder;"
+		);
+	}
+	QAndroidJniObject Base64::getUrlEncoder()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.util.Base64",
+			"getUrlEncoder",
+			"()Ljava/util/Base64$Encoder;"
 		);
 	}
 } // namespace __jni_impl::java::util

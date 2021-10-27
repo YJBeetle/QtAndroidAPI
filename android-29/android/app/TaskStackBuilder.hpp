@@ -5,18 +5,6 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
-{
-	class Context;
-}
-namespace __jni_impl::android::content
-{
-	class Intent;
-}
-namespace __jni_impl::android::content
-{
-	class ComponentName;
-}
 namespace __jni_impl::android::app
 {
 	class Activity;
@@ -24,6 +12,18 @@ namespace __jni_impl::android::app
 namespace __jni_impl::android::app
 {
 	class PendingIntent;
+}
+namespace __jni_impl::android::content
+{
+	class ComponentName;
+}
+namespace __jni_impl::android::content
+{
+	class Context;
+}
+namespace __jni_impl::android::content
+{
+	class Intent;
 }
 namespace __jni_impl::android::os
 {
@@ -44,24 +44,24 @@ namespace __jni_impl::android::app
 		static QAndroidJniObject create(__jni_impl::android::content::Context arg0);
 		QAndroidJniObject addNextIntent(__jni_impl::android::content::Intent arg0);
 		QAndroidJniObject addNextIntentWithParentStack(__jni_impl::android::content::Intent arg0);
+		QAndroidJniObject addParentStack(__jni_impl::android::app::Activity arg0);
 		QAndroidJniObject addParentStack(__jni_impl::android::content::ComponentName arg0);
 		QAndroidJniObject addParentStack(jclass arg0);
-		QAndroidJniObject addParentStack(__jni_impl::android::app::Activity arg0);
-		jint getIntentCount();
 		QAndroidJniObject editIntentAt(jint arg0);
-		QAndroidJniObject getPendingIntent(jint arg0, jint arg1, __jni_impl::android::os::Bundle arg2);
-		QAndroidJniObject getPendingIntent(jint arg0, jint arg1);
+		jint getIntentCount();
 		jarray getIntents();
+		QAndroidJniObject getPendingIntent(jint arg0, jint arg1);
+		QAndroidJniObject getPendingIntent(jint arg0, jint arg1, __jni_impl::android::os::Bundle arg2);
 		void startActivities();
 		void startActivities(__jni_impl::android::os::Bundle arg0);
 	};
 } // namespace __jni_impl::android::app
 
-#include "../content/Context.hpp"
-#include "../content/Intent.hpp"
-#include "../content/ComponentName.hpp"
 #include "Activity.hpp"
 #include "PendingIntent.hpp"
+#include "../content/ComponentName.hpp"
+#include "../content/Context.hpp"
+#include "../content/Intent.hpp"
 #include "../os/Bundle.hpp"
 
 namespace __jni_impl::android::app
@@ -102,6 +102,14 @@ namespace __jni_impl::android::app
 			arg0.__jniObject().object()
 		);
 	}
+	QAndroidJniObject TaskStackBuilder::addParentStack(__jni_impl::android::app::Activity arg0)
+	{
+		return __thiz.callObjectMethod(
+			"addParentStack",
+			"(Landroid/app/Activity;)Landroid/app/TaskStackBuilder;",
+			arg0.__jniObject().object()
+		);
+	}
 	QAndroidJniObject TaskStackBuilder::addParentStack(__jni_impl::android::content::ComponentName arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -118,12 +126,12 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
-	QAndroidJniObject TaskStackBuilder::addParentStack(__jni_impl::android::app::Activity arg0)
+	QAndroidJniObject TaskStackBuilder::editIntentAt(jint arg0)
 	{
 		return __thiz.callObjectMethod(
-			"addParentStack",
-			"(Landroid/app/Activity;)Landroid/app/TaskStackBuilder;",
-			arg0.__jniObject().object()
+			"editIntentAt",
+			"(I)Landroid/content/Intent;",
+			arg0
 		);
 	}
 	jint TaskStackBuilder::getIntentCount()
@@ -133,12 +141,20 @@ namespace __jni_impl::android::app
 			"()I"
 		);
 	}
-	QAndroidJniObject TaskStackBuilder::editIntentAt(jint arg0)
+	jarray TaskStackBuilder::getIntents()
 	{
 		return __thiz.callObjectMethod(
-			"editIntentAt",
-			"(I)Landroid/content/Intent;",
-			arg0
+			"getIntents",
+			"()[Landroid/content/Intent;"
+		).object<jarray>();
+	}
+	QAndroidJniObject TaskStackBuilder::getPendingIntent(jint arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"getPendingIntent",
+			"(II)Landroid/app/PendingIntent;",
+			arg0,
+			arg1
 		);
 	}
 	QAndroidJniObject TaskStackBuilder::getPendingIntent(jint arg0, jint arg1, __jni_impl::android::os::Bundle arg2)
@@ -150,22 +166,6 @@ namespace __jni_impl::android::app
 			arg1,
 			arg2.__jniObject().object()
 		);
-	}
-	QAndroidJniObject TaskStackBuilder::getPendingIntent(jint arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"getPendingIntent",
-			"(II)Landroid/app/PendingIntent;",
-			arg0,
-			arg1
-		);
-	}
-	jarray TaskStackBuilder::getIntents()
-	{
-		return __thiz.callObjectMethod(
-			"getIntents",
-			"()[Landroid/content/Intent;"
-		).object<jarray>();
 	}
 	void TaskStackBuilder::startActivities()
 	{

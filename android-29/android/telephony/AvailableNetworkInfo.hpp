@@ -25,15 +25,15 @@ namespace __jni_impl::android::telephony
 		void __constructor(jint arg0, jint arg1, __jni_impl::__JniBaseClass arg2, __jni_impl::__JniBaseClass arg3);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint getPriority();
-		QAndroidJniObject getBands();
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getSubId();
+		jboolean equals(jobject arg0);
+		QAndroidJniObject getBands();
 		QAndroidJniObject getMccMncs();
+		jint getPriority();
+		jint getSubId();
+		jint hashCode();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -86,33 +86,19 @@ namespace __jni_impl::android::telephony
 	}
 	
 	// Methods
+	jint AvailableNetworkInfo::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean AvailableNetworkInfo::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
-		);
-	}
-	jstring AvailableNetworkInfo::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint AvailableNetworkInfo::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jint AvailableNetworkInfo::getPriority()
-	{
-		return __thiz.callMethod<jint>(
-			"getPriority",
-			"()I"
 		);
 	}
 	QAndroidJniObject AvailableNetworkInfo::getBands()
@@ -122,20 +108,18 @@ namespace __jni_impl::android::telephony
 			"()Ljava/util/List;"
 		);
 	}
-	jint AvailableNetworkInfo::describeContents()
+	QAndroidJniObject AvailableNetworkInfo::getMccMncs()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
+		return __thiz.callObjectMethod(
+			"getMccMncs",
+			"()Ljava/util/List;"
 		);
 	}
-	void AvailableNetworkInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	jint AvailableNetworkInfo::getPriority()
 	{
-		__thiz.callMethod<void>(
-			"writeToParcel",
-			"(Landroid/os/Parcel;I)V",
-			arg0.__jniObject().object(),
-			arg1
+		return __thiz.callMethod<jint>(
+			"getPriority",
+			"()I"
 		);
 	}
 	jint AvailableNetworkInfo::getSubId()
@@ -145,11 +129,27 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
-	QAndroidJniObject AvailableNetworkInfo::getMccMncs()
+	jint AvailableNetworkInfo::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring AvailableNetworkInfo::toString()
 	{
 		return __thiz.callObjectMethod(
-			"getMccMncs",
-			"()Ljava/util/List;"
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	void AvailableNetworkInfo::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
+	{
+		__thiz.callMethod<void>(
+			"writeToParcel",
+			"(Landroid/os/Parcel;I)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
 } // namespace __jni_impl::android::telephony

@@ -27,13 +27,13 @@ namespace __jni_impl::android::app::job
 		void __constructor(__jni_impl::android::content::Intent arg0, jlong arg1, jlong arg2);
 		
 		// Methods
-		jstring toString();
+		jint describeContents();
+		jint getDeliveryCount();
 		jlong getEstimatedNetworkDownloadBytes();
 		jlong getEstimatedNetworkUploadBytes();
-		jint getDeliveryCount();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getIntent();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::app::job
 
@@ -73,12 +73,19 @@ namespace __jni_impl::android::app::job
 	}
 	
 	// Methods
-	jstring JobWorkItem::toString()
+	jint JobWorkItem::describeContents()
 	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
+	jint JobWorkItem::getDeliveryCount()
+	{
+		return __thiz.callMethod<jint>(
+			"getDeliveryCount",
+			"()I"
+		);
 	}
 	jlong JobWorkItem::getEstimatedNetworkDownloadBytes()
 	{
@@ -94,19 +101,19 @@ namespace __jni_impl::android::app::job
 			"()J"
 		);
 	}
-	jint JobWorkItem::getDeliveryCount()
+	QAndroidJniObject JobWorkItem::getIntent()
 	{
-		return __thiz.callMethod<jint>(
-			"getDeliveryCount",
-			"()I"
+		return __thiz.callObjectMethod(
+			"getIntent",
+			"()Landroid/content/Intent;"
 		);
 	}
-	jint JobWorkItem::describeContents()
+	jstring JobWorkItem::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void JobWorkItem::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -115,13 +122,6 @@ namespace __jni_impl::android::app::job
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject JobWorkItem::getIntent()
-	{
-		return __thiz.callObjectMethod(
-			"getIntent",
-			"()Landroid/content/Intent;"
 		);
 	}
 } // namespace __jni_impl::android::app::job

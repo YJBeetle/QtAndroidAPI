@@ -511,18 +511,18 @@ namespace __jni_impl::android::system
 		static jboolean S_ISCHR(jint arg0);
 		static jboolean S_ISDIR(jint arg0);
 		static jboolean S_ISFIFO(jint arg0);
-		static jboolean S_ISREG(jint arg0);
 		static jboolean S_ISLNK(jint arg0);
+		static jboolean S_ISREG(jint arg0);
 		static jboolean S_ISSOCK(jint arg0);
-		static jint WEXITSTATUS(jint arg0);
 		static jboolean WCOREDUMP(jint arg0);
-		static jint WTERMSIG(jint arg0);
-		static jint WSTOPSIG(jint arg0);
+		static jint WEXITSTATUS(jint arg0);
 		static jboolean WIFEXITED(jint arg0);
-		static jboolean WIFSTOPPED(jint arg0);
 		static jboolean WIFSIGNALED(jint arg0);
-		static jstring gaiName(jint arg0);
+		static jboolean WIFSTOPPED(jint arg0);
+		static jint WSTOPSIG(jint arg0);
+		static jint WTERMSIG(jint arg0);
 		static jstring errnoName(jint arg0);
+		static jstring gaiName(jint arg0);
 	};
 } // namespace __jni_impl::android::system
 
@@ -4006,20 +4006,20 @@ namespace __jni_impl::android::system
 			arg0
 		);
 	}
-	jboolean OsConstants::S_ISREG(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.system.OsConstants",
-			"S_ISREG",
-			"(I)Z",
-			arg0
-		);
-	}
 	jboolean OsConstants::S_ISLNK(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.system.OsConstants",
 			"S_ISLNK",
+			"(I)Z",
+			arg0
+		);
+	}
+	jboolean OsConstants::S_ISREG(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.system.OsConstants",
+			"S_ISREG",
 			"(I)Z",
 			arg0
 		);
@@ -4033,15 +4033,6 @@ namespace __jni_impl::android::system
 			arg0
 		);
 	}
-	jint OsConstants::WEXITSTATUS(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.system.OsConstants",
-			"WEXITSTATUS",
-			"(I)I",
-			arg0
-		);
-	}
 	jboolean OsConstants::WCOREDUMP(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -4051,20 +4042,11 @@ namespace __jni_impl::android::system
 			arg0
 		);
 	}
-	jint OsConstants::WTERMSIG(jint arg0)
+	jint OsConstants::WEXITSTATUS(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.system.OsConstants",
-			"WTERMSIG",
-			"(I)I",
-			arg0
-		);
-	}
-	jint OsConstants::WSTOPSIG(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.system.OsConstants",
-			"WSTOPSIG",
+			"WEXITSTATUS",
 			"(I)I",
 			arg0
 		);
@@ -4078,15 +4060,6 @@ namespace __jni_impl::android::system
 			arg0
 		);
 	}
-	jboolean OsConstants::WIFSTOPPED(jint arg0)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.system.OsConstants",
-			"WIFSTOPPED",
-			"(I)Z",
-			arg0
-		);
-	}
 	jboolean OsConstants::WIFSIGNALED(jint arg0)
 	{
 		return QAndroidJniObject::callStaticMethod<jboolean>(
@@ -4096,20 +4069,47 @@ namespace __jni_impl::android::system
 			arg0
 		);
 	}
-	jstring OsConstants::gaiName(jint arg0)
+	jboolean OsConstants::WIFSTOPPED(jint arg0)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
+		return QAndroidJniObject::callStaticMethod<jboolean>(
 			"android.system.OsConstants",
-			"gaiName",
-			"(I)Ljava/lang/String;",
+			"WIFSTOPPED",
+			"(I)Z",
 			arg0
-		).object<jstring>();
+		);
+	}
+	jint OsConstants::WSTOPSIG(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.system.OsConstants",
+			"WSTOPSIG",
+			"(I)I",
+			arg0
+		);
+	}
+	jint OsConstants::WTERMSIG(jint arg0)
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.system.OsConstants",
+			"WTERMSIG",
+			"(I)I",
+			arg0
+		);
 	}
 	jstring OsConstants::errnoName(jint arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"android.system.OsConstants",
 			"errnoName",
+			"(I)Ljava/lang/String;",
+			arg0
+		).object<jstring>();
+	}
+	jstring OsConstants::gaiName(jint arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.system.OsConstants",
+			"gaiName",
 			"(I)Ljava/lang/String;",
 			arg0
 		).object<jstring>();

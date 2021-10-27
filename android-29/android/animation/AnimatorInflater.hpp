@@ -9,13 +9,13 @@ namespace __jni_impl::android::animation
 {
 	class Animator;
 }
-namespace __jni_impl::android::content
-{
-	class Context;
-}
 namespace __jni_impl::android::animation
 {
 	class StateListAnimator;
+}
+namespace __jni_impl::android::content
+{
+	class Context;
 }
 
 namespace __jni_impl::android::animation
@@ -35,8 +35,8 @@ namespace __jni_impl::android::animation
 } // namespace __jni_impl::android::animation
 
 #include "Animator.hpp"
-#include "../content/Context.hpp"
 #include "StateListAnimator.hpp"
+#include "../content/Context.hpp"
 
 namespace __jni_impl::android::animation
 {

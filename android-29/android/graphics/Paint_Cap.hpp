@@ -21,9 +21,9 @@ namespace __jni_impl::android::graphics
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::graphics
 
@@ -65,14 +65,6 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	jarray Paint_Cap::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.graphics.Paint$Cap",
-			"values",
-			"()[Landroid/graphics/Paint$Cap;"
-		).object<jarray>();
-	}
 	QAndroidJniObject Paint_Cap::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::android::graphics
 			"(Ljava/lang/String;)Landroid/graphics/Paint$Cap;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray Paint_Cap::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.graphics.Paint$Cap",
+			"values",
+			"()[Landroid/graphics/Paint$Cap;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::graphics
 

@@ -5,21 +5,21 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::security
-{
-	class CodeSource;
-}
 namespace __jni_impl::java::lang
 {
 	class ClassLoader;
 }
 namespace __jni_impl::java::security
 {
-	class PermissionCollection;
+	class CodeSource;
 }
 namespace __jni_impl::java::security
 {
 	class Permission;
+}
+namespace __jni_impl::java::security
+{
+	class PermissionCollection;
 }
 
 namespace __jni_impl::java::security
@@ -34,20 +34,20 @@ namespace __jni_impl::java::security
 		void __constructor(__jni_impl::java::security::CodeSource arg0, __jni_impl::java::security::PermissionCollection arg1, __jni_impl::java::lang::ClassLoader arg2, jarray arg3);
 		
 		// Methods
-		jstring toString();
 		QAndroidJniObject getClassLoader();
 		QAndroidJniObject getCodeSource();
-		jboolean implies(__jni_impl::java::security::Permission arg0);
 		QAndroidJniObject getPermissions();
 		jarray getPrincipals();
+		jboolean implies(__jni_impl::java::security::Permission arg0);
 		jboolean staticPermissionsOnly();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::security
 
-#include "CodeSource.hpp"
 #include "../lang/ClassLoader.hpp"
-#include "PermissionCollection.hpp"
+#include "CodeSource.hpp"
 #include "Permission.hpp"
+#include "PermissionCollection.hpp"
 
 namespace __jni_impl::java::security
 {
@@ -76,13 +76,6 @@ namespace __jni_impl::java::security
 	}
 	
 	// Methods
-	jstring ProtectionDomain::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject ProtectionDomain::getClassLoader()
 	{
 		return __thiz.callObjectMethod(
@@ -95,14 +88,6 @@ namespace __jni_impl::java::security
 		return __thiz.callObjectMethod(
 			"getCodeSource",
 			"()Ljava/security/CodeSource;"
-		);
-	}
-	jboolean ProtectionDomain::implies(__jni_impl::java::security::Permission arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"implies",
-			"(Ljava/security/Permission;)Z",
-			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject ProtectionDomain::getPermissions()
@@ -119,12 +104,27 @@ namespace __jni_impl::java::security
 			"()[Ljava/security/Principal;"
 		).object<jarray>();
 	}
+	jboolean ProtectionDomain::implies(__jni_impl::java::security::Permission arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"implies",
+			"(Ljava/security/Permission;)Z",
+			arg0.__jniObject().object()
+		);
+	}
 	jboolean ProtectionDomain::staticPermissionsOnly()
 	{
 		return __thiz.callMethod<jboolean>(
 			"staticPermissionsOnly",
 			"()Z"
 		);
+	}
+	jstring ProtectionDomain::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::security
 

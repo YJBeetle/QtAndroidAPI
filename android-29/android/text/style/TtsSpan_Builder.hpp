@@ -23,12 +23,12 @@ namespace __jni_impl::android::text::style
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setStringArgument(jstring arg0, jstring arg1);
-		QAndroidJniObject setStringArgument(const QString &arg0, const QString &arg1);
 		QAndroidJniObject setIntArgument(jstring arg0, jint arg1);
 		QAndroidJniObject setIntArgument(const QString &arg0, jint arg1);
 		QAndroidJniObject setLongArgument(jstring arg0, jlong arg1);
 		QAndroidJniObject setLongArgument(const QString &arg0, jlong arg1);
+		QAndroidJniObject setStringArgument(jstring arg0, jstring arg1);
+		QAndroidJniObject setStringArgument(const QString &arg0, const QString &arg1);
 	};
 } // namespace __jni_impl::android::text::style
 
@@ -62,24 +62,6 @@ namespace __jni_impl::android::text::style
 		return __thiz.callObjectMethod(
 			"build",
 			"()Landroid/text/style/TtsSpan;"
-		);
-	}
-	QAndroidJniObject TtsSpan_Builder::setStringArgument(jstring arg0, jstring arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setStringArgument",
-			"(Ljava/lang/String;Ljava/lang/String;)Landroid/text/style/TtsSpan$Builder;",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject TtsSpan_Builder::setStringArgument(const QString &arg0, const QString &arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setStringArgument",
-			"(Ljava/lang/String;Ljava/lang/String;)Landroid/text/style/TtsSpan$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	QAndroidJniObject TtsSpan_Builder::setIntArgument(jstring arg0, jint arg1)
@@ -116,6 +98,24 @@ namespace __jni_impl::android::text::style
 			"(Ljava/lang/String;J)Landroid/text/style/TtsSpan$Builder;",
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1
+		);
+	}
+	QAndroidJniObject TtsSpan_Builder::setStringArgument(jstring arg0, jstring arg1)
+	{
+		return __thiz.callObjectMethod(
+			"setStringArgument",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/text/style/TtsSpan$Builder;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject TtsSpan_Builder::setStringArgument(const QString &arg0, const QString &arg1)
+	{
+		return __thiz.callObjectMethod(
+			"setStringArgument",
+			"(Ljava/lang/String;Ljava/lang/String;)Landroid/text/style/TtsSpan$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 } // namespace __jni_impl::android::text::style

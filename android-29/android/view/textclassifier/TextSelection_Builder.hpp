@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view::textclassifier
-{
-	class TextSelection;
-}
 namespace __jni_impl::android::os
 {
 	class Bundle;
+}
+namespace __jni_impl::android::view::textclassifier
+{
+	class TextSelection;
 }
 
 namespace __jni_impl::android::view::textclassifier
@@ -26,16 +26,16 @@ namespace __jni_impl::android::view::textclassifier
 		
 		// Methods
 		QAndroidJniObject build();
+		QAndroidJniObject setEntityType(jstring arg0, jfloat arg1);
+		QAndroidJniObject setEntityType(const QString &arg0, jfloat arg1);
 		QAndroidJniObject setExtras(__jni_impl::android::os::Bundle arg0);
 		QAndroidJniObject setId(jstring arg0);
 		QAndroidJniObject setId(const QString &arg0);
-		QAndroidJniObject setEntityType(jstring arg0, jfloat arg1);
-		QAndroidJniObject setEntityType(const QString &arg0, jfloat arg1);
 	};
 } // namespace __jni_impl::android::view::textclassifier
 
-#include "TextSelection.hpp"
 #include "../../os/Bundle.hpp"
+#include "TextSelection.hpp"
 
 namespace __jni_impl::android::view::textclassifier
 {
@@ -60,6 +60,24 @@ namespace __jni_impl::android::view::textclassifier
 			"()Landroid/view/textclassifier/TextSelection;"
 		);
 	}
+	QAndroidJniObject TextSelection_Builder::setEntityType(jstring arg0, jfloat arg1)
+	{
+		return __thiz.callObjectMethod(
+			"setEntityType",
+			"(Ljava/lang/String;F)Landroid/view/textclassifier/TextSelection$Builder;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject TextSelection_Builder::setEntityType(const QString &arg0, jfloat arg1)
+	{
+		return __thiz.callObjectMethod(
+			"setEntityType",
+			"(Ljava/lang/String;F)Landroid/view/textclassifier/TextSelection$Builder;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
+		);
+	}
 	QAndroidJniObject TextSelection_Builder::setExtras(__jni_impl::android::os::Bundle arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -82,24 +100,6 @@ namespace __jni_impl::android::view::textclassifier
 			"setId",
 			"(Ljava/lang/String;)Landroid/view/textclassifier/TextSelection$Builder;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject TextSelection_Builder::setEntityType(jstring arg0, jfloat arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setEntityType",
-			"(Ljava/lang/String;F)Landroid/view/textclassifier/TextSelection$Builder;",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject TextSelection_Builder::setEntityType(const QString &arg0, jfloat arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setEntityType",
-			"(Ljava/lang/String;F)Landroid/view/textclassifier/TextSelection$Builder;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
 		);
 	}
 } // namespace __jni_impl::android::view::textclassifier

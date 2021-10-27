@@ -7,11 +7,11 @@
 
 namespace __jni_impl::java::nio
 {
-	class IntBuffer;
+	class ByteBuffer;
 }
 namespace __jni_impl::java::nio
 {
-	class ByteBuffer;
+	class IntBuffer;
 }
 
 namespace __jni_impl::android::opengl
@@ -226,62 +226,62 @@ namespace __jni_impl::android::opengl
 		
 		// Methods
 		static void glBlendBarrierKHR();
+		static void glBlendEquationSeparateiEXT(jint arg0, jint arg1, jint arg2);
+		static void glBlendEquationiEXT(jint arg0, jint arg1);
+		static void glBlendFuncSeparateiEXT(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		static void glBlendFunciEXT(jint arg0, jint arg1, jint arg2);
+		static void glColorMaskiEXT(jint arg0, jboolean arg1, jboolean arg2, jboolean arg3, jboolean arg4);
+		static void glCopyImageSubDataEXT(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12, jint arg13, jint arg14);
+		static void glDebugMessageCallbackKHR(__jni_impl::__JniBaseClass arg0);
 		static void glDebugMessageControlKHR(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::java::nio::IntBuffer arg4, jboolean arg5);
 		static void glDebugMessageControlKHR(jint arg0, jint arg1, jint arg2, jint arg3, jintArray arg4, jint arg5, jboolean arg6);
 		static void glDebugMessageInsertKHR(jint arg0, jint arg1, jint arg2, jint arg3, jstring arg4);
 		static void glDebugMessageInsertKHR(jint arg0, jint arg1, jint arg2, jint arg3, const QString &arg4);
-		static void glDebugMessageCallbackKHR(__jni_impl::__JniBaseClass arg0);
+		static void glDisableiEXT(jint arg0, jint arg1);
+		static void glEnableiEXT(jint arg0, jint arg1);
+		static void glFramebufferTextureEXT(jint arg0, jint arg1, jint arg2, jint arg3);
+		static QAndroidJniObject glGetDebugMessageCallbackKHR();
 		static jarray glGetDebugMessageLogKHR(jint arg0, __jni_impl::java::nio::IntBuffer arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::IntBuffer arg4);
 		static jarray glGetDebugMessageLogKHR(jint arg0, jintArray arg1, jint arg2, jintArray arg3, jint arg4, jintArray arg5, jint arg6, jintArray arg7, jint arg8);
 		static jint glGetDebugMessageLogKHR(jint arg0, __jni_impl::java::nio::IntBuffer arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::IntBuffer arg4, __jni_impl::java::nio::IntBuffer arg5, __jni_impl::java::nio::ByteBuffer arg6);
 		static jint glGetDebugMessageLogKHR(jint arg0, jint arg1, jintArray arg2, jint arg3, jintArray arg4, jint arg5, jintArray arg6, jint arg7, jintArray arg8, jint arg9, jintArray arg10, jint arg11, jbyteArray arg12, jint arg13);
-		static void glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, jstring arg3);
-		static void glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, const QString &arg3);
-		static void glPopDebugGroupKHR();
-		static void glObjectLabelKHR(jint arg0, jint arg1, jint arg2, jstring arg3);
-		static void glObjectLabelKHR(jint arg0, jint arg1, jint arg2, const QString &arg3);
 		static jstring glGetObjectLabelKHR(jint arg0, jint arg1);
-		static void glObjectPtrLabelKHR(jlong arg0, jstring arg1);
-		static void glObjectPtrLabelKHR(jlong arg0, const QString &arg1);
 		static jstring glGetObjectPtrLabelKHR(jlong arg0);
-		static QAndroidJniObject glGetDebugMessageCallbackKHR();
-		static void glMinSampleShadingOES(jfloat arg0);
-		static void glTexStorage3DMultisampleOES(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jboolean arg6);
-		static void glCopyImageSubDataEXT(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12, jint arg13, jint arg14);
-		static void glEnableiEXT(jint arg0, jint arg1);
-		static void glDisableiEXT(jint arg0, jint arg1);
-		static void glBlendEquationiEXT(jint arg0, jint arg1);
-		static void glBlendEquationSeparateiEXT(jint arg0, jint arg1, jint arg2);
-		static void glBlendFunciEXT(jint arg0, jint arg1, jint arg2);
-		static void glBlendFuncSeparateiEXT(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
-		static void glColorMaskiEXT(jint arg0, jboolean arg1, jboolean arg2, jboolean arg3, jboolean arg4);
-		static jboolean glIsEnablediEXT(jint arg0, jint arg1);
-		static void glFramebufferTextureEXT(jint arg0, jint arg1, jint arg2, jint arg3);
-		static void glPrimitiveBoundingBoxEXT(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7);
-		static void glPatchParameteriEXT(jint arg0, jint arg1);
-		static void glTexParameterIivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glTexParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glTexParameterIuivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glTexParameterIuivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glGetTexParameterIivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glGetTexParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glGetTexParameterIuivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glGetTexParameterIuivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glSamplerParameterIivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glSamplerParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
-		static void glSamplerParameterIuivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
-		static void glSamplerParameterIuivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glGetSamplerParameterIivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetSamplerParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glGetSamplerParameterIuivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
 		static void glGetSamplerParameterIuivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetTexParameterIivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glGetTexParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glGetTexParameterIuivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glGetTexParameterIuivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static jboolean glIsEnablediEXT(jint arg0, jint arg1);
+		static void glMinSampleShadingOES(jfloat arg0);
+		static void glObjectLabelKHR(jint arg0, jint arg1, jint arg2, jstring arg3);
+		static void glObjectLabelKHR(jint arg0, jint arg1, jint arg2, const QString &arg3);
+		static void glObjectPtrLabelKHR(jlong arg0, jstring arg1);
+		static void glObjectPtrLabelKHR(jlong arg0, const QString &arg1);
+		static void glPatchParameteriEXT(jint arg0, jint arg1);
+		static void glPopDebugGroupKHR();
+		static void glPrimitiveBoundingBoxEXT(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7);
+		static void glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, jstring arg3);
+		static void glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, const QString &arg3);
+		static void glSamplerParameterIivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glSamplerParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glSamplerParameterIuivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glSamplerParameterIuivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
 		static void glTexBufferEXT(jint arg0, jint arg1, jint arg2);
 		static void glTexBufferRangeEXT(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4);
+		static void glTexParameterIivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glTexParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glTexParameterIuivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2);
+		static void glTexParameterIuivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3);
+		static void glTexStorage3DMultisampleOES(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jboolean arg6);
 	};
 } // namespace __jni_impl::android::opengl
 
-#include "../../java/nio/IntBuffer.hpp"
 #include "../../java/nio/ByteBuffer.hpp"
+#include "../../java/nio/IntBuffer.hpp"
 
 namespace __jni_impl::android::opengl
 {
@@ -1704,6 +1704,96 @@ namespace __jni_impl::android::opengl
 			"()V"
 		);
 	}
+	void GLES31Ext::glBlendEquationSeparateiEXT(jint arg0, jint arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glBlendEquationSeparateiEXT",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES31Ext::glBlendEquationiEXT(jint arg0, jint arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glBlendEquationiEXT",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void GLES31Ext::glBlendFuncSeparateiEXT(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glBlendFuncSeparateiEXT",
+			"(IIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	void GLES31Ext::glBlendFunciEXT(jint arg0, jint arg1, jint arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glBlendFunciEXT",
+			"(III)V",
+			arg0,
+			arg1,
+			arg2
+		);
+	}
+	void GLES31Ext::glColorMaskiEXT(jint arg0, jboolean arg1, jboolean arg2, jboolean arg3, jboolean arg4)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glColorMaskiEXT",
+			"(IZZZZ)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4
+		);
+	}
+	void GLES31Ext::glCopyImageSubDataEXT(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12, jint arg13, jint arg14)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glCopyImageSubDataEXT",
+			"(IIIIIIIIIIIIIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7,
+			arg8,
+			arg9,
+			arg10,
+			arg11,
+			arg12,
+			arg13,
+			arg14
+		);
+	}
+	void GLES31Ext::glDebugMessageCallbackKHR(__jni_impl::__JniBaseClass arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glDebugMessageCallbackKHR",
+			"(Landroid/opengl/GLES31Ext$DebugProcKHR;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void GLES31Ext::glDebugMessageControlKHR(jint arg0, jint arg1, jint arg2, jint arg3, __jni_impl::java::nio::IntBuffer arg4, jboolean arg5)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -1759,13 +1849,44 @@ namespace __jni_impl::android::opengl
 			QAndroidJniObject::fromString(arg4).object<jstring>()
 		);
 	}
-	void GLES31Ext::glDebugMessageCallbackKHR(__jni_impl::__JniBaseClass arg0)
+	void GLES31Ext::glDisableiEXT(jint arg0, jint arg1)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES31Ext",
-			"glDebugMessageCallbackKHR",
-			"(Landroid/opengl/GLES31Ext$DebugProcKHR;)V",
-			arg0.__jniObject().object()
+			"glDisableiEXT",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void GLES31Ext::glEnableiEXT(jint arg0, jint arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glEnableiEXT",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void GLES31Ext::glFramebufferTextureEXT(jint arg0, jint arg1, jint arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glFramebufferTextureEXT",
+			"(IIII)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	QAndroidJniObject GLES31Ext::glGetDebugMessageCallbackKHR()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.opengl.GLES31Ext",
+			"glGetDebugMessageCallbackKHR",
+			"()Landroid/opengl/GLES31Ext$DebugProcKHR;"
 		);
 	}
 	jarray GLES31Ext::glGetDebugMessageLogKHR(jint arg0, __jni_impl::java::nio::IntBuffer arg1, __jni_impl::java::nio::IntBuffer arg2, __jni_impl::java::nio::IntBuffer arg3, __jni_impl::java::nio::IntBuffer arg4)
@@ -1835,62 +1956,6 @@ namespace __jni_impl::android::opengl
 			arg13
 		);
 	}
-	void GLES31Ext::glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, jstring arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glPushDebugGroupKHR",
-			"(IIILjava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES31Ext::glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, const QString &arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glPushDebugGroupKHR",
-			"(IIILjava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>()
-		);
-	}
-	void GLES31Ext::glPopDebugGroupKHR()
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glPopDebugGroupKHR",
-			"()V"
-		);
-	}
-	void GLES31Ext::glObjectLabelKHR(jint arg0, jint arg1, jint arg2, jstring arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glObjectLabelKHR",
-			"(IIILjava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES31Ext::glObjectLabelKHR(jint arg0, jint arg1, jint arg2, const QString &arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glObjectLabelKHR",
-			"(IIILjava/lang/String;)V",
-			arg0,
-			arg1,
-			arg2,
-			QAndroidJniObject::fromString(arg3).object<jstring>()
-		);
-	}
 	jstring GLES31Ext::glGetObjectLabelKHR(jint arg0, jint arg1)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -1901,26 +1966,6 @@ namespace __jni_impl::android::opengl
 			arg1
 		).object<jstring>();
 	}
-	void GLES31Ext::glObjectPtrLabelKHR(jlong arg0, jstring arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glObjectPtrLabelKHR",
-			"(JLjava/lang/String;)V",
-			arg0,
-			arg1
-		);
-	}
-	void GLES31Ext::glObjectPtrLabelKHR(jlong arg0, const QString &arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glObjectPtrLabelKHR",
-			"(JLjava/lang/String;)V",
-			arg0,
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
 	jstring GLES31Ext::glGetObjectPtrLabelKHR(jlong arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -1930,203 +1975,22 @@ namespace __jni_impl::android::opengl
 			arg0
 		).object<jstring>();
 	}
-	QAndroidJniObject GLES31Ext::glGetDebugMessageCallbackKHR()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.opengl.GLES31Ext",
-			"glGetDebugMessageCallbackKHR",
-			"()Landroid/opengl/GLES31Ext$DebugProcKHR;"
-		);
-	}
-	void GLES31Ext::glMinSampleShadingOES(jfloat arg0)
+	void GLES31Ext::glGetSamplerParameterIivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES31Ext",
-			"glMinSampleShadingOES",
-			"(F)V",
-			arg0
-		);
-	}
-	void GLES31Ext::glTexStorage3DMultisampleOES(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jboolean arg6)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glTexStorage3DMultisampleOES",
-			"(IIIIIIZ)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6
-		);
-	}
-	void GLES31Ext::glCopyImageSubDataEXT(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jint arg6, jint arg7, jint arg8, jint arg9, jint arg10, jint arg11, jint arg12, jint arg13, jint arg14)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glCopyImageSubDataEXT",
-			"(IIIIIIIIIIIIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7,
-			arg8,
-			arg9,
-			arg10,
-			arg11,
-			arg12,
-			arg13,
-			arg14
-		);
-	}
-	void GLES31Ext::glEnableiEXT(jint arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glEnableiEXT",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void GLES31Ext::glDisableiEXT(jint arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glDisableiEXT",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void GLES31Ext::glBlendEquationiEXT(jint arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glBlendEquationiEXT",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void GLES31Ext::glBlendEquationSeparateiEXT(jint arg0, jint arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glBlendEquationSeparateiEXT",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES31Ext::glBlendFunciEXT(jint arg0, jint arg1, jint arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glBlendFunciEXT",
-			"(III)V",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	void GLES31Ext::glBlendFuncSeparateiEXT(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glBlendFuncSeparateiEXT",
-			"(IIIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	void GLES31Ext::glColorMaskiEXT(jint arg0, jboolean arg1, jboolean arg2, jboolean arg3, jboolean arg4)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glColorMaskiEXT",
-			"(IZZZZ)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4
-		);
-	}
-	jboolean GLES31Ext::glIsEnablediEXT(jint arg0, jint arg1)
-	{
-		return QAndroidJniObject::callStaticMethod<jboolean>(
-			"android.opengl.GLES31Ext",
-			"glIsEnablediEXT",
-			"(II)Z",
-			arg0,
-			arg1
-		);
-	}
-	void GLES31Ext::glFramebufferTextureEXT(jint arg0, jint arg1, jint arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glFramebufferTextureEXT",
-			"(IIII)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES31Ext::glPrimitiveBoundingBoxEXT(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glPrimitiveBoundingBoxEXT",
-			"(FFFFFFFF)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5,
-			arg6,
-			arg7
-		);
-	}
-	void GLES31Ext::glPatchParameteriEXT(jint arg0, jint arg1)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glPatchParameteriEXT",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
-	void GLES31Ext::glTexParameterIivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glTexParameterIivEXT",
+			"glGetSamplerParameterIivEXT",
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
 			arg2.__jniObject().object()
 		);
 	}
-	void GLES31Ext::glTexParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES31Ext::glGetSamplerParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES31Ext",
-			"glTexParameterIivEXT",
+			"glGetSamplerParameterIivEXT",
 			"(II[II)V",
 			arg0,
 			arg1,
@@ -2134,22 +1998,22 @@ namespace __jni_impl::android::opengl
 			arg3
 		);
 	}
-	void GLES31Ext::glTexParameterIuivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	void GLES31Ext::glGetSamplerParameterIuivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES31Ext",
-			"glTexParameterIuivEXT",
+			"glGetSamplerParameterIuivEXT",
 			"(IILjava/nio/IntBuffer;)V",
 			arg0,
 			arg1,
 			arg2.__jniObject().object()
 		);
 	}
-	void GLES31Ext::glTexParameterIuivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	void GLES31Ext::glGetSamplerParameterIuivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
 			"android.opengl.GLES31Ext",
-			"glTexParameterIuivEXT",
+			"glGetSamplerParameterIuivEXT",
 			"(II[II)V",
 			arg0,
 			arg1,
@@ -2203,6 +2067,127 @@ namespace __jni_impl::android::opengl
 			arg3
 		);
 	}
+	jboolean GLES31Ext::glIsEnablediEXT(jint arg0, jint arg1)
+	{
+		return QAndroidJniObject::callStaticMethod<jboolean>(
+			"android.opengl.GLES31Ext",
+			"glIsEnablediEXT",
+			"(II)Z",
+			arg0,
+			arg1
+		);
+	}
+	void GLES31Ext::glMinSampleShadingOES(jfloat arg0)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glMinSampleShadingOES",
+			"(F)V",
+			arg0
+		);
+	}
+	void GLES31Ext::glObjectLabelKHR(jint arg0, jint arg1, jint arg2, jstring arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glObjectLabelKHR",
+			"(IIILjava/lang/String;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES31Ext::glObjectLabelKHR(jint arg0, jint arg1, jint arg2, const QString &arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glObjectLabelKHR",
+			"(IIILjava/lang/String;)V",
+			arg0,
+			arg1,
+			arg2,
+			QAndroidJniObject::fromString(arg3).object<jstring>()
+		);
+	}
+	void GLES31Ext::glObjectPtrLabelKHR(jlong arg0, jstring arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glObjectPtrLabelKHR",
+			"(JLjava/lang/String;)V",
+			arg0,
+			arg1
+		);
+	}
+	void GLES31Ext::glObjectPtrLabelKHR(jlong arg0, const QString &arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glObjectPtrLabelKHR",
+			"(JLjava/lang/String;)V",
+			arg0,
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	void GLES31Ext::glPatchParameteriEXT(jint arg0, jint arg1)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glPatchParameteriEXT",
+			"(II)V",
+			arg0,
+			arg1
+		);
+	}
+	void GLES31Ext::glPopDebugGroupKHR()
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glPopDebugGroupKHR",
+			"()V"
+		);
+	}
+	void GLES31Ext::glPrimitiveBoundingBoxEXT(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3, jfloat arg4, jfloat arg5, jfloat arg6, jfloat arg7)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glPrimitiveBoundingBoxEXT",
+			"(FFFFFFFF)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6,
+			arg7
+		);
+	}
+	void GLES31Ext::glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, jstring arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glPushDebugGroupKHR",
+			"(IIILjava/lang/String;)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES31Ext::glPushDebugGroupKHR(jint arg0, jint arg1, jint arg2, const QString &arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glPushDebugGroupKHR",
+			"(IIILjava/lang/String;)V",
+			arg0,
+			arg1,
+			arg2,
+			QAndroidJniObject::fromString(arg3).object<jstring>()
+		);
+	}
 	void GLES31Ext::glSamplerParameterIivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -2249,52 +2234,6 @@ namespace __jni_impl::android::opengl
 			arg3
 		);
 	}
-	void GLES31Ext::glGetSamplerParameterIivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glGetSamplerParameterIivEXT",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void GLES31Ext::glGetSamplerParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glGetSamplerParameterIivEXT",
-			"(II[II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
-	void GLES31Ext::glGetSamplerParameterIuivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glGetSamplerParameterIuivEXT",
-			"(IILjava/nio/IntBuffer;)V",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	void GLES31Ext::glGetSamplerParameterIuivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3)
-	{
-		QAndroidJniObject::callStaticMethod<void>(
-			"android.opengl.GLES31Ext",
-			"glGetSamplerParameterIuivEXT",
-			"(II[II)V",
-			arg0,
-			arg1,
-			arg2,
-			arg3
-		);
-	}
 	void GLES31Ext::glTexBufferEXT(jint arg0, jint arg1, jint arg2)
 	{
 		QAndroidJniObject::callStaticMethod<void>(
@@ -2317,6 +2256,67 @@ namespace __jni_impl::android::opengl
 			arg2,
 			arg3,
 			arg4
+		);
+	}
+	void GLES31Ext::glTexParameterIivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glTexParameterIivEXT",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES31Ext::glTexParameterIivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glTexParameterIivEXT",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES31Ext::glTexParameterIuivEXT(jint arg0, jint arg1, __jni_impl::java::nio::IntBuffer arg2)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glTexParameterIuivEXT",
+			"(IILjava/nio/IntBuffer;)V",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void GLES31Ext::glTexParameterIuivEXT(jint arg0, jint arg1, jintArray arg2, jint arg3)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glTexParameterIuivEXT",
+			"(II[II)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3
+		);
+	}
+	void GLES31Ext::glTexStorage3DMultisampleOES(jint arg0, jint arg1, jint arg2, jint arg3, jint arg4, jint arg5, jboolean arg6)
+	{
+		QAndroidJniObject::callStaticMethod<void>(
+			"android.opengl.GLES31Ext",
+			"glTexStorage3DMultisampleOES",
+			"(IIIIIIZ)V",
+			arg0,
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5,
+			arg6
 		);
 	}
 } // namespace __jni_impl::android::opengl

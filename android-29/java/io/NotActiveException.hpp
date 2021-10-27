@@ -17,9 +17,9 @@ namespace __jni_impl::java::io
 		// Fields
 		
 		// Constructors
+		void __constructor();
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor();
 		
 		// Methods
 	};
@@ -31,6 +31,13 @@ namespace __jni_impl::java::io
 	// Fields
 	
 	// Constructors
+	void NotActiveException::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.io.NotActiveException",
+			"()V"
+		);
+	}
 	void NotActiveException::__constructor(jstring arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -47,13 +54,6 @@ namespace __jni_impl::java::io
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void NotActiveException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.io.NotActiveException",
-			"()V"
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::java::io
@@ -64,14 +64,14 @@ namespace java::io
 	{
 	public:
 		NotActiveException(QAndroidJniObject obj) { __thiz = obj; }
+		NotActiveException()
+		{
+			__constructor();
+		}
 		NotActiveException(jstring arg0)
 		{
 			__constructor(
 				arg0);
-		}
-		NotActiveException()
-		{
-			__constructor();
 		}
 	};
 } // namespace java::io

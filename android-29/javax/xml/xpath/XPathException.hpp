@@ -8,7 +8,11 @@
 
 namespace __jni_impl::java::io
 {
-	class PrintWriter;
+	class ObjectInputStream;
+}
+namespace __jni_impl::java::io
+{
+	class ObjectOutputStream;
 }
 namespace __jni_impl::java::io
 {
@@ -16,11 +20,7 @@ namespace __jni_impl::java::io
 }
 namespace __jni_impl::java::io
 {
-	class ObjectInputStream;
-}
-namespace __jni_impl::java::io
-{
-	class ObjectOutputStream;
+	class PrintWriter;
 }
 
 namespace __jni_impl::javax::xml::xpath
@@ -36,17 +36,17 @@ namespace __jni_impl::javax::xml::xpath
 		void __constructor(jthrowable arg0);
 		
 		// Methods
-		void printStackTrace(__jni_impl::java::io::PrintWriter arg0);
-		void printStackTrace(__jni_impl::java::io::PrintStream arg0);
-		void printStackTrace();
 		jthrowable getCause();
+		void printStackTrace();
+		void printStackTrace(__jni_impl::java::io::PrintStream arg0);
+		void printStackTrace(__jni_impl::java::io::PrintWriter arg0);
 	};
 } // namespace __jni_impl::javax::xml::xpath
 
-#include "../../../java/io/PrintWriter.hpp"
-#include "../../../java/io/PrintStream.hpp"
 #include "../../../java/io/ObjectInputStream.hpp"
 #include "../../../java/io/ObjectOutputStream.hpp"
+#include "../../../java/io/PrintStream.hpp"
+#include "../../../java/io/PrintWriter.hpp"
 
 namespace __jni_impl::javax::xml::xpath
 {
@@ -79,12 +79,18 @@ namespace __jni_impl::javax::xml::xpath
 	}
 	
 	// Methods
-	void XPathException::printStackTrace(__jni_impl::java::io::PrintWriter arg0)
+	jthrowable XPathException::getCause()
+	{
+		return __thiz.callObjectMethod(
+			"getCause",
+			"()Ljava/lang/Throwable;"
+		).object<jthrowable>();
+	}
+	void XPathException::printStackTrace()
 	{
 		__thiz.callMethod<void>(
 			"printStackTrace",
-			"(Ljava/io/PrintWriter;)V",
-			arg0.__jniObject().object()
+			"()V"
 		);
 	}
 	void XPathException::printStackTrace(__jni_impl::java::io::PrintStream arg0)
@@ -95,19 +101,13 @@ namespace __jni_impl::javax::xml::xpath
 			arg0.__jniObject().object()
 		);
 	}
-	void XPathException::printStackTrace()
+	void XPathException::printStackTrace(__jni_impl::java::io::PrintWriter arg0)
 	{
 		__thiz.callMethod<void>(
 			"printStackTrace",
-			"()V"
+			"(Ljava/io/PrintWriter;)V",
+			arg0.__jniObject().object()
 		);
-	}
-	jthrowable XPathException::getCause()
-	{
-		return __thiz.callObjectMethod(
-			"getCause",
-			"()Ljava/lang/Throwable;"
-		).object<jthrowable>();
 	}
 } // namespace __jni_impl::javax::xml::xpath
 

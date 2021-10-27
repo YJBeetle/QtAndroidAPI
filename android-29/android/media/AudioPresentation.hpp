@@ -31,16 +31,16 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
+		QAndroidJniObject getLabels();
 		QAndroidJniObject getLocale();
+		jint getMasteringIndication();
 		jint getPresentationId();
 		jint getProgramId();
-		QAndroidJniObject getLabels();
-		jint getMasteringIndication();
 		jboolean hasAudioDescription();
-		jboolean hasSpokenSubtitles();
 		jboolean hasDialogueEnhancement();
+		jboolean hasSpokenSubtitles();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::media
 
@@ -103,18 +103,11 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	jstring AudioPresentation::toString()
+	QAndroidJniObject AudioPresentation::getLabels()
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint AudioPresentation::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+			"getLabels",
+			"()Ljava/util/Map;"
 		);
 	}
 	QAndroidJniObject AudioPresentation::getLocale()
@@ -122,6 +115,13 @@ namespace __jni_impl::android::media
 		return __thiz.callObjectMethod(
 			"getLocale",
 			"()Ljava/util/Locale;"
+		);
+	}
+	jint AudioPresentation::getMasteringIndication()
+	{
+		return __thiz.callMethod<jint>(
+			"getMasteringIndication",
+			"()I"
 		);
 	}
 	jint AudioPresentation::getPresentationId()
@@ -138,24 +138,17 @@ namespace __jni_impl::android::media
 			"()I"
 		);
 	}
-	QAndroidJniObject AudioPresentation::getLabels()
-	{
-		return __thiz.callObjectMethod(
-			"getLabels",
-			"()Ljava/util/Map;"
-		);
-	}
-	jint AudioPresentation::getMasteringIndication()
-	{
-		return __thiz.callMethod<jint>(
-			"getMasteringIndication",
-			"()I"
-		);
-	}
 	jboolean AudioPresentation::hasAudioDescription()
 	{
 		return __thiz.callMethod<jboolean>(
 			"hasAudioDescription",
+			"()Z"
+		);
+	}
+	jboolean AudioPresentation::hasDialogueEnhancement()
+	{
+		return __thiz.callMethod<jboolean>(
+			"hasDialogueEnhancement",
 			"()Z"
 		);
 	}
@@ -166,12 +159,19 @@ namespace __jni_impl::android::media
 			"()Z"
 		);
 	}
-	jboolean AudioPresentation::hasDialogueEnhancement()
+	jint AudioPresentation::hashCode()
 	{
-		return __thiz.callMethod<jboolean>(
-			"hasDialogueEnhancement",
-			"()Z"
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
 		);
+	}
+	jstring AudioPresentation::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::android::media
 

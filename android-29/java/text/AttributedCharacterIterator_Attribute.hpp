@@ -12,17 +12,17 @@ namespace __jni_impl::java::text
 	{
 	public:
 		// Fields
+		static QAndroidJniObject INPUT_METHOD_SEGMENT();
 		static QAndroidJniObject LANGUAGE();
 		static QAndroidJniObject READING();
-		static QAndroidJniObject INPUT_METHOD_SEGMENT();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
 		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::text
 
@@ -30,6 +30,14 @@ namespace __jni_impl::java::text
 namespace __jni_impl::java::text
 {
 	// Fields
+	QAndroidJniObject AttributedCharacterIterator_Attribute::INPUT_METHOD_SEGMENT()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.text.AttributedCharacterIterator$Attribute",
+			"INPUT_METHOD_SEGMENT",
+			"Ljava/text/AttributedCharacterIterator$Attribute;"
+		);
+	}
 	QAndroidJniObject AttributedCharacterIterator_Attribute::LANGUAGE()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -43,14 +51,6 @@ namespace __jni_impl::java::text
 		return QAndroidJniObject::getStaticObjectField(
 			"java.text.AttributedCharacterIterator$Attribute",
 			"READING",
-			"Ljava/text/AttributedCharacterIterator$Attribute;"
-		);
-	}
-	QAndroidJniObject AttributedCharacterIterator_Attribute::INPUT_METHOD_SEGMENT()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.text.AttributedCharacterIterator$Attribute",
-			"INPUT_METHOD_SEGMENT",
 			"Ljava/text/AttributedCharacterIterator$Attribute;"
 		);
 	}
@@ -72,19 +72,19 @@ namespace __jni_impl::java::text
 			arg0
 		);
 	}
-	jstring AttributedCharacterIterator_Attribute::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint AttributedCharacterIterator_Attribute::hashCode()
 	{
 		return __thiz.callMethod<jint>(
 			"hashCode",
 			"()I"
 		);
+	}
+	jstring AttributedCharacterIterator_Attribute::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::text
 

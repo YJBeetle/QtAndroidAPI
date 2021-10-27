@@ -5,9 +5,9 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view
+namespace __jni_impl::android::hardware::camera2
 {
-	class Surface;
+	class CameraCaptureSession_CaptureCallback;
 }
 namespace __jni_impl::android::hardware::camera2
 {
@@ -17,17 +17,17 @@ namespace __jni_impl::android::hardware::camera2
 {
 	class CaptureRequest;
 }
-namespace __jni_impl::android::hardware::camera2
+namespace __jni_impl::android::hardware::camera2::params
 {
-	class CameraCaptureSession_CaptureCallback;
+	class OutputConfiguration;
 }
 namespace __jni_impl::android::os
 {
 	class Handler;
 }
-namespace __jni_impl::android::hardware::camera2::params
+namespace __jni_impl::android::view
 {
-	class OutputConfiguration;
+	class Surface;
 }
 
 namespace __jni_impl::android::hardware::camera2
@@ -41,32 +41,32 @@ namespace __jni_impl::android::hardware::camera2
 		void __constructor();
 		
 		// Methods
-		void close();
-		void prepare(__jni_impl::android::view::Surface arg0);
-		QAndroidJniObject getDevice();
-		jint captureSingleRequest(__jni_impl::android::hardware::camera2::CaptureRequest arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2);
-		void finalizeOutputConfigurations(__jni_impl::__JniBaseClass arg0);
+		void abortCaptures();
 		jint capture(__jni_impl::android::hardware::camera2::CaptureRequest arg0, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, __jni_impl::android::os::Handler arg2);
 		jint captureBurst(__jni_impl::__JniBaseClass arg0, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, __jni_impl::android::os::Handler arg2);
 		jint captureBurstRequests(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2);
-		jint setRepeatingRequest(__jni_impl::android::hardware::camera2::CaptureRequest arg0, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, __jni_impl::android::os::Handler arg2);
-		jint setSingleRepeatingRequest(__jni_impl::android::hardware::camera2::CaptureRequest arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2);
+		jint captureSingleRequest(__jni_impl::android::hardware::camera2::CaptureRequest arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2);
+		void close();
+		void finalizeOutputConfigurations(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject getDevice();
+		QAndroidJniObject getInputSurface();
+		jboolean isReprocessable();
+		void prepare(__jni_impl::android::view::Surface arg0);
 		jint setRepeatingBurst(__jni_impl::__JniBaseClass arg0, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, __jni_impl::android::os::Handler arg2);
 		jint setRepeatingBurstRequests(__jni_impl::__JniBaseClass arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2);
+		jint setRepeatingRequest(__jni_impl::android::hardware::camera2::CaptureRequest arg0, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, __jni_impl::android::os::Handler arg2);
+		jint setSingleRepeatingRequest(__jni_impl::android::hardware::camera2::CaptureRequest arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2);
 		void stopRepeating();
-		void abortCaptures();
-		jboolean isReprocessable();
-		QAndroidJniObject getInputSurface();
 		void updateOutputConfiguration(__jni_impl::android::hardware::camera2::params::OutputConfiguration arg0);
 	};
 } // namespace __jni_impl::android::hardware::camera2
 
-#include "../../view/Surface.hpp"
+#include "CameraCaptureSession_CaptureCallback.hpp"
 #include "CameraDevice.hpp"
 #include "CaptureRequest.hpp"
-#include "CameraCaptureSession_CaptureCallback.hpp"
-#include "../../os/Handler.hpp"
 #include "params/OutputConfiguration.hpp"
+#include "../../os/Handler.hpp"
+#include "../../view/Surface.hpp"
 
 namespace __jni_impl::android::hardware::camera2
 {
@@ -82,44 +82,11 @@ namespace __jni_impl::android::hardware::camera2
 	}
 	
 	// Methods
-	void CameraCaptureSession::close()
+	void CameraCaptureSession::abortCaptures()
 	{
 		__thiz.callMethod<void>(
-			"close",
+			"abortCaptures",
 			"()V"
-		);
-	}
-	void CameraCaptureSession::prepare(__jni_impl::android::view::Surface arg0)
-	{
-		__thiz.callMethod<void>(
-			"prepare",
-			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject CameraCaptureSession::getDevice()
-	{
-		return __thiz.callObjectMethod(
-			"getDevice",
-			"()Landroid/hardware/camera2/CameraDevice;"
-		);
-	}
-	jint CameraCaptureSession::captureSingleRequest(__jni_impl::android::hardware::camera2::CaptureRequest arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"captureSingleRequest",
-			"(Landroid/hardware/camera2/CaptureRequest;Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
-		);
-	}
-	void CameraCaptureSession::finalizeOutputConfigurations(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"finalizeOutputConfigurations",
-			"(Ljava/util/List;)V",
-			arg0.__jniObject().object()
 		);
 	}
 	jint CameraCaptureSession::capture(__jni_impl::android::hardware::camera2::CaptureRequest arg0, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, __jni_impl::android::os::Handler arg2)
@@ -152,24 +119,58 @@ namespace __jni_impl::android::hardware::camera2
 			arg2.__jniObject().object()
 		);
 	}
-	jint CameraCaptureSession::setRepeatingRequest(__jni_impl::android::hardware::camera2::CaptureRequest arg0, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, __jni_impl::android::os::Handler arg2)
+	jint CameraCaptureSession::captureSingleRequest(__jni_impl::android::hardware::camera2::CaptureRequest arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2)
 	{
 		return __thiz.callMethod<jint>(
-			"setRepeatingRequest",
-			"(Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;Landroid/os/Handler;)I",
+			"captureSingleRequest",
+			"(Landroid/hardware/camera2/CaptureRequest;Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;)I",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object(),
 			arg2.__jniObject().object()
 		);
 	}
-	jint CameraCaptureSession::setSingleRepeatingRequest(__jni_impl::android::hardware::camera2::CaptureRequest arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2)
+	void CameraCaptureSession::close()
 	{
-		return __thiz.callMethod<jint>(
-			"setSingleRepeatingRequest",
-			"(Landroid/hardware/camera2/CaptureRequest;Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;)I",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object(),
-			arg2.__jniObject().object()
+		__thiz.callMethod<void>(
+			"close",
+			"()V"
+		);
+	}
+	void CameraCaptureSession::finalizeOutputConfigurations(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"finalizeOutputConfigurations",
+			"(Ljava/util/List;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject CameraCaptureSession::getDevice()
+	{
+		return __thiz.callObjectMethod(
+			"getDevice",
+			"()Landroid/hardware/camera2/CameraDevice;"
+		);
+	}
+	QAndroidJniObject CameraCaptureSession::getInputSurface()
+	{
+		return __thiz.callObjectMethod(
+			"getInputSurface",
+			"()Landroid/view/Surface;"
+		);
+	}
+	jboolean CameraCaptureSession::isReprocessable()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isReprocessable",
+			"()Z"
+		);
+	}
+	void CameraCaptureSession::prepare(__jni_impl::android::view::Surface arg0)
+	{
+		__thiz.callMethod<void>(
+			"prepare",
+			"(Landroid/view/Surface;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	jint CameraCaptureSession::setRepeatingBurst(__jni_impl::__JniBaseClass arg0, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, __jni_impl::android::os::Handler arg2)
@@ -192,32 +193,31 @@ namespace __jni_impl::android::hardware::camera2
 			arg2.__jniObject().object()
 		);
 	}
+	jint CameraCaptureSession::setRepeatingRequest(__jni_impl::android::hardware::camera2::CaptureRequest arg0, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg1, __jni_impl::android::os::Handler arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"setRepeatingRequest",
+			"(Landroid/hardware/camera2/CaptureRequest;Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;Landroid/os/Handler;)I",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
+	jint CameraCaptureSession::setSingleRepeatingRequest(__jni_impl::android::hardware::camera2::CaptureRequest arg0, __jni_impl::__JniBaseClass arg1, __jni_impl::android::hardware::camera2::CameraCaptureSession_CaptureCallback arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"setSingleRepeatingRequest",
+			"(Landroid/hardware/camera2/CaptureRequest;Ljava/util/concurrent/Executor;Landroid/hardware/camera2/CameraCaptureSession$CaptureCallback;)I",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object(),
+			arg2.__jniObject().object()
+		);
+	}
 	void CameraCaptureSession::stopRepeating()
 	{
 		__thiz.callMethod<void>(
 			"stopRepeating",
 			"()V"
-		);
-	}
-	void CameraCaptureSession::abortCaptures()
-	{
-		__thiz.callMethod<void>(
-			"abortCaptures",
-			"()V"
-		);
-	}
-	jboolean CameraCaptureSession::isReprocessable()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isReprocessable",
-			"()Z"
-		);
-	}
-	QAndroidJniObject CameraCaptureSession::getInputSurface()
-	{
-		return __thiz.callObjectMethod(
-			"getInputSurface",
-			"()Landroid/view/Surface;"
 		);
 	}
 	void CameraCaptureSession::updateOutputConfiguration(__jni_impl::android::hardware::camera2::params::OutputConfiguration arg0)

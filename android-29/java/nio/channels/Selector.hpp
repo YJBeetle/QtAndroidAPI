@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::nio::channels::spi
-{
-	class SelectorProvider;
-}
 namespace __jni_impl::java::nio::channels
 {
 	class SelectionKey;
+}
+namespace __jni_impl::java::nio::channels::spi
+{
+	class SelectorProvider;
 }
 
 namespace __jni_impl::java::nio::channels
@@ -25,24 +25,24 @@ namespace __jni_impl::java::nio::channels
 		void __constructor();
 		
 		// Methods
-		jboolean isOpen();
-		QAndroidJniObject provider();
-		void close();
-		QAndroidJniObject keys();
 		static QAndroidJniObject open();
-		QAndroidJniObject selectedKeys();
-		jint selectNow();
-		jint selectNow(__jni_impl::__JniBaseClass arg0);
-		QAndroidJniObject wakeup();
+		void close();
+		jboolean isOpen();
+		QAndroidJniObject keys();
+		QAndroidJniObject provider();
 		jint select();
 		jint select(__jni_impl::__JniBaseClass arg0);
-		jint select(__jni_impl::__JniBaseClass arg0, jlong arg1);
 		jint select(jlong arg0);
+		jint select(__jni_impl::__JniBaseClass arg0, jlong arg1);
+		jint selectNow();
+		jint selectNow(__jni_impl::__JniBaseClass arg0);
+		QAndroidJniObject selectedKeys();
+		QAndroidJniObject wakeup();
 	};
 } // namespace __jni_impl::java::nio::channels
 
-#include "spi/SelectorProvider.hpp"
 #include "SelectionKey.hpp"
+#include "spi/SelectorProvider.hpp"
 
 namespace __jni_impl::java::nio::channels
 {
@@ -57,18 +57,12 @@ namespace __jni_impl::java::nio::channels
 	}
 	
 	// Methods
-	jboolean Selector::isOpen()
+	QAndroidJniObject Selector::open()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isOpen",
-			"()Z"
-		);
-	}
-	QAndroidJniObject Selector::provider()
-	{
-		return __thiz.callObjectMethod(
-			"provider",
-			"()Ljava/nio/channels/spi/SelectorProvider;"
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.channels.Selector",
+			"open",
+			"()Ljava/nio/channels/Selector;"
 		);
 	}
 	void Selector::close()
@@ -78,6 +72,13 @@ namespace __jni_impl::java::nio::channels
 			"()V"
 		);
 	}
+	jboolean Selector::isOpen()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isOpen",
+			"()Z"
+		);
+	}
 	QAndroidJniObject Selector::keys()
 	{
 		return __thiz.callObjectMethod(
@@ -85,41 +86,11 @@ namespace __jni_impl::java::nio::channels
 			"()Ljava/util/Set;"
 		);
 	}
-	QAndroidJniObject Selector::open()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.channels.Selector",
-			"open",
-			"()Ljava/nio/channels/Selector;"
-		);
-	}
-	QAndroidJniObject Selector::selectedKeys()
+	QAndroidJniObject Selector::provider()
 	{
 		return __thiz.callObjectMethod(
-			"selectedKeys",
-			"()Ljava/util/Set;"
-		);
-	}
-	jint Selector::selectNow()
-	{
-		return __thiz.callMethod<jint>(
-			"selectNow",
-			"()I"
-		);
-	}
-	jint Selector::selectNow(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"selectNow",
-			"(Ljava/util/function/Consumer;)I",
-			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Selector::wakeup()
-	{
-		return __thiz.callObjectMethod(
-			"wakeup",
-			"()Ljava/nio/channels/Selector;"
+			"provider",
+			"()Ljava/nio/channels/spi/SelectorProvider;"
 		);
 	}
 	jint Selector::select()
@@ -137,6 +108,14 @@ namespace __jni_impl::java::nio::channels
 			arg0.__jniObject().object()
 		);
 	}
+	jint Selector::select(jlong arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"select",
+			"(J)I",
+			arg0
+		);
+	}
 	jint Selector::select(__jni_impl::__JniBaseClass arg0, jlong arg1)
 	{
 		return __thiz.callMethod<jint>(
@@ -146,12 +125,33 @@ namespace __jni_impl::java::nio::channels
 			arg1
 		);
 	}
-	jint Selector::select(jlong arg0)
+	jint Selector::selectNow()
 	{
 		return __thiz.callMethod<jint>(
-			"select",
-			"(J)I",
-			arg0
+			"selectNow",
+			"()I"
+		);
+	}
+	jint Selector::selectNow(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"selectNow",
+			"(Ljava/util/function/Consumer;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Selector::selectedKeys()
+	{
+		return __thiz.callObjectMethod(
+			"selectedKeys",
+			"()Ljava/util/Set;"
+		);
+	}
+	QAndroidJniObject Selector::wakeup()
+	{
+		return __thiz.callObjectMethod(
+			"wakeup",
+			"()Ljava/nio/channels/Selector;"
 		);
 	}
 } // namespace __jni_impl::java::nio::channels

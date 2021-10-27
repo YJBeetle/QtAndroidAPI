@@ -10,15 +10,7 @@
 
 namespace __jni_impl::android::renderscript
 {
-	class RenderScript;
-}
-namespace __jni_impl::android::renderscript
-{
 	class Allocation;
-}
-namespace __jni_impl::android::renderscript
-{
-	class Script_LaunchOptions;
 }
 namespace __jni_impl::android::renderscript
 {
@@ -26,11 +18,19 @@ namespace __jni_impl::android::renderscript
 }
 namespace __jni_impl::android::renderscript
 {
-	class Script_KernelID;
+	class RenderScript;
 }
 namespace __jni_impl::android::renderscript
 {
 	class Script_FieldID;
+}
+namespace __jni_impl::android::renderscript
+{
+	class Script_KernelID;
+}
+namespace __jni_impl::android::renderscript
+{
+	class Script_LaunchOptions;
 }
 
 namespace __jni_impl::android::renderscript
@@ -44,22 +44,22 @@ namespace __jni_impl::android::renderscript
 		void __constructor();
 		
 		// Methods
-		void forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Script_LaunchOptions arg1);
-		void forEach(__jni_impl::android::renderscript::Allocation arg0);
 		static QAndroidJniObject create(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1);
-		void setInput(__jni_impl::android::renderscript::Allocation arg0);
-		void setCoefficients(jfloatArray arg0);
-		QAndroidJniObject getKernelID();
+		void forEach(__jni_impl::android::renderscript::Allocation arg0);
+		void forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Script_LaunchOptions arg1);
 		QAndroidJniObject getFieldID_Input();
+		QAndroidJniObject getKernelID();
+		void setCoefficients(jfloatArray arg0);
+		void setInput(__jni_impl::android::renderscript::Allocation arg0);
 	};
 } // namespace __jni_impl::android::renderscript
 
-#include "RenderScript.hpp"
 #include "Allocation.hpp"
-#include "Script_LaunchOptions.hpp"
 #include "Element.hpp"
-#include "Script_KernelID.hpp"
+#include "RenderScript.hpp"
 #include "Script_FieldID.hpp"
+#include "Script_KernelID.hpp"
+#include "Script_LaunchOptions.hpp"
 
 namespace __jni_impl::android::renderscript
 {
@@ -74,11 +74,12 @@ namespace __jni_impl::android::renderscript
 	}
 	
 	// Methods
-	void ScriptIntrinsicConvolve3x3::forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Script_LaunchOptions arg1)
+	QAndroidJniObject ScriptIntrinsicConvolve3x3::create(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1)
 	{
-		__thiz.callMethod<void>(
-			"forEach",
-			"(Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.renderscript.ScriptIntrinsicConvolve3x3",
+			"create",
+			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsicConvolve3x3;",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
 		);
@@ -91,22 +92,27 @@ namespace __jni_impl::android::renderscript
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicConvolve3x3::create(__jni_impl::android::renderscript::RenderScript arg0, __jni_impl::android::renderscript::Element arg1)
+	void ScriptIntrinsicConvolve3x3::forEach(__jni_impl::android::renderscript::Allocation arg0, __jni_impl::android::renderscript::Script_LaunchOptions arg1)
 	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.renderscript.ScriptIntrinsicConvolve3x3",
-			"create",
-			"(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsicConvolve3x3;",
+		__thiz.callMethod<void>(
+			"forEach",
+			"(Landroid/renderscript/Allocation;Landroid/renderscript/Script$LaunchOptions;)V",
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
 		);
 	}
-	void ScriptIntrinsicConvolve3x3::setInput(__jni_impl::android::renderscript::Allocation arg0)
+	QAndroidJniObject ScriptIntrinsicConvolve3x3::getFieldID_Input()
 	{
-		__thiz.callMethod<void>(
-			"setInput",
-			"(Landroid/renderscript/Allocation;)V",
-			arg0.__jniObject().object()
+		return __thiz.callObjectMethod(
+			"getFieldID_Input",
+			"()Landroid/renderscript/Script$FieldID;"
+		);
+	}
+	QAndroidJniObject ScriptIntrinsicConvolve3x3::getKernelID()
+	{
+		return __thiz.callObjectMethod(
+			"getKernelID",
+			"()Landroid/renderscript/Script$KernelID;"
 		);
 	}
 	void ScriptIntrinsicConvolve3x3::setCoefficients(jfloatArray arg0)
@@ -117,18 +123,12 @@ namespace __jni_impl::android::renderscript
 			arg0
 		);
 	}
-	QAndroidJniObject ScriptIntrinsicConvolve3x3::getKernelID()
+	void ScriptIntrinsicConvolve3x3::setInput(__jni_impl::android::renderscript::Allocation arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getKernelID",
-			"()Landroid/renderscript/Script$KernelID;"
-		);
-	}
-	QAndroidJniObject ScriptIntrinsicConvolve3x3::getFieldID_Input()
-	{
-		return __thiz.callObjectMethod(
-			"getFieldID_Input",
-			"()Landroid/renderscript/Script$FieldID;"
+		__thiz.callMethod<void>(
+			"setInput",
+			"(Landroid/renderscript/Allocation;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::renderscript

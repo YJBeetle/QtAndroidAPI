@@ -118,10 +118,10 @@ namespace __jni_impl::android::media
 		void __constructor(jint arg0, jint arg1);
 		
 		// Methods
-		void release();
 		jint getAudioSessionId();
-		jboolean startTone(jint arg0, jint arg1);
+		void release();
 		jboolean startTone(jint arg0);
+		jboolean startTone(jint arg0, jint arg1);
 		void stopTone();
 	};
 } // namespace __jni_impl::android::media
@@ -850,6 +850,13 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	jint ToneGenerator::getAudioSessionId()
+	{
+		return __thiz.callMethod<jint>(
+			"getAudioSessionId",
+			"()I"
+		);
+	}
 	void ToneGenerator::release()
 	{
 		__thiz.callMethod<void>(
@@ -857,11 +864,12 @@ namespace __jni_impl::android::media
 			"()V"
 		);
 	}
-	jint ToneGenerator::getAudioSessionId()
+	jboolean ToneGenerator::startTone(jint arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"getAudioSessionId",
-			"()I"
+		return __thiz.callMethod<jboolean>(
+			"startTone",
+			"(I)Z",
+			arg0
 		);
 	}
 	jboolean ToneGenerator::startTone(jint arg0, jint arg1)
@@ -871,14 +879,6 @@ namespace __jni_impl::android::media
 			"(II)Z",
 			arg0,
 			arg1
-		);
-	}
-	jboolean ToneGenerator::startTone(jint arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"startTone",
-			"(I)Z",
-			arg0
 		);
 	}
 	void ToneGenerator::stopTone()

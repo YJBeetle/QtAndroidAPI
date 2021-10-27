@@ -23,24 +23,24 @@ namespace __jni_impl::java::io
 		void __constructor(__jni_impl::java::io::InputStream arg0);
 		
 		// Methods
-		jint read(jbyteArray arg0, jint arg1, jint arg2);
-		jint read(jbyteArray arg0);
-		jstring readLine();
-		jint readInt();
 		static jstring readUTF(__jni_impl::__JniBaseClass arg0);
-		jstring readUTF();
-		jfloat readFloat();
-		jlong readLong();
-		jint skipBytes(jint arg0);
+		jint read(jbyteArray arg0);
+		jint read(jbyteArray arg0, jint arg1, jint arg2);
 		jboolean readBoolean();
 		jbyte readByte();
-		jint readUnsignedByte();
-		jshort readShort();
-		jint readUnsignedShort();
-		jdouble readDouble();
-		void readFully(jbyteArray arg0, jint arg1, jint arg2);
-		void readFully(jbyteArray arg0);
 		jchar readChar();
+		jdouble readDouble();
+		jfloat readFloat();
+		void readFully(jbyteArray arg0);
+		void readFully(jbyteArray arg0, jint arg1, jint arg2);
+		jint readInt();
+		jstring readLine();
+		jlong readLong();
+		jshort readShort();
+		jstring readUTF();
+		jint readUnsignedByte();
+		jint readUnsignedShort();
+		jint skipBytes(jint arg0);
 	};
 } // namespace __jni_impl::java::io
 
@@ -61,38 +61,6 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	jint DataInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callMethod<jint>(
-			"read",
-			"([BII)I",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jint DataInputStream::read(jbyteArray arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"read",
-			"([B)I",
-			arg0
-		);
-	}
-	jstring DataInputStream::readLine()
-	{
-		return __thiz.callObjectMethod(
-			"readLine",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint DataInputStream::readInt()
-	{
-		return __thiz.callMethod<jint>(
-			"readInt",
-			"()I"
-		);
-	}
 	jstring DataInputStream::readUTF(__jni_impl::__JniBaseClass arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -102,33 +70,22 @@ namespace __jni_impl::java::io
 			arg0.__jniObject().object()
 		).object<jstring>();
 	}
-	jstring DataInputStream::readUTF()
-	{
-		return __thiz.callObjectMethod(
-			"readUTF",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jfloat DataInputStream::readFloat()
-	{
-		return __thiz.callMethod<jfloat>(
-			"readFloat",
-			"()F"
-		);
-	}
-	jlong DataInputStream::readLong()
-	{
-		return __thiz.callMethod<jlong>(
-			"readLong",
-			"()J"
-		);
-	}
-	jint DataInputStream::skipBytes(jint arg0)
+	jint DataInputStream::read(jbyteArray arg0)
 	{
 		return __thiz.callMethod<jint>(
-			"skipBytes",
-			"(I)I",
+			"read",
+			"([B)I",
 			arg0
+		);
+	}
+	jint DataInputStream::read(jbyteArray arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"([BII)I",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 	jboolean DataInputStream::readBoolean()
@@ -145,25 +102,11 @@ namespace __jni_impl::java::io
 			"()B"
 		);
 	}
-	jint DataInputStream::readUnsignedByte()
+	jchar DataInputStream::readChar()
 	{
-		return __thiz.callMethod<jint>(
-			"readUnsignedByte",
-			"()I"
-		);
-	}
-	jshort DataInputStream::readShort()
-	{
-		return __thiz.callMethod<jshort>(
-			"readShort",
-			"()S"
-		);
-	}
-	jint DataInputStream::readUnsignedShort()
-	{
-		return __thiz.callMethod<jint>(
-			"readUnsignedShort",
-			"()I"
+		return __thiz.callMethod<jchar>(
+			"readChar",
+			"()C"
 		);
 	}
 	jdouble DataInputStream::readDouble()
@@ -171,6 +114,21 @@ namespace __jni_impl::java::io
 		return __thiz.callMethod<jdouble>(
 			"readDouble",
 			"()D"
+		);
+	}
+	jfloat DataInputStream::readFloat()
+	{
+		return __thiz.callMethod<jfloat>(
+			"readFloat",
+			"()F"
+		);
+	}
+	void DataInputStream::readFully(jbyteArray arg0)
+	{
+		__thiz.callMethod<void>(
+			"readFully",
+			"([B)V",
+			arg0
 		);
 	}
 	void DataInputStream::readFully(jbyteArray arg0, jint arg1, jint arg2)
@@ -183,19 +141,61 @@ namespace __jni_impl::java::io
 			arg2
 		);
 	}
-	void DataInputStream::readFully(jbyteArray arg0)
+	jint DataInputStream::readInt()
 	{
-		__thiz.callMethod<void>(
-			"readFully",
-			"([B)V",
-			arg0
+		return __thiz.callMethod<jint>(
+			"readInt",
+			"()I"
 		);
 	}
-	jchar DataInputStream::readChar()
+	jstring DataInputStream::readLine()
 	{
-		return __thiz.callMethod<jchar>(
-			"readChar",
-			"()C"
+		return __thiz.callObjectMethod(
+			"readLine",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jlong DataInputStream::readLong()
+	{
+		return __thiz.callMethod<jlong>(
+			"readLong",
+			"()J"
+		);
+	}
+	jshort DataInputStream::readShort()
+	{
+		return __thiz.callMethod<jshort>(
+			"readShort",
+			"()S"
+		);
+	}
+	jstring DataInputStream::readUTF()
+	{
+		return __thiz.callObjectMethod(
+			"readUTF",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint DataInputStream::readUnsignedByte()
+	{
+		return __thiz.callMethod<jint>(
+			"readUnsignedByte",
+			"()I"
+		);
+	}
+	jint DataInputStream::readUnsignedShort()
+	{
+		return __thiz.callMethod<jint>(
+			"readUnsignedShort",
+			"()I"
+		);
+	}
+	jint DataInputStream::skipBytes(jint arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"skipBytes",
+			"(I)I",
+			arg0
 		);
 	}
 } // namespace __jni_impl::java::io

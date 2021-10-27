@@ -5,6 +5,10 @@
 
 #include "../../__JniBaseClass.hpp"
 
+namespace __jni_impl::android::content::res
+{
+	class Resources;
+}
 namespace __jni_impl::android::graphics::drawable
 {
 	class Drawable;
@@ -12,10 +16,6 @@ namespace __jni_impl::android::graphics::drawable
 namespace __jni_impl::android::inputmethodservice
 {
 	class Keyboard_Row;
-}
-namespace __jni_impl::android::content::res
-{
-	class Resources;
 }
 
 namespace __jni_impl::android::inputmethodservice
@@ -48,17 +48,17 @@ namespace __jni_impl::android::inputmethodservice
 		void __constructor(__jni_impl::android::content::res::Resources arg0, __jni_impl::android::inputmethodservice::Keyboard_Row arg1, jint arg2, jint arg3, __jni_impl::__JniBaseClass arg4);
 		
 		// Methods
-		jint squaredDistanceFrom(jint arg0, jint arg1);
+		jintArray getCurrentDrawableState();
+		jboolean isInside(jint arg0, jint arg1);
 		void onPressed();
 		void onReleased(jboolean arg0);
-		jboolean isInside(jint arg0, jint arg1);
-		jintArray getCurrentDrawableState();
+		jint squaredDistanceFrom(jint arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::inputmethodservice
 
+#include "../content/res/Resources.hpp"
 #include "../graphics/drawable/Drawable.hpp"
 #include "Keyboard_Row.hpp"
-#include "../content/res/Resources.hpp"
 
 namespace __jni_impl::android::inputmethodservice
 {
@@ -201,11 +201,18 @@ namespace __jni_impl::android::inputmethodservice
 	}
 	
 	// Methods
-	jint Keyboard_Key::squaredDistanceFrom(jint arg0, jint arg1)
+	jintArray Keyboard_Key::getCurrentDrawableState()
 	{
-		return __thiz.callMethod<jint>(
-			"squaredDistanceFrom",
-			"(II)I",
+		return __thiz.callObjectMethod(
+			"getCurrentDrawableState",
+			"()[I"
+		).object<jintArray>();
+	}
+	jboolean Keyboard_Key::isInside(jint arg0, jint arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isInside",
+			"(II)Z",
 			arg0,
 			arg1
 		);
@@ -225,21 +232,14 @@ namespace __jni_impl::android::inputmethodservice
 			arg0
 		);
 	}
-	jboolean Keyboard_Key::isInside(jint arg0, jint arg1)
+	jint Keyboard_Key::squaredDistanceFrom(jint arg0, jint arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isInside",
-			"(II)Z",
+		return __thiz.callMethod<jint>(
+			"squaredDistanceFrom",
+			"(II)I",
 			arg0,
 			arg1
 		);
-	}
-	jintArray Keyboard_Key::getCurrentDrawableState()
-	{
-		return __thiz.callObjectMethod(
-			"getCurrentDrawableState",
-			"()[I"
-		).object<jintArray>();
 	}
 } // namespace __jni_impl::android::inputmethodservice
 

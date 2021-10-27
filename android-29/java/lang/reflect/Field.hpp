@@ -22,40 +22,40 @@ namespace __jni_impl::java::lang::reflect
 		void __constructor();
 		
 		// Methods
-		jstring getName();
-		jobject get(jobject arg0);
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint getModifiers();
-		jboolean getBoolean(jobject arg0);
-		jbyte getByte(jobject arg0);
-		jshort getShort(jobject arg0);
-		jchar getChar(jobject arg0);
-		jint getInt(jobject arg0);
-		jlong getLong(jobject arg0);
-		jfloat getFloat(jobject arg0);
-		jdouble getDouble(jobject arg0);
-		jstring toGenericString();
-		jboolean isSynthetic();
-		jclass getDeclaringClass();
+		jobject get(jobject arg0);
+		QAndroidJniObject getAnnotatedType();
 		QAndroidJniObject getAnnotation(jclass arg0);
 		jarray getAnnotationsByType(jclass arg0);
+		jboolean getBoolean(jobject arg0);
+		jbyte getByte(jobject arg0);
+		jchar getChar(jobject arg0);
 		jarray getDeclaredAnnotations();
+		jclass getDeclaringClass();
+		jdouble getDouble(jobject arg0);
+		jfloat getFloat(jobject arg0);
+		QAndroidJniObject getGenericType();
+		jint getInt(jobject arg0);
+		jlong getLong(jobject arg0);
+		jint getModifiers();
+		jstring getName();
+		jshort getShort(jobject arg0);
+		jclass getType();
+		jint hashCode();
+		jboolean isEnumConstant();
+		jboolean isSynthetic();
 		void set(jobject arg0, jobject arg1);
 		void setAccessible(jboolean arg0);
-		QAndroidJniObject getGenericType();
-		jclass getType();
 		void setBoolean(jobject arg0, jboolean arg1);
 		void setByte(jobject arg0, jbyte arg1);
 		void setChar(jobject arg0, jchar arg1);
-		void setShort(jobject arg0, jshort arg1);
+		void setDouble(jobject arg0, jdouble arg1);
+		void setFloat(jobject arg0, jfloat arg1);
 		void setInt(jobject arg0, jint arg1);
 		void setLong(jobject arg0, jlong arg1);
-		void setFloat(jobject arg0, jfloat arg1);
-		void setDouble(jobject arg0, jdouble arg1);
-		jboolean isEnumConstant();
-		QAndroidJniObject getAnnotatedType();
+		void setShort(jobject arg0, jshort arg1);
+		jstring toGenericString();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::lang::reflect
 
@@ -74,12 +74,13 @@ namespace __jni_impl::java::lang::reflect
 	}
 	
 	// Methods
-	jstring Field::getName()
+	jboolean Field::equals(jobject arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getName",
-			"()Ljava/lang/String;"
-		).object<jstring>();
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
 	}
 	jobject Field::get(jobject arg0)
 	{
@@ -89,34 +90,28 @@ namespace __jni_impl::java::lang::reflect
 			arg0
 		).object<jobject>();
 	}
-	jboolean Field::equals(jobject arg0)
+	QAndroidJniObject Field::getAnnotatedType()
 	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
+		return __thiz.callObjectMethod(
+			"getAnnotatedType",
+			"()Ljava/lang/reflect/AnnotatedType;"
+		);
+	}
+	QAndroidJniObject Field::getAnnotation(jclass arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAnnotation",
+			"(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
 			arg0
 		);
 	}
-	jstring Field::toString()
+	jarray Field::getAnnotationsByType(jclass arg0)
 	{
 		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint Field::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jint Field::getModifiers()
-	{
-		return __thiz.callMethod<jint>(
-			"getModifiers",
-			"()I"
-		);
+			"getAnnotationsByType",
+			"(Ljava/lang/Class;)[Ljava/lang/annotation/Annotation;",
+			arg0
+		).object<jarray>();
 	}
 	jboolean Field::getBoolean(jobject arg0)
 	{
@@ -134,20 +129,49 @@ namespace __jni_impl::java::lang::reflect
 			arg0
 		);
 	}
-	jshort Field::getShort(jobject arg0)
-	{
-		return __thiz.callMethod<jshort>(
-			"getShort",
-			"(Ljava/lang/Object;)S",
-			arg0
-		);
-	}
 	jchar Field::getChar(jobject arg0)
 	{
 		return __thiz.callMethod<jchar>(
 			"getChar",
 			"(Ljava/lang/Object;)C",
 			arg0
+		);
+	}
+	jarray Field::getDeclaredAnnotations()
+	{
+		return __thiz.callObjectMethod(
+			"getDeclaredAnnotations",
+			"()[Ljava/lang/annotation/Annotation;"
+		).object<jarray>();
+	}
+	jclass Field::getDeclaringClass()
+	{
+		return __thiz.callObjectMethod(
+			"getDeclaringClass",
+			"()Ljava/lang/Class;"
+		).object<jclass>();
+	}
+	jdouble Field::getDouble(jobject arg0)
+	{
+		return __thiz.callMethod<jdouble>(
+			"getDouble",
+			"(Ljava/lang/Object;)D",
+			arg0
+		);
+	}
+	jfloat Field::getFloat(jobject arg0)
+	{
+		return __thiz.callMethod<jfloat>(
+			"getFloat",
+			"(Ljava/lang/Object;)F",
+			arg0
+		);
+	}
+	QAndroidJniObject Field::getGenericType()
+	{
+		return __thiz.callObjectMethod(
+			"getGenericType",
+			"()Ljava/lang/reflect/Type;"
 		);
 	}
 	jint Field::getInt(jobject arg0)
@@ -166,28 +190,48 @@ namespace __jni_impl::java::lang::reflect
 			arg0
 		);
 	}
-	jfloat Field::getFloat(jobject arg0)
+	jint Field::getModifiers()
 	{
-		return __thiz.callMethod<jfloat>(
-			"getFloat",
-			"(Ljava/lang/Object;)F",
-			arg0
+		return __thiz.callMethod<jint>(
+			"getModifiers",
+			"()I"
 		);
 	}
-	jdouble Field::getDouble(jobject arg0)
-	{
-		return __thiz.callMethod<jdouble>(
-			"getDouble",
-			"(Ljava/lang/Object;)D",
-			arg0
-		);
-	}
-	jstring Field::toGenericString()
+	jstring Field::getName()
 	{
 		return __thiz.callObjectMethod(
-			"toGenericString",
+			"getName",
 			"()Ljava/lang/String;"
 		).object<jstring>();
+	}
+	jshort Field::getShort(jobject arg0)
+	{
+		return __thiz.callMethod<jshort>(
+			"getShort",
+			"(Ljava/lang/Object;)S",
+			arg0
+		);
+	}
+	jclass Field::getType()
+	{
+		return __thiz.callObjectMethod(
+			"getType",
+			"()Ljava/lang/Class;"
+		).object<jclass>();
+	}
+	jint Field::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jboolean Field::isEnumConstant()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEnumConstant",
+			"()Z"
+		);
 	}
 	jboolean Field::isSynthetic()
 	{
@@ -195,36 +239,6 @@ namespace __jni_impl::java::lang::reflect
 			"isSynthetic",
 			"()Z"
 		);
-	}
-	jclass Field::getDeclaringClass()
-	{
-		return __thiz.callObjectMethod(
-			"getDeclaringClass",
-			"()Ljava/lang/Class;"
-		).object<jclass>();
-	}
-	QAndroidJniObject Field::getAnnotation(jclass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAnnotation",
-			"(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;",
-			arg0
-		);
-	}
-	jarray Field::getAnnotationsByType(jclass arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getAnnotationsByType",
-			"(Ljava/lang/Class;)[Ljava/lang/annotation/Annotation;",
-			arg0
-		).object<jarray>();
-	}
-	jarray Field::getDeclaredAnnotations()
-	{
-		return __thiz.callObjectMethod(
-			"getDeclaredAnnotations",
-			"()[Ljava/lang/annotation/Annotation;"
-		).object<jarray>();
 	}
 	void Field::set(jobject arg0, jobject arg1)
 	{
@@ -242,20 +256,6 @@ namespace __jni_impl::java::lang::reflect
 			"(Z)V",
 			arg0
 		);
-	}
-	QAndroidJniObject Field::getGenericType()
-	{
-		return __thiz.callObjectMethod(
-			"getGenericType",
-			"()Ljava/lang/reflect/Type;"
-		);
-	}
-	jclass Field::getType()
-	{
-		return __thiz.callObjectMethod(
-			"getType",
-			"()Ljava/lang/Class;"
-		).object<jclass>();
 	}
 	void Field::setBoolean(jobject arg0, jboolean arg1)
 	{
@@ -284,11 +284,20 @@ namespace __jni_impl::java::lang::reflect
 			arg1
 		);
 	}
-	void Field::setShort(jobject arg0, jshort arg1)
+	void Field::setDouble(jobject arg0, jdouble arg1)
 	{
 		__thiz.callMethod<void>(
-			"setShort",
-			"(Ljava/lang/Object;S)V",
+			"setDouble",
+			"(Ljava/lang/Object;D)V",
+			arg0,
+			arg1
+		);
+	}
+	void Field::setFloat(jobject arg0, jfloat arg1)
+	{
+		__thiz.callMethod<void>(
+			"setFloat",
+			"(Ljava/lang/Object;F)V",
 			arg0,
 			arg1
 		);
@@ -311,37 +320,28 @@ namespace __jni_impl::java::lang::reflect
 			arg1
 		);
 	}
-	void Field::setFloat(jobject arg0, jfloat arg1)
+	void Field::setShort(jobject arg0, jshort arg1)
 	{
 		__thiz.callMethod<void>(
-			"setFloat",
-			"(Ljava/lang/Object;F)V",
+			"setShort",
+			"(Ljava/lang/Object;S)V",
 			arg0,
 			arg1
 		);
 	}
-	void Field::setDouble(jobject arg0, jdouble arg1)
-	{
-		__thiz.callMethod<void>(
-			"setDouble",
-			"(Ljava/lang/Object;D)V",
-			arg0,
-			arg1
-		);
-	}
-	jboolean Field::isEnumConstant()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isEnumConstant",
-			"()Z"
-		);
-	}
-	QAndroidJniObject Field::getAnnotatedType()
+	jstring Field::toGenericString()
 	{
 		return __thiz.callObjectMethod(
-			"getAnnotatedType",
-			"()Ljava/lang/reflect/AnnotatedType;"
-		);
+			"toGenericString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jstring Field::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::lang::reflect
 

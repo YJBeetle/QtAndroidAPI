@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::lang
-{
-	class Process;
-}
 namespace __jni_impl::java::io
 {
 	class File;
+}
+namespace __jni_impl::java::lang
+{
+	class Process;
 }
 namespace __jni_impl::java::lang
 {
@@ -30,35 +30,35 @@ namespace __jni_impl::java::lang
 		
 		// Methods
 		static QAndroidJniObject getRuntime();
-		void exit(jint arg0);
-		void runFinalization();
 		static QAndroidJniObject version();
-		void loadLibrary(jstring arg0);
-		void loadLibrary(const QString &arg0);
-		void gc();
-		void load(jstring arg0);
-		void load(const QString &arg0);
-		jlong freeMemory();
-		jlong maxMemory();
+		void addShutdownHook(__jni_impl::java::lang::Thread arg0);
 		jint availableProcessors();
-		void halt(jint arg0);
 		QAndroidJniObject exec(jarray arg0);
-		QAndroidJniObject exec(jstring arg0, jarray arg1, __jni_impl::java::io::File arg2);
-		QAndroidJniObject exec(const QString &arg0, jarray arg1, __jni_impl::java::io::File arg2);
 		QAndroidJniObject exec(jstring arg0);
 		QAndroidJniObject exec(const QString &arg0);
 		QAndroidJniObject exec(jarray arg0, jarray arg1);
-		QAndroidJniObject exec(jarray arg0, jarray arg1, __jni_impl::java::io::File arg2);
 		QAndroidJniObject exec(jstring arg0, jarray arg1);
 		QAndroidJniObject exec(const QString &arg0, jarray arg1);
-		void addShutdownHook(__jni_impl::java::lang::Thread arg0);
+		QAndroidJniObject exec(jarray arg0, jarray arg1, __jni_impl::java::io::File arg2);
+		QAndroidJniObject exec(jstring arg0, jarray arg1, __jni_impl::java::io::File arg2);
+		QAndroidJniObject exec(const QString &arg0, jarray arg1, __jni_impl::java::io::File arg2);
+		void exit(jint arg0);
+		jlong freeMemory();
+		void gc();
+		void halt(jint arg0);
+		void load(jstring arg0);
+		void load(const QString &arg0);
+		void loadLibrary(jstring arg0);
+		void loadLibrary(const QString &arg0);
+		jlong maxMemory();
 		jboolean removeShutdownHook(__jni_impl::java::lang::Thread arg0);
+		void runFinalization();
 		jlong totalMemory();
 	};
 } // namespace __jni_impl::java::lang
 
-#include "Process.hpp"
 #include "../io/File.hpp"
+#include "Process.hpp"
 #include "Thread.hpp"
 
 namespace __jni_impl::java::lang
@@ -82,21 +82,6 @@ namespace __jni_impl::java::lang
 			"()Ljava/lang/Runtime;"
 		);
 	}
-	void Runtime::exit(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"exit",
-			"(I)V",
-			arg0
-		);
-	}
-	void Runtime::runFinalization()
-	{
-		__thiz.callMethod<void>(
-			"runFinalization",
-			"()V"
-		);
-	}
 	QAndroidJniObject Runtime::version()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -105,57 +90,12 @@ namespace __jni_impl::java::lang
 			"()Ljava/lang/Runtime$Version;"
 		);
 	}
-	void Runtime::loadLibrary(jstring arg0)
+	void Runtime::addShutdownHook(__jni_impl::java::lang::Thread arg0)
 	{
 		__thiz.callMethod<void>(
-			"loadLibrary",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void Runtime::loadLibrary(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"loadLibrary",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void Runtime::gc()
-	{
-		__thiz.callMethod<void>(
-			"gc",
-			"()V"
-		);
-	}
-	void Runtime::load(jstring arg0)
-	{
-		__thiz.callMethod<void>(
-			"load",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void Runtime::load(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"load",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	jlong Runtime::freeMemory()
-	{
-		return __thiz.callMethod<jlong>(
-			"freeMemory",
-			"()J"
-		);
-	}
-	jlong Runtime::maxMemory()
-	{
-		return __thiz.callMethod<jlong>(
-			"maxMemory",
-			"()J"
+			"addShutdownHook",
+			"(Ljava/lang/Thread;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	jint Runtime::availableProcessors()
@@ -165,40 +105,12 @@ namespace __jni_impl::java::lang
 			"()I"
 		);
 	}
-	void Runtime::halt(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"halt",
-			"(I)V",
-			arg0
-		);
-	}
 	QAndroidJniObject Runtime::exec(jarray arg0)
 	{
 		return __thiz.callObjectMethod(
 			"exec",
 			"([Ljava/lang/String;)Ljava/lang/Process;",
 			arg0
-		);
-	}
-	QAndroidJniObject Runtime::exec(jstring arg0, jarray arg1, __jni_impl::java::io::File arg2)
-	{
-		return __thiz.callObjectMethod(
-			"exec",
-			"(Ljava/lang/String;[Ljava/lang/String;Ljava/io/File;)Ljava/lang/Process;",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
-	QAndroidJniObject Runtime::exec(const QString &arg0, jarray arg1, __jni_impl::java::io::File arg2)
-	{
-		return __thiz.callObjectMethod(
-			"exec",
-			"(Ljava/lang/String;[Ljava/lang/String;Ljava/io/File;)Ljava/lang/Process;",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object()
 		);
 	}
 	QAndroidJniObject Runtime::exec(jstring arg0)
@@ -226,16 +138,6 @@ namespace __jni_impl::java::lang
 			arg1
 		);
 	}
-	QAndroidJniObject Runtime::exec(jarray arg0, jarray arg1, __jni_impl::java::io::File arg2)
-	{
-		return __thiz.callObjectMethod(
-			"exec",
-			"([Ljava/lang/String;[Ljava/lang/String;Ljava/io/File;)Ljava/lang/Process;",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
-		);
-	}
 	QAndroidJniObject Runtime::exec(jstring arg0, jarray arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -254,12 +156,103 @@ namespace __jni_impl::java::lang
 			arg1
 		);
 	}
-	void Runtime::addShutdownHook(__jni_impl::java::lang::Thread arg0)
+	QAndroidJniObject Runtime::exec(jarray arg0, jarray arg1, __jni_impl::java::io::File arg2)
+	{
+		return __thiz.callObjectMethod(
+			"exec",
+			"([Ljava/lang/String;[Ljava/lang/String;Ljava/io/File;)Ljava/lang/Process;",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Runtime::exec(jstring arg0, jarray arg1, __jni_impl::java::io::File arg2)
+	{
+		return __thiz.callObjectMethod(
+			"exec",
+			"(Ljava/lang/String;[Ljava/lang/String;Ljava/io/File;)Ljava/lang/Process;",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	QAndroidJniObject Runtime::exec(const QString &arg0, jarray arg1, __jni_impl::java::io::File arg2)
+	{
+		return __thiz.callObjectMethod(
+			"exec",
+			"(Ljava/lang/String;[Ljava/lang/String;Ljava/io/File;)Ljava/lang/Process;",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	void Runtime::exit(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"addShutdownHook",
-			"(Ljava/lang/Thread;)V",
-			arg0.__jniObject().object()
+			"exit",
+			"(I)V",
+			arg0
+		);
+	}
+	jlong Runtime::freeMemory()
+	{
+		return __thiz.callMethod<jlong>(
+			"freeMemory",
+			"()J"
+		);
+	}
+	void Runtime::gc()
+	{
+		__thiz.callMethod<void>(
+			"gc",
+			"()V"
+		);
+	}
+	void Runtime::halt(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"halt",
+			"(I)V",
+			arg0
+		);
+	}
+	void Runtime::load(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"load",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void Runtime::load(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"load",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void Runtime::loadLibrary(jstring arg0)
+	{
+		__thiz.callMethod<void>(
+			"loadLibrary",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void Runtime::loadLibrary(const QString &arg0)
+	{
+		__thiz.callMethod<void>(
+			"loadLibrary",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jlong Runtime::maxMemory()
+	{
+		return __thiz.callMethod<jlong>(
+			"maxMemory",
+			"()J"
 		);
 	}
 	jboolean Runtime::removeShutdownHook(__jni_impl::java::lang::Thread arg0)
@@ -268,6 +261,13 @@ namespace __jni_impl::java::lang
 			"removeShutdownHook",
 			"(Ljava/lang/Thread;)Z",
 			arg0.__jniObject().object()
+		);
+	}
+	void Runtime::runFinalization()
+	{
+		__thiz.callMethod<void>(
+			"runFinalization",
+			"()V"
 		);
 	}
 	jlong Runtime::totalMemory()

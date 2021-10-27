@@ -23,8 +23,8 @@ namespace __jni_impl::android::service::carrier
 		
 		// Methods
 		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getPdus();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::service::carrier
 
@@ -60,6 +60,13 @@ namespace __jni_impl::android::service::carrier
 			"()I"
 		);
 	}
+	QAndroidJniObject MessagePdu::getPdus()
+	{
+		return __thiz.callObjectMethod(
+			"getPdus",
+			"()Ljava/util/List;"
+		);
+	}
 	void MessagePdu::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -67,13 +74,6 @@ namespace __jni_impl::android::service::carrier
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject MessagePdu::getPdus()
-	{
-		return __thiz.callObjectMethod(
-			"getPdus",
-			"()Ljava/util/List;"
 		);
 	}
 } // namespace __jni_impl::android::service::carrier

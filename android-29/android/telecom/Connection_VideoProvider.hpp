@@ -5,21 +5,21 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::view
-{
-	class Surface;
-}
-namespace __jni_impl::android::telecom
-{
-	class VideoProfile;
-}
 namespace __jni_impl::android::net
 {
 	class Uri;
 }
 namespace __jni_impl::android::telecom
 {
+	class VideoProfile;
+}
+namespace __jni_impl::android::telecom
+{
 	class VideoProfile_CameraCapabilities;
+}
+namespace __jni_impl::android::view
+{
+	class Surface;
 }
 
 namespace __jni_impl::android::telecom
@@ -45,31 +45,31 @@ namespace __jni_impl::android::telecom
 		void __constructor();
 		
 		// Methods
-		void onSetCamera(jstring arg0);
-		void onSetCamera(const QString &arg0);
-		void onSetPreviewSurface(__jni_impl::android::view::Surface arg0);
-		void onSetDisplaySurface(__jni_impl::android::view::Surface arg0);
-		void onSetDeviceOrientation(jint arg0);
-		void onSetZoom(jfloat arg0);
-		void onSendSessionModifyRequest(__jni_impl::android::telecom::VideoProfile arg0, __jni_impl::android::telecom::VideoProfile arg1);
-		void onSendSessionModifyResponse(__jni_impl::android::telecom::VideoProfile arg0);
+		void changeCameraCapabilities(__jni_impl::android::telecom::VideoProfile_CameraCapabilities arg0);
+		void changePeerDimensions(jint arg0, jint arg1);
+		void changeVideoQuality(jint arg0);
+		void handleCallSessionEvent(jint arg0);
 		void onRequestCameraCapabilities();
 		void onRequestConnectionDataUsage();
+		void onSendSessionModifyRequest(__jni_impl::android::telecom::VideoProfile arg0, __jni_impl::android::telecom::VideoProfile arg1);
+		void onSendSessionModifyResponse(__jni_impl::android::telecom::VideoProfile arg0);
+		void onSetCamera(jstring arg0);
+		void onSetCamera(const QString &arg0);
+		void onSetDeviceOrientation(jint arg0);
+		void onSetDisplaySurface(__jni_impl::android::view::Surface arg0);
 		void onSetPauseImage(__jni_impl::android::net::Uri arg0);
+		void onSetPreviewSurface(__jni_impl::android::view::Surface arg0);
+		void onSetZoom(jfloat arg0);
 		void receiveSessionModifyRequest(__jni_impl::android::telecom::VideoProfile arg0);
 		void receiveSessionModifyResponse(jint arg0, __jni_impl::android::telecom::VideoProfile arg1, __jni_impl::android::telecom::VideoProfile arg2);
-		void handleCallSessionEvent(jint arg0);
-		void changePeerDimensions(jint arg0, jint arg1);
 		void setCallDataUsage(jlong arg0);
-		void changeCameraCapabilities(__jni_impl::android::telecom::VideoProfile_CameraCapabilities arg0);
-		void changeVideoQuality(jint arg0);
 	};
 } // namespace __jni_impl::android::telecom
 
-#include "../view/Surface.hpp"
-#include "VideoProfile.hpp"
 #include "../net/Uri.hpp"
+#include "VideoProfile.hpp"
 #include "VideoProfile_CameraCapabilities.hpp"
+#include "../view/Surface.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -169,52 +169,51 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
-	void Connection_VideoProvider::onSetCamera(jstring arg0)
+	void Connection_VideoProvider::changeCameraCapabilities(__jni_impl::android::telecom::VideoProfile_CameraCapabilities arg0)
 	{
 		__thiz.callMethod<void>(
-			"onSetCamera",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void Connection_VideoProvider::onSetCamera(const QString &arg0)
-	{
-		__thiz.callMethod<void>(
-			"onSetCamera",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void Connection_VideoProvider::onSetPreviewSurface(__jni_impl::android::view::Surface arg0)
-	{
-		__thiz.callMethod<void>(
-			"onSetPreviewSurface",
-			"(Landroid/view/Surface;)V",
+			"changeCameraCapabilities",
+			"(Landroid/telecom/VideoProfile$CameraCapabilities;)V",
 			arg0.__jniObject().object()
 		);
 	}
-	void Connection_VideoProvider::onSetDisplaySurface(__jni_impl::android::view::Surface arg0)
+	void Connection_VideoProvider::changePeerDimensions(jint arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
-			"onSetDisplaySurface",
-			"(Landroid/view/Surface;)V",
-			arg0.__jniObject().object()
+			"changePeerDimensions",
+			"(II)V",
+			arg0,
+			arg1
 		);
 	}
-	void Connection_VideoProvider::onSetDeviceOrientation(jint arg0)
+	void Connection_VideoProvider::changeVideoQuality(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"onSetDeviceOrientation",
+			"changeVideoQuality",
 			"(I)V",
 			arg0
 		);
 	}
-	void Connection_VideoProvider::onSetZoom(jfloat arg0)
+	void Connection_VideoProvider::handleCallSessionEvent(jint arg0)
 	{
 		__thiz.callMethod<void>(
-			"onSetZoom",
-			"(F)V",
+			"handleCallSessionEvent",
+			"(I)V",
 			arg0
+		);
+	}
+	void Connection_VideoProvider::onRequestCameraCapabilities()
+	{
+		__thiz.callMethod<void>(
+			"onRequestCameraCapabilities",
+			"()V"
+		);
+	}
+	void Connection_VideoProvider::onRequestConnectionDataUsage()
+	{
+		__thiz.callMethod<void>(
+			"onRequestConnectionDataUsage",
+			"()V"
 		);
 	}
 	void Connection_VideoProvider::onSendSessionModifyRequest(__jni_impl::android::telecom::VideoProfile arg0, __jni_impl::android::telecom::VideoProfile arg1)
@@ -234,18 +233,36 @@ namespace __jni_impl::android::telecom
 			arg0.__jniObject().object()
 		);
 	}
-	void Connection_VideoProvider::onRequestCameraCapabilities()
+	void Connection_VideoProvider::onSetCamera(jstring arg0)
 	{
 		__thiz.callMethod<void>(
-			"onRequestCameraCapabilities",
-			"()V"
+			"onSetCamera",
+			"(Ljava/lang/String;)V",
+			arg0
 		);
 	}
-	void Connection_VideoProvider::onRequestConnectionDataUsage()
+	void Connection_VideoProvider::onSetCamera(const QString &arg0)
 	{
 		__thiz.callMethod<void>(
-			"onRequestConnectionDataUsage",
-			"()V"
+			"onSetCamera",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	void Connection_VideoProvider::onSetDeviceOrientation(jint arg0)
+	{
+		__thiz.callMethod<void>(
+			"onSetDeviceOrientation",
+			"(I)V",
+			arg0
+		);
+	}
+	void Connection_VideoProvider::onSetDisplaySurface(__jni_impl::android::view::Surface arg0)
+	{
+		__thiz.callMethod<void>(
+			"onSetDisplaySurface",
+			"(Landroid/view/Surface;)V",
+			arg0.__jniObject().object()
 		);
 	}
 	void Connection_VideoProvider::onSetPauseImage(__jni_impl::android::net::Uri arg0)
@@ -254,6 +271,22 @@ namespace __jni_impl::android::telecom
 			"onSetPauseImage",
 			"(Landroid/net/Uri;)V",
 			arg0.__jniObject().object()
+		);
+	}
+	void Connection_VideoProvider::onSetPreviewSurface(__jni_impl::android::view::Surface arg0)
+	{
+		__thiz.callMethod<void>(
+			"onSetPreviewSurface",
+			"(Landroid/view/Surface;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void Connection_VideoProvider::onSetZoom(jfloat arg0)
+	{
+		__thiz.callMethod<void>(
+			"onSetZoom",
+			"(F)V",
+			arg0
 		);
 	}
 	void Connection_VideoProvider::receiveSessionModifyRequest(__jni_impl::android::telecom::VideoProfile arg0)
@@ -274,44 +307,11 @@ namespace __jni_impl::android::telecom
 			arg2.__jniObject().object()
 		);
 	}
-	void Connection_VideoProvider::handleCallSessionEvent(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"handleCallSessionEvent",
-			"(I)V",
-			arg0
-		);
-	}
-	void Connection_VideoProvider::changePeerDimensions(jint arg0, jint arg1)
-	{
-		__thiz.callMethod<void>(
-			"changePeerDimensions",
-			"(II)V",
-			arg0,
-			arg1
-		);
-	}
 	void Connection_VideoProvider::setCallDataUsage(jlong arg0)
 	{
 		__thiz.callMethod<void>(
 			"setCallDataUsage",
 			"(J)V",
-			arg0
-		);
-	}
-	void Connection_VideoProvider::changeCameraCapabilities(__jni_impl::android::telecom::VideoProfile_CameraCapabilities arg0)
-	{
-		__thiz.callMethod<void>(
-			"changeCameraCapabilities",
-			"(Landroid/telecom/VideoProfile$CameraCapabilities;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void Connection_VideoProvider::changeVideoQuality(jint arg0)
-	{
-		__thiz.callMethod<void>(
-			"changeVideoQuality",
-			"(I)V",
 			arg0
 		);
 	}

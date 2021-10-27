@@ -11,11 +11,11 @@ namespace __jni_impl::android::content
 }
 namespace __jni_impl::android::os
 {
-	class Parcel;
+	class Bundle;
 }
 namespace __jni_impl::android::os
 {
-	class Bundle;
+	class Parcel;
 }
 
 namespace __jni_impl::android::app
@@ -30,19 +30,19 @@ namespace __jni_impl::android::app
 		void __constructor();
 		
 		// Methods
+		jint describeContents();
 		jboolean equals(jobject arg0);
-		jint hashCode();
+		QAndroidJniObject getExtras();
 		jstring getId();
 		QAndroidJniObject getLocusId();
-		jint describeContents();
+		jint hashCode();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		QAndroidJniObject getExtras();
 	};
 } // namespace __jni_impl::android::app
 
 #include "../content/LocusId.hpp"
-#include "../os/Parcel.hpp"
 #include "../os/Bundle.hpp"
+#include "../os/Parcel.hpp"
 
 namespace __jni_impl::android::app
 {
@@ -65,6 +65,13 @@ namespace __jni_impl::android::app
 	}
 	
 	// Methods
+	jint DirectAction::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean DirectAction::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -73,11 +80,11 @@ namespace __jni_impl::android::app
 			arg0
 		);
 	}
-	jint DirectAction::hashCode()
+	QAndroidJniObject DirectAction::getExtras()
 	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
+		return __thiz.callObjectMethod(
+			"getExtras",
+			"()Landroid/os/Bundle;"
 		);
 	}
 	jstring DirectAction::getId()
@@ -94,10 +101,10 @@ namespace __jni_impl::android::app
 			"()Landroid/content/LocusId;"
 		);
 	}
-	jint DirectAction::describeContents()
+	jint DirectAction::hashCode()
 	{
 		return __thiz.callMethod<jint>(
-			"describeContents",
+			"hashCode",
 			"()I"
 		);
 	}
@@ -108,13 +115,6 @@ namespace __jni_impl::android::app
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject DirectAction::getExtras()
-	{
-		return __thiz.callObjectMethod(
-			"getExtras",
-			"()Landroid/os/Bundle;"
 		);
 	}
 } // namespace __jni_impl::android::app

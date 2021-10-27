@@ -24,14 +24,14 @@ namespace __jni_impl::android::telephony
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jint getSystemId();
+		jint getBasestationId();
 		jint getLatitude();
 		jint getLongitude();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
-		jint getBasestationId();
 		jint getNetworkId();
+		jint getSystemId();
+		jint hashCode();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::telephony
 
@@ -66,24 +66,10 @@ namespace __jni_impl::android::telephony
 			arg0
 		);
 	}
-	jstring CellIdentityCdma::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint CellIdentityCdma::hashCode()
+	jint CellIdentityCdma::getBasestationId()
 	{
 		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jint CellIdentityCdma::getSystemId()
-	{
-		return __thiz.callMethod<jint>(
-			"getSystemId",
+			"getBasestationId",
 			"()I"
 		);
 	}
@@ -101,6 +87,34 @@ namespace __jni_impl::android::telephony
 			"()I"
 		);
 	}
+	jint CellIdentityCdma::getNetworkId()
+	{
+		return __thiz.callMethod<jint>(
+			"getNetworkId",
+			"()I"
+		);
+	}
+	jint CellIdentityCdma::getSystemId()
+	{
+		return __thiz.callMethod<jint>(
+			"getSystemId",
+			"()I"
+		);
+	}
+	jint CellIdentityCdma::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring CellIdentityCdma::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
 	void CellIdentityCdma::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
 		__thiz.callMethod<void>(
@@ -108,20 +122,6 @@ namespace __jni_impl::android::telephony
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jint CellIdentityCdma::getBasestationId()
-	{
-		return __thiz.callMethod<jint>(
-			"getBasestationId",
-			"()I"
-		);
-	}
-	jint CellIdentityCdma::getNetworkId()
-	{
-		return __thiz.callMethod<jint>(
-			"getNetworkId",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::telephony

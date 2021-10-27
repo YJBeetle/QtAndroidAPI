@@ -7,11 +7,11 @@
 
 namespace __jni_impl::android::media
 {
-	class SoundPool;
+	class AudioAttributes;
 }
 namespace __jni_impl::android::media
 {
-	class AudioAttributes;
+	class SoundPool;
 }
 
 namespace __jni_impl::android::media
@@ -31,8 +31,8 @@ namespace __jni_impl::android::media
 	};
 } // namespace __jni_impl::android::media
 
-#include "SoundPool.hpp"
 #include "AudioAttributes.hpp"
+#include "SoundPool.hpp"
 
 namespace __jni_impl::android::media
 {

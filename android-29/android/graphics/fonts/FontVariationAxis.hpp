@@ -18,14 +18,14 @@ namespace __jni_impl::android::graphics::fonts
 		void __constructor(const QString &arg0, jfloat arg1);
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
-		jstring getTag();
-		jfloat getStyleValue();
 		static jarray fromFontVariationSettings(jstring arg0);
 		static jarray fromFontVariationSettings(const QString &arg0);
 		static jstring toFontVariationSettings(jarray arg0);
+		jboolean equals(jobject arg0);
+		jfloat getStyleValue();
+		jstring getTag();
+		jint hashCode();
+		jstring toString();
 	};
 } // namespace __jni_impl::android::graphics::fonts
 
@@ -55,42 +55,6 @@ namespace __jni_impl::android::graphics::fonts
 	}
 	
 	// Methods
-	jboolean FontVariationAxis::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jstring FontVariationAxis::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jint FontVariationAxis::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jstring FontVariationAxis::getTag()
-	{
-		return __thiz.callObjectMethod(
-			"getTag",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jfloat FontVariationAxis::getStyleValue()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getStyleValue",
-			"()F"
-		);
-	}
 	jarray FontVariationAxis::fromFontVariationSettings(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -116,6 +80,42 @@ namespace __jni_impl::android::graphics::fonts
 			"toFontVariationSettings",
 			"([Landroid/graphics/fonts/FontVariationAxis;)Ljava/lang/String;",
 			arg0
+		).object<jstring>();
+	}
+	jboolean FontVariationAxis::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jfloat FontVariationAxis::getStyleValue()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getStyleValue",
+			"()F"
+		);
+	}
+	jstring FontVariationAxis::getTag()
+	{
+		return __thiz.callObjectMethod(
+			"getTag",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	jint FontVariationAxis::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jstring FontVariationAxis::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
 		).object<jstring>();
 	}
 } // namespace __jni_impl::android::graphics::fonts

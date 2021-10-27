@@ -16,11 +16,11 @@ namespace __jni_impl::java::util
 		// Fields
 		
 		// Constructors
-		void __constructor(jstring arg0, jint arg1);
-		void __constructor(const QString &arg0, jint arg1);
+		void __constructor();
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor();
+		void __constructor(jstring arg0, jint arg1);
+		void __constructor(const QString &arg0, jint arg1);
 		
 		// Methods
 		jint getErrorIndex();
@@ -33,22 +33,11 @@ namespace __jni_impl::java::util
 	// Fields
 	
 	// Constructors
-	void IllformedLocaleException::__constructor(jstring arg0, jint arg1)
+	void IllformedLocaleException::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.IllformedLocaleException",
-			"(Ljava/lang/String;I)V",
-			arg0,
-			arg1
-		);
-	}
-	void IllformedLocaleException::__constructor(const QString &arg0, jint arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.IllformedLocaleException",
-			"(Ljava/lang/String;I)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1
+			"()V"
 		);
 	}
 	void IllformedLocaleException::__constructor(jstring arg0)
@@ -67,11 +56,22 @@ namespace __jni_impl::java::util
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void IllformedLocaleException::__constructor()
+	void IllformedLocaleException::__constructor(jstring arg0, jint arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.IllformedLocaleException",
-			"()V"
+			"(Ljava/lang/String;I)V",
+			arg0,
+			arg1
+		);
+	}
+	void IllformedLocaleException::__constructor(const QString &arg0, jint arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.IllformedLocaleException",
+			"(Ljava/lang/String;I)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1
 		);
 	}
 	
@@ -91,20 +91,20 @@ namespace java::util
 	{
 	public:
 		IllformedLocaleException(QAndroidJniObject obj) { __thiz = obj; }
-		IllformedLocaleException(jstring arg0, jint arg1)
+		IllformedLocaleException()
 		{
-			__constructor(
-				arg0,
-				arg1);
+			__constructor();
 		}
 		IllformedLocaleException(jstring arg0)
 		{
 			__constructor(
 				arg0);
 		}
-		IllformedLocaleException()
+		IllformedLocaleException(jstring arg0, jint arg1)
 		{
-			__constructor();
+			__constructor(
+				arg0,
+				arg1);
 		}
 	};
 } // namespace java::util

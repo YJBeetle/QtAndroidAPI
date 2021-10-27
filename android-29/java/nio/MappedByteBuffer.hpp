@@ -13,11 +13,11 @@ namespace __jni_impl::java::io
 }
 namespace __jni_impl::java::nio
 {
-	class ByteBuffer;
+	class Buffer;
 }
 namespace __jni_impl::java::nio
 {
-	class Buffer;
+	class ByteBuffer;
 }
 
 namespace __jni_impl::java::nio
@@ -32,22 +32,22 @@ namespace __jni_impl::java::nio
 		
 		// Methods
 		QAndroidJniObject clear();
+		QAndroidJniObject flip();
+		QAndroidJniObject force();
+		QAndroidJniObject force(jint arg0, jint arg1);
+		jboolean isLoaded();
 		QAndroidJniObject limit(jint arg0);
-		QAndroidJniObject position(jint arg0);
 		QAndroidJniObject load();
 		QAndroidJniObject mark();
+		QAndroidJniObject position(jint arg0);
 		QAndroidJniObject reset();
-		QAndroidJniObject flip();
 		QAndroidJniObject rewind();
-		jboolean isLoaded();
-		QAndroidJniObject force(jint arg0, jint arg1);
-		QAndroidJniObject force();
 	};
 } // namespace __jni_impl::java::nio
 
 #include "../io/FileDescriptor.hpp"
-#include "ByteBuffer.hpp"
 #include "Buffer.hpp"
+#include "ByteBuffer.hpp"
 
 namespace __jni_impl::java::nio
 {
@@ -69,18 +69,40 @@ namespace __jni_impl::java::nio
 			"()Ljava/nio/MappedByteBuffer;"
 		);
 	}
+	QAndroidJniObject MappedByteBuffer::flip()
+	{
+		return __thiz.callObjectMethod(
+			"flip",
+			"()Ljava/nio/MappedByteBuffer;"
+		);
+	}
+	QAndroidJniObject MappedByteBuffer::force()
+	{
+		return __thiz.callObjectMethod(
+			"force",
+			"()Ljava/nio/MappedByteBuffer;"
+		);
+	}
+	QAndroidJniObject MappedByteBuffer::force(jint arg0, jint arg1)
+	{
+		return __thiz.callObjectMethod(
+			"force",
+			"(II)Ljava/nio/MappedByteBuffer;",
+			arg0,
+			arg1
+		);
+	}
+	jboolean MappedByteBuffer::isLoaded()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isLoaded",
+			"()Z"
+		);
+	}
 	QAndroidJniObject MappedByteBuffer::limit(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"limit",
-			"(I)Ljava/nio/MappedByteBuffer;",
-			arg0
-		);
-	}
-	QAndroidJniObject MappedByteBuffer::position(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"position",
 			"(I)Ljava/nio/MappedByteBuffer;",
 			arg0
 		);
@@ -99,6 +121,14 @@ namespace __jni_impl::java::nio
 			"()Ljava/nio/MappedByteBuffer;"
 		);
 	}
+	QAndroidJniObject MappedByteBuffer::position(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"position",
+			"(I)Ljava/nio/MappedByteBuffer;",
+			arg0
+		);
+	}
 	QAndroidJniObject MappedByteBuffer::reset()
 	{
 		return __thiz.callObjectMethod(
@@ -106,40 +136,10 @@ namespace __jni_impl::java::nio
 			"()Ljava/nio/MappedByteBuffer;"
 		);
 	}
-	QAndroidJniObject MappedByteBuffer::flip()
-	{
-		return __thiz.callObjectMethod(
-			"flip",
-			"()Ljava/nio/MappedByteBuffer;"
-		);
-	}
 	QAndroidJniObject MappedByteBuffer::rewind()
 	{
 		return __thiz.callObjectMethod(
 			"rewind",
-			"()Ljava/nio/MappedByteBuffer;"
-		);
-	}
-	jboolean MappedByteBuffer::isLoaded()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isLoaded",
-			"()Z"
-		);
-	}
-	QAndroidJniObject MappedByteBuffer::force(jint arg0, jint arg1)
-	{
-		return __thiz.callObjectMethod(
-			"force",
-			"(II)Ljava/nio/MappedByteBuffer;",
-			arg0,
-			arg1
-		);
-	}
-	QAndroidJniObject MappedByteBuffer::force()
-	{
-		return __thiz.callObjectMethod(
-			"force",
 			"()Ljava/nio/MappedByteBuffer;"
 		);
 	}

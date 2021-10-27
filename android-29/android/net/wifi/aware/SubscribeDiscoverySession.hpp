@@ -8,11 +8,11 @@
 
 namespace __jni_impl::android::net::wifi::aware
 {
-	class WifiAwareManager;
+	class SubscribeConfig;
 }
 namespace __jni_impl::android::net::wifi::aware
 {
-	class SubscribeConfig;
+	class WifiAwareManager;
 }
 
 namespace __jni_impl::android::net::wifi::aware
@@ -30,8 +30,8 @@ namespace __jni_impl::android::net::wifi::aware
 	};
 } // namespace __jni_impl::android::net::wifi::aware
 
-#include "WifiAwareManager.hpp"
 #include "SubscribeConfig.hpp"
+#include "WifiAwareManager.hpp"
 
 namespace __jni_impl::android::net::wifi::aware
 {

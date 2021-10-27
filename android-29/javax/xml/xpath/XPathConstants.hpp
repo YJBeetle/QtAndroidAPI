@@ -16,12 +16,12 @@ namespace __jni_impl::javax::xml::xpath
 	{
 	public:
 		// Fields
+		static QAndroidJniObject BOOLEAN();
+		static jstring DOM_OBJECT_MODEL();
+		static QAndroidJniObject NODE();
+		static QAndroidJniObject NODESET();
 		static QAndroidJniObject NUMBER();
 		static QAndroidJniObject STRING();
-		static QAndroidJniObject BOOLEAN();
-		static QAndroidJniObject NODESET();
-		static QAndroidJniObject NODE();
-		static jstring DOM_OBJECT_MODEL();
 		
 		// Constructors
 		void __constructor();
@@ -35,6 +35,38 @@ namespace __jni_impl::javax::xml::xpath
 namespace __jni_impl::javax::xml::xpath
 {
 	// Fields
+	QAndroidJniObject XPathConstants::BOOLEAN()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.xml.xpath.XPathConstants",
+			"BOOLEAN",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	jstring XPathConstants::DOM_OBJECT_MODEL()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.xml.xpath.XPathConstants",
+			"DOM_OBJECT_MODEL",
+			"Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject XPathConstants::NODE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.xml.xpath.XPathConstants",
+			"NODE",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
+	QAndroidJniObject XPathConstants::NODESET()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"javax.xml.xpath.XPathConstants",
+			"NODESET",
+			"Ljavax/xml/namespace/QName;"
+		);
+	}
 	QAndroidJniObject XPathConstants::NUMBER()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -50,38 +82,6 @@ namespace __jni_impl::javax::xml::xpath
 			"STRING",
 			"Ljavax/xml/namespace/QName;"
 		);
-	}
-	QAndroidJniObject XPathConstants::BOOLEAN()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.xml.xpath.XPathConstants",
-			"BOOLEAN",
-			"Ljavax/xml/namespace/QName;"
-		);
-	}
-	QAndroidJniObject XPathConstants::NODESET()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.xml.xpath.XPathConstants",
-			"NODESET",
-			"Ljavax/xml/namespace/QName;"
-		);
-	}
-	QAndroidJniObject XPathConstants::NODE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.xml.xpath.XPathConstants",
-			"NODE",
-			"Ljavax/xml/namespace/QName;"
-		);
-	}
-	jstring XPathConstants::DOM_OBJECT_MODEL()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"javax.xml.xpath.XPathConstants",
-			"DOM_OBJECT_MODEL",
-			"Ljava/lang/String;"
-		).object<jstring>();
 	}
 	
 	// Constructors

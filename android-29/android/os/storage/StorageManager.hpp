@@ -5,29 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util
-{
-	class UUID;
-}
-namespace __jni_impl::android::os::storage
-{
-	class OnObbStateChangeListener;
-}
-namespace __jni_impl::java::io
-{
-	class File;
-}
-namespace __jni_impl::java::io
-{
-	class FileDescriptor;
-}
-namespace __jni_impl::android::os::storage
-{
-	class StorageVolume;
-}
 namespace __jni_impl::android::net
 {
 	class Uri;
+}
+namespace __jni_impl::android::os
+{
+	class Handler;
 }
 namespace __jni_impl::android::os
 {
@@ -37,9 +21,25 @@ namespace __jni_impl::android::os
 {
 	class ProxyFileDescriptorCallback;
 }
-namespace __jni_impl::android::os
+namespace __jni_impl::android::os::storage
 {
-	class Handler;
+	class OnObbStateChangeListener;
+}
+namespace __jni_impl::android::os::storage
+{
+	class StorageVolume;
+}
+namespace __jni_impl::java::io
+{
+	class File;
+}
+namespace __jni_impl::java::io
+{
+	class FileDescriptor;
+}
+namespace __jni_impl::java::util
+{
+	class UUID;
 }
 
 namespace __jni_impl::android::os::storage
@@ -57,43 +57,43 @@ namespace __jni_impl::android::os::storage
 		void __constructor();
 		
 		// Methods
-		jboolean mountObb(jstring arg0, jstring arg1, __jni_impl::android::os::storage::OnObbStateChangeListener arg2);
-		jboolean mountObb(const QString &arg0, const QString &arg1, __jni_impl::android::os::storage::OnObbStateChangeListener arg2);
-		jboolean unmountObb(jstring arg0, jboolean arg1, __jni_impl::android::os::storage::OnObbStateChangeListener arg2);
-		jboolean unmountObb(const QString &arg0, jboolean arg1, __jni_impl::android::os::storage::OnObbStateChangeListener arg2);
-		jboolean isObbMounted(jstring arg0);
-		jboolean isObbMounted(const QString &arg0);
+		void allocateBytes(__jni_impl::java::io::FileDescriptor arg0, jlong arg1);
+		void allocateBytes(__jni_impl::java::util::UUID arg0, jlong arg1);
+		jlong getAllocatableBytes(__jni_impl::java::util::UUID arg0);
+		jlong getCacheQuotaBytes(__jni_impl::java::util::UUID arg0);
+		jlong getCacheSizeBytes(__jni_impl::java::util::UUID arg0);
 		jstring getMountedObbPath(jstring arg0);
 		jstring getMountedObbPath(const QString &arg0);
-		QAndroidJniObject getUuidForPath(__jni_impl::java::io::File arg0);
-		jboolean isAllocationSupported(__jni_impl::java::io::FileDescriptor arg0);
+		QAndroidJniObject getPrimaryStorageVolume();
 		QAndroidJniObject getStorageVolume(__jni_impl::android::net::Uri arg0);
 		QAndroidJniObject getStorageVolume(__jni_impl::java::io::File arg0);
 		QAndroidJniObject getStorageVolumes();
-		QAndroidJniObject getPrimaryStorageVolume();
-		jboolean isEncrypted(__jni_impl::java::io::File arg0);
-		QAndroidJniObject openProxyFileDescriptor(jint arg0, __jni_impl::android::os::ProxyFileDescriptorCallback arg1, __jni_impl::android::os::Handler arg2);
-		jlong getCacheQuotaBytes(__jni_impl::java::util::UUID arg0);
-		jlong getCacheSizeBytes(__jni_impl::java::util::UUID arg0);
-		jlong getAllocatableBytes(__jni_impl::java::util::UUID arg0);
-		void allocateBytes(__jni_impl::java::io::FileDescriptor arg0, jlong arg1);
-		void allocateBytes(__jni_impl::java::util::UUID arg0, jlong arg1);
-		void setCacheBehaviorGroup(__jni_impl::java::io::File arg0, jboolean arg1);
+		QAndroidJniObject getUuidForPath(__jni_impl::java::io::File arg0);
+		jboolean isAllocationSupported(__jni_impl::java::io::FileDescriptor arg0);
 		jboolean isCacheBehaviorGroup(__jni_impl::java::io::File arg0);
-		void setCacheBehaviorTombstone(__jni_impl::java::io::File arg0, jboolean arg1);
 		jboolean isCacheBehaviorTombstone(__jni_impl::java::io::File arg0);
+		jboolean isEncrypted(__jni_impl::java::io::File arg0);
+		jboolean isObbMounted(jstring arg0);
+		jboolean isObbMounted(const QString &arg0);
+		jboolean mountObb(jstring arg0, jstring arg1, __jni_impl::android::os::storage::OnObbStateChangeListener arg2);
+		jboolean mountObb(const QString &arg0, const QString &arg1, __jni_impl::android::os::storage::OnObbStateChangeListener arg2);
+		QAndroidJniObject openProxyFileDescriptor(jint arg0, __jni_impl::android::os::ProxyFileDescriptorCallback arg1, __jni_impl::android::os::Handler arg2);
+		void setCacheBehaviorGroup(__jni_impl::java::io::File arg0, jboolean arg1);
+		void setCacheBehaviorTombstone(__jni_impl::java::io::File arg0, jboolean arg1);
+		jboolean unmountObb(jstring arg0, jboolean arg1, __jni_impl::android::os::storage::OnObbStateChangeListener arg2);
+		jboolean unmountObb(const QString &arg0, jboolean arg1, __jni_impl::android::os::storage::OnObbStateChangeListener arg2);
 	};
 } // namespace __jni_impl::android::os::storage
 
-#include "../../../java/util/UUID.hpp"
-#include "OnObbStateChangeListener.hpp"
-#include "../../../java/io/File.hpp"
-#include "../../../java/io/FileDescriptor.hpp"
-#include "StorageVolume.hpp"
 #include "../../net/Uri.hpp"
+#include "../Handler.hpp"
 #include "../ParcelFileDescriptor.hpp"
 #include "../ProxyFileDescriptorCallback.hpp"
-#include "../Handler.hpp"
+#include "OnObbStateChangeListener.hpp"
+#include "StorageVolume.hpp"
+#include "../../../java/io/File.hpp"
+#include "../../../java/io/FileDescriptor.hpp"
+#include "../../../java/util/UUID.hpp"
 
 namespace __jni_impl::android::os::storage
 {
@@ -140,60 +140,46 @@ namespace __jni_impl::android::os::storage
 	}
 	
 	// Methods
-	jboolean StorageManager::mountObb(jstring arg0, jstring arg1, __jni_impl::android::os::storage::OnObbStateChangeListener arg2)
+	void StorageManager::allocateBytes(__jni_impl::java::io::FileDescriptor arg0, jlong arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"mountObb",
-			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/storage/OnObbStateChangeListener;)Z",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
+		__thiz.callMethod<void>(
+			"allocateBytes",
+			"(Ljava/io/FileDescriptor;J)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
-	jboolean StorageManager::mountObb(const QString &arg0, const QString &arg1, __jni_impl::android::os::storage::OnObbStateChangeListener arg2)
+	void StorageManager::allocateBytes(__jni_impl::java::util::UUID arg0, jlong arg1)
 	{
-		return __thiz.callMethod<jboolean>(
-			"mountObb",
-			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/storage/OnObbStateChangeListener;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			QAndroidJniObject::fromString(arg1).object<jstring>(),
-			arg2.__jniObject().object()
+		__thiz.callMethod<void>(
+			"allocateBytes",
+			"(Ljava/util/UUID;J)V",
+			arg0.__jniObject().object(),
+			arg1
 		);
 	}
-	jboolean StorageManager::unmountObb(jstring arg0, jboolean arg1, __jni_impl::android::os::storage::OnObbStateChangeListener arg2)
+	jlong StorageManager::getAllocatableBytes(__jni_impl::java::util::UUID arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"unmountObb",
-			"(Ljava/lang/String;ZLandroid/os/storage/OnObbStateChangeListener;)Z",
-			arg0,
-			arg1,
-			arg2.__jniObject().object()
+		return __thiz.callMethod<jlong>(
+			"getAllocatableBytes",
+			"(Ljava/util/UUID;)J",
+			arg0.__jniObject().object()
 		);
 	}
-	jboolean StorageManager::unmountObb(const QString &arg0, jboolean arg1, __jni_impl::android::os::storage::OnObbStateChangeListener arg2)
+	jlong StorageManager::getCacheQuotaBytes(__jni_impl::java::util::UUID arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"unmountObb",
-			"(Ljava/lang/String;ZLandroid/os/storage/OnObbStateChangeListener;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>(),
-			arg1,
-			arg2.__jniObject().object()
+		return __thiz.callMethod<jlong>(
+			"getCacheQuotaBytes",
+			"(Ljava/util/UUID;)J",
+			arg0.__jniObject().object()
 		);
 	}
-	jboolean StorageManager::isObbMounted(jstring arg0)
+	jlong StorageManager::getCacheSizeBytes(__jni_impl::java::util::UUID arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isObbMounted",
-			"(Ljava/lang/String;)Z",
-			arg0
-		);
-	}
-	jboolean StorageManager::isObbMounted(const QString &arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isObbMounted",
-			"(Ljava/lang/String;)Z",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
+		return __thiz.callMethod<jlong>(
+			"getCacheSizeBytes",
+			"(Ljava/util/UUID;)J",
+			arg0.__jniObject().object()
 		);
 	}
 	jstring StorageManager::getMountedObbPath(jstring arg0)
@@ -212,20 +198,11 @@ namespace __jni_impl::android::os::storage
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		).object<jstring>();
 	}
-	QAndroidJniObject StorageManager::getUuidForPath(__jni_impl::java::io::File arg0)
+	QAndroidJniObject StorageManager::getPrimaryStorageVolume()
 	{
 		return __thiz.callObjectMethod(
-			"getUuidForPath",
-			"(Ljava/io/File;)Ljava/util/UUID;",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean StorageManager::isAllocationSupported(__jni_impl::java::io::FileDescriptor arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isAllocationSupported",
-			"(Ljava/io/FileDescriptor;)Z",
-			arg0.__jniObject().object()
+			"getPrimaryStorageVolume",
+			"()Landroid/os/storage/StorageVolume;"
 		);
 	}
 	QAndroidJniObject StorageManager::getStorageVolume(__jni_impl::android::net::Uri arg0)
@@ -251,11 +228,36 @@ namespace __jni_impl::android::os::storage
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject StorageManager::getPrimaryStorageVolume()
+	QAndroidJniObject StorageManager::getUuidForPath(__jni_impl::java::io::File arg0)
 	{
 		return __thiz.callObjectMethod(
-			"getPrimaryStorageVolume",
-			"()Landroid/os/storage/StorageVolume;"
+			"getUuidForPath",
+			"(Ljava/io/File;)Ljava/util/UUID;",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean StorageManager::isAllocationSupported(__jni_impl::java::io::FileDescriptor arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isAllocationSupported",
+			"(Ljava/io/FileDescriptor;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean StorageManager::isCacheBehaviorGroup(__jni_impl::java::io::File arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isCacheBehaviorGroup",
+			"(Ljava/io/File;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean StorageManager::isCacheBehaviorTombstone(__jni_impl::java::io::File arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isCacheBehaviorTombstone",
+			"(Ljava/io/File;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 	jboolean StorageManager::isEncrypted(__jni_impl::java::io::File arg0)
@@ -264,6 +266,42 @@ namespace __jni_impl::android::os::storage
 			"isEncrypted",
 			"(Ljava/io/File;)Z",
 			arg0.__jniObject().object()
+		);
+	}
+	jboolean StorageManager::isObbMounted(jstring arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isObbMounted",
+			"(Ljava/lang/String;)Z",
+			arg0
+		);
+	}
+	jboolean StorageManager::isObbMounted(const QString &arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isObbMounted",
+			"(Ljava/lang/String;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jboolean StorageManager::mountObb(jstring arg0, jstring arg1, __jni_impl::android::os::storage::OnObbStateChangeListener arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"mountObb",
+			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/storage/OnObbStateChangeListener;)Z",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	jboolean StorageManager::mountObb(const QString &arg0, const QString &arg1, __jni_impl::android::os::storage::OnObbStateChangeListener arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"mountObb",
+			"(Ljava/lang/String;Ljava/lang/String;Landroid/os/storage/OnObbStateChangeListener;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			QAndroidJniObject::fromString(arg1).object<jstring>(),
+			arg2.__jniObject().object()
 		);
 	}
 	QAndroidJniObject StorageManager::openProxyFileDescriptor(jint arg0, __jni_impl::android::os::ProxyFileDescriptorCallback arg1, __jni_impl::android::os::Handler arg2)
@@ -276,48 +314,6 @@ namespace __jni_impl::android::os::storage
 			arg2.__jniObject().object()
 		);
 	}
-	jlong StorageManager::getCacheQuotaBytes(__jni_impl::java::util::UUID arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"getCacheQuotaBytes",
-			"(Ljava/util/UUID;)J",
-			arg0.__jniObject().object()
-		);
-	}
-	jlong StorageManager::getCacheSizeBytes(__jni_impl::java::util::UUID arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"getCacheSizeBytes",
-			"(Ljava/util/UUID;)J",
-			arg0.__jniObject().object()
-		);
-	}
-	jlong StorageManager::getAllocatableBytes(__jni_impl::java::util::UUID arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"getAllocatableBytes",
-			"(Ljava/util/UUID;)J",
-			arg0.__jniObject().object()
-		);
-	}
-	void StorageManager::allocateBytes(__jni_impl::java::io::FileDescriptor arg0, jlong arg1)
-	{
-		__thiz.callMethod<void>(
-			"allocateBytes",
-			"(Ljava/io/FileDescriptor;J)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void StorageManager::allocateBytes(__jni_impl::java::util::UUID arg0, jlong arg1)
-	{
-		__thiz.callMethod<void>(
-			"allocateBytes",
-			"(Ljava/util/UUID;J)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
 	void StorageManager::setCacheBehaviorGroup(__jni_impl::java::io::File arg0, jboolean arg1)
 	{
 		__thiz.callMethod<void>(
@@ -325,14 +321,6 @@ namespace __jni_impl::android::os::storage
 			"(Ljava/io/File;Z)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	jboolean StorageManager::isCacheBehaviorGroup(__jni_impl::java::io::File arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isCacheBehaviorGroup",
-			"(Ljava/io/File;)Z",
-			arg0.__jniObject().object()
 		);
 	}
 	void StorageManager::setCacheBehaviorTombstone(__jni_impl::java::io::File arg0, jboolean arg1)
@@ -344,12 +332,24 @@ namespace __jni_impl::android::os::storage
 			arg1
 		);
 	}
-	jboolean StorageManager::isCacheBehaviorTombstone(__jni_impl::java::io::File arg0)
+	jboolean StorageManager::unmountObb(jstring arg0, jboolean arg1, __jni_impl::android::os::storage::OnObbStateChangeListener arg2)
 	{
 		return __thiz.callMethod<jboolean>(
-			"isCacheBehaviorTombstone",
-			"(Ljava/io/File;)Z",
-			arg0.__jniObject().object()
+			"unmountObb",
+			"(Ljava/lang/String;ZLandroid/os/storage/OnObbStateChangeListener;)Z",
+			arg0,
+			arg1,
+			arg2.__jniObject().object()
+		);
+	}
+	jboolean StorageManager::unmountObb(const QString &arg0, jboolean arg1, __jni_impl::android::os::storage::OnObbStateChangeListener arg2)
+	{
+		return __thiz.callMethod<jboolean>(
+			"unmountObb",
+			"(Ljava/lang/String;ZLandroid/os/storage/OnObbStateChangeListener;)Z",
+			QAndroidJniObject::fromString(arg0).object<jstring>(),
+			arg1,
+			arg2.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::os::storage

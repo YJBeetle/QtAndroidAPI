@@ -13,17 +13,17 @@ namespace __jni_impl::android::database
 	{
 	public:
 		// Fields
-		static QAndroidJniObject RIGHT();
-		static QAndroidJniObject LEFT();
 		static QAndroidJniObject BOTH();
+		static QAndroidJniObject LEFT();
+		static QAndroidJniObject RIGHT();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::android::database
 
@@ -31,11 +31,11 @@ namespace __jni_impl::android::database
 namespace __jni_impl::android::database
 {
 	// Fields
-	QAndroidJniObject CursorJoiner_Result::RIGHT()
+	QAndroidJniObject CursorJoiner_Result::BOTH()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.database.CursorJoiner$Result",
-			"RIGHT",
+			"BOTH",
 			"Landroid/database/CursorJoiner$Result;"
 		);
 	}
@@ -47,11 +47,11 @@ namespace __jni_impl::android::database
 			"Landroid/database/CursorJoiner$Result;"
 		);
 	}
-	QAndroidJniObject CursorJoiner_Result::BOTH()
+	QAndroidJniObject CursorJoiner_Result::RIGHT()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"android.database.CursorJoiner$Result",
-			"BOTH",
+			"RIGHT",
 			"Landroid/database/CursorJoiner$Result;"
 		);
 	}
@@ -65,14 +65,6 @@ namespace __jni_impl::android::database
 	}
 	
 	// Methods
-	jarray CursorJoiner_Result::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"android.database.CursorJoiner$Result",
-			"values",
-			"()[Landroid/database/CursorJoiner$Result;"
-		).object<jarray>();
-	}
 	QAndroidJniObject CursorJoiner_Result::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::android::database
 			"(Ljava/lang/String;)Landroid/database/CursorJoiner$Result;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray CursorJoiner_Result::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"android.database.CursorJoiner$Result",
+			"values",
+			"()[Landroid/database/CursorJoiner$Result;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::android::database
 

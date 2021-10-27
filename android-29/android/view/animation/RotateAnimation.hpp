@@ -23,10 +23,10 @@ namespace __jni_impl::android::view::animation
 		// Fields
 		
 		// Constructors
-		void __constructor(jfloat arg0, jfloat arg1, jint arg2, jfloat arg3, jint arg4, jfloat arg5);
-		void __constructor(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
-		void __constructor(jfloat arg0, jfloat arg1);
 		void __constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1);
+		void __constructor(jfloat arg0, jfloat arg1);
+		void __constructor(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3);
+		void __constructor(jfloat arg0, jfloat arg1, jint arg2, jfloat arg3, jint arg4, jfloat arg5);
 		
 		// Methods
 		void initialize(jint arg0, jint arg1, jint arg2, jint arg3);
@@ -41,17 +41,22 @@ namespace __jni_impl::android::view::animation
 	// Fields
 	
 	// Constructors
-	void RotateAnimation::__constructor(jfloat arg0, jfloat arg1, jint arg2, jfloat arg3, jint arg4, jfloat arg5)
+	void RotateAnimation::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.RotateAnimation",
-			"(FFIFIF)V",
+			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
+			arg0.__jniObject().object(),
+			arg1.__jniObject().object()
+		);
+	}
+	void RotateAnimation::__constructor(jfloat arg0, jfloat arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"android.view.animation.RotateAnimation",
+			"(FF)V",
 			arg0,
-			arg1,
-			arg2,
-			arg3,
-			arg4,
-			arg5
+			arg1
 		);
 	}
 	void RotateAnimation::__constructor(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
@@ -65,22 +70,17 @@ namespace __jni_impl::android::view::animation
 			arg3
 		);
 	}
-	void RotateAnimation::__constructor(jfloat arg0, jfloat arg1)
+	void RotateAnimation::__constructor(jfloat arg0, jfloat arg1, jint arg2, jfloat arg3, jint arg4, jfloat arg5)
 	{
 		__thiz = QAndroidJniObject(
 			"android.view.animation.RotateAnimation",
-			"(FF)V",
+			"(FFIFIF)V",
 			arg0,
-			arg1
-		);
-	}
-	void RotateAnimation::__constructor(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"android.view.animation.RotateAnimation",
-			"(Landroid/content/Context;Landroid/util/AttributeSet;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
+			arg1,
+			arg2,
+			arg3,
+			arg4,
+			arg5
 		);
 	}
 	
@@ -104,15 +104,17 @@ namespace android::view::animation
 	{
 	public:
 		RotateAnimation(QAndroidJniObject obj) { __thiz = obj; }
-		RotateAnimation(jfloat arg0, jfloat arg1, jint arg2, jfloat arg3, jint arg4, jfloat arg5)
+		RotateAnimation(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
 		{
 			__constructor(
 				arg0,
-				arg1,
-				arg2,
-				arg3,
-				arg4,
-				arg5);
+				arg1);
+		}
+		RotateAnimation(jfloat arg0, jfloat arg1)
+		{
+			__constructor(
+				arg0,
+				arg1);
 		}
 		RotateAnimation(jfloat arg0, jfloat arg1, jfloat arg2, jfloat arg3)
 		{
@@ -122,17 +124,15 @@ namespace android::view::animation
 				arg2,
 				arg3);
 		}
-		RotateAnimation(jfloat arg0, jfloat arg1)
+		RotateAnimation(jfloat arg0, jfloat arg1, jint arg2, jfloat arg3, jint arg4, jfloat arg5)
 		{
 			__constructor(
 				arg0,
-				arg1);
-		}
-		RotateAnimation(__jni_impl::android::content::Context arg0, __jni_impl::__JniBaseClass arg1)
-		{
-			__constructor(
-				arg0,
-				arg1);
+				arg1,
+				arg2,
+				arg3,
+				arg4,
+				arg5);
 		}
 	};
 } // namespace android::view::animation

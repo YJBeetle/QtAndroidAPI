@@ -15,12 +15,12 @@ namespace __jni_impl::android::accounts
 		// Fields
 		
 		// Constructors
+		void __constructor();
+		void __constructor(jstring arg0);
+		void __constructor(const QString &arg0);
 		void __constructor(jthrowable arg0);
 		void __constructor(jstring arg0, jthrowable arg1);
 		void __constructor(const QString &arg0, jthrowable arg1);
-		void __constructor(jstring arg0);
-		void __constructor(const QString &arg0);
-		void __constructor();
 		
 		// Methods
 	};
@@ -32,6 +32,29 @@ namespace __jni_impl::android::accounts
 	// Fields
 	
 	// Constructors
+	void AccountsException::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"android.accounts.AccountsException",
+			"()V"
+		);
+	}
+	void AccountsException::__constructor(jstring arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.accounts.AccountsException",
+			"(Ljava/lang/String;)V",
+			arg0
+		);
+	}
+	void AccountsException::__constructor(const QString &arg0)
+	{
+		__thiz = QAndroidJniObject(
+			"android.accounts.AccountsException",
+			"(Ljava/lang/String;)V",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
 	void AccountsException::__constructor(jthrowable arg0)
 	{
 		__thiz = QAndroidJniObject(
@@ -58,29 +81,6 @@ namespace __jni_impl::android::accounts
 			arg1
 		);
 	}
-	void AccountsException::__constructor(jstring arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.accounts.AccountsException",
-			"(Ljava/lang/String;)V",
-			arg0
-		);
-	}
-	void AccountsException::__constructor(const QString &arg0)
-	{
-		__thiz = QAndroidJniObject(
-			"android.accounts.AccountsException",
-			"(Ljava/lang/String;)V",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	void AccountsException::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"android.accounts.AccountsException",
-			"()V"
-		);
-	}
 	
 	// Methods
 } // namespace __jni_impl::android::accounts
@@ -91,6 +91,15 @@ namespace android::accounts
 	{
 	public:
 		AccountsException(QAndroidJniObject obj) { __thiz = obj; }
+		AccountsException()
+		{
+			__constructor();
+		}
+		AccountsException(jstring arg0)
+		{
+			__constructor(
+				arg0);
+		}
 		AccountsException(jthrowable arg0)
 		{
 			__constructor(
@@ -101,15 +110,6 @@ namespace android::accounts
 			__constructor(
 				arg0,
 				arg1);
-		}
-		AccountsException(jstring arg0)
-		{
-			__constructor(
-				arg0);
-		}
-		AccountsException()
-		{
-			__constructor();
 		}
 	};
 } // namespace android::accounts

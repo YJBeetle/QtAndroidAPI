@@ -23,28 +23,28 @@ namespace __jni_impl::java::util
 		// Fields
 		
 		// Constructors
-		void __constructor(jint arg0);
 		void __constructor();
+		void __constructor(jint arg0);
 		void __constructor(__jni_impl::__JniBaseClass arg0);
 		
 		// Methods
-		jobject remove(jobject arg0);
-		jobject get(jobject arg0);
-		jobject put(jobject arg0, jobject arg1);
-		jboolean equals(jobject arg0);
-		QAndroidJniObject values();
-		jint hashCode();
-		jobject clone();
 		void clear();
+		jobject clone();
+		jboolean containsKey(jobject arg0);
+		jboolean containsValue(jobject arg0);
+		QAndroidJniObject entrySet();
+		jboolean equals(jobject arg0);
+		void forEach(__jni_impl::__JniBaseClass arg0);
+		jobject get(jobject arg0);
+		jint hashCode();
 		jboolean isEmpty();
+		QAndroidJniObject keySet();
+		jobject put(jobject arg0, jobject arg1);
+		void putAll(__jni_impl::__JniBaseClass arg0);
+		jobject remove(jobject arg0);
 		void replaceAll(__jni_impl::__JniBaseClass arg0);
 		jint size();
-		QAndroidJniObject entrySet();
-		void putAll(__jni_impl::__JniBaseClass arg0);
-		void forEach(__jni_impl::__JniBaseClass arg0);
-		jboolean containsKey(jobject arg0);
-		QAndroidJniObject keySet();
-		jboolean containsValue(jobject arg0);
+		QAndroidJniObject values();
 	};
 } // namespace __jni_impl::java::util
 
@@ -56,19 +56,19 @@ namespace __jni_impl::java::util
 	// Fields
 	
 	// Constructors
+	void IdentityHashMap::__constructor()
+	{
+		__thiz = QAndroidJniObject(
+			"java.util.IdentityHashMap",
+			"()V"
+		);
+	}
 	void IdentityHashMap::__constructor(jint arg0)
 	{
 		__thiz = QAndroidJniObject(
 			"java.util.IdentityHashMap",
 			"(I)V",
 			arg0
-		);
-	}
-	void IdentityHashMap::__constructor()
-	{
-		__thiz = QAndroidJniObject(
-			"java.util.IdentityHashMap",
-			"()V"
 		);
 	}
 	void IdentityHashMap::__constructor(__jni_impl::__JniBaseClass arg0)
@@ -81,13 +81,58 @@ namespace __jni_impl::java::util
 	}
 	
 	// Methods
-	jobject IdentityHashMap::remove(jobject arg0)
+	void IdentityHashMap::clear()
+	{
+		__thiz.callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	jobject IdentityHashMap::clone()
 	{
 		return __thiz.callObjectMethod(
-			"remove",
-			"(Ljava/lang/Object;)Ljava/lang/Object;",
-			arg0
+			"clone",
+			"()Ljava/lang/Object;"
 		).object<jobject>();
+	}
+	jboolean IdentityHashMap::containsKey(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"containsKey",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jboolean IdentityHashMap::containsValue(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"containsValue",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	QAndroidJniObject IdentityHashMap::entrySet()
+	{
+		return __thiz.callObjectMethod(
+			"entrySet",
+			"()Ljava/util/Set;"
+		);
+	}
+	jboolean IdentityHashMap::equals(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"equals",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	void IdentityHashMap::forEach(__jni_impl::__JniBaseClass arg0)
+	{
+		__thiz.callMethod<void>(
+			"forEach",
+			"(Ljava/util/function/BiConsumer;)V",
+			arg0.__jniObject().object()
+		);
 	}
 	jobject IdentityHashMap::get(jobject arg0)
 	{
@@ -96,6 +141,27 @@ namespace __jni_impl::java::util
 			"(Ljava/lang/Object;)Ljava/lang/Object;",
 			arg0
 		).object<jobject>();
+	}
+	jint IdentityHashMap::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
+			"()I"
+		);
+	}
+	jboolean IdentityHashMap::isEmpty()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isEmpty",
+			"()Z"
+		);
+	}
+	QAndroidJniObject IdentityHashMap::keySet()
+	{
+		return __thiz.callObjectMethod(
+			"keySet",
+			"()Ljava/util/Set;"
+		);
 	}
 	jobject IdentityHashMap::put(jobject arg0, jobject arg1)
 	{
@@ -106,48 +172,21 @@ namespace __jni_impl::java::util
 			arg1
 		).object<jobject>();
 	}
-	jboolean IdentityHashMap::equals(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"equals",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	QAndroidJniObject IdentityHashMap::values()
-	{
-		return __thiz.callObjectMethod(
-			"values",
-			"()Ljava/util/Collection;"
-		);
-	}
-	jint IdentityHashMap::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jobject IdentityHashMap::clone()
-	{
-		return __thiz.callObjectMethod(
-			"clone",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	void IdentityHashMap::clear()
+	void IdentityHashMap::putAll(__jni_impl::__JniBaseClass arg0)
 	{
 		__thiz.callMethod<void>(
-			"clear",
-			"()V"
+			"putAll",
+			"(Ljava/util/Map;)V",
+			arg0.__jniObject().object()
 		);
 	}
-	jboolean IdentityHashMap::isEmpty()
+	jobject IdentityHashMap::remove(jobject arg0)
 	{
-		return __thiz.callMethod<jboolean>(
-			"isEmpty",
-			"()Z"
-		);
+		return __thiz.callObjectMethod(
+			"remove",
+			"(Ljava/lang/Object;)Ljava/lang/Object;",
+			arg0
+		).object<jobject>();
 	}
 	void IdentityHashMap::replaceAll(__jni_impl::__JniBaseClass arg0)
 	{
@@ -164,50 +203,11 @@ namespace __jni_impl::java::util
 			"()I"
 		);
 	}
-	QAndroidJniObject IdentityHashMap::entrySet()
+	QAndroidJniObject IdentityHashMap::values()
 	{
 		return __thiz.callObjectMethod(
-			"entrySet",
-			"()Ljava/util/Set;"
-		);
-	}
-	void IdentityHashMap::putAll(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"putAll",
-			"(Ljava/util/Map;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void IdentityHashMap::forEach(__jni_impl::__JniBaseClass arg0)
-	{
-		__thiz.callMethod<void>(
-			"forEach",
-			"(Ljava/util/function/BiConsumer;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean IdentityHashMap::containsKey(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"containsKey",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	QAndroidJniObject IdentityHashMap::keySet()
-	{
-		return __thiz.callObjectMethod(
-			"keySet",
-			"()Ljava/util/Set;"
-		);
-	}
-	jboolean IdentityHashMap::containsValue(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"containsValue",
-			"(Ljava/lang/Object;)Z",
-			arg0
+			"values",
+			"()Ljava/util/Collection;"
 		);
 	}
 } // namespace __jni_impl::java::util
@@ -218,14 +218,14 @@ namespace java::util
 	{
 	public:
 		IdentityHashMap(QAndroidJniObject obj) { __thiz = obj; }
+		IdentityHashMap()
+		{
+			__constructor();
+		}
 		IdentityHashMap(jint arg0)
 		{
 			__constructor(
 				arg0);
-		}
-		IdentityHashMap()
-		{
-			__constructor();
 		}
 		IdentityHashMap(__jni_impl::__JniBaseClass arg0)
 		{

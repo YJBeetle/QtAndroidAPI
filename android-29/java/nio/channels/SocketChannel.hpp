@@ -8,21 +8,21 @@
 #include "SelectableChannel.hpp"
 #include "spi/AbstractSelectableChannel.hpp"
 
-namespace __jni_impl::java::nio::channels::spi
+namespace __jni_impl::java::net
 {
-	class SelectorProvider;
-}
-namespace __jni_impl::java::nio
-{
-	class ByteBuffer;
+	class Socket;
 }
 namespace __jni_impl::java::net
 {
 	class SocketAddress;
 }
-namespace __jni_impl::java::net
+namespace __jni_impl::java::nio
 {
-	class Socket;
+	class ByteBuffer;
+}
+namespace __jni_impl::java::nio::channels::spi
+{
+	class SelectorProvider;
 }
 
 namespace __jni_impl::java::nio::channels
@@ -36,33 +36,34 @@ namespace __jni_impl::java::nio::channels
 		void __constructor();
 		
 		// Methods
-		jlong write(jarray arg0);
-		jint write(__jni_impl::java::nio::ByteBuffer arg0);
-		jlong write(jarray arg0, jint arg1, jint arg2);
-		jlong read(jarray arg0, jint arg1, jint arg2);
-		jint read(__jni_impl::java::nio::ByteBuffer arg0);
-		jlong read(jarray arg0);
-		jboolean connect(__jni_impl::java::net::SocketAddress arg0);
 		static QAndroidJniObject open();
+		static QAndroidJniObject open(__jni_impl::__JniBaseClass arg0);
 		static QAndroidJniObject open(__jni_impl::java::net::SocketAddress arg0);
 		QAndroidJniObject bind(__jni_impl::java::net::SocketAddress arg0);
-		QAndroidJniObject getRemoteAddress();
+		jboolean connect(__jni_impl::java::net::SocketAddress arg0);
+		jboolean finishConnect();
 		QAndroidJniObject getLocalAddress();
+		QAndroidJniObject getRemoteAddress();
+		jboolean isConnected();
+		jboolean isConnectionPending();
+		jint read(__jni_impl::java::nio::ByteBuffer arg0);
+		jlong read(jarray arg0);
+		jlong read(jarray arg0, jint arg1, jint arg2);
 		QAndroidJniObject setOption(__jni_impl::__JniBaseClass arg0, jobject arg1);
 		QAndroidJniObject shutdownInput();
 		QAndroidJniObject shutdownOutput();
-		jint validOps();
-		jboolean isConnectionPending();
-		jboolean finishConnect();
 		QAndroidJniObject socket();
-		jboolean isConnected();
+		jint validOps();
+		jint write(__jni_impl::java::nio::ByteBuffer arg0);
+		jlong write(jarray arg0);
+		jlong write(jarray arg0, jint arg1, jint arg2);
 	};
 } // namespace __jni_impl::java::nio::channels
 
-#include "spi/SelectorProvider.hpp"
-#include "../ByteBuffer.hpp"
-#include "../../net/SocketAddress.hpp"
 #include "../../net/Socket.hpp"
+#include "../../net/SocketAddress.hpp"
+#include "../ByteBuffer.hpp"
+#include "spi/SelectorProvider.hpp"
 
 namespace __jni_impl::java::nio::channels
 {
@@ -77,72 +78,21 @@ namespace __jni_impl::java::nio::channels
 	}
 	
 	// Methods
-	jlong SocketChannel::write(jarray arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"write",
-			"([Ljava/nio/ByteBuffer;)J",
-			arg0
-		);
-	}
-	jint SocketChannel::write(__jni_impl::java::nio::ByteBuffer arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"write",
-			"(Ljava/nio/ByteBuffer;)I",
-			arg0.__jniObject().object()
-		);
-	}
-	jlong SocketChannel::write(jarray arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callMethod<jlong>(
-			"write",
-			"([Ljava/nio/ByteBuffer;II)J",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jlong SocketChannel::read(jarray arg0, jint arg1, jint arg2)
-	{
-		return __thiz.callMethod<jlong>(
-			"read",
-			"([Ljava/nio/ByteBuffer;II)J",
-			arg0,
-			arg1,
-			arg2
-		);
-	}
-	jint SocketChannel::read(__jni_impl::java::nio::ByteBuffer arg0)
-	{
-		return __thiz.callMethod<jint>(
-			"read",
-			"(Ljava/nio/ByteBuffer;)I",
-			arg0.__jniObject().object()
-		);
-	}
-	jlong SocketChannel::read(jarray arg0)
-	{
-		return __thiz.callMethod<jlong>(
-			"read",
-			"([Ljava/nio/ByteBuffer;)J",
-			arg0
-		);
-	}
-	jboolean SocketChannel::connect(__jni_impl::java::net::SocketAddress arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"connect",
-			"(Ljava/net/SocketAddress;)Z",
-			arg0.__jniObject().object()
-		);
-	}
 	QAndroidJniObject SocketChannel::open()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
 			"java.nio.channels.SocketChannel",
 			"open",
 			"()Ljava/nio/channels/SocketChannel;"
+		);
+	}
+	QAndroidJniObject SocketChannel::open(__jni_impl::__JniBaseClass arg0)
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.channels.SocketChannel",
+			"open",
+			"(Ljava/net/ProtocolFamily;)Ljava/nio/channels/SocketChannel;",
+			arg0.__jniObject().object()
 		);
 	}
 	QAndroidJniObject SocketChannel::open(__jni_impl::java::net::SocketAddress arg0)
@@ -162,11 +112,19 @@ namespace __jni_impl::java::nio::channels
 			arg0.__jniObject().object()
 		);
 	}
-	QAndroidJniObject SocketChannel::getRemoteAddress()
+	jboolean SocketChannel::connect(__jni_impl::java::net::SocketAddress arg0)
 	{
-		return __thiz.callObjectMethod(
-			"getRemoteAddress",
-			"()Ljava/net/SocketAddress;"
+		return __thiz.callMethod<jboolean>(
+			"connect",
+			"(Ljava/net/SocketAddress;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean SocketChannel::finishConnect()
+	{
+		return __thiz.callMethod<jboolean>(
+			"finishConnect",
+			"()Z"
 		);
 	}
 	QAndroidJniObject SocketChannel::getLocalAddress()
@@ -174,6 +132,53 @@ namespace __jni_impl::java::nio::channels
 		return __thiz.callObjectMethod(
 			"getLocalAddress",
 			"()Ljava/net/SocketAddress;"
+		);
+	}
+	QAndroidJniObject SocketChannel::getRemoteAddress()
+	{
+		return __thiz.callObjectMethod(
+			"getRemoteAddress",
+			"()Ljava/net/SocketAddress;"
+		);
+	}
+	jboolean SocketChannel::isConnected()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isConnected",
+			"()Z"
+		);
+	}
+	jboolean SocketChannel::isConnectionPending()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isConnectionPending",
+			"()Z"
+		);
+	}
+	jint SocketChannel::read(__jni_impl::java::nio::ByteBuffer arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"read",
+			"(Ljava/nio/ByteBuffer;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	jlong SocketChannel::read(jarray arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"read",
+			"([Ljava/nio/ByteBuffer;)J",
+			arg0
+		);
+	}
+	jlong SocketChannel::read(jarray arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callMethod<jlong>(
+			"read",
+			"([Ljava/nio/ByteBuffer;II)J",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 	QAndroidJniObject SocketChannel::setOption(__jni_impl::__JniBaseClass arg0, jobject arg1)
@@ -199,27 +204,6 @@ namespace __jni_impl::java::nio::channels
 			"()Ljava/nio/channels/SocketChannel;"
 		);
 	}
-	jint SocketChannel::validOps()
-	{
-		return __thiz.callMethod<jint>(
-			"validOps",
-			"()I"
-		);
-	}
-	jboolean SocketChannel::isConnectionPending()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isConnectionPending",
-			"()Z"
-		);
-	}
-	jboolean SocketChannel::finishConnect()
-	{
-		return __thiz.callMethod<jboolean>(
-			"finishConnect",
-			"()Z"
-		);
-	}
 	QAndroidJniObject SocketChannel::socket()
 	{
 		return __thiz.callObjectMethod(
@@ -227,11 +211,37 @@ namespace __jni_impl::java::nio::channels
 			"()Ljava/net/Socket;"
 		);
 	}
-	jboolean SocketChannel::isConnected()
+	jint SocketChannel::validOps()
 	{
-		return __thiz.callMethod<jboolean>(
-			"isConnected",
-			"()Z"
+		return __thiz.callMethod<jint>(
+			"validOps",
+			"()I"
+		);
+	}
+	jint SocketChannel::write(__jni_impl::java::nio::ByteBuffer arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"write",
+			"(Ljava/nio/ByteBuffer;)I",
+			arg0.__jniObject().object()
+		);
+	}
+	jlong SocketChannel::write(jarray arg0)
+	{
+		return __thiz.callMethod<jlong>(
+			"write",
+			"([Ljava/nio/ByteBuffer;)J",
+			arg0
+		);
+	}
+	jlong SocketChannel::write(jarray arg0, jint arg1, jint arg2)
+	{
+		return __thiz.callMethod<jlong>(
+			"write",
+			"([Ljava/nio/ByteBuffer;II)J",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 } // namespace __jni_impl::java::nio::channels

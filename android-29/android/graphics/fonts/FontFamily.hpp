@@ -5,13 +5,13 @@
 
 #include "../../../__JniBaseClass.hpp"
 
-namespace __jni_impl::java::util
-{
-	class ArrayList;
-}
 namespace __jni_impl::android::graphics::fonts
 {
 	class Font;
+}
+namespace __jni_impl::java::util
+{
+	class ArrayList;
 }
 
 namespace __jni_impl::android::graphics::fonts
@@ -25,13 +25,13 @@ namespace __jni_impl::android::graphics::fonts
 		void __constructor();
 		
 		// Methods
-		jint getSize();
 		QAndroidJniObject getFont(jint arg0);
+		jint getSize();
 	};
 } // namespace __jni_impl::android::graphics::fonts
 
-#include "../../../java/util/ArrayList.hpp"
 #include "Font.hpp"
+#include "../../../java/util/ArrayList.hpp"
 
 namespace __jni_impl::android::graphics::fonts
 {
@@ -46,19 +46,19 @@ namespace __jni_impl::android::graphics::fonts
 	}
 	
 	// Methods
-	jint FontFamily::getSize()
-	{
-		return __thiz.callMethod<jint>(
-			"getSize",
-			"()I"
-		);
-	}
 	QAndroidJniObject FontFamily::getFont(jint arg0)
 	{
 		return __thiz.callObjectMethod(
 			"getFont",
 			"(I)Landroid/graphics/fonts/Font;",
 			arg0
+		);
+	}
+	jint FontFamily::getSize()
+	{
+		return __thiz.callMethod<jint>(
+			"getSize",
+			"()I"
 		);
 	}
 } // namespace __jni_impl::android::graphics::fonts

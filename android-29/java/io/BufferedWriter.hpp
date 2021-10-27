@@ -23,13 +23,13 @@ namespace __jni_impl::java::io
 		void __constructor(__jni_impl::java::io::Writer arg0, jint arg1);
 		
 		// Methods
-		void write(jcharArray arg0, jint arg1, jint arg2);
+		void close();
+		void flush();
+		void newLine();
 		void write(jint arg0);
+		void write(jcharArray arg0, jint arg1, jint arg2);
 		void write(jstring arg0, jint arg1, jint arg2);
 		void write(const QString &arg0, jint arg1, jint arg2);
-		void newLine();
-		void flush();
-		void close();
 	};
 } // namespace __jni_impl::java::io
 
@@ -59,14 +59,25 @@ namespace __jni_impl::java::io
 	}
 	
 	// Methods
-	void BufferedWriter::write(jcharArray arg0, jint arg1, jint arg2)
+	void BufferedWriter::close()
 	{
 		__thiz.callMethod<void>(
-			"write",
-			"([CII)V",
-			arg0,
-			arg1,
-			arg2
+			"close",
+			"()V"
+		);
+	}
+	void BufferedWriter::flush()
+	{
+		__thiz.callMethod<void>(
+			"flush",
+			"()V"
+		);
+	}
+	void BufferedWriter::newLine()
+	{
+		__thiz.callMethod<void>(
+			"newLine",
+			"()V"
 		);
 	}
 	void BufferedWriter::write(jint arg0)
@@ -75,6 +86,16 @@ namespace __jni_impl::java::io
 			"write",
 			"(I)V",
 			arg0
+		);
+	}
+	void BufferedWriter::write(jcharArray arg0, jint arg1, jint arg2)
+	{
+		__thiz.callMethod<void>(
+			"write",
+			"([CII)V",
+			arg0,
+			arg1,
+			arg2
 		);
 	}
 	void BufferedWriter::write(jstring arg0, jint arg1, jint arg2)
@@ -95,27 +116,6 @@ namespace __jni_impl::java::io
 			QAndroidJniObject::fromString(arg0).object<jstring>(),
 			arg1,
 			arg2
-		);
-	}
-	void BufferedWriter::newLine()
-	{
-		__thiz.callMethod<void>(
-			"newLine",
-			"()V"
-		);
-	}
-	void BufferedWriter::flush()
-	{
-		__thiz.callMethod<void>(
-			"flush",
-			"()V"
-		);
-	}
-	void BufferedWriter::close()
-	{
-		__thiz.callMethod<void>(
-			"close",
-			"()V"
 		);
 	}
 } // namespace __jni_impl::java::io

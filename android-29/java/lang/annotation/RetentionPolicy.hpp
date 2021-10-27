@@ -13,17 +13,17 @@ namespace __jni_impl::java::lang::annotation
 	{
 	public:
 		// Fields
-		static QAndroidJniObject SOURCE();
 		static QAndroidJniObject CLASS();
 		static QAndroidJniObject RUNTIME();
+		static QAndroidJniObject SOURCE();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::lang::annotation
 
@@ -31,14 +31,6 @@ namespace __jni_impl::java::lang::annotation
 namespace __jni_impl::java::lang::annotation
 {
 	// Fields
-	QAndroidJniObject RetentionPolicy::SOURCE()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.lang.annotation.RetentionPolicy",
-			"SOURCE",
-			"Ljava/lang/annotation/RetentionPolicy;"
-		);
-	}
 	QAndroidJniObject RetentionPolicy::CLASS()
 	{
 		return QAndroidJniObject::getStaticObjectField(
@@ -55,6 +47,14 @@ namespace __jni_impl::java::lang::annotation
 			"Ljava/lang/annotation/RetentionPolicy;"
 		);
 	}
+	QAndroidJniObject RetentionPolicy::SOURCE()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.lang.annotation.RetentionPolicy",
+			"SOURCE",
+			"Ljava/lang/annotation/RetentionPolicy;"
+		);
+	}
 	
 	// Constructors
 	void RetentionPolicy::__constructor()
@@ -65,14 +65,6 @@ namespace __jni_impl::java::lang::annotation
 	}
 	
 	// Methods
-	jarray RetentionPolicy::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.lang.annotation.RetentionPolicy",
-			"values",
-			"()[Ljava/lang/annotation/RetentionPolicy;"
-		).object<jarray>();
-	}
 	QAndroidJniObject RetentionPolicy::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -90,6 +82,14 @@ namespace __jni_impl::java::lang::annotation
 			"(Ljava/lang/String;)Ljava/lang/annotation/RetentionPolicy;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray RetentionPolicy::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.lang.annotation.RetentionPolicy",
+			"values",
+			"()[Ljava/lang/annotation/RetentionPolicy;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::lang::annotation
 

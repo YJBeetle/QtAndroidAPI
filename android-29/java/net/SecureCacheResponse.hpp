@@ -24,10 +24,10 @@ namespace __jni_impl::java::net
 		// Methods
 		jstring getCipherSuite();
 		QAndroidJniObject getLocalCertificateChain();
-		QAndroidJniObject getServerCertificateChain();
-		QAndroidJniObject getPeerPrincipal();
 		QAndroidJniObject getLocalPrincipal();
+		QAndroidJniObject getPeerPrincipal();
 		QAndroidJniObject getSSLSession();
+		QAndroidJniObject getServerCertificateChain();
 	};
 } // namespace __jni_impl::java::net
 
@@ -61,11 +61,11 @@ namespace __jni_impl::java::net
 			"()Ljava/util/List;"
 		);
 	}
-	QAndroidJniObject SecureCacheResponse::getServerCertificateChain()
+	QAndroidJniObject SecureCacheResponse::getLocalPrincipal()
 	{
 		return __thiz.callObjectMethod(
-			"getServerCertificateChain",
-			"()Ljava/util/List;"
+			"getLocalPrincipal",
+			"()Ljava/security/Principal;"
 		);
 	}
 	QAndroidJniObject SecureCacheResponse::getPeerPrincipal()
@@ -75,18 +75,18 @@ namespace __jni_impl::java::net
 			"()Ljava/security/Principal;"
 		);
 	}
-	QAndroidJniObject SecureCacheResponse::getLocalPrincipal()
-	{
-		return __thiz.callObjectMethod(
-			"getLocalPrincipal",
-			"()Ljava/security/Principal;"
-		);
-	}
 	QAndroidJniObject SecureCacheResponse::getSSLSession()
 	{
 		return __thiz.callObjectMethod(
 			"getSSLSession",
 			"()Ljava/util/Optional;"
+		);
+	}
+	QAndroidJniObject SecureCacheResponse::getServerCertificateChain()
+	{
+		return __thiz.callObjectMethod(
+			"getServerCertificateChain",
+			"()Ljava/util/List;"
 		);
 	}
 } // namespace __jni_impl::java::net

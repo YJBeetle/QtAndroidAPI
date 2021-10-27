@@ -19,17 +19,17 @@ namespace __jni_impl::javax::xml::parsers
 		// Fields
 		
 		// Constructors
-		void __constructor(__jni_impl::java::lang::Exception arg0, jstring arg1);
-		void __constructor(__jni_impl::java::lang::Exception arg0, const QString &arg1);
+		void __constructor();
 		void __constructor(__jni_impl::java::lang::Exception arg0);
 		void __constructor(jstring arg0);
 		void __constructor(const QString &arg0);
-		void __constructor();
+		void __constructor(__jni_impl::java::lang::Exception arg0, jstring arg1);
+		void __constructor(__jni_impl::java::lang::Exception arg0, const QString &arg1);
 		
 		// Methods
 		jthrowable getCause();
-		jstring getMessage();
 		QAndroidJniObject getException();
+		jstring getMessage();
 	};
 } // namespace __jni_impl::javax::xml::parsers
 
@@ -40,22 +40,11 @@ namespace __jni_impl::javax::xml::parsers
 	// Fields
 	
 	// Constructors
-	void FactoryConfigurationError::__constructor(__jni_impl::java::lang::Exception arg0, jstring arg1)
+	void FactoryConfigurationError::__constructor()
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.parsers.FactoryConfigurationError",
-			"(Ljava/lang/Exception;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	void FactoryConfigurationError::__constructor(__jni_impl::java::lang::Exception arg0, const QString &arg1)
-	{
-		__thiz = QAndroidJniObject(
-			"javax.xml.parsers.FactoryConfigurationError",
-			"(Ljava/lang/Exception;Ljava/lang/String;)V",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
+			"()V"
 		);
 	}
 	void FactoryConfigurationError::__constructor(__jni_impl::java::lang::Exception arg0)
@@ -82,11 +71,22 @@ namespace __jni_impl::javax::xml::parsers
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
-	void FactoryConfigurationError::__constructor()
+	void FactoryConfigurationError::__constructor(__jni_impl::java::lang::Exception arg0, jstring arg1)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.xml.parsers.FactoryConfigurationError",
-			"()V"
+			"(Ljava/lang/Exception;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	void FactoryConfigurationError::__constructor(__jni_impl::java::lang::Exception arg0, const QString &arg1)
+	{
+		__thiz = QAndroidJniObject(
+			"javax.xml.parsers.FactoryConfigurationError",
+			"(Ljava/lang/Exception;Ljava/lang/String;)V",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
 		);
 	}
 	
@@ -98,19 +98,19 @@ namespace __jni_impl::javax::xml::parsers
 			"()Ljava/lang/Throwable;"
 		).object<jthrowable>();
 	}
-	jstring FactoryConfigurationError::getMessage()
-	{
-		return __thiz.callObjectMethod(
-			"getMessage",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject FactoryConfigurationError::getException()
 	{
 		return __thiz.callObjectMethod(
 			"getException",
 			"()Ljava/lang/Exception;"
 		);
+	}
+	jstring FactoryConfigurationError::getMessage()
+	{
+		return __thiz.callObjectMethod(
+			"getMessage",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::javax::xml::parsers
 
@@ -120,11 +120,9 @@ namespace javax::xml::parsers
 	{
 	public:
 		FactoryConfigurationError(QAndroidJniObject obj) { __thiz = obj; }
-		FactoryConfigurationError(__jni_impl::java::lang::Exception arg0, jstring arg1)
+		FactoryConfigurationError()
 		{
-			__constructor(
-				arg0,
-				arg1);
+			__constructor();
 		}
 		FactoryConfigurationError(__jni_impl::java::lang::Exception arg0)
 		{
@@ -136,9 +134,11 @@ namespace javax::xml::parsers
 			__constructor(
 				arg0);
 		}
-		FactoryConfigurationError()
+		FactoryConfigurationError(__jni_impl::java::lang::Exception arg0, jstring arg1)
 		{
-			__constructor();
+			__constructor(
+				arg0,
+				arg1);
 		}
 	};
 } // namespace javax::xml::parsers

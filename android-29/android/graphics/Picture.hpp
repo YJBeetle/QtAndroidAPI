@@ -22,11 +22,11 @@ namespace __jni_impl::android::graphics
 		void __constructor(__jni_impl::android::graphics::Picture arg0);
 		
 		// Methods
-		void draw(__jni_impl::android::graphics::Canvas arg0);
-		jint getWidth();
-		jint getHeight();
 		QAndroidJniObject beginRecording(jint arg0, jint arg1);
+		void draw(__jni_impl::android::graphics::Canvas arg0);
 		void endRecording();
+		jint getHeight();
+		jint getWidth();
 		jboolean requiresHardwareAcceleration();
 	};
 } // namespace __jni_impl::android::graphics
@@ -55,28 +55,6 @@ namespace __jni_impl::android::graphics
 	}
 	
 	// Methods
-	void Picture::draw(__jni_impl::android::graphics::Canvas arg0)
-	{
-		__thiz.callMethod<void>(
-			"draw",
-			"(Landroid/graphics/Canvas;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jint Picture::getWidth()
-	{
-		return __thiz.callMethod<jint>(
-			"getWidth",
-			"()I"
-		);
-	}
-	jint Picture::getHeight()
-	{
-		return __thiz.callMethod<jint>(
-			"getHeight",
-			"()I"
-		);
-	}
 	QAndroidJniObject Picture::beginRecording(jint arg0, jint arg1)
 	{
 		return __thiz.callObjectMethod(
@@ -86,11 +64,33 @@ namespace __jni_impl::android::graphics
 			arg1
 		);
 	}
+	void Picture::draw(__jni_impl::android::graphics::Canvas arg0)
+	{
+		__thiz.callMethod<void>(
+			"draw",
+			"(Landroid/graphics/Canvas;)V",
+			arg0.__jniObject().object()
+		);
+	}
 	void Picture::endRecording()
 	{
 		__thiz.callMethod<void>(
 			"endRecording",
 			"()V"
+		);
+	}
+	jint Picture::getHeight()
+	{
+		return __thiz.callMethod<jint>(
+			"getHeight",
+			"()I"
+		);
+	}
+	jint Picture::getWidth()
+	{
+		return __thiz.callMethod<jint>(
+			"getWidth",
+			"()I"
 		);
 	}
 	jboolean Picture::requiresHardwareAcceleration()

@@ -19,8 +19,8 @@ namespace __jni_impl::java::nio
 		void __constructor();
 		
 		// Methods
-		jstring toString();
 		static QAndroidJniObject nativeOrder();
+		jstring toString();
 	};
 } // namespace __jni_impl::java::nio
 
@@ -54,13 +54,6 @@ namespace __jni_impl::java::nio
 	}
 	
 	// Methods
-	jstring ByteOrder::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	QAndroidJniObject ByteOrder::nativeOrder()
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -68,6 +61,13 @@ namespace __jni_impl::java::nio
 			"nativeOrder",
 			"()Ljava/nio/ByteOrder;"
 		);
+	}
+	jstring ByteOrder::toString()
+	{
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::nio
 

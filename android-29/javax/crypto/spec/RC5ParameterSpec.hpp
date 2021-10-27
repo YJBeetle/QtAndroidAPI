@@ -14,17 +14,17 @@ namespace __jni_impl::javax::crypto::spec
 		// Fields
 		
 		// Constructors
-		void __constructor(jint arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4);
-		void __constructor(jint arg0, jint arg1, jint arg2, jbyteArray arg3);
 		void __constructor(jint arg0, jint arg1, jint arg2);
+		void __constructor(jint arg0, jint arg1, jint arg2, jbyteArray arg3);
+		void __constructor(jint arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4);
 		
 		// Methods
 		jboolean equals(jobject arg0);
-		jint hashCode();
-		jint getVersion();
 		jbyteArray getIV();
 		jint getRounds();
+		jint getVersion();
 		jint getWordSize();
+		jint hashCode();
 	};
 } // namespace __jni_impl::javax::crypto::spec
 
@@ -34,16 +34,14 @@ namespace __jni_impl::javax::crypto::spec
 	// Fields
 	
 	// Constructors
-	void RC5ParameterSpec::__constructor(jint arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4)
+	void RC5ParameterSpec::__constructor(jint arg0, jint arg1, jint arg2)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.RC5ParameterSpec",
-			"(III[BI)V",
+			"(III)V",
 			arg0,
 			arg1,
-			arg2,
-			arg3,
-			arg4
+			arg2
 		);
 	}
 	void RC5ParameterSpec::__constructor(jint arg0, jint arg1, jint arg2, jbyteArray arg3)
@@ -57,14 +55,16 @@ namespace __jni_impl::javax::crypto::spec
 			arg3
 		);
 	}
-	void RC5ParameterSpec::__constructor(jint arg0, jint arg1, jint arg2)
+	void RC5ParameterSpec::__constructor(jint arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4)
 	{
 		__thiz = QAndroidJniObject(
 			"javax.crypto.spec.RC5ParameterSpec",
-			"(III)V",
+			"(III[BI)V",
 			arg0,
 			arg1,
-			arg2
+			arg2,
+			arg3,
+			arg4
 		);
 	}
 	
@@ -75,20 +75,6 @@ namespace __jni_impl::javax::crypto::spec
 			"equals",
 			"(Ljava/lang/Object;)Z",
 			arg0
-		);
-	}
-	jint RC5ParameterSpec::hashCode()
-	{
-		return __thiz.callMethod<jint>(
-			"hashCode",
-			"()I"
-		);
-	}
-	jint RC5ParameterSpec::getVersion()
-	{
-		return __thiz.callMethod<jint>(
-			"getVersion",
-			"()I"
 		);
 	}
 	jbyteArray RC5ParameterSpec::getIV()
@@ -105,10 +91,24 @@ namespace __jni_impl::javax::crypto::spec
 			"()I"
 		);
 	}
+	jint RC5ParameterSpec::getVersion()
+	{
+		return __thiz.callMethod<jint>(
+			"getVersion",
+			"()I"
+		);
+	}
 	jint RC5ParameterSpec::getWordSize()
 	{
 		return __thiz.callMethod<jint>(
 			"getWordSize",
+			"()I"
+		);
+	}
+	jint RC5ParameterSpec::hashCode()
+	{
+		return __thiz.callMethod<jint>(
+			"hashCode",
 			"()I"
 		);
 	}
@@ -120,14 +120,12 @@ namespace javax::crypto::spec
 	{
 	public:
 		RC5ParameterSpec(QAndroidJniObject obj) { __thiz = obj; }
-		RC5ParameterSpec(jint arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4)
+		RC5ParameterSpec(jint arg0, jint arg1, jint arg2)
 		{
 			__constructor(
 				arg0,
 				arg1,
-				arg2,
-				arg3,
-				arg4);
+				arg2);
 		}
 		RC5ParameterSpec(jint arg0, jint arg1, jint arg2, jbyteArray arg3)
 		{
@@ -137,12 +135,14 @@ namespace javax::crypto::spec
 				arg2,
 				arg3);
 		}
-		RC5ParameterSpec(jint arg0, jint arg1, jint arg2)
+		RC5ParameterSpec(jint arg0, jint arg1, jint arg2, jbyteArray arg3, jint arg4)
 		{
 			__constructor(
 				arg0,
 				arg1,
-				arg2);
+				arg2,
+				arg3,
+				arg4);
 		}
 	};
 } // namespace javax::crypto::spec

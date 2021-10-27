@@ -23,13 +23,13 @@ namespace __jni_impl::android::media
 		
 		// Methods
 		QAndroidJniObject build();
-		QAndroidJniObject setDuration(jlong arg0);
-		QAndroidJniObject setInterpolatorType(jint arg0);
-		QAndroidJniObject setCurve(jfloatArray arg0, jfloatArray arg1);
-		QAndroidJniObject reflectTimes();
 		QAndroidJniObject invertVolumes();
+		QAndroidJniObject reflectTimes();
 		QAndroidJniObject scaleToEndVolume(jfloat arg0);
 		QAndroidJniObject scaleToStartVolume(jfloat arg0);
+		QAndroidJniObject setCurve(jfloatArray arg0, jfloatArray arg1);
+		QAndroidJniObject setDuration(jlong arg0);
+		QAndroidJniObject setInterpolatorType(jint arg0);
 	};
 } // namespace __jni_impl::android::media
 
@@ -64,42 +64,17 @@ namespace __jni_impl::android::media
 			"()Landroid/media/VolumeShaper$Configuration;"
 		);
 	}
-	QAndroidJniObject VolumeShaper_Configuration_Builder::setDuration(jlong arg0)
+	QAndroidJniObject VolumeShaper_Configuration_Builder::invertVolumes()
 	{
 		return __thiz.callObjectMethod(
-			"setDuration",
-			"(J)Landroid/media/VolumeShaper$Configuration$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject VolumeShaper_Configuration_Builder::setInterpolatorType(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"setInterpolatorType",
-			"(I)Landroid/media/VolumeShaper$Configuration$Builder;",
-			arg0
-		);
-	}
-	QAndroidJniObject VolumeShaper_Configuration_Builder::setCurve(jfloatArray arg0, jfloatArray arg1)
-	{
-		return __thiz.callObjectMethod(
-			"setCurve",
-			"([F[F)Landroid/media/VolumeShaper$Configuration$Builder;",
-			arg0,
-			arg1
+			"invertVolumes",
+			"()Landroid/media/VolumeShaper$Configuration$Builder;"
 		);
 	}
 	QAndroidJniObject VolumeShaper_Configuration_Builder::reflectTimes()
 	{
 		return __thiz.callObjectMethod(
 			"reflectTimes",
-			"()Landroid/media/VolumeShaper$Configuration$Builder;"
-		);
-	}
-	QAndroidJniObject VolumeShaper_Configuration_Builder::invertVolumes()
-	{
-		return __thiz.callObjectMethod(
-			"invertVolumes",
 			"()Landroid/media/VolumeShaper$Configuration$Builder;"
 		);
 	}
@@ -116,6 +91,31 @@ namespace __jni_impl::android::media
 		return __thiz.callObjectMethod(
 			"scaleToStartVolume",
 			"(F)Landroid/media/VolumeShaper$Configuration$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject VolumeShaper_Configuration_Builder::setCurve(jfloatArray arg0, jfloatArray arg1)
+	{
+		return __thiz.callObjectMethod(
+			"setCurve",
+			"([F[F)Landroid/media/VolumeShaper$Configuration$Builder;",
+			arg0,
+			arg1
+		);
+	}
+	QAndroidJniObject VolumeShaper_Configuration_Builder::setDuration(jlong arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setDuration",
+			"(J)Landroid/media/VolumeShaper$Configuration$Builder;",
+			arg0
+		);
+	}
+	QAndroidJniObject VolumeShaper_Configuration_Builder::setInterpolatorType(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"setInterpolatorType",
+			"(I)Landroid/media/VolumeShaper$Configuration$Builder;",
 			arg0
 		);
 	}

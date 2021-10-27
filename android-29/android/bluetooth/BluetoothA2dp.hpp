@@ -5,13 +5,13 @@
 
 #include "../../__JniBaseClass.hpp"
 
-namespace __jni_impl::android::content
-{
-	class Context;
-}
 namespace __jni_impl::android::bluetooth
 {
 	class BluetoothDevice;
+}
+namespace __jni_impl::android::content
+{
+	class Context;
 }
 
 namespace __jni_impl::android::bluetooth
@@ -30,15 +30,15 @@ namespace __jni_impl::android::bluetooth
 		
 		// Methods
 		void finalize();
-		jint getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 		QAndroidJniObject getConnectedDevices();
+		jint getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 		QAndroidJniObject getDevicesMatchingConnectionStates(jintArray arg0);
 		jboolean isA2dpPlaying(__jni_impl::android::bluetooth::BluetoothDevice arg0);
 	};
 } // namespace __jni_impl::android::bluetooth
 
-#include "../content/Context.hpp"
 #include "BluetoothDevice.hpp"
+#include "../content/Context.hpp"
 
 namespace __jni_impl::android::bluetooth
 {
@@ -90,19 +90,19 @@ namespace __jni_impl::android::bluetooth
 			"()V"
 		);
 	}
+	QAndroidJniObject BluetoothA2dp::getConnectedDevices()
+	{
+		return __thiz.callObjectMethod(
+			"getConnectedDevices",
+			"()Ljava/util/List;"
+		);
+	}
 	jint BluetoothA2dp::getConnectionState(__jni_impl::android::bluetooth::BluetoothDevice arg0)
 	{
 		return __thiz.callMethod<jint>(
 			"getConnectionState",
 			"(Landroid/bluetooth/BluetoothDevice;)I",
 			arg0.__jniObject().object()
-		);
-	}
-	QAndroidJniObject BluetoothA2dp::getConnectedDevices()
-	{
-		return __thiz.callObjectMethod(
-			"getConnectedDevices",
-			"()Ljava/util/List;"
 		);
 	}
 	QAndroidJniObject BluetoothA2dp::getDevicesMatchingConnectionStates(jintArray arg0)

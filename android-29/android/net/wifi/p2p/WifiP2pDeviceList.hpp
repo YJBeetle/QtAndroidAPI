@@ -27,12 +27,12 @@ namespace __jni_impl::android::net::wifi::p2p
 		void __constructor(__jni_impl::android::net::wifi::p2p::WifiP2pDeviceList arg0);
 		
 		// Methods
+		jint describeContents();
 		QAndroidJniObject get(jstring arg0);
 		QAndroidJniObject get(const QString &arg0);
-		jstring toString();
-		jint describeContents();
-		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 		QAndroidJniObject getDeviceList();
+		jstring toString();
+		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::net::wifi::p2p
 
@@ -69,6 +69,13 @@ namespace __jni_impl::android::net::wifi::p2p
 	}
 	
 	// Methods
+	jint WifiP2pDeviceList::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	QAndroidJniObject WifiP2pDeviceList::get(jstring arg0)
 	{
 		return __thiz.callObjectMethod(
@@ -85,19 +92,19 @@ namespace __jni_impl::android::net::wifi::p2p
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
 	}
+	QAndroidJniObject WifiP2pDeviceList::getDeviceList()
+	{
+		return __thiz.callObjectMethod(
+			"getDeviceList",
+			"()Ljava/util/Collection;"
+		);
+	}
 	jstring WifiP2pDeviceList::toString()
 	{
 		return __thiz.callObjectMethod(
 			"toString",
 			"()Ljava/lang/String;"
 		).object<jstring>();
-	}
-	jint WifiP2pDeviceList::describeContents()
-	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
 	}
 	void WifiP2pDeviceList::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{
@@ -106,13 +113,6 @@ namespace __jni_impl::android::net::wifi::p2p
 			"(Landroid/os/Parcel;I)V",
 			arg0.__jniObject().object(),
 			arg1
-		);
-	}
-	QAndroidJniObject WifiP2pDeviceList::getDeviceList()
-	{
-		return __thiz.callObjectMethod(
-			"getDeviceList",
-			"()Ljava/util/Collection;"
 		);
 	}
 } // namespace __jni_impl::android::net::wifi::p2p

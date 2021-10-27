@@ -13,18 +13,18 @@ namespace __jni_impl::java::nio::file::attribute
 	{
 	public:
 		// Fields
-		static QAndroidJniObject ALLOW();
-		static QAndroidJniObject DENY();
-		static QAndroidJniObject AUDIT();
 		static QAndroidJniObject ALARM();
+		static QAndroidJniObject ALLOW();
+		static QAndroidJniObject AUDIT();
+		static QAndroidJniObject DENY();
 		
 		// Constructors
 		void __constructor();
 		
 		// Methods
-		static jarray values();
 		static QAndroidJniObject valueOf(jstring arg0);
 		static QAndroidJniObject valueOf(const QString &arg0);
+		static jarray values();
 	};
 } // namespace __jni_impl::java::nio::file::attribute
 
@@ -32,19 +32,19 @@ namespace __jni_impl::java::nio::file::attribute
 namespace __jni_impl::java::nio::file::attribute
 {
 	// Fields
+	QAndroidJniObject AclEntryType::ALARM()
+	{
+		return QAndroidJniObject::getStaticObjectField(
+			"java.nio.file.attribute.AclEntryType",
+			"ALARM",
+			"Ljava/nio/file/attribute/AclEntryType;"
+		);
+	}
 	QAndroidJniObject AclEntryType::ALLOW()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryType",
 			"ALLOW",
-			"Ljava/nio/file/attribute/AclEntryType;"
-		);
-	}
-	QAndroidJniObject AclEntryType::DENY()
-	{
-		return QAndroidJniObject::getStaticObjectField(
-			"java.nio.file.attribute.AclEntryType",
-			"DENY",
 			"Ljava/nio/file/attribute/AclEntryType;"
 		);
 	}
@@ -56,11 +56,11 @@ namespace __jni_impl::java::nio::file::attribute
 			"Ljava/nio/file/attribute/AclEntryType;"
 		);
 	}
-	QAndroidJniObject AclEntryType::ALARM()
+	QAndroidJniObject AclEntryType::DENY()
 	{
 		return QAndroidJniObject::getStaticObjectField(
 			"java.nio.file.attribute.AclEntryType",
-			"ALARM",
+			"DENY",
 			"Ljava/nio/file/attribute/AclEntryType;"
 		);
 	}
@@ -74,14 +74,6 @@ namespace __jni_impl::java::nio::file::attribute
 	}
 	
 	// Methods
-	jarray AclEntryType::values()
-	{
-		return QAndroidJniObject::callStaticObjectMethod(
-			"java.nio.file.attribute.AclEntryType",
-			"values",
-			"()[Ljava/nio/file/attribute/AclEntryType;"
-		).object<jarray>();
-	}
 	QAndroidJniObject AclEntryType::valueOf(jstring arg0)
 	{
 		return QAndroidJniObject::callStaticObjectMethod(
@@ -99,6 +91,14 @@ namespace __jni_impl::java::nio::file::attribute
 			"(Ljava/lang/String;)Ljava/nio/file/attribute/AclEntryType;",
 			QAndroidJniObject::fromString(arg0).object<jstring>()
 		);
+	}
+	jarray AclEntryType::values()
+	{
+		return QAndroidJniObject::callStaticObjectMethod(
+			"java.nio.file.attribute.AclEntryType",
+			"values",
+			"()[Ljava/nio/file/attribute/AclEntryType;"
+		).object<jarray>();
 	}
 } // namespace __jni_impl::java::nio::file::attribute
 

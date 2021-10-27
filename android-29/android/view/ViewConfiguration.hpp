@@ -22,46 +22,46 @@ namespace __jni_impl::android::view
 		
 		// Methods
 		static QAndroidJniObject get(__jni_impl::android::content::Context arg0);
-		static jint getScrollBarFadeDuration();
-		static jint getScrollBarSize();
-		jint getScaledScrollBarSize();
-		static jint getScrollDefaultDelay();
-		static jint getFadingEdgeLength();
-		jint getScaledFadingEdgeLength();
-		static jint getPressedStateDuration();
-		static jint getLongPressTimeout();
-		static jint getKeyRepeatTimeout();
-		static jint getKeyRepeatDelay();
-		static jint getTapTimeout();
-		static jint getJumpTapTimeout();
+		static jfloat getAmbiguousGestureMultiplier();
+		static jlong getDefaultActionModeHideDuration();
 		static jint getDoubleTapTimeout();
 		static jint getEdgeSlop();
-		jint getScaledEdgeSlop();
-		static jint getTouchSlop();
-		jint getScaledTouchSlop();
-		jint getScaledHoverSlop();
-		jint getScaledPagingTouchSlop();
-		jint getScaledDoubleTapSlop();
-		static jint getWindowTouchSlop();
-		jint getScaledWindowTouchSlop();
-		static jint getMinimumFlingVelocity();
-		jint getScaledMinimumFlingVelocity();
-		static jint getMaximumFlingVelocity();
-		jint getScaledMaximumFlingVelocity();
-		jfloat getScaledHorizontalScrollFactor();
-		jfloat getScaledVerticalScrollFactor();
-		static jint getMaximumDrawingCacheSize();
-		jint getScaledMaximumDrawingCacheSize();
-		jint getScaledOverscrollDistance();
-		jint getScaledOverflingDistance();
-		static jlong getZoomControlsTimeout();
+		static jint getFadingEdgeLength();
 		static jlong getGlobalActionKeyTimeout();
+		static jint getJumpTapTimeout();
+		static jint getKeyRepeatDelay();
+		static jint getKeyRepeatTimeout();
+		static jint getLongPressTimeout();
+		static jint getMaximumDrawingCacheSize();
+		static jint getMaximumFlingVelocity();
+		static jint getMinimumFlingVelocity();
+		static jint getPressedStateDuration();
+		static jint getScrollBarFadeDuration();
+		static jint getScrollBarSize();
+		static jint getScrollDefaultDelay();
 		static jfloat getScrollFriction();
-		static jlong getDefaultActionModeHideDuration();
-		static jfloat getAmbiguousGestureMultiplier();
+		static jint getTapTimeout();
+		static jint getTouchSlop();
+		static jint getWindowTouchSlop();
+		static jlong getZoomControlsTimeout();
+		jint getScaledDoubleTapSlop();
+		jint getScaledEdgeSlop();
+		jint getScaledFadingEdgeLength();
+		jfloat getScaledHorizontalScrollFactor();
+		jint getScaledHoverSlop();
+		jint getScaledMaximumDrawingCacheSize();
+		jint getScaledMaximumFlingVelocity();
+		jint getScaledMinimumFlingVelocity();
+		jint getScaledMinimumScalingSpan();
+		jint getScaledOverflingDistance();
+		jint getScaledOverscrollDistance();
+		jint getScaledPagingTouchSlop();
+		jint getScaledScrollBarSize();
+		jint getScaledTouchSlop();
+		jfloat getScaledVerticalScrollFactor();
+		jint getScaledWindowTouchSlop();
 		jboolean hasPermanentMenuKey();
 		jboolean shouldShowMenuShortcutsWhenKeyboardPresent();
-		jint getScaledMinimumScalingSpan();
 	};
 } // namespace __jni_impl::android::view
 
@@ -90,98 +90,20 @@ namespace __jni_impl::android::view
 			arg0.__jniObject().object()
 		);
 	}
-	jint ViewConfiguration::getScrollBarFadeDuration()
+	jfloat ViewConfiguration::getAmbiguousGestureMultiplier()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return QAndroidJniObject::callStaticMethod<jfloat>(
 			"android.view.ViewConfiguration",
-			"getScrollBarFadeDuration",
-			"()I"
+			"getAmbiguousGestureMultiplier",
+			"()F"
 		);
 	}
-	jint ViewConfiguration::getScrollBarSize()
+	jlong ViewConfiguration::getDefaultActionModeHideDuration()
 	{
-		return QAndroidJniObject::callStaticMethod<jint>(
+		return QAndroidJniObject::callStaticMethod<jlong>(
 			"android.view.ViewConfiguration",
-			"getScrollBarSize",
-			"()I"
-		);
-	}
-	jint ViewConfiguration::getScaledScrollBarSize()
-	{
-		return __thiz.callMethod<jint>(
-			"getScaledScrollBarSize",
-			"()I"
-		);
-	}
-	jint ViewConfiguration::getScrollDefaultDelay()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.ViewConfiguration",
-			"getScrollDefaultDelay",
-			"()I"
-		);
-	}
-	jint ViewConfiguration::getFadingEdgeLength()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.ViewConfiguration",
-			"getFadingEdgeLength",
-			"()I"
-		);
-	}
-	jint ViewConfiguration::getScaledFadingEdgeLength()
-	{
-		return __thiz.callMethod<jint>(
-			"getScaledFadingEdgeLength",
-			"()I"
-		);
-	}
-	jint ViewConfiguration::getPressedStateDuration()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.ViewConfiguration",
-			"getPressedStateDuration",
-			"()I"
-		);
-	}
-	jint ViewConfiguration::getLongPressTimeout()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.ViewConfiguration",
-			"getLongPressTimeout",
-			"()I"
-		);
-	}
-	jint ViewConfiguration::getKeyRepeatTimeout()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.ViewConfiguration",
-			"getKeyRepeatTimeout",
-			"()I"
-		);
-	}
-	jint ViewConfiguration::getKeyRepeatDelay()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.ViewConfiguration",
-			"getKeyRepeatDelay",
-			"()I"
-		);
-	}
-	jint ViewConfiguration::getTapTimeout()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.ViewConfiguration",
-			"getTapTimeout",
-			"()I"
-		);
-	}
-	jint ViewConfiguration::getJumpTapTimeout()
-	{
-		return QAndroidJniObject::callStaticMethod<jint>(
-			"android.view.ViewConfiguration",
-			"getJumpTapTimeout",
-			"()I"
+			"getDefaultActionModeHideDuration",
+			"()J"
 		);
 	}
 	jint ViewConfiguration::getDoubleTapTimeout()
@@ -200,76 +122,59 @@ namespace __jni_impl::android::view
 			"()I"
 		);
 	}
-	jint ViewConfiguration::getScaledEdgeSlop()
-	{
-		return __thiz.callMethod<jint>(
-			"getScaledEdgeSlop",
-			"()I"
-		);
-	}
-	jint ViewConfiguration::getTouchSlop()
+	jint ViewConfiguration::getFadingEdgeLength()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
-			"getTouchSlop",
+			"getFadingEdgeLength",
 			"()I"
 		);
 	}
-	jint ViewConfiguration::getScaledTouchSlop()
+	jlong ViewConfiguration::getGlobalActionKeyTimeout()
 	{
-		return __thiz.callMethod<jint>(
-			"getScaledTouchSlop",
-			"()I"
+		return QAndroidJniObject::callStaticMethod<jlong>(
+			"android.view.ViewConfiguration",
+			"getGlobalActionKeyTimeout",
+			"()J"
 		);
 	}
-	jint ViewConfiguration::getScaledHoverSlop()
-	{
-		return __thiz.callMethod<jint>(
-			"getScaledHoverSlop",
-			"()I"
-		);
-	}
-	jint ViewConfiguration::getScaledPagingTouchSlop()
-	{
-		return __thiz.callMethod<jint>(
-			"getScaledPagingTouchSlop",
-			"()I"
-		);
-	}
-	jint ViewConfiguration::getScaledDoubleTapSlop()
-	{
-		return __thiz.callMethod<jint>(
-			"getScaledDoubleTapSlop",
-			"()I"
-		);
-	}
-	jint ViewConfiguration::getWindowTouchSlop()
+	jint ViewConfiguration::getJumpTapTimeout()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
-			"getWindowTouchSlop",
+			"getJumpTapTimeout",
 			"()I"
 		);
 	}
-	jint ViewConfiguration::getScaledWindowTouchSlop()
-	{
-		return __thiz.callMethod<jint>(
-			"getScaledWindowTouchSlop",
-			"()I"
-		);
-	}
-	jint ViewConfiguration::getMinimumFlingVelocity()
+	jint ViewConfiguration::getKeyRepeatDelay()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
-			"getMinimumFlingVelocity",
+			"getKeyRepeatDelay",
 			"()I"
 		);
 	}
-	jint ViewConfiguration::getScaledMinimumFlingVelocity()
+	jint ViewConfiguration::getKeyRepeatTimeout()
 	{
-		return __thiz.callMethod<jint>(
-			"getScaledMinimumFlingVelocity",
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.ViewConfiguration",
+			"getKeyRepeatTimeout",
+			"()I"
+		);
+	}
+	jint ViewConfiguration::getLongPressTimeout()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.ViewConfiguration",
+			"getLongPressTimeout",
+			"()I"
+		);
+	}
+	jint ViewConfiguration::getMaximumDrawingCacheSize()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.ViewConfiguration",
+			"getMaximumDrawingCacheSize",
 			"()I"
 		);
 	}
@@ -281,53 +186,75 @@ namespace __jni_impl::android::view
 			"()I"
 		);
 	}
-	jint ViewConfiguration::getScaledMaximumFlingVelocity()
-	{
-		return __thiz.callMethod<jint>(
-			"getScaledMaximumFlingVelocity",
-			"()I"
-		);
-	}
-	jfloat ViewConfiguration::getScaledHorizontalScrollFactor()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getScaledHorizontalScrollFactor",
-			"()F"
-		);
-	}
-	jfloat ViewConfiguration::getScaledVerticalScrollFactor()
-	{
-		return __thiz.callMethod<jfloat>(
-			"getScaledVerticalScrollFactor",
-			"()F"
-		);
-	}
-	jint ViewConfiguration::getMaximumDrawingCacheSize()
+	jint ViewConfiguration::getMinimumFlingVelocity()
 	{
 		return QAndroidJniObject::callStaticMethod<jint>(
 			"android.view.ViewConfiguration",
-			"getMaximumDrawingCacheSize",
+			"getMinimumFlingVelocity",
 			"()I"
 		);
 	}
-	jint ViewConfiguration::getScaledMaximumDrawingCacheSize()
+	jint ViewConfiguration::getPressedStateDuration()
 	{
-		return __thiz.callMethod<jint>(
-			"getScaledMaximumDrawingCacheSize",
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.ViewConfiguration",
+			"getPressedStateDuration",
 			"()I"
 		);
 	}
-	jint ViewConfiguration::getScaledOverscrollDistance()
+	jint ViewConfiguration::getScrollBarFadeDuration()
 	{
-		return __thiz.callMethod<jint>(
-			"getScaledOverscrollDistance",
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.ViewConfiguration",
+			"getScrollBarFadeDuration",
 			"()I"
 		);
 	}
-	jint ViewConfiguration::getScaledOverflingDistance()
+	jint ViewConfiguration::getScrollBarSize()
 	{
-		return __thiz.callMethod<jint>(
-			"getScaledOverflingDistance",
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.ViewConfiguration",
+			"getScrollBarSize",
+			"()I"
+		);
+	}
+	jint ViewConfiguration::getScrollDefaultDelay()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.ViewConfiguration",
+			"getScrollDefaultDelay",
+			"()I"
+		);
+	}
+	jfloat ViewConfiguration::getScrollFriction()
+	{
+		return QAndroidJniObject::callStaticMethod<jfloat>(
+			"android.view.ViewConfiguration",
+			"getScrollFriction",
+			"()F"
+		);
+	}
+	jint ViewConfiguration::getTapTimeout()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.ViewConfiguration",
+			"getTapTimeout",
+			"()I"
+		);
+	}
+	jint ViewConfiguration::getTouchSlop()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.ViewConfiguration",
+			"getTouchSlop",
+			"()I"
+		);
+	}
+	jint ViewConfiguration::getWindowTouchSlop()
+	{
+		return QAndroidJniObject::callStaticMethod<jint>(
+			"android.view.ViewConfiguration",
+			"getWindowTouchSlop",
 			"()I"
 		);
 	}
@@ -339,36 +266,116 @@ namespace __jni_impl::android::view
 			"()J"
 		);
 	}
-	jlong ViewConfiguration::getGlobalActionKeyTimeout()
+	jint ViewConfiguration::getScaledDoubleTapSlop()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.view.ViewConfiguration",
-			"getGlobalActionKeyTimeout",
-			"()J"
+		return __thiz.callMethod<jint>(
+			"getScaledDoubleTapSlop",
+			"()I"
 		);
 	}
-	jfloat ViewConfiguration::getScrollFriction()
+	jint ViewConfiguration::getScaledEdgeSlop()
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
-			"android.view.ViewConfiguration",
-			"getScrollFriction",
+		return __thiz.callMethod<jint>(
+			"getScaledEdgeSlop",
+			"()I"
+		);
+	}
+	jint ViewConfiguration::getScaledFadingEdgeLength()
+	{
+		return __thiz.callMethod<jint>(
+			"getScaledFadingEdgeLength",
+			"()I"
+		);
+	}
+	jfloat ViewConfiguration::getScaledHorizontalScrollFactor()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getScaledHorizontalScrollFactor",
 			"()F"
 		);
 	}
-	jlong ViewConfiguration::getDefaultActionModeHideDuration()
+	jint ViewConfiguration::getScaledHoverSlop()
 	{
-		return QAndroidJniObject::callStaticMethod<jlong>(
-			"android.view.ViewConfiguration",
-			"getDefaultActionModeHideDuration",
-			"()J"
+		return __thiz.callMethod<jint>(
+			"getScaledHoverSlop",
+			"()I"
 		);
 	}
-	jfloat ViewConfiguration::getAmbiguousGestureMultiplier()
+	jint ViewConfiguration::getScaledMaximumDrawingCacheSize()
 	{
-		return QAndroidJniObject::callStaticMethod<jfloat>(
-			"android.view.ViewConfiguration",
-			"getAmbiguousGestureMultiplier",
+		return __thiz.callMethod<jint>(
+			"getScaledMaximumDrawingCacheSize",
+			"()I"
+		);
+	}
+	jint ViewConfiguration::getScaledMaximumFlingVelocity()
+	{
+		return __thiz.callMethod<jint>(
+			"getScaledMaximumFlingVelocity",
+			"()I"
+		);
+	}
+	jint ViewConfiguration::getScaledMinimumFlingVelocity()
+	{
+		return __thiz.callMethod<jint>(
+			"getScaledMinimumFlingVelocity",
+			"()I"
+		);
+	}
+	jint ViewConfiguration::getScaledMinimumScalingSpan()
+	{
+		return __thiz.callMethod<jint>(
+			"getScaledMinimumScalingSpan",
+			"()I"
+		);
+	}
+	jint ViewConfiguration::getScaledOverflingDistance()
+	{
+		return __thiz.callMethod<jint>(
+			"getScaledOverflingDistance",
+			"()I"
+		);
+	}
+	jint ViewConfiguration::getScaledOverscrollDistance()
+	{
+		return __thiz.callMethod<jint>(
+			"getScaledOverscrollDistance",
+			"()I"
+		);
+	}
+	jint ViewConfiguration::getScaledPagingTouchSlop()
+	{
+		return __thiz.callMethod<jint>(
+			"getScaledPagingTouchSlop",
+			"()I"
+		);
+	}
+	jint ViewConfiguration::getScaledScrollBarSize()
+	{
+		return __thiz.callMethod<jint>(
+			"getScaledScrollBarSize",
+			"()I"
+		);
+	}
+	jint ViewConfiguration::getScaledTouchSlop()
+	{
+		return __thiz.callMethod<jint>(
+			"getScaledTouchSlop",
+			"()I"
+		);
+	}
+	jfloat ViewConfiguration::getScaledVerticalScrollFactor()
+	{
+		return __thiz.callMethod<jfloat>(
+			"getScaledVerticalScrollFactor",
 			"()F"
+		);
+	}
+	jint ViewConfiguration::getScaledWindowTouchSlop()
+	{
+		return __thiz.callMethod<jint>(
+			"getScaledWindowTouchSlop",
+			"()I"
 		);
 	}
 	jboolean ViewConfiguration::hasPermanentMenuKey()
@@ -383,13 +390,6 @@ namespace __jni_impl::android::view
 		return __thiz.callMethod<jboolean>(
 			"shouldShowMenuShortcutsWhenKeyboardPresent",
 			"()Z"
-		);
-	}
-	jint ViewConfiguration::getScaledMinimumScalingSpan()
-	{
-		return __thiz.callMethod<jint>(
-			"getScaledMinimumScalingSpan",
-			"()I"
 		);
 	}
 } // namespace __jni_impl::android::view

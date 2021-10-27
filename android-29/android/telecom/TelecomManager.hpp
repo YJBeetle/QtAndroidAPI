@@ -9,25 +9,25 @@ namespace __jni_impl::android::content
 {
 	class Context;
 }
-namespace __jni_impl::android::telecom
+namespace __jni_impl::android::content
 {
-	class PhoneAccountHandle;
-}
-namespace __jni_impl::android::telecom
-{
-	class PhoneAccount;
-}
-namespace __jni_impl::android::os
-{
-	class Bundle;
+	class Intent;
 }
 namespace __jni_impl::android::net
 {
 	class Uri;
 }
-namespace __jni_impl::android::content
+namespace __jni_impl::android::os
 {
-	class Intent;
+	class Bundle;
+}
+namespace __jni_impl::android::telecom
+{
+	class PhoneAccount;
+}
+namespace __jni_impl::android::telecom
+{
+	class PhoneAccountHandle;
 }
 
 namespace __jni_impl::android::telecom
@@ -84,50 +84,50 @@ namespace __jni_impl::android::telecom
 		void __constructor();
 		
 		// Methods
-		QAndroidJniObject getDefaultOutgoingPhoneAccount(jstring arg0);
-		QAndroidJniObject getDefaultOutgoingPhoneAccount(const QString &arg0);
-		QAndroidJniObject getUserSelectedOutgoingPhoneAccount();
-		QAndroidJniObject getSimCallManager();
-		QAndroidJniObject getCallCapablePhoneAccounts();
-		QAndroidJniObject getSelfManagedPhoneAccounts();
-		QAndroidJniObject getPhoneAccount(__jni_impl::android::telecom::PhoneAccountHandle arg0);
-		void registerPhoneAccount(__jni_impl::android::telecom::PhoneAccount arg0);
-		void unregisterPhoneAccount(__jni_impl::android::telecom::PhoneAccountHandle arg0);
-		jstring getDefaultDialerPackage();
-		jstring getSystemDialerPackage();
-		jboolean isVoiceMailNumber(__jni_impl::android::telecom::PhoneAccountHandle arg0, jstring arg1);
-		jboolean isVoiceMailNumber(__jni_impl::android::telecom::PhoneAccountHandle arg0, const QString &arg1);
-		jstring getVoiceMailNumber(__jni_impl::android::telecom::PhoneAccountHandle arg0);
-		jstring getLine1Number(__jni_impl::android::telecom::PhoneAccountHandle arg0);
-		jboolean isInCall();
-		jboolean isInManagedCall();
-		jboolean endCall();
+		void acceptHandover(__jni_impl::android::net::Uri arg0, jint arg1, __jni_impl::android::telecom::PhoneAccountHandle arg2);
 		void acceptRingingCall();
 		void acceptRingingCall(jint arg0);
-		void silenceRinger();
-		jboolean isTtySupported();
 		void addNewIncomingCall(__jni_impl::android::telecom::PhoneAccountHandle arg0, __jni_impl::android::os::Bundle arg1);
+		void cancelMissedCallsNotification();
+		QAndroidJniObject createManageBlockedNumbersIntent();
+		jboolean endCall();
+		QAndroidJniObject getAdnUriForPhoneAccount(__jni_impl::android::telecom::PhoneAccountHandle arg0);
+		QAndroidJniObject getCallCapablePhoneAccounts();
+		jstring getDefaultDialerPackage();
+		QAndroidJniObject getDefaultOutgoingPhoneAccount(jstring arg0);
+		QAndroidJniObject getDefaultOutgoingPhoneAccount(const QString &arg0);
+		jstring getLine1Number(__jni_impl::android::telecom::PhoneAccountHandle arg0);
+		QAndroidJniObject getPhoneAccount(__jni_impl::android::telecom::PhoneAccountHandle arg0);
+		QAndroidJniObject getSelfManagedPhoneAccounts();
+		QAndroidJniObject getSimCallManager();
+		jstring getSystemDialerPackage();
+		QAndroidJniObject getUserSelectedOutgoingPhoneAccount();
+		jstring getVoiceMailNumber(__jni_impl::android::telecom::PhoneAccountHandle arg0);
 		jboolean handleMmi(jstring arg0);
 		jboolean handleMmi(const QString &arg0);
 		jboolean handleMmi(jstring arg0, __jni_impl::android::telecom::PhoneAccountHandle arg1);
 		jboolean handleMmi(const QString &arg0, __jni_impl::android::telecom::PhoneAccountHandle arg1);
-		QAndroidJniObject getAdnUriForPhoneAccount(__jni_impl::android::telecom::PhoneAccountHandle arg0);
-		void cancelMissedCallsNotification();
-		void showInCallScreen(jboolean arg0);
-		void placeCall(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1);
-		QAndroidJniObject createManageBlockedNumbersIntent();
+		jboolean isInCall();
+		jboolean isInManagedCall();
 		jboolean isIncomingCallPermitted(__jni_impl::android::telecom::PhoneAccountHandle arg0);
 		jboolean isOutgoingCallPermitted(__jni_impl::android::telecom::PhoneAccountHandle arg0);
-		void acceptHandover(__jni_impl::android::net::Uri arg0, jint arg1, __jni_impl::android::telecom::PhoneAccountHandle arg2);
+		jboolean isTtySupported();
+		jboolean isVoiceMailNumber(__jni_impl::android::telecom::PhoneAccountHandle arg0, jstring arg1);
+		jboolean isVoiceMailNumber(__jni_impl::android::telecom::PhoneAccountHandle arg0, const QString &arg1);
+		void placeCall(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1);
+		void registerPhoneAccount(__jni_impl::android::telecom::PhoneAccount arg0);
+		void showInCallScreen(jboolean arg0);
+		void silenceRinger();
+		void unregisterPhoneAccount(__jni_impl::android::telecom::PhoneAccountHandle arg0);
 	};
 } // namespace __jni_impl::android::telecom
 
 #include "../content/Context.hpp"
-#include "PhoneAccountHandle.hpp"
-#include "PhoneAccount.hpp"
-#include "../os/Bundle.hpp"
-#include "../net/Uri.hpp"
 #include "../content/Intent.hpp"
+#include "../net/Uri.hpp"
+#include "../os/Bundle.hpp"
+#include "PhoneAccount.hpp"
+#include "PhoneAccountHandle.hpp"
 
 namespace __jni_impl::android::telecom
 {
@@ -480,141 +480,14 @@ namespace __jni_impl::android::telecom
 	}
 	
 	// Methods
-	QAndroidJniObject TelecomManager::getDefaultOutgoingPhoneAccount(jstring arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDefaultOutgoingPhoneAccount",
-			"(Ljava/lang/String;)Landroid/telecom/PhoneAccountHandle;",
-			arg0
-		);
-	}
-	QAndroidJniObject TelecomManager::getDefaultOutgoingPhoneAccount(const QString &arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getDefaultOutgoingPhoneAccount",
-			"(Ljava/lang/String;)Landroid/telecom/PhoneAccountHandle;",
-			QAndroidJniObject::fromString(arg0).object<jstring>()
-		);
-	}
-	QAndroidJniObject TelecomManager::getUserSelectedOutgoingPhoneAccount()
-	{
-		return __thiz.callObjectMethod(
-			"getUserSelectedOutgoingPhoneAccount",
-			"()Landroid/telecom/PhoneAccountHandle;"
-		);
-	}
-	QAndroidJniObject TelecomManager::getSimCallManager()
-	{
-		return __thiz.callObjectMethod(
-			"getSimCallManager",
-			"()Landroid/telecom/PhoneAccountHandle;"
-		);
-	}
-	QAndroidJniObject TelecomManager::getCallCapablePhoneAccounts()
-	{
-		return __thiz.callObjectMethod(
-			"getCallCapablePhoneAccounts",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject TelecomManager::getSelfManagedPhoneAccounts()
-	{
-		return __thiz.callObjectMethod(
-			"getSelfManagedPhoneAccounts",
-			"()Ljava/util/List;"
-		);
-	}
-	QAndroidJniObject TelecomManager::getPhoneAccount(__jni_impl::android::telecom::PhoneAccountHandle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getPhoneAccount",
-			"(Landroid/telecom/PhoneAccountHandle;)Landroid/telecom/PhoneAccount;",
-			arg0.__jniObject().object()
-		);
-	}
-	void TelecomManager::registerPhoneAccount(__jni_impl::android::telecom::PhoneAccount arg0)
+	void TelecomManager::acceptHandover(__jni_impl::android::net::Uri arg0, jint arg1, __jni_impl::android::telecom::PhoneAccountHandle arg2)
 	{
 		__thiz.callMethod<void>(
-			"registerPhoneAccount",
-			"(Landroid/telecom/PhoneAccount;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	void TelecomManager::unregisterPhoneAccount(__jni_impl::android::telecom::PhoneAccountHandle arg0)
-	{
-		__thiz.callMethod<void>(
-			"unregisterPhoneAccount",
-			"(Landroid/telecom/PhoneAccountHandle;)V",
-			arg0.__jniObject().object()
-		);
-	}
-	jstring TelecomManager::getDefaultDialerPackage()
-	{
-		return __thiz.callObjectMethod(
-			"getDefaultDialerPackage",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jstring TelecomManager::getSystemDialerPackage()
-	{
-		return __thiz.callObjectMethod(
-			"getSystemDialerPackage",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
-	jboolean TelecomManager::isVoiceMailNumber(__jni_impl::android::telecom::PhoneAccountHandle arg0, jstring arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isVoiceMailNumber",
-			"(Landroid/telecom/PhoneAccountHandle;Ljava/lang/String;)Z",
+			"acceptHandover",
+			"(Landroid/net/Uri;ILandroid/telecom/PhoneAccountHandle;)V",
 			arg0.__jniObject().object(),
-			arg1
-		);
-	}
-	jboolean TelecomManager::isVoiceMailNumber(__jni_impl::android::telecom::PhoneAccountHandle arg0, const QString &arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"isVoiceMailNumber",
-			"(Landroid/telecom/PhoneAccountHandle;Ljava/lang/String;)Z",
-			arg0.__jniObject().object(),
-			QAndroidJniObject::fromString(arg1).object<jstring>()
-		);
-	}
-	jstring TelecomManager::getVoiceMailNumber(__jni_impl::android::telecom::PhoneAccountHandle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getVoiceMailNumber",
-			"(Landroid/telecom/PhoneAccountHandle;)Ljava/lang/String;",
-			arg0.__jniObject().object()
-		).object<jstring>();
-	}
-	jstring TelecomManager::getLine1Number(__jni_impl::android::telecom::PhoneAccountHandle arg0)
-	{
-		return __thiz.callObjectMethod(
-			"getLine1Number",
-			"(Landroid/telecom/PhoneAccountHandle;)Ljava/lang/String;",
-			arg0.__jniObject().object()
-		).object<jstring>();
-	}
-	jboolean TelecomManager::isInCall()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isInCall",
-			"()Z"
-		);
-	}
-	jboolean TelecomManager::isInManagedCall()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isInManagedCall",
-			"()Z"
-		);
-	}
-	jboolean TelecomManager::endCall()
-	{
-		return __thiz.callMethod<jboolean>(
-			"endCall",
-			"()Z"
+			arg1,
+			arg2.__jniObject().object()
 		);
 	}
 	void TelecomManager::acceptRingingCall()
@@ -632,20 +505,6 @@ namespace __jni_impl::android::telecom
 			arg0
 		);
 	}
-	void TelecomManager::silenceRinger()
-	{
-		__thiz.callMethod<void>(
-			"silenceRinger",
-			"()V"
-		);
-	}
-	jboolean TelecomManager::isTtySupported()
-	{
-		return __thiz.callMethod<jboolean>(
-			"isTtySupported",
-			"()Z"
-		);
-	}
 	void TelecomManager::addNewIncomingCall(__jni_impl::android::telecom::PhoneAccountHandle arg0, __jni_impl::android::os::Bundle arg1)
 	{
 		__thiz.callMethod<void>(
@@ -654,6 +513,117 @@ namespace __jni_impl::android::telecom
 			arg0.__jniObject().object(),
 			arg1.__jniObject().object()
 		);
+	}
+	void TelecomManager::cancelMissedCallsNotification()
+	{
+		__thiz.callMethod<void>(
+			"cancelMissedCallsNotification",
+			"()V"
+		);
+	}
+	QAndroidJniObject TelecomManager::createManageBlockedNumbersIntent()
+	{
+		return __thiz.callObjectMethod(
+			"createManageBlockedNumbersIntent",
+			"()Landroid/content/Intent;"
+		);
+	}
+	jboolean TelecomManager::endCall()
+	{
+		return __thiz.callMethod<jboolean>(
+			"endCall",
+			"()Z"
+		);
+	}
+	QAndroidJniObject TelecomManager::getAdnUriForPhoneAccount(__jni_impl::android::telecom::PhoneAccountHandle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getAdnUriForPhoneAccount",
+			"(Landroid/telecom/PhoneAccountHandle;)Landroid/net/Uri;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TelecomManager::getCallCapablePhoneAccounts()
+	{
+		return __thiz.callObjectMethod(
+			"getCallCapablePhoneAccounts",
+			"()Ljava/util/List;"
+		);
+	}
+	jstring TelecomManager::getDefaultDialerPackage()
+	{
+		return __thiz.callObjectMethod(
+			"getDefaultDialerPackage",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject TelecomManager::getDefaultOutgoingPhoneAccount(jstring arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDefaultOutgoingPhoneAccount",
+			"(Ljava/lang/String;)Landroid/telecom/PhoneAccountHandle;",
+			arg0
+		);
+	}
+	QAndroidJniObject TelecomManager::getDefaultOutgoingPhoneAccount(const QString &arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getDefaultOutgoingPhoneAccount",
+			"(Ljava/lang/String;)Landroid/telecom/PhoneAccountHandle;",
+			QAndroidJniObject::fromString(arg0).object<jstring>()
+		);
+	}
+	jstring TelecomManager::getLine1Number(__jni_impl::android::telecom::PhoneAccountHandle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getLine1Number",
+			"(Landroid/telecom/PhoneAccountHandle;)Ljava/lang/String;",
+			arg0.__jniObject().object()
+		).object<jstring>();
+	}
+	QAndroidJniObject TelecomManager::getPhoneAccount(__jni_impl::android::telecom::PhoneAccountHandle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getPhoneAccount",
+			"(Landroid/telecom/PhoneAccountHandle;)Landroid/telecom/PhoneAccount;",
+			arg0.__jniObject().object()
+		);
+	}
+	QAndroidJniObject TelecomManager::getSelfManagedPhoneAccounts()
+	{
+		return __thiz.callObjectMethod(
+			"getSelfManagedPhoneAccounts",
+			"()Ljava/util/List;"
+		);
+	}
+	QAndroidJniObject TelecomManager::getSimCallManager()
+	{
+		return __thiz.callObjectMethod(
+			"getSimCallManager",
+			"()Landroid/telecom/PhoneAccountHandle;"
+		);
+	}
+	jstring TelecomManager::getSystemDialerPackage()
+	{
+		return __thiz.callObjectMethod(
+			"getSystemDialerPackage",
+			"()Ljava/lang/String;"
+		).object<jstring>();
+	}
+	QAndroidJniObject TelecomManager::getUserSelectedOutgoingPhoneAccount()
+	{
+		return __thiz.callObjectMethod(
+			"getUserSelectedOutgoingPhoneAccount",
+			"()Landroid/telecom/PhoneAccountHandle;"
+		);
+	}
+	jstring TelecomManager::getVoiceMailNumber(__jni_impl::android::telecom::PhoneAccountHandle arg0)
+	{
+		return __thiz.callObjectMethod(
+			"getVoiceMailNumber",
+			"(Landroid/telecom/PhoneAccountHandle;)Ljava/lang/String;",
+			arg0.__jniObject().object()
+		).object<jstring>();
 	}
 	jboolean TelecomManager::handleMmi(jstring arg0)
 	{
@@ -689,43 +659,18 @@ namespace __jni_impl::android::telecom
 			arg1.__jniObject().object()
 		);
 	}
-	QAndroidJniObject TelecomManager::getAdnUriForPhoneAccount(__jni_impl::android::telecom::PhoneAccountHandle arg0)
+	jboolean TelecomManager::isInCall()
 	{
-		return __thiz.callObjectMethod(
-			"getAdnUriForPhoneAccount",
-			"(Landroid/telecom/PhoneAccountHandle;)Landroid/net/Uri;",
-			arg0.__jniObject().object()
+		return __thiz.callMethod<jboolean>(
+			"isInCall",
+			"()Z"
 		);
 	}
-	void TelecomManager::cancelMissedCallsNotification()
+	jboolean TelecomManager::isInManagedCall()
 	{
-		__thiz.callMethod<void>(
-			"cancelMissedCallsNotification",
-			"()V"
-		);
-	}
-	void TelecomManager::showInCallScreen(jboolean arg0)
-	{
-		__thiz.callMethod<void>(
-			"showInCallScreen",
-			"(Z)V",
-			arg0
-		);
-	}
-	void TelecomManager::placeCall(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1)
-	{
-		__thiz.callMethod<void>(
-			"placeCall",
-			"(Landroid/net/Uri;Landroid/os/Bundle;)V",
-			arg0.__jniObject().object(),
-			arg1.__jniObject().object()
-		);
-	}
-	QAndroidJniObject TelecomManager::createManageBlockedNumbersIntent()
-	{
-		return __thiz.callObjectMethod(
-			"createManageBlockedNumbersIntent",
-			"()Landroid/content/Intent;"
+		return __thiz.callMethod<jboolean>(
+			"isInManagedCall",
+			"()Z"
 		);
 	}
 	jboolean TelecomManager::isIncomingCallPermitted(__jni_impl::android::telecom::PhoneAccountHandle arg0)
@@ -744,14 +689,69 @@ namespace __jni_impl::android::telecom
 			arg0.__jniObject().object()
 		);
 	}
-	void TelecomManager::acceptHandover(__jni_impl::android::net::Uri arg0, jint arg1, __jni_impl::android::telecom::PhoneAccountHandle arg2)
+	jboolean TelecomManager::isTtySupported()
+	{
+		return __thiz.callMethod<jboolean>(
+			"isTtySupported",
+			"()Z"
+		);
+	}
+	jboolean TelecomManager::isVoiceMailNumber(__jni_impl::android::telecom::PhoneAccountHandle arg0, jstring arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isVoiceMailNumber",
+			"(Landroid/telecom/PhoneAccountHandle;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			arg1
+		);
+	}
+	jboolean TelecomManager::isVoiceMailNumber(__jni_impl::android::telecom::PhoneAccountHandle arg0, const QString &arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"isVoiceMailNumber",
+			"(Landroid/telecom/PhoneAccountHandle;Ljava/lang/String;)Z",
+			arg0.__jniObject().object(),
+			QAndroidJniObject::fromString(arg1).object<jstring>()
+		);
+	}
+	void TelecomManager::placeCall(__jni_impl::android::net::Uri arg0, __jni_impl::android::os::Bundle arg1)
 	{
 		__thiz.callMethod<void>(
-			"acceptHandover",
-			"(Landroid/net/Uri;ILandroid/telecom/PhoneAccountHandle;)V",
+			"placeCall",
+			"(Landroid/net/Uri;Landroid/os/Bundle;)V",
 			arg0.__jniObject().object(),
-			arg1,
-			arg2.__jniObject().object()
+			arg1.__jniObject().object()
+		);
+	}
+	void TelecomManager::registerPhoneAccount(__jni_impl::android::telecom::PhoneAccount arg0)
+	{
+		__thiz.callMethod<void>(
+			"registerPhoneAccount",
+			"(Landroid/telecom/PhoneAccount;)V",
+			arg0.__jniObject().object()
+		);
+	}
+	void TelecomManager::showInCallScreen(jboolean arg0)
+	{
+		__thiz.callMethod<void>(
+			"showInCallScreen",
+			"(Z)V",
+			arg0
+		);
+	}
+	void TelecomManager::silenceRinger()
+	{
+		__thiz.callMethod<void>(
+			"silenceRinger",
+			"()V"
+		);
+	}
+	void TelecomManager::unregisterPhoneAccount(__jni_impl::android::telecom::PhoneAccountHandle arg0)
+	{
+		__thiz.callMethod<void>(
+			"unregisterPhoneAccount",
+			"(Landroid/telecom/PhoneAccountHandle;)V",
+			arg0.__jniObject().object()
 		);
 	}
 } // namespace __jni_impl::android::telecom

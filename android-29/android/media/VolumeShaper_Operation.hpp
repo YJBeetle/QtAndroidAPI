@@ -24,10 +24,10 @@ namespace __jni_impl::android::media
 		void __constructor();
 		
 		// Methods
-		jboolean equals(jobject arg0);
-		jstring toString();
-		jint hashCode();
 		jint describeContents();
+		jboolean equals(jobject arg0);
+		jint hashCode();
+		jstring toString();
 		void writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1);
 	};
 } // namespace __jni_impl::android::media
@@ -71,6 +71,13 @@ namespace __jni_impl::android::media
 	}
 	
 	// Methods
+	jint VolumeShaper_Operation::describeContents()
+	{
+		return __thiz.callMethod<jint>(
+			"describeContents",
+			"()I"
+		);
+	}
 	jboolean VolumeShaper_Operation::equals(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -79,13 +86,6 @@ namespace __jni_impl::android::media
 			arg0
 		);
 	}
-	jstring VolumeShaper_Operation::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
-	}
 	jint VolumeShaper_Operation::hashCode()
 	{
 		return __thiz.callMethod<jint>(
@@ -93,12 +93,12 @@ namespace __jni_impl::android::media
 			"()I"
 		);
 	}
-	jint VolumeShaper_Operation::describeContents()
+	jstring VolumeShaper_Operation::toString()
 	{
-		return __thiz.callMethod<jint>(
-			"describeContents",
-			"()I"
-		);
+		return __thiz.callObjectMethod(
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 	void VolumeShaper_Operation::writeToParcel(__jni_impl::android::os::Parcel arg0, jint arg1)
 	{

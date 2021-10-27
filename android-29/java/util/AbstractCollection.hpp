@@ -18,19 +18,19 @@ namespace __jni_impl::java::util
 		
 		// Methods
 		jboolean add(jobject arg0);
-		jboolean remove(jobject arg0);
-		jstring toString();
+		jboolean addAll(__jni_impl::__JniBaseClass arg0);
 		void clear();
+		jboolean contains(jobject arg0);
+		jboolean containsAll(__jni_impl::__JniBaseClass arg0);
 		jboolean isEmpty();
+		QAndroidJniObject iterator();
+		jboolean remove(jobject arg0);
+		jboolean removeAll(__jni_impl::__JniBaseClass arg0);
+		jboolean retainAll(__jni_impl::__JniBaseClass arg0);
 		jint size();
 		jobjectArray toArray();
 		jobjectArray toArray(jobjectArray arg0);
-		QAndroidJniObject iterator();
-		jboolean contains(jobject arg0);
-		jboolean addAll(__jni_impl::__JniBaseClass arg0);
-		jboolean containsAll(__jni_impl::__JniBaseClass arg0);
-		jboolean retainAll(__jni_impl::__JniBaseClass arg0);
-		jboolean removeAll(__jni_impl::__JniBaseClass arg0);
+		jstring toString();
 	};
 } // namespace __jni_impl::java::util
 
@@ -56,20 +56,13 @@ namespace __jni_impl::java::util
 			arg0
 		);
 	}
-	jboolean AbstractCollection::remove(jobject arg0)
+	jboolean AbstractCollection::addAll(__jni_impl::__JniBaseClass arg0)
 	{
 		return __thiz.callMethod<jboolean>(
-			"remove",
-			"(Ljava/lang/Object;)Z",
-			arg0
+			"addAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.__jniObject().object()
 		);
-	}
-	jstring AbstractCollection::toString()
-	{
-		return __thiz.callObjectMethod(
-			"toString",
-			"()Ljava/lang/String;"
-		).object<jstring>();
 	}
 	void AbstractCollection::clear()
 	{
@@ -78,11 +71,58 @@ namespace __jni_impl::java::util
 			"()V"
 		);
 	}
+	jboolean AbstractCollection::contains(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"contains",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jboolean AbstractCollection::containsAll(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"containsAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.__jniObject().object()
+		);
+	}
 	jboolean AbstractCollection::isEmpty()
 	{
 		return __thiz.callMethod<jboolean>(
 			"isEmpty",
 			"()Z"
+		);
+	}
+	QAndroidJniObject AbstractCollection::iterator()
+	{
+		return __thiz.callObjectMethod(
+			"iterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	jboolean AbstractCollection::remove(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"remove",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jboolean AbstractCollection::removeAll(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"removeAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean AbstractCollection::retainAll(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"retainAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.__jniObject().object()
 		);
 	}
 	jint AbstractCollection::size()
@@ -107,52 +147,12 @@ namespace __jni_impl::java::util
 			arg0
 		).object<jobjectArray>();
 	}
-	QAndroidJniObject AbstractCollection::iterator()
+	jstring AbstractCollection::toString()
 	{
 		return __thiz.callObjectMethod(
-			"iterator",
-			"()Ljava/util/Iterator;"
-		);
-	}
-	jboolean AbstractCollection::contains(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"contains",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jboolean AbstractCollection::addAll(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"addAll",
-			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean AbstractCollection::containsAll(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"containsAll",
-			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean AbstractCollection::retainAll(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"retainAll",
-			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jboolean AbstractCollection::removeAll(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"removeAll",
-			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
-		);
+			"toString",
+			"()Ljava/lang/String;"
+		).object<jstring>();
 	}
 } // namespace __jni_impl::java::util
 

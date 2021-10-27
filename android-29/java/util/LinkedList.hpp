@@ -31,44 +31,44 @@ namespace __jni_impl::java::util
 		// Methods
 		jboolean add(jobject arg0);
 		void add(jint arg0, jobject arg1);
+		jboolean addAll(__jni_impl::__JniBaseClass arg0);
+		jboolean addAll(jint arg0, __jni_impl::__JniBaseClass arg1);
+		void addFirst(jobject arg0);
+		void addLast(jobject arg0);
+		void clear();
+		jobject clone();
+		jboolean contains(jobject arg0);
+		QAndroidJniObject descendingIterator();
+		jobject element();
+		jobject get(jint arg0);
+		jobject getFirst();
+		jobject getLast();
+		jint indexOf(jobject arg0);
+		jint lastIndexOf(jobject arg0);
+		QAndroidJniObject listIterator(jint arg0);
+		jboolean offer(jobject arg0);
+		jboolean offerFirst(jobject arg0);
+		jboolean offerLast(jobject arg0);
+		jobject peek();
+		jobject peekFirst();
+		jobject peekLast();
+		jobject poll();
+		jobject pollFirst();
+		jobject pollLast();
+		jobject pop();
+		void push(jobject arg0);
 		jboolean remove(jobject arg0);
 		jobject remove();
 		jobject remove(jint arg0);
-		jobject get(jint arg0);
-		jobject clone();
-		jint indexOf(jobject arg0);
-		void clear();
-		jint lastIndexOf(jobject arg0);
+		jobject removeFirst();
+		jboolean removeFirstOccurrence(jobject arg0);
+		jobject removeLast();
+		jboolean removeLastOccurrence(jobject arg0);
+		jobject set(jint arg0, jobject arg1);
 		jint size();
+		QAndroidJniObject spliterator();
 		jobjectArray toArray();
 		jobjectArray toArray(jobjectArray arg0);
-		jboolean contains(jobject arg0);
-		QAndroidJniObject spliterator();
-		jboolean addAll(jint arg0, __jni_impl::__JniBaseClass arg1);
-		jboolean addAll(__jni_impl::__JniBaseClass arg0);
-		jobject set(jint arg0, jobject arg1);
-		jobject poll();
-		jobject peek();
-		jobject element();
-		void addLast(jobject arg0);
-		jobject pollFirst();
-		void push(jobject arg0);
-		void addFirst(jobject arg0);
-		jobject pollLast();
-		jboolean offerLast(jobject arg0);
-		jobject removeFirst();
-		jobject getFirst();
-		jobject peekFirst();
-		jboolean removeFirstOccurrence(jobject arg0);
-		jboolean offerFirst(jobject arg0);
-		jobject removeLast();
-		jobject getLast();
-		jobject peekLast();
-		jboolean removeLastOccurrence(jobject arg0);
-		jboolean offer(jobject arg0);
-		jobject pop();
-		QAndroidJniObject descendingIterator();
-		QAndroidJniObject listIterator(jint arg0);
 	};
 } // namespace __jni_impl::java::util
 
@@ -114,6 +114,202 @@ namespace __jni_impl::java::util
 			arg1
 		);
 	}
+	jboolean LinkedList::addAll(__jni_impl::__JniBaseClass arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"addAll",
+			"(Ljava/util/Collection;)Z",
+			arg0.__jniObject().object()
+		);
+	}
+	jboolean LinkedList::addAll(jint arg0, __jni_impl::__JniBaseClass arg1)
+	{
+		return __thiz.callMethod<jboolean>(
+			"addAll",
+			"(ILjava/util/Collection;)Z",
+			arg0,
+			arg1.__jniObject().object()
+		);
+	}
+	void LinkedList::addFirst(jobject arg0)
+	{
+		__thiz.callMethod<void>(
+			"addFirst",
+			"(Ljava/lang/Object;)V",
+			arg0
+		);
+	}
+	void LinkedList::addLast(jobject arg0)
+	{
+		__thiz.callMethod<void>(
+			"addLast",
+			"(Ljava/lang/Object;)V",
+			arg0
+		);
+	}
+	void LinkedList::clear()
+	{
+		__thiz.callMethod<void>(
+			"clear",
+			"()V"
+		);
+	}
+	jobject LinkedList::clone()
+	{
+		return __thiz.callObjectMethod(
+			"clone",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jboolean LinkedList::contains(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"contains",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	QAndroidJniObject LinkedList::descendingIterator()
+	{
+		return __thiz.callObjectMethod(
+			"descendingIterator",
+			"()Ljava/util/Iterator;"
+		);
+	}
+	jobject LinkedList::element()
+	{
+		return __thiz.callObjectMethod(
+			"element",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jobject LinkedList::get(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"get",
+			"(I)Ljava/lang/Object;",
+			arg0
+		).object<jobject>();
+	}
+	jobject LinkedList::getFirst()
+	{
+		return __thiz.callObjectMethod(
+			"getFirst",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jobject LinkedList::getLast()
+	{
+		return __thiz.callObjectMethod(
+			"getLast",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jint LinkedList::indexOf(jobject arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"indexOf",
+			"(Ljava/lang/Object;)I",
+			arg0
+		);
+	}
+	jint LinkedList::lastIndexOf(jobject arg0)
+	{
+		return __thiz.callMethod<jint>(
+			"lastIndexOf",
+			"(Ljava/lang/Object;)I",
+			arg0
+		);
+	}
+	QAndroidJniObject LinkedList::listIterator(jint arg0)
+	{
+		return __thiz.callObjectMethod(
+			"listIterator",
+			"(I)Ljava/util/ListIterator;",
+			arg0
+		);
+	}
+	jboolean LinkedList::offer(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"offer",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jboolean LinkedList::offerFirst(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"offerFirst",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jboolean LinkedList::offerLast(jobject arg0)
+	{
+		return __thiz.callMethod<jboolean>(
+			"offerLast",
+			"(Ljava/lang/Object;)Z",
+			arg0
+		);
+	}
+	jobject LinkedList::peek()
+	{
+		return __thiz.callObjectMethod(
+			"peek",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jobject LinkedList::peekFirst()
+	{
+		return __thiz.callObjectMethod(
+			"peekFirst",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jobject LinkedList::peekLast()
+	{
+		return __thiz.callObjectMethod(
+			"peekLast",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jobject LinkedList::poll()
+	{
+		return __thiz.callObjectMethod(
+			"poll",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jobject LinkedList::pollFirst()
+	{
+		return __thiz.callObjectMethod(
+			"pollFirst",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jobject LinkedList::pollLast()
+	{
+		return __thiz.callObjectMethod(
+			"pollLast",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	jobject LinkedList::pop()
+	{
+		return __thiz.callObjectMethod(
+			"pop",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
+	}
+	void LinkedList::push(jobject arg0)
+	{
+		__thiz.callMethod<void>(
+			"push",
+			"(Ljava/lang/Object;)V",
+			arg0
+		);
+	}
 	jboolean LinkedList::remove(jobject arg0)
 	{
 		return __thiz.callMethod<jboolean>(
@@ -137,49 +333,57 @@ namespace __jni_impl::java::util
 			arg0
 		).object<jobject>();
 	}
-	jobject LinkedList::get(jint arg0)
+	jobject LinkedList::removeFirst()
 	{
 		return __thiz.callObjectMethod(
-			"get",
-			"(I)Ljava/lang/Object;",
-			arg0
-		).object<jobject>();
-	}
-	jobject LinkedList::clone()
-	{
-		return __thiz.callObjectMethod(
-			"clone",
+			"removeFirst",
 			"()Ljava/lang/Object;"
 		).object<jobject>();
 	}
-	jint LinkedList::indexOf(jobject arg0)
+	jboolean LinkedList::removeFirstOccurrence(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"indexOf",
-			"(Ljava/lang/Object;)I",
+		return __thiz.callMethod<jboolean>(
+			"removeFirstOccurrence",
+			"(Ljava/lang/Object;)Z",
 			arg0
 		);
 	}
-	void LinkedList::clear()
+	jobject LinkedList::removeLast()
 	{
-		__thiz.callMethod<void>(
-			"clear",
-			"()V"
-		);
+		return __thiz.callObjectMethod(
+			"removeLast",
+			"()Ljava/lang/Object;"
+		).object<jobject>();
 	}
-	jint LinkedList::lastIndexOf(jobject arg0)
+	jboolean LinkedList::removeLastOccurrence(jobject arg0)
 	{
-		return __thiz.callMethod<jint>(
-			"lastIndexOf",
-			"(Ljava/lang/Object;)I",
+		return __thiz.callMethod<jboolean>(
+			"removeLastOccurrence",
+			"(Ljava/lang/Object;)Z",
 			arg0
 		);
+	}
+	jobject LinkedList::set(jint arg0, jobject arg1)
+	{
+		return __thiz.callObjectMethod(
+			"set",
+			"(ILjava/lang/Object;)Ljava/lang/Object;",
+			arg0,
+			arg1
+		).object<jobject>();
 	}
 	jint LinkedList::size()
 	{
 		return __thiz.callMethod<jint>(
 			"size",
 			"()I"
+		);
+	}
+	QAndroidJniObject LinkedList::spliterator()
+	{
+		return __thiz.callObjectMethod(
+			"spliterator",
+			"()Ljava/util/Spliterator;"
 		);
 	}
 	jobjectArray LinkedList::toArray()
@@ -196,210 +400,6 @@ namespace __jni_impl::java::util
 			"([Ljava/lang/Object;)[Ljava/lang/Object;",
 			arg0
 		).object<jobjectArray>();
-	}
-	jboolean LinkedList::contains(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"contains",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	QAndroidJniObject LinkedList::spliterator()
-	{
-		return __thiz.callObjectMethod(
-			"spliterator",
-			"()Ljava/util/Spliterator;"
-		);
-	}
-	jboolean LinkedList::addAll(jint arg0, __jni_impl::__JniBaseClass arg1)
-	{
-		return __thiz.callMethod<jboolean>(
-			"addAll",
-			"(ILjava/util/Collection;)Z",
-			arg0,
-			arg1.__jniObject().object()
-		);
-	}
-	jboolean LinkedList::addAll(__jni_impl::__JniBaseClass arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"addAll",
-			"(Ljava/util/Collection;)Z",
-			arg0.__jniObject().object()
-		);
-	}
-	jobject LinkedList::set(jint arg0, jobject arg1)
-	{
-		return __thiz.callObjectMethod(
-			"set",
-			"(ILjava/lang/Object;)Ljava/lang/Object;",
-			arg0,
-			arg1
-		).object<jobject>();
-	}
-	jobject LinkedList::poll()
-	{
-		return __thiz.callObjectMethod(
-			"poll",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	jobject LinkedList::peek()
-	{
-		return __thiz.callObjectMethod(
-			"peek",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	jobject LinkedList::element()
-	{
-		return __thiz.callObjectMethod(
-			"element",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	void LinkedList::addLast(jobject arg0)
-	{
-		__thiz.callMethod<void>(
-			"addLast",
-			"(Ljava/lang/Object;)V",
-			arg0
-		);
-	}
-	jobject LinkedList::pollFirst()
-	{
-		return __thiz.callObjectMethod(
-			"pollFirst",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	void LinkedList::push(jobject arg0)
-	{
-		__thiz.callMethod<void>(
-			"push",
-			"(Ljava/lang/Object;)V",
-			arg0
-		);
-	}
-	void LinkedList::addFirst(jobject arg0)
-	{
-		__thiz.callMethod<void>(
-			"addFirst",
-			"(Ljava/lang/Object;)V",
-			arg0
-		);
-	}
-	jobject LinkedList::pollLast()
-	{
-		return __thiz.callObjectMethod(
-			"pollLast",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	jboolean LinkedList::offerLast(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"offerLast",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jobject LinkedList::removeFirst()
-	{
-		return __thiz.callObjectMethod(
-			"removeFirst",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	jobject LinkedList::getFirst()
-	{
-		return __thiz.callObjectMethod(
-			"getFirst",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	jobject LinkedList::peekFirst()
-	{
-		return __thiz.callObjectMethod(
-			"peekFirst",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	jboolean LinkedList::removeFirstOccurrence(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"removeFirstOccurrence",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jboolean LinkedList::offerFirst(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"offerFirst",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jobject LinkedList::removeLast()
-	{
-		return __thiz.callObjectMethod(
-			"removeLast",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	jobject LinkedList::getLast()
-	{
-		return __thiz.callObjectMethod(
-			"getLast",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	jobject LinkedList::peekLast()
-	{
-		return __thiz.callObjectMethod(
-			"peekLast",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	jboolean LinkedList::removeLastOccurrence(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"removeLastOccurrence",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jboolean LinkedList::offer(jobject arg0)
-	{
-		return __thiz.callMethod<jboolean>(
-			"offer",
-			"(Ljava/lang/Object;)Z",
-			arg0
-		);
-	}
-	jobject LinkedList::pop()
-	{
-		return __thiz.callObjectMethod(
-			"pop",
-			"()Ljava/lang/Object;"
-		).object<jobject>();
-	}
-	QAndroidJniObject LinkedList::descendingIterator()
-	{
-		return __thiz.callObjectMethod(
-			"descendingIterator",
-			"()Ljava/util/Iterator;"
-		);
-	}
-	QAndroidJniObject LinkedList::listIterator(jint arg0)
-	{
-		return __thiz.callObjectMethod(
-			"listIterator",
-			"(I)Ljava/util/ListIterator;",
-			arg0
-		);
 	}
 } // namespace __jni_impl::java::util
 
