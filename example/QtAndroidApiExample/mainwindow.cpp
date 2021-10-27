@@ -8,6 +8,7 @@
 #include <QtAndroidExtras/QtAndroid>
 #include <android/widget/Toast.hpp>
 #include <android/app/ProgressDialog.hpp>
+#include <android/content/Context.hpp>
 #include <android/content/Intent.hpp>
 
 using namespace android::widget;
