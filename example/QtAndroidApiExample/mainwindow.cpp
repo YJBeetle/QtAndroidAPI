@@ -33,8 +33,8 @@ void MainWindow::on_showToast_clicked()
 {
 	auto message = ui->toastText->text();
 	QtAndroid::runOnAndroidThreadSync([message] {
-		Toast toast = Toast::makeText(android::content::Context(QtAndroid::androidContext()),
-									  toJString(message),
+        Toast toast = Toast::makeText(CONTEXT,
+                                      JSTRING(message),
 									  0);
 		toast.show();
 	});
@@ -51,8 +51,8 @@ void MainWindow::on_showProgressDialogSpinner_clicked()
 		progressDialog = std::make_shared<ProgressDialog>(android::content::Context(QtAndroid::androidActivity()));
 
 		progressDialog->setCancelable(false);
-		progressDialog->setTitle(toJString(title));
-		progressDialog->setMessage(toJString(message));
+        progressDialog->setTitle(JSTRING(title));
+        progressDialog->setMessage(JSTRING(message));
 
 		progressDialog->Dialog::show();
 	});
@@ -73,8 +73,8 @@ void MainWindow::on_showProgressDialogHorizontal_clicked()
 		progressDialog = std::make_shared<ProgressDialog>(android::content::Context(QtAndroid::androidActivity()));
 
 		progressDialog->setCancelable(false);
-		progressDialog->setTitle(toJString(title));
-		progressDialog->setMessage(toJString(message));
+        progressDialog->setTitle(JSTRING(title));
+        progressDialog->setMessage(JSTRING(message));
 
 		progressDialog->setProgressStyle(ProgressDialog::STYLE_HORIZONTAL());
 		progressDialog->setMax(PROGRESS_DIALOG_MAX);
@@ -104,7 +104,7 @@ void MainWindow::on_OpenFile_clicked()
 {
 	QtAndroid::runOnAndroidThreadSync([] {
 		Intent intent = Intent(Intent::ACTION_GET_CONTENT());
-		intent.setType(toJString("image/*"));
+        intent.setType(JSTRING("image/*"));
 
 
 //			if (intent.resolveActivity(getPackageManager()) != null) {
