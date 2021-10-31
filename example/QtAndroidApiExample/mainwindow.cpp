@@ -5,11 +5,9 @@
 #include <QDebug>
 #include <QTimer>
 
-#include <QtAndroidExtras/QtAndroid>
 #include <__JniUtils.hpp>
 #include <android/widget/Toast.hpp>
 #include <android/app/ProgressDialog.hpp>
-#include <android/content/Context.hpp>
 #include <android/content/Intent.hpp>
 
 using namespace android::widget;
@@ -48,7 +46,7 @@ void MainWindow::on_showProgressDialogSpinner_clicked()
     std::shared_ptr<ProgressDialog> progressDialog;
 
     QtAndroid::runOnAndroidThreadSync([&progressDialog, title, message] {
-        progressDialog = std::make_shared<ProgressDialog>(android::content::Context(QtAndroid::androidActivity()));
+        progressDialog = std::make_shared<ProgressDialog>(CONTEXT);
 
         progressDialog->setCancelable(false);
         progressDialog->setTitle(JSTRING(title));
@@ -70,7 +68,7 @@ void MainWindow::on_showProgressDialogHorizontal_clicked()
     std::shared_ptr<ProgressDialog> progressDialog;
 
     QtAndroid::runOnAndroidThreadSync([&progressDialog, title, message] {
-        progressDialog = std::make_shared<ProgressDialog>(android::content::Context(QtAndroid::androidActivity()));
+        progressDialog = std::make_shared<ProgressDialog>(CONTEXT);
 
         progressDialog->setCancelable(false);
         progressDialog->setTitle(JSTRING(title));
@@ -100,7 +98,7 @@ void MainWindow::on_showProgressDialogHorizontal_clicked()
     timer->start(10);
 }
 
-void MainWindow::on_OpenFile_clicked()
+void MainWindow::on_OpenFile_clicked() // WIP
 {
     QtAndroid::runOnAndroidThreadSync([] {
         auto intent = Intent(Intent::ACTION_GET_CONTENT());
